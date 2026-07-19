@@ -242,9 +242,10 @@ or quantum-master-equation result.
   corner/bubble-endpoint logarithmic coefficient is `15707/216`, so universal
   algebraic `H2` cancellation is refuted. A largest-barycentric/half-interval
   common Mellin minimal-subtraction extension now promotes the same rational
-  number to the exact fixture coefficient of `log(mu^2)`. Its generic
-  covariant Volterra lift, renormalized tensor-triangle integration, and five
-  form-factor assembly remain fail-closed.
+  number to the exact fixture coefficient of `log(mu^2)`. A generic covariant
+  Volterra carrier now joins all six ordered triangle cells to the three
+  `H1-H2` contact cells under that extension. The generic contact kernels,
+  renormalized mixed rows, and five form-factor assembly remain fail-closed.
 - [`reports/local-dimension-four-candidates.md`](reports/local-dimension-four-candidates.md)
   records the generated three-dimensional quadratic curvature ansatz, its
   two-dimensional Weyl-closed kernel, independent target-native even/odd

@@ -71,6 +71,7 @@ DEPENDENCIES = {
     "generic_physical_hessian_curvature_squared": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_CURVATURE_SQUARED.json",
     "generic_physical_hessian_mixed_H1_H2_corner_fixture": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MIXED_H1_H2_CORNER_FIXTURE.json",
     "generic_physical_hessian_mellin_subtraction_scale_row": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MELLIN_SUBTRACTION_SCALE_ROW.json",
+    "generic_physical_hessian_covariant_Volterra_carrier": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_COVARIANT_VOLTERRA_CARRIER.json",
     "generic_background_ghost_CPT_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
@@ -189,6 +190,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "generic_physical_hessian_curvature_squared": "ALGEBRAIC_CURVATURE_SQUARED_PHYSICAL_HESSIAN_IMPORTED_GAUGE_ORDERING_CROSSWALKED",
         "generic_physical_hessian_mixed_H1_H2_corner_fixture": "RAW_MIXED_PHYSICAL_LOG_COEFFICIENT_NONZERO_SUBTRACTION_REQUIRED",
         "generic_physical_hessian_mellin_subtraction_scale_row": "FIXTURE_MELLIN_MINIMAL_SUBTRACTION_SCALE_ROW_COMPUTED_GENERIC_COVARIANT_LIFT_OPEN",
+        "generic_physical_hessian_covariant_Volterra_carrier": "GENERIC_COVARIANT_VOLTERRA_SUBTRACTION_CARRIER_CONSTRUCTED_MIXED_ROWS_OPEN",
         "generic_background_ghost_CPT_obstruction": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
         "generic_ghost_Endo_Duhamel_reduction": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES",
         "generic_ghost_n1_n2_Hodge_resolvent_reduction": "CURVED_ENDO_N1_N2_REDUCED_EXACTLY_TO_FIVE_MINIMAL_VECTOR_SCALAR_RESOLVENT_CARRIERS",
@@ -250,6 +252,9 @@ def _load() -> dict[str, dict[str, Any]]:
     ]
     generic_physical_hessian_mellin = values[
         "generic_physical_hessian_mellin_subtraction_scale_row"
+    ]
+    generic_physical_hessian_volterra = values[
+        "generic_physical_hessian_covariant_Volterra_carrier"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -715,6 +720,26 @@ def _load() -> dict[str, dict[str, Any]]:
         != {"numerator": 15707, "denominator": 216}
     ):
         raise ValueError("physical-Hessian Mellin subtraction frontier drifted")
+    volterra_flags = generic_physical_hessian_volterra.get("claim_flags", {})
+    if (
+        volterra_flags.get("GENERIC_COVARIANT_VOLTERRA_CARRIER_COMPUTED")
+        is not True
+        or volterra_flags.get("COMMON_MELLIN_BOUNDARY_EXTENSION_DEFINED")
+        is not True
+        or volterra_flags.get("GENERIC_TENSOR_KERNELS_EVALUATED") is not False
+        or volterra_flags.get("RENORMALIZED_GENERIC_MIXED_ROWS_ASSEMBLED")
+        is not False
+        or volterra_flags.get("PHYSICAL_M14_CORNER_CLASS_DISPOSED") is not False
+        or generic_physical_hessian_volterra.get("decorated_carrier", {}).get(
+            "ordered_triangle_cell_count"
+        )
+        != 6
+        or generic_physical_hessian_volterra.get("decorated_carrier", {}).get(
+            "mixed_contact_cell_count"
+        )
+        != 3
+    ):
+        raise ValueError("physical-Hessian covariant Volterra frontier drifted")
     if (
         generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
         != "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
@@ -2109,8 +2134,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_EQUAL_BOX_MELLIN_MINIMAL_SUBTRACTION_SCALE_ROW_15707_OVER_216_COMPUTED_GENERIC_COVARIANT_VOLTERRA_LIFT_AND_REPOSITORY_ASSEMBLY_OPEN_Q1_UNDERDETERMINED",
-                "next_gate": "LIFT_COMMON_MELLIN_SUBTRACTION_TO_GENERIC_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_MIXED_ROWS",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_GENERIC_COVARIANT_VOLTERRA_SUBTRACTION_CARRIER_CONSTRUCTED_GENERIC_MIXED_ROWS_OPEN_Q1_UNDERDETERMINED",
+                "next_gate": "EVALUATE_GENERIC_H1_H2_CONTACT_KERNELS_ON_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_RENORMALIZED_MIXED_ROWS",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -2125,8 +2150,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_EQUAL_BOX_MELLIN_SUBTRACTION_SCALE_ROW_COMPUTED_GENERIC_COVARIANT_VOLTERRA_LIFT_GREEN_SPECTRAL_CARRIER_REPOSITORY_ASSEMBLY_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "LIFT_COMMON_MELLIN_SUBTRACTION_TO_GENERIC_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_MIXED_ROWS",
+                "status": "FORBIDDEN_GENERIC_COVARIANT_VOLTERRA_SUBTRACTION_CARRIER_COMPUTED_GENERIC_MIXED_KERNELS_GREEN_SPECTRAL_CARRIER_REPOSITORY_ASSEMBLY_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "EVALUATE_GENERIC_H1_H2_CONTACT_KERNELS_ON_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_RENORMALIZED_MIXED_ROWS",
             },
         },
         "supersession_ledger": [
@@ -2360,7 +2385,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "LIFT_COMMON_MELLIN_SUBTRACTION_TO_GENERIC_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_MIXED_ROWS",
+            "EVALUATE_GENERIC_H1_H2_CONTACT_KERNELS_ON_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_RENORMALIZED_MIXED_ROWS",
             "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
@@ -2466,8 +2491,10 @@ def build() -> dict[str, Any]:
             "of all three mixed H1-H2 bubbles gives the nonzero raw logarithmic coefficient 15707/216. "
             "Thus a universal algebraic H2 cancellation is refuted on this fixture. A common Mellin "
             "minimal-subtraction extension on the resolved equal-box carrier promotes 15707/216 to "
-            "the exact log(mu^2) scale row. Its generic covariant Volterra lift and mixed-row assembly "
-            "remain open, so the M14 relative class is not yet disposed. The "
+            "the exact log(mu^2) scale row. A generic covariant Volterra carrier now joins all six "
+            "ordered triangle cells to the three local H1-H2 contact cells under that common Mellin "
+            "extension. The generic contact kernels and mixed-row assembly remain open, so the M14 "
+            "relative class is not yet disposed. The "
             "global carrier and five repository form-factor assembly remain open. At the "
             "normalized symmetric point all eleven coordinates are integrated exactly in "
             "terms of one Clausen master. This is not the generic five repository functions; "

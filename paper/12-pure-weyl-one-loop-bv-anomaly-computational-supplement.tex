@@ -1358,7 +1358,26 @@ bubble endpoints gives
  =\frac1{(4\pi)^2}\frac{15707}{216}.
 \]
 Thus the scale row is exact on the fixture.  The generic covariant Volterra
-lift, finite local normalization and renormalized mixed rows remain open.
+lift is now fixed as follows.  With $H_0=L^2$,
+\[
+ G_0=\int_0^\infty u e^{-uL}\,du.
+\]
+There are six ordered three-$H_1$ cells and three labelled $H_1$--$H_2$
+contact cells.  The exact changes of variables and squared-propagator measures
+are
+\[
+ (u_1,u_2,u_3)=T(1-r,rt,r(1-t)),\quad
+ d^3u\,u_1u_2u_3=T^5r^3(1-r)t(1-t)\,dT\,dr\,dt,
+\]
+and
+\[
+ (u_1,u_2)=T(x,1-x),\quad
+ d^2u\,u_1u_2=T^3x(1-x)\,dT\,dx.
+\]
+The same Mellin parameter extends every resolved boundary.  Exact
+noncommuting-matrix replay verifies the trace-log coefficients and cyclicity.
+The generic contact kernels, finite local normalization and renormalized mixed
+rows remain open.
 
 \begin{verbatim}
 MOD="spectral.euclidean.generic_background_physical_hessian_"
@@ -1375,6 +1394,12 @@ MOD="${MOD}mellin_subtraction_scale_row"
 PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
 MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
 MOD="${MOD}mellin_subtraction_scale_row"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}covariant_volterra_carrier"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
+MOD="${MOD}covariant_volterra_carrier"
 PYTHONPATH=quantum-weyl python3 -m "$MOD"
 \end{verbatim}
 
@@ -2135,9 +2160,8 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-	\item lift the equal-box Mellin subtraction joining physical triangle
-corners to bubble endpoints to the generic covariant Volterra carrier,
-followed by assembly of the
+	\item evaluate the generic $H_1$--$H_2$ contact kernels on the certified
+covariant Volterra carrier, followed by assembly of the
 renormalized mixed rows, integration of the now-projected physical
 three-linear tensor triangle, and assembly of the five
 repository parity-even third-curvature form-factor functions and coefficients,

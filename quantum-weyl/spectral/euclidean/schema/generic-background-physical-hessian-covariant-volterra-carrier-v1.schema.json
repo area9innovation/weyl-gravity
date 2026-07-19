@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/quantum-weyl/generic-background-physical-hessian-covariant-volterra-carrier-v1.schema.json",
+  "title": "Generic physical-Hessian covariant Volterra carrier",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "operator_identity", "decorated_carrier", "covariance_and_subtraction", "exact_checks", "dependencies", "claim_flags", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-physical-hessian-covariant-volterra-carrier-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_COVARIANT_VOLTERRA_CARRIER"},
+    "result_state": {"const": "GENERIC_COVARIANT_VOLTERRA_SUBTRACTION_CARRIER_CONSTRUCTED_MIXED_ROWS_OPEN"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {"type": "object", "additionalProperties": {"type": ["string", "integer"]}, "required": ["dimension", "signature", "operator", "background", "carrier"]},
+    "operator_identity": {"type": "object", "additionalProperties": {"type": "string"}, "required": ["principal_second_order_operator", "free_fourth_order_operator", "free_inverse", "cubic_trace_log_row", "polarization"]},
+    "decorated_carrier": {
+      "type": "object",
+      "required": ["ordered_triangle_cells", "ordered_triangle_cell_count", "cyclic_triangle_orbits", "cyclic_triangle_orbit_count", "mixed_contact_cells", "mixed_contact_cell_count", "resolved_triangle_boundary_chart_count", "resolved_contact_endpoint_chart_count", "triangle_chart", "contact_chart", "attachment_rule"]
+    },
+    "covariance_and_subtraction": {"type": "object", "additionalProperties": {"type": "string"}, "required": ["covariance", "locality", "common_boundary_regulator", "minimal_subtraction", "fixture_pullback", "finite_ambiguity"]},
+    "exact_checks": {"type": "object", "required": ["triangle_change_of_variables", "bubble_change_of_variables", "finite_noncommuting_replay", "Mellin_model", "fixture_pullback"]},
+    "dependencies": {"type": "object", "required": ["physical_H1", "physical_H2", "fixture_Mellin_subtraction"], "additionalProperties": {"$ref": "#/$defs/reference"}},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["GENERIC_COVARIANT_VOLTERRA_CARRIER_COMPUTED", "SIX_ORDERED_TRIANGLE_CELLS_INCLUDED", "THREE_MIXED_CONTACT_CELLS_INCLUDED", "COMMON_MELLIN_BOUNDARY_EXTENSION_DEFINED", "FIXTURE_SUBTRACTION_IS_A_PULLBACK", "GENERIC_TENSOR_KERNELS_EVALUATED", "RENORMALIZED_GENERIC_MIXED_ROWS_ASSEMBLED", "PHYSICAL_M14_CORNER_CLASS_DISPOSED", "PHYSICAL_THIRD_CURVATURE_FORM_FACTORS_COMPLETE", "QME_OR_ANOMALY_STATUS_CHANGED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "GENERIC_COVARIANT_VOLTERRA_CARRIER_COMPUTED": {"const": true},
+        "SIX_ORDERED_TRIANGLE_CELLS_INCLUDED": {"const": true},
+        "THREE_MIXED_CONTACT_CELLS_INCLUDED": {"const": true},
+        "COMMON_MELLIN_BOUNDARY_EXTENSION_DEFINED": {"const": true},
+        "FIXTURE_SUBTRACTION_IS_A_PULLBACK": {"const": true},
+        "GENERIC_TENSOR_KERNELS_EVALUATED": {"const": false},
+        "RENORMALIZED_GENERIC_MIXED_ROWS_ASSEMBLED": {"const": false},
+        "PHYSICAL_M14_CORNER_CLASS_DISPOSED": {"const": false},
+        "PHYSICAL_THIRD_CURVATURE_FORM_FACTORS_COMPLETE": {"const": false},
+        "QME_OR_ANOMALY_STATUS_CHANGED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "next_gate": {"const": "EVALUATE_GENERIC_H1_H2_CONTACT_KERNELS_ON_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_RENORMALIZED_MIXED_ROWS"},
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

@@ -369,6 +369,9 @@ def main() -> None:
         "numerator": 15707,
         "denominator": 216,
     }
+    assert claims["physical_Hessian_generic_covariant_Volterra_carrier_computed"] is True
+    assert claims["physical_Hessian_Volterra_ordered_triangle_cell_count"] == 6
+    assert claims["physical_Hessian_Volterra_mixed_contact_cell_count"] == 3
     assert payload["explicit_nonclaims"][
         "physical_n3_three_linear_triangle_integrated"
     ] is False
@@ -376,7 +379,7 @@ def main() -> None:
         "physical_Hessian_renormalized_subtraction_fixed"
     ] is False
     assert payload["explicit_nonclaims"][
-        "physical_Hessian_generic_covariant_Volterra_lift"
+        "physical_Hessian_generic_mixed_contact_kernels_evaluated"
     ] is False
     assert payload["explicit_nonclaims"]["physical_n3_M14_class_disposed"] is False
     assert payload["explicit_nonclaims"][
@@ -384,7 +387,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "LIFT_COMMON_MELLIN_SUBTRACTION_TO_GENERIC_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_MIXED_ROWS"
+        == "EVALUATE_GENERIC_H1_H2_CONTACT_KERNELS_ON_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_RENORMALIZED_MIXED_ROWS"
     )
 
     dependencies = {}
@@ -418,7 +421,7 @@ def main() -> None:
         "denominator": 6561,
     }
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
-    assert len(payload["inputs"]) == 52
+    assert len(payload["inputs"]) == 53
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -456,6 +459,9 @@ def main() -> None:
     ]
     physical_hessian_mellin = dependencies[
         "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MELLIN_SUBTRACTION_SCALE_ROW"
+    ]
+    physical_hessian_volterra = dependencies[
+        "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_COVARIANT_VOLTERRA_CARRIER"
     ]
     generic_ghost_cpt = dependencies["GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION"]
     generic_ghost_endo = dependencies["GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION"]
@@ -592,6 +598,18 @@ def main() -> None:
     )
     assert physical_hessian_mellin["claim_flags"][
         "GENERIC_COVARIANT_VOLTERRA_LIFT_COMPUTED"
+    ] is False
+    assert physical_hessian_volterra["claim_flags"][
+        "GENERIC_COVARIANT_VOLTERRA_CARRIER_COMPUTED"
+    ] is True
+    assert physical_hessian_volterra["decorated_carrier"][
+        "ordered_triangle_cell_count"
+    ] == claims["physical_Hessian_Volterra_ordered_triangle_cell_count"]
+    assert physical_hessian_volterra["decorated_carrier"][
+        "mixed_contact_cell_count"
+    ] == claims["physical_Hessian_Volterra_mixed_contact_cell_count"]
+    assert physical_hessian_volterra["claim_flags"][
+        "RENORMALIZED_GENERIC_MIXED_ROWS_ASSEMBLED"
     ] is False
     assert generic_ghost_cpt["CPT_applicability_decision"]["verdict"] == (
         "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"

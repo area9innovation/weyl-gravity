@@ -459,7 +459,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "LIFT_COMMON_MELLIN_SUBTRACTION_TO_GENERIC_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_MIXED_ROWS",
+            "EVALUATE_GENERIC_H1_H2_CONTACT_KERNELS_ON_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_RENORMALIZED_MIXED_ROWS",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

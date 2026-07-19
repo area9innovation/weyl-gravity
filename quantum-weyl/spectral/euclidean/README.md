@@ -162,7 +162,10 @@ not cancel the corner identically.  The resolved largest-barycentric triangle
 sectors and half-interval bubble sectors now carry one common Mellin minimal
 subtraction, yielding the exact fixture scale row
 `partial_log(mu^2) Gamma_MS=(4 pi)^-2 15707/216`.  A generic covariant
-Volterra lift and renormalized mixed-row assembly remain open.
+Volterra carrier now supplies six ordered triangle cells, three `H1-H2`
+contact cells, their exact Schwinger measures, and one resolved-boundary
+Mellin extension. The generic contact kernels and renormalized mixed-row
+assembly remain open.
 
 Replay with:
 

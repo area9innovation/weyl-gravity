@@ -1,0 +1,232 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC and EUCLIDEAN-SPECTRAL certificate constructs the generic covariant proper-time/Volterra carrier joining all six labelled three-H1 cells to all three labelled H1-H2 contact cells and defines their common resolved-boundary Mellin minimal subtraction. It proves the carrier combinatorics, Schwinger measures, cyclicity and fixture pullback. It does not evaluate the generic mixed tensor kernels, dispose M14, complete a physical form factor, change the QME disposition, or certify a Lorentzian theory.",
+  "claim_flags": {
+    "COMMON_MELLIN_BOUNDARY_EXTENSION_DEFINED": true,
+    "FIXTURE_SUBTRACTION_IS_A_PULLBACK": true,
+    "GENERIC_COVARIANT_VOLTERRA_CARRIER_COMPUTED": true,
+    "GENERIC_TENSOR_KERNELS_EVALUATED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "PHYSICAL_M14_CORNER_CLASS_DISPOSED": false,
+    "PHYSICAL_THIRD_CURVATURE_FORM_FACTORS_COMPLETE": false,
+    "QME_OR_ANOMALY_STATUS_CHANGED": false,
+    "RENORMALIZED_GENERIC_MIXED_ROWS_ASSEMBLED": false,
+    "SIX_ORDERED_TRIANGLE_CELLS_INCLUDED": true,
+    "THREE_MIXED_CONTACT_CELLS_INCLUDED": true
+  },
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "covariance_and_subtraction": {
+    "common_boundary_regulator": "multiply every resolved triangle and contact boundary density by z^s*rho^s using the same s and z=mu^2/Q^2",
+    "covariance": "each exp(-u L) is the covariant heat kernel of L and every H1/H2 insertion is a frozen local covariant differential operator",
+    "finite_ambiguity": "a mu-independent local covariant finite row; the scale residue is unchanged",
+    "fixture_pullback": "the rational equal-box triangle sectors and half-interval bubbles are the declared evaluation pullback of this carrier",
+    "locality": "boundary residues are diagonal local symbol densities",
+    "minimal_subtraction": "remove the total coefficient of 1/s and retain the finite part"
+  },
+  "decorated_carrier": {
+    "attachment_rule": "H2_jk is the local contact replacing the labelled pair (H1_j,H1_k); H1_i remains the separated insertion",
+    "contact_chart": "beta=(x,1-x), resolved at x=0 and 1-x=0",
+    "cyclic_triangle_orbit_count": 2,
+    "cyclic_triangle_orbits": [
+      [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          0,
+          1
+        ]
+      ],
+      [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          2
+        ]
+      ]
+    ],
+    "mixed_contact_cell_count": 3,
+    "mixed_contact_cells": [
+      {
+        "H1_leg": 0,
+        "H2_legs": [
+          1,
+          2
+        ]
+      },
+      {
+        "H1_leg": 1,
+        "H2_legs": [
+          0,
+          2
+        ]
+      },
+      {
+        "H1_leg": 2,
+        "H2_legs": [
+          0,
+          1
+        ]
+      }
+    ],
+    "ordered_triangle_cell_count": 6,
+    "ordered_triangle_cells": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        1,
+        0,
+        2
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "resolved_contact_endpoint_chart_count": 6,
+    "resolved_triangle_boundary_chart_count": 18,
+    "triangle_chart": "alpha_i=1-r, alpha_j=r*t, alpha_k=r*(1-t)"
+  },
+  "dependencies": {
+    "fixture_Mellin_subtraction": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MELLIN_SUBTRACTION_SCALE_ROW.json",
+      "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MELLIN_SUBTRACTION_SCALE_ROW",
+      "sha256": "17bb98fbbaa8e5d562b7b5fe97425a53cd3cf1b24a4d1de2e2ae338bd999433b"
+    },
+    "physical_H1": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE.json",
+      "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE",
+      "sha256": "b8fd2da678cb64d0bae6adaacb888beb49af3d3e45ddd9bce93005fb9018e9f9"
+    },
+    "physical_H2": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_CURVATURE_SQUARED.json",
+      "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_CURVATURE_SQUARED",
+      "sha256": "6992bdeb78808f559cf3a938c7dcbeefe115d10bfc5698895b2ee507e5a67f86"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_checks": {
+    "Mellin_model": {
+      "minimal_subtraction_finite_scale_term": "log(z)",
+      "regulated_boundary_model": "z^s/s",
+      "residue": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    "bubble_change_of_variables": {
+      "jacobian": "T",
+      "proper_times": [
+        "T*x",
+        "T*(1-x)"
+      ],
+      "squared_propagator_measure": "T^3*x*(1-x)"
+    },
+    "finite_noncommuting_replay": {
+      "cyclicity": "EXACT",
+      "green_diagonal": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 4,
+          "numerator": 1
+        },
+        {
+          "denominator": 9,
+          "numerator": 1
+        }
+      ],
+      "laplacian_diagonal": [
+        1,
+        2,
+        3
+      ],
+      "mixed_contact_trace_count": 3,
+      "ordered_triangle_trace_count": 6,
+      "trace_log_cubic_value": {
+        "denominator": 1296,
+        "numerator": -3143
+      }
+    },
+    "fixture_pullback": {
+      "common_regulator": "s",
+      "contact_endpoint_chart_count": 6,
+      "scale_coefficient": {
+        "denominator": 216,
+        "numerator": 15707
+      },
+      "status": "EXACT",
+      "triangle_boundary_chart_count": 18,
+      "triangle_chart": "alpha_i=1-r, alpha_j=r*t, alpha_k=r*(1-t)"
+    },
+    "triangle_change_of_variables": {
+      "jacobian": "T^2*r",
+      "proper_times": [
+        "T*(1-r)",
+        "T*r*t",
+        "T*r*(1-t)"
+      ],
+      "squared_propagator_measure": "T^5*r^3*(1-r)*t*(1-t)"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "EVALUATE_GENERIC_H1_H2_CONTACT_KERNELS_ON_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_RENORMALIZED_MIXED_ROWS",
+  "operator_identity": {
+    "cubic_trace_log_row": "sum_sigma (1/6) Tr(G0 H1_sigma1 G0 H1_sigma2 G0 H1_sigma3) - sum_i (1/2) Tr(G0 H1_i G0 H2_jk)",
+    "free_fourth_order_operator": "H0=L^2",
+    "free_inverse": "G0=H0^-1=integral_0^infinity u*exp(-u*L) du",
+    "polarization": "coefficient of three independently labelled external curvatures",
+    "principal_second_order_operator": "L=-nabla^2 on traceless symmetric tensors"
+  },
+  "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_COVARIANT_VOLTERRA_CARRIER",
+  "result_state": "GENERIC_COVARIANT_VOLTERRA_SUBTRACTION_CARRIER_CONSTRUCTED_MIXED_ROWS_OPEN",
+  "schema": "quantum-weyl-generic-background-physical-hessian-covariant-volterra-carrier-v1",
+  "scope": {
+    "background": "generic smooth background on a regular local elliptic chart",
+    "carrier": "covariant proper-time Volterra cells with resolved normalized-time boundaries",
+    "dimension": 4,
+    "operator": "same-gauge monic rank-nine physical Hessian H=L^2+H1+H2+O(R^3)",
+    "signature": "Euclidean"
+  }
+}
