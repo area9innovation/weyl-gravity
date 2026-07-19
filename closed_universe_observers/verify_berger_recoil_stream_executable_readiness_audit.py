@@ -13,7 +13,7 @@ def main() -> int:
     value = json.loads(CERTIFICATE.read_text())
     assert value == build()
     assert value["readiness"]["symbolic_word_ready"] is True
-    assert value["readiness"]["internal_executable_stream_ready"] is False
+    assert value["readiness"]["internal_executable_stream_ready"] is True
     assert value["readiness"]["external_specialization_deferred"] is True
     assert value["readiness"]["four_scalar_stream_active"] is False
     rows = {row["id"]: row["status"] for row in value["readiness"]["rows"]}
@@ -27,7 +27,8 @@ def main() -> int:
     assert rows["generic_direct_finite_shell_provider"] == "CERTIFIED"
     assert rows["complex_channel_to_real_shell_scalar_map"] == "CERTIFIED"
     assert rows["finite_two_j6_reality_folded_feedback_binding"] == "CERTIFIED"
-    assert rows["nested_time_convolution_backend"] == "OBSTRUCTED"
+    assert rows["generic_reality_folded_successive_shell_adapter"] == "CERTIFIED"
+    assert rows["nested_time_convolution_backend"] == "CERTIFIED"
     assert rows["shell_interval_evaluator"] == "CERTIFIED"
     assert rows["tail_aware_aggregate_stop_loop"] == "CERTIFIED"
     assert value["flags"]["FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED"] is True
@@ -41,6 +42,7 @@ def main() -> int:
     assert value["flags"]["TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED"] is True
     assert value["flags"]["COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED"] is True
     assert value["flags"]["TWO_J6_FEEDBACK_CHANNELS_EVALUATED"] is True
+    assert value["flags"]["GENERIC_REALITY_FOLDED_SUCCESSIVE_SHELL_ADAPTER_EXPORTED"] is True
     assert value["flags"]["CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED"] is True
     assert all(row["detected"] for row in value["mutation_results"])
     print("Berger recoil executable-readiness audit verification: PASS")

@@ -322,12 +322,13 @@ branch.
 
 ### Immediate priority after the polarization-emitter handoff
 
-1. Export a generic reality-folded direct-shell evaluation adapter that builds,
-   binds, evaluates the independent columns and folds their exact partners for
-   each successive shell inside the fail-closed stop loop.  The complete
-   `two_j=6` validation shell is now certified from 32 direct and 24 exact
-   reality-derived blocks; physical masses and couplings remain deferred until
-   the reusable successive-shell adapter is complete.  In
+1. Audit and activate the deferred exact numerical recoil input contract.  The
+   generic adapter now builds and binds every contiguous declared shell,
+   evaluates only its independent SU(2) columns, folds every exact partner,
+   aggregates all four detector/source entries and applies the fail-closed stop
+   rule before advancing.  Its actual `two_j=6` replay matches the prior 32
+   direct plus 24 exact reality-derived blocks.  Physical masses, couplings,
+   inverse volume and a stopping goal remain undeclared.  In
    parallel, use the
    exported emitter stress
    and clock-switch source to refine the certified covariant 108-row
@@ -842,12 +843,12 @@ through the feedback evaluations described below.  The generic direct carrier
 and tail-stop controller are now `CERTIFIED`.  The exact SU(2) reality map also
 folds conjugate complex columns into real shell inputs and exports all eight
 bare `two_j=5` channel sums.  The reality-folded successor now also certifies
-all 56 `two_j=6` channel-column blocks and eight real channel sums.  A generic
-adapter for successive shells inside the stop loop remains `OBSTRUCTED`.
-Supplying
-masses and couplings now would still
-not produce a certified physical recoil interval.  The exact-rational input
-schema remains deferred.
+all 56 `two_j=6` channel-column blocks and eight real channel sums.  The
+generic successive-shell adapter is now `CERTIFIED`; it composes carrier
+construction, independent-column evaluation, exact reality completion,
+four-entry aggregation and a stop check after every shell.  The internal
+stream is ready, but the exact-rational input schema remains value-free and
+no physical recoil interval is certified.
 
 `BERGER_RECOIL_SWITCH_INTERVAL_PROVIDER` closes the next factorwise input.
 On any rational physical-time cell it exports outward rational intervals for
@@ -1015,9 +1016,10 @@ adapter by a content-addressed generic direct-shell callable and validates a
 contiguous `two_j=6` sentinel.  It retains `NO_CERTIFIED_MAP` to the hashed
 exact-`T` rail.  Its stop controller implements the exact radius
 `|g_b|D_aE_b sum_c |g_c|^2 C_c(m_c)` with tolerance, nonzero, sign and
-determinant goals.  The certificate-derived validation fixture remains
-`OPEN`; only a synthetic determinant fixture stops.  The active gate is the
-generic reality-folded direct-shell evaluation adapter used by that stop loop.
+    determinant goals.  The certificate-derived validation fixture remains
+    `OPEN`; only a synthetic determinant fixture stops.  The adapter gate is now
+    closed, and the active apparatus calculation is the exact numerical input-
+    contract audit.
 
 `BERGER_RECOIL_REAL_SHELL_EXTRACTION` closes the carrier mismatch without
 discarding imaginary intervals.  In the normalized symmetric-power
@@ -1043,6 +1045,20 @@ descent, tangent-cone restriction, Bridge 3 or a quantum claim.  The active
 apparatus bridge remains Bridge 3 but its activation gate is still a
 same-background Berger physical-branch dictionary; its atlas row remains
 `NO_CERTIFIED_MAP`.
+
+`BERGER_RECOIL_REALITY_FOLDED_SHELL_STREAM_ADAPTER` closes the reusable
+composition gate.  A nonempty declared shell sequence must extend the three
+direct-carrier cutoffs contiguously.  At each shell the callable evaluates
+only `k=0,...,floor(two_j/2)`, derives all larger columns by exact SU(2)
+reality, aggregates all four detector/source intervals and invokes the
+tail-aware stop rule before advancing.  An actual carrier-building
+`two_j=6` replay exactly reproduces the certified 56-block binding.  Its unit
+couplings and unit inverse-volume interval are explicitly an interface
+fixture, not physical Berger data; the replay determinant remains `OPEN`.
+The fail-closed atlas row is
+`observer.berger.detector_profile.recoil_reality_folded_shell_stream_adapter`
+with operational response `CERTIFIED`, physical response rank `OPEN`, quotient
+survival `NO_CERTIFIED_MAP`, and all tangent-cone correction classes `OPEN`.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as
@@ -1078,6 +1094,14 @@ physical-branch dictionary.  The atlas row
 may continue, but it does not activate a physical-branch interpretation.
 The separate compact-product exceptional-resonance crosswalk remains
 `NO_CERTIFIED_MAP` and is not a substitute.
+
+Within that inactive bridge, the currently active Berger calculation is the
+exact numerical recoil input-contract audit.  Its activation gate is explicit
+provenance and domain validation for both masses, both nonzero couplings, a
+positive Berger inverse-volume enclosure, a contiguous shell schedule, all
+four tail radii after every shell, and one declared stopping goal.  Until those
+values exist, the activation row remains operationally `OPEN`; the certified
+adapter row above records only internal executability.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to

@@ -555,7 +555,7 @@ physical questions are whether this restriction is preserved by nonlinear
 interactions and whether it follows from a differentiable asymptotic phase
 space rather than being imposed by hand.
 
-\section{Polar carrier: exact composition and open causal chain}
+\section{Polar chain: composition, reach, current, and disposition}
 
 For polar \(\ell=2\) Regge--Wheeler-gauge perturbations, the trace variation
 \(\delta R\) need not vanish.  The axial formula acquires two universal
@@ -576,13 +576,93 @@ image obeys a second-order trace-coupled Lichnerowicz system for
 \((\delta R_{ab},\delta R)\).
 \end{corollary}
 
-This opens, but does not complete, the polar analogue of the axial chain.
-As in \eqref{eq:axial-exact-sequence}, composition yields an exact sequence
-onto the realized Ricci image; it does not by itself produce a canonical
-metric complement.
-The Zerilli benchmark, horizon indicial system, action-derived flux blocks,
-outer asymptotics, and causal disposition remain pending.  No parity-complete
-black-hole truncation theorem is claimed until those steps close.
+The polar chain is now certified through the same stations as the axial
+chain.  Four structural facts organise it.
+
+\emph{(i) Polar Einstein kernel.}  In the \(t\)-chart Regge--Wheeler polar
+gauge the traceless angular row of \(\delta R_{ab}\) equals
+\((H_0-H_2)/2\), forcing \(H_2=H_0\); the remaining rows reduce exactly to
+a two-dimensional first-order system \(dY/dr=M(r)Y\), \(Y=(K,H_1)\), with
+\(H_0\) algebraic.  In horizon-adapted variables \((K,BH_1)\) the ingoing
+residue spectrum is \(\{0,-4im\omega\}\), matching the axial
+Regge--Wheeler control.  A Schr\"odinger-form master scalar with
+\(\omega\)-free potential was \emph{not} found within the searched bounded
+rational ansatz classes; that anchor is recorded fail-closed open and
+nothing below depends on it.
+
+\emph{(ii) Conformal gauge and polar reach.}  The polar carrier system on
+the Bianchi-constrained \((\delta R_{ab},\delta R)\) is exactly three
+second-order equations in four radial functions: the operator
+\eqref{eq:polar-split} is identically traceless and divergence-free on the
+constraint surface, and the one-function underdeterminacy is linearized
+conformal gauge (\(h=\Phi g\) is pure gauge and
+\(\psi_{\rm conf}=\delta\mathrm{Ric}[\Phi g]\) annihilates every row for
+arbitrary \(\Phi\)); this direction is absent in the axial sector.  On the
+algebraic traceless slice the principal part diagonalises and the future
+horizon is a regular singular point with residue spectrum
+\(\{0,0,0,\,1-4im\omega,\,-1-4im\omega,\,-3-4im\omega\}\).  Quotienting the
+regular conformal-gauge direction leaves a \emph{two}-parameter physical
+ingoing-analytic polar carrier family at every
+\(\omega\in\R\setminus\{0\}\) --- the polar twin of the axial reach
+theorem.
+
+\emph{(iii) Polar current.}  The sphere-integrated action-derived polar
+bilinear obeys the same off-shell \(4\alpha\) identity.  On shell of the
+two-dimensional polar Einstein system every bilinear coefficient carries
+the factor \((\omega_1+\omega_2)\): the polar Einstein self-block is
+exactly null for conjugate pairs, as in the axial sector.  In addition the
+conformal direction \(\Phi g\) pairs to zero with an \emph{arbitrary}
+off-shell polar perturbation: the sphere-integrated polar presymplectic
+form needs no conformal quotient at the bilinear level.  Composition
+fixtures (\(\omega=3/5\), two interior radii, exact arithmetic) certify
+that the realized Ricci image closes on the full three-dimensional
+analytic carrier space --- every ingoing-analytic polar carrier mode lifts
+to a metric perturbation with all seven \(\delta\mathrm{Ric}\) rows
+verified --- and that the Einstein--carrier cross pairing is nonzero.
+Cross-pairing nonvanishing is representative-independent because the
+Einstein block is null; the positive carrier self-norms are certified at
+the canonical composed representatives only, and the
+representative-invariant sign theory is open.
+
+\emph{(iv) Polar disposition.}  The polar carrier's asymptotic symbol is
+\((\lambda^2-\omega^2)^3\): it propagates on the Einstein characteristics,
+with Coulomb log-phases and amplitude falloffs \(r^{-1},r^{-2},r^{-3}\)
+--- all decaying at real frequencies, strictly stronger than the axial
+\(r^0,r^{-1}\) case.  The tested endpoint diagnostics (future-horizon
+analyticity, leading outer symbol and falloff class) therefore fail to
+separate the polar Ricci carrier from the polar Einstein carrier, exactly
+as in the axial sector: the endpoint-nonselection result is now
+\emph{parity complete} at the \(\ell=2\) linear mode level.  As before,
+this is not a classification of all local differential boundary
+operators.
+
+\section{Horizon monodromy temperature}
+
+One statement of Hawking type is available at the
+\textsc{reduced-mode} level without any Lorentzian quantum construction.
+The surface gravity of the certified background is \(\kappa=1/(4m)\) with
+\(T_H=\kappa/2\pi=1/(8\pi m)\); the geometric-clock value agrees exactly
+with the certified normalized-frame first-law temperature.
+
+\begin{theorem}[Monodromy universality]
+Under the horizon continuation \(\rho\to e^{2\pi i}\rho\), every certified
+ingoing residue exponent of the four \(\ell=2\) mode families (axial and
+polar, Einstein and Ricci carrier) has continuation factor exactly \(1\) or
+\(e^{8\pi m\omega}=e^{\omega/T_H}\), and every family contains exponents
+with the nontrivial factor.
+\end{theorem}
+
+The integer parts of the exponents are monodromy-trivial; the universal
+\(-4im\omega\) part carries the thermal factor.  Hence the Boltzmann ratio
+\(|\beta/\alpha|^2=e^{-\omega/T_H}\) of the Damour--Ruffini continuation is
+identical for the Einstein and additional curvature families in both parity
+sectors: at the mode level, the additional carrier is thermally weighted at
+exactly the Hawking temperature, and by the certified nonzero mixed
+pairings it participates in the horizon flux with that weight.  This is a
+mode-level (\textsc{reduced-mode}) statement only: no Hadamard state,
+renormalized stress tensor, grey-body factor, luminosity, back-reaction, or
+\textsc{lorentzian-causal} Hawking theorem is claimed, and none exists in
+the repository.
 
 \section{Result ledger}
 
@@ -607,7 +687,16 @@ Selected by tested endpoints? & no: horizon and leading-symbol tests do not
 force \(\psi=0\) & not a general causal no-go\\
 Asymptotic metric radiation? & open & repeated-root Jordan, reconstruction,
 and finite flux missing\\
-Polar composition? & exact trace-coupled identity & causal chain still open\\
+Polar composition? & exact trace-coupled identity; realized image closes on
+the full analytic carrier space & Schwarzschild, polar $\ell=2$\\
+Polar reach and current? & two physical ingoing amplitudes modulo conformal
+gauge; Einstein self-block null; nonzero mixed fixtures & conformal
+direction an exact off-shell degeneracy\\
+Polar disposition? & Einstein characteristics, all-decaying Coulomb
+asymptotics; endpoint nonselection parity complete & real frequencies,
+$\ell=2$\\
+Thermal weighting? & monodromy factor $e^{-\omega/T_H}$ universal across
+branches and parities & \textsc{reduced-mode}; no quantum state\\
 Stable/ringing? & not established & complex frequencies open\\
 \bottomrule
 \end{tabularx}
@@ -618,10 +707,12 @@ Stable/ringing? & not established & complex frequencies open\\
 The paper does not establish:
 \begin{itemize}
 \item a complete exterior initial-boundary well-posedness theorem;
-\item general \(\ell,m\), the completed polar chain, or a non-Einstein
+\item general \(\ell,m\), the \(\omega=0\) sector, or a non-Einstein
       background Ricci-carrier composition;
 \item a canonical splitting of the Bach solution space, or complete metric
       reconstruction from every Ricci-carrier solution;
+\item a representative-invariant sign theory for the carrier self-pairing
+      (the null-quotient pairing);
 \item complex-frequency poles, mode stability, quasinormal modes, or
       ringdown waveforms;
 \item a second-order physical-process first law or nonlinear horizon
@@ -629,8 +720,9 @@ The paper does not establish:
 \item asymptotically flat conformal-gravity scattering with a complete
       boundary phase space, metric/tetrad falloffs, and finite null-infinity
       flux;
-\item Hawking states, particles, a quantum BRST quotient, positivity, or
-      unitarity.
+\item Hawking states, particles, grey-body factors, luminosity, a quantum
+      BRST quotient, positivity, or unitarity: the monodromy temperature is
+      a mode-level continuation factor, not a quantum state construction.
 \end{itemize}
 In particular, the paper withdraws the broad phrase ``no local causal
 truncation.''  Zero Cauchy data for the Ricci carrier is a local linear
@@ -666,6 +758,18 @@ Axial causal disposition &
 \cert{black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json}\\
 Polar trace-coupled split &
 \cert{black_hole_programme/certificates/BH2B_POLAR_SPLIT.json}\\
+Polar carrier horizon reach (conformal gauge quotient) &
+\cert{black_hole_programme/certificates/BH2B_POLAR_REACH.json}\\
+Polar Einstein two-dimensional reduction &
+\cert{black_hole_programme/certificates/BH2B_POLAR_EINSTEIN.json}\\
+Polar Einstein self-block null; conformal degeneracy &
+\cert{black_hole_programme/certificates/BH2B_POLAR_FLUX.json}\\
+Polar composition and mixed flux fixtures &
+\cert{black_hole_programme/certificates/BH2B_POLAR_CROSS_FLUX.json}\\
+Polar causal disposition &
+\cert{black_hole_programme/certificates/BH2B_POLAR_DISPOSITION.json}\\
+Horizon monodromy temperature &
+\cert{black_hole_programme/certificates/BH4_HAWKING_MONODROMY.json}\\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -688,10 +792,13 @@ is the repeated-root asymptotic problem:
  \longrightarrow \text{finite-flux boundary class}.
 \]
 In parallel, one rigorous interval or symbolic horizon-pairing fixture should
-replace the present controlled numerical nonvanishing.  The polar sequence
-then runs from the Zerilli control through horizon reach, Lee--Wald pairing,
-and the same outer audit.  Only after those steps should complex-frequency
-structure and quasinormal boundary conditions be activated.  A later
+replace the present controlled numerical nonvanishing, and the
+representative-invariant sign theory for the carrier self-pairing should be
+constructed.  The polar sequence has now run through composition, reach,
+pairing, and disposition; its outer Jordan/metric audit shares the axial
+gate above.  Only after those steps, and after coordinator review of the
+parity-complete mode-level closure, should complex-frequency structure and
+quasinormal boundary conditions be activated.  A later
 asymptotic phase-space construction must decide which generator is physical,
 which flux reaches null infinity, and whether the additional curvature image
 survives a globally differentiable charge algebra.

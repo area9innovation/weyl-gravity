@@ -18,7 +18,7 @@ def main() -> int:
     assert rows["advanced_massive_preparation_operator_word"] == "CERTIFIED"
     assert rows["complete_modewise_recoil_scalar_integrand"] == "CERTIFIED"
     assert value["readiness"]["symbolic_modewise_word_ready"] is True
-    assert value["readiness"]["internal_modewise_stream_ready"] is False
+    assert value["readiness"]["internal_modewise_stream_ready"] is True
     assert rows["finite_detector_coefficient_provider_two_j0_to_4"] == "CERTIFIED"
     assert rows["finite_polynomial_nested_time_convolution"] == "CERTIFIED"
     assert rows["finite_partitioned_detector_matched_absolute_g3_feedback"] == "CERTIFIED"
@@ -32,6 +32,7 @@ def main() -> int:
     assert rows["generic_direct_finite_shell_provider"] == "CERTIFIED"
     assert rows["complex_channel_to_real_shell_scalar_map"] == "CERTIFIED"
     assert rows["finite_two_j6_reality_folded_feedback_binding"] == "CERTIFIED"
+    assert rows["generic_reality_folded_successive_shell_adapter"] == "CERTIFIED"
     assert value["readiness"]["four_scalar_stream_active"] is False
     assert value["flags"]["FINITE_FIRST_OMITTED_SHELL_DIRECT_PROVIDER_TWO_J5_EXPORTED"] is True
     assert value["flags"]["TWO_J5_FEEDBACK_CHANNELS_EVALUATED"] is True
@@ -40,8 +41,9 @@ def main() -> int:
     assert value["flags"]["TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED"] is True
     assert value["flags"]["COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED"] is True
     assert value["flags"]["TWO_J6_FEEDBACK_CHANNELS_EVALUATED"] is True
+    assert value["flags"]["GENERIC_REALITY_FOLDED_SUCCESSIVE_SHELL_ADAPTER_EXPORTED"] is True
     assert all(row["detected"] for row in value["mutation_results"])
-    assert value["atlas_status"] == "OBSTRUCTED"
+    assert value["atlas_status"] == "CERTIFIED"
     print("Berger recoil scalar stream activation-gate verification: PASS")
     return 0
 

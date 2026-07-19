@@ -26,27 +26,31 @@ def test_tangent_cone_is_not_promoted():
     assert {second_order[name]["status"] for name in ("bounded_or_finite_quasiperiodic", "smooth_secular", "causal_retarded")} == {"OPEN"}
 
 
-def test_recoil_executable_readiness_is_fail_closed():
+def test_recoil_internal_readiness_is_certified_while_physical_activation_is_open():
     rows = {row["id"]: row for row in build()["entries"]}
     readiness = rows["observer.berger.detector_profile.recoil_stream_executable_readiness"]
     activation = rows["observer.berger.detector_profile.recoil_scalar_stream_activation"]
-    assert readiness["descriptions"]["causal"] == "OBSTRUCTED"
-    assert readiness["observer_data"]["detector_response"]["status"] == "OBSTRUCTED"
-    assert activation["observer_data"]["profile_green_boundary_dependencies"]["status"] == "OBSTRUCTED"
+    assert readiness["descriptions"]["causal"] == "CERTIFIED"
+    assert readiness["observer_data"]["detector_response"]["status"] == "CERTIFIED"
+    assert activation["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert activation["observer_data"]["profile_green_boundary_dependencies"]["status"] == "CERTIFIED"
     assert "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT" in {
         evidence["result_id"] for evidence in activation["evidence"]
     }
 
 
-def test_two_j6_reality_fold_is_certified_without_stream_promotion():
+def test_two_j6_reality_fold_and_generic_stream_adapter_are_separately_certified():
     rows = {row["id"]: row for row in build()["entries"]}
     shell = rows["observer.berger.detector_profile.recoil_two_j6_reality_folded_binding"]
     readiness = rows["observer.berger.detector_profile.recoil_stream_executable_readiness"]
+    adapter = rows["observer.berger.detector_profile.recoil_reality_folded_shell_stream_adapter"]
     assert shell["descriptions"]["causal"] == "CERTIFIED"
     assert shell["observer_data"]["detector_response"]["status"] == "CERTIFIED"
     assert shell["observer_data"]["response_rank"]["status"] == "OPEN"
     assert shell["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
-    assert readiness["observer_data"]["detector_response"]["status"] == "OBSTRUCTED"
+    assert adapter["observer_data"]["detector_response"]["status"] == "CERTIFIED"
+    assert adapter["observer_data"]["response_rank"]["status"] == "OPEN"
+    assert readiness["observer_data"]["detector_response"]["status"] == "CERTIFIED"
     assert "BERGER_RECOIL_TWO_J6_REALITY_FOLDED_BINDING" in {
         evidence["result_id"] for evidence in shell["evidence"]
     }
@@ -85,7 +89,7 @@ def test_finite_detector_provider_is_certified_without_all_shell_promotion():
     assert finite["descriptions"]["causal"] == "CERTIFIED"
     assert finite["observer_data"]["detector_response"]["status"] == "OPEN"
     assert finite["observer_data"]["profile_green_boundary_dependencies"]["status"] == "CERTIFIED"
-    assert readiness["observer_data"]["detector_response"]["status"] == "OBSTRUCTED"
+    assert readiness["observer_data"]["detector_response"]["status"] == "CERTIFIED"
     assert "BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER" in {
         evidence["result_id"] for evidence in finite["evidence"]
     }
@@ -98,7 +102,7 @@ def test_finite_nested_convolution_is_certified_without_physical_binding():
     assert finite["descriptions"]["causal"] == "CERTIFIED"
     assert finite["observer_data"]["detector_response"]["status"] == "OPEN"
     assert finite["observer_data"]["profile_green_boundary_dependencies"]["status"] == "CERTIFIED"
-    assert readiness["observer_data"]["detector_response"]["status"] == "OBSTRUCTED"
+    assert readiness["observer_data"]["detector_response"]["status"] == "CERTIFIED"
 
 
 def test_exact_mode_kernel_payload_is_certified_without_interval_promotion():

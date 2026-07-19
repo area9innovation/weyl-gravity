@@ -2,9 +2,12 @@
   "schema": "paper-draft-source-map-v1",
   "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
   "lifecycle_state": "DRAFT_ALLOWED",
-  "source_baseline": "3772269aa95e6c10ba59688a007396ca3df7b92a",
+  "source_baseline": "ddbcbe2887c4c7bba61efb66d33d4f04132ed39c",
   "manuscript": "paper/14-pure-weyl-black-hole-radiation.tex",
-  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
   "certified_scope": {
     "static_laurent_family": true,
     "normalized_static_first_law": true,
@@ -21,10 +24,21 @@
     "axial_local_causal_truncation_no_go": false,
     "asymptotic_jordan_and_metric_falloff": false,
     "polar_ricci_bach_composition": true,
-    "polar_causal_chain": false,
+    "polar_causal_chain": true,
     "complex_frequency_stability": false,
     "nonlinear_black_hole_theorem": false,
-    "quantum_claim": false
+    "quantum_claim": false,
+    "polar_einstein_two_dimensional_reduction": true,
+    "polar_carrier_horizon_reach_modulo_conformal_gauge": true,
+    "polar_einstein_self_pairing_exactly_null": true,
+    "polar_conformal_direction_offshell_degeneracy": true,
+    "polar_realized_image_closes_on_analytic_carrier_space": true,
+    "polar_mixed_pairing_controlled_fixtures": true,
+    "polar_tested_endpoint_nonselection": true,
+    "carrier_self_pairing_invariant_sign_theory": false,
+    "horizon_monodromy_temperature_reduced_mode": true,
+    "zerilli_schrodinger_master_scalar": false,
+    "hawking_state_or_flux_balance": false
   },
   "known_source_scope_corrections": [
     {
@@ -74,7 +88,31 @@
     {
       "path": "black_hole_programme/certificates/BH2B_POLAR_SPLIT.json",
       "git_blob": "5c4b95447a22210b37fc7832e858aced99c0043e"
+    },
+    {
+      "path": "black_hole_programme/certificates/BH2B_POLAR_REACH.json",
+      "git_blob": "584cbd99de539f9555b43179fcbe30efbddad493"
+    },
+    {
+      "path": "black_hole_programme/certificates/BH2B_POLAR_EINSTEIN.json",
+      "git_blob": "7670f96887de8c2c1f1a4a3941cc1337b9895405"
+    },
+    {
+      "path": "black_hole_programme/certificates/BH2B_POLAR_FLUX.json",
+      "git_blob": "7292bf5422598e6ddb1e8fe37d8f943e238239e4"
+    },
+    {
+      "path": "black_hole_programme/certificates/BH2B_POLAR_CROSS_FLUX.json",
+      "git_blob": "cbb8b2c341235755052e301a46b3024f9ff8e109"
+    },
+    {
+      "path": "black_hole_programme/certificates/BH2B_POLAR_DISPOSITION.json",
+      "git_blob": "47028b3693b4cfe691c379787a2efc5f4df4c06a"
+    },
+    {
+      "path": "black_hole_programme/certificates/BH4_HAWKING_MONODROMY.json",
+      "git_blob": "bbb39b30bedaeb9b696cfb39671d2a67064f0f99"
     }
   ],
-  "next_gate": "BH2A_ASYMPTOTIC_JORDAN_METRIC_RECONSTRUCTION_AND_RIGOROUS_FLUX_NONVANISHING"
+  "next_gate": "BH2A_BH2B_ASYMPTOTIC_JORDAN_METRIC_RECONSTRUCTION_AND_INVARIANT_CARRIER_SIGN_THEORY"
 }

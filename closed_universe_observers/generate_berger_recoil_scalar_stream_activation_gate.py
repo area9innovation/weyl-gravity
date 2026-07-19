@@ -38,6 +38,7 @@ DEPENDENCIES = {
     "direct_shell_and_tail_stop_gate": PACKAGE / "certificates/BERGER_RECOIL_DIRECT_SHELL_AND_TAIL_STOP_GATE.json",
     "real_shell_extraction": PACKAGE / "certificates/BERGER_RECOIL_REAL_SHELL_EXTRACTION.json",
     "two_j6_reality_folded_binding": PACKAGE / "certificates/BERGER_RECOIL_TWO_J6_REALITY_FOLDED_BINDING.json",
+    "reality_folded_stream_adapter": PACKAGE / "certificates/BERGER_RECOIL_REALITY_FOLDED_SHELL_STREAM_ADAPTER.json",
 }
 SOURCE_FILES = [
     Path(__file__),
@@ -183,6 +184,11 @@ def readiness_audit(values: dict[str, dict[str, Any]], *, drop_per_shell_word: b
             "status": "CERTIFIED" if values["two_j6_reality_folded_binding"]["flags"]["ALL_56_TWO_J6_CHANNEL_COLUMN_BLOCKS_CERTIFIED"] else "OBSTRUCTED",
             "evidence_flag": "ALL_56_TWO_J6_CHANNEL_COLUMN_BLOCKS_CERTIFIED",
         },
+        {
+            "id": "generic_reality_folded_successive_shell_adapter",
+            "status": "CERTIFIED" if values["reality_folded_stream_adapter"]["flags"]["CONTIGUOUS_SUCCESSIVE_SHELL_STREAM_ADAPTER_EXPORTED"] else "OBSTRUCTED",
+            "evidence_flag": "CONTIGUOUS_SUCCESSIVE_SHELL_STREAM_ADAPTER_EXPORTED",
+        },
     ]
     external = [
         {"id": "numerical_positive_masses", "status": "OPEN", "activation": "DEFERRED", "required_domain": "m_0>0 and m_1>0"},
@@ -224,12 +230,13 @@ def build() -> dict[str, Any]:
         "direct_shell_and_tail_stop_gate": "TAIL_AWARE_FOUR_STREAM_STOP_CALLABLE_EXPORTED",
         "real_shell_extraction": "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED",
         "two_j6_reality_folded_binding": "ALL_56_TWO_J6_CHANNEL_COLUMN_BLOCKS_CERTIFIED",
+        "reality_folded_stream_adapter": "CONTIGUOUS_SUCCESSIVE_SHELL_STREAM_ADAPTER_EXPORTED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
             raise AssertionError(f"dependency dropped: {name}.{flag}")
     readiness = readiness_audit(values)
-    if not readiness["symbolic_modewise_word_ready"] or readiness["internal_modewise_stream_ready"] or readiness["four_scalar_stream_active"]:
+    if not readiness["symbolic_modewise_word_ready"] or not readiness["internal_modewise_stream_ready"] or readiness["four_scalar_stream_active"]:
         raise AssertionError("internal recoil readiness or external gate drifted")
     mutation = readiness_audit(values, drop_per_shell_word=True)
     word_rows = {
@@ -246,8 +253,8 @@ def build() -> dict[str, Any]:
         "the four symbolic detector tail radii, the fixed coupling-stripped "
         "preparations, the Lorentzian spacetime form-block signs, and the "
         "complete symbolic per-shell preparation/recoil word are all "
-        "certified. The symbolic word is ready, but the executable stream is "
-        "still obstructed: exact shell aggregation is callable and the validated "
+        "certified. The symbolic word and internal executable stream are now ready: "
+        "exact shell aggregation is callable and the validated "
         "advanced-Maxwell detector coefficients are callable for 2j=0,...,4, but the "
         "latter are not a complete all-shell detector provider or a massive/recoil "
         "evaluation. A finite polynomial causal-convolution engine and exact finite "
@@ -272,10 +279,11 @@ def build() -> dict[str, Any]:
         "feedback shell is now complete: 32 representative blocks are evaluated "
         "directly and 24 partner blocks are exact reality images, yielding all 56 "
         "blocks and eight real channel sums. The SU(2) conjugate-column theorem "
-        "certifies the complex-to-real shell map. A generic successive-shell "
-        "evaluation adapter is still absent. Numerical masses, couplings and a "
-        "stopping goal are therefore "
-        "deferred; supplying them now would not produce an interval. The exact "
+        "certifies the complex-to-real shell map. The generic successive-shell "
+        "adapter builds and binds each shell, evaluates only independent columns, "
+        "derives reality partners, aggregates all four entries and invokes the stop "
+        "gate after every shell. Numerical masses, couplings and a stopping goal remain "
+        "deferred pending an explicit input-contract activation. The exact "
         "generic coefficient functional is not itself a numerical Green-image "
         "evaluation. Numerical values must not be invented. This gate does not evaluate a recoil scalar, "
         "restrict to the tangent cone, activate Bridge 3, promote finite-r/"
@@ -285,8 +293,8 @@ def build() -> dict[str, Any]:
         "schema": "closed-universe-berger-recoil-scalar-stream-activation-gate-v1",
         "result_id": "BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE",
         "setting_id": values["dual_norms"]["setting_id"],
-        "claim_status": "SYMBOLIC_WORD_READY_EXECUTABLE_RECOIL_STREAM_OBSTRUCTED",
-        "atlas_status": "OBSTRUCTED",
+        "claim_status": "INTERNAL_EXECUTABLE_RECOIL_STREAM_READY_EXTERNAL_NUMERICAL_SPECIALIZATION_DEFERRED",
+        "atlas_status": "CERTIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
             name: {
@@ -300,8 +308,8 @@ def build() -> dict[str, Any]:
         "sequencing_decision": {
             "completed_internal_gate": "complete symbolic preparation/recoil scalar operator word with exact Peter-Weyl reconstruction",
             "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
-            "current_active_gate": "export the generic reality-folded direct-shell evaluation adapter used inside the stop loop",
-            "external_specialization_gate": "DEFERRED_UNTIL_EXECUTABLE_BACKEND",
+            "current_active_gate": "audit and activate the deferred exact numerical input contract without inventing physical values",
+            "external_specialization_gate": "DEFERRED_UNTIL_EXACT_VALUES_ARE_EXPLICITLY_DECLARED",
             "dense_profile_materialization": "NOT_SELECTED",
             "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP",
         },
@@ -323,9 +331,9 @@ def build() -> dict[str, Any]:
         "flags": {
             "RECOIL_SCALAR_STREAM_ACTIVATION_AUDIT_EXPORTED": True,
             "ANALYTIC_SYMBOLIC_TAIL_ENVELOPE_COMPLETE": True,
-            "INTERNAL_MODEWISE_RECOIL_STREAM_READY": False,
+            "INTERNAL_MODEWISE_RECOIL_STREAM_READY": True,
             "SYMBOLIC_MODEWISE_RECOIL_WORD_READY": True,
-            "EXECUTABLE_MODEWISE_RECOIL_STREAM_READY": False,
+            "EXECUTABLE_MODEWISE_RECOIL_STREAM_READY": True,
             "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": True,
             "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED": True,
             "FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED": True,
@@ -342,13 +350,14 @@ def build() -> dict[str, Any]:
             "TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED": True,
             "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED": True,
             "TWO_J6_FEEDBACK_CHANNELS_EVALUATED": True,
+            "GENERIC_REALITY_FOLDED_SUCCESSIVE_SHELL_ADAPTER_EXPORTED": True,
             "NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED": False,
             "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": False,
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "EXPORT_GENERIC_REALITY_FOLDED_DIRECT_SHELL_STREAM_ADAPTER_BEFORE_NUMERICAL_SPECIALIZATION",
+        "next_gate": "AUDIT_AND_ACTIVATE_THE_DEFERRED_EXACT_NUMERICAL_INPUT_CONTRACT_WITHOUT_INVENTING_PHYSICAL_VALUES",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

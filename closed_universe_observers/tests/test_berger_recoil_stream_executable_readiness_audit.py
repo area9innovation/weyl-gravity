@@ -1,7 +1,7 @@
 from closed_universe_observers.generate_berger_recoil_stream_executable_readiness_audit import build
 
 
-def test_symbolic_word_is_not_promoted_to_an_interval_backend():
+def test_generic_adapter_promotes_internal_interval_backend_only():
     value = build()
     rows = {row["id"]: row["status"] for row in value["readiness"]["rows"]}
     assert rows["complete_symbolic_operator_word"] == "CERTIFIED"
@@ -24,22 +24,22 @@ def test_symbolic_word_is_not_promoted_to_an_interval_backend():
     assert rows["generic_direct_finite_shell_provider"] == "CERTIFIED"
     assert rows["complex_channel_to_real_shell_scalar_map"] == "CERTIFIED"
     assert rows["finite_two_j6_reality_folded_feedback_binding"] == "CERTIFIED"
-    assert rows["nested_time_convolution_backend"] == "OBSTRUCTED"
+    assert rows["generic_reality_folded_successive_shell_adapter"] == "CERTIFIED"
+    assert rows["nested_time_convolution_backend"] == "CERTIFIED"
     assert rows["shell_interval_evaluator"] == "CERTIFIED"
     assert rows["tail_aware_aggregate_stop_loop"] == "CERTIFIED"
-    assert value["atlas_status"] == "OBSTRUCTED"
+    assert value["atlas_status"] == "CERTIFIED"
 
 
-def test_external_specialization_is_deferred_until_backend_exists():
+def test_external_specialization_remains_deferred_after_backend_lands():
     value = build()
-    assert value["readiness"]["internal_executable_stream_ready"] is False
+    assert value["readiness"]["internal_executable_stream_ready"] is True
     assert value["readiness"]["external_specialization_deferred"] is True
     assert value["flags"]["NUMERICAL_SPECIALIZATION_INPUT_SCHEMA_EXPORTED"] is True
     assert value["flags"]["NUMERICAL_SPECIALIZATION_VALUES_DECLARED"] is False
 
 
-def test_generic_direct_reality_and_tail_stop_leave_complete_nested_stream_fail_closed():
+def test_generic_direct_reality_and_tail_stop_close_internal_stream():
     rows = build()["readiness"]["rows"][1:]
-    assert len(rows) == 22
-    assert [row["status"] for row in rows].count("CERTIFIED") == 21
-    assert [row["status"] for row in rows].count("OBSTRUCTED") == 1
+    assert len(rows) == 23
+    assert all(row["status"] == "CERTIFIED" for row in rows)

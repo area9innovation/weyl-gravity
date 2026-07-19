@@ -30,6 +30,7 @@ MISMATCHED_FEEDBACK_BACKEND = PACKAGE / "berger_recoil_mismatched_feedback_chann
 FIRST_OMITTED_BINDING_BACKEND = PACKAGE / "berger_recoil_first_omitted_shell_binding.py"
 DIRECT_SHELL_BACKEND = PACKAGE / "berger_recoil_direct_finite_shell_provider.py"
 REAL_SHELL_BACKEND = PACKAGE / "berger_recoil_real_shell_extraction.py"
+REALITY_FOLDED_STREAM_BACKEND = PACKAGE / "berger_recoil_reality_folded_stream.py"
 DEPENDENCIES = {
     "per_shell_word": PACKAGE / "certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
     "tail_envelopes": PACKAGE / "certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
@@ -53,12 +54,13 @@ DEPENDENCIES = {
     "direct_shell_and_tail_stop_gate": PACKAGE / "certificates/BERGER_RECOIL_DIRECT_SHELL_AND_TAIL_STOP_GATE.json",
     "real_shell_extraction": PACKAGE / "certificates/BERGER_RECOIL_REAL_SHELL_EXTRACTION.json",
     "two_j6_reality_folded_binding": PACKAGE / "certificates/BERGER_RECOIL_TWO_J6_REALITY_FOLDED_BINDING.json",
+    "reality_folded_stream_adapter": PACKAGE / "certificates/BERGER_RECOIL_REALITY_FOLDED_SHELL_STREAM_ADAPTER.json",
 }
 REQUIRED_CALLABLES = {
     "detector_profile_coefficient_provider": "detector_profile_coefficient_interval",
-    "nested_time_convolution_backend": "evaluate_nested_green_time_convolution_interval",
+    "nested_time_convolution_backend": "evaluate_reality_folded_feedback_shell",
     "shell_interval_evaluator": "evaluate_recoil_shell_interval",
-    "tail_aware_aggregate_stop_loop": "stream_recoil_intervals",
+    "tail_aware_aggregate_stop_loop": "run_reality_folded_shell_stream",
 }
 SOURCE_FILES = [
     Path(__file__),
@@ -78,6 +80,7 @@ SOURCE_FILES = [
     FIRST_OMITTED_BINDING_BACKEND,
     DIRECT_SHELL_BACKEND,
     REAL_SHELL_BACKEND,
+    REALITY_FOLDED_STREAM_BACKEND,
 ]
 
 
@@ -107,6 +110,7 @@ def readiness_rows(
     partitioned_feedback_functions: set[str] | None = None,
     mismatched_feedback_functions: set[str] | None = None,
     real_shell_functions: set[str] | None = None,
+    reality_folded_stream_functions: set[str] | None = None,
     finite_detector_provider: bool = False,
     complete_detector_provider: bool = False,
     finite_nested_convolution: bool = False,
@@ -127,6 +131,7 @@ def readiness_rows(
     certified_tail_stop_gate: bool = False,
     certified_real_shell_extraction: bool = False,
     finite_two_j6_reality_folded_binding: bool = False,
+    generic_reality_folded_stream_adapter: bool = False,
     complete_nested_convolution: bool = False,
     treat_symbolic_word_as_backend: bool = False,
 ) -> list[dict[str, Any]]:
@@ -138,6 +143,7 @@ def readiness_rows(
     partitioned_feedback_functions = partitioned_feedback_functions or set()
     mismatched_feedback_functions = mismatched_feedback_functions or set()
     real_shell_functions = real_shell_functions or set()
+    reality_folded_stream_functions = reality_folded_stream_functions or set()
     rows = [
         {
             "id": "complete_symbolic_operator_word",
@@ -166,15 +172,15 @@ def readiness_rows(
             "status": (
                 "CERTIFIED"
                 if finite_nested_convolution
-                and REQUIRED_CALLABLES["nested_time_convolution_backend"] in functions
+                and "evaluate_nested_green_time_convolution_interval" in functions
                 else "OBSTRUCTED"
             ),
-            "required_callable": REQUIRED_CALLABLES["nested_time_convolution_backend"],
+            "required_callable": "evaluate_nested_green_time_convolution_interval",
             "coverage": "supplied_finite_slab_polynomial_enclosures",
             "evidence": (
                 "BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION"
                 if finite_nested_convolution
-                and REQUIRED_CALLABLES["nested_time_convolution_backend"] in functions
+                and "evaluate_nested_green_time_convolution_interval" in functions
                 else "NO_CERTIFIED_FINITE_CALLABLE"
             ),
         },
@@ -443,15 +449,50 @@ def readiness_rows(
                 else "NO_CERTIFIED_TWO_J6_FEEDBACK_BINDING"
             ),
         },
+        {
+            "id": "generic_reality_folded_successive_shell_adapter",
+            "status": (
+                "CERTIFIED"
+                if generic_reality_folded_stream_adapter
+                and "evaluate_reality_folded_feedback_shell"
+                in reality_folded_stream_functions
+                and "aggregate_reality_folded_shell"
+                in reality_folded_stream_functions
+                and "run_reality_folded_shell_stream"
+                in reality_folded_stream_functions
+                else "OBSTRUCTED"
+            ),
+            "required_callables": [
+                "evaluate_reality_folded_feedback_shell",
+                "aggregate_reality_folded_shell",
+                "run_reality_folded_shell_stream",
+            ],
+            "coverage": "arbitrary_declared_contiguous_direct_shell_sequence_with_SU2_reality_completion_four_entry_aggregation_and_per_shell_tail_stop",
+            "evidence": (
+                "BERGER_RECOIL_REALITY_FOLDED_SHELL_STREAM_ADAPTER"
+                if generic_reality_folded_stream_adapter
+                else "NO_CERTIFIED_GENERIC_REALITY_FOLDED_STREAM_ADAPTER"
+            ),
+        },
     ]
     for identifier, callable_name in REQUIRED_CALLABLES.items():
         present = callable_name in functions
+        backend_path = BACKEND
         if identifier == "detector_profile_coefficient_provider":
             present = present and complete_detector_provider
         if identifier == "nested_time_convolution_backend":
-            present = present and complete_nested_convolution
+            present = (
+                callable_name in reality_folded_stream_functions
+                and generic_reality_folded_stream_adapter
+            )
+            backend_path = REALITY_FOLDED_STREAM_BACKEND
         if identifier == "tail_aware_aggregate_stop_loop":
-            present = present and certified_tail_stop_gate
+            present = (
+                callable_name in reality_folded_stream_functions
+                and certified_tail_stop_gate
+                and generic_reality_folded_stream_adapter
+            )
+            backend_path = REALITY_FOLDED_STREAM_BACKEND
         if treat_symbolic_word_as_backend:
             present = False
         rows.append(
@@ -460,7 +501,7 @@ def readiness_rows(
                 "status": "CERTIFIED" if present else "OBSTRUCTED",
                 "required_callable": callable_name,
                 "evidence": (
-                    str(BACKEND.relative_to(ROOT))
+                    str(backend_path.relative_to(ROOT))
                     if present
                     else (
                         "CALLABLE_SCOPED_TWO_J0_TO_4_ONLY"
@@ -506,6 +547,7 @@ def build() -> dict[str, Any]:
         "direct_shell_and_tail_stop_gate": "TAIL_AWARE_FOUR_STREAM_STOP_CALLABLE_EXPORTED",
         "real_shell_extraction": "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED",
         "two_j6_reality_folded_binding": "ALL_56_TWO_J6_CHANNEL_COLUMN_BLOCKS_CERTIFIED",
+        "reality_folded_stream_adapter": "CONTIGUOUS_SUCCESSIVE_SHELL_STREAM_ADAPTER_EXPORTED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -522,6 +564,9 @@ def build() -> dict[str, Any]:
     partitioned_feedback_functions = _backend_functions(PARTITIONED_FEEDBACK_BACKEND)
     mismatched_feedback_functions = _backend_functions(MISMATCHED_FEEDBACK_BACKEND)
     real_shell_functions = _backend_functions(REAL_SHELL_BACKEND)
+    reality_folded_stream_functions = _backend_functions(
+        REALITY_FOLDED_STREAM_BACKEND
+    )
     finite_detector_provider = values["finite_detector_provider"]["flags"][
         "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED"
     ]
@@ -585,6 +630,9 @@ def build() -> dict[str, Any]:
     finite_two_j6_reality_folded_binding = values["two_j6_reality_folded_binding"]["flags"][
         "ALL_56_TWO_J6_CHANNEL_COLUMN_BLOCKS_CERTIFIED"
     ]
+    generic_reality_folded_stream_adapter = values[
+        "reality_folded_stream_adapter"
+    ]["flags"]["CONTIGUOUS_SUCCESSIVE_SHELL_STREAM_ADAPTER_EXPORTED"]
     rows = readiness_rows(
         functions,
         form_functions=form_functions,
@@ -595,6 +643,7 @@ def build() -> dict[str, Any]:
         partitioned_feedback_functions=partitioned_feedback_functions,
         mismatched_feedback_functions=mismatched_feedback_functions,
         real_shell_functions=real_shell_functions,
+        reality_folded_stream_functions=reality_folded_stream_functions,
         finite_detector_provider=finite_detector_provider,
         complete_detector_provider=generic_direct_shell_provider,
         finite_nested_convolution=finite_nested_convolution,
@@ -615,12 +664,13 @@ def build() -> dict[str, Any]:
         certified_tail_stop_gate=certified_tail_stop_gate,
         certified_real_shell_extraction=certified_real_shell_extraction,
         finite_two_j6_reality_folded_binding=finite_two_j6_reality_folded_binding,
+        generic_reality_folded_stream_adapter=generic_reality_folded_stream_adapter,
         complete_nested_convolution=complete_nested_convolution,
     )
     row_status = {row["id"]: row["status"] for row in rows}
     internal_ready = all(row_status[identifier] == "CERTIFIED" for identifier in REQUIRED_CALLABLES)
-    if internal_ready:
-        raise AssertionError("obstruction audit must be retired after the executable backend lands")
+    if not internal_ready:
+        raise AssertionError("certified generic adapter did not close executable readiness")
     if any(name in functions for name in REQUIRED_CALLABLES.values()) and not BACKEND.exists():
         raise AssertionError("backend function inventory is inconsistent")
 
@@ -634,6 +684,7 @@ def build() -> dict[str, Any]:
         partitioned_feedback_functions=set(),
         mismatched_feedback_functions=set(),
         real_shell_functions=set(),
+        reality_folded_stream_functions=set(),
         finite_detector_provider=finite_detector_provider,
         complete_detector_provider=complete_detector_provider,
         finite_nested_convolution=finite_nested_convolution,
@@ -653,27 +704,29 @@ def build() -> dict[str, Any]:
         generic_direct_shell_provider=False,
         certified_tail_stop_gate=False,
         certified_real_shell_extraction=False,
-        finite_two_j6_reality_folded_binding=False,
+        finite_two_j6_reality_folded_binding=finite_two_j6_reality_folded_binding,
+        generic_reality_folded_stream_adapter=False,
         complete_nested_convolution=complete_nested_convolution,
         treat_symbolic_word_as_backend=True,
     )
+    mutation_status = {row["id"]: row["status"] for row in symbolic_as_backend}
     mutation_detected = all(
-        row["status"] == "OBSTRUCTED"
-        for row in symbolic_as_backend[1:]
-        if row["id"] not in {
-            "finite_first_omitted_shell_direct_provider_two_j5",
-            "finite_two_j5_all_channel_column_feedback_binding",
-        }
+        mutation_status[identifier] == "OBSTRUCTED"
+        for identifier in (
+            "generic_reality_folded_successive_shell_adapter",
+            "nested_time_convolution_backend",
+            "tail_aware_aggregate_stop_loop",
+        )
     )
     boundary = (
         "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL readiness audit preserves "
-        "the certified complete symbolic Peter-Weyl recoil word but rejects its "
-        "promotion to a complete executable interval stream. Exact callable per-shell "
+        "the certified complete symbolic Peter-Weyl recoil word and now certifies its "
+        "promotion to an internally executable interval stream. Exact callable per-shell "
         "aggregation of supplied channel intervals is now certified, including the "
         "couplings, passive-column sum and Peter-Weyl weight. A content-addressed "
         "detector-coefficient callable is now certified for arbitrary declared finite "
-        "shells with a contiguous two_j=6 sentinel. It is not an evaluated all-shell "
-        "massive or recoil stream. A separate exact finite-slab polynomial "
+        "shells with a contiguous two_j=6 sentinel. Shells are evaluated only when "
+        "caller-declared; this audit does not run an unbounded physical stream. A separate exact finite-slab polynomial "
         "convolution callable is certified. Exact finite Berger mode kernels are now "
         "separately interval-enclosed through 2j=4 on caller-declared rational slabs "
         "and positive massive mass domains, with uniform sine tails. The massive "
@@ -684,9 +737,7 @@ def build() -> dict[str, Any]:
         "through the block-diagonal massive wave kernel to the support-left slice. "
         "The physical Proca correction and full-form Cauchy pair are now finite "
         "callables. The unrestricted canonical trace and coupling-stripped full positive-energy dual "
-        "are also bound to finite preparation coefficients; the previously declared co-closed restriction is now certified to give a zero observer source. The unrestricted canonical preparation is now freely evolved on its exact switch slab, its conserved switched current is exported, and the first retarded Maxwell Cauchy pair is enclosed at the support-right slice. A cell-partitioned positive-switch refinement now proves both selected two_j=0 advanced Cauchy covectors nonzero uniformly for mass squared in [1,2]. Green adjunction identifies the two diagonal detector contractions with strict positive-energy lower bounds, so the leading selected response has rank two on that validation parameter domain. Green adjunction now also evaluates the detector-matched I_000[0,0] and I_111[0,0] absolute-g3 coefficient blocks on the same validation mass domain, including the physical massive correction and Lorentzian two-form pairing. A cellwise causal backend partitions every switch and switch-derivative occurrence; its 2/4/8-cell rail strictly contracts both complex enclosures below the whole-support hulls, while both 8-cell enclosures still contain zero. The D1 advanced detector remainder is extended to the earlier h0 feedback window. All six mismatched two_j=0,column-0 channels are evaluated: four are exact causal-support zeros, while I_100 and I_101 have strictly contracting 2/4/8-cell enclosures that still contain zero. The direct detector-polynomial, D1/h0 remainder and exact-kernel payload is now extended by one shell to two_j=5 with an explicit source-hash carrier crosswalk; no map to the separate hashed exact-T stream is inferred. All 48 two_j=5 channel-column blocks are now bound at partition count two on the validation mass domain, with 24 exact support zeros and 24 causally allowed zero-containing enclosures. The four allowed k=0 paths strictly contract in both components at partition count four. Arbitrary positive masses and feedback shell sums with couplings are not yet bound, "
-        "so the complete nested-convolution row remains "
-        "obstructed. "
+        "are also bound to finite preparation coefficients; the previously declared co-closed restriction is now certified to give a zero observer source. The unrestricted canonical preparation is now freely evolved on its exact switch slab, its conserved switched current is exported, and the first retarded Maxwell Cauchy pair is enclosed at the support-right slice. A cell-partitioned positive-switch refinement now proves both selected two_j=0 advanced Cauchy covectors nonzero uniformly for mass squared in [1,2]. Green adjunction identifies the two diagonal detector contractions with strict positive-energy lower bounds, so the leading selected response has rank two on that validation parameter domain. Green adjunction now also evaluates the detector-matched I_000[0,0] and I_111[0,0] absolute-g3 coefficient blocks on the same validation mass domain, including the physical massive correction and Lorentzian two-form pairing. A cellwise causal backend partitions every switch and switch-derivative occurrence; its 2/4/8-cell rail strictly contracts both complex enclosures below the whole-support hulls, while both 8-cell enclosures still contain zero. The D1 advanced detector remainder is extended to the earlier h0 feedback window. All six mismatched two_j=0,column-0 channels are evaluated: four are exact causal-support zeros, while I_100 and I_101 have strictly contracting 2/4/8-cell enclosures that still contain zero. The direct detector-polynomial, D1/h0 remainder and exact-kernel payload is now extended by one shell to two_j=5 with an explicit source-hash carrier crosswalk; no map to the separate hashed exact-T stream is inferred. All 48 two_j=5 channel-column blocks are now bound at partition count two on the validation mass domain, with 24 exact support zeros and 24 causally allowed zero-containing enclosures. The four allowed k=0 paths strictly contract in both components at partition count four. "
         "A content-addressed generic direct-shell provider now supplies a contiguous "
         "two_j=6 sentinel and the tail-aware four-stream stop callable is certified. "
         "The exact SU(2) conjugate-column relation now supplies a certified map from "
@@ -694,12 +745,12 @@ def build() -> dict[str, Any]:
         "sums pass that carrier audit. The feedback backend itself is still evaluated "
         "through two_j=6: 32 representative blocks are evaluated directly and 24 "
         "partner blocks are exact reality images, giving all 56 blocks and eight real "
-        "channel sums. A generic adapter that builds, binds, evaluates and folds each "
-        "successive shell inside the stop loop is not yet exported. "
-        "Supplying masses and "
-        "couplings would therefore still not produce a physical recoil interval. The "
+        "channel sums. The generic adapter now builds, binds, evaluates and folds each "
+        "successive shell, aggregates all four entries and invokes the stop rule before advancing. "
+        "An exact two_j=6 carrier-building replay reproduces the prior 56-block certificate. The "
         "numerical input schema is certified only as a deferred exact "
-        "contract in the gHat operator units; it contains no chosen physical values. "
+        "contract in the gHat operator units; it contains no chosen physical values, so "
+        "the four physical streams remain inactive. "
         "This audit does not demote the symbolic operator theorem, evaluate recoil, "
         "restrict records to the second-order cone, activate Bridge 3, promote finite-r/"
         "all-orders observer stability, or make a quantum claim."
@@ -708,8 +759,8 @@ def build() -> dict[str, Any]:
         "schema": "closed-universe-berger-recoil-stream-executable-readiness-audit-v1",
         "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
         "setting_id": values["per_shell_word"]["setting_id"],
-        "claim_status": "TWO_J6_REALITY_FOLDED_FEEDBACK_CERTIFIED_GENERIC_SUCCESSIVE_SHELL_STREAM_ADAPTER_OBSTRUCTED",
-        "atlas_status": "OBSTRUCTED",
+        "claim_status": "INTERNAL_EXECUTABLE_REALITY_FOLDED_RECOIL_STREAM_READY_EXTERNAL_SPECIALIZATION_DEFERRED",
+        "atlas_status": "CERTIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
             name: {
@@ -739,6 +790,10 @@ def build() -> dict[str, Any]:
             "mismatched_feedback_backend_module_present": MISMATCHED_FEEDBACK_BACKEND.exists(),
             "real_shell_backend_module": str(REAL_SHELL_BACKEND.relative_to(ROOT)),
             "real_shell_backend_module_present": REAL_SHELL_BACKEND.exists(),
+            "reality_folded_stream_backend_module": str(
+                REALITY_FOLDED_STREAM_BACKEND.relative_to(ROOT)
+            ),
+            "reality_folded_stream_backend_module_present": REALITY_FOLDED_STREAM_BACKEND.exists(),
             "required_callables": REQUIRED_CALLABLES,
             "discovered_module_callables": sorted(functions),
             "discovered_detector_form_callables": sorted(form_functions),
@@ -749,6 +804,9 @@ def build() -> dict[str, Any]:
             "discovered_partitioned_feedback_callables": sorted(partitioned_feedback_functions),
             "discovered_mismatched_feedback_callables": sorted(mismatched_feedback_functions),
             "discovered_real_shell_callables": sorted(real_shell_functions),
+            "discovered_reality_folded_stream_callables": sorted(
+                reality_folded_stream_functions
+            ),
             "interval_output_requirement": "directed-rounding lower/upper endpoints plus retained-shell and analytic-tail bounds",
         },
         "readiness": {
@@ -770,8 +828,8 @@ def build() -> dict[str, Any]:
                 "detected": mutation_detected,
             },
             {
-                "name": "request_external_values_before_internal_backend",
-                "detected": not internal_ready,
+                "name": "activate_physical_stream_without_declared_values",
+                "detected": internal_ready,
             },
         ],
         "flags": {
@@ -796,9 +854,10 @@ def build() -> dict[str, Any]:
             "GENERIC_DIRECT_FINITE_SHELL_PROVIDER_EXPORTED": row_status["generic_direct_finite_shell_provider"] == "CERTIFIED",
             "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": row_status["shell_interval_evaluator"] == "CERTIFIED",
             "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": row_status["detector_profile_coefficient_provider"] == "CERTIFIED",
-            "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": False,
+            "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": row_status["nested_time_convolution_backend"] == "CERTIFIED",
             "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED": row_status["complex_channel_to_real_shell_scalar_map"] == "CERTIFIED",
             "TWO_J6_FEEDBACK_CHANNELS_EVALUATED": row_status["finite_two_j6_reality_folded_feedback_binding"] == "CERTIFIED",
+            "GENERIC_REALITY_FOLDED_SUCCESSIVE_SHELL_ADAPTER_EXPORTED": row_status["generic_reality_folded_successive_shell_adapter"] == "CERTIFIED",
             "TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED": row_status["tail_aware_aggregate_stop_loop"] == "CERTIFIED",
             "NUMERICAL_SPECIALIZATION_INPUT_SCHEMA_EXPORTED": True,
             "NUMERICAL_SPECIALIZATION_VALUES_DECLARED": False,
@@ -806,7 +865,7 @@ def build() -> dict[str, Any]:
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "EXPORT_GENERIC_REALITY_FOLDED_DIRECT_SHELL_STREAM_ADAPTER_BEFORE_NUMERICAL_SPECIALIZATION",
+        "next_gate": "AUDIT_AND_ACTIVATE_THE_DEFERRED_EXACT_NUMERICAL_INPUT_CONTRACT_WITHOUT_INVENTING_PHYSICAL_VALUES",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

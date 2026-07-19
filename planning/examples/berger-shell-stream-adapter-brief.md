@@ -1,4 +1,4 @@
-WORK PACKAGE sf:program/work/berger-shell-stream-adapter  (state: ACTIVE, owner: observer)
+WORK PACKAGE sf:program/work/berger-shell-stream-adapter  (state: DONE, owner: observer)
 
 ## Objective
 Positive Berger clock apparatus (closed_universe_observers/): export the generic reality-folded direct-shell evaluation adapter used inside the fail-closed four-stream stop loop. The completed predecessor sf:program/work/berger certifies the complete two_j=6 validation shell from 32 direct and 24 exact reality-derived blocks; this successor must turn that one-shell implementation into a reusable contiguous-shell pipeline without selecting physical parameters.

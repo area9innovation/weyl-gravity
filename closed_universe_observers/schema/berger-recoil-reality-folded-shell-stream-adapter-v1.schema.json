@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "closed-universe-berger-recoil-reality-folded-shell-stream-adapter-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "mode_scope",
+    "adapter_contract",
+    "two_j6_validation_replay",
+    "mutation_results",
+    "flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-recoil-reality-folded-shell-stream-adapter-v1"
+    },
+    "result_id": {
+      "const": "BERGER_RECOIL_REALITY_FOLDED_SHELL_STREAM_ADAPTER"
+    },
+    "atlas_status": {
+      "const": "CERTIFIED"
+    },
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LORENTZIAN-CAUSAL"}
+    },
+    "mode_scope": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background",
+        "boundaries",
+        "charge_sector",
+        "carrier",
+        "degree",
+        "parity",
+        "ell",
+        "m",
+        "k",
+        "omega"
+      ]
+    },
+    "adapter_contract": {
+      "type": "object",
+      "required": [
+        "module",
+        "shell_callable",
+        "aggregation_callable",
+        "stream_callable",
+        "shell_sequence",
+        "stop_frequency",
+        "tail_requirement",
+        "hashed_exact_T_stream_identification_status"
+      ],
+      "properties": {
+        "hashed_exact_T_stream_identification_status": {
+          "const": "NO_CERTIFIED_MAP"
+        }
+      }
+    },
+    "two_j6_validation_replay": {
+      "type": "object",
+      "required": [
+        "two_j",
+        "representative_columns_called",
+        "direct_channel_column_count",
+        "exact_reality_derived_count",
+        "total_channel_column_count",
+        "direct_shell_payload_sha256",
+        "prior_completed_columns_sha256",
+        "replayed_completed_columns_sha256",
+        "completed_columns_exact_match",
+        "real_channel_sums_sha256",
+        "validation_parameters",
+        "aggregate_rows",
+        "tail_radii_after_two_j6",
+        "stop_evaluation",
+        "final_partial_intervals"
+      ],
+      "properties": {
+        "two_j": {"const": 6},
+        "representative_columns_called": {
+          "const": [0, 1, 2, 3]
+        },
+        "direct_channel_column_count": {"const": 32},
+        "exact_reality_derived_count": {"const": 24},
+        "total_channel_column_count": {"const": 56},
+        "completed_columns_exact_match": {"const": true},
+        "aggregate_rows": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "tail_radii_after_two_j6": {
+          "type": "object",
+          "required": ["00", "01", "10", "11"],
+          "properties": {
+            "00": {"type": "string"},
+            "01": {"type": "string"},
+            "10": {"type": "string"},
+            "11": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "stop_evaluation": {
+          "type": "object",
+          "required": ["goal_type", "stop", "lifecycle_status", "tail_radii", "witness"],
+          "properties": {
+            "goal_type": {"const": "rank_two"},
+            "stop": {"const": false},
+            "lifecycle_status": {"const": "OPEN"}
+          }
+        }
+      }
+    },
+    "mutation_results": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["name", "detected"],
+        "properties": {"detected": {"const": true}}
+      }
+    },
+    "flags": {
+      "type": "object",
+      "required": [
+        "GENERIC_REALITY_FOLDED_DIRECT_SHELL_EVALUATOR_EXPORTED",
+        "CONTIGUOUS_SUCCESSIVE_SHELL_STREAM_ADAPTER_EXPORTED",
+        "ONLY_SU2_INDEPENDENT_COLUMNS_DIRECTLY_EVALUATED",
+        "FOUR_SHELL_INTERVALS_AGGREGATED_PER_SHELL",
+        "TAIL_STOP_INVOKED_AFTER_EVERY_EVALUATED_SHELL",
+        "TWO_J6_ADAPTER_REPLAY_MATCHES_CERTIFIED_BINDING",
+        "PHYSICAL_MASS_COUPLING_SPECIALIZATION_EXPORTED",
+        "FOUR_PHYSICAL_RECOIL_INTERVALS_EXPORTED",
+        "RECOIL_CORRECTED_RESPONSE_RANK_TWO_CERTIFIED",
+        "TANGENT_CONE_RESTRICTION_EVALUATED",
+        "NONLINEAR_OBSERVER_STABILITY_CERTIFIED",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "GENERIC_REALITY_FOLDED_DIRECT_SHELL_EVALUATOR_EXPORTED": {"const": true},
+        "CONTIGUOUS_SUCCESSIVE_SHELL_STREAM_ADAPTER_EXPORTED": {"const": true},
+        "ONLY_SU2_INDEPENDENT_COLUMNS_DIRECTLY_EVALUATED": {"const": true},
+        "FOUR_SHELL_INTERVALS_AGGREGATED_PER_SHELL": {"const": true},
+        "TAIL_STOP_INVOKED_AFTER_EVERY_EVALUATED_SHELL": {"const": true},
+        "TWO_J6_ADAPTER_REPLAY_MATCHES_CERTIFIED_BINDING": {"const": true},
+        "PHYSICAL_MASS_COUPLING_SPECIALIZATION_EXPORTED": {"const": false},
+        "FOUR_PHYSICAL_RECOIL_INTERVALS_EXPORTED": {"const": false},
+        "RECOIL_CORRECTED_RESPONSE_RANK_TWO_CERTIFIED": {"const": false},
+        "TANGENT_CONE_RESTRICTION_EVALUATED": {"const": false},
+        "NONLINEAR_OBSERVER_STABILITY_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    }
+  }
+}
