@@ -251,6 +251,16 @@ def verify() -> None:
         raise AssertionError("exceptional difference collision was not fail-closed")
     if exceptional_ad_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("exceptional a/d causal lifecycle was over-promoted")
+    exceptional_difference = by_id["einstein.ph.wm.interaction.exceptional_ell1_ell2_extra_difference_matrix"]
+    exceptional_difference_second = exceptional_difference["mode_data"]["second_order"]
+    if exceptional_difference["descriptions"]["nonlinear"] != "OPEN":
+        raise AssertionError("exceptional difference matrix over-promoted the bounded cone")
+    if exceptional_difference["mode_data"]["resonance"]["status"] != "CERTIFIED" or "six adjoint projections vanish" not in exceptional_difference["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("exceptional sparse difference matrix was hidden")
+    if exceptional_difference_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or "all-m tensor" not in exceptional_difference_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("exceptional all-m/L2 gate was not fail-closed")
+    if exceptional_difference_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("exceptional difference causal lifecycle was over-promoted")
     fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
     if fixed_ell_twist["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("fixed-ell bounded lifecycle was not promoted")

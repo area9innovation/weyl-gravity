@@ -2819,6 +2819,24 @@ with the `d` control column and the exceptional `L=2` self-defect.  Atlas row
 `einstein.ph.wm.interaction.exceptional_ell1_ad_resonance_pivots` remains
 bounded `OPEN`; causal and quantum maps remain fail-closed.
 
+The live difference-frequency matrix is now complete on the axisymmetric
+carrier.  All eight exceptional-parity times `ell=2`-extra-parity/
+multiplicity columns were computed directly.  Six physical adjoint
+projections vanish; the survivors are
+
+```text
+R_ax  = -(768/5)*conj(x_exceptional_axial)*y_extra_polar_e2,
+R_pol = -(864/5)*conj(x_exceptional_polar)*y_extra_polar_e2.
+```
+
+Thus one `ell=2` polar-`e2` amplitude is the unique axisymmetric control for
+both `L=1` exceptional channels.  Together with the `d` pivots this leaves two
+explicit complex equations.  The bounded lifecycle remains `OPEN` until the
+`SO(3)` tensor, exceptional `L=2` self-defect, `d` control column and all five
+moment maps are solved jointly.  Certificate and atlas row
+`EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_ELL2_EXTRA_DIFFERENCE_MATRIX` retain
+nonzero momentum, causal, residual and quantum scopes fail-closed.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

@@ -30,6 +30,7 @@ CERTIFICATES = {
     "exceptional_resonance": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_all_m_resonance.json",
     "exceptional_difference_census": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_difference_frequency_nonresonance.json",
     "exceptional_ad_pivots": ROOT / "bridge/certificates/einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots.json",
+    "exceptional_difference_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.json",
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
@@ -246,6 +247,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OPEN", "The a pivot is unscreenable, but the constant d pivot shares its L=1 shell with the live exceptional-times-ell2-extra difference channel; the joint zero locus is open."), ("CERTIFIED", "The complete finite-support smooth theorem permits finite secular inverses once the five moment maps vanish."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
             _evidence("exceptional_ad_pivots", "exceptional_difference_census", "exceptional_resonance", "abstract_cone"),
             "This is a coefficient theorem, not a complete exceptional mixed bounded cone. The eight exceptional-times-ell2-extra difference columns, nonzero momentum and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.exceptional_ell1_ell2_extra_difference_matrix",
+            _scope(theory="Weyl-Maxwell target", carrier="one conjugate exceptional ell1 extra dipole crossed with one positive-frequency ell2 extra primary", degree=2, parity="all axial/polar input pairs and both ell2 multiplicities", ell="1 x 2 -> L=1", m="axisymmetric direct fixtures", k=0, omega="2*omega_exceptional-omega_exceptional=omega_exceptional"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The exceptional and ell2 extra representatives are certified distinct p-primary carrier blocks."),
+            ("CERTIFIED", "The L=1 physical adjoint witnesses are action-normalized separately in axial and polar parity."),
+            ("OPEN", "The five moment maps have not yet been intersected with the sparse L1 equations and the exceptional L2 self-defect."),
+            ("CERTIFIED", "All eight direct axisymmetric columns are computed: six adjoint projections vanish, while the axial/polar survivors are -768/5 and -864/5 and both use ell2 polar e2."),
+            _second_order(("OPEN", "The unique polar-e2 control amplitude and d satisfy two explicit L1 equations, but the all-m tensor and joint L2/moment-map zero locus remain open."), ("CERTIFIED", "The complete finite-support smooth theorem allows finite secular inversion on the five-moment-map zero cone."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("exceptional_difference_matrix", "exceptional_ad_pivots", "exceptional_resonance", "d_completion", "abstract_cone"),
+            "This is the complete axisymmetric L1 difference matrix, not the all-m bounded tangent cone. The L2 self channel, moment maps, nonzero momentum and higher lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.extra.exceptional_ell1_nonzero_k",
@@ -752,6 +765,16 @@ def build() -> dict[str, object]:
         raise AssertionError("exceptional a/d pivot input changed")
     if exceptional_ad["complete_exceptional_mixed_bounded_zero_locus_solved"] or exceptional_ad["causal_or_quantum_claim"]:
         raise AssertionError("exceptional a/d pivot theorem exceeded its scope")
+    exceptional_difference = records["exceptional_difference_matrix"]["classification"]
+    if not (
+        exceptional_difference["all_eight_axisymmetric_difference_columns_direct_four_dimensional"]
+        and exceptional_difference["six_adjoint_columns_zero"]
+        and exceptional_difference["two_adjoint_columns_nonzero"]
+        and exceptional_difference["unique_ell2_polar_e2_control_amplitude"]
+    ):
+        raise AssertionError("exceptional difference matrix changed")
+    if exceptional_difference["SO3_all_m_tensor_assembled"] or exceptional_difference["complete_exceptional_mixed_bounded_zero_locus_solved"] or exceptional_difference["causal_or_quantum_claim"]:
+        raise AssertionError("exceptional difference matrix exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

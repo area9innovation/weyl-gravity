@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-exceptional-ell1-ell2-extra-difference-matrix-v1",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "direct_source_rows", "adjoint_projections", "sparse_matrix", "joint_d_equations", "classification", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-exceptional-ell1-ell2-extra-difference-matrix-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_ELL2_EXTRA_DIFFERENCE_MATRIX"},
+    "classification": {
+      "type": "object",
+      "required": ["all_eight_axisymmetric_difference_columns_direct_four_dimensional", "six_adjoint_columns_zero", "two_adjoint_columns_nonzero", "unique_ell2_polar_e2_control_amplitude", "SO3_all_m_tensor_assembled", "complete_exceptional_mixed_bounded_zero_locus_solved", "causal_or_quantum_claim"]
+    }
+  }
+}

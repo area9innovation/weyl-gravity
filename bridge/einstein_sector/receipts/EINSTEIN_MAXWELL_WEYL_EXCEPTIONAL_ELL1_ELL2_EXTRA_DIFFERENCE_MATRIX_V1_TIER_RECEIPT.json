@@ -1,0 +1,41 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_ELL2_EXTRA_DIFFERENCE_MATRIX",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_source_explore.py": "bfd38263ffddc95fa7d0320f086ace74340c2a426f5b9c83a800e2429b1df6db",
+    "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.py": "4d732fbfd5fac673469f84a628374edb109852b47af44e42785ad9f75aa35b9e",
+    "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.json": "1cd89d2e5c1a9afd78663278e88686732e86bc171f644abcd3487a49ca091df6",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.schema.json": "d1c9e91a207cafd0af071844cad6cf82792c02e4770bfbd3c31c73ad5a375643",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.py": "d3e0fd44eebbc37c9ada5cce23b3e600cb9dda6e021afdf5268734d08fd7272f",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.py": "bde76e9e19ceec052dfab79b68a201b26e804ec75e2af351d93cabd60420b07f",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-exceptional-ell1-ell2-extra-difference-matrix.md": "20ffe1ed1f1a8adf57ab46818c903f47d884572a233668216c74640014e2b00b"
+  },
+  "claim": {
+    "certified": "All eight axisymmetric exceptional-ell1 times ell2-extra L1 difference-frequency columns are direct four-dimensional coefficients; exactly two adjoint projections are nonzero.",
+    "reduction": "Both nonzero projections use the same ell2 polar-e2 amplitude, with coefficients -768/5 and -864/5 in the axial and polar exceptional outputs.",
+    "open": "The SO3 all-m tensor, exceptional L2 self-defect, d control column, moment-map intersection and complete bounded zero locus remain open."
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "elapsed_seconds": 0.20},
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.39,
+      "tests_run": 5,
+      "commands": [
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 69.0,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix --write",
+      "criterion": "All eight direct four-dimensional bivariate Euler sources were recomputed and projected exactly."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The all-m tensor and joint L1/L2/moment-map bounded cone are the next affected certificate chain."
+    }
+  }
+}

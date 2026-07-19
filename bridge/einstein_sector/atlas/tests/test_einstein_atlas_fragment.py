@@ -224,6 +224,16 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("exceptional-times-ell2-extra", second_order["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
+    def test_exceptional_difference_matrix_is_sparse_and_fail_closed(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.exceptional_ell1_ell2_extra_difference_matrix"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("six adjoint projections vanish", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertIn("all-m tensor", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
     def test_constant_twist_projector_repair_is_authoritative(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
         self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")

@@ -1,0 +1,152 @@
+{
+  "adjoint_projections": {
+    "axial/axial/e1": "0",
+    "axial/axial/e2": "0",
+    "axial/polar/e1": "0",
+    "axial/polar/e2": "-768/5",
+    "polar/axial/e1": "0",
+    "polar/axial/e2": "0",
+    "polar/polar/e1": "0",
+    "polar/polar/e2": "-864/5"
+  },
+  "claim_boundary": "This is the complete axisymmetric L1 difference-frequency coefficient matrix. It does not yet prove an all-m cone, solve the L2 self channel, classify nonzero momentum, construct causal propagation, descend residual states, or make particle or quantum claims.",
+  "classification": {
+    "SO3_all_m_tensor_assembled": false,
+    "all_eight_axisymmetric_difference_columns_direct_four_dimensional": true,
+    "causal_or_quantum_claim": false,
+    "complete_exceptional_mixed_bounded_zero_locus_solved": false,
+    "exceptional_L2_self_and_d_control_solved_jointly": false,
+    "joint_d_L1_compatibility_equations_explicit": true,
+    "six_adjoint_columns_zero": true,
+    "two_adjoint_columns_nonzero": true,
+    "unique_ell2_polar_e2_control_amplitude": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_source_rows": {
+    "axial/axial/e1": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "axial/axial/e2": [
+      "-476/15",
+      "0",
+      "116/45",
+      "-16"
+    ],
+    "axial/polar/e1": [
+      "-4/5",
+      "0",
+      "-4/5",
+      "0"
+    ],
+    "axial/polar/e2": [
+      "0",
+      "2016/5",
+      "0",
+      "-96/5"
+    ],
+    "polar/axial/e1": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "polar/axial/e2": [
+      "-32/5",
+      "0",
+      "-32/5",
+      "0"
+    ],
+    "polar/polar/e1": [
+      "2",
+      "0",
+      "-22/15",
+      "-8/5"
+    ],
+    "polar/polar/e2": [
+      "0",
+      "-864/5",
+      "0",
+      "0"
+    ]
+  },
+  "input_order": [
+    "exceptional_axial x extra_axial_e1",
+    "exceptional_axial x extra_axial_e2",
+    "exceptional_axial x extra_polar_e1",
+    "exceptional_axial x extra_polar_e2",
+    "exceptional_polar x extra_axial_e1",
+    "exceptional_polar x extra_axial_e2",
+    "exceptional_polar x extra_polar_e1",
+    "exceptional_polar x extra_polar_e2"
+  ],
+  "interpretation": "The only axisymmetric oscillator-pair source capable of screening the exceptional d pivot uses the second polar ell=2 extra representative. The complete eight-column calculation reduces the next bounded-cone gate to one complex control amplitude and two displayed L1 equations, but the L2 exceptional self-defect, moment maps and all-m tensor must still be imposed.",
+  "joint_d_equations": {
+    "axial_L1": "(8*sqrt(3)*I/9)*d*x_exceptional_axial-(768/5)*conj(x_exceptional_axial)*y_extra_polar_e2=0",
+    "interpretation": "for a nonzero exceptional component the d relation fixes the unique polar-e2 control amplitude up to the exceptional phase; simultaneous axial and polar occupation imposes an additional relative-phase compatibility",
+    "polar_L1": "-sqrt(3)*I*d*x_exceptional_polar-(864/5)*conj(x_exceptional_polar)*y_extra_polar_e2=0"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "assemble the SO3 tensor and solve the displayed L1 equations jointly with the exceptional L2 self-defect, the d-times-polar-e2 L2 control column and the five stabilizer moment maps",
+  "provenance": {
+    "direct_source_helper": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_source_explore.py",
+      "sha256": "bfd38263ffddc95fa7d0320f086ace74340c2a426f5b9c83a800e2429b1df6db"
+    },
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.py",
+    "generator_sha256": "4d732fbfd5fac673469f84a628374edb109852b47af44e42785ad9f75aa35b9e",
+    "inputs": {
+      "ad_pivots": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots.json",
+        "sha256": "a35a0a737697dd8b012fc88e8fac9c44678a8a561e2773fc5592dc558e2f0b89"
+      },
+      "d_control": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
+        "sha256": "35e07ee8b77d16314a5b306e0dcbedd3d9d6e852d1a0180196973142b5aa0a4e"
+      },
+      "difference_census": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_difference_frequency_nonresonance.json",
+        "sha256": "8474f158f79acfd7155ee07cab33e9d2bd6b7922f45fa83c0fa9d4936a004653"
+      },
+      "exceptional_self": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_all_m_resonance.json",
+        "sha256": "42248dd69e97cd5946331431fa02d631edf0f86b717869437640c5651e439ac9"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_ELL2_EXTRA_DIFFERENCE_MATRIX",
+  "result_state": "COMPLETE_EXCEPTIONAL_ELL1_TIMES_ELL2_EXTRA_L1_DIFFERENCE_MATRIX_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-exceptional-ell1-ell2-extra-difference-matrix-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.schema.json",
+  "schema_sha256": "d1c9e91a207cafd0af071844cad6cf82792c02e4770bfbd3c31c73ad5a375643",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic compatibility",
+    "carrier": "one conjugate exceptional ell=1 extra dipole crossed with one positive-frequency ell=2 extra primary",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "1 x 2 -> L=1 projection",
+    "k": 0,
+    "m": "axisymmetric direct tensor fixtures; SO3 covariant extension remains a separate tensor assembly",
+    "omega": "2*omega_exceptional-omega_exceptional=omega_exceptional with omega_exceptional^2=4/3",
+    "parity": "all four exceptional/extra parity pairs and both ell2 extra multiplicities",
+    "theory": "Weyl-Maxwell target"
+  },
+  "sparse_matrix": {
+    "all_other_axisymmetric_columns": "0",
+    "axial_output": "R_ax=-(768/5)*conj(x_exceptional_axial)*y_extra_polar_e2",
+    "polar_output": "R_pol=-(864/5)*conj(x_exceptional_polar)*y_extra_polar_e2",
+    "rank_per_output_parity": 1,
+    "unique_control_amplitude": "ell2 polar e2"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix"
+  ]
+}
