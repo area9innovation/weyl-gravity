@@ -1,0 +1,48 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_NONAXISYMMETRIC_L3_MATRIX_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Complete 44-coefficient nonaxisymmetric L3 target-adjoint matrix for all 36 ordered ell=2 branch-basis fixtures crossing the retained |n|=1 and |n|=2 fibres.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L3_matrix.json": "81037c63c82dfa599f32d9844d528f64f2e04150f321911ca5067fe806d052a2",
+    "bridge/einstein_sector/einstein_maxwell_weyl_two_abs_momentum_nonaxisymmetric_L3_matrix.py": "0a52876d5eb803bf812102f2dda300cdaa206c7a5281a5a9f602cbeffd3abb50",
+    "bridge/einstein_sector/generated/einstein_maxwell_weyl_ell2_nonaxisymmetric_L3_q2_slice.json": "f4bcacc0ef216af23ad8cb4c00e6d9626b9d00d7b1f1b116c300bf94dc642cca",
+    "bridge/einstein_sector/nonaxisymmetric_pbw_projector.py": "1fe75d2f863aa6f746e1d0c178640d2eac550c025c67b8e40920b3c5e24dfc3c",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L3_matrix.schema.json": "77ac3d023187adf562237d99b5b7df1dd246edc9b214a53976ba6ac7923c886c",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L3_matrix.py": "e481ca87c1d3a34f4df7f63a57ba6fea99083693debf1ce1a8f5eb4fb30f7005",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L3_matrix.py": "01be2a7d59669c387ae58d1233cc1d7cb7d5ab0b3bed612f7472f46ba4f57f02",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-nonaxisymmetric-L3-matrix.md": "f4322f7a992a6d73967713e051fff632ee0f34864353fe21b64db48bd947cea9"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <scoped JSON paths>", "git diff --check -- <scoped paths>"]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds_independent_verifier": 24.68,
+      "tests_run": 70,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_two_abs_momentum_nonaxisymmetric_L3_matrix --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L3_matrix",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L3_matrix",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 236.29,
+      "cpu_seconds": 235.83,
+      "max_rss_kib": 151044,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_two_abs_momentum_nonaxisymmetric_L3_matrix --write",
+      "reason": "The exhaustive producer rebuilt all four generic ordered-parity L3 PBW slices, specialized all six circumference rows, contracted all 44 target-adjoint coefficients, and isolated every nonzero value by exact rational bounds."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a G2 branch-basis matrix theorem, not an arbitrary-amplitude zero-variety, complete tangent-cone freeze or shared-core algebra change."
+    }
+  },
+  "claim_boundary": "All 36 declared L3 branch-basis fixtures are bounded or finite-quasiperiodic OBSTRUCTED. The arbitrary-amplitude zero variety, twelve L1 coefficients, smooth-secular and causal corrections, complete two-fibre cone, residual, observable and quantum claims remain OPEN or NO_CERTIFIED_MAP as typed in the atlas."
+}

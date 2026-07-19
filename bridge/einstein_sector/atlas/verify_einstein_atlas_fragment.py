@@ -478,6 +478,14 @@ def verify() -> None:
     reverse_second = reverse["mode_data"]["second_order"]
     if reverse_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or reverse_second["smooth_secular"]["status"] != "OPEN" or reverse_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("reverse cross-parity correction classes were merged")
+    l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
+    l3_second = l3["mode_data"]["second_order"]
+    if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("nonaxisymmetric L3 obstruction was hidden")
+    if "multiplicity-one V3 carrier" not in l3["scope"]["m"] or "twelve nonaxisymmetric L1 coefficients" not in l3["claim_boundary"]:
+        raise AssertionError("nonaxisymmetric L3 scope was merged")
+    if l3["mode_data"]["taub_maps"]["status"] != "NOT_APPLICABLE" or l3_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or l3_second["smooth_secular"]["status"] != "OPEN" or l3_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("nonaxisymmetric L3 correction classes changed")
     aligned_phase = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
     aligned_phase_second = aligned_phase["mode_data"]["second_order"]
     if aligned_phase["descriptions"]["nonlinear"] != "OPEN":

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Einstein-Maxwell/Weyl-Maxwell nonaxisymmetric L3 matrix",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "dependency_tags", "scope", "source_slice", "candidate_rows", "matrix_summary", "classification", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-ell2-two-abs-momentum-nonaxisymmetric-L3-matrix-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_NONAXISYMMETRIC_L3_MATRIX"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "candidate_rows": {"type": "array", "minItems": 6, "maxItems": 6},
+    "matrix_summary": {"type": "object"},
+    "classification": {"type": "object"}
+  },
+  "additionalProperties": true
+}

@@ -1993,6 +1993,20 @@ remain `OPEN`; smooth-secular status is `OPEN` and causal status is
 whose map lifecycle is still the separately certified linear relative
 triangle.
 
+The exact equatorial nonaxisymmetric projector now closes the `L=3` basis
+matrix.  It couples two normalized `ell=2` carriers to the unique `V_3`
+multiplicity and reproduces the three existing `L=4` parity calibrations
+before specialization.  Across six circumference rows it yields 36 ordered
+branch-basis fixtures and 44 target-adjoint coefficients; every coefficient
+has an exact interval excluding zero, so every fixture is
+bounded/finite-quasiperiodic `OBSTRUCTED`.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix`
+does not promote the arbitrary-amplitude zero variety or complete two-fibre
+cone.  Those remain `OPEN`, smooth-secular correction remains `OPEN`, and
+causal correction remains `NO_CERTIFIED_MAP`.  The active coefficient gate
+is now the twelve nonaxisymmetric `L=1` entries.  The same-background Bridge 1
+lifecycle remains the certified linear relative triangle.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell

@@ -95,6 +95,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_polar_polar_L4_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_polar_polar_L4_matrix.json",
     "ell2_two_abs_momentum_axial_polar_L4_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_polar_L4_matrix.json",
     "ell2_two_abs_momentum_polar_axial_L4_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_polar_axial_L4_matrix.json",
+    "ell2_two_abs_momentum_nonaxisymmetric_L3_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L3_matrix.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
@@ -875,6 +876,18 @@ def entries() -> list[dict[str, object]]:
             "This row closes 108 of 108 axisymmetric L4 basis coefficients, not the arbitrary-amplitude zero variety. The 56 nonaxisymmetric L1/L3 coefficients, complete two-fibre cone and higher lifecycles remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 at six separately tuned algebraic circumference rows; before final residual quotient", carrier="all 36 Clebsch-Gordan-coupled L3 branch-basis cross products between |n|=1 and |n|=2", degree=2, parity="both same-parity and both ordered cross-parity inputs; parity-selected L3 output", ell="input 2 x 2; output L=3", m="coupled M=3 representative of the multiplicity-one V3 carrier", k="row-specific signed compact momenta; circumference rows retained separately", omega="row-specific positive-frequency SUM channel", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","Every branch, parity ordering, signed momentum, frequency, circumference and V3 carrier label is retained; no mode names are identified across fibres."),
+            ("CERTIFIED","The equatorial coefficient-jet projector reproduces all three existing L4 parity calibrations and supplies one generic L3 action source for each ordered parity class."),
+            ("NOT_APPLICABLE","These nonzero-frequency resonant functionals are independent of, and do not replace, the five compact stabilizer moment maps."),
+            ("OBSTRUCTED","All 44 target-adjoint coefficients have exact intervals excluding zero; all 36 declared branch-basis fixtures have nonzero complete cokernel vectors."),
+            _second_order(("OBSTRUCTED","No bounded or finite-quasiperiodic correction exists for any declared L3 branch-basis fixture."),("OPEN","Arbitrary-amplitude cancellations and smooth-secular corrections are not classified."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_nonaxisymmetric_L3_matrix","ell2_two_abs_momentum_polar_axial_L4_matrix","ell2_two_abs_momentum_parity_workload","abstract_cone"),
+            "This row closes the 44-coefficient L3 basis matrix, not its arbitrary-amplitude zero variety. The twelve nonaxisymmetric L1 coefficients, complete two-fibre cone, smooth-secular and causal classes remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="constant twist position plus paired axisymmetric +/-k Einstein-plus/minus standing waves", degree=2, parity="generic input parity retained; polar extra resonant output", ell="every one fixed integer ell>=2 with output L=2ell", m="m_A=0 inputs and M=0 output", k="one tuned allowed nonzero +/-k pair", omega="q-plus/minus inputs and p-primary sum-frequency output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
@@ -1407,6 +1420,21 @@ def build() -> dict[str, object]:
         raise AssertionError("ordered polar-axial L4 matrix changed")
     if reverse["arbitrary_cross_parity_linear_combinations_classified"] or reverse["complete_two_fibre_tangent_cone_classified"] or reverse["causal_or_quantum_claim"]:
         raise AssertionError("ordered polar-axial L4 matrix exceeded its scope")
+    l3_value = records["ell2_two_abs_momentum_nonaxisymmetric_L3_matrix"]
+    l3 = l3_value["classification"]
+    l3_summary = l3_value["matrix_summary"]
+    if not (
+        l3["complete_nonaxisymmetric_L3_basis_matrix_classified"]
+        and l3["all_44_L3_adjoint_coefficients_classified"]
+        and l3["all_basis_fixtures_bounded_obstructed"]
+        and l3["remaining_nonaxisymmetric_L1_coefficients"] == 12
+        and l3_summary["target_adjoint_coefficients"] == 44
+        and l3_summary["nonzero_target_adjoint_coefficients"] == 44
+        and l3_summary["basis_fixtures_with_nonzero_cokernel_vector"] == 36
+    ):
+        raise AssertionError("nonaxisymmetric L3 matrix changed")
+    if l3["arbitrary_amplitude_zero_variety_classified"] or l3["causal_or_quantum_claim"]:
+        raise AssertionError("nonaxisymmetric L3 matrix exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

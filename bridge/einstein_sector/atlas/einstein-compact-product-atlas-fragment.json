@@ -4727,6 +4727,85 @@
       }
     },
     {
+      "claim_boundary": "This row closes the 44-coefficient L3 basis matrix, not its arbitrary-amplitude zero variety. The twelve nonaxisymmetric L1 coefficients, complete two-fibre cone, smooth-secular and causal classes remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L3_matrix.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_NONAXISYMMETRIC_L3_MATRIX",
+          "sha256": "81037c63c82dfa599f32d9844d528f64f2e04150f321911ca5067fe806d052a2"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_polar_axial_L4_matrix.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_POLAR_AXIAL_L4_MATRIX",
+          "sha256": "0576ff6c1dd9ed3a341982139ed0855bd2d7024769db72d0a46de388e0440f68"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_PARITY_WORKLOAD",
+          "sha256": "e762ad9600f6d7b22b2a0ec6ccbe25159f810d4b017016afa46d2128497e7b7c"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Every branch, parity ordering, signed momentum, frequency, circumference and V3 carrier label is retained; no mode names are identified across fibres.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The equatorial coefficient-jet projector reproduces all three existing L4 parity calibrations and supplies one generic L3 action source for each ordered parity class.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "All 44 target-adjoint coefficients have exact intervals excluding zero; all 36 declared branch-basis fixtures have nonzero complete cokernel vectors.",
+          "status": "OBSTRUCTED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No bounded or finite-quasiperiodic correction exists for any declared L3 branch-basis fixture.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific retarded Weyl-Maxwell correction complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Arbitrary-amplitude cancellations and smooth-secular corrections are not classified.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "These nonzero-frequency resonant functionals are independent of, and do not replace, the five compact stabilizer moment maps.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed S1_L times S2 at six separately tuned algebraic circumference rows; before final residual quotient",
+        "carrier": "all 36 Clebsch-Gordan-coupled L3 branch-basis cross products between |n|=1 and |n|=2",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": "input 2 x 2; output L=3",
+        "k": "row-specific signed compact momenta; circumference rows retained separately",
+        "m": "coupled M=3 representative of the multiplicity-one V3 carrier",
+        "omega": "row-specific positive-frequency SUM channel",
+        "parity": "both same-parity and both ordered cross-parity inputs; parity-selected L3 output",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "This is an exact intersection/independence gate, not a bounded obstruction. The later two-parity row certifies the dynamical matrix; this row does not import it. Fixed-L momentum census, multiple |k| fibres and higher lifecycles remain fail-closed.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -6045,7 +6124,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "cdeabcf2c900c00e3090a4ca250c7babd97b0ba1fc320868f27234a69ce506e1",
+  "generated_by_sha256": "54946c5492f6d82f1c90712ea0ca6cca9a04a726f5961eba0c3ffddbc1856054",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

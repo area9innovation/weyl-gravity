@@ -3412,6 +3412,21 @@ nonaxisymmetric `L=1,3` coefficients.  The active same-background Classical
 bridge remains Bridge 1 at its certified linear triangle lifecycle; these
 quadratic matrices are inputs and do not promote a nonlinear bridge map.
 
+The complete nonaxisymmetric `L=3` branch-basis matrix is now certified.  An
+exact equatorial PBW projector couples normalized `ell=2` harmonics to the
+multiplicity-one `V_3` carrier and first reproduces the existing axial--axial,
+polar--polar and axial--polar `L=4` action sources.  Its four generic ordered
+parity slices specialize to six circumference rows, 36 branch-basis fixtures
+and 44 target-adjoint coefficients.  All 44 coefficients have exact intervals
+excluding zero, and all 36 fixtures are bounded/finite-quasiperiodic
+`OBSTRUCTED`.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix`
+keeps arbitrary-amplitude cancellations and the complete two-fibre cone
+`OPEN`, smooth-secular correction `OPEN`, and causal correction
+`NO_CERTIFIED_MAP`.  The active coefficient gate is now exactly the twelve
+nonaxisymmetric `L=1` coefficients.  This remains nonlinear input to Bridge 1
+and does not change its certified linear-map lifecycle.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
