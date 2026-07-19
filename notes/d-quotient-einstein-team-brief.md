@@ -2721,6 +2721,33 @@ The bounded product cone remains `OPEN` until the neighboring
 `p/q` frequency.  Finite multi-`ell`, nonzero-momentum and causal scopes also
 remain fail-closed.
 
+That neighboring-output gate is now closed.  On every generic axial and polar
+target fibre the reduced determinant is a nonzero scalar times `p_L^2 q_L`.
+At `L=ell-1` and `L=ell+1`, substitution of all three input shell types gives
+explicit nonzero factors.  The only radical comparisons reduce to the
+positive margins
+
+```text
+2*(9*ell^2+3*ell+2)/9,
+2*(9*ell^2+15*ell+8)/9,
+(ell+1)*(ell-1),
+ell*(ell+2).
+```
+
+The exceptional `ell=2 -> L=1` lower channel is imported from the corrected
+direct bounded theorem rather than from a generic-ring specialization.
+Therefore certificate
+`EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_BOUNDED_CONE` proves, for
+every one fixed `ell>=2`,
+
+```text
+Z2_bounded(A,wave)=R_A^3 x {wave : H=J_i=0}.
+```
+
+The next bounded gate is to regenerate the full standard-global plus
+one-fixed-`ell` stratified cone with `A` free.  Finite multi-`ell` sums remain
+a distinct later scope.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

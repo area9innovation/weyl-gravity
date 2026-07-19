@@ -1512,10 +1512,13 @@ Flat-connection covariantization sends `k` to
 `k+alpha(A_hat dot J_ell)`, and the action-reduced `p/q` primaries are even in
 that covariant momentum.  Their matrix-valued Feynman--Hellmann derivative at
 `k=0` vanishes, so `Q_(ell,+)=Q_(ell,-)=0` and `P_ell=0` for every fixed
-`ell>=2`; the direct `ell=2` replay is only a calibration.  The next Einstein
-activation gate is uniform inversion of the neighboring `L=ell-1,ell+1`
-twist-wave outputs.  Until that gate closes, the complete fixed-`ell` bounded
-product cone remains `OPEN`.  This does not alter the Bridge 1 causal
+`ell>=2`; the direct `ell=2` replay is only a calibration.  The neighboring
+`L=ell-1,ell+1` target determinants are now also proved nonzero at every input
+`p/q` frequency.  Hence the complete constant-position plus one-fixed-`ell`
+bounded cone is `CERTIFIED` as `R_A^3` times the common `H,J_i` wave cone.
+The next Einstein activation gate is regeneration of the complete
+standard-global plus one-fixed-`ell` stratified cone with `A` free; finite
+multi-`ell` sums stay separate.  This does not alter the Bridge 1 causal
 lifecycle.
 
 ### Classical ownership

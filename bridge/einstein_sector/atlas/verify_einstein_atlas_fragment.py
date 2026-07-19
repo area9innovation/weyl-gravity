@@ -235,14 +235,14 @@ def verify() -> None:
         if "LIFECYCLE REOPENED" not in entry["claim_boundary"]:
             raise AssertionError(f"generic constant-twist reopen reason is absent: {identifier}")
     fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
-    if fixed_ell_twist["descriptions"]["nonlinear"] != "OPEN":
-        raise AssertionError("fixed-ell bounded lifecycle was over-promoted")
+    if fixed_ell_twist["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("fixed-ell bounded lifecycle was not promoted")
     if fixed_ell_twist["mode_data"]["resonance"]["status"] != "CERTIFIED":
         raise AssertionError("fixed-ell angular factorization was lost")
     if "Q_(ell,+)=Q_(ell,-)=0" not in fixed_ell_twist["mode_data"]["resonance"]["statement"]:
         raise AssertionError("fixed-ell zero multiplicity matrices were hidden")
-    if fixed_ell_twist["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
-        raise AssertionError("fixed-ell common cone was over-promoted")
+    if fixed_ell_twist["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("fixed-ell bounded cone was hidden")
     repair = by_id["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
     if repair["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("constant-twist projector repair was not promoted")

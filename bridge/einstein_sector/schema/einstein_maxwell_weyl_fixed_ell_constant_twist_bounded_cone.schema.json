@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "generality_level", "scope", "neighbor_output_ledger", "source_decomposition", "complete_bounded_zero_locus", "correction_classes", "classification", "interpretation", "next_gate", "claim_boundary", "provenance", "verification_receipt", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-fixed-ell-constant-twist-bounded-cone-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_BOUNDED_CONE"},
+    "classification": {
+      "type": "object",
+      "required": ["every_fixed_ell_neighbor_output_invertible", "every_fixed_ell_constant_twist_bounded_product_cone_certified", "all_m_both_parities_all_qp_primaries_included", "ell2_exceptional_lower_channel_calibrated", "finite_multi_ell_twist_cone_classified", "nonzero_momentum_classified", "causal_or_quantum_claim"],
+      "properties": {
+        "every_fixed_ell_neighbor_output_invertible": {"const": true},
+        "every_fixed_ell_constant_twist_bounded_product_cone_certified": {"const": true},
+        "finite_multi_ell_twist_cone_classified": {"const": false},
+        "nonzero_momentum_classified": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      }
+    }
+  }
+}

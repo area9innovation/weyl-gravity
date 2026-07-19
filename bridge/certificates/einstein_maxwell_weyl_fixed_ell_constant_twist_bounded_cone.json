@@ -1,0 +1,177 @@
+{
+  "claim_boundary": "Complete only for one fixed ell>=2 at k=0 with constant twist position and no other global tangent. Finite multi-ell sums, nonzero momentum, exceptional input waves, causal propagation, all-orders integration, residual observables and quantum transfer remain fail-closed.",
+  "classification": {
+    "all_m_both_parities_all_qp_primaries_included": true,
+    "causal_or_quantum_claim": false,
+    "ell2_exceptional_lower_channel_calibrated": true,
+    "every_fixed_ell_constant_twist_bounded_product_cone_certified": true,
+    "every_fixed_ell_neighbor_output_invertible": true,
+    "finite_multi_ell_twist_cone_classified": false,
+    "nonzero_momentum_classified": false
+  },
+  "complete_bounded_zero_locus": {
+    "constant_twist_position": "A is arbitrary",
+    "formula": "Z2_bounded(A,wave)=R_A^3 x {wave: mu_H=mu_J1=mu_J2=mu_J3=0}",
+    "necessity_and_sufficiency": true,
+    "wave_equations": [
+      "mu_H=0",
+      "mu_J1=0",
+      "mu_J2=0",
+      "mu_J3=0"
+    ]
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "bounded corrections are a smooth subclass",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G4_EVERY_FIXED_GENERIC_ELL_K0_ALL_M_BOTH_PARITIES_ALL_PRIMARIES",
+  "interpretation": "At rest, constant SO(3) holonomy is a bounded spectator for the complete generic wave block at every one fixed ell. Same-shell resonance vanishes by the flat-connection Feynman-Hellmann theorem, and both neighboring angular outputs are uniformly off shell.",
+  "lifecycle_state": "CLASSIFIED",
+  "neighbor_output_ledger": {
+    "L=ell+1": {
+      "all_input_shells_invertible": true,
+      "input_p_shell": {
+        "target_p": "-2*(ell + 1)",
+        "target_q": "2*(9*ell**2 + 21*ell + 14)/9"
+      },
+      "input_q_minus_shell": {
+        "target_p": "-(3*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell + 4)/3",
+        "target_q": "4*(sqrt(2)*ell**(3/2)*sqrt(ell + 1) + sqrt(2)*sqrt(ell)*sqrt(ell + 1) + ell**2 + ell)"
+      },
+      "input_q_plus_shell": {
+        "target_p": "-(-3*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell + 4)/3",
+        "target_q": "4*(-sqrt(2)*ell**(3/2)*sqrt(ell + 1) - sqrt(2)*sqrt(ell)*sqrt(ell + 1) + ell**2 + ell)"
+      },
+      "lambda_difference": "-2*ell - 2",
+      "output_ell": "ell + 1",
+      "output_lambda": "ell**2 + 3*ell + 2",
+      "radical_sign_witnesses": {
+        "all_other_q_branch_values": "positive except the manifestly negative p target on q_minus",
+        "p_squared_margin": "2*(9*ell**2 + 15*ell + 8)/9",
+        "p_target_on_q_plus": "negative: 2*ell+4/3 > sqrt(2*ell*(ell+1))",
+        "q_squared_margin": "ell*(ell + 2)",
+        "q_target_on_q_plus": "negative: sqrt(2*ell*(ell+1)) > ell"
+      },
+      "target_determinant": "nonzero scalar times target_p^2*target_q"
+    },
+    "L=ell-1": {
+      "all_input_shells_invertible": true,
+      "input_p_shell": {
+        "target_p": "2*ell",
+        "target_q": "2*(9*ell**2 - 3*ell + 2)/9"
+      },
+      "input_q_minus_shell": {
+        "target_p": "(-3*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell + 2)/3",
+        "target_q": "4*(-sqrt(2)*ell**(3/2)*sqrt(ell + 1) + ell**2 + ell)"
+      },
+      "input_q_plus_shell": {
+        "target_p": "(3*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell + 2)/3",
+        "target_q": "4*(sqrt(2)*ell**(3/2)*sqrt(ell + 1) + ell**2 + ell)"
+      },
+      "lambda_difference": "2*ell",
+      "output_ell": "ell - 1",
+      "output_lambda": "ell**2 - ell",
+      "radical_sign_witnesses": {
+        "all_other_q_branch_values": "positive",
+        "p_squared_margin": "2*(9*ell**2 + 3*ell + 2)/9",
+        "p_target_on_q_minus": "positive: 2*ell+2/3 > sqrt(2*ell*(ell+1))",
+        "q_squared_margin": "(ell - 1)*(ell + 1)",
+        "q_target_on_q_minus": "negative: sqrt(2*ell*(ell+1)) > ell+1 for ell>=2"
+      },
+      "target_determinant": "nonzero scalar times target_p^2*target_q"
+    }
+  },
+  "next_gate": "regenerate the complete standard-global plus one-fixed-ell bounded cone with A free, then classify finite multi-ell twist-wave cross terms without merging distinct ell scopes",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.py",
+    "generator_sha256": "40725a6d85bb7bd1a0f81c72df8bc75cd74a284d1d8b3acf552c5caf669c35fb",
+    "inputs": {
+      "axial_ring": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
+        "sha256": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb"
+      },
+      "ell2_repair": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.json",
+        "sha256": "de38a7665d5b0a59ebc5665cf987bdca328c34ed623497e27b1f6e2c38e93150"
+      },
+      "fixed_ell_wave": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
+        "sha256": "9c9b5db86f50a624f84a0ec6548d2c07030109626d076c0e5ee6f9e9115f9e54"
+      },
+      "polar_ring": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      },
+      "twist_family": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      },
+      "zero_map": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.json",
+        "sha256": "002defeac1047a1886c7d4e172941869633fceef7a2d8d953f7c3562bb30f38c"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_BOUNDED_CONE",
+  "result_state": "EVERY_FIXED_GENERIC_ELL_K0_CONSTANT_TWIST_BOUNDED_PRODUCT_CONE_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-fixed-ell-constant-twist-bounded-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.schema.json",
+  "schema_sha256": "49e11d34cd105003f58317a3ae0d6eb9d98ffa5e8f7e5c48f6b291f3c5a046e8",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic correction",
+    "carrier": "arbitrary constant twist position A plus the complete q/p wave carrier in one fixed ell>=2 block at k=0",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "one arbitrary fixed integer ell>=2; outputs ell-1,ell,ell+1",
+    "k": 0,
+    "m": "all twist and wave m",
+    "omega": "all fixed-ell p and q shells",
+    "parity": "axial and polar",
+    "theory": "Weyl-Maxwell target"
+  },
+  "source_decomposition": {
+    "L=ell": "the complete same-shell adjoint projection is zero",
+    "L=ell-1,ell+1": "the action-reduced axial and polar determinants are nonzero on every input p/q shell, so each mixed source has a bounded inverse",
+    "twist_self": "removable on the exact static flat-holonomy family",
+    "wave_self": "solved exactly when mu_H=mu_J1=mu_J2=mu_J3=0"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.2,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 2.79,
+      "max_rss_kb": 60056,
+      "status": "PASS",
+      "tests_run": 33
+    },
+    "tier_2": {
+      "criterion": "same-shell zero map, action-derived p^2*q target determinants, exact twist family, fixed-ell wave theorem and ell2 exceptional calibration are unchanged hashed inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "finite multi-ell, momentum and higher lifecycles remain fail-closed",
+      "status": "NOT_RUN"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_BOUNDED_CONE",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.py": "40725a6d85bb7bd1a0f81c72df8bc75cd74a284d1d8b3acf552c5caf669c35fb",
+    "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.json": "3d91382ed023b0e6bd8f0ca637824a2460de8a18eb9b6b2050dcf3faa61bf439",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.schema.json": "49e11d34cd105003f58317a3ae0d6eb9d98ffa5e8f7e5c48f6b291f3c5a046e8",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.py": "793195bd91182cbd2a486054bfcdf0cd538c5a93ac420f1b26dd5c2784d40afd",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.py": "e558401a285a711bbe12b1a37fc2ee205ec555556a158b1b62cd39705af9cffd",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-fixed-ell-constant-twist-bounded-cone.md": "67bb560237809bc48b7916bbfa376a9abf68eff816089adf8f4341ef0eb0ee99",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "795cbd7d33ca1b0fdb5bdd31dfd3fb46c91e69e61e34136ca35f13eb732848b3",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "73c5c0cf8f767bbd846e01b272451b474b2f673bc7b205e7a0deb0f06a621e87",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "7d88650d51247bc319ff0619fce2538b91e49662c977b064d1b0eda7864aefb5",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "fff83fa246886cda052d219bbb2d905794b55223b7dd0b582fdc22cadfcff38f",
+    "notes/d-quotient-einstein-team-brief.md": "b72adf746f422601a669e2ec8e54f031bb746411bce120c5e810cc0075e0b289"
+  },
+  "claim": {
+    "certified": "For every one fixed ell>=2 at k=0, constant twist position is a free bounded spectator and Z2_bounded(A,wave)=R_A^3 times the complete H,J_i wave zero cone.",
+    "neighbor_gate": "Both L=ell-1 and L=ell+1 axial/polar target determinants are nonzero on every input p and q+/- shell; ell=2 to L=1 is retained through the direct corrected theorem.",
+    "open": "Complete standard-global regeneration, finite multi-ell sums, nonzero momentum, causal propagation and higher lifecycles."
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "elapsed_seconds": 0.20},
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.79,
+      "max_rss_kb": 60056,
+      "tests_run": 33,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json"
+      ]
+    },
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "The same-shell zero map, action-derived p^2*q target determinants, fixed-ell wave theorem, exact twist family and ell2 exceptional calibration are unchanged exact hashed inputs."},
+    "tier_3": {"status": "NOT_RUN", "reason": "Finite multi-ell, causal and programme-wide freeze gates remain open."}
+  }
+}

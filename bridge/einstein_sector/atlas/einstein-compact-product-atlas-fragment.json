@@ -2731,15 +2731,20 @@
       }
     },
     {
-      "claim_boundary": "The same-shell zero map is certified for every one fixed ell>=2 at k=0. Neighboring angular-output inverses, finite multi-ell sums, nonzero momentum, causal propagation and higher lifecycles remain fail-closed.",
+      "claim_boundary": "The bounded product cone is certified for every one fixed ell>=2 at k=0. Finite multi-ell sums, nonzero momentum, causal propagation and higher lifecycles remain fail-closed.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
-        "nonlinear": "OPEN",
+        "nonlinear": "CERTIFIED",
         "observational": "OPEN",
         "quantum": "OPEN",
         "symplectic": "CERTIFIED"
       },
       "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_BOUNDED_CONE",
+          "sha256": "3d91382ed023b0e6bd8f0ca637824a2460de8a18eb9b6b2050dcf3faa61bf439"
+        },
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_ZERO_MAP",
@@ -2782,8 +2787,8 @@
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The complete same-shell resonance kernel is the full fixed-ell q/p carrier, but uniform inversion of the neighboring L=ell-1 and L=ell+1 outputs remains the bounded sufficiency gate.",
-            "status": "OPEN"
+            "statement": "For every one fixed ell>=2, Z2_bounded(A,wave)=R_A^3 times the complete wave common stabilizer zero cone; both neighboring angular outputs are uniformly off shell.",
+            "status": "CERTIFIED"
           },
           "causal_retarded": {
             "statement": "No retarded Weyl-Maxwell complex is certified.",
@@ -2791,7 +2796,7 @@
           },
           "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
           "smooth_secular": {
-            "statement": "The complete finite-support smooth-secular theorem supplies a correction on the common stabilizer zero cone.",
+            "statement": "Bounded corrections lie in the complete finite-support smooth-secular class.",
             "status": "CERTIFIED"
           }
         },
@@ -3215,7 +3220,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "214d186742cc93ad0bc336502845a33ce8b2a5d86309120c32655b816606f8d2",
+  "generated_by_sha256": "795cbd7d33ca1b0fdb5bdd31dfd3fb46c91e69e61e34136ca35f13eb732848b3",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
