@@ -1,0 +1,20 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_TWO_ABS_MOMENTUM_UNIVERSAL_SCALAR_SEPARATOR_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Universal real scalar separator on the complete generic opposite-signed 1:-2 carrier, covering admissible candidates 1-15.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_two_abs_momentum_universal_scalar_separator.json": "933b8282c3c4c3de1bca656c30a5eed19177b0c7408e36280228ebfd4c869d7a",
+    "bridge/einstein_sector/einstein_maxwell_weyl_two_abs_momentum_universal_scalar_separator.py": "f95e18268721423fd31e32252e582576af75c4a8eb2ee6c498c41e7fdf9f5aa2",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_two_abs_momentum_universal_scalar_separator.schema.json": "2f580e11cd962327ad7549721cbaa119181c1c803cabd7c39cad60fa05b434af",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_two_abs_momentum_universal_scalar_separator.py": "52830d060e6a93d34e75d30a2ac4ecb2571db27d8ea68a529e6c9aa8fb5efada",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_two_abs_momentum_universal_scalar_separator.py": "5b246fa29d9c79f493753a338482a04b305fa0cb865f353ee24c3c062a0f2ca0",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-two-abs-momentum-universal-scalar-separator.md": "6811d3d20f0b885c7aef2d6ac23181845cb6cf35e8a3503108fec7e46d7ea140"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <scoped JSON paths>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {"status": "PASS", "tests_run": 4, "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_two_abs_momentum_universal_scalar_separator --check", "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_two_abs_momentum_universal_scalar_separator", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_two_abs_momentum_universal_scalar_separator"]},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "reason": "The theorem imports the 21-candidate ledger, exact moment and pressure normalizations, and parity-complete current signs; its symbolic midpoint factorization is verified independently."},
+    "tier_3": {"status": "NOT_RUN", "reason": "Candidates 16-21, smooth and causal correction classes, all-orders integration and release remain outside scope."}
+  },
+  "claim_boundary": "Candidates 1-15 have real bounded generic cone {0}. Candidates 16-21 use same-sign momenta and remain OPEN, as do exceptional/generalized-zero, smooth, causal, residual, observational and quantum lifecycles."
+}

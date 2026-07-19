@@ -3689,10 +3689,23 @@ on this carrier; the smooth derived
 source retains only the five moment maps.  Both are `CERTIFIED` at
 `REDUCED-MODE`.  The frozen-unary full-domain support-local `f2`
 obstruction is preserved, no support-local derived BV subcomplex is
-constructed, and arity three remains unauthorized.  The active bridge gate is
-now the other collision circumferences: test for exact scalar separators
-fibre by fibre, with no name-based identification across their distinct
-background parameters.
+constructed, and arity three remains unauthorized.  The other collision
+circumferences now split exactly by signed momentum.  For every `rho>0` on
+the complete generic `n=1,-2` carrier, define frequency midpoints `t1,t2`
+between `q_minus` and `p_extra`.  The charge/pressure separator factors as
+
+```text
+Q_1(omega)=(omega-t1)(omega+t2/2),
+Q_-2(omega)=(omega-t2)(omega+2*t1).
+```
+
+It is negative on the negative-current `q_minus` branch and positive on
+`p_extra,q_plus`; hence all absolute-current coefficients are strictly
+positive.  This closes admissible collision candidates 1--15:
+`Z2_bounded={0}` on every one of their distinct opposite-signed fibres.
+Candidates 16--21 instead use `n=1,2`; the factorization is not definite
+there, so their amplitude-level bounded cones remain the active `OPEN` gate.
+No backgrounds or carriers are identified by name.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).

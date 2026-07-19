@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-two-abs-momentum-universal-scalar-separator-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "universal_construction", "candidate_coverage", "theorem", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_TWO_ABS_MOMENTUM_UNIVERSAL_SCALAR_SEPARATOR"},
+    "candidate_coverage": {"type": "array", "minItems": 15, "maxItems": 15},
+    "classification": {
+      "type": "object",
+      "properties": {
+        "universal_positive_rho_separator_certified": {"const": true},
+        "all_15_opposite_signed_admissible_collision_fibres_covered": {"const": true},
+        "all_15_opposite_signed_real_generic_bounded_cones_are_origin": {"const": true},
+        "nonzero_real_generic_bounded_point_exists_on_any_covered_fibre": {"const": false},
+        "causal_residual_observational_or_quantum_claim": {"const": false}
+      },
+      "required": ["universal_positive_rho_separator_certified", "all_15_opposite_signed_admissible_collision_fibres_covered", "all_15_opposite_signed_real_generic_bounded_cones_are_origin", "nonzero_real_generic_bounded_point_exists_on_any_covered_fibre", "smooth_cones_classified_here", "exceptional_or_generalized_zero_inputs_included", "all_orders_integrability", "causal_residual_observational_or_quantum_claim"]
+    }
+  },
+  "additionalProperties": true
+}
