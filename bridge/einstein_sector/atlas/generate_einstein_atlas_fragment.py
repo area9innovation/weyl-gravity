@@ -31,6 +31,7 @@ CERTIFICATES = {
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
     "d_full_time": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.json",
+    "ad_polynomial_zero": ROOT / "bridge/certificates/einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.json",
     "abd_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
     "homogeneous_twist_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
     "aligned_twist_extra_face": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.json",
@@ -276,6 +277,18 @@ def entries() -> list[dict[str, object]]:
             "The old direct fixtures evaluated t=0. Their adjoint isomorphism is retained as a constant-term statement; it is not a complete bounded d-column theorem. Other harmonics, moment maps and the joint a/d polynomial cone remain open.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ad_ell2_extra_polynomial_zero_locus",
+            _scope(theory="Weyl-Maxwell target", carrier="homogeneous a,d directions crossed with all four axial/polar ell=2,k=0 extra-primary amplitudes after universal b=0", degree=2, parity="two axial and two polar extra columns", ell="0 x 2 -> 2", m="all by SO3 equivariance", k=0, omega="generalized zero crossed with omega_e=4/sqrt(3)"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The four extra amplitudes occupy the certified ell=2 p-primary shell."),
+            ("CERTIFIED", "The source rows and restored d coefficient are normalized against the action-derived extra blocks."),
+            ("OPEN", "This cross-ledger theorem does not solve the simultaneous compact stabilizer equations."),
+            ("CERTIFIED", "The exact positive-degree ideal is <a*z_ax1,a*z_ax2,a*z_pol1,a*z_pol2,d*z_pol2>; its three algebraic faces are printed."),
+            _second_order(("OPEN", "The P_(j,r) cross zero locus is complete, but constant shell resonances and self/twist products remain to be imposed."), ("CERTIFIED", "All polynomial sources admit finite secular inversion once the five stabilizer moment maps vanish, by the complete smooth theorem."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("ad_polynomial_zero", "d_full_time", "abd_matrix", "complete_finite_smooth", "abstract_cone"),
+            "This certifies only the a/d-times-extra positive-degree cross ideal at ell=2,k=0. The old nonzero-extra common-zero cone survives because it already has a=b=d=0; constant resonance, other harmonics and the complete bounded cone remain open.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.abd_times_ell2_extra",
             _scope(theory="Weyl-Maxwell target", carrier="homogeneous generalized-zero a,b,d directions crossed with both ell=2 extra-primary amplitudes", degree=2, parity="axial and polar outputs kept separate", ell="0 x 2 -> 2", m="m=0 direct fixtures; all m by SO(3) equivariance", k=0, omega="polynomial-in-time generalized zero crossed with omega_e=4/sqrt(3)"),
             {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
@@ -377,6 +390,16 @@ def build() -> dict[str, object]:
         raise AssertionError("full-time d polynomial repair changed")
     if d_full_time["old_d_result_was_complete_bounded_column"]:
         raise AssertionError("old d constant projection was over-promoted")
+    ad_zero = records["ad_polynomial_zero"]["classification"]
+    if not (
+        ad_zero["complete_a_d_ell2_extra_cross_polynomial_ideal_classified"]
+        and ad_zero["four_radion_amplitude_products_forced_zero"]
+        and ad_zero["d_times_second_polar_amplitude_forced_zero"]
+        and ad_zero["old_nonzero_extra_common_zero_cone_survives_repair"]
+    ):
+        raise AssertionError("repaired a/d polynomial zero locus changed")
+    if ad_zero["complete_bounded_cone_solved"]:
+        raise AssertionError("a/d polynomial theorem over-promoted the bounded cone")
     if not records["abd_matrix"]["classification"]["every_parity_polarization_abd_polynomial_chain_rank_three"]:
         raise AssertionError("a,b,d resonance-matrix input changed")
     if not records["homogeneous_twist_matrix"]["classification"]["complete_homogeneous_twist_bounded_resonance_matrix"]:

@@ -1213,9 +1213,22 @@ nonzero vector
 isolated polynomial condition.  The older complete `a,b,d` and
 homogeneous/twist bounded-matrix claims are fail-closed until the repaired
 column is solved jointly with `a`; their printed constant adjoint and twist
-blocks remain valid.  The active positive-degree gate is now the complete
-`a/d` oscillator map, followed by the surviving `c`, polynomial-compatible
-`d`, constant-twist and oscillator resonance functionals.
+blocks remain valid.
+
+That joint `ell=2,k=0` cross ideal is now solved:
+
+```text
+<a*z_ax1, a*z_ax2, a*z_pol1, a*z_pol2, d*z_pol2>.
+```
+
+Its three faces are the no-extra face; `a=0,z_pol2=0`; and `a=d=0`.
+Atlas row `einstein.ph.wm.interaction.ad_ell2_extra_polynomial_zero_locus`
+records necessity and sufficiency for this scoped `P_(j,r)` ledger.  The old
+nonzero-extra common-zero cone survives because it already has `a=b=d=0`,
+and its independent twist-velocity obstruction is unchanged.  The active
+gate is now to restrict the constant `d`, twist and oscillator resonance
+equations to the repaired faces and solve them with the five moment maps;
+other harmonics retain their own full-time `a/d` gate.
 
 This advances nonlinear input to the already activated compact-product
 linear bridge but does not certify a nonlinear relative morphism.  Atlas row

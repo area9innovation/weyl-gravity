@@ -966,6 +966,90 @@
       }
     },
     {
+      "claim_boundary": "This certifies only the a/d-times-extra positive-degree cross ideal at ell=2,k=0. The old nonzero-extra common-zero cone survives because it already has a=b=d=0; constant resonance, other harmonics and the complete bounded cone remain open.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AD_ELL2_EXTRA_POLYNOMIAL_ZERO_LOCUS",
+          "sha256": "f403fde7f8c7685cb68e4d82c15d4ed7094874ba670b05523d51f87a0484be05"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_D_ELL2_EXTRA_FULL_TIME_POLYNOMIAL",
+          "sha256": "704cf3978e8038c4c0bba3f807f2de77b42dd412cb3c16bda9bfad357a6e1dcd"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ABD_ELL2_EXTRA_RESONANCE_MATRIX",
+          "sha256": "9bf4fb15a934bba3690d92f630c027ec40f166360c012689425e8a473aa42736"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_FINITE_HARMONIC_SMOOTH_GLOBAL_SECOND_ORDER",
+          "sha256": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.ad_ell2_extra_polynomial_zero_locus",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The four extra amplitudes occupy the certified ell=2 p-primary shell.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The source rows and restored d coefficient are normalized against the action-derived extra blocks.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The exact positive-degree ideal is <a*z_ax1,a*z_ax2,a*z_pol1,a*z_pol2,d*z_pol2>; its three algebraic faces are printed.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The P_(j,r) cross zero locus is complete, but constant shell resonances and self/twist products remain to be imposed.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "All polynomial sources admit finite secular inversion once the five stabilizer moment maps vanish, by the complete smooth theorem.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "This cross-ledger theorem does not solve the simultaneous compact stabilizer equations.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "homogeneous a,d directions crossed with all four axial/polar ell=2,k=0 extra-primary amplitudes after universal b=0",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "0 x 2 -> 2",
+        "k": 0,
+        "m": "all by SO3 equivariance",
+        "omega": "generalized zero crossed with omega_e=4/sqrt(3)",
+        "parity": "two axial and two polar extra columns",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "The older rank-three matrix remains evidence for its printed a,b and t=0 d columns, but its complete bounded-functional claim is superseded by the full-time d repair.",
       "descriptions": {
         "causal": "OPEN",
@@ -1475,7 +1559,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "35b68054813b6819c8fd197d4dab1905b920a4265e6e0b2e42bda98e37186bc5",
+  "generated_by_sha256": "a89b42b61287c2575e968239c141182e702df03ca1f452c473c2785f18e278eb",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

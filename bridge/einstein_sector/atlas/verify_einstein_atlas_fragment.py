@@ -166,6 +166,13 @@ def verify() -> None:
         raise AssertionError("superseded abd bounded matrix remained certified")
     if "superseded" not in abd_column["claim_boundary"]:
         raise AssertionError("abd full-time repair lifecycle was hidden")
+    ad_zero = by_id["einstein.ph.wm.interaction.ad_ell2_extra_polynomial_zero_locus"]
+    if ad_zero["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("repaired a/d polynomial ideal was lost")
+    if "<a*z_ax1,a*z_ax2,a*z_pol1,a*z_pol2,d*z_pol2>" not in ad_zero["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("repaired a/d generators were hidden")
+    if ad_zero["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("a/d cross ideal over-promoted the bounded cone")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

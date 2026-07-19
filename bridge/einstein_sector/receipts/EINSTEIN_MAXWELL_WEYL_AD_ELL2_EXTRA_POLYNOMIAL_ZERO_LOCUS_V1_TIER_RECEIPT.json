@@ -1,0 +1,71 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_AD_ELL2_EXTRA_POLYNOMIAL_ZERO_LOCUS_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AD_ELL2_EXTRA_POLYNOMIAL_ZERO_LOCUS",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "generator": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.py",
+      "sha256": "6a4c931859a10e1a7a23ad3eaa27e0c0aa34d73253e09b94f261bb4fce2e5fab"
+    },
+    "certificate": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.json",
+      "sha256": "f403fde7f8c7685cb68e4d82c15d4ed7094874ba670b05523d51f87a0484be05"
+    },
+    "schema": {
+      "path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.schema.json",
+      "sha256": "c6ceb4e540a8ea1aaf9506c6575c6c8b0e610a74e1dd3afb3d245664c9a5b125"
+    },
+    "independent_verifier": {
+      "path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.py",
+      "sha256": "a5510cac0c00358d58ce896869dc2b89c34f8147b461a5990a3cbad97fc26cb4"
+    },
+    "tests": {
+      "path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.py",
+      "sha256": "1f2360783f2b9443609c23106d342708a3a402bf94127e2c33cbf9af0f0c0132"
+    },
+    "atlas_generator": {
+      "path": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
+      "sha256": "a89b42b61287c2575e968239c141182e702df03ca1f452c473c2785f18e278eb"
+    },
+    "atlas_fragment": {
+      "path": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+      "sha256": "e6df8f05ccfb5b30e8d404205d73d29509be9235b11bcce94aac14df412f644a"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.21,
+      "max_rss_kb": 16184,
+      "commands": [
+        "python3 -m py_compile <scoped theorem, verifier, tests and atlas generator>",
+        "python3 -m json.tool <scoped schema, certificate, atlas fragment and receipt>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.10,
+      "max_rss_kb": 60812,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ],
+      "tests_run": 19
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "the direct full-time a rows, restored d polynomial and old common-zero cone are unchanged exact inputs"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "constant resonance, other harmonics, complete bounded, causal, all-orders, residual, observational and quantum gates remain excluded"
+    }
+  }
+}

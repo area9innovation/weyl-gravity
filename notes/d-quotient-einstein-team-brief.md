@@ -2328,10 +2328,27 @@ polynomial condition is `d*z2=0`.  The old `a,b,d` and homogeneous/twist
 bounded-matrix completeness claims are superseded pending a joint `a/d`
 polynomial solve; their printed `a,b`, twist and `t=0 d` data remain valid.
 
-After the joint `a/d` zero locus is known, it must be intersected with `c`,
-the polynomial-compatible `d` face, constant-twist and oscillator shell
-functionals `R_(j,a)`.  These nonlinear results are inputs to active Bridge
-1; they do not promote the linear relative triangle to a nonlinear morphism.
+The repaired joint cross ideal is now solved exactly.  In amplitude order
+`(z_ax1,z_ax2,z_pol1,z_pol2)`, its generators are
+
+```text
+a*z_ax1, a*z_ax2, a*z_pol1, a*z_pol2, d*z_pol2.
+```
+
+They already form the exact Groebner basis.  The three faces are: no extra
+wave with `a,d` free in this cross ledger; `a=0,z_pol2=0` with `d` and the
+two axial plus first polar amplitudes free; and `a=d=0` with all four extra
+amplitudes free.  Atlas row
+`einstein.ph.wm.interaction.ad_ell2_extra_polynomial_zero_locus` records the
+complete scoped `P_(j,r)` theorem.  The old nonzero-extra common-zero cone is
+unchanged because it already has `a=b=d=0`; its independent twist-velocity
+bounded obstruction also remains.
+
+The active gate is now to restrict the constant `d`, twist and wave
+resonance equations to these repaired polynomial faces and solve them with
+the five moment maps.  Other harmonics still require their own full-time
+`a/d` audit.  These nonlinear results are inputs to active Bridge 1; they do
+not promote the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

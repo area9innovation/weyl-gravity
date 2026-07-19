@@ -1,0 +1,137 @@
+{
+  "bounded_ledger_consequence": {
+    "circumference_velocity": "d!=0 excludes the second polar extra amplitude unless another same-output polynomial column outside this declared cross ledger cancels it",
+    "next_resonance_problem": "restrict the constant d adjoint matrix and twist/oscillator resonance equations to the repaired polynomial branches",
+    "radion": "a!=0 excludes every ell=2 extra amplitude in a bounded candidate",
+    "remaining_cross_face": "a=0,z_pol2=0 retains d with both axial and first polar extra columns before R_(j,a) is imposed"
+  },
+  "claim_boundary": "This is the complete P_(j,r) zero locus only for a,d crossed with the ell=2,k=0 extra block. It does not classify other oscillators, self-products, constant resonance, the complete bounded cone, causal propagation, all-orders integration, residual descent, observables, particles or quantum theory.",
+  "classification": {
+    "causal_or_quantum_claim": false,
+    "complete_a_d_ell2_extra_cross_polynomial_ideal_classified": true,
+    "complete_bounded_cone_solved": false,
+    "constant_resonance_zero_locus_solved_on_repaired_branches": false,
+    "d_times_second_polar_amplitude_forced_zero": true,
+    "four_radion_amplitude_products_forced_zero": true,
+    "old_nonzero_extra_common_zero_cone_survives_repair": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "The repaired polynomial ledger is reducible. A nonzero radion position excludes the entire ell=2 extra multiplet. With a=0, a nonzero circumference velocity can coexist polynomially with both axial extra columns and the first polar column, but not the second polar column. These are source-growth conditions only; the surviving amplitudes must still satisfy the constant shell-resonance and moment-map equations.",
+  "lifecycle_state": "CLASSIFIED",
+  "necessity_and_sufficiency_for_cross_ledger": {
+    "necessity": "the four independent a-leading witnesses and restored d polar-e2 witness force the five displayed monomials",
+    "scope": "only the a/d-times-extra cross source; self-products, twists and constant resonances are separate",
+    "sufficiency": "every positive-degree coefficient in the printed a columns is proportional to a times its matching amplitude; the only restored d positive-degree column is proportional to d*z_pol2"
+  },
+  "next_gate": "restrict the t=0 d adjoint map and the constant-twist/oscillator resonance matrix to the three repaired polynomial branches, then solve their simultaneous moment-map and R zero loci",
+  "old_cone_reconciliation": {
+    "bounded_obstruction": "the old common-zero orbit still has nonzero twist velocity and remains bounded-obstructed by its independent zero-frequency t^2 block",
+    "reason": "the previously classified nonzero-extra common-zero locus already has a=b=d=0, so the restored d polynomial vanishes identically on every old solution; adding the repaired equation removes no point from that locus and cannot create a new one",
+    "status": "CERTIFIED_UNCHANGED"
+  },
+  "polynomial_zero_locus": {
+    "Groebner_basis": [
+      "a*z_ax1",
+      "a*z_ax2",
+      "a*z_pol1",
+      "a*z_pol2",
+      "d*z_pol2"
+    ],
+    "amplitude_order": [
+      "z_ax1",
+      "z_ax2",
+      "z_pol1",
+      "z_pol2"
+    ],
+    "branch_decomposition": [
+      "extra amplitudes all zero, with a and d free in this cross ledger",
+      "a=0 and z_pol2=0, with d and z_ax1,z_ax2,z_pol1 free",
+      "a=0 and d=0, with all four extra amplitudes free"
+    ],
+    "complex_zero_locus": "a*z_ax1=a*z_ax2=a*z_pol1=a*z_pol2=d*z_pol2=0",
+    "ideal_generators": [
+      "a*z_ax1",
+      "a*z_ax2",
+      "a*z_pol1",
+      "a*z_pol2",
+      "d*z_pol2"
+    ],
+    "leading_row_witnesses": {
+      "axial_e1": "-144*sqrt(3)*I*a*z_ax1",
+      "axial_e2": "-8*sqrt(3)*I*a*z_ax2/3",
+      "polar_e1": "-12*sqrt(3)*I*a*z_pol1",
+      "polar_e2": "180*a*z_pol2"
+    },
+    "restored_d_witness": "-36*d*z_pol2"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.py",
+    "generator_sha256": "6a4c931859a10e1a7a23ad3eaa27e0c0aa34d73253e09b94f261bb4fce2e5fab",
+    "inputs": {
+      "abd_matrix": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
+        "sha256": "9bf4fb15a934bba3690d92f630c027ec40f166360c012689425e8a473aa42736"
+      },
+      "d_full_time": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.json",
+        "sha256": "704cf3978e8038c4c0bba3f807f2de77b42dd412cb3c16bda9bfad357a6e1dcd"
+      },
+      "old_complete_cone": {
+        "path": "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
+        "sha256": "fa3dcb747f66a5933a440288d712e1b85a445bf24cae347c023e58b1e7203ec1"
+      },
+      "standard_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AD_ELL2_EXTRA_POLYNOMIAL_ZERO_LOCUS",
+  "result_state": "REPAIRED_AD_ELL2_EXTRA_POLYNOMIAL_ZERO_LOCUS_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-ad-ell2-extra-polynomial-zero-locus-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.schema.json",
+  "schema_sha256": "c6ceb4e540a8ea1aaf9506c6575c6c8b0e610a74e1dd3afb3d245664c9a5b125",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic correction",
+    "carrier": "homogeneous a,d directions crossed with the complete axial-plus-polar ell=2,k=0 extra-primary multiplicity space after universal b=0",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": 2,
+    "k": 0,
+    "m": "all by SO3 equivariance",
+    "omega": "+/-4/sqrt(3)",
+    "parity": "two axial and two polar extra columns",
+    "theory": "Weyl-Maxwell"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.21,
+      "max_rss_kb": 16184,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 2.1,
+      "max_rss_kb": 60812,
+      "status": "PASS",
+      "tests_run": 19
+    },
+    "tier_2": {
+      "criterion": "the direct full-time a rows, restored d polynomial and old common-zero cone are unchanged exact inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "constant resonance, other harmonics, complete bounded, causal, all-orders, residual and quantum gates remain excluded",
+      "status": "NOT_RUN"
+    }
+  }
+}

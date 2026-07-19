@@ -119,6 +119,12 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(abd["mode_data"]["resonance"]["status"], "OPEN")
         self.assertIn("superseded", abd["claim_boundary"])
 
+    def test_repaired_ad_polynomial_zero_locus_is_exact_but_pre_resonance(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ad_ell2_extra_polynomial_zero_locus"]
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("<a*z_ax1,a*z_ax2,a*z_pol1,a*z_pol2,d*z_pol2>", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+
 
 if __name__ == "__main__":
     unittest.main()
