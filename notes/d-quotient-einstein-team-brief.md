@@ -3173,6 +3173,19 @@ source is off shell.  The isolated candidates, their projected source
 coefficients, same-fibre rows and the complete two-fibre tangent cone remain
 `OPEN`; the nonzero-Fourier `L=0` complex is separately exact.
 
+That finite exceptional set has now been enumerated exactly.  Starting from
+the same 198 canonical rows, exact positivity of `rho=(2*pi/L)^2` followed by
+the unsquared temporal-sign test leaves 21 admissible rows at 21 distinct
+positive algebraic circumference parameters.  Both temporal `SUM` and
+`DIFFERENCE` channels occur; no floating-point sign decision enters.  Atlas
+row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_isolated_candidates`
+therefore certifies the complete resonance-location ledger while keeping
+parity/angular pruning, every projected source coefficient, same-fibre rows
+and the complete two-fibre cone `OPEN`.  This is the active finite-momentum
+source-matrix gate complementary to the symbolic `q_minus` self-product
+coefficient.
+
 The complementary symbolic-`ell` self-product gate is also closed without
 extrapolating the direct `ell=2` source coefficient.  For every integer
 `ell>=2`, at

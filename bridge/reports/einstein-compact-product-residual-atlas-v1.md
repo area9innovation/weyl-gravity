@@ -44,6 +44,9 @@ smooth-secular and causal/retarded correction classes.  In particular:
   momentum fibres and relative phases, has smooth-secular tangent cone
   `mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0`; its bounded resonant-functional formula
   is certified but its coefficientwise zero locus remains `OPEN`;
+- on the first cross-fibre `ell=2`, `|n|=1,2` carrier, exact shell arithmetic
+  leaves 21 distinct positive algebraic circumference candidates from 198
+  canonical rows; projected nonlinear source coefficients remain `OPEN`;
 - adjoining every certified exceptional and global linear block gives the
   complete finite-support smooth cone `mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0`;
   the bounded ledger additionally contains polynomial-growth `P_(j,r)` and

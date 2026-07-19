@@ -1861,6 +1861,19 @@ keeps those isolated source matrices, same-fibre rows, the two-fibre
 moment-map intersection and causal transport explicitly `OPEN` or
 `NO_CERTIFIED_MAP`.
 
+The exceptional cross-fibre locus on this first two-`|k|` carrier is now a
+complete exact ledger rather than an unspecified finite set.  Exact
+positivity and the unsquared temporal-sign equation reduce the 198 canonical
+rows to 21 admissible rows at 21 distinct positive algebraic values of
+`rho=(2*pi/L)^2`; both `SUM` and `DIFFERENCE` channels survive.  Fail-closed
+atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_isolated_candidates`
+certifies only those locations.  Its activation gate is the parity-reduced,
+action-derived adjoint source matrix on the surviving rows; bounded and
+smooth correction verdicts remain `OPEN`, causal transport remains
+`NO_CERTIFIED_MAP`, and no same-named carrier on another background is
+identified.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell

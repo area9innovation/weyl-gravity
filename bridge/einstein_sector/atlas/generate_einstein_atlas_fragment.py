@@ -87,6 +87,7 @@ CERTIFICATES = {
     "nonzero_k_constant_twist_same_shell": ROOT / "bridge/certificates/einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell.json",
     "finite_multimomentum_divisor": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_multimomentum_resonance_divisor.json",
     "ell2_two_abs_momentum_identity_audit": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_identity_audit.json",
+    "ell2_two_abs_momentum_isolated_candidates": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "twist_aligned_opposite_momentum_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.json",
@@ -765,6 +766,18 @@ def entries() -> list[dict[str, object]]:
             "Identity-resonance audit only for ell=2 cross pairs between |n|=1 and |n|=2. Isolated candidates, source coefficients, same-fibre rows, the full two-fibre tangent cone and higher lifecycles remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ell2_two_abs_momentum_isolated_candidates",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference restricted to one of 21 exact algebraic candidates; before final residual quotient", carrier="all q-minus, p-extra and q-plus ell=2 oscillators on cross pairs between |n|=1 and |n|=2", degree=2, parity="all input/output parity combinations conservatively retained before source projection", ell="input 2 x 2; candidate outputs L=1,2,3,4 with nonzero-Fourier L=0 separately exact", m="all Clebsch-Gordan-allowed values", k="signed n in {+/-1,+/-2} times 2*pi/L, restricted to cross-|n| pairs", omega="the exact SUM or DIFFERENCE channel assigned row by row", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","All three input primaries and every retained target retain their exact branch, signed-momentum and temporal-channel labels."),
+            ("CERTIFIED","Every candidate uses the same-background action-derived source/target carrier; no projected source coefficient or pairing value is inferred."),
+            ("NOT_APPLICABLE","This is a nonzero-frequency shell-collision ledger; zero-frequency stabilizer moment maps remain separate necessary conditions."),
+            ("CERTIFIED","Exact positivity and the unsquared temporal-sign test reduce the 198 identity-audit rows to 21 admissible rows at 21 distinct positive algebraic rho values, containing both SUM and DIFFERENCE channels."),
+            _second_order(("OPEN","Each of the 21 rows still requires parity/angular selection and its projected adjoint source coefficient before bounded extension or obstruction can be decided."),("OPEN","Off-shell rows are removable, but the 21 exceptional rows and same-fibre sources prevent a complete smooth-secular promotion."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _evidence("ell2_two_abs_momentum_isolated_candidates","ell2_two_abs_momentum_identity_audit","finite_multimomentum_divisor","branch_dictionary"),
+            "Exact resonance-location theorem only for ell=2 cross pairs between |n|=1 and |n|=2. Projected source coefficients, parity pruning, same-fibre rows, the complete two-fibre tangent cone and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="constant twist position plus paired axisymmetric +/-k Einstein-plus/minus standing waves", degree=2, parity="generic input parity retained; polar extra resonant output", ell="every one fixed integer ell>=2 with output L=2ell", m="m_A=0 inputs and M=0 output", k="one tuned allowed nonzero +/-k pair", omega="q-plus/minus inputs and p-primary sum-frequency output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
@@ -1119,6 +1132,11 @@ def build() -> dict[str, object]:
         raise AssertionError("ell2 two-absolute-momentum identity audit changed")
     if two_fibre["isolated_circumference_source_coefficients_computed"] or two_fibre["complete_two_fibre_tangent_cone_classified"] or two_fibre["causal_or_quantum_claim"]:
         raise AssertionError("ell2 two-absolute-momentum identity audit exceeded its scope")
+    candidates = records["ell2_two_abs_momentum_isolated_candidates"]["classification"]
+    if not (candidates["all_198_identity_audit_rows_filtered"] and candidates["all_positive_candidates_decided_exactly"] and candidates["unsquared_temporal_sign_test_complete"] and candidates["twenty_one_distinct_admissible_candidates"]):
+        raise AssertionError("ell2 two-absolute-momentum candidate ledger changed")
+    if candidates["floating_point_sign_decision_used"] or candidates["projected_source_coefficients_computed"] or candidates["complete_two_fibre_tangent_cone_classified"] or candidates["causal_or_quantum_claim"]:
+        raise AssertionError("ell2 two-absolute-momentum candidate ledger exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

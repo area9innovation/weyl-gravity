@@ -386,6 +386,16 @@ def verify() -> None:
     two_fibre_second = two_fibre["mode_data"]["second_order"]
     if two_fibre_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or two_fibre_second["smooth_secular"]["status"] != "OPEN" or two_fibre_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("two-absolute-momentum correction classes were over-promoted")
+    candidates = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_isolated_candidates"]
+    if candidates["descriptions"]["nonlinear"] != "OPEN":
+        raise AssertionError("two-absolute-momentum candidate ledger was promoted")
+    if candidates["mode_data"]["resonance"]["status"] != "CERTIFIED" or "21 distinct positive algebraic rho" not in candidates["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("two-absolute-momentum candidate ledger was hidden")
+    if candidates["mode_data"]["taub_maps"]["status"] != "NOT_APPLICABLE":
+        raise AssertionError("two-absolute-momentum candidate ledger silently acquired a Taub claim")
+    candidate_second = candidates["mode_data"]["second_order"]
+    if candidate_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or candidate_second["smooth_secular"]["status"] != "OPEN" or candidate_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("two-absolute-momentum candidate correction classes were over-promoted")
     aligned_phase = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
     aligned_phase_second = aligned_phase["mode_data"]["second_order"]
     if aligned_phase["descriptions"]["nonlinear"] != "OPEN":
