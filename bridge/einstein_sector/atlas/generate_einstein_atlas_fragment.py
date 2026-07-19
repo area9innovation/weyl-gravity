@@ -834,7 +834,7 @@ def entries() -> list[dict[str, object]]:
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
             ("CERTIFIED","All 21 exact rho values and their signed momentum orientations are retained as distinct background rows in the imported ledger."),
             ("CERTIFIED","The action-derived q-minus negative and p-extra/q-plus positive current signs are checked in both parities."),
-            ("CERTIFIED","Candidates 1-15 have exact rational strict separators in span(H,P_x,R_c); candidates 16-21 have exact positive Farkas dependencies and nonzero scalar-null occupations."),
+            ("CERTIFIED","A universal midpoint factorization strictly separates every positive-rho n=(1,-2) carrier, including candidates 1-15; candidates 16-21 have exact positive Farkas dependencies and nonzero scalar-null occupations."),
             ("OPEN","The scalar theorem makes resonance ideals redundant for indices 1-15; the six same-sign indices 16-21 still require their candidate-specific amplitude/resonance joins."),
             _second_order(("CERTIFIED","The complete bounded generic cones are {0} for indices 1-15. For indices 16-21 the scalar common zero is nontrivial but the full bounded cone remains OPEN."),("OPEN","R_c has a secular inverse, so this scalar bounded classification does not decide the 21 smooth-secular cones."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("collision_scalar_separation","ell2_two_abs_momentum_isolated_candidates","finite_generic_bounded_zero_block","standard","axial_current","polar_current","taub"),

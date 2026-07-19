@@ -412,7 +412,7 @@ def verify() -> None:
         raise AssertionError("two-absolute-momentum candidate correction classes were over-promoted")
     scalar_collision = by_id["einstein.ph.wm.interaction.ell2_collision_scalar_separation_classification"]
     scalar_collision_second = scalar_collision["mode_data"]["second_order"]
-    if scalar_collision["descriptions"]["nonlinear"] != "CERTIFIED" or "Candidates 1-15" not in scalar_collision["mode_data"]["taub_maps"]["statement"]:
+    if scalar_collision["descriptions"]["nonlinear"] != "CERTIFIED" or "universal midpoint factorization" not in scalar_collision["mode_data"]["taub_maps"]["statement"]:
         raise AssertionError("collision scalar-separation split was hidden")
     if scalar_collision["mode_data"]["resonance"]["status"] != "OPEN":
         raise AssertionError("six same-sign resonance joins were over-promoted")

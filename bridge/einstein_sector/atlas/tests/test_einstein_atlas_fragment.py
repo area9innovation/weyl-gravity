@@ -113,7 +113,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         entry = self.entries["einstein.ph.wm.interaction.ell2_collision_scalar_separation_classification"]
         second = entry["mode_data"]["second_order"]
         self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
-        self.assertIn("Candidates 1-15", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("universal midpoint factorization", entry["mode_data"]["taub_maps"]["statement"])
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
         self.assertIn("indices 1-15", second["bounded_or_finite_quasiperiodic"]["statement"])
