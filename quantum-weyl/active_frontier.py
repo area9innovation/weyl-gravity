@@ -67,6 +67,7 @@ DEPENDENCIES = {
     "generic_physical_hessian_linear_curvature": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE.json",
     "generic_physical_hessian_n3_triangle_fixture": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_TRIANGLE_FIXTURE.json",
     "generic_physical_hessian_n3_five_carrier_projection": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_FIVE_CARRIER_PROJECTION.json",
+    "generic_physical_hessian_n3_integration_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_INTEGRATION_OBSTRUCTION.json",
     "generic_background_ghost_CPT_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
@@ -181,6 +182,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "generic_physical_hessian_linear_curvature": "SAME_GAUGE_TRACELESS_PHYSICAL_HESSIAN_LINEAR_CURVATURE_IMPORTED_N3_THREE_LINEAR_VERTEX_READY",
         "generic_physical_hessian_n3_triangle_fixture": "PHYSICAL_THREE_LINEAR_HESSIAN_TRIANGLE_OPERATIONAL_EXACT_INTERIOR_FIXTURE",
         "generic_physical_hessian_n3_five_carrier_projection": "PHYSICAL_THREE_H1_COMMON_NUMERATOR_AND_FIVE_CARRIER_PROJECTION_EXACT",
+        "generic_physical_hessian_n3_integration_obstruction": "ISOLATED_PHYSICAL_THREE_H1_TRIANGLE_HAS_LOGARITHMIC_SIMPLEX_CORNER_OBSTRUCTION",
         "generic_background_ghost_CPT_obstruction": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
         "generic_ghost_Endo_Duhamel_reduction": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES",
         "generic_ghost_n1_n2_Hodge_resolvent_reduction": "CURVED_ENDO_N1_N2_REDUCED_EXACTLY_TO_FIVE_MINIMAL_VECTOR_SCALAR_RESOLVENT_CARRIERS",
@@ -230,6 +232,9 @@ def _load() -> dict[str, dict[str, Any]]:
     ]
     generic_physical_hessian_n3_projection = values[
         "generic_physical_hessian_n3_five_carrier_projection"
+    ]
+    generic_physical_hessian_n3_obstruction = values[
+        "generic_physical_hessian_n3_integration_obstruction"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -615,6 +620,31 @@ def _load() -> dict[str, dict[str, Any]]:
         or physical_n3_interpolation.get("unseen_fixture_count") != 2
     ):
         raise ValueError("generic physical-Hessian n=3 projection frontier drifted")
+    if (
+        generic_physical_hessian_n3_obstruction.get("relative_quotient", {}).get(
+            "symmetric_point_relative_IBP_plus_master_rank"
+        )
+        != 49
+        or generic_physical_hessian_n3_obstruction.get("relative_quotient", {}).get(
+            "M14_augmented_rank"
+        )
+        != 50
+        or generic_physical_hessian_n3_obstruction.get("corner_asymptotic", {}).get(
+            "total_log_1_over_epsilon_coefficient"
+        )
+        != {"numerator": 1, "denominator": 2}
+        or len(
+            generic_physical_hessian_n3_obstruction.get(
+                "nonzero_obstruction_channels", []
+            )
+        )
+        != 8
+        or generic_physical_hessian_n3_obstruction.get("claim_flags", {}).get(
+            "H2_CANCELLATION_OF_CORNER_CLASS_PROVED"
+        )
+        is not False
+    ):
+        raise ValueError("physical-Hessian n=3 integration obstruction frontier drifted")
     if (
         generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
         != "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
@@ -2355,8 +2385,11 @@ def build() -> dict[str, Any]:
             "The scalar-flat rank-nine momentum vertex is now completed by formal adjunction. "
             "Its full physical +(1/6)Tr[(H0^-1 H1)^3] alpha numerator is projected exactly "
             "onto all eleven raw channels of the five-carrier quotient using 28 training "
-            "and two unseen fixtures. The curvature-squared H2 layer, mixed H1-H2 rows and "
-            "generic tensor-triangle integration, "
+            "and two unseen fixtures. At the symmetric point its isolated simplex integral "
+            "contains a logarithmic M14 corner class: the exact relative rank jumps 49 to 50, "
+            "a normalized dual witness certifies non-membership, and the total corner coefficient "
+            "is 1/2. The curvature-squared H2 layer and mixed H1-H2 rows must be tested against "
+            "that class, or an explicit subtraction fixed; no H2 cancellation is asserted. The "
             "global carrier and five repository form-factor assembly remain open. At the "
             "normalized symmetric point all eleven coordinates are integrated exactly in "
             "terms of one Clausen master. This is not the generic five repository functions; "

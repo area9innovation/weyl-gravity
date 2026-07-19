@@ -1334,6 +1334,52 @@ The exhaustive generator uses \texttt{--check}; its exact fixture coordinates ar
 content-addressed under ignored build storage.  Neither rail integrates the
 generic simplex rows or supplies $\mathcal H_2$.
 
+\subsection{\texorpdfstring{Exact obstruction to isolated three-$\mathcal H_1$ integration}{Exact obstruction to isolated three-H1 integration}}
+
+At the symmetric box fixture, write
+\[
+ e_2=\alpha_0\alpha_1+\alpha_1\alpha_2+\alpha_2\alpha_0,
+ \qquad e_3=\alpha_0\alpha_1\alpha_2.
+\]
+The independent replay averages each of the eleven exact physical rows over
+$S_3$ and reconstructs it in the invariant monomials $e_2^ie_3^j$ through
+alpha degree nine.  The occupied pole-four relative-IBP-plus-master span has
+rank $49$.  Every occupied invariant signature remains in that span except
+\[
+ M_{14}=\frac{e_3}{e_2^4},
+\]
+which raises the rank to $50$.  The certificate stores a normalized dual
+functional on all 55 affine alpha monomials: it annihilates the rank-$49$
+span and evaluates to one on $e_3$.
+
+With corner coordinates
+$\alpha_0=1-\epsilon$, $\alpha_1=\epsilon t$ and
+$\alpha_2=\epsilon(1-t)$, including the simplex Jacobian,
+\[
+ M_{14}\,\dd^2\alpha
+ =\frac{t(1-t)}{\epsilon}\,\dd\epsilon\,\dd t+O(1).
+\]
+The angular integral is $1/6$ at each of three corners.  The raw-channel
+$M_{14}$ coefficients are $15/2$ for $I_{10}$, $17/18$ for each $I_{24}$,
+$-121/9$ for each $I_{25}$, zero for each $I_{28}$, and $176/3$ for
+$I_{29}$.  Thus the isolated physical three-$\mathcal H_1$ trace is
+logarithmically corner divergent.  This is a minimal-missing-input theorem:
+the $\mathcal H_2$/mixed completion must be tested against the same class, or
+an explicit renormalized subtraction must be fixed.  It is not a proof that
+$\mathcal H_2$ cancels the class.
+
+\begin{verbatim}
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}n3_integration_obstruction"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+PYTHONPATH=quantum-weyl python3 \
+  quantum-weyl/spectral/euclidean/verify_generic_background_\
+physical_hessian_n3_integration_obstruction.py
+TEST="spectral.euclidean.tests.test_generic_background_physical_"
+TEST="${TEST}hessian_n3_integration_obstruction"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
 \subsection{Exact three-insertion adiabatic angular carrier}
 
 At cubic curvature order the three-insertion row uses only the flat Endo

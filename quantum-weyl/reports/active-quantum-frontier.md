@@ -141,8 +141,13 @@ has been projected exactly onto the five scalar-flat carriers. At
 degree-six-unisolvent training fixtures and two unseen exact fixtures certify
 the 5,755-term Laurent projection with formula digest
 `7c91744da094939e86e96a6807b8f406c01b1e4b2991ef235e11dea2c2b3b3fe`.
-The generic physical tensor-triangle integration and curvature-squared
-Hessian layer remain open.
+At the symmetric point, the isolated physical three-`H1` integral is now
+proved logarithmically corner obstructed. The `M14=e3/e2^4` carrier raises
+the exact relative-IBP-plus-master rank from 49 to 50, a normalized dual
+witness annihilates the declared rank-49 span and evaluates to one on `M14`,
+and the total corner coefficient is `1/2`. The curvature-squared Hessian and
+mixed rows must be tested against this class, or an explicit subtraction
+fixed; no cancellation is asserted.
 The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
 and rational corner flux. Four explicit primitives cover every orientation,
@@ -191,6 +196,7 @@ See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstructi
 [`generic-background-ghost-endo-duhamel-reduction.md`](generic-background-ghost-endo-duhamel-reduction.md),
 [`generic-background-ghost-schur-schatten-split.md`](generic-background-ghost-schur-schatten-split.md),
 [`generic-background-physical-hessian-n3-triangle-fixture.md`](generic-background-physical-hessian-n3-triangle-fixture.md),
+[`generic-background-physical-hessian-n3-integration-obstruction.md`](generic-background-physical-hessian-n3-integration-obstruction.md),
 [`generic-background-ghost-n3-pole3-integrated-functions.md`](generic-background-ghost-n3-pole3-integrated-functions.md),
 [`weyl-graviton-box-r-scheme-conversion.md`](weyl-graviton-box-r-scheme-conversion.md), and
 [`vacuum-cylinder-reduced-bridge4-hadamard.md`](vacuum-cylinder-reduced-bridge4-hadamard.md).
@@ -473,10 +479,10 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. integrate the now-exact physical three-linear five-carrier rows in the
-   generic scalar-triangle master basis;
-2. import the curvature-squared layer of the same-gauge physical Hessian and
+1. import the curvature-squared layer of the same-gauge physical Hessian and
    compute the mixed first-/second-curvature trace rows;
+2. test their sum against the certified `M14` corner class, or fix an explicit
+   renormalized subtraction, before integrating the physical five-carrier rows;
 3. supply the full generic primed Green kernel or spectral measure for the
    global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the
    physical Hessian to integrate

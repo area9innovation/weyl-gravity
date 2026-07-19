@@ -339,6 +339,13 @@ def main() -> None:
     assert claims["physical_n3_projection_training_fixture_count"] == 28
     assert claims["physical_n3_projection_unseen_fixture_count"] == 2
     assert claims["physical_n3_projection_exact_term_count"] == 5755
+    assert claims["physical_n3_isolated_H1_integration_corner_obstructed"] is True
+    assert claims["physical_n3_M14_relative_rank_jump"] == 1
+    assert claims["physical_n3_M14_total_log_corner_coefficient"] == {
+        "numerator": 1,
+        "denominator": 2,
+    }
+    assert claims["physical_n3_M14_nonzero_raw_orientation_count"] == 8
     assert payload["explicit_nonclaims"][
         "physical_n3_three_linear_triangle_integrated"
     ] is False
@@ -347,7 +354,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "INTEGRATE_PHYSICAL_N3_FIVE_CARRIER_ROWS_AND_IMPORT_CURVATURE_SQUARED_H2"
+        == "IMPORT_PHYSICAL_H2_AND_MIXED_ROWS_THEN_TEST_CORNER_CLASS_OR_FIX_SUBTRACTION"
     )
 
     dependencies = {}
@@ -381,7 +388,7 @@ def main() -> None:
         "denominator": 6561,
     }
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
-    assert len(payload["inputs"]) == 48
+    assert len(payload["inputs"]) == 49
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -407,6 +414,9 @@ def main() -> None:
     cpt_kernels = dependencies["CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS"]
     physical_hessian_n3_fixture = dependencies[
         "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_TRIANGLE_FIXTURE"
+    ]
+    physical_hessian_n3_obstruction = dependencies[
+        "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_INTEGRATION_OBSTRUCTION"
     ]
     generic_ghost_cpt = dependencies["GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION"]
     generic_ghost_endo = dependencies["GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION"]
@@ -505,6 +515,15 @@ def main() -> None:
     ]["completed_vertex_defect_count"] == 0
     assert physical_hessian_n3_fixture["claim_flags"][
         "PHYSICAL_N3_FIVE_CARRIER_PROJECTION_COMPUTED"
+    ] is False
+    assert physical_hessian_n3_obstruction["relative_quotient"][
+        "symmetric_point_relative_IBP_plus_master_rank"
+    ] == 49
+    assert physical_hessian_n3_obstruction["relative_quotient"][
+        "M14_augmented_rank"
+    ] == 50
+    assert physical_hessian_n3_obstruction["claim_flags"][
+        "H2_CANCELLATION_OF_CORNER_CLASS_PROVED"
     ] is False
     assert generic_ghost_cpt["CPT_applicability_decision"]["verdict"] == (
         "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"

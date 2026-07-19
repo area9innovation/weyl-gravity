@@ -964,8 +964,15 @@ projected exactly onto all eleven raw channels of the five-carrier quotient:
 28 degree-six-unisolvent training fixtures and two unseen exact fixtures
 certify 5,755 rational Laurent terms with formula digest
 `7c91744da094939e86e96a6807b8f406c01b1e4b2991ef235e11dea2c2b3b3fe`.
-Generic tensor-triangle integration, the curvature-squared Hessian layer and
-mixed rows remain open. The original
+At `x1=x2=x3=1`, the isolated physical three-`H1` integral is now proved
+logarithmically corner obstructed. Its `S3`-averaged numerator contains
+`M14=e3/e2^4`; this raises the exact pole-four relative-IBP-plus-master rank
+from 49 to 50, a normalized dual witness annihilates the complete declared
+rank-49 span and evaluates to one on `M14`, and the total logarithmic corner
+coefficient is `1/2`. Eight raw orientations have nonzero obstruction
+coordinate. The next gate is therefore the curvature-squared `H2` and mixed
+rows tested against this same class, or an explicit renormalized subtraction.
+No `H2` cancellation is asserted. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
@@ -987,9 +994,10 @@ exact relative-simplex IBP primitives, a complete punctured-corner
 non-membership theorem, and complete exact `J`-plus-two-log integrated
 functions. The remaining coefficient gate begins with supplying the generic
 primed Green/spectral carrier needed to lift the exact round-`S4`
-finite benchmark, together with integration of the now-exact physical
-three-linear five-carrier rows. The curvature-squared Hessian layer and mixed
-rows are a separate input.
+finite benchmark, together with the curvature-squared Hessian layer and mixed
+rows required to test the now-certified physical `M14` corner class (or an
+explicit subtraction prescription). The isolated three-linear integral may
+not be promoted before one of those routes closes.
 Those are followed by the five
 parity-even third-curvature repository
 form-factor functions and coefficients,
@@ -1092,6 +1100,8 @@ The exact generic-momentum eleven-to-ten carrier projection is recorded in
 The exact physical three-`H1` alpha numerator and its eleven-channel
 five-carrier projection are recorded in
 [`generic-background-physical-hessian-n3-five-carrier-projection.md`](../quantum-weyl/reports/generic-background-physical-hessian-n3-five-carrier-projection.md).
+Its exact isolated-`H1` integration obstruction is recorded in
+[`generic-background-physical-hessian-n3-integration-obstruction.md`](../quantum-weyl/reports/generic-background-physical-hessian-n3-integration-obstruction.md).
 The exact symmetric-point simplex integration and its branch guard are in
 [`generic-background-ghost-n3-symmetric-point-simplex-integration.md`](../quantum-weyl/reports/generic-background-ghost-n3-symmetric-point-simplex-integration.md).
 The exact generic denominator and boundary factorization is in

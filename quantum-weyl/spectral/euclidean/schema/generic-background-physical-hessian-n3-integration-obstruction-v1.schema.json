@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl/generic-background-physical-hessian-n3-integration-obstruction-v1.schema.json",
+  "title": "Physical-Hessian n=3 integration obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "dependencies", "scope", "convention", "relative_quotient", "corner_asymptotic", "channel_rows", "nonzero_obstruction_channels", "formula_digest", "claim_flags", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-physical-hessian-n3-integration-obstruction-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_INTEGRATION_OBSTRUCTION"},
+    "result_state": {"const": "ISOLATED_PHYSICAL_THREE_H1_TRIANGLE_HAS_LOGARITHMIC_SIMPLEX_CORNER_OBSTRUCTION"},
+    "lifecycle_state": {"const": "PHYSICAL_H1_PARAMETRIC_PROJECTION_COMPUTED_H2_CONTACT_COMPLETION_OR_SUBTRACTION_REQUIRED_BEFORE_INTEGRATION"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 1},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["physical_five_carrier_projection", "pole4_relative_IBP_architecture"],
+      "properties": {
+        "physical_five_carrier_projection": {"$ref": "#/$defs/dependency"},
+        "pole4_relative_IBP_architecture": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "signature", "kinematic_fixture", "input", "output"],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": "Euclidean"},
+        "kinematic_fixture": {"type": "string", "minLength": 1},
+        "input": {"type": "string", "minLength": 1},
+        "output": {"type": "string", "minLength": 1}
+      }
+    },
+    "convention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["e2", "e3", "M14", "overall_loop_prefactor", "external_box_denominator_at_fixture"],
+      "properties": {
+        "e2": {"type": "string", "minLength": 1},
+        "e3": {"type": "string", "minLength": 1},
+        "M14": {"const": "integral_simplex e3/e2^4"},
+        "overall_loop_prefactor": {"const": "(4*pi)^-2 excluded"},
+        "external_box_denominator_at_fixture": {"const": "x1*x2*x3=1"}
+      }
+    },
+    "relative_quotient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["symmetric_point_relative_IBP_plus_master_rank", "M14_augmented_rank", "M14_rank_jump", "other_occupied_signature_augmented_ranks", "M14_dual_nonmembership_witness"],
+      "properties": {
+        "symmetric_point_relative_IBP_plus_master_rank": {"const": 49},
+        "M14_augmented_rank": {"const": 50},
+        "M14_rank_jump": {"const": 1},
+        "other_occupied_signature_augmented_ranks": {
+          "type": "array",
+          "minItems": 6,
+          "items": {"$ref": "#/$defs/rankRow"}
+        },
+        "M14_dual_nonmembership_witness": {"$ref": "#/$defs/dualWitness"}
+      }
+    },
+    "corner_asymptotic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["corner_coordinates", "simplex_Jacobian", "leading_density_after_Jacobian", "angular_integral_per_corner", "corner_count", "total_log_1_over_epsilon_coefficient"],
+      "properties": {
+        "corner_coordinates": {"type": "string", "minLength": 1},
+        "simplex_Jacobian": {"const": "epsilon"},
+        "leading_density_after_Jacobian": {"const": "t*(1-t)/epsilon"},
+        "angular_integral_per_corner": {"const": {"numerator": 1, "denominator": 6}},
+        "corner_count": {"const": 3},
+        "total_log_1_over_epsilon_coefficient": {"const": {"numerator": 1, "denominator": 2}}
+      }
+    },
+    "channel_rows": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": {"$ref": "#/$defs/channelRow"}
+    },
+    "nonzero_obstruction_channels": {"const": ["I10_123", "I24_123", "I24_213", "I24_312", "I25_123", "I25_213", "I25_312", "I29_123"]},
+    "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["PHYSICAL_H1_ONLY_SYMMETRIC_POINT_INTEGRATION_OBSTRUCTED", "LOGARITHMIC_SIMPLEX_CORNER_CLASS_IDENTIFIED", "M14_RAISES_RELATIVE_QUOTIENT_RANK_BY_ONE", "EIGHT_RAW_CARRIER_ORIENTATIONS_HAVE_NONZERO_OBSTRUCTION", "CURVATURE_SQUARED_H2_IMPORTED", "H1_H2_MIXED_ROWS_COMPUTED", "H2_CANCELLATION_OF_CORNER_CLASS_PROVED", "RENORMALIZED_SUBTRACTION_PRESCRIPTION_FIXED", "PHYSICAL_N3_TRIANGLE_INTEGRATED", "COMPLETE_REPOSITORY_CUBIC_FORM_FACTORS_ASSEMBLED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "LORENTZIAN_CERTIFIED", "RESIDUAL_TRANSFER_AUTHORIZED"],
+      "properties": {
+        "PHYSICAL_H1_ONLY_SYMMETRIC_POINT_INTEGRATION_OBSTRUCTED": {"const": true},
+        "LOGARITHMIC_SIMPLEX_CORNER_CLASS_IDENTIFIED": {"const": true},
+        "M14_RAISES_RELATIVE_QUOTIENT_RANK_BY_ONE": {"const": true},
+        "EIGHT_RAW_CARRIER_ORIENTATIONS_HAVE_NONZERO_OBSTRUCTION": {"const": true},
+        "CURVATURE_SQUARED_H2_IMPORTED": {"const": false},
+        "H1_H2_MIXED_ROWS_COMPUTED": {"const": false},
+        "H2_CANCELLATION_OF_CORNER_CLASS_PROVED": {"const": false},
+        "RENORMALIZED_SUBTRACTION_PRESCRIPTION_FIXED": {"const": false},
+        "PHYSICAL_N3_TRIANGLE_INTEGRATED": {"const": false},
+        "COMPLETE_REPOSITORY_CUBIC_FORM_FACTORS_ASSEMBLED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false}
+      }
+    },
+    "next_gate": {"const": "IMPORT_PHYSICAL_H2_AND_MIXED_ROWS_THEN_TEST_CORNER_CLASS_CANCELLATION_OR_FIX_A_RENORMALIZED_SUBTRACTION"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "rankRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["e2_power", "e3_power", "augmented_rank"],
+      "properties": {
+        "e2_power": {"type": "integer", "minimum": 0, "maximum": 4},
+        "e3_power": {"type": "integer", "minimum": 0, "maximum": 3},
+        "augmented_rank": {"const": 49}
+      }
+    },
+    "coordinate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["e2_power", "e3_power", "coefficient"],
+      "properties": {
+        "e2_power": {"type": "integer", "minimum": 0, "maximum": 4},
+        "e3_power": {"type": "integer", "minimum": 0, "maximum": 3},
+        "coefficient": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "channelRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["channel_id", "symmetric_invariant_coordinates", "M14_e3_over_e2_power4_coefficient", "log_corner_coefficient", "obstruction_status"],
+      "properties": {
+        "channel_id": {"type": "string", "pattern": "^I(10|24|25|28|29)_[123]{3}$"},
+        "symmetric_invariant_coordinates": {"type": "array", "items": {"$ref": "#/$defs/coordinate"}},
+        "M14_e3_over_e2_power4_coefficient": {"$ref": "#/$defs/rational"},
+        "log_corner_coefficient": {"$ref": "#/$defs/rational"},
+        "obstruction_status": {"enum": ["NONZERO", "ZERO"]}
+      }
+    },
+    "witnessCoordinate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alpha1_power", "alpha2_power", "coefficient"],
+      "properties": {
+        "alpha1_power": {"type": "integer", "minimum": 0, "maximum": 9},
+        "alpha2_power": {"type": "integer", "minimum": 0, "maximum": 9},
+        "coefficient": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "dualWitness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["witness_type", "ambient_alpha_monomial_count", "relative_span_annihilation", "M14_normalization", "nonzero_coordinates"],
+      "properties": {
+        "witness_type": {"const": "COMPLETE_NONMEMBERSHIP_WITNESS_IN_DECLARED_SYMMETRIC_POINT_POLE4_AMBIENT"},
+        "ambient_alpha_monomial_count": {"const": 55},
+        "relative_span_annihilation": {"const": "ZERO"},
+        "M14_normalization": {"const": {"numerator": 1, "denominator": 1}},
+        "nonzero_coordinates": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/witnessCoordinate"}
+        }
+      }
+    }
+  }
+}

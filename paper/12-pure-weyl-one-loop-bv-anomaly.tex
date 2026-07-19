@@ -1767,6 +1767,34 @@ $R(\widehat g)^2$ counterterm in the compensator theory, and it is not an
 all-loop equivalence theorem for strict Weyl gravity.
 \end{proposition}
 
+\begin{proposition}[Isolated physical three-$\mathcal H_1$ corner obstruction]
+At $x_1=x_2=x_3=1$, let
+\[
+ e_2=\alpha_0\alpha_1+\alpha_1\alpha_2+\alpha_2\alpha_0,
+ \qquad e_3=\alpha_0\alpha_1\alpha_2.
+\]
+The $S_3$ average of the exact five-carrier projection of
+$\tfrac16\operatorname{Tr}[(\mathcal H_0^{-1}\mathcal H_1)^3]$
+contains the pole-four carrier $M_{14}=e_3/e_2^4$.  In the declared
+55-dimensional affine numerator space, the exact relative-IBP-plus-master
+span has rank $49$, while adjoining $e_3$ raises the rank to $50$.  A stored
+dual functional annihilates the full rank-$49$ span and is normalized to one
+on $e_3$.
+
+Near each simplex corner the measure-weighted carrier is
+\[
+ \frac{t(1-t)}{\epsilon}\,\dd\epsilon\,\dd t+O(1),
+\]
+so its logarithmic coefficient is $1/6$ per corner and $1/2$ in total.
+Eight raw orientations have a nonzero $M_{14}$ coefficient: $I_{10}$, all
+three $I_{24}$ rows, all three $I_{25}$ rows, and $I_{29}$; all three
+$I_{28}$ rows have zero coefficient in this obstruction coordinate.
+Therefore the isolated three-$\mathcal H_1$ trace is not a finite physical
+simplex integral.  The curvature-squared $\mathcal H_2$ and mixed rows must
+be added and tested against the same class, or a renormalized subtraction
+must be fixed.  No cancellation by $\mathcal H_2$ is asserted.
+\end{proposition}
+
 \section{What does not follow}
 
 The strict obstruction and extended restoration are local one-loop results.
@@ -1819,8 +1847,10 @@ still require a full primed Green/spectral carrier.  All eleven generic
 ghost $n=3$ functions, including the pole-four $I_{29}$ row, are complete.
 The same-gauge physical Hessian is now imported through first curvature
 order; its formally self-adjoint momentum vertex, full three-linear alpha
-polynomial and exact five-carrier projection are fixed.  Generic
-tensor-triangle integration remains open.  The
+polynomial and exact five-carrier projection are fixed.  The isolated
+three-$\mathcal H_1$ simplex integral is now proved logarithmically corner
+obstructed at the symmetric point; its finite integration requires the
+$\mathcal H_2$/mixed completion or an explicit subtraction.  The
 generic primed Green/spectral carrier and the
 curvature-squared Hessian layer, hence the
 five complete repository form-factor functions and
@@ -1865,6 +1895,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_TRIANGLE_FIXTURE.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_FIVE_CARRIER_PROJECTION.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_INTEGRATION_OBSTRUCTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json}.
@@ -1972,6 +2003,9 @@ MOD="${MOD}symmetric_point_simplex_integration"
 PYTHONPATH=quantum-weyl python3 -m "$MOD"
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_scalar_flat_k_ricci_crosswalk
+PYTHONPATH=quantum-weyl python3 \
+  quantum-weyl/spectral/euclidean/verify_generic_background_\
+physical_hessian_n3_integration_obstruction.py
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_box_r_scheme_conversion
 PYTHONPATH=quantum-weyl python3 -m verify_active_frontier
