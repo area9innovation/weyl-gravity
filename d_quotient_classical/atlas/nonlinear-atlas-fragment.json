@@ -1373,7 +1373,7 @@
         {
           "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1",
-          "sha256": "3ca345c27e4fb2f07e5505872ea7da76633bde479733b5238f3ead474e02d16b"
+          "sha256": "fa237b92636a1e8ab95bcca0eab14cf3f2f92448a1a0791e8da8a889de20bc13"
         },
         {
           "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1.json",
@@ -1431,6 +1431,85 @@
         "m": "not harmonic-reduced",
         "omega": "not harmonic-reduced",
         "parity": "all physical metric and Maxwell components",
+        "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+      }
+    },
+    {
+      "claim_boundary": "All five connected product stabilizers now have exact bundle-covariant polarized local currents with zero coefficient-jet divergence defect. The canonical Green representatives have not yet been related to the Lee-Wald representatives by explicit horizontal improvements, cyclic BV-dual rows are absent, and the complete Cauchy charge replay, repaired f2, arity three, causal, observational, particle and quantum claims remain OPEN or NO_CERTIFIED_MAP.",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1",
+          "sha256": "24f398bba251649fefec48bdbcc2aa35bf4ca113cdcf031819b9e1d820e491e9"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1",
+          "sha256": "fa237b92636a1e8ab95bcca0eab14cf3f2f92448a1a0791e8da8a889de20bc13"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1",
+          "sha256": "25aab484188126107c2495c100fca1b67b686f28dc60a2f8999c99155752fd95"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1",
+          "sha256": "11e8119ab8fc9756fc5b4c5520e648599fd1264e7776cc79d91dc80645be1c56"
+        }
+      ],
+      "id": "nonlinear.product.bridge2.relative_five_stabilizer_current_cone",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The result is a local five-generator current identity, not a mode dispersion calculation.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "Every generator has an exact symmetric polarized current derived from the densitized cyclic relative Hessian.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The horizontal improvement to the Lee-Wald representative and global charge replay remain open.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "All five local source currents close, but no bounded f2 primitive follows before the Lee-Wald improvement comparison.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No retarded current-cone Green enlargement is yet certified.",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The five-current cone does not construct a smooth-secular correction.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The complete connected stabilizer basis H,P_x,J_1,J_2,J_3 is represented by exact local current/divergence pairs.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compact magnetic Plebanski-Hacyan product",
+        "boundaries": "local coefficient jets; no Cauchy integration",
+        "carrier": "g_stab^*-valued polarized horizontal current/divergence cone",
+        "charge_sector": "H,P_x,J_1,J_2,J_3 connected-isometry stabilizers",
+        "degree": "symmetric arity-two relative Noether-current source",
+        "ell": "not harmonic-reduced",
+        "k": "not harmonic-reduced",
+        "m": "not harmonic-reduced",
+        "omega": "not harmonic-reduced",
+        "parity": "all fourteen physical metric and Maxwell components",
         "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
       }
     },
@@ -1510,7 +1589,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py",
-  "generated_by_sha256": "c29f13c6d9d70d0932bee1866c39760ed256501b2103dc2aebe03b2b699f0f00",
+  "generated_by_sha256": "9783ee60b50c83f20c32649fc6fa33ad0cccb084fb2ebd73604300cde5bf7c87",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

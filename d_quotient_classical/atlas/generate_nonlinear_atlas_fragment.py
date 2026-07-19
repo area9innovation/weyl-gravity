@@ -47,6 +47,7 @@ CERTS = {
     "relative_finite_charge_locality_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1.json",
     "relative_polarized_noether_current_seed": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1.json",
     "relative_hessian_green_current_cone": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json",
+    "relative_five_stabilizer_current_cone": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -388,6 +389,8 @@ def entries() -> list[dict[str, Any]]:
     relative_current_seed_scope = relative_current_seed["scope"]
     relative_green_cone = json.loads(CERTS["relative_hessian_green_current_cone"].read_text())
     relative_green_cone_scope = relative_green_cone["scope"]
+    relative_five_current_cone = json.loads(CERTS["relative_five_stabilizer_current_cone"].read_text())
+    relative_five_current_cone_scope = relative_five_current_cone["scope"]
     identity_cyclic_scope = json.loads(CERTS["identity_cyclic_obstruction"].read_text())["scope"]
     return [
         {
@@ -778,6 +781,24 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("relative_hessian_green_current_cone", "relative_polarized_noether_current_seed", "relative_complete_standard_charge_q2"),
             "claim_boundary": "The complete fourteen-field relative Hessian has an exact finite-order antisymmetric Green current and coefficientwise off-shell divergence identity. This does not yet identify it with the Lee-Wald representative up to a horizontal improvement, precompose all five stabilizer actions, add cyclic BV-dual rows, reproduce every global charge block, repair f2, authorize arity three, or establish causal, observational, particle or quantum claims.",
+        },
+        {
+            "id": "nonlinear.product.bridge2.relative_five_stabilizer_current_cone",
+            "scope": relative_five_current_cone_scope,
+            "descriptions": {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "All five local source currents close, but no bounded f2 primitive follows before the Lee-Wald improvement comparison."),
+                    ("OPEN", "The five-current cone does not construct a smooth-secular correction."),
+                    ("OPEN", "No retarded current-cone Green enlargement is yet certified."),
+                ),
+                dispersion=("NOT_APPLICABLE", "The result is a local five-generator current identity, not a mode dispersion calculation."),
+                pairing=("CERTIFIED", "Every generator has an exact symmetric polarized current derived from the densitized cyclic relative Hessian."),
+                taub=("CERTIFIED", "The complete connected stabilizer basis H,P_x,J_1,J_2,J_3 is represented by exact local current/divergence pairs."),
+                resonance=("OPEN", "The horizontal improvement to the Lee-Wald representative and global charge replay remain open."),
+            ),
+            "evidence": _evidence("relative_five_stabilizer_current_cone", "relative_hessian_green_current_cone", "relative_polarized_noether_current_seed", "relative_complete_standard_charge_q2"),
+            "claim_boundary": "All five connected product stabilizers now have exact bundle-covariant polarized local currents with zero coefficient-jet divergence defect. The canonical Green representatives have not yet been related to the Lee-Wald representatives by explicit horizontal improvements, cyclic BV-dual rows are absent, and the complete Cauchy charge replay, repaired f2, arity three, causal, observational, particle and quantum claims remain OPEN or NO_CERTIFIED_MAP.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction",

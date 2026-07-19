@@ -14,25 +14,27 @@
     "dependencies": {"type": "object", "additionalProperties": {"$ref": "#/$defs/artifact"}, "minProperties": 4, "maxProperties": 4},
     "construction": {
       "type": "object", "additionalProperties": false,
-      "required": ["relative_operator", "identity", "algorithm", "cyclic_representative", "globalization", "generated_table", "component_term_counts", "total_term_count", "maximum_bilinear_derivative_order"],
+      "required": ["relative_operator", "density_normalization", "identity", "algorithm", "cyclic_representative", "globalization", "generated_table", "component_term_counts", "total_term_count", "maximum_bilinear_derivative_order"],
       "properties": {
         "relative_operator": {"const": "E_rel=E_Weyl-Maxwell-E_Einstein-Maxwell"},
-        "identity": {"const": "d_H B_E(u,v)=<u,E_rel v>-<E_rel^sharp u,v>"},
+        "density_normalization": {"const": "coordinate-density Hessian Ehat_rel=sin(theta)*E_rel"},
+        "identity": {"const": "d_H B_E(u,v)=<u,Ehat_rel v>-<Ehat_rel^sharp u,v>"},
         "algorithm": {"const": "ordered multivariate Lagrange telescoping with exact coefficient jets"},
         "cyclic_representative": {"const": "omega_G=(B_E(u,v)-B_E(v,u))/2"},
         "globalization": {"type": "string", "minLength": 40},
         "generated_table": {"const": "d_quotient_classical/generated/einstein_weyl_relative_hessian_green_current_v1/current_basepoint.json"},
-        "component_term_counts": {"const": [922, 922, 920, 938]},
-        "total_term_count": {"const": 3702},
+        "component_term_counts": {"const": [922, 922, 928, 932]},
+        "total_term_count": {"const": 3704},
         "maximum_bilinear_derivative_order": {"const": 3}
       }
     },
     "classification": {
       "type": "object", "additionalProperties": false,
-      "required": ["complete_14_field_relative_hessian_imported", "formal_self_adjoint_pairings_imported", "antisymmetric_green_current_exported", "coefficient_jet_divergence_identity_exact", "off_shell_relative_hessian_divergence_cone_certified", "five_stabilizer_noether_precomposition_certified", "lee_wald_improvement_comparison_certified", "cyclic_dual_bv_rows_certified", "slice_integral_matches_complete_five_charge_q2", "direct_f2_repaired", "arity_three_authorized", "causal_observable_particle_or_quantum_claim"],
+      "required": ["complete_14_field_relative_hessian_imported", "formal_self_adjoint_pairings_imported", "coefficient_jet_formal_self_adjointness_exact", "antisymmetric_green_current_exported", "coefficient_jet_divergence_identity_exact", "off_shell_relative_hessian_divergence_cone_certified", "five_stabilizer_noether_precomposition_certified", "lee_wald_improvement_comparison_certified", "cyclic_dual_bv_rows_certified", "slice_integral_matches_complete_five_charge_q2", "direct_f2_repaired", "arity_three_authorized", "causal_observable_particle_or_quantum_claim"],
       "properties": {
         "complete_14_field_relative_hessian_imported": {"const": true},
         "formal_self_adjoint_pairings_imported": {"const": true},
+        "coefficient_jet_formal_self_adjointness_exact": {"const": true},
         "antisymmetric_green_current_exported": {"const": true},
         "coefficient_jet_divergence_identity_exact": {"const": true},
         "off_shell_relative_hessian_divergence_cone_certified": {"const": true},

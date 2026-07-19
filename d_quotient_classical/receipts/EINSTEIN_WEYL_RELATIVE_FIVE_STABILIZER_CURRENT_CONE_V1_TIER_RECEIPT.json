@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "status": "PASS",
+  "source_manifest": {
+    "d_quotient_classical/relative/einstein_weyl_relative_five_stabilizer_current.py": "1c7285f9ffc71655d8be8d0357658f771fcb021c79402fc8439099b3a1ce296f",
+    "d_quotient_classical/relative/einstein_weyl_relative_five_stabilizer_current_cone.py": "9ece1481f33325d9699d615af393ed4d392e2bbec15c919f6192a22ce3515190",
+    "d_quotient_classical/relative/verify_einstein_weyl_relative_five_stabilizer_current_cone.py": "f9d5136e2a510bc33810aa1f14dba0381e1e0964a7c27744ebdab3a2c78b4f0e",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_five_stabilizer_current_cone.py": "18c50b6ddae961f8f2536f47a80111759d347d7d09334d327ca6f7161801a77c",
+    "d_quotient_classical/schema/relative-five-stabilizer-current-cone-v1.schema.json": "e5b6bb20238ff758893f8d70053a692a84400f8a73c32922ca832ee7b639f464",
+    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1.json": "24f398bba251649fefec48bdbcc2aa35bf4ca113cdcf031819b9e1d820e491e9",
+    "d_quotient_classical/reports/einstein-weyl-relative-five-stabilizer-current-cone.md": "837587e5eb8adb1991a2328bb0d8bca107a3c19f267d2484693b9016451f8833",
+    "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py": "9783ee60b50c83f20c32649fc6fa33ad0cccb084fb2ebd73604300cde5bf7c87",
+    "d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "f5c144fdbb46bb5785c557827b7a2fd61f01554e98a8eb2cdb197af112c1e0c6",
+    "d_quotient_classical/atlas/tests/test_nonlinear_atlas_fragment.py": "585ef056b26daa181bb78ea89b815ee78d30a92f5df7c75ca8e628356ee8580a",
+    "notes/d-quotient-classical-team-brief.md": "d37f353327bf1c4501ecd92b95868ffa5a07b0d598ab3ec833beefa7a24bb252"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "command": "py_compile, strict Draft 2020-12 AJV validation, source-manifest hashes and scoped git diff --check"
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 50.82,
+      "max_rss_kib": 91340,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_hessian_green_current_cone --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_hessian_green_current_cone",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_five_stabilizer_current_cone --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_five_stabilizer_current_cone",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_hessian_green_current_cone d_quotient_classical.relative.tests.test_einstein_weyl_relative_five_stabilizer_current_cone d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-five-stabilizer-current-cone-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1.json"
+      ],
+      "result": "26 tests passed; the independent consumer rebuilt all five tensor/Cartan stabilizer actions and their polarized PBW currents, finding zero divergence defects for H, P_x, J_1, J_2 and J_3"
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The repaired densitized Hessian current cone, Lee-Wald seed, complete five-charge q2 and product-stabilizer theorem are SHA-pinned dependencies."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This local five-current theorem does not freeze the Lee-Wald improvement, cyclic BV extension, Cauchy charge comparison, causal bridge or paper theorem."
+    }
+  },
+  "claim_boundary": "The receipt certifies all five exact bundle-covariant stabilizer actions, symmetric polarized Green currents and their coefficient-jet off-shell divergence identities. It does not certify explicit horizontal improvements to the Lee-Wald representatives, cyclic BV-dual current rows, complete Cauchy charge integration, repaired f2, arity three, causal propagation, observables, particles or quantum transfer."
+}

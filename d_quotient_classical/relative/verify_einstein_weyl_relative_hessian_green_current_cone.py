@@ -6,6 +6,7 @@ from __future__ import annotations
 from collections import defaultdict
 from fractions import Fraction
 import hashlib
+from itertools import combinations_with_replacement
 import json
 
 from d_quotient_classical.relative import einstein_weyl_relative_hessian_green_current_cone as producer
@@ -59,6 +60,23 @@ def _independent_defect(terms):
     return {key: left[key] - right[key] for key in set(left) | set(right) if left[key] != right[key]}
 
 
+def _independent_densitize(terms):
+    volume = {(): Fraction(1), (2, 2): Fraction(-1), (2, 2, 2, 2): Fraction(1)}
+    words = [()]
+    for order in range(1, 5):
+        words.extend(combinations_with_replacement(range(4), order))
+    output = []
+    for equation, incoming, word, profile in terms:
+        product_profile = defaultdict(Fraction)
+        for derivative_word in words:
+            for mask in range(1 << len(derivative_word)):
+                left_word = tuple(sorted(derivative_word[index] for index in range(len(derivative_word)) if mask & (1 << index)))
+                right_word = tuple(sorted(derivative_word[index] for index in range(len(derivative_word)) if not mask & (1 << index)))
+                product_profile[derivative_word] += profile.get(left_word, 0) * volume.get(right_word, 0)
+        output.append((equation, incoming, word, {key: value for key, value in product_profile.items() if value}))
+    return output
+
+
 def verify() -> dict[str, object]:
     certificate = json.loads(producer.OUTPUT.read_text())
     producer.validate(certificate)
@@ -69,12 +87,15 @@ def verify() -> dict[str, object]:
     for relative, expected in certificate["provenance"]["source_manifest"].items():
         if hashlib.sha256((producer.ROOT / relative).read_bytes()).hexdigest() != expected:
             raise AssertionError(f"source manifest mismatch: {relative}")
-    terms = _load_terms(producer.TARGET_Q1, 6, 20, 1) + _load_terms(producer.SOURCE_Q1, 5, 19, -1)
+    terms = _independent_densitize(
+        _load_terms(producer.TARGET_Q1, 6, 20, 1)
+        + _load_terms(producer.SOURCE_Q1, 5, 19, -1)
+    )
     defect = _independent_defect(terms)
     if defect:
         raise AssertionError(f"independent telescoping defect: {next(iter(defect.items()))}")
     generated = json.loads(producer.GENERATED.read_text())
-    if generated["term_count"] != 3702:
+    if generated["term_count"] != 3704:
         raise AssertionError("generated current term count drifted")
     swapped = {
         (term["component"], term["left"]["field"], tuple(term["left"]["word"]), term["right"]["field"], tuple(term["right"]["word"])): Fraction(term["coefficient"])
@@ -83,7 +104,10 @@ def verify() -> dict[str, object]:
     for (component, left, left_word, right, right_word), coefficient in swapped.items():
         if swapped.get((component, right, right_word, left, left_word), 0) != -coefficient:
             raise AssertionError("generated current is not antisymmetric")
-    return {"status": "PASS", "operator_terms": len(terms), "current_terms": len(swapped), "divergence_defects": 0}
+    adjoint_defect = producer.formal_self_adjoint_defect(terms)
+    if adjoint_defect:
+        raise AssertionError(f"densitized formal-adjoint defect: {next(iter(adjoint_defect.items()))}")
+    return {"status": "PASS", "operator_terms": len(terms), "current_terms": len(swapped), "divergence_defects": 0, "formal_adjoint_defects": 0}
 
 
 def main() -> None:

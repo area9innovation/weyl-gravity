@@ -5,17 +5,17 @@
   "dependency_tags": ["LOCAL-ALGEBRAIC"],
   "status": "PASS",
   "source_manifest": {
-    "d_quotient_classical/relative/einstein_weyl_relative_hessian_green_current_cone.py": "05102e6342ba60fb9cc29b45cd967ff66ee569c4d0f03ad47e0f61b36d63bfe8",
-    "d_quotient_classical/relative/verify_einstein_weyl_relative_hessian_green_current_cone.py": "79898a193e1a0959cf037544619ac5c17d6fbf43ba3eb59ab0ed863c1b3a10d8",
-    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_hessian_green_current_cone.py": "1aeb319f375acd0ceac2244a8833a1f6483084ac58fe116f7baa1ccb672d9978",
-    "d_quotient_classical/schema/relative-hessian-green-current-cone-v1.schema.json": "b3c8890bf2d49dc2dd4cdb88277f22b7fce066e354341346f9f234e3caaafd5e",
-    "d_quotient_classical/generated/einstein_weyl_relative_hessian_green_current_v1/current_basepoint.json": "29ac1a2e675bd4ce8182a229decb63157ccdfa0b01791add2086a54d7831ae59",
-    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json": "3ca345c27e4fb2f07e5505872ea7da76633bde479733b5238f3ead474e02d16b",
-    "d_quotient_classical/reports/einstein-weyl-relative-hessian-green-current-cone.md": "5c516a74966d403aa96de6f1bd510f3c3bb02bd7e8d52a697c88753f1f56164f",
-    "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py": "c29f13c6d9d70d0932bee1866c39760ed256501b2103dc2aebe03b2b699f0f00",
-    "d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "5b430097f3cd8489beed168277c03ce2c08b0128d4d39ee82a0130f11f240ed9",
-    "d_quotient_classical/atlas/tests/test_nonlinear_atlas_fragment.py": "21756027faaba40d52d5f25f4a5a70328841ef69e993e08d0909dea6bb61fbb7",
-    "notes/d-quotient-classical-team-brief.md": "69940047345935abc855e2587ef4b69e91521b4aa3f547edbfeb816a66577c84"
+    "d_quotient_classical/relative/einstein_weyl_relative_hessian_green_current_cone.py": "8536b6d464d9f113ec7ba4cf11766e3f0b606a34d849548441fb9ebd8a7b1a71",
+    "d_quotient_classical/relative/verify_einstein_weyl_relative_hessian_green_current_cone.py": "80b0517c13ce805757030c010811e1d8e3b4e9f46dc407a822c03ab052980848",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_hessian_green_current_cone.py": "fe85bddc858a8a810ca03b9de9e38fb34aefa97f8ddf753a014ca9bf1a74c0f9",
+    "d_quotient_classical/schema/relative-hessian-green-current-cone-v1.schema.json": "29bdeca6637fcd04c912ab10e5fb269d1d092d6df6e5c540fe2957e8ccfe2e6e",
+    "d_quotient_classical/generated/einstein_weyl_relative_hessian_green_current_v1/current_basepoint.json": "a6fb83e866f52e81c7390851dea613d023144a28687e55615eaa089169ff7c5f",
+    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json": "fa237b92636a1e8ab95bcca0eab14cf3f2f92448a1a0791e8da8a889de20bc13",
+    "d_quotient_classical/reports/einstein-weyl-relative-hessian-green-current-cone.md": "1b8d4038980b7c3a692d3ac837f86a8b568924dc8ed1a98cef1b9dfaf5e79873",
+    "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py": "9783ee60b50c83f20c32649fc6fa33ad0cccb084fb2ebd73604300cde5bf7c87",
+    "d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "f5c144fdbb46bb5785c557827b7a2fd61f01554e98a8eb2cdb197af112c1e0c6",
+    "d_quotient_classical/atlas/tests/test_nonlinear_atlas_fragment.py": "585ef056b26daa181bb78ea89b815ee78d30a92f5df7c75ca8e628356ee8580a",
+    "notes/d-quotient-classical-team-brief.md": "d37f353327bf1c4501ecd92b95868ffa5a07b0d598ab3ec833beefa7a24bb252"
   },
   "tiers": {
     "tier_0": {
@@ -32,7 +32,7 @@
         "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_hessian_green_current_cone d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v",
         "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-hessian-green-current-cone-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json"
       ],
-      "result": "23 tests passed; the independent consumer reconstructed all 1,093 relative Hessian monomials, replayed the coefficient-jet telescoping identity with zero defects, and checked antisymmetry of all 3,702 generated current terms"
+      "result": "The independent consumer reconstructed all 1,093 relative Hessian monomials, applied the fixed sin(theta) density, replayed formal self-adjointness and the coefficient-jet telescoping identity with zero defects, and checked antisymmetry of all 3,704 generated current terms"
     },
     "tier_2": {
       "status": "PASS_BY_CONTENT_ADDRESS",

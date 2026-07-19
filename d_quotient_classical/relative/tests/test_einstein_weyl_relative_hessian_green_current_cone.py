@@ -23,8 +23,9 @@ class RelativeHessianGreenCurrentConeTests(unittest.TestCase):
     def test_independent_telescoping_replay(self) -> None:
         result = verify()
         self.assertEqual(result["status"], "PASS")
-        self.assertEqual(result["current_terms"], 3702)
+        self.assertEqual(result["current_terms"], 3704)
         self.assertEqual(result["divergence_defects"], 0)
+        self.assertEqual(result["formal_adjoint_defects"], 0)
 
     def test_downstream_promotions_rejected(self) -> None:
         schema = json.loads(producer.SCHEMA.read_text())

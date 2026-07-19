@@ -5,6 +5,7 @@
     "arity_three_authorized": false,
     "causal_observable_particle_or_quantum_claim": false,
     "coefficient_jet_divergence_identity_exact": true,
+    "coefficient_jet_formal_self_adjointness_exact": true,
     "complete_14_field_relative_hessian_imported": true,
     "cyclic_dual_bv_rows_certified": false,
     "direct_f2_repaired": false,
@@ -19,16 +20,17 @@
     "component_term_counts": [
       922,
       922,
-      920,
-      938
+      928,
+      932
     ],
     "cyclic_representative": "omega_G=(B_E(u,v)-B_E(v,u))/2",
+    "density_normalization": "coordinate-density Hessian Ehat_rel=sin(theta)*E_rel",
     "generated_table": "d_quotient_classical/generated/einstein_weyl_relative_hessian_green_current_v1/current_basepoint.json",
     "globalization": "the product is homogeneous; the complete equatorial coefficient jet globalizes the natural operator",
-    "identity": "d_H B_E(u,v)=<u,E_rel v>-<E_rel^sharp u,v>",
+    "identity": "d_H B_E(u,v)=<u,Ehat_rel v>-<Ehat_rel^sharp u,v>",
     "maximum_bilinear_derivative_order": 3,
     "relative_operator": "E_rel=E_Weyl-Maxwell-E_Einstein-Maxwell",
-    "total_term_count": 3702
+    "total_term_count": 3704
   },
   "dependencies": {
     "source_certificate": {
@@ -59,11 +61,11 @@
   "next_gate": "PRECOMPOSE_FIVE_STABILIZERS_AND_COMPARE_GREEN_CURRENT_WITH_LEE_WALD_CURRENT",
   "provenance": {
     "source_manifest": {
-      "d_quotient_classical/generated/einstein_weyl_relative_hessian_green_current_v1/current_basepoint.json": "29ac1a2e675bd4ce8182a229decb63157ccdfa0b01791add2086a54d7831ae59",
-      "d_quotient_classical/relative/einstein_weyl_relative_hessian_green_current_cone.py": "05102e6342ba60fb9cc29b45cd967ff66ee569c4d0f03ad47e0f61b36d63bfe8",
-      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_hessian_green_current_cone.py": "1aeb319f375acd0ceac2244a8833a1f6483084ac58fe116f7baa1ccb672d9978",
-      "d_quotient_classical/relative/verify_einstein_weyl_relative_hessian_green_current_cone.py": "79898a193e1a0959cf037544619ac5c17d6fbf43ba3eb59ab0ed863c1b3a10d8",
-      "d_quotient_classical/schema/relative-hessian-green-current-cone-v1.schema.json": "b3c8890bf2d49dc2dd4cdb88277f22b7fce066e354341346f9f234e3caaafd5e"
+      "d_quotient_classical/generated/einstein_weyl_relative_hessian_green_current_v1/current_basepoint.json": "a6fb83e866f52e81c7390851dea613d023144a28687e55615eaa089169ff7c5f",
+      "d_quotient_classical/relative/einstein_weyl_relative_hessian_green_current_cone.py": "8536b6d464d9f113ec7ba4cf11766e3f0b606a34d849548441fb9ebd8a7b1a71",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_hessian_green_current_cone.py": "fe85bddc858a8a810ca03b9de9e38fb34aefa97f8ddf753a014ca9bf1a74c0f9",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_hessian_green_current_cone.py": "80b0517c13ce805757030c010811e1d8e3b4e9f46dc407a822c03ab052980848",
+      "d_quotient_classical/schema/relative-hessian-green-current-cone-v1.schema.json": "29bdeca6637fcd04c912ab10e5fb269d1d092d6df6e5c540fe2957e8ccfe2e6e"
     },
     "verification_commands": [
       "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_hessian_green_current_cone --check --guards",

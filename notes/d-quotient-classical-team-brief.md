@@ -471,7 +471,7 @@ every coefficient-jet monomial.  The antisymmetrized relative Green current
 has component term counts
 
 \[
-(922,922,920,938),
+(922,922,928,932),
 \]
 
 maximum total derivative order three, and the coefficientwise identity
@@ -481,11 +481,25 @@ d_H B_E(u,v)=\langle u,E_{\rm rel}v\rangle
 -\langle E_{\rm rel}^{\sharp}u,v\rangle
 \]
 
-has zero defect on the complete PBW table.  The next gate is narrower:
-precompose the five stabilizer actions, derive the horizontal improvement
-between this canonical Green representative and the exported Lee--Wald
-representative, and only then add the cyclic BV-dual rows and replay all five
-Cauchy charges.  No \(f_2\) repair or arity-three promotion follows yet.
+has zero defect on the complete PBW table after the required
+\(\sin\theta\) densitization.  The same coefficient-jet replay verifies
+formal self-adjointness directly.
+
+`EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1` now precomposes the
+entire connected stabilizer basis
+
+\[
+H=\partial_t,\quad P_x=\partial_x,\quad J_1,J_2,J_3\in\mathfrak{so}(3)
+\]
+
+using the tensor Lie derivative and the fixed-bundle Maxwell Cartan lift.
+All five vectors preserve the product metric and magnetic two-form.  Every
+polarized current is symmetric, and every complete coefficient-jet divergence
+equals its action-Euler source with zero defect.  The remaining local gate is
+now only the horizontal-improvement comparison between these canonical Green
+representatives and the exported Lee--Wald representatives; after that come
+the cyclic BV-dual rows and the five Cauchy-charge replay.  No \(f_2\) repair
+or arity-three promotion follows yet.
 
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.

@@ -244,6 +244,15 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("coefficientwise off-shell divergence identity", entry["claim_boundary"])
         self.assertIn("does not yet", entry["claim_boundary"])
 
+    def test_five_stabilizer_current_cone_closes_locally_only(self):
+        entry = next(item for item in atlas.build()["entries"] if "relative_five_stabilizer_current_cone" in item["id"])
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["causal"], "OPEN")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
+        self.assertIn("horizontal improvements", entry["claim_boundary"])
+        self.assertIn("remain OPEN", entry["claim_boundary"])
+
     def test_generic_standard_pairing_cyclic_obstruction_is_scoped(self):
         entry = next(item for item in atlas.build()["entries"] if "generic_standard_pairing_cyclic_map_inertia_obstruction" in item["id"])
         self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")

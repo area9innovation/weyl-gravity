@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-five-stabilizer-current-cone-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "generator_conventions", "records", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-five-stabilizer-current-cone-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1"},
+    "result_state": {"const": "FIVE_STABILIZER_OFF_SHELL_CURRENT_CONE_CERTIFIED"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"$ref": "#/$defs/stringObject"},
+    "dependencies": {"type": "object", "additionalProperties": {"$ref": "#/$defs/artifact"}, "minProperties": 4, "maxProperties": 4},
+    "generator_conventions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["H", "P_x", "J_1", "J_2", "J_3", "metric_lift", "maxwell_lift"],
+      "properties": {
+        "H": {"const": "partial_t"}, "P_x": {"const": "partial_x"}, "J_1": {"const": "partial_phi"},
+        "J_2": {"const": "cos(phi)*partial_theta-cot(theta)*sin(phi)*partial_phi"},
+        "J_3": {"const": "sin(phi)*partial_theta+cot(theta)*cos(phi)*partial_phi"},
+        "metric_lift": {"const": "tensor Lie derivative"},
+        "maxwell_lift": {"const": "i_X da=L_X a-d(i_X a)"}
+      }
+    },
+    "records": {
+      "type": "object", "additionalProperties": false,
+      "required": ["H", "P_x", "J_1", "J_2", "J_3"],
+      "properties": {"H": {"$ref": "#/$defs/record"}, "P_x": {"$ref": "#/$defs/record"}, "J_1": {"$ref": "#/$defs/record"}, "J_2": {"$ref": "#/$defs/record"}, "J_3": {"$ref": "#/$defs/record"}}
+    },
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["five_generators_killing", "five_generators_preserve_magnetic_background", "bundle_covariant_actions_exported", "five_polarized_current_precompositions_exported", "all_five_polarizations_symmetric", "all_five_off_shell_divergence_identities_exact", "lee_wald_improvement_comparison_certified", "cyclic_dual_bv_rows_certified", "slice_integral_matches_complete_five_charge_q2", "direct_f2_repaired", "arity_three_authorized", "causal_observable_particle_or_quantum_claim"],
+      "properties": {
+        "five_generators_killing": {"const": true}, "five_generators_preserve_magnetic_background": {"const": true},
+        "bundle_covariant_actions_exported": {"const": true}, "five_polarized_current_precompositions_exported": {"const": true},
+        "all_five_polarizations_symmetric": {"const": true}, "all_five_off_shell_divergence_identities_exact": {"const": true},
+        "lee_wald_improvement_comparison_certified": {"const": false}, "cyclic_dual_bv_rows_certified": {"const": false},
+        "slice_integral_matches_complete_five_charge_q2": {"const": false}, "direct_f2_repaired": {"const": false},
+        "arity_three_authorized": {"const": false}, "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "COMPARE_FIVE_GREEN_CURRENTS_WITH_LEE_WALD_BY_HORIZONTAL_IMPROVEMENTS"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_manifest", "verification_commands"], "properties": {"source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "minProperties": 5, "maxProperties": 5}, "verification_commands": {"type": "array", "items": {"type": "string"}, "minItems": 4}}},
+    "claim_boundary": {"type": "string", "minLength": 500}
+  },
+  "$defs": {
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "stringObject": {"type": "object", "additionalProperties": {"type": "string"}, "minProperties": 8},
+    "record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["vector", "action_term_count", "current_component_term_counts", "divergence_source_term_count", "divergence_defect_count", "polarization_symmetric"],
+      "properties": {
+        "vector": {"type": "array", "items": {"type": "string"}, "minItems": 4, "maxItems": 4},
+        "action_term_count": {"type": "integer", "minimum": 1},
+        "current_component_term_counts": {"type": "array", "items": {"type": "integer", "minimum": 1}, "minItems": 4, "maxItems": 4},
+        "divergence_source_term_count": {"type": "integer", "minimum": 1},
+        "divergence_defect_count": {"const": 0}, "polarization_symmetric": {"const": true}
+      }
+    }
+  }
+}

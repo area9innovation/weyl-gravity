@@ -1,0 +1,176 @@
+{
+  "claim_boundary": "This artifact certifies the exact local precomposition of the densitized relative Hessian Green current with all five connected product stabilizers, using the tensor Lie derivative for metric perturbations and the fixed-bundle gauge-covariant Cartan lift for Maxwell perturbations. Every polarized current is symmetric and its complete coefficient-jet divergence equals the action-Euler source with zero defect. It does not yet prove that these canonical Green-current representatives equal the action-derived Lee-Wald representatives up to explicit horizontal improvements, construct the cyclic BV-dual rows, reproduce every reduced five-charge block after Cauchy integration, repair the direct f2 obstruction, authorize arity three, or establish causal, observational, particle or quantum claims.",
+  "classification": {
+    "all_five_off_shell_divergence_identities_exact": true,
+    "all_five_polarizations_symmetric": true,
+    "arity_three_authorized": false,
+    "bundle_covariant_actions_exported": true,
+    "causal_observable_particle_or_quantum_claim": false,
+    "cyclic_dual_bv_rows_certified": false,
+    "direct_f2_repaired": false,
+    "five_generators_killing": true,
+    "five_generators_preserve_magnetic_background": true,
+    "five_polarized_current_precompositions_exported": true,
+    "lee_wald_improvement_comparison_certified": false,
+    "slice_integral_matches_complete_five_charge_q2": false
+  },
+  "dependencies": {
+    "complete_charge_q2": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json",
+      "sha256": "11e8119ab8fc9756fc5b4c5520e648599fd1264e7776cc79d91dc80645be1c56"
+    },
+    "hessian_current_cone": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json",
+      "sha256": "fa237b92636a1e8ab95bcca0eab14cf3f2f92448a1a0791e8da8a889de20bc13"
+    },
+    "lee_wald_seed": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1.json",
+      "sha256": "25aab484188126107c2495c100fca1b67b686f28dc60a2f8999c99155752fd95"
+    },
+    "product_stabilizer": {
+      "artifact_id": "EINSTEIN_MAXWELL_WEYL_PLEBANSKI_HACYAN_STABILIZER_DESCENT",
+      "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+      "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "generator_conventions": {
+    "H": "partial_t",
+    "J_1": "partial_phi",
+    "J_2": "cos(phi)*partial_theta-cot(theta)*sin(phi)*partial_phi",
+    "J_3": "sin(phi)*partial_theta+cot(theta)*cos(phi)*partial_phi",
+    "P_x": "partial_x",
+    "maxwell_lift": "i_X da=L_X a-d(i_X a)",
+    "metric_lift": "tensor Lie derivative"
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "COMPARE_FIVE_GREEN_CURRENTS_WITH_LEE_WALD_BY_HORIZONTAL_IMPROVEMENTS",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_five_stabilizer_current.py": "1c7285f9ffc71655d8be8d0357658f771fcb021c79402fc8439099b3a1ce296f",
+      "d_quotient_classical/relative/einstein_weyl_relative_five_stabilizer_current_cone.py": "9ece1481f33325d9699d615af393ed4d392e2bbec15c919f6192a22ce3515190",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_five_stabilizer_current_cone.py": "18c50b6ddae961f8f2536f47a80111759d347d7d09334d327ca6f7161801a77c",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_five_stabilizer_current_cone.py": "f9d5136e2a510bc33810aa1f14dba0381e1e0964a7c27744ebdab3a2c78b4f0e",
+      "d_quotient_classical/schema/relative-five-stabilizer-current-cone-v1.schema.json": "e5b6bb20238ff758893f8d70053a692a84400f8a73c32922ca832ee7b639f464"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_five_stabilizer_current_cone --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_five_stabilizer_current_cone",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_five_stabilizer_current_cone",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-five-stabilizer-current-cone-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1.json"
+    ]
+  },
+  "records": {
+    "H": {
+      "action_term_count": 16,
+      "current_component_term_counts": [
+        2000,
+        2404,
+        2352,
+        2454
+      ],
+      "divergence_defect_count": 0,
+      "divergence_source_term_count": 2280,
+      "polarization_symmetric": true,
+      "vector": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "J_1": {
+      "action_term_count": 16,
+      "current_component_term_counts": [
+        2402,
+        2402,
+        2354,
+        2046
+      ],
+      "divergence_defect_count": 0,
+      "divergence_source_term_count": 2280,
+      "polarization_symmetric": true,
+      "vector": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    "J_2": {
+      "action_term_count": 44,
+      "current_component_term_counts": [
+        3396,
+        3396,
+        3548,
+        4234
+      ],
+      "divergence_defect_count": 0,
+      "divergence_source_term_count": 2540,
+      "polarization_symmetric": true,
+      "vector": [
+        "0",
+        "0",
+        "cos(phi)",
+        "-sin(phi)*cot(theta)"
+      ]
+    },
+    "J_3": {
+      "action_term_count": 44,
+      "current_component_term_counts": [
+        4494,
+        4494,
+        4826,
+        4878
+      ],
+      "divergence_defect_count": 0,
+      "divergence_source_term_count": 722,
+      "polarization_symmetric": true,
+      "vector": [
+        "0",
+        "0",
+        "sin(phi)",
+        "cos(phi)*cot(theta)"
+      ]
+    },
+    "P_x": {
+      "action_term_count": 16,
+      "current_component_term_counts": [
+        2404,
+        2000,
+        2352,
+        2454
+      ],
+      "divergence_defect_count": 0,
+      "divergence_source_term_count": 2280,
+      "polarization_symmetric": true,
+      "vector": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ]
+    }
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1",
+  "result_state": "FIVE_STABILIZER_OFF_SHELL_CURRENT_CONE_CERTIFIED",
+  "schema": "pure-weyl-relative-five-stabilizer-current-cone-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "local coefficient jets; no Cauchy integration",
+    "carrier": "g_stab^*-valued polarized horizontal current/divergence cone",
+    "charge_sector": "H,P_x,J_1,J_2,J_3 connected-isometry stabilizers",
+    "degree": "symmetric arity-two relative Noether-current source",
+    "ell": "not harmonic-reduced",
+    "k": "not harmonic-reduced",
+    "m": "not harmonic-reduced",
+    "omega": "not harmonic-reduced",
+    "parity": "all fourteen physical metric and Maxwell components",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  }
+}

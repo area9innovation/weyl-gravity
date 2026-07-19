@@ -9,6 +9,7 @@ from copy import deepcopy
 from fractions import Fraction
 import hashlib
 import json
+from itertools import combinations_with_replacement
 from pathlib import Path
 
 from jsonschema import Draft202012Validator
@@ -83,8 +84,42 @@ def _physical_terms(path: Path, field_start: int, equation_start: int, sign: int
     return terms
 
 
+def _jet_words(maximum_order: int):
+    yield ()
+    for order in range(1, maximum_order + 1):
+        yield from combinations_with_replacement(range(4), order)
+
+
+def _multiply_profiles(left: dict, right: dict, maximum_order: int = 4) -> dict:
+    output: dict[tuple[int, ...], Fraction] = defaultdict(Fraction)
+    for word in _jet_words(maximum_order):
+        for mask in range(1 << len(word)):
+            left_word = tuple(sorted(word[index] for index in range(len(word)) if mask & (1 << index)))
+            right_word = tuple(sorted(word[index] for index in range(len(word)) if not mask & (1 << index)))
+            output[word] += left.get(left_word, 0) * right.get(right_word, 0)
+    return {word: value for word, value in output.items() if value}
+
+
+def _densitize(terms: list[tuple]) -> list[tuple]:
+    # The serialized Euler rows are relative to the fixed product volume
+    # sin(theta) dt dx dtheta dphi.  The horizontal current uses coordinate
+    # densities, so formal adjunction and Green telescoping must use sin(theta)E.
+    volume_profile = {
+        (): Fraction(1),
+        (2, 2): Fraction(-1),
+        (2, 2, 2, 2): Fraction(1),
+    }
+    return [
+        (output, incoming, word, _multiply_profiles(profile, volume_profile))
+        for output, incoming, word, profile in terms
+    ]
+
+
 def relative_operator_terms() -> list[tuple]:
-    return _physical_terms(TARGET_Q1, 6, 20, 1) + _physical_terms(SOURCE_Q1, 5, 19, -1)
+    return _densitize(
+        _physical_terms(TARGET_Q1, 6, 20, 1)
+        + _physical_terms(SOURCE_Q1, 5, 19, -1)
+    )
 
 
 def _add(table: dict, key: tuple, value: Fraction) -> None:
@@ -177,6 +212,20 @@ def divergence_defect(terms: list[tuple]) -> dict[tuple, Fraction]:
     return {key: divergence[key] - source[key] for key in keys if divergence[key] != source[key]}
 
 
+def formal_self_adjoint_defect(terms: list[tuple]) -> dict[tuple, Fraction]:
+    operator: dict[tuple, Fraction] = defaultdict(Fraction)
+    adjoint: dict[tuple, Fraction] = defaultdict(Fraction)
+    for output, incoming, word, profile in terms:
+        _add(operator, (output, incoming, word), profile.get((), 0))
+        sign = Fraction((-1) ** len(word))
+        for mask in range(1 << len(word)):
+            coefficient_word = tuple(sorted(word[index] for index in range(len(word)) if mask & (1 << index)))
+            field_word = tuple(sorted(word[index] for index in range(len(word)) if not mask & (1 << index)))
+            _add(adjoint, (incoming, output, field_word), sign * profile.get(coefficient_word, 0))
+    keys = set(operator) | set(adjoint)
+    return {key: operator[key] - adjoint[key] for key in keys if operator[key] != adjoint[key]}
+
+
 def _render_current(current: list[dict[tuple, Fraction]]) -> dict:
     terms = []
     for component, rows in enumerate(current):
@@ -194,7 +243,7 @@ def _render_current(current: list[dict[tuple, Fraction]]) -> dict:
         "background": "compact_magnetic_Plebanski_Hacyan_product",
         "base_point": "t=x=phi=0, theta=pi/2",
         "field_order": "10 independent symmetric metric components followed by 4 Maxwell-potential components",
-        "construction": "antisymmetrized ordered Green concomitant of E_WM-E_EM",
+        "construction": "antisymmetrized ordered Green concomitant of sin(theta)*(E_WM-E_EM)",
         "term_count": len(terms),
         "terms": terms,
     }
@@ -208,6 +257,9 @@ def build() -> tuple[dict, dict]:
     if target_cert["acceptance_flags"]["CYCLIC_PAIRING_VERIFIED"] is not True:
         raise AssertionError("target Hessian cyclicity is not certified")
     terms = relative_operator_terms()
+    adjoint_defect = formal_self_adjoint_defect(terms)
+    if adjoint_defect:
+        raise AssertionError(f"densitized Hessian adjoint defect: {next(iter(adjoint_defect.items()))}")
     defect = divergence_defect(terms)
     if defect:
         raise AssertionError(f"Green-current divergence defect: {next(iter(defect.items()))}")
@@ -215,7 +267,7 @@ def build() -> tuple[dict, dict]:
     current = antisymmetrize(raw)
     generated = _render_current(current)
     counts = [len(component) for component in current]
-    if counts != [922, 922, 920, 938]:
+    if counts != [922, 922, 928, 932]:
         raise AssertionError(f"relative current term counts drifted: {counts}")
 
     dependencies = {}
@@ -253,7 +305,8 @@ def build() -> tuple[dict, dict]:
         "dependencies": dependencies,
         "construction": {
             "relative_operator": "E_rel=E_Weyl-Maxwell-E_Einstein-Maxwell",
-            "identity": "d_H B_E(u,v)=<u,E_rel v>-<E_rel^sharp u,v>",
+            "density_normalization": "coordinate-density Hessian Ehat_rel=sin(theta)*E_rel",
+            "identity": "d_H B_E(u,v)=<u,Ehat_rel v>-<Ehat_rel^sharp u,v>",
             "algorithm": "ordered multivariate Lagrange telescoping with exact coefficient jets",
             "cyclic_representative": "omega_G=(B_E(u,v)-B_E(v,u))/2",
             "globalization": "the product is homogeneous; the complete equatorial coefficient jet globalizes the natural operator",
@@ -265,6 +318,7 @@ def build() -> tuple[dict, dict]:
         "classification": {
             "complete_14_field_relative_hessian_imported": True,
             "formal_self_adjoint_pairings_imported": True,
+            "coefficient_jet_formal_self_adjointness_exact": True,
             "antisymmetric_green_current_exported": True,
             "coefficient_jet_divergence_identity_exact": True,
             "off_shell_relative_hessian_divergence_cone_certified": True,
@@ -313,17 +367,20 @@ def _report() -> str:
     return r"""# Relative Hessian Green-current cone
 
 The complete action-derived Einstein--Maxwell and Weyl--Maxwell unary physical
-Hessians define a local relative operator (E_{\rm rel}).  Applying the
+Hessians define a local relative operator (E_{\rm rel}).  The serialized rows
+are relative to the fixed product volume, so the coordinate-density operator
+used here is (\widehat E_{\rm rel}=\sin\theta\,E_{\rm rel}).  Applying the
 ordered multivariate Lagrange identity to every exact coefficient-jet monomial
 constructs a Green concomitant (B_E) satisfying
 
 \[
-d_HB_E(u,v)=\langle u,E_{\rm rel}v\rangle
-             -\langle E_{\rm rel}^{\sharp}u,v\rangle .
+d_HB_E(u,v)=\langle u,\widehat E_{\rm rel}v\rangle
+             -\langle \widehat E_{\rm rel}^{\sharp}u,v\rangle .
 \]
 
-The imported cyclic pairings identify (E_{\rm rel}^{\sharp}=E_{\rm rel}),
-and antisymmetrization gives the canonical current representative
+The coefficient-jet replay verifies
+(\widehat E_{\rm rel}^{\sharp}=\widehat E_{\rm rel}) directly, and
+antisymmetrization gives the canonical current representative
 
 \[
 \omega_G(u,v)=\frac12\bigl(B_E(u,v)-B_E(v,u)\bigr).
@@ -331,7 +388,7 @@ and antisymmetrization gives the canonical current representative
 
 The finite telescoping replay is exact on all fourteen physical rows and all
 coefficient jets.  The four components contain respectively
-`922, 922, 920, 938` nonzero PBW terms, with maximum total derivative order
+`922, 922, 928, 932` nonzero PBW terms, with maximum total derivative order
 three.
 
 This closes the relative Hessian divergence cone.  It does not yet precompose
