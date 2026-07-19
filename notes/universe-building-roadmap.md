@@ -61,7 +61,7 @@ Nonlinear:   preserve the filtered ell3 obstruction and await an admissible bran
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, and supply the same-gauge generic-background full-BV Hessian matching the exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    bind all eight two_j=5 channels to the partitioned feedback backend, then widen the direct provider further and implement the tail-aware aggregate stop loop; physical mass specialization remains deferred until that backend is complete, after which restrict records to Z2^C
-Black hole:  polar reach + Einstein-branch 2-dim reduction CERTIFIED (both parities closed at reach level; polar Einstein horizon benchmark matches axial RW); next polar flux blocks (conformal-gauge-invariant); Zerilli-form master scalar stays fail-closed OPEN
+Black hole:  polar Einstein branch SYMPLECTICALLY NULL certified (critical-gravity structure now closed in both parities; conformal direction an exact off-shell flux degeneracy); next polar extra/cross flux blocks via the realized Ricci-image composition; Zerilli-form master scalar stays fail-closed OPEN
 ```
 
 These jobs use different bottlenecks.  Running them in parallel is more useful

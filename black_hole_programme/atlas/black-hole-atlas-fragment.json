@@ -437,13 +437,13 @@
       }
     },
     {
-      "claim_boundary": "Schwarzschild (symbolic m), polar l=2, omega != 0: Einstein-kernel two-dimensionality and horizon benchmark certified; Zerilli-form master scalar, Einstein-kernel polar flux, and endpoint disposition all OPEN; the polar Ricci-carrier image has its own entry",
+      "claim_boundary": "Schwarzschild (symbolic m), polar l=2, omega != 0: Einstein-kernel two-dimensionality, horizon benchmark, and symplectic-null flux block certified; Zerilli-form master scalar, extra/cross flux blocks, and endpoint disposition all OPEN; the polar Ricci-carrier image has its own entry",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
         "observational": "OPEN",
         "quantum": "OPEN",
-        "symplectic": "OPEN"
+        "symplectic": "CERTIFIED"
       },
       "evidence": [
         {
@@ -455,6 +455,11 @@
           "path": "black_hole_programme/certificates/BH2B_POLAR_EINSTEIN.json",
           "result_id": "PURE_WEYL_BH2B_POLAR_EINSTEIN",
           "sha256": "df58e1c00ef75450602009ec07f490fe594d1223a5fd54376d150e563cfe9780"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH2B_POLAR_FLUX.json",
+          "result_id": "PURE_WEYL_BH2B_POLAR_FLUX",
+          "sha256": "200d71b93a0435e8f484b9236dd39188a74840523c468730cdbba2b58556482b"
         }
       ],
       "id": "bh.mode.polar",
@@ -464,8 +469,8 @@
           "status": "CERTIFIED"
         },
         "lee_wald": {
-          "statement": "polar flux blocks open",
-          "status": "OPEN"
+          "statement": "general polar bilinear F^t, F^r certified with the off-shell 4-alpha identity; Einstein-kernel block on shell of the certified 2-dim system has all four coefficients proportional to (omega1 + omega2): the polar Einstein kernel is SYMPLECTICALLY NULL for conjugate pairs (even-parity twin of the axial RW-null theorem); the linearized conformal direction Phi g is an exact OFF-SHELL degeneracy of the sphere-integrated presymplectic form",
+          "status": "CERTIFIED"
         },
         "resonance": {
           "statement": "no exterior cokernel object",
@@ -533,7 +538,7 @@
           "status": "CERTIFIED"
         },
         "lee_wald": {
-          "statement": "polar flux blocks open",
+          "statement": "polar extra/cross flux blocks open; the certified null Einstein-kernel block (BH2BF) forces all polar symplectic pairing into blocks involving this branch",
           "status": "OPEN"
         },
         "resonance": {
@@ -692,7 +697,7 @@
     }
   ],
   "generated_by": "black_hole_programme/atlas/generate_atlas_fragment.py",
-  "generated_by_sha256": "de8715c58b1dd03edcd064dde3cb77095720d467c771fce9abeff6247a4ac994",
+  "generated_by_sha256": "649d873e6e702b151049475e85992325a6336d567700a36ceb3e7308db168419",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

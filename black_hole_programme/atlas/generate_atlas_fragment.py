@@ -47,6 +47,7 @@ CERTS = {
     "BH2BP": PKG / "certificates" / "BH2B_POLAR_SPLIT.json",
     "BH2BR": PKG / "certificates" / "BH2B_POLAR_REACH.json",
     "BH2BE": PKG / "certificates" / "BH2B_POLAR_EINSTEIN.json",
+    "BH2BF": PKG / "certificates" / "BH2B_POLAR_FLUX.json",
 }
 
 
@@ -281,19 +282,23 @@ def entries():
         "id": "bh.mode.polar",
         "scope": _scope(degree=1, parity="even", ell=2, m="all", k="n/a",
                         omega="dynamical"),
-        "descriptions": {desc: "OPEN" for desc in DESCRIPTIONS},
+        "descriptions": {desc: (_gstat("CERTIFIED", "BH2BF") if desc == "symplectic"
+                                else "OPEN") for desc in DESCRIPTIONS},
         "mode_data": {
             "dispersion": _gated(
                 "CERTIFIED",
                 "polar l=2 rows derived; Ricci-Bach composition delta B = (1/2) Box dRic + C.dRic - (1/6) grad grad dR - (1/12) g Box dR certified componentwise: the Einstein kernel injects and the realized Ricci image obeys a trace-coupled second-order Lichnerowicz system; no canonical metric direct sum is inferred; the Einstein kernel itself is reduced EXACTLY to the 2-dim first-order system dY/dr = M(r) Y, Y = (K, H1) (H2 = H0 forced, H0 algebraic), with horizon benchmark in adapted variables: t-chart exponents {+-2imw}, ingoing {0, -4imw} matching the axial RW benchmark; the Schroedinger-form master scalar remains fail-closed OPEN",
                 "no even-parity exterior operator exists in the repository", "BH2BP", "BH2BE"),
-            "lee_wald": _claim("OPEN", "polar flux blocks open"),
+            "lee_wald": _gated(
+                "CERTIFIED",
+                "general polar bilinear F^t, F^r certified with the off-shell 4-alpha identity; Einstein-kernel block on shell of the certified 2-dim system has all four coefficients proportional to (omega1 + omega2): the polar Einstein kernel is SYMPLECTICALLY NULL for conjugate pairs (even-parity twin of the axial RW-null theorem); the linearized conformal direction Phi g is an exact OFF-SHELL degeneracy of the sphere-integrated presymplectic form",
+                "polar flux blocks open", "BH2BF"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "no crosswalk to compact structures"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
         },
-        "evidence": _evidence("BH2BP", "BH2BE"),
-        "claim_boundary": "Schwarzschild (symbolic m), polar l=2, omega != 0: Einstein-kernel two-dimensionality and horizon benchmark certified; Zerilli-form master scalar, Einstein-kernel polar flux, and endpoint disposition all OPEN; the polar Ricci-carrier image has its own entry",
+        "evidence": _evidence("BH2BP", "BH2BE", "BH2BF"),
+        "claim_boundary": "Schwarzschild (symbolic m), polar l=2, omega != 0: Einstein-kernel two-dimensionality, horizon benchmark, and symplectic-null flux block certified; Zerilli-form master scalar, extra/cross flux blocks, and endpoint disposition all OPEN; the polar Ricci-carrier image has its own entry",
     })
 
     E.append({
@@ -306,7 +311,7 @@ def entries():
                 "CERTIFIED",
                 "polar extra branch identified exactly: trace-coupled carrier (psi_ab, S) with the certified operator (1/2) Box psi + C.psi - (1/6) DD S - (1/12) g Box S = 0 and Bianchi constraint; exact identities (tracelessness + divergence) reduce the system to 3 second-order equations in 4 functions, the underdeterminacy being linearized conformal gauge; on the traceless slice r = 2m is a regular singular point with residue spectrum {0 (x3), 1-4imw, -1-4imw, -3-4imw} and a TWO-parameter physical ingoing-regular family after quotienting the regular conformal-gauge direction: the polar extra branch reaches the future horizon",
                 "no polar extra-branch horizon-reach certificate exists", "BH2BP", "BH2BR"),
-            "lee_wald": _claim("OPEN", "polar flux blocks open"),
+            "lee_wald": _claim("OPEN", "polar extra/cross flux blocks open; the certified null Einstein-kernel block (BH2BF) forces all polar symplectic pairing into blocks involving this branch"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "must not be identified with compact structures without an explicit crosswalk"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
