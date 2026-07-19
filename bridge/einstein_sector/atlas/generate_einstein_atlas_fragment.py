@@ -85,7 +85,9 @@ CERTIFICATES = {
     "fixed_ell_constant_twist_zero_map": ROOT / "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.json",
     "fixed_ell_constant_twist_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.json",
     "nonzero_k_constant_twist_same_shell": ROOT / "bridge/certificates/einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell.json",
+    "finite_multimomentum_divisor": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_multimomentum_resonance_divisor.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
+    "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "twist_aligned_opposite_momentum_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.json",
     "opposite_momentum_ell2_parity_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix.json",
     "opposite_momentum_ell2_mixed_parity_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension.json",
@@ -738,6 +740,18 @@ def entries() -> list[dict[str, object]]:
             "The theorem is complete only for the constant-twist-times-wave bilinear column at one fixed generic ell and one nonzero absolute momentum. Opposite-momentum wave-wave terms, multiple |k| fibres, the full bounded tangent equation and higher lifecycles remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.finite_multimomentum_resonance_divisor",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with one common circumference L; before final residual quotient", carrier="arbitrary finite set of positive-offset physical and extra oscillator branches at arbitrary signed compact momentum integers", degree=2, parity="all parities retained before source projection", ell="arbitrary finite input and angularly allowed output set", m="arbitrary finite Clebsch-Gordan-allowed set", k="k_n=2*pi*n/L for finitely many signed nonzero integers n", omega="every signed quadratic sum/difference channel", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","All q-minus, p-extra, q-plus and exceptional positive-offset shells retain their branch and signed compact-momentum labels."),
+            ("CERTIFIED","The same-background branch dictionary supplies the action-derived source/target current blocks; this row does not identify their coefficients."),
+            ("NOT_APPLICABLE","This is nonzero-frequency shell arithmetic; zero-frequency stabilizer components remain separate Taub rows."),
+            ("CERTIFIED","For rho=(2*pi/L)^2 the squared shell divisor is linear: each nonidentity finite-carrier channel has at most one admissible positive algebraic rho, while identity channels remain explicit source-matrix gates."),
+            _second_order(("OPEN","A shell collision is only a candidate resonant functional; no bounded correction or obstruction is inferred without the projected source coefficient."),("OPEN","Off-shell channels are invertible, but identity and zero-frequency rows prevent a general smooth-secular promotion."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _evidence("finite_multimomentum_divisor","twist_aligned_opposite_momentum_gate","branch_dictionary"),
+            "Finite-carrier shell arithmetic only. Identity-resonant rows, source coefficients, the complete multiple-|k| tangent cone, infinite momentum support, final residual descent and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="constant twist position plus paired axisymmetric +/-k Einstein-plus/minus standing waves", degree=2, parity="generic input parity retained; polar extra resonant output", ell="every one fixed integer ell>=2 with output L=2ell", m="m_A=0 inputs and M=0 output", k="one tuned allowed nonzero +/-k pair", omega="q-plus/minus inputs and p-primary sum-frequency output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
@@ -748,6 +762,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OPEN","Moment maps and twist alignment are insufficient to decide bounded extension: the populated phase divisor requires an independently computed Weyl-Maxwell source projection."),("CERTIFIED","The complete fixed-(ell,|k|) common-zero cone has a finite smooth exponential-polynomial correction."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
             _evidence("twist_aligned_opposite_momentum_gate","nonzero_k_constant_twist_same_shell"),
             "This is an exact intersection/independence gate, not a bounded obstruction. The circumference is tuned to one resonance divisor; the dynamical coefficient, fixed-L momentum census, multiple |k| fibres and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.symbolic_ell_qminus_self_collision",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="Einstein-minus q-primary self-products at one fixed ell and momenta +/-k; other primary cross-products excluded", degree=2, parity="arithmetic theorem for either certified input parity; symbolic source coefficient not yet computed", ell="every integer input ell>=2; output L=1,...,2ell plus separately exact L=0 Fourier block", m="axisymmetric m_A=0 input and M=0 top output", k="+/-sqrt(sqrt(2*ell*(ell+1))-ell/2-1/6)", omega="positive sum and zero difference of omega_minus", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The exact q-minus dispersion and every exceptional, p-primary and q-primary target shell are retained at symbolic ell."),
+            ("CERTIFIED","The input q-primary branch and polar p-primary target use the action-derived shell normalization; no current-sign inference is made."),
+            ("NOT_APPLICABLE","This row is a characteristic-shell census on the already declared common-moment carrier, not a new Taub-map theorem."),
+            ("CERTIFIED","For every ell>=2 the unique q-minus self-product collision is polar p-primary L=2ell,K=0,Omega=2omega_minus; doubled-momentum and zero-difference shells are excluded exactly."),
+            _second_order(("OPEN","The unique carrier is known, but the polar L=2ell dynamical adjoint source coefficient remains open."),("CERTIFIED","The nonzero p-shell collision has the certified finite smooth exponential-polynomial secular inverse."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _evidence("symbolic_ell_qminus_self_collision","twist_aligned_opposite_momentum_gate","finite_generic_smooth"),
+            "Complete only for q-minus self-products at one tuned |k| for each ell>=2. Q-plus/extra cross-products, the symbolic source coefficient, multiple |k| joins, bounded extension and higher lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_bounded_obstruction",
@@ -1070,6 +1096,11 @@ def build() -> dict[str, object]:
         raise AssertionError("Sobolev-Bohr complete k0 no-go changed")
     if sobolev_bohr["maximal_finite_energy_or_low_regularity_completion_classified"] or sobolev_bohr["smooth_infinite_secular_extension_classified"] or sobolev_bohr["nonzero_momentum_classified"] or sobolev_bohr["causal_or_quantum_claim"]:
         raise AssertionError("Sobolev-Bohr complete k0 no-go exceeded its scope")
+    multimomentum = records["finite_multimomentum_divisor"]["classification"]
+    if not (multimomentum["arbitrary_two_signed_momentum_integers_covered"] and multimomentum["all_signed_temporal_sum_difference_channels_covered"] and multimomentum["squared_divisor_linear_in_circumference_parameter"] and multimomentum["one_fibre_h0_h4_formulas_recovered"] and multimomentum["finite_nonidentity_exceptional_circumference_set_certified"] and multimomentum["identity_resonant_channels_fail_closed"]):
+        raise AssertionError("finite multimomentum divisor changed")
+    if multimomentum["quadratic_source_coefficients_computed"] or multimomentum["complete_multifibre_tangent_cone_classified"] or multimomentum["causal_or_quantum_claim"]:
+        raise AssertionError("finite multimomentum divisor exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

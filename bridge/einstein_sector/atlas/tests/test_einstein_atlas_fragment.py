@@ -60,6 +60,18 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("Opposite-momentum wave-wave terms", entry["claim_boundary"])
         self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
+    def test_finite_multimomentum_divisor_is_arithmetic_only(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.finite_multimomentum_resonance_divisor"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("squared shell divisor is linear", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "NOT_APPLICABLE")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("Identity-resonant", entry["claim_boundary"])
+
     def test_twist_aligned_phase_divisor_requires_an_independent_functional(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
         second_order = entry["mode_data"]["second_order"]
@@ -79,6 +91,17 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("one tuned ell=2", entry["claim_boundary"])
+
+    def test_symbolic_ell_qminus_self_collision_is_arithmetic_only(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.symbolic_ell_qminus_self_collision"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("unique q-minus self-product collision", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("symbolic source coefficient", entry["claim_boundary"])
 
     def test_two_parity_l4_null_face_does_not_claim_extension(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.opposite_momentum_ell2_parity_resonance_matrix"]

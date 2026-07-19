@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Symbolic-ell tuned q-minus self-product collision theorem",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "scope",
+    "symbolic_collision_proof", "correction_classes", "classification",
+    "interpretation", "next_gate", "claim_boundary", "provenance",
+    "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-symbolic-ell-qminus-self-collision-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_QMINUS_SELF_COLLISION"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "symbolic_ell_tuned_qminus_self_characteristic_census_complete",
+        "unique_nonzero_frequency_collision_is_L_2ell_K0_p_shell",
+        "K2k_characteristic_collisions_excluded",
+        "zero_difference_characteristic_collisions_excluded",
+        "L0_nonzero_Fourier_block_separately_exact",
+        "top_Gaunt_coupling_nonzero",
+        "symbolic_dynamical_adjoint_coefficient_computed",
+        "all_primary_symbolic_collision_census_complete",
+        "bounded_cone_classified",
+        "causal_or_quantum_claim"
+      ],
+      "properties": {
+        "symbolic_ell_tuned_qminus_self_characteristic_census_complete": {"const": true},
+        "unique_nonzero_frequency_collision_is_L_2ell_K0_p_shell": {"const": true},
+        "K2k_characteristic_collisions_excluded": {"const": true},
+        "zero_difference_characteristic_collisions_excluded": {"const": true},
+        "L0_nonzero_Fourier_block_separately_exact": {"const": true},
+        "top_Gaunt_coupling_nonzero": {"const": true},
+        "symbolic_dynamical_adjoint_coefficient_computed": {"const": false},
+        "all_primary_symbolic_collision_census_complete": {"const": false},
+        "bounded_cone_classified": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      }
+    }
+  }
+}

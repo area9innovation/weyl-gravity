@@ -1836,6 +1836,34 @@ bounded necessity and sufficiency for the tuned all-primary `m_A=0` carrier.
 The next live enlargement is symbolic `ell` and multiple `|k|` fibres, not a
 new calculation on this fixed fixture.
 
+The multiple-`|k|` shell arithmetic is now reduced to a finite exact ledger.
+For `rho=(2*pi/L)^2`, arbitrary signed integers `n1,n2`, and positive shell
+offsets `A,B,C`, the squared sum/difference resonance divisor is linear in
+`rho`; its quadratic term cancels identically by compact momentum addition.
+Consequently every nonidentity channel on a finite harmonic carrier has at
+most one admissible positive algebraic circumference, and the union of such
+candidates is finite.  Channels whose linear and constant divisor
+coefficients both vanish are identity-resonant and remain explicit source-
+matrix gates.  Atlas row
+`einstein.ph.wm.interaction.finite_multimomentum_resonance_divisor` is
+resonance `CERTIFIED` but nonlinear `OPEN`: projected source coefficients,
+zero-frequency Taub rows and the full multifibre cone are not inferred from
+shell arithmetic.
+
+The tuned Einstein-minus self-product collision is now symbolic in `ell`.
+For every integer `ell>=2`, at
+`k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell
+census has exactly one nonzero-frequency hit: polar extra `p` at
+`L=2*ell,K=0,Omega=2*omega_minus`.  Exact shell ordering removes every other
+`K=0` target.  Irrationality, followed by a product-equals-`3` Pell
+factorization in the integral case, removes every `K=2k` target; difference
+channels have nonpositive reduced shell coordinate.  Fail-closed atlas row
+`einstein.ph.wm.interaction.symbolic_ell_qminus_self_collision` is resonance
+`CERTIFIED`, bounded nonlinear `OPEN`, smooth secular `CERTIFIED`, and causal
+`NO_CERTIFIED_MAP`.  The next activation gate is the symbolic polar
+`L=2*ell` dynamical adjoint coefficient, followed by the other-primary source
+matrices on the finite-multimomentum divisor.
+
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared
 certificate paths in the Einstein-team brief, with all of:

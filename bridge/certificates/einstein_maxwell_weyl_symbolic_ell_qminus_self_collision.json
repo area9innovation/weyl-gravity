@@ -1,0 +1,171 @@
+{
+  "claim_boundary": "This is a complete symbolic characteristic-shell theorem only for q-minus self-products. It does not classify q-plus or extra-primary cross-products, compute the all-ell dynamical coefficient, join multiple |k| fibres, prove bounded extension, or establish all-orders, causal, observational, particle or quantum claims.",
+  "classification": {
+    "K2k_characteristic_collisions_excluded": true,
+    "L0_nonzero_Fourier_block_separately_exact": true,
+    "all_primary_symbolic_collision_census_complete": false,
+    "bounded_cone_classified": false,
+    "causal_or_quantum_claim": false,
+    "symbolic_dynamical_adjoint_coefficient_computed": false,
+    "symbolic_ell_tuned_qminus_self_characteristic_census_complete": true,
+    "top_Gaunt_coupling_nonzero": true,
+    "unique_nonzero_frequency_collision_is_L_2ell_K0_p_shell": true,
+    "zero_difference_characteristic_collisions_excluded": true
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "reason": "the unique resonant carrier is proved, but its all-ell dynamical adjoint coefficient is not yet computed",
+      "status": "OPEN"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "the nonzero p-shell resonance has the certified finite secular inverse on the common moment-map cone",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_EVERY_GENERIC_ELL_ONE_TUNED_NONZERO_ABSOLUTE_MOMENTUM_QMINUS_SELF_PRODUCT",
+  "interpretation": "For every generic harmonic, the tuned Einstein-minus standing-wave self-product has exactly one possible bounded resonance. The arithmetic and angular problem is therefore reduced to one polar extra adjoint coefficient at L=2ell; no hidden same-momentum or zero-difference shell can compete.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the polar L=2ell p-shell adjoint source coefficient for axial, polar and mixed Einstein-minus inputs, then classify its symbolic zero set",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.py",
+    "generator_sha256": "522cee14e7228cf1a1d844b70ab1445dc6327464b746480ee71d2ac794549692",
+    "inputs": {
+      "phase_divisor": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_phase_resonance_divisor.json",
+        "sha256": "3a58c94bce450cec2bf40eeda9d8bddb7f38617a62b4bcd37ebf5adbc50e3557"
+      },
+      "scalar_fourier": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell0_nonzero_fourier.json",
+        "sha256": "7ca78a48fd3159a8e636f0c6c14da45c87d7a3fd2f01addd63d579e51e8c886c"
+      },
+      "twist_gate": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
+        "sha256": "096ebab87e36ee7b7eb7c46e51168c863105e38513da5ac8a30118c2ee11d624"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_QMINUS_SELF_COLLISION",
+  "result_state": "SYMBOLIC_ELL_TUNED_QMINUS_SELF_COLLISION_UNIQUE",
+  "schema": "einstein-maxwell-weyl-symbolic-ell-qminus-self-collision-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.schema.json",
+  "schema_sha256": "d00054cbf406f31ef4748ce653b90910fc2079f5f2e915ca5428d8aab899d3fb",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum",
+    "carrier": "Einstein-minus q-primary self-products at one fixed ell and momenta +/-k; other primary cross-products excluded",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "every integer input ell>=2; over-complete output L=1,...,2ell plus separately exact L=0 Fourier block",
+    "k": "+/-sqrt(sqrt(2*ell*(ell+1))-ell/2-1/6)",
+    "m": "declared axisymmetric m_A=0 input and M=0 top output",
+    "omega": "positive sum and zero difference of the Einstein-minus frequency",
+    "parity": "arithmetic shell theorem applies to either certified input parity; no symbolic dynamical source coefficient is claimed",
+    "theory": "Weyl-Maxwell target"
+  },
+  "symbolic_collision_proof": {
+    "K0_uniqueness": {
+      "exceptional_L1": "z=4*ell^2+2*ell-2/3 is at least 56/3, hence exceeds both exceptional offsets",
+      "extra_shell": "strict monotonicity gives L=2*ell as the unique p-shell hit",
+      "lower_q_gap": "2*(-3*sqrt(ell)*sqrt(2*ell - 1) + 6*ell - 1)/3",
+      "lower_q_gap_squared_witness": "4*(18*ell**2 - 3*ell + 1)/9",
+      "ordering": "Q_plus(2ell-1)<P(2ell)<Q_minus(2ell+1), Q_minus(2ell)<P(2ell)<Q_plus(2ell), and both Q branches are strictly increasing",
+      "upper_q_gap": "2*(6*ell - 3*sqrt(ell + 1)*sqrt(2*ell + 1) + 4)/3",
+      "upper_q_gap_squared_witness": "4*(18*ell**2 + 21*ell + 7)/9"
+    },
+    "K2k_exclusion": {
+      "Einstein_shell_integral_case": {
+        "definitions": "s^2=2*ell*(ell+1), u^2=2*L*(L+1), epsilon=+/-1",
+        "expanded_left_hand_side": "-epsilon**2 - 2*epsilon*u + 4*s**2 - 8*s - u**2 + 4",
+        "factorization": "(2*s-2-(u+epsilon))*(2*s-2+(u+epsilon))=3",
+        "only_positive_factor_solution": "2*s-2=2, hence s=2 and ell=1",
+        "physical_conclusion": "no solution for ell>=2"
+      },
+      "Einstein_shell_irrational_case": {
+        "contradiction_if_root_coefficient_zero": "24*ell*(ell + 1)",
+        "root_coefficient": "8*(Lambda - 4*ell**2 - 4*ell)",
+        "squared_residual": "Lambda**2 + 8*sqrt(2)*Lambda*sqrt(ell)*sqrt(ell + 1) - 8*Lambda*ell**2 - 8*Lambda*ell - 2*Lambda - 32*sqrt(2)*ell**(5/2)*sqrt(ell + 1) - 32*sqrt(2)*ell**(3/2)*sqrt(ell + 1) + 16*ell**4 + 32*ell**3 + 48*ell**2 + 32*ell"
+      },
+      "exceptional_L1": {
+        "reason": "lambda-1>sqrt(2*lambda) because lambda^2-4*lambda+1>0 at lambda>=6",
+        "squared_witness": "ell**4 + 2*ell**3 - 3*ell**2 - 4*ell + 1",
+        "statement": "z=4*(lambda-sqrt(2*lambda))>4 for lambda=ell*(ell+1)>=6"
+      },
+      "extra_shell": "if sqrt(2*ell*(ell+1)) is irrational then z is irrational; if it is integral then z is integral, whereas every p-shell is integer-2/3"
+    },
+    "input_frequency_squared": "(6*ell**2 + 3*ell - 1)/6",
+    "physical_domain": "every integer ell>=2",
+    "reduced_shell_coordinate": "z=Omega^2-K^2",
+    "self_product_channels": {
+      "positive_sum_K0": "2*(6*ell**2 + 3*ell - 1)/3",
+      "positive_sum_K2k": "4*(-sqrt(2)*sqrt(ell)*sqrt(ell + 1) + ell**2 + ell)",
+      "zero_difference_K0": "0",
+      "zero_difference_K2k": "2*(-6*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 3*ell + 1)/3"
+    },
+    "target_shells": {
+      "Einstein_q_L_ge_2": "L*(L+1)+/-sqrt(2*L*(L+1))",
+      "exceptional_L1": [
+        "4/3",
+        "4"
+      ],
+      "extra_p_L_ge_2": "L*(L+1)-2/3"
+    },
+    "tuned_momentum_positivity": {
+      "reason": "the displayed quadratic is positive already at ell=2 and strictly increasing",
+      "squared_remainder": "(63*ell**2 + 66*ell - 1)/36"
+    },
+    "tuned_momentum_squared": "-(-6*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 3*ell + 1)/6",
+    "unique_collision": {
+      "K": "0",
+      "L": "2*ell",
+      "M": "0 for the declared axisymmetric channel",
+      "Omega": "2*omega_minus",
+      "input": "two positive-frequency Einstein-minus q-primary modes at +k and -k",
+      "output": "polar extra p-primary",
+      "top_Gaunt_coupling": "CERTIFIED_NONZERO"
+    },
+    "zero_difference_exclusion": "z<=0 while every L>=1 physical characteristic shell has z>0"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_symbolic_ell_qminus_self_collision --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_symbolic_ell_qminus_self_collision"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "checks": [
+        "Python compile",
+        "JSON parse",
+        "schema validation",
+        "git diff --check"
+      ],
+      "elapsed_seconds": 0.3,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "checks": [
+        "producer stale check",
+        "independent verifier",
+        "scoped unit tests"
+      ],
+      "elapsed_seconds": 1.4,
+      "status": "PASS",
+      "tests_run": 3
+    },
+    "tier_2": {
+      "criterion": "the phase divisor, twist-aligned gate and scalar Fourier exactness are unchanged hashed inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "the dynamical coefficient and bounded lifecycle remain open",
+      "status": "NOT_RUN"
+    }
+  }
+}

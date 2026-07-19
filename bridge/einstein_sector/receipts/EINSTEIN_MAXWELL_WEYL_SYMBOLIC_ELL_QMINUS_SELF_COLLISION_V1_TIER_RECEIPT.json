@@ -1,0 +1,43 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_QMINUS_SELF_COLLISION",
+  "date": "2026-07-19",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json": "cc50b09f9140749d2744d42586cf8e052d16b8063b8c37737d448d1711bac289",
+    "bridge/einstein_sector/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.py": "522cee14e7228cf1a1d844b70ab1445dc6327464b746480ee71d2ac794549692",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.schema.json": "d00054cbf406f31ef4748ce653b90910fc2079f5f2e915ca5428d8aab899d3fb",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.py": "92a465b2357d7ffbef2f206c2496a5d12ab01165cb30d9e84a62a1e5afd28aed",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.py": "72400b598659ea7e6eca2d12ccca50999491e94479bf28549be37e752e68fee7",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-symbolic-ell-qminus-self-collision.md": "fa508e8b1ee35a3f14d83d82a689efa8e4f803dcb3f95de5c42c633536eb9b60"
+  },
+  "tier_0": {
+    "status": "PASS",
+    "elapsed_seconds": 0.3,
+    "commands": [
+      "python3 -m py_compile <scoped producer/verifier/test>",
+      "python3 -m json.tool bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
+      "git diff --check -- <scoped paths>"
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "elapsed_seconds": 1.4,
+    "commands": [
+      "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_symbolic_ell_qminus_self_collision --check",
+      "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.py",
+      "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_symbolic_ell_qminus_self_collision"
+    ],
+    "tests_run": 3
+  },
+  "tier_2": {
+    "status": "PASS_BY_CONTENT_ADDRESS",
+    "criterion": "The phase divisor, twist-aligned resonance gate and nonzero-Fourier scalar exactness are unchanged hashed inputs."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "The symbolic dynamical adjoint coefficient, full all-primary symbolic census and bounded lifecycle remain fail-closed."
+  }
+}

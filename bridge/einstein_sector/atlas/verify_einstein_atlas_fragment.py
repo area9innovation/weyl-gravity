@@ -366,6 +366,16 @@ def verify() -> None:
         raise AssertionError("nonzero-k full bounded gate was over-promoted")
     if travelling_twist["mode_data"]["second_order"]["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("nonzero-k twist causal lifecycle was over-promoted")
+    multimomentum = by_id["einstein.ph.wm.interaction.finite_multimomentum_resonance_divisor"]
+    if multimomentum["descriptions"]["nonlinear"] != "OPEN":
+        raise AssertionError("finite multimomentum arithmetic was promoted to a tangent-cone theorem")
+    if multimomentum["mode_data"]["resonance"]["status"] != "CERTIFIED" or "squared shell divisor is linear" not in multimomentum["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("finite multimomentum divisor was hidden")
+    if multimomentum["mode_data"]["taub_maps"]["status"] != "NOT_APPLICABLE":
+        raise AssertionError("finite multimomentum divisor silently acquired a Taub claim")
+    multimomentum_second = multimomentum["mode_data"]["second_order"]
+    if multimomentum_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or multimomentum_second["smooth_secular"]["status"] != "OPEN" or multimomentum_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("finite multimomentum correction classes were over-promoted")
     aligned_phase = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
     aligned_phase_second = aligned_phase["mode_data"]["second_order"]
     if aligned_phase["descriptions"]["nonlinear"] != "OPEN":
@@ -378,6 +388,16 @@ def verify() -> None:
         raise AssertionError("twist-aligned correction-class split changed")
     if aligned_phase_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("twist-aligned causal lifecycle was over-promoted")
+    symbolic_self = by_id["einstein.ph.wm.interaction.symbolic_ell_qminus_self_collision"]
+    symbolic_second = symbolic_self["mode_data"]["second_order"]
+    if symbolic_self["descriptions"]["nonlinear"] != "OPEN":
+        raise AssertionError("symbolic-ell shell arithmetic over-promoted bounded extension")
+    if symbolic_self["mode_data"]["resonance"]["status"] != "CERTIFIED" or "unique q-minus self-product collision" not in symbolic_self["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("symbolic-ell collision uniqueness was hidden")
+    if symbolic_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or symbolic_second["smooth_secular"]["status"] != "CERTIFIED":
+        raise AssertionError("symbolic-ell correction-class boundary changed")
+    if symbolic_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("symbolic-ell collision row gained a causal map")
     aligned_obstruction = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_bounded_obstruction"]
     aligned_obstruction_second = aligned_obstruction["mode_data"]["second_order"]
     if aligned_obstruction["descriptions"]["nonlinear"] != "OBSTRUCTED":

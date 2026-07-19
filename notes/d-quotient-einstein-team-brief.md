@@ -3142,6 +3142,58 @@ sufficiency.  Certificate
 is thus complete for the tuned axisymmetric all-primary carrier.  Multiple
 `|k|` fibres, nonaxisymmetric modes and higher lifecycles remain fail-closed.
 
+The first multiple-`|k|` theorem is now exact at the shell-arithmetic level.
+Write `rho=(2*pi/L)^2`, take two signed momentum integers `n1,n2`, input
+offsets `A,B`, and target offset `C`.  Squaring the signed sum/difference shell
+equation cancels the `rho^2` term and leaves
+
+```text
+4*(n1^2*B+n2^2*A-n1*n2*(C-A-B))*rho
+  +4*A*B-(C-A-B)^2=0.
+```
+
+Thus every nonidentity channel on a finite carrier has at most one admissible
+positive algebraic circumference, after the explicit unsquared sign test.  A
+finite carrier has a finite exceptional circumference set.  If both displayed
+coefficients vanish, the channel is identity-resonant for every circumference
+and remains an explicit source-matrix gate.  Atlas row
+`einstein.ph.wm.interaction.finite_multimomentum_resonance_divisor` is
+therefore resonance `CERTIFIED` but nonlinear `OPEN`; it computes no source
+coefficient and does not replace the five zero-frequency moment maps.
+
+The complementary symbolic-`ell` self-product gate is also closed without
+extrapolating the direct `ell=2` source coefficient.  For every integer
+`ell>=2`, at
+
+```text
+k^2=sqrt(2*ell*(ell+1))-ell/2-1/6,
+```
+
+the complete characteristic-shell census of `q_minus*q_minus` has exactly
+one nonzero-frequency hit:
+
+```text
+polar p-primary, L=2*ell, K=0, Omega=2*omega_minus.
+```
+
+Monotone shell ordering proves uniqueness at `K=0`.  At `K=2k`, irrational
+square roots exclude the generic case; in the integral Pell case a putative
+Einstein-shell hit factors into two integers with product `3`, whose only
+positive solution is `ell=1`.  Zero-difference channels have nonpositive
+reduced shell coordinate.  Certificate
+`EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_QMINUS_SELF_COLLISION` therefore reduces
+the all-`ell` self-product problem to one polar adjoint coefficient.  That
+dynamical coefficient, other-primary cross-products and bounded extension
+remain `OPEN`; smooth secular extension is `CERTIFIED` and causal transport
+is `NO_CERTIFIED_MAP`.
+
+The active same-background Classical bridge remains Bridge 1.  Its current
+activation gate is the symbolic polar `L=2*ell` source coefficient, and its
+fail-closed atlas row is
+`einstein.ph.wm.interaction.symbolic_ell_qminus_self_collision`.  This row
+retains the compact Plebański--Hacyan carrier and does not identify any mode
+across backgrounds.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in
