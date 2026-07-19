@@ -798,9 +798,10 @@ emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
 composition defects.
 
 `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` corrects the activation
-boundary.  Its seven finite capabilities include the four baseline consumers,
-the detector/`Dhat_1` binding, the switched diagonal massive stage and the
-physical full-form Cauchy pair described below.
+boundary.  Its eight finite capabilities include the four baseline consumers,
+the detector/`Dhat_1` binding, the switched diagonal massive stage, the
+physical full-form Cauchy pair and the canonical positive-energy preparation
+coefficients described below.
 `BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` closes the
 one-shell supplied-channel capability with exact rational arithmetic: it
 sums every passive column and both feedback channels and applies
@@ -880,8 +881,20 @@ equation supplies `F_tt=-A F` and `F_ttt=-A F_t` without differentiating a
 value-only remainder.  Exact spacetime blocks then apply
 `I+mu^-2 Dhat_1 Deltahat_2` to the value and derivative.  The resulting
 physical two-form Cauchy pair is callable for every finite column through
-`two_j=4` on a runtime positive mass interval.  The positive-energy dual,
-full spatial tail and `I_abc` remain open.
+`two_j=4` on a runtime positive mass interval.  This is the full spacetime jet,
+not yet the canonical six-component emitter carrier.
+
+`BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS` closes that carrier
+binding.  With `K=dt wedge alpha+beta`, exact Berger Hodge projectors through
+`two_j=4` satisfy `Pi_co^2=Pi_co=Pi_co^dagger`,
+`deltaSigma Pi_co=0` and `Pi_co dSigma=0`.  Hence the canonical covector is
+`q=Pi_co beta`, `p=Pi_co(partial_t beta-dSigma alpha)=Pi_co partial_t beta`,
+and the callable exports the coupling-stripped preparation
+`tilde_u=(-p,(Delta_2^co+m^2)q)` for every finite D0/D1 passive column and
+runtime positive mass interval.  The serialized `[1,2]` mass-squared fixture
+is validation data, not a physical choice.  Retained-coefficient
+nonvanishing, free emitter evolution, the full spatial tail and `I_abc`
+remain open.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as

@@ -1,0 +1,78 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS_TIER_RECEIPT",
+  "run_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "claim_status": "FINITE_COCLOSED_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS_CERTIFIED_FULL_SPATIAL_SUM_OPEN",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile closed_universe_observers/berger_recoil_massive_diagonal_preparation.py closed_universe_observers/generate_berger_recoil_positive_energy_preparation_coefficients.py closed_universe_observers/verify_berger_recoil_positive_energy_preparation_coefficients.py",
+      "elapsed_seconds": 0.2,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "pytest -q closed_universe_observers/tests/test_berger_recoil_positive_energy_preparation_coefficients.py closed_universe_observers/tests/test_berger_recoil_physical_massive_cauchy_preparation.py closed_universe_observers/tests/test_berger_recoil_stream_executable_readiness_audit.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py",
+      "elapsed_seconds": 27.1,
+      "status": "PASS",
+      "summary": "Seven scoped preparation, readiness, atlas and ledger tests passed."
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m closed_universe_observers.generate_berger_recoil_positive_energy_preparation_coefficients --check && python3 -m closed_universe_observers.verify_berger_recoil_positive_energy_preparation_coefficients && python3 -m closed_universe_observers.generate_berger_recoil_stream_executable_readiness_audit --check && python3 -m closed_universe_observers.verify_berger_recoil_stream_executable_readiness_audit",
+      "elapsed_seconds": 43.8,
+      "status": "PASS"
+    },
+    {
+      "tier": 2,
+      "command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 -m closed_universe_observers.verify_comparison_ledger",
+      "elapsed_seconds": 1.2,
+      "status": "PASS",
+      "summary": "The generated operational row and central evidence hashes validate with Bridge 3 and recoil evaluation fail closed."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS.json",
+      "sha256": "babeb2f75c722df580146de2bcb11cf36d39025b8f048cc44b4424ff060b4a83"
+    },
+    {
+      "path": "closed_universe_observers/generate_berger_recoil_positive_energy_preparation_coefficients.py",
+      "sha256": "34abf49c8f9e5eab5fc0489d22665e80947d2bc1c930061ac7c837b54819de14"
+    },
+    {
+      "path": "closed_universe_observers/berger_recoil_massive_diagonal_preparation.py",
+      "sha256": "069e7cf4faa98a252124b1ac5534f8d1eda467e99d0ee116521ff92e60226db6"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-recoil-positive-energy-preparation-coefficients-v1.schema.json",
+      "sha256": "b6f9e0b290a03e8916c5b5104fdd8c4eaaa1129f862e4403e58f7f91c1eb8d9d"
+    },
+    {
+      "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "sha256": "84dfb7305386dbc1814c92d6e4688dc77fcdbcfcb5e799694b0a0f195c2a3515"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json",
+      "sha256": "e3efcd5ef1f86f21eeda7960f96f300ef254928858291da3c41e4f68d6e11119"
+    },
+    {
+      "path": "closed_universe_observers/ledgers/comparison_ledger.json",
+      "sha256": "32bf02f93fb0d4ef619cca508e367a0edc439a9e53ff7dfe8f41fefbf792cd8e"
+    }
+  ],
+  "higher_tiers_not_run": [
+    {
+      "tier": 3,
+      "reason": "No freeze, theorem promotion, release, or shared core-algebra change; the affected finite certificate chain and generated claims ledger were verified."
+    }
+  ],
+  "open_gates": [
+    "retained projected coefficient nonvanishing",
+    "free emitter evolution U_E",
+    "first retarded recoil channel",
+    "infinite spatial tail and four recoil scalar intervals",
+    "second-order cone restriction and Bridge 3"
+  ]
+}

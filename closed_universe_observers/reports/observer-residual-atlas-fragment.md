@@ -117,6 +117,14 @@ The spacetime sign-bridge row is also `CERTIFIED`: the exact finite-mode
 Lorentzian `d` and `delta` matrices are nilpotent and diagonalize the Maxwell
 and emitter wave operators to `partial_t^2+Delta`.  This removes the implicit
 component-sign choice used by the now-certified shell word.
+The finite execution chain now reaches the physical full-form massive Cauchy
+jet and its canonical co-closed spatial trace.  Exact projectors through
+`two_j=4` distinguish `(K,partial_t K)` from the six-component `(q,p)` carrier
+and produce coupling-stripped positive-energy-dual preparation intervals for
+every finite D0/D1 passive column.  The readiness row therefore records eight
+finite capabilities.  Retained-coefficient nonvanishing, `U_E`, the first
+retarded recoil channel, the infinite spatial tail and the complete stop loop
+remain fail-closed.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has

@@ -2,10 +2,13 @@
 
 from __future__ import annotations
 
+from functools import lru_cache
 from fractions import Fraction
 from math import comb
 from math import factorial
 from typing import Any, Mapping, Sequence
+
+import sympy as sp
 
 from closed_universe_observers.berger_recoil_detector_form_binding import (
     _interval_matrix,
@@ -22,7 +25,10 @@ from closed_universe_observers.berger_recoil_matrix_interval import (
     multiply_vector_polynomial_by_real_interval,
 )
 from closed_universe_observers.berger_recoil_switch_intervals import emitter_switch_interval
-from closed_universe_observers.generate_berger_peter_weyl_form_laplacian import d_matrix
+from closed_universe_observers.generate_berger_peter_weyl_form_laplacian import (
+    d_matrix,
+    laplacian,
+)
 
 
 Vector = Sequence[ComplexRationalInterval]
@@ -216,6 +222,41 @@ def _add(*vectors: Vector) -> list[ComplexRationalInterval]:
 def _scale_real_interval(vector: Vector, scalar: RationalInterval) -> list[ComplexRationalInterval]:
     multiplier = ComplexRationalInterval(scalar, RationalInterval.point(0))
     return [entry * multiplier for entry in vector]
+
+
+@lru_cache(maxsize=None)
+def coclosed_two_form_projector(two_j: int) -> sp.Matrix:
+    """Return the exact orthogonal projector onto ``ker(delta_Sigma:Omega2->Omega1)``."""
+    if two_j < 0:
+        raise ValueError("two_j must be nonnegative")
+    delta_two = d_matrix(two_j, 1).conjugate().T
+    kernel = delta_two.nullspace()
+    dimension = 3 * (two_j + 1)
+    if not kernel:
+        return sp.zeros(dimension)
+    basis = sp.Matrix.hstack(*kernel)
+    gram = basis.conjugate().T * basis
+    return sp.simplify(basis * gram.inv() * basis.conjugate().T)
+
+
+def coclosed_two_form_projector_audit(two_j: int) -> dict[str, object]:
+    """Audit the exact Hodge projector used by the positive-energy trace."""
+    projector = coclosed_two_form_projector(two_j)
+    delta_two = d_matrix(two_j, 1).conjugate().T
+    exact_two_forms = d_matrix(two_j, 1)
+
+    def defects(matrix: sp.Matrix) -> int:
+        return sum(sp.simplify(entry) != 0 for entry in matrix)
+
+    return {
+        "two_j": two_j,
+        "spatial_two_form_dimension": projector.rows,
+        "coclosed_rank": projector.rank(),
+        "idempotence_defect_count": defects(projector * projector - projector),
+        "self_adjoint_defect_count": defects(projector.conjugate().T - projector),
+        "coderivative_defect_count": defects(delta_two * projector),
+        "exact_form_annihilation_defect_count": defects(projector * exact_two_forms),
+    }
 
 
 def evaluate_switched_detector_diagonal_massive_advanced_image_at_support_left(
@@ -467,4 +508,103 @@ def evaluate_physical_massive_advanced_cauchy_pair_at_support_left(
         "physical_two_form_time_derivative": [entry.serialize() for entry in physical_time_derivative],
         "cauchy_pair_order": ["K_at_support_left", "partial_t_K_at_support_left"],
         "claim_boundary": "finite physical massive two-form advanced Cauchy pair through two_j=4 for a runtime positive mass interval; positive-energy dual, spatial tail and I_abc remain open",
+    }
+
+
+def evaluate_coupling_stripped_positive_energy_preparation_at_support_left(
+    *,
+    detector_image_certificate: Mapping[str, Any],
+    detector_profile_certificate: Mapping[str, Any],
+    switch_certificate: Mapping[str, Any],
+    moment_certificate: Mapping[str, Any],
+    exact_kernel_certificate: Mapping[str, Any],
+    detector: str,
+    two_j: int,
+    column: int,
+    mass_squared_interval: RationalInterval,
+    radical_bits: int = 80,
+) -> dict[str, object]:
+    """Trace the physical field to co-closed ``(q,p)`` and apply ``(-p,Lq)``.
+
+    For ``K=dt wedge alpha+beta``, the canonical spatial momentum is
+    ``gamma=partial_t beta-d_Sigma alpha``.  The co-closed projector kills
+    exact two-forms, so ``Pi_co gamma=Pi_co partial_t beta``.  This is the
+    six-component Cauchy carrier used by the per-shell recoil word, rather
+    than the twelve-component spacetime jet ``(K,partial_t K)``.
+    """
+    if mass_squared_interval.lower <= 0:
+        raise ValueError("positive-energy preparation requires positive mass squared")
+    physical = evaluate_physical_massive_advanced_cauchy_pair_at_support_left(
+        detector_image_certificate=detector_image_certificate,
+        detector_profile_certificate=detector_profile_certificate,
+        switch_certificate=switch_certificate,
+        moment_certificate=moment_certificate,
+        exact_kernel_certificate=exact_kernel_certificate,
+        detector=detector,
+        two_j=two_j,
+        column=column,
+        mass_squared_interval=mass_squared_interval,
+        radical_bits=radical_bits,
+    )
+    value = [_complex_from_serialized(entry) for entry in physical["physical_two_form_value"]]
+    time_derivative = [
+        _complex_from_serialized(entry)
+        for entry in physical["physical_two_form_time_derivative"]
+    ]
+    n = two_j + 1
+    if len(value) != 6 * n or len(time_derivative) != 6 * n:
+        raise ValueError("physical spacetime two-form jet has the wrong dimension")
+    beta = value[3 * n :]
+    beta_t = time_derivative[3 * n :]
+    projector_exact = coclosed_two_form_projector(two_j)
+    projector = _interval_matrix(projector_exact, radical_bits)
+    covector_q = _matrix_vector(projector, beta)
+    covector_p = _matrix_vector(projector, beta_t)
+
+    spatial_operator = _interval_matrix(laplacian(two_j, 2), radical_bits)
+    mass_entry = ComplexRationalInterval(
+        mass_squared_interval, RationalInterval.point(0)
+    )
+    for row in range(len(spatial_operator)):
+        spatial_operator[row][row] = spatial_operator[row][row] + mass_entry
+    preparation_q = [-entry for entry in covector_p]
+    preparation_p = _matrix_vector(spatial_operator, covector_q)
+    projector_audit = coclosed_two_form_projector_audit(two_j)
+    if any(
+        projector_audit[name]
+        for name in (
+            "idempotence_defect_count",
+            "self_adjoint_defect_count",
+            "coderivative_defect_count",
+            "exact_form_annihilation_defect_count",
+        )
+    ):
+        raise AssertionError("exact co-closed two-form projector audit failed")
+    return {
+        "detector": detector,
+        "two_j": two_j,
+        "column": column,
+        "mass_squared_interval": mass_squared_interval.serialize(),
+        "support_left_physical_time": physical["support_left_physical_time"],
+        "canonical_trace": {
+            "spacetime_split": "K=dt wedge alpha+beta",
+            "canonical_spatial_pair": "q=Pi_co beta; p=Pi_co(partial_t beta-dSigma alpha)=Pi_co partial_t beta",
+            "pair_order": ["q", "p"],
+            "projector_rank": projector_audit["coclosed_rank"],
+            "projector_audit": projector_audit,
+        },
+        "coupling_stripped_advanced_covector_q": [
+            entry.serialize() for entry in covector_q
+        ],
+        "coupling_stripped_advanced_covector_p": [
+            entry.serialize() for entry in covector_p
+        ],
+        "coupling_stripped_preparation_q": [
+            entry.serialize() for entry in preparation_q
+        ],
+        "coupling_stripped_preparation_p": [
+            entry.serialize() for entry in preparation_p
+        ],
+        "coupling_stripped_preparation_order": ["tilde_q_u=-tilde_p_v", "tilde_p_u=(Delta_2^co+m_squared)tilde_q_v"],
+        "claim_boundary": "finite co-closed canonical trace and coupling-stripped positive-energy dual through two_j=4 for a runtime positive mass interval; coefficient nonvanishing, infinite spatial tail, free evolution and I_abc remain open",
     }
