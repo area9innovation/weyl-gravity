@@ -1,0 +1,158 @@
+{
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This validated LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result exports normalized h_0,h_1 value and physical-time-derivative rational intervals on arbitrary rational cells. It imports the directed flat-bump normalization integral, exact supports and clock/physical radii; monotonicity of B and the exact derivative critical equation 1-3s^4=0 control the cell hulls. Centers have zero derivative and disjoint cells are structural zeros. This binds the switch factor only: it does not compose a Green kernel, serialize emitter Cauchy coefficients, contract form blocks, evaluate I_abc, recoil, the cone, Bridge 3 or quantum data.",
+  "claim_status": "NORMALIZED_SWITCH_CELL_INTERVALS_CERTIFIED_GREEN_BINDING_OPEN",
+  "dependency_refs": {
+    "kernels": {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE.json",
+      "result_id": "BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE",
+      "sha256": "e74d7806383f2dd1a62c82c93e3a149c32ae3357bd5018a85e12d2f5080374ae"
+    },
+    "moments": {
+      "path": "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json",
+      "result_id": "BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES",
+      "sha256": "10ea2bc9462d446117c6369a2fd2b81f7fc06eff383b80b7a80854a12e7231a1"
+    },
+    "switches": {
+      "path": "closed_universe_observers/certificates/BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES.json",
+      "result_id": "BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES",
+      "sha256": "ba2bc98d538c09530c1ac7021520b8559ee14bff040e5be8659ac829f98f6a34"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "fixtures": {
+    "h0_center": {
+      "claim_boundary": "normalized switch value and physical-time derivative on one rational cell; no Green convolution, form contraction or emitter preparation coefficient",
+      "core_integral_interval": {
+        "lower": "220480274480969204810823647005560476068131788413/182687704666362864775460604089535377456991567872",
+        "upper": "881965699414273880489577659458787200995539114485/730750818665451459101842416358141509827966271488",
+        "width": "44601490397061246283071436545296723011960833/730750818665451459101842416358141509827966271488"
+      },
+      "physical_time_derivative": {
+        "lower": "0",
+        "upper": "0",
+        "width": "0"
+      },
+      "physical_time_interval": {
+        "lower": "1/6",
+        "upper": "1/6",
+        "width": "0"
+      },
+      "structural_zero": false,
+      "support_physical_time": [
+        "7/48",
+        "3/16"
+      ],
+      "switch_id": "h_0",
+      "value": {
+        "lower": "46768052394588893382517914646921056628989841375232/881965699414273880489577659458787200995539114485",
+        "upper": "11692013098647223345629478661730264157247460343808/220480274480969204810823647005560476068131788413",
+        "width": "521481209941628438084722096232800809229175920470492778810075300664200274469678354030410072064/194456039489659085799090555971706851749173175329586539725945488644098955819975668764957403462305"
+      }
+    },
+    "h1_full_support": {
+      "claim_boundary": "normalized switch value and physical-time derivative on one rational cell; no Green convolution, form contraction or emitter preparation coefficient",
+      "core_integral_interval": {
+        "lower": "220480274480969204810823647005560476068131788413/182687704666362864775460604089535377456991567872",
+        "upper": "881965699414273880489577659458787200995539114485/730750818665451459101842416358141509827966271488",
+        "width": "44601490397061246283071436545296723011960833/730750818665451459101842416358141509827966271488"
+      },
+      "physical_time_derivative": {
+        "lower": "-412979738106718797046446662198066494516283714830336/661440823442907614432470941016681428204395365239",
+        "upper": "412979738106718797046446662198066494516283714830336/661440823442907614432470941016681428204395365239",
+        "width": "825959476213437594092893324396132989032567429660672/661440823442907614432470941016681428204395365239"
+      },
+      "physical_time_interval": {
+        "lower": "5/16",
+        "upper": "7/16",
+        "width": "1/8"
+      },
+      "structural_zero": false,
+      "support_physical_time": [
+        "5/16",
+        "7/16"
+      ],
+      "switch_id": "h_1",
+      "value": {
+        "lower": "0",
+        "upper": "11692013098647223345629478661730264157247460343808/661440823442907614432470941016681428204395365239",
+        "width": "11692013098647223345629478661730264157247460343808/661440823442907614432470941016681428204395365239"
+      }
+    },
+    "outside_structural_zero": {
+      "physical_time_derivative": {
+        "lower": "0",
+        "upper": "0",
+        "width": "0"
+      },
+      "physical_time_interval": {
+        "lower": "1/4",
+        "upper": "1/3",
+        "width": "1/12"
+      },
+      "structural_zero": true,
+      "switch_id": "h_0",
+      "value": {
+        "lower": "0",
+        "upper": "0",
+        "width": "0"
+      }
+    }
+  },
+  "flags": {
+    "EMITTER_CAUCHY_COEFFICIENTS_SERIALIZED": false,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "NORMALIZED_SWITCH_AND_TIME_DERIVATIVE_INTERVAL_PROVIDER_EXPORTED": true,
+    "QUANTUM_CLAIM": false,
+    "SWITCH_KERNEL_CONVOLUTION_BOUND": false
+  },
+  "mode_scope": {
+    "background": "compact positive Berger clock at fixed coupling",
+    "boundaries": "rational physical-time cells on compact h0/h1 supports; no spatial boundary",
+    "carrier": "normalized switch value and physical-time derivative interval hulls",
+    "charge_sector": "fixed-coupling Berger sector",
+    "degree": "scalar clock switch multiplying massive two-forms",
+    "ell": "NOT_APPLICABLE temporal provider",
+    "k": "NOT_APPLICABLE",
+    "m": "NOT_APPLICABLE",
+    "omega": "cellwise physical-time interval",
+    "parity": "h0/h1 even about their respective centers; derivative odd",
+    "theory": "classical pure-Weyl gravity plus Berger clock, Maxwell detector and massive two-form emitters"
+  },
+  "next_gate": "BIND_SWITCH_INTERVALS_WITH_FINITE_KERNELS_DETECTOR_PROFILES_AND_TYPED_FORM_BLOCKS",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_recoil_switch_interval_provider.py",
+        "sha256": "c665bd9dc6e1be2fbc4ae306546b1a4041d2a6bc408be46c8673bf6dad08fe2e"
+      },
+      {
+        "path": "closed_universe_observers/berger_recoil_switch_intervals.py",
+        "sha256": "d441c1ca776bda7d734eed680c5fa8ad21e20f9afbd72a6b64a389311babd666"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_recoil_switch_interval_provider.py",
+        "sha256": "e2088d614393f7bce844a0ad19f306f8351c25c2b4603135dee49f830d0c84f0"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_recoil_switch_interval_provider.py",
+        "sha256": "cc383ec69ea4c352965ce18e228102d429e78ebbb3ad01c7445493717bf1daf3"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-recoil-switch-interval-provider-v1.schema.json",
+        "sha256": "6395bdfa060eb8722b0db1264ee0058303a15c24fdd566587a782efa920368ca"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-recoil-switch-interval-provider.md",
+        "sha256": "c21e981e9ad1b46563aaeab77aa64d3906e39740ba71364b6407f61d3d26d1d7"
+      }
+    ]
+  },
+  "result_id": "BERGER_RECOIL_SWITCH_INTERVAL_PROVIDER",
+  "schema": "closed-universe-berger-recoil-switch-interval-provider-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

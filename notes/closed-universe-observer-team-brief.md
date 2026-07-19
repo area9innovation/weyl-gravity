@@ -825,6 +825,14 @@ loop remain `OBSTRUCTED`.  Supplying
 masses and couplings would still produce no physical interval.  The exact-
 rational input schema remains deferred.
 
+`BERGER_RECOIL_SWITCH_INTERVAL_PROVIDER` closes the next factorwise input.
+On any rational physical-time cell it exports outward rational intervals for
+the normalized `h0,h1` values and their physical-time derivatives, importing
+the certified flat-bump normalization and using the exact derivative critical
+equation `1-3s^4=0`.  Centers have zero derivative and support-disjoint cells
+are structural zeros.  Kernel composition, typed form contraction and the
+harmonic Cauchy coefficients of `tilde_u0,tilde_u1` remain open.
+
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as
 `v_a=g_a tilde_v_a`; applying the positive-energy dual to `tilde_v_a` defines

@@ -529,7 +529,10 @@ caller-declared finite slab and strictly positive rational massive
 mass-squared domain, exports all six coefficient matrices and a uniform
 sine-series tail, and fails closed when the tail majorant does not contract.
 This is runtime parameterization, not a physical mass specialization.
-Switch/profile/form binding, extension beyond `two_j=4`, and the tail-aware
+The normalized `h0,h1` values and physical-time derivatives are now separately
+callable as outward rational intervals on arbitrary rational cells, with exact
+support zeros and the flat-bump derivative critical point certified.
+Switch-kernel/profile/form composition, extension beyond `two_j=4`, and the tail-aware
 four-stream stop loop remain `OBSTRUCTED`, so external numerical inputs remain
 deferred under the strict specialization schema.
 The coupling-stripped preparation successor fixes the formal-order convention
@@ -1659,6 +1662,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION` (fired for supplied polynomial interval enclosures) | bind the finite Berger kernel intervals, switches, detector coefficients and form contractions; do not identify the exact beta-integral fixture with a physical channel |
 | `BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD` (fired for twenty physical blocks through `two_j=4`) | pass the algebraic coefficients to the finite interval enclosure; do not invent masses or identify factored series data with a Green image |
 | `BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE` (fired over caller-declared rational slabs and positive massive mass domains) | bind exact switches, detector profiles and typed form factors into the nested causal engine; do not identify runtime mass domains with a physical specialization |
+| `BERGER_RECOIL_SWITCH_INTERVAL_PROVIDER` (fired for normalized values and physical-time derivatives on rational cells) | compose the switch intervals with finite kernels and typed form blocks; do not identify a factorwise cell hull with an `I_abc` channel |
 | `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` (fired; four finite capabilities certified, complete provider/nested convolution/stop loop obstructed) | extend the detector provider beyond `two_j=4`, bind the finite kernels into the nested causal convolution, and implement the tail-aware four-stream stop loop; only then activate the exact numerical input schema |
 | `BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` (fired, capacity label superseded) | retain the streamed route and its computed `two_j=138` working rail, but use the normalization repair for the authoritative necessary capacity lower bound; do not treat either rail as a convergence cutoff |
 | `BERGER_STREAMABLE_POLARIZATION_SECTORS` (fired) | evaluate the diagonal/first-off-diagonal high-mode coefficients in the certified three-dimensional-or-smaller charge blocks and close the Green-weighted operator-norm tail |

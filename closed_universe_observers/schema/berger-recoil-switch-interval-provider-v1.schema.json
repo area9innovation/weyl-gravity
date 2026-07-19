@@ -1,0 +1,10 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","additionalProperties":false,
+  "required":["schema","result_id","setting_id","claim_status","atlas_status","dependency_tags","dependency_refs","mode_scope","fixtures","flags","next_gate","claim_boundary","provenance"],
+  "properties":{
+    "schema":{"const":"closed-universe-berger-recoil-switch-interval-provider-v1"},"result_id":{"const":"BERGER_RECOIL_SWITCH_INTERVAL_PROVIDER"},"setting_id":{"type":"string"},"claim_status":{"const":"NORMALIZED_SWITCH_CELL_INTERVALS_CERTIFIED_GREEN_BINDING_OPEN"},"atlas_status":{"const":"CERTIFIED"},"dependency_tags":{"const":["LOCAL-ALGEBRAIC","LORENTZIAN-CAUSAL"]},"dependency_refs":{"type":"object","minProperties":3,"maxProperties":3},
+    "mode_scope":{"type":"object","required":["theory","background","boundaries","charge_sector","carrier","degree","parity","ell","m","k","omega"]},"fixtures":{"type":"object"},
+    "flags":{"type":"object","required":["NORMALIZED_SWITCH_AND_TIME_DERIVATIVE_INTERVAL_PROVIDER_EXPORTED","SWITCH_KERNEL_CONVOLUTION_BOUND","EMITTER_CAUCHY_COEFFICIENTS_SERIALIZED","FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED","QUANTUM_CLAIM"]},
+    "next_gate":{"const":"BIND_SWITCH_INTERVALS_WITH_FINITE_KERNELS_DETECTOR_PROFILES_AND_TYPED_FORM_BLOCKS"},"claim_boundary":{"type":"string"},"provenance":{"type":"object"}
+  }
+}
