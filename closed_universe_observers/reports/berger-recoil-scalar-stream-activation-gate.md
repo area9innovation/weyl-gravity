@@ -34,10 +34,16 @@ strict support order, while `I_100` and `I_101` contract on the 2/4/8-cell
 rail but still contain zero.  Thus all eight finite blocks are evaluated on
 the validation domain.
 
+The direct provider now includes the first omitted shell `two_j=5`: both
+detector polynomials, the D1/h0 remainder and all five Maxwell/massive kernel
+blocks.  Its source-hash crosswalk is only to the direct `two_j<=4` carrier;
+the separate hashed exact-`T` stream remains `NO_CERTIFIED_MAP`.  No
+`two_j=5` feedback channel is evaluated yet.
+
 The remaining sequence is:
 
-1. Extend the coefficient and feedback provider beyond `two_j=4`.
-2. Implement the tail-aware four-stream stop loop.
+1. Bind all eight `two_j=5` channels to the partitioned feedback backend.
+2. Widen the direct provider further and implement the tail-aware four-stream stop loop.
 3. Only then declare numerical positive masses, nonzero couplings, and an
    interval, nonzero, or sign stopping goal.
 4. Run the four response-specific streams and close them with the certified

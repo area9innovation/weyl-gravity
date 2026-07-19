@@ -308,3 +308,20 @@ def test_six_mismatched_feedback_channels_record_four_zeros_and_two_open_signs()
     assert "BERGER_SIX_MISMATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS" in {
         evidence["result_id"] for evidence in mismatch["evidence"]
     }
+
+
+def test_first_omitted_shell_provider_keeps_feedback_and_exact_t_map_open():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"]
+        == "observer.berger.detector_profile.recoil_first_omitted_shell_provider_two_j5"
+    )
+    assert row["descriptions"]["causal"] == "CERTIFIED"
+    assert row["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert row["observer_data"]["recoil_backreaction_order"]["status"] == "CERTIFIED"
+    statement = row["observer_data"]["profile_green_boundary_dependencies"]["statement"]
+    assert "source-hash crosswalk" in statement
+    assert "NO_CERTIFIED_MAP" in statement
+    assert "BERGER_RECOIL_FIRST_OMITTED_SHELL_PROVIDER_TWO_J5" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

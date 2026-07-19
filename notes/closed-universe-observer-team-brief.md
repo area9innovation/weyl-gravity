@@ -322,9 +322,10 @@ branch.
 
 ### Immediate priority after the polarization-emitter handoff
 
-1. Extend all eight absolute-`g^3` channel providers beyond `two_j=4` with
-   validated spectral-tail bounds, then implement the tail-aware aggregate
-   stopping rule.  Physical masses and couplings remain deferred until that
+1. Bind all eight absolute-`g^3` channels at the first omitted direct-provider
+   shell `two_j=5`, then widen further with validated spectral-tail bounds and
+   implement the tail-aware aggregate stopping rule.  Physical masses and
+   couplings remain deferred until that
    backend is complete.  In parallel, use the
    exported emitter stress
    and clock-switch source to refine the certified covariant 108-row
@@ -802,14 +803,14 @@ emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
 composition defects.
 
 `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` corrects the activation
-boundary.  Its fourteen finite capabilities include the four baseline consumers,
+boundary.  Its fifteen finite capabilities include the four baseline consumers,
 the detector/`Dhat_1` binding, the switched diagonal massive stage, the
 physical full-form Cauchy pair and the canonical positive-energy preparation
 coefficients described below, plus the first freely evolved retarded Maxwell
 channel, the partition-refined leading rank-two response, the matched
 absolute-`g3` feedback-channel evaluator, its cell-partitioned causal
-refinement, the D1/h0 cross-window remainder and the six mismatched-channel
-evaluator.
+refinement, the D1/h0 cross-window remainder, the six mismatched-channel
+evaluator and the first-omitted-shell direct provider described below.
 `BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` closes the
 one-shell supplied-channel capability with exact rational arithmetic: it
 sums every passive column and both feedback channels and applies
@@ -979,9 +980,19 @@ D1/h1 remainder is not extrapolated.
 `I_101` propagates the h0 source retardedly to h1.  Both allowed complex
 enclosures contract strictly from 2 to 4 to 8 cells and still contain zero.
 Together with the matched pair, all eight finite blocks are evaluated on the
-validation mass domain.  The active gate is now extension beyond `two_j=4`,
-followed by the tail-aware aggregate stop loop; all-shell recoil, physical
-masses, quotient descent and tangent-cone restriction remain open.
+validation mass domain.
+
+`BERGER_RECOIL_FIRST_OMITTED_SHELL_PROVIDER_TWO_J5` applies the identical
+content-addressed profile-moment, de Rham and kernel-series functions at
+`two_j=5`.  It exports both detector polynomials, corresponding-window tails,
+the larger D1/h0 tail and all five Maxwell/massive kernel blocks.  Exact
+source-manifest hashes crosswalk this payload to the direct `two_j<=4`
+carrier.  The separate hashed exact-`T` stream through `two_j=138` remains
+`NO_CERTIFIED_MAP`; modes are not identified by name.  No `I_abc[5,k]` is yet
+evaluated.  The active gate is now binding all eight `two_j=5` channels,
+followed by wider direct coverage and the tail-aware aggregate stop loop;
+all-shell recoil, physical masses, quotient descent and tangent-cone
+restriction remain open.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as

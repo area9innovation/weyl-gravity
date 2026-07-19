@@ -2,7 +2,7 @@
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `LORENTZIAN-CAUSAL`.
 
-The complete per-shell symbolic word now has fourteen finite executable consumers.
+The complete per-shell symbolic word now has fifteen finite executable consumers.
 Exact rational interval aggregation of supplied `I_abc[two_j,k]` values is
 certified, including every passive column, `g_b g_c^2`, and the Peter--Weyl
 weight.  A second callable returns exact real/imaginary coefficient intervals,
@@ -61,14 +61,21 @@ zeros; the `I_100` and `I_101` 2/4/8-cell widths contract strictly but remain
 zero-containing.  Together with the matched pair, all eight finite blocks are
 evaluated on the validation mass domain, not on all shells.
 
+A fifteenth direct-provider payload extends the detector polynomials, D1/h0
+remainder and all five Maxwell/massive kernel blocks by exactly the first
+omitted shell `two_j=5`.  Exact source-manifest hashes crosswalk it to the
+direct `two_j<=4` carrier.  The separate hashed exact-`T` stream through
+`two_j=138` remains `NO_CERTIFIED_MAP`, and no `two_j=5` feedback block is yet
+evaluated.
+
 The audit retains its explicit four-callable complete-backend protocol, records
 the shell evaluator `CERTIFIED`, and adds separate `CERTIFIED` finite detector
 kernel, and polynomial-convolution progress rows while all three incomplete physical
 rows remain `OBSTRUCTED`.
 It also exports a strict exact-rational numerical
 input schema in the certified `gHat` operator units, but leaves every value
-undeclared.  The next gate extends the detector and feedback provider beyond
-`two_j=4` and binds the tail-aware aggregate stop loop;
+undeclared.  The next gate binds all eight `two_j=5` channels to the
+partitioned feedback backend, before further widening and the tail-aware stop loop;
 external specialization follows only after the full protocol closes.
 
 The symbolic operator theorem remains `CERTIFIED`.  No recoil coefficient,

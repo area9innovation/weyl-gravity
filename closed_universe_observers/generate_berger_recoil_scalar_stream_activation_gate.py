@@ -33,6 +33,7 @@ DEPENDENCIES = {
     "partitioned_matched_feedback": PACKAGE / "certificates/BERGER_RECOIL_PARTITIONED_MATCHED_ABSOLUTE_G3_FEEDBACK.json",
     "cross_window_detector_remainder": PACKAGE / "certificates/BERGER_CROSS_WINDOW_DETECTOR_ADVANCED_MAXWELL_REMAINDER.json",
     "six_mismatched_feedback": PACKAGE / "certificates/BERGER_SIX_MISMATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS.json",
+    "first_omitted_shell_provider": PACKAGE / "certificates/BERGER_RECOIL_FIRST_OMITTED_SHELL_PROVIDER_TWO_J5.json",
 }
 SOURCE_FILES = [
     Path(__file__),
@@ -134,6 +135,11 @@ def readiness_audit(values: dict[str, dict[str, Any]], *, drop_per_shell_word: b
             "evidence_flag": "SIX_MISMATCHED_TWO_J0_K0_CHANNELS_EVALUATED",
         },
         {
+            "id": "finite_first_omitted_shell_direct_provider_two_j5",
+            "status": "CERTIFIED" if values["first_omitted_shell_provider"]["flags"]["TWO_J4_TO_TWO_J5_DIRECT_CARRIER_CROSSWALK_CERTIFIED"] else "OBSTRUCTED",
+            "evidence_flag": "TWO_J4_TO_TWO_J5_DIRECT_CARRIER_CROSSWALK_CERTIFIED",
+        },
+        {
             "id": "callable_shell_interval_backend",
             "status": "CERTIFIED" if values["executable_readiness"]["flags"]["CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED"] else "OBSTRUCTED",
             "evidence_flag": "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED",
@@ -189,6 +195,7 @@ def build() -> dict[str, Any]:
         "partitioned_matched_feedback": "MATCHED_FEEDBACK_WIDTHS_STRICTLY_CONTRACT_2_TO_4_TO_8",
         "cross_window_detector_remainder": "D1_ADVANCED_MAXWELL_POLYNOMIAL_REMAINDER_ON_H0_EXPORTED",
         "six_mismatched_feedback": "SIX_MISMATCHED_TWO_J0_K0_CHANNELS_EVALUATED",
+        "first_omitted_shell_provider": "TWO_J4_TO_TWO_J5_DIRECT_CARRIER_CROSSWALK_CERTIFIED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -225,8 +232,11 @@ def build() -> dict[str, Any]:
         "zero. The D1/h0 cross-window remainder is certified, and all six "
         "mismatched two_j=0,column-0 channels are evaluated: four are exact "
         "support zeros and the two allowed channels have contracting but "
-        "zero-containing enclosures. Extension beyond two_j=4, the complete "
-        "nested backend and tail-aware aggregate stop loop are not "
+        "zero-containing enclosures. The direct detector-polynomial, D1/h0 "
+        "remainder and exact-kernel payload is now extended to two_j=5 by an "
+        "explicit source-hash carrier crosswalk, while the separate hashed "
+        "exact-T stream remains unidentified. The eight two_j=5 feedback "
+        "channels, complete nested backend and tail-aware aggregate stop loop are not "
         "exported. Numerical masses, couplings and a stopping goal are therefore "
         "deferred; supplying them now would not produce an interval. The exact "
         "generic coefficient functional is not itself a numerical Green-image "
@@ -253,7 +263,7 @@ def build() -> dict[str, Any]:
         "sequencing_decision": {
             "completed_internal_gate": "complete symbolic preparation/recoil scalar operator word with exact Peter-Weyl reconstruction",
             "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
-            "current_active_gate": "extend the detector and feedback provider beyond two_j=4, then implement the tail-aware aggregate stop loop",
+            "current_active_gate": "bind all eight two_j=5 channels to the partitioned feedback backend, then widen further and implement the tail-aware aggregate stop loop",
             "external_specialization_gate": "DEFERRED_UNTIL_EXECUTABLE_BACKEND",
             "dense_profile_materialization": "NOT_SELECTED",
             "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP",
@@ -288,13 +298,15 @@ def build() -> dict[str, Any]:
             "FINITE_CROSS_WINDOW_DETECTOR_ADVANCED_MAXWELL_REMAINDER_EXPORTED": True,
             "FINITE_SIX_MISMATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS_EXPORTED": True,
             "ALL_EIGHT_ABC_TWO_J0_K0_INTERVALS_EXPORTED": True,
+            "FINITE_FIRST_OMITTED_SHELL_DIRECT_PROVIDER_TWO_J5_EXPORTED": True,
+            "TWO_J5_FEEDBACK_CHANNELS_EVALUATED": False,
             "NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED": False,
             "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": False,
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "EXTEND_THE_DETECTOR_AND_FEEDBACK_PROVIDER_BEYOND_TWO_J4",
+        "next_gate": "BIND_ALL_EIGHT_TWO_J5_CHANNELS_TO_THE_PARTITIONED_FEEDBACK_BACKEND",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

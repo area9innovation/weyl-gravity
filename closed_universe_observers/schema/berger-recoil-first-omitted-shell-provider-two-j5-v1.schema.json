@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "carrier_crosswalk", "support_audit", "detector_provider_extension", "kernel_provider_extension", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-first-omitted-shell-provider-two-j5-v1"},
+    "result_id": {"const": "BERGER_RECOIL_FIRST_OMITTED_SHELL_PROVIDER_TWO_J5"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "DIRECT_RECOIL_INPUT_PROVIDER_EXTENDED_TO_FIRST_OMITTED_TWO_J5_SHELL_FEEDBACK_BINDING_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 7, "maxProperties": 7},
+    "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "carrier_crosswalk": {"type": "object", "required": ["source_carrier", "target_carrier", "map", "detector_generator_source_hash_matches_import", "cross_window_generator_source_hash_matches_import", "kernel_generator_source_hash_matches_import", "hashed_exact_T_two_j138_stream_identification_status"]},
+    "support_audit": {
+      "type": "object",
+      "required": ["time_coordinate", "formula", "rows"],
+      "properties": {
+        "rows": {"type": "array", "minItems": 3, "maxItems": 3}
+      }
+    },
+    "detector_provider_extension": {
+      "type": "object",
+      "required": ["two_j", "detectors", "D1_on_h0_cross_window_remainder"],
+      "properties": {
+        "two_j": {"const": 5},
+        "detectors": {"type": "array", "minItems": 2, "maxItems": 2},
+        "D1_on_h0_cross_window_remainder": {"type": "object"}
+      }
+    },
+    "kernel_provider_extension": {
+      "type": "object",
+      "required": ["two_j", "blocks"],
+      "properties": {
+        "two_j": {"const": 5},
+        "blocks": {"type": "array", "minItems": 5, "maxItems": 5}
+      }
+    },
+    "mutation_results": {"type": "array", "minItems": 2, "maxItems": 2},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "BIND_ALL_EIGHT_TWO_J5_CHANNELS_TO_THE_PARTITIONED_FEEDBACK_BACKEND"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}
