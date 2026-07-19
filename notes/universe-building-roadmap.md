@@ -59,8 +59,11 @@ exact and gives `-1975/72+2704/27=15707/216`, refuting algebraic `H2`
 cancellation there. Generic-box triangle residues, full incidence and
 renormalized mixed rows were the remaining scale gate. All three generic
 corner functions and their full contact incidence are now exact and nonzero;
-generic `M14` is disposed as a Mellin-renormalized scale row. Finite local
-mixed rows remain open.
+generic `M14` is disposed as a Mellin-renormalized scale row. All 33
+minimally-subtracted finite `H1-H2` contact rows are now exact, with two
+unseen tensor replays and equal-box TT sum `3188/27`. The renormalized
+`H1^3` triangle bulk and independent finite-counterterm normalization remain
+open.
 
 No row may be used as evidence for another row merely because both use the
 word cylinder, wave, or Einstein.
@@ -73,7 +76,7 @@ The shortest independent paths are now:
 Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
-Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, fix the finite local mixed rows now that generic triangle/contact incidence and the nonzero Mellin-renormalized M14 disposition are exact, and assemble the repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
+Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, reduce the renormalized physical H1-cubed triangle bulk now that generic incidence, M14 disposition and all finite H1-H2 contact rows are exact, and assemble the repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    audit and activate the deferred exact numerical recoil input contract without inventing physical values; the generic reality-folded contiguous-shell adapter and internal four-entry stop loop are certified, while physical specialization remains deferred, after which restrict records to Z2^C
 Black hole:  BH-2C per planning directive: claim repair (static complementary-sheet wording; rigorous exact/interval nonvanishing bounds for the mixed/extra flux fixtures) and the full asymptotic metric/Jordan analysis (repeated-root structure at infinity, metric reconstruction, finite-flux boundary class, both parities); NOT the old BH-0/BH-1 queue; ringdown stays coordinator-gated. Prior gate DONE (events black-hole-DONE/-ACTIVE in planning/events/)
 ```
@@ -2012,7 +2015,10 @@ All six generic contact endpoint residues are now exact 33-row five-carrier
 functions. Their symmetric-point incidence is exact and refutes algebraic
 `H2` cancellation. All generic triangle corner functions and their full
 contact incidence are now exact and nonzero, so generic `M14` is disposed as
-a Mellin-renormalized scale row. Finite local mixed rows remain open. The selected generic weight-raised
+a Mellin-renormalized scale row. All 33 minimally-subtracted finite contact
+rows are now exact and give `3188/27` on the equal-box TT fixture. The
+renormalized triangle bulk and independent finite-counterterm normalization
+remain open. The selected generic weight-raised
 factorization and its local order-minus-three/four BCH residue are now exact.
 The canonical
 `det_3` tail and all three Schur residues are already fixed. The exact Endo--Duhamel,

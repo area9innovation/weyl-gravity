@@ -76,6 +76,7 @@ DEPENDENCIES = {
     "generic_physical_hessian_symmetric_mixed_boundary_incidence": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_SYMMETRIC_MIXED_BOUNDARY_INCIDENCE.json",
     "generic_physical_hessian_triangle_corner_residues": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_CORNER_RESIDUES.json",
     "generic_physical_hessian_full_boundary_incidence": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_FULL_BOUNDARY_INCIDENCE.json",
+    "generic_physical_hessian_H1_H2_contact_finite_rows": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_FINITE_ROWS.json",
     "generic_background_ghost_CPT_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
@@ -199,6 +200,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "generic_physical_hessian_symmetric_mixed_boundary_incidence": "SYMMETRIC_POINT_TRIANGLE_CONTACT_BOUNDARY_INCIDENCE_ASSEMBLED_H2_CANCELLATION_REFUTED",
         "generic_physical_hessian_triangle_corner_residues": "GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_COMPUTED",
         "generic_physical_hessian_full_boundary_incidence": "GENERIC_TRIANGLE_CONTACT_BOUNDARY_INCIDENCE_ASSEMBLED_M14_NONZERO_RENORMALIZED",
+        "generic_physical_hessian_H1_H2_contact_finite_rows": "GENERIC_H1_H2_CONTACT_MINIMAL_SUBTRACTION_FINITE_ROWS_COMPUTED",
         "generic_background_ghost_CPT_obstruction": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
         "generic_ghost_Endo_Duhamel_reduction": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES",
         "generic_ghost_n1_n2_Hodge_resolvent_reduction": "CURVED_ENDO_N1_N2_REDUCED_EXACTLY_TO_FIVE_MINIMAL_VECTOR_SCALAR_RESOLVENT_CARRIERS",
@@ -275,6 +277,9 @@ def _load() -> dict[str, dict[str, Any]]:
     ]
     generic_physical_hessian_full_incidence = values[
         "generic_physical_hessian_full_boundary_incidence"
+    ]
+    generic_physical_hessian_contact_finite = values[
+        "generic_physical_hessian_H1_H2_contact_finite_rows"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -823,6 +828,32 @@ def _load() -> dict[str, dict[str, Any]]:
         != {"numerator": 15707, "denominator": 216}
     ):
         raise ValueError("physical-Hessian full generic incidence frontier drifted")
+    contact_finite_flags = generic_physical_hessian_contact_finite.get(
+        "claim_flags", {}
+    )
+    if (
+        contact_finite_flags.get(
+            "GENERIC_CONTACT_MINIMAL_SUBTRACTION_FINITE_ROWS_COMPUTED"
+        )
+        is not True
+        or contact_finite_flags.get("ALL_THREE_CONTACT_FINITE_ROWS_PROJECTED")
+        is not True
+        or contact_finite_flags.get("GENERIC_I28_QUOTIENT_RELATION_PRESERVED")
+        is not True
+        or contact_finite_flags.get("FINITE_COUNTERTERM_NORMALIZATION_FIXED")
+        is not False
+        or contact_finite_flags.get("RENORMALIZED_PHYSICAL_TRIANGLE_BULK_REDUCED")
+        is not False
+        or generic_physical_hessian_contact_finite.get("interpolation", {}).get(
+            "row_count"
+        )
+        != 33
+        or generic_physical_hessian_contact_finite.get(
+            "equal_box_regression", {}
+        ).get("combined_contact_finite_value")
+        != {"numerator": 3188, "denominator": 27}
+    ):
+        raise ValueError("physical-Hessian finite H1-H2 contact frontier drifted")
     if (
         generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
         != "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
@@ -2217,8 +2248,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_GENERIC_TRIANGLE_CONTACT_INCIDENCE_ASSEMBLED_M14_NONZERO_RENORMALIZED_FINITE_ROWS_OPEN_Q1_UNDERDETERMINED",
-                "next_gate": "FIX_FINITE_LOCAL_MIXED_ROWS_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_GENERIC_TRIANGLE_CONTACT_INCIDENCE_ASSEMBLED_M14_NONZERO_RENORMALIZED_CONTACT_FINITE_ROWS_COMPUTED_TRIANGLE_BULK_OPEN_Q1_UNDERDETERMINED",
+                "next_gate": "REDUCE_RENORMALIZED_PHYSICAL_TRIANGLE_BULK_AND_ASSEMBLE_THIRD_CURVATURE_FORM_FACTORS",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -2233,8 +2264,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_GENERIC_TRIANGLE_CONTACT_INCIDENCE_ASSEMBLED_M14_NONZERO_RENORMALIZED_FINITE_LOCAL_ROWS_GREEN_SPECTRAL_CARRIER_REPOSITORY_ASSEMBLY_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "FIX_FINITE_LOCAL_MIXED_ROWS_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS",
+                "status": "FORBIDDEN_GENERIC_TRIANGLE_CONTACT_INCIDENCE_ASSEMBLED_M14_NONZERO_RENORMALIZED_CONTACT_FINITE_ROWS_COMPUTED_TRIANGLE_BULK_GREEN_SPECTRAL_CARRIER_REPOSITORY_ASSEMBLY_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "REDUCE_RENORMALIZED_PHYSICAL_TRIANGLE_BULK_AND_ASSEMBLE_THIRD_CURVATURE_FORM_FACTORS",
             },
         },
         "supersession_ledger": [
@@ -2368,6 +2399,7 @@ def build() -> dict[str, Any]:
             "GENERIC_PHYSICAL_MIXED_ROWS_ASSEMBLED": True,
             "PHYSICAL_M14_CORNER_CLASS_DISPOSED": True,
             "PHYSICAL_M14_NONZERO_SCALE_ROW_RENORMALIZED": True,
+            "GENERIC_CONTACT_MINIMAL_SUBTRACTION_FINITE_ROWS_COMPUTED": True,
             "FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED": False,
             "CURVATURE_SQUARED_PHYSICAL_HESSIAN_LAYER_SUPPLIED": False,
             "PHYSICAL_N3_THREE_LINEAR_TRIANGLE_COMPUTED": False,
@@ -2475,7 +2507,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "FIX_FINITE_LOCAL_MIXED_ROWS_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS",
+            "REDUCE_RENORMALIZED_PHYSICAL_TRIANGLE_BULK_AND_ASSEMBLE_THIRD_CURVATURE_FORM_FACTORS",
             "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
@@ -2593,8 +2625,11 @@ def build() -> dict[str, Any]:
             "channels as exact rational box functions and replay every symmetric obstruction row. "
             "Their full incidence with all six contact endpoints is exact and generically nonzero. "
             "Thus algebraic H2 cancellation is refuted generically and M14 is disposed as a nonzero "
-            "scale row renormalized by the common Mellin extension. Finite local rows remain open. The "
-            "global carrier and five repository form-factor assembly remain open. At the "
+            "scale row renormalized by the common Mellin extension. The finite parts of all three "
+            "H1-H2 contact cells are now reconstructed from their quadratic parameter densities and "
+            "projected to 33 exact rational rows; their equal-box TT sum is 3188/27. The renormalized "
+            "H1-cubed triangle bulk, optional finite-counterterm normalization, global carrier and five "
+            "repository form-factor assembly remain open. At the "
             "normalized symmetric point all eleven coordinates are integrated exactly in "
             "terms of one Clausen master. This is not the generic five repository functions; "
             "the n=1/n=2 pure-vector sum is now evaluated exactly from CPT rows 1, 3 and 14 as "
@@ -2913,6 +2948,8 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("GENERIC_PHYSICAL_MIXED_ROWS_ASSEMBLED") is not True
         or flags.get("PHYSICAL_M14_CORNER_CLASS_DISPOSED") is not True
         or flags.get("PHYSICAL_M14_NONZERO_SCALE_ROW_RENORMALIZED") is not True
+        or flags.get("GENERIC_CONTACT_MINIMAL_SUBTRACTION_FINITE_ROWS_COMPUTED")
+        is not True
         or flags.get("FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED") is not False
         or flags.get("CURVATURE_SQUARED_PHYSICAL_HESSIAN_LAYER_SUPPLIED")
         is not False
@@ -3134,6 +3171,7 @@ def validate(result: dict[str, Any]) -> None:
             "GENERIC_PHYSICAL_MIXED_ROWS_ASSEMBLED",
             "PHYSICAL_M14_CORNER_CLASS_DISPOSED",
             "PHYSICAL_M14_NONZERO_SCALE_ROW_RENORMALIZED",
+            "GENERIC_CONTACT_MINIMAL_SUBTRACTION_FINITE_ROWS_COMPUTED",
         }
     ):
         raise ValueError("active frontier quantum claim was over-promoted")

@@ -171,7 +171,10 @@ there. All three generic-box triangle corner residues are now exact rational
 functions for every raw channel. Their full incidence with the contact rows
 is nonzero, so algebraic `H2` cancellation is refuted generically and `M14`
 is disposed as a scale row renormalized by the common Mellin extension.
-Finite local rows remain open.
+The 33 minimally-subtracted finite contact rows are also exact; two unseen
+tensor fixtures and coefficientwise `I28=0` pass, and their equal-box TT sum
+is `3188/27`. The renormalized `H1^3` triangle bulk and independent finite-
+counterterm normalization remain open.
 The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
 and rational corner flux. Four explicit primitives cover every orientation,
@@ -503,10 +506,12 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. assemble the now-exact 33 generic `H1-H2` endpoint-residue rows with the
-   triangle boundary incidence on the certified covariant Volterra carrier;
-2. integrate the renormalized mixed physical five-carrier rows,
-   then dispose the certified `M14` class in that generic extension;
+1. reduce the minimally-subtracted bulk of the physical `H1^3` triangle to
+   scalar-triangle and bubble-log masters; the generic boundary incidence and
+   nonzero `M14` scale-row disposition are already exact;
+2. combine that triangle bulk with the 33 exact minimally-subtracted finite
+   `H1-H2` contact rows (equal-box TT sum `3188/27`) and retain the independent
+   mu-independent finite-counterterm normalization as an explicit scheme input;
 3. supply the full generic primed Green kernel or spectral measure for the
    global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the
    physical Hessian to integrate

@@ -997,7 +997,15 @@ All three generic-box triangle corner residues are now exact rational
 functions for every raw channel. Their full incidence with the contact rows
 is nonzero, so generic algebraic `H2` cancellation is refuted and `M14` is
 disposed as a Mellin-renormalized scale row. The next gate is the finite local
-mixed rows and complete physical form-factor assembly. The original
+mixed rows and complete physical form-factor assembly. That gate is now
+split exactly. Each contact numerator is quadratic in its Feynman parameter,
+so its two certified endpoints, midpoint and Wick-pair coefficient determine
+the full minimally-subtracted finite contact row. All three contacts are now
+projected to 33 exact homogeneous rational functions using 28 training and
+two unseen tensor fixtures; `I28` vanishes coefficientwise and the equal-box
+TT sum is `3188/27`. This fixes the declared contact finite part, not an
+arbitrary mu-independent finite counterterm. The remaining physical gate is
+the renormalized `H1^3` triangle bulk reduction and form-factor assembly. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
@@ -1023,8 +1031,9 @@ benchmark. The covariant Volterra lift of the equal-box Mellin subtraction is
 now complete, as are all generic contact endpoint residues and their exact
 symmetric-point incidence. The generic corner residues and full boundary
 incidence are now exact, with nonzero Mellin-renormalized `M14` disposition.
-The remaining physical gate is the finite local mixed rows and complete
-form-factor assembly. The isolated
+The minimally-subtracted finite contact rows are exact as well. The remaining
+physical gate is the renormalized tensor-triangle bulk, explicit finite-
+counterterm normalization and complete form-factor assembly. The isolated
 three-linear integral may not be
 promoted before that route closes.
 Those are followed by the five
@@ -1165,7 +1174,8 @@ effective-action claims; the unsupported Hadamard assertion was removed from
 the abstract. Exact quotient, coefficient, determinant, spectral-sequence,
 matter, quartet, effective-action, and boundary tables are generated from eighteen hashed
 certificate inputs and pass an independent stale/tamper check. The claim map now
-binds forty-one direct certificate dependencies, including the symmetric-point
+binds fifty-eight direct certificate dependencies, including the finite-contact,
+symmetric-point
 simplex and generic barycentric-factorization receipts and the formerly indirect pure-Diff/mixed quotient and factorwise
 coefficient ledger. The disposition
 is recorded in

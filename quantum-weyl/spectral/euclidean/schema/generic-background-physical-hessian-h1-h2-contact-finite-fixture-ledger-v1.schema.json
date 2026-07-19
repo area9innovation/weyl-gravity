@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/quantum-weyl/generic-background-physical-hessian-h1-h2-contact-finite-fixture-ledger-v1.schema.json",
+  "title": "Generic physical H1-H2 finite-contact fixture ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "engine_version", "generator_sha256", "dependencies", "training_fixture_count", "unseen_fixture_count", "entries", "entry_digest"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-physical-hessian-h1-h2-contact-finite-fixture-ledger-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_FINITE_FIXTURE_LEDGER"},
+    "result_state": {"const": "EXACT_MINIMAL_SUBTRACTION_FINITE_CONTACT_FIXTURES_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "engine_version": {"const": "physical-hessian-h1-h2-contact-finite-v1"},
+    "generator_sha256": {"$ref": "#/$defs/hash"},
+    "dependencies": {"type": "object", "additionalProperties": false, "required": ["residue_fixture", "residue_certificate"], "properties": {"residue_fixture": {"$ref": "#/$defs/reference"}, "residue_certificate": {"$ref": "#/$defs/reference"}}},
+    "training_fixture_count": {"const": 28},
+    "unseen_fixture_count": {"const": 2},
+    "entries": {"type": "array", "minItems": 30, "maxItems": 30, "items": {"$ref": "#/$defs/entry"}},
+    "entry_digest": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "reference": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "result_id": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "tensor_row": {"type": "object", "additionalProperties": false, "required": ["constant_at_zero", "constant_at_minus_momentum", "constant_at_midpoint", "regular_quadratic_coefficient_c2", "pair_wick_coefficient", "minimal_subtraction_finite_value"], "properties": {"constant_at_zero": {"$ref": "#/$defs/rational"}, "constant_at_minus_momentum": {"$ref": "#/$defs/rational"}, "constant_at_midpoint": {"$ref": "#/$defs/rational"}, "regular_quadratic_coefficient_c2": {"$ref": "#/$defs/rational"}, "pair_wick_coefficient": {"$ref": "#/$defs/rational"}, "minimal_subtraction_finite_value": {"$ref": "#/$defs/rational"}}},
+    "contact": {"type": "object", "additionalProperties": false, "required": ["singled_leg", "minimal_subtraction_finite_coordinates", "tensor_rows"], "properties": {"singled_leg": {"type": "integer", "minimum": 1, "maximum": 3}, "minimal_subtraction_finite_coordinates": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/rational"}}, "tensor_rows": {"type": "array", "minItems": 10, "items": {"$ref": "#/$defs/tensor_row"}}}},
+    "entry": {"type": "object", "additionalProperties": false, "required": ["fixture", "boxes", "carrier_matrix_rank", "pivot_tensor_rows", "pivot_tensor_choices", "contacts"], "properties": {"fixture": {"type": "array", "minItems": 2, "maxItems": 2}, "boxes": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 1}}, "carrier_matrix_rank": {"const": 10}, "pivot_tensor_rows": {"type": "array", "minItems": 10}, "pivot_tensor_choices": {"type": "array", "minItems": 10}, "contacts": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/contact"}}}}
+  }
+}

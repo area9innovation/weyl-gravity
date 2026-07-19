@@ -211,6 +211,11 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertTrue(
             self.payload["claim_flags"][
+                "GENERIC_CONTACT_MINIMAL_SUBTRACTION_FINITE_ROWS_COMPUTED"
+            ]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"][
                 "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE"
             ]
         )
@@ -481,7 +486,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "FIX_FINITE_LOCAL_MIXED_ROWS_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS",
+            "REDUCE_RENORMALIZED_PHYSICAL_TRIANGLE_BULK_AND_ASSEMBLE_THIRD_CURVATURE_FORM_FACTORS",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

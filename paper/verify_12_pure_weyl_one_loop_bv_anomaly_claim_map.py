@@ -397,6 +397,13 @@ def main() -> None:
     assert claims["physical_Hessian_generic_M14_disposition"] == (
         "NONZERO_SCALE_ROW_RENORMALIZED_BY_COMMON_MELLIN_EXTENSION"
     )
+    assert claims["physical_Hessian_generic_contact_finite_rows_computed"] is True
+    assert claims["physical_Hessian_generic_contact_finite_row_count"] == 33
+    assert claims["physical_Hessian_generic_contact_finite_unseen_fixture_count"] == 2
+    assert claims["physical_Hessian_equal_box_contact_finite_value"] == {
+        "numerator": 3188,
+        "denominator": 27,
+    }
     assert payload["explicit_nonclaims"][
         "physical_n3_three_linear_triangle_integrated"
     ] is False
@@ -409,7 +416,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "FIX_FINITE_LOCAL_MIXED_ROWS_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS"
+        == "REDUCE_RENORMALIZED_PHYSICAL_TRIANGLE_BULK_AND_ASSEMBLE_THIRD_CURVATURE_FORM_FACTORS"
     )
 
     dependencies = {}
@@ -443,7 +450,7 @@ def main() -> None:
         "denominator": 6561,
     }
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
-    assert len(payload["inputs"]) == 57
+    assert len(payload["inputs"]) == 58
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
