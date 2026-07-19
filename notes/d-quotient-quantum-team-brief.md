@@ -1019,15 +1019,18 @@ The currently active coefficient-bearing ladder work is the QME-dependency
 rail for Bridge 5. The generic ghost's exact nonzero-momentum triangle has now
 been projected to the scalar-flat repository five-carrier quotient and
 integrated analytically at `x1=x2=x3=1`. Its three
-longitudinal `D_W` towers are now one normalized scalar Schur series, with the
-all three Schur residue rows fixed and the round-`S4` canonical `det_3` tail
-and weighted modified determinant computed. The selected weight-raised local
-zeta term is also exact. The ten pole-three generic barycentric rows now have
+longitudinal `D_W` towers are now one normalized scalar Schur series, with all
+three Schur residue rows fixed and the round-`S4` canonical `det_3` tail and
+weighted modified determinant computed. A closed non-Einstein
+`S2(k1) x S2(k2)` spectrum now supplies the anisotropic global carrier and
+shows that six exact-vector zeros are matched Schur poles with coupled factor
+`3^-6`; separate priming is invalid. The selected weight-raised local zeta
+term is also exact. The ten pole-three generic barycentric rows now have
 exact relative-simplex IBP primitives, a complete punctured-corner
 non-membership theorem, and complete exact `J`-plus-two-log integrated
-functions. The remaining coefficient gate begins with supplying the generic
-primed Green/spectral carrier needed to lift the exact round-`S4` finite
-benchmark. The covariant Volterra lift of the equal-box Mellin subtraction is
+functions. The remaining coefficient gate begins with analytically continuing
+the exact bivariate product spectral sums; arbitrary-background finite rows
+still need a generic primed Green/spectral carrier. The covariant Volterra lift of the equal-box Mellin subtraction is
 now complete, as are all generic contact endpoint residues and their exact
 symmetric-point incidence. The generic corner residues and full boundary
 incidence are now exact, with nonzero Mellin-renormalized `M14` disposition.
@@ -1349,9 +1352,11 @@ channels.
 
 Those functions are now added to the physical-plus-ghost-`n=3` carrier
 representative in a future-proof `PARTIAL_BV` ledger. The exact `I28` quotient
-relation remains coefficientwise zero. The unresolved ghost gate is now
-exactly the three longitudinal/mixed `D_W` carriers and their generic finite
-Schur data, not all of `n=1/n=2`.
+relation remains coefficientwise zero. The unresolved ghost gate is no longer
+three independent longitudinal/mixed `D_W` carriers: they are one Schur
+kernel. Its exact product spectrum is now known, while the bivariate infinite
+finite-part and `det_3` sums and arbitrary-background finite Schur data remain
+open.
 
 Receipts:
 [`generic-background-ghost-n1-n2-vector-integrated-functions.md`](../quantum-weyl/reports/generic-background-ghost-n1-n2-vector-integrated-functions.md) and
@@ -1360,5 +1365,28 @@ Receipts:
 Active gate:
 
 ```text
-COMPUTE_THREE_LONGITUDINAL_SCHUR_CARRIERS_AND_REMAINING_BV_SECTORS
+ANALYTICALLY_CONTINUE_PRODUCT_S2_S2_SCHUR_SUMS_AND_ADD_REMAINING_BV_SECTORS
 ```
+
+## Non-Einstein product Schur spectrum (2026-07-19)
+
+On `S2(k1) x S2(k2)`, scalar product harmonics give the exact normalized
+Schur eigenvalue
+
+\[
+s_{\ell m}=\frac23+\frac13\sum_{i\in\mathrm{active}}
+\frac{a_i}{\lambda-2k_i},
+\qquad
+\lambda=k_1\ell(\ell+1)+k_2m(m+1).
+\]
+
+This supplies the complete global spectral measure for the longitudinal
+kernel on a compact non-Einstein background and directly sees tracefree-Ricci
+anisotropy. It also corrects the priming policy: the three `(1,0)` and three
+`(0,1)` exact-vector zeros are poles of the separately written Schur factor.
+Their coupled determinant ratio is finite, `1/3` per mode, hence `3^-6` in
+total. The infinite bivariate sums have not yet been analytically continued,
+so no full coupled ghost determinant or new `Gamma1/Q1` is claimed.
+
+Receipt:
+[`product-s2-s2-ghost-schur-spectral-carrier.md`](../quantum-weyl/reports/product-s2-s2-ghost-schur-spectral-carrier.md).

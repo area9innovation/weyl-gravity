@@ -1414,6 +1414,45 @@ relative determinant or equivalent common trace regulator is the remaining
 global longitudinal coefficient input.
 \end{proposition}
 
+\begin{proposition}[Non-Einstein product Schur spectrum and coupled priming]
+On $S^2(k_1)\times S^2(k_2)$, $k_i>0$, let
+\[
+ a=k_1\ell(\ell+1),\qquad b=k_2m(m+1),\qquad
+ \lambda=a+b,\qquad d_{\ell m}=(2\ell+1)(2m+1).
+\]
+For each active factor gradient, the minimal-vector exact eigenvalue is
+$\lambda-2k_i$, and the normalized Schur eigenvalue is
+\[
+ s_{\ell m}=\frac23+\frac13\sum_{i\in\mathrm{active}}
+ \frac{a_i}{\lambda-2k_i}.
+\]
+These formulas supply a complete compact non-Einstein spectral measure for
+the longitudinal kernel.  They are covariant under
+$(k_1,\ell)\leftrightarrow(k_2,m)$ and specialize at $k_1=k_2=k$ to
+\[
+ s_{\ell m}=\frac{\lambda-4k/3}{\lambda-2k}
+ =\frac{\Delta_0-R/3}{\Delta_0-R/2},\qquad R=4k.
+\]
+
+The six modes $(1,0)$ and $(0,1)$ require a coupled prescription.  Their
+minimal-vector factor vanishes while $s_{\ell m}$ has a pole, but the product
+has the finite continuation
+\[
+ \frac{\lambda-2k_i}{\lambda}s_{\ell m}\longrightarrow\frac13.
+\]
+Thus the regular-complement determinant must be multiplied by $3^{-6}$;
+priming the vector zeros and scalar rows independently loses a finite factor.
+An independent exact matrix replay verifies this correction and the finite
+cutoff products.  The principal spectral symbol also reproduces
+\[
+ \operatorname{Wres}(K^2)
+ =\frac{8(k_1^2+k_1k_2+k_2^2)}{27k_1k_2}.
+\]
+The bivariate infinite finite-part and $\det_3$ sums are not evaluated here,
+so this is a background-specific spectral carrier rather than a completed
+ghost determinant or generic form factor.
+\end{proposition}
+
 \begin{proposition}[Sharp Schatten split and critical Schur residue]
 Set $K=S_L-\mathbf1$ on a closed compact four-manifold, with the primed
 zero-mode complement and elliptic inverses fixed.  The exact resolvent
@@ -1920,10 +1959,12 @@ Adding these rows to the physical-plus-ghost-$n=3$ representative preserves
 the coefficientwise $I_{28}$ relation and the ten-dimensional quotient.  The
 result is an exact partial-BV five-carrier Mellin-MS representative containing
 the same-gauge physical Hessian, all ghost $n=3$ rows, and
-$N1_{\rm vector}+N2_{\rm vector,vector}$.  It excludes exactly the three
-longitudinal/mixed carriers containing $D_W=\delta Wd$, their generic finite
-Schur data, and the remaining BV sectors; it is not the complete ghost
-determinant, $\Gamma_1$, or $Q_1$.
+$N1_{\rm vector}+N2_{\rm vector,vector}$.  The longitudinal/mixed
+$D_W=\delta Wd$ towers are one Schur kernel, whose exact non-Einstein product
+spectrum is supplied above.  Its bivariate infinite finite-part and
+$\det_3$ sums, arbitrary-background finite Schur data, and the remaining BV
+sectors are excluded; this is not the complete ghost determinant,
+$\Gamma_1$, or $Q_1$.
 \end{proposition}
 
 \begin{proposition}[Exact symmetric-point ghost triangle fixture]
@@ -2146,6 +2187,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_SPECTRAL_CARRIER.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json}.
@@ -2276,10 +2318,11 @@ Mellin-MS functions, and the complete integrated ghost-$n=3$ triangle is
 added in the same ten-dimensional quotient.  The pure-vector ghost
 $n=1+n=2$ slice is integrated in the same triangle/two-log/rational basis and
 has been added as well.  Keeping the independent finite-counterterm
-normalization explicit, compute the exactly three remaining
-longitudinal/mixed $D_W$ carriers and their generic finite Schur rows from a
-primed Green kernel or complete spectral measure and add the remaining BV
-sectors, then complete the
+normalization explicit, analytically continue the exact
+$S^2(k_1)\times S^2(k_2)$ bivariate Schur sums with the matched exceptional
+factor $3^{-6}$ and add the remaining BV sectors.  Arbitrary-background
+finite Schur rows still require a generic primed Green kernel or complete
+spectral measure.  Then complete the
 substitutions needed to match
 the five imported universal CPT kernels to repository parity-even third-
 curvature form-factor functions and coefficients on the certified carrier

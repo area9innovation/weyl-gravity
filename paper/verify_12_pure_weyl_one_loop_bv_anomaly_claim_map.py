@@ -56,6 +56,8 @@ def main() -> None:
         "same principal symbol, connection, self-adjoint domain",
         "-\\frac{199}{60}=-\\frac c2",
         "Sharp Schatten split and critical Schur residue",
+        "Non-Einstein product Schur spectrum and coupled priming",
+        "3^{-6}",
         "\\det{}_3(\\mathbf1+K)",
         "\\operatorname{Wres}(K)=",
         "\\operatorname{Wres}(K^2)",
@@ -207,6 +209,12 @@ def main() -> None:
     assert claims["generic_ghost_n3_nonzero_momentum_parametric_kernel"] is True
     assert claims["generic_ghost_n3_projector_sector_count"] == 8
     assert claims["generic_ghost_n3_total_Wick_rows"] == 20
+    assert claims["product_S2_S2_ghost_Schur_spectral_measure_supplied"] is True
+    assert claims["product_S2_S2_ghost_Schur_exceptional_correction"] == "3^-6"
+    assert claims["product_S2_S2_ghost_Schur_Wres_K2_fixture"] == {
+        "numerator": 28,
+        "denominator": 27,
+    }
     assert claims["raw_zeta_BoxR_coefficient"] == {
         "basis": ["1", "log(3/2)"],
         "rational": {"numerator": -159, "denominator": 80},
@@ -475,7 +483,7 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
     assert claims["physical_Hessian_triangle_corner_count"] == 33
     assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
-    assert len(payload["inputs"]) == 66
+    assert len(payload["inputs"]) == 67
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

@@ -413,6 +413,12 @@
     "physical_plus_ghost_n3_channel_count": 11,
     "physical_plus_ghost_n3_five_carrier_representative_assembled": true,
     "physical_plus_ghost_n3_quotient_dimension": 10,
+    "product_S2_S2_ghost_Schur_Wres_K2_fixture": {
+      "denominator": 27,
+      "numerator": 28
+    },
+    "product_S2_S2_ghost_Schur_exceptional_correction": "3^-6",
+    "product_S2_S2_ghost_Schur_spectral_measure_supplied": true,
     "pure_Diff_and_mixed_additional_classes": 0,
     "raw_to_repository_R2_scheme_shift": {
       "basis": [
@@ -511,7 +517,7 @@
     "universal_CPT_third_curvature_kernels_imported": true
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "f7a48ff7b2891c3fbacdd6e8760707b59952e83e633fc54dca9c6df6c9a3e63a",
+  "compiled_pdf_sha256": "3f8ad9dd5b9466326e4f296b6542f4d57e096abd02704191ba4641e49dba5244",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
@@ -749,6 +755,10 @@
       "result_id": "GENERIC_SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM",
       "sha256": "d3de38ea404b3ecd203795d11dace62d4b553c4d40a91f92fb1d0f8d00f21b8c"
     },
+    "quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_SPECTRAL_CARRIER.json": {
+      "result_id": "PRODUCT_S2_S2_GHOST_SCHUR_SPECTRAL_CARRIER",
+      "sha256": "e7337ea8bd7fa3f06b6d0d965d0da4e64ce980ff987465755cc4187e2d4cfeee"
+    },
     "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json": {
       "result_id": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
       "sha256": "a1eb7dd598ed341785df3e9771e934fe5c45e0acdb453dff33b511c7912eacf9"
@@ -818,10 +828,10 @@
       "sha256": "5b6241ed77ee5ec7a89b210454786c99bbc96681709d89b8d868203c120bcf8f"
     }
   },
-  "latest_coefficient_update": "The pure-vector ghost n1+n2 slice is integrated exactly into the triangle/two-log/rational basis (six nonzero, five zero, no new master) and added with all ghost n3 rows to the physical-Hessian Mellin-MS representative; the exact ten-dimensional I28 quotient is preserved, while exactly three longitudinal/mixed D_W carriers and remaining BV rows stay open.",
+  "latest_coefficient_update": "The longitudinal D_W towers are one Schur kernel. Its exact non-Einstein S2(k1)xS2(k2) spectrum and degeneracies are supplied, with six matched vector-zero/Schur-pole modes contributing 3^-6; the bivariate infinite sums, arbitrary-background finite Schur rows and remaining BV rows stay open.",
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "e8612414ac329c9017731b7a4ba1e0dd9cc2ba8ad863626ecc9803bedd1675e5",
+  "manuscript_sha256": "f4a5128234e9bc485eb4d5e2d7a14ef31ed1de49cf607f36712d4930ac39555c",
   "next_gate": {
     "required_inputs": [
       "same-background compensator-inclusive classical contraction",
@@ -841,8 +851,8 @@
     "status": "COMPUTE_THREE_LONGITUDINAL_SCHUR_CARRIERS_AND_REMAINING_BV_SECTORS"
   },
   "publication_artifacts": {
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "4022dd1b92dfbdfcf2ada6ba428697d04d431b61e59db0c39a4f60cd0175f37e",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "406d4ffaf3925738deeacd53c1bc78e6598f6cc1f53d8bfbe2fd7b8132f17114",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "5360d323c441b1832d60b2d593a56c4e5aaee71075f4f45fe1cab0d4709a10b0",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "992882536c2843f6ca1b68a7683018ac3fbe3ab69ba7a8d3b1e98785495ce181",
     "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "c30e5a712e62708eb6dfc7e2bee5dc8a6e16077a48b5ff2d8d8d1644754a4095",
     "paper/generate_12_quantum_anomaly_tables.py": "53fa1f003c9cedd320d7e2d8c8e8b589fcd5fc200c7c0362955107b68e62e4db",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "b7556226f31a06e73e9410c3e382c5eca6b77be3bce6004324ee1c0171b8e8c0",

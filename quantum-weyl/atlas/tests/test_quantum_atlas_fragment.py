@@ -19,7 +19,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(kinds.count("NONPARTICLE_RESIDUAL_CLASS"), 2)
         self.assertEqual(kinds.count("CARRIER_IMPORT_GAP"), 1)
         self.assertEqual(kinds.count("CLASSICAL_TO_QUANTUM_CROSSWALK"), 1)
-        self.assertEqual(kinds.count("NON_MODE_PARTICLE_GUARD"), 12)
+        self.assertEqual(kinds.count("NON_MODE_PARTICLE_GUARD"), 13)
         cubic_guard = next(
             entry for entry in value["entries"]
             if entry["id"] == "quantum.crosswalk.algebraic_cubic_weyl_carrier_to_particle"
@@ -142,7 +142,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             entry for entry in build()["entries"]
             if entry["quantum_data"]["entry_kind"] == "NON_MODE_PARTICLE_GUARD"
         ]
-        self.assertEqual(len(guards), 12)
+        self.assertEqual(len(guards), 13)
         round_s4 = next(
             entry for entry in guards
             if entry["id"]
@@ -167,9 +167,10 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             == "quantum.crosswalk.generic_background_diff_weyl_ghost_cpt_obstruction_to_particle"
         )
         self.assertIn(
-            "exactly three longitudinal/mixed D_W carriers remain",
+            "resummed into one normalized Schur kernel",
             ghost["scope"]["carrier"],
         )
+        self.assertIn("matched zero-pole correction 3^-6", ghost["scope"]["carrier"])
         self.assertEqual(
             {
                 evidence["result_id"]
@@ -187,6 +188,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
                 "GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE",
                 "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE",
                 "ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES",
+                "PRODUCT_S2_S2_GHOST_SCHUR_SPECTRAL_CARRIER",
                 "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION",
                 "GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER",
                 "GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL",

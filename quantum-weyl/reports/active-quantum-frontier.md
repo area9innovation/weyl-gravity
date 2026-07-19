@@ -209,8 +209,13 @@ a partial-BV five-carrier representative. The pure-vector ghost `n=1+n=2`
 slice is now integrated exactly as well: six channels are nonzero, five
 vanish, and no new transcendental master is required. Adding it preserves
 the coefficientwise `I28` relation and the ten-dimensional quotient. Exactly
-three longitudinal/mixed `D_W` carriers, their generic finite Schur rows and
-the remaining BV sectors remain open.
+The three longitudinal/mixed `D_W` towers are one Schur kernel rather than
+three independent analytic carriers.  A closed non-Einstein spectral measure
+for that kernel is now supplied on `S2(k1) x S2(k2)`.  It also proves that six
+minimal-vector zeros are matched Schur poles with finite coupled correction
+`3^-6`; deleting the vector and scalar rows independently is invalid.  The
+bivariate infinite finite-part and `det_3` sums, arbitrary-background finite
+Schur rows and the remaining BV sectors remain open.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute
@@ -533,11 +538,12 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. compute the three remaining longitudinal/mixed `D_W` carriers and supply
-   the full generic primed Green kernel or spectral measure for their finite
-   Schur rows and the global finite `R(K)`, `R(K^2)` and `det_3` rows, then
-   add these and the remaining BV sectors to the current partial-BV
-   five-carrier representative;
+1. analytically continue the exact `S2(k1) x S2(k2)` bivariate Schur spectral
+   sums, retaining the matched exceptional factor `3^-6`, then add those
+   background-specific finite rows and the remaining BV sectors to the
+   current partial-BV five-carrier representative; arbitrary-background
+   finite rows still require a generic primed Green kernel or spectral
+   measure;
 2. classify the parity-odd derivative sector and fix the finite `C2` and
    absolute dressed `R(g_hat)^2` normalizations and renormalized products;
 3. use those data to determine complete `Gamma1/Q1`;

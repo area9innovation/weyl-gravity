@@ -919,6 +919,39 @@ PYTHONPATH=quantum-weyl pytest -q \
  quantum-weyl/spectral/euclidean/tests/test_$M.py
 \end{verbatim}
 
+\subsection{Non-Einstein product Schur spectrum and coupled priming}
+
+On $S^2(k_1)\times S^2(k_2)$, scalar product harmonics give
+\[
+ a=k_1\ell(\ell+1),\quad b=k_2m(m+1),\quad \lambda=a+b,
+ \quad d_{\ell m}=(2\ell+1)(2m+1),
+\]
+and
+\[
+ s_{\ell m}=\frac23+\frac13\sum_{i\in\mathrm{active}}
+ \frac{a_i}{\lambda-2k_i}.
+\]
+The checked $(k_1,k_2)=(1,2)$ fixture includes pure-factor and mixed modes,
+factor exchange, an exact rectangular cutoff product, and the residue value
+$\operatorname{Wres}(K^2)=28/27$.  Direct one- and two-dimensional exact
+matrix determinants independently replay every stored paired ratio.
+
+The $(1,0)$ and $(0,1)$ levels each have degeneracy three.  At those levels
+the minimal-vector factor is zero and the separately written Schur factor is
+singular, while their coupled product is $1/3$ per mode.  The correct
+regular-complement prescription therefore carries the finite correction
+$3^{-6}$.  The checked finite-cutoff fixture is exact; the infinite
+bivariate analytic continuation remains fail-closed.
+
+\begin{verbatim}
+P=spectral.euclidean
+M=product_s2_s2_ghost_schur_spectral_carrier
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl python3 -m unittest \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+\end{verbatim}
+
 \subsection{Sharp Schatten split and critical Schur residue}
 
 Write $S_L=\mathbf1+K$.  The exact resolvent identity gives
@@ -2158,6 +2191,10 @@ longitudinal $D_W$ carriers;
 fixture through cubic order, detect a mixed-cubic mutation, and reject both
 evaluation of its generic relative finite kernel and an undeclared change of
 zeta-factorization convention;
+\item replay the complete $S^2(k_1)\times S^2(k_2)$ Schur spectrum, its
+factor-exchange symmetry, the matched six-mode zero--pole correction $3^{-6}$,
+the exact finite-cutoff product and the product $\operatorname{Wres}(K^2)$,
+while rejecting promotion of the unevaluated bivariate infinite sums;
 \item compute the commuting round-$S^4$ zeta-to-weighted defect $5/3$ from
 $\operatorname{Wres}(\Delta_0^{-2})=1/3$, replay the determinant ratio by
 independent Hurwitz-zeta continuation, then compute the distinct generic
@@ -2267,12 +2304,13 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-	\item compute the three remaining longitudinal/mixed $D_W$ carriers and
-their generic finite Schur rows using a full primed Green/resolvent kernel or
-complete spectral measure, then add them and the remaining BV sectors to the
-physical-plus-ghost-$n=3$-plus-vector-$n=1+n=2$ partial-BV five-carrier
-representative while keeping the independent finite-counterterm
-normalization explicit; then assemble the
+	\item analytically continue the exact $S^2(k_1)\times S^2(k_2)$ bivariate
+Schur sums with the matched exceptional factor $3^{-6}$, then add them and the
+remaining BV sectors to the physical-plus-ghost-$n=3$-plus-vector-$n=1+n=2$
+partial-BV five-carrier representative while keeping the independent
+finite-counterterm normalization explicit; arbitrary-background finite rows
+still require a generic primed Green/resolvent kernel or complete spectral
+measure; then assemble the
 complete repository parity-even third-curvature functions and coefficients,
 the parity-odd derivative carrier manifest, finite
 $C^2$ and absolute dressed $R(\widehat g)^2$ normalization,

@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl/product-s2-s2-ghost-schur-spectral-carrier-v1.schema.json",
+  "title": "Product S2 x S2 ghost Schur spectral carrier",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "spectral_formula",
+    "primed_mode_policy",
+    "einstein_specialization",
+    "anisotropic_exact_modes",
+    "finite_cutoff_fixture",
+    "residue_crosscheck",
+    "infinite_sum_status",
+    "claim_flags",
+    "dependencies",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-product-s2-s2-ghost-schur-spectral-carrier-v1"},
+    "result_id": {"const": "PRODUCT_S2_S2_GHOST_SCHUR_SPECTRAL_CARRIER"},
+    "result_state": {"const": "NON_EINSTEIN_PRODUCT_SPECTRUM_AND_MATCHED_ZERO_POLE_POLICY_COMPUTED"},
+    "lifecycle_state": {"const": "COMPLETE_MODE_CARRIER_INFINITE_RENORMALIZED_SUMS_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {"$ref": "#/$defs/stringMap"},
+    "spectral_formula": {"$ref": "#/$defs/stringMap"},
+    "primed_mode_policy": {"$ref": "#/$defs/mixedMap"},
+    "einstein_specialization": {"$ref": "#/$defs/stringMap"},
+    "anisotropic_exact_modes": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "object"}
+    },
+    "finite_cutoff_fixture": {"type": "object"},
+    "residue_crosscheck": {"$ref": "#/$defs/mixedMap"},
+    "infinite_sum_status": {"$ref": "#/$defs/stringMap"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"},
+      "required": [
+        "PRODUCT_SPECTRAL_MEASURE_SUPPLIED",
+        "ANISOTROPIC_DW_SENSITIVITY_EXHIBITED",
+        "MATCHED_ZERO_POLE_POLICY_COMPUTED",
+        "EINSTEIN_SPECIALIZATION_REPLAYED",
+        "WRES_K2_REPLAYED",
+        "INFINITE_DET3_VALUE_COMPUTED",
+        "FINITE_WEIGHTED_R_K_COMPUTED",
+        "FINITE_PART_R_K2_COMPUTED",
+        "FULL_COUPLED_GHOST_DETERMINANT_COMPUTED",
+        "GENERIC_BACKGROUND_FORM_FACTORS_COMPUTED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "LORENTZIAN_CERTIFIED"
+      ]
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/reference"},
+      "minProperties": 2
+    },
+    "next_gate": {"type": "string", "minLength": 20},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "stringMap": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {"type": "string"},
+          {"type": "array", "items": {"type": "string"}}
+        ]
+      }
+    },
+    "mixedMap": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {"type": "string"},
+          {"type": "array", "items": {"type": "string"}},
+          {"type": "object"}
+        ]
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

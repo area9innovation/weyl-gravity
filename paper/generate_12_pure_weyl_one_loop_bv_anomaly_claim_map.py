@@ -85,6 +85,7 @@ INPUTS = {
     "generic_ghost_Schur_weighted_trace_scale": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE.json",
     "round_S4_ghost_Schur_finite_weighted_traces": ROOT / "quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES.json",
     "round_S4_ghost_Schur_zeta_factorization": ROOT / "quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION.json",
+    "product_S2_S2_ghost_Schur_spectral_carrier": ROOT / "quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_SPECTRAL_CARRIER.json",
     "generic_ghost_Schur_weight_raised_zeta_factorization": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION.json",
     "BoxR_scheme_conversion": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
 }
@@ -198,6 +199,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     generic_ghost_schur_scale = values["generic_ghost_Schur_weighted_trace_scale"]
     round_s4_ghost_schur_finite = values["round_S4_ghost_Schur_finite_weighted_traces"]
     round_s4_ghost_schur_zeta = values["round_S4_ghost_Schur_zeta_factorization"]
+    product_s2_s2_ghost_schur = values["product_S2_S2_ghost_Schur_spectral_carrier"]
     generic_ghost_schur_weight_raised = values["generic_ghost_Schur_weight_raised_zeta_factorization"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     if (
@@ -804,6 +806,22 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "regularization_boundary", {}
         ).get("zeta_multiplicative_anomaly")
         != "LOCAL_TERM_NOT_EVALUATED"
+        or product_s2_s2_ghost_schur.get("primed_mode_policy", {}).get(
+            "total_exceptional_correction"
+        )
+        != "3^-6"
+        or product_s2_s2_ghost_schur.get("residue_crosscheck", {}).get(
+            "fixture_value"
+        )
+        != {"numerator": 28, "denominator": 27}
+        or product_s2_s2_ghost_schur.get("claim_flags", {}).get(
+            "PRODUCT_SPECTRAL_MEASURE_SUPPLIED"
+        )
+        is not True
+        or product_s2_s2_ghost_schur.get("claim_flags", {}).get(
+            "FULL_COUPLED_GHOST_DETERMINANT_COMPUTED"
+        )
+        is not False
         or generic_ghost_schur_schatten.get(
             "sharp_ideal_classification", {}
         ).get("minimal_modified_determinant_order")
@@ -1029,6 +1047,7 @@ def build() -> dict[str, Any]:
     generic_ghost_schur_scale = values["generic_ghost_Schur_weighted_trace_scale"]
     round_s4_ghost_schur_finite = values["round_S4_ghost_Schur_finite_weighted_traces"]
     round_s4_ghost_schur_zeta = values["round_S4_ghost_Schur_zeta_factorization"]
+    product_s2_s2_ghost_schur = values["product_S2_S2_ghost_Schur_spectral_carrier"]
     generic_ghost_schur_weight_raised = values["generic_ghost_Schur_weight_raised_zeta_factorization"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     return {
@@ -1048,7 +1067,7 @@ def build() -> dict[str, Any]:
         ],
         "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact and the generic ghost n=3 triangle is projected exactly onto that quotient. Ten generic numerators cancel one Delta; only I10 has a nonzero direct open-edge restriction, while the I28 relation is pointwise. All ten pole-three rows have exact relative-IBP primitives. The exact S3-covariant scalar-triangle differential system reduces their derivative masters to J and two bubble-log ratios, while equal corner weights make the sole nonzero corner flux rational. The pole-four I29 row also reduces by a full 55-row exact relative-IBP identity to the same master basis, so all eleven generic ghost n=3 functions are complete and regress exactly to the symmetric-point integration. The curved n=1/n=2 pure-vector CPT sum is exact and integrated: six channels are nonzero, five vanish, and no new transcendental master appears. All longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3; Wres(K), Wres(K^2), and Wres(log S_L) are exact, the declared order-two weighted trace fixes the pole and scale row, and the round-S4 reference finite K/K2 rows, canonical det_3 tail, weighted modified determinant, and Einstein-ratio defect 5/3 are complete. The distinct generic weight-raised local defect is exactly -(1/4)Wres(K^2) and specializes to -1/3. A smoothing witness proves that the generic finite rows require a full Green kernel or spectral measure. The same-gauge physical three-H1 alpha numerator is exact and projected onto all eleven raw channels of the five-carrier quotient. Its isolated symmetric-point integral is logarithmically corner obstructed by a rank-one M14 class. The projected algebraic H2 block is imported and operationally polarized on an exact equal-box TT fixture. All six H1-cubed orderings and all six mixed-bubble endpoints give the nonzero raw logarithmic coefficient 15707/216. A generic covariant Volterra carrier joins the six ordered triangle cells and three H1-H2 contact cells under the common Mellin extension. All generic contact endpoint residues are projected to 33 exact raw five-carrier functions with two unseen replays and exact I28 reduction. The three generic triangle corner functions and their full contact incidence are exact and nonzero, so M14 is disposed as a Mellin-renormalized scale row. The minimally-subtracted finite parts of all three H1-H2 contacts are also projected to 33 exact rational rows; their equal-box TT sum is 3188/27. The physical rows, all ghost n=3 rows and the pure-vector ghost n=1+n=2 slice are now assembled into an exact partial-BV five-carrier Mellin-MS representative. Exactly three longitudinal/mixed D_W carriers, remaining BV finite rows, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
         "manuscript": _relative(MANUSCRIPT),
-        "latest_coefficient_update": "The pure-vector ghost n1+n2 slice is integrated exactly into the triangle/two-log/rational basis (six nonzero, five zero, no new master) and added with all ghost n3 rows to the physical-Hessian Mellin-MS representative; the exact ten-dimensional I28 quotient is preserved, while exactly three longitudinal/mixed D_W carriers and remaining BV rows stay open.",
+        "latest_coefficient_update": "The longitudinal D_W towers are one Schur kernel. Its exact non-Einstein S2(k1)xS2(k2) spectrum and degeneracies are supplied, with six matched vector-zero/Schur-pole modes contributing 3^-6; the bivariate infinite sums, arbitrary-background finite Schur rows and remaining BV rows stay open.",
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
         "compiled_pdf_sha256": _sha256(PDF),
@@ -1282,6 +1301,9 @@ def build() -> dict[str, Any]:
             "generic_ghost_longitudinal_cubic_coefficients": generic_ghost_longitudinal_schur["resolvent_series"]["Hodge_carrier_match"]["completed_n3_longitudinal_coefficients"],
             "generic_ghost_unspecified_factorization_zeta_anomaly_status": generic_ghost_longitudinal_schur["regularization_boundary"]["zeta_multiplicative_anomaly"],
             "generic_ghost_4d_trace_class_status": generic_ghost_longitudinal_schur["regularization_boundary"]["generic_4d_trace_class_status"],
+            "product_S2_S2_ghost_Schur_spectral_measure_supplied": product_s2_s2_ghost_schur["claim_flags"]["PRODUCT_SPECTRAL_MEASURE_SUPPLIED"],
+            "product_S2_S2_ghost_Schur_exceptional_correction": product_s2_s2_ghost_schur["primed_mode_policy"]["total_exceptional_correction"],
+            "product_S2_S2_ghost_Schur_Wres_K2_fixture": product_s2_s2_ghost_schur["residue_crosscheck"]["fixture_value"],
             "generic_ghost_Schur_S3_class": True,
             "generic_ghost_modified_Fredholm_order": generic_ghost_schur_schatten["sharp_ideal_classification"]["minimal_modified_determinant_order"],
             "generic_ghost_det3_tail_defined": True,
