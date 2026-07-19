@@ -189,9 +189,15 @@ flux is now exact for all eleven channels: 33 quadratic angular corner rows
 reduce to two bubble logarithms and a rational corner term, producing 77
 exact coordinates in a seven-function structured basis. Their independently
 replayed scale rows reproduce every earlier symmetric obstruction
-coefficient. Assembly of those eleven functions and the finite contact rows
-into the five repository third-curvature form factors remains open. See
-[`generic-background-physical-hessian-triangle-relative-ibp-boundary-flux.md`](../../reports/generic-background-physical-hessian-triangle-relative-ibp-boundary-flux.md).
+coefficient. Those eleven functions, all three finite contact rows per
+orientation and the combined triangle/contact scale rows are now assembled
+into five exact carrier-labelled physical-Hessian form-factor functions in
+the declared Mellin-MS representative. The orientation multiplicities are
+`1+3+3+3+1`, and the symmetric `I28` component vanishes coefficientwise,
+leaving the exact ten-dimensional quotient. The independent mu-independent
+finite `C2` normalization, ghost and remaining BV rows, and hence the complete
+repository form factors remain open. See
+[`generic-background-physical-hessian-third-curvature-form-factors.md`](../../reports/generic-background-physical-hessian-third-curvature-form-factors.md).
 
 Replay with:
 

@@ -409,12 +409,17 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_standard_S3_pair_required"] is True
     assert claims["physical_Hessian_triangle_renormalized_new_master_values_computed"] is True
     assert claims["physical_Hessian_triangle_renormalized_master_value_count"] == 3
+    assert claims["physical_Hessian_five_carrier_Mellin_MS_form_factors_assembled"] is True
+    assert claims["physical_Hessian_form_factor_carrier_count"] == 5
+    assert claims["physical_Hessian_form_factor_orientation_channel_count"] == 11
+    assert claims["physical_Hessian_form_factor_quotient_dimension"] == 10
+    assert claims["physical_Hessian_finite_C2_normalization"] == "NOT_FIXED"
     assert payload["explicit_nonclaims"][
         "generic_ghost_zeta_multiplicative_anomaly_computed_without_declared_factorization"
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "ASSEMBLE_ELEVEN_INTEGRATED_PHYSICAL_TRIANGLE_CHANNELS_AND_FINITE_CONTACT_ROWS_INTO_FIVE_THIRD_CURVATURE_FORM_FACTORS"
+        == "ADD_GENERIC_GHOST_AND_REMAINING_BV_ROWS_TO_THE_ASSEMBLED_PHYSICAL_HESSIAN_FORM_FACTORS"
     )
 
     dependencies = {}
@@ -454,7 +459,7 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
     assert claims["physical_Hessian_triangle_corner_count"] == 33
     assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
-    assert len(payload["inputs"]) == 62
+    assert len(payload["inputs"]) == 63
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

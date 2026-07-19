@@ -2408,8 +2408,13 @@ singlet and a standard-`S3` pair, and contains all eleven physical rows. The
 three renormalized new-master values and scale derivatives are now exact; the
 66 physical master-coordinate functions are exact, and all eleven physical
 relative-IBP boundary fluxes now reduce to exact seven-function structured
-decompositions. Assembly with the finite contact rows into the five repository
-form factors and independent finite-counterterm normalization remain open. The selected generic weight-raised
+decompositions. These eleven channels, the three finite contact rows per
+orientation and their combined scale rows are now assembled into five exact
+carrier-labelled physical-Hessian form-factor functions in the common
+Mellin-MS representative. The symmetric `I28` component vanishes
+coefficientwise, leaving the exact ten-dimensional quotient. Independent
+finite `C2` normalization, generic ghost and remaining BV finite rows, and
+therefore the complete repository form factors remain open. The selected generic weight-raised
 factorization and its local order-minus-three/four BCH residue are now exact.
 The canonical
 `det_3` tail and all three Schur residues are already fixed. The exact Endo--Duhamel,

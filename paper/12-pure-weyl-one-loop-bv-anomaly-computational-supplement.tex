@@ -1225,7 +1225,8 @@ negative control against promotion to a full generic Hessian.
 This input closes the tensor vertex
 $\operatorname{Tr}[(\mathcal H_0^{-1}\mathcal H_1)^3]$.  The exact raw
 mixed fixture below makes $\mathcal H_2$ operational and its Mellin scale row
-exact; the generic covariant triangle/bubble assembly remains open.
+exact; the later five-carrier receipt closes the generic covariant
+triangle/contact assembly for the physical Hessian.
 
 \begin{verbatim}
 MOD="spectral.euclidean.generic_background_physical_hessian_"
@@ -1418,10 +1419,22 @@ bubble-log ratios and one rational corner term, producing complete
 seven-function structured decompositions for every channel.  An independent
 two-point exact replay checks the tangent primitive, corner moments, basis
 assembly and scale recipes; all eleven symmetric scale rows reproduce the
-earlier obstruction ledger.  Independent finite-counterterm normalization
-and assembly into the five repository form factors remain open.
+earlier obstruction ledger.  Adding the three finite contact rows for each
+orientation and the combined triangle/contact scale row now gives five exact
+carrier-labelled physical-Hessian form-factor functions in the common
+Mellin-MS representative.  The $1+3+3+3+1$ orientation channels satisfy the
+symmetric-$I_{28}$ relation coefficientwise and span the ten-dimensional
+quotient.  Independent finite-$C^2$ normalization and the generic ghost and
+remaining BV finite rows remain open, so these are not yet the complete
+repository form factors.
 
 \begin{verbatim}
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}third_curvature_form_factors"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
+MOD="${MOD}third_curvature_form_factors"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
 MOD="spectral.euclidean.generic_background_physical_hessian_"
 MOD="${MOD}mixed_h1_h2_corner_fixture"
 PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
@@ -1968,8 +1981,10 @@ The first command is the fast stored-artifact tier.  The second independently
 replays the exact 46-column solve and full identity.  The producer's
 approximately 45-second reconstruction is reserved for the publication tier.
 All eleven generic ghost $n=3$ functions are now complete; the full ghost
-determinant, physical tensor-triangle integration, mixed
-$\mathcal H_1\mathcal H_2$ trace and repository form-factor assembly remain open.
+determinant and its generic finite Green/spectral rows remain open.  The later
+physical receipt integrates the tensor triangle and mixed
+$\mathcal H_1\mathcal H_2$ contacts, but complete full-BV repository form
+factors still require those ghost and remaining BV rows.
 
 \subsection{Exact symmetric-point simplex integration}
 
@@ -2202,11 +2217,11 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-	\item combine the eleven exact seven-function physical tensor-triangle
-channels with the 33 exact
-minimally-subtracted finite contact rows while keeping the independent finite-counterterm
-normalization explicit, and assemble the five
-repository parity-even third-curvature form-factor functions and coefficients,
+	\item add the generic ghost and remaining BV finite rows to the five
+assembled physical-Hessian Mellin-MS form-factor functions, using a full
+primed Green/resolvent kernel or complete spectral measure, while keeping the
+independent finite-counterterm normalization explicit; then assemble the
+complete repository parity-even third-curvature functions and coefficients,
 the parity-odd derivative carrier manifest, finite
 $C^2$ and absolute dressed $R(\widehat g)^2$ normalization,
 global Paneitz Green data, and renormalized BV operator data fixing a complete

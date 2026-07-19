@@ -186,9 +186,13 @@ quadratic angular corner rows reduce to two logarithm ratios and one rational
 corner term, and all eleven channels have complete seven-function structured
 decompositions. Two independent exact holdouts replay the tangent primitive,
 corner moments and scale recipes, while every symmetric scale row reproduces
-the earlier obstruction ledger. Assembly into the five repository
-third-curvature form factors and independent finite-counterterm normalization
-remain open.
+the earlier obstruction ledger. The eleven integrated channels, three finite
+contact rows per orientation and combined scale rows are now assembled into
+five exact carrier-labelled physical-Hessian form-factor functions in the
+common Mellin-MS representative. Their `1+3+3+3+1` orientation channels obey
+the exact symmetric-`I28` relation and span the ten-dimensional quotient.
+This closes the physical-Hessian assembly only: the independent finite `C2`
+normalization and the ghost and remaining BV rows remain open.
 The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
 and rational corner flux. Four explicit primitives cover every orientation,
@@ -520,18 +524,14 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. combine the eleven integrated seven-function physical triangle rows with
-   the 33 exact minimally-subtracted finite
-   `H1-H2` contact rows (equal-box TT sum `3188/27`) and retain the independent
-   mu-independent finite-counterterm normalization as an explicit scheme input;
-2. supply the full generic primed Green kernel or spectral measure for the
+1. supply the full generic primed Green kernel or spectral measure for the
    global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the
-   physical Hessian to assemble
-   the five parity-even repository form factors;
-3. classify the parity-odd derivative sector and fix the finite `C2` and
+   now-assembled physical-Hessian five-carrier representative to obtain the
+   complete parity-even repository form factors;
+2. classify the parity-odd derivative sector and fix the finite `C2` and
    absolute dressed `R(g_hat)^2` normalizations and renormalized products;
-4. use those data to determine complete `Gamma1/Q1`;
-5. import a same-background compensator-inclusive classical contraction
+3. use those data to determine complete `Gamma1/Q1`;
+4. import a same-background compensator-inclusive classical contraction
    before residual transfer.
 
 The same-background Lorentzian/Bridge 4 programme remains a parallel carrier

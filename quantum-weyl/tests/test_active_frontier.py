@@ -238,6 +238,11 @@ class ActiveFrontierTests(unittest.TestCase):
             ]
         )
         self.assertTrue(
+            self.payload["claim_flags"][
+                "PHYSICAL_HESSIAN_MELLIN_MS_FORM_FACTOR_REPRESENTATIVE_COMPUTED"
+            ]
+        )
+        self.assertTrue(
             self.payload["claim_flags"]["PHYSICAL_N3_THREE_LINEAR_TRIANGLE_COMPUTED"]
         )
         self.assertTrue(
@@ -512,7 +517,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "ASSEMBLE_ELEVEN_PHYSICAL_TRIANGLE_FUNCTIONS_AND_FINITE_CONTACT_ROWS_INTO_FIVE_REPOSITORY_THIRD_CURVATURE_FORM_FACTORS",
+            "ADD_GENERIC_GHOST_AND_REMAINING_BV_ROWS_AND_FIX_OR_PARAMETERIZE_THE_FINITE_C2_NORMALIZATION",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

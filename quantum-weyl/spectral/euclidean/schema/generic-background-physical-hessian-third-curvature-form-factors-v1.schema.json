@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl/generic-background-physical-hessian-third-curvature-form-factors-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "scheme_disposition", "function_basis", "carrier_functions", "quotient_ledger", "formula_digest", "dependencies", "claim_flags", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-physical-hessian-third-curvature-form-factors-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_THIRD_CURVATURE_FORM_FACTORS"},
+    "result_state": {"const": "FIVE_CARRIER_LABELLED_PHYSICAL_HESSIAN_MELLIN_MS_FORM_FACTOR_REPRESENTATIVE_COMPUTED"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {"type": "object"},
+    "scheme_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["computed_representative", "finite_C2_normalization", "meaning"],
+      "properties": {
+        "computed_representative": {"const": "COMMON_MELLIN_MINIMAL_SUBTRACTION"},
+        "finite_C2_normalization": {"const": "NOT_FIXED"},
+        "meaning": {"type": "string", "minLength": 40}
+      }
+    },
+    "function_basis": {"type": "object"},
+    "carrier_functions": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["carrier_id", "stabilizer", "orientation_count", "orientation_channels"]
+      }
+    },
+    "quotient_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["carrier_function_count", "raw_orientation_channel_count", "four_dimensional_relation_rank", "quotient_dimension", "section", "I28_relation", "status"],
+      "properties": {
+        "carrier_function_count": {"const": 5},
+        "raw_orientation_channel_count": {"const": 11},
+        "four_dimensional_relation_rank": {"const": 1},
+        "quotient_dimension": {"const": 10},
+        "section": {"const": "REMOVE_TRIVIAL_S3_COMPONENT_OF_I28"},
+        "I28_relation": {"type": "string", "minLength": 10},
+        "status": {"const": "EXACT"}
+      }
+    },
+    "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependencies": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["FIVE_PHYSICAL_CARRIER_FUNCTIONS_ASSEMBLED", "ALL_ELEVEN_ORIENTATION_CHANNELS_ASSEMBLED", "COMBINED_SCALE_ROWS_INCLUDED", "FOUR_DIMENSIONAL_I28_RELATION_VERIFIED", "PHYSICAL_HESSIAN_MELLIN_MS_FORM_FACTOR_REPRESENTATIVE_COMPUTED", "ABSOLUTE_FINITE_C2_NORMALIZATION_FIXED", "FULL_BV_FORM_FACTORS_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "QME_OR_ANOMALY_STATUS_CHANGED", "RESIDUAL_TRANSFER_AUTHORIZED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "FIVE_PHYSICAL_CARRIER_FUNCTIONS_ASSEMBLED": {"const": true},
+        "ALL_ELEVEN_ORIENTATION_CHANNELS_ASSEMBLED": {"const": true},
+        "COMBINED_SCALE_ROWS_INCLUDED": {"const": true},
+        "FOUR_DIMENSIONAL_I28_RELATION_VERIFIED": {"const": true},
+        "PHYSICAL_HESSIAN_MELLIN_MS_FORM_FACTOR_REPRESENTATIVE_COMPUTED": {"const": true},
+        "ABSOLUTE_FINITE_C2_NORMALIZATION_FIXED": {"const": false},
+        "FULL_BV_FORM_FACTORS_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "QME_OR_ANOMALY_STATUS_CHANGED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "next_gate": {"const": "ADD_GHOST_AND_REMAINING_BV_ROWS_AND_FIX_OR_PARAMETERIZE_THE_FINITE_C2_NORMALIZATION"},
+    "claim_boundary": {"type": "string", "minLength": 80}
+  }
+}

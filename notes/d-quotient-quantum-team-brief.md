@@ -1004,8 +1004,8 @@ the full minimally-subtracted finite contact row. All three contacts are now
 projected to 33 exact homogeneous rational functions using 28 training and
 two unseen tensor fixtures; `I28` vanishes coefficientwise and the equal-box
 TT sum is `3188/27`. This fixes the declared contact finite part, not an
-arbitrary mu-independent finite counterterm. The remaining physical gate is
-the renormalized `H1^3` triangle bulk reduction and form-factor assembly. The original
+arbitrary mu-independent finite counterterm. The renormalized `H1^3` triangle
+bulk and physical form-factor assembly have now closed below. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
@@ -1287,11 +1287,32 @@ eleven earlier obstruction coefficients.
 
 This is `LOCAL-ALGEBRAIC` plus `EUCLIDEAN-SPECTRAL`. It computes the raw
 physical triangle functions, not the five repository third-curvature form
-factors. The active gate is now:
+factors. Its immediate assembly gate was:
 
 ```text
 ASSEMBLE_ELEVEN_PHYSICAL_TRIANGLE_FUNCTIONS_AND_FINITE_CONTACT_ROWS_INTO_FIVE_REPOSITORY_THIRD_CURVATURE_FORM_FACTORS
 ```
 
+That gate is closed by the next receipt.
+
 Receipt:
 [`generic-background-physical-hessian-triangle-relative-ibp-boundary-flux.md`](../quantum-weyl/reports/generic-background-physical-hessian-triangle-relative-ibp-boundary-flux.md).
+
+## Physical-Hessian five-carrier assembly (2026-07-19)
+
+The eleven integrated triangle channels, all three finite `H1-H2` contact
+rows per orientation and the combined triangle/contact scale rows are now
+assembled into five exact carrier-labelled physical-Hessian form-factor
+functions in the common Mellin-MS representative. Their orientation counts
+are `1+3+3+3+1`; the symmetric `I28` component vanishes in every triangle
+basis coordinate, finite contact sum, assembled rational coordinate and
+scale row, leaving the exact ten-dimensional quotient.
+
+This closes the physical-Hessian assembly only. The independent
+mu-independent finite `C2` normalization remains an explicit scheme input,
+and the generic ghost finite rows still require a primed Green kernel or
+complete spectral measure. Remaining BV rows, parity-odd derivative data and
+complete `Gamma1/Q1` are therefore fail-closed.
+
+Receipt:
+[`generic-background-physical-hessian-third-curvature-form-factors.md`](../quantum-weyl/reports/generic-background-physical-hessian-third-curvature-form-factors.md).

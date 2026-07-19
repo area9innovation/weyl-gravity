@@ -81,6 +81,7 @@ DEPENDENCIES = {
     "generic_physical_hessian_triangle_renormalized_master_values": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_RENORMALIZED_MASTER_VALUES.json",
     "generic_physical_hessian_triangle_six_master_coordinates": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_SIX_MASTER_COORDINATES.json",
     "generic_physical_hessian_triangle_relative_IBP_boundary_flux": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_RELATIVE_IBP_BOUNDARY_FLUX.json",
+    "generic_physical_hessian_third_curvature_form_factors": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_THIRD_CURVATURE_FORM_FACTORS.json",
     "generic_background_ghost_CPT_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
@@ -209,6 +210,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "generic_physical_hessian_triangle_renormalized_master_values": "THREE_NEW_PHYSICAL_TRIANGLE_MASTER_VALUES_EVALUATED_IN_COMMON_MELLIN_SCHEME",
         "generic_physical_hessian_triangle_six_master_coordinates": "ALL_ELEVEN_PHYSICAL_TRIANGLE_SIX_MASTER_COORDINATE_FUNCTIONS_COMPUTED",
         "generic_physical_hessian_triangle_relative_IBP_boundary_flux": "ALL_ELEVEN_PHYSICAL_TRIANGLE_BOUNDARY_FLUXES_AND_INTEGRATED_MASTER_DECOMPOSITIONS_COMPUTED",
+        "generic_physical_hessian_third_curvature_form_factors": "FIVE_CARRIER_LABELLED_PHYSICAL_HESSIAN_MELLIN_MS_FORM_FACTOR_REPRESENTATIVE_COMPUTED",
         "generic_background_ghost_CPT_obstruction": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
         "generic_ghost_Endo_Duhamel_reduction": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES",
         "generic_ghost_n1_n2_Hodge_resolvent_reduction": "CURVED_ENDO_N1_N2_REDUCED_EXACTLY_TO_FIVE_MINIMAL_VECTOR_SCALAR_RESOLVENT_CARRIERS",
@@ -300,6 +302,9 @@ def _load() -> dict[str, dict[str, Any]]:
     ]
     generic_physical_hessian_triangle_boundary_flux = values[
         "generic_physical_hessian_triangle_relative_IBP_boundary_flux"
+    ]
+    generic_physical_hessian_form_factors = values[
+        "generic_physical_hessian_third_curvature_form_factors"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -950,6 +955,21 @@ def _load() -> dict[str, dict[str, Any]]:
         != 11
     ):
         raise ValueError("physical-Hessian triangle boundary-flux frontier drifted")
+    form_factor_flags = generic_physical_hessian_form_factors.get("claim_flags", {})
+    if (
+        form_factor_flags.get("FIVE_PHYSICAL_CARRIER_FUNCTIONS_ASSEMBLED") is not True
+        or form_factor_flags.get(
+            "PHYSICAL_HESSIAN_MELLIN_MS_FORM_FACTOR_REPRESENTATIVE_COMPUTED"
+        )
+        is not True
+        or form_factor_flags.get("ABSOLUTE_FINITE_C2_NORMALIZATION_FIXED") is not False
+        or form_factor_flags.get("FULL_BV_FORM_FACTORS_COMPUTED") is not False
+        or generic_physical_hessian_form_factors.get("quotient_ledger", {}).get(
+            "quotient_dimension"
+        )
+        != 10
+    ):
+        raise ValueError("physical-Hessian form-factor frontier drifted")
     if (
         generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
         != "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
@@ -2344,8 +2364,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_ALL_ELEVEN_PHYSICAL_TRIANGLES_INTEGRATED_IN_EXACT_SEVEN_FUNCTION_BASIS_FIVE_REPOSITORY_FORM_FACTORS_OPEN_Q1_UNDERDETERMINED",
-                "next_gate": "ASSEMBLE_ELEVEN_PHYSICAL_TRIANGLE_FUNCTIONS_AND_FINITE_CONTACT_ROWS_INTO_FIVE_REPOSITORY_THIRD_CURVATURE_FORM_FACTORS",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_PHYSICAL_HESSIAN_FIVE_CARRIER_MELLIN_MS_FORM_FACTORS_ASSEMBLED_FULL_BV_OPEN_Q1_UNDERDETERMINED",
+                "next_gate": "ADD_GENERIC_GHOST_AND_REMAINING_BV_ROWS_AND_FIX_OR_PARAMETERIZE_THE_FINITE_C2_NORMALIZATION",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -2360,8 +2380,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_ALL_ELEVEN_PHYSICAL_TRIANGLES_INTEGRATED_REPOSITORY_FIVE_FORM_FACTOR_ASSEMBLY_GREEN_SPECTRAL_CARRIER_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "ASSEMBLE_ELEVEN_PHYSICAL_TRIANGLE_FUNCTIONS_AND_FINITE_CONTACT_ROWS_INTO_FIVE_REPOSITORY_THIRD_CURVATURE_FORM_FACTORS",
+                "status": "FORBIDDEN_PHYSICAL_HESSIAN_FIVE_CARRIER_REPRESENTATIVE_ASSEMBLED_FULL_BV_GREEN_SPECTRAL_CARRIER_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "ADD_GENERIC_GHOST_AND_REMAINING_BV_ROWS_AND_FIX_OR_PARAMETERIZE_THE_FINITE_C2_NORMALIZATION",
             },
         },
         "supersession_ledger": [
@@ -2501,6 +2521,7 @@ def build() -> dict[str, Any]:
             "PHYSICAL_TRIANGLE_SIX_MASTER_COORDINATES_COMPUTED": True,
             "PHYSICAL_TRIANGLE_RELATIVE_IBP_BOUNDARY_FLUX_COMPUTED": True,
             "PHYSICAL_TRIANGLE_FUNCTION_BASIS_DECOMPOSITION_COMPUTED": True,
+            "PHYSICAL_HESSIAN_MELLIN_MS_FORM_FACTOR_REPRESENTATIVE_COMPUTED": True,
             "FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED": False,
             "CURVATURE_SQUARED_PHYSICAL_HESSIAN_LAYER_SUPPLIED": False,
             "PHYSICAL_N3_THREE_LINEAR_TRIANGLE_COMPUTED": True,
@@ -2608,7 +2629,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "ASSEMBLE_ELEVEN_PHYSICAL_TRIANGLE_FUNCTIONS_AND_FINITE_CONTACT_ROWS_INTO_FIVE_REPOSITORY_THIRD_CURVATURE_FORM_FACTORS",
+            "ADD_GENERIC_GHOST_AND_REMAINING_BV_ROWS_AND_FIX_OR_PARAMETERIZE_THE_FINITE_C2_NORMALIZATION",
             "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
@@ -3068,6 +3089,8 @@ def validate(result: dict[str, Any]) -> None:
         is not True
         or flags.get("PHYSICAL_TRIANGLE_FUNCTION_BASIS_DECOMPOSITION_COMPUTED")
         is not True
+        or flags.get("PHYSICAL_HESSIAN_MELLIN_MS_FORM_FACTOR_REPRESENTATIVE_COMPUTED")
+        is not True
         or flags.get("FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED") is not False
         or flags.get("CURVATURE_SQUARED_PHYSICAL_HESSIAN_LAYER_SUPPLIED")
         is not False
@@ -3295,6 +3318,7 @@ def validate(result: dict[str, Any]) -> None:
             "PHYSICAL_TRIANGLE_SIX_MASTER_COORDINATES_COMPUTED",
             "PHYSICAL_TRIANGLE_RELATIVE_IBP_BOUNDARY_FLUX_COMPUTED",
             "PHYSICAL_TRIANGLE_FUNCTION_BASIS_DECOMPOSITION_COMPUTED",
+            "PHYSICAL_HESSIAN_MELLIN_MS_FORM_FACTOR_REPRESENTATIVE_COMPUTED",
         }
     ):
         raise ValueError("active frontier quantum claim was over-promoted")
