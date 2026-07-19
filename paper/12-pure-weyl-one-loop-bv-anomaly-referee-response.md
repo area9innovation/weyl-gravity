@@ -51,10 +51,11 @@ remain open.
 | Unsupported Hadamard assertion | Removed from the abstract and from the paper’s theorem claims. Same-background state constructions are assigned to a separate companion programme. | Abstract; “What does not follow”; Paper 12 claim map |
 | Smaller editorial requests | Addressed: τ-adic title, regular-locus abstract scope, generator terminology, definition of `C_1^{WZ}`, fixture normalization, foundational antifield-BRST reference, Paneitz reference, and consistent receipt punctuation. | Main paper and bibliography |
 
-Both PDFs compile in two passes without errors, warnings, undefined
-references, underfull boxes, or overfull boxes. The generated tables and claim
-map are independently replayed, and the scoped scientific verifiers for the
-strict quotient, Euclidean complex, multiplicities, Slavnov breaking, matter
+From a clean output directory, the main PDF settles in two passes and the
+computational supplement in three; the final logs contain no errors, warnings,
+undefined references, underfull boxes, or overfull boxes. The generated tables
+and claim map are independently replayed, and the scoped scientific verifiers
+for the strict quotient, Euclidean complex, multiplicities, Slavnov breaking, matter
 cone, compensator lift, extended quotient, effective-action carriers, FV
 Ricci-sector disposition, algebraic cubic-Weyl carrier basis, parity-even
 third-curvature carrier quotient, universal CPT source kernels, and `Box R`
