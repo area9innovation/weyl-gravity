@@ -6,7 +6,7 @@ from fractions import Fraction
 from typing import Any, Mapping, Sequence
 
 from closed_universe_observers.berger_recoil_detector_form_binding import (
-    _interval_matrix,
+    _cached_interval_d_matrix,
     apply_spacetime_dhat1_to_detector_advanced_maxwell,
 )
 from closed_universe_observers.berger_recoil_free_emitter_retarded_channel import (
@@ -37,6 +37,7 @@ from closed_universe_observers.berger_recoil_matched_feedback_channel import (
 )
 from closed_universe_observers.berger_recoil_matrix_interval import (
     kernel_stage_from_sine_enclosure,
+    round_kernel_stage_outward,
 )
 from closed_universe_observers.berger_recoil_partitioned_massive_preparation import (
     evaluate_partitioned_positive_energy_preparation_at_support_left,
@@ -44,13 +45,28 @@ from closed_universe_observers.berger_recoil_partitioned_massive_preparation imp
 from closed_universe_observers.berger_recoil_switch_intervals import (
     emitter_switch_interval,
 )
-from closed_universe_observers.generate_berger_peter_weyl_form_laplacian import (
-    d_matrix,
-)
-
-
 Vector = Sequence[ComplexRationalInterval]
 Matrix = Sequence[Sequence[ComplexRationalInterval]]
+
+
+def _round_vector_outward(
+    vector: Vector, bits: int | None
+) -> list[ComplexRationalInterval]:
+    return (
+        [entry.round_outward(bits) for entry in vector]
+        if bits is not None
+        else list(vector)
+    )
+
+
+def _round_matrix_outward(
+    matrix: Matrix, bits: int | None
+) -> list[list[ComplexRationalInterval]]:
+    return (
+        [[entry.round_outward(bits) for entry in row] for row in matrix]
+        if bits is not None
+        else [list(row) for row in matrix]
+    )
 
 
 def _real_multiplier(value: RationalInterval) -> ComplexRationalInterval:
@@ -109,6 +125,7 @@ def _evaluate_vector_polynomial_on_cell(
     coefficients: Sequence[Vector],
     remainder_upper: Fraction,
     coordinate: RationalInterval,
+    outward_bits: int | None = None,
 ) -> list[ComplexRationalInterval]:
     if not coefficients or not coefficients[0]:
         raise ValueError("vector polynomial must be nonempty")
@@ -122,11 +139,16 @@ def _evaluate_vector_polynomial_on_cell(
             output,
             [entry * multiplier for entry in vector],
         )
-    return _add_box(output, Fraction(remainder_upper))
+        output = _round_vector_outward(output, outward_bits)
+    return _round_vector_outward(
+        _add_box(output, Fraction(remainder_upper)), outward_bits
+    )
 
 
 def _evaluate_kernel_polynomial_on_cell(
-    stage: Mapping[str, Any], coordinate: RationalInterval
+    stage: Mapping[str, Any],
+    coordinate: RationalInterval,
+    outward_bits: int | None = None,
 ) -> list[list[ComplexRationalInterval]]:
     matrices = stage["coefficient_matrices"]
     if not matrices or not matrices[0]:
@@ -147,6 +169,7 @@ def _evaluate_kernel_polynomial_on_cell(
             ]
             for row in range(dimension)
         ]
+        output = _round_matrix_outward(output, outward_bits)
     return output
 
 
@@ -154,11 +177,17 @@ def _kernel_action_on_cell(
     stage: Mapping[str, Any],
     coordinate: RationalInterval,
     source: Vector,
+    outward_bits: int | None = None,
 ) -> list[ComplexRationalInterval]:
-    matrix = _evaluate_kernel_polynomial_on_cell(stage, coordinate)
-    output = _matrix_vector(matrix, source)
+    matrix = _evaluate_kernel_polynomial_on_cell(
+        stage, coordinate, outward_bits=outward_bits
+    )
+    output = _round_vector_outward(_matrix_vector(matrix, source), outward_bits)
     kernel_remainder = Fraction(stage["uniform_remainder_upper"])
-    return _add_box(output, kernel_remainder * _vector_norm_upper(source))
+    return _round_vector_outward(
+        _add_box(output, kernel_remainder * _vector_norm_upper(source)),
+        outward_bits,
+    )
 
 
 def _causal_convolution_cell_enclosures(
@@ -167,6 +196,7 @@ def _causal_convolution_cell_enclosures(
     kernel_stage: Mapping[str, Any],
     cell_width: Fraction,
     orientation: str,
+    outward_bits: int | None = None,
 ) -> list[list[ComplexRationalInterval]]:
     """Uniformly enclose a Volterra convolution on every output cell.
 
@@ -208,11 +238,13 @@ def _causal_convolution_cell_enclosures(
                 kernel_stage,
                 tau,
                 source_cells[source_index],
+                outward_bits=outward_bits,
             )
             value = _vector_add(
                 value,
                 _vector_scale_real(integrand, integration_length),
             )
+            value = _round_vector_outward(value, outward_bits)
         output.append(value)
     return output
 
@@ -259,6 +291,7 @@ def _kernel_stages(
     slab_length: Fraction,
     radical_bits: int,
     label_prefix: str,
+    outward_bits: int | None = None,
 ) -> tuple[dict[str, object], dict[str, object]]:
     enclosures = {
         degree: enclose_exact_mode_sine_kernel(
@@ -280,6 +313,15 @@ def _kernel_stages(
         degree: _cosine_stage_from_sine_stage(sine[degree], enclosures[degree])
         for degree in degrees
     }
+    if outward_bits is not None:
+        sine = {
+            degree: round_kernel_stage_outward(stage, outward_bits)
+            for degree, stage in sine.items()
+        }
+        cosine = {
+            degree: round_kernel_stage_outward(stage, outward_bits)
+            for degree, stage in cosine.items()
+        }
     if len(degrees) != 2:
         raise ValueError("spacetime block construction requires two degrees")
     return (
@@ -302,6 +344,7 @@ def _spacetime_d_one_form_cells(
     time_derivative_cells: Sequence[Vector],
     two_j: int,
     radical_bits: int,
+    outward_bits: int | None = None,
 ) -> list[list[ComplexRationalInterval]]:
     n = two_j + 1
     if len(field_cells) != len(time_derivative_cells) or any(
@@ -309,16 +352,17 @@ def _spacetime_d_one_form_cells(
         for field, derivative in zip(field_cells, time_derivative_cells)
     ):
         raise ValueError("Maxwell cell dimensions do not agree")
-    d0 = _interval_matrix(d_matrix(two_j, 0), radical_bits)
-    d1 = _interval_matrix(d_matrix(two_j, 1), radical_bits)
+    d0 = _cached_interval_d_matrix(two_j, 0, radical_bits)
+    d1 = _cached_interval_d_matrix(two_j, 1, radical_bits)
     output = []
     for field, derivative in zip(field_cells, time_derivative_cells):
         phi, spatial = field[:n], field[n:]
         spatial_t = derivative[n:]
-        output.append(
+        output.append(_round_vector_outward(
             _vector_add(spatial_t, [-entry for entry in _matrix_vector(d0, phi)])
-            + _matrix_vector(d1, spatial)
-        )
+            + _matrix_vector(d1, spatial),
+            outward_bits,
+        ))
     return output
 
 
@@ -335,6 +379,7 @@ def _advanced_physical_emitter_cells(
     mass_squared_interval: RationalInterval,
     partition_count: int,
     radical_bits: int,
+    outward_bits: int | None = None,
 ) -> dict[str, object]:
     switch_id = {"D0": "h_0", "D1": "h_1"}[detector]
     support_left, support_right = _switch_support(switch_certificate, switch_id)
@@ -375,6 +420,7 @@ def _advanced_physical_emitter_cells(
                 length - (index + 1) * width,
                 length - index * width,
             ),
+            outward_bits=outward_bits,
         )
         for index in range(partition_count)
     ]
@@ -391,12 +437,14 @@ def _advanced_physical_emitter_cells(
         slab_length=length,
         radical_bits=radical_bits,
         label_prefix="massive_two_form_advanced",
+        outward_bits=outward_bits,
     )
     wave_two_cells = _causal_convolution_cell_enclosures(
         source_cells=switched_two_form_cells,
         kernel_stage=wave_two_sine,
         cell_width=width,
         orientation="advanced",
+        outward_bits=outward_bits,
     )
     n = two_j + 1
     delta_source_cells = [
@@ -413,12 +461,14 @@ def _advanced_physical_emitter_cells(
         slab_length=length,
         radical_bits=radical_bits,
         label_prefix="massive_one_form_advanced",
+        outward_bits=outward_bits,
     )
     wave_one_cells = _causal_convolution_cell_enclosures(
         source_cells=delta_source_cells,
         kernel_stage=wave_one_sine,
         cell_width=width,
         orientation="advanced",
+        outward_bits=outward_bits,
     )
     # The cosine convolution is d/dx for x=t_right-t, hence physical d/dt=-d/dx.
     wave_one_time_derivative_cells = [
@@ -428,6 +478,7 @@ def _advanced_physical_emitter_cells(
             kernel_stage=wave_one_cosine,
             cell_width=width,
             orientation="advanced",
+            outward_bits=outward_bits,
         )
     ]
     d_wave_one_cells = _spacetime_d_one_form_cells(
@@ -435,13 +486,17 @@ def _advanced_physical_emitter_cells(
         time_derivative_cells=wave_one_time_derivative_cells,
         two_j=two_j,
         radical_bits=radical_bits,
+        outward_bits=outward_bits,
     )
     inverse_mass = RationalInterval(
         Fraction(1) / mass_squared_interval.upper,
         Fraction(1) / mass_squared_interval.lower,
     )
     physical_cells = [
-        _vector_add(wave_two, _vector_scale_real(d_wave_one, inverse_mass))
+        _round_vector_outward(
+            _vector_add(wave_two, _vector_scale_real(d_wave_one, inverse_mass)),
+            outward_bits,
+        )
         for wave_two, d_wave_one in zip(wave_two_cells, d_wave_one_cells)
     ]
     return {
@@ -449,6 +504,7 @@ def _advanced_physical_emitter_cells(
         "cell_width": width,
         "switch_cells": switch_cells,
         "physical_cells": physical_cells,
+        "outward_rounding_bits": outward_bits,
     }
 
 
@@ -465,6 +521,7 @@ def _leading_retarded_field_strength_cells(
     mass_squared_interval: RationalInterval,
     partition_count: int,
     radical_bits: int,
+    outward_bits: int | None = None,
 ) -> dict[str, object]:
     preparation = evaluate_partitioned_positive_energy_preparation_at_support_left(
         detector_image_certificate=detector_image_certificate,
@@ -478,6 +535,7 @@ def _leading_retarded_field_strength_cells(
         mass_squared_interval=mass_squared_interval,
         partition_count=partition_count,
         radical_bits=radical_bits,
+        outward_bits=outward_bits,
     )
     q0 = [
         _complex_from_serialized(entry)
@@ -487,6 +545,8 @@ def _leading_retarded_field_strength_cells(
         _complex_from_serialized(entry)
         for entry in preparation["coupling_stripped_preparation_p"]
     ]
+    q0 = _round_vector_outward(q0, outward_bits)
+    p0 = _round_vector_outward(p0, outward_bits)
     n = two_j + 1
     dimension = 3 * n
     if len(q0) != dimension or len(p0) != dimension:
@@ -503,9 +563,9 @@ def _leading_retarded_field_strength_cells(
         cell_width=width,
         partition_count=partition_count,
     )
-    d1 = _interval_matrix(d_matrix(two_j, 1), radical_bits)
+    d1 = _cached_interval_d_matrix(two_j, 1, radical_bits)
     delta_two = _adjoint(d1)
-    d2 = _interval_matrix(d_matrix(two_j, 2), radical_bits)
+    d2 = _cached_interval_d_matrix(two_j, 2, radical_bits)
     delta_three = _adjoint(d2)
     inverse_mass = RationalInterval(
         Fraction(1) / mass_squared_interval.upper,
@@ -522,8 +582,10 @@ def _leading_retarded_field_strength_cells(
     ell_operator = _scale_matrix_diagonal(
         _matrix_multiply(delta_three, d2), mass_squared_interval
     )
-    a_p0 = _matrix_vector(a_operator, p0)
-    ell_q0 = _matrix_vector(ell_operator, q0)
+    a_operator = _round_matrix_outward(a_operator, outward_bits)
+    ell_operator = _round_matrix_outward(ell_operator, outward_bits)
+    a_p0 = _round_vector_outward(_matrix_vector(a_operator, p0), outward_bits)
+    ell_q0 = _round_vector_outward(_matrix_vector(ell_operator, q0), outward_bits)
     massive_sine_enclosure = enclose_exact_mode_sine_kernel(
         exact_kernel_certificate,
         two_j=two_j,
@@ -537,20 +599,31 @@ def _leading_retarded_field_strength_cells(
     massive_cosine = _cosine_stage_from_sine_stage(
         massive_sine, massive_sine_enclosure
     )
+    if outward_bits is not None:
+        massive_sine = round_kernel_stage_outward(massive_sine, outward_bits)
+        massive_cosine = round_kernel_stage_outward(massive_cosine, outward_bits)
     alpha_cells = []
     for index in range(partition_count):
         time_cell = RationalInterval(index * width, (index + 1) * width)
-        p_cell = _vector_add(
-            _kernel_action_on_cell(massive_cosine, time_cell, p0),
+        p_cell = _round_vector_outward(_vector_add(
+            _kernel_action_on_cell(
+                massive_cosine, time_cell, p0, outward_bits=outward_bits
+            ),
             [
                 -entry
                 for entry in _kernel_action_on_cell(
-                    massive_sine, time_cell, ell_q0
+                    massive_sine,
+                    time_cell,
+                    ell_q0,
+                    outward_bits=outward_bits,
                 )
             ],
-        )
+        ), outward_bits)
         alpha_cells.append(
-            _vector_scale_real(_matrix_vector(delta_two, p_cell), inverse_mass)
+            _round_vector_outward(
+                _vector_scale_real(_matrix_vector(delta_two, p_cell), inverse_mass),
+                outward_bits,
+            )
         )
     current_cells = [
         _zero_vector(n)
@@ -566,24 +639,28 @@ def _leading_retarded_field_strength_cells(
         slab_length=length,
         radical_bits=radical_bits,
         label_prefix="Maxwell_retarded",
+        outward_bits=outward_bits,
     )
     field_cells = _causal_convolution_cell_enclosures(
         source_cells=current_cells,
         kernel_stage=maxwell_sine,
         cell_width=width,
         orientation="retarded",
+        outward_bits=outward_bits,
     )
     time_derivative_cells = _causal_convolution_cell_enclosures(
         source_cells=current_cells,
         kernel_stage=maxwell_cosine,
         cell_width=width,
         orientation="retarded",
+        outward_bits=outward_bits,
     )
     field_strength_cells = _spacetime_d_one_form_cells(
         field_cells=field_cells,
         time_derivative_cells=time_derivative_cells,
         two_j=two_j,
         radical_bits=radical_bits,
+        outward_bits=outward_bits,
     )
     return {
         "support": (support_left, support_right),
@@ -594,7 +671,10 @@ def _leading_retarded_field_strength_cells(
 
 
 def _lorentzian_two_form_pairing_cell(
-    left: Vector, right: Vector, temporal_dimension: int
+    left: Vector,
+    right: Vector,
+    temporal_dimension: int,
+    outward_bits: int | None = None,
 ) -> ComplexRationalInterval:
     if len(left) != len(right) or not 0 < temporal_dimension < len(left):
         raise ValueError("two-form pairing dimensions do not agree")
@@ -602,6 +682,8 @@ def _lorentzian_two_form_pairing_cell(
     for row, (left_entry, right_entry) in enumerate(zip(left, right)):
         term = _conjugate(left_entry) * right_entry
         value = value + (-term if row < temporal_dimension else term)
+        if outward_bits is not None:
+            value = value.round_outward(outward_bits)
     return value
 
 
@@ -618,6 +700,7 @@ def evaluate_partitioned_detector_matched_absolute_g3_feedback_channel(
     mass_squared_interval: RationalInterval,
     partition_count: int,
     radical_bits: int = 80,
+    outward_bits: int | None = None,
 ) -> dict[str, object]:
     """Enclose ``I_aaa[two_j,column]`` with every switch cellwise."""
     if detector not in ("D0", "D1"):
@@ -638,6 +721,7 @@ def evaluate_partitioned_detector_matched_absolute_g3_feedback_channel(
         mass_squared_interval=mass_squared_interval,
         partition_count=partition_count,
         radical_bits=radical_bits,
+        outward_bits=outward_bits,
     )
     retarded = _leading_retarded_field_strength_cells(
         detector_image_certificate=detector_image_certificate,
@@ -651,6 +735,7 @@ def evaluate_partitioned_detector_matched_absolute_g3_feedback_channel(
         mass_squared_interval=mass_squared_interval,
         partition_count=partition_count,
         radical_bits=radical_bits,
+        outward_bits=outward_bits,
     )
     if advanced["support"] != retarded["support"]:
         raise ValueError("advanced and retarded supports disagree")
@@ -671,6 +756,7 @@ def evaluate_partitioned_detector_matched_absolute_g3_feedback_channel(
             advanced_field,
             switched_retarded,
             3 * (two_j + 1),
+            outward_bits=outward_bits,
         ).scale(width)
         value = value + cell_pairing
         cell_rows.append(
@@ -688,6 +774,7 @@ def evaluate_partitioned_detector_matched_absolute_g3_feedback_channel(
         "two_j": two_j,
         "column": column,
         "partition_count": partition_count,
+        "outward_rounding_bits": outward_bits,
         "cell_width": str(width),
         "mass_squared_interval": mass_squared_interval.serialize(),
         "support_physical_time": [str(entry) for entry in advanced["support"]],

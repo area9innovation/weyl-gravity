@@ -31,7 +31,8 @@ def main() -> int:
     assert value["flags"]["FINITE_PARTITIONED_MATCHED_ABSOLUTE_G3_FEEDBACK_EXPORTED"] is True
     assert value["flags"]["ALL_EIGHT_ABC_TWO_J0_K0_INTERVALS_EXPORTED"] is True
     assert value["flags"]["FINITE_FIRST_OMITTED_SHELL_DIRECT_PROVIDER_TWO_J5_EXPORTED"] is True
-    assert value["flags"]["TWO_J5_FEEDBACK_CHANNELS_EVALUATED"] is False
+    assert value["flags"]["TWO_J5_FEEDBACK_CHANNELS_EVALUATED"] is True
+    assert value["flags"]["ALL_48_TWO_J5_CHANNEL_COLUMN_BLOCKS_EVALUATED"] is True
     assert value["flags"]["CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED"] is True
     assert all(row["detected"] for row in value["mutation_results"])
     print("Berger recoil executable-readiness audit verification: PASS")

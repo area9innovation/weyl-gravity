@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "evaluation_contract", "base_partition_columns", "partition4_column0_sentinel", "partition2_to_4_column0_refinement", "per_channel_coverage", "shell_aggregator_input_shapes", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-two-j5-all-channel-column-binding-v1"},
+    "result_id": {"const": "BERGER_RECOIL_TWO_J5_ALL_CHANNEL_COLUMN_BINDING"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "ALL_48_TWO_J5_CHANNEL_COLUMN_BLOCKS_BOUND_TO_PARTITIONED_CAUSAL_BACKEND"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 11, "maxProperties": 11},
+    "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "evaluation_contract": {"type": "object", "required": ["base_partition_count", "sentinel_partition_count", "outward_rounding_bits", "radical_bits", "validation_mass_squared_intervals", "physical_mass_specialization", "hashed_exact_T_two_j138_stream_identification_status"]},
+    "base_partition_columns": {"type": "array", "minItems": 6, "maxItems": 6},
+    "partition4_column0_sentinel": {"type": "object"},
+    "partition2_to_4_column0_refinement": {"type": "array", "minItems": 4, "maxItems": 4},
+    "per_channel_coverage": {"type": "array", "minItems": 8, "maxItems": 8},
+    "shell_aggregator_input_shapes": {"type": "array", "minItems": 4, "maxItems": 4},
+    "mutation_results": {"type": "array", "minItems": 3, "maxItems": 3},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "WIDEN_THE_DIRECT_FEEDBACK_PROVIDER_BEYOND_TWO_J5_AND_IMPLEMENT_THE_TAIL_AWARE_STOP_LOOP"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

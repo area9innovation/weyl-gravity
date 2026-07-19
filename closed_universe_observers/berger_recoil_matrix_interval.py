@@ -9,11 +9,34 @@ from typing import Any, Mapping, Sequence
 from closed_universe_observers.berger_recoil_interval_stream import (
     ComplexRationalInterval,
     RationalInterval,
+    round_nonnegative_fraction_up,
 )
 
 
 Vector = Sequence[ComplexRationalInterval]
 Matrix = Sequence[Sequence[ComplexRationalInterval]]
+
+
+def round_kernel_stage_outward(
+    stage: Mapping[str, Any], bits: int
+) -> dict[str, object]:
+    """Dyadically widen every interval and remainder in a kernel stage."""
+    if bits < 8:
+        raise ValueError("outward kernel rounding requires at least eight bits")
+    return {
+        **stage,
+        "coefficient_matrices": [
+            [
+                [entry.round_outward(bits) for entry in row]
+                for row in matrix
+            ]
+            for matrix in stage["coefficient_matrices"]
+        ],
+        "uniform_remainder_upper": round_nonnegative_fraction_up(
+            Fraction(stage["uniform_remainder_upper"]), bits
+        ),
+        "outward_rounding_bits": bits,
+    }
 
 
 def _complex_from_serialized(value: Mapping[str, Mapping[str, str]]) -> ComplexRationalInterval:

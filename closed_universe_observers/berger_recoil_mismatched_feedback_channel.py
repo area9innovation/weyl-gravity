@@ -7,7 +7,7 @@ from fractions import Fraction
 from typing import Any, Mapping, Sequence
 
 from closed_universe_observers.berger_recoil_detector_form_binding import (
-    _interval_matrix,
+    _cached_interval_d_matrix,
     apply_spacetime_dhat1_to_detector_advanced_maxwell,
 )
 from closed_universe_observers.berger_recoil_free_emitter_retarded_channel import (
@@ -34,6 +34,7 @@ from closed_universe_observers.berger_recoil_matched_feedback_channel import (
 )
 from closed_universe_observers.berger_recoil_matrix_interval import (
     kernel_stage_from_sine_enclosure,
+    round_kernel_stage_outward,
 )
 from closed_universe_observers.berger_recoil_partitioned_feedback_channel import (
     Vector,
@@ -44,6 +45,8 @@ from closed_universe_observers.berger_recoil_partitioned_feedback_channel import
     _kernel_stages,
     _leading_retarded_field_strength_cells,
     _lorentzian_two_form_pairing_cell,
+    _round_matrix_outward,
+    _round_vector_outward,
     _spacetime_d_one_form_cells,
     _switch_cell_data,
     _vector_add,
@@ -52,11 +55,6 @@ from closed_universe_observers.berger_recoil_partitioned_feedback_channel import
 from closed_universe_observers.berger_recoil_partitioned_massive_preparation import (
     evaluate_partitioned_positive_energy_preparation_at_support_left,
 )
-from closed_universe_observers.generate_berger_peter_weyl_form_laplacian import (
-    d_matrix,
-)
-
-
 def _detector_label(index: int) -> str:
     if index not in (0, 1):
         raise ValueError("detector/source/feedback labels must be zero or one")
@@ -117,6 +115,7 @@ def _cross_advanced_physical_emitter_cells(
     mass_squared_interval: RationalInterval,
     partition_count: int,
     radical_bits: int,
+    outward_bits: int | None = None,
 ) -> dict[str, object]:
     """Evaluate the D1 advanced detector image on the earlier h0 window."""
     detector = "D1"
@@ -164,6 +163,7 @@ def _cross_advanced_physical_emitter_cells(
                 length - (index + 1) * width,
                 length - index * width,
             ),
+            outward_bits=outward_bits,
         )
         for index in range(partition_count)
     ]
@@ -180,12 +180,14 @@ def _cross_advanced_physical_emitter_cells(
         slab_length=length,
         radical_bits=radical_bits,
         label_prefix="massive_two_form_cross_advanced",
+        outward_bits=outward_bits,
     )
     wave_two_cells = _causal_convolution_cell_enclosures(
         source_cells=switched_two_form_cells,
         kernel_stage=wave_two_sine,
         cell_width=width,
         orientation="advanced",
+        outward_bits=outward_bits,
     )
     n = two_j + 1
     delta_source_cells = [
@@ -202,12 +204,14 @@ def _cross_advanced_physical_emitter_cells(
         slab_length=length,
         radical_bits=radical_bits,
         label_prefix="massive_one_form_cross_advanced",
+        outward_bits=outward_bits,
     )
     wave_one_cells = _causal_convolution_cell_enclosures(
         source_cells=delta_source_cells,
         kernel_stage=wave_one_sine,
         cell_width=width,
         orientation="advanced",
+        outward_bits=outward_bits,
     )
     wave_one_time_derivative_cells = [
         [-entry for entry in vector]
@@ -216,6 +220,7 @@ def _cross_advanced_physical_emitter_cells(
             kernel_stage=wave_one_cosine,
             cell_width=width,
             orientation="advanced",
+            outward_bits=outward_bits,
         )
     ]
     d_wave_one_cells = _spacetime_d_one_form_cells(
@@ -223,6 +228,7 @@ def _cross_advanced_physical_emitter_cells(
         time_derivative_cells=wave_one_time_derivative_cells,
         two_j=two_j,
         radical_bits=radical_bits,
+        outward_bits=outward_bits,
     )
     inverse_mass = RationalInterval(
         Fraction(1) / mass_squared_interval.upper,
@@ -233,10 +239,14 @@ def _cross_advanced_physical_emitter_cells(
         "cell_width": width,
         "switch_cells": switch_cells,
         "physical_cells": [
-            _vector_add(wave_two, _vector_scale_real(d_wave_one, inverse_mass))
+            _round_vector_outward(
+                _vector_add(wave_two, _vector_scale_real(d_wave_one, inverse_mass)),
+                outward_bits,
+            )
             for wave_two, d_wave_one in zip(wave_two_cells, d_wave_one_cells)
         ],
         "cross_window_remainder_applied": True,
+        "outward_rounding_bits": outward_bits,
     }
 
 
@@ -247,6 +257,7 @@ def _retarded_convolution_on_later_cells(
     source_support: tuple[Fraction, Fraction],
     target_support: tuple[Fraction, Fraction],
     target_partition_count: int,
+    outward_bits: int | None = None,
 ) -> list[list[ComplexRationalInterval]]:
     if not source_support[1] < target_support[0]:
         raise ValueError("cross retarded convolution requires disjoint ordered slabs")
@@ -267,10 +278,13 @@ def _retarded_convolution_on_later_cells(
             value = _vector_add(
                 value,
                 _vector_scale_real(
-                    _kernel_action_on_cell(kernel_stage, tau, source),
+                    _kernel_action_on_cell(
+                        kernel_stage, tau, source, outward_bits=outward_bits
+                    ),
                     RationalInterval.point(source_width),
                 ),
             )
+            value = _round_vector_outward(value, outward_bits)
         output.append(value)
     return output
 
@@ -287,6 +301,7 @@ def _cross_retarded_field_strength_cells(
     source_mass_squared_interval: RationalInterval,
     partition_count: int,
     radical_bits: int,
+    outward_bits: int | None = None,
 ) -> dict[str, object]:
     """Propagate the h0-selected source to the later h1 feedback window."""
     preparation = evaluate_partitioned_positive_energy_preparation_at_support_left(
@@ -301,9 +316,12 @@ def _cross_retarded_field_strength_cells(
         mass_squared_interval=source_mass_squared_interval,
         partition_count=partition_count,
         radical_bits=radical_bits,
+        outward_bits=outward_bits,
     )
     q0 = [_complex_from_serialized(x) for x in preparation["coupling_stripped_preparation_q"]]
     p0 = [_complex_from_serialized(x) for x in preparation["coupling_stripped_preparation_p"]]
+    q0 = _round_vector_outward(q0, outward_bits)
+    p0 = _round_vector_outward(p0, outward_bits)
     n = two_j + 1
     source_support = tuple(Fraction(x) for x in preparation["support_physical_time"])
     target_support = _switch_support(switch_certificate, "h_1")
@@ -325,9 +343,9 @@ def _cross_retarded_field_strength_cells(
         cell_width=target_width,
         partition_count=partition_count,
     )
-    d1 = _interval_matrix(d_matrix(two_j, 1), radical_bits)
+    d1 = _cached_interval_d_matrix(two_j, 1, radical_bits)
     delta_two = _adjoint(d1)
-    d2 = _interval_matrix(d_matrix(two_j, 2), radical_bits)
+    d2 = _cached_interval_d_matrix(two_j, 2, radical_bits)
     delta_three = _adjoint(d2)
     inverse_mass = RationalInterval(
         Fraction(1) / source_mass_squared_interval.upper,
@@ -336,7 +354,8 @@ def _cross_retarded_field_strength_cells(
     ell_operator = _scale_matrix_diagonal(
         _matrix_multiply(delta_three, d2), source_mass_squared_interval
     )
-    ell_q0 = _matrix_vector(ell_operator, q0)
+    ell_operator = _round_matrix_outward(ell_operator, outward_bits)
+    ell_q0 = _round_vector_outward(_matrix_vector(ell_operator, q0), outward_bits)
     source_length = source_support[1] - source_support[0]
     massive_sine_enclosure = enclose_exact_mode_sine_kernel(
         exact_kernel_certificate,
@@ -351,12 +370,28 @@ def _cross_retarded_field_strength_cells(
     massive_cosine = _cosine_stage_from_sine_stage(
         massive_sine, massive_sine_enclosure
     )
+    if outward_bits is not None:
+        massive_sine = round_kernel_stage_outward(massive_sine, outward_bits)
+        massive_cosine = round_kernel_stage_outward(massive_cosine, outward_bits)
     alpha_cells = []
     for index in range(partition_count):
         time_cell = RationalInterval(index * source_width, (index + 1) * source_width)
-        p_cell = _vector_add(
-            _kernel_action_on_cell(massive_cosine, time_cell, p0),
-            [-entry for entry in _kernel_action_on_cell(massive_sine, time_cell, ell_q0)],
+        p_cell = _round_vector_outward(
+            _vector_add(
+                _kernel_action_on_cell(
+                    massive_cosine, time_cell, p0, outward_bits=outward_bits
+                ),
+                [
+                    -entry
+                    for entry in _kernel_action_on_cell(
+                        massive_sine,
+                        time_cell,
+                        ell_q0,
+                        outward_bits=outward_bits,
+                    )
+                ],
+            ),
+            outward_bits,
         )
         alpha_cells.append(
             _vector_scale_real(_matrix_vector(delta_two, p_cell), inverse_mass)
@@ -376,6 +411,7 @@ def _cross_retarded_field_strength_cells(
         slab_length=max_separation,
         radical_bits=radical_bits,
         label_prefix="Maxwell_cross_retarded",
+        outward_bits=outward_bits,
     )
     field_cells = _retarded_convolution_on_later_cells(
         source_cells=current_cells,
@@ -383,6 +419,7 @@ def _cross_retarded_field_strength_cells(
         source_support=source_support,
         target_support=target_support,
         target_partition_count=partition_count,
+        outward_bits=outward_bits,
     )
     derivative_cells = _retarded_convolution_on_later_cells(
         source_cells=current_cells,
@@ -390,6 +427,7 @@ def _cross_retarded_field_strength_cells(
         source_support=source_support,
         target_support=target_support,
         target_partition_count=partition_count,
+        outward_bits=outward_bits,
     )
     return {
         "support": target_support,
@@ -400,6 +438,7 @@ def _cross_retarded_field_strength_cells(
             time_derivative_cells=derivative_cells,
             two_j=two_j,
             radical_bits=radical_bits,
+            outward_bits=outward_bits,
         ),
         "source_support": source_support,
         "cross_window_retarded_propagation": True,
@@ -443,6 +482,7 @@ def evaluate_partitioned_absolute_g3_feedback_channel(
     feedback_mass_squared_interval: RationalInterval,
     partition_count: int,
     radical_bits: int = 80,
+    outward_bits: int | None = None,
 ) -> dict[str, object]:
     """Evaluate one of the eight ``I_abc`` coefficient blocks."""
     for label in (detector, source_preparation, feedback_emitter):
@@ -487,6 +527,7 @@ def evaluate_partitioned_absolute_g3_feedback_channel(
             mass_squared_interval=feedback_mass_squared_interval,
             partition_count=partition_count,
             radical_bits=radical_bits,
+            outward_bits=outward_bits,
         )
     elif (detector, feedback_emitter) == (1, 0):
         advanced = _cross_advanced_physical_emitter_cells(
@@ -501,6 +542,7 @@ def evaluate_partitioned_absolute_g3_feedback_channel(
             mass_squared_interval=feedback_mass_squared_interval,
             partition_count=partition_count,
             radical_bits=radical_bits,
+            outward_bits=outward_bits,
         )
     else:
         raise AssertionError("unclassified causally allowed advanced channel")
@@ -518,6 +560,7 @@ def evaluate_partitioned_absolute_g3_feedback_channel(
             mass_squared_interval=source_mass_squared_interval,
             partition_count=partition_count,
             radical_bits=radical_bits,
+            outward_bits=outward_bits,
         )
     elif (source_preparation, feedback_emitter) == (0, 1):
         retarded = _cross_retarded_field_strength_cells(
@@ -531,6 +574,7 @@ def evaluate_partitioned_absolute_g3_feedback_channel(
             source_mass_squared_interval=source_mass_squared_interval,
             partition_count=partition_count,
             radical_bits=radical_bits,
+            outward_bits=outward_bits,
         )
     else:
         raise AssertionError("unclassified causally allowed retarded channel")
@@ -548,7 +592,10 @@ def evaluate_partitioned_absolute_g3_feedback_channel(
             advanced_field,
             _vector_scale_real(retarded_field, switch["value"]),
             3 * (two_j + 1),
+            outward_bits=outward_bits,
         ).scale(width)
+        if outward_bits is not None:
+            value = value.round_outward(outward_bits)
     return {
         "channel_id": channel_id,
         "detector": detector,
@@ -557,6 +604,7 @@ def evaluate_partitioned_absolute_g3_feedback_channel(
         "two_j": two_j,
         "column": column,
         "partition_count": partition_count,
+        "outward_rounding_bits": outward_bits,
         "source_mass_squared_interval": source_mass_squared_interval.serialize(),
         "feedback_mass_squared_interval": feedback_mass_squared_interval.serialize(),
         "support_physical_time": [str(x) for x in advanced["support"]],
@@ -573,3 +621,165 @@ def evaluate_partitioned_absolute_g3_feedback_channel(
         "peter_weyl_weight_applied": False,
         "claim_boundary": "one finite cell-partitioned I_abc coefficient block; no shell sum, sign, nonzero or physical-mass claim",
     }
+
+
+def evaluate_partitioned_absolute_g3_feedback_column_bundle(
+    *,
+    detector_image_certificate: Mapping[str, Any],
+    cross_window_remainder_certificate: Mapping[str, Any],
+    detector_profile_certificate: Mapping[str, Any],
+    switch_certificate: Mapping[str, Any],
+    moment_certificate: Mapping[str, Any],
+    exact_kernel_certificate: Mapping[str, Any],
+    two_j: int,
+    column: int,
+    mass_squared_intervals: Mapping[int, RationalInterval],
+    partition_count: int,
+    radical_bits: int = 80,
+    outward_bits: int | None = None,
+) -> list[dict[str, object]]:
+    """Evaluate all eight channels while reusing six causal intermediates."""
+    if set(mass_squared_intervals) != {0, 1} or any(
+        interval.lower <= 0 for interval in mass_squared_intervals.values()
+    ):
+        raise ValueError("both emitter mass-squared intervals must be positive")
+    common = {
+        "detector_image_certificate": detector_image_certificate,
+        "detector_profile_certificate": detector_profile_certificate,
+        "switch_certificate": switch_certificate,
+        "moment_certificate": moment_certificate,
+        "exact_kernel_certificate": exact_kernel_certificate,
+        "two_j": two_j,
+        "column": column,
+        "partition_count": partition_count,
+        "radical_bits": radical_bits,
+        "outward_bits": outward_bits,
+    }
+    advanced = {
+        (0, 0): _advanced_physical_emitter_cells(
+            detector="D0",
+            mass_squared_interval=mass_squared_intervals[0],
+            **common,
+        ),
+        (1, 0): _cross_advanced_physical_emitter_cells(
+            cross_window_remainder_certificate=cross_window_remainder_certificate,
+            mass_squared_interval=mass_squared_intervals[0],
+            **common,
+        ),
+        (1, 1): _advanced_physical_emitter_cells(
+            detector="D1",
+            mass_squared_interval=mass_squared_intervals[1],
+            **common,
+        ),
+    }
+    retarded = {
+        (0, 0): _leading_retarded_field_strength_cells(
+            detector="D0",
+            mass_squared_interval=mass_squared_intervals[0],
+            **common,
+        ),
+        (0, 1): _cross_retarded_field_strength_cells(
+            source_mass_squared_interval=mass_squared_intervals[0],
+            **common,
+        ),
+        (1, 1): _leading_retarded_field_strength_cells(
+            detector="D1",
+            mass_squared_interval=mass_squared_intervals[1],
+            **common,
+        ),
+    }
+
+    allowed_paths = {
+        (0, 0, 0): (advanced[(0, 0)], retarded[(0, 0)]),
+        (1, 0, 0): (advanced[(1, 0)], retarded[(0, 0)]),
+        (1, 0, 1): (advanced[(1, 1)], retarded[(0, 1)]),
+        (1, 1, 1): (advanced[(1, 1)], retarded[(1, 1)]),
+    }
+    rows: list[dict[str, object]] = []
+    for detector, source, feedback in (
+        (0, 0, 0),
+        (0, 0, 1),
+        (0, 1, 0),
+        (0, 1, 1),
+        (1, 0, 0),
+        (1, 0, 1),
+        (1, 1, 0),
+        (1, 1, 1),
+    ):
+        channel_id = f"I_{detector}{source}{feedback}"
+        if (detector, source, feedback) not in allowed_paths:
+            reason = _causal_zero_reason(
+                detector_profile_certificate=detector_profile_certificate,
+                switch_certificate=switch_certificate,
+                detector=detector,
+                source_preparation=source,
+                feedback_emitter=feedback,
+            )
+            if reason is None:
+                raise AssertionError(f"{channel_id} lost its causal-zero proof")
+            rows.append(
+                {
+                    "channel_id": channel_id,
+                    "detector": detector,
+                    "source_preparation": source,
+                    "feedback_emitter": feedback,
+                    "two_j": two_j,
+                    "column": column,
+                    "partition_count": partition_count,
+                    "outward_rounding_bits": outward_bits,
+                    "coefficient_block_interval": ComplexRationalInterval.point().serialize(),
+                    "causal_support_zero": True,
+                    "causal_zero_reason": reason,
+                    "absolute_g3_monomial": f"g_{source} g_{feedback}^2",
+                    "peter_weyl_weight_applied": False,
+                    "shared_intermediate_bundle": True,
+                    "claim_boundary": "exact zero from strict causal support ordering; no numerical cancellation used",
+                }
+            )
+            continue
+        advanced_row, retarded_row = allowed_paths[(detector, source, feedback)]
+        if (
+            advanced_row["support"] != retarded_row["support"]
+            or advanced_row["cell_width"] != retarded_row["cell_width"]
+        ):
+            raise ValueError(f"{channel_id} advanced and retarded windows disagree")
+        width = Fraction(advanced_row["cell_width"])
+        value = ComplexRationalInterval.point()
+        for advanced_field, retarded_field, switch in zip(
+            advanced_row["physical_cells"],
+            retarded_row["field_strength_cells"],
+            advanced_row["switch_cells"],
+        ):
+            value = value + _lorentzian_two_form_pairing_cell(
+                advanced_field,
+                _vector_scale_real(retarded_field, switch["value"]),
+                3 * (two_j + 1),
+                outward_bits=outward_bits,
+            ).scale(width)
+            if outward_bits is not None:
+                value = value.round_outward(outward_bits)
+        rows.append(
+            {
+                "channel_id": channel_id,
+                "detector": detector,
+                "source_preparation": source,
+                "feedback_emitter": feedback,
+                "two_j": two_j,
+                "column": column,
+                "partition_count": partition_count,
+                "outward_rounding_bits": outward_bits,
+                "source_mass_squared_interval": mass_squared_intervals[source].serialize(),
+                "feedback_mass_squared_interval": mass_squared_intervals[feedback].serialize(),
+                "support_physical_time": [str(x) for x in advanced_row["support"]],
+                "coefficient_block_interval": value.serialize(),
+                "causal_support_zero": False,
+                "causal_zero_reason": None,
+                "cross_window_detector_remainder_applied": (detector, feedback) == (1, 0),
+                "cross_window_retarded_propagation": (source, feedback) == (0, 1),
+                "absolute_g3_monomial": f"g_{source} g_{feedback}^2",
+                "peter_weyl_weight_applied": False,
+                "shared_intermediate_bundle": True,
+                "claim_boundary": "one finite cell-partitioned I_abc coefficient block from a shared six-intermediate column bundle; no shell sum, sign, nonzero or physical-mass claim",
+            }
+        )
+    return rows

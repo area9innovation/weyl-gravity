@@ -27,6 +27,7 @@ PARTITIONED_BACKEND = PACKAGE / "berger_recoil_partitioned_massive_preparation.p
 MATCHED_FEEDBACK_BACKEND = PACKAGE / "berger_recoil_matched_feedback_channel.py"
 PARTITIONED_FEEDBACK_BACKEND = PACKAGE / "berger_recoil_partitioned_feedback_channel.py"
 MISMATCHED_FEEDBACK_BACKEND = PACKAGE / "berger_recoil_mismatched_feedback_channel.py"
+FIRST_OMITTED_BINDING_BACKEND = PACKAGE / "berger_recoil_first_omitted_shell_binding.py"
 DEPENDENCIES = {
     "per_shell_word": PACKAGE / "certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
     "tail_envelopes": PACKAGE / "certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
@@ -46,6 +47,7 @@ DEPENDENCIES = {
     "finite_cross_window_detector_remainder": PACKAGE / "certificates/BERGER_CROSS_WINDOW_DETECTOR_ADVANCED_MAXWELL_REMAINDER.json",
     "finite_six_mismatched_feedback": PACKAGE / "certificates/BERGER_SIX_MISMATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS.json",
     "finite_first_omitted_shell_provider": PACKAGE / "certificates/BERGER_RECOIL_FIRST_OMITTED_SHELL_PROVIDER_TWO_J5.json",
+    "finite_two_j5_all_channel_column_binding": PACKAGE / "certificates/BERGER_RECOIL_TWO_J5_ALL_CHANNEL_COLUMN_BINDING.json",
 }
 REQUIRED_CALLABLES = {
     "detector_profile_coefficient_provider": "detector_profile_coefficient_interval",
@@ -68,6 +70,7 @@ SOURCE_FILES = [
     MATCHED_FEEDBACK_BACKEND,
     PARTITIONED_FEEDBACK_BACKEND,
     MISMATCHED_FEEDBACK_BACKEND,
+    FIRST_OMITTED_BINDING_BACKEND,
 ]
 
 
@@ -111,6 +114,7 @@ def readiness_rows(
     finite_cross_window_detector_remainder: bool = False,
     finite_six_mismatched_feedback: bool = False,
     finite_first_omitted_shell_provider: bool = False,
+    finite_two_j5_all_channel_column_binding: bool = False,
     complete_nested_convolution: bool = False,
     treat_symbolic_word_as_backend: bool = False,
 ) -> list[dict[str, Any]]:
@@ -366,7 +370,28 @@ def readiness_rows(
                 if finite_first_omitted_shell_provider
                 else "NO_CERTIFIED_FIRST_OMITTED_SHELL_PAYLOAD"
             ),
-            "feedback_binding_status": "OPEN",
+            "feedback_binding_status": (
+                "CERTIFIED"
+                if finite_two_j5_all_channel_column_binding
+                else "OPEN"
+            ),
+        },
+        {
+            "id": "finite_two_j5_all_channel_column_feedback_binding",
+            "status": (
+                "CERTIFIED"
+                if finite_two_j5_all_channel_column_binding
+                and "evaluate_partitioned_absolute_g3_feedback_column_bundle"
+                in mismatched_feedback_functions
+                else "OBSTRUCTED"
+            ),
+            "required_callable": "evaluate_partitioned_absolute_g3_feedback_column_bundle",
+            "coverage": "all_8_Iabc_channels_times_all_6_passive_columns_at_two_j5_partition2_plus_partition4_column0_sentinel",
+            "evidence": (
+                "BERGER_RECOIL_TWO_J5_ALL_CHANNEL_COLUMN_BINDING"
+                if finite_two_j5_all_channel_column_binding
+                else "NO_CERTIFIED_TWO_J5_FEEDBACK_BINDING"
+            ),
         },
     ]
     for identifier, callable_name in REQUIRED_CALLABLES.items():
@@ -425,6 +450,7 @@ def build() -> dict[str, Any]:
         "finite_cross_window_detector_remainder": "D1_ADVANCED_MAXWELL_POLYNOMIAL_REMAINDER_ON_H0_EXPORTED",
         "finite_six_mismatched_feedback": "SIX_MISMATCHED_TWO_J0_K0_CHANNELS_EVALUATED",
         "finite_first_omitted_shell_provider": "TWO_J4_TO_TWO_J5_DIRECT_CARRIER_CROSSWALK_CERTIFIED",
+        "finite_two_j5_all_channel_column_binding": "ALL_48_TWO_J5_CHANNEL_COLUMN_BLOCKS_EVALUATED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -488,6 +514,9 @@ def build() -> dict[str, Any]:
     finite_first_omitted_shell_provider = values[
         "finite_first_omitted_shell_provider"
     ]["flags"]["TWO_J4_TO_TWO_J5_DIRECT_CARRIER_CROSSWALK_CERTIFIED"]
+    finite_two_j5_all_channel_column_binding = values[
+        "finite_two_j5_all_channel_column_binding"
+    ]["flags"]["ALL_48_TWO_J5_CHANNEL_COLUMN_BLOCKS_EVALUATED"]
     rows = readiness_rows(
         functions,
         form_functions=form_functions,
@@ -512,6 +541,7 @@ def build() -> dict[str, Any]:
         finite_cross_window_detector_remainder=finite_cross_window_detector_remainder,
         finite_six_mismatched_feedback=finite_six_mismatched_feedback,
         finite_first_omitted_shell_provider=finite_first_omitted_shell_provider,
+        finite_two_j5_all_channel_column_binding=finite_two_j5_all_channel_column_binding,
         complete_nested_convolution=complete_nested_convolution,
     )
     row_status = {row["id"]: row["status"] for row in rows}
@@ -545,13 +575,17 @@ def build() -> dict[str, Any]:
         finite_cross_window_detector_remainder=finite_cross_window_detector_remainder,
         finite_six_mismatched_feedback=finite_six_mismatched_feedback,
         finite_first_omitted_shell_provider=finite_first_omitted_shell_provider,
+        finite_two_j5_all_channel_column_binding=finite_two_j5_all_channel_column_binding,
         complete_nested_convolution=complete_nested_convolution,
         treat_symbolic_word_as_backend=True,
     )
     mutation_detected = all(
         row["status"] == "OBSTRUCTED"
         for row in symbolic_as_backend[1:]
-        if row["id"] != "finite_first_omitted_shell_direct_provider_two_j5"
+        if row["id"] not in {
+            "finite_first_omitted_shell_direct_provider_two_j5",
+            "finite_two_j5_all_channel_column_feedback_binding",
+        }
     )
     boundary = (
         "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL readiness audit preserves "
@@ -572,11 +606,11 @@ def build() -> dict[str, Any]:
         "through the block-diagonal massive wave kernel to the support-left slice. "
         "The physical Proca correction and full-form Cauchy pair are now finite "
         "callables. The unrestricted canonical trace and coupling-stripped full positive-energy dual "
-        "are also bound to finite preparation coefficients; the previously declared co-closed restriction is now certified to give a zero observer source. The unrestricted canonical preparation is now freely evolved on its exact switch slab, its conserved switched current is exported, and the first retarded Maxwell Cauchy pair is enclosed at the support-right slice. A cell-partitioned positive-switch refinement now proves both selected two_j=0 advanced Cauchy covectors nonzero uniformly for mass squared in [1,2]. Green adjunction identifies the two diagonal detector contractions with strict positive-energy lower bounds, so the leading selected response has rank two on that validation parameter domain. Green adjunction now also evaluates the detector-matched I_000[0,0] and I_111[0,0] absolute-g3 coefficient blocks on the same validation mass domain, including the physical massive correction and Lorentzian two-form pairing. A cellwise causal backend partitions every switch and switch-derivative occurrence; its 2/4/8-cell rail strictly contracts both complex enclosures below the whole-support hulls, while both 8-cell enclosures still contain zero. The D1 advanced detector remainder is extended to the earlier h0 feedback window. All six mismatched two_j=0,column-0 channels are evaluated: four are exact causal-support zeros, while I_100 and I_101 have strictly contracting 2/4/8-cell enclosures that still contain zero. The direct detector-polynomial, D1/h0 remainder and exact-kernel payload is now extended by one shell to two_j=5 with an explicit source-hash carrier crosswalk; no map to the separate hashed exact-T stream is inferred. The eight two_j=5 feedback channels, arbitrary positive masses and feedback shell sums are not yet bound, "
+        "are also bound to finite preparation coefficients; the previously declared co-closed restriction is now certified to give a zero observer source. The unrestricted canonical preparation is now freely evolved on its exact switch slab, its conserved switched current is exported, and the first retarded Maxwell Cauchy pair is enclosed at the support-right slice. A cell-partitioned positive-switch refinement now proves both selected two_j=0 advanced Cauchy covectors nonzero uniformly for mass squared in [1,2]. Green adjunction identifies the two diagonal detector contractions with strict positive-energy lower bounds, so the leading selected response has rank two on that validation parameter domain. Green adjunction now also evaluates the detector-matched I_000[0,0] and I_111[0,0] absolute-g3 coefficient blocks on the same validation mass domain, including the physical massive correction and Lorentzian two-form pairing. A cellwise causal backend partitions every switch and switch-derivative occurrence; its 2/4/8-cell rail strictly contracts both complex enclosures below the whole-support hulls, while both 8-cell enclosures still contain zero. The D1 advanced detector remainder is extended to the earlier h0 feedback window. All six mismatched two_j=0,column-0 channels are evaluated: four are exact causal-support zeros, while I_100 and I_101 have strictly contracting 2/4/8-cell enclosures that still contain zero. The direct detector-polynomial, D1/h0 remainder and exact-kernel payload is now extended by one shell to two_j=5 with an explicit source-hash carrier crosswalk; no map to the separate hashed exact-T stream is inferred. All 48 two_j=5 channel-column blocks are now bound at partition count two on the validation mass domain, with 24 exact support zeros and 24 causally allowed zero-containing enclosures. The four allowed k=0 paths strictly contract in both components at partition count four. Arbitrary positive masses and feedback shell sums with couplings are not yet bound, "
         "so the complete nested-convolution row remains "
         "obstructed. "
-        "No complete callable backend yet provides the remaining detector coefficient "
-        "intervals, the two_j=5 feedback binding or tail-aware four-stream stop loop. "
+        "No complete callable backend yet provides direct detector/feedback coverage "
+        "beyond two_j=5 or the tail-aware four-stream stop loop. "
         "Supplying masses and "
         "couplings would therefore still not produce a physical recoil interval. The "
         "numerical input schema is certified only as a deferred exact "
@@ -589,7 +623,7 @@ def build() -> dict[str, Any]:
         "schema": "closed-universe-berger-recoil-stream-executable-readiness-audit-v1",
         "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
         "setting_id": values["per_shell_word"]["setting_id"],
-        "claim_status": "FIFTEEN_FINITE_EXECUTION_CAPABILITIES_CERTIFIED_COMPLETE_STREAM_OBSTRUCTED",
+        "claim_status": "SIXTEEN_FINITE_EXECUTION_CAPABILITIES_CERTIFIED_COMPLETE_STREAM_OBSTRUCTED",
         "atlas_status": "OBSTRUCTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
@@ -669,7 +703,8 @@ def build() -> dict[str, Any]:
             "FINITE_SIX_MISMATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS_EXPORTED": row_status["finite_six_mismatched_absolute_g3_feedback_channels"] == "CERTIFIED",
             "ALL_EIGHT_ABC_TWO_J0_K0_INTERVALS_EXPORTED": row_status["finite_partitioned_detector_matched_absolute_g3_feedback"] == "CERTIFIED" and row_status["finite_six_mismatched_absolute_g3_feedback_channels"] == "CERTIFIED",
             "FINITE_FIRST_OMITTED_SHELL_DIRECT_PROVIDER_TWO_J5_EXPORTED": row_status["finite_first_omitted_shell_direct_provider_two_j5"] == "CERTIFIED",
-            "TWO_J5_FEEDBACK_CHANNELS_EVALUATED": False,
+            "TWO_J5_FEEDBACK_CHANNELS_EVALUATED": row_status["finite_two_j5_all_channel_column_feedback_binding"] == "CERTIFIED",
+            "ALL_48_TWO_J5_CHANNEL_COLUMN_BLOCKS_EVALUATED": row_status["finite_two_j5_all_channel_column_feedback_binding"] == "CERTIFIED",
             "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": row_status["shell_interval_evaluator"] == "CERTIFIED",
             "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": False,
             "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": False,
@@ -680,7 +715,7 @@ def build() -> dict[str, Any]:
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "BIND_ALL_EIGHT_TWO_J5_CHANNELS_TO_THE_PARTITIONED_FEEDBACK_BACKEND",
+        "next_gate": "WIDEN_THE_DIRECT_FEEDBACK_PROVIDER_BEYOND_TWO_J5_AND_IMPLEMENT_THE_TAIL_AWARE_STOP_LOOP",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

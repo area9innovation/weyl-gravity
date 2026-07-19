@@ -38,15 +38,17 @@ The direct provider now includes the first omitted shell `two_j=5`: both
 detector polynomials, the D1/h0 remainder and all five Maxwell/massive kernel
 blocks.  Its source-hash crosswalk is only to the direct `two_j<=4` carrier;
 the separate hashed exact-`T` stream remains `NO_CERTIFIED_MAP`.  No
-`two_j=5` feedback channel is evaluated yet.
+carrier identification is inferred from matching mode names.  All eight
+`two_j=5` feedback channels are now evaluated across all six passive columns:
+48 blocks, of which 24 are exact support zeros and 24 remain zero-containing.
+All four allowed `k=0` paths contract from two to four cells.
 
 The remaining sequence is:
 
-1. Bind all eight `two_j=5` channels to the partitioned feedback backend.
-2. Widen the direct provider further and implement the tail-aware four-stream stop loop.
-3. Only then declare numerical positive masses, nonzero couplings, and an
+1. Widen the direct provider beyond `two_j=5` and implement the tail-aware four-stream stop loop.
+2. Only then declare numerical positive masses, nonzero couplings, and an
    interval, nonzero, or sign stopping goal.
-4. Run the four response-specific streams and close them with the certified
+3. Run the four response-specific streams and close them with the certified
    tail radii.
 
 No numerical mass or coupling is inferred, and symbolic tail bounds or

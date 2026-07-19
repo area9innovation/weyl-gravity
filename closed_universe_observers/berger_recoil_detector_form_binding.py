@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from fractions import Fraction
+from functools import lru_cache
 from math import factorial
 from typing import Any, Mapping, Sequence
 
@@ -59,6 +60,17 @@ def _interval_matrix(matrix: sp.Matrix, radical_bits: int) -> list[list[ComplexR
     ]
 
 
+@lru_cache(maxsize=None)
+def _cached_interval_d_matrix(
+    two_j: int, degree: int, radical_bits: int
+) -> tuple[tuple[ComplexRationalInterval, ...], ...]:
+    """Content-stable exact de Rham interval matrix cached by mode scope."""
+    return tuple(
+        tuple(row)
+        for row in _interval_matrix(d_matrix(two_j, degree), radical_bits)
+    )
+
+
 def _matrix_norm_upper(matrix: Matrix) -> Fraction:
     return max(
         (sum((entry.absolute_upper() for entry in row), Fraction(0)) for row in matrix),
@@ -75,8 +87,18 @@ def _detector_mode(
         raise ValueError("finite advanced-Maxwell detector image is not certified")
     if detector not in ("D0", "D1"):
         raise ValueError("detector must be D0 or D1")
-    if not 0 <= two_j <= 4:
-        raise ValueError("detector form binding covers only 0<=two_j<=4")
+    extended_two_j5 = all(
+        certificate.get("flags", {}).get(flag) is True
+        for flag in (
+            "DIRECT_DETECTOR_POLYNOMIAL_PROVIDER_TWO_J5_EXPORTED",
+            "TWO_J4_TO_TWO_J5_DIRECT_CARRIER_CROSSWALK_CERTIFIED",
+        )
+    )
+    maximum_two_j = 5 if extended_two_j5 else 4
+    if not 0 <= two_j <= maximum_two_j:
+        raise ValueError(
+            f"detector form binding covers only 0<=two_j<={maximum_two_j}"
+        )
     detector_row = next(
         (row for row in certificate["detectors"] if row["detector_id"] == detector),
         None,
@@ -199,8 +221,8 @@ def _apply_spacetime_dhat1(
         certificate, detector=detector, two_j=two_j, column=column
     )
     n = two_j + 1
-    d0 = _interval_matrix(d_matrix(two_j, 0), radical_bits)
-    d1 = _interval_matrix(d_matrix(two_j, 1), radical_bits)
+    d0 = _cached_interval_d_matrix(two_j, 0, radical_bits)
+    d1 = _cached_interval_d_matrix(two_j, 1, radical_bits)
     output: list[list[ComplexRationalInterval]] = []
     for power, vector in enumerate(coefficients):
         alpha = vector[:n]

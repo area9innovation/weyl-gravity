@@ -7,7 +7,7 @@ from math import comb
 from typing import Any, Mapping, Sequence
 
 from closed_universe_observers.berger_recoil_detector_form_binding import (
-    _interval_matrix,
+    _cached_interval_d_matrix,
     apply_spacetime_dhat1_to_detector_advanced_maxwell,
 )
 from closed_universe_observers.berger_recoil_interval_stream import (
@@ -30,17 +30,23 @@ from closed_universe_observers.berger_recoil_massive_diagonal_preparation import
 )
 from closed_universe_observers.berger_recoil_matrix_interval import (
     kernel_stage_from_sine_enclosure,
+    round_kernel_stage_outward,
 )
 from closed_universe_observers.berger_recoil_switch_intervals import (
     emitter_switch_interval,
 )
-from closed_universe_observers.generate_berger_peter_weyl_form_laplacian import (
-    d_matrix,
-)
-
-
 Vector = Sequence[ComplexRationalInterval]
 Matrix = Sequence[Sequence[ComplexRationalInterval]]
+
+
+def _round_vector_outward(
+    vector: Vector, bits: int | None
+) -> list[ComplexRationalInterval]:
+    return (
+        [entry.round_outward(bits) for entry in vector]
+        if bits is not None
+        else list(vector)
+    )
 
 
 def _vector_norm_upper(vector: Vector) -> Fraction:
@@ -91,6 +97,7 @@ def evaluate_partitioned_matrix_green_endpoint(
     kernel_stage: Mapping[str, Any],
     slab_length: Fraction,
     cells: Sequence[tuple[Fraction, Fraction, RationalInterval]],
+    outward_bits: int | None = None,
 ) -> dict[str, object]:
     """Enclose ``integral K(L-y) h(y) f(y) dy`` over declared cells."""
     if not source_coefficients or not source_coefficients[0]:
@@ -119,6 +126,20 @@ def evaluate_partitioned_matrix_green_endpoint(
     ):
         raise ValueError("cells must be ordered, nonempty and contiguous")
 
+    if outward_bits is not None and outward_bits < 8:
+        raise ValueError("outward_bits must be at least eight")
+    if outward_bits is not None:
+        source_coefficients = [
+            [entry.round_outward(outward_bits) for entry in vector]
+            for vector in source_coefficients
+        ]
+        kernels = [
+            [
+                [entry.round_outward(outward_bits) for entry in row]
+                for row in matrix
+            ]
+            for matrix in kernels
+        ]
     output = [ComplexRationalInterval.point() for _ in range(dimension)]
     remainder = Fraction(0)
     cell_rows = []
@@ -134,6 +155,10 @@ def evaluate_partitioned_matrix_green_endpoint(
             weighted_moments[power] = weighted_moments[power] + multiplier.scale(
                 moment
             )
+            if outward_bits is not None:
+                weighted_moments[power] = weighted_moments[power].round_outward(
+                    outward_bits
+                )
 
         multiplier_upper = max(abs(multiplier.lower), abs(multiplier.upper))
         source_polynomial_upper = sum(
@@ -183,11 +208,16 @@ def evaluate_partitioned_matrix_green_endpoint(
                 )
                 term = [entry * multiplier for entry in base]
                 output = [a + b for a, b in zip(output, term)]
+                if outward_bits is not None:
+                    output = [
+                        entry.round_outward(outward_bits) for entry in output
+                    ]
     return {
         "dimension": dimension,
         "slab_length": str(slab_length),
         "kernel_label": kernel_stage.get("label", "unnamed"),
         "cell_count": len(cells),
+        "outward_rounding_bits": outward_bits,
         "cells": cell_rows,
         "endpoint_vector_without_box_remainder": [
             entry.serialize() for entry in output
@@ -213,6 +243,7 @@ def evaluate_partitioned_positive_energy_preparation_at_support_left(
     mass_squared_interval: RationalInterval,
     partition_count: int,
     radical_bits: int = 80,
+    outward_bits: int | None = None,
 ) -> dict[str, object]:
     """Refine the finite preparation by retaining the positive switch cellwise."""
     if detector not in ("D0", "D1"):
@@ -262,6 +293,15 @@ def evaluate_partitioned_positive_energy_preparation_at_support_left(
         )
         for degree in (1, 2)
     }
+    if outward_bits is not None:
+        sine_components = {
+            degree: round_kernel_stage_outward(stage, outward_bits)
+            for degree, stage in sine_components.items()
+        }
+        cosine_components = {
+            degree: round_kernel_stage_outward(stage, outward_bits)
+            for degree, stage in cosine_components.items()
+        }
     sine_stage = _block_diagonal_kernel_stage(
         sine_components[1], sine_components[2]
     )
@@ -295,6 +335,7 @@ def evaluate_partitioned_positive_energy_preparation_at_support_left(
         kernel_stage=sine_stage,
         slab_length=slab_length,
         cells=cells,
+        outward_bits=outward_bits,
     )
     diagonal_cosine = evaluate_partitioned_matrix_green_endpoint(
         source_coefficients=source_in_y,
@@ -302,6 +343,7 @@ def evaluate_partitioned_positive_energy_preparation_at_support_left(
         kernel_stage=cosine_stage,
         slab_length=slab_length,
         cells=cells,
+        outward_bits=outward_bits,
     )
     value = [
         _complex_from_serialized(entry)
@@ -311,6 +353,8 @@ def evaluate_partitioned_positive_energy_preparation_at_support_left(
         -_complex_from_serialized(entry)
         for entry in diagonal_cosine["endpoint_vector"]
     ]
+    value = _round_vector_outward(value, outward_bits)
+    time_derivative = _round_vector_outward(time_derivative, outward_bits)
 
     operator = [
         [entry.scale(-6) for entry in row]
@@ -320,9 +364,15 @@ def evaluate_partitioned_positive_energy_preparation_at_support_left(
     third_time_derivative = [
         -entry for entry in _matrix_vector(operator, time_derivative)
     ]
+    second_time_derivative = _round_vector_outward(
+        second_time_derivative, outward_bits
+    )
+    third_time_derivative = _round_vector_outward(
+        third_time_derivative, outward_bits
+    )
     n = two_j + 1
-    d0 = _interval_matrix(d_matrix(two_j, 0), radical_bits)
-    d1 = _interval_matrix(d_matrix(two_j, 1), radical_bits)
+    d0 = _cached_interval_d_matrix(two_j, 0, radical_bits)
+    d1 = _cached_interval_d_matrix(two_j, 1, radical_bits)
     d0_adj, d1_adj = _adjoint(d0), _adjoint(d1)
     alpha, beta = value[: 3 * n], value[3 * n :]
     alpha_t, beta_t = time_derivative[: 3 * n], time_derivative[3 * n :]
@@ -346,6 +396,12 @@ def evaluate_partitioned_positive_energy_preparation_at_support_left(
         _matrix_vector(d1, alpha_tt),
         _matrix_vector(d1, _matrix_vector(d1_adj, beta_t)),
     )
+    correction_top = _round_vector_outward(correction_top, outward_bits)
+    correction_bottom = _round_vector_outward(correction_bottom, outward_bits)
+    correction_t_top = _round_vector_outward(correction_t_top, outward_bits)
+    correction_t_bottom = _round_vector_outward(
+        correction_t_bottom, outward_bits
+    )
     inverse_mass = RationalInterval(
         Fraction(1) / mass_squared_interval.upper,
         Fraction(1) / mass_squared_interval.lower,
@@ -360,20 +416,28 @@ def evaluate_partitioned_positive_energy_preparation_at_support_left(
             correction_t_top + correction_t_bottom, inverse_mass
         ),
     )
+    physical_value = _round_vector_outward(physical_value, outward_bits)
+    physical_time_derivative = _round_vector_outward(
+        physical_time_derivative, outward_bits
+    )
 
     alpha, beta = physical_value[: 3 * n], physical_value[3 * n :]
     beta_t = physical_time_derivative[3 * n :]
     covector_q = beta
     covector_p = _add(beta_t, [-entry for entry in _matrix_vector(d1, alpha)])
+    covector_q = _round_vector_outward(covector_q, outward_bits)
+    covector_p = _round_vector_outward(covector_p, outward_bits)
     d_delta_p = _matrix_vector(d1, _matrix_vector(d1_adj, covector_p))
     a_p = _add(covector_p, _scale_real_interval(d_delta_p, inverse_mass))
-    d2 = _interval_matrix(d_matrix(two_j, 2), radical_bits)
+    d2 = _cached_interval_d_matrix(two_j, 2, radical_bits)
     d2_adj = _adjoint(d2)
     delta_d_q = _matrix_vector(d2_adj, _matrix_vector(d2, covector_q))
     preparation_q = [-entry for entry in a_p]
     preparation_p = _add(
         delta_d_q, _scale_real_interval(covector_q, mass_squared_interval)
     )
+    preparation_q = _round_vector_outward(preparation_q, outward_bits)
+    preparation_p = _round_vector_outward(preparation_p, outward_bits)
     covector_q_norm_squared_lower = _vector_norm_squared_lower(covector_q)
     covector_p_norm_squared_lower = _vector_norm_squared_lower(covector_p)
     positive_energy_lower = (
@@ -386,6 +450,7 @@ def evaluate_partitioned_positive_energy_preparation_at_support_left(
         "two_j": two_j,
         "column": column,
         "partition_count": partition_count,
+        "outward_rounding_bits": outward_bits,
         "cell_width": str(width),
         "mass_squared_interval": mass_squared_interval.serialize(),
         "support_physical_time": [str(support_left), str(support_right)],

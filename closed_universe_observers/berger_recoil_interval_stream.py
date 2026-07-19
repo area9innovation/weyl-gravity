@@ -8,12 +8,18 @@ evaluator applies the certified coupling and Peter--Weyl factors.
 
 from __future__ import annotations
 
+from copy import deepcopy
 from dataclasses import dataclass
 from fractions import Fraction
+import hashlib
+import json
 from math import factorial, isqrt
 from typing import Any, Mapping, Sequence
 
 import sympy as sp
+
+
+_EXACT_MODE_SINE_KERNEL_CACHE: dict[tuple[object, ...], dict[str, object]] = {}
 
 
 @dataclass(frozen=True)
@@ -54,6 +60,22 @@ class RationalInterval:
 
     def scale(self, scalar: Fraction | int) -> "RationalInterval":
         return self * RationalInterval.point(Fraction(scalar))
+
+    def round_outward(self, bits: int) -> "RationalInterval":
+        """Widen to the smallest enclosing dyadic interval at ``bits``."""
+        if bits < 8:
+            raise ValueError("outward rounding requires at least eight bits")
+        denominator = 1 << bits
+        scaled_lower = self.lower * denominator
+        scaled_upper = self.upper * denominator
+        lower_integer = scaled_lower.numerator // scaled_lower.denominator
+        upper_integer = -(
+            (-scaled_upper.numerator) // scaled_upper.denominator
+        )
+        return RationalInterval(
+            Fraction(lower_integer, denominator),
+            Fraction(upper_integer, denominator),
+        )
 
     def serialize(self) -> dict[str, str]:
         return {
@@ -96,12 +118,29 @@ class ComplexRationalInterval:
             self.imaginary * scalar_interval,
         )
 
+    def round_outward(self, bits: int) -> "ComplexRationalInterval":
+        return ComplexRationalInterval(
+            self.real.round_outward(bits),
+            self.imaginary.round_outward(bits),
+        )
+
     def absolute_upper(self) -> Fraction:
         # |z|_2 <= |Re z| + |Im z|, sufficient for the induced row-sum norm.
         return _absolute_upper(self.real) + _absolute_upper(self.imaginary)
 
     def serialize(self) -> dict[str, dict[str, str]]:
         return {"real": self.real.serialize(), "imaginary": self.imaginary.serialize()}
+
+
+def round_nonnegative_fraction_up(value: Fraction, bits: int) -> Fraction:
+    """Return the least ``bits``-dyadic rational not below ``value``."""
+    value = Fraction(value)
+    if value < 0 or bits < 8:
+        raise ValueError("requires a nonnegative fraction and at least eight bits")
+    denominator = 1 << bits
+    scaled = value * denominator
+    integer = -((-scaled.numerator) // scaled.denominator)
+    return Fraction(integer, denominator)
 
 
 def _sum_intervals(values: Sequence[RationalInterval]) -> RationalInterval:
@@ -125,14 +164,25 @@ def detector_profile_coefficient_interval(
     """Read one certified finite advanced-Maxwell detector coefficient.
 
     Missing serialized entries inside the validated index domain are exact
-    structural zeros.  The provider is intentionally limited to two_j<=4.
+    structural zeros.  The provider reaches ``two_j=5`` only on an explicitly
+    crosswalked first-omitted-shell carrier.
     """
     if certificate.get("result_id") != "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE":
         raise ValueError("wrong detector coefficient certificate")
     if detector not in ("D0", "D1"):
         raise ValueError("detector must be D0 or D1")
-    if not 0 <= two_j <= 4:
-        raise ValueError("finite detector coefficient provider covers only 0<=two_j<=4")
+    extended_two_j5 = all(
+        certificate.get("flags", {}).get(flag) is True
+        for flag in (
+            "DIRECT_DETECTOR_POLYNOMIAL_PROVIDER_TWO_J5_EXPORTED",
+            "TWO_J4_TO_TWO_J5_DIRECT_CARRIER_CROSSWALK_CERTIFIED",
+        )
+    )
+    maximum_two_j = 5 if extended_two_j5 else 4
+    if not 0 <= two_j <= maximum_two_j:
+        raise ValueError(
+            f"finite detector coefficient provider covers only 0<=two_j<={maximum_two_j}"
+        )
     dimension = two_j + 1
     if not 0 <= row < dimension or not 0 <= column < dimension:
         raise ValueError("row and column must lie in the selected representation")
@@ -176,7 +226,7 @@ def detector_profile_coefficient_interval(
         "imaginary": imaginary.serialize(),
         "structural_zero": structural_zero,
         "uniform_entire_series_remainders": mode["uniform_entire_series_remainders"],
-        "claim_boundary": "finite advanced Maxwell detector coefficient through two_j=4; not a massive or recoil-channel coefficient",
+        "claim_boundary": f"finite advanced Maxwell detector coefficient through two_j={maximum_two_j}; not a massive or recoil-channel coefficient",
     }
 
 
@@ -354,8 +404,18 @@ def enclose_exact_mode_sine_kernel(
     """
     if certificate.get("result_id") != "BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD":
         raise ValueError("wrong exact mode-kernel certificate")
-    if not 0 <= two_j <= 4:
-        raise ValueError("exact mode-kernel payload covers only 0<=two_j<=4")
+    extended_two_j5 = all(
+        certificate.get("flags", {}).get(flag) is True
+        for flag in (
+            "MAXWELL_AND_MASSIVE_KERNEL_BLOCKS_TWO_J5_EXPORTED",
+            "TWO_J4_TO_TWO_J5_DIRECT_CARRIER_CROSSWALK_CERTIFIED",
+        )
+    )
+    maximum_two_j = 5 if extended_two_j5 else 4
+    if not 0 <= two_j <= maximum_two_j:
+        raise ValueError(
+            f"exact mode-kernel payload covers only 0<=two_j<={maximum_two_j}"
+        )
     if family not in ("Maxwell", "massive_two_form"):
         raise ValueError("family must be Maxwell or massive_two_form")
     if not 0 <= series_order <= 5:
@@ -380,6 +440,23 @@ def enclose_exact_mode_sine_kernel(
     )
     if block is None:
         raise ValueError("requested family/form-degree block is absent")
+    block_hash = hashlib.sha256(
+        json.dumps(block, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+    cache_key = (
+        block_hash,
+        two_j,
+        family,
+        form_degree,
+        mass_squared_interval.lower,
+        mass_squared_interval.upper,
+        slab_length,
+        series_order,
+        radical_bits,
+    )
+    cached = _EXACT_MODE_SINE_KERNEL_CACHE.get(cache_key)
+    if cached is not None:
+        return deepcopy(cached)
     dimension = int(block["dimension"])
     operator = _zero_complex_matrix(dimension)
     for entry in block["operator_nonzero_entries"]:
@@ -430,7 +507,7 @@ def enclose_exact_mode_sine_kernel(
         / factorial(2 * first_omitted_order + 1)
     )
     remainder_upper = first_omitted / (1 - ratio_upper)
-    return {
+    result = {
         "two_j": two_j,
         "family": family,
         "form_degree": form_degree,
@@ -446,6 +523,8 @@ def enclose_exact_mode_sine_kernel(
         "uniform_sine_kernel_remainder_upper": str(remainder_upper),
         "claim_boundary": "one finite exact-payload block on a caller-declared rational mass/slab domain; switches, detector profiles, form contractions and I_abc remain unbound",
     }
+    _EXACT_MODE_SINE_KERNEL_CACHE[cache_key] = deepcopy(result)
+    return result
 
 
 def _polynomial_uniform_upper(

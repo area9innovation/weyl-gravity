@@ -322,8 +322,8 @@ branch.
 
 ### Immediate priority after the polarization-emitter handoff
 
-1. Bind all eight absolute-`g^3` channels at the first omitted direct-provider
-   shell `two_j=5`, then widen further with validated spectral-tail bounds and
+1. Widen the direct absolute-`g^3` feedback provider beyond the now-complete
+   first omitted shell `two_j=5`, retain validated spectral-tail bounds, and
    implement the tail-aware aggregate stopping rule.  Physical masses and
    couplings remain deferred until that
    backend is complete.  In parallel, use the
@@ -803,14 +803,15 @@ emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
 composition defects.
 
 `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` corrects the activation
-boundary.  Its fifteen finite capabilities include the four baseline consumers,
+boundary.  Its sixteen finite capabilities include the four baseline consumers,
 the detector/`Dhat_1` binding, the switched diagonal massive stage, the
 physical full-form Cauchy pair and the canonical positive-energy preparation
 coefficients described below, plus the first freely evolved retarded Maxwell
 channel, the partition-refined leading rank-two response, the matched
 absolute-`g3` feedback-channel evaluator, its cell-partitioned causal
 refinement, the D1/h0 cross-window remainder, the six mismatched-channel
-evaluator and the first-omitted-shell direct provider described below.
+evaluator, the first-omitted-shell direct provider and its all-channel/all-column
+partitioned binding described below.
 `BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` closes the
 one-shell supplied-channel capability with exact rational arithmetic: it
 sums every passive column and both feedback channels and applies
@@ -835,9 +836,9 @@ rational mass-squared interval.  It exports all six interval coefficient
 matrices and a uniform induced-row-norm sine-series tail; nonpositive masses,
 nonzero Maxwell mass and noncontracting slabs fail closed.  This runtime mass
 domain is not a physical mass choice.  The finite chain now binds those inputs
-through the matched feedback evaluation described below.  Thus the complete
-all-shell detector provider, six mismatched channels and tail-aware aggregate
-stop loop remain `OBSTRUCTED`.  Supplying masses and couplings now would still
+through the feedback evaluations described below.  Thus direct detector and
+feedback coverage beyond `two_j=5` and the tail-aware aggregate stop loop remain
+`OBSTRUCTED`.  Supplying masses and couplings now would still
 not produce a certified physical recoil interval.  The exact-rational input
 schema remains deferred.
 
@@ -988,11 +989,21 @@ content-addressed profile-moment, de Rham and kernel-series functions at
 the larger D1/h0 tail and all five Maxwell/massive kernel blocks.  Exact
 source-manifest hashes crosswalk this payload to the direct `two_j<=4`
 carrier.  The separate hashed exact-`T` stream through `two_j=138` remains
-`NO_CERTIFIED_MAP`; modes are not identified by name.  No `I_abc[5,k]` is yet
-evaluated.  The active gate is now binding all eight `two_j=5` channels,
-followed by wider direct coverage and the tail-aware aggregate stop loop;
-all-shell recoil, physical masses, quotient descent and tangent-cone
-restriction remain open.
+`NO_CERTIFIED_MAP`; modes are not identified by name.
+
+`BERGER_RECOIL_TWO_J5_ALL_CHANNEL_COLUMN_BINDING` now composes that direct
+payload with the partitioned causal backend for all eight `I_abc` channels
+and all six passive columns `k=0,...,5`: 48 blocks in total.  At two cells,
+24 support-forbidden blocks in `I_001,I_010,I_011,I_110` are exact zeros and
+all 24 causally allowed blocks have rigorous zero-containing enclosures on
+the validation mass-squared domain `[1,2]`.  A four-cell `k=0` sentinel
+strictly contracts both real and imaginary widths for every allowed path.
+The hot interval stages use declared 96-bit dyadic outward rounding, checked
+against the exact-rational backend.  No coupling or shell scalar is formed,
+so nonvanishing, recoil-corrected rank, physical masses, all-shell recoil,
+quotient descent and tangent-cone restriction remain open.  The active gate
+is direct-provider widening beyond `two_j=5` followed by the tail-aware
+aggregate stop loop.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as

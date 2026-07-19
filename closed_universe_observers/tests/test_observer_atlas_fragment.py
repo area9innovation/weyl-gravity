@@ -325,3 +325,23 @@ def test_first_omitted_shell_provider_keeps_feedback_and_exact_t_map_open():
     assert "BERGER_RECOIL_FIRST_OMITTED_SHELL_PROVIDER_TWO_J5" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_two_j5_all_channel_column_binding_is_finite_and_fail_closed():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"]
+        == "observer.berger.detector_profile.recoil_two_j5_all_channel_column_binding"
+    )
+    assert row["descriptions"]["causal"] == "CERTIFIED"
+    assert row["descriptions"]["observational"] == "CERTIFIED"
+    assert row["observer_data"]["detector_response"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["response_rank"]["status"] == "OPEN"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    statement = row["observer_data"]["detector_response"]["statement"]
+    assert "48 directed" in statement
+    assert "24 support-forbidden" in statement
+    assert "24 causally allowed" in statement
+    assert "BERGER_RECOIL_TWO_J5_ALL_CHANNEL_COLUMN_BINDING" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
