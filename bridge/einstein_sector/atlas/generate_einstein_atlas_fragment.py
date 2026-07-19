@@ -29,6 +29,7 @@ CERTIFICATES = {
     "exceptional_nonzero_k_cofiber": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
     "exceptional_resonance": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_all_m_resonance.json",
     "exceptional_difference_census": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_difference_frequency_nonresonance.json",
+    "exceptional_ad_pivots": ROOT / "bridge/certificates/einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots.json",
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
@@ -67,6 +68,7 @@ CERTIFICATES = {
     "fixed_ell_constant_twist_factorization": ROOT / "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.json",
     "fixed_ell_constant_twist_zero_map": ROOT / "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.json",
     "fixed_ell_constant_twist_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.json",
+    "nonzero_k_constant_twist_same_shell": ROOT / "bridge/certificates/einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell.json",
     "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
     "global_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
     "extra_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
@@ -232,6 +234,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OPEN", "The frequency census leaves one live positive-sum generalized-zero-global times ell=2-extra source column whose coefficientwise bounded zero locus remains open."), ("CERTIFIED", "Off-shell difference-frequency channels admit finite exponential-polynomial inverses; the complete smooth theorem remains separate."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
             _evidence("exceptional_difference_census", "exceptional_resonance", "exceptional_current"),
             "This closes only k=0 difference-frequency arithmetic. The live global-times-ell2-extra source, opposite nonzero momenta, complete bounded mixed cone, causal propagation and quantum interpretation remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.exceptional_ell1_ad_resonance_pivots",
+            _scope(theory="Weyl-Maxwell target", carrier="radion position a or circumference velocity d crossed with one exceptional axial/polar extra dipole", degree=2, parity="axial and polar kept separate", ell="0 x 1 -> 1", m="all by SO3 multiplicity one", k=0, omega="omega_exceptional^2=4/3"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The exceptional axial and polar representatives and their physical adjoint cokernel rows are fixed by the direct ell=1 operators."),
+            ("CERTIFIED", "Both exceptional branches have nonradical action-derived currents; this row uses their operator adjoints rather than identifying the parities."),
+            ("CERTIFIED", "The universal bounded polynomial ledger removes b and twist velocity B before the displayed a/d pivots are applied."),
+            ("CERTIFIED", "Direct four-dimensional full-time sources give a nonzero a*t pivot and, after a=0, a nonzero d pivot in each parity."),
+            _second_order(("OPEN", "The a pivot is unscreenable, but the constant d pivot shares its L=1 shell with the live exceptional-times-ell2-extra difference channel; the joint zero locus is open."), ("CERTIFIED", "The complete finite-support smooth theorem permits finite secular inverses once the five moment maps vanish."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("exceptional_ad_pivots", "exceptional_difference_census", "exceptional_resonance", "abstract_cone"),
+            "This is a coefficient theorem, not a complete exceptional mixed bounded cone. The eight exceptional-times-ell2-extra difference columns, nonzero momentum and higher lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.extra.exceptional_ell1_nonzero_k",
@@ -558,6 +572,18 @@ def entries() -> list[dict[str, object]]:
             "The bounded product cone is certified for every one fixed ell>=2 at k=0. Finite multi-ell sums, nonzero momentum, causal propagation and higher lifecycles remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.nonzero_k_constant_twist_same_shell",
+            _scope(theory="Weyl-Maxwell target", carrier="one nonzero constant axial twist position crossed with one fixed generic ell and one real signed nonzero-momentum q/p wave block", degree=2, parity="axial and polar multiplicities retained", ell="every one fixed integer ell>=2", m="all m=-ell,...,ell relative to the twist axis", k="every allowed 2*pi*n/L with n!=0; conjugate +/-k pair retained", omega="Einstein q-minus, q-plus and extra p shells kept distinct", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The q-minus, q-plus and p shells retain their exact nonzero-k dispersions and are not merged."),
+            ("CERTIFIED","The action-derived axial/polar shell Grams are nondegenerate on every physical momentum fibre."),
+            ("OPEN","The compact stabilizer maps remain separate necessary conditions; this row isolates the independent twist-wave same-shell functional."),
+            ("CERTIFIED","Feynman--Hellmann gives q-minus/+ scalars +/-4*k*sqrt(2*lambda) and p scalar -2*k, each multiplying (A_hat dot J_ell) and the nondegenerate branch Gram; the common kernel is exactly m_A=0, and both neighboring angular outputs are invertible."),
+            _second_order(("OPEN","The complete A-times-wave bilinear column has a bounded correction exactly on the m_A=0 face; wave-wave terms, opposite-momentum cross terms and other global constraints keep the full tangent equation open."),("NOT_APPLICABLE","Secular corrections can absorb a same-shell source; this theorem does not reclassify the already certified smooth-secular cone."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _evidence("nonzero_k_constant_twist_same_shell","fixed_ell_constant_twist_zero_map","fixed_ell_constant_twist_factorization","axial_current","polar_current"),
+            "The theorem is complete only for the constant-twist-times-wave bilinear column at one fixed generic ell and one nonzero absolute momentum. Opposite-momentum wave-wave terms, multiple |k| fibres, the full bounded tangent equation and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
             _scope(theory="Weyl-Maxwell target", carrier="complete standard globals plus every axial/polar q/p primary in one arbitrary fixed generic ell block", degree=2, parity="homogeneous, axial and polar", ell="one fixed integer ell>=2 with global ell=0,1 data adjoined", m="all wave m=-ell,...,ell and all three real twist components", k=0, omega="generalized zero and every fixed-ell q/p shell"),
             {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
@@ -717,6 +743,15 @@ def build() -> dict[str, object]:
         raise AssertionError("balanced second-order extension input changed")
     if not records["exceptional_resonance"]["classification"]["complete_all_m_exceptional_ell1_two_polarization_cone_second_order_obstructed"]:
         raise AssertionError("exceptional all-m input changed")
+    exceptional_ad = records["exceptional_ad_pivots"]["classification"]
+    if not (
+        exceptional_ad["a_times_exceptional_leading_pivot_nonzero_both_parities"]
+        and exceptional_ad["d_times_exceptional_constant_pivot_nonzero_both_parities"]
+        and exceptional_ad["exceptional_times_ell2_extra_difference_collision_open"]
+    ):
+        raise AssertionError("exceptional a/d pivot input changed")
+    if exceptional_ad["complete_exceptional_mixed_bounded_zero_locus_solved"] or exceptional_ad["causal_or_quantum_claim"]:
+        raise AssertionError("exceptional a/d pivot theorem exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

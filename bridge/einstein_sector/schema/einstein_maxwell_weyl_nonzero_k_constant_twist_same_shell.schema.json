@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Einstein-Maxwell/Weyl-Maxwell nonzero-k constant-twist same-shell theorem",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "scope",
+    "flat_connection_Feynman_Hellmann", "neighboring_output_extension", "action_normalized_resonance_operators",
+    "kernel_theorem", "correction_classes", "classification", "interpretation",
+    "next_gate", "claim_boundary", "provenance", "verification_receipt",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-nonzero-k-constant-twist-same-shell-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_NONZERO_K_CONSTANT_TWIST_SAME_SHELL"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "REDUCED-MODE"}
+    },
+    "kernel_theorem": {
+      "type": "object",
+      "required": [
+        "each_branch_kernel", "complete_same_shell_kernel",
+        "kernel_dimension_per_positive_signed_momentum_fibre",
+        "necessary_condition", "contrast_with_rest_frame"
+      ]
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "every_fixed_ell_every_allowed_nonzero_k_same_shell_operator_certified",
+        "all_axial_polar_q_p_multiplicities_covered",
+        "same_shell_kernel_exactly_axisymmetric_about_twist",
+        "rest_frame_spectator_contrast_exact",
+        "neighboring_outputs_invertible_for_every_allowed_nonzero_k",
+        "complete_constant_twist_times_wave_bilinear_column_classified",
+        "complete_bounded_second_order_equation_solved",
+        "opposite_momentum_cross_terms_classified",
+        "multiple_absolute_momentum_fibres_classified",
+        "causal_or_quantum_claim"
+      ],
+      "properties": {
+        "every_fixed_ell_every_allowed_nonzero_k_same_shell_operator_certified": {"const": true},
+        "all_axial_polar_q_p_multiplicities_covered": {"const": true},
+        "same_shell_kernel_exactly_axisymmetric_about_twist": {"const": true},
+        "rest_frame_spectator_contrast_exact": {"const": true},
+        "neighboring_outputs_invertible_for_every_allowed_nonzero_k": {"const": true},
+        "complete_constant_twist_times_wave_bilinear_column_classified": {"const": true},
+        "complete_bounded_second_order_equation_solved": {"const": false},
+        "opposite_momentum_cross_terms_classified": {"const": false},
+        "multiple_absolute_momentum_fibres_classified": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      }
+    }
+  }
+}

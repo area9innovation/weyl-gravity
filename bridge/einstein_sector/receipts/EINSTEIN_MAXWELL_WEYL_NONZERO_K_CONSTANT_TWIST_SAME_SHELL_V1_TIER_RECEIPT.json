@@ -1,0 +1,56 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_NONZERO_K_CONSTANT_TWIST_SAME_SHELL",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell.py": "092e17d92e12d4582ed8008dcf1a047f340b88be79320773b32ce544a7390282",
+    "bridge/certificates/einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell.json": "ebe4e41b64453d11f181dcac63564ed682637594e968992cb1db3cf2c81e3c6c",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell.schema.json": "1a24769aaa617674d536fea165f5f7dce820516dc10d9591663aa2cd86dc4a01",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell.py": "03f473d3fa5aec0edb9764925e1933125c6e72240568f04348e1b3dadd6159d6",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell.py": "ad678dcf98d3105bf2094e22ebba3d08567434665e94e23f3535f4eeb31a9f82",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-nonzero-k-constant-twist-same-shell.md": "c4e1945c231257b3b9bc2fc217ccb4df75614b8f609a6e2a12f484d2eabc19d1",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "9a50484041795403a465fb01f6a6b4819b533cb3a55434c8f476bb94940ac018",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "c13021312abededbff37586a6e992a55242431f4d6ba8ca26d971e1fc5893eb3",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "76d43c8e3762bb7465e7e4e954978d79f1fc632315a354ca8dcc7ce1e4cb58e0",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "a2796fbdba84142110ce3751ac0c91e6f3da9749f654fba047871509280c159f",
+    "notes/d-quotient-einstein-team-brief.md": "92813af54ba57fa7f55f02aca861d945b1b28fb9ad755bc4ef3d8cdfcc9d0e66"
+  },
+  "claim": {
+    "certified": "For every fixed ell>=2 and every allowed nonzero compact momentum, the complete constant-twist-times-wave bilinear source has a bounded correction exactly on the m_A=0 axial-plus-polar q/p face.",
+    "proof": "Flat lifted SO(3) covariantization and Feynman-Hellmann differentiation give nonzero branch scalars multiplying nondegenerate action Grams, fixing the same-shell kernel. All neighboring generic target factors depend only on omega^2-k^2 and reproduce the exact invertible fixed-ell ledger; the exceptional ell=2 to L=1 channel is separately off shell.",
+    "open": "Wave-wave opposite-momentum terms, multiple absolute-momentum fibres, other standard-global constraints, the full bounded tangent equation, causal propagation and higher lifecycles."
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.18,
+      "commands": [
+        "python3 -m py_compile <producer, verifier, tests and atlas consumers>",
+        "python3 -m json.tool <certificate, schema, receipt and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.54,
+      "max_rss_kb": 60412,
+      "tests_run": 36,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The flat-connection naturality theorem, physical p/q primary decompositions, nonradical action-derived currents, fixed-ell neighboring-output ledger and exceptional nonzero-k solution shells are unchanged exact hashed dependencies."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No complete bounded, causal, all-orders or programme-wide freeze is promoted."
+    }
+  }
+}

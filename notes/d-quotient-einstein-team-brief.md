@@ -2772,6 +2772,53 @@ cone holds for arbitrary finite generic `ell>=2` sums at `k=0`, with `A`
 free.  Infinite completion, exceptional inputs, nonzero momentum and causal
 propagation remain separate fail-closed scopes.
 
+The first nonzero-momentum boundary is now exact.  For every one fixed
+generic `ell>=2` and every allowed `k=2*pi*n/L` with `n!=0`, flat-connection
+Feynman--Hellmann differentiation gives the action-normalized constant-twist
+same-shell operators
+
+```text
+q_minus: (A_hat.J_ell) tensor ( 4*k*sqrt(2*lambda)*G_q_minus),
+q_plus:  (A_hat.J_ell) tensor (-4*k*sqrt(2*lambda)*G_q_plus),
+p:       (A_hat.J_ell) tensor (-2*k*G_p).
+```
+
+All three branch Grams are nondegenerate on the physical fibres.  Hence a
+nonzero twist and a travelling wave have common same-shell kernel exactly
+`m_A=0`, including every axial/polar multiplicity; the conjugate `-k` block
+changes only the overall sign.  This is the sharp contrast with the `k=0`
+spectator theorem.  Certificate
+`EINSTEIN_MAXWELL_WEYL_NONZERO_K_CONSTANT_TWIST_SAME_SHELL` and atlas row
+`einstein.ph.wm.interaction.nonzero_k_constant_twist_same_shell` record the
+result.  The neighboring `L=ell-1,ell+1` target tests depend only on
+`s=omega^2-k^2`, so the certified fixed-`ell` ledger extends unchanged; the
+exceptional `ell=2 -> L=1` output is separately off shell relative to the
+nonzero-`k` exceptional invariants `s=4,4/3`.  Thus the complete
+constant-twist-times-wave bilinear column has a bounded correction exactly on
+the `m_A=0` face.  The full tangent equation remains `OPEN`: wave--wave
+opposite-momentum terms, multiple `|k|` fibres and the other global polynomial
+constraints have not been solved.  `CAUSAL_RETARDED` remains
+`NO_CERTIFIED_MAP`.
+
+The first exceptional-input successor is also direct.  Full four-dimensional
+`a,d` cross sources against the axial and polar `ell=1,k=0` extra dipoles give
+nonzero adjoint polynomials
+
+```text
+axial: a -> 4*i*(4*sqrt(3)*t+15*i)/9, d -> 8*sqrt(3)*i/9,
+polar: a -> -i*(2*sqrt(3)*t-3*i),     d -> -sqrt(3)*i.
+```
+
+The leading `a*t` coefficient therefore removes `a` from every bounded mixed
+exceptional branch, with all `m` promoted by `SO(3)` multiplicity one.  The
+constant `d` pivot is not yet globally unscreenable: the live difference
+collision `omega_(ell2 extra)-omega_(exceptional)=omega_(exceptional)` lets an
+exceptional-times-`ell=2`-extra source enter the same `L=1` adjoint block.
+The next gate is exactly its eight parity/polarization columns, solved jointly
+with the `d` control column and the exceptional `L=2` self-defect.  Atlas row
+`einstein.ph.wm.interaction.exceptional_ell1_ad_resonance_pivots` remains
+bounded `OPEN`; causal and quantum maps remain fail-closed.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

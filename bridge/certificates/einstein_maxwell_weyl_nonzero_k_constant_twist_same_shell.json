@@ -1,0 +1,251 @@
+{
+  "action_normalized_resonance_operators": {
+    "Einstein_minus_q": "(A_hat dot J_ell) tensor (4*k*sqrt(2*lambda)*G_q_minus)",
+    "Einstein_plus_q": "(A_hat dot J_ell) tensor (-4*k*sqrt(2*lambda)*G_q_plus)",
+    "Gram_dimensions": {
+      "G_p": 4,
+      "G_q_minus": 2,
+      "G_q_plus": 2
+    },
+    "Gram_nondegeneracy": "CERTIFIED by the action-derived axial/polar Lee-Wald shell pairings on every physical fibre",
+    "extra_p": "(A_hat dot J_ell) tensor (-2*k*G_p)",
+    "signed_momentum_reality": "the -k operator is the sign reverse of the +k operator and has the same kernel; conjugate reality therefore preserves the condition"
+  },
+  "claim_boundary": "This is an exact necessary-and-sufficient theorem for bounded solvability of the constant-twist-times-wave bilinear column at one fixed generic ell and one nonzero absolute momentum. It does not solve wave-wave terms or the full tangent equation, classify opposite-momentum cross terms or multiple |k| fibres, or support causal, all-orders, residual, observational, particle or quantum claims.",
+  "classification": {
+    "all_axial_polar_q_p_multiplicities_covered": true,
+    "causal_or_quantum_claim": false,
+    "complete_bounded_second_order_equation_solved": false,
+    "complete_constant_twist_times_wave_bilinear_column_classified": true,
+    "every_fixed_ell_every_allowed_nonzero_k_same_shell_operator_certified": true,
+    "multiple_absolute_momentum_fibres_classified": false,
+    "neighboring_outputs_invertible_for_every_allowed_nonzero_k": true,
+    "opposite_momentum_cross_terms_classified": false,
+    "rest_frame_spectator_contrast_exact": true,
+    "same_shell_kernel_exactly_axisymmetric_about_twist": true
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "claim": "the complete A-times-wave bilinear source has a bounded correction exactly on the displayed m_A=0 face; same-shell necessity and neighboring-output sufficiency are both certified",
+      "full_equation": "OPEN: wave-wave terms, opposite-momentum cross terms and simultaneous global constraints are not solved here",
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "a secular correction may absorb a same-shell source; this theorem classifies the bounded resonant projection only",
+      "status": "NOT_APPLICABLE"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flat_connection_Feynman_Hellmann": {
+    "covariant_momentum": "K_alpha=k+alpha*j",
+    "dalpha_p_at_alpha0": "-2*j*k",
+    "dalpha_q_at_alpha0": "4*j*k*(k**2 + lambda - omega**2)",
+    "nonvanishing_domain": "lambda=ell(ell+1)>=6, k=2*pi*n/L with n!=0, and nonzero spin eigenvalue j",
+    "on_shell_action_Gram_scalars": {
+      "Einstein_minus_q": "4*sqrt(2)*j*k*sqrt(lambda)",
+      "Einstein_plus_q": "-4*sqrt(2)*j*k*sqrt(lambda)",
+      "extra_p": "-2*j*k"
+    },
+    "p_of_K": "-alpha**2*j**2 - 2*alpha*j*k - k**2 - lambda + omega**2 + 2/3",
+    "q_of_K": "alpha**4*j**4 + 4*alpha**3*j**3*k + 6*alpha**2*j**2*k**2 + 2*alpha**2*j**2*lambda - 2*alpha**2*j**2*omega**2 + 4*alpha*j*k**3 + 4*alpha*j*k*lambda - 4*alpha*j*k*omega**2 + k**4 + 2*k**2*lambda - 2*k**2*omega**2 + lambda**2 - 2*lambda*omega**2 - 2*lambda + omega**4",
+    "regular_action_Gram_derivative_checks": {
+      "p": {
+        "Gprime_times_primary_on_shell_rank": 0,
+        "dimension": 4
+      },
+      "q_minus": {
+        "Gprime_times_primary_on_shell_rank": 0,
+        "dimension": 2
+      },
+      "q_plus": {
+        "Gprime_times_primary_on_shell_rank": 0,
+        "dimension": 2
+      }
+    }
+  },
+  "generality_level": "G4_EVERY_FIXED_GENERIC_ELL_EVERY_ALLOWED_NONZERO_K_ALL_M_BOTH_PARITIES_ALL_PRIMARIES",
+  "interpretation": "Constant twist is a bounded spectator only for rest waves. A travelling compact mode has nonzero group-velocity derivative, so twist holonomy produces an action-normalized same-shell source on every non-axisymmetric magnetic component. On the exact axisymmetric kernel, both neighboring angular outputs are off shell and have bounded inverses, closing the entire A-times-wave bilinear column.",
+  "kernel_theorem": {
+    "angular_spectrum": "spec(A_hat dot J_ell)={-ell,...,ell} up to the fixed nonzero normalization",
+    "complete_same_shell_kernel": "V_(ell,m_A=0) tensor (M_q_minus direct_sum M_q_plus direct_sum M_p)",
+    "contrast_with_rest_frame": "at k=0 every scalar vanishes and the complete fixed-ell wave block is the same-shell kernel",
+    "each_branch_kernel": "V_(ell,m_A=0) tensor M_branch",
+    "kernel_dimension_per_positive_signed_momentum_fibre": 8,
+    "multiplicity_dimensions": {
+      "p": 4,
+      "q_minus": 2,
+      "q_plus": 2
+    },
+    "necessary_condition": "for A!=0 and k!=0, every bounded second-order tangent must have only m_A=0 wave coefficients on each q/p branch",
+    "nonzero_A_axis_choice": "rotate A_hat to e_z"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "neighboring_output_extension": {
+    "channels": {
+      "L=ell+1": {
+        "all_generic_target_blocks_invertible": true,
+        "generic_ledger": {
+          "input_p_shell": {
+            "k_cancels": true,
+            "omega_squared": "ell*(ell + 1) + k**2 - 2/3",
+            "target_p": "-2*(ell + 1)",
+            "target_q": "2*(9*ell**2 + 21*ell + 14)/9"
+          },
+          "input_q_minus_shell": {
+            "k_cancels": true,
+            "omega_squared": "-sqrt(2)*sqrt(ell)*sqrt(ell + 1) + ell*(ell + 1) + k**2",
+            "target_p": "-(3*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell + 4)/3",
+            "target_q": "4*(sqrt(2)*ell**(3/2)*sqrt(ell + 1) + sqrt(2)*sqrt(ell)*sqrt(ell + 1) + ell**2 + ell)"
+          },
+          "input_q_plus_shell": {
+            "k_cancels": true,
+            "omega_squared": "sqrt(2)*sqrt(ell)*sqrt(ell + 1) + ell*(ell + 1) + k**2",
+            "target_p": "-(-3*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell + 4)/3",
+            "target_q": "4*(-sqrt(2)*ell**(3/2)*sqrt(ell + 1) - sqrt(2)*sqrt(ell)*sqrt(ell + 1) + ell**2 + ell)"
+          }
+        }
+      },
+      "L=ell-1": {
+        "all_generic_target_blocks_invertible": true,
+        "generic_ledger": {
+          "input_p_shell": {
+            "k_cancels": true,
+            "omega_squared": "ell*(ell + 1) + k**2 - 2/3",
+            "target_p": "2*ell",
+            "target_q": "2*(9*ell**2 - 3*ell + 2)/9"
+          },
+          "input_q_minus_shell": {
+            "k_cancels": true,
+            "omega_squared": "-sqrt(2)*sqrt(ell)*sqrt(ell + 1) + ell*(ell + 1) + k**2",
+            "target_p": "(-3*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell + 2)/3",
+            "target_q": "4*(-sqrt(2)*ell**(3/2)*sqrt(ell + 1) + ell**2 + ell)"
+          },
+          "input_q_plus_shell": {
+            "k_cancels": true,
+            "omega_squared": "sqrt(2)*sqrt(ell)*sqrt(ell + 1) + ell*(ell + 1) + k**2",
+            "target_p": "(3*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell + 2)/3",
+            "target_q": "4*(sqrt(2)*ell**(3/2)*sqrt(ell + 1) + ell**2 + ell)"
+          }
+        }
+      },
+      "ell=2 exceptional L=1": {
+        "all_exceptional_target_blocks_invertible": true,
+        "exact_separations": {
+          "p": [
+            "4/3",
+            "4"
+          ],
+          "q_minus": [
+            "-2*(-1 + sqrt(3))",
+            "-2*(-7 + 3*sqrt(3))/3"
+          ],
+          "q_plus": [
+            "2*(1 + sqrt(3))",
+            "2*(3*sqrt(3) + 7)/3"
+          ]
+        },
+        "input_invariants": {
+          "p": "16/3",
+          "q_minus": "6 - 2*sqrt(3)",
+          "q_plus": "2*sqrt(3) + 6"
+        },
+        "target_solution_invariants": [
+          "4",
+          "4/3"
+        ]
+      }
+    },
+    "complete_neighboring_output_inverse": true,
+    "momentum_invariant": "s=omega^2-k^2",
+    "proof": "The twist has zero circle momentum, so every A-times-wave output retains K=k. Substitution omega^2=k^2+s cancels k from each target p/q factor, reproducing the exact fixed-ell neighbor ledger. The ell=2 lower L=1 channel is checked against the separately certified nonzero-k exceptional solution shells."
+  },
+  "next_gate": "combine the certified twist-wave column with wave-wave opposite-momentum terms and the remaining standard-global polynomial constraints, then treat multiple absolute-momentum fibres",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell.py",
+    "generator_sha256": "092e17d92e12d4582ed8008dcf1a047f340b88be79320773b32ce544a7390282",
+    "inputs": {
+      "angular_factorization": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.json",
+        "sha256": "936a935be9183591aa54c37cb4fa35488690167b4c93819399daf6bd34db5aea"
+      },
+      "axial_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "axial_primary": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
+        "sha256": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb"
+      },
+      "exceptional_nonzero_k": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
+        "sha256": "00fc3fa6da7273ca3ae8a5c51a973f5a91b898b58b49e4bf2d7d0c30711f994c"
+      },
+      "k0_naturality": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.json",
+        "sha256": "002defeac1047a1886c7d4e172941869633fceef7a2d8d953f7c3562bb30f38c"
+      },
+      "k0_neighbor_ledger": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.json",
+        "sha256": "3d91382ed023b0e6bd8f0ca637824a2460de8a18eb9b6b2050dcf3faa61bf439"
+      },
+      "polar_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      },
+      "polar_primary": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_NONZERO_K_CONSTANT_TWIST_SAME_SHELL",
+  "result_state": "NONZERO_MOMENTUM_CONSTANT_TWIST_BOUNDED_MIXED_COLUMN_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-nonzero-k-constant-twist-same-shell-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell.schema.json",
+  "schema_sha256": "1a24769aaa617674d536fea165f5f7dce820516dc10d9591663aa2cd86dc4a01",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic mixed-source correction",
+    "carrier": "one nonzero constant axial twist position crossed with one fixed generic ell and one real signed-momentum q/p wave block",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "every one fixed integer ell>=2",
+    "k": "every allowed k=2*pi*n/L with n!=0; the real carrier contains the conjugate +/-k pair",
+    "m": "all m=-ell,...,ell relative to the twist axis",
+    "omega": "Einstein q-minus, q-plus and extra p shells kept distinct",
+    "parity": "axial and polar multiplicities retained",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.18,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 0.54,
+      "max_rss_kb": 60412,
+      "status": "PASS",
+      "tests_run": 36
+    },
+    "tier_2": {
+      "criterion": "the flat-connection naturality theorem, physical p/q primary decompositions and nonradical action-derived currents are unchanged hashed inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "no complete bounded, causal, all-orders or programme-wide lifecycle is promoted",
+      "status": "NOT_RUN"
+    }
+  }
+}

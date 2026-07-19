@@ -52,6 +52,14 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
         self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "OPEN")
 
+    def test_nonzero_k_constant_twist_same_shell_is_sharp_but_not_sufficient(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.nonzero_k_constant_twist_same_shell"]
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("exactly m_A=0", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertIn("Opposite-momentum wave-wave terms", entry["claim_boundary"])
+        self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
     def test_abd_matrix_is_input_not_full_nonlinear_theorem(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.abd_times_ell2_extra"]
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
@@ -204,6 +212,16 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
         self.assertIn("c,W_x,A", second_order["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertIn("Infinite completion", entry["claim_boundary"])
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
+    def test_exceptional_ad_pivots_keep_the_live_collision_open(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.exceptional_ell1_ad_resonance_pivots"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("a*t pivot", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertIn("exceptional-times-ell2-extra", second_order["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
     def test_constant_twist_projector_repair_is_authoritative(self) -> None:

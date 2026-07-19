@@ -241,6 +241,16 @@ def verify() -> None:
         raise AssertionError("finite multi-ell free twist position was hidden")
     if finite_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("finite multi-ell causal lifecycle was over-promoted")
+    exceptional_ad = by_id["einstein.ph.wm.interaction.exceptional_ell1_ad_resonance_pivots"]
+    exceptional_ad_second = exceptional_ad["mode_data"]["second_order"]
+    if exceptional_ad["descriptions"]["nonlinear"] != "OPEN":
+        raise AssertionError("exceptional a/d pivot row over-promoted the bounded cone")
+    if exceptional_ad["mode_data"]["resonance"]["status"] != "CERTIFIED" or "a*t pivot" not in exceptional_ad["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("exceptional a/d direct pivot was hidden")
+    if exceptional_ad_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or "exceptional-times-ell2-extra" not in exceptional_ad_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("exceptional difference collision was not fail-closed")
+    if exceptional_ad_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("exceptional a/d causal lifecycle was over-promoted")
     fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
     if fixed_ell_twist["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("fixed-ell bounded lifecycle was not promoted")
@@ -250,6 +260,17 @@ def verify() -> None:
         raise AssertionError("fixed-ell zero multiplicity matrices were hidden")
     if fixed_ell_twist["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
         raise AssertionError("fixed-ell bounded cone was hidden")
+    travelling_twist = by_id["einstein.ph.wm.interaction.nonzero_k_constant_twist_same_shell"]
+    if travelling_twist["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("nonzero-k twist same-shell theorem was not registered")
+    if travelling_twist["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("nonzero-k twist resonance functional was hidden")
+    if "exactly m_A=0" not in travelling_twist["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("nonzero-k twist kernel was hidden")
+    if travelling_twist["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("nonzero-k full bounded gate was over-promoted")
+    if travelling_twist["mode_data"]["second_order"]["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("nonzero-k twist causal lifecycle was over-promoted")
     repair = by_id["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
     if repair["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("constant-twist projector repair was not promoted")

@@ -1639,10 +1639,14 @@ also classified at the same-shell level:
 `EINSTEIN_MAXWELL_WEYL_NONZERO_K_CONSTANT_TWIST_SAME_SHELL` proves that the
 constant-twist Feynman--Hellmann operator has kernel exactly `m_A=0` on every
 fixed generic axial/polar `q/p` block and every allowed nonzero momentum.
-This row is an input to Bridge 1, not a nonlinear bridge morphism.  Its full
-bounded extension gate remains fail-closed pending neighboring angular
-outputs, opposite-momentum cross terms, multiple `|k|` fibres and the other
-global constraints; the causal row remains `NO_CERTIFIED_MAP`.
+The neighboring angular outputs are uniformly invertible because their target
+factors depend only on `omega^2-k^2`; the exceptional `ell=2 -> L=1` lower
+channel is also off shell.  Hence the entire constant-twist-times-wave
+bilinear column is bounded-solvable exactly on that face.  This row is an
+input to Bridge 1, not a nonlinear bridge morphism.  The full bounded tangent
+gate remains fail-closed pending wave--wave opposite-momentum terms, multiple
+`|k|` fibres and the other global constraints; the causal row remains
+`NO_CERTIFIED_MAP`.
 
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared
