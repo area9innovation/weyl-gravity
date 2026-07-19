@@ -333,7 +333,8 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_l4_incidence_reduction"]
         second = entry["mode_data"]["second_order"]
         self.assertIn("separately tuned circumference fibre", entry["mode_data"]["dispersion"]["statement"])
-        self.assertIn("four distinct nonzero real generalized pencil roots", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("four distinct nonzero real generalized roots", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("three-root cancellation witness", entry["mode_data"]["lee_wald"]["statement"])
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
         self.assertIn("dimension-22 rank-18 open component", entry["mode_data"]["resonance"]["statement"])
         self.assertIn("full ideal remain unclassified", entry["mode_data"]["resonance"]["statement"])

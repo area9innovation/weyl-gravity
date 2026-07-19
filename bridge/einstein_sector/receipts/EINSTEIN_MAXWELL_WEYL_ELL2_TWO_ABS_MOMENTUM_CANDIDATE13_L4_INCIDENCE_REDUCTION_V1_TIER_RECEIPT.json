@@ -3,12 +3,12 @@
   "date": "2026-07-19",
   "scope": "Exact candidate-13 L4 bilinear-pencil normal form and generic rank-18 incidence component.",
   "content_sha256": {
-    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.json": "6d3ab6f841cab3a982a6433863c7420cc6796604154aee960ca5e0e4250d8dbe",
-    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.py": "768ce5a23df376b10074f1a07d3d69d3c33bf23b451327152048891e47b90c57",
-    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.schema.json": "c1670486b7f5b06306c37d1b0e90b171c5924972d7c3c801d49dc00a182e0dc5",
-    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.py": "af8b8d539b25f33d10cd393c5bf6a6d434974fc460ce100902562096d611eb8a",
-    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.py": "127015648f784b7955d0838b8e8331221a6be57f57bb41d43e39cbf70cbaabf5",
-    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-L4-incidence-reduction.md": "45aaaa1b4e7db388774e3c7c2c8ed898d5404089463f455a6b51622cfc231ba2"
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.json": "260fcb1942b79f22d146dd0f3a4defc20903a8c21f79de0ad702f3f7b5c19262",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.py": "df001caa2eb9fb693a391db9b122e8e80a103aef8e3dd28490d1bba99e769a4c",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.schema.json": "d85f0fad4d42787114c054d07eab31ca4b69005eef86137c67e382c09f0ba9d7",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.py": "e30c0cc5ac18d0db556cf1181a0daeb0b7d9ecf03d168c84231c18b8e4cf2dbf",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.py": "3f216a79c97c0e6ca2430c95375cba66c1932f6f3fd3571c4c34a58688284497",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-L4-incidence-reduction.md": "b7291bfffe16ab137bc7711289dacfffc434d7cb32e3b627c8c72c0fa7fc4ca5"
   },
   "verification": {
     "tier_0": {
@@ -32,20 +32,20 @@
     },
     "tier_2": {
       "status": "PASS",
-      "producer_elapsed_seconds": 1.06,
-      "producer_max_rss_kib": 56408,
-      "independent_verifier_elapsed_seconds": 1.24,
-      "independent_verifier_max_rss_kib": 60400,
+      "producer_elapsed_seconds": 1.26,
+      "producer_max_rss_kib": 56300,
+      "independent_verifier_elapsed_seconds": 1.29,
+      "independent_verifier_max_rss_kib": 60532,
       "commands": [
         "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction --write",
         "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction"
       ],
-      "reason": "Producer and verifier independently reconstruct the exact bilinear-form pencil, certify four real simple generalized roots, and reproduce the symbolic rank-18 minor on the declared binary-quartic source fixture."
+      "reason": "Producer and verifier independently reconstruct the exact bilinear-form pencil, certify four real simple generalized roots, reproduce the symbolic rank-18 minor and verify the three-root cancellation identity."
     },
     "tier_3": {
       "status": "NOT_RUN",
       "reason": "This is a normal-form and generic-component gate. The degenerate rank stratification, full candidate-13 ideal, same-fibre sources, Taub intersections and complete tangent cone remain open."
     }
   },
-  "claim_boundary": "Candidate 13 is reduced exactly and its irreducible dimension-22 generic rank-18 incidence component is certified. The full zero variety is not classified until every degenerate source-rank stratum is bounded. Same-fibre, Taub, correction, causal, residual and quantum claims remain OPEN or NO_CERTIFIED_MAP."
+  "claim_boundary": "Candidate 13 is reduced exactly, its irreducible dimension-22 generic rank-18 incidence component is certified, and a genuine three-root cancellation is explicit. The full zero variety is not classified until every degenerate source-rank stratum is bounded. Same-fibre, Taub, correction, causal, residual and quantum claims remain OPEN or NO_CERTIFIED_MAP."
 }

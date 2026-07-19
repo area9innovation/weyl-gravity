@@ -108,12 +108,17 @@ def verify() -> None:
     generic = certificate["generic_open_stratum"]
     if generic["rank_18_minor"] != expected_minor or generic["linear_rank"] != 18 or generic["kernel_dimension"] != 2 or generic["incidence_dimension_over_C"] != 22:
         raise AssertionError("candidate-13 generic component changed")
+    lambda_1, lambda_2, lambda_3 = sp.symbols("lambda_1 lambda_2 lambda_3")
+    weights = [lambda_2 - lambda_3, lambda_3 - lambda_1, lambda_1 - lambda_2]
+    if sp.expand(sum(weights)) != 0 or sp.expand(sum(root * weight for root, weight in zip((lambda_1, lambda_2, lambda_3), weights))) != 0:
+        raise AssertionError("candidate-13 three-root cancellation changed")
     classification = certificate["classification"]
     if not (
         classification["candidate_13_exact_pencil_reduction_certified"]
         and classification["four_distinct_real_generalized_roots_certified"]
         and classification["generic_rank_18_open_component_certified"]
         and classification["generic_component_dimension_22_certified"]
+        and classification["three_root_cancellation_witness_certified"]
     ):
         raise AssertionError("candidate-13 reduction was weakened")
     if (

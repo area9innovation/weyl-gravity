@@ -181,6 +181,13 @@ def build() -> dict[str, object]:
             "incidence_dimension_over_C": 22,
             "interpretation": "over the rank-18 source open set the solution is a rank-two vector bundle, hence irreducible there",
         },
+        "mixed_root_cancellation_witness": {
+            "common_forms": "nonzero binary quartics F,G",
+            "A": ["F", "F", "F", "0"],
+            "B": ["(lambda_2-lambda_3)G", "(lambda_3-lambda_1)G", "(lambda_1-lambda_2)G", "0"],
+            "verification": ["sum_i A_i*B_i=0", "sum_i lambda_i*A_i*B_i=0"],
+            "nonfactorization": "the first three coefficients are nonzero because the generalized roots are distinct, so cancellation genuinely crosses three pencil eigenlines",
+        },
         "remaining_rank_stratification_gate": {
             "statement": "prove that every source rank-drop stratum has total incidence dimension at most 21, then use complete-intersection unmixedness and the rank-18 Jacobian witness to prove the full ideal prime",
             "required_bound": "dim{A: kernel_dimension>=k}+k <= 21 for every k>=3",
@@ -191,6 +198,7 @@ def build() -> dict[str, object]:
             "four_distinct_real_generalized_roots_certified": True,
             "generic_rank_18_open_component_certified": True,
             "generic_component_dimension_22_certified": True,
+            "three_root_cancellation_witness_certified": True,
             "complete_rank_stratification_certified": False,
             "full_candidate_13_zero_variety_classified": False,
             "same_fibre_quadratic_sources_classified": False,
@@ -200,7 +208,7 @@ def build() -> dict[str, object]:
             "causal_or_quantum_claim": False,
         },
         "provenance": {"parent": str(PARENT.relative_to(ROOT)), "parent_sha256": sha(PARENT)},
-        "claim_boundary": "This certificate reduces candidate 13 exactly and certifies its generic dimension-22 incidence component. It does not classify the degenerate rank strata or the full zero variety. Same-fibre, Taub and correction-class joins remain fail-closed.",
+        "claim_boundary": "This certificate reduces candidate 13 exactly, certifies its generic dimension-22 incidence component and exhibits genuine three-root cancellation. It does not classify the degenerate rank strata or the full zero variety. Same-fibre, Taub and correction-class joins remain fail-closed.",
     }
 
 

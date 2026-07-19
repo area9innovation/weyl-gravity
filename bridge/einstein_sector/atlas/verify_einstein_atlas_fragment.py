@@ -602,7 +602,7 @@ def verify() -> None:
     candidate13_second = candidate13["mode_data"]["second_order"]
     if candidate13["descriptions"]["nonlinear"] != "OPEN" or "separately tuned circumference fibre" not in candidate13["mode_data"]["dispersion"]["statement"]:
         raise AssertionError("candidate-13 incidence fibre scope was hidden")
-    if "four distinct nonzero real generalized pencil roots" not in candidate13["mode_data"]["lee_wald"]["statement"]:
+    if "four distinct nonzero real generalized roots" not in candidate13["mode_data"]["lee_wald"]["statement"] or "three-root cancellation witness" not in candidate13["mode_data"]["lee_wald"]["statement"]:
         raise AssertionError("candidate-13 exact pencil reduction was hidden")
     if candidate13["mode_data"]["resonance"]["status"] != "OPEN" or "dimension-22 rank-18 open component" not in candidate13["mode_data"]["resonance"]["statement"] or "full ideal remain unclassified" not in candidate13["mode_data"]["resonance"]["statement"]:
         raise AssertionError("candidate-13 generic and full-ideal lifecycles were merged")

@@ -1,6 +1,6 @@
 {
   "candidate_index": 13,
-  "claim_boundary": "This certificate reduces candidate 13 exactly and certifies its generic dimension-22 incidence component. It does not classify the degenerate rank strata or the full zero variety. Same-fibre, Taub and correction-class joins remain fail-closed.",
+  "claim_boundary": "This certificate reduces candidate 13 exactly, certifies its generic dimension-22 incidence component and exhibits genuine three-root cancellation. It does not classify the degenerate rank strata or the full zero variety. Same-fibre, Taub and correction-class joins remain fail-closed.",
   "classification": {
     "candidate_13_exact_pencil_reduction_certified": true,
     "causal_or_quantum_claim": false,
@@ -12,7 +12,8 @@
     "generic_rank_18_open_component_certified": true,
     "same_fibre_quadratic_sources_classified": false,
     "smooth_secular_classified": false,
-    "taub_common_zero_intersection_classified": false
+    "taub_common_zero_intersection_classified": false,
+    "three_root_cancellation_witness_certified": true
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -145,6 +146,26 @@
     ]
   },
   "lifecycle_state": "CLASSIFIED",
+  "mixed_root_cancellation_witness": {
+    "A": [
+      "F",
+      "F",
+      "F",
+      "0"
+    ],
+    "B": [
+      "(lambda_2-lambda_3)G",
+      "(lambda_3-lambda_1)G",
+      "(lambda_1-lambda_2)G",
+      "0"
+    ],
+    "common_forms": "nonzero binary quartics F,G",
+    "nonfactorization": "the first three coefficients are nonzero because the generalized roots are distinct, so cancellation genuinely crosses three pencil eigenlines",
+    "verification": [
+      "sum_i A_i*B_i=0",
+      "sum_i lambda_i*A_i*B_i=0"
+    ]
+  },
   "pencil_reduction": {
     "ambient_dimension_over_C": 40,
     "cross_form": "K_1=[[0,C_ap],[C_pa,0]]",
@@ -170,7 +191,7 @@
   "rho": "(-250 + 461*sqrt(10))/2132",
   "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-L4-incidence-reduction-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.schema.json",
-  "schema_sha256": "c1670486b7f5b06306c37d1b0e90b171c5924972d7c3c801d49dc00a182e0dc5",
+  "schema_sha256": "d85f0fad4d42787114c054d07eab31ca4b69005eef86137c67e382c09f0ba9d7",
   "scope": {
     "background": "candidate-13 tuned compact magnetically supported Plebanski-Hacyan product",
     "boundaries": "closed S1_L times S2 before final residual quotient",

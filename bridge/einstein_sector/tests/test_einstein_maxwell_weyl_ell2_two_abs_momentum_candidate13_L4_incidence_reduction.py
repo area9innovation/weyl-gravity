@@ -29,6 +29,8 @@ class Candidate13L4IncidenceReductionTests(unittest.TestCase):
         equations = self.value["pencil_reduction"]["normal_form_equations"]
         self.assertEqual(len(equations), 2)
         self.assertTrue(all("Sym^8" in equation for equation in equations))
+        self.assertTrue(self.value["classification"]["three_root_cancellation_witness_certified"])
+        self.assertIn("three pencil eigenlines", self.value["mixed_root_cancellation_witness"]["nonfactorization"])
 
     def test_full_ideal_remains_open(self) -> None:
         classification = self.value["classification"]

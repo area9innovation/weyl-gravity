@@ -1036,7 +1036,7 @@ def entries() -> list[dict[str, object]]:
             _scope(theory="Weyl-Maxwell target", boundaries="candidate-13 closed S1_L times S2 circumference fibre; before final residual quotient", carrier="complete all-m L4 cross-|n| resonance block with two multiplicity-two p_extra source branches and scalar q_plus targets", degree=2, parity="axial and polar amplitudes", ell="input 2 x 2; output L=4", m="all magnetic components through two binary-octic product equations", k="signed |n|=1 and |n|=2 momenta (1,-2)", omega="positive-frequency SUM channel", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
             ("CERTIFIED","The exact candidate-13 p_extra/p_extra to q_plus collision and its separately tuned circumference fibre are retained without cross-background identification."),
-            ("CERTIFIED","All four internal bilinear-form blocks are invertible and exact interval arithmetic gives four distinct nonzero real generalized pencil roots."),
+            ("CERTIFIED","All four internal blocks are invertible, exact interval arithmetic gives four distinct nonzero real generalized roots, and an explicit three-root cancellation witness forbids the earlier one-eigenline factorization."),
             ("OPEN","The five stabilizer moment maps and same-fibre quadratic sources have not been joined to the candidate-13 incidence variety."),
             ("OPEN","The all-m equations reduce exactly to two weighted sums of binary-quartic products and have a certified irreducible dimension-22 rank-18 open component, but the degenerate source-rank strata and full ideal remain unclassified."),
             _second_order(("OPEN","The full cross-fibre ideal, same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on the incidence variety."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
@@ -1845,6 +1845,7 @@ def build() -> dict[str, object]:
         and candidate13["four_distinct_real_generalized_roots_certified"]
         and candidate13["generic_rank_18_open_component_certified"]
         and candidate13["generic_component_dimension_22_certified"]
+        and candidate13["three_root_cancellation_witness_certified"]
         and candidate13_generic["linear_rank"] == 18
         and candidate13_generic["kernel_dimension"] == 2
         and candidate13_generic["incidence_dimension_over_C"] == 22
