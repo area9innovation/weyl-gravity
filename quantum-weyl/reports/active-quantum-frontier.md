@@ -546,7 +546,9 @@ The current coefficient-bearing critical path is:
    and finite-part `R(K^2)` enclosures; the regular-complement `det_3` and
    matched exceptional factor `3^-6` are already certified and their full
    coupled Schur-factor enclosure has a fail-closed assembly precertificate,
-   while the minimal-vector determinant is still absent and
+   while the minimal-vector exact/coexact product carrier, Killing-zero
+   priming and local zeta/weighted defect are now certified but its two
+   infinite active scalar modified determinants remain unevaluated, while
    arbitrary-background finite rows still require a generic primed Green
    kernel or spectral measure;
 2. classify the parity-odd derivative sector and fix the finite `C2` and

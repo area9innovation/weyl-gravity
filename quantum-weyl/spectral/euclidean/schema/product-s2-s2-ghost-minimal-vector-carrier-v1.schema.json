@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl/product-s2-s2-ghost-minimal-vector-carrier-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "one_form_hodge_decomposition", "priming_policy", "regular_relative_determinant", "heat_carriers", "zeta_weighted_local_defect", "selected_exact_modes", "claim_flags", "dependencies", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-product-s2-s2-ghost-minimal-vector-carrier-v1"},
+    "result_id": {"const": "PRODUCT_S2_S2_GHOST_MINIMAL_VECTOR_CARRIER"},
+    "result_state": {"const": "MINIMAL_VECTOR_EXACT_COEXACT_SPECTRUM_AND_PRIMING_COMPUTED"},
+    "lifecycle_state": {"const": "COMPLETE_MODE_CARRIER_INFINITE_RENORMALIZED_SUMS_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {"type": "object"},
+    "one_form_hodge_decomposition": {"type": "object"},
+    "priming_policy": {"type": "object"},
+    "regular_relative_determinant": {"type": "object"},
+    "heat_carriers": {"type": "object"},
+    "zeta_weighted_local_defect": {"type": "object"},
+    "selected_exact_modes": {"type": "array", "minItems": 6, "maxItems": 6},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["PRODUCT_MINIMAL_VECTOR_MODE_CARRIER_SUPPLIED", "EXACT_COEXACT_POLARIZATIONS_ENUMERATED", "KILLING_ZERO_PRIMING_COMPUTED", "MATCHED_EXACT_SCHUR_POLICY_COMPUTED", "MINIMAL_VECTOR_ZETA_WEIGHTED_LOCAL_DEFECT_COMPUTED", "MINIMAL_VECTOR_INFINITE_WEIGHTED_DETERMINANT_COMPUTED", "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "PRODUCT_MINIMAL_VECTOR_MODE_CARRIER_SUPPLIED": {"const": true},
+        "EXACT_COEXACT_POLARIZATIONS_ENUMERATED": {"const": true},
+        "KILLING_ZERO_PRIMING_COMPUTED": {"const": true},
+        "MATCHED_EXACT_SCHUR_POLICY_COMPUTED": {"const": true},
+        "MINIMAL_VECTOR_ZETA_WEIGHTED_LOCAL_DEFECT_COMPUTED": {"const": true},
+        "MINIMAL_VECTOR_INFINITE_WEIGHTED_DETERMINANT_COMPUTED": {"const": false},
+        "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {"type": "object"},
+    "next_gate": {"type": "string", "minLength": 20},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  }
+}

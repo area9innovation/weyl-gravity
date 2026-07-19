@@ -1,0 +1,469 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL certificate supplies the complete exact/coexact minimal-vector mode carrier, distinguishes the six exact zeros paired with Schur poles from the six coexact Killing zeros that are primed out, and computes the local zeta-to-weighted determinant defect on S2(1) x S2(2). It does not evaluate the two infinite weighted modified determinants, the full coupled ghost factor, remaining BV sectors, complete Gamma1/Q1, a restored QME, or any Lorentzian causal, Hadamard, state-space, particle, positivity, scattering or unitarity theorem.",
+  "claim_flags": {
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "EXACT_COEXACT_POLARIZATIONS_ENUMERATED": true,
+    "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": false,
+    "KILLING_ZERO_PRIMING_COMPUTED": true,
+    "LORENTZIAN_CERTIFIED": false,
+    "MATCHED_EXACT_SCHUR_POLICY_COMPUTED": true,
+    "MINIMAL_VECTOR_INFINITE_WEIGHTED_DETERMINANT_COMPUTED": false,
+    "MINIMAL_VECTOR_ZETA_WEIGHTED_LOCAL_DEFECT_COMPUTED": true,
+    "PRODUCT_MINIMAL_VECTOR_MODE_CARRIER_SUPPLIED": true
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "dependencies": {
+    "product_schur_carrier": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_SPECTRAL_CARRIER.json",
+      "result_id": "PRODUCT_S2_S2_GHOST_SCHUR_SPECTRAL_CARRIER",
+      "sha256": "e7337ea8bd7fa3f06b6d0d965d0da4e64ce980ff987465755cc4187e2d4cfeee"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "heat_carriers": {
+    "H_1": "sum_ell>=0 (2ell+1) exp[-t ell(ell+1)]",
+    "H_2": "sum_m>=0 (2m+1) exp[-2t m(m+1)]",
+    "first_active": "[H_1(t)-1] H_2(t), then subtract the (1,0) exceptional row",
+    "second_active": "H_1(t)[H_2(t)-1], then subtract the (0,1) exceptional row"
+  },
+  "lifecycle_state": "COMPLETE_MODE_CARRIER_INFINITE_RENORMALIZED_SUMS_OPEN",
+  "next_gate": "EVALUATE_THE_TWO_ACTIVE_SCALAR_PRODUCT_ZETA_WEIGHTED_MODIFIED_DETERMINANTS_WITH_THE_DECLARED_EXCEPTIONAL_ROWS_REMOVED",
+  "one_form_hodge_decomposition": {
+    "A_first_factor_eigenvalue": "lambda-2",
+    "A_second_factor_eigenvalue": "lambda-4",
+    "F_eigenvalue": "lambda=ell(ell+1)+2m(m+1)",
+    "first_factor": "for ell>0: dY_ell and star_2 dY_ell, tensored with Y_m",
+    "multiplicity_per_polarization": "(2ell+1)(2m+1)",
+    "second_factor": "for m>0: Y_ell tensored with dY_m and star_2 dY_m"
+  },
+  "priming_policy": {
+    "Killing_zero_dimension": 6,
+    "coexact_exceptional_rows": "the three first-factor and three second-factor Killing zeros are primed out",
+    "exact_exceptional_rows": "(1,0) and (0,1) pair with the Schur poles and contribute 1/3 per scalar harmonic",
+    "forbidden_double_count": "do not square the exceptional 3^-6 factor; only the exact polarization participates in the Schur cancellation",
+    "matched_exact_exceptional_dimension": 6
+  },
+  "regular_relative_determinant": {
+    "first_factor_component": "J_1=-2/lambda on ell>0, with (1,0) removed",
+    "full_regular_vector_times_schur_mode": "prod_active[(lambda-2k_i)/lambda]^2 s_lm",
+    "polarization_multiplicity": 2,
+    "second_factor_component": "J_2=-4/lambda on m>0, with (0,1) removed",
+    "weighted_modified_formula": "2 sum_i[log det_3(I+J_i)+R_F(J_i)-(1/2)FP R_F(J_i^2)]"
+  },
+  "result_id": "PRODUCT_S2_S2_GHOST_MINIMAL_VECTOR_CARRIER",
+  "result_state": "MINIMAL_VECTOR_EXACT_COEXACT_SPECTRUM_AND_PRIMING_COMPUTED",
+  "schema": "quantum-weyl-product-s2-s2-ghost-minimal-vector-carrier-v1",
+  "scope": {
+    "background": "S2(1) x S2(2)",
+    "boundary": "closed compact product without boundary",
+    "operators": "F=-Box I+Ric and A=F-2 Ric on one-forms",
+    "signature": "Euclidean"
+  },
+  "selected_exact_modes": [
+    {
+      "degeneracy": 3,
+      "ell": 1,
+      "lambda": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "m": 0,
+      "paired_exact_vector_times_schur_ratio": {
+        "denominator": 3,
+        "numerator": 1
+      },
+      "polarizations": [
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "factor": "first",
+          "polarization": "exact",
+          "status": "MATCHED_WITH_SCHUR_POLE"
+        },
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "factor": "first",
+          "polarization": "coexact",
+          "status": "KILLING_ZERO_PRIMED_OUT"
+        }
+      ],
+      "regular_minimal_vector_ratio": null,
+      "status": "EXCEPTIONAL_EXACT_SCHUR_MATCH_COEXACT_KILLING_PRIME"
+    },
+    {
+      "degeneracy": 3,
+      "ell": 0,
+      "lambda": {
+        "denominator": 1,
+        "numerator": 4
+      },
+      "m": 1,
+      "paired_exact_vector_times_schur_ratio": {
+        "denominator": 3,
+        "numerator": 1
+      },
+      "polarizations": [
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "factor": "second",
+          "polarization": "exact",
+          "status": "MATCHED_WITH_SCHUR_POLE"
+        },
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "factor": "second",
+          "polarization": "coexact",
+          "status": "KILLING_ZERO_PRIMED_OUT"
+        }
+      ],
+      "regular_minimal_vector_ratio": null,
+      "status": "EXCEPTIONAL_EXACT_SCHUR_MATCH_COEXACT_KILLING_PRIME"
+    },
+    {
+      "degeneracy": 5,
+      "ell": 2,
+      "full_vector_times_schur_ratio": {
+        "denominator": 27,
+        "numerator": 14
+      },
+      "lambda": {
+        "denominator": 1,
+        "numerator": 6
+      },
+      "m": 0,
+      "polarizations": [
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 6
+          },
+          "factor": "first",
+          "polarization": "exact",
+          "relative_eigenvalue": {
+            "denominator": 3,
+            "numerator": 2
+          },
+          "status": "REGULAR"
+        },
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 6
+          },
+          "factor": "first",
+          "polarization": "coexact",
+          "relative_eigenvalue": {
+            "denominator": 3,
+            "numerator": 2
+          },
+          "status": "REGULAR"
+        }
+      ],
+      "regular_minimal_vector_ratio": {
+        "denominator": 9,
+        "numerator": 4
+      },
+      "status": "REGULAR"
+    },
+    {
+      "degeneracy": 5,
+      "ell": 0,
+      "full_vector_times_schur_ratio": {
+        "denominator": 27,
+        "numerator": 14
+      },
+      "lambda": {
+        "denominator": 1,
+        "numerator": 12
+      },
+      "m": 2,
+      "polarizations": [
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 12
+          },
+          "factor": "second",
+          "polarization": "exact",
+          "relative_eigenvalue": {
+            "denominator": 3,
+            "numerator": 2
+          },
+          "status": "REGULAR"
+        },
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 12
+          },
+          "factor": "second",
+          "polarization": "coexact",
+          "relative_eigenvalue": {
+            "denominator": 3,
+            "numerator": 2
+          },
+          "status": "REGULAR"
+        }
+      ],
+      "regular_minimal_vector_ratio": {
+        "denominator": 9,
+        "numerator": 4
+      },
+      "status": "REGULAR"
+    },
+    {
+      "degeneracy": 9,
+      "ell": 1,
+      "full_vector_times_schur_ratio": {
+        "denominator": 27,
+        "numerator": 2
+      },
+      "lambda": {
+        "denominator": 1,
+        "numerator": 6
+      },
+      "m": 1,
+      "polarizations": [
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 6
+          },
+          "factor": "first",
+          "polarization": "exact",
+          "relative_eigenvalue": {
+            "denominator": 3,
+            "numerator": 2
+          },
+          "status": "REGULAR"
+        },
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 6
+          },
+          "factor": "first",
+          "polarization": "coexact",
+          "relative_eigenvalue": {
+            "denominator": 3,
+            "numerator": 2
+          },
+          "status": "REGULAR"
+        },
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 6
+          },
+          "factor": "second",
+          "polarization": "exact",
+          "relative_eigenvalue": {
+            "denominator": 3,
+            "numerator": 1
+          },
+          "status": "REGULAR"
+        },
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 6
+          },
+          "factor": "second",
+          "polarization": "coexact",
+          "relative_eigenvalue": {
+            "denominator": 3,
+            "numerator": 1
+          },
+          "status": "REGULAR"
+        }
+      ],
+      "regular_minimal_vector_ratio": {
+        "denominator": 81,
+        "numerator": 4
+      },
+      "status": "REGULAR"
+    },
+    {
+      "degeneracy": 15,
+      "ell": 2,
+      "full_vector_times_schur_ratio": {
+        "denominator": 625,
+        "numerator": 164
+      },
+      "lambda": {
+        "denominator": 1,
+        "numerator": 10
+      },
+      "m": 1,
+      "polarizations": [
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 10
+          },
+          "factor": "first",
+          "polarization": "exact",
+          "relative_eigenvalue": {
+            "denominator": 5,
+            "numerator": 4
+          },
+          "status": "REGULAR"
+        },
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 10
+          },
+          "factor": "first",
+          "polarization": "coexact",
+          "relative_eigenvalue": {
+            "denominator": 5,
+            "numerator": 4
+          },
+          "status": "REGULAR"
+        },
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 6
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 10
+          },
+          "factor": "second",
+          "polarization": "exact",
+          "relative_eigenvalue": {
+            "denominator": 5,
+            "numerator": 3
+          },
+          "status": "REGULAR"
+        },
+        {
+          "A_eigenvalue": {
+            "denominator": 1,
+            "numerator": 6
+          },
+          "F_eigenvalue": {
+            "denominator": 1,
+            "numerator": 10
+          },
+          "factor": "second",
+          "polarization": "coexact",
+          "relative_eigenvalue": {
+            "denominator": 5,
+            "numerator": 3
+          },
+          "status": "REGULAR"
+        }
+      ],
+      "regular_minimal_vector_ratio": {
+        "denominator": 625,
+        "numerator": 144
+      },
+      "status": "REGULAR"
+    }
+  ],
+  "zeta_weighted_local_defect": {
+    "Wres_F_inverse_square": {
+      "denominator": 1,
+      "numerator": 1
+    },
+    "first_defect_per_polarization": {
+      "denominator": 1,
+      "numerator": -1
+    },
+    "first_shift_c": {
+      "denominator": 1,
+      "numerator": 2
+    },
+    "formula_per_polarization": "log det_zeta(F-c)-log det_zeta(F)-tr^F log(1-c F^-1)=-(c^2/4)Wres(F^-2)",
+    "lower_dimensional_active_projection_effect_on_four_dimensional_residue": "ZERO",
+    "scalar_a0_per_polarization": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "second_defect_per_polarization": {
+      "denominator": 1,
+      "numerator": -4
+    },
+    "second_shift_c": {
+      "denominator": 1,
+      "numerator": 4
+    },
+    "two_polarization_total_defect": {
+      "denominator": 1,
+      "numerator": -10
+    }
+  }
+}
