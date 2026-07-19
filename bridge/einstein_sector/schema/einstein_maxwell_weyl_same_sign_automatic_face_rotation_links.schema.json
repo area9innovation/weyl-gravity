@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "candidate_rows", "theorem", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-same-sign-automatic-face-rotation-links-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_ROTATION_LINKS"},
+    "candidate_rows": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["candidate_index", "automatic_face", "verdict"],
+        "properties": {
+          "candidate_index": {"type": "integer", "minimum": 16, "maximum": 21},
+          "verdict": {"enum": ["NOT_APPLICABLE", "CONNECTED_ON_EVERY_NONZERO_FIXED_OCCUPATION_SUPPORT_STRATUM"]}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,167 @@
+{
+  "claim_boundary": "This is an exact Jacobian-rank and critical-locus theorem. It does not classify the nonlinear local zero set, its tangent cone, real connected components, or any higher lifecycle.",
+  "classification": {
+    "all_nonzero_axisymmetric_section_points_rotation_critical": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "implicit_function_regular_seed_available_on_axisymmetric_section": false,
+    "local_real_zero_set_components_classified": false,
+    "origin_rotation_jacobian_rank_zero": true,
+    "rotation_jacobian_rank_exactly_two": true,
+    "singular_tangent_cone_classified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G4_ALL_SIX_COMPLETE_SCALAR_CONE_SECTIONS",
+  "interpretation": "The bounded scalar-cone section proves real nonemptiness but lies entirely in the critical locus of the lifted-rotation moment map. Therefore its points cannot seed a codimension-three implicit-function classification; the missing third rotation equation first appears quadratically in transverse nonaxisymmetric directions.",
+  "jacobian_rank_theorem": {
+    "candidate_indices": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "every_nonzero_section_point": {
+      "critical_value_statement": "zero is not a regular value along the certified axisymmetric section",
+      "lower_bound": "at least one occupied block has nonzero current norm; its independent real T1 and T2 covectors survive with a nonzero scalar prefactor",
+      "rank_d_mu_J": 2,
+      "upper_bound": "T3*e0=0 in every occupied block, so d(mu_J3)=0"
+    },
+    "origin": {
+      "rank_d_mu_J": 0,
+      "reason": "the moment map is quadratic"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the quadratic normal form of mu_J3 on the kernel of d(mu_J1,mu_J2) at the axisymmetric section, candidate and face separately",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.py",
+    "generator_sha256": "a2e27e3ef212c713f2ed452370ca0e9354f08b5e62e5ac51553c69c8710bd69d",
+    "inputs": {
+      "cone_sections": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_cone_sections.json",
+        "sha256": "0948ba03ecfc30c8c6a7eccdf020284566ff781623f8a9f4d94e99f954ef31e3"
+      },
+      "face_fibres": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
+        "sha256": "7607c649ebc628270669db8fd5e6ab813b281b82c83192a9cb7f7dbee09f3433"
+      },
+      "fibre_product": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json",
+        "sha256": "32b6764cf13d724f89b91719aef17d3cf1d0a509e866ac9f8186115768b28f54"
+      },
+      "moment_map": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+      },
+      "stabilizer": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AXISYMMETRIC_ROTATION_SINGULARITY",
+  "result_state": "ALL_NONZERO_AXISYMMETRIC_SCALAR_CONE_SECTION_POINTS_HAVE_ROTATION_JACOBIAN_RANK_TWO",
+  "schema": "einstein-maxwell-weyl-same-sign-axisymmetric-rotation-singularity-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.schema.json",
+  "schema_sha256": "6c2e63a15319821b538dd6c470cc3ad4340f47faee59dd8e3c18fb451bf979a7",
+  "scope": {
+    "background": "six distinct collision candidates 16--21, retained separately",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "the certified all-m=0 amplitude section over every point of each same-sign scalar cone",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidatewise signed n=(1,-2) or (1,2), never identified across rho",
+    "m": "all m=-2,...,2",
+    "omega": "all generic q-minus, p-extra and q-plus positive-frequency shells",
+    "parity": "axial and polar",
+    "theory": "Weyl-Maxwell target"
+  },
+  "spin_two_certificate": {
+    "T1_T2_real_gram": [
+      [
+        "1/8",
+        "0"
+      ],
+      [
+        "0",
+        "1/8"
+      ]
+    ],
+    "T1_T2_real_gram_determinant": "1/64",
+    "T1_W_covector_at_e0": [
+      "0",
+      "1/4",
+      "0",
+      "1/4",
+      "0"
+    ],
+    "T2_W_covector_at_e0": [
+      "0",
+      "I/4",
+      "0",
+      "-I/4",
+      "0"
+    ],
+    "T3_W_covector_at_e0": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "angular_form": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/4",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1/6",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1/4",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "basis_order": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ]
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity"
+  ]
+}

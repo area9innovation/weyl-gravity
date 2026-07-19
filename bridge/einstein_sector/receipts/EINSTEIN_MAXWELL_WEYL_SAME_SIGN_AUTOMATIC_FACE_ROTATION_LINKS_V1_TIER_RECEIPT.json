@@ -1,0 +1,42 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_ROTATION_LINKS_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Connectedness of every nonzero fixed-occupation lifted-rotation zero link on the five automatic same-sign resonance faces.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.json": "f96bd216b7f740f741b11e613d3dda0e6cad33522318213feec98315e79b9574",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.py": "8b2abffe25c20176e5508ce12c38657b7bd4ec0647035f58be2abc0fc2c47dc1",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.schema.json": "4ef5cadb935681b9e4a98988f37d52c6e3b9107e767607c8f331adb24f8c348b",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.py": "39518824256faa907c789373800bfece948f7c2b1c78422592089a4691dd22e5",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.py": "f0b9d24f0b71cb8042a10a1fd6a6eb873a3e6c76123ea51ed69f1ad194d22fa0",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-automatic-face-rotation-links.md": "9ff782a64a1f4743c2537d45315b7f916ec17de3712ff2b605b5ba99f6a009c2"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 3,
+      "elapsed_seconds": 0.007,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_automatic_face_rotation_links --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_automatic_face_rotation_links",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_automatic_face_rotation_links"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS_AND_THEOREM",
+      "reason": "The application combines the committed exact fibre-product and face-stratification certificates, action-derived definite node currents, the lifted SO(3) stabilizer, the axisymmetric nonempty section, and Theorem 1.1(b) of Lerman--Meinrenken--Tolman--Woodward."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Active resonance components, singular strata, all-orders integration, causal correction and release preparation remain open."
+    }
+  },
+  "claim_boundary": "Only nonzero fixed-occupation links on automatic resonance faces are classified. Active resonance strata and their restricted symplectic geometry remain open."
+}

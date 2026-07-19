@@ -2572,6 +2572,21 @@ real connected components and singular strata, all-orders integration and
 every causal promotion remain fail-closed; no circumference backgrounds are
 identified.
 
+The automatic-face part of that real problem is now classified at fixed
+occupations.  For each nonzero support stratum on the candidate-17--21
+automatic faces, node-phase reduction gives a compact connected signed
+Fubini--Study product.  Proper non-abelian moment-map connectedness and the
+certified axisymmetric point make the lifted-rotation zero fibre nonempty and
+connected, and restoring the phase torus leaves the unquotiented link
+connected.  Candidate 16 has no nonzero automatic face.  This does not make
+the axisymmetric section regular: on all six candidates its rotation
+Jacobian has rank two away from the origin because the third rotation
+equation starts quadratically.  The next local gate is therefore the
+quadratic normal form of `mu_J3` on `ker d(mu_J1,mu_J2)`; the active resonance
+components separately require a restricted-current nondegeneracy theorem
+before the connected-fibre argument can be reused.  Both atlas rows retain
+all higher lifecycles fail-closed.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell

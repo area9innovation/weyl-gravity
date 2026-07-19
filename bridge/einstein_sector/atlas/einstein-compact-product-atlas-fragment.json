@@ -4950,6 +4950,189 @@
       }
     },
     {
+      "claim_boundary": "This uses compact Hamiltonian moment-map connectedness only on automatic faces, where the fixed-norm phase quotient is a smooth projective product. Active resonance varieties, gluing across occupation strata, singularities and all higher lifecycles remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_ROTATION_LINKS",
+          "sha256": "f96bd216b7f740f741b11e613d3dda0e6cad33522318213feec98315e79b9574"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_RESONANCE_FACE_FIBRES",
+          "sha256": "7607c649ebc628270669db8fd5e6ab813b281b82c83192a9cb7f7dbee09f3433"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_PHASE_PARITY_FIBRE_PRODUCT",
+          "sha256": "32b6764cf13d724f89b91719aef17d3cf1d0a509e866ac9f8186115768b28f54"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_cone_sections.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_SCALAR_CONE_SECTIONS",
+          "sha256": "0948ba03ecfc30c8c6a7eccdf020284566ff781623f8a9f4d94e99f954ef31e3"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
+          "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+          "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+          "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.ell2_same_sign_automatic_face_rotation_links",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Every row retains its exact automatic scalar-cone face and support stratum on one declared circumference background.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "Fixed node norms and node-phase reduction give a compact projective product with nonzero signed action-derived Fubini--Study forms.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The cross-fibre resonance vanishes identically because one full bilinear factor is zero on each automatic face.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Every nonzero fixed-occupation bounded link on the five automatic faces is nonempty and connected.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific retarded Weyl-Maxwell correction complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "These bounded links also lie in the smooth-secular cone; no active-stratum topology is inferred.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The diagonal lifted SO(3) moment map has a nonempty connected zero fibre on every declared fixed-occupation stratum.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "five distinct collision candidates 17--21, retained separately; candidate 16 has no nonzero automatic face",
+        "boundaries": "closed S1_L times S2 before final residual quotient",
+        "carrier": "every nonzero fixed-occupation support stratum on the candidate-specific automatic two-ray resonance face",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": "input ell=2",
+        "k": "signed n=(1,2), never identified across rho",
+        "m": "all m=-2,...,2 under the diagonal lifted SO(3) action",
+        "omega": "occupied generic positive-frequency nodes and conjugate reality completion",
+        "parity": "complete axial/polar node amplitude spaces with arbitrary phases",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
+      "claim_boundary": "This is an exact Jacobian-rank theorem, not a quadratic-normal-form, local tangent-cone, connected-component, singular-stratum or higher-lifecycle classification.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AXISYMMETRIC_ROTATION_SINGULARITY",
+          "sha256": "4c9357e509da85687c5e39d2588002649bc7b955dfd607fb2333bd308bab3159"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_RESONANCE_FACE_FIBRES",
+          "sha256": "7607c649ebc628270669db8fd5e6ab813b281b82c83192a9cb7f7dbee09f3433"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_PHASE_PARITY_FIBRE_PRODUCT",
+          "sha256": "32b6764cf13d724f89b91719aef17d3cf1d0a509e866ac9f8186115768b28f54"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_cone_sections.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_SCALAR_CONE_SECTIONS",
+          "sha256": "0948ba03ecfc30c8c6a7eccdf020284566ff781623f8a9f4d94e99f954ef31e3"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.ell2_same_sign_axisymmetric_rotation_critical_locus",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The rank theorem is uniform on the six separately scoped scalar-cone sections and uses only their common spin-two m=0 carrier.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The exact spin-two invariant angular form gives two independent transverse rotation covectors at every nonzero section point.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The underlying section remains inside the exact candidatewise scalar and resonance zero set; this row adds only the rotation critical-locus theorem.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Every declared section point is bounded, but every nonzero point is critical for the three-component rotation map and cannot seed a regular codimension-three chart.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific retarded Weyl-Maxwell correction complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The same critical section lies in the smooth-secular class; no local component decomposition is inferred.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The lifted-rotation Jacobian has rank zero at the origin and exactly two at every nonzero section point because d(mu_J3)=0 there.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "six distinct collision candidates 16--21, retained separately",
+        "boundaries": "closed S1_L times S2 before final residual quotient",
+        "carrier": "the certified all-m=0 amplitude section over every same-sign scalar-cone point",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": 2,
+        "k": "signed n=(1,2)",
+        "m": 0,
+        "omega": "all occupied generic shells in the scalar-cone section",
+        "parity": "candidate-specific axial or fixed real mixed parity",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "Parity/angular workload theorem only for the 21 ell=2 cross-|n| candidates. No source zero, same-fibre classification, tangent-cone verdict or higher lifecycle is inferred.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -8487,7 +8670,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "ec64b97578f11ba0ffc0bfb41e31ef1e70b7654c452e176c5b0cde965eea3a12",
+  "generated_by_sha256": "b13b657ae7e3de6582b94d40bc1d75a70373b5be0b0763b4db6e9be122154b27",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

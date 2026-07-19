@@ -478,6 +478,24 @@ def verify() -> None:
         raise AssertionError("same-sign resonance-face theorem hid the exact bounded fibre-product formula")
     if resonance_face_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "not a real connected-component" not in resonance_faces["claim_boundary"]:
         raise AssertionError("same-sign resonance-face theorem exceeded its lifecycle scope")
+    automatic_links = by_id["einstein.ph.wm.interaction.ell2_same_sign_automatic_face_rotation_links"]
+    automatic_second = automatic_links["mode_data"]["second_order"]
+    if automatic_links["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "nonempty connected zero fibre" not in automatic_links["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("same-sign automatic-face rotation topology was hidden")
+    if automatic_links["mode_data"]["resonance"]["status"] != "CERTIFIED" or "full bilinear factor" not in automatic_links["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("same-sign automatic-face resonance condition changed")
+    if automatic_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "nonempty and connected" not in automatic_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("same-sign automatic-face bounded-link verdict changed")
+    if automatic_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "only on automatic faces" not in automatic_links["claim_boundary"]:
+        raise AssertionError("same-sign automatic-face theorem exceeded its scope")
+    rotation_critical = by_id["einstein.ph.wm.interaction.ell2_same_sign_axisymmetric_rotation_critical_locus"]
+    rotation_critical_second = rotation_critical["mode_data"]["second_order"]
+    if rotation_critical["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "rank zero at the origin and exactly two" not in rotation_critical["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("same-sign axisymmetric rotation critical locus was hidden")
+    if rotation_critical_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "critical" not in rotation_critical_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("same-sign axisymmetric critical section lost bounded status")
+    if rotation_critical_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "not a quadratic-normal-form" not in rotation_critical["claim_boundary"]:
+        raise AssertionError("same-sign axisymmetric critical-locus theorem exceeded scope")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

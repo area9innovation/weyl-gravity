@@ -1142,6 +1142,69 @@ does not decompose that real intersection into connected components or
 singular strata.
 \end{proof}
 
+\begin{proposition}[Connected automatic-face rotation links]
+For candidates (17)--(21), fix a nonzero occupation in any relative support
+stratum of the automatic two-ray face in the preceding table.  The complete
+amplitude link satisfying
+\[
+ B_i=0,
+ \qquad
+ \mu_{J_1}=\mu_{J_2}=\mu_{J_3}=0
+\]
+is nonempty and connected.  Candidate (16) has no nonzero automatic face, so
+this statement is not applicable there.  This is a fixed-occupation theorem;
+it neither glues distinct occupation strata nor classifies the active
+resonance varieties.
+\end{proposition}
+
+\begin{proof}
+On an automatic face, one complete factor of the bilinear map \(B_i\)
+vanishes.  For each occupied branch--momentum node, fix its positive
+absolute-current norm.  The amplitude space is then a product of odd
+spheres.  Quotienting by the independent node phases gives a compact
+connected product of complex projective spaces.  The action-derived
+Lee--Wald form descends to a signed product of Fubini--Study forms.  A
+negative \(q_-\) factor reverses orientation but remains nondegenerate.
+
+The diagonal lifted \(SO(3)\) action is Hamiltonian, and its moment map is
+the descended triple \((\mu_{J_1},\mu_{J_2},\mu_{J_3})\).  Compactness makes
+this moment map proper.  The connected-fibre theorem of Lerman,
+Meinrenken, Tolman and Woodward~\cite{LMTW} therefore makes its zero fibre
+connected.  The certified axisymmetric representative proves nonemptiness.
+Finally, its inverse image in the product of norm spheres has the connected
+node-phase torus as fibre, and is therefore connected.
+\end{proof}
+
+\begin{proposition}[The axisymmetric section is rotation-critical]
+On the certified all-\(m=0\) section over every scalar-cone point of each
+candidate (16)--(21), the Jacobian of the three lifted rotation moment maps
+has rank zero at the origin and exactly two at every nonzero point.  Hence
+zero is not a regular value along this section, and these explicit bounded
+points cannot seed a codimension-three implicit-function chart.
+\end{proposition}
+
+\begin{proof}
+In the spin-two basis \(m=-2,-1,0,1,2\), let \(e_0\) denote the \(m=0\)
+vector.  The exact invariant angular form gives
+
+\[
+ T_3e_0=0,
+ \qquad
+ W_2T_1e_0\ \hbox{and}\ W_2T_2e_0
+ \quad\hbox{real-linearly independent}.
+\]
+
+Thus \(d\mu_{J_3}=0\) on every occupied axisymmetric block, giving rank at
+most two.  At a nonzero section point, at least one block has nonzero norm;
+variations supported in that block retain the two independent \(T_1,T_2\)
+covectors with a nonzero current coefficient, giving rank at least two.  At
+the origin all three differentials vanish because the moment map is
+quadratic.  In particular, the connected automatic-face links above may
+contain critical points: connectedness does not imply regularity.  The next
+local gate is the quadratic normal form of the missing \(J_3\) equation on
+the kernel of the two transverse differentials.
+\end{proof}
+
 \section{Current bounded frontier}
 
 The electric, Wilson, and circumference columns are closed, and the first
@@ -1355,6 +1418,10 @@ Exact same-sign bounded phase/parity fibre products &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json}\\
 Complete same-sign resonance fibres over scalar-cone faces &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json}\\
+Connected fixed-occupation rotation-zero links on automatic faces &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.json}\\
+Axisymmetric rotation critical-locus theorem &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1409,11 +1476,15 @@ six same-sign collision cones.  Their nonemptiness, same-fibre shell census,
 universal four-ray scalar projection, all 24 extreme-ray lifts, and a bounded
 section over every scalar-cone point are now closed.  The complete complex
 resonance fibre is also stratified over every scalar-cone face.  The remaining
-same-sign gate is the real fixed-norm intersection with the three lifted
-rotation moment maps.  Its exact fibre-product equation is already certified;
-the remaining task is its connected-component and singular-stratum
-decomposition.  Complex resonance components and occupation-level sums need
-not be recomputed.
+same-sign gate has now split.  On the five nonzero automatic faces, every
+fixed-occupation rotation-zero link is nonempty and connected.  On all six
+candidates, however, the explicit axisymmetric section lies in the rotation
+critical locus with Jacobian rank two.  The active resonance strata still
+require a restricted-current nondegeneracy test before any connected-fibre
+theorem can be applied, while the critical section requires the quadratic
+normal form of the missing rotation equation.  The exact fibre-product
+equation is already certified; complex resonance components and
+occupation-level sums need not be recomputed.
 The symbolic-\(\ell\) standard-branch resonance and collision theorem is now
 closed, as is the complete 164-coefficient two-momentum branch-basis census.
 The next exact enlargement is to classify the real connected components of
@@ -1474,6 +1545,12 @@ J.~M.~Arms, J.~E.~Marsden, and V.~Moncrief,
 \emph{The structure of the space of solutions of Einstein's equations. II.
 Several Killing fields and the Einstein--Yang--Mills equations},
 Ann. Phys. \textbf{144} (1982) 81--106.
+
+\bibitem{LMTW}
+E.~Lerman, E.~Meinrenken, S.~Tolman, and C.~Woodward,
+\emph{Non-abelian convexity by symplectic cuts},
+Topology \textbf{37} (1998) 245--259,
+\href{https://arxiv.org/abs/dg-ga/9603015}{arXiv:dg-ga/9603015}.
 
 \bibitem{AltasTekin}
 E.~Alta\c{s} and B.~Tekin,

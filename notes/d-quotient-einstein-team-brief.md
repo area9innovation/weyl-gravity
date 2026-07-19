@@ -3801,6 +3801,35 @@ Atlas row
 bounded formula but keeps its real component decomposition `OPEN` and the
 causal map `NO_CERTIFIED_MAP`.
 
+The automatic-face rotation topology is now closed at fixed occupations.
+For every nonzero relative support stratum on the automatic two-ray faces of
+candidates 17--21, fixed node norms and node-phase reduction give a compact
+connected product of projective spaces with the signed action-derived
+Fubini--Study form.  The diagonal lifted `SO(3)` action is Hamiltonian; the
+proper-moment-map connected-fibre theorem makes its zero fibre connected,
+and the certified axisymmetric section proves nonemptiness.  Restoring the
+connected node-phase torus leaves the unquotiented amplitude link connected.
+Candidate 16 has no nonzero automatic face, so that row is
+`NOT_APPLICABLE`, not silently merged with the other five.
+
+The same axisymmetric section is not a regular seed.  The exact spin-two
+calculation has `T3 e0=0`, while the real `T1` and `T2` covectors are
+independent.  Therefore the lifted-rotation Jacobian has rank zero at the
+origin and exactly two at every nonzero section point on all six candidates.
+The section lies entirely in the rotation critical locus: it proves
+nonemptiness but cannot justify a codimension-three implicit-function chart.
+The active gate is consequently two-pronged.  First certify the restricted
+current on each active resonance component before applying any global
+connectedness theorem; separately compute the quadratic normal form of the
+missing `mu_J3` equation on the kernel of the two transverse differentials.
+Atlas rows
+`einstein.ph.wm.interaction.ell2_same_sign_automatic_face_rotation_links`
+and
+`einstein.ph.wm.interaction.ell2_same_sign_axisymmetric_rotation_critical_locus`
+record these complementary results.  Gluing occupation strata, the active
+resonance topology, local singular tangent cones, all-orders integration and
+causal/retarded maps remain fail-closed.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

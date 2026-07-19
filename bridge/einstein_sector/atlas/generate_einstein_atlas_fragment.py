@@ -97,6 +97,8 @@ CERTIFICATES = {
     "same_sign_scalar_cone_sections": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_cone_sections.json",
     "same_sign_phase_parity_fibre_product": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json",
     "same_sign_resonance_face_fibres": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
+    "same_sign_automatic_face_rotation_links": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.json",
+    "same_sign_axisymmetric_rotation_singularity": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
     "ell2_two_abs_momentum_candidate4_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json",
     "ell2_two_abs_momentum_axial_qminus_L4_triplet": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.json",
@@ -931,6 +933,30 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","Inside the exact necessary-and-sufficient bounded fibre-product formula, every scalar-cone face now has a complete complex resonance-component ledger; real components remain undecomposed."),("CERTIFIED","The same exact bounded solutions embed in the certified smooth-secular correction class; its real component decomposition is likewise open."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_resonance_face_fibres","same_sign_phase_parity_fibre_product","same_sign_scalar_cone_sections","ell2_two_abs_momentum_target_doublet_L3_zero_varieties","ell2_two_abs_momentum_scalar_L1_zero_varieties","ell2_two_abs_momentum_multiplicity_two_L3_zero_varieties","ell2_two_abs_momentum_regular_pencil_L4_zero_varieties","ell2_two_abs_momentum_scalar_L4_zero_varieties"),
             "This is a complete complex resonance-face stratification inside the exact bounded fibre-product formula. It is not a real connected-component or singular-stratum decomposition and not a higher-lifecycle result.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_automatic_face_rotation_links",
+            _scope(theory="Weyl-Maxwell target", background="five distinct collision candidates 17--21, retained separately; candidate 16 has no nonzero automatic face", boundaries="closed S1_L times S2 before final residual quotient", carrier="every nonzero fixed-occupation support stratum on the candidate-specific automatic two-ray resonance face", degree=2, parity="complete axial/polar node amplitude spaces with arbitrary phases", ell="input ell=2", m="all m=-2,...,2 under the diagonal lifted SO(3) action", k="signed n=(1,2), never identified across rho", omega="occupied generic positive-frequency nodes and conjugate reality completion", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Every row retains its exact automatic scalar-cone face and support stratum on one declared circumference background."),
+            ("CERTIFIED","Fixed node norms and node-phase reduction give a compact projective product with nonzero signed action-derived Fubini--Study forms."),
+            ("CERTIFIED","The diagonal lifted SO(3) moment map has a nonempty connected zero fibre on every declared fixed-occupation stratum."),
+            ("CERTIFIED","The cross-fibre resonance vanishes identically because one full bilinear factor is zero on each automatic face."),
+            _second_order(("CERTIFIED","Every nonzero fixed-occupation bounded link on the five automatic faces is nonempty and connected."),("CERTIFIED","These bounded links also lie in the smooth-secular cone; no active-stratum topology is inferred."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_automatic_face_rotation_links","same_sign_resonance_face_fibres","same_sign_phase_parity_fibre_product","same_sign_scalar_cone_sections","taub","standard","axial_current","polar_current"),
+            "This uses compact Hamiltonian moment-map connectedness only on automatic faces, where the fixed-norm phase quotient is a smooth projective product. Active resonance varieties, gluing across occupation strata, singularities and all higher lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_axisymmetric_rotation_critical_locus",
+            _scope(theory="Weyl-Maxwell target", background="six distinct collision candidates 16--21, retained separately", boundaries="closed S1_L times S2 before final residual quotient", carrier="the certified all-m=0 amplitude section over every same-sign scalar-cone point", degree=2, parity="candidate-specific axial or fixed real mixed parity", ell=2, m=0, k="signed n=(1,2)", omega="all occupied generic shells in the scalar-cone section", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","The rank theorem is uniform on the six separately scoped scalar-cone sections and uses only their common spin-two m=0 carrier."),
+            ("CERTIFIED","The exact spin-two invariant angular form gives two independent transverse rotation covectors at every nonzero section point."),
+            ("CERTIFIED","The lifted-rotation Jacobian has rank zero at the origin and exactly two at every nonzero section point because d(mu_J3)=0 there."),
+            ("CERTIFIED","The underlying section remains inside the exact candidatewise scalar and resonance zero set; this row adds only the rotation critical-locus theorem."),
+            _second_order(("CERTIFIED","Every declared section point is bounded, but every nonzero point is critical for the three-component rotation map and cannot seed a regular codimension-three chart."),("CERTIFIED","The same critical section lies in the smooth-secular class; no local component decomposition is inferred."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_axisymmetric_rotation_singularity","same_sign_resonance_face_fibres","same_sign_phase_parity_fibre_product","same_sign_scalar_cone_sections","taub"),
+            "This is an exact Jacobian-rank theorem, not a quadratic-normal-form, local tangent-cone, connected-component, singular-stratum or higher-lifecycle classification.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload",
@@ -1799,6 +1825,25 @@ def build() -> dict[str, object]:
         raise AssertionError("same-sign resonance-face theorem changed")
     if resonance_faces["full_real_connected_component_decomposition"] or resonance_faces["rotation_moment_map_reduction_completed"] or resonance_faces["complete_real_bounded_component_decomposition"] or resonance_faces["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("same-sign resonance-face theorem exceeded scope")
+    automatic_links = records["same_sign_automatic_face_rotation_links"]["classification"]
+    if not (
+        automatic_links["candidates_17_through_21_automatic_faces_classified"]
+        and automatic_links["all_nonzero_fixed_occupation_rotation_zero_links_nonempty"]
+        and automatic_links["all_nonzero_fixed_occupation_rotation_zero_links_connected"]
+        and automatic_links["negative_current_factors_handled_as_signed_symplectic_forms"]
+    ):
+        raise AssertionError("same-sign automatic-face rotation-link theorem changed")
+    if automatic_links["active_resonance_strata_classified"] or automatic_links["projectivized_active_component_topology_classified"] or automatic_links["singular_strata_classified"] or automatic_links["all_orders_integrability"] or automatic_links["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("same-sign automatic-face rotation-link theorem exceeded scope")
+    rotation_singularity = records["same_sign_axisymmetric_rotation_singularity"]["classification"]
+    if not (
+        rotation_singularity["all_nonzero_axisymmetric_section_points_rotation_critical"]
+        and rotation_singularity["rotation_jacobian_rank_exactly_two"]
+        and rotation_singularity["origin_rotation_jacobian_rank_zero"]
+    ):
+        raise AssertionError("same-sign axisymmetric rotation singularity changed")
+    if rotation_singularity["implicit_function_regular_seed_available_on_axisymmetric_section"] or rotation_singularity["local_real_zero_set_components_classified"] or rotation_singularity["singular_tangent_cone_classified"] or rotation_singularity["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("same-sign axisymmetric rotation singularity exceeded scope")
     parity_workload = records["ell2_two_abs_momentum_parity_workload"]["classification"]
     if not (parity_workload["all_twenty_one_candidates_parity_typed"] and parity_workload["all_m_angular_nonvanishing_witnessed"] and parity_workload["odd_L_axisymmetric_fixtures_excluded"] and parity_workload["reduced_source_workload_complete"]):
         raise AssertionError("ell2 two-absolute-momentum parity workload changed")

@@ -189,6 +189,26 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("DIFFERENCE channel on 17,20", entry["scope"]["omega"])
         self.assertIn("not a real connected-component", entry["claim_boundary"])
 
+    def test_same_sign_automatic_face_rotation_links_are_connected_only_in_scope(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_automatic_face_rotation_links"]
+        second = entry["mode_data"]["second_order"]
+        self.assertIn("nonempty connected zero fibre", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("full bilinear factor", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("nonempty and connected", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("only on automatic faces", entry["claim_boundary"])
+
+    def test_same_sign_axisymmetric_section_is_rotation_critical(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_axisymmetric_rotation_critical_locus"]
+        second = entry["mode_data"]["second_order"]
+        self.assertIn("rank zero at the origin and exactly two", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("critical", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not a quadratic-normal-form", entry["claim_boundary"])
+
     def test_first_two_abs_momentum_parity_workload_is_fail_closed(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
         second = entry["mode_data"]["second_order"]

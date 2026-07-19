@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "scope", "spin_two_certificate", "jacobian_rank_theorem", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AXISYMMETRIC_ROTATION_SINGULARITY"},
+    "jacobian_rank_theorem": {
+      "type": "object",
+      "required": ["origin", "every_nonzero_section_point", "candidate_indices"]
+    }
+  },
+  "additionalProperties": true
+}

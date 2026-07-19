@@ -1,0 +1,20 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AXISYMMETRIC_ROTATION_SINGULARITY_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact lifted-rotation Jacobian rank on every point of the six certified axisymmetric scalar-cone sections.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.json": "4c9357e509da85687c5e39d2588002649bc7b955dfd607fb2333bd308bab3159",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.py": "a2e27e3ef212c713f2ed452370ca0e9354f08b5e62e5ac51553c69c8710bd69d",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.schema.json": "6c2e63a15319821b538dd6c470cc3ad4340f47faee59dd8e3c18fb451bf979a7",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.py": "8ca2b2c8317fd5447652a0551812ee2e363b1ab027db7bd43b27709d7ef2a05f",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.py": "18d99edaa582634e8843c2426f5235fe2f5286ca4441671ff77e17ff20efa980",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-axisymmetric-rotation-singularity.md": "85b091ef1a2ed234572e243f494357fb597ca09fdd0c7faa5abf00a0712ab0c6"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <scoped JSON paths>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {"status": "PASS", "tests_run": 3, "elapsed_seconds": 0.166, "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity --check", "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity"]},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "reason": "The theorem imports the certified spin-two stabilizer representation, generic Lee-Wald moment maps, six scalar-cone sections, exact bounded fibre products and face stratification."},
+    "tier_3": {"status": "NOT_RUN", "reason": "The quadratic normal form, local real zero set, connected components, singular strata and higher lifecycles remain open."}
+  },
+  "claim_boundary": "The section is rotation-critical with exact rank two away from the origin. No local nonlinear zero-set decomposition is inferred."
+}
