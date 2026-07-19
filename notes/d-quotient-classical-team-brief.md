@@ -2318,18 +2318,18 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 The physical activation sequence and reassignment triggers are recorded in
 [`universe-building-roadmap.md`](universe-building-roadmap.md).  The
 `BERGER_Q2_EXPORTED`, the scoped C-G4 trigger, and the rank-46 carrier trigger
-have fired.  The classical team's current primary ownership is the rank-46
-subprincipal projector obstruction handoff; its next independent generality
-task is the relative equation-level metric--Bach cone over the certified
-cyclic curvature-incidence Nariai cylinder followed by Green transfer, or
-patching
-beyond the certified global conformal-orbit class.  The normalized zero-order
-obstruction, exact curvature-incidence identification, shifted-chain saddle,
-cyclic parent-relative SDR, all-order strict metric-graph no-go, corrected
-Yang--Mills parent complex and pointwise compression defect are certified.
-The certified C-G1
-theorem may seed one bounded G3/second-consumer task, while the observer team
-owns localized apparatus completion.
+have fired.  The rank-46 projector handoff is closed by its normalized
+subprincipal obstruction, and the Bach-flat four-row/rank-310 causal
+generality rail is now closed on the certified relative ADM class.  The
+classical team's current primary ownership is Bridge~1's category audit:
+test whether the candidate-13 derived-source pullback can be upgraded from
+its exact `REDUCED-MODE` bounded/smooth cone to a support-local
+same-background equation-level causal/BV cofiber.  A valid output is either
+the typed local carrier and maps or a normalized obstruction proving that the
+candidate remains reduced-mode only.  Do not infer the upgrade from matching
+mode labels or from the finite-harmonic tangent-cone theorem.  The bare
+normal-tractor-parent-to-metric crosswalk also remains fail-closed, while the
+observer team owns localized apparatus completion.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a

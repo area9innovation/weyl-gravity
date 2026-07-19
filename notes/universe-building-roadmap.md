@@ -85,9 +85,9 @@ The shortest independent paths are now:
 ```text
 Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
-Classical:   prove or obstruct causal transfer on an open conformally flat class
+Classical:   test whether the candidate-13 derived-source cofiber admits a support-local same-background causal/BV carrier; otherwise emit the normalized category obstruction
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows now that its product spectrum, matched 3^-6 exceptional factor and regular-complement det3 are certified, then add remaining BV rows to the exact partial-BV five-carrier representative; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; complete q2 and the 106,960-key rod-metric q3 subblock are executable, so export the remaining q3 blocks, test the arity identities, K_Berger equivariance and observer-morphism stability, and only then restrict records to Z2^C
+Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; complete q2 plus rod-metric and 5,196-key memory-transport q3 subblocks are executable, so export readout/emitter q3, assemble the base and structural-zero ledger, test the arity identities, K_Berger equivariance and observer-morphism stability, and only then restrict records to Z2^C
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
 
@@ -224,10 +224,17 @@ reducibility classes than the metric Bach complex.  The rank-310
 curvature-corrected automorphism/parent-detour cone is the authoritative
 replacement, not a completion of that rejected cylinder.  Its fail-closed
 crosswalk is `NO_CERTIFIED_MAP`, while the replacement's unit-Nariai causal
-theorem remains `CERTIFIED`.  The remaining gate is the support-local
-metric/parent SDR on that class, or its
-first normalized obstruction; do not promote the class-wide metric theorem
-from the universal parent result alone.  The metric theorem now does transport
+theorem remains `CERTIFIED`.  The remaining metric gate on that class is now
+closed independently rather than inferred from the parent.  With the bare
+covariant companion `T0=Box delta-(1/3)d delta^2`, the normalized metric and
+ghost witness blocks are `Box^2+V`, `ord(V)<=2`: parallel leading
+coefficients and curvature commutators exclude an order-three layer.  The
+typed Volterra theorem gives four-row advanced/retarded homotopies on every
+member of the declared class, and the natural cyclic SDR lifts them to all
+310 rows with exact metric descent.  No exact same-bundle factorization is
+claimed.  The pure normal-tractor-parent-to-metric crosswalk remains
+fail-closed because the SDR source is the curvature-corrected rank-310 cone.
+The metric theorem also transports
 throughout the bounded-smooth conformal Nariai orbit
 `sup|exp(phi)-1|<1/9`, including the full rank-310 SDR, causal homotopies and
 metric descent.  The unresolved direction is therefore transverse to the
@@ -272,15 +279,17 @@ scalar shift, so the proof allows the nonparallel Weyl curvature of the
 nonzero Kantowski--Sachs metrics.  Combining it with the natural six-block SDR
 promotes exact advanced/retarded homotopies on all 310 rows, with metric
 descent, on every declared common slab.  C-G2 is therefore closed slabwise.
-The nonzero family still has no whole-cylinder extension; non-Einstein
-Bach-flat metric transfer, Hadamard and quantum claims remain fail-closed.
+The nonzero Einstein family still has no whole-cylinder extension.  The
+separate non-Einstein Bach-flat metric/rank-310 theorem is now certified on
+the relative ADM class; Hadamard and quantum claims remain fail-closed.
 The analytic endpoint criterion is now background-independent:
 `TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1` proves that every exact endpoint
 `A=P2 P1+V` with normally hyperbolic factors and an order-at-most-two
 wave-energy-graph-bounded remainder has typed advanced/retarded Green
 operators, without assuming stationarity, commutativity or self-adjointness.
-Thus the transverse calculation should first test the SDR/intertwining defect
-and the lower-order normal form; it need not rediscover the Volterra argument.
+The natural covariant order lemma and rank-310 SDR now supply exactly those
+hypotheses on the declared Bach-flat class; no further transverse
+factorization search is required.
 The first transverse input is now exact: the Kantowski--Sachs tangent
 `delta a=-(1/3)sinh(2t)`, `delta b=sinh(t)` is linearized Einstein/Bach-flat,
 lies outside the infinitesimal Diff--Weyl orbit, and has normalized
@@ -346,8 +355,10 @@ conformal Nariai orbit, transverse Nariai tangent, and the relative-open
 Bach-flat parent class.  Its lifecycle is fail-closed: E/A/L are causal
 one-particle families, while `[W_+^2]` and `[W_-^2]` remain degree-four
 deformation/vertex classes; Berger has no certified local branch projector;
-the open Bach-flat result is parent-only; and transverse Nariai causal
-transfer remains `OPEN`.  Bounded/quasiperiodic, smooth-secular, and
+the open Bach-flat result includes parent, four-row metric and all-row
+rank-310 causal carriers while preserving the absent pure-parent crosswalk;
+and transverse Nariai causal transfer is certified slabwise.
+Bounded/quasiperiodic, smooth-secular, and
 causal/retarded second-order statuses are separate on every entry.  No
 cross-background or cross-carrier identification is made without an explicit
 crosswalk.
@@ -1100,10 +1111,13 @@ survive the first backreacted, normalized apparatus interaction?
    metric `q3` successor now contributes 106,960 ordered PBW keys and 181,344
    exact coefficient monomials from the complete fourth action derivative,
    with exact order-four metric polarization, graded symmetry and two
-   independent rod cyclic-transpose replays.  The base
-   gravity-clock-Maxwell, memory-transport, normalized-readout and
-   physical-emitter `q3` sources remain to assemble; scalar-BV and emitter
-   Diff--BV are structural zeros still requiring an explicit source ledger.
+   independent rod cyclic-transpose replays.  The complete two-channel
+   memory-transport successor adds 5,196 rational PBW keys from the exact
+   69-term normalized clock-flow Hessian, with first-jet recovery,
+   directional second-variation checks and p-to-m/geometry cyclic replays.
+   The base gravity-clock-Maxwell, normalized-readout and physical-emitter
+   `q3` sources remain to assemble; scalar-BV and emitter Diff--BV are
+   structural zeros still requiring an explicit source ledger.
    The interaction identities and all observer-cone consumers remain
    fail-closed.
    A common source
@@ -1630,15 +1644,17 @@ prepared in parallel, but it cannot borrow the lifecycle of an earlier one.
 | 5 | classical tangent-cone/interaction obstruction to interacting BRST | bridge 2 plus a coefficient-bearing QME disposition | explicit quantum insertion and interacting-BRST map; a classical obstruction alone is not ghost removal | quantum + nonlinear |
 | 6 | compact branch data to black-hole or asymptotic radiation | an independently closed exterior/asymptotic phase space, boundary-preserving generators, charges and fluxes | compare invariant branch factors, Lee--Wald signs and limiting data; never import the compact Taub cone as a horizon theorem | black hole + Einstein |
 
-The support-local Bach-flat parent-to-metric causal bridge runs in parallel to
-this ladder.  It is the main generality bridge and may strengthen stages 1,
-3, 4 and 6, but a parent Green theorem does not by itself supply a metric
-branch map or physical state.
+The support-local Bach-flat causal rail runs in parallel to this ladder.  It
+is a generality bridge and may strengthen stages 1, 3, 4 and 6, but the bare
+parent Green theorem does not by itself supply a metric branch map or
+physical state.
 Its algebraic comparison layer is now certified on the radius-`1/4`
 relative-open Bach-flat ADM class: the natural six-block rank-310 cone has a
-support-local cyclic SDR onto the action metric complex.  The remaining
-generality gate is precisely the non-Einstein metric Bach Green homotopy (and
-then its automatic rank-310 transfer), not another parent or SDR search.
+support-local cyclic SDR onto the action metric complex.  Its analytic layer
+is now certified as well: the four-row metric witness is a lower-order
+Volterra biwave and the SDR transports its causal homotopy to all 310 rows.
+The remaining categorical boundary is the absent pure-parent-to-metric SDR,
+not a missing metric or rank-310 Green theorem.
 
 The near-term critical path is therefore
 
@@ -1862,8 +1878,9 @@ proceed without waiting for one of those nonlinear repairs.
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains
 `NO_CERTIFIED_MAP`; the relative functor may be prepared but Bridge 1 is not
-activated by row-name matching.  The open Bach-flat parent-to-metric causal
-bridge continues as an independent support-local rail.
+activated by row-name matching.  The Bach-flat rank-310-to-metric causal rail
+is now closed; the distinct bare-parent-to-metric crosswalk remains
+`NO_CERTIFIED_MAP`.
 
 ### Nonlinear ownership
 
