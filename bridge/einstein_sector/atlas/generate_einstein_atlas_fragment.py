@@ -91,6 +91,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
+    "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
     "twist_aligned_opposite_momentum_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.json",
     "opposite_momentum_ell2_parity_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix.json",
     "opposite_momentum_ell2_mixed_parity_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension.json",
@@ -810,9 +811,21 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED","The input q-primary branch and polar p-primary target use the action-derived shell normalization; no current-sign inference is made."),
             ("NOT_APPLICABLE","This row is a characteristic-shell census on the already declared common-moment carrier, not a new Taub-map theorem."),
             ("CERTIFIED","For every ell>=2 the unique q-minus self-product collision is polar p-primary L=2ell,K=0,Omega=2omega_minus; doubled-momentum and zero-difference shells are excluded exactly."),
-            _second_order(("OPEN","The unique carrier is known, but the polar L=2ell dynamical adjoint source coefficient remains open."),("CERTIFIED","The nonzero p-shell collision has the certified finite smooth exponential-polynomial secular inverse."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _second_order(("OPEN","This parity-agnostic arithmetic row does not import a dynamical verdict: the axial coefficient is certified in a separate row, while polar and mixed coefficients remain open."),("CERTIFIED","The nonzero p-shell collision has the certified finite smooth exponential-polynomial secular inverse."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
             _evidence("symbolic_ell_qminus_self_collision","twist_aligned_opposite_momentum_gate","finite_generic_smooth"),
-            "Complete only for q-minus self-products at one tuned |k| for each ell>=2. Q-plus/extra cross-products, the symbolic source coefficient, multiple |k| joins, bounded extension and higher lifecycles remain fail-closed.",
+            "Complete only for q-minus self-product shell arithmetic at one tuned |k| for each ell>=2. The axial source coefficient is certified in the separate axial-obstruction row; polar/mixed coefficients, Q-plus/extra cross-products, multiple |k| joins and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.symbolic_ell_axial_qminus_obstruction",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned separately for each ell; before final residual quotient", carrier="twist-aligned five-moment-map common-zero tangent with axial Einstein-plus/minus waves at +/-k; resonant coefficient from the q-minus self-product", degree=2, parity="axial input; polar p-primary output", ell="every integer input ell>=2; output L=2ell", m="axisymmetric m_A=0 input and M=0 output, certified through the exact highest-weight M=2ell coefficient", k="+/-sqrt(sqrt(2*ell*(ell+1))-ell/2-1/6)", omega="input omega_minus and output Omega=2omega_minus", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The axial q-minus input and polar L=2ell p-primary output retain their exact same-background branch, parity, momentum and frequency labels."),
+            ("CERTIFIED","The coefficient is evaluated from the action-derived q2 PBW operator and the target adjoint from the self-adjoint polar action Hessian."),
+            ("CERTIFIED","The enclosing twist-aligned tangent has H,P_x,J_1,J_2,J_3 equal to zero for every ell>=2."),
+            ("CERTIFIED","Highest weight isolates L=2ell without interpolation; the exact axisymmetric pairing is strictly positive because its quadratic-field norm factors positively."),
+            _second_order(("OBSTRUCTED","For every ell>=2 the nonzero polar p-shell adjoint functional excludes bounded and finite-quasiperiodic correction on the declared axial common-zero tangent."),("CERTIFIED","The stabilizer moment maps vanish and the finite nonzero-frequency p-shell obstruction has the certified smooth secular inverse."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _evidence("symbolic_ell_axial_qminus_obstruction","symbolic_ell_qminus_self_collision","twist_aligned_opposite_momentum_gate","finite_generic_smooth"),
+            "Complete only for axial inputs at one separately tuned |k| fibre for each ell>=2. Polar and mixed input coefficients, one fixed circumference across ell, multiple |k| joins, final residual descent and higher lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_bounded_obstruction",
@@ -1140,6 +1153,11 @@ def build() -> dict[str, object]:
         raise AssertionError("finite multimomentum divisor changed")
     if multimomentum["quadratic_source_coefficients_computed"] or multimomentum["complete_multifibre_tangent_cone_classified"] or multimomentum["causal_or_quantum_claim"]:
         raise AssertionError("finite multimomentum divisor exceeded its scope")
+    symbolic_axial = records["symbolic_ell_axial_qminus_obstruction"]["classification"]
+    if not (symbolic_axial["action_derived_q2_used"] and symbolic_axial["highest_weight_projection_exact_without_interpolation"] and symbolic_axial["symbolic_axial_dynamical_adjoint_coefficient_computed"] and symbolic_axial["coefficient_strictly_positive_every_integer_ell_ge_2"] and symbolic_axial["all_ell_tuned_axial_common_zero_tangent_bounded_obstructed"]):
+        raise AssertionError("symbolic-ell axial q-minus obstruction changed")
+    if symbolic_axial["polar_or_mixed_input_coefficient_computed"] or symbolic_axial["fixed_circumference_or_multiple_abs_momentum_classified"] or symbolic_axial["causal_or_quantum_claim"]:
+        raise AssertionError("symbolic-ell axial q-minus obstruction exceeded its scope")
     two_fibre = records["ell2_two_abs_momentum_identity_audit"]["classification"]
     if not (two_fibre["complete_cross_abs_momentum_identity_audit"] and two_fibre["all_three_input_primary_branches_covered"] and two_fibre["all_physical_L1_to_L4_target_shells_covered"] and two_fibre["no_identity_resonant_channel"] and two_fibre["generic_circumference_cross_fibre_nonresonance_certified"]):
         raise AssertionError("ell2 two-absolute-momentum identity audit changed")

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Symbolic-ell axial q-minus bounded obstruction",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "scope",
+    "action_derived_pbw_reduction",
+    "symbolic_adjoint_pairing",
+    "nonvanishing_proof",
+    "bounded_obstruction",
+    "correction_classes",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-symbolic-ell-axial-qminus-obstruction-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_AXIAL_QMINUS_BOUNDED_OBSTRUCTION"
+    },
+    "bounded_obstruction": {
+      "type": "object",
+      "required": ["value_strictly_positive_every_ell", "verdict"],
+      "properties": {
+        "value_strictly_positive_every_ell": {"const": true},
+        "verdict": {"const": "OBSTRUCTED"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "action_derived_q2_used",
+        "highest_weight_projection_exact_without_interpolation",
+        "symbolic_axial_dynamical_adjoint_coefficient_computed",
+        "coefficient_strictly_positive_every_integer_ell_ge_2",
+        "all_ell_tuned_axial_common_zero_tangent_bounded_obstructed",
+        "polar_or_mixed_input_coefficient_computed",
+        "causal_or_quantum_claim"
+      ],
+      "properties": {
+        "action_derived_q2_used": {"const": true},
+        "highest_weight_projection_exact_without_interpolation": {"const": true},
+        "symbolic_axial_dynamical_adjoint_coefficient_computed": {"const": true},
+        "coefficient_strictly_positive_every_integer_ell_ge_2": {"const": true},
+        "all_ell_tuned_axial_common_zero_tangent_bounded_obstructed": {"const": true},
+        "polar_or_mixed_input_coefficient_computed": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      }
+    }
+  }
+}

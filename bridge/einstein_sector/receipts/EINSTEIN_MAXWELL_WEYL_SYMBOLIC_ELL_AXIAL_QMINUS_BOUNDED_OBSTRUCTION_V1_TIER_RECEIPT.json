@@ -1,0 +1,91 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_AXIAL_QMINUS_BOUNDED_OBSTRUCTION",
+  "producing_date": "2026-07-19",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
+      "sha256": "9a616eadee536082d50a5cc137f2c5fefaf118232ed40bc53bc752951284d53a"
+    },
+    "producer": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.py",
+      "sha256": "bb7edd87394385bc0fd28edfc8c6c81c9722a69de29a7db8a6283ad7a6966734"
+    },
+    "schema": {
+      "path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.schema.json",
+      "sha256": "70fa62fe9abd933fc468b9f53469f1e2134a22f5e22db75f3e5c9629bd885932"
+    },
+    "independent_verifier": {
+      "path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.py",
+      "sha256": "564afc1b4e3a184200629c56b0985078b39e9c15ec159de4c949a84f5ffebd6f"
+    },
+    "test": {
+      "path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.py",
+      "sha256": "cb36515ce36e29527a93db49cbfe480e1ad020724dcc9019ee73821f586d61c3"
+    },
+    "report": {
+      "path": "bridge/einstein_sector/reports/einstein-maxwell-weyl-symbolic-ell-axial-qminus-obstruction.md",
+      "sha256": "61f24bf764b854984708112ce08be954fbf03e38c10450a9f2a79bdbca8a26df"
+    },
+    "action_derived_pbw_slice": {
+      "path": "bridge/einstein_sector/generated/einstein_maxwell_weyl_symbolic_ell_axial_qminus_pbw_slice.json",
+      "sha256": "10e7be3a9a878e349ce3e197eb9217d091d123b148c56bcdd6325ab6d187cdc3"
+    },
+    "direct_slow_rail": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_qminus_self_source_probe.py",
+      "sha256": "f09a5dc3c14d47df26164bf1135bb04946d0d61e5ffc9dd094874534e9b6a6f4"
+    }
+  },
+  "parent_provenance": {
+    "q2_sha256": "be4d163044138f4b3b093c54527c2484cfac9eea48a58c791e97926be8597fec",
+    "action_sha256": "0151ec2dbf70571df4d0a8ec5c493c9e915b8c8ae1af2e5568db48a833f1b808",
+    "row_layout_sha256": "c029f01f51b9c0096adabf4208f3b12b32ab42c6ce058969e302360724b84c86"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.py bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.py",
+        "git diff --check -- bridge/einstein_sector notes/d-quotient-einstein-team-brief.md notes/universe-building-roadmap.md"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": "5.6",
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "direct_four_dimensional_fibres": [2, 3, 4, 5, 6],
+      "elapsed_seconds_by_ell": {
+        "2": "353.95",
+        "3": "304.50",
+        "4": "452.65",
+        "5": "498.93",
+        "6": "559.31"
+      },
+      "command_template": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_qminus_self_source_probe ELL"
+    },
+    "atlas": {
+      "status": "PASS",
+      "commands": [
+        "python3 bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 -m unittest discover -s bridge/einstein_sector/atlas/tests -p test_*.py"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The theorem is a scoped same-background coefficient result and changes no shared operator; the authoritative action-derived q2 input is content-addressed."
+    }
+  },
+  "claim_boundary": "Axial inputs only, one separately tuned absolute momentum fibre for each ell>=2. Polar/mixed coefficients, fixed circumference, multiple absolute momenta, causal transport, final residual descent and quantum claims remain fail-closed."
+}

@@ -137,7 +137,19 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("symbolic source coefficient", entry["claim_boundary"])
+        self.assertIn("axial source coefficient is certified", entry["claim_boundary"])
+        self.assertIn("polar/mixed coefficients", entry["claim_boundary"])
+
+    def test_symbolic_ell_axial_qminus_is_obstructed_but_not_causal(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.symbolic_ell_axial_qminus_obstruction"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("Polar and mixed input coefficients", entry["claim_boundary"])
 
     def test_two_parity_l4_null_face_does_not_claim_extension(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.opposite_momentum_ell2_parity_resonance_matrix"]

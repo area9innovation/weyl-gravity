@@ -430,6 +430,18 @@ def verify() -> None:
         raise AssertionError("symbolic-ell correction-class boundary changed")
     if symbolic_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("symbolic-ell collision row gained a causal map")
+    symbolic_axial = by_id["einstein.ph.wm.interaction.symbolic_ell_axial_qminus_obstruction"]
+    symbolic_axial_second = symbolic_axial["mode_data"]["second_order"]
+    if symbolic_axial["descriptions"]["nonlinear"] != "OBSTRUCTED":
+        raise AssertionError("symbolic-ell axial bounded obstruction was hidden")
+    if symbolic_axial["mode_data"]["taub_maps"]["status"] != "CERTIFIED":
+        raise AssertionError("symbolic-ell axial common-zero witness was hidden")
+    if symbolic_axial["mode_data"]["resonance"]["status"] != "CERTIFIED" or "strictly positive" not in symbolic_axial["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("symbolic-ell axial source coefficient was hidden")
+    if symbolic_axial_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or symbolic_axial_second["smooth_secular"]["status"] != "CERTIFIED":
+        raise AssertionError("symbolic-ell axial correction-class split changed")
+    if symbolic_axial_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("symbolic-ell axial obstruction gained a causal map")
     aligned_obstruction = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_bounded_obstruction"]
     aligned_obstruction_second = aligned_obstruction["mode_data"]["second_order"]
     if aligned_obstruction["descriptions"]["nonlinear"] != "OBSTRUCTED":

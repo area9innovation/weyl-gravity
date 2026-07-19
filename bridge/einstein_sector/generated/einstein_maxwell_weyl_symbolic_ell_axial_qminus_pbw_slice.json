@@ -1,0 +1,35 @@
+{
+  "schema": "einstein-maxwell-weyl-symbolic-ell-axial-qminus-pbw-slice-v1",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_AXIAL_QMINUS_PBW_SLICE",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "parent": {
+    "result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1",
+    "q2_sha256": "be4d163044138f4b3b093c54527c2484cfac9eea48a58c791e97926be8597fec",
+    "action_sha256": "0151ec2dbf70571df4d0a8ec5c493c9e915b8c8ae1af2e5568db48a833f1b808",
+    "row_layout_sha256": "c029f01f51b9c0096adabf4208f3b12b32ab42c6ce058969e302360724b84c86"
+  },
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "carrier": "two highest-weight axial Einstein-minus inputs at opposite compact momenta and the five polar action output rows",
+    "degree": 2,
+    "ell": "symbolic integer ell>=2",
+    "m": "input m=ell and output M=2ell",
+    "k": "+k and -k",
+    "omega": "two positive-frequency omega_minus inputs"
+  },
+  "extraction": {
+    "base_point": "theta=pi/2, phi=0",
+    "input_rows": ["g_02", "g_03", "g_12", "g_13", "A_0", "A_1"],
+    "output_rows": ["g_00_star", "g_01_star", "g_11_star", "A_2_star", "A_3_star"],
+    "maximum_total_derivative_order": 4,
+    "highest_weight_isolates_L_2ell": true
+  },
+  "highest_weight_rows": {
+    "E00": "-(23*ell**6*k**2 - 31*ell**6*omega**2 + 88*ell**5*k**2 - 44*ell**5*omega**2 + 2*ell**4*k**4 - 4*ell**4*k**2*omega**2 + 51*ell**4*k**2 + 34*ell**4*omega**4 - 3*ell**4*omega**2 + 28*ell**3*k**4 - 56*ell**3*k**2*omega**2 - 38*ell**3*k**2 + 44*ell**3*omega**4 + 2*ell**3*omega**2 + 3*ell**2*k**6 - 9*ell**2*k**4*omega**2 + 10*ell**2*k**4 + 9*ell**2*k**2*omega**4 - 20*ell**2*k**2*omega**2 - ell**2*k**2*r**2 + 4*ell**2*k**2*r - 20*ell**2*k**2 - 3*ell**2*omega**6 + 10*ell**2*omega**4 + ell**2*omega**2*r**2 - 4*ell**2*omega**2*r - 4*ell**2*omega**2 + k**4*r**2 - 2*k**2*omega**2*r**2 + omega**4*r**2)/2",
+    "E01": "0",
+    "E11": "(-31*ell**6*k**2 + 23*ell**6*omega**2 - 44*ell**5*k**2 + 88*ell**5*omega**2 + 26*ell**4*k**4 - 60*ell**4*k**2*omega**2 - 3*ell**4*k**2 - 46*ell**4*omega**4 + 51*ell**4*omega**2 + 16*ell**3*k**4 - 8*ell**3*k**2*omega**2 + 2*ell**3*k**2 - 88*ell**3*omega**4 - 38*ell**3*omega**2 + 9*ell**2*k**6 - 59*ell**2*k**4*omega**2 - 2*ell**2*k**4 + 91*ell**2*k**2*omega**4 + 36*ell**2*k**2*omega**2 + ell**2*k**2*r**2 - 4*ell**2*k**2*r - 4*ell**2*k**2 + 23*ell**2*omega**6 - 18*ell**2*omega**4 - ell**2*omega**2*r**2 + 4*ell**2*omega**2*r - 20*ell**2*omega**2 + k**4*r**2 - 2*k**2*omega**2*r**2 + omega**4*r**2)/2",
+    "Maxwell_phi": "0",
+    "Maxwell_theta": "-8*I*ell*(ell**2*k**2*r - ell**2*k**2 + ell**2*omega**2*r - ell**2*omega**2 + k**2*omega**2*r - omega**4*r)"
+  },
+  "claim_boundary": "This is a content-addressed quadratic PBW slice, not the full q2 or q3 export. It contains only the rows required by the symbolic axial q-minus obstruction theorem."
+}

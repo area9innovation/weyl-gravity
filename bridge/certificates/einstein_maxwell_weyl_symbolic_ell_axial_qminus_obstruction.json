@@ -1,0 +1,144 @@
+{
+  "action_derived_pbw_reduction": {
+    "Maxwell_row_relative_factor": "axisymmetric_top_Gaunt_factor",
+    "axisymmetric_top_Gaunt_factor": "binomial(2*ell, ell)**2/binomial(4*ell, 2*ell)",
+    "highest_weight_rows": {
+      "E00": "-23*ell**6*k**2/2 + 31*ell**6*omega**2/2 - 44*ell**5*k**2 + 22*ell**5*omega**2 - ell**4*k**4 + 2*ell**4*k**2*omega**2 - 51*ell**4*k**2/2 - 17*ell**4*omega**4 + 3*ell**4*omega**2/2 - 14*ell**3*k**4 + 28*ell**3*k**2*omega**2 + 19*ell**3*k**2 - 22*ell**3*omega**4 - ell**3*omega**2 - 3*ell**2*k**6/2 + 9*ell**2*k**4*omega**2/2 - 5*ell**2*k**4 - 9*ell**2*k**2*omega**4/2 + 10*ell**2*k**2*omega**2 + ell**2*k**2*r**2/2 - 2*ell**2*k**2*r + 10*ell**2*k**2 + 3*ell**2*omega**6/2 - 5*ell**2*omega**4 - ell**2*omega**2*r**2/2 + 2*ell**2*omega**2*r + 2*ell**2*omega**2 - k**4*r**2/2 + k**2*omega**2*r**2 - omega**4*r**2/2",
+      "E01": "0",
+      "E11": "-31*ell**6*k**2/2 + 23*ell**6*omega**2/2 - 22*ell**5*k**2 + 44*ell**5*omega**2 + 13*ell**4*k**4 - 30*ell**4*k**2*omega**2 - 3*ell**4*k**2/2 - 23*ell**4*omega**4 + 51*ell**4*omega**2/2 + 8*ell**3*k**4 - 4*ell**3*k**2*omega**2 + ell**3*k**2 - 44*ell**3*omega**4 - 19*ell**3*omega**2 + 9*ell**2*k**6/2 - 59*ell**2*k**4*omega**2/2 - ell**2*k**4 + 91*ell**2*k**2*omega**4/2 + 18*ell**2*k**2*omega**2 + ell**2*k**2*r**2/2 - 2*ell**2*k**2*r - 2*ell**2*k**2 + 23*ell**2*omega**6/2 - 9*ell**2*omega**4 - ell**2*omega**2*r**2/2 + 2*ell**2*omega**2*r - 10*ell**2*omega**2 + k**4*r**2/2 - k**2*omega**2*r**2 + omega**4*r**2/2",
+      "Maxwell_phi": "0",
+      "Maxwell_theta": "-8*I*ell*(ell**2*k**2*r - ell**2*k**2 + ell**2*omega**2*r - ell**2*omega**2 + k**2*omega**2*r - omega**4*r)"
+    },
+    "input_field_rows": [
+      "g_02",
+      "g_03",
+      "g_12",
+      "g_13",
+      "A_0",
+      "A_1"
+    ],
+    "maximum_total_derivative_order": 4,
+    "method": "consume the content-addressed PBW slice obtained by evaluating the independently verified parent q2 on Y_(ell,ell)=sin(theta)^ell exp(i ell phi) at the equator; M=2ell isolates the top irreducible output",
+    "metric_rows_relative_factor": "2*axisymmetric_top_Gaunt_factor",
+    "output_action_rows": [
+      "g_00_star",
+      "g_01_star",
+      "g_11_star",
+      "A_2_star",
+      "A_3_star"
+    ]
+  },
+  "bounded_obstruction": {
+    "resonant_functional": "R_polar_L_2ell(u)=zeta_p^T S_(L=2ell,M=0,K=0,Omega=2omega_minus)(u,u)",
+    "value_strictly_positive_every_ell": true,
+    "verdict": "OBSTRUCTED"
+  },
+  "claim_boundary": "This theorem covers axial inputs at one separately tuned |k| fibre for each ell>=2. It does not compute polar or mixed input coefficients, classify one fixed circumference across ell, join multiple |k| fibres, construct a causal inverse, descend the final residual quotient, or make observational or quantum claims.",
+  "classification": {
+    "action_derived_q2_used": true,
+    "all_ell_tuned_axial_common_zero_tangent_bounded_obstructed": true,
+    "causal_or_quantum_claim": false,
+    "coefficient_strictly_positive_every_integer_ell_ge_2": true,
+    "fixed_circumference_or_multiple_abs_momentum_classified": false,
+    "highest_weight_projection_exact_without_interpolation": true,
+    "polar_or_mixed_input_coefficient_computed": false,
+    "symbolic_axial_dynamical_adjoint_coefficient_computed": true
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "OBSTRUCTED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "the nonzero p-shell functional has the certified finite secular inverse and the common stabilizer moment maps vanish",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_EVERY_INTEGER_ELL_AT_ONE_TUNED_NONZERO_MOMENTUM_FIBRE",
+  "interpretation": "The ell=2 obstruction is universal along the tuned axial common-zero family: Taub moment maps vanish, yet an independent polar extra-primary resonant functional is strictly positive for every ell>=2. The bounded tangent cone is therefore strictly smaller than the stabilizer moment-map zero set at every generic angular degree.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the polar and axial-polar mixed q-minus coefficients, then join this single-|k| theorem to the finite-multimomentum divisor ledger",
+  "nonvanishing_proof": {
+    "A_positive": true,
+    "B_positive": true,
+    "conclusion": "A_ell>sqrt(2*ell*(ell+1))*B_ell, so the displayed adjoint pairing is strictly positive",
+    "norm_factorization": "2*(ell - 1)**3*(ell + 2)*(81*ell**4 + 54*ell**3 + 42*ell - 1)",
+    "norm_strictly_positive": true,
+    "positivity_domain": "ell is an integer >=2"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.py",
+    "generator_sha256": "bb7edd87394385bc0fd28edfc8c6c81c9722a69de29a7db8a6283ad7a6966734",
+    "inputs": {
+      "common_zero_gate": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
+        "sha256": "096ebab87e36ee7b7eb7c46e51168c863105e38513da5ac8a30118c2ee11d624"
+      },
+      "ell2_direct_replay": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.json",
+        "sha256": "2899ddabd424ad67b71350a12819165c7bca9f136fd922c4052bb4e215358d64"
+      },
+      "symbolic_collision": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
+        "sha256": "cc50b09f9140749d2744d42586cf8e052d16b8063b8c37737d448d1711bac289"
+      }
+    },
+    "parent_action_sha256": "0151ec2dbf70571df4d0a8ec5c493c9e915b8c8ae1af2e5568db48a833f1b808",
+    "parent_q2_sha256": "be4d163044138f4b3b093c54527c2484cfac9eea48a58c791e97926be8597fec",
+    "parent_row_layout_sha256": "c029f01f51b9c0096adabf4208f3b12b32ab42c6ce058969e302360724b84c86",
+    "pbw_slice": {
+      "path": "bridge/einstein_sector/generated/einstein_maxwell_weyl_symbolic_ell_axial_qminus_pbw_slice.json",
+      "sha256": "10e7be3a9a878e349ce3e197eb9217d091d123b148c56bcdd6325ab6d187cdc3"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_AXIAL_QMINUS_BOUNDED_OBSTRUCTION",
+  "result_state": "ALL_ELL_TUNED_AXIAL_COMMON_ZERO_TANGENTS_HAVE_POSITIVE_POLAR_P_RESONANT_FUNCTIONAL",
+  "schema": "einstein-maxwell-weyl-symbolic-ell-axial-qminus-obstruction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.schema.json",
+  "schema_sha256": "70fa62fe9abd933fc468b9f53469f1e2134a22f5e22db75f3e5c9629bd885932",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 with circumference tuned separately for each ell",
+    "carrier": "twist-aligned common-zero tangent with axial Einstein-plus/minus waves at +/-k; the resonant coefficient is the q-minus self-product",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "every integer input ell>=2; output L=2*ell",
+    "k": "+/-sqrt(sqrt(2*ell*(ell+1))-ell/2-1/6)",
+    "m": "axisymmetric input m=0 and output M=0, derived through the highest-weight M=2*ell coefficient",
+    "omega": "input omega_minus and output Omega=2*omega_minus",
+    "parity": "axial input; polar p-primary output",
+    "theory": "Weyl-Maxwell target"
+  },
+  "symbolic_adjoint_pairing": {
+    "A_ell": "18*ell**4 + 24*ell**3 + 4*ell**2 + 16*ell + 2",
+    "B_ell": "9*ell**3 + 21*ell**2 - 9*ell + 11",
+    "axisymmetric_pairing": "-8*ell**2*(ell + 1)*(2*ell + 1)*(-18*ell**4 + 9*ell**3*r - 24*ell**3 + 21*ell**2*r - 4*ell**2 - 9*ell*r - 16*ell + 11*r - 2)*binomial(2*ell, ell)**2/(3*(6*ell**2 + 3*ell - 1)*binomial(4*ell, 2*ell))",
+    "direct_exact_samples": {
+      "2": "-1152*(-265 + 149*sqrt(3))/203",
+      "3": "-25600*(-137 + 52*sqrt(6))/341",
+      "4": "-627200*(-3137 + 887*sqrt(10))/45903",
+      "5": "-50803200*(-451 + 101*sqrt(15))/172159",
+      "6": "-40981248*(-14377 + 2657*sqrt(21))/1730957"
+    },
+    "direct_slow_rail_elapsed_seconds": {
+      "2": "353.95",
+      "3": "304.50",
+      "4": "452.65",
+      "5": "498.93",
+      "6": "559.31"
+    },
+    "highest_weight_reduced_pairing": "-8*ell**2*(ell + 1)*(2*ell + 1)*(-18*ell**4 + 9*ell**3*r - 24*ell**3 + 21*ell**2*r - 4*ell**2 - 9*ell*r - 16*ell + 11*r - 2)/(3*(6*ell**2 + 3*ell - 1))",
+    "root_relation": "r^2=2*ell*(ell+1)"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction"
+  ]
+}

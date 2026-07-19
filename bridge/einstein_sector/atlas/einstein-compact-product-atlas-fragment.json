@@ -4287,7 +4287,7 @@
       }
     },
     {
-      "claim_boundary": "Complete only for q-minus self-products at one tuned |k| for each ell>=2. Q-plus/extra cross-products, the symbolic source coefficient, multiple |k| joins, bounded extension and higher lifecycles remain fail-closed.",
+      "claim_boundary": "Complete only for q-minus self-product shell arithmetic at one tuned |k| for each ell>=2. The axial source coefficient is certified in the separate axial-obstruction row; polar/mixed coefficients, Q-plus/extra cross-products, multiple |k| joins and higher lifecycles remain fail-closed.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "OPEN",
@@ -4328,7 +4328,7 @@
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The unique carrier is known, but the polar L=2ell dynamical adjoint source coefficient remains open.",
+            "statement": "This parity-agnostic arithmetic row does not import a dynamical verdict: the axial coefficient is certified in a separate row, while polar and mixed coefficients remain open.",
             "status": "OPEN"
           },
           "causal_retarded": {
@@ -4357,6 +4357,85 @@
         "m": "axisymmetric m_A=0 input and M=0 top output",
         "omega": "positive sum and zero difference of omega_minus",
         "parity": "arithmetic theorem for either certified input parity; symbolic source coefficient not yet computed",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
+      "claim_boundary": "Complete only for axial inputs at one separately tuned |k| fibre for each ell>=2. Polar and mixed input coefficients, one fixed circumference across ell, multiple |k| joins, final residual descent and higher lifecycles remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_AXIAL_QMINUS_BOUNDED_OBSTRUCTION",
+          "sha256": "9a616eadee536082d50a5cc137f2c5fefaf118232ed40bc53bc752951284d53a"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_QMINUS_SELF_COLLISION",
+          "sha256": "cc50b09f9140749d2744d42586cf8e052d16b8063b8c37737d448d1711bac289"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_TWIST_ALIGNED_OPPOSITE_MOMENTUM_RESONANCE_GATE",
+          "sha256": "096ebab87e36ee7b7eb7c46e51168c863105e38513da5ac8a30118c2ee11d624"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_FINITE_GENERIC_SMOOTH_GLOBAL_SECOND_ORDER",
+          "sha256": "dd1dec63c50d538a489205d48931720919ff9a43e23c52a45a9d1b80e5ff2513"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.symbolic_ell_axial_qminus_obstruction",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The axial q-minus input and polar L=2ell p-primary output retain their exact same-background branch, parity, momentum and frequency labels.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The coefficient is evaluated from the action-derived q2 PBW operator and the target adjoint from the self-adjoint polar action Hessian.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Highest weight isolates L=2ell without interpolation; the exact axisymmetric pairing is strictly positive because its quadratic-field norm factors positively.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "For every ell>=2 the nonzero polar p-shell adjoint functional excludes bounded and finite-quasiperiodic correction on the declared axial common-zero tangent.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "No retarded Weyl-Maxwell complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The stabilizer moment maps vanish and the finite nonzero-frequency p-shell obstruction has the certified smooth secular inverse.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The enclosing twist-aligned tangent has H,P_x,J_1,J_2,J_3 equal to zero for every ell>=2.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed S1_L times S2 with circumference tuned separately for each ell; before final residual quotient",
+        "carrier": "twist-aligned five-moment-map common-zero tangent with axial Einstein-plus/minus waves at +/-k; resonant coefficient from the q-minus self-product",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": "every integer input ell>=2; output L=2ell",
+        "k": "+/-sqrt(sqrt(2*ell*(ell+1))-ell/2-1/6)",
+        "m": "axisymmetric m_A=0 input and M=0 output, certified through the exact highest-weight M=2ell coefficient",
+        "omega": "input omega_minus and output Omega=2omega_minus",
+        "parity": "axial input; polar p-primary output",
         "theory": "Weyl-Maxwell target"
       }
     },
@@ -5141,7 +5220,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "041aaeba84866fb615f6bd9c095fe8122ef1627b309254cc7cf2bee6c96fe090",
+  "generated_by_sha256": "a2846788b7ba1b66054b23cfa67989b871228963716df51c740461d4d2d490ef",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

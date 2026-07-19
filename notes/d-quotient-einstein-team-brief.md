@@ -3223,11 +3223,37 @@ dynamical coefficient, other-primary cross-products and bounded extension
 remain `OPEN`; smooth secular extension is `CERTIFIED` and causal transport
 is `NO_CERTIFIED_MAP`.
 
+The axial dynamical coefficient is now closed for every `ell>=2`, without
+finite-`ell` interpolation.  Evaluating the action-derived quadratic PBW
+operator on the highest-weight harmonic isolates the `L=2*ell` output, and
+the exact top Legendre/Gaunt factor returns the axisymmetric coefficient.  If
+`r=sqrt(2*ell*(ell+1))`, it is proportional to
+
+```text
+r*(9*ell^3+21*ell^2-9*ell+11)
+ -(18*ell^4+24*ell^3+4*ell^2+16*ell+2).
+```
+
+The squared norm of the two terms factors as
+
+```text
+2*(ell-1)^3*(ell+2)*(81*ell^4+54*ell^3+42*ell-1)>0,
+```
+
+so the reduced adjoint pairing is strictly positive.  It reproduces the
+independent direct four-dimensional fibres `ell=2,...,6`.  Therefore every
+member of the tuned **axial** twist-aligned common-zero family is bounded/
+finite-quasiperiodic `OBSTRUCTED`, while smooth secular correction remains
+`CERTIFIED`.  Atlas row
+`einstein.ph.wm.interaction.symbolic_ell_axial_qminus_obstruction` records the
+theorem.  Polar and mixed input coefficients remain explicitly `OPEN`.
+
 The active same-background Classical bridge remains Bridge 1.  Its current
-nonlinear activation gates are the symbolic polar `L=2*ell` source
-coefficient and the parity-typed 164-coefficient first-two-`|k|` workload.
+nonlinear activation gates are the symbolic polar and axial-polar mixed
+`L=2*ell` source coefficients and the parity-typed 164-coefficient
+first-two-`|k|` workload.
 Their fail-closed atlas rows are
-`einstein.ph.wm.interaction.symbolic_ell_qminus_self_collision` and
+`einstein.ph.wm.interaction.symbolic_ell_axial_qminus_obstruction` and
 `einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload`.  Both
 retain the compact Plebański--Hacyan carrier and identify no mode across
 backgrounds.
