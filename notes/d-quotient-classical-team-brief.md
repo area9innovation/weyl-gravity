@@ -2274,10 +2274,14 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    now posed on an actual common causal domain: after the regular change
    `b=1+epsilon y`, smooth ODE dependence gives, for every finite `T`, a
    uniformly globally hyperbolic small-parameter family on `(-T,T)` with one
-   wider reference cone.  It remains to bind all six difference blocks to
-   that exact geometry and verify the typed biwave endpoint.  Neither the
-   domain theorem nor the HPL algebra promotes a causal map or a
-   whole-cylinder result.
+   wider reference cone.  The metric endpoint is now exact on that whole
+   Einstein slab family: the invariant identity
+   `B_action+K T/2=L_E(L_E-2/3)/2`, with
+   `L_E=Box+2 Cdot-2/3`, gives two normally hyperbolic factors without any
+   parallel-Weyl assumption.  Thus the remaining C-G2 gate is only the
+   coefficient-complete binding of the six rank-310 difference blocks to the
+   exact Kantowski--Sachs geometry.  The metric theorem does not promote the
+   all-row rank-310 map or a whole-cylinder nonzero family.
 9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` is now official:
    all six minimal roles, the Bach Euler coordinate, both Noether rows,
    Lie/Weyl covariance, and the four filtration identities replay. Quantum
@@ -2323,12 +2327,15 @@ eight-block normal-tractor curvature cylinder is not the metric bridge: the
 exact reducibility mismatch requires at least five noncontractible new
 directions.  The curvature-corrected rank-310 parent-detour mapping cone is
 the selected replacement and already has a cyclic support-local SDR and
-advanced/retarded all-row contraction with exact metric descent.  The active
-gate is now a non-Einstein transverse Bach-flat family, or an explicitly
-bounded common causal domain, because the exact Kantowski--Sachs Einstein
-branch is slabwise but develops finite-time Weyl-curvature blow-up for every
-nonzero small parameter.  This scoped obstruction does not demote the formal
-rank-310 variation and does not cover all Bach-flat deformations.  Fixed
+advanced/retarded all-row contraction with exact metric descent at unit and
+conformal Nariai.  On the exact transverse Kantowski--Sachs Einstein branch,
+every finite common slab now also has a certified four-row metric biwave Green
+homotopy.  The active gate is the coefficient-complete geometric realization
+of the six-block rank-310 HPL differences on that slab.  The branch still
+develops finite-time Weyl-curvature blow-up for every nonzero small parameter,
+so no whole-cylinder promotion follows.  This scoped obstruction does not
+demote the formal rank-310 variation and does not cover all Bach-flat
+deformations.  Fixed
 untransported gauges, undeclared timelike boundaries and Hadamard claims
 remain false.
 The full queue and

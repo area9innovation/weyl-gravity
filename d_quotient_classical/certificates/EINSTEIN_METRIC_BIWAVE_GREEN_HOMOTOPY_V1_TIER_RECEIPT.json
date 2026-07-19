@@ -1,0 +1,54 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1_TIER_RECEIPT",
+  "claim_id": "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json", "sha256": "e2978cf23f577ab365729d139c8eabf0bcbc2277bc2a124d872c03c94b7b8a75"},
+    "schema": {"path": "d_quotient_classical/schema/einstein-metric-biwave-green-homotopy-v1.schema.json", "sha256": "c7d3a1ae00ef195c22c7ee1a64a44044554f6d00690917233dddd57704e2aee1"},
+    "producer": {"path": "d_quotient_classical/causal_transfer/einstein_metric_biwave_green_homotopy.py", "sha256": "8147964688a2fc019af72c81b2eb2f554d98af481a7e7ee6b053f566985bf7ab"},
+    "independent_verifier": {"path": "d_quotient_classical/causal_transfer/verify_einstein_metric_biwave_green_homotopy.py", "sha256": "35f1ddca6d80baded727a04ad8a7e3f75d9ddd993a66d397c101d89db447a61c"},
+    "tests": {"path": "d_quotient_classical/causal_transfer/tests/test_einstein_metric_biwave_green_homotopy.py", "sha256": "58cd04555418438afb6013ac23e66500b8d9024bb8d1bef97c66def174fb72fe"},
+    "invariant_proof": {"path": "d_quotient_classical/proofs/einstein-metric-biwave-green-homotopy.md", "sha256": "3152205492f95a2d39f3a1d86df7b1d421dba25f3a68fe575ecb5a5b10e7195b"},
+    "report": {"path": "d_quotient_classical/reports/einstein-metric-biwave-green-homotopy.md", "sha256": "8c63b8215bc4083b0ff7dfd01bc2d5e48afc3d6fb694420f24e15cd1c630a5c5"},
+    "atlas_fragment": {"path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "sha256": "fe74c212125fdea511dd43ff381cc9647651d41c23d463ef84bdb79dcaf453b0"}
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "Python sources compiled",
+        "strict Draft 2020-12 schema validation",
+        "scoped diff inspected",
+        "source and dependency hashes replayed"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 108.0,
+      "peak_rss_kb": 93316,
+      "commands": [
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/einstein_metric_biwave_green_homotopy.py --write --guards",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/einstein-metric-biwave-green-homotopy-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_einstein_metric_biwave_green_homotopy.py",
+        "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_einstein_metric_biwave_green_homotopy"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 1.3,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This promotes a scoped four-row Einstein metric endpoint and direct atlas row, not the rank-310 transfer, a paper theorem, a shared-core algebra change, a freeze, or a release."
+    }
+  },
+  "claim_boundary": "This receipt certifies the invariant Einstein/partially-massless biwave identity, exact unit-Nariai PBW normalization, normally hyperbolic factor Green construction, and application to every certified common Kantowski--Sachs slab. It does not certify the coefficient-complete six-block rank-310 geometric binding, all-row rank-310 Green transfer, non-Einstein Bach-flat metric endpoints, a whole-cylinder nonzero KS family, Hadamard data, or quantum claims."
+}

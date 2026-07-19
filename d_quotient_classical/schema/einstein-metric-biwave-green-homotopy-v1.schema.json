@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/einstein-metric-biwave-green-homotopy-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "scope", "invariant_operators", "exact_identities", "unit_nariai_exact_calibration", "causal_construction", "exact_checks", "flags", "claim_boundary", "next_gate", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "pure-weyl-einstein-metric-biwave-green-homotopy-v1"},
+    "result_id": {"const": "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1"},
+    "result_state": {"const": "EINSTEIN_BACKGROUND_FOUR_ROW_METRIC_CAUSAL_GREEN_HOMOTOPY_EXACT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unit_nariai_metric", "unit_nariai_action_endpoint", "kantowski_sachs_common_slab"],
+      "properties": {
+        "unit_nariai_metric": {"$ref": "#/$defs/dependency"},
+        "unit_nariai_action_endpoint": {"$ref": "#/$defs/dependency"},
+        "kantowski_sachs_common_slab": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "background_equation", "spacetime", "field_bundle", "kantowski_sachs_application"],
+      "properties": {
+        "dimension": {"const": 4},
+        "background_equation": {"const": "Ric(g)=g"},
+        "spacetime": {"type": "string", "minLength": 1},
+        "field_bundle": {"type": "string", "minLength": 1},
+        "kantowski_sachs_application": {"type": "string", "minLength": 1}
+      }
+    },
+    "invariant_operators": {"$ref": "#/$defs/stringMap"},
+    "exact_identities": {"$ref": "#/$defs/stringMap"},
+    "unit_nariai_exact_calibration": {"$ref": "#/$defs/checks"},
+    "causal_construction": {"$ref": "#/$defs/stringMap"},
+    "exact_checks": {"$ref": "#/$defs/checks"},
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1", "FOUR_DIMENSIONAL_EINSTEIN_METRIC_BIWAVE_THEOREM", "KANTOWSKI_SACHS_COMMON_SLAB_METRIC_GREEN_HOMOTOPY", "VARIABLE_WEYL_ALLOWED", "PARALLEL_WEYL_REQUIRED", "KANTOWSKI_SACHS_RANK310_GEOMETRIC_BINDING", "KANTOWSKI_SACHS_RANK310_GREEN_TRANSFER", "NON_EINSTEIN_BACH_FLAT_METRIC_THEOREM", "HADAMARD_STATE", "QUANTUM_CLAIM"],
+      "properties": {
+        "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1": {"const": true},
+        "FOUR_DIMENSIONAL_EINSTEIN_METRIC_BIWAVE_THEOREM": {"const": true},
+        "KANTOWSKI_SACHS_COMMON_SLAB_METRIC_GREEN_HOMOTOPY": {"const": true},
+        "VARIABLE_WEYL_ALLOWED": {"const": true},
+        "PARALLEL_WEYL_REQUIRED": {"const": false},
+        "KANTOWSKI_SACHS_RANK310_GEOMETRIC_BINDING": {"const": false},
+        "KANTOWSKI_SACHS_RANK310_GREEN_TRANSFER": {"const": false},
+        "NON_EINSTEIN_BACH_FLAT_METRIC_THEOREM": {"const": false},
+        "HADAMARD_STATE": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement", "not_claimed"],
+      "properties": {
+        "statement": {"type": "string", "minLength": 1},
+        "not_claimed": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "next_gate": {"const": "NARIAI_KS_RANK310_SIX_BLOCK_GEOMETRIC_COEFFICIENT_BINDING"},
+    "source_manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "stringMap": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["detour_coefficient_rank", "detour_augmented_rank", "detour_solution", "weyl_action_eigenvalues", "weyl_action_pairing_defect_rank", "einstein_factor_invariant_defect_rank", "gauge_fixed_einstein_defect_entries", "partially_massless_scalar_shift_defect_entries", "existing_metric_factorization_defect_entries", "factor_commutator_defect_entries", "factor_adjoint_defect_entries"],
+      "properties": {
+        "detour_coefficient_rank": {"const": 2},
+        "detour_augmented_rank": {"const": 2},
+        "detour_solution": {"const": ["-1", "-1/3"]},
+        "weyl_action_eigenvalues": {"const": {"-2/3": 4, "4/3": 1, "1/3": 4}},
+        "weyl_action_pairing_defect_rank": {"const": 0},
+        "einstein_factor_invariant_defect_rank": {"const": 0},
+        "gauge_fixed_einstein_defect_entries": {"const": 0},
+        "partially_massless_scalar_shift_defect_entries": {"const": 0},
+        "existing_metric_factorization_defect_entries": {"const": 0},
+        "factor_commutator_defect_entries": {"const": 0},
+        "factor_adjoint_defect_entries": {"const": 0}
+      }
+    }
+  }
+}

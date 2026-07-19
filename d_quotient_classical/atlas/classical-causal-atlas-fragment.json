@@ -877,13 +877,13 @@
       }
     },
     {
-      "claim_boundary": "The branch integrates the certified tangent on every fixed compact time slab but is globally singular for every nonzero 0<|epsilon|<1. In the declared fixed-coordinate tracefree transport, the finite conformal-Killing symbol first changes at order epsilon squared, so the four-block HPL theorem cannot be applied unchanged. The exact six-block operator algebra including k and ksharp has terminating HPL resolvents, an exact cyclic SDR, and two forced quadratic metric cross terms. For every finite T, the regularized exact KS initial-value problem also supplies a uniformly globally hyperbolic small-parameter family on (-T,T) with one common wider causal cone. These two inputs do not yet give a causal map: coefficient-complete binding of the six operator differences and verification of the compressed metric endpoint remain open. This is not a no-go for non-Einstein Bach-flat deformations, alternative support-local identifications, different transverse data, or declared causal subdomains.",
+      "claim_boundary": "The branch integrates the certified tangent on every fixed compact time slab but is globally singular for every nonzero 0<|epsilon|<1. In the declared fixed-coordinate tracefree transport, the finite conformal-Killing symbol first changes at order epsilon squared, so the four-block HPL theorem cannot be applied unchanged. The exact six-block operator algebra including k and ksharp has terminating HPL resolvents, an exact cyclic SDR, and two forced quadratic metric cross terms. For every finite T, the regularized exact KS initial-value problem supplies a uniformly globally hyperbolic small-parameter family on (-T,T) with one common wider causal cone. The invariant Einstein biwave identity now certifies the complete four-row metric endpoint on those slabs without assuming parallel Weyl curvature. It does not yet give the rank-310 causal map: coefficient-complete binding of the six operator differences remains open. This is not a no-go for non-Einstein Bach-flat deformations, alternative support-local identifications, different transverse data, or declared causal subdomains.",
       "descriptions": {
-        "causal": "NO_CERTIFIED_MAP",
+        "causal": "CERTIFIED",
         "nonlinear": "OBSTRUCTED",
         "observational": "NOT_APPLICABLE",
         "quantum": "OPEN",
-        "symplectic": "OPEN"
+        "symplectic": "CERTIFIED"
       },
       "evidence": [
         {
@@ -905,12 +905,17 @@
           "path": "d_quotient_classical/certificates/NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1.json",
           "result_id": "NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1",
           "sha256": "e4d6a9a8cd71e1678ac5967c8a6078a393cde345f98fcb9082023de2ab96c6bf"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
+          "result_id": "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+          "sha256": "e2978cf23f577ab365729d139c8eabf0bcbc2277bc2a124d872c03c94b7b8a75"
         }
       ],
       "id": "classical.nariai.transverse_kantowski_sachs_exact_branch",
       "mode_data": {
         "dispersion": {
-          "statement": "The exact branch is controlled by a first integral with strictly positive potential for 0<|epsilon|<1.",
+          "statement": "On every common slab, the four-row metric witness is the Einstein/partially-massless biwave (1/2)L_E(L_E-2/3), with normally hyperbolic factors and exact advanced/retarded Green homotopies.",
           "status": "CERTIFIED"
         },
         "lee_wald": {
@@ -943,15 +948,15 @@
       },
       "scope": {
         "background": "exact transverse Kantowski-Sachs Einstein branch through unit Nariai",
-        "boundaries": "global compact Cauchy surface S1 x S2; no timelike boundary",
-        "carrier": "homogeneous metric g_epsilon=-dt^2+a_epsilon(t)^2 dchi^2+b_epsilon(t)^2 dOmega_2^2",
+        "boundaries": "for every finite T, a certified small-parameter family on the open globally hyperbolic slab (-T,T) x S1 x S2 with one common wider causal cone; no whole-cylinder nonzero branch",
+        "carrier": "homogeneous Einstein metric together with its complete four-row trace-free metric Bach complex",
         "charge_sector": "unquotiented linear gauge complex; no residual state quotient imported",
-        "degree": 0,
-        "ell": 0,
-        "k": 0,
-        "m": 0,
+        "degree": "metric BV degrees on the slab; homogeneous background parameter at degree 0",
+        "ell": "all smooth metric-complex modes; background tangent ell=0",
+        "k": "all local covectors; background tangent k=0",
+        "m": "all; background tangent m=0",
         "omega": "nonstationary exact Einstein evolution",
-        "parity": "homogeneous scalar anisotropy",
+        "parity": "homogeneous scalar anisotropy background; all metric-complex parities",
         "theory": "free pure-Weyl metric BV complex and normal-adjoint-tractor parent"
       }
     },
@@ -1021,7 +1026,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "d552761a8ad899737ee8825485951adc12c4538376bf57e76e010b433ab9e27d",
+  "generated_by_sha256": "0356dcd11dcad9d687ddf527e4be19c2bbdd0fc741f1f03c17de5fed158cb5a7",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

@@ -90,6 +90,7 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
 
     def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_exact_branch"]
+        self.assertEqual(entry["descriptions"]["causal"], "CERTIFIED")
         self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
         self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("not a no-go for non-Einstein Bach-flat", entry["claim_boundary"])
@@ -109,9 +110,13 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             "NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
+        self.assertIn(
+            "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
         self.assertIn("two forced quadratic metric cross terms", entry["claim_boundary"])
-        self.assertIn("do not yet give a causal map", entry["claim_boundary"])
-        self.assertIn("compressed metric endpoint remain open", entry["claim_boundary"])
+        self.assertIn("complete four-row metric endpoint", entry["claim_boundary"])
+        self.assertIn("does not yet give the rank-310 causal map", entry["claim_boundary"])
 
     def test_transverse_finite_hpl_is_evidence_not_geometric_promotion(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_tangent"]

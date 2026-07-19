@@ -674,6 +674,18 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1.json`](certificates/NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1.json),
   [`reports/nariai-ks-common-slab-causal-domain.md`](reports/nariai-ks-common-slab-causal-domain.md)
 
+- Einstein-background metric endpoint: on every four-dimensional globally
+  hyperbolic Einstein background with `Ric=g`, the complete gauge-fixed
+  trace-free Bach block satisfies
+  `B_action+K T/2=L_E(L_E-2/3)/2`, where
+  `L_E=Box+2 Cdot-2/3`.  Both factors are normally hyperbolic and differ by a
+  scalar shift, so varying nonparallel Weyl curvature causes no endpoint
+  obstruction.  This certifies the four-row metric Green homotopy on every
+  Kantowski--Sachs common slab.  It does not bind the six rank-310 geometric
+  differences or promote the all-row transfer:
+  [`certificates/EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json`](certificates/EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json),
+  [`reports/einstein-metric-biwave-green-homotopy.md`](reports/einstein-metric-biwave-green-homotopy.md)
+
 - Exact global disposition of the transverse Einstein branch: the
   Kantowski--Sachs family generating the certified tangent exists on every
   fixed compact time slab, but for every nonzero `0<|epsilon|<1` its areal

@@ -262,8 +262,15 @@ The common domain is now certified independently.  With
 for every finite `T`, a sufficiently small parameter interval gives positive
 scale factors on `(-T,T)`, compact Cauchy slices and one wider reference cone
 containing every family member's causal cone.  Thus the remaining common-slab
-gate is coefficientwise six-block geometric binding and the compressed metric
-endpoint, not existence of a shared globally hyperbolic support category.
+gate is coefficientwise six-block geometric binding, not existence of a shared
+globally hyperbolic support category or the compressed metric endpoint.  The
+latter is now exact on the entire Einstein slab family:
+`B_action+K T/2=L_E(L_E-2/3)/2`, with
+`L_E=Box+2 Cdot-2/3`.  Both factors are normally hyperbolic and differ by a
+scalar shift, so the proof allows the nonparallel Weyl curvature of the
+nonzero Kantowski--Sachs metrics.  This promotes the four-row metric Green
+homotopy on every common slab while leaving the all-row rank-310 transfer
+fail-closed until the six geometric differences are bound coefficientwise.
 The analytic endpoint criterion is now background-independent:
 `TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1` proves that every exact endpoint
 `A=P2 P1+V` with normally hyperbolic factors and an order-at-most-two

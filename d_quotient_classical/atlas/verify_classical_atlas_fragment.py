@@ -104,6 +104,8 @@ def verify() -> None:
     if "nonlocal-denominator" not in transverse["claim_boundary"]:
         raise AssertionError("finite HPL consequence missing")
     transverse_exact = by_id["classical.nariai.transverse_kantowski_sachs_exact_branch"]
+    if transverse_exact["descriptions"]["causal"] != "CERTIFIED":
+        raise AssertionError("KS common-slab metric Green theorem missing")
     if transverse_exact["descriptions"]["nonlinear"] != "OBSTRUCTED":
         raise AssertionError("transverse exact-family obstruction missing")
     if transverse_exact["mode_data"]["second_order"]["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
@@ -115,12 +117,14 @@ def verify() -> None:
         raise AssertionError("six-block finite HPL theorem missing")
     if "NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1" not in exact_ids:
         raise AssertionError("KS common-slab causal-domain theorem missing")
+    if "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1" not in exact_ids:
+        raise AssertionError("Einstein metric biwave theorem missing")
     if "two forced quadratic metric cross terms" not in transverse_exact["claim_boundary"]:
         raise AssertionError("six-block HPL consequence missing")
-    if "These two inputs do not yet give a causal map" not in transverse_exact["claim_boundary"]:
-        raise AssertionError("common-slab domain was overpromoted")
-    if "verification of the compressed metric endpoint remain open" not in transverse_exact["claim_boundary"]:
-        raise AssertionError("geometric endpoint activation gate missing")
+    if "complete four-row metric endpoint" not in transverse_exact["claim_boundary"]:
+        raise AssertionError("metric endpoint promotion missing")
+    if "does not yet give the rank-310 causal map" not in transverse_exact["claim_boundary"]:
+        raise AssertionError("rank-310 transfer was overpromoted")
 
 
 if __name__ == "__main__":
