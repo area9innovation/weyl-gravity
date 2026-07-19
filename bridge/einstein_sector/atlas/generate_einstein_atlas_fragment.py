@@ -90,6 +90,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_isolated_candidates": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
     "ell2_two_abs_momentum_candidate4_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json",
+    "ell2_two_abs_momentum_axial_qminus_L4_triplet": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
@@ -810,6 +811,18 @@ def entries() -> list[dict[str, object]]:
             "This G1 row resolves only the two axial-axial polar p-primary coefficients of candidate 4. The other 162 workload coefficients, complete two-fibre tangent cone, smooth-secular and causal classes, residual descent and higher lifecycles remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ell2_two_abs_momentum_axial_qminus_l4_triplet_obstruction",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 at three separately tuned candidate-3, candidate-4 and candidate-5 algebraic circumferences; before final residual quotient", carrier="one axial q-minus ell=2,m=0 oscillator on n=+1 crossed with one axial q-minus ell=2,m=0 oscillator on n=-2", degree=2, parity="axial times axial input; polar L=4 output on q-minus, p-extra or q-plus target primary", ell="input 2 x 2; output L=4", m="0+0 -> M=0", k="signed compact-momentum integers (+1,-2), with each target row retaining its own algebraic circumference", omega="positive-frequency SUM channel on the row-specific target shell", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The q-minus inputs and each q-minus, p-extra or q-plus target retain exact same-background branch, parity, harmonic, signed-momentum, frequency and circumference labels; the three fibres are not identified."),
+            ("CERTIFIED","The content-addressed action-derived q2 slice supplies the polar L=4 source, while the certified polar primary decomposition fixes the complete q and p target cokernel multiplicities."),
+            ("NOT_APPLICABLE","These nonzero-frequency resonant functionals are independent of, and do not replace, the five compact stabilizer moment maps."),
+            ("OBSTRUCTED","Candidate 4 has the certified nonzero two-component p-primary pairing; the candidate-3 and candidate-5 q-primary pairings obey one exact quartic annihilator whose nonzero constant term excludes zero."),
+            _second_order(("OBSTRUCTED","No bounded or finite-quasiperiodic correction exists for any of the three declared cross-|n| tangents."),("OPEN","A smooth secular correction has not been constructed or excluded for these rows."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_axial_qminus_L4_triplet","ell2_two_abs_momentum_candidate4_obstruction","ell2_two_abs_momentum_parity_workload","ell2_two_abs_momentum_isolated_candidates","polar_operator","abstract_cone"),
+            "This G1 row resolves four scalar adjoint coefficients across candidates 3, 4 and 5 at three separate circumferences. The other 160 workload coefficients, complete two-fibre tangent cone, smooth-secular and causal classes, residual descent and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="constant twist position plus paired axisymmetric +/-k Einstein-plus/minus standing waves", degree=2, parity="generic input parity retained; polar extra resonant output", ell="every one fixed integer ell>=2 with output L=2ell", m="m_A=0 inputs and M=0 output", k="one tuned allowed nonzero +/-k pair", omega="q-plus/minus inputs and p-primary sum-frequency output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
@@ -1264,6 +1277,21 @@ def build() -> dict[str, object]:
         raise AssertionError("ell2 two-absolute-momentum candidate-4 obstruction changed")
     if candidate4["all_candidate_rows_classified"] or candidate4["causal_or_quantum_claim"]:
         raise AssertionError("ell2 two-absolute-momentum candidate-4 obstruction exceeded its scope")
+    triplet_value = records["ell2_two_abs_momentum_axial_qminus_L4_triplet"]
+    triplet = triplet_value["classification"]
+    if not (
+        triplet["complete_axial_qminus_qminus_L4_candidate_triplet_classified"]
+        and triplet["qminus_target_pairing_nonzero"]
+        and triplet["p_extra_target_pairing_nonzero"]
+        and triplet["qplus_target_pairing_nonzero"]
+        and triplet["all_three_declared_tangents_bounded_obstructed"]
+    ):
+        raise AssertionError("ell2 two-absolute-momentum axial q-minus L4 triplet changed")
+    witness = triplet_value["q_primary_common_nonzero_witness"]
+    if not witness["zero_is_not_a_root"] or witness["constant_term"] == 0:
+        raise AssertionError("ell2 two-absolute-momentum q-primary witness lost nonvanishing")
+    if triplet["all_axisymmetric_L4_coefficients_classified"] or triplet["causal_or_quantum_claim"]:
+        raise AssertionError("ell2 two-absolute-momentum axial q-minus L4 triplet exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

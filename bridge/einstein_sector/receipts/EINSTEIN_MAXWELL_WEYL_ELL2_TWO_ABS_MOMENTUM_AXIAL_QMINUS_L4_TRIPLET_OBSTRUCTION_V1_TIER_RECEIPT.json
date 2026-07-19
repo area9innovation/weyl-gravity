@@ -1,0 +1,48 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_AXIAL_QMINUS_L4_TRIPLET_OBSTRUCTION_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact action-source and complete q-minus, p-extra and q-plus target-primary adjoint pairings for axial q-minus ell=2 cross-|n| candidates 3, 4 and 5.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.json": "f8d9e7b1a15d4df0b6bc6aa6eb0a3d57967232309dd3502e3887716590ca412d",
+    "bridge/einstein_sector/einstein_maxwell_weyl_two_abs_momentum_axial_qminus_L4_triplet.py": "66ff2439a8e84bf7ca2e999a0686e81e33a6e472ce8ee54383023b4970aabb90",
+    "bridge/einstein_sector/generated/einstein_maxwell_weyl_ell2_axial_qminus_pair_L4_q2_slice.json": "19bda54b489e079284190a663d2edb98646caf3726dbe3566c0eeaf23c2c7544",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.schema.json": "f489ac5e50af4d91a5cc5747a2a036c11bb11448270ce330b1c73331f37eca35",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.py": "e101f67c5e53a9d7d7ac716dfe70805d0614666918aefd0d3343054c388dce1b",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.py": "115c6fffa5329d76a66c5ad0c7d8153e9d839e83b4254dc8e439bac30592b8a1",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-axial-qminus-L4-triplet-obstruction.md": "ec7809bee71d6efbea1d6c120ebc92b9acc9e3304969108441020ef044254a26"
+  },
+  "verification": {
+    "combined_scoped_elapsed_seconds": 21.63,
+    "combined_scoped_cpu_seconds": 18.95,
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 64,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_two_abs_momentum_axial_qminus_L4_triplet --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The candidate ledger, parity workload, polar action operator, candidate-4 obstruction and 5.8 KiB q2 action slice are unchanged hashed inputs. The producer proves the q-primary adjoint symbolically modulo the shell and q-mass polynomials. The independent verifier does not import the triplet producer: it specializes the q2 slice directly, reconstructs both q-shell adjoints and verifies the common exact annihilator and nonzero constant term."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This promotes three G1 rows resolving four of 164 scalar adjoint coefficients, not the complete two-fibre tangent cone, a general theorem freeze or shared core algebra change."
+    }
+  },
+  "claim_boundary": "Candidates 3, 4 and 5 only, at three separate algebraic circumferences. The other 160 workload coefficients, complete two-fibre tangent cone, smooth-secular and causal correction classes, residual, observable and quantum claims remain fail-closed."
+}

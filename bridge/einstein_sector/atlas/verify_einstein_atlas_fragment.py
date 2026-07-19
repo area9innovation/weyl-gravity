@@ -420,6 +420,20 @@ def verify() -> None:
         raise AssertionError("candidate-4 correction classes were silently merged")
     if "other 162 workload coefficients" not in candidate4["claim_boundary"]:
         raise AssertionError("candidate-4 claim boundary lost the unresolved workload")
+    triplet = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_axial_qminus_l4_triplet_obstruction"]
+    if triplet["descriptions"]["nonlinear"] != "OBSTRUCTED":
+        raise AssertionError("axial q-minus L4 triplet obstruction was hidden")
+    if triplet["mode_data"]["resonance"]["status"] != "OBSTRUCTED" or "nonzero constant term excludes zero" not in triplet["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("axial q-minus L4 triplet nonzero cokernel witness was hidden")
+    if "three fibres are not identified" not in triplet["mode_data"]["dispersion"]["statement"]:
+        raise AssertionError("axial q-minus L4 triplet silently merged its circumference fibres")
+    if triplet["mode_data"]["taub_maps"]["status"] != "NOT_APPLICABLE":
+        raise AssertionError("axial q-minus L4 resonances were merged with Taub maps")
+    triplet_second = triplet["mode_data"]["second_order"]
+    if triplet_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or triplet_second["smooth_secular"]["status"] != "OPEN" or triplet_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("axial q-minus L4 correction classes were silently merged")
+    if "other 160 workload coefficients" not in triplet["claim_boundary"]:
+        raise AssertionError("axial q-minus L4 triplet lost its unresolved workload")
     aligned_phase = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
     aligned_phase_second = aligned_phase["mode_data"]["second_order"]
     if aligned_phase["descriptions"]["nonlinear"] != "OPEN":

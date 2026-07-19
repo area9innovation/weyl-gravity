@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-axial-qminus-L4-triplet-obstruction-v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "triplet",
+    "q_primary_symbolic_adjoint",
+    "q_primary_common_nonzero_witness",
+    "second_order_verdict",
+    "workload_progress",
+    "classification",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-ell2-two-abs-momentum-axial-qminus-L4-triplet-obstruction-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_AXIAL_QMINUS_L4_TRIPLET_OBSTRUCTION"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "scope": {"type": "object"},
+    "triplet": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "prefixItems": [
+        {"type": "object", "properties": {"candidate_index": {"const": 3}, "bounded_status": {"const": "OBSTRUCTED"}}, "required": ["candidate_index", "bounded_status"]},
+        {"type": "object", "properties": {"candidate_index": {"const": 4}, "bounded_status": {"const": "OBSTRUCTED"}}, "required": ["candidate_index", "bounded_status"]},
+        {"type": "object", "properties": {"candidate_index": {"const": 5}, "bounded_status": {"const": "OBSTRUCTED"}}, "required": ["candidate_index", "bounded_status"]}
+      ]
+    },
+    "q_primary_symbolic_adjoint": {
+      "type": "object",
+      "properties": {
+        "final_remainders": {
+          "const": ["0", "0", "0", "0"]
+        }
+      },
+      "required": ["shell_relation", "q_mass_polynomial", "final_remainders"]
+    },
+    "q_primary_common_nonzero_witness": {
+      "type": "object",
+      "properties": {
+        "annihilating_polynomial_coefficients": {
+          "const": [2401, 13649577984, -3277767710343168, -271550576338082463744, 480328793324440503975936]
+        },
+        "constant_term": {"const": 480328793324440503975936},
+        "zero_is_not_a_root": {"const": true},
+        "certified_polar_primary_decomposition": {"const": "(K[omega]/(p))^2 direct-sum K[omega]/(q)"}
+      },
+      "required": ["annihilating_polynomial_coefficients", "constant_term", "zero_is_not_a_root", "certified_polar_primary_decomposition"]
+    },
+    "second_order_verdict": {
+      "type": "object",
+      "properties": {
+        "candidate_3": {"const": "OBSTRUCTED"},
+        "candidate_4": {"const": "OBSTRUCTED"},
+        "candidate_5": {"const": "OBSTRUCTED"},
+        "smooth_secular_status": {"const": "OPEN"},
+        "causal_retarded_status": {"const": "NO_CERTIFIED_MAP"}
+      },
+      "required": ["candidate_3", "candidate_4", "candidate_5", "smooth_secular_status", "causal_retarded_status"]
+    },
+    "workload_progress": {
+      "type": "object",
+      "properties": {
+        "resolved_axisymmetric_L4_coefficients": {"const": 4},
+        "remaining_axisymmetric_L4_coefficients": {"const": 104},
+        "complete_two_fibre_tangent_cone_classified": {"const": false}
+      },
+      "required": ["resolved_axisymmetric_L4_coefficients", "remaining_axisymmetric_L4_coefficients", "complete_two_fibre_tangent_cone_classified"]
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "complete_axial_qminus_qminus_L4_candidate_triplet_classified": {"const": true},
+        "all_three_declared_tangents_bounded_obstructed": {"const": true},
+        "all_axisymmetric_L4_coefficients_classified": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      },
+      "required": ["complete_axial_qminus_qminus_L4_candidate_triplet_classified", "all_three_declared_tangents_bounded_obstructed", "all_axisymmetric_L4_coefficients_classified", "causal_or_quantum_claim"]
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  }
+}

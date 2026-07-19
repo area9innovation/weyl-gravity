@@ -3343,6 +3343,23 @@ promote the complete two-fibre cone.  The active bridge gate is now the
 remaining 106 axisymmetric `L=4` coefficients, followed by the 56
 nonaxisymmetric `L=1,3` coefficients.
 
+The active same-background bridge has now closed the complete target-primary
+triplet for that axial `q_minus(+1)` times axial `q_minus(-2)` carrier.
+Candidates 3 and 5 supply one q-primary adjoint coefficient each, and their
+common symbolic adjoint has zero kernel defect modulo
+`Omega^2-K^2-mu` and `mu^2-40*mu+360`.  Their exact pairings obey a common
+quartic annihilator with nonzero constant term
+`480328793324440503975936`.  Candidate 4 supplies the already certified two
+p-primary coefficients.  Hence all three separately tuned rows are
+bounded/finite-quasiperiodic `OBSTRUCTED`; smooth-secular remains `OPEN` and
+causal remains `NO_CERTIFIED_MAP`.  Fail-closed atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_axial_qminus_l4_triplet_obstruction`
+raises the resolved count to four of 108 axisymmetric `L=4` coefficients.
+The activation gate is the remaining 104 axisymmetric `L=4` coefficients,
+then 56 nonaxisymmetric `L=1,3` coefficients.  The three circumference fibres
+remain distinct, and no cross-background or cross-fibre identification is
+made.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in
