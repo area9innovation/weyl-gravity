@@ -1,0 +1,27 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-local-einstein-cauchy-truncation-DONE-035335799b3f4916",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "tools/science-forge/program/events/black-hole-local-einstein-cauchy-truncation-DONE-035335799b3f4916.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "black-hole",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-07-20",
+    "payload": {
+      "target": "sf:program/work/black-hole-local-einstein-cauchy-truncation",
+      "to_state": "DONE",
+      "note": "CLOSE-OUT: DONE. Certificate BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION with independent VbGeo verifier, fast rail, mutation rejection, and report reports the full stop condition: (A) axial -- on the declared globally hyperbolic Schwarzschild exterior (Sigma = {t=const, r>2m}, smooth l=2 class) the carrier operator is exactly (1/2)Box + C-circ (trace vanishes identically on the class), normally hyperbolic; the Bianchi constraint obeys the exact transport identity div(L psi) = (1/2) Box B; zero Cauchy data propagates psi = 0 unconditionally. Polar: branch (B) certified first -- trace(L) = 0 identically at the PDE level and psi_conf(t^4 chi P2) is an exact zero-Cauchy-data nonuniqueness witness annihilated by L -- with the smallest repairing hypothesis identified and certified: conformal gauge-fixing; via the certified relation S(psi_conf(Phi)) = -3 Box Phi the gauge subtraction reduces any zero-data solution to a tracefree normally hyperbolic system, so local Cauchy data selects the Einstein image exactly modulo the conformal orbit (exactly on the traceless slice). Exact sequence stated without any direct-sum or surjectivity assertion; endpoint nonselection explicitly contrasted; dropped-datum mutation rejected by a time-odd mode witness. Paper 14 updated: the informal propagation paragraph is replaced by the certified two-part statement and the ledger row added. Forbidden inputs untouched: no sourced-flux numbers, no dirty axial_flux_modes.py path."
+    },
+    "native": {
+      "authored_by": "sfc work-event",
+      "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten \u2014 the effective state is the fold of these events over the base state."
+    }
+  }
+}

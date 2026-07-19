@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh-local-einstein-cauchy-truncation-v1",
+  "title": "Local Einstein-sector Cauchy truncation on the Schwarzschild exterior",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "identities",
+    "conclusions",
+    "mutation",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-bh-local-einstein-cauchy-truncation-v1"
+    },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh-local-einstein-cauchy-truncation-v1.schema.json"
+    },
+    "schema_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION"
+    },
+    "result_token": {
+      "const": "BH_LOCAL_CAUCHY_TRUNCATION_SELECTS_EINSTEIN_MODULO_CONFORMAL_GAUGE"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC"
+      ]
+    },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "domain",
+        "cauchy_data",
+        "operator",
+        "regularity_class",
+        "boundary_conditions",
+        "lifecycle"
+      ],
+      "properties": {
+        "lifecycle": {
+          "const": "CLASSIFIED"
+        }
+      }
+    },
+    "identities": {
+      "type": "object",
+      "required": [
+        "axial_trace",
+        "axial_constraint_transport",
+        "polar_trace",
+        "polar_constraint_transport",
+        "conformal_trace_relation"
+      ]
+    },
+    "conclusions": {
+      "type": "object",
+      "required": [
+        "axial",
+        "polar",
+        "exact_sequence",
+        "endpoint_comparison"
+      ]
+    },
+    "mutation": {
+      "type": "object",
+      "required": [
+        "dropped_datum",
+        "witness",
+        "verified"
+      ],
+      "properties": {
+        "dropped_datum": {
+          "const": "nabla_n psi|_Sigma"
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "axial_cauchy_truncation_certified",
+        "polar_conformal_obstruction_certified",
+        "polar_quotient_truncation_certified",
+        "constraint_propagation_certified",
+        "exact_sequence_stated_without_splitting",
+        "nonlinear_or_stability_claim",
+        "general_l_certified",
+        "every_psi_lifts_claim",
+        "sourced_flux_numbers_used"
+      ],
+      "properties": {
+        "axial_cauchy_truncation_certified": {
+          "const": true
+        },
+        "polar_conformal_obstruction_certified": {
+          "const": true
+        },
+        "polar_quotient_truncation_certified": {
+          "const": true
+        },
+        "constraint_propagation_certified": {
+          "const": true
+        },
+        "exact_sequence_stated_without_splitting": {
+          "const": true
+        },
+        "nonlinear_or_stability_claim": {
+          "const": false
+        },
+        "general_l_certified": {
+          "const": false
+        },
+        "every_psi_lifts_claim": {
+          "const": false
+        },
+        "sourced_flux_numbers_used": {
+          "const": false
+        }
+      }
+    },
+    "missing_objects": {
+      "type": "array",
+      "minItems": 5
+    },
+    "stage_seconds": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "engine_path",
+        "engine_sha256",
+        "axial_operator_certificate",
+        "axial_operator_certificate_sha256",
+        "polar_split_certificate",
+        "polar_split_certificate_sha256"
+      ]
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh_cauchy_truncation.py"
+    }
+  }
+}

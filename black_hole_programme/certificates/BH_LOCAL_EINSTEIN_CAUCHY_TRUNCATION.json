@@ -1,0 +1,73 @@
+{
+  "claim_flags": {
+    "axial_cauchy_truncation_certified": true,
+    "constraint_propagation_certified": true,
+    "every_psi_lifts_claim": false,
+    "exact_sequence_stated_without_splitting": true,
+    "general_l_certified": false,
+    "nonlinear_or_stability_claim": false,
+    "polar_conformal_obstruction_certified": true,
+    "polar_quotient_truncation_certified": true,
+    "sourced_flux_numbers_used": false
+  },
+  "conclusions": {
+    "axial": "statement (A): zero Cauchy data propagates psi = 0; the linear Einstein image is locally selected and preserved (unconditional)",
+    "endpoint_comparison": "local Cauchy truncation is a local differential initial-data restriction and DOES select the Einstein image (modulo gauge); the certified endpoint diagnostics (horizon ingoing analyticity, falloff class) do NOT -- the two kinds of conditions are logically independent, resolving the referee's distinction",
+    "exact_sequence": "0 -> ker(delta Ric) -> ker(delta Bach) -> ker(L) cap im(delta Ric); with zero Cauchy data the right object is {0} (axial) and the conformal orbit {psi_conf(Phi)} (polar); no canonical splitting or surjectivity is asserted",
+    "polar": "obstruction + repair: the exact witness psi_conf(t^4 chi P2) has zero Cauchy data, is nonzero, and solves L psi = 0 -- naive uniqueness FAILS; the smallest additional hypothesis is conformal gauge-fixing (traceless slice): the gauge subtraction Phi_0 with -3 Box Phi_0 = S(psi) reduces any zero-data solution to a tracefree solution of the normally hyperbolic system, hence psi = psi_conf(Phi_0): selection holds exactly modulo the conformal-gauge orbit"
+  },
+  "declaration": {
+    "background_family": "Schwarzschild exterior r > 2m, symbolic m",
+    "boundary_conditions": "none beyond Cauchy data: no horizon or finite-radius timelike boundary condition is used or hidden",
+    "cauchy_data": "psi|_Sigma = 0 and nabla_n psi|_Sigma = 0 for the curvature carrier psi_ab = delta Ric_ab[h]",
+    "domain": "globally hyperbolic exterior; Cauchy surface Sigma = {t = const, r > 2m} in the static chart",
+    "lifecycle": "CLASSIFIED",
+    "operator": "(L psi)_ab = (1/2) Box psi_ab + C_acbd psi^cd - (1/6) grad_a grad_b S - (1/12) g_ab Box S",
+    "regularity_class": "smooth l = 2 harmonic classes (axial and polar); uniqueness argument is the standard energy estimate for normally hyperbolic tensor systems on globally hyperbolic domains (cited, not re-proved)",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "identities": {
+    "axial_constraint_transport": "nabla^a (L psi)_a phi = (1/2) Box B_phi exactly (zero remainder)",
+    "axial_trace": "S = 0 identically on the axial class; L = (1/2) Box + C o (-)",
+    "conformal_trace_relation": "S(psi_conf(Phi)) = -3 Box Phi (verified on the witness; matches BH2B_POLAR_REACH)",
+    "polar_constraint_transport": "nabla^a (L psi)_ab = (1/2) Box B_b exactly in all components, B_b = nabla^a psi_ab - (1/2) grad_b S",
+    "polar_trace": "g^{ab} (L psi)_ab = 0 identically (PDE-level tracelessness; the conformal direction is not controlled)"
+  },
+  "missing_objects": [
+    "general l and m",
+    "a canonical Einstein-plus-extra splitting (deliberately not asserted)",
+    "surjectivity of delta Ric onto ker(L) (lift questions are separate and currently under repair)",
+    "nonlinear closure, complex-frequency mode analysis, or scattering statements (vocabulary coordinator-gated)",
+    "an a-priori energy estimate re-derivation (the standard normally-hyperbolic uniqueness theorem is cited)"
+  ],
+  "mutation": {
+    "dropped_datum": "nabla_n psi|_Sigma",
+    "verified": "the inline Frobenius mode has nonvanishing imaginary part at a rational test radius, so the weakened hypothesis (value datum only) is rejected",
+    "witness": "time-odd combination u = (psi(t) - psi(-t))/2 of a certified ingoing axial mode (real-coefficient static-chart operator maps solutions to solutions under t -> -t): u|_Sigma = 0, dt u|_Sigma = -omega Im(psi_omega) != 0, u != 0"
+  },
+  "provenance": {
+    "axial_operator_certificate": "black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json",
+    "axial_operator_certificate_sha256": "58eead1536d9c14696dd3b21592aa22523681cad7b42f8179b322c5872391c2a",
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh_cauchy_truncation.py",
+    "polar_split_certificate": "black_hole_programme/certificates/BH2B_POLAR_SPLIT.json",
+    "polar_split_certificate_sha256": "1c84cd014d31e1f97b6489ef083d5e81bcf83ba08eb9aa749c19931e60d5b8d5"
+  },
+  "result_id": "PURE_WEYL_BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION",
+  "result_token": "BH_LOCAL_CAUCHY_TRUNCATION_SELECTS_EINSTEIN_MODULO_CONFORMAL_GAUGE",
+  "schema": "pure-weyl-bh-local-einstein-cauchy-truncation-v1",
+  "schema_path": "black_hole_programme/schema/bh-local-einstein-cauchy-truncation-v1.schema.json",
+  "schema_sha256": "03e436bea5e5e92152ee5d788f7843256499381401cf9e972f08cbbe3afaab11",
+  "stage_seconds": {
+    "axial_identities": 5.9,
+    "conformal_witness": 24.9,
+    "mutation_witness": 2.7,
+    "polar_identities": 40.8,
+    "total": 74.6
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh_cauchy_truncation.py"
+}
