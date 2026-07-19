@@ -1,0 +1,20 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_COLLISION_SCALAR_OCCUPATION_CONES_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Candidatewise exact 120-minor and 90-circuit audit of the universal four-ray same-sign scalar occupation theorem.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones.json": "80d15ff0fb545ff239d4cdcaf679b6cc78e87bbc2f685082ea6ae438e087fe54",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones.py": "873702f7348ff7dbe5ea89b8085f01116da93d3fd48b5f19b55d68239a860bc6",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones.schema.json": "d2e11e2b33a87a39b83e40200d1b012413cefc3bb19fe7a0a83f1bddd87db11c",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones.py": "7f13d5a3dc99213cdbacdc55f08929b5dcb4ac40126e6a6fa5d5f115673553a5",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones.py": "55f96f40cfe27103139a51a1235bf4ff2d8045c246b8bea8adc7cc780079b9f0",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-collision-scalar-occupation-cones.md": "f64668608ca5821f0e3235b735ba60ca6a12a4e6becdf3529c9771165c17b75f"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <scoped JSON paths>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {"status": "PASS", "tests_run": 3, "elapsed_seconds": 14.868, "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones --check", "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones"]},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "reason": "The audit imports the universal moment-curve theorem and exact physical collision ledger, then independently evaluates every candidatewise receiver minor and circuit with algebraic arithmetic."},
+    "tier_3": {"status": "NOT_RUN", "reason": "Amplitude sums, full real cones, higher lifecycles and release preparation remain open."}
+  },
+  "claim_boundary": "The universal support theorem is exactly instantiated on all six algebraic candidate fibres. The audit remains a scalar occupation projection and does not classify phases, rotations, resonances or arbitrary sums."
+}
