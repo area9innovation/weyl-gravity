@@ -4055,6 +4055,80 @@
       }
     },
     {
+      "claim_boundary": "Complete only for the tuned ell=2 axisymmetric all-primary/constant-twist carrier. Nonaxisymmetric modes, other fibres, multiple |k| carriers, all-orders integration and higher lifecycles remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_TUNED_ALL_PRIMARY_BOUNDED_CONE",
+          "sha256": "df4d5f8f902dfe3cd8afaba640b8c26430db484c5b021afbdc7cdd16adcce471"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_TUNED_AXISYMMETRIC_BOUNDED_CONE",
+          "sha256": "4314b0ccb856b02d56b4ba505edcff40acf7c069d6925ae38fba5891d31b35e6"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_MIXED_PARITY_BOUNDED_EXTENSION",
+          "sha256": "c7215404170f9e0b013ce920767b130e54c03052b807117b0e8806f50c09fc0a"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.opposite_momentum_ell2_tuned_all_primary_bounded_cone",
+      "mode_data": {
+        "dispersion": {
+          "statement": "All three primary branches and signed momenta remain distinct on one same-background tuned compact fibre.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The complete positive and negative occupation variables use the action-derived branch forms and retain all m_A=0 multiplicities.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "A 140-row exact over-complete census finds no new collision from p-extra inputs; the sole q-minus L4 collision retains the same two-row mixed-parity zero set.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The origin plus two mixed q-minus sheets with the r_e imbalance interval and complete positive-branch moment polytope are necessary and sufficient for bounded correction.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No retarded Weyl-Maxwell complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The bounded cone is contained in the complete fixed-fibre smooth-secular cone.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The positive-branch affine moment polytope is nonempty exactly when |N_+-N_-|<=r_e(N_++N_-), with r_e=omega_-/omega_e.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed S1_L times S2 with k^2=2*sqrt(3)-7/6 allowed; before final residual quotient",
+        "carrier": "one constant twist position plus arbitrary m_A=0 q-minus axial/polar and complete q-plus/p-extra multiplicities at +/-k",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": "input ell=2; every quadratic output L=0,...,4",
+        "k": "+/-sqrt(2*sqrt(3)-7/6)",
+        "m": "m_A=0",
+        "omega": "q-minus, p-extra and q-plus shells",
+        "parity": "all certified q-minus, q-plus and p-extra multiplicities at m_A=0",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "The historical A=0 restriction is superseded by the complete fixed-ell constant-twist theorem. This result remains blockwise in one fixed ell at k=0; finite multi-ell, nonzero-momentum, exceptional and higher scopes remain fail-closed.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -4460,7 +4534,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "9afbf51c5f0b9982458137a1ac58ce74ef660dab95915f662eeb6ee102b97506",
+  "generated_by_sha256": "e03aa5f22f9450e3099c427332176f09af333e31af623221cbe6cede5f5ab599",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

@@ -3071,6 +3071,26 @@ is a necessity-and-sufficiency theorem for the origin plus two nonzero mixed
 components in the tuned `q_+`/`q_-`/constant-twist carrier.  Extra `p`-primary
 inputs, other `m,ell,|k|` fibres and higher lifecycles remain fail-closed.
 
+Adjoining the complete axisymmetric extra-primary multiplicity does not create
+another bounded shell functional.  The exact over-complete census now has 140
+rows, covering every zero, sum and difference frequency of `q_-`, `p` and
+`q_+`; its unique collision is still the `q_-q_-` polar `L=4` block.  The
+same two mixed sheets therefore survive.  Since
+`omega_-<omega_e<omega_+`, the extra branch is the most efficient positive
+compact-momentum balancer.  With `r_e=omega_-/omega_e`, the complete interval
+widens to
+
+```text
+(1-r_e)/(1+r_e) <= |p_+|^2/|p_-|^2 <= (1+r_e)/(1-r_e).
+```
+
+The balancing fibre is the full convex polytope of nonnegative extra and
+Einstein-plus occupations satisfying `H=P_x=0`; an extra-only balance proves
+sufficiency.  Certificate
+`EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_TUNED_ALL_PRIMARY_BOUNDED_CONE`
+is thus complete for the tuned axisymmetric all-primary carrier.  Multiple
+`|k|` fibres, nonaxisymmetric modes and higher lifecycles remain fail-closed.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

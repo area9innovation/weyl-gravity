@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "result_id", "dependency_tags", "scope", "collision_census", "resonance_zero_set", "moment_polytope", "nonzero_bounded_components", "necessity_and_sufficiency", "correction_classes", "classification", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-opposite-momentum-ell2-tuned-all-primary-bounded-cone-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_TUNED_ALL_PRIMARY_BOUNDED_CONE"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "collision_census": {
+      "type": "object",
+      "required": ["checks", "check_count", "collisions"],
+      "properties": {
+        "checks": {"type": "array", "minItems": 140, "maxItems": 140},
+        "check_count": {"const": 140},
+        "collisions": {"type": "array", "minItems": 1, "maxItems": 1}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": ["complete_tuned_axisymmetric_all_primary_bounded_cone_classified", "bounded_necessity_and_sufficiency_certified", "positive_branch_moment_polytope_complete", "causal_or_quantum_claim"]
+    }
+  },
+  "additionalProperties": true
+}

@@ -387,6 +387,16 @@ def verify() -> None:
         raise AssertionError("tuned cone sufficiency was hidden")
     if tuned_cone_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "Extra p-primary inputs" not in tuned_cone["claim_boundary"]:
         raise AssertionError("tuned cone boundary was over-promoted")
+    all_primary = by_id["einstein.ph.wm.interaction.opposite_momentum_ell2_tuned_all_primary_bounded_cone"]
+    all_primary_second = all_primary["mode_data"]["second_order"]
+    if all_primary["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("tuned all-primary cone was hidden")
+    if all_primary["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or all_primary["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("all-primary necessity data changed")
+    if all_primary_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("all-primary sufficiency was hidden")
+    if all_primary_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "multiple |k|" not in all_primary["claim_boundary"]:
+        raise AssertionError("all-primary cone boundary was over-promoted")
     repair = by_id["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
     if repair["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("constant-twist projector repair was not promoted")

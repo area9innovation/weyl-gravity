@@ -1787,6 +1787,16 @@ factorization.  This is bounded necessity and sufficiency for the declared
 tuned `q_+`/`q_-`/constant-twist carrier.  Extra p-primary inputs,
 nonaxisymmetric modes, other fibres, all-orders and causal claims remain open.
 
+The tuned axisymmetric cone is now complete after adjoining every extra
+`p`-primary multiplicity.  A 140-row shell census still finds only the
+`q_-q_- -> L=4` collision, so the two mixed sheets are unchanged.  The lower
+positive frequency `omega_e` widens the momentum-balance interval by replacing
+`r=omega_-/omega_+` with `r_e=omega_-/omega_e`; the full balancing fibre is a
+convex polytope of nonnegative `p`-extra and `q_+` occupations.  This closes
+bounded necessity and sufficiency for the tuned all-primary `m_A=0` carrier.
+The next live enlargement is symbolic `ell` and multiple `|k|` fibres, not a
+new calculation on this fixed fixture.
+
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared
 certificate paths in the Einstein-team brief, with all of:

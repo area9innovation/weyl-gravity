@@ -1,0 +1,49 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_TUNED_ALL_PRIMARY_BOUNDED_CONE",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.py": "0e627b60e82a80b6c73959d957ceeb6e6826ba4f072024664a2b982aee816dce",
+    "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.json": "df4d5f8f902dfe3cd8afaba640b8c26430db484c5b021afbdc7cdd16adcce471",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.schema.json": "6e6c0498afb995cb8e028e32bd68eee66f1279f0e0eecd8e84dc2cd573b9729d",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.py": "c6a8d1e55c2eeefe257aae816e81e3cb31ef070ff410fbe8fd58cad07891cd09",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.py": "f5522d9b3e5880fd04fa91354bd0dc0244fefb0778de136135bd04d067c0b0e9",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-opposite-momentum-ell2-tuned-all-primary-bounded-cone.md": "366ae98de8a613d6b3809eccc244fab346e42b9207778cbbd08028617bf6a51d"
+  },
+  "claim": {
+    "certified": "The tuned ell=2 axisymmetric bounded cone is complete after adjoining all q-plus and p-extra multiplicities: the same two mixed q-minus sheets survive with a widened exact imbalance interval and a complete positive-branch moment polytope.",
+    "proof": "A 140-row exact collision census finds no new p/q or exceptional shell collision from extra-primary inputs. The only collision remains the two-row q-minus L4 block. Positivity of the two positive branches gives a sharp feasibility inequality, saturated by an explicit extra-only occupation.",
+    "open": "Nonaxisymmetric modes, other ell/circumference/absolute-momentum fibres, multiple |k| carriers, exceptional inputs beyond the twist, all-orders integration and causal/quantum lifecycles."
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <producer, verifier and test>",
+        "python3 -m json.tool <certificate, schema and receipt>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 10.84,
+      "tests_run": 47,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The direct parity source matrix, exceptional complexes and bounded blockwise inverses are unchanged hashed inputs; the new affected calculation is exact all-primary shell arithmetic and positivity."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The theorem is complete only in one tuned axisymmetric carrier and does not promote higher lifecycles."
+    }
+  }
+}
