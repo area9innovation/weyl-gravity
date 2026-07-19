@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "status": "PASS",
+  "source_manifest": {
+    "d_quotient_classical/relative/einstein_weyl_relative_finite_charge_locality_obstruction.py": "41c0161120ccfe68b261f9ed16ad0549918936dd94900666bc910a8a9c137af2",
+    "d_quotient_classical/relative/verify_einstein_weyl_relative_finite_charge_locality_obstruction.py": "87b34e6a516ed001361950588e367e5a4d57b1b768887d14dfcee4f3acff48f8",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_finite_charge_locality_obstruction.py": "b7fbd194d0c975bfd52a90e48de63435e921d21474c8f09a4d2433e4954f4086",
+    "d_quotient_classical/schema/relative-finite-charge-support-local-lift-obstruction-v1.schema.json": "299760a2d5be05b3ee510addd6380604723dab3565f1a001d317d067fd48f453",
+    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1.json": "b605cd3241322511552c4bf900b77ab8c7eb44d6b025cf24c95307b7c3874309",
+    "d_quotient_classical/reports/einstein-weyl-relative-finite-charge-support-local-lift-obstruction.md": "8d51c6f5bd888c79a584fba3a62f7bc62da665d14896fe0bf22daee6cfbc8b8d",
+    "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py": "33f204ade2507ec5ee783f7d217b2746a976e3f4e2fef7ea11025b6162a4c544",
+    "d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "24e7ef815540912b66694911fbd13b26de314638968c5ace21961abe69fbb0a7",
+    "d_quotient_classical/atlas/tests/test_nonlinear_atlas_fragment.py": "1d67aa42da1c0e426bcf30ef6e501436936771812f0f411dc499fe887e485675",
+    "notes/d-quotient-classical-team-brief.md": "a31c9c44b435d5e89e46662f9e29700fb92ddf07b008d9316025049e7b1d1be0"
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "command": "py_compile, json.tool, strict Draft 2020-12 AJV, manifest hashes and scoped git diff --check"},
+    "tier_1": {
+      "status": "PASS", "elapsed_seconds": 6.2, "max_rss_kib": 240060,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_finite_charge_locality_obstruction --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_finite_charge_locality_obstruction",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_finite_charge_locality_obstruction d_quotient_classical.relative.tests.test_einstein_weyl_relative_complete_standard_charge_q2 d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-finite-charge-support-local-lift-obstruction-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1.json"
+      ],
+      "result": "26 tests passed; independent replay checked all imported hashes, the five-dimensional receiver, nonzero charge witness, locality proof ledger, minimal current/divergence carrier and fail-closed current-cone boundary"
+    },
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "reason": "The complete charge q2, receiver, Noether descent, moment-map bridge, strict Delta2 and f2 obstruction are unchanged SHA-pinned inputs."},
+    "tier_3": {"status": "NOT_RUN", "reason": "This scoped category obstruction does not freeze the open current-density/BV cone or any causal theorem."}
+  },
+  "claim_boundary": "The receipt certifies only the impossibility of a direct finite-order support-preserving lift into constant five-charge rows. It leaves open the local horizontal Noether-current/divergence cone, cyclic dual completion, Cauchy-slice globalization, causal enlargement, observables, particles and quantum theory."
+}

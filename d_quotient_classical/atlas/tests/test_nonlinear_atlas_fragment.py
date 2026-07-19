@@ -219,6 +219,14 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("target-only extra Weyl", entry["claim_boundary"])
 
+    def test_direct_finite_charge_local_lift_is_obstructed_narrowly(self):
+        entry = next(item for item in atlas.build()["entries"] if "direct_finite_charge_support_local_lift_obstruction" in item["id"])
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertIn("horizontal 3-form current", entry["claim_boundary"])
+        self.assertIn("remain OPEN", entry["claim_boundary"])
+
     def test_generic_standard_pairing_cyclic_obstruction_is_scoped(self):
         entry = next(item for item in atlas.build()["entries"] if "generic_standard_pairing_cyclic_map_inertia_obstruction" in item["id"])
         self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")

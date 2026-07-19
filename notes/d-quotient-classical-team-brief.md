@@ -417,6 +417,28 @@ standard source cohomology.  Target-only extra Weyl modes are not inputs;
 the off-shell local-current/BV lift, direct (f_2), arity three and causal
 transport remain fail-closed.
 
+`EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1`
+now fixes the category boundary.  No nonzero finite-order support-local
+operation can land directly in the constant five-dimensional charge fibre:
+compact inputs give compact output, whereas a nonzero constant section on
+the connected noncompact cylinder has full support.  Compactly supported jet
+realization then forces such an operator to vanish, contradicting the exact
+nonzero (H) witness.
+
+The next local carrier is therefore not another finite charge row.  It is the
+horizontal equation cone
+
+\[
+\Omega_H^3(M;\mathfrak g_{\rm stab}^*)
+\xrightarrow{d_H}
+\Omega_H^4(M;\mathfrak g_{\rm stab}^*),
+\]
+
+with cyclic dual rows, followed by Cauchy-slice integration only after
+globalization.  The formal Noether identity and slice descent are certified;
+the portable coefficientwise relative current density and its BV completion
+remain open.
+
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.
 The finite covariant HPL series and unique normalized degree-one correction

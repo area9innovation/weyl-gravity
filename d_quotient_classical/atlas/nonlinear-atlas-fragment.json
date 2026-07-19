@@ -1213,6 +1213,80 @@
       }
     },
     {
+      "claim_boundary": "Only the direct support-local lift into constant finite charge rows is obstructed. The global reduced-mode charge receiver remains certified, while a local horizontal 3-form current to 4-form divergence cone, its cyclic dual completion, causal enlargement and later Cauchy-slice integration remain OPEN or NO_CERTIFIED_MAP.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1",
+          "sha256": "b605cd3241322511552c4bf900b77ab8c7eb44d6b025cf24c95307b7c3874309"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1",
+          "sha256": "11e8119ab8fc9756fc5b4c5520e648599fd1264e7776cc79d91dc80645be1c56"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1",
+          "sha256": "9e389ce322ad48665a5684c17296872fa401bb8080b189da8a36e3ff89703522"
+        }
+      ],
+      "id": "nonlinear.product.bridge2.direct_finite_charge_support_local_lift_obstruction",
+      "mode_data": {
+        "dispersion": {
+          "statement": "This is a support-category theorem, not a dispersion calculation.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "The nonzero complete-standard charge q2 supplies the contradiction witness.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The obstruction precedes correction-class resonance analysis.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "A nonzero support-local differential map cannot land directly in constant global charge rows.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "Cauchy-slice integration is a later global operation, not a support-preserving local map.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The horizontal Noether-current/divergence cone is the minimal admissible local carrier, but its coefficients are not exported.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The H diagonal is -108*(1+sqrt(3))/5, so the finite receiver cannot be represented by the zero local map.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "connected noncompact-time compact magnetic product M=R_t x S1_L x S2",
+        "boundaries": "closed compact Cauchy slice and compactly supported test sections on spacetime",
+        "carrier": "direct lift from the local field/BV sheaf to the constant five-dimensional residual charge receiver",
+        "charge_sector": "five connected-isometry charges H,P_x,J_1,J_2,J_3 on fixed P_N",
+        "degree": "symmetric arity-two charge operation",
+        "ell": "all certified standard source blocks",
+        "k": "all",
+        "m": "all",
+        "omega": "all certified standard source branches",
+        "parity": "all",
+        "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "Every real-structure-preserving product-equivariant cohomology-isomorphic correction is obstructed from being cyclic for the standard action-derived pairings on the generic physical fibres. This includes corrected nonidentity maps, declared chain-homotopy repairs and cohomologically exact current improvements. A noncyclic off-shell triangle carrying three distinct forms, an explicitly pairing-changed theorem, exceptional/global sectors and final residual descent remain OPEN or NO_CERTIFIED_MAP. This result does not by itself decide Delta2, ell3 on cohomology, observables, particles or quantum states.",
       "descriptions": {
         "causal": "NOT_APPLICABLE",
@@ -1288,7 +1362,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py",
-  "generated_by_sha256": "a995e80c3a0d398818df122ff174f69d684447827c90f0c019047b0fae226693",
+  "generated_by_sha256": "33f204ade2507ec5ee783f7d217b2746a976e3f4e2fef7ea11025b6162a4c544",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

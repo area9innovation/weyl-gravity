@@ -44,6 +44,7 @@ CERTS = {
     "relative_charge_koszul_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1.json",
     "relative_standard_charge_q2": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_STANDARD_RADIATIVE_CHARGE_Q2_V1.json",
     "relative_complete_standard_charge_q2": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json",
+    "relative_finite_charge_locality_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -379,6 +380,8 @@ def entries() -> list[dict[str, Any]]:
     relative_charge_q2_scope = relative_charge_q2["scope"]
     relative_complete_charge_q2 = json.loads(CERTS["relative_complete_standard_charge_q2"].read_text())
     relative_complete_charge_q2_scope = relative_complete_charge_q2["scope"]
+    relative_locality_obstruction = json.loads(CERTS["relative_finite_charge_locality_obstruction"].read_text())
+    relative_locality_obstruction_scope = relative_locality_obstruction["scope"]
     identity_cyclic_scope = json.loads(CERTS["identity_cyclic_obstruction"].read_text())["scope"]
     return [
         {
@@ -715,6 +718,24 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("relative_complete_standard_charge_q2", "relative_standard_charge_q2", "relative_charge_koszul_preflight", "relative_f2_taub_obstruction"),
             "claim_boundary": "This REDUCED-MODE operation covers the complete certified standard Einstein-Maxwell source cohomology, including exceptional/global standard blocks. It excludes target-only extra Weyl cofiber inputs and does not define a local-current or support-local BV/Koszul lift, solve a correction-class tangent cone, repair f2, authorize arity three, or establish causal, observational, particle or quantum equivalence.",
+        },
+        {
+            "id": "nonlinear.product.bridge2.direct_finite_charge_support_local_lift_obstruction",
+            "scope": relative_locality_obstruction_scope,
+            "descriptions": {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OBSTRUCTED", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OBSTRUCTED", "A nonzero support-local differential map cannot land directly in constant global charge rows."),
+                    ("OPEN", "The horizontal Noether-current/divergence cone is the minimal admissible local carrier, but its coefficients are not exported."),
+                    ("NO_CERTIFIED_MAP", "Cauchy-slice integration is a later global operation, not a support-preserving local map."),
+                ),
+                dispersion=("NOT_APPLICABLE", "This is a support-category theorem, not a dispersion calculation."),
+                pairing=("CERTIFIED", "The nonzero complete-standard charge q2 supplies the contradiction witness."),
+                taub=("CERTIFIED", "The H diagonal is -108*(1+sqrt(3))/5, so the finite receiver cannot be represented by the zero local map."),
+                resonance=("NOT_APPLICABLE", "The obstruction precedes correction-class resonance analysis."),
+            ),
+            "evidence": _evidence("relative_finite_charge_locality_obstruction", "relative_complete_standard_charge_q2", "relative_charge_koszul_preflight"),
+            "claim_boundary": "Only the direct support-local lift into constant finite charge rows is obstructed. The global reduced-mode charge receiver remains certified, while a local horizontal 3-form current to 4-form divergence cone, its cyclic dual completion, causal enlargement and later Cauchy-slice integration remain OPEN or NO_CERTIFIED_MAP.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction",

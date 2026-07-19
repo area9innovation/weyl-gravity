@@ -1,0 +1,111 @@
+{
+  "claim_boundary": "This theorem obstructs only a direct finite-order support-preserving differential lift from local compactly supported field/BV sections into the constant five-dimensional residual charge receiver on connected noncompact spacetime. It does not obstruct the certified global reduced-mode charge operation, a local horizontal Noether-current/divergence cone followed by Cauchy-slice integration, a causal Green construction on an enlarged complex, a modified unary map, another background, observables, particles or quantum theory. The current-density coefficients and cyclic BV completion remain open.",
+  "classification": {
+    "arity_three_authorized": false,
+    "causal_observable_particle_or_quantum_claim": false,
+    "direct_f2_repaired": false,
+    "direct_five_charge_support_local_lift_exists": false,
+    "local_noether_current_coefficients_exported": false,
+    "local_noether_current_cone_is_minimal_admissible_carrier": true,
+    "nonzero_reduced_charge_requires_globalization": true,
+    "support_local_bv_koszul_extension_certified": false,
+    "support_locality_obstruction_exact": true
+  },
+  "contradiction_witness": {
+    "consequence": "no direct support-local lift can reproduce the certified reduced charge q2",
+    "half_diagonal_charge": "-54*(1 + sqrt(3))/5",
+    "mode": "one certified axial ell=2 source witness 2 plus branch",
+    "nonzero": true,
+    "q2_diagonal_charge": "-108*(1 + sqrt(3))/5"
+  },
+  "dependencies": {
+    "complete_charge_q2": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json",
+      "sha256": "11e8119ab8fc9756fc5b4c5520e648599fd1264e7776cc79d91dc80645be1c56"
+    },
+    "f2_obstruction": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
+      "sha256": "b96fa2c3eb54a9df86d6e7b319d9244c8c54d023d8edc2425e8df29177c590dc"
+    },
+    "moment_map_bridge": {
+      "artifact_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+      "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+      "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+    },
+    "receiver_preflight": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1.json",
+      "sha256": "9e389ce322ad48665a5684c17296872fa401bb8080b189da8a36e3ff89703522"
+    },
+    "strict_delta2": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ARITY_TWO_DEFECT_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ARITY_TWO_DEFECT_V1.json",
+      "sha256": "c3846506eb7186f100e0d78234682a5903510d44d2013ab5f2fb7021d0cf2511"
+    },
+    "taub_descent": {
+      "artifact_id": "COMPACT_HARMONIC_DOMAIN_AND_TAUB_DESCENT",
+      "path": "bridge/certificates/compact_harmonic_domain_taub_descent.json",
+      "sha256": "4607543c23acdf5df0110aa6df4a01d7e397e6a73afd2d416f3bdd8482048e09"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_status": "CLASSIFIED",
+  "minimal_admissible_enlargement": {
+    "cyclic_completion": "adjoin the dual current/divergence rows simultaneously",
+    "differential": "horizontal divergence d_H j_rel,X equals the relative equation/Noether source",
+    "field": "the action-derived polarized relative Noether current j_rel,X(u,v)",
+    "globalization": "Q_X(u,v)=integral_Sigma j_rel,X(u,v) only after passing to a closed Cauchy slice",
+    "local_carrier": "Omega_H^3(M;g_stab^*) -> Omega_H^4(M;g_stab^*)",
+    "reason": "the formal action Noether identity and slice descent are certified, but no portable coefficientwise current-density/BV cone has been exported",
+    "status": "OPEN_COEFFICIENT_EXPORT"
+  },
+  "next_gate": "EXPORT_POLARIZED_RELATIVE_NOETHER_CURRENT_DENSITY_AND_DIVERGENCE_CONE",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_finite_charge_locality_obstruction.py": "41c0161120ccfe68b261f9ed16ad0549918936dd94900666bc910a8a9c137af2",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_finite_charge_locality_obstruction.py": "b7fbd194d0c975bfd52a90e48de63435e921d21474c8f09a4d2433e4954f4086",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_finite_charge_locality_obstruction.py": "87b34e6a516ed001361950588e367e5a4d57b1b768887d14dfcee4f3acff48f8",
+      "d_quotient_classical/schema/relative-finite-charge-support-local-lift-obstruction-v1.schema.json": "299760a2d5be05b3ee510addd6380604723dab3565f1a001d317d067fd48f453"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_finite_charge_locality_obstruction --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_finite_charge_locality_obstruction",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_finite_charge_locality_obstruction",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-finite-charge-support-local-lift-obstruction-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1.json"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1",
+  "result_state": "DIRECT_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTED",
+  "schema": "pure-weyl-relative-finite-charge-support-local-lift-obstruction-v1",
+  "scope": {
+    "background": "connected noncompact-time compact magnetic product M=R_t x S1_L x S2",
+    "boundaries": "closed compact Cauchy slice and compactly supported test sections on spacetime",
+    "carrier": "direct lift from the local field/BV sheaf to the constant five-dimensional residual charge receiver",
+    "charge_sector": "five connected-isometry charges H,P_x,J_1,J_2,J_3 on fixed P_N",
+    "degree": "symmetric arity-two charge operation",
+    "ell": "all certified standard source blocks",
+    "k": "all",
+    "m": "all",
+    "omega": "all certified standard source branches",
+    "parity": "all",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  },
+  "support_locality_lemma": {
+    "codomain": "constant sections of M x g_stab^*, with g_stab^*=span{H^*,P_x^*,J_1^*,J_2^*,J_3^*}",
+    "conclusion": "every support-local finite-order lift into the constant finite charge receiver is zero",
+    "domain": "compactly supported sections of a finite-rank local field bundle on connected noncompact M",
+    "hypothesis": "B is a finite-order bilinear differential operator and supp B(u,v) is contained in supp(u) intersect supp(v)",
+    "proof": [
+      "compactly supported inputs give compactly supported output by differential locality",
+      "a nonzero constant section on connected M has support equal to all of noncompact M",
+      "therefore B(u,v)=0 for every compactly supported pair",
+      "every pair of finite jets at a point is realized by compactly supported bump sections",
+      "therefore every coefficient of B vanishes and B=0 identically"
+    ]
+  }
+}

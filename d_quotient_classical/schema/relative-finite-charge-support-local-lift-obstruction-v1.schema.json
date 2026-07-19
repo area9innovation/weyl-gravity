@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-finite-charge-support-local-lift-obstruction-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "support_locality_lemma", "contradiction_witness", "minimal_admissible_enlargement", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-finite-charge-support-local-lift-obstruction-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1"},
+    "result_state": {"const": "DIRECT_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTED"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "REDUCED-MODE"}], "minItems": 2, "maxItems": 2},
+    "scope": {"$ref": "#/$defs/stringObject"},
+    "dependencies": {"type": "object", "additionalProperties": {"$ref": "#/$defs/artifact"}, "minProperties": 6, "maxProperties": 6},
+    "support_locality_lemma": {
+      "type": "object", "additionalProperties": false,
+      "required": ["domain", "codomain", "hypothesis", "proof", "conclusion"],
+      "properties": {
+        "domain": {"type": "string"}, "codomain": {"type": "string"}, "hypothesis": {"type": "string"},
+        "proof": {"type": "array", "items": {"type": "string"}, "minItems": 5, "maxItems": 5},
+        "conclusion": {"const": "every support-local finite-order lift into the constant finite charge receiver is zero"}
+      }
+    },
+    "contradiction_witness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mode", "half_diagonal_charge", "q2_diagonal_charge", "nonzero", "consequence"],
+      "properties": {
+        "mode": {"type": "string"}, "half_diagonal_charge": {"const": "-54*(1 + sqrt(3))/5"},
+        "q2_diagonal_charge": {"const": "-108*(1 + sqrt(3))/5"}, "nonzero": {"const": true}, "consequence": {"type": "string"}
+      }
+    },
+    "minimal_admissible_enlargement": {
+      "type": "object", "additionalProperties": false,
+      "required": ["local_carrier", "field", "differential", "globalization", "cyclic_completion", "status", "reason"],
+      "properties": {
+        "local_carrier": {"const": "Omega_H^3(M;g_stab^*) -> Omega_H^4(M;g_stab^*)"},
+        "field": {"type": "string"}, "differential": {"type": "string"}, "globalization": {"type": "string"},
+        "cyclic_completion": {"type": "string"}, "status": {"const": "OPEN_COEFFICIENT_EXPORT"}, "reason": {"type": "string"}
+      }
+    },
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["direct_five_charge_support_local_lift_exists", "support_locality_obstruction_exact", "nonzero_reduced_charge_requires_globalization", "local_noether_current_cone_is_minimal_admissible_carrier", "local_noether_current_coefficients_exported", "support_local_bv_koszul_extension_certified", "direct_f2_repaired", "arity_three_authorized", "causal_observable_particle_or_quantum_claim"],
+      "properties": {
+        "direct_five_charge_support_local_lift_exists": {"const": false}, "support_locality_obstruction_exact": {"const": true},
+        "nonzero_reduced_charge_requires_globalization": {"const": true}, "local_noether_current_cone_is_minimal_admissible_carrier": {"const": true},
+        "local_noether_current_coefficients_exported": {"const": false}, "support_local_bv_koszul_extension_certified": {"const": false},
+        "direct_f2_repaired": {"const": false}, "arity_three_authorized": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "EXPORT_POLARIZED_RELATIVE_NOETHER_CURRENT_DENSITY_AND_DIVERGENCE_CONE"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_manifest", "verification_commands"], "properties": {"source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "minProperties": 4}, "verification_commands": {"type": "array", "items": {"type": "string"}, "minItems": 4}}},
+    "claim_boundary": {"type": "string", "minLength": 350}
+  },
+  "$defs": {
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "stringObject": {"type": "object", "additionalProperties": {"type": "string"}, "minProperties": 8}
+  }
+}
