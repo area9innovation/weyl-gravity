@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-108-row-apparatus-q2-q3-scalarization-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "retained_certified_inputs", "first_unavailable_map", "exact_nonuniqueness_witness", "mutation_results", "activation_disposition", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-apparatus-q2-q3-scalarization-obstruction-v1"},
+    "result_id": {"const": "BERGER_108_ROW_APPARATUS_Q2_Q3_SCALARIZATION_OBSTRUCTION"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "NO_CERTIFIED_MAP_NONLINEAR_CLOCK_COORDINATE_JETS_MISSING"},
+    "atlas_status": {"const": "NO_CERTIFIED_MAP"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "retained_certified_inputs": {"type": "object"},
+    "first_unavailable_map": {"type": "object", "required": ["domain", "codomain", "status", "missing_objects", "why_84_row_formulas_do_not_close_it"], "properties": {"status": {"const": "NO_CERTIFIED_MAP"}, "missing_objects": {"type": "array", "minItems": 4}}},
+    "exact_nonuniqueness_witness": {"type": "object", "required": ["graded_fixture", "coordinate_map", "transport_law", "exact_replay"], "properties": {"exact_replay": {"type": "object", "properties": {"unary_difference_count": {"const": 0}, "q2_difference_nonzero": {"const": true}, "q3_difference_nonzero": {"const": true}}, "required": ["unary_difference_count", "q2_difference_nonzero", "q3_difference_nonzero"]}}},
+    "mutation_results": {"type": "array", "minItems": 3, "items": {"type": "object", "required": ["name", "detected"], "properties": {"detected": {"const": true}}}},
+    "activation_disposition": {"type": "object", "additionalProperties": {"const": false}, "minProperties": 9, "maxProperties": 9},
+    "flags": {"type": "object", "required": ["SCALAR_APPARATUS_Q2_Q3_LIFT_AUDITED", "NONLINEAR_CLOCK_COORDINATE_JET_NONUNIQUENESS_CERTIFIED", "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED", "SUPPORT_LOCAL_108_ROW_PBW_Q3_PAYLOAD_EXPORTED", "COMPONENT_Q1_Q2_IDENTITY_CERTIFIED", "COMPONENT_ARITY_THREE_IDENTITY_CERTIFIED", "K_BERGER_EQUIVARIANCE_CERTIFIED", "OBSERVER_MORPHISM_STABILITY_CERTIFIED", "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED", "QUANTUM_CLAIM"], "properties": {"SCALAR_APPARATUS_Q2_Q3_LIFT_AUDITED": {"const": true}, "NONLINEAR_CLOCK_COORDINATE_JET_NONUNIQUENESS_CERTIFIED": {"const": true}, "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED": {"const": false}, "SUPPORT_LOCAL_108_ROW_PBW_Q3_PAYLOAD_EXPORTED": {"const": false}, "COMPONENT_Q1_Q2_IDENTITY_CERTIFIED": {"const": false}, "COMPONENT_ARITY_THREE_IDENTITY_CERTIFIED": {"const": false}, "K_BERGER_EQUIVARIANCE_CERTIFIED": {"const": false}, "OBSERVER_MORPHISM_STABILITY_CERTIFIED": {"const": false}, "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"const": "DERIVE_AND_SERIALIZE_ACTION_NORMALIZED_NONLINEAR_CLOCK_CANONICAL_MAP_F2_F3_AND_COTANGENT_LIFT"},
+    "claim_boundary": {"type": "string", "minLength": 1000},
+    "provenance": {"type": "object"}
+  }
+}

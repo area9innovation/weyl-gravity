@@ -1,0 +1,166 @@
+{
+  "activation_disposition": {
+    "K_Berger_equivariance_certified": false,
+    "component_q1_q2_replay_certified": false,
+    "component_q2_q2_plus_q1_q3_replay_certified": false,
+    "detector_response_on_second_order_cone_authorized": false,
+    "nonlinear_response_rank_promoted": false,
+    "observer_morphism_stability_certified": false,
+    "physical_branch_bridge_activated": false,
+    "scalar_q2_payload_exported": false,
+    "scalar_q3_payload_exported": false
+  },
+  "atlas_status": "NO_CERTIFIED_MAP",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC fail-closed certificate audits the activated scalar 108-row apparatus q2/q3 lift after the same-background unary gate. The 108-row component basis, signed odd pairing, coefficient-jet PBW algebra, 84-row action-level apparatus derivatives, emitter common-action orbits, and completed nilpotent unary are retained. The first unavailable map is the nonlinear Weyl/temporal clock coordinate jet: the unary certificate exports residual-fixed doublet blocks and their frozen-pairing mates, not an action-derived nonlinear canonical transformation. The displayed exact two-term-complex witness proves the relevant logical nonuniqueness: coordinate maps with identical F1 and hence identical q1 but different F2 give different q2 by [q1,F2]; even after F2 is fixed, different F3 give different q3. Therefore the old covariant Frechet-derivative formulas cannot be raised into a unique scalar PBW q2/q3 compatible with the newly repaired unary merely by choosing components. This is an input obstruction, not a nonexistence theorem and not a defect in the certified 84-row action-level identity. No componentwise q1q2 or q2q2+q1q3 replay, K_Berger equivariance, observer-morphism stability, detector restriction to Z2, nonlinear rank promotion, physical-branch Bridge 3, finite-parameter causal or quantum claim follows. The repair is to derive and serialize the same-background nonlinear clock canonical map through F3 (with its cotangent lift and action normalization), then regenerate q2/q3 and run the arity identities rather than fitting a tensor to the desired identities.",
+  "claim_status": "NO_CERTIFIED_MAP_NONLINEAR_CLOCK_COORDINATE_JETS_MISSING",
+  "dependency_refs": {
+    "apparatus_action_jets": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE.json",
+      "result_id": "BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE",
+      "sha256": "d94854ea0980d22b8a7e8b44a52dd50afa7afd8a0916aff52d3700d1eeb2d0b9"
+    },
+    "completed_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET.json",
+      "result_id": "BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET",
+      "sha256": "cacbd3be6bde8e80d142ca9012b024abd7a10472a2759b8f6e8b8af19b310481"
+    },
+    "component_contract": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json",
+      "result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+      "sha256": "4113635be1493e0eac5e945a970ce4989f0484d5fa658a10bf893c63f5ae707c"
+    },
+    "emitter_master_identity": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY.json",
+      "result_id": "BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY",
+      "sha256": "b2fc223f617514fbd5d20d573a780052277512dbd7a6fc032ba490ddf9559242"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_nonuniqueness_witness": {
+    "coordinate_map": {
+      "F1": "identity",
+      "F2(e,e)": "1 e",
+      "F3(e,e,e)": "1 e",
+      "all_other_displayed_components": "0"
+    },
+    "exact_replay": {
+      "q1_after": [
+        [
+          "e",
+          "f"
+        ],
+        [
+          "f",
+          "0"
+        ]
+      ],
+      "q1_before": [
+        [
+          "e",
+          "f"
+        ],
+        [
+          "f",
+          "0"
+        ]
+      ],
+      "q2_difference_nonzero": true,
+      "q2_difference_on_e_e": "1 f",
+      "q3_difference_nonzero": true,
+      "q3_difference_on_e_e_e": "1 f",
+      "unary_difference_count": 0
+    },
+    "graded_fixture": {
+      "degree_0_basis": [
+        "e"
+      ],
+      "degree_1_basis": [
+        "f"
+      ],
+      "q1(e)": "f",
+      "q1(f)": "0"
+    },
+    "transport_law": {
+      "bilinear": "q2'-q2=[q1,F2]",
+      "trilinear_first_unfixed_term": "q3'-q3 contains [q1,F3] once F1 and F2 are held fixed",
+      "unary": "q1'=F1 q1 F1^-1=q1"
+    }
+  },
+  "first_unavailable_map": {
+    "codomain": "unique scalar 108x108x108 q2 and 108x108x108x108 q3 PBW payloads",
+    "domain": "completed same-background scalar q1 plus covariant action-derivative labels",
+    "missing_objects": [
+      "action-derived Weyl/temporal nonlinear clock coordinate map F2 in the canonical 108-row component basis",
+      "its signed-pairing BV cotangent lift and action normalization",
+      "the compatible F3 clock coordinate jet needed to transport q3",
+      "generated scalar apparatus/emitter q2 and q3 payloads after that transport"
+    ],
+    "status": "NO_CERTIFIED_MAP",
+    "why_84_row_formulas_do_not_close_it": "they predate the scalar unary clock repair and name covariant Frechet-derivative families; they do not specify the missing nonlinear chart jets that transport those families to the repaired 108-row scalar carrier"
+  },
+  "flags": {
+    "COMPONENT_ARITY_THREE_IDENTITY_CERTIFIED": false,
+    "COMPONENT_Q1_Q2_IDENTITY_CERTIFIED": false,
+    "K_BERGER_EQUIVARIANCE_CERTIFIED": false,
+    "NONLINEAR_CLOCK_COORDINATE_JET_NONUNIQUENESS_CERTIFIED": true,
+    "OBSERVER_MORPHISM_STABILITY_CERTIFIED": false,
+    "QUANTUM_CLAIM": false,
+    "SCALAR_APPARATUS_Q2_Q3_LIFT_AUDITED": true,
+    "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED": false,
+    "SUPPORT_LOCAL_108_ROW_PBW_Q3_PAYLOAD_EXPORTED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "set_F2_to_zero"
+    },
+    {
+      "detected": true,
+      "name": "set_F3_to_zero"
+    },
+    {
+      "defect": "no nonlinear clock F2/F3 transport is supplied",
+      "detected": true,
+      "name": "promote_covariant_action_labels_to_scalar_payload"
+    }
+  ],
+  "next_gate": "DERIVE_AND_SERIALIZE_ACTION_NORMALIZED_NONLINEAR_CLOCK_CANONICAL_MAP_F2_F3_AND_COTANGENT_LIFT",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_108_row_apparatus_q2_q3_scalarization_obstruction.py",
+        "sha256": "742f00fca9637e227ae5e3e7da8d241aa9a3b9b2059b93cf31c3d6f3b30a6a7f"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_108_row_apparatus_q2_q3_scalarization_obstruction.py",
+        "sha256": "93b0dead326186dea54bf161c5b9e895a67257257d7793f85eb872b01e1f14c0"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_108_row_apparatus_q2_q3_scalarization_obstruction.py",
+        "sha256": "fe416b2c2b501e9b44cd1b9975fc1b1a30c811d00d65f54ab90d0f40c2baf9c1"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-108-row-apparatus-q2-q3-scalarization-obstruction-v1.schema.json",
+        "sha256": "92938f9824e41b1935e86f319bde903ef1db2b4e812a732d669fafa04ff69c02"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-108-row-apparatus-q2-q3-scalarization-obstruction.md",
+        "sha256": "ba57e2d2e41ca1ee5471808f53bbef8630217a634ce95ab46cf67ea70600c9c6"
+      }
+    ]
+  },
+  "result_id": "BERGER_108_ROW_APPARATUS_Q2_Q3_SCALARIZATION_OBSTRUCTION",
+  "retained_certified_inputs": {
+    "apparatus_84_row_action_q2_q3_derivative_families": true,
+    "canonical_108_row_component_and_pairing_contract": true,
+    "emitter_108_row_covariant_q1_q2_master_identity": true,
+    "radial_metric_map": "H_true=H+2*R*H-3*R^2*eta+O(3)",
+    "same_background_completed_unary": true
+  },
+  "schema": "closed-universe-berger-108-row-apparatus-q2-q3-scalarization-obstruction-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

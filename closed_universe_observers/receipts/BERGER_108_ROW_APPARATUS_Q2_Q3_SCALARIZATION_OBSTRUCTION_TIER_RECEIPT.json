@@ -1,0 +1,41 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_APPARATUS_Q2_Q3_SCALARIZATION_OBSTRUCTION_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_APPARATUS_Q2_Q3_SCALARIZATION_OBSTRUCTION",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The activated scalar 108-row apparatus q2/q3 lift stops fail-closed at the nonlinear clock coordinate transport. An exact two-term witness proves that identical F1 and q1 do not determine F2 or q2, while fixed F2 does not determine F3 or q3. This is input nonuniqueness, not a nonexistence theorem. Scalar payloads, arity replay, K_Berger equivariance, observer-morphism stability, O_detector|Z2, nonlinear rank, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {"tier": 0, "command": "python3 -m py_compile on changed Python; jsonschema validation through generator/verifier; python3 -m json.tool on changed structured data; git diff --check on explicit observer paths", "elapsed_seconds": "under 3", "status": "PASS", "scope": "obstruction generator, verifier, tests, schema, certificate, atlas, ledger, lifecycle files, receipt and canonical notes"},
+    {"tier": 1, "command": "pytest -q closed_universe_observers/tests/test_berger_108_row_apparatus_q2_q3_scalarization_obstruction.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": "11.93", "status": "PASS", "scope": "39 exact nonuniqueness, mutation, fail-closed atlas, evidence-hash and comparison-ledger tests"},
+    {"tier": 1, "command": "python3 -m closed_universe_observers.verify_berger_108_row_apparatus_q2_q3_scalarization_obstruction; python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment; python3 -m closed_universe_observers.verify_comparison_ledger", "elapsed_seconds": "1.33", "status": "PASS", "scope": "independent dependency hashes, exact witness reconstruction, generated atlas validation and historical/live comparison-ledger verification"}
+  ],
+  "higher_tiers_not_run": {"tier_2": "No scalar q2/q3 payload or mathematical interaction operator was generated; the exact input-nonuniqueness witness and every direct generated-claims consumer were replayed.", "tier_3": "This is a narrowly scoped fail-closed interface result on unchanged content-addressed classical inputs, not a freeze, release, shared-core algebra change or paper theorem promotion."},
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_apparatus_q2_q3_scalarization_obstruction.py", "sha256": "742f00fca9637e227ae5e3e7da8d241aa9a3b9b2059b93cf31c3d6f3b30a6a7f"},
+    {"path": "closed_universe_observers/verify_berger_108_row_apparatus_q2_q3_scalarization_obstruction.py", "sha256": "93b0dead326186dea54bf161c5b9e895a67257257d7793f85eb872b01e1f14c0"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_apparatus_q2_q3_scalarization_obstruction.py", "sha256": "fe416b2c2b501e9b44cd1b9975fc1b1a30c811d00d65f54ab90d0f40c2baf9c1"},
+    {"path": "closed_universe_observers/schema/berger-108-row-apparatus-q2-q3-scalarization-obstruction-v1.schema.json", "sha256": "92938f9824e41b1935e86f319bde903ef1db2b4e812a732d669fafa04ff69c02"},
+    {"path": "closed_universe_observers/reports/berger-108-row-apparatus-q2-q3-scalarization-obstruction.md", "sha256": "ba57e2d2e41ca1ee5471808f53bbef8630217a634ce95ab46cf67ea70600c9c6"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_APPARATUS_Q2_Q3_SCALARIZATION_OBSTRUCTION.json", "sha256": "aa77a5e2e9edd83b4e7a259f5be9ae885959ff7b981de47faa83eccc089add15"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "2ba115bb7c3a78eebfb7bdab1a3e1009a88753979df7aeb9729e4b8a0c0ec3aa"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "d1188de52e23f5dd534f4a31876a9c38ffd194c502ea74a016c0ae8f7d756c31"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "0eeeb137c366a50a1cf5033c9fe812f5883d4a1af66a2dd05ab95240d993dc27"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "699186edb8cf852fcd8e391264ed81c0306792494018b78fdbd2fe7623132e42"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "90453c1d6c245de8fefd599276631033f53e905fba79a96e93dbd1e73903f2ef"},
+    {"path": "planning/work-items/berger-nonlinear-clock-canonical-map-f2-f3.json", "sha256": "6145f5ad3820d5db19cb0549c40ee57ceb5bf64327bd13eb5dd41d327e3b5487"},
+    {"path": "planning/events/berger-108-row-apparatus-q2-q3-extension-DONE-6e1c0f381e0b4837.json", "sha256": "996415450d0f634c00486a229845d7459d39feec2e97341baa020a82545212b0"},
+    {"path": "planning/events/berger-nonlinear-clock-canonical-map-f2-f3-ACTIVE-b293826db75fde40.json", "sha256": "57093470aa61ada20da7dbdecda36066956d81e81748ecc53c5ccc7f400c8db6"}
+  ],
+  "flags": {
+    "SCALAR_APPARATUS_Q2_Q3_LIFT_AUDITED": true,
+    "NONLINEAR_CLOCK_COORDINATE_JET_NONUNIQUENESS_CERTIFIED": true,
+    "SCALAR_Q2_PAYLOAD_EXPORTED": false,
+    "SCALAR_Q3_PAYLOAD_EXPORTED": false,
+    "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
+    "K_BERGER_EQUIVARIANCE_CERTIFIED": false,
+    "OBSERVER_MORPHISM_STABILITY_CERTIFIED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "PHYSICAL_BRANCH_BRIDGE_ACTIVATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

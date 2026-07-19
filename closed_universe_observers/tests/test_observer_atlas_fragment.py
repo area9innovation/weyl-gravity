@@ -94,6 +94,18 @@ def test_nonlinear_clock_second_jet_closes_only_the_unary_gate():
         evidence["result_id"] for evidence in second_jet["evidence"]
     }
 
+
+def test_apparatus_q2_q3_scalarization_fails_closed_on_clock_coordinate_jets():
+    rows = {row["id"]: row for row in build()["entries"]}
+    obstruction = rows["observer.berger.interaction.pbw_108_apparatus_q2_q3_scalarization_obstruction"]
+    assert obstruction["descriptions"]["nonlinear"] == "NO_CERTIFIED_MAP"
+    assert obstruction["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert obstruction["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert obstruction["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_108_ROW_APPARATUS_Q2_Q3_SCALARIZATION_OBSTRUCTION" in {
+        evidence["result_id"] for evidence in obstruction["evidence"]
+    }
+
 def test_tangent_cone_is_not_promoted():
     row = next(row for row in build()["entries"] if row["id"] == "observer.berger.second_order_cone_restriction")
     assert row["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "OPEN"

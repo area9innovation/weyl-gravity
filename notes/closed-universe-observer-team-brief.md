@@ -461,27 +461,42 @@ input-column defects cancel.  The residual 261 free keys evaluate to 699
 time modes, all exactly zero in the certified same-background quotient; the
 mixed `epsilon_R_squared*kappa` square remains freely zero.
 
-The active local-interaction bridge is therefore scalar apparatus `q2,q3` on
-the completed unary carrier, followed by `K_Berger` equivariance and
-observer-morphism stability.  Its activation gate is the now-passing mixed
-unary coefficient.  The fail-closed atlas row is
-`observer.berger.interaction.pbw_108_nonlinear_clock_second_jet`
-(`CERTIFIED` for unary consistency, `NO_CERTIFIED_MAP` for detector response
-and tangent-cone restriction).  The component map and physical Bridge 3
-remain `NO_CERTIFIED_MAP`; no compact-product mode is identified with a
-Berger mode.
+The scalar apparatus `q2,q3` bridge was activated by that passing mixed unary
+coefficient and has now stopped fail-closed at its first unavailable map.
+`BERGER_108_ROW_APPARATUS_Q2_Q3_SCALARIZATION_OBSTRUCTION` retains the
+component contract, the 84-row action-level interaction jets and the
+covariant 108-row emitter master identity, but proves that the repaired unary
+does not select a unique scalar interaction tensor.  An exact two-term
+coordinate witness has fixed `F1=id` and hence identical `q1`, while changing
+`F2(e,e)` changes `q2(e,e)` by `[q1,F2]=f`; holding `F2` fixed and changing
+`F3(e,e,e)` likewise changes `q3(e,e,e)` by `f`.  The residual-fixed
+Weyl/temporal unary blocks therefore cannot substitute for an action-derived
+nonlinear clock chart.
+
+The currently active bridge is the action-normalized same-background
+nonlinear clock canonical map through `F2,F3`, including its signed-pairing
+cotangent lift.  Its activation gate is the exact coordinate-jet
+nonuniqueness witness; its fail-closed atlas row is
+`observer.berger.interaction.pbw_108_apparatus_q2_q3_scalarization_obstruction`
+(`NO_CERTIFIED_MAP` for the scalar interactions, detector response and cone
+restriction).  After the map is serialized, regenerate `q2,q3` rather than
+fitting them to the arity identities, then replay `q1q2`, `q2q2+q1q3`,
+`K_Berger` equivariance and observer-morphism stability.  Physical Bridge 3
+remains inactive and no compact-product mode is identified with a Berger
+mode.
 
 ### Immediate priority after the polarization-emitter handoff
 
 1. Await and independently verify a provenance-complete external declaration
    of physical masses, couplings, inverse volume, shell/tail schedule,
    precision and stopping goal under the certified v2 recoil contract; do not
-   invent those values.  In parallel, use the certified nonlinear clock
-   second jet and passing mixed unary coefficient to export scalar apparatus
+   invent those values.  In parallel, derive the missing action-normalized
+   nonlinear clock `F2,F3` map and cotangent lift, then export scalar apparatus
    `q2,q3`, replay the arity identities, and test `K_Berger` equivariance and
    observer-morphism stability before any tangent-cone restriction or solved
-   backreacted gravity-clock branch.  Unary nilpotency is not a substitute
-   for those arity checks.
+   backreacted gravity-clock branch.  Unary nilpotency and covariant
+   Frechet-derivative labels are not substitutes for that transport or those
+   arity checks.
    Treat realization of both preparations at the original common Hopf event
    as a stronger, separate localization target.
 2. Keep the full apparatus Dirac bracket, complete harmonic signal algebra,
