@@ -1324,10 +1324,94 @@
         "parity": "canonical nondegenerate BV odd pairing of degree one",
         "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
       }
+    },
+    {
+      "claim_boundary": "The relative moment map has zero constant and linear terms, so the derived Taub-zero condition does not restrict the unary tangent complex and does not require a nonzero unary cross-incidence. Its first local equation is d_H B_X+j_X(u,u)/2=0 at arity two. The complete five-charge basis and local current representatives exist, but charge projection alone does not prove [Delta2]=A o mu_rel. Until that obstruction-module factorization and a support-local lift are constructed, the relative q2, action-pairing transport, causal bridge and quantum transfer remain OPEN.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "OPEN"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1",
+          "sha256": "44aded404db4128523362cab071b275b56db8de9bd3e77599f41a3d6ded3c883"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1",
+          "sha256": "438d9d4035f655b0902bc328af18c8e526289b63085e1b49e1065501d8475cf6"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1",
+          "sha256": "d17a9249b6a385410ba8bd747259842c70bb811dfb0ce9aa74aa3d03c7fe6fad"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1",
+          "sha256": "42884f8a4c9216492158c6064bec530afbc788e281917d284a156e16158f5aa2"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1",
+          "sha256": "d96fcda2d797c4222d42c6685ee2275158853852e2e29035158f912a4876896b"
+        }
+      ],
+      "id": "classical.crosswalk.compact_product_derived_taub_zero_pullback",
+      "mode_data": {
+        "dispersion": {
+          "statement": "No advanced/retarded homotopy has been constructed for the derived relative pullback.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "The local current and unary cotangent pairings are certified separately, but their relative action-pairing comparison is not.",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "This is an equation-level derived source, not an observable or particle identification.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Reduced-mode factorization through the complete five-charge map is the active gate.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No causal-retarded lift of the factorization is available.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No smooth-secular relative morphism theorem follows from the local current equation alone.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The quadratic pullback architecture is certified; factorization of the relative obstruction class through the complete five-charge map is not yet computed.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compact magnetic Plebanski-Hacyan product",
+        "boundaries": "support-local off-shell derived zero locus before harmonic or causal reduction",
+        "carrier": "full unary tangent complex with 160-row local current resolution, 188-row q1/q2 interface and 316-row cyclic unary ambient carrier",
+        "charge_sector": "quadratic zero locus of the H,P_x,J_1,J_2,J_3 relative moment map",
+        "degree": "unary tangent unchanged; first derived constraint at Taylor arity two",
+        "ell": "not harmonic-reduced",
+        "k": "not harmonic-reduced",
+        "m": "not harmonic-reduced",
+        "omega": "not harmonic-reduced",
+        "parity": "canonical current/cotangent parity, relative morphism pairing still open",
+        "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+      }
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "7d0ef5ee37f691c9f0a90c4bc9b589ff3c6c3244b2271f615a1f6a4947b10b30",
+  "generated_by_sha256": "b199641260ef5d0bbbf69712f6a41408b99338b612bce0d4f2a18ec3fc599fbc",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

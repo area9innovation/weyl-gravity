@@ -86,6 +86,15 @@ def verify() -> None:
         raise AssertionError("316-row cotangent claim boundary missing")
     if "EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1" not in {item["result_id"] for item in cotangent["evidence"]}:
         raise AssertionError("316-row projected q2 obstruction missing")
+    pullback = by_id["classical.crosswalk.compact_product_derived_taub_zero_pullback"]
+    if pullback["descriptions"]["nonlinear"] != "OPEN" or pullback["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("derived Taub-zero pullback gate was overpromoted")
+    if pullback["descriptions"]["symplectic"] != "OPEN":
+        raise AssertionError("derived pullback action-pairing comparison was overpromoted")
+    if "does not restrict the unary tangent complex" not in pullback["claim_boundary"]:
+        raise AssertionError("quadratic Taylor placement missing from atlas")
+    if "EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1" not in {item["result_id"] for item in pullback["evidence"]}:
+        raise AssertionError("derived pullback preflight evidence missing")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")

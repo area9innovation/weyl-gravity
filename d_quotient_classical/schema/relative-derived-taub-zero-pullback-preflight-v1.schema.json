@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-derived-taub-zero-pullback-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "taylor_placement", "pullback_carrier", "relative_morphism_gate", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-derived-taub-zero-pullback-preflight-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1"},
+    "result_state": {"const": "DERIVED_TAUB_ZERO_PULLBACK_IS_QUADRATIC_AND_RELATIVE_FACTORIZATION_REMAINS_OPEN"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "REDUCED-MODE"}], "minItems": 2, "maxItems": 2},
+    "scope": {"$ref": "#/$defs/stringObject"},
+    "dependencies": {
+      "type": "object", "additionalProperties": false,
+      "required": ["charge_koszul", "current_carrier", "current_q2", "cotangent_316", "block_q2_obstruction", "complete_five_charge_q2"],
+      "properties": {
+        "charge_koszul": {"$ref": "#/$defs/artifact"}, "current_carrier": {"$ref": "#/$defs/artifact"},
+        "current_q2": {"$ref": "#/$defs/artifact"}, "cotangent_316": {"$ref": "#/$defs/artifact"},
+        "block_q2_obstruction": {"$ref": "#/$defs/artifact"}, "complete_five_charge_q2": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "taylor_placement": {
+      "type": "object", "additionalProperties": false,
+      "required": ["relative_moment_map_constant_term", "relative_moment_map_linear_term", "first_nonzero_term", "unary_tangent_complex_unchanged", "plain_linear_taub_zero_subcomplex_valid", "canonical_local_equation", "canonical_new_operation", "nonzero_unary_cross_incidence_is_part_of_canonical_pullback"],
+      "properties": {
+        "relative_moment_map_constant_term": {"const": 0}, "relative_moment_map_linear_term": {"const": 0},
+        "first_nonzero_term": {"const": "mu_rel^(2)(u,v)=B_rel(u,v)"}, "unary_tangent_complex_unchanged": {"const": true},
+        "plain_linear_taub_zero_subcomplex_valid": {"const": false},
+        "canonical_local_equation": {"const": "d_H B_X + j_X(u,u)/2 = 0 for X=H,P_x,J_1,J_2,J_3"},
+        "canonical_new_operation": {"const": "q2_current(u,v)=j_X(u,v)/2"},
+        "nonzero_unary_cross_incidence_is_part_of_canonical_pullback": {"const": false}
+      }
+    },
+    "pullback_carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["local_current_resolution_rows", "cyclic_unary_ambient_rows", "current_q1q2_interface_rows", "support_local", "uses_mode_projector", "global_koszul_descent_generators", "constant_u1_is_taub_generator"],
+      "properties": {
+        "local_current_resolution_rows": {"const": 160}, "cyclic_unary_ambient_rows": {"const": 316},
+        "current_q1q2_interface_rows": {"const": 188}, "support_local": {"const": true}, "uses_mode_projector": {"const": false},
+        "global_koszul_descent_generators": {"const": 5}, "constant_u1_is_taub_generator": {"const": false}
+      }
+    },
+    "relative_morphism_gate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["full_domain_block_diagonal_q2_obstructed", "required_derived_factorization", "equivalent_kernel_condition", "charge_projection_alone_proves_factorization", "complete_standard_charge_basis_available", "off_shell_local_current_representatives_available", "factorization_matrix_computed", "support_local_lift_of_factorization_computed"],
+      "properties": {
+        "full_domain_block_diagonal_q2_obstructed": {"const": true},
+        "required_derived_factorization": {"const": "[Delta2]=A o mu_rel in target q1 cohomology on the declared source-pair module"},
+        "equivalent_kernel_condition": {"const": "ker(mu_rel) subset ker([Delta2])"},
+        "charge_projection_alone_proves_factorization": {"const": false}, "complete_standard_charge_basis_available": {"const": true},
+        "off_shell_local_current_representatives_available": {"const": true}, "factorization_matrix_computed": {"const": false},
+        "support_local_lift_of_factorization_computed": {"const": false}
+      }
+    },
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["canonical_quadratic_derived_pullback_architecture_certified", "linear_tangent_must_be_restricted", "unary_cross_incidence_required_by_taub_zero_condition", "relative_q2_on_derived_pullback_certified", "factorization_obstructed", "causal_or_quantum_claim"],
+      "properties": {
+        "canonical_quadratic_derived_pullback_architecture_certified": {"const": true},
+        "linear_tangent_must_be_restricted": {"const": false}, "unary_cross_incidence_required_by_taub_zero_condition": {"const": false},
+        "relative_q2_on_derived_pullback_certified": {"const": false}, "factorization_obstructed": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "COMPUTE_THE_REDUCED_MODE_FACTORIZATION_OF_DELTA2_THROUGH_THE_COMPLETE_FIVE_CHARGE_MAP_THEN_TEST_A_SUPPORT_LOCAL_CURRENT_LIFT"},
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "minProperties": 4},
+        "verification_commands": {"type": "array", "items": {"type": "string"}, "minItems": 3}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "stringObject": {"type": "object", "additionalProperties": {"type": "string"}, "minProperties": 10}
+  }
+}

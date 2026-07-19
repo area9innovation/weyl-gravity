@@ -154,6 +154,18 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
 
+    def test_derived_taub_zero_pullback_is_quadratic_and_open(self) -> None:
+        entry = self.entries["classical.crosswalk.compact_product_derived_taub_zero_pullback"]
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+        self.assertEqual(entry["descriptions"]["symplectic"], "OPEN")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertIn("does not restrict the unary tangent complex", entry["claim_boundary"])
+        self.assertIn("charge projection alone does not prove", entry["claim_boundary"])
+        self.assertIn(
+            "EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+
     def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_exact_branch"]
         self.assertEqual(entry["descriptions"]["causal"], "CERTIFIED")

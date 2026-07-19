@@ -75,6 +75,7 @@ CERTS = {
     "relative_238_cyclic_rank_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1.json",
     "relative_316_cotangent_completion": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1.json",
     "relative_316_block_q2_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1.json",
+    "relative_derived_taub_zero_pullback": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
 
@@ -364,6 +365,18 @@ def entries() -> list[dict[str, Any]]:
         _second(("NOT_APPLICABLE", "No reduced-mode tangent claim is made."), ("NOT_APPLICABLE", "No smooth-secular tangent claim is made."), ("NO_CERTIFIED_MAP", "No causal-retarded completion is supplied.")),
         _evidence("relative_238_cyclic_rank_obstruction", "relative_316_cotangent_completion", "relative_316_block_q2_obstruction"),
         "This carrier resolves the 238-row rank obstruction by adjoining the full 78-row odd cotangent of the relative cone, not by identifying unlike bundles at the 28-row rank lower bound. Its pairing is the canonical cone/cotangent pairing, not either standard action-derived form; the generic inertia obstruction is therefore retained rather than refuted. The cotangent adjoint is factorized and not PBW-expanded. Projection proves that a complete full-domain q2 is obstructed while the unary operator remains block diagonal. A genuine derived Taub-zero homotopy pullback, nonzero typed unary cross-incidence, modified endpoint or different background remains open; current comparison, causal and quantum claims are absent.",
+    ))
+    values.append(_entry(
+        "classical.crosswalk.compact_product_derived_taub_zero_pullback",
+        _scope(NARIAI, theory="Einstein-Maxwell source relative to Weyl-Maxwell target", background="compact magnetic Plebanski-Hacyan product", boundaries="support-local off-shell derived zero locus before harmonic or causal reduction", charge_sector="quadratic zero locus of the H,P_x,J_1,J_2,J_3 relative moment map", carrier="full unary tangent complex with 160-row local current resolution, 188-row q1/q2 interface and 316-row cyclic unary ambient carrier", degree="unary tangent unchanged; first derived constraint at Taylor arity two", parity="canonical current/cotangent parity, relative morphism pairing still open", ell="not harmonic-reduced", m="not harmonic-reduced", k="not harmonic-reduced", omega="not harmonic-reduced"),
+        {"causal": "NO_CERTIFIED_MAP", "symplectic": "OPEN", "nonlinear": "OPEN", "observational": "NOT_APPLICABLE", "quantum": "OPEN"},
+        ("NO_CERTIFIED_MAP", "No advanced/retarded homotopy has been constructed for the derived relative pullback."),
+        ("OPEN", "The local current and unary cotangent pairings are certified separately, but their relative action-pairing comparison is not."),
+        ("OPEN", "The quadratic pullback architecture is certified; factorization of the relative obstruction class through the complete five-charge map is not yet computed."),
+        ("NOT_APPLICABLE", "This is an equation-level derived source, not an observable or particle identification."),
+        _second(("OPEN", "Reduced-mode factorization through the complete five-charge map is the active gate."), ("OPEN", "No smooth-secular relative morphism theorem follows from the local current equation alone."), ("NO_CERTIFIED_MAP", "No causal-retarded lift of the factorization is available.")),
+        _evidence("five_current_de_rham_carrier", "five_current_de_rham_q2", "relative_316_cotangent_completion", "relative_316_block_q2_obstruction", "relative_derived_taub_zero_pullback"),
+        "The relative moment map has zero constant and linear terms, so the derived Taub-zero condition does not restrict the unary tangent complex and does not require a nonzero unary cross-incidence. Its first local equation is d_H B_X+j_X(u,u)/2=0 at arity two. The complete five-charge basis and local current representatives exist, but charge projection alone does not prove [Delta2]=A o mu_rel. Until that obstruction-module factorization and a support-local lift are constructed, the relative q2, action-pairing transport, causal bridge and quantum transfer remain OPEN.",
     ))
     return values
 

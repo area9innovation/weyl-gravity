@@ -2410,10 +2410,24 @@ projection, leaving precisely the old direct-`f2` equation.  Its normalized
 Taub witness remains `-54*(1+sqrt(3))/5`, so no complete full-domain relative
 `q2` exists while the 316-row unary operator stays block diagonal.  The unary
 cyclic carrier and scoped 188-row physical/current interface are not demoted.
-The active construction is now a genuine derived Taub-zero homotopy pullback,
-or, failing that, the first typed obstruction to a nonzero unary
-cross-incidence.  Modified endpoints and other backgrounds remain admissible;
-no causal or quantum consequence is inferred.
+The derived Taub-zero architecture is now placed at the correct Taylor
+degree by
+`EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1`.
+The relative moment map obeys
+`mu_rel(0)=0=d mu_rel|_0`, so its derived zero locus does not restrict the
+unary tangent complex and does not require a nonzero unary cross-incidence.
+Its first canonical local equation is the arity-two current equation
+`d_H B_X+j_X(u,u)/2=0` for the five stabilizers.  The 160-row current
+resolution, 188-row q1/q2 interface and 316-row cyclic unary ambient carrier
+already provide the typed ingredients.  What remains open is the actual
+relative morphism: compute whether the obstruction class factors as
+`[Delta2]=A o mu_rel`, equivalently whether
+`ker(mu_rel) subset ker([Delta2])`, on the complete standard reduced-mode
+source-pair module.  Only after this finite factorization passes should a
+support-local current lift be attempted.  Charge projection alone does not
+prove the factorization, and neither success nor obstruction is currently
+claimed.  Modified endpoints and other backgrounds remain admissible; no
+causal or quantum consequence is inferred.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a

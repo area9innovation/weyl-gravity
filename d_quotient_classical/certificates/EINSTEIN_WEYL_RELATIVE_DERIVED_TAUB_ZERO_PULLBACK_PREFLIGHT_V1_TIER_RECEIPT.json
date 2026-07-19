@@ -1,0 +1,41 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1_TIER_RECEIPT",
+  "claim_ids": ["EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1"],
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1.json", "sha256": "d96fcda2d797c4222d42c6685ee2275158853852e2e29035158f912a4876896b"},
+    "schema": {"path": "d_quotient_classical/schema/relative-derived-taub-zero-pullback-preflight-v1.schema.json", "sha256": "fe78b86f424b1d0453afc9d5f37822ef1312f73ac6bc5baca25f7915a5f7b391"},
+    "producer": {"path": "d_quotient_classical/relative/einstein_weyl_relative_derived_taub_zero_pullback_preflight.py", "sha256": "45f2ec1dc2d8e6d672fce7cb4afad1eb438dfeac700fd4c15d3d4041c2b2223c"},
+    "verifier": {"path": "d_quotient_classical/relative/verify_einstein_weyl_relative_derived_taub_zero_pullback_preflight.py", "sha256": "16a64d712280be02edced2ac4e4888745c8c63d1cc530e0182ff48513ddb216e"},
+    "tests": {"path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_derived_taub_zero_pullback_preflight.py", "sha256": "02f08c7eef646874788bc842dbdd48c66e67cebd736c0253ef06e4b75a8e755d"},
+    "report": {"path": "d_quotient_classical/reports/einstein-weyl-relative-derived-taub-zero-pullback-preflight.md", "sha256": "d99570f46c82831532fb57b0dedfe68532539775229ced88fa05d2d963bdc35b"},
+    "atlas_fragment": {"path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "sha256": "18b507aff4c7436ab3423b9f8c0ac9c87dd9a9a669c010d1a2b300a7bccdcb7c"}
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "checks": ["Python compilation", "strict Draft 2020-12 schema", "scoped diff check", "content-hash replay"]},
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 4.4,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_derived_taub_zero_pullback_preflight --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_derived_taub_zero_pullback_preflight",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_derived_taub_zero_pullback_preflight",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-derived-taub-zero-pullback-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 1.1,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {"status": "NOT_RUN", "reason": "This is a fail-closed Taylor-placement and architecture preflight. It changes no shared core algebra, proves neither the relative q2 factorization nor a causal theorem, and is not a paper freeze or release."}
+  },
+  "claim_boundary": "This receipt certifies that the relative Taub-zero derived source begins quadratically, leaves the unary tangent complex unchanged and is represented locally at arity two by the five-current equation. It records the available 160-row current resolution, 188-row q1/q2 interface and 316-row cyclic unary ambient carrier. It does not compute or obstruct the factorization of the relative arity-two obstruction class through the complete five-charge map, construct a support-local lift, repair the relative q2, compare the canonical cotangent pairing with the action current, or establish causal, observable, particle or quantum claims."
+}

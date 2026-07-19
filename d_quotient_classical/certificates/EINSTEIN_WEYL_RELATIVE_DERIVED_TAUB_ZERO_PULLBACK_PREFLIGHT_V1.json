@@ -1,0 +1,107 @@
+{
+  "claim_boundary": "This preflight certifies the categorical and Taylor-degree placement of the relative Taub-zero derived source. Because the relative moment map has vanishing constant and linear terms, the canonical derived pullback preserves the full unary tangent complex and enters through the support-local current q2 equation d_H B+j/2=0. It therefore rejects a plain linear Taub-zero subcomplex and does not require a nonzero unary cross-incidence merely to impose the quadratic constraint. It does not yet prove that the relative arity-two obstruction class factors through the complete five-charge map, construct the support-local lift of such a factorization, repair the relative f2, compare the cotangent and action pairings, or establish causal, observable, particle or quantum claims.",
+  "classification": {
+    "canonical_quadratic_derived_pullback_architecture_certified": true,
+    "causal_or_quantum_claim": false,
+    "factorization_obstructed": false,
+    "linear_tangent_must_be_restricted": false,
+    "relative_q2_on_derived_pullback_certified": false,
+    "unary_cross_incidence_required_by_taub_zero_condition": false
+  },
+  "dependencies": {
+    "block_q2_obstruction": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1.json",
+      "sha256": "42884f8a4c9216492158c6064bec530afbc788e281917d284a156e16158f5aa2"
+    },
+    "charge_koszul": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1.json",
+      "sha256": "9e389ce322ad48665a5684c17296872fa401bb8080b189da8a36e3ff89703522"
+    },
+    "complete_five_charge_q2": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json",
+      "sha256": "11e8119ab8fc9756fc5b4c5520e648599fd1264e7776cc79d91dc80645be1c56"
+    },
+    "cotangent_316": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1.json",
+      "sha256": "d17a9249b6a385410ba8bd747259842c70bb811dfb0ce9aa74aa3d03c7fe6fad"
+    },
+    "current_carrier": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1.json",
+      "sha256": "44aded404db4128523362cab071b275b56db8de9bd3e77599f41a3d6ded3c883"
+    },
+    "current_q2": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1.json",
+      "sha256": "438d9d4035f655b0902bc328af18c8e526289b63085e1b49e1065501d8475cf6"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "COMPUTE_THE_REDUCED_MODE_FACTORIZATION_OF_DELTA2_THROUGH_THE_COMPLETE_FIVE_CHARGE_MAP_THEN_TEST_A_SUPPORT_LOCAL_CURRENT_LIFT",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_derived_taub_zero_pullback_preflight.py": "45f2ec1dc2d8e6d672fce7cb4afad1eb438dfeac700fd4c15d3d4041c2b2223c",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_derived_taub_zero_pullback_preflight.py": "02f08c7eef646874788bc842dbdd48c66e67cebd736c0253ef06e4b75a8e755d",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_derived_taub_zero_pullback_preflight.py": "16a64d712280be02edced2ac4e4888745c8c63d1cc530e0182ff48513ddb216e",
+      "d_quotient_classical/schema/relative-derived-taub-zero-pullback-preflight-v1.schema.json": "fe78b86f424b1d0453afc9d5f37822ef1312f73ac6bc5baca25f7915a5f7b391"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_derived_taub_zero_pullback_preflight --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_derived_taub_zero_pullback_preflight",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_derived_taub_zero_pullback_preflight"
+    ]
+  },
+  "pullback_carrier": {
+    "constant_u1_is_taub_generator": false,
+    "current_q1q2_interface_rows": 188,
+    "cyclic_unary_ambient_rows": 316,
+    "global_koszul_descent_generators": 5,
+    "local_current_resolution_rows": 160,
+    "support_local": true,
+    "uses_mode_projector": false
+  },
+  "relative_morphism_gate": {
+    "charge_projection_alone_proves_factorization": false,
+    "complete_standard_charge_basis_available": true,
+    "equivalent_kernel_condition": "ker(mu_rel) subset ker([Delta2])",
+    "factorization_matrix_computed": false,
+    "full_domain_block_diagonal_q2_obstructed": true,
+    "off_shell_local_current_representatives_available": true,
+    "required_derived_factorization": "[Delta2]=A o mu_rel in target q1 cohomology on the declared source-pair module",
+    "support_local_lift_of_factorization_computed": false
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1",
+  "result_state": "DERIVED_TAUB_ZERO_PULLBACK_IS_QUADRATIC_AND_RELATIVE_FACTORIZATION_REMAINS_OPEN",
+  "schema": "pure-weyl-relative-derived-taub-zero-pullback-preflight-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "support-local off-shell bundle complex before harmonic or causal reduction",
+    "carrier": "160-row five-current carrier plus T*[1] of the complete 78-row relative mapping cofiber",
+    "charge_sector": "five connected stabilizers H,P_x,J_1,J_2,J_3",
+    "degree": "-2 through 3",
+    "ell": "not harmonic-reduced",
+    "k": "not harmonic-reduced",
+    "m": "not harmonic-reduced",
+    "omega": "not harmonic-reduced",
+    "parity": "canonical nondegenerate BV odd pairing of cohomological degree one",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  },
+  "taylor_placement": {
+    "canonical_local_equation": "d_H B_X + j_X(u,u)/2 = 0 for X=H,P_x,J_1,J_2,J_3",
+    "canonical_new_operation": "q2_current(u,v)=j_X(u,v)/2",
+    "first_nonzero_term": "mu_rel^(2)(u,v)=B_rel(u,v)",
+    "nonzero_unary_cross_incidence_is_part_of_canonical_pullback": false,
+    "plain_linear_taub_zero_subcomplex_valid": false,
+    "relative_moment_map_constant_term": 0,
+    "relative_moment_map_linear_term": 0,
+    "unary_tangent_complex_unchanged": true
+  }
+}
