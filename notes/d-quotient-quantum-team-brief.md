@@ -986,11 +986,12 @@ This refutes universal algebraic `H2` cancellation on the fixture, but does
 not by itself dispose `M14`. The fixture distribution is now fixed by
 largest-barycentric triangle sectors, half-interval bubble sectors and one
 common Mellin parameter. Minimal subtraction promotes `15707/216` to the
-exact coefficient of `log(mu^2)` before `(4 pi)^-2`. The next gate is the
-generic `H1-H2` contact-kernel evaluation and renormalized mixed-row assembly
-on the now-certified covariant Volterra carrier. That carrier contains all
-six ordered triangle cells and three local contact cells with exact
-Schwinger measures and a common resolved-boundary Mellin extension. The original
+exact coefficient of `log(mu^2)` before `(4 pi)^-2`. All six generic contact
+endpoint residues are now exact and projected to 33 raw five-carrier rows,
+with two unseen momentum replays and the symmetric `I28` quotient relation.
+The next gate is their triangle/contact boundary-incidence assembly on the
+certified covariant Volterra carrier, followed by the renormalized mixed rows
+and `M14` disposition. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
@@ -1013,9 +1014,10 @@ non-membership theorem, and complete exact `J`-plus-two-log integrated
 functions. The remaining coefficient gate begins with supplying the generic
 primed Green/spectral carrier needed to lift the exact round-`S4` finite
 benchmark. The covariant Volterra lift of the equal-box Mellin subtraction is
-now complete; its remaining physical gate is the generic contact-kernel
-evaluation. The renormalized mixed rows must then decide the
-certified physical `M14` class. The isolated three-linear integral may not be
+now complete, as are all generic contact endpoint residues. Its remaining
+physical gate is the triangle/contact boundary incidence. The renormalized
+mixed rows must then decide the certified physical `M14` class. The isolated
+three-linear integral may not be
 promoted before that route closes.
 Those are followed by the five
 parity-even third-curvature repository

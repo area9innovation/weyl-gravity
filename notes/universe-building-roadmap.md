@@ -49,11 +49,13 @@ The backgrounds must remain separate until an explicit bridge is certified.
 | Static pure-Weyl black holes | exact static spherical Bach-flat family and regular three-horizon fixture; bare nonintegrability removed by the basicness-forced normalized generator `chi = u d_t` with exact Hamiltonian `H = -16 pi alpha beta^2 D2`, Wald entropy, and first law at every simple horizon; linear-level frame independence: arbitrary time-dependent conformal and `l=0` diffeo perturbations carry exactly zero charge and flux, entropy conformally invariant on the symbolic family, unique linear generator extension | radiative `l>=2` bilinear flux matrix and exterior causal complex (BH-2A), second-order/physical-process first law, nonlinear horizon dynamics, stability, or any ringdown statement |
 
 Quantum coefficient update (2026-07-19): the equal-box physical
-triangle/bubble carrier now has a largest-barycentric/half-interval common
-Mellin minimal subtraction. Its exact `log(mu^2)` scale coefficient is
-`15707/216` before `(4 pi)^-2`. The generic covariant Volterra lift is now
-complete; generic contact kernels and renormalized mixed rows remain open,
-so `M14` is not disposed.
+triangle/bubble carrier has a largest-barycentric/half-interval common Mellin
+minimal subtraction with exact `log(mu^2)` scale coefficient `15707/216`
+before `(4 pi)^-2`. The generic covariant Volterra lift and all six generic
+contact endpoint residues are now exact; the latter form 33 raw five-carrier
+rows, pass two unseen momentum fixtures, and preserve the symmetric `I28`
+quotient relation. Triangle/contact boundary incidence and renormalized mixed
+rows remain open, so `M14` is not disposed.
 
 No row may be used as evidence for another row merely because both use the
 word cylinder, wave, or Einstein.
@@ -66,7 +68,7 @@ The shortest independent paths are now:
 Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
-Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, evaluate the generic H1-H2 contact kernels on the certified covariant Volterra carrier, and assemble the renormalized mixed rows before matching the universal CPT kernels to repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
+Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, assemble the exact generic H1-H2 endpoint rows with the triangle boundary incidence on the certified covariant Volterra carrier, and decide M14 before matching the universal CPT kernels to repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    bind all two_j=6 feedback channel-columns using the certified conjugate-column real-shell fold; the generic direct carrier, real-shell map and fail-closed tail-stop controller are certified, while physical specialization remains deferred, after which restrict records to Z2^C
 Black hole:  polar Einstein branch SYMPLECTICALLY NULL certified (critical-gravity structure now closed in both parities; conformal direction an exact off-shell flux degeneracy); next polar extra/cross flux blocks via the realized Ricci-image composition; Zerilli-form master scalar stays fail-closed OPEN
 ```
@@ -1940,10 +1942,11 @@ equal-box TT polarization gives raw `H1^3`, mixed-endpoint and combined
 coefficients `-1975/72`, `2704/27`, and `15707/216`. Universal algebraic
 `H2` cancellation is therefore refuted on this fixture. A resolved common
 Mellin minimal subtraction promotes the combined residue to the exact fixture
-`log(mu^2)` scale row. Its generic covariant Volterra lift is now exact, with
-six ordered triangle cells, three contact cells and one common boundary
-extension. The `M14` disposition now requires the generic contact kernels and
-renormalized mixed-row assembly. The selected generic weight-raised
+`log(mu^2)` scale row. Its generic covariant Volterra lift is exact, with six
+ordered triangle cells, three contact cells and one common boundary extension.
+All six generic contact endpoint residues are now exact 33-row five-carrier
+functions. The `M14` disposition now requires their triangle/contact boundary
+incidence and renormalized mixed-row assembly. The selected generic weight-raised
 factorization and its local order-minus-three/four BCH residue are now exact.
 The canonical
 `det_3` tail and all three Schur residues are already fixed. The exact Endo--Duhamel,

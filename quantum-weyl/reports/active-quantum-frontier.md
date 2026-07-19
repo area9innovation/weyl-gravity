@@ -160,9 +160,12 @@ sectors, half-interval bubble sectors and one common Mellin parameter. It gives
 the exact scale row
 `partial_log(mu^2) Gamma_MS=(4 pi)^-2 15707/216`. A generic covariant
 Volterra carrier now joins all six ordered triangle cells and three local
-`H1-H2` contact cells under the same resolved-boundary Mellin extension. The
-generic contact kernels and mixed-row assembly remain open, so the `M14`
-relative class is not yet disposed.
+`H1-H2` contact cells under the same resolved-boundary Mellin extension. All
+six generic contact endpoint residues are now projected onto 33 exact raw
+five-carrier rows; left/right equality, two unseen momentum fixtures and the
+symmetric `I28` quotient relation pass exactly. The triangle/contact boundary
+incidence and finite local rows remain open, so the `M14` relative class is
+not yet disposed.
 The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
 and rational corner flux. Four explicit primitives cover every orientation,
@@ -494,9 +497,9 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. evaluate the generic `H1-H2` contact kernels on the certified covariant
-   Volterra carrier;
-2. assemble and integrate the renormalized mixed physical five-carrier rows,
+1. assemble the now-exact 33 generic `H1-H2` endpoint-residue rows with the
+   triangle boundary incidence on the certified covariant Volterra carrier;
+2. integrate the renormalized mixed physical five-carrier rows,
    then dispose the certified `M14` class in that generic extension;
 3. supply the full generic primed Green kernel or spectral measure for the
    global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the

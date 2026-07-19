@@ -1376,8 +1376,18 @@ and
 \]
 The same Mellin parameter extends every resolved boundary.  Exact
 noncommuting-matrix replay verifies the trace-log coefficients and cyclicity.
-The generic contact kernels, finite local normalization and renormalized mixed
-rows remain open.
+For each singled $H_1$ leg $i$, exact endpoint evaluation gives
+\[
+ -\frac{\operatorname{tr}(H_{2,jk}H_{1,i}(k_i,0))}{2(k_i^2)^2}
+ =-\frac{\operatorname{tr}(H_{2,jk}H_{1,i}(k_i,-k_i))}{2(k_i^2)^2}.
+\]
+All three contacts are projected to 33 raw five-carrier rows using 28 exact
+training fixtures and two unseen replays.  Each row has denominator
+$(x_1x_2x_3)^2$, the prescribed homogeneous numerator degree, and preserves
+the symmetric $I_{28}$ quotient relation coefficientwise.  The generic scale
+kernel is twice the endpoint residue times $\log(\mu^2/x_i)$.  Triangle/contact
+boundary incidence, finite local normalization and renormalized mixed rows
+remain open.
 
 \begin{verbatim}
 MOD="spectral.euclidean.generic_background_physical_hessian_"
@@ -2160,8 +2170,9 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-	\item evaluate the generic $H_1$--$H_2$ contact kernels on the certified
-covariant Volterra carrier, followed by assembly of the
+	\item assemble the exact generic $H_1$--$H_2$ endpoint rows with the
+triangle boundary incidence on the certified covariant Volterra carrier,
+followed by assembly of the
 renormalized mixed rows, integration of the now-projected physical
 three-linear tensor triangle, and assembly of the five
 repository parity-even third-curvature form-factor functions and coefficients,

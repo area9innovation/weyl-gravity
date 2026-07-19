@@ -1,0 +1,2416 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC and EUCLIDEAN-SPECTRAL certificate evaluates and projects the logarithmic endpoint residues of all three generic H1-H2 contact cells to the scalar-flat five-carrier quotient, proves left/right endpoint equality, fixes their single-scale logarithmic kernels, and reproduces the equal-box coefficient 2704/27. It does not fix finite local contact rows, assemble the renormalized triangle/contact incidence, dispose M14, complete a physical form factor, change the QME disposition, or certify a Lorentzian theory.",
+  "claim_flags": {
+    "ALL_THREE_CONTACT_CELLS_PROJECTED": true,
+    "GENERIC_CONTACT_FINITE_LOCAL_ROWS_FIXED": false,
+    "GENERIC_CONTACT_SCALE_LOG_KERNELS_COMPUTED": true,
+    "GENERIC_H1_H2_CONTACT_ENDPOINT_KERNELS_EVALUATED": true,
+    "LEFT_RIGHT_ENDPOINT_EQUALITY_CERTIFIED": true,
+    "LORENTZIAN_CERTIFIED": false,
+    "PHYSICAL_M14_CORNER_CLASS_DISPOSED": false,
+    "PHYSICAL_THIRD_CURVATURE_FORM_FACTORS_COMPLETE": false,
+    "QME_OR_ANOMALY_STATUS_CHANGED": false,
+    "RENORMALIZED_GENERIC_MIXED_ROWS_ASSEMBLED": false,
+    "SYMMETRIC_I28_QUOTIENT_SECTION_PRESERVED": true
+  },
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "dependencies": {
+    "covariant_Volterra_carrier": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_COVARIANT_VOLTERRA_CARRIER.json",
+      "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_COVARIANT_VOLTERRA_CARRIER",
+      "sha256": "aa33066b18f6b915c093e012f2dbc159ea70a71ee04b77a457303876d8db12db"
+    },
+    "mixed_equal_box_fixture": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MIXED_H1_H2_CORNER_FIXTURE.json",
+      "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MIXED_H1_H2_CORNER_FIXTURE",
+      "sha256": "2c2a3babf0a766dffb05b90aaf7e2c8cfe1bd25e003256bace7d5d8fa84a5619"
+    },
+    "physical_H1": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE.json",
+      "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE",
+      "sha256": "b8fd2da678cb64d0bae6adaacb888beb49af3d3e45ddd9bce93005fb9018e9f9"
+    },
+    "physical_H2": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_CURVATURE_SQUARED.json",
+      "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_CURVATURE_SQUARED",
+      "sha256": "6992bdeb78808f559cf3a938c7dcbeefe115d10bfc5698895b2ee507e5a67f86"
+    },
+    "physical_five_carrier_projection": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_FIVE_CARRIER_PROJECTION.json",
+      "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_FIVE_CARRIER_PROJECTION",
+      "sha256": "21a28ad483c8964390306b7dc6c8cd7c5ab5c1dcfb577eda0acad81f70bfc23b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "endpoint_theorem": {
+    "contact_count": 3,
+    "endpoint_count": 6,
+    "formula": "Res_i,left=-Tr[H2_jk H1_i(k_i,0)]/(2 (k_i^2)^2); Res_i,right=-Tr[H2_jk H1_i(k_i,-k_i)]/(2 (k_i^2)^2)",
+    "left_right_equality": "EXACT_ON_ALL_30_FIXTURES",
+    "loop_pair_term_status": "FINITE_AT_ENDPOINTS_AND_ZERO_IN_LOG_RESIDUE",
+    "quotient_dimension": 10,
+    "raw_channel_count_per_contact": 11
+  },
+  "equal_box_regression": {
+    "TT_basis_indices": [
+      0,
+      1,
+      2
+    ],
+    "box_invariants": [
+      1,
+      1,
+      1
+    ],
+    "combined_all_contacts": {
+      "denominator": 27,
+      "numerator": 2704
+    },
+    "single_endpoint_coefficients": [
+      {
+        "denominator": 54,
+        "numerator": 1127
+      },
+      {
+        "denominator": 9,
+        "numerator": 115
+      },
+      {
+        "denominator": 54,
+        "numerator": 887
+      }
+    ]
+  },
+  "fixture_ledger": {
+    "path": "quantum-weyl/spectral/euclidean/fixtures/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_RESIDUE_COORDINATES.json",
+    "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_RESIDUE_FIXTURE_LEDGER",
+    "sha256": "f1bb63628674295f0405a085e61cef7f310f2d082c04ec1112efa761e1b0fdac"
+  },
+  "interpolation": {
+    "common_box_denominator_exponents": [
+      2,
+      2,
+      2
+    ],
+    "formula_digest": "bce52f6ef0af9104989f0707ce9b33fa1b94e7514f63f953586ef126333966bb",
+    "numerator_degree_rule": "5-explicit_derivative_order/2",
+    "row_count": 33,
+    "training_fixture_count": 28,
+    "unisolvence_prime": 1000003,
+    "unseen_fixture_count": 2,
+    "unseen_ledger": [
+      {
+        "boxes": [
+          6,
+          9,
+          7
+        ],
+        "channel_defect_count": 0,
+        "coordinate_digest": "02492d8baeccd77ebc891f3e442b6b820ab1e15dbf200b68bd26787698ef99e3"
+      },
+      {
+        "boxes": [
+          6,
+          10,
+          4
+        ],
+        "channel_defect_count": 0,
+        "coordinate_digest": "6885cd1a9ece274c76caa9731cf2dd5c0d1372f1a20aebd97b4c668b8d642a29"
+      }
+    ]
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "ASSEMBLE_TRIANGLE_AND_CONTACT_BOUNDARY_INCIDENCE_ON_COVARIANT_VOLTERRA_CARRIER_AND_DECIDE_M14",
+  "projection_rows": [
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I10",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_1_H2_23",
+      "explicit_derivative_order": 0,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 5,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x1)",
+      "single_endpoint_term_count": 10,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            0,
+            1,
+            4
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 88
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            2,
+            3
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            3,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            4,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 88
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            1,
+            3
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            2
+          ],
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -40
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            3,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 88
+          }
+        }
+      ],
+      "singled_H1_leg": 1
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I24",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_1_H2_23",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x1)",
+      "single_endpoint_term_count": 6,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            0,
+            1,
+            3
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 4
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            2,
+            2
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -8
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            3,
+            1
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 4
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -182
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -182
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 88
+          }
+        }
+      ],
+      "singled_H1_leg": 1
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I24",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_1_H2_23",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        2,
+        1,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x1)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            0,
+            2,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -244
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            3,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 100
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -182
+          }
+        }
+      ],
+      "singled_H1_leg": 1
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I24",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_1_H2_23",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        3,
+        1,
+        2
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x1)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            0,
+            1,
+            3
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 100
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            2,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -244
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -182
+          }
+        }
+      ],
+      "singled_H1_leg": 1
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I25",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_1_H2_23",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x1)",
+      "single_endpoint_term_count": 4,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            0,
+            1,
+            3
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -176
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            2,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 8
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            3,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -176
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 176
+          }
+        }
+      ],
+      "singled_H1_leg": 1
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I25",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_1_H2_23",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        2,
+        1,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x1)",
+      "single_endpoint_term_count": 5,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            0,
+            1,
+            3
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -152
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            2,
+            2
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -8
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            3,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 176
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 164
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -176
+          }
+        }
+      ],
+      "singled_H1_leg": 1
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I25",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_1_H2_23",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        3,
+        1,
+        2
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x1)",
+      "single_endpoint_term_count": 5,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            0,
+            1,
+            3
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 176
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            2,
+            2
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -8
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            3,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -152
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 164
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -176
+          }
+        }
+      ],
+      "singled_H1_leg": 1
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I28",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_1_H2_23",
+      "explicit_derivative_order": 4,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 3,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x1)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            0,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 704
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        }
+      ],
+      "singled_H1_leg": 1
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I28",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_1_H2_23",
+      "explicit_derivative_order": 4,
+      "label_order": [
+        1,
+        3,
+        2
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 3,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x1)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            0,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 704
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        }
+      ],
+      "singled_H1_leg": 1
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I28",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_1_H2_23",
+      "explicit_derivative_order": 4,
+      "label_order": [
+        2,
+        3,
+        1
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 3,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x1)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            0,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        },
+        {
+          "box_exponents": [
+            0,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 704
+          }
+        }
+      ],
+      "singled_H1_leg": 1
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I29",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_1_H2_23",
+      "explicit_derivative_order": 6,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 2,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x1)",
+      "single_endpoint_term_count": 1,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            0,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -352
+          }
+        }
+      ],
+      "singled_H1_leg": 1
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I10",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_2_H2_13",
+      "explicit_derivative_order": 0,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 5,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x2)",
+      "single_endpoint_term_count": 10,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            0,
+            4
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 88
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            1,
+            3
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            3,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 88
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            0,
+            3
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -40
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            0,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            4,
+            0,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 88
+          }
+        }
+      ],
+      "singled_H1_leg": 2
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I24",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_2_H2_13",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x2)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            2,
+            0,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -244
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -182
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            0,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 100
+          }
+        }
+      ],
+      "singled_H1_leg": 2
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I24",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_2_H2_13",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        2,
+        1,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x2)",
+      "single_endpoint_term_count": 6,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            0,
+            3
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 4
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -182
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 88
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            0,
+            2
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -8
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -182
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            0,
+            1
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 4
+          }
+        }
+      ],
+      "singled_H1_leg": 2
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I24",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_2_H2_13",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        3,
+        1,
+        2
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x2)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            0,
+            3
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 100
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -182
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            0,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -244
+          }
+        }
+      ],
+      "singled_H1_leg": 2
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I25",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_2_H2_13",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x2)",
+      "single_endpoint_term_count": 5,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            0,
+            3
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -152
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 164
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -176
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            0,
+            2
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -8
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            0,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 176
+          }
+        }
+      ],
+      "singled_H1_leg": 2
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I25",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_2_H2_13",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        2,
+        1,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x2)",
+      "single_endpoint_term_count": 4,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            0,
+            3
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -176
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 176
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            0,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 8
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            0,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -176
+          }
+        }
+      ],
+      "singled_H1_leg": 2
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I25",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_2_H2_13",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        3,
+        1,
+        2
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x2)",
+      "single_endpoint_term_count": 5,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            0,
+            3
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 176
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -176
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            0,
+            2
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -8
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 164
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            0,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -152
+          }
+        }
+      ],
+      "singled_H1_leg": 2
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I28",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_2_H2_13",
+      "explicit_derivative_order": 4,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 3,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x2)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            0,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 704
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            0,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        }
+      ],
+      "singled_H1_leg": 2
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I28",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_2_H2_13",
+      "explicit_derivative_order": 4,
+      "label_order": [
+        1,
+        3,
+        2
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 3,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x2)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            0,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 704
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            0,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        }
+      ],
+      "singled_H1_leg": 2
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I28",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_2_H2_13",
+      "explicit_derivative_order": 4,
+      "label_order": [
+        2,
+        3,
+        1
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 3,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x2)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            0,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            0,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 704
+          }
+        }
+      ],
+      "singled_H1_leg": 2
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I29",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_2_H2_13",
+      "explicit_derivative_order": 6,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 2,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x2)",
+      "single_endpoint_term_count": 1,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            0,
+            1
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -352
+          }
+        }
+      ],
+      "singled_H1_leg": 2
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I10",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_3_H2_12",
+      "explicit_derivative_order": 0,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 5,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x3)",
+      "single_endpoint_term_count": 10,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            1,
+            3
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 88
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            3,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            4,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 88
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -40
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            3,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            2,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -88
+          }
+        },
+        {
+          "box_exponents": [
+            4,
+            1,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 88
+          }
+        }
+      ],
+      "singled_H1_leg": 3
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I24",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_3_H2_12",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x3)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            2,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -182
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            2,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -244
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            1,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 100
+          }
+        }
+      ],
+      "singled_H1_leg": 3
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I24",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_3_H2_12",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        2,
+        1,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x3)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -182
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            3,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 100
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            2,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -244
+          }
+        }
+      ],
+      "singled_H1_leg": 3
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I24",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_3_H2_12",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        3,
+        1,
+        2
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x3)",
+      "single_endpoint_term_count": 6,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 88
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -182
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            3,
+            0
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 4
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -182
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            2,
+            0
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -8
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            1,
+            0
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 4
+          }
+        }
+      ],
+      "singled_H1_leg": 3
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I25",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_3_H2_12",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x3)",
+      "single_endpoint_term_count": 5,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -176
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 164
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            3,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -152
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            2,
+            0
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -8
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            1,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 176
+          }
+        }
+      ],
+      "singled_H1_leg": 3
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I25",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_3_H2_12",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        2,
+        1,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x3)",
+      "single_endpoint_term_count": 5,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -176
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            3,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 176
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 164
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            2,
+            0
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -8
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            1,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -152
+          }
+        }
+      ],
+      "singled_H1_leg": 3
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I25",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_3_H2_12",
+      "explicit_derivative_order": 2,
+      "label_order": [
+        3,
+        1,
+        2
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 4,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x3)",
+      "single_endpoint_term_count": 4,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            1,
+            2
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 176
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            3,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -176
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            2,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 8
+          }
+        },
+        {
+          "box_exponents": [
+            3,
+            1,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -176
+          }
+        }
+      ],
+      "singled_H1_leg": 3
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I28",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_3_H2_12",
+      "explicit_derivative_order": 4,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 3,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x3)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 704
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        }
+      ],
+      "singled_H1_leg": 3
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I28",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_3_H2_12",
+      "explicit_derivative_order": 4,
+      "label_order": [
+        1,
+        3,
+        2
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 3,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x3)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 704
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        }
+      ],
+      "singled_H1_leg": 3
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I28",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_3_H2_12",
+      "explicit_derivative_order": 4,
+      "label_order": [
+        2,
+        3,
+        1
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 3,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x3)",
+      "single_endpoint_term_count": 3,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            1,
+            1
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        },
+        {
+          "box_exponents": [
+            1,
+            2,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": -352
+          }
+        },
+        {
+          "box_exponents": [
+            2,
+            1,
+            0
+          ],
+          "coefficient": {
+            "denominator": 9,
+            "numerator": 704
+          }
+        }
+      ],
+      "singled_H1_leg": 3
+    },
+    {
+      "box_denominator_exponents": [
+        2,
+        2,
+        2
+      ],
+      "carrier_id": "I29",
+      "combined_endpoint_multiplier": 2,
+      "contact_id": "H1_3_H2_12",
+      "explicit_derivative_order": 6,
+      "label_order": [
+        1,
+        2,
+        3
+      ],
+      "left_right_endpoint_equality": "EXACT",
+      "numerator_box_degree": 2,
+      "renormalized_scale_kernel": "2*endpoint_residue*log(mu^2/x3)",
+      "single_endpoint_term_count": 1,
+      "single_endpoint_terms": [
+        {
+          "box_exponents": [
+            1,
+            1,
+            0
+          ],
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -352
+          }
+        }
+      ],
+      "singled_H1_leg": 3
+    }
+  ],
+  "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_RESIDUE_PROJECTION",
+  "result_state": "GENERIC_H1_H2_CONTACT_ENDPOINT_RESIDUES_PROJECTED_TO_FIVE_CARRIER_QUOTIENT",
+  "schema": "quantum-weyl-generic-background-physical-hessian-h1-h2-contact-residue-projection-v1",
+  "scope": {
+    "background": "generic scalar-flat nonexceptional momentum chart",
+    "computed_row": "logarithmic endpoint residue of all three H1-H2 contact cells",
+    "dimension": 4,
+    "operator": "same-gauge rank-nine monic physical Hessian H0+H1+H2",
+    "signature": "Euclidean"
+  }
+}

@@ -1117,8 +1117,18 @@ $H_1$--$H_2$ contact cells.  In a triangle corner
 $(u_1,u_2,u_3)=T(1-r,rt,r(1-t))$, with Jacobian $T^2r$ and squared-propagator
 measure $T^5r^3(1-r)t(1-t)$; a contact cell has
 $(u_1,u_2)=T(x,1-x)$ and measure $T^3x(1-x)$.  The same Mellin extension is
-defined on all resolved boundaries.  Evaluation of the generic contact
-kernels and the renormalized mixed-row assembly remain open.
+defined on all resolved boundaries.  The generic logarithmic endpoint
+residues are now exact.  For singled leg $i$ and paired legs $j,k$,
+\[
+ \operatorname{Res}_{i,0}=-\frac{\operatorname{tr}(H_{2,jk}H_{1,i}(k_i,0))}{2(k_i^2)^2},
+ \qquad
+ \operatorname{Res}_{i,1}=-\frac{\operatorname{tr}(H_{2,jk}H_{1,i}(k_i,-k_i))}{2(k_i^2)^2},
+\]
+and the two residues agree exactly.  All three contacts project to 33 exact
+raw five-carrier rows, with two unseen momentum replays and the symmetric
+$I_{28}$ quotient relation checked coefficientwise.  Their scale kernels are
+$2\operatorname{Res}_{i,0}\log(\mu^2/x_i)$.  The triangle/contact boundary
+incidence, finite local rows and renormalized mixed-row assembly remain open.
 \end{proposition}
 
 \begin{proposition}[Generic ghost obstruction to direct minimal-CPT matching]
@@ -1960,8 +1970,10 @@ simplex integral is logarithmically corner obstructed at the symmetric point.
 The exact equal-box mixed fixture is nonzero after adding all
 $\mathcal H_1\mathcal H_2$ endpoints, so universal algebraic cancellation is
 excluded, and its common Mellin minimal-subtraction scale row is fixed.  The
-generic covariant Volterra lift is now exact; the generic contact kernels and
-resulting renormalized mixed rows are still required.  The generic primed
+generic covariant Volterra lift is now exact, and all generic contact endpoint
+residues are exact 33-row five-carrier functions.  Their boundary incidence
+with the triangle and the resulting renormalized mixed rows are still
+required.  The generic primed
 Green/spectral carrier and renormalized physical trace, hence the
 five complete repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and

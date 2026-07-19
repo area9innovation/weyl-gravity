@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/quantum-weyl/generic-background-physical-hessian-h1-h2-contact-residue-projection-v1.schema.json",
+  "title": "Generic physical H1-H2 contact-residue projection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "endpoint_theorem", "interpolation", "projection_rows", "equal_box_regression", "fixture_ledger", "dependencies", "claim_flags", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-physical-hessian-h1-h2-contact-residue-projection-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_RESIDUE_PROJECTION"},
+    "result_state": {"const": "GENERIC_H1_H2_CONTACT_ENDPOINT_RESIDUES_PROJECTED_TO_FIVE_CARRIER_QUOTIENT"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {"type": "object", "additionalProperties": {"type": ["string", "integer"]}},
+    "endpoint_theorem": {"type": "object", "required": ["formula", "left_right_equality", "loop_pair_term_status", "contact_count", "endpoint_count", "raw_channel_count_per_contact", "quotient_dimension"]},
+    "interpolation": {"type": "object", "required": ["training_fixture_count", "unseen_fixture_count", "common_box_denominator_exponents", "numerator_degree_rule", "unisolvence_prime", "row_count", "formula_digest", "unseen_ledger"]},
+    "projection_rows": {"type": "array", "minItems": 33, "maxItems": 33, "items": {"$ref": "#/$defs/row"}},
+    "equal_box_regression": {"type": "object"},
+    "fixture_ledger": {"$ref": "#/$defs/reference"},
+    "dependencies": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/reference"}},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["GENERIC_H1_H2_CONTACT_ENDPOINT_KERNELS_EVALUATED", "ALL_THREE_CONTACT_CELLS_PROJECTED", "LEFT_RIGHT_ENDPOINT_EQUALITY_CERTIFIED", "GENERIC_CONTACT_SCALE_LOG_KERNELS_COMPUTED", "SYMMETRIC_I28_QUOTIENT_SECTION_PRESERVED", "GENERIC_CONTACT_FINITE_LOCAL_ROWS_FIXED", "RENORMALIZED_GENERIC_MIXED_ROWS_ASSEMBLED", "PHYSICAL_M14_CORNER_CLASS_DISPOSED", "PHYSICAL_THIRD_CURVATURE_FORM_FACTORS_COMPLETE", "QME_OR_ANOMALY_STATUS_CHANGED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "GENERIC_H1_H2_CONTACT_ENDPOINT_KERNELS_EVALUATED": {"const": true},
+        "ALL_THREE_CONTACT_CELLS_PROJECTED": {"const": true},
+        "LEFT_RIGHT_ENDPOINT_EQUALITY_CERTIFIED": {"const": true},
+        "GENERIC_CONTACT_SCALE_LOG_KERNELS_COMPUTED": {"const": true},
+        "SYMMETRIC_I28_QUOTIENT_SECTION_PRESERVED": {"const": true},
+        "GENERIC_CONTACT_FINITE_LOCAL_ROWS_FIXED": {"const": false},
+        "RENORMALIZED_GENERIC_MIXED_ROWS_ASSEMBLED": {"const": false},
+        "PHYSICAL_M14_CORNER_CLASS_DISPOSED": {"const": false},
+        "PHYSICAL_THIRD_CURVATURE_FORM_FACTORS_COMPLETE": {"const": false},
+        "QME_OR_ANOMALY_STATUS_CHANGED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "next_gate": {"const": "ASSEMBLE_TRIANGLE_AND_CONTACT_BOUNDARY_INCIDENCE_ON_COVARIANT_VOLTERRA_CARRIER_AND_DECIDE_M14"},
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "reference": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "result_id": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "term": {"type": "object", "additionalProperties": false, "required": ["box_exponents", "coefficient"], "properties": {"box_exponents": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0}}, "coefficient": {"$ref": "#/$defs/rational"}}},
+    "row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contact_id", "singled_H1_leg", "carrier_id", "label_order", "explicit_derivative_order", "box_denominator_exponents", "numerator_box_degree", "single_endpoint_term_count", "single_endpoint_terms", "left_right_endpoint_equality", "combined_endpoint_multiplier", "renormalized_scale_kernel"],
+      "properties": {
+        "contact_id": {"type": "string", "minLength": 1},
+        "singled_H1_leg": {"type": "integer", "minimum": 1, "maximum": 3},
+        "carrier_id": {"enum": ["I10", "I24", "I25", "I28", "I29"]},
+        "label_order": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 1, "maximum": 3}},
+        "explicit_derivative_order": {"enum": [0, 2, 4, 6]},
+        "box_denominator_exponents": {"const": [2, 2, 2]},
+        "numerator_box_degree": {"type": "integer", "minimum": 2, "maximum": 5},
+        "single_endpoint_term_count": {"type": "integer", "minimum": 0},
+        "single_endpoint_terms": {"type": "array", "items": {"$ref": "#/$defs/term"}},
+        "left_right_endpoint_equality": {"const": "EXACT"},
+        "combined_endpoint_multiplier": {"const": 2},
+        "renormalized_scale_kernel": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

@@ -164,8 +164,11 @@ subtraction, yielding the exact fixture scale row
 `partial_log(mu^2) Gamma_MS=(4 pi)^-2 15707/216`.  A generic covariant
 Volterra carrier now supplies six ordered triangle cells, three `H1-H2`
 contact cells, their exact Schwinger measures, and one resolved-boundary
-Mellin extension. The generic contact kernels and renormalized mixed-row
-assembly remain open.
+Mellin extension. The logarithmic residues at all six generic contact
+endpoints are now evaluated and projected to 33 exact raw five-carrier rows;
+left/right equality, two unseen fixtures and the symmetric `I28` quotient
+section replay exactly. The triangle/contact boundary incidence, finite local
+rows and renormalized mixed-row assembly remain open.
 
 Replay with:
 

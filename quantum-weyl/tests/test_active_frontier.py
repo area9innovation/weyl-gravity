@@ -459,7 +459,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "EVALUATE_GENERIC_H1_H2_CONTACT_KERNELS_ON_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_RENORMALIZED_MIXED_ROWS",
+            "ASSEMBLE_TRIANGLE_AND_CONTACT_BOUNDARY_INCIDENCE_ON_COVARIANT_VOLTERRA_CARRIER_AND_DECIDE_M14",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

@@ -372,14 +372,14 @@ def main() -> None:
     assert claims["physical_Hessian_generic_covariant_Volterra_carrier_computed"] is True
     assert claims["physical_Hessian_Volterra_ordered_triangle_cell_count"] == 6
     assert claims["physical_Hessian_Volterra_mixed_contact_cell_count"] == 3
+    assert claims["physical_Hessian_generic_contact_endpoint_residues_projected"] is True
+    assert claims["physical_Hessian_generic_contact_projection_row_count"] == 33
+    assert claims["physical_Hessian_generic_contact_unseen_fixture_count"] == 2
     assert payload["explicit_nonclaims"][
         "physical_n3_three_linear_triangle_integrated"
     ] is False
     assert payload["explicit_nonclaims"][
         "physical_Hessian_renormalized_subtraction_fixed"
-    ] is False
-    assert payload["explicit_nonclaims"][
-        "physical_Hessian_generic_mixed_contact_kernels_evaluated"
     ] is False
     assert payload["explicit_nonclaims"]["physical_n3_M14_class_disposed"] is False
     assert payload["explicit_nonclaims"][
@@ -387,7 +387,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "EVALUATE_GENERIC_H1_H2_CONTACT_KERNELS_ON_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_RENORMALIZED_MIXED_ROWS"
+        == "ASSEMBLE_TRIANGLE_AND_CONTACT_BOUNDARY_INCIDENCE_ON_COVARIANT_VOLTERRA_CARRIER_AND_DECIDE_M14"
     )
 
     dependencies = {}
@@ -421,7 +421,7 @@ def main() -> None:
         "denominator": 6561,
     }
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
-    assert len(payload["inputs"]) == 53
+    assert len(payload["inputs"]) == 54
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -462,6 +462,9 @@ def main() -> None:
     ]
     physical_hessian_volterra = dependencies[
         "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_COVARIANT_VOLTERRA_CARRIER"
+    ]
+    physical_hessian_contacts = dependencies[
+        "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_RESIDUE_PROJECTION"
     ]
     generic_ghost_cpt = dependencies["GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION"]
     generic_ghost_endo = dependencies["GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION"]

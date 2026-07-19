@@ -244,8 +244,14 @@ or quantum-master-equation result.
   common Mellin minimal-subtraction extension now promotes the same rational
   number to the exact fixture coefficient of `log(mu^2)`. A generic covariant
   Volterra carrier now joins all six ordered triangle cells to the three
-  `H1-H2` contact cells under that extension. The generic contact kernels,
-  renormalized mixed rows, and five form-factor assembly remain fail-closed.
+  `H1-H2` contact cells under that extension. All three generic logarithmic
+  contact endpoint residues are now exact 33-row functions on the same
+  five-carrier quotient, with two unseen-fixture replays and exact symmetric
+  `I28` reduction. Triangle/contact boundary incidence, finite local rows,
+  `M14` disposition, and five form-factor assembly remain fail-closed.
+- [`reports/generic-background-physical-hessian-h1-h2-contact-residue-projection.md`](reports/generic-background-physical-hessian-h1-h2-contact-residue-projection.md)
+  records those exact generic contact residues, scale-log kernels, frozen
+  fixture ledger, independent unseen replay, and strict claim boundary.
 - [`reports/local-dimension-four-candidates.md`](reports/local-dimension-four-candidates.md)
   records the generated three-dimensional quadratic curvature ansatz, its
   two-dimensional Weyl-closed kernel, independent target-native even/odd

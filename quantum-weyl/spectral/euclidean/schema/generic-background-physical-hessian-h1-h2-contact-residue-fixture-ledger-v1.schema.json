@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/quantum-weyl/generic-background-physical-hessian-h1-h2-contact-residue-fixture-ledger-v1.schema.json",
+  "title": "Exact H1-H2 contact-residue coordinate fixture ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "engine_version", "generator_sha256", "dependencies", "training_fixture_count", "unseen_fixture_count", "entries", "equal_box_regression", "entry_digest"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-physical-hessian-h1-h2-contact-residue-fixture-ledger-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_RESIDUE_FIXTURE_LEDGER"},
+    "result_state": {"const": "EXACT_CONTACT_RESIDUE_COORDINATE_FIXTURES_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "engine_version": {"const": "physical-hessian-h1-h2-contact-residue-v1"},
+    "generator_sha256": {"$ref": "#/$defs/hash"},
+    "dependencies": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/reference"}},
+    "training_fixture_count": {"const": 28},
+    "unseen_fixture_count": {"const": 2},
+    "entries": {"type": "array", "minItems": 30, "maxItems": 30, "items": {"$ref": "#/$defs/entry"}},
+    "equal_box_regression": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["box_invariants", "TT_basis_indices", "single_endpoint_coefficients", "combined_all_contacts"],
+      "properties": {
+        "box_invariants": {"const": [1, 1, 1]},
+        "TT_basis_indices": {"const": [0, 1, 2]},
+        "single_endpoint_coefficients": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/rational"}},
+        "combined_all_contacts": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "entry_digest": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "reference": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "result_id": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["singled_leg", "single_endpoint_coordinates", "combined_endpoint_coordinates"],
+      "properties": {
+        "singled_leg": {"type": "integer", "minimum": 1, "maximum": 3},
+        "single_endpoint_coordinates": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/rational"}},
+        "combined_endpoint_coordinates": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/rational"}}
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixture", "boxes", "carrier_matrix_rank", "pivot_tensor_rows", "pivot_tensor_choices", "unique_H2_pair_count", "endpoint_equality_defect_count", "contacts"],
+      "properties": {
+        "fixture": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer"}}},
+        "boxes": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 1}},
+        "carrier_matrix_rank": {"const": 10},
+        "pivot_tensor_rows": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "integer", "minimum": 0}},
+        "pivot_tensor_choices": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0, "maximum": 4}}},
+        "unique_H2_pair_count": {"type": "integer", "minimum": 1, "maximum": 30},
+        "endpoint_equality_defect_count": {"const": 0},
+        "contacts": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/contact"}}
+      }
+    }
+  }
+}
