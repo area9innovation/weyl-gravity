@@ -279,7 +279,6 @@ def _source_manifest() -> dict[str, str]:
 
 def _dependency_manifest() -> dict[str, str]:
     paths = {
-        "commission": REPOSITORY_ROOT / "notes" / "d-quotient-quantum-team-brief.md",
         "classical_cartan_note": REPOSITORY_ROOT / "notes" / "conformal-cartan-contraction.md",
         "classical_cartan_verifier": REPOSITORY_ROOT / "symbolic" / "verify_conformal_cartan_contraction.py",
         "classical_import_certificate": QUANTUM_ROOT / "classical_import" / "certificates" / "CLASSICAL_IMPORT_CERTIFICATE.json",

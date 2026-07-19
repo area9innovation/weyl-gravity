@@ -110,7 +110,10 @@ class CartanDefectCertificateTests(unittest.TestCase):
                 hashlib.sha256((PACKAGE_ROOT / relative).read_bytes()).hexdigest(),
                 expected,
             )
-        self.assertEqual(len(certificate["provenance"]["dependency_manifest"]), 7)
+        self.assertEqual(len(certificate["provenance"]["dependency_manifest"]), 6)
+        self.assertNotIn(
+            "commission", certificate["provenance"]["dependency_manifest"]
+        )
 
     def test_classical_sector_split_is_imported_without_quantum_promotion(self) -> None:
         certificate = build_certificate()

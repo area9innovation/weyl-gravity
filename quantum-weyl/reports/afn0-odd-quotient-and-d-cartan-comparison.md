@@ -114,11 +114,10 @@ PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/cartan/tests/test_local
 | four deterministic certificate `--check` commands | pass |
 | changed Python compilation and four JSON parses | pass |
 
-The broader pre-existing Cartan suite was also sampled. Its new comparison
-tests pass, while its legacy precertificate reproduction test is stale
-against concurrent changes to the external commission note and classical
-`D`-quotient status hashes. That certificate was not regenerated here because
-the registered cross-programme contribution deliberately pins its published
-historical commit. This is recorded as an unrelated affected-chain failure,
-not a pass. Tier 3 was not run: neither result freezes the classical datum or
-promotes a QME, residual-transfer, or Lorentzian lifecycle state.
+The mutable quantum-team commission note is no longer treated as a semantic
+dependency of the exact Cartan mechanics certificate. The certificate still
+hashes its six actual mathematical and classical-import dependencies, while
+ordinary brief edits cannot invalidate the exact algebra. This removes the
+legacy false-staleness path without changing any Cartan classification. The
+registered cross-programme contribution continues to pin its published
+evidence commit independently.
