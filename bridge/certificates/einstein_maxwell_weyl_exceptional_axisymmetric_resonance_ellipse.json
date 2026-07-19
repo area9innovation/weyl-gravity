@@ -1,0 +1,91 @@
+{
+  "claim_boundary": "This is an axisymmetric resonance-compatibility theorem, not a complete bounded second-order extension. It does not solve the nonresonant source, the Hamiltonian-balanced enlargement, all m, nonzero momentum, causal propagation, residual descent, particles or quantum theory.",
+  "classification": {
+    "Einstein_minus_balance_required": true,
+    "Hamiltonian_moment_map_zero": false,
+    "SO3_all_m_tensor_assembled": false,
+    "axisymmetric_L1_L2_resonance_zero_locus_nonempty": true,
+    "causal_or_quantum_claim": false,
+    "complete_second_order_source_solved": false,
+    "explicit_resonance_ellipse_parameterized": true,
+    "four_spatial_stabilizer_moment_maps_zero": true,
+    "pure_axial_and_pure_polar_endpoints_included": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "The exceptional defect is not algebraically absolute once circumference velocity and ell2 extra controls are admitted: its L1/L2 resonances have an exact nonzero ellipse. The ellipse still misses the tangent cone because its Hamiltonian moment map is strictly negative. A standard Einstein-minus occupation can balance that charge, but its mixed quadratic sources must be computed before any bounded extension is claimed.",
+  "lifecycle_state": "CLASSIFIED",
+  "moment_map_audit": {
+    "H": "strictly negative for every nonzero displayed resonance-compatible point because every exceptional and ell2 control amplitude lies in a positive-current extra block and d carries no compensating positive oscillator occupation",
+    "J_i": "0 for m=0",
+    "P_x": "0 on the k=0 axisymmetric carrier",
+    "consequence": "no displayed point is in the five-moment-map zero cone without adjoining an opposite-sign standard Einstein occupation"
+  },
+  "next_gate": "adjoin the minimal axisymmetric Einstein-minus occupation that cancels mu_H and compute every new Einstein-minus cross source against the exceptional and ell2 control amplitudes",
+  "parameterization": {
+    "domain": "r_x,r_p>=0, d!=0, not both r_x,r_p zero",
+    "ell2_polar_e1": "y1=i*s^2*((2/3)*r_x^2+(1/8)*r_p^2)/(6*sqrt(3)*d)",
+    "ell2_polar_e2": "y2=(5*sqrt(3)*i/864)*d*s^2",
+    "ellipse": "16*r_x^2+3*r_p^2=115*d^2",
+    "exceptional_axial": "x=r_x*s",
+    "exceptional_polar": "p=i*r_p*s",
+    "phase": "s in U(1)"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.py",
+    "generator_sha256": "5ec68c2f4fad39dea14d78a6727afcbe63ceea18afc3cd9e5117f10f8795ba0e",
+    "inputs": {
+      "d_control": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
+        "sha256": "35e07ee8b77d16314a5b306e0dcbedd3d9d6e852d1a0180196973142b5aa0a4e"
+      },
+      "difference": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.json",
+        "sha256": "1cd89d2e5c1a9afd78663278e88686732e86bc171f644abcd3487a49ca091df6"
+      },
+      "ell2_extra_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.json",
+        "sha256": "f7be0c5571327d5ecb14194e3a6f485ae22547979f66b4ec45d614a3fbc28e9c"
+      },
+      "exceptional_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+        "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+      },
+      "exceptional_self": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.json",
+        "sha256": "9886d51586623bc2dada33c1b9bfb6b3745129b89b649a2be0bad926dfb41dce"
+      },
+      "global_moments": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      }
+    }
+  },
+  "resonance_equations": {
+    "L1_axial": "(8*sqrt(3)*i/9)*d*x-(768/5)*conj(x)*y2=0",
+    "L1_polar": "-sqrt(3)*i*d*p-(864/5)*conj(p)*y2=0",
+    "L2_axial_cross": "the exceptional axial-polar defect is uniquely removable by ell2 axial controls because the d pairing is invertible",
+    "L2_polar_first": "-(2/3)*x^2+(1/8)*p^2-6*sqrt(3)*i*d*y1=0",
+    "L2_polar_second": "(4/3)*x^2-(1/4)*p^2+552*sqrt(3)*i*d*y2=0"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_AXISYMMETRIC_RESONANCE_ELLIPSE",
+  "result_state": "AXISYMMETRIC_EXCEPTIONAL_L1_L2_RESONANCE_COMPATIBILITY_ELLIPSE_SOLVED",
+  "schema": "einstein-maxwell-weyl-exceptional-axisymmetric-resonance-ellipse-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.schema.json",
+  "schema_sha256": "0eaf915450f5c289ae488819dfba0818dea858adb6eebc322c44e0520cb89b61",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded resonance compatibility only",
+    "carrier": "axisymmetric exceptional axial/polar dipoles, circumference velocity d, and ell2 extra control amplitudes",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "exceptional input 1; control input 2; resonant outputs L=1,2",
+    "k": 0,
+    "m": 0,
+    "omega": "omega_exceptional and 2*omega_exceptional",
+    "parity": "both exceptional parities with polar and axial ell2 controls",
+    "theory": "Weyl-Maxwell target"
+  }
+}

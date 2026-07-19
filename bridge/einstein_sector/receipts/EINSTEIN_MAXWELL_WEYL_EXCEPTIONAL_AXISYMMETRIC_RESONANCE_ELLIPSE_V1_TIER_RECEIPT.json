@@ -1,0 +1,19 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_AXISYMMETRIC_RESONANCE_ELLIPSE",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.py": "5ec68c2f4fad39dea14d78a6727afcbe63ceea18afc3cd9e5117f10f8795ba0e",
+    "bridge/certificates/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.json": "431b7b0015bb8691c610597d07ac24241aa9b295dc2b54dbadb39be6e136c2f1",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.schema.json": "0eaf915450f5c289ae488819dfba0818dea858adb6eebc322c44e0520cb89b61",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.py": "6c887600296c4c04c20777e6a3e63d167290ad5556bb89badd8749d92ea3afab",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.py": "c9bc9553901f45729ee1192b0cc173f144d929e99373eb7926d7129be026aac5",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-exceptional-axisymmetric-resonance-ellipse.md": "6a9b041f0cf6e03fb5cd7e0e369b1eed5a6766a689e438c973d6c42a7112760e"
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS"},
+    "tier_1": {"status": "PASS", "tests_run": 5, "commands": ["python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.py", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse"]},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "The direct difference matrix, exceptional self pairings, invertible d controls and action-derived current Grams are unchanged hashed inputs."},
+    "tier_3": {"status": "NOT_RUN", "reason": "The Einstein-minus Hamiltonian-balanced enlargement and its cross sources remain open."}
+  }
+}
