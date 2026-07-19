@@ -739,15 +739,20 @@
       }
     },
     {
-      "claim_boundary": "This certifies one axisymmetric charge balance, exact frequency arithmetic and the complete zero-frequency source. It does not solve the nonzero-frequency polynomial source, certify bounded extension, assemble all m, treat nonzero momentum or promote causal, residual or quantum claims.",
+      "claim_boundary": "This certifies one axisymmetric endpoint obstruction, not the general exceptional mixed zero locus. It does not assemble all m, treat nonzero momentum or promote causal, residual or quantum claims.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
-        "nonlinear": "OPEN",
+        "nonlinear": "OBSTRUCTED",
         "observational": "OPEN",
         "quantum": "OPEN",
         "symplectic": "CERTIFIED"
       },
       "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_bounded_obstruction.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_BOUNDED_OBSTRUCTION",
+          "sha256": "f32be2912cfe68af25242720a5bd8218bda9e7eadd531743492e52be84adc8b9"
+        },
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_EINSTEIN_MINUS_FREQUENCY_GATE",
@@ -800,8 +805,8 @@
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The complete zero-frequency source cancels and all other zero-frequency outputs are invertible, but the nonzero-frequency polynomial cross sources involving d and Einstein-minus remain unsolved.",
-            "status": "OPEN"
+            "statement": "Although the complete zero-frequency source cancels, d and the required Einstein-minus coefficient are both nonzero and their exact same-shell adjoint pairing excludes a bounded/finite-quasiperiodic correction.",
+            "status": "OBSTRUCTED"
           },
           "causal_retarded": {
             "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
@@ -809,7 +814,7 @@
           },
           "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
           "smooth_secular": {
-            "statement": "The complete finite-support theorem supplies a smooth exponential-polynomial inverse once the stabilizer moment maps vanish.",
+            "statement": "The complete finite-support theorem supplies a smooth exponential-polynomial inverse with the required secular shell term because all five moment maps vanish.",
             "status": "CERTIFIED"
           }
         },
@@ -3793,7 +3798,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "553226389d33db20eb0684409da7632265518a95aa37fc8a6515b919a2d384db",
+  "generated_by_sha256": "3a16242f2a1ef287528c572b6f5646a64d325e94fb8107e8a3fd762f41177601",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

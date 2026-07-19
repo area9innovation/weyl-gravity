@@ -35,6 +35,7 @@ CERTIFICATES = {
     "exceptional_resonance_ellipse": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.json",
     "exceptional_minus_frequency_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.json",
     "exceptional_zero_source": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source.json",
+    "exceptional_bounded_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_bounded_obstruction.json",
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
@@ -281,14 +282,14 @@ def entries() -> list[dict[str, object]]:
         _entry(
             "einstein.ph.wm.mixed.exceptional_ellipse_einstein_minus_frequency_gate",
             _scope(theory="Weyl-Maxwell target", carrier="pure-axial endpoint of the exceptional resonance ellipse plus one axial ell2 Einstein-minus balance oscillator", degree=2, parity="all conservatively allowed target parities", ell="inputs 1 and 2; every angularly allowed output", m=0, k=0, omega="all signed Einstein-minus cross frequencies"),
-            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OBSTRUCTED", "observational": "OPEN", "quantum": "OPEN"},
             ("CERTIFIED", "The exceptional, generic-extra control and Einstein-minus inputs are certified distinct nonradical stationary carrier blocks."),
             ("CERTIFIED", "The action-derived exceptional and ell2 control Grams and the negative relative Einstein-minus weight fix the exact balance normalization."),
             ("CERTIFIED", "One explicit Einstein-minus occupation cancels mu_H; axisymmetry and k=0 leave mu_Px and all three mu_Ji zero."),
             ("CERTIFIED", "Forty exact algebraic comparisons prove every new Einstein-minus cross frequency is off the physical target shells; nonzero-frequency homogeneous output is empty."),
-            _second_order(("OPEN", "The complete zero-frequency source cancels and all other zero-frequency outputs are invertible, but the nonzero-frequency polynomial cross sources involving d and Einstein-minus remain unsolved."), ("CERTIFIED", "The complete finite-support theorem supplies a smooth exponential-polynomial inverse once the stabilizer moment maps vanish."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
-            _evidence("exceptional_minus_frequency_gate", "exceptional_zero_source", "exceptional_resonance_ellipse", "exceptional_current", "radiative", "complete_finite_smooth", "abstract_cone"),
-            "This certifies one axisymmetric charge balance, exact frequency arithmetic and the complete zero-frequency source. It does not solve the nonzero-frequency polynomial source, certify bounded extension, assemble all m, treat nonzero momentum or promote causal, residual or quantum claims.",
+            _second_order(("OBSTRUCTED", "Although the complete zero-frequency source cancels, d and the required Einstein-minus coefficient are both nonzero and their exact same-shell adjoint pairing excludes a bounded/finite-quasiperiodic correction."), ("CERTIFIED", "The complete finite-support theorem supplies a smooth exponential-polynomial inverse with the required secular shell term because all five moment maps vanish."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("exceptional_bounded_obstruction", "exceptional_minus_frequency_gate", "exceptional_zero_source", "exceptional_resonance_ellipse", "exceptional_current", "radiative", "complete_finite_smooth", "abstract_cone"),
+            "This certifies one axisymmetric endpoint obstruction, not the general exceptional mixed zero locus. It does not assemble all m, treat nonzero momentum or promote causal, residual or quantum claims.",
         ),
         _entry(
             "einstein.ph.wm.extra.exceptional_ell1_nonzero_k",
@@ -849,6 +850,17 @@ def build() -> dict[str, object]:
         raise AssertionError("exceptional zero-frequency source changed")
     if exceptional_zero["complete_nonzero_frequency_polynomial_source_solved"] or exceptional_zero["bounded_second_order_extension_certified"] or exceptional_zero["causal_or_quantum_claim"]:
         raise AssertionError("exceptional zero-frequency source exceeded its scope")
+    exceptional_obstruction = records["exceptional_bounded_obstruction"]["classification"]
+    if not (
+        exceptional_obstruction["nonzero_stabilizer_balanced_tangent_explicit"]
+        and exceptional_obstruction["complete_zero_frequency_source_solved"]
+        and exceptional_obstruction["unique_d_times_Einstein_minus_shell_pairing_nonzero"]
+        and exceptional_obstruction["bounded_or_finite_quasiperiodic_extension_obstructed"]
+        and exceptional_obstruction["smooth_exponential_polynomial_extension_certified"]
+    ):
+        raise AssertionError("exceptional bounded obstruction changed")
+    if exceptional_obstruction["general_exceptional_mixed_zero_locus_classified"] or exceptional_obstruction["causal_or_quantum_claim"]:
+        raise AssertionError("exceptional bounded obstruction exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

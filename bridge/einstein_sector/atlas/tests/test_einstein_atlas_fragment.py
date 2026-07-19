@@ -267,12 +267,13 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
     def test_exceptional_ellipse_einstein_minus_frequency_gate_is_fail_closed(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.exceptional_ellipse_einstein_minus_frequency_gate"]
         second_order = entry["mode_data"]["second_order"]
-        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
         self.assertIn("Forty exact algebraic comparisons", entry["mode_data"]["resonance"]["statement"])
-        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
         self.assertIn("complete zero-frequency source cancels", second_order["bounded_or_finite_quasiperiodic"]["statement"])
-        self.assertIn("nonzero-frequency polynomial", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("same-shell adjoint pairing", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
     def test_constant_twist_projector_repair_is_authoritative(self) -> None:

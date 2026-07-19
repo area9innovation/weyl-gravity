@@ -2889,11 +2889,24 @@ new direct exceptional self-source is
 It and the two polar-control self-sources are collinear with the homogeneous
 constant-lapse ray.  The corrected Einstein-minus self-source cancels their
 full four-row sum exactly, the control interference and `d` self-source
-vanish, and every remaining zero-frequency `L=2,4` block is invertible.  The
-bounded lifecycle nevertheless stays `OPEN`: the decisive remaining gate is
-the actual nonzero-frequency polynomial source, especially every product
-with the time-linear circumference velocity `d`.  Off-shell frequency
-arithmetic does not by itself exclude polynomial growth in the inverse.
+vanish, and every remaining zero-frequency `L=2,4` block is invertible.
+
+The decisive nonzero-frequency gate is also closed, with the opposite
+verdict.  The ellipse requires `d!=0`, and the balance requires a nonzero
+axial Einstein-minus coefficient `A_-`.  Their product lies on the same
+axial `L=2,omega_minus` shell, where its exact adjoint pairing is
+
+```text
+12*i*(3*sqrt(3)-1)*sqrt(6-2*sqrt(3))*d*A_- != 0.
+```
+
+No other occupied input pair shares this carrier.  Equivalently, the
+certified shell ideal `<b*z,a*z,d*z>` forces `d=0` on every nonzero minus-wave
+branch, contradicting the ellipse domain.  The atlas row is therefore now
+`OBSTRUCTED` for bounded or finite-quasiperiodic corrections while remaining
+`CERTIFIED` for smooth exponential-polynomial corrections with a secular
+shell term.  This settles one pure-axial endpoint, not the general
+exceptional mixed zero locus.
 
 The nonzero-momentum twist face has now been intersected with the independent
 opposite-momentum phase divisor.  For every `ell>=2`, the exact choice

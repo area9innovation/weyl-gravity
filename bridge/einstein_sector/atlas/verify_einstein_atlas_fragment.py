@@ -271,12 +271,14 @@ def verify() -> None:
         raise AssertionError("exceptional resonance ellipse exceeded its correction class")
     exceptional_minus = by_id["einstein.ph.wm.mixed.exceptional_ellipse_einstein_minus_frequency_gate"]
     exceptional_minus_second = exceptional_minus["mode_data"]["second_order"]
-    if exceptional_minus["descriptions"]["nonlinear"] != "OPEN" or exceptional_minus["mode_data"]["taub_maps"]["status"] != "CERTIFIED":
+    if exceptional_minus["descriptions"]["nonlinear"] != "OBSTRUCTED" or exceptional_minus["mode_data"]["taub_maps"]["status"] != "CERTIFIED":
         raise AssertionError("exceptional Einstein-minus lifecycle changed")
     if "Forty exact algebraic comparisons" not in exceptional_minus["mode_data"]["resonance"]["statement"]:
         raise AssertionError("exceptional Einstein-minus frequency census was hidden")
-    if exceptional_minus_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or "nonzero-frequency polynomial" not in exceptional_minus_second["bounded_or_finite_quasiperiodic"]["statement"]:
-        raise AssertionError("exceptional Einstein-minus source gate was not fail-closed")
+    if exceptional_minus_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or "same-shell adjoint pairing" not in exceptional_minus_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("exceptional Einstein-minus obstruction was hidden")
+    if exceptional_minus_second["smooth_secular"]["status"] != "CERTIFIED" or "secular shell term" not in exceptional_minus_second["smooth_secular"]["statement"]:
+        raise AssertionError("exceptional Einstein-minus correction-class distinction was hidden")
     if exceptional_minus_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("exceptional Einstein-minus causal lifecycle was over-promoted")
     fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]

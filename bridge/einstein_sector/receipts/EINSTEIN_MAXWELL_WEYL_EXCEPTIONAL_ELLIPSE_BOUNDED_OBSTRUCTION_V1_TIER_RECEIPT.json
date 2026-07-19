@@ -1,0 +1,20 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_BOUNDED_OBSTRUCTION_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Bounded/finite-quasiperiodic obstruction and smooth-secular contrast on the stabilizer-balanced pure-axial exceptional ellipse endpoint.",
+  "content_sha256": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_bounded_obstruction.py": "16c2868f2b231e916389d5c7b319535b2a65a2beb94560fc71ec3485bc939655",
+    "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_bounded_obstruction.json": "f32be2912cfe68af25242720a5bd8218bda9e7eadd531743492e52be84adc8b9",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_bounded_obstruction.schema.json": "166d03a29f5840b28ed484c563b82e105df3ab34b8b6169b10effeb31640218b",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_bounded_obstruction.py": "f9b6f41975ec49ea5c4975f75e21c1afdba47acae96d92ffba19d7c44f93e66a",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_exceptional_ellipse_bounded_obstruction.py": "7c9937c34efafd6feee6484c5f3cf0e184f27f604daa0e6985263f4e9b1779e9",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-exceptional-ellipse-bounded-obstruction.md": "808717c1967688e6e6ab0bc6c735a6ba0f0e9294f9088b05adc828ef7238fd1e"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <certificate and schema>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {"status": "PASS", "tests_run": 4, "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ellipse_bounded_obstruction --check", "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_bounded_obstruction.py", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ellipse_bounded_obstruction"], "elapsed_seconds": 0.7},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "reason": "The exact d-times-minus shell polynomial and all source-isolation inputs are unchanged certified artifacts."},
+    "tier_3": {"status": "NOT_RUN", "reason": "This promotes one scoped endpoint, not the general exceptional mixed tangent cone or an all-orders theorem."}
+  },
+  "claim_boundary": "The result obstructs one axisymmetric pure-axial endpoint in the bounded class while certifying its smooth secular extension; all-m, nonzero-k, causal, residual and quantum scopes remain fail-closed."
+}

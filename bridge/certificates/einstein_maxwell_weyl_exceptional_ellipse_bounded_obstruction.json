@@ -1,0 +1,107 @@
+{
+  "claim_boundary": "This is one axisymmetric pure-axial endpoint obstruction, not the full exceptional mixed zero locus. It does not assemble all m, treat nonzero momentum, prove all-orders integration, or make causal, residual, particle or quantum claims.",
+  "classification": {
+    "all_orders_integrability": false,
+    "bounded_or_finite_quasiperiodic_extension_obstructed": true,
+    "causal_or_quantum_claim": false,
+    "complete_zero_frequency_source_solved": true,
+    "general_exceptional_mixed_zero_locus_classified": false,
+    "nonzero_stabilizer_balanced_tangent_explicit": true,
+    "smooth_exponential_polynomial_extension_certified": true,
+    "unique_d_times_Einstein_minus_shell_pairing_nonzero": true
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "reason": "d and A_- are both nonzero, while the exact shell ideal <b*z,a*z,d*z> forces d*A_-=0",
+      "status": "OBSTRUCTED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "all five stabilizer moment maps vanish and the complete finite-support smooth theorem permits the required secular shell inverse",
+      "status": "CERTIFIED"
+    }
+  },
+  "declared_tangent": {
+    "Einstein_minus": "|A_-|^2=(60125/17496)*(6+5sqrt(3))*d^2",
+    "controls": {
+      "domain": "r_x,r_p>=0, d!=0, not both r_x,r_p zero",
+      "ell2_polar_e1": "y1=i*s^2*((2/3)*r_x^2+(1/8)*r_p^2)/(6*sqrt(3)*d)",
+      "ell2_polar_e2": "y2=(5*sqrt(3)*i/864)*d*s^2",
+      "ellipse": "16*r_x^2+3*r_p^2=115*d^2",
+      "exceptional_axial": "x=r_x*s",
+      "exceptional_polar": "p=i*r_p*s",
+      "phase": "s in U(1)"
+    },
+    "ellipse_endpoint": "r_p=0, r_x^2=(115/16)d^2 with d!=0",
+    "stabilizer_moment_maps": "mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "Einstein-minus charge balance does not rescue this exceptional resonance ellipse in the bounded correction class. The added wave cancels the Taub charge and the complete zero-frequency source, but its resonant product with the indispensable circumference velocity d has a nonzero dynamical adjoint pairing. Allowing a secular correction removes that particular obstruction.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify whether another exceptional mixed branch with d=0 and additional opposite-sign carriers can satisfy both the resonance equations and every bounded shell functional",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_bounded_obstruction.py",
+    "generator_sha256": "16c2868f2b231e916389d5c7b319535b2a65a2beb94560fc71ec3485bc939655",
+    "inputs": {
+      "abd_minus": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.json",
+        "sha256": "39ebaf9dcb4a7d6752ed6cdac995a98f38e89ea3cd7f348fbf61c6569796e875"
+      },
+      "balance": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.json",
+        "sha256": "158db5e5eacc8cc1b384acfa2f4513b0a0d214ae42c7f4b3d95f4efeea00010a"
+      },
+      "ell2_neutral": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_neutral_face_second_order.json",
+        "sha256": "b09c28e32d976863c4236baacf99476e25667998f91901e5388f40056f12dfd4"
+      },
+      "ellipse": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.json",
+        "sha256": "431b7b0015bb8691c610597d07ac24241aa9b295dc2b54dbadb39be6e136c2f1"
+      },
+      "smooth": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+        "sha256": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885"
+      },
+      "zero_source": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source.json",
+        "sha256": "1ccccd06159f22d68256bda38a1d1d04b8c14425f8dfd6bf1ad14baeca668ece"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_BOUNDED_OBSTRUCTION",
+  "schema": "einstein-maxwell-weyl-exceptional-ellipse-bounded-obstruction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_bounded_obstruction.schema.json",
+  "schema_sha256": "166d03a29f5840b28ed484c563b82e105df3ab34b8b6169b10effeb31640218b",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded shell audit",
+    "carrier": "pure-axial endpoint of the exceptional resonance ellipse plus one axial ell2 Einstein-minus balance mode",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "inputs 1 and 2; every angularly allowed output",
+    "k": 0,
+    "m": 0,
+    "omega": "all signed Einstein-minus cross frequencies",
+    "parity": "conservative all target parities",
+    "theory": "Weyl-Maxwell target"
+  },
+  "unique_bounded_obstruction": {
+    "adjoint_pairing_per_d_Aminus": "12*I*(3*sqrt(3)-1)*sqrt(6-2*sqrt(3))",
+    "carrier": "axial L=2,m=0,k=0 at Omega=omega_minus",
+    "isolation": [
+      "the original exceptional/control resonance equations are solved by the ellipse controls",
+      "the complete zero-frequency source cancels",
+      "Einstein-minus self and ordinary ell2 pair types are removable",
+      "Einstein-minus cross products with exceptional and control oscillators are off shell",
+      "no other occupied input pair lies on the L2,omega_minus carrier"
+    ],
+    "nonzero": true,
+    "source_pair": "circumference velocity d times the axial Einstein-minus coefficient A_-"
+  }
+}
