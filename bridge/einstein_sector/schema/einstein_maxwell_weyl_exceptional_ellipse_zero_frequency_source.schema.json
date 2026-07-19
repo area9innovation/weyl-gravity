@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "scope",
+    "homogeneous_zero_frequency_source",
+    "remaining_zero_frequency_channels",
+    "classification",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_ZERO_FREQUENCY_SOURCE"
+    },
+    "homogeneous_zero_frequency_source": {
+      "type": "object",
+      "required": ["combined"],
+      "properties": {
+        "combined": {"const": ["0", "0", "0", "0"]}
+      }
+    }
+  }
+}

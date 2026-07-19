@@ -34,6 +34,7 @@ CERTIFICATES = {
     "exceptional_difference_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.json",
     "exceptional_resonance_ellipse": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.json",
     "exceptional_minus_frequency_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.json",
+    "exceptional_zero_source": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source.json",
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
@@ -285,9 +286,9 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "The action-derived exceptional and ell2 control Grams and the negative relative Einstein-minus weight fix the exact balance normalization."),
             ("CERTIFIED", "One explicit Einstein-minus occupation cancels mu_H; axisymmetry and k=0 leave mu_Px and all three mu_Ji zero."),
             ("CERTIFIED", "Forty exact algebraic comparisons prove every new Einstein-minus cross frequency is off the physical target shells; nonzero-frequency homogeneous output is empty."),
-            _second_order(("OPEN", "The stabilizer-balanced frequency gate is not yet a bounded tangent: the complete quadratic source, especially its combined zero-frequency block, remains unsolved."), ("CERTIFIED", "The complete finite-support theorem supplies a smooth exponential-polynomial inverse once the stabilizer moment maps vanish."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
-            _evidence("exceptional_minus_frequency_gate", "exceptional_resonance_ellipse", "exceptional_current", "radiative", "complete_finite_smooth", "abstract_cone"),
-            "This certifies one axisymmetric charge balance and exact frequency arithmetic only. It does not compute the quadratic source, certify bounded extension, assemble all m, treat nonzero momentum or promote causal, residual or quantum claims.",
+            _second_order(("OPEN", "The complete zero-frequency source cancels and all other zero-frequency outputs are invertible, but the nonzero-frequency polynomial cross sources involving d and Einstein-minus remain unsolved."), ("CERTIFIED", "The complete finite-support theorem supplies a smooth exponential-polynomial inverse once the stabilizer moment maps vanish."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("exceptional_minus_frequency_gate", "exceptional_zero_source", "exceptional_resonance_ellipse", "exceptional_current", "radiative", "complete_finite_smooth", "abstract_cone"),
+            "This certifies one axisymmetric charge balance, exact frequency arithmetic and the complete zero-frequency source. It does not solve the nonzero-frequency polynomial source, certify bounded extension, assemble all m, treat nonzero momentum or promote causal, residual or quantum claims.",
         ),
         _entry(
             "einstein.ph.wm.extra.exceptional_ell1_nonzero_k",
@@ -843,6 +844,11 @@ def build() -> dict[str, object]:
         raise AssertionError("exceptional Einstein-minus frequency gate changed")
     if exceptional_minus["complete_quadratic_source_solved"] or exceptional_minus["bounded_second_order_extension_certified"] or exceptional_minus["causal_or_quantum_claim"]:
         raise AssertionError("exceptional Einstein-minus frequency gate exceeded its scope")
+    exceptional_zero = records["exceptional_zero_source"]["classification"]
+    if not (exceptional_zero["mixed_ell_normalization_repaired"] and exceptional_zero["complete_zero_frequency_source_solved"]):
+        raise AssertionError("exceptional zero-frequency source changed")
+    if exceptional_zero["complete_nonzero_frequency_polynomial_source_solved"] or exceptional_zero["bounded_second_order_extension_certified"] or exceptional_zero["causal_or_quantum_claim"]:
+        raise AssertionError("exceptional zero-frequency source exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

@@ -31,13 +31,17 @@ def verify() -> None:
     y1sq = rx2**2 / (243 * d**2)
     y2sq = sp.Rational(75, 746496) * d**2
     control = sp.factor(22464 * y1sq + 12288 * y2sq)
-    deficit = sp.factor(sp.Rational(1, 4) * sp.Rational(4, 3) * 16 * rx2 + sp.Rational(1, 4) * sp.Rational(16, 3) * control)
-    kappa = sp.Rational(1, 4) * (6 - 2 * sp.sqrt(3)) * (3 * sp.sqrt(3) - 1)
+    exceptional_deficit = sp.factor(sp.Rational(1, 4) * sp.Rational(4, 3) * 16 * rx2 * sp.Rational(1, 3))
+    control_deficit = sp.factor(sp.Rational(1, 4) * sp.Rational(16, 3) * control * sp.Rational(1, 5))
+    deficit = sp.factor(exceptional_deficit + control_deficit)
+    kappa = sp.Rational(1, 20) * (6 - 2 * sp.sqrt(3)) * (3 * sp.sqrt(3) - 1)
     occupation = sp.radsimp(deficit / kappa)
-    expected = sp.Rational(1, 9477) * (9342240 + 7785200 * sp.sqrt(3)) * d**2
+    expected = sp.Rational(120250, 729) * (6 + 5 * sp.sqrt(3)) * d**2
     if control != sp.Rational(1547725, 324) * d**2:
         raise AssertionError("ell=2 control occupation changed")
-    if deficit != sp.Rational(1557040, 243) * d**2:
+    if exceptional_deficit != sp.Rational(115, 9) * d**2 or control_deficit != sp.Rational(309545, 243) * d**2:
+        raise AssertionError("mixed-ell harmonic normalization changed")
+    if deficit != sp.Rational(312650, 243) * d**2:
         raise AssertionError("Hamiltonian deficit changed")
     if sp.simplify(occupation - expected) != 0:
         raise AssertionError("Einstein-minus balancing occupation changed")
@@ -50,6 +54,8 @@ def verify() -> None:
             raise AssertionError("a recorded algebraic residual can vanish")
 
     flags = value["classification"]
+    if not flags["mixed_ell_harmonic_normalization_directly_audited"]:
+        raise AssertionError("mixed-ell normalization audit was lost")
     if not flags["mu_H_mu_Px_mu_Ji_all_zero_on_balanced_axisymmetric_fixture"]:
         raise AssertionError("stabilizer balance was lost")
     if flags["complete_quadratic_source_solved"] or flags["bounded_second_order_extension_certified"]:

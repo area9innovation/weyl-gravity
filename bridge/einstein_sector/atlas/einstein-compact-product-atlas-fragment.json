@@ -739,7 +739,7 @@
       }
     },
     {
-      "claim_boundary": "This certifies one axisymmetric charge balance and exact frequency arithmetic only. It does not compute the quadratic source, certify bounded extension, assemble all m, treat nonzero momentum or promote causal, residual or quantum claims.",
+      "claim_boundary": "This certifies one axisymmetric charge balance, exact frequency arithmetic and the complete zero-frequency source. It does not solve the nonzero-frequency polynomial source, certify bounded extension, assemble all m, treat nonzero momentum or promote causal, residual or quantum claims.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "OPEN",
@@ -751,7 +751,12 @@
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_EINSTEIN_MINUS_FREQUENCY_GATE",
-          "sha256": "5e1d6cc51195c06787faff22e793b221e8a59f47405dba4e82e41fad37dfbc89"
+          "sha256": "158db5e5eacc8cc1b384acfa2f4513b0a0d214ae42c7f4b3d95f4efeea00010a"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_ZERO_FREQUENCY_SOURCE",
+          "sha256": "1ccccd06159f22d68256bda38a1d1d04b8c14425f8dfd6bf1ad14baeca668ece"
         },
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.json",
@@ -795,7 +800,7 @@
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The stabilizer-balanced frequency gate is not yet a bounded tangent: the complete quadratic source, especially its combined zero-frequency block, remains unsolved.",
+            "statement": "The complete zero-frequency source cancels and all other zero-frequency outputs are invertible, but the nonzero-frequency polynomial cross sources involving d and Einstein-minus remain unsolved.",
             "status": "OPEN"
           },
           "causal_retarded": {
@@ -3788,7 +3793,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "c01ac891d05eb353f31edd57af63c55b7a0c472c5970bbc297355c11dfea45d7",
+  "generated_by_sha256": "553226389d33db20eb0684409da7632265518a95aa37fc8a6515b919a2d384db",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

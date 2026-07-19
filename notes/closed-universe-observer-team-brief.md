@@ -340,11 +340,17 @@ contract.  It composes the ordered 108-row carrier and rank-108 signed odd
 pairing, fixes symmetric, one-form and ordered two-form component
 conventions, binds the exact radius-`1/128` detector profiles and the exact
 `h0/h1` switch radii, and supplies an executable arbitrary-finite
-differential coefficient normal form over `Q(sqrt(10))`.  The factor-eight
-and factor-two ambiguities are therefore removed for new consumers.  This is
-not yet scalar `q1` or `q2`: the next algebraic gate is the complete scalar
-108-row unary PBW matrix, followed by the action-derived bilinear tensor and
-independent component replay.
+differential coefficient normal form over `Q(sqrt(10))`.  A corrective audit
+found that its first implementation treated the Berger frame derivations as
+commuting multiindex increments.  The repaired contract now acts from the left
+and PBW-reduces with `[e1,e2]=(3 sqrt(10)/20)e3`,
+`[e2,e3]=(2 sqrt(10)/3)e1`, and `[e3,e1]=(2 sqrt(10)/3)e2`; all six spatial
+and temporal bracket identities replay on both profile and background
+generators, and deletion/sign mutations are detected.  The factor-eight,
+factor-two, and commuting-frame ambiguities are therefore removed for new
+consumers.  This is not yet scalar `q1` or `q2`: the next algebraic gate is the
+complete scalar 108-row unary PBW matrix, followed by the action-derived
+bilinear tensor and independent component replay.
 
 ### Immediate priority after the polarization-emitter handoff
 
@@ -1152,7 +1158,8 @@ Its atlas row is
 `observer.berger.interaction.pbw_108_component_map`: the covariant identity
 and pinned 64-row base are preserved, and the new sibling row
 `observer.berger.interaction.pbw_108_component_jet_contract` is `CERTIFIED`.
-The scalar promotion remains `NO_CERTIFIED_MAP` only because complete scalar
+The contract now includes the exact noncommuting Berger-frame PBW brackets;
+the scalar promotion remains `NO_CERTIFIED_MAP` only because complete scalar
 `q1` and `q2` payloads have not yet been exported.  This does not activate the physical-
 branch bridge and does not identify any compact-product mode with a Berger
 apparatus row.

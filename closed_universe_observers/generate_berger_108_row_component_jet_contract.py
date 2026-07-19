@@ -9,7 +9,17 @@ from pathlib import Path
 from typing import Any
 from jsonschema import Draft202012Validator
 
-from closed_universe_observers.berger_108_row_component_jet_contract import derivative, generator, multiply, normalize, serialize
+from closed_universe_observers.berger_108_row_component_jet_contract import (
+    U_BERGER,
+    V_BERGER,
+    commutator,
+    derivative,
+    generator,
+    multiply,
+    normalize,
+    scale,
+    serialize,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 P = ROOT / "closed_universe_observers"
@@ -69,7 +79,73 @@ def algebra_audit() -> dict:
     product_rule = derivative(multiply(f, h), 2)
     replay = normalize(list((c, m) for m,c in multiply(derivative(f,2),h).items()) + list((c,m) for m,c in multiply(f,derivative(h,2)).items()))
     if product_rule != replay: raise AssertionError("coefficient-jet Leibniz replay failed")
-    return {"sqrt10_squared_normal_form": square, "Leibniz_defect_count": 0, "sample_derivative_normal_form": serialize(product_rule), "arbitrary_finite_jet_tower": True, "factor_sorting_canonical": True, "like_monomials_combined": True}
+    generators = {
+        "profile": f,
+        "background": h,
+    }
+    bracket_specs = [
+        (1, 2, U_BERGER, 3, "[e1,e2]=(3 sqrt(10)/20)e3"),
+        (2, 3, V_BERGER, 1, "[e2,e3]=(2 sqrt(10)/3)e1"),
+        (3, 1, V_BERGER, 2, "[e3,e1]=(2 sqrt(10)/3)e2"),
+    ]
+    rows = []
+    defects = 0
+    for generator_kind, value in generators.items():
+        for left, right, coefficient, target, identity in bracket_specs:
+            actual = commutator(value, left, right)
+            expected = scale(derivative(value, target), coefficient)
+            defect = int(actual != expected)
+            defects += defect
+            rows.append({
+                "generator_kind": generator_kind,
+                "identity": identity,
+                "actual": serialize(actual),
+                "expected": serialize(expected),
+                "defect_count": defect,
+            })
+        for spatial_axis in (1, 2, 3):
+            actual = commutator(value, 0, spatial_axis)
+            defect = int(bool(actual))
+            defects += defect
+            rows.append({
+                "generator_kind": generator_kind,
+                "identity": f"[e0,e{spatial_axis}]=0",
+                "actual": serialize(actual),
+                "expected": [],
+                "defect_count": defect,
+            })
+    if defects:
+        raise AssertionError("Berger coefficient-jet commutator replay failed")
+    drop_defects = sum(
+        commutator(value, 1, 2, structure_variant="drop_e1_e2")
+        != scale(derivative(value, 3, structure_variant="drop_e1_e2"), U_BERGER)
+        for value in generators.values()
+    )
+    flip_defects = sum(
+        commutator(value, 1, 2, structure_variant="flip_e1_e2")
+        != scale(derivative(value, 3, structure_variant="flip_e1_e2"), U_BERGER)
+        for value in generators.values()
+    )
+    if drop_defects != 2 or flip_defects != 2:
+        raise AssertionError("Berger PBW structure mutations were not detected")
+    return {
+        "sqrt10_squared_normal_form": square,
+        "Leibniz_defect_count": 0,
+        "sample_derivative_normal_form": serialize(product_rule),
+        "arbitrary_finite_jet_tower": True,
+        "factor_sorting_canonical": True,
+        "like_monomials_combined": True,
+        "frame_structure_constants": {
+            "[e1,e2]": "(3 sqrt(10)/20)e3",
+            "[e2,e3]": "(2 sqrt(10)/3)e1",
+            "[e3,e1]": "(2 sqrt(10)/3)e2",
+            "[e0,ei]": "0 for i=1,2,3",
+        },
+        "commutator_replay": rows,
+        "commutator_defect_count": defects,
+        "drop_e1_e2_structure_defect_count": drop_defects,
+        "flip_e1_e2_structure_defect_count": flip_defects,
+    }
 
 def build() -> dict:
     values = {name: json.loads(path.read_text()) for name,path in DEPENDENCIES.items()}
@@ -85,12 +161,12 @@ def build() -> dict:
         "schema":"closed-universe-berger-108-row-component-jet-contract-v1", "result_id":"BERGER_108_ROW_COMPONENT_JET_CONTRACT", "setting_id":values["emitter_108"]["setting_id"], "claim_status":"CERTIFIED_CANONICAL_108_ROW_COMPONENT_AND_DIFFERENTIAL_COEFFICIENT_JET_INTERFACE", "dependency_tags":["LOCAL-ALGEBRAIC"],
         "dependency_refs":{n:{"path":str(p.relative_to(ROOT)),"result_id":values[n]["result_id"],"sha256":sha(p)} for n,p in DEPENDENCIES.items()},
         "carrier_contract":c,
-        "coefficient_algebra":{"base_field":"Q(sqrt(10))", "formal_parameters":["epsilon_R_squared","kappa","g0","g1","m0_squared","m1_squared"], "generator_kinds":["parameter","profile","background"], "profile_generator":"(profile_id, vertical_multiindex, Berger spacetime multiindex)", "background_generator":"(background_id, empty vertical multiindex, Berger spacetime multiindex)", "normal_form":"finite sparse map from lexicographically sorted generator monomials to reduced Q(sqrt(10)) coefficients", "derivations":["e0","e1","e2","e3"], "derivation_rule":"D_i increments the spacetime multiindex on each nonparameter factor and extends by Leibniz; parameters are D-flat", "jet_order":"arbitrary finite; no truncation in the contract", "exact_profile_specializations":specializations, "audit":audit},
-        "activation_disposition":{"component_basis_ambiguity_removed":True,"detector_width_ambiguity_removed":True,"switch_radius_ambiguity_removed":True,"coefficient_normal_form_executable":True,"scalar_q1_payload_exported":False,"scalar_q2_payload_exported":False,"component_q1_q2_replay_certified":False},
-        "mutations":[{"name":"drop_row_107","detected":True},{"name":"drop_pairing_partner_107","detected":True},{"name":"restore_free_detector_epsilon","detected":True},{"name":"halve_h1_radius","detected":True},{"name":"retain_unsorted_factors","detected":True}],
-        "flags":{"CANONICAL_108_ROW_COMPONENT_CROSSWALK_CERTIFIED":True,"NONDEGENERATE_108_ROW_ODD_PAIRING_CERTIFIED":True,"DIFFERENTIAL_COEFFICIENT_JET_NORMAL_FORM_CERTIFIED":True,"EXACT_DETECTOR_AND_SWITCH_SPECIALIZATIONS_BOUND":True,"SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED":False,"SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED":False,"COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED":False,"QUANTUM_CLAIM":False},
+        "coefficient_algebra":{"base_field":"Q(sqrt(10))", "formal_parameters":["epsilon_R_squared","kappa","g0","g1","m0_squared","m1_squared"], "generator_kinds":["parameter","profile","background"], "profile_generator":"(profile_id, vertical_multiindex, ordered Berger PBW spacetime multiindex)", "background_generator":"(background_id, empty vertical multiindex, ordered Berger PBW spacetime multiindex)", "normal_form":"finite sparse map from lexicographically sorted generator monomials to reduced Q(sqrt(10)) coefficients", "derivations":["e0","e1","e2","e3"], "derivation_rule":"D_i acts from the left, reduces the resulting noncommuting Berger-frame word to e0^n0 e1^n1 e2^n2 e3^n3 by the exact structure constants, and extends by Leibniz; parameters are D-flat", "jet_order":"arbitrary finite; no truncation in the contract", "exact_profile_specializations":specializations, "audit":audit},
+        "activation_disposition":{"component_basis_ambiguity_removed":True,"detector_width_ambiguity_removed":True,"switch_radius_ambiguity_removed":True,"coefficient_normal_form_executable":True,"noncommuting_berger_frame_pbw_repaired":True,"scalar_q1_payload_exported":False,"scalar_q2_payload_exported":False,"component_q1_q2_replay_certified":False},
+        "mutations":[{"name":"drop_row_107","detected":True},{"name":"drop_pairing_partner_107","detected":True},{"name":"restore_free_detector_epsilon","detected":True},{"name":"halve_h1_radius","detected":True},{"name":"retain_unsorted_factors","detected":True},{"name":"drop_e1_e2_structure_coefficient","detected":audit["drop_e1_e2_structure_defect_count"]>0},{"name":"flip_e1_e2_structure_coefficient","detected":audit["flip_e1_e2_structure_defect_count"]>0}],
+        "flags":{"CANONICAL_108_ROW_COMPONENT_CROSSWALK_CERTIFIED":True,"NONDEGENERATE_108_ROW_ODD_PAIRING_CERTIFIED":True,"DIFFERENTIAL_COEFFICIENT_JET_NORMAL_FORM_CERTIFIED":True,"NONCOMMUTING_BERGER_FRAME_PBW_CERTIFIED":True,"EXACT_DETECTOR_AND_SWITCH_SPECIALIZATIONS_BOUND":True,"SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED":False,"SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED":False,"COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED":False,"QUANTUM_CLAIM":False},
         "next_gate":"EXPORT_COMPLETE_SCALAR_108_ROW_Q1_PBW_MATRIX_THEN_ACTION_DERIVED_Q2_TENSOR",
-        "claim_boundary":"This exact LOCAL-ALGEBRAIC interface certificate removes the carrier, pairing, detector-width, switch-radius and coefficient-normal-form ambiguities identified by BERGER_108_ROW_PBW_INPUT_OBSTRUCTION. It composes all 108 ordered rows and the nondegenerate signed odd pairing, pins symmetric/one-form/two-form component conventions, binds the exact radius-1/128 detector profiles and exact h0/h1 switches, and exports an executable arbitrary-finite differential jet algebra over Q(sqrt(10)) with formal apparatus/emitter parameters. It is an activation contract only: it does not export the scalar 108-row q1 or q2 PBW payload, replay q1 q2 componentwise, solve backreaction, restrict the detector map to the tangent cone, activate Bridge 3, establish finite-parameter propagation, or make a quantum claim.",
+        "claim_boundary":"This corrected exact LOCAL-ALGEBRAIC interface certificate removes the carrier, pairing, detector-width, switch-radius and coefficient-normal-form ambiguities identified by BERGER_108_ROW_PBW_INPUT_OBSTRUCTION. It composes all 108 ordered rows and the nondegenerate signed odd pairing, pins symmetric/one-form/two-form component conventions, binds the exact radius-1/128 detector profiles and exact h0/h1 switches, and exports an executable arbitrary-finite differential jet algebra over Q(sqrt(10)) with formal apparatus/emitter parameters. Its left frame derivations now obey the noncommuting Berger PBW brackets [e1,e2]=(3 sqrt(10)/20)e3, [e2,e3]=(2 sqrt(10)/3)e1 and [e3,e1]=(2 sqrt(10)/3)e2; deletion and sign mutations are rejected independently. It is an activation contract only: it does not export the scalar 108-row q1 or q2 PBW payload, replay q1 q2 componentwise, solve backreaction, restrict the detector map to the tangent cone, activate Bridge 3, establish finite-parameter propagation, or make a quantum claim.",
         "provenance":{"source_commit":"WORKTREE","source_manifest":[{"path":str(p.relative_to(ROOT)),"sha256":sha(p)} for p in SOURCE_FILES]},
     }
 

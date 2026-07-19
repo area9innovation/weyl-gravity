@@ -1,0 +1,67 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT_PBW_REPAIR_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The corrected activation contract certifies exact noncommuting left Berger-frame PBW differentiation on arbitrary finite profile/background coefficient jets, together with the previously certified 108-row carrier, pairing and exact profile/switch specializations. Complete scalar q1/q2 PBW payloads, component replay, backreaction, cone restriction, Bridge 3, finite-parameter propagation and quantum claims remain unavailable.",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile on the changed component algebra, generator, verifier, tests and atlas modules; python3 -m json.tool on the changed schema, certificate, atlas, ledger and Science Forge objects; git diff --check on explicit observer/planning/note paths",
+      "elapsed_seconds": "under 1",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "pytest -q closed_universe_observers/tests/test_berger_108_row_component_jet_contract.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py",
+      "elapsed_seconds": "10.92",
+      "status": "PASS",
+      "scope": "36 exact algebra, noncommuting-bracket, mutation, generated-atlas and evidence-ledger tests"
+    },
+    {
+      "tier": 2,
+      "command": "python3 -m closed_universe_observers.generate_berger_108_row_component_jet_contract --check && python3 -m closed_universe_observers.verify_berger_108_row_component_jet_contract && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 -m closed_universe_observers.verify_comparison_ledger",
+      "elapsed_seconds": "1.95",
+      "status": "PASS",
+      "scope": "freshness, schema, independent bracket reconstruction, all imported hashes, generated fail-closed atlas and direct comparison-ledger consumer"
+    },
+    {
+      "tier": 2,
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": "3.35",
+      "status": "ADVISORY_PASS",
+      "scope": "bridge certificate audit PASS; coverage census reported repository-wide drift of 941 certificates versus the committed snapshot of 820"
+    },
+    {
+      "tier": 2,
+      "command": "ci/science-forge-shadow.sh --strict",
+      "elapsed_seconds": "2.83",
+      "status": "FAIL",
+      "scope": "bridge certificate audit PASS; strict mode rejects the same pre-existing repository-wide coverage snapshot drift (941 versus 820). This failure is not recorded as a pass and does not promote any scalar q1/q2 claim."
+    }
+  ],
+  "higher_tiers_not_run": {
+    "tier_3": "No release, freeze, paper-theorem promotion or shared classical core-algebra change occurred. The changed observer activation contract and every direct generated consumer were replayed in Tier 2."
+  },
+  "source_manifest": [
+    {"path": "closed_universe_observers/berger_108_row_component_jet_contract.py", "sha256": "436c8a39d5c52dea5f6bdbc092d5aece97d758112f67c24812affff929bbf42d"},
+    {"path": "closed_universe_observers/generate_berger_108_row_component_jet_contract.py", "sha256": "0c27baa93f1153717309fa0aa1190ce752c4123e427442acf545043003be5c49"},
+    {"path": "closed_universe_observers/verify_berger_108_row_component_jet_contract.py", "sha256": "31c700b51ec4859c7b185d33e0dd0abf3b193ac6d5c8bb55655831e61fcc3384"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_component_jet_contract.py", "sha256": "8e23b1f0fe7d340de4bc2ce80cb156e6230d0a9636a109f6235aa02090791658"},
+    {"path": "closed_universe_observers/schema/berger-108-row-component-jet-contract-v1.schema.json", "sha256": "7bc5bb93ae4c6455d1964c81ad15b001a406d1bcf6547a20da8a5a0d9f804b37"},
+    {"path": "closed_universe_observers/reports/berger-108-row-component-jet-contract.md", "sha256": "d88808c01bb84aeacdad66966f93bae7e15f429377628aefb42ce9b1585198b1"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json", "sha256": "4113635be1493e0eac5e945a970ce4989f0484d5fa658a10bf893c63f5ae707c"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "b2f2c0800f2fd6bb09835a8be3c0e45811b674baa9d7ab6bcc52b0d9d354a404"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "e22a35a0a97163bc0f6b673f5cc883adbfb77a532385076922d5e543dca73a84"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "99e3922d35000bbcda35dd71c87fd3e49d69c774e3f4cb5fe59b35e3c50d6a53"},
+    {"path": "planning/work-items/berger-pbw-frame-jet-repair.json", "sha256": "33621a6ed00dacf1cc6ac7c67ef6f1a05614d97c7a0fd3493e894fcab8c58f1e"}
+  ],
+  "flags": {
+    "NONCOMMUTING_BERGER_FRAME_PBW_CERTIFIED": true,
+    "DIFFERENTIAL_COEFFICIENT_JET_NORMAL_FORM_CERTIFIED": true,
+    "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED": false,
+    "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED": false,
+    "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

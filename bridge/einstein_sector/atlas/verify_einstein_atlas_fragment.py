@@ -275,7 +275,7 @@ def verify() -> None:
         raise AssertionError("exceptional Einstein-minus lifecycle changed")
     if "Forty exact algebraic comparisons" not in exceptional_minus["mode_data"]["resonance"]["statement"]:
         raise AssertionError("exceptional Einstein-minus frequency census was hidden")
-    if exceptional_minus_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or "zero-frequency block" not in exceptional_minus_second["bounded_or_finite_quasiperiodic"]["statement"]:
+    if exceptional_minus_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or "nonzero-frequency polynomial" not in exceptional_minus_second["bounded_or_finite_quasiperiodic"]["statement"]:
         raise AssertionError("exceptional Einstein-minus source gate was not fail-closed")
     if exceptional_minus_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("exceptional Einstein-minus causal lifecycle was over-promoted")

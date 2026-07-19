@@ -2856,13 +2856,19 @@ bounded second order `OPEN`.  The next gate is every new Einstein-minus cross
 source; no extension is inferred from charge balance alone.
 
 The minimal balance and its complete frequency arithmetic are now exact on
-the pure-axial ellipse endpoint.  With unit spatial harmonic norms, the
-negative Hamiltonian deficit is `(1557040/243)d^2`; one axial `ell=2`
+the pure-axial ellipse endpoint.  A direct zero-source replay caught and
+repaired the mixed-`ell` normalization: the nonlinear fixtures use Legendre
+carriers with `W_1=1/3` and `W_2=1/5`, not a common unit norm.  The corrected
+negative Hamiltonian deficit is `(312650/243)d^2`; one axial `ell=2`
 Einstein-minus oscillator cancels it at
 
 ```text
-|e_-|^2=((9342240+7785200*sqrt(3))/9477)d^2.
+|e_-|^2=(120250/729)*(6+5*sqrt(3))*d^2
+       =48*|A_-|^2,
 ```
+
+where `A_-` multiplies the direct representative
+`(H_t,H_x,Q_t,Q_x)=(0,-2,0,2*sqrt(3))`.
 
 Axisymmetry and `k=0` leave `P_x=J_i=0`, so all five moment maps vanish.
 Forty exact target-branch comparisons then show that every new
@@ -2871,9 +2877,23 @@ frequency is off shell; the possible homogeneous products occur at nonzero
 frequency, where the physical quotient is empty.  The fail-closed atlas row
 `einstein.ph.wm.mixed.exceptional_ellipse_einstein_minus_frequency_gate`
 therefore records Taub and frequency data as `CERTIFIED` but bounded second
-order as `OPEN`.  The next decisive calculation is the actual combined
-quadratic source, especially its zero-frequency block; charge balance and
-noncollision do not by themselves certify a correction.
+order as `OPEN`.
+
+The complete zero-frequency source is now also closed on this fixture.  The
+new direct exceptional self-source is
+
+```text
+(-16/9,0,-8/9,0)*|x|^2.
+```
+
+It and the two polar-control self-sources are collinear with the homogeneous
+constant-lapse ray.  The corrected Einstein-minus self-source cancels their
+full four-row sum exactly, the control interference and `d` self-source
+vanish, and every remaining zero-frequency `L=2,4` block is invertible.  The
+bounded lifecycle nevertheless stays `OPEN`: the decisive remaining gate is
+the actual nonzero-frequency polynomial source, especially every product
+with the time-linear circumference velocity `d`.  Off-shell frequency
+arithmetic does not by itself exclude polynomial growth in the inverse.
 
 The nonzero-momentum twist face has now been intersected with the independent
 opposite-momentum phase divisor.  For every `ell>=2`, the exact choice

@@ -1,0 +1,20 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_ZERO_FREQUENCY_SOURCE_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Complete zero-frequency quadratic source on the balanced pure-axial exceptional resonance-ellipse endpoint.",
+  "content_sha256": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source.py": "dc52b2548d3d1a7c9abe1a398f7905af32ad0d7d2a106459c9f31271b682f355",
+    "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source.json": "1ccccd06159f22d68256bda38a1d1d04b8c14425f8dfd6bf1ad14baeca668ece",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source.schema.json": "5815799aadea2b771ccbca3031daf0c9e52328bce36c333bdc2ef65639207fe9",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source.py": "f514094c9d2a238ebabebc08b93b6a177542b66c5fb397a894217c594882a5fd",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source.py": "2b3bb636af0daa39ef8f220f4a7b587796fb6db2024b8555c995fad55c2dc835",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-exceptional-ellipse-zero-frequency-source.md": "25a326e89c968508e0c84ab8e06fd99c20457dd37c60f757a496c87410caa19f"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <certificate and schema>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {"status": "PASS", "tests_run": 4, "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source --check", "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source.py", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source"], "elapsed_seconds": 1.2},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "reason": "Every component source and zero-frequency target block is an unchanged exact input; the new exceptional source was directly replayed."},
+    "tier_3": {"status": "NOT_RUN", "reason": "The nonzero-frequency polynomial source and bounded extension remain open."}
+  },
+  "claim_boundary": "This closes the complete zero-frequency source on one axisymmetric endpoint only; it does not solve the remaining polynomial cross sources or promote bounded extension."
+}

@@ -8,10 +8,19 @@ the symmetric-tensor, one-form and ordered two-form component conventions.
 
 The coefficient carrier is an executable free differential polynomial algebra
 over `Q(sqrt(10))`.  Formal apparatus/emitter parameters are derivative-flat;
-profile and background generators carry arbitrary finite Berger-frame jet
-multiindices.  A canonical normal form sorts factors, combines monomials and
-reduces `sqrt(10)^2=10`; four derivations increment jet indices and obey the
-Leibniz rule.  There is deliberately no finite jet cutoff.
+profile and background generators carry arbitrary finite ordered Berger-frame
+PBW jet multiindices.  A canonical normal form sorts factors, combines
+monomials and reduces `sqrt(10)^2=10`.  A corrective audit found that the
+initial implementation incremented multiindices as though the frame
+derivations commuted.  The repaired derivations now act from the left and PBW
+reduce with
+
+`[e1,e2]=(3 sqrt(10)/20)e3`, `[e2,e3]=(2 sqrt(10)/3)e1`, and
+`[e3,e1]=(2 sqrt(10)/3)e2`, while `e0` commutes with the spatial frame.
+All six bracket identities replay on independent profile and background
+generators, the Leibniz defect remains zero, and deletion or sign reversal of
+the first structure coefficient is detected twice.  There is deliberately no
+finite jet cutoff.
 
 The exact detector specialization now uses the certified radius `1/128` for
 both rod profiles and clock radius `1/64`.  The emitter specialization imports

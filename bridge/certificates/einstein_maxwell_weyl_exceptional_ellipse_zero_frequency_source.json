@@ -1,0 +1,144 @@
+{
+  "claim_boundary": "This closes the complete zero-frequency source only on one axisymmetric pure-axial ellipse endpoint. It does not solve the nonzero-frequency polynomial sources, certify a bounded extension, assemble all m, treat nonzero momentum, or make causal, residual or quantum claims.",
+  "classification": {
+    "all_other_zero_frequency_outputs_invertible": true,
+    "bounded_second_order_extension_certified": false,
+    "causal_or_quantum_claim": false,
+    "combined_homogeneous_zero_frequency_source_cancels": true,
+    "complete_nonzero_frequency_polynomial_source_solved": false,
+    "complete_zero_frequency_source_solved": true,
+    "direct_exceptional_zero_source_computed": true,
+    "mixed_ell_normalization_repaired": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_representative_amplitudes": {
+    "Einstein_minus_axial": "|A_-|^2=(60125/17496)*(6+5sqrt(3))*d^2",
+    "ell2_polar_first_action_basis": "|y1|^2=|x|^4/(243*d^2)",
+    "ell2_polar_second_action_basis": "|y2|^2=75*d^2/746496",
+    "exceptional_axial": "|x|^2=(115/16)d^2"
+  },
+  "homogeneous_zero_frequency_source": {
+    "combined": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "components": {
+      "circumference_velocity_self": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "ell2_axial_Einstein_minus_self": [
+        "24050*d**2*(-6 + 5*sqrt(3))*(6 + 5*sqrt(3))/729",
+        "0",
+        "12025*d**2*(-6 + 5*sqrt(3))*(6 + 5*sqrt(3))/729",
+        "0"
+      ],
+      "ell2_polar_control_e1_self": [
+        "-34385*d**2/27",
+        "0",
+        "-34385*d**2/54",
+        "0"
+      ],
+      "ell2_polar_control_e2_self": [
+        "-80*d**2/243",
+        "0",
+        "-40*d**2/243",
+        "0"
+      ],
+      "ell2_polar_control_interference": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "exceptional_axial_self": [
+        "-115*d**2/9",
+        "0",
+        "-115*d**2/18",
+        "0"
+      ]
+    },
+    "constant_lapse_ray": "every nonzero component is proportional to (1,0,1/2,0)",
+    "row_order": [
+      "E00",
+      "E11",
+      "E22",
+      "Maxwell1"
+    ]
+  },
+  "interpretation": "The corrected Einstein-minus amplitude cancels the full homogeneous source vector, not merely its constant-lapse pairing. Every other zero-frequency output is on an invertible polar target block. The remaining bounded gate consists only of the actual nonzero-frequency polynomial cross sources involving d and the added Einstein-minus oscillator.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the d-times-Einstein-minus and all Einstein-minus cross-source time polynomials and test whether their off-shell inverses remain bounded",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source.py",
+    "generator_sha256": "dc52b2548d3d1a7c9abe1a398f7905af32ad0d7d2a106459c9f31271b682f355",
+    "inputs": {
+      "axial_neutral": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_neutral_face_second_order.json",
+        "sha256": "b09c28e32d976863c4236baacf99476e25667998f91901e5388f40056f12dfd4"
+      },
+      "balance": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.json",
+        "sha256": "158db5e5eacc8cc1b384acfa2f4513b0a0d214ae42c7f4b3d95f4efeea00010a"
+      },
+      "ellipse": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.json",
+        "sha256": "431b7b0015bb8691c610597d07ac24241aa9b295dc2b54dbadb39be6e136c2f1"
+      },
+      "exceptional": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_axial_ell1_zero_source_fixture.json",
+        "sha256": "213fd775bea16a646889dafedd612b979198ab8a946d92a38f61f055d5b80c01"
+      },
+      "polar_cross": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell2_extra_cross_zero_source_fixture.json",
+        "sha256": "19a643b325bf799727cbd39f47a034379d2da0276211227929daaca913fa2533"
+      },
+      "polar_e1": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell2_extra_e1_zero_source_fixture.json",
+        "sha256": "8a893cabb113254656bc965ea2d7305dc5271d31a906889894f4fccac4182a42"
+      },
+      "polar_e2": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell2_extra_e2_zero_source_fixture.json",
+        "sha256": "ba3741a32cd734ecd6e4fc34e9d114730ce5a4794991d8a3361e85cd7574871d"
+      },
+      "same_parity_zero": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_same_parity_output_resonance.json",
+        "sha256": "b1270dbf5d677edd9125f6f6119dbae22b8b701b37dab62c1ff6f06f8f23c928"
+      },
+      "standard_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      }
+    }
+  },
+  "remaining_zero_frequency_channels": {
+    "conclusion": "every zero-frequency channel has a bounded algebraic correction; the homogeneous correction is zero",
+    "cross_products_of_unequal_frequencies": "do not contribute at Omega=0",
+    "ell2_control_and_Einstein_minus_self_products": "L=2 and L=4 polar targets at Omega=0 are invertible",
+    "exceptional_axial_self": "L=2 polar target at Omega=0 is invertible"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_ZERO_FREQUENCY_SOURCE",
+  "schema": "einstein-maxwell-weyl-exceptional-ellipse-zero-frequency-source-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source.schema.json",
+  "schema_sha256": "5815799aadea2b771ccbca3031daf0c9e52328bce36c333bdc2ef65639207fe9",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded shell audit",
+    "carrier": "pure-axial endpoint of the exceptional resonance ellipse plus one axial ell2 Einstein-minus balance mode",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "inputs 1 and 2; every angularly allowed output",
+    "k": 0,
+    "m": 0,
+    "omega": "all signed Einstein-minus cross frequencies",
+    "parity": "conservative all target parities",
+    "theory": "Weyl-Maxwell target"
+  }
+}

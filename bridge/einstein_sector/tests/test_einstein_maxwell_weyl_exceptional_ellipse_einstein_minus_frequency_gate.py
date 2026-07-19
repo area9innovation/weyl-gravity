@@ -21,8 +21,11 @@ class EinsteinMinusFrequencyGateTests(unittest.TestCase):
 
     def test_exact_balance(self) -> None:
         balance = self.value["normalized_balance"]
-        self.assertEqual(balance["negative_H_deficit"], "(1557040/243)d^2")
-        self.assertIn("7785200sqrt(3)", balance["required_Einstein_minus_occupation"])
+        self.assertIn("W_1=1/3 and W_2=1/5", balance["harmonic_convention"])
+        self.assertEqual(balance["negative_H_deficit"], "(312650/243)d^2")
+        self.assertIn("120250/729", balance["required_source_normalized_Einstein_minus_occupation"])
+        self.assertEqual(balance["source_to_direct_representative_map"], "|e_-|^2=48*|A_-|^2")
+        self.assertTrue(self.value["classification"]["mixed_ell_harmonic_normalization_directly_audited"])
         self.assertTrue(self.value["classification"]["mu_H_mu_Px_mu_Ji_all_zero_on_balanced_axisymmetric_fixture"])
 
     def test_frequency_census_is_complete(self) -> None:

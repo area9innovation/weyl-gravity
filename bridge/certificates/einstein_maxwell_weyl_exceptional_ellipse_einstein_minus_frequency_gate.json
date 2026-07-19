@@ -7,6 +7,7 @@
     "causal_or_quantum_claim": false,
     "complete_quadratic_source_solved": false,
     "minimal_single_Einstein_minus_H_balance_explicit": true,
+    "mixed_ell_harmonic_normalization_directly_audited": true,
     "mu_H_mu_Px_mu_Ji_all_zero_on_balanced_axisymmetric_fixture": true,
     "zero_frequency_source_completed": false
   },
@@ -342,16 +343,20 @@
   "lifecycle_state": "CLASSIFIED",
   "next_gate": "compute the complete Einstein-minus cross sources and the combined zero-frequency source on this declared balanced fixture",
   "normalized_balance": {
-    "Einstein_minus_positive_weight": "kappa_-=(1/4)*(6-2sqrt(3))*(3sqrt(3)-1)",
+    "Einstein_minus_positive_weight": "kappa_-=(1/20)*(6-2sqrt(3))*(3sqrt(3)-1), including W_2=1/5",
+    "ell2_control_H_deficit": "(309545/243)d^2",
     "ell2_control_occupation_X": "(1547725/324)d^2",
     "ellipse_endpoint": "r_p=0, r_x^2=(115/16)d^2",
-    "harmonic_convention": "unit spatial harmonic norms",
-    "negative_H_deficit": "(1557040/243)d^2",
-    "required_Einstein_minus_occupation": "|e_-|^2=((9342240+7785200sqrt(3))/9477)d^2"
+    "exceptional_H_deficit": "(115/9)d^2",
+    "harmonic_convention": "axisymmetric Legendre carriers P_1 and P_2 with averaged norms W_1=1/3 and W_2=1/5, as used by the direct nonlinear source fixtures",
+    "negative_H_deficit": "(312650/243)d^2",
+    "required_direct_representative_occupation": "|A_-|^2=(60125/17496)*(6+5sqrt(3))*d^2",
+    "required_source_normalized_Einstein_minus_occupation": "|e_-|^2=(120250/729)*(6+5sqrt(3))*d^2",
+    "source_to_direct_representative_map": "|e_-|^2=48*|A_-|^2"
   },
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.py",
-    "generator_sha256": "614dffc402bfb4828e8cb871a5807c0394abf7af84b97be384c772c16931a1fe",
+    "generator_sha256": "22443258fd3c8b4a1051b18602719496076c9bbafea5c087b812e29ef5f580f6",
     "inputs": {
       "ell2_current": {
         "path": "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.json",
@@ -364,6 +369,10 @@
       "exceptional_current": {
         "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
         "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+      },
+      "exceptional_zero_source": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_axial_ell1_zero_source_fixture.json",
+        "sha256": "213fd775bea16a646889dafedd612b979198ab8a946d92a38f61f055d5b80c01"
       },
       "homogeneous": {
         "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.json",
@@ -378,7 +387,7 @@
   "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_EINSTEIN_MINUS_FREQUENCY_GATE",
   "schema": "einstein-maxwell-weyl-exceptional-ellipse-einstein-minus-frequency-gate-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.schema.json",
-  "schema_sha256": "159cf1a37c546a9d995f94a772a4bd817c08854df3fd89701fcd369b807c343b",
+  "schema_sha256": "ceb8916164aa73ef66ef4f2e22bc4c81b9f36ae6ea5035528a4f652113e52435",
   "scope": {
     "background": "compact magnetically supported Plebanski-Hacyan product",
     "boundaries": "closed S1_L times S2; bounded shell audit",

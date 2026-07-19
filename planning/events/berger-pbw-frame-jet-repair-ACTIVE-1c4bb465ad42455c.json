@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/berger-pbw-frame-jet-repair-ACTIVE-1c4bb465ad42455c",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/berger-pbw-frame-jet-repair-ACTIVE-1c4bb465ad42455c.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "observer", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-19", "payload": {"target": "sf:program/work/berger-pbw-frame-jet-repair", "to_state": "ACTIVE", "note": "repairing the coefficient-jet activation contract so it obeys the noncommuting Berger frame PBW algebra before scalar q1 export"}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/berger-pbw-frame-jet-repair"}]
+}

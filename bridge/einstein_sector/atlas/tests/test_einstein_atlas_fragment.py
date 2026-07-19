@@ -271,7 +271,8 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
         self.assertIn("Forty exact algebraic comparisons", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
-        self.assertIn("zero-frequency block", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("complete zero-frequency source cancels", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("nonzero-frequency polynomial", second_order["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
     def test_constant_twist_projector_repair_is_authoritative(self) -> None:
