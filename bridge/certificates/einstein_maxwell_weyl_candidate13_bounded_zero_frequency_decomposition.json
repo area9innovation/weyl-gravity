@@ -1,0 +1,138 @@
+{
+  "bounded_zero_frequency_decomposition": {
+    "L0_K0_row_order": [
+      "E00",
+      "E01",
+      "E11",
+      "sphere_trace",
+      "Maxwell0",
+      "Maxwell1"
+    ],
+    "L0_equivalence": "the complete homogeneous zero-frequency source vanishes iff mu_H=mu_Px=R_c=0",
+    "L1_K0": "the axial physical cokernel is exactly (mu_J1,mu_J2,mu_J3); the polar physical cokernel is absent",
+    "L_at_least_2": {
+      "consequence": "every static generic output block is invertible after local gauge reduction",
+      "domain": "L>=2, Lambda=L(L+1)>=6, Omega=0, arbitrary real output K with u=K^2>=0",
+      "p": "-(3*Lambda + 3*u - 2)/3",
+      "p_sign": "strictly negative",
+      "q": "Lambda**2 + 2*Lambda*u - 2*Lambda + u**2",
+      "q_shift_Lambda_minus_6_coefficients": [
+        "1",
+        "2",
+        "10",
+        "1",
+        "12",
+        "24"
+      ],
+      "q_sign": "strictly positive"
+    },
+    "bounded_zero_root": "at Omega=0 a bounded finite-quasiperiodic correction is constant, so D''''=A_x''=0",
+    "complete_functional_basis": [
+      "mu_H",
+      "mu_Px",
+      "mu_J1",
+      "mu_J2",
+      "mu_J3",
+      "R_c"
+    ],
+    "direct_sum": "coker_bounded(source|candidate13,Omega=K=0)=stab^* direct-sum span{R_c}",
+    "linear_dynamical_invariants": [
+      "D=C-K with E11=-D''''/2 and sphere_trace=D''''/4",
+      "A_x with Maxwell1=-A_x''"
+    ],
+    "quadratic_source_rows": {
+      "E00": "a nonzero calibrated multiple of mu_H",
+      "E01": "a nonzero calibrated multiple of mu_Px",
+      "E11": "R_c=(1/2) sum_j k_j^2 h_j",
+      "Maxwell0": "0 by the integrated closed-slice Gauss identity and removal of constant U1 reducibility",
+      "Maxwell1": "0 because the integrated Maxwell-x source has factor omega_1+omega_2=0",
+      "sphere_trace": "(E00-E11)/2 by -E00+E11+2*sphere_trace=0"
+    }
+  },
+  "claim_boundary": "This certifies the complete bounded zero-frequency receiver only on the declared finite generic candidate-13 carrier. It does not include exceptional/global inputs, solve the resulting real quadratic zero locus, prove all-orders integration, or construct causal, residual, observational or quantum maps.",
+  "classification": {
+    "additional_zero_frequency_L1_functional_absent": true,
+    "additional_zero_frequency_Maxwell_functional_absent": true,
+    "all_orders_integrability": false,
+    "causal_residual_observational_or_quantum_claim": false,
+    "complete_candidate13_bounded_zero_frequency_receiver_certified": true,
+    "five_stabilizers_plus_circle_pressure_necessary_and_sufficient": true,
+    "nonzero_frequency_candidate13_functionals_classified_here": false,
+    "static_L_at_least_2_functional_absent": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G4_COMPLETE_FINITE_GENERIC_CANDIDATE13_CARRIER",
+  "interpretation": "For bounded corrections the compact stabilizer moment maps do not exhaust the zero block. There is exactly one additional dynamical functional on the declared generic carrier: circle pressure. No further zero-frequency source functional survives the closed-slice Maxwell identities, Weyl trace identity, L1 quotient or static generic inversion.",
+  "lifecycle_state": "CLASSIFIED",
+  "necessity_and_sufficiency": {
+    "formula": "S_zero(u) is in the bounded reduced image iff mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_c=0",
+    "necessity": "the two constraints, three lifted-rotation adjoints and the homogeneous dynamical zero root annihilate every bounded image",
+    "sufficiency": "the six vanishings kill all L=0 and physical L=1 source rows; every L>=2 static block has a certified reduced inverse"
+  },
+  "next_gate": "join this complete six-functional zero block to the eighteen candidate-13 finite-frequency coefficients",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition.py",
+    "generator_sha256": "d6fedd4ab3f3f277747145becf3bad94352d16ee2622b58a2ea39436470a8691",
+    "inputs": {
+      "axial_ell1": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+        "sha256": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164"
+      },
+      "complete_smooth": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+        "sha256": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885"
+      },
+      "finite_generic": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
+        "sha256": "dd1dec63c50d538a489205d48931720919ff9a43e23c52a45a9d1b80e5ff2513"
+      },
+      "fixed_ell_source": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
+        "sha256": "9c9b5db86f50a624f84a0ec6548d2c07030109626d076c0e5ee6f9e9115f9e54"
+      },
+      "homogeneous_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.json",
+        "sha256": "880857b4bb004bf1006cf4f7254194753cfd2e065ce915128a781ddd2cd162fc"
+      },
+      "moment_map": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+      },
+      "polar_ell1": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell1_k0_operator.json",
+        "sha256": "e8344bcfab80a3abe19bfe392f0f8576977fac1b1c34e4f20aee4aaeff74e77c"
+      },
+      "pressure": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.json",
+        "sha256": "85ac9f723d7f7cb823ab4052ef3221820f0148295d697139cb95452773dc5530"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CANDIDATE13_BOUNDED_ZERO_FREQUENCY_DECOMPOSITION",
+  "result_state": "COMPLETE_CANDIDATE13_BOUNDED_ZERO_FREQUENCY_RECEIVER_EQUALS_SIX_FUNCTIONALS",
+  "schema": "einstein-maxwell-weyl-candidate13-bounded-zero-frequency-decomposition-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition.schema.json",
+  "schema_sha256": "230e3f807c4e2f033a297842d0d8c53760c3f9e144858963897205a454ddea12",
+  "scope": {
+    "background": "candidate-13 tuned compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "all generic ell=2 q-minus, p-extra and q-plus coefficients on the signed n=1 and n=-2 candidate-13 fibres, both parities and all m, with reality conjugates",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": "input ell=2; zero-frequency outputs L=0,1,2,3,4",
+    "k": "signed n=1,-2 fibres; zero-frequency products have K=0",
+    "m": "all input m and every Clebsch-Gordan-allowed output M",
+    "omega": "equal-branch positive-negative products with Omega=0",
+    "parity": "both input parities and every zero-frequency output parity",
+    "theory": "Weyl-Maxwell target"
+  },
+  "second_order_equation": "L_WM v=-(1/2)D^2E_WM[u,u]",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition"
+  ]
+}

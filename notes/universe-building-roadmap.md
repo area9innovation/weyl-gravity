@@ -2331,23 +2331,25 @@ sum/difference channels gives 144 nonzero `ell=1,...,4` shell defects, and the
 `ell=0` sum channels use the empty nonzero-Fourier quotient.  The unequal-
 branch differences instead have `K=0,Omega!=0` and use the separately empty
 homogeneous nonzero-frequency quotient.  Thus no other nonzero-frequency
-same-fibre source matrix is required.  The bounded zero-frequency gate
-nevertheless remains: the complete generic finite-harmonic theorem used in
-the former join is a smooth-secular theorem and explicitly leaves the bounded
-zero locus open.  The action-derived circle pressure
+same-fibre source matrix is required.  The action-derived circle pressure
 `R_c=(1/2) sum_j k_j^2 h_j` is strictly negative on the displayed witness even
 though all five moment maps and all eighteen candidate-13 coefficients vanish.
 The witness is therefore bounded `OBSTRUCTED` but smooth
-exponential-polynomial `CERTIFIED`.  The complete smooth cone remains
-`Z2_smooth={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0}`.  For bounded corrections the
-five moment maps, `R_c`, and eighteen finite-frequency coefficients form a
-known necessary ledger; its completeness and sufficiency are `OPEN`.
+exponential-polynomial `CERTIFIED`.  The complete bounded zero-frequency
+decomposition now proves that the Wilson-acceleration mean source
+vanishes identically, `L=1` contributes only the three rotations and static
+`L>=2` is invertible.  Therefore
+`Z2_bounded={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_c=R_13,1=...=R_13,18=0}` and
+`Z2_smooth={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0}` are exact coefficientwise
+formulas.  A nonzero bounded point and the real component decomposition remain
+`OPEN`.
 The resulting Bridge 1 handoff is now typed by
 `EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1`: the five
 stabilizer components land in the current/Koszul receiver, `R_c` lands in a
 distinct bounded pressure receiver, and the eighteen candidate-13 coefficients
-land in the finite-frequency relative receiver.  The smooth derived-source
-pullback is certified; the bounded pullback remains `OPEN`.  This does not
+land in the finite-frequency relative receiver.  The bounded and smooth
+derived-source pullbacks are certified on their declared zero loci.  This does
+not
 repair the full-domain support-local `f2`, construct a derived BV subcomplex,
 or authorize arity three.
 

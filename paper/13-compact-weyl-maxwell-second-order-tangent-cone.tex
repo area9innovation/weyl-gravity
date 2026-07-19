@@ -480,8 +480,10 @@ a resonant pure exponential has no bounded quasiperiodic primitive.  For each
 finite output block \(j\), let \(\cP_{j,r}\) extract the coefficient of
 \(t^re^{-i\Omega_jt}\) for \(r>0\).  After all such coefficients vanish,
 let \(\cR_{j,a}\) pair the remaining pure exponential with an exact basis of
-the reduced left kernel of \(\cL_j(-i\Omega_j)\).  The stabilizer covectors
-at the genuine zero block are kept separately as \(\mu_X\).
+the reduced left kernel of \(\cL_j(-i\Omega_j)\).  This definition includes
+the dynamical reduced left kernel at \(\Omega_j=0\).  The stabilizer
+covectors inside the genuine zero block are split off and recorded separately
+as \(\mu_X\); no other zero-root covector is silently identified with them.
 
 \begin{theorem}[Complete finite bounded-obstruction ledger]
 \label{thm:bounded-ledger}
@@ -505,8 +507,9 @@ quasiperiodic, so every positive polynomial coefficient \(\cP_{j,r}\)
 vanishes.  For each remaining pure-frequency block, finite-dimensional linear
 algebra says that \(\cL_j(-i\Omega_j)v_j=S_j\) is solvable precisely when
 \(S_j\) annihilates its reduced left kernel.  At the genuine zero block those
-pairings are the five Taub moment maps; at nonzero shells they are the
-\(\cR_{j,a}\).  Off-shell blocks are invertible.  Conversely, these
+pairings split into the five Taub moment maps and any remaining dynamical
+zero-root functionals \(\cR_{j,a}\); at nonzero shells they are the
+finite-frequency \(\cR_{j,a}\).  Off-shell blocks are invertible.  Conversely, these
 conditions put every finite block source in the corresponding image, and the
 finite collection of solutions and conjugates assembles an element of
 \(\Xqp\).
@@ -516,6 +519,31 @@ The certificates contain a moment-map-zero fixture with a nonzero
 \(\cP_{j,2}\) and another with a nonzero \(\cR_{j,a}\).  Thus both new
 families are independent of the five global charges, and
 \(\cZ_2^{\rm qp}\subsetneq\cZ_2^{\rm ep}\).
+
+For finite generic oscillatory inputs the complete bounded
+\(K=\Omega=0\) receiver can be made fully explicit.  Its nonzero source map is
+\[
+ (\mu_H,\mu_{P_x},\mu_{J_1},\mu_{J_2},\mu_{J_3},R_c),
+ \qquad
+ R_c=\frac12\sum_j k_j^2 h_j .
+\]
+Here \(h_j\) is the complete normalized Hermitian current block, including
+cross terms within a degenerate shell.  The second formal homogeneous mean
+covector is the Wilson-acceleration row; its quadratic source vanishes by the
+integrated Maxwell identity.  The polar \(L=1\) zero block contributes no
+physical cokernel, the axial block contributes exactly the three lifted
+rotations, and every static \(L\ge2\) block is reduced-invertible.  Thus the
+six displayed conditions are necessary and sufficient for bounded inversion
+of the zero-frequency source.  On the candidate-13 two-fibre carrier, joining
+them to the eighteen finite-frequency coefficients gives the complete formula
+\[
+ \cZ^{\rm qp}_{2,13}
+ =\{\mu_H=\mu_{P_x}=\mu_{J_1}=\mu_{J_2}=\mu_{J_3}
+      =R_c=\cR_{13,1}=\cdots=\cR_{13,18}=0\}.
+\]
+This formula does not by itself certify a nonzero real point of that bounded
+zero locus.  The explicit three-occupation fixture has \(R_c<0\), so it
+belongs to the smooth exponential-polynomial cone but not the bounded cone.
 
 \section{Complete standard generalized-zero subcone}
 
@@ -880,11 +908,13 @@ remaining 12.  Every declared
 individual branch-basis fixture in these two blocks has nonzero cokernel and
 a bounded obstruction.
 
-This is an exhaustive coefficient statement for the named basis columns,
-not yet a classification of their arbitrary-amplitude zero variety.
-Different columns may cancel after amplitudes are joined.  The common
-polynomial zero set is therefore retained as the open gate; no two-momentum
-tangent-cone theorem is claimed here.
+This census by itself is only an exhaustive coefficient statement for the
+named basis columns: different columns may cancel after amplitudes are joined.
+The candidate-13 fibre is the first case where the arbitrary-amplitude ideal,
+the zero-frequency receiver, and the correction-class-dependent range have
+all been joined, giving the complete formula displayed after
+Theorem~\ref{thm:bounded-ledger}.  The analogous common zero varieties at the
+other collision circumferences remain open.
 
 \section{Current bounded frontier}
 
@@ -1065,6 +1095,10 @@ Claim & Authoritative certificate\\
 \midrule
 Complete finite-support exponential-polynomial cone and bounded ledger &
 \cert{bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json}\\
+Finite-generic bounded zero-frequency receiver &
+\cert{bridge/certificates/einstein_maxwell_weyl_finite_generic_bounded_zero_block.json}\\
+Complete candidate-13 bounded and smooth cone formulas &
+\cert{bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1106,12 +1140,15 @@ Moment-map/Taub bridge &
 Each certificate records its schema, imported hashes, exact commands, test
 tier, assumptions, and missing-object ledger.  The independent verifier for
 each named certificate must pass before this manuscript advances to
-\textsc{theorem-frozen}.  The current draft does not promote the still-open
-complete bounded cone.
+\textsc{theorem-frozen}.  The current draft promotes only the scoped complete
+formulas displayed above; the real component geometry of the unrestricted
+finite-support bounded zero set remains open.
 
 \section{Outlook}
 
-The immediate mathematical target is the full bounded finite-support cone.
+The immediate mathematical target is the real component geometry and
+nontrivial-point problem for the complete bounded finite-support functional
+formula.
 The symbolic-\(\ell\) standard-branch resonance and collision theorem is now
 closed, as is the complete 164-coefficient two-momentum branch-basis census.
 The next exact enlargement is the common amplitude-level zero variety,

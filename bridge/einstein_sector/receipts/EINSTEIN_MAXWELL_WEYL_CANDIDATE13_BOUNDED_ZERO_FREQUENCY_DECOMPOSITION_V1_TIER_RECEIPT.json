@@ -1,0 +1,41 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_CANDIDATE13_BOUNDED_ZERO_FREQUENCY_DECOMPOSITION_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Complete six-functional bounded zero-frequency receiver on the finite generic candidate-13 carrier.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition.json": "5aab3b7d4a7ff84515d9f7a60c93612f0acaf7c12281145e55d4e99cfd7c90c5",
+    "bridge/einstein_sector/einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition.py": "d6fedd4ab3f3f277747145becf3bad94352d16ee2622b58a2ea39436470a8691",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition.schema.json": "230e3f807c4e2f033a297842d0d8c53760c3f9e144858963897205a454ddea12",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition.py": "e89aaff88ae2c7a69ddbd75eb0bd460756dfbc3276b7732a11037d01855c831c",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition.py": "1a2b2caf5a188fdff8a3e5d7a2d35545333d18ab4c8244be1a3da87defe5d0fe",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-candidate13-bounded-zero-frequency-decomposition.md": "7b58db213d38191dec7552649b9aa3f48ad60dd00c634cfba2616df446f5d6b3"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 3,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The specialization independently joins the homogeneous action rows, Weyl trace, integrated Maxwell identities, L=1 physical cokernels, static generic inverse and moment-map bridge."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The theorem closes only the candidate-13 bounded zero-frequency receiver and does not classify finite-frequency resonance geometry, all-orders integration or causal maps."
+    }
+  },
+  "claim_boundary": "The complete bounded zero-frequency receiver is (mu_H,mu_Px,mu_J1,mu_J2,mu_J3,R_c). Finite-frequency coefficients, the real common zero locus, nonzero bounded points, all-orders and causal claims remain separate."
+}

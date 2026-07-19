@@ -20,6 +20,7 @@ INPUTS = {
     "full_domain_f2_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
     "candidate13_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.json",
     "pressure_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.json",
+    "bounded_zero_block": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_generic_bounded_zero_block.json",
 }
 
 
@@ -62,18 +63,19 @@ def build() -> dict[str, object]:
     require(not obstruction_flags["frozen_unary_full_domain_f2_exists"], "full-domain f2 obstruction changed")
     require(not obstruction_flags["taub_zero_restricted_source_obstructed"], "derived-source route was closed")
     cone_flags = cone["classification"]
-    require(not cone_flags["complete_candidate13_bounded_tangent_cone_formula_certified"], "candidate-13 bounded cone was over-promoted")
+    require(cone_flags["complete_candidate13_bounded_tangent_cone_formula_certified"], "candidate-13 bounded cone changed")
     require(cone_flags["candidate13_known_bounded_functional_ledger_certified"], "candidate-13 known bounded ledger changed")
-    require(not cone_flags["complete_candidate13_bounded_functional_ledger_certified"], "candidate-13 bounded ledger unexpectedly completed")
+    require(cone_flags["complete_candidate13_bounded_functional_ledger_certified"], "candidate-13 bounded ledger changed")
     require(cone_flags["complete_candidate13_smooth_tangent_cone_formula_certified"], "candidate-13 smooth cone changed")
     require(records["pressure_obstruction"]["classification"]["candidate13_bounded_or_finite_quasiperiodic_extension_obstructed"], "candidate-13 pressure witness changed")
+    require(records["bounded_zero_block"]["classification"]["five_stabilizers_plus_circle_pressure_complete_on_finite_generic_zero_block"], "bounded zero-block theorem changed")
 
     return {
         "schema": "pure-weyl-relative-candidate13-derived-source-crosswalk-v1",
         "schema_path": str(SCHEMA.relative_to(ROOT)),
         "schema_sha256": sha(SCHEMA),
         "result_id": "EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1",
-        "result_state": "TYPED_SMOOTH_DERIVED_SOURCE_PULLBACK_CERTIFIED_BOUNDED_AND_FULL_DOMAIN_F2_GATES_OPEN_OR_OBSTRUCTED",
+        "result_state": "TYPED_BOUNDED_AND_SMOOTH_DERIVED_SOURCE_PULLBACKS_CERTIFIED_FULL_DOMAIN_F2_OBSTRUCTED",
         "lifecycle_state": "CLASSIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "scope": {
@@ -110,16 +112,16 @@ def build() -> dict[str, object]:
             "bounded_pressure_map": {
                 "target": "one-dimensional bounded homogeneous pressure receiver",
                 "components": "R_c=(1/2) sum k_j^2 h_j",
-                "status": "CERTIFIED_AS_NECESSARY",
+                "status": "CERTIFIED",
             },
             "combined_bounded_map": "O2_candidate13,bounded=(mu_H,mu_Px,mu_J1,mu_J2,mu_J3,R_c,R_13,1,...,R_13,18)",
             "typing": "the five current components, one bounded pressure component and eighteen finite-frequency relative-cofiber components are distinct summands and are never identified",
         },
         "derived_source_pullback": {
             "BOUNDED_OR_FINITE_QUASIPERIODIC": {
-                "status": "OPEN",
-                "necessary_domain": "O2_candidate13,bounded^{-1}(0)",
-                "sufficiency": "OPEN until the complete bounded homogeneous range is classified",
+                "status": "CERTIFIED",
+                "domain": "O2_candidate13,bounded^{-1}(0)",
+                "sufficiency": "the complete bounded zero-block theorem and exact candidate-13 nonzero-frequency ledger exhaust the reduced adjoint cokernel",
             },
             "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
                 "status": "CERTIFIED",
@@ -135,15 +137,15 @@ def build() -> dict[str, object]:
         },
         "morphism_disposition": {
             "full_domain_support_local_f2": "OBSTRUCTED",
-            "derived_reduced_source_second_order_solve": "CERTIFIED_SMOOTH_ONLY",
+            "derived_reduced_source_second_order_solve": "CERTIFIED_BOUNDED_AND_SMOOTH_ON_THEIR_DECLARED_ZERO_LOCI",
             "full_relative_arity_two_morphism": "OPEN",
             "arity_three_authorized": False,
-            "reason": "the smooth reduced zero locus solves the quadratic extension equation, while bounded sufficiency is open and the restriction does not construct a support-local BV subcomplex or repair the frozen-unary full-domain f2 equation",
+            "reason": "both declared reduced zero loci solve the quadratic extension equation in their correction classes, but the restriction does not construct a support-local BV subcomplex or repair the frozen-unary full-domain f2 equation",
         },
         "classification": {
             "same_background_relative_branch_crosswalk_certified": True,
             "candidate13_five_plus_pressure_plus_eighteen_quadratic_receiver_typed": True,
-            "bounded_derived_source_pullback_certified": False,
+            "bounded_derived_source_pullback_certified": True,
             "bounded_derived_source_known_necessary_ledger_certified": True,
             "smooth_derived_source_pullback_certified": True,
             "nonzero_mixed_bounded_derived_source_point_certified": False,
@@ -154,9 +156,9 @@ def build() -> dict[str, object]:
             "arity_three_authorized": False,
             "cross_background_causal_observational_or_quantum_claim": False,
         },
-        "interpretation": "The candidate-13 theorem realizes a smooth reduced-mode derived-source alternative for the relative current-cofiber assembly. Bounded inversion has an additional pressure receiver, so bounded sufficiency remains open and the displayed mixed witness is obstructed in that class.",
-        "next_gate": "complete the bounded homogeneous range on the full candidate-13 carrier before promoting a bounded derived pullback; retain the smooth crosswalk and do not start arity three on the obstructed full-domain morphism",
-        "claim_boundary": "This is a same-background REDUCED-MODE smooth derived-source crosswalk plus a necessary bounded receiver ledger. It is not a certified bounded pullback, support-local derived BV subcomplex, full-domain f2 repair, arity-three morphism, causal functor, cross-background map, observable, particle theorem, or quantum claim.",
+        "interpretation": "The candidate-13 theorem realizes correction-class-sensitive reduced-mode derived-source pullbacks for the relative current-cofiber assembly. Bounded inversion retains the pressure and eighteen resonance receivers; smooth inversion retains only the five-current receiver. The displayed mixed witness belongs only to the smooth pullback.",
+        "next_gate": "decompose the bounded real zero variety or construct a nonzero bounded point; do not start arity three on the obstructed full-domain morphism",
+        "claim_boundary": "This is a same-background REDUCED-MODE bounded and smooth derived-source crosswalk. It is not a support-local derived BV subcomplex, full-domain f2 repair, arity-three morphism, causal functor, cross-background map, observable, particle theorem, or quantum claim.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),
             "generator_sha256": sha(Path(__file__)),

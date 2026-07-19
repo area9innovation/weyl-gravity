@@ -3646,29 +3646,30 @@ nonzero-frequency row before a source calculation: 18 sum/difference channels
 give 144 exact nonzero `ell=1,...,4` shell defects.  For `ell=0`, sum channels
 use the empty nonzero-Fourier quotient, while unequal-branch differences have
 `K=0,Omega!=0` and use the separately empty homogeneous nonzero-frequency
-quotient.  The zero-frequency gate does not close in the bounded class.  The
-generic finite-harmonic theorem used in the former join is scoped to smooth
-exponential-polynomial corrections and explicitly leaves the bounded common
-zero locus open.  Differentiating the exact primary action with respect to the
-circle radius gives the independent bounded functional
+quotient.  Differentiating the exact primary action with respect to the circle
+radius gives the independent bounded functional
 `R_c=(1/2) sum_j k_j^2 h_j`.  On the displayed witness,
 `R_c=(rho/2)(1-y1-4y2)<0`: `rho>0`, `p1>q1`, hence `y1>1` and `y2>0`.
 Thus this is the required independence witness `mu_X=R_13,a=0` but
 `R_c!=0`.  It is bounded/finitely-quasiperiodically `OBSTRUCTED` and smooth
-exponential-polynomial `CERTIFIED`.  The complete smooth cone remains exactly
-the five-moment-map zero set.  For bounded corrections the five moment maps,
-`R_c`, and the eighteen candidate-13 coefficients are known necessary
-conditions, but completeness of the zero-frequency ledger and bounded
-sufficiency are `OPEN`.
+exponential-polynomial `CERTIFIED`.  The complete bounded zero-frequency
+decomposition now shows that the second formal homogeneous mean covector, the
+Wilson-acceleration row, has identically zero quadratic source by the
+integrated Maxwell identity.  The `L=1` remainder is exactly the three lifted
+rotations and every static `L>=2` block is invertible.  Hence
+`Z2_bounded={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_c=R_13,1=...=R_13,18=0}` and
+`Z2_smooth={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0}` are exact coefficientwise
+formulas.  Existence of a nonzero bounded point and the real component
+decomposition remain `OPEN`.
 
 That Bridge 1 handoff is now explicit in
 `EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1`.  The
-candidate-13 known bounded receiver is the typed direct sum of the five-current
+candidate-13 bounded receiver is the typed direct sum of the five-current
 Koszul receiver, the circle-pressure component `R_c`, and the eighteen
-finite-frequency relative adjoint coefficients.  Their common zero is only a
-known necessary bounded domain; the bounded pullback is `OPEN`.  The smooth
-derived source retains only the five moment maps and is `CERTIFIED`.  This is
-a `REDUCED-MODE` crosswalk: the frozen-unary full-domain support-local `f2`
+finite-frequency relative adjoint coefficients.  Their common zero is a
+necessary-and-sufficient bounded derived-source domain; the smooth derived
+source retains only the five moment maps.  Both are `CERTIFIED` at
+`REDUCED-MODE`.  The frozen-unary full-domain support-local `f2`
 obstruction is preserved, no support-local derived BV subcomplex is
 constructed, and arity three remains unauthorized.
 

@@ -91,14 +91,16 @@ def verify() -> None:
         raise AssertionError("downstream bridges borrowed the linear lifecycle")
     relative_candidate13 = by_id["einstein.ph.bridge.relative_candidate13_derived_source_crosswalk"]
     relative_candidate13_second = relative_candidate13["mode_data"]["second_order"]
-    if relative_candidate13["descriptions"]["nonlinear"] != "OPEN" or "same candidate-13" not in relative_candidate13["mode_data"]["dispersion"]["statement"]:
+    if relative_candidate13["descriptions"]["nonlinear"] != "CERTIFIED" or "same candidate-13" not in relative_candidate13["mode_data"]["dispersion"]["statement"]:
         raise AssertionError("relative candidate-13 crosswalk scope changed")
     if relative_candidate13["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "circle-pressure" not in relative_candidate13["mode_data"]["taub_maps"]["statement"]:
         raise AssertionError("relative candidate-13 current receiver was hidden")
     if relative_candidate13["mode_data"]["resonance"]["status"] != "CERTIFIED" or "separate 18-dimensional" not in relative_candidate13["mode_data"]["resonance"]["statement"]:
         raise AssertionError("relative candidate-13 resonance receiver was hidden")
-    if relative_candidate13_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or relative_candidate13_second["smooth_secular"]["status"] != "CERTIFIED" or relative_candidate13_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+    if relative_candidate13_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or relative_candidate13_second["smooth_secular"]["status"] != "CERTIFIED" or relative_candidate13_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("relative candidate-13 correction classes changed")
+    if "common zero of the five stabilizers, R_c and eighteen" not in relative_candidate13_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("relative candidate-13 bounded zero locus was hidden")
     if "full-domain support-local f2 remains obstructed" not in relative_candidate13["claim_boundary"] or "arity three is not authorized" not in relative_candidate13["claim_boundary"]:
         raise AssertionError("relative candidate-13 morphism boundary changed")
 
@@ -654,17 +656,27 @@ def verify() -> None:
         raise AssertionError("candidate-13 mixed correction classes changed")
     if "bounded-obstructed and smoothly second-order extendible" not in candidate13_extension["claim_boundary"] or "not the full candidate-13 mixed cone" not in candidate13_extension["claim_boundary"]:
         raise AssertionError("candidate-13 mixed extension exceeded scope")
+    finite_zero = by_id["einstein.ph.wm.interaction.finite_generic_bounded_zero_block"]
+    finite_zero_second = finite_zero["mode_data"]["second_order"]
+    if finite_zero["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("finite-generic bounded zero-block lifecycle changed")
+    if finite_zero["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "circle pressure" not in finite_zero["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("finite-generic pressure receiver was hidden")
+    if finite_zero_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "R_c=0" not in finite_zero_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("finite-generic bounded zero-block theorem was hidden")
+    if finite_zero_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "nonzero-frequency resonances are excluded" not in finite_zero["claim_boundary"]:
+        raise AssertionError("finite-generic zero-block scope was exceeded")
     candidate13_cone = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_complete_mixed_cone"]
     candidate13_cone_second = candidate13_cone["mode_data"]["second_order"]
-    if candidate13_cone["descriptions"]["nonlinear"] != "OPEN" or "complete finite generic candidate-13" not in candidate13_cone["mode_data"]["dispersion"]["statement"]:
+    if candidate13_cone["descriptions"]["nonlinear"] != "CERTIFIED" or "complete finite generic candidate-13" not in candidate13_cone["mode_data"]["dispersion"]["statement"]:
         raise AssertionError("candidate-13 complete cone scope changed")
-    if candidate13_cone["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "additional necessary circle-pressure" not in candidate13_cone["mode_data"]["taub_maps"]["statement"]:
+    if candidate13_cone["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "exactly the five stabilizers plus circle pressure" not in candidate13_cone["mode_data"]["taub_maps"]["statement"]:
         raise AssertionError("candidate-13 complete zero-block theorem was hidden")
     if candidate13_cone["mode_data"]["resonance"]["status"] != "CERTIFIED" or "18-coefficient prime" not in candidate13_cone["mode_data"]["resonance"]["statement"]:
         raise AssertionError("candidate-13 complete resonance theorem was hidden")
-    if candidate13_cone_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or "R_c=R_13,1" not in candidate13_cone_second["bounded_or_finite_quasiperiodic"]["statement"] or candidate13_cone_second["smooth_secular"]["status"] != "CERTIFIED" or candidate13_cone_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+    if candidate13_cone_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "R_c=R_13,1" not in candidate13_cone_second["bounded_or_finite_quasiperiodic"]["statement"] or candidate13_cone_second["smooth_secular"]["status"] != "CERTIFIED" or candidate13_cone_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("candidate-13 complete correction classes changed")
-    if "complete smooth-secular cone theorem" not in candidate13_cone["claim_boundary"] or "Bounded ledger completeness" not in candidate13_cone["claim_boundary"]:
+    if "complete bounded and smooth second-order cone formula" not in candidate13_cone["claim_boundary"] or "existence of a nonzero bounded point remain open" not in candidate13_cone["claim_boundary"]:
         raise AssertionError("candidate-13 complete cone boundary changed")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]

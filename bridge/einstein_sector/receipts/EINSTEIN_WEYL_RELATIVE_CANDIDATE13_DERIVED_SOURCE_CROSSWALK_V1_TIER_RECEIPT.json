@@ -1,14 +1,14 @@
 {
   "receipt_id": "EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1_TIER_RECEIPT",
   "date": "2026-07-19",
-  "scope": "Typed smooth reduced-mode derived-source pullback and partial known necessary bounded receiver from candidate 13 into the same-background relative current/cofiber receiver.",
+  "scope": "Typed bounded and smooth reduced-mode derived-source pullbacks from candidate 13 into the same-background relative current/cofiber receiver.",
   "content_sha256": {
-    "bridge/certificates/EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1.json": "42272b71184e23949246e73a123e47e917115e702238870b339b40f794c33add",
-    "bridge/einstein_sector/einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "aeffef1bbeec3f860bfe4a508a7b35c778e3722dbb63e2e15c7deb964ec284a1",
-    "bridge/einstein_sector/schema/einstein-weyl-relative-candidate13-derived-source-crosswalk-v1.schema.json": "ef0484b28bcbfc55efb397407924373f23eb9a9cb5d73c426d956a4813b01ab4",
-    "bridge/einstein_sector/verify_einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "4e2e038bca1fc8ce19ddc8b8836722a4f23291dcdb02f6b3faba3c7124133529",
-    "bridge/einstein_sector/tests/test_einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "c62d7cf0397be2bc9e05a21ba700a76ad826f8c3179da132596ae4609c0d017e",
-    "bridge/einstein_sector/reports/einstein-weyl-relative-candidate13-derived-source-crosswalk.md": "ab80ee644c624bb9d6751bf64619c97d08520f57d627d7d841601b7a84d02dfb"
+    "bridge/certificates/EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1.json": "0ef704c74602561c06f56e58ec87b03ac507b4d2e6559c65ae7950b078dea9ee",
+    "bridge/einstein_sector/einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "a193ba578faa156ba35b8aeed9636dc7b6ec0b1c849ceebfaee0476a3f949fdd",
+    "bridge/einstein_sector/schema/einstein-weyl-relative-candidate13-derived-source-crosswalk-v1.schema.json": "16360476a9fb3cab0557f0bdfba392c1f212cef797326674ae764ef745d46558",
+    "bridge/einstein_sector/verify_einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "a86550f7aaea667e50fea38db8eb63825fb72eb286ab598a7938af0e4413d21a",
+    "bridge/einstein_sector/tests/test_einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "7d09044d72ea7759510ed4e8a800242f012721475efdb8e0d13cddebfe4c533f",
+    "bridge/einstein_sector/reports/einstein-weyl-relative-candidate13-derived-source-crosswalk.md": "2e77d7885a81e653cdc9f0241b4f78dddeec6f9a6051bafdb2e54d393ef799ed"
   },
   "verification": {
     "tier_0": {
@@ -21,7 +21,7 @@
     },
     "tier_1": {
       "status": "PASS",
-      "tests_run": 84,
+      "tests_run": 85,
       "commands": [
         "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_relative_candidate13_derived_source_crosswalk",
         "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
@@ -36,12 +36,12 @@
       "producer_max_rss_kib": 24288,
       "independent_verifier_elapsed_seconds": 0.09,
       "independent_verifier_max_rss_kib": 23300,
-      "reason": "The crosswalk pins the off-shell linear triangle, branch dictionary, current-cofiber receiver, full-domain f2 obstruction, pressure witness, and corrected candidate-13 smooth/partial-bounded cone by SHA-256."
+      "reason": "The crosswalk pins the off-shell linear triangle, branch dictionary, current-cofiber receiver, full-domain f2 obstruction, complete bounded zero block, pressure witness, and corrected candidate-13 bounded/smooth cones by SHA-256."
     },
     "tier_3": {
       "status": "NOT_RUN",
       "reason": "This is a reduced-mode derived-source crosswalk, not a support-local BV derived subcomplex, full relative f2 repair, arity-three morphism, causal functor, observable map, quantum theorem, freeze, or release."
     }
   },
-  "claim_boundary": "The candidate-13 smooth derived pullback is certified. The known bounded receiver has five stabilizer, one pressure, and eighteen finite-frequency components, but its completeness and sufficiency are OPEN. The full-domain support-local f2 remains obstructed and arity three remains unauthorized."
+  "claim_boundary": "The candidate-13 bounded and smooth reduced-mode derived pullbacks are certified on their declared zero loci. The full-domain support-local f2 remains obstructed and arity three remains unauthorized."
 }

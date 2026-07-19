@@ -12,7 +12,7 @@ class RelativeCandidate13DerivedSourceCrosswalkTests(unittest.TestCase):
 
     def test_derived_source_does_not_promote_full_f2(self) -> None:
         payload = build()
-        self.assertEqual(payload["morphism_disposition"]["derived_reduced_source_second_order_solve"], "CERTIFIED_SMOOTH_ONLY")
+        self.assertEqual(payload["morphism_disposition"]["derived_reduced_source_second_order_solve"], "CERTIFIED_BOUNDED_AND_SMOOTH_ON_THEIR_DECLARED_ZERO_LOCI")
         self.assertEqual(payload["morphism_disposition"]["full_domain_support_local_f2"], "OBSTRUCTED")
         self.assertEqual(payload["morphism_disposition"]["full_relative_arity_two_morphism"], "OPEN")
         self.assertFalse(payload["morphism_disposition"]["arity_three_authorized"])

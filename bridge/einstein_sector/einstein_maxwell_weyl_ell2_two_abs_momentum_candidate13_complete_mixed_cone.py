@@ -21,6 +21,8 @@ INPUTS = {
     "pure_extra_taub_join": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_pure_extra_taub_join.json",
     "mixed_bounded_witness": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension.json",
     "pressure_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.json",
+    "bounded_zero_block": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_generic_bounded_zero_block.json",
+    "candidate13_zero_block": ROOT / "bridge/certificates/einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition.json",
 }
 
 
@@ -42,6 +44,8 @@ def build() -> dict[str, object]:
     pure = records["pure_extra_taub_join"]
     witness = records["mixed_bounded_witness"]
     pressure = records["pressure_obstruction"]
+    zero_block = records["bounded_zero_block"]
+    candidate13_zero = records["candidate13_zero_block"]
 
     require(incidence["classification"]["candidate_13_ideal_prime"], "candidate-13 cross-fibre ideal changed")
     require(incidence["prime_zero_variety_theorem"]["equation_count"] == 18, "candidate-13 equation count changed")
@@ -54,6 +58,10 @@ def build() -> dict[str, object]:
     require(witness["classification"]["candidate_13_mixed_witness_bounded_second_order_obstructed"], "mixed bounded obstruction changed")
     require(witness["classification"]["candidate_13_mixed_witness_smooth_second_order_extendible"], "mixed smooth point changed")
     require(pressure["classification"]["candidate13_bounded_pressure_functional_nonzero"], "bounded pressure functional changed")
+    require(zero_block["classification"]["five_stabilizers_plus_circle_pressure_complete_on_finite_generic_zero_block"], "bounded zero-block theorem changed")
+    require(zero_block["classification"]["bounded_zero_frequency_necessity_and_sufficiency_certified"], "bounded zero-block sufficiency changed")
+    require(candidate13_zero["classification"]["complete_candidate13_bounded_zero_frequency_receiver_certified"], "candidate-13 bounded zero-block specialization changed")
+    require(candidate13_zero["classification"]["five_stabilizers_plus_circle_pressure_necessary_and_sufficient"], "candidate-13 zero-block sufficiency changed")
 
     normal_equations = incidence["pencil_reduction"]["normal_form_equations"]
     return {
@@ -61,7 +69,7 @@ def build() -> dict[str, object]:
         "schema_path": str(SCHEMA.relative_to(ROOT)),
         "schema_sha256": sha(SCHEMA),
         "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_COMPLETE_MIXED_CONE",
-        "result_state": "COMPLETE_SMOOTH_CONE_AND_PARTIAL_NECESSARY_BOUNDED_LEDGER_ON_THE_CANDIDATE13_GENERIC_CARRIER",
+        "result_state": "COMPLETE_BOUNDED_AND_SMOOTH_COEFFICIENTWISE_CONES_ON_THE_CANDIDATE13_GENERIC_CARRIER",
         "lifecycle_state": "CLASSIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "generality_level": "G4_COMPLETE_FINITE_CANDIDATE13_GENERIC_TWO_FIBRE_CARRIER",
@@ -93,14 +101,14 @@ def build() -> dict[str, object]:
                 "reality": "the opposite signed-momentum block is the complex conjugate and supplies no independent real equation",
             },
             "same_fibre_nonzero_frequency": "none: all 18 temporal channels are off shell by 144 exact target-shell defects",
-            "zero_frequency": "the independent circle-pressure functional R_c is certified; completeness of the bounded zero-frequency ledger is OPEN",
+            "zero_frequency": "the complete bounded zero-block source map is the five stabilizer moments plus R_c; the formal Wilson-acceleration mean covector has identically zero quadratic source",
         },
         "tangent_cones": {
             "BOUNDED_OR_FINITE_QUASIPERIODIC": {
-                "status": "OPEN",
-                "necessary_formula": "Z2_bounded is contained in {u:mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_c=0 and R_13,1=...=R_13,18=0}",
+                "status": "CERTIFIED",
+                "formula": "Z2_bounded={u:mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_c=0 and R_13,1=...=R_13,18=0}",
                 "necessity": "the five stabilizer pairings, independent bounded circle pressure, and every candidate-13 shell coefficient must vanish",
-                "sufficiency": "OPEN until the complete bounded zero-frequency homogeneous range is classified on the full mixed carrier",
+                "sufficiency": "the bounded zero-block theorem leaves only the five stabilizers and R_c on generic oscillatory sources; the same-fibre census and isolated-candidate theorem leave only the eighteen cross-fibre coefficients at nonzero frequency",
             },
             "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
                 "status": "CERTIFIED",
@@ -114,29 +122,29 @@ def build() -> dict[str, object]:
         },
         "geometry": {
             "pure_extra_face": "the bounded and smooth cones meet the declared pure-extra carrier only at the origin because mu_H is negative definite there",
-            "mixed_nonzero_point": "the axial m=0 three-occupation witness lies in Z2_smooth but not Z2_bounded because R_c<0",
+            "mixed_nonzero_point": "the axial m=0 three-occupation witness lies in Z2_smooth but not Z2_bounded because R_c<0; no nonzero point of the complete bounded zero locus is presently certified",
             "cross_fibre_resonance_variety": "the 18 candidate-13 equations alone define one prime complex dimension-22 cone in the 40-dimensional p-primary ambient space",
             "real_moment_map_intersection_decomposed": False,
         },
         "classification": {
-            "complete_candidate13_bounded_tangent_cone_formula_certified": False,
+            "complete_candidate13_bounded_tangent_cone_formula_certified": True,
             "candidate13_known_bounded_functional_ledger_certified": True,
-            "complete_candidate13_bounded_functional_ledger_certified": False,
+            "complete_candidate13_bounded_functional_ledger_certified": True,
             "complete_candidate13_smooth_tangent_cone_formula_certified": True,
             "five_stabilizer_pressure_and_eighteen_resonance_functionals_necessary_bounded": True,
-            "five_stabilizer_pressure_and_eighteen_resonance_functionals_sufficient_bounded": False,
+            "five_stabilizer_pressure_and_eighteen_resonance_functionals_sufficient_bounded": True,
             "five_stabilizer_functionals_necessary_and_sufficient_smooth": True,
             "same_fibre_nonzero_frequency_source_functionals_absent_after_shell_reduction": True,
             "pure_extra_face_is_origin": True,
-            "nonzero_mixed_bounded_point_exists": False,
-            "nonzero_mixed_smooth_point_exists": True,
+            "nonzero_mixed_bounded_point_certified": False,
+            "nonzero_mixed_smooth_point_certified": True,
             "real_algebraic_component_decomposition_classified": False,
             "all_orders_integrability": False,
             "causal_residual_observational_or_quantum_claim": False,
         },
-        "interpretation": "At candidate 13 the smooth second-order cone is exactly the five-moment-map zero set. Bounded correction has an additional circle-pressure condition beyond the eighteen finite-frequency resonance coefficients; the displayed mixed witness violates it. The full bounded sufficiency theorem therefore remains open.",
-        "next_gate": "classify the complete bounded zero-frequency homogeneous range on the full candidate-13 carrier, then decide whether the five moment maps, R_c and eighteen resonance coefficients are jointly sufficient",
-        "claim_boundary": "This is a complete smooth-secular cone theorem and a partial necessary bounded-functional ledger on the declared finite generic candidate-13 carrier. Completeness and sufficiency of the bounded ledger, the irreducible real component decomposition, exceptional/global inputs, all-orders integration, causal correction, residual, observational and quantum claims remain open or NO_CERTIFIED_MAP.",
+        "interpretation": "At candidate 13 the bounded cone is exactly the common zero of the five moment maps, circle pressure and eighteen finite-frequency resonance coefficients. The smooth cone retains only the five moment maps. The displayed mixed witness violates R_c, so it is smooth-extendible but not boundedly extendible.",
+        "next_gate": "decompose the real bounded zero variety or construct a nonzero bounded point; separately retain the same-background relative crosswalk without promoting all-orders or causal structure",
+        "claim_boundary": "This is a complete coefficientwise bounded and smooth tangent-cone theorem on the declared finite generic candidate-13 carrier. It does not decompose the real zero variety, certify a nonzero bounded point, include exceptional/global inputs, prove all-orders integration, causal correction, residual or observational descent, or make quantum claims.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),
             "generator_sha256": sha(Path(__file__)),

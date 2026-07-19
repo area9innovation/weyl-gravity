@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_finite_generic_bounded_zero_block.schema.json",
+  "title": "Finite generic Weyl-Maxwell bounded zero-block certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "scope",
+    "homogeneous_bounded_operator",
+    "source_pairings",
+    "complete_static_output_decomposition",
+    "bounded_zero_block_theorem",
+    "classification",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-finite-generic-bounded-zero-block-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_FINITE_GENERIC_BOUNDED_ZERO_BLOCK"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "REDUCED-MODE"}
+    },
+    "scope": {
+      "type": "object",
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]
+    },
+    "homogeneous_bounded_operator": {
+      "type": "object",
+      "required": ["zero_frequency_rank", "bounded_dynamical_mean_cokernel_basis", "finite_quasiperiodic_image_rule"],
+      "properties": {
+        "zero_frequency_rank": {"const": 0},
+        "bounded_dynamical_mean_cokernel_basis": {"minItems": 2, "maxItems": 2}
+      }
+    },
+    "source_pairings": {
+      "type": "object",
+      "required": ["circle_pressure", "wilson_acceleration"]
+    },
+    "complete_static_output_decomposition": {
+      "type": "object",
+      "required": ["L0_K0_constraint_cokernel", "L0_K0_bounded_dynamical_cokernel", "L0_K0_source_map", "L1_K0_axial_cokernel", "L1_K0_polar_cokernel", "L_at_least_2", "source_obstruction_map"]
+    },
+    "bounded_zero_block_theorem": {
+      "type": "object",
+      "required": ["necessary_and_sufficient_condition", "necessity", "sufficiency"]
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "homogeneous_bounded_dynamical_mean_cokernel_dimension_two",
+        "circle_pressure_source_functional_certified",
+        "wilson_acceleration_source_functional_identically_zero",
+        "five_stabilizers_plus_circle_pressure_complete_on_finite_generic_zero_block",
+        "bounded_zero_frequency_necessity_and_sufficiency_certified",
+        "generalized_zero_inputs_included",
+        "nonzero_frequency_resonance_ledger_classified",
+        "causal_residual_observational_or_quantum_claim"
+      ]
+    },
+    "claim_boundary": {"type": "string", "minLength": 40}
+  },
+  "additionalProperties": true
+}

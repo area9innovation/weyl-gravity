@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-candidate13-bounded-zero-frequency-decomposition-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "second_order_equation", "bounded_zero_frequency_decomposition", "necessity_and_sufficiency", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_CANDIDATE13_BOUNDED_ZERO_FREQUENCY_DECOMPOSITION"},
+    "bounded_zero_frequency_decomposition": {
+      "type": "object",
+      "properties": {
+        "complete_functional_basis": {"const": ["mu_H", "mu_Px", "mu_J1", "mu_J2", "mu_J3", "R_c"]}
+      },
+      "required": ["L0_K0_row_order", "quadratic_source_rows", "L0_equivalence", "L1_K0", "L_at_least_2", "complete_functional_basis", "direct_sum"]
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "complete_candidate13_bounded_zero_frequency_receiver_certified": {"const": true},
+        "five_stabilizers_plus_circle_pressure_necessary_and_sufficient": {"const": true},
+        "causal_residual_observational_or_quantum_claim": {"const": false}
+      },
+      "required": ["complete_candidate13_bounded_zero_frequency_receiver_certified", "five_stabilizers_plus_circle_pressure_necessary_and_sufficient", "additional_zero_frequency_Maxwell_functional_absent", "additional_zero_frequency_L1_functional_absent", "static_L_at_least_2_functional_absent", "nonzero_frequency_candidate13_functionals_classified_here", "all_orders_integrability", "causal_residual_observational_or_quantum_claim"]
+    }
+  },
+  "additionalProperties": true
+}

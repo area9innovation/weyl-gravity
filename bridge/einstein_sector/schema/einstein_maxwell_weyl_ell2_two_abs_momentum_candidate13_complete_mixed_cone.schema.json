@@ -17,7 +17,7 @@
     "tangent_cones": {
       "type": "object",
       "properties": {
-        "BOUNDED_OR_FINITE_QUASIPERIODIC": {"type": "object", "properties": {"status": {"const": "OPEN"}}, "required": ["status", "necessary_formula"]},
+        "BOUNDED_OR_FINITE_QUASIPERIODIC": {"type": "object", "properties": {"status": {"const": "CERTIFIED"}}, "required": ["status", "formula"]},
         "SMOOTH_EXPONENTIAL_POLYNOMIAL": {"type": "object", "properties": {"status": {"const": "CERTIFIED"}}, "required": ["status", "formula"]},
         "CAUSAL_RETARDED": {"type": "object", "properties": {"status": {"const": "NO_CERTIFIED_MAP"}}, "required": ["status", "formula"]}
       },

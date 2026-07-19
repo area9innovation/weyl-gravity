@@ -1,0 +1,41 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_FINITE_GENERIC_BOUNDED_ZERO_BLOCK_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Complete bounded zero-frequency receiver on arbitrary finite generic oscillatory Weyl-Maxwell inputs.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_finite_generic_bounded_zero_block.json": "e535423a968a562d64d0354343bbf6b9aa99d37e4bf6be37c2a542b0da97cc08",
+    "bridge/einstein_sector/einstein_maxwell_weyl_finite_generic_bounded_zero_block.py": "e174cc79f80983b285dbf727584ffe7f86adab8cf581ca287864900f1a0b081e",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_finite_generic_bounded_zero_block.schema.json": "4fca53bc167ebcb0da2bbff618f7e0dafedbae0164dcbca50be4c940123de0b9",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_finite_generic_bounded_zero_block.py": "de2419e6259d958e8d5c9d0ae88d9a727d6cd392bc2a0373f3aeb5a79dfa947c",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_finite_generic_bounded_zero_block.py": "639043986e06d28330ed815a58e73941f53ce87dbbe309fa86eedf3805382662",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-finite-generic-bounded-zero-block.md": "a9862e74dd84836d4e8e132dda33b63b97ef5632efd0a0fb7fecd8f01959707d"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 4,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_finite_generic_bounded_zero_block --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_finite_generic_bounded_zero_block",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_finite_generic_bounded_zero_block"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The theorem imports the homogeneous reduced operator, finite-generic smooth cokernel theorem, axial and polar L=1 zero blocks, and action-derived pressure identity by SHA-256."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The change classifies one correction-class-dependent zero-frequency receiver; generalized-zero inputs, nonzero-frequency resonances, causal maps, all-orders integration and release remain outside scope."
+    }
+  },
+  "claim_boundary": "The five stabilizer moments plus circle pressure are necessary and sufficient for bounded inversion of the zero-frequency source on finite generic oscillatory inputs. Generalized-zero inputs and nonzero-frequency resonances are not classified here."
+}

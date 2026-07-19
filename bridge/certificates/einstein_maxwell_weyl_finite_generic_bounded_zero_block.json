@@ -1,0 +1,141 @@
+{
+  "bounded_zero_block_theorem": {
+    "necessary_and_sufficient_condition": "mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_c=0",
+    "necessity": "the six displayed nonzero source pairings annihilate the bounded image",
+    "relative_phases_and_degenerate_polarizations": "included by the Hermitian polarization identity inside each equal-(ell,k,omega) shell block",
+    "sufficiency": "R_W vanishes identically; after the six conditions vanish every L=0,1 source is in the bounded static image and every L>=2 static block is invertible"
+  },
+  "claim_boundary": "This classifies bounded zero-frequency sources for finite generic oscillatory inputs only. It does not include generalized-zero inputs, solve any nonzero-frequency resonance locus, prove causal or all-orders extension, perform final residual descent, or make observational or quantum claims.",
+  "classification": {
+    "bounded_zero_frequency_necessity_and_sufficiency_certified": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "circle_pressure_source_functional_certified": true,
+    "five_stabilizers_plus_circle_pressure_complete_on_finite_generic_zero_block": true,
+    "generalized_zero_inputs_included": false,
+    "homogeneous_bounded_dynamical_mean_cokernel_dimension_two": true,
+    "nonzero_frequency_resonance_ledger_classified": false,
+    "wilson_acceleration_source_functional_identically_zero": true
+  },
+  "complete_static_output_decomposition": {
+    "L0_K0_bounded_dynamical_cokernel": [
+      "delta_D,0",
+      "delta_X,0"
+    ],
+    "L0_K0_constraint_cokernel": [
+      "zeta_H",
+      "zeta_Px"
+    ],
+    "L0_K0_source_map": [
+      "mu_H",
+      "mu_Px",
+      "R_c",
+      "R_W=0"
+    ],
+    "L1_K0_axial_cokernel": [
+      "zeta_J1",
+      "zeta_J2",
+      "zeta_J3"
+    ],
+    "L1_K0_polar_cokernel": [],
+    "L_at_least_2": "invertible after local gauge reduction on every static physical fibre",
+    "source_obstruction_map": "(mu_H,mu_Px,mu_J1,mu_J2,mu_J3,R_c)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G5_ARBITRARY_FINITE_GENERIC_OSCILLATORY_INPUTS",
+  "homogeneous_bounded_operator": {
+    "bounded_dynamical_mean_cokernel_basis": [
+      "delta_D,0",
+      "delta_X,0"
+    ],
+    "finite_quasiperiodic_image_rule": "a finite Fourier source is in the bounded image iff its zero-frequency D and X coefficients vanish",
+    "fourier_symbol": [
+      [
+        "omega**4",
+        "0"
+      ],
+      [
+        "0",
+        "omega**2"
+      ]
+    ],
+    "gauge_invariant_fields": [
+      "D=C-K",
+      "X=A_x"
+    ],
+    "nonzero_frequency_rank": 2,
+    "normalized_time_domain_operator": [
+      "D''''=s_D",
+      "-X''=s_X"
+    ],
+    "zero_frequency_rank": 0
+  },
+  "interpretation": "The pressure obstruction is not an isolated candidate-13 accident. For every finite generic wave packet it is the sole additional bounded zero-frequency source functional beyond the five stabilizer moment maps. The second formal homogeneous mean covector is present in coker L_bounded but its quadratic source vanishes identically by integrated Maxwell conservation.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "join this complete zero-block theorem with each carrier's exact nonzero-frequency resonance ledger, beginning with candidate 13",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_finite_generic_bounded_zero_block.py",
+    "generator_sha256": "e174cc79f80983b285dbf727584ffe7f86adab8cf581ca287864900f1a0b081e",
+    "inputs": {
+      "axial_ell1_zero": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+        "sha256": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164"
+      },
+      "finite_generic_smooth": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
+        "sha256": "dd1dec63c50d538a489205d48931720919ff9a43e23c52a45a9d1b80e5ff2513"
+      },
+      "homogeneous_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.json",
+        "sha256": "880857b4bb004bf1006cf4f7254194753cfd2e065ce915128a781ddd2cd162fc"
+      },
+      "polar_ell1_zero": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell1_k0_operator.json",
+        "sha256": "e8344bcfab80a3abe19bfe392f0f8576977fac1b1c34e4f20aee4aaeff74e77c"
+      },
+      "pressure_identity": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.json",
+        "sha256": "85ac9f723d7f7cb823ab4052ef3221820f0148295d697139cb95452773dc5530"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_FINITE_GENERIC_BOUNDED_ZERO_BLOCK",
+  "result_state": "FINITE_GENERIC_BOUNDED_ZERO_BLOCK_COKERNEL_AND_SOURCE_MAP_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-finite-generic-bounded-zero-block-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_finite_generic_bounded_zero_block.schema.json",
+  "schema_sha256": "4fca53bc167ebcb0da2bbff618f7e0dafedbae0164dcbca50be4c940123de0b9",
+  "scope": {
+    "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "arbitrary real finite sums of generic ell>=2 p- and q-primary oscillators; no generalized-zero input",
+    "charge_sector": "fixed magnetic U(1) bundle P_N",
+    "degree": 2,
+    "ell": "all generic input ell>=2 and every quadratically allowed static output L",
+    "k": "all allowed compact momenta and opposite-momentum zero-output pairs",
+    "m": "all input m and output M",
+    "omega": "positive shell frequencies with conjugates; this theorem classifies Omega=0 outputs",
+    "parity": "axial and polar",
+    "theory": "Weyl-Maxwell target"
+  },
+  "source_pairings": {
+    "circle_pressure": {
+      "derivation": "differentiate the action Hessian with respect to constant circle strain; polarization extends the primary identity to each degenerate shell block",
+      "functional": "R_c(u)=(1/2) sum_j k_j^2 h_j",
+      "status": "CERTIFIED"
+    },
+    "wilson_acceleration": {
+      "exact_identity": "integral_Sigma sqrt(-g) E_Maxwell^x = d_t integral_Sigma sqrt(-g) F^{t x}",
+      "functional": "R_W(u)=zero-frequency coefficient of the homogeneous Maxwell-x source",
+      "quadratic_consequence": "the second-order source is a time derivative of a finite Fourier bilinear, so its zero-frequency coefficient vanishes identically",
+      "status": "CERTIFIED",
+      "value_on_complete_carrier": "0"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_finite_generic_bounded_zero_block --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_finite_generic_bounded_zero_block",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_finite_generic_bounded_zero_block"
+  ]
+}

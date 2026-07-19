@@ -19,14 +19,15 @@ R_c = (1/2) sum k_j^2 h_j
     in the bounded homogeneous pressure receiver.
 ```
 
-Vanishing of all 24 components is necessary for a bounded derived source;
-sufficiency remains open pending the complete bounded homogeneous range.  The
+Vanishing of all 24 components is necessary and sufficient for a bounded
+derived source by the finite-generic bounded zero-block theorem.  The
 smooth exponential-polynomial derived source is exactly the common zero of
 the five stabilizer components because both finite-frequency resonances and
 the pressure functional admit secular inverses.  The displayed mixed point belongs to
 the smooth pullback but is bounded-obstructed because `R_c<0`.
 
-This solves the quadratic extension equation on the typed smooth reduced-mode domain.
+This solves the quadratic extension equation on the typed bounded and smooth
+reduced-mode zero loci.
 It does not construct a support-local BV subcomplex, repair the full-domain
 `f2`, or authorize arity three.  Causal, cross-background, observable,
 particle, and quantum maps remain fail-closed.

@@ -16,11 +16,12 @@ octic equations.  The exact same-fibre census removes all other nonzero
 channels, and the isolated-candidate theorem excludes every other cross-fibre
 collision at this circumference.
 
-Therefore the currently certified bounded statement is the necessary inclusion
+The finite-generic bounded zero-block theorem proves that these exhaust the
+zero-frequency source map on this oscillatory carrier.  Therefore
 
 ```text
-Z2_bounded subset {u : mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_c=0,
-                       R_13,1=...=R_13,18=0}.
+Z2_bounded = {u : mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_c=0,
+                  R_13,1=...=R_13,18=0}.
 ```
 
 In the smooth exponential-polynomial correction class, the finite-frequency
@@ -28,8 +29,8 @@ resonances and pressure row have secular inverses and the cone is exactly the
 five-moment-map zero set.  The declared mixed witness lies in the smooth cone
 but is bounded-obstructed because `R_c<0`.
 
-This is a complete smooth theorem and a partial known necessary bounded
-ledger, not completeness or sufficiency of the bounded cone or an irreducible decomposition of the real moment-map
-intersection.  Exceptional/global inputs, all-orders
+This is a complete coefficientwise bounded and smooth theorem, but not an
+irreducible decomposition of either real zero variety or a certificate of a
+nonzero bounded point.  Exceptional/global inputs, all-orders
 integration, causal correction, residual observables, and quantum claims are
 excluded.
