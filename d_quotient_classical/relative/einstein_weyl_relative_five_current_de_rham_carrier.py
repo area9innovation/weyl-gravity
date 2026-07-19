@@ -210,7 +210,13 @@ def embedding(rows: list[dict[str, Any]]) -> dict[str, Any]:
         records.append({"old_row": old["index"], "old_row_id": old["row_id"], "new_row": index[(generator, chain, p, component)], "coefficient": coefficient})
     if len(records) != 50 or len({record["new_row"] for record in records}) != 50:
         raise AssertionError("current-cone embedding is not injective")
-    return {"embedded_rows": 50, "records": records}
+    return {
+        "embedded_rows": 50,
+        "row_layout_injective": True,
+        "old_unary_subcomplex_preserved": False,
+        "reason": "the new cotangent de Rham chain continues the formerly terminal rho_current rows into the added dual-two-form rows",
+        "records": records,
+    }
 
 
 def exact_data() -> dict[str, Any]:
@@ -234,7 +240,7 @@ def _generated(data: dict[str, Any]) -> dict[str, Any]:
         "rows": data["rows"],
         "odd_pairing": data["pairing"],
         "unary_terms": data["unary_terms"],
-        "current_cone_embedding": data["embedding"],
+        "current_cone_row_embedding": data["embedding"],
     }
 
 
@@ -276,7 +282,7 @@ def build() -> dict[str, Any]:
             "support_local": True,
             "uses_mode_projector": False,
             "uses_differential_inverse": False,
-            "existing_current_cone_embedding": {"embedded_rows": 50, "added_rows": 110, "injective": True},
+            "existing_current_cone_row_embedding": {"embedded_rows": 50, "added_rows": 110, "injective": True, "unary_subcomplex": False},
         },
         "symbol_certificate": data["symbol"],
         "topological_equivalence": {
@@ -298,7 +304,8 @@ def build() -> dict[str, Any]:
             "unary_square_zero_exact": True,
             "unary_cyclicity_exact": True,
             "nonzero_symbol_koszul_complex_exact": True,
-            "existing_five_current_cone_embeds": True,
+            "existing_five_current_cone_row_layout_embeds": True,
+            "existing_five_current_cone_unary_subcomplex_embeds": False,
             "five_charge_zero_locus_presented_without_projectors": True,
             "full_augmented_q2_identity_certified": False,
             "causal_green_homotopy_certified": False,
@@ -317,7 +324,7 @@ def build() -> dict[str, Any]:
                 "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-five-current-de-rham-carrier-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1.json",
             ],
         },
-        "claim_boundary": "This LOCAL-ALGEBRAIC theorem selects a 160-row support-local cyclic de Rham/cotangent carrier whose two-form potential equation represents vanishing of the five global stabilizer charges without Fourier or harmonic projectors. It certifies the unary complex, symbol exactness away from the zero covector, the embedding of the existing 50-row current cone and the ordinary de Rham topological criterion. It does not yet extend or replay the full q2 operations, construct a relative f2, impose bounded quasiperiodicity, solve the eighteen candidate-13 resonance rows, construct Green homotopies, or imply arity-three, observable, particle or quantum claims.",
+        "claim_boundary": "This LOCAL-ALGEBRAIC theorem selects a 160-row support-local cyclic de Rham/cotangent carrier whose two-form potential equation represents vanishing of the five global stabilizer charges without Fourier or harmonic projectors. It certifies the unary complex, symbol exactness away from the zero covector, the injective row-layout embedding of the existing 50 current-cone rows and the ordinary de Rham topological criterion. The old 50-row unary complex is not a subcomplex because the new cotangent resolution continues its terminal dual-current rows. The theorem does not yet extend or replay the full q2 operations, construct a relative f2, impose bounded quasiperiodicity, solve the eighteen candidate-13 resonance rows, construct Green homotopies, or imply arity-three, observable, particle or quantum claims.",
     }
 
 
@@ -343,8 +350,10 @@ Omega0[-2] -> Omega1[-1] -> Omega2[0] -> Omega3[1] -> Omega4[2]
 
 and its cyclic cotangent chain.  The five-copy carrier has 160 rows and degree
 ranks `(5,25,50,50,25,5)`.  The previously certified 50 current/divergence
-and dual rows embed injectively; 110 potential, reducibility and cotangent
-rows are new.  Every unary map is a finite-order exterior derivative, so the
+and dual row labels embed injectively; 110 potential, reducibility and
+cotangent rows are new.  This is a row-layout embedding, not a unary-subcomplex
+embedding: the new cotangent chain continues the old terminal dual-current
+rows.  Every unary map is a finite-order exterior derivative, so the
 carrier is support-local and uses no spectral projector or differential
 inverse.
 

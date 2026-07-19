@@ -15,10 +15,11 @@
       25,
       5
     ],
-    "existing_current_cone_embedding": {
+    "existing_current_cone_row_embedding": {
       "added_rows": 110,
       "embedded_rows": 50,
-      "injective": true
+      "injective": true,
+      "unary_subcomplex": false
     },
     "per_generator_cotangent_chain": "Omega^0[-1] -> Omega^1[0] -> Omega^2[1] -> Omega^3[2] -> Omega^4[3]",
     "per_generator_primal_chain": "Omega^0[-2] -> Omega^1[-1] -> Omega^2[0] -> Omega^3[1] -> Omega^4[2]",
@@ -28,12 +29,13 @@
     "uses_differential_inverse": false,
     "uses_mode_projector": false
   },
-  "claim_boundary": "This LOCAL-ALGEBRAIC theorem selects a 160-row support-local cyclic de Rham/cotangent carrier whose two-form potential equation represents vanishing of the five global stabilizer charges without Fourier or harmonic projectors. It certifies the unary complex, symbol exactness away from the zero covector, the embedding of the existing 50-row current cone and the ordinary de Rham topological criterion. It does not yet extend or replay the full q2 operations, construct a relative f2, impose bounded quasiperiodicity, solve the eighteen candidate-13 resonance rows, construct Green homotopies, or imply arity-three, observable, particle or quantum claims.",
+  "claim_boundary": "This LOCAL-ALGEBRAIC theorem selects a 160-row support-local cyclic de Rham/cotangent carrier whose two-form potential equation represents vanishing of the five global stabilizer charges without Fourier or harmonic projectors. It certifies the unary complex, symbol exactness away from the zero covector, the injective row-layout embedding of the existing 50 current-cone rows and the ordinary de Rham topological criterion. The old 50-row unary complex is not a subcomplex because the new cotangent resolution continues its terminal dual-current rows. The theorem does not yet extend or replay the full q2 operations, construct a relative f2, impose bounded quasiperiodicity, solve the eighteen candidate-13 resonance rows, construct Green homotopies, or imply arity-three, observable, particle or quantum claims.",
   "classification": {
     "arity_three_authorized": false,
     "candidate13_causal_crosswalk_certified": false,
     "causal_green_homotopy_certified": false,
-    "existing_five_current_cone_embeds": true,
+    "existing_five_current_cone_row_layout_embeds": true,
+    "existing_five_current_cone_unary_subcomplex_embeds": false,
     "five_charge_zero_locus_presented_without_projectors": true,
     "full_augmented_q2_identity_certified": false,
     "nonzero_symbol_koszul_complex_exact": true,
@@ -75,16 +77,16 @@
   ],
   "generated_layout": {
     "path": "d_quotient_classical/generated/einstein_weyl_relative_five_current_de_rham_carrier_v1/layout.json",
-    "sha256": "6c1dd81234a2b5f20fc52b795b6f04e843aee33808c6167541722ab3871bf6dd"
+    "sha256": "a9232ff409114a4c96c12e622c9f817be0541771993f07d079adcab1ce09b002"
   },
   "lifecycle_status": "CLASSIFIED",
   "next_gate": "EXTEND_THE_ACTION_DERIVED_CURRENT_Q2_TO_THE_160_ROW_CARRIER_AND_VERIFY_THE_COMPLETE_ARITY_TWO_IDENTITY",
   "provenance": {
     "source_manifest": {
-      "d_quotient_classical/relative/einstein_weyl_relative_five_current_de_rham_carrier.py": "dc630e930826fb9ad67df5ddc5556196970a46c1d3a9889de690b484536474e2",
-      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_five_current_de_rham_carrier.py": "1ad5287e983d01338d93b1449a831f1bc05f815417716d0a46632a2e88033201",
-      "d_quotient_classical/relative/verify_einstein_weyl_relative_five_current_de_rham_carrier.py": "0c7fa19de4a1837650b60218e9564672c18b8ba6da7ce5d8c5136d2fe2eb5204",
-      "d_quotient_classical/schema/relative-five-current-de-rham-carrier-v1.schema.json": "519a39fdc7329f85c1e419551b15f39fccd3c3271626082dd9b4c39d634bc9b8"
+      "d_quotient_classical/relative/einstein_weyl_relative_five_current_de_rham_carrier.py": "d2cea6b44d5914c7eea05da191f62ed6c8c2e386c1ca8dc8e106f0d4160de448",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_five_current_de_rham_carrier.py": "5c29c6997d19597e3a4a49dcbe37039f9e56295a639312c37821186f4ccb50c5",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_five_current_de_rham_carrier.py": "66dde2a13dae02aaa8de66bfd2d35a6ed89e2dd1256dd3d2da011c5eeb20e8dc",
+      "d_quotient_classical/schema/relative-five-current-de-rham-carrier-v1.schema.json": "f536ef0eaf6ce6426217a21b362ad44f30c0ac36db2d195ba4c055fd00d3ea2c"
     },
     "verification_commands": [
       "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_five_current_de_rham_carrier --check --guards",

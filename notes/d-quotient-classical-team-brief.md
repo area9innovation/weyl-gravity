@@ -2342,7 +2342,9 @@ The first admissible larger carrier is now selected at unary level by
 stabilizer it completes the old current/divergence rows to the shifted de Rham
 chain and its cyclic cotangent chain.  The five-copy complex has 160 rows and
 degree ranks `(5,25,50,50,25,5)`; all 320 unary incidences, 160 odd-pairing
-terms and the 50-row legacy embedding are portable and exact.  Its middle
+terms and the injective 50-row legacy row-layout embedding are portable and
+exact.  The latter is deliberately not a unary-subcomplex embedding, because
+the cotangent resolution continues the old terminal dual-current rows.  Its middle
 equation is `d_H B_X+j_X/2=0`.  Since the product cylinder has one-dimensional
 third de Rham cohomology, this is a local derived presentation of the five
 zero-charge conditions without a Fourier projector.  It is intentionally

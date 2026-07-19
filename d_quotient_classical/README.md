@@ -748,7 +748,9 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
 - Projector-free five-charge carrier: five copies of the shifted de Rham
   current resolution and its cyclic cotangent completion give a 160-row
   support-local carrier with degree ranks `(5,25,50,50,25,5)`.  The existing
-  50 current/divergence rows embed exactly.  The equation `d_H B_X+j_X/2=0`
+  50 current/divergence row labels embed injectively, but not as a unary
+  subcomplex: the cotangent resolution continues the old terminal rows.  The
+  equation `d_H B_X+j_X/2=0`
   presents vanishing of each closed-slice stabilizer charge without a global
   projector because `H^3(R x S1 x S2)=R`.  The complete augmented `q2`
   identity and causal Green homotopy are the next gates; the construction does

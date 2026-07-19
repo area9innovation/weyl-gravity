@@ -51,16 +51,19 @@ def verify() -> dict[str, object]:
     unary = layout["unary_terms"]
     if len(unary) != 320 or any(term["derivative"] not in producer.COORDINATES for term in unary):
         raise AssertionError("portable unary incidence is incomplete")
-    records = layout["current_cone_embedding"]["records"]
+    row_embedding = layout["current_cone_row_embedding"]
+    records = row_embedding["records"]
     if len(records) != 50 or len({record["new_row"] for record in records}) != 50:
         raise AssertionError("old current cone did not embed")
     expected_hodge = {"current_H_t": 1, "current_H_x": -1, "current_H_theta": 1, "current_H_phi": -1}
     actual_hodge = {record["old_row_id"]: record["coefficient"] for record in records if record["old_row_id"] in expected_hodge}
     if actual_hodge != expected_hodge:
         raise AssertionError("vector-density to three-form Hodge signs changed")
+    if row_embedding["old_unary_subcomplex_preserved"] is not False:
+        raise AssertionError("row embedding was mislabeled as a unary subcomplex")
     if value["classification"]["full_augmented_q2_identity_certified"]:
         raise AssertionError("q2 was promoted by the unary carrier")
-    return {"status": "PASS", "rows": 160, "embedded_rows": 50, "generic_ranks": ranks}
+    return {"status": "PASS", "rows": 160, "embedded_row_labels": 50, "old_unary_subcomplex": False, "generic_ranks": ranks}
 
 
 if __name__ == "__main__":

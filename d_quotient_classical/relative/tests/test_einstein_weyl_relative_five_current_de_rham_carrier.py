@@ -21,9 +21,11 @@ class FiveCurrentDeRhamCarrierTests(unittest.TestCase):
         self.assertTrue(flags["unary_cyclicity_exact"])
         self.assertEqual(self.value["carrier"]["row_count"], 160)
 
-    def test_old_current_cone_embeds(self) -> None:
-        self.assertEqual(self.value["carrier"]["existing_current_cone_embedding"]["embedded_rows"], 50)
-        self.assertEqual(self.value["carrier"]["existing_current_cone_embedding"]["added_rows"], 110)
+    def test_old_current_cone_row_layout_embeds_but_not_its_unary_complex(self) -> None:
+        embedding = self.value["carrier"]["existing_current_cone_row_embedding"]
+        self.assertEqual(embedding["embedded_rows"], 50)
+        self.assertEqual(embedding["added_rows"], 110)
+        self.assertFalse(embedding["unary_subcomplex"])
 
     def test_portable_layout_contains_unary_and_pairing(self) -> None:
         layout = carrier._generated(carrier.exact_data())

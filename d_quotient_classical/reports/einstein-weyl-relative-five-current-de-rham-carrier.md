@@ -9,8 +9,10 @@ Omega0[-2] -> Omega1[-1] -> Omega2[0] -> Omega3[1] -> Omega4[2]
 
 and its cyclic cotangent chain.  The five-copy carrier has 160 rows and degree
 ranks `(5,25,50,50,25,5)`.  The previously certified 50 current/divergence
-and dual rows embed injectively; 110 potential, reducibility and cotangent
-rows are new.  Every unary map is a finite-order exterior derivative, so the
+and dual row labels embed injectively; 110 potential, reducibility and
+cotangent rows are new.  This is a row-layout embedding, not a unary-subcomplex
+embedding: the new cotangent chain continues the old terminal dual-current
+rows.  Every unary map is a finite-order exterior derivative, so the
 carrier is support-local and uses no spectral projector or differential
 inverse.
 
