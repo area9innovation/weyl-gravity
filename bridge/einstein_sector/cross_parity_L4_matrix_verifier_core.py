@@ -48,12 +48,41 @@ def axial_basis(branch: str, momentum: sp.Expr, frequency: sp.Expr) -> list[sp.M
 
 
 def polar_basis(branch: str, momentum: sp.Expr, frequency: sp.Expr) -> list[sp.Matrix]:
+    if branch == "p_extra":
+        return [
+            sp.Matrix(
+                [
+                    1,
+                    -(3 * momentum**2 + 8) / (3 * momentum * frequency),
+                    1,
+                    0,
+                ]
+            ),
+            sp.Matrix(
+                [
+                    sp.Rational(4, 3),
+                    -2 * (momentum**2 + 6) / (3 * momentum * frequency),
+                    0,
+                    1,
+                ]
+            ),
+        ]
     mass = branch_mass(branch)
-    if branch != "p_extra":
-        gap = mass - 6
-        return [sp.Matrix([2 * momentum**2 * gap + 12, -2 * momentum * frequency * gap, 2 * (momentum**2 + 6) * gap + 12, 6])]
-    denominator, reduced = 6 * momentum**2 + 16, 3 * momentum**2 + 16
-    return [sp.Matrix([4 * (3 * momentum**2 - 2), 0, -12 * (momentum**2 + 6), 3 * denominator]), sp.Matrix([-2 * momentum * reduced, frequency * denominator, -2 * momentum * reduced, 0])]
+    maxwell = sp.Integer(6)
+    sphere_trace = -12 * maxwell / (mass - 6)
+    reconstruction = sphere_trace - 2 * maxwell
+    common = -(frequency**2 + momentum**2) * reconstruction / mass
+    mixed = 2 * momentum * frequency * reconstruction / mass
+    return [
+        sp.Matrix(
+            [
+                common + sphere_trace,
+                mixed,
+                common - sphere_trace,
+                maxwell,
+            ]
+        ).applyfunc(sp.factor)
+    ]
 
 
 def target_adjoints(branch: str, momentum: sp.Expr, frequency: sp.Expr) -> list[sp.Matrix]:
@@ -127,3 +156,30 @@ def verify_matrix(mode: str) -> None:
                 assert fixture["bounded_status"] == ("OBSTRUCTED" if has_witness else "OPEN"); obstructed += has_witness
     summary = value["matrix_summary"]
     assert (fixtures, coefficients, zeros, obstructed) == (summary["ordered_input_basis_fixtures"], summary["target_adjoint_coefficients"], summary["zero_target_adjoint_coefficients"], summary["basis_fixtures_with_nonzero_cokernel_vector"])
+    assert (fixtures, coefficients, zeros, obstructed) == (20, 27, 0, 20)
+    assert summary["nonzero_target_adjoint_coefficients"] == 27
+    classification = value["classification"]
+    progress = value["workload_progress"]
+    assert classification["all_twenty_basis_fixtures_bounded_obstructed"]
+    assert not classification["arbitrary_cross_parity_linear_combinations_classified"]
+    assert not classification["causal_or_quantum_claim"]
+    assert progress["remaining_nonaxisymmetric_L1_L3_coefficients"] == 56
+    if mode == "axial_polar":
+        assert classification["complete_ordered_axial_polar_L4_basis_matrix_classified"]
+        assert not classification["reverse_input_order_matrix_classified"]
+        assert not classification["all_axisymmetric_L4_coefficients_classified"]
+        assert progress["resolved_axisymmetric_L4_coefficients"] == 81
+        assert progress["remaining_axisymmetric_L4_coefficients"] == 27
+    else:
+        assert classification["complete_ordered_polar_axial_L4_basis_matrix_classified"]
+        assert classification["all_axisymmetric_L4_basis_coefficients_classified"]
+        assert not classification["complete_two_fibre_tangent_cone_classified"]
+        assert progress["resolved_axisymmetric_L4_coefficients"] == 108
+        assert progress["remaining_axisymmetric_L4_coefficients"] == 0
+        assert value["graded_symmetry_audit"] == {
+            "axial_then_polar_PBW_terms": 832,
+            "both_orders_in_shared_slice": True,
+            "name_based_mode_identification_used": False,
+            "polar_then_axial_PBW_terms": 832,
+            "reverse_matrix_obtained_by_explicit_role_substitution": True,
+        }
