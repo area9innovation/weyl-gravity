@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl/product-s2-s2-ghost-schur-weighted-rows-preflight-v1.schema.json",
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lower", "upper"],
+      "properties": {
+        "lower": {"type": "string", "pattern": "^-?[0-9]+\\.[0-9]+$"},
+        "upper": {"type": "string", "pattern": "^-?[0-9]+\\.[0-9]+$"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_state",
+    "dependency_tags", "classical_commit", "scope",
+    "exact_subtraction_identity", "exact_pole_replay",
+    "heat_subtraction_settings", "base_validation_cushion",
+    "trace_class_remainders", "numerical_candidate_intervals",
+    "claim_flags", "dependencies", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-product-s2-s2-ghost-schur-weighted-rows-preflight-v1"},
+    "result_id": {"const": "PRODUCT_S2_S2_GHOST_SCHUR_WEIGHTED_ROWS_PREFLIGHT"},
+    "result_state": {"const": "PRODUCT_WEIGHTED_ROWS_NUMERICALLY_STABILIZED_RIGOROUS_HEAT_REMAINDER_OPEN"},
+    "lifecycle_state": {"const": "NUMERICAL_PRECERTIFICATE_NOT_COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["background", "weight", "exceptional_policy"],
+      "properties": {
+        "background": {"const": "S2(1) x S2(2)"},
+        "weight": {"type": "string", "minLength": 20},
+        "exceptional_policy": {"type": "string", "minLength": 40}
+      }
+    },
+    "exact_subtraction_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["K1", "K2", "K3", "R_K_trace_class_remainder", "R_K2_meromorphic_block", "R_K2_trace_class_remainder", "exceptional_subtractions"],
+      "properties": {
+        "K1": {"type": "string"},
+        "K2": {"type": "string"},
+        "K3": {"type": "string"},
+        "R_K_trace_class_remainder": {"type": "string"},
+        "R_K2_meromorphic_block": {"type": "string"},
+        "R_K2_trace_class_remainder": {"type": "string"},
+        "exceptional_subtractions": {"type": "string"}
+      }
+    },
+    "exact_pole_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Res_R_K", "half_Wres_K", "Res_R_K2", "half_Wres_K2"],
+      "properties": {
+        "Res_R_K": {"$ref": "#/$defs/rational"},
+        "half_Wres_K": {"$ref": "#/$defs/rational"},
+        "Res_R_K2": {"$ref": "#/$defs/rational"},
+        "half_Wres_K2": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "heat_subtraction_settings": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["split", "heat_max_power", "base_R_K", "base_FP_R_K2", "residue_R_K", "residue_R_K2"],
+        "properties": {
+          "split": {"$ref": "#/$defs/rational"},
+          "heat_max_power": {"type": "integer", "minimum": 1},
+          "base_R_K": {"type": "string"},
+          "base_FP_R_K2": {"type": "string"},
+          "residue_R_K": {"$ref": "#/$defs/rational"},
+          "residue_R_K2": {"$ref": "#/$defs/rational"}
+        }
+      }
+    },
+    "base_validation_cushion": {"type": "string", "minLength": 30},
+    "trace_class_remainders": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rectangular_cutoff", "R_K_partial", "FP_R_K2_partial", "bounds"],
+      "properties": {
+        "rectangular_cutoff": {"const": 2400},
+        "R_K_partial": {"type": "string"},
+        "FP_R_K2_partial": {"type": "string"},
+        "bounds": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["binary64_unit_roundoff", "summand_count", "ordinary_summation_gamma", "per_term_relative_error_bound", "exact_sum_envelope", "derived_rounding_bound", "declared_rounding_cushion", "power_four_lattice_tail", "R_K_exterior_tail_bound", "FP_R_K2_exterior_tail_bound"],
+          "properties": {
+            "binary64_unit_roundoff": {"$ref": "#/$defs/rational"},
+            "summand_count": {"type": "integer", "minimum": 1},
+            "ordinary_summation_gamma": {"$ref": "#/$defs/rational"},
+            "per_term_relative_error_bound": {"$ref": "#/$defs/rational"},
+            "exact_sum_envelope": {"$ref": "#/$defs/rational"},
+            "derived_rounding_bound": {"$ref": "#/$defs/rational"},
+            "declared_rounding_cushion": {"$ref": "#/$defs/rational"},
+            "power_four_lattice_tail": {"$ref": "#/$defs/rational"},
+            "R_K_exterior_tail_bound": {"$ref": "#/$defs/rational"},
+            "FP_R_K2_exterior_tail_bound": {"$ref": "#/$defs/rational"}
+          }
+        }
+      }
+    },
+    "numerical_candidate_intervals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["R_Delta_K", "FP_R_Delta_K2", "low_order_split_R_K_minus_half_R_K2", "status"],
+      "properties": {
+        "R_Delta_K": {"$ref": "#/$defs/interval"},
+        "FP_R_Delta_K2": {"$ref": "#/$defs/interval"},
+        "low_order_split_R_K_minus_half_R_K2": {"$ref": "#/$defs/interval"},
+        "status": {"const": "NUMERICAL_VALIDATION_INTERVAL_NOT_RIGOROUS_HEAT_REMAINDER_ENCLOSURE"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["PRODUCT_WEIGHTED_R_K_NUMERICAL_CANDIDATE", "PRODUCT_FINITE_PART_R_K2_NUMERICAL_CANDIDATE", "PRODUCT_WEIGHTED_TRACE_POLES_REPLAYED", "PRODUCT_TRACE_CLASS_REMAINDER_TAILS_RIGOROUSLY_BOUNDED", "PRODUCT_HEAT_EULER_MACLAURIN_REMAINDER_RIGOROUSLY_BOUNDED", "PRODUCT_WEIGHTED_R_K_COMPUTED", "PRODUCT_FINITE_PART_R_K2_COMPUTED", "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "PRODUCT_WEIGHTED_R_K_NUMERICAL_CANDIDATE": {"const": true},
+        "PRODUCT_FINITE_PART_R_K2_NUMERICAL_CANDIDATE": {"const": true},
+        "PRODUCT_WEIGHTED_TRACE_POLES_REPLAYED": {"const": true},
+        "PRODUCT_TRACE_CLASS_REMAINDER_TAILS_RIGOROUSLY_BOUNDED": {"const": true},
+        "PRODUCT_HEAT_EULER_MACLAURIN_REMAINDER_RIGOROUSLY_BOUNDED": {"const": false},
+        "PRODUCT_WEIGHTED_R_K_COMPUTED": {"const": false},
+        "PRODUCT_FINITE_PART_R_K2_COMPUTED": {"const": false},
+        "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["product_spectrum", "product_det3", "weighted_trace_scale"],
+      "properties": {
+        "product_spectrum": {"$ref": "#/$defs/reference"},
+        "product_det3": {"$ref": "#/$defs/reference"},
+        "weighted_trace_scale": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 20},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  }
+}

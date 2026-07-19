@@ -1,0 +1,187 @@
+{
+  "base_validation_cushion": "1e-12 (empirical setting-stability allowance; not an Euler--Maclaurin remainder theorem)",
+  "claim_boundary": "This EUCLIDEAN-SPECTRAL preflight derives the exact meromorphic/trace-class split for the two S2(1) x S2(2) Schur weighted rows, reproduces both Wodzicki pole residues, rigorously bounds the direct trace-class exterior tails and produces stable numerical candidates for R_Delta(K) and FP R_Delta(K^2). The displayed intervals are validation intervals, not rigorous coefficient enclosures, because the small-t Euler--Maclaurin heat remainder is not yet uniformly bounded. Accordingly both coefficient-computed flags remain false. This is not the full coupled ghost determinant, a generic-background form factor, Gamma1/Q1, a Lorentzian QME, state, particle, positivity, scattering or unitarity theorem.",
+  "claim_flags": {
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "PRODUCT_FINITE_PART_R_K2_COMPUTED": false,
+    "PRODUCT_FINITE_PART_R_K2_NUMERICAL_CANDIDATE": true,
+    "PRODUCT_HEAT_EULER_MACLAURIN_REMAINDER_RIGOROUSLY_BOUNDED": false,
+    "PRODUCT_TRACE_CLASS_REMAINDER_TAILS_RIGOROUSLY_BOUNDED": true,
+    "PRODUCT_WEIGHTED_R_K_COMPUTED": false,
+    "PRODUCT_WEIGHTED_R_K_NUMERICAL_CANDIDATE": true,
+    "PRODUCT_WEIGHTED_TRACE_POLES_REPLAYED": true
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "dependencies": {
+    "product_det3": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_DET3_ENCLOSURE.json",
+      "result_id": "PRODUCT_S2_S2_GHOST_SCHUR_DET3_ENCLOSURE",
+      "sha256": "0aaf843e0eb7d771b7ac29a1ec5ef4d7c0d0a79797bdc09c3ee049c9872fa094"
+    },
+    "product_spectrum": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_SPECTRAL_CARRIER.json",
+      "result_id": "PRODUCT_S2_S2_GHOST_SCHUR_SPECTRAL_CARRIER",
+      "sha256": "e7337ea8bd7fa3f06b6d0d965d0da4e64ce980ff987465755cc4187e2d4cfeee"
+    },
+    "weighted_trace_scale": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE",
+      "sha256": "8073ad3800d4ad9662232769efeb45971e49b5eaf1f4b933714245d85771bd1d"
+    }
+  },
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_pole_replay": {
+    "Res_R_K": {
+      "denominator": 9,
+      "numerator": 19
+    },
+    "Res_R_K2": {
+      "denominator": 27,
+      "numerator": 14
+    },
+    "half_Wres_K": {
+      "denominator": 9,
+      "numerator": 19
+    },
+    "half_Wres_K2": {
+      "denominator": 27,
+      "numerator": 14
+    }
+  },
+  "exact_subtraction_identity": {
+    "K1": "2(a+2b)/(3 lambda^2)",
+    "K2": "4(a+4b)/(3 lambda^3)",
+    "K3": "8(a+8b)/(3 lambda^4)",
+    "R_K2_meromorphic_block": "K1^2+2 K1 K2",
+    "R_K2_trace_class_remainder": "K^2-K1^2-2 K1 K2",
+    "R_K_trace_class_remainder": "K-K1-K2-K3",
+    "exceptional_subtractions": "6 from K1+K2+K3 and 2 from K1^2+2K1K2"
+  },
+  "heat_subtraction_settings": [
+    {
+      "base_FP_R_K2": "0.151772219875032936357898147750666030596133729248",
+      "base_R_K": "-3.69869580157483129727682331321849803977527829117",
+      "heat_max_power": 10,
+      "residue_R_K": {
+        "denominator": 9,
+        "numerator": 19
+      },
+      "residue_R_K2": {
+        "denominator": 27,
+        "numerator": 14
+      },
+      "split": {
+        "denominator": 20,
+        "numerator": 1
+      }
+    },
+    {
+      "base_FP_R_K2": "0.151772219875032935719286650673798048839763728484",
+      "base_R_K": "-3.69869580157483131820951448810599725170134637875",
+      "heat_max_power": 12,
+      "residue_R_K": {
+        "denominator": 9,
+        "numerator": 19
+      },
+      "residue_R_K2": {
+        "denominator": 27,
+        "numerator": 14
+      },
+      "split": {
+        "denominator": 16,
+        "numerator": 1
+      }
+    },
+    {
+      "base_FP_R_K2": "0.151772219875032937649535214917099938697892513601",
+      "base_R_K": "-3.69869580157483136381809321211762415218307919086",
+      "heat_max_power": 10,
+      "residue_R_K": {
+        "denominator": 9,
+        "numerator": 19
+      },
+      "residue_R_K2": {
+        "denominator": 27,
+        "numerator": 14
+      },
+      "split": {
+        "denominator": 25,
+        "numerator": 1
+      }
+    }
+  ],
+  "lifecycle_state": "NUMERICAL_PRECERTIFICATE_NOT_COEFFICIENT_COMPUTED",
+  "next_gate": "PROVE_A_UNIFORM_EULER_MACLAURIN_REMAINDER_FOR_THE_PRODUCT_HEAT_MOMENTS_THEN_PROMOTE_THE_TWO_WEIGHTED_ROWS",
+  "numerical_candidate_intervals": {
+    "FP_R_Delta_K2": {
+      "lower": "1.9669718509790375864209171037872645500757256425465",
+      "upper": "1.9669718549813779883435088149653650118042544276635"
+    },
+    "R_Delta_K": {
+      "lower": "-2.2406602697343157341575585978861867074961895424225",
+      "upper": "-2.2406602657320310709654306347498633839623886427325"
+    },
+    "low_order_split_R_K_minus_half_R_K2": {
+      "lower": "-3.2241461972250047283293130053688692133983167562542",
+      "upper": "-3.2241461912215498641758891866434956590002514640058"
+    },
+    "status": "NUMERICAL_VALIDATION_INTERVAL_NOT_RIGOROUS_HEAT_REMAINDER_ENCLOSURE"
+  },
+  "result_id": "PRODUCT_S2_S2_GHOST_SCHUR_WEIGHTED_ROWS_PREFLIGHT",
+  "result_state": "PRODUCT_WEIGHTED_ROWS_NUMERICALLY_STABILIZED_RIGOROUS_HEAT_REMAINDER_OPEN",
+  "schema": "quantum-weyl-product-s2-s2-ghost-schur-weighted-rows-preflight-v1",
+  "scope": {
+    "background": "S2(1) x S2(2)",
+    "exceptional_policy": "subtract (0,0),(1,0),(0,1) from every low-order product-zeta block; retain coupled factor 3^-6 separately",
+    "weight": "Q=Delta_0 on the regular complement at mu_0=1"
+  },
+  "trace_class_remainders": {
+    "FP_R_K2_partial": "1.8151996331050047",
+    "R_K_partial": "1.4580355338415156",
+    "bounds": {
+      "FP_R_K2_exterior_tail_bound": {
+        "denominator": 234462433093691237454360899787686898672870880385689904936701591756800000,
+        "numerator": 79811010429848097721449937266810185667713033305118828245867
+      },
+      "R_K_exterior_tail_bound": {
+        "denominator": 9399010389772994008699733915023175193378409553817352704000,
+        "numerator": 2674926878309543035855241258023213847219928533
+      },
+      "binary64_unit_roundoff": {
+        "denominator": 9007199254740992,
+        "numerator": 1
+      },
+      "declared_rounding_cushion": {
+        "denominator": 500000000,
+        "numerator": 1
+      },
+      "derived_rounding_bound": {
+        "denominator": 1099511627072289306640625,
+        "numerator": 1409620409974302
+      },
+      "exact_sum_envelope": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "ordinary_summation_gamma": {
+        "denominator": 4503599624488097,
+        "numerator": 2882399
+      },
+      "per_term_relative_error_bound": {
+        "denominator": 1000000000000,
+        "numerator": 1
+      },
+      "power_four_lattice_tail": {
+        "denominator": 61382634508018402995645,
+        "numerator": 192675787
+      },
+      "summand_count": 5764798
+    },
+    "rectangular_cutoff": 2400
+  }
+}
