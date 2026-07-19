@@ -1910,6 +1910,27 @@ The activation gate is the remaining 106 axisymmetric `L=4` coefficients,
 then the 56 nonaxisymmetric `L=1,3` coefficients.  No cross-background mode
 identification is used.
 
+The same content-addressed source slice now closes the complete target-primary
+triplet for that axial `q_minus(+1)` times axial `q_minus(-2)` carrier.
+Candidates 3 and 5 land separately on the polar `q_minus` and `q_plus`
+shells.  Their common symbolic adjoint has zero kernel defect modulo
+`Omega^2-K^2-mu` and `mu^2-40*mu+360`.  Their one-dimensional pairings obey
+the exact quartic annihilator
+
+```text
+2401*x^4 + 13649577984*x^3 - 3277767710343168*x^2
+- 271550576338082463744*x + 480328793324440503975936,
+```
+
+whose nonzero constant term excludes zero.  Together with candidate 4, all
+three separately tuned rows are bounded/finite-quasiperiodic `OBSTRUCTED`.
+Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_axial_qminus_l4_triplet_obstruction`
+resolves four of 108 axisymmetric `L=4` adjoint coefficients; the remaining
+104 axisymmetric and 56 nonaxisymmetric coefficients stay `OPEN`.
+Smooth-secular status is `OPEN`, causal status is `NO_CERTIFIED_MAP`, and the
+three circumference fibres are not identified.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell
