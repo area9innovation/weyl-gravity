@@ -284,8 +284,18 @@ dependency chain, not three interchangeable branch-labelled calculations:
    allowed \(f_2\) homotopy equation, and then evaluate the arity-three
    morphism defect and separate even/odd deformation verdict.
 
-The activation order has advanced to `relative arity-two defect and f2 solve ->
-arity-three defect -> cyclic correction or obstruction`.  The Berger
+`EINSTEIN_WEYL_RELATIVE_ARITY_TWO_DEFECT_V1` now evaluates the strict
+\(\Delta_2=q_{2,W}(f_1,f_1)-f_1q_{2,E}\) operator.  It has 50,854 exact
+rational coefficients in 15 target rows, maximum total derivative order four,
+and an independent rowwise replay.  The Maxwell equation rows and U(1)
+identity remain strict; the nonzero terms lie in the metric equations,
+diffeomorphism identities and Weyl-trace identity.  This is not an
+obstruction: it proves only that the unary map needs a nonzero \(f_2\).
+Arity three remains fail-closed until the support-local \(f_2\) equation is
+solved or a normalized obstruction is emitted.
+
+The activation order has advanced to `support-local f2 solve -> arity-three
+defect -> cyclic correction or obstruction`.  The Berger
 branch-carrier rail remains independent and fail-closed throughout.
 
 The transverse replay now has an associative coefficient-jet PBW algebra,

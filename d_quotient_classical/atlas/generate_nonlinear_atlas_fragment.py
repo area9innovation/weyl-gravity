@@ -39,6 +39,7 @@ CERTS = {
     "relative_linfinity_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
     "einstein_product_taylor": ROOT / "bridge/certificates/EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
     "weyl_product_taylor": ROOT / "bridge/certificates/WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
+    "relative_arity_two_defect": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ARITY_TWO_DEFECT_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -230,6 +231,11 @@ def entries() -> list[dict[str, Any]]:
         linear_triangle_imported
         and einstein_taylor_imported
         and weyl_taylor_imported
+    )
+    relative_arity_two = json.loads(CERTS["relative_arity_two_defect"].read_text())
+    relative_arity_two_computed = (
+        relative_arity_two["result_state"]
+        == "NONZERO_STRICT_ARITY_TWO_DEFECT_F2_SOLVE_REQUIRED"
     )
     smooth_extension_ready = smooth_extension_import_ready()
     berger = {
@@ -558,7 +564,9 @@ def entries() -> list[dict[str, Any]]:
                     (
                         "OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP",
                         (
-                            "The noncyclic all-row linear triangle, endpoints and both complete same-background q1/q2/q3 payloads are imported; Delta2 and the allowed f2 homotopy solve are now active."
+                            "The strict Delta2 operator is computed exactly with 50854 nonzero coefficients; the support-local f2 homotopy solve is active and neither existence nor obstruction is yet promoted."
+                            if relative_arity_two_computed
+                            else "The noncyclic all-row linear triangle, endpoints and both complete same-background q1/q2/q3 payloads are imported; Delta2 and the allowed f2 homotopy solve are now active."
                             if all_relative_inputs_imported
                             else "The noncyclic all-row linear triangle, endpoints and complete Einstein-Maxwell q1/q2/q3 payload are imported; the same-background Weyl-Maxwell payload is still missing."
                             if einstein_taylor_imported
@@ -578,11 +586,13 @@ def entries() -> list[dict[str, Any]]:
                 ),
                 pairing=("OBSTRUCTED", "A standard-pairing cyclic relative triangle is impossible by the generic inertia theorem; the certified replacement keeps the Einstein, pulled-back Weyl and relative forms distinct."),
                 taub=("OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP", "Selected D^2E=q2 source blocks do not constitute the complete relative cokernel map."),
-                resonance=("OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP", "Delta2, the arity-three morphism defect and their cohomology images have not been computed."),
+                resonance=("OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP", "The strict Delta2 operator is exact and nonzero; its f2 primitive, the arity-three morphism defect and their cohomology images remain open." if relative_arity_two_computed else "Delta2, the arity-three morphism defect and their cohomology images have not been computed."),
             ),
-            "evidence": _evidence("relative_linfinity_preflight", "einstein_product_taylor", "weyl_product_taylor", "covariant_chain_map", "relative_branch_dictionary", "generic_cyclic_map_inertia_obstruction", "dictionary", "mixed_obstruction"),
+            "evidence": _evidence("relative_linfinity_preflight", "einstein_product_taylor", "weyl_product_taylor", "relative_arity_two_defect", "covariant_chain_map", "relative_branch_dictionary", "generic_cyclic_map_inertia_obstruction", "dictionary", "mixed_obstruction"),
             "claim_boundary": (
-                "Compact-product NONCYCLIC_THREE_FORM linear Bridge 1 and both complete executable same-background q1/q2/q3 payloads are imported. The relative morphism solve is active, but Delta2, the allowed f2 correction, the arity-three defect, cohomology survival and admissible removal remain OPEN or NO_CERTIFIED_MAP. The standard-pairing cyclic route remains obstructed, all Berger tensors remain ineligible substitutes, and q4 is not authorized."
+                "Compact-product NONCYCLIC_THREE_FORM linear Bridge 1 and both complete executable same-background q1/q2/q3 payloads are imported. The strict Delta2 operator is exact and nonzero, so the support-local f2 solve is active; f2 existence or obstruction, the arity-three defect, cohomology survival and admissible removal remain OPEN or NO_CERTIFIED_MAP. The standard-pairing cyclic route remains obstructed, all Berger tensors remain ineligible substitutes, and q4 is not authorized."
+                if relative_arity_two_computed
+                else "Compact-product NONCYCLIC_THREE_FORM linear Bridge 1 and both complete executable same-background q1/q2/q3 payloads are imported. The relative morphism solve is active, but Delta2, the allowed f2 correction, the arity-three defect, cohomology survival and admissible removal remain OPEN or NO_CERTIFIED_MAP. The standard-pairing cyclic route remains obstructed, all Berger tensors remain ineligible substitutes, and q4 is not authorized."
                 if all_relative_inputs_imported
                 else "Compact-product NONCYCLIC_THREE_FORM linear Bridge 1 and the complete executable same-background Einstein-Maxwell q1/q2/q3 payload are imported. Bridge 2 remains INPUT_BLOCKED only on the Weyl-Maxwell payload. The standard-pairing cyclic route is obstructed; all Berger tensors remain ineligible substitutes. Delta2, the arity-three defect, cohomology survival and admissible removal remain OPEN or NO_CERTIFIED_MAP, and q4 is not authorized."
                 if linear_triangle_imported

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ARITY_TWO_DEFECT_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-19",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "status": "PASS",
+  "source_manifest": {
+    "d_quotient_classical/relative/einstein_weyl_relative_arity_two_defect.py": "ec26d04026ccd1fbd987136ecbbe82f2de2a327e0784b15199d5048b15a1d600",
+    "d_quotient_classical/relative/verify_einstein_weyl_relative_arity_two_defect.py": "c75bbed1162cb6168561eed639a7ee2af8b26a7f0a46c8751c963a6bb2a577be",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_arity_two_defect.py": "a464d1544bfca7800d3021148294c11f997b626e359d0dd906bdb634c1fbba05",
+    "d_quotient_classical/schema/relative-arity-two-pbw-defect-v1.schema.json": "5bd6522985c577d1c514884e9da808ac1065a8ae0c87c034a757fb8d7b096d47",
+    "d_quotient_classical/schema/relative-arity-two-defect-v1.schema.json": "09644ee42a2514c716ec02b70c83a3ea58d6d9ec1475c7a5bb3d673f47a17501",
+    "d_quotient_classical/generated/einstein_weyl_relative_arity_two_defect_v1/delta2.json": "48931f0dcb79de066bd398c33961a546a5cdb19a4ae77b30f4fb5d95df406455",
+    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ARITY_TWO_DEFECT_V1.json": "c3846506eb7186f100e0d78234682a5903510d44d2013ab5f2fb7021d0cf2511",
+    "d_quotient_classical/reports/einstein-weyl-relative-arity-two-defect.md": "885da0832e874adb4ce81fd1b2b82c51d3df358035cd5fdb1f657d99f643a8c2"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "command": "python3 -m py_compile <producer, verifier, test> && Draft202012Validator over both schemas and artifacts && git diff --check -- <scoped paths>"
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 25.93,
+      "max_rss_kib": 213524,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_arity_two_defect --check",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_arity_two_defect",
+        "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_arity_two_defect -v"
+      ],
+      "result": "4 tests passed; independent replay matched all 50854 coefficients"
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The unchanged source and target q2 payloads and unary inclusion are imported by SHA-256 from their existing exact replay receipts; this delivery recomputes their relative composition independently."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a coefficient computation and f2 input, not a paper theorem promotion, shared-core freeze or release."
+    }
+  },
+  "claim_boundary": "Receipt for the exact nonzero strict arity-two PBW defect only. The result requires an f2 solve and does not certify either existence or obstruction of a relative L-infinity morphism."
+}
