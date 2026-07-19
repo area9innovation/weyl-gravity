@@ -181,8 +181,14 @@ three new renormalized master values and their scale derivatives are now
 exact in the common Mellin scheme. All 66 reduced rational master-coordinate
 functions of the eleven physical channels are now exact; the selected minor
 factors into chart terms times `lambda^5`, while individual coordinates are
-reduced separately. The relative-IBP boundary flux and independent finite-
-counterterm normalization remain open.
+reduced separately. Their relative-IBP boundary flux is now exact: all 33
+quadratic angular corner rows reduce to two logarithm ratios and one rational
+corner term, and all eleven channels have complete seven-function structured
+decompositions. Two independent exact holdouts replay the tangent primitive,
+corner moments and scale recipes, while every symmetric scale row reproduces
+the earlier obstruction ledger. Assembly into the five repository
+third-curvature form factors and independent finite-counterterm normalization
+remain open.
 The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
 and rational corner flux. Four explicit primitives cover every orientation,
@@ -514,20 +520,18 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. compute the physical triangle's relative-IBP boundary flux and combine it
-   with the 66 exact master-coordinate functions and the evaluated Mellin-
-   renormalized `M14` singlet and standard-`S3` pair;
-2. combine those triangle rows with the 33 exact minimally-subtracted finite
+1. combine the eleven integrated seven-function physical triangle rows with
+   the 33 exact minimally-subtracted finite
    `H1-H2` contact rows (equal-box TT sum `3188/27`) and retain the independent
    mu-independent finite-counterterm normalization as an explicit scheme input;
-3. supply the full generic primed Green kernel or spectral measure for the
+2. supply the full generic primed Green kernel or spectral measure for the
    global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the
    physical Hessian to assemble
    the five parity-even repository form factors;
-4. classify the parity-odd derivative sector and fix the finite `C2` and
+3. classify the parity-odd derivative sector and fix the finite `C2` and
    absolute dressed `R(g_hat)^2` normalizations and renormalized products;
-5. use those data to determine complete `Gamma1/Q1`;
-6. import a same-background compensator-inclusive classical contraction
+4. use those data to determine complete `Gamma1/Q1`;
+5. import a same-background compensator-inclusive classical contraction
    before residual transfer.
 
 The same-background Lorentzian/Bridge 4 programme remains a parallel carrier

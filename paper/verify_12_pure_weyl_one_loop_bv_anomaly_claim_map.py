@@ -327,9 +327,6 @@ def main() -> None:
     assert payload["explicit_nonclaims"]
     assert all(value is False for value in payload["explicit_nonclaims"].values())
     assert payload["explicit_nonclaims"][
-        "physical_Hessian_triangle_boundary_flux_computed"
-    ] is False
-    assert payload["explicit_nonclaims"][
         "generic_ghost_full_Schur_regularized_determinant"
     ] is False
     assert payload["explicit_nonclaims"]["generic_ghost_renormalized_R_K"] is False
@@ -413,18 +410,11 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_renormalized_new_master_values_computed"] is True
     assert claims["physical_Hessian_triangle_renormalized_master_value_count"] == 3
     assert payload["explicit_nonclaims"][
-        "physical_n3_three_linear_triangle_integrated"
-    ] is False
-    assert payload["explicit_nonclaims"][
-        "physical_Hessian_renormalized_subtraction_fixed"
-    ] is False
-    assert payload["explicit_nonclaims"]["physical_n3_M14_class_disposed"] is False
-    assert payload["explicit_nonclaims"][
         "generic_ghost_zeta_multiplicative_anomaly_computed_without_declared_factorization"
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "REDUCE_RENORMALIZED_PHYSICAL_TRIANGLE_BULK_AND_ASSEMBLE_THIRD_CURVATURE_FORM_FACTORS"
+        == "ASSEMBLE_ELEVEN_INTEGRATED_PHYSICAL_TRIANGLE_CHANNELS_AND_FINITE_CONTACT_ROWS_INTO_FIVE_THIRD_CURVATURE_FORM_FACTORS"
     )
 
     dependencies = {}
@@ -460,7 +450,11 @@ def main() -> None:
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
     assert claims["physical_Hessian_triangle_six_master_coordinates_computed"] is True
     assert claims["physical_Hessian_triangle_six_master_coordinate_count"] == 66
-    assert len(payload["inputs"]) == 61
+    assert claims["physical_Hessian_triangle_relative_IBP_boundary_flux_computed"] is True
+    assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
+    assert claims["physical_Hessian_triangle_corner_count"] == 33
+    assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
+    assert len(payload["inputs"]) == 62
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

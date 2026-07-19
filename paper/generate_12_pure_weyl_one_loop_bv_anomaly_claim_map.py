@@ -60,6 +60,7 @@ INPUTS = {
     "generic_physical_hessian_triangle_master_completeness": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_MASTER_COMPLETENESS.json",
     "generic_physical_hessian_triangle_renormalized_master_values": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_RENORMALIZED_MASTER_VALUES.json",
     "generic_physical_hessian_triangle_six_master_coordinates": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_SIX_MASTER_COORDINATES.json",
+    "generic_physical_hessian_triangle_relative_IBP_boundary_flux": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_RELATIVE_IBP_BOUNDARY_FLUX.json",
     "generic_background_ghost_CPT_obstruction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n3_adiabatic_carrier": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
@@ -159,6 +160,9 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     ]
     physical_hessian_triangle_master_coordinates = values[
         "generic_physical_hessian_triangle_six_master_coordinates"
+    ]
+    physical_hessian_triangle_boundary_flux = values[
+        "generic_physical_hessian_triangle_relative_IBP_boundary_flux"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -507,6 +511,22 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         is not False
         or len(physical_hessian_triangle_master_coordinates.get("channel_rows", []))
         != 11
+        or physical_hessian_triangle_boundary_flux.get("claim_flags", {}).get(
+            "PHYSICAL_N3_TRIANGLE_BOUNDARY_FLUX_COMPUTED"
+        )
+        is not True
+        or physical_hessian_triangle_boundary_flux.get("claim_flags", {}).get(
+            "PHYSICAL_N3_TRIANGLE_INTEGRATED"
+        )
+        is not True
+        or physical_hessian_triangle_boundary_flux.get("claim_flags", {}).get(
+            "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED"
+        )
+        is not False
+        or physical_hessian_triangle_boundary_flux.get("identity_ledger", {}).get(
+            "integrated_basis_coordinate_count"
+        )
+        != 77
         or generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
         != "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
         or generic_ghost_cpt.get("claim_flags", {}).get(
@@ -911,6 +931,9 @@ def build() -> dict[str, Any]:
     physical_hessian_triangle_master_coordinates = values[
         "generic_physical_hessian_triangle_six_master_coordinates"
     ]
+    physical_hessian_triangle_boundary_flux = values[
+        "generic_physical_hessian_triangle_relative_IBP_boundary_flux"
+    ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
@@ -1093,6 +1116,10 @@ def build() -> dict[str, Any]:
             "physical_Hessian_triangle_renormalized_master_value_count": len(physical_hessian_triangle_master_values["master_rows"]),
             "physical_Hessian_triangle_six_master_coordinates_computed": True,
             "physical_Hessian_triangle_six_master_coordinate_count": sum(len(row["master_coordinates"]) for row in physical_hessian_triangle_master_coordinates["channel_rows"]),
+            "physical_Hessian_triangle_relative_IBP_boundary_flux_computed": True,
+            "physical_Hessian_triangle_integrated_channel_count": physical_hessian_triangle_boundary_flux["identity_ledger"]["channel_count"],
+            "physical_Hessian_triangle_corner_count": physical_hessian_triangle_boundary_flux["identity_ledger"]["corner_count"],
+            "physical_Hessian_triangle_structured_basis_coordinate_count": physical_hessian_triangle_boundary_flux["identity_ledger"]["integrated_basis_coordinate_count"],
             "generic_background_ghost_minimal_CPT_substitution_obstructed": True,
             "generic_background_ghost_effective_divergence_coefficient": generic_ghost_cpt["algebraic_Weyl_ghost_elimination"]["beta_controls"][0]["effective_divergence_coefficient"],
             "generic_background_ghost_principal_eigenvalues": generic_ghost_cpt["nonminimal_principal_symbol"]["eigenvalues_e0"],
@@ -1204,10 +1231,6 @@ def build() -> dict[str, Any]:
             "parity_odd_third_curvature_carrier_manifest": False,
             "repository_generic_background_CPT_trace_substitution": False,
             "full_generic_physical_Hessian": False,
-            "physical_n3_three_linear_triangle_integrated": False,
-            "physical_Hessian_triangle_boundary_flux_computed": False,
-            "physical_Hessian_renormalized_subtraction_fixed": False,
-            "physical_n3_M14_class_disposed": False,
             "generic_nonminimal_ghost_CPT_determinant": False,
             "generic_nonminimal_ghost_insertion_traces_evaluated": False,
             "generic_ghost_all_five_n1_n2_carriers_evaluated": False,
@@ -1229,12 +1252,12 @@ def build() -> dict[str, Any]:
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "REDUCE_RENORMALIZED_PHYSICAL_TRIANGLE_BULK_AND_ASSEMBLE_THIRD_CURVATURE_FORM_FACTORS",
+            "status": "ASSEMBLE_ELEVEN_INTEGRATED_PHYSICAL_TRIANGLE_CHANNELS_AND_FINITE_CONTACT_ROWS_INTO_FIVE_THIRD_CURVATURE_FORM_FACTORS",
             "required_inputs": [
                 "same-background compensator-inclusive classical contraction",
                 "finite C2 and absolute dressed Rhat2 normalization conditions",
                 "full generic-background primed Green/resolvent kernel or complete spectral measure for the reference-scale finite R(K), finite R(K^2), and det3 rows; the round-S4 special-background benchmark is complete but does not substitute for this global carrier",
-                "renormalized H1-cubed triangle bulk reduction on the certified covariant Volterra carrier; the generic triangle/contact scale incidence, M14 disposition, and 33 minimally-subtracted finite H1-H2 contact rows are exact",
+                "assembly of the eleven exact seven-function H1-cubed triangle channels and 33 minimally-subtracted finite H1-H2 contact rows into the five repository form factors",
                 "remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
                 "renormalized BV operator data fixing complete Q1",
             ],

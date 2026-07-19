@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "generic-background-physical-hessian-triangle-relative-ibp-boundary-flux-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_state",
+    "dependency_tags", "classical_commit", "dependencies", "scope",
+    "tangent_ledger", "angular_moment_basis", "channel_rows",
+    "identity_ledger", "formula_digest", "claim_flags", "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-physical-hessian-triangle-relative-ibp-boundary-flux-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_RELATIVE_IBP_BOUNDARY_FLUX"},
+    "result_state": {"const": "ALL_ELEVEN_PHYSICAL_TRIANGLE_BOUNDARY_FLUXES_AND_INTEGRATED_MASTER_DECOMPOSITIONS_COMPUTED"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {
+      "type": "array", "minItems": 2, "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+    },
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependencies": {"type": "object", "minProperties": 7, "additionalProperties": {"$ref": "#/$defs/reference"}},
+    "scope": {"type": "object", "minProperties": 5, "additionalProperties": {"type": ["string", "integer", "boolean"]}},
+    "tangent_ledger": {"type": "object", "minProperties": 4, "additionalProperties": true},
+    "angular_moment_basis": {"type": "object", "minProperties": 5, "additionalProperties": true},
+    "channel_rows": {
+      "type": "array", "minItems": 11, "maxItems": 11,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["channel_id", "corner_rows", "flux_coordinates", "integrated_function_basis", "scale_derivative", "symmetric_scale_regression"],
+        "properties": {
+          "channel_id": {"type": "string"},
+          "corner_rows": {
+            "type": "array", "minItems": 3, "maxItems": 3,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["corner_id", "start_box", "end_box", "angular_numerator_coefficients", "integrated_rational", "local_log_coefficient", "local_log_map"],
+              "properties": {
+                "corner_id": {"type": "string"}, "start_box": {"type": "string"}, "end_box": {"type": "string"},
+                "angular_numerator_coefficients": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/rational_function"}},
+                "integrated_rational": {"$ref": "#/$defs/rational_function"},
+                "local_log_coefficient": {"$ref": "#/$defs/rational_function"},
+                "local_log_map": {"type": "string"}
+              }
+            }
+          },
+          "flux_coordinates": {"$ref": "#/$defs/rational_function_map"},
+          "integrated_function_basis": {"$ref": "#/$defs/rational_function_map"},
+          "scale_derivative": {
+            "type": "object", "additionalProperties": false,
+            "required": ["additive_terms", "exact_holdouts"],
+            "properties": {
+              "additive_terms": {
+                "type": "array", "minItems": 3, "maxItems": 3,
+                "items": {
+                  "type": "object", "additionalProperties": false,
+                  "required": ["coordinate_master_id", "scale_master_id"],
+                  "properties": {
+                    "coordinate_master_id": {"enum": ["M14_singlet", "M15_standard_u", "M16_standard_v"]},
+                    "scale_master_id": {"enum": ["M14_singlet", "M15_standard_u", "M16_standard_v"]}
+                  }
+                }
+              },
+              "exact_holdouts": {
+                "type": "array", "minItems": 2, "maxItems": 2,
+                "items": {
+                  "type": "object", "additionalProperties": false,
+                  "required": ["box_point", "value"],
+                  "properties": {
+                    "box_point": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 1}},
+                    "value": {"$ref": "#/$defs/rational"}
+                  }
+                }
+              }
+            }
+          },
+          "symmetric_scale_regression": {
+            "type": "object", "additionalProperties": false,
+            "required": ["actual", "expected", "status"],
+            "properties": {
+              "actual": {"$ref": "#/$defs/rational"}, "expected": {"$ref": "#/$defs/rational"}, "status": {"const": "EXACT"}
+            }
+          }
+        }
+      }
+    },
+    "identity_ledger": {"type": "object", "minProperties": 6, "additionalProperties": true},
+    "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "claim_flags": {"type": "object", "minProperties": 11, "additionalProperties": {"type": "boolean"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "rational": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "poly_term": {
+      "type": "object", "additionalProperties": false,
+      "required": ["exponents", "coefficient"],
+      "properties": {
+        "exponents": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0}},
+        "coefficient": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "rational_function": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator_terms", "denominator_terms"],
+      "properties": {
+        "numerator_terms": {"type": "array", "items": {"$ref": "#/$defs/poly_term"}},
+        "denominator_terms": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/poly_term"}}
+      }
+    },
+    "rational_function_map": {
+      "type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/rational_function"}
+    }
+  }
+}

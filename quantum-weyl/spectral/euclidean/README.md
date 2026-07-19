@@ -185,8 +185,13 @@ for the eleven physical channels are now reduced exactly by a fraction-free
 polynomial-ring solve. The exact selected minor has chart factors times
 `lambda^5`; individual reduced coordinates have distinct denominators, while
 the three new-master coefficients are polynomial. The relative-IBP boundary
-flux and complete form-factor assembly remain open. See
-[`generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md`](../../reports/generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md).
+flux is now exact for all eleven channels: 33 quadratic angular corner rows
+reduce to two bubble logarithms and a rational corner term, producing 77
+exact coordinates in a seven-function structured basis. Their independently
+replayed scale rows reproduce every earlier symmetric obstruction
+coefficient. Assembly of those eleven functions and the finite contact rows
+into the five repository third-curvature form factors remains open. See
+[`generic-background-physical-hessian-triangle-relative-ibp-boundary-flux.md`](../../reports/generic-background-physical-hessian-triangle-relative-ibp-boundary-flux.md).
 
 Replay with:
 
@@ -221,6 +226,9 @@ PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generi
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_physical_hessian_n3_triangle_fixture --check
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_physical_hessian_n3_triangle_fixture
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_physical_hessian_n3_triangle_fixture
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_physical_hessian_triangle_relative_ibp_boundary_flux --fast
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_physical_hessian_triangle_relative_ibp_boundary_flux
+PYTHONPATH=quantum-weyl pytest -q quantum-weyl/spectral/euclidean/tests/test_generic_background_physical_hessian_triangle_relative_ibp_boundary_flux.py
 ```
 
 Full regeneration of the five-carrier projection is an exact scientific-tier

@@ -1174,7 +1174,7 @@ effective-action claims; the unsupported Hadamard assertion was removed from
 the abstract. Exact quotient, coefficient, determinant, spectral-sequence,
 matter, quartet, effective-action, and boundary tables are generated from eighteen hashed
 certificate inputs and pass an independent stale/tamper check. The claim map now
-binds sixty-one direct certificate dependencies, including the finite-contact, physical triangle master-completeness, renormalized master-value and six-master-coordinate,
+binds sixty-two direct certificate dependencies, including the finite-contact, physical triangle master-completeness, renormalized master-value, six-master-coordinate and relative-IBP boundary-flux,
 symmetric-point
 simplex and generic barycentric-factorization receipts and the formerly indirect pure-Diff/mixed quotient and factorwise
 coefficient ledger. The disposition
@@ -1261,3 +1261,37 @@ repository third-curvature form factors can be assembled.
 
 Receipt:
 [`generic-background-physical-hessian-triangle-six-master-coordinates.md`](../quantum-weyl/reports/generic-background-physical-hessian-triangle-six-master-coordinates.md).
+
+## Physical triangle relative-IBP boundary flux (2026-07-19)
+
+The coefficient-bearing three-`H1` triangle is now integrated channel by
+channel. After subtracting the six certified master coordinates, each
+remainder is solved in the 46-dimensional tangent image. Contracting the
+fraction-free primitive with the three corner functionals before rational
+reduction avoids expression blowup and yields 33 exact angular numerators.
+They are at most quadratic, so every corner reduces to two global bubble-log
+ratios and one rational term. All eleven channels therefore have complete
+exact decompositions in the seven-function basis
+
+```text
+J_triangle, log(x2/x1), log(x3/x1), rational_corner,
+M14_singlet, M15_standard_u, M16_standard_v.
+```
+
+The ledger contains 11 tangent identities, 33 corner integrations and 77
+structured-basis coordinates. An independent verifier reconstructs the full
+tangent identity and every angular moment at `(2,3,5)` and `(3,5,7)`. The
+per-master scale rows are canonicalized before symmetric evaluation,
+removing sectorwise removable singularities and exactly reproducing all
+eleven earlier obstruction coefficients.
+
+This is `LOCAL-ALGEBRAIC` plus `EUCLIDEAN-SPECTRAL`. It computes the raw
+physical triangle functions, not the five repository third-curvature form
+factors. The active gate is now:
+
+```text
+ASSEMBLE_ELEVEN_PHYSICAL_TRIANGLE_FUNCTIONS_AND_FINITE_CONTACT_ROWS_INTO_FIVE_REPOSITORY_THIRD_CURVATURE_FORM_FACTORS
+```
+
+Receipt:
+[`generic-background-physical-hessian-triangle-relative-ibp-boundary-flux.md`](../quantum-weyl/reports/generic-background-physical-hessian-triangle-relative-ibp-boundary-flux.md).
