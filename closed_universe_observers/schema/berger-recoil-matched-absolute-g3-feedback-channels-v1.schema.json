@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "green_adjoint_identity", "channels", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-matched-absolute-g3-feedback-channels-v1"},
+    "result_id": {"const": "BERGER_RECOIL_MATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "TWO_FINITE_MATCHED_ABSOLUTE_G3_CHANNEL_BLOCKS_EVALUATED_ZERO_CONTAINING"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 10, "maxProperties": 10},
+    "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "green_adjoint_identity": {"type": "string"},
+    "channels": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["channel_id", "detector", "source_preparation", "feedback_emitter", "two_j", "column", "mass_squared_interval", "support_physical_time", "green_adjoint_reduction", "absolute_g3_monomial", "coefficient_block_interval", "coefficient_block_contains_zero", "uniform_pairing_remainder_upper", "lorentzian_two_form_pairing", "physical_green_identity", "switch_coderivative_identity", "full_channel_payload_sha256", "peter_weyl_weight_applied"]
+      }
+    },
+    "mutation_results": {"type": "array", "minItems": 2},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "PARTITION_REFINE_MATCHED_FEEDBACK_INTERVALS_AND_EVALUATE_THE_SIX_MISMATCHED_CHANNELS"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

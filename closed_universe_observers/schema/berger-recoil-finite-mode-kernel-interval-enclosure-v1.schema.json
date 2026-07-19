@@ -32,11 +32,12 @@
     },
     "fixtures": {
       "type": "object", "additionalProperties": false,
-      "required": ["Maxwell_zero_mode_exact_tail", "massive_two_j0_degree1_mass_squared", "massive_two_j0_degree1_operator_norm_upper", "massive_fixture_sha256"],
+      "required": ["Maxwell_zero_mode_exact_tail", "massive_two_j0_degree1_mass_squared", "massive_two_j0_degree1_operator_norm_upper", "massive_two_j0_degree0_operator_norm_upper", "massive_fixture_sha256"],
       "properties": {
         "Maxwell_zero_mode_exact_tail": {"const": "0"},
         "massive_two_j0_degree1_mass_squared": {"const": {"lower": "1", "upper": "2"}},
         "massive_two_j0_degree1_operator_norm_upper": {"const": "58/9"},
+        "massive_two_j0_degree0_operator_norm_upper": {"const": "2"},
         "massive_fixture_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
       }
     },
@@ -46,9 +47,10 @@
     },
     "flags": {
       "type": "object", "additionalProperties": false,
-      "required": ["FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED", "RUNTIME_POSITIVE_MASS_DOMAIN_PARAMETERIZED", "UNIFORM_FINITE_SLAB_SINE_TAIL_EXPORTED", "PHYSICAL_MASS_SPECIALIZATION_EXPORTED", "ACTUAL_SWITCH_PROFILE_AND_FORM_BINDING_EXPORTED", "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED", "QUANTUM_CLAIM"],
+      "required": ["FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED", "MASSIVE_ONE_FORM_CORRECTION_KERNEL_INTERVALS_EXPORTED", "RUNTIME_POSITIVE_MASS_DOMAIN_PARAMETERIZED", "UNIFORM_FINITE_SLAB_SINE_TAIL_EXPORTED", "PHYSICAL_MASS_SPECIALIZATION_EXPORTED", "ACTUAL_SWITCH_PROFILE_AND_FORM_BINDING_EXPORTED", "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED", "QUANTUM_CLAIM"],
       "properties": {
         "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED": {"const": true},
+        "MASSIVE_ONE_FORM_CORRECTION_KERNEL_INTERVALS_EXPORTED": {"const": true},
         "RUNTIME_POSITIVE_MASS_DOMAIN_PARAMETERIZED": {"const": true},
         "UNIFORM_FINITE_SLAB_SINE_TAIL_EXPORTED": {"const": true},
         "PHYSICAL_MASS_SPECIALIZATION_EXPORTED": {"const": false},

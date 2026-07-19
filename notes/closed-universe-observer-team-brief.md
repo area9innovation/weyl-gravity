@@ -322,10 +322,12 @@ branch.
 
 ### Immediate priority after the polarization-emitter handoff
 
-1. Expand the certified exact `h_a`, `chi_a`, advanced covectors, and
-   positive-energy-selected `u_0,u_1` in Berger Peter--Weyl modes with
-   validated quadrature and spectral-tail bounds, and then compute the absolute-`g^3`
-   (relative-`g^2`) detector recoil coefficient.  In parallel, use the
+1. Partition-refine the zero-containing detector-matched
+   `I_000[0,0]` and `I_111[0,0]` absolute-`g^3` coefficient enclosures,
+   evaluate the six mismatched `(a,b,c)` channels, and then extend the finite
+   Berger rail beyond `two_j=4` with validated spectral-tail bounds and a
+   stopping rule.  Physical masses and couplings remain deferred until that
+   backend is complete.  In parallel, use the
    exported emitter stress
    and clock-switch source to refine the certified covariant 108-row
    `q1 q2` identity into a support-local PBW payload before solving a
@@ -802,11 +804,12 @@ emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
 composition defects.
 
 `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` corrects the activation
-boundary.  Its ten finite capabilities include the four baseline consumers,
+boundary.  Its eleven finite capabilities include the four baseline consumers,
 the detector/`Dhat_1` binding, the switched diagonal massive stage, the
 physical full-form Cauchy pair and the canonical positive-energy preparation
 coefficients described below, plus the first freely evolved retarded Maxwell
-channel and the partition-refined leading rank-two response.
+channel, the partition-refined leading rank-two response and the matched
+absolute-`g3` feedback-channel evaluator.
 `BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` closes the
 one-shell supplied-channel capability with exact rational arithmetic: it
 sums every passive column and both feedback channels and applies
@@ -820,19 +823,22 @@ certifies exact beta-integral composition and rational uniform-remainder
 propagation for supplied finite-slab retarded/advanced polynomial enclosures.
 `BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD` now supplies the missing exact
 algebraic carrier: sparse form-Laplacian matrices and six factored sine-kernel
-coefficients for all twenty Maxwell/massive blocks through `two_j=4`, retaining
-symbolic positive mass.  `BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE`
+coefficients for all twenty-five Maxwell/massive blocks through `two_j=4`:
+Maxwell degrees zero and one plus massive de Rham degrees zero, one and two,
+retaining symbolic positive mass.  The massive scalar block is required by
+the physical `m^-2 d G_(P1+m^2) delta` one-form correction.
+`BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE`
 now evaluates those sparse algebraic blocks by outward rational intervals on a
 caller-declared finite slab and, for massive blocks, a strictly positive
 rational mass-squared interval.  It exports all six interval coefficient
 matrices and a uniform induced-row-norm sine-series tail; nonpositive masses,
 nonzero Maxwell mass and noncontracting slabs fail closed.  This runtime mass
-domain is not a physical mass choice.  The finite successor below now binds
-those inputs only through the diagonal massive wave image.  Thus the complete
-all-shell detector provider, physical nested-convolution backend and tail-aware aggregate stop
-loop remain `OBSTRUCTED`.  Supplying
-masses and couplings would still produce no physical interval.  The exact-
-rational input schema remains deferred.
+domain is not a physical mass choice.  The finite chain now binds those inputs
+through the matched feedback evaluation described below.  Thus the complete
+all-shell detector provider, six mismatched channels and tail-aware aggregate
+stop loop remain `OBSTRUCTED`.  Supplying masses and couplings now would still
+not produce a certified physical recoil interval.  The exact-rational input
+schema remains deferred.
 
 `BERGER_RECOIL_SWITCH_INTERVAL_PROVIDER` closes the next factorwise input.
 On any rational physical-time cell it exports outward rational intervals for
@@ -935,8 +941,19 @@ The two-cell mutation has zero energy lower bounds, so the result is not an
 artifact of merely declaring two probes.  The mass interval is a validation
 parameter family, not a declaration of the physical emitter masses.
 Arbitrary positive masses, numerical infinite-harmonic reconstruction,
-absolute-`g3` feedback channels, tangent-cone survival and fixed-background
-`K_Berger` descent remain open.
+tangent-cone survival and fixed-background `K_Berger` descent remain open.
+
+`BERGER_RECOIL_MATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS` closes the first two
+physical feedback contractions without promoting their sign.  Green
+adjunction rewrites `I_aaa` as the Lorentzian two-form pairing of the advanced
+physical emitter field with `h_a dA_a^lead,ret`.  The finite evaluator retains
+`G_(P2+m^2)+m^-2 d G_(P1+m^2) delta`, uses the exact `two_j=0,k=0`
+form blocks and detects an all-plus pairing-sign mutation.  On
+`m_0^2,m_1^2 in [1,2]`, both `I_000[0,0]` and `I_111[0,0]` have rigorous
+whole-support interval enclosures containing zero.  They are therefore
+evaluated coefficient blocks, not nonzero recoil witnesses: sign,
+nonvanishing, recoil-corrected rank, Peter--Weyl aggregation, physical masses,
+the six mismatched channels and the infinite tail remain `OPEN`.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as

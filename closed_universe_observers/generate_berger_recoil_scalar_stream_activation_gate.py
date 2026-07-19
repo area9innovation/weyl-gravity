@@ -111,6 +111,11 @@ def readiness_audit(values: dict[str, dict[str, Any]], *, drop_per_shell_word: b
             "evidence_flag": "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED",
         },
         {
+            "id": "finite_detector_matched_absolute_g3_feedback_channels",
+            "status": "CERTIFIED" if values["executable_readiness"]["flags"]["FINITE_DETECTOR_MATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS_EXPORTED"] else "OBSTRUCTED",
+            "evidence_flag": "FINITE_DETECTOR_MATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS_EXPORTED",
+        },
+        {
             "id": "callable_shell_interval_backend",
             "status": "CERTIFIED" if values["executable_readiness"]["flags"]["CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED"] else "OBSTRUCTED",
             "evidence_flag": "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED",
@@ -190,9 +195,12 @@ def build() -> dict[str, Any]:
         "advanced-Maxwell detector coefficients are callable for 2j=0,...,4, but the "
         "latter are not a complete all-shell detector provider or a massive/recoil "
         "evaluation. A finite polynomial causal-convolution engine and exact finite "
-        "Berger mode-kernel interval enclosures through 2j=4 are certified, but the "
-        "switches, detector intervals and typed form contractions are not jointly bound "
-        "to them. No complete nested backend or tail-aware aggregate stop loop is "
+        "Berger mode-kernel interval enclosures through 2j=4 are certified, including "
+        "the massive scalar/one-form physical-correction carrier. The detector-matched "
+        "I_000[0,0] and I_111[0,0] coefficient blocks are now evaluated on the "
+        "validation mass domain by Green adjunction, but both contain zero under the "
+        "current whole-support switch hulls. The six mismatched channels, complete "
+        "nested backend and tail-aware aggregate stop loop are not "
         "exported. Numerical masses, couplings and a stopping goal are therefore "
         "deferred; supplying them now would not produce an interval. The exact "
         "generic coefficient functional is not itself a numerical Green-image "
@@ -219,7 +227,7 @@ def build() -> dict[str, Any]:
         "sequencing_decision": {
             "completed_internal_gate": "complete symbolic preparation/recoil scalar operator word with exact Peter-Weyl reconstruction",
             "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
-            "current_active_gate": "bind switches, detector profiles and typed form intervals to the finite mode kernels and nested-convolution engine, then extend the detector provider beyond two_j=4",
+            "current_active_gate": "partition-refine the two matched feedback intervals, evaluate the six mismatched channels, then extend the detector provider beyond two_j=4",
             "external_specialization_gate": "DEFERRED_UNTIL_EXECUTABLE_BACKEND",
             "dense_profile_materialization": "NOT_SELECTED",
             "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP",
@@ -249,13 +257,14 @@ def build() -> dict[str, Any]:
             "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED": True,
             "FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED": True,
             "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED": True,
+            "FINITE_DETECTOR_MATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS_EXPORTED": True,
             "NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED": False,
             "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": False,
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "BIND_SWITCH_PROFILE_DETECTOR_AND_FORM_INTERVALS_TO_FINITE_MODE_KERNELS",
+        "next_gate": "PARTITION_REFINE_MATCHED_FEEDBACK_INTERVALS_AND_EVALUATE_SIX_MISMATCHED_CHANNELS",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

@@ -81,12 +81,22 @@ def build() -> dict[str, Any]:
         mass_squared_interval=RationalInterval(Fraction(1), Fraction(2)),
         slab_length=Fraction(1, 48),
     )
+    massive_scalar_fixture = enclose_exact_mode_sine_kernel(
+        exact_payload,
+        two_j=0,
+        family="massive_two_form",
+        form_degree=0,
+        mass_squared_interval=RationalInterval(Fraction(1), Fraction(2)),
+        slab_length=Fraction(1, 48),
+    )
     if maxwell_zero["uniform_sine_kernel_remainder_upper"] != "0":
         raise AssertionError("Maxwell zero-mode tail must vanish exactly")
     if maxwell_zero["coefficient_matrices"][0]["entries"][0]["real"]["lower"] != "1":
         raise AssertionError("Maxwell zero-mode identity coefficient drifted")
     if massive_fixture["operator_row_sum_norm_upper"] != "58/9":
         raise AssertionError("massive interval operator norm fixture drifted")
+    if massive_scalar_fixture["operator_row_sum_norm_upper"] != "2":
+        raise AssertionError("massive scalar interval operator norm fixture drifted")
     if Fraction(massive_fixture["uniform_sine_kernel_remainder_upper"]) <= 0:
         raise AssertionError("massive truncation remainder must be positive")
 
@@ -121,7 +131,8 @@ def build() -> dict[str, Any]:
     boundary = (
         "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result exports the public "
         "enclose_exact_mode_sine_kernel callable for every exact Maxwell and massive-"
-        "two-form block through two_j=4. It evaluates rational and algebraic matrix "
+        "de Rham block through two_j=4, including the massive scalar/one-form carrier "
+        "needed by the physical Green correction. It evaluates rational and algebraic matrix "
         "entries by outward rational intervals, specializes massive blocks only on a "
         "caller-declared strictly positive rational mass-squared interval, exports the "
         "first six interval coefficient matrices, and proves a uniform finite-slab "
@@ -152,7 +163,7 @@ def build() -> dict[str, Any]:
             "boundaries": "one caller-declared rational finite time slab; no spatial boundary",
             "charge_sector": "fixed-coupling Berger sector",
             "carrier": "rational interval matrices for exact finite Berger sine kernels",
-            "degree": "Maxwell 0,1 and massive-two-form 1,2",
+            "degree": "Maxwell 0,1 and massive de Rham 0,1,2",
             "parity": "all finite form polarizations",
             "ell": "two_j=0,1,2,3,4",
             "m": "all representation rows",
@@ -170,11 +181,13 @@ def build() -> dict[str, Any]:
             "Maxwell_zero_mode_exact_tail": "0",
             "massive_two_j0_degree1_mass_squared": {"lower": "1", "upper": "2"},
             "massive_two_j0_degree1_operator_norm_upper": "58/9",
+            "massive_two_j0_degree0_operator_norm_upper": "2",
             "massive_fixture_sha256": fixture_hash,
         },
         "mutation_results": mutations,
         "flags": {
             "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED": True,
+            "MASSIVE_ONE_FORM_CORRECTION_KERNEL_INTERVALS_EXPORTED": True,
             "RUNTIME_POSITIVE_MASS_DOMAIN_PARAMETERIZED": True,
             "UNIFORM_FINITE_SLAB_SINE_TAIL_EXPORTED": True,
             "PHYSICAL_MASS_SPECIALIZATION_EXPORTED": False,

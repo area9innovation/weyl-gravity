@@ -252,3 +252,21 @@ def test_correlated_sobolev_n1_improves_bound_without_small_tail_promotion():
     assert "BERGER_CORRELATED_PROFILE_SOBOLEV_N1" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_matched_absolute_g3_feedback_is_evaluated_without_rank_promotion():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.detector_profile.recoil_matched_absolute_g3_feedback_channels"
+    )
+    assert row["descriptions"]["causal"] == "CERTIFIED"
+    assert row["descriptions"]["observational"] == "CERTIFIED"
+    assert row["observer_data"]["detector_response"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["response_rank"]["status"] == "OPEN"
+    assert row["observer_data"]["recoil_backreaction_order"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "OPEN"
+    assert "both contain zero" in row["observer_data"]["detector_response"]["statement"]
+    assert "BERGER_RECOIL_MATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

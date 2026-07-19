@@ -56,7 +56,7 @@ def test_massive_interval_and_algebraic_Maxwell_block_are_enclosed():
     )
 
 
-def test_all_twenty_exact_payload_blocks_accept_the_certified_interval_contract():
+def test_all_twenty_five_exact_payload_blocks_accept_the_certified_interval_contract():
     payload = _payload()
     results = []
     for block in payload["blocks"]:
@@ -74,7 +74,7 @@ def test_all_twenty_exact_payload_blocks_accept_the_certified_interval_contract(
                 slab_length=Fraction(1, 64),
             )
         )
-    assert len(results) == 20
+    assert len(results) == 25
     assert all(Fraction(result["tail_ratio_upper"]) < 1 for result in results)
 
 
@@ -112,5 +112,6 @@ def test_mass_and_tail_contracts_fail_closed():
 def test_certificate_keeps_physical_binding_open():
     value = build()
     assert value["flags"]["FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED"] is True
+    assert value["flags"]["MASSIVE_ONE_FORM_CORRECTION_KERNEL_INTERVALS_EXPORTED"] is True
     assert value["flags"]["PHYSICAL_MASS_SPECIALIZATION_EXPORTED"] is False
     assert value["flags"]["ACTUAL_SWITCH_PROFILE_AND_FORM_BINDING_EXPORTED"] is False

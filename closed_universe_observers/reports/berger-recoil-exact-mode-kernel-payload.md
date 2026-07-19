@@ -4,9 +4,11 @@ Dependency tags: `LOCAL-ALGEBRAIC`, `LORENTZIAN-CAUSAL`.
 
 The finite Berger Green theorem now has a machine-readable algebraic carrier.
 For every `two_j=0,...,4`, the certificate exports sparse exact matrices for
-the Maxwell degree-0/1 and massive-two-form degree-1/2 wave operators, followed
+the Maxwell degree-0/1 and massive degree-0/1/2 wave operators, followed
 by the first six sine-kernel matrix coefficients in factored form `c_n A^n`
-at powers `tau^1,tau^3,...,tau^11`.  All twenty blocks satisfy the exact series
+at powers `tau^1,tau^3,...,tau^11`.  The massive degree-zero block completes
+the scalar part of the massive one-form Green carrier required by the physical
+`m^-2 d G_(P1+m^2) delta` correction.  All twenty-five blocks satisfy the exact series
 recurrence through order four, and a flipped series sign is detected.
 
 The massive payload retains a single symbolic positive `mu_squared`; it does

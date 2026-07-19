@@ -4,7 +4,7 @@
 
 `BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE` turns one block of the
 exact finite kernel payload into outward rational interval matrices.  It
-supports every Maxwell scalar/one-form and massive two-form block through
+supports every Maxwell scalar/one-form and massive scalar/one-form/two-form block through
 `two_j=4`, with a runtime-declared strictly positive rational mass-squared
 interval for the massive family.
 
@@ -27,7 +27,9 @@ Writing (x=\lVert A\rVert_\infty L^2), the tail uses the geometric majorant
 The call fails closed if this ratio is not below one.  The exact Maxwell
 zero mode returns the identity coefficient at `tau_power=1` and zero tail;
 the massive `two_j=0`, degree-one fixture on `mu_squared in [1,2]` has
-operator norm upper bound `58/9`.
+operator norm upper bound `58/9`; the corresponding massive scalar block has
+operator norm upper bound `2` and completes the physical longitudinal Green
+correction carrier.
 
 ## Boundary
 

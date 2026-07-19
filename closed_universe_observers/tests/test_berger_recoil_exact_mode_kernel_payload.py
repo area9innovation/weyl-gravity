@@ -1,11 +1,18 @@
 from closed_universe_observers.generate_berger_recoil_exact_mode_kernel_payload import build
 
 
-def test_all_twenty_physical_finite_blocks_are_exported():
+def test_all_twenty_five_physical_finite_blocks_are_exported():
     value = build()
-    assert len(value["blocks"]) == 20
+    assert len(value["blocks"]) == 25
     assert {block["two_j"] for block in value["blocks"]} == set(range(5))
     assert {block["family"] for block in value["blocks"]} == {"Maxwell", "massive_two_form"}
+    massive_degrees = {
+        block["form_degree"]
+        for block in value["blocks"]
+        if block["family"] == "massive_two_form"
+    }
+    assert massive_degrees == {0, 1, 2}
+    assert value["flags"]["MASSIVE_ONE_FORM_CORRECTION_BLOCKS_EXPORTED"]
 
 
 def test_exact_series_recurrence_and_sparse_payload_close():

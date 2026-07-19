@@ -24,7 +24,7 @@ def test_external_parameters_are_deferred_until_executable_backend():
     assert all(row["status"] == "OPEN" for row in value["readiness"]["external_rows"])
     assert all(row["activation"] == "DEFERRED" for row in value["readiness"]["external_rows"])
     assert value["sequencing_decision"]["current_active_gate"] == (
-        "bind switches, detector profiles and typed form intervals to the finite mode kernels and nested-convolution engine, then extend the detector provider beyond two_j=4"
+        "partition-refine the two matched feedback intervals, evaluate the six mismatched channels, then extend the detector provider beyond two_j=4"
     )
     assert value["flags"]["FOUR_RECOIL_SCALAR_STREAM_ACTIVE"] is False
 
@@ -35,6 +35,7 @@ def test_missing_execution_capabilities_obstruct_activation():
     assert rows["finite_detector_coefficient_provider_two_j0_to_4"] == "CERTIFIED"
     assert rows["finite_polynomial_nested_time_convolution"] == "CERTIFIED"
     assert rows["finite_exact_mode_kernel_interval_enclosure"] == "CERTIFIED"
+    assert rows["finite_detector_matched_absolute_g3_feedback_channels"] == "CERTIFIED"
     assert rows["callable_shell_interval_backend"] == "CERTIFIED"
     assert rows["complete_detector_coefficient_provider"] == "OBSTRUCTED"
     assert rows["nested_time_convolution_backend"] == "OBSTRUCTED"

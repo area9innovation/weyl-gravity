@@ -92,10 +92,10 @@ def build() -> dict[str, Any]:
     blocks = [
         _block(two_j, degree, family)
         for two_j in range(5)
-        for family, degrees in (("Maxwell", (0, 1)), ("massive_two_form", (1, 2)))
+        for family, degrees in (("Maxwell", (0, 1)), ("massive_two_form", (0, 1, 2)))
         for degree in degrees
     ]
-    if len(blocks) != 20 or any(block["recurrence_defect_count_through_order4"] for block in blocks):
+    if len(blocks) != 25 or any(block["recurrence_defect_count_through_order4"] for block in blocks):
         raise AssertionError("exact kernel payload recurrence failed")
     mutation = _block(0, 1, "Maxwell", wrong_sign=True)
     if mutation["recurrence_defect_count_through_order4"] == 0:
@@ -104,9 +104,11 @@ def build() -> dict[str, Any]:
     boundary = (
         "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result exports machine-readable "
         "sparse Berger form-Laplacian operators and the first six exact factored "
-        "sine-kernel matrix coefficients c_n A^n for Maxwell degrees 0,1 and massive-two-form "
-        "degrees 1,2 at two_j=0,...,4. Massive blocks retain one declared symbolic "
-        "positive mu_squared. All 20 blocks satisfy the exact Green-series recurrence "
+        "sine-kernel matrix coefficients c_n A^n for Maxwell degrees 0,1 and massive "
+        "de Rham degrees 0,1,2 at two_j=0,...,4. The added massive degree-zero block "
+        "completes the one-form carrier required by the physical m^-2 d G_(P1+m^2) delta "
+        "correction. Massive blocks retain one declared symbolic positive mu_squared. "
+        "All 25 blocks satisfy the exact Green-series recurrence "
         "through order four, and a sign mutation is detected. This is the algebraic "
         "carrier needed by the interval convolution engine, not an interval enclosure: "
         "no mass range, truncation remainder, switch multiplication, detector/profile "
@@ -126,7 +128,7 @@ def build() -> dict[str, Any]:
             "boundaries": "R x S3; finite mode blocks and no spatial boundary",
             "charge_sector": "fixed-coupling Berger sector",
             "carrier": "exact sparse form-Laplacian matrices and factored sine-kernel coefficients c_n A^n",
-            "degree": "Maxwell 0,1 and massive-two-form 1,2",
+            "degree": "Maxwell 0,1 and massive de Rham 0,1,2",
             "parity": "all finite form polarizations",
             "ell": "two_j=0,1,2,3,4",
             "m": "all representation rows",
@@ -141,6 +143,7 @@ def build() -> dict[str, Any]:
             "EXACT_SPARSE_MODE_OPERATORS_EXPORTED": True,
             "EXACT_SINE_KERNEL_SERIES_COEFFICIENTS_EXPORTED": True,
             "MAXWELL_AND_MASSIVE_BLOCKS_TWO_J0_TO_4_EXPORTED": True,
+            "MASSIVE_ONE_FORM_CORRECTION_BLOCKS_EXPORTED": True,
             "MASS_RANGE_DECLARED": False,
             "INTERVAL_KERNEL_ENCLOSURES_EXPORTED": False,
             "ACTUAL_SWITCH_AND_DETECTOR_BINDING_EXPORTED": False,

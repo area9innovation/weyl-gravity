@@ -14,7 +14,7 @@
     "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
     "symbolic_parameters": {"const": [{"name": "mu_squared", "domain": "positive_real", "specialization_status": "DEFERRED"}]},
     "blocks": {
-      "type": "array", "minItems": 20, "maxItems": 20,
+      "type": "array", "minItems": 25, "maxItems": 25,
       "items": {
         "type": "object", "additionalProperties": false,
         "required": ["two_j", "form_degree", "family", "dimension", "mass_squared", "operator_nonzero_entries", "series_coefficients", "recurrence_defect_count_through_order4"],
@@ -34,11 +34,12 @@
     "mutation_results": {"type": "array", "minItems": 1},
     "flags": {
       "type": "object", "additionalProperties": false,
-      "required": ["EXACT_SPARSE_MODE_OPERATORS_EXPORTED", "EXACT_SINE_KERNEL_SERIES_COEFFICIENTS_EXPORTED", "MAXWELL_AND_MASSIVE_BLOCKS_TWO_J0_TO_4_EXPORTED", "MASS_RANGE_DECLARED", "INTERVAL_KERNEL_ENCLOSURES_EXPORTED", "ACTUAL_SWITCH_AND_DETECTOR_BINDING_EXPORTED", "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED", "QUANTUM_CLAIM"],
+      "required": ["EXACT_SPARSE_MODE_OPERATORS_EXPORTED", "EXACT_SINE_KERNEL_SERIES_COEFFICIENTS_EXPORTED", "MAXWELL_AND_MASSIVE_BLOCKS_TWO_J0_TO_4_EXPORTED", "MASSIVE_ONE_FORM_CORRECTION_BLOCKS_EXPORTED", "MASS_RANGE_DECLARED", "INTERVAL_KERNEL_ENCLOSURES_EXPORTED", "ACTUAL_SWITCH_AND_DETECTOR_BINDING_EXPORTED", "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED", "QUANTUM_CLAIM"],
       "properties": {
         "EXACT_SPARSE_MODE_OPERATORS_EXPORTED": {"const": true},
         "EXACT_SINE_KERNEL_SERIES_COEFFICIENTS_EXPORTED": {"const": true},
         "MAXWELL_AND_MASSIVE_BLOCKS_TWO_J0_TO_4_EXPORTED": {"const": true},
+        "MASSIVE_ONE_FORM_CORRECTION_BLOCKS_EXPORTED": {"const": true},
         "MASS_RANGE_DECLARED": {"const": false},
         "INTERVAL_KERNEL_ENCLOSURES_EXPORTED": {"const": false},
         "ACTUAL_SWITCH_AND_DETECTOR_BINDING_EXPORTED": {"const": false},
