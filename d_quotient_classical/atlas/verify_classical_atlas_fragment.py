@@ -68,6 +68,15 @@ def verify() -> None:
         raise AssertionError("five-current de Rham q2 evidence missing")
     if "eighteen spectral resonance" not in de_rham["claim_boundary"]:
         raise AssertionError("five-current carrier was overextended to candidate-13 resonances")
+    completion = by_id["classical.crosswalk.compact_product_relative_238_cyclic_completion"]
+    if completion["descriptions"]["symplectic"] != "OBSTRUCTED" or completion["descriptions"]["nonlinear"] != "OBSTRUCTED":
+        raise AssertionError("fixed 238-row cyclic rank obstruction missing")
+    if completion["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("fixed 238-row obstruction was overpromoted causally")
+    if "at least 28 rows" not in completion["claim_boundary"] or "necessary rather than sufficient" not in completion["claim_boundary"]:
+        raise AssertionError("fixed 238-row minimal-enlargement boundary missing")
+    if "EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1" not in {item["result_id"] for item in completion["evidence"]}:
+        raise AssertionError("fixed 238-row rank evidence missing")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")

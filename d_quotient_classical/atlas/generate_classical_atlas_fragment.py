@@ -72,6 +72,7 @@ CERTS = {
     "candidate13_local_upgrade_obstruction": ROOT / "d_quotient_classical/certificates/CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1.json",
     "five_current_de_rham_carrier": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1.json",
     "five_current_de_rham_q2": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1.json",
+    "relative_238_cyclic_rank_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
 
@@ -337,6 +338,18 @@ def entries() -> list[dict[str, Any]]:
         _second(("NOT_APPLICABLE", "No bounded-mode claim is made by the local de Rham carrier."), ("CERTIFIED", "For closed currents, dB=-j presents the five zero-charge conditions without projectors."), ("NO_CERTIFIED_MAP", "Causal Green data remain open.")),
         _evidence("five_current_de_rham_carrier", "five_current_de_rham_q2"),
         "The carrier resolves only the five stabilizer-current classes. Its q2 theorem covers the 14+14 Hessian interface and all 160 current-carrier rows, not every ghost, identity and antifield row of the 78-row relative mapping cofiber. It does not encode candidate-13's eighteen spectral resonance receivers, repair the relative f2, authorize arity three, or supply causal or quantum transport.",
+    ))
+    values.append(_entry(
+        "classical.crosswalk.compact_product_relative_238_cyclic_completion",
+        _scope(NARIAI, theory="Einstein-Maxwell source relative to Weyl-Maxwell target", background="compact magnetic Plebanski-Hacyan product", boundaries="support-local off-shell bundle complex before harmonic or causal reduction", charge_sector="H,P_x,J_1,J_2,J_3 simultaneous derived zero-charge sector", carrier="fixed direct sum of the 78-row relative mapping cofiber and 160-row five-current de Rham/cotangent carrier", degree="-2,...,3 with ranks (10,45,78,69,31,5)", parity="candidate nondegenerate BV odd pairing of degree one", ell="not harmonic-reduced", m="not harmonic-reduced", k="not harmonic-reduced", omega="not harmonic-reduced"),
+        {"causal": "NO_CERTIFIED_MAP", "symplectic": "OBSTRUCTED", "nonlinear": "OBSTRUCTED", "observational": "NOT_APPLICABLE", "quantum": "OPEN"},
+        ("NO_CERTIFIED_MAP", "The fixed support-local carrier has no causal Green construction."),
+        ("OBSTRUCTED", "Degree-one odd nondegeneracy would require equal ranks in degrees d and 1-d; the exact deficits are 5, 14 and 9."),
+        ("OBSTRUCTED", "No coefficient or cross-incidence choice can make this fixed 238-row carrier a cyclic BV q1/q2 complex."),
+        ("NOT_APPLICABLE", "This is a carrier-rank obstruction, not a harmonic resonance calculation."),
+        _second(("NOT_APPLICABLE", "No reduced-mode tangent claim is made."), ("NOT_APPLICABLE", "No smooth-secular tangent claim is made."), ("NO_CERTIFIED_MAP", "No causal-retarded completion is supplied.")),
+        _evidence("five_current_de_rham_carrier", "five_current_de_rham_q2", "relative_238_cyclic_rank_obstruction"),
+        "The obstruction is only to a nondegenerate degree-one odd pairing on the fixed 238-row direct sum. An add-only repair needs at least 28 rows, with one rank-minimal profile adding 9 rows in degree 1, 14 in degree 2 and 5 in degree 3, but this is necessary rather than sufficient. Noncyclic or presymplectic 238-row complexes, regradings or quotients, and larger mixed-bundle cyclic carriers remain open; no causal or quantum conclusion follows.",
     ))
     return values
 

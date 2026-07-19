@@ -1900,6 +1900,19 @@ This 188-row theorem does not silently solve the full 238-row problem: the
 ghost, identity and antifield cross-incidence with the 78-row mapping cofiber
 and the original direct-\(f_2\) obstruction remain the active classical gate.
 
+That fixed-carrier gate now has an exact rank verdict.
+`EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1` gives combined
+degree ranks `(10,45,78,69,31,5)` for the direct sum.  Degree-one odd
+nondegeneracy requires equality between degrees `d` and `1-d`; the exact
+deficits are 5, 14 and 9.  No coefficient or support-local cross-incidence
+can therefore make the fixed 238 rows into a cyclic BV complex.  This does
+not obstruct its noncyclic or presymplectic use, a quotient or regrading, or
+a larger mixed-bundle carrier.  The add-only lower bound is 28 rows, with one
+rank-minimal profile adding `(degree 1,degree 2,degree 3)=(9,14,5)`.  Bridge 1
+now advances to classifying the covariant bundle types and unary incidence
+of at least those 28 completion rows before any complete relative `q2` solve;
+the existing scoped 188-row current theorem remains certified.
+
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains
 `NO_CERTIFIED_MAP`; the relative functor may be prepared but Bridge 1 is not

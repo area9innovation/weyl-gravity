@@ -1,0 +1,46 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_ids": ["EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1"],
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1.json", "sha256": "7295dbd89c1e2ea45e0b5193df8fed95ad77c4047fd73441f20f76c5a9064932"},
+    "schema": {"path": "d_quotient_classical/schema/relative-238-row-cyclic-rank-obstruction-v1.schema.json", "sha256": "3ef755f0de6c8788320cf93fbcd24552cfbac395411dd4df046c71c7d5a0c16a"},
+    "producer": {"path": "d_quotient_classical/relative/einstein_weyl_relative_238_cyclic_rank_obstruction.py", "sha256": "30fccd4ff9712a43186c428f695a321becda9e5fac8f41faf36c5f92070fb184"},
+    "verifier": {"path": "d_quotient_classical/relative/verify_einstein_weyl_relative_238_cyclic_rank_obstruction.py", "sha256": "c5887e15e2a507b0038628bcff39a71797d9b5d3110756b27b9c2286b744dc51"},
+    "tests": {"path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_238_cyclic_rank_obstruction.py", "sha256": "2ba856ca5e7237fd38d3d00f73cac0ef16add59f5cab51867335ed8dac8bac14"},
+    "report": {"path": "d_quotient_classical/reports/einstein-weyl-relative-238-row-cyclic-rank-obstruction.md", "sha256": "2becbea7e119dd059f46cf9dec5fe09b66cb2b755a959771ac276457a645ea2c"},
+    "atlas_fragment": {"path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "sha256": "82883550cdd9033a0c09a65075cd5958c088736c6e01de764d47faa7f498dec9"}
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": ["Python compilation", "strict Draft 2020-12 schema", "scoped diff check", "content-hash replay"]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 3.5,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_238_cyclic_rank_obstruction --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_238_cyclic_rank_obstruction",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_238_cyclic_rank_obstruction",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-238-row-cyclic-rank-obstruction-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 1.1,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "PYTHONPATH=. python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "PYTHONPATH=. python3 -m d_quotient_classical.atlas.verify_classical_atlas_fragment",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This scoped rank theorem classifies one fixed relative carrier and updates its direct atlas consumer. It does not freeze a paper, change shared core algebra, construct a causal Green operator or promote a quantum lifecycle state; unrelated Einstein, observer, quantum and black-hole work is concurrently dirty."
+    }
+  },
+  "claim_boundary": "This receipt covers the exact degree-rank census for the fixed direct sum of the 78-row relative mapping cofiber and 160-row five-current de Rham/cotangent carrier, the resulting impossibility of a nondegenerate degree-one odd pairing on those 238 rows, and the add-only lower bound of 28 completion rows. It does not obstruct a noncyclic or presymplectic 238-row complex, a quotient or regrading, or a larger mixed-bundle cyclic carrier. The rank-minimal profile is necessary rather than sufficient and supplies no q1 incidence, q2 operation, causal Green data, observable, particle or quantum claim."
+}

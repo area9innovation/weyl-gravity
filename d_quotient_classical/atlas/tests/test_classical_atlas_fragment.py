@@ -124,6 +124,19 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
 
+    def test_fixed_238_row_cyclic_completion_is_rank_obstructed(self) -> None:
+        entry = self.entries["classical.crosswalk.compact_product_relative_238_cyclic_completion"]
+        self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+        self.assertIn("at least 28 rows", entry["claim_boundary"])
+        self.assertIn("necessary rather than sufficient", entry["claim_boundary"])
+        self.assertIn("larger mixed-bundle cyclic carriers remain open", entry["claim_boundary"])
+        self.assertIn(
+            "EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+
     def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_exact_branch"]
         self.assertEqual(entry["descriptions"]["causal"], "CERTIFIED")

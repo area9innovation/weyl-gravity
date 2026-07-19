@@ -2364,6 +2364,23 @@ the remaining cross-incidence with the 78-row mapping cofiber.  Causal Green
 data, the direct relative `f2`, candidate-13's eighteen spectral resonance
 rows, arity three and quantum transfer remain fail-closed.
 
+The first complete-carrier gate is now decided negatively and more sharply
+than any coefficient search.  The 78-row mapping cofiber has padded degree
+ranks `(5,20,28,19,6,0)`, while the self-dual 160-row current carrier has
+degree ranks `(5,25,50,50,25,5)`.  Their fixed 238-row direct sum therefore
+has ranks `(10,45,78,69,31,5)`.  A nondegenerate odd BV pairing of degree one
+would pair degree `d` with degree `1-d`, but the three rank deficits are
+`5`, `14` and `9`.  Consequently
+`EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1` rules out every
+cyclic `q1/q2` completion on those fixed rows, independently of coefficients
+or cross-incidence.  An add-only repair needs at least 28 new rows—one
+rank-minimal profile adds 9 in degree 1, 14 in degree 2 and 5 in degree 3—but
+this is necessary rather than sufficient.  Noncyclic or presymplectic
+238-row complexes, regradings or quotients, and larger mixed-bundle cyclic
+carriers remain open.  The active bridge is therefore the bundle-type and
+incidence classification of a cyclic enlargement of at least 28 rows; no
+full `q2` solve should start before that carrier exists.
+
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
 negative-norm one-particle class.  A counterexample is a successful result, not

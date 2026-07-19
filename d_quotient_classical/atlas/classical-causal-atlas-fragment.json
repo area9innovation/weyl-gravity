@@ -1176,10 +1176,84 @@
         "parity": "odd cotangent pairing; both source parities",
         "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
       }
+    },
+    {
+      "claim_boundary": "The obstruction is only to a nondegenerate degree-one odd pairing on the fixed 238-row direct sum. An add-only repair needs at least 28 rows, with one rank-minimal profile adding 9 rows in degree 1, 14 in degree 2 and 5 in degree 3, but this is necessary rather than sufficient. Noncyclic or presymplectic 238-row complexes, regradings or quotients, and larger mixed-bundle cyclic carriers remain open; no causal or quantum conclusion follows.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1",
+          "sha256": "44aded404db4128523362cab071b275b56db8de9bd3e77599f41a3d6ded3c883"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1",
+          "sha256": "438d9d4035f655b0902bc328af18c8e526289b63085e1b49e1065501d8475cf6"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1",
+          "sha256": "7295dbd89c1e2ea45e0b5193df8fed95ad77c4047fd73441f20f76c5a9064932"
+        }
+      ],
+      "id": "classical.crosswalk.compact_product_relative_238_cyclic_completion",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The fixed support-local carrier has no causal Green construction.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "Degree-one odd nondegeneracy would require equal ranks in degrees d and 1-d; the exact deficits are 5, 14 and 9.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "This is a carrier-rank obstruction, not a harmonic resonance calculation.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No reduced-mode tangent claim is made.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "No causal-retarded completion is supplied.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No smooth-secular tangent claim is made.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "No coefficient or cross-incidence choice can make this fixed 238-row carrier a cyclic BV q1/q2 complex.",
+          "status": "OBSTRUCTED"
+        }
+      },
+      "scope": {
+        "background": "compact magnetic Plebanski-Hacyan product",
+        "boundaries": "support-local off-shell bundle complex before harmonic or causal reduction",
+        "carrier": "fixed direct sum of the 78-row relative mapping cofiber and 160-row five-current de Rham/cotangent carrier",
+        "charge_sector": "H,P_x,J_1,J_2,J_3 simultaneous derived zero-charge sector",
+        "degree": "-2,...,3 with ranks (10,45,78,69,31,5)",
+        "ell": "not harmonic-reduced",
+        "k": "not harmonic-reduced",
+        "m": "not harmonic-reduced",
+        "omega": "not harmonic-reduced",
+        "parity": "candidate nondegenerate BV odd pairing of degree one",
+        "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+      }
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "905b62d86022d72df009422abde4c8cfaac6d3a0f80bead17f32a9595042a9c3",
+  "generated_by_sha256": "f59af05cb34fbf29a78ed04d14d2a5f58711a3cb577da09a36033aedd28cecf2",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

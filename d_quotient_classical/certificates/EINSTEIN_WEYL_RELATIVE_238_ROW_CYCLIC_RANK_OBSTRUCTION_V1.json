@@ -1,0 +1,154 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC theorem is a rank obstruction to a nondegenerate degree-one odd pairing on the fixed 238-row direct-sum carrier. It is independent of coefficient choices and therefore rules out a cyclic BV q1/q2 completion on those rows. It does not obstruct a noncyclic or presymplectic 238-row complex, a quotient or regrading, or a larger mixed-bundle carrier. The 28-row lower bound is necessary but not sufficient and does not itself construct the required cyclic incidence, causal Green data, arity three, observables, particles or quantum transfer.",
+  "classification": {
+    "altered_grading_or_quotient_obstructed": false,
+    "causal_or_quantum_claim": false,
+    "combined_238_row_rank_census_exact": true,
+    "fixed_238_row_cyclic_bv_complex_possible": false,
+    "larger_cyclic_mixed_bundle_carrier_obstructed": false,
+    "minimum_additional_row_lower_bound": 28,
+    "noncyclic_238_row_q1q2_complex_obstructed": false,
+    "nondegenerate_degree_one_odd_pairing_exists_on_fixed_carrier": false,
+    "rank_minimal_degree_profile_identified": true
+  },
+  "dependencies": {
+    "de_rham_carrier": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1.json",
+      "sha256": "44aded404db4128523362cab071b275b56db8de9bd3e77599f41a3d6ded3c883"
+    },
+    "de_rham_q2": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1.json",
+      "sha256": "438d9d4035f655b0902bc328af18c8e526289b63085e1b49e1065501d8475cf6"
+    },
+    "linear_triangle_components": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_COMPONENTS_V1",
+      "path": "bridge/einstein_sector/generated/einstein_weyl_relative_linear_triangle_v1/components.json",
+      "sha256": "d3f10bd90c85f72bdc71ea72178bdda435fc9d4b892ec90634ee86f9e5d7c84f"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "CLASSIFY_THE_BUNDLE_TYPES_AND_INCIDENCE_OF_AT_LEAST_28_CYCLIC_COMPLETION_ROWS_BEFORE_ANY_FULL_Q2_SOLVE",
+  "obstruction": {
+    "conclusion": "no coefficient choice, differential cross-incidence, or q2 correction on the fixed 238 rows can make the carrier a nondegenerate cyclic BV complex",
+    "failed_pairs": [
+      [
+        -2,
+        3
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "minimum_enlargement_statement": "if rows are only added and degrees are unchanged, at least 28 new rows are necessary; the rank-minimal degree counts are 9 in degree 1, 14 in degree 2, and 5 in degree 3",
+    "necessary_condition": "a nondegenerate degree-one pairing requires rank(C^d)=rank(C^(1-d)) for every d",
+    "sufficiency_warning": "the rank-minimal 28-row completion is only necessary; bundle covariance, q1-square-zero, cyclic adjunction, q1q2 and support locality must still be solved"
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_238_cyclic_rank_obstruction.py": "30fccd4ff9712a43186c428f695a321becda9e5fac8f41faf36c5f92070fb184",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_238_cyclic_rank_obstruction.py": "2ba856ca5e7237fd38d3d00f73cac0ef16add59f5cab51867335ed8dac8bac14",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_238_cyclic_rank_obstruction.py": "c5887e15e2a507b0038628bcff39a71797d9b5d3110756b27b9c2286b744dc51",
+      "d_quotient_classical/schema/relative-238-row-cyclic-rank-obstruction-v1.schema.json": "3ef755f0de6c8788320cf93fbcd24552cfbac395411dd4df046c71c7d5a0c16a"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_238_cyclic_rank_obstruction --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_238_cyclic_rank_obstruction",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_238_cyclic_rank_obstruction",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-238-row-cyclic-rank-obstruction-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1.json"
+    ]
+  },
+  "rank_audit": {
+    "combined_ranks": [
+      10,
+      45,
+      78,
+      69,
+      31,
+      5
+    ],
+    "de_rham_carrier_ranks": [
+      5,
+      25,
+      50,
+      50,
+      25,
+      5
+    ],
+    "degree_range": [
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3
+    ],
+    "dual_degree_rule": "d_dual=1-d",
+    "dual_pair_audit": [
+      {
+        "degree": -2,
+        "dual_degree": 3,
+        "dual_rank": 5,
+        "rank": 10,
+        "rank_deficit": 5,
+        "required_addition_side": "degree_3"
+      },
+      {
+        "degree": -1,
+        "dual_degree": 2,
+        "dual_rank": 31,
+        "rank": 45,
+        "rank_deficit": 14,
+        "required_addition_side": "degree_2"
+      },
+      {
+        "degree": 0,
+        "dual_degree": 1,
+        "dual_rank": 69,
+        "rank": 78,
+        "rank_deficit": 9,
+        "required_addition_side": "degree_1"
+      }
+    ],
+    "mapping_cofiber_ranks_padded": [
+      5,
+      20,
+      28,
+      19,
+      6,
+      0
+    ],
+    "minimum_additional_rows_if_only_rows_are_added": 28,
+    "odd_pairing_degree": 1,
+    "one_rank_minimal_degree_completion": {
+      "degree_1": 9,
+      "degree_2": 14,
+      "degree_3": 5
+    }
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1",
+  "result_state": "FIXED_238_ROW_CARRIER_HAS_NO_NONDEGENERATE_DEGREE_ONE_ODD_PAIRING",
+  "schema": "pure-weyl-relative-238-row-cyclic-rank-obstruction-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "support-local off-shell bundle complex before harmonic or causal reduction",
+    "carrier": "78-row relative mapping cofiber direct-summed with the 160-row five-current de Rham/cotangent carrier",
+    "charge_sector": "five connected stabilizers H,P_x,J_1,J_2,J_3",
+    "degree": "-2 through 3",
+    "ell": "not harmonic-reduced",
+    "k": "not harmonic-reduced",
+    "m": "not harmonic-reduced",
+    "omega": "not harmonic-reduced",
+    "parity": "candidate nondegenerate BV odd pairing of cohomological degree one",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/relative-238-row-cyclic-rank-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "rank_audit", "obstruction", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-238-row-cyclic-rank-obstruction-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1"},
+    "result_state": {"const": "FIXED_238_ROW_CARRIER_HAS_NO_NONDEGENERATE_DEGREE_ONE_ODD_PAIRING"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "object", "additionalProperties": false, "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"], "properties": {
+      "theory": {"type": "string"}, "background": {"type": "string"}, "boundaries": {"type": "string"}, "charge_sector": {"type": "string"}, "carrier": {"type": "string"}, "degree": {"type": "string"}, "parity": {"type": "string"}, "ell": {"type": "string"}, "m": {"type": "string"}, "k": {"type": "string"}, "omega": {"type": "string"}
+    }},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["linear_triangle_components", "de_rham_carrier", "de_rham_q2"],
+      "properties": {
+        "linear_triangle_components": {"$ref": "#/$defs/artifact"},
+        "de_rham_carrier": {"$ref": "#/$defs/artifact"},
+        "de_rham_q2": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "rank_audit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["degree_range", "mapping_cofiber_ranks_padded", "de_rham_carrier_ranks", "combined_ranks", "odd_pairing_degree", "dual_degree_rule", "dual_pair_audit", "minimum_additional_rows_if_only_rows_are_added", "one_rank_minimal_degree_completion"],
+      "properties": {
+        "degree_range": {"const": [-2,-1,0,1,2,3]},
+        "mapping_cofiber_ranks_padded": {"const": [5,20,28,19,6,0]},
+        "de_rham_carrier_ranks": {"const": [5,25,50,50,25,5]},
+        "combined_ranks": {"const": [10,45,78,69,31,5]},
+        "odd_pairing_degree": {"const": 1},
+        "dual_degree_rule": {"const": "d_dual=1-d"},
+        "dual_pair_audit": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/pairAudit"}},
+        "minimum_additional_rows_if_only_rows_are_added": {"const": 28},
+        "one_rank_minimal_degree_completion": {"const": {"degree_1": 9, "degree_2": 14, "degree_3": 5}}
+      }
+    },
+    "obstruction": {"type": "object", "additionalProperties": false, "required": ["necessary_condition", "failed_pairs", "conclusion", "minimum_enlargement_statement", "sufficiency_warning"], "properties": {
+      "necessary_condition": {"type": "string", "minLength": 1},
+      "failed_pairs": {"const": [[-2,3],[-1,2],[0,1]]},
+      "conclusion": {"type": "string", "minLength": 1},
+      "minimum_enlargement_statement": {"type": "string", "minLength": 1},
+      "sufficiency_warning": {"type": "string", "minLength": 1}
+    }},
+    "classification": {"type": "object", "additionalProperties": false, "required": ["combined_238_row_rank_census_exact", "nondegenerate_degree_one_odd_pairing_exists_on_fixed_carrier", "fixed_238_row_cyclic_bv_complex_possible", "minimum_additional_row_lower_bound", "rank_minimal_degree_profile_identified", "noncyclic_238_row_q1q2_complex_obstructed", "larger_cyclic_mixed_bundle_carrier_obstructed", "altered_grading_or_quotient_obstructed", "causal_or_quantum_claim"], "properties": {
+      "combined_238_row_rank_census_exact": {"const": true},
+      "nondegenerate_degree_one_odd_pairing_exists_on_fixed_carrier": {"const": false},
+      "fixed_238_row_cyclic_bv_complex_possible": {"const": false},
+      "minimum_additional_row_lower_bound": {"const": 28},
+      "rank_minimal_degree_profile_identified": {"const": true},
+      "noncyclic_238_row_q1q2_complex_obstructed": {"const": false},
+      "larger_cyclic_mixed_bundle_carrier_obstructed": {"const": false},
+      "altered_grading_or_quotient_obstructed": {"const": false},
+      "causal_or_quantum_claim": {"const": false}
+    }},
+    "next_gate": {"const": "CLASSIFY_THE_BUNDLE_TYPES_AND_INCIDENCE_OF_AT_LEAST_28_CYCLIC_COMPLETION_ROWS_BEFORE_ANY_FULL_Q2_SOLVE"},
+    "provenance": {"type": "object", "required": ["source_manifest", "verification_commands"], "additionalProperties": false, "properties": {
+      "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"$ref": "#/$defs/hash"}},
+      "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+    }},
+    "claim_boundary": {"type": "string", "minLength": 80}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {
+      "artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}
+    }},
+    "pairAudit": {"type": "object", "additionalProperties": false, "required": ["degree", "dual_degree", "rank", "dual_rank", "rank_deficit", "required_addition_side"], "properties": {
+      "degree": {"type": "integer"}, "dual_degree": {"type": "integer"}, "rank": {"type": "integer", "minimum": 0}, "dual_rank": {"type": "integer", "minimum": 0}, "rank_deficit": {"type": "integer", "minimum": 1}, "required_addition_side": {"type": "string"}
+    }}
+  }
+}
