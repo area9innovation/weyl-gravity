@@ -45,6 +45,7 @@ CERTS = {
     "BH2AC": PKG / "certificates" / "BH2A_CROSS_FLUX.json",
     "BH2AD": PKG / "certificates" / "BH2A_CAUSAL_DISPOSITION.json",
     "BH2BP": PKG / "certificates" / "BH2B_POLAR_SPLIT.json",
+    "BH2BR": PKG / "certificates" / "BH2B_POLAR_REACH.json",
 }
 
 
@@ -292,7 +293,27 @@ def entries():
             "second_order": SECOND_ORDER_OPEN,
         },
         "evidence": _evidence("BH2BP"),
-        "claim_boundary": "operator-level split only (Schwarzschild, l=2): Zerilli benchmark, horizon reach, flux, causal disposition all OPEN",
+        "claim_boundary": "operator-level split only (Schwarzschild, l=2): Zerilli benchmark, Einstein-branch polar flux, causal disposition all OPEN; the polar extra branch has its own entry",
+    })
+
+    E.append({
+        "id": "bh.mode.polar.extra-fourth-order-branch",
+        "scope": _scope(degree=1, parity="even", ell=2, m="all", k="n/a",
+                        omega="dynamical, real omega != 0"),
+        "descriptions": {desc: "OPEN" for desc in DESCRIPTIONS},
+        "mode_data": {
+            "dispersion": _gated(
+                "CERTIFIED",
+                "polar extra branch identified exactly: trace-coupled carrier (psi_ab, S) with the certified operator (1/2) Box psi + C.psi - (1/6) DD S - (1/12) g Box S = 0 and Bianchi constraint; exact identities (tracelessness + divergence) reduce the system to 3 second-order equations in 4 functions, the underdeterminacy being linearized conformal gauge; on the traceless slice r = 2m is a regular singular point with residue spectrum {0 (x3), 1-4imw, -1-4imw, -3-4imw} and a TWO-parameter physical ingoing-regular family after quotienting the regular conformal-gauge direction: the polar extra branch reaches the future horizon",
+                "no polar extra-branch horizon-reach certificate exists", "BH2BP", "BH2BR"),
+            "lee_wald": _claim("OPEN", "polar flux blocks open"),
+            "taub_maps": _claim("NO_CERTIFIED_MAP", "must not be identified with compact structures without an explicit crosswalk"),
+            "resonance": _claim("OPEN", "no exterior cokernel object"),
+            "second_order": SECOND_ORDER_OPEN,
+        },
+        "evidence": _evidence("BH2BP", "BH2BR"),
+        "claim_boundary": "Schwarzschild (symbolic m), polar l=2, real omega != 0: horizon reach certified (two-parameter physical ingoing-regular family modulo conformal gauge); omega = 0, Zerilli benchmark, flux matrix and signs, outer boundary, causal disposition, general l, stability all OPEN"
+                          if CERTS["BH2BR"].exists() else "operator-level identification only: horizon reach OPEN",
     })
 
     E.append({

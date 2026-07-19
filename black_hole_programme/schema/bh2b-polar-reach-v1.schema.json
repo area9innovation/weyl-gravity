@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2b-polar-reach-v1",
+  "title": "BH-2B stage 2: polar extra branch reaches the horizon (linear mode level)",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "carrier",
+    "horizon_analysis",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh2b-polar-reach-v1" },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh2b-polar-reach-v1.schema.json"
+    },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH2B_POLAR_REACH" },
+    "result_token": { "const": "BH2B_POLAR_EXTRA_BRANCH_REACHES_HORIZON_LINEAR_MODE_LEVEL" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "frequency_domain",
+        "lifecycle"
+      ],
+      "properties": { "lifecycle": { "const": "CLASSIFIED" } }
+    },
+    "carrier": {
+      "type": "object",
+      "required": ["definition", "equation", "system_content", "gauge_structure"]
+    },
+    "horizon_analysis": {
+      "type": "object",
+      "required": [
+        "slice",
+        "singular_point",
+        "indicial_exponents",
+        "zero_eigenspace",
+        "residual_gauge",
+        "physical_family",
+        "conclusion"
+      ],
+      "properties": {
+        "indicial_exponents": {
+          "const": [
+            "0 (multiplicity 3)",
+            "1 - 4*I*m*omega",
+            "-1 - 4*I*m*omega",
+            "-3 - 4*I*m*omega"
+          ]
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "bianchi_cascade_certified",
+        "operator_identity_reduction_certified",
+        "conformal_gauge_identity_certified",
+        "regular_singular_point_certified",
+        "indicial_exponents_certified",
+        "ingoing_family_dimension_certified",
+        "gauge_quotient_certified",
+        "flux_or_sign_certified",
+        "zerilli_benchmark_certified",
+        "outer_boundary_domain_certified",
+        "causal_exclusion_decided",
+        "growth_or_stability_certified",
+        "general_l_certified",
+        "omega_zero_classified",
+        "non_einstein_background_certified"
+      ],
+      "properties": {
+        "bianchi_cascade_certified": { "const": true },
+        "operator_identity_reduction_certified": { "const": true },
+        "conformal_gauge_identity_certified": { "const": true },
+        "regular_singular_point_certified": { "const": true },
+        "indicial_exponents_certified": { "const": true },
+        "ingoing_family_dimension_certified": { "const": true },
+        "gauge_quotient_certified": { "const": true },
+        "flux_or_sign_certified": { "const": false },
+        "zerilli_benchmark_certified": { "const": false },
+        "outer_boundary_domain_certified": { "const": false },
+        "causal_exclusion_decided": { "const": false },
+        "growth_or_stability_certified": { "const": false },
+        "general_l_certified": { "const": false },
+        "omega_zero_classified": { "const": false },
+        "non_einstein_background_certified": { "const": false }
+      }
+    },
+    "missing_objects": {
+      "type": "array",
+      "minItems": 6,
+      "items": { "type": "string" }
+    },
+    "stage_seconds": { "type": "object" },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "engine_path",
+        "engine_sha256",
+        "bh2b_split_certificate",
+        "bh2b_split_certificate_sha256"
+      ]
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh2b_polar_reach.py"
+    }
+  }
+}

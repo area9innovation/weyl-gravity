@@ -437,7 +437,7 @@
       }
     },
     {
-      "claim_boundary": "operator-level split only (Schwarzschild, l=2): Zerilli benchmark, horizon reach, flux, causal disposition all OPEN",
+      "claim_boundary": "operator-level split only (Schwarzschild, l=2): Zerilli benchmark, Einstein-branch polar flux, causal disposition all OPEN; the polar extra branch has its own entry",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
@@ -496,6 +496,75 @@
         "k": "n/a",
         "m": "all",
         "omega": "dynamical",
+        "parity": "even",
+        "theory": "pure-Weyl gravity S = alpha Int sqrt(-g) C_abcd C^abcd"
+      }
+    },
+    {
+      "claim_boundary": "Schwarzschild (symbolic m), polar l=2, real omega != 0: horizon reach certified (two-parameter physical ingoing-regular family modulo conformal gauge); omega = 0, Zerilli benchmark, flux matrix and signs, outer boundary, causal disposition, general l, stability all OPEN",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "OPEN"
+      },
+      "evidence": [
+        {
+          "path": "black_hole_programme/certificates/BH2B_POLAR_SPLIT.json",
+          "result_id": "PURE_WEYL_BH2B_POLAR_SPLIT",
+          "sha256": "1c84cd014d31e1f97b6489ef083d5e81bcf83ba08eb9aa749c19931e60d5b8d5"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH2B_POLAR_REACH.json",
+          "result_id": "PURE_WEYL_BH2B_POLAR_REACH",
+          "sha256": "c2639050b9d735d73daa756aed99c86e6882d354c99e13eb7a806a7a8d3ea977"
+        }
+      ],
+      "id": "bh.mode.polar.extra-fourth-order-branch",
+      "mode_data": {
+        "dispersion": {
+          "statement": "polar extra branch identified exactly: trace-coupled carrier (psi_ab, S) with the certified operator (1/2) Box psi + C.psi - (1/6) DD S - (1/12) g Box S = 0 and Bianchi constraint; exact identities (tracelessness + divergence) reduce the system to 3 second-order equations in 4 functions, the underdeterminacy being linearized conformal gauge; on the traceless slice r = 2m is a regular singular point with residue spectrum {0 (x3), 1-4imw, -1-4imw, -3-4imw} and a TWO-parameter physical ingoing-regular family after quotienting the regular conformal-gauge direction: the polar extra branch reaches the future horizon",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "polar flux blocks open",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "no exterior cokernel object",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "no causal exterior second-order theory exists",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "must not be identified with compact structures without an explicit crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "MK static spherical Bach vacuum, working gauge b = 1/a; Schwarzschild and three-horizon fixture controls",
+        "boundaries": "exterior chart with fixed-falloff ensembles {gamma, k fixed}; horizons as simple roots of B; no asymptotic completion imposed",
+        "carrier": "metric perturbations of the static spherical chart",
+        "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
+        "degree": 1,
+        "ell": 2,
+        "k": "n/a",
+        "m": "all",
+        "omega": "dynamical, real omega != 0",
         "parity": "even",
         "theory": "pure-Weyl gravity S = alpha Int sqrt(-g) C_abcd C^abcd"
       }
@@ -618,7 +687,7 @@
     }
   ],
   "generated_by": "black_hole_programme/atlas/generate_atlas_fragment.py",
-  "generated_by_sha256": "a5932cd5e395f88460af3ffebeba00863f5b41a09131c67456b4097c97488eac",
+  "generated_by_sha256": "77d66dc273f34ba941a4fa476b2209538bf6dfb57de6d1bbac25e180dfb0111d",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
