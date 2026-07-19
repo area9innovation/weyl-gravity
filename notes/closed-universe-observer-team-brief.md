@@ -1457,11 +1457,16 @@ second-profile derivative families, including the full 26-coordinate
 Jacobian Hessian, and exactly regresses the certified q2 first jet.  Its 23
 deterministic row chunks contain 338,364 operator keys and 1,085,112 exact
 profile-jet monomials; independent Maxwell and geometry formal transposes and
-graded symmetry pass.  These are three source subblocks, not complete `q3`:
-the base gravity-clock-Maxwell import and physical-emitter block remain to
-assemble, while scalar-BV and emitter Diff--BV must be ledgered as structural
-zeros.  Arity replay and `O_detector|Z2^C` therefore remain fail-closed.  The
-active next gate is physical-emitter `q3`.
+graded symmetry pass.  The physical-emitter successor is now complete as
+well.  `BERGER_108_ROW_EMITTER_PHYSICAL_Q3_PBW` regresses all 768 q2 cubic
+action keys, retains both exact switch second derivatives and exports 106,620
+ordered PBW keys with 107,988 coefficient monomials on 27 cotangent rows.
+Its 520 first-jet comparisons, second-jet permutation audit, six direct mixed
+variations and common-action cyclic completion pass exactly.  These are four
+source subblocks, not complete `q3`: the base gravity-clock-Maxwell import
+remains to assemble, while scalar-BV and emitter Diff--BV must be ledgered as
+structural zeros.  Arity replay and `O_detector|Z2^C` therefore remain
+fail-closed.  The active next gate is base-q3 plus structural-zero assembly.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to

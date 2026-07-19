@@ -1,0 +1,28 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_EMITTER_PHYSICAL_Q3_PBW_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_EMITTER_PHYSICAL_Q3_PBW",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The complete physical-emitter q3 subblock contains 106,620 ordered PBW keys and 107,988 exact switch-jet coefficient monomials. Base/zero q3 assembly, arity replay, cone response, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {"tier": 0, "command": "py_compile changed Python; validate JSON/schema; generator emit; git diff --check", "elapsed_seconds": 26.74, "peak_rss_mb": 194.79, "status": "PASS", "scope": "exhaustive physical-emitter q3 assembly and deterministic emission into 27 compressed row chunks"},
+    {"tier": 1, "command": "pytest emitter-physical-q3 plus observer atlas verifier and residual-atlas validator", "elapsed_seconds": 5.02, "peak_rss_mb": 70.45, "status": "PASS", "scope": "2 fast invariants and fail-closed lifecycle/evidence validation"},
+    {"tier": 2, "command": "python3 -m closed_universe_observers.verify_berger_108_row_emitter_physical_q3_pbw", "elapsed_seconds": 31.77, "peak_rss_mb": 212.53, "status": "PASS", "scope": "independent full rebuild; 768-key q2 action regression, 520 first-jet comparisons, all second-jet permutations, six direct mixed variations, 106,620 PBW keys, 107,988 monomials, symmetry, source/dependency/row hashes and deletion mutation"}
+  ],
+  "higher_tiers_not_run": {"tier_3": "Scoped q3 source subblock; no complete q3, shared core algebra, freeze, release or paper theorem."},
+  "source_manifest": [
+    {"path":"closed_universe_observers/generate_berger_108_row_emitter_physical_q3_pbw.py","sha256":"a5c6dabdec51882aee57286fe8e38d8183d50a49acf9e1ff14803ad762b91f20"},
+    {"path":"closed_universe_observers/generate_berger_108_row_emitter_physical_q2_pbw.py","sha256":"9eb1e8c040abf3f50fa2cf4364ed5db7f9f90187d61f1b920c6f8a2d72205677"},
+    {"path":"closed_universe_observers/generate_berger_108_row_rod_metric_q3_pbw.py","sha256":"a98f653d06f5422e0434b42a26b32354862ea8a67d84e0754b5bfc58be8ac02d"},
+    {"path":"closed_universe_observers/verify_berger_108_row_emitter_physical_q3_pbw.py","sha256":"9e4d37cfc94fe1a3a723215f7b49acda5ef86ab98fa578dd68b578c34b903a5d"},
+    {"path":"closed_universe_observers/tests/test_berger_108_row_emitter_physical_q3_pbw.py","sha256":"f184e7a62e2852cab9b2df0dc5a77bb70bb10189295b152c76d95ed33c3faee8"},
+    {"path":"closed_universe_observers/schema/berger-108-row-emitter-physical-q3-pbw-v1.schema.json","sha256":"1b4d7fc5350228bf31e8d0995ba7597993b6aa98ecf9f0f4e6e0194fb665b891"},
+    {"path":"closed_universe_observers/schema/berger-108-row-emitter-physical-q3-pbw-payload-v1.schema.json","sha256":"9d9d9588ce9a4100a6980c7569a49f283e95b3956039fd28b1d1c47e5c7def4b"},
+    {"path":"closed_universe_observers/reports/berger-108-row-emitter-physical-q3-pbw.md","sha256":"2b27c891bcdd599e87335db60cb44404254f2fc63e397bc95c22222847915f90"},
+    {"path":"closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_PHYSICAL_Q3_PBW.json","sha256":"983ccffc76302508c51eb3b6a0ad9040739c1d5a4cbdbd1932e3c8905f2cd12c"},
+    {"path":"closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_PHYSICAL_Q3_PBW_PAYLOAD.json","sha256":"d67fb9a1343831609052bf895b4f0b3117dfdea48dcc974d401e9044758877cf"},
+    {"path":"closed_universe_observers/atlas/observer-atlas-fragment.json","sha256":"cfeb893a2cb02a49fb85163adf176e419107d10ded8dd26f202e98d67cf3ffe9"},
+    {"path":"planning/work-items/berger-108-row-apparatus-q2-q3-extension.json","sha256":"f90559be8642e63412c8ded2f058e8b2d62c11ae6907f53960639d964d25ebb7"}
+  ],
+  "flags": {"EMITTER_PHYSICAL_Q3_PBW_EXPORTED":true,"COMPLETE_SCALAR_108_ROW_Q3_EXPORTED":false,"STRUCTURAL_Q3_ZERO_LEDGER_COMPLETE":false,"COMPONENT_ARITY_IDENTITIES_CERTIFIED":false,"TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED":false,"PHYSICAL_BRANCH_BRIDGE_ACTIVATED":false,"QUANTUM_CLAIM":false}
+}
