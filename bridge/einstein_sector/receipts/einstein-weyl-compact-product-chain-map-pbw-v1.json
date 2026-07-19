@@ -1,19 +1,19 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "result_id": "EINSTEIN_WEYL_COMPACT_PRODUCT_CHAIN_MAP_PBW_V1_VERIFICATION_RECEIPT",
-  "producing_date": "2026-07-18",
+  "producing_date": "2026-07-19",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC"
   ],
-  "claim_status": "EXACT_PBW_REPRESENTATIVE_TARGET_Q1_REPLAY_PENDING",
+  "claim_status": "EXACT_PBW_CHAIN_MAP_TARGET_Q1_REPLAYED",
   "source_manifest": {
     "bridge/einstein_sector/product_taylor_engine.py": "c9f960047a36687436b9cd37eea88e066148accf1f433eb62e72d4f2d6e43649",
-    "bridge/einstein_sector/export_einstein_weyl_compact_product_chain_map_pbw.py": "115043a7541d36c0e08a96e3fd7ae49ad70b03567f82a7ca1e0935f84ada1f58",
-    "bridge/einstein_sector/schema/einstein-weyl-compact-product-chain-map-pbw-v1.schema.json": "8b756f334860a08f74e9531c21cb5bc36b84a0e5fb46a961600e4a7c11db8031",
-    "bridge/einstein_sector/generated/einstein_weyl_compact_product_chain_map_pbw_v1/inclusion.json": "d6c36cb59462105c11d04561e9f3bdb885129f7a002547e7e2dbeb1a1f1054ea",
-    "bridge/einstein_sector/verify_einstein_weyl_compact_product_chain_map_pbw.py": "64d684044f8cba268338f291e0bfeba3adcacf2d97fa03d0c50869bd496dc2be",
-    "bridge/einstein_sector/tests/test_einstein_weyl_compact_product_chain_map_pbw.py": "2e33dc9bd225cebfec03259703de4854266c08ae63840481b567e09b14f5093f",
-    "bridge/einstein_sector/reports/einstein-weyl-compact-product-chain-map-pbw-v1.md": "ddffe411a53801be7a9dbda0cf1e20ee7d049d5ee900bc1494cdd347164873a6"
+    "bridge/einstein_sector/export_einstein_weyl_compact_product_chain_map_pbw.py": "ce57e70024b21eb6e5aa0d2a8c8b3e99ff23f9b107b7f96ace908a8ce01ec7db",
+    "bridge/einstein_sector/schema/einstein-weyl-compact-product-chain-map-pbw-v1.schema.json": "8e3edc65fb3a05a9c1bf529ed3653b5f2a6d7f1ba7153b3f0b3c727ba47622d4",
+    "bridge/einstein_sector/generated/einstein_weyl_compact_product_chain_map_pbw_v1/inclusion.json": "5caea85a36c06a6c04fdb5406f0e8431b08e07bf21c563262e8fd3b76d83b9fe",
+    "bridge/einstein_sector/verify_einstein_weyl_compact_product_chain_map_pbw.py": "97e9107b69a1abae3cd907e7b7157112fa5f0e75b63ef58430e2e8be33efdab8",
+    "bridge/einstein_sector/tests/test_einstein_weyl_compact_product_chain_map_pbw.py": "557ec20db4c99fee570132e26b74fd1d2a99dc72352b5f478b314925da4d31ec",
+    "bridge/einstein_sector/reports/einstein-weyl-compact-product-chain-map-pbw-v1.md": "654c29bcc3652ea097ee255f113f5a3adb0c623a533fbe86d6a3c99f1b0d504d"
   },
   "tiers": {
     "tier_0": {
@@ -23,7 +23,7 @@
     },
     "tier_1": {
       "status": "PASS",
-      "elapsed_seconds": 17.58,
+      "elapsed_seconds": 16.38,
       "commands": [
         "python3 bridge/einstein_sector/export_einstein_weyl_compact_product_chain_map_pbw.py --check",
         "python3 bridge/einstein_sector/verify_einstein_weyl_compact_product_chain_map_pbw.py",
@@ -37,7 +37,7 @@
     },
     "tier_3": {
       "status": "NOT_RUN",
-      "reason": "This is a scoped linear handoff with target-q1 replay explicitly pending, not a theorem freeze, shared-core change or release."
+      "reason": "This is a scoped executable linear-chain promotion, not a paper freeze, shared-core change or release."
     }
   },
   "failed_attempts": [
@@ -46,5 +46,5 @@
       "disposition": "Added an explicit repository-root sys.path bootstrap before importing the shared PBW engine and reran the full scoped rail."
     }
   ],
-  "claim_boundary": "The receipt covers the exact support-local order-two PBW representative of the certified 38-to-40-row linear inclusion. Serialized target-q1 chain replay, cyclicity, q2/q3 relative compatibility, causal propagation, Berger transport, observables and quantum claims remain unpromoted."
+  "claim_boundary": "The receipt covers the exact support-local order-two PBW representative and coefficientwise target-q1 replay of the certified 38-to-40-row linear inclusion. Cyclicity, q2/q3 relative compatibility, causal propagation, Berger transport, observables and quantum claims remain unpromoted."
 }

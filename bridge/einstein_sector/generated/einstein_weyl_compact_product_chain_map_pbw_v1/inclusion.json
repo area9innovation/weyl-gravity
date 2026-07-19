@@ -9,12 +9,12 @@
     "new_weyl_identity_image_zero": true,
     "source_row_count": 38,
     "stable_row_ids_unique": true,
-    "target_q1_composition_replayed": false,
+    "target_q1_composition_replayed": true,
     "target_row_count": 40,
     "u1_identity": true
   },
-  "claim_boundary": "Exact row-ID-keyed PBW serialization of the already certified finite-order compact-product Einstein-Maxwell to Weyl-Maxwell linear chain-map formula. The committed source carrier is pinned, while the expected 40-row target layout is declared without importing the in-progress Weyl producer. A fresh serialized 40-row target-q1 composition replay, cyclicity, nonlinear relative morphism, causal, observable and quantum claims remain open.",
-  "claim_status": "EXACT_PBW_REPRESENTATIVE_TARGET_Q1_REPLAY_PENDING",
+  "claim_boundary": "Exact row-ID-keyed PBW serialization of the already certified finite-order compact-product Einstein-Maxwell to Weyl-Maxwell linear chain-map formula. Both frozen action-derived carriers are pinned. The legacy Maxwell Euler and identity inputs are adapted to the BV cotangent-row sign convention, and an independent consumer replays the 40-row target-q1 chain equation exactly. Cyclicity, nonlinear relative morphism, causal, observable and quantum claims remain open.",
+  "claim_status": "EXACT_PBW_CHAIN_MAP_TARGET_Q1_REPLAYED",
   "coefficient_field": "Q",
   "coefficient_jet_order": 4,
   "dependencies": {
@@ -32,14 +32,22 @@
     },
     "source_taylor_certificate": {
       "path": "bridge/certificates/EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
-      "sha256": "62be4604c625dfed36dcd7d06dd8f5d076a541cd86772a7a7494efc6485d8359"
+      "sha256": "be03e210b5699dd66e611e7c63f5cf23128140e3e3dcc377029d631203df8d88"
+    },
+    "target_row_layout": {
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/row_layout.json",
+      "sha256": "6236040676b7e699f5e48be6241143aa3bb5b7c9b4e07364826fc6f2b5ad24a2"
+    },
+    "target_taylor_certificate": {
+      "path": "bridge/certificates/WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
+      "sha256": "f78828e64525ecda924f34a75a1fe4ad8593b3fbf67cb2900ac221b98c454596"
     }
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC"
   ],
   "map": {
-    "canonical_sha256": "e260de5d81ac557ce373d13cd1a5f13667ce68160de27aa0bd31bff0c7d9af7b",
+    "canonical_sha256": "fa78a8571f46863a9de3a4a4ec44244d2ac60f737e748ece78a4bd02dab8e6b8",
     "entries": [
       {
         "input_index": 0,
@@ -783,18 +791,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "-3/4",
+                "coefficient": "3/4",
                 "word": []
               },
               {
-                "coefficient": "-3/4",
+                "coefficient": "3/4",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "-15/4",
+                "coefficient": "15/4",
                 "word": [
                   2,
                   2,
@@ -819,13 +827,13 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": [
                   2
                 ]
               },
               {
-                "coefficient": "3/2",
+                "coefficient": "-3/2",
                 "word": [
                   2,
                   2,
@@ -838,18 +846,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "3/4",
+                "coefficient": "-3/4",
                 "word": []
               },
               {
-                "coefficient": "-3/4",
+                "coefficient": "3/4",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "3/4",
+                "coefficient": "-3/4",
                 "word": [
                   2,
                   2,
@@ -1347,18 +1355,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": []
               },
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "-15/2",
+                "coefficient": "15/2",
                 "word": [
                   2,
                   2,
@@ -1383,18 +1391,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": []
               },
               {
-                "coefficient": "3/2",
+                "coefficient": "-3/2",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": [
                   2,
                   2,
@@ -1684,18 +1692,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "3/2",
+                "coefficient": "-3/2",
                 "word": []
               },
               {
-                "coefficient": "3/2",
+                "coefficient": "-3/2",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "15/2",
+                "coefficient": "-15/2",
                 "word": [
                   2,
                   2,
@@ -1720,18 +1728,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "3/2",
+                "coefficient": "-3/2",
                 "word": []
               },
               {
-                "coefficient": "3/2",
+                "coefficient": "-3/2",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "15/2",
+                "coefficient": "-15/2",
                 "word": [
                   2,
                   2,
@@ -2146,18 +2154,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "3/4",
+                "coefficient": "-3/4",
                 "word": []
               },
               {
-                "coefficient": "3/4",
+                "coefficient": "-3/4",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "15/4",
+                "coefficient": "-15/4",
                 "word": [
                   2,
                   2,
@@ -2182,13 +2190,13 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "3/2",
+                "coefficient": "-3/2",
                 "word": [
                   2
                 ]
               },
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": [
                   2,
                   2,
@@ -2201,18 +2209,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "-3/4",
+                "coefficient": "3/4",
                 "word": []
               },
               {
-                "coefficient": "3/4",
+                "coefficient": "-3/4",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "-3/4",
+                "coefficient": "3/4",
                 "word": [
                   2,
                   2,
@@ -2507,18 +2515,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": []
               },
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "-15/2",
+                "coefficient": "15/2",
                 "word": [
                   2,
                   2,
@@ -2543,18 +2551,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "3/2",
+                "coefficient": "-3/2",
                 "word": []
               },
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "3/2",
+                "coefficient": "-3/2",
                 "word": [
                   2,
                   2,
@@ -2844,18 +2852,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "3/2",
+                "coefficient": "-3/2",
                 "word": []
               },
               {
-                "coefficient": "3/2",
+                "coefficient": "-3/2",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "15/2",
+                "coefficient": "-15/2",
                 "word": [
                   2,
                   2,
@@ -2880,18 +2888,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": []
               },
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "-15/2",
+                "coefficient": "15/2",
                 "word": [
                   2,
                   2,
@@ -3370,18 +3378,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "-3/4",
+                "coefficient": "3/4",
                 "word": []
               },
               {
-                "coefficient": "-3/4",
+                "coefficient": "3/4",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "-15/4",
+                "coefficient": "15/4",
                 "word": [
                   2,
                   2,
@@ -3406,13 +3414,13 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": [
                   2
                 ]
               },
               {
-                "coefficient": "3/2",
+                "coefficient": "-3/2",
                 "word": [
                   2,
                   2,
@@ -3425,18 +3433,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "3/4",
+                "coefficient": "-3/4",
                 "word": []
               },
               {
-                "coefficient": "-3/4",
+                "coefficient": "3/4",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "3/4",
+                "coefficient": "-3/4",
                 "word": [
                   2,
                   2,
@@ -4299,18 +4307,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "-3/4",
+                "coefficient": "3/4",
                 "word": []
               },
               {
-                "coefficient": "-9/4",
+                "coefficient": "9/4",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "-99/4",
+                "coefficient": "99/4",
                 "word": [
                   2,
                   2,
@@ -4335,13 +4343,13 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": [
                   2
                 ]
               },
               {
-                "coefficient": "-15/2",
+                "coefficient": "15/2",
                 "word": [
                   2,
                   2,
@@ -4354,18 +4362,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "3/4",
+                "coefficient": "-3/4",
                 "word": []
               },
               {
-                "coefficient": "3/4",
+                "coefficient": "-3/4",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "15/4",
+                "coefficient": "-15/4",
                 "word": [
                   2,
                   2,
@@ -4817,18 +4825,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": []
               },
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "-15/2",
+                "coefficient": "15/2",
                 "word": [
                   2,
                   2,
@@ -4986,18 +4994,18 @@
           {
             "coefficient_jets": [
               {
-                "coefficient": "3/2",
+                "coefficient": "-3/2",
                 "word": []
               },
               {
-                "coefficient": "-3/2",
+                "coefficient": "3/2",
                 "word": [
                   2,
                   2
                 ]
               },
               {
-                "coefficient": "3/2",
+                "coefficient": "-3/2",
                 "word": [
                   2,
                   2,
@@ -5666,6 +5674,6 @@
   "schema": "einstein-weyl-compact-product-chain-map-pbw-v1",
   "source_carrier_id": "einstein_maxwell_minimal_bv_38_product_coordinate_jet",
   "support_local": true,
-  "target_carrier_id": "weyl_maxwell_minimal_bv_40_product_coordinate_jet",
+  "target_carrier_id": "weyl_maxwell_minimal_bv_40_product_coordinate_theta_jet",
   "uses_inverse_laplacian_curl_frequency_or_momentum": false
 }

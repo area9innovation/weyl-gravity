@@ -2386,8 +2386,10 @@ rows are now exact and give `3188/27` on the equal-box TT fixture. The
 exact relative-IBP carrier span now has rank 52 after adjoining the `M14`
 singlet and a standard-`S3` pair, and contains all eleven physical rows. The
 three renormalized new-master values and scale derivatives are now exact; the
-eleven physical master-coordinate functions and independent finite-counterterm
-normalization remain open. The selected generic weight-raised
+66 physical master-coordinate functions are exact, and all eleven physical
+relative-IBP boundary fluxes now reduce to exact seven-function structured
+decompositions. Assembly with the finite contact rows into the five repository
+form factors and independent finite-counterterm normalization remain open. The selected generic weight-raised
 factorization and its local order-minus-three/four BCH residue are now exact.
 The canonical
 `det_3` tail and all three Schur residues are already fixed. The exact Endo--Duhamel,

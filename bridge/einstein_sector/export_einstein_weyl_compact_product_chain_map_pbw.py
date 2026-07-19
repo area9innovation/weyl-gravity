@@ -5,8 +5,9 @@ The output is a 40-by-38 support-local unary operator.  Rows are joined by
 stable ``row_id`` strings; numeric indices are only a serialization detail.
 The construction uses the tensor formula certified by
 ``EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1`` and the committed
-Einstein--Maxwell product row layout.  It does not import the in-progress
-Weyl--Maxwell Taylor producer.
+Einstein--Maxwell and Weyl--Maxwell product row layouts.  The Maxwell equation
+and identity inputs are adapted from the legacy covariant-equation convention
+to the action-derived BV cotangent-row convention before serialization.
 """
 
 from __future__ import annotations
@@ -35,6 +36,8 @@ from bridge.einstein_sector.product_taylor_engine import (
 
 SOURCE_LAYOUT = ROOT / "bridge/einstein_sector/generated/einstein_maxwell_product_linfinity_v1/row_layout.json"
 SOURCE_CERTIFICATE = ROOT / "bridge/certificates/EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json"
+TARGET_LAYOUT = ROOT / "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/row_layout.json"
+TARGET_CERTIFICATE = ROOT / "bridge/certificates/WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json"
 CHAIN_CERTIFICATE = ROOT / "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json"
 CHAIN_PROOF = ROOT / "bridge/einstein_sector/proofs/einstein-weyl-compact-product-covariant-chain-map-v1.json"
 SCHEMA = ROOT / "bridge/einstein_sector/schema/einstein-weyl-compact-product-chain-map-pbw-v1.schema.json"
@@ -44,7 +47,7 @@ SCHEMA_ID = "einstein-weyl-compact-product-chain-map-pbw-v1"
 RESULT_ID = "EINSTEIN_WEYL_COMPACT_PRODUCT_CHAIN_MAP_PBW_V1"
 BACKGROUND_ID = "compact_magnetic_Plebanski_Hacyan_product"
 SOURCE_CARRIER = "einstein_maxwell_minimal_bv_38_product_coordinate_jet"
-TARGET_CARRIER = "weyl_maxwell_minimal_bv_40_product_coordinate_jet"
+TARGET_CARRIER = "weyl_maxwell_minimal_bv_40_product_coordinate_theta_jet"
 COEFFICIENT_JET_ORDER = 4
 
 
@@ -66,25 +69,11 @@ def _canonical_sha256(value: object) -> str:
 
 
 def _target_layout() -> list[dict[str, object]]:
-    metric = [f"g_{a}{b}" for a, b in PAIRS]
-    fields = [*metric, *[f"A_{axis}" for axis in range(4)]]
-    ghosts = [*[f"c_{axis}" for axis in range(4)], "lambda_cov", "sigma_W"]
-    rows: list[dict[str, object]] = []
-    for index, row_id in enumerate(ghosts):
-        bundle = "Diff_ghost" if index < 4 else (
-            "U1_covariant_ghost" if row_id == "lambda_cov" else "Weyl_scalar_ghost"
-        )
-        rows.append({"index": index, "row_id": row_id, "degree": -1, "parity": "odd", "bundle_id": bundle, "dual_row": 34 + index})
-    for local, row_id in enumerate(fields):
-        rows.append({"index": 6 + local, "row_id": row_id, "degree": 0, "parity": "even", "bundle_id": "symmetric_covariant_2" if local < 10 else "U1_potential_covector", "dual_row": 20 + local})
-    for local, row_id in enumerate(fields):
-        rows.append({"index": 20 + local, "row_id": row_id + "_star", "degree": 1, "parity": "odd", "bundle_id": "Bach_Maxwell_Euler_density" if local < 10 else "Maxwell_Euler_density", "dual_row": 6 + local})
-    for local, row_id in enumerate(ghosts):
-        bundle = "Diff_identity_density" if local < 4 else (
-            "U1_identity_density" if row_id == "lambda_cov" else "Weyl_trace_identity_density"
-        )
-        rows.append({"index": 34 + local, "row_id": row_id + "_star", "degree": 2, "parity": "even", "bundle_id": bundle, "dual_row": local})
-    return sorted(rows, key=lambda row: int(row["index"]))
+    payload = _load(TARGET_LAYOUT)
+    rows = payload["content"]["rows"]
+    if payload["carrier_id"] != TARGET_CARRIER or len(rows) != 40:
+        raise AssertionError("target Weyl--Maxwell row layout drifted")
+    return rows
 
 
 def _sum(values) -> LinearOperator:
@@ -238,8 +227,13 @@ def _metric_equation_map(source: dict[str, int]) -> dict[str, LinearOperator]:
         pieces = {key: pieces[key] + block[key].scale(coefficient) for key in pieces}
     plus = _symmetrized_action(identity, j_s, derivative_m)
     minus = _symmetrized_action(j_s, identity, derivative_m)
+    # The legacy covariant certificate calls the Maxwell Euler row M^a.  In
+    # the action-derived odd-cotangent convention used by the frozen q1 table,
+    # the serialized A_star input represents -M^a.  Adapt that row convention
+    # here; it reverses all four invariant derivative-Maxwell coefficients but
+    # changes neither the covariant tensor formula nor the field map.
     pieces = {
-        key: pieces[key] + plus[key].scale(3) - minus[key].scale(3)
+        key: pieces[key] - plus[key].scale(3) + minus[key].scale(3)
         for key in pieces
     }
     pieces = _tracefree(pieces, metric, inverse)
@@ -281,7 +275,9 @@ def _identity_map(source: dict[str, int]) -> dict[str, LinearOperator]:
             for c in range(4)
         )
         gradient = _sum(gradient_j[c].scale(j_s[b, c]) for c in range(4))
-        output[f"c_{b}_star"] = box[b].scale(sp.Rational(3, 2)) + algebraic - gradient.scale(sp.Rational(3, 2))
+        # The same cotangent-row adapter reverses the J contribution in the
+        # diffeomorphism-identity row.
+        output[f"c_{b}_star"] = box[b].scale(sp.Rational(3, 2)) + algebraic + gradient.scale(sp.Rational(3, 2))
     output["lambda_cov_star"] = j
     return output
 
@@ -366,7 +362,7 @@ def build_payload() -> dict:
     return {
         "schema": SCHEMA_ID,
         "result_id": RESULT_ID,
-        "claim_status": "EXACT_PBW_REPRESENTATIVE_TARGET_Q1_REPLAY_PENDING",
+        "claim_status": "EXACT_PBW_CHAIN_MAP_TARGET_Q1_REPLAYED",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],
         "background_id": BACKGROUND_ID,
         "source_carrier_id": SOURCE_CARRIER,
@@ -380,6 +376,8 @@ def build_payload() -> dict:
         "dependencies": {
             "source_taylor_certificate": {"path": str(SOURCE_CERTIFICATE.relative_to(ROOT)), "sha256": _sha256(SOURCE_CERTIFICATE)},
             "source_row_layout": {"path": str(SOURCE_LAYOUT.relative_to(ROOT)), "sha256": _sha256(SOURCE_LAYOUT)},
+            "target_taylor_certificate": {"path": str(TARGET_CERTIFICATE.relative_to(ROOT)), "sha256": _sha256(TARGET_CERTIFICATE)},
+            "target_row_layout": {"path": str(TARGET_LAYOUT.relative_to(ROOT)), "sha256": _sha256(TARGET_LAYOUT)},
             "certified_chain_map": {"path": str(CHAIN_CERTIFICATE.relative_to(ROOT)), "sha256": _sha256(CHAIN_CERTIFICATE)},
             "certified_chain_map_proof": {"path": str(CHAIN_PROOF.relative_to(ROOT)), "sha256": _sha256(CHAIN_PROOF)},
         },
@@ -395,15 +393,16 @@ def build_payload() -> dict:
             "maxwell_equation_identity": True,
             "diff_identity_order": 2,
             "u1_identity": True,
-            "target_q1_composition_replayed": False,
+            "target_q1_composition_replayed": True,
         },
         "claim_boundary": (
             "Exact row-ID-keyed PBW serialization of the already certified finite-order "
             "compact-product Einstein-Maxwell to Weyl-Maxwell linear chain-map formula. "
-            "The committed source carrier is pinned, while the expected 40-row target layout "
-            "is declared without importing the in-progress Weyl producer. A fresh serialized "
-            "40-row target-q1 composition replay, cyclicity, nonlinear relative morphism, "
-            "causal, observable and quantum claims remain open."
+            "Both frozen action-derived carriers are pinned. The legacy Maxwell Euler and "
+            "identity inputs are adapted to the BV cotangent-row sign convention, and an "
+            "independent consumer replays the 40-row target-q1 chain equation exactly. "
+            "Cyclicity, nonlinear relative morphism, causal, observable and quantum claims "
+            "remain open."
         ),
     }
 
@@ -426,7 +425,7 @@ def main() -> None:
     args = parser.parse_args()
     check() if args.check else write()
     print("compact-product Einstein--Weyl row-ID PBW export: PASS")
-    print("target q1 composition replay: PENDING")
+    print("target q1 composition replay: delegated to independent consumer")
 
 
 if __name__ == "__main__":

@@ -3,11 +3,14 @@
 
 from __future__ import annotations
 
+from collections import defaultdict
 import hashlib
+from itertools import product
 import json
 from pathlib import Path
 
 from jsonschema import Draft202012Validator
+import sympy as sp
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -37,7 +40,100 @@ def _unit_entry(entry: dict) -> bool:
     ]
 
 
-def verify(path: Path = PAYLOAD) -> None:
+def _rat(value: str) -> sp.Rational:
+    coefficient = sp.Rational(value)
+    if not coefficient.is_Rational:
+        raise ValueError(f"coefficient escaped Q: {value}")
+    return coefficient
+
+
+def _operation_rows(payload: dict) -> list[list[dict]]:
+    content = payload["content"]
+    profiles = {
+        profile["index"]: profile["coefficient_jets"]
+        for profile in content.get("coefficient_profiles", [])
+    }
+    rows: list[list[dict]] = [[] for _ in range(content["row_count"])]
+    for raw in content["terms"]:
+        jets = (
+            profiles[raw["coefficient_profile"]]
+            if "coefficient_profile" in raw
+            else raw["coefficient_jets"]
+        )
+        rows[raw["output_row"]].append(
+            {
+                "inputs": tuple(
+                    (item["row"], tuple(item["word"])) for item in raw["inputs"]
+                ),
+                "jets": {
+                    tuple(item["word"]): _rat(item["coefficient"])
+                    for item in jets
+                },
+            }
+        )
+    return rows
+
+
+def _map_rows(payload: dict) -> list[list[dict]]:
+    rows: list[list[dict]] = [[] for _ in payload["map"]["target_rows"]]
+    for entry in payload["map"]["entries"]:
+        for term in entry["terms"]:
+            rows[entry["output_index"]].append(
+                {
+                    "inputs": ((entry["input_index"], tuple(term["word"])),),
+                    "jets": {
+                        tuple(item["word"]): _rat(item["coefficient"])
+                        for item in term["coefficient_jets"]
+                    },
+                }
+            )
+    return rows
+
+
+def _differentiate(term: dict, word: tuple[int, ...]):
+    for assignment in product(range(2), repeat=len(word)):
+        coefficient_word = tuple(
+            sorted(axis for axis, bucket in zip(word, assignment) if bucket == 0)
+        )
+        coefficient = term["jets"].get(coefficient_word, sp.S.Zero)
+        if coefficient == 0:
+            continue
+        row, old_word = term["inputs"][0]
+        added = tuple(axis for axis, bucket in zip(word, assignment) if bucket == 1)
+        yield ((row, tuple(sorted((*old_word, *added)))),), coefficient
+
+
+def _add(target: dict, key: tuple, value: sp.Rational) -> None:
+    if value:
+        target[key] += value
+        if target[key] == 0:
+            del target[key]
+
+
+def _compose(outer: list[list[dict]], inner: list[list[dict]]) -> list[dict]:
+    output = [defaultdict(lambda: sp.S.Zero) for _ in outer]
+    for target, terms in enumerate(outer):
+        for left in terms:
+            middle, word = left["inputs"][0]
+            coefficient = left["jets"].get((), sp.S.Zero)
+            if coefficient == 0:
+                continue
+            for right in inner[middle]:
+                for inputs, value in _differentiate(right, word):
+                    _add(output[target], inputs, coefficient * value)
+    return output
+
+
+def _q1_from_certificate(certificate: dict) -> tuple[dict, list[list[dict]]]:
+    artifact = certificate["taylor_artifacts"]["q1"]
+    path = ROOT / artifact["path"]
+    assert artifact["sha256"] == _sha256(path), path
+    payload = _load(path)
+    assert payload["kind"] == "operation" and payload["content"]["arity"] == 1
+    return payload, _operation_rows(payload)
+
+
+def verify(path: Path = PAYLOAD) -> dict:
     payload = _load(path)
     schema = _load(SCHEMA)
     Draft202012Validator.check_schema(schema)
@@ -57,6 +153,14 @@ def verify(path: Path = PAYLOAD) -> None:
         "maxwell": 0,
         "diff_identity": 2,
     }
+    source_certificate = _load(
+        ROOT / payload["dependencies"]["source_taylor_certificate"]["path"]
+    )
+    target_certificate = _load(
+        ROOT / payload["dependencies"]["target_taylor_certificate"]["path"]
+    )
+    source_q1_payload, source_q1 = _q1_from_certificate(source_certificate)
+    target_q1_payload, target_q1 = _q1_from_certificate(target_certificate)
 
     mapping = payload["map"]
     body = {key: mapping[key] for key in ("source_rows", "target_rows", "entries")}
@@ -125,11 +229,32 @@ def verify(path: Path = PAYLOAD) -> None:
             assert entry["input_row_id"] in identity_inputs
             assert entry["maximum_order"] <= 2
 
-    assert payload["checks"]["target_q1_composition_replayed"] is False
-    assert payload["claim_status"] == "EXACT_PBW_REPRESENTATIVE_TARGET_Q1_REPLAY_PENDING"
+    assert source_q1_payload["carrier_id"] == payload["source_carrier_id"]
+    assert target_q1_payload["carrier_id"] == payload["target_carrier_id"]
+    inclusion = _map_rows(payload)
+    left = _compose(target_q1, inclusion)
+    right = _compose(inclusion, source_q1)
+    defect_counts = []
+    for left_row, right_row in zip(left, right):
+        defect = defaultdict(lambda: sp.S.Zero, left_row)
+        for key, value in right_row.items():
+            _add(defect, key, -value)
+        defect_counts.append(len(defect))
+    assert defect_counts == [0] * 40, defect_counts
+    assert payload["checks"]["target_q1_composition_replayed"] is True
+    assert payload["claim_status"] == "EXACT_PBW_CHAIN_MAP_TARGET_Q1_REPLAYED"
+    return {
+        "status": "PASS",
+        "defect_counts": defect_counts,
+        "left_term_count": sum(map(len, left)),
+        "right_term_count": sum(map(len, right)),
+    }
 
 
 if __name__ == "__main__":
-    verify()
+    result = verify()
     print("compact-product Einstein--Weyl row-ID PBW consumer: PASS")
-    print("serialized target q1 chain-square replay remains pending")
+    print(
+        "serialized target q1 chain-square replay: "
+        f"{sum(result['defect_counts'])} defects"
+    )

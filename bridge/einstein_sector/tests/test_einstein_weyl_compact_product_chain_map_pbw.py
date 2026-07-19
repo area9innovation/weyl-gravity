@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+from fractions import Fraction
 import json
 from pathlib import Path
 import tempfile
@@ -31,15 +32,36 @@ class EinsteinWeylProductChainMapPBWTest(unittest.TestCase):
             with self.assertRaises((AssertionError, KeyError)):
                 verify(path)
 
-    def test_unproved_target_q1_replay_stays_false(self) -> None:
+    def test_target_q1_replay_is_exact_and_weyl_rows_have_zero_image(self) -> None:
         payload = json.loads(OUTPUT.read_text())
-        self.assertFalse(payload["checks"]["target_q1_composition_replayed"])
+        self.assertTrue(payload["checks"]["target_q1_composition_replayed"])
+        result = verify()
+        self.assertEqual(result["defect_counts"], [0] * 40)
         self.assertNotIn("sigma_W", {
             entry["output_row_id"] for entry in payload["map"]["entries"]
         })
         self.assertNotIn("sigma_W_star", {
             entry["output_row_id"] for entry in payload["map"]["entries"]
         })
+
+    def test_maxwell_cotangent_sign_regression_is_rejected(self) -> None:
+        payload = deepcopy(json.loads(OUTPUT.read_text()))
+        entry = next(
+            item
+            for item in payload["map"]["entries"]
+            if item["output_row_id"].startswith("g_")
+            and item["output_row_id"].endswith("_star")
+            and item["input_row_id"].startswith("A_")
+            and item["input_row_id"].endswith("_star")
+        )
+        for term in entry["terms"]:
+            for jet in term["coefficient_jets"]:
+                jet["coefficient"] = str(-Fraction(jet["coefficient"]))
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "wrong-sign.json"
+            path.write_text(json.dumps(payload))
+            with self.assertRaises(AssertionError):
+                verify(path)
 
 
 if __name__ == "__main__":

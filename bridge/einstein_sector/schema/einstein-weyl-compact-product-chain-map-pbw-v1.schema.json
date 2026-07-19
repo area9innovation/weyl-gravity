@@ -7,11 +7,11 @@
   "properties": {
     "schema": {"const": "einstein-weyl-compact-product-chain-map-pbw-v1"},
     "result_id": {"const": "EINSTEIN_WEYL_COMPACT_PRODUCT_CHAIN_MAP_PBW_V1"},
-    "claim_status": {"const": "EXACT_PBW_REPRESENTATIVE_TARGET_Q1_REPLAY_PENDING"},
+    "claim_status": {"const": "EXACT_PBW_CHAIN_MAP_TARGET_Q1_REPLAYED"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
     "background_id": {"const": "compact_magnetic_Plebanski_Hacyan_product"},
     "source_carrier_id": {"const": "einstein_maxwell_minimal_bv_38_product_coordinate_jet"},
-    "target_carrier_id": {"const": "weyl_maxwell_minimal_bv_40_product_coordinate_jet"},
+    "target_carrier_id": {"const": "weyl_maxwell_minimal_bv_40_product_coordinate_theta_jet"},
     "operator_encoding": {"const": "row-id-keyed-coordinate-product-coefficient-jet-pbw-v1"},
     "coefficient_field": {"const": "Q"},
     "coefficient_jet_order": {"const": 4},
@@ -21,10 +21,12 @@
     "dependencies": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["source_taylor_certificate", "source_row_layout", "certified_chain_map", "certified_chain_map_proof"],
+      "required": ["source_taylor_certificate", "source_row_layout", "target_taylor_certificate", "target_row_layout", "certified_chain_map", "certified_chain_map_proof"],
       "properties": {
         "source_taylor_certificate": {"$ref": "#/$defs/artifact"},
         "source_row_layout": {"$ref": "#/$defs/artifact"},
+        "target_taylor_certificate": {"$ref": "#/$defs/artifact"},
+        "target_row_layout": {"$ref": "#/$defs/artifact"},
         "certified_chain_map": {"$ref": "#/$defs/artifact"},
         "certified_chain_map_proof": {"$ref": "#/$defs/artifact"}
       }
@@ -55,7 +57,7 @@
         "maxwell_equation_identity": {"const": true},
         "diff_identity_order": {"const": 2},
         "u1_identity": {"const": true},
-        "target_q1_composition_replayed": {"const": false}
+        "target_q1_composition_replayed": {"const": true}
       }
     },
     "claim_boundary": {"type": "string", "minLength": 1}
