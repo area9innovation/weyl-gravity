@@ -1,0 +1,12 @@
+{
+  "receipt_id":"EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_COMPLETE_K0_NO_GO_V1_TIER_RECEIPT","date":"2026-07-19","scope":"Complete declared k=0 exceptional-ellipse carrier: standard globals, finite nonminus oscillators and smooth Wiener-Bohr minus completion.",
+  "content_sha256":{
+    "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_complete_k0_no_go.py":"ed5283925f0739eeeefdc32212c356eb39b3dc9e43bebd48925bec895edec7d6",
+    "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_complete_k0_no_go.json":"fa17424ae81e9745021c08f944f4cb5959d64a64315500049263a46433703e5e",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_complete_k0_no_go.schema.json":"b585d411cfec82830a7e2ae3dbbcdbbc63f78cdc3e0f440da32ce6b75ccfffa5",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_complete_k0_no_go.py":"8d8a7532029855b3634deb9c9ffae39a30c3d6e375528608fb3b488669813596",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_exceptional_ellipse_complete_k0_no_go.py":"5f7dc4aaf1a02d917f17b89d39572b7cd8a9667c4de886d0ad10fafbc5760583",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-exceptional-ellipse-complete-k0-no-go.md":"4d036b66659daa230d91dd700888faff09c285520378247b9e786da55121e179"},
+  "verification":{"tier_0":{"status":"PASS","commands":["python3 -m py_compile <scoped paths>","python3 -m json.tool <scoped JSON paths>","git diff --check -- <scoped paths>"]},"tier_1":{"status":"PASS","tests_run":5,"commands":["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ellipse_complete_k0_no_go --check","python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_complete_k0_no_go.py","python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ellipse_complete_k0_no_go"]},"tier_2":{"status":"PASS_BY_CONTENT_ADDRESS","reason":"The complete k0 pair census, global transport, Wiener projection, moment signs and nonzero pivots are unchanged hashed inputs."},"tier_3":{"status":"NOT_RUN","reason":"Maximal Sobolev completion, infinite secular inversion, nonzero momentum, causal and all-orders gates remain open."}},
+  "claim_boundary":"Complete only for k=0, finite nonminus support and smooth Wiener-Bohr minus support; maximal completion, secular, nonzero-momentum, causal, residual and quantum claims remain fail-closed."
+}

@@ -1,0 +1,111 @@
+{
+  "claim_boundary": "Complete only for k=0, finite nonminus support and the declared smooth Wiener-Bohr minus completion. Maximal energy/Sobolev domains, infinite secular inverses, nonzero momentum, causal, residual, all-orders and quantum claims remain fail-closed.",
+  "classification": {
+    "all_finite_k0_nonminus_oscillators_covered": true,
+    "all_orders_integrability": false,
+    "all_standard_globals_covered": true,
+    "bounded_tangent_cone_intersection_empty_over_nonzero_ellipse": true,
+    "causal_or_quantum_claim": false,
+    "complete_declared_k0_carrier_covered": true,
+    "maximal_sobolev_or_finite_energy_completion_classified": false,
+    "nonzero_momentum_classified": false,
+    "smooth_infinite_secular_extension_classified": false,
+    "smooth_wiener_bohr_minus_completion_covered": true
+  },
+  "complete_carrier_inventory": {
+    "dipoles": "all physical standard and fourth-order extra ell1 oscillators",
+    "excluded": "nonzero compact momentum and non-Wiener maximal energy completions",
+    "generalized_zero": "all standard homogeneous, electric, Wilson and twist coordinates",
+    "generic_minus": "smooth Wiener-Bohr Einstein-minus completion in every ell>=2",
+    "generic_nonminus": "arbitrary finite Einstein-plus and both extra-primary multiplicities in every ell>=2"
+  },
+  "complete_minus_shell_isolation": {
+    "global_columns": "b and B vanish; Q_e,c,W_x,A have zero relevant adjoint component; the a pivot is a distinct higher time degree",
+    "oscillator_pairs": "the complete equal/distinct-ell generic and ell1/generic census proves that no quadratic oscillator pair reaches a generic minus shell",
+    "remaining_source": "after the triangular a step, each occupied shell contains only d*C_parity(lambda)*c_(ell,m,parity)",
+    "wiener_projection": "absolute convergence makes every minus Bohr-harmonic adjoint coefficient a continuous projection"
+  },
+  "contradiction": {
+    "Taub_compatibility": "at least one Einstein-minus coefficient must be nonzero",
+    "bounded_compatibility": "every Einstein-minus coefficient must vanish",
+    "ellipse_fact": "d!=0 at every point of the nonzero resonance ellipse",
+    "pivot_fact": "C_parity(lambda)!=0 in both parities for every lambda=ell(ell+1)>=6",
+    "verdict": "the bounded second-order tangent cone has empty intersection with the complete declared carrier over the nonzero ellipse"
+  },
+  "correction_classes": {
+    "BOUNDED_SMOOTH_UNIFORMLY_ALMOST_PERIODIC": {
+      "status": "OBSTRUCTED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_INFINITE_SECULAR": {
+      "reason": "finite exponential-polynomial sufficiency has no certified uniform countable inverse estimate",
+      "status": "OPEN"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "At k=0 the exceptional resonance ellipse cannot be promoted to a bounded second-order tangent by any certified standard global datum or any finite collection of physical, extra or Einstein-plus oscillators, even with a smooth infinite Einstein-minus dressing. The obstruction is a genuine complete-carrier tangent-cone exclusion in the declared topology.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "treat nonzero compact momentum or weaken the Wiener topology with explicit Sobolev estimates; keep infinite secular, causal and all-orders questions separate",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_complete_k0_no_go.py",
+    "generator_sha256": "ed5283925f0739eeeefdc32212c356eb39b3dc9e43bebd48925bec895edec7d6",
+    "inputs": {
+      "ell1": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_ell1_oscillator_minus_no_go.json",
+        "sha256": "65dd6a42ba53ab073b1d0c21a82ac3db7a80330169a3aaf6b4456881d4a5343a"
+      },
+      "ellipse": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.json",
+        "sha256": "431b7b0015bb8691c610597d07ac24241aa9b295dc2b54dbadb39be6e136c2f1"
+      },
+      "global_minus": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_standard_global_minus_no_go.json",
+        "sha256": "f02789b3d06238a4ebc9fd1ac25c635a9a7ff4bbceaabbdd49a2e509a5b5de38"
+      },
+      "moments": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_mixed_moment_map_zero_locus.json",
+        "sha256": "554c34d1e52bb3d458fe5380e8929de8bfafb60566b1a6717a2f1d2de8aaaffa"
+      },
+      "pair_census": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell1_generic_pair_minus_nonresonance.json",
+        "sha256": "b7119ba966393d7c41d3f9f14d65b358607be0dde0070c96e8e3327bca34b184"
+      },
+      "pivot": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_generic_lambda_pivot.json",
+        "sha256": "a0d9769e6363031fb0259f6a529919a19d45c37ed7d59027765d9311a77fc411"
+      },
+      "wiener": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_wiener_minus_dressing_no_go.json",
+        "sha256": "411076a107d778e6f18140ad4e83ca395e78278d62e52713505e3065f2d4ef75"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_COMPLETE_K0_NO_GO",
+  "schema": "einstein-maxwell-weyl-exceptional-ellipse-complete-k0-no-go-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_complete_k0_no_go.schema.json",
+  "schema_sha256": "b585d411cfec82830a7e2ae3dbbcdbbc63f78cdc3e0f440da32ce6b75ccfffa5",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded smooth uniformly almost-periodic correction",
+    "carrier": "any axisymmetric exceptional resonance-ellipse point, arbitrary standard generalized-zero data, arbitrary finite k=0 nonminus oscillators, and a smooth Wiener-Bohr k=0 Einstein-minus sum",
+    "charge_sector": "fixed N=2 magnetic bundle with first-order electric tangent allowed",
+    "degree": 2,
+    "ell": "global 0,1; all finite physical/extra ell1 and generic nonminus ell>=2; countable minus ell>=2",
+    "k": 0,
+    "m": "all retained m subject to convergent five stabilizer moment maps",
+    "omega": "generalized zero and the complete certified k=0 q/p oscillator inventory",
+    "parity": "all certified homogeneous, axial and polar parities",
+    "theory": "Weyl-Maxwell target"
+  },
+  "taub_reduction": {
+    "bounded_global_ideal": "b=B=0 and Q_e*a=0",
+    "necessity": "every common zero over a nonzero ellipse point contains at least one nonzero Einstein-minus coefficient",
+    "negative_blocks": "the exceptional ellipse, surviving a/Q_e globals, physical/extra ell1, generic Einstein-plus and generic extra-primary occupations all contribute with the nonpositive side of mu_H",
+    "positive_block": "only Einstein-minus occupation supplies the opposite sign on the declared k=0 carrier"
+  }
+}

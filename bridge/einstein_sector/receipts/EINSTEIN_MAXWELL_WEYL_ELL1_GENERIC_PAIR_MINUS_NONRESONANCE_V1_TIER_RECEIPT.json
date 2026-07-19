@@ -1,0 +1,12 @@
+{
+  "receipt_id":"EINSTEIN_MAXWELL_WEYL_ELL1_GENERIC_PAIR_MINUS_NONRESONANCE_V1_TIER_RECEIPT","date":"2026-07-19","scope":"Every k=0 physical/extra ell1 oscillator paired with every generic p/q oscillator and tested against angularly allowed minus targets.",
+  "content_sha256":{
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell1_generic_pair_minus_nonresonance.py":"79720ae57f680d2e5727cb57af62f5f37c0029f1dc9db137dc9b2871c5fc1f04",
+    "bridge/certificates/einstein_maxwell_weyl_ell1_generic_pair_minus_nonresonance.json":"b7119ba966393d7c41d3f9f14d65b358607be0dde0070c96e8e3327bca34b184",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell1_generic_pair_minus_nonresonance.schema.json":"d1486ffa1d87e65fcb86334c383fc4d154a834746d1962596af3fd1364e8bfb9",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell1_generic_pair_minus_nonresonance.py":"72ebe966aa6542d42f6b000b492f85db2bee8b6e1f5f7526b2b7f7aa862b78c3",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell1_generic_pair_minus_nonresonance.py":"f883e30d42cf4a8a5a70a083a94eb4420739cf3c1be3627845e65f1d404e3161",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell1-generic-pair-minus-nonresonance.md":"ebdb286c2e719ffc57e9605664f0fb06a63c426ebddf3add2a3f0427943b1d5f"},
+  "verification":{"tier_0":{"status":"PASS","commands":["python3 -m py_compile <scoped paths>","python3 -m json.tool <scoped JSON paths>","git diff --check -- <scoped paths>"]},"tier_1":{"status":"PASS","tests_run":5,"commands":["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell1_generic_pair_minus_nonresonance --check","python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell1_generic_pair_minus_nonresonance.py","python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell1_generic_pair_minus_nonresonance"]},"tier_2":{"status":"PASS_BY_CONTENT_ADDRESS","reason":"The exact branch-offset and adjacent-gap theorems are unchanged hashed inputs."},"tier_3":{"status":"NOT_RUN","reason":"Source assembly, nonzero momentum and causal propagation remain open."}},
+  "claim_boundary":"Complete k=0 oscillator-pair-to-minus shell arithmetic only; source, nonzero-momentum, causal, residual and quantum claims remain fail-closed."
+}
