@@ -518,6 +518,16 @@ def verify() -> None:
         raise AssertionError("odd-L witness correction classes were merged")
     if "not their complete irreducible ideals" not in odd["claim_boundary"] or "two-fibre tangent cone" not in odd["claim_boundary"]:
         raise AssertionError("odd-L witness exceeded scope")
+    scalar_l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_scalar_l3_zero_variety"]
+    scalar_l3_second = scalar_l3["mode_data"]["second_order"]
+    if scalar_l3["descriptions"]["nonlinear"] != "OPEN" or "Candidate 2 remains one declared physical circumference" not in scalar_l3["mode_data"]["dispersion"]["statement"]:
+        raise AssertionError("candidate-2 scalar L3 fibre scope was hidden")
+    if scalar_l3["mode_data"]["resonance"]["status"] != "CERTIFIED" or "irreducible complex dimension-12" not in scalar_l3["mode_data"]["resonance"]["statement"] or "twenty minors" not in scalar_l3["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-2 scalar L3 ideal was hidden")
+    if scalar_l3["mode_data"]["taub_maps"]["status"] != "OPEN" or scalar_l3_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or scalar_l3_second["smooth_secular"]["status"] != "OPEN" or scalar_l3_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-2 scalar L3 correction classes were merged")
+    if "other fifteen fibrewise ideals" not in scalar_l3["claim_boundary"] or "two-fibre tangent cone" not in scalar_l3["claim_boundary"]:
+        raise AssertionError("candidate-2 scalar L3 theorem exceeded scope")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]
     if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:

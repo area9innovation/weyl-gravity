@@ -100,6 +100,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_cross_fibre_amplitude_system": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system.json",
     "ell2_two_abs_momentum_scalar_L4_zero_varieties": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L4_zero_varieties.json",
     "ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces.json",
+    "ell2_two_abs_momentum_scalar_L3_zero_variety": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L3_zero_variety.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
@@ -940,6 +941,18 @@ def entries() -> list[dict[str, object]]:
             "This certifies mixed zero subspaces on all nine odd-L fibres, not their complete irreducible ideals or the two-fibre tangent cone. Same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ell2_two_abs_momentum_scalar_l3_zero_variety",
+            _scope(theory="Weyl-Maxwell target", boundaries="candidate-2 closed S1_L times S2 circumference fibre; before final residual quotient", carrier="complete scalar-internal all-m cross-|n| resonance variety", degree=2, parity="axial and polar amplitudes on both momentum fibres", ell="input 2 x 2; output L=3", m="all magnetic components through the first binary-quartic transvectant", k="signed compact momenta (1,-2)", omega="positive-frequency SUM channel", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","Candidate 2 remains one declared physical circumference fibre and is not identified with the other twenty collision backgrounds."),
+            ("CERTIFIED","The exact action-derived parity pencil has four nonzero coefficients and an invertible real eigenbasis with nonzero eigenvalues plus and minus lambda."),
+            ("OPEN","The five stabilizer moment maps and same-fibre quadratic sources have not been restricted to this determinantal variety."),
+            ("CERTIFIED","The complete all-m resonance variety is one irreducible complex dimension-12 Cartesian product of two rank-at-most-one 5 x 2 determinantal varieties, defined by twenty minors."),
+            _second_order(("OPEN","A complete resonance ideal is necessary but not sufficient for bounded extension; same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on this determinantal variety."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_scalar_L3_zero_variety","ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
+            "This classifies the candidate-2 scalar L3 resonance ideal, not the other fifteen fibrewise ideals or the two-fibre tangent cone. Same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="constant twist position plus paired axisymmetric +/-k Einstein-plus/minus standing waves", degree=2, parity="generic input parity retained; polar extra resonant output", ell="every one fixed integer ell>=2 with output L=2ell", m="m_A=0 inputs and M=0 output", k="one tuned allowed nonzero +/-k pair", omega="q-plus/minus inputs and p-primary sum-frequency output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
@@ -1576,6 +1589,27 @@ def build() -> dict[str, object]:
         or odd["causal_or_quantum_claim"]
     ):
         raise AssertionError("odd-L highest-weight witness exceeded scope")
+    scalar_l3_value = records["ell2_two_abs_momentum_scalar_L3_zero_variety"]
+    scalar_l3 = scalar_l3_value["classification"]
+    scalar_l3_zero = scalar_l3_value["zero_variety"]
+    if not (
+        scalar_l3["candidate_2_scalar_L3_zero_variety_classified"]
+        and scalar_l3["all_m_irreducible_decomposition_classified"]
+        and scalar_l3["parity_pencil_diagonalized_exactly"]
+        and scalar_l3["lambda_squared_positive_exactly"]
+        and scalar_l3_zero["ambient_dimension_over_C"] == 20
+        and scalar_l3_zero["dimension_over_C"] == 12
+        and scalar_l3_zero["irreducible_components_over_C"] == 1
+    ):
+        raise AssertionError("candidate-2 scalar L3 zero variety changed")
+    if (
+        scalar_l3["remaining_fifteen_cross_fibre_zero_varieties_classified"]
+        or scalar_l3["same_fibre_quadratic_sources_classified"]
+        or scalar_l3["taub_common_zero_intersection_classified"]
+        or scalar_l3["complete_two_fibre_tangent_cone_classified"]
+        or scalar_l3["causal_or_quantum_claim"]
+    ):
+        raise AssertionError("candidate-2 scalar L3 theorem exceeded scope")
     if l3["arbitrary_amplitude_zero_variety_classified"] or l3["causal_or_quantum_claim"]:
         raise AssertionError("nonaxisymmetric L3 matrix exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:

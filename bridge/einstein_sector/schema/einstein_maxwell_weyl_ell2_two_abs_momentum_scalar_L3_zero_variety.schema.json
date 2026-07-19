@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-scalar-L3-zero-variety-v1",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "dependency_tags", "lifecycle_state", "scope", "candidate_index", "fibre_id", "rho", "coefficients", "coefficient_nonzero_intervals", "parity_pencil", "representation_theorem", "zero_variety", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-ell2-two-abs-momentum-scalar-L3-zero-variety-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_SCALAR_L3_ZERO_VARIETY"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "candidate_index": {"const": 2},
+    "coefficients": {
+      "type": "object",
+      "required": ["aa", "pp", "ap", "pa"],
+      "properties": {
+        "aa": {"type": "string"},
+        "pp": {"type": "string"},
+        "ap": {"type": "string"},
+        "pa": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "coefficient_nonzero_intervals": {
+      "type": "object",
+      "required": ["aa", "pp", "ap", "pa"],
+      "properties": {
+        "aa": {"type": "object"},
+        "pp": {"type": "object"},
+        "ap": {"type": "object"},
+        "pa": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "parity_pencil": {
+      "type": "object",
+      "required": ["C0", "C1", "lambda_squared", "lambda_squared_interval", "lambda", "Q", "P_transpose", "transformed_coordinates", "normal_form"]
+    },
+    "zero_variety": {
+      "type": "object",
+      "required": ["ambient_dimension_over_C", "dimension_over_C", "irreducible_components_over_C", "description", "defining_minors", "factorization"],
+      "properties": {
+        "ambient_dimension_over_C": {"const": 20},
+        "dimension_over_C": {"const": 12},
+        "irreducible_components_over_C": {"const": 1}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": ["candidate_2_scalar_L3_zero_variety_classified", "all_m_irreducible_decomposition_classified", "parity_pencil_diagonalized_exactly", "lambda_squared_positive_exactly", "remaining_fifteen_cross_fibre_zero_varieties_classified", "same_fibre_quadratic_sources_classified", "taub_common_zero_intersection_classified", "complete_two_fibre_tangent_cone_classified", "smooth_secular_classified", "causal_or_quantum_claim"]
+    }
+  }
+}

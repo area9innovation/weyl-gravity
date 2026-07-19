@@ -1,0 +1,49 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_SCALAR_L3_ZERO_VARIETY_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact all-m irreducible decomposition of the candidate-2 scalar-internal L3 cross-fibre resonance zero variety.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L3_zero_variety.json": "ef3d154c005963b8777666ee4124ec795d83d5a91bb7360c1a5dbb75076590aa",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L3_zero_variety.py": "8c374d18e09242f6c2df74abfd591ac7c00ba95bef91961a4da5486a69b6dd9e",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L3_zero_variety.schema.json": "5e026959c934bc25ffbcca8a86f216a2c60d399ca7957c06aa0fc3ad323f4265",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L3_zero_variety.py": "c5f9b29059a8ba0d83665a9655ef689beb606a14b3656084e40fcdbd910f46df",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L3_zero_variety.py": "d2bc5cc0ea309eeb5bf8bfb95a81d92fa4a25268e55d6a746edade1a3fde0f39",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-scalar-L3-zero-variety.md": "effee503e7ce62918c8ba91e7b85fbbaad25909d2213b1bbd6767558c7b3a665"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds_independent_verifier": 3.28,
+      "independent_verifier_max_rss_kib": 64456,
+      "tests_run": 74,
+      "commands": [
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L3_zero_variety",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L3_zero_variety",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 3.14,
+      "max_rss_kib": 60432,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L3_zero_variety --write",
+      "reason": "The producer selects candidate 2, certifies all four parity coefficients and positive generalized-eigenvalue square, and exports the complete first-transvectant determinantal decomposition."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This classifies one resonance ideal, not the other fifteen fibres, same-fibre sources, Taub intersections, complete tangent cone or shared-core algebra."
+    }
+  },
+  "claim_boundary": "Exactly the candidate-2 scalar-internal L3 resonance variety is decomposed. The remaining fifteen cross-fibre varieties, same-fibre sources, five Taub maps, complete bounded and smooth-secular tangent cones, causal maps, residual observables and quantum claims remain OPEN or NO_CERTIFIED_MAP."
+}

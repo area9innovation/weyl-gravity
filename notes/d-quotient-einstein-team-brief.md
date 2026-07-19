@@ -3493,6 +3493,18 @@ same-fibre sources, Taub join and both correction classes `OPEN`; causal
 correction remains `NO_CERTIFIED_MAP`.  These witnesses prove again that
 branch-basis obstruction is not an all-amplitude no-go.
 
+Candidate 2 now has the first complete odd-`L` ideal decomposition.  Its
+scalar-internal `L=3` parity pencil diagonalizes exactly with nonzero real
+eigenvalues `+lambda,-lambda`.  Since the `V_2 x V_2 -> V_3` map is the first
+binary-quartic transvectant, each diagonal equation is equivalent to a
+rank-at-most-one condition on a `5 x 2` matrix.  The full zero variety is one
+irreducible complex dimension-12 Cartesian product inside dimension 20,
+defined by twenty minors.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_scalar_l3_zero_variety`
+marks this complete resonance ideal `CERTIFIED`, while the other fifteen
+ideals, same-fibre sources, Taub join, bounded and smooth-secular corrections
+remain `OPEN`; causal correction remains `NO_CERTIFIED_MAP`.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

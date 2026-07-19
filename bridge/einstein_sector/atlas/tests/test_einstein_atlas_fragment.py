@@ -236,6 +236,20 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("not their complete irreducible ideals", entry["claim_boundary"])
 
+    def test_scalar_l3_candidate_two_is_a_full_ideal_not_an_extension(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_scalar_l3_zero_variety"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertIn("Candidate 2 remains one declared physical circumference", entry["mode_data"]["dispersion"]["statement"])
+        self.assertIn("irreducible complex dimension-12", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("twenty minors", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("other fifteen fibrewise ideals", entry["claim_boundary"])
+
     def test_nonaxisymmetric_l3_matrix_closes_basis_not_cone(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
         second = entry["mode_data"]["second_order"]
