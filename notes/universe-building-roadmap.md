@@ -218,7 +218,14 @@ the conformally Einstein/Bach-flat class.  The parent half now has such a
 radius: the normal-tractor detour complex is causally Green on every globally
 hyperbolic Bach-flat background, and an explicit relative ADM ball of radius
 `1/4` around Nariai contains a nonconstant non-conformally-flat consumer.  The
-remaining gate is the support-local metric/parent SDR on that class, or its
+earlier eight-block curvature-incidence cylinder is not an alternative metric
+bridge: its normal-tractor parent has at least five fewer noncontractible
+reducibility classes than the metric Bach complex.  The rank-310
+curvature-corrected automorphism/parent-detour cone is the authoritative
+replacement, not a completion of that rejected cylinder.  Its fail-closed
+crosswalk is `NO_CERTIFIED_MAP`, while the replacement's unit-Nariai causal
+theorem remains `CERTIFIED`.  The remaining gate is the support-local
+metric/parent SDR on that class, or its
 first normalized obstruction; do not promote the class-wide metric theorem
 from the universal parent result alone.  The metric theorem now does transport
 throughout the bounded-smooth conformal Nariai orbit

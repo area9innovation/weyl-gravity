@@ -36,6 +36,7 @@ CERTS = {
     "Berger_bridge1_disposition": ROOT / "d_quotient_classical/certificates/BERGER_BRIDGE1_ADMISSIBLE_CARRIER_DISPOSITION_V1.json",
     "Nariai_conformal": ROOT / "d_quotient_classical/certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json",
     "Nariai_single": ROOT / "d_quotient_classical/certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json",
+    "Nariai_bridge_disposition": ROOT / "d_quotient_classical/certificates/NARIAI_CURVATURE_METRIC_BRIDGE_DISPOSITION_V1.json",
     "Nariai_transverse": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1.json",
     "Nariai_incidence": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION_V1.json",
     "Nariai_PBW_gate": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_PBW_CURVATURE_JET_GATE_V1.json",
@@ -239,6 +240,18 @@ def entries() -> list[dict[str, Any]]:
         _second(("OPEN", "No bounded nonlinear cone."), ("OPEN", "No smooth-secular nonlinear cone."), ("OPEN", "Unary causal homotopy is certified; nonlinear causal correction is open.")),
         _evidence("Nariai_conformal", "Nariai_single", "cone"),
         "This is the metric theorem on the conformal Nariai orbit only; transverse Bach-flat directions and Hadamard/nonlinear/quantum claims remain open.",
+    ))
+    values.append(_entry(
+        "classical.nariai.crosswalk.normal_tractor_cylinder_to_metric",
+        _scope(NARIAI, background="unit Nariai dS2 x S2", carrier="eight-block normal-tractor curvature-incidence cylinder -> four-row metric Bach complex", degree="crosswalk", parity="all", ell="all smooth modes", m="all", k="all", omega="all"),
+        {axis: "NO_CERTIFIED_MAP" for axis in AXES},
+        ("NO_CERTIFIED_MAP", "The normal-tractor cylinder and metric carriers have incompatible reducibility cohomology."),
+        ("NO_CERTIFIED_MAP", "No pairing pullback is inferred across an obstructed quasi-isomorphism."),
+        ("NOT_APPLICABLE", "No nonlinear Taub map is part of this unary carrier disposition."),
+        ("OBSTRUCTED", "The H^-1 mismatch is at least 6-1=5 noncontractible reducibility directions."),
+        _second(("NOT_APPLICABLE", "This is a unary crosswalk disposition."), ("NOT_APPLICABLE", "This is a unary crosswalk disposition."), ("NO_CERTIFIED_MAP", "The rejected cylinder does not transfer the metric Green homotopy.")),
+        _evidence("Nariai_bridge_disposition"),
+        "The direct normal-tractor cylinder-to-metric bridge is obstructed, but unit-Nariai causality is certified on the separate rank-310 curvature-corrected automorphism/parent-detour replacement. This row does not demote that replacement or promote a metric/parent bridge on every Bach-flat background.",
     ))
     values.append(_entry(
         "classical.bach_flat.open_parent_detour",

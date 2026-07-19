@@ -47,6 +47,11 @@ def verify() -> None:
     crosswalk = by_id["classical.crosswalk.bach_flat_parent_to_metric"]
     if set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("parent/metric crosswalk overpromoted")
+    nariai_crosswalk = by_id["classical.nariai.crosswalk.normal_tractor_cylinder_to_metric"]
+    if set(nariai_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
+        raise AssertionError("Nariai normal-tractor cylinder crosswalk overpromoted")
+    if "rank-310" not in nariai_crosswalk["claim_boundary"]:
+        raise AssertionError("Nariai replacement carrier boundary missing")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")

@@ -78,6 +78,16 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
 
+    def test_nariai_incidence_cylinder_is_not_the_metric_bridge(self) -> None:
+        entry = self.entries["classical.nariai.crosswalk.normal_tractor_cylinder_to_metric"]
+        self.assertEqual(set(entry["descriptions"].values()), {"NO_CERTIFIED_MAP"})
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OBSTRUCTED")
+        self.assertIn("rank-310", entry["claim_boundary"])
+        self.assertIn(
+            "NARIAI_CURVATURE_METRIC_BRIDGE_DISPOSITION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

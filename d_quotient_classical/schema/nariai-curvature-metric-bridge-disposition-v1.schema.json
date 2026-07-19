@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/nariai-curvature-metric-bridge-disposition-v1.schema.json",
+  "title": "Nariai curvature-to-metric bridge disposition v1",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_state", "dependency_tags",
+    "dependency_refs", "rejected_direct_bridge", "repair_history",
+    "authoritative_same_background_bridge", "bridge_disposition",
+    "exact_checks", "flags", "next_gate", "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-curvature-metric-bridge-disposition-v1"},
+    "result_id": {"const": "NARIAI_CURVATURE_METRIC_BRIDGE_DISPOSITION_V1"},
+    "result_state": {"const": "NORMAL_TRACTOR_CYLINDER_REJECTED_RANK310_METRIC_CARRIER_SELECTED"},
+    "dependency_tags": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "LORENTZIAN-CAUSAL"}], "items": false
+    },
+    "dependency_refs": {
+      "type": "object", "minProperties": 7,
+      "additionalProperties": {"$ref": "#/$defs/dependency"}
+    },
+    "rejected_direct_bridge": {"$ref": "#/$defs/stringBooleanRecord"},
+    "repair_history": {"$ref": "#/$defs/stringRecord"},
+    "authoritative_same_background_bridge": {"$ref": "#/$defs/stringBooleanRecord"},
+    "bridge_disposition": {"$ref": "#/$defs/stringRecord"},
+    "exact_checks": {"$ref": "#/$defs/booleanRecord"},
+    "flags": {"$ref": "#/$defs/booleanRecord"},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object", "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"$ref": "#/$defs/stringRecord"},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {
+      "type": "object", "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "stringRecord": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {"type": "string"}
+    },
+    "booleanRecord": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {"type": "boolean"}
+    },
+    "stringBooleanRecord": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {"anyOf": [{"type": "string"}, {"type": "boolean"}]}
+    }
+  }
+}

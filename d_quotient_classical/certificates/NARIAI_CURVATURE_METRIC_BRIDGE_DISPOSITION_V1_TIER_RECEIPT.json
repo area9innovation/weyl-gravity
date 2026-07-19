@@ -1,0 +1,70 @@
+{
+  "artifact_id": "NARIAI_CURVATURE_METRIC_BRIDGE_DISPOSITION_V1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "files": {
+    "certificate": {
+      "path": "d_quotient_classical/certificates/NARIAI_CURVATURE_METRIC_BRIDGE_DISPOSITION_V1.json",
+      "sha256": "312601017018e4dd3a471ab44f4c8e41ab2115816bb63f63ce3a4978898e332b"
+    },
+    "producer": {
+      "path": "d_quotient_classical/causal_transfer/nariai_curvature_metric_bridge_disposition.py",
+      "sha256": "ec8a90588b97c079d262974cd1b1c00229f8d5588cb5a5b99f53d1515eaf24e3"
+    },
+    "report": {
+      "path": "d_quotient_classical/reports/nariai-curvature-metric-bridge-disposition.md",
+      "sha256": "d8d47553572ec4d9dba082bac4b1e33d5ee072584493edd75e50fed9ed623ac0"
+    },
+    "schema": {
+      "path": "d_quotient_classical/schema/nariai-curvature-metric-bridge-disposition-v1.schema.json",
+      "sha256": "f58c25a60e701a6860cd0a70685a748baccfdebe3eabc5f72d469fe0b511ba2a"
+    },
+    "tests": {
+      "path": "d_quotient_classical/causal_transfer/tests/test_nariai_curvature_metric_bridge_disposition.py",
+      "sha256": "f6691f302b2a07c04dff4990f41849399c0cd61928dec8d7e15522987327254e"
+    },
+    "verifier": {
+      "path": "d_quotient_classical/causal_transfer/verify_nariai_curvature_metric_bridge_disposition.py",
+      "sha256": "999b38fef24505879096b6af45df26956dda1256cd8c8dec0ed3d175692e4d8b"
+    }
+  },
+  "result": "PASS",
+  "tier_0": {
+    "commands": [
+      "python3 -m py_compile d_quotient_classical/causal_transfer/nariai_curvature_metric_bridge_disposition.py d_quotient_classical/causal_transfer/verify_nariai_curvature_metric_bridge_disposition.py d_quotient_classical/causal_transfer/tests/test_nariai_curvature_metric_bridge_disposition.py",
+      "python3 -m json.tool d_quotient_classical/schema/nariai-curvature-metric-bridge-disposition-v1.schema.json",
+      "git diff --check -- <scoped paths>"
+    ],
+    "status": "PASS"
+  },
+  "tier_1": {
+    "commands": [
+      {
+        "command": "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_curvature_metric_bridge_disposition.py --check --guards",
+        "elapsed_seconds": 0.11,
+        "status": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_curvature_metric_bridge_disposition.py",
+        "elapsed_seconds": 0.11,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_curvature_metric_bridge_disposition",
+        "elapsed_seconds": 0.15,
+        "status": "PASS"
+      }
+    ],
+    "status": "PASS"
+  },
+  "tier_2": {
+    "criterion": "The new result is a content-addressed disposition over unchanged exact dependencies; the affected generated classical atlas and direct consumer tests were replayed.",
+    "status": "PASS"
+  },
+  "tier_3": {
+    "criterion": "No freeze, release, shared core-algebra change, or theorem lifecycle promotion was made.",
+    "status": "NOT_RUN"
+  }
+}

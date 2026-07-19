@@ -372,6 +372,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   complementary-degree adjoint reversal transfer from the metric endpoint:
   [`certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json`](certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json),
   [`reports/nariai-repaired-310-all-row-green-transfer.md`](reports/nariai-repaired-310-all-row-green-transfer.md)
+
+- Nariai curvature-to-metric carrier disposition: the earlier eight-block
+  curvature-incidence cylinder remains an exact parent-relative SDR but is
+  not metric-equivalent; its ghost cohomology misses at least five
+  noncontractible metric reducibilities.  The separate rank-310
+  curvature-corrected automorphism/parent-detour cone is the certified local
+  cyclic causal replacement.  No map between the rejected cylinder and the
+  metric complex is inferred:
+
+  [`reports/nariai-curvature-metric-bridge-disposition.md`](reports/nariai-curvature-metric-bridge-disposition.md)
 - Bach-flat parent stability: in four dimensions Bach-flatness is the
   Yang--Mills condition for the normal tractor connection, so the universal
   detour witness gives degreewise normally hyperbolic parent blocks on every

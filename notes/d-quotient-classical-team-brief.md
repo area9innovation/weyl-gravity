@@ -2243,14 +2243,15 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    close exactly.  The cyclic parent-relative mapping cylinder and SDR are
    now certified through an independent factorized variational checker.  Its
    canonical strict metric graph is now excluded at every finite differential
-   order by the `partial_chi` Killing-kernel witness.  Its next gate is the
-   relative equation-level metric--Bach cone and later Green transfer, or
-   conformally flat local patching/new
-   topology.  The necessary
-   Yang--Mills parent correction is certified; raw pointwise compression and
-   the complete zeroth-order strictification ansatz, and every algebraic
-   endpoint curvature repair are exactly ruled out, but no endpoint or Green
-   result follows yet.
+   order by the `partial_chi` Killing-kernel witness.  The parent-relative
+   cylinder is also excluded as a metric quasi-isomorphism by a reducibility
+   mismatch of at least five noncontractible directions.  The later
+   curvature-corrected automorphism/parent-detour construction is the
+   admissible replacement: its rank-288 carrier is symbolically obstructed,
+   while the rank-310 repair, metric endpoint, all-row causal transfer and
+   metric descent are exact on unit and conformal Nariai.  The active gate is
+   transverse Bach-flat continuation of that rank-310 metric/parent SDR, not
+   another map from the rejected eight-block cylinder.
 9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` is now official:
    all six minimal roles, the Bach Euler coordinate, both Noether rows,
    Lie/Weyl covariance, and the four filtration identities replay. Quantum
@@ -2290,20 +2291,17 @@ a failed task.
 ### Current eight-hour assignment (2026-07-17)
 
 The rank-46 support-local projector rail is closed by its certified
-subprincipal obstruction.  C-G2 now certifies a G3 open class on the global
-conformal orbit of the cylinder, including exact weighted
-chain/Green/pairing transport and a nonconstant consumer.  Unit Nariai then
-gives a normalized nonzero-tractor-curvature obstruction to extending that
-same zero-order conjugation.  The active next gate is either a curved
-Nariai differential-BGG/HPL compression of the corrected Yang--Mills parent
-starting with a relative equation/identity-row metric--Bach cone over the
-now-certified curvature-incidence mapping cylinder and its later Green
-transfer beyond the
-certified pointwise, zeroth-order
-strictification, algebraic endpoint defects and all-order strict-graph
-obstruction, or support-local patching to
-new conformally flat topology.  Fixed
-untransported gauges, timelike boundaries and Hadamard claims remain false.
+subprincipal obstruction.  C-G2 certifies the global conformal-cylinder orbit
+and the unit/conformal-Nariai rank-310 metric theorem.  The historical
+eight-block normal-tractor curvature cylinder is not the metric bridge: the
+exact reducibility mismatch requires at least five noncontractible new
+directions.  The curvature-corrected rank-310 parent-detour mapping cone is
+the selected replacement and already has a cyclic support-local SDR and
+advanced/retarded all-row contraction with exact metric descent.  The active
+gate is now an exact nonzero transverse Bach-flat family for the differentiated
+rank-310 SDR and causal homotopy, or the first normalized obstruction to that
+continuation.  Fixed untransported gauges, timelike boundaries and Hadamard
+claims remain false.
 The full queue and
 morning handoff are authoritative in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
