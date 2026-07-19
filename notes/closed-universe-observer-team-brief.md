@@ -322,11 +322,12 @@ branch.
 
 ### Immediate priority after the polarization-emitter handoff
 
-1. Widen the direct absolute-`g^3` feedback provider beyond the now-complete
-   first omitted shell `two_j=5`, retain validated spectral-tail bounds, and
-   implement the tail-aware aggregate stopping rule.  Physical masses and
-   couplings remain deferred until that
-   backend is complete.  In parallel, use the
+1. Bind every direct `two_j=6` absolute-`g^3` feedback channel-column block
+   and certify the map from the complex channel rectangles to the real shell
+   scalar.  The content-addressed generic direct-shell carrier and fail-closed
+   four-stream tail controller are now certified; physical masses and
+   couplings remain deferred until the feedback/scalar map is complete.  In
+   parallel, use the
    exported emitter stress
    and clock-switch source to refine the certified covariant 108-row
    `q1 q2` identity into a support-local PBW payload before solving a
@@ -789,8 +790,8 @@ repaired measure and validated radial `B,B^2` integrals give distinct norm
 uppers below `1.204e3` for D0 and `2.537e3` for D1.  Their products with both
 massive constants certify the four symbolic tail radii
 `D_a(3H_b^2/m_b^2+8H_b/(3m_b))E_A`.  No scalar interval is promoted:
-executable shell evaluation, numerical masses/couplings and a declared
-interval, nonzero or sign stopping goal remain `OPEN`.
+complete feedback-shell evaluation, numerical masses/couplings and a declared
+interval, nonzero, sign or rank-two stopping goal remain `OPEN`.
 
 `BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE` records completion of the
 symbolic operator gate.  `BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD`
@@ -803,7 +804,7 @@ emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
 composition defects.
 
 `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` corrects the activation
-boundary.  Its sixteen finite capabilities include the four baseline consumers,
+boundary.  Its earlier sixteen finite capabilities include the four baseline consumers,
 the detector/`Dhat_1` binding, the switched diagonal massive stage, the
 physical full-form Cauchy pair and the canonical positive-energy preparation
 coefficients described below, plus the first freely evolved retarded Maxwell
@@ -836,9 +837,10 @@ rational mass-squared interval.  It exports all six interval coefficient
 matrices and a uniform induced-row-norm sine-series tail; nonpositive masses,
 nonzero Maxwell mass and noncontracting slabs fail closed.  This runtime mass
 domain is not a physical mass choice.  The finite chain now binds those inputs
-through the feedback evaluations described below.  Thus direct detector and
-feedback coverage beyond `two_j=5` and the tail-aware aggregate stop loop remain
-`OBSTRUCTED`.  Supplying masses and couplings now would still
+through the feedback evaluations described below.  The generic direct carrier
+and tail-stop controller are now `CERTIFIED`, while feedback coverage beyond
+`two_j=5` and complex-to-real shell extraction remain `OBSTRUCTED`.  Supplying
+masses and couplings now would still
 not produce a certified physical recoil interval.  The exact-rational input
 schema remains deferred.
 
@@ -1001,9 +1003,17 @@ strictly contracts both real and imaginary widths for every allowed path.
 The hot interval stages use declared 96-bit dyadic outward rounding, checked
 against the exact-rational backend.  No coupling or shell scalar is formed,
 so nonvanishing, recoil-corrected rank, physical masses, all-shell recoil,
-quotient descent and tangent-cone restriction remain open.  The active gate
-is direct-provider widening beyond `two_j=5` followed by the tail-aware
-aggregate stop loop.
+quotient descent and tangent-cone restriction remain open.
+
+`BERGER_RECOIL_DIRECT_SHELL_AND_TAIL_STOP_GATE` replaces the shell-specific
+adapter by a content-addressed generic direct-shell callable and validates a
+contiguous `two_j=6` sentinel.  It retains `NO_CERTIFIED_MAP` to the hashed
+exact-`T` rail.  Its stop controller implements the exact radius
+`|g_b|D_aE_b sum_c |g_c|^2 C_c(m_c)` with tolerance, nonzero, sign and
+determinant goals.  The certificate-derived validation fixture remains
+`OPEN`; only a synthetic determinant fixture stops.  The active gate is all
+`two_j=6` feedback channel-columns plus the complex-channel-to-real-shell
+scalar map.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as

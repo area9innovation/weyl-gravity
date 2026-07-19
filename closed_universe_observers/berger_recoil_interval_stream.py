@@ -18,6 +18,10 @@ from typing import Any, Mapping, Sequence
 
 import sympy as sp
 
+from closed_universe_observers.berger_recoil_first_omitted_shell_binding import (
+    certified_direct_max_two_j,
+)
+
 
 _EXACT_MODE_SINE_KERNEL_CACHE: dict[tuple[object, ...], dict[str, object]] = {}
 
@@ -171,14 +175,7 @@ def detector_profile_coefficient_interval(
         raise ValueError("wrong detector coefficient certificate")
     if detector not in ("D0", "D1"):
         raise ValueError("detector must be D0 or D1")
-    extended_two_j5 = all(
-        certificate.get("flags", {}).get(flag) is True
-        for flag in (
-            "DIRECT_DETECTOR_POLYNOMIAL_PROVIDER_TWO_J5_EXPORTED",
-            "TWO_J4_TO_TWO_J5_DIRECT_CARRIER_CROSSWALK_CERTIFIED",
-        )
-    )
-    maximum_two_j = 5 if extended_two_j5 else 4
+    maximum_two_j = certified_direct_max_two_j(certificate, carrier="detector")
     if not 0 <= two_j <= maximum_two_j:
         raise ValueError(
             f"finite detector coefficient provider covers only 0<=two_j<={maximum_two_j}"
@@ -404,14 +401,7 @@ def enclose_exact_mode_sine_kernel(
     """
     if certificate.get("result_id") != "BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD":
         raise ValueError("wrong exact mode-kernel certificate")
-    extended_two_j5 = all(
-        certificate.get("flags", {}).get(flag) is True
-        for flag in (
-            "MAXWELL_AND_MASSIVE_KERNEL_BLOCKS_TWO_J5_EXPORTED",
-            "TWO_J4_TO_TWO_J5_DIRECT_CARRIER_CROSSWALK_CERTIFIED",
-        )
-    )
-    maximum_two_j = 5 if extended_two_j5 else 4
+    maximum_two_j = certified_direct_max_two_j(certificate, carrier="kernel")
     if not 0 <= two_j <= maximum_two_j:
         raise ValueError(
             f"exact mode-kernel payload covers only 0<=two_j<={maximum_two_j}"
@@ -681,3 +671,147 @@ def evaluate_recoil_shell_interval(
         "shell_interval": shell_interval.serialize(),
         "claim_boundary": "aggregation of supplied channel intervals only; no detector coefficient or Green convolution evaluated",
     }
+
+
+def compose_four_recoil_tail_radii(
+    *,
+    detector_dual_norms: Mapping[int, Fraction],
+    maxwell_tail_uppers: Mapping[int, Fraction],
+    massive_tail_coefficients: Mapping[int, tuple[Fraction, Fraction]],
+    masses: Mapping[int, Fraction],
+    couplings: Mapping[int, Fraction],
+) -> dict[tuple[int, int], Fraction]:
+    """Compose the certified absolute-``g^3`` tail formula for four streams.
+
+    ``massive_tail_coefficients[c]=(A_c,B_c)`` represents
+    ``C_c(m_c)=A_c/m_c^2+B_c/m_c``.  The result is
+    ``rho_ab=|g_b| D_a E_b sum_c |g_c|^2 C_c(m_c)``.
+    """
+    expected = {0, 1}
+    mappings = (
+        detector_dual_norms,
+        maxwell_tail_uppers,
+        massive_tail_coefficients,
+        masses,
+        couplings,
+    )
+    if any(set(value) != expected for value in mappings):
+        raise ValueError("all two-channel tail inputs are required")
+    if any(Fraction(value) < 0 for value in detector_dual_norms.values()):
+        raise ValueError("detector dual norms must be nonnegative")
+    if any(Fraction(value) < 0 for value in maxwell_tail_uppers.values()):
+        raise ValueError("Maxwell tail uppers must be nonnegative")
+    if any(Fraction(value) <= 0 for value in masses.values()):
+        raise ValueError("both massive-channel masses must be positive")
+    massive_sum = Fraction(0)
+    for channel in expected:
+        inverse_squared, inverse = (
+            Fraction(value) for value in massive_tail_coefficients[channel]
+        )
+        if inverse_squared < 0 or inverse < 0:
+            raise ValueError("massive tail coefficients must be nonnegative")
+        mass = Fraction(masses[channel])
+        coupling = abs(Fraction(couplings[channel]))
+        massive_sum += coupling**2 * (
+            inverse_squared / mass**2 + inverse / mass
+        )
+    return {
+        (detector, source): (
+            abs(Fraction(couplings[source]))
+            * Fraction(detector_dual_norms[detector])
+            * Fraction(maxwell_tail_uppers[source])
+            * massive_sum
+        )
+        for detector in expected
+        for source in expected
+    }
+
+
+def evaluate_four_recoil_stream_stop(
+    *,
+    partial_intervals: Mapping[tuple[int, int], RationalInterval],
+    tail_radii: Mapping[tuple[int, int], Fraction],
+    goal: Mapping[str, object],
+) -> dict[str, object]:
+    """Apply a declared fail-closed stop rule to four recoil streams."""
+    expected = {(a, b) for a in (0, 1) for b in (0, 1)}
+    if set(partial_intervals) != expected or set(tail_radii) != expected:
+        raise ValueError("all four detector/source streams are required")
+    if any(Fraction(radius) < 0 for radius in tail_radii.values()):
+        raise ValueError("tail radii must be nonnegative")
+    padded = {
+        key: RationalInterval(
+            interval.lower - Fraction(tail_radii[key]),
+            interval.upper + Fraction(tail_radii[key]),
+        )
+        for key, interval in partial_intervals.items()
+    }
+    goal_type = goal.get("type")
+    witness: dict[str, object]
+    if goal_type == "entry_tolerance":
+        eta = Fraction(str(goal.get("eta")))
+        if eta <= 0:
+            raise ValueError("entry tolerance eta must be positive")
+        widths = {key: value.upper - value.lower for key, value in padded.items()}
+        stop = all(width <= eta for width in widths.values())
+        witness = {
+            "eta": str(eta),
+            "padded_widths": {f"{a}{b}": str(width) for (a, b), width in widths.items()},
+        }
+    elif goal_type in {"entry_nonzero", "entry_sign"}:
+        target_value = goal.get("target")
+        if not isinstance(target_value, (list, tuple)) or len(target_value) != 2:
+            raise ValueError("entry goal requires target=[detector,source]")
+        target = (int(target_value[0]), int(target_value[1]))
+        if target not in expected:
+            raise ValueError("entry goal target is outside the four streams")
+        selected = padded[target]
+        if goal_type == "entry_nonzero":
+            stop = selected.upper < 0 or selected.lower > 0
+            witness = {"target": list(target), "excludes_zero": stop}
+        else:
+            sign = goal.get("sign")
+            if sign not in {"positive", "negative"}:
+                raise ValueError("entry sign goal requires positive or negative")
+            stop = selected.lower > 0 if sign == "positive" else selected.upper < 0
+            witness = {"target": list(target), "requested_sign": sign, "strict_sign": stop}
+    elif goal_type == "rank_two":
+        determinant = padded[(0, 0)] * padded[(1, 1)] - padded[(0, 1)] * padded[(1, 0)]
+        stop = determinant.upper < 0 or determinant.lower > 0
+        witness = {
+            "determinant_interval": determinant.serialize(),
+            "determinant_excludes_zero": stop,
+        }
+    else:
+        raise ValueError("unsupported or missing recoil stream stopping goal")
+    return {
+        "goal_type": goal_type,
+        "stop": stop,
+        "lifecycle_status": "CERTIFIED" if stop else "OPEN",
+        "partial_intervals": {
+            f"{a}{b}": partial_intervals[(a, b)].serialize()
+            for a, b in sorted(expected)
+        },
+        "tail_radii": {
+            f"{a}{b}": str(Fraction(tail_radii[(a, b)]))
+            for a, b in sorted(expected)
+        },
+        "tail_padded_intervals": {
+            f"{a}{b}": padded[(a, b)].serialize()
+            for a, b in sorted(expected)
+        },
+        "witness": witness,
+        "claim_boundary": "declared stop logic for supplied four-stream partial intervals and certified tail radii; no shell provider, parameter provenance or physical specialization inferred",
+    }
+
+
+def stream_recoil_intervals(
+    *,
+    partial_intervals: Mapping[tuple[int, int], RationalInterval],
+    tail_radii: Mapping[tuple[int, int], Fraction],
+    goal: Mapping[str, object],
+) -> dict[str, object]:
+    """Compatibility-named entry point for the certified tail-aware stop gate."""
+    return evaluate_four_recoil_stream_stop(
+        partial_intervals=partial_intervals, tail_radii=tail_radii, goal=goal
+    )

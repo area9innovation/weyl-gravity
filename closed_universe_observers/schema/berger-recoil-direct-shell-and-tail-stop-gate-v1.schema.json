@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "closed-universe-berger-recoil-direct-shell-and-tail-stop-gate-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "mode_scope",
+    "direct_shell_provider",
+    "four_stream_stop_gate",
+    "mutation_results",
+    "flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-direct-shell-and-tail-stop-gate-v1"},
+    "result_id": {"const": "BERGER_RECOIL_DIRECT_SHELL_AND_TAIL_STOP_GATE"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LORENTZIAN-CAUSAL"}
+    },
+    "mode_scope": {
+      "type": "object",
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]
+    },
+    "direct_shell_provider": {
+      "type": "object",
+      "required": ["callable", "binding_callable", "sentinel_two_j", "contiguous_carrier_cutoffs", "sentinel_payload_sha256", "sentinel_kernel_block_count", "source_hash_crosswalk", "hashed_exact_T_two_j138_stream_identification_status"],
+      "properties": {
+        "sentinel_two_j": {"const": 6},
+        "sentinel_kernel_block_count": {"const": 5},
+        "sentinel_payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "hashed_exact_T_two_j138_stream_identification_status": {"const": "NO_CERTIFIED_MAP"}
+      }
+    },
+    "four_stream_stop_gate": {
+      "type": "object",
+      "required": ["tail_formula", "supported_goals", "validation_parameters", "certificate_derived_open_fixture", "synthetic_rank_two_stop_fixture"]
+    },
+    "mutation_results": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "object", "required": ["name", "detected"], "properties": {"detected": {"const": true}}}
+    },
+    "flags": {
+      "type": "object",
+      "required": ["GENERIC_DIRECT_FINITE_SHELL_PROVIDER_EXPORTED", "TAIL_AWARE_FOUR_STREAM_STOP_CALLABLE_EXPORTED", "TWO_J6_FEEDBACK_CHANNELS_EVALUATED", "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED", "PHYSICAL_MASS_COUPLING_SPECIALIZATION_EXPORTED", "FOUR_PHYSICAL_RECOIL_INTERVALS_EXPORTED", "QUANTUM_CLAIM"],
+      "properties": {
+        "GENERIC_DIRECT_FINITE_SHELL_PROVIDER_EXPORTED": {"const": true},
+        "TAIL_AWARE_FOUR_STREAM_STOP_CALLABLE_EXPORTED": {"const": true},
+        "TWO_J6_FEEDBACK_CHANNELS_EVALUATED": {"const": false},
+        "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED": {"const": false},
+        "PHYSICAL_MASS_COUPLING_SPECIALIZATION_EXPORTED": {"const": false},
+        "FOUR_PHYSICAL_RECOIL_INTERVALS_EXPORTED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    }
+  }
+}

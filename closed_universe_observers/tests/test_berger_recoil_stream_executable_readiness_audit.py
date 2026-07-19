@@ -6,7 +6,7 @@ def test_symbolic_word_is_not_promoted_to_an_interval_backend():
     rows = {row["id"]: row["status"] for row in value["readiness"]["rows"]}
     assert rows["complete_symbolic_operator_word"] == "CERTIFIED"
     assert rows["finite_detector_coefficient_provider_two_j0_to_4"] == "CERTIFIED"
-    assert rows["detector_profile_coefficient_provider"] == "OBSTRUCTED"
+    assert rows["detector_profile_coefficient_provider"] == "CERTIFIED"
     assert rows["finite_polynomial_nested_time_convolution"] == "CERTIFIED"
     assert rows["finite_exact_mode_kernel_interval_enclosure"] == "CERTIFIED"
     assert rows["finite_detector_advanced_maxwell_Dhat1_binding"] == "CERTIFIED"
@@ -21,9 +21,11 @@ def test_symbolic_word_is_not_promoted_to_an_interval_backend():
     assert rows["finite_six_mismatched_absolute_g3_feedback_channels"] == "CERTIFIED"
     assert rows["finite_first_omitted_shell_direct_provider_two_j5"] == "CERTIFIED"
     assert rows["finite_two_j5_all_channel_column_feedback_binding"] == "CERTIFIED"
+    assert rows["generic_direct_finite_shell_provider"] == "CERTIFIED"
+    assert rows["complex_channel_to_real_shell_scalar_map"] == "OBSTRUCTED"
     assert rows["nested_time_convolution_backend"] == "OBSTRUCTED"
     assert rows["shell_interval_evaluator"] == "CERTIFIED"
-    assert rows["tail_aware_aggregate_stop_loop"] == "OBSTRUCTED"
+    assert rows["tail_aware_aggregate_stop_loop"] == "CERTIFIED"
     assert value["atlas_status"] == "OBSTRUCTED"
 
 
@@ -35,8 +37,8 @@ def test_external_specialization_is_deferred_until_backend_exists():
     assert value["flags"]["NUMERICAL_SPECIALIZATION_VALUES_DECLARED"] is False
 
 
-def test_sixteen_finite_capabilities_close_but_three_complete_execution_capabilities_remain_fail_closed():
+def test_generic_direct_and_tail_stop_close_but_two_physical_capabilities_remain_fail_closed():
     rows = build()["readiness"]["rows"][1:]
-    assert len(rows) == 19
-    assert [row["status"] for row in rows].count("CERTIFIED") == 16
-    assert [row["status"] for row in rows].count("OBSTRUCTED") == 3
+    assert len(rows) == 21
+    assert [row["status"] for row in rows].count("CERTIFIED") == 19
+    assert [row["status"] for row in rows].count("OBSTRUCTED") == 2

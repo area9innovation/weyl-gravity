@@ -9,6 +9,9 @@ from typing import Any, Mapping, Sequence
 
 import sympy as sp
 
+from closed_universe_observers.berger_recoil_first_omitted_shell_binding import (
+    certified_direct_max_two_j,
+)
 from closed_universe_observers.berger_recoil_interval_stream import (
     ComplexRationalInterval,
     RationalInterval,
@@ -87,14 +90,7 @@ def _detector_mode(
         raise ValueError("finite advanced-Maxwell detector image is not certified")
     if detector not in ("D0", "D1"):
         raise ValueError("detector must be D0 or D1")
-    extended_two_j5 = all(
-        certificate.get("flags", {}).get(flag) is True
-        for flag in (
-            "DIRECT_DETECTOR_POLYNOMIAL_PROVIDER_TWO_J5_EXPORTED",
-            "TWO_J4_TO_TWO_J5_DIRECT_CARRIER_CROSSWALK_CERTIFIED",
-        )
-    )
-    maximum_two_j = 5 if extended_two_j5 else 4
+    maximum_two_j = certified_direct_max_two_j(certificate, carrier="detector")
     if not 0 <= two_j <= maximum_two_j:
         raise ValueError(
             f"detector form binding covers only 0<=two_j<={maximum_two_j}"

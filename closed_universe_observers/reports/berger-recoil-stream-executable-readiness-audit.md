@@ -2,16 +2,16 @@
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `LORENTZIAN-CAUSAL`.
 
-The complete per-shell symbolic word now has sixteen finite executable consumers.
+The complete per-shell symbolic word now has the earlier sixteen finite
+execution capabilities plus a generic direct-shell provider and a tail-stop
+controller.
 Exact rational interval aggregation of supplied `I_abc[two_j,k]` values is
 certified, including every passive column, `g_b g_c^2`, and the Peter--Weyl
 weight.  A second callable returns exact real/imaginary coefficient intervals,
 structural zeros and the certified uniform remainder from the validated
-advanced-Maxwell image for `two_j=0,...,4`.  This is not a complete all-shell
-detector provider, massive image or recoil channel.  Physical Berger binding
-of the nested convolution and the tail-aware four-stream stop loop remain
-absent.  Supplying numerical masses and couplings now would therefore
-still not produce a physical recoil interval.
+advanced-Maxwell image.  The new content-addressed extension makes this a
+generic declared-finite-shell carrier and validates a contiguous `two_j=6`
+sentinel.  It is not an evaluated all-shell massive or recoil channel.
 
 The third callable composes supplied finite-slab polynomial Green enclosures
 with exact beta-integral coefficients and uniform rational remainder
@@ -73,14 +73,16 @@ support zeros and the other 24 are zero-containing on the validation mass
 domain.  The four allowed `k=0` paths strictly contract in both components
 from two to four cells.  Couplings and shell scalars remain unevaluated.
 
-The audit retains its explicit four-callable complete-backend protocol, records
-the shell evaluator `CERTIFIED`, and adds separate `CERTIFIED` finite detector
-kernel, and polynomial-convolution progress rows while all three incomplete physical
-rows remain `OBSTRUCTED`.
+The fail-closed controller now implements the certified tail formula and
+tolerance, nonzero, sign, and determinant rules.  Its certificate-derived
+validation fixture remains `OPEN`; only a synthetic rank-two fixture exercises
+the stop branch.  The feedback evaluator itself still ends at `two_j=5`, and
+there is no certified map from its complex channel rectangles to the real
+shell scalars expected by the aggregator.
 It also exports a strict exact-rational numerical
 input schema in the certified `gHat` operator units, but leaves every value
-undeclared.  The next gate widens the direct feedback provider beyond
-`two_j=5` and implements the tail-aware stop loop;
+undeclared.  The next gate binds all `two_j=6` feedback channel-columns and
+certifies the complex-to-real shell map;
 external specialization follows only after the full protocol closes.
 
 The symbolic operator theorem remains `CERTIFIED`.  No recoil coefficient,

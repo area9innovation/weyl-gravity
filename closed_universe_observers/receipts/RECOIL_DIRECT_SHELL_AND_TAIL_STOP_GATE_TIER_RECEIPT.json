@@ -1,0 +1,74 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "BERGER_RECOIL_DIRECT_SHELL_AND_TAIL_STOP_GATE_TIER_RECEIPT",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "commands": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_recoil_direct_shell_and_tail_stop_gate --emit",
+      "elapsed_seconds": "64.13",
+      "status": "PASS",
+      "scope": "content-addressed generic direct-shell generation, contiguous two_j=6 sentinel, runtime detector/kernel probes, and fail-closed four-stream stop fixtures"
+    },
+    {
+      "command": "dependency-ordered --emit replay from the generic direct-shell gate through the finite recoil preparation/feedback chain",
+      "elapsed_seconds": "completed; individual lightweight stages not separately timed",
+      "status": "PASS",
+      "scope": "nineteen affected observer certificates in dependency order"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_recoil_two_j5_all_channel_column_binding --emit",
+      "elapsed_seconds": "547.92",
+      "max_rss_kib": 97780,
+      "status": "PASS",
+      "scope": "exhaustive 48-block two_j=5 causal enclosure replay after shared runtime changes"
+    },
+    {
+      "command": "pytest -q selected direct-shell, readiness, activation, interval-runtime, atlas and comparison-ledger tests",
+      "elapsed_seconds": "136.74",
+      "status": "PASS",
+      "summary": "65 passed"
+    },
+    {
+      "command": "independent affected-chain verifiers plus residual atlas and comparison-ledger validation",
+      "elapsed_seconds": "under 3 minutes total",
+      "status": "PASS",
+      "scope": "certificate hashes, schemas, fail-closed lifecycle flags, atlas evidence and live comparison artifacts"
+    },
+    {
+      "command": "python3 -m py_compile changed Python modules; python3 -m json.tool changed JSON/schema files; git diff --check on scoped paths",
+      "elapsed_seconds": "under 2",
+      "status": "PASS",
+      "scope": "Tier 0 syntax, structure and whitespace"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_DIRECT_SHELL_AND_TAIL_STOP_GATE.json",
+      "sha256": "6c0ea7a5d4cdf61d7c2537238ad3507fe08437faad299c13a8259bb4ca1854fb"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json",
+      "sha256": "f77c09e547eb2093c1f82b22e97f0a0bbf972ff29cf9dc3befa8748c8d1fedea"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE.json",
+      "sha256": "210336a64017340428d09631e2d08cf5c1ca5bac780a5dbabe27b9a24b43b390"
+    },
+    {
+      "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "sha256": "0b70ac0a9a78d92a3862eb32b31643db00c3723c3656790594f19e592e96c27a"
+    },
+    {
+      "path": "closed_universe_observers/ledgers/comparison_ledger.json",
+      "sha256": "3699fe82ce29a68fc7349468a0ec6e5ba4385fb91523f90c920b1606e88b1686"
+    }
+  ],
+  "claim_boundary": "The generic direct finite-shell carrier and fail-closed four-stream tail-stop callable are certified with a contiguous two_j=6 sentinel. No two_j=6 feedback channel, complex-to-real shell scalar map, physical mass/coupling specialization, four physical recoil intervals, recoil-corrected rank, quotient descent, tangent-cone restriction, Bridge 3 activation or quantum claim is certified.",
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "No freeze, release, shared core-algebra change, or physical theorem/lifecycle promotion; the complete affected observer certificate chain and exhaustive two_j=5 replay were run."
+  }
+}

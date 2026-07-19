@@ -24,9 +24,7 @@ blocks are now evaluated by Green adjunction on the validation mass domain;
 the cellwise causal backend strictly contracts both complex enclosures along
 its 2/4/8-cell rail and below the whole-support hulls.  Both 8-cell
 enclosures still contain zero.  The
-readiness audit still finds three complete-stream missing pieces: an all-shell
-detector coefficient provider, physical Berger binding of the nested engine,
-and the tail-aware aggregate stop loop.
+readiness audit still keeps the complete physical stream obstructed.
 
 The D1 advanced detector remainder is now certified on the earlier h0 window.
 All six mismatched `two_j=0,k=0` channels are also evaluated: four vanish by
@@ -43,11 +41,19 @@ carrier identification is inferred from matching mode names.  All eight
 48 blocks, of which 24 are exact support zeros and 24 remain zero-containing.
 All four allowed `k=0` paths contract from two to four cells.
 
+A content-addressed generic direct-shell provider now generates a contiguous
+`two_j=6` sentinel, and the fail-closed four-stream tail controller implements
+the exact absolute-`g^3` envelope with interval, nonzero, sign, and determinant
+stops.  The certificate-derived validation fixture does not stop.  No
+`two_j=6` feedback block or complex-channel-to-real-shell scalar map is yet
+certified.
+
 The remaining sequence is:
 
-1. Widen the direct provider beyond `two_j=5` and implement the tail-aware four-stream stop loop.
+1. Bind every `two_j=6` feedback channel-column block and certify the
+   complex-channel-to-real-shell scalar map.
 2. Only then declare numerical positive masses, nonzero couplings, and an
-   interval, nonzero, or sign stopping goal.
+   interval, nonzero, sign, or rank-two stopping goal.
 3. Run the four response-specific streams and close them with the certified
    tail radii.
 
