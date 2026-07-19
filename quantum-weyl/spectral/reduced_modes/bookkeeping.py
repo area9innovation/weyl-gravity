@@ -245,7 +245,7 @@ def build_certificate() -> dict[str, Any]:
     sources = [FIELD_DICTIONARY, CURVATURE_CHARACTER, BRANCH_RESIDUES]
     return {
         "schema": "quantum-weyl-reduced-mode-ledger-v1",
-        "result_id": "REDUCED_MODE_SPECTRAL_BOOTSTRAP",
+        "result_id": "REDUCED_MODE_EAL_BRANCH_LEDGER",
         "result_stage": "CLASSIFIED",
         "calculation_kind": "BOOKKEEPING_BOOTSTRAP",
         "dependency_tags": ["REDUCED-MODE"],

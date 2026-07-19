@@ -70,7 +70,7 @@ def build_certificate() -> dict[str, Any]:
     rows, nilpotency_payload = _minimal_rows_and_residuals()
     source_manifest = _source_manifest()
     return {
-        "result_id": "LOCAL_BV_MINIMAL_BOOTSTRAP",
+        "result_id": "LOCAL_BV_MINIMAL_BOOTSTRAP_PROOF",
         "result_state": "INFRASTRUCTURE_VERIFIED",
         "classical_commit": "NOT_FROZEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],

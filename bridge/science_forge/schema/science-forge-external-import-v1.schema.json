@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/science-forge-external-import-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "lifecycle",
+    "dependency_tags",
+    "source",
+    "results",
+    "scaling_fixture",
+    "evidence",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {"const": "science-forge-external-import-v1"},
+    "result_id": {"const": "SCIENCE_FORGE_PU_ORDER6_IMPORT"},
+    "lifecycle": {"const": "REPRODUCED_CLEAN_PINNED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "source": {"type": "object"},
+    "results": {"type": "array", "minItems": 2, "maxItems": 2},
+    "scaling_fixture": {"type": "object"},
+    "evidence": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 1}
+  },
+  "additionalProperties": false
+}

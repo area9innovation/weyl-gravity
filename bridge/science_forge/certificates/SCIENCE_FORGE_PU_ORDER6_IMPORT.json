@@ -1,0 +1,89 @@
+{
+  "schema": "science-forge-external-import-v1",
+  "result_id": "SCIENCE_FORGE_PU_ORDER6_IMPORT",
+  "lifecycle": "REPRODUCED_CLEAN_PINNED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "source": {
+    "repository": "https://github.com/area9innovation/tango",
+    "commit": "ccee11d08de28d3e2681db209264887950666e87",
+    "artifacts": [
+      {
+        "path": "forge/tools/claimlang/certificates/paper5_hierarchy53.json",
+        "sha256": "a4a1a98a4284525e53e9d82320f3a86af0b80d3abf3a0d50f517dc2aac9f406b"
+      },
+      {
+        "path": "forge/tools/physics-moyal/golden/deform_53.json",
+        "sha256": "8ee9a823c01a6063a9044f595d9e362923290bc90f79a4d79dc0e0df04c572c0"
+      },
+      {
+        "path": "forge/tools/physics-moyal/RESULT-5-3.md",
+        "sha256": "e234a8544675a5cc1f71d292f0fc3d24158ff8984ddbb26052c93a4591f911a5"
+      }
+    ],
+    "upstream_claim_summary": {
+      "passed": 11,
+      "failed": 0
+    },
+    "recorded_toolchain_version": "forge 0.0.0-dev+b00c9885ef04.dirty (go1.25.8, linux/amd64)",
+    "clean_replay": {
+      "status": "PASS",
+      "source_tree": "6f74999b0bb4697bde45551ac7115297fc7a7d78",
+      "source_materialization": "git archive of pinned commit; no .git directory and no working-tree overlay",
+      "go_version": "go1.25.8 linux/amd64",
+      "compiler_sha256": "351c7650f18afb0b167378810358d0fb182aa96d5ae9f767eff6a2d40bba1905",
+      "gate_exit_code": 31,
+      "gate_exit_convention": "one successful process exit unit per expected check",
+      "checks_passed": 31,
+      "checks_expected": 31,
+      "sympy_golden_comparisons_passed": 3,
+      "output_sha256": "ee9e865801637159766a8b1c3d035a1a51e3f63625c83e3f6435f2557fcb7c65",
+      "receipt": "bridge/science_forge/receipts/SCIENCE_FORGE_PU_ORDER6_CLEAN_REPLAY.json"
+    }
+  },
+  "results": [
+    {
+      "ratio": "5:3",
+      "first_nonzero_order": 6,
+      "lower_orders_zero": [2, 3, 4, 5],
+      "coefficient": {
+        "numerator": 3863828151875,
+        "denominator": 6463101113204736,
+        "radicand": 15
+      },
+      "monomial": "a1^3*a2b^5-a1b^3*a2^5"
+    },
+    {
+      "ratio": "7:1",
+      "first_nonzero_order": 6,
+      "lower_orders_zero": [2, 3, 4, 5],
+      "coefficient": {
+        "numerator": 28633766567,
+        "denominator": 2656254925209600000,
+        "radicand": 7
+      },
+      "monomial": "a1*a2b^7-a1b*a2^7"
+    }
+  ],
+  "scaling_fixture": {
+    "base_ratio": "5:3",
+    "scaled_ratio": "10:6",
+    "exact_factor_numerator": 1,
+    "exact_factor_denominator": 16384
+  },
+  "evidence": {
+    "forge_c_backend": "PASS",
+    "forge_native_backend": "PASS",
+    "backend_outputs_byte_identical": true,
+    "sympy_term_exact_recomputation": "PASS",
+    "independent_position_space_hermiticity_orders_2_through_5": "PASS",
+    "exact_arithmetic": true
+  },
+  "does_not_establish": [
+    "the coprime-ratio p+q-2 hierarchy for all coprime ratios",
+    "removability or nonremovability of the sixth-order kernel under every further admissible canonical transformation",
+    "convergence or a nonperturbative statement",
+    "a gravity, Lorentzian-causal, particle, or unitarity claim"
+  ]
+}

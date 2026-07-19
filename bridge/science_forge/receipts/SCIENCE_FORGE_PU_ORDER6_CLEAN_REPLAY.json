@@ -1,0 +1,32 @@
+{
+  "result_id": "SCIENCE_FORGE_PU_ORDER6_CLEAN_REPLAY",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "source_repository": "https://github.com/area9innovation/tango",
+  "source_commit": "ccee11d08de28d3e2681db209264887950666e87",
+  "source_tree": "6f74999b0bb4697bde45551ac7115297fc7a7d78",
+  "source_materialization": "git archive of pinned commit; no .git directory and no working-tree overlay",
+  "build": {
+    "command": "go build -o /tmp/forgebin-clean ./cmd/forge",
+    "go_version": "go1.25.8 linux/amd64",
+    "compiler_sha256": "351c7650f18afb0b167378810358d0fb182aa96d5ae9f767eff6a2d40bba1905"
+  },
+  "gate": {
+    "command": "FORGE_LIB=$PWD/lib /tmp/forgebin-clean -run -I tools/physics-moyal tools/physics-moyal/hierarchy53_gate.forge",
+    "exit_code": 31,
+    "exit_convention": "one successful process exit unit per expected check",
+    "checks_passed": 31,
+    "checks_expected": 31,
+    "sympy_golden_comparisons_passed": 3,
+    "terminal_line": "battery 31/31 ; golden rail OK/absent",
+    "output_line_count": 41,
+    "output_sha256": "ee9e865801637159766a8b1c3d035a1a51e3f63625c83e3f6435f2557fcb7c65"
+  },
+  "status": "PASS",
+  "does_not_establish": [
+    "the all-coprime resonance hierarchy",
+    "convergence or a nonperturbative result",
+    "a gravity or quantum-particle claim"
+  ]
+}

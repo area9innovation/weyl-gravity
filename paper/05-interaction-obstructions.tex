@@ -79,6 +79,11 @@ are inequivalent in the interacting theory.
 All finite-dimensional and modewise identities are
 machine-verified; derivations of the principal results are given in the
 appendices.
+An independent Science Forge computation subsequently extends the discrete
+resonance hierarchy to order six: the $5{:}3$ and $7{:}1$ loci vanish through
+orders two--five and obstruct at order six on exactly the predicted conversion
+monomials.  Those two instances are imported here as externally reproduced
+exact evidence; the all-coprime hierarchy remains a conjecture.
 \end{abstract}
 
 \tableofcontents
@@ -122,9 +127,11 @@ transfer-lattice selection rule organizes the hierarchy
 (Section~\ref{sec:selection}), whose first prediction is confirmed:
 $5{:}1$ is unobstructed through order 3 and obstructed at order 4,
 exactly on the predicted monomial
-(Proposition~\ref{cprop:fiveone}) --- the hierarchy is thereby
-verified through order four at three qualitatively distinct
-resonances; the deformation diverges toward the
+(Proposition~\ref{cprop:fiveone}); independent exact order-six calculations
+find the predicted first obstructions at $5{:}3$ and $7{:}1$
+(Proposition~\ref{cprop:ordersix}) --- the hierarchy is thereby sampled at
+five qualitatively distinct resonances through order six; the deformation
+diverges toward the
 Jordan boundary, with exact leading asymptotics at first order and
 measured geometric growth beyond (Section~\ref{sec:jordanscaling}).
 
@@ -199,7 +206,9 @@ imply nonvanishing of the obstruction at every point of it).  The
 status ledger is: $R_1$ Jordan scaling --- theorem; $R_2,R_3$ scaling
 --- computational propositions; $R_n\sim\epsilon^{-3n/2}$ ---
 conjecture; the $5{:}1$ obstruction --- computational proposition
-(confirmed at order 4, Proposition~\ref{cprop:fiveone}); a full-field
+(confirmed at order 4, Proposition~\ref{cprop:fiveone}); the $5{:}3$ and
+$7{:}1$ order-six obstructions --- clean-pinned externally reproduced
+computational proposition (Proposition~\ref{cprop:ordersix}); a full-field
 complex spectrum --- open; the exact doubled classical involution ---
 theorem (Bateman--Turok, restated); its quantum implementation ---
 open; the $\kappa$-odd localization of the shell obstruction ---
@@ -229,6 +238,15 @@ exact-rational (Sturm/charpoly), or high-precision numerical.
 Appendices~\ref{app:recursion}--\ref{app:parity} contain readable
 derivations of the principal results.  Operator-domain caveats
 (unbounded interactions, formal series) are flagged where they occur.
+The order-six extension is pinned separately by
+\path{bridge/science_forge/certificates/SCIENCE_FORGE_PU_ORDER6_IMPORT.json}
+to Tango commit
+\path{ccee11d08de28d3e2681db209264887950666e87}.  It records exact agreement
+between two Forge backends and an independent SymPy recomputation, while also
+recording that the upstream certificate was emitted by a dirty development
+toolchain.  A second run built the compiler from a clean \texttt{git archive}
+of that commit and reproduced all 31 checks and all three SymPy golden
+comparisons; the clean replay receipt is part of the import.
 
 \paragraph{Conventions.}
 Oscillator conventions follow \cite{paperI,paperII}: normalized
@@ -447,8 +465,10 @@ vanishing coefficients.
 The coprime ratio $\w_1/\w_2=p{:}q$ first obstructs at order $p+q-2$
 when the mode-2 transfer $p$ is odd.  (Verified: $3{:}1$ at order 2,
 $3{:}2$ at order 3, and $5{:}1$ at order 4 ---
-Proposition~\ref{cprop:fiveone}.  Predicted: $5{:}3$ at order 6.  The
-mechanism excluding even mode-2 transfers is open.)  The
+Proposition~\ref{cprop:fiveone}; externally reproduced exact instances:
+$5{:}3$ and $7{:}1$ at order 6 --- Proposition~\ref{cprop:ordersix}.
+The mechanism excluding even mode-2 transfers and the all-coprime statement
+remain open.)  The
 resonance set is an expanding hierarchy, not (so far) a dense set.
 \end{conjecture}
 
@@ -477,6 +497,35 @@ generated programmatically from the adjoint series of
 Appendix~\ref{app:recursion}, and the same code path re-derives the
 order-2 and order-3 classes exactly before running order 4.
 (Checks FO1--FO9, \texttt{verify\_51\_order4.py}.)
+\end{cproposition}
+
+\begin{cproposition}[The $5{:}3$ and $7{:}1$ obstructions at sixth order]
+\label{cprop:ordersix}
+At $(\w_1,\w_2)=(5,3)$ and $(7,1)$, the exact kernel projections at
+orders two through five vanish and the corresponding $R_2,\ldots,R_5$ are
+Hermitian.  The first nonzero classes occur at order six and are
+\begin{align}
+\ob_{+,5:3}^{(6)}
+&=\frac{3863828151875\sqrt{15}}{6463101113204736}
+\big(a_1^3a_2^{\dg5}-a_1^{\dg3}a_2^5\big),\\
+\ob_{+,7:1}^{(6)}
+&=\frac{28633766567\sqrt7}{2656254925209600000}
+\big(a_1a_2^{\dg7}-a_1^{\dg}a_2^7\big).
+\end{align}
+They are the predicted $3\leftrightarrow5$ and $1\leftrightarrow7$
+on-shell conversion kernels, with the real coefficient and antisymmetric
+combination required by even-order parity.  Rescaling $(5,3)$ to $(10,6)$
+multiplies the result by exactly $2^{-14}$, matching the sampled dimensional
+law $\ob_+^{(n)}\propto\w_2^{-(5n-2)/2}$ at $n=6$.
+
+The evidence consists of a 31-check exact Forge battery on two code
+generators, an independent end-to-end Hermiticity assembly through order five,
+and a from-scratch SymPy recomputation agreeing term by term.  The bounded
+import certificate pins the source commit and artifacts.  This proposition
+does not prove the hierarchy for every coprime ratio, convergence, or
+nonremovability under every further admissible canonical transformation.  The
+upstream dirty-toolchain marker is retained for provenance and independently
+discharged by the clean pinned replay recorded with the import.
 \end{cproposition}
 
 \section{The Jordan divergence hierarchy}\label{sec:jordanscaling}
@@ -937,8 +986,9 @@ on a completion, and any probability interpretation beyond
 identity for the internal charge (the classical identity, with its
 exact regulator breaking $\epsilon u(1+u)-\mu^2v$, is verified).  The
 hierarchy conjecture's $5{:}1$ prediction is confirmed at fourth order
-(Proposition~\ref{cprop:fiveone}); the next open case is $5{:}3$ at
-order 6, and the mechanism excluding even mode-2 transfers is open.
+(Proposition~\ref{cprop:fiveone}), and its $5{:}3$ and $7{:}1$ instances are
+confirmed at sixth order (Proposition~\ref{cprop:ordersix}); higher coprime
+loci and the mechanism excluding even mode-2 transfers remain open.
 These scalar questions are deferred rather than placed in the active
 queue.  After the boundary Born-trace calculation, the next target is
 the gravitational extension --- the cubic Einstein--Weyl vertices

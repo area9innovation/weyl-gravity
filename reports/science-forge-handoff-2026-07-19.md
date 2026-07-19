@@ -68,7 +68,8 @@ Drift/staleness caught by wrapping your own verifiers and producers:
 9. **A corroboration asymmetry worth knowing**: code evidence independently
    confirms the declared dependency graph almost perfectly for
    closed_universe_observers (precision 0.98 / recall 0.87) but barely at all
-   for the programmatic families (d_quotient_classical 0.13, quantum-weyl ~0)
+   for the programmatic families (d_quotient_classical recall 0.13,
+   quantum-weyl recall approximately 0)
    — where declared structure exists without code-level corroboration.
 10. Non-finding, for the record: an earlier bh1b "failure" was a
    memory-pressure artifact on our box, not a corpus bug (re-ran clean).
