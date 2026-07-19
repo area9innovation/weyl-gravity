@@ -1,0 +1,263 @@
+{
+  "claim_boundary": "This certifies every same-shell adjoint-cokernel projection for one fixed ell>=2 at k=0. It does not yet certify uniform inversion of the neighboring angular outputs, finite multi-ell sums, nonzero momentum, causal propagation, all-orders integration, residual observables or quantum transfer.",
+  "classification": {
+    "all_fixed_ell_all_m_same_shell_resonance_zero": true,
+    "bounded_fixed_ell_constant_twist_cone_complete": false,
+    "causal_or_quantum_claim": false,
+    "ell2_direct_replay_matched": true,
+    "finite_multi_ell_twist_cone_classified": false,
+    "generic_ell_Einstein_multiplicity_matrices_zero": true,
+    "generic_ell_extra_multiplicity_matrix_zero": true,
+    "off_shell_L_ell_plus_minus_1_inverses_certified": false
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "reason": "the same-shell adjoint projection is zero, but the L=ell-1 and L=ell+1 twist-wave output inverses have not yet been certified uniformly",
+      "status": "OPEN"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "the complete finite-support smooth-secular theorem already supplies a correction when the stabilizer moment maps vanish",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_calibration": {
+    "Einstein_plus_minus": "zero",
+    "certificate": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_PROJECTOR_REPAIR",
+    "ell": 2,
+    "extra": "zero",
+    "matches_structural_theorem": true
+  },
+  "flat_connection_reduction": {
+    "background_compatibility": "SO(3) rotations are lifted bundle automorphisms of the monopole connection",
+    "curvature": "zero for constant alpha and one circle direction",
+    "global_scope": "F_alpha need not be periodic as a gauge transformation; its holonomy is physical. Only the local covariantization identity is used to compute the periodic bilinear source and its same-shell pairing.",
+    "lifted_connection": "D_x=partial_x+alpha*(A_hat dot J_ell)",
+    "local_pullback": "F_alpha(x,y)=(x,exp(alpha*x*A_hat)y), together with the compensating U(1) lift that fixes the monopole connection",
+    "naturality": "E(F_alpha^*Phi)=F_alpha^*E(Phi); on an x-independent V_ell coefficient, partial_x(F_alpha^*u)=alpha*(A_hat dot J_ell)F_alpha^*u",
+    "primary_derivative": {
+      "covariant_momentum": "K_alpha=k+alpha*j with j any matrix element of A_hat dot J_ell",
+      "dalpha_p_at_alpha0": "-2*j*k",
+      "dalpha_q_at_alpha0": "4*j*k*(k**2 + lambda - omega**2)",
+      "k0_derivatives": {
+        "p": "0",
+        "q": "0"
+      },
+      "matrix_gram_checks": {
+        "p": {
+          "dimension": 4,
+          "shell_remainder": [
+            [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          ],
+          "shell_remainder_rank": 0
+        },
+        "q": {
+          "dimension": 2,
+          "shell_remainder": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "shell_remainder_rank": 0
+        }
+      },
+      "p_action_shell_remainder": "0",
+      "p_of_K": "-alpha**2*j**2 - 2*alpha*j*k - k**2 - lambda + omega**2 + 2/3",
+      "proof": "The lifted constant twist is a flat SO(3) connection along S1, so horizontal differentiation replaces k by k+alpha(A_hat dot J_ell). On the action-reduced p or q primary, the adjoint-cokernel pairing is the Feynman-Hellmann derivative. Both primaries are even in covariant momentum; at k=0 the derivative vanishes. Derivatives of any regular action Gram or basis factor multiply p or q and vanish on shell.",
+      "q_action_shell_remainder": "0",
+      "q_of_K": "alpha**4*j**4 + 4*alpha**3*j**3*k + 6*alpha**2*j**2*k**2 + 2*alpha**2*j**2*lambda - 2*alpha**2*j**2*omega**2 + 4*alpha*j*k**3 + 4*alpha*j*k*lambda - 4*alpha*j*k*omega**2 + k**4 + 2*k**2*lambda - 2*k**2*omega**2 + lambda**2 - 2*lambda*omega**2 - 2*lambda + omega**4",
+      "regular_action_factor": "G(alpha)=g0+alpha*g1+O(alpha^2)"
+    }
+  },
+  "generality_level": "G4_EVERY_FIXED_GENERIC_ELL_K0_ALL_M_BOTH_PARITIES_ALL_PRIMARIES",
+  "interpretation": "Constant twist does not create a same-shell bounded obstruction for any fixed generic angular momentum at rest. The ell=2 zero is structural: the twist differentiates the action primary with respect to circle momentum, and every p/q primary has zero group-velocity derivative at k=0.",
+  "lifecycle_state": "CLASSIFIED",
+  "multiplicity_matrices": {
+    "P_ell": {
+      "matrix": [
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "rank": 0,
+      "shape": [
+        4,
+        4
+      ]
+    },
+    "Q_(ell,+)": {
+      "matrix": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "rank": 0,
+      "shape": [
+        2,
+        2
+      ]
+    },
+    "Q_(ell,-)": {
+      "matrix": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "rank": 0,
+      "shape": [
+        2,
+        2
+      ]
+    },
+    "all_m_resonance_operator": "zero on V_ell tensor (M_q_minus direct_sum M_q_plus direct_sum M_p)",
+    "kernel": "the complete fixed-ell q/p wave carrier"
+  },
+  "next_gate": "prove the L=ell-1 and L=ell+1 p/q target blocks are uniformly off shell at each input p/q frequency, then combine with the fixed-ell H,J_i wave theorem to certify the complete bounded product cone",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.py",
+    "generator_sha256": "c3917d5b18fa6bad07bebd406747158293ebf601f47682d7916f8aaba8955348",
+    "inputs": {
+      "axial_action": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_reduced_action_hessian.json",
+        "sha256": "62e49ec4e690c91de973acac50862d8f39ce934bb1030b41ca1e474db94b85f7"
+      },
+      "axial_primary": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
+        "sha256": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb"
+      },
+      "ell2_repair": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.json",
+        "sha256": "de38a7665d5b0a59ebc5665cf987bdca328c34ed623497e27b1f6e2c38e93150"
+      },
+      "factorization": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.json",
+        "sha256": "936a935be9183591aa54c37cb4fa35488690167b4c93819399daf6bd34db5aea"
+      },
+      "fixed_ell_wave": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
+        "sha256": "9c9b5db86f50a624f84a0ec6548d2c07030109626d076c0e5ee6f9e9115f9e54"
+      },
+      "polar_action": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      },
+      "polar_primary": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      },
+      "twist_family": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_ZERO_MAP",
+  "result_state": "EVERY_FIXED_GENERIC_ELL_K0_CONSTANT_TWIST_SAME_SHELL_MAP_ZERO",
+  "schema": "einstein-maxwell-weyl-fixed-ell-constant-twist-zero-map-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.schema.json",
+  "schema_sha256": "a603ba4aa29bf515eff7adcc7156ea8b6ed780b20e4672a7276c19d62d04dc44",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded same-shell resonance projection",
+    "carrier": "one constant axial twist position crossed with one arbitrary fixed ell>=2,k=0 q/p wave block",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "every one fixed integer ell>=2",
+    "k": 0,
+    "m": "all m=-ell,...,ell",
+    "omega": "Einstein plus/minus q shells and extra p shell separately",
+    "parity": "axial and polar",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.2,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 2.23,
+      "max_rss_kb": 60840,
+      "status": "PASS",
+      "tests_run": 33
+    },
+    "tier_2": {
+      "criterion": "action-derived primary decompositions, SO(3) factorization and the direct ell2 corrected replay are unchanged exact inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "neighboring angular outputs and larger lifecycles remain fail-closed",
+      "status": "NOT_RUN"
+    }
+  }
+}

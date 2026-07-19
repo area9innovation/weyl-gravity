@@ -189,10 +189,11 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
 
     def test_fixed_ell_constant_twist_factorization_is_registered(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
-        self.assertIn("two 2x2 Einstein matrices", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("Q_(ell,+)=Q_(ell,-)=0", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
-        self.assertIn("correctly typed ell=2 matrices vanish", entry["claim_boundary"])
+        self.assertIn("same-shell zero map", entry["claim_boundary"])
         self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
 
     def test_global_finite_harmonic_k0_bounded_cone_is_registered(self) -> None:

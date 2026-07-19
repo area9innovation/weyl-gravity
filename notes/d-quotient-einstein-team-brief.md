@@ -2701,6 +2701,26 @@ class.  Other `ell`, nonzero momentum and causal/retarded propagation remain
 fail-closed.  The next gate is the correctly typed constant-twist calculation
 at generic `ell`; it must not infer its matrices merely from the `ell=2` zero.
 
+That generic same-shell gate is now closed structurally.  A constant twist is
+a flat lifted `SO(3)` connection along the circle, so on `V_ell` it replaces
+`k` by `k+alpha(A_hat dot J_ell)`.  The action-reduced primaries `p` and `q`
+are even in this covariant momentum.  Their complete matrix-valued
+Feynman--Hellmann derivatives therefore vanish at `k=0`, including all
+degenerate axial/polar multiplicity directions.  Hence, for every fixed
+integer `ell>=2`,
+
+```text
+Q_(ell,-)=0,  Q_(ell,+)=0,  P_ell=0.
+```
+
+Certificate `EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_ZERO_MAP` and the
+fixed-`ell` atlas row record the all-`m` theorem.  The corrected direct
+`ell=2` replay is an independent calibration, not the proof by interpolation.
+The bounded product cone remains `OPEN` until the neighboring
+`L=ell-1,ell+1` output blocks are proved uniformly invertible at every input
+`p/q` frequency.  Finite multi-`ell`, nonzero-momentum and causal scopes also
+remain fail-closed.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

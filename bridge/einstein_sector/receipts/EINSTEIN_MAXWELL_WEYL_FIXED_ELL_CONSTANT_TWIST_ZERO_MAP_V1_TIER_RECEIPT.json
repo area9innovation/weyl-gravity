@@ -1,0 +1,56 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_ZERO_MAP",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.py": "c3917d5b18fa6bad07bebd406747158293ebf601f47682d7916f8aaba8955348",
+    "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.json": "002defeac1047a1886c7d4e172941869633fceef7a2d8d953f7c3562bb30f38c",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.schema.json": "a603ba4aa29bf515eff7adcc7156ea8b6ed780b20e4672a7276c19d62d04dc44",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.py": "8d9b0ff324e9649cedd1437e7537b6a48943b1ad4a39910a94d319e5e8e981e4",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.py": "976f81fbf732f3d607067c755e64411fc45636264bff9049738adbf552fcf60f",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-fixed-ell-constant-twist-zero-map.md": "eca2fc4944f2f2f5cebd54f743d5f6a3e93a27af17171b97b9265b3ecb192c90",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "214d186742cc93ad0bc336502845a33ce8b2a5d86309120c32655b816606f8d2",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "dd327ab589920f29e76628ce760ba4345564635db0dfd33a0afe09745fd40802",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "50fdfedc051167ce6cc8a51ecf5b9150cc8710fcbc3afd1db5ff63e71f69d380",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "17ea55b34205ae77087e6e6577852d6e7fcd548ea9e63a81c5a75d2d04da7d2a",
+    "notes/d-quotient-einstein-team-brief.md": "b4b357509e2d4014dcad14e1dbcfb30a24703c70861a02ca2e094ad7ad15dec3"
+  },
+  "claim": {
+    "certified": "For every one fixed integer ell>=2 at k=0, the action-normalized constant-twist same-shell multiplicity matrices vanish: Q_(ell,-)=Q_(ell,+)=0 and P_ell=0, hence the complete q/p wave carrier is the resonance kernel.",
+    "proof": "Flat lifted SO(3) covariantization replaces k by k+alpha(A_hat dot J_ell); the matrix-valued Feynman-Hellmann derivative of the even p/q primaries vanishes at k=0, and the direct corrected ell2 replay supplies an independent calibration.",
+    "open": "Uniform inversion of L=ell-1 and L=ell+1 outputs, the complete bounded fixed-ell product cone, finite multi-ell sums, nonzero momentum, causal propagation and higher lifecycles."
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.20,
+      "commands": [
+        "python3 -m py_compile <producer, verifier, tests and atlas consumers>",
+        "python3 -m json.tool <certificate, schema, receipt and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.23,
+      "max_rss_kb": 60840,
+      "tests_run": 33,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The action-derived axial and polar primary decompositions, SO(3) factorization, fixed-ell smooth theorem and direct corrected ell2 replay are unchanged exact hashed dependencies."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No full bounded, causal, all-orders or programme-wide freeze is promoted."
+    }
+  }
+}

@@ -1507,12 +1507,16 @@ stratum retains `c,d,W_x,A`, while its nonzero-wave stratum retains
 `NO_CERTIFIED_MAP`; none of this promotes the linear cofiber to a nonlinear
 morphism.
 
-The next Einstein activation gate is the correctly typed fixed-generic-`ell`
-constant-twist source matrix.  The `SO(3)` angular factorization is again
-`CERTIFIED` and its corrected `ell=2` regression is the zero matrix in every
-branch, but the generic multiplicity matrices must be derived rather than
-inferred from that exceptional fibre.  This does not alter the Bridge 1
-causal lifecycle.
+The correctly typed fixed-generic-`ell` same-shell gate is now `CERTIFIED`.
+Flat-connection covariantization sends `k` to
+`k+alpha(A_hat dot J_ell)`, and the action-reduced `p/q` primaries are even in
+that covariant momentum.  Their matrix-valued Feynman--Hellmann derivative at
+`k=0` vanishes, so `Q_(ell,+)=Q_(ell,-)=0` and `P_ell=0` for every fixed
+`ell>=2`; the direct `ell=2` replay is only a calibration.  The next Einstein
+activation gate is uniform inversion of the neighboring `L=ell-1,ell+1`
+twist-wave outputs.  Until that gate closes, the complete fixed-`ell` bounded
+product cone remains `OPEN`.  This does not alter the Bridge 1 causal
+lifecycle.
 
 ### Classical ownership
 

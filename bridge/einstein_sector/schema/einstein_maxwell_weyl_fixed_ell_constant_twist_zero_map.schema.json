@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Einstein-Maxwell/Weyl-Maxwell fixed-ell constant-twist zero map",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "scope",
+    "flat_connection_reduction", "multiplicity_matrices", "direct_calibration",
+    "correction_classes", "classification", "interpretation", "next_gate",
+    "claim_boundary", "provenance", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-fixed-ell-constant-twist-zero-map-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_ZERO_MAP"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "multiplicity_matrices": {
+      "type": "object",
+      "required": ["Q_(ell,-)", "Q_(ell,+)", "P_ell", "all_m_resonance_operator", "kernel"]
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "generic_ell_Einstein_multiplicity_matrices_zero",
+        "generic_ell_extra_multiplicity_matrix_zero",
+        "all_fixed_ell_all_m_same_shell_resonance_zero",
+        "ell2_direct_replay_matched",
+        "bounded_fixed_ell_constant_twist_cone_complete",
+        "off_shell_L_ell_plus_minus_1_inverses_certified",
+        "finite_multi_ell_twist_cone_classified",
+        "causal_or_quantum_claim"
+      ],
+      "properties": {
+        "generic_ell_Einstein_multiplicity_matrices_zero": {"const": true},
+        "generic_ell_extra_multiplicity_matrix_zero": {"const": true},
+        "all_fixed_ell_all_m_same_shell_resonance_zero": {"const": true},
+        "ell2_direct_replay_matched": {"const": true},
+        "bounded_fixed_ell_constant_twist_cone_complete": {"const": false},
+        "off_shell_L_ell_plus_minus_1_inverses_certified": {"const": false},
+        "finite_multi_ell_twist_cone_classified": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      }
+    }
+  }
+}

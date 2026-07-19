@@ -2731,7 +2731,7 @@
       }
     },
     {
-      "claim_boundary": "The correctly typed ell=2 matrices vanish exactly. Generic-ell finite matrices, their common cone, finite multi-ell sums, nonzero momentum, causal propagation and higher lifecycles remain fail-closed.",
+      "claim_boundary": "The same-shell zero map is certified for every one fixed ell>=2 at k=0. Neighboring angular-output inverses, finite multi-ell sums, nonzero momentum, causal propagation and higher lifecycles remain fail-closed.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "OPEN",
@@ -2741,6 +2741,11 @@
       },
       "evidence": [
         {
+          "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_ZERO_MAP",
+          "sha256": "002defeac1047a1886c7d4e172941869633fceef7a2d8d953f7c3562bb30f38c"
+        },
+        {
           "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_FACTORIZATION",
           "sha256": "936a935be9183591aa54c37cb4fa35488690167b4c93819399daf6bd34db5aea"
@@ -2749,6 +2754,11 @@
           "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_PROJECTOR_REPAIR",
           "sha256": "de38a7665d5b0a59ebc5665cf987bdca328c34ed623497e27b1f6e2c38e93150"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_K0_COMBINED_CONE_SECOND_ORDER",
+          "sha256": "9c9b5db86f50a624f84a0ec6548d2c07030109626d076c0e5ee6f9e9115f9e54"
         },
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
@@ -2767,12 +2777,12 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "The angular kernel is exactly m_A=0; all additional kernel directions are controlled by two 2x2 Einstein matrices and one 4x4 extra matrix.",
+          "statement": "Action-normalized Feynman--Hellmann reduction gives Q_(ell,+)=Q_(ell,-)=0 and P_ell=0 for every fixed ell>=2 at k=0.",
           "status": "CERTIFIED"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The all-m problem is reduced exactly to Q_(ell,+/-) and P_ell, but their generic physical-fibre ranks and common moment/resonance zero cone are not yet computed.",
+            "statement": "The complete same-shell resonance kernel is the full fixed-ell q/p carrier, but uniform inversion of the neighboring L=ell-1 and L=ell+1 outputs remains the bounded sufficiency gate.",
             "status": "OPEN"
           },
           "causal_retarded": {
@@ -2781,13 +2791,13 @@
           },
           "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
           "smooth_secular": {
-            "statement": "This is a bounded resonant-projection theorem, not a smooth-secular solvability theorem.",
-            "status": "NOT_APPLICABLE"
+            "statement": "The complete finite-support smooth-secular theorem supplies a correction on the common stabilizer zero cone.",
+            "status": "CERTIFIED"
           }
         },
         "taub_maps": {
-          "statement": "This row isolates the resonance operator and does not add a stabilizer moment-map equation.",
-          "status": "NOT_APPLICABLE"
+          "statement": "The twist adds no same-shell equation beyond the independently certified compact stabilizer moment maps.",
+          "status": "CERTIFIED"
         }
       },
       "scope": {
@@ -3205,7 +3215,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "b6ea4f8bd3eedc36230f59f03e82b7145cee0c10b75f3da069d9783b7d8866c0",
+  "generated_by_sha256": "214d186742cc93ad0bc336502845a33ce8b2a5d86309120c32655b816606f8d2",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

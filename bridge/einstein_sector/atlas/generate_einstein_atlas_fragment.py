@@ -63,6 +63,7 @@ CERTIFICATES = {
     "d_twist_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone.json",
     "complete_global_twist_ell2_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.json",
     "fixed_ell_constant_twist_factorization": ROOT / "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.json",
+    "fixed_ell_constant_twist_zero_map": ROOT / "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_zero_map.json",
     "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
     "global_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
     "extra_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
@@ -547,11 +548,11 @@ def entries() -> list[dict[str, object]]:
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
             ("CERTIFIED","The fixed-ell q/p branch multiplicity spaces remain distinct; no cross-background or cross-branch identification is used."),
             ("CERTIFIED","SO3 multiplicity one factors every all-m resonance map as (A_hat dot J_ell) tensor a finite action-normalized multiplicity matrix."),
-            ("NOT_APPLICABLE","This row isolates the resonance operator and does not add a stabilizer moment-map equation."),
-            ("CERTIFIED","The angular kernel is exactly m_A=0; all additional kernel directions are controlled by two 2x2 Einstein matrices and one 4x4 extra matrix."),
-            _second_order(("OPEN","The all-m problem is reduced exactly to Q_(ell,+/-) and P_ell, but their generic physical-fibre ranks and common moment/resonance zero cone are not yet computed."),("NOT_APPLICABLE","This is a bounded resonant-projection theorem, not a smooth-secular solvability theorem."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
-            _evidence("fixed_ell_constant_twist_factorization","constant_twist_ell2_projector_repair","global_fixed_ell_k0_bounded"),
-            "The correctly typed ell=2 matrices vanish exactly. Generic-ell finite matrices, their common cone, finite multi-ell sums, nonzero momentum, causal propagation and higher lifecycles remain fail-closed.",
+            ("CERTIFIED","The twist adds no same-shell equation beyond the independently certified compact stabilizer moment maps."),
+            ("CERTIFIED","Action-normalized Feynman--Hellmann reduction gives Q_(ell,+)=Q_(ell,-)=0 and P_ell=0 for every fixed ell>=2 at k=0."),
+            _second_order(("OPEN","The complete same-shell resonance kernel is the full fixed-ell q/p carrier, but uniform inversion of the neighboring L=ell-1 and L=ell+1 outputs remains the bounded sufficiency gate."),("CERTIFIED","The complete finite-support smooth-secular theorem supplies a correction on the common stabilizer zero cone."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _evidence("fixed_ell_constant_twist_zero_map","fixed_ell_constant_twist_factorization","constant_twist_ell2_projector_repair","fixed_ell_combined","global_fixed_ell_k0_bounded"),
+            "The same-shell zero map is certified for every one fixed ell>=2 at k=0. Neighboring angular-output inverses, finite multi-ell sums, nonzero momentum, causal propagation and higher lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
@@ -913,6 +914,15 @@ def build() -> dict[str, object]:
         raise AssertionError("fixed-ell twist factorization changed")
     if fixed_ell_twist["complete_fixed_ell_constant_twist_cone_classified"] or fixed_ell_twist["causal_or_quantum_claim"]:
         raise AssertionError("fixed-ell twist reduction exceeded its scope")
+    fixed_ell_zero = records["fixed_ell_constant_twist_zero_map"]["classification"]
+    if not (
+        fixed_ell_zero["generic_ell_Einstein_multiplicity_matrices_zero"]
+        and fixed_ell_zero["generic_ell_extra_multiplicity_matrix_zero"]
+        and fixed_ell_zero["all_fixed_ell_all_m_same_shell_resonance_zero"]
+    ):
+        raise AssertionError("fixed-ell constant-twist zero map changed")
+    if fixed_ell_zero["bounded_fixed_ell_constant_twist_cone_complete"] or fixed_ell_zero["causal_or_quantum_claim"]:
+        raise AssertionError("fixed-ell zero map exceeded its same-shell scope")
     if not records["global_self_coefficients"]["classification"]["complete_aligned_global_self_source_classified"]:
         raise AssertionError("global self coefficient input changed")
     if not records["extra_self_coefficients"]["classification"]["complete_C4_extra_self_source_coefficient_explicit"]:
