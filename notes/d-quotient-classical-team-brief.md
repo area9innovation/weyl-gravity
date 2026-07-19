@@ -389,6 +389,34 @@ quadratic value.  This bracket records the obstruction; it is not an
 cohomology followed by a genuinely local current-density lift if the
 programme still requires support-local BV data.
 
+`EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1` closes the
+first of those two gaps.  The complete standard source cohomology is the
+certified orthogonal sum of generic radiation, physical (ell=1) radiation,
+the homogeneous generalized block, and the axial twist.  Their relative
+pairing operators determine the five charge Hessians without a new fit:
+
+\[
+R_{\ell=1}^{\rm phys}-1=3I,
+\qquad
+q^{\rm charge}_{2,H}|_{\rm hom}=-3b_1b_2,
+\qquad
+q^{\rm charge}_{2,H}|_{\rm twist}=6B_1\!\cdot B_2,
+\]
+
+with
+
+\[
+q^{\rm charge}_{2,J}|_{\rm twist}
+=-6(A_1\!\times B_2+A_2\!\times B_1).
+\]
+
+All cross-block coefficients vanish by the certified action-current
+orthogonality, and the output cokernel is exactly
+(H,P_x,J_1,J_2,J_3).  This remains a global `REDUCED-MODE` operation on
+standard source cohomology.  Target-only extra Weyl modes are not inputs;
+the off-shell local-current/BV lift, direct (f_2), arity three and causal
+transport remain fail-closed.
+
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.
 The finite covariant HPL series and unique normalized degree-one correction

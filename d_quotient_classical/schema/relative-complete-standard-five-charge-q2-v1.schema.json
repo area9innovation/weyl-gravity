@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-complete-standard-five-charge-q2-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "operation", "identities", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-complete-standard-five-charge-q2-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1"},
+    "result_state": {"const": "COMPLETE_STANDARD_SOURCE_FIVE_CHARGE_Q2_EXACT_REDUCED_MODE"},
+    "lifecycle_status": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "REDUCED-MODE"}], "minItems": 1, "maxItems": 1},
+    "scope": {"$ref": "#/$defs/stringObject"},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["standard_radiative_q2", "standard_inclusion", "physical_ell1", "homogeneous", "twist", "mixed_orthogonality", "exceptional_global_moments", "complete_smooth_taub", "relative_dictionary"],
+      "properties": {
+        "standard_radiative_q2": {"$ref": "#/$defs/artifact"},
+        "standard_inclusion": {"$ref": "#/$defs/artifact"},
+        "physical_ell1": {"$ref": "#/$defs/artifact"},
+        "homogeneous": {"$ref": "#/$defs/artifact"},
+        "twist": {"$ref": "#/$defs/artifact"},
+        "mixed_orthogonality": {"$ref": "#/$defs/artifact"},
+        "exceptional_global_moments": {"$ref": "#/$defs/artifact"},
+        "complete_smooth_taub": {"$ref": "#/$defs/artifact"},
+        "relative_dictionary": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "operation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "input", "output_basis", "output_dimension", "definition", "quadratic_relation", "direct_sum_rule", "blocks", "constant_u1_component"],
+      "properties": {
+        "name": {"const": "q2_relative_charge_complete_standard"},
+        "input": {"type": "string"},
+        "output_basis": {"type": "array", "prefixItems": [{"const": "H"}, {"const": "P_x"}, {"const": "J_1"}, {"const": "J_2"}, {"const": "J_3"}], "minItems": 5, "maxItems": 5},
+        "output_dimension": {"const": 5},
+        "definition": {"type": "string"},
+        "quadratic_relation": {"const": "mu_rel,X(u)=1/2*q2_charge,X(u,u)"},
+        "direct_sum_rule": {"type": "string"},
+        "blocks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["generic_radiative_ell_ge_2", "physical_ell1_all_k", "homogeneous_ell0", "axial_twist_ell1_k0"],
+          "properties": {
+            "generic_radiative_ell_ge_2": {
+              "type": "object", "additionalProperties": false,
+              "required": ["status", "formula", "source"],
+              "properties": {"status": {"const": "IMPORTED_EXACT"}, "formula": {"type": "string"}, "source": {"const": "EINSTEIN_WEYL_RELATIVE_STANDARD_RADIATIVE_CHARGE_Q2_V1"}}
+            },
+            "physical_ell1_all_k": {
+              "type": "object", "additionalProperties": false,
+              "required": ["status", "relative_operator", "formula", "q2_multiplier_on_source_moment_polarization", "source_normalized_current_matrix_Y10", "target_normalized_current_matrix_Y10", "dispersion"],
+              "properties": {
+                "status": {"const": "EXACT"}, "relative_operator": {"type": "string"}, "formula": {"type": "string"},
+                "q2_multiplier_on_source_moment_polarization": {"const": "6"},
+                "source_normalized_current_matrix_Y10": {"const": [["-16*I*pi*omega/3", "0"], ["0", "-16*I*pi*omega/3"]]},
+                "target_normalized_current_matrix_Y10": {"const": [["-64*I*pi*omega/3", "0"], ["0", "-64*I*pi*omega/3"]]},
+                "dispersion": {"const": "omega^2=k_n^2+4"}
+              }
+            },
+            "homogeneous_ell0": {
+              "type": "object", "additionalProperties": false,
+              "required": ["status", "coordinate_order", "omega_relative_after_common_factor_2piL", "H_action_matrix", "q2_H_bilinear_matrix_after_common_factor_2piL", "formula", "quadratic_relative_moment"],
+              "properties": {
+                "status": {"const": "EXACT"}, "coordinate_order": {"const": ["a", "b", "c", "d", "Q_e", "W_x"]},
+                "omega_relative_after_common_factor_2piL": {"$ref": "#/$defs/stringMatrix"},
+                "H_action_matrix": {"$ref": "#/$defs/stringMatrix"},
+                "q2_H_bilinear_matrix_after_common_factor_2piL": {"$ref": "#/$defs/stringMatrix"},
+                "formula": {"const": "q2_charge,H(u,v)=-3*b_u*b_v; q2_charge,P_x=q2_charge,J_a=0"},
+                "quadratic_relative_moment": {"type": "string"}
+              }
+            },
+            "axial_twist_ell1_k0": {
+              "type": "object", "additionalProperties": false,
+              "required": ["status", "coordinate_order_per_real_harmonic", "omega_relative_after_common_factor_L_N1m", "H_action_matrix", "q2_H_bilinear_matrix_after_common_factor_L_N1m", "formula_H", "formula_Px", "formula_J", "quadratic_relative_moments"],
+              "properties": {
+                "status": {"const": "EXACT"}, "coordinate_order_per_real_harmonic": {"const": ["A", "B"]},
+                "omega_relative_after_common_factor_L_N1m": {"$ref": "#/$defs/stringMatrix"},
+                "H_action_matrix": {"$ref": "#/$defs/stringMatrix"},
+                "q2_H_bilinear_matrix_after_common_factor_L_N1m": {"$ref": "#/$defs/stringMatrix"},
+                "formula_H": {"const": "q2_charge,H(u,v)=6*B_u dot B_v"},
+                "formula_Px": {"const": "q2_charge,P_x=0"},
+                "formula_J": {"const": "q2_charge,J(u,v)=-6*(A_u cross B_v+A_v cross B_u)"},
+                "quadratic_relative_moments": {"type": "string"}
+              }
+            }
+          }
+        },
+        "constant_u1_component": {"type": "string"}
+      }
+    },
+    "identities": {
+      "type": "object", "additionalProperties": false,
+      "required": ["symmetry", "reduced_arity_two_chain_identity", "cohomology_domain", "cross_block_orthogonality", "five_charge_completeness", "taub_identity", "constant_u1_output"],
+      "properties": {
+        "symmetry": {"const": true}, "reduced_arity_two_chain_identity": {"type": "string"}, "cohomology_domain": {"type": "string"},
+        "cross_block_orthogonality": {"type": "string"}, "five_charge_completeness": {"type": "string"}, "taub_identity": {"type": "string"},
+        "constant_u1_output": {"const": "zero"}
+      }
+    },
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["complete_standard_source_five_charge_q2", "generic_radiative_included", "physical_ell1_all_momenta_included", "homogeneous_generalized_block_included", "axial_twist_block_included", "all_cross_block_terms_certified_zero", "constant_u1_charge_output", "extra_weyl_target_cofiber_inputs_included", "bounded_or_smooth_tangent_cone_solved_by_this_artifact", "off_shell_local_jet_charge_q2", "support_local_bv_koszul_extension", "direct_f2_repaired", "arity_three_authorized", "causal_observable_particle_or_quantum_claim"],
+      "properties": {
+        "complete_standard_source_five_charge_q2": {"const": true}, "generic_radiative_included": {"const": true},
+        "physical_ell1_all_momenta_included": {"const": true}, "homogeneous_generalized_block_included": {"const": true},
+        "axial_twist_block_included": {"const": true}, "all_cross_block_terms_certified_zero": {"const": true},
+        "constant_u1_charge_output": {"const": false}, "extra_weyl_target_cofiber_inputs_included": {"const": false},
+        "bounded_or_smooth_tangent_cone_solved_by_this_artifact": {"const": false}, "off_shell_local_jet_charge_q2": {"const": false},
+        "support_local_bv_koszul_extension": {"const": false}, "direct_f2_repaired": {"const": false},
+        "arity_three_authorized": {"const": false}, "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "DERIVE_OR_OBSTRUCT_SUPPORT_LOCAL_CURRENT_DENSITY_BV_KOSZUL_LIFT"},
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "minProperties": 4},
+        "verification_commands": {"type": "array", "items": {"type": "string"}, "minItems": 4}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "stringObject": {"type": "object", "additionalProperties": {"type": "string"}, "minProperties": 3},
+    "stringMatrix": {"type": "array", "minItems": 2, "items": {"type": "array", "minItems": 2, "items": {"type": "string"}}}
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-19",
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "status": "PASS",
+  "source_manifest": {
+    "d_quotient_classical/relative/einstein_weyl_relative_complete_standard_charge_q2.py": "147d12b537a0f505d0f1383072b02122a311369f3259a39da56dfb76d1d4f592",
+    "d_quotient_classical/relative/verify_einstein_weyl_relative_complete_standard_charge_q2.py": "2733b0db4caa03d59696439e17302da31352bd5351725d0d39f1dac5fde380e5",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_complete_standard_charge_q2.py": "c468241798d0185d35164772e32ccd7ab100058b295ed250de1682b72f56b2cc",
+    "d_quotient_classical/schema/relative-complete-standard-five-charge-q2-v1.schema.json": "2bb38898d4b39b7ff4e40d67fd15b6259a5818750304d413f9ac76e226860ff5",
+    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json": "11e8119ab8fc9756fc5b4c5520e648599fd1264e7776cc79d91dc80645be1c56",
+    "d_quotient_classical/reports/einstein-weyl-relative-complete-standard-five-charge-q2.md": "9e4b53ba9b9ef892b2bc7c3a900ff644f3b2e7ad68c09163e098bfe2a7efe50c",
+    "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py": "a995e80c3a0d398818df122ff174f69d684447827c90f0c019047b0fae226693",
+    "d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "1fc7ced9cc19fc33699674e0b0a5eb2285114c7252eb7f8e2a1741131c98c84a",
+    "d_quotient_classical/atlas/tests/test_nonlinear_atlas_fragment.py": "cb58a9c581656812098b3e7701be9d921f0df5c1b742a1eedf8530e7b3937766",
+    "notes/d-quotient-classical-team-brief.md": "52e2b1570115c23ca95e00b51272ab85a2ade3caa696c995188772b98f23f42c"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "command": "python3 -m py_compile <producer, verifier, tests and atlas generator> && python3 -m json.tool <certificate and receipt> && strict Draft 2020-12 AJV validation && git diff --check on scoped paths"
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 6.17,
+      "max_rss_kib": 253756,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_complete_standard_charge_q2 --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_complete_standard_charge_q2",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_complete_standard_charge_q2 d_quotient_classical.relative.tests.test_einstein_weyl_relative_standard_charge_q2 d_quotient_classical.relative.tests.test_einstein_weyl_relative_charge_koszul_preflight d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-complete-standard-five-charge-q2-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json"
+      ],
+      "result": "29 tests passed; the independent consumer replayed the four-block source decomposition, physical ell1 multiplier, homogeneous and twist Hessians, dedicated mixed-block zero theorem, five-charge cokernel and all fail-closed boundaries"
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The standard-radiative q2, complete standard symplectic inclusion, physical ell1, homogeneous and twist forms, mixed orthogonality, exceptional/global moment maps, complete smooth Taub theorem and relative branch dictionary are unchanged and imported by SHA-256."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a fail-closed REDUCED-MODE coefficient export and atlas update, not an off-shell local lift, theorem freeze or release."
+    }
+  },
+  "claim_boundary": "Receipt for the exact five-output arity-two relative charge operation on the complete standard Einstein-Maxwell source solution cohomology. It includes generic radiative, physical ell1, homogeneous and twist inputs, but not target-only extra Weyl cofiber inputs. It does not solve a correction-class tangent cone, define a local current-density or support-local BV/Koszul operation, repair f2, authorize arity three, or establish causal, observational, particle or quantum equivalence."
+}

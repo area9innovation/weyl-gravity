@@ -210,6 +210,15 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("records rather than cancels", entry["claim_boundary"])
         self.assertIn("repaired f2", entry["claim_boundary"])
 
+    def test_complete_standard_charge_q2_closes_source_but_not_local_gate(self):
+        entry = next(item for item in atlas.build()["entries"] if "complete_standard_source_five_charge_q2" in item["id"])
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("target-only extra Weyl", entry["claim_boundary"])
+
     def test_generic_standard_pairing_cyclic_obstruction_is_scoped(self):
         entry = next(item for item in atlas.build()["entries"] if "generic_standard_pairing_cyclic_map_inertia_obstruction" in item["id"])
         self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")

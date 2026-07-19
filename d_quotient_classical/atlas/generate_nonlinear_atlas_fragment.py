@@ -43,6 +43,7 @@ CERTS = {
     "relative_f2_taub_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
     "relative_charge_koszul_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1.json",
     "relative_standard_charge_q2": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_STANDARD_RADIATIVE_CHARGE_Q2_V1.json",
+    "relative_complete_standard_charge_q2": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -376,6 +377,8 @@ def entries() -> list[dict[str, Any]]:
     relative_charge_scope = relative_charge_koszul["scope"]
     relative_charge_q2 = json.loads(CERTS["relative_standard_charge_q2"].read_text())
     relative_charge_q2_scope = relative_charge_q2["scope"]
+    relative_complete_charge_q2 = json.loads(CERTS["relative_complete_standard_charge_q2"].read_text())
+    relative_complete_charge_q2_scope = relative_complete_charge_q2["scope"]
     identity_cyclic_scope = json.loads(CERTS["identity_cyclic_obstruction"].read_text())["scope"]
     return [
         {
@@ -688,6 +691,30 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("relative_standard_charge_q2", "relative_charge_koszul_preflight", "relative_f2_taub_obstruction"),
             "claim_boundary": "This is an exact five-output arity-two operation on the standard-radiative REDUCED-MODE relative receiver. It records rather than cancels the direct f2 obstruction. Exceptional/global source cohomology, off-shell local jets, a support-local BV/Koszul lift, repaired f2, arity three, causal propagation, observables, particles and quantum transfer remain OPEN or NO_CERTIFIED_MAP.",
+        },
+        {
+            "id": "nonlinear.product.bridge2.complete_standard_source_five_charge_q2",
+            "scope": relative_complete_charge_q2_scope,
+            "descriptions": {
+                "causal": "NO_CERTIFIED_MAP",
+                "symplectic": "CERTIFIED",
+                "nonlinear": "CERTIFIED",
+                "observational": "NO_CERTIFIED_MAP",
+                "quantum": "NO_CERTIFIED_MAP",
+            },
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "The complete five-charge Hessian is known, but the common zero locus depends on the bounded, smooth-secular or causal correction class."),
+                    ("OPEN", "No smooth-secular f2 primitive is constructed by this charge operation."),
+                    ("NO_CERTIFIED_MAP", "No retarded support-local current-density lift is certified."),
+                ),
+                dispersion=("CERTIFIED", "The input is the complete standard source decomposition: generic radiative, physical ell1, homogeneous and twist blocks."),
+                pairing=("CERTIFIED", "All four source/target pairing blocks and every cross-block zero are exact."),
+                taub=("CERTIFIED", "The symmetric q2 has precisely the five connected-isometry outputs; constant U1 reducibility is absent."),
+                resonance=("OPEN", "The operation records all five charge obstructions, but non-charge resonant functionals and correction-class solvability remain separate."),
+            ),
+            "evidence": _evidence("relative_complete_standard_charge_q2", "relative_standard_charge_q2", "relative_charge_koszul_preflight", "relative_f2_taub_obstruction"),
+            "claim_boundary": "This REDUCED-MODE operation covers the complete certified standard Einstein-Maxwell source cohomology, including exceptional/global standard blocks. It excludes target-only extra Weyl cofiber inputs and does not define a local-current or support-local BV/Koszul lift, solve a correction-class tangent cone, repair f2, authorize arity three, or establish causal, observational, particle or quantum equivalence.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction",
