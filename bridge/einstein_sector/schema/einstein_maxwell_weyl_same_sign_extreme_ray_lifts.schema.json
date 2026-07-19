@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_extreme_ray_lifts.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "scope", "lift_rows", "summary", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_EXTREME_RAY_LIFTS"},
+    "lift_rows": {"type": "array", "minItems": 24, "maxItems": 24}
+  },
+  "additionalProperties": true
+}

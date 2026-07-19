@@ -438,6 +438,20 @@ def verify() -> None:
         raise AssertionError("same-sign bounded witness correction classes changed")
     if "not a classification of their full real geometry" not in witnesses["claim_boundary"]:
         raise AssertionError("same-sign bounded witness row exceeded nonemptiness scope")
+    scalar_rays = by_id["einstein.ph.wm.interaction.ell2_same_sign_scalar_extreme_rays"]
+    scalar_ray_second = scalar_rays["mode_data"]["second_order"]
+    if scalar_rays["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "exactly four" not in scalar_rays["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("same-sign scalar extreme rays were hidden")
+    if scalar_rays["mode_data"]["resonance"]["status"] != "OPEN" or scalar_ray_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or scalar_ray_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("same-sign scalar extreme-ray row exceeded its projection scope")
+    ray_lifts = by_id["einstein.ph.wm.interaction.ell2_same_sign_extreme_ray_lifts"]
+    ray_lift_second = ray_lifts["mode_data"]["second_order"]
+    if ray_lifts["mode_data"]["resonance"]["status"] != "CERTIFIED" or "Ten lifts omit" not in ray_lifts["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("same-sign extreme-ray lifts were hidden")
+    if ray_lift_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "24 scalar extreme rays" not in ray_lift_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("same-sign extreme-ray lift verdict changed")
+    if ray_lift_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "not a classification of arbitrary nonnegative sums" not in ray_lifts["claim_boundary"]:
+        raise AssertionError("same-sign extreme-ray lift row exceeded ray-saturation scope")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

@@ -142,6 +142,23 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("not a classification", entry["claim_boundary"])
 
+    def test_same_sign_scalar_cone_has_four_extreme_rays(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_scalar_extreme_rays"]
+        second = entry["mode_data"]["second_order"]
+        self.assertIn("exactly four", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertIn("scalar nonnegative occupation cone", entry["claim_boundary"])
+
+    def test_all_24_scalar_extreme_rays_lift_but_sums_remain_open(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_extreme_ray_lifts"]
+        second = entry["mode_data"]["second_order"]
+        self.assertIn("Ten lifts omit", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("24 scalar extreme rays", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not a classification of arbitrary nonnegative sums", entry["claim_boundary"])
+
     def test_first_two_abs_momentum_parity_workload_is_fail_closed(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
         second = entry["mode_data"]["second_order"]

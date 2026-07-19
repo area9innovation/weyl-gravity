@@ -1,0 +1,20 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_SCALAR_EXTREME_RAYS_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Universal exact extreme-ray classification of the scalar H/Px/Rc occupation cone on positive-rho same-sign n=(1,2) fibres.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.json": "a52e9cffefb8822790ce75763d70eff3111e0a4d7757aa62bc4042782bcc02fa",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.py": "3a8b5784029b89e366212e7bccade1afedd23de8c6e227c701f5093c91157db5",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.schema.json": "28bdf19f19934f925b5afbbf0269eec4fcab6ac23675a4688c2a283c93a9ddff",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_scalar_extreme_rays.py": "feb16326071be3e7cbce6b7d752729a449104ea8adb2cf0bdee76352d2900136",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_scalar_extreme_rays.py": "47272406344d99d204d34b710ecd01b584a67bcc0d3ae59d16c735973ee0d9b8",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-scalar-extreme-rays.md": "b095b72bc96bd30dd58c2f34c2e3bc6c2c090b06a8472a33321239ea829c7c6b"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <scoped JSON paths>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {"status": "PASS", "tests_run": 2, "elapsed_seconds": 0.235, "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_scalar_extreme_rays --check", "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_scalar_extreme_rays", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_scalar_extreme_rays"]},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "reason": "The proof imports the exact all-collision scalar classifier and isolated-candidate ledger, and independently verifies the universal moment-curve order, alternating circuit identity and four supports."},
+    "tier_3": {"status": "NOT_RUN", "reason": "Rotations, resonance lifts, arbitrary sums, full cone geometry and release preparation are outside this scalar theorem."}
+  },
+  "claim_boundary": "The scalar occupation cone has four universal extreme rays. This does not classify amplitude lifts, arbitrary sums, full bounded cones or higher lifecycles."
+}

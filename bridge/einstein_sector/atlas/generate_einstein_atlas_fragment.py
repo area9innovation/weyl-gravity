@@ -91,6 +91,8 @@ CERTIFICATES = {
     "collision_scalar_separation": ROOT / "bridge/certificates/einstein_maxwell_weyl_collision_scalar_separation_classification.json",
     "same_sign_collision_same_fibre_census": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_same_fibre_census.json",
     "same_sign_collision_bounded_witnesses": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.json",
+    "same_sign_scalar_extreme_rays": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.json",
+    "same_sign_extreme_ray_lifts": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_extreme_ray_lifts.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
     "ell2_two_abs_momentum_candidate4_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json",
     "ell2_two_abs_momentum_axial_qminus_L4_triplet": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.json",
@@ -865,6 +867,30 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","Each of the six distinct same-sign collision cones contains the displayed nonzero bounded point."),("CERTIFIED","The same six bounded corrections are finite smooth quasiperiodic corrections; no larger smooth cone is classified."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_collision_bounded_witnesses","same_sign_collision_same_fibre_census","collision_scalar_separation","ell2_two_abs_momentum_isolated_candidates","finite_generic_bounded_zero_block"),
             "This is a nonemptiness theorem on six separate bounded cones, not a classification of their full real geometry. Exceptional/global inputs, all-orders integration, causal correction, residual observables, particles and quantum states remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_scalar_extreme_rays",
+            _scope(theory="Weyl-Maxwell target", background="arbitrary positive-rho same-sign n=(1,2) compact product fibre, with candidates 16--21 instantiated separately", boundaries="closed S1_L times S2 before final residual quotient", carrier="six nonnegative absolute-current occupations for q-minus, p-extra and q-plus on n=1,2", degree=2, parity="parity-independent scalar occupation projection", ell=2, m="summed current occupation", k="signed n=(1,2)", omega="all six generic positive-frequency shells", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","The universal moment-curve order retains both momentum fibres and all three branch labels without identifying circumference backgrounds."),
+            ("CERTIFIED","The current sign sequence is (-,+,+,-,+,+); positive column rescaling reduces the scalar receiver to six ordered moment-curve columns."),
+            ("CERTIFIED","Moment-curve circuit alternation gives exactly four scalar-null extreme rays: both q-minus nodes and one positive branch on each fibre."),
+            ("OPEN","This scalar projection does not impose rotations or the candidate-specific bilinear resonance maps."),
+            _second_order(("OPEN","The four scalar extreme rays are necessary occupation strata; their amplitude lifts are certified in a separate row."),("OPEN","The scalar cone alone does not classify smooth amplitude sums."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_scalar_extreme_rays","collision_scalar_separation","same_sign_collision_same_fibre_census"),
+            "This is the complete scalar nonnegative occupation cone for any positive-rho same-sign fibre. It does not classify arbitrary amplitude sums, rotations, resonances, full bounded cones or higher lifecycles.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_extreme_ray_lifts",
+            _scope(theory="Weyl-Maxwell target", background="six distinct collision candidates 16--21, retained separately", boundaries="closed S1_L times S2 before final residual quotient", carrier="one axisymmetric real amplitude lift for each of four scalar extreme-ray supports per candidate", degree=2, parity="axial except the declared real mixed-parity L=4 components", ell="input ell=2; candidate-specific output L=1,3,4", m=0, k="signed n=(1,2)", omega="the four shells occupied by each extreme ray and their reality conjugates", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","All 24 rows retain their candidate, rho, scalar ray support, branch pair and output shell."),
+            ("CERTIFIED","Each lift uses the action-derived absolute-current occupation on its universal scalar extreme ray."),
+            ("CERTIFIED","Axisymmetric support kills all three rotations, and the scalar ray kills mu_H, mu_Px and R_c."),
+            ("CERTIFIED","Ten lifts omit a resonant factor, ten use an odd-L Clebsch--Gordan zero, two use candidate 19's real regular-pencil component, and two use candidate 21's real mixed-parity component."),
+            _second_order(("CERTIFIED","Every one of the 24 scalar extreme rays has a nonzero bounded finite-quasiperiodic amplitude lift."),("CERTIFIED","Each declared lift also has a finite smooth correction; arbitrary sums remain unclassified."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_extreme_ray_lifts","same_sign_scalar_extreme_rays","same_sign_collision_bounded_witnesses","same_sign_collision_same_fibre_census"),
+            "This is scalar-extreme-ray saturation, not a classification of arbitrary nonnegative sums: phase/parity cross terms can reactivate the bilinear resonance. Full cone geometry and higher lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload",
@@ -1667,6 +1693,26 @@ def build() -> dict[str, object]:
         or bounded_witnesses["causal_residual_observational_or_quantum_claim"]
     ):
         raise AssertionError("same-sign bounded witness theorem exceeded scope")
+    scalar_rays = records["same_sign_scalar_extreme_rays"]["classification"]
+    if not (
+        scalar_rays["all_positive_rho_same_sign_scalar_cones_have_four_extreme_rays"]
+        and scalar_rays["every_extreme_ray_contains_both_q_minus_nodes"]
+        and scalar_rays["every_extreme_ray_chooses_one_positive_branch_per_fibre"]
+        and scalar_rays["candidates_16_through_21_instantiated_without_background_identification"]
+    ):
+        raise AssertionError("same-sign scalar extreme-ray theorem changed")
+    if scalar_rays["rotation_or_resonance_zero_loci_joined"] or scalar_rays["full_bounded_cones_classified"] or scalar_rays["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("same-sign scalar extreme-ray theorem exceeded scope")
+    ray_lifts = records["same_sign_extreme_ray_lifts"]["classification"]
+    if not (
+        ray_lifts["all_24_scalar_extreme_rays_have_nonzero_bounded_lifts"]
+        and ray_lifts["all_rotation_moment_maps_zero_on_lifts"]
+        and ray_lifts["all_cross_fibre_resonances_zero_on_lifts"]
+        and ray_lifts["all_same_fibre_nonzero_frequency_channels_removable"]
+    ):
+        raise AssertionError("same-sign extreme-ray lift theorem changed")
+    if ray_lifts["arbitrary_nonnegative_sums_of_lifts_classified"] or ray_lifts["six_full_real_bounded_cones_classified"] or ray_lifts["all_orders_integrability"] or ray_lifts["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("same-sign extreme-ray lift theorem exceeded scope")
     parity_workload = records["ell2_two_abs_momentum_parity_workload"]["classification"]
     if not (parity_workload["all_twenty_one_candidates_parity_typed"] and parity_workload["all_m_angular_nonvanishing_witnessed"] and parity_workload["odd_L_axisymmetric_fixtures_excluded"] and parity_workload["reduced_source_workload_complete"]):
         raise AssertionError("ell2 two-absolute-momentum parity workload changed")

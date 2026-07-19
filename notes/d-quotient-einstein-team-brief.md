@@ -3737,6 +3737,19 @@ rows
 `einstein.ph.wm.interaction.ell2_same_sign_collision_bounded_witnesses`
 record the gate without identifying any circumference backgrounds.
 
+The scalar projection and all of its extreme rays are now closed as well.
+After positive column rescaling, the six `H/P_x/R_c` columns lie on the
+ordered moment curve with current signs `(-,+,+,-,+,+)`.  Circuit alternation
+gives exactly four universal extreme supports: both `q_minus` nodes and one
+positive branch on each fibre.  Every one of the resulting 24 candidate/ray
+pairs has a bounded lift.  Ten omit a resonant factor, ten use the
+axisymmetric odd-`L` zero, and the last four use the real `L=4` components on
+candidates 19 and 21.  Atlas rows
+`einstein.ph.wm.interaction.ell2_same_sign_scalar_extreme_rays` and
+`einstein.ph.wm.interaction.ell2_same_sign_extreme_ray_lifts` record this
+ray-saturation theorem.  Arbitrary sums remain `OPEN` because cross terms can
+reactivate the bilinear resonance; pairwise sums are the next exact gate.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

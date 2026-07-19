@@ -1,0 +1,20 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_EXTREME_RAY_LIFTS_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "All 24 candidatewise axisymmetric amplitude lifts of the four universal same-sign scalar extreme rays.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_extreme_ray_lifts.json": "3af0cec7a7e684f5c41661769a8848455d2064b4120bb639f146208256e876c5",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_extreme_ray_lifts.py": "46131ce0164d2a47d208d513dd08ac142357dce712dd8d463fb225396677038a",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_extreme_ray_lifts.schema.json": "04df442bc07df04604b555ab2948b9ff3a13303b7cc2be65a4d09c809b732f9f",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_extreme_ray_lifts.py": "6632bbeafe7de49a23a06dcf83db955f191a410598e31303f9420967d1dadf0c",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_extreme_ray_lifts.py": "f95c9a6b9ddaea98904ad706c0de1340ca0d4792b111820ed7aba06d4e5bacc1",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-extreme-ray-lifts.md": "694855356cca3540b874c0e9df66624e7168a91dec58eb1076a49b588802c480"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <scoped JSON paths>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {"status": "PASS", "tests_run": 2, "elapsed_seconds": 0.034, "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_extreme_ray_lifts --check", "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_extreme_ray_lifts", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_extreme_ray_lifts"]},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "reason": "The theorem composes the universal scalar rays, complete finite-harmonic cokernel criterion, 864-defect same-fibre census, isolated branch dictionary and exact real L4 zero varieties for candidates 19 and 21."},
+    "tier_3": {"status": "NOT_RUN", "reason": "Arbitrary sums, full six cone geometries, all-orders integration, causal correction and release preparation remain open."}
+  },
+  "claim_boundary": "Every scalar extreme ray has one nonzero bounded amplitude lift on each relevant background. Arbitrary sums and full cone geometry are not classified."
+}

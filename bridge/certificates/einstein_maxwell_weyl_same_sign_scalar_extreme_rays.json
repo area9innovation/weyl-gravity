@@ -1,0 +1,309 @@
+{
+  "candidate_rows": [
+    {
+      "candidate_index": 16,
+      "node_substitution": "x_(branch,n)=sqrt(rho+m_branch^2/n^2)",
+      "ray_ids": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "rho": "17*(79 + 51*sqrt(3))/132"
+    },
+    {
+      "candidate_index": 17,
+      "node_substitution": "x_(branch,n)=sqrt(rho+m_branch^2/n^2)",
+      "ray_ids": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "rho": "10*(9*sqrt(3) + 77)/8529"
+    },
+    {
+      "candidate_index": 18,
+      "node_substitution": "x_(branch,n)=sqrt(rho+m_branch^2/n^2)",
+      "ray_ids": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "rho": "(-12586 + 1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3))/25497"
+    },
+    {
+      "candidate_index": 19,
+      "node_substitution": "x_(branch,n)=sqrt(rho+m_branch^2/n^2)",
+      "ray_ids": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "rho": "(849 + 601*sqrt(3))/92"
+    },
+    {
+      "candidate_index": 20,
+      "node_substitution": "x_(branch,n)=sqrt(rho+m_branch^2/n^2)",
+      "ray_ids": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "rho": "-10*(-77 + 9*sqrt(3))/8529"
+    },
+    {
+      "candidate_index": 21,
+      "node_substitution": "x_(branch,n)=sqrt(rho+m_branch^2/n^2)",
+      "ray_ids": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "rho": "(-153 + 24*sqrt(10) + 46*sqrt(30) + 197*sqrt(3))/222"
+    }
+  ],
+  "claim_boundary": "This classifies only the scalar nonnegative occupation cone. It does not assert that arbitrary sums of lifted ray amplitudes kill the quadratic resonance map, classify the six full real bounded cones, or make higher-lifecycle claims.",
+  "classification": {
+    "all_positive_rho_same_sign_scalar_cones_have_four_extreme_rays": true,
+    "candidates_16_through_21_instantiated_without_background_identification": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "every_extreme_ray_chooses_one_positive_branch_per_fibre": true,
+    "every_extreme_ray_contains_both_q_minus_nodes": true,
+    "full_bounded_cones_classified": false,
+    "rotation_or_resonance_zero_loci_joined": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "extreme_rays": [
+    {
+      "ray_id": "R1",
+      "support": [
+        "q_minus_n2",
+        "p_extra_n2",
+        "q_minus_n1",
+        "p_extra_n1"
+      ],
+      "weight_formula": [
+        {
+          "formula": "1/((-1)*(2^2)*(x_q_minus_n2-x_p_extra_n2)*(x_q_minus_n2-x_q_minus_n1)*(x_q_minus_n2-x_p_extra_n1))",
+          "node_id": "q_minus_n2",
+          "strictly_positive_by_order": true
+        },
+        {
+          "formula": "1/((1)*(2^2)*(x_p_extra_n2-x_q_minus_n2)*(x_p_extra_n2-x_q_minus_n1)*(x_p_extra_n2-x_p_extra_n1))",
+          "node_id": "p_extra_n2",
+          "strictly_positive_by_order": true
+        },
+        {
+          "formula": "1/((-1)*(1^2)*(x_q_minus_n1-x_q_minus_n2)*(x_q_minus_n1-x_p_extra_n2)*(x_q_minus_n1-x_p_extra_n1))",
+          "node_id": "q_minus_n1",
+          "strictly_positive_by_order": true
+        },
+        {
+          "formula": "1/((1)*(1^2)*(x_p_extra_n1-x_q_minus_n2)*(x_p_extra_n1-x_p_extra_n2)*(x_p_extra_n1-x_q_minus_n1))",
+          "node_id": "p_extra_n1",
+          "strictly_positive_by_order": true
+        }
+      ]
+    },
+    {
+      "ray_id": "R2",
+      "support": [
+        "q_minus_n2",
+        "p_extra_n2",
+        "q_minus_n1",
+        "q_plus_n1"
+      ],
+      "weight_formula": [
+        {
+          "formula": "1/((-1)*(2^2)*(x_q_minus_n2-x_p_extra_n2)*(x_q_minus_n2-x_q_minus_n1)*(x_q_minus_n2-x_q_plus_n1))",
+          "node_id": "q_minus_n2",
+          "strictly_positive_by_order": true
+        },
+        {
+          "formula": "1/((1)*(2^2)*(x_p_extra_n2-x_q_minus_n2)*(x_p_extra_n2-x_q_minus_n1)*(x_p_extra_n2-x_q_plus_n1))",
+          "node_id": "p_extra_n2",
+          "strictly_positive_by_order": true
+        },
+        {
+          "formula": "1/((-1)*(1^2)*(x_q_minus_n1-x_q_minus_n2)*(x_q_minus_n1-x_p_extra_n2)*(x_q_minus_n1-x_q_plus_n1))",
+          "node_id": "q_minus_n1",
+          "strictly_positive_by_order": true
+        },
+        {
+          "formula": "1/((1)*(1^2)*(x_q_plus_n1-x_q_minus_n2)*(x_q_plus_n1-x_p_extra_n2)*(x_q_plus_n1-x_q_minus_n1))",
+          "node_id": "q_plus_n1",
+          "strictly_positive_by_order": true
+        }
+      ]
+    },
+    {
+      "ray_id": "R3",
+      "support": [
+        "q_minus_n2",
+        "q_plus_n2",
+        "q_minus_n1",
+        "p_extra_n1"
+      ],
+      "weight_formula": [
+        {
+          "formula": "1/((-1)*(2^2)*(x_q_minus_n2-x_q_plus_n2)*(x_q_minus_n2-x_q_minus_n1)*(x_q_minus_n2-x_p_extra_n1))",
+          "node_id": "q_minus_n2",
+          "strictly_positive_by_order": true
+        },
+        {
+          "formula": "1/((1)*(2^2)*(x_q_plus_n2-x_q_minus_n2)*(x_q_plus_n2-x_q_minus_n1)*(x_q_plus_n2-x_p_extra_n1))",
+          "node_id": "q_plus_n2",
+          "strictly_positive_by_order": true
+        },
+        {
+          "formula": "1/((-1)*(1^2)*(x_q_minus_n1-x_q_minus_n2)*(x_q_minus_n1-x_q_plus_n2)*(x_q_minus_n1-x_p_extra_n1))",
+          "node_id": "q_minus_n1",
+          "strictly_positive_by_order": true
+        },
+        {
+          "formula": "1/((1)*(1^2)*(x_p_extra_n1-x_q_minus_n2)*(x_p_extra_n1-x_q_plus_n2)*(x_p_extra_n1-x_q_minus_n1))",
+          "node_id": "p_extra_n1",
+          "strictly_positive_by_order": true
+        }
+      ]
+    },
+    {
+      "ray_id": "R4",
+      "support": [
+        "q_minus_n2",
+        "q_plus_n2",
+        "q_minus_n1",
+        "q_plus_n1"
+      ],
+      "weight_formula": [
+        {
+          "formula": "1/((-1)*(2^2)*(x_q_minus_n2-x_q_plus_n2)*(x_q_minus_n2-x_q_minus_n1)*(x_q_minus_n2-x_q_plus_n1))",
+          "node_id": "q_minus_n2",
+          "strictly_positive_by_order": true
+        },
+        {
+          "formula": "1/((1)*(2^2)*(x_q_plus_n2-x_q_minus_n2)*(x_q_plus_n2-x_q_minus_n1)*(x_q_plus_n2-x_q_plus_n1))",
+          "node_id": "q_plus_n2",
+          "strictly_positive_by_order": true
+        },
+        {
+          "formula": "1/((-1)*(1^2)*(x_q_minus_n1-x_q_minus_n2)*(x_q_minus_n1-x_q_plus_n2)*(x_q_minus_n1-x_q_plus_n1))",
+          "node_id": "q_minus_n1",
+          "strictly_positive_by_order": true
+        },
+        {
+          "formula": "1/((1)*(1^2)*(x_q_plus_n1-x_q_minus_n2)*(x_q_plus_n1-x_q_plus_n2)*(x_q_plus_n1-x_q_minus_n1))",
+          "node_id": "q_plus_n1",
+          "strictly_positive_by_order": true
+        }
+      ]
+    }
+  ],
+  "generality_level": "G4_UNIVERSAL_POSITIVE_RHO_SAME_SIGN_SCALAR_OCCUPATION_CONE",
+  "interpretation": "The scalar H/Px/Rc common zero on any same-sign fibre is the nonnegative span of four universal support-minimal rays. The remaining bounded problem is a finite lift of those four supports through rotations and the candidate-specific resonance map.",
+  "lifecycle_state": "CLASSIFIED",
+  "moment_curve_reduction": {
+    "circuit_identity": "for four ordered nodes, z_i=1/prod_(j!=i)(x_i-x_j) obeys sum_i z_i*x_i^d=0 for d=0,1,2 and has signs (-,+,-,+)",
+    "column_formula": "current_sign(branch)*n^2*(x^2,x,1), x=omega/n=sqrt(rho+m_branch^2/n^2)",
+    "current_sign_sequence": [
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      1
+    ],
+    "middle_gap_witness": "(6-2*sqrt(3))-(6+2*sqrt(3))/4=(9-5*sqrt(3))/2>0 because 81>75",
+    "ordered_nodes": [
+      {
+        "branch": "q_minus",
+        "current_sign": -1,
+        "id": "q_minus_n2",
+        "mass_over_n_squared": "3/2 - sqrt(3)/2",
+        "n": 2
+      },
+      {
+        "branch": "p_extra",
+        "current_sign": 1,
+        "id": "p_extra_n2",
+        "mass_over_n_squared": "4/3",
+        "n": 2
+      },
+      {
+        "branch": "q_plus",
+        "current_sign": 1,
+        "id": "q_plus_n2",
+        "mass_over_n_squared": "sqrt(3)/2 + 3/2",
+        "n": 2
+      },
+      {
+        "branch": "q_minus",
+        "current_sign": -1,
+        "id": "q_minus_n1",
+        "mass_over_n_squared": "6 - 2*sqrt(3)",
+        "n": 1
+      },
+      {
+        "branch": "p_extra",
+        "current_sign": 1,
+        "id": "p_extra_n1",
+        "mass_over_n_squared": "16/3",
+        "n": 1
+      },
+      {
+        "branch": "q_plus",
+        "current_sign": 1,
+        "id": "q_plus_n1",
+        "mass_over_n_squared": "2*sqrt(3) + 6",
+        "n": 1
+      }
+    ],
+    "strict_order_independent_of_rho": true
+  },
+  "next_gate": "for each of candidates 16--21, lift all four extreme-ray supports through the exact rotation-zero and cross-fibre resonance-zero varieties",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.py",
+    "generator_sha256": "3a8b5784029b89e366212e7bccade1afedd23de8c6e227c701f5093c91157db5",
+    "inputs": {
+      "candidate_ledger": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.json",
+        "sha256": "27fe530f6d296453e4eaf504eed688b6a2480cac18e0581e839898c7868e3450"
+      },
+      "scalar_classifier": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_collision_scalar_separation_classification.json",
+        "sha256": "bf36d4e2c0504b4028496b5ac64e7ee5c345ce667cdb595f981d030922c267f3"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_SCALAR_EXTREME_RAYS",
+  "result_state": "UNIVERSAL_FOUR_RAY_SCALAR_NULL_CONE_ON_ALL_SAME_SIGN_FIBRES",
+  "schema": "einstein-maxwell-weyl-same-sign-scalar-extreme-rays-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.schema.json",
+  "schema_sha256": "28bdf19f19934f925b5afbbf0269eec4fcab6ac23675a4688c2a283c93a9ddff",
+  "scope": {
+    "background": "arbitrary rho>0 same-sign n=(1,2) compact product fibre; candidates 16--21 instantiated separately",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "six nonnegative absolute-current occupations for q-minus, p-extra and q-plus on n=1,2",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidatewise signed n=(1,-2) or (1,2), never identified across rho",
+    "m": "all m=-2,...,2",
+    "omega": "all generic q-minus, p-extra and q-plus positive-frequency shells",
+    "parity": "axial and polar",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_scalar_extreme_rays --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_scalar_extreme_rays",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_scalar_extreme_rays"
+  ]
+}

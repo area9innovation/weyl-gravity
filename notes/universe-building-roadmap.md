@@ -2448,6 +2448,18 @@ all six backgrounds distinct.  Their full real component decompositions,
 all-orders integration and causal/retarded maps remain `OPEN` or
 `NO_CERTIFIED_MAP` as appropriate.
 
+The same-sign scalar occupation geometry is now universal.  Positive column
+rescaling puts the receiver on six ordered moment-curve nodes with sign
+pattern `(-,+,+,-,+,+)`, so circuit alternation gives exactly four extreme
+rays: both negative-current `q_minus` nodes plus one positive-current branch
+on each fibre.  All 24 candidatewise extreme rays lift to bounded second-order
+points: ten by an absent resonant factor, ten by the odd-`L` axisymmetric
+zero, and four by the real `L=4` components on candidates 19 and 21.  The
+fail-closed atlas separates the scalar cone row from the amplitude-lift row.
+Arbitrary nonnegative sums are not promoted, because their phase/parity cross
+terms may reactivate the resonance; the next gate is the six candidatewise
+pairwise-sum classification.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell

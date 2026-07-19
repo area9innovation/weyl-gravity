@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_scalar_extreme_rays.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "scope", "moment_curve_reduction", "extreme_rays", "candidate_rows", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_SCALAR_EXTREME_RAYS"},
+    "extreme_rays": {"type": "array", "minItems": 4, "maxItems": 4},
+    "candidate_rows": {"type": "array", "minItems": 6, "maxItems": 6}
+  },
+  "additionalProperties": true
+}

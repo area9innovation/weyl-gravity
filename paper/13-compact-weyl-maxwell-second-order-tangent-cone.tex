@@ -1025,6 +1025,43 @@ cokernel criterion then supplies a bounded finite-quasiperiodic second-order
 correction on each of the six backgrounds.
 \end{proof}
 
+\begin{corollary}[Universal scalar rays and their lifts]\label{cor:collision-rays}
+For every \(\rho>0\) on a same-sign \(n=(1,2)\) carrier, the nonnegative
+\((\mu_H,\mu_{P_x},R_c)\)-null occupation cone has exactly four extreme
+rays.  Each contains both Einstein-minus nodes and chooses one of
+\(p_{\rm extra},q_+\) independently on each momentum fibre.  On each of
+the six collision backgrounds (16)--(21), all four scalar extreme rays admit
+a nonzero bounded amplitude lift.  Thus all 24 candidatewise extreme rays
+survive the complete second-order test individually.
+\end{corollary}
+
+\begin{proof}
+Divide the scalar receiver column on branch \(b\) and fibre \(n\) by the
+positive factor \(n^2\), and put
+\(x_{b,n}=\omega_{b,n}/n=\sqrt{\rho+\mu_b/n^2}\).  The columns lie on
+\((x^2,x,1)\), with \(\rho\)-independent order
+\[
+ q_-^{(2)}<p^{(2)}<q_+^{(2)}<q_-^{(1)}<p^{(1)}<q_+^{(1)}.
+\]
+The only non-obvious gap is
+\((9-5\sqrt3)/2>0\), which follows from \(81>75\).  The current signs in
+this order are \((-,+,+,-,+,+)\).  Four ordered moment-curve columns have
+the unique dependence
+\[
+ z_i=\frac1{\prod_{j\ne i}(x_i-x_j)},
+ \qquad \sum_i z_i x_i^d=0\quad(d=0,1,2),
+\]
+whose signs alternate.  Hence exactly four supports agree with the current
+signs, proving the extreme-ray classification.
+
+For the 24 lifts, ten supports omit a resonant factor and ten use the
+axisymmetric odd-\(L\) zero.  The remaining four use real \(L=4\) components:
+two on candidate (19)'s regular-pencil eigenline and two on candidate (21)'s
+mixed-parity component.  Independent fibre rescaling matches the extreme-ray
+occupations.  This proves ray saturation only; cross terms between different
+ray lifts can reactivate the bilinear resonance map.
+\end{proof}
+
 \section{Current bounded frontier}
 
 The electric, Wilson, and circumference columns are closed, and the first
@@ -1226,6 +1263,10 @@ Same-sign collision same-fibre shell census &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_collision_same_fibre_census.json}\\
 Six same-sign collision bounded witnesses &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.json}\\
+Universal same-sign scalar extreme rays &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.json}\\
+All 24 same-sign scalar extreme-ray lifts &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_extreme_ray_lifts.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1277,12 +1318,14 @@ bounded zero set.
 
 The immediate mathematical target is the full real component geometry of the
 six same-sign collision cones.  Their nonemptiness, same-fibre shell census,
-and one complete resonance/moment-map join per background are now closed.
+universal four-ray scalar projection, and all 24 extreme-ray lifts are now
+closed.
 The symbolic-\(\ell\) standard-branch resonance and collision theorem is now
 closed, as is the complete 164-coefficient two-momentum branch-basis census.
-The next exact enlargement is to decompose the six common amplitude-level
-zero varieties, followed by joins of distinct \(|k|\) fibres without
-identifying their phase carriers or circumference backgrounds.
+The next exact enlargement is to classify pairwise sums of the four lifted
+ray strata, retaining relative phases and parity vectors, followed by joins
+of distinct \(|k|\) fibres without identifying their phase carriers or
+circumference backgrounds.
 The immediate physical target is to compare its strata with the transferred
 Einstein/extra/Maxwell interaction tensor and with observer response.  A
 later causal theorem would replace the finite secular right inverses by
