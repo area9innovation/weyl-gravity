@@ -206,11 +206,20 @@ def verify() -> None:
         raise AssertionError("aligned global-wave occupation cone was hidden")
     if aligned_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("aligned global-wave causal lifecycle was over-promoted")
-    global_axial = by_id["einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone"]
-    reopened_generic = {
+    superseded_ell2_aggregates = {
         "einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone",
         "einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone",
-        "einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization",
+    }
+    for identifier in superseded_ell2_aggregates:
+        entry = by_id[identifier]
+        second = entry["mode_data"]["second_order"]
+        if entry["descriptions"]["nonlinear"] != "OBSTRUCTED":
+            raise AssertionError(f"historical ell2 aggregate was not obstructed: {identifier}")
+        if second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED":
+            raise AssertionError(f"historical ell2 bounded verdict survived: {identifier}")
+        if "SUPERSEDED BY" not in entry["claim_boundary"]:
+            raise AssertionError(f"historical ell2 successor was not named: {identifier}")
+    reopened_generic = {
         "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
         "einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone",
     }
@@ -225,6 +234,13 @@ def verify() -> None:
             raise AssertionError(f"generic constant-twist causal lifecycle was over-promoted: {identifier}")
         if "LIFECYCLE REOPENED" not in entry["claim_boundary"]:
             raise AssertionError(f"generic constant-twist reopen reason is absent: {identifier}")
+    fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
+    if fixed_ell_twist["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("fixed-ell angular factorization was lost")
+    if "correctly typed ell=2 matrices vanish" not in fixed_ell_twist["claim_boundary"]:
+        raise AssertionError("fixed-ell zero regression was hidden")
+    if fixed_ell_twist["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("fixed-ell common cone was over-promoted")
     repair = by_id["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
     if repair["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("constant-twist projector repair was not promoted")
@@ -251,20 +267,20 @@ def verify() -> None:
         if "SUPERSEDED BY" not in entry["claim_boundary"]:
             raise AssertionError(f"supersession link is absent: {identifier}")
 
-    reopened = {
+    regenerated = {
         "einstein.ph.wm.mixed.twist_position_velocity_ell2_complete_bounded_cone",
         "einstein.ph.wm.mixed.twist_circumference_wilson_ell2_complete_bounded_cone",
         "einstein.ph.wm.mixed.d_twist_ell2_complete_bounded_cone",
         "einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone",
     }
-    for identifier in reopened:
+    for identifier in regenerated:
         entry = by_id[identifier]
-        if entry["descriptions"]["nonlinear"] != "OPEN":
-            raise AssertionError(f"downstream successor was not reopened: {identifier}")
-        if entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
-            raise AssertionError(f"downstream exact cone remained over-promoted: {identifier}")
-        if "LIFECYCLE REOPENED" not in entry["claim_boundary"]:
-            raise AssertionError(f"reopen reason is absent: {identifier}")
+        if entry["descriptions"]["nonlinear"] != "CERTIFIED":
+            raise AssertionError(f"downstream successor was not regenerated: {identifier}")
+        if entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+            raise AssertionError(f"downstream exact cone was not re-certified: {identifier}")
+        if "REGENERATED" not in entry["claim_boundary"]:
+            raise AssertionError(f"regeneration reason is absent: {identifier}")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

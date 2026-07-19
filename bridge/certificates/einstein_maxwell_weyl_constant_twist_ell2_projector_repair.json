@@ -122,7 +122,7 @@
       }
     },
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.py",
-    "generator_sha256": "e8149447bd5bcc923292d6e0f99f345588d609526eec397fd356d2de5d8158c5",
+    "generator_sha256": "941c9279df4bd47583fa9308ef6e68bb303de66c78b80a26eca668266cda9aa8",
     "inputs": {
       "old_complete": {
         "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.json",
@@ -177,15 +177,20 @@
   "verification_receipt": {
     "producing_date": "2026-07-19",
     "tier_0": {
-      "status": "PENDING"
+      "elapsed_seconds": 0.31,
+      "status": "PASS"
     },
     "tier_1": {
-      "status": "PENDING",
-      "tests_run": 0
+      "elapsed_seconds": 3.24,
+      "status": "PASS",
+      "tests_run": 39
     },
     "tier_2": {
       "criterion": "eight direct four-dimensional position-source columns with the corrected ell2 axial projector",
-      "status": "PENDING"
+      "direct_columns": 8,
+      "elapsed_seconds": 289.32,
+      "max_rss_kb": 636228,
+      "status": "PASS"
     },
     "tier_3": {
       "reason": "other ell, momentum and higher lifecycles remain fail-closed",

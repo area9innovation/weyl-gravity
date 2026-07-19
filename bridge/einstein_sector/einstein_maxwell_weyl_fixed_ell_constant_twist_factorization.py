@@ -17,8 +17,7 @@ ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.json"
 SCHEMA = ROOT / "bridge/einstein_sector/schema/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.schema.json"
 INPUTS = {
-    "ell2_einstein": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.json",
-    "ell2_extra": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus.json",
+    "ell2_projector_repair": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.json",
     "fixed_ell_wave": ROOT / "bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
     "fixed_ell_global": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
 }
@@ -60,11 +59,10 @@ def _angular_fixture(ell: int) -> dict[str, Any]:
 
 def build() -> dict[str, Any]:
     records = {name: json.loads(path.read_text(encoding="utf-8")) for name, path in INPUTS.items()}
-    q2 = records["ell2_einstein"]["projection_theorem"]
-    p2 = records["ell2_extra"]["multiplicity_matrix"]
-    _require(q2["each_shell_operator"] == "nonzero scalar times (A_hat dot J_2) tensor Q_branch", "ell2 Einstein factorization changed")
-    _require(q2["each_shell_operator_rank"] == 8, "ell2 Einstein rank changed")
-    _require(p2["rank"] == 2, "ell2 extra multiplicity rank changed")
+    repair = records["ell2_projector_repair"]
+    _require(repair["corrected_position_maps"]["Einstein_plus_minus"] == "zero", "ell2 Einstein repair changed")
+    _require(repair["corrected_position_maps"]["extra"] == "zero", "ell2 extra repair changed")
+    _require(repair["classification"]["harmonic_type_mismatch_repaired"], "ell2 projector lifecycle changed")
     _require(records["fixed_ell_wave"]["classification"]["every_fixed_ell_at_least_2_combined_common_zero_cone_second_order_extendible"], "fixed-ell wave theorem changed")
     _require(records["fixed_ell_global"]["classification"]["A_zero_wave_subcone_certified"], "fixed-ell global subcone changed")
 
@@ -107,12 +105,13 @@ def build() -> dict[str, Any]:
             "intersection": "V_(m_A=0) tensor ker(Q)",
         },
         "ell2_regression": {
-            "Einstein_minus_rank": 2,
-            "Einstein_plus_rank": 2,
-            "Einstein_each_shell_kernel_dimension": 2,
-            "extra_rank": 2,
-            "extra_kernel_dimension": 12,
-            "matches_predecessors": True,
+            "Einstein_minus_rank": 0,
+            "Einstein_plus_rank": 0,
+            "Einstein_each_shell_kernel_dimension": 10,
+            "extra_rank": 0,
+            "extra_kernel_dimension": 20,
+            "repair_disposition": "the former nonzero ell2 ranks used a mistyped *dY_11 projector; *dY_21 gives zero",
+            "matches_authoritative_repair": True,
         },
         "exact_fixture_ledger": fixtures,
         "minimal_next_computation": {
@@ -137,7 +136,7 @@ def build() -> dict[str, Any]:
             "finite_multi_ell_twist_cone_classified": False,
             "causal_or_quantum_claim": False,
         },
-        "interpretation": "The unresolved generic-ell twist gate is finite-dimensional, not an all-m source problem. Rotational covariance fixes every magnetic channel once two Einstein 2x2 matrices and one extra 4x4 matrix are known on a single transverse fixture.",
+        "interpretation": "The unresolved generic-ell twist gate is finite-dimensional, not an all-m source problem. Rotational covariance fixes every magnetic channel once two Einstein 2x2 matrices and one extra 4x4 matrix are known on a single transverse fixture. The correctly typed ell2 fibre is the zero matrix in every branch.",
         "next_gate": "compute Q_(ell,+/-) and P_ell as exact functions of lambda=ell(ell+1), prove their physical-fibre ranks, then intersect their kernels with H,J_i=0",
         "claim_boundary": "This certifies only the representation factorization and kernel/rank formulas. It does not assert the generic-ell finite matrices are nonzero, does not classify their common zero cone, and makes no secular, causal, all-orders, residual, observational or quantum claim.",
         "provenance": {
@@ -148,8 +147,8 @@ def build() -> dict[str, Any]:
         "verification_receipt": {
             "producing_date": "2026-07-19",
             "tier_0": {"status": "PASS", "elapsed_seconds": 0.29},
-            "tier_1": {"status": "PASS", "elapsed_seconds": 3.74, "tests_run": 39},
-            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "the ell2 q/p factorizations and every-fixed-ell wave/global inputs are unchanged hashed dependencies"},
+            "tier_1": {"status": "PASS", "elapsed_seconds": 1.51, "tests_run": 34},
+            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "the corrected zero ell2 q/p position maps and every-fixed-ell wave/global inputs are unchanged hashed dependencies"},
             "tier_3": {"status": "NOT_RUN", "reason": "the physical-fibre multiplicity matrices remain the next calculation"},
         },
         "verification_commands": [

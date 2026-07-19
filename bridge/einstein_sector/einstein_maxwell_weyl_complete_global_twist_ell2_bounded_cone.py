@@ -183,7 +183,7 @@ def build() -> dict[str, Any]:
         },
         "complete_bounded_zero_locus": {
             "static_stratum": "wave=0: a=b=Q_e=B=0 with c,d,W_x,A arbitrary",
-            "wave_stratum": "wave!=0: a=b=d=Q_e=B=0, c,W_x arbitrary, and A plus waves obey the complete constant-position shell restrictions and H=J_i=0",
+            "wave_stratum": "wave!=0: a=b=d=Q_e=B=0, c,W_x,A arbitrary, and mu_H=mu_J1=mu_J2=mu_J3=0",
             "intersection_of_stratum_closures": "wave=0,d=0 with c,W_x,A arbitrary",
             "union_is_necessary_and_sufficient": True,
         },
@@ -210,8 +210,8 @@ def build() -> dict[str, Any]:
             "causal_or_quantum_claim": False,
             "all_orders_integrability": False,
         },
-        "interpretation": "The complete compact ell2 bounded cone is stratified. The wave-free branch retains the static moduli c,d,W_x,A. Every nonzero wave removes d as well as a,b,Q_e,B, but retains c,W_x and the complete constant-twist incidence cone, including nonaxisymmetric survivors.",
-        "next_gate": "promote the constant-twist incidence map to arbitrary fixed ell and then finite k0 harmonic sums; keep exceptional ell1 and nonzero momentum separate",
+        "interpretation": "The complete compact ell2 bounded cone is stratified. The wave-free branch retains the static moduli c,d,W_x,A. Every nonzero wave removes d as well as a,b,Q_e,B, but retains c,W_x,A freely over the complete ell2 wave moment cone.",
+        "next_gate": "derive the correctly typed constant-twist source map at arbitrary fixed ell and then finite k0 harmonic sums; keep exceptional ell1 and nonzero momentum separate",
         "claim_boundary": "Complete only for the full standard global/twist plus ell2,k0 carrier in the bounded class; other ell, momenta, unrestricted secular, causal, all-orders, residual, observational and quantum scopes remain open.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),

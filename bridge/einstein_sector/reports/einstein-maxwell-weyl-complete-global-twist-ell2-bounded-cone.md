@@ -12,8 +12,7 @@ wave = 0:
   a=b=Q_e=B=0; c,d,W_x,A arbitrary,
 
 wave != 0:
-  a=b=d=Q_e=B=0; c,W_x arbitrary;
-  (A,wave) lies in the complete constant-position shell and H=J_i=0 cone.
+  a=b=d=Q_e=B=0; c,W_x,A arbitrary; H=J_i=0.
 ```
 
 The radion and electric gates close by different mechanisms. Every nonzero

@@ -77,7 +77,8 @@ def build() -> dict[str, Any]:
         "complete_bounded_zero_locus": {
             "free_spectators": "c and W_x are arbitrary real tangent coordinates",
             "twist_velocity": "B=0",
-            "remaining_equations": "exactly the constant-position ell2 q/p shell restrictions and mu_H=mu_J1=mu_J2=mu_J3=0",
+            "position_factor": "A is an arbitrary real vector in R^3",
+            "remaining_equations": "mu_H=mu_J1=mu_J2=mu_J3=0 on the complete ell2 q/p wave carrier",
             "product_structure": "Z2_bounded(c,W_x,A,B,wave)=R_c x R_Wx x Z2_bounded(A,B,wave)",
             "necessity_and_sufficiency": "the spectator columns introduce no new cokernel equation, and their bounded corrections superpose with the complete twist-wave correction",
         },
@@ -103,7 +104,7 @@ def build() -> dict[str, Any]:
             "causal_or_quantum_claim": False,
             "all_orders_integrability": False,
         },
-        "interpretation": "The compact global data stratify into dynamical and spectator directions. At k=0, circumference position and Wilson holonomy form a flat product factor over the nonlinear twist-wave cone, whereas twist velocity is removed. The next enlargements a, d and Q_e cannot be treated as spectators.",
+        "interpretation": "The compact global data stratify into dynamical and spectator directions. At k=0, circumference position, Wilson holonomy and the correctly typed constant twist position form a flat product factor over the ell2 wave moment cone, whereas twist velocity is removed. The next enlargements a, d and Q_e cannot be treated as spectators.",
         "next_gate": "adjoin the radion position a, circumference velocity d and electric tangent Q_e as separate dynamical incidence problems",
         "claim_boundary": "This is complete only for c,W_x,A,B plus the ell=2,k=0 q/p wave carrier in the bounded class. It excludes a,b,d,Q_e, other ell and momentum, unrestricted secular corrections, causal propagation, all-orders integration, residual observables and quantum theory.",
         "provenance": {
@@ -115,7 +116,7 @@ def build() -> dict[str, Any]:
             "producing_date": "2026-07-19",
             "tier_0": {"status": "PASS", "elapsed_seconds": 0.37},
             "tier_1": {"status": "PASS", "elapsed_seconds": 1.68, "tests_run": 36},
-            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "the complete twist cone, k0 circumference transport, Wilson zero-source theorem and exact static branch are unchanged hashed inputs"},
+            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "the regenerated twist cone, k0 circumference transport, Wilson zero-source theorem and exact static branch are unchanged hashed inputs"},
             "tier_3": {"status": "NOT_RUN", "reason": "dynamical homogeneous and larger harmonic directions remain excluded"},
         },
         "verification_commands": [

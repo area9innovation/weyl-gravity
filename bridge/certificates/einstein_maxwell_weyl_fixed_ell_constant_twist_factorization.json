@@ -28,12 +28,13 @@
     "REDUCED-MODE"
   ],
   "ell2_regression": {
-    "Einstein_each_shell_kernel_dimension": 2,
-    "Einstein_minus_rank": 2,
-    "Einstein_plus_rank": 2,
-    "extra_kernel_dimension": 12,
-    "extra_rank": 2,
-    "matches_predecessors": true
+    "Einstein_each_shell_kernel_dimension": 10,
+    "Einstein_minus_rank": 0,
+    "Einstein_plus_rank": 0,
+    "extra_kernel_dimension": 20,
+    "extra_rank": 0,
+    "matches_authoritative_repair": true,
+    "repair_disposition": "the former nonzero ell2 ranks used a mistyped *dY_11 projector; *dY_21 gives zero"
   },
   "exact_fixture_ledger": [
     {
@@ -202,7 +203,7 @@
     "general_kernel_formula": "ker((A_hat dot J_ell) tensor Q)=V_(m_A=0) tensor M_in + V_ell tensor ker(Q)",
     "intersection": "V_(m_A=0) tensor ker(Q)"
   },
-  "interpretation": "The unresolved generic-ell twist gate is finite-dimensional, not an all-m source problem. Rotational covariance fixes every magnetic channel once two Einstein 2x2 matrices and one extra 4x4 matrix are known on a single transverse fixture.",
+  "interpretation": "The unresolved generic-ell twist gate is finite-dimensional, not an all-m source problem. Rotational covariance fixes every magnetic channel once two Einstein 2x2 matrices and one extra 4x4 matrix are known on a single transverse fixture. The correctly typed ell2 fibre is the zero matrix in every branch.",
   "lifecycle_state": "CLASSIFIED",
   "minimal_next_computation": {
     "Einstein_payload": "two 2x2 matrices Q_(ell,+/-)",
@@ -214,15 +215,11 @@
   "next_gate": "compute Q_(ell,+/-) and P_ell as exact functions of lambda=ell(ell+1), prove their physical-fibre ranks, then intersect their kernels with H,J_i=0",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.py",
-    "generator_sha256": "6cb7db3e8a601acf08bf86144325f406890eb94b73502089a18d1e51e25a9fe0",
+    "generator_sha256": "ab7a4d2a473739e40fa5a0da2f6cf21f3c44b424848aeb0718ff230fb3df5d8d",
     "inputs": {
-      "ell2_einstein": {
-        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.json",
-        "sha256": "dfb11f09666b853ae3f0cf0e6e0232ba0047922e412542ba496d9f1156c927a6"
-      },
-      "ell2_extra": {
-        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus.json",
-        "sha256": "54ed7e2669458f0c1e3119ca2cc973774beb514d7ab76e103640a17a59ee744e"
+      "ell2_projector_repair": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.json",
+        "sha256": "de38a7665d5b0a59ebc5665cf987bdca328c34ed623497e27b1f6e2c38e93150"
       },
       "fixed_ell_global": {
         "path": "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
@@ -247,7 +244,7 @@
   "result_state": "ALL_M_CONSTANT_TWIST_RESONANCE_REDUCED_TO_FIXED_ELL_MULTIPLICITY_MATRICES",
   "schema": "einstein-maxwell-weyl-fixed-ell-constant-twist-factorization-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.schema.json",
-  "schema_sha256": "e64cfe941664e5fef40c7b79f99f14d49de58dab50ce403d592a6f1d6193ec9c",
+  "schema_sha256": "3aca44ed69cc64ab0a278248b26140fea387899853650ff201848d7a0fbd076d",
   "scope": {
     "background": "compact magnetically supported Plebanski-Hacyan product",
     "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic resonance class",
@@ -273,12 +270,12 @@
       "status": "PASS"
     },
     "tier_1": {
-      "elapsed_seconds": 3.74,
+      "elapsed_seconds": 1.51,
       "status": "PASS",
-      "tests_run": 39
+      "tests_run": 34
     },
     "tier_2": {
-      "criterion": "the ell2 q/p factorizations and every-fixed-ell wave/global inputs are unchanged hashed dependencies",
+      "criterion": "the corrected zero ell2 q/p position maps and every-fixed-ell wave/global inputs are unchanged hashed dependencies",
       "status": "PASS_BY_CONTENT_ADDRESS"
     },
     "tier_3": {

@@ -27,7 +27,8 @@ class CompleteGlobalTwistEll2Tests(unittest.TestCase):
     def test_wave_stratum_removes_dynamical_globals(self) -> None:
         wave = self.value["complete_bounded_zero_locus"]["wave_stratum"]
         self.assertIn("a=b=d=Q_e=B=0", wave)
-        self.assertIn("constant-position shell restrictions", wave)
+        self.assertIn("c,W_x,A arbitrary", wave)
+        self.assertIn("mu_H=mu_J1=mu_J2=mu_J3=0", wave)
 
     def test_radion_gate_is_all_m_and_both_parities(self) -> None:
         audit = self.value["radion_audit"]

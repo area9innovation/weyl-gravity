@@ -41,13 +41,13 @@
     "ell2_regression": {
       "type": "object",
       "properties": {
-        "Einstein_minus_rank": {"const": 2},
-        "Einstein_plus_rank": {"const": 2},
-        "extra_rank": {"const": 2},
-        "extra_kernel_dimension": {"const": 12},
-        "matches_predecessors": {"const": true}
+        "Einstein_minus_rank": {"const": 0},
+        "Einstein_plus_rank": {"const": 0},
+        "extra_rank": {"const": 0},
+        "extra_kernel_dimension": {"const": 20},
+        "matches_authoritative_repair": {"const": true}
       },
-      "required": ["Einstein_minus_rank", "Einstein_plus_rank", "extra_rank", "extra_kernel_dimension", "matches_predecessors"]
+      "required": ["Einstein_minus_rank", "Einstein_plus_rank", "extra_rank", "extra_kernel_dimension", "matches_authoritative_repair"]
     },
     "classification": {
       "type": "object",

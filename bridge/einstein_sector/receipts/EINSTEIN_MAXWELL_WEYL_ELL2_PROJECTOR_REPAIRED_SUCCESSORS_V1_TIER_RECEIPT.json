@@ -1,0 +1,81 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_PROJECTOR_REPAIRED_SUCCESSORS_V1",
+  "producing_date": "2026-07-19",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.py": "941c9279df4bd47583fa9308ef6e68bb303de66c78b80a26eca668266cda9aa8",
+    "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.json": "de38a7665d5b0a59ebc5665cf987bdca328c34ed623497e27b1f6e2c38e93150",
+    "bridge/einstein_sector/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.py": "6d738301e569492f20514b8652abd1ecc7ec40696e1b96321536d215fef3817f",
+    "bridge/certificates/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.json": "a0c8ca4deca69716b0c0383c85b6895efdf57324c7d19cbb3d6c95995eab59bb",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.schema.json": "953e301c657fbd50e6ec5eb9f9ebaf7ab29e685827ddec32e89f1bd8d7e4b57d",
+    "bridge/einstein_sector/einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.py": "a9ed633798587504b01bdba2d86e6ddc601f8e6a67d7859fe44e32fbdf65c3c7",
+    "bridge/certificates/einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.json": "c2bd1829f967b5d926c696e492ef46e8715c5301ca71f60eb47ce1eb000e1cb5",
+    "bridge/einstein_sector/einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone.py": "bcea52d865066d886a340e5bfc0cf53d9af002cc712fb3ef996efabc14068bd0",
+    "bridge/certificates/einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone.json": "28f886f0bc622b87ac755e221097c7c1b3f68aec9929ea8d5b2af5fde8c7128a",
+    "bridge/einstein_sector/einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.py": "40c6a59d97daf463afb4c524b034fbad80abf153bf1915568db847aa039d18fd",
+    "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.json": "cf962f7e1a06c96766aa009ed5c58bea43b11ce7e3429056cee52f147d8ed668",
+    "bridge/einstein_sector/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.py": "ab7a4d2a473739e40fa5a0da2f6cf21f3c44b424848aeb0718ff230fb3df5d8d",
+    "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.json": "936a935be9183591aa54c37cb4fa35488690167b4c93819399daf6bd34db5aea",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "b6ea4f8bd3eedc36230f59f03e82b7145cee0c10b75f3da069d9783b7d8866c0",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "fd5c92f8a1794d0902c8bde4ca22b9729e33db1418229751336910fdf14080d6",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "d3c01b6c038ba63a77e25f35ebcf386f5ba3c4b68f82e56a7e9188a0cac004e4",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "b615a7c41d5ad547fc31ff4b3a2ae447d0c4cb52f8eb86d99f75c74d0bfa9a88",
+    "notes/d-quotient-einstein-team-brief.md": "7dd6a0e539311c84468cb32f4b7488f4576af49be9065d0a5edc28fc804feb5a"
+  },
+  "claim": {
+    "certified": "The four ell=2,k=0 successors are regenerated after the harmonic-type repair: B=0; A is arbitrary over the wave H,J_i zero cone; c and W_x are spectators; d survives only on the wave-free stratum; and the complete global static/wave union is necessary and sufficient.",
+    "open": "Correctly typed generic-ell constant-twist matrices, finite multi-ell sums, nonzero compact momentum, causal/retarded propagation, all-orders integration and quantum transfer."
+  },
+  "supersedes_receipts": [
+    "EINSTEIN_MAXWELL_WEYL_TWIST_POSITION_VELOCITY_ELL2_COMPLETE_BOUNDED_CONE_V1_TIER_RECEIPT.json",
+    "EINSTEIN_MAXWELL_WEYL_TWIST_CIRCUMFERENCE_WILSON_ELL2_COMPLETE_BOUNDED_CONE_V1_TIER_RECEIPT.json",
+    "EINSTEIN_MAXWELL_WEYL_D_TWIST_ELL2_COMPLETE_BOUNDED_CONE_V1_TIER_RECEIPT.json",
+    "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_TWIST_ELL2_BOUNDED_CONE_V1_TIER_RECEIPT.json",
+    "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_FACTORIZATION_V1_TIER_RECEIPT.json"
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <four generators, verifiers and scoped tests>",
+        "python3 -m json.tool <four certificates and affected schema>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 4.83,
+      "max_rss_kb": 65048,
+      "tests_run": 64,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_ell2_projector_repair --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_projector_repair.py",
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_fixed_ell_constant_twist_factorization --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.py",
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.py",
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.py",
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone.py",
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.py",
+        "python3 -m unittest <four successor test modules> bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The repaired zero position map, twist-velocity STF obstruction, c/W_x transport, axial/polar d pivots, radion pivot, electric E11 witness and wave H,J_i cone are exact hashed inputs to the regenerated chain."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No programme-wide freeze or release is promoted; generic ell, momentum and higher lifecycles remain fail-closed."
+    }
+  }
+}

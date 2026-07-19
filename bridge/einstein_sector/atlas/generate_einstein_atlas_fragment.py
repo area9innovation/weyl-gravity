@@ -622,16 +622,17 @@ def entries() -> list[dict[str, object]]:
         "einstein.ph.wm.interaction.constant_twist_ell2_moment_resonance_cone",
         "einstein.ph.wm.mixed.constant_twist_ell2_complete_bounded_cone",
     }
-    reopened_successors = {
+    regenerated_successors = {
         "einstein.ph.wm.mixed.twist_position_velocity_ell2_complete_bounded_cone",
         "einstein.ph.wm.mixed.twist_circumference_wilson_ell2_complete_bounded_cone",
         "einstein.ph.wm.mixed.d_twist_ell2_complete_bounded_cone",
         "einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone",
     }
-    reopened_generic_twist_rows = {
+    superseded_ell2_aggregates = {
         "einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone",
         "einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone",
-        "einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization",
+    }
+    reopened_generic_twist_rows = {
         "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
         "einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone",
     }
@@ -651,19 +652,42 @@ def entries() -> list[dict[str, object]]:
                 "SUPERSEDED BY einstein.ph.wm.interaction.constant_twist_ell2_projector_repair. "
                 "Retained only as a fail-closed historical row; it must not support a current theorem."
             )
-        elif identifier in reopened_successors:
-            entry["descriptions"]["nonlinear"] = "OPEN"
+        elif identifier in regenerated_successors:
+            entry["descriptions"]["nonlinear"] = "CERTIFIED"
             entry["mode_data"]["resonance"] = _claim(
-                "OPEN",
-                "The constant-position input has been corrected to the zero same-shell map; this successor awaits regeneration with the repaired projector before its exact product/stratified cone is re-certified.",
+                "CERTIFIED",
+                "The regenerated successor imports the corrected zero constant-position map and retains its independently certified velocity, spectator, d, radion and electric source components according to scope.",
             )
             entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"] = _claim(
-                "OPEN",
-                "The predecessor ingredients remain available, but necessity and sufficiency must be regenerated against the corrected constant-twist position theorem.",
+                "CERTIFIED",
+                {
+                    "einstein.ph.wm.mixed.twist_position_velocity_ell2_complete_bounded_cone": "B=0, A is arbitrary, and the complete ell2 wave satisfies mu_H=mu_J1=mu_J2=mu_J3=0.",
+                    "einstein.ph.wm.mixed.twist_circumference_wilson_ell2_complete_bounded_cone": "c,W_x,A are arbitrary, B=0, and the complete ell2 wave satisfies mu_H=mu_J1=mu_J2=mu_J3=0.",
+                    "einstein.ph.wm.mixed.d_twist_ell2_complete_bounded_cone": "The exact cone is the union of wave=0 with c,d,W_x,A arbitrary and B=0, and wave!=0 with d=B=0, c,W_x,A arbitrary and mu_H=mu_J1=mu_J2=mu_J3=0.",
+                    "einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone": "The exact cone is the union of wave=0 with a=b=Q_e=B=0 and c,d,W_x,A arbitrary, and wave!=0 with a=b=d=Q_e=B=0, c,W_x,A arbitrary and mu_H=mu_J1=mu_J2=mu_J3=0.",
+                }[identifier],
+            )
+            entry["mode_data"]["taub_maps"] = _claim(
+                "CERTIFIED",
+                "The complete wave factor is the common compact stabilizer zero cone mu_H=mu_J1=mu_J2=mu_J3=0; constant twist position adds no equation after the harmonic-type repair.",
             )
             entry["claim_boundary"] = (
-                "LIFECYCLE REOPENED after the constant-twist harmonic-type repair. "
-                "No exact downstream bounded cone is currently claimed by this row."
+                "REGENERATED after einstein.ph.wm.interaction.constant_twist_ell2_projector_repair. "
+                "Certified only on this row's declared ell=2,k=0 bounded carrier; other ell/momenta and causal or higher lifecycles remain fail-closed."
+            )
+        elif identifier in superseded_ell2_aggregates:
+            entry["descriptions"]["nonlinear"] = "OBSTRUCTED"
+            entry["mode_data"]["resonance"] = _claim(
+                "OBSTRUCTED",
+                "This historical aggregate imported the mistyped nonzero constant-position map and is superseded by the regenerated complete-global ell2 theorem.",
+            )
+            entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"] = _claim(
+                "OBSTRUCTED",
+                "Use einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone for the corrected necessary-and-sufficient cone on this ell2 carrier.",
+            )
+            entry["claim_boundary"] = (
+                "SUPERSEDED BY einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone. "
+                "Retained only as a historical aggregate and must not support a current theorem."
             )
         elif identifier in reopened_generic_twist_rows:
             entry["descriptions"]["nonlinear"] = "OPEN"

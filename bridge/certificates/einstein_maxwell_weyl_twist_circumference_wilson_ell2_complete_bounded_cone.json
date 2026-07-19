@@ -13,8 +13,9 @@
   "complete_bounded_zero_locus": {
     "free_spectators": "c and W_x are arbitrary real tangent coordinates",
     "necessity_and_sufficiency": "the spectator columns introduce no new cokernel equation, and their bounded corrections superpose with the complete twist-wave correction",
+    "position_factor": "A is an arbitrary real vector in R^3",
     "product_structure": "Z2_bounded(c,W_x,A,B,wave)=R_c x R_Wx x Z2_bounded(A,B,wave)",
-    "remaining_equations": "exactly the constant-position ell2 q/p shell restrictions and mu_H=mu_J1=mu_J2=mu_J3=0",
+    "remaining_equations": "mu_H=mu_J1=mu_J2=mu_J3=0 on the complete ell2 q/p wave carrier",
     "twist_velocity": "B=0"
   },
   "correction_classes": {
@@ -33,12 +34,12 @@
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE"
   ],
-  "interpretation": "The compact global data stratify into dynamical and spectator directions. At k=0, circumference position and Wilson holonomy form a flat product factor over the nonlinear twist-wave cone, whereas twist velocity is removed. The next enlargements a, d and Q_e cannot be treated as spectators.",
+  "interpretation": "The compact global data stratify into dynamical and spectator directions. At k=0, circumference position, Wilson holonomy and the correctly typed constant twist position form a flat product factor over the ell2 wave moment cone, whereas twist velocity is removed. The next enlargements a, d and Q_e cannot be treated as spectators.",
   "lifecycle_state": "CLASSIFIED",
   "next_gate": "adjoin the radion position a, circumference velocity d and electric tangent Q_e as separate dynamical incidence problems",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.py",
-    "generator_sha256": "6ca0240802fb66ddeb44eaac7dae5b803f54463aca56709bdfe8af9f5330958c",
+    "generator_sha256": "a9ed633798587504b01bdba2d86e6ddc601f8e6a67d7859fe44e32fbdf65c3c7",
     "inputs": {
       "circumference": {
         "path": "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
@@ -54,7 +55,7 @@
       },
       "twist_wave": {
         "path": "bridge/certificates/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.json",
-        "sha256": "7e928ab1294b25c3c6ff36a6e4385c0afc9b32d34eaa9264af2875492a329cd0"
+        "sha256": "a0c8ca4deca69716b0c0383c85b6895efdf57324c7d19cbb3d6c95995eab59bb"
       }
     }
   },
@@ -107,7 +108,7 @@
       "tests_run": 36
     },
     "tier_2": {
-      "criterion": "the complete twist cone, k0 circumference transport, Wilson zero-source theorem and exact static branch are unchanged hashed inputs",
+      "criterion": "the regenerated twist cone, k0 circumference transport, Wilson zero-source theorem and exact static branch are unchanged hashed inputs",
       "status": "PASS_BY_CONTENT_ADDRESS"
     },
     "tier_3": {

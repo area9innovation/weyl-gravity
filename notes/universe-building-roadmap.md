@@ -1354,13 +1354,11 @@ previous twist-wave cone on `d=0`.  Atlas row
 `einstein.ph.wm.mixed.d_twist_ell2_complete_bounded_cone` records the split;
 only `a` and `Q_e` remain among the declared homogeneous dynamical gates.
 Together with the complete axial--polar `ell=2` common-zero theorem and the
-constant zero-frequency `L=1` right inverse, this closes the `A=0`
+constant zero-frequency `L=1` right inverse, this first closed the `A=0`
 global-plus-`ell=2,k=0` wave subcone across both parities, both Einstein
-branches, and both extra-primary multiplicities.  The static
-`(c,d,W_x,A)` branch remains exact, but their full nonzero-`A` product is not
-certified.  Atlas row
-`einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone` is therefore
-`OPEN` for the full bounded carrier while preserving both certified strata.
+branches, and both extra-primary multiplicities.  The harmonic-type repair
+below strengthens that intermediate result: the full constant-position
+factor is exact, so `A` is arbitrary on both the static and wave strata.
 
 **Authoritative lifecycle correction (2026-07-19).**  The constant-twist
 axial output used above was mistyped: the old projector was `*dY_11`
@@ -1375,11 +1373,13 @@ Z2_bounded(A,wave)=R_A^3 x {wave : H=J_1=J_2=J_3=0}.
 
 Atlas row `einstein.ph.wm.interaction.constant_twist_ell2_projector_repair`
 is authoritative.  The old counterexample and incidence rows are
-`OBSTRUCTED`; the twist-velocity, circumference/Wilson, `d`, and
-complete-global successors are `OPEN` pending deterministic regeneration
-against the repaired zero map.  This correction does not change the compact
-Bridge 1 linear lifecycle and does not certify general `ell`, nonzero momentum
-or causal propagation.
+`OBSTRUCTED`.  The twist-velocity, circumference/Wilson, `d`, and
+complete-global successors have now been regenerated against the repaired
+zero map and are again `CERTIFIED`: `B=0`; `A` is arbitrary; `c,W_x` are
+spectators; `d` survives only when the wave vanishes; and the full wave
+stratum has `a=b=d=Q_e=B=0`, arbitrary `c,W_x,A`, and `H=J_i=0`.  This
+correction does not change the compact Bridge 1 linear lifecycle and does not
+certify general `ell`, nonzero momentum or causal propagation.
 
 That promotion first produced direct exact fixtures at `ell=2,3,4`.  With
 `lambda=ell(ell+1)`, the axial and polar leading pivots reconstruct
@@ -1494,19 +1494,18 @@ causal Green data remain an independent open rail.
 The Einstein-owned nonlinear domain filter feeding Bridge 1 is certified for
 constant twist position plus the complete axial/polar `ell=2,k=0` wave
 carrier: `A` is arbitrary and the wave lies on the common `H,J_i` zero cone.
-The larger full-standard-global successor is temporarily `OPEN` after the
-projector repair.  Its independent radion, electric, twist-velocity and
-spectator ingredients remain available, but its exact stratified union must
-be regenerated before it can again filter a relative `L_infinity` defect.
-The causal field remains `NO_CERTIFIED_MAP`; none of this promotes the linear
-cofiber to a nonlinear morphism.
+The larger full-standard-global successor is also regenerated: its static
+stratum retains `c,d,W_x,A`, while its nonzero-wave stratum retains
+`c,W_x,A` and removes `a,b,d,Q_e,B`.  The causal field remains
+`NO_CERTIFIED_MAP`; none of this promotes the linear cofiber to a nonlinear
+morphism.
 
-The next Einstein activation gate is regeneration of the twist-velocity,
-circumference/Wilson, `d`, and complete-global `ell=2,k=0` successors against
-the corrected zero constant-position map.  The older fixed-generic-`ell`
-factorization imported the invalid `ell=2` incidence regression and must not
-be promoted until its carrier typing is independently repaired.  This does
-not alter the Bridge 1 causal lifecycle.
+The next Einstein activation gate is the correctly typed fixed-generic-`ell`
+constant-twist source matrix.  The `SO(3)` angular factorization is again
+`CERTIFIED` and its corrected `ell=2` regression is the zero matrix in every
+branch, but the generic multiplicity matrices must be derived rather than
+inferred from that exceptional fibre.  This does not alter the Bridge 1
+causal lifecycle.
 
 ### Classical ownership
 

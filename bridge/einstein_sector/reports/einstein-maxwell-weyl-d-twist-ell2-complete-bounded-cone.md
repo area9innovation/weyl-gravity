@@ -5,7 +5,7 @@ bounded cone, not another spectator product.
 
 ```text
 wave-free: c,d,W_x,A arbitrary, B=0;
-nonzero wave: d=0 and the complete c,W_x,A plus ell=2 cone equations.
+nonzero wave: d=B=0; c,W_x,A arbitrary; H=J_i=0.
 ```
 
 On the predecessor cone every old bounded adjoint pairing already vanishes.

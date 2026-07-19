@@ -12,12 +12,12 @@
     "unrestricted_smooth_secular_cone_classified": false
   },
   "complete_bounded_zero_locus": {
-    "A_nonzero_branch": "rotate A to its axis; both Einstein q-primary shells have only m_A=0, each nonzero-m extra coefficient lies in span{polar_e1,-4*sqrt(3)*axial_e1+15*polar_e2}, and mu_H=mu_J1=mu_J2=mu_J3=0",
-    "A_zero_branch": "mu_H=mu_J1=mu_J2=mu_J3=0 on the complete ell2 q/p wave carrier",
     "first_equation": "B=0",
     "necessity": "the universal polar L=2 t^2 coefficient forces B=0; the remaining equations are the complete constant-position theorem",
-    "nonaxisymmetric_survivor": "B=0 with nonzero A, equal polar_e1 amplitudes at m_A=+2,-2, and the certified Einstein-minus energy balance",
-    "sufficiency": "after B=0 the tangent lies exactly in the certified constant-position carrier, whose displayed equations admit a bounded correction"
+    "position_factor": "A is an arbitrary real vector in R^3",
+    "product_formula": "Z2_bounded(A,B,wave)={B=0} x R_A^3 x {wave: mu_H=mu_J1=mu_J2=mu_J3=0}",
+    "sufficiency": "after B=0 the tangent lies exactly in the certified constant-position carrier, whose displayed equations admit a bounded correction",
+    "wave_equations": "mu_H=mu_J1=mu_J2=mu_J3=0 on the complete ell2 q/p wave carrier"
   },
   "correction_classes": {
     "BOUNDED_OR_FINITE_QUASIPERIODIC": {
@@ -36,20 +36,20 @@
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE"
   ],
-  "interpretation": "Twist velocity is a genuine linear Jordan partner but not a bounded second-order direction on this finite carrier. Its self-source has an uncancellable quadratic-in-time polar quadrupole, so the bounded cone lies entirely on B=0 and is exactly the previously certified constant-position cone. Constant twist position remains nontrivial and can coexist with off-axis wave data.",
+  "interpretation": "Twist velocity is a genuine linear Jordan partner but not a bounded second-order direction on this finite carrier. Its self-source has an uncancellable quadratic-in-time polar quadrupole, while the correctly typed constant twist position is a free bounded spectator over the complete ell2 wave moment cone.",
   "lifecycle_state": "CLASSIFIED",
   "next_gate": "adjoin the remaining homogeneous directions a,c,d,Q_e,W_x one scope at a time, using their already classified polynomial and shell ledgers; then generalize the constant-position incidence map to arbitrary fixed ell",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.py",
-    "generator_sha256": "a47cf617a78dd40cfb5c90ffd2832d2ddc34db2df952a69bd24e9c9464a0cf56",
+    "generator_sha256": "6d738301e569492f20514b8652abd1ecc7ec40696e1b96321536d215fef3817f",
     "inputs": {
       "global_polynomial": {
         "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
         "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
       },
       "position_cone": {
-        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.json",
-        "sha256": "6016005b3c1a1a6cde0e0867d373278882e4411b58b51e31020d7bde0d95fdcb"
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.json",
+        "sha256": "de38a7665d5b0a59ebc5665cf987bdca328c34ed623497e27b1f6e2c38e93150"
       }
     }
   },
@@ -57,7 +57,7 @@
   "result_state": "COMPLETE_TWIST_POSITION_VELOCITY_ELL2_BOUNDED_CONE_CLASSIFIED",
   "schema": "einstein-maxwell-weyl-twist-position-velocity-ell2-complete-bounded-cone-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.schema.json",
-  "schema_sha256": "27097abbe35f01eb1d4dbf7cfb34926431c557f89fb433205874ce4db6b9e06c",
+  "schema_sha256": "953e301c657fbd50e6ec5eb9f9ebaf7ab29e685827ddec32e89f1bd8d7e4b57d",
   "scope": {
     "background": "compact magnetically supported Plebanski-Hacyan product",
     "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic second-order correction",
@@ -96,7 +96,7 @@
       "tests_run": 35
     },
     "tier_2": {
-      "criterion": "the direct global polynomial-growth theorem and complete constant-position ell2 cone are unchanged hashed inputs",
+      "criterion": "the direct global polynomial-growth theorem and corrected zero position-map theorem are unchanged hashed inputs",
       "status": "PASS_BY_CONTENT_ADDRESS"
     },
     "tier_3": {

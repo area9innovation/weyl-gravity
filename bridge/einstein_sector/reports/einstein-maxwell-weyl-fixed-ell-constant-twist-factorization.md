@@ -20,8 +20,10 @@ Thus the unresolved all-`m` problem is reduced to two `2x2` Einstein matrices
 dim(M_in) + 2*ell*(dim(M_in)-r).
 ```
 
-The `ell=2` regressions reproduce the certified Einstein kernel dimension two
-on each shell and extra kernel dimension twelve.  No generic-`ell` matrix rank
-is asserted here.  The bounded cone remains `OPEN`, and the causal row remains
-`NO_CERTIFIED_MAP`, until the three finite matrices are computed and their
-physical-fibre ranks proved.
+The repaired `ell=2` regression gives rank zero in every branch: Einstein
+kernel dimension ten on each shell and extra kernel dimension twenty.  The
+former nonzero ranks used `*dY_11` against `ell=2` adjoints and are superseded.
+No generic-`ell` matrix rank is asserted here.  The bounded cone remains
+`OPEN`, and the causal row remains `NO_CERTIFIED_MAP`, until the three finite
+matrices are computed with correctly typed carriers and their physical-fibre
+ranks proved.

@@ -8,28 +8,28 @@
   "artifact_hashes": {
     "bridge/einstein_sector/einstein_maxwell_weyl_twist_ell2_einstein_source_explore.py": "02d05f297ea2c42bc4e53142e82ed618343b27b9d0641b4eadb5cecd95bf7a5a",
     "bridge/einstein_sector/einstein_maxwell_weyl_twist_ell2_extra_source_explore.py": "475e60deb69ffa0cacc3697c80a1f2092a24781464976d5220ece03249f0e194",
-    "bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.py": "e8149447bd5bcc923292d6e0f99f345588d609526eec397fd356d2de5d8158c5",
-    "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.json": "dcf25687cd3cffb714cc05e75d8e4578d2859b0064952cc9763b4d1e809597a3",
+    "bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.py": "941c9279df4bd47583fa9308ef6e68bb303de66c78b80a26eca668266cda9aa8",
+    "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.json": "de38a7665d5b0a59ebc5665cf987bdca328c34ed623497e27b1f6e2c38e93150",
     "bridge/einstein_sector/schema/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.schema.json": "9aee2d5b498ad7462df051e8dd6e2f9013d28409e370b9a7086292cbd99d814c",
     "bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_projector_repair.py": "384027a27abed59e928806fbfc5f8819e9736a72decafb40e04c705dc050f55f",
     "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_constant_twist_ell2_projector_repair.py": "06a066f4938265a055ac2b4fa6e5b2693cdccee386f349ce764c880eb39184eb",
     "bridge/einstein_sector/reports/einstein-maxwell-weyl-constant-twist-ell2-projector-repair.md": "2c64d0049a2e1eeb79809d77f9041749d673266541a83c12cd6f1ac8ead6599c",
-    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "2aae1029e46a8ed168280a9ecf4bb84a235a9121e3eb1517bc9506d0ebd837d1",
-    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "82e05254c544b81a43731f5ae15c2369a387fe7553a650b7e79164cda9ba6100",
-    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "276ea31ee007e1b8f868a465b43c47f89b7f064387502dca37ea6cfbcd641003",
-    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "48b827bbf17363fee571bae534ecdd01cf043a652f224171d558210c9a93b92f",
-    "notes/d-quotient-einstein-team-brief.md": "7f6e25f6a74d47507805ddefdbe0eda01627b7aff467a79bba551a731e2a89b5"
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "b6ea4f8bd3eedc36230f59f03e82b7145cee0c10b75f3da069d9783b7d8866c0",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "fd5c92f8a1794d0902c8bde4ca22b9729e33db1418229751336910fdf14080d6",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "d3c01b6c038ba63a77e25f35ebcf386f5ba3c4b68f82e56a7e9188a0cac004e4",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "b615a7c41d5ad547fc31ff4b3a2ae447d0c4cb52f8eb86d99f75c74d0bfa9a88",
+    "notes/d-quotient-einstein-team-brief.md": "7dd6a0e539311c84468cb32f4b7488f4576af49be9065d0a5edc28fc804feb5a"
   },
   "claim": {
     "certified": "The former nonzero constant-twist incidence was an L=1/L=2 carrier-type error. With the correctly typed *dY_21 projector, all ell=2 q/p same-shell position maps vanish and Z2_bounded(A,wave)=R_A^3 times the common H,J_i wave cone.",
     "obstructed": "The historical constant-twist counterexample, nonzero incidence matrices and their derived exact cone cannot support a current theorem.",
-    "open": "The twist-velocity, circumference/Wilson, d and complete-global successors require deterministic regeneration; other ell, nonzero momentum and causal/retarded propagation remain fail-closed."
+    "successors": "The twist-velocity, circumference/Wilson, d and complete-global successors were deterministically regenerated in EINSTEIN_MAXWELL_WEYL_ELL2_PROJECTOR_REPAIRED_SUCCESSORS_V1.",
+    "open": "Other ell, nonzero momentum and causal/retarded propagation remain fail-closed."
   },
   "tiers": {
     "tier_0": {
       "status": "PASS",
-      "elapsed_seconds": 0.10,
-      "max_rss_kb": 19028,
+      "elapsed_seconds": 0.31,
       "commands": [
         "python3 -m py_compile <scoped Python paths>",
         "python3 -m json.tool <repair certificate and schema>",
@@ -38,9 +38,8 @@
     },
     "tier_1": {
       "status": "PASS",
-      "elapsed_seconds": 2.33,
-      "max_rss_kb": 63680,
-      "tests_run": 33,
+      "elapsed_seconds": 3.24,
+      "tests_run": 39,
       "commands": [
         "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_ell2_projector_repair --check",
         "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_projector_repair.py",
@@ -52,19 +51,17 @@
     },
     "tier_2": {
       "status": "PASS",
+      "elapsed_seconds": 289.32,
+      "max_rss_kb": 636228,
+      "direct_columns": 8,
       "criterion": "The changed four-dimensional source engines were replayed exactly for both Einstein-minus parities and all four extra-primary position columns; the repair certificate stores the resulting rows and independently reduces every q/p same-shell adjoint pairing to zero.",
       "commands": [
-        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_ell2_einstein_source_explore --input-parity axial --branch minus",
-        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_ell2_einstein_source_explore --input-parity polar --branch minus",
-        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_ell2_extra_source_explore --extra-parity axial --extra-mode e1 --twist-case position",
-        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_ell2_extra_source_explore --extra-parity axial --extra-mode e2 --twist-case position",
-        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_ell2_extra_source_explore --extra-parity polar --extra-mode e1 --twist-case position",
-        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_ell2_extra_source_explore --extra-parity polar --extra-mode e2 --twist-case position"
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_ell2_projector_repair --check --replay-direct"
       ]
     },
     "tier_3": {
       "status": "NOT_RUN",
-      "reason": "This is a scoped lifecycle correction, not a full repository freeze or release; all downstream exact cones were reopened rather than promoted."
+      "reason": "This is a scoped lifecycle correction, not a full repository freeze or release; generic ell, nonzero momentum and higher lifecycles remain fail-closed."
     }
   }
 }

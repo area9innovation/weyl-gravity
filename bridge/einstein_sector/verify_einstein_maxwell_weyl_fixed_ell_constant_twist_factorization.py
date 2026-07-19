@@ -28,7 +28,8 @@ def main() -> None:
     gates = value["finite_matrix_gates"]
     assert gates["Einstein_minus"]["bounded_kernel_if_rank_r"] == "2 + 2*ell*(2-r)"
     assert gates["extra"]["bounded_kernel_if_rank_r"] == "4 + 2*ell*(4-r)"
-    assert value["ell2_regression"]["extra_kernel_dimension"] == 12
+    assert value["ell2_regression"]["Einstein_minus_rank"] == 0
+    assert value["ell2_regression"]["extra_kernel_dimension"] == 20
     assert value["classification"]["complete_fixed_ell_constant_twist_cone_classified"] is False
     assert value["correction_classes"]["CAUSAL_RETARDED"]["status"] == "NO_CERTIFIED_MAP"
     print("EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_FACTORIZATION independent verification: PASS")

@@ -20,16 +20,20 @@ source fixes the nonzero metric coefficient to `-7*B^2`; rotational covariance
 promotes it to the displayed STF tensor.
 
 After `B=0`, necessity and sufficiency reduce exactly to the certified
-constant-position theorem.  For `A!=0`, rotate to its axis: both Einstein
-shells retain only `m_A=0`, the nonzero-`m` extra coefficients lie in the
-two-dimensional internal position kernel, and all four stabilizer moment
-maps vanish.  The off-axis `m_A=+/-2` survivor remains present.
+corrected constant-position theorem.  The old nonzero incidence restrictions
+used a mistyped `*dY_11` output projector.  With the true `*dY_21` carrier,
+all same-shell position maps vanish.  Thus `A` is arbitrary and the only wave
+equations are
+
+```text
+mu_H=mu_J1=mu_J2=mu_J3=0.
+```
 
 ## Interpretation
 
 Twist velocity is a genuine linear Jordan partner, but it is absent from the
 bounded second-order tangent cone.  Twist position behaves differently: it
-survives and supports nonaxisymmetric wave data.  Thus the nonlinear cone
+is a free spectator over the complete wave moment cone.  Thus the nonlinear cone
 distinguishes position from velocity rather than deleting the whole twist
 pair.
 

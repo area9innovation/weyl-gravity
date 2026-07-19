@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.json"
 SCHEMA = ROOT / "bridge/einstein_sector/schema/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.schema.json"
 INPUTS = {
-    "position_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.json",
+    "position_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.json",
     "global_polynomial": ROOT / "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
 }
 
@@ -60,8 +60,8 @@ def build() -> dict[str, Any]:
     position = records["position_cone"]
     global_polynomial = records["global_polynomial"]
     _require(
-        position["classification"]["bounded_zero_locus_necessary_and_sufficient"]
-        and position["classification"]["complete_constant_twist_plus_ell2_wave_carrier_covered"],
+        position["classification"]["corrected_bounded_zero_locus_necessary_and_sufficient"]
+        and position["classification"]["constant_twist_position_is_bounded_spectator_on_complete_ell2_wave_cone"],
         "constant-twist ell2 bounded cone changed",
     )
     _require(
@@ -100,11 +100,11 @@ def build() -> dict[str, Any]:
         "twist_velocity_elimination": velocity,
         "complete_bounded_zero_locus": {
             "first_equation": "B=0",
-            "A_zero_branch": "mu_H=mu_J1=mu_J2=mu_J3=0 on the complete ell2 q/p wave carrier",
-            "A_nonzero_branch": "rotate A to its axis; both Einstein q-primary shells have only m_A=0, each nonzero-m extra coefficient lies in span{polar_e1,-4*sqrt(3)*axial_e1+15*polar_e2}, and mu_H=mu_J1=mu_J2=mu_J3=0",
+            "position_factor": "A is an arbitrary real vector in R^3",
+            "wave_equations": "mu_H=mu_J1=mu_J2=mu_J3=0 on the complete ell2 q/p wave carrier",
             "necessity": "the universal polar L=2 t^2 coefficient forces B=0; the remaining equations are the complete constant-position theorem",
             "sufficiency": "after B=0 the tangent lies exactly in the certified constant-position carrier, whose displayed equations admit a bounded correction",
-            "nonaxisymmetric_survivor": "B=0 with nonzero A, equal polar_e1 amplitudes at m_A=+2,-2, and the certified Einstein-minus energy balance",
+            "product_formula": "Z2_bounded(A,B,wave)={B=0} x R_A^3 x {wave: mu_H=mu_J1=mu_J2=mu_J3=0}",
         },
         "correction_classes": {
             "BOUNDED_OR_FINITE_QUASIPERIODIC": {"status": "CERTIFIED", "claim": "the displayed equations are necessary and sufficient on the declared A,B plus ell2 carrier"},
@@ -122,7 +122,7 @@ def build() -> dict[str, Any]:
             "causal_or_quantum_claim": False,
             "all_orders_integrability": False,
         },
-        "interpretation": "Twist velocity is a genuine linear Jordan partner but not a bounded second-order direction on this finite carrier. Its self-source has an uncancellable quadratic-in-time polar quadrupole, so the bounded cone lies entirely on B=0 and is exactly the previously certified constant-position cone. Constant twist position remains nontrivial and can coexist with off-axis wave data.",
+        "interpretation": "Twist velocity is a genuine linear Jordan partner but not a bounded second-order direction on this finite carrier. Its self-source has an uncancellable quadratic-in-time polar quadrupole, while the correctly typed constant twist position is a free bounded spectator over the complete ell2 wave moment cone.",
         "next_gate": "adjoin the remaining homogeneous directions a,c,d,Q_e,W_x one scope at a time, using their already classified polynomial and shell ledgers; then generalize the constant-position incidence map to arbitrary fixed ell",
         "claim_boundary": "This theorem is complete only for axial twist position/velocity plus the full ell=2,k=0 q/p wave carrier in the bounded correction class. It does not classify other homogeneous tangents, other ell, nonzero or opposite momentum, the unrestricted secular cone, causal propagation, all-orders solutions, residual states, observables or quantum theory.",
         "provenance": {
@@ -134,7 +134,7 @@ def build() -> dict[str, Any]:
             "producing_date": "2026-07-19",
             "tier_0": {"status": "PASS", "elapsed_seconds": 0.24},
             "tier_1": {"status": "PASS", "elapsed_seconds": 3.03, "tests_run": 35},
-            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "the direct global polynomial-growth theorem and complete constant-position ell2 cone are unchanged hashed inputs"},
+            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "the direct global polynomial-growth theorem and corrected zero position-map theorem are unchanged hashed inputs"},
             "tier_3": {"status": "NOT_RUN", "reason": "other homogeneous and harmonic directions remain open; no programme-wide freeze is promoted"},
         },
         "verification_commands": [

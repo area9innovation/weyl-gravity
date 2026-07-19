@@ -2679,18 +2679,27 @@ obstruction.  Certificate
 the former counterexample, both nonzero incidence matrices, their
 moment/resonance cone and the old exact constant-twist cone.  Those historical
 rows are now `OBSTRUCTED`.  The twist-velocity, circumference/Wilson, `d`, and
-complete-global successors are temporarily `OPEN` while their generators are
-rebased on the corrected zero position map.  Their independent ingredients
-(`B=0`, exact `c,W_x` transport, the `d` pivot, radion pivot and
-`E11=Q_e^2/2`) are retained but are not being used to claim a regenerated
-necessity-and-sufficiency theorem yet.
+complete-global successors have been deterministically regenerated against
+the corrected zero position map and are again `CERTIFIED`.  Their hierarchy is
+
+```text
+A,B,wave:       B=0; A arbitrary; H=J_i=0,
+c,W_x extension: c,W_x,A arbitrary; B=0; H=J_i=0,
+d extension:    wave=0 allows d; every nonzero wave forces d=0,
+complete global:
+  wave=0  -> a=b=Q_e=B=0; c,d,W_x,A arbitrary,
+  wave!=0 -> a=b=d=Q_e=B=0; c,W_x,A arbitrary; H=J_i=0.
+```
+
+The independent `B=0`, exact `c,W_x` transport, `d` pivot, radion pivot and
+`E11=Q_e^2/2` witnesses remain the necessity inputs; sufficiency now reduces
+to the repaired constant-position product theorem.
 
 This repair is restricted to constant twist position and complete
 axial/polar `ell=2,k=0` waves in the bounded or finite-quasiperiodic correction
 class.  Other `ell`, nonzero momentum and causal/retarded propagation remain
-fail-closed.  The next gate is to regenerate the four reopened successors;
-only then should the constant-twist calculation be promoted to generic
-`ell`.
+fail-closed.  The next gate is the correctly typed constant-twist calculation
+at generic `ell`; it must not infer its matrices merely from the `ell=2` zero.
 
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.

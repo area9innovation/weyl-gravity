@@ -25,8 +25,9 @@ class FixedEllConstantTwistFactorizationTests(unittest.TestCase):
 
     def test_ell2_regression(self) -> None:
         regression = self.value["ell2_regression"]
-        self.assertEqual(regression["Einstein_each_shell_kernel_dimension"], 2)
-        self.assertEqual(regression["extra_kernel_dimension"], 12)
+        self.assertEqual(regression["Einstein_each_shell_kernel_dimension"], 10)
+        self.assertEqual(regression["extra_kernel_dimension"], 20)
+        self.assertIn("mistyped", regression["repair_disposition"])
 
     def test_next_calculation_is_finite(self) -> None:
         payload = self.value["minimal_next_computation"]

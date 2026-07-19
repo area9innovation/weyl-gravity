@@ -26,10 +26,11 @@ class TwistPositionVelocityEll2BoundedConeTests(unittest.TestCase):
         self.assertEqual(obstruction["direct_aligned_metric_00_coefficient"], "-7*B**2")
         self.assertEqual(obstruction["source_certificate_result_id"], "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_SECOND_ORDER")
 
-    def test_position_cone_survives(self) -> None:
+    def test_position_is_a_free_spectator(self) -> None:
         zero_locus = self.value["complete_bounded_zero_locus"]
-        self.assertIn("m_A=+2,-2", zero_locus["nonaxisymmetric_survivor"])
-        self.assertIn("span{polar_e1", zero_locus["A_nonzero_branch"])
+        self.assertEqual(zero_locus["position_factor"], "A is an arbitrary real vector in R^3")
+        self.assertIn("R_A^3", zero_locus["product_formula"])
+        self.assertIn("mu_H=mu_J1=mu_J2=mu_J3=0", zero_locus["wave_equations"])
 
     def test_bounded_claim_is_complete_only_on_declared_carrier(self) -> None:
         classification = self.value["classification"]

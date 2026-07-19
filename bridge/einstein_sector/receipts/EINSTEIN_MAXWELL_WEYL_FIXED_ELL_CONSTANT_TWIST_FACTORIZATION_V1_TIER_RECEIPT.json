@@ -3,27 +3,27 @@
   "producing_date": "2026-07-19",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
   "artifact_hashes": {
-    "bridge/einstein_sector/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.py": "6cb7db3e8a601acf08bf86144325f406890eb94b73502089a18d1e51e25a9fe0",
-    "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.json": "4ae9d6ba656f97fdbefdca977b6136459ceb477ad8bf7cca744ea7886a6b4adc",
-    "bridge/einstein_sector/schema/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.schema.json": "e64cfe941664e5fef40c7b79f99f14d49de58dab50ce403d592a6f1d6193ec9c",
-    "bridge/einstein_sector/verify_einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.py": "3d8fe01f2d361f521719d5d7116004a7d3ea2dcd9a8d0c57505a5ac67cd3dbe7",
-    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.py": "1465a4e75c6944563857813ba44a2a322f91cd761be8cf323a2c976314f41354",
-    "bridge/einstein_sector/reports/einstein-maxwell-weyl-fixed-ell-constant-twist-factorization.md": "f871165f9a268723c7db99774948f5121c758de77cb9f350641374740172cd90",
-    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "5073c1d7586ff1c96c06ad67bc40bbb3c6341a9901f7fd8fce863cadad722741",
-    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "80b2e3d5411c79f6aea26a06350b3b16737b5339fffdfd99d24b260448f2a9b1",
-    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "963f8d6475bc06bb70c3f7ae7e553720d0134c157cb3d87d1be2b82349792716",
-    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "de2427738abc669e55cf2b7e0a627e1de70fbe8227e7f7bc4828b5bf34e0e3a4",
-    "notes/d-quotient-einstein-team-brief.md": "aafbaf1f27855ad63105b96ed10f0a0e786d69e00dcbf3e3afcdceaffd03bbd5"
+    "bridge/einstein_sector/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.py": "ab7a4d2a473739e40fa5a0da2f6cf21f3c44b424848aeb0718ff230fb3df5d8d",
+    "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.json": "936a935be9183591aa54c37cb4fa35488690167b4c93819399daf6bd34db5aea",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.schema.json": "3aca44ed69cc64ab0a278248b26140fea387899853650ff201848d7a0fbd076d",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.py": "aad15e1ac07dbf8662c22fe35b159196a579be28f668bf1d89bebec4c629bbb7",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.py": "6c4675ef8221fb7d63bf4ff24bc9839d1058e5de1865a75c3b10e53281b07902",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-fixed-ell-constant-twist-factorization.md": "ec563fe262082793ea7ab5bf865291c30b473c39a8c0d04f6a392f620b95106d",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "e52089cd307cd62783313b30c4818533035d568d25e0a2af3a4485e781332316",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "ee4828d66d808b416a8ce24fdfcef98cca8fb959340dd115345f8a3e750eb776",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "91939ca70000cb49e55ec033068bb65bd47999bdfdc90cf125c0c4c018a14f5d",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "972e1e92d820d14b26824267e96bfbe0e9c5fb7fb2c413d9c04a25691134f315",
+    "notes/d-quotient-einstein-team-brief.md": "7dd6a0e539311c84468cb32f4b7488f4576af49be9065d0a5edc28fc804feb5a"
   },
   "claim": {
-    "certified": "For every fixed integer ell>=2, each all-m constant-twist resonant map factors as (A_hat dot J_ell) tensored with a finite multiplicity matrix; the angular kernel is exactly m_A=0.",
+    "certified": "For every fixed integer ell>=2, each all-m constant-twist resonant map factors as (A_hat dot J_ell) tensored with a finite multiplicity matrix, with kernel V_(m_A=0) tensor M plus V_ell tensor ker(matrix). The correctly typed ell=2 matrices vanish in every q/p branch.",
     "reduction": "The remaining physical calculation consists of two 2x2 Einstein matrices Q_(ell,+/-) and one 4x4 extra matrix P_ell on a single transverse fixture.",
     "open": "The generic physical-fibre matrix ranks, common moment/resonance cone, finite multi-ell sums, nonzero momentum and every causal or higher lifecycle."
   },
   "tiers": {
     "tier_0": {"status": "PASS", "elapsed_seconds": 0.29},
-    "tier_1": {"status": "PASS", "elapsed_seconds": 3.74, "tests_run": 39},
-    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "The ell2 q/p factorizations and every-fixed-ell wave/global inputs are unchanged exact hashed dependencies."},
+    "tier_1": {"status": "PASS", "elapsed_seconds": 1.51, "tests_run": 34},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "The corrected zero ell2 q/p position maps and every-fixed-ell wave/global inputs are exact hashed dependencies."},
     "tier_3": {"status": "NOT_RUN", "reason": "The theorem is a scoped representation reduction and does not freeze the generic-ell physical multiplicity matrices."}
   }
 }

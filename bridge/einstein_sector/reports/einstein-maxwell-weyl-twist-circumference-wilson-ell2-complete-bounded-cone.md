@@ -16,7 +16,7 @@ statement is stronger: `delta F(W_x dx)=0`, so every mixed Euler source
 vanishes identically.
 
 Consequently `c` and `W_x` are arbitrary, `B=0`, and the remaining equations
-are precisely the constant-position `q/p` incidence equations and
-`mu_H=mu_J1=mu_J2=mu_J3=0`.  The radion position `a`, circumference velocity
+are `mu_H=mu_J1=mu_J2=mu_J3=0`; the corrected constant twist position `A` is
+also arbitrary.  The radion position `a`, circumference velocity
 `d`, and electric tangent `Q_e` are not included; they have genuine dynamical
 source columns and remain separate gates.

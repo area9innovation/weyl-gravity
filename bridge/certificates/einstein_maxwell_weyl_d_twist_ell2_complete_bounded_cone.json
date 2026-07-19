@@ -14,7 +14,7 @@
     "intersection": "u_wave=0,d=0 with c,W_x,A arbitrary",
     "static_stratum": "u_wave=0: c,d,W_x,A arbitrary and B=0",
     "union_is_necessary_and_sufficient": true,
-    "wave_stratum": "u_wave!=0: d=0, c,W_x arbitrary, B=0, and the complete constant-position shell plus H,J_i equations"
+    "wave_stratum": "u_wave!=0: d=0, B=0, c,W_x,A arbitrary, and mu_H=mu_J1=mu_J2=mu_J3=0"
   },
   "correction_classes": {
     "BOUNDED_OR_FINITE_QUASIPERIODIC": {
@@ -32,12 +32,12 @@
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE"
   ],
-  "interpretation": "Circumference velocity is not a wave spectator. It survives on the wave-free static stratum but every nonzero bounded ell2 wave forces d=0, while c and W_x remain free and constant twist retains its incidence cone.",
+  "interpretation": "Circumference velocity is not a wave spectator. It survives on the wave-free static stratum but every nonzero bounded ell2 wave forces d=0, while c, W_x and the correctly typed constant twist position remain free over the wave moment cone.",
   "lifecycle_state": "CLASSIFIED",
   "necessity_proof": {
     "all_m": "SO3 multiplicity one promotes the direct m=0 nonzero d pivot to an injective scalar map on every V2 parity block",
     "conclusion": "d*u_wave=0",
-    "constant_twist": "the predecessor incidence equations already set every A-times-Einstein-minus shell projection to zero",
+    "constant_twist": "the corrected A-times-wave same-shell map is zero, so A cannot screen the isolated d pivot",
     "cross_parity": "axial and polar output blocks cannot cancel",
     "isolated_channel": "select a nonzero Einstein-minus (parity,m) coefficient; its d-cross output is on its distinct omega_minus shell",
     "moment_sign": "every nonzero H=0 wave has nonzero Einstein-minus occupation",
@@ -46,7 +46,7 @@
   "next_gate": "adjoin the radion a and electric tangent Q_e separately, then update the broad global ell2 theorem",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone.py",
-    "generator_sha256": "285176fcc35d3a704e55fd2208a5e7f71be58f9936cdf08fda17bbf7c2b9d4be",
+    "generator_sha256": "bcea52d865066d886a340e5bfc0cf53d9af002cc712fb3ef996efabc14068bd0",
     "inputs": {
       "axial_minus": {
         "path": "bridge/certificates/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.json",
@@ -66,7 +66,7 @@
       },
       "predecessor": {
         "path": "bridge/certificates/einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.json",
-        "sha256": "a2b3eccb813452f4d0af1b6796e2a813e465481e47d1f45adf2e0f598dab7a4a"
+        "sha256": "c2bd1829f967b5d926c696e492ef46e8715c5301ca71f60eb47ce1eb000e1cb5"
       },
       "static_global": {
         "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
