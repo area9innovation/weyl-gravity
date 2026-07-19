@@ -8,7 +8,7 @@ scratch pipeline whose results were validated by the null control at
 1e-18 relative and by frequency robustness.
 """
 
-def run_pipeline(wnum, NORD=16, radii=None):
+def run_pipeline(wnum, NORD=16, radii=None, return_exprs=False):
     import time, pickle
     import sympy as sp
     t0 = time.time()
@@ -383,6 +383,13 @@ def run_pipeline(wnum, NORD=16, radii=None):
     ee = apply_pair(exP, exM)
     print("bilinears built", round(time.time() - t0, 1), flush=True)
     out = {}
+    if return_exprs:
+        # exact rational-in-r pair expressions (the e^{i w rstar} factors of
+        # conjugate pairs cancel identically); consumed by the exact-value
+        # certificate bh2_horizon_flux_exact
+        out["exprs"] = {"control": ctrl, "cross": cross, "ee": ee, "r": r,
+                        "rows_f": (Rtf, Rrf, Rxf), "mode_p": ex_p_Y,
+                        "carrier_p": (Pp_p, Qp_p, Xp_p), "rho": rho, "w": w}
     if radii is None:
         radii = [sp.Rational(65, 32), sp.Rational(33, 16)]
     for name, expr in [("control", ctrl), ("cross", cross), ("ee", ee)]:

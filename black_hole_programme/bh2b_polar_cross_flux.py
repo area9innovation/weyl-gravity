@@ -100,7 +100,7 @@ def _cancel(e):
     return sp.cancel(sp.together(e))
 
 
-def run_pipeline(geo_cls, wnum, radii):
+def run_pipeline(geo_cls, wnum, radii, return_exprs=False):
     """Full polar cross-flux pipeline at frequency fixture wnum (m = 1)."""
     t0_all = time.time()
     out: dict = {"stage_seconds": {}}
@@ -734,6 +734,13 @@ def run_pipeline(geo_cls, wnum, radii):
     out["cross"] = cross
     out["controls"] = {"ctrl_max_over_phys_min": float(ctrl_max / phys_min)}
     out["matrix"] = {f"{na}|{nb}": sp.sstr(val) for (na, nb), val in Hm.items()}
+    if return_exprs:
+        # mode rho-series families and the EF radial bilinear, for the
+        # exact-value certificate bh2_horizon_flux_exact (rho^0 coefficient
+        # of the on-shell-constant flux)
+        out["exprs"] = {"fam_p": fam_p, "fam_m": fam_m, "Frb": Frb,
+                        "atoms": atoms, "names": names, "rho": rho,
+                        "r": r, "v": v, "alpha": alpha}
     stage("fixture_asserts", t0)
     out["stage_seconds"]["total"] = round(time.time() - t0_all, 1)
     return out
