@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from decimal import Decimal, ROUND_CEILING, ROUND_FLOOR, localcontext
 from fractions import Fraction
 from math import comb, factorial
 import hashlib
@@ -13,6 +14,7 @@ from typing import Any
 
 from jsonschema import Draft202012Validator
 import mpmath as mp
+from mpmath.libmp import to_rational
 import sympy as sp
 
 from .product_s2_s2_ghost_schur_weighted_rows_preflight import (
@@ -78,13 +80,11 @@ def _ivq(value: Fraction | int | sp.Rational) -> Any:
 
 
 def _endpoint(interval: Any, index: int) -> str:
-    rendered = mp.iv.nstr(interval, MP_IV_DPS + 10)
-    if not (rendered.startswith("[") and rendered.endswith("]")):
-        raise AssertionError("unexpected interval endpoint rendering")
-    endpoints = rendered[1:-1].split(", ")
-    if len(endpoints) != 2:
-        raise AssertionError("unexpected interval endpoint pair")
-    return endpoints[index]
+    numerator, denominator = to_rational(interval._mpi_[index])
+    with localcontext() as context:
+        context.prec = MP_IV_DPS + 12
+        context.rounding = ROUND_FLOOR if index == 0 else ROUND_CEILING
+        return format(Decimal(numerator) / Decimal(denominator), "f")
 
 
 def _gamma(count: int) -> Fraction:

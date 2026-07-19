@@ -28,9 +28,14 @@ evaluation of `-6 log(3)` therefore gives the coupled Schur-factor enclosure
 This is an assembly precertificate, not a lifecycle promotion. Its weighted
 row dependency remains `PRECERTIFICATE_TIER3_FAILED_NO_PROMOTION` after the
 830-test exhaustive run exposed 20 failures and 12 errors in stale Cartan,
-relative, Lorentzian and transfer receipts. The minimal-vector determinant is
-also still absent, so the full coupled vector ghost determinant flag remains
-false.
+relative, Lorentzian and transfer receipts. The dependent minimal-vector
+precertificate now encloses the selected complete vector-plus-Schur weighted
+logarithm, but the standard full coupled determinant flag remains false until
+the same promotion gate passes.
+
+The regenerated endpoints use exact-binary-to-decimal outward rounding rather
+than nearest-decimal display. The printed intervals therefore retain the
+direction of the internal MPF interval proof.
 
 Receipts:
 
@@ -46,4 +51,5 @@ PYTHONPATH=quantum-weyl python3 -m unittest \
 Tier 3 is not rerun by this algebraic assembly: it introduces no new
 lifecycle promotion and inherits the explicit failed gate from its weighted
 row dependency. The focused producer, independent verifier, strict schema and
-four tests are the affected chain.
+five tests are the direct affected chain; the complete regenerated
+weighted/assembly/minimal-vector chain passes 17 tests in `37.69 s`.

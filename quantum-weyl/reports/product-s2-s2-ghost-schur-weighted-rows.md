@@ -68,8 +68,9 @@ rounding bound below `1.3e-9`.
 
 This derives the two weighted-row enclosures only on the declared Euclidean
 product background. Promotion and assembly must wait for the unrelated stale
-Tier-3 receipts to be reconciled and the suite rerun. The full minimal-vector
-ghost determinant remains beyond that gate. Nothing here supplies
+Tier-3 receipts to be reconciled and the suite rerun. A dependent
+precertificate now encloses the full minimal-vector and coupled Schur total,
+but cannot promote through that failed gate. Nothing here supplies
 generic-background form factors, complete
 `Gamma1/Q1`, a restored QME, or a Lorentzian causal/Hadamard theorem.
 
@@ -84,13 +85,16 @@ PYTHONPATH=quantum-weyl python3 -m unittest \
   quantum-weyl/spectral/euclidean/tests/test_product_s2_s2_ghost_schur_weighted_rows.py
 ```
 
-Observed scoped timings on the recorded workspace were:
+Interval endpoints are serialized from their exact binary MPF rationals with
+decimal `ROUND_FLOOR`/`ROUND_CEILING`; the tests explicitly prove that the
+printed lower and upper endpoints enclose the internal directed interval.
+Observed scoped timings for the regenerated affected chain were:
 
 | Rail | Elapsed | Result |
 | --- | ---: | --- |
-| producer/check | 12.73 s | pass |
-| independent verifier | 0.20 s | pass |
-| five-test unit slice | 13.23 s | pass |
+| producer/emit | 16.71 s | pass |
+| independent verifier | 0.08 s | pass |
+| 17-test weighted/assembly/minimal-vector chain | 37.69 s | pass |
 | full quantum Tier 3 (`830` tests) | 629.08 s | fail: 20 failures, 12 errors |
 
 Tier 3 was required because this result would otherwise promote two rows from

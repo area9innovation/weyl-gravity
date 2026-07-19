@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from decimal import Decimal, ROUND_CEILING, ROUND_FLOOR, localcontext
 import hashlib
 import json
 from pathlib import Path
@@ -11,6 +12,7 @@ from typing import Any
 
 from jsonschema import Draft202012Validator
 import mpmath as mp
+from mpmath.libmp import to_rational
 
 
 HERE = Path(__file__).resolve().parent
@@ -38,11 +40,11 @@ def _reference(path: Path) -> dict[str, str]:
 
 
 def _endpoint(interval: Any, index: int) -> str:
-    rendered = mp.iv.nstr(interval, MP_IV_DPS + 10)
-    values = rendered[1:-1].split(", ")
-    if len(values) != 2:
-        raise AssertionError("unexpected interval rendering")
-    return values[index]
+    numerator, denominator = to_rational(interval._mpi_[index])
+    with localcontext() as context:
+        context.prec = MP_IV_DPS + 12
+        context.rounding = ROUND_FLOOR if index == 0 else ROUND_CEILING
+        return format(Decimal(numerator) / Decimal(denominator), "f")
 
 
 def _interval(row: dict[str, str]) -> Any:

@@ -208,16 +208,21 @@ stored per channel, and the coefficientwise `I28` relation survives. This is
 a partial-BV five-carrier representative. The pure-vector ghost `n=1+n=2`
 slice is now integrated exactly as well: six channels are nonzero, five
 vanish, and no new transcendental master is required. Adding it preserves
-the coefficientwise `I28` relation and the ten-dimensional quotient. Exactly
-The three longitudinal/mixed `D_W` towers are one Schur kernel rather than
+the coefficientwise `I28` relation and the ten-dimensional quotient. The
+three longitudinal/mixed `D_W` towers are one Schur kernel rather than
 three independent analytic carriers.  A closed non-Einstein spectral measure
 for that kernel is now supplied on `S2(k1) x S2(k2)`.  It also proves that six
 minimal-vector zeros are matched Schur poles with finite coupled correction
 `3^-6`; deleting the vector and scalar rows independently is invalid.  The
-regular-complement `det_3` sum on `S2(1) x S2(2)` is now rigorously enclosed
-with certified common decimal prefix `0.3263039`.  The weighted `R(K)` and
-finite-part `R(K^2)` rows, arbitrary-background finite Schur rows and the
-remaining BV sectors remain open.
+regular-complement `det_3` sum on `S2(1) x S2(2)` is rigorously enclosed with
+certified common decimal prefix `0.3263039`. Order-18 product-heat and rational
+tail estimates now also enclose weighted `R(K)`, finite-part `R(K^2)`, the
+matched exceptional Schur factor and both exact/coexact minimal-vector blocks.
+Their selected combined vector-plus-Schur weighted logarithm lies in
+`[19.0791598956...,19.0791630891...]`. These rows remain fail-closed
+precertificates because the required Tier-3 promotion run failed on stale
+receipts outside the spectral package. Arbitrary-background finite Schur rows
+and the remaining BV sectors remain open.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute
@@ -542,15 +547,13 @@ The current coefficient-bearing critical path is:
 
 1. reconcile the unrelated stale Cartan, relative, Lorentzian and transfer
    receipts exposed by the 830-test Tier-3 run, rerun that promotion gate, and
-   only then promote the rigorously derived `S2(1) x S2(2)` weighted `R(K)`
-   and finite-part `R(K^2)` enclosures; the regular-complement `det_3` and
-   matched exceptional factor `3^-6` are already certified and their full
-   coupled Schur-factor enclosure has a fail-closed assembly precertificate,
-   while the minimal-vector exact/coexact product carrier, Killing-zero
-   priming and local zeta/weighted defect are now certified but its two
-   infinite active scalar modified determinants remain unevaluated, while
-   arbitrary-background finite rows still require a generic primed Green
-   kernel or spectral measure;
+   only then promote the rigorously derived `S2(1) x S2(2)` weighted `R(K)`,
+   finite-part `R(K^2)`, coupled Schur and minimal-vector enclosures; the
+   regular-complement `det_3`, matched exceptional factor `3^-6`, exact/coexact
+   carrier, Killing-zero priming, local zeta/weighted defect and both infinite
+   active scalar modified determinants are now derived, while arbitrary-
+   background finite rows still require a generic primed Green kernel or
+   spectral measure;
 2. classify the parity-odd derivative sector and fix the finite `C2` and
    absolute dressed `R(g_hat)^2` normalizations and renormalized products;
 3. use those data to determine complete `Gamma1/Q1`;
@@ -577,3 +580,10 @@ pinned Cartan, relative, Lorentzian and transfer receipts outside the spectral
 package. That run is recorded as a failure, not a pass; the rigorous
 weighted-row enclosure remains a precertificate with both standard
 coefficient-computed flags false.
+
+The product minimal-vector precertificate was regenerated in `30.0 s`; its
+independent verifier passed in `0.2 s` and its six scoped tests passed in
+about `29.7 s`. The complete outward-serialization regression chain passes
+17 tests in `37.69 s`. Tier 3 was not rerun because this dependent result
+cannot promote while the recorded unrelated receipt failures remain
+unresolved.

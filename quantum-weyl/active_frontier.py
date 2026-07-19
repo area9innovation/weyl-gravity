@@ -97,6 +97,10 @@ DEPENDENCIES = {
     "round_S4_ghost_Schur_zeta_factorization": HERE / "spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION.json",
     "product_S2_S2_ghost_Schur_spectral_carrier": HERE / "spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_SPECTRAL_CARRIER.json",
     "product_S2_S2_ghost_Schur_det3_enclosure": HERE / "spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_DET3_ENCLOSURE.json",
+    "product_S2_S2_ghost_Schur_weighted_rows": HERE / "spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_WEIGHTED_ROWS.json",
+    "product_S2_S2_ghost_Schur_modified_determinant": HERE / "spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_MODIFIED_DETERMINANT_PRECERTIFICATE.json",
+    "product_S2_S2_ghost_minimal_vector_carrier": HERE / "spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_MINIMAL_VECTOR_CARRIER.json",
+    "product_S2_S2_ghost_minimal_vector_determinant": HERE / "spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_MINIMAL_VECTOR_DETERMINANT_PRECERTIFICATE.json",
     "generic_ghost_Schur_weight_raised_zeta_factorization": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION.json",
     "generic_ghost_n3_adiabatic_carrier": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
     "generic_ghost_n3_triangle_kernel": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json",
@@ -231,6 +235,10 @@ def _load() -> dict[str, dict[str, Any]]:
         "round_S4_ghost_Schur_zeta_factorization": "ROUND_S4_ZETA_TO_WEIGHTED_SCHUR_FACTORIZATION_DEFECT_COMPUTED",
         "product_S2_S2_ghost_Schur_spectral_carrier": "NON_EINSTEIN_PRODUCT_SPECTRUM_AND_MATCHED_ZERO_POLE_POLICY_COMPUTED",
         "product_S2_S2_ghost_Schur_det3_enclosure": "PRODUCT_S2_S2_REGULAR_SCHUR_DET3_RIGOROUSLY_ENCLOSED",
+        "product_S2_S2_ghost_Schur_weighted_rows": "PRODUCT_WEIGHTED_ROWS_RIGOROUS_ENCLOSURES_DERIVED_TIER3_BLOCKED",
+        "product_S2_S2_ghost_Schur_modified_determinant": "COUPLED_SCHUR_FACTOR_RIGOROUS_ENCLOSURE_DERIVED_TIER3_BLOCKED",
+        "product_S2_S2_ghost_minimal_vector_carrier": "MINIMAL_VECTOR_EXACT_COEXACT_SPECTRUM_AND_PRIMING_COMPUTED",
+        "product_S2_S2_ghost_minimal_vector_determinant": "MINIMAL_VECTOR_AND_FULL_WEIGHTED_GHOST_ENCLOSURES_DERIVED_TIER3_BLOCKED",
         "generic_ghost_Schur_weight_raised_zeta_factorization": "GENERIC_WEIGHT_RAISED_SCHUR_ZETA_FACTORIZATION_LOCAL_DEFECT_COMPUTED",
         "scalar_flat_K_Ricci_crosswalk": "K_EQUALS_RICCI_MODULO_QUADRATIC_CURVATURE_ON_SCALAR_FLAT_DOMAIN",
         "generic_ghost_n3_five_carrier_projection": "N3_GHOST_TRIANGLE_PROJECTED_TO_SCALAR_FLAT_FIVE_CARRIER_QUOTIENT",
@@ -337,6 +345,10 @@ def _load() -> dict[str, dict[str, Any]]:
     round_s4_ghost_schur_zeta = values["round_S4_ghost_Schur_zeta_factorization"]
     product_s2_s2_ghost_schur = values["product_S2_S2_ghost_Schur_spectral_carrier"]
     product_s2_s2_ghost_schur_det3 = values["product_S2_S2_ghost_Schur_det3_enclosure"]
+    product_s2_s2_ghost_schur_weighted = values["product_S2_S2_ghost_Schur_weighted_rows"]
+    product_s2_s2_ghost_schur_modified = values["product_S2_S2_ghost_Schur_modified_determinant"]
+    product_s2_s2_ghost_minimal_carrier = values["product_S2_S2_ghost_minimal_vector_carrier"]
+    product_s2_s2_ghost_minimal_determinant = values["product_S2_S2_ghost_minimal_vector_determinant"]
     generic_ghost_schur_weight_raised = values["generic_ghost_Schur_weight_raised_zeta_factorization"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
     generic_ghost_n3_triangle = values["generic_ghost_n3_triangle_kernel"]
@@ -1367,6 +1379,63 @@ def _load() -> dict[str, dict[str, Any]]:
         is not False
     ):
         raise ValueError("product-S2xS2 ghost Schur det3 frontier drifted")
+    if (
+        not product_s2_s2_ghost_schur_weighted.get("weighted_rows", {}).get(
+            "R_Delta_K", {}
+        ).get("lower", "").startswith("-2.2406602690")
+        or not product_s2_s2_ghost_schur_weighted.get("weighted_rows", {}).get(
+            "FP_R_Delta_K2", {}
+        ).get("upper", "").startswith("1.9669718542")
+        or product_s2_s2_ghost_schur_weighted.get("claim_flags", {}).get(
+            "PRODUCT_WEIGHTED_ROW_RIGOROUS_ENCLOSURES_DERIVED"
+        )
+        is not True
+        or product_s2_s2_ghost_schur_weighted.get("claim_flags", {}).get(
+            "PRODUCT_WEIGHTED_R_K_COMPUTED"
+        )
+        is not False
+    ):
+        raise ValueError("product-S2xS2 ghost Schur weighted-row frontier drifted")
+    if (
+        not product_s2_s2_ghost_schur_modified.get("directed_enclosures", {}).get(
+            "coupled_schur_log", {}
+        ).get("lower", "").startswith("-9.4895160141")
+        or product_s2_s2_ghost_schur_modified.get("claim_flags", {}).get(
+            "MATCHED_EXCEPTIONAL_COUPLED_SCHUR_ENCLOSURE_DERIVED"
+        )
+        is not True
+        or product_s2_s2_ghost_schur_modified.get("tier3_blocker", {}).get("status")
+        != "FAILED_NOT_A_PASS"
+    ):
+        raise ValueError("product-S2xS2 ghost Schur assembly frontier drifted")
+    if (
+        product_s2_s2_ghost_minimal_carrier.get("claim_flags", {}).get(
+            "PRODUCT_MINIMAL_VECTOR_MODE_CARRIER_SUPPLIED"
+        )
+        is not True
+        or product_s2_s2_ghost_minimal_carrier.get("claim_flags", {}).get(
+            "MINIMAL_VECTOR_ZETA_WEIGHTED_LOCAL_DEFECT_COMPUTED"
+        )
+        is not True
+        or not product_s2_s2_ghost_minimal_determinant.get(
+            "directed_enclosures", {}
+        ).get("full_vector_plus_schur_weighted", {}).get("lower", "").startswith(
+            "19.0791598956"
+        )
+        or product_s2_s2_ghost_minimal_determinant.get("claim_flags", {}).get(
+            "FULL_VECTOR_PLUS_SCHUR_WEIGHTED_ENCLOSURE_DERIVED"
+        )
+        is not True
+        or product_s2_s2_ghost_minimal_determinant.get("claim_flags", {}).get(
+            "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED"
+        )
+        is not False
+        or product_s2_s2_ghost_minimal_determinant.get("tier3_blocker", {}).get(
+            "status"
+        )
+        != "FAILED_NOT_A_PASS"
+    ):
+        raise ValueError("product-S2xS2 ghost minimal-vector determinant frontier drifted")
     if (
         generic_ghost_schur_weight_raised.get("generic_local_result", {}).get(
             "coefficient_of_(4pi)^-2_integral_R2"
@@ -2887,8 +2956,7 @@ def build() -> dict[str, Any]:
             "Wres(K)=(4 pi)^-2 integral(R^2+4 Ric^2)/9, "
             "Wres(K^2)=(4 pi)^-2 integral(R^2+2 Ric^2)/27, and "
             "Wres(log S_L)=(4 pi)^-2 integral(5R^2+22Ric^2)/54. "
-            "For the declared order-two scalar weight Q_mu=(Delta_0+Pi_0)/mu^2, the weighted-trace pole and scale conversion are exact: d/dlog(mu) log Det_(3,R_mu)(S_L)=Wres(log S_L). The reference-scale finite R(K), finite R(K^2), and possible "
-            "generic finite rows remain open. For the canonical weight-raised comparison A=S_L Q, B=Q, the order-minus-three/four BCH carrier is now exact: its weighted trace vanishes through four-dimensional residue order and the local defect is -(1/4)Wres(K^2)=-(4 pi)^-2 integral(R^2+2 Ric^2)/108. On the round unit S4 fixture, after deleting the absent ell=0 gradient and five ell=1 conformal-Killing zero modes, both reference finite rows are exact digamma/trigamma values, the canonical det_3 tail has an exact rational enclosure of width below 5.8e-48, and their selected weighted modified determinant is -3.9781454856154116... . The Einstein numerator/denominator factorization defect is 5/3, while the distinct generic weight-raised convention specializes to -1/3; the exact difference 2 is a factorization-convention effect. The corresponding zeta ratios are -2.3114788189487449608... and -4.3114788189487449608... . On S2(k1)xS2(k2), closed mode and degeneracy formulas now supply a complete non-Einstein spectral measure for the same Schur kernel. Six minimal-vector zeros are matched Schur poles and contribute the finite coupled correction 3^-6, so they cannot be primed independently. The product Wres(K^2) replay is exact. On S2(1)xS2(2), the regular-complement det_3 is rigorously enclosed with certified common prefix 0.3263039; weighted R(K) and finite-part R(K^2) remain open. A finite-rank smoothing witness proves that the full primed Green kernel or spectral measure is still necessary for arbitrary generic-background finite values. "
+            "For the declared order-two scalar weight Q_mu=(Delta_0+Pi_0)/mu^2, the weighted-trace pole and scale conversion are exact: d/dlog(mu) log Det_(3,R_mu)(S_L)=Wres(log S_L). Generic reference-scale finite rows remain open. For the canonical weight-raised comparison A=S_L Q, B=Q, the order-minus-three/four BCH carrier is now exact: its weighted trace vanishes through four-dimensional residue order and the local defect is -(1/4)Wres(K^2)=-(4 pi)^-2 integral(R^2+2 Ric^2)/108. On the round unit S4 fixture, after deleting the absent ell=0 gradient and five ell=1 conformal-Killing zero modes, both reference finite rows are exact digamma/trigamma values, the canonical det_3 tail has an exact rational enclosure of width below 5.8e-48, and their selected weighted modified determinant is -3.9781454856154116... . The Einstein numerator/denominator factorization defect is 5/3, while the distinct generic weight-raised convention specializes to -1/3; the exact difference 2 is a factorization-convention effect. The corresponding zeta ratios are -2.3114788189487449608... and -4.3114788189487449608... . On S2(k1)xS2(k2), closed mode and degeneracy formulas now supply a complete non-Einstein spectral measure for the same Schur kernel. Six minimal-vector zeros are matched Schur poles and contribute the finite coupled correction 3^-6, so they cannot be primed independently. The product Wres(K^2) replay is exact. On S2(1)xS2(2), the regular-complement det_3, weighted R(K), finite-part R(K^2), matched exceptional Schur factor, both exact/coexact minimal-vector determinants and their combined vector-plus-Schur weighted logarithm are rigorously enclosed. The last lies in [19.0791598956...,19.0791630891...]. These weighted-row and determinant results remain fail-closed precertificates because the required Tier-3 promotion run exposed stale receipts outside the spectral package. A finite-rank smoothing witness still proves that the full primed Green kernel or spectral measure is necessary for arbitrary generic-background finite values. "
             "The five repository form-factor functions and their "
             "coefficients, the parity-odd derivative-decorated manifest and the additive C2 "
             "normalization remain open. The imported raw "
@@ -2931,7 +2999,7 @@ def build() -> dict[str, Any]:
             "Wres(K)=(4 pi)^-2 integral(R^2+4 Ric^2)/9, "
             "Wres(K^2)=(4 pi)^-2 integral(R^2+2 Ric^2)/27, and "
             "Wres(log S_L)=(4 pi)^-2 integral(5R^2+22Ric^2)/54. Ordinary trace-class "
-            "determinacy is not implied. The selected order-two weight fixes the pole and scale normalization, and the round-S4 spectrum fixes both reference finite constants after the certified zero-mode deletion. Exact rational alternating-series and Euler--Maclaurin bounds also fix the round-S4 det_3 tail and selected weighted modified determinant. The commuting Einstein-ratio round-S4 zeta-to-weighted factorization defect is exactly 5/3. For the separately frozen generic weight-raised convention A=S_L Q, B=Q, the noncommuting BCH trace is exact through residue order and gives -(1/4)Wres(K^2); it specializes to -1/3 on round S4. The exact S2(k1)xS2(k2) spectrum is now supplied and detects anisotropic tracefree Ricci curvature. Its six exceptional exact-vector zeros are Schur poles whose coupled product is 3^-6; independent deletion is invalid. On S2(1)xS2(2), the regular-complement det_3 has certified common prefix 0.3263039; the weighted finite rows remain open, and a finite-rank smoothing witness proves that arbitrary generic finite constants still require the full primed Green/spectral carrier. "
+            "determinacy is not implied. The selected order-two weight fixes the pole and scale normalization, and the round-S4 spectrum fixes both reference finite constants after the certified zero-mode deletion. Exact rational alternating-series and Euler--Maclaurin bounds also fix the round-S4 det_3 tail and selected weighted modified determinant. The commuting Einstein-ratio round-S4 zeta-to-weighted factorization defect is exactly 5/3. For the separately frozen generic weight-raised convention A=S_L Q, B=Q, the noncommuting BCH trace is exact through residue order and gives -(1/4)Wres(K^2); it specializes to -1/3 on round S4. The exact S2(k1)xS2(k2) spectrum is now supplied and detects anisotropic tracefree Ricci curvature. Its six exceptional exact-vector zeros are Schur poles whose coupled product is 3^-6; independent deletion is invalid. On S2(1)xS2(2), rigorous product-heat and rational-tail enclosures now determine the weighted Schur rows and the exact/coexact minimal-vector blocks, including the selected combined vector-plus-Schur weighted logarithm [19.0791598956...,19.0791630891...]. Promotion remains blocked by the recorded failed Tier-3 run, and a finite-rank smoothing witness proves that arbitrary generic finite constants still require the full primed Green/spectral carrier. "
             "The five parity-even third-curvature repository functions and "
             "coefficients, the parity-odd derivative manifest, renormalized "
             "BV Laplacian or time-ordered product, finite normalization conditions, and global Green data "

@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl/product-s2-s2-ghost-minimal-vector-determinant-precertificate-v1.schema.json",
+  "$defs": {
+    "decimal": {
+      "type": "string",
+      "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?([eE][+-]?[0-9]+)?$"
+    },
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lower", "upper"],
+      "properties": {
+        "lower": {"$ref": "#/$defs/decimal"},
+        "upper": {"$ref": "#/$defs/decimal"}
+      }
+    },
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "det3_proof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "component",
+        "shift",
+        "rectangular_cutoff",
+        "large_mode_count",
+        "large_taylor_order",
+        "small_mode_count",
+        "small_taylor_order",
+        "small_sum_binary64",
+        "small_x3_binary64",
+        "per_term_relative_error_bound",
+        "summation_gamma",
+        "rounding_bound",
+        "small_taylor_remainder_bound",
+        "exterior_tail_bound"
+      ],
+      "properties": {
+        "component": {"enum": ["first", "second"]},
+        "shift": {"enum": [2, 4]},
+        "rectangular_cutoff": {"const": 2400},
+        "large_mode_count": {"type": "integer", "minimum": 1},
+        "large_taylor_order": {"const": 120},
+        "small_mode_count": {"type": "integer", "minimum": 1},
+        "small_taylor_order": {"const": 8},
+        "small_sum_binary64": {"$ref": "#/$defs/decimal"},
+        "small_x3_binary64": {"$ref": "#/$defs/decimal"},
+        "per_term_relative_error_bound": {"$ref": "#/$defs/rational"},
+        "summation_gamma": {"$ref": "#/$defs/rational"},
+        "rounding_bound": {"$ref": "#/$defs/rational"},
+        "small_taylor_remainder_bound": {"$ref": "#/$defs/rational"},
+        "exterior_tail_bound": {"$ref": "#/$defs/rational"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "product_zeta_rows",
+    "active_zeta_rows",
+    "det3_proofs",
+    "directed_enclosures",
+    "claim_flags",
+    "tier3_blocker",
+    "dependencies",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-product-s2-s2-ghost-minimal-vector-determinant-precertificate-v1"},
+    "result_id": {"const": "PRODUCT_S2_S2_GHOST_MINIMAL_VECTOR_DETERMINANT_PRECERTIFICATE"},
+    "result_state": {"const": "MINIMAL_VECTOR_AND_FULL_WEIGHTED_GHOST_ENCLOSURES_DERIVED_TIER3_BLOCKED"},
+    "lifecycle_state": {"const": "PRECERTIFICATE_TIER3_FAILED_NO_PROMOTION"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["background", "boundary", "operators", "signature"],
+      "properties": {
+        "background": {"const": "S2(1) x S2(2)"},
+        "boundary": {"const": "closed compact product without boundary"},
+        "operators": {"const": "F=-Box I+Ric and A=F-2 Ric on one-forms"},
+        "signature": {"const": "Euclidean"}
+      }
+    },
+    "product_zeta_rows": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "FP_product_zeta_at_1",
+        "FP_product_zeta_at_2",
+        "EM_error_at_1",
+        "EM_error_at_2",
+        "upper_cutoff_error_at_1",
+        "upper_cutoff_error_at_2",
+        "sphere_subtractions"
+      ],
+      "properties": {
+        "FP_product_zeta_at_1": {"$ref": "#/$defs/interval"},
+        "FP_product_zeta_at_2": {"$ref": "#/$defs/interval"},
+        "EM_error_at_1": {"$ref": "#/$defs/rational"},
+        "EM_error_at_2": {"$ref": "#/$defs/rational"},
+        "upper_cutoff_error_at_1": {"$ref": "#/$defs/rational"},
+        "upper_cutoff_error_at_2": {"$ref": "#/$defs/rational"},
+        "sphere_subtractions": {"type": "string", "minLength": 40}
+      }
+    },
+    "active_zeta_rows": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["first_FP_zeta_1", "first_FP_zeta_2", "second_FP_zeta_1", "second_FP_zeta_2"],
+      "properties": {
+        "first_FP_zeta_1": {"$ref": "#/$defs/interval"},
+        "first_FP_zeta_2": {"$ref": "#/$defs/interval"},
+        "second_FP_zeta_1": {"$ref": "#/$defs/interval"},
+        "second_FP_zeta_2": {"$ref": "#/$defs/interval"}
+      }
+    },
+    "det3_proofs": {
+      "type": "array",
+      "prefixItems": [
+        {"allOf": [{"$ref": "#/$defs/det3_proof"}, {"properties": {"component": {"const": "first"}, "shift": {"const": 2}}}]},
+        {"allOf": [{"$ref": "#/$defs/det3_proof"}, {"properties": {"component": {"const": "second"}, "shift": {"const": 4}}}]}
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "directed_enclosures": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "first_component_weighted_modified",
+        "second_component_weighted_modified",
+        "two_polarization_minimal_vector_weighted",
+        "two_polarization_minimal_vector_zeta",
+        "full_vector_plus_schur_weighted"
+      ],
+      "properties": {
+        "first_component_weighted_modified": {"$ref": "#/$defs/interval"},
+        "second_component_weighted_modified": {"$ref": "#/$defs/interval"},
+        "two_polarization_minimal_vector_weighted": {"$ref": "#/$defs/interval"},
+        "two_polarization_minimal_vector_zeta": {"$ref": "#/$defs/interval"},
+        "full_vector_plus_schur_weighted": {"$ref": "#/$defs/interval"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["MINIMAL_VECTOR_RIGOROUS_ENCLOSURE_DERIVED", "FULL_VECTOR_PLUS_SCHUR_WEIGHTED_ENCLOSURE_DERIVED", "MINIMAL_VECTOR_INFINITE_WEIGHTED_DETERMINANT_COMPUTED", "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "MINIMAL_VECTOR_RIGOROUS_ENCLOSURE_DERIVED": {"const": true},
+        "FULL_VECTOR_PLUS_SCHUR_WEIGHTED_ENCLOSURE_DERIVED": {"const": true},
+        "MINIMAL_VECTOR_INFINITE_WEIGHTED_DETERMINANT_COMPUTED": {"const": false},
+        "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "tier3_blocker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command", "elapsed_seconds", "tests_run", "failures", "errors", "failure_scopes", "spectral_package_failures", "status"],
+      "properties": {
+        "command": {"type": "string", "minLength": 20},
+        "elapsed_seconds": {"$ref": "#/$defs/decimal"},
+        "tests_run": {"type": "integer", "minimum": 1},
+        "failures": {"type": "integer", "minimum": 1},
+        "errors": {"type": "integer", "minimum": 1},
+        "failure_scopes": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "spectral_package_failures": {"const": 0},
+        "status": {"const": "FAILED_NOT_A_PASS"}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["carrier", "schur_assembly"],
+      "properties": {
+        "carrier": {"$ref": "#/$defs/dependency"},
+        "schur_assembly": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 20},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  }
+}

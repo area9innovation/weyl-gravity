@@ -6,10 +6,13 @@ import json
 import unittest
 
 from jsonschema import Draft202012Validator
+import mpmath as mp
+from mpmath.libmp import to_rational
 
 from spectral.euclidean.product_s2_s2_ghost_schur_weighted_rows import (
     OUTPUT,
     SCHEMA,
+    _endpoint,
     build,
 )
 from spectral.euclidean.verify_product_s2_s2_ghost_schur_weighted_rows import (
@@ -45,6 +48,14 @@ class ProductS2S2GhostSchurWeightedRowsTests(unittest.TestCase):
             upper = Decimal(rows[name]["upper"])
             self.assertLess(lower, upper)
             self.assertLess(upper - lower, Decimal("4e-9"))
+
+    def test_serialized_interval_endpoints_round_outward(self) -> None:
+        mp.iv.dps = 70
+        interval = mp.iv.mpf(1) / 3
+        exact_lower = Fraction(*to_rational(interval._mpi_[0]))
+        exact_upper = Fraction(*to_rational(interval._mpi_[1]))
+        self.assertLessEqual(Fraction(_endpoint(interval, 0)), exact_lower)
+        self.assertGreaterEqual(Fraction(_endpoint(interval, 1)), exact_upper)
 
     def test_claim_promotion_is_scoped(self) -> None:
         flags = self.value["claim_flags"]

@@ -1,0 +1,184 @@
+{
+  "active_zeta_rows": {
+    "first_FP_zeta_1": {
+      "lower": "-1.847270216706689344775323501401065362936636263027365037400733713026019258302486659",
+      "upper": "-1.847270216706609914212381940942052452959163908312817598206164292404346316462454082"
+    },
+    "first_FP_zeta_2": {
+      "lower": "-0.6780029101096628866853381247365150746586702511479402830426005552498202489903853249",
+      "upper": "-0.6780029101096591357976436621592838965576351562229504439454522103341202641325887295"
+    },
+    "second_FP_zeta_1": {
+      "lower": "-1.521059471888194860090451652212556078016545666147416263266840952657583804844704610",
+      "upper": "-1.521059471888115429527510091753543168039073311432868824072271532035910863004672032"
+    },
+    "second_FP_zeta_2": {
+      "lower": "-0.8655029101096628866853381247365150746586702511479402830426005552498202489903853249",
+      "upper": "-0.8655029101096591357976436621592838965576351562229504439454522103341202641325887295"
+    }
+  },
+  "claim_boundary": "This EUCLIDEAN-SPECTRAL precertificate rigorously derives the two active minimal-vector modified determinants, their two-polarization weighted and separately zeta-regularized totals, and the selected full vector-plus-Schur weighted enclosure on S2(1) x S2(2). The standard computed flags remain false because the inherited 830-test Tier-3 promotion run failed on stale receipts outside this spectral package. This special-background determinant is not a generic-background form factor, complete BV ledger, Gamma1/Q1, restored QME, or Lorentzian causal, Hadamard, state-space, particle, positivity, scattering or unitarity theorem.",
+  "claim_flags": {
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": false,
+    "FULL_VECTOR_PLUS_SCHUR_WEIGHTED_ENCLOSURE_DERIVED": true,
+    "LORENTZIAN_CERTIFIED": false,
+    "MINIMAL_VECTOR_INFINITE_WEIGHTED_DETERMINANT_COMPUTED": false,
+    "MINIMAL_VECTOR_RIGOROUS_ENCLOSURE_DERIVED": true
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "dependencies": {
+    "carrier": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_MINIMAL_VECTOR_CARRIER.json",
+      "result_id": "PRODUCT_S2_S2_GHOST_MINIMAL_VECTOR_CARRIER",
+      "sha256": "dde2c631ee432e282569532a93b2ff196fc69da3cb3a5870a2323bf7b46bb70e"
+    },
+    "schur_assembly": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_MODIFIED_DETERMINANT_PRECERTIFICATE.json",
+      "result_id": "PRODUCT_S2_S2_GHOST_SCHUR_MODIFIED_DETERMINANT_PRECERTIFICATE",
+      "sha256": "4cd903ff762812243b89bdb3d4eb71c78fc95510aad45b1d6677448d1b3a80c8"
+    }
+  },
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "det3_proofs": [
+    {
+      "component": "first",
+      "exterior_tail_bound": {
+        "denominator": 99222907809334485169300263295666521600,
+        "numerator": 17225792418105723592096356377417
+      },
+      "large_mode_count": 100,
+      "large_taylor_order": 120,
+      "per_term_relative_error_bound": {
+        "denominator": 1125899906842599,
+        "numerator": 400
+      },
+      "rectangular_cutoff": 2400,
+      "rounding_bound": {
+        "denominator": 10141204795337838124693055743107,
+        "numerator": 6491374787001097771901
+      },
+      "shift": 2,
+      "small_mode_count": 5762299,
+      "small_sum_binary64": "0.006734619797821372",
+      "small_taylor_order": 8,
+      "small_taylor_remainder_bound": {
+        "denominator": 445500000000,
+        "numerator": 1
+      },
+      "small_x3_binary64": "0.020127474826623484",
+      "summation_gamma": {
+        "denominator": 9007199248978693,
+        "numerator": 5762299
+      }
+    },
+    {
+      "component": "second",
+      "exterior_tail_bound": {
+        "denominator": 12402859174993459221966858698290361268,
+        "numerator": 17225792418105723592096356377417
+      },
+      "large_mode_count": 201,
+      "large_taylor_order": 120,
+      "per_term_relative_error_bound": {
+        "denominator": 1125899906842599,
+        "numerator": 400
+      },
+      "rectangular_cutoff": 2400,
+      "rounding_bound": {
+        "denominator": 5070602397668975920291823422803,
+        "numerator": 12982522142221013338804
+      },
+      "shift": 4,
+      "small_mode_count": 5762198,
+      "small_sum_binary64": "0.026806366097562904",
+      "small_taylor_order": 8,
+      "small_taylor_remainder_bound": {
+        "denominator": 445500000000,
+        "numerator": 1
+      },
+      "small_x3_binary64": "0.0801163502593824",
+      "summation_gamma": {
+        "denominator": 4503599624489397,
+        "numerator": 2881099
+      }
+    }
+  ],
+  "directed_enclosures": {
+    "first_component_weighted_modified": {
+      "lower": "4.646422442100274259891988803849915323552444913326092041587846279052295817199720923",
+      "upper": "4.646422616989893943857662200783118979715981648171708229534514281587689888205616436"
+    },
+    "full_vector_plus_schur_weighted": {
+      "lower": "19.07915989564301678904345659172747986535336947116729202259262788250832595852566531",
+      "upper": "19.07916308906549899135855181788216377260552943797431746815854373124431520881166510"
+    },
+    "second_component_weighted_modified": {
+      "lower": "9.637915512772113237402935860616727389806527614286740903468366213772636051772801977",
+      "upper": "9.637916906751974992806946219517579767038259813153466032320196530283657664990376171"
+    },
+    "two_polarization_minimal_vector_weighted": {
+      "lower": "28.56867590974477499458984932893328542671794505522566589011242498564986373794504580",
+      "upper": "28.56867904748373787332921684060139749350848292265034852370942162374269510639198522"
+    },
+    "two_polarization_minimal_vector_zeta": {
+      "lower": "18.56867590974477499458984932893328542671794505522566589011242498564986373794504580",
+      "upper": "18.56867904748373787332921684060139749350848292265034852370942162374269510639198522"
+    }
+  },
+  "lifecycle_state": "PRECERTIFICATE_TIER3_FAILED_NO_PROMOTION",
+  "next_gate": "RECONCILE_AND_PASS_TIER3_THEN_PROMOTE_THE_FULL_WEIGHTED_PRODUCT_GHOST_ENCLOSURE_AND_INSERT_IT_IN_THE_REMAINING_BV_LEDGER",
+  "product_zeta_rows": {
+    "EM_error_at_1": {
+      "denominator": 69269566896227275023293482126468532039030780194121935717662720000000000000000000000000000000000000000000000000000000000,
+      "numerator": 2751060346642706668632995681821923638260473501857973945616404414414249924065211851372832169201256498428643
+    },
+    "EM_error_at_2": {
+      "denominator": 1466884946037754059316803150913451266708887109993170403432857600000000000000000000000000000000000000000000000000000000000,
+      "numerator": 2751060346642706668642462703826842767713932957320646464102661099821512746547131851372832169201256498428643
+    },
+    "FP_product_zeta_at_1": {
+      "lower": "-0.6166281420851291388774274720477512159322269942675690656553064828878483365727491183",
+      "upper": "-0.6166281420850497083144859115887383059547546395530216264607370622661754218997537781"
+    },
+    "FP_product_zeta_at_2": {
+      "lower": "0.3219970898903371133146618752634849253413297488520597169573994447501797510096146751",
+      "upper": "0.3219970898903408642023563378407161034423648437770495560545477896658797313395717310"
+    },
+    "sphere_subtractions": "FP zeta_S2(1)=2 EulerGamma-1, zeta_S2(2)=1, and zeta_(2 Delta)(s)=2^-s zeta_Delta(s)",
+    "upper_cutoff_error_at_1": {
+      "denominator": 546812681195752981093125556779405341338292357723303109106442651602488249799843980805878294255763456,
+      "numerator": 47469573180507726783255683366624872478424688995861395
+    },
+    "upper_cutoff_error_at_2": {
+      "denominator": 2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824,
+      "numerator": 199372207358132452489673870139824464409383693782617859
+    }
+  },
+  "result_id": "PRODUCT_S2_S2_GHOST_MINIMAL_VECTOR_DETERMINANT_PRECERTIFICATE",
+  "result_state": "MINIMAL_VECTOR_AND_FULL_WEIGHTED_GHOST_ENCLOSURES_DERIVED_TIER3_BLOCKED",
+  "schema": "quantum-weyl-product-s2-s2-ghost-minimal-vector-determinant-precertificate-v1",
+  "scope": {
+    "background": "S2(1) x S2(2)",
+    "boundary": "closed compact product without boundary",
+    "operators": "F=-Box I+Ric and A=F-2 Ric on one-forms",
+    "signature": "Euclidean"
+  },
+  "tier3_blocker": {
+    "command": "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl -p 'test_*.py' -q",
+    "elapsed_seconds": "629.08",
+    "errors": 12,
+    "failure_scopes": [
+      "cartan",
+      "relative",
+      "lorentzian",
+      "transfer"
+    ],
+    "failures": 20,
+    "spectral_package_failures": 0,
+    "status": "FAILED_NOT_A_PASS",
+    "tests_run": 830
+  }
+}
