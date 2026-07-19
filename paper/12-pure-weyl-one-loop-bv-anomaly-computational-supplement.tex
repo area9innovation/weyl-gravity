@@ -941,11 +941,62 @@ the minimal-vector factor is zero and the separately written Schur factor is
 singular, while their coupled product is $1/3$ per mode.  The correct
 regular-complement prescription therefore carries the finite correction
 $3^{-6}$.  The checked finite-cutoff fixture is exact; the infinite
-bivariate analytic continuation remains fail-closed.
+bivariate weighted finite-part continuation remains fail-closed.
 
 \begin{verbatim}
 P=spectral.euclidean
 M=product_s2_s2_ghost_schur_spectral_carrier
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl python3 -m unittest \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+\end{verbatim}
+
+\subsection{Product-background Schur det3 enclosure}
+
+On the $(k_1,k_2)=(1,2)$ fixture, the regular-complement sum is
+\[
+ \log\det{}_3(\mathbf1+K)=
+ \sum_{(\ell,m)\notin\{(0,0),(1,0),(0,1)\}}d_{\ell m}
+ \left[\log(1+K_{\ell m})-K_{\ell m}+\frac12K_{\ell m}^2\right].
+\]
+At rectangular cutoff $L=2400$, the exact bound
+$K\leq4/[3(\lambda-4)]$ reduces the $K>1/100$ sector to the 54 modes with
+$\lambda\leq137$.  Their values are enclosed by the rational alternating
+Taylor series through order 100.  The remaining $5{,}764{,}744$ modes use the
+even order-eight lower sum.  Since all terms are positive, the standard
+$\gamma_N$ estimate for ordinary summation applies.  Exact integer inputs are
+below $2^{53}$, a forty-operation bound and the $51/50$ polynomial condition
+bound give relative per-term error below $10^{-12}$, and the observed sum
+proves the exact small-mode sum is below $1/500$.  The derived absolute
+roundoff bound is below $1.283\times10^{-12}$, hence the declared $10^{-10}$
+cushion is rigorous.  The exact Taylor remainder bound is
+\[
+ \frac{943}{4{,}800{,}000{,}000{,}000}.
+\]
+
+Writing $x=\ell+1/2$, $y=m+1/2$, and $q=x^2+2y^2$, the exterior rectangle is
+bounded using
+\[
+ \sum_m\frac{4xy}{q^3}\leq\frac1{2x^3}+\frac{125}{162x^4},
+ \qquad
+ \sum_\ell\frac{4xy}{q^3}\leq\frac1{4y^3}+\frac{125}{432y^4}.
+\]
+The resulting exact rational tail is below $5.144\times10^{-8}$.  Combining
+the three errors yields
+\[
+ 0.32630391405410603404\ldots
+ <\log\det{}_3(\mathbf1+K)<
+ 0.32630396588976784255\ldots .
+\]
+The independent consumer directly evaluates the large modes and uses an
+order-twelve stable series on the small modes.  It rederives the exterior
+bound and verifies that the exceptional correction remains the separate
+factor $3^{-6}$.
+
+\begin{verbatim}
+P=spectral.euclidean
+M=product_s2_s2_ghost_schur_det3_enclosure
 PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
 PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
 PYTHONPATH=quantum-weyl python3 -m unittest \

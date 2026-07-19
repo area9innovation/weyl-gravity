@@ -417,6 +417,10 @@
       "denominator": 27,
       "numerator": 28
     },
+    "product_S2_S2_ghost_Schur_det3_common_prefix": "0.3263039",
+    "product_S2_S2_ghost_Schur_det3_computed": true,
+    "product_S2_S2_ghost_Schur_det3_lower_bound": "0.3263039140541060340442702300881926528478962349815307087039355740126582",
+    "product_S2_S2_ghost_Schur_det3_upper_bound": "0.3263039658897678425580772950861254362747818943846919647028157550467665",
     "product_S2_S2_ghost_Schur_exceptional_correction": "3^-6",
     "product_S2_S2_ghost_Schur_spectral_measure_supplied": true,
     "pure_Diff_and_mixed_additional_classes": 0,
@@ -517,7 +521,7 @@
     "universal_CPT_third_curvature_kernels_imported": true
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "3f8ad9dd5b9466326e4f296b6542f4d57e096abd02704191ba4641e49dba5244",
+  "compiled_pdf_sha256": "5547375d44677e31d8f8e73cc2099b3f5dcd9f14ef719e07ecf5dc4b47947494",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
@@ -755,6 +759,10 @@
       "result_id": "GENERIC_SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM",
       "sha256": "d3de38ea404b3ecd203795d11dace62d4b553c4d40a91f92fb1d0f8d00f21b8c"
     },
+    "quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_DET3_ENCLOSURE.json": {
+      "result_id": "PRODUCT_S2_S2_GHOST_SCHUR_DET3_ENCLOSURE",
+      "sha256": "0aaf843e0eb7d771b7ac29a1ec5ef4d7c0d0a79797bdc09c3ee049c9872fa094"
+    },
     "quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_SPECTRAL_CARRIER.json": {
       "result_id": "PRODUCT_S2_S2_GHOST_SCHUR_SPECTRAL_CARRIER",
       "sha256": "e7337ea8bd7fa3f06b6d0d965d0da4e64ce980ff987465755cc4187e2d4cfeee"
@@ -828,16 +836,16 @@
       "sha256": "5b6241ed77ee5ec7a89b210454786c99bbc96681709d89b8d868203c120bcf8f"
     }
   },
-  "latest_coefficient_update": "The longitudinal D_W towers are one Schur kernel. Its exact non-Einstein S2(k1)xS2(k2) spectrum and degeneracies are supplied, with six matched vector-zero/Schur-pole modes contributing 3^-6; the bivariate infinite sums, arbitrary-background finite Schur rows and remaining BV rows stay open.",
+  "latest_coefficient_update": "The longitudinal D_W towers are one Schur kernel. Its exact non-Einstein S2(k1)xS2(k2) spectrum and degeneracies are supplied, with six matched vector-zero/Schur-pole modes contributing 3^-6. On S2(1)xS2(2), the regular-complement det3 is rigorously enclosed with common prefix 0.3263039; weighted R(K), finite-part R(K2), arbitrary-background finite Schur rows and remaining BV rows stay open.",
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "f4a5128234e9bc485eb4d5e2d7a14ef31ed1de49cf607f36712d4930ac39555c",
+  "manuscript_sha256": "b56d8efcaa58f9d7c743f2a15826d9979a156c8dc53a7cc88a481134ab89f9a9",
   "next_gate": {
     "required_inputs": [
       "same-background compensator-inclusive classical contraction",
       "finite C2 and absolute dressed Rhat2 normalization conditions",
-      "full generic-background primed Green/resolvent kernel or complete spectral measure for the reference-scale finite R(K), finite R(K^2), and det3 rows; the round-S4 special-background benchmark is complete but does not substitute for this global carrier",
-      "the three remaining longitudinal/mixed D_W carriers and their generic finite Schur rows from a primed Green/resolvent kernel or complete spectral measure, to be added with remaining BV sectors to the partial-BV five-carrier representative",
+      "analytic continuation of the exact S2(1)xS2(2) weighted R(K) and finite-part R(K^2) sums; the regular-complement det3 and matched exceptional factor are already certified",
+      "a full generic-background primed Green/resolvent kernel or complete spectral measure for the three resummed longitudinal/mixed D_W finite Schur rows; special-background product and round-S4 benchmarks do not substitute for this global carrier",
       "remaining trace substitutions matching the complete full-BV rows to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
       "renormalized BV operator data fixing complete Q1"
     ],
@@ -848,11 +856,11 @@
       "H3-to-H4 and H4-to-H5 maps",
       "pairing correction"
     ],
-    "status": "COMPUTE_THREE_LONGITUDINAL_SCHUR_CARRIERS_AND_REMAINING_BV_SECTORS"
+    "status": "ANALYTICALLY_CONTINUE_PRODUCT_WEIGHTED_R_K_AND_FINITE_PART_R_K2_THEN_ADD_REMAINING_BV_SECTORS"
   },
   "publication_artifacts": {
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "5360d323c441b1832d60b2d593a56c4e5aaee71075f4f45fe1cab0d4709a10b0",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "992882536c2843f6ca1b68a7683018ac3fbe3ab69ba7a8d3b1e98785495ce181",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "3e4cbdc3ca820c7d43c0375e7a29e8a16aa2a7d33b2d90a00493b5321f744d9a",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "fb498bbe3b1ec1ff8d93885f37290f25181b2a73e19949ae52296d257cb171e6",
     "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "c30e5a712e62708eb6dfc7e2bee5dc8a6e16077a48b5ff2d8d8d1644754a4095",
     "paper/generate_12_quantum_anomaly_tables.py": "53fa1f003c9cedd320d7e2d8c8e8b589fcd5fc200c7c0362955107b68e62e4db",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "b7556226f31a06e73e9410c3e382c5eca6b77be3bce6004324ee1c0171b8e8c0",

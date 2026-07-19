@@ -1024,13 +1024,16 @@ three Schur residue rows fixed and the round-`S4` canonical `det_3` tail and
 weighted modified determinant computed. A closed non-Einstein
 `S2(k1) x S2(k2)` spectrum now supplies the anisotropic global carrier and
 shows that six exact-vector zeros are matched Schur poles with coupled factor
-`3^-6`; separate priming is invalid. The selected weight-raised local zeta
-term is also exact. The ten pole-three generic barycentric rows now have
+`3^-6`; separate priming is invalid. On `S2(1) x S2(2)`, the
+regular-complement `det_3` has certified common prefix `0.3263039`. The
+selected weight-raised local zeta term is also exact. The ten pole-three
+generic barycentric rows now have
 exact relative-simplex IBP primitives, a complete punctured-corner
 non-membership theorem, and complete exact `J`-plus-two-log integrated
 functions. The remaining coefficient gate begins with analytically continuing
-the exact bivariate product spectral sums; arbitrary-background finite rows
-still need a generic primed Green/spectral carrier. The covariant Volterra lift of the equal-box Mellin subtraction is
+the exact product weighted `R(K)` and finite-part `R(K^2)` rows;
+arbitrary-background finite rows still need a generic primed Green/spectral
+carrier. The covariant Volterra lift of the equal-box Mellin subtraction is
 now complete, as are all generic contact endpoint residues and their exact
 symmetric-point incidence. The generic corner residues and full boundary
 incidence are now exact, with nonzero Mellin-renormalized `M14` disposition.
@@ -1355,8 +1358,9 @@ representative in a future-proof `PARTIAL_BV` ledger. The exact `I28` quotient
 relation remains coefficientwise zero. The unresolved ghost gate is no longer
 three independent longitudinal/mixed `D_W` carriers: they are one Schur
 kernel. Its exact product spectrum is now known, while the bivariate infinite
-finite-part and `det_3` sums and arbitrary-background finite Schur data remain
-open.
+weighted finite-part sums and arbitrary-background finite Schur data remain
+open. The regular-complement `det_3` sum on the `(k1,k2)=(1,2)` fixture is
+closed by the receipt below.
 
 Receipts:
 [`generic-background-ghost-n1-n2-vector-integrated-functions.md`](../quantum-weyl/reports/generic-background-ghost-n1-n2-vector-integrated-functions.md) and
@@ -1365,7 +1369,7 @@ Receipts:
 Active gate:
 
 ```text
-ANALYTICALLY_CONTINUE_PRODUCT_S2_S2_SCHUR_SUMS_AND_ADD_REMAINING_BV_SECTORS
+ANALYTICALLY_CONTINUE_PRODUCT_WEIGHTED_R_K_AND_FINITE_PART_R_K2_THEN_ADD_REMAINING_BV_SECTORS
 ```
 
 ## Non-Einstein product Schur spectrum (2026-07-19)
@@ -1390,3 +1394,38 @@ so no full coupled ghost determinant or new `Gamma1/Q1` is claimed.
 
 Receipt:
 [`product-s2-s2-ghost-schur-spectral-carrier.md`](../quantum-weyl/reports/product-s2-s2-ghost-schur-spectral-carrier.md).
+
+## Product-background regular-complement det3 (2026-07-19)
+
+On `S2(1) x S2(2)`, the canonical regular-complement sum
+
+\[
+\log\det_3(1+K)=\sum_{(\ell,m)\notin\{(0,0),(1,0),(0,1)\}}
+(2\ell+1)(2m+1)\left[\log(1+K_{\ell m})-K_{\ell m}
++\frac12K_{\ell m}^2\right]
+\]
+
+has the rigorous enclosure
+
+\[
+0.32630391405410603404\ldots
+\;<\;\log\det_3(1+K)\;<\;
+0.32630396588976784255\ldots,
+\]
+
+so its certified common decimal prefix is `0.3263039`. The proof combines an
+exact rational large-mode Taylor enclosure, an ordinary positive small-mode
+finite sum with an explicit `gamma_N` roundoff proof and Taylor remainder
+bounds, and a rational
+rectangular exterior-tail estimate. An independent verifier uses a different
+order-twelve stable series. The matched exceptional correction `3^-6`
+remains separate and is not silently absorbed into this regular-complement
+determinant.
+
+This closes one of the three product spectral rows. The weighted `R(K)` and
+finite-part `R(K^2)` analytic continuations remain the active
+`EUCLIDEAN-SPECTRAL` gate; neither this special-background value nor those
+future rows establish a Lorentzian QME or a particle state.
+
+Receipt:
+[`product-s2-s2-ghost-schur-det3-enclosure.md`](../quantum-weyl/reports/product-s2-s2-ghost-schur-det3-enclosure.md).

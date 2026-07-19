@@ -1448,9 +1448,33 @@ cutoff products.  The principal spectral symbol also reproduces
  \operatorname{Wres}(K^2)
  =\frac{8(k_1^2+k_1k_2+k_2^2)}{27k_1k_2}.
 \]
-The bivariate infinite finite-part and $\det_3$ sums are not evaluated here,
-so this is a background-specific spectral carrier rather than a completed
-ghost determinant or generic form factor.
+The weighted finite-part sums are not evaluated here, so this is a
+background-specific spectral carrier rather than a completed ghost
+determinant or generic form factor.  The regular-complement $\det_3$ sum on
+one non-Einstein fixture is evaluated next.
+\end{proposition}
+
+\begin{proposition}[Product-background Schur det3 enclosure]
+On $S^2(1)\times S^2(2)$, remove the constant scalar mode and the two matched
+zero--pole levels $(1,0)$ and $(0,1)$.  For the remaining product harmonics,
+the canonical third modified determinant obeys
+\[
+ 0.32630391405410603404\ldots
+ <\log\det{}_3(\mathbf1+K)<
+ 0.32630396588976784255\ldots .
+\]
+In particular, its certified common decimal prefix is $0.3263039$.
+
+The enclosure combines an exact rational alternating Taylor bound on the
+finitely many modes with $K>1/100$, an ordinary positive finite sum with an
+explicit $\gamma_N$ roundoff proof and Taylor-remainder cushions on the
+remaining rectangle, and an
+exact rational exterior-tail majorant.  An independent replay uses a
+different stable order-twelve series.  The exceptional coupled correction
+$3^{-6}$ is retained separately: it is not part of this regular-complement
+modified determinant.  The weighted $\mathcal R(K)$ and finite-part
+$\mathcal R(K^2)$ rows remain open, as do the full coupled ghost determinant
+and generic-background finite form factors.
 \end{proposition}
 
 \begin{proposition}[Sharp Schatten split and critical Schur residue]
@@ -1961,10 +1985,10 @@ result is an exact partial-BV five-carrier Mellin-MS representative containing
 the same-gauge physical Hessian, all ghost $n=3$ rows, and
 $N1_{\rm vector}+N2_{\rm vector,vector}$.  The longitudinal/mixed
 $D_W=\delta Wd$ towers are one Schur kernel, whose exact non-Einstein product
-spectrum is supplied above.  Its bivariate infinite finite-part and
-$\det_3$ sums, arbitrary-background finite Schur data, and the remaining BV
-sectors are excluded; this is not the complete ghost determinant,
-$\Gamma_1$, or $Q_1$.
+spectrum is supplied above.  Its regular-complement $\det_3$ value on
+$S^2(1)\times S^2(2)$ is enclosed above, while its weighted finite-part rows,
+arbitrary-background finite Schur data, and the remaining BV sectors are
+excluded; this is not the complete ghost determinant, $\Gamma_1$, or $Q_1$.
 \end{proposition}
 
 \begin{proposition}[Exact symmetric-point ghost triangle fixture]
@@ -2188,6 +2212,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_SPECTRAL_CARRIER.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_DET3_ENCLOSURE.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json}.

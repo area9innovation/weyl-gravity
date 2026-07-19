@@ -57,6 +57,8 @@ def main() -> None:
         "-\\frac{199}{60}=-\\frac c2",
         "Sharp Schatten split and critical Schur residue",
         "Non-Einstein product Schur spectrum and coupled priming",
+        "Product-background Schur det3 enclosure",
+        "0.3263039",
         "3^{-6}",
         "\\det{}_3(\\mathbf1+K)",
         "\\operatorname{Wres}(K)=",
@@ -215,6 +217,14 @@ def main() -> None:
         "numerator": 28,
         "denominator": 27,
     }
+    assert claims["product_S2_S2_ghost_Schur_det3_computed"] is True
+    assert claims["product_S2_S2_ghost_Schur_det3_common_prefix"].startswith(
+        "0.3263039"
+    )
+    assert (
+        claims["product_S2_S2_ghost_Schur_det3_lower_bound"]
+        < claims["product_S2_S2_ghost_Schur_det3_upper_bound"]
+    )
     assert claims["raw_zeta_BoxR_coefficient"] == {
         "basis": ["1", "log(3/2)"],
         "rational": {"numerator": -159, "denominator": 80},
@@ -443,7 +453,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "COMPUTE_THREE_LONGITUDINAL_SCHUR_CARRIERS_AND_REMAINING_BV_SECTORS"
+        == "ANALYTICALLY_CONTINUE_PRODUCT_WEIGHTED_R_K_AND_FINITE_PART_R_K2_THEN_ADD_REMAINING_BV_SECTORS"
     )
 
     dependencies = {}
@@ -483,7 +493,7 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
     assert claims["physical_Hessian_triangle_corner_count"] == 33
     assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
-    assert len(payload["inputs"]) == 67
+    assert len(payload["inputs"]) == 68
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
