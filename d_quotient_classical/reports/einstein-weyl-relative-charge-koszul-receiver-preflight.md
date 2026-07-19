@@ -40,6 +40,16 @@ The derived zero locus is represented, at this reduced-mode stage, by
 \qquad d_K\kappa_X=\mu_{\mathrm{rel},X}.
 \]
 
+With the repository's action-derived Taylor convention, the symmetric
+polarization and charge-row bracket are
+
+\[
+B_X(u,v)=\left\langle\zeta_X,\frac12\Delta_2(u,v)\right\rangle,
+\qquad
+q^{\rm charge}_{2,X}(u,v)=2B_X(u,v)
+=\langle\zeta_X,\Delta_2(u,v)\rangle.
+\]
+
 The exact exterior-algebra check gives (d_K^2=0) on all 32 monomials.
 Because each moment map is homogeneous quadratic,
 (\mu_{\mathrm{rel}}(0)=d\mu_{\mathrm{rel}}|_0=0): the full radiative

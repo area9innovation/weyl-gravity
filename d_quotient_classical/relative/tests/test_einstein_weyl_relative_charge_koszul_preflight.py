@@ -25,6 +25,7 @@ class RelativeChargeKoszulPreflightTests(unittest.TestCase):
         self.assertEqual(result["charge_fibre_rank"], 5)
         self.assertEqual(result["koszul_monomials_checked"], 32)
         self.assertTrue(result["quadratic_origin_and_linearization_zero"])
+        self.assertTrue(result["charge_q2_factor_two"])
 
     def test_category_boundary(self) -> None:
         value = json.loads(producer.OUTPUT.read_text())
@@ -36,6 +37,7 @@ class RelativeChargeKoszulPreflightTests(unittest.TestCase):
         )
         self.assertFalse(value["classification"]["relative_f2_repaired"])
         self.assertFalse(value["classification"]["arity_three_authorized"])
+        self.assertIn("2*B_rel,X", value["charge_fibre"]["charge_taylor_q2"])
 
     def test_false_promotions_are_schema_rejected(self) -> None:
         schema = json.loads(producer.SCHEMA.read_text())

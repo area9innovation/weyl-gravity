@@ -349,6 +349,14 @@ sixth Taub charge.  On the standard radiative branches,
 w_\pm=1\pm\frac32\sqrt{2\ell(\ell+1)}.
 \]
 
+The quadratic function and its action-derived Taylor coefficient are kept
+distinct:
+
+\[
+B_X(u,v)=\left\langle\zeta_X,\frac12\Delta_2(u,v)\right\rangle,
+\qquad q^{\rm charge}_{2,X}(u,v)=2B_X(u,v).
+\]
+
 This selects the carrier without repairing the morphism.  The next exact
 gate is the complete off-shell five-charge polarization of the PBW defect,
 including any required exceptional/global rows, or a typed obstruction to

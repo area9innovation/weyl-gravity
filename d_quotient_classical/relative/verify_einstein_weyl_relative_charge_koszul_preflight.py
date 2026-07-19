@@ -81,6 +81,11 @@ def verify() -> dict:
             checked += 1
     if checked != 32:
         raise AssertionError("incomplete exterior-basis replay")
+    charge = value["charge_fibre"]
+    if "<zeta_X,(1/2)Delta2(u,v)>" not in charge["polarization"]:
+        raise AssertionError("bilinear polarization normalization drifted")
+    if "2*B_rel,X(u,v)=<zeta_X,Delta2(u,v)>" not in charge["charge_taylor_q2"]:
+        raise AssertionError("charge q2 Taylor normalization drifted")
     scale, quadratic_coefficient = sp.symbols("scale quadratic_coefficient")
     scaled_moment = scale**2 * quadratic_coefficient
     if scaled_moment.subs(scale, 0) != 0 or sp.diff(scaled_moment, scale).subs(scale, 0) != 0:
@@ -104,6 +109,7 @@ def verify() -> dict:
         "charge_fibre_rank": 5,
         "koszul_monomials_checked": checked,
         "quadratic_origin_and_linearization_zero": True,
+        "charge_q2_factor_two": True,
         "relative_h_witness": str(sp.factor(witness)),
     }
 

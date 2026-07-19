@@ -13,6 +13,7 @@
       "J_3"
     ],
     "branch_rule": "mu_rel,X=(w_branch-1)*mu_EM,X on an Einstein branch eigenmode; the spectral relative operator commutes with H_product by certified equivariance",
+    "charge_taylor_q2": "q2_charge,X(u,v)=D^2 mu_rel,X|_0(u,v)=2*B_rel,X(u,v)=<zeta_X,Delta2(u,v)>",
     "constant_u1_endpoint": {
       "basis_element": "u1_constant",
       "disposition": "REDUCIBILITY_NOT_A_SIXTH_TAUB_CHARGE",
@@ -25,7 +26,7 @@
       "nonzero": true
     },
     "origin": "dual of the connected product-isometry stabilizer",
-    "polarization": "mu_rel,X(u,v)=1/2 of the symmetric polarization of the displayed quadratic form",
+    "polarization": "B_rel,X(u,v)=1/2*(mu_rel,X(u+v)-mu_rel,X(u)-mu_rel,X(v))=<zeta_X,(1/2)Delta2(u,v)>",
     "relative_moment_map": "mu_rel,X(u)=1/2*(iota^*Omega_WM-Omega_EM)(u,L_X u)",
     "relative_weights": [
       "3*sqrt(2)*sqrt(lambda)/2",
@@ -99,10 +100,10 @@
   "next_gate": "CONSTRUCT_OFFSHELL_FIVE_CHARGE_POLARIZATION_OR_RETURN_TYPED_OBSTRUCTION",
   "provenance": {
     "source_manifest": {
-      "d_quotient_classical/relative/einstein_weyl_relative_charge_koszul_preflight.py": "bfda28d233fdbdffd4eeef2bd24c16c042521eac79302a0514c523458aa4b81d",
-      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_charge_koszul_preflight.py": "a4674332fe89cf7768a0e70a39ce89632e707bd732c01fcef329b66bb48090f6",
-      "d_quotient_classical/relative/verify_einstein_weyl_relative_charge_koszul_preflight.py": "d41f88753bfe151edd0a8bbc4597eedcb9197f95b1083a2309807eef74683a18",
-      "d_quotient_classical/schema/relative-charge-koszul-receiver-preflight-v1.schema.json": "1324cc5af4db0937e73d3e236dbbec4392ae5c0b23db4552ca5d063964b1f9b0"
+      "d_quotient_classical/relative/einstein_weyl_relative_charge_koszul_preflight.py": "d690bfe0670c16515cb338aac280663478f7cc3e601148bda51609373bfadca1",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_charge_koszul_preflight.py": "2542b7cecf21888b99bb8de24b66b99ebe25caab16b8a383754d04d629fec780",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_charge_koszul_preflight.py": "a2253429506ab8cc7bfaf9afb42b03dc7a9398d32cb89ca9e20a072cf0dd71aa",
+      "d_quotient_classical/schema/relative-charge-koszul-receiver-preflight-v1.schema.json": "cc7040b7f2190710bcae4975dfab4097f361c5bb885a4976a0d529e3ef83247e"
     },
     "verification_commands": [
       "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_charge_koszul_preflight --check --guards",

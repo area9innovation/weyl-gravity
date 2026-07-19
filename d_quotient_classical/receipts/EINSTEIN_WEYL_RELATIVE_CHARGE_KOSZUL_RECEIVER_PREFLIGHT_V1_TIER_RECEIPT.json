@@ -7,16 +7,16 @@
   ],
   "status": "PASS",
   "source_manifest": {
-    "d_quotient_classical/relative/einstein_weyl_relative_charge_koszul_preflight.py": "bfda28d233fdbdffd4eeef2bd24c16c042521eac79302a0514c523458aa4b81d",
-    "d_quotient_classical/relative/verify_einstein_weyl_relative_charge_koszul_preflight.py": "d41f88753bfe151edd0a8bbc4597eedcb9197f95b1083a2309807eef74683a18",
-    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_charge_koszul_preflight.py": "a4674332fe89cf7768a0e70a39ce89632e707bd732c01fcef329b66bb48090f6",
-    "d_quotient_classical/schema/relative-charge-koszul-receiver-preflight-v1.schema.json": "1324cc5af4db0937e73d3e236dbbec4392ae5c0b23db4552ca5d063964b1f9b0",
-    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1.json": "83f3e8c60b37e98e65c7d784ea06c441e8ed9cd5ae12e4da3602926b837a3a6f",
-    "d_quotient_classical/reports/einstein-weyl-relative-charge-koszul-receiver-preflight.md": "cda70152aeb442fcc1c1b1716bdb6db883057ef26f5d8b6755fa5cf7bd74ff67",
+    "d_quotient_classical/relative/einstein_weyl_relative_charge_koszul_preflight.py": "d690bfe0670c16515cb338aac280663478f7cc3e601148bda51609373bfadca1",
+    "d_quotient_classical/relative/verify_einstein_weyl_relative_charge_koszul_preflight.py": "a2253429506ab8cc7bfaf9afb42b03dc7a9398d32cb89ca9e20a072cf0dd71aa",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_charge_koszul_preflight.py": "2542b7cecf21888b99bb8de24b66b99ebe25caab16b8a383754d04d629fec780",
+    "d_quotient_classical/schema/relative-charge-koszul-receiver-preflight-v1.schema.json": "cc7040b7f2190710bcae4975dfab4097f361c5bb885a4976a0d529e3ef83247e",
+    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1.json": "9e389ce322ad48665a5684c17296872fa401bb8080b189da8a36e3ff89703522",
+    "d_quotient_classical/reports/einstein-weyl-relative-charge-koszul-receiver-preflight.md": "8cb6bd6c6ba0313d76f589072ebe55f645ba85febd580861b532b9e2f03cf570",
     "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py": "32084967a2ab0b2a302d1a2783cff404a1feee76a7428ff3101ce59552d87945",
-    "d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "03facdc0b61863f486d8b73e540b1f364aae674b33646bbe37b5df06065dcddf",
+    "d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "49229b76f343799c811268f35603320bb5258061fd737bc2b9acb1f282e6fcb3",
     "d_quotient_classical/atlas/tests/test_nonlinear_atlas_fragment.py": "97b68b1a21a7f226b7175f834b2f7d17aede7d1590e8191d3065ecc3f93980e0",
-    "notes/d-quotient-classical-team-brief.md": "06edd89cde5334bf152321602db9b66facff7661f131f8f206a4b6b72ec269e4"
+    "notes/d-quotient-classical-team-brief.md": "1d5857f0a7cf5b499fe27923e01b4d3c102a27cc897ac629a368d80cc7bf1eca"
   },
   "tiers": {
     "tier_0": {
@@ -33,7 +33,7 @@
         "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_charge_koszul_preflight d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v",
         "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-charge-koszul-receiver-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1.json"
       ],
-      "result": "19 tests passed; the independent consumer replayed the six endpoint maps, five charge directions, exact branch weights, nonzero H witness, quadratic linearization and all 32 Koszul exterior monomials"
+      "result": "19 tests passed; the independent consumer replayed the six endpoint maps, five charge directions, exact branch weights, nonzero H witness, quadratic linearization, the charge-q2 factor of two and all 32 Koszul exterior monomials"
     },
     "tier_2": {
       "status": "PASS_BY_CONTENT_ADDRESS",

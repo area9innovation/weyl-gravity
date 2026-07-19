@@ -103,6 +103,7 @@
         "constant_u1_endpoint",
         "relative_moment_map",
         "polarization",
+        "charge_taylor_q2",
         "branch_rule",
         "weyl_pullback_weights",
         "relative_weights",
@@ -134,7 +135,8 @@
           }
         },
         "relative_moment_map": {"type": "string"},
-        "polarization": {"type": "string"},
+        "polarization": {"const": "B_rel,X(u,v)=1/2*(mu_rel,X(u+v)-mu_rel,X(u)-mu_rel,X(v))=<zeta_X,(1/2)Delta2(u,v)>"},
+        "charge_taylor_q2": {"const": "q2_charge,X(u,v)=D^2 mu_rel,X|_0(u,v)=2*B_rel,X(u,v)=<zeta_X,Delta2(u,v)>"},
         "branch_rule": {"type": "string"},
         "weyl_pullback_weights": {
           "type": "array",

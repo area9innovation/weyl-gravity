@@ -177,7 +177,8 @@ def build() -> dict:
                 "reason": "the constant U1 parameter has d lambda=0 and hence zero fundamental vector field on the fixed-bundle perturbation carrier",
             },
             "relative_moment_map": "mu_rel,X(u)=1/2*(iota^*Omega_WM-Omega_EM)(u,L_X u)",
-            "polarization": "mu_rel,X(u,v)=1/2 of the symmetric polarization of the displayed quadratic form",
+            "polarization": "B_rel,X(u,v)=1/2*(mu_rel,X(u+v)-mu_rel,X(u)-mu_rel,X(v))=<zeta_X,(1/2)Delta2(u,v)>",
+            "charge_taylor_q2": "q2_charge,X(u,v)=D^2 mu_rel,X|_0(u,v)=2*B_rel,X(u,v)=<zeta_X,Delta2(u,v)>",
             "branch_rule": "mu_rel,X=(w_branch-1)*mu_EM,X on an Einstein branch eigenmode; the spectral relative operator commutes with H_product by certified equivariance",
             "weyl_pullback_weights": [_s(value) for value in weights],
             "relative_weights": [_s(value) for value in relative_weights],
@@ -285,6 +286,16 @@ The derived zero locus is represented, at this reduced-mode stage, by
 \mathcal O(\mathrm{Sol}_{\mathrm{std}})\otimes
 \Lambda(\kappa_H,\kappa_{P_x},\kappa_{J_1},\kappa_{J_2},\kappa_{J_3}),
 \qquad d_K\kappa_X=\mu_{\mathrm{rel},X}.
+\]
+
+With the repository's action-derived Taylor convention, the symmetric
+polarization and charge-row bracket are
+
+\[
+B_X(u,v)=\left\langle\zeta_X,\frac12\Delta_2(u,v)\right\rangle,
+\qquad
+q^{\rm charge}_{2,X}(u,v)=2B_X(u,v)
+=\langle\zeta_X,\Delta_2(u,v)\rangle.
 \]
 
 The exact exterior-algebra check gives (d_K^2=0) on all 32 monomials.
