@@ -38,6 +38,7 @@ CERTIFICATES = {
     "complete_global_extra_cone": ROOT / "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
     "global_extra_bounded_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
     "global_extra_smooth_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.json",
+    "complete_global_ell2_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.json",
     "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
     "global_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
     "extra_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
@@ -325,6 +326,18 @@ def entries() -> list[dict[str, object]]:
             "This correction-class split and coefficient ledger are complete only in one declared homogeneous/twist times ell=2,k=0 shared-axis SO3 orbit. It is not an opposite-momentum or multi-fibre classification, causal theorem, all-orders family, residual state or quantum claim.",
         ),
         _entry(
+            "einstein.ph.wm.mixed.complete_global_ell2_extra_bounded_cone",
+            _scope(theory="Weyl-Maxwell target", carrier="complete homogeneous, twist and axial-plus-polar ell=2,k=0 extra-primary carrier", degree=2, parity="homogeneous, axial twist, and both generic extra parities", ell="input 0,1,2 with complete quadratic output inventory", m="all by SO3 covariance", k=0, omega="generalized zero plus +/-4/sqrt(3)"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The carrier adjoins the complete nonradical ell=2,k=0 p-primary block to the standard generalized-zero sector."),
+            ("CERTIFIED", "The extra occupation has positive Gram weights 1296,208/3,22464,12288; standard global and twist blocks retain their certified forms."),
+            ("CERTIFIED", "After boundedness forces b=B=0, mu_H=-a^2-Q_e^2-(4/3)X is strictly negative away from a=Q_e=x_extra=0."),
+            ("CERTIFIED", "The repaired a/d P ideal and old common-zero orbit are reconciled; no constant resonance solve can restore an extra mode already excluded by mu_H."),
+            _second_order(("CERTIFIED", "The complete bounded cone is exactly {(c,d,W_x,A)} and contains no nonzero ell=2 extra direction."), ("CERTIFIED", "The complete smooth-secular condition remains the five-moment-map zero locus and is strictly larger."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("complete_global_ell2_bounded", "standard_global_bounded", "ad_polynomial_zero", "complete_global_extra_cone", "global_extra_bounded_obstruction", "complete_finite_smooth"),
+            "This is complete only for the homogeneous/twist plus ell=2,k=0 extra carrier. Standard Einstein oscillators, other harmonics and momenta, complete finite bounded, all-orders, residual, observational and quantum maps remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.mixed.finite_generic_all_momenta_smooth_cone",
             _scope(theory="Weyl-Maxwell target with all generic Einstein and extra primaries", carrier="arbitrary finite generic-harmonic sum with all compact momentum fibres kept as distinct input and output blocks", degree=2, parity="axial and polar, including cross-parity quadratic outputs", ell="all finite input ell>=2; every Clebsch-Gordan output L=0,...,ell_1+ell_2", m="arbitrary finite input m values and all selected output M", k="arbitrary finite set of allowed 2*pi*n/L values; signed output sums K retained", omega="all signed input-shell sums and differences; finite polynomial prefactors allowed on resonant outputs"),
             {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
@@ -422,6 +435,16 @@ def build() -> dict[str, object]:
         raise AssertionError("smooth extension over-promoted the bounded class")
     if not records["global_extra_smooth_extension"]["classification"]["coefficient_explicit_correction_printed"]:
         raise AssertionError("complete smooth coefficient ledger was lost")
+    complete_global_ell2 = records["complete_global_ell2_bounded"]["classification"]
+    if not (
+        complete_global_ell2["complete_declared_global_ell2_extra_carrier_covered"]
+        and complete_global_ell2["bounded_tangent_cone_classified"]
+        and complete_global_ell2["bounded_cone_equals_standard_global_cone"]
+        and complete_global_ell2["all_nonzero_ell2_extra_directions_bounded_obstructed"]
+    ):
+        raise AssertionError("complete global+ell2-extra bounded cone changed")
+    if complete_global_ell2["other_harmonics_classified"]:
+        raise AssertionError("global+ell2 theorem over-promoted other harmonics")
     if not records["global_self_coefficients"]["classification"]["complete_aligned_global_self_source_classified"]:
         raise AssertionError("global self coefficient input changed")
     if not records["extra_self_coefficients"]["classification"]["complete_C4_extra_self_source_coefficient_explicit"]:

@@ -2344,11 +2344,30 @@ complete scoped `P_(j,r)` theorem.  The old nonzero-extra common-zero cone is
 unchanged because it already has `a=b=d=0`; its independent twist-velocity
 bounded obstruction also remains.
 
-The active gate is now to restrict the constant `d`, twist and wave
-resonance equations to these repaired polynomial faces and solve them with
-the five moment maps.  Other harmonics still require their own full-time
-`a/d` audit.  These nonlinear results are inputs to active Bridge 1; they do
-not promote the linear relative triangle to a nonlinear morphism.
+For the complete homogeneous/twist plus `ell=2,k=0` extra carrier, the next
+step simplifies before any constant-matrix elimination.  Boundedness already
+forces `b=B=0`; the Hamiltonian moment map then reads
+
+```text
+mu_H=-a^2-Q_e^2-(4/3)X,
+X=1296|x_ax1|^2+(208/3)|x_ax2|^2
+  +22464|x_pol1|^2+12288|x_pol2|^2.
+```
+
+It is strictly negative away from `a=Q_e=x_extra=0`.  Hence the complete
+bounded cone on this enlarged carrier is exactly the standard cone
+`(c,d,W_x,A)`; adjoining the linearly genuine extra block does not enlarge
+it.  Atlas row
+`einstein.ph.wm.mixed.complete_global_ell2_extra_bounded_cone` records
+necessity and sufficiency.  The old nonzero-extra common-zero orbit uses
+`B!=0` for its opposite sign and is removed by the independent twist-velocity
+polynomial obstruction.
+
+The active enlargement is now an opposite-sign standard Einstein oscillator,
+where the Hamiltonian moment map no longer eliminates the extra block.
+Other harmonics still require their own full-time `a/d` audit.  These
+nonlinear results are inputs to active Bridge 1; they do not promote the
+linear relative triangle to a nonlinear morphism.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

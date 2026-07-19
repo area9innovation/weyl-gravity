@@ -1,0 +1,71 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_ELL2_EXTRA_BOUNDED_CONE_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_ELL2_EXTRA_BOUNDED_CONE",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "generator": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.py",
+      "sha256": "79790b6badf2f1a23dad367306d0bc2dc929a3f4167f3cb6514f11d41131b9e1"
+    },
+    "certificate": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.json",
+      "sha256": "b6b5f3c8434eb21252eedecbaa4e9cbb704897ee68e770e329a30a2d9184dad8"
+    },
+    "schema": {
+      "path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.schema.json",
+      "sha256": "38c01843f9e785763d07561776753cadf90070714989d3f5ce15147ca1bca3e0"
+    },
+    "independent_verifier": {
+      "path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.py",
+      "sha256": "d2e7a2da1aee3def33c28525c6202621b5349242f146771d977f0a465efec790"
+    },
+    "tests": {
+      "path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.py",
+      "sha256": "9e39bed031d2d7155d3c4777daf4012413574a6c39c4e357502eed7de01f9e69"
+    },
+    "atlas_generator": {
+      "path": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
+      "sha256": "c751bf7b7c6cad305a32b30086c0f6ccf3514785afe5a920a67daa0359ae5b44"
+    },
+    "atlas_fragment": {
+      "path": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+      "sha256": "9db408ad2b00e1d9991c9d9ed32faddd591138f35e5a6c8b75219d1e8e37919b"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.20,
+      "max_rss_kb": 16184,
+      "commands": [
+        "python3 -m py_compile <scoped theorem, verifier, tests and atlas generator>",
+        "python3 -m json.tool <scoped schema, certificate, atlas fragment and receipt>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.30,
+      "max_rss_kb": 60640,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ],
+      "tests_run": 20
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "the complete common-zero orbit, standard bounded cone, extra current and repaired a/d polynomial theorem are unchanged exact inputs"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "other harmonics, complete finite bounded, causal, all-orders, residual, observational and quantum gates remain excluded"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Complete global plus ell2-extra bounded cone",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "necessity", "sufficiency",
+    "complete_bounded_theorem", "reconciliation", "correction_classes",
+    "classification", "interpretation", "next_gate", "claim_boundary",
+    "provenance", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-complete-global-ell2-extra-bounded-cone-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_ELL2_EXTRA_BOUNDED_CONE"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "REDUCED-MODE"}},
+    "scope": {"type": "object"},
+    "necessity": {"type": "object"},
+    "sufficiency": {"type": "object"},
+    "complete_bounded_theorem": {"type": "object"},
+    "reconciliation": {"type": "object"},
+    "correction_classes": {"type": "object"},
+    "classification": {"type": "object"},
+    "provenance": {"type": "object"},
+    "verification_receipt": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": true
+}

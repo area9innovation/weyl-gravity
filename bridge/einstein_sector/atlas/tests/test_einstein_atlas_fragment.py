@@ -125,6 +125,13 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("<a*z_ax1,a*z_ax2,a*z_pol1,a*z_pol2,d*z_pol2>", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
 
+    def test_complete_global_ell2_extra_cone_collapses_to_standard_global(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.complete_global_ell2_extra_bounded_cone"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("{(c,d,W_x,A)}", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
 
 if __name__ == "__main__":
     unittest.main()

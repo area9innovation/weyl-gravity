@@ -1,0 +1,142 @@
+{
+  "claim_boundary": "This is complete only for the homogeneous/twist plus ell=2,k=0 extra carrier. It does not classify standard Einstein oscillators, other ell or momenta, the complete finite bounded cone, causal propagation, all-orders integration, residual descent, observables, particles or quantum theory.",
+  "classification": {
+    "all_nonzero_ell2_extra_directions_bounded_obstructed": true,
+    "all_orders_integrability": false,
+    "bounded_cone_equals_standard_global_cone": true,
+    "bounded_tangent_cone_classified": true,
+    "causal_or_quantum_claim": false,
+    "complete_declared_global_ell2_extra_carrier_covered": true,
+    "other_harmonics_classified": false,
+    "repaired_ad_polynomial_lifecycle_incorporated": true
+  },
+  "complete_bounded_theorem": {
+    "equality_with_standard_global_cone": true,
+    "extra_intersection": "the bounded cone contains no nonzero ell=2,k=0 extra-primary direction",
+    "tangent_cone": "Z2_(global+ell2extra)^bounded={(c,d,W_x,A):c,d,W_x real,A in R^3}"
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_SECULAR": {
+      "reason": "the complete smooth cone is the five-moment-map zero locus and is larger; its coefficientwise parameterization is separate",
+      "status": "CERTIFIED_FORMULA_ONLY"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "The extra ell=2 block is linearly genuine but contributes with the same negative Hamiltonian-moment-map sign as the radion and electric directions. Boundedness independently removes the only positive twist-velocity contribution. Consequently the complete bounded cone on this enlarged carrier contains no extra wave and collapses exactly to the standard static-global cone, while the smooth-secular moment-map cone remains larger.",
+  "lifecycle_state": "CLASSIFIED",
+  "necessity": {
+    "Hamiltonian_step": {
+      "extra_amplitude_order": [
+        "x_ax1",
+        "x_ax2",
+        "x_pol1",
+        "x_pol2"
+      ],
+      "moment_map_after_b_B_elimination": "mu_H=-a^2-Q_e^2-(4/3)*X",
+      "occupation": "X=1296*|x_ax1|^2+(208/3)*|x_ax2|^2+22464*|x_pol1|^2+12288*|x_pol2|^2",
+      "positive_definite_occupation": true,
+      "real_zero_locus": "a=0,Q_e=0,x_ax1=x_ax2=x_pol1=x_pol2=0",
+      "symbolic_negative_sum_of_squares_verified": true
+    },
+    "conclusion": "every bounded candidate has a=b=Q_e=0,B=0 and zero ell=2 extra amplitude",
+    "polynomial_step": "the universal bounded source coefficients force b=0,B=0,Q_e*a=0; the repaired a/d cross ideal is compatible with the conclusion below",
+    "remaining_coordinates": [
+      "c",
+      "d",
+      "W_x",
+      "A in R^3"
+    ]
+  },
+  "next_gate": "adjoin one opposite-sign standard Einstein oscillator and solve the repaired polynomial plus moment-map system; separately propagate the full-time a/d audit to exceptional ell=1 and nonzero momentum",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.py",
+    "generator_sha256": "79790b6badf2f1a23dad367306d0bc2dc929a3f4167f3cb6514f11d41131b9e1",
+    "inputs": {
+      "ad_polynomial": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.json",
+        "sha256": "f403fde7f8c7685cb68e4d82c15d4ed7094874ba670b05523d51f87a0484be05"
+      },
+      "complete_common_zero": {
+        "path": "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
+        "sha256": "fa3dcb747f66a5933a440288d712e1b85a445bf24cae347c023e58b1e7203ec1"
+      },
+      "extra_bounded_obstruction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
+        "sha256": "0d38d8f23a62984ba946ffd50c0c441572b8f8b7744e2434ec3698c1b35cf389"
+      },
+      "extra_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.json",
+        "sha256": "f7be0c5571327d5ecb14194e3a6f485ae22547979f66b4ec45d614a3fbc28e9c"
+      },
+      "standard_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      }
+    }
+  },
+  "reconciliation": {
+    "constant_resonance_matrix": "need not be solved further on this carrier because its only nonzero-extra domain is already excluded by a necessary moment map",
+    "old_common_zero_orbit": "requires B!=0 to balance the negative extra occupation and is therefore removed by the independent twist-velocity polynomial obstruction",
+    "repaired_ad_ideal": "does not reopen a branch; the Hamiltonian moment map eliminates every extra amplitude once B=0"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_ELL2_EXTRA_BOUNDED_CONE",
+  "result_state": "COMPLETE_GLOBAL_PLUS_ELL2_EXTRA_BOUNDED_CONE_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-complete-global-ell2-extra-bounded-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.schema.json",
+  "schema_sha256": "38c01843f9e785763d07561776753cadf90070714989d3f5ce15147ca1bca3e0",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic correction",
+    "carrier": "complete homogeneous (a,b,c,d,Q_e,W_x), twist (A,B), and all axial/polar ell=2,k=0 extra-primary amplitudes",
+    "charge_sector": "fixed N=2 magnetic bundle with electric tangent allowed",
+    "degree": 2,
+    "ell": "input 0,1,2 with all quadratic outputs retained by imported complete source theorems",
+    "k": 0,
+    "m": "all by SO3 covariance",
+    "omega": "generalized zero plus +/-4/sqrt(3)",
+    "parity": "homogeneous, axial twist, and both generic extra parities",
+    "theory": "Weyl-Maxwell target"
+  },
+  "sufficiency": {
+    "correction": "the homogeneous source vanishes and constant A has the certified time-independent polar ell=2 correction",
+    "extra_source": "zero because every extra amplitude is zero on the cone",
+    "imported_standard_cone": "Z2_global^bounded={(c,d,W_x,A):c,d,W_x real,A in R^3}",
+    "regularity": "real smooth spatially periodic and bounded"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.2,
+      "max_rss_kb": 16184,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 2.3,
+      "max_rss_kb": 60640,
+      "status": "PASS",
+      "tests_run": 20
+    },
+    "tier_2": {
+      "criterion": "the complete common-zero orbit, standard bounded cone, extra current and repaired a/d polynomial theorem are unchanged exact inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "other harmonics, complete finite bounded, causal, all-orders, residual and quantum gates remain excluded",
+      "status": "NOT_RUN"
+    }
+  }
+}

@@ -1230,9 +1230,21 @@ Atlas row `einstein.ph.wm.interaction.ad_ell2_extra_polynomial_zero_locus`
 records necessity and sufficiency for this scoped `P_(j,r)` ledger.  The old
 nonzero-extra common-zero cone survives because it already has `a=b=d=0`,
 and its independent twist-velocity obstruction is unchanged.  The active
-gate is now to restrict the constant `d`, twist and oscillator resonance
-equations to the repaired faces and solve them with the five moment maps;
-other harmonics retain their own full-time `a/d` gate.
+Hamiltonian moment map simplifies the complete declared carrier further.
+Once boundedness forces `b=B=0`,
+
+```text
+mu_H=-a^2-Q_e^2-(4/3)X
+```
+
+with positive-definite extra occupation `X`.  Therefore the complete bounded
+cone on the homogeneous/twist plus `ell=2,k=0` extra carrier is exactly
+`(c,d,W_x,A)` and contains no extra wave.  Atlas row
+`einstein.ph.wm.mixed.complete_global_ell2_extra_bounded_cone` records this
+necessity-and-sufficiency theorem.  The larger smooth-secular cone remains
+distinct.  The active enlargement is now one opposite-sign standard Einstein
+oscillator, where moment-map cancellation is possible; other harmonics retain
+their own full-time `a/d` gate.
 
 This advances nonlinear input to the already activated compact-product
 linear bridge but does not certify a nonlinear relative morphism.  Atlas row

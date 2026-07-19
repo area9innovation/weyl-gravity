@@ -173,6 +173,14 @@ def verify() -> None:
         raise AssertionError("repaired a/d generators were hidden")
     if ad_zero["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
         raise AssertionError("a/d cross ideal over-promoted the bounded cone")
+    complete_global_ell2 = by_id["einstein.ph.wm.mixed.complete_global_ell2_extra_bounded_cone"]
+    complete_global_second = complete_global_ell2["mode_data"]["second_order"]
+    if complete_global_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("complete global+ell2 bounded cone was lost")
+    if "{(c,d,W_x,A)}" not in complete_global_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("complete global+ell2 cone was hidden")
+    if complete_global_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("global+ell2 causal lifecycle was over-promoted")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
