@@ -2,7 +2,7 @@
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `LORENTZIAN-CAUSAL`.
 
-The complete per-shell symbolic word now has eight finite executable consumers.
+The complete per-shell symbolic word now has nine finite executable consumers.
 Exact rational interval aggregation of supplied `I_abc[two_j,k]` values is
 certified, including every passive column, `g_b g_c^2`, and the Peter--Weyl
 weight.  A second callable returns exact real/imaginary coefficient intervals,
@@ -28,8 +28,12 @@ wave identities and applies the physical Proca correction to export the
 full-form Cauchy pair.  An eighth constructs the unrestricted canonical
 spatial trace and applies the full coupling-stripped positive-energy dual to
 return finite preparation coefficients.  It also proves that the earlier
-co-closed restriction gives a zero observer source for `delta(hK)`.  Free emitter evolution and the first
-retarded recoil channel are not yet bound.
+co-closed restriction gives a zero observer source for `delta(hK)`.  A ninth
+callable evolves the unrestricted canonical preparation through `U_E` on its
+exact switch slab, constructs the conserved switched current, and exports the
+first retarded Maxwell field/time-derivative pair at the support-right slice.
+It does not yet propagate that pair to a detector window or contract `d` and
+`Q_a`.
 
 The audit retains its explicit four-callable complete-backend protocol, records
 the shell evaluator `CERTIFIED`, and adds separate `CERTIFIED` finite detector
@@ -37,9 +41,9 @@ kernel, and polynomial-convolution progress rows while all three incomplete phys
 rows remain `OBSTRUCTED`.
 It also exports a strict exact-rational numerical
 input schema in the certified `gHat` operator units, but leaves every value
-undeclared.  The next gate evolves the finite preparations through `U_E` and
-binds the first retarded recoil channel; external specialization follows only after
-the full protocol closes.
+undeclared.  The next gate propagates the support-right Maxwell Cauchy pair to
+the detector window and contracts `d` and `Q_a`; external specialization
+follows only after the full protocol closes.
 
 The symbolic operator theorem remains `CERTIFIED`.  No recoil coefficient,
 second-order-cone restriction, physical-branch bridge, finite-parameter

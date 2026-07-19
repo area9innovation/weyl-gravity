@@ -802,10 +802,11 @@ emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
 composition defects.
 
 `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` corrects the activation
-boundary.  Its eight finite capabilities include the four baseline consumers,
+boundary.  Its nine finite capabilities include the four baseline consumers,
 the detector/`Dhat_1` binding, the switched diagonal massive stage, the
 physical full-form Cauchy pair and the canonical positive-energy preparation
-coefficients described below.
+coefficients described below, plus the first freely evolved retarded Maxwell
+channel.
 `BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` closes the
 one-shell supplied-channel capability with exact rational arithmetic: it
 sums every passive column and both feedback channels and applies
@@ -899,9 +900,25 @@ required correction: `deltaSigma q=deltaSigma p=0` forces `alpha=0`, hence
 `delta(hK)=0` for the clock-only switch.  The earlier co-closed dual is a
 certified zero-source rail, not the operational preparation.  The serialized
 `[1,2]` mass-squared fixture is validation data, not a physical choice.
-Retained-coefficient
-nonvanishing, free emitter evolution, the full spatial tail and `I_abc`
-remain open.
+Retained-coefficient nonvanishing, the full spatial tail and `I_abc` remain
+open.
+
+`BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL` closes the finite
+`U_E` and first retarded-channel gate without promoting a detector record.
+On each exact `h0` or `h1` slab it uses
+`q=C_H q0+S_H A p0`, `p=C_H p0-S_H L q0`, with
+`A L=L A=Delta_2+m^2`, and reconstructs
+`alpha=m^-2 deltaSigma p`.  The resulting switched source is
+`J=delta(hK)=(0,h_prime alpha)`.  Exact shell audits through `two_j=4`
+certify constraint preservation and `delta J=delta^2(hK)=0`; the finite
+Maxwell sine/cosine enclosures then export the field and physical-time
+derivative at the emitter support-right slice for every D0/D1 passive column.
+The whole-support derivative hull is rigorous but coarse.  This is the first
+leading Maxwell channel in the recoil word, not feedback recoil: it does not
+prove retained-channel nonvanishing, propagate to the detector window,
+contract `d` and `Q_a`, evaluate finite response rank or `I_abc`, control the
+infinite tail, or export any absolute-`g3` recoil scalar.  The next active gate
+is precisely that downstream detector propagation and contraction.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as

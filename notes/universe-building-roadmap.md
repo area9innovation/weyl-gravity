@@ -60,7 +60,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, and supply the same-gauge generic-background full-BV Hessian matching the exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    interval-enclose the exact finite Berger kernel payload and bind switches/detector intervals to the nested engine while extending coverage beyond two_j=4, then build the tail-aware loop before restricting records to Z2^C
+Observer:    propagate the certified support-right finite Maxwell Cauchy pair to the detector window and contract d then Q_a, while extending coverage beyond two_j=4; then build the tail-aware loop before restricting records to Z2^C
 Black hole:  polar reach/flux/disposition via the certified general split; then complex-frequency structure
 ```
 
@@ -559,9 +559,18 @@ positive-energy dual is `tilde_u=(-A p,Lq)`.  Exact Hodge-projector audits
 also certify that the earlier co-closed restriction makes `delta(hK)=0` and
 therefore cannot serve as the observer source.  The corrected interval
 coefficients are callable for every D0/D1 passive column through `two_j=4`.
-Retained-coefficient nonvanishing, free evolution, extension beyond
-`two_j=4`, and the tail-aware
-four-stream stop loop remain `OBSTRUCTED`, so external numerical inputs remain
+The next finite successor now evolves the unrestricted canonical preparation
+on its exact switch slab using
+`q=C_H q0+S_H A p0`, `p=C_H p0-S_H L q0`.  It reconstructs
+`alpha=m^-2 deltaSigma p`, exports the conserved clock-switched current
+`delta(hK)=(0,h_prime alpha)`, and applies the Maxwell retarded sine/cosine
+kernels to give the field and time derivative at the support-right slice.
+Exact identities `A L=L A=Delta_2+m^2`, constraint preservation and
+`delta^2(hK)=0` hold through `two_j=4`.  This closes finite `U_E` and the
+first leading retarded Maxwell channel, not a detector record or feedback
+recoil coefficient.  Retained-channel nonvanishing, propagation to the
+detector window, `d/Q_a` contraction, extension beyond `two_j=4`, and the
+tail-aware four-stream stop loop remain `OBSTRUCTED`, so external numerical inputs remain
 deferred under the strict specialization schema.
 The coupling-stripped preparation successor fixes the formal-order convention
 needed by that stream.  Since the advanced detector covector is linear in
@@ -1707,8 +1716,9 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_RECOIL_SWITCH_INTERVAL_PROVIDER` (fired for normalized values and physical-time derivatives on rational cells) | compose the switch intervals with finite kernels and typed form blocks; do not identify a factorwise cell hull with an `I_abc` channel |
 | `BERGER_RECOIL_MATRIX_INTERVAL_CONVOLUTION` (fired for dimension-checked complex vector/matrix polynomial stages) | bind finite detector polynomials and the exact spacetime `d/delta` matrices, then construct finite preparation coefficients; do not identify the generic fixture with a physical channel |
 | `BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION` (fired; finite full-form jet certified) | bind the full spacetime jet to the canonical spatial Cauchy carrier before applying the positive-energy dual; do not identify `(K,partial_t K)` with `(q,p)` |
-| `BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS` (fired; finite full-canonical coupling-stripped coefficients certified; co-closed source rail obstructed) | evolve the finite preparations through `U_E` and bind the first retarded recoil channel; retained-coefficient nonvanishing and the infinite spatial tail remain open |
-| `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` (fired; eight finite capabilities certified, complete provider/nested convolution/stop loop obstructed) | bind `U_E` and the first retarded recoil channel, extend the detector provider beyond `two_j=4`, and implement the tail-aware four-stream stop loop; only then activate the exact numerical input schema |
+| `BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS` (fired; finite full-canonical coupling-stripped coefficients certified; co-closed source rail obstructed) | pass the finite preparations through the free-emitter/first-retarded-channel successor; retained-coefficient nonvanishing and the infinite spatial tail remain open |
+| `BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL` (fired; finite `U_E`, conserved switched current and support-right Maxwell Cauchy pair certified) | propagate to the detector window and contract `d` then `Q_a`; do not call this leading channel a detector record or feedback recoil coefficient |
+| `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` (fired; nine finite capabilities certified, complete provider/detector contraction/stop loop obstructed) | propagate and contract the first finite channel, extend the detector provider beyond `two_j=4`, and implement the tail-aware four-stream stop loop; only then activate the exact numerical input schema |
 | `BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` (fired, capacity label superseded) | retain the streamed route and its computed `two_j=138` working rail, but use the normalization repair for the authoritative necessary capacity lower bound; do not treat either rail as a convergence cutoff |
 | `BERGER_STREAMABLE_POLARIZATION_SECTORS` (fired) | evaluate the diagonal/first-off-diagonal high-mode coefficients in the certified three-dimensional-or-smaller charge blocks and close the Green-weighted operator-norm tail |
 | `BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138` (fired) | apply the degree-ten temporal Green polynomial in exact charge blocks of dimension at most three through form `two_j=138`, then certify or obstruct the tail beyond that published working rail |

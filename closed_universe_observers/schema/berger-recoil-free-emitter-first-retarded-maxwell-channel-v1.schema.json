@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "canonical_evolution_audits", "coverage", "serialized_fixture_channels", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-free-emitter-first-retarded-maxwell-channel-v1"},
+    "result_id": {"const": "BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "FINITE_FREE_EMITTER_AND_FIRST_RETARDED_MAXWELL_CHANNEL_CERTIFIED_DETECTOR_CONTRACTION_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 8, "maxProperties": 8},
+    "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "canonical_evolution_audits": {"type": "array", "minItems": 5, "maxItems": 5},
+    "coverage": {"type": "object"},
+    "serialized_fixture_channels": {"type": "object", "required": ["D0_two_j0_column0", "D1_two_j1_column1"]},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "PROPAGATE_THE_SUPPORT_RIGHT_MAXWELL_CAUCHY_PAIR_TO_THE_DETECTOR_WINDOW_AND_CONTRACT_D_THEN_Q_A"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

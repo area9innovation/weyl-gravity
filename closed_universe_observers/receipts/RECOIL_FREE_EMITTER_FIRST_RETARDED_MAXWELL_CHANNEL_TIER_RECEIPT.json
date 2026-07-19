@@ -1,0 +1,60 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL_TIER_RECEIPT",
+  "run_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "claim_status": "FINITE_FREE_EMITTER_AND_FIRST_RETARDED_MAXWELL_CHANNEL_CERTIFIED_DETECTOR_CONTRACTION_OPEN",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile closed_universe_observers/berger_recoil_massive_diagonal_preparation.py closed_universe_observers/berger_recoil_free_emitter_retarded_channel.py closed_universe_observers/generate_berger_recoil_free_emitter_retarded_channel.py closed_universe_observers/verify_berger_recoil_free_emitter_retarded_channel.py closed_universe_observers/generate_berger_recoil_stream_executable_readiness_audit.py",
+      "elapsed_seconds": "under 1",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "pytest -q closed_universe_observers/tests/test_berger_recoil_free_emitter_retarded_channel.py closed_universe_observers/tests/test_berger_recoil_stream_executable_readiness_audit.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py",
+      "elapsed_seconds": 27.32,
+      "status": "PASS",
+      "summary": "Twenty-eight finite evolution, conserved-current, readiness, generated-atlas and comparison-ledger tests passed."
+    },
+    {
+      "tier": 1,
+      "command": "pytest -q closed_universe_observers/tests/test_berger_recoil_massive_diagonal_preparation.py closed_universe_observers/tests/test_berger_recoil_physical_massive_cauchy_preparation.py closed_universe_observers/tests/test_berger_recoil_positive_energy_preparation_coefficients.py closed_universe_observers/tests/test_berger_recoil_matrix_interval_convolution.py",
+      "elapsed_seconds": 58.43,
+      "status": "PASS",
+      "summary": "Sixteen direct preparation and interval-convolution consumers passed after the labelled block-kernel extension."
+    },
+    {
+      "tier": 2,
+      "command": "python3 -m closed_universe_observers.generate_berger_recoil_free_emitter_retarded_channel --check && python3 -m closed_universe_observers.verify_berger_recoil_free_emitter_retarded_channel && python3 -m closed_universe_observers.generate_berger_recoil_stream_executable_readiness_audit --check && python3 -m closed_universe_observers.verify_berger_recoil_stream_executable_readiness_audit && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 -m closed_universe_observers.verify_comparison_ledger",
+      "elapsed_seconds": 23.8,
+      "status": "PASS",
+      "summary": "The content-addressed channel and readiness certificates, fail-closed observer atlas and comparison crosswalk all verified."
+    }
+  ],
+  "artifacts": [
+    {"path": "closed_universe_observers/certificates/BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL.json", "sha256": "0edc5c27b5971c0aee2125a80d2b2dc5c225177c686e87aedf0a781aedb80310"},
+    {"path": "closed_universe_observers/generate_berger_recoil_free_emitter_retarded_channel.py", "sha256": "80b27d0877eaf5b4a71c452eb199d3793b8ff49f7fb1efaaa0960a59d9796318"},
+    {"path": "closed_universe_observers/berger_recoil_free_emitter_retarded_channel.py", "sha256": "bb335d4b9acb9b7fbe514eeddbcc1ddbed0f722a2ecbd2b2f9410a81aa054c5e"},
+    {"path": "closed_universe_observers/schema/berger-recoil-free-emitter-first-retarded-maxwell-channel-v1.schema.json", "sha256": "9478e64ebc58dd126837d2e1eb744460b053e0a3c08def81688972bf88125e59"},
+    {"path": "closed_universe_observers/reports/berger-recoil-free-emitter-first-retarded-maxwell-channel.md", "sha256": "bc8c599bfda125f9ce4b4bffc1ff86bd7844ed612c6986227e7ff1cbf8447c89"},
+    {"path": "closed_universe_observers/certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json", "sha256": "90d8d047cec7d94190c5e1db215b1116902c770486be540ecbca962f020d3483"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "00aa972c5feefd8529fa94abe7e7034a9319b015020f4cb47809855d1d266921"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "0ef8a9105595a11442753944600accbf3f3294aecf5a48121058548b831b8d0e"}
+  ],
+  "higher_tiers_not_run": [
+    {
+      "tier": 3,
+      "reason": "No freeze, theorem promotion, release, or shared core-algebra change; the affected finite certificate chain and generated claims ledger were verified."
+    }
+  ],
+  "open_gates": [
+    "retained finite-channel nonvanishing",
+    "propagation from emitter support-right to the detector window",
+    "d and Q_a contraction and finite response-rank test",
+    "extension beyond two_j=4 and infinite spatial tail",
+    "feedback channels and four absolute-g3 recoil scalar intervals",
+    "second-order tangent-cone restriction and inactive Bridge 3"
+  ]
+}

@@ -125,7 +125,10 @@ def _evaluate_polynomial_with_remainder(
 
 
 def _block_diagonal_kernel_stage(
-    temporal_stage: Mapping[str, Any], spatial_stage: Mapping[str, Any]
+    temporal_stage: Mapping[str, Any],
+    spatial_stage: Mapping[str, Any],
+    *,
+    label: str = "massive_two_form_spacetime_block_diagonal",
 ) -> dict[str, object]:
     temporal = temporal_stage["coefficient_matrices"]
     spatial = spatial_stage["coefficient_matrices"]
@@ -148,7 +151,7 @@ def _block_diagonal_kernel_stage(
                 matrix[temporal_dimension + row][temporal_dimension + column] = spatial_matrix[row][column]
         matrices.append(matrix)
     return {
-        "label": "massive_two_form_spacetime_block_diagonal",
+        "label": label,
         "coefficient_matrices": matrices,
         "uniform_remainder_upper": max(
             Fraction(temporal_stage["uniform_remainder_upper"]),
