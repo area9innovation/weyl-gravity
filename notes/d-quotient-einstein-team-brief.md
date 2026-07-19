@@ -2837,6 +2837,27 @@ moment maps are solved jointly.  Certificate and atlas row
 `EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_ELL2_EXTRA_DIFFERENCE_MATRIX` retain
 nonzero momentum, causal, residual and quantum scopes fail-closed.
 
+The nonzero-momentum twist face has now been intersected with the independent
+opposite-momentum phase divisor.  For every `ell>=2`, the exact choice
+
+```text
+k^2=sqrt(2*ell*(ell+1))-ell/2-1/6 > 0
+```
+
+can be made an allowed compact momentum by choosing the declared circle
+circumference.  Equal `+k/-k` rank-one densities on `m_A=0`, with the
+Einstein-minus density balancing one Einstein-plus density, make all five
+moment maps vanish and satisfy the complete constant-twist-times-wave bounded
+column.  Nevertheless the two positive-frequency Einstein-minus coefficients
+land on the polar `L=2ell,K=0` extra `p` shell at `Omega=2*omega_minus`, with
+nonzero top Gaunt coupling.  Certificate and atlas row
+`EINSTEIN_MAXWELL_WEYL_TWIST_ALIGNED_OPPOSITE_MOMENTUM_RESONANCE_GATE` prove
+that an independent phase-sensitive functional is required.  They do not
+claim obstruction: the dynamical adjoint coefficient is still `OPEN`.
+Smooth exponential-polynomial extension is `CERTIFIED`, while
+`CAUSAL_RETARDED` remains `NO_CERTIFIED_MAP`.  The decisive bounded fixture is
+`ell=2`, `k^2=2*sqrt(3)-7/6`, projected into the polar `L=4` extra adjoint.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

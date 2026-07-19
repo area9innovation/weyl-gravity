@@ -1,0 +1,142 @@
+{
+  "claim_boundary": "This is an exact intersection and independence-gate theorem, not a bounded obstruction: arithmetic resonance and nonzero angular coupling do not prove a nonzero dynamical source projection. It is scoped to tuned circumference, one fixed ell and one |k| fibre, and makes no causal, all-orders, residual, observational, particle or quantum claim.",
+  "classification": {
+    "additional_bounded_resonance_functional_required": true,
+    "causal_or_quantum_claim": false,
+    "complete_bounded_cone_classified": false,
+    "dynamical_resonance_coefficient_computed": false,
+    "fixed_circumference_all_momenta_classified": false,
+    "twist_aligned_common_zero_intersection_nonempty_every_ell": true,
+    "universal_phase_resonance_survives_twist_alignment": true
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "reason": "the exact resonant carrier is populated, but its Weyl-Maxwell adjoint source coefficient has not been computed",
+      "status": "OPEN"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "the complete fixed-(ell,|k|) common-zero cone has a certified finite secular correction",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_intersection_witness": {
+    "compact_realization": "for any nonzero integer n choose L=2*pi*abs(n)/sqrt(k_squared), so k=2*pi*n/L is an allowed compact momentum",
+    "ell": "every integer ell>=2",
+    "five_moment_maps": {
+      "mu_H": "0",
+      "mu_J1": "0 on the m_A=0 rank-one density",
+      "mu_J2": "0 on the m_A=0 rank-one density",
+      "mu_J3": "0 on the m_A=0 rank-one density",
+      "mu_Px": "0 because the +k and -k branch densities are equal"
+    },
+    "frequencies_squared": {
+      "omega_minus": "(6*ell**2 + 3*ell - 1)/6",
+      "omega_plus": "(12*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell - 1)/6"
+    },
+    "lambda": "ell*(ell + 1)",
+    "positive_frequency_inputs": {
+      "Einstein_minus": "equal +k and -k densities (12*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell - 1)/(6*ell**2 + 3*ell - 1) on |ell,m=0>",
+      "Einstein_plus": "equal +k and -k densities 1 on |ell,m=0>",
+      "extra": "zero"
+    },
+    "positivity_squared_remainder": "(63*ell**2 + 66*ell - 1)/36",
+    "resonant_k_squared": "-(-6*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 3*ell + 1)/6",
+    "resonant_output": {
+      "K": 0,
+      "L": "2*ell",
+      "M": 0,
+      "Omega": "2*omega_minus",
+      "input_pair": "the two positive-frequency Einstein-minus coefficients at +k and -k",
+      "phase_carrier": "c_minus^(+)*c_minus^(-)",
+      "target": "polar extra p-primary",
+      "target_p_remainder": "0",
+      "top_Gaunt_channel": "nonzero in V_ell tensor V_ell -> V_(2ell)"
+    },
+    "twist_axis": "A_hat=e_z",
+    "twist_wave_bounded_column": "CERTIFIED because every occupied coefficient has m_A=0"
+  },
+  "generality_level": "G3_EVERY_GENERIC_ELL_ONE_TUNED_NONZERO_ABSOLUTE_MOMENTUM",
+  "interpretation": "Twist alignment removes the twist-wave resonance but does not remove the independent standing-wave phase divisor. On a nonempty exact common-moment face, two axisymmetric opposite-momentum Einstein-minus waves land on a polar extra p shell. The bounded verdict therefore depends on a new dynamical adjoint coefficient, while smooth secular extension remains certified.",
+  "lifecycle_state": "CLASSIFIED",
+  "logical_disposition": {
+    "bounded_extension_decided": false,
+    "consequence": "moment maps plus the twist-alignment kernel do not imply bounded extension; an independent phase-sensitive source functional must be computed",
+    "constant_twist_times_wave_bounded_column_solved": true,
+    "dynamical_adjoint_projection_computed": false,
+    "phase_resonance_divisor_populated": true,
+    "stabilizer_moment_maps_vanish": true
+  },
+  "next_gate": "compute the ell=2 axial and polar Einstein-minus +/-k source projection into the polar L=4 p-primary adjoint at k^2=2*sqrt(3)-7/6; if nonzero, promote the fixture to a bounded obstruction and then seek the symbolic-ell coefficient",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.py",
+    "generator_sha256": "96803f249382513b423b7aaaeeb6537ae18041fb062ce97c987d4ebfddf52bd9",
+    "inputs": {
+      "opposite_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_cone.json",
+        "sha256": "1ee6417b7f6be0c425e2f33dcf140abe1a4bbf8b0b08548eb0d4c6721c0a6d23"
+      },
+      "phase_divisor": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_phase_resonance_divisor.json",
+        "sha256": "3a58c94bce450cec2bf40eeda9d8bddb7f38617a62b4bcd37ebf5adbc50e3557"
+      },
+      "smooth_extension": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json",
+        "sha256": "5be7efd39af228e51efa61e98d5fe76be3a741dd28f54d5d014383d4afe63a9f"
+      },
+      "twist_column": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell.json",
+        "sha256": "ebe4e41b64453d11f181dcac63564ed682637594e968992cb1db3cf2c81e3c6c"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_TWIST_ALIGNED_OPPOSITE_MOMENTUM_RESONANCE_GATE",
+  "result_state": "TWIST_ALIGNED_COMMON_ZERO_CONE_MEETS_BOUNDED_PHASE_RESONANCE_DIVISOR",
+  "schema": "einstein-maxwell-weyl-twist-aligned-opposite-momentum-resonance-gate-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.schema.json",
+  "schema_sha256": "8404edfd96c1a892866e6c70a8a184b76f678ad10f726483abc1da8451275b40",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 with circumference tuned to the displayed allowed momentum",
+    "carrier": "constant twist position plus paired +/-k axisymmetric Einstein-plus/minus standing waves",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "every one fixed integer ell>=2; output L=2ell",
+    "k": "one tuned allowed nonzero +/-k pair",
+    "m": "m_A=0 inputs and M=0 output",
+    "omega": "Einstein q-plus/minus inputs and polar p-primary sum-frequency output",
+    "parity": "input multiplicities may be chosen in either certified generic parity; the displayed arithmetic output is polar extra",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.18,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 1.94,
+      "status": "PASS",
+      "tests_run": 36
+    },
+    "tier_2": {
+      "criterion": "the twist bounded column, opposite-momentum cone, universal phase divisor and smooth-global extension are unchanged hashed inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "the dynamical bounded projection and higher lifecycles remain open",
+      "status": "NOT_RUN"
+    }
+  }
+}

@@ -1654,6 +1654,16 @@ gate remains fail-closed pending wave--wave opposite-momentum terms, multiple
 `|k|` fibres and the other global constraints; the causal row remains
 `NO_CERTIFIED_MAP`.
 
+The first opposite-momentum independence gate is now explicit.  On a tuned
+allowed `|k|` fibre for every generic `ell`, a nonzero `m_A=0` standing wave
+satisfies all five moment maps and the complete constant-twist-times-wave
+bounded column, yet still populates the polar `L=2ell` extra-shell phase
+divisor.  Thus the bounded cone requires a new dynamical adjoint coefficient;
+arithmetic resonance alone does not certify obstruction.  The next exact
+fixture is `ell=2`, `k^2=2*sqrt(3)-7/6` into the polar `L=4` extra adjoint.
+Smooth secular extension is already certified; bounded and causal lifecycles
+remain `OPEN` and `NO_CERTIFIED_MAP`, respectively.
+
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared
 certificate paths in the Einstein-team brief, with all of:

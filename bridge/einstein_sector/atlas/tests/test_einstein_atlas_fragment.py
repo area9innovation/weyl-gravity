@@ -60,6 +60,16 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("Opposite-momentum wave-wave terms", entry["claim_boundary"])
         self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
+    def test_twist_aligned_phase_divisor_requires_an_independent_functional(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("dynamical adjoint coefficient remains OPEN", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
     def test_abd_matrix_is_input_not_full_nonlinear_theorem(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.abd_times_ell2_extra"]
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")

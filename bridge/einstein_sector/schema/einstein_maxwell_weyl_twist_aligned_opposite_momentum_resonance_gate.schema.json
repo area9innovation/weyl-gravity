@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Twist-aligned opposite-momentum resonance gate",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "scope",
+    "exact_intersection_witness", "logical_disposition", "correction_classes",
+    "classification", "interpretation", "next_gate", "claim_boundary",
+    "provenance", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-twist-aligned-opposite-momentum-resonance-gate-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_TWIST_ALIGNED_OPPOSITE_MOMENTUM_RESONANCE_GATE"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "classification": {
+      "type": "object",
+      "required": [
+        "twist_aligned_common_zero_intersection_nonempty_every_ell",
+        "universal_phase_resonance_survives_twist_alignment",
+        "additional_bounded_resonance_functional_required",
+        "dynamical_resonance_coefficient_computed",
+        "complete_bounded_cone_classified",
+        "fixed_circumference_all_momenta_classified",
+        "causal_or_quantum_claim"
+      ],
+      "properties": {
+        "twist_aligned_common_zero_intersection_nonempty_every_ell": {"const": true},
+        "universal_phase_resonance_survives_twist_alignment": {"const": true},
+        "additional_bounded_resonance_functional_required": {"const": true},
+        "dynamical_resonance_coefficient_computed": {"const": false},
+        "complete_bounded_cone_classified": {"const": false},
+        "fixed_circumference_all_momenta_classified": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      }
+    }
+  }
+}

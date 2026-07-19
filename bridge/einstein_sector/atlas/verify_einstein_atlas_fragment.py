@@ -281,6 +281,18 @@ def verify() -> None:
         raise AssertionError("nonzero-k full bounded gate was over-promoted")
     if travelling_twist["mode_data"]["second_order"]["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("nonzero-k twist causal lifecycle was over-promoted")
+    aligned_phase = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
+    aligned_phase_second = aligned_phase["mode_data"]["second_order"]
+    if aligned_phase["descriptions"]["nonlinear"] != "OPEN":
+        raise AssertionError("twist-aligned phase gate over-promoted the bounded cone")
+    if aligned_phase["mode_data"]["taub_maps"]["status"] != "CERTIFIED":
+        raise AssertionError("twist-aligned common-zero witness was hidden")
+    if aligned_phase["mode_data"]["resonance"]["status"] != "CERTIFIED" or "dynamical adjoint coefficient remains OPEN" not in aligned_phase["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("twist-aligned phase divisor was not fail-closed")
+    if aligned_phase_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or aligned_phase_second["smooth_secular"]["status"] != "CERTIFIED":
+        raise AssertionError("twist-aligned correction-class split changed")
+    if aligned_phase_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("twist-aligned causal lifecycle was over-promoted")
     repair = by_id["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
     if repair["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("constant-twist projector repair was not promoted")

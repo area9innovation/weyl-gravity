@@ -1,0 +1,56 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_TWIST_ALIGNED_OPPOSITE_MOMENTUM_RESONANCE_GATE",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.py": "96803f249382513b423b7aaaeeb6537ae18041fb062ce97c987d4ebfddf52bd9",
+    "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json": "096ebab87e36ee7b7eb7c46e51168c863105e38513da5ac8a30118c2ee11d624",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.schema.json": "8404edfd96c1a892866e6c70a8a184b76f678ad10f726483abc1da8451275b40",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.py": "1e2e588432007b533e874d1da4c646c1011fc8fa4dde6ee7ff7710d6ee5cab1f",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.py": "75fa0742c0ade98bbc328ec9984702b933a927799726133a655a87a4f5dd1ba6",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-twist-aligned-opposite-momentum-resonance-gate.md": "81bcd037b7b54a9faa859c46a6466d6e097025c99674d5fe025bbac594b1f9d1",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "a3c5d05c499ea5f07b2951c5892f105ff2b93826d6cec11d190ae5a6fcbcad7b",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "d82676a25b0e5f4ce22de3d47935324d5ac4021a988ac8f9d2631ec682eee85d",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "74f1bca3b949bd953d0d8d3f6a262e25ef5d758bf2241e5285704f79e9f27e39",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "fcc0ec303b03810a094df89f9ec34f29a3103f3a241373bcd5f0836e388f0621",
+    "notes/d-quotient-einstein-team-brief.md": "45436b58e64532c3a429f3c315a8758f95288b3218e63f81e2366626d288fc98"
+  },
+  "claim": {
+    "certified": "For every ell>=2 on one explicitly tuned allowed nonzero momentum fibre, the complete constant-twist-times-wave bounded kernel and all five stabilizer moment maps have a nonzero common zero that populates a polar L=2ell extra-primary sum-frequency divisor.",
+    "proof": "Equal opposite-momentum m_A=0 rank-one densities solve the twist column and spatial/angular moments. An exact q-minus/q-plus density ratio solves the energy moment, the tuned k^2 is positive, and the top Clebsch-Gordan coefficient is nonzero while the output p polynomial vanishes identically.",
+    "open": "The Weyl-Maxwell quadratic source projection into the resonant polar adjoint, the bounded verdict, fixed-circumference momentum census, multiple absolute-momentum fibres, causal propagation and higher lifecycles."
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.18,
+      "commands": [
+        "python3 -m py_compile <producer, verifier, tests and atlas consumers>",
+        "python3 -m json.tool <certificate, schema, receipt and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.94,
+      "max_rss_kb": 60328,
+      "tests_run": 36,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The nonzero-k twist bounded column, opposite-momentum moment-map cone, universal phase-divisor arithmetic and smooth-global extension are unchanged exact hashed dependencies."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No bounded obstruction, causal, all-orders or programme-wide freeze is promoted."
+    }
+  }
+}
