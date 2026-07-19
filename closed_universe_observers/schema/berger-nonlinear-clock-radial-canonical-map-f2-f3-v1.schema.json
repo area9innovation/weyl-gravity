@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-nonlinear-clock-radial-canonical-map-f2-f3-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "radial_chart", "taylor_payload", "mutation_results", "activation_disposition", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-nonlinear-clock-radial-canonical-map-f2-f3-v1"},
+    "result_id": {"const": "BERGER_NONLINEAR_CLOCK_RADIAL_CANONICAL_MAP_F2_F3"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_RADIAL_F2_F3_AND_COTANGENT_LIFT_TEMPORAL_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "radial_chart": {"type": "object", "required": ["physical_relation", "exact_metric_map", "cubic_metric_map", "metric_map_defect_count", "inverse_defect_count", "cotangent_lift"], "properties": {"metric_map_defect_count": {"const": 0}, "inverse_defect_count": {"const": 0}, "cotangent_lift": {"type": "object", "properties": {"dH_coefficient_defect_count": {"const": 0}, "dR_coefficient_defect_count": {"const": 0}}}}},
+    "taylor_payload": {"type": "object", "required": ["factorial_convention", "component_rows", "parity", "F2", "F3", "F2_entry_count", "F3_entry_count", "canonical_sha256"], "properties": {"F2_entry_count": {"const": 38}, "F3_entry_count": {"const": 38}, "F2": {"type": "array", "minItems": 38, "maxItems": 38}, "F3": {"type": "array", "minItems": 38, "maxItems": 38}}},
+    "mutation_results": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object", "required": ["name", "detected"], "properties": {"detected": {"const": true}}}},
+    "activation_disposition": {"type": "object", "properties": {"radial_F2_F3_certified": {"const": true}, "temporal_F2_F3_certified": {"const": false}, "complete_clock_canonical_map_certified": {"const": false}, "scalar_q2_q3_transport_authorized": {"const": false}, "detector_response_on_second_order_cone_authorized": {"const": false}, "physical_branch_bridge_activated": {"const": false}}, "required": ["radial_F2_F3_certified", "temporal_F2_F3_certified", "complete_clock_canonical_map_certified", "scalar_q2_q3_transport_authorized", "detector_response_on_second_order_cone_authorized", "physical_branch_bridge_activated"]},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "DERIVE_TEMPORAL_RELATIONAL_TIME_RETRACTION_F2_F3_AND_BV_COTANGENT_LIFT"},
+    "claim_boundary": {"type": "string", "minLength": 1000},
+    "provenance": {"type": "object"}
+  }
+}

@@ -485,13 +485,26 @@ fitting them to the arity identities, then replay `q1q2`, `q2q2+q1q3`,
 remains inactive and no compact-product mode is identified with a Berger
 mode.
 
+The radial subgate is now certified.  From the authoritative relation
+`gHat=(1+R)^2 g` and the linear dressing `g=eta+H-2 R eta`,
+`BERGER_NONLINEAR_CLOCK_RADIAL_CANONICAL_MAP_F2_F3` derives
+`H_true=H+2 R H-3 R^2 eta+R^2 H-2 R^3 eta`.  Its quadratic truncation is
+exactly the map used by the completed unary.  Polarization exports 38 `F2`
+and 38 `F3` component entries, and the inverse-transpose cotangent lift
+preserves the canonical one-form coefficientwise.  The active remainder is
+the temporal relational-time retraction through `F2,F3` and its BV
+cotangent lift.  The fail-closed atlas row
+`observer.berger.interaction.nonlinear_clock_radial_canonical_map_f2_f3`
+is `CERTIFIED` for this radial nonlinear/symplectic submap and
+`NO_CERTIFIED_MAP` for detector response and cone restriction.
+
 ### Immediate priority after the polarization-emitter handoff
 
 1. Await and independently verify a provenance-complete external declaration
    of physical masses, couplings, inverse volume, shell/tail schedule,
    precision and stopping goal under the certified v2 recoil contract; do not
-   invent those values.  In parallel, derive the missing action-normalized
-   nonlinear clock `F2,F3` map and cotangent lift, then export scalar apparatus
+   invent those values.  In parallel, derive the remaining temporal
+   relational-time `F2,F3` map and cotangent lift, then export scalar apparatus
    `q2,q3`, replay the arity identities, and test `K_Berger` equivariance and
    observer-morphism stability before any tangent-cone restriction or solved
    backreacted gravity-clock branch.  Unary nilpotency and covariant

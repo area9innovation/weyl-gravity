@@ -1,0 +1,873 @@
+{
+  "activation_disposition": {
+    "complete_clock_canonical_map_certified": false,
+    "detector_response_on_second_order_cone_authorized": false,
+    "physical_branch_bridge_activated": false,
+    "radial_F2_F3_certified": true,
+    "scalar_q2_q3_transport_authorized": false,
+    "temporal_F2_F3_certified": false
+  },
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate closes the radial subgate of the nonlinear Berger clock chart. Starting from the certified linear dressing h=H-2 R eta and the invariant physical metric relation gHat=(1+R)^2 g, it derives H_true=H+2 R H-3 R^2 eta+R^2 H-2 R^3 eta exactly. Its quadratic truncation is precisely the radial map used by BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET. The result serializes all 38 graded-symmetric F2 and 38 F3 component entries on metric, radial, metric-cotangent and radial-cotangent rows in the factorial convention. The nonlinear cotangent lift is derived as the inverse transpose of the exact field Jacobian; its canonical one-form identity vanishes coefficientwise, while deletion of the radial cotangent correction is detected. The inverse field chart is checked through cubic order and deletion of the -2 R^3 eta term is detected. This does not supply the temporal relational-time F2/F3 retraction, transport the detector/emitter action tensors, export complete scalar q2/q3, replay the arity identities, prove K_Berger equivariance or observer-morphism stability, restrict detector response to Z2, promote nonlinear rank, activate physical Bridge 3, establish finite-parameter causality, or make a quantum claim. The scalar interaction lift remains NO_CERTIFIED_MAP until the temporal chart is fixed.",
+  "claim_status": "CERTIFIED_RADIAL_F2_F3_AND_COTANGENT_LIFT_TEMPORAL_OPEN",
+  "dependency_refs": {
+    "completed_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET.json",
+      "result_id": "BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET",
+      "sha256": "cacbd3be6bde8e80d142ca9012b024abd7a10472a2759b8f6e8b8af19b310481"
+    },
+    "component_contract": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json",
+      "result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+      "sha256": "4113635be1493e0eac5e945a970ce4989f0484d5fa658a10bf893c63f5ae707c"
+    },
+    "linear_clock_sdr": {
+      "path": "d_quotient_classical/certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json",
+      "result_id": "BERGER_MINIMAL_BV_CLOCK_SDR",
+      "sha256": "9e7503ed7fd6082b4164ae7b03d350c753f941cc45d639ffb02598ba8f262422"
+    },
+    "scalarization_obstruction": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_APPARATUS_Q2_Q3_SCALARIZATION_OBSTRUCTION.json",
+      "result_id": "BERGER_108_ROW_APPARATUS_Q2_Q3_SCALARIZATION_OBSTRUCTION",
+      "sha256": "aa77a5e2e9edd83b4e7a259f5be9ae885959ff7b981de47faa83eccc089add15"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "flags": {
+    "COMPLETED_UNARY_RADIAL_MAP_REPRODUCED": true,
+    "COMPLETE_NONLINEAR_CLOCK_CANONICAL_MAP_EXPORTED": false,
+    "QUANTUM_CLAIM": false,
+    "RADIAL_NONLINEAR_CLOCK_COTANGENT_LIFT_CANONICAL": true,
+    "RADIAL_NONLINEAR_CLOCK_F2_F3_EXPORTED": true,
+    "SCALAR_APPARATUS_Q2_Q3_TRANSPORT_AUTHORIZED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "TEMPORAL_NONLINEAR_CLOCK_F2_F3_EXPORTED": false
+  },
+  "mutation_results": [
+    {
+      "defect": "-2*R**3*eta",
+      "detected": true,
+      "name": "delete_cubic_minus_2_R3_eta"
+    },
+    {
+      "detected": true,
+      "fixture_value": "2",
+      "name": "omit_radial_cotangent_correction"
+    }
+  ],
+  "next_gate": "DERIVE_TEMPORAL_RELATIONAL_TIME_RETRACTION_F2_F3_AND_BV_COTANGENT_LIFT",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_nonlinear_clock_radial_canonical_map_f2_f3.py",
+        "sha256": "f0234f6c58136cdf53c7cfe4ba26bc40e8c082525808d6e46e0127acbbd738f4"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_nonlinear_clock_radial_canonical_map_f2_f3.py",
+        "sha256": "ea26595d26ed9fd7b16b162e128c086bbae3b44f0094d9a43755662f729302bf"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_nonlinear_clock_radial_canonical_map_f2_f3.py",
+        "sha256": "e80e11c2683dc3087c2c6e202ace66b90146cb9030fb79b0d2fb66d7b84238b5"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-nonlinear-clock-radial-canonical-map-f2-f3-v1.schema.json",
+        "sha256": "20130a2a5ed610ef102133d90d88c190005260f1f4fc4cfa33c4f22b6ac5bfb0"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-nonlinear-clock-radial-canonical-map-f2-f3.md",
+        "sha256": "1a33dd597455c88d604b203a375105b450b592ad0604d2d577ea5fe109a4d16d"
+      }
+    ]
+  },
+  "radial_chart": {
+    "cotangent_lift": {
+      "H_true_star": "(1+R)^(-2) H_linear_star",
+      "R_true_star": "R_linear_star-2(H-3 R eta).H_linear_star/(1+R)",
+      "canonical_one_form_identity": "H_true_star.dH_true+R_true_star.dR=H_linear_star.dH+R_linear_star.dR",
+      "dH_coefficient_defect_count": 0,
+      "dR_coefficient_defect": "0",
+      "dR_coefficient_defect_count": 0,
+      "mutation_fixture_value": "0"
+    },
+    "cubic_metric_map": "H*R**2 + 2*H*R + H - 2*R**3*eta - 3*R**2*eta",
+    "exact_metric_map": "H*R**2 + 2*H*R + H - 2*R**3*eta - 3*R**2*eta",
+    "inverse_defect": "0",
+    "inverse_defect_count": 0,
+    "inverse_expected": "-4*R**3*eta + 3*R**2*Y + 3*R**2*eta - 2*R*Y + Y",
+    "inverse_through_cubic": "-4*R**3*eta + 3*R**2*Y + 3*R**2*eta - 2*R*Y + Y",
+    "metric_map_defect": "0",
+    "metric_map_defect_count": 0,
+    "physical_relation": "gHat=(1+R)^2 g with g=eta+H-2 R eta in the linearly dressed carrier"
+  },
+  "result_id": "BERGER_NONLINEAR_CLOCK_RADIAL_CANONICAL_MAP_F2_F3",
+  "schema": "closed-universe-berger-nonlinear-clock-radial-canonical-map-f2-f3-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension",
+  "taylor_payload": {
+    "F2": [
+      {
+        "coefficient": 2,
+        "input_rows": [
+          5,
+          15
+        ],
+        "output_row": 5,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": 6,
+        "input_rows": [
+          15,
+          15
+        ],
+        "output_row": 5,
+        "role": "metric field conformal trace"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          15,
+          27
+        ],
+        "output_row": 27,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          5,
+          27
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": -6,
+        "input_rows": [
+          15,
+          27
+        ],
+        "output_row": 37,
+        "role": "radial cotangent trace derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          6,
+          15
+        ],
+        "output_row": 6,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          15,
+          28
+        ],
+        "output_row": 28,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          6,
+          28
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          7,
+          15
+        ],
+        "output_row": 7,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          15,
+          29
+        ],
+        "output_row": 29,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          7,
+          29
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          8,
+          15
+        ],
+        "output_row": 8,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          15,
+          30
+        ],
+        "output_row": 30,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          8,
+          30
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          9,
+          15
+        ],
+        "output_row": 9,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": -6,
+        "input_rows": [
+          15,
+          15
+        ],
+        "output_row": 9,
+        "role": "metric field conformal trace"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          15,
+          31
+        ],
+        "output_row": 31,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          9,
+          31
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 6,
+        "input_rows": [
+          15,
+          31
+        ],
+        "output_row": 37,
+        "role": "radial cotangent trace derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          10,
+          15
+        ],
+        "output_row": 10,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          15,
+          32
+        ],
+        "output_row": 32,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          10,
+          32
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          11,
+          15
+        ],
+        "output_row": 11,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          15,
+          33
+        ],
+        "output_row": 33,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          11,
+          33
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          12,
+          15
+        ],
+        "output_row": 12,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": -6,
+        "input_rows": [
+          15,
+          15
+        ],
+        "output_row": 12,
+        "role": "metric field conformal trace"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          15,
+          34
+        ],
+        "output_row": 34,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          12,
+          34
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 6,
+        "input_rows": [
+          15,
+          34
+        ],
+        "output_row": 37,
+        "role": "radial cotangent trace derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          13,
+          15
+        ],
+        "output_row": 13,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          15,
+          35
+        ],
+        "output_row": 35,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          13,
+          35
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          14,
+          15
+        ],
+        "output_row": 14,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": -6,
+        "input_rows": [
+          15,
+          15
+        ],
+        "output_row": 14,
+        "role": "metric field conformal trace"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          15,
+          36
+        ],
+        "output_row": 36,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": -2,
+        "input_rows": [
+          14,
+          36
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 6,
+        "input_rows": [
+          15,
+          36
+        ],
+        "output_row": 37,
+        "role": "radial cotangent trace derivative"
+      }
+    ],
+    "F2_entry_count": 38,
+    "F3": [
+      {
+        "coefficient": 2,
+        "input_rows": [
+          5,
+          15,
+          15
+        ],
+        "output_row": 5,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": 12,
+        "input_rows": [
+          15,
+          15,
+          15
+        ],
+        "output_row": 5,
+        "role": "metric field conformal trace"
+      },
+      {
+        "coefficient": 6,
+        "input_rows": [
+          15,
+          15,
+          27
+        ],
+        "output_row": 27,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          5,
+          15,
+          27
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 12,
+        "input_rows": [
+          15,
+          15,
+          27
+        ],
+        "output_row": 37,
+        "role": "radial cotangent trace derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          6,
+          15,
+          15
+        ],
+        "output_row": 6,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": 6,
+        "input_rows": [
+          15,
+          15,
+          28
+        ],
+        "output_row": 28,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          6,
+          15,
+          28
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          7,
+          15,
+          15
+        ],
+        "output_row": 7,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": 6,
+        "input_rows": [
+          15,
+          15,
+          29
+        ],
+        "output_row": 29,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          7,
+          15,
+          29
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          8,
+          15,
+          15
+        ],
+        "output_row": 8,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": 6,
+        "input_rows": [
+          15,
+          15,
+          30
+        ],
+        "output_row": 30,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          8,
+          15,
+          30
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          9,
+          15,
+          15
+        ],
+        "output_row": 9,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": -12,
+        "input_rows": [
+          15,
+          15,
+          15
+        ],
+        "output_row": 9,
+        "role": "metric field conformal trace"
+      },
+      {
+        "coefficient": 6,
+        "input_rows": [
+          15,
+          15,
+          31
+        ],
+        "output_row": 31,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          9,
+          15,
+          31
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": -12,
+        "input_rows": [
+          15,
+          15,
+          31
+        ],
+        "output_row": 37,
+        "role": "radial cotangent trace derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          10,
+          15,
+          15
+        ],
+        "output_row": 10,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": 6,
+        "input_rows": [
+          15,
+          15,
+          32
+        ],
+        "output_row": 32,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          10,
+          15,
+          32
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          11,
+          15,
+          15
+        ],
+        "output_row": 11,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": 6,
+        "input_rows": [
+          15,
+          15,
+          33
+        ],
+        "output_row": 33,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          11,
+          15,
+          33
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          12,
+          15,
+          15
+        ],
+        "output_row": 12,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": -12,
+        "input_rows": [
+          15,
+          15,
+          15
+        ],
+        "output_row": 12,
+        "role": "metric field conformal trace"
+      },
+      {
+        "coefficient": 6,
+        "input_rows": [
+          15,
+          15,
+          34
+        ],
+        "output_row": 34,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          12,
+          15,
+          34
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": -12,
+        "input_rows": [
+          15,
+          15,
+          34
+        ],
+        "output_row": 37,
+        "role": "radial cotangent trace derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          13,
+          15,
+          15
+        ],
+        "output_row": 13,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": 6,
+        "input_rows": [
+          15,
+          15,
+          35
+        ],
+        "output_row": 35,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          13,
+          15,
+          35
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          14,
+          15,
+          15
+        ],
+        "output_row": 14,
+        "role": "metric field radial product"
+      },
+      {
+        "coefficient": -12,
+        "input_rows": [
+          15,
+          15,
+          15
+        ],
+        "output_row": 14,
+        "role": "metric field conformal trace"
+      },
+      {
+        "coefficient": 6,
+        "input_rows": [
+          15,
+          15,
+          36
+        ],
+        "output_row": 36,
+        "role": "metric cotangent inverse Jacobian"
+      },
+      {
+        "coefficient": 2,
+        "input_rows": [
+          14,
+          15,
+          36
+        ],
+        "output_row": 37,
+        "role": "radial cotangent field derivative"
+      },
+      {
+        "coefficient": -12,
+        "input_rows": [
+          15,
+          15,
+          36
+        ],
+        "output_row": 37,
+        "role": "radial cotangent trace derivative"
+      }
+    ],
+    "F3_entry_count": 38,
+    "canonical_sha256": "cd488224465f0c36191096fb145345e6f17e148396fb47c745a6fa4f12a53cfd",
+    "component_rows": {
+      "metric": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "metric_cotangent": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "radial": 15,
+      "radial_cotangent": 37
+    },
+    "factorial_convention": "F=F1+F2/2!+F3/3!+...",
+    "parity": {
+      "metric_and_radial": "even",
+      "metric_and_radial_cotangents": "odd"
+    }
+  }
+}

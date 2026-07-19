@@ -1,0 +1,37 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_NONLINEAR_CLOCK_RADIAL_CANONICAL_MAP_F2_F3_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_NONLINEAR_CLOCK_RADIAL_CANONICAL_MAP_F2_F3",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The radial nonlinear clock chart is derived exactly from gHat=(1+R)^2 g and serialized as 38 F2 plus 38 F3 component entries with a canonical BV cotangent lift. It reproduces the completed unary radial quadratic map. The temporal relational-time retraction, complete scalar q2/q3 transport, arity replay, observer reduction, cone response, nonlinear rank, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {"tier": 0, "command": "python3 -m py_compile on changed Python; jsonschema validation through generator/verifier; python3 -m json.tool on changed structured data; git diff --check on explicit observer paths", "elapsed_seconds": "under 3", "status": "PASS", "scope": "radial map generator, verifier, tests, schema, certificate, atlas, ledger, receipt and canonical notes"},
+    {"tier": 1, "command": "pytest -q closed_universe_observers/tests/test_berger_nonlinear_clock_radial_canonical_map_f2_f3.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": "14.81", "status": "PASS", "scope": "41 exact chart, inverse, cotangent, mutation, fail-closed atlas, evidence-hash and comparison-ledger tests"},
+    {"tier": 1, "command": "python3 -m closed_universe_observers.verify_berger_nonlinear_clock_radial_canonical_map_f2_f3; python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment; python3 -m closed_universe_observers.verify_comparison_ledger", "elapsed_seconds": "2.11", "status": "PASS", "scope": "independent dependency hashes, 76-entry Taylor reconstruction, canonical one-form replay, generated atlas and historical/live comparison ledger"}
+  ],
+  "higher_tiers_not_run": {"tier_2": "The exact radial coordinate map and its direct generated-claims consumers were fully replayed; no shared classical operator or interaction tensor was changed.", "tier_3": "This radial subgate is not a freeze, release, shared-core algebra change, full interaction theorem or paper promotion."},
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_nonlinear_clock_radial_canonical_map_f2_f3.py", "sha256": "f0234f6c58136cdf53c7cfe4ba26bc40e8c082525808d6e46e0127acbbd738f4"},
+    {"path": "closed_universe_observers/verify_berger_nonlinear_clock_radial_canonical_map_f2_f3.py", "sha256": "ea26595d26ed9fd7b16b162e128c086bbae3b44f0094d9a43755662f729302bf"},
+    {"path": "closed_universe_observers/tests/test_berger_nonlinear_clock_radial_canonical_map_f2_f3.py", "sha256": "e80e11c2683dc3087c2c6e202ace66b90146cb9030fb79b0d2fb66d7b84238b5"},
+    {"path": "closed_universe_observers/schema/berger-nonlinear-clock-radial-canonical-map-f2-f3-v1.schema.json", "sha256": "20130a2a5ed610ef102133d90d88c190005260f1f4fc4cfa33c4f22b6ac5bfb0"},
+    {"path": "closed_universe_observers/reports/berger-nonlinear-clock-radial-canonical-map-f2-f3.md", "sha256": "1a33dd597455c88d604b203a375105b450b592ad0604d2d577ea5fe109a4d16d"},
+    {"path": "closed_universe_observers/certificates/BERGER_NONLINEAR_CLOCK_RADIAL_CANONICAL_MAP_F2_F3.json", "sha256": "10bafd62cb48a2b172377091ed4f461f775d2e82b4a71a1b2fd1cc4faab54a3e"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "73c1afbb0c511140250653dbe707a8d06d1153f2b4ebc70904f53665cbaa4ff8"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "d56d1f8c3d60852791b5df354c716f2e00bdac40ff60f497c5d2c24d0f24fec6"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "f7db30bb1b3d4d562bd75401e33b0a4311f01e05bc2ed45d23e9c34d7fb9ac42"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "84fcb726a37e069cc8b875e277ad137c4540fa9f1fd71fca96412bd1fdc6bc19"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "6e28d8f49e4bb1e8e531da2fc304be972cc1d17859a2b88f09a39c5680feeff8"}
+  ],
+  "flags": {
+    "RADIAL_NONLINEAR_CLOCK_F2_F3_EXPORTED": true,
+    "RADIAL_NONLINEAR_CLOCK_COTANGENT_LIFT_CANONICAL": true,
+    "COMPLETED_UNARY_RADIAL_MAP_REPRODUCED": true,
+    "TEMPORAL_NONLINEAR_CLOCK_F2_F3_EXPORTED": false,
+    "COMPLETE_NONLINEAR_CLOCK_CANONICAL_MAP_EXPORTED": false,
+    "SCALAR_APPARATUS_Q2_Q3_TRANSPORT_AUTHORIZED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "PHYSICAL_BRANCH_BRIDGE_ACTIVATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

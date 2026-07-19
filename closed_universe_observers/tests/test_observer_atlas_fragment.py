@@ -106,6 +106,19 @@ def test_apparatus_q2_q3_scalarization_fails_closed_on_clock_coordinate_jets():
         evidence["result_id"] for evidence in obstruction["evidence"]
     }
 
+
+def test_radial_clock_f2_f3_is_certified_without_temporal_activation():
+    rows = {row["id"]: row for row in build()["entries"]}
+    radial = rows["observer.berger.interaction.nonlinear_clock_radial_canonical_map_f2_f3"]
+    assert radial["descriptions"]["symplectic"] == "CERTIFIED"
+    assert radial["descriptions"]["nonlinear"] == "CERTIFIED"
+    assert radial["observer_data"]["clock_and_rod_dependence"]["status"] == "CERTIFIED"
+    assert radial["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert radial["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_NONLINEAR_CLOCK_RADIAL_CANONICAL_MAP_F2_F3" in {
+        evidence["result_id"] for evidence in radial["evidence"]
+    }
+
 def test_tangent_cone_is_not_promoted():
     row = next(row for row in build()["entries"] if row["id"] == "observer.berger.second_order_cone_restriction")
     assert row["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "OPEN"
