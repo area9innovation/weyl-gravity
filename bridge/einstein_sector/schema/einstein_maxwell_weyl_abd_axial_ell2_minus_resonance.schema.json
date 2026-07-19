@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Axial ell2 Einstein-minus global abd resonance",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "linear_input",
+    "direct_source", "shell_pairing", "bounded_zero_locus", "classification",
+    "interpretation", "next_gate", "claim_boundary", "provenance",
+    "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-abd-axial-ell2-minus-resonance-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ABD_AXIAL_ELL2_MINUS_RESONANCE"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "REDUCED-MODE"}},
+    "scope": {"type": "object"},
+    "direct_source": {"type": "object"},
+    "shell_pairing": {"type": "object"},
+    "bounded_zero_locus": {"type": "object"},
+    "classification": {"type": "object"},
+    "provenance": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": true
+}

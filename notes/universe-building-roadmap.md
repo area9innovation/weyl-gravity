@@ -1242,8 +1242,20 @@ cone on the homogeneous/twist plus `ell=2,k=0` extra carrier is exactly
 `(c,d,W_x,A)` and contains no extra wave.  Atlas row
 `einstein.ph.wm.mixed.complete_global_ell2_extra_bounded_cone` records this
 necessity-and-sufficiency theorem.  The larger smooth-secular cone remains
-distinct.  The active enlargement is now one opposite-sign standard Einstein
-oscillator, where moment-map cancellation is possible; other harmonics retain
+distinct.  The first opposite-sign enlargement is now closed on the aligned
+axial `ell=2,m=0,k=0` face.  Direct shell pairings force `a=b=d=0` on every
+nonzero wave branch, and the complete zero-frequency source—not merely
+`mu_H`—forces `Q_e=0`.  The surviving bounded branch is
+
+```text
+(c,W_x,A_z) times
+x_minus=(972*x_e1+52*x_e2)/(27*(-6+5*sqrt(3))).
+```
+
+Atlas row
+`einstein.ph.wm.mixed.aligned_global_axial_ell2_minus_extra_bounded_cone`
+records the complete declared union with the static `(c,d,W_x,A_z)` branch.
+The active promotion is all `m` and both parities; other harmonics retain
 their own full-time `a/d` gate.
 
 This advances nonlinear input to the already activated compact-product

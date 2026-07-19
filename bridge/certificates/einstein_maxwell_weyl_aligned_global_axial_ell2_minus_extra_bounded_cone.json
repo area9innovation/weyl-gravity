@@ -1,0 +1,148 @@
+{
+  "claim_boundary": "This theorem is complete only for one aligned axial ell=2,m=0,k=0 minus-plus-two-extra carrier with the declared global modes. It does not include Einstein-plus, polar wave input, non-axisymmetric cancellation, other ell or momenta, infinite sums, all-orders integration, final residual descent, causal propagation, observables, particles or quantum theory.",
+  "classification": {
+    "all_orders_integrability": false,
+    "bounded_zero_locus_necessary_and_sufficient": true,
+    "causal_or_quantum_claim": false,
+    "complete_declared_aligned_carrier_covered": true,
+    "electric_taub_cancellation_bounded_obstructed": true,
+    "general_ell_or_nonzero_momentum_classified": false,
+    "global_spectator_product_identified": true,
+    "opposite_sign_wave_branch_survives_global_adjoining": true,
+    "polar_or_all_m_input_classified": false
+  },
+  "complete_bounded_cone": {
+    "branch_intersection": "x_e1=x_e2=x_minus=0 and d=0",
+    "static_branch": "wave=0: (c,d,W_x,A_z) arbitrary, with a=b=Q_e=B_z=0",
+    "union_is_necessary_and_sufficient": true,
+    "wave_branch": "a=b=d=Q_e=B_z=0; c,W_x,A_z arbitrary; x_e1,x_e2>=0 and x_minus=(972*x_e1+52*x_e2)/(27*(-6+5*sqrt(3))); relative phases arbitrary"
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_SECULAR": {
+      "reason": "the bounded correction is a special smooth exponential-polynomial correction",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "equation": "L_WM Phi^(2)=-(1/2)D^2E_WM[Phi^(1),Phi^(1)]",
+  "interpretation": "The first opposite-sign wave enlargement survives bounded second order, but only after the global block stratifies sharply. The generalized a,b,d directions and twist velocity are excluded on the wave branch, and electric charge cannot replace an extra wave because its non-Hamiltonian homogeneous source has no bounded zero-frequency preimage. What remains is the genuine Einstein-minus/extra cone times the static circumference, Wilson and aligned twist-position spectators.",
+  "lifecycle_state": "CLASSIFIED",
+  "necessity": {
+    "universal_polynomial": "b=0 and B_z=0 on every bounded candidate",
+    "wave_cross_polynomial": "if the wave block is nonzero, its required Einstein-minus coefficient is nonzero and the exact shell ideal forces a=b=d=0",
+    "zero_frequency": {
+      "bounded_zero_frequency_operator": "0 on constant homogeneous corrections",
+      "electric_independence_witness": "E11=Q_e^2/2, hence Q_e=0",
+      "electric_source": "Q_e^2*(-1/2,1/2,-1/2,0)",
+      "nonzero_wave_requires_minus_and_at_least_one_extra": true,
+      "remaining_wave_equation": "16*(-972*x_e1 - 52*x_e2 - 162*x_minus + 135*sqrt(3)*x_minus)/45",
+      "row_order": [
+        "E00",
+        "E11",
+        "E22",
+        "Maxwell1"
+      ],
+      "wave_source": "(16*(-972*x_e1 - 52*x_e2 - 162*x_minus + 135*sqrt(3)*x_minus)/45)*(1,0,1/2,0)",
+      "wave_zero_locus": "x_minus=4*(243*x_e1 + 13*x_e2)/(27*(-6 + 5*sqrt(3))); x_e1,x_e2>=0"
+    }
+  },
+  "next_gate": "promote the global-plus-wave bounded classification from the aligned axial m=0 face to all m and both parities, then propagate the full-time a/d shell audit to general ell and momentum",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone.py",
+    "generator_sha256": "cdd12c3349c03cf38d9133147d13ef61cbfe41e7a6403e324acbc2d3fab9203a",
+    "inputs": {
+      "circumference": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
+        "sha256": "80f36e27d91cf92211b94c2fbc8d74e97806c04b688f72e02284f8951f8fecb9"
+      },
+      "constant_twist": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      },
+      "electric_wilson": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
+        "sha256": "50d0bf118e1699122b8bf4e0c3da7b8fb0295a9a4725d05c155122e8d2202676"
+      },
+      "homogeneous_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
+        "sha256": "236c308cec85b4edde24f0acd4fe4c2133c58516426041eab2d9ffb01be28d59"
+      },
+      "homogeneous_source": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_quadric_second_order.json",
+        "sha256": "f496750e8af73098b0e9427e2a3b5f7d2bf3ac4c42a1455e3b7807cfa8e73fb6"
+      },
+      "minus_global_resonance": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.json",
+        "sha256": "480b9bc2dcd06983a59b7a781a3377c62e83dc7231e3310d973fc9ef93ad40ae"
+      },
+      "standard_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      },
+      "wave_face": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_full_extra_face_second_order.json",
+        "sha256": "7c31d95e46adf65815d7647b57a4459bc5969993c563fd46b2b00582293a54a5"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ALIGNED_GLOBAL_AXIAL_ELL2_MINUS_EXTRA_BOUNDED_CONE",
+  "result_state": "ALIGNED_GLOBAL_PLUS_AXIAL_ELL2_MINUS_EXTRA_BOUNDED_CONE_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-aligned-global-axial-ell2-minus-extra-bounded-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone.schema.json",
+  "schema_sha256": "c1ba740df58d9bdd5896a0ef26cb6415b1ee6eed8b9d7546089f7402217dc666",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic correction",
+    "carrier": "complete homogeneous (a,b,c,d,Q_e,W_x), aligned axial twist (A_z,B_z), and axial ell=2,m=0,k=0 Einstein-minus plus both extra-primary amplitudes",
+    "charge_sector": "fixed N=2 magnetic bundle with electric tangent allowed",
+    "degree": 2,
+    "ell": "input 0,1,2; complete quadratic outputs inherited on the declared aligned face",
+    "k": 0,
+    "m": "0 on twist and wave inputs",
+    "omega": "generalized zero, sqrt(6-2*sqrt(3)), and 4/sqrt(3)",
+    "parity": "homogeneous and axial",
+    "theory": "Weyl-Maxwell target"
+  },
+  "sufficiency": {
+    "Wilson": "the cross source vanishes identically",
+    "aligned_twist": "A_z is a flat SO(2) holonomy; the m=0 wave is invariant under its lifted exact-family transport, giving a bounded mixed correction",
+    "circumference": "k=0 radius transport is bounded",
+    "electric": "absent on the bounded wave branch by the independent zero-frequency witness",
+    "static_branch": "the complete standard-global bounded correction theorem",
+    "wave_self": "the certified axial ell2 full-extra face supplies finite-quasiperiodic corrections for arbitrary relative phases"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.25,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 2.5,
+      "status": "PASS",
+      "tests_run": 25
+    },
+    "tier_2": {
+      "criterion": "the direct minus/global source, complete axial wave face and global source/operator inputs are exact content-addressed dependencies",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "all-m, both-parity, other-harmonic, causal, residual and quantum gates remain excluded",
+      "status": "NOT_RUN"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ALIGNED_GLOBAL_AXIAL_ELL2_MINUS_EXTRA_BOUNDED_CONE_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ALIGNED_GLOBAL_AXIAL_ELL2_MINUS_EXTRA_BOUNDED_CONE",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "direct_helper": {"path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_axial_ell2_minus_source_explore.py", "sha256": "599abc9ea85f194f67e11c4149a1a5f5ac9c6dedd53f18a2867ef89faa43f200"},
+    "source_generator": {"path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.py", "sha256": "71817eac1c5290b9e065026bcd506703d9ed8be15bf138869e0097a0f0010099"},
+    "source_certificate": {"path": "bridge/certificates/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.json", "sha256": "480b9bc2dcd06983a59b7a781a3377c62e83dc7231e3310d973fc9ef93ad40ae"},
+    "source_schema": {"path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.schema.json", "sha256": "eac674afca609dd54153f96b1be48dbb424c56c47ccff7345623804a48437f05"},
+    "source_verifier": {"path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.py", "sha256": "ad3c228029cafad3eb742e5899f5e06bd9d96c9d546fc74b8ca83d9a18beacd1"},
+    "source_tests": {"path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.py", "sha256": "6db72e1204bccc671022125424f3a50909f666bd554cbcca822342787582e974"},
+    "theorem_generator": {"path": "bridge/einstein_sector/einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone.py", "sha256": "cdd12c3349c03cf38d9133147d13ef61cbfe41e7a6403e324acbc2d3fab9203a"},
+    "theorem_certificate": {"path": "bridge/certificates/einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone.json", "sha256": "1907eb408256152813ff378eceae6441fdfbfaa28d5792090f437859b01ca721"},
+    "theorem_schema": {"path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone.schema.json", "sha256": "c1ba740df58d9bdd5896a0ef26cb6415b1ee6eed8b9d7546089f7402217dc666"},
+    "theorem_verifier": {"path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone.py", "sha256": "4f0ceb3f28274914a1aff4ba11685cb77858095bbae7e9d64c82355a8742049e"},
+    "theorem_tests": {"path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone.py", "sha256": "c7c0a7e4f14f14c613422e359b7580d60f824023b033b462201aa2315efb85f1"},
+    "atlas_generator": {"path": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py", "sha256": "a7554e8ea5c2c4b19277cc43af783b4d2499bdfafb4a6f8fc02b49f3453325b1"},
+    "atlas_fragment": {"path": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json", "sha256": "49665971ab1c199fb835fe6b24ad895835eb645f1b403a310df8f8a769bb75a0"}
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.25,
+      "commands": [
+        "python3 -m py_compile <scoped theorem, source, verifier, tests and atlas paths>",
+        "python3 -m json.tool <scoped schemas, certificates, receipt and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.50,
+      "tests_run": 25,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_abd_axial_ell2_minus_resonance --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_abd_axial_ell2_minus_resonance",
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 51.57,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_abd_axial_ell2_minus_resonance --write --replay-direct",
+      "criterion": "the three direct four-dimensional a,b,d bilinear sources replayed in parallel and matched the exact number-field formulas"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "all-m, polar, other-harmonic, causal, all-orders, residual and quantum gates remain excluded"
+    }
+  }
+}

@@ -2363,9 +2363,28 @@ necessity and sufficiency.  The old nonzero-extra common-zero orbit uses
 `B!=0` for its opposite sign and is removed by the independent twist-velocity
 polynomial obstruction.
 
-The active enlargement is now an opposite-sign standard Einstein oscillator,
-where the Hamiltonian moment map no longer eliminates the extra block.
-Other harmonics still require their own full-time `a/d` audit.  These
+The first opposite-sign enlargement is now classified on the aligned axial
+`ell=2,m=0,k=0` face.  A direct four-dimensional source replay for the
+Einstein-minus representative gives a triangular shell pairing: the `b`
+coefficient has a nonzero `t^2` pivot, `a` has a nonzero `t` pivot after
+`b=0`, and `d` has a nonzero constant pivot after `a=b=0`.  Thus every
+nonzero bounded wave forces `a=b=d=0`.
+
+The full zero-frequency source supplies a second, independent refinement.
+Although Einstein-minus can cancel the electric contribution to `mu_H`, the
+electric self-source retains `E11=Q_e^2/2`; the bounded homogeneous operator
+has zero image at frequency zero.  Hence `Q_e=0`.  The complete declared cone
+is the union of the static `(c,d,W_x,A_z)` branch and the nonzero wave branch
+
+```text
+a=b=d=Q_e=B_z=0,
+x_minus=(972*x_e1+52*x_e2)/(27*(-6+5*sqrt(3))),
+```
+
+with `c,W_x,A_z` and the relative wave phases arbitrary.  Atlas row
+`einstein.ph.wm.mixed.aligned_global_axial_ell2_minus_extra_bounded_cone`
+records necessity and sufficiency.  The next promotion is all `m` and both
+parities, followed by general `ell,k` full-time `a/d` shell audits.  These
 nonlinear results are inputs to active Bridge 1; they do not promote the
 linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

@@ -1,0 +1,139 @@
+{
+  "bounded_zero_locus": {
+    "ideal_on_wave_amplitude_z": "<b*z,a*z,d*z>",
+    "necessity": "successive t^2, t^1 and t^0 shell coefficients force b=0, a=0 and d=0",
+    "nonzero_wave_branch": "z!=0 implies a=b=d=0",
+    "sufficiency_for_declared_cross_ledger": "the mixed source vanishes when a=b=d=0"
+  },
+  "claim_boundary": "This is the complete bounded shell cross ideal only for a,b,d times one axial ell=2,m=0,k=0 Einstein-minus coefficient. It does not classify polar input, all m, other ell or momentum, oscillator self-products, the complete bounded cone, causal propagation, all-orders integration, residual descent, particles or quantum theory.",
+  "classification": {
+    "bounded_cross_ideal_classified": true,
+    "causal_or_quantum_claim": false,
+    "complete_abd_shell_pairing_polynomials_explicit": true,
+    "complete_bounded_cone_solved": false,
+    "direct_four_dimensional_source_rows_computed": true,
+    "nonzero_minus_forces_a_b_d_zero": true,
+    "other_parity_or_branch_classified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_source": {
+    "action_row_order": [
+      "6*metric_t",
+      "-6*metric_x",
+      "maxwell_t",
+      "maxwell_x"
+    ],
+    "method": "direct four-dimensional bivariate coefficient of the Weyl-Maxwell Euler operator",
+    "rows": {
+      "a": [
+        "0",
+        "6*I*(-6*sqrt(6)*t*sqrt(3 - sqrt(3)) + sqrt(2)*t*sqrt(3 - sqrt(3)) - 50*sqrt(3)*I + 80*I)",
+        "0",
+        "-2*I*(sqrt(6)*t*sqrt(3 - sqrt(3)) - 12*I + 6*sqrt(3)*I)"
+      ],
+      "b": [
+        "0",
+        "3*I*(-6*sqrt(6)*t**2*sqrt(3 - sqrt(3)) + sqrt(2)*t**2*sqrt(3 - sqrt(3)) - 100*sqrt(3)*I*t + 160*I*t - 45*sqrt(2)*sqrt(3 - sqrt(3)))",
+        "0",
+        "-I*(sqrt(6)*t**2*sqrt(3 - sqrt(3)) - 24*I*t + 12*sqrt(3)*I*t - 2*sqrt(6)*sqrt(3 - sqrt(3)))"
+      ],
+      "d": [
+        "0",
+        "-3*sqrt(2)*I*(-1 + 6*sqrt(3))*sqrt(3 - sqrt(3))",
+        "0",
+        "-sqrt(6)*I*sqrt(3 - sqrt(3))"
+      ]
+    }
+  },
+  "interpretation": "The opposite-sign Einstein-minus mode reopens the Hamiltonian moment-map cone, but it does not tolerate the generalized homogeneous a, b or d directions in a bounded correction. Their shell projections form a triangular polynomial chain with nonzero t^2, t and constant pivots.",
+  "lifecycle_state": "CLASSIFIED",
+  "linear_input": {
+    "coefficient_order": [
+      "H_t",
+      "H_x",
+      "Q_t",
+      "Q_x"
+    ],
+    "frequency_squared": "6-2*sqrt(3)",
+    "representative": [
+      "0",
+      "-2",
+      "0",
+      "2*sqrt(3)"
+    ]
+  },
+  "next_gate": "combine this ideal with the axial ell=2 minus-plus-extra bounded wave cone and the complete homogeneous zero-frequency source to classify the aligned global-plus-wave carrier",
+  "provenance": {
+    "direct_helper_path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_axial_ell2_minus_source_explore.py",
+    "direct_helper_sha256": "599abc9ea85f194f67e11c4149a1a5f5ac9c6dedd53f18a2867ef89faa43f200",
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.py",
+    "generator_sha256": "71817eac1c5290b9e065026bcd506703d9ed8be15bf138869e0097a0f0010099"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ABD_AXIAL_ELL2_MINUS_RESONANCE",
+  "result_state": "AXIAL_ELL2_MINUS_GLOBAL_ABD_BOUNDED_SHELL_IDEAL_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-abd-axial-ell2-minus-resonance-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.schema.json",
+  "schema_sha256": "eac674afca609dd54153f96b1be48dbb424c56c47ccff7345623804a48437f05",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic correction",
+    "carrier": "homogeneous a,b,d directions crossed with the axial ell=2,m=0,k=0 Einstein-minus q-primary",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": 2,
+    "k": 0,
+    "m": 0,
+    "omega": "sqrt(6-2*sqrt(3))",
+    "parity": "axial",
+    "theory": "Weyl-Maxwell target"
+  },
+  "shell_pairing": {
+    "adjoint": [
+      "0",
+      "-2",
+      "0",
+      "2*sqrt(3)"
+    ],
+    "leading_coefficients": {
+      "a_t_after_b_zero": "24*I*(3*sqrt(3)-1)*sqrt(6-2*sqrt(3))",
+      "b_t2": "12*I*(3*sqrt(3)-1)*sqrt(6-2*sqrt(3))",
+      "d_constant_after_a_b_zero": "12*I*(3*sqrt(3)-1)*sqrt(6-2*sqrt(3))"
+    },
+    "polynomials": {
+      "a": "-24*I*(-3*sqrt(6)*t*sqrt(3 - sqrt(3)) + sqrt(2)*t*sqrt(3 - sqrt(3)) - 27*sqrt(3)*I + 43*I)",
+      "b": "-6*I*(-6*sqrt(6)*t**2*sqrt(3 - sqrt(3)) + 2*sqrt(2)*t**2*sqrt(3 - sqrt(3)) - 108*sqrt(3)*I*t + 172*I*t - 47*sqrt(2)*sqrt(3 - sqrt(3)))",
+      "d": "12*sqrt(2)*I*(-1 + 3*sqrt(3))*sqrt(3 - sqrt(3))"
+    },
+    "self_adjoint_reason": "the reduced action Hessian is formally self-adjoint and the k=0 shell matrix is real symmetric"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_abd_axial_ell2_minus_resonance --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_abd_axial_ell2_minus_resonance"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.18,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 1.7,
+      "status": "PASS",
+      "tests_run": 4
+    },
+    "tier_2": {
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_abd_axial_ell2_minus_resonance --write --replay-direct",
+      "criterion": "three independent direct four-dimensional bilinear sources replay in parallel and reduce exactly in Q(sqrt(6-2*sqrt(3)))",
+      "elapsed_seconds": 51.57,
+      "status": "PASS"
+    },
+    "tier_3": {
+      "reason": "the result is a scoped source and shell-ideal theorem",
+      "status": "NOT_RUN"
+    }
+  }
+}
