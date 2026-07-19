@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import itertools
 import json
 from pathlib import Path
 
@@ -86,6 +87,36 @@ def support_rank(active_blocks: tuple[int, ...]) -> int:
     return matrix.rank()
 
 
+def independent_rank_strata() -> tuple[int, list[dict[str, int]]]:
+    local_count = 0
+    for valuations in itertools.combinations_with_replacement(range(5), 4):
+        if valuations[1] == 0:
+            continue
+        delta = valuations[0] + valuations[1]
+        if sum(valuations) - 1 < delta + 1:
+            raise AssertionError("candidate-13 verifier found a bad local Smith stratum")
+        local_count += 1
+    rows = []
+    for delta, q in ((0, 1), (0, 2), (0, 3), (1, 1), (1, 2), (2, 1)):
+        degree = 3 - delta - q
+        parameter_dimension = 2 * degree + 13
+        codimension = 20 - parameter_dimension
+        kernel_dimension = delta + q + 2
+        rows.append(
+            {
+                "torsion_length_delta": delta,
+                "splitting_jump_q": q,
+                "minimal_syzygy_component_degree": degree,
+                "parameter_dimension_upper_bound": parameter_dimension,
+                "codimension_lower_bound": codimension,
+                "required_codimension": delta + q + 1,
+                "kernel_dimension": kernel_dimension,
+                "incidence_dimension_upper_bound": 20 - codimension + kernel_dimension,
+            }
+        )
+    return local_count, rows
+
+
 def verify() -> None:
     certificate = json.loads(CERTIFICATE.read_text())
     schema = json.loads(SCHEMA.read_text())
@@ -146,6 +177,28 @@ def verify() -> None:
             raise AssertionError("candidate-13 three-support lcm bound changed")
     if boundary["maximum_boundary_incidence_dimension"] != 20:
         raise AssertionError("candidate-13 coordinate-boundary dimension changed")
+    rank_strata = certificate["all_active_rank_stratification"]
+    local_count, splitting_rows = independent_rank_strata()
+    if rank_strata["machine_audit"]["sorted_local_valuation_patterns_checked"] != local_count:
+        raise AssertionError("candidate-13 local valuation census changed")
+    if rank_strata["splitting_jump_rows"] != splitting_rows:
+        raise AssertionError("candidate-13 splitting-jump table changed")
+    for row in rank_strata["torsion_only_rows"]:
+        if (
+            row["codimension_lower_bound"] != row["torsion_length_delta"] + 1
+            or row["kernel_dimension"] != row["torsion_length_delta"] + 2
+            or row["incidence_dimension_upper_bound"] != 21
+        ):
+            raise AssertionError("candidate-13 torsion-only table changed")
+    prime = certificate["prime_zero_variety_theorem"]
+    if (
+        prime["ambient_dimension_over_C"] != 40
+        or prime["equation_count"] != 18
+        or prime["maximum_component_dimension_over_C"] != 22
+        or prime["rank_drop_incidence_dimension_upper_bound"] != 21
+        or prime["coordinate_boundary_incidence_dimension_upper_bound"] != 20
+    ):
+        raise AssertionError("candidate-13 prime-variety dimension ledger changed")
     classification = certificate["classification"]
     if not (
         classification["candidate_13_exact_pencil_reduction_certified"]
@@ -154,12 +207,15 @@ def verify() -> None:
         and classification["generic_component_dimension_22_certified"]
         and classification["three_root_cancellation_witness_certified"]
         and classification["coordinate_boundary_dimension_20_certified"]
+        and classification["all_active_torsion_strata_certified"]
+        and classification["all_active_splitting_jump_strata_certified"]
+        and classification["complete_rank_stratification_certified"]
+        and classification["full_candidate_13_zero_variety_classified"]
+        and classification["candidate_13_ideal_prime"]
     ):
         raise AssertionError("candidate-13 reduction was weakened")
     if (
-        classification["complete_rank_stratification_certified"]
-        or classification["full_candidate_13_zero_variety_classified"]
-        or classification["same_fibre_quadratic_sources_classified"]
+        classification["same_fibre_quadratic_sources_classified"]
         or classification["taub_common_zero_intersection_classified"]
         or classification["complete_two_fibre_tangent_cone_classified"]
         or classification["smooth_secular_classified"]

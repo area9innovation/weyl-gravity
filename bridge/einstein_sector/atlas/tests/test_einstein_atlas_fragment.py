@@ -262,7 +262,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("candidate 13 is the sole remaining fibrewise ideal", entry["claim_boundary"])
+        self.assertIn("all 20 fibrewise cross-fibre resonance ideals are now classified", entry["claim_boundary"])
 
     def test_candidate4_target_doublet_has_four_components_not_an_extension(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_l4_zero_variety"]
@@ -275,7 +275,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("candidate 13 is the sole remaining fibrewise ideal", entry["claim_boundary"])
+        self.assertIn("all 20 fibrewise cross-fibre resonance ideals are now classified", entry["claim_boundary"])
 
     def test_target_doublet_l3_varieties_are_determinantal_not_extensions(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_target_doublet_l3_zero_varieties"]
@@ -288,7 +288,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("candidate 13 is the sole remaining fibrewise ideal", entry["claim_boundary"])
+        self.assertIn("all 20 fibrewise cross-fibre resonance ideals are now classified", entry["claim_boundary"])
 
     def test_multiplicity_two_l3_varieties_keep_spectators_and_open_extension(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_multiplicity_two_l3_zero_varieties"]
@@ -301,7 +301,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("candidate 13 is the sole remaining fibrewise ideal", entry["claim_boundary"])
+        self.assertIn("all 20 fibrewise cross-fibre resonance ideals are now classified", entry["claim_boundary"])
 
     def test_multiplicity_two_l4_varieties_have_four_spectator_extended_components(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_rank_one_branch_l4_zero_varieties"]
@@ -314,7 +314,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("candidate 13 is the sole remaining cross-fibre ideal", entry["claim_boundary"])
+        self.assertIn("all 20 cross-fibre ideals are now classified", entry["claim_boundary"])
 
     def test_regular_pencil_l4_varieties_are_non_equidimensional_and_not_extensions(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_regular_pencil_l4_zero_varieties"]
@@ -327,23 +327,22 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("Candidate 13 is the sole remaining", entry["claim_boundary"])
+        self.assertIn("all 20 cross-fibre ideals are now classified", entry["claim_boundary"])
 
-    def test_candidate13_incidence_reduction_keeps_full_ideal_open(self) -> None:
+    def test_candidate13_prime_ideal_keeps_correction_classes_open(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_l4_incidence_reduction"]
         second = entry["mode_data"]["second_order"]
         self.assertIn("separately tuned circumference fibre", entry["mode_data"]["dispersion"]["statement"])
         self.assertIn("four distinct nonzero real generalized roots", entry["mode_data"]["lee_wald"]["statement"])
         self.assertIn("three-root cancellation witness", entry["mode_data"]["lee_wald"]["statement"])
-        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
-        self.assertIn("dimension-22 rank-18 open component", entry["mode_data"]["resonance"]["statement"])
-        self.assertIn("coordinate-boundary incidence stratum has dimension at most 20", entry["mode_data"]["resonance"]["statement"])
-        self.assertIn("full ideal remain unclassified", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("prime complex dimension-22 cone", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("splitting-jump strata are at most 20", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("not the candidate-13 zero-variety theorem", entry["claim_boundary"])
+        self.assertIn("complete candidate-13 cross-fibre zero-variety theorem", entry["claim_boundary"])
 
     def test_nonaxisymmetric_l3_matrix_closes_basis_not_cone(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]

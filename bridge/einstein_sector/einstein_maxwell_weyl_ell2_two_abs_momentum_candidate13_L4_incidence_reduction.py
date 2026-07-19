@@ -125,6 +125,52 @@ def support_rank(active_blocks: tuple[int, ...]) -> int:
     return matrix.rank()
 
 
+def all_active_rank_table() -> dict[str, object]:
+    """Audit the integer inequalities in the all-active P1 argument."""
+    local_pattern_count = 0
+    for m_1 in range(5):
+        for m_2 in range(m_1, 5):
+            for m_3 in range(m_2, 5):
+                for m_4 in range(m_3, 5):
+                    if m_2 == 0:
+                        continue
+                    delta = m_1 + m_2
+                    codimension = m_1 + m_2 + m_3 + m_4 - 1
+                    if codimension < delta + 1:
+                        raise AssertionError("candidate-13 local torsion codimension bound failed")
+                    local_pattern_count += 1
+
+    splitting_rows = []
+    for delta in range(3):
+        for q in range(1, 4 - delta):
+            component_degree = 3 - delta - q
+            parameter_dimension = 2 * component_degree + 13
+            codimension_lower_bound = 20 - parameter_dimension
+            required_codimension = delta + q + 1
+            if codimension_lower_bound < required_codimension:
+                raise AssertionError("candidate-13 splitting-jump codimension bound failed")
+            kernel_dimension = delta + q + 2
+            incidence_dimension_upper_bound = 20 - codimension_lower_bound + kernel_dimension
+            splitting_rows.append(
+                {
+                    "torsion_length_delta": delta,
+                    "splitting_jump_q": q,
+                    "minimal_syzygy_component_degree": component_degree,
+                    "parameter_dimension_upper_bound": parameter_dimension,
+                    "codimension_lower_bound": codimension_lower_bound,
+                    "required_codimension": required_codimension,
+                    "kernel_dimension": kernel_dimension,
+                    "incidence_dimension_upper_bound": incidence_dimension_upper_bound,
+                }
+            )
+    if max(row["incidence_dimension_upper_bound"] for row in splitting_rows) > 20:
+        raise AssertionError("candidate-13 splitting incidence bound changed")
+    return {
+        "local_pattern_count": local_pattern_count,
+        "splitting_rows": splitting_rows,
+    }
+
+
 def build() -> dict[str, object]:
     parent = json.loads(PARENT.read_text())
     fibre = next(item for item in parent["physical_fibres"] if item["candidate_index"] == 13)
@@ -159,6 +205,7 @@ def build() -> dict[str, object]:
     boundary_ranks = {str(size): support_rank(tuple(range(size))) for size in range(4)}
     if boundary_ranks != {"0": 0, "1": 5, "2": 10, "3": 15}:
         raise AssertionError("candidate-13 coordinate-support ranks changed")
+    all_active = all_active_rank_table()
     return {
         "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-L4-incidence-reduction-v1",
         "schema_path": str(SCHEMA.relative_to(ROOT)),
@@ -257,11 +304,47 @@ def build() -> dict[str, object]:
             "maximum_boundary_incidence_dimension": 20,
             "consequence": "no irreducible component of dimension at least 21 is contained in the coordinate boundary; its generic point lies in the torus where every A_i and every B_i is nonzero",
         },
-        "remaining_rank_stratification_gate": {
-            "statement": "on the all-active torus, prove that every source rank-drop stratum has total incidence dimension at most 21, then use complete-intersection unmixedness and the rank-18 Jacobian witness to prove the full ideal prime",
-            "required_bound": "dim{A: kernel_dimension>=k}+k <= 21 for every k>=3",
-            "full_zero_variety_classified": False,
+        "all_active_rank_stratification": {
+            "sheaf_map": "phi_A: O_P1(-4)^4 -> O_P1^2 with columns A_i*(1,lambda_i)^T",
+            "kernel_and_cokernel": "0 -> K_A -> O(-4)^4 -> O^2 -> T_A -> 0",
+            "torsion_length": "delta=length(T_A)",
+            "local_smith_formula": "at a point with sorted valuations m_1<=m_2<=m_3<=m_4, delta_z=m_1+m_2 because every 2x2 direction minor lambda_j-lambda_i is nonzero",
+            "local_torsion_codimension": "sum_i m_i-1 >= delta_z+1; over several support points this gives codim{length(T_A)>=delta}>=delta+1",
+            "kernel_splitting": "K_A=O(-a) plus O(-b), a<=b, a+b=16-delta",
+            "cohomology_formula": "ker(L_A)=H^0(K_A(8)); k=delta+2+q with q=h^1(K_A(8))",
+            "torsion_only_rows": [
+                {
+                    "torsion_length_delta": delta,
+                    "splitting_jump_q": 0,
+                    "codimension_lower_bound": delta + 1,
+                    "kernel_dimension": delta + 2,
+                    "incidence_dimension_upper_bound": 21,
+                }
+                for delta in range(1, 9)
+            ],
+            "splitting_jump_argument": "If q>0 then b=9+q, a=7-delta-q and a nonzero minimal syzygy has component degree d=a-4=3-delta-q. Writing X_i=A_i B_i in the fixed two-dimensional pencil kernel gives X_i=alpha_i H+beta_i J with H,J in Sym^(d+4). Projectivizing (H,J), choosing the four affine A_i scales and using the finite divisor choices gives dimension at most 2d+13. If one X_i vanishes identically, the smaller bound d+12 applies; two cannot vanish because the four pencil directions are distinct.",
+            "splitting_jump_rows": all_active["splitting_rows"],
+            "machine_audit": {
+                "sorted_local_valuation_patterns_checked": all_active["local_pattern_count"],
+                "valuation_range": "0<=m_i<=4",
+                "all_local_torsion_bounds_pass": True,
+                "all_possible_positive_q_rows_pass": True,
+            },
+            "rank_drop_bound": "dim{A:kernel_dimension>=k}+k<=21 for every k>=3; q=0 torsion strata are at most 21 and q>0 strata are at most 20",
         },
+        "prime_zero_variety_theorem": {
+            "ambient_dimension_over_C": 40,
+            "equation_count": 18,
+            "maximum_component_dimension_over_C": 22,
+            "rank_drop_incidence_dimension_upper_bound": 21,
+            "coordinate_boundary_incidence_dimension_upper_bound": 20,
+            "complete_intersection": "the 18 generators have height 18 in the polynomial ring, hence form a complete intersection and the ideal is unmixed",
+            "unique_component": "the nonempty rank-18 source open set is a rank-two vector bundle over an irreducible open subset of A^20; every complementary stratum has dimension at most 21, so unmixedness leaves its closure as the unique component",
+            "generic_reducedness": "the rank-18 derivative with respect to B gives Jacobian rank 18 on the generic fixture",
+            "primality": "an unmixed one-minimal-prime complete intersection that is reduced at its generic point is radical; therefore the candidate-13 ideal is prime",
+            "zero_variety": "one irreducible complex dimension-22 affine cone in ambient dimension 40",
+        },
+        "next_gate": "join the certified cross-fibre prime incidence cone to the same-fibre quadratic sources and five Taub moment maps before deciding bounded or smooth-secular extension",
         "classification": {
             "candidate_13_exact_pencil_reduction_certified": True,
             "four_distinct_real_generalized_roots_certified": True,
@@ -269,8 +352,11 @@ def build() -> dict[str, object]:
             "generic_component_dimension_22_certified": True,
             "three_root_cancellation_witness_certified": True,
             "coordinate_boundary_dimension_20_certified": True,
-            "complete_rank_stratification_certified": False,
-            "full_candidate_13_zero_variety_classified": False,
+            "all_active_torsion_strata_certified": True,
+            "all_active_splitting_jump_strata_certified": True,
+            "complete_rank_stratification_certified": True,
+            "full_candidate_13_zero_variety_classified": True,
+            "candidate_13_ideal_prime": True,
             "same_fibre_quadratic_sources_classified": False,
             "taub_common_zero_intersection_classified": False,
             "complete_two_fibre_tangent_cone_classified": False,
@@ -278,7 +364,7 @@ def build() -> dict[str, object]:
             "causal_or_quantum_claim": False,
         },
         "provenance": {"parent": str(PARENT.relative_to(ROOT)), "parent_sha256": sha(PARENT)},
-        "claim_boundary": "This certificate reduces candidate 13 exactly, certifies its generic dimension-22 incidence component, exhibits genuine three-root cancellation and bounds every coordinate-boundary incidence stratum by dimension 20. It does not classify the all-active degenerate rank strata or the full zero variety. Same-fibre, Taub and correction-class joins remain fail-closed.",
+        "claim_boundary": "This certificate classifies the complete candidate-13 cross-fibre all-m L4 resonance ideal as one prime complex dimension-22 cone. It does not join same-fibre quadratic sources, Taub maps or any correction class, and makes no residual, causal, observational or quantum claim.",
     }
 
 

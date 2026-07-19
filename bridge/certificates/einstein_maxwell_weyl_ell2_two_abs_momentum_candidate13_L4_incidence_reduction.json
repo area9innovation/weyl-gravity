@@ -1,14 +1,154 @@
 {
+  "all_active_rank_stratification": {
+    "cohomology_formula": "ker(L_A)=H^0(K_A(8)); k=delta+2+q with q=h^1(K_A(8))",
+    "kernel_and_cokernel": "0 -> K_A -> O(-4)^4 -> O^2 -> T_A -> 0",
+    "kernel_splitting": "K_A=O(-a) plus O(-b), a<=b, a+b=16-delta",
+    "local_smith_formula": "at a point with sorted valuations m_1<=m_2<=m_3<=m_4, delta_z=m_1+m_2 because every 2x2 direction minor lambda_j-lambda_i is nonzero",
+    "local_torsion_codimension": "sum_i m_i-1 >= delta_z+1; over several support points this gives codim{length(T_A)>=delta}>=delta+1",
+    "machine_audit": {
+      "all_local_torsion_bounds_pass": true,
+      "all_possible_positive_q_rows_pass": true,
+      "sorted_local_valuation_patterns_checked": 55,
+      "valuation_range": "0<=m_i<=4"
+    },
+    "rank_drop_bound": "dim{A:kernel_dimension>=k}+k<=21 for every k>=3; q=0 torsion strata are at most 21 and q>0 strata are at most 20",
+    "sheaf_map": "phi_A: O_P1(-4)^4 -> O_P1^2 with columns A_i*(1,lambda_i)^T",
+    "splitting_jump_argument": "If q>0 then b=9+q, a=7-delta-q and a nonzero minimal syzygy has component degree d=a-4=3-delta-q. Writing X_i=A_i B_i in the fixed two-dimensional pencil kernel gives X_i=alpha_i H+beta_i J with H,J in Sym^(d+4). Projectivizing (H,J), choosing the four affine A_i scales and using the finite divisor choices gives dimension at most 2d+13. If one X_i vanishes identically, the smaller bound d+12 applies; two cannot vanish because the four pencil directions are distinct.",
+    "splitting_jump_rows": [
+      {
+        "codimension_lower_bound": 3,
+        "incidence_dimension_upper_bound": 20,
+        "kernel_dimension": 3,
+        "minimal_syzygy_component_degree": 2,
+        "parameter_dimension_upper_bound": 17,
+        "required_codimension": 2,
+        "splitting_jump_q": 1,
+        "torsion_length_delta": 0
+      },
+      {
+        "codimension_lower_bound": 5,
+        "incidence_dimension_upper_bound": 19,
+        "kernel_dimension": 4,
+        "minimal_syzygy_component_degree": 1,
+        "parameter_dimension_upper_bound": 15,
+        "required_codimension": 3,
+        "splitting_jump_q": 2,
+        "torsion_length_delta": 0
+      },
+      {
+        "codimension_lower_bound": 7,
+        "incidence_dimension_upper_bound": 18,
+        "kernel_dimension": 5,
+        "minimal_syzygy_component_degree": 0,
+        "parameter_dimension_upper_bound": 13,
+        "required_codimension": 4,
+        "splitting_jump_q": 3,
+        "torsion_length_delta": 0
+      },
+      {
+        "codimension_lower_bound": 5,
+        "incidence_dimension_upper_bound": 19,
+        "kernel_dimension": 4,
+        "minimal_syzygy_component_degree": 1,
+        "parameter_dimension_upper_bound": 15,
+        "required_codimension": 3,
+        "splitting_jump_q": 1,
+        "torsion_length_delta": 1
+      },
+      {
+        "codimension_lower_bound": 7,
+        "incidence_dimension_upper_bound": 18,
+        "kernel_dimension": 5,
+        "minimal_syzygy_component_degree": 0,
+        "parameter_dimension_upper_bound": 13,
+        "required_codimension": 4,
+        "splitting_jump_q": 2,
+        "torsion_length_delta": 1
+      },
+      {
+        "codimension_lower_bound": 7,
+        "incidence_dimension_upper_bound": 18,
+        "kernel_dimension": 5,
+        "minimal_syzygy_component_degree": 0,
+        "parameter_dimension_upper_bound": 13,
+        "required_codimension": 4,
+        "splitting_jump_q": 1,
+        "torsion_length_delta": 2
+      }
+    ],
+    "torsion_length": "delta=length(T_A)",
+    "torsion_only_rows": [
+      {
+        "codimension_lower_bound": 2,
+        "incidence_dimension_upper_bound": 21,
+        "kernel_dimension": 3,
+        "splitting_jump_q": 0,
+        "torsion_length_delta": 1
+      },
+      {
+        "codimension_lower_bound": 3,
+        "incidence_dimension_upper_bound": 21,
+        "kernel_dimension": 4,
+        "splitting_jump_q": 0,
+        "torsion_length_delta": 2
+      },
+      {
+        "codimension_lower_bound": 4,
+        "incidence_dimension_upper_bound": 21,
+        "kernel_dimension": 5,
+        "splitting_jump_q": 0,
+        "torsion_length_delta": 3
+      },
+      {
+        "codimension_lower_bound": 5,
+        "incidence_dimension_upper_bound": 21,
+        "kernel_dimension": 6,
+        "splitting_jump_q": 0,
+        "torsion_length_delta": 4
+      },
+      {
+        "codimension_lower_bound": 6,
+        "incidence_dimension_upper_bound": 21,
+        "kernel_dimension": 7,
+        "splitting_jump_q": 0,
+        "torsion_length_delta": 5
+      },
+      {
+        "codimension_lower_bound": 7,
+        "incidence_dimension_upper_bound": 21,
+        "kernel_dimension": 8,
+        "splitting_jump_q": 0,
+        "torsion_length_delta": 6
+      },
+      {
+        "codimension_lower_bound": 8,
+        "incidence_dimension_upper_bound": 21,
+        "kernel_dimension": 9,
+        "splitting_jump_q": 0,
+        "torsion_length_delta": 7
+      },
+      {
+        "codimension_lower_bound": 9,
+        "incidence_dimension_upper_bound": 21,
+        "kernel_dimension": 10,
+        "splitting_jump_q": 0,
+        "torsion_length_delta": 8
+      }
+    ]
+  },
   "candidate_index": 13,
-  "claim_boundary": "This certificate reduces candidate 13 exactly, certifies its generic dimension-22 incidence component, exhibits genuine three-root cancellation and bounds every coordinate-boundary incidence stratum by dimension 20. It does not classify the all-active degenerate rank strata or the full zero variety. Same-fibre, Taub and correction-class joins remain fail-closed.",
+  "claim_boundary": "This certificate classifies the complete candidate-13 cross-fibre all-m L4 resonance ideal as one prime complex dimension-22 cone. It does not join same-fibre quadratic sources, Taub maps or any correction class, and makes no residual, causal, observational or quantum claim.",
   "classification": {
+    "all_active_splitting_jump_strata_certified": true,
+    "all_active_torsion_strata_certified": true,
     "candidate_13_exact_pencil_reduction_certified": true,
+    "candidate_13_ideal_prime": true,
     "causal_or_quantum_claim": false,
-    "complete_rank_stratification_certified": false,
+    "complete_rank_stratification_certified": true,
     "complete_two_fibre_tangent_cone_classified": false,
     "coordinate_boundary_dimension_20_certified": true,
     "four_distinct_real_generalized_roots_certified": true,
-    "full_candidate_13_zero_variety_classified": false,
+    "full_candidate_13_zero_variety_classified": true,
     "generic_component_dimension_22_certified": true,
     "generic_rank_18_open_component_certified": true,
     "same_fibre_quadratic_sources_classified": false,
@@ -213,6 +353,7 @@
       "sum_i lambda_i*A_i*B_i=0"
     ]
   },
+  "next_gate": "join the certified cross-fibre prime incidence cone to the same-fibre quadratic sources and five Taub moment maps before deciding bounded or smooth-secular extension",
   "pencil_reduction": {
     "ambient_dimension_over_C": 40,
     "cross_form": "K_1=[[0,C_ap],[C_pa,0]]",
@@ -225,20 +366,27 @@
     "scalar_equations": 18,
     "squared_operator": "T=C_pp^{-1} C_pa C_aa^{-1} C_ap"
   },
+  "prime_zero_variety_theorem": {
+    "ambient_dimension_over_C": 40,
+    "complete_intersection": "the 18 generators have height 18 in the polynomial ring, hence form a complete intersection and the ideal is unmixed",
+    "coordinate_boundary_incidence_dimension_upper_bound": 20,
+    "equation_count": 18,
+    "generic_reducedness": "the rank-18 derivative with respect to B gives Jacobian rank 18 on the generic fixture",
+    "maximum_component_dimension_over_C": 22,
+    "primality": "an unmixed one-minimal-prime complete intersection that is reduced at its generic point is radical; therefore the candidate-13 ideal is prime",
+    "rank_drop_incidence_dimension_upper_bound": 21,
+    "unique_component": "the nonempty rank-18 source open set is a rank-two vector bundle over an irreducible open subset of A^20; every complementary stratum has dimension at most 21, so unmixedness leaves its closure as the unique component",
+    "zero_variety": "one irreducible complex dimension-22 affine cone in ambient dimension 40"
+  },
   "provenance": {
     "parent": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system.json",
     "parent_sha256": "7c4e0ac43d1db48098d1250e09abdefbf209758167882b68239c6c9841c71046"
-  },
-  "remaining_rank_stratification_gate": {
-    "full_zero_variety_classified": false,
-    "required_bound": "dim{A: kernel_dimension>=k}+k <= 21 for every k>=3",
-    "statement": "on the all-active torus, prove that every source rank-drop stratum has total incidence dimension at most 21, then use complete-intersection unmixedness and the rank-18 Jacobian witness to prove the full ideal prime"
   },
   "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_L4_INCIDENCE_REDUCTION",
   "rho": "(-250 + 461*sqrt(10))/2132",
   "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-L4-incidence-reduction-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.schema.json",
-  "schema_sha256": "541101526dfa3d58156a27357f1d453886878d66d016ae4b27a7c6e5963537e0",
+  "schema_sha256": "2e87700c66506ffbcd98cdc2ef9e4869b2ae10ae481886e1881bf975379a0d55",
   "scope": {
     "background": "candidate-13 tuned compact magnetically supported Plebanski-Hacyan product",
     "boundaries": "closed S1_L times S2 before final residual quotient",

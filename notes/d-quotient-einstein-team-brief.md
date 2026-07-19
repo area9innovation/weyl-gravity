@@ -3597,16 +3597,22 @@ carries a rank-two kernel bundle and an irreducible dimension-22 generic
 incidence component.  The weights
 `lambda_2-lambda_3`, `lambda_3-lambda_1`, `lambda_1-lambda_2` also give an
 exact three-root cancellation solution, so the regular-pencil one-eigenline
-factorization cannot be imported.  This does not close the candidate-13
-ideal.  The coordinate boundary is now completely bounded: support sizes
+factorization cannot be imported.  The coordinate boundary is completely
+bounded: support sizes
 zero, one, two and generic three have incidence dimension 20, while the
 special three-support lcm strata have dimension at most 17; the same holds
-after interchanging the two quartic factors.  Thus every still-dangerous
-component has generic point in the all-active torus.  The active gate is the all-active
-degenerate source-rank bound
-`dim{A:ker_dim>=k}+k<=21` for every `k>=3`; only after that bound may
-complete-intersection unmixedness and the rank-18 Jacobian witness promote the
-full ideal.  The atlas records this distinction explicitly as `OPEN`.
+after interchanging the two quartic factors.  On the all-active torus, the
+kernel bundle of `O(-4)^4 -> O^2` separates a torsion length `delta` from a
+splitting jump `q`.  Local Smith normal form gives codimension at least
+`delta+1`; a low-degree-syzygy divisor count exhausts the six possible
+positive-`q` pairs and bounds their incidence strata by dimension 20.  Thus
+every rank-drop stratum is at most dimension 21.  The 18 equations have
+height 18, so complete-intersection unmixedness leaves the dimension-22
+rank-two bundle closure as the unique component; its rank-18 Jacobian makes
+it generically reduced, hence the ideal is prime.  All 20 cross-fibre
+resonance ideals are now classified.  The atlas records candidate 13 as
+resonance `CERTIFIED`; joining these ideals to same-fibre sources and the five
+Taub maps is the next fail-closed gate.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).

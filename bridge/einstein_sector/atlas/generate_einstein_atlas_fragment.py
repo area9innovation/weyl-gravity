@@ -969,7 +969,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED","Each complete all-m resonance variety is one irreducible complex dimension-14 Cartesian product of two third-transvectant kernels; the exact rank-drop and elimination ideals are certified."),
             _second_order(("OPEN","Complete resonance ideals are necessary but not sufficient for bounded extension; same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on these varieties."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("ell2_two_abs_momentum_scalar_L1_zero_varieties","ell2_two_abs_momentum_scalar_L3_zero_variety","ell2_two_abs_momentum_scalar_L4_zero_varieties","ell2_two_abs_momentum_candidate4_L4_zero_variety","ell2_two_abs_momentum_target_doublet_L3_zero_varieties","ell2_two_abs_momentum_multiplicity_two_L3_zero_varieties","ell2_two_abs_momentum_rank_one_branch_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
-            "This classifies all three scalar L1 resonance ideals. Together with the separately certified later fibres, candidate 13 is the sole remaining fibrewise ideal; the two-fibre tangent cone is still open. Same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
+            "This classifies all three scalar L1 resonance ideals. Together with the separately certified later fibres, all 20 fibrewise cross-fibre resonance ideals are now classified; the two-fibre tangent cone is still open. Same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_l4_zero_variety",
@@ -981,7 +981,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED","The complete all-m resonance variety has exactly four ten-dimensional linear components over C: two one-fibre-zero planes and the two real mixed sheets with common parity ratio plus or minus sqrt(3)."),
             _second_order(("OPEN","The resonance variety is decomposed, but same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on the four components."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("ell2_two_abs_momentum_candidate4_L4_zero_variety","ell2_two_abs_momentum_target_doublet_L3_zero_varieties","ell2_two_abs_momentum_multiplicity_two_L3_zero_varieties","ell2_two_abs_momentum_rank_one_branch_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
-            "This classifies the candidate-4 target-doublet L4 resonance ideal. Together with the separately certified later classes, candidate 13 is the sole remaining fibrewise ideal; the two-fibre tangent cone, same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
+            "This classifies the candidate-4 target-doublet L4 resonance ideal. Together with the separately certified later classes, all 20 fibrewise cross-fibre resonance ideals are now classified; the two-fibre tangent cone, same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_target_doublet_l3_zero_varieties",
@@ -993,7 +993,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED","Each complete all-m resonance variety is one irreducible complex dimension-12 product of two rank-at-most-one 5-by-2 determinantal cones."),
             _second_order(("OPEN","The resonance ideals are complete, but same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on these cones."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("ell2_two_abs_momentum_target_doublet_L3_zero_varieties","ell2_two_abs_momentum_multiplicity_two_L3_zero_varieties","ell2_two_abs_momentum_rank_one_branch_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
-            "This classifies candidates 1 and 16 only. Together with the separately certified later classes, candidate 13 is the sole remaining fibrewise ideal; the two-fibre tangent cone, same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
+            "This classifies candidates 1 and 16 only. Together with the separately certified later classes, all 20 fibrewise cross-fibre resonance ideals are now classified; the two-fibre tangent cone, same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_multiplicity_two_l3_zero_varieties",
@@ -1005,7 +1005,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED","Each all-m resonance variety is one irreducible complex dimension-22 product: two six-dimensional rank-one cones times a ten-dimensional spectator affine space."),
             _second_order(("OPEN","The resonance ideals are complete, but same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on these varieties."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("ell2_two_abs_momentum_multiplicity_two_L3_zero_varieties","ell2_two_abs_momentum_rank_one_branch_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
-            "This classifies candidates 6, 10 and 18 only. Together with the separately certified later fibres, candidate 13 is the sole remaining fibrewise ideal; same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
+            "This classifies candidates 6, 10 and 18 only. Together with the separately certified later fibres, all 20 fibrewise cross-fibre resonance ideals are now classified; same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_rank_one_branch_l4_zero_varieties",
@@ -1017,7 +1017,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED","Each all-m resonance variety has four complex dimension-20 components in ambient dimension 30: two one-fibre-zero planes and two real mixed sheets, each times a ten-dimensional spectator space."),
             _second_order(("OPEN","The resonance ideals are complete, but same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on these varieties."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("ell2_two_abs_momentum_rank_one_branch_zero_varieties","ell2_two_abs_momentum_regular_pencil_L4_zero_varieties","ell2_two_abs_momentum_multiplicity_two_L3_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
-            "This classifies candidates 8 and 12 only. After the separately certified regular-pencil fibres, candidate 13 is the sole remaining cross-fibre ideal; same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
+            "This classifies candidates 8 and 12 only. Together with the separately certified candidate-13 prime cone and other fibres, all 20 cross-fibre ideals are now classified; same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_regular_pencil_l4_zero_varieties",
@@ -1029,7 +1029,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED","Each all-m zero variety has exactly six real-supported linear components in ambient dimension 30: one dimension-20 scalar-fibre-zero component and five dimension-10 components, four of them mixed pencil eigenlines."),
             _second_order(("OPEN","The resonance ideals are complete, but same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on these varieties."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("ell2_two_abs_momentum_regular_pencil_L4_zero_varieties","ell2_two_abs_momentum_rank_one_branch_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
-            "This classifies candidates 7, 11 and 19 only. Candidate 13 is the sole remaining unclassified cross-fibre ideal; same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
+            "This classifies candidates 7, 11 and 19 only. Together with the separately certified candidate-13 prime cone, all 20 cross-fibre ideals are now classified; same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_l4_incidence_reduction",
@@ -1038,10 +1038,10 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED","The exact candidate-13 p_extra/p_extra to q_plus collision and its separately tuned circumference fibre are retained without cross-background identification."),
             ("CERTIFIED","All four internal blocks are invertible, exact interval arithmetic gives four distinct nonzero real generalized roots, and an explicit three-root cancellation witness forbids the earlier one-eigenline factorization."),
             ("OPEN","The five stabilizer moment maps and same-fibre quadratic sources have not been joined to the candidate-13 incidence variety."),
-            ("OPEN","The all-m equations reduce exactly to two weighted sums of binary-quartic products and have a certified irreducible dimension-22 rank-18 open component. Every coordinate-boundary incidence stratum has dimension at most 20; the all-active rank-drop strata and full ideal remain unclassified."),
-            _second_order(("OPEN","The full cross-fibre ideal, same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on the incidence variety."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            ("CERTIFIED","The all-m equations define one prime complex dimension-22 cone in ambient dimension 40. Coordinate-boundary strata are at most dimension 20; all-active torsion strata are at most 21 and splitting-jump strata are at most 20."),
+            _second_order(("OPEN","The certified cross-fibre prime ideal, same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on the incidence variety."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("ell2_two_abs_momentum_candidate13_L4_incidence_reduction","ell2_two_abs_momentum_regular_pencil_L4_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
-            "This is an exact normal-form and generic-component gate, not the candidate-13 zero-variety theorem. The rank-drop stratification, full ideal, same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
+            "This is the complete candidate-13 cross-fibre zero-variety theorem. Same-fibre, Taub, bounded, smooth-secular, residual, causal, observational and quantum lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
@@ -1847,15 +1847,18 @@ def build() -> dict[str, object]:
         and candidate13["generic_component_dimension_22_certified"]
         and candidate13["three_root_cancellation_witness_certified"]
         and candidate13["coordinate_boundary_dimension_20_certified"]
+        and candidate13["all_active_torsion_strata_certified"]
+        and candidate13["all_active_splitting_jump_strata_certified"]
+        and candidate13["complete_rank_stratification_certified"]
+        and candidate13["full_candidate_13_zero_variety_classified"]
+        and candidate13["candidate_13_ideal_prime"]
         and candidate13_generic["linear_rank"] == 18
         and candidate13_generic["kernel_dimension"] == 2
         and candidate13_generic["incidence_dimension_over_C"] == 22
     ):
         raise AssertionError("candidate-13 incidence reduction changed")
     if (
-        candidate13["complete_rank_stratification_certified"]
-        or candidate13["full_candidate_13_zero_variety_classified"]
-        or candidate13["same_fibre_quadratic_sources_classified"]
+        candidate13["same_fibre_quadratic_sources_classified"]
         or candidate13["taub_common_zero_intersection_classified"]
         or candidate13["complete_two_fibre_tangent_cone_classified"]
         or candidate13["smooth_secular_classified"]

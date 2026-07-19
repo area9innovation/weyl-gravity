@@ -39,10 +39,24 @@ class Candidate13L4IncidenceReductionTests(unittest.TestCase):
         self.assertTrue(self.value["classification"]["coordinate_boundary_dimension_20_certified"])
         self.assertIn("generic point lies in the torus", boundary["consequence"])
 
-    def test_full_ideal_remains_open(self) -> None:
+    def test_all_active_rank_strata_close(self) -> None:
+        strata = self.value["all_active_rank_stratification"]
+        self.assertEqual(len(strata["torsion_only_rows"]), 8)
+        self.assertEqual(len(strata["splitting_jump_rows"]), 6)
+        self.assertTrue(strata["machine_audit"]["all_local_torsion_bounds_pass"])
+        self.assertTrue(strata["machine_audit"]["all_possible_positive_q_rows_pass"])
+        self.assertLessEqual(
+            max(row["incidence_dimension_upper_bound"] for row in strata["splitting_jump_rows"]),
+            20,
+        )
+
+    def test_full_ideal_is_prime_but_nonlinear_join_remains_open(self) -> None:
         classification = self.value["classification"]
-        self.assertFalse(classification["complete_rank_stratification_certified"])
-        self.assertFalse(classification["full_candidate_13_zero_variety_classified"])
+        self.assertTrue(classification["complete_rank_stratification_certified"])
+        self.assertTrue(classification["full_candidate_13_zero_variety_classified"])
+        self.assertTrue(classification["candidate_13_ideal_prime"])
+        self.assertEqual(self.value["prime_zero_variety_theorem"]["maximum_component_dimension_over_C"], 22)
+        self.assertFalse(classification["same_fibre_quadratic_sources_classified"])
         self.assertFalse(classification["taub_common_zero_intersection_classified"])
         self.assertFalse(classification["complete_two_fibre_tangent_cone_classified"])
 

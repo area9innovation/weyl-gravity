@@ -2243,17 +2243,26 @@ remaining cross-fibre ideal.  Same-fibre sources, the Taub common-zero join
 and the complete bounded cone remain the activation gate; these results are
 inputs to same-background Bridge 1 rather than nonlinear bridge theorems.
 
-The remaining candidate `13` is now reduced, but not yet closed.  Exact
+Candidate `13`, the final cross-fibre ideal, is now closed.  Exact
 interval arithmetic gives four distinct real generalized roots for its pair
 of bilinear forms, reducing the all-`m` source to two weighted binary-octic
 product identities.  An exact rank-18 minor certifies an irreducible
 dimension-22 generic incidence component.  A separate exact three-root
 cancellation witness proves that this carrier cannot be reduced to the
-regular-pencil one-eigenline sheets.  Atlas row
+regular-pencil one-eigenline sheets.  The coordinate boundary is now closed:
+every stratum with some `A_i=0` or `B_i=0` has incidence dimension at most 20,
+and the all-active rank strata are controlled by the kernel bundle
+`K_A` of `O(-4)^4 -> O^2`.  Local Smith lengths give torsion-stratum
+incidence dimension at most 21; the exhaustive positive splitting-jump table
+gives dimension at most 20.  Complete-intersection unmixedness and the
+rank-18 Jacobian witness then prove that the full ideal is prime of complex
+dimension 22 in ambient dimension 40.
+Atlas row
 `einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_l4_incidence_reduction`
-keeps resonance `OPEN`: the degenerate source-rank strata and hence the full
-ideal remain unclassified.  The activation gate is the finite rank-
-stratification inequality `dim{A:ker_dim>=k}+k<=21` for every `k>=3`.
+now records resonance `CERTIFIED`.  All 20 cross-fibre resonance ideals are
+therefore classified.  The next activation gate is their join with the
+same-fibre quadratic sources and the five Taub moment maps; bounded,
+smooth-secular and causal correction lifecycles remain fail-closed.
 
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
