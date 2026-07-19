@@ -41,6 +41,7 @@ CERTS = {
     "weyl_product_taylor": ROOT / "bridge/certificates/WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
     "relative_arity_two_defect": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ARITY_TWO_DEFECT_V1.json",
     "relative_f2_taub_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
+    "relative_charge_koszul_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -244,6 +245,13 @@ def entries() -> list[dict[str, Any]]:
         == "FROZEN_UNARY_RELATIVE_F2_OBSTRUCTED_BY_NONZERO_CONSTANT_LAPSE_CLASS"
         and relative_f2["classification"]["frozen_unary_full_domain_f2_exists"] is False
     )
+    relative_charge_koszul = json.loads(CERTS["relative_charge_koszul_preflight"].read_text())
+    relative_charge_receiver_selected = (
+        relative_charge_koszul["result_state"]
+        == "DERIVED_RELATIVE_CHARGE_RECEIVER_SELECTED_OFFSHELL_LIFT_OPEN"
+        and relative_charge_koszul["classification"]["reduced_mode_koszul_square_zero"] is True
+        and relative_charge_koszul["classification"]["relative_f2_repaired"] is False
+    )
     smooth_extension_ready = smooth_extension_import_ready()
     berger = {
         "theory": "pure-Weyl gravity plus rotating Berger clocks and Maxwell",
@@ -364,6 +372,7 @@ def entries() -> list[dict[str, Any]]:
         "k": "all compact-product Fourier sectors required by the full relative triangle",
         "omega": "all product-mode frequencies required by the full relative triangle",
     }
+    relative_charge_scope = relative_charge_koszul["scope"]
     identity_cyclic_scope = json.loads(CERTS["identity_cyclic_obstruction"].read_text())["scope"]
     return [
         {
@@ -615,9 +624,9 @@ def entries() -> list[dict[str, Any]]:
                     else "Delta2, the arity-three morphism defect and their cohomology images have not been computed.",
                 ),
             ),
-            "evidence": _evidence("relative_linfinity_preflight", "einstein_product_taylor", "weyl_product_taylor", "relative_arity_two_defect", "relative_f2_taub_obstruction", "covariant_chain_map", "relative_branch_dictionary", "generic_cyclic_map_inertia_obstruction", "dictionary", "mixed_obstruction"),
+            "evidence": _evidence("relative_linfinity_preflight", "einstein_product_taylor", "weyl_product_taylor", "relative_arity_two_defect", "relative_f2_taub_obstruction", "relative_charge_koszul_preflight", "covariant_chain_map", "relative_branch_dictionary", "generic_cyclic_map_inertia_obstruction", "dictionary", "mixed_obstruction"),
             "claim_boundary": (
-                "Compact-product NONCYCLIC_THREE_FORM linear Bridge 1 and both complete same-background q1/q2/q3 payloads are imported, but the frozen direct full-domain morphism is obstructed at arity two. The certified ell=2 plus cocycle has relative constant-lapse pairing -54*(1+sqrt(3))/5, while every q1_W-exact smooth periodic fixed-bundle correction pairs to zero; hence no f2 extends the frozen f1 on that carrier and arity three is not authorized. A Taub-zero derived source sector, relative cofiber/mapping cone, larger charge carrier, modified unary/endpoint map or different background remains OPEN or NO_CERTIFIED_MAP. The standard-pairing cyclic route remains separately obstructed, all Berger tensors remain ineligible substitutes, and q4 is not authorized."
+                "Compact-product NONCYCLIC_THREE_FORM linear Bridge 1 and both complete same-background q1/q2/q3 payloads are imported, but the frozen direct full-domain morphism is obstructed at arity two. The certified ell=2 plus cocycle has relative constant-lapse pairing -54*(1+sqrt(3))/5, while every q1_W-exact smooth periodic fixed-bundle correction pairs to zero; hence no f2 extends the frozen f1 on that carrier and arity three is not authorized. The post-obstruction REDUCED-MODE architecture is now selected: retain the unary mapping cofiber and encode the five stabilizer charges by a Koszul derived Taub-zero-locus receiver; its complete off-shell local lift remains OPEN or NO_CERTIFIED_MAP according to category. The standard-pairing cyclic route remains separately obstructed, all Berger tensors remain ineligible substitutes, and q4 is not authorized."
                 if relative_f2_obstructed
                 else
                 "Compact-product NONCYCLIC_THREE_FORM linear Bridge 1 and both complete executable same-background q1/q2/q3 payloads are imported. The strict Delta2 operator is exact and nonzero, so the support-local f2 solve is active; f2 existence or obstruction, the arity-three defect, cohomology survival and admissible removal remain OPEN or NO_CERTIFIED_MAP. The standard-pairing cyclic route remains obstructed, all Berger tensors remain ineligible substitutes, and q4 is not authorized."
@@ -628,6 +637,30 @@ def entries() -> list[dict[str, Any]]:
                 if linear_triangle_imported
                 else "Compact-product Bridge 2 remains INPUT_BLOCKED after certification of the natural support-local minimal q1 map: Bridge 1 must still supply the V2 noncyclic three-form EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 with finite endpoints, and complete same-background Einstein-Maxwell and Weyl-Maxwell q2/q3 payloads remain absent. A standard-pairing cyclic triangle is obstructed. Sectoral cofibers, on-shell maps, selected D^2E sources and all Berger tensors are ineligible substitutes. Cohomology survival, deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP. The Berger filtered-cyclic ell3 obstruction is preserved, and q4 is not authorized."
             ),
+        },
+        {
+            "id": "nonlinear.product.bridge2.relative_charge_koszul_receiver_preflight",
+            "scope": relative_charge_scope,
+            "descriptions": {
+                "causal": "NO_CERTIFIED_MAP",
+                "symplectic": "CERTIFIED" if relative_charge_receiver_selected else "OPEN",
+                "nonlinear": "OPEN",
+                "observational": "NO_CERTIFIED_MAP",
+                "quantum": "NO_CERTIFIED_MAP",
+            },
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "The five-charge derived zero locus is defined, but its complete standard-radiative common zero locus and bounded correction problem are not classified."),
+                    ("OPEN", "The reduced Koszul receiver does not yet supply the off-shell smooth-secular f2 equation."),
+                    ("NO_CERTIFIED_MAP", "No compact-product retarded relative Koszul/BV lift is certified."),
+                ),
+                dispersion=("CERTIFIED", "The standard Einstein plus/minus branches and their exact relative weights are imported for every ell>=2 and compact momentum."),
+                pairing=("CERTIFIED", "The relative solution form is iota^*Omega_WM-Omega_EM, and its five stabilizer moment maps are represented by the reduced Koszul differential."),
+                taub=("CERTIFIED", "Five Killing charges are retained; constant U1 reducibility is not a sixth Taub charge. The ell=2 plus H component is -54*(1+sqrt(3))/5."),
+                resonance=("OPEN", "The architecture is selected, but the complete off-shell five-charge polarization and repaired relative f2 remain open; arity three is unauthorized."),
+            ),
+            "evidence": _evidence("relative_charge_koszul_preflight", "relative_f2_taub_obstruction", "relative_arity_two_defect", "relative_linfinity_preflight"),
+            "claim_boundary": "This REDUCED-MODE row selects a derived charge receiver, not a support-local nonlinear morphism. The certified unary mapping cofiber is retained; the five connected-isometry moment maps enter through a square-zero 32-dimensional exterior Koszul presentation. The constant U1 endpoint remains reducibility. Exceptional/global charge formulas, a complete off-shell polarization, support-local BV extension, repaired f2, arity three, causal propagation, observables, particles and quantum transfer remain OPEN or NO_CERTIFIED_MAP.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction",

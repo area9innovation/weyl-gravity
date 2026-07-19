@@ -324,6 +324,37 @@ charge-carrying cofiber -> rebuild the arity-two map -> only then authorize
 arity three`.  The Berger
 branch-carrier rail remains independent and fail-closed throughout.
 
+### Post-obstruction carrier decision (2026-07-19)
+
+`EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1` resolves the
+architectural fork at `REDUCED-MODE` scope.  A plain “Taub-zero subcomplex” is
+not legitimate: the relative moment map is homogeneous quadratic, so its
+zero locus has the full radiative unary tangent and must be represented as a
+derived zero locus.  Retain the certified support-local noncyclic unary
+mapping cofiber and adjoin the relative stabilizer-charge fibre through
+
+\[
+\mathcal O(\operatorname{Sol}_{\rm std})\otimes
+\Lambda(\kappa_H,\kappa_{P_x},\kappa_{J_1},\kappa_{J_2},\kappa_{J_3}),
+\qquad d_K\kappa_X=\mu_{{\rm rel},X}.
+\]
+
+The five-generator Koszul differential squares to zero on all 32 exterior
+monomials.  The sixth common endpoint is constant (U(1)) reducibility;
+because (d\lambda=0), it has zero fundamental vector field and is not a
+sixth Taub charge.  On the standard radiative branches,
+
+\[
+\mu_{{\rm rel},X}=(w_\pm-1)\mu_{{\rm EM},X},\qquad
+w_\pm=1\pm\frac32\sqrt{2\ell(\ell+1)}.
+\]
+
+This selects the carrier without repairing the morphism.  The next exact
+gate is the complete off-shell five-charge polarization of the PBW defect,
+including any required exceptional/global rows, or a typed obstruction to
+that lift.  Support-local BV/Koszul completion, (f_2), arity three, causal
+Green data, observables and quantum transfer remain fail-closed.
+
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.
 The finite covariant HPL series and unique normalized degree-one correction

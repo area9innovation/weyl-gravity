@@ -1,0 +1,152 @@
+{
+  "architecture_decision": {
+    "reason": "the relative moment map is homogeneous quadratic, so its derived zero locus is encoded by Koszul generators rather than by a linear q1 restriction",
+    "rejected": "delete every nonzero-charge mode by calling the quadratic Taub-zero locus a linear subcomplex",
+    "selected": "CERTIFIED_UNARY_MAPPING_COFIBER_PLUS_REDUCED_MODE_RELATIVE_CHARGE_KOSZUL_RECEIVER"
+  },
+  "charge_fibre": {
+    "basis": [
+      "H=partial_t",
+      "P_x=partial_x",
+      "J_1",
+      "J_2",
+      "J_3"
+    ],
+    "branch_rule": "mu_rel,X=(w_branch-1)*mu_EM,X on an Einstein branch eigenmode; the spectral relative operator commutes with H_product by certified equivariance",
+    "constant_u1_endpoint": {
+      "basis_element": "u1_constant",
+      "disposition": "REDUCIBILITY_NOT_A_SIXTH_TAUB_CHARGE",
+      "reason": "the constant U1 parameter has d lambda=0 and hence zero fundamental vector field on the fixed-bundle perturbation carrier"
+    },
+    "dimension": 5,
+    "h_witness": {
+      "mode": "axial ell=2,m=0,k=0 plus branch",
+      "mu_rel_H": "-54*(1 + sqrt(3))/5",
+      "nonzero": true
+    },
+    "origin": "dual of the connected product-isometry stabilizer",
+    "polarization": "mu_rel,X(u,v)=1/2 of the symmetric polarization of the displayed quadratic form",
+    "relative_moment_map": "mu_rel,X(u)=1/2*(iota^*Omega_WM-Omega_EM)(u,L_X u)",
+    "relative_weights": [
+      "3*sqrt(2)*sqrt(lambda)/2",
+      "-3*sqrt(2)*sqrt(lambda)/2"
+    ],
+    "weyl_pullback_weights": [
+      "(3*sqrt(2)*sqrt(lambda) + 2)/2",
+      "-(3*sqrt(2)*sqrt(lambda) - 2)/2"
+    ]
+  },
+  "claim_boundary": "This REDUCED-MODE preflight selects the correct post-obstruction architecture on the certified standard radiative carrier: retain the support-local unary mapping cofiber and adjoin the five relative stabilizer moment maps through a Koszul derived-zero-locus receiver. The constant U1 reducibility is not a sixth Taub charge. The exact relative H witness remains nonzero. No complete off-shell five-charge polarization, support-local BV/Koszul extension, repaired f2, arity-three morphism, causal Green functor, observable, particle or quantum theorem is claimed; exceptional and global sectors remain outside the charge formula certified here.",
+  "classification": {
+    "arity_three_authorized": false,
+    "causal_observable_particle_or_quantum_claim": false,
+    "constant_u1_is_sixth_taub_charge": false,
+    "five_dimensional_relative_charge_fibre_identified": true,
+    "full_offshell_charge_map_certified": false,
+    "plain_linear_taub_zero_subcomplex_valid": false,
+    "reduced_mode_koszul_square_zero": true,
+    "relative_f2_repaired": false,
+    "relative_h_witness_nonzero": true,
+    "support_local_koszul_bv_extension_certified": false,
+    "unary_mapping_cofiber_retained": true
+  },
+  "dependencies": {
+    "f2_obstruction": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
+      "sha256": "b96fa2c3eb54a9df86d6e7b319d9244c8c54d023d8edc2425e8df29177c590dc"
+    },
+    "linear_triangle": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+      "path": "bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json",
+      "sha256": "d0ee5404fd8055e2b67525335142f7986a92516b047d80ded58ed2a3a731f3fa"
+    },
+    "linear_triangle_components": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_COMPONENTS_V1",
+      "path": "bridge/einstein_sector/generated/einstein_weyl_relative_linear_triangle_v1/components.json",
+      "sha256": "d3f10bd90c85f72bdc71ea72178bdda435fc9d4b892ec90634ee86f9e5d7c84f"
+    },
+    "moment_map_taub_bridge": {
+      "artifact_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+      "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+      "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+    },
+    "radiative_restriction": {
+      "artifact_id": "EINSTEIN_MAXWELL_WEYL_RADIATIVE_SYMPLECTIC_RESTRICTION",
+      "path": "bridge/certificates/einstein_maxwell_weyl_radiative_symplectic_restriction.json",
+      "sha256": "25a798211bea52cbf9d8becae64672ac327be7a09adb50e30e45fa8287a608b7"
+    },
+    "relative_solution_form": {
+      "artifact_id": "EINSTEIN_WEYL_GENERIC_IDENTITY_CYCLIC_OBSTRUCTION_V1",
+      "path": "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
+      "sha256": "8c4d4eb69068c2767955f0b80695cfb81fc086ebaf5658da474f6ebb9f606e90"
+    }
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "derived_zero_locus": {
+    "differential": "d_K f=0 on reduced solution functions and d_K kappa_X=mu_rel,X",
+    "exterior_basis_dimension": 32,
+    "generator_count": 5,
+    "plain_linear_subcomplex_restriction_valid": false,
+    "presentation": "O(Sol_std) tensor Exterior(kappa_H,kappa_Px,kappa_J1,kappa_J2,kappa_J3)",
+    "quadratic_origin": "mu_rel(0)=0 and d mu_rel|_0=0",
+    "square_zero_checked_on_all_exterior_monomials": true,
+    "unary_tangent_consequence": "the full standard radiative tangent survives at first order; the Taub-zero condition enters at quadratic order"
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "CONSTRUCT_OFFSHELL_FIVE_CHARGE_POLARIZATION_OR_RETURN_TYPED_OBSTRUCTION",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_charge_koszul_preflight.py": "bfda28d233fdbdffd4eeef2bd24c16c042521eac79302a0514c523458aa4b81d",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_charge_koszul_preflight.py": "a4674332fe89cf7768a0e70a39ce89632e707bd732c01fcef329b66bb48090f6",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_charge_koszul_preflight.py": "d41f88753bfe151edd0a8bbc4597eedcb9197f95b1083a2309807eef74683a18",
+      "d_quotient_classical/schema/relative-charge-koszul-receiver-preflight-v1.schema.json": "1324cc5af4db0937e73d3e236dbbec4392ae5c0b23db4552ca5d063964b1f9b0"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_charge_koszul_preflight --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_charge_koszul_preflight",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_charge_koszul_preflight",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-charge-koszul-receiver-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1.json"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1",
+  "result_state": "DERIVED_RELATIVE_CHARGE_RECEIVER_SELECTED_OFFSHELL_LIFT_OPEN",
+  "schema": "pure-weyl-relative-charge-koszul-receiver-preflight-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product R_t x S1_L x S2",
+    "boundaries": "closed Cauchy slice S1_L x S2 before final residual quotient",
+    "carrier": "standard radiative ell>=2 solution carrier together with the certified support-local unary mapping cofiber",
+    "charge_sector": "fixed compact U(1) bundle P_N with N=2",
+    "degree": "quadratic relative moment map and its Koszul generators",
+    "ell": "ell>=2",
+    "k": "2*pi*n/L for every n in Z",
+    "m": "all real SO(3) multiplicities",
+    "omega": "Einstein plus and minus branches",
+    "parity": "axial and polar",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  },
+  "unary_carrier": {
+    "construction": "retain the certified support-local noncyclic mapping cofiber Cone(f1)",
+    "degree_dimensions": [
+      5,
+      20,
+      28,
+      19,
+      6
+    ],
+    "endpoint_basis": [
+      "partial_t",
+      "partial_x",
+      "J_1",
+      "J_2",
+      "J_3",
+      "u1_constant"
+    ],
+    "endpoint_cone_cohomology_dimension": 0,
+    "endpoint_map": "identity_6",
+    "square_zero": true,
+    "support_local": true
+  }
+}

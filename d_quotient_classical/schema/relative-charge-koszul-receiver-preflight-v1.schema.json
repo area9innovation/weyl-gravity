@@ -1,0 +1,270 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-charge-koszul-receiver-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "scope",
+    "dependencies",
+    "unary_carrier",
+    "charge_fibre",
+    "derived_zero_locus",
+    "architecture_decision",
+    "classification",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-charge-koszul-receiver-preflight-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1"},
+    "result_state": {"const": "DERIVED_RELATIVE_CHARGE_RECEIVER_SELECTED_OFFSHELL_LIFT_OPEN"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "REDUCED-MODE"}],
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "scope": {"$ref": "#/$defs/stringObject"},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "linear_triangle",
+        "linear_triangle_components",
+        "radiative_restriction",
+        "relative_solution_form",
+        "moment_map_taub_bridge",
+        "f2_obstruction"
+      ],
+      "properties": {
+        "linear_triangle": {"$ref": "#/$defs/artifact"},
+        "linear_triangle_components": {"$ref": "#/$defs/artifact"},
+        "radiative_restriction": {"$ref": "#/$defs/artifact"},
+        "relative_solution_form": {"$ref": "#/$defs/artifact"},
+        "moment_map_taub_bridge": {"$ref": "#/$defs/artifact"},
+        "f2_obstruction": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "unary_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "construction",
+        "degree_dimensions",
+        "square_zero",
+        "support_local",
+        "endpoint_basis",
+        "endpoint_map",
+        "endpoint_cone_cohomology_dimension"
+      ],
+      "properties": {
+        "construction": {"type": "string"},
+        "degree_dimensions": {
+          "type": "array",
+          "prefixItems": [
+            {"const": 5}, {"const": 20}, {"const": 28}, {"const": 19}, {"const": 6}
+          ],
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "square_zero": {"const": true},
+        "support_local": {"const": true},
+        "endpoint_basis": {
+          "type": "array",
+          "prefixItems": [
+            {"const": "partial_t"},
+            {"const": "partial_x"},
+            {"const": "J_1"},
+            {"const": "J_2"},
+            {"const": "J_3"},
+            {"const": "u1_constant"}
+          ],
+          "minItems": 6,
+          "maxItems": 6
+        },
+        "endpoint_map": {"const": "identity_6"},
+        "endpoint_cone_cohomology_dimension": {"const": 0}
+      }
+    },
+    "charge_fibre": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis",
+        "dimension",
+        "origin",
+        "constant_u1_endpoint",
+        "relative_moment_map",
+        "polarization",
+        "branch_rule",
+        "weyl_pullback_weights",
+        "relative_weights",
+        "h_witness"
+      ],
+      "properties": {
+        "basis": {
+          "type": "array",
+          "prefixItems": [
+            {"const": "H=partial_t"},
+            {"const": "P_x=partial_x"},
+            {"const": "J_1"},
+            {"const": "J_2"},
+            {"const": "J_3"}
+          ],
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "dimension": {"const": 5},
+        "origin": {"type": "string"},
+        "constant_u1_endpoint": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["basis_element", "disposition", "reason"],
+          "properties": {
+            "basis_element": {"const": "u1_constant"},
+            "disposition": {"const": "REDUCIBILITY_NOT_A_SIXTH_TAUB_CHARGE"},
+            "reason": {"type": "string"}
+          }
+        },
+        "relative_moment_map": {"type": "string"},
+        "polarization": {"type": "string"},
+        "branch_rule": {"type": "string"},
+        "weyl_pullback_weights": {
+          "type": "array",
+          "prefixItems": [
+            {"const": "(3*sqrt(2)*sqrt(lambda) + 2)/2"},
+            {"const": "-(3*sqrt(2)*sqrt(lambda) - 2)/2"}
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "relative_weights": {
+          "type": "array",
+          "prefixItems": [
+            {"const": "3*sqrt(2)*sqrt(lambda)/2"},
+            {"const": "-3*sqrt(2)*sqrt(lambda)/2"}
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "h_witness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "mu_rel_H", "nonzero"],
+          "properties": {
+            "mode": {"const": "axial ell=2,m=0,k=0 plus branch"},
+            "mu_rel_H": {"const": "-54*(1 + sqrt(3))/5"},
+            "nonzero": {"const": true}
+          }
+        }
+      }
+    },
+    "derived_zero_locus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "presentation",
+        "differential",
+        "generator_count",
+        "exterior_basis_dimension",
+        "square_zero_checked_on_all_exterior_monomials",
+        "quadratic_origin",
+        "unary_tangent_consequence",
+        "plain_linear_subcomplex_restriction_valid"
+      ],
+      "properties": {
+        "presentation": {"type": "string"},
+        "differential": {"type": "string"},
+        "generator_count": {"const": 5},
+        "exterior_basis_dimension": {"const": 32},
+        "square_zero_checked_on_all_exterior_monomials": {"const": true},
+        "quadratic_origin": {"type": "string"},
+        "unary_tangent_consequence": {"type": "string"},
+        "plain_linear_subcomplex_restriction_valid": {"const": false}
+      }
+    },
+    "architecture_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selected", "rejected", "reason"],
+      "properties": {
+        "selected": {"const": "CERTIFIED_UNARY_MAPPING_COFIBER_PLUS_REDUCED_MODE_RELATIVE_CHARGE_KOSZUL_RECEIVER"},
+        "rejected": {"type": "string"},
+        "reason": {"type": "string"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unary_mapping_cofiber_retained",
+        "five_dimensional_relative_charge_fibre_identified",
+        "constant_u1_is_sixth_taub_charge",
+        "reduced_mode_koszul_square_zero",
+        "relative_h_witness_nonzero",
+        "plain_linear_taub_zero_subcomplex_valid",
+        "full_offshell_charge_map_certified",
+        "support_local_koszul_bv_extension_certified",
+        "relative_f2_repaired",
+        "arity_three_authorized",
+        "causal_observable_particle_or_quantum_claim"
+      ],
+      "properties": {
+        "unary_mapping_cofiber_retained": {"const": true},
+        "five_dimensional_relative_charge_fibre_identified": {"const": true},
+        "constant_u1_is_sixth_taub_charge": {"const": false},
+        "reduced_mode_koszul_square_zero": {"const": true},
+        "relative_h_witness_nonzero": {"const": true},
+        "plain_linear_taub_zero_subcomplex_valid": {"const": false},
+        "full_offshell_charge_map_certified": {"const": false},
+        "support_local_koszul_bv_extension_certified": {"const": false},
+        "relative_f2_repaired": {"const": false},
+        "arity_three_authorized": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "CONSTRUCT_OFFSHELL_FIVE_CHARGE_POLARIZATION_OR_RETURN_TYPED_OBSTRUCTION"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "minProperties": 4
+        },
+        "verification_commands": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 4
+        }
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "stringObject": {
+      "type": "object",
+      "additionalProperties": {"type": "string"},
+      "minProperties": 10
+    }
+  }
+}
