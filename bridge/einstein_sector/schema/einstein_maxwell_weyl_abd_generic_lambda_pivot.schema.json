@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Generic-lambda a,b,d Einstein-minus pivots",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "generic_lambda_derivation",
+    "triangular_locality_lemma", "nonvanishing", "SO3_promotion",
+    "classification", "interpretation", "next_gate", "claim_boundary",
+    "provenance", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-abd-generic-lambda-pivot-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ABD_GENERIC_LAMBDA_PIVOT"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "scope": {"type": "object"},
+    "generic_lambda_derivation": {"type": "object"},
+    "triangular_locality_lemma": {"type": "object"},
+    "nonvanishing": {"type": "object"},
+    "SO3_promotion": {"type": "object"},
+    "classification": {"type": "object"},
+    "provenance": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 4}
+  },
+  "additionalProperties": true
+}

@@ -2439,12 +2439,29 @@ C_A=3*i*omega_minus*(1-3*sqrt(2*lambda)),
 C_P=lambda^2*(2*lambda-1)/6,
 ```
 
-with axial ratios `(a,b,d)=(2,1,1)` and polar ratios `(3,1,3)`.  Both
-candidates are nonzero for physical `lambda>=6`, but this is deliberately not
-promoted to a general-`ell` theorem: the natural-operator functional-form or
-degree bound remains to be proved.  Atlas row
+with axial ratios `(a,b,d)=(2,1,1)` and polar ratios `(3,1,3)`.  Atlas row
 `einstein.ph.wm.interaction.abd_times_generic_k0_einstein_minus_pivot_fixtures`
-records the certified fixtures and the open promotion gate.
+records those certified fixtures.
+
+The promotion gate is now closed without interpolation.  A direct
+four-dimensional Bach--Maxwell calculation uses formal Legendre jets at the
+regular point `z=0`, with all higher derivatives fixed by the Legendre ODE
+while `lambda` remains symbolic.  It gives exactly
+
+```text
+C_A=-3*i*omega_minus*(3*sqrt(2*lambda)-1),
+C_P=lambda^2*(2*lambda-1)/6.
+```
+
+Both are nonzero for every `lambda=ell(ell+1)>=6`.  Locality supplies the
+complete triangular ratios, and `SO(3)` multiplicity one promotes them to all
+`m`.  Combining this theorem with the existing every-fixed-`ell` common-zero
+wave theorem yields the global bounded cone for every one fixed generic
+`ell` at `k=0`: the static `(c,d,W_x,A)` branch and the nonzero wave branch
+`mu_H=mu_J1=mu_J2=mu_J3=0`, `a=b=d=Q_e=B=0`, with `(c,W_x,A)` arbitrary.
+Atlas row `einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone` records
+necessity and sufficiency.  Cross-`ell` products and nonzero momentum are the
+next fail-closed gates.
 
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.

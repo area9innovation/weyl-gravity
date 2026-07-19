@@ -1,0 +1,138 @@
+{
+  "SO3_promotion": {
+    "all_m": true,
+    "cross_parity": "axial and polar outputs occupy distinct parity blocks and cannot cancel",
+    "intertwiner": "each scalar global input defines an SO3 map V_ell to V_ell",
+    "jet_normalization_role": "the even/odd formal jet is a local normalization used to evaluate the unique equivariant coefficient; it is not an identification of the physical m or harmonic parity",
+    "multiplicity_one": "dim Hom_SO3(V_ell,V_ell)=1"
+  },
+  "claim_boundary": "This theorem covers only a,b,d crossed with one generic k=0 Einstein-minus block. It does not include nonzero momentum, cross-ell sums, exceptional wave inputs, the complete global cone, causal propagation, all-orders integration, residual descent, particles or quantum theory.",
+  "classification": {
+    "all_fixed_ell_at_least_2_pivots_nonzero": true,
+    "all_m_promoted": true,
+    "both_parities_classified": true,
+    "bounded_abd_cross_ideal_classified": true,
+    "causal_or_quantum_claim": false,
+    "complete_global_wave_cone_classified": false,
+    "generic_lambda_functional_form_proved_without_interpolation": true,
+    "nonzero_momentum_classified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generic_lambda_derivation": {
+    "Bach_Maxwell_maximum_sphere_derivative_order": 4,
+    "Legendre_ODE_remainder_through_degree_6": {
+      "even": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "odd": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "axial_b_t2": "-3*I*sqrt(-sqrt(2)*sqrt(lambda) + lambda)*(3*sqrt(2)*sqrt(lambda) - 1)",
+    "even_scalar_jet": "Y(0)=1,Y'(0)=0 for the polar scalar output",
+    "jet_order_safety_margin": 4,
+    "maximum_harmonic_jet_order": 8,
+    "method": "direct four-dimensional Bach-Maxwell tensor calculation on formal Legendre jets at z=0; the Legendre ODE fixes all derivatives and lambda remains symbolic",
+    "not_interpolation": true,
+    "odd_vector_jet": "Y(0)=0,Y'(0)=1 for the axial vector output",
+    "polar_b_t3": "lambda**2*(2*lambda - 1)/6"
+  },
+  "interpretation": "The ell=2 and ell=3 triangular obstructions are the physical fibres of one exact natural-operator identity. Every generic rest-frame Einstein-minus wave excludes the generalized homogeneous a,b,d directions from the bounded correction class, in either parity and for every m.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "combine this ideal with the every-fixed-ell k=0 common-zero wave theorem and the complete global zero-frequency classification",
+  "nonvanishing": {
+    "axial": "omega_minus>0 and 3*sqrt(2*lambda)-1>0",
+    "consequence": "in either parity, a nonzero Einstein-minus amplitude forces b=0, then a=0, then d=0 for bounded corrections",
+    "physical_domain": "lambda=ell*(ell+1)>=6",
+    "polar": "lambda^2*(2*lambda-1)/6>0"
+  },
+  "provenance": {
+    "direct_engine_path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_generic_lambda_pivot_explore.py",
+    "direct_engine_sha256": "798a595bc992f7ca23a1ac7fdf96d30d90d2055ba7f594579140ce0406317137",
+    "fixture_path": "bridge/certificates/einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures.json",
+    "fixture_sha256": "47e1c8b1ab2eaadafccd959e109f669c8d356a7debd2a37f7abd9e6fdb28475d",
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_generic_lambda_pivot.py",
+    "generator_sha256": "d4edb2b23324626e632eb73c0252d299652044f7cc00f01fc27283d4d0830bad"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ABD_GENERIC_LAMBDA_PIVOT",
+  "result_state": "GENERIC_LAMBDA_AXIAL_POLAR_MINUS_BOUNDED_PIVOT_IDEAL_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-abd-generic-lambda-pivot-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_abd_generic_lambda_pivot.schema.json",
+  "schema_sha256": "0c10c3b744ef204c23d6ada8ff47e7ef0712fca1b5cfbf1ec7d64c8225f9014f",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic correction",
+    "carrier": "homogeneous a,b,d crossed with one axial or polar Einstein-minus q-primary",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "every fixed integer ell>=2",
+    "k": 0,
+    "m": "all m by SO3 multiplicity one",
+    "omega": "omega_minus^2=lambda-sqrt(2*lambda)",
+    "parity": "axial and polar kept separate",
+    "theory": "Weyl-Maxwell target"
+  },
+  "triangular_locality_lemma": {
+    "axial": {
+      "pivots": {
+        "a_t1_after_b_zero": "2*C_A",
+        "b_t2": "C_A",
+        "d_t0_after_a_b_zero": "C_A"
+      },
+      "reason": "the highest term contains exactly one time derivative of the circle profile; d/dt(t^3/3,t^2,t)=(t^2,2t,1)"
+    },
+    "direct_full_chain_audit": "the complete a,b,d ratios are independently replayed at ell=2,3 in both parities",
+    "lower_sphere_profiles": "the a/b sphere profiles have lower time degree and cannot alter the displayed leading pivots",
+    "polar": {
+      "pivots": {
+        "a_t2_after_b_zero": "3*C_P",
+        "b_t3": "C_P",
+        "d_t1_after_a_b_zero": "3*C_P"
+      },
+      "reason": "the highest term contains no time derivative of the circle profile; (t^3/3,t^2,t) gives the ratio (1,3,3) after normalizing C_P to b_t3"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_abd_generic_lambda_pivot --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_abd_generic_lambda_pivot.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_abd_generic_lambda_pivot",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_abd_generic_lambda_pivot --write --replay-symbolic"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.41,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 3.11,
+      "status": "PASS",
+      "tests_run": 5
+    },
+    "tier_2": {
+      "criterion": "both symbolic tensor contractions replayed with lambda unevaluated; exact ell=2,3,4 physical fixtures agree",
+      "max_rss_kib": 175352,
+      "status": "PASS",
+      "tensor_stage_elapsed_seconds": 374.94
+    },
+    "tier_3": {
+      "reason": "nonzero momentum, cross-ell, causal, residual and quantum gates remain excluded",
+      "status": "NOT_RUN"
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "bounded_sufficiency": {
+    "Wilson": "identically zero mixed source",
+    "circumference": "exact k=0 radius transport",
+    "constant_twist": "exact flat-holonomy transport without first-order k=0 frequency drift",
+    "standard_static": "complete standard-global bounded theorem",
+    "wave_self": "every-fixed-ell all-m both-parity common-zero theorem",
+    "zero_frequency": "constant L1 right inverse; no Jordan growth"
+  },
+  "claim_boundary": "This theorem is blockwise in one fixed ell>=2 at k=0. It does not cover cross-ell superpositions, nonzero momentum, exceptional ell=1 wave blocks, arbitrary finite harmonic sums, all-orders integration, residual descent, causal propagation, observables, particles or quantum theory.",
+  "classification": {
+    "all_m_both_parities_all_qp_branches_included": true,
+    "all_orders_integrability": false,
+    "bounded_zero_locus_necessary_and_sufficient": true,
+    "causal_or_quantum_claim": false,
+    "cross_ell_superpositions_classified": false,
+    "every_fixed_generic_ell_global_bounded_cone_classified": true,
+    "exceptional_wave_inputs_classified": false,
+    "nonzero_momentum_classified": false
+  },
+  "complete_bounded_cone": {
+    "branch_intersection": "u_wave=0,d=0 with c,W_x,A arbitrary",
+    "static_branch": "u_wave=0: (c,d,W_x,A) arbitrary, with a=b=Q_e=0 and B=0",
+    "union_is_necessary_and_sufficient": true,
+    "wave_branch": "u_wave is any nonzero fixed-ell common H,J_i zero; a=b=d=Q_e=0 and B=0; c,W_x,A are arbitrary"
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_SECULAR": {
+      "reason": "bounded corrections are a special smooth exponential-polynomial class",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "equation": "L_WM Phi^(2)=-(1/2)D^2E_WM[Phi^(1),Phi^(1)]",
+  "global_necessity": {
+    "a_b_d": "the generic-lambda axial/polar triangular pivots force a=b=d=0 whenever the wave block is nonzero",
+    "electric": "after the wave H source cancels, E11=Q_e^2/2 and the zero-frequency bounded image is zero, hence Q_e=0",
+    "electric_E11_replay": "Q_e**2/2",
+    "electric_independence": "the Q_e^2/2 term is a homogeneous pure-electric source coefficient and is independent of the wave ell; the wave contribution has already vanished by the common H moment-map equation before this coefficient is applied",
+    "twist_velocity": "B=0 on every bounded branch"
+  },
+  "interpretation": "The ell=2 stratification is universal blockwise at rest. For every fixed generic angular momentum, a nonzero bounded wave branch is exactly the common stabilizer cone times the static c, Wilson and twist-holonomy spectators; the generalized a,b,d directions, electric tangent and twist velocity are excluded.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify bounded products between distinct ell blocks at k=0, then treat nonzero compact momentum and its circumference resonance",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.py",
+    "generator_sha256": "64f19b78d11d73c6ef989b993d2a21134a2672a23183a99b5dfaf895f4872c8a",
+    "inputs": {
+      "L1_completion": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion.json",
+        "sha256": "dab33111e1cd5b411bf20221a4edf29c80422b6216dcb982c45231991c4abcd3"
+      },
+      "circumference": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
+        "sha256": "80f36e27d91cf92211b94c2fbc8d74e97806c04b688f72e02284f8951f8fecb9"
+      },
+      "constant_twist": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      },
+      "electric_wilson": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
+        "sha256": "50d0bf118e1699122b8bf4e0c3da7b8fb0295a9a4725d05c155122e8d2202676"
+      },
+      "fixed_ell_wave": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
+        "sha256": "9c9b5db86f50a624f84a0ec6548d2c07030109626d076c0e5ee6f9e9115f9e54"
+      },
+      "generic_pivot": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_generic_lambda_pivot.json",
+        "sha256": "a0d9769e6363031fb0259f6a529919a19d45c37ed7d59027765d9311a77fc411"
+      },
+      "homogeneous_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
+        "sha256": "236c308cec85b4edde24f0acd4fe4c2133c58516426041eab2d9ffb01be28d59"
+      },
+      "homogeneous_source": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_quadric_second_order.json",
+        "sha256": "f496750e8af73098b0e9427e2a3b5f7d2bf3ac4c42a1455e3b7807cfa8e73fb6"
+      },
+      "k0_moment_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
+        "sha256": "cf0cbbe2f8b99924c9045c99689481da882ff330e8007a18178488db8ca6a17b"
+      },
+      "standard_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FIXED_ELL_K0_BOUNDED_CONE",
+  "result_state": "EVERY_FIXED_GENERIC_ELL_K0_GLOBAL_BOUNDED_CONE_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-global-fixed-ell-k0-bounded-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.schema.json",
+  "schema_sha256": "9b6516768f454f77e2741e5aa8150b9fb7c336eda0294c079c8278fd1567194d",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic correction",
+    "carrier": "complete standard homogeneous/twist data plus every q/p primary in one fixed generic ell block",
+    "charge_sector": "fixed N=2 magnetic bundle with electric tangent allowed",
+    "degree": 2,
+    "ell": "one arbitrary fixed integer ell>=2, with global ell=0,1 data adjoined",
+    "k": 0,
+    "m": "all -ell,...,ell and all three real twist components",
+    "omega": "generalized zero and all fixed-ell q/p shells",
+    "parity": "homogeneous, axial and polar",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.41,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 6.46,
+      "status": "PASS",
+      "tests_run": 31
+    },
+    "tier_2": {
+      "criterion": "generic-lambda pivot, fixed-ell wave, global-source and transport inputs are exact unchanged dependencies",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "cross-ell, nonzero momentum, causal, residual and quantum gates remain excluded",
+      "status": "NOT_RUN"
+    }
+  },
+  "wave_cone": {
+    "carrier": "all m, both parities, Einstein plus/minus and both extra-primary multiplicities at the declared fixed ell",
+    "equations": "mu_H=mu_J1=mu_J2=mu_J3=0; mu_Px=0 identically at k=0",
+    "nonzero_requires_minus": "Einstein-plus and both extra branches have one sign while Einstein-minus has the opposite sign",
+    "second_order": "every point of the fixed-ell common-zero cone has a finite quasiperiodic correction",
+    "zero_frequency_L1": "total J_i=0 gives compatible source (S0,S1,S0,S1) and constant correction (S0/2,-S1/2,0,0)"
+  }
+}

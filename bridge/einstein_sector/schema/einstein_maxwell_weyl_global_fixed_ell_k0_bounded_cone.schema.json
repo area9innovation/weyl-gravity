@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Global fixed-ell k0 bounded cone",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "equation", "wave_cone",
+    "global_necessity", "complete_bounded_cone", "bounded_sufficiency",
+    "correction_classes", "classification", "interpretation", "next_gate",
+    "claim_boundary", "provenance", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-global-fixed-ell-k0-bounded-cone-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FIXED_ELL_K0_BOUNDED_CONE"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "REDUCED-MODE"}},
+    "scope": {"type": "object"},
+    "wave_cone": {"type": "object"},
+    "complete_bounded_cone": {"type": "object"},
+    "correction_classes": {"type": "object"},
+    "classification": {"type": "object"},
+    "provenance": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": true
+}

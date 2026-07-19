@@ -1807,6 +1807,95 @@
       }
     },
     {
+      "claim_boundary": "This theorem is blockwise in one fixed ell at k=0. Cross-ell products, nonzero momentum, exceptional wave inputs, arbitrary finite sums, all-orders integration, residual descent, observational and quantum maps remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FIXED_ELL_K0_BOUNDED_CONE",
+          "sha256": "4cf6d78f5bbafb1a077c35bab7804716aa472f470e33a78848923c55c8eca828"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_abd_generic_lambda_pivot.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ABD_GENERIC_LAMBDA_PIVOT",
+          "sha256": "a0d9769e6363031fb0259f6a529919a19d45c37ed7d59027765d9311a77fc411"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_global_ell2_all_m_both_parity_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_ELL2_ALL_M_BOTH_PARITY_BOUNDED_CONE",
+          "sha256": "d4abbd2f35f0845a9e75bd0dcea53b980948eaece14453cb07bfc4666603e0e7"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_SECOND_ORDER",
+          "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "id": "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The carrier contains every q/p primary at one arbitrary fixed ell>=2 and all standard global coordinates.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The generic-lambda axial and polar pivots are obtained by a direct formal-Legendre-jet tensor calculation, not finite-ell interpolation.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "C_A=-3 i omega_minus(3 sqrt(2 lambda)-1) and C_P=lambda^2(2 lambda-1)/6 are nonzero on every physical fibre; the constant L=1 right inverse removes Jordan growth.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "For every fixed ell>=2 the exact bounded cone is the union of static (c,d,W_x,A) and nonzero common-moment-map wave branches with a=b=d=Q_e=B=0 and arbitrary (c,W_x,A).",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The bounded correction is also a smooth finite exponential-polynomial correction.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "Every nonzero common H,J_i zero contains an Einstein-minus component; the full homogeneous source separately excludes Q_e.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "complete standard globals plus every axial/polar q/p primary in one arbitrary fixed generic ell block",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "one fixed integer ell>=2 with global ell=0,1 data adjoined",
+        "k": 0,
+        "m": "all wave m=-ell,...,ell and all three real twist components",
+        "omega": "generalized zero and every fixed-ell q/p shell",
+        "parity": "homogeneous, axial and polar",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "This is the complete finite generic ell>=2 smooth-secular cone on the compact product. Exceptional/global input modes, the bounded resonance zero locus, infinite harmonic completion, causal/retarded propagation, all-orders integration, final residual states, observables and quantum transfer remain explicit open scopes.",
       "descriptions": {
         "causal": "OPEN",
@@ -2019,7 +2108,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "eb82a3c1cd81a5dca789fdb667e077fa0433ad67d2c439c421afc70efa4f95dd",
+  "generated_by_sha256": "c161136bcb8799a2d00eb10fa74dda9a27980159d55a4d0ec94f3c2bf7264d3e",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

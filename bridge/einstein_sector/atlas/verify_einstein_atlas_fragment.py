@@ -214,6 +214,16 @@ def verify() -> None:
         raise AssertionError("bounded zero-frequency L1 completion was hidden")
     if global_both_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("global both-parity causal lifecycle was over-promoted")
+    global_fixed = by_id["einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone"]
+    global_fixed_second = global_fixed["mode_data"]["second_order"]
+    if global_fixed_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("global fixed-ell bounded cone was lost")
+    if "every fixed ell>=2" not in global_fixed_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("global fixed-ell scope was hidden")
+    if "C_A=" not in global_fixed["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("generic-lambda pivot identity was hidden")
+    if global_fixed_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("global fixed-ell causal lifecycle was over-promoted")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

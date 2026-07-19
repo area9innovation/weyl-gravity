@@ -161,6 +161,14 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("constant right inverse", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
+    def test_global_fixed_ell_k0_bounded_cone_is_registered(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("every fixed ell>=2", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("C_A=", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
 
 if __name__ == "__main__":
     unittest.main()

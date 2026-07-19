@@ -1,0 +1,65 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FIXED_ELL_K0_BOUNDED_CONE_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FIXED_ELL_K0_BOUNDED_CONE",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "pivot_exploration_engine": {"path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_generic_lambda_pivot_explore.py", "sha256": "798a595bc992f7ca23a1ac7fdf96d30d90d2055ba7f594579140ce0406317137"},
+    "pivot_generator": {"path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_generic_lambda_pivot.py", "sha256": "d4edb2b23324626e632eb73c0252d299652044f7cc00f01fc27283d4d0830bad"},
+    "pivot_certificate": {"path": "bridge/certificates/einstein_maxwell_weyl_abd_generic_lambda_pivot.json", "sha256": "a0d9769e6363031fb0259f6a529919a19d45c37ed7d59027765d9311a77fc411"},
+    "pivot_schema": {"path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_abd_generic_lambda_pivot.schema.json", "sha256": "0c10c3b744ef204c23d6ada8ff47e7ef0712fca1b5cfbf1ec7d64c8225f9014f"},
+    "pivot_verifier": {"path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_abd_generic_lambda_pivot.py", "sha256": "5714bb24225c695a4c6c724ce5294160551a1168649afe7fc35eab70ec469f09"},
+    "pivot_tests": {"path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_abd_generic_lambda_pivot.py", "sha256": "3b06183df2113682b8bcd6278953ca7bb668e6fa2e16302823b0483b3739fa5b"},
+    "cone_generator": {"path": "bridge/einstein_sector/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.py", "sha256": "64f19b78d11d73c6ef989b993d2a21134a2672a23183a99b5dfaf895f4872c8a"},
+    "cone_certificate": {"path": "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json", "sha256": "4cf6d78f5bbafb1a077c35bab7804716aa472f470e33a78848923c55c8eca828"},
+    "cone_schema": {"path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.schema.json", "sha256": "9b6516768f454f77e2741e5aa8150b9fb7c336eda0294c079c8278fd1567194d"},
+    "cone_verifier": {"path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.py", "sha256": "d28b9a70d49a33d62f921bc2b7aa008649d9693d9db759b3c9c8db26d26803f0"},
+    "cone_tests": {"path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.py", "sha256": "81cd3b88155e42dbcffc1f40020509bcbdfaa9436a08dfb558ee613f423ac869"},
+    "report": {"path": "bridge/einstein_sector/reports/einstein-maxwell-weyl-global-fixed-ell-k0-bounded-cone.md", "sha256": "062444e99018715b5f96c6fe37df7aebb3e8d68edb95cae891793da168264002"},
+    "atlas_generator": {"path": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py", "sha256": "c161136bcb8799a2d00eb10fa74dda9a27980159d55a4d0ec94f3c2bf7264d3e"},
+    "atlas_fragment": {"path": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json", "sha256": "4a73bf8b165c2a76e43ba66fdf7831aa66a0db14e53aff8e6192ce73fa5b98f9"},
+    "atlas_verifier": {"path": "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py", "sha256": "e5b9bf2d863f3a61f622d5d3770d77639fd7eb231b05d19aa622cba5ebd19ffb"},
+    "atlas_tests": {"path": "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py", "sha256": "1df3eefd7089a595bb6d557ab7a414feace1399faed47587c42ea5a68163d65a"},
+    "team_brief": {"path": "notes/d-quotient-einstein-team-brief.md", "sha256": "d3a48adcc91d83226ba4e67d7eac69bd365f447535dde343f66c700fadb02065"},
+    "canonical_roadmap": {"path": "notes/universe-building-roadmap.md", "sha256": "fd6fc3d067980c81f97c83ca95f82cd48d0e88bd81d6840a07916209950c9105"}
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.41,
+      "commands": [
+        "python3 -m py_compile <scoped theorem, verifier, tests and atlas paths>",
+        "python3 -m json.tool <scoped schemas, certificates, receipt and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 6.46,
+      "tests_run": 31,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_abd_generic_lambda_pivot --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_abd_generic_lambda_pivot.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_abd_generic_lambda_pivot",
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 374.94,
+      "max_rss_kib": 175352,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_abd_generic_lambda_pivot --check --replay-symbolic",
+      "criterion": "the direct four-dimensional Bach--Maxwell tensor engine replayed both generic-lambda axial and polar pivots exactly; the tensor stage passed and the generated certificate was refreshed after concurrent metadata-only edits"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "cross-ell products, nonzero compact momentum, exceptional ell=1 wave blocks, causal, residual and quantum gates remain excluded"
+    }
+  }
+}
