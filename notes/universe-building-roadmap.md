@@ -1330,6 +1330,14 @@ the exact circle-radius transport for `c`, absence of a `c`-times-twist source,
 and `delta F(W_x dx)=0`.  The corresponding atlas row is
 `einstein.ph.wm.mixed.twist_circumference_wilson_ell2_complete_bounded_cone`;
 the dynamical `a,d,Q_e` gates remain separate and fail-closed.
+
+The `d` gate is now complete: the wave-free branch retains arbitrary
+`(c,d,W_x,A)`, while every nonzero common-zero wave contains an
+Einstein-minus coefficient whose all-`m`, both-parity `d` pivot forces `d=0`.
+Thus the bounded cone is precisely the union of that static stratum and the
+previous twist-wave cone on `d=0`.  Atlas row
+`einstein.ph.wm.mixed.d_twist_ell2_complete_bounded_cone` records the split;
+only `a` and `Q_e` remain among the declared homogeneous dynamical gates.
 Together with the complete axial--polar `ell=2` common-zero theorem and the
 constant zero-frequency `L=1` right inverse, this closes the `A=0`
 global-plus-`ell=2,k=0` wave subcone across both parities, both Einstein

@@ -297,6 +297,11 @@ def verify() -> None:
         raise AssertionError("spectator product structure was hidden")
     if spectator_cone["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
         raise AssertionError("c/Wx twist-wave bounded cone was demoted")
+    d_cone = by_id["einstein.ph.wm.mixed.d_twist_ell2_complete_bounded_cone"]
+    if d_cone["descriptions"]["nonlinear"] != "CERTIFIED" or "forces d=0" not in d_cone["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("d/twist stratified cone was lost")
+    if d_cone["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("d/twist bounded cone was demoted")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

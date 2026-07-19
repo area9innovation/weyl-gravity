@@ -2509,6 +2509,17 @@ records this exact product theorem.  The next genuinely dynamical global gates
 are the radion position `a`, circumference velocity `d`, and electric tangent
 `Q_e`; they are not being merged with the spectator result.
 
+The circumference-velocity gate is now stratified exactly.  If the wave block
+vanishes, the standard static theorem leaves `(c,d,W_x,A)` arbitrary with
+`B=0`.  If the wave block is nonzero, `mu_H=0` forces a nonzero
+Einstein-minus occupation; its isolated `d`-cross channel has a nonzero pivot
+in both parities and for every `m`, so `d=0`.  Hence the full bounded cone is
+the union of the static `d` stratum and the preceding twist-wave cone on the
+face `d=0`.  Atlas row
+`einstein.ph.wm.mixed.d_twist_ell2_complete_bounded_cone` records this
+necessity-and-sufficiency theorem.  The remaining dynamical gates are `a` and
+`Q_e`.
+
 The polar Einstein-minus cross source is now also direct and exact.  Its
 first action row has successive nonzero pivots `66*b*z`, `198*a*z`, and
 `198*d*z`, so Schur promotion gives the same `a=b=d=0` conclusion for every

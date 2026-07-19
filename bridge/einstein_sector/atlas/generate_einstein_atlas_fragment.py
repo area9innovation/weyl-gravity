@@ -59,6 +59,7 @@ CERTIFICATES = {
     "constant_twist_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.json",
     "twist_position_velocity_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.json",
     "twist_circumference_wilson_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.json",
+    "d_twist_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone.json",
     "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
     "global_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
     "extra_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
@@ -478,6 +479,18 @@ def entries() -> list[dict[str, object]]:
             "The dynamical globals a,d,Q_e, other harmonics and momenta, causal propagation, all-orders integration, residual observables and quantum theory remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.mixed.d_twist_ell2_complete_bounded_cone",
+            _scope(theory="Weyl-Maxwell target", carrier="circumference position/velocity c,d, Wilson W_x, twist A,B and complete ell=2,k=0 q/p waves", degree=2, parity="homogeneous, axial and polar", ell="global 0,1 plus wave 2", m="all twist and wave m", k=0, omega="generalized zero plus all ell2 shells", charge_sector="fixed N=2 magnetic bundle; a,b,Q_e set to zero"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The same-background d,c,W_x,A,B and q/p wave carriers remain distinct before the quadratic test."),
+            ("CERTIFIED","The action-normalized Einstein-minus block supplies the isolated d-cross pivot in each parity."),
+            ("CERTIFIED","Every nonzero H=0 wave contains Einstein-minus occupation and therefore forces d=0; the wave-free static stratum retains arbitrary d."),
+            ("CERTIFIED","SO3 multiplicity one promotes the nonzero d pivot to all m, and axial/polar outputs cannot cancel."),
+            _second_order(("CERTIFIED","The bounded cone is exactly the union of the static d stratum and the d=0 predecessor wave cone."),("CERTIFIED","The bounded corrections lie in the smooth exponential-polynomial class; the unrestricted secular cone is not reclassified."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _evidence("d_twist_ell2_complete_bounded_cone","twist_circumference_wilson_ell2_complete_bounded_cone","abd_axial_minus","abd_polar_minus","moment_cone","standard_global_bounded"),
+            "Radion and electric tangents, other harmonics/momenta, causal propagation, all-orders integration, residual observables and quantum theory remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone",
             _scope(theory="Weyl-Maxwell target", carrier="complete homogeneous and axial-twist globals plus axial ell=2,k=0 Einstein-minus and both extra primaries", degree=2, parity="homogeneous and axial", ell="input 0,1,2 with every output L=0,...,4", m="all wave m=-2,...,2 and arbitrary real twist vector", k=0, omega="generalized zero, sqrt(6-2*sqrt(3)), and 4/sqrt(3)"),
             {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
@@ -744,6 +757,11 @@ def build() -> dict[str, object]:
         raise AssertionError("c/Wx twist-wave product cone changed")
     if spectator_cone["radion_circumference_velocity_or_electric_tangents_classified"]:
         raise AssertionError("spectator theorem promoted a dynamical homogeneous direction")
+    d_cone = records["d_twist_ell2_complete_bounded_cone"]["classification"]
+    if not (d_cone["complete_d_c_Wx_A_B_plus_ell2_carrier_covered"] and d_cone["bounded_stratified_zero_locus_necessary_and_sufficient"] and d_cone["nonzero_wave_forces_d_zero"] and d_cone["static_d_branch_retained"]):
+        raise AssertionError("d/twist ell2 bounded cone changed")
+    if d_cone["radion_or_electric_tangent_classified"]:
+        raise AssertionError("d theorem promoted radion or electric data")
     if not records["global_self_coefficients"]["classification"]["complete_aligned_global_self_source_classified"]:
         raise AssertionError("global self coefficient input changed")
     if not records["extra_self_coefficients"]["classification"]["complete_C4_extra_self_source_coefficient_explicit"]:

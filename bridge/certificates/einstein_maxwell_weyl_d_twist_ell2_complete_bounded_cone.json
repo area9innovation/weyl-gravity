@@ -1,0 +1,124 @@
+{
+  "claim_boundary": "Complete only for d,c,W_x,A,B plus ell2,k0 waves with a=b=Q_e=0; larger harmonic, secular, causal, residual and quantum scopes remain open.",
+  "classification": {
+    "all_orders_integrability": false,
+    "bounded_stratified_zero_locus_necessary_and_sufficient": true,
+    "causal_or_quantum_claim": false,
+    "complete_d_c_Wx_A_B_plus_ell2_carrier_covered": true,
+    "nonzero_wave_forces_d_zero": true,
+    "other_ell_or_momentum_classified": false,
+    "radion_or_electric_tangent_classified": false,
+    "static_d_branch_retained": true
+  },
+  "complete_bounded_zero_locus": {
+    "intersection": "u_wave=0,d=0 with c,W_x,A arbitrary",
+    "static_stratum": "u_wave=0: c,d,W_x,A arbitrary and B=0",
+    "union_is_necessary_and_sufficient": true,
+    "wave_stratum": "u_wave!=0: d=0, c,W_x arbitrary, B=0, and the complete constant-position shell plus H,J_i equations"
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "claim": "bounded corrections form a smooth subclass; unrestricted secular cone not reclassified",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "Circumference velocity is not a wave spectator. It survives on the wave-free static stratum but every nonzero bounded ell2 wave forces d=0, while c and W_x remain free and constant twist retains its incidence cone.",
+  "lifecycle_state": "CLASSIFIED",
+  "necessity_proof": {
+    "all_m": "SO3 multiplicity one promotes the direct m=0 nonzero d pivot to an injective scalar map on every V2 parity block",
+    "conclusion": "d*u_wave=0",
+    "constant_twist": "the predecessor incidence equations already set every A-times-Einstein-minus shell projection to zero",
+    "cross_parity": "axial and polar output blocks cannot cancel",
+    "isolated_channel": "select a nonzero Einstein-minus (parity,m) coefficient; its d-cross output is on its distinct omega_minus shell",
+    "moment_sign": "every nonzero H=0 wave has nonzero Einstein-minus occupation",
+    "predecessor_cokernel_zero": "on the predecessor cone every source component has zero bounded adjoint pairing, so after adjoining d the new pairing is exactly the d-times-wave pairing"
+  },
+  "next_gate": "adjoin the radion a and electric tangent Q_e separately, then update the broad global ell2 theorem",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone.py",
+    "generator_sha256": "285176fcc35d3a704e55fd2208a5e7f71be58f9936cdf08fda17bbf7c2b9d4be",
+    "inputs": {
+      "axial_minus": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.json",
+        "sha256": "39ebaf9dcb4a7d6752ed6cdac995a98f38e89ea3cd7f348fbf61c6569796e875"
+      },
+      "global_ell2": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_global_ell2_all_m_both_parity_bounded_cone.json",
+        "sha256": "42864eac4f672db0111badbfb2ff37e2311f0fe627f6a381a6c380365d0c0c10"
+      },
+      "moment_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
+        "sha256": "cf0cbbe2f8b99924c9045c99689481da882ff330e8007a18178488db8ca6a17b"
+      },
+      "polar_minus": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_polar_ell2_minus_resonance.json",
+        "sha256": "ede46396243d1bc3b8fd4c6d4a74e93634a4ff76569143a7ecf23afe22ef42ce"
+      },
+      "predecessor": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.json",
+        "sha256": "a2b3eccb813452f4d0af1b6796e2a813e465481e47d1f45adf2e0f598dab7a4a"
+      },
+      "static_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_D_TWIST_ELL2_COMPLETE_BOUNDED_CONE",
+  "result_state": "COMPLETE_D_C_WX_A_B_ELL2_BOUNDED_CONE_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-d-twist-ell2-complete-bounded-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone.schema.json",
+  "schema_sha256": "bd4fa713908fc417532f75e07d56783bcfd31cd65a35f62091b9c838808cdc9a",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic correction",
+    "carrier": "circumference position/velocity c,d, Wilson W_x, twist A,B and the complete ell=2,k=0 q/p wave carrier",
+    "charge_sector": "fixed N=2 magnetic bundle; a,b,Q_e set to zero",
+    "degree": 2,
+    "ell": "global 0,1 plus wave 2",
+    "k": 0,
+    "m": "all twist and wave m",
+    "omega": "generalized zero plus all ell2 shells",
+    "parity": "homogeneous, axial and polar",
+    "theory": "Weyl-Maxwell target"
+  },
+  "sufficiency_proof": {
+    "static": "the complete standard global bounded theorem supplies the correction",
+    "wave": "d=0 reduces exactly to the certified c,W_x spectator product over the twist-wave cone"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.55,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 1.58,
+      "status": "PASS",
+      "tests_run": 37
+    },
+    "tier_2": {
+      "criterion": "the spectator predecessor, exact axial/polar Einstein-minus d pivots, all-m promotion and static branch are unchanged hashed inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "radion, electric and larger harmonic directions remain excluded",
+      "status": "NOT_RUN"
+    }
+  }
+}
