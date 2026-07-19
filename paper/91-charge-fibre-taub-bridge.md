@@ -53,7 +53,9 @@ The theorem concerns a formal second-order jet, not an exact family or an
 all-orders solution. Post-freeze successor certificates now classify the
 complete finite-harmonic generic $k=0$ zero cone, one fixed-$|k|$
 opposite-momentum cone, and the full exceptional $\ell=1,k=0$ all-$m$ pure
-cone. They sharpen the frontier without changing Theorems A and B below.
+cone. A further tuned nonzero-$k$, axisymmetric $\ell=2$ certificate
+classifies the complete all-primary bounded cone on that declared fibre.
+These results sharpen the frontier without changing Theorems A and B below.
 
 ## 1. Introduction
 
@@ -1076,7 +1078,12 @@ and the landed results are:
    second-order correction, allowing secular time dependence at resonances;
 3. every nonzero exceptional $\ell=1,k=0$ axial-plus-polar all-$m$ pure
    tangent is obstructed: distinct-$m$ interference cannot cancel its
-   positive-positive resonance.
+   positive-positive resonance;
+4. at the tuned $\ell=2,m_A=0$ nonzero momentum
+   $k^2=2\sqrt3-7/6$, the complete all-primary bounded cone consists of two
+   mixed axial--polar Einstein-minus sheets over an exact convex occupation
+   polytope. The extra primary widens the allowed momentum-imbalance interval
+   but creates no additional shell collision.
 
 The remaining cone problem includes multiple $|k|$ fibres, infinite-mode
 Sobolev completion, homogeneous/twist/Wilson-line/charge mixtures, and the
@@ -1112,6 +1119,7 @@ Post-freeze certified successors additionally establish:
 - smooth-global second-order extension on one fixed-$|k|$
   opposite-momentum cone, with boundedness not claimed;
 - the full exceptional $\ell=1,k=0$ all-$m$ pure-sector resonance no-go.
+- the tuned nonzero-$k$, axisymmetric $\ell=2$ all-primary bounded cone.
 
 The following remain open:
 
@@ -1145,6 +1153,7 @@ algebraic arithmetic. The principal certificates are:
 | complete balanced correction | `bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json` |
 | complete finite-harmonic generic $k=0$ cone | `bridge/certificates/einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order.json` |
 | fixed-$|k|$ opposite-momentum cone | `bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json` |
+| tuned nonzero-$k$ axisymmetric all-primary bounded cone | `bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.json` |
 | exceptional $\ell=1$ all-$m$ pure no-go | `bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_all_m_resonance.json` |
 | homogeneous nonzero-frequency quotient | `bridge/certificates/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.json` |
 | exceptional positive-sum resonance census | `bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_resonance_census.json` |

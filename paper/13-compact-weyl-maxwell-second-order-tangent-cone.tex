@@ -83,7 +83,12 @@ obstruction that was invisible at \(t=0\); its full \(a,d\)-cross ideal on
 the \(\ell=2,k=0\) extra block is now classified.  On the complete
 global-plus-\(\ell=2,k=0\)-extra carrier, the bounded cone then collapses
 exactly to the standard static-global cone: no nonzero extra amplitude
-survives.  The remaining oscillator columns are stated as open gates.
+survives.  At one tuned nonzero momentum, by contrast, we classify the
+complete axisymmetric all-primary bounded cone.  Its only shell resonance
+cuts out two mixed axial--polar Einstein-minus sheets, and the lower-frequency
+extra primary widens the exact interval on which positive-primary
+occupations can balance their energy and momentum.  The remaining oscillator
+columns are stated as open gates.
 Consequently formal
 exponential-polynomial extendibility is a moment-map theorem, whereas
 bounded quasiperiodic extendibility is a strict resonance problem.
@@ -690,6 +695,118 @@ The example proves that bounded resonant cokernel equations contain
 information independent of global charges; it does not contradict the
 exponential-polynomial theorem.
 
+\section{A complete tuned nonzero-momentum all-primary cone}
+
+The preceding exceptional result is a no-go on a restricted carrier.  The
+next fixture shows that a bounded mixed cone can instead survive after every
+primary at the same angular and compact-momentum fibre is admitted.  Fix
+\begin{equation}\label{eq:tuned-k}
+ \ell=2,\qquad m_A=0,\qquad
+ k^2=2\sqrt3-\frac76,
+\end{equation}
+choosing the circle circumference so that \(\pm k\) are allowed compact
+momenta.  The three positive input frequencies are
+\begin{equation}
+ \omega_-^2=\frac{29}{6},\qquad
+ \omega_e^2=2\sqrt3+\frac{25}{6},\qquad
+ \omega_+^2=\frac{29}{6}+4\sqrt3,
+ \qquad \omega_-<\omega_e<\omega_+.
+\end{equation}
+Here \(q_-\) and \(q_+\) denote the two Einstein primaries, while \(X\)
+denotes the complete extra-primary multiplicity.  Include both momentum
+signs, both axial and polar \(q_-\) amplitudes, arbitrary normalized \(X\)
+and \(q_+\) multiplicities, and one constant twist position.  No
+nonaxisymmetric input is included.
+
+Write \(A_\pm,P_\pm\) for the axial and polar \(q_-\) coefficients at
+momenta \(\pm k\).  The exact 140-row collision census covers every output
+\(L=1,2,3,4\), momenta \(K=0,\pm2k\), and every zero, sum, and difference
+frequency of \(q_-\), \(X\), and \(q_+\).  Its unique characteristic hit is
+the polar extra shell
+\begin{equation}
+ L=4,\qquad K=0,\qquad \Omega=2\omega_-,
+\end{equation}
+generated only by the \(q_-q_-\) product.  Its two independent adjoint
+pairings are nonzero multiples of
+\begin{equation}\label{eq:tuned-resonance-ideal}
+ A_+A_- -3P_+P_-,
+ \qquad
+ A_+P_- -A_-P_+.
+\end{equation}
+Their complete complex zero set consists of the two mixed sheets
+\begin{equation}\label{eq:tuned-mixed-sheets}
+ A_\pm=\sigma\sqrt3\,P_\pm,
+ \qquad \sigma\in\{+1,-1\},
+\end{equation}
+and the two one-sided planes
+\(A_+=P_+=0\) or \(A_-=P_-=0\).
+
+On a mixed sheet define the nonnegative Einstein-minus occupations
+\begin{equation}
+ N_\pm=-h_-(A_\pm e_A+P_\pm e_P,
+                   A_\pm e_A+P_\pm e_P),
+\end{equation}
+and let \(E_\pm\) and \(B_\pm\) be the total nonnegative occupations in the
+extra and Einstein-plus multiplicities.  The complete Hamiltonian and circle
+momentum equations are
+\begin{align}
+ \omega_e^2(E_++E_-)+\omega_+^2(B_++B_-)
+   &=\omega_-^2(N_++N_-),\label{eq:tuned-energy}\\
+ \omega_e(E_+-E_-)+\omega_+(B_+-B_-)
+   &=\omega_-(N_+-N_-).\label{eq:tuned-momentum}
+\end{align}
+
+\begin{theorem}[Tuned axisymmetric all-primary bounded cone]
+\label{thm:tuned-all-primary-bounded}
+In the carrier just declared, a bounded finite-quasiperiodic second-order
+correction exists precisely at the origin or on one of the two mixed sheets
+\eqref{eq:tuned-mixed-sheets} with
+\begin{equation}\label{eq:tuned-imbalance-interval}
+ \frac{1-r_e}{1+r_e}
+ \leq \frac{|P_+|^2}{|P_-|^2}
+ \leq \frac{1+r_e}{1-r_e},
+ \qquad r_e:=\frac{\omega_-}{\omega_e},
+\end{equation}
+and with nonnegative positive-primary occupations satisfying
+\eqref{eq:tuned-energy}--\eqref{eq:tuned-momentum}.  Their phases and
+multiplicity factorizations are otherwise arbitrary.  The declared constant
+twist coordinate remains free and bounded-removable.
+\end{theorem}
+
+\begin{proof}
+Equations \eqref{eq:tuned-resonance-ideal} give the four components displayed
+above.  On either one-sided plane, positivity and \(r_e<1\)
+force the negative occupation to vanish when \(\mu_H=\mu_{P_x}=0\); hence
+only the origin survives.  On a mixed sheet, the raw axial and polar weights
+cancel.  At fixed positive-branch energy, the largest possible compact
+momentum is supplied by the lower positive frequency \(\omega_e\), so
+\eqref{eq:tuned-energy}--\eqref{eq:tuned-momentum} have a nonnegative solution
+if and only if
+\begin{equation}
+ |N_+-N_-|\leq r_e(N_++N_-),
+\end{equation}
+which is equivalent to \eqref{eq:tuned-imbalance-interval}.  Sufficiency is
+explicit: set \(B_+=B_-=0\) and choose
+\begin{equation}
+ E_++E_-=r_e^2(N_++N_-),\qquad
+ E_+-E_-=r_e(N_+-N_-).
+\end{equation}
+The interval makes both \(E_\pm\) nonnegative.  The five stabilizer pairings
+and the unique nonzero-shell adjoint pairings then vanish.  Every other entry
+in the exact collision ledger is off shell, while the nonzero-Fourier scalar
+complex and constant-twist cross column are boundedly removable.  Theorem
+\ref{thm:bounded-ledger} therefore supplies a bounded correction.  Necessity
+follows from the same complete obstruction ledger.
+\end{proof}
+
+Because \(\omega_-<\omega_e<\omega_+\), the interval
+\eqref{eq:tuned-imbalance-interval} strictly contains the interval obtained
+when only the Einstein-plus primary is allowed to balance the negative
+branch.  Thus the extra primary creates no new resonance at this fixture but
+does enlarge the bounded nonlinear cone.  This is a theorem for one tuned
+\(\ell=2,m_A=0,|k|\) fibre, not for nonaxisymmetric modes, other harmonics or
+circumferences, or multiple absolute-momentum fibres.
+
 \section{Current bounded frontier}
 
 The electric, Wilson, and circumference columns are closed, and the first
@@ -768,8 +885,9 @@ explicit.  The repaired ideal
 
 After these repairs, the still-open full-carrier work is:
 \begin{enumerate}
-\item standard Einstein oscillators, exceptional \(\ell=1\) inputs, other
-      harmonics, and nonzero momenta;
+\item standard Einstein oscillators and exceptional \(\ell=1\) inputs
+      outside the separately classified fixtures, other harmonics, and
+      generic nonzero momenta;
 \item their \(a,d\) polynomial columns and shell-pairing zero loci;
 \item shell resonances among bounded wave products and remaining mixed
       blocks; and
@@ -797,6 +915,9 @@ Velocity $d\times$ selected polar extra mode & finite polynomial source &
 nonzero $\cP_{j,1}$ unless canceled jointly\\
 Exceptional axial--polar interior & secular primitive on moment cone &
 bounded-resonance obstructed\\
+Tuned $\ell=2,m_A=0$, nonzero $|k|$, all primaries & moment-map cone &
+Theorem~\ref{thm:tuned-all-primary-bounded}: two mixed sheets over the exact
+occupation polytope\\
 $a,d\times\ell=2,k=0$ extra & allowed on moment cone & polynomial ideal
 \eqref{eq:ad-polynomial-ideal}, then $\cR$ still required\\
 Remaining $a,d$ oscillator columns & allowed by ep theorem on moment cone
@@ -819,6 +940,12 @@ cancel the moment maps, so no conclusion follows from the sign of a pure
 branch alone.  Third, even complete moment-map cancellation leaves bounded
 resonances.  Exponential-polynomial formal continuation and bounded
 perturbative stability are therefore different claims.
+
+The tuned nonzero-momentum theorem adds a complementary point: enlarging the
+positive branch can widen a surviving bounded cone without introducing a new
+shell collision.  The extra primary is therefore neither uniformly deleted
+nor uniformly liberated by the quadratic test; its disposition depends on
+the complete carrier and correction class.
 
 The result supplies the middle map in the programme's residual atlas:
 \[
@@ -849,7 +976,7 @@ does not establish nonlinear stability.
 
 The manuscript is an \textsc{outline-allowed}/\textsc{draft-allowed}
 integration of committed certificates.  Its current source baseline is
-repository commit \texttt{30eb2a3952d14bd8ec72dfcc1e975e55a2271d6d}.
+repository commit \texttt{cdf08f26a45fc93ac04b9da14bf9074d88e686d1}.
 
 \begin{center}
 \begin{tabularx}{0.98\textwidth}{@{}Y Y@{}}
@@ -880,6 +1007,8 @@ Exceptional two-polarization resonance &
 \cert{bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.json}\\
 Opposite-momentum exponential-polynomial theorem &
 \cert{bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json}\\
+Tuned axisymmetric all-primary bounded cone &
+\cert{bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.json}\\
 Moment-map/Taub bridge &
 \cert{bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json}\\
 \bottomrule
@@ -895,6 +1024,10 @@ complete bounded cone.
 \section{Outlook}
 
 The immediate mathematical target is the full bounded finite-support cone.
+The next exact enlargement of Theorem~\ref{thm:tuned-all-primary-bounded} is
+the symbolic-\(\ell\) resonance coefficient and collision theorem, followed
+by a join of distinct \(|k|\) fibres without identifying their phase
+carriers.
 The immediate physical target is to compare its strata with the transferred
 Einstein/extra/Maxwell interaction tensor and with observer response.  A
 later causal theorem would replace the finite secular right inverses by

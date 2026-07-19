@@ -2,7 +2,7 @@
   "schema": "paper-draft-source-map-v1",
   "paper_id": "PAPER_13_COMPACT_WEYL_MAXWELL_SECOND_ORDER_TANGENT_CONE",
   "lifecycle_state": "DRAFT_ALLOWED",
-  "source_baseline": "30eb2a3952d14bd8ec72dfcc1e975e55a2271d6d",
+  "source_baseline": "cdf08f26a45fc93ac04b9da14bf9074d88e686d1",
   "manuscript": "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
   "certified_scope": {
@@ -14,6 +14,7 @@
     "first_full_time_velocity_polynomial_column": true,
     "ad_ell2_extra_polynomial_zero_locus": true,
     "complete_global_plus_ell2_extra_bounded_cone": true,
+    "tuned_ell2_axisymmetric_all_primary_bounded_cone": true,
     "complete_finite_support_bounded_cone": false,
     "causal_second_order_map": false,
     "all_orders_solution": false,
@@ -69,9 +70,50 @@
       "git_blob": "2b5b0005f9d51953248aaea6e9461d8f71cbbc42"
     },
     {
+      "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.json",
+      "git_blob": "a4f2d548c11f557353e092d73f2e69d3f28bd11f"
+    },
+    {
       "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
       "git_blob": "dcc938c76586aafdacbb6f5ba7ffa9f2c0195533"
     }
   ],
-  "next_gate": "COMPLETE_FINITE_SUPPORT_BOUNDED_CONE"
+  "verification_receipt": {
+    "date": "2026-07-19",
+    "tier_0": {
+      "status": "PASSED",
+      "checks": [
+        "JSON parse through paper/verify_13_14_draft_source_maps.py",
+        "git diff --check on scoped paper paths",
+        "three-pass pdflatex build with no undefined references or overfull boxes",
+        "PDF text audit for the tuned theorem and Paper 91 successor pointer"
+      ]
+    },
+    "tier_1": {
+      "status": "PASSED",
+      "elapsed_seconds": 38.0,
+      "checks": [
+        "independent tuned all-primary cone verifier",
+        "3 targeted tuned all-primary unit tests",
+        "Paper 13/14 source-map verifier",
+        "Paper 91 frozen claim-map verifier"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The mathematical operator and certificate are unchanged committed inputs; this change integrates their already-certified scoped theorem into the draft."
+    },
+    "broader_atlas_audit": {
+      "status": "PASSED_AFTER_CONCURRENT_ATLAS_UPDATE",
+      "checks": [
+        "46 atlas tests plus 9 subtests",
+        "independent Einstein compact-product atlas verifier"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "Paper 13 remains DRAFT_ALLOWED and no mathematical lifecycle state is promoted."
+    }
+  },
+  "next_gate": "SYMBOLIC_ELL_RESONANCE_AND_MULTIPLE_ABSOLUTE_MOMENTUM_FIBRES"
 }
