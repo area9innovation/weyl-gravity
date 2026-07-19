@@ -365,6 +365,28 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
+    def test_complete_k0_pair_to_minus_census_remains_arithmetic_only(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.complete_k0_pair_to_minus_nonresonance"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "NOT_APPLICABLE")
+        self.assertEqual(
+            entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"],
+            "OPEN",
+        )
+        self.assertIn("k=0", entry["claim_boundary"])
+
+    def test_complete_declared_k0_exceptional_carrier_is_obstructed(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.exceptional_ellipse_complete_k0_no_go"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OBSTRUCTED")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("Maximal finite-energy/Sobolev", entry["claim_boundary"])
+
     def test_constant_twist_projector_repair_is_authoritative(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
         self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")

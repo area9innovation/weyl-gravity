@@ -2972,6 +2972,41 @@ isolated and the bounded class remains `OBSTRUCTED`.  The open oscillatory
 frontier now begins with generic `ell>=2` Einstein-plus and extra-primary
 carriers.
 
+That final `k=0` oscillator frontier is now closed.  The pair census separates
+three exact cases rather than merging carrier names: distinct generic input
+`ell`, equal generic input `ell`, and `ell=1` times generic.  Across all
+physical/extra branches, signed sum/difference channels, allowed output
+angular momenta and parities, no oscillator pair lands on a generic
+Einstein-minus target shell.  This is a shell-arithmetic theorem only; its
+atlas row remains nonlinear `OPEN` because it does not itself compute a
+source coefficient.
+
+Combining that census with the standard-global reduction and the nonzero
+`d` pivot closes the complete declared `k=0` carrier.  Every common zero over
+a nonzero exceptional resonance-ellipse point requires at least one
+Einstein-minus coefficient, while bounded compatibility on each isolated
+minus shell gives
+
+```text
+d*C_parity(lambda)*c_(ell,m,parity)=0.
+```
+
+Here `d!=0` on the ellipse and `C_parity(lambda)!=0` for every physical
+`lambda>=6`, so every required minus coefficient vanishes, a contradiction.
+Atlas row `einstein.ph.wm.mixed.exceptional_ellipse_complete_k0_no_go` is
+therefore bounded smooth uniformly almost-periodic `OBSTRUCTED` for arbitrary
+standard generalized-zero data, finite nonminus support and the smooth
+Wiener--Bohr minus completion.  Infinite secular inversion, maximal
+finite-energy/Sobolev completion, nonzero momentum and causal transport stay
+fail-closed (`OPEN` or `NO_CERTIFIED_MAP`).
+
+The currently active same-background bridge remains Bridge 1 with Classical:
+the certified relative triangle/cofiber supplies the branch dictionary and
+pairing transport, while the result above is nonlinear input rather than a
+nonlinear relative morphism.  Its next activation gate is the nonzero-compact-
+momentum tangent cone; the fail-closed atlas row is the complete `k=0` no-go
+just named, and no cross-background mode identification is made.
+
 The nonzero-momentum twist face has now been intersected with the independent
 opposite-momentum phase divisor.  For every `ell>=2`, the exact choice
 

@@ -41,6 +41,10 @@ CERTIFICATES = {
     "exceptional_wiener_minus_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_wiener_minus_dressing_no_go.json",
     "exceptional_standard_global_minus_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_standard_global_minus_no_go.json",
     "exceptional_ell1_oscillator_minus_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_ell1_oscillator_minus_no_go.json",
+    "same_ell_generic_pair_minus_nonresonance": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_ell_generic_pair_minus_nonresonance.json",
+    "cross_ell_generic_output_nonresonance": ROOT / "bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance.json",
+    "ell1_generic_pair_minus_nonresonance": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell1_generic_pair_minus_nonresonance.json",
+    "exceptional_complete_k0_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_complete_k0_no_go.json",
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
@@ -359,6 +363,30 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OBSTRUCTED","No added dipole product screens the nonzero d-times-minus pivot, which removes every required minus coefficient."),("OPEN","No uniform estimate certifies the infinite secular sum."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell complex is certified.")),
             _evidence("exceptional_ell1_oscillator_minus_no_go","exceptional_standard_global_minus_no_go","exceptional_current","exceptional_finite_minus_no_go","abstract_cone"),
             "All k=0 physical and extra ell1 oscillator additions are covered. Generic ell>=2 nonminus carriers, maximal Sobolev completion, nonzero momentum and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.complete_k0_pair_to_minus_nonresonance",
+            _scope(theory="Weyl-Maxwell target", carrier="every unordered pair of certified k=0 physical or extra oscillators tested against every generic Einstein-minus target shell", degree=2, parity="all input/output parity combinations conservatively retained", ell="ell1 and every generic ell>=2 input pair; every angularly allowed generic target L>=2", m="all Clebsch-Gordan-allowed values", k=0, omega="all signed sums and differences of physical dipole, exceptional dipole, q-minus, p-extra and q-plus frequencies"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The complete certified k=0 oscillator inventory retains its physical/extra branch, parity, ell and m labels."),
+            ("CERTIFIED","Every tested source and target branch has an action-derived nonradical Lee-Wald block before the final residual quotient."),
+            ("NOT_APPLICABLE","This row is a shell-arithmetic census; stabilizer moment maps are evaluated on the carrier-specific tangent-cone row."),
+            ("CERTIFIED","Exact distinct-ell, same-ell and ell1-generic inequalities prove that no quadratic oscillator pair lands on any generic Einstein-minus shell."),
+            _second_order(("OPEN","Shell nonresonance alone does not establish a bounded correction because generalized-zero columns and direct source coefficients remain carrier-dependent."),("OPEN","No general infinite smooth-secular inverse follows from the arithmetic census."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell complex is certified.")),
+            _evidence("same_ell_generic_pair_minus_nonresonance","cross_ell_generic_output_nonresonance","ell1_generic_pair_minus_nonresonance"),
+            "This is complete only for k=0 pair-to-generic-minus shell arithmetic. It does not identify a source coefficient, classify nonzero momentum, prove an unrestricted bounded cone, or promote causal, residual, observational or quantum claims.",
+        ),
+        _entry(
+            "einstein.ph.wm.mixed.exceptional_ellipse_complete_k0_no_go",
+            _scope(theory="Weyl-Maxwell target", carrier="any nonzero axisymmetric exceptional resonance-ellipse point, arbitrary standard generalized-zero data, arbitrary finite k=0 nonminus oscillators and a smooth Wiener-Bohr k=0 Einstein-minus sum", degree=2, parity="all certified homogeneous, axial and polar parities", ell="global 0,1; all finite physical/extra ell1 and generic nonminus ell>=2; countable minus ell>=2", m="all retained m with absolutely convergent stabilizer moment maps", k=0, omega="generalized zero plus the complete certified k=0 q/p oscillator inventory"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","Every declared input remains in its same-background fixed-bundle carrier; no cross-background or residual identification is used."),
+            ("CERTIFIED","All oscillator and generalized-zero current blocks used by the Taub reduction are action normalized and retain their certified signs."),
+            ("CERTIFIED","The ellipse and every nonminus addition contribute on the nonpositive side of mu_H, so every common zero requires a nonzero Einstein-minus coefficient."),
+            ("OBSTRUCTED","The complete pair census and global reduction isolate d*C_parity(lambda)*c_(ell,m,parity) on each minus shell; d and every physical pivot are nonzero, forcing all required minus coefficients to vanish."),
+            _second_order(("OBSTRUCTED","The bounded smooth uniformly almost-periodic second-order tangent cone has empty intersection with the complete declared carrier over every nonzero ellipse point."),("OPEN","Finite secular sufficiency has no certified uniform inverse estimate for the countable Wiener-Bohr dressing."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell complex is certified.")),
+            _evidence("exceptional_complete_k0_no_go","ell1_generic_pair_minus_nonresonance","exceptional_standard_global_minus_no_go","exceptional_wiener_minus_no_go","abstract_cone"),
+            "Complete only at k=0 for finite nonminus support and the declared smooth Wiener-Bohr minus topology. Maximal finite-energy/Sobolev completions, infinite secular inversion, nonzero momentum, causal propagation, final residual descent, all-orders integration and quantum interpretation remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.extra.exceptional_ell1_nonzero_k",
@@ -1009,6 +1037,21 @@ def build() -> dict[str, object]:
         raise AssertionError("exceptional ell1-oscillator no-go changed")
     if exceptional_ell1["generic_ell_ge_2_nonminus_oscillators_classified"] or exceptional_ell1["maximal_sobolev_or_finite_energy_completion_classified"] or exceptional_ell1["smooth_infinite_secular_extension_classified"] or exceptional_ell1["causal_or_quantum_claim"]:
         raise AssertionError("exceptional ell1-oscillator no-go exceeded its scope")
+    same_ell_pairs = records["same_ell_generic_pair_minus_nonresonance"]["classification"]
+    if not (same_ell_pairs["all_equal_input_ell_at_least_2_covered"] and same_ell_pairs["all_six_unordered_branch_pairs_covered"] and same_ell_pairs["all_sum_and_difference_channels_covered"] and same_ell_pairs["combined_all_generic_input_ell_pairs_minus_nonresonant"]):
+        raise AssertionError("same-ell generic pair census changed")
+    if same_ell_pairs["exceptional_ell1_times_generic_pairs_classified"] or same_ell_pairs["quadratic_source_coefficients_computed"] or same_ell_pairs["causal_or_quantum_claim"]:
+        raise AssertionError("same-ell generic pair census exceeded its scope")
+    ell1_generic_pairs = records["ell1_generic_pair_minus_nonresonance"]["classification"]
+    if not (ell1_generic_pairs["both_ell1_frequencies_covered"] and ell1_generic_pairs["all_three_generic_branches_covered"] and ell1_generic_pairs["all_sum_and_difference_channels_covered"] and ell1_generic_pairs["complete_k0_oscillator_pair_to_minus_census_closed"]):
+        raise AssertionError("ell1-generic pair census changed")
+    if ell1_generic_pairs["quadratic_source_coefficients_computed"] or ell1_generic_pairs["nonzero_momentum_classified"] or ell1_generic_pairs["causal_or_quantum_claim"]:
+        raise AssertionError("ell1-generic pair census exceeded its scope")
+    complete_k0 = records["exceptional_complete_k0_no_go"]["classification"]
+    if not (complete_k0["complete_declared_k0_carrier_covered"] and complete_k0["all_standard_globals_covered"] and complete_k0["all_finite_k0_nonminus_oscillators_covered"] and complete_k0["smooth_wiener_bohr_minus_completion_covered"] and complete_k0["bounded_tangent_cone_intersection_empty_over_nonzero_ellipse"]):
+        raise AssertionError("complete k0 exceptional no-go changed")
+    if complete_k0["maximal_sobolev_or_finite_energy_completion_classified"] or complete_k0["smooth_infinite_secular_extension_classified"] or complete_k0["nonzero_momentum_classified"] or complete_k0["all_orders_integrability"] or complete_k0["causal_or_quantum_claim"]:
+        raise AssertionError("complete k0 exceptional no-go exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

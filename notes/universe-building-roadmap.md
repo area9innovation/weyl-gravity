@@ -1651,6 +1651,23 @@ exact low-ell audit removes all remaining `L=2,3` collisions.  The exceptional
 bounded activation gate is therefore narrowed to generic `ell>=2`
 Einstein-plus and extra-primary oscillator pairs.
 
+That remaining `k=0` gate is now closed.  Exact distinct-ell, same-ell and
+`ell=1`--generic dispersion theorems show that no pair from the complete
+certified oscillator inventory reaches any generic Einstein-minus shell.
+After the standard-global polynomial reduction, every occupied minus shell
+therefore contains only the nonzero `d*C_parity(lambda)` intertwiner.  Since
+every nonzero exceptional resonance-ellipse point has `d!=0` and Taub balance
+requires minus occupation, all such coefficients are simultaneously required
+to be nonzero and forced to vanish.  Atlas row
+`einstein.ph.wm.mixed.exceptional_ellipse_complete_k0_no_go` is bounded smooth
+uniformly almost-periodic `OBSTRUCTED` on the complete declared `k=0` carrier.
+Its paired arithmetic row remains nonlinear `OPEN`, preventing shell
+nonresonance from being mistaken for a general source theorem.  Maximal
+finite-energy/Sobolev completion, infinite secular inversion, nonzero compact
+momentum and causal transport remain explicitly `OPEN` or `NO_CERTIFIED_MAP`.
+The next Einstein gate is nonzero momentum; this result remains input to, not
+a promotion of, the same-background relative Bridge 1.
+
 ### Classical ownership
 
 The authoritative support-local Berger tensors are now certified through

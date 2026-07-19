@@ -315,6 +315,27 @@ def verify() -> None:
         raise AssertionError("ell1-oscillator no-go was hidden")
     if ell1_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or ell1_second["smooth_secular"]["status"] != "OPEN" or ell1_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("ell1-oscillator correction classes changed")
+    complete_pair_census = by_id["einstein.ph.wm.interaction.complete_k0_pair_to_minus_nonresonance"]
+    if complete_pair_census["descriptions"]["nonlinear"] != "OPEN":
+        raise AssertionError("complete k0 pair census was over-promoted to a nonlinear theorem")
+    if complete_pair_census["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("complete k0 pair census lost its certified resonance status")
+    if complete_pair_census["mode_data"]["taub_maps"]["status"] != "NOT_APPLICABLE":
+        raise AssertionError("complete k0 pair census silently acquired a Taub claim")
+    if complete_pair_census["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("complete k0 pair census was promoted from arithmetic to bounded sufficiency")
+    complete_k0_no_go = by_id["einstein.ph.wm.mixed.exceptional_ellipse_complete_k0_no_go"]
+    if complete_k0_no_go["descriptions"]["nonlinear"] != "OBSTRUCTED":
+        raise AssertionError("complete k0 exceptional no-go lost its obstruction lifecycle")
+    if complete_k0_no_go["mode_data"]["resonance"]["status"] != "OBSTRUCTED":
+        raise AssertionError("complete k0 exceptional resonant functional lost its obstruction status")
+    complete_k0_second = complete_k0_no_go["mode_data"]["second_order"]
+    if complete_k0_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED":
+        raise AssertionError("complete k0 bounded correction class lost its obstruction")
+    if complete_k0_second["smooth_secular"]["status"] != "OPEN" or complete_k0_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("complete k0 no-go exceeded its certified correction classes")
+    if "Maximal finite-energy/Sobolev" not in complete_k0_no_go["claim_boundary"]:
+        raise AssertionError("complete k0 no-go lost its topology boundary")
     fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
     if fixed_ell_twist["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("fixed-ell bounded lifecycle was not promoted")

@@ -1273,6 +1273,164 @@
       }
     },
     {
+      "claim_boundary": "This is complete only for k=0 pair-to-generic-minus shell arithmetic. It does not identify a source coefficient, classify nonzero momentum, prove an unrestricted bounded cone, or promote causal, residual, observational or quantum claims.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_ell_generic_pair_minus_nonresonance.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_ELL_GENERIC_PAIR_MINUS_NONRESONANCE",
+          "sha256": "763f0a85a52745ae797b180ff4b98b79612249d2bafd00c483275688aa747169"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_CROSS_ELL_K0_GENERIC_OUTPUT_NONRESONANCE",
+          "sha256": "836facf35b339b59a668040857515967ef9a03f3acfb5199db1f47bc045c7bc9"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_ell1_generic_pair_minus_nonresonance.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ELL1_GENERIC_PAIR_MINUS_NONRESONANCE",
+          "sha256": "b7119ba966393d7c41d3f9f14d65b358607be0dde0070c96e8e3327bca34b184"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.complete_k0_pair_to_minus_nonresonance",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The complete certified k=0 oscillator inventory retains its physical/extra branch, parity, ell and m labels.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "Every tested source and target branch has an action-derived nonradical Lee-Wald block before the final residual quotient.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Exact distinct-ell, same-ell and ell1-generic inequalities prove that no quadratic oscillator pair lands on any generic Einstein-minus shell.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Shell nonresonance alone does not establish a bounded correction because generalized-zero columns and direct source coefficients remain carrier-dependent.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific retarded Weyl-Maxwell complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No general infinite smooth-secular inverse follows from the arithmetic census.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "This row is a shell-arithmetic census; stabilizer moment maps are evaluated on the carrier-specific tangent-cone row.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "every unordered pair of certified k=0 physical or extra oscillators tested against every generic Einstein-minus target shell",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "ell1 and every generic ell>=2 input pair; every angularly allowed generic target L>=2",
+        "k": 0,
+        "m": "all Clebsch-Gordan-allowed values",
+        "omega": "all signed sums and differences of physical dipole, exceptional dipole, q-minus, p-extra and q-plus frequencies",
+        "parity": "all input/output parity combinations conservatively retained",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
+      "claim_boundary": "Complete only at k=0 for finite nonminus support and the declared smooth Wiener-Bohr minus topology. Maximal finite-energy/Sobolev completions, infinite secular inversion, nonzero momentum, causal propagation, final residual descent, all-orders integration and quantum interpretation remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_complete_k0_no_go.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_COMPLETE_K0_NO_GO",
+          "sha256": "fa17424ae81e9745021c08f944f4cb5959d64a64315500049263a46433703e5e"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_ell1_generic_pair_minus_nonresonance.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ELL1_GENERIC_PAIR_MINUS_NONRESONANCE",
+          "sha256": "b7119ba966393d7c41d3f9f14d65b358607be0dde0070c96e8e3327bca34b184"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_standard_global_minus_no_go.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_STANDARD_GLOBAL_MINUS_NO_GO",
+          "sha256": "f02789b3d06238a4ebc9fd1ac25c635a9a7ff4bbceaabbdd49a2e509a5b5de38"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_wiener_minus_dressing_no_go.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_WIENER_MINUS_DRESSING_NO_GO",
+          "sha256": "411076a107d778e6f18140ad4e83ca395e78278d62e52713505e3065f2d4ef75"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "id": "einstein.ph.wm.mixed.exceptional_ellipse_complete_k0_no_go",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Every declared input remains in its same-background fixed-bundle carrier; no cross-background or residual identification is used.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "All oscillator and generalized-zero current blocks used by the Taub reduction are action normalized and retain their certified signs.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The complete pair census and global reduction isolate d*C_parity(lambda)*c_(ell,m,parity) on each minus shell; d and every physical pivot are nonzero, forcing all required minus coefficients to vanish.",
+          "status": "OBSTRUCTED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The bounded smooth uniformly almost-periodic second-order tangent cone has empty intersection with the complete declared carrier over every nonzero ellipse point.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific retarded Weyl-Maxwell complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Finite secular sufficiency has no certified uniform inverse estimate for the countable Wiener-Bohr dressing.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The ellipse and every nonminus addition contribute on the nonpositive side of mu_H, so every common zero requires a nonzero Einstein-minus coefficient.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "any nonzero axisymmetric exceptional resonance-ellipse point, arbitrary standard generalized-zero data, arbitrary finite k=0 nonminus oscillators and a smooth Wiener-Bohr k=0 Einstein-minus sum",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "global 0,1; all finite physical/extra ell1 and generic nonminus ell>=2; countable minus ell>=2",
+        "k": 0,
+        "m": "all retained m with absolutely convergent stabilizer moment maps",
+        "omega": "generalized zero plus the complete certified k=0 q/p oscillator inventory",
+        "parity": "all certified homogeneous, axial and polar parities",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "This is a same-background REDUCED-MODE solution cofiber whose coefficient map is the reduction of the certified natural support-local minimal chain map. It does not supply finite residual descent, causal propagation, a particle interpretation, or a cross-background map.",
       "descriptions": {
         "causal": "OPEN",
@@ -4534,7 +4692,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "e03aa5f22f9450e3099c427332176f09af333e31af623221cbe6cede5f5ab599",
+  "generated_by_sha256": "d637acdaee62631410e980169a01e44e0702a1b4355d551e671f81e6e44bf71c",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
