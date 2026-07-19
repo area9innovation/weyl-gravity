@@ -270,3 +270,20 @@ def test_matched_absolute_g3_feedback_is_evaluated_without_rank_promotion():
     assert "BERGER_RECOIL_MATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_partitioned_matched_feedback_records_contraction_without_nonzero_promotion():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.detector_profile.recoil_partitioned_matched_absolute_g3_feedback"
+    )
+    assert row["descriptions"]["causal"] == "CERTIFIED"
+    assert row["observer_data"]["detector_response"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["response_rank"]["status"] == "OPEN"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    statement = row["observer_data"]["detector_response"]["statement"]
+    assert "contract strictly from 2 to 4 to 8 cells" in statement
+    assert "both 8-cell intervals contain zero" in statement
+    assert "BERGER_RECOIL_PARTITIONED_MATCHED_ABSOLUTE_G3_FEEDBACK" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

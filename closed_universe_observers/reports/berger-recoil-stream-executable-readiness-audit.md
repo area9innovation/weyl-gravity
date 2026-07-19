@@ -2,7 +2,7 @@
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `LORENTZIAN-CAUSAL`.
 
-The complete per-shell symbolic word now has eleven finite executable consumers.
+The complete per-shell symbolic word now has twelve finite executable consumers.
 Exact rational interval aggregation of supplied `I_abc[two_j,k]` values is
 certified, including every passive column, `g_b g_c^2`, and the Peter--Weyl
 weight.  A second callable returns exact real/imaginary coefficient intervals,
@@ -47,14 +47,21 @@ kernel carrier, and the Lorentzian two-form pairing.  Both intervals contain
 zero under the current whole-support switch hulls.  The six mismatched
 channels, shell sums and any recoil sign or nonzero claim remain open.
 
+A twelfth replaces every whole-support switch and switch-derivative hull in
+those matched channels with a causal cellwise enclosure.  On the certified
+2/4/8-cell rail, both complex interval widths contract strictly at each step
+and the 8-cell widths are strictly below their coarse counterparts.  Both
+8-cell intervals still contain zero, so this refinement establishes neither a
+matched-channel sign nor a nonzero recoil coefficient.
+
 The audit retains its explicit four-callable complete-backend protocol, records
 the shell evaluator `CERTIFIED`, and adds separate `CERTIFIED` finite detector
 kernel, and polynomial-convolution progress rows while all three incomplete physical
 rows remain `OBSTRUCTED`.
 It also exports a strict exact-rational numerical
 input schema in the certified `gHat` operator units, but leaves every value
-undeclared.  The next gate partition-refines the matched feedback intervals
-and evaluates the six mismatched absolute-`g3` feedback channels;
+undeclared.  The next gate evaluates the six mismatched absolute-`g3`
+feedback channels with the partitioned causal backend;
 external specialization follows only after the full protocol closes.
 
 The symbolic operator theorem remains `CERTIFIED`.  No recoil coefficient,

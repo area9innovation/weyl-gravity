@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "partition_rails", "coarse_to_partition8_refinement", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-partitioned-matched-absolute-g3-feedback-v1"},
+    "result_id": {"const": "BERGER_RECOIL_PARTITIONED_MATCHED_ABSOLUTE_G3_FEEDBACK"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "MATCHED_FEEDBACK_INTERVALS_STRICTLY_NARROWED_ZERO_CONTAINMENT_PERSISTS"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 7, "maxProperties": 7},
+    "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "partition_rails": {
+      "type": "object",
+      "required": ["D0", "D1"],
+      "additionalProperties": false,
+      "properties": {
+        "D0": {"$ref": "#/$defs/rail"},
+        "D1": {"$ref": "#/$defs/rail"}
+      }
+    },
+    "coarse_to_partition8_refinement": {
+      "type": "object",
+      "required": ["D0", "D1"],
+      "additionalProperties": false,
+      "properties": {
+        "D0": {"$ref": "#/$defs/refinement"},
+        "D1": {"$ref": "#/$defs/refinement"}
+      }
+    },
+    "mutation_results": {"type": "array", "minItems": 2, "maxItems": 2},
+    "flags": {
+      "type": "object",
+      "required": ["ALL_MATCHED_FEEDBACK_SWITCH_OCCURRENCES_CELL_PARTITIONED", "MATCHED_FEEDBACK_WIDTHS_STRICTLY_CONTRACT_2_TO_4_TO_8", "PARTITION8_WIDTHS_STRICTLY_BELOW_COARSE_HULLS", "PARTITION8_MATCHED_FEEDBACK_INTERVALS_EXCLUDE_ZERO", "ALL_EIGHT_ABC_CHANNEL_INTERVALS_EVALUATED", "PHYSICAL_MASS_SPECIALIZATION_EXPORTED", "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED", "TANGENT_CONE_RESTRICTION_EVALUATED", "QUANTUM_CLAIM"]
+    },
+    "next_gate": {"const": "EVALUATE_SIX_MISMATCHED_CHANNELS_WITH_THE_PARTITIONED_CAUSAL_BACKEND"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "$defs": {
+    "interval": {
+      "type": "object",
+      "required": ["lower", "upper", "width"],
+      "properties": {
+        "lower": {"type": "string"},
+        "upper": {"type": "string"},
+        "width": {"type": "string"}
+      }
+    },
+    "complex_interval": {
+      "type": "object",
+      "required": ["real", "imaginary"],
+      "properties": {
+        "real": {"$ref": "#/$defs/interval"},
+        "imaginary": {"$ref": "#/$defs/interval"}
+      }
+    },
+    "rail_row": {
+      "type": "object",
+      "required": ["channel_id", "detector", "partition_count", "cell_width", "mass_squared_interval", "coefficient_block_interval", "coefficient_block_contains_zero", "full_cellwise_payload_sha256"],
+      "properties": {
+        "channel_id": {"type": "string"},
+        "detector": {"enum": ["D0", "D1"]},
+        "partition_count": {"enum": [2, 4, 8]},
+        "cell_width": {"type": "string"},
+        "mass_squared_interval": {"type": "object"},
+        "coefficient_block_interval": {"$ref": "#/$defs/complex_interval"},
+        "coefficient_block_contains_zero": {"const": true},
+        "full_cellwise_payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "rail": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/rail_row"}
+    },
+    "refinement": {
+      "type": "object",
+      "required": ["channel_id", "coarse_real_width", "partition8_real_width", "coarse_imaginary_width", "partition8_imaginary_width", "real_width_strictly_reduced", "imaginary_width_strictly_reduced", "zero_still_contained"],
+      "properties": {
+        "channel_id": {"type": "string"},
+        "coarse_real_width": {"type": "string"},
+        "partition8_real_width": {"type": "string"},
+        "coarse_imaginary_width": {"type": "string"},
+        "partition8_imaginary_width": {"type": "string"},
+        "real_width_strictly_reduced": {"const": true},
+        "imaginary_width_strictly_reduced": {"const": true},
+        "zero_still_contained": {"const": true}
+      }
+    }
+  }
+}

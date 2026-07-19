@@ -322,9 +322,8 @@ branch.
 
 ### Immediate priority after the polarization-emitter handoff
 
-1. Partition-refine the zero-containing detector-matched
-   `I_000[0,0]` and `I_111[0,0]` absolute-`g^3` coefficient enclosures,
-   evaluate the six mismatched `(a,b,c)` channels, and then extend the finite
+1. Evaluate the six mismatched `(a,b,c)` absolute-`g^3` channels with the
+   certified cell-partitioned causal backend, and then extend the finite
    Berger rail beyond `two_j=4` with validated spectral-tail bounds and a
    stopping rule.  Physical masses and couplings remain deferred until that
    backend is complete.  In parallel, use the
@@ -804,12 +803,13 @@ emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
 composition defects.
 
 `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` corrects the activation
-boundary.  Its eleven finite capabilities include the four baseline consumers,
+boundary.  Its twelve finite capabilities include the four baseline consumers,
 the detector/`Dhat_1` binding, the switched diagonal massive stage, the
 physical full-form Cauchy pair and the canonical positive-energy preparation
 coefficients described below, plus the first freely evolved retarded Maxwell
-channel, the partition-refined leading rank-two response and the matched
-absolute-`g3` feedback-channel evaluator.
+channel, the partition-refined leading rank-two response, the matched
+absolute-`g3` feedback-channel evaluator and its cell-partitioned causal
+refinement.
 `BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` closes the
 one-shell supplied-channel capability with exact rational arithmetic: it
 sums every passive column and both feedback channels and applies
@@ -954,6 +954,18 @@ whole-support interval enclosures containing zero.  They are therefore
 evaluated coefficient blocks, not nonzero recoil witnesses: sign,
 nonvanishing, recoil-corrected rank, Peter--Weyl aggregation, physical masses,
 the six mismatched channels and the infinite tail remain `OPEN`.
+
+`BERGER_RECOIL_PARTITIONED_MATCHED_ABSOLUTE_G3_FEEDBACK` removes the repeated
+whole-support dependency loss from those two matched contractions.  Every
+occurrence of `h_a` and `h_a'` is enclosed on each causal cell before the
+advanced/retarded Volterra compositions and final Lorentzian pairing.  For
+both D0 and D1 the real and imaginary widths contract strictly from 2 to 4
+to 8 cells, and the 8-cell widths are strictly below their coarse
+counterparts.  Both refined intervals still contain zero.  Thus this is a
+certified enclosure improvement, not a sign, nonvanishing, recoil-rank or
+physical-mass result.  The active gate is now the six mismatched `(a,b,c)`
+channels with the same partitioned backend, followed by extension beyond
+`two_j=4` and the tail-aware aggregate stop loop.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as

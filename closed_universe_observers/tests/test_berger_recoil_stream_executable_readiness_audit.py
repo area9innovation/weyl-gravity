@@ -16,6 +16,7 @@ def test_symbolic_word_is_not_promoted_to_an_interval_backend():
     assert rows["finite_free_emitter_first_retarded_maxwell_channel"] == "CERTIFIED"
     assert rows["finite_partitioned_detector_selected_leading_response_rank_two"] == "CERTIFIED"
     assert rows["finite_detector_matched_absolute_g3_feedback_channels"] == "CERTIFIED"
+    assert rows["finite_partitioned_detector_matched_absolute_g3_feedback"] == "CERTIFIED"
     assert rows["nested_time_convolution_backend"] == "OBSTRUCTED"
     assert rows["shell_interval_evaluator"] == "CERTIFIED"
     assert rows["tail_aware_aggregate_stop_loop"] == "OBSTRUCTED"
@@ -30,8 +31,8 @@ def test_external_specialization_is_deferred_until_backend_exists():
     assert value["flags"]["NUMERICAL_SPECIALIZATION_VALUES_DECLARED"] is False
 
 
-def test_eleven_finite_capabilities_close_but_three_complete_execution_capabilities_remain_fail_closed():
+def test_twelve_finite_capabilities_close_but_three_complete_execution_capabilities_remain_fail_closed():
     rows = build()["readiness"]["rows"][1:]
-    assert len(rows) == 14
-    assert [row["status"] for row in rows].count("CERTIFIED") == 11
+    assert len(rows) == 15
+    assert [row["status"] for row in rows].count("CERTIFIED") == 12
     assert [row["status"] for row in rows].count("OBSTRUCTED") == 3

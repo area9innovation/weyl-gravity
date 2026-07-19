@@ -30,6 +30,7 @@ DEPENDENCIES = {
     "per_shell_word": PACKAGE / "certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
     "executable_readiness": PACKAGE / "certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json",
     "finite_kernel_intervals": PACKAGE / "certificates/BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE.json",
+    "partitioned_matched_feedback": PACKAGE / "certificates/BERGER_RECOIL_PARTITIONED_MATCHED_ABSOLUTE_G3_FEEDBACK.json",
 }
 SOURCE_FILES = [
     Path(__file__),
@@ -116,6 +117,11 @@ def readiness_audit(values: dict[str, dict[str, Any]], *, drop_per_shell_word: b
             "evidence_flag": "FINITE_DETECTOR_MATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS_EXPORTED",
         },
         {
+            "id": "finite_partitioned_detector_matched_absolute_g3_feedback",
+            "status": "CERTIFIED" if values["partitioned_matched_feedback"]["flags"]["MATCHED_FEEDBACK_WIDTHS_STRICTLY_CONTRACT_2_TO_4_TO_8"] else "OBSTRUCTED",
+            "evidence_flag": "MATCHED_FEEDBACK_WIDTHS_STRICTLY_CONTRACT_2_TO_4_TO_8",
+        },
+        {
             "id": "callable_shell_interval_backend",
             "status": "CERTIFIED" if values["executable_readiness"]["flags"]["CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED"] else "OBSTRUCTED",
             "evidence_flag": "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED",
@@ -168,6 +174,7 @@ def build() -> dict[str, Any]:
         "per_shell_word": "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED",
         "executable_readiness": "NUMERICAL_SPECIALIZATION_INPUT_SCHEMA_EXPORTED",
         "finite_kernel_intervals": "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED",
+        "partitioned_matched_feedback": "MATCHED_FEEDBACK_WIDTHS_STRICTLY_CONTRACT_2_TO_4_TO_8",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -198,8 +205,10 @@ def build() -> dict[str, Any]:
         "Berger mode-kernel interval enclosures through 2j=4 are certified, including "
         "the massive scalar/one-form physical-correction carrier. The detector-matched "
         "I_000[0,0] and I_111[0,0] coefficient blocks are now evaluated on the "
-        "validation mass domain by Green adjunction, but both contain zero under the "
-        "current whole-support switch hulls. The six mismatched channels, complete "
+        "validation mass domain by Green adjunction. A causal cellwise refinement "
+        "strictly contracts both matched complex enclosures on its 2/4/8-cell rail "
+        "below the whole-support hulls, but both 8-cell enclosures still contain "
+        "zero. The six mismatched channels, complete "
         "nested backend and tail-aware aggregate stop loop are not "
         "exported. Numerical masses, couplings and a stopping goal are therefore "
         "deferred; supplying them now would not produce an interval. The exact "
@@ -227,7 +236,7 @@ def build() -> dict[str, Any]:
         "sequencing_decision": {
             "completed_internal_gate": "complete symbolic preparation/recoil scalar operator word with exact Peter-Weyl reconstruction",
             "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
-            "current_active_gate": "partition-refine the two matched feedback intervals, evaluate the six mismatched channels, then extend the detector provider beyond two_j=4",
+            "current_active_gate": "evaluate the six mismatched channels with the partitioned causal backend, then extend the detector provider beyond two_j=4",
             "external_specialization_gate": "DEFERRED_UNTIL_EXECUTABLE_BACKEND",
             "dense_profile_materialization": "NOT_SELECTED",
             "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP",
@@ -258,13 +267,14 @@ def build() -> dict[str, Any]:
             "FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED": True,
             "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED": True,
             "FINITE_DETECTOR_MATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS_EXPORTED": True,
+            "FINITE_PARTITIONED_MATCHED_ABSOLUTE_G3_FEEDBACK_EXPORTED": True,
             "NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED": False,
             "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": False,
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "PARTITION_REFINE_MATCHED_FEEDBACK_INTERVALS_AND_EVALUATE_SIX_MISMATCHED_CHANNELS",
+        "next_gate": "EVALUATE_SIX_MISMATCHED_CHANNELS_WITH_THE_PARTITIONED_CAUSAL_BACKEND",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

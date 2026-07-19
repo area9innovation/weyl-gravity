@@ -21,15 +21,16 @@ kernel blocks through `two_j=4` on declared rational mass/slab domains,
 including the massive scalar/one-form carrier needed by the physical Green
 correction.  The detector-matched `I_000[0,0]` and `I_111[0,0]` coefficient
 blocks are now evaluated by Green adjunction on the validation mass domain;
-both contain zero under the current whole-support switch hulls.  The
+the cellwise causal backend strictly contracts both complex enclosures along
+its 2/4/8-cell rail and below the whole-support hulls.  Both 8-cell
+enclosures still contain zero.  The
 readiness audit still finds three complete-stream missing pieces: an all-shell
 detector coefficient provider, physical Berger binding of the nested engine,
 and the tail-aware aggregate stop loop.
 The remaining sequence is:
 
-1. Partition-refine the two matched feedback intervals and evaluate the six
-   mismatched `(a,b,c)` channels, while extending the coefficient provider
-   beyond `two_j=4`.
+1. Evaluate the six mismatched `(a,b,c)` channels with the partitioned causal
+   backend, then extend the coefficient provider beyond `two_j=4`.
 2. Implement the tail-aware four-stream stop loop.
 3. Only then declare numerical positive masses, nonzero couplings, and an
    interval, nonzero, or sign stopping goal.
