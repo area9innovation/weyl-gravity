@@ -329,6 +329,20 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("Candidate 13 is the sole remaining", entry["claim_boundary"])
 
+    def test_candidate13_incidence_reduction_keeps_full_ideal_open(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_l4_incidence_reduction"]
+        second = entry["mode_data"]["second_order"]
+        self.assertIn("separately tuned circumference fibre", entry["mode_data"]["dispersion"]["statement"])
+        self.assertIn("four distinct nonzero real generalized pencil roots", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
+        self.assertIn("dimension-22 rank-18 open component", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("full ideal remain unclassified", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not the candidate-13 zero-variety theorem", entry["claim_boundary"])
+
     def test_nonaxisymmetric_l3_matrix_closes_basis_not_cone(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
         second = entry["mode_data"]["second_order"]

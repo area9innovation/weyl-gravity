@@ -1,0 +1,51 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_L4_INCIDENCE_REDUCTION_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact candidate-13 L4 bilinear-pencil normal form and generic rank-18 incidence component.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.json": "6d3ab6f841cab3a982a6433863c7420cc6796604154aee960ca5e0e4250d8dbe",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.py": "768ce5a23df376b10074f1a07d3d69d3c33bf23b451327152048891e47b90c57",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.schema.json": "c1670486b7f5b06306c37d1b0e90b171c5924972d7c3c801d49dc00a182e0dc5",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.py": "af8b8d539b25f33d10cd393c5bf6a6d434974fc460ce100902562096d611eb8a",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.py": "127015648f784b7955d0838b8e8331221a6be57f57bb41d43e39cbf70cbaabf5",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-L4-incidence-reduction.md": "45aaaa1b4e7db388774e3c7c2c8ed898d5404089463f455a6b51622cfc231ba2"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 80,
+      "commands": [
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "producer_elapsed_seconds": 1.06,
+      "producer_max_rss_kib": 56408,
+      "independent_verifier_elapsed_seconds": 1.24,
+      "independent_verifier_max_rss_kib": 60400,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction --write",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction"
+      ],
+      "reason": "Producer and verifier independently reconstruct the exact bilinear-form pencil, certify four real simple generalized roots, and reproduce the symbolic rank-18 minor on the declared binary-quartic source fixture."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a normal-form and generic-component gate. The degenerate rank stratification, full candidate-13 ideal, same-fibre sources, Taub intersections and complete tangent cone remain open."
+    }
+  },
+  "claim_boundary": "Candidate 13 is reduced exactly and its irreducible dimension-22 generic rank-18 incidence component is certified. The full zero variety is not classified until every degenerate source-rank stratum is bounded. Same-fibre, Taub, correction, causal, residual and quantum claims remain OPEN or NO_CERTIFIED_MAP."
+}

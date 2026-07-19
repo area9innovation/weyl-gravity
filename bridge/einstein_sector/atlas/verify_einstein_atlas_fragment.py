@@ -598,6 +598,18 @@ def verify() -> None:
         raise AssertionError("regular-pencil L4 correction classes were merged")
     if "Candidate 13 is the sole remaining" not in regular_l4["claim_boundary"]:
         raise AssertionError("regular-pencil L4 theorem exceeded scope")
+    candidate13 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_l4_incidence_reduction"]
+    candidate13_second = candidate13["mode_data"]["second_order"]
+    if candidate13["descriptions"]["nonlinear"] != "OPEN" or "separately tuned circumference fibre" not in candidate13["mode_data"]["dispersion"]["statement"]:
+        raise AssertionError("candidate-13 incidence fibre scope was hidden")
+    if "four distinct nonzero real generalized pencil roots" not in candidate13["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("candidate-13 exact pencil reduction was hidden")
+    if candidate13["mode_data"]["resonance"]["status"] != "OPEN" or "dimension-22 rank-18 open component" not in candidate13["mode_data"]["resonance"]["statement"] or "full ideal remain unclassified" not in candidate13["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-13 generic and full-ideal lifecycles were merged")
+    if candidate13["mode_data"]["taub_maps"]["status"] != "OPEN" or candidate13_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or candidate13_second["smooth_secular"]["status"] != "OPEN" or candidate13_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-13 correction classes were merged")
+    if "not the candidate-13 zero-variety theorem" not in candidate13["claim_boundary"]:
+        raise AssertionError("candidate-13 reduction exceeded scope")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]
     if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:

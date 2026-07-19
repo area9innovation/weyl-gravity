@@ -107,6 +107,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_multiplicity_two_L3_zero_varieties": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_multiplicity_two_L3_zero_varieties.json",
     "ell2_two_abs_momentum_rank_one_branch_zero_varieties": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_rank_one_branch_zero_varieties.json",
     "ell2_two_abs_momentum_regular_pencil_L4_zero_varieties": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_regular_pencil_L4_zero_varieties.json",
+    "ell2_two_abs_momentum_candidate13_L4_incidence_reduction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
@@ -1031,6 +1032,18 @@ def entries() -> list[dict[str, object]]:
             "This classifies candidates 7, 11 and 19 only. Candidate 13 is the sole remaining unclassified cross-fibre ideal; same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_l4_incidence_reduction",
+            _scope(theory="Weyl-Maxwell target", boundaries="candidate-13 closed S1_L times S2 circumference fibre; before final residual quotient", carrier="complete all-m L4 cross-|n| resonance block with two multiplicity-two p_extra source branches and scalar q_plus targets", degree=2, parity="axial and polar amplitudes", ell="input 2 x 2; output L=4", m="all magnetic components through two binary-octic product equations", k="signed |n|=1 and |n|=2 momenta (1,-2)", omega="positive-frequency SUM channel", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The exact candidate-13 p_extra/p_extra to q_plus collision and its separately tuned circumference fibre are retained without cross-background identification."),
+            ("CERTIFIED","All four internal bilinear-form blocks are invertible and exact interval arithmetic gives four distinct nonzero real generalized pencil roots."),
+            ("OPEN","The five stabilizer moment maps and same-fibre quadratic sources have not been joined to the candidate-13 incidence variety."),
+            ("OPEN","The all-m equations reduce exactly to two weighted sums of binary-quartic products and have a certified irreducible dimension-22 rank-18 open component, but the degenerate source-rank strata and full ideal remain unclassified."),
+            _second_order(("OPEN","The full cross-fibre ideal, same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on the incidence variety."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_candidate13_L4_incidence_reduction","ell2_two_abs_momentum_regular_pencil_L4_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
+            "This is an exact normal-form and generic-component gate, not the candidate-13 zero-variety theorem. The rank-drop stratification, full ideal, same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="constant twist position plus paired axisymmetric +/-k Einstein-plus/minus standing waves", degree=2, parity="generic input parity retained; polar extra resonant output", ell="every one fixed integer ell>=2 with output L=2ell", m="m_A=0 inputs and M=0 output", k="one tuned allowed nonzero +/-k pair", omega="q-plus/minus inputs and p-primary sum-frequency output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
@@ -1824,6 +1837,29 @@ def build() -> dict[str, object]:
         or regular_l4["causal_or_quantum_claim"]
     ):
         raise AssertionError("regular-pencil L4 theorem exceeded scope")
+    candidate13_value = records["ell2_two_abs_momentum_candidate13_L4_incidence_reduction"]
+    candidate13 = candidate13_value["classification"]
+    candidate13_generic = candidate13_value["generic_open_stratum"]
+    if not (
+        candidate13["candidate_13_exact_pencil_reduction_certified"]
+        and candidate13["four_distinct_real_generalized_roots_certified"]
+        and candidate13["generic_rank_18_open_component_certified"]
+        and candidate13["generic_component_dimension_22_certified"]
+        and candidate13_generic["linear_rank"] == 18
+        and candidate13_generic["kernel_dimension"] == 2
+        and candidate13_generic["incidence_dimension_over_C"] == 22
+    ):
+        raise AssertionError("candidate-13 incidence reduction changed")
+    if (
+        candidate13["complete_rank_stratification_certified"]
+        or candidate13["full_candidate_13_zero_variety_classified"]
+        or candidate13["same_fibre_quadratic_sources_classified"]
+        or candidate13["taub_common_zero_intersection_classified"]
+        or candidate13["complete_two_fibre_tangent_cone_classified"]
+        or candidate13["smooth_secular_classified"]
+        or candidate13["causal_or_quantum_claim"]
+    ):
+        raise AssertionError("candidate-13 incidence reduction exceeded scope")
     if l3["arbitrary_amplitude_zero_variety_classified"] or l3["causal_or_quantum_claim"]:
         raise AssertionError("nonaxisymmetric L3 matrix exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:

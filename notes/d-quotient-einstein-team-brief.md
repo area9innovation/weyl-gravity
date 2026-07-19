@@ -3585,6 +3585,21 @@ backgrounds remain separate atlas scopes.  Candidate 13 is now the sole
 unclassified cross-fibre ideal; same-fibre, Taub and correction-class joins
 remain fail-closed.
 
+Candidate 13 is now reduced exactly to its remaining universal geometry.  Its
+four internal bilinear-form blocks are invertible, and the squared pencil has
+positive trace, determinant and discriminant by exact rational intervals.
+Thus a real simultaneous-equivalence basis gives four distinct weights
+`lambda_i` and the two binary-octic equations
+`sum_i A_i B_i=0`, `sum_i lambda_i A_i B_i=0`.  The exact source fixture
+`A_1=A_2=x^4`, `A_3=A_4=y^4` has rank-18 minor
+`-(lambda_1-lambda_2)^4(lambda_3-lambda_4)^5`; the rank-18 open set therefore
+carries a rank-two kernel bundle and an irreducible dimension-22 generic
+incidence component.  This does not close the candidate-13 ideal.  The active
+gate is the degenerate source-rank bound
+`dim{A:ker_dim>=k}+k<=21` for every `k>=3`; only after that bound may
+complete-intersection unmixedness and the rank-18 Jacobian witness promote the
+full ideal.  The atlas records this distinction explicitly as `OPEN`.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

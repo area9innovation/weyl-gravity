@@ -2237,6 +2237,16 @@ remaining cross-fibre ideal.  Same-fibre sources, the Taub common-zero join
 and the complete bounded cone remain the activation gate; these results are
 inputs to same-background Bridge 1 rather than nonlinear bridge theorems.
 
+The remaining candidate `13` is now reduced, but not yet closed.  Exact
+interval arithmetic gives four distinct real generalized roots for its pair
+of bilinear forms, reducing the all-`m` source to two weighted binary-octic
+product identities.  An exact rank-18 minor certifies an irreducible
+dimension-22 generic incidence component.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_l4_incidence_reduction`
+keeps resonance `OPEN`: the degenerate source-rank strata and hence the full
+ideal remain unclassified.  The activation gate is the finite rank-
+stratification inequality `dim{A:ker_dim>=k}+k<=21` for every `k>=3`.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-L4-incidence-reduction-v1.schema.json",
+  "title": "Candidate-13 L4 incidence reduction",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "scope",
+    "candidate_index",
+    "internal_matrices",
+    "exact_interval_witnesses",
+    "pencil_reduction",
+    "generic_open_stratum",
+    "remaining_rank_stratification_gate",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_L4_INCIDENCE_REDUCTION"
+    },
+    "candidate_index": {"const": 13},
+    "classification": {
+      "type": "object",
+      "required": [
+        "candidate_13_exact_pencil_reduction_certified",
+        "generic_rank_18_open_component_certified",
+        "complete_rank_stratification_certified",
+        "full_candidate_13_zero_variety_classified"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
