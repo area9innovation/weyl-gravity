@@ -5133,6 +5133,95 @@
       }
     },
     {
+      "claim_boundary": "This certifies the complete normal form only on the aligned angular slice plus one exact arc in the full amplitude link. Internal current-orthogonal directions, active resonance components, occupation-stratum gluing and all higher lifecycles remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_ROTATION_NORMAL_FORM",
+          "sha256": "13823b4cb13ea9b0b5e8af24cd6b2723c2a32e69cff6e4c69b8ad8f1d3ad00d3"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_ROTATION_LINKS",
+          "sha256": "f96bd216b7f740f741b11e613d3dda0e6cad33522318213feec98315e79b9574"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AXISYMMETRIC_ROTATION_SINGULARITY",
+          "sha256": "4c9357e509da85687c5e39d2588002649bc7b955dfd607fb2333bd308bab3159"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_RESONANCE_FACE_FIBRES",
+          "sha256": "7607c649ebc628270669db8fd5e6ab813b281b82c83192a9cb7f7dbee09f3433"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_PHASE_PARITY_FIBRE_PRODUCT",
+          "sha256": "32b6764cf13d724f89b91719aef17d3cf1d0a509e866ac9f8186115768b28f54"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.ell2_same_sign_automatic_face_rotation_normal_form",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The theorem applies support-stratum by support-stratum on the five automatic faces and keeps candidate 16 NOT_APPLICABLE.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The action-derived spin-two angular form gives exact aligned-kernel inertia (4N-2,4N-2,2) for N occupied current eigenlines.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The absent resonant node remains zero along the exact arc, so the complete bilinear resonance remains automatic.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The exact nonaxisymmetric arc stays in the necessary-and-sufficient bounded fibre product on every declared automatic-face stratum.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific retarded Weyl-Maxwell correction complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The same finite-amplitude arc lies in the smooth-secular cone; the full local singular stratification remains open.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The missing mu_J3 equation is hyperbolic on the aligned angular slice, and every axisymmetric point lies on an exact fixed-norm nonaxisymmetric rotation-zero arc.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "five distinct collision candidates 17--21, retained separately; candidate 16 has no nonzero automatic face",
+        "boundaries": "closed S1_L times S2 before final residual quotient",
+        "carrier": "current-eigenline-aligned angular slice and one exact full-amplitude arc through every axisymmetric point on every nonzero automatic-face support stratum",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": 2,
+        "k": "signed n=(1,2), never identified across rho",
+        "m": "base m=0 with transverse m=+/-1,+/-2; exact arc uses m=0,+/-2",
+        "omega": "occupied generic positive-frequency nodes with conjugate reality completion",
+        "parity": "the occupied axial/polar current eigenlines selected by the certified section",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "Parity/angular workload theorem only for the 21 ell=2 cross-|n| candidates. No source zero, same-fibre classification, tangent-cone verdict or higher lifecycle is inferred.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -8670,7 +8759,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "b13b657ae7e3de6582b94d40bc1d75a70373b5be0b0763b4db6e9be122154b27",
+  "generated_by_sha256": "e21f6a4f0c96ae48b9afa7f610c0778d2f197bf41c84aee5d475d2702a03d20b",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

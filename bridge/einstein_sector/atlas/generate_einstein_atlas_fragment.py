@@ -99,6 +99,7 @@ CERTIFICATES = {
     "same_sign_resonance_face_fibres": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
     "same_sign_automatic_face_rotation_links": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.json",
     "same_sign_axisymmetric_rotation_singularity": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.json",
+    "same_sign_automatic_face_rotation_normal_form": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
     "ell2_two_abs_momentum_candidate4_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json",
     "ell2_two_abs_momentum_axial_qminus_L4_triplet": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.json",
@@ -957,6 +958,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","Every declared section point is bounded, but every nonzero point is critical for the three-component rotation map and cannot seed a regular codimension-three chart."),("CERTIFIED","The same critical section lies in the smooth-secular class; no local component decomposition is inferred."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_axisymmetric_rotation_singularity","same_sign_resonance_face_fibres","same_sign_phase_parity_fibre_product","same_sign_scalar_cone_sections","taub"),
             "This is an exact Jacobian-rank theorem, not a quadratic-normal-form, local tangent-cone, connected-component, singular-stratum or higher-lifecycle classification.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_automatic_face_rotation_normal_form",
+            _scope(theory="Weyl-Maxwell target", background="five distinct collision candidates 17--21, retained separately; candidate 16 has no nonzero automatic face", boundaries="closed S1_L times S2 before final residual quotient", carrier="current-eigenline-aligned angular slice and one exact full-amplitude arc through every axisymmetric point on every nonzero automatic-face support stratum", degree=2, parity="the occupied axial/polar current eigenlines selected by the certified section", ell=2, m="base m=0 with transverse m=+/-1,+/-2; exact arc uses m=0,+/-2", k="signed n=(1,2), never identified across rho", omega="occupied generic positive-frequency nodes with conjugate reality completion", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","The theorem applies support-stratum by support-stratum on the five automatic faces and keeps candidate 16 NOT_APPLICABLE."),
+            ("CERTIFIED","The action-derived spin-two angular form gives exact aligned-kernel inertia (4N-2,4N-2,2) for N occupied current eigenlines."),
+            ("CERTIFIED","The missing mu_J3 equation is hyperbolic on the aligned angular slice, and every axisymmetric point lies on an exact fixed-norm nonaxisymmetric rotation-zero arc."),
+            ("CERTIFIED","The absent resonant node remains zero along the exact arc, so the complete bilinear resonance remains automatic."),
+            _second_order(("CERTIFIED","The exact nonaxisymmetric arc stays in the necessary-and-sufficient bounded fibre product on every declared automatic-face stratum."),("CERTIFIED","The same finite-amplitude arc lies in the smooth-secular cone; the full local singular stratification remains open."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_automatic_face_rotation_normal_form","same_sign_automatic_face_rotation_links","same_sign_axisymmetric_rotation_singularity","same_sign_resonance_face_fibres","same_sign_phase_parity_fibre_product","taub"),
+            "This certifies the complete normal form only on the aligned angular slice plus one exact arc in the full amplitude link. Internal current-orthogonal directions, active resonance components, occupation-stratum gluing and all higher lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload",
@@ -1844,6 +1857,16 @@ def build() -> dict[str, object]:
         raise AssertionError("same-sign axisymmetric rotation singularity changed")
     if rotation_singularity["implicit_function_regular_seed_available_on_axisymmetric_section"] or rotation_singularity["local_real_zero_set_components_classified"] or rotation_singularity["singular_tangent_cone_classified"] or rotation_singularity["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("same-sign axisymmetric rotation singularity exceeded scope")
+    rotation_normal_form = records["same_sign_automatic_face_rotation_normal_form"]["classification"]
+    if not (
+        rotation_normal_form["candidates_17_through_21_automatic_face_normal_forms_classified"]
+        and rotation_normal_form["all_aligned_quadratic_normal_forms_indefinite"]
+        and rotation_normal_form["all_aligned_quadratic_normal_forms_have_real_nullity_two"]
+        and rotation_normal_form["exact_nonaxisymmetric_fixed_occupation_rotation_zero_arc_at_every_axisymmetric_point"]
+    ):
+        raise AssertionError("same-sign automatic-face rotation normal form changed")
+    if rotation_normal_form["automatic_face_axisymmetric_points_isolated"] or rotation_normal_form["full_local_singular_strata_classified"] or rotation_normal_form["active_resonance_components_classified"] or rotation_normal_form["all_orders_integrability"] or rotation_normal_form["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("same-sign automatic-face rotation normal form exceeded scope")
     parity_workload = records["ell2_two_abs_momentum_parity_workload"]["classification"]
     if not (parity_workload["all_twenty_one_candidates_parity_typed"] and parity_workload["all_m_angular_nonvanishing_witnessed"] and parity_workload["odd_L_axisymmetric_fixtures_excluded"] and parity_workload["reduced_source_workload_complete"]):
         raise AssertionError("ell2 two-absolute-momentum parity workload changed")

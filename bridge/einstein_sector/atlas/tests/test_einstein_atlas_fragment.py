@@ -209,6 +209,17 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("not a quadratic-normal-form", entry["claim_boundary"])
 
+    def test_same_sign_automatic_face_rotation_normal_form_is_scoped(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_automatic_face_rotation_normal_form"]
+        second = entry["mode_data"]["second_order"]
+        self.assertIn("(4N-2,4N-2,2)", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("hyperbolic", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("absent resonant node", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("exact nonaxisymmetric arc", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("aligned angular slice", entry["claim_boundary"])
+
     def test_first_two_abs_momentum_parity_workload_is_fail_closed(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
         second = entry["mode_data"]["second_order"]

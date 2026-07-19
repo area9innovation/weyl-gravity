@@ -496,6 +496,16 @@ def verify() -> None:
         raise AssertionError("same-sign axisymmetric critical section lost bounded status")
     if rotation_critical_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "not a quadratic-normal-form" not in rotation_critical["claim_boundary"]:
         raise AssertionError("same-sign axisymmetric critical-locus theorem exceeded scope")
+    rotation_normal = by_id["einstein.ph.wm.interaction.ell2_same_sign_automatic_face_rotation_normal_form"]
+    rotation_normal_second = rotation_normal["mode_data"]["second_order"]
+    if rotation_normal["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "(4N-2,4N-2,2)" not in rotation_normal["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("same-sign automatic-face normal-form inertia was hidden")
+    if rotation_normal["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "hyperbolic" not in rotation_normal["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("same-sign automatic-face hyperbolic normal form changed")
+    if rotation_normal_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "exact nonaxisymmetric arc" not in rotation_normal_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("same-sign automatic-face exact arc changed")
+    if rotation_normal_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "aligned angular slice" not in rotation_normal["claim_boundary"]:
+        raise AssertionError("same-sign automatic-face normal-form theorem exceeded scope")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

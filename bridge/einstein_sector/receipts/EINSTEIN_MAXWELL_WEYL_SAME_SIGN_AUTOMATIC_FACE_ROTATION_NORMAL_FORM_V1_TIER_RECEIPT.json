@@ -1,0 +1,42 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_ROTATION_NORMAL_FORM_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact aligned-angular rotation normal form and nonaxisymmetric fixed-occupation arcs on the five nonzero automatic same-sign faces.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.json": "fcc6cae75a6e4b057dcd321057bc6bf4697a3ffa7017a2e5a94af38bbf43e337",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.py": "30a15d58b08429d21896676e72af549bf7a18b4f70744a8eda93f9669c1cd283",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.schema.json": "cb01125b9b47338eb106e5cf32436d6a1abd2e1eb3a60dfe20b90ed711e52163",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.py": "99076180b3da9a0b22b741277c31ed147284ada35f48dc491cff98fef8137e0a",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.py": "c8651d274404ecdd0654568e451eeabd9302cd0d0f13dbdef1e0ddb1ff2edbf5",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-automatic-face-rotation-normal-form.md": "c9fbb1c8755ac8339eb03e0787140814bf684180a54f91b135993ae6f202a504"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 3,
+      "elapsed_seconds": 0.009,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "reason": "The affected atlas chain regenerated, passed its independent verifier and passed all 94 focused atlas tests; Paper 13 compiled in three clean passes."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The theorem remains scoped to an aligned angular slice on automatic faces and does not promote a paper freeze, release, causal or quantum lifecycle."
+    }
+  },
+  "claim_boundary": "The full current-orthogonal normal space, radical resolution, active resonance components, occupation-stratum gluing, all-orders integration and higher lifecycles remain open."
+}

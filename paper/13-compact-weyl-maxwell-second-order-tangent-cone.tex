@@ -1205,6 +1205,76 @@ local gate is the quadratic normal form of the missing \(J_3\) equation on
 the kernel of the two transverse differentials.
 \end{proof}
 
+\begin{proposition}[Automatic-face hyperbolic normal form]
+Fix a nonzero axisymmetric section point on any automatic-face support
+stratum of candidates (17)--(21), and let \(N\) be the number of occupied
+current eigenlines.  On the angular slice aligned with those eigenlines, the
+quadratic \(\mu_{J_3}\) form restricted to
+
+\[
+ \ker d(\mu_{J_1},\mu_{J_2})
+\]
+
+has real inertia
+
+\[
+ (n_+,n_-,n_0)=(4N-2,4N-2,2).
+\]
+
+In particular it is indefinite.  Moreover, through every such point there
+is an exact fixed-occupation nonaxisymmetric curve inside the complete
+bounded fibre product.  Candidate (16) has no nonzero automatic face, so the
+statement is not applicable there.
+\end{proposition}
+
+\begin{proof}
+The spin-two angular form and \(J_3\) form in the ordered basis
+\(m=-2,-1,0,1,2\) are
+
+\[
+ W_2=\operatorname{diag}\left(1,\frac14,\frac16,\frac14,1\right),
+ \qquad
+ W_2T_3=\operatorname{diag}\left(-2,-\frac14,0,\frac14,2\right).
+\]
+
+Rescale each node by the square root of its nonzero current magnitude and
+swap the \(m=+1\) and \(m=-1\) variables on negative-current nodes.  This
+normalizes all coefficients simultaneously.  Put
+\(u_j=\delta z_{j,+1}\) and
+\(v_j=\overline{\delta z_{j,-1}}\).  The two real transverse rotation
+equations combine into one complex equation
+
+\[
+ \sum_{j=1}^{N} a_j(u_j+v_j)=0,
+ \qquad a_j>0.
+\]
+
+With \(w_j=u_j+v_j\) and \(z_j=u_j-v_j\), the \(m=\pm1\) part of
+\(\mu_{J_3}\) is proportional to
+\(\operatorname{Re}\sum_j w_j\overline{z_j}\).  The constraint places \(w\)
+in \(a^\perp\).  Its pairing with the \(a^\perp\) part of \(z\) gives real
+inertia \((2N-2,2N-2)\), while the complex component of \(z\) parallel to
+\(a\) is a two-real-dimensional radical.  The unrestricted \(m=\pm2\)
+coordinates contribute \((2N,2N,0)\), proving the displayed inertia.
+
+For the exact curve, choose any occupied eigenline, fix its phase so that
+its \(m=0\) coefficient is \(a>0\), and replace its angular vector by
+
+\[
+ z(t)=\sqrt{a^2-12t^2}\,e_0+t e_{+2}+t e_{-2},
+ \qquad 12t^2<a^2.
+\]
+
+Its norm is fixed because
+\((a^2-12t^2)/6+t^2+t^2=a^2/6\).  No adjacent magnetic weights are
+simultaneously occupied, so \(\mu_{J_1}=\mu_{J_2}=0\), while the two endpoint
+terms cancel in \(\mu_{J_3}\).  The absent resonant node stays zero on an
+automatic face, hence \(B_i=0\) remains exact.  This proves the curve lies in
+the necessary-and-sufficient bounded fibre product.  The proposition does
+not classify internal current-orthogonal directions or the two-dimensional
+radical, and therefore is not a complete singular-stratum theorem.
+\end{proof}
+
 \section{Current bounded frontier}
 
 The electric, Wilson, and circumference columns are closed, and the first
@@ -1422,6 +1492,8 @@ Connected fixed-occupation rotation-zero links on automatic faces &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.json}\\
 Axisymmetric rotation critical-locus theorem &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.json}\\
+Automatic-face aligned rotation normal form and exact arcs &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1482,9 +1554,14 @@ candidates, however, the explicit axisymmetric section lies in the rotation
 critical locus with Jacobian rank two.  The active resonance strata still
 require a restricted-current nondegeneracy test before any connected-fibre
 theorem can be applied, while the critical section requires the quadratic
-normal form of the missing rotation equation.  The exact fibre-product
-equation is already certified; complex resonance components and
-occupation-level sums need not be recomputed.
+normal form of the missing rotation equation.  On the automatic faces that
+normal form is now exact on the complete current-eigenline-aligned angular
+slice: with \(N\) occupied eigenlines its inertia is
+\((4N-2,4N-2,2)\), and every axisymmetric point lies on an explicit
+nonaxisymmetric fixed-occupation arc.  What remains locally is the internal
+current-orthogonal normal form and its two-dimensional radical.  The exact
+fibre-product equation is already certified; complex resonance components
+and occupation-level sums need not be recomputed.
 The symbolic-\(\ell\) standard-branch resonance and collision theorem is now
 closed, as is the complete 164-coefficient two-momentum branch-basis census.
 The next exact enlargement is to classify the real connected components of

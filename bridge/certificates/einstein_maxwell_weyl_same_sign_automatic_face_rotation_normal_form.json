@@ -1,0 +1,333 @@
+{
+  "candidate_rows": [
+    {
+      "candidate_index": 16,
+      "reason": "candidate 16 has no nonzero automatic resonance face",
+      "verdict": "NOT_APPLICABLE"
+    },
+    {
+      "automatic_face": {
+        "component_location": "contained one-sided locus",
+        "condition": "q_plus_n2 occupation = 0",
+        "ray_generators": [
+          "R1",
+          "R2"
+        ],
+        "resonance_constraint": "IDENTICALLY_ZERO_BECAUSE_ONE_BILINEAR_FACTOR_VANISHES"
+      },
+      "candidate_index": 17,
+      "verdict": "HYPERBOLIC_NORMAL_FORM_AND_EXACT_NONAXISYMMETRIC_ARC_CERTIFIED"
+    },
+    {
+      "automatic_face": {
+        "component_location": "contained one-sided locus",
+        "condition": "p_extra_n1 occupation = 0",
+        "ray_generators": [
+          "R2",
+          "R4"
+        ],
+        "resonance_constraint": "IDENTICALLY_ZERO_BECAUSE_ONE_BILINEAR_FACTOR_VANISHES"
+      },
+      "candidate_index": 18,
+      "verdict": "HYPERBOLIC_NORMAL_FORM_AND_EXACT_NONAXISYMMETRIC_ARC_CERTIFIED"
+    },
+    {
+      "automatic_face": {
+        "component_location": "doublet_fibre_zero",
+        "condition": "p_extra_n1 occupation = 0",
+        "ray_generators": [
+          "R2",
+          "R4"
+        ],
+        "resonance_constraint": "IDENTICALLY_ZERO_BECAUSE_ONE_BILINEAR_FACTOR_VANISHES"
+      },
+      "candidate_index": 19,
+      "verdict": "HYPERBOLIC_NORMAL_FORM_AND_EXACT_NONAXISYMMETRIC_ARC_CERTIFIED"
+    },
+    {
+      "automatic_face": {
+        "component_location": "contained one-sided locus",
+        "condition": "q_plus_n1 occupation = 0",
+        "ray_generators": [
+          "R1",
+          "R3"
+        ],
+        "resonance_constraint": "IDENTICALLY_ZERO_BECAUSE_ONE_BILINEAR_FACTOR_VANISHES"
+      },
+      "candidate_index": 20,
+      "verdict": "HYPERBOLIC_NORMAL_FORM_AND_EXACT_NONAXISYMMETRIC_ARC_CERTIFIED"
+    },
+    {
+      "automatic_face": {
+        "component_location": "first_fibre_zero",
+        "condition": "q_plus_n1 occupation = 0",
+        "ray_generators": [
+          "R1",
+          "R3"
+        ],
+        "resonance_constraint": "IDENTICALLY_ZERO_BECAUSE_ONE_BILINEAR_FACTOR_VANISHES"
+      },
+      "candidate_index": 21,
+      "verdict": "HYPERBOLIC_NORMAL_FORM_AND_EXACT_NONAXISYMMETRIC_ARC_CERTIFIED"
+    }
+  ],
+  "claim_boundary": "This theorem is exact on the current-eigenline-aligned angular slice and supplies an exact arc in the full amplitude link. It does not classify the full normal space, glue occupation strata, treat candidate 16 or active resonance components, perform a residual quotient, or prove all-orders, causal, observational or quantum claims.",
+  "classification": {
+    "active_resonance_components_classified": false,
+    "all_aligned_quadratic_normal_forms_have_real_nullity_two": true,
+    "all_aligned_quadratic_normal_forms_indefinite": true,
+    "all_orders_integrability": false,
+    "automatic_face_axisymmetric_points_isolated": false,
+    "candidate_16_nonzero_automatic_face": "NOT_APPLICABLE",
+    "candidates_17_through_21_automatic_face_normal_forms_classified": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "exact_nonaxisymmetric_fixed_occupation_rotation_zero_arc_at_every_axisymmetric_point": true,
+    "full_local_singular_strata_classified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_arc": {
+    "fixed_norm_identity": "(a^2-12*t^2)/6+t^2+t^2=a^2/6",
+    "formula": "z(t)=sqrt(a^2-12*t^2)*e_0+t*e_(+2)+t*e_(-2), with 12*t^2<a^2",
+    "nonaxisymmetric": "t nonzero populates m=+2 and m=-2 and is transverse to the axisymmetric section",
+    "resonance_identity": "on an automatic face the absent resonant node remains zero, so the complete bilinear resonance factor remains zero along the arc",
+    "rotation_identity": "mu_J1(z(t))=mu_J2(z(t))=0 because no adjacent m weights are simultaneously occupied; mu_J3(z(t))=2*t^2-2*t^2=0",
+    "selected_node": "any occupied current eigenline with axisymmetric coefficient a>0 after its node phase is fixed"
+  },
+  "generality_level": "G4_ALL_NONZERO_FIXED_OCCUPATIONS_ON_FIVE_AUTOMATIC_RESONANCE_FACES",
+  "interpretation": "The rank-two axisymmetric critical locus is a genuine hyperbolic crossing on every automatic face, not a hidden definite obstruction. Each point lies on an explicit nonaxisymmetric fixed-occupation arc. The two-dimensional radical, internal current-orthogonal directions and occupation-stratum gluing still prevent a complete local singular-stratum classification.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the full current-orthogonal normal form, including internal polarization directions, and test the restricted current on each active resonance component",
+  "normal_form_theorem": {
+    "J3_form_diagonal": [
+      "-2",
+      "-1/4",
+      "0",
+      "1/4",
+      "2"
+    ],
+    "angular_basis": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "angular_form_diagonal": [
+      "1",
+      "1/4",
+      "1/6",
+      "1/4",
+      "1"
+    ],
+    "consequence": "the missing rotation equation is indefinite on every nonzero automatic-face support stratum; the axisymmetric critical point is neither a definite quadratic obstruction nor an isolated point of the rotation-zero link",
+    "linear_kernel_coordinates": "rescale each occupied current eigenline by the square root of its nonzero current magnitude and swap its +/-1 variables when its sign is negative; then use u_j=delta z_(+1), v_j=conjugate(delta z_(-1)), so d(mu_J1,mu_J2)=0 is the single complex equation sum a_j(u_j+v_j)=0 with a_j>0",
+    "quadratic_coordinate_change": "write c_j=gamma_j*a_j (all c_j nonzero), w_j=u_j+v_j and z_j=u_j-v_j. Solve w_N=-sum_(j<N)(c_j/c_N)w_j and set zeta_j=gamma_j*z_j-gamma_N*(c_j/c_N)*z_N. Then Q_J3 is proportional to Re(sum_(j<N) w_j*conjugate(zeta_j)); z_N is one complex radical. This is an invertible real congruence for arbitrary nonzero signed gamma_j and positive a_j",
+    "support_strata": [
+      {
+        "aligned_angular_slice_real_dimension_before_linear_rotation_constraints": 8,
+        "complete_aligned_kernel_real_inertia": [
+          2,
+          2,
+          2
+        ],
+        "constraint_basis_gram_leading_principal_minors": [],
+        "constraint_basis_gram_positivity": "every displayed minor is a positive power of a_N times a sum of positive squares",
+        "kernel_real_dimension": 6,
+        "m_plus_minus_1_kernel_real_inertia": [
+          0,
+          0,
+          2
+        ],
+        "m_plus_minus_2_real_inertia": [
+          2,
+          2,
+          0
+        ],
+        "occupied_current_eigenlines": 1
+      },
+      {
+        "aligned_angular_slice_real_dimension_before_linear_rotation_constraints": 16,
+        "complete_aligned_kernel_real_inertia": [
+          6,
+          6,
+          2
+        ],
+        "constraint_basis_gram_leading_principal_minors": [
+          "a1**2 + a2**2"
+        ],
+        "constraint_basis_gram_positivity": "every displayed minor is a positive power of a_N times a sum of positive squares",
+        "kernel_real_dimension": 14,
+        "m_plus_minus_1_kernel_real_inertia": [
+          2,
+          2,
+          2
+        ],
+        "m_plus_minus_2_real_inertia": [
+          4,
+          4,
+          0
+        ],
+        "occupied_current_eigenlines": 2
+      },
+      {
+        "aligned_angular_slice_real_dimension_before_linear_rotation_constraints": 24,
+        "complete_aligned_kernel_real_inertia": [
+          10,
+          10,
+          2
+        ],
+        "constraint_basis_gram_leading_principal_minors": [
+          "a1**2 + a3**2",
+          "a3**2*(a1**2 + a2**2 + a3**2)"
+        ],
+        "constraint_basis_gram_positivity": "every displayed minor is a positive power of a_N times a sum of positive squares",
+        "kernel_real_dimension": 22,
+        "m_plus_minus_1_kernel_real_inertia": [
+          4,
+          4,
+          2
+        ],
+        "m_plus_minus_2_real_inertia": [
+          6,
+          6,
+          0
+        ],
+        "occupied_current_eigenlines": 3
+      },
+      {
+        "aligned_angular_slice_real_dimension_before_linear_rotation_constraints": 32,
+        "complete_aligned_kernel_real_inertia": [
+          14,
+          14,
+          2
+        ],
+        "constraint_basis_gram_leading_principal_minors": [
+          "a1**2 + a4**2",
+          "a4**2*(a1**2 + a2**2 + a4**2)",
+          "a4**4*(a1**2 + a2**2 + a3**2 + a4**2)"
+        ],
+        "constraint_basis_gram_positivity": "every displayed minor is a positive power of a_N times a sum of positive squares",
+        "kernel_real_dimension": 30,
+        "m_plus_minus_1_kernel_real_inertia": [
+          6,
+          6,
+          2
+        ],
+        "m_plus_minus_2_real_inertia": [
+          8,
+          8,
+          0
+        ],
+        "occupied_current_eigenlines": 4
+      },
+      {
+        "aligned_angular_slice_real_dimension_before_linear_rotation_constraints": 40,
+        "complete_aligned_kernel_real_inertia": [
+          18,
+          18,
+          2
+        ],
+        "constraint_basis_gram_leading_principal_minors": [
+          "a1**2 + a5**2",
+          "a5**2*(a1**2 + a2**2 + a5**2)",
+          "a5**4*(a1**2 + a2**2 + a3**2 + a5**2)",
+          "a5**6*(a1**2 + a2**2 + a3**2 + a4**2 + a5**2)"
+        ],
+        "constraint_basis_gram_positivity": "every displayed minor is a positive power of a_N times a sum of positive squares",
+        "kernel_real_dimension": 38,
+        "m_plus_minus_1_kernel_real_inertia": [
+          8,
+          8,
+          2
+        ],
+        "m_plus_minus_2_real_inertia": [
+          10,
+          10,
+          0
+        ],
+        "occupied_current_eigenlines": 5
+      },
+      {
+        "aligned_angular_slice_real_dimension_before_linear_rotation_constraints": 48,
+        "complete_aligned_kernel_real_inertia": [
+          22,
+          22,
+          2
+        ],
+        "constraint_basis_gram_leading_principal_minors": [
+          "a1**2 + a6**2",
+          "a6**2*(a1**2 + a2**2 + a6**2)",
+          "a6**4*(a1**2 + a2**2 + a3**2 + a6**2)",
+          "a6**6*(a1**2 + a2**2 + a3**2 + a4**2 + a6**2)",
+          "a6**8*(a1**2 + a2**2 + a3**2 + a4**2 + a5**2 + a6**2)"
+        ],
+        "constraint_basis_gram_positivity": "every displayed minor is a positive power of a_N times a sum of positive squares",
+        "kernel_real_dimension": 46,
+        "m_plus_minus_1_kernel_real_inertia": [
+          10,
+          10,
+          2
+        ],
+        "m_plus_minus_2_real_inertia": [
+          12,
+          12,
+          0
+        ],
+        "occupied_current_eigenlines": 6
+      }
+    ]
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.py",
+    "generator_sha256": "88d44fe82bfb1fee999aa7c131b159da0397c27cb7fd8b4bd23b83089bf33c68",
+    "inputs": {
+      "automatic_links": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.json",
+        "sha256": "f96bd216b7f740f741b11e613d3dda0e6cad33522318213feec98315e79b9574"
+      },
+      "cone_sections": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_cone_sections.json",
+        "sha256": "0948ba03ecfc30c8c6a7eccdf020284566ff781623f8a9f4d94e99f954ef31e3"
+      },
+      "critical_section": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.json",
+        "sha256": "4c9357e509da85687c5e39d2588002649bc7b955dfd607fb2333bd308bab3159"
+      },
+      "face_fibres": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
+        "sha256": "7607c649ebc628270669db8fd5e6ab813b281b82c83192a9cb7f7dbee09f3433"
+      },
+      "stabilizer": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_ROTATION_NORMAL_FORM",
+  "result_state": "FIVE_AUTOMATIC_FACE_AXISYMMETRIC_POINTS_HAVE_HYPERBOLIC_ROTATION_NORMAL_FORM_AND_EXACT_NONAXISYMMETRIC_ARCS",
+  "schema": "einstein-maxwell-weyl-same-sign-automatic-face-rotation-normal-form-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.schema.json",
+  "schema_sha256": "cb01125b9b47338eb106e5cf32436d6a1abd2e1eb3a60dfe20b90ed711e52163",
+  "scope": {
+    "background": "six distinct collision candidates 16--21, retained separately",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "the current-eigenline-aligned angular slice through every axisymmetric section point on every nonzero automatic-face support stratum",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidatewise signed n=(1,-2) or (1,2), never identified across rho",
+    "m": "all m=-2,...,2",
+    "omega": "all generic q-minus, p-extra and q-plus positive-frequency shells",
+    "parity": "axial and polar",
+    "quotient": "before final residual quotient; node phases are used only as an auxiliary symplectic reduction and the connected preimage is restored",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form"
+  ]
+}

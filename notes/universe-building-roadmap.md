@@ -2598,10 +2598,15 @@ connected.  Candidate 16 has no nonzero automatic face.  This does not make
 the axisymmetric section regular: on all six candidates its rotation
 Jacobian has rank two away from the origin because the third rotation
 equation starts quadratically.  The next local gate is therefore the
-quadratic normal form of `mu_J3` on `ker d(mu_J1,mu_J2)`; the active resonance
-components separately require a restricted-current nondegeneracy theorem
-before the connected-fibre argument can be reused.  Both atlas rows retain
-all higher lifecycles fail-closed.
+quadratic normal form of `mu_J3` on `ker d(mu_J1,mu_J2)`.  That gate is now
+closed on the current-eigenline-aligned angular slice: with `N` occupied
+eigenlines its exact real inertia is `(4*N-2,4*N-2,2)`, and every automatic-
+face axisymmetric point lies on an explicit norm-preserving nonaxisymmetric
+`m=+/-2` arc inside the bounded fibre product.  The remaining local gate is
+the internal current-orthogonal normal space.  Active resonance components
+separately require a restricted-current nondegeneracy theorem before the
+connected-fibre argument can be reused.  All higher lifecycles remain
+fail-closed.
 
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at

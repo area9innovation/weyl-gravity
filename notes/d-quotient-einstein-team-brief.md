@@ -3830,6 +3830,33 @@ record these complementary results.  Gluing occupation strata, the active
 resonance topology, local singular tangent cones, all-orders integration and
 causal/retarded maps remain fail-closed.
 
+The automatic-face critical locus is now resolved one layer further.  If
+`N` current eigenlines are occupied at an axisymmetric section point, the
+complete aligned angular slice inside `ker d(mu_J1,mu_J2)` has exact real
+`mu_J3` inertia
+
+```text
+(4*N-2, 4*N-2, 2).
+```
+
+Thus the missing rotation equation is hyperbolic, not a hidden definite
+obstruction.  More strongly, varying any occupied node by
+
+```text
+sqrt(a^2-12*t^2) e_0 + t e_(+2) + t e_(-2)
+```
+
+preserves its absolute-current norm and all three rotation moment maps
+exactly.  Because the absent resonant node remains zero, this gives an exact
+nonaxisymmetric curve in the bounded fibre product through every automatic-
+face axisymmetric point on candidates 17--21.  Candidate 16 remains
+`NOT_APPLICABLE`.  The remaining automatic-face local gate is the internal
+current-orthogonal normal form and the two-real-dimensional radical; active
+resonance components still require their own restricted-current theorem.
+Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_automatic_face_rotation_normal_form`
+records the scoped result without promoting all-orders or causal lifecycles.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

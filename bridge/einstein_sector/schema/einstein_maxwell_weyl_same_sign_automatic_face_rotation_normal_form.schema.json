@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "generality_level",
+    "scope",
+    "normal_form_theorem",
+    "exact_arc",
+    "candidate_rows",
+    "classification",
+    "interpretation",
+    "next_gate",
+    "claim_boundary",
+    "provenance",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-same-sign-automatic-face-rotation-normal-form-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_ROTATION_NORMAL_FORM"
+    },
+    "lifecycle_state": {
+      "const": "CLASSIFIED"
+    },
+    "candidate_rows": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6
+    },
+    "classification": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}
