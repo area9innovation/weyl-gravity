@@ -1362,6 +1362,25 @@ certified.  Atlas row
 `einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone` is therefore
 `OPEN` for the full bounded carrier while preserving both certified strata.
 
+**Authoritative lifecycle correction (2026-07-19).**  The constant-twist
+axial output used above was mistyped: the old projector was `*dY_11`
+(`lambda=2`) but was paired against `ell=2` adjoints (`lambda=6`).  Exact
+replay with the correctly typed `*dY_21` projector makes every q/p same-shell
+position map zero.  Hence, on the scoped constant-position plus complete
+`ell=2,k=0` wave carrier,
+
+```text
+Z2_bounded(A,wave)=R_A^3 x {wave : H=J_1=J_2=J_3=0}.
+```
+
+Atlas row `einstein.ph.wm.interaction.constant_twist_ell2_projector_repair`
+is authoritative.  The old counterexample and incidence rows are
+`OBSTRUCTED`; the twist-velocity, circumference/Wilson, `d`, and
+complete-global successors are `OPEN` pending deterministic regeneration
+against the repaired zero map.  This correction does not change the compact
+Bridge 1 linear lifecycle and does not certify general `ell`, nonzero momentum
+or causal propagation.
+
 That promotion first produced direct exact fixtures at `ell=2,3,4`.  With
 `lambda=ell(ell+1)`, the axial and polar leading pivots reconstruct
 `C_A=3*i*omega_minus*(1-3*sqrt(2*lambda))` and
@@ -1472,26 +1491,21 @@ Einstein--Maxwell `q1/q2/q3` payload is now imported, so the active classical
 relative gate is the same-background Weyl--Maxwell export. Compact-product
 causal Green data remain an independent open rail.
 
-The Einstein-owned nonlinear domain filter feeding Bridge 1 is now complete
-for the full standard homogeneous/twist plus axial/polar `ell=2,k=0` carrier
-in the bounded or finite-quasiperiodic correction class.  Its zero locus is a
-stratified union: the wave-free branch retains `(c,d,W_x,A)`, while every
-nonzero wave forces `a=b=d=Q_e=B=0` and leaves `(c,W_x)` times the certified
-constant-twist incidence cone.  The exact all-`m` radion pivot and the
-independent homogeneous `E11=Q_e^2/2` cokernel row close the last two global
-directions.  Atlas row
-`einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone` is
-`CERTIFIED`; its causal field remains `NO_CERTIFIED_MAP`.  This is an input
-domain for the relative `L_infinity` defects, not evidence that the linear
-cofiber is already a nonlinear morphism.
+The Einstein-owned nonlinear domain filter feeding Bridge 1 is certified for
+constant twist position plus the complete axial/polar `ell=2,k=0` wave
+carrier: `A` is arbitrary and the wave lies on the common `H,J_i` zero cone.
+The larger full-standard-global successor is temporarily `OPEN` after the
+projector repair.  Its independent radion, electric, twist-velocity and
+spectator ingredients remain available, but its exact stratified union must
+be regenerated before it can again filter a relative `L_infinity` defect.
+The causal field remains `NO_CERTIFIED_MAP`; none of this promotes the linear
+cofiber to a nonlinear morphism.
 
-The next Einstein activation gate has been reduced representation-theoretically:
-for each fixed generic `ell`, every all-`m` constant-twist resonance map is
-`(A_hat dot J_ell)` tensored with two `2x2` Einstein matrices or one `4x4`
-extra matrix.  The angular factor and its `m_A=0` kernel are certified; the
-generic physical-fibre ranks and common moment/resonance cone remain `OPEN`.
-This reduction is atlas row
-`einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization` and does
+The next Einstein activation gate is regeneration of the twist-velocity,
+circumference/Wilson, `d`, and complete-global `ell=2,k=0` successors against
+the corrected zero constant-position map.  The older fixed-generic-`ell`
+factorization imported the invalid `ell=2` incidence regression and must not
+be promoted until its carrier typing is independently repaired.  This does
 not alter the Bridge 1 causal lifecycle.
 
 ### Classical ownership

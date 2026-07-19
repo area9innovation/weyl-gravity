@@ -1688,7 +1688,86 @@
       }
     },
     {
-      "claim_boundary": "This is one independence witness for the bounded tangent-cone theorem. It refutes arbitrary constant twist as a spectator on wave branches but does not classify the complete nonzero-A zero locus.",
+      "claim_boundary": "This lifecycle repair supersedes the old constant-twist counterexample and every nonzero same-shell incidence matrix derived from the mistyped axial projector. It is complete only for constant twist position with ell=2,k=0 waves; velocity, other globals, other ell/momenta, causal propagation and higher lifecycles remain separate.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_PROJECTOR_REPAIR",
+          "sha256": "dcf25687cd3cffb714cc05e75d8e4578d2859b0064952cc9763b4d1e809597a3"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_K0_COMBINED_CONE_SECOND_ORDER",
+          "sha256": "9c9b5db86f50a624f84a0ec6548d2c07030109626d076c0e5ee6f9e9115f9e54"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_SECOND_ORDER",
+          "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.constant_twist_ell2_projector_repair",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The wave carrier retains the complete ell=2 q/p shell decomposition and the constant generalized-zero twist position.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The q/p adjoint representatives and action-derived wave moment maps retain their independently certified normalization.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The former nonzero incidence used *dY_11 (lambda=2) against lambda=6 adjoints. Direct replay with *dY_21 makes every Einstein and extra same-shell position map zero; L=1,3 outputs remain off shell.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Z2_bounded(A,wave)=R_A^3 x {wave: mu_H=mu_J1=mu_J2=mu_J3=0}.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Every certified bounded correction is also a smooth finite exponential-polynomial correction.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The wave self-source is bounded-solvable exactly on mu_H=mu_J1=mu_J2=mu_J3=0; constant twist position adds no moment-map restriction.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "constant axial twist position crossed with the complete axial/polar ell=2,k=0 Einstein q-primary and extra p-primary wave carrier",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "1 x 2 with correctly typed L=2 same-shell projection and L=1,3 off-shell outputs",
+        "k": 0,
+        "m": "all by SO3 equivariance",
+        "omega": "all ell=2 q/p shells",
+        "parity": "axial and polar with output carrier types kept distinct",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
+      "claim_boundary": "SUPERSEDED BY einstein.ph.wm.interaction.constant_twist_ell2_projector_repair. Retained only as a fail-closed historical row; it must not support a current theorem.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "OBSTRUCTED",
@@ -1729,12 +1808,12 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "The twist-position times axial-extra e1 column has the exact adjoint-cokernel coefficient 24*sqrt(3); the twist-minus term lies at a different frequency and cannot cancel it.",
-          "status": "CERTIFIED"
+          "statement": "Superseded: the asserted nonzero position map came from projecting an L=1 axial carrier against L=2 adjoints. The corrected L=2 projector gives the zero map.",
+          "status": "OBSTRUCTED"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "This explicit nonzero-A wave tangent has a nonzero bounded resonance functional despite vanishing stabilizer moment maps.",
+            "statement": "The historical incidence-based verdict is refuted by einstein.ph.wm.interaction.constant_twist_ell2_projector_repair.",
             "status": "OBSTRUCTED"
           },
           "causal_retarded": {
@@ -1767,10 +1846,10 @@
       }
     },
     {
-      "claim_boundary": "This is a complete zero-locus theorem only for twist position times the ell=2 extra p-primary shell. It does not merge that shell with the separately certified Einstein q-primary kernels or classify twist velocity, the complete mixed bounded cone, other ell or momentum, causal propagation, residual descent or quantum theory.",
+      "claim_boundary": "SUPERSEDED BY einstein.ph.wm.interaction.constant_twist_ell2_projector_repair. Retained only as a fail-closed historical row; it must not support a current theorem.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
-        "nonlinear": "OPEN",
+        "nonlinear": "OBSTRUCTED",
         "observational": "OPEN",
         "quantum": "OPEN",
         "symplectic": "CERTIFIED"
@@ -1808,13 +1887,13 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "For nonzero A, SO3 covariance gives ker R_A=(C4 tensor ker T_A)+(ker P tensor V2), where ker P=span{polar_e1,-4*sqrt(3)*axial_e1+15*polar_e2}; its complex dimension is 12.",
-          "status": "CERTIFIED"
+          "statement": "Superseded: the asserted nonzero position map came from projecting an L=1 axial carrier against L=2 adjoints. The corrected L=2 projector gives the zero map.",
+          "status": "OBSTRUCTED"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The twist-position resonance zero locus is necessary and sufficient on the extra shell; the Einstein-shell maps are now classified separately, while their moment-cone intersection, wave self-products and nonresonant inversion remain open.",
-            "status": "OPEN"
+            "statement": "The historical incidence-based verdict is refuted by einstein.ph.wm.interaction.constant_twist_ell2_projector_repair.",
+            "status": "OBSTRUCTED"
           },
           "causal_retarded": {
             "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
@@ -1846,10 +1925,10 @@
       }
     },
     {
-      "claim_boundary": "This is a complete zero-locus theorem only for constant twist position times both ell=2 Einstein q-primary shells. It does not classify twist velocity, simultaneous moment and all-branch resonance equations, the complete mixed bounded cone, other ell or momentum, causal propagation, residual descent or quantum theory.",
+      "claim_boundary": "SUPERSEDED BY einstein.ph.wm.interaction.constant_twist_ell2_projector_repair. Retained only as a fail-closed historical row; it must not support a current theorem.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
-        "nonlinear": "OPEN",
+        "nonlinear": "OBSTRUCTED",
         "observational": "OPEN",
         "quantum": "OPEN",
         "symplectic": "CERTIFIED"
@@ -1887,13 +1966,13 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "Both shell incidence matrices equal [[0,216/5],[432/5,0]] and are invertible. Hence only the axial and polar m=0 coefficients survive on each shell; the combined complex kernel dimension is four.",
-          "status": "CERTIFIED"
+          "statement": "Superseded: the asserted nonzero position map came from projecting an L=1 axial carrier against L=2 adjoints. The corrected L=2 projector gives the zero map.",
+          "status": "OBSTRUCTED"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The shellwise twist-position resonance kernels are necessary and sufficient for this cross term, but the simultaneous stabilizer/wave-self-source zero locus and complete correction remain open.",
-            "status": "OPEN"
+            "statement": "The historical incidence-based verdict is refuted by einstein.ph.wm.interaction.constant_twist_ell2_projector_repair.",
+            "status": "OBSTRUCTED"
           },
           "causal_retarded": {
             "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
@@ -1925,10 +2004,10 @@
       }
     },
     {
-      "claim_boundary": "This predecessor is the complete simultaneous stabilizer and same-shell twist-position resonance cone only for nonzero constant A and ell=2,k=0 waves. Its former L=1,3 inversion gate is closed only in the separately evidenced successor row; twist velocity, other ell/momenta, causal propagation, residual descent and quantum theory remain fail-closed.",
+      "claim_boundary": "SUPERSEDED BY einstein.ph.wm.interaction.constant_twist_ell2_projector_repair. Retained only as a fail-closed historical row; it must not support a current theorem.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
-        "nonlinear": "CERTIFIED",
+        "nonlinear": "OBSTRUCTED",
         "observational": "OPEN",
         "quantum": "OPEN",
         "symplectic": "CERTIFIED"
@@ -1971,13 +2050,13 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "The twist-position resonance support and all H,J_i equations are necessary and sufficient. A nonaxisymmetric witness has c_-2=c_2=polar_e1, A_extra=18 and A_minus=24+8*sqrt(3).",
-          "status": "CERTIFIED"
+          "statement": "Superseded: the asserted nonzero position map came from projecting an L=1 axial carrier against L=2 adjoints. The corrected L=2 projector gives the zero map.",
+          "status": "OBSTRUCTED"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "This predecessor row stops at the exact moment/resonance cone; bounded sufficiency is certified by the separate constant_twist_ell2_complete_bounded_cone successor row.",
-            "status": "OPEN"
+            "statement": "The historical incidence-based verdict is refuted by einstein.ph.wm.interaction.constant_twist_ell2_projector_repair.",
+            "status": "OBSTRUCTED"
           },
           "causal_retarded": {
             "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
@@ -2009,10 +2088,10 @@
       }
     },
     {
-      "claim_boundary": "This theorem excludes twist velocity and every other homogeneous tangent, other ell, nonzero or opposite momentum, unrestricted secular corrections, causal propagation, all-orders integration, residual descent, observables and quantum theory.",
+      "claim_boundary": "SUPERSEDED BY einstein.ph.wm.interaction.constant_twist_ell2_projector_repair. Retained only as a fail-closed historical row; it must not support a current theorem.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
-        "nonlinear": "CERTIFIED",
+        "nonlinear": "OBSTRUCTED",
         "observational": "OPEN",
         "quantum": "OPEN",
         "symplectic": "CERTIFIED"
@@ -2060,13 +2139,13 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "The q/p shell kernels exhaust the twist--wave resonances; all L=1,3 outputs are off shell.",
-          "status": "CERTIFIED"
+          "statement": "Superseded: the asserted nonzero position map came from projecting an L=1 axial carrier against L=2 adjoints. The corrected L=2 projector gives the zero map.",
+          "status": "OBSTRUCTED"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The displayed shell restrictions plus H=J_i=0 are necessary and sufficient for a bounded correction on the declared carrier.",
-            "status": "CERTIFIED"
+            "statement": "The historical incidence-based verdict is refuted by einstein.ph.wm.interaction.constant_twist_ell2_projector_repair.",
+            "status": "OBSTRUCTED"
           },
           "causal_retarded": {
             "statement": "No background-specific compact-source retarded Weyl--Maxwell complex is certified.",
@@ -2098,10 +2177,10 @@
       }
     },
     {
-      "claim_boundary": "Other homogeneous tangents, other ell, nonzero or opposite momentum, the unrestricted secular cone, causal propagation, all-orders integration, residual observables and quantum theory remain fail-closed.",
+      "claim_boundary": "LIFECYCLE REOPENED after the constant-twist harmonic-type repair. No exact downstream bounded cone is currently claimed by this row.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
-        "nonlinear": "CERTIFIED",
+        "nonlinear": "OPEN",
         "observational": "OPEN",
         "quantum": "OPEN",
         "symplectic": "CERTIFIED"
@@ -2139,13 +2218,13 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "The complete bounded resonance ledger is the constant-position q/p incidence ledger on the B=0 face.",
-          "status": "CERTIFIED"
+          "statement": "The constant-position input has been corrected to the zero same-shell map; this successor awaits regeneration with the repaired projector before its exact product/stratified cone is re-certified.",
+          "status": "OPEN"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "B=0 together with the constant-position shell restrictions and H=J_i=0 is necessary and sufficient on the declared carrier.",
-            "status": "CERTIFIED"
+            "statement": "The predecessor ingredients remain available, but necessity and sufficiency must be regenerated against the corrected constant-twist position theorem.",
+            "status": "OPEN"
           },
           "causal_retarded": {
             "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
@@ -2177,10 +2256,10 @@
       }
     },
     {
-      "claim_boundary": "The dynamical globals a,d,Q_e, other harmonics and momenta, causal propagation, all-orders integration, residual observables and quantum theory remain fail-closed.",
+      "claim_boundary": "LIFECYCLE REOPENED after the constant-twist harmonic-type repair. No exact downstream bounded cone is currently claimed by this row.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
-        "nonlinear": "CERTIFIED",
+        "nonlinear": "OPEN",
         "observational": "OPEN",
         "quantum": "OPEN",
         "symplectic": "CERTIFIED"
@@ -2223,13 +2302,13 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "Exact k=0 radius transport removes the c-times-wave source, while every W_x mixed source vanishes because delta F=0.",
-          "status": "CERTIFIED"
+          "statement": "The constant-position input has been corrected to the zero same-shell map; this successor awaits regeneration with the repaired projector before its exact product/stratified cone is re-certified.",
+          "status": "OPEN"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The displayed product cone is necessary and sufficient on the declared carrier.",
-            "status": "CERTIFIED"
+            "statement": "The predecessor ingredients remain available, but necessity and sufficiency must be regenerated against the corrected constant-twist position theorem.",
+            "status": "OPEN"
           },
           "causal_retarded": {
             "statement": "No retarded Weyl-Maxwell complex is certified on this background.",
@@ -2261,10 +2340,10 @@
       }
     },
     {
-      "claim_boundary": "Radion and electric tangents, other harmonics/momenta, causal propagation, all-orders integration, residual observables and quantum theory remain fail-closed.",
+      "claim_boundary": "LIFECYCLE REOPENED after the constant-twist harmonic-type repair. No exact downstream bounded cone is currently claimed by this row.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
-        "nonlinear": "CERTIFIED",
+        "nonlinear": "OPEN",
         "observational": "OPEN",
         "quantum": "OPEN",
         "symplectic": "CERTIFIED"
@@ -2312,13 +2391,13 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "SO3 multiplicity one promotes the nonzero d pivot to all m, and axial/polar outputs cannot cancel.",
-          "status": "CERTIFIED"
+          "statement": "The constant-position input has been corrected to the zero same-shell map; this successor awaits regeneration with the repaired projector before its exact product/stratified cone is re-certified.",
+          "status": "OPEN"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The bounded cone is exactly the union of the static d stratum and the d=0 predecessor wave cone.",
-            "status": "CERTIFIED"
+            "statement": "The predecessor ingredients remain available, but necessity and sufficiency must be regenerated against the corrected constant-twist position theorem.",
+            "status": "OPEN"
           },
           "causal_retarded": {
             "statement": "No retarded Weyl-Maxwell complex is certified.",
@@ -2350,10 +2429,10 @@
       }
     },
     {
-      "claim_boundary": "Other ell, nonzero momentum, unrestricted secular corrections, causal propagation, all-orders integration, residual observables and quantum theory remain fail-closed.",
+      "claim_boundary": "LIFECYCLE REOPENED after the constant-twist harmonic-type repair. No exact downstream bounded cone is currently claimed by this row.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
-        "nonlinear": "CERTIFIED",
+        "nonlinear": "OPEN",
         "observational": "OPEN",
         "quantum": "OPEN",
         "symplectic": "CERTIFIED"
@@ -2406,13 +2485,13 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "The all-m radion pivot and independent zero-frequency E11=Q_e^2/2 witness close the last two dynamical global directions.",
-          "status": "CERTIFIED"
+          "statement": "The constant-position input has been corrected to the zero same-shell map; this successor awaits regeneration with the repaired projector before its exact product/stratified cone is re-certified.",
+          "status": "OPEN"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The displayed static/wave union is necessary and sufficient for bounded corrections on the complete declared carrier.",
-            "status": "CERTIFIED"
+            "statement": "The predecessor ingredients remain available, but necessity and sufficiency must be regenerated against the corrected constant-twist position theorem.",
+            "status": "OPEN"
           },
           "causal_retarded": {
             "statement": "No retarded Weyl-Maxwell complex is certified.",
@@ -2444,7 +2523,7 @@
       }
     },
     {
-      "claim_boundary": "The former arbitrary-A product claim is withdrawn. This row certifies the static branch and A=0 axial ell=2,k=0 wave subcone only; nonzero-A, polar waves, other ell and momenta, infinite sums and higher lifecycles remain fail-closed.",
+      "claim_boundary": "LIFECYCLE REOPENED for every constant-twist-dependent statement. The ell=2 corrected spectator theorem does not by itself identify or classify another ell or a finite multi-ell sum.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "OPEN",
@@ -2505,12 +2584,12 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "The A=0 zero-frequency axial L=1 source has an explicit constant right inverse, but a perpendicular constant twist times axial extra e1 has adjoint coefficient 24*sqrt(3).",
+          "statement": "The old constant-twist regression used a mistyped output carrier. This row retains only its twist-independent ingredients until a correctly typed fixed-ell source map is derived.",
           "status": "OPEN"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The wave-free static branch with arbitrary A and the complete A=0 axial wave-density subcone are certified; the nonzero-A wave zero locus is open.",
+            "statement": "The nonzero-constant-twist bounded cone is not classified in this scope after the projector repair.",
             "status": "OPEN"
           },
           "causal_retarded": {
@@ -2543,7 +2622,7 @@
       }
     },
     {
-      "claim_boundary": "This partial predecessor is superseded for the complete ell=2,k=0 global/twist carrier by einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone. Its historical static, A=0 wave and constant-twist-only strata remain certified; it must not be used to reopen the now-closed radion, electric or simultaneous-twist gates.",
+      "claim_boundary": "LIFECYCLE REOPENED for every constant-twist-dependent statement. The ell=2 corrected spectator theorem does not by itself identify or classify another ell or a finite multi-ell sum.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "OPEN",
@@ -2614,12 +2693,12 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "The A=0 ell2 output ledger is invertible off the stabilizer cokernel and its compatible L1 source has a constant right inverse; nonzero-A adds an independent twist-position resonance map.",
+          "statement": "The old constant-twist regression used a mistyped output carrier. This row retains only its twist-independent ingredients until a correctly typed fixed-ell source map is derived.",
           "status": "OPEN"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The static branch, the complete A=0 all-m axial--polar wave cone, and the constant-twist-only nonzero-A incidence cone are certified; interactions with the other homogeneous tangents remain open.",
+            "statement": "The nonzero-constant-twist bounded cone is not classified in this scope after the projector repair.",
             "status": "OPEN"
           },
           "causal_retarded": {
@@ -2652,7 +2731,7 @@
       }
     },
     {
-      "claim_boundary": "The ell=2 ranks are exact regressions. Generic-ell finite matrices, their common cone, finite multi-ell sums, nonzero momentum, causal propagation and higher lifecycles remain fail-closed.",
+      "claim_boundary": "LIFECYCLE REOPENED for every constant-twist-dependent statement. The ell=2 corrected spectator theorem does not by itself identify or classify another ell or a finite multi-ell sum.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "OPEN",
@@ -2667,9 +2746,9 @@
           "sha256": "4ae9d6ba656f97fdbefdca977b6136459ceb477ad8bf7cca744ea7886a6b4adc"
         },
         {
-          "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.json",
-          "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_COMPLETE_BOUNDED_CONE",
-          "sha256": "6016005b3c1a1a6cde0e0867d373278882e4411b58b51e31020d7bde0d95fdcb"
+          "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_PROJECTOR_REPAIR",
+          "sha256": "dcf25687cd3cffb714cc05e75d8e4578d2859b0064952cc9763b4d1e809597a3"
         },
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
@@ -2688,12 +2767,12 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "The angular kernel is exactly m_A=0; all additional kernel directions are controlled by two 2x2 Einstein matrices and one 4x4 extra matrix.",
-          "status": "CERTIFIED"
+          "statement": "The old constant-twist regression used a mistyped output carrier. This row retains only its twist-independent ingredients until a correctly typed fixed-ell source map is derived.",
+          "status": "OPEN"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The all-m problem is reduced exactly to Q_(ell,+/-) and P_ell, but their generic physical-fibre ranks and common moment/resonance zero cone are not yet computed.",
+            "statement": "The nonzero-constant-twist bounded cone is not classified in this scope after the projector repair.",
             "status": "OPEN"
           },
           "causal_retarded": {
@@ -2726,7 +2805,7 @@
       }
     },
     {
-      "claim_boundary": "This theorem is blockwise in one fixed ell at k=0 and only complete at A=0 or with no waves. Nonzero-A, cross-ell, nonzero-momentum, exceptional and higher scopes remain fail-closed.",
+      "claim_boundary": "LIFECYCLE REOPENED for every constant-twist-dependent statement. The ell=2 corrected spectator theorem does not by itself identify or classify another ell or a finite multi-ell sum.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "OPEN",
@@ -2782,12 +2861,12 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "The generic C_A and C_P pivots certify a=b=d=0 and the A=0 wave extension on every physical fibre; constant-twist resonance is not classified beyond its ell2 counterexample.",
+          "statement": "The old constant-twist regression used a mistyped output carrier. This row retains only its twist-independent ingredients until a correctly typed fixed-ell source map is derived.",
           "status": "OPEN"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "For every fixed ell>=2 the wave-free static branch and A=0 common-moment-map wave subcone are certified; nonzero-A wave strata are open.",
+            "statement": "The nonzero-constant-twist bounded cone is not classified in this scope after the projector repair.",
             "status": "OPEN"
           },
           "causal_retarded": {
@@ -2820,7 +2899,7 @@
       }
     },
     {
-      "claim_boundary": "This theorem covers arbitrary finite generic ell>=2 wave sums at k=0 only at A=0, plus the wave-free static branch. Nonzero-A and every higher scope remain fail-closed.",
+      "claim_boundary": "LIFECYCLE REOPENED for every constant-twist-dependent statement. The ell=2 corrected spectator theorem does not by itself identify or classify another ell or a finite multi-ell sum.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "OPEN",
@@ -2876,12 +2955,12 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "Cross-ell wave products are off shell away from the stabilizer cokernel and the a,b,d pivots cannot be screened; the independent constant-twist resonance map remains unsolved.",
+          "statement": "The old constant-twist regression used a mistyped output carrier. This row retains only its twist-independent ingredients until a correctly typed fixed-ell source map is derived.",
           "status": "OPEN"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "For every finite generic k=0 wave sum the wave-free static branch and complete A=0 common-moment-map wave subcone are certified; nonzero-A is open.",
+            "statement": "The nonzero-constant-twist bounded cone is not classified in this scope after the projector repair.",
             "status": "OPEN"
           },
           "causal_retarded": {
@@ -3126,7 +3205,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "5073c1d7586ff1c96c06ad67bc40bbb3c6341a9901f7fd8fce863cadad722741",
+  "generated_by_sha256": "2aae1029e46a8ed168280a9ecf4bb84a235a9121e3eb1517bc9506d0ebd837d1",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

@@ -2654,6 +2654,44 @@ feed the exceptional resonance.  Atlas row
 keeps the remaining live global-times-`ell2`-extra coefficient and opposite
 nonzero momenta explicitly open.
 
+### Authoritative constant-twist projector repair — 2026-07-19
+
+The earlier nonzero constant-twist incidence calculation contained a carrier
+type error.  Its axial output test pair was exactly `*dY_11`, with angular
+eigenvalue `lambda=2`, while the adjoint Hessian was specialized to the
+`ell=2` value `lambda=6`.  The correctly typed output carrier is `*dY_21`.
+An exact four-dimensional replay with this projector gives zero for every
+Einstein-plus, Einstein-minus and extra-primary same-shell position pairing.
+By the unique `V_1 tensor V_2 -> V_2` intertwiner, the zero extends to all
+`m`.  The already certified `L=1,3` determinant ledger remains off shell.
+
+The authoritative bounded theorem on the declared carrier is therefore
+
+```text
+Z2_bounded(A,wave)
+  = R_A^3 x {wave : mu_H=mu_J1=mu_J2=mu_J3=0}.
+```
+
+Constant twist position is a bounded spectator, not an independent resonance
+obstruction.  Certificate
+`EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_PROJECTOR_REPAIR` and atlas row
+`einstein.ph.wm.interaction.constant_twist_ell2_projector_repair` supersede
+the former counterexample, both nonzero incidence matrices, their
+moment/resonance cone and the old exact constant-twist cone.  Those historical
+rows are now `OBSTRUCTED`.  The twist-velocity, circumference/Wilson, `d`, and
+complete-global successors are temporarily `OPEN` while their generators are
+rebased on the corrected zero position map.  Their independent ingredients
+(`B=0`, exact `c,W_x` transport, the `d` pivot, radion pivot and
+`E11=Q_e^2/2`) are retained but are not being used to claim a regenerated
+necessity-and-sufficiency theorem yet.
+
+This repair is restricted to constant twist position and complete
+axial/polar `ell=2,k=0` waves in the bounded or finite-quasiperiodic correction
+class.  Other `ell`, nonzero momentum and causal/retarded propagation remain
+fail-closed.  The next gate is to regenerate the four reopened successors;
+only then should the constant-twist calculation be promoted to generic
+`ell`.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

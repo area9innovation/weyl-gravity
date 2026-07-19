@@ -33,8 +33,10 @@ def _mixed_source(extra_parity: str, extra_mode: str, twist_profile: sp.Expr) ->
     sphere_root = sp.sqrt(sphere_factor)
     azimuthal_phase = sp.exp(sp.I * azimuth)
     output_harmonic = z * sphere_root
-    output_axial_z = -sp.I / sphere_root
-    output_axial_phi = -z * sphere_root
+    # X_A=*dY_(2,1).  This must carry the same lambda=6 label as the scalar
+    # Y_(2,1)=z*sqrt(1-z^2); the former projector was the ell=1 harmonic.
+    output_axial_z = -sp.I * z / sphere_root
+    output_axial_phi = (1 - 2 * z**2) * sphere_root
     twist_harmonic = sphere_root * azimuthal_phase
     twist_axial_z = -sp.I * azimuthal_phase / sphere_root
     twist_axial_phi = -z * sphere_root * azimuthal_phase
@@ -153,22 +155,22 @@ def _mixed_source(extra_parity: str, extra_mode: str, twist_profile: sp.Expr) ->
 
     scalar_norm = sp.integrate(output_harmonic**2, (z, -1, 1))
     axial_norm = sp.integrate(
-        sphere_factor * (sp.I / sphere_root) * output_axial_z
+        sphere_factor * (sp.I * z / sphere_root) * output_axial_z
         + (output_axial_phi**2) / sphere_factor,
         (z, -1, 1),
     )
-    if _canonical(scalar_norm - sp.Rational(4, 15)) != 0 or _canonical(axial_norm - sp.Rational(8, 3)) != 0:
+    if _canonical(scalar_norm - sp.Rational(4, 15)) != 0 or _canonical(axial_norm - sp.Rational(8, 5)) != 0:
         raise AssertionError("non-axisymmetric output harmonic normalization changed")
 
     def scalar_projection(row: sp.Expr) -> sp.Expr:
         return _canonical(sp.integrate(mixed(row) * output_harmonic, (z, -1, 1)) / scalar_norm)
 
     def axial_projection(row_z: sp.Expr, row_phi: sp.Expr) -> sp.Expr:
-        integrand = sphere_factor * mixed(row_z) * (sp.I / sphere_root) + mixed(row_phi) * output_axial_phi / sphere_factor
+        integrand = sphere_factor * mixed(row_z) * (sp.I * z / sphere_root) + mixed(row_phi) * output_axial_phi / sphere_factor
         return _canonical(sp.integrate(integrand, (z, -1, 1)) / axial_norm)
 
     def contravariant_axial_projection(row_z: sp.Expr, row_phi: sp.Expr) -> sp.Expr:
-        integrand = mixed(row_z) * (sp.I / sphere_root) + mixed(row_phi) * output_axial_phi
+        integrand = mixed(row_z) * (sp.I * z / sphere_root) + mixed(row_phi) * output_axial_phi
         return _canonical(sp.integrate(sp.powsimp(sp.cancel(integrand), force=True), (z, -1, 1)) / axial_norm)
 
     axial = sp.Matrix(

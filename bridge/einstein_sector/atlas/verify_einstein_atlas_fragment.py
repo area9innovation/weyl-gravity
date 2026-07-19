@@ -207,121 +207,64 @@ def verify() -> None:
     if aligned_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("aligned global-wave causal lifecycle was over-promoted")
     global_axial = by_id["einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone"]
-    global_axial_second = global_axial["mode_data"]["second_order"]
-    if global_axial_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
-        raise AssertionError("global axial nonzero-A gap was re-promoted")
-    if "A=0" not in global_axial_second["bounded_or_finite_quasiperiodic"]["statement"]:
-        raise AssertionError("global axial certified subcone was hidden")
-    if global_axial_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
-        raise AssertionError("global axial causal lifecycle was over-promoted")
-    global_both = by_id["einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone"]
-    global_both_second = global_both["mode_data"]["second_order"]
-    if global_both_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
-        raise AssertionError("global both-parity nonzero-A gap was re-promoted")
-    if "A=0" not in global_both_second["bounded_or_finite_quasiperiodic"]["statement"]:
-        raise AssertionError("global both-parity certified subcone was hidden")
-    if "twist-position resonance" not in global_both["mode_data"]["resonance"]["statement"]:
-        raise AssertionError("global both-parity twist gap was hidden")
-    if global_both_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
-        raise AssertionError("global both-parity causal lifecycle was over-promoted")
-    if "superseded" not in global_both["claim_boundary"]:
-        raise AssertionError("partial global ell2 predecessor did not point to its complete successor")
-    global_fixed = by_id["einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone"]
-    global_fixed_second = global_fixed["mode_data"]["second_order"]
-    if global_fixed_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
-        raise AssertionError("global fixed-ell nonzero-A gap was re-promoted")
-    if "every fixed ell>=2" not in global_fixed_second["bounded_or_finite_quasiperiodic"]["statement"] or "A=0" not in global_fixed_second["bounded_or_finite_quasiperiodic"]["statement"]:
-        raise AssertionError("global fixed-ell scope was hidden")
-    if "generic C_A and C_P" not in global_fixed["mode_data"]["resonance"]["statement"]:
-        raise AssertionError("generic-lambda pivot identity was hidden")
-    if global_fixed_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
-        raise AssertionError("global fixed-ell causal lifecycle was over-promoted")
-    fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
-    if fixed_ell_twist["mode_data"]["resonance"]["status"] != "CERTIFIED":
-        raise AssertionError("fixed-ell twist factorization was lost")
-    if "two 2x2 Einstein matrices" not in fixed_ell_twist["mode_data"]["resonance"]["statement"]:
-        raise AssertionError("finite fixed-ell twist gate was hidden")
-    if fixed_ell_twist["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
-        raise AssertionError("fixed-ell twist cone was over-promoted")
-    if fixed_ell_twist["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
-        raise AssertionError("fixed-ell twist factorization over-promoted causal propagation")
-    global_finite = by_id["einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone"]
-    global_finite_second = global_finite["mode_data"]["second_order"]
-    if global_finite_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
-        raise AssertionError("global finite-harmonic nonzero-A gap was re-promoted")
-    if "every finite generic k=0 wave sum" not in global_finite_second["bounded_or_finite_quasiperiodic"]["statement"] or "A=0" not in global_finite_second["bounded_or_finite_quasiperiodic"]["statement"]:
-        raise AssertionError("global finite-harmonic scope was hidden")
-    if "constant-twist resonance" not in global_finite["mode_data"]["resonance"]["statement"]:
-        raise AssertionError("global finite-harmonic twist gap was hidden")
-    if global_finite_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
-        raise AssertionError("global finite-harmonic causal lifecycle was over-promoted")
-    twist_counterexample = by_id["einstein.ph.wm.interaction.constant_twist_wave_counterexample"]
-    if twist_counterexample["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED":
-        raise AssertionError("constant-twist wave counterexample was lost")
-    if "24*sqrt(3)" not in twist_counterexample["mode_data"]["resonance"]["statement"]:
-        raise AssertionError("constant-twist adjoint witness was hidden")
-    twist_zero_locus = by_id["einstein.ph.wm.interaction.constant_twist_ell2_extra_position_zero_locus"]
-    if twist_zero_locus["mode_data"]["resonance"]["status"] != "CERTIFIED":
-        raise AssertionError("constant-twist extra-shell zero locus was lost")
-    if "complex dimension is 12" not in twist_zero_locus["mode_data"]["resonance"]["statement"]:
-        raise AssertionError("constant-twist zero-locus rank theorem was hidden")
-    if twist_zero_locus["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
-        raise AssertionError("constant-twist extra-shell zero locus over-promoted second order")
-    twist_einstein_zero_locus = by_id["einstein.ph.wm.interaction.constant_twist_ell2_einstein_position_zero_locus"]
-    if twist_einstein_zero_locus["mode_data"]["resonance"]["status"] != "CERTIFIED":
-        raise AssertionError("constant-twist Einstein-shell zero locus was lost")
-    if "combined complex kernel dimension is four" not in twist_einstein_zero_locus["mode_data"]["resonance"]["statement"]:
-        raise AssertionError("constant-twist Einstein-shell rank theorem was hidden")
-    if twist_einstein_zero_locus["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
-        raise AssertionError("constant-twist Einstein-shell zero locus over-promoted second order")
-    twist_moment_cone = by_id["einstein.ph.wm.interaction.constant_twist_ell2_moment_resonance_cone"]
-    if twist_moment_cone["descriptions"]["nonlinear"] != "CERTIFIED":
-        raise AssertionError("constant-twist moment/resonance cone was lost")
-    if "A_minus=24+8*sqrt(3)" not in twist_moment_cone["mode_data"]["resonance"]["statement"]:
-        raise AssertionError("nonaxisymmetric moment/resonance witness was hidden")
-    if twist_moment_cone["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
-        raise AssertionError("moment/resonance cone over-promoted bounded second order")
-    if twist_moment_cone["mode_data"]["second_order"]["smooth_secular"]["status"] != "CERTIFIED":
-        raise AssertionError("smooth finite-carrier coverage was lost")
-    twist_complete = by_id["einstein.ph.wm.mixed.constant_twist_ell2_complete_bounded_cone"]
-    if twist_complete["descriptions"]["nonlinear"] != "CERTIFIED":
-        raise AssertionError("complete constant-twist ell2 cone was lost")
-    if twist_complete["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
-        raise AssertionError("complete constant-twist ell2 bounded correction was lost")
-    if "off-axis +/-2 witness" not in twist_complete["mode_data"]["taub_maps"]["statement"]:
-        raise AssertionError("nonaxisymmetric constant-twist survivor was hidden")
-    if twist_complete["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
-        raise AssertionError("constant-twist cone over-promoted causal propagation")
-    twist_position_velocity = by_id["einstein.ph.wm.mixed.twist_position_velocity_ell2_complete_bounded_cone"]
-    if twist_position_velocity["descriptions"]["nonlinear"] != "CERTIFIED":
-        raise AssertionError("twist-position/velocity ell2 bounded cone was lost")
-    if "forces B=0" not in twist_position_velocity["mode_data"]["taub_maps"]["statement"]:
-        raise AssertionError("twist-velocity polynomial obstruction was hidden")
-    if twist_position_velocity["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
-        raise AssertionError("twist-position/velocity bounded cone was demoted")
-    if twist_position_velocity["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
-        raise AssertionError("twist-position/velocity cone over-promoted causal propagation")
-    spectator_cone = by_id["einstein.ph.wm.mixed.twist_circumference_wilson_ell2_complete_bounded_cone"]
-    if spectator_cone["descriptions"]["nonlinear"] != "CERTIFIED":
-        raise AssertionError("c/Wx twist-wave product cone was lost")
-    if "R_c x R_Wx" not in spectator_cone["mode_data"]["taub_maps"]["statement"]:
-        raise AssertionError("spectator product structure was hidden")
-    if spectator_cone["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
-        raise AssertionError("c/Wx twist-wave bounded cone was demoted")
-    d_cone = by_id["einstein.ph.wm.mixed.d_twist_ell2_complete_bounded_cone"]
-    if d_cone["descriptions"]["nonlinear"] != "CERTIFIED" or "forces d=0" not in d_cone["mode_data"]["taub_maps"]["statement"]:
-        raise AssertionError("d/twist stratified cone was lost")
-    if d_cone["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
-        raise AssertionError("d/twist bounded cone was demoted")
-    full_global_cone = by_id["einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone"]
-    if full_global_cone["descriptions"]["nonlinear"] != "CERTIFIED":
-        raise AssertionError("complete global/twist ell2 bounded cone was lost")
-    if "E11=Q_e^2/2" not in full_global_cone["mode_data"]["resonance"]["statement"]:
-        raise AssertionError("complete global electric cokernel witness was hidden")
-    if full_global_cone["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
-        raise AssertionError("complete global/twist ell2 bounded cone was demoted")
-    if full_global_cone["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
-        raise AssertionError("complete global/twist ell2 cone over-promoted causal propagation")
+    reopened_generic = {
+        "einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone",
+        "einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone",
+        "einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization",
+        "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
+        "einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone",
+    }
+    for identifier in reopened_generic:
+        entry = by_id[identifier]
+        second = entry["mode_data"]["second_order"]
+        if entry["mode_data"]["resonance"]["status"] != "OPEN" or "mistyped output carrier" not in entry["mode_data"]["resonance"]["statement"]:
+            raise AssertionError(f"generic constant-twist lifecycle was not reopened: {identifier}")
+        if second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+            raise AssertionError(f"generic constant-twist cone was over-promoted: {identifier}")
+        if second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+            raise AssertionError(f"generic constant-twist causal lifecycle was over-promoted: {identifier}")
+        if "LIFECYCLE REOPENED" not in entry["claim_boundary"]:
+            raise AssertionError(f"generic constant-twist reopen reason is absent: {identifier}")
+    repair = by_id["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
+    if repair["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("constant-twist projector repair was not promoted")
+    if repair["mode_data"]["resonance"]["status"] != "CERTIFIED" or "*dY_21" not in repair["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("corrected harmonic-type theorem was hidden")
+    if repair["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("corrected constant-twist product cone was lost")
+    if "R_A^3" not in repair["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("corrected spectator formula was hidden")
+
+    superseded = {
+        "einstein.ph.wm.interaction.constant_twist_wave_counterexample",
+        "einstein.ph.wm.interaction.constant_twist_ell2_extra_position_zero_locus",
+        "einstein.ph.wm.interaction.constant_twist_ell2_einstein_position_zero_locus",
+        "einstein.ph.wm.interaction.constant_twist_ell2_moment_resonance_cone",
+        "einstein.ph.wm.mixed.constant_twist_ell2_complete_bounded_cone",
+    }
+    for identifier in superseded:
+        entry = by_id[identifier]
+        if entry["descriptions"]["nonlinear"] != "OBSTRUCTED":
+            raise AssertionError(f"superseded row was not fail-closed: {identifier}")
+        if entry["mode_data"]["resonance"]["status"] != "OBSTRUCTED":
+            raise AssertionError(f"superseded resonance was not withdrawn: {identifier}")
+        if "SUPERSEDED BY" not in entry["claim_boundary"]:
+            raise AssertionError(f"supersession link is absent: {identifier}")
+
+    reopened = {
+        "einstein.ph.wm.mixed.twist_position_velocity_ell2_complete_bounded_cone",
+        "einstein.ph.wm.mixed.twist_circumference_wilson_ell2_complete_bounded_cone",
+        "einstein.ph.wm.mixed.d_twist_ell2_complete_bounded_cone",
+        "einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone",
+    }
+    for identifier in reopened:
+        entry = by_id[identifier]
+        if entry["descriptions"]["nonlinear"] != "OPEN":
+            raise AssertionError(f"downstream successor was not reopened: {identifier}")
+        if entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+            raise AssertionError(f"downstream exact cone remained over-promoted: {identifier}")
+        if "LIFECYCLE REOPENED" not in entry["claim_boundary"]:
+            raise AssertionError(f"reopen reason is absent: {identifier}")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

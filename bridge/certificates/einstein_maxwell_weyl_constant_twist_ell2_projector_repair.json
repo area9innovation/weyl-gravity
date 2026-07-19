@@ -1,0 +1,195 @@
+{
+  "bounded_cone_repair": {
+    "formula": "Z2_bounded(A,wave)=R_A^3 x {wave: mu_H=mu_J1=mu_J2=mu_J3=0}",
+    "necessity_and_sufficiency": true,
+    "reason": "the corrected same-shell map is zero, all L=1,3 outputs are off shell with certified invertible reduced operators, A self is an exact static modulus, and wave self is solved on the common moment cone"
+  },
+  "claim_boundary": "Complete only for constant twist position and ell2,k0 bounded corrections; velocity, other globals, other ell/momenta and higher lifecycles remain separate.",
+  "classification": {
+    "causal_or_quantum_claim": false,
+    "constant_twist_position_is_bounded_spectator_on_complete_ell2_wave_cone": true,
+    "corrected_bounded_zero_locus_necessary_and_sufficient": true,
+    "harmonic_type_mismatch_repaired": true,
+    "old_constant_twist_counterexample_refuted": true,
+    "other_ell_or_momentum_classified": false
+  },
+  "corrected_direct_rows": {
+    "Einstein_minus_axial_input_axial_output": [
+      "-9*omega*(3*omega**2 - 22)",
+      "0",
+      "6*sqrt(3)*omega",
+      "0"
+    ],
+    "Einstein_minus_polar_input_polar_output": [
+      "0",
+      "-18*omega*(-3*omega**2 + 6*sqrt(3)*omega**2 - 38*sqrt(3) + 18)",
+      "0",
+      "0"
+    ],
+    "extra_axial_rows": [
+      [
+        "0",
+        "216*sqrt(3)",
+        "0",
+        "24*sqrt(3)"
+      ],
+      [
+        "24*sqrt(3)",
+        "0",
+        "24*sqrt(3)",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "extra_input_order": [
+      "axial_e1",
+      "axial_e2",
+      "polar_e1",
+      "polar_e2"
+    ],
+    "extra_polar_rows": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "24*sqrt(3)",
+        "0",
+        "-8*sqrt(3)/3",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "corrected_position_maps": {
+    "Einstein_plus_minus": "zero",
+    "all_m": "zero by the unique V1 tensor V2 to V2 intertwiner",
+    "extra": "zero",
+    "old_nonzero_matrices_superseded": true
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G4_ELL2_K0_ALL_M_BOTH_PARITIES_ALL_GENERIC_PRIMARIES",
+  "interpretation": "The apparent nonzero constant-twist resonance was a carrier-type error, not physics. With the true ell=2 axial projector every q/p same-shell pairing vanishes, so constant twist is a bounded spectator on the complete ell2 moment cone.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "propagate this lifecycle correction through twist-velocity, spectator, d and complete-global successors before any general-ell promotion",
+  "provenance": {
+    "engines": {
+      "einstein": {
+        "path": "bridge/einstein_sector/einstein_maxwell_weyl_twist_ell2_einstein_source_explore.py",
+        "sha256": "02d05f297ea2c42bc4e53142e82ed618343b27b9d0641b4eadb5cecd95bf7a5a"
+      },
+      "extra": {
+        "path": "bridge/einstein_sector/einstein_maxwell_weyl_twist_ell2_extra_source_explore.py",
+        "sha256": "475e60deb69ffa0cacc3697c80a1f2092a24781464976d5220ece03249f0e194"
+      }
+    },
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.py",
+    "generator_sha256": "e8149447bd5bcc923292d6e0f99f345588d609526eec397fd356d2de5d8158c5",
+    "inputs": {
+      "old_complete": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.json",
+        "sha256": "6016005b3c1a1a6cde0e0867d373278882e4411b58b51e31020d7bde0d95fdcb"
+      },
+      "old_einstein": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.json",
+        "sha256": "dfb11f09666b853ae3f0cf0e6e0232ba0047922e412542ba496d9f1156c927a6"
+      },
+      "old_extra": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus.json",
+        "sha256": "54ed7e2669458f0c1e3119ca2cc973774beb514d7ab76e103640a17a59ee744e"
+      },
+      "wave_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_combined_cone_second_order.json",
+        "sha256": "697399a0b286a14dcbce292330e3057dc0980a88c0c00a124108b04fa6fe31e4"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_PROJECTOR_REPAIR",
+  "result_state": "CONSTANT_TWIST_ELL2_POSITION_RESONANCE_MAP_ZERO_AFTER_HARMONIC_TYPE_REPAIR",
+  "schema": "einstein-maxwell-weyl-constant-twist-ell2-projector-repair-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.schema.json",
+  "schema_sha256": "9aee2d5b498ad7462df051e8dd6e2f9013d28409e370b9a7086292cbd99d814c",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic correction",
+    "carrier": "constant twist position crossed with complete axial/polar ell=2,k=0 q/p wave carrier",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "1 x 2 with output types kept distinct",
+    "k": 0,
+    "m": "all by SO3 equivariance",
+    "omega": "all ell2 q/p shells",
+    "parity": "axial and polar",
+    "theory": "Weyl-Maxwell target"
+  },
+  "type_audit": {
+    "Y11_residual": "0",
+    "Y21_residual": "0",
+    "adjoint_label_used": "lambda=6",
+    "correct_axial_projector": "*dY_21 with lambda=6",
+    "old_axial_projector": "*dY_11 with lambda=2",
+    "type_mismatch_certified": true
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_ell2_projector_repair --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_projector_repair.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_constant_twist_ell2_projector_repair",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_ell2_projector_repair --check --replay-direct"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "status": "PENDING"
+    },
+    "tier_1": {
+      "status": "PENDING",
+      "tests_run": 0
+    },
+    "tier_2": {
+      "criterion": "eight direct four-dimensional position-source columns with the corrected ell2 axial projector",
+      "status": "PENDING"
+    },
+    "tier_3": {
+      "reason": "other ell, momentum and higher lifecycles remain fail-closed",
+      "status": "NOT_RUN"
+    }
+  }
+}

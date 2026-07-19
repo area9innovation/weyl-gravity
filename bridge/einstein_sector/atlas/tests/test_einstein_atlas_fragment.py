@@ -157,102 +157,90 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         entry = self.entries["einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone"]
         second_order = entry["mode_data"]["second_order"]
         self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
-        self.assertIn("A=0", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("not classified", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("LIFECYCLE REOPENED", entry["claim_boundary"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
     def test_global_both_parity_ell2_bounded_cone_is_registered(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone"]
         second_order = entry["mode_data"]["second_order"]
         self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
-        self.assertIn("A=0", second_order["bounded_or_finite_quasiperiodic"]["statement"])
-        self.assertIn("twist-position resonance", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("mistyped output carrier", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("superseded", entry["claim_boundary"])
+        self.assertIn("LIFECYCLE REOPENED", entry["claim_boundary"])
 
-    def test_complete_global_twist_ell2_cone_closes_last_global_gates(self) -> None:
+    def test_complete_global_twist_ell2_cone_is_reopened_after_projector_repair(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone"]
         second_order = entry["mode_data"]["second_order"]
-        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
-        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("E11=Q_e^2/2", entry["mode_data"]["resonance"]["statement"])
-        self.assertIn("static/wave union", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("corrected constant-twist position theorem", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("LIFECYCLE REOPENED", entry["claim_boundary"])
 
     def test_global_fixed_ell_k0_bounded_cone_is_registered(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone"]
         second_order = entry["mode_data"]["second_order"]
         self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
-        self.assertIn("every fixed ell>=2", second_order["bounded_or_finite_quasiperiodic"]["statement"])
-        self.assertIn("A=0", second_order["bounded_or_finite_quasiperiodic"]["statement"])
-        self.assertIn("generic C_A and C_P", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("not classified", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("mistyped output carrier", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("LIFECYCLE REOPENED", entry["claim_boundary"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
     def test_fixed_ell_constant_twist_factorization_is_registered(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
-        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
-        self.assertIn("two 2x2 Einstein matrices", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
+        self.assertIn("mistyped output carrier", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertIn("LIFECYCLE REOPENED", entry["claim_boundary"])
         self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
 
     def test_global_finite_harmonic_k0_bounded_cone_is_registered(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone"]
         second_order = entry["mode_data"]["second_order"]
         self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
-        self.assertIn("every finite generic k=0 wave sum", second_order["bounded_or_finite_quasiperiodic"]["statement"])
-        self.assertIn("A=0", second_order["bounded_or_finite_quasiperiodic"]["statement"])
-        self.assertIn("constant-twist resonance", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("not classified", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("mistyped output carrier", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("LIFECYCLE REOPENED", entry["claim_boundary"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
-    def test_constant_twist_wave_counterexample_is_registered(self) -> None:
-        entry = self.entries["einstein.ph.wm.interaction.constant_twist_wave_counterexample"]
-        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
-        self.assertIn("24*sqrt(3)", entry["mode_data"]["resonance"]["statement"])
-
-    def test_constant_twist_extra_position_zero_locus_is_registered(self) -> None:
-        entry = self.entries["einstein.ph.wm.interaction.constant_twist_ell2_extra_position_zero_locus"]
-        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
-        self.assertIn("complex dimension is 12", entry["mode_data"]["resonance"]["statement"])
-        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
-
-    def test_constant_twist_einstein_position_zero_locus_is_registered(self) -> None:
-        entry = self.entries["einstein.ph.wm.interaction.constant_twist_ell2_einstein_position_zero_locus"]
-        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
-        self.assertIn("combined complex kernel dimension is four", entry["mode_data"]["resonance"]["statement"])
-        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
-
-    def test_constant_twist_moment_resonance_cone_is_registered(self) -> None:
-        entry = self.entries["einstein.ph.wm.interaction.constant_twist_ell2_moment_resonance_cone"]
+    def test_constant_twist_projector_repair_is_authoritative(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
         self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
-        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
-        self.assertIn("A_minus=24+8*sqrt(3)", entry["mode_data"]["resonance"]["statement"])
-        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
-        self.assertEqual(entry["mode_data"]["second_order"]["smooth_secular"]["status"], "CERTIFIED")
-
-    def test_complete_constant_twist_ell2_bounded_cone_is_registered(self) -> None:
-        entry = self.entries["einstein.ph.wm.mixed.constant_twist_ell2_complete_bounded_cone"]
-        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
-        self.assertIn("off-axis +/-2 witness", entry["mode_data"]["taub_maps"]["statement"])
-        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("*dY_21", entry["mode_data"]["resonance"]["statement"])
+        bounded = entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]
+        self.assertEqual(bounded["status"], "CERTIFIED")
+        self.assertIn("R_A^3", bounded["statement"])
         self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
 
-    def test_twist_position_velocity_ell2_bounded_cone_is_registered(self) -> None:
-        entry = self.entries["einstein.ph.wm.mixed.twist_position_velocity_ell2_complete_bounded_cone"]
-        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
-        self.assertIn("forces B=0", entry["mode_data"]["taub_maps"]["statement"])
-        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
-        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+    def test_mistyped_constant_twist_rows_are_superseded(self) -> None:
+        identifiers = {
+            "einstein.ph.wm.interaction.constant_twist_wave_counterexample",
+            "einstein.ph.wm.interaction.constant_twist_ell2_extra_position_zero_locus",
+            "einstein.ph.wm.interaction.constant_twist_ell2_einstein_position_zero_locus",
+            "einstein.ph.wm.interaction.constant_twist_ell2_moment_resonance_cone",
+            "einstein.ph.wm.mixed.constant_twist_ell2_complete_bounded_cone",
+        }
+        for identifier in identifiers:
+            with self.subTest(identifier=identifier):
+                entry = self.entries[identifier]
+                self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+                self.assertEqual(entry["mode_data"]["resonance"]["status"], "OBSTRUCTED")
+                self.assertIn("SUPERSEDED BY", entry["claim_boundary"])
 
-    def test_circumference_wilson_twist_wave_product_is_registered(self) -> None:
-        entry = self.entries["einstein.ph.wm.mixed.twist_circumference_wilson_ell2_complete_bounded_cone"]
-        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
-        self.assertIn("R_c x R_Wx", entry["mode_data"]["taub_maps"]["statement"])
-        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
-
-    def test_d_twist_wave_stratified_cone_is_registered(self) -> None:
-        entry = self.entries["einstein.ph.wm.mixed.d_twist_ell2_complete_bounded_cone"]
-        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
-        self.assertIn("forces d=0", entry["mode_data"]["taub_maps"]["statement"])
-        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+    def test_projector_dependent_successors_are_reopened(self) -> None:
+        identifiers = {
+            "einstein.ph.wm.mixed.twist_position_velocity_ell2_complete_bounded_cone",
+            "einstein.ph.wm.mixed.twist_circumference_wilson_ell2_complete_bounded_cone",
+            "einstein.ph.wm.mixed.d_twist_ell2_complete_bounded_cone",
+            "einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone",
+        }
+        for identifier in identifiers:
+            with self.subTest(identifier=identifier):
+                entry = self.entries[identifier]
+                self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+                self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+                self.assertIn("LIFECYCLE REOPENED", entry["claim_boundary"])
 
 if __name__ == "__main__":
     unittest.main()

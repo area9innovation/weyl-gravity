@@ -57,6 +57,7 @@ CERTIFICATES = {
     "constant_twist_einstein_position_zero_locus": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.json",
     "constant_twist_ell2_moment_resonance_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.json",
     "constant_twist_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.json",
+    "constant_twist_ell2_projector_repair": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_projector_repair.json",
     "twist_position_velocity_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.json",
     "twist_circumference_wilson_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.json",
     "d_twist_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone.json",
@@ -155,7 +156,7 @@ def _entry(
 
 def entries() -> list[dict[str, object]]:
     open_causal = ("OPEN", "No compact-product causal/retarded Green theorem has been certified.")
-    return [
+    result = [
         _entry(
             "einstein.ph.bridge.relative_branch_dictionary_v1",
             _scope(carrier="same-background Einstein-Maxwell/Weyl-Maxwell inclusion, solution cofibers and branch dictionary", degree=1, parity="axial, polar, exceptional and global sectors kept separate", ell="generic >=2 plus explicitly listed exceptional/global gaps", m="all where certified", k="all compact momenta where certified", omega="q-primary, p-primary and generalized-zero branches without cross-background identification"),
@@ -397,6 +398,18 @@ def entries() -> list[dict[str, object]]:
             "This is complete only on the aligned axial ell=2,m=0,k=0 face. Einstein-plus, polar input, all m, other ell and momenta, infinite sums, all-orders, residual, observational and quantum maps remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.constant_twist_ell2_projector_repair",
+            _scope(theory="Weyl-Maxwell target", carrier="constant axial twist position crossed with the complete axial/polar ell=2,k=0 Einstein q-primary and extra p-primary wave carrier", degree=2, parity="axial and polar with output carrier types kept distinct", ell="1 x 2 with correctly typed L=2 same-shell projection and L=1,3 off-shell outputs", m="all by SO3 equivariance", k=0, omega="all ell=2 q/p shells"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The wave carrier retains the complete ell=2 q/p shell decomposition and the constant generalized-zero twist position."),
+            ("CERTIFIED", "The q/p adjoint representatives and action-derived wave moment maps retain their independently certified normalization."),
+            ("CERTIFIED", "The wave self-source is bounded-solvable exactly on mu_H=mu_J1=mu_J2=mu_J3=0; constant twist position adds no moment-map restriction."),
+            ("CERTIFIED", "The former nonzero incidence used *dY_11 (lambda=2) against lambda=6 adjoints. Direct replay with *dY_21 makes every Einstein and extra same-shell position map zero; L=1,3 outputs remain off shell."),
+            _second_order(("CERTIFIED", "Z2_bounded(A,wave)=R_A^3 x {wave: mu_H=mu_J1=mu_J2=mu_J3=0}."), ("CERTIFIED", "Every certified bounded correction is also a smooth finite exponential-polynomial correction."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("constant_twist_ell2_projector_repair", "fixed_ell_combined", "standard_global_bounded", "taub"),
+            "This lifecycle repair supersedes the old constant-twist counterexample and every nonzero same-shell incidence matrix derived from the mistyped axial projector. It is complete only for constant twist position with ell=2,k=0 waves; velocity, other globals, other ell/momenta, causal propagation and higher lifecycles remain separate.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.constant_twist_wave_counterexample",
             _scope(theory="Weyl-Maxwell target", carrier="one constant axial twist-position tangent crossed with a rotationally neutral ell=2,k=0 Einstein-minus/extra balanced wave", degree=2, parity="axial input with axial resonant output", ell="1 x 2 -> 2", m="twist m=1 crossed with wave m=0", k=0, omega="omega_extra=4/sqrt(3) and the distinct omega_minus shell"),
             {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OBSTRUCTED", "observational": "OPEN", "quantum": "OPEN"},
@@ -537,8 +550,8 @@ def entries() -> list[dict[str, object]]:
             ("NOT_APPLICABLE","This row isolates the resonance operator and does not add a stabilizer moment-map equation."),
             ("CERTIFIED","The angular kernel is exactly m_A=0; all additional kernel directions are controlled by two 2x2 Einstein matrices and one 4x4 extra matrix."),
             _second_order(("OPEN","The all-m problem is reduced exactly to Q_(ell,+/-) and P_ell, but their generic physical-fibre ranks and common moment/resonance zero cone are not yet computed."),("NOT_APPLICABLE","This is a bounded resonant-projection theorem, not a smooth-secular solvability theorem."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
-            _evidence("fixed_ell_constant_twist_factorization","constant_twist_ell2_complete_bounded_cone","global_fixed_ell_k0_bounded"),
-            "The ell=2 ranks are exact regressions. Generic-ell finite matrices, their common cone, finite multi-ell sums, nonzero momentum, causal propagation and higher lifecycles remain fail-closed.",
+            _evidence("fixed_ell_constant_twist_factorization","constant_twist_ell2_projector_repair","global_fixed_ell_k0_bounded"),
+            "The correctly typed ell=2 matrices vanish exactly. Generic-ell finite matrices, their common cone, finite multi-ell sums, nonzero momentum, causal propagation and higher lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
@@ -601,6 +614,72 @@ def entries() -> list[dict[str, object]]:
             "Compact-product modes must not be called asymptotic gravitons or vacuum-cylinder residual classes without an explicit certified crosswalk.",
         ),
     ]
+
+    superseded = {
+        "einstein.ph.wm.interaction.constant_twist_wave_counterexample",
+        "einstein.ph.wm.interaction.constant_twist_ell2_extra_position_zero_locus",
+        "einstein.ph.wm.interaction.constant_twist_ell2_einstein_position_zero_locus",
+        "einstein.ph.wm.interaction.constant_twist_ell2_moment_resonance_cone",
+        "einstein.ph.wm.mixed.constant_twist_ell2_complete_bounded_cone",
+    }
+    reopened_successors = {
+        "einstein.ph.wm.mixed.twist_position_velocity_ell2_complete_bounded_cone",
+        "einstein.ph.wm.mixed.twist_circumference_wilson_ell2_complete_bounded_cone",
+        "einstein.ph.wm.mixed.d_twist_ell2_complete_bounded_cone",
+        "einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone",
+    }
+    reopened_generic_twist_rows = {
+        "einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone",
+        "einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone",
+        "einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization",
+        "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
+        "einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone",
+    }
+    for entry in result:
+        identifier = entry["id"]
+        if identifier in superseded:
+            entry["descriptions"]["nonlinear"] = "OBSTRUCTED"
+            entry["mode_data"]["resonance"] = _claim(
+                "OBSTRUCTED",
+                "Superseded: the asserted nonzero position map came from projecting an L=1 axial carrier against L=2 adjoints. The corrected L=2 projector gives the zero map.",
+            )
+            entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"] = _claim(
+                "OBSTRUCTED",
+                "The historical incidence-based verdict is refuted by einstein.ph.wm.interaction.constant_twist_ell2_projector_repair.",
+            )
+            entry["claim_boundary"] = (
+                "SUPERSEDED BY einstein.ph.wm.interaction.constant_twist_ell2_projector_repair. "
+                "Retained only as a fail-closed historical row; it must not support a current theorem."
+            )
+        elif identifier in reopened_successors:
+            entry["descriptions"]["nonlinear"] = "OPEN"
+            entry["mode_data"]["resonance"] = _claim(
+                "OPEN",
+                "The constant-position input has been corrected to the zero same-shell map; this successor awaits regeneration with the repaired projector before its exact product/stratified cone is re-certified.",
+            )
+            entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"] = _claim(
+                "OPEN",
+                "The predecessor ingredients remain available, but necessity and sufficiency must be regenerated against the corrected constant-twist position theorem.",
+            )
+            entry["claim_boundary"] = (
+                "LIFECYCLE REOPENED after the constant-twist harmonic-type repair. "
+                "No exact downstream bounded cone is currently claimed by this row."
+            )
+        elif identifier in reopened_generic_twist_rows:
+            entry["descriptions"]["nonlinear"] = "OPEN"
+            entry["mode_data"]["resonance"] = _claim(
+                "OPEN",
+                "The old constant-twist regression used a mistyped output carrier. This row retains only its twist-independent ingredients until a correctly typed fixed-ell source map is derived.",
+            )
+            entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"] = _claim(
+                "OPEN",
+                "The nonzero-constant-twist bounded cone is not classified in this scope after the projector repair.",
+            )
+            entry["claim_boundary"] = (
+                "LIFECYCLE REOPENED for every constant-twist-dependent statement. "
+                "The ell=2 corrected spectator theorem does not by itself identify or classify another ell or a finite multi-ell sum."
+            )
+    return result
 
 
 def build() -> dict[str, object]:
@@ -723,6 +802,18 @@ def build() -> dict[str, object]:
         and twist_counterexample["nonzero_adjoint_pairing_certified"]
     ):
         raise AssertionError("constant-twist wave counterexample changed")
+    twist_repair = records["constant_twist_ell2_projector_repair"]
+    if not (
+        twist_repair["classification"]["harmonic_type_mismatch_repaired"]
+        and twist_repair["classification"]["old_constant_twist_counterexample_refuted"]
+        and twist_repair["classification"]["constant_twist_position_is_bounded_spectator_on_complete_ell2_wave_cone"]
+        and twist_repair["classification"]["corrected_bounded_zero_locus_necessary_and_sufficient"]
+        and twist_repair["corrected_position_maps"]["Einstein_plus_minus"] == "zero"
+        and twist_repair["corrected_position_maps"]["extra"] == "zero"
+    ):
+        raise AssertionError("constant-twist ell2 projector repair changed")
+    if twist_repair["classification"]["other_ell_or_momentum_classified"] or twist_repair["classification"]["causal_or_quantum_claim"]:
+        raise AssertionError("constant-twist projector repair exceeded its declared scope")
     twist_zero_locus = records["constant_twist_extra_position_zero_locus"]
     if not (
         twist_zero_locus["classification"]["complete_nonzero_A_ell2_extra_position_resonance_kernel_classified"]
