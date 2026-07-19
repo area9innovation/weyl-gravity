@@ -452,12 +452,15 @@ def _momentum_theta_time_variation(
     coordinates: tuple[sp.Symbol, ...],
     momentum: list[list[list[list[sp.Expr]]]],
     momentum_variation: list[list[list[list[sp.Expr]]]],
+    component: int = 0,
 ) -> sp.Expr:
-    """Return the first variation of the f(g,Riemann) potential."""
+    """Return one component of the first variation of the f(g,Riemann) potential."""
 
     base_bracket = sp.S.Zero
     delta_bracket = sp.S.Zero
-    mu = 0
+    if not 0 <= component < DIMENSION:
+        raise ValueError(f"component must lie in [0,{DIMENSION}): {component}")
+    mu = component
     for first in range(DIMENSION):
         for second in range(DIMENSION):
             divergence = _divergence_rank4_component(
@@ -524,8 +527,9 @@ def weyl_theta_time_variation(
     test_metric: sp.Matrix,
     coordinates: tuple[sp.Symbol, ...],
     alpha_b: sp.Expr,
+    component: int = 0,
 ) -> sp.Expr:
-    """Return delta_1 Theta_C2^t(delta_2 g) as a vector density."""
+    """Return delta_1 Theta_C2^component(delta_2 g) as a vector density."""
 
     momentum = _rank4_zero()
     momentum_variation = _rank4_zero()
@@ -549,6 +553,7 @@ def weyl_theta_time_variation(
         coordinates,
         momentum,
         momentum_variation,
+        component,
     )
 
 
@@ -557,6 +562,7 @@ def einstein_theta_time_variation(
     test_metric: sp.Matrix,
     coordinates: tuple[sp.Symbol, ...],
     kappa: sp.Expr = sp.Integer(1),
+    component: int = 0,
 ) -> sp.Expr:
     """Curvature-momentum evaluation for (R-2 Lambda)/(2 kappa)."""
 
@@ -584,6 +590,7 @@ def einstein_theta_time_variation(
         coordinates,
         momentum,
         momentum_variation,
+        component,
     )
 
 
@@ -594,7 +601,10 @@ def maxwell_theta_time_variation(
     field_variation: sp.Matrix,
     test_potential: sp.Matrix,
     coordinates: tuple[sp.Symbol, ...],
+    component: int = 0,
 ) -> sp.Expr:
+    if not 0 <= component < DIMENSION:
+        raise ValueError(f"component must lie in [0,{DIMENSION}): {component}")
     inverse = metric.inv()
     inverse_variation = sp.simplify(-inverse * metric_variation * inverse)
     sine = sp.sin(coordinates[2])
@@ -612,8 +622,8 @@ def maxwell_theta_time_variation(
     return sp.factor(
         -sum(
             (
-                delta_volume * field_up[0, index]
-                + volume * delta_field_up[0, index]
+                delta_volume * field_up[component, index]
+                + volume * delta_field_up[component, index]
             )
             * test_potential[index]
             for index in range(DIMENSION)
@@ -632,6 +642,44 @@ def exterior_derivative(
     )
 
 
+def weyl_maxwell_current_component(
+    metric: sp.Matrix,
+    field: sp.Matrix,
+    first: tuple[sp.Matrix, sp.Matrix],
+    second: tuple[sp.Matrix, sp.Matrix],
+    coordinates: tuple[sp.Symbol, ...],
+    component: int,
+    alpha_b: sp.Expr = sp.Integer(3),
+) -> sp.Expr:
+    first_metric, first_potential = first
+    second_metric, second_potential = second
+    first_geometry = linearized_geometry(metric, first_metric, coordinates)
+    second_geometry = linearized_geometry(metric, second_metric, coordinates)
+    first_on_second = weyl_theta_time_variation(
+        first_geometry, second_metric, coordinates, alpha_b, component
+    ) + maxwell_theta_time_variation(
+        metric,
+        field,
+        first_metric,
+        exterior_derivative(first_potential, coordinates),
+        second_potential,
+        coordinates,
+        component,
+    )
+    second_on_first = weyl_theta_time_variation(
+        second_geometry, first_metric, coordinates, alpha_b, component
+    ) + maxwell_theta_time_variation(
+        metric,
+        field,
+        second_metric,
+        exterior_derivative(second_potential, coordinates),
+        first_potential,
+        coordinates,
+        component,
+    )
+    return sp.factor(first_on_second - second_on_first)
+
+
 def weyl_maxwell_current_time(
     metric: sp.Matrix,
     field: sp.Matrix,
@@ -640,12 +688,30 @@ def weyl_maxwell_current_time(
     coordinates: tuple[sp.Symbol, ...],
     alpha_b: sp.Expr = sp.Integer(3),
 ) -> sp.Expr:
+    """Backward-compatible time component of the Weyl--Maxwell current."""
+
+    return weyl_maxwell_current_component(
+        metric, field, first, second, coordinates, 0, alpha_b
+    )
+
+
+def einstein_maxwell_current_component(
+    metric: sp.Matrix,
+    field: sp.Matrix,
+    first: tuple[sp.Matrix, sp.Matrix],
+    second: tuple[sp.Matrix, sp.Matrix],
+    coordinates: tuple[sp.Symbol, ...],
+    component: int,
+    kappa: sp.Expr = sp.Integer(1),
+) -> sp.Expr:
+    """Independent curvature-momentum form of the Einstein--Maxwell current."""
+
     first_metric, first_potential = first
     second_metric, second_potential = second
     first_geometry = linearized_geometry(metric, first_metric, coordinates)
     second_geometry = linearized_geometry(metric, second_metric, coordinates)
-    first_on_second = weyl_theta_time_variation(
-        first_geometry, second_metric, coordinates, alpha_b
+    first_on_second = einstein_theta_time_variation(
+        first_geometry, second_metric, coordinates, kappa, component
     ) + maxwell_theta_time_variation(
         metric,
         field,
@@ -653,9 +719,10 @@ def weyl_maxwell_current_time(
         exterior_derivative(first_potential, coordinates),
         second_potential,
         coordinates,
+        component,
     )
-    second_on_first = weyl_theta_time_variation(
-        second_geometry, first_metric, coordinates, alpha_b
+    second_on_first = einstein_theta_time_variation(
+        second_geometry, first_metric, coordinates, kappa, component
     ) + maxwell_theta_time_variation(
         metric,
         field,
@@ -663,6 +730,7 @@ def weyl_maxwell_current_time(
         exterior_derivative(second_potential, coordinates),
         first_potential,
         coordinates,
+        component,
     )
     return sp.factor(first_on_second - second_on_first)
 
@@ -675,30 +743,8 @@ def einstein_maxwell_current_time(
     coordinates: tuple[sp.Symbol, ...],
     kappa: sp.Expr = sp.Integer(1),
 ) -> sp.Expr:
-    """Independent curvature-momentum form of the Einstein--Maxwell current."""
+    """Backward-compatible time component of the Einstein--Maxwell current."""
 
-    first_metric, first_potential = first
-    second_metric, second_potential = second
-    first_geometry = linearized_geometry(metric, first_metric, coordinates)
-    second_geometry = linearized_geometry(metric, second_metric, coordinates)
-    first_on_second = einstein_theta_time_variation(
-        first_geometry, second_metric, coordinates, kappa
-    ) + maxwell_theta_time_variation(
-        metric,
-        field,
-        first_metric,
-        exterior_derivative(first_potential, coordinates),
-        second_potential,
-        coordinates,
+    return einstein_maxwell_current_component(
+        metric, field, first, second, coordinates, 0, kappa
     )
-    second_on_first = einstein_theta_time_variation(
-        second_geometry, first_metric, coordinates, kappa
-    ) + maxwell_theta_time_variation(
-        metric,
-        field,
-        second_metric,
-        exterior_derivative(second_potential, coordinates),
-        first_potential,
-        coordinates,
-    )
-    return sp.factor(first_on_second - second_on_first)

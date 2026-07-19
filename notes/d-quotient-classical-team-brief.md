@@ -439,6 +439,13 @@ globalization.  The formal Noether identity and slice descent are certified;
 the portable coefficientwise relative current density and its BV completion
 remain open.
 
+The underlying action-derived Lee--Wald engine is now component-complete.
+`weyl_maxwell_current_component` and
+`einstein_maxwell_current_component` evaluate every vector-density component,
+while the established time-component functions remain exact wrappers.  This
+closes the API prerequisite for the relative current cone without promoting
+its still-unchecked off-shell divergence or cyclic BV rows.
+
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.
 The finite covariant HPL series and unique normalized degree-one correction

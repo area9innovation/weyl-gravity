@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "WEYL_MAXWELL_LEE_WALD_COMPONENT_EVALUATOR_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "status": "PASS",
+  "source_manifest": {
+    "bridge/einstein_sector/weyl_maxwell_lee_wald_current.py": "673646b4ae8013190c1f54641114c849328191e26f65359d0d155e89a8221247",
+    "bridge/einstein_sector/tests/test_weyl_maxwell_lee_wald_current_components.py": "9246b7d9800ae00c567481517a51f084072be89bc1dc83659315d7cf503b71e0",
+    "bridge/reports/weyl-maxwell-lee-wald-component-evaluator.md": "a256ff90bbe0162594196e3905fb8405aae16b31cfc0ecac15c345dda6af2f28",
+    "notes/d-quotient-classical-team-brief.md": "490c2b726d03e8666435313a1a3c383203fae66faae60513f81ea943747a8a5a"
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "command": "py_compile, receipt json.tool, source-manifest replay and scoped git diff --check"},
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 5.72,
+      "max_rss_kib": 62952,
+      "commands": [
+        "python3 -m unittest bridge.einstein_sector.tests.test_weyl_maxwell_lee_wald_current_components -v",
+        "python3 -m unittest bridge.einstein_sector.tests.test_weyl_maxwell_axial_general_lee_wald_fixture bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_lee_wald_completion bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_current_taub bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_lee_wald_gate -v"
+      ],
+      "result": "3 component API tests and 12 downstream Lee-Wald tests passed; component zero is exactly backward compatible and invalid components fail closed"
+    },
+    "tier_2": {"status": "NOT_RUN", "reason": "No action normalization or generated current certificate changed; this is a backward-compatible API exposure used by the next relative-current producer."},
+    "tier_3": {"status": "NOT_RUN", "reason": "No theorem freeze or release is promoted."}
+  },
+  "claim_boundary": "This receipt certifies a component-complete exact evaluator for the already action-derived Einstein-Maxwell and Weyl-Maxwell Lee-Wald vector densities. It does not certify a relative stabilizer current, an off-shell divergence identity, cyclic current-cone rows, causal Green data, observables, particles or quantum theory."
+}
