@@ -540,11 +540,11 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. analytically continue the exact `S2(k1) x S2(k2)` weighted `R(K)` and
-   finite-part `R(K^2)` rows, retaining the matched exceptional factor
-   `3^-6`, then add those background-specific finite rows and the remaining
-   BV sectors to the current partial-BV five-carrier representative; the
-   regular-complement `det_3` row is already enclosed, while
+1. reconcile the unrelated stale Cartan, relative, Lorentzian and transfer
+   receipts exposed by the 830-test Tier-3 run, rerun that promotion gate, and
+   only then promote the rigorously derived `S2(1) x S2(2)` weighted `R(K)`
+   and finite-part `R(K^2)` enclosures; the regular-complement `det_3` and
+   matched exceptional factor `3^-6` are already certified, while
    arbitrary-background finite rows still require a generic primed Green
    kernel or spectral measure;
 2. classify the parity-odd derivative sector and fix the finite `C2` and
@@ -567,5 +567,9 @@ channels and the coefficientwise `I28` relation. The physical five-carrier proje
 checkpointed exact training fixtures, two unseen generator fixtures, one
 fresh no-cache unseen replay, and six scoped tests. The coupled repair's affected
 exact chain was run separately at Tier 2 and is recorded in its acceptance
-report. Tier 3 was not run because no quantum lifecycle or paper theorem is
-promoted.
+report. A later weighted-row promotion attempt did trigger Tier 3: 830 tests
+ran in 626.559 seconds, with 20 failures and 12 errors confined to stale
+pinned Cartan, relative, Lorentzian and transfer receipts outside the spectral
+package. That run is recorded as a failure, not a pass; the rigorous
+weighted-row enclosure remains a precertificate with both standard
+coefficient-computed flags false.
