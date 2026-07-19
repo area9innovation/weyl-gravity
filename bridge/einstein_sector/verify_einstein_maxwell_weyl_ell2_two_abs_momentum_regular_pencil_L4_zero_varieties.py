@@ -1,6 +1,7 @@
 """Independent verifier for the candidate-7/11/19 regular-pencil varieties."""
 from __future__ import annotations
 
+import hashlib
 import json
 from fractions import Fraction
 from pathlib import Path
@@ -21,6 +22,10 @@ PARENT = ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum
 
 def parse(value: str) -> sp.Expr:
     return sp.sympify(value, locals={"sqrt": sp.sqrt, "pi": sp.pi})
+
+
+def sha(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def det2(matrix: sp.Matrix) -> sp.Expr:
@@ -64,6 +69,11 @@ def verify() -> None:
     certificate = json.loads(CERTIFICATE.read_text())
     schema = json.loads(SCHEMA.read_text())
     jsonschema.validate(certificate, schema)
+    if certificate["schema_sha256"] != sha(SCHEMA):
+        raise AssertionError("regular-pencil schema hash changed")
+    parent_path = ROOT / certificate["provenance"]["parent"]
+    if parent_path != PARENT or certificate["provenance"]["parent_sha256"] != sha(PARENT):
+        raise AssertionError("regular-pencil parent provenance changed")
     parent = json.loads(PARENT.read_text())
     fibres = {item["candidate_index"]: item for item in parent["physical_fibres"]}
     if certificate["summary"]["classified_candidates"] != [7, 11, 19]:
@@ -72,6 +82,12 @@ def verify() -> None:
         candidate = record["candidate_index"]
         fibre = fibres[candidate]
         current = matrices(fibre)
+        stored_matrices = {
+            key: sp.Matrix([[parse(entry) for entry in row] for row in matrix])
+            for key, matrix in record["internal_matrices"].items()
+        }
+        if stored_matrices != current:
+            raise AssertionError(f"stored internal matrices changed for candidate {candidate}")
         determinants = {key: det2(value) for key, value in current.items()}
         denominator = determinants["ap"] * determinants["aa"]
         product = adj2(current["ap"]) * current["pa"] * adj2(current["aa"]) * current["pp"]
