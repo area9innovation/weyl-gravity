@@ -2475,8 +2475,11 @@ the coefficientwise `I28` relation preserved. The pure-vector ghost
 `n=1+n=2` slice is now also integrated exactly: six channels are nonzero,
 five vanish, and every result lies in the same triangle-plus-two-log-plus-
 rational basis. It has been added to a partial-BV five-carrier representative
-without disturbing the exact `I28` quotient. Exactly three longitudinal/
-mixed `D_W` carriers, their generic finite Schur rows and remaining BV rows,
+without disturbing the exact `I28` quotient. The longitudinal/mixed `D_W`
+towers are one normalized Schur kernel. Its exact non-Einstein
+`S2(k1) x S2(k2)` spectrum and degeneracies are now supplied, including the
+matched six-mode vector-zero/Schur-pole correction `3^-6`. The bivariate
+infinite sums, arbitrary-background finite Schur rows and remaining BV rows,
 and therefore the complete repository form factors remain open. The selected generic weight-raised
 factorization and its local order-minus-three/four BCH residue are now exact.
 The canonical

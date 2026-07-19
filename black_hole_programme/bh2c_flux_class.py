@@ -83,7 +83,14 @@ def run_analysis(geo_cls) -> dict:
     out: dict = {"stage_seconds": {}}
     wnum = sp.Rational(3, 5)
     NI = 4
-    DEP = NI + 4
+    # Carrier depth: the composed X-source carries positive r-weights, so
+    # source keys built from depth-N carrier jets are valid only through
+    # N minus that weight.  NC = 12 gives a wide validity margin over the
+    # staircase window (NI = 4); the table and log-tail dichotomy were
+    # re-verified identical against the original NC = 4 run (2026-07-19,
+    # polar-table campaign; see reports/bh2c-polar-flux-class.md).
+    NC = 12
+    DEP = NC + 4
     v, ph = sp.symbols("v phi")
     r = sp.Symbol("r", positive=True)
     x = sp.Symbol("x")
@@ -252,7 +259,7 @@ def run_analysis(geo_cls) -> dict:
         return inv_series_entry(e, depth)
 
     def carrier_series(muv, sig_top):
-        aps = [{slot: apply_slot(rows_c[i].subs(w, wnum), muv, fn, NI + 3)
+        aps = [{slot: apply_slot(rows_c[i].subs(w, wnum), muv, fn, NC + 3)
                 for slot, fn in (("P", Pf), ("Q", Qf))} for i in range(2)]
         glead = min(min(ser.keys()) for ap in aps for ser in ap.values())
 
@@ -264,7 +271,7 @@ def run_analysis(geo_cls) -> dict:
         ns = MkC(0, sig_top).nullspace()
         _require(len(ns) == 1, "carrier leading nullspace not 1")
         c = [sp.Matrix(ns[0])]
-        for n in range(1, NI + 1):
+        for n in range(1, NC + 1):
             rhs = -sum((MkC(n - j, sig_top - j) * c[j] for j in range(n)),
                        sp.zeros(2, 1))
             Mn = MkC(0, sig_top - n)

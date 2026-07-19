@@ -1,0 +1,348 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2c-polar-flux-class-v1",
+  "title": "BH-2C stage 4: polar norm-selection table -- Einstein selected at infinity",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "composed_classes",
+    "flux_table",
+    "einstein_finiteness",
+    "headline",
+    "claim_flags",
+    "carrier_depths",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-bh2c-polar-flux-class-v1"
+    },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh2c-polar-flux-class-v1.schema.json"
+    },
+    "schema_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_BH2C_POLAR_FLUX_CLASS"
+    },
+    "result_token": {
+      "const": "BH2C_POLAR_NORM_SELECTION_EINSTEIN_SELECTED_AT_INFINITY"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "lifecycle"
+      ],
+      "properties": {
+        "lifecycle": {
+          "const": "CLASSIFIED"
+        }
+      }
+    },
+    "composed_classes": {
+      "type": "object",
+      "required": [
+        "statement",
+        "classes",
+        "gauge_control",
+        "parity_contrast"
+      ],
+      "properties": {
+        "classes": {
+          "type": "object",
+          "required": [
+            "0",
+            "-2w"
+          ],
+          "properties": {
+            "0": {
+              "const": [
+                [
+                  1,
+                  1,
+                  "1"
+                ],
+                [
+                  1,
+                  1,
+                  "1"
+                ],
+                [
+                  1,
+                  1,
+                  "1"
+                ]
+              ]
+            },
+            "-2w": {
+              "const": [
+                [
+                  0,
+                  0,
+                  "-12*I/5"
+                ],
+                [
+                  0,
+                  0,
+                  "-12*I/5"
+                ],
+                [
+                  0,
+                  0,
+                  "-12*I/5"
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "flux_table": {
+      "type": "object",
+      "minProperties": 14,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "leading",
+          "noise_floor"
+        ],
+        "properties": {
+          "leading": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "array",
+                "prefixItems": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ],
+                "minItems": 2,
+                "maxItems": 2
+              }
+            ]
+          },
+          "noise_floor": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "E0|E0",
+        "E0|X0j0",
+        "X0j0|X0j0",
+        "E2|E2",
+        "E2|X2j0",
+        "X2j0|X2j0"
+      ],
+      "properties": {
+        "E0|E0": {
+          "properties": {
+            "leading": {
+              "const": null
+            }
+          }
+        },
+        "E0|X0j0": {
+          "properties": {
+            "leading": {
+              "const": [
+                "1",
+                0
+              ]
+            }
+          }
+        },
+        "X0j0|X0j0": {
+          "properties": {
+            "leading": {
+              "const": [
+                "2",
+                0
+              ]
+            }
+          }
+        },
+        "E2|X2j0": {
+          "properties": {
+            "leading": {
+              "const": [
+                "3",
+                0
+              ]
+            }
+          }
+        },
+        "X2j0|X2j0": {
+          "properties": {
+            "leading": {
+              "const": [
+                "4",
+                0
+              ]
+            }
+          }
+        },
+        "E2|E2": {
+          "properties": {
+            "leading": {
+              "const": [
+                "-2",
+                0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "headline": {
+      "type": "object",
+      "required": [
+        "statement",
+        "complement"
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "polar_composed_classes_certified",
+        "polar_power_enhancement_certified",
+        "polar_flux_power_table_certified",
+        "polar_einstein_finite_class_certified",
+        "polar_extra_divergent_class_certified",
+        "symbolic_frequency_certified",
+        "summability_certified",
+        "asymptotic_phase_space_constructed",
+        "general_l_certified",
+        "norm_sign_certified"
+      ],
+      "properties": {
+        "polar_composed_classes_certified": {
+          "const": true
+        },
+        "polar_power_enhancement_certified": {
+          "const": true
+        },
+        "polar_flux_power_table_certified": {
+          "const": true
+        },
+        "polar_extra_divergent_class_certified": {
+          "const": true
+        },
+        "symbolic_frequency_certified": {
+          "const": false
+        },
+        "summability_certified": {
+          "const": false
+        },
+        "asymptotic_phase_space_constructed": {
+          "const": false
+        },
+        "general_l_certified": {
+          "const": false
+        },
+        "norm_sign_certified": {
+          "const": false
+        },
+        "polar_einstein_finite_class_certified": {
+          "const": true
+        }
+      }
+    },
+    "carrier_depths": {
+      "type": "object",
+      "required": [
+        "carrier_jets",
+        "source_validity_keys",
+        "derived_source_max_weight",
+        "staircase_window",
+        "hom_depth"
+      ],
+      "properties": {
+        "carrier_jets": {
+          "const": 12
+        },
+        "source_validity_keys": {
+          "const": 8
+        },
+        "derived_source_max_weight": {
+          "const": 4
+        },
+        "staircase_window": {
+          "const": 4
+        },
+        "hom_depth": {
+          "const": 8
+        }
+      }
+    },
+    "missing_objects": {
+      "type": "array",
+      "minItems": 5
+    },
+    "stage_seconds": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "engine_path",
+        "engine_sha256",
+        "reach_generator_path",
+        "reach_generator_sha256",
+        "jordan_certificate",
+        "jordan_certificate_sha256",
+        "axial_flux_class_certificate",
+        "axial_flux_class_certificate_sha256",
+        "polar_flux_certificate",
+        "polar_flux_certificate_sha256"
+      ]
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh2c_polar_flux_class.py"
+    },
+    "einstein_finiteness": {
+      "type": "object",
+      "required": [
+        "statement",
+        "source_certificate"
+      ],
+      "properties": {
+        "source_certificate": {
+          "const": "BH2B_POLAR_FLUX"
+        }
+      }
+    }
+  }
+}

@@ -99,8 +99,14 @@ def _cancel(e):
     return sp.cancel(sp.together(e))
 
 
-def run_analysis(geo_cls) -> dict:
-    """Full polar-reach analysis; geo_cls is the curvature engine class."""
+def run_analysis(geo_cls, light: bool = False) -> dict:
+    """Full polar-reach analysis; geo_cls is the curvature engine class.
+
+    With light=True the expensive analytic-family fixture stage is skipped
+    and additional intermediate objects are exposed on the returned dict for
+    downstream certificates (bh2c_polar_flux_class); every _require up to
+    that stage still runs.  The certificate itself is always built with the
+    default light=False."""
     t0_all = time.time()
     out: dict = {"stage_seconds": {}}
     v, ph = sp.symbols("v phi")
@@ -490,6 +496,14 @@ def run_analysis(geo_cls) -> dict:
         f"singular gauge image exponents {imgS} unexpected",
     )
     out["stage_seconds"]["gauge_exponents"] = round(time.time() - t0, 1)
+
+    if light:
+        out["syms"] = {"v": v, "r": r, "x": x, "m": m, "omega": w}
+        out["funcs4"] = (ar, bcr, ccr, fr)
+        out["cascade"] = {"D": D_c, "Ec": Ec_c, "G": G_c}
+        out["rows"] = rows
+        out["stage_seconds"]["total"] = round(time.time() - t0_all, 1)
+        return out
 
     # ---- analytic-family fixtures (no log obstruction) --------------------
     # A degree-NFIX polynomial jet substituted into the (regular-coefficient)

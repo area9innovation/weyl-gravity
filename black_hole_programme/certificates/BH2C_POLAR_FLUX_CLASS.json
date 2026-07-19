@@ -1,0 +1,261 @@
+{
+  "carrier_depths": {
+    "carrier_jets": 12,
+    "derived_source_max_weight": 4,
+    "hom_depth": 8,
+    "source_validity_keys": 8,
+    "staircase_window": 4
+  },
+  "claim_flags": {
+    "asymptotic_phase_space_constructed": false,
+    "general_l_certified": false,
+    "norm_sign_certified": false,
+    "polar_composed_classes_certified": true,
+    "polar_einstein_finite_class_certified": true,
+    "polar_extra_divergent_class_certified": true,
+    "polar_flux_power_table_certified": true,
+    "polar_power_enhancement_certified": true,
+    "summability_certified": false,
+    "symbolic_frequency_certified": false
+  },
+  "composed_classes": {
+    "classes": {
+      "-2w": [
+        [
+          0,
+          0,
+          "-12*I/5"
+        ],
+        [
+          0,
+          0,
+          "-12*I/5"
+        ],
+        [
+          0,
+          0,
+          "-12*I/5"
+        ]
+      ],
+      "0": [
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ]
+      ]
+    },
+    "gauge_control": "exact conformal-gauge jet classifies (0,0) pure-power",
+    "parity_contrast": "axial composed lifts are single-log in both sectors with no enhancement (BH2C_FLUX_CLASS)",
+    "statement": "polar composed lift classes (extra power, log degree) per leading carrier jet: sector mu=0 all (1,1) at s_base=1 (one power enhancement + single log; the inhomogeneous realization of the certified rank-1 resonance); sector mu=-2w all (0,0) at s_base=-12I/5 (pure oscillatory power)"
+  },
+  "declaration": {
+    "background_family": "Schwarzschild m = 1 fixture; omega = 3/5",
+    "conformal_frame": "working gauge; ingoing EF chart; traceless carrier slice",
+    "generator": "none; asymptotic slice-norm classification",
+    "horizon_condition": "none; infinity-local statement",
+    "infinity_condition": "leading (r-power, log-power) of F^v per class with truncation noise floors",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "EF sphere-integrated Lee-Wald slice density F^v on formal pair classes",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "einstein_finiteness": {
+    "source_certificate": "BH2B_POLAR_FLUX",
+    "statement": "the mu = 0 Einstein pair is identically zero in the slice density F^v (an extra degeneracy of that sector) and the mu = -2w Einstein pair falls as r^-2, exactly the axial Einstein behavior: the Einstein slice norm is finite in both sectors; the certified polar Einstein-branch radial-flux nullness for conjugate pairs (BH2B_POLAR_FLUX) is a separate exact statement about F^r, not F^v"
+  },
+  "flux_table": {
+    "E0|E0": {
+      "leading": null,
+      "noise_floor": "-7"
+    },
+    "E0|X0j0": {
+      "leading": [
+        "1",
+        0
+      ],
+      "noise_floor": "-4"
+    },
+    "E0|X0j1": {
+      "leading": [
+        "1",
+        0
+      ],
+      "noise_floor": "-4"
+    },
+    "E0|X0j2": {
+      "leading": [
+        "1",
+        0
+      ],
+      "noise_floor": "-4"
+    },
+    "E2|E2": {
+      "leading": [
+        "-2",
+        0
+      ],
+      "noise_floor": "-7"
+    },
+    "E2|X2j0": {
+      "leading": [
+        "3",
+        0
+      ],
+      "noise_floor": "-4"
+    },
+    "E2|X2j1": {
+      "leading": [
+        "3",
+        0
+      ],
+      "noise_floor": "-4"
+    },
+    "E2|X2j2": {
+      "leading": [
+        "3",
+        0
+      ],
+      "noise_floor": "-4"
+    },
+    "X0j0|X0j0": {
+      "leading": [
+        "2",
+        0
+      ],
+      "noise_floor": "-4"
+    },
+    "X0j0|X0j1": {
+      "leading": [
+        "2",
+        0
+      ],
+      "noise_floor": "-4"
+    },
+    "X0j0|X0j2": {
+      "leading": [
+        "2",
+        0
+      ],
+      "noise_floor": "-4"
+    },
+    "X0j1|X0j1": {
+      "leading": [
+        "2",
+        0
+      ],
+      "noise_floor": "-4"
+    },
+    "X0j1|X0j2": {
+      "leading": [
+        "2",
+        0
+      ],
+      "noise_floor": "-4"
+    },
+    "X0j2|X0j2": {
+      "leading": [
+        "2",
+        0
+      ],
+      "noise_floor": "-4"
+    },
+    "X2j0|X2j0": {
+      "leading": [
+        "4",
+        0
+      ],
+      "noise_floor": "-5"
+    },
+    "X2j0|X2j1": {
+      "leading": [
+        "4",
+        0
+      ],
+      "noise_floor": "-5"
+    },
+    "X2j0|X2j2": {
+      "leading": [
+        "4",
+        0
+      ],
+      "noise_floor": "-5"
+    },
+    "X2j1|X2j1": {
+      "leading": [
+        "4",
+        0
+      ],
+      "noise_floor": "-5"
+    },
+    "X2j1|X2j2": {
+      "leading": [
+        "4",
+        0
+      ],
+      "noise_floor": "-5"
+    },
+    "X2j2|X2j2": {
+      "leading": [
+        "4",
+        0
+      ],
+      "noise_floor": "-5"
+    }
+  },
+  "headline": {
+    "complement": "the horizon endpoint diagnostics do not exclude the extra branch (certified dispositions); at infinity, symplectic-norm finiteness DOES select the Einstein sector in both parities -- a phase-space normalization, not a local boundary condition",
+    "statement": "polar finite-slice-norm asymptotic phase space at infinity = exactly the Einstein sector (whose mu = 0 self-pair is identically zero in the slice density); every extra-branch pair diverges as r^1..r^4; two-parity norm selection now complete at the fixture level"
+  },
+  "missing_objects": [
+    "symbolic-frequency table (omega = 3/5 fixture only)",
+    "Borel/analytic summability of the enhanced/log series",
+    "an asymptotically flat phase-space and charge-algebra construction",
+    "general l",
+    "sign or value of any finite norm"
+  ],
+  "provenance": {
+    "axial_flux_class_certificate": "black_hole_programme/certificates/BH2C_FLUX_CLASS.json",
+    "axial_flux_class_certificate_sha256": "cf6ea556ebb2c42d3db0f3efc11c18d32a39f6c2acdd70a34de586725a972c01",
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh2c_polar_flux_class.py",
+    "jordan_certificate": "black_hole_programme/certificates/BH2C_ASYMPTOTIC_JORDAN.json",
+    "jordan_certificate_sha256": "9ed3c744f2916042acee118ce380f469fdcad69bd2010e2deaae78486b97468e",
+    "polar_flux_certificate": "black_hole_programme/certificates/BH2B_POLAR_FLUX.json",
+    "polar_flux_certificate_sha256": "200d71b93a0435e8f484b9236dd39188a74840523c468730cdbba2b58556482b",
+    "reach_generator_path": "black_hole_programme/bh2b_polar_reach.py",
+    "reach_generator_sha256": "53314667714c6624e90f204a46d166ae2d7561bdd8e97b5011c235c939121c46"
+  },
+  "result_id": "PURE_WEYL_BH2C_POLAR_FLUX_CLASS",
+  "result_token": "BH2C_POLAR_NORM_SELECTION_EINSTEIN_SELECTED_AT_INFINITY",
+  "schema": "pure-weyl-bh2c-polar-flux-class-v1",
+  "schema_path": "black_hole_programme/schema/bh2c-polar-flux-class-v1.schema.json",
+  "schema_sha256": "98c02dca3077f6ae1d97b2e17157d3837359d464de4e7631e7f0593ef8b88da6",
+  "stage_seconds": {
+    "Fv": 142.2,
+    "carrier_jets": 53.1,
+    "carrier_system": 0.1,
+    "classification": 67.9,
+    "flux_table": 454.7,
+    "gauge_control": 5.0,
+    "h_system": 6.4,
+    "hom": 2.0,
+    "reach_light": 32.4,
+    "total": 763.9
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2c_polar_flux_class.py"
+}

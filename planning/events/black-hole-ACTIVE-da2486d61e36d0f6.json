@@ -1,0 +1,27 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-ACTIVE-da2486d61e36d0f6",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "tools/science-forge/program/events/black-hole-ACTIVE-da2486d61e36d0f6.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "black-hole",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-07-19",
+    "payload": {
+      "target": "sf:program/work/black-hole",
+      "to_state": "ACTIVE",
+      "note": "Polar norm-selection table certified (BH2C_POLAR_FLUX_CLASS): composed-lift classes (1,1) power-enhanced single-log at mu=0 / (0,0) oscillatory pure power at mu=-2w with exact conformal-gauge control; flux table with truncation noise floors: polar Einstein pairs FINITE (E0xE0 identically zero in the slice density, E2xE2 ~ r^-2 like the axial; the certified BH2B_POLAR_FLUX conjugate-pair nullness concerns the radial flux F^r), every extra-involving pair divergent r^1..r^4 -- two-parity norm selection complete at the fixture level, closing the 'finite-flux boundary class, both parities' clause of this directive. Methodological receipt: derived-source r-weights corrupt depth-4 jets (spurious staircase inconsistency); repaired with depth-12 column-parametric jets + gauge anchor; axial BH2C_FLUX_CLASS re-verified unchanged and hardened to carrier depth 12. Remaining under this directive: claim repair (b) rigorous exact/interval nonvanishing bounds for the mixed/extra flux fixtures. Queue thereafter: symbolic-frequency table, tetrad falloff audit, invariant flux-sign theory, general l, coordinator BH-3 review."
+    },
+    "native": {
+      "authored_by": "sfc work-event",
+      "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten \u2014 the effective state is the fold of these events over the base state."
+    }
+  }
+}
