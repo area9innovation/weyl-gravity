@@ -1,0 +1,106 @@
+{
+  "atlas_status": "CERTIFIED",
+  "callable_contract": {
+    "callable": "enclose_exact_mode_sine_kernel",
+    "fail_closed_condition": "x/((2N+4)(2N+5)) < 1",
+    "mass_domain": "Maxwell mass_squared=[0,0]; massive_two_form mass_squared.lower>0",
+    "module": "closed_universe_observers.berger_recoil_interval_stream",
+    "tail_rule": "L*x^(N+1)/(2N+3)!/(1-x/((2N+4)(2N+5))), x=||A||_infinity L^2"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result exports the public enclose_exact_mode_sine_kernel callable for every exact Maxwell and massive-two-form block through two_j=4. It evaluates rational and algebraic matrix entries by outward rational intervals, specializes massive blocks only on a caller-declared strictly positive rational mass-squared interval, exports the first six interval coefficient matrices, and proves a uniform finite-slab sine-series remainder by an induced row-sum norm majorant. Nonpositive masses, nonzero Maxwell mass and noncontracting slabs fail closed. This certifies a runtime-parametric finite kernel enclosure, not a physical mass choice or the binding of switches, detector profiles and form contractions. It evaluates no I_abc, recoil record, tangent-cone, Bridge 3 or quantum claim.",
+  "claim_status": "FINITE_MODE_SINE_KERNEL_INTERVAL_ENCLOSURE_CERTIFIED_PROFILE_BINDING_OPEN",
+  "dependency_refs": {
+    "convolution": {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION.json",
+      "result_id": "BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION",
+      "sha256": "39cb2d9b5a7060d8888eab1d04ce9f7e88937f136c97b424fa25332fe31557da"
+    },
+    "exact_payload": {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD.json",
+      "result_id": "BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD",
+      "sha256": "6eab8f0b88c17251fc844021c862220e50c8f122abd6f2d67d53567b44a0513d"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "fixtures": {
+    "Maxwell_zero_mode_exact_tail": "0",
+    "massive_fixture_sha256": "e143f9beb04328481f9c3ddee433dc38da990e8a03a4fdc30f0c0dc5c37b4086",
+    "massive_two_j0_degree1_mass_squared": {
+      "lower": "1",
+      "upper": "2"
+    },
+    "massive_two_j0_degree1_operator_norm_upper": "58/9"
+  },
+  "flags": {
+    "ACTUAL_SWITCH_PROFILE_AND_FORM_BINDING_EXPORTED": false,
+    "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED": true,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "PHYSICAL_MASS_SPECIALIZATION_EXPORTED": false,
+    "QUANTUM_CLAIM": false,
+    "RUNTIME_POSITIVE_MASS_DOMAIN_PARAMETERIZED": true,
+    "UNIFORM_FINITE_SLAB_SINE_TAIL_EXPORTED": true
+  },
+  "mode_scope": {
+    "background": "compact positive Berger clock at fixed coupling",
+    "boundaries": "one caller-declared rational finite time slab; no spatial boundary",
+    "carrier": "rational interval matrices for exact finite Berger sine kernels",
+    "charge_sector": "fixed-coupling Berger sector",
+    "degree": "Maxwell 0,1 and massive-two-form 1,2",
+    "ell": "two_j=0,1,2,3,4",
+    "k": "all representation columns",
+    "m": "all representation rows",
+    "omega": "tau powers 1,3,5,7,9,11 plus a uniform sine-series tail",
+    "parity": "all finite form polarizations",
+    "theory": "classical pure-Weyl gravity plus Berger clock, Maxwell detector and massive two-form emitters"
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "nonpositive_mass_range"
+    },
+    {
+      "detected": true,
+      "name": "nonzero_Maxwell_mass"
+    },
+    {
+      "detected": true,
+      "name": "noncontracting_large_slab"
+    }
+  ],
+  "next_gate": "BIND_EXACT_SWITCH_PROFILE_DETECTOR_AND_FORM_FACTORS_TO_FINITE_KERNEL_INTERVALS",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_recoil_finite_mode_kernel_interval_enclosure.py",
+        "sha256": "f2b8c912ea7a4c4edce62ddbd127cc715fb8b52f8bf1daff3b86cdeed34893b5"
+      },
+      {
+        "path": "closed_universe_observers/berger_recoil_interval_stream.py",
+        "sha256": "f521ddd73a20fee0302ad58da5b7a952517403e6c3d7bba269cbb8ea70f19d8c"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_recoil_finite_mode_kernel_interval_enclosure.py",
+        "sha256": "0d212579edd15a9c86abde80aff7edcd71f0fdc83c0b207386d9cc6b2ea72232"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_recoil_finite_mode_kernel_interval_enclosure.py",
+        "sha256": "faafd9b06a1b9eeea4d00e5a27263e0c4a571b85bb1af17f80283a2c416066f4"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-recoil-finite-mode-kernel-interval-enclosure-v1.schema.json",
+        "sha256": "2bb295fe012a168dd150b79c4f914301032634d445c062f15d204d167010ef02"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-recoil-finite-mode-kernel-interval-enclosure.md",
+        "sha256": "78a249f1f099d28410b0d558fd35c8059c5a5c2194c2db7db10ee6602a9c8e56"
+      }
+    ]
+  },
+  "result_id": "BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE",
+  "schema": "closed-universe-berger-recoil-finite-mode-kernel-interval-enclosure-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

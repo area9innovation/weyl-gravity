@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "callable_contract", "fixtures", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-finite-mode-kernel-interval-enclosure-v1"},
+    "result_id": {"const": "BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "FINITE_MODE_SINE_KERNEL_INTERVAL_ENCLOSURE_CERTIFIED_PROFILE_BINDING_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 2, "maxProperties": 2},
+    "mode_scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"type": "string"}, "background": {"type": "string"}, "boundaries": {"type": "string"},
+        "charge_sector": {"type": "string"}, "carrier": {"type": "string"}, "degree": {"type": "string"},
+        "parity": {"type": "string"}, "ell": {"type": "string"}, "m": {"type": "string"},
+        "k": {"type": "string"}, "omega": {"type": "string"}
+      }
+    },
+    "callable_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["module", "callable", "mass_domain", "tail_rule", "fail_closed_condition"],
+      "properties": {
+        "module": {"const": "closed_universe_observers.berger_recoil_interval_stream"},
+        "callable": {"const": "enclose_exact_mode_sine_kernel"},
+        "mass_domain": {"type": "string"}, "tail_rule": {"type": "string"}, "fail_closed_condition": {"type": "string"}
+      }
+    },
+    "fixtures": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Maxwell_zero_mode_exact_tail", "massive_two_j0_degree1_mass_squared", "massive_two_j0_degree1_operator_norm_upper", "massive_fixture_sha256"],
+      "properties": {
+        "Maxwell_zero_mode_exact_tail": {"const": "0"},
+        "massive_two_j0_degree1_mass_squared": {"const": {"lower": "1", "upper": "2"}},
+        "massive_two_j0_degree1_operator_norm_upper": {"const": "58/9"},
+        "massive_fixture_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "mutation_results": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"type": "object", "additionalProperties": false, "required": ["name", "detected"], "properties": {"name": {"type": "string"}, "detected": {"const": true}}}
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED", "RUNTIME_POSITIVE_MASS_DOMAIN_PARAMETERIZED", "UNIFORM_FINITE_SLAB_SINE_TAIL_EXPORTED", "PHYSICAL_MASS_SPECIALIZATION_EXPORTED", "ACTUAL_SWITCH_PROFILE_AND_FORM_BINDING_EXPORTED", "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED", "QUANTUM_CLAIM"],
+      "properties": {
+        "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED": {"const": true},
+        "RUNTIME_POSITIVE_MASS_DOMAIN_PARAMETERIZED": {"const": true},
+        "UNIFORM_FINITE_SLAB_SINE_TAIL_EXPORTED": {"const": true},
+        "PHYSICAL_MASS_SPECIALIZATION_EXPORTED": {"const": false},
+        "ACTUAL_SWITCH_PROFILE_AND_FORM_BINDING_EXPORTED": {"const": false},
+        "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BIND_EXACT_SWITCH_PROFILE_DETECTOR_AND_FORM_FACTORS_TO_FINITE_KERNEL_INTERVALS"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

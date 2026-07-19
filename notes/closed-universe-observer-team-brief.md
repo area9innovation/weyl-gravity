@@ -812,8 +812,14 @@ propagation for supplied finite-slab retarded/advanced polynomial enclosures.
 `BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD` now supplies the missing exact
 algebraic carrier: sparse form-Laplacian matrices and six factored sine-kernel
 coefficients for all twenty Maxwell/massive blocks through `two_j=4`, retaining
-symbolic positive mass.  Interval enclosure, switches, detector intervals and
-form contractions are not yet bound to the engine.  Thus the complete
+symbolic positive mass.  `BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE`
+now evaluates those sparse algebraic blocks by outward rational intervals on a
+caller-declared finite slab and, for massive blocks, a strictly positive
+rational mass-squared interval.  It exports all six interval coefficient
+matrices and a uniform induced-row-norm sine-series tail; nonpositive masses,
+nonzero Maxwell mass and noncontracting slabs fail closed.  This runtime mass
+domain is not a physical mass choice.  Exact switches, detector intervals and
+typed form contractions are not yet bound to the engine.  Thus the complete
 all-shell detector provider, physical nested-convolution backend and tail-aware aggregate stop
 loop remain `OBSTRUCTED`.  Supplying
 masses and couplings would still produce no physical interval.  The exact-

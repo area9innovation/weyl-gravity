@@ -10,8 +10,10 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from fractions import Fraction
-from math import factorial
+from math import factorial, isqrt
 from typing import Any, Mapping, Sequence
+
+import sympy as sp
 
 
 @dataclass(frozen=True)
@@ -35,6 +37,12 @@ class RationalInterval:
     def __add__(self, other: "RationalInterval") -> "RationalInterval":
         return RationalInterval(self.lower + other.lower, self.upper + other.upper)
 
+    def __neg__(self) -> "RationalInterval":
+        return RationalInterval(-self.upper, -self.lower)
+
+    def __sub__(self, other: "RationalInterval") -> "RationalInterval":
+        return self + (-other)
+
     def __mul__(self, other: "RationalInterval") -> "RationalInterval":
         products = (
             self.lower * other.lower,
@@ -53,6 +61,47 @@ class RationalInterval:
             "upper": str(self.upper),
             "width": str(self.upper - self.lower),
         }
+
+
+@dataclass(frozen=True)
+class ComplexRationalInterval:
+    real: RationalInterval
+    imaginary: RationalInterval
+
+    @classmethod
+    def point(
+        cls, real: Fraction | int = 0, imaginary: Fraction | int = 0
+    ) -> "ComplexRationalInterval":
+        return cls(RationalInterval.point(real), RationalInterval.point(imaginary))
+
+    def __add__(self, other: "ComplexRationalInterval") -> "ComplexRationalInterval":
+        return ComplexRationalInterval(
+            self.real + other.real,
+            self.imaginary + other.imaginary,
+        )
+
+    def __neg__(self) -> "ComplexRationalInterval":
+        return ComplexRationalInterval(-self.real, -self.imaginary)
+
+    def __mul__(self, other: "ComplexRationalInterval") -> "ComplexRationalInterval":
+        return ComplexRationalInterval(
+            self.real * other.real - self.imaginary * other.imaginary,
+            self.real * other.imaginary + self.imaginary * other.real,
+        )
+
+    def scale(self, scalar: Fraction | int) -> "ComplexRationalInterval":
+        scalar_interval = RationalInterval.point(Fraction(scalar))
+        return ComplexRationalInterval(
+            self.real * scalar_interval,
+            self.imaginary * scalar_interval,
+        )
+
+    def absolute_upper(self) -> Fraction:
+        # |z|_2 <= |Re z| + |Im z|, sufficient for the induced row-sum norm.
+        return _absolute_upper(self.real) + _absolute_upper(self.imaginary)
+
+    def serialize(self) -> dict[str, dict[str, str]]:
+        return {"real": self.real.serialize(), "imaginary": self.imaginary.serialize()}
 
 
 def _sum_intervals(values: Sequence[RationalInterval]) -> RationalInterval:
@@ -133,6 +182,270 @@ def detector_profile_coefficient_interval(
 
 def _absolute_upper(interval: RationalInterval) -> Fraction:
     return max(abs(interval.lower), abs(interval.upper))
+
+
+def _sqrt_fraction_interval(value: Fraction, bits: int) -> RationalInterval:
+    if value < 0:
+        raise ValueError("cannot enclose a negative square root on the real line")
+    if bits < 8:
+        raise ValueError("radical_bits must be at least 8")
+    scale = 1 << bits
+    scaled_numerator = value.numerator * scale * scale
+    quotient = scaled_numerator // value.denominator
+    lower_integer = isqrt(quotient)
+    lower = Fraction(lower_integer, scale)
+    if lower_integer * lower_integer * value.denominator == scaled_numerator:
+        return RationalInterval.point(lower)
+    return RationalInterval(lower, Fraction(lower_integer + 1, scale))
+
+
+def _real_interval_power(interval: RationalInterval, exponent: int) -> RationalInterval:
+    if exponent < 0:
+        raise ValueError("negative interval powers are not supported")
+    result = RationalInterval.point(1)
+    factor = interval
+    power = exponent
+    while power:
+        if power & 1:
+            result = result * factor
+        factor = factor * factor
+        power >>= 1
+    return result
+
+
+def _sympy_real_interval(
+    expression: sp.Expr,
+    *,
+    mass_squared_interval: RationalInterval,
+    radical_bits: int,
+) -> RationalInterval:
+    """Evaluate the exact payload expression by outward rational intervals."""
+    if expression.is_Integer:
+        return RationalInterval.point(int(expression))
+    if expression.is_Rational:
+        return RationalInterval.point(Fraction(int(expression.p), int(expression.q)))
+    if expression.is_Symbol and expression.name == "mu_squared":
+        return mass_squared_interval
+    if expression.is_Add:
+        return _sum_intervals(
+            [
+                _sympy_real_interval(
+                    term,
+                    mass_squared_interval=mass_squared_interval,
+                    radical_bits=radical_bits,
+                )
+                for term in expression.args
+            ]
+        )
+    if expression.is_Mul:
+        value = RationalInterval.point(1)
+        for factor in expression.args:
+            value = value * _sympy_real_interval(
+                factor,
+                mass_squared_interval=mass_squared_interval,
+                radical_bits=radical_bits,
+            )
+        return value
+    if expression.is_Pow:
+        base, exponent = expression.args
+        if exponent == sp.Rational(1, 2) and base.is_Rational and base >= 0:
+            return _sqrt_fraction_interval(
+                Fraction(int(base.p), int(base.q)), radical_bits
+            )
+        if exponent.is_Integer:
+            return _real_interval_power(
+                _sympy_real_interval(
+                    base,
+                    mass_squared_interval=mass_squared_interval,
+                    radical_bits=radical_bits,
+                ),
+                int(exponent),
+            )
+    raise ValueError(f"unsupported exact kernel expression: {sp.sstr(expression)}")
+
+
+def _sympy_complex_interval(
+    serialized: str,
+    *,
+    mass_squared_interval: RationalInterval,
+    radical_bits: int,
+) -> ComplexRationalInterval:
+    expression = sp.sympify(
+        serialized,
+        locals={"mu_squared": sp.Symbol("mu_squared", real=True), "I": sp.I},
+    )
+    real_part, imaginary_part = expression.as_real_imag(deep=True)
+    return ComplexRationalInterval(
+        _sympy_real_interval(
+            sp.expand(real_part),
+            mass_squared_interval=mass_squared_interval,
+            radical_bits=radical_bits,
+        ),
+        _sympy_real_interval(
+            sp.expand(imaginary_part),
+            mass_squared_interval=mass_squared_interval,
+            radical_bits=radical_bits,
+        ),
+    )
+
+
+def _zero_complex_matrix(dimension: int) -> list[list[ComplexRationalInterval]]:
+    return [
+        [ComplexRationalInterval.point() for _ in range(dimension)]
+        for _ in range(dimension)
+    ]
+
+
+def _identity_complex_matrix(dimension: int) -> list[list[ComplexRationalInterval]]:
+    value = _zero_complex_matrix(dimension)
+    for index in range(dimension):
+        value[index][index] = ComplexRationalInterval.point(1)
+    return value
+
+
+def _multiply_complex_interval_matrices(
+    left: Sequence[Sequence[ComplexRationalInterval]],
+    right: Sequence[Sequence[ComplexRationalInterval]],
+) -> list[list[ComplexRationalInterval]]:
+    dimension = len(left)
+    output = _zero_complex_matrix(dimension)
+    for row in range(dimension):
+        for inner in range(dimension):
+            if left[row][inner] == ComplexRationalInterval.point():
+                continue
+            for column in range(dimension):
+                if right[inner][column] == ComplexRationalInterval.point():
+                    continue
+                output[row][column] = output[row][column] + (
+                    left[row][inner] * right[inner][column]
+                )
+    return output
+
+
+def _serialize_sparse_complex_interval_matrix(
+    matrix: Sequence[Sequence[ComplexRationalInterval]],
+) -> list[dict[str, object]]:
+    zero = ComplexRationalInterval.point()
+    return [
+        {"row": row, "column": column, **entry.serialize()}
+        for row, entries in enumerate(matrix)
+        for column, entry in enumerate(entries)
+        if entry != zero
+    ]
+
+
+def enclose_exact_mode_sine_kernel(
+    certificate: Mapping[str, Any],
+    *,
+    two_j: int,
+    family: str,
+    form_degree: int,
+    mass_squared_interval: RationalInterval,
+    slab_length: Fraction,
+    series_order: int = 5,
+    radical_bits: int = 80,
+) -> dict[str, object]:
+    """Interval-enclose one exact finite Berger sine-kernel matrix block.
+
+    The returned coefficients enclose ``(-1)^n A^n/(2n+1)!``.  The uniform
+    remainder is valid for ``0 <= tau <= slab_length`` whenever the certified
+    geometric majorant has ratio below one.  A massive mass range is a runtime
+    specialization and is not promoted to a physical model choice.
+    """
+    if certificate.get("result_id") != "BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD":
+        raise ValueError("wrong exact mode-kernel certificate")
+    if not 0 <= two_j <= 4:
+        raise ValueError("exact mode-kernel payload covers only 0<=two_j<=4")
+    if family not in ("Maxwell", "massive_two_form"):
+        raise ValueError("family must be Maxwell or massive_two_form")
+    if not 0 <= series_order <= 5:
+        raise ValueError("series_order must lie between zero and five")
+    slab_length = Fraction(slab_length)
+    if slab_length <= 0:
+        raise ValueError("slab_length must be positive")
+    if family == "Maxwell" and mass_squared_interval != RationalInterval.point(0):
+        raise ValueError("Maxwell blocks require the exact zero mass interval")
+    if family == "massive_two_form" and mass_squared_interval.lower <= 0:
+        raise ValueError("massive two-form blocks require a strictly positive mass-squared interval")
+
+    block = next(
+        (
+            value
+            for value in certificate["blocks"]
+            if value["two_j"] == two_j
+            and value["family"] == family
+            and value["form_degree"] == form_degree
+        ),
+        None,
+    )
+    if block is None:
+        raise ValueError("requested family/form-degree block is absent")
+    dimension = int(block["dimension"])
+    operator = _zero_complex_matrix(dimension)
+    for entry in block["operator_nonzero_entries"]:
+        operator[int(entry["row"])][int(entry["column"])] = _sympy_complex_interval(
+            str(entry["value"]),
+            mass_squared_interval=mass_squared_interval,
+            radical_bits=radical_bits,
+        )
+
+    operator_norm_upper = max(
+        (
+            sum((entry.absolute_upper() for entry in row), Fraction(0))
+            for row in operator
+        ),
+        default=Fraction(0),
+    )
+    dimensionless_norm = operator_norm_upper * slab_length * slab_length
+    first_omitted_order = series_order + 1
+    ratio_denominator = (2 * first_omitted_order + 2) * (2 * first_omitted_order + 3)
+    ratio_upper = dimensionless_norm / ratio_denominator
+    if ratio_upper >= 1:
+        raise ValueError(
+            "series tail majorant does not contract; reduce the slab or export more exact orders"
+        )
+
+    power = _identity_complex_matrix(dimension)
+    coefficients = []
+    series_rows = {int(row["series_order"]): row for row in block["series_coefficients"]}
+    for order in range(series_order + 1):
+        if order:
+            power = _multiply_complex_interval_matrices(power, operator)
+        scalar = Fraction(series_rows[order]["scalar_factor"])
+        coefficient = [
+            [entry.scale(scalar) for entry in row]
+            for row in power
+        ]
+        coefficients.append(
+            {
+                "series_order": order,
+                "tau_power": 2 * order + 1,
+                "entries": _serialize_sparse_complex_interval_matrix(coefficient),
+            }
+        )
+
+    first_omitted = (
+        slab_length
+        * dimensionless_norm**first_omitted_order
+        / factorial(2 * first_omitted_order + 1)
+    )
+    remainder_upper = first_omitted / (1 - ratio_upper)
+    return {
+        "two_j": two_j,
+        "family": family,
+        "form_degree": form_degree,
+        "dimension": dimension,
+        "mass_squared_interval": mass_squared_interval.serialize(),
+        "slab_length": str(slab_length),
+        "radical_bits": radical_bits,
+        "series_order": series_order,
+        "coefficient_matrices": coefficients,
+        "operator_row_sum_norm_upper": str(operator_norm_upper),
+        "dimensionless_norm_upper": str(dimensionless_norm),
+        "tail_ratio_upper": str(ratio_upper),
+        "uniform_sine_kernel_remainder_upper": str(remainder_upper),
+        "claim_boundary": "one finite exact-payload block on a caller-declared rational mass/slab domain; switches, detector profiles, form contractions and I_abc remain unbound",
+    }
 
 
 def _polynomial_uniform_upper(

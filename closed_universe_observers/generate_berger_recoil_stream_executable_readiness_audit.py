@@ -27,6 +27,7 @@ DEPENDENCIES = {
     "finite_shell_aggregator": PACKAGE / "certificates/BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR.json",
     "finite_detector_provider": PACKAGE / "certificates/BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER.json",
     "finite_nested_convolution": PACKAGE / "certificates/BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION.json",
+    "finite_mode_kernel_intervals": PACKAGE / "certificates/BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE.json",
 }
 REQUIRED_CALLABLES = {
     "detector_profile_coefficient_provider": "detector_profile_coefficient_interval",
@@ -66,6 +67,7 @@ def readiness_rows(
     finite_detector_provider: bool = False,
     complete_detector_provider: bool = False,
     finite_nested_convolution: bool = False,
+    finite_mode_kernel_intervals: bool = False,
     complete_nested_convolution: bool = False,
     treat_symbolic_word_as_backend: bool = False,
 ) -> list[dict[str, Any]]:
@@ -106,6 +108,23 @@ def readiness_rows(
                 "BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION"
                 if finite_nested_convolution
                 and REQUIRED_CALLABLES["nested_time_convolution_backend"] in functions
+                else "NO_CERTIFIED_FINITE_CALLABLE"
+            ),
+        },
+        {
+            "id": "finite_exact_mode_kernel_interval_enclosure",
+            "status": (
+                "CERTIFIED"
+                if finite_mode_kernel_intervals
+                and "enclose_exact_mode_sine_kernel" in functions
+                else "OBSTRUCTED"
+            ),
+            "required_callable": "enclose_exact_mode_sine_kernel",
+            "coverage": "Maxwell_and_massive_two_form_two_j_inclusive_0_to_4",
+            "evidence": (
+                "BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE"
+                if finite_mode_kernel_intervals
+                and "enclose_exact_mode_sine_kernel" in functions
                 else "NO_CERTIFIED_FINITE_CALLABLE"
             ),
         },
@@ -154,6 +173,7 @@ def build() -> dict[str, Any]:
         "finite_shell_aggregator": "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED",
         "finite_detector_provider": "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED",
         "finite_nested_convolution": "FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED",
+        "finite_mode_kernel_intervals": "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -174,11 +194,15 @@ def build() -> dict[str, Any]:
     complete_nested_convolution = values["finite_nested_convolution"]["flags"][
         "COMPLETE_PHYSICAL_NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED"
     ]
+    finite_mode_kernel_intervals = values["finite_mode_kernel_intervals"]["flags"][
+        "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED"
+    ]
     rows = readiness_rows(
         functions,
         finite_detector_provider=finite_detector_provider,
         complete_detector_provider=complete_detector_provider,
         finite_nested_convolution=finite_nested_convolution,
+        finite_mode_kernel_intervals=finite_mode_kernel_intervals,
         complete_nested_convolution=complete_nested_convolution,
     )
     row_status = {row["id"]: row["status"] for row in rows}
@@ -193,6 +217,7 @@ def build() -> dict[str, Any]:
         finite_detector_provider=finite_detector_provider,
         complete_detector_provider=complete_detector_provider,
         finite_nested_convolution=finite_nested_convolution,
+        finite_mode_kernel_intervals=finite_mode_kernel_intervals,
         complete_nested_convolution=complete_nested_convolution,
         treat_symbolic_word_as_backend=True,
     )
@@ -206,9 +231,12 @@ def build() -> dict[str, Any]:
         "callable is also certified only on the validated advanced-Maxwell image for "
         "2j=0,...,4. It is not a complete all-shell detector provider and is not a "
         "massive or recoil evaluation. A separate exact finite-slab polynomial "
-        "convolution callable is certified, "
-        "but the actual Berger mode kernels, switches and detector intervals are not "
-        "bound to it, so the complete nested-convolution row remains obstructed. "
+        "convolution callable is certified. Exact finite Berger mode kernels are now "
+        "separately interval-enclosed through 2j=4 on caller-declared rational slabs "
+        "and positive massive mass domains, with uniform sine tails. The switches, "
+        "detector intervals and typed form contractions are still not bound into a "
+        "physical nested channel, so the complete nested-convolution row remains "
+        "obstructed. "
         "No complete callable backend yet provides the remaining detector coefficient "
         "intervals or tail-aware four-stream stop loop. "
         "Supplying masses and "
@@ -223,7 +251,7 @@ def build() -> dict[str, Any]:
         "schema": "closed-universe-berger-recoil-stream-executable-readiness-audit-v1",
         "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
         "setting_id": values["per_shell_word"]["setting_id"],
-        "claim_status": "THREE_FINITE_EXECUTION_CAPABILITIES_CERTIFIED_COMPLETE_STREAM_OBSTRUCTED",
+        "claim_status": "FOUR_FINITE_EXECUTION_CAPABILITIES_CERTIFIED_COMPLETE_STREAM_OBSTRUCTED",
         "atlas_status": "OBSTRUCTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
@@ -269,6 +297,7 @@ def build() -> dict[str, Any]:
             "COMPLETE_SYMBOLIC_OPERATOR_WORD_RETAINED": True,
             "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED": row_status["finite_detector_coefficient_provider_two_j0_to_4"] == "CERTIFIED",
             "FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED": row_status["finite_polynomial_nested_time_convolution"] == "CERTIFIED",
+            "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED": row_status["finite_exact_mode_kernel_interval_enclosure"] == "CERTIFIED",
             "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": row_status["shell_interval_evaluator"] == "CERTIFIED",
             "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": False,
             "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": False,
@@ -279,7 +308,7 @@ def build() -> dict[str, Any]:
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "BIND_ACTUAL_BERGER_INTERVALS_TO_NESTED_CONVOLUTION_AND_EXTEND_DETECTOR_PROVIDER",
+        "next_gate": "BIND_SWITCH_PROFILE_DETECTOR_AND_FORM_INTERVALS_TO_FINITE_MODE_KERNELS",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",
