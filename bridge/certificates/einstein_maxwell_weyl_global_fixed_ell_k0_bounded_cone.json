@@ -2,31 +2,36 @@
   "bounded_sufficiency": {
     "Wilson": "identically zero mixed source",
     "circumference": "exact k=0 radius transport",
-    "constant_twist": "exact flat-holonomy transport without first-order k=0 frequency drift",
+    "constant_twist": "wave-free A is exact; only A=0 is retained on the certified wave subcone",
     "standard_static": "complete standard-global bounded theorem",
     "wave_self": "every-fixed-ell all-m both-parity common-zero theorem",
     "zero_frequency": "constant L1 right inverse; no Jordan growth"
   },
-  "claim_boundary": "This theorem is blockwise in one fixed ell>=2 at k=0. It does not cover cross-ell superpositions, nonzero momentum, exceptional ell=1 wave blocks, arbitrary finite harmonic sums, all-orders integration, residual descent, causal propagation, observables, particles or quantum theory.",
+  "claim_boundary": "This theorem certifies every fixed-ell A=0 wave subcone and the wave-free static branch at k=0. Nonzero-A wave strata, cross-ell global sums, nonzero momentum and higher lifecycles remain open.",
   "classification": {
+    "A_arbitrary_wave_branch_withdrawn": true,
+    "A_zero_wave_subcone_certified": true,
     "all_m_both_parities_all_qp_branches_included": true,
     "all_orders_integrability": false,
-    "bounded_zero_locus_necessary_and_sufficient": true,
+    "bounded_zero_locus_necessary_and_sufficient": false,
     "causal_or_quantum_claim": false,
+    "complete_constant_twist_wave_zero_locus_classified": false,
     "cross_ell_superpositions_classified": false,
-    "every_fixed_generic_ell_global_bounded_cone_classified": true,
+    "every_fixed_generic_ell_global_bounded_cone_classified": false,
     "exceptional_wave_inputs_classified": false,
     "nonzero_momentum_classified": false
   },
   "complete_bounded_cone": {
-    "branch_intersection": "u_wave=0,d=0 with c,W_x,A arbitrary",
+    "branch_intersection": "u_wave=0,d=0,A=0 with c,W_x arbitrary",
+    "certified_wave_subcone": "u_wave is any nonzero fixed-ell common H,J_i zero; a=b=d=Q_e=0, A=B=0; c,W_x arbitrary",
+    "nonzero_A_wave_stratum": "OPEN: constant-twist resonance equations have not been solved beyond the ell=2 counterexample",
     "static_branch": "u_wave=0: (c,d,W_x,A) arbitrary, with a=b=Q_e=0 and B=0",
-    "union_is_necessary_and_sufficient": true,
-    "wave_branch": "u_wave is any nonzero fixed-ell common H,J_i zero; a=b=d=Q_e=0 and B=0; c,W_x,A are arbitrary"
+    "union_is_necessary_and_sufficient": false
   },
   "correction_classes": {
     "BOUNDED_OR_FINITE_QUASIPERIODIC": {
-      "status": "CERTIFIED"
+      "reason": "the static branch and A=0 fixed-ell wave subcone are certified; nonzero-A is open",
+      "status": "OPEN"
     },
     "CAUSAL_RETARDED": {
       "status": "NO_CERTIFIED_MAP"
@@ -48,12 +53,12 @@
     "electric_independence": "the Q_e^2/2 term is a homogeneous pure-electric source coefficient and is independent of the wave ell; the wave contribution has already vanished by the common H moment-map equation before this coefficient is applied",
     "twist_velocity": "B=0 on every bounded branch"
   },
-  "interpretation": "The ell=2 stratification is universal blockwise at rest. For every fixed generic angular momentum, a nonzero bounded wave branch is exactly the common stabilizer cone times the static c, Wilson and twist-holonomy spectators; the generalized a,b,d directions, electric tangent and twist velocity are excluded.",
+  "interpretation": "The symbolic a,b,d elimination and A=0 fixed-ell wave extensions remain valid. Constant twist is not an automatic wave spectator: the ell=2 off-axis counterexample withdraws the former A-arbitrary product and leaves the nonzero-A zero locus open.",
   "lifecycle_state": "CLASSIFIED",
-  "next_gate": "classify bounded products between distinct ell blocks at k=0, then treat nonzero compact momentum and its circumference resonance",
+  "next_gate": "solve the constant-twist resonance map at general ell, then revisit cross-ell and nonzero-momentum global cones",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.py",
-    "generator_sha256": "64f19b78d11d73c6ef989b993d2a21134a2672a23183a99b5dfaf895f4872c8a",
+    "generator_sha256": "8dc6e01221235192b472659152d8c43feeff76ba9ad64cf1e14be97e0d85df98",
     "inputs": {
       "L1_completion": {
         "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion.json",
@@ -94,11 +99,15 @@
       "standard_global": {
         "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
         "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      },
+      "twist_counterexample": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
+        "sha256": "6ddebcd00b2934d513f0676d87f8ec2423f79ec30d1341cb73b484362b533c72"
       }
     }
   },
   "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FIXED_ELL_K0_BOUNDED_CONE",
-  "result_state": "EVERY_FIXED_GENERIC_ELL_K0_GLOBAL_BOUNDED_CONE_CLASSIFIED",
+  "result_state": "EVERY_FIXED_GENERIC_ELL_K0_GLOBAL_BOUNDED_CONE_PARTIAL_AFTER_TWIST_CORRECTION",
   "schema": "einstein-maxwell-weyl-global-fixed-ell-k0-bounded-cone-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.schema.json",
   "schema_sha256": "9b6516768f454f77e2741e5aa8150b9fb7c336eda0294c079c8278fd1567194d",
@@ -132,7 +141,7 @@
       "tests_run": 31
     },
     "tier_2": {
-      "criterion": "generic-lambda pivot, fixed-ell wave, global-source and transport inputs are exact unchanged dependencies",
+      "criterion": "generic-lambda pivot, fixed-ell wave, global-source and twist-position counterexample inputs are exact content-addressed dependencies",
       "status": "PASS_BY_CONTENT_ADDRESS"
     },
     "tier_3": {

@@ -28,10 +28,14 @@ def main() -> None:
     assert promotion["all_m"] == [-2, -1, 0, 1, 2]
     assert "identity" in promotion["Schur_lemma"]
     cone = value["complete_bounded_cone"]
-    assert cone["union_is_necessary_and_sufficient"] is True
+    assert cone["union_is_necessary_and_sufficient"] is False
     assert "A in R^3" in cone["static_branch"]
-    assert "H,J_a density cone" in cone["wave_branch"]
+    assert "A=B=0" in cone["certified_wave_subcone"]
+    assert cone["nonzero_A_wave_stratum"].startswith("OPEN")
     classification = value["classification"]
+    assert classification["A_arbitrary_wave_branch_withdrawn"] is True
+    assert classification["A_zero_wave_subcone_certified"] is True
+    assert classification["bounded_zero_locus_necessary_and_sufficient"] is False
     assert classification["all_wave_m_and_both_axial_extra_polarizations_included"] is True
     assert classification["polar_input_classified"] is False
     assert value["correction_classes"]["CAUSAL_RETARDED"]["status"] == "NO_CERTIFIED_MAP"

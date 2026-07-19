@@ -12,8 +12,10 @@ stated.  At zero-frequency axial `L=1`, the rotation constraints put the
 source in the form `(S0,S1,S0,S1)`, and the constant correction
 `(S0/2,-S1/2,0,0)` is an exact right inverse.  No Jordan growth is needed.
 
-The complete declared global cone is the union of the wave-free standard
-branch `(c,d,W_x,A)` and a nonzero wave branch with `a=b=d=Q_e=B=0`, arbitrary
-`(c,W_x,A)`, and axial Einstein-minus/extra densities satisfying all four
-`H,J_a` equations.  Polar waves, other harmonics and nonzero momenta remain
-open.
+The former product with arbitrary constant twist `A` is withdrawn.  The
+exact twist-position matrix gives the off-axis witness `24*sqrt(3)` for a
+twist `m=1` crossed with axial extra `e1,m=0`, while all stabilizer moment maps
+vanish and the twist--minus term lies at a different frequency.  Therefore
+the wave-free branch `(c,d,W_x,A)` and the complete `A=0` wave subcone are
+certified separately.  The nonzero-`A` wave zero locus, polar waves, other
+harmonics and nonzero momenta remain open.

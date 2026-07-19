@@ -14,18 +14,23 @@ class GlobalFiniteHarmonicK0BoundedConeTests(unittest.TestCase):
     def test_certificate_current(self) -> None:
         self.assertEqual(json.loads(OUTPUT.read_text(encoding="utf-8")), self.value)
 
-    def test_complete_union(self) -> None:
-        self.assertTrue(self.value["complete_bounded_cone"]["union_is_necessary_and_sufficient"])
+    def test_corrected_union(self) -> None:
+        cone = self.value["complete_bounded_cone"]
+        self.assertFalse(cone["union_is_necessary_and_sufficient"])
+        self.assertIn("A=B=0", cone["certified_wave_subcone"])
+        self.assertTrue(cone["nonzero_A_wave_stratum"].startswith("OPEN"))
 
     def test_cross_ell_is_included(self) -> None:
         classification = self.value["classification"]
-        self.assertTrue(classification["arbitrary_finite_generic_ell_global_bounded_cone_classified"])
+        self.assertFalse(classification["arbitrary_finite_generic_ell_global_bounded_cone_classified"])
         self.assertTrue(classification["cross_ell_wave_superpositions_classified"])
+        self.assertTrue(classification["A_arbitrary_wave_branch_withdrawn"])
+        self.assertTrue(classification["A_zero_wave_subcone_certified"])
 
     def test_minus_channel_isolated(self) -> None:
         separation = self.value["global_wave_separation"]
         self.assertIn("distinct from every other primary shell", separation["selected_channel"])
-        self.assertIn("none contributes to the adjoint projection", separation["other_global_columns"])
+        self.assertIn("constant A is excluded", separation["other_global_columns"])
         self.assertIn("forces a=b=d=0", separation["consequence"])
 
     def test_fail_closed(self) -> None:

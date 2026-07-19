@@ -156,33 +156,40 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
     def test_global_axial_all_m_bounded_cone_survives(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone"]
         second_order = entry["mode_data"]["second_order"]
-        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
-        self.assertIn("wave-density", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertIn("A=0", second_order["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
     def test_global_both_parity_ell2_bounded_cone_is_registered(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone"]
         second_order = entry["mode_data"]["second_order"]
-        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
-        self.assertIn("axial--polar wave-cone", second_order["bounded_or_finite_quasiperiodic"]["statement"])
-        self.assertIn("constant right inverse", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertIn("A=0", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("twist-position resonance", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
     def test_global_fixed_ell_k0_bounded_cone_is_registered(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone"]
         second_order = entry["mode_data"]["second_order"]
-        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertIn("every fixed ell>=2", second_order["bounded_or_finite_quasiperiodic"]["statement"])
-        self.assertIn("C_A=", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("A=0", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("generic C_A and C_P", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
     def test_global_finite_harmonic_k0_bounded_cone_is_registered(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone"]
         second_order = entry["mode_data"]["second_order"]
-        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertIn("every finite generic k=0 wave sum", second_order["bounded_or_finite_quasiperiodic"]["statement"])
-        self.assertIn("cannot be screened", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("A=0", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("constant-twist resonance", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
+    def test_constant_twist_wave_counterexample_is_registered(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.constant_twist_wave_counterexample"]
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertIn("24*sqrt(3)", entry["mode_data"]["resonance"]["statement"])
 
 
 if __name__ == "__main__":

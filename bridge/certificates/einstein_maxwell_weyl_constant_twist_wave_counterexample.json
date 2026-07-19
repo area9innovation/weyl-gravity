@@ -1,0 +1,138 @@
+{
+  "adjoint_obstruction": {
+    "bounded_correction_exists": false,
+    "frequency_isolation": "A times the extra mode lies at omega_extra; A times Einstein-minus lies at omega_minus, and wave-wave sums/differences do not equal omega_extra",
+    "input_column": "axial extra e1",
+    "nonzero_witness": "24*sqrt(3)",
+    "position_matrix": [
+      [
+        "0",
+        "24*sqrt(3)",
+        "0",
+        "0"
+      ],
+      [
+        "24*sqrt(3)",
+        "0",
+        "0",
+        "96/5"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "24/5",
+        "0",
+        "0"
+      ]
+    ],
+    "projected_adjoint_rows": [
+      "0",
+      "24*sqrt(3)",
+      "0",
+      "0"
+    ]
+  },
+  "affected_results": {
+    "global_axial": "EINSTEIN_MAXWELL_WEYL_GLOBAL_AXIAL_ELL2_ALL_M_MINUS_EXTRA_BOUNDED_CONE",
+    "global_ell2": "EINSTEIN_MAXWELL_WEYL_GLOBAL_ELL2_ALL_M_BOTH_PARITY_BOUNDED_CONE",
+    "global_finite": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FINITE_HARMONIC_K0_BOUNDED_CONE",
+    "global_fixed_ell": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FIXED_ELL_K0_BOUNDED_CONE"
+  },
+  "claim_boundary": "This is one exact counterexample and a lifecycle correction. It does not classify every nonzero-A wave stratum, nonzero momentum, infinite sums, all-orders integration, residual descent, causal propagation or quantum theory.",
+  "classification": {
+    "A_arbitrary_wave_branch_refuted": true,
+    "A_zero_wave_subcone_retained": true,
+    "causal_or_quantum_claim": false,
+    "complete_constant_twist_wave_zero_locus_classified": false,
+    "explicit_prior_cone_member_constructed": true,
+    "moment_maps_vanish_but_bounded_resonance_nonzero": true,
+    "nonzero_adjoint_pairing_certified": true,
+    "nonzero_momentum_classified": false,
+    "wave_free_constant_twist_modulus_retained": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "first_order_fixture": {
+    "claimed_membership": "this point lies in every affected certificate's prior A-arbitrary nonzero wave branch",
+    "globals": "a=b=c=d=Q_e=W_x=B=0 and a nonzero constant twist position A in the m=1 direction",
+    "moment_maps": "mu_H=mu_J1=mu_J2=mu_J3=mu_Px=0",
+    "wave": "choose occupation rho_extra>0 on axial extra e1, m=0 and rho_minus=(omega_extra^2/omega_minus^2)*rho_extra on axial Einstein-minus, m=0; equivalently the coefficient magnitudes obey |C_minus|=(omega_extra/omega_minus)|C_extra|"
+  },
+  "interpretation": "Constant twist is a genuine wave-free holonomy modulus, not an automatic bounded spectator for radiative modes. A perpendicular twist crossed with a balanced ell=2 extra/Einstein-minus wave has a nonzero adjoint resonance, so the formerly advertised A-arbitrary wave branches are too large. Their A=0 subcones survive, while the nonzero-A strata require the complete twist-position resonance zero locus.",
+  "lifecycle_state": "CLASSIFIED",
+  "logical_repair": {
+    "invalid_inference": "pure constant-twist exactness was used as if it supplied a bounded mixed transport for every oscillator",
+    "pure_twist_limit": "the exact flat-holonomy family certifies the wave-free constant-twist modulus only",
+    "required_replacement": "retain A arbitrary on the static branch; on wave branches impose every constant-twist resonance functional and solve its common zero locus",
+    "safe_subcone": "A=0 leaves the previously certified wave correction untouched"
+  },
+  "next_gate": "downgrade the affected global cone certificates and atlas rows, then solve the constant-twist position resonance equations on the complete fixed-ell and finite-harmonic wave cones",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_wave_counterexample.py",
+    "generator_sha256": "66fa00161996b05469fc1918b38fc9fe9a208d4ab2e3f0a22ec14d599af7a11b",
+    "inputs": {
+      "moment_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
+        "sha256": "cf0cbbe2f8b99924c9045c99689481da882ff330e8007a18178488db8ca6a17b"
+      },
+      "pure_twist": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      },
+      "twist_matrix": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
+        "sha256": "4096367d5477d63d5300f43829120f2c70358ab637ea51cc9948973cd8940b72"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_WAVE_COUNTEREXAMPLE",
+  "result_state": "A_ARBITRARY_GLOBAL_WAVE_CONE_CLAIMS_WITHDRAWN",
+  "schema": "einstein-maxwell-weyl-constant-twist-wave-counterexample-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_constant_twist_wave_counterexample.schema.json",
+  "schema_sha256": "ad0a7f3a941dd62ba4a8479515d71cf2a1e6804bf5fb3dc2c1a233892cdf00ed",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic correction",
+    "carrier": "one perpendicular constant twist position crossed with the rotationally neutral axial ell=2 Einstein-minus/extra balance",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "1 x 2 -> 2",
+    "k": 0,
+    "m": "twist m=1, wave m=0, output M=1 in the certified complex harmonic fixture",
+    "omega": "omega_extra=4/sqrt(3), with the Einstein-minus balance at sqrt(6-2*sqrt(3))",
+    "parity": "axial input and axial resonant output",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_wave_counterexample --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_wave_counterexample.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_constant_twist_wave_counterexample"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.1,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 2.65,
+      "status": "PASS",
+      "tests_run": 5
+    },
+    "tier_2": {
+      "criterion": "the complete twist-position adjoint matrix and the rotationally neutral wave cone are unchanged exact inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "the complete nonzero-A zero locus and higher lifecycle gates remain open",
+      "status": "NOT_RUN"
+    }
+  }
+}

@@ -21,28 +21,33 @@
       "0"
     ]
   },
-  "claim_boundary": "This theorem is complete for the full ell=2,k=0 wave block adjoined to the declared standard global data. It does not classify ell!=2, nonzero momentum, exceptional oscillators beyond the global twist, arbitrary finite cross-ell sums, infinite sums, all-orders integration, final residual descent, causal propagation, observables, particles or quantum theory.",
+  "claim_boundary": "This theorem certifies the static branch and the A=0 full-ell=2 wave subcone. The complete nonzero-A wave locus, other ell, nonzero momentum and higher lifecycles remain open.",
   "classification": {
+    "A_arbitrary_wave_branch_withdrawn": true,
+    "A_zero_wave_subcone_certified": true,
     "all_m_both_parities_all_ell2_qp_branches_included": true,
     "all_m_promotion_proved_by_SO3_multiplicity_one": true,
     "all_orders_integrability": false,
-    "bounded_zero_locus_necessary_and_sufficient": true,
+    "bounded_zero_locus_necessary_and_sufficient": false,
     "causal_or_quantum_claim": false,
-    "complete_declared_global_plus_ell2_carrier_covered": true,
+    "complete_constant_twist_wave_zero_locus_classified": false,
+    "complete_declared_global_plus_ell2_carrier_covered": false,
     "complete_finite_harmonic_bounded_cone_classified": false,
     "electric_taub_only_balance_excluded_by_full_source": true,
     "general_ell_classified": false,
     "nonzero_momentum_classified": false
   },
   "complete_bounded_cone": {
-    "branch_intersection": "u_wave=0,d=0 with c,W_x,A arbitrary",
+    "branch_intersection": "u_wave=0,d=0,A=0 with c,W_x arbitrary",
+    "certified_wave_subcone": "u_wave is any nonzero common H,J_i zero; a=b=d=Q_e=0, A=B=0; c,W_x arbitrary",
+    "nonzero_A_wave_stratum": "OPEN: impose the complete constant-twist position resonance functionals; the prior A-arbitrary statement is refuted",
     "static_branch": "u_wave=0: (c,d,W_x,A) arbitrary, with a=b=Q_e=0 and B=0",
-    "union_is_necessary_and_sufficient": true,
-    "wave_branch": "u_wave is any nonzero point of {mu_H=mu_J1=mu_J2=mu_J3=0}; a=b=d=Q_e=0 and B=0; c,W_x and A in R^3 are arbitrary"
+    "union_is_necessary_and_sufficient": false
   },
   "correction_classes": {
     "BOUNDED_OR_FINITE_QUASIPERIODIC": {
-      "status": "CERTIFIED"
+      "reason": "static and A=0 wave strata are certified, while the complete nonzero-A zero locus is open",
+      "status": "OPEN"
     },
     "CAUSAL_RETARDED": {
       "status": "NO_CERTIFIED_MAP"
@@ -70,19 +75,19 @@
   "independent_global_audits": {
     "bounded_zero_frequency_image": "zero",
     "constant_twist_transport": {
-      "consequence": "the exact flat-holonomy family transports every ell2 multiplet without a first-order frequency drift, so its mixed correction is bounded",
+      "consequence": "the shell derivative vanishes, but this does not supply a periodic mixed correction; the independent twist-position adjoint matrix contains a nonzero off-axis obstruction",
       "covariant_momentum": "k -> k+epsilon*T_A",
       "shell_derivative_at_k0": "0"
     },
     "electric_source_after_wave_common_zero": "Q_e^2*(-1/2,1/2,-1/2,0)",
     "electric_witness": "E11=Q_e^2/2 forces Q_e=0 independently of the wave moment maps"
   },
-  "interpretation": "The bounded Einstein sector does survive after the complete ell2 wave block is adjoined to the global phase space, but it is a stratified cone rather than a product with all global coordinates. Every nonzero wave point needs an Einstein-minus component and consequently removes a,b,d; the full zero-frequency source removes Q_e; twist velocity is universally removed. The surviving wave cone is exactly the already certified all-m both-parity ell2 stabilizer cone, times the static c, W_x and constant-twist holonomy spectators.",
+  "interpretation": "The complete ell=2 wave cone and its A=0 global extension survive. The former product with arbitrary constant twist does not: a perpendicular twist-extra fixture has a nonzero adjoint resonance. Wave-free A remains exact, and the complete nonzero-A wave locus is now fail-closed.",
   "lifecycle_state": "CLASSIFIED",
-  "next_gate": "propagate the a/d full-time shell audit and global bounded stratification to symbolic ell at k=0, then treat nonzero momentum where circumference transport is resonant",
+  "next_gate": "solve the constant-twist position resonance equations on the complete ell=2 wave cone before any symbolic-ell promotion",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_global_ell2_all_m_both_parity_bounded_cone.py",
-    "generator_sha256": "ca1733b415d25fb2abb1ff0c6c0d5f2053b130165c698410dc47b615010a1e96",
+    "generator_sha256": "fd59c006310ad4f5aaf77a60136f375da9bc8a8b8ec47fd70a85fefd10d386f8",
     "inputs": {
       "axial_bounded_completion": {
         "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion.json",
@@ -127,11 +132,15 @@
       "standard_global": {
         "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
         "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      },
+      "twist_counterexample": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
+        "sha256": "6ddebcd00b2934d513f0676d87f8ec2423f79ec30d1341cb73b484362b533c72"
       }
     }
   },
   "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_ELL2_ALL_M_BOTH_PARITY_BOUNDED_CONE",
-  "result_state": "COMPLETE_GLOBAL_PLUS_ELL2_K0_ALL_M_BOTH_PARITY_BOUNDED_CONE_CLASSIFIED",
+  "result_state": "GLOBAL_PLUS_ELL2_K0_BOUNDED_CONE_PARTIAL_AFTER_TWIST_CORRECTION",
   "schema": "einstein-maxwell-weyl-global-ell2-all-m-both-parity-bounded-cone-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_global_ell2_all_m_both_parity_bounded_cone.schema.json",
   "schema_sha256": "a20e6f2b11e97ad214a0114762851c823bf8002599de8e5ce24edbc2fab16dbb",
@@ -151,7 +160,7 @@
   "sufficiency": {
     "Wilson": "identically zero mixed source",
     "circumference": "bounded k=0 exact-radius transport",
-    "constant_twist": "exact flat-holonomy transport with vanishing first shell derivative at k=0",
+    "constant_twist": "wave-free A is exact; the certified wave subcone sets A=0 because the off-axis twist-extra adjoint pairing is nonzero",
     "electric": "absent on the bounded wave branch by the independent E11 witness",
     "standard_static": "complete standard-global bounded theorem",
     "wave_self": "complete all-m both-parity ell2 common-zero theorem plus the exact constant L1 right inverse (S0/2,-S1/2,0,0), so no secular/Jordan term is required"
@@ -173,7 +182,7 @@
       "tests_run": 30
     },
     "tier_2": {
-      "criterion": "the direct axial and polar global/minus sources and complete ell2 wave-cone theorem are unchanged exact inputs",
+      "criterion": "the direct axial and polar global/minus sources, complete ell2 wave-cone theorem and twist-position counterexample are exact content-addressed inputs",
       "status": "PASS_BY_CONTENT_ADDRESS"
     },
     "tier_3": {

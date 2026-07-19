@@ -21,15 +21,19 @@ physical `m` values or harmonic parities.  The jet is retained through order
 operator used in the contraction.
 
 Combining that ideal with the existing every-fixed-`ell` common-moment-map
-wave theorem yields the complete declared global cone.  The static branch is
-`(c,d,W_x,A)`.  On any nonzero wave branch, `a=b=d=Q_e=B=0`, while
-`c,W_x,A` remain spectators and the wave amplitudes satisfy
-`mu_H=mu_J1=mu_J2=mu_J3=0`.
+wave theorem certifies the static branch `(c,d,W_x,A)` and, separately, the
+`A=0` nonzero wave subcone.  On the latter,
+`a=b=d=Q_e=0`, `A=B=0`, `c,W_x` remain spectators, and the wave amplitudes
+satisfy `mu_H=mu_J1=mu_J2=mu_J3=0`.
+
+The complete global cone is not yet classified: the `ell=2` off-axis
+constant-twist counterexample refutes the former arbitrary-`A` spectator
+claim and leaves the general fixed-`ell` twist-position zero locus open.
 
 The electric exclusion is applied only after the common Hamiltonian moment
 map has removed the wave contribution: the remaining homogeneous
 pure-electric coefficient is independently `E11=Q_e^2/2`, while the bounded
 zero-frequency homogeneous image vanishes.
 
-The result is blockwise in one fixed `ell` at `k=0`.  Cross-`ell` products and
-nonzero momentum remain open.
+The result is blockwise in one fixed `ell` at `k=0`.  Nonzero-`A` wave
+strata, cross-`ell` global products and nonzero momentum remain open.

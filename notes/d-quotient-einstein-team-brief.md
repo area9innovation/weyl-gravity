@@ -2395,33 +2395,46 @@ the three rotation moment maps vanish, its source is
 `(S0/2,-S1/2,0,0)` solves the exact rank-two target operator.  No Jordan
 growth is needed.
 
-Thus the complete global-plus-axial-all-`m` cone is the union of the static
-`(c,d,W_x,A)` branch and the nonzero wave-density branch with
-`a=b=d=Q_e=B=0`, arbitrary `(c,W_x,A)`, and axial Einstein-minus/extra
-densities satisfying `H=J_1=J_2=J_3=0`.  Atlas row
+The former product with arbitrary constant twist `A` does **not** survive the
+all-`m` promotion.  The exact twist-position matrix has rank two, and the
+fixture with twist `m=1`, rotationally neutral wave `m=0`, and axial extra
+representative `e1` has adjoint coefficient `24*sqrt(3)` at `omega_extra`.
+The twist--Einstein-minus term lies at a distinct frequency and cannot cancel
+it.  This gives the required independence witness
+
+```text
+mu_H=mu_J1=mu_J2=mu_J3=mu_Px=0,
+R_twist-position=24*sqrt(3) != 0.
+```
+
+Accordingly the certified result is the wave-free static branch with
+arbitrary `(c,d,W_x,A)` together with the complete `A=0` axial wave-density
+subcone (`a=b=d=Q_e=0`, `A=B=0`, and `H=J_i=0`).  The nonzero-`A` wave zero
+locus is open.  Atlas rows
+`einstein.ph.wm.interaction.constant_twist_wave_counterexample` and
 `einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone`
-records the theorem.
+record the obstruction and corrected lifecycle.
 
 The polar Einstein-minus cross source is now also direct and exact.  Its
 first action row has successive nonzero pivots `66*b*z`, `198*a*z`, and
 `198*d*z`, so Schur promotion gives the same `a=b=d=0` conclusion for every
 polar `m`.  Combining both parities with the complete `ell=2` common-zero
-theorem yields the full bounded carrier: every axial/polar Einstein-plus,
-Einstein-minus, and both extra-primary coefficient for all `m`, adjoined to
-the standard globals.  The cone is the union of the static `(c,d,W_x,A)`
-branch and the nonzero wave branch
+theorem still certifies every axial/polar Einstein-plus, Einstein-minus, and
+both extra-primary coefficient for all `m` on the `A=0` wave face.  Its wave
+equations are
 
 ```text
 mu_H=mu_J1=mu_J2=mu_J3=0,
-a=b=d=Q_e=B=0,
+a=b=d=Q_e=0,
+A=B=0,
 ```
 
-with arbitrary `(c,W_x,A)`.  The exact constant `L=1` right inverse removes
-the last secular/Jordan caveat.  Atlas row
+with arbitrary `(c,W_x)`.  The exact constant `L=1` right inverse removes the
+last secular/Jordan caveat on that face.  The wave-free static branch retains
+arbitrary `(c,d,W_x,A)`, but the complete nonzero-`A` wave locus is open.
+Atlas row
 `einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone` records
-necessity and sufficiency.  The active promotion is now symbolic `ell` at
-`k=0`, followed by nonzero compact momentum and finite cross-harmonic bounded
-zero loci.
+this corrected split.
 
 The first symbolic-`ell` gate now has an exact multi-fibre fixture ledger.
 The direct four-dimensional helpers use the generic representatives
@@ -2456,22 +2469,23 @@ C_P=lambda^2*(2*lambda-1)/6.
 Both are nonzero for every `lambda=ell(ell+1)>=6`.  Locality supplies the
 complete triangular ratios, and `SO(3)` multiplicity one promotes them to all
 `m`.  Combining this theorem with the existing every-fixed-`ell` common-zero
-wave theorem yields the global bounded cone for every one fixed generic
-`ell` at `k=0`: the static `(c,d,W_x,A)` branch and the nonzero wave branch
-`mu_H=mu_J1=mu_J2=mu_J3=0`, `a=b=d=Q_e=B=0`, with `(c,W_x,A)` arbitrary.
-Atlas row `einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone` records
-necessity and sufficiency.
+wave theorem certifies, for every fixed generic `ell` at `k=0`, the wave-free
+static branch and the `A=0` wave subcone
+`mu_H=mu_J1=mu_J2=mu_J3=0`, `a=b=d=Q_e=0`, `A=B=0`, with `(c,W_x)` arbitrary.
+It does not solve the constant-twist resonance map at general `ell`.  Atlas
+row `einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone` is therefore
+`OPEN` for the complete bounded cone while retaining those certified
+subcones.
 
-The cross-`ell` gate is now also closed for arbitrary finite generic sums at
-`k=0`.  The existing finite-wave theorem removes every wave-only obstruction
-on the total `H,J_i` zero cone.  Every nonzero point on that cone contains an
-Einstein-minus coefficient, whose unique `(ell,m,parity,omega_minus)` global
-cross channel has the nonzero symbolic pivot above and cannot cancel against
-another `ell` block.  Thus the same static/wave union holds for arbitrary
-finite generic rest-frame sums.  Atlas row
-`einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone` records the
-promotion.  Infinite harmonic completion, nonzero compact momentum and
-exceptional `ell=1` wave inputs remain fail-closed.
+The wave-only cross-`ell` gate is closed for arbitrary finite generic sums at
+`k=0`: every wave-only source is removable on the total `H,J_i` zero cone,
+and the symbolic `a,b,d` pivots cannot be screened by another angular block.
+After global data are adjoined, however, only the `A=0` finite-wave subcone
+and the wave-free static branch are certified.  The complete nonzero-`A`
+constant-twist resonance zero locus remains open.  Atlas row
+`einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone` records this
+fail-closed distinction.  Infinite harmonic completion, nonzero compact
+momentum and exceptional `ell=1` wave inputs remain fail-closed.
 
 The exceptional `ell=1,k=0` frequency census has nevertheless advanced.  For
 the obstructing `L=2`, `2*omega_e=4/sqrt(3)` shell, angular selection reduces

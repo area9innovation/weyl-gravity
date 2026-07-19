@@ -25,6 +25,7 @@ INPUTS = {
     "circumference": ROOT / "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
     "electric_wilson": ROOT / "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
     "constant_twist": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+    "twist_counterexample": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
 }
 
 
@@ -64,13 +65,14 @@ def build() -> dict[str, object]:
     _require(records["circumference"]["classification"]["k0_circumference_cross_bounded_removable"], "circumference transport changed")
     _require(records["electric_wilson"]["classification"]["W_x_times_every_oscillator_source_zero"], "Wilson spectator changed")
     _require(records["constant_twist"]["classification"]["constant_twist_exact_family_identified"], "twist family changed")
+    _require(records["twist_counterexample"]["classification"]["A_arbitrary_wave_branch_refuted"], "constant-twist counterexample changed")
     promotion = _so3_promotion(records["minus_resonance"])
     return {
         "schema": "einstein-maxwell-weyl-global-axial-ell2-all-m-minus-extra-bounded-cone-v1",
         "schema_path": str(SCHEMA.relative_to(ROOT)),
         "schema_sha256": _sha256(SCHEMA),
         "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_AXIAL_ELL2_ALL_M_MINUS_EXTRA_BOUNDED_CONE",
-        "result_state": "GLOBAL_PLUS_AXIAL_ELL2_ALL_M_MINUS_EXTRA_BOUNDED_CONE_CLASSIFIED",
+        "result_state": "GLOBAL_PLUS_AXIAL_ELL2_ALL_M_BOUNDED_CONE_PARTIAL_AFTER_TWIST_CORRECTION",
         "lifecycle_state": "CLASSIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "scope": {
@@ -106,24 +108,28 @@ def build() -> dict[str, object]:
         },
         "complete_bounded_cone": {
             "static_branch": "wave=0: (c,d,W_x,A in R^3) arbitrary, with a=b=Q_e=0 and B=0",
-            "wave_branch": "a=b=d=Q_e=0 and B=0; (c,W_x,A in R^3) arbitrary; (C_minus,C_extra) any nonzero point of the displayed H,J_a density cone",
-            "union_is_necessary_and_sufficient": True,
+            "certified_wave_subcone": "a=b=d=Q_e=0, A=B=0; c,W_x arbitrary; (C_minus,C_extra) any nonzero point of the displayed H,J_a density cone",
+            "nonzero_A_wave_stratum": "OPEN: impose the complete constant-twist position resonance functionals; the prior A-arbitrary statement is refuted",
+            "union_is_necessary_and_sufficient": False,
         },
         "bounded_sufficiency": {
             "wave_self": "the complete axial ell2 all-m H,J cone has a real bounded finite-quasiperiodic correction; its zero L1 block has the certified constant right inverse",
             "circumference": "k=0 radius transport is bounded",
             "Wilson": "the cross source vanishes",
-            "constant_twist": "differentiate the exact flat SO3-holonomy family and its transported k=0 Jacobi field; the first-order shell shift vanishes and the mixed correction is bounded",
+            "constant_twist": "wave-free A is exact, but a perpendicular A times axial extra e1 has adjoint pairing 24*sqrt(3); only A=0 is used in the certified wave subcone",
             "static_branch": "the complete standard-global theorem",
         },
         "correction_classes": {
-            "BOUNDED_OR_FINITE_QUASIPERIODIC": {"status": "CERTIFIED"},
+            "BOUNDED_OR_FINITE_QUASIPERIODIC": {"status": "OPEN", "reason": "the A=0 wave subcone and static branch are certified; the complete nonzero-A zero locus is open"},
             "SMOOTH_SECULAR": {"status": "CERTIFIED"},
             "CAUSAL_RETARDED": {"status": "NO_CERTIFIED_MAP"},
         },
         "classification": {
-            "complete_declared_global_axial_all_m_carrier_covered": True,
-            "bounded_zero_locus_necessary_and_sufficient": True,
+            "complete_declared_global_axial_all_m_carrier_covered": False,
+            "bounded_zero_locus_necessary_and_sufficient": False,
+            "A_arbitrary_wave_branch_withdrawn": True,
+            "A_zero_wave_subcone_certified": True,
+            "complete_constant_twist_wave_zero_locus_classified": False,
             "all_wave_m_and_both_axial_extra_polarizations_included": True,
             "SO3_shell_promotion_certified": True,
             "electric_bounded_near_miss_excluded": True,
@@ -132,9 +138,9 @@ def build() -> dict[str, object]:
             "all_orders_integrability": False,
             "causal_or_quantum_claim": False,
         },
-        "interpretation": "The surviving opposite-sign bounded cone is not an axisymmetric accident. Rotational equivariance promotes the global shell obstruction to every m, while the complete all-m wave source has bounded inverses after H and J descent. The global block again stratifies: d survives only on the wave-free branch, electric charge is excluded by a non-Hamiltonian zero-frequency row, and the nonzero wave cone is multiplied only by circumference, Wilson and constant twist-position spectators.",
-        "next_gate": "compute the a,b,d shell source for the polar ell2 Einstein-minus representative and combine axial and polar density cones, retaining cross-parity cancellation",
-        "claim_boundary": "This theorem is complete only for axial ell=2,k=0 minus-plus-two-extra input with all m and the declared global modes. It excludes Einstein-plus, polar wave input, other ell or momenta, infinite sums, all-orders integration, final residual descent, causal propagation, observables, particles and quantum theory.",
+        "interpretation": "The all-m wave and A=0 global stratification survive, but constant twist is not an arbitrary wave spectator. A certified perpendicular twist-extra pairing refutes the former product with all A. The wave-free A modulus remains exact; nonzero-A wave strata require the complete twist-position resonance zero locus.",
+        "next_gate": "solve the constant-twist position resonance equations on the axial all-m moment cone, then combine with polar input",
+        "claim_boundary": "This theorem certifies the static branch and A=0 axial ell=2 wave subcone. The complete nonzero-A wave locus, polar input, other ell or momenta, infinite sums and higher lifecycles remain open.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),
             "generator_sha256": _sha256(Path(__file__)),
@@ -144,7 +150,7 @@ def build() -> dict[str, object]:
             "producing_date": "2026-07-19",
             "tier_0": {"status": "PASS", "elapsed_seconds": 0.24},
             "tier_1": {"status": "PASS", "elapsed_seconds": 3.00, "tests_run": 26},
-            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "the direct m=0 shell map, all-m bounded wave theorem and global source/transport inputs are unchanged exact dependencies"},
+            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "the direct m=0 shell map, all-m bounded wave theorem, complete twist-position matrix and global source inputs are exact content-addressed dependencies"},
             "tier_3": {"status": "NOT_RUN", "reason": "polar, other-harmonic, causal, residual and quantum gates remain excluded"},
         },
         "verification_commands": [

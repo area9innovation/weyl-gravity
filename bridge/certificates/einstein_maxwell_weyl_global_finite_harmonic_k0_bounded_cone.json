@@ -2,32 +2,37 @@
   "bounded_sufficiency": {
     "Wilson": "identically zero mixed source for every certified oscillator",
     "circumference": "exact k=0 radius transport for every certified oscillator",
-    "constant_twist": "exact flat-holonomy transport without first-order k=0 frequency drift",
+    "constant_twist": "wave-free A is exact; only A=0 is used in the certified finite-wave subcone",
     "finite_assembly": "bilinearity leaves finitely many channels; the certified blockwise corrections sum to a real smooth spatially periodic finite-quasiperiodic correction",
     "global_self": "complete standard generalized-zero bounded theorem",
     "wave_self_and_cross_ell": "finite-harmonic all-generic-ell k=0 common-zero theorem"
   },
-  "claim_boundary": "This theorem covers arbitrary finite generic ell>=2 wave sums only at k=0. It does not cover infinite harmonic completion, nonzero momentum, exceptional ell=1 wave inputs, all-orders integration, residual descent, causal propagation, observables, particles or quantum theory.",
+  "claim_boundary": "This theorem certifies arbitrary finite generic k=0 wave sums only on A=0, plus the wave-free static branch. Nonzero-A wave strata and all higher scopes remain open.",
   "classification": {
+    "A_arbitrary_wave_branch_withdrawn": true,
+    "A_zero_wave_subcone_certified": true,
     "all_orders_integrability": false,
     "all_retained_m_both_parities_all_qp_branches_included": true,
-    "arbitrary_finite_generic_ell_global_bounded_cone_classified": true,
-    "bounded_zero_locus_necessary_and_sufficient": true,
+    "arbitrary_finite_generic_ell_global_bounded_cone_classified": false,
+    "bounded_zero_locus_necessary_and_sufficient": false,
     "causal_or_quantum_claim": false,
+    "complete_constant_twist_wave_zero_locus_classified": false,
     "cross_ell_wave_superpositions_classified": true,
     "exceptional_wave_inputs_classified": false,
     "infinite_harmonic_completion_classified": false,
     "nonzero_momentum_classified": false
   },
   "complete_bounded_cone": {
-    "branch_intersection": "u_wave=0,d=0 with c,W_x,A arbitrary",
+    "branch_intersection": "u_wave=0,d=0,A=0 with c,W_x arbitrary",
+    "certified_wave_subcone": "u_wave is any nonzero finite generic k=0 common H,J_i zero; a=b=d=Q_e=0, A=B=0; c,W_x arbitrary",
+    "nonzero_A_wave_stratum": "OPEN: impose the constant-twist resonance equations on every retained shell",
     "static_branch": "u_wave=0: (c,d,W_x,A) arbitrary, with a=b=Q_e=0 and B=0",
-    "union_is_necessary_and_sufficient": true,
-    "wave_branch": "u_wave is any nonzero finite generic k=0 common H,J_i zero; a=b=d=Q_e=0 and B=0; c,W_x,A are arbitrary"
+    "union_is_necessary_and_sufficient": false
   },
   "correction_classes": {
     "BOUNDED_OR_FINITE_QUASIPERIODIC": {
-      "status": "CERTIFIED"
+      "reason": "the static and A=0 finite-wave strata are certified; the complete nonzero-A locus is open",
+      "status": "OPEN"
     },
     "CAUSAL_RETARDED": {
       "status": "NO_CERTIFIED_MAP"
@@ -55,7 +60,7 @@
   "global_wave_separation": {
     "consequence": "every nonzero bounded wave branch forces a=b=d=0",
     "no_cross_ell_cancellation": "orthogonality of ell,m and parity plus distinct primary frequencies isolates the chosen minus coefficient; both pivots are nonzero for every physical lambda>=6",
-    "other_global_columns": "at k=0 the c, Q_e and constant-A mixed columns have certified bounded range corrections and the W_x mixed source vanishes, so none contributes to the adjoint projection used by the a,b,d pivot; B is already universally excluded",
+    "other_global_columns": "at k=0 the c and Q_e mixed columns have certified bounded range corrections and the W_x mixed source vanishes; constant A is excluded from this separation because its off-axis extra-primary column has a certified nonzero adjoint projection; B is already universally excluded",
     "selected_channel": "choose any nonzero Einstein-minus coefficient; its (ell,m,parity,omega_minus) global-cross channel is distinct from every other primary shell and every other ell,m,parity block",
     "triangular_pivots": {
       "axial": "C_A=-3*i*omega_minus*(3*sqrt(2*lambda)-1), with (a,b,d) ratios (2,1,1)",
@@ -63,12 +68,12 @@
     },
     "wave_self_projection": "the wave-only resonant functional vanishes on the certified common-moment-map cone"
   },
-  "interpretation": "The blockwise global stratification glues across every finite set of generic rest-frame harmonics. Cross-ell wave products add no obstruction, and they cannot screen the unique global-times-minus pivot. The bounded nonlinear tangent cone is therefore the total finite wave moment-map cone times the static circumference, Wilson and twist-holonomy spectators, together with the separate static d branch.",
+  "interpretation": "Cross-ell wave products still add no wave-only obstruction, and the A=0 finite global subcone remains certified. The former arbitrary-A product is withdrawn because constant twist has a nonzero off-axis wave resonance.",
   "lifecycle_state": "CLASSIFIED",
-  "next_gate": "classify nonzero compact momentum, exceptional ell=1 wave inputs, and the infinite-harmonic bounded completion as separate scopes",
+  "next_gate": "solve constant-twist resonance equations on finite wave sums, then treat exceptional ell=1 and nonzero compact momentum",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.py",
-    "generator_sha256": "67f612956d3add80e2b0e8927c7ee8a83106ef1baffd6ef43d88e8bf897b2400",
+    "generator_sha256": "bfda9065dcadc70082b9c90c7a96e59796d8b4326b2fac136b5d65fa258f2c52",
     "inputs": {
       "circumference": {
         "path": "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
@@ -88,7 +93,7 @@
       },
       "fixed_ell_global": {
         "path": "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
-        "sha256": "4cf6d78f5bbafb1a077c35bab7804716aa472f470e33a78848923c55c8eca828"
+        "sha256": "9b6854e6405b6ffb028376c071ee69233dfd888a27b738985a7e56074cd1bc6c"
       },
       "generic_pivot": {
         "path": "bridge/certificates/einstein_maxwell_weyl_abd_generic_lambda_pivot.json",
@@ -101,11 +106,15 @@
       "standard_global": {
         "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
         "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      },
+      "twist_counterexample": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
+        "sha256": "6ddebcd00b2934d513f0676d87f8ec2423f79ec30d1341cb73b484362b533c72"
       }
     }
   },
   "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FINITE_HARMONIC_K0_BOUNDED_CONE",
-  "result_state": "COMPLETE_GLOBAL_FINITE_GENERIC_HARMONIC_K0_BOUNDED_CONE_CLASSIFIED",
+  "result_state": "GLOBAL_FINITE_GENERIC_HARMONIC_K0_BOUNDED_CONE_PARTIAL_AFTER_TWIST_CORRECTION",
   "schema": "einstein-maxwell-weyl-global-finite-harmonic-k0-bounded-cone-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.schema.json",
   "schema_sha256": "bc67c71f9259171a17299983ae262c75541f4a549a2b7f3c2a861afa143b80c3",
@@ -139,7 +148,7 @@
       "tests_run": 27
     },
     "tier_2": {
-      "criterion": "finite-wave cross-ell theorem, generic-lambda pivots and global transport inputs are exact unchanged dependencies",
+      "criterion": "finite-wave cross-ell theorem, generic-lambda pivots and twist-position counterexample are exact content-addressed dependencies",
       "status": "PASS_BY_CONTENT_ADDRESS"
     },
     "tier_3": {

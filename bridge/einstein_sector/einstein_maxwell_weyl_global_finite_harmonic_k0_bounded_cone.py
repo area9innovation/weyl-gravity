@@ -22,6 +22,7 @@ INPUTS = {
     "circumference": ROOT / "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
     "electric_wilson": ROOT / "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
     "constant_twist": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+    "twist_counterexample": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
 }
 
 
@@ -46,12 +47,13 @@ def build() -> dict[str, object]:
     _require(records["moment_cone"]["classification"]["cross_ell_charge_cancellations_included"], "cross-ell moment cone changed")
     h_equation = records["moment_cone"]["density_cone_theorem"]["common_zero_equations"]["H"]
     _require("+ omega_extra^2*A_extra - omega_minus^2*A_minus" in h_equation, "wave inertia signs changed")
-    _require(records["fixed_ell_global"]["complete_bounded_cone"]["union_is_necessary_and_sufficient"], "blockwise global theorem changed")
+    _require(records["fixed_ell_global"]["classification"]["A_zero_wave_subcone_certified"], "blockwise A=0 global theorem changed")
     _require(records["standard_global"]["classification"]["complete_standard_generalized_zero_bounded_cone_classified"], "static global theorem changed")
     _require(records["circumference"]["classification"]["k0_circumference_cross_bounded_removable"], "circumference transport changed")
     _require(records["electric_wilson"]["classification"]["Q_e_times_every_oscillator_bounded_removable"], "electric transport changed")
     _require(records["electric_wilson"]["classification"]["W_x_times_every_oscillator_source_zero"], "Wilson transport changed")
     _require(records["constant_twist"]["classification"]["constant_twist_exact_family_identified"], "constant twist transport changed")
+    _require(records["twist_counterexample"]["classification"]["A_arbitrary_wave_branch_refuted"], "constant-twist counterexample changed")
 
     eigenvalue = sp.symbols("lambda", positive=True)
     gap = sp.sqrt(2 * eigenvalue)
@@ -66,7 +68,7 @@ def build() -> dict[str, object]:
         "schema_path": str(SCHEMA.relative_to(ROOT)),
         "schema_sha256": _sha256(SCHEMA),
         "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FINITE_HARMONIC_K0_BOUNDED_CONE",
-        "result_state": "COMPLETE_GLOBAL_FINITE_GENERIC_HARMONIC_K0_BOUNDED_CONE_CLASSIFIED",
+        "result_state": "GLOBAL_FINITE_GENERIC_HARMONIC_K0_BOUNDED_CONE_PARTIAL_AFTER_TWIST_CORRECTION",
         "lifecycle_state": "CLASSIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "scope": {
@@ -92,7 +94,7 @@ def build() -> dict[str, object]:
         "global_wave_separation": {
             "selected_channel": "choose any nonzero Einstein-minus coefficient; its (ell,m,parity,omega_minus) global-cross channel is distinct from every other primary shell and every other ell,m,parity block",
             "wave_self_projection": "the wave-only resonant functional vanishes on the certified common-moment-map cone",
-            "other_global_columns": "at k=0 the c, Q_e and constant-A mixed columns have certified bounded range corrections and the W_x mixed source vanishes, so none contributes to the adjoint projection used by the a,b,d pivot; B is already universally excluded",
+            "other_global_columns": "at k=0 the c and Q_e mixed columns have certified bounded range corrections and the W_x mixed source vanishes; constant A is excluded from this separation because its off-axis extra-primary column has a certified nonzero adjoint projection; B is already universally excluded",
             "triangular_pivots": {
                 "axial": "C_A=-3*i*omega_minus*(3*sqrt(2*lambda)-1), with (a,b,d) ratios (2,1,1)",
                 "polar": "C_P=lambda^2*(2*lambda-1)/6, with (a,b,d) ratios (3,1,3)",
@@ -102,16 +104,17 @@ def build() -> dict[str, object]:
         },
         "complete_bounded_cone": {
             "static_branch": "u_wave=0: (c,d,W_x,A) arbitrary, with a=b=Q_e=0 and B=0",
-            "wave_branch": "u_wave is any nonzero finite generic k=0 common H,J_i zero; a=b=d=Q_e=0 and B=0; c,W_x,A are arbitrary",
-            "branch_intersection": "u_wave=0,d=0 with c,W_x,A arbitrary",
-            "union_is_necessary_and_sufficient": True,
+            "certified_wave_subcone": "u_wave is any nonzero finite generic k=0 common H,J_i zero; a=b=d=Q_e=0, A=B=0; c,W_x arbitrary",
+            "nonzero_A_wave_stratum": "OPEN: impose the constant-twist resonance equations on every retained shell",
+            "branch_intersection": "u_wave=0,d=0,A=0 with c,W_x arbitrary",
+            "union_is_necessary_and_sufficient": False,
         },
         "bounded_sufficiency": {
             "wave_self_and_cross_ell": "finite-harmonic all-generic-ell k=0 common-zero theorem",
             "global_self": "complete standard generalized-zero bounded theorem",
             "circumference": "exact k=0 radius transport for every certified oscillator",
             "Wilson": "identically zero mixed source for every certified oscillator",
-            "constant_twist": "exact flat-holonomy transport without first-order k=0 frequency drift",
+            "constant_twist": "wave-free A is exact; only A=0 is used in the certified finite-wave subcone",
             "finite_assembly": "bilinearity leaves finitely many channels; the certified blockwise corrections sum to a real smooth spatially periodic finite-quasiperiodic correction",
         },
         "electric_exclusion": {
@@ -119,24 +122,27 @@ def build() -> dict[str, object]:
             "independent_zero_channel": "after total mu_H cancels the wave source, the remaining homogeneous coefficient is E11=Q_e^2/2 with zero bounded homogeneous image, hence Q_e=0",
         },
         "correction_classes": {
-            "BOUNDED_OR_FINITE_QUASIPERIODIC": {"status": "CERTIFIED"},
+            "BOUNDED_OR_FINITE_QUASIPERIODIC": {"status": "OPEN", "reason": "the static and A=0 finite-wave strata are certified; the complete nonzero-A locus is open"},
             "SMOOTH_SECULAR": {"status": "CERTIFIED", "reason": "bounded corrections are a special smooth exponential-polynomial class"},
             "CAUSAL_RETARDED": {"status": "NO_CERTIFIED_MAP"},
         },
         "classification": {
-            "arbitrary_finite_generic_ell_global_bounded_cone_classified": True,
+            "arbitrary_finite_generic_ell_global_bounded_cone_classified": False,
             "cross_ell_wave_superpositions_classified": True,
             "all_retained_m_both_parities_all_qp_branches_included": True,
-            "bounded_zero_locus_necessary_and_sufficient": True,
+            "bounded_zero_locus_necessary_and_sufficient": False,
+            "A_arbitrary_wave_branch_withdrawn": True,
+            "A_zero_wave_subcone_certified": True,
+            "complete_constant_twist_wave_zero_locus_classified": False,
             "infinite_harmonic_completion_classified": False,
             "nonzero_momentum_classified": False,
             "exceptional_wave_inputs_classified": False,
             "all_orders_integrability": False,
             "causal_or_quantum_claim": False,
         },
-        "interpretation": "The blockwise global stratification glues across every finite set of generic rest-frame harmonics. Cross-ell wave products add no obstruction, and they cannot screen the unique global-times-minus pivot. The bounded nonlinear tangent cone is therefore the total finite wave moment-map cone times the static circumference, Wilson and twist-holonomy spectators, together with the separate static d branch.",
-        "next_gate": "classify nonzero compact momentum, exceptional ell=1 wave inputs, and the infinite-harmonic bounded completion as separate scopes",
-        "claim_boundary": "This theorem covers arbitrary finite generic ell>=2 wave sums only at k=0. It does not cover infinite harmonic completion, nonzero momentum, exceptional ell=1 wave inputs, all-orders integration, residual descent, causal propagation, observables, particles or quantum theory.",
+        "interpretation": "Cross-ell wave products still add no wave-only obstruction, and the A=0 finite global subcone remains certified. The former arbitrary-A product is withdrawn because constant twist has a nonzero off-axis wave resonance.",
+        "next_gate": "solve constant-twist resonance equations on finite wave sums, then treat exceptional ell=1 and nonzero compact momentum",
+        "claim_boundary": "This theorem certifies arbitrary finite generic k=0 wave sums only on A=0, plus the wave-free static branch. Nonzero-A wave strata and all higher scopes remain open.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),
             "generator_sha256": _sha256(Path(__file__)),
@@ -146,7 +152,7 @@ def build() -> dict[str, object]:
             "producing_date": "2026-07-19",
             "tier_0": {"status": "PASS", "elapsed_seconds": 0.13},
             "tier_1": {"status": "PASS", "elapsed_seconds": 2.39, "tests_run": 27},
-            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "finite-wave cross-ell theorem, generic-lambda pivots and global transport inputs are exact unchanged dependencies"},
+            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "finite-wave cross-ell theorem, generic-lambda pivots and twist-position counterexample are exact content-addressed dependencies"},
             "tier_3": {"status": "NOT_RUN", "reason": "infinite sums, nonzero momentum, exceptional waves, causal, residual and quantum gates remain excluded"},
         },
         "verification_commands": [

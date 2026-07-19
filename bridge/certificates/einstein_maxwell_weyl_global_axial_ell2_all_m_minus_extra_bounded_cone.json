@@ -20,30 +20,35 @@
   "bounded_sufficiency": {
     "Wilson": "the cross source vanishes",
     "circumference": "k=0 radius transport is bounded",
-    "constant_twist": "differentiate the exact flat SO3-holonomy family and its transported k=0 Jacobi field; the first-order shell shift vanishes and the mixed correction is bounded",
+    "constant_twist": "wave-free A is exact, but a perpendicular A times axial extra e1 has adjoint pairing 24*sqrt(3); only A=0 is used in the certified wave subcone",
     "static_branch": "the complete standard-global theorem",
     "wave_self": "the complete axial ell2 all-m H,J cone has a real bounded finite-quasiperiodic correction; its zero L1 block has the certified constant right inverse"
   },
-  "claim_boundary": "This theorem is complete only for axial ell=2,k=0 minus-plus-two-extra input with all m and the declared global modes. It excludes Einstein-plus, polar wave input, other ell or momenta, infinite sums, all-orders integration, final residual descent, causal propagation, observables, particles and quantum theory.",
+  "claim_boundary": "This theorem certifies the static branch and A=0 axial ell=2 wave subcone. The complete nonzero-A wave locus, polar input, other ell or momenta, infinite sums and higher lifecycles remain open.",
   "classification": {
+    "A_arbitrary_wave_branch_withdrawn": true,
+    "A_zero_wave_subcone_certified": true,
     "SO3_shell_promotion_certified": true,
     "all_orders_integrability": false,
     "all_wave_m_and_both_axial_extra_polarizations_included": true,
-    "bounded_zero_locus_necessary_and_sufficient": true,
+    "bounded_zero_locus_necessary_and_sufficient": false,
     "causal_or_quantum_claim": false,
-    "complete_declared_global_axial_all_m_carrier_covered": true,
+    "complete_constant_twist_wave_zero_locus_classified": false,
+    "complete_declared_global_axial_all_m_carrier_covered": false,
     "electric_bounded_near_miss_excluded": true,
     "general_ell_or_nonzero_momentum_classified": false,
     "polar_input_classified": false
   },
   "complete_bounded_cone": {
+    "certified_wave_subcone": "a=b=d=Q_e=0, A=B=0; c,W_x arbitrary; (C_minus,C_extra) any nonzero point of the displayed H,J_a density cone",
+    "nonzero_A_wave_stratum": "OPEN: impose the complete constant-twist position resonance functionals; the prior A-arbitrary statement is refuted",
     "static_branch": "wave=0: (c,d,W_x,A in R^3) arbitrary, with a=b=Q_e=0 and B=0",
-    "union_is_necessary_and_sufficient": true,
-    "wave_branch": "a=b=d=Q_e=0 and B=0; (c,W_x,A in R^3) arbitrary; (C_minus,C_extra) any nonzero point of the displayed H,J_a density cone"
+    "union_is_necessary_and_sufficient": false
   },
   "correction_classes": {
     "BOUNDED_OR_FINITE_QUASIPERIODIC": {
-      "status": "CERTIFIED"
+      "reason": "the A=0 wave subcone and static branch are certified; the complete nonzero-A zero locus is open",
+      "status": "OPEN"
     },
     "CAUSAL_RETARDED": {
       "status": "NO_CERTIFIED_MAP"
@@ -57,12 +62,12 @@
     "REDUCED-MODE"
   ],
   "equation": "L_WM Phi^(2)=-(1/2)D^2E_WM[Phi^(1),Phi^(1)]",
-  "interpretation": "The surviving opposite-sign bounded cone is not an axisymmetric accident. Rotational equivariance promotes the global shell obstruction to every m, while the complete all-m wave source has bounded inverses after H and J descent. The global block again stratifies: d survives only on the wave-free branch, electric charge is excluded by a non-Hamiltonian zero-frequency row, and the nonzero wave cone is multiplied only by circumference, Wilson and constant twist-position spectators.",
+  "interpretation": "The all-m wave and A=0 global stratification survive, but constant twist is not an arbitrary wave spectator. A certified perpendicular twist-extra pairing refutes the former product with all A. The wave-free A modulus remains exact; nonzero-A wave strata require the complete twist-position resonance zero locus.",
   "lifecycle_state": "CLASSIFIED",
-  "next_gate": "compute the a,b,d shell source for the polar ell2 Einstein-minus representative and combine axial and polar density cones, retaining cross-parity cancellation",
+  "next_gate": "solve the constant-twist position resonance equations on the axial all-m moment cone, then combine with polar input",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_global_axial_ell2_all_m_minus_extra_bounded_cone.py",
-    "generator_sha256": "de10eb48fc4e82b86e5a0817c2dd1a7c6e36cbff6832e09600d8f6cfd539e051",
+    "generator_sha256": "bae09999eccf7320592e5a29d0ab8cbff4ab0305ef42336aad8d99d23048d1b4",
     "inputs": {
       "aligned": {
         "path": "bridge/certificates/einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone.json",
@@ -86,7 +91,7 @@
       },
       "minus_resonance": {
         "path": "bridge/certificates/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.json",
-        "sha256": "480b9bc2dcd06983a59b7a781a3377c62e83dc7231e3310d973fc9ef93ad40ae"
+        "sha256": "39ebaf9dcb4a7d6752ed6cdac995a98f38e89ea3cd7f348fbf61c6569796e875"
       },
       "moment_maps": {
         "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
@@ -95,6 +100,10 @@
       "standard_global": {
         "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
         "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      },
+      "twist_counterexample": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
+        "sha256": "6ddebcd00b2934d513f0676d87f8ec2423f79ec30d1341cb73b484362b533c72"
       },
       "wave_all_m": {
         "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_second_order.json",
@@ -107,7 +116,7 @@
     }
   },
   "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_AXIAL_ELL2_ALL_M_MINUS_EXTRA_BOUNDED_CONE",
-  "result_state": "GLOBAL_PLUS_AXIAL_ELL2_ALL_M_MINUS_EXTRA_BOUNDED_CONE_CLASSIFIED",
+  "result_state": "GLOBAL_PLUS_AXIAL_ELL2_ALL_M_BOUNDED_CONE_PARTIAL_AFTER_TWIST_CORRECTION",
   "schema": "einstein-maxwell-weyl-global-axial-ell2-all-m-minus-extra-bounded-cone-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_global_axial_ell2_all_m_minus_extra_bounded_cone.schema.json",
   "schema_sha256": "b1f05f63b884e8cec0dba4266d162d2fc4b0f78b9cb93e039e31050a205db65c",
@@ -141,7 +150,7 @@
       "tests_run": 26
     },
     "tier_2": {
-      "criterion": "the direct m=0 shell map, all-m bounded wave theorem and global source/transport inputs are unchanged exact dependencies",
+      "criterion": "the direct m=0 shell map, all-m bounded wave theorem, complete twist-position matrix and global source inputs are exact content-addressed dependencies",
       "status": "PASS_BY_CONTENT_ADDRESS"
     },
     "tier_3": {

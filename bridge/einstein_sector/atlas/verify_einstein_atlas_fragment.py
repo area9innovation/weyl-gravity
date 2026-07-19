@@ -208,42 +208,47 @@ def verify() -> None:
         raise AssertionError("aligned global-wave causal lifecycle was over-promoted")
     global_axial = by_id["einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone"]
     global_axial_second = global_axial["mode_data"]["second_order"]
-    if global_axial_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
-        raise AssertionError("global axial all-m bounded cone was lost")
-    if "wave-density" not in global_axial_second["bounded_or_finite_quasiperiodic"]["statement"]:
-        raise AssertionError("global axial density cone was hidden")
+    if global_axial_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("global axial nonzero-A gap was re-promoted")
+    if "A=0" not in global_axial_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("global axial certified subcone was hidden")
     if global_axial_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("global axial causal lifecycle was over-promoted")
     global_both = by_id["einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone"]
     global_both_second = global_both["mode_data"]["second_order"]
-    if global_both_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
-        raise AssertionError("global both-parity ell2 bounded cone was lost")
-    if "axial--polar wave-cone" not in global_both_second["bounded_or_finite_quasiperiodic"]["statement"]:
-        raise AssertionError("global both-parity cone was hidden")
-    if "constant right inverse" not in global_both["mode_data"]["resonance"]["statement"]:
-        raise AssertionError("bounded zero-frequency L1 completion was hidden")
+    if global_both_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("global both-parity nonzero-A gap was re-promoted")
+    if "A=0" not in global_both_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("global both-parity certified subcone was hidden")
+    if "twist-position resonance" not in global_both["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("global both-parity twist gap was hidden")
     if global_both_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("global both-parity causal lifecycle was over-promoted")
     global_fixed = by_id["einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone"]
     global_fixed_second = global_fixed["mode_data"]["second_order"]
-    if global_fixed_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
-        raise AssertionError("global fixed-ell bounded cone was lost")
-    if "every fixed ell>=2" not in global_fixed_second["bounded_or_finite_quasiperiodic"]["statement"]:
+    if global_fixed_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("global fixed-ell nonzero-A gap was re-promoted")
+    if "every fixed ell>=2" not in global_fixed_second["bounded_or_finite_quasiperiodic"]["statement"] or "A=0" not in global_fixed_second["bounded_or_finite_quasiperiodic"]["statement"]:
         raise AssertionError("global fixed-ell scope was hidden")
-    if "C_A=" not in global_fixed["mode_data"]["resonance"]["statement"]:
+    if "generic C_A and C_P" not in global_fixed["mode_data"]["resonance"]["statement"]:
         raise AssertionError("generic-lambda pivot identity was hidden")
     if global_fixed_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("global fixed-ell causal lifecycle was over-promoted")
     global_finite = by_id["einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone"]
     global_finite_second = global_finite["mode_data"]["second_order"]
-    if global_finite_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
-        raise AssertionError("global finite-harmonic bounded cone was lost")
-    if "every finite generic k=0 wave sum" not in global_finite_second["bounded_or_finite_quasiperiodic"]["statement"]:
+    if global_finite_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("global finite-harmonic nonzero-A gap was re-promoted")
+    if "every finite generic k=0 wave sum" not in global_finite_second["bounded_or_finite_quasiperiodic"]["statement"] or "A=0" not in global_finite_second["bounded_or_finite_quasiperiodic"]["statement"]:
         raise AssertionError("global finite-harmonic scope was hidden")
-    if "cannot be screened" not in global_finite["mode_data"]["resonance"]["statement"]:
-        raise AssertionError("cross-ell shell separation was hidden")
+    if "constant-twist resonance" not in global_finite["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("global finite-harmonic twist gap was hidden")
     if global_finite_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("global finite-harmonic causal lifecycle was over-promoted")
+    twist_counterexample = by_id["einstein.ph.wm.interaction.constant_twist_wave_counterexample"]
+    if twist_counterexample["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED":
+        raise AssertionError("constant-twist wave counterexample was lost")
+    if "24*sqrt(3)" not in twist_counterexample["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("constant-twist adjoint witness was hidden")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

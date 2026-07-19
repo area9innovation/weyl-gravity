@@ -26,6 +26,7 @@ INPUTS = {
     "circumference": ROOT / "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
     "electric_wilson": ROOT / "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
     "constant_twist": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+    "twist_counterexample": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
 }
 
 
@@ -74,7 +75,7 @@ def _electric_and_twist_audit(records: dict[str, dict[str, Any]]) -> dict[str, A
         "constant_twist_transport": {
             "covariant_momentum": "k -> k+epsilon*T_A",
             "shell_derivative_at_k0": str(derivative),
-            "consequence": "the exact flat-holonomy family transports every ell2 multiplet without a first-order frequency drift, so its mixed correction is bounded",
+            "consequence": "the shell derivative vanishes, but this does not supply a periodic mixed correction; the independent twist-position adjoint matrix contains a nonzero off-axis obstruction",
         },
     }
 
@@ -126,6 +127,7 @@ def build() -> dict[str, object]:
     _require(records["circumference"]["classification"]["k0_circumference_cross_bounded_removable"], "circumference transport changed")
     _require(records["electric_wilson"]["classification"]["W_x_times_every_oscillator_source_zero"], "Wilson spectator changed")
     _require(records["constant_twist"]["classification"]["constant_twist_exact_family_identified"], "constant twist family changed")
+    _require(records["twist_counterexample"]["classification"]["A_arbitrary_wave_branch_refuted"], "constant-twist counterexample changed")
     promotion = _equivariant_promotion(records)
     electric_twist = _electric_and_twist_audit(records)
     bounded_zero_frequency = _bounded_zero_frequency_audit(records)
@@ -134,7 +136,7 @@ def build() -> dict[str, object]:
         "schema_path": str(SCHEMA.relative_to(ROOT)),
         "schema_sha256": _sha256(SCHEMA),
         "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_ELL2_ALL_M_BOTH_PARITY_BOUNDED_CONE",
-        "result_state": "COMPLETE_GLOBAL_PLUS_ELL2_K0_ALL_M_BOTH_PARITY_BOUNDED_CONE_CLASSIFIED",
+        "result_state": "GLOBAL_PLUS_ELL2_K0_BOUNDED_CONE_PARTIAL_AFTER_TWIST_CORRECTION",
         "lifecycle_state": "CLASSIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "scope": {
@@ -163,27 +165,31 @@ def build() -> dict[str, object]:
         },
         "complete_bounded_cone": {
             "static_branch": "u_wave=0: (c,d,W_x,A) arbitrary, with a=b=Q_e=0 and B=0",
-            "wave_branch": "u_wave is any nonzero point of {mu_H=mu_J1=mu_J2=mu_J3=0}; a=b=d=Q_e=0 and B=0; c,W_x and A in R^3 are arbitrary",
-            "branch_intersection": "u_wave=0,d=0 with c,W_x,A arbitrary",
-            "union_is_necessary_and_sufficient": True,
+            "certified_wave_subcone": "u_wave is any nonzero common H,J_i zero; a=b=d=Q_e=0, A=B=0; c,W_x arbitrary",
+            "nonzero_A_wave_stratum": "OPEN: impose the complete constant-twist position resonance functionals; the prior A-arbitrary statement is refuted",
+            "branch_intersection": "u_wave=0,d=0,A=0 with c,W_x arbitrary",
+            "union_is_necessary_and_sufficient": False,
         },
         "sufficiency": {
             "wave_self": "complete all-m both-parity ell2 common-zero theorem plus the exact constant L1 right inverse (S0/2,-S1/2,0,0), so no secular/Jordan term is required",
             "standard_static": "complete standard-global bounded theorem",
             "circumference": "bounded k=0 exact-radius transport",
             "Wilson": "identically zero mixed source",
-            "constant_twist": "exact flat-holonomy transport with vanishing first shell derivative at k=0",
+            "constant_twist": "wave-free A is exact; the certified wave subcone sets A=0 because the off-axis twist-extra adjoint pairing is nonzero",
             "electric": "absent on the bounded wave branch by the independent E11 witness",
         },
         "correction_classes": {
-            "BOUNDED_OR_FINITE_QUASIPERIODIC": {"status": "CERTIFIED"},
+            "BOUNDED_OR_FINITE_QUASIPERIODIC": {"status": "OPEN", "reason": "static and A=0 wave strata are certified, while the complete nonzero-A zero locus is open"},
             "SMOOTH_SECULAR": {"status": "CERTIFIED", "reason": "the bounded correction is a special smooth exponential-polynomial correction"},
             "CAUSAL_RETARDED": {"status": "NO_CERTIFIED_MAP"},
         },
         "classification": {
-            "complete_declared_global_plus_ell2_carrier_covered": True,
+            "complete_declared_global_plus_ell2_carrier_covered": False,
             "all_m_both_parities_all_ell2_qp_branches_included": True,
-            "bounded_zero_locus_necessary_and_sufficient": True,
+            "bounded_zero_locus_necessary_and_sufficient": False,
+            "A_arbitrary_wave_branch_withdrawn": True,
+            "A_zero_wave_subcone_certified": True,
+            "complete_constant_twist_wave_zero_locus_classified": False,
             "all_m_promotion_proved_by_SO3_multiplicity_one": True,
             "electric_taub_only_balance_excluded_by_full_source": True,
             "general_ell_classified": False,
@@ -192,9 +198,9 @@ def build() -> dict[str, object]:
             "all_orders_integrability": False,
             "causal_or_quantum_claim": False,
         },
-        "interpretation": "The bounded Einstein sector does survive after the complete ell2 wave block is adjoined to the global phase space, but it is a stratified cone rather than a product with all global coordinates. Every nonzero wave point needs an Einstein-minus component and consequently removes a,b,d; the full zero-frequency source removes Q_e; twist velocity is universally removed. The surviving wave cone is exactly the already certified all-m both-parity ell2 stabilizer cone, times the static c, W_x and constant-twist holonomy spectators.",
-        "next_gate": "propagate the a/d full-time shell audit and global bounded stratification to symbolic ell at k=0, then treat nonzero momentum where circumference transport is resonant",
-        "claim_boundary": "This theorem is complete for the full ell=2,k=0 wave block adjoined to the declared standard global data. It does not classify ell!=2, nonzero momentum, exceptional oscillators beyond the global twist, arbitrary finite cross-ell sums, infinite sums, all-orders integration, final residual descent, causal propagation, observables, particles or quantum theory.",
+        "interpretation": "The complete ell=2 wave cone and its A=0 global extension survive. The former product with arbitrary constant twist does not: a perpendicular twist-extra fixture has a nonzero adjoint resonance. Wave-free A remains exact, and the complete nonzero-A wave locus is now fail-closed.",
+        "next_gate": "solve the constant-twist position resonance equations on the complete ell=2 wave cone before any symbolic-ell promotion",
+        "claim_boundary": "This theorem certifies the static branch and the A=0 full-ell=2 wave subcone. The complete nonzero-A wave locus, other ell, nonzero momentum and higher lifecycles remain open.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),
             "generator_sha256": _sha256(Path(__file__)),
@@ -204,7 +210,7 @@ def build() -> dict[str, object]:
             "producing_date": "2026-07-19",
             "tier_0": {"status": "PASS", "elapsed_seconds": 0.30},
             "tier_1": {"status": "PASS", "elapsed_seconds": 5.56, "tests_run": 30},
-            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "the direct axial and polar global/minus sources and complete ell2 wave-cone theorem are unchanged exact inputs"},
+            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "the direct axial and polar global/minus sources, complete ell2 wave-cone theorem and twist-position counterexample are exact content-addressed inputs"},
             "tier_3": {"status": "NOT_RUN", "reason": "symbolic ell, nonzero momentum, complete finite bounded, causal, residual and quantum gates remain excluded"},
         },
         "verification_commands": [

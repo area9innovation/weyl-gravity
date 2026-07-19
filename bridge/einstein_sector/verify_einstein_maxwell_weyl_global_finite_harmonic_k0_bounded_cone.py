@@ -32,10 +32,14 @@ def main() -> None:
     assert all(sp.simplify(axial.subs(lam, ell * (ell + 1))) != 0 for ell in range(2, 20))
     assert all(polar.subs(lam, ell * (ell + 1)) > 0 for ell in range(2, 20))
     cone = value["complete_bounded_cone"]
-    assert cone["union_is_necessary_and_sufficient"] is True
-    assert "finite generic k=0 common H,J_i zero" in cone["wave_branch"]
+    assert cone["union_is_necessary_and_sufficient"] is False
+    assert "finite generic k=0 common H,J_i zero" in cone["certified_wave_subcone"]
+    assert "A=B=0" in cone["certified_wave_subcone"]
+    assert cone["nonzero_A_wave_stratum"].startswith("OPEN")
     classification = value["classification"]
-    assert classification["arbitrary_finite_generic_ell_global_bounded_cone_classified"] is True
+    assert classification["arbitrary_finite_generic_ell_global_bounded_cone_classified"] is False
+    assert classification["A_arbitrary_wave_branch_withdrawn"] is True
+    assert classification["A_zero_wave_subcone_certified"] is True
     assert classification["infinite_harmonic_completion_classified"] is False
     assert classification["nonzero_momentum_classified"] is False
     assert classification["exceptional_wave_inputs_classified"] is False

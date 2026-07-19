@@ -23,6 +23,7 @@ INPUTS = {
     "circumference": ROOT / "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
     "electric_wilson": ROOT / "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
     "constant_twist": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+    "twist_counterexample": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
     "L1_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion.json",
 }
 
@@ -51,6 +52,7 @@ def build() -> dict[str, object]:
     _require(records["circumference"]["classification"]["k0_circumference_cross_bounded_removable"], "circumference transport changed")
     _require(records["electric_wilson"]["classification"]["W_x_times_every_oscillator_source_zero"], "Wilson spectator changed")
     _require(records["constant_twist"]["classification"]["constant_twist_exact_family_identified"], "constant twist transport changed")
+    _require(records["twist_counterexample"]["classification"]["A_arbitrary_wave_branch_refuted"], "constant-twist counterexample changed")
     completion = records["L1_completion"]["zero_frequency_L1_completion"]
     zero_operator = sp.Matrix(completion["zero_operator"])
     source_0, source_1 = sp.symbols("S0 S1")
@@ -72,7 +74,7 @@ def build() -> dict[str, object]:
         "schema_path": str(SCHEMA.relative_to(ROOT)),
         "schema_sha256": _sha256(SCHEMA),
         "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FIXED_ELL_K0_BOUNDED_CONE",
-        "result_state": "EVERY_FIXED_GENERIC_ELL_K0_GLOBAL_BOUNDED_CONE_CLASSIFIED",
+        "result_state": "EVERY_FIXED_GENERIC_ELL_K0_GLOBAL_BOUNDED_CONE_PARTIAL_AFTER_TWIST_CORRECTION",
         "lifecycle_state": "CLASSIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "scope": {
@@ -105,9 +107,10 @@ def build() -> dict[str, object]:
         },
         "complete_bounded_cone": {
             "static_branch": "u_wave=0: (c,d,W_x,A) arbitrary, with a=b=Q_e=0 and B=0",
-            "wave_branch": "u_wave is any nonzero fixed-ell common H,J_i zero; a=b=d=Q_e=0 and B=0; c,W_x,A are arbitrary",
-            "branch_intersection": "u_wave=0,d=0 with c,W_x,A arbitrary",
-            "union_is_necessary_and_sufficient": True,
+            "certified_wave_subcone": "u_wave is any nonzero fixed-ell common H,J_i zero; a=b=d=Q_e=0, A=B=0; c,W_x arbitrary",
+            "nonzero_A_wave_stratum": "OPEN: constant-twist resonance equations have not been solved beyond the ell=2 counterexample",
+            "branch_intersection": "u_wave=0,d=0,A=0 with c,W_x arbitrary",
+            "union_is_necessary_and_sufficient": False,
         },
         "bounded_sufficiency": {
             "wave_self": "every-fixed-ell all-m both-parity common-zero theorem",
@@ -115,26 +118,29 @@ def build() -> dict[str, object]:
             "standard_static": "complete standard-global bounded theorem",
             "circumference": "exact k=0 radius transport",
             "Wilson": "identically zero mixed source",
-            "constant_twist": "exact flat-holonomy transport without first-order k=0 frequency drift",
+            "constant_twist": "wave-free A is exact; only A=0 is retained on the certified wave subcone",
         },
         "correction_classes": {
-            "BOUNDED_OR_FINITE_QUASIPERIODIC": {"status": "CERTIFIED"},
+            "BOUNDED_OR_FINITE_QUASIPERIODIC": {"status": "OPEN", "reason": "the static branch and A=0 fixed-ell wave subcone are certified; nonzero-A is open"},
             "SMOOTH_SECULAR": {"status": "CERTIFIED", "reason": "bounded corrections are a special smooth exponential-polynomial class"},
             "CAUSAL_RETARDED": {"status": "NO_CERTIFIED_MAP"},
         },
         "classification": {
-            "every_fixed_generic_ell_global_bounded_cone_classified": True,
+            "every_fixed_generic_ell_global_bounded_cone_classified": False,
             "all_m_both_parities_all_qp_branches_included": True,
-            "bounded_zero_locus_necessary_and_sufficient": True,
+            "bounded_zero_locus_necessary_and_sufficient": False,
+            "A_arbitrary_wave_branch_withdrawn": True,
+            "A_zero_wave_subcone_certified": True,
+            "complete_constant_twist_wave_zero_locus_classified": False,
             "cross_ell_superpositions_classified": False,
             "nonzero_momentum_classified": False,
             "exceptional_wave_inputs_classified": False,
             "all_orders_integrability": False,
             "causal_or_quantum_claim": False,
         },
-        "interpretation": "The ell=2 stratification is universal blockwise at rest. For every fixed generic angular momentum, a nonzero bounded wave branch is exactly the common stabilizer cone times the static c, Wilson and twist-holonomy spectators; the generalized a,b,d directions, electric tangent and twist velocity are excluded.",
-        "next_gate": "classify bounded products between distinct ell blocks at k=0, then treat nonzero compact momentum and its circumference resonance",
-        "claim_boundary": "This theorem is blockwise in one fixed ell>=2 at k=0. It does not cover cross-ell superpositions, nonzero momentum, exceptional ell=1 wave blocks, arbitrary finite harmonic sums, all-orders integration, residual descent, causal propagation, observables, particles or quantum theory.",
+        "interpretation": "The symbolic a,b,d elimination and A=0 fixed-ell wave extensions remain valid. Constant twist is not an automatic wave spectator: the ell=2 off-axis counterexample withdraws the former A-arbitrary product and leaves the nonzero-A zero locus open.",
+        "next_gate": "solve the constant-twist resonance map at general ell, then revisit cross-ell and nonzero-momentum global cones",
+        "claim_boundary": "This theorem certifies every fixed-ell A=0 wave subcone and the wave-free static branch at k=0. Nonzero-A wave strata, cross-ell global sums, nonzero momentum and higher lifecycles remain open.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),
             "generator_sha256": _sha256(Path(__file__)),
@@ -144,7 +150,7 @@ def build() -> dict[str, object]:
             "producing_date": "2026-07-19",
             "tier_0": {"status": "PASS", "elapsed_seconds": 0.41},
             "tier_1": {"status": "PASS", "elapsed_seconds": 6.46, "tests_run": 31},
-            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "generic-lambda pivot, fixed-ell wave, global-source and transport inputs are exact unchanged dependencies"},
+            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "generic-lambda pivot, fixed-ell wave, global-source and twist-position counterexample inputs are exact content-addressed dependencies"},
             "tier_3": {"status": "NOT_RUN", "reason": "cross-ell, nonzero momentum, causal, residual and quantum gates remain excluded"},
         },
         "verification_commands": [

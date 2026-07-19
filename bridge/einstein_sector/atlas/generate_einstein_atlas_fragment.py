@@ -50,6 +50,7 @@ CERTIFICATES = {
     "abd_generic_lambda_pivot": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_generic_lambda_pivot.json",
     "global_fixed_ell_k0_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
     "global_finite_harmonic_k0_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.json",
+    "constant_twist_wave_counterexample": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
     "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
     "global_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
     "extra_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
@@ -385,52 +386,64 @@ def entries() -> list[dict[str, object]]:
             "This is complete only on the aligned axial ell=2,m=0,k=0 face. Einstein-plus, polar input, all m, other ell and momenta, infinite sums, all-orders, residual, observational and quantum maps remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.constant_twist_wave_counterexample",
+            _scope(theory="Weyl-Maxwell target", carrier="one constant axial twist-position tangent crossed with a rotationally neutral ell=2,k=0 Einstein-minus/extra balanced wave", degree=2, parity="axial input with axial resonant output", ell="1 x 2 -> 2", m="twist m=1 crossed with wave m=0", k=0, omega="omega_extra=4/sqrt(3) and the distinct omega_minus shell"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OBSTRUCTED", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The twist is generalized-zero and the wave uses distinct certified Einstein-minus and extra p-primary shells."),
+            ("CERTIFIED", "The balanced wave is nonnull and has vanishing H,J_i moment maps before the twist-position interaction is tested."),
+            ("CERTIFIED", "The complete stabilizer moment maps vanish for the declared rotationally neutral wave with constant twist position."),
+            ("CERTIFIED", "The twist-position times axial-extra e1 column has the exact adjoint-cokernel coefficient 24*sqrt(3); the twist-minus term lies at a different frequency and cannot cancel it."),
+            _second_order(("OBSTRUCTED", "This explicit nonzero-A wave tangent has a nonzero bounded resonance functional despite vanishing stabilizer moment maps."), ("OPEN", "A secular correction may absorb the shell resonance, but no correction is constructed in this certificate."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("constant_twist_wave_counterexample", "homogeneous_twist_matrix", "taub", "abstract_cone"),
+            "This is one independence witness for the bounded tangent-cone theorem. It refutes arbitrary constant twist as a spectator on wave branches but does not classify the complete nonzero-A zero locus.",
+        ),
+        _entry(
             "einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone",
             _scope(theory="Weyl-Maxwell target", carrier="complete homogeneous and axial-twist globals plus axial ell=2,k=0 Einstein-minus and both extra primaries", degree=2, parity="homogeneous and axial", ell="input 0,1,2 with every output L=0,...,4", m="all wave m=-2,...,2 and arbitrary real twist vector", k=0, omega="generalized zero, sqrt(6-2*sqrt(3)), and 4/sqrt(3)"),
-            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
             ("CERTIFIED", "The axial q/p wave block retains every m and both extra multiplicities; global a,b,d are rotational scalars."),
             ("CERTIFIED", "Schur's lemma promotes the nonzero direct m=0 a,b,d shell pivots to scalar identities on V_2; the wave currents remain action-normalized."),
             ("CERTIFIED", "The wave density matrices satisfy total H=J_1=J_2=J_3=0; the independent bounded homogeneous row excludes Q_e."),
-            ("CERTIFIED", "The zero-frequency axial L=1 source has the explicit constant right inverse (S0/2,-S1/2,0,0), so no Jordan growth is required after rotation descent."),
-            _second_order(("CERTIFIED", "The cone is the union of static (c,d,W_x,A) and nonzero axial wave-density branches with a=b=d=Q_e=B=0 and arbitrary (c,W_x,A)."), ("CERTIFIED", "The bounded theorem embeds in the smooth exponential-polynomial class."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
-            _evidence("global_axial_all_m_bounded", "axial_all_m_bounded", "aligned_global_minus_extra_bounded", "abd_axial_minus", "standard_global_bounded", "taub", "abstract_cone"),
-            "This is complete only for axial ell=2,k=0 minus-plus-two-extra waves. Einstein-plus, polar wave input, other ell and momenta, infinite sums, all-orders, residual, observational and quantum maps remain fail-closed.",
+            ("OPEN", "The A=0 zero-frequency axial L=1 source has an explicit constant right inverse, but a perpendicular constant twist times axial extra e1 has adjoint coefficient 24*sqrt(3)."),
+            _second_order(("OPEN", "The wave-free static branch with arbitrary A and the complete A=0 axial wave-density subcone are certified; the nonzero-A wave zero locus is open."), ("CERTIFIED", "The certified bounded subcones embed in the smooth exponential-polynomial class."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("global_axial_all_m_bounded", "constant_twist_wave_counterexample", "axial_all_m_bounded", "aligned_global_minus_extra_bounded", "abd_axial_minus", "standard_global_bounded", "taub", "abstract_cone"),
+            "The former arbitrary-A product claim is withdrawn. This row certifies the static branch and A=0 axial ell=2,k=0 wave subcone only; nonzero-A, polar waves, other ell and momenta, infinite sums and higher lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone",
             _scope(theory="Weyl-Maxwell target", carrier="complete standard homogeneous/twist globals plus every axial and polar ell=2,k=0 Einstein-plus, Einstein-minus and both extra-primary coefficient", degree=2, parity="homogeneous, axial and polar", ell="input 0,1,2 with complete ell2 quadratic output theorem", m="all wave m=-2,...,2 and all three real twist components", k=0, omega="generalized zero and every ell2 q/p shell"),
-            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
             ("CERTIFIED", "The wave carrier contains every axial/polar ell=2 q-primary and both p-primary multiplicities at allowed k=0 frequencies."),
             ("CERTIFIED", "The direct axial and polar m=0 action-source pivots promote by SO3 multiplicity one; all wave currents and Taub maps retain their action normalization."),
             ("CERTIFIED", "A nonzero common zero necessarily contains an Einstein-minus component; the full homogeneous source independently excludes electric tangent Q_e on the wave branch."),
-            ("CERTIFIED", "The complete ell2 output ledger is invertible off the stabilizer cokernel, and the compatible zero-frequency L=1 source has the constant right inverse (S0/2,-S1/2,0,0)."),
-            _second_order(("CERTIFIED", "The exact bounded cone is the union of static (c,d,W_x,A) and nonzero all-m axial--polar wave-cone branches with a=b=d=Q_e=B=0 and arbitrary (c,W_x,A)."), ("CERTIFIED", "The bounded correction is also a smooth finite exponential-polynomial correction."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
-            _evidence("global_ell2_both_parity_bounded", "global_axial_all_m_bounded", "axial_all_m_bounded", "abd_axial_minus", "abd_polar_minus", "standard_global_bounded", "taub", "abstract_cone"),
-            "This is complete only for the declared full ell=2,k=0 wave block adjoined to the standard globals. Other ell, nonzero momentum, arbitrary finite cross-ell sums, infinite sums, all-orders integration, residual descent, observational and quantum maps remain fail-closed.",
+            ("OPEN", "The A=0 ell2 output ledger is invertible off the stabilizer cokernel and its compatible L1 source has a constant right inverse; nonzero-A adds an independent twist-position resonance map."),
+            _second_order(("OPEN", "The wave-free static branch and the complete A=0 all-m axial--polar wave cone are certified; the nonzero-A wave zero locus is open."), ("CERTIFIED", "The certified bounded subcones are smooth finite exponential-polynomial corrections."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("global_ell2_both_parity_bounded", "constant_twist_wave_counterexample", "global_axial_all_m_bounded", "axial_all_m_bounded", "abd_axial_minus", "abd_polar_minus", "standard_global_bounded", "taub", "abstract_cone"),
+            "The former arbitrary-A product claim is withdrawn. This row certifies the static branch and A=0 full ell=2,k=0 wave subcone; nonzero-A and every larger scope remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
             _scope(theory="Weyl-Maxwell target", carrier="complete standard globals plus every axial/polar q/p primary in one arbitrary fixed generic ell block", degree=2, parity="homogeneous, axial and polar", ell="one fixed integer ell>=2 with global ell=0,1 data adjoined", m="all wave m=-ell,...,ell and all three real twist components", k=0, omega="generalized zero and every fixed-ell q/p shell"),
-            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
             ("CERTIFIED", "The carrier contains every q/p primary at one arbitrary fixed ell>=2 and all standard global coordinates."),
             ("CERTIFIED", "The generic-lambda axial and polar pivots are obtained by a direct formal-Legendre-jet tensor calculation, not finite-ell interpolation."),
             ("CERTIFIED", "Every nonzero common H,J_i zero contains an Einstein-minus component; the full homogeneous source separately excludes Q_e."),
-            ("CERTIFIED", "C_A=-3 i omega_minus(3 sqrt(2 lambda)-1) and C_P=lambda^2(2 lambda-1)/6 are nonzero on every physical fibre; the constant L=1 right inverse removes Jordan growth."),
-            _second_order(("CERTIFIED", "For every fixed ell>=2 the exact bounded cone is the union of static (c,d,W_x,A) and nonzero common-moment-map wave branches with a=b=d=Q_e=B=0 and arbitrary (c,W_x,A)."), ("CERTIFIED", "The bounded correction is also a smooth finite exponential-polynomial correction."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
-            _evidence("global_fixed_ell_k0_bounded", "abd_generic_lambda_pivot", "global_ell2_both_parity_bounded", "standard_global_bounded", "taub", "abstract_cone"),
-            "This theorem is blockwise in one fixed ell at k=0. Cross-ell products, nonzero momentum, exceptional wave inputs, arbitrary finite sums, all-orders integration, residual descent, observational and quantum maps remain fail-closed.",
+            ("OPEN", "The generic C_A and C_P pivots certify a=b=d=0 and the A=0 wave extension on every physical fibre; constant-twist resonance is not classified beyond its ell2 counterexample."),
+            _second_order(("OPEN", "For every fixed ell>=2 the wave-free static branch and A=0 common-moment-map wave subcone are certified; nonzero-A wave strata are open."), ("CERTIFIED", "The certified bounded subcones are smooth finite exponential-polynomial corrections."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("global_fixed_ell_k0_bounded", "constant_twist_wave_counterexample", "abd_generic_lambda_pivot", "global_ell2_both_parity_bounded", "standard_global_bounded", "taub", "abstract_cone"),
+            "This theorem is blockwise in one fixed ell at k=0 and only complete at A=0 or with no waves. Nonzero-A, cross-ell, nonzero-momentum, exceptional and higher scopes remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone",
             _scope(theory="Weyl-Maxwell target", carrier="complete standard globals plus an arbitrary finite sum of generic axial/polar q/p primaries at rest", degree=2, parity="homogeneous, axial and polar", ell="arbitrary finite subset of ell>=2 with global ell=0,1 data adjoined", m="all retained wave m values and all three real twist components", k=0, omega="generalized zero and all retained q/p shells"),
-            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
             ("CERTIFIED", "The carrier contains every retained q/p primary across an arbitrary finite set of generic ell blocks and every standard global coordinate."),
             ("CERTIFIED", "The action-normalized finite-wave theorem and generic-lambda global pivots retain ell,m,parity and primary-shell separation."),
             ("CERTIFIED", "The total H,J_i equations retain cross-ell cancellations; every nonzero common zero contains an isolated Einstein-minus coefficient, and the homogeneous source separately excludes Q_e."),
-            ("CERTIFIED", "Every cross-ell wave product is off shell away from the total stabilizer cokernel, while the selected global-times-minus channel has nonzero C_A or C_P and cannot be screened by another ell block."),
-            _second_order(("CERTIFIED", "For every finite generic k=0 wave sum the bounded cone is the union of static (c,d,W_x,A) and nonzero total common-moment-map wave branches with a=b=d=Q_e=B=0 and arbitrary (c,W_x,A)."), ("CERTIFIED", "The bounded correction is also a real smooth spatially periodic finite exponential-polynomial correction."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
-            _evidence("global_finite_harmonic_k0_bounded", "global_fixed_ell_k0_bounded", "abd_generic_lambda_pivot", "standard_global_bounded", "taub", "abstract_cone"),
-            "This theorem covers arbitrary finite generic ell>=2 sums only at k=0. Infinite completion, nonzero momentum, exceptional wave inputs, all-orders integration, residual descent, observational and quantum maps remain fail-closed.",
+            ("OPEN", "Cross-ell wave products are off shell away from the stabilizer cokernel and the a,b,d pivots cannot be screened; the independent constant-twist resonance map remains unsolved."),
+            _second_order(("OPEN", "For every finite generic k=0 wave sum the wave-free static branch and complete A=0 common-moment-map wave subcone are certified; nonzero-A is open."), ("CERTIFIED", "The certified bounded subcones are real smooth spatially periodic finite exponential-polynomial corrections."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("global_finite_harmonic_k0_bounded", "constant_twist_wave_counterexample", "global_fixed_ell_k0_bounded", "abd_generic_lambda_pivot", "standard_global_bounded", "taub", "abstract_cone"),
+            "This theorem covers arbitrary finite generic ell>=2 wave sums at k=0 only at A=0, plus the wave-free static branch. Nonzero-A and every higher scope remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.mixed.finite_generic_all_momenta_smooth_cone",
@@ -575,14 +588,22 @@ def build() -> dict[str, object]:
         raise AssertionError("axial all-m bounded completion changed")
     global_axial = records["global_axial_all_m_bounded"]["classification"]
     if not (
-        global_axial["complete_declared_global_axial_all_m_carrier_covered"]
-        and global_axial["bounded_zero_locus_necessary_and_sufficient"]
-        and global_axial["all_wave_m_and_both_axial_extra_polarizations_included"]
+        global_axial["all_wave_m_and_both_axial_extra_polarizations_included"]
         and global_axial["SO3_shell_promotion_certified"]
+        and global_axial["A_arbitrary_wave_branch_withdrawn"]
+        and global_axial["A_zero_wave_subcone_certified"]
     ):
-        raise AssertionError("global axial all-m bounded cone changed")
+        raise AssertionError("corrected global axial all-m bounded cone changed")
+    if global_axial["complete_declared_global_axial_all_m_carrier_covered"] or global_axial["bounded_zero_locus_necessary_and_sufficient"]:
+        raise AssertionError("global axial arbitrary-A product was re-promoted")
     if global_axial["polar_input_classified"]:
         raise AssertionError("global axial theorem over-promoted polar input")
+    twist_counterexample = records["constant_twist_wave_counterexample"]["classification"]
+    if not (
+        twist_counterexample["A_arbitrary_wave_branch_refuted"]
+        and twist_counterexample["nonzero_adjoint_pairing_certified"]
+    ):
+        raise AssertionError("constant-twist wave counterexample changed")
     if not records["global_self_coefficients"]["classification"]["complete_aligned_global_self_source_classified"]:
         raise AssertionError("global self coefficient input changed")
     if not records["extra_self_coefficients"]["classification"]["complete_C4_extra_self_source_coefficient_explicit"]:

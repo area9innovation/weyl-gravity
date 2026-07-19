@@ -34,11 +34,15 @@ def main() -> None:
     assert bounded_zero["constant_correction"] == ["S0/2", "-S1/2", "0", "0"]
     assert bounded_zero["remainder"] == ["0", "0", "0", "0"]
     cone = value["complete_bounded_cone"]
-    assert cone["union_is_necessary_and_sufficient"] is True
-    assert "mu_H=mu_J1=mu_J2=mu_J3=0" in cone["wave_branch"]
+    assert cone["union_is_necessary_and_sufficient"] is False
+    assert "common H,J_i zero" in cone["certified_wave_subcone"]
+    assert "A=B=0" in cone["certified_wave_subcone"]
+    assert cone["nonzero_A_wave_stratum"].startswith("OPEN")
     assert value["wave_cone"]["zero_frequency_L1_constant_correction"] == ["S0/2", "-S1/2", "0", "0"]
     assert "no secular/Jordan term" in value["sufficiency"]["wave_self"]
     classification = value["classification"]
+    assert classification["A_arbitrary_wave_branch_withdrawn"] is True
+    assert classification["A_zero_wave_subcone_certified"] is True
     assert classification["all_m_both_parities_all_ell2_qp_branches_included"] is True
     assert classification["general_ell_classified"] is False
     assert classification["complete_finite_harmonic_bounded_cone_classified"] is False

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Constant-twist wave counterexample",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "first_order_fixture",
+    "adjoint_obstruction", "logical_repair", "affected_results",
+    "classification", "interpretation", "next_gate", "claim_boundary",
+    "provenance", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-constant-twist-wave-counterexample-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_WAVE_COUNTEREXAMPLE"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "REDUCED-MODE"}},
+    "classification": {"type": "object"},
+    "provenance": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": true
+}

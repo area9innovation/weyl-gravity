@@ -26,10 +26,14 @@ def main() -> None:
     for record in provenance["inputs"].values():
         assert record["sha256"] == hashlib.sha256((ROOT / record["path"]).read_bytes()).hexdigest()
     cone = value["complete_bounded_cone"]
-    assert cone["union_is_necessary_and_sufficient"] is True
-    assert "a=b=d=Q_e=0" in cone["wave_branch"]
+    assert cone["union_is_necessary_and_sufficient"] is False
+    assert "a=b=d=Q_e=0" in cone["certified_wave_subcone"]
+    assert "A=B=0" in cone["certified_wave_subcone"]
+    assert cone["nonzero_A_wave_stratum"].startswith("OPEN")
     classification = value["classification"]
-    assert classification["every_fixed_generic_ell_global_bounded_cone_classified"] is True
+    assert classification["every_fixed_generic_ell_global_bounded_cone_classified"] is False
+    assert classification["A_arbitrary_wave_branch_withdrawn"] is True
+    assert classification["A_zero_wave_subcone_certified"] is True
     assert classification["cross_ell_superpositions_classified"] is False
     assert classification["nonzero_momentum_classified"] is False
     assert value["correction_classes"]["CAUSAL_RETARDED"]["status"] == "NO_CERTIFIED_MAP"
