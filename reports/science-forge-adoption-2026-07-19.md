@@ -27,6 +27,11 @@ rewriting files currently owned by active science workstreams.
    Science Forge import.  It is not a required per-commit check.
 6. The handoff's `d_quotient_classical` metric was corrected: `0.13` is recall,
    while the reported precision is `0.33`.
+7. The certificate graph was rebuilt from the committed post-import tree, not
+   from the live shared working tree.  Its ordinary publication gate passes at
+   1,069 nodes and 4,268 ordering edges.  The maintenance ledger now exposes 20
+   duplicate identifiers and seven stale declared hashes; strict integrity
+   correctly remains red until the owning generators repair them.
 
 ## Hard-defect queue
 
@@ -34,7 +39,7 @@ rewriting files currently owned by active science workstreams.
 | --- | --- |
 | Duplicate result identities | Repaired in this pass |
 | Newly landed receipt/subject and fixture identity collisions | Separate follow-up: the broad working-tree scan now sees additional collisions, chiefly recent Einstein tier receipts reusing their subject IDs; repair the receipt generators with the owning team rather than rewriting active outputs |
-| Stale committed certificate DAG | Rebuild from the post-repair Git commit; do not include the live dirty working tree |
+| Stale committed certificate DAG | Rebuilt from the post-repair Git commit; ordinary graph gate passes and the remaining integrity defects are explicit |
 | Two observer producers fail their own `--check` | Team-owned repair; observer files are actively modified, so no concurrent overwrite here |
 | Circumference transport source-manifest drift | Einstein-team review required before refreshing the hash |
 | Nine quantum drift findings | Quantum-team review; several target papers and frontier files are actively modified |
