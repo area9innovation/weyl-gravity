@@ -38,6 +38,20 @@ def test_recoil_executable_readiness_is_fail_closed():
     }
 
 
+def test_two_j6_reality_fold_is_certified_without_stream_promotion():
+    rows = {row["id"]: row for row in build()["entries"]}
+    shell = rows["observer.berger.detector_profile.recoil_two_j6_reality_folded_binding"]
+    readiness = rows["observer.berger.detector_profile.recoil_stream_executable_readiness"]
+    assert shell["descriptions"]["causal"] == "CERTIFIED"
+    assert shell["observer_data"]["detector_response"]["status"] == "CERTIFIED"
+    assert shell["observer_data"]["response_rank"]["status"] == "OPEN"
+    assert shell["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert readiness["observer_data"]["detector_response"]["status"] == "OBSTRUCTED"
+    assert "BERGER_RECOIL_TWO_J6_REALITY_FOLDED_BINDING" in {
+        evidence["result_id"] for evidence in shell["evidence"]
+    }
+
+
 def test_partitioned_leading_rank_two_keeps_nonlinear_and_quotient_gates_open():
     row = next(
         row for row in build()["entries"]

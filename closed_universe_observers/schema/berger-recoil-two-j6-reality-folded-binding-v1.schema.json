@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "closed-universe-berger-recoil-two-j6-reality-folded-binding-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "evaluation_contract", "completed_columns", "two_j6_real_channel_sums", "coverage_summary", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-two-j6-reality-folded-binding-v1"},
+    "result_id": {"const": "BERGER_RECOIL_TWO_J6_REALITY_FOLDED_BINDING"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LORENTZIAN-CAUSAL"}},
+    "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "completed_columns": {"type": "array", "minItems": 7, "maxItems": 7},
+    "two_j6_real_channel_sums": {"type": "array", "minItems": 8, "maxItems": 8},
+    "coverage_summary": {
+      "type": "object",
+      "required": ["total_channel_column_count", "direct_backend_count", "exact_reality_derived_count", "causal_support_zero_count", "causally_allowed_count", "all_causally_allowed_rectangles_contain_zero"],
+      "properties": {
+        "total_channel_column_count": {"const": 56},
+        "direct_backend_count": {"const": 32},
+        "exact_reality_derived_count": {"const": 24},
+        "causal_support_zero_count": {"const": 28},
+        "causally_allowed_count": {"const": 28},
+        "all_causally_allowed_rectangles_contain_zero": {"const": true}
+      }
+    },
+    "mutation_results": {"type": "array", "minItems": 3, "items": {"type": "object", "required": ["name", "detected"], "properties": {"detected": {"const": true}}}},
+    "flags": {
+      "type": "object",
+      "required": ["TWO_J6_REPRESENTATIVE_COLUMNS_DIRECTLY_EVALUATED", "TWO_J6_REALITY_PARTNER_COLUMNS_EXACTLY_DERIVED", "ALL_56_TWO_J6_CHANNEL_COLUMN_BLOCKS_CERTIFIED", "ALL_EIGHT_TWO_J6_REAL_CHANNEL_SUMS_EXPORTED", "TWO_J6_FEEDBACK_CHANNELS_EVALUATED", "PHYSICAL_MASS_COUPLING_SPECIALIZATION_EXPORTED", "FOUR_PHYSICAL_RECOIL_INTERVALS_EXPORTED", "QUANTUM_CLAIM"],
+      "properties": {
+        "TWO_J6_REPRESENTATIVE_COLUMNS_DIRECTLY_EVALUATED": {"const": true},
+        "TWO_J6_REALITY_PARTNER_COLUMNS_EXACTLY_DERIVED": {"const": true},
+        "ALL_56_TWO_J6_CHANNEL_COLUMN_BLOCKS_CERTIFIED": {"const": true},
+        "ALL_EIGHT_TWO_J6_REAL_CHANNEL_SUMS_EXPORTED": {"const": true},
+        "TWO_J6_FEEDBACK_CHANNELS_EVALUATED": {"const": true},
+        "PHYSICAL_MASS_COUPLING_SPECIALIZATION_EXPORTED": {"const": false},
+        "FOUR_PHYSICAL_RECOIL_INTERVALS_EXPORTED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    }
+  }
+}

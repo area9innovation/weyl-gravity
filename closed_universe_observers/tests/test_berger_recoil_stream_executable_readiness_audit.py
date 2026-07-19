@@ -23,6 +23,7 @@ def test_symbolic_word_is_not_promoted_to_an_interval_backend():
     assert rows["finite_two_j5_all_channel_column_feedback_binding"] == "CERTIFIED"
     assert rows["generic_direct_finite_shell_provider"] == "CERTIFIED"
     assert rows["complex_channel_to_real_shell_scalar_map"] == "CERTIFIED"
+    assert rows["finite_two_j6_reality_folded_feedback_binding"] == "CERTIFIED"
     assert rows["nested_time_convolution_backend"] == "OBSTRUCTED"
     assert rows["shell_interval_evaluator"] == "CERTIFIED"
     assert rows["tail_aware_aggregate_stop_loop"] == "CERTIFIED"
@@ -39,6 +40,6 @@ def test_external_specialization_is_deferred_until_backend_exists():
 
 def test_generic_direct_reality_and_tail_stop_leave_complete_nested_stream_fail_closed():
     rows = build()["readiness"]["rows"][1:]
-    assert len(rows) == 21
-    assert [row["status"] for row in rows].count("CERTIFIED") == 20
+    assert len(rows) == 22
+    assert [row["status"] for row in rows].count("CERTIFIED") == 21
     assert [row["status"] for row in rows].count("OBSTRUCTED") == 1

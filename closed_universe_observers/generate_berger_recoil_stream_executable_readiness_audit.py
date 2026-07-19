@@ -52,6 +52,7 @@ DEPENDENCIES = {
     "finite_two_j5_all_channel_column_binding": PACKAGE / "certificates/BERGER_RECOIL_TWO_J5_ALL_CHANNEL_COLUMN_BINDING.json",
     "direct_shell_and_tail_stop_gate": PACKAGE / "certificates/BERGER_RECOIL_DIRECT_SHELL_AND_TAIL_STOP_GATE.json",
     "real_shell_extraction": PACKAGE / "certificates/BERGER_RECOIL_REAL_SHELL_EXTRACTION.json",
+    "two_j6_reality_folded_binding": PACKAGE / "certificates/BERGER_RECOIL_TWO_J6_REALITY_FOLDED_BINDING.json",
 }
 REQUIRED_CALLABLES = {
     "detector_profile_coefficient_provider": "detector_profile_coefficient_interval",
@@ -125,6 +126,7 @@ def readiness_rows(
     generic_direct_shell_provider: bool = False,
     certified_tail_stop_gate: bool = False,
     certified_real_shell_extraction: bool = False,
+    finite_two_j6_reality_folded_binding: bool = False,
     complete_nested_convolution: bool = False,
     treat_symbolic_word_as_backend: bool = False,
 ) -> list[dict[str, Any]]:
@@ -431,6 +433,16 @@ def readiness_rows(
                 else "NO_CERTIFIED_MAP"
             ),
         },
+        {
+            "id": "finite_two_j6_reality_folded_feedback_binding",
+            "status": "CERTIFIED" if finite_two_j6_reality_folded_binding else "OBSTRUCTED",
+            "coverage": "all_56_two_j6_channel_columns_from_32_direct_representatives_and_24_exact_reality_partners",
+            "evidence": (
+                "BERGER_RECOIL_TWO_J6_REALITY_FOLDED_BINDING"
+                if finite_two_j6_reality_folded_binding
+                else "NO_CERTIFIED_TWO_J6_FEEDBACK_BINDING"
+            ),
+        },
     ]
     for identifier, callable_name in REQUIRED_CALLABLES.items():
         present = callable_name in functions
@@ -493,6 +505,7 @@ def build() -> dict[str, Any]:
         "finite_two_j5_all_channel_column_binding": "ALL_48_TWO_J5_CHANNEL_COLUMN_BLOCKS_EVALUATED",
         "direct_shell_and_tail_stop_gate": "TAIL_AWARE_FOUR_STREAM_STOP_CALLABLE_EXPORTED",
         "real_shell_extraction": "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED",
+        "two_j6_reality_folded_binding": "ALL_56_TWO_J6_CHANNEL_COLUMN_BLOCKS_CERTIFIED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -569,6 +582,9 @@ def build() -> dict[str, Any]:
     certified_real_shell_extraction = values["real_shell_extraction"]["flags"][
         "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED"
     ]
+    finite_two_j6_reality_folded_binding = values["two_j6_reality_folded_binding"]["flags"][
+        "ALL_56_TWO_J6_CHANNEL_COLUMN_BLOCKS_CERTIFIED"
+    ]
     rows = readiness_rows(
         functions,
         form_functions=form_functions,
@@ -598,6 +614,7 @@ def build() -> dict[str, Any]:
         generic_direct_shell_provider=generic_direct_shell_provider,
         certified_tail_stop_gate=certified_tail_stop_gate,
         certified_real_shell_extraction=certified_real_shell_extraction,
+        finite_two_j6_reality_folded_binding=finite_two_j6_reality_folded_binding,
         complete_nested_convolution=complete_nested_convolution,
     )
     row_status = {row["id"]: row["status"] for row in rows}
@@ -636,6 +653,7 @@ def build() -> dict[str, Any]:
         generic_direct_shell_provider=False,
         certified_tail_stop_gate=False,
         certified_real_shell_extraction=False,
+        finite_two_j6_reality_folded_binding=False,
         complete_nested_convolution=complete_nested_convolution,
         treat_symbolic_word_as_backend=True,
     )
@@ -674,7 +692,10 @@ def build() -> dict[str, Any]:
         "The exact SU(2) conjugate-column relation now supplies a certified map from "
         "complex channel rectangles to real shell inputs; all eight two_j=5 channel "
         "sums pass that carrier audit. The feedback backend itself is still evaluated "
-        "only through two_j=5. "
+        "through two_j=6: 32 representative blocks are evaluated directly and 24 "
+        "partner blocks are exact reality images, giving all 56 blocks and eight real "
+        "channel sums. A generic adapter that builds, binds, evaluates and folds each "
+        "successive shell inside the stop loop is not yet exported. "
         "Supplying masses and "
         "couplings would therefore still not produce a physical recoil interval. The "
         "numerical input schema is certified only as a deferred exact "
@@ -687,7 +708,7 @@ def build() -> dict[str, Any]:
         "schema": "closed-universe-berger-recoil-stream-executable-readiness-audit-v1",
         "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
         "setting_id": values["per_shell_word"]["setting_id"],
-        "claim_status": "GENERIC_DIRECT_SHELL_REALITY_AND_TAIL_STOP_CERTIFIED_TWO_J6_FEEDBACK_STREAM_OBSTRUCTED",
+        "claim_status": "TWO_J6_REALITY_FOLDED_FEEDBACK_CERTIFIED_GENERIC_SUCCESSIVE_SHELL_STREAM_ADAPTER_OBSTRUCTED",
         "atlas_status": "OBSTRUCTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
@@ -777,6 +798,7 @@ def build() -> dict[str, Any]:
             "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": row_status["detector_profile_coefficient_provider"] == "CERTIFIED",
             "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": False,
             "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED": row_status["complex_channel_to_real_shell_scalar_map"] == "CERTIFIED",
+            "TWO_J6_FEEDBACK_CHANNELS_EVALUATED": row_status["finite_two_j6_reality_folded_feedback_binding"] == "CERTIFIED",
             "TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED": row_status["tail_aware_aggregate_stop_loop"] == "CERTIFIED",
             "NUMERICAL_SPECIALIZATION_INPUT_SCHEMA_EXPORTED": True,
             "NUMERICAL_SPECIALIZATION_VALUES_DECLARED": False,
@@ -784,7 +806,7 @@ def build() -> dict[str, Any]:
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "BIND_TWO_J6_FEEDBACK_CHANNEL_COLUMNS_WITH_CERTIFIED_REALITY_PAIR_FOLDING",
+        "next_gate": "EXPORT_GENERIC_REALITY_FOLDED_DIRECT_SHELL_STREAM_ADAPTER_BEFORE_NUMERICAL_SPECIALIZATION",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

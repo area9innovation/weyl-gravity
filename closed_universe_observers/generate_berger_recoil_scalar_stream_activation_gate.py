@@ -37,6 +37,7 @@ DEPENDENCIES = {
     "two_j5_all_channel_column_binding": PACKAGE / "certificates/BERGER_RECOIL_TWO_J5_ALL_CHANNEL_COLUMN_BINDING.json",
     "direct_shell_and_tail_stop_gate": PACKAGE / "certificates/BERGER_RECOIL_DIRECT_SHELL_AND_TAIL_STOP_GATE.json",
     "real_shell_extraction": PACKAGE / "certificates/BERGER_RECOIL_REAL_SHELL_EXTRACTION.json",
+    "two_j6_reality_folded_binding": PACKAGE / "certificates/BERGER_RECOIL_TWO_J6_REALITY_FOLDED_BINDING.json",
 }
 SOURCE_FILES = [
     Path(__file__),
@@ -177,6 +178,11 @@ def readiness_audit(values: dict[str, dict[str, Any]], *, drop_per_shell_word: b
             "status": "CERTIFIED" if values["real_shell_extraction"]["flags"]["COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED"] else "OBSTRUCTED",
             "evidence_flag": "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED",
         },
+        {
+            "id": "finite_two_j6_reality_folded_feedback_binding",
+            "status": "CERTIFIED" if values["two_j6_reality_folded_binding"]["flags"]["ALL_56_TWO_J6_CHANNEL_COLUMN_BLOCKS_CERTIFIED"] else "OBSTRUCTED",
+            "evidence_flag": "ALL_56_TWO_J6_CHANNEL_COLUMN_BLOCKS_CERTIFIED",
+        },
     ]
     external = [
         {"id": "numerical_positive_masses", "status": "OPEN", "activation": "DEFERRED", "required_domain": "m_0>0 and m_1>0"},
@@ -217,6 +223,7 @@ def build() -> dict[str, Any]:
         "two_j5_all_channel_column_binding": "ALL_48_TWO_J5_CHANNEL_COLUMN_BLOCKS_EVALUATED",
         "direct_shell_and_tail_stop_gate": "TAIL_AWARE_FOUR_STREAM_STOP_CALLABLE_EXPORTED",
         "real_shell_extraction": "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED",
+        "two_j6_reality_folded_binding": "ALL_56_TWO_J6_CHANNEL_COLUMN_BLOCKS_CERTIFIED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -262,9 +269,12 @@ def build() -> dict[str, Any]:
         "k=0 paths contract from two to four cells. A content-addressed generic "
         "direct finite-shell provider now has a contiguous two_j=6 sentinel, and "
         "the fail-closed four-stream tail stop callable is exported. The two_j=6 "
-        "feedback blocks are not exported. The SU(2) conjugate-column theorem and "
-        "all eight real two_j=5 channel sums now certify the complex-to-real shell "
-        "map. Numerical masses, couplings and a stopping goal are therefore "
+        "feedback shell is now complete: 32 representative blocks are evaluated "
+        "directly and 24 partner blocks are exact reality images, yielding all 56 "
+        "blocks and eight real channel sums. The SU(2) conjugate-column theorem "
+        "certifies the complex-to-real shell map. A generic successive-shell "
+        "evaluation adapter is still absent. Numerical masses, couplings and a "
+        "stopping goal are therefore "
         "deferred; supplying them now would not produce an interval. The exact "
         "generic coefficient functional is not itself a numerical Green-image "
         "evaluation. Numerical values must not be invented. This gate does not evaluate a recoil scalar, "
@@ -290,7 +300,7 @@ def build() -> dict[str, Any]:
         "sequencing_decision": {
             "completed_internal_gate": "complete symbolic preparation/recoil scalar operator word with exact Peter-Weyl reconstruction",
             "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
-            "current_active_gate": "bind every two_j=6 feedback channel-column block with certified reality-pair folding",
+            "current_active_gate": "export the generic reality-folded direct-shell evaluation adapter used inside the stop loop",
             "external_specialization_gate": "DEFERRED_UNTIL_EXECUTABLE_BACKEND",
             "dense_profile_materialization": "NOT_SELECTED",
             "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP",
@@ -331,13 +341,14 @@ def build() -> dict[str, Any]:
             "GENERIC_DIRECT_FINITE_SHELL_PROVIDER_EXPORTED": True,
             "TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED": True,
             "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED": True,
+            "TWO_J6_FEEDBACK_CHANNELS_EVALUATED": True,
             "NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED": False,
             "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": False,
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "BIND_TWO_J6_FEEDBACK_CHANNEL_COLUMNS_WITH_CERTIFIED_REALITY_PAIR_FOLDING",
+        "next_gate": "EXPORT_GENERIC_REALITY_FOLDED_DIRECT_SHELL_STREAM_ADAPTER_BEFORE_NUMERICAL_SPECIALIZATION",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

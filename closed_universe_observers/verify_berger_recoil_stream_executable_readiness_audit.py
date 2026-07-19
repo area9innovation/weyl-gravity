@@ -26,6 +26,7 @@ def main() -> int:
     assert rows["finite_first_omitted_shell_direct_provider_two_j5"] == "CERTIFIED"
     assert rows["generic_direct_finite_shell_provider"] == "CERTIFIED"
     assert rows["complex_channel_to_real_shell_scalar_map"] == "CERTIFIED"
+    assert rows["finite_two_j6_reality_folded_feedback_binding"] == "CERTIFIED"
     assert rows["nested_time_convolution_backend"] == "OBSTRUCTED"
     assert rows["shell_interval_evaluator"] == "CERTIFIED"
     assert rows["tail_aware_aggregate_stop_loop"] == "CERTIFIED"
@@ -39,6 +40,7 @@ def main() -> int:
     assert value["flags"]["GENERIC_DIRECT_FINITE_SHELL_PROVIDER_EXPORTED"] is True
     assert value["flags"]["TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED"] is True
     assert value["flags"]["COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED"] is True
+    assert value["flags"]["TWO_J6_FEEDBACK_CHANNELS_EVALUATED"] is True
     assert value["flags"]["CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED"] is True
     assert all(row["detected"] for row in value["mutation_results"])
     print("Berger recoil executable-readiness audit verification: PASS")
