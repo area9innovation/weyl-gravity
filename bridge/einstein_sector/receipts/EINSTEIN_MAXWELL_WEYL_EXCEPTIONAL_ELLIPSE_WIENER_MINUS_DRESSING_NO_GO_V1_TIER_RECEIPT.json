@@ -1,0 +1,41 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_WIENER_MINUS_DRESSING_NO_GO_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Smooth Wiener-Bohr k=0 Einstein-minus completion of the exceptional resonance-ellipse bounded no-go.",
+  "content_sha256": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_wiener_minus_dressing_no_go.py": "8136b44b79f04a3f5264a9719a31af1dc1e6e36c7b9442f8b54ceff1c98213ec",
+    "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_wiener_minus_dressing_no_go.json": "411076a107d778e6f18140ad4e83ca395e78278d62e52713505e3065f2d4ef75",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_wiener_minus_dressing_no_go.schema.json": "5237d59f675d0e09f86d16b651a75515e30957ace4953860318471b0ef964257",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_wiener_minus_dressing_no_go.py": "e6ad269d1b8c12d024ed15c8a15e707af8432b116b7de54e550eb7083475e549",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_exceptional_ellipse_wiener_minus_dressing_no_go.py": "e7122c5acafdd4a28c0dce6d325cfa69035800d96c66233fe57100f2895457f5",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-exceptional-ellipse-wiener-minus-dressing-no-go.md": "c484556d401903471c574b9b3337dc29c0a5b15157f17ebebd243a8df14d3eeb"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ellipse_wiener_minus_dressing_no_go --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_wiener_minus_dressing_no_go.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ellipse_wiener_minus_dressing_no_go"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The exact pairwise dispersion theorem and generic axial/polar d pivots are unchanged hashed inputs; the new theorem supplies the declared completion and continuous coefficient projections."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "A maximal Sobolev/finite-energy completion, infinite secular estimates, additional carriers and causal propagation remain open."
+    }
+  },
+  "claim_boundary": "Smooth Wiener-Bohr k=0 minus sums only; maximal energy/Sobolev domains, infinite secular corrections, additional carriers, nonzero momentum, causal, residual and quantum claims remain fail-closed."
+}

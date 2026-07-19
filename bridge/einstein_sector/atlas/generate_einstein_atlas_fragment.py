@@ -38,6 +38,7 @@ CERTIFICATES = {
     "exceptional_bounded_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_bounded_obstruction.json",
     "exceptional_single_minus_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_single_minus_dressing_no_go.json",
     "exceptional_finite_minus_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_finite_minus_dressing_no_go.json",
+    "exceptional_wiener_minus_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_wiener_minus_dressing_no_go.json",
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
@@ -318,6 +319,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OBSTRUCTED","The nonzero d-cross map acts independently on every occupied minus block, forcing all charge-balancing minus coefficients to vanish."),("CERTIFIED","The complete finite-support theorem supplies a smooth secular correction on the stabilizer zero cone."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell complex is certified.")),
             _evidence("exceptional_finite_minus_no_go","exceptional_single_minus_no_go","abd_generic_lambda_pivot","complete_finite_smooth","abstract_cone"),
             "Additional nonminus carriers, infinite completion, nonzero momentum, all-orders integration and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.mixed.exceptional_ellipse_wiener_minus_dressing_no_go",
+            _scope(theory="Weyl-Maxwell target", carrier="any axisymmetric exceptional resonance-ellipse point plus a smooth Wiener-Bohr k=0 Einstein-minus q-primary sum", degree=2, parity="both dressing parities", ell="every ell>=2 with countable support", m="all m with absolutely convergent stabilizer moment maps", k=0, omega="countable occupied omega_minus(ell) set"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The declared smooth Wiener-Bohr carrier has absolutely convergent derivative-weighted harmonic coefficients and retains every branch label."),
+            ("CERTIFIED","Every occupied minus block has a nondegenerate opposite-sign current weight; the five moment maps converge absolutely."),
+            ("CERTIFIED","Any common-zero dressing must contain a nonzero minus coefficient because the undressed ellipse has strictly negative mu_H."),
+            ("CERTIFIED","Continuous Bohr-frequency and spherical projections isolate d*C_parity(lambda)*c_(ell,m,parity) on every resonant minus shell."),
+            _second_order(("OBSTRUCTED","A bounded smooth uniformly almost-periodic correction forces every minus coefficient to vanish separately, contradicting moment-map balance."),("OPEN","The finite secular theorem supplies no uniform estimates for an infinite secular sum."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell complex is certified.")),
+            _evidence("exceptional_wiener_minus_no_go","exceptional_finite_minus_no_go","abd_generic_lambda_pivot","abstract_cone"),
+            "This is a strong smooth Wiener-Bohr completion, not the maximal finite-energy/Sobolev space. Additional carriers, nonzero momentum, infinite secular solvability and higher lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.extra.exceptional_ell1_nonzero_k",
@@ -929,6 +942,11 @@ def build() -> dict[str, object]:
         raise AssertionError("exceptional finite-minus no-go changed")
     if exceptional_finite["additional_nonminus_carriers_classified"] or exceptional_finite["infinite_completion_classified"] or exceptional_finite["causal_or_quantum_claim"]:
         raise AssertionError("exceptional finite-minus no-go exceeded its scope")
+    exceptional_wiener = records["exceptional_wiener_minus_no_go"]["classification"]
+    if not (exceptional_wiener["smooth_wiener_bohr_minus_completion_classified"] and exceptional_wiener["bounded_almost_periodic_extension_obstructed"] and exceptional_wiener["bohr_harmonic_projection_continuous"] and exceptional_wiener["coefficientwise_source_isolation_proved"]):
+        raise AssertionError("exceptional Wiener-Bohr no-go changed")
+    if exceptional_wiener["maximal_finite_energy_or_sobolev_completion_classified"] or exceptional_wiener["smooth_infinite_secular_extension_classified"] or exceptional_wiener["additional_nonminus_carriers_classified"] or exceptional_wiener["causal_or_quantum_claim"]:
+        raise AssertionError("exceptional Wiener-Bohr no-go exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

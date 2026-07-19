@@ -2938,6 +2938,17 @@ coefficients to vanish.  Arbitrary finite minus dressings are bounded
 `OBSTRUCTED` and smooth-secular `CERTIFIED`.  Additional nonminus carriers or
 an infinite completed sector remain open.
 
+The infinite-minus gate is now closed on a declared strong topology.  In the
+smooth spatial Wiener--Bohr class, every derivative-weighted harmonic sum is
+absolutely convergent.  The quadratic source is consequently smooth and
+uniformly almost periodic, and Bohr-frequency extraction followed by the
+spherical adjoint projection is continuous.  The pairwise dispersion theorem
+then isolates `d*C_parity(lambda)*c_(ell,m,parity)` on every occupied minus
+shell.  Since `d!=0` and both pivots are nonzero, all coefficients must vanish,
+contradicting the Hamiltonian balance.  This completion is bounded
+`OBSTRUCTED`; infinite secular solvability remains `OPEN`, and the maximal
+finite-energy/Sobolev completion is not claimed.
+
 The nonzero-momentum twist face has now been intersected with the independent
 opposite-momentum phase divisor.  For every `ell>=2`, the exact choice
 

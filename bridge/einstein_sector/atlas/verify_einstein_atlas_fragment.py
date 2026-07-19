@@ -297,6 +297,12 @@ def verify() -> None:
         raise AssertionError("finite-minus no-go was hidden")
     if finite_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or finite_second["smooth_secular"]["status"] != "CERTIFIED" or finite_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("finite-minus correction classes changed")
+    exceptional_wiener = by_id["einstein.ph.wm.mixed.exceptional_ellipse_wiener_minus_dressing_no_go"]
+    wiener_second = exceptional_wiener["mode_data"]["second_order"]
+    if exceptional_wiener["descriptions"]["nonlinear"] != "OBSTRUCTED" or "Bohr-frequency" not in exceptional_wiener["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("Wiener-Bohr no-go was hidden")
+    if wiener_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or wiener_second["smooth_secular"]["status"] != "OPEN" or wiener_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("Wiener-Bohr correction classes changed")
     fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
     if fixed_ell_twist["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("fixed-ell bounded lifecycle was not promoted")
