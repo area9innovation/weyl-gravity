@@ -528,11 +528,27 @@ gradient are exact formal-adjoint unary blocks under the canonical odd
 pairing.  The five symmetric field--field current operations are retained
 coefficientwise; their two mixed operations are the forced finite-order
 formal adjoints, so the lowered cubic tensors are cyclic without a fitted
-pairing or sign.  The remaining gate is genuinely global: prove that the
-coordinate superpotential defines a smooth density across the sphere charts,
-discard its closed-Cauchy-slice integral, and replay all five integrated
-currents against the complete reduced charge operation.  Those claims remain
-false; no \(f_2\) repair or arity-three promotion follows yet.
+pairing or sign.
+
+`EINSTEIN_WEYL_RELATIVE_GLOBAL_FIVE_CHARGE_REPLAY_V1` closes the global
+receiver without overpromoting the Laurent coordinate primitive.  The
+Lee--Wald current and a covariantly integrated Green current are global; their
+difference is a closed vertical-degree-two, horizontal-degree-three form.
+Exactness of the positive-contact row of the global variational bicomplex for
+the affine metric/connection field bundle supplies a smooth global
+superpotential.  Its integral vanishes on the closed slice by Stokes.  The
+moment-map identity then replays the generic radiative, physical \(\ell=1\),
+homogeneous and twist blocks into exactly
+
+\[
+(H,P_x,J_1,J_2,J_3),
+\]
+
+with every certified cross-block term zero and no constant-\(U(1)\) output.
+The particular 2,478-term Laurent representative remains only a local exact
+witness; its polar-chart smoothness is not asserted.  The direct support-local
+map into constant charge rows remains obstructed, and no \(f_2\) repair or
+arity-three promotion follows.
 
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.

@@ -1596,10 +1596,14 @@ advanced through `EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1`: all
 50 current, divergence and odd-BV dual rows are included, its unary cone is
 cyclic, and the five field--field current maps have their forced finite-order
 mixed formal adjoints.  The active Bridge-1 remainder is therefore global
-chart/Cauchy-slice cancellation and five-charge replay.  Until that lands,
-the atlas row remains
-fail-closed for the global charge receiver, repaired `f2`, arity three and
-causal propagation.
+chart/Cauchy-slice cancellation and five-charge replay.  That remainder is now
+closed by `EINSTEIN_WEYL_RELATIVE_GLOBAL_FIVE_CHARGE_REPLAY_V1`: exactness of
+the positive-contact variational-bicomplex row gives a smooth global
+improvement (without asserting that the serialized Laurent representative is
+itself global), Stokes removes it on `S1_L x S2`, and the four complete
+standard blocks replay into exactly `H,P_x,J_1,J_2,J_3`.  The atlas remains
+fail-closed for a direct support-local map into constant charges, repaired
+`f2`, arity three and causal propagation.
 
 The Einstein-owned nonlinear domain filter feeding Bridge 1 is certified for
 constant twist position plus the complete axial/polar `ell=2,k=0` wave

@@ -1,0 +1,38 @@
+{
+  "schema": "pure-weyl-verification-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_GLOBAL_FIVE_CHARGE_REPLAY_V1_TIER_RECEIPT",
+  "subject_result_id": "EINSTEIN_WEYL_RELATIVE_GLOBAL_FIVE_CHARGE_REPLAY_V1",
+  "date": "2026-07-19",
+  "tiers": {
+    "tier_0": {"status": "PASS", "checks": ["Python producer and consumer executed", "strict Draft 2020-12 schema validation", "scoped diff check"]},
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_global_five_charge_replay --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_global_five_charge_replay",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_global_five_charge_replay",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-global-five-charge-replay-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_GLOBAL_FIVE_CHARGE_REPLAY_V1.json"
+      ],
+      "unit_tests": {"run": 3, "failures": 0, "errors": 0}
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The global current receiver changed the nonlinear atlas evidence chain.",
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.atlas.generate_nonlinear_atlas_fragment --write",
+        "PYTHONPATH=. python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/nonlinear-atlas-fragment.json",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment"
+      ],
+      "atlas_unit_tests": {"run": 22, "failures": 0, "errors": 0}
+    },
+    "tier_3": {"status": "NOT_RUN", "criterion": "No release, paper theorem freeze, or shared core-algebra change was requested."}
+  },
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_GLOBAL_FIVE_CHARGE_REPLAY_V1.json", "sha256": "9d0283f8824a9a26bbcc78536e9a5ce0679f4df08ba09a54389da7a9b240ec9a"},
+    "schema": {"path": "d_quotient_classical/schema/relative-global-five-charge-replay-v1.schema.json", "sha256": "d2c8980375db0996b0dfbd50c02a2911f9f284433037e2fcbcf187fce2c5cd94"},
+    "producer": {"path": "d_quotient_classical/relative/einstein_weyl_relative_global_five_charge_replay.py", "sha256": "180782d89f38517cbd36ef0031082bd9525d13004c3177d02ba0682b4c59d380"},
+    "independent_consumer": {"path": "d_quotient_classical/relative/verify_einstein_weyl_relative_global_five_charge_replay.py", "sha256": "7f7d687b259fb0918546383a9117c5e25ad9472c7b42958c2c25b718e54ee251"},
+    "tests": {"path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_global_five_charge_replay.py", "sha256": "e06f5ab6a0bc329a87aa6783b8c91b126e673b62f79054d965595d307a7fab8b"}
+  },
+  "claim_boundary": "This receipt covers the global variational-bicomplex descent and compositional complete-standard five-charge replay. It does not independently rederive every harmonic matrix, assert global smoothness of the serialized Laurent primitive, repair f2, authorize arity three, or certify a causal theorem."
+}

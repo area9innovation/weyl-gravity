@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-global-five-charge-replay-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "global_descent_theorem", "moment_map_identity", "complete_replay", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-global-five-charge-replay-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_GLOBAL_FIVE_CHARGE_REPLAY_V1"},
+    "result_state": {"const": "GLOBAL_CURRENT_DESCENT_AND_COMPLETE_FIVE_CHARGE_REPLAY_CERTIFIED"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "scope": {"type": "object", "minProperties": 10},
+    "dependencies": {"type": "object", "minProperties": 9},
+    "global_descent_theorem": {"type": "object", "minProperties": 7},
+    "moment_map_identity": {"type": "object", "minProperties": 4},
+    "complete_replay": {
+      "type": "object", "additionalProperties": false,
+      "required": ["output_basis", "output_dimension", "blocks", "direct_sum_rule", "all_cross_block_terms_zero", "constant_u1_output"],
+      "properties": {
+        "output_basis": {"const": ["H", "P_x", "J_1", "J_2", "J_3"]}, "output_dimension": {"const": 5},
+        "blocks": {"type": "array", "minItems": 4, "maxItems": 4}, "direct_sum_rule": {"type": "string", "minLength": 1},
+        "all_cross_block_terms_zero": {"const": true}, "constant_u1_output": {"const": false}
+      }
+    },
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["global_smooth_horizontal_improvement_exists", "serialized_coordinate_primitive_global_smoothness_asserted", "closed_slice_improvement_integral_zero", "green_current_integral_equals_lee_wald_integral", "integrated_current_equals_moment_map_hessian", "all_four_complete_standard_blocks_replayed", "all_five_charge_outputs_replayed", "slice_integral_matches_complete_five_charge_q2", "support_local_bv_current_extension_certified", "direct_support_local_map_to_constant_charges", "direct_f2_repaired", "arity_three_authorized", "causal_observable_particle_or_quantum_claim"],
+      "properties": {
+        "global_smooth_horizontal_improvement_exists": {"const": true}, "serialized_coordinate_primitive_global_smoothness_asserted": {"const": false},
+        "closed_slice_improvement_integral_zero": {"const": true}, "green_current_integral_equals_lee_wald_integral": {"const": true},
+        "integrated_current_equals_moment_map_hessian": {"const": true}, "all_four_complete_standard_blocks_replayed": {"const": true},
+        "all_five_charge_outputs_replayed": {"const": true}, "slice_integral_matches_complete_five_charge_q2": {"const": true},
+        "support_local_bv_current_extension_certified": {"const": true}, "direct_support_local_map_to_constant_charges": {"const": false},
+        "direct_f2_repaired": {"const": false}, "arity_three_authorized": {"const": false}, "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object", "minProperties": 2},
+    "claim_boundary": {"type": "string", "minLength": 100}
+  }
+}

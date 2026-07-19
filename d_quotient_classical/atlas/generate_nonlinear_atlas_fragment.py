@@ -50,6 +50,7 @@ CERTS = {
     "relative_five_stabilizer_current_cone": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1.json",
     "relative_green_lee_wald_improvement": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1.json",
     "relative_cyclic_five_current_cone": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1.json",
+    "relative_global_five_charge_replay": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_GLOBAL_FIVE_CHARGE_REPLAY_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -397,6 +398,8 @@ def entries() -> list[dict[str, Any]]:
     relative_current_improvement_scope = relative_current_improvement["scope"]
     relative_cyclic_current_cone = json.loads(CERTS["relative_cyclic_five_current_cone"].read_text())
     relative_cyclic_current_cone_scope = relative_cyclic_current_cone["scope"]
+    relative_global_charge_replay = json.loads(CERTS["relative_global_five_charge_replay"].read_text())
+    relative_global_charge_replay_scope = relative_global_charge_replay["scope"]
     identity_cyclic_scope = json.loads(CERTS["identity_cyclic_obstruction"].read_text())["scope"]
     return [
         {
@@ -841,6 +844,24 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("relative_cyclic_five_current_cone", "relative_green_lee_wald_improvement", "relative_five_stabilizer_current_cone", "relative_complete_standard_charge_q2"),
             "claim_boundary": "This LOCAL-ALGEBRAIC row certifies the complete degree-rank (5,20,20,5) cyclic horizontal current cone and the factorized formal-adjoint completion of all five field-field current operations. It does not certify global smoothness of the coordinate superpotential, closed-slice cancellation, equality with every reduced charge block, a repaired f2, arity three, causal propagation, observables, particles or quantum transfer.",
+        },
+        {
+            "id": "nonlinear.product.bridge2.relative_global_five_charge_replay",
+            "scope": relative_global_charge_replay_scope,
+            "descriptions": {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "The complete five charge functionals are replayed, but their common zero locus still depends on the declared correction class."),
+                    ("OPEN", "Global current descent does not construct a smooth-secular correction."),
+                    ("NO_CERTIFIED_MAP", "No retarded compact-product relative morphism or causal tangent-cone solve is certified."),
+                ),
+                dispersion=("CERTIFIED", "The replay imports the complete standard generic, physical ell1, homogeneous and twist decomposition without identifying unlike branches."),
+                pairing=("CERTIFIED", "Global variational-bicomplex descent equates the Green and Lee-Wald Cauchy pairings; the local current receiver remains cyclic."),
+                taub=("CERTIFIED", "Closed-slice integration of the local five-current operation equals D^2 mu_rel and hence the complete five-output Taub q2."),
+                resonance=("OPEN", "The five charges do not exhaust the non-charge resonance functionals and do not repair the direct f2 obstruction."),
+            ),
+            "evidence": _evidence("relative_global_five_charge_replay", "relative_cyclic_five_current_cone", "relative_complete_standard_charge_q2", "relative_f2_taub_obstruction"),
+            "claim_boundary": "This LOCAL-ALGEBRAIC plus REDUCED-MODE row uses exactness of the positive-contact variational-bicomplex row to obtain a smooth global improvement, whose closed-slice integral vanishes, and then replays all four complete standard blocks into H,P_x,J_1,J_2,J_3. It does not claim that the serialized Laurent coordinate primitive is itself global, turn Cauchy integration into a support-local map, repair f2, include target-only extra-Weyl inputs, solve a tangent cone, authorize arity three, or establish causal, observational, particle or quantum equivalence.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction",
