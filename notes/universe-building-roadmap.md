@@ -2029,6 +2029,34 @@ secular correction remain `OPEN`, while causal correction remains
 zero variety across the now-certified `L=1,3,4` source matrices.  Bridge 1
 remains at its independent certified linear relative-triangle lifecycle.
 
+The simultaneous-amplitude problem is now factorized correctly before ideal
+decomposition.  All twenty-one exact circumference parameters are pairwise
+distinct, so no amplitude cancellation may mix collision rows from different
+compact backgrounds.  Exact conversion of the `L=4` axisymmetric coefficients
+and normalized all-`m` Clebsch--Gordan lifting turn all 164 internal
+coefficients (162 nonzero, two zero components) in 54 target-parity/adjoint
+equations on 128 ordered branch-basis fixtures into 418 complex scalar
+magnetic equations on three `L=1`, six `L=3` and twelve `L=4` physical fibres.
+Fail-closed atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_cross_fibre_amplitude_system`
+records the factorized resonance system and both mandatory one-fibre-zero
+planes `CERTIFIED`, but the irreducible mixed zero varieties, same-fibre
+sources, their intersection with the five stabilizer moment maps, and the
+complete two-fibre tangent cone remain `OPEN`; causal correction remains
+`NO_CERTIFIED_MAP`.  The active gate is the exact bilinear zero-variety
+decomposition, ordered by block dimension.  Bridge 1 remains the separately
+certified linear relative triangle.
+
+The first exact blockwise decomposition closes scalar-internal `L=4`
+candidates `3,5,9,15,21`.  Binary-quartic multiplication identifies each
+all-`m` resonance zero variety with four ten-complex-dimensional linear
+components: two one-fibre-zero planes and two explicit parity-proportional
+mixed sheets; every sheet parameter has an exact positive enclosure.  Atlas
+row `einstein.ph.wm.interaction.ell2_two_abs_momentum_scalar_l4_zero_varieties`
+keeps the remaining sixteen ideals, same-fibre sources, five Taub maps and
+the complete two-fibre tangent cone `OPEN`.  Continue by internal block
+dimension before attempting the full Taub join.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell
