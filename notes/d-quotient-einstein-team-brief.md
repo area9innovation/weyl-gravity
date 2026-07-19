@@ -2436,8 +2436,21 @@ coefficient must lie in that two-dimensional kernel.  This simultaneously
 contains the aligned face and excludes the off-axis counterexample.  Atlas
 row `einstein.ph.wm.interaction.constant_twist_ell2_extra_position_zero_locus`
 records necessity and sufficiency for this one resonance family.  The
-Einstein-plus/minus twist matrices and their intersection with the common
-moment cone remain open, so the full nonzero-`A` wave cone is not promoted.
+Einstein-plus/minus matrices are now also direct.  On each shell their
+axial/polar incidence matrix is
+
+```text
+Q_minus=Q_plus=[[0,216/5],[432/5,0]],
+det(Q_plus/minus)=-93312/25.
+```
+
+The two matrices are invertible, so their only angular kernel is `m=0`:
+axial and polar coefficients survive there on each shell, giving four complex
+Einstein directions across both frequencies.  Atlas row
+`einstein.ph.wm.interaction.constant_twist_ell2_einstein_position_zero_locus`
+records the theorem.  Intersecting these four directions and the twelve
+extra-shell directions with the common moment cone remains the active gate,
+so the full nonzero-`A` wave cone is not promoted.
 
 The polar Einstein-minus cross source is now also direct and exact.  Its
 first action row has successive nonzero pivots `66*b*z`, `198*a*z`, and

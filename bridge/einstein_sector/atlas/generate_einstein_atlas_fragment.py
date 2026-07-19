@@ -52,6 +52,7 @@ CERTIFICATES = {
     "global_finite_harmonic_k0_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.json",
     "constant_twist_wave_counterexample": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
     "constant_twist_extra_position_zero_locus": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus.json",
+    "constant_twist_einstein_position_zero_locus": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.json",
     "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
     "global_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
     "extra_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
@@ -406,9 +407,21 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "The four extra multiplicities retain their nondegenerate action-derived Lee--Wald block; the resonance calculation uses the independently derived adjoint matrix."),
             ("OPEN", "This row does not impose the H,J_i moment maps or intersect the extra shell with the Einstein q-primary balance."),
             ("CERTIFIED", "For nonzero A, SO3 covariance gives ker R_A=(C4 tensor ker T_A)+(ker P tensor V2), where ker P=span{polar_e1,-4*sqrt(3)*axial_e1+15*polar_e2}; its complex dimension is 12."),
-            _second_order(("OPEN", "The twist-position resonance zero locus is necessary and sufficient on the extra shell, but Einstein-shell twist maps, wave self-products and nonresonant inversion remain unclassified."), ("NOT_APPLICABLE", "The complete smooth-secular theorem is recorded separately; this row classifies a bounded-only resonance functional."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _second_order(("OPEN", "The twist-position resonance zero locus is necessary and sufficient on the extra shell; the Einstein-shell maps are now classified separately, while their moment-cone intersection, wave self-products and nonresonant inversion remain open."), ("NOT_APPLICABLE", "The complete smooth-secular theorem is recorded separately; this row classifies a bounded-only resonance functional."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
             _evidence("constant_twist_extra_position_zero_locus", "homogeneous_twist_matrix", "aligned_twist_extra_face", "constant_twist_wave_counterexample"),
-            "This is a complete zero-locus theorem only for twist position times the ell=2 extra p-primary shell. It does not classify twist velocity, Einstein q-primary shells, the complete mixed bounded cone, other ell or momentum, causal propagation, residual descent or quantum theory.",
+            "This is a complete zero-locus theorem only for twist position times the ell=2 extra p-primary shell. It does not merge that shell with the separately certified Einstein q-primary kernels or classify twist velocity, the complete mixed bounded cone, other ell or momentum, causal propagation, residual descent or quantum theory.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.constant_twist_ell2_einstein_position_zero_locus",
+            _scope(theory="Weyl-Maxwell target", carrier="constant axial twist position A in V1 crossed with both axial/polar ell=2,k=0 Einstein q-primary shells", degree=2, parity="axial and polar multiplicities on each plus/minus shell", ell="1 x 2 -> resonant 2", m="all twist and wave components; nonzero A reduced covariantly to the z axis", k=0, omega="omega_minus=sqrt(6-2*sqrt(3)); omega_plus=sqrt(6+2*sqrt(3))"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The carrier is the complete 20-complex-dimensional positive-frequency axial/polar Einstein q-primary space on the two distinct ell=2 shells."),
+            ("CERTIFIED", "Each Einstein shell has its action-derived Lee--Wald weight; the direct source rows are paired against independently certified self-adjoint q-shell representatives."),
+            ("OPEN", "This row does not impose H,J_i=0 or intersect the four-dimensional Einstein resonance kernel with the twelve-dimensional extra-shell kernel."),
+            ("CERTIFIED", "Both shell incidence matrices equal [[0,216/5],[432/5,0]] and are invertible. Hence only the axial and polar m=0 coefficients survive on each shell; the combined complex kernel dimension is four."),
+            _second_order(("OPEN", "The shellwise twist-position resonance kernels are necessary and sufficient for this cross term, but the simultaneous stabilizer/wave-self-source zero locus and complete correction remain open."), ("NOT_APPLICABLE", "The complete smooth-secular theorem is recorded separately; this row classifies a bounded-only resonance functional."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("constant_twist_einstein_position_zero_locus", "constant_twist_extra_position_zero_locus", "homogeneous_twist_matrix", "taub"),
+            "This is a complete zero-locus theorem only for constant twist position times both ell=2 Einstein q-primary shells. It does not classify twist velocity, simultaneous moment and all-branch resonance equations, the complete mixed bounded cone, other ell or momentum, causal propagation, residual descent or quantum theory.",
         ),
         _entry(
             "einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone",
@@ -627,6 +640,16 @@ def build() -> dict[str, object]:
         raise AssertionError("constant-twist extra-shell position zero locus changed")
     if twist_zero_locus["classification"]["simultaneous_moment_and_all_branch_resonance_zero_locus_classified"]:
         raise AssertionError("extra-shell twist zero locus over-promoted the mixed wave cone")
+    twist_einstein_zero_locus = records["constant_twist_einstein_position_zero_locus"]
+    if not (
+        twist_einstein_zero_locus["classification"]["both_Einstein_q_primary_twist_position_maps_classified"]
+        and twist_einstein_zero_locus["classification"]["each_parity_incidence_matrix_invertible"]
+        and twist_einstein_zero_locus["projection_theorem"]["combined_q_primary_kernel_positive_frequency_complex_dimension"] == 4
+        and twist_einstein_zero_locus["projection_theorem"]["combined_q_primary_operator_rank"] == 16
+    ):
+        raise AssertionError("constant-twist Einstein-shell position zero locus changed")
+    if twist_einstein_zero_locus["classification"]["simultaneous_moment_and_all_branch_resonance_zero_locus_classified"]:
+        raise AssertionError("Einstein-shell twist zero locus over-promoted the mixed wave cone")
     if not records["global_self_coefficients"]["classification"]["complete_aligned_global_self_source_classified"]:
         raise AssertionError("global self coefficient input changed")
     if not records["extra_self_coefficients"]["classification"]["complete_C4_extra_self_source_coefficient_explicit"]:

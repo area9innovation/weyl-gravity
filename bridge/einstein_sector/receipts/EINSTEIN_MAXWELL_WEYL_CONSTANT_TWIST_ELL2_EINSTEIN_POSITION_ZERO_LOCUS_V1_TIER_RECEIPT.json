@@ -1,0 +1,56 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_EINSTEIN_POSITION_ZERO_LOCUS",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_twist_ell2_einstein_source_explore.py": "0d94c32a2b6e4b8ad5aad01d092a25fec27889dc4bd70aa045c0967fa31a871d",
+    "bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.py": "655bb80b615cb4c54278bb00cd9f71a50fe81d09f91116d59ac40af62cfe4925",
+    "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.json": "dfb11f09666b853ae3f0cf0e6e0232ba0047922e412542ba496d9f1156c927a6",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.schema.json": "658abfc205cc92e0a84989d0c850698e32e0b74d501ff653728f140a79d9eb88",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.py": "fbe3004ad5b5c15eab751b1401d5ad2cc624ac304dc796041a9aa2a2bc464902",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.py": "5afcb0792a877dd26efe660700bf9b56b9e35f64cf5b785b204e2c10691531b4",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-constant-twist-ell2-einstein-position-zero-locus.md": "73c3471a462f64e3309534018fee13e7ea5ecfdba03e483d94cdee98ee9095a1",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "9e645fecdf360e172aac339898fe18f027d6698016b7a1d9b550d77a137750d6",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "1b6b9287b1aa399af41b82c8b9fca71e14f1303a242557e3fbf14ef3b87d760d",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "faceaba7773ee895698529c1ee107bd38bd0b4076907487f1c058ce5f3c3fef9",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "44670addf2e1f3d52a7d57595825956c4dc62de6d0c8c016e346114f16afbe24"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 1.96,
+      "commands": [
+        "python3 -m py_compile <direct helper, generator, verifier, tests, and atlas consumers>",
+        "python3 -m json.tool <schema, certificate, and generated atlas fragment>",
+        "git diff --check -- <scoped Einstein paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 5.48,
+      "tests_run": 31,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 118.49,
+      "max_rss_kib": 255592,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus --replay"
+      ],
+      "criterion": "two independently evaluated four-dimensional tensor columns determine both q-primary shells by the exact sqrt(3)->-sqrt(3) involution"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the shellwise theorem is new, but its simultaneous intersection with the stabilizer moment cone and wave self-source equations remains explicitly open"
+    }
+  }
+}

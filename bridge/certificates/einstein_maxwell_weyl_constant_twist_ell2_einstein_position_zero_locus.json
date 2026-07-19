@@ -1,0 +1,219 @@
+{
+  "claim_boundary": "This is the complete constant-twist position resonance zero locus on the ell=2,k=0 Einstein q-primary shells. It does not impose the stabilizer moment maps, wave self-products, twist velocity, other ell or momentum, smooth or causal correction sufficiency, all-orders integration, residual descent, observables or quantum theory.",
+  "classification": {
+    "all_orders_integrability": false,
+    "both_Einstein_q_primary_twist_position_maps_classified": true,
+    "both_parities_and_all_m_included": true,
+    "causal_or_quantum_claim": false,
+    "combined_q_primary_kernel_complex_dimension_four": true,
+    "complete_mixed_wave_cone_classified": false,
+    "each_parity_incidence_matrix_invertible": true,
+    "extra_and_Einstein_shellwise_twist_maps_complete": true,
+    "full_second_order_equation_solved": false,
+    "simultaneous_moment_and_all_branch_resonance_zero_locus_classified": false
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "claim": "complete twist-position times ell2-Einstein resonant-functional zero locus only",
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_SECULAR": {
+      "reason": "this certificate classifies bounded shell projections, not propagation solvability",
+      "status": "NOT_APPLICABLE"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "On each Einstein q-primary shell, constant twist couples axial input only to the polar adjoint and polar input only to the axial adjoint, with an invertible two-by-two incidence matrix. Thus no internal parity combination evades resonance away from the twist axis: precisely the axial and polar m_A=0 coefficients survive on each shell.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "intersect the four-dimensional combined Einstein kernel and the twelve-dimensional extra kernel with H,J_i=0, then add the already certified wave self-source conditions",
+  "projection_theorem": {
+    "axis_Clebsch_Gordan": {
+      "-1": "sqrt(6)/6",
+      "-2": "sqrt(6)/3",
+      "0": "0",
+      "1": "-sqrt(6)/6",
+      "2": "-sqrt(6)/3"
+    },
+    "combined_q_primary_ambient_positive_frequency_complex_dimension": 20,
+    "combined_q_primary_kernel_positive_frequency_complex_dimension": 4,
+    "combined_q_primary_operator_rank": 16,
+    "each_shell_ambient_positive_frequency_complex_dimension": 10,
+    "each_shell_kernel": "V_(m_A=0) tensor C^2_parity",
+    "each_shell_kernel_positive_frequency_complex_dimension": 2,
+    "each_shell_operator": "nonzero scalar times (A_hat dot J_2) tensor Q_branch",
+    "each_shell_operator_rank": 8,
+    "fixture_channel": "m_twist=1,m_wave=0 -> M_output=1",
+    "input_column_order": [
+      "axial",
+      "polar"
+    ],
+    "matrix_determinant": "-93312/25",
+    "minus_position_matrix": [
+      [
+        "0",
+        "216/5"
+      ],
+      [
+        "432/5",
+        "0"
+      ]
+    ],
+    "output_row_order": [
+      "axial_adjoint",
+      "polar_adjoint"
+    ],
+    "plus_position_matrix": [
+      [
+        "0",
+        "216/5"
+      ],
+      [
+        "432/5",
+        "0"
+      ]
+    ],
+    "raw_direct_rows": {
+      "minus": {
+        "axial": {
+          "axial": [
+            "0",
+            "0",
+            "6*sqrt(3)*omega",
+            "0"
+          ],
+          "polar": [
+            "0",
+            "0",
+            "0",
+            "-12*sqrt(3)*(omega**2 - 6)/5"
+          ]
+        },
+        "polar": {
+          "axial": [
+            "0",
+            "9*(-omega**4 + 2*sqrt(3)*omega**4 - 30*sqrt(3)*omega**2 + 60*sqrt(3))/5",
+            "0",
+            "0"
+          ],
+          "polar": [
+            "0",
+            "-18*omega*(-3*omega**2 + 6*sqrt(3)*omega**2 - 38*sqrt(3) + 18)",
+            "0",
+            "0"
+          ]
+        }
+      },
+      "plus": {
+        "axial": {
+          "axial": [
+            "0",
+            "0",
+            "-6*sqrt(3)*omega",
+            "0"
+          ],
+          "polar": [
+            "0",
+            "0",
+            "0",
+            "12*sqrt(3)*(omega**2 - 6)/5"
+          ]
+        },
+        "polar": {
+          "axial": [
+            "0",
+            "-9*(omega**4 + 2*sqrt(3)*omega**4 - 30*sqrt(3)*omega**2 + 60*sqrt(3))/5",
+            "0",
+            "0"
+          ],
+          "polar": [
+            "0",
+            "18*omega*(3*omega**2 + 6*sqrt(3)*omega**2 - 38*sqrt(3) - 18)",
+            "0",
+            "0"
+          ]
+        }
+      }
+    },
+    "root_involution": "the plus-shell direct rows follow from the minus-shell rows by sqrt(3)->-sqrt(3), including the representatives and omega^2=6-/+2sqrt(3)"
+  },
+  "provenance": {
+    "direct_source_path": "bridge/einstein_sector/einstein_maxwell_weyl_twist_ell2_einstein_source_explore.py",
+    "direct_source_sha256": "0d94c32a2b6e4b8ad5aad01d092a25fec27889dc4bd70aa045c0967fa31a871d",
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.py",
+    "generator_sha256": "655bb80b615cb4c54278bb00cd9f71a50fe81d09f91116d59ac40af62cfe4925",
+    "inputs": {
+      "axial_minus": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.json",
+        "sha256": "39ebaf9dcb4a7d6752ed6cdac995a98f38e89ea3cd7f348fbf61c6569796e875"
+      },
+      "extra_shell_zero_locus": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus.json",
+        "sha256": "54ed7e2669458f0c1e3119ca2cc973774beb514d7ab76e103640a17a59ee744e"
+      },
+      "polar_minus": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_polar_ell2_minus_resonance.json",
+        "sha256": "ede46396243d1bc3b8fd4c6d4a74e93634a4ff76569143a7ecf23afe22ef42ce"
+      },
+      "polar_minus_shell_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell2_minus_zero_source_fixture.json",
+        "sha256": "8a401df7af70b0bd8cf454b6f4ef225b8c7356a896c2dbb588fd9b13382f7bd3"
+      },
+      "polar_plus_shell_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell2_plus_zero_source_fixture.json",
+        "sha256": "5e7d3ef17c58fcaacc95287f66523aed104b77cf070209a2ce8ae92ef49a418e"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_EINSTEIN_POSITION_ZERO_LOCUS",
+  "result_state": "BOTH_ELL2_EINSTEIN_Q_PRIMARY_CONSTANT_TWIST_POSITION_RESONANCE_KERNELS_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-constant-twist-ell2-einstein-position-zero-locus-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.schema.json",
+  "schema_sha256": "658abfc205cc92e0a84989d0c850698e32e0b74d501ff653728f140a79d9eb88",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic correction class",
+    "carrier": "one nonzero constant axial twist-position vector A crossed with both axial/polar ell=2,k=0 Einstein q-primary shells",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "1 x 2 -> resonant L=2",
+    "k": 0,
+    "m": "all m=-2,...,2 relative to the twist axis",
+    "omega": "omega_minus=sqrt(6-2*sqrt(3)); omega_plus=sqrt(6+2*sqrt(3))",
+    "parity": "axial and polar Einstein multiplicities retained on each plus/minus shell",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus --replay"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 1.59,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 3.98,
+      "status": "PASS",
+      "tests_run": 5
+    },
+    "tier_2": {
+      "criterion": "two independent four-dimensional tensor columns determine both shells by the exact root involution",
+      "elapsed_seconds": 118.49,
+      "max_rss_kib": 255592,
+      "status": "PASS"
+    },
+    "tier_3": {
+      "reason": "the simultaneous moment/resonance cone remains open",
+      "status": "NOT_RUN"
+    }
+  }
+}

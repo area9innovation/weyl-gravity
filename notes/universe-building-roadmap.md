@@ -1287,8 +1287,15 @@ positive-frequency `ell=2` extra-shell resonance kernel has complex dimension
 `m=+/-1,+/-2`.  Atlas row
 `einstein.ph.wm.interaction.constant_twist_ell2_extra_position_zero_locus`
 records this exact incidence theorem without promoting the full wave cone.
-The next gate is the corresponding Einstein-plus/minus twist matrices and
-their intersection with the common stabilizer cone.  The direct polar
+The corresponding Einstein-minus and Einstein-plus parity matrices are now
+direct and equal:
+`Q_minus=Q_plus=[[0,216/5],[432/5,0]]`, with determinant `-93312/25`.
+Consequently each q-primary shell retains only its axial/polar `m=0`
+coefficients, and the combined Einstein kernel has complex dimension four.
+Atlas row
+`einstein.ph.wm.interaction.constant_twist_ell2_einstein_position_zero_locus`
+records this shellwise theorem.  The active gate is its intersection with
+the twelve-dimensional extra kernel and the common stabilizer cone.  The direct polar
 Einstein-minus source now supplies successive full-polynomial pivots
 `66*b*z`, `198*a*z`,
 and `198*d*z`; rotational equivariance promotes them to every polar `m`.

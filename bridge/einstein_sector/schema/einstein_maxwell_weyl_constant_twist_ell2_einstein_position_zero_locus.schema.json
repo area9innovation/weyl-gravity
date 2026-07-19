@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Constant-twist ell2 Einstein position zero locus",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "projection_theorem",
+    "correction_classes",
+    "classification",
+    "interpretation",
+    "next_gate",
+    "claim_boundary",
+    "provenance",
+    "verification_receipt",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-constant-twist-ell2-einstein-position-zero-locus-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_EINSTEIN_POSITION_ZERO_LOCUS"},
+    "result_state": {"const": "BOTH_ELL2_EINSTEIN_Q_PRIMARY_CONSTANT_TWIST_POSITION_RESONANCE_KERNELS_CLASSIFIED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "scope": {"type": "object"},
+    "projection_theorem": {
+      "type": "object",
+      "required": [
+        "minus_position_matrix",
+        "plus_position_matrix",
+        "matrix_determinant",
+        "each_shell_operator_rank",
+        "each_shell_kernel_positive_frequency_complex_dimension",
+        "combined_q_primary_operator_rank",
+        "combined_q_primary_kernel_positive_frequency_complex_dimension"
+      ],
+      "properties": {
+        "matrix_determinant": {"const": "-93312/25"},
+        "each_shell_operator_rank": {"const": 8},
+        "each_shell_kernel_positive_frequency_complex_dimension": {"const": 2},
+        "combined_q_primary_operator_rank": {"const": 16},
+        "combined_q_primary_kernel_positive_frequency_complex_dimension": {"const": 4}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "both_Einstein_q_primary_twist_position_maps_classified",
+        "each_parity_incidence_matrix_invertible",
+        "combined_q_primary_kernel_complex_dimension_four",
+        "simultaneous_moment_and_all_branch_resonance_zero_locus_classified",
+        "full_second_order_equation_solved",
+        "causal_or_quantum_claim"
+      ],
+      "properties": {
+        "both_Einstein_q_primary_twist_position_maps_classified": {"const": true},
+        "each_parity_incidence_matrix_invertible": {"const": true},
+        "combined_q_primary_kernel_complex_dimension_four": {"const": true},
+        "simultaneous_moment_and_all_branch_resonance_zero_locus_classified": {"const": false},
+        "full_second_order_equation_solved": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      }
+    },
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": true
+}

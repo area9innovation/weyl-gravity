@@ -197,6 +197,12 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("complex dimension is 12", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
 
+    def test_constant_twist_einstein_position_zero_locus_is_registered(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.constant_twist_ell2_einstein_position_zero_locus"]
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("combined complex kernel dimension is four", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+
 
 if __name__ == "__main__":
     unittest.main()
