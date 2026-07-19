@@ -57,7 +57,10 @@ rows, pass two unseen momentum fixtures, and preserve the symmetric `I28`
 quotient relation. Their symmetric-point triangle/contact incidence is now
 exact and gives `-1975/72+2704/27=15707/216`, refuting algebraic `H2`
 cancellation there. Generic-box triangle residues, full incidence and
-renormalized mixed rows remain open, so generic `M14` is not disposed.
+renormalized mixed rows were the remaining scale gate. All three generic
+corner functions and their full contact incidence are now exact and nonzero;
+generic `M14` is disposed as a Mellin-renormalized scale row. Finite local
+mixed rows remain open.
 
 No row may be used as evidence for another row merely because both use the
 word cylinder, wave, or Einstein.
@@ -1969,8 +1972,9 @@ Mellin minimal subtraction promotes the combined residue to the exact fixture
 ordered triangle cells, three contact cells and one common boundary extension.
 All six generic contact endpoint residues are now exact 33-row five-carrier
 functions. Their symmetric-point incidence is exact and refutes algebraic
-`H2` cancellation; the generic `M14` disposition now requires generic-box
-triangle corner residues, full incidence and renormalized mixed-row assembly. The selected generic weight-raised
+`H2` cancellation. All generic triangle corner functions and their full
+contact incidence are now exact and nonzero, so generic `M14` is disposed as
+a Mellin-renormalized scale row. Finite local mixed rows remain open. The selected generic weight-raised
 factorization and its local order-minus-three/four BCH residue are now exact.
 The canonical
 `det_3` tail and all three Schur residues are already fixed. The exact Endo--Duhamel,
