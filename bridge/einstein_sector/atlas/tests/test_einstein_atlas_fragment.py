@@ -70,6 +70,16 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
+    def test_twist_aligned_ell2_fixture_is_bounded_obstructed_only(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_bounded_obstruction"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("one tuned ell=2", entry["claim_boundary"])
+
     def test_abd_matrix_is_input_not_full_nonlinear_theorem(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.abd_times_ell2_extra"]
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
@@ -252,6 +262,16 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("strictly negative", entry["mode_data"]["taub_maps"]["statement"])
         self.assertIn("16*r_x^2+3*r_p^2=115*d^2", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
+    def test_exceptional_ellipse_einstein_minus_frequency_gate_is_fail_closed(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.exceptional_ellipse_einstein_minus_frequency_gate"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("Forty exact algebraic comparisons", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertIn("zero-frequency block", second_order["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
     def test_constant_twist_projector_repair_is_authoritative(self) -> None:

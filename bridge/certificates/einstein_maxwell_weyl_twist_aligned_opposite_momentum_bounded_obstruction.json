@@ -1,0 +1,176 @@
+{
+  "bounded_obstruction": {
+    "necessity": "a bounded or finite-quasiperiodic correction requires every reduced target-shell adjoint functional to vanish",
+    "resonant_functional": "R_polar_L4_e2(u)=zeta_e2^T S_(L4,M0,K0,2omega_-)(u,u)",
+    "value_nonzero": true,
+    "value_on_unit_q_minus_pair": "305280/203 - 171648*sqrt(3)/203",
+    "verdict": "OBSTRUCTED"
+  },
+  "claim_boundary": "This is one exact tuned ell=2 bounded obstruction fixture. It does not classify the general bounded cone, fixed circumference, other ell, polar inputs, multiple |k| fibres, final residual descent, causal propagation, all-orders integration, particles or quantum theory.",
+  "classification": {
+    "bounded_or_finite_quasiperiodic_extension_excluded": true,
+    "causal_or_quantum_claim": false,
+    "direct_Weyl_Maxwell_quadratic_source_computed": true,
+    "explicit_nonzero_twist_aligned_common_zero_tangent_constructed": true,
+    "general_bounded_zero_locus_classified": false,
+    "polar_L4_p_adjoint_pairing_nonzero": true,
+    "smooth_secular_extension_certified": true
+  },
+  "collision_audit": {
+    "omega_minus_squared": "29/6",
+    "omega_plus_squared": "29/6 + 4*sqrt(3)",
+    "only_q_minus_pair_reaches_2omega_minus": true,
+    "possible_K0_positive_output_frequencies": [
+      "2*omega_-",
+      "2*omega_+",
+      "omega_++omega_-",
+      "omega_+-omega_-",
+      "0"
+    ],
+    "three_to_one_collision_defect_omega_plus_squared_minus_9omega_minus_squared": "4*(-29 + 3*sqrt(3))/3",
+    "twist_cross_terms_have_nonzero_output_momentum": true
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "reason": "the unique polar L=4,K=0,Omega=2omega_- p-shell carrier has a nonzero reduced adjoint pairing",
+      "status": "OBSTRUCTED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "the common stabilizer moment maps vanish and the resonant block admits the certified finite secular inverse",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_four_dimensional_source": {
+    "action_row_order": [
+      "-polar(metric_00)",
+      "2*polar(metric_01)",
+      "-polar(metric_11)",
+      "2*20*polar(maxwell_phi)"
+    ],
+    "adjoint_pairings": [
+      "0",
+      "-1152*(-265 + 149*sqrt(3))/203"
+    ],
+    "convention": "the +k/-k complex positive-frequency cross coefficient in (1/2)D^2E[u,u]; the corresponding real-field coefficient differs only by a nonzero amplitude factor",
+    "nonzero_pairing_algebraic_norm": "3622",
+    "source_rows": [
+      "-64*(163 + 261*sqrt(3))/7",
+      "0",
+      "32*(-21293 + 9450*sqrt(3))/105",
+      "384*(-137 + 55*sqrt(3))/7"
+    ],
+    "target_left_adjoint_columns": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "-4/87",
+        "0",
+        "-40/29",
+        "1"
+      ]
+    ]
+  },
+  "first_order_tangent": {
+    "common_zero_source": {
+      "Einstein_minus": "equal +k and -k densities (12*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell - 1)/(6*ell**2 + 3*ell - 1) on |ell,m=0>",
+      "Einstein_plus": "equal +k and -k densities 1 on |ell,m=0>",
+      "extra": "zero"
+    },
+    "five_moment_maps": {
+      "mu_H": "0",
+      "mu_J1": "0 on the m_A=0 rank-one density",
+      "mu_J2": "0 on the m_A=0 rank-one density",
+      "mu_J3": "0 on the m_A=0 rank-one density",
+      "mu_Px": "0 because the +k and -k branch densities are equal"
+    },
+    "q_minus_representatives_Ht_Hx_Qt_Qx": {
+      "+k": [
+        "2*k",
+        "-2*omega_-",
+        "-2*sqrt(3)*k",
+        "2*sqrt(3)*omega_-"
+      ],
+      "-k": [
+        "-2*k",
+        "-2*omega_-",
+        "2*sqrt(3)*k",
+        "2*sqrt(3)*omega_-"
+      ]
+    },
+    "twist_wave_bounded_column": "CERTIFIED on m_A=0"
+  },
+  "generality_level": "G1_EXPLICIT_ELL2_TUNED_NONZERO_MOMENTUM_FIXTURE",
+  "interpretation": "The stabilizer moment maps and the complete twist-wave bounded kernel do not exhaust the bounded tangent-cone equations. This aligned mixed Einstein-wave fixture passes both, but a phase-sensitive polar extra-primary functional obstructs bounded second-order extension. Allowing a secular correction removes that nonzero-frequency obstruction.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the polar-input analogue and then solve the fixed-ell opposite-momentum resonant-functional zero locus over both parities and multiplicities",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_opposite_momentum_ell2_resonant_source_explore.py",
+    "generator_sha256": "1e0e1e6cc35fd9759b71d06cd7b1470c25b715b3011fa47ab4152c2e98a41b9e",
+    "inputs": {
+      "finite_generic_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
+        "sha256": "dd1dec63c50d538a489205d48931720919ff9a43e23c52a45a9d1b80e5ff2513"
+      },
+      "intersection_gate": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
+        "sha256": "096ebab87e36ee7b7eb7c46e51168c863105e38513da5ac8a30118c2ee11d624"
+      },
+      "polar_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+        "sha256": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20"
+      }
+    },
+    "tensor_helper_path": "bridge/einstein_sector/einstein_maxwell_weyl_balanced_ell0_second_order.py",
+    "tensor_helper_sha256": "144dc9ea6173b8980e859b4d98ab41d3730631ae2292198701451f675fbb8ff0"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_TWIST_ALIGNED_OPPOSITE_MOMENTUM_BOUNDED_OBSTRUCTION",
+  "result_state": "TWIST_ALIGNED_COMMON_ZERO_TANGENT_HAS_NONZERO_POLAR_L4_RESONANT_FUNCTIONAL",
+  "schema": "einstein-maxwell-weyl-twist-aligned-opposite-momentum-bounded-obstruction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.schema.json",
+  "schema_sha256": "351e75f931afb9eccbb4b0add4759b7920f4ce1f2b781e8f20d1443339dad432",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 with circumference chosen so k^2=2*sqrt(3)-7/6 is allowed",
+    "carrier": "nonzero aligned constant twist plus axial ell=2,m=0 Einstein-plus/minus waves at +/-k",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "input ell=2; output L=4",
+    "k": "+/-sqrt(2*sqrt(3)-7/6); output K=0",
+    "m": "input m=0; output M=0",
+    "omega": "input q-minus omega_-^2=29/6; resonant output Omega=2*omega_- on the polar p shell",
+    "parity": "axial inputs; polar output",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_opposite_momentum_ell2_resonant_source_explore --verify bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_1_fast": {
+      "status": "PENDING",
+      "tests_run": 0
+    },
+    "tier_2_direct_replay": {
+      "elapsed_seconds": 200.96,
+      "max_rss_kb": 97428,
+      "status": "PASS"
+    },
+    "tier_3": {
+      "reason": "the theorem is a scoped fixture and changes no shared operator",
+      "status": "NOT_RUN"
+    }
+  }
+}

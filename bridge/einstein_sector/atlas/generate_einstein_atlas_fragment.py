@@ -17,6 +17,7 @@ STATUSES = ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_M
 AXES = ["causal", "symplectic", "nonlinear", "observational", "quantum"]
 CERTIFICATES = {
     "standard": ROOT / "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+    "radiative": ROOT / "bridge/certificates/einstein_maxwell_weyl_radiative_symplectic_restriction.json",
     "axial_operator": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_operator.json",
     "polar_operator": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
     "axial_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
@@ -32,6 +33,7 @@ CERTIFICATES = {
     "exceptional_ad_pivots": ROOT / "bridge/certificates/einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots.json",
     "exceptional_difference_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.json",
     "exceptional_resonance_ellipse": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.json",
+    "exceptional_minus_frequency_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.json",
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
@@ -72,6 +74,7 @@ CERTIFICATES = {
     "fixed_ell_constant_twist_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.json",
     "nonzero_k_constant_twist_same_shell": ROOT / "bridge/certificates/einstein_maxwell_weyl_nonzero_k_constant_twist_same_shell.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
+    "twist_aligned_opposite_momentum_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.json",
     "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
     "global_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
     "extra_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
@@ -273,6 +276,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OPEN", "The resonance-compatible ellipse is not yet a bounded second-order tangent because its Hamiltonian balance and all new Einstein-minus cross sources remain unsolved."), ("CERTIFIED", "The imported complete finite-support theorem supplies smooth secular inversion once all five moment maps vanish."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
             _evidence("exceptional_resonance_ellipse", "exceptional_difference_matrix", "exceptional_resonance", "d_completion", "abstract_cone"),
             "This is an axisymmetric resonance-compatibility theorem. It does not certify the Hamiltonian-balanced enlargement, a complete second-order correction, all m, nonzero momentum or higher lifecycles.",
+        ),
+        _entry(
+            "einstein.ph.wm.mixed.exceptional_ellipse_einstein_minus_frequency_gate",
+            _scope(theory="Weyl-Maxwell target", carrier="pure-axial endpoint of the exceptional resonance ellipse plus one axial ell2 Einstein-minus balance oscillator", degree=2, parity="all conservatively allowed target parities", ell="inputs 1 and 2; every angularly allowed output", m=0, k=0, omega="all signed Einstein-minus cross frequencies"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The exceptional, generic-extra control and Einstein-minus inputs are certified distinct nonradical stationary carrier blocks."),
+            ("CERTIFIED", "The action-derived exceptional and ell2 control Grams and the negative relative Einstein-minus weight fix the exact balance normalization."),
+            ("CERTIFIED", "One explicit Einstein-minus occupation cancels mu_H; axisymmetry and k=0 leave mu_Px and all three mu_Ji zero."),
+            ("CERTIFIED", "Forty exact algebraic comparisons prove every new Einstein-minus cross frequency is off the physical target shells; nonzero-frequency homogeneous output is empty."),
+            _second_order(("OPEN", "The stabilizer-balanced frequency gate is not yet a bounded tangent: the complete quadratic source, especially its combined zero-frequency block, remains unsolved."), ("CERTIFIED", "The complete finite-support theorem supplies a smooth exponential-polynomial inverse once the stabilizer moment maps vanish."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("exceptional_minus_frequency_gate", "exceptional_resonance_ellipse", "exceptional_current", "radiative", "complete_finite_smooth", "abstract_cone"),
+            "This certifies one axisymmetric charge balance and exact frequency arithmetic only. It does not compute the quadratic source, certify bounded extension, assemble all m, treat nonzero momentum or promote causal, residual or quantum claims.",
         ),
         _entry(
             "einstein.ph.wm.extra.exceptional_ell1_nonzero_k",
@@ -623,6 +638,18 @@ def entries() -> list[dict[str, object]]:
             "This is an exact intersection/independence gate, not a bounded obstruction. The circumference is tuned to one resonance divisor; the dynamical coefficient, fixed-L momentum census, multiple |k| fibres and higher lifecycles remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_bounded_obstruction",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned so k^2=2*sqrt(3)-7/6 is allowed; before final residual quotient", carrier="nonzero aligned constant twist plus axial ell=2,m=0 Einstein-plus/minus waves at +/-k", degree=2, parity="axial inputs and polar output", ell="input ell=2; output L=4", m="input m=0; output M=0", k="+/-sqrt(2*sqrt(3)-7/6); output K=0", omega="q-minus input omega_-^2=29/6; polar p-shell output Omega=2omega_-", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The exact axial q-minus representatives, polar L=4 p-shell target and tuned compact momentum are retained without cross-background identification."),
+            ("CERTIFIED","The input occupations use the action-derived q-branch forms and the target adjoints come from the self-adjoint polar action Hessian."),
+            ("CERTIFIED","All five stabilizer moment maps vanish and the complete constant-twist-times-wave bounded column is solved on the aligned m_A=0 face."),
+            ("CERTIFIED","The direct four-dimensional q-minus +/-k source pairs nontrivially with the second polar p-shell adjoint; no other occupied input pair shares this carrier."),
+            _second_order(("OBSTRUCTED","The exact nonzero polar L=4,K=0,Omega=2omega_- adjoint pairing excludes bounded and finite-quasiperiodic corrections."),("CERTIFIED","A finite smooth exponential-polynomial correction with a secular resonant term is certified because all stabilizer moment maps vanish."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _evidence("twist_aligned_opposite_momentum_obstruction","twist_aligned_opposite_momentum_gate","finite_generic_smooth"),
+            "This is one tuned ell=2 obstruction fixture. The general bounded zero locus, fixed-circumference census, other ell/parities, multiple |k| fibres and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
             _scope(theory="Weyl-Maxwell target", carrier="complete standard globals plus every axial/polar q/p primary in one arbitrary fixed generic ell block", degree=2, parity="homogeneous, axial and polar", ell="one fixed integer ell>=2 with global ell=0,1 data adjoined", m="all wave m=-ell,...,ell and all three real twist components", k=0, omega="generalized zero and every fixed-ell q/p shell"),
             {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
@@ -806,6 +833,16 @@ def build() -> dict[str, object]:
         raise AssertionError("exceptional resonance ellipse changed")
     if exceptional_ellipse["Hamiltonian_moment_map_zero"] or exceptional_ellipse["complete_second_order_source_solved"] or exceptional_ellipse["causal_or_quantum_claim"]:
         raise AssertionError("exceptional resonance ellipse exceeded its scope")
+    exceptional_minus = records["exceptional_minus_frequency_gate"]["classification"]
+    if not (
+        exceptional_minus["minimal_single_Einstein_minus_H_balance_explicit"]
+        and exceptional_minus["mu_H_mu_Px_mu_Ji_all_zero_on_balanced_axisymmetric_fixture"]
+        and exceptional_minus["all_Einstein_minus_exceptional_cross_shells_nonresonant"]
+        and exceptional_minus["all_Einstein_minus_ell2_control_cross_shells_nonresonant"]
+    ):
+        raise AssertionError("exceptional Einstein-minus frequency gate changed")
+    if exceptional_minus["complete_quadratic_source_solved"] or exceptional_minus["bounded_second_order_extension_certified"] or exceptional_minus["causal_or_quantum_claim"]:
+        raise AssertionError("exceptional Einstein-minus frequency gate exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

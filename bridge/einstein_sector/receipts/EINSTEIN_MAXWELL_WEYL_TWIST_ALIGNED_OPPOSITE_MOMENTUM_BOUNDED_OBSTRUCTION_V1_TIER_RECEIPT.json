@@ -1,0 +1,60 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_TWIST_ALIGNED_OPPOSITE_MOMENTUM_BOUNDED_OBSTRUCTION",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_opposite_momentum_ell2_resonant_source_explore.py": "1e0e1e6cc35fd9759b71d06cd7b1470c25b715b3011fa47ab4152c2e98a41b9e",
+    "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.json": "2899ddabd424ad67b71350a12819165c7bca9f136fd922c4052bb4e215358d64",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.schema.json": "351e75f931afb9eccbb4b0add4759b7920f4ce1f2b781e8f20d1443339dad432",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.py": "f5961f8ef02484ff7ed262350a2a45f3a809cd3cb6ecbd920dbad0c3d49dd32d",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.py": "5677f0fff318e5403e244b9238771439b430315ab11b60d48a817f191580a799",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-twist-aligned-opposite-momentum-bounded-obstruction.md": "37e67722eebc1d4d1502f9a386b8a421683048bbe178ef193eb431d5231f5482",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "c01ac891d05eb353f31edd57af63c55b7a0c472c5970bbc297355c11dfea45d7",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "4858cd0bf5f1c64f3129775ca32763316a5a009c6711f80612d4bd0ba245be27",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "af7077b96663cffb3e3481f9ec7005f6d374476fac91e730410393b155fa76f5",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "35198d186b4b98ff6dc135145ff981d25308405ffb9d406343e34cf0af1a1813",
+    "notes/d-quotient-einstein-team-brief.md": "40954345f22b7ff3916cb143a7bac74f2ebbc744021c219035142c89b3f7453e"
+  },
+  "claim": {
+    "certified": "One explicit nonzero twist-aligned ell=2 opposite-momentum tangent has all five stabilizer moment maps zero and solves the complete twist-wave bounded column, but has a nonzero polar L=4 p-shell adjoint functional and is therefore bounded/finite-quasiperiodic obstructed.",
+    "proof": "A direct four-dimensional Weyl-Maxwell quadratic replay gives the exact four action rows. The self-adjoint polar target has two exact left adjoints; the second pairing is -1152*(-265+149*sqrt(3))/203, whose algebraic norm is nonzero. Exact frequency and momentum isolation excludes collisions with the occupied Einstein-plus and twist cross channels.",
+    "open": "The general bounded zero locus, fixed-circumference momentum census, other ell and input parity, multiple absolute-momentum fibres, causal propagation, final residual descent and all-orders integration."
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.24,
+      "commands": [
+        "python3 -m py_compile <producer, verifier, tests and atlas consumers>",
+        "python3 -m json.tool <certificate, schema, receipt and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.48,
+      "max_rss_kb": 58908,
+      "tests_run": 38,
+      "commands": [
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 204.53,
+      "max_rss_kb": 97188,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_opposite_momentum_ell2_resonant_source_explore --write"
+      ],
+      "criterion": "The direct four-dimensional Bach-Maxwell source, harmonic projection, target action block and both exact adjoint pairings were recomputed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This promotes one scoped fixture, not a shared operator, complete bounded cone, causal lifecycle or programme freeze."
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "generality_level",
+    "scope",
+    "first_order_tangent",
+    "direct_four_dimensional_source",
+    "collision_audit",
+    "bounded_obstruction",
+    "correction_classes",
+    "classification",
+    "provenance",
+    "verification_receipt",
+    "verification_commands",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-twist-aligned-opposite-momentum-bounded-obstruction-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_TWIST_ALIGNED_OPPOSITE_MOMENTUM_BOUNDED_OBSTRUCTION"
+    },
+    "dependency_tags": {
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "bounded_obstruction": {
+      "type": "object",
+      "required": ["value_nonzero", "verdict"],
+      "properties": {
+        "value_nonzero": {"const": true},
+        "verdict": {"const": "OBSTRUCTED"}
+      }
+    },
+    "correction_classes": {
+      "type": "object",
+      "required": [
+        "BOUNDED_OR_FINITE_QUASIPERIODIC",
+        "SMOOTH_EXPONENTIAL_POLYNOMIAL",
+        "CAUSAL_RETARDED"
+      ],
+      "properties": {
+        "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+          "properties": {"status": {"const": "OBSTRUCTED"}},
+          "required": ["status"]
+        },
+        "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+          "properties": {"status": {"const": "CERTIFIED"}},
+          "required": ["status"]
+        },
+        "CAUSAL_RETARDED": {
+          "properties": {"status": {"const": "NO_CERTIFIED_MAP"}},
+          "required": ["status"]
+        }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "explicit_nonzero_twist_aligned_common_zero_tangent_constructed",
+        "direct_Weyl_Maxwell_quadratic_source_computed",
+        "polar_L4_p_adjoint_pairing_nonzero",
+        "bounded_or_finite_quasiperiodic_extension_excluded",
+        "smooth_secular_extension_certified",
+        "general_bounded_zero_locus_classified",
+        "causal_or_quantum_claim"
+      ],
+      "properties": {
+        "explicit_nonzero_twist_aligned_common_zero_tangent_constructed": {"const": true},
+        "direct_Weyl_Maxwell_quadratic_source_computed": {"const": true},
+        "polar_L4_p_adjoint_pairing_nonzero": {"const": true},
+        "bounded_or_finite_quasiperiodic_extension_excluded": {"const": true},
+        "smooth_secular_extension_certified": {"const": true},
+        "general_bounded_zero_locus_classified": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      }
+    }
+  }
+}

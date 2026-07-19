@@ -269,6 +269,16 @@ def verify() -> None:
         raise AssertionError("exceptional resonance ellipse was hidden")
     if ellipse_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or ellipse_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("exceptional resonance ellipse exceeded its correction class")
+    exceptional_minus = by_id["einstein.ph.wm.mixed.exceptional_ellipse_einstein_minus_frequency_gate"]
+    exceptional_minus_second = exceptional_minus["mode_data"]["second_order"]
+    if exceptional_minus["descriptions"]["nonlinear"] != "OPEN" or exceptional_minus["mode_data"]["taub_maps"]["status"] != "CERTIFIED":
+        raise AssertionError("exceptional Einstein-minus lifecycle changed")
+    if "Forty exact algebraic comparisons" not in exceptional_minus["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("exceptional Einstein-minus frequency census was hidden")
+    if exceptional_minus_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or "zero-frequency block" not in exceptional_minus_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("exceptional Einstein-minus source gate was not fail-closed")
+    if exceptional_minus_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("exceptional Einstein-minus causal lifecycle was over-promoted")
     fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
     if fixed_ell_twist["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("fixed-ell bounded lifecycle was not promoted")
@@ -301,6 +311,18 @@ def verify() -> None:
         raise AssertionError("twist-aligned correction-class split changed")
     if aligned_phase_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("twist-aligned causal lifecycle was over-promoted")
+    aligned_obstruction = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_bounded_obstruction"]
+    aligned_obstruction_second = aligned_obstruction["mode_data"]["second_order"]
+    if aligned_obstruction["descriptions"]["nonlinear"] != "OBSTRUCTED":
+        raise AssertionError("twist-aligned bounded fixture was not marked obstructed")
+    if aligned_obstruction["mode_data"]["taub_maps"]["status"] != "CERTIFIED":
+        raise AssertionError("twist-aligned obstruction lost its common-zero audit")
+    if aligned_obstruction_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED":
+        raise AssertionError("twist-aligned nonzero resonant functional was hidden")
+    if aligned_obstruction_second["smooth_secular"]["status"] != "CERTIFIED":
+        raise AssertionError("twist-aligned smooth correction lifecycle changed")
+    if aligned_obstruction_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("twist-aligned obstruction gained an uncertified causal map")
     repair = by_id["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
     if repair["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("constant-twist projector repair was not promoted")
