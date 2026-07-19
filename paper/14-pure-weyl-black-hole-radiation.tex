@@ -571,17 +571,32 @@ symplectic-norm finiteness at infinity does --- as a phase-space
 normalization, not a local differential boundary condition.  Station
 (iii), falloff in a regular tetrad or asymptotic gauge, remains open, and
 the fixture scope (single frequency, axial parity) is recorded on the
-certificate.  Nor is there a no-go against local causal selection.  Since
-\(\psi\) obeys a second-order hyperbolic equation, the local Cauchy condition
+certificate.  Nor is there a no-go against local causal selection: it is
+now a certified statement.  On the globally hyperbolic exterior with
+Cauchy surface \(\Sigma=\{t=\mathrm{const},\,r>2m\}\), the local Cauchy
+condition
 \begin{equation}
  \psi|_\Sigma=0,
  \qquad
  \nabla_n\psi|_\Sigma=0
 \end{equation}
-propagates \(\psi=0\) and selects the linear Einstein kernel.  The open
-physical questions are whether this restriction is preserved by nonlinear
-interactions and whether it follows from a differentiable asymptotic phase
-space rather than being imposed by hand.
+propagates \(\psi=0\) in the axial sector unconditionally: the carrier
+operator equals \(\tfrac12\Box+C\!\circ\!(-)\) exactly there (the trace
+vanishes identically on the class), is normally hyperbolic, and its
+Bianchi constraint obeys the exact transport identity
+\(\nabla^a(L\psi)_{a\varphi}=\tfrac12\Box B_\varphi\).  In the polar
+sector the operator is identically traceless at the PDE level, the
+conformal direction is uncontrolled, and
+\(\psi_{\rm conf}(t^4\chi(r)P_2)\) is an exact nonuniqueness witness with
+vanishing Cauchy data; the certified conformal trace relation
+\(S(\psi_{\rm conf}(\Phi))=-3\Box\Phi\) then reduces any zero-data
+solution to the conformal-gauge orbit, so local Cauchy data selects the
+Einstein image exactly \emph{modulo conformal gauge} (and exactly on the
+traceless slice).  Dropping the normal-derivative datum is certified to
+fail by a time-odd mode witness.  The open physical questions are whether
+this restriction is preserved by nonlinear interactions and whether it
+follows from a differentiable asymptotic phase space rather than being
+imposed by hand.
 
 \section{Polar chain: composition, reach, current, and disposition}
 
@@ -849,6 +864,8 @@ Composed log tails; Einstein norm-selection at infinity &
 \cert{black_hole_programme/certificates/BH2C_FLUX_CLASS.json}\\
 Polar composed classes; parity-complete norm-selection &
 \cert{black_hole_programme/certificates/BH2C_POLAR_FLUX_CLASS.json}\\
+Local Cauchy truncation selects Einstein modulo conformal gauge &
+\cert{black_hole_programme/certificates/BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION.json}\\
 \bottomrule
 \end{tabularx}
 \end{center}

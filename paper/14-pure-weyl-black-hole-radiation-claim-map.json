@@ -2,7 +2,7 @@
  "schema": "paper-draft-source-map-v1",
  "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
  "lifecycle_state": "DRAFT_ALLOWED",
- "source_baseline": "2d4e4ce03546dc16fd3a94666af7a3c6ed537506",
+ "source_baseline": "4cf26e0c338a66568a68743de5f14ed7558da828",
  "manuscript": "paper/14-pure-weyl-black-hole-radiation.tex",
  "dependency_tags": [
   "LOCAL-ALGEBRAIC",
@@ -46,7 +46,9 @@
   "asymptotic_tetrad_falloff_audit": false,
   "asymptotic_phase_space_charge_algebra": false,
   "polar_composed_lift_power_enhanced_single_log": true,
-  "polar_norm_selection_fixture_einstein_selected": true
+  "polar_norm_selection_fixture_einstein_selected": true,
+  "local_cauchy_truncation_selects_einstein_axial": true,
+  "local_cauchy_truncation_polar_modulo_conformal_gauge": true
  },
  "known_source_scope_corrections": [
   {
@@ -142,6 +144,10 @@
   {
    "path": "black_hole_programme/certificates/BH2C_POLAR_FLUX_CLASS.json",
    "git_blob": "3f349d60b33861047a0e0fc34eea357f09b74241"
+  },
+  {
+   "path": "black_hole_programme/certificates/BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION.json",
+   "git_blob": "b1ef4af347791bbb4ce62bc17b6d39b81e366ff9"
   }
  ],
  "next_gate": "BH2C_SYMBOLIC_NORM_SELECTION_TABLE_AND_ASYMPTOTIC_PHASE_SPACE_CONSTRUCTION"
