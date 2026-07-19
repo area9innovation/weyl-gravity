@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl/product-s2-s2-ghost-schur-modified-determinant-precertificate-v1.schema.json",
+  "$defs": {
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lower", "upper"],
+      "properties": {"lower": {"type": "string"}, "upper": {"type": "string"}}
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "assembly_identity", "directed_enclosures", "claim_flags", "tier3_blocker", "dependencies", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-product-s2-s2-ghost-schur-modified-determinant-precertificate-v1"},
+    "result_id": {"const": "PRODUCT_S2_S2_GHOST_SCHUR_MODIFIED_DETERMINANT_PRECERTIFICATE"},
+    "result_state": {"const": "COUPLED_SCHUR_FACTOR_RIGOROUS_ENCLOSURE_DERIVED_TIER3_BLOCKED"},
+    "lifecycle_state": {"const": "PRECERTIFICATE_TIER3_FAILED_NO_PROMOTION"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {"type": "object"},
+    "assembly_identity": {"type": "object"},
+    "directed_enclosures": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["regular_modified_determinant", "matched_exceptional_log", "coupled_schur_log", "arithmetic"],
+      "properties": {
+        "regular_modified_determinant": {"$ref": "#/$defs/interval"},
+        "matched_exceptional_log": {"$ref": "#/$defs/interval"},
+        "coupled_schur_log": {"$ref": "#/$defs/interval"},
+        "arithmetic": {"type": "string"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["REGULAR_MODIFIED_SCHUR_DETERMINANT_ENCLOSURE_DERIVED", "MATCHED_EXCEPTIONAL_COUPLED_SCHUR_ENCLOSURE_DERIVED", "PRODUCT_WEIGHTED_R_K_COMPUTED", "PRODUCT_FINITE_PART_R_K2_COMPUTED", "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "REGULAR_MODIFIED_SCHUR_DETERMINANT_ENCLOSURE_DERIVED": {"const": true},
+        "MATCHED_EXCEPTIONAL_COUPLED_SCHUR_ENCLOSURE_DERIVED": {"const": true},
+        "PRODUCT_WEIGHTED_R_K_COMPUTED": {"const": false},
+        "PRODUCT_FINITE_PART_R_K2_COMPUTED": {"const": false},
+        "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "tier3_blocker": {"type": "object"},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["det3", "weighted_rows"],
+      "properties": {"det3": {"$ref": "#/$defs/reference"}, "weighted_rows": {"$ref": "#/$defs/reference"}}
+    },
+    "next_gate": {"type": "string", "minLength": 20},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  }
+}

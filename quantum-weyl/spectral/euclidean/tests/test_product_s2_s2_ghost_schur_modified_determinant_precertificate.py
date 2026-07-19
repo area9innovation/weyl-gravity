@@ -1,0 +1,46 @@
+from __future__ import annotations
+
+from decimal import Decimal
+import json
+import unittest
+
+from jsonschema import Draft202012Validator
+
+from spectral.euclidean.product_s2_s2_ghost_schur_modified_determinant_precertificate import OUTPUT, SCHEMA, build
+from spectral.euclidean.verify_product_s2_s2_ghost_schur_modified_determinant_precertificate import main as independent_verify
+
+
+class ProductS2S2GhostSchurModifiedDeterminantPrecertificateTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.value = build()
+
+    def test_schema_and_checked_in_certificate(self) -> None:
+        schema = json.loads(SCHEMA.read_text())
+        Draft202012Validator.check_schema(schema)
+        Draft202012Validator(schema).validate(self.value)
+        self.assertEqual(self.value, json.loads(OUTPUT.read_text()))
+
+    def test_interval_assembly(self) -> None:
+        rows = self.value["directed_enclosures"]
+        regular = rows["regular_modified_determinant"]
+        coupled = rows["coupled_schur_log"]
+        self.assertLess(Decimal(regular["lower"]), Decimal("-2.89784225"))
+        self.assertGreater(Decimal(regular["upper"]), Decimal("-2.89784225"))
+        self.assertLess(Decimal(coupled["lower"]), Decimal("-9.48951598"))
+        self.assertGreater(Decimal(coupled["upper"]), Decimal("-9.48951598"))
+
+    def test_tier3_and_full_vector_flags_fail_closed(self) -> None:
+        self.assertEqual(self.value["tier3_blocker"]["status"], "FAILED_NOT_A_PASS")
+        flags = self.value["claim_flags"]
+        self.assertTrue(flags["MATCHED_EXCEPTIONAL_COUPLED_SCHUR_ENCLOSURE_DERIVED"])
+        self.assertFalse(flags["PRODUCT_WEIGHTED_R_K_COMPUTED"])
+        self.assertFalse(flags["FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED"])
+        self.assertFalse(flags["LORENTZIAN_CERTIFIED"])
+
+    def test_independent_verifier(self) -> None:
+        self.assertEqual(independent_verify(), 0)
+
+
+if __name__ == "__main__":
+    unittest.main()

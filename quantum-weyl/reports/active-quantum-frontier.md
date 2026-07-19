@@ -544,7 +544,9 @@ The current coefficient-bearing critical path is:
    receipts exposed by the 830-test Tier-3 run, rerun that promotion gate, and
    only then promote the rigorously derived `S2(1) x S2(2)` weighted `R(K)`
    and finite-part `R(K^2)` enclosures; the regular-complement `det_3` and
-   matched exceptional factor `3^-6` are already certified, while
+   matched exceptional factor `3^-6` are already certified and their full
+   coupled Schur-factor enclosure has a fail-closed assembly precertificate,
+   while the minimal-vector determinant is still absent and
    arbitrary-background finite rows still require a generic primed Green
    kernel or spectral measure;
 2. classify the parity-odd derivative sector and fix the finite `C2` and
