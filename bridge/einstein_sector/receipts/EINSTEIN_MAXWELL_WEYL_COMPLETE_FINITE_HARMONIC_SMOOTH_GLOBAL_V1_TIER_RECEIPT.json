@@ -1,0 +1,70 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_FINITE_HARMONIC_SMOOTH_GLOBAL_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_FINITE_HARMONIC_SMOOTH_GLOBAL_SECOND_ORDER",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "artifacts": {
+    "generator": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.py",
+      "sha256": "6feff4a9ade6ca17aa1cc6edd7b786e18e002cd27bda297b70b36d4e6c3287dd"
+    },
+    "certificate": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+      "sha256": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885"
+    },
+    "schema": {
+      "path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.schema.json",
+      "sha256": "c6556074f72c125b27021a80b17ae37c059ce3bd664570d8141f714881d7ead3"
+    },
+    "independent_verifier": {
+      "path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.py",
+      "sha256": "f8ea486532b761c70004065407cec156009b862aa1040194de5638437825d4b9"
+    },
+    "tests": {
+      "path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.py",
+      "sha256": "3f6562e6b5735e32cd517f1ba459ff7519db2c0a0550a5b898db8eb12ac02ed4"
+    },
+    "atlas_fragment": {
+      "path": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+      "sha256": "e69d7822cb45d2722b174ec5fa51b698bef6371e8ae5a08a2de21b3e45b98ae1"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.26,
+      "max_rss_kb": 16104,
+      "commands": [
+        "python3 -m py_compile <scoped theorem and atlas Python paths>",
+        "python3 -m json.tool <scoped theorem schema, certificate and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.74,
+      "max_rss_kb": 58124,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order --verify bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ],
+      "tests_run": 14
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "the complete branch inventory, exceptional L=0 and L=1 Fourier complexes, homogeneous and twist cofibers, generic axial and polar Smith modules, compact moment-map/Taub bridge, fixed-bundle descent, bounded independence witnesses and abstract finite-block cone theorem are unchanged exact inputs"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "bounded common-zero, infinite-mode, causal, all-orders, final-residual, observational and quantum lifecycles remain excluded"
+    }
+  }
+}

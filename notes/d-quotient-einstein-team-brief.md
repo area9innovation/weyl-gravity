@@ -2227,12 +2227,33 @@ This includes opposite momenta, non-aligned generic harmonic
 superpositions, and multiple `|k|` fibres.  The bounded category remains
 separate: its exact finite resonance ledger `R_(j,a)` is defined and gives a
 necessary-and-sufficient formula with the moment maps, but its coefficientwise
-zero locus is `OPEN`.  The new fail-closed atlas row is
+zero locus is `OPEN`.  The finite-generic fail-closed atlas row is
 `einstein.ph.wm.mixed.finite_generic_all_momenta_smooth_cone`.
-Exceptional/global input modes have not yet been adjoined to this arbitrary
-finite carrier.  Causal/retarded transport, infinite-mode completion,
-all-orders integration, final residual descent, observational maps and
-quantum transfer remain fail-closed.
+
+The exceptional/global enlargement is now complete as a separate theorem.
+The branch dictionary exhausts the certified finite target by adjoining the
+standard/extra `ell=1` blocks at every compact momentum, the three axial twist
+Jordan pairs, and the six-coordinate homogeneous block.  Their quadratic
+sources have temporal degree at most six.  The explicit monomial primitives
+for `D''''` and `A_x''`, the exceptional `L=0,1` operator complexes, and the
+generic Smith factors prove
+
+```text
+coker L_smooth=span{zeta_H,zeta_Px,zeta_J1,zeta_J2,zeta_J3}
+```
+
+on the complete finite carrier.  Therefore the five moment maps are necessary
+and sufficient for a real smooth spatially periodic finite exponential-
+polynomial correction.  The bounded ledger is strictly larger:
+`mu_X=P_(j,r)=R_(j,a)=0`, with independent certified polynomial and resonant
+witnesses, but its coefficientwise common zero locus is `OPEN`.  The active
+Bridge 1 lifecycle remains the noncyclic linear triangle; this nonlinear
+theorem is an input and does not promote a relative `q2/q3` morphism.  The
+fail-closed row is
+`einstein.ph.wm.complete_finite_harmonic_smooth_cone`.  Causal/retarded
+transport is `NO_CERTIFIED_MAP`; infinite-mode completion, all-orders
+integration, final residual descent, observational maps and quantum transfer
+remain open.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

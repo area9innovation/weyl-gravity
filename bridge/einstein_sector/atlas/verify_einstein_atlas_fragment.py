@@ -114,6 +114,17 @@ def verify() -> None:
     if "multiple |k| fibres" not in finite_second_order["smooth_secular"]["statement"]:
         raise AssertionError("multi-fibre scope is absent")
 
+    complete_finite = by_id["einstein.ph.wm.complete_finite_harmonic_smooth_cone"]
+    complete_second_order = complete_finite["mode_data"]["second_order"]
+    if complete_second_order["smooth_secular"]["status"] != "CERTIFIED":
+        raise AssertionError("complete finite smooth theorem was lost")
+    if complete_second_order["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("complete finite bounded cone was over-promoted")
+    if complete_second_order["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("complete finite causal theorem was over-promoted")
+    if "P_(j,r)" not in complete_finite["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("polynomial bounded obstruction ledger is absent")
+
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("cross-background fail-closed entry changed")

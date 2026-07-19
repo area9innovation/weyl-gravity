@@ -24,10 +24,10 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
         self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
 
-    def test_causal_compact_product_claims_remain_open(self) -> None:
+    def test_causal_compact_product_claims_remain_fail_closed(self) -> None:
         for entry in self.value["entries"]:
             if "crosswalk" not in entry["id"]:
-                self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "OPEN")
+                self.assertIn(entry["mode_data"]["second_order"]["causal_retarded"]["status"], {"OPEN", "NO_CERTIFIED_MAP"})
 
     def test_bridge_one_is_linear_and_fail_closed_downstream(self) -> None:
         entry = self.entries["einstein.ph.bridge.relative_branch_dictionary_v1"]
@@ -73,6 +73,15 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["causal_retarded"]["status"], "OPEN")
         self.assertIn("multiple |k| fibres", second_order["smooth_secular"]["statement"])
         self.assertIn("Exceptional/global input modes", entry["claim_boundary"])
+
+    def test_complete_finite_harmonic_cone_includes_exceptional_global_inputs(self) -> None:
+        entry = self.entries["einstein.ph.wm.complete_finite_harmonic_smooth_cone"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("complete certified linear inventory", second_order["smooth_secular"]["statement"])
+        self.assertIn("P_(j,r)", entry["mode_data"]["resonance"]["statement"])
 
 
 if __name__ == "__main__":

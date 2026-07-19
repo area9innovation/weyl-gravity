@@ -1132,13 +1132,24 @@ finite exact ledger `R_(j,a)=<zeta_(j,a),S_j(u,u)>` is necessary and
 sufficient together with the moment maps, but its coefficientwise common
 zero locus remains `OPEN`.
 
+The exceptional and global inputs have now been adjoined without merging
+their scopes.  The complete certified finite-support target contains the
+generic `q/p` primaries, standard and extra dipoles at every compact momentum,
+the three axial twist Jordan pairs, and the six-coordinate homogeneous block.
+Every quadratic source is a finite exponential-polynomial.  Direct `L=0,1`
+complexes, generic Smith factors, and the explicit polynomial right inverses
+for `D''''` and `A_x''` leave exactly the same five-dimensional smooth
+adjoint cokernel.  Hence the displayed moment-map formula is now necessary
+and sufficient on the complete certified finite carrier, not only its
+generic subcarrier.  The bounded formula additionally contains independent
+polynomial-growth functionals `P_(j,r)` and shell-resonance functionals
+`R_(j,a)`; its common zero locus remains `OPEN`.
+
 This advances nonlinear input to the already activated compact-product
-linear bridge but does not certify a nonlinear relative morphism.  Atlas rows
-`einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face` and
-`einstein.ph.wm.mixed.finite_generic_all_momenta_smooth_cone` retain
-`NO_CERTIFIED_MAP`/`OPEN` for causal/retarded transport.  Exceptional/global
-input modes have not yet been adjoined to the arbitrary finite generic
-carrier.  Infinite-mode completion, the bounded resonance zero locus,
+linear bridge but does not certify a nonlinear relative morphism.  Atlas row
+`einstein.ph.wm.complete_finite_harmonic_smooth_cone` records the completed
+smooth-secular theorem and retains `NO_CERTIFIED_MAP` for causal/retarded
+transport.  Infinite-mode completion, the bounded common zero locus,
 residual equivariance, the observable map, the relative \(L_\infty\)
 morphism, and the quantum lift remain open until their own certificates land.
 

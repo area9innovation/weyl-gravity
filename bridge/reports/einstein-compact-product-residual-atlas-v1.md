@@ -44,7 +44,13 @@ smooth-secular and causal/retarded correction classes.  In particular:
   momentum fibres and relative phases, has smooth-secular tangent cone
   `mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0`; its bounded resonant-functional formula
   is certified but its coefficientwise zero locus remains `OPEN`;
-- every compact-product causal/retarded verdict remains `OPEN`;
+- adjoining every certified exceptional and global linear block gives the
+  complete finite-support smooth cone `mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0`;
+  the bounded ledger additionally contains polynomial-growth `P_(j,r)` and
+  shell-resonance `R_(j,a)` functionals, whose common zero locus is `OPEN`;
+- every compact-product causal/retarded verdict remains fail-closed; the
+  complete finite-support row uses `NO_CERTIFIED_MAP` because no retarded
+  complex has been certified, while older scoped rows remain `OPEN`;
 - the crosswalk to asymptotic or vacuum-cylinder modes is
   `NO_CERTIFIED_MAP`.
 

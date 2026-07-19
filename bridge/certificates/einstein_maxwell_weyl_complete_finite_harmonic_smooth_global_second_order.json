@@ -1,0 +1,322 @@
+{
+  "schema": "einstein-maxwell-weyl-complete-finite-harmonic-smooth-global-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.schema.json",
+  "schema_sha256": "c6556074f72c125b27021a80b17ae37c059ce3bd664570d8141f714881d7ead3",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_FINITE_HARMONIC_SMOOTH_GLOBAL_SECOND_ORDER",
+  "result_state": "COMPLETE_CERTIFIED_FINITE_HARMONIC_TANGENT_CONE_EXTENDIBLE_SMOOTH_GLOBAL",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G5_COMPLETE_FINITE_HARMONIC_ALL_CERTIFIED_LINEAR_INPUTS",
+  "domain": "every real finite-support tangent in the complete certified Weyl-Maxwell linear solution inventory on the fixed compact magnetic bundle P_N, before final residual quotient",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.py",
+    "generator_sha256": "6feff4a9ade6ca17aa1cc6edd7b786e18e002cd27bda297b70b36d4e6c3287dd",
+    "inputs": {
+      "abstract_cone": {
+        "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+        "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+      },
+      "finite_generic": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
+        "sha256": "dd1dec63c50d538a489205d48931720919ff9a43e23c52a45a9d1b80e5ff2513"
+      },
+      "branch_dictionary": {
+        "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+        "sha256": "0bc9236181f6dab22602c63e79be0a1df1dae6e6ef9cd46958d753cf264e0ede"
+      },
+      "standard_inventory": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+        "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+      },
+      "homogeneous_cofiber": {
+        "path": "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
+        "sha256": "b92210530ac733d4323a3be3ae381c9f43d12dc24b7667b978dd2ce603d360fe"
+      },
+      "twist_cofiber": {
+        "path": "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
+        "sha256": "94309d5f8a3710e0527b5325a42329165b848bf61f50cfa12746a341e213d21c"
+      },
+      "exceptional_k0": {
+        "path": "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
+        "sha256": "b56faf37e92d12f37b54c2c5c0224251a73669171a067adb5082f7d71956960d"
+      },
+      "exceptional_nonzero_k": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
+        "sha256": "00fc3fa6da7273ca3ae8a5c51a973f5a91b898b58b49e4bf2d7d0c30711f994c"
+      },
+      "exceptional_global_moment_maps": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      },
+      "exceptional_extra_taub": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+        "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+      },
+      "homogeneous_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.json",
+        "sha256": "880857b4bb004bf1006cf4f7254194753cfd2e065ce915128a781ddd2cd162fc"
+      },
+      "ell0_nonzero": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell0_nonzero_fourier.json",
+        "sha256": "7ca78a48fd3159a8e636f0c6c14da45c87d7a3fd2f01addd63d579e51e8c886c"
+      },
+      "ell1_nonzero": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell1_nonzero_static.json",
+        "sha256": "2e9157f69a8e0f1d1640ca5abcd8e8d201fe68600759f9e6610ed57ad12fdb5a"
+      },
+      "axial_ell1_zero": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+        "sha256": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164"
+      },
+      "polar_ell1_zero": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell1_k0_operator.json",
+        "sha256": "e8344bcfab80a3abe19bfe392f0f8576977fac1b1c34e4f20aee4aaeff74e77c"
+      },
+      "moment_map": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+      },
+      "fixed_bundle": {
+        "path": "bridge/certificates/compact_harmonic_domain_taub_descent.json",
+        "sha256": "4607543c23acdf5df0110aa6df4a01d7e397e6a73afd2d416f3bdd8482048e09"
+      },
+      "bounded_polynomial_witness": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
+        "sha256": "0d38d8f23a62984ba946ffd50c0c441572b8f8b7744e2434ec3698c1b35cf389"
+      },
+      "bounded_resonance_witness": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
+        "sha256": "e2c12e76f0ead8f1d96f5ee953ceca78e85e3d5a74cd37aad4dfe46a0aa047a8"
+      }
+    }
+  },
+  "complete_linear_inventory": {
+    "generic": "all ell>=2 axial/polar q-primary Einstein and p-primary extra modes, all m and compact momenta",
+    "exceptional_ell1": "standard and extra axial/polar oscillators for every compact momentum",
+    "twist": "the three axial k=0 generalized-zero pairs A_a+B_a*t",
+    "homogeneous": "the complete six-coordinate k=0 block (a,b,c,d,Q_e,W_x)",
+    "absent": "no additional homogeneous or twist Weyl cofiber and no other certified target primary"
+  },
+  "finite_source_module": {
+    "output_label": "j=(L,M,K,Omega,parity)",
+    "generic_and_exceptional_oscillators": "finite sums of exp(-i*omega*t) with certified real shell frequencies",
+    "generalized_zero_inputs": "homogeneous metric degree at most three, homogeneous Maxwell and twists degree at most one",
+    "quadratic_temporal_degree": "at most six, multiplying a finite set of signed output frequencies",
+    "spatial_closure": "finite S1 Fourier sums and finite S2 Clebsch-Gordan sums",
+    "correction_module": "real smooth spatially periodic finite exponential-polynomials, closed under all required algebraic and secular primitives"
+  },
+  "complete_output_cokernel_theorem": {
+    "equation": "L_WM v=-(1/2)D^2E_WM[u,u]",
+    "reduction_order": [
+      "complete Noether-compatible target",
+      "local Diff-Weyl-U1 gauge quotient",
+      "adjoint cokernel in the declared correction module"
+    ],
+    "L0_K0": {
+      "constraint_cokernel": [
+        "zeta_H",
+        "zeta_Px"
+      ],
+      "dynamical_invariants": [
+        "D=C-K with D''''=source_D",
+        "A_x with A_x''=source_Ax"
+      ],
+      "polynomial_right_inverse": {
+        "source_degree_range": "0<=r<=6",
+        "D_fourth_derivative_primitives": [
+          {
+            "source": "1",
+            "primitive": "t**4/24"
+          },
+          {
+            "source": "t",
+            "primitive": "t**5/120"
+          },
+          {
+            "source": "t**2",
+            "primitive": "t**6/360"
+          },
+          {
+            "source": "t**3",
+            "primitive": "t**7/840"
+          },
+          {
+            "source": "t**4",
+            "primitive": "t**8/1680"
+          },
+          {
+            "source": "t**5",
+            "primitive": "t**9/3024"
+          },
+          {
+            "source": "t**6",
+            "primitive": "t**10/5040"
+          }
+        ],
+        "A_x_second_derivative_primitives": [
+          {
+            "source": "1",
+            "primitive": "t**2/2"
+          },
+          {
+            "source": "t",
+            "primitive": "t**3/6"
+          },
+          {
+            "source": "t**2",
+            "primitive": "t**4/12"
+          },
+          {
+            "source": "t**3",
+            "primitive": "t**5/20"
+          },
+          {
+            "source": "t**4",
+            "primitive": "t**6/30"
+          },
+          {
+            "source": "t**5",
+            "primitive": "t**7/42"
+          },
+          {
+            "source": "t**6",
+            "primitive": "t**8/56"
+          }
+        ],
+        "consequence": "every homogeneous dynamical polynomial source has a finite polynomial right inverse"
+      }
+    },
+    "L1_K0": {
+      "axial_constraint_cokernel": [
+        "zeta_J1",
+        "zeta_J2",
+        "zeta_J3"
+      ],
+      "axial_zero_root": "after the rotation pairing vanishes, the twist-primary polynomial source is inverted by the finite secular primitive",
+      "polar_zero_block": "invertible after gauge reduction",
+      "nonzero_frequency": "standard and extra shell forcing has a finite exponential-polynomial secular inverse"
+    },
+    "nonzero_spatial_Fourier": {
+      "L0": "exact modulo Diff-Weyl-U1 for every nonzero Fourier pair",
+      "L1": "static blocks have Noether-only cokernel; nonstatic shell roots have finite secular inverses",
+      "L_at_least_2": "the generic Smith factors give algebraic inverses off shell and finite secular inverses on every p/q root"
+    },
+    "generic_static_outputs": {
+      "domain": "L>=2, Lambda=L(L+1)>=6, Omega=0, arbitrary real output K with u=K^2>=0",
+      "p": "-(3*Lambda + 3*u - 2)/3",
+      "p_sign": "strictly negative",
+      "q": "Lambda**2 + 2*Lambda*u - 2*Lambda + u**2",
+      "q_shift_Lambda_minus_6_coefficients": [
+        "1",
+        "2",
+        "10",
+        "1",
+        "12",
+        "24"
+      ],
+      "q_sign": "strictly positive",
+      "consequence": "every static generic output block is invertible after local gauge reduction"
+    },
+    "decomposition": "coker L_smooth = span{zeta_H,zeta_Px,zeta_J1,zeta_J2,zeta_J3}",
+    "no_additional_charge_cokernel": "constant U1 reducibility is removed with the Noether identities; fixed P_N forbids a magnetic harmonic correction, and the quadratic source preserves that topological sector"
+  },
+  "Taub_identification": {
+    "formula": "<zeta_X,(1/2)D^2E[u,u]>=mu_X(u)=(1/2)Omega_WM(u,L_X u)",
+    "generators": [
+      "H",
+      "P_x",
+      "J_1",
+      "J_2",
+      "J_3"
+    ],
+    "scope": "all certified linear blocks, including generalized-zero and exceptional modes, by the covariant action Noether identity",
+    "complete_cone_condition": "mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0"
+  },
+  "smooth_global_theorem": {
+    "tangent_cone": "Z2^smooth={u in T_WM^finite:mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0}",
+    "necessity": "pairing the second-order equation with the complete persistent adjoint cokernel gives the five moment maps",
+    "sufficiency": "their vanishing puts every finite output source in the algebraic or finite secular image; block corrections and their conjugates assemble a real smooth spatially periodic finite exponential-polynomial v",
+    "exceptional_and_global_inputs_included": true,
+    "multiple_momenta_m_phases_and_branches_included": true,
+    "coefficient_table_not_required_for_existence": "the exhaustive output operator/cokernel theorem decides image membership; source coefficients determine the chosen correction but introduce no new smooth cokernel"
+  },
+  "bounded_obstruction_ledger": {
+    "formula": "Z2^bounded={u:mu_X(u)=0, P_(j,r)(u)=0, R_(j,a)(u)=0 for every finite output block}",
+    "polynomial_growth_functionals": "P_(j,r) extracts every positive-degree t^r coefficient of the quadratic source, since a bounded finite-quasiperiodic correction has a bounded image",
+    "resonant_functionals": "R_(j,a)=<zeta_(j,a),S_j(u,u)> for an exact reduced left-kernel basis on each nonzero-frequency target shell",
+    "independence_from_stabilizers": "zero-block stabilizer covectors are excluded from P and R",
+    "necessity_and_sufficiency": "certified by the abstract finite-block theorem after the displayed exhaustive output decomposition",
+    "polynomial_independence_witness": "the aligned global-extra cone has mu_X=0 but a nonzero t^2 source coefficient and is bounded-obstructed",
+    "resonant_independence_witness": "the twist-balanced exceptional fixture has mu_X=0 but nonzero R_bounded",
+    "coefficientwise_common_zero_locus": "OPEN"
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED_FORMULA_ZERO_LOCUS_OPEN",
+      "persistent_functionals": [
+        "mu_X",
+        "P_(j,r)",
+        "R_(j,a)"
+      ]
+    },
+    "SMOOTH_SECULAR": {
+      "status": "CERTIFIED",
+      "persistent_functionals": [
+        "mu_H",
+        "mu_Px",
+        "mu_J1",
+        "mu_J2",
+        "mu_J3"
+      ]
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP",
+      "reason": "no background-specific compact-source retarded Weyl-Maxwell complex is certified"
+    }
+  },
+  "classification": {
+    "complete_certified_linear_input_inventory_included": true,
+    "exceptional_and_global_inputs_included": true,
+    "complete_finite_harmonic_smooth_tangent_cone_classified": true,
+    "complete_smooth_adjoint_cokernel_equals_five_stabilizers": true,
+    "bounded_polynomial_and_resonant_ledger_defined": true,
+    "bounded_common_zero_locus_solved": false,
+    "infinite_harmonic_completion_classified": false,
+    "all_orders_integrability": false,
+    "final_residual_descent": false,
+    "Lorentzian_causal_or_quantum_claim": false
+  },
+  "interpretation": "At second order and for finite harmonic support, the smooth exponential-polynomial category is now complete on the compact product: exceptional dipoles, global charge/holonomy data, twists and generic waves introduce no obstruction beyond the five compact stabilizer moment maps. This does not say that bounded corrections exist; polynomial growth and on-shell resonance define additional independent bounded functionals.",
+  "next_gate": "solve or stratify the complete bounded polynomial-plus-resonant zero locus; separately formulate an infinite-mode Sobolev completion or construct a background-specific causal/retarded complex without borrowing the smooth-global lifecycle",
+  "claim_boundary": "This is the complete finite-support REDUCED-MODE tangent-cone theorem in the smooth exponential-polynomial correction class on one compact background. It does not solve the bounded common zero locus, prove infinite-mode convergence, all-orders integration, final residual descent, causal propagation, scattering, observables, particles or quantum theory.",
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.26,
+      "max_rss_kb": 16104
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.74,
+      "max_rss_kb": 58124,
+      "tests_run": 14
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "complete linear inventory, exceptional/generic output operators, Taub bridge and abstract finite-block theorem are unchanged exact inputs"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "bounded zero-locus, infinite-mode, causal, all-orders, residual and quantum claims remain excluded"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order --verify bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order"
+  ]
+}
