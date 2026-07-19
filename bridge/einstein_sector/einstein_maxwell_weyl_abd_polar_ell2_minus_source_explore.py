@@ -1,4 +1,4 @@
-"""Explore generalized-zero global sources crossed with polar ell=2 Einstein-minus."""
+"""Explore generalized-zero global sources crossed with polar Einstein-minus."""
 
 from __future__ import annotations
 
@@ -14,18 +14,26 @@ from bridge.einstein_sector.einstein_maxwell_weyl_balanced_ell0_second_order imp
 )
 
 
-def source(global_case: str) -> sp.Matrix:
+def source(global_case: str, degree: int = 2) -> sp.Matrix:
+    if degree < 2:
+        raise ValueError("the generic polar helper requires ell>=2")
     epsilon = sp.symbols("epsilon")
     polar_amplitude, global_amplitude = sp.symbols("u v")
-    root = sp.sqrt(3)
-    frequency = sp.sqrt(6 - 2 * root)
+    eigenvalue = sp.Integer(degree * (degree + 1))
+    branch_gap = sp.sqrt(2 * eigenvalue)
+    frequency = sp.sqrt(eigenvalue - branch_gap)
     time, space, z, azimuth = sp.symbols("t x z phi", real=True)
     coordinates = (time, space, z, azimuth)
     sphere_factor = 1 - z**2
-    harmonic = sp.legendre(2, z)
+    harmonic = sp.legendre(degree, z)
     polar_one_form = sphere_factor * sp.diff(harmonic, z)
     wave = sp.exp(-sp.I * frequency * time)
-    a_time, mixed, a_space, maxwell = (12, 0, 12 - 24 * root, 6)
+    a_time, mixed, a_space, maxwell = (
+        2 * eigenvalue,
+        0,
+        2 * eigenvalue * (1 - branch_gap),
+        eigenvalue,
+    )
     circle_profile = {"a": time**2, "b": time**3 / 3, "d": time}[global_case]
     sphere_profile = {"a": sp.Integer(1), "b": time, "d": sp.Integer(0)}[global_case]
     trunc = lambda expression: _trunc(expression, epsilon, 2)
@@ -158,18 +166,23 @@ def source(global_case: str) -> sp.Matrix:
     ).applyfunc(lambda value: sp.factor(sp.cancel(_canonical(value))))
 
 
-def shell_pairing(value: sp.Matrix) -> sp.Expr:
-    root = sp.sqrt(3)
-    return sp.factor((sp.Matrix([12, 0, 12 - 24 * root, 6]).T * value)[0])
+def shell_pairing(value: sp.Matrix, degree: int = 2) -> sp.Expr:
+    eigenvalue = sp.Integer(degree * (degree + 1))
+    branch_gap = sp.sqrt(2 * eigenvalue)
+    representative = sp.Matrix(
+        [2 * eigenvalue, 0, 2 * eigenvalue * (1 - branch_gap), eigenvalue]
+    )
+    return sp.factor((representative.T * value)[0])
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--global-case", choices=("a", "b", "d"), required=True)
+    parser.add_argument("--degree", type=int, default=2)
     arguments = parser.parse_args()
-    value = source(arguments.global_case)
+    value = source(arguments.global_case, arguments.degree)
     print([str(entry) for entry in value])
-    print("shell_pairing", shell_pairing(value))
+    print("shell_pairing", shell_pairing(value, arguments.degree))
 
 
 if __name__ == "__main__":

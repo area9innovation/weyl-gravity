@@ -1,0 +1,131 @@
+{
+  "candidate_pivot_laws": {
+    "axial_base": "C_A=3*i*omega_minus*(1-3*sqrt(2*lambda))",
+    "axial_triangular": {
+      "a_t1_after_b_zero": "2*C_A",
+      "b_t2": "C_A",
+      "d_t0_after_a_b_zero": "C_A"
+    },
+    "physical_nonvanishing": "C_A and C_P are nonzero for every lambda>=6 if the candidate laws are proved",
+    "polar_base": "C_P=lambda^2*(2*lambda-1)/6",
+    "polar_triangular": {
+      "a_t2_after_b_zero": "3*C_P",
+      "b_t3": "C_P",
+      "d_t1_after_a_b_zero": "3*C_P"
+    }
+  },
+  "claim_boundary": "This certificate contains direct physical-fibre fixtures at ell=2,3,4 and candidate formulas. It is not a symbolic-ell theorem, a nonzero-momentum theorem, a complete finite-harmonic bounded cone, a causal map, an all-orders result, a residual state, or a quantum claim.",
+  "classification": {
+    "candidate_functional_laws_reconstructed": true,
+    "causal_or_quantum_claim": false,
+    "ell2_and_ell3_complete_triangular_pivots_direct": true,
+    "ell4_leading_b_pivots_direct": true,
+    "general_ell_bounded_cone_classified": false,
+    "general_ell_pivot_theorem": false,
+    "nonzero_momentum_classified": false,
+    "symbolic_functional_form_or_degree_bound_proved": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "fixtures": [
+    {
+      "axial_b_t2_candidate": "3*I*(1 - 6*sqrt(3))*sqrt(6 - 2*sqrt(3))",
+      "coverage": "a,b,d in both parities",
+      "ell": 2,
+      "lambda": 6,
+      "polar_b_t3": "66"
+    },
+    {
+      "axial_b_t2_candidate": "3*I*(1 - 6*sqrt(6))*sqrt(12 - 2*sqrt(6))",
+      "coverage": "a,b,d in both parities",
+      "ell": 3,
+      "lambda": 12,
+      "polar_b_t3": "552"
+    },
+    {
+      "axial_b_t2_candidate": "3*I*(1 - 6*sqrt(10))*sqrt(20 - 2*sqrt(10))",
+      "coverage": "b in both parities",
+      "ell": 4,
+      "lambda": 20,
+      "polar_b_t3": "2600"
+    }
+  ],
+  "generic_representatives": {
+    "axial_order_Ht_Hx_Qt_Qx": [
+      "0",
+      "-2",
+      "0",
+      "sqrt(2*lambda)"
+    ],
+    "direct_linear_remainder": "zero in every replayed physical fibre",
+    "lambda": "ell*(ell+1)",
+    "polar_order_At_B_Ct_U": [
+      "2*lambda",
+      "0",
+      "2*lambda*(1-sqrt(2*lambda))",
+      "lambda"
+    ]
+  },
+  "interpretation": "The ell=2 obstruction is not isolated: the complete triangular ideal repeats at ell=3, and its leading coefficient repeats at ell=4 in both parities. The samples identify simple nonvanishing candidate laws. They do not by themselves promote the result to every ell; that requires a symbolic natural-operator degree/functional-form bound or a direct generic-lambda derivation.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "derive the leading cross coefficients from the generic reduced operator and prove the displayed lambda/sqrt(2lambda) functional forms; only then promote the global bounded cone to all ell at k=0",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures.py",
+    "generator_sha256": "cc52754ea673456a382e31d409358d532c2f43294e00a21e3f4990393601254d",
+    "helpers": {
+      "axial": {
+        "path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_axial_ell2_minus_source_explore.py",
+        "sha256": "fe9b7882684be399f809994880d6ead8ee50bb4a23b26de38566b44e5bd82c68"
+      },
+      "polar": {
+        "path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_polar_ell2_minus_source_explore.py",
+        "sha256": "346ede590e924608878abde1299902a4079bc5eafa19c888f1da906748236557"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ABD_GENERAL_ELL_MINUS_PIVOT_FIXTURES",
+  "result_state": "ELL2_ELL3_FULL_AND_ELL4_LEADING_MINUS_PIVOTS_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-abd-general-ell-minus-pivot-fixtures-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures.schema.json",
+  "schema_sha256": "5fdec626e2e1d5010e62c5642faa693e39ebfa8fc8100a83b2145a9820c6450f",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic correction",
+    "carrier": "homogeneous a,b,d crossed with k=0 axial or polar Einstein-minus q-primary",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "direct fixtures ell=2,3 and leading fixture ell=4",
+    "k": 0,
+    "m": 0,
+    "omega": "omega_-^2=lambda-sqrt(2*lambda)",
+    "parity": "axial and polar kept separate",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures --write --replay-direct"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "status": "PASS"
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 4
+    },
+    "tier_2": {
+      "criterion": "direct exact ell=2,3 a/b/d and ell=4 b replays in both parities",
+      "elapsed_seconds": 458.47,
+      "status": "PASS"
+    },
+    "tier_3": {
+      "reason": "the symbolic functional-form bound and general-ell theorem remain open",
+      "status": "NOT_RUN"
+    }
+  }
+}

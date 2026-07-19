@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Multi-ell Einstein-minus global pivot fixtures",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "generic_representatives",
+    "fixtures", "candidate_pivot_laws", "classification", "interpretation",
+    "next_gate", "claim_boundary", "provenance", "verification_receipt",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-abd-general-ell-minus-pivot-fixtures-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ABD_GENERAL_ELL_MINUS_PIVOT_FIXTURES"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "REDUCED-MODE"}},
+    "scope": {"type": "object"},
+    "fixtures": {"type": "array", "minItems": 3, "maxItems": 3},
+    "candidate_pivot_laws": {"type": "object"},
+    "classification": {"type": "object"},
+    "provenance": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 4}
+  },
+  "additionalProperties": true
+}

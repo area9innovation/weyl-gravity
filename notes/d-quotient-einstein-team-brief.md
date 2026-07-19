@@ -2423,6 +2423,29 @@ necessity and sufficiency.  The active promotion is now symbolic `ell` at
 `k=0`, followed by nonzero compact momentum and finite cross-harmonic bounded
 zero loci.
 
+The first symbolic-`ell` gate now has an exact multi-fibre fixture ledger.
+The direct four-dimensional helpers use the generic representatives
+
+```text
+axial: (0,-2,0,sqrt(2*lambda)),
+polar: (2*lambda,0,2*lambda*(1-sqrt(2*lambda)),lambda).
+```
+
+Complete `a,b,d` triangular pivots replay at `ell=2,3` in both parities, and
+the leading `b` pivot replays at `ell=4`.  They reconstruct the candidates
+
+```text
+C_A=3*i*omega_minus*(1-3*sqrt(2*lambda)),
+C_P=lambda^2*(2*lambda-1)/6,
+```
+
+with axial ratios `(a,b,d)=(2,1,1)` and polar ratios `(3,1,3)`.  Both
+candidates are nonzero for physical `lambda>=6`, but this is deliberately not
+promoted to a general-`ell` theorem: the natural-operator functional-form or
+degree bound remains to be proved.  Atlas row
+`einstein.ph.wm.interaction.abd_times_generic_k0_einstein_minus_pivot_fixtures`
+records the certified fixtures and the open promotion gate.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

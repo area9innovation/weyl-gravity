@@ -1,0 +1,53 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ABD_GENERAL_ELL_MINUS_PIVOT_FIXTURES_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ABD_GENERAL_ELL_MINUS_PIVOT_FIXTURES",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "axial_helper": {"path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_axial_ell2_minus_source_explore.py", "sha256": "fe9b7882684be399f809994880d6ead8ee50bb4a23b26de38566b44e5bd82c68"},
+    "polar_helper": {"path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_polar_ell2_minus_source_explore.py", "sha256": "346ede590e924608878abde1299902a4079bc5eafa19c888f1da906748236557"},
+    "generator": {"path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures.py", "sha256": "cc52754ea673456a382e31d409358d532c2f43294e00a21e3f4990393601254d"},
+    "certificate": {"path": "bridge/certificates/einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures.json", "sha256": "47e1c8b1ab2eaadafccd959e109f669c8d356a7debd2a37f7abd9e6fdb28475d"},
+    "schema": {"path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures.schema.json", "sha256": "5fdec626e2e1d5010e62c5642faa693e39ebfa8fc8100a83b2145a9820c6450f"},
+    "verifier": {"path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures.py", "sha256": "869e10a5b45514b5a23f9f8dc13b898cf05bf6006c723b43a05a3e93f41e8307"},
+    "tests": {"path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures.py", "sha256": "9e55f97980e0be5788cf645f95b2516656f2ba2468b2fd3e13a6b9b782c6aadf"},
+    "report": {"path": "bridge/einstein_sector/reports/einstein-maxwell-weyl-abd-general-ell-minus-pivot-fixtures.md", "sha256": "48a92c1f14dd6b3b0a8303d128074568d7dfa1f1d4e10642dced370fbce3a04c"},
+    "atlas_generator": {"path": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py", "sha256": "eb82a3c1cd81a5dca789fdb667e077fa0433ad67d2c439c421afc70efa4f95dd"},
+    "atlas_fragment": {"path": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json", "sha256": "d225e979d82799f836affd6d13ef03bf755cf16bf0128ac7990c80fc6c5039f4"},
+    "atlas_verifier": {"path": "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py", "sha256": "9ce74fea0655e16404c89f8fe55d9bf6cc353cf7e251cdf520668baa8b805ae7"},
+    "atlas_tests": {"path": "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py", "sha256": "c9c1cededae1e41e094aedd64e6a887040029db16f2f65dfa5e93269390f47db"}
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped generators, verifiers, tests and atlas paths>",
+        "python3 -m json.tool <scoped schema, certificates, receipt and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 24,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 458.47,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures --write --replay-direct",
+      "criterion": "14 direct four-dimensional exact source jobs: complete a,b,d at ell=2,3 and leading b at ell=4, in both parities"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the symbolic functional-form/degree bound and general-ell bounded theorem remain open"
+    }
+  }
+}

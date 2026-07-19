@@ -1284,6 +1284,16 @@ wave branch with `a=b=d=Q_e=B=0`.  The active promotion is now symbolic
 `ell` at `k=0`, followed by nonzero compact momentum and finite
 cross-harmonic bounded zero loci.
 
+That promotion now has direct exact fixtures at `ell=2,3,4`.  With
+`lambda=ell(ell+1)`, the axial and polar leading pivots reconstruct
+`C_A=3*i*omega_minus*(1-3*sqrt(2*lambda))` and
+`C_P=lambda^2*(2*lambda-1)/6`; the complete triangular ratios are verified at
+`ell=2,3`.  Atlas row
+`einstein.ph.wm.interaction.abd_times_generic_k0_einstein_minus_pivot_fixtures`
+keeps the result fail-closed: the candidate laws are nonzero on every
+physical fibre, but the symbolic natural-operator functional-form/degree
+bound is still the activation gate for a general-`ell` bounded theorem.
+
 This advances nonlinear input to the already activated compact-product
 linear bridge but does not certify a nonlinear relative morphism.  Atlas row
 `einstein.ph.wm.complete_finite_harmonic_smooth_cone` records the completed

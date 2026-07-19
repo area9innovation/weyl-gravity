@@ -1,4 +1,4 @@
-"""Explore generalized-zero global sources crossed with axial ell=2 Einstein-minus."""
+"""Explore generalized-zero global sources crossed with axial Einstein-minus."""
 
 from __future__ import annotations
 
@@ -14,19 +14,23 @@ from bridge.einstein_sector.einstein_maxwell_weyl_balanced_ell0_second_order imp
 )
 
 
-def source(global_case: str) -> sp.Matrix:
+def source(global_case: str, degree: int = 2) -> sp.Matrix:
+    if degree < 2:
+        raise ValueError("the generic axial helper requires ell>=2")
     epsilon = sp.symbols("epsilon")
     global_amplitude, wave_amplitude = sp.symbols("u v")
     time, space, z, azimuth = sp.symbols("t x z phi", real=True)
     coordinates = (time, space, z, azimuth)
     sphere_factor = 1 - z**2
-    harmonic = sp.legendre(2, z)
+    eigenvalue = sp.Integer(degree * (degree + 1))
+    branch_gap = sp.sqrt(2 * eigenvalue)
+    harmonic = sp.legendre(degree, z)
     axial_one_form = sphere_factor * sp.diff(harmonic, z)
-    frequency = sp.sqrt(6 - 2 * sp.sqrt(3))
+    frequency = sp.sqrt(eigenvalue - branch_gap)
     wave = sp.exp(-sp.I * frequency * time)
     h_time, h_space, q_time, q_space = [
         wave_amplitude * value * wave
-        for value in (0, -2, 0, 2 * sp.sqrt(3))
+        for value in (0, -2, 0, branch_gap)
     ]
     circle_profile = {
         "a": time**2,
@@ -116,18 +120,20 @@ def source(global_case: str) -> sp.Matrix:
     return sp.Matrix(values)
 
 
-def shell_pairing(value: sp.Matrix) -> sp.Expr:
+def shell_pairing(value: sp.Matrix, degree: int = 2) -> sp.Expr:
     """Pair against the k=0 self-adjoint Einstein-minus kernel vector."""
-    return sp.factor((sp.Matrix([0, -2, 0, 2 * sp.sqrt(3)]).T * value)[0])
+    eigenvalue = sp.Integer(degree * (degree + 1))
+    return sp.factor((sp.Matrix([0, -2, 0, sp.sqrt(2 * eigenvalue)]).T * value)[0])
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--global-case", choices=("a", "b", "d"), required=True)
+    parser.add_argument("--degree", type=int, default=2)
     arguments = parser.parse_args()
-    value = source(arguments.global_case)
+    value = source(arguments.global_case, arguments.degree)
     print([str(entry) for entry in value])
-    print("shell_pairing", shell_pairing(value))
+    print("shell_pairing", shell_pairing(value, arguments.degree))
 
 
 if __name__ == "__main__":

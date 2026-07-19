@@ -41,6 +41,7 @@ CERTIFICATES = {
     "complete_global_ell2_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.json",
     "abd_axial_minus": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.json",
     "abd_polar_minus": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_polar_ell2_minus_resonance.json",
+    "abd_general_ell_minus_fixtures": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_general_ell_minus_pivot_fixtures.json",
     "aligned_global_minus_extra_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone.json",
     "axial_all_m_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion.json",
     "global_axial_all_m_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_axial_ell2_all_m_minus_extra_bounded_cone.json",
@@ -308,6 +309,18 @@ def entries() -> list[dict[str, object]]:
             "The older rank-three matrix remains evidence for its printed a,b and t=0 d columns, but its complete bounded-functional claim is superseded by the full-time d repair.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.abd_times_generic_k0_einstein_minus_pivot_fixtures",
+            _scope(theory="Weyl-Maxwell target", carrier="homogeneous generalized-zero a,b,d directions crossed with axial or polar k=0 Einstein-minus q-primary fixtures", degree=2, parity="axial and polar kept separate", ell="direct ell=2,3 full triangular fixtures and ell=4 leading fixture", m="m=0 direct fixtures", k=0, omega="omega_-^2=lambda-sqrt(2*lambda)"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "Every replayed input uses the generic Einstein-minus representative on its exact physical q-primary shell."),
+            ("CERTIFIED", "The direct action rows use the same self-adjoint q-primary normalization as the frozen ell=2 axial and polar fixtures."),
+            ("OPEN", "The multi-ell source fixtures do not classify the complete stabilizer common-zero locus."),
+            ("CERTIFIED", "Exact ell=2,3 full triangular pivots and ell=4 leading pivots reconstruct candidates C_A=3*i*omega_-(1-3*sqrt(2*lambda)) and C_P=lambda^2(2*lambda-1)/6."),
+            _second_order(("OPEN", "The candidate pivots are nonzero for physical lambda>=6, but a symbolic functional-form or degree bound is still required before promotion to every ell."), ("OPEN", "This fixture ledger does not construct the remaining smooth-secular channels."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("abd_general_ell_minus_fixtures", "abd_axial_minus", "abd_polar_minus", "taub", "abstract_cone"),
+            "This is a fail-closed physical-fibre fixture row, not a general-ell theorem. All m promotion beyond each fixed ell, nonzero momentum, complete cross-ell bounded zero loci, causal propagation, all-orders integration, residual descent, observables and quantum maps remain open.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.homogeneous_twist_times_ell2_extra",
             _scope(theory="Weyl-Maxwell target", carrier="complete homogeneous a,b,d and axial twist position/velocity block crossed with the axial-plus-polar ell=2 extra-primary multiplicity space; c,W_x,Q_e removed", degree=2, parity="all axial/polar inputs and outputs retained", ell="(0 or 1) x 2 -> resonant L=2", m="all by one nonzero Clebsch-Gordan fixture and SO(3) equivariance", k=0, omega="generalized-zero global/twist data crossed with omega_e=4/sqrt(3)"),
             {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
@@ -494,6 +507,15 @@ def build() -> dict[str, object]:
         and minus_resonance["nonzero_minus_forces_a_b_d_zero"]
     ):
         raise AssertionError("axial Einstein-minus global resonance changed")
+    general_fixtures = records["abd_general_ell_minus_fixtures"]["classification"]
+    if not (
+        general_fixtures["ell2_and_ell3_complete_triangular_pivots_direct"]
+        and general_fixtures["ell4_leading_b_pivots_direct"]
+        and general_fixtures["candidate_functional_laws_reconstructed"]
+    ):
+        raise AssertionError("multi-ell Einstein-minus pivot fixtures changed")
+    if general_fixtures["general_ell_pivot_theorem"]:
+        raise AssertionError("multi-ell fixtures over-promoted the general-ell theorem")
     aligned_global_wave = records["aligned_global_minus_extra_bounded"]["classification"]
     if not (
         aligned_global_wave["complete_declared_aligned_carrier_covered"]

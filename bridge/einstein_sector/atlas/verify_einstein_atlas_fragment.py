@@ -166,6 +166,13 @@ def verify() -> None:
         raise AssertionError("superseded abd bounded matrix remained certified")
     if "superseded" not in abd_column["claim_boundary"]:
         raise AssertionError("abd full-time repair lifecycle was hidden")
+    general_minus = by_id["einstein.ph.wm.interaction.abd_times_generic_k0_einstein_minus_pivot_fixtures"]
+    if general_minus["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("multi-ell minus pivot fixtures were lost")
+    if general_minus["descriptions"]["nonlinear"] != "OPEN":
+        raise AssertionError("multi-ell fixtures over-promoted the nonlinear theorem")
+    if "symbolic functional-form or degree bound" not in general_minus["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("general-ell proof gate was hidden")
     ad_zero = by_id["einstein.ph.wm.interaction.ad_ell2_extra_polynomial_zero_locus"]
     if ad_zero["mode_data"]["resonance"]["status"] != "CERTIFIED":
         raise AssertionError("repaired a/d polynomial ideal was lost")

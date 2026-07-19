@@ -119,6 +119,13 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(abd["mode_data"]["resonance"]["status"], "OPEN")
         self.assertIn("superseded", abd["claim_boundary"])
 
+    def test_multi_ell_minus_pivots_remain_fixture_only(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.abd_times_generic_k0_einstein_minus_pivot_fixtures"]
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertIn("symbolic functional-form or degree bound", entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["statement"])
+
     def test_repaired_ad_polynomial_zero_locus_is_exact_but_pre_resonance(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ad_ell2_extra_polynomial_zero_locus"]
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
