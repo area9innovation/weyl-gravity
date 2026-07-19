@@ -81,12 +81,12 @@ def verify() -> None:
         raise AssertionError("downstream bridges borrowed the linear lifecycle")
 
     abd = by_id["einstein.ph.wm.interaction.abd_times_ell2_extra"]
-    if abd["mode_data"]["resonance"]["status"] != "CERTIFIED" or abd["descriptions"]["nonlinear"] != "OPEN":
+    if abd["mode_data"]["resonance"]["status"] != "OPEN" or abd["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("a,b,d matrix lifecycle drifted")
 
     complete_matrix = by_id["einstein.ph.wm.interaction.homogeneous_twist_times_ell2_extra"]
-    if complete_matrix["mode_data"]["resonance"]["status"] != "CERTIFIED":
-        raise AssertionError("complete homogeneous/twist resonance matrix was lost")
+    if complete_matrix["mode_data"]["resonance"]["status"] != "OPEN":
+        raise AssertionError("superseded homogeneous/twist resonance matrix was over-promoted")
     if complete_matrix["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
         raise AssertionError("complete source matrix over-promoted the tangent cone")
 
@@ -131,7 +131,7 @@ def verify() -> None:
         raise AssertionError("standard global bounded cone was lost")
     if global_second_order["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("standard global causal lifecycle was over-promoted")
-    if "a-times-all and d-times-nonzero-k polynomial maps" not in standard_global["claim_boundary"]:
+    if "complete a/d polynomial maps" not in standard_global["claim_boundary"]:
         raise AssertionError("remaining polynomial gate was hidden")
     if "Q_e*a=0" not in standard_global["claim_boundary"]:
         raise AssertionError("universal electric-radion polynomial condition was hidden")
@@ -155,6 +155,17 @@ def verify() -> None:
         raise AssertionError("circumference causal lifecycle was over-promoted")
     if "R_(j,a), not P_(j,r)" not in circumference["mode_data"]["resonance"]["statement"]:
         raise AssertionError("circumference obstruction was assigned to the wrong ledger")
+
+    d_column = by_id["einstein.ph.wm.interaction.d_times_ell2_extra"]
+    if "d*z2=0" not in d_column["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("full-time d polynomial condition was hidden")
+    if "not a complete bounded d-column theorem" not in d_column["claim_boundary"]:
+        raise AssertionError("old d constant projection was over-promoted")
+    abd_column = by_id["einstein.ph.wm.interaction.abd_times_ell2_extra"]
+    if abd_column["mode_data"]["resonance"]["status"] != "OPEN":
+        raise AssertionError("superseded abd bounded matrix remained certified")
+    if "superseded" not in abd_column["claim_boundary"]:
+        raise AssertionError("abd full-time repair lifecycle was hidden")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

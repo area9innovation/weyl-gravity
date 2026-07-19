@@ -1201,10 +1201,21 @@ proportional to `c*k^2`; the exact-family correction contains
 `P_(j,r)`, and the `c` cross column is bounded-compatible exactly when `c=0`
 or oscillator support is contained in `k=0`.  Atlas row
 `einstein.ph.wm.interaction.circumference_complete_oscillator_column` keeps
-these strata distinct.  The active positive-degree gate is now `a` times all
-oscillators and `d` times nonzero-momentum oscillators, followed by the
-surviving `c`, zero-momentum `d`, constant-twist and oscillator resonance
-functionals.
+these strata distinct.
+
+The existing `d` source fixtures have now been audited at full time.  They
+substitute `t=0`, so their invertible adjoint matrix certifies the constant
+resonant projection but not absence of polynomial growth.  Locality gives
+`S[d*t,u]=t*S[c,u]+S[d*t,u](0)`.  At the `ell=2,k=0` extra shell, the axial
+and first polar `t` columns vanish, while the second polar column is the
+nonzero vector
+`d*z2*(-36,0,164,-8*sqrt(3)*i,0,-100,-24,-20)`.  Hence `d*z2=0` is the
+isolated polynomial condition.  The older complete `a,b,d` and
+homogeneous/twist bounded-matrix claims are fail-closed until the repaired
+column is solved jointly with `a`; their printed constant adjoint and twist
+blocks remain valid.  The active positive-degree gate is now the complete
+`a/d` oscillator map, followed by the surviving `c`, polynomial-compatible
+`d`, constant-twist and oscillator resonance functionals.
 
 This advances nonlinear input to the already activated compact-product
 linear bridge but does not certify a nonlinear relative morphism.  Atlas row

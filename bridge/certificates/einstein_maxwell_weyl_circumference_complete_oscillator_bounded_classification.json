@@ -16,8 +16,8 @@
   },
   "bounded_ledger_consequence": {
     "polynomial_gate": "c contributes no positive-degree source coefficient P_(j,r)",
-    "remaining_polynomial_gate": "a crossed with all oscillators and d crossed with nonzero-k oscillators",
-    "remaining_resonance_gate": "d on k=0, constant twist A, and bounded oscillator products, together with any a-face surviving its polynomial equations",
+    "remaining_polynomial_gate": "a and d crossed with oscillators; a repaired k=0 polar d column already has a nonzero P_(j,1) coefficient",
+    "remaining_resonance_gate": "the polynomial-compatible d face, constant twist A, and bounded oscillator products, together with any a-face surviving its polynomial equations",
     "resonance_gate": "c is eliminated by R_(j,a) whenever the tangent has any nonzero-k oscillator support",
     "surviving_c_face": "c remains free on the purely k=0 oscillator carrier"
   },
@@ -57,10 +57,10 @@
     "nonradical_pairing": "the action-derived Lee-Wald form is nonzero on each standard branch and nondegenerate on every extra multiplicity block, so the c*k^2 shell source has a nonzero exact adjoint pairing whenever c*k!=0 and the mode coefficient is nonzero",
     "shell_transport": "the only potentially unbounded term is the derivative of exp(-i*omega_R*t)"
   },
-  "next_gate": "compute the a-times-all-oscillator and d-times-nonzero-k polynomial maps, then solve the surviving k=0 d, constant-A and wave resonance equations",
+  "next_gate": "complete the a/d oscillator polynomial maps, then solve the surviving c, d, constant-A and wave resonance equations",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.py",
-    "generator_sha256": "4008ed496634f35a808b9c6dc9419a14853bc39a54e7365696a7efd3a98f52d5",
+    "generator_sha256": "9b5680b37fa06b61dee025f7395f9c914f8fc1a38595c5685716a28739a915aa",
     "inputs": {
       "axial_current": {
         "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
@@ -76,7 +76,7 @@
       },
       "electric_wilson": {
         "path": "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
-        "sha256": "80724de6ecb7496b0afd0b32a9b002f8e50813338473a6430a451c9f8016a8c1"
+        "sha256": "50d0bf118e1699122b8bf4e0c3da7b8fb0295a9a4725d05c155122e8d2202676"
       },
       "exceptional_current": {
         "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",

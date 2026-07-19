@@ -134,8 +134,8 @@ def build() -> dict[str, Any]:
             "polynomial_gate": "c contributes no positive-degree source coefficient P_(j,r)",
             "resonance_gate": "c is eliminated by R_(j,a) whenever the tangent has any nonzero-k oscillator support",
             "surviving_c_face": "c remains free on the purely k=0 oscillator carrier",
-            "remaining_polynomial_gate": "a crossed with all oscillators and d crossed with nonzero-k oscillators",
-            "remaining_resonance_gate": "d on k=0, constant twist A, and bounded oscillator products, together with any a-face surviving its polynomial equations",
+            "remaining_polynomial_gate": "a and d crossed with oscillators; a repaired k=0 polar d column already has a nonzero P_(j,1) coefficient",
+            "remaining_resonance_gate": "the polynomial-compatible d face, constant twist A, and bounded oscillator products, together with any a-face surviving its polynomial equations",
         },
         "correction_classes": {
             "BOUNDED_OR_FINITE_QUASIPERIODIC": {"status": "CERTIFIED", "zero_locus": "c=0 or oscillator support is contained in k=0"},
@@ -153,7 +153,7 @@ def build() -> dict[str, Any]:
             "causal_or_quantum_claim": False,
         },
         "interpretation": "A static change of circumference is harmless for zero-momentum waves but not for travelling compact modes in the bounded category. At nonzero momentum it shifts the shell frequency. Differentiating the exact radius family therefore produces a secular transport term, proving smooth extension while the nonradical current proves a bounded resonance obstruction. The source itself remains bounded, so this is an R-functional rather than a P-functional.",
-        "next_gate": "compute the a-times-all-oscillator and d-times-nonzero-k polynomial maps, then solve the surviving k=0 d, constant-A and wave resonance equations",
+        "next_gate": "complete the a/d oscillator polynomial maps, then solve the surviving c, d, constant-A and wave resonance equations",
         "claim_boundary": "This classifies only the c-times-oscillator column at second order. It does not classify a or d, constant-twist or oscillator self/mixed resonances, the complete bounded cone, causal propagation, all-orders integration, residual descent, observables, particles or quantum theory.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),

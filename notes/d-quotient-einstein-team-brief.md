@@ -2311,12 +2311,27 @@ exactly when `c=0` or oscillator support is contained in `k=0`.  Atlas row
 `einstein.ph.wm.interaction.circumference_complete_oscillator_column`
 records the two momentum strata without merging them.
 
-The active positive-degree gate is therefore `a` crossed with all
-oscillators and `d` crossed with nonzero-momentum oscillators.  After that
-zero locus is known, it must be intersected with `c`, zero-momentum `d`,
-constant-twist and oscillator shell functionals `R_(j,a)`.  These nonlinear
-transport results are inputs to active Bridge 1; they do not promote the
-linear relative triangle to a nonlinear morphism.
+The active positive-degree gate is therefore `a` and `d` crossed with all
+oscillators.  A full-time audit of the existing `ell=2,k=0` extra fixtures
+found that the direct `d` producers substitute `t=0`.  Their four-column
+adjoint map remains an exact constant-term resonance isomorphism, but
+locality restores the omitted coefficient
+
+```text
+S[d*t,u](t)=t*S[c,u](t)+S[d*t,u](0).
+```
+
+The axial columns and first polar column have zero `t` coefficient.  The
+second polar column has the nonzero eight-row vector
+`d*z2*(-36,0,164,-8*sqrt(3)*i,0,-100,-24,-20)`.  Thus its isolated
+polynomial condition is `d*z2=0`.  The old `a,b,d` and homogeneous/twist
+bounded-matrix completeness claims are superseded pending a joint `a/d`
+polynomial solve; their printed `a,b`, twist and `t=0 d` data remain valid.
+
+After the joint `a/d` zero locus is known, it must be intersected with `c`,
+the polynomial-compatible `d` face, constant-twist and oscillator shell
+functionals `R_(j,a)`.  These nonlinear results are inputs to active Bridge
+1; they do not promote the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

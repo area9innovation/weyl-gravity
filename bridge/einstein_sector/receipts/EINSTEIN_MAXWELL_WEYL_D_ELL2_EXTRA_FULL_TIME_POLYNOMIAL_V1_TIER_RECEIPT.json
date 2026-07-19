@@ -1,0 +1,71 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_D_ELL2_EXTRA_FULL_TIME_POLYNOMIAL_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_D_ELL2_EXTRA_FULL_TIME_POLYNOMIAL",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "generator": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.py",
+      "sha256": "fbeca23889c55656097aa33f636b1f7803116d35642d1fa23b679ee519754a89"
+    },
+    "certificate": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.json",
+      "sha256": "704cf3978e8038c4c0bba3f807f2de77b42dd412cb3c16bda9bfad357a6e1dcd"
+    },
+    "schema": {
+      "path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.schema.json",
+      "sha256": "3bb306f33f3d7c5043c56884635db3cee6f2f105f1679352d3bfcfa314367c58"
+    },
+    "independent_verifier": {
+      "path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.py",
+      "sha256": "e7b004a09b32ea2346ef0b0c909d128691dfe6bcf883200372c89be8b24df72e"
+    },
+    "tests": {
+      "path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.py",
+      "sha256": "01a04d183cfd0cca09e1c63feefa27be7be289497070f2b504c559894f9f1300"
+    },
+    "atlas_generator": {
+      "path": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
+      "sha256": "35b68054813b6819c8fd197d4dab1905b920a4265e6e0b2e42bda98e37186bc5"
+    },
+    "atlas_fragment": {
+      "path": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+      "sha256": "bc7377df97e6f4c21616b9c11efd2178b61791c29c3d7def5bb7a7098c1e778c"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.18,
+      "max_rss_kb": 16192,
+      "commands": [
+        "python3 -m py_compile <scoped theorem, verifier, tests and atlas generator>",
+        "python3 -m json.tool <scoped schema, certificate, atlas fragment and receipt>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.10,
+      "max_rss_kb": 60480,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ],
+      "tests_run": 18
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "the coefficient-explicit full static-c source and direct t=0 d adjoint projections are unchanged exact inputs"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "joint a/d polynomial, complete bounded, causal, all-orders, residual, observational and quantum gates remain excluded"
+    }
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "bounded_ledger_consequence": {
+    "axial": "no d-times-extra positive-degree coefficient at this k=0 shell",
+    "isolated_polynomial_zero_locus": "d*z_polar_e2=0",
+    "joint_cone_requirement": "solve this P_(j,1) vector simultaneously with the a and any other same-channel polynomial columns before using the constant-term d adjoint isomorphism",
+    "polar_e1": "no positive-degree coefficient; the constant resonant projection remains",
+    "polar_e2": "the nonzero t*S_c coefficient is a P_(j,1) obstruction unless canceled by another first-order block in the same output channel"
+  },
+  "claim_boundary": "This repairs the full-time d-times-ell2-extra polynomial ledger at k=0. It does not compute a columns beyond existing fixtures, classify other ell or nonzero k, solve the simultaneous bounded cone, construct a causal map, or make all-orders, residual, particle or quantum claims.",
+  "classification": {
+    "axial_d_extra_t_coefficient_zero": true,
+    "causal_or_quantum_claim": false,
+    "full_bounded_cone_solved": false,
+    "full_time_d_ell2_extra_leading_polynomial_classified": true,
+    "old_d_constant_adjoint_isomorphism_retained": true,
+    "old_d_result_was_complete_bounded_column": false,
+    "polar_e1_d_extra_t_coefficient_zero": true,
+    "polar_e2_d_extra_t_coefficient_nonzero": true,
+    "simultaneous_a_d_polynomial_zero_locus_solved": false
+  },
+  "constant_term_reconciliation": {
+    "consequence": "the invertible four-column constant-term adjoint map is not by itself a complete bounded d-column theorem",
+    "not_certified_by_old_fixture": "absence of positive-degree source coefficients",
+    "old_fixture_operation": "the direct d source fixtures substitute t=0 before projection",
+    "still_certified": "their axial and polar adjoint matrices classify the constant t^0 shell projection"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "full_time_polynomial": {
+    "axial_full_row_order": [
+      "metric_t",
+      "metric_x",
+      "metric_angular",
+      "maxwell_t",
+      "maxwell_x",
+      "maxwell_angular"
+    ],
+    "axial_t_coefficient_columns": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "locality_identity": "S[d*t,u](t)=t*S[c,u](t)+S[d*t,u](0)",
+    "polar_combined_t_coefficient": [
+      "-36*d*z2",
+      "0",
+      "164*d*z2",
+      "-8*sqrt(3)*I*d*z2",
+      "0",
+      "-100*d*z2",
+      "-24*d*z2",
+      "-20*d*z2"
+    ],
+    "polar_full_row_order": [
+      "metric_00",
+      "metric_01",
+      "metric_11",
+      "metric_0a",
+      "metric_1a",
+      "sphere_trace",
+      "sphere_tracefree",
+      "maxwell_axial_density"
+    ],
+    "polar_t_coefficient_columns": [
+      [
+        "0",
+        "-36*d"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "164*d"
+      ],
+      [
+        "0",
+        "-8*sqrt(3)*I*d"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-100*d"
+      ],
+      [
+        "0",
+        "-24*d"
+      ],
+      [
+        "0",
+        "-20*d"
+      ]
+    ],
+    "polynomial_zero_locus_for_d_times_polar_extra_alone": "d*z2=0",
+    "reason": "terms with no derivative on d*t reproduce t times the static-c source; every derivative on d*t lowers the time degree and d^r(t)=0 for r>=2",
+    "witness": "-36*d*z2",
+    "witness_row_index_zero_based": 0
+  },
+  "interpretation": "The previous d fixtures correctly computed the t=0 adjoint projection but did not test the full polynomial source. Locality reconstructs the omitted leading term from the exact static-c source. Three columns have no t term, while the second polar extra column has a nonzero P_(j,1) vector. The d adjoint isomorphism therefore remains a constant-resonance control statement, not a standalone bounded-extension theorem.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the full a polynomial columns in the same ell=2 block and solve their joint P zero locus with d*z_polar_e2, then apply the surviving constant-term resonance equations",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.py",
+    "generator_sha256": "fbeca23889c55656097aa33f636b1f7803116d35642d1fa23b679ee519754a89",
+    "inputs": {
+      "abd_matrix": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
+        "sha256": "9bf4fb15a934bba3690d92f630c027ec40f166360c012689425e8a473aa42736"
+      },
+      "bounded_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+        "sha256": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885"
+      },
+      "d_constant_projection": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
+        "sha256": "35e07ee8b77d16314a5b306e0dcbedd3d9d6e852d1a0180196973142b5aa0a4e"
+      },
+      "static_c_primitive": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive.json",
+        "sha256": "cc258039f718d9a0a5fa4361ea2d84fac0bd0898d8343ee3d5907b741000bec9"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_D_ELL2_EXTRA_FULL_TIME_POLYNOMIAL",
+  "result_state": "FULL_TIME_D_ELL2_EXTRA_POLYNOMIAL_COLUMN_REPAIRED",
+  "schema": "einstein-maxwell-weyl-d-ell2-extra-full-time-polynomial-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.schema.json",
+  "schema_sha256": "3bb306f33f3d7c5043c56884635db3cee6f2f105f1679352d3bfcfa314367c58",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic correction",
+    "carrier": "homogeneous circumference velocity d crossed with the complete axial-plus-polar ell=2,k=0 extra-primary multiplicity space",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": 2,
+    "k": 0,
+    "m": "all by SO3 equivariance",
+    "omega": "+/-4/sqrt(3)",
+    "parity": "two axial and two polar extra columns",
+    "theory": "Weyl-Maxwell"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.18,
+      "max_rss_kb": 16192,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 1.1,
+      "max_rss_kb": 60480,
+      "status": "PASS",
+      "tests_run": 18
+    },
+    "tier_2": {
+      "criterion": "the full static-c source columns and direct t=0 d adjoint projections are unchanged exact inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "joint a/d polynomial, complete bounded, causal, all-orders, residual and quantum gates remain excluded",
+      "status": "NOT_RUN"
+    }
+  }
+}

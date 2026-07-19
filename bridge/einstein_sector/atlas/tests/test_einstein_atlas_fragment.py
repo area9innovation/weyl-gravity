@@ -47,12 +47,13 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
 
     def test_abd_matrix_is_input_not_full_nonlinear_theorem(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.abd_times_ell2_extra"]
-        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
         self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertIn("superseded", entry["claim_boundary"])
 
     def test_complete_homogeneous_twist_matrix_remains_precone(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.homogeneous_twist_times_ell2_extra"]
-        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
         self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
 
     def test_aligned_face_has_correction_class_split(self) -> None:
@@ -90,7 +91,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("{(c,d,W_x,A)}", second_order["bounded_or_finite_quasiperiodic"]["statement"])
-        self.assertIn("a-times-all and d-times-nonzero-k polynomial maps", entry["claim_boundary"])
+        self.assertIn("complete a/d polynomial maps", entry["claim_boundary"])
         self.assertIn("Q_e*a=0", entry["claim_boundary"])
 
     def test_complete_electric_wilson_transport_is_bounded_but_not_causal(self) -> None:
@@ -109,6 +110,14 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("R_(j,a), not P_(j,r)", entry["mode_data"]["resonance"]["statement"])
+
+    def test_d_column_exposes_full_time_polynomial_repair(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.d_times_ell2_extra"]
+        self.assertIn("d*z2=0", entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("not a complete bounded d-column theorem", entry["claim_boundary"])
+        abd = self.entries["einstein.ph.wm.interaction.abd_times_ell2_extra"]
+        self.assertEqual(abd["mode_data"]["resonance"]["status"], "OPEN")
+        self.assertIn("superseded", abd["claim_boundary"])
 
 
 if __name__ == "__main__":

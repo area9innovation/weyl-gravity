@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Full-time d times ell2 extra polynomial repair",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "full_time_polynomial",
+    "constant_term_reconciliation", "bounded_ledger_consequence", "classification",
+    "interpretation", "next_gate", "claim_boundary", "provenance",
+    "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-d-ell2-extra-full-time-polynomial-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_D_ELL2_EXTRA_FULL_TIME_POLYNOMIAL"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "REDUCED-MODE"}},
+    "scope": {"type": "object"},
+    "full_time_polynomial": {"type": "object"},
+    "constant_term_reconciliation": {"type": "object"},
+    "bounded_ledger_consequence": {"type": "object"},
+    "classification": {"type": "object"},
+    "provenance": {"type": "object"},
+    "verification_receipt": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": true
+}

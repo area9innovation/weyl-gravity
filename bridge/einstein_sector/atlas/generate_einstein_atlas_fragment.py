@@ -30,6 +30,7 @@ CERTIFICATES = {
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
+    "d_full_time": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.json",
     "abd_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
     "homogeneous_twist_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
     "aligned_twist_extra_face": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.json",
@@ -236,7 +237,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "The positive-degree ideal has real zero locus b=B=0 and Q_e*a=0; STF(B tensor B) supplies the SO3-complete twist witness."),
             _second_order(("CERTIFIED", "The complete bounded cone is {(c,d,W_x,A)}. Its homogeneous source vanishes and constant A has a time-independent polar L=2 correction."), ("CERTIFIED", "The bounded correction is also a smooth exponential-polynomial correction."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
             _evidence("standard_global_bounded", "standard", "taub", "abstract_cone"),
-            "This is the complete bounded second-order theorem only for the standard generalized-zero carrier. Universally it forces b=B=0 and Q_e*a=0 in every finite-support bounded candidate, but a-times-all and d-times-nonzero-k polynomial maps, c/k=0-d/constant-A shell resonances, infinite sums, causal propagation, final residual states, observables and quantum transfer remain fail-closed.",
+            "This is the complete bounded second-order theorem only for the standard generalized-zero carrier. Universally it forces b=B=0 and Q_e*a=0 in every finite-support bounded candidate, but the complete a/d polynomial maps, c/d/constant-A shell resonances, infinite sums, causal propagation, final residual states, observables and quantum transfer remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.electric_wilson_complete_oscillator_transport",
@@ -248,7 +249,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "Q_e-times-oscillator sources are bounded linear images and W_x-times-oscillator sources vanish, so these columns have zero P_(j,r) and R_(j,a) components."),
             _second_order(("CERTIFIED", "Electromagnetic duality supplies f_cross=star_bar f+(D_g star)[h]F_bar with unchanged frequency; the fixed-bundle lift is exact for ell>=1. W_x needs zero correction."), ("CERTIFIED", "The bounded correction is contained in the smooth exponential-polynomial class."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
             _evidence("electric_wilson_transport", "complete_finite_smooth", "standard_global_bounded"),
-            "This removes Q_e and W_x only from oscillator cross columns. The independent global condition Q_e*a=0, the a/d polynomial maps, c/k=0-d/constant-A resonance, full bounded cone, all-orders duality and residual/observational/quantum maps remain fail-closed.",
+            "This removes Q_e and W_x only from oscillator cross columns. The independent global condition Q_e*a=0, the complete a/d polynomial maps, c/d/constant-A resonance, full bounded cone, all-orders duality and residual/observational/quantum maps remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.circumference_complete_oscillator_column",
@@ -269,10 +270,10 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "The resonant output is the axial p-shell at omega_e^2=16/3."),
             ("CERTIFIED", "The extra input multiplicities are the certified nonradical axial and polar Lee-Wald blocks."),
             ("OPEN", "The simultaneous five stabilizer moment maps for this enlarged input have not been solved."),
-            ("CERTIFIED", "The d-cross maps are isomorphisms in both parities; their block determinant is 8266752, so any ell=2 p-shell defect is algebraically cancellable for d!=0."),
-            _second_order(("OPEN", "Both resonant projections are cancellable, but nonresonant and simultaneous stabilizer conditions remain."), ("OPEN", "No complete smooth-secular extension has been assembled."), open_causal),
-            _evidence("d_completion", "axial_current", "polar_current", "abstract_cone"),
-            "This completes the d column of the resonant source matrix, not a complete second-order extension or the remaining homogeneous/twist columns.",
+            ("CERTIFIED", "The t=0 d-cross maps are isomorphisms in both parities with block determinant 8266752. Full-time reconstruction adds a nonzero polar-e2 P_(j,1) vector proportional to d*z2."),
+            _second_order(("OPEN", "The constant resonant projections are controllable, but the polar-e2 polynomial condition d*z2=0 must be solved jointly with a and other same-channel columns."), ("OPEN", "No complete smooth-secular extension has been assembled."), open_causal),
+            _evidence("d_completion", "d_full_time", "axial_current", "polar_current", "abstract_cone"),
+            "The old direct fixtures evaluated t=0. Their adjoint isomorphism is retained as a constant-term statement; it is not a complete bounded d-column theorem. Other harmonics, moment maps and the joint a/d polynomial cone remain open.",
         ),
         _entry(
             "einstein.ph.wm.interaction.abd_times_ell2_extra",
@@ -281,10 +282,10 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "Every cross source lies on the ell=2 p-primary output shell with polynomial-in-time coefficients."),
             ("CERTIFIED", "The projected rows use the certified nonradical axial and polar extra-shell Lee-Wald/adjoint bases."),
             ("OPEN", "The simultaneous stabilizer zero locus including twist position and velocity has not been solved."),
-            ("CERTIFIED", "All four parity/polarization a,b,d polynomial resonance chains have coefficient rank three; the exact bounded compatibility functionals are generated."),
-            _second_order(("OPEN", "This a,b,d submatrix remains a certified partial input; the completed homogeneous/twist matrix is a separate atlas entry."), ("OPEN", "Secular inversion must be proved through the complete operator."), open_causal),
-            _evidence("abd_matrix", "d_completion", "axial_current", "polar_current", "abstract_cone"),
-            "This is an exact source-matrix input to the tangent-cone theorem, not the complete bridge, a no-go theorem, or a full second-order correction.",
+            ("OPEN", "The printed a,b chains and t=0 d adjoint columns are exact, but full-time reconstruction adds a polar-e2 d*z2*t coefficient omitted by the older matrix."),
+            _second_order(("OPEN", "The a/d polynomial zero locus must be recomputed with the repaired P_(j,1) column before the constant resonance matrix is used."), ("OPEN", "Secular inversion must be proved through the complete operator."), open_causal),
+            _evidence("abd_matrix", "d_completion", "d_full_time", "axial_current", "polar_current", "abstract_cone"),
+            "The older rank-three matrix remains evidence for its printed a,b and t=0 d columns, but its complete bounded-functional claim is superseded by the full-time d repair.",
         ),
         _entry(
             "einstein.ph.wm.interaction.homogeneous_twist_times_ell2_extra",
@@ -293,10 +294,10 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "The output is the ell=2 p-primary shell; the non-axisymmetric channel <1,1;2,0|2,1>=sqrt(2)/2 fixes the unique SO(3)-equivariant V1 tensor V2 -> V2 map."),
             ("CERTIFIED", "All four output adjoint rows are normalized against the certified nonradical axial and polar extra-shell blocks."),
             ("OPEN", "The five stabilizer moment maps have not yet been solved simultaneously with the completed resonance matrix."),
-            ("CERTIFIED", "The twist-position matrix has rank two and the twist-velocity matrix has rank four with determinant 4129056*(72*t^2+34*sqrt(3)*I*t+3), nonzero for every real t; the a,b,d chains and removable spectators are also complete."),
-            _second_order(("OPEN", "The complete resonance functionals are known, but their simultaneous zero locus with the stabilizer maps and bilinear factorization constraints is not solved."), ("OPEN", "Smooth exponential-polynomial secular sufficiency is not inferred from the resonant projection alone."), open_causal),
-            _evidence("homogeneous_twist_matrix", "abd_matrix", "axial_current", "polar_current", "abstract_cone"),
-            "This completes the declared k=0 source matrix, not the finite-harmonic tangent cone, opposite momenta, multiple absolute-momentum fibres, a causal theorem, or Bridge 1.",
+            ("OPEN", "The twist-position and twist-velocity adjoint matrices remain exact, but the imported d column was evaluated at t=0 and omits the repaired polar-e2 P_(j,1) coefficient."),
+            _second_order(("OPEN", "The simultaneous zero locus must be rechecked against the full-time d polynomial before this is called a complete bounded matrix."), ("OPEN", "Smooth exponential-polynomial secular sufficiency is not inferred from the resonant projection alone."), open_causal),
+            _evidence("homogeneous_twist_matrix", "abd_matrix", "d_full_time", "axial_current", "polar_current", "abstract_cone"),
+            "The twist adjoint blocks are retained, but the complete bounded-matrix lifecycle is withdrawn pending the repaired joint a/d polynomial solve.",
         ),
         _entry(
             "einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face",
@@ -367,6 +368,15 @@ def build() -> dict[str, object]:
         raise AssertionError("twist independence witness changed")
     if not records["d_completion"]["classification"]["d_cross_adjoint_map_invertible_in_both_parities"]:
         raise AssertionError("d-cross parity completion changed")
+    d_full_time = records["d_full_time"]["classification"]
+    if not (
+        d_full_time["full_time_d_ell2_extra_leading_polynomial_classified"]
+        and d_full_time["polar_e2_d_extra_t_coefficient_nonzero"]
+        and d_full_time["old_d_constant_adjoint_isomorphism_retained"]
+    ):
+        raise AssertionError("full-time d polynomial repair changed")
+    if d_full_time["old_d_result_was_complete_bounded_column"]:
+        raise AssertionError("old d constant projection was over-promoted")
     if not records["abd_matrix"]["classification"]["every_parity_polarization_abd_polynomial_chain_rank_three"]:
         raise AssertionError("a,b,d resonance-matrix input changed")
     if not records["homogeneous_twist_matrix"]["classification"]["complete_homogeneous_twist_bounded_resonance_matrix"]:
