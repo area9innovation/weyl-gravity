@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/relative-f2-taub-obstruction-v1.schema.json",
+  "title": "Compact-product relative f2 Taub obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "local_delta2_normalization", "taub_pairing", "obstruction_theorem", "classification", "allowed_repairs", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-f2-taub-obstruction-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1"},
+    "result_state": {"const": "FROZEN_UNARY_RELATIVE_F2_OBSTRUCTED_BY_NONZERO_CONSTANT_LAPSE_CLASS"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "scope": {"type": "object", "minProperties": 11, "additionalProperties": {"type": "string", "minLength": 1}},
+    "dependencies": {"type": "object", "minProperties": 10, "maxProperties": 10, "additionalProperties": {"$ref": "#/$defs/artifact"}},
+    "local_delta2_normalization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixture", "base_point", "input_rows", "nonzero_delta2_rows", "chevreton_rows_at_point", "delta2_over_chevreton", "all_other_target_rows_zero", "jet_values_replayed", "purpose"],
+      "properties": {
+        "fixture": {"type": "string", "minLength": 1},
+        "base_point": {"type": "string", "minLength": 1},
+        "input_rows": {"const": ["g_13", "A_1"]},
+        "nonzero_delta2_rows": {"$ref": "#/$defs/fourRows"},
+        "chevreton_rows_at_point": {"$ref": "#/$defs/fourRows"},
+        "delta2_over_chevreton": {"const": "-3/2"},
+        "all_other_target_rows_zero": {"const": true},
+        "jet_values_replayed": {"type": "integer", "minimum": 1000},
+        "purpose": {"type": "string", "minLength": 1}
+      }
+    },
+    "taub_pairing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["q2_convention", "target_moment_map_mu_W", "radiative_relative_weight_w_plus", "derived_source_moment_map_mu_E", "relative_half_delta2_pairing", "chevreton_normalized_sphere_average", "relative_pairing_over_chevreton_average", "nonzero", "derivation"],
+      "properties": {
+        "q2_convention": {"type": "string", "minLength": 1},
+        "target_moment_map_mu_W": {"const": "-12*(6 + 5*sqrt(3))/5"},
+        "radiative_relative_weight_w_plus": {"const": "1 + 3*sqrt(3)"},
+        "derived_source_moment_map_mu_E": {"const": "-6*(sqrt(3) + 3)/5"},
+        "relative_half_delta2_pairing": {"const": "-54*(1 + sqrt(3))/5"},
+        "chevreton_normalized_sphere_average": {"const": "-36*(1 + sqrt(3))/5"},
+        "relative_pairing_over_chevreton_average": {"const": "3/2"},
+        "nonzero": {"const": true},
+        "derivation": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "obstruction_theorem": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "minLength": 1}},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strict_delta2_replayed_on_witness", "source_mode_is_q1_cocycle", "target_constant_lapse_annihilates_q1_exact_corrections", "relative_taub_pairing_nonzero", "frozen_unary_full_domain_f2_exists", "support_local_full_domain_f2_exists", "smooth_periodic_full_domain_f2_exists", "arity_three_direct_morphism_authorized", "taub_zero_restricted_source_obstructed", "relative_cofiber_or_mapping_cone_obstructed", "modified_unary_or_endpoint_map_obstructed", "different_background_obstructed", "causal_or_quantum_claim"],
+      "properties": {
+        "strict_delta2_replayed_on_witness": {"const": true},
+        "source_mode_is_q1_cocycle": {"const": true},
+        "target_constant_lapse_annihilates_q1_exact_corrections": {"const": true},
+        "relative_taub_pairing_nonzero": {"const": true},
+        "frozen_unary_full_domain_f2_exists": {"const": false},
+        "support_local_full_domain_f2_exists": {"const": false},
+        "smooth_periodic_full_domain_f2_exists": {"const": false},
+        "arity_three_direct_morphism_authorized": {"const": false},
+        "taub_zero_restricted_source_obstructed": {"const": false},
+        "relative_cofiber_or_mapping_cone_obstructed": {"const": false},
+        "modified_unary_or_endpoint_map_obstructed": {"const": false},
+        "different_background_obstructed": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      }
+    },
+    "allowed_repairs": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}},
+    "next_gate": {"const": "CHOOSE_RELATIVE_TAUB_ZERO_OR_COFIBER_ARCHITECTURE_BEFORE_ARITY_THREE"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 500}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "fourRows": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["g_00_star", "g_11_star", "g_22_star", "g_33_star"],
+      "properties": {
+        "g_00_star": {"type": "string", "minLength": 1},
+        "g_11_star": {"type": "string", "minLength": 1},
+        "g_22_star": {"type": "string", "minLength": 1},
+        "g_33_star": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

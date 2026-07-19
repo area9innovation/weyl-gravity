@@ -174,18 +174,20 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
 
     def test_product_relative_linfinity_receiver_is_fail_closed(self):
         entry = next(item for item in atlas.build()["entries"] if "relative_linfinity_through_arity_three_preflight" in item["id"])
-        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
         self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")
         self.assertEqual(entry["mode_data"]["dispersion"]["status"], "CERTIFIED")
         self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("strict Delta2 operator is exact and nonzero", entry["claim_boundary"])
-        self.assertIn("Delta2", entry["claim_boundary"])
-        self.assertIn("f2 existence or obstruction", entry["claim_boundary"])
-        self.assertIn("remain OPEN or NO_CERTIFIED_MAP", entry["claim_boundary"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OBSTRUCTED")
+        self.assertIn("obstructed at arity two", entry["claim_boundary"])
+        self.assertIn("no f2 extends", entry["claim_boundary"])
+        self.assertIn("Taub-zero", entry["claim_boundary"])
+        self.assertIn("remains OPEN or NO_CERTIFIED_MAP", entry["claim_boundary"])
         self.assertIn("same-background", entry["claim_boundary"])
         self.assertIn("all Berger tensors remain ineligible", entry["claim_boundary"])
         self.assertIn("NONCYCLIC_THREE_FORM", entry["claim_boundary"])
-        self.assertIn("both complete executable", entry["claim_boundary"])
+        self.assertIn("both complete same-background", entry["claim_boundary"])
         self.assertIn("q4 is not authorized", entry["claim_boundary"])
 
     def test_generic_standard_pairing_cyclic_obstruction_is_scoped(self):

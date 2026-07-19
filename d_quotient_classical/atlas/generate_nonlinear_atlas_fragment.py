@@ -40,6 +40,7 @@ CERTS = {
     "einstein_product_taylor": ROOT / "bridge/certificates/EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
     "weyl_product_taylor": ROOT / "bridge/certificates/WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
     "relative_arity_two_defect": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ARITY_TWO_DEFECT_V1.json",
+    "relative_f2_taub_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -236,6 +237,12 @@ def entries() -> list[dict[str, Any]]:
     relative_arity_two_computed = (
         relative_arity_two["result_state"]
         == "NONZERO_STRICT_ARITY_TWO_DEFECT_F2_SOLVE_REQUIRED"
+    )
+    relative_f2 = json.loads(CERTS["relative_f2_taub_obstruction"].read_text())
+    relative_f2_obstructed = (
+        relative_f2["result_state"]
+        == "FROZEN_UNARY_RELATIVE_F2_OBSTRUCTED_BY_NONZERO_CONSTANT_LAPSE_CLASS"
+        and relative_f2["classification"]["frozen_unary_full_domain_f2_exists"] is False
     )
     smooth_extension_ready = smooth_extension_import_ready()
     berger = {
@@ -555,15 +562,18 @@ def entries() -> list[dict[str, Any]]:
             "descriptions": {
                 "causal": "NO_CERTIFIED_MAP",
                 "symplectic": "OBSTRUCTED",
-                "nonlinear": "OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP",
+                "nonlinear": "OBSTRUCTED" if relative_f2_obstructed else "OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP",
                 "observational": "NO_CERTIFIED_MAP",
                 "quantum": "NO_CERTIFIED_MAP",
             },
             "mode_data": _mode_data(
                 _second(
                     (
-                        "OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP",
+                        "OBSTRUCTED" if relative_f2_obstructed else "OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP",
                         (
+                            "The frozen unary map has a nonzero relative constant-lapse Taub class on the certified ell=2 plus mode, so no f2 valued in the full smooth periodic fixed-bundle target domain can solve the arity-two morphism equation."
+                            if relative_f2_obstructed
+                            else
                             "The strict Delta2 operator is computed exactly with 50854 nonzero coefficients; the support-local f2 homotopy solve is active and neither existence nor obstruction is yet promoted."
                             if relative_arity_two_computed
                             else "The noncyclic all-row linear triangle, endpoints and both complete same-background q1/q2/q3 payloads are imported; Delta2 and the allowed f2 homotopy solve are now active."
@@ -575,7 +585,12 @@ def entries() -> list[dict[str, Any]]:
                         if linear_triangle_imported
                         else "The support-local minimal q1 chain map is certified, but the noncyclic three-form triangle, finite endpoints and both same-background product q2/q3 payloads are missing.",
                     ),
-                    ("NO_CERTIFIED_MAP", "No full relative morphism exists on which to compare smooth-secular correction classes."),
+                    (
+                        "OBSTRUCTED" if relative_f2_obstructed else "NO_CERTIFIED_MAP",
+                        "The same constant-lapse adjoint class annihilates q1-exact smooth periodic corrections even when secular time dependence is admitted; alternative Taub-zero/cofiber architectures remain open."
+                        if relative_f2_obstructed
+                        else "No full relative morphism exists on which to compare smooth-secular correction classes.",
+                    ),
                     ("NO_CERTIFIED_MAP", "No compact-product retarded relative morphism is certified."),
                 ),
                 dispersion=(
@@ -585,11 +600,26 @@ def entries() -> list[dict[str, Any]]:
                     else "Sectoral solution cofibers do not supply the full off-shell relative carrier.",
                 ),
                 pairing=("OBSTRUCTED", "A standard-pairing cyclic relative triangle is impossible by the generic inertia theorem; the certified replacement keeps the Einstein, pulled-back Weyl and relative forms distinct."),
-                taub=("OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP", "Selected D^2E=q2 source blocks do not constitute the complete relative cokernel map."),
-                resonance=("OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP", "The strict Delta2 operator is exact and nonzero; its f2 primitive, the arity-three morphism defect and their cohomology images remain open." if relative_arity_two_computed else "Delta2, the arity-three morphism defect and their cohomology images have not been computed."),
+                taub=(
+                    "CERTIFIED" if relative_f2_obstructed else "OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP",
+                    "The certified ell=2 plus mode pairs with the target constant-lapse class as -54*(1+sqrt(3))/5, obstructing f2 on the full frozen carrier."
+                    if relative_f2_obstructed
+                    else "Selected D^2E=q2 source blocks do not constitute the complete relative cokernel map.",
+                ),
+                resonance=(
+                    "OBSTRUCTED" if relative_f2_obstructed else "OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP",
+                    "The direct full-domain morphism stops at arity two: the nonzero relative Taub class obstructs f2, so arity three is not authorized until a Taub-zero or cofiber architecture is declared."
+                    if relative_f2_obstructed
+                    else "The strict Delta2 operator is exact and nonzero; its f2 primitive, the arity-three morphism defect and their cohomology images remain open."
+                    if relative_arity_two_computed
+                    else "Delta2, the arity-three morphism defect and their cohomology images have not been computed.",
+                ),
             ),
-            "evidence": _evidence("relative_linfinity_preflight", "einstein_product_taylor", "weyl_product_taylor", "relative_arity_two_defect", "covariant_chain_map", "relative_branch_dictionary", "generic_cyclic_map_inertia_obstruction", "dictionary", "mixed_obstruction"),
+            "evidence": _evidence("relative_linfinity_preflight", "einstein_product_taylor", "weyl_product_taylor", "relative_arity_two_defect", "relative_f2_taub_obstruction", "covariant_chain_map", "relative_branch_dictionary", "generic_cyclic_map_inertia_obstruction", "dictionary", "mixed_obstruction"),
             "claim_boundary": (
+                "Compact-product NONCYCLIC_THREE_FORM linear Bridge 1 and both complete same-background q1/q2/q3 payloads are imported, but the frozen direct full-domain morphism is obstructed at arity two. The certified ell=2 plus cocycle has relative constant-lapse pairing -54*(1+sqrt(3))/5, while every q1_W-exact smooth periodic fixed-bundle correction pairs to zero; hence no f2 extends the frozen f1 on that carrier and arity three is not authorized. A Taub-zero derived source sector, relative cofiber/mapping cone, larger charge carrier, modified unary/endpoint map or different background remains OPEN or NO_CERTIFIED_MAP. The standard-pairing cyclic route remains separately obstructed, all Berger tensors remain ineligible substitutes, and q4 is not authorized."
+                if relative_f2_obstructed
+                else
                 "Compact-product NONCYCLIC_THREE_FORM linear Bridge 1 and both complete executable same-background q1/q2/q3 payloads are imported. The strict Delta2 operator is exact and nonzero, so the support-local f2 solve is active; f2 existence or obstruction, the arity-three defect, cohomology survival and admissible removal remain OPEN or NO_CERTIFIED_MAP. The standard-pairing cyclic route remains obstructed, all Berger tensors remain ineligible substitutes, and q4 is not authorized."
                 if relative_arity_two_computed
                 else "Compact-product NONCYCLIC_THREE_FORM linear Bridge 1 and both complete executable same-background q1/q2/q3 payloads are imported. The relative morphism solve is active, but Delta2, the allowed f2 correction, the arity-three defect, cohomology survival and admissible removal remain OPEN or NO_CERTIFIED_MAP. The standard-pairing cyclic route remains obstructed, all Berger tensors remain ineligible substitutes, and q4 is not authorized."

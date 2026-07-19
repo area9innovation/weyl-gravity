@@ -220,7 +220,7 @@ has its fail-closed disposition and the second is active:
    the 40 coefficientwise chain defects vanishes, including a mutation test
    that restores the rejected sign.  Its lifecycle is now
    `EXACT_PBW_CHAIN_MAP_TARGET_Q1_REPLAYED`.
-3. **Both interaction payloads delivered; relative solve active.**
+3. **Both interaction payloads delivered; direct relative solve disposed.**
    `EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1` now exports the
    complete same-background 38-row minimal Einstein--Maxwell
    \(q_1,q_2,q_3\), action, row layout and cyclic pairing. Its executable
@@ -237,12 +237,14 @@ has its fail-closed disposition and the second is active:
    arity-three defect row exactly over \(\mathbb Q\).  The V2 receiver imports
    both packages and is now
    `INPUTS_IMPORTED_RELATIVE_MORPHISM_SOLVE_READY`.  This is an input theorem,
-   not yet a relative \(L_\infty\) morphism: \(\Delta_2\), the arity-three
-   defect, the induced cohomology map and the separate even/odd deformation
-   verdict remain open.  Neither payload may be inferred from the other theory
-   by matching branch labels.  The nonlinear comparison must retain all three
-   action forms rather than silently replacing them by a standard-pairing
-   cyclic map.
+   not itself a relative \(L_\infty\) morphism.  The strict \(\Delta_2\) has
+   since been computed and its frozen full-domain \(f_2\) extension obstructed
+   by the relative Taub class below.  The arity-three defect, induced
+   cohomology map and separate even/odd deformation verdict are therefore not
+   authorized on that direct carrier.  Neither payload may be inferred from
+   the other theory by matching branch labels.  The nonlinear comparison must
+   retain all three action forms rather than silently replacing them by a
+   standard-pairing cyclic map.
    The receiver contract is now V2 and executable: opaque artifact hashes plus
    self-declared acceptance booleans are rejected.  Each theory must export a
    complete indexed BV row layout, the action and master terms, nondegenerate
@@ -270,32 +272,56 @@ dependency chain, not three interchangeable branch-labelled calculations:
    maps, pairing, parity, real structure, Berger-generator weights and the
    Maxwell carrier.  Otherwise the normalized local-projector obstruction is
    the authoritative binary result.
-2. **Compact-product cyclic relative triangle — open after the interaction
-   payloads.**  The support-local off-shell noncyclic Einstein--Weyl triangle
+2. **Compact-product direct relative morphism — obstructed at arity two.**
+   The support-local off-shell noncyclic Einstein--Weyl linear triangle
    is certified, while a standard-pairing cyclic correction is obstructed by
    the fixed inertia mismatch.  The requested cyclic triangle therefore must
    either declare and justify a changed relative pairing or return the existing
    normalized obstruction; it may not silently relabel the noncyclic triangle
-   as cyclic.  Its arity-two and arity-three corrections depend on item 3.
+   as cyclic.  Independently, the frozen direct full-domain morphism has a
+   nonzero relative constant-lapse Taub class at arity two, so no \(f_2\)
+   valued in the declared smooth periodic fixed-bundle target domain exists.
+   Arity three is not authorized on that carrier.  Reopen only after declaring
+   a Taub-zero derived source sector, relative cofiber/mapping cone, larger
+   charge carrier, modified unary/endpoint map, or different background.
 3. **Same-background interaction payloads — complete.**  The complete
    Einstein--Maxwell and Weyl--Maxwell \((q_1,q_2,q_3)\) payloads are delivered,
    action-derived and independently replayed in the strict executable V2 PBW
-   contract.  The nonlinear team may now compute \(\Delta_2\), solve the
-   allowed \(f_2\) homotopy equation, and then evaluate the arity-three
-   morphism defect and separate even/odd deformation verdict.
+   contract.  Their direct full-domain \(f_2\) gate is now obstructed; the
+   nonlinear team should consume the obstruction and help choose a Taub-zero
+   derived source or charge-carrying cofiber before any arity-three morphism
+   defect or even/odd deformation verdict is attempted.
 
-`EINSTEIN_WEYL_RELATIVE_ARITY_TWO_DEFECT_V1` now evaluates the strict
+`EINSTEIN_WEYL_RELATIVE_ARITY_TWO_DEFECT_V1` evaluates the strict
 \(\Delta_2=q_{2,W}(f_1,f_1)-f_1q_{2,E}\) operator.  It has 50,854 exact
 rational coefficients in 15 target rows, maximum total derivative order four,
 and an independent rowwise replay.  The Maxwell equation rows and U(1)
 identity remain strict; the nonzero terms lie in the metric equations,
-diffeomorphism identities and Weyl-trace identity.  This is not an
-obstruction: it proves only that the unary map needs a nonzero \(f_2\).
-Arity three remains fail-closed until the support-local \(f_2\) equation is
-solved or a normalized obstruction is emitted.
+diffeomorphism identities and Weyl-trace identity.
 
-The activation order has advanced to `support-local f2 solve -> arity-three
-defect -> cyclic correction or obstruction`.  The Berger
+[`EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1`](../d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json)
+now supplies the normalized obstruction; its human-readable derivation is in
+[`einstein-weyl-relative-f2-taub-obstruction.md`](../d_quotient_classical/reports/einstein-weyl-relative-f2-taub-obstruction.md).
+On the certified axial \(\ell=2,m=0,k=0\) plus mode, the complete
+PBW defect evaluates locally to \(-3/2\) times the independently derived
+Chevreton tensor.  Globally, the exact radiative-current restriction and the
+moment-map--Taub identity give
+
+\[
+\left\langle\zeta_H,\frac12\Delta_2(u,u)\right\rangle
+=\mu_W-\mu_E=-\frac{54}{5}(1+\sqrt3)\ne0.
+\]
+
+The target constant-lapse class annihilates every \(q_{1,W}\)-exact smooth
+periodic fixed-bundle correction, including smooth secular corrections.
+Therefore no \(f_2\), support-local or otherwise, extends the frozen unary map
+on the full declared carrier.  This does not obstruct a Taub-zero restriction,
+relative cofiber/mapping cone, larger charge fibre, modified unary/endpoint
+map, or another background.
+
+The active architecture gate is now `choose relative Taub-zero restriction or
+charge-carrying cofiber -> rebuild the arity-two map -> only then authorize
+arity three`.  The Berger
 branch-carrier rail remains independent and fail-closed throughout.
 
 The transverse replay now has an associative coefficient-jet PBW algebra,

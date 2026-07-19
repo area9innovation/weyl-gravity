@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-19",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "status": "PASS",
+  "source_manifest": {
+    "d_quotient_classical/relative/einstein_weyl_relative_f2_taub_obstruction.py": "214c466082fcc560feb8ba52a0f1760e92fb2a689606ab9827a758c934834b46",
+    "d_quotient_classical/relative/verify_einstein_weyl_relative_f2_taub_obstruction.py": "356af90b6023a61568b1e428b35dba8864b970171d6de5f7b193724a32f3f009",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_f2_taub_obstruction.py": "95d682e754fb4e02e34d61fbb76d0e8dd07d7a4f885983912b739ba2af574cfe",
+    "d_quotient_classical/schema/relative-f2-taub-obstruction-v1.schema.json": "52730cb7560054fd4379cda689971722450ec36680ccf1d343f737f1c825f380",
+    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json": "b96fa2c3eb54a9df86d6e7b319d9244c8c54d023d8edc2425e8df29177c590dc",
+    "d_quotient_classical/reports/einstein-weyl-relative-f2-taub-obstruction.md": "79fd233aefa46f6fd140bbbc11a1e71411486cf655e917b5377c93bd5c2ac0f7",
+    "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py": "2b9ca5bbc158c4138c0ac6a62d31dfc3962482852c80b5f488b5ee1e69958de8",
+    "d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "539f46d6027ef8a289f3a382d97b49a3874e1ffe5fe986b7a149bb5ac4df2754",
+    "d_quotient_classical/atlas/tests/test_nonlinear_atlas_fragment.py": "678c98daa6c166f7e31bb6f24ec4de3cfa788cfeb6faadea3f86480ba2111455",
+    "notes/d-quotient-classical-team-brief.md": "29150a2b8f5bc773f5dc9f2b6d093b0037a75b1bbe2552dc7d317f2c7c09a30a"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "command": "python3 -m py_compile <producer, verifier, test, atlas generator> && strict Draft 2020-12 validation && git diff --check on scoped paths"
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 12.53,
+      "max_rss_kib": 117236,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_f2_taub_obstruction --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_f2_taub_obstruction",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_f2_taub_obstruction d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-f2-taub-obstruction-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json"
+      ],
+      "result": "18 tests passed; independent PBW witness replay and exact relative Taub pairing matched"
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The unchanged strict Delta2 payload, unary triangle, periodic mode, radiative-current restriction, moment-map--Taub theorem and target adjoint witness are imported by SHA-256. The new consumer independently evaluates the 50854-term defect on the witness and rederives the exact pairing."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a scoped compact-product obstruction and atlas update, not a shared-core freeze, paper theorem promotion or release."
+    }
+  },
+  "claim_boundary": "Receipt for the scoped obstruction to an f2 extending the frozen unary Einstein--Weyl map on the full smooth periodic fixed-bundle carrier. It does not obstruct a Taub-zero derived source sector, relative cofiber or mapping cone, larger charge carrier, modified unary or endpoint map, different background, causal propagation, observables, particles or quantum states; direct arity three remains unauthorized."
+}
