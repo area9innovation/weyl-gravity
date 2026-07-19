@@ -1,0 +1,137 @@
+{
+  "claim_flags": {
+    "backreaction_certified": false,
+    "first_law_temperature_consistency_certified": true,
+    "greybody_or_luminosity_certified": false,
+    "lorentzian_causal_hawking_theorem": false,
+    "lorentzian_hadamard_state_certified": false,
+    "monodromy_universality_certified": true,
+    "renormalized_stress_tensor_certified": false,
+    "spectra_rederived_and_matched": true,
+    "surface_gravity_certified": true,
+    "thermal_extra_branch_weighting_certified": true
+  },
+  "declaration": {
+    "background_family": "Schwarzschild (symbolic m)",
+    "conformal_frame": "working gauge; ingoing EF chart; geometric clock for T_H, normalized-frame factor recorded",
+    "generator": "horizon generator; kappa = B'(2m)/2",
+    "horizon_condition": "certified ingoing residue spectra (re-derived and hash-matched)",
+    "infinity_condition": "none; monodromy is a horizon-local statement",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "certified l = 2 mode families (axial + polar, Einstein + extra)",
+    "quantum_status": "REDUCED-MODE only: no Lorentzian quantum object is claimed or implied",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "missing_objects": [
+    "BRST-compatible Hadamard state for the metric BV complex (quantum team; fail-closed)",
+    "renormalized Lorentzian time-ordered products and stress tensor",
+    "grey-body factors and luminosity (requires outer-boundary scattering theory)",
+    "back-reaction and flux balance",
+    "a LORENTZIAN-CAUSAL Hawking theorem (none exists until an explicit certificate says otherwise)"
+  ],
+  "monodromy": {
+    "factors": {
+      "axial_einstein_rw": {
+        "factors": [
+          "1",
+          "exp(8*pi*m*omega)"
+        ],
+        "n_thermal": 1
+      },
+      "axial_extra": {
+        "factors": [
+          "1",
+          "1",
+          "exp(8*pi*m*omega)",
+          "exp(8*pi*m*omega)"
+        ],
+        "n_thermal": 2
+      },
+      "polar_einstein": {
+        "factors": [
+          "exp(8*pi*m*omega)",
+          "1"
+        ],
+        "n_thermal": 1
+      },
+      "polar_extra": {
+        "factors": [
+          "1",
+          "1",
+          "1",
+          "exp(8*pi*m*omega)",
+          "exp(8*pi*m*omega)",
+          "exp(8*pi*m*omega)"
+        ],
+        "n_thermal": 3
+      }
+    },
+    "flux_link": "combined with the certified nonzero extra-branch horizon flux norms (axial and polar cross-flux certificates), the mode-level Hawking process radiates into the extra sector with the same thermal factor as the Einstein sector",
+    "statement": "under the Damour-Ruffini continuation rho -> e^{2 pi i} rho every certified horizon exponent has monodromy factor 1 or e^{8 pi m omega} = e^{omega/T_H}; every mode family (both parities, both branches) contains thermal-monodromy exponents",
+    "universality": "the Boltzmann ratio |beta/alpha|^2 = e^{-omega/T_H} is UNIVERSAL across the Einstein and extra branches in both parity sectors: the extra branch is thermally weighted at exactly the Hawking temperature"
+  },
+  "provenance": {
+    "axial_cross_certificate": "black_hole_programme/certificates/BH2A_CROSS_FLUX.json",
+    "axial_cross_certificate_sha256": "8b5cea3acb71defe98e42af2aab496e405fa5ae5bf412810af6669b569f1c593",
+    "axial_reach_certificate": "black_hole_programme/certificates/BH2A_HORIZON_REACH.json",
+    "axial_reach_certificate_sha256": "dcab47cf90e5a0120308b2031444539604d902c9cc5b788ce510f366f0d26d7f",
+    "bh1a_certificate": "black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json",
+    "bh1a_certificate_sha256": "12cd1f0746645fffa4e2d9af35b638b7eda64fb10950884a4a0b3c703043ea0b",
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh4_hawking_monodromy.py",
+    "polar_cross_certificate": "black_hole_programme/certificates/BH2B_POLAR_CROSS_FLUX.json",
+    "polar_cross_certificate_sha256": "39530c7ea9173c5491cc082167e5c06f9439ddee1e5b151857235df965caf26d",
+    "polar_einstein_certificate": "black_hole_programme/certificates/BH2B_POLAR_EINSTEIN.json",
+    "polar_einstein_certificate_sha256": "df58e1c00ef75450602009ec07f490fe594d1223a5fd54376d150e563cfe9780",
+    "polar_reach_certificate": "black_hole_programme/certificates/BH2B_POLAR_REACH.json",
+    "polar_reach_certificate_sha256": "c2639050b9d735d73daa756aed99c86e6882d354c99e13eb7a806a7a8d3ea977"
+  },
+  "result_id": "PURE_WEYL_BH4_HAWKING_MONODROMY",
+  "result_token": "BH4_HAWKING_MONODROMY_TEMPERATURE_UNIVERSAL_ACROSS_BRANCHES",
+  "schema": "pure-weyl-bh4-hawking-monodromy-v1",
+  "schema_path": "black_hole_programme/schema/bh4-hawking-monodromy-v1.schema.json",
+  "schema_sha256": "94b15cc074898c5bf26b4c1a903cffc79713a8d1f033020521b411571d053eb9",
+  "spectra": {
+    "axial_einstein_rw": [
+      "0",
+      "I*(-4*m*omega + I)"
+    ],
+    "axial_extra": [
+      "0",
+      "0",
+      "-4*I*m*omega",
+      "2*I*(-2*m*omega + I)"
+    ],
+    "polar_einstein": [
+      "-4*I*m*omega",
+      "0"
+    ],
+    "polar_extra": [
+      "0",
+      "0",
+      "0",
+      "-4*I*m*omega + 1",
+      "I*(-4*m*omega + I)",
+      "I*(-4*m*omega + 3*I)"
+    ]
+  },
+  "stage_seconds": {
+    "axial_carrier": 2.0,
+    "einstein_benchmarks": 0.6,
+    "monodromy": 0.3,
+    "polar_carrier": 6.8,
+    "temperature": 0.2,
+    "total": 10.0
+  },
+  "temperature": {
+    "T_H": "1/(8*pi*m)",
+    "first_law_consistency": "the certified normalized-frame family temperature T = u B'(r_h)/(4 pi) at the Schwarzschild member equals u * T_H exactly: the geometric-clock Hawking temperature matches the certified first law",
+    "kappa": "1/(4*m)"
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh4_hawking_monodromy.py"
+}

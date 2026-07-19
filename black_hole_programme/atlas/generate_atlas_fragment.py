@@ -48,6 +48,9 @@ CERTS = {
     "BH2BR": PKG / "certificates" / "BH2B_POLAR_REACH.json",
     "BH2BE": PKG / "certificates" / "BH2B_POLAR_EINSTEIN.json",
     "BH2BF": PKG / "certificates" / "BH2B_POLAR_FLUX.json",
+    "BH2BC": PKG / "certificates" / "BH2B_POLAR_CROSS_FLUX.json",
+    "BH2BD": PKG / "certificates" / "BH2B_POLAR_DISPOSITION.json",
+    "BH4H": PKG / "certificates" / "BH4_HAWKING_MONODROMY.json",
 }
 
 
@@ -258,7 +261,9 @@ def entries():
         "id": "bh.mode.axial.extra-fourth-order-branch",
         "scope": _scope(degree=1, parity="odd", ell=2, m="all", k="n/a",
                         omega="dynamical"),
-        "descriptions": {desc: ("OPEN" if desc != "symplectic" else _gstat("CERTIFIED", "BH2AC"))
+        "descriptions": {desc: (_gstat("CERTIFIED", "BH2AC") if desc == "symplectic"
+                                else (_gstat("CERTIFIED", "BH4H") if desc == "quantum"
+                                      else "OPEN"))
                          for desc in DESCRIPTIONS},
         "mode_data": {
             "dispersion": _gated(
@@ -305,19 +310,29 @@ def entries():
         "id": "bh.mode.polar.extra-fourth-order-branch",
         "scope": _scope(degree=1, parity="even", ell=2, m="all", k="n/a",
                         omega="dynamical, real omega != 0"),
-        "descriptions": {desc: "OPEN" for desc in DESCRIPTIONS},
+        "descriptions": {desc: (_gstat("CERTIFIED", "BH2BD") if desc == "causal"
+                                else (_gstat("CERTIFIED", "BH2BC") if desc == "symplectic"
+                                      else (_gstat("CERTIFIED", "BH4H") if desc == "quantum"
+                                            else "OPEN"))) for desc in DESCRIPTIONS},
         "mode_data": {
             "dispersion": _gated(
                 "CERTIFIED",
                 "polar extra branch identified exactly: trace-coupled carrier (psi_ab, S) with the certified operator (1/2) Box psi + C.psi - (1/6) DD S - (1/12) g Box S = 0 and Bianchi constraint; exact identities (tracelessness + divergence) reduce the system to 3 second-order equations in 4 functions, the underdeterminacy being linearized conformal gauge; on the traceless slice r = 2m is a regular singular point with residue spectrum {0 (x3), 1-4imw, -1-4imw, -3-4imw} and a TWO-parameter physical ingoing-regular family after quotienting the regular conformal-gauge direction: the polar extra branch reaches the future horizon",
                 "no polar extra-branch horizon-reach certificate exists", "BH2BP", "BH2BR"),
-            "lee_wald": _claim("OPEN", "polar extra/cross flux blocks open; the certified null Einstein-kernel block (BH2BF) forces all polar symplectic pairing into blocks involving this branch"),
+            "lee_wald": _gated(
+                "CERTIFIED",
+                "fixture-level polar horizon flux closed (omega = 3/5, m = 1): delta Ric[h] = psi composition certified on the FULL analytic carrier space with all seven rows verified; Einstein x extra cross pairing NONZERO (representative-independent); extra-block Hermitian norms positive at the canonical composed representatives (i F^r/(pi alpha) ~ +81, +53, +62); Einstein-null and conformal-degeneracy controls separated by >= 8 orders; invariant extra-block sign theory remains OPEN",
+                "polar extra/cross flux blocks open; the certified null Einstein-kernel block (BH2BF) forces all polar symplectic pairing into blocks involving this branch",
+                "BH2BF", "BH2BC"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "must not be identified with compact structures without an explicit crosswalk"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
         },
-        "evidence": _evidence("BH2BP", "BH2BR"),
-        "claim_boundary": "Schwarzschild (symbolic m), polar l=2, real omega != 0: horizon reach certified (two-parameter physical ingoing-regular family modulo conformal gauge); omega = 0, Zerilli benchmark, flux matrix and signs, outer boundary, causal disposition, general l, stability all OPEN"
+        "evidence": _evidence("BH2BP", "BH2BR", "BH2BC", "BH2BD"),
+        "claim_boundary": ("Schwarzschild polar l=2: horizon reach certified (two-parameter physical ingoing-regular family modulo conformal gauge, symbolic m, real omega != 0)"
+                           + ("; fixture-level flux closed (omega = 3/5): nonzero Einstein x extra cross pairing, positive canonical extra-block norms" if CERTS["BH2BC"].exists() else "; flux matrix and signs OPEN")
+                           + ("; causal disposition certified: Einstein characteristics (lambda^2-omega^2)^3, decaying Coulomb asymptotics r^-1..r^-3, no causal boundary prescription excludes the branch -- BH-2 closed at the l=2 mode level in BOTH parities" if CERTS["BH2BD"].exists() else "; causal disposition OPEN")
+                           + "; invariant extra-block sign theory, symbolic frequency, omega = 0, outer boundary, general l, stability all OPEN")
                           if CERTS["BH2BR"].exists() else "operator-level identification only: horizon reach OPEN",
     })
 

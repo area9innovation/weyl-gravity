@@ -363,7 +363,7 @@
         "causal": "OPEN",
         "nonlinear": "OPEN",
         "observational": "OPEN",
-        "quantum": "OPEN",
+        "quantum": "CERTIFIED",
         "symplectic": "CERTIFIED"
       },
       "evidence": [
@@ -511,13 +511,13 @@
       }
     },
     {
-      "claim_boundary": "Schwarzschild (symbolic m), polar l=2, real omega != 0: horizon reach certified (two-parameter physical ingoing-regular family modulo conformal gauge); omega = 0, Zerilli benchmark, flux matrix and signs, outer boundary, causal disposition, general l, stability all OPEN",
+      "claim_boundary": "Schwarzschild polar l=2: horizon reach certified (two-parameter physical ingoing-regular family modulo conformal gauge, symbolic m, real omega != 0); fixture-level flux closed (omega = 3/5): nonzero Einstein x extra cross pairing, positive canonical extra-block norms; causal disposition certified: Einstein characteristics (lambda^2-omega^2)^3, decaying Coulomb asymptotics r^-1..r^-3, no causal boundary prescription excludes the branch -- BH-2 closed at the l=2 mode level in BOTH parities; invariant extra-block sign theory, symbolic frequency, omega = 0, outer boundary, general l, stability all OPEN",
       "descriptions": {
-        "causal": "OPEN",
+        "causal": "CERTIFIED",
         "nonlinear": "OPEN",
         "observational": "OPEN",
-        "quantum": "OPEN",
-        "symplectic": "OPEN"
+        "quantum": "CERTIFIED",
+        "symplectic": "CERTIFIED"
       },
       "evidence": [
         {
@@ -529,6 +529,16 @@
           "path": "black_hole_programme/certificates/BH2B_POLAR_REACH.json",
           "result_id": "PURE_WEYL_BH2B_POLAR_REACH",
           "sha256": "c2639050b9d735d73daa756aed99c86e6882d354c99e13eb7a806a7a8d3ea977"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH2B_POLAR_CROSS_FLUX.json",
+          "result_id": "PURE_WEYL_BH2B_POLAR_CROSS_FLUX",
+          "sha256": "39530c7ea9173c5491cc082167e5c06f9439ddee1e5b151857235df965caf26d"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH2B_POLAR_DISPOSITION.json",
+          "result_id": "PURE_WEYL_BH2B_POLAR_DISPOSITION",
+          "sha256": "2369854974dada1168c7bbf9632afda058cabbebce416fe84b7bc169bfbc97bb"
         }
       ],
       "id": "bh.mode.polar.extra-fourth-order-branch",
@@ -538,8 +548,8 @@
           "status": "CERTIFIED"
         },
         "lee_wald": {
-          "statement": "polar extra/cross flux blocks open; the certified null Einstein-kernel block (BH2BF) forces all polar symplectic pairing into blocks involving this branch",
-          "status": "OPEN"
+          "statement": "fixture-level polar horizon flux closed (omega = 3/5, m = 1): delta Ric[h] = psi composition certified on the FULL analytic carrier space with all seven rows verified; Einstein x extra cross pairing NONZERO (representative-independent); extra-block Hermitian norms positive at the canonical composed representatives (i F^r/(pi alpha) ~ +81, +53, +62); Einstein-null and conformal-degeneracy controls separated by >= 8 orders; invariant extra-block sign theory remains OPEN",
+          "status": "CERTIFIED"
         },
         "resonance": {
           "statement": "no exterior cokernel object",
@@ -697,7 +707,7 @@
     }
   ],
   "generated_by": "black_hole_programme/atlas/generate_atlas_fragment.py",
-  "generated_by_sha256": "649d873e6e702b151049475e85992325a6336d567700a36ceb3e7308db168419",
+  "generated_by_sha256": "a0314e2496976f17745bfe025e1e5285ccd4369b5ddeb0577e73055841a6857b",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

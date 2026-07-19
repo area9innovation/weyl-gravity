@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2b-polar-cross-flux-v1",
+  "title": "BH-2B stage 5: polar cross-block and extra-block horizon flux fixtures",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "composition",
+    "fixtures",
+    "invariance_notes",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh2b-polar-cross-flux-v1" },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh2b-polar-cross-flux-v1.schema.json"
+    },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH2B_POLAR_CROSS_FLUX" },
+    "result_token": { "const": "BH2B_POLAR_CROSS_BLOCK_NONZERO_HORIZON_FLUX_FIXTURES" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "frequency_domain",
+        "lifecycle"
+      ],
+      "properties": { "lifecycle": { "const": "CLASSIFIED" } }
+    },
+    "composition": {
+      "type": "object",
+      "required": ["statement", "canonical_choice"]
+    },
+    "fixtures": {
+      "type": "object",
+      "required": [
+        "omega",
+        "radii",
+        "extra_block_diag_norms_iFr_over_pi_alpha",
+        "einstein_extra_cross_iFr_over_pi_alpha",
+        "control_separation",
+        "flux_matrix_rho_1_4"
+      ],
+      "properties": { "omega": { "const": "3/5" } }
+    },
+    "invariance_notes": {
+      "type": "object",
+      "required": ["cross_block", "extra_block", "gauge"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "composition_certified",
+        "all_rows_verified_on_composed_modes",
+        "einstein_null_control_passed",
+        "conformal_degeneracy_control_passed",
+        "cross_block_nonzero_certified",
+        "extra_block_canonical_positivity_certified",
+        "invariant_extra_sign_certified",
+        "symbolic_frequency_certified",
+        "outer_boundary_domain_certified",
+        "causal_exclusion_decided",
+        "growth_or_stability_certified",
+        "general_l_certified"
+      ],
+      "properties": {
+        "composition_certified": { "const": true },
+        "all_rows_verified_on_composed_modes": { "const": true },
+        "einstein_null_control_passed": { "const": true },
+        "conformal_degeneracy_control_passed": { "const": true },
+        "cross_block_nonzero_certified": { "const": true },
+        "extra_block_canonical_positivity_certified": { "const": true },
+        "invariant_extra_sign_certified": { "const": false },
+        "symbolic_frequency_certified": { "const": false },
+        "outer_boundary_domain_certified": { "const": false },
+        "causal_exclusion_decided": { "const": false },
+        "growth_or_stability_certified": { "const": false },
+        "general_l_certified": { "const": false }
+      }
+    },
+    "missing_objects": {
+      "type": "array",
+      "minItems": 5,
+      "items": { "type": "string" }
+    },
+    "stage_seconds": { "type": "object" },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "engine_path",
+        "engine_sha256",
+        "theta_path",
+        "theta_sha256",
+        "bh2b_reach_certificate",
+        "bh2b_reach_certificate_sha256",
+        "bh2b_einstein_certificate",
+        "bh2b_einstein_certificate_sha256",
+        "bh2b_flux_certificate",
+        "bh2b_flux_certificate_sha256"
+      ]
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh2b_polar_cross_flux.py"
+    }
+  }
+}

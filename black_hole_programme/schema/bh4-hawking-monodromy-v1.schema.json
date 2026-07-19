@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh4-hawking-monodromy-v1",
+  "title": "BH-4 stage 1: horizon-monodromy Hawking temperature, universal across branches",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "temperature",
+    "spectra",
+    "monodromy",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh4-hawking-monodromy-v1" },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh4-hawking-monodromy-v1.schema.json"
+    },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH4_HAWKING_MONODROMY" },
+    "result_token": { "const": "BH4_HAWKING_MONODROMY_TEMPERATURE_UNIVERSAL_ACROSS_BRANCHES" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "lifecycle",
+        "quantum_status"
+      ],
+      "properties": { "lifecycle": { "const": "CLASSIFIED" } }
+    },
+    "temperature": {
+      "type": "object",
+      "required": ["kappa", "T_H", "first_law_consistency"],
+      "properties": {
+        "kappa": { "const": "1/(4*m)" },
+        "T_H": { "const": "1/(8*pi*m)" }
+      }
+    },
+    "spectra": {
+      "type": "object",
+      "required": ["axial_extra", "polar_extra", "axial_einstein_rw", "polar_einstein"]
+    },
+    "monodromy": {
+      "type": "object",
+      "required": ["statement", "factors", "universality", "flux_link"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "surface_gravity_certified",
+        "first_law_temperature_consistency_certified",
+        "spectra_rederived_and_matched",
+        "monodromy_universality_certified",
+        "thermal_extra_branch_weighting_certified",
+        "lorentzian_hadamard_state_certified",
+        "renormalized_stress_tensor_certified",
+        "greybody_or_luminosity_certified",
+        "backreaction_certified",
+        "lorentzian_causal_hawking_theorem"
+      ],
+      "properties": {
+        "surface_gravity_certified": { "const": true },
+        "first_law_temperature_consistency_certified": { "const": true },
+        "spectra_rederived_and_matched": { "const": true },
+        "monodromy_universality_certified": { "const": true },
+        "thermal_extra_branch_weighting_certified": { "const": true },
+        "lorentzian_hadamard_state_certified": { "const": false },
+        "renormalized_stress_tensor_certified": { "const": false },
+        "greybody_or_luminosity_certified": { "const": false },
+        "backreaction_certified": { "const": false },
+        "lorentzian_causal_hawking_theorem": { "const": false }
+      }
+    },
+    "missing_objects": {
+      "type": "array",
+      "minItems": 5,
+      "items": { "type": "string" }
+    },
+    "stage_seconds": { "type": "object" },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "engine_path",
+        "engine_sha256",
+        "axial_reach_certificate",
+        "axial_reach_certificate_sha256",
+        "polar_reach_certificate",
+        "polar_reach_certificate_sha256",
+        "polar_einstein_certificate",
+        "polar_einstein_certificate_sha256",
+        "axial_cross_certificate",
+        "axial_cross_certificate_sha256",
+        "polar_cross_certificate",
+        "polar_cross_certificate_sha256",
+        "bh1a_certificate",
+        "bh1a_certificate_sha256"
+      ]
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh4_hawking_monodromy.py"
+    }
+  }
+}

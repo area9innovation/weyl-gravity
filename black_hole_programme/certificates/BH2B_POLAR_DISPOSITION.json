@@ -1,0 +1,82 @@
+{
+  "asymptotics": {
+    "dispersion": "mu^3 (mu + 2 omega)^3 in the EF chart, i.e. (lambda^2 - omega^2)^3 in the t-chart: the polar extra branch propagates on the Einstein characteristics (massless/luminal), 3-dim amplitude spaces at each sign (2 physical + 1 conformal-gauge)",
+    "einstein_control": "the certified 2-dim polar Einstein system eliminates to a K-scalar with dispersion (lambda^2 - omega^2) and sigma = +-2 i omega: same characteristics, asymptotically indistinguishable by falloff class",
+    "gauge_control": "the conformal scalar wave has dispersion (lambda^2 - omega^2) and sigma = +-2 i omega - 1, matching one carrier branch (the gauge direction)",
+    "interpretation": "t-chart sigma in {+-2 i omega - 1, -2, -3}: pure Coulomb log-phases with amplitude falloffs r^-1, r^-2, r^-3 -- ALL DECAYING (stronger than the axial r^0, r^-1): no growing asymptotic solutions at real frequencies",
+    "sigma_ef": {
+      "-2*omega": [
+        "-4*I*omega - 1",
+        "-4*I*omega - 2",
+        "-4*I*omega - 3"
+      ],
+      "0": [
+        "-1",
+        "-2",
+        "-3"
+      ]
+    }
+  },
+  "claim_flags": {
+    "bh2_polar_mode_level_closed": true,
+    "complex_frequency_certified": false,
+    "dispersion_certified": true,
+    "einstein_control_certified": true,
+    "gauge_control_certified": true,
+    "general_l_certified": false,
+    "growth_or_stability_certified": false,
+    "no_growing_asymptotics_certified": true,
+    "well_posedness_certified": false
+  },
+  "declaration": {
+    "background_family": "Schwarzschild, m = 1 fixture; omega symbolic real",
+    "conformal_frame": "working gauge; ingoing EF chart (t-chart equivalents stated)",
+    "generator": "none; asymptotic mode classification",
+    "horizon_condition": "imported: certified two-parameter physical ingoing-regular polar family",
+    "infinity_condition": "formal asymptotic classification at r -> infinity (leading two orders)",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "polar l = 2 linear carrier modes (traceless slice)",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "bh2_closure": "together with the axial disposition (BH-2A stage 5), BH-2 is closed at the l = 2 linear mode level in BOTH parity sectors: pure-Weyl black-hole exteriors cannot be causally truncated to the Einstein sector; their radiation lives in the mixed/extra sectors",
+    "statement": "at the polar l = 2 linear mode level, the extra branch reaches the horizon (two-parameter physical ingoing-regular family modulo conformal gauge), carries nonzero horizon flux (Einstein block null, cross block nonzero), and is bounded decaying oscillatory radiation on the Einstein characteristics at infinity; no causal decay or regularity prescription at either boundary excludes it"
+  },
+  "missing_objects": [
+    "complex-frequency structure (requires coordinator-gated BH-3 vocabulary)",
+    "general l and m; omega = 0 static sector",
+    "initial-boundary well-posedness theorem",
+    "nonlinear and all-orders statements",
+    "invariant extra-block sign theory (null-quotient pairing)"
+  ],
+  "provenance": {
+    "bh2b_cross_flux_certificate": "black_hole_programme/certificates/BH2B_POLAR_CROSS_FLUX.json",
+    "bh2b_cross_flux_certificate_sha256": "39530c7ea9173c5491cc082167e5c06f9439ddee1e5b151857235df965caf26d",
+    "bh2b_einstein_certificate": "black_hole_programme/certificates/BH2B_POLAR_EINSTEIN.json",
+    "bh2b_einstein_certificate_sha256": "df58e1c00ef75450602009ec07f490fe594d1223a5fd54376d150e563cfe9780",
+    "bh2b_flux_certificate": "black_hole_programme/certificates/BH2B_POLAR_FLUX.json",
+    "bh2b_flux_certificate_sha256": "200d71b93a0435e8f484b9236dd39188a74840523c468730cdbba2b58556482b",
+    "bh2b_reach_certificate": "black_hole_programme/certificates/BH2B_POLAR_REACH.json",
+    "bh2b_reach_certificate_sha256": "c2639050b9d735d73daa756aed99c86e6882d354c99e13eb7a806a7a8d3ea977",
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh2b_polar_disposition.py"
+  },
+  "result_id": "PURE_WEYL_BH2B_POLAR_DISPOSITION",
+  "result_token": "BH2B_POLAR_CAUSAL_DISPOSITION_EXTRA_BRANCH_UNAVOIDABLE",
+  "schema": "pure-weyl-bh2b-polar-disposition-v1",
+  "schema_path": "black_hole_programme/schema/bh2b-polar-disposition-v1.schema.json",
+  "schema_sha256": "c4513738a9e5fdc555bae6779821bb9343e21e3d319d82bdd985f73509017df6",
+  "stage_seconds": {
+    "carrier_asymptotics": 0.4,
+    "carrier_rows": 3.7,
+    "einstein_control": 269.1,
+    "gauge_control": 0.7,
+    "total": 274.0
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2b_polar_disposition.py"
+}

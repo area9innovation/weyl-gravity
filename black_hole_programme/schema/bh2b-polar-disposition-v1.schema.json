@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2b-polar-disposition-v1",
+  "title": "BH-2B stage 6: polar causal disposition -- extra branch unavoidable",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "asymptotics",
+    "disposition",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh2b-polar-disposition-v1" },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh2b-polar-disposition-v1.schema.json"
+    },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH2B_POLAR_DISPOSITION" },
+    "result_token": { "const": "BH2B_POLAR_CAUSAL_DISPOSITION_EXTRA_BRANCH_UNAVOIDABLE" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "lifecycle"
+      ],
+      "properties": { "lifecycle": { "const": "CLASSIFIED" } }
+    },
+    "asymptotics": {
+      "type": "object",
+      "required": [
+        "dispersion",
+        "sigma_ef",
+        "interpretation",
+        "einstein_control",
+        "gauge_control"
+      ]
+    },
+    "disposition": {
+      "type": "object",
+      "required": ["statement", "bh2_closure"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "dispersion_certified",
+        "no_growing_asymptotics_certified",
+        "einstein_control_certified",
+        "gauge_control_certified",
+        "bh2_polar_mode_level_closed",
+        "complex_frequency_certified",
+        "general_l_certified",
+        "well_posedness_certified",
+        "growth_or_stability_certified"
+      ],
+      "properties": {
+        "dispersion_certified": { "const": true },
+        "no_growing_asymptotics_certified": { "const": true },
+        "einstein_control_certified": { "const": true },
+        "gauge_control_certified": { "const": true },
+        "bh2_polar_mode_level_closed": { "const": true },
+        "complex_frequency_certified": { "const": false },
+        "general_l_certified": { "const": false },
+        "well_posedness_certified": { "const": false },
+        "growth_or_stability_certified": { "const": false }
+      }
+    },
+    "missing_objects": {
+      "type": "array",
+      "minItems": 5,
+      "items": { "type": "string" }
+    },
+    "stage_seconds": { "type": "object" },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "engine_path",
+        "engine_sha256",
+        "bh2b_reach_certificate",
+        "bh2b_reach_certificate_sha256",
+        "bh2b_flux_certificate",
+        "bh2b_flux_certificate_sha256",
+        "bh2b_cross_flux_certificate",
+        "bh2b_cross_flux_certificate_sha256",
+        "bh2b_einstein_certificate",
+        "bh2b_einstein_certificate_sha256"
+      ]
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh2b_polar_disposition.py"
+    }
+  }
+}
