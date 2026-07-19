@@ -1,0 +1,15 @@
+{
+  "id": "sf:forge-request/groebner-ideal-ad-ell2",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Exact polynomial-ideal and Groebner-basis machinery over Q, with a declared monomial order, reduction and ideal-membership witnesses, elimination support, and an independently checkable basis certificate. This blocks the Paper-13 a,d times ell=2 extra polynomial zero-locus stratum in bridge/certificates/einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.json and is the V1 adoption scout's M12 blocker. The installed msolve 0.9.4 C API is a candidate exact producer, but the Forge result and checker must use canonical Forge polynomial data rather than trusting an external transcript.",
+    "depends_on": [
+      "sf:program/work/bridge"
+    ],
+    "stop_condition": "a Forge gate reconstructs the committed Paper-13 ideal without running physics-repo Python, computes the declared reduced Groebner basis and zero-locus stratum, verifies the basis by exact S-polynomial/reduction and bidirectional ideal-membership witnesses, and cross-checks the certificate's embedded basis and monomial order; a decisive coefficient or exponent mutation is rejected",
+    "forbid": "floating-point coefficient paths; treating an msolve or other external-library rerun as independent verification; silently assuming the ideal is zero-dimensional; changing variable or monomial order without recording the crosswalk; hiding the external dependency version or licence; promoting the algebraic stratum to bounded, causal, nonlinear-all-order or physical-branch conclusions"
+  }
+}

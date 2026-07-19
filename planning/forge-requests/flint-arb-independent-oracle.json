@@ -1,0 +1,15 @@
+{
+  "id": "sf:forge-request/flint-arb-independent-oracle",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "An optional, version-pinned FLINT 3.x / Arb / Acb / Calcium bridge that acts as an independent exact-or-rigorous oracle for Forge polynomial, spectral and validated-matrix kernels. Use a narrow C shim and canonical serialized values rather than exposing FLINT object layouts. First consumers are the repeated-root Schwarzschild asymptotic matrices behind Paper 14 and the Paper-13 resultant/minimal-polynomial fixtures. Ubuntu 26.04 supplies libflint-dev 3.4.0 but no flint.pc, so discovery must not require pkg-config.",
+    "depends_on": [
+      "sf:program/work/black-hole"
+    ],
+    "stop_condition": "a Forge gate records the FLINT build/version and independently cross-checks one committed Paper-14 repeated-root matrix characteristic/minimal polynomial plus rigorous Acb eigenvalue clusters, and one committed Paper-13 polynomial resultant; outputs are converted into canonical Forge exact values or explicitly tagged rigorous enclosures, and mutations of a matrix entry and enclosure bound are rejected",
+    "forbid": "using FLINT as both producer and verifier; treating an Arb/Acb enclosure as an exact symbolic value; allowing raw FLINT pointers or ownership to escape the adapter; depending only on pkg-config; replacing Forge canonical types with opaque external objects; omitting precision, version, build options, licence or dependency provenance; promoting a numerical enclosure to asymptotic admissibility, stability or a particle claim"
+  }
+}

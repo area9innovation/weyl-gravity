@@ -1,0 +1,16 @@
+{
+  "id": "sf:forge-request/wigner-cg-gaunt-harmonic-kernel",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "A convention-explicit harmonic representation layer for Wigner 3j/6j/9j symbols, Clebsch--Gordan and Gaunt coefficients, parity/reality folds, and the S2/SU(2) coupling operations needed by the compact-product and Berger laboratories. The first consumers are closed_universe_observers/certificates/BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE.json and the 164 action-derived coefficients isolated by bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json. libwignernj is a candidate correct-rounded/high-precision independent rail; Forge must retain exact phase and selection-rule data.",
+    "depends_on": [
+      "sf:program/work/bridge",
+      "sf:program/work/berger"
+    ],
+    "stop_condition": "a Forge gate reproduces the committed Berger polarization Clebsch--Gordan recurrence and a declared nontrivial subset of the compact-product parity workload with explicit normalization, phase, conjugation and real/complex harmonic crosswalks; an independent libwignernj or formula rail agrees at certified precision, and mutations of a phase, parity rule and triangle condition are rejected",
+    "forbid": "promoting correct-rounded or high-precision library output to an exact algebraic certificate; leaving Condon--Shortley, real-harmonic, orientation or conjugation conventions implicit; treating a harmonic selection-rule zero as an action-derived source zero; running physics-repo Python as the Forge gate; inferring complete harmonic coverage, an infinite-mode tail, detector response, bounded continuation or physical branch mixing from the initial fixtures"
+  }
+}
