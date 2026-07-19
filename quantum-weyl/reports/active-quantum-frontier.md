@@ -177,8 +177,9 @@ is `3188/27`. The physical triangle carrier inventory is now complete: the
 rank-49 tangent-plus-scalar-master span grows through the `M14` singlet and a
 standard-`S3` pair to exact generic rank 52, and five exact orbit ranks plus
 the generated `S3` crosswalk place all eleven physical rows in that span. The
-three new renormalized master values and independent finite-counterterm
-normalization remain open.
+three new renormalized master values and their scale derivatives are now
+exact in the common Mellin scheme. The eleven physical master-coordinate
+functions and independent finite-counterterm normalization remain open.
 The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
 and rational corner flux. Four explicit primitives cover every orientation,
@@ -510,15 +511,15 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. evaluate the renormalized `M14` singlet and standard-`S3` pair in the
-   completed six-master physical triangle span; the generic boundary
-   incidence and nonzero `M14` scale-row disposition are already exact;
-2. combine those triangle master values with the 33 exact minimally-subtracted finite
+1. compute the exact six-master coordinate functions of the eleven physical
+   channels and contract them with the now-evaluated Mellin-renormalized
+   `M14` singlet and standard-`S3` pair;
+2. combine those triangle rows with the 33 exact minimally-subtracted finite
    `H1-H2` contact rows (equal-box TT sum `3188/27`) and retain the independent
    mu-independent finite-counterterm normalization as an explicit scheme input;
 3. supply the full generic primed Green kernel or spectral measure for the
    global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the
-   physical Hessian to integrate
+   physical Hessian to assemble
    the five parity-even repository form factors;
 4. classify the parity-odd derivative sector and fix the finite `C2` and
    absolute dressed `R(g_hat)^2` normalizations and renormalized products;

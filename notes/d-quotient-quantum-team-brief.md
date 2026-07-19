@@ -1174,7 +1174,7 @@ effective-action claims; the unsupported Hadamard assertion was removed from
 the abstract. Exact quotient, coefficient, determinant, spectral-sequence,
 matter, quartet, effective-action, and boundary tables are generated from eighteen hashed
 certificate inputs and pass an independent stale/tamper check. The claim map now
-binds fifty-nine direct certificate dependencies, including the finite-contact and physical triangle master-completeness,
+binds sixty direct certificate dependencies, including the finite-contact, physical triangle master-completeness and renormalized master-value,
 symmetric-point
 simplex and generic barycentric-factorization receipts and the formerly indirect pure-Diff/mixed quotient and factorwise
 coefficient ledger. The disposition
@@ -1216,3 +1216,29 @@ EVALUATE_RENORMALIZED_SINGLET_AND_STANDARD_S3_MASTER_VALUES_AND_ASSEMBLE_PHYSICA
 
 Receipt:
 [`generic-background-physical-hessian-triangle-master-completeness.md`](../quantum-weyl/reports/generic-background-physical-hessian-triangle-master-completeness.md).
+
+## Renormalized physical triangle master values (2026-07-19)
+
+The three new masters are now evaluated in the already frozen common
+dominant-sector Mellin scheme.  Orbit-first reduction needs only six universal
+half-sector kernels: one renormalized singlet kernel and two finite first-
+moment kernels on each half.  Cyclic box substitution and exact chart
+reconstruction then give
+
+```text
+M14 = FP_MS integral e3/Delta^4
+M15 = FP_MS integral e3*(alpha1-alpha2)/Delta^4
+M16 = FP_MS integral e3*(alpha2-alpha0)/Delta^4.
+```
+
+Every value is stored as an explicit sector-decomposed rational/logarithmic
+function of `(x1,x2,x3,z)` with `z=mu^2/Q^2`, together with its exact scale
+derivative.  The cold producer takes 44.24s, the independent replay with
+direct quadrature of all six defining finite parts takes 12.54s, and two
+positive-Euclidean `S3` fixtures agree beyond 60 decimal places.  This closes
+the master-value gate, not the physical triangle: the exact six-master
+coordinate functions of the eleven physical channels are still required
+before the five third-curvature form factors can be assembled.
+
+Receipt:
+[`generic-background-physical-hessian-triangle-renormalized-master-values.md`](../quantum-weyl/reports/generic-background-physical-hessian-triangle-renormalized-master-values.md).

@@ -178,7 +178,10 @@ also closed: the 46 canonical relative-IBP tangent columns plus the three
 scalar-triangle masters, the `M14` singlet and the standard-`S3` pair
 `e3*(alpha1-alpha2)`, `e3*(alpha2-alpha0)` have exact generic rank 52, and
 all eleven physical rows stay in that span. The three new renormalized master
-values and complete form-factor assembly remain open. See
+values are now exact sector-decomposed rational/logarithmic functions in the
+same dominant-sector Mellin scheme, with exact scale derivatives and an
+independent two-fixture `S3` replay. The eleven physical master-coordinate
+functions and complete form-factor assembly remain open. See
 [`generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md`](../../reports/generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md).
 
 Replay with:

@@ -407,6 +407,8 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_six_master_span_complete"] is True
     assert claims["physical_Hessian_triangle_six_master_generic_rank"] == 52
     assert claims["physical_Hessian_triangle_standard_S3_pair_required"] is True
+    assert claims["physical_Hessian_triangle_renormalized_new_master_values_computed"] is True
+    assert claims["physical_Hessian_triangle_renormalized_master_value_count"] == 3
     assert payload["explicit_nonclaims"][
         "physical_n3_three_linear_triangle_integrated"
     ] is False
@@ -453,7 +455,7 @@ def main() -> None:
         "denominator": 6561,
     }
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
-    assert len(payload["inputs"]) == 59
+    assert len(payload["inputs"]) == 60
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

@@ -217,7 +217,7 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(
             self.payload["claim_flags"]["PHYSICAL_TRIANGLE_SIX_MASTER_SPAN_COMPLETE"]
         )
-        self.assertFalse(
+        self.assertTrue(
             self.payload["claim_flags"][
                 "RENORMALIZED_PHYSICAL_TRIANGLE_MASTER_VALUES_COMPUTED"
             ]
@@ -494,7 +494,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "EVALUATE_RENORMALIZED_SINGLET_AND_STANDARD_S3_MASTER_VALUES_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS",
+            "COMPUTE_PHYSICAL_MASTER_COORDINATE_FUNCTIONS_AND_ASSEMBLE_FIVE_THIRD_CURVATURE_FORM_FACTORS",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

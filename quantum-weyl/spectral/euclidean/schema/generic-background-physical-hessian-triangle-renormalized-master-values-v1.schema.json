@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-generic-background-physical-hessian-triangle-renormalized-master-values-v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "subtraction_convention",
+    "template_rows",
+    "sector_substitutions",
+    "master_rows",
+    "identity_ledger",
+    "formula_digest",
+    "dependencies",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-physical-hessian-triangle-renormalized-master-values-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_RENORMALIZED_MASTER_VALUES"},
+    "result_state": {"type": "string"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {
+      "type": "array",
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "classical_commit": {"type": "string", "minLength": 1},
+    "scope": {"type": "object"},
+    "subtraction_convention": {"type": "object"},
+    "template_rows": {"type": "object"},
+    "sector_substitutions": {"type": "object"},
+    "master_rows": {"type": "array", "minItems": 3, "maxItems": 3},
+    "identity_ledger": {"type": "object"},
+    "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependencies": {"type": "object"},
+    "claim_flags": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"}
+  },
+  "additionalProperties": false
+}
