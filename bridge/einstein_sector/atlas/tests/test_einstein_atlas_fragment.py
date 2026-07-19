@@ -90,7 +90,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("{(c,d,W_x,A)}", second_order["bounded_or_finite_quasiperiodic"]["statement"])
-        self.assertIn("a,c,d times oscillatory modes", entry["claim_boundary"])
+        self.assertIn("a-times-all and d-times-nonzero-k polynomial maps", entry["claim_boundary"])
         self.assertIn("Q_e*a=0", entry["claim_boundary"])
 
     def test_complete_electric_wilson_transport_is_bounded_but_not_causal(self) -> None:
@@ -100,7 +100,15 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("Q_e*a=0", entry["claim_boundary"])
-        self.assertIn("a,c,d polynomial maps", entry["claim_boundary"])
+        self.assertIn("a/d polynomial maps", entry["claim_boundary"])
+
+    def test_circumference_column_separates_resonance_from_polynomial_growth(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.circumference_complete_oscillator_column"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("R_(j,a), not P_(j,r)", entry["mode_data"]["resonance"]["statement"])
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@
     "homogeneous_c_d_Wx": "the complete quadratic source vanishes when a=b=Q_e=0; c and W_x are spectators and d has zero self-source",
     "regularity": "real, smooth, spatially periodic and time independent, hence bounded finite-quasiperiodic"
   },
-  "claim_boundary": "This is the complete bounded second-order theorem for the standard generalized-zero carrier and a universal b=B=0, Q_e*a=0 consequence for arbitrary finite inputs. It does not classify a,c,d crossed with oscillatory modes or constant-A shell resonances, solve the full bounded finite-support cone, prove causal propagation, all-orders integration, final residual descent, observables, particles or quantum theory.",
+  "claim_boundary": "This is the complete bounded second-order theorem for the standard generalized-zero carrier and a universal b=B=0, Q_e*a=0 consequence for arbitrary finite inputs. It does not classify a or d polynomial cross maps, c, k=0 d or constant-A shell resonances, solve the full bounded finite-support cone, prove causal propagation, all-orders integration, final residual descent, observables, particles or quantum theory.",
   "classification": {
     "all_orders_integrability": false,
     "causal_retarded_map_certified": false,
@@ -36,14 +36,14 @@
     "homogeneous": "K=a+b*t, C=a*t^2+(b/3)t^3+c+d*t, A_x=W_x+Q_e*t",
     "twist": "h_(x,a)=(A_a+B_a*t)X_a, a_x=-(A_a+B_a*t)Y_(1a)"
   },
-  "interpretation": "Bounded second-order consistency does not remove all global data. It removes the homogeneous cubic Jordan velocity b and every twist velocity B, and the Taub equation then removes a and Q_e in the pure global sector. Static circumference, linear circle shear d, Wilson holonomy and constant SO3 twist survive with a bounded correction. In the full finite carrier, b=B=0 and Q_e*a=0 are already universal; the remaining positive-degree problem contains a,c,d times oscillators, while constant A can still enter bounded shell resonances.",
+  "interpretation": "Bounded second-order consistency does not remove all global data. It removes the homogeneous cubic Jordan velocity b and every twist velocity B, and the Taub equation then removes a and Q_e in the pure global sector. Static circumference, linear circle shear d, Wilson holonomy and constant SO3 twist survive with a bounded correction. In the full finite carrier, b=B=0 and Q_e*a=0 are already universal; the remaining positive-degree problem contains a times all oscillators and d times nonzero-k oscillators. Circumference c is a bounded resonance rather than a positive-degree source at nonzero k.",
   "lifecycle_state": "CLASSIFIED",
   "moment_map_intersection": {
     "after_polynomial_elimination": "mu_H=-(a^2+Q_e^2), mu_Px=0, mu_J=0",
     "complete_bounded_tangent_cone": "Z2_global^bounded={(c,d,W_x,A): c,d,W_x real, A in R^3}",
     "real_common_zero": "a=0, Q_e=0"
   },
-  "next_gate": "remove the universal Q_e-times-oscillator and W_x columns, then compute the residual a,c,d times arbitrary q/p oscillator polynomial maps and intersect their zero locus with the finite shell-resonance ledger R_(j,a)",
+  "next_gate": "compute the residual a-times-all-oscillator and d-times-nonzero-k polynomial maps, then intersect their zero locus with the c, k=0 d, constant-A and oscillator shell-resonance ledger R_(j,a)",
   "polynomial_growth_ideal": {
     "SO3_twist_leading_norm_squared": "2*(B_x**2 + B_y**2 + B_z**2)**2/3",
     "SO3_twist_leading_tensor": "STF(B tensor B)",
@@ -71,7 +71,7 @@
   },
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_standard_global_bounded_second_order.py",
-    "generator_sha256": "c8e4afac82f65517a00ccc8224e803528c7a6bedae2af9ad61beb8b31c13221f",
+    "generator_sha256": "cfc6e7de17c60ed5c3d02724cff2784889e7589baca7b3bb3405ddebf7773c13",
     "inputs": {
       "abstract_cone": {
         "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
@@ -123,7 +123,7 @@
   },
   "universal_complete_carrier_corollary": {
     "reason": "oscillator products are bounded; homogeneous-twist cross terms lie in L=1; therefore neither the homogeneous L=0 b^2*t^2 coefficient, the twist L=2 STF(B tensor B)*t^2 coefficient, nor the zero-frequency Maxwell Q_e*a*t coefficient can be canceled by another certified input block",
-    "remaining_full_carrier_polynomial_gate": "classify a,c,d crossed with the finite oscillatory carrier; Q_e-times-oscillator transport and W_x are treated separately, while constant A can still enter the bounded shell-resonance ledger",
+    "remaining_full_carrier_polynomial_gate": "classify a crossed with all oscillators and d crossed with nonzero-k oscillators; c, constant A and k=0 d belong to the bounded shell-resonance ledger, while Q_e-times-oscillator transport and W_x are treated separately",
     "statement": "for any complete finite-support input admitting a bounded second-order correction, b=0, B=0 and Q_e*a=0"
   },
   "verification_commands": [
@@ -149,7 +149,7 @@
       "status": "PASS_BY_CONTENT_ADDRESS"
     },
     "tier_3": {
-      "reason": "a,c,d oscillator cross-polynomials, constant-A resonance, complete bounded, causal, all-orders, residual and quantum gates remain excluded",
+      "reason": "a and d oscillator cross-polynomials, c/k=0-d/constant-A resonance, complete bounded, causal, all-orders, residual and quantum gates remain excluded",
       "status": "NOT_RUN"
     }
   }

@@ -117,8 +117,8 @@ def build() -> dict[str, Any]:
             "electric_column": "every Q_e-times-oscillator source is in the image of L on the bounded finite-quasiperiodic correction class, so all of its P_(j,r) and R_(j,a) components vanish",
             "Wilson_column": "every W_x-times-oscillator source vanishes identically",
             "independent_global_condition": "the zero-frequency global self coefficient still requires Q_e*a=0",
-            "remaining_polynomial_gate": "after b=B=0 and Q_e*a=0, only a,c,d crossed with oscillators can contribute new positive-degree P_(j,r) components",
-            "remaining_resonance_gate": "constant twist position A and the remaining bounded oscillator products can still contribute R_(j,a)",
+            "remaining_polynomial_gate": "after b=B=0 and Q_e*a=0, a crossed with all oscillators and d crossed with nonzero-k oscillators can contribute positive-degree P_(j,r) components",
+            "remaining_resonance_gate": "circumference c, k=0 d, constant twist position A and bounded oscillator products can still contribute R_(j,a)",
         },
         "correction_classes": {
             "BOUNDED_OR_FINITE_QUASIPERIODIC": {"status": "CERTIFIED"},
@@ -135,8 +135,8 @@ def build() -> dict[str, Any]:
             "causal_or_quantum_claim": False,
         },
         "interpretation": "Electric variation is not an independent bounded resonance column against radiative modes: electromagnetic duality transports every certified oscillator and supplies a bounded fixed-bundle mixed correction. Flat Wilson data are invisible to the local equations. This removes Q_e and W_x from the oscillator part of the bounded ledger without removing the separate global condition Q_e*a=0.",
-        "next_gate": "compute the a,c,d oscillator polynomial maps, then solve the surviving constant-A and oscillator shell-resonance equations",
-        "claim_boundary": "This is a second-order mixed transport theorem for certified nonzero-frequency compact modes. It does not extend the pure Q_e direction to an all-orders fixed-bundle duality orbit, classify a,c,d or constant-A interactions, solve the complete bounded cone, construct a causal map, descend residual states, or make observational, particle or quantum claims.",
+        "next_gate": "classify circumference c in the shell-resonance ledger, compute the a and d polynomial maps, then solve the surviving k=0 d, constant-A and oscillator resonance equations",
+        "claim_boundary": "This is a second-order mixed transport theorem for certified nonzero-frequency compact modes. It does not extend the pure Q_e direction to an all-orders fixed-bundle duality orbit, classify a or d polynomial interactions or the c/k=0-d/constant-A resonance ledger, solve the complete bounded cone, construct a causal map, descend residual states, or make observational, particle or quantum claims.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),
             "generator_sha256": _sha256(Path(__file__)),
@@ -147,7 +147,7 @@ def build() -> dict[str, Any]:
             "tier_0": {"status": "PASS", "elapsed_seconds": 0.20, "max_rss_kb": 16184},
             "tier_1": {"status": "PASS", "elapsed_seconds": 1.90, "max_rss_kb": 59624, "tests_run": 8},
             "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "the complete oscillator inventory and direct ell=2 duality fixture are unchanged exact inputs"},
-            "tier_3": {"status": "NOT_RUN", "reason": "a,c,d, constant-A, complete bounded, causal, residual and quantum gates remain excluded"},
+            "tier_3": {"status": "NOT_RUN", "reason": "a,d polynomial maps, c/k=0-d/constant-A resonance, complete bounded, causal, residual and quantum gates remain excluded"},
         },
         "verification_commands": [
             "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport --check",

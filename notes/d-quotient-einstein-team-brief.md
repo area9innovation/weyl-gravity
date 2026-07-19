@@ -2293,15 +2293,30 @@ direction has `delta F=0`, so every `W_x` mixed source vanishes.  Atlas row
 `einstein.ph.wm.interaction.electric_wilson_complete_oscillator_transport`
 records these claims with causal transport still `NO_CERTIFIED_MAP`.
 
-The active bounded polynomial gate is therefore exactly `a,c,d` crossed
-with the finite oscillator inventory.  The inclusion of `c` is deliberate:
-the certified radius transport is bounded at `k=0`, but at nonzero momentum
-differentiating the dispersion can produce a secular
-`t*exp(-i*omega*t)` correction and cannot be imported into the bounded class.
-After the `a,c,d` polynomial zero locus is known, it must be intersected with
-constant-twist and oscillator shell functionals `R_(j,a)`.  This nonlinear
-transport result is input to active Bridge 1; it does not promote the linear
-relative triangle to a nonlinear morphism.
+The circumference column is now completely classified as well.  Along the
+exact family `R^2=1+eta*c`, every shell has
+`omega_R^2=k^2/R^2+m_branch^2`.  At `k=0`, index transport is an ordinary
+bounded correction.  At `k!=0`, differentiation gives
+
+```text
+partial_eta exp(-i*omega_eta*t)|_0
+  = i*c*k^2*t*exp(-i*omega*t)/(2*omega).
+```
+
+Thus the source is bounded but resonant: the nonradical Lee--Wald current
+proves a nonzero `R_(j,a)` for every nonzero mode when `c*k!=0`, while the
+displayed secular term proves smooth extension.  This is not a
+`P_(j,r)` coefficient.  The complete `c` cross column is bounded-compatible
+exactly when `c=0` or oscillator support is contained in `k=0`.  Atlas row
+`einstein.ph.wm.interaction.circumference_complete_oscillator_column`
+records the two momentum strata without merging them.
+
+The active positive-degree gate is therefore `a` crossed with all
+oscillators and `d` crossed with nonzero-momentum oscillators.  After that
+zero locus is known, it must be intersected with `c`, zero-momentum `d`,
+constant-twist and oscillator shell functionals `R_(j,a)`.  These nonlinear
+transport results are inputs to active Bridge 1; they do not promote the
+linear relative triangle to a nonlinear morphism.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

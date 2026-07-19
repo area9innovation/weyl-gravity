@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Complete circumference oscillator bounded classification",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "radius_family_proof",
+    "matrix_system_lift", "bounded_classification", "smooth_secular_classification",
+    "bounded_ledger_consequence", "correction_classes", "classification",
+    "interpretation", "next_gate", "claim_boundary", "provenance",
+    "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-circumference-complete-oscillator-bounded-classification-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_CIRCUMFERENCE_COMPLETE_OSCILLATOR_BOUNDED_CLASSIFICATION"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "REDUCED-MODE"}},
+    "scope": {"type": "object"},
+    "radius_family_proof": {"type": "object"},
+    "matrix_system_lift": {"type": "object"},
+    "bounded_classification": {"type": "object"},
+    "smooth_secular_classification": {"type": "object"},
+    "bounded_ledger_consequence": {"type": "object"},
+    "correction_classes": {"type": "object"},
+    "classification": {"type": "object"},
+    "provenance": {"type": "object"},
+    "verification_receipt": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": true
+}

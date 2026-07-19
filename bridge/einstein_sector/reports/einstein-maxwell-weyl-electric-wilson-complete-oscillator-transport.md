@@ -29,8 +29,9 @@ Consequently every `W_x` mixed source vanishes.
 
 This does not remove the separate zero-frequency condition `Q_e*a=0` and it
 does not solve the complete bounded cone.  After the already universal
-`b=B=0` and `Q_e*a=0` conditions, the positive-degree gate is reduced to
-`a,c,d` crossed with oscillators.  Constant twist position and bounded wave
+`b=B=0` and `Q_e*a=0` conditions, the positive-degree gate is reduced to `a`
+crossed with all oscillators and `d` crossed with nonzero-momentum modes.
+Circumference, zero-momentum `d`, constant twist position and bounded wave
 products can still contribute shell-resonance functionals.
 
 Causal transport, all-orders fixed-bundle duality, residual descent,

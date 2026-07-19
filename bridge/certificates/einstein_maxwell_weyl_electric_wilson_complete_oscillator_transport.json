@@ -9,10 +9,10 @@
     "Wilson_column": "every W_x-times-oscillator source vanishes identically",
     "electric_column": "every Q_e-times-oscillator source is in the image of L on the bounded finite-quasiperiodic correction class, so all of its P_(j,r) and R_(j,a) components vanish",
     "independent_global_condition": "the zero-frequency global self coefficient still requires Q_e*a=0",
-    "remaining_polynomial_gate": "after b=B=0 and Q_e*a=0, only a,c,d crossed with oscillators can contribute new positive-degree P_(j,r) components",
-    "remaining_resonance_gate": "constant twist position A and the remaining bounded oscillator products can still contribute R_(j,a)"
+    "remaining_polynomial_gate": "after b=B=0 and Q_e*a=0, a crossed with all oscillators and d crossed with nonzero-k oscillators can contribute positive-degree P_(j,r) components",
+    "remaining_resonance_gate": "circumference c, k=0 d, constant twist position A and bounded oscillator products can still contribute R_(j,a)"
   },
-  "claim_boundary": "This is a second-order mixed transport theorem for certified nonzero-frequency compact modes. It does not extend the pure Q_e direction to an all-orders fixed-bundle duality orbit, classify a,c,d or constant-A interactions, solve the complete bounded cone, construct a causal map, descend residual states, or make observational, particle or quantum claims.",
+  "claim_boundary": "This is a second-order mixed transport theorem for certified nonzero-frequency compact modes. It does not extend the pure Q_e direction to an all-orders fixed-bundle duality orbit, classify a or d polynomial interactions or the c/k=0-d/constant-A resonance ledger, solve the complete bounded cone, construct a causal map, descend residual states, or make observational, particle or quantum claims.",
   "classification": {
     "Q_e_times_every_oscillator_bounded_removable": true,
     "W_x_times_every_oscillator_source_zero": true,
@@ -62,10 +62,10 @@
   },
   "interpretation": "Electric variation is not an independent bounded resonance column against radiative modes: electromagnetic duality transports every certified oscillator and supplies a bounded fixed-bundle mixed correction. Flat Wilson data are invisible to the local equations. This removes Q_e and W_x from the oscillator part of the bounded ledger without removing the separate global condition Q_e*a=0.",
   "lifecycle_state": "CLASSIFIED",
-  "next_gate": "compute the a,c,d oscillator polynomial maps, then solve the surviving constant-A and oscillator shell-resonance equations",
+  "next_gate": "classify circumference c in the shell-resonance ledger, compute the a and d polynomial maps, then solve the surviving k=0 d, constant-A and oscillator resonance equations",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.py",
-    "generator_sha256": "805b30a3f0be0784fbb6401c38bbe58d785b761e83a51ee1c1dea2bdbaeee957",
+    "generator_sha256": "eba9748b3add5a9be009dc19ea8b0a5e48900a4dc551317c61d0bc6796030183",
     "inputs": {
       "background": {
         "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
@@ -73,7 +73,7 @@
       },
       "bounded_global_gate": {
         "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
-        "sha256": "b54c17cce8a0e219b0158a13a7a810fa2fa9230f6a5052ffe7cd601c7d769fb7"
+        "sha256": "e044f97fc88cfb7916eaeec0819a5655ebec0f0fbed2312d1170f1adc2898e41"
       },
       "complete_inventory": {
         "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
@@ -130,7 +130,7 @@
       "status": "PASS_BY_CONTENT_ADDRESS"
     },
     "tier_3": {
-      "reason": "a,c,d, constant-A, complete bounded, causal, residual and quantum gates remain excluded",
+      "reason": "a,d polynomial maps, c/k=0-d/constant-A resonance, complete bounded, causal, residual and quantum gates remain excluded",
       "status": "NOT_RUN"
     }
   }

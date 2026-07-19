@@ -1,0 +1,74 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_CIRCUMFERENCE_COMPLETE_OSCILLATOR_BOUNDED_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CIRCUMFERENCE_COMPLETE_OSCILLATOR_BOUNDED_CLASSIFICATION",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "artifacts": {
+    "generator": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.py",
+      "sha256": "4008ed496634f35a808b9c6dc9419a14853bc39a54e7365696a7efd3a98f52d5"
+    },
+    "certificate": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
+      "sha256": "5fa995b75b18bf32859e0db92cc6ea3b3728c0ee716cb37e3d0c3a792a0447fb"
+    },
+    "schema": {
+      "path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.schema.json",
+      "sha256": "992e690d9d63f6ff6a5c221f610ee4599008adc0bafb729c45c573fb3cbe6b4f"
+    },
+    "independent_verifier": {
+      "path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.py",
+      "sha256": "52b84ca961530858741d0b1869541ca4beabe570ac1fdf06c02aa6c617a9f2d7"
+    },
+    "tests": {
+      "path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.py",
+      "sha256": "d1fa71aca051d4d9cc45afe7303fd5790283000e356eea99abbdb21f79440c6a"
+    },
+    "atlas_generator": {
+      "path": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
+      "sha256": "66f4a8aad433fdd250e09e8b2b050f9d525c866348b493e9c6eb1d0cf0516e42"
+    },
+    "atlas_fragment": {
+      "path": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+      "sha256": "1e1de620616ae7723994db590c17ff338ca38a794be4f27e32f7d5a4b350adf1"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.24,
+      "max_rss_kb": 16180,
+      "commands": [
+        "python3 -m py_compile <scoped theorem, verifier, tests and atlas generator>",
+        "python3 -m json.tool <scoped schema, certificate, atlas fragment and receipt>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.56,
+      "max_rss_kb": 61500,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ],
+      "tests_run": 17
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "complete q/p dispersions, nonradical action-derived current blocks and the coefficient-explicit k=0 radius primitive are unchanged exact inputs"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "a,d polynomial maps, k=0 d, constant-A, complete bounded, causal, all-orders, residual, observational and quantum gates remain excluded"
+    }
+  }
+}

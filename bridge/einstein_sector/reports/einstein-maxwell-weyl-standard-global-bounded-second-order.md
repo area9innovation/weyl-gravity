@@ -22,10 +22,11 @@ The polynomial elimination is also universal in the complete finite-support
 carrier: bounded oscillatory products cannot cancel the zero-frequency
 homogeneous `b^2 t^2`, twist `STF(B tensor B)t^2`, or Maxwell `Q_e*a*t`
 blocks.  Thus every point of the still-open complete bounded cone already
-satisfies `b=B=0` and `Q_e*a=0`.  The next gate is the residual `a,c,d` times
-oscillator polynomial ideal.  Electric-duality transport and flat Wilson
-data are treated separately, while constant twist position can still enter
-the shell-resonance ledger.
+satisfies `b=B=0` and `Q_e*a=0`.  The remaining positive-degree gate is `a`
+times all oscillators and `d` times nonzero-momentum oscillators.
+Electric-duality transport and flat Wilson data are treated separately;
+static circumference `c`, zero-momentum `d`, and constant twist position
+belong instead to the shell-resonance ledger.
 
 No complete finite-support bounded, causal, all-orders, residual,
 observational, particle, or quantum theorem is claimed here.

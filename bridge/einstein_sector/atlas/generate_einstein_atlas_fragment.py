@@ -43,6 +43,7 @@ CERTIFICATES = {
     "complete_finite_smooth": ROOT / "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
     "standard_global_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
     "electric_wilson_transport": ROOT / "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
+    "circumference_classification": ROOT / "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
     "branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
     "exceptional_offshell": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
     "covariant_chain_map": ROOT / "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
@@ -235,7 +236,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "The positive-degree ideal has real zero locus b=B=0 and Q_e*a=0; STF(B tensor B) supplies the SO3-complete twist witness."),
             _second_order(("CERTIFIED", "The complete bounded cone is {(c,d,W_x,A)}. Its homogeneous source vanishes and constant A has a time-independent polar L=2 correction."), ("CERTIFIED", "The bounded correction is also a smooth exponential-polynomial correction."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
             _evidence("standard_global_bounded", "standard", "taub", "abstract_cone"),
-            "This is the complete bounded second-order theorem only for the standard generalized-zero carrier. Universally it forces b=B=0 and Q_e*a=0 in every finite-support bounded candidate, but a,c,d times oscillatory modes, constant-A shell resonances, infinite sums, causal propagation, final residual states, observables and quantum transfer remain fail-closed.",
+            "This is the complete bounded second-order theorem only for the standard generalized-zero carrier. Universally it forces b=B=0 and Q_e*a=0 in every finite-support bounded candidate, but a-times-all and d-times-nonzero-k polynomial maps, c/k=0-d/constant-A shell resonances, infinite sums, causal propagation, final residual states, observables and quantum transfer remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.electric_wilson_complete_oscillator_transport",
@@ -247,7 +248,19 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "Q_e-times-oscillator sources are bounded linear images and W_x-times-oscillator sources vanish, so these columns have zero P_(j,r) and R_(j,a) components."),
             _second_order(("CERTIFIED", "Electromagnetic duality supplies f_cross=star_bar f+(D_g star)[h]F_bar with unchanged frequency; the fixed-bundle lift is exact for ell>=1. W_x needs zero correction."), ("CERTIFIED", "The bounded correction is contained in the smooth exponential-polynomial class."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
             _evidence("electric_wilson_transport", "complete_finite_smooth", "standard_global_bounded"),
-            "This removes Q_e and W_x only from oscillator cross columns. The independent global condition Q_e*a=0, the a,c,d polynomial maps, constant-A resonance, full bounded cone, all-orders duality and residual/observational/quantum maps remain fail-closed.",
+            "This removes Q_e and W_x only from oscillator cross columns. The independent global condition Q_e*a=0, the a/d polynomial maps, c/k=0-d/constant-A resonance, full bounded cone, all-orders duality and residual/observational/quantum maps remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.circumference_complete_oscillator_column",
+            _scope(theory="Weyl-Maxwell target", carrier="constant circumference c crossed with every certified nonzero-frequency standard q-primary or extra p-primary compact oscillator", degree=2, parity="both parities", ell="exceptional ell=1 and generic ell>=2", m="all allowed m", k="every 2*pi*n/L, stratified into k=0 and k!=0", omega="every certified nonzero real q/p shell frequency"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "Every branch has omega_R^2=k^2/R^2+m_branch^2 along the exact circle-radius family R^2=1+eta*c."),
+            ("CERTIFIED", "The action-derived current is nonradical on every standard branch and extra multiplicity block."),
+            ("OPEN", "This column theorem does not solve the simultaneous compact stabilizer equations."),
+            ("CERTIFIED", "At k!=0 the exact radius derivative has nonzero shell pairing proportional to c*k^2; it is R_(j,a), not P_(j,r). At k=0 ordinary index transport is bounded."),
+            _second_order(("CERTIFIED", "The c-cross column is bounded-compatible exactly when c=0 or oscillator support is contained in k=0; every nonzero-k coefficient is otherwise resonantly obstructed."), ("CERTIFIED", "All k admit exact-family transport; nonzero k uses i*c*k^2*t*u/(2*omega)."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("circumference_classification", "complete_finite_smooth", "axial_current", "polar_current", "exceptional_current"),
+            "This classifies only c-times-oscillator interactions. The a/d polynomial maps, k=0 d, constant-A and wave resonances, full bounded cone, all-orders, residual, observational and quantum maps remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.d_times_ell2_extra",
@@ -416,6 +429,16 @@ def build() -> dict[str, object]:
         raise AssertionError("complete electric/Wilson transport theorem changed")
     if electric_wilson["full_bounded_cone_solved"]:
         raise AssertionError("electric/Wilson transport over-promoted the bounded cone")
+    circumference = records["circumference_classification"]["classification"]
+    if not (
+        circumference["complete_certified_oscillator_inventory_covered"]
+        and circumference["k0_circumference_cross_bounded_removable"]
+        and circumference["nonzero_k_circumference_cross_bounded_obstructed"]
+        and circumference["circumference_obstruction_is_resonant_not_polynomial"]
+    ):
+        raise AssertionError("complete circumference oscillator theorem changed")
+    if circumference["complete_bounded_cone_solved"]:
+        raise AssertionError("circumference theorem over-promoted the bounded cone")
     if not records["aligned_twist_extra_coefficients"]["classification"]["aligned_twist_extra_L1_L3_block_coefficient_explicit"]:
         raise AssertionError("aligned twist--extra coefficient block changed")
     if records["aligned_twist_extra_coefficients"]["classification"]["complete_arbitrary_orbit_correction_coefficient_explicit"]:

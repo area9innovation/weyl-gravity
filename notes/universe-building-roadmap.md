@@ -1191,11 +1191,20 @@ bounded fixed-bundle mixed correction
 `q/p` oscillator, at every allowed compact momentum; the flat `W_x` tangent
 has zero mixed source.  This gives atlas row
 `einstein.ph.wm.interaction.electric_wilson_complete_oscillator_transport`.
-It does not remove the independent global condition `Q_e*a=0`.  The active
-polynomial gate is now `a,c,d` times the finite oscillatory carrier, followed
-by constant-twist and oscillator shell functionals `R_(j,a)`.  Radius `c`
-remains explicit because its exact-family transport can be secular at
-nonzero momentum and therefore is not automatically bounded.
+It does not remove the independent global condition `Q_e*a=0`.
+
+The circumference column is now stratified exactly.  Along the exact radius
+family, `omega_R^2=k^2/R^2+m_branch^2`.  At `k=0`, ordinary index transport
+is bounded.  At `k!=0`, the source is bounded but has a nonzero shell pairing
+proportional to `c*k^2`; the exact-family correction contains
+`i*c*k^2*t*u/(2*omega)`.  Hence the obstruction belongs to `R_(j,a)`, not
+`P_(j,r)`, and the `c` cross column is bounded-compatible exactly when `c=0`
+or oscillator support is contained in `k=0`.  Atlas row
+`einstein.ph.wm.interaction.circumference_complete_oscillator_column` keeps
+these strata distinct.  The active positive-degree gate is now `a` times all
+oscillators and `d` times nonzero-momentum oscillators, followed by the
+surviving `c`, zero-momentum `d`, constant-twist and oscillator resonance
+functionals.
 
 This advances nonlinear input to the already activated compact-product
 linear bridge but does not certify a nonlinear relative morphism.  Atlas row

@@ -131,7 +131,7 @@ def verify() -> None:
         raise AssertionError("standard global bounded cone was lost")
     if global_second_order["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("standard global causal lifecycle was over-promoted")
-    if "a,c,d times oscillatory modes" not in standard_global["claim_boundary"]:
+    if "a-times-all and d-times-nonzero-k polynomial maps" not in standard_global["claim_boundary"]:
         raise AssertionError("remaining polynomial gate was hidden")
     if "Q_e*a=0" not in standard_global["claim_boundary"]:
         raise AssertionError("universal electric-radion polynomial condition was hidden")
@@ -142,8 +142,19 @@ def verify() -> None:
         raise AssertionError("complete electric/Wilson bounded transport was lost")
     if transport_second_order["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("electric/Wilson causal lifecycle was over-promoted")
-    if "a,c,d polynomial maps" not in electric_wilson["claim_boundary"]:
+    if "a/d polynomial maps" not in electric_wilson["claim_boundary"]:
         raise AssertionError("remaining transport gate was hidden")
+
+    circumference = by_id["einstein.ph.wm.interaction.circumference_complete_oscillator_column"]
+    circumference_second_order = circumference["mode_data"]["second_order"]
+    if circumference_second_order["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("circumference bounded zero locus was lost")
+    if circumference_second_order["smooth_secular"]["status"] != "CERTIFIED":
+        raise AssertionError("circumference smooth transport was lost")
+    if circumference_second_order["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("circumference causal lifecycle was over-promoted")
+    if "R_(j,a), not P_(j,r)" not in circumference["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("circumference obstruction was assigned to the wrong ledger")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
