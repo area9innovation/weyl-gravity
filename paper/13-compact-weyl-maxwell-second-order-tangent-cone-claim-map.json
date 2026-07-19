@@ -2,7 +2,7 @@
   "schema": "paper-draft-source-map-v1",
   "paper_id": "PAPER_13_COMPACT_WEYL_MAXWELL_SECOND_ORDER_TANGENT_CONE",
   "lifecycle_state": "DRAFT_ALLOWED",
-  "source_baseline": "bf47690291ca82f0d429e620f411bfc6e08800bf",
+  "source_baseline": "3541eed90ba7231a25782eed3c4682aefeb47a34",
   "manuscript": "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
   "certified_scope": {
@@ -26,7 +26,11 @@
     "same_sign_candidatewise_extreme_ray_lifts": "24_OF_24",
     "same_sign_candidatewise_minor_circuit_audit": "120_MINORS_90_CIRCUITS",
     "same_sign_bounded_projection_onto_scalar_cone_surjective": true,
+    "same_sign_exact_bounded_fibre_product_formulas": "6_OF_6",
+    "same_sign_resonance_face_stratifications": "6_OF_6",
+    "same_sign_active_complex_component_counts": [1, 1, 1, 4, 1, 2],
     "same_sign_complete_phase_parity_fibres_classified": false,
+    "same_sign_real_hermitian_components_classified": false,
     "same_sign_candidates_16_through_21_complete_real_cones": false,
     "two_absolute_momentum_arbitrary_amplitude_zero_variety": false,
     "complete_finite_support_bounded_cone": false,
@@ -146,10 +150,18 @@
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_cone_sections.json",
       "git_blob": "16f2d96570f2dcc2c10ea39ecd796ad4e61baf59"
+    },
+    {
+      "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json",
+      "git_blob": "18ec75cec6c38788862d36a5dde5424e7032f5b8"
+    },
+    {
+      "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
+      "git_blob": "09c19cc996a39eb84ab004c37780a95da40c0933"
     }
   ],
   "verification_receipt": {
-    "date": "2026-07-20",
+    "date": "2026-07-19",
     "tier_0": {
       "status": "PASSED",
       "checks": [
@@ -172,17 +184,19 @@
         "universal scalar extreme-ray verifier and 2 tests",
         "24-ray amplitude-lift verifier and 2 tests",
         "candidatewise 120-minor/90-circuit audit and 3 tests",
-        "complete scalar-cone section verifier and 2 tests"
+        "complete scalar-cone section verifier and 2 tests",
+        "exact bounded phase/parity fibre-product verifier and 2 tests",
+        "resonance face-fibre verifier and 3 tests"
       ]
     },
     "tier_2": {
       "status": "PASS_BY_CONTENT_ADDRESS",
-      "criterion": "All 28 source blobs are pinned at baseline bf476902; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts and a bounded section over every scalar-cone point."
+      "criterion": "All 30 source blobs are pinned at baseline 3541eed9; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts, scalar-cone sections, exact bounded fibre products and complete complex resonance-face strata."
     },
     "broader_atlas_audit": {
       "status": "PASSED_AFTER_CONCURRENT_ATLAS_UPDATE",
       "checks": [
-        "89 atlas tests",
+        "91 atlas tests",
         "independent Einstein compact-product atlas verifier"
       ]
     },
@@ -191,5 +205,5 @@
       "criterion": "Paper 13 remains DRAFT_ALLOWED and no mathematical lifecycle state is promoted."
     }
   },
-  "next_gate": "SIX_SAME_SIGN_COLLISION_PHASE_PARITY_FIBRE_DECOMPOSITIONS"
+  "next_gate": "SIX_SAME_SIGN_REAL_HERMITIAN_COMPONENT_AND_SINGULAR_STRATUM_DECOMPOSITIONS"
 }
