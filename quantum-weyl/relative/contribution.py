@@ -17,7 +17,7 @@ PROGRAMME = ROOT / "d_quotient_programme"
 OUTPUT = PROGRAMME / "contributions/quantum-relative-einstein-weyl-readiness.json"
 SCHEMA = PROGRAMME / "schema/team-contribution-v1.schema.json"
 PHASES = PROGRAMME / "registry/phase_spaces.json"
-EVIDENCE_COMMIT = "004888de60501c8a91c8edb6397fda3e2a0e2515"
+EVIDENCE_COMMIT = "41a041786de497dba4aa321c15c747b21ba24f0c"
 EVIDENCE_PATH = "quantum-weyl/relative/certificates/QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS.json"
 WORKING_EVIDENCE = ROOT / EVIDENCE_PATH
 

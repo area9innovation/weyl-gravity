@@ -19,7 +19,7 @@ OUTPUT_PATH = PACKAGE_ROOT / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 SCHEMA_PATH = PROGRAMME_ROOT / "schema" / "team-contribution-v1.schema.json"
 GENERATOR_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "generators.json"
 PHASE_SPACE_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "phase_spaces.json"
-EVIDENCE_COMMIT = "c1799356f9d2497bd8d6a65da8cc7d6e96ce9727"
+EVIDENCE_COMMIT = "41a041786de497dba4aa321c15c747b21ba24f0c"
 EVIDENCE_PATH = (
     "quantum-weyl/cartan/certificates/"
     "LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json"
