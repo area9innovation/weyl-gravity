@@ -1891,6 +1891,25 @@ and 56 `L=1,3` coefficients that require nonaxisymmetric fixtures.  Atlas row
 `einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload` certifies
 only this workload; the coefficients and tangent-cone verdict remain `OPEN`.
 
+The first source-matrix cell is now closed.  Candidate 4 is the axial
+`q_minus(+1)` times axial `q_minus(-2)` sum-frequency channel at
+`rho=29*(-361+783*sqrt(3))/26772`, with polar `L=4` p-primary output.  Its
+complete adjoint pairing is
+
+```text
+(0, -1152*(-265+149*sqrt(3))/203),
+```
+
+and the nonzero component has exact quadratic-field norm witness `3622`.
+Fail-closed atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_axial_bounded_obstruction`
+therefore marks this declared tangent bounded/finite-quasiperiodic
+`OBSTRUCTED`, smooth-secular `OPEN`, and causal `NO_CERTIFIED_MAP`.  This
+resolves two of the 164 reduced coefficients, not the full two-fibre cone.
+The activation gate is the remaining 106 axisymmetric `L=4` coefficients,
+then the 56 nonaxisymmetric `L=1,3` coefficients.  No cross-background mode
+identification is used.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell
@@ -1938,10 +1957,32 @@ nonzero mixed-parity sheets
 `a_+/-=sigma*sqrt(ell*(ell+1)/2)*p_+/-`.  Fail-closed atlas row
 `einstein.ph.wm.interaction.symbolic_ell_qminus_parity_resonance_matrix`
 marks resonance `CERTIFIED`, bounded correction `OPEN`, smooth secular
-`CERTIFIED`, and causal `NO_CERTIFIED_MAP`.  The active symbolic gate is now
-complete all-channel bounded inversion on these sheets; the fixed-
+`CERTIFIED`, and causal `NO_CERTIFIED_MAP`.
+
+The all-`ell` standard-branch shell census now excludes every q-plus self and
+q-minus--q-plus collision.  The mixed difference lies strictly in `(4/3,2)`,
+the mixed `K=2k` sum lies between the top p and q-plus shells, and all other
+q-plus sums lie above the angularly allowed target range.  Therefore the
+sole standard-branch collision is the already canceled q-minus `L=2*ell`
+p-shell.  Atlas row
+`einstein.ph.wm.interaction.symbolic_ell_standard_branch_collision_census`
+is resonance `CERTIFIED`, bounded `OPEN`, smooth secular `CERTIFIED`, and
+causal `NO_CERTIFIED_MAP`.  The active symbolic gate is now the zero-frequency
+and compatible-source join on the mixed sheets; the fixed-
 circumference/multiple-`|k|` join remains the separate finite source-matrix
 workload.
+
+The zero-frequency/source join is now complete for two explicit wave-only
+families at every `ell>=2`.  Normalize either mixed sheet to the certified
+q-minus density and add equal `+/-k` q-plus occupation.  The five moment maps
+then vanish, while the standard-branch census and parity matrix show that all
+bounded resonant functionals vanish.  By the complete bounded adjoint-
+cokernel criterion, a bounded finite-quasiperiodic second-order correction
+exists.  Atlas row
+`einstein.ph.wm.interaction.symbolic_ell_mixed_sheet_bounded_extension` is
+bounded `CERTIFIED`, causal `NO_CERTIFIED_MAP`.  The full amplitude cone,
+fixed circumference, multiple `|k|` fibres and all-orders integration remain
+separate gates.
 
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared

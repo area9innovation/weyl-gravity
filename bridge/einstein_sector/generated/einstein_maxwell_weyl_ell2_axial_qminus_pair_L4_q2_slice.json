@@ -1,0 +1,61 @@
+{
+  "claim_boundary": "This content-addressed slice records only the symbolic polar L=4 action source from two axial ell=2 q-minus representatives. It is not the full q2 export and does not classify other parities, branches, output harmonics or correction classes.",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "parent": {
+    "action_sha256": "647ff2fe89c167b00f480ce421e089646d5c6459534d90e74a99d40b7a75d4bd",
+    "q2_sha256": "be4d163044138f4b3b093c54527c2484cfac9eea48a58c791e97926be8597fec",
+    "result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1",
+    "row_layout_sha256": "6236040676b7e699f5e48be6241143aa3bb5b7c9b4e07364826fc6f2b5ad24a2"
+  },
+  "pbw_support": {
+    "coefficient_jet_order": 4,
+    "contravariant_axial_basis": "-partial_theta P_L(cos(theta))/sin(theta)",
+    "input_rows": [
+      9,
+      12,
+      16,
+      17
+    ],
+    "output_rows": [
+      20,
+      21,
+      24,
+      33
+    ],
+    "relevant_q2_terms": 842,
+    "scalar_density_basis": "P_L(cos(theta))"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_AXIAL_QMINUS_PAIR_L4_Q2_SLICE",
+  "schema": "einstein-maxwell-weyl-ell2-axial-qminus-pair-L4-q2-slice-v1",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "carrier": "two axisymmetric axial ell=2 Einstein q-minus representatives at arbitrary signed momenta and positive frequencies",
+    "degree": 2,
+    "ell": "2 times 2 -> 4",
+    "k": "arbitrary signed k_1,k_2",
+    "m": "0+0 -> 0",
+    "omega": "arbitrary omega_1,omega_2 before shell specialization",
+    "parity": "axial times axial input; polar L=4 output"
+  },
+  "source_action_row_order": [
+    "-metric_00",
+    "2*metric_01",
+    "-metric_11",
+    "2*20*maxwell_axial"
+  ],
+  "source_action_rows": [
+    "72*(4*k_1**5*k_2 + 5*k_1**4*k_2**2 - 4*k_1**4*omega_1*omega_2 + 7*k_1**4*omega_2**2 + 5*k_1**3*k_2**3 - 4*k_1**3*k_2*omega_1**2 - 16*k_1**3*k_2*omega_1*omega_2 + 7*k_1**3*k_2*omega_2**2 + 113*k_1**3*k_2 + 5*k_1**2*k_2**4 + 2*k_1**2*k_2**2*omega_1**2 - 27*k_1**2*k_2**2*omega_1*omega_2 + 2*k_1**2*k_2**2*omega_2**2 + 149*k_1**2*k_2**2 + 4*k_1**2*omega_1**3*omega_2 - 6*k_1**2*omega_1**2*omega_2**2 + 7*k_1**2*omega_1*omega_2**3 - 53*k_1**2*omega_1*omega_2 - 3*k_1**2*omega_2**4 + 57*k_1**2*omega_2**2 + 4*k_1*k_2**5 + 7*k_1*k_2**3*omega_1**2 - 16*k_1*k_2**3*omega_1*omega_2 - 4*k_1*k_2**3*omega_2**2 + 113*k_1*k_2**3 + 8*k_1*k_2*omega_1**3*omega_2 - 3*k_1*k_2*omega_1**2*omega_2**2 - 35*k_1*k_2*omega_1**2 + 8*k_1*k_2*omega_1*omega_2**3 - 76*k_1*k_2*omega_1*omega_2 - 35*k_1*k_2*omega_2**2 + 8*sqrt(3)*k_1*k_2 + 1168*k_1*k_2 + 7*k_2**4*omega_1**2 - 4*k_2**4*omega_1*omega_2 - 3*k_2**2*omega_1**4 + 7*k_2**2*omega_1**3*omega_2 - 6*k_2**2*omega_1**2*omega_2**2 + 57*k_2**2*omega_1**2 + 4*k_2**2*omega_1*omega_2**3 - 53*k_2**2*omega_1*omega_2 + 3*omega_1**4*omega_2**2 - 3*omega_1**3*omega_2**3 - 25*omega_1**3*omega_2 + 3*omega_1**2*omega_2**4 - 187*omega_1**2*omega_2**2 - 25*omega_1*omega_2**3 + 8*sqrt(3)*omega_1*omega_2 + 848*omega_1*omega_2)/35",
+    "144*(4*k_1**4*k_2*omega_1 + 4*k_1**4*k_2*omega_2 + 4*k_1**3*k_2**2*omega_1 + k_1**3*k_2**2*omega_2 - 4*k_1**3*omega_1**2*omega_2 + 7*k_1**3*omega_2**3 + 30*k_1**3*omega_2 + k_1**2*k_2**3*omega_1 + 4*k_1**2*k_2**3*omega_2 - 4*k_1**2*k_2*omega_1**3 - 16*k_1**2*k_2*omega_1**2*omega_2 - 9*k_1**2*k_2*omega_1*omega_2**2 + 108*k_1**2*k_2*omega_1 + 168*k_1**2*k_2*omega_2 + 4*k_1*k_2**4*omega_1 + 4*k_1*k_2**4*omega_2 - 9*k_1*k_2**2*omega_1**2*omega_2 - 16*k_1*k_2**2*omega_1*omega_2**2 + 168*k_1*k_2**2*omega_1 - 4*k_1*k_2**2*omega_2**3 + 108*k_1*k_2**2*omega_2 + 4*k_1*omega_1**4*omega_2 + 4*k_1*omega_1**3*omega_2**2 + k_1*omega_1**2*omega_2**3 - 108*k_1*omega_1**2*omega_2 + 4*k_1*omega_1*omega_2**4 - 168*k_1*omega_1*omega_2**2 - 30*k_1*omega_2**3 + 8*sqrt(3)*k_1*omega_2 + 1008*k_1*omega_2 + 7*k_2**3*omega_1**3 - 4*k_2**3*omega_1*omega_2**2 + 30*k_2**3*omega_1 + 4*k_2*omega_1**4*omega_2 + k_2*omega_1**3*omega_2**2 - 30*k_2*omega_1**3 + 4*k_2*omega_1**2*omega_2**3 - 168*k_2*omega_1**2*omega_2 + 4*k_2*omega_1*omega_2**4 - 108*k_2*omega_1*omega_2**2 + 8*sqrt(3)*k_2*omega_1 + 1008*k_2*omega_1)/35",
+    "72*(3*k_1**4*k_2**2 - 3*k_1**4*omega_2**2 - 3*k_1**3*k_2**3 + 4*k_1**3*k_2*omega_1**2 + 8*k_1**3*k_2*omega_1*omega_2 + 7*k_1**3*k_2*omega_2**2 + 25*k_1**3*k_2 + 3*k_1**2*k_2**4 - 6*k_1**2*k_2**2*omega_1**2 - 3*k_1**2*k_2**2*omega_1*omega_2 - 6*k_1**2*k_2**2*omega_2**2 + 187*k_1**2*k_2**2 - 4*k_1**2*omega_1**3*omega_2 + 2*k_1**2*omega_1**2*omega_2**2 + 7*k_1**2*omega_1*omega_2**3 + 35*k_1**2*omega_1*omega_2 + 7*k_1**2*omega_2**4 - 57*k_1**2*omega_2**2 + 7*k_1*k_2**3*omega_1**2 + 8*k_1*k_2**3*omega_1*omega_2 + 4*k_1*k_2**3*omega_2**2 + 25*k_1*k_2**3 - 4*k_1*k_2*omega_1**4 - 16*k_1*k_2*omega_1**3*omega_2 - 27*k_1*k_2*omega_1**2*omega_2**2 + 53*k_1*k_2*omega_1**2 - 16*k_1*k_2*omega_1*omega_2**3 + 76*k_1*k_2*omega_1*omega_2 - 4*k_1*k_2*omega_2**4 + 53*k_1*k_2*omega_2**2 + 8*sqrt(3)*k_1*k_2 + 848*k_1*k_2 - 3*k_2**4*omega_1**2 + 7*k_2**2*omega_1**4 + 7*k_2**2*omega_1**3*omega_2 + 2*k_2**2*omega_1**2*omega_2**2 - 57*k_2**2*omega_1**2 - 4*k_2**2*omega_1*omega_2**3 + 35*k_2**2*omega_1*omega_2 + 4*omega_1**5*omega_2 + 5*omega_1**4*omega_2**2 + 5*omega_1**3*omega_2**3 - 113*omega_1**3*omega_2 + 5*omega_1**2*omega_2**4 - 149*omega_1**2*omega_2**2 + 4*omega_1*omega_2**5 - 113*omega_1*omega_2**3 + 8*sqrt(3)*omega_1*omega_2 + 1168*omega_1*omega_2)/35",
+    "288*(sqrt(3)*k_1**3*k_2 + 2*sqrt(3)*k_1**2*k_2**2 - sqrt(3)*k_1**2*omega_1*omega_2 - 2*sqrt(3)*k_1**2*omega_2**2 + sqrt(3)*k_1*k_2**3 - sqrt(3)*k_1*k_2*omega_1**2 - sqrt(3)*k_1*k_2*omega_2**2 - 8*k_1*k_2 + 16*sqrt(3)*k_1*k_2 - 2*sqrt(3)*k_2**2*omega_1**2 - sqrt(3)*k_2**2*omega_1*omega_2 + sqrt(3)*omega_1**3*omega_2 + 2*sqrt(3)*omega_1**2*omega_2**2 + sqrt(3)*omega_1*omega_2**3 - 16*sqrt(3)*omega_1*omega_2 + 8*omega_1*omega_2)/7"
+  ],
+  "variables": [
+    "k_1",
+    "omega_1",
+    "k_2",
+    "omega_2"
+  ]
+}

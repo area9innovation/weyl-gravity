@@ -408,6 +408,18 @@ def verify() -> None:
     workload_second = parity_workload["mode_data"]["second_order"]
     if workload_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or workload_second["smooth_secular"]["status"] != "OPEN" or workload_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("two-absolute-momentum parity workload correction classes were over-promoted")
+    candidate4 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_axial_bounded_obstruction"]
+    if candidate4["descriptions"]["nonlinear"] != "OBSTRUCTED":
+        raise AssertionError("candidate-4 bounded obstruction was hidden")
+    if candidate4["mode_data"]["resonance"]["status"] != "OBSTRUCTED" or "norm witness 3622" not in candidate4["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-4 nonzero cokernel witness was hidden")
+    if candidate4["mode_data"]["taub_maps"]["status"] != "NOT_APPLICABLE":
+        raise AssertionError("candidate-4 resonant functional was merged with the Taub maps")
+    candidate4_second = candidate4["mode_data"]["second_order"]
+    if candidate4_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or candidate4_second["smooth_secular"]["status"] != "OPEN" or candidate4_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-4 correction classes were silently merged")
+    if "other 162 workload coefficients" not in candidate4["claim_boundary"]:
+        raise AssertionError("candidate-4 claim boundary lost the unresolved workload")
     aligned_phase = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
     aligned_phase_second = aligned_phase["mode_data"]["second_order"]
     if aligned_phase["descriptions"]["nonlinear"] != "OPEN":
@@ -450,6 +462,22 @@ def verify() -> None:
         raise AssertionError("symbolic-ell null sheets were over-promoted")
     if symbolic_parity_second["smooth_secular"]["status"] != "CERTIFIED" or symbolic_parity_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("symbolic-ell two-parity correction classes changed")
+    standard_census = by_id["einstein.ph.wm.interaction.symbolic_ell_standard_branch_collision_census"]
+    standard_second = standard_census["mode_data"]["second_order"]
+    if standard_census["mode_data"]["resonance"]["status"] != "CERTIFIED" or "Every q-plus-involving" not in standard_census["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("symbolic standard-branch census was hidden")
+    if standard_census["descriptions"]["nonlinear"] != "OPEN" or standard_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("symbolic standard-branch census over-promoted bounded extension")
+    if standard_second["smooth_secular"]["status"] != "CERTIFIED" or standard_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("symbolic standard-branch correction classes changed")
+    mixed_sheet = by_id["einstein.ph.wm.interaction.symbolic_ell_mixed_sheet_bounded_extension"]
+    mixed_sheet_second = mixed_sheet["mode_data"]["second_order"]
+    if mixed_sheet["descriptions"]["nonlinear"] != "CERTIFIED" or mixed_sheet_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("symbolic mixed-sheet bounded jets were hidden")
+    if mixed_sheet["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or mixed_sheet["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("symbolic mixed-sheet compatibility join changed")
+    if mixed_sheet_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "all-orders integration" not in mixed_sheet["claim_boundary"]:
+        raise AssertionError("symbolic mixed-sheet higher lifecycle was over-promoted")
     aligned_obstruction = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_bounded_obstruction"]
     aligned_obstruction_second = aligned_obstruction["mode_data"]["second_order"]
     if aligned_obstruction["descriptions"]["nonlinear"] != "OBSTRUCTED":

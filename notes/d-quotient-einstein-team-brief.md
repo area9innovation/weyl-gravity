@@ -3272,15 +3272,61 @@ plus the two mixed sheets
 keeps full all-channel bounded inversion on those sheets `OPEN`; this is a
 resonance-matrix theorem, not yet a general second-order extension theorem.
 
+The complete standard-branch dispersion census is now exact at the same
+tuned fibre.  Every q-plus self or q-minus--q-plus sum/difference channel is
+off shell; in particular the mixed difference satisfies
+`4/3<(omega_plus-omega_minus)^2<2` and misses both exceptional `ell=1`
+frequencies.  Thus adding the positive-energy q-plus balance creates no new
+nonzero-frequency collision.  Atlas row
+`einstein.ph.wm.interaction.symbolic_ell_standard_branch_collision_census`
+leaves only the zero-frequency and compatible-source join open.
+
+That final single-fibre join is now closed.  The complete finite-generic
+bounded cokernel theorem states that the five stabilizer covectors plus the
+nonzero-frequency resonant functionals are necessary and sufficient.  On
+either mixed sheet, choose equal `+/-k` q-minus density and add the imported
+equal `+/-k` q-plus occupation.  Then all five moment maps vanish, the
+standard-branch census leaves only the `L=2*ell` p shell, and both adjoint
+projections on that shell vanish.  Hence every `ell>=2` has two explicit
+nonzero bounded second-order jets.  Atlas row
+`einstein.ph.wm.interaction.symbolic_ell_mixed_sheet_bounded_extension`
+records bounded `CERTIFIED`, causal `NO_CERTIFIED_MAP`, with full sheet-cone
+classification and all-orders integration still `OPEN`.
+
 The active same-background Classical bridge remains Bridge 1.  Its current
-nonlinear activation gates are all-channel inversion on the two symbolic
-mixed-parity sheets and the parity-typed 164-coefficient first-two-`|k|`
-workload.
+nonlinear activation gates are the full action-normalized amplitude cone on
+the symbolic mixed sheets and the parity-typed 164-coefficient first-two-
+`|k|` workload.
 Their fail-closed atlas rows are
-`einstein.ph.wm.interaction.symbolic_ell_qminus_parity_resonance_matrix` and
+`einstein.ph.wm.interaction.symbolic_ell_mixed_sheet_bounded_extension` and
 `einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload`.  Both
 retain the compact Plebański--Hacyan carrier and identify no mode across
 backgrounds.
+
+The first coefficient in the two-`|k|` workload is now decided.  Candidate 4
+uses axial `q_minus` inputs at signed momentum integers `(+1,-2)` and the
+positive-frequency sum channel.  At
+
+```text
+rho=29*(-361+783*sqrt(3))/26772
+```
+
+the product lies on the polar `L=4` p-primary shell.  The exact action-source
+pairings with its complete two-dimensional cokernel are
+
+```text
+(0, -1152*(-265+149*sqrt(3))/203),
+```
+
+and the second component is nonzero by the norm witness `3622`.  Hence this
+declared cross-fibre tangent is bounded/finite-quasiperiodic `OBSTRUCTED`.
+Smooth-secular correction remains `OPEN` and causal correction remains
+`NO_CERTIFIED_MAP`.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_axial_bounded_obstruction`
+is deliberately `G1`: it resolves two of 164 coefficients and does not
+promote the complete two-fibre cone.  The active bridge gate is now the
+remaining 106 axisymmetric `L=4` coefficients, followed by the 56
+nonaxisymmetric `L=1,3` coefficients.
 
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.

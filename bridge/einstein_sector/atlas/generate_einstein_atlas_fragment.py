@@ -89,10 +89,13 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_identity_audit": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_identity_audit.json",
     "ell2_two_abs_momentum_isolated_candidates": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
+    "ell2_two_abs_momentum_candidate4_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
     "symbolic_ell_qminus_parity_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.json",
+    "symbolic_ell_standard_branch_census": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census.json",
+    "symbolic_ell_mixed_sheet_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension.json",
     "twist_aligned_opposite_momentum_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.json",
     "opposite_momentum_ell2_parity_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix.json",
     "opposite_momentum_ell2_mixed_parity_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension.json",
@@ -793,6 +796,18 @@ def entries() -> list[dict[str, object]]:
             "Parity/angular workload theorem only for the 21 ell=2 cross-|n| candidates. No source zero, same-fibre classification, tangent-cone verdict or higher lifecycle is inferred.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_axial_bounded_obstruction",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 at candidate-4 rho=29*(-361+783*sqrt(3))/26772; before final residual quotient", carrier="one axial q-minus ell=2,m=0 oscillator on n=+1 crossed with one axial q-minus ell=2,m=0 oscillator on n=-2", degree=2, parity="axial times axial input; polar p-primary output", ell="input 2 x 2; output L=4", m="0+0 -> M=0", k="k1=sqrt(rho), k2=-2*sqrt(rho), K=-sqrt(rho)", omega="positive-frequency SUM channel on the polar p shell", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The two input q-minus branches and polar p-primary target retain their exact same-background parity, momentum, harmonic and frequency labels."),
+            ("CERTIFIED","The action-derived q2 PBW projection exactly reproduces the frozen opposite-momentum calibration before evaluating the candidate-4 source."),
+            ("NOT_APPLICABLE","This nonzero-frequency resonant functional is independent of, and does not replace, the five compact stabilizer moment maps."),
+            ("OBSTRUCTED","The complete two-dimensional polar p-shell cokernel pairing is (0,-1152*(-265+149*sqrt(3))/203), whose nonzero component has quadratic-field norm witness 3622."),
+            _second_order(("OBSTRUCTED","No bounded or finite-quasiperiodic correction exists for this declared cross-|n| tangent."),("OPEN","A smooth secular correction for this candidate has not been constructed or excluded."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_candidate4_obstruction","ell2_two_abs_momentum_parity_workload","ell2_two_abs_momentum_isolated_candidates","polar_operator","abstract_cone"),
+            "This G1 row resolves only the two axial-axial polar p-primary coefficients of candidate 4. The other 162 workload coefficients, complete two-fibre tangent cone, smooth-secular and causal classes, residual descent and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="constant twist position plus paired axisymmetric +/-k Einstein-plus/minus standing waves", degree=2, parity="generic input parity retained; polar extra resonant output", ell="every one fixed integer ell>=2 with output L=2ell", m="m_A=0 inputs and M=0 output", k="one tuned allowed nonzero +/-k pair", omega="q-plus/minus inputs and p-primary sum-frequency output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
@@ -863,6 +878,30 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OPEN","Pure axial and pure polar directions are obstructed, but the mixed L4-null face still requires every remaining output block to vanish or be inverted."),("CERTIFIED","Finite secular inversion remains certified on the five-moment-map zero cone."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
             _evidence("opposite_momentum_ell2_parity_matrix","twist_aligned_opposite_momentum_obstruction","finite_generic_smooth"),
             "This row classifies only the tuned L=4,K=0,Omega=2omega_- resonance matrix. It does not certify a complete bounded extension on the mixed null face or classify other outputs, ell, momentum fibres or higher lifecycles.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.symbolic_ell_standard_branch_collision_census",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned separately for each ell; before final residual quotient", carrier="all q-minus/q-plus self and cross products at signed momenta +/-k; no extra-primary inputs", degree=2, parity="over-complete shell arithmetic before parity selection", ell="every integer input ell>=2; target L=0,...,2ell", m="all angular outputs allowed by the product; no coefficient claim", k="+/-sqrt(sqrt(2*ell*(ell+1))-ell/2-1/6)", omega="all positive sums and absolute differences of omega_minus and omega_plus", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The q-minus and q-plus standard branches retain their exact same-background dispersions and signed momenta."),
+            ("CERTIFIED","This is characteristic-shell arithmetic using the action-derived p/q factors; it makes no new current-sign claim."),
+            ("NOT_APPLICABLE","This census does not alter the separately certified common-zero moment-map construction."),
+            ("CERTIFIED","Every q-plus-involving sum/difference channel is off shell; the sole standard-branch collision remains the q-minus L=2ell polar p shell."),
+            _second_order(("OPEN","The nonzero-frequency standard-branch ledger closes, but the zero-frequency and compatible-source join on the symbolic mixed sheets remains open."),("CERTIFIED","Finite standard-branch sources on the moment-map zero cone admit the certified smooth exponential-polynomial correction."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _evidence("symbolic_ell_standard_branch_census","symbolic_ell_qminus_parity_matrix","symbolic_ell_qminus_self_collision","finite_generic_smooth"),
+            "Complete only for q-minus/q-plus inputs at one separately tuned |k| per ell. Extra-primary inputs, multiple |k| fibres, the complete bounded source join and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.symbolic_ell_mixed_sheet_bounded_extension",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned separately for each ell; before final residual quotient", carrier="wave-only m=0 q-minus mixed-parity sheet plus equal +/-k q-plus Hamiltonian balance; no twist or extra-primary input", degree=2, parity="both q-minus parities with either common sheet sign; one normalized q-plus multiplicity", ell="every integer ell>=2", m="m=0 relative to the declared axis", k="+/-sqrt(sqrt(2*ell*(ell+1))-ell/2-1/6)", omega="q-minus and q-plus branches with real conjugates", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","Every input and output remains on one tuned compact Plebanski-Hacyan fibre with branch, parity and signed momentum retained."),
+            ("CERTIFIED","The q-primary density balance and both p-shell adjoint projections use the action-derived normalizations."),
+            ("CERTIFIED","Equal signed occupations kill P_x, m=0 kills J_i, and the action-normalized q-plus occupation cancels the q-minus Hamiltonian."),
+            ("CERTIFIED","The standard-branch census leaves one collision, and both of its independent adjoint projections vanish on either symbolic mixed sheet."),
+            _second_order(("CERTIFIED","The complete bounded adjoint-cokernel criterion supplies a bounded finite-quasiperiodic correction for both sheet signs at every ell>=2."),("CERTIFIED","The bounded correction already belongs to the smooth exponential-polynomial class."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _evidence("symbolic_ell_mixed_sheet_extension","symbolic_ell_standard_branch_census","symbolic_ell_qminus_parity_matrix","finite_generic_smooth"),
+            "Two explicit wave-only bounded families are certified for each separately tuned ell>=2. The full sheet amplitude cone, extra-primary inputs, fixed circumference, multiple |k| fibres, all-orders integration and higher lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.opposite_momentum_ell2_mixed_parity_bounded_extension",
@@ -1176,6 +1215,16 @@ def build() -> dict[str, object]:
         raise AssertionError("symbolic-ell two-parity resonance matrix changed")
     if symbolic_parity["general_all_channel_bounded_extension_on_null_sheets"] or symbolic_parity["fixed_circumference_or_multiple_abs_momentum_classified"] or symbolic_parity["causal_or_quantum_claim"]:
         raise AssertionError("symbolic-ell two-parity resonance matrix exceeded its scope")
+    standard_census = records["symbolic_ell_standard_branch_census"]["classification"]
+    if not (standard_census["all_standard_qminus_qplus_input_pairs_covered"] and standard_census["all_sum_difference_and_K0_K2k_channels_covered"] and standard_census["qplus_involving_characteristic_collisions_excluded"] and standard_census["unique_nonzero_frequency_standard_branch_collision_is_qminus_L2ell_p"]):
+        raise AssertionError("symbolic-ell standard-branch collision census changed")
+    if standard_census["complete_bounded_second_order_extension_certified"] or standard_census["extra_primary_or_multiple_abs_momentum_inputs_classified"] or standard_census["causal_or_quantum_claim"]:
+        raise AssertionError("symbolic-ell standard-branch collision census exceeded its scope")
+    mixed_sheet = records["symbolic_ell_mixed_sheet_extension"]["classification"]
+    if not (mixed_sheet["both_symbolic_mixed_sheet_signs_covered"] and mixed_sheet["every_integer_ell_ge_2_has_nonzero_bounded_second_order_jet"] and mixed_sheet["complete_standard_branch_quadratic_output_census_used"] and mixed_sheet["five_moment_maps_and_all_bounded_resonant_functionals_vanish"] and mixed_sheet["bounded_correction_exists_by_complete_cokernel_criterion"]):
+        raise AssertionError("symbolic-ell mixed-sheet bounded extension changed")
+    if mixed_sheet["full_mixed_sheet_amplitude_cone_classified"] or mixed_sheet["extra_primary_or_multiple_abs_momentum_inputs_classified"] or mixed_sheet["all_orders_integrability"] or mixed_sheet["causal_or_quantum_claim"]:
+        raise AssertionError("symbolic-ell mixed-sheet bounded extension exceeded its scope")
     two_fibre = records["ell2_two_abs_momentum_identity_audit"]["classification"]
     if not (two_fibre["complete_cross_abs_momentum_identity_audit"] and two_fibre["all_three_input_primary_branches_covered"] and two_fibre["all_physical_L1_to_L4_target_shells_covered"] and two_fibre["no_identity_resonant_channel"] and two_fibre["generic_circumference_cross_fibre_nonresonance_certified"]):
         raise AssertionError("ell2 two-absolute-momentum identity audit changed")
@@ -1191,6 +1240,11 @@ def build() -> dict[str, object]:
         raise AssertionError("ell2 two-absolute-momentum parity workload changed")
     if parity_workload["projected_source_coefficients_computed"] or parity_workload["complete_two_fibre_tangent_cone_classified"] or parity_workload["causal_or_quantum_claim"]:
         raise AssertionError("ell2 two-absolute-momentum parity workload exceeded its scope")
+    candidate4 = records["ell2_two_abs_momentum_candidate4_obstruction"]["classification"]
+    if not (candidate4["candidate_4_exact_source_computed"] and candidate4["frozen_opposite_momentum_fixture_reproduced_exactly"] and candidate4["complete_p_primary_cokernel_paired"] and candidate4["one_pairing_nonzero"] and candidate4["bounded_candidate_4_obstructed"]):
+        raise AssertionError("ell2 two-absolute-momentum candidate-4 obstruction changed")
+    if candidate4["all_candidate_rows_classified"] or candidate4["causal_or_quantum_claim"]:
+        raise AssertionError("ell2 two-absolute-momentum candidate-4 obstruction exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

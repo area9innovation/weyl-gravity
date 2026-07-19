@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate4-bounded-obstruction-v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "candidate",
+    "pbw_projection",
+    "quadratic_source",
+    "polar_p_cokernel",
+    "second_order_verdict",
+    "workload_progress",
+    "classification",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate4-bounded-obstruction-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE4_BOUNDED_OBSTRUCTION"
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "scope": {"type": "object"},
+    "candidate": {
+      "type": "object",
+      "required": ["candidate_index", "rho", "K", "Omega", "p_shell_defect"],
+      "properties": {
+        "candidate_index": {"const": 4},
+        "p_shell_defect": {"const": "0"}
+      }
+    },
+    "pbw_projection": {
+      "type": "object",
+      "required": ["relevant_q2_terms", "coefficient_jet_order", "opposite_momentum_calibration_exact"],
+      "properties": {
+        "relevant_q2_terms": {"const": 842},
+        "coefficient_jet_order": {"const": 4},
+        "opposite_momentum_calibration_exact": {"const": true}
+      }
+    },
+    "quadratic_source": {
+      "type": "object",
+      "required": ["source_action_rows"],
+      "properties": {
+        "source_action_rows": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "polar_p_cokernel": {
+      "type": "object",
+      "required": ["target_block_rank", "cokernel_dimension", "pairings", "quadratic_field_norm_witness"],
+      "properties": {
+        "target_block_rank": {"const": 2},
+        "cokernel_dimension": {"const": 2},
+        "pairings": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "string"}
+        },
+        "quadratic_field_norm_witness": {"const": 3622}
+      }
+    },
+    "second_order_verdict": {
+      "type": "object",
+      "required": ["correction_class", "status", "smooth_secular_status", "causal_retarded_status"],
+      "properties": {
+        "correction_class": {"const": "BOUNDED_OR_FINITE_QUASIPERIODIC"},
+        "status": {"const": "OBSTRUCTED"},
+        "smooth_secular_status": {"const": "OPEN"},
+        "causal_retarded_status": {"const": "NO_CERTIFIED_MAP"}
+      }
+    },
+    "workload_progress": {
+      "type": "object",
+      "required": ["candidate_4_axial_axial_coefficients_resolved", "remaining_axisymmetric_L4_coefficients"],
+      "properties": {
+        "candidate_4_axial_axial_coefficients_resolved": {"const": 2},
+        "remaining_axisymmetric_L4_coefficients": {"const": 106}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "candidate_4_exact_source_computed",
+        "frozen_opposite_momentum_fixture_reproduced_exactly",
+        "complete_p_primary_cokernel_paired",
+        "one_pairing_nonzero",
+        "bounded_candidate_4_obstructed",
+        "all_candidate_rows_classified"
+      ],
+      "properties": {
+        "candidate_4_exact_source_computed": {"const": true},
+        "frozen_opposite_momentum_fixture_reproduced_exactly": {"const": true},
+        "complete_p_primary_cokernel_paired": {"const": true},
+        "one_pairing_nonzero": {"const": true},
+        "bounded_candidate_4_obstructed": {"const": true},
+        "all_candidate_rows_classified": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  }
+}

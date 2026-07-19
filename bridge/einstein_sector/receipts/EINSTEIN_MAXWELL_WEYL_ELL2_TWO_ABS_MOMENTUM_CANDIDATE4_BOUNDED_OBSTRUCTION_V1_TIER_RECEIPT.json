@@ -1,0 +1,50 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE4_BOUNDED_OBSTRUCTION_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact q2 source and complete polar p-primary adjoint pairing for the axial-axial candidate-4 cross-|n| fixture.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json": "25125b7dee84f414a66901c5519a883c2f6ff14ff98070651c636e18fa804696",
+    "bridge/einstein_sector/einstein_maxwell_weyl_two_abs_momentum_candidate4_pbw_probe.py": "dcb77aa9fc9a4719f413a5ffe00698595c0e34f6b5a0e03503727aad07fd3b5f",
+    "bridge/einstein_sector/generated/einstein_maxwell_weyl_ell2_axial_qminus_pair_L4_q2_slice.json": "19bda54b489e079284190a663d2edb98646caf3726dbe3566c0eeaf23c2c7544",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.schema.json": "5068b664ba6c232bf4712b3e080bce0b89cf28d7f67036545fbb546a20c735d9",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.py": "75e4ef08c44221e9944342f2efac4e3bc1f025205de9367c008f456552f32da1",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.py": "3b6428c150aabd729dca0ee261f25c74a6b9764dc541d7ca39ac919721d8bdb6",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-candidate4-bounded-obstruction.md": "9657b0e083bc45fa2c3f90070186385101b4dee061042437f813631e19d78c19"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.5,
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 33.43,
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_two_abs_momentum_candidate4_pbw_probe --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The candidate ledger, parity workload, polar Hessian, frozen opposite-momentum calibration and 5.8 KiB content-addressed q2 slice are unchanged hashed inputs. The slice retains the parent q2, action and row-layout hashes; the independent verifier reconstructs the shell, full cokernel and nonzero pairing without importing the producer."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This promotes one G1 bounded fixture, not a general tangent-cone freeze or shared core algebra change. The complete two-fibre source matrix remains open."
+    },
+    "exhaustive_direct_coordinate_replay": {
+      "status": "INCONCLUSIVE_NOT_A_PASS",
+      "elapsed_seconds": 1866.56,
+      "maximum_resident_kib": 195804,
+      "reason": "The legacy direct four-dimensional coordinate replay was terminated after 1,863 CPU seconds inside symbolic GCD simplification before source projection. It is not counted as evidence for the theorem."
+    }
+  },
+  "claim_boundary": "One axial-axial candidate-4 bounded obstruction only; the remaining 162 two-fibre coefficients, smooth-secular and causal correction classes, complete tangent cone, residual, observable and quantum claims remain fail-closed."
+}

@@ -108,6 +108,18 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
+    def test_candidate4_axial_source_is_obstructed_only_in_bounded_class(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_axial_bounded_obstruction"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OBSTRUCTED")
+        self.assertIn("norm witness 3622", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "NOT_APPLICABLE")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("other 162 workload coefficients", entry["claim_boundary"])
+
     def test_twist_aligned_phase_divisor_requires_an_independent_functional(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
         second_order = entry["mode_data"]["second_order"]
@@ -180,6 +192,25 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("one tuned", entry["claim_boundary"])
+
+    def test_symbolic_standard_branch_census_closes_only_dispersion(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.symbolic_ell_standard_branch_collision_census"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("Every q-plus-involving", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
+    def test_symbolic_mixed_sheets_have_bounded_jets_not_all_orders(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.symbolic_ell_mixed_sheet_bounded_extension"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("all-orders integration", entry["claim_boundary"])
 
     def test_tuned_axisymmetric_bounded_cone_is_complete_only_in_scope(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.opposite_momentum_ell2_tuned_axisymmetric_bounded_cone"]

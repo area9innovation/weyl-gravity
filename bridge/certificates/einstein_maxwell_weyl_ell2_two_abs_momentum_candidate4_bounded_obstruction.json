@@ -1,0 +1,183 @@
+{
+  "candidate": {
+    "K": "-sqrt(-10469/26772 + 7569*sqrt(3)/8924)",
+    "Omega": "sqrt(150163/26772 - 10279*sqrt(3)/8924) + sqrt(3107*sqrt(3)/2231 + 29689/6693)",
+    "candidate_index": 4,
+    "k_1": "sqrt(-10469/26772 + 7569*sqrt(3)/8924)",
+    "k_2": "-2*sqrt(-10469/26772 + 7569*sqrt(3)/8924)",
+    "omega_1": "sqrt(150163/26772 - 10279*sqrt(3)/8924)",
+    "omega_2": "sqrt(3107*sqrt(3)/2231 + 29689/6693)",
+    "p_shell_defect": "0",
+    "rho": "-10469/26772 + 7569*sqrt(3)/8924"
+  },
+  "claim_boundary": "This certifies one axial-axial candidate-4 bounded obstruction and two of the 108 axisymmetric L=4 workload coefficients. It does not classify the other parity or branch channels, arbitrary finite harmonic sums, smooth secular corrections, causal/retarded corrections, residual descent, observables or quantum states.",
+  "classification": {
+    "all_candidate_rows_classified": false,
+    "bounded_candidate_4_obstructed": true,
+    "candidate_4_exact_source_computed": true,
+    "causal_or_quantum_claim": false,
+    "complete_p_primary_cokernel_paired": true,
+    "frozen_opposite_momentum_fixture_reproduced_exactly": true,
+    "one_pairing_nonzero": true,
+    "one_pairing_zero": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G1_EXPLICIT_ELL2_TWO_ABS_MOMENTUM_FIXTURE",
+  "interpretation": "The first computed cross-|n| source does not evade the bounded resonance gate: its polar L=4 p-primary source has a nonzero cokernel component. The equality of the surviving pairing with the earlier opposite-momentum fixture is an exact output, not an assumed normalization.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "batch the remaining 106 axisymmetric L=4 reduced adjoint coefficients before constructing the nonaxisymmetric L=1,3 fixtures",
+  "pbw_projection": {
+    "action_row_order": [
+      "-metric_00",
+      "2*metric_01",
+      "-metric_11",
+      "2*20*maxwell_axial"
+    ],
+    "coefficient_jet_order": 4,
+    "contravariant_axial_basis": "-partial_theta P_L(cos(theta))/sin(theta)",
+    "input_rows": [
+      9,
+      12,
+      16,
+      17
+    ],
+    "opposite_momentum_calibration_exact": true,
+    "opposite_momentum_calibration_source": [
+      "-64*(163 + 261*sqrt(3))/7",
+      "0",
+      "32*(-21293 + 9450*sqrt(3))/105",
+      "384*(-137 + 55*sqrt(3))/7"
+    ],
+    "output_rows": [
+      20,
+      21,
+      24,
+      33
+    ],
+    "parent_action_sha256": "647ff2fe89c167b00f480ce421e089646d5c6459534d90e74a99d40b7a75d4bd",
+    "parent_q2_sha256": "be4d163044138f4b3b093c54527c2484cfac9eea48a58c791e97926be8597fec",
+    "parent_row_layout_sha256": "6236040676b7e699f5e48be6241143aa3bb5b7c9b4e07364826fc6f2b5ad24a2",
+    "relevant_q2_terms": 842,
+    "scalar_density_basis": "P_L(cos(theta))",
+    "slice_path": "bridge/einstein_sector/generated/einstein_maxwell_weyl_ell2_axial_qminus_pair_L4_q2_slice.json"
+  },
+  "polar_p_cokernel": {
+    "adjoint_columns": [
+      [
+        "1",
+        "4/3"
+      ],
+      [
+        "-(1430541*sqrt(174) + 4077439*sqrt(58))*(-2*sqrt(5588650 + 9940803*sqrt(3)) + sqrt(-63322478 + 64354893*sqrt(3)))/56943789666",
+        "-(76535901*sqrt(174) + 240360187*sqrt(58))*(-2*sqrt(5588650 + 9940803*sqrt(3)) + sqrt(-63322478 + 64354893*sqrt(3)))/2477054850471"
+      ],
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "cokernel_dimension": 2,
+    "kernel_defect": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "nonzero_pairing": "305280/203 - 171648*sqrt(3)/203",
+    "pairings": [
+      "0",
+      "-1152*(-265 + 149*sqrt(3))/203"
+    ],
+    "quadratic_field_norm_witness": 3622,
+    "target_block_rank": 2
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_two_abs_momentum_candidate4_pbw_probe.py",
+    "generator_sha256": "b685cfda9934b38ab135b34f3bfa087c9b86eeb4da5ae0ee9f0516251f899893",
+    "inputs": {
+      "candidate_ledger": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.json",
+        "sha256": "27fe530f6d296453e4eaf504eed688b6a2480cac18e0581e839898c7868e3450"
+      },
+      "opposite_momentum_calibration": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.json",
+        "sha256": "2899ddabd424ad67b71350a12819165c7bca9f136fd922c4052bb4e215358d64"
+      },
+      "parity_workload": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
+        "sha256": "e762ad9600f6d7b22b2a0ec6ccbe25159f810d4b017016afa46d2128497e7b7c"
+      },
+      "polar_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+        "sha256": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20"
+      },
+      "q2_slice": {
+        "path": "bridge/einstein_sector/generated/einstein_maxwell_weyl_ell2_axial_qminus_pair_L4_q2_slice.json",
+        "sha256": "19bda54b489e079284190a663d2edb98646caf3726dbe3566c0eeaf23c2c7544"
+      }
+    }
+  },
+  "quadratic_source": {
+    "convention": "the cross coefficient in (1/2)D^2E[u_1+u_2,u_1+u_2]=D^2E[u_1,u_2]",
+    "source_action_rows": [
+      "2*(-3284623385235748 - 1851232088740662*sqrt(3) + 1298418099*sqrt(6)*sqrt(242074815*sqrt(3) + 1797947138) + 42517301999*sqrt(2)*sqrt(242074815*sqrt(3) + 1797947138))/1165971701055",
+      "-4*(-57090708289*sqrt(58)*sqrt(5588650 + 9940803*sqrt(3)) + 3233525031*sqrt(174)*sqrt(-63322478 + 64354893*sqrt(3)) + 7345195563*sqrt(174)*sqrt(5588650 + 9940803*sqrt(3)) + 18580135535*sqrt(58)*sqrt(-63322478 + 64354893*sqrt(3)))/388657233685",
+      "-2*(-13086724425*sqrt(6)*sqrt(242074815*sqrt(3) + 1797947138) + 2685878099*sqrt(2)*sqrt(242074815*sqrt(3) + 1797947138) + 278711799639906*sqrt(3) + 1216710259092380)/388657233685",
+      "-192*(-309026*sqrt(3) + sqrt(2)*sqrt(242074815*sqrt(3) + 1797947138) + sqrt(6)*sqrt(242074815*sqrt(3) + 1797947138) + 539548)/15617"
+    ]
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE4_BOUNDED_OBSTRUCTION",
+  "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate4-bounded-obstruction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.schema.json",
+  "schema_sha256": "44b3a489e5dc148b82dd694bd4e500e032a83176e96f5286821bf1da0797dbb0",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 at the candidate-4 algebraic circumference",
+    "carrier": "two positive-frequency axial Einstein q-minus modes on |n|=1 and |n|=2",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "input ell=2,m=0 times ell=2,m=0; output L=4,M=0",
+    "k": "k_1=sqrt(rho), k_2=-2sqrt(rho), K=-sqrt(rho)",
+    "m": "0,0 -> 0",
+    "omega": "SUM channel Omega=omega_1+omega_2 on the polar p shell",
+    "parity": "axial times axial input; polar p-primary output",
+    "theory": "Weyl-Maxwell target"
+  },
+  "second_order_verdict": {
+    "causal_retarded_status": "NO_CERTIFIED_MAP",
+    "correction_class": "BOUNDED_OR_FINITE_QUASIPERIODIC",
+    "reason": "one complete polar p-primary adjoint-cokernel functional is nonzero",
+    "smooth_secular_status": "OPEN",
+    "status": "OBSTRUCTED"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_two_abs_momentum_candidate4_pbw_probe --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction"
+  ],
+  "workload_progress": {
+    "axisymmetric_L4_coefficients_total": 108,
+    "candidate_4_axial_axial_coefficients_resolved": 2,
+    "complete_two_fibre_tangent_cone_classified": false,
+    "remaining_axisymmetric_L4_coefficients": 106
+  }
+}
