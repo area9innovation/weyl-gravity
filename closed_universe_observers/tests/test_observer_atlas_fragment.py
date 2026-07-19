@@ -82,6 +82,18 @@ def test_local_rod_hessian_overlay_is_linear_only_and_weyl_obstructed():
         evidence["result_id"] for evidence in local["evidence"]
     }
 
+
+def test_nonlinear_clock_second_jet_closes_only_the_unary_gate():
+    rows = {row["id"]: row for row in build()["entries"]}
+    second_jet = rows["observer.berger.interaction.pbw_108_nonlinear_clock_second_jet"]
+    assert second_jet["descriptions"]["nonlinear"] == "CERTIFIED"
+    assert second_jet["observer_data"]["survives_gauge_reduction"]["status"] == "CERTIFIED"
+    assert second_jet["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert second_jet["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET" in {
+        evidence["result_id"] for evidence in second_jet["evidence"]
+    }
+
 def test_tangent_cone_is_not_promoted():
     row = next(row for row in build()["entries"] if row["id"] == "observer.berger.second_order_cone_restriction")
     assert row["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "OPEN"

@@ -1,0 +1,45 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "result_boundary": "The generated 95-key radial/Weyl/temporal nonlinear clock correction is exactly odd-cyclic. It removes the historical Weyl witness and every free tau/Theta input-column defect. The epsilon_R_squared square retains 261 free PBW keys but all 699 evaluated modes vanish in the certified six-rod/Phi2 background quotient; the mixed epsilon_R_squared*kappa square remains freely zero. This closes the same-background first-bidegree unary gate and authorizes, but does not certify, scalar apparatus q2/q3, K_Berger equivariance, observer-morphism stability or tangent-cone response.",
+  "commands": [
+    {"tier": 0, "command": "python3 -m py_compile on changed Python; jsonschema check on both new schemas; python3 -m json.tool on changed structured data; git diff --check on explicit observer paths", "elapsed_seconds": "under 3", "status": "PASS", "scope": "second-jet module, generator, verifier, tests, payload, certificate, atlas, comparison ledger, lifecycle files, receipt and canonical notes"},
+    {"tier": 1, "command": "pytest -q closed_universe_observers/tests/test_berger_108_row_nonlinear_clock_second_jet.py", "elapsed_seconds": "114.49", "status": "PASS", "scope": "2 exact block-cyclicity, clock-doublet cancellation and mixed-gate tests"},
+    {"tier": 1, "command": "observer atlas generator/verifier; pytest observer atlas and comparison-ledger tests; comparison-ledger verifier", "elapsed_seconds": "under 15", "status": "PASS", "scope": "35 generated-claims tests plus schema, evidence-hash, lifecycle and historical/live-ledger verification"},
+    {"tier": 2, "command": "PYTHONPATH=. python3 closed_universe_observers/generate_berger_108_row_nonlinear_clock_second_jet.py --emit", "elapsed_seconds": "under 300", "status": "PASS", "scope": "generated compact 1.7 MiB exact three-block PBW payload and same-background unary certificate"},
+    {"tier": 2, "command": "PYTHONPATH=. python3 closed_universe_observers/verify_berger_108_row_nonlinear_clock_second_jet.py", "elapsed_seconds": "265.33", "status": "PASS", "scope": "independent payload reconstruction, exact cyclicity, all four bidegree squares and 699-mode background-quotient replay"}
+  ],
+  "higher_tiers_not_run": {"tier_3": "This is a narrowly scoped observer unary-gate promotion on an unchanged content-addressed classical input chain, not a classical/quantum freeze, release, shared-core algebra change or paper theorem promotion. The affected exact certificate and generated-claims consumers were run."},
+  "source_manifest": [
+    {"path": "closed_universe_observers/berger_108_row_nonlinear_clock_second_jet.py", "sha256": "9fb5b7d575727d61d48e727e9e92ad0e8c47e42e780c282c2b464e75fe676629"},
+    {"path": "closed_universe_observers/generate_berger_108_row_nonlinear_clock_second_jet.py", "sha256": "77ebbe095dae073d06310d0a04144becc87f5a943ca661de8487a4d51cafccbf"},
+    {"path": "closed_universe_observers/verify_berger_108_row_nonlinear_clock_second_jet.py", "sha256": "fd221c361fc04c9f1b8a42e6ab3faa35bbf1cc396755c3604645d54ca672c051"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_nonlinear_clock_second_jet.py", "sha256": "b057f52b437fcdd9b7fd4968b4a71e4466a28701234525c2a1886c3c5cc1d009"},
+    {"path": "closed_universe_observers/schema/berger-108-row-nonlinear-clock-second-jet-v1.schema.json", "sha256": "315e13e124e4ebb473ade5cb6879808c0c6321cc62603b0b9fa0b9513113d926"},
+    {"path": "closed_universe_observers/schema/berger-108-row-nonlinear-clock-second-jet-payload-v1.schema.json", "sha256": "142d83ff46de3299cd87537c93c9eedb89e73f096eeb3ca30c9c55236740ac37"},
+    {"path": "closed_universe_observers/reports/berger-108-row-nonlinear-clock-second-jet.md", "sha256": "e82e6da182b1012d02386a694f81b545f23617786763d6ae6bec7c032edc8b48"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET.json", "sha256": "cacbd3be6bde8e80d142ca9012b024abd7a10472a2759b8f6e8b8af19b310481"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET_PAYLOAD.json", "sha256": "4518560114f9c9930081a13731af422e49e2646fc9f14fa5a6e4618f4850e9d3"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "f611ffb3e218ab2c97dfb855988e10404886001c33247ff93779bb4907c276ae"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "9eebcb41cbcc3ef88ae3dd31182d3f8ebf39c8178b605b1fb0aa85d32d57b078"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "6554563c989fdbe087a12117709a71e0867f43aa1a001c33ed2429fed1137c48"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "3a4f44dc0fb3402db008a81d9b976b7d3c7aa89803e5c7795702e913ac1467e4"},
+    {"path": "planning/events/berger-nonlinear-clock-second-jet-DONE-4407b6dbda83986c.json", "sha256": "41e802748ae663d57a62b4e417bfd7fc11148a57b02729588336ef8fde5cb6d5"},
+    {"path": "planning/work-items/berger-108-row-apparatus-q2-q3-extension.json", "sha256": "3740108328125818aeca15552862f5f966a46a0bd954828e9f7c9087b22a853c"},
+    {"path": "planning/events/berger-108-row-apparatus-q2-q3-extension-ACTIVE-d8beea32174bb92a.json", "sha256": "6e3d18136a62cb50b191963af43471183de9620dfdb23e28b4d84fa51908b59d"}
+  ],
+  "flags": {
+    "NONLINEAR_CLOCK_SECOND_JET_PAYLOAD_EXPORTED": true,
+    "ALL_SECOND_JET_BLOCKS_ODD_CYCLIC": true,
+    "EPSILON_R_SQUARED_Q1_SQUARED_ZERO_IN_BACKGROUND_QUOTIENT": true,
+    "MIXED_EPSILON_R_SQUARED_KAPPA_Q1_SQUARED_ZERO": true,
+    "COMPLETE_FIRST_BIDEGREE_UNARY_GATE": true,
+    "APPARATUS_Q2_Q3_EXTENSION_AUTHORIZED": true,
+    "APPARATUS_Q2_Q3_EXTENSION_CERTIFIED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "PHYSICAL_BRANCH_BRIDGE_ACTIVATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

@@ -127,6 +127,16 @@ finite capabilities.  Retained-coefficient nonvanishing, `U_E`, the first
 retarded recoil channel, the infinite spatial tail and the complete stop loop
 remain fail-closed.
 
+The nonlinear-clock second-jet row is now `CERTIFIED` for the scoped unary
+claim.  Its generated 95-key correction is exactly odd-cyclic, the historical
+Weyl witness cancels, the mixed `epsilon_R_squared*kappa` square remains
+freely zero, and all 699 modes of the remaining `epsilon_R_squared` residual
+vanish in the pinned six-rod/Phi2 differential quotient.  Detector response
+and restriction to the second-order cone remain `NO_CERTIFIED_MAP`: apparatus
+`q2,q3`, `K_Berger` equivariance and observer-morphism stability on the
+completed 108-row carrier are authorized successors, not consequences of the
+unary certificate.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.

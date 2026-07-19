@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-108-row-nonlinear-clock-second-jet-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "payload_ref", "second_jet_derivation", "completed_q1", "nilpotency_replay", "activation_disposition", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-nonlinear-clock-second-jet-v1"},
+    "result_id": {"const": "BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_SAME_BACKGROUND_FIRST_BIDEGREE_UNARY_COMPLETION"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {"type": "object", "minProperties": 5, "maxProperties": 5},
+    "payload_ref": {"type": "object", "required": ["path", "result_id", "sha256", "blocks_canonical_sha256", "correction_summary"]},
+    "second_jet_derivation": {"type": "object", "required": ["radial_metric_map", "radial_action_source", "weyl_clock_doublet", "temporal_clock_doublet", "block_summaries", "each_block_odd_cyclic", "temporal_source_operator_key_count"], "properties": {"each_block_odd_cyclic": {"const": true}, "temporal_source_operator_key_count": {"const": 43}}},
+    "completed_q1": {"type": "object"},
+    "nilpotency_replay": {"type": "object", "required": ["bidegree_summaries", "free_zero_bidegrees", "epsilon_R_squared_free_residual_summary", "epsilon_R_squared_background_quotient_summary", "clock_ghost_input_columns_absent_from_free_residual"], "properties": {"free_zero_bidegrees": {"const": ["(0, 0)", "(0, 1)", "(1, 1)"]}, "clock_ghost_input_columns_absent_from_free_residual": {"const": true}}},
+    "activation_disposition": {"type": "object", "required": ["mixed_epsilon_R_squared_kappa_unary_gate", "apparatus_q2_q3_extension_authorized", "apparatus_q2_q3_extension_certified", "K_Berger_equivariance_certified", "observer_morphism_stability_certified", "tangent_cone_observer_restriction_authorized", "physical_branch_bridge_activated"], "properties": {"mixed_epsilon_R_squared_kappa_unary_gate": {"const": "PASSED"}, "apparatus_q2_q3_extension_authorized": {"const": true}, "apparatus_q2_q3_extension_certified": {"const": false}, "K_Berger_equivariance_certified": {"const": false}, "observer_morphism_stability_certified": {"const": false}, "tangent_cone_observer_restriction_authorized": {"const": false}, "physical_branch_bridge_activated": {"const": false}}},
+    "flags": {"type": "object", "required": ["NONLINEAR_CLOCK_SECOND_JET_PAYLOAD_EXPORTED", "ALL_SECOND_JET_BLOCKS_ODD_CYCLIC", "EPSILON_R_SQUARED_Q1_SQUARED_ZERO_IN_BACKGROUND_QUOTIENT", "MIXED_EPSILON_R_SQUARED_KAPPA_Q1_SQUARED_ZERO", "COMPLETE_FIRST_BIDEGREE_UNARY_GATE", "APPARATUS_Q2_Q3_EXTENSION_AUTHORIZED", "APPARATUS_Q2_Q3_EXTENSION_CERTIFIED", "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED", "QUANTUM_CLAIM"], "properties": {"NONLINEAR_CLOCK_SECOND_JET_PAYLOAD_EXPORTED": {"const": true}, "ALL_SECOND_JET_BLOCKS_ODD_CYCLIC": {"const": true}, "EPSILON_R_SQUARED_Q1_SQUARED_ZERO_IN_BACKGROUND_QUOTIENT": {"const": true}, "MIXED_EPSILON_R_SQUARED_KAPPA_Q1_SQUARED_ZERO": {"const": true}, "COMPLETE_FIRST_BIDEGREE_UNARY_GATE": {"const": true}, "APPARATUS_Q2_Q3_EXTENSION_AUTHORIZED": {"const": true}, "APPARATUS_Q2_Q3_EXTENSION_CERTIFIED": {"const": false}, "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"const": "EXPORT_APPARATUS_Q2_Q3_K_BERGER_EQUIVARIANCE_AND_OBSERVER_MORPHISM_STABILITY_ON_THE_COMPLETED_UNARY"},
+    "claim_boundary": {"type": "string", "minLength": 900},
+    "provenance": {"type": "object"}
+  }
+}

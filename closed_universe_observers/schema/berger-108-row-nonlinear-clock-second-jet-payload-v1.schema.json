@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-108-row-nonlinear-clock-second-jet-payload-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "scalar_matrix_shape", "blocks", "block_count", "correction_summary", "blocks_canonical_sha256"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-nonlinear-clock-second-jet-payload-v1"},
+    "result_id": {"const": "BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET_PAYLOAD"},
+    "scalar_matrix_shape": {"const": [108, 108]},
+    "blocks": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["id", "entries"]}},
+    "block_count": {"const": 3},
+    "correction_summary": {"type": "object"},
+    "blocks_canonical_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
