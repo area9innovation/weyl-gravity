@@ -2,7 +2,7 @@
   "schema": "paper-draft-source-map-v1",
   "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
   "lifecycle_state": "DRAFT_ALLOWED",
-  "source_baseline": "ddbcbe2887c4c7bba61efb66d33d4f04132ed39c",
+  "source_baseline": "8ef7b7a0cc2d187eec981d7fd4577bd7be7422da",
   "manuscript": "paper/14-pure-weyl-black-hole-radiation.tex",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -44,12 +44,14 @@
     {
       "source": "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
       "issue": "The legacy phrase Einstein iff gamma=0 applies only to the Mannheim-Kazanas sheet through w=1.",
-      "manuscript_disposition": "On the complete Laurent locus the paper requires gamma=0 and w=1; the complementary (gamma,w)=(0,-1) point is explicitly excluded."
+      "manuscript_disposition": "On the complete Laurent locus the paper requires gamma=0 and w=1; the complementary (gamma,w)=(0,-1) point is explicitly excluded.",
+      "status": "REPAIRED at source (commit 8ef7b7a0): the generator docstring now states the sheet-scoped classification; the certificate content was already free of the phrase"
     },
     {
       "source": "black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json",
       "issue": "The certificate's causal-unavoidability interpretation exceeds its reduced-mode leading-asymptotic data.",
-      "manuscript_disposition": "The paper retains only endpoint regularity and leading-symbol nonselection, and explicitly recognizes zero Ricci-carrier Cauchy data as a local linear truncation."
+      "manuscript_disposition": "The paper retains only endpoint regularity and leading-symbol nonselection, and explicitly recognizes zero Ricci-carrier Cauchy data as a local linear truncation.",
+      "status": "REPAIRED at source (commit 8ef7b7a0): both disposition certificates regenerated with interpretation language scoped to the tested endpoint diagnostics"
     }
   ],
   "sources": [
@@ -83,7 +85,7 @@
     },
     {
       "path": "black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json",
-      "git_blob": "edf823a52c647e330761bd96d96e05034543c1b1"
+      "git_blob": "23150ba0ad8a6903abf75ee308c556861a0eef91"
     },
     {
       "path": "black_hole_programme/certificates/BH2B_POLAR_SPLIT.json",
@@ -107,11 +109,15 @@
     },
     {
       "path": "black_hole_programme/certificates/BH2B_POLAR_DISPOSITION.json",
-      "git_blob": "47028b3693b4cfe691c379787a2efc5f4df4c06a"
+      "git_blob": "11aeaf7160b3a6ca4d2bdcc8719270d4b89df67b"
     },
     {
       "path": "black_hole_programme/certificates/BH4_HAWKING_MONODROMY.json",
       "git_blob": "bbb39b30bedaeb9b696cfb39671d2a67064f0f99"
+    },
+    {
+      "path": "black_hole_programme/certificates/BH2C_ASYMPTOTIC_JORDAN.json",
+      "git_blob": "120c1f651fb560c2dc25f1b6fe2096a65ebdc593"
     }
   ],
   "next_gate": "BH2A_BH2B_ASYMPTOTIC_JORDAN_METRIC_RECONSTRUCTION_AND_INVARIANT_CARRIER_SIGN_THEORY"
