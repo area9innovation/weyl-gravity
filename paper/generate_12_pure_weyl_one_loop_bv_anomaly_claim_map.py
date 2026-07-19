@@ -585,6 +585,12 @@ def build() -> dict[str, Any]:
         "result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
         "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_TAU_ADIC_EXTENDED_QME_RESTORATION_ANOMALY_INDUCED_GAMMA1_AND_FV_CONFORMIZED_C2_LOGARITHM",
         "lifecycle_state": "WRITING_STARTED",
+        "referee_revision": {
+            "review_snapshot": "EARLIER_TEN_PAGE_SNAPSHOT",
+            "requested_revision_status": "IMPLEMENTED_AND_MACHINE_REPLAYED",
+            "human_scientific_review_status": "PENDING",
+            "theorem_freeze_authorized": False,
+        },
         "dependency_tags": [
             "LOCAL-ALGEBRAIC",
             "EUCLIDEAN-SPECTRAL",

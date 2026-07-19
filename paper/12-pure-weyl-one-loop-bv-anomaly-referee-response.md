@@ -7,6 +7,10 @@ The dispositions below refer to the revised manuscript, not to the earlier
 ten-page review snapshot. They assert that the requested proof architecture
 is now visible to a reader; they do not replace independent checking of the
 underlying identities or final human author review.
+The generated claim map records this distinction explicitly as
+`requested_revision_status: IMPLEMENTED_AND_MACHINE_REPLAYED`,
+`human_scientific_review_status: PENDING`, and
+`theorem_freeze_authorized: false`.
 
 | Referee requirement | Revision disposition | Evidence |
 | --- | --- | --- |

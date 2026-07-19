@@ -21,6 +21,12 @@ def main() -> None:
     assert payload["schema"] == "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1"
     assert payload["result_id"] == "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT"
     assert payload["lifecycle_state"] == "WRITING_STARTED"
+    assert payload["referee_revision"] == {
+        "review_snapshot": "EARLIER_TEN_PAGE_SNAPSHOT",
+        "requested_revision_status": "IMPLEMENTED_AND_MACHINE_REPLAYED",
+        "human_scientific_review_status": "PENDING",
+        "theorem_freeze_authorized": False,
+    }
     assert payload["dependency_tags"] == [
         "LOCAL-ALGEBRAIC",
         "EUCLIDEAN-SPECTRAL",
