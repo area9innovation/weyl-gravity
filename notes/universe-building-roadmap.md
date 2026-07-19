@@ -2511,6 +2511,35 @@ cone, including all faces and ray sums.  The remaining gate is not occupation
 existence but the full phase/parity resonance-zero fibre; the atlas keeps that
 geometry `OPEN` and all causal maps `NO_CERTIFIED_MAP`.
 
+The six same-sign bounded cones also have exact equational fibre products:
+
+```text
+Z_i^bounded = pi_i^{-1}(C_i) intersect mu_J^{-1}(0) intersect V(B_i),
+i=16,...,21.
+```
+
+Here `C_i` is the four-ray scalar cone and `B_i` the complete candidatewise
+cross-fibre resonance map.  The finite-harmonic cokernel theorem and the
+864-defect same-fibre census make the formula necessary and sufficient for a
+bounded or finite-quasiperiodic correction.  The open problem is its real
+Hermitian component and singular-stratum decomposition, not another
+sufficiency test.
+
+The next phase/parity layer is now closed over the scalar-cone face lattice.
+Both negative-current `q_minus` nodes are positive at every nonzero cone
+point.  The optional resonant positive-current node cuts out one exact
+two-ray automatic face on each of candidates 17--21, while candidate 16 has
+no nonzero automatic face.  Away from those faces the certified all-`m`
+complex resonance varieties have active component counts
+`1,1,1,4,1,2` and dimensions `12,14,22,10,14,10` for candidates 16--21.
+The existing axisymmetric section proves real nonemptiness on every stratum.
+What remains is sharply smaller: decompose the real fixed-norm intersections
+with the common zero of the three lifted rotation moment maps.  The exact
+bounded fibre-product formula is already necessary and sufficient, but its
+real connected components and singular strata, all-orders integration and
+every causal promotion remain fail-closed; no circumference backgrounds are
+identified.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell

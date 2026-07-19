@@ -1074,6 +1074,74 @@ origin.  It does not imply that every amplitude in the fibre over a given
 occupation is bounded.
 \end{proof}
 
+\begin{proposition}[Exact same-sign bounded fibre products]
+For each candidate $i=16,\ldots,21$, let \(\pi_i\) be the six-node
+absolute-current occupation map, \(C_i\) its four-ray
+\((\mu_H,\mu_{P_x},R_c)\)-zero cone, \(\mu_J\) the three lifted rotation
+moment maps, and \(B_i\) the complete isolated cross-fibre resonance map.
+Then the bounded or finite-quasiperiodic second-order tangent cone is exactly
+\[
+ \mathcal Z^{\rm bnd}_i
+ =\pi_i^{-1}(C_i)\cap\mu_J^{-1}(0)\cap\mathcal V(B_i).
+\]
+All relative phases, both parities and all $m=-2,\ldots,2$ coefficients are
+retained.
+\end{proposition}
+
+\begin{proof}
+Necessity is the complete finite-harmonic adjoint-cokernel theorem: the scalar
+factor gives $H,P_x,R_c$, the rotation factor gives the three lifted
+rotations, and \(\mathcal V(B_i)\) kills the unique candidate-specific
+cross-fibre shell.  Conversely, the 864-defect same-fibre census makes every
+other nonzero-frequency source block invertible, so simultaneous vanishing is
+sufficient.  This gives an exact equation, not yet a decomposition of its
+real Hermitian components or singular strata.
+\end{proof}
+
+\begin{proposition}[Resonance fibres over the scalar-cone faces]
+On each same-sign collision background (16)--(21), the complete complex
+positive-frequency phase/parity resonance fibre is stratified over the
+four-ray scalar cone.  The two $q_-$ occupations are strictly positive at
+every nonzero scalar-cone point.  The automatic and active strata are
+\[
+\begin{array}{c|c|c|c|c}
+\text{candidate}&\text{resonant pair}&\text{automatic face}
+ &\dim_{\mathbb C}\mathcal V_{\rm active}&\#\operatorname{Irr}_{\mathbb C}\mathcal V_{\rm active}\\ \hline
+16&q_-^{(1)}q_-^{(2)}&\{0\}&12&1\\
+17&q_-^{(1)}q_+^{(2)}&\operatorname{cone}(R_1,R_2)&14&1\\
+18&p^{(1)}q_-^{(2)}&\operatorname{cone}(R_2,R_4)&22&1\\
+19&p^{(1)}q_-^{(2)}&\operatorname{cone}(R_2,R_4)&10&4\\
+20&q_+^{(1)}q_-^{(2)}&\operatorname{cone}(R_1,R_3)&14&1\\
+21&q_+^{(1)}q_-^{(2)}&\operatorname{cone}(R_1,R_3)&10&2
+\end{array}
+\]
+Candidates (17) and (20) use their isolated difference-frequency channel;
+the other four rows use the isolated sum-frequency channel.
+On an automatic face one bilinear factor vanishes.  Off it, the table lists
+the complete active all-$m$ complex resonance variety.  The four components
+on (19) are the real-supported regular-pencil eigenline components, and the
+two on (21) are the real mixed parity-proportionality components.  Every
+scalar-cone point has at least one real representative in the corresponding
+stratum.
+\end{proposition}
+
+\begin{proof}
+Every extreme ray contains $q_-^{(1)}$ and $q_-^{(2)}$ with positive
+weight.  Reading the optional resonant node from the four ray supports gives
+the automatic faces in the table.  On their complements, restrict the
+complete binary-form zero-variety decompositions: the target-doublet
+first-transvectant variety for (16), the third-transvectant kernels for
+(17),(20), the multiplicity-two first-transvectant variety for (18), the
+regular pencil for (19), and the scalar highest-spin product for (21).
+Their certified dimensions and component counts give the last two columns.
+The scalar-cone section in the preceding corollary supplies real points.
+Combined with the exact fibre-product formula, these strata are intersected
+with the prescribed real norm levels and the three lifted rotation moment
+maps to give a necessary-and-sufficient bounded equation.  The proposition
+does not decompose that real intersection into connected components or
+singular strata.
+\end{proof}
+
 \section{Current bounded frontier}
 
 The electric, Wilson, and circumference columns are closed, and the first
@@ -1283,6 +1351,10 @@ All 24 same-sign scalar extreme-ray lifts &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_extreme_ray_lifts.json}\\
 Bounded sections over the complete same-sign scalar cones &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_cone_sections.json}\\
+Exact same-sign bounded phase/parity fibre products &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json}\\
+Complete same-sign resonance fibres over scalar-cone faces &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1335,12 +1407,19 @@ bounded zero set.
 The immediate mathematical target is the full real component geometry of the
 six same-sign collision cones.  Their nonemptiness, same-fibre shell census,
 universal four-ray scalar projection, all 24 extreme-ray lifts, and a bounded
-section over every scalar-cone point are now closed.
+section over every scalar-cone point are now closed.  The complete complex
+resonance fibre is also stratified over every scalar-cone face.  The remaining
+same-sign gate is the real fixed-norm intersection with the three lifted
+rotation moment maps.  Its exact fibre-product equation is already certified;
+the remaining task is its connected-component and singular-stratum
+decomposition.  Complex resonance components and occupation-level sums need
+not be recomputed.
 The symbolic-\(\ell\) standard-branch resonance and collision theorem is now
 closed, as is the complete 164-coefficient two-momentum branch-basis census.
-The next exact enlargement is to classify the complete phase/parity fibre of
-the resonance-zero map over each scalar-cone face.  Occupation-level pairwise
-sums need not be retested.  This is followed by joins of distinct \(|k|\)
+The next exact enlargement is to classify the real connected components of
+the fixed-norm resonance strata after imposing all three lifted rotation
+moment maps.  Occupation-level pairwise sums and complex resonance ideals need
+not be retested.  This is followed by joins of distinct \(|k|\)
 fibres without identifying their phase carriers or circumference backgrounds.
 The immediate physical target is to compare its strata with the transferred
 Einstein/extra/Maxwell interaction tensor and with observer response.  A

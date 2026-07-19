@@ -95,6 +95,8 @@ CERTIFICATES = {
     "same_sign_scalar_candidate_audit": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones.json",
     "same_sign_extreme_ray_lifts": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_extreme_ray_lifts.json",
     "same_sign_scalar_cone_sections": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_cone_sections.json",
+    "same_sign_phase_parity_fibre_product": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json",
+    "same_sign_resonance_face_fibres": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
     "ell2_two_abs_momentum_candidate4_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json",
     "ell2_two_abs_momentum_axial_qminus_L4_triplet": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.json",
@@ -905,6 +907,30 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","The bounded cone projects surjectively onto the complete scalar occupation cone on every candidate 16--21."),("CERTIFIED","The declared section has finite smooth corrections; the full phase/parity fibres remain unclassified."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_scalar_cone_sections","same_sign_extreme_ray_lifts","same_sign_scalar_extreme_rays","same_sign_collision_same_fibre_census"),
             "This is occupation-surjectivity, not a statement that every amplitude over a scalar-null occupation is bounded. The complete phase/parity fibres, full real components and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_phase_parity_fibre_product",
+            _scope(theory="Weyl-Maxwell target", background="six distinct collision candidates 16--21, retained separately", boundaries="closed S1_L times S2 before final residual quotient", carrier="complete generic ell=2 axial/polar positive-frequency amplitude carrier with conjugate reality completion", degree=2, parity="both axial and polar with arbitrary relative phases", ell="input ell=2; candidate-specific resonant output L=1,3,4", m="all m=-2,...,2", k="signed n=(1,2), never identified across rho", omega="all six generic positive-frequency shells and the single candidate-specific cross-fibre resonant channel", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Each formula retains its exact candidate, circumference, branch, parity, angular and temporal carrier; no background or mode identification is made."),
+            ("CERTIFIED","The occupation map uses the action-derived absolute-current forms, and all phase/parity amplitudes remain explicit above it."),
+            ("CERTIFIED","The scalar H/Px/Rc cone and all three lifted rotation moment maps occur as separate factors in every bounded-cone formula."),
+            ("CERTIFIED","All six cross-fibre complex resonance varieties are decomposed; the same-fibre census removes every other nonzero-frequency condition."),
+            _second_order(("CERTIFIED","For each candidate, Z_i^bounded = pi_i^{-1}(C_i) intersect mu_J^{-1}(0) intersect V(B_i) is necessary and sufficient."),("CERTIFIED","The bounded formula embeds in the separately certified smooth-secular moment-map cone."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_phase_parity_fibre_product","same_sign_scalar_cone_sections","same_sign_scalar_candidate_audit","same_sign_collision_same_fibre_census","finite_generic_bounded_zero_block","ell2_two_abs_momentum_cross_fibre_amplitude_system"),
+            "This is a complete equational fibre-product description, not an irreducible real Hermitian component or singular-stratum decomposition. All-orders, causal, residual, observational and quantum promotions remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_resonance_face_fibres",
+            _scope(theory="Weyl-Maxwell target", background="six distinct collision candidates 16--21, retained separately", boundaries="closed S1_L times S2 before final residual quotient", carrier="complete complex positive-frequency phase/parity resonance fibre over every face of each same-sign scalar occupation cone", degree=2, parity="axial and polar", ell="input ell=2; candidate-specific output L=1,3,4", m="all m via the certified binary-form intertwiners", k="signed n=(1,2)", omega="candidate-specific isolated SUM channel on 16,18,19,21 and DIFFERENCE channel on 17,20", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Each face row retains its candidate, rho, resonant branch pair, target shell and all-m parity carrier; no circumference backgrounds are identified."),
+            ("CERTIFIED","The scalar norm levels use the action-derived absolute-current occupations, but no quotient of their angular phase fibres is inferred."),
+            ("CERTIFIED","The exact bounded fibre-product formula retains H/Px/Rc and all three lifted rotation moment maps; their real component decomposition remains open."),
+            ("CERTIFIED","Optional-branch-zero faces are automatic. On active strata the complete complex component counts are 1,1,1,4,1,2 for candidates 16--21, with real nonempty sections."),
+            _second_order(("CERTIFIED","Inside the exact necessary-and-sufficient bounded fibre-product formula, every scalar-cone face now has a complete complex resonance-component ledger; real components remain undecomposed."),("CERTIFIED","The same exact bounded solutions embed in the certified smooth-secular correction class; its real component decomposition is likewise open."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_resonance_face_fibres","same_sign_phase_parity_fibre_product","same_sign_scalar_cone_sections","ell2_two_abs_momentum_target_doublet_L3_zero_varieties","ell2_two_abs_momentum_scalar_L1_zero_varieties","ell2_two_abs_momentum_multiplicity_two_L3_zero_varieties","ell2_two_abs_momentum_regular_pencil_L4_zero_varieties","ell2_two_abs_momentum_scalar_L4_zero_varieties"),
+            "This is a complete complex resonance-face stratification inside the exact bounded fibre-product formula. It is not a real connected-component or singular-stratum decomposition and not a higher-lifecycle result.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload",
@@ -1750,6 +1776,29 @@ def build() -> dict[str, object]:
         raise AssertionError("same-sign scalar-cone section theorem changed")
     if cone_sections["every_amplitude_over_each_scalar_occupation_bounded"] or cone_sections["six_full_phase_parity_fibres_classified"] or cone_sections["all_orders_integrability"] or cone_sections["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("same-sign scalar-cone section theorem exceeded scope")
+    fibre_product = records["same_sign_phase_parity_fibre_product"]["classification"]
+    if not (
+        fibre_product["all_six_bounded_cones_have_exact_necessary_and_sufficient_equational_formulas"]
+        and fibre_product["all_six_cross_fibre_complex_resonance_varieties_decomposed"]
+        and fibre_product["all_same_fibre_nonzero_frequency_rows_removable"]
+        and fibre_product["all_six_scalar_occupation_cones_classified"]
+        and fibre_product["all_relative_phases_and_both_parities_retained_in_formula"]
+        and fibre_product["all_three_rotation_moment_maps_retained_in_formula"]
+    ):
+        raise AssertionError("same-sign phase/parity fibre-product theorem changed")
+    if fibre_product["all_six_real_hermitian_phase_parity_intersections_decomposed"] or fibre_product["componentwise_topology_or_singular_strata_classified"] or fibre_product["all_orders_integrability"] or fibre_product["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("same-sign phase/parity fibre-product theorem exceeded equational scope")
+    resonance_faces = records["same_sign_resonance_face_fibres"]["classification"]
+    if not (
+        resonance_faces["all_six_resonance_fibres_stratified_over_complete_scalar_cones"]
+        and resonance_faces["all_optional_branch_zero_faces_identified"]
+        and resonance_faces["all_active_complex_component_ledgers_complete"]
+        and resonance_faces["real_nonempty_section_on_every_scalar_cone_point"]
+        and resonance_faces["bounded_fibre_product_formula_imported"]
+    ):
+        raise AssertionError("same-sign resonance-face theorem changed")
+    if resonance_faces["full_real_connected_component_decomposition"] or resonance_faces["rotation_moment_map_reduction_completed"] or resonance_faces["complete_real_bounded_component_decomposition"] or resonance_faces["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("same-sign resonance-face theorem exceeded scope")
     parity_workload = records["ell2_two_abs_momentum_parity_workload"]["classification"]
     if not (parity_workload["all_twenty_one_candidates_parity_typed"] and parity_workload["all_m_angular_nonvanishing_witnessed"] and parity_workload["odd_L_axisymmetric_fixtures_excluded"] and parity_workload["reduced_source_workload_complete"]):
         raise AssertionError("ell2 two-absolute-momentum parity workload changed")

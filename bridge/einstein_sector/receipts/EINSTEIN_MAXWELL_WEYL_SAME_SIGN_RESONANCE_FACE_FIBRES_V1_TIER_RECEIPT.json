@@ -1,0 +1,20 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_RESONANCE_FACE_FIBRES_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Complete complex resonance-fibre stratification over every face of the six same-sign scalar occupation cones.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json": "7607c649ebc628270669db8fd5e6ab813b281b82c83192a9cb7f7dbee09f3433",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_resonance_face_fibres.py": "be6fe31d10f6df8b910caf8a337bfe03f07fba85ca6d01cfef657cbe6e1e47d8",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_resonance_face_fibres.schema.json": "f1f91e86eeac6591d0e59eac8c1f8684d5d3cf29068d541cf4e9da36ec0f10c4",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_resonance_face_fibres.py": "8e80709809de3b91444529b792c008a55e1e88987d31d93d580ec20176281e68",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_resonance_face_fibres.py": "9e73ae15ed43cac1f37da28bdf499e21ecc5923e6a607caafc719ad48170e510",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-resonance-face-fibres.md": "6ee3b81e7253c3c021573c81ad8fa4941c3e759ae68ea4cc4b63288e8d76471d"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <scoped JSON paths>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {"status": "PASS", "tests_run": 3, "elapsed_seconds": 0.017, "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_resonance_face_fibres --check", "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_resonance_face_fibres", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_resonance_face_fibres"]},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "reason": "The theorem composes the exact bounded fibre-product formula, universal four-ray scalar cone, six isolated collision rows, complete candidatewise all-m zero-variety decompositions and the real scalar-cone section."},
+    "tier_3": {"status": "NOT_RUN", "reason": "Real norm-level connected components, lifted-rotation reduction, the complete bounded cone and higher lifecycles remain open."}
+  },
+  "claim_boundary": "The complex resonance fibre is complete face by face inside the exact bounded fibre-product formula. Its real connected components and singular strata are not classified."
+}

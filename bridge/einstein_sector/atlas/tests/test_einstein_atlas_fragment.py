@@ -168,6 +168,27 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("not a statement that every amplitude", entry["claim_boundary"])
 
+    def test_same_sign_phase_parity_fibre_product_is_exact_but_not_decomposed_over_reals(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_phase_parity_fibre_product"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("complex resonance varieties are decomposed", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("necessary and sufficient", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not an irreducible real Hermitian", entry["claim_boundary"])
+
+    def test_same_sign_resonance_face_fibres_are_complex_not_real_complete(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_resonance_face_fibres"]
+        second = entry["mode_data"]["second_order"]
+        self.assertIn("component counts are 1,1,1,4,1,2", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("DIFFERENCE channel on 17,20", entry["scope"]["omega"])
+        self.assertIn("not a real connected-component", entry["claim_boundary"])
+
     def test_first_two_abs_momentum_parity_workload_is_fail_closed(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
         second = entry["mode_data"]["second_order"]

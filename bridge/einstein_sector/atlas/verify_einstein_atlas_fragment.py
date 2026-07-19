@@ -460,6 +460,24 @@ def verify() -> None:
         raise AssertionError("same-sign scalar-cone section verdict changed")
     if section_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "not a statement that every amplitude" not in sections["claim_boundary"]:
         raise AssertionError("same-sign scalar-cone section row exceeded occupation-surjectivity scope")
+    fibre_product = by_id["einstein.ph.wm.interaction.ell2_same_sign_phase_parity_fibre_product"]
+    fibre_second = fibre_product["mode_data"]["second_order"]
+    if fibre_product["mode_data"]["resonance"]["status"] != "CERTIFIED" or "complex resonance varieties are decomposed" not in fibre_product["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("same-sign phase/parity resonance varieties were hidden")
+    if fibre_product["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "all three lifted rotation" not in fibre_product["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("same-sign phase/parity moment-map factors were hidden")
+    if fibre_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "necessary and sufficient" not in fibre_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("same-sign phase/parity fibre-product formula changed")
+    if fibre_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "not an irreducible real Hermitian" not in fibre_product["claim_boundary"]:
+        raise AssertionError("same-sign phase/parity fibre-product row exceeded equational scope")
+    resonance_faces = by_id["einstein.ph.wm.interaction.ell2_same_sign_resonance_face_fibres"]
+    resonance_face_second = resonance_faces["mode_data"]["second_order"]
+    if resonance_faces["mode_data"]["resonance"]["status"] != "CERTIFIED" or "component counts are 1,1,1,4,1,2" not in resonance_faces["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("same-sign resonance-face fibres were hidden")
+    if resonance_faces["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or resonance_face_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("same-sign resonance-face theorem hid the exact bounded fibre-product formula")
+    if resonance_face_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "not a real connected-component" not in resonance_faces["claim_boundary"]:
+        raise AssertionError("same-sign resonance-face theorem exceeded its lifecycle scope")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

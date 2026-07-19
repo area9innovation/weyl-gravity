@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_resonance_face_fibres.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "scope", "face_rows", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_RESONANCE_FACE_FIBRES"},
+    "face_rows": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["candidate_index", "rho", "collision", "automatic_zero_face", "active_stratum", "real_nonemptiness"]
+      }
+    }
+  },
+  "additionalProperties": true
+}

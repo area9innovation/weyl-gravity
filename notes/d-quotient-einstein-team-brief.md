@@ -3764,6 +3764,43 @@ may still resonate.  Atlas row
 `einstein.ph.wm.interaction.ell2_same_sign_scalar_cone_sections` records this
 distinction.
 
+The six bounded cones now have exact necessary-and-sufficient fibre-product
+formulas.  If `pi_i` is the six-node absolute-current occupation map, `C_i`
+its four-ray scalar cone, `mu_J` the three lifted rotation moment maps, and
+`B_i` the complete isolated cross-fibre resonance map, then
+
+```text
+Z_i^bounded = pi_i^{-1}(C_i) intersect mu_J^{-1}(0) intersect V(B_i),
+i=16,...,21.
+```
+
+The complete finite-harmonic cokernel theorem supplies necessity and
+sufficiency, and the 864-defect same-fibre census removes every other
+nonzero-frequency condition.  This is a complete equational theorem, not yet
+a real Hermitian component or singular-stratum decomposition.
+
+The resonance fibre over that scalar cone is now stratified exactly.  Both
+`q_minus` occupations are strictly positive away from the origin.
+Consequently candidate 16 is on its active resonance variety at every
+nonzero scalar-cone point.  On candidates 17--21 the optional positive-current
+resonant node vanishes on, respectively,
+`cone(R1,R2)`, `cone(R2,R4)`, `cone(R2,R4)`, `cone(R1,R3)` and
+`cone(R1,R3)`; the bilinear resonance is automatic on those faces.  Off the
+automatic faces, the complete all-`m` complex component counts for candidates
+16--21 are `1,1,1,4,1,2`, of complex dimensions `12,14,22,10,14,10` in
+resonant-pair ambient dimensions `20,20,30,30,20,20`.  The four candidate-19
+components are the real-supported pencil eigenlines and the two candidate-21
+components are the real parity-proportionality sheets.  This closes the
+complex phase/parity resonance-face problem.  It does **not** classify the
+real norm-level connected components of the exact fibre-product intersection
+with `mu_J1=mu_J2=mu_J3=0`; that component and singular-stratum decomposition
+is the active gate.  The rotation equations themselves are already retained
+in the necessary-and-sufficient bounded formula.
+Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_resonance_face_fibres` certifies the
+bounded formula but keeps its real component decomposition `OPEN` and the
+causal map `NO_CERTIFIED_MAP`.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
