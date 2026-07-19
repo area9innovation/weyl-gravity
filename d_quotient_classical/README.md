@@ -631,6 +631,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   `epsilon=0`, not a globally smooth exact nonzero-`epsilon` family:
   [`certificates/NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1.json`](certificates/NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1.json),
   [`reports/nariai-transverse-global-hpl-rank310-causal-variation.md`](reports/nariai-transverse-global-hpl-rank310-causal-variation.md)
+
+- Exact global disposition of the transverse Einstein branch: the
+  Kantowski--Sachs family generating the certified tangent exists on every
+  fixed compact time slab, but for every nonzero `0<|epsilon|<1` its areal
+  radius reaches zero with `C^2=12 C_epsilon^2/b^6` at finite proper time.
+  Thus this branch cannot promote the formal variation to a smooth family on
+  all `R x S1 x S2`; non-Einstein Bach-flat families and declared causal
+  subdomains remain open:
+
+  [`reports/nariai-transverse-kantowski-sachs-global-obstruction.md`](reports/nariai-transverse-kantowski-sachs-global-obstruction.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer

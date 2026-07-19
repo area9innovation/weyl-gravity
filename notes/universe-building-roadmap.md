@@ -233,6 +233,15 @@ throughout the bounded-smooth conformal Nariai orbit
 metric descent.  The unresolved direction is therefore transverse to the
 conformal orbit inside the Bach-flat locus; the next certificate must expose
 the first transverse SDR obstruction or construct its support-local repair.
+The exact Kantowski--Sachs Einstein family generating the certified transverse
+tangent now supplies that first global obstruction: for every nonzero
+`0<|epsilon|<1`, its conserved first integral has no positive-radius turning
+point and the two-sphere radius reaches zero with divergent Weyl curvature at
+finite proper time in one time direction.  The exact family on each fixed
+compact slab and the global formal first variation remain certified.  A
+whole-cylinder transverse promotion must therefore use a non-Einstein
+Bach-flat family; alternatively, a slab/domain causal theorem must declare
+its boundaries and common support category explicitly.
 The analytic endpoint criterion is now background-independent:
 `TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1` proves that every exact endpoint
 `A=P2 P1+V` with normally hyperbolic factors and an order-at-most-two

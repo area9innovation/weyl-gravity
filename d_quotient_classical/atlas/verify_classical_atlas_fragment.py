@@ -99,6 +99,11 @@ def verify() -> None:
         raise AssertionError("action-Hessian closure boundary missing")
     if "tangent theorem at epsilon=0" not in transverse["claim_boundary"]:
         raise AssertionError("next transverse causal boundary missing")
+    transverse_exact = by_id["classical.nariai.transverse_kantowski_sachs_exact_branch"]
+    if transverse_exact["descriptions"]["nonlinear"] != "OBSTRUCTED":
+        raise AssertionError("transverse exact-family obstruction missing")
+    if transverse_exact["mode_data"]["second_order"]["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("slabwise family was promoted to a global causal bridge")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/nariai-transverse-kantowski-sachs-global-obstruction-v1.schema.json",
+  "title": "Transverse Nariai Kantowski-Sachs global obstruction v1",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_state", "dependency_tags",
+    "dependency_refs", "background", "exact_obstruction", "theorem",
+    "exact_checks", "flags", "next_gate", "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-transverse-kantowski-sachs-global-obstruction-v1"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1"},
+    "result_state": {"const": "NONZERO_TRANSVERSE_EINSTEIN_BRANCH_SLABWISE_ONLY_GLOBAL_CYLINDER_OBSTRUCTED"},
+    "dependency_tags": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "LORENTZIAN-CAUSAL"}], "items": false
+    },
+    "dependency_refs": {"type": "object", "minProperties": 2, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "background": {"$ref": "#/$defs/stringRecord"},
+    "exact_obstruction": {"$ref": "#/$defs/stringRecord"},
+    "theorem": {"$ref": "#/$defs/stringRecord"},
+    "exact_checks": {"$ref": "#/$defs/booleanRecord"},
+    "flags": {"$ref": "#/$defs/booleanRecord"},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object", "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"$ref": "#/$defs/stringRecord"},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {
+      "type": "object", "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "stringRecord": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string"}},
+    "booleanRecord": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "boolean"}}
+  }
+}

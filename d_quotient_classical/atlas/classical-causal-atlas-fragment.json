@@ -872,6 +872,70 @@
       }
     },
     {
+      "claim_boundary": "The branch integrates the certified tangent on every fixed compact time slab but is globally singular for every nonzero 0<|epsilon|<1. This is not a no-go for non-Einstein Bach-flat deformations, different transverse data or declared causal subdomains.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "OPEN"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1.json",
+          "result_id": "NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1",
+          "sha256": "efa472248ed0586bedfc33f595187fcdfc4b00a206020a08054e1260d5a578d3"
+        }
+      ],
+      "id": "classical.nariai.transverse_kantowski_sachs_exact_branch",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The exact branch is controlled by a first integral with strictly positive potential for 0<|epsilon|<1.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "No global Lee-Wald phase space is assigned to the finite-time singular branch.",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "The areal radius reaches zero with divergent Weyl curvature at finite proper time in one direction.",
+          "status": "OBSTRUCTED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The nonzero branch is not bounded or globally quasiperiodic on all R.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "Slabwise evolution does not supply a whole-cylinder retarded causal bridge.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The exact branch cannot remain smooth on the whole cylinder.",
+            "status": "OBSTRUCTED"
+          }
+        },
+        "taub_maps": {
+          "statement": "No second-order Taub classification beyond the exact homogeneous branch.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "exact transverse Kantowski-Sachs Einstein branch through unit Nariai",
+        "boundaries": "global compact Cauchy surface S1 x S2; no timelike boundary",
+        "carrier": "homogeneous metric g_epsilon=-dt^2+a_epsilon(t)^2 dchi^2+b_epsilon(t)^2 dOmega_2^2",
+        "charge_sector": "unquotiented linear gauge complex; no residual state quotient imported",
+        "degree": 0,
+        "ell": 0,
+        "k": 0,
+        "m": 0,
+        "omega": "nonstationary exact Einstein evolution",
+        "parity": "homogeneous scalar anisotropy",
+        "theory": "free pure-Weyl metric BV complex and normal-adjoint-tractor parent"
+      }
+    },
+    {
       "claim_boundary": "The universal parent theorem must not be promoted to a metric theorem outside the certified conformal Nariai orbit.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -937,7 +1001,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "2feef37fe8b5e2aff9212dd1aa1af58866880c322299841e4e5e59ea794a46a6",
+  "generated_by_sha256": "1352aa82478300958183035e2c399dc4df626a5e1f122d680ecd14000f5f8895",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

@@ -88,6 +88,16 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
 
+    def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:
+        entry = self.entries["classical.nariai.transverse_kantowski_sachs_exact_branch"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not a no-go for non-Einstein Bach-flat", entry["claim_boundary"])
+        self.assertIn(
+            "NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

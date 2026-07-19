@@ -2251,7 +2251,13 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    while the rank-310 repair, metric endpoint, all-row causal transfer and
    metric descent are exact on unit and conformal Nariai.  The active gate is
    transverse Bach-flat continuation of that rank-310 metric/parent SDR, not
-   another map from the rejected eight-block cylinder.
+   another map from the rejected eight-block cylinder.  The exact
+   Kantowski--Sachs Einstein continuation of the certified transverse tangent
+   is now globally obstructed: for every nonzero `0<|epsilon|<1` the sphere
+   radius reaches zero with divergent Weyl curvature at finite proper time.
+   Its slabwise family and formal causal variation remain exact.  The next
+   admissible target is a non-Einstein Bach-flat family or a causal theorem on
+   an explicitly declared common subdomain.
 9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` is now official:
    all six minimal roles, the Bach Euler coordinate, both Noether rows,
    Lie/Weyl covariance, and the four filtration identities replay. Quantum
@@ -2298,10 +2304,13 @@ exact reducibility mismatch requires at least five noncontractible new
 directions.  The curvature-corrected rank-310 parent-detour mapping cone is
 the selected replacement and already has a cyclic support-local SDR and
 advanced/retarded all-row contraction with exact metric descent.  The active
-gate is now an exact nonzero transverse Bach-flat family for the differentiated
-rank-310 SDR and causal homotopy, or the first normalized obstruction to that
-continuation.  Fixed untransported gauges, timelike boundaries and Hadamard
-claims remain false.
+gate is now a non-Einstein transverse Bach-flat family, or an explicitly
+bounded common causal domain, because the exact Kantowski--Sachs Einstein
+branch is slabwise but develops finite-time Weyl-curvature blow-up for every
+nonzero small parameter.  This scoped obstruction does not demote the formal
+rank-310 variation and does not cover all Bach-flat deformations.  Fixed
+untransported gauges, undeclared timelike boundaries and Hadamard claims
+remain false.
 The full queue and
 morning handoff are authoritative in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).

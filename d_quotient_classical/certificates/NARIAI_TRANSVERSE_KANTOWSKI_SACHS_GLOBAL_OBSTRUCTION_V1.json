@@ -1,0 +1,90 @@
+{
+  "background": {
+    "equation": "Ric(g_epsilon)=g_epsilon",
+    "metric": "g_epsilon=-dt^2+a_epsilon(t)^2 dchi^2+b_epsilon(t)^2 dOmega_2^2",
+    "reference": "unit Nariai at epsilon=0",
+    "topology_requested": "R_t x S1 x S2"
+  },
+  "claim_boundary": "This exact obstruction applies to the homogeneous Kantowski-Sachs Einstein branch with the displayed initial data and parameter range. It preserves the certified exact family on every fixed compact time slab and the global formal first variation at epsilon=0. It does not obstruct non-Einstein Bach-flat deformations, different transverse initial data, causal constructions on proper subdomains with declared boundaries, or abstract parent Green hyperbolicity; it does not promote a nonlinear BV, Hadamard, or quantum theorem.",
+  "dependency_refs": {
+    "formal_metric_green_variation": {
+      "artifact_id": "NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1.json",
+      "sha256": "25cf33befe9e872b300c7365a37c32c7b2a9fb69dc13a18b68c994bad6ccaf1f"
+    },
+    "global_hpl_rank310_variation": {
+      "artifact_id": "NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1.json",
+      "sha256": "c17de40adca6db7d49928eaf07b7d61d9b918f8e0460ab976a5cd226e9294543"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "C_epsilon_strictly_supercritical": true,
+    "formal_rank310_variation_retained": true,
+    "initial_data_satisfy_first_integral": true,
+    "positive_radius_solution_is_monotone": true,
+    "potential_has_positive_global_minimum": true,
+    "slabwise_exact_family_retained": true,
+    "weyl_curvature_diverges_at_zero_radius": true,
+    "zero_radius_reached_in_finite_proper_time": true
+  },
+  "exact_obstruction": {
+    "C_epsilon": "(epsilon**2 - 6)*(epsilon**4 - 120*epsilon**2 - 72)/648",
+    "C_epsilon_minus_2_over_3": "epsilon**2*(epsilon**4 - 126*epsilon**2 + 648)/648",
+    "curvature_limit": "+infinity as b->0+",
+    "einstein_scalar_equation": "2 b b''+(b')^2+1=b^2",
+    "finite_time_integral": "Delta t_sing=integral_0^b0 db/sqrt(b^2/3-1+C_epsilon/b)<infinity",
+    "first_integral": "(b')^2=b^2/3-1+C_epsilon/b",
+    "initial_radius": "1 - epsilon**2/6",
+    "initial_velocity": "epsilon",
+    "integrability_bound": "for 0<b<=min(b0,C_epsilon/2), F_e(b)>=C_epsilon/(2b); the remaining compact interval has a positive minimum",
+    "metric_coefficient": "a_epsilon=b_epsilon'/epsilon",
+    "monotonicity": "sign(b')=sign(epsilon) on the maximal positive-radius solution",
+    "nariai_weyl_squared": "16/3",
+    "parameter_range": "0<|epsilon|<1",
+    "positive_factor_lower_bound_on_range": "523",
+    "potential_critical_point": "b_star=(3 C_epsilon/2)^(1/3)>1",
+    "potential_minimum": "b_star^2-1>0",
+    "singular_direction": "past for epsilon>0 and future for epsilon<0",
+    "weyl_derivation": "C_2323=(1+(b')^2)/b^2-1/3=C_epsilon/b^3; spherical symmetry and trace-freeness give channels (-w,w/2,w/2,-w/2,-w/2,w)",
+    "weyl_squared": "(epsilon**2 - 6)**2*(-epsilon**4 + 120*epsilon**2 + 72)**2/(34992*b**6)"
+  },
+  "flags": {
+    "ALL_TRANSVERSE_BACH_FLAT_FAMILIES_OBSTRUCTED": false,
+    "NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1": true,
+    "NONLINEAR_BV_EXTENSION": false,
+    "QUANTUM_CLAIM": false,
+    "TRANSVERSE_KS_GLOBAL_FAMILY_OBSTRUCTED": true,
+    "TRANSVERSE_KS_GLOBAL_SMOOTH_CYLINDER_FAMILY": false,
+    "TRANSVERSE_KS_SLABWISE_EINSTEIN_FAMILY": true,
+    "TRANSVERSE_NONZERO_EPSILON_GLOBAL_CAUSAL_FAMILY": false
+  },
+  "next_gate": "NON_EINSTEIN_TRANSVERSE_BACH_FLAT_FAMILY_OR_CAUSAL_PATCHING_WITH_DECLARED_DOMAIN",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/nariai_transverse_kantowski_sachs_global_obstruction.py": "13631d5bad693afb6ef23cbac59276f59c912294a0745c8ebcbfd15b24a97a1a",
+      "d_quotient_classical/causal_transfer/tests/test_nariai_transverse_kantowski_sachs_global_obstruction.py": "dbd34364e72b83dadd827f4ab5df0d596b188bc387118cf6c8c364c77b346ce1",
+      "d_quotient_classical/causal_transfer/verify_nariai_transverse_kantowski_sachs_global_obstruction.py": "ff774ebe64185f9a90ac5f129589c4fa4a4c9f1f60fb6c7baa49b4f219320d59",
+      "d_quotient_classical/schema/nariai-transverse-kantowski-sachs-global-obstruction-v1.schema.json": "0d6015b091b1610fa4b3512db8ccfaf238262c00bf0c3e4a57e3f1d0b860e39c"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_transverse_kantowski_sachs_global_obstruction.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_transverse_kantowski_sachs_global_obstruction.py",
+      "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_transverse_kantowski_sachs_global_obstruction",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-transverse-kantowski-sachs-global-obstruction-v1.schema.json -d d_quotient_classical/certificates/NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1.json"
+    ]
+  },
+  "result_id": "NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1",
+  "result_state": "NONZERO_TRANSVERSE_EINSTEIN_BRANCH_SLABWISE_ONLY_GLOBAL_CYLINDER_OBSTRUCTED",
+  "schema": "pure-weyl-nariai-transverse-kantowski-sachs-global-obstruction-v1",
+  "theorem": {
+    "formal_first_variation": "CERTIFIED",
+    "slabwise_family": "CERTIFIED",
+    "statement": "For every 0<|epsilon|<1, the exact Kantowski-Sachs Einstein solution generating the certified transverse Nariai tangent develops b=0 with divergent Weyl curvature at finite proper time in one time direction. Hence this branch cannot furnish a smooth nonzero-epsilon family on all R x S1 x S2.",
+    "whole_cylinder_family": "OBSTRUCTED"
+  }
+}

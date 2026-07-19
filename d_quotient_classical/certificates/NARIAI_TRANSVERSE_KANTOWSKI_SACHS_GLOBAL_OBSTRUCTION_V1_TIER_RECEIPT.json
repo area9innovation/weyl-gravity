@@ -1,0 +1,38 @@
+{
+  "artifact_id": "NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "files": {
+    "certificate": {"path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1.json", "sha256": "efa472248ed0586bedfc33f595187fcdfc4b00a206020a08054e1260d5a578d3"},
+    "producer": {"path": "d_quotient_classical/causal_transfer/nariai_transverse_kantowski_sachs_global_obstruction.py", "sha256": "13631d5bad693afb6ef23cbac59276f59c912294a0745c8ebcbfd15b24a97a1a"},
+    "report": {"path": "d_quotient_classical/reports/nariai-transverse-kantowski-sachs-global-obstruction.md", "sha256": "0e6c81f573272591511709fe34c223bb4420df99a18eb8e79b22ce8f07f6c21f"},
+    "schema": {"path": "d_quotient_classical/schema/nariai-transverse-kantowski-sachs-global-obstruction-v1.schema.json", "sha256": "0d6015b091b1610fa4b3512db8ccfaf238262c00bf0c3e4a57e3f1d0b860e39c"},
+    "tests": {"path": "d_quotient_classical/causal_transfer/tests/test_nariai_transverse_kantowski_sachs_global_obstruction.py", "sha256": "dbd34364e72b83dadd827f4ab5df0d596b188bc387118cf6c8c364c77b346ce1"},
+    "verifier": {"path": "d_quotient_classical/causal_transfer/verify_nariai_transverse_kantowski_sachs_global_obstruction.py", "sha256": "ff774ebe64185f9a90ac5f129589c4fa4a4c9f1f60fb6c7baa49b4f219320d59"}
+  },
+  "result": "PASS",
+  "tier_0": {
+    "commands": [
+      "python3 -m py_compile <producer> <verifier> <tests>",
+      "python3 -m json.tool <schema>",
+      "git diff --check -- <scoped paths>"
+    ],
+    "status": "PASS"
+  },
+  "tier_1": {
+    "commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_transverse_kantowski_sachs_global_obstruction.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_transverse_kantowski_sachs_global_obstruction.py",
+      "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_transverse_kantowski_sachs_global_obstruction",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-transverse-kantowski-sachs-global-obstruction-v1.schema.json -d d_quotient_classical/certificates/NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1.json"
+    ],
+    "status": "PASS"
+  },
+  "tier_2": {
+    "criterion": "The obstruction consumes unchanged content-addressed formal-variation certificates; the generated classical atlas and its direct verifier/tests were replayed.",
+    "status": "PASS"
+  },
+  "tier_3": {
+    "criterion": "No freeze, release, shared core-algebra change, or whole-cylinder causal promotion was made.",
+    "status": "NOT_RUN"
+  }
+}
