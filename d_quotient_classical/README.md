@@ -632,6 +632,17 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1.json`](certificates/NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1.json),
   [`reports/nariai-transverse-global-hpl-rank310-causal-variation.md`](reports/nariai-transverse-global-hpl-rank310-causal-variation.md)
 
+- Finite rank-310 HPL incidence theorem: for any exact finite differential
+  retaining the certified four transverse incidence blocks, both HPL
+  resolvents terminate after one correction because
+  `Delta^2=(H Delta)^2=(Delta H)^2=0`.  The inclusion, projection and
+  homotopy are finite-order cyclic polynomials satisfying every SDR identity
+  coefficientwise.  This removes convergence and nonlocal inversion from the
+  HPL step; it does not construct the missing nonzero-parameter geometric
+  differential:
+  [`certificates/NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1.json`](certificates/NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1.json),
+  [`reports/nariai-rank310-finite-hpl-incidence.md`](reports/nariai-rank310-finite-hpl-incidence.md)
+
 - Exact global disposition of the transverse Einstein branch: the
   Kantowski--Sachs family generating the certified tangent exists on every
   fixed compact time slab, but for every nonzero `0<|epsilon|<1` its areal

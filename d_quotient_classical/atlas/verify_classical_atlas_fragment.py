@@ -93,12 +93,16 @@ def verify() -> None:
         raise AssertionError("formal metric Green variation missing")
     if "NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1" not in transverse_ids:
         raise AssertionError("global HPL rank-310 causal variation missing")
+    if "NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1" not in transverse_ids:
+        raise AssertionError("finite HPL incidence theorem missing")
     if "factorized adjunction before PBW normal ordering" not in transverse["claim_boundary"]:
         raise AssertionError("factorized Hom-adjoint boundary missing")
     if "direct action-leading coefficients plus Noether uniqueness" not in transverse["claim_boundary"]:
         raise AssertionError("action-Hessian closure boundary missing")
     if "tangent theorem at epsilon=0" not in transverse["claim_boundary"]:
         raise AssertionError("next transverse causal boundary missing")
+    if "nonlocal-denominator" not in transverse["claim_boundary"]:
+        raise AssertionError("finite HPL consequence missing")
     transverse_exact = by_id["classical.nariai.transverse_kantowski_sachs_exact_branch"]
     if transverse_exact["descriptions"]["nonlinear"] != "OBSTRUCTED":
         raise AssertionError("transverse exact-family obstruction missing")

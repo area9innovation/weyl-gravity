@@ -98,6 +98,15 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
 
+    def test_transverse_finite_hpl_is_evidence_not_geometric_promotion(self) -> None:
+        entry = self.entries["classical.nariai.transverse_kantowski_sachs_tangent"]
+        self.assertIn(
+            "NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("nonlocal-denominator", entry["claim_boundary"])
+        self.assertIn("until that geometric input exists", entry["claim_boundary"])
+
 
 if __name__ == "__main__":
     unittest.main()

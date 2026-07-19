@@ -2258,6 +2258,13 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    Its slabwise family and formal causal variation remain exact.  The next
    admissible target is a non-Einstein Bach-flat family or a causal theorem on
    an explicitly declared common subdomain.
+   The rank-310 HPL denominator is no longer part of that risk: the exact
+   four-block transverse incidence obeys
+   `Delta^2=(H Delta)^2=(Delta H)^2=0`, so both normalized resolvents terminate
+   after one correction and the complete cyclic SDR identities hold
+   coefficientwise in `Q[epsilon]`.  This remains conditional on deriving the
+   missing exact finite geometric `Q_epsilon` with that incidence; it neither
+   promotes the slabwise Einstein branch nor manufactures a global family.
 9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` is now official:
    all six minimal roles, the Bach Euler coordinate, both Noether rows,
    Lie/Weyl covariance, and the four filtration identities replay. Quantum

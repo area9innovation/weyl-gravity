@@ -1,0 +1,159 @@
+{
+  "analytic_consequence": {
+    "nonlocal_HPL_inverse_required": false,
+    "remaining_input": "the exact nonzero-epsilon geometric coefficient realization Q_epsilon on a declared Bach-flat family or common causal domain",
+    "small_denominator_or_convergence_condition_required": false,
+    "support_enlargement_from_SDR": false
+  },
+  "claim_boundary": "This exact polynomial theorem removes convergence and nonlocal inversion from the rank-310 HPL step for perturbations with the certified four-block incidence. It does not construct the missing finite geometric Q_epsilon, prove that an arbitrary Bach-flat family retains that incidence, turn the singular Kantowski-Sachs branch into a whole-cylinder family, establish a class-wide metric/parent bridge, or promote a Hadamard, nonlinear, or quantum result.",
+  "dependency_refs": {
+    "base_rank310_sdr": {
+      "artifact_id": "NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1.json",
+      "sha256": "112a21a1b46889143505c41773295845a627d2757c9d5218f0eded93a4dadaae"
+    },
+    "global_einstein_branch_obstruction": {
+      "artifact_id": "NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1.json",
+      "sha256": "efa472248ed0586bedfc33f595187fcdfc4b00a206020a08054e1260d5a578d3"
+    },
+    "global_formal_variation": {
+      "artifact_id": "NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1.json",
+      "sha256": "c17de40adca6db7d49928eaf07b7d61d9b918f8e0460ab976a5cd226e9294543"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "H_delta_squared_zero": true,
+    "Q_epsilon_squared_zero": true,
+    "all_chain_and_retract_identities": true,
+    "all_side_conditions": true,
+    "cyclicity_and_pairing_pullback": true,
+    "delta_H_squared_zero": true,
+    "delta_squared_zero": true,
+    "finite_inverse_identities": true,
+    "metric_transfer_has_no_hidden_higher_terms": true
+  },
+  "exact_fixture": {
+    "H_delta_H_nonzero_blocks": [
+      {
+        "column": 8,
+        "row": 4,
+        "value": "-1/2 M_dot"
+      }
+    ],
+    "H_delta_nonzero_blocks": [
+      {
+        "column": 0,
+        "row": 0,
+        "value": "-1 L0_dot p0"
+      },
+      {
+        "column": 2,
+        "row": 4,
+        "value": "-1/2 M_dot"
+      }
+    ],
+    "block_count": 10,
+    "coefficient_ring": "Q[epsilon] with noncommutative PBW operator atoms",
+    "delta_H_nonzero_blocks": [
+      {
+        "column": 8,
+        "row": 6,
+        "value": "-1/2 M_dot"
+      },
+      {
+        "column": 9,
+        "row": 9,
+        "value": "-1 p0sharp L0sharp_dot"
+      }
+    ],
+    "delta_nonzero_blocks": [
+      {
+        "column": 0,
+        "row": 1,
+        "value": "g_dot"
+      },
+      {
+        "column": 2,
+        "row": 6,
+        "value": "-1/2 M_dot"
+      },
+      {
+        "column": 3,
+        "row": 7,
+        "value": "B_dot"
+      },
+      {
+        "column": 5,
+        "row": 9,
+        "value": "gsharp_dot"
+      }
+    ],
+    "identity_defect_counts": {
+      "homotopy_inclusion": 0,
+      "homotopy_odd_cyclic": 0,
+      "homotopy_squared": 0,
+      "inclusion_chain": 0,
+      "metric_pairing_pullback": 0,
+      "projection_chain": 0,
+      "projection_homotopy": 0,
+      "projection_inclusion": 0,
+      "projection_is_inclusion_adjoint": 0,
+      "retract": 0
+    },
+    "inverse_series_length": 2,
+    "metric_higher_order_defects": 0,
+    "nilpotence_defect_counts": {
+      "Delta_H_squared": 0,
+      "Delta_squared": 0,
+      "H_Delta_squared": 0,
+      "Q_Delta_plus_Delta_Q": 0,
+      "p_Delta_H_Delta_I": 0
+    },
+    "polynomial_degrees": {
+      "H_epsilon": 1,
+      "I_epsilon": 1,
+      "Q_epsilon": 1,
+      "p_epsilon": 1,
+      "q_metric_epsilon": 1
+    }
+  },
+  "flags": {
+    "ALL_BACH_FLAT_BACKGROUNDS": false,
+    "FINITE_SUPPORT_LOCAL_HPL_DENOMINATOR": true,
+    "HADAMARD_STATE": false,
+    "NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1": true,
+    "QUANTUM_CLAIM": false,
+    "TRANSVERSE_EXACT_GEOMETRIC_RANK310_FAMILY": false,
+    "TRANSVERSE_NONZERO_EPSILON_GLOBAL_CAUSAL_FAMILY": false
+  },
+  "next_gate": "EXACT_FINITE_GEOMETRIC_Q_EPSILON_ON_NON_EINSTEIN_BACH_FLAT_FAMILY_OR_COMMON_SLAB",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/nariai_rank310_finite_hpl_incidence.py": "0370b19728e55ea6e9318e394c7193844af7ea785c935e8272290ff6f4d272f2",
+      "d_quotient_classical/causal_transfer/nariai_transverse_rank310_dual_sdr.py": "83dcb9613185a38641f3cf8a957185ab4f274a6b9ac7e186cd7729034360943a",
+      "d_quotient_classical/causal_transfer/tests/test_nariai_rank310_finite_hpl_incidence.py": "41ecd9ef758700a6064c07a9e415a66956c3b85315307625a8eccdf9a6ffde96",
+      "d_quotient_classical/causal_transfer/verify_nariai_rank310_finite_hpl_incidence.py": "6b0f53e32310bbc4b273c0212e3d32930dfe0bf929c6f666e3a7310fce9317ae",
+      "d_quotient_classical/schema/nariai-rank310-finite-hpl-incidence-v1.schema.json": "5b3831b4452417cb0cf929dd9b7288f40ae2e5952c374394c04640894e4b98d7"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_rank310_finite_hpl_incidence.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_rank310_finite_hpl_incidence.py",
+      "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_rank310_finite_hpl_incidence",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-rank310-finite-hpl-incidence-v1.schema.json -d d_quotient_classical/certificates/NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1.json"
+    ]
+  },
+  "result_id": "NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1",
+  "result_state": "RANK310_TRANSVERSE_HPL_DENOMINATOR_TERMINATES_SUPPORT_LOCALLY",
+  "schema": "pure-weyl-nariai-rank310-finite-hpl-incidence-v1",
+  "theorem": {
+    "finite_formulas": "I_e=(1-e H Delta)I, p_e=p(1-e Delta H), H_e=H-e H Delta H, q_e=q+e p Delta I",
+    "scope": "exact for finite differentials with the certified four-block incidence; conditional on the finite geometric differential retaining that incidence and being square-zero/cyclic",
+    "statement": "For a finite rank-310 differential Q_epsilon=Q0+epsilon Delta with the certified transverse four-block incidence, the normalized basic-perturbation-lemma series terminates after one correction. The resulting inclusion, projection and homotopy are finite-order support-local cyclic polynomials and satisfy every SDR identity coefficientwise."
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/nariai-rank310-finite-hpl-incidence-v1.schema.json",
+  "title": "Nariai rank-310 finite HPL incidence theorem v1",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "theorem", "exact_fixture", "analytic_consequence", "exact_checks", "flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-rank310-finite-hpl-incidence-v1"},
+    "result_id": {"const": "NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1"},
+    "result_state": {"const": "RANK310_TRANSVERSE_HPL_DENOMINATOR_TERMINATES_SUPPORT_LOCALLY"},
+    "dependency_tags": {"type": "array", "minItems": 2, "maxItems": 2, "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "LORENTZIAN-CAUSAL"}], "items": false},
+    "dependency_refs": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "theorem": {
+      "type": "object",
+      "required": ["statement", "finite_formulas", "scope"],
+      "properties": {
+        "statement": {"type": "string", "minLength": 1},
+        "finite_formulas": {"type": "string", "minLength": 1},
+        "scope": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "exact_fixture": {
+      "type": "object",
+      "required": ["coefficient_ring", "block_count", "delta_nonzero_blocks", "H_delta_nonzero_blocks", "delta_H_nonzero_blocks", "H_delta_H_nonzero_blocks", "nilpotence_defect_counts", "identity_defect_counts", "metric_higher_order_defects", "inverse_series_length", "polynomial_degrees"],
+      "properties": {
+        "coefficient_ring": {"type": "string", "minLength": 1},
+        "block_count": {"const": 10},
+        "delta_nonzero_blocks": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/blockEntry"}},
+        "H_delta_nonzero_blocks": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/blockEntry"}},
+        "delta_H_nonzero_blocks": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/blockEntry"}},
+        "H_delta_H_nonzero_blocks": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/blockEntry"}},
+        "nilpotence_defect_counts": {"$ref": "#/$defs/nonnegativeIntegerRecord"},
+        "identity_defect_counts": {"$ref": "#/$defs/nonnegativeIntegerRecord"},
+        "metric_higher_order_defects": {"const": 0},
+        "inverse_series_length": {"const": 2},
+        "polynomial_degrees": {"$ref": "#/$defs/nonnegativeIntegerRecord"}
+      },
+      "additionalProperties": false
+    },
+    "analytic_consequence": {
+      "type": "object",
+      "required": ["nonlocal_HPL_inverse_required", "small_denominator_or_convergence_condition_required", "support_enlargement_from_SDR", "remaining_input"],
+      "properties": {
+        "nonlocal_HPL_inverse_required": {"const": false},
+        "small_denominator_or_convergence_condition_required": {"const": false},
+        "support_enlargement_from_SDR": {"const": false},
+        "remaining_input": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {
+      "type": "object",
+      "required": ["Q_epsilon_squared_zero", "delta_squared_zero", "H_delta_squared_zero", "delta_H_squared_zero", "finite_inverse_identities", "all_chain_and_retract_identities", "all_side_conditions", "cyclicity_and_pairing_pullback", "metric_transfer_has_no_hidden_higher_terms"],
+      "properties": {
+        "Q_epsilon_squared_zero": {"const": true},
+        "delta_squared_zero": {"const": true},
+        "H_delta_squared_zero": {"const": true},
+        "delta_H_squared_zero": {"const": true},
+        "finite_inverse_identities": {"const": true},
+        "all_chain_and_retract_identities": {"const": true},
+        "all_side_conditions": {"const": true},
+        "cyclicity_and_pairing_pullback": {"const": true},
+        "metric_transfer_has_no_hidden_higher_terms": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "flags": {
+      "type": "object",
+      "required": ["NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1", "FINITE_SUPPORT_LOCAL_HPL_DENOMINATOR", "TRANSVERSE_EXACT_GEOMETRIC_RANK310_FAMILY", "TRANSVERSE_NONZERO_EPSILON_GLOBAL_CAUSAL_FAMILY", "ALL_BACH_FLAT_BACKGROUNDS", "HADAMARD_STATE", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1": {"const": true},
+        "FINITE_SUPPORT_LOCAL_HPL_DENOMINATOR": {"const": true},
+        "TRANSVERSE_EXACT_GEOMETRIC_RANK310_FAMILY": {"const": false},
+        "TRANSVERSE_NONZERO_EPSILON_GLOBAL_CAUSAL_FAMILY": {"const": false},
+        "ALL_BACH_FLAT_BACKGROUNDS": {"const": false},
+        "HADAMARD_STATE": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object", "required": ["source_manifest", "verification_commands"], "properties": {"source_manifest": {"$ref": "#/$defs/stringRecord"}, "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}}, "additionalProperties": false},
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {"type": "object", "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false},
+    "stringRecord": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string"}},
+    "booleanRecord": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "boolean"}},
+    "nonnegativeIntegerRecord": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "integer", "minimum": 0}},
+    "blockEntry": {
+      "type": "object", "required": ["row", "column", "value"],
+      "properties": {"row": {"type": "integer", "minimum": 0, "maximum": 9}, "column": {"type": "integer", "minimum": 0, "maximum": 9}, "value": {"type": "string", "minLength": 1}},
+      "additionalProperties": false
+    }
+  }
+}

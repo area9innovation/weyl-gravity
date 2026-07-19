@@ -1,0 +1,72 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1_TIER_RECEIPT",
+  "claim_id": "NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "d_quotient_classical/certificates/NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1.json",
+      "sha256": "f85a910d1ab5325f767609c9f9ea2af029afeca341ab2fe6e39a0b4c564a115e"
+    },
+    "schema": {
+      "path": "d_quotient_classical/schema/nariai-rank310-finite-hpl-incidence-v1.schema.json",
+      "sha256": "5b3831b4452417cb0cf929dd9b7288f40ae2e5952c374394c04640894e4b98d7"
+    },
+    "producer": {
+      "path": "d_quotient_classical/causal_transfer/nariai_rank310_finite_hpl_incidence.py",
+      "sha256": "0370b19728e55ea6e9318e394c7193844af7ea785c935e8272290ff6f4d272f2"
+    },
+    "independent_verifier": {
+      "path": "d_quotient_classical/causal_transfer/verify_nariai_rank310_finite_hpl_incidence.py",
+      "sha256": "6b0f53e32310bbc4b273c0212e3d32930dfe0bf929c6f666e3a7310fce9317ae"
+    },
+    "tests": {
+      "path": "d_quotient_classical/causal_transfer/tests/test_nariai_rank310_finite_hpl_incidence.py",
+      "sha256": "41ecd9ef758700a6064c07a9e415a66956c3b85315307625a8eccdf9a6ffde96"
+    },
+    "report": {
+      "path": "d_quotient_classical/reports/nariai-rank310-finite-hpl-incidence.md",
+      "sha256": "88242ec1a384190acb2d7cc0bcd2ad99eb49f8e2f0ea1a53ba06e454a6dc03a8"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "Python sources parsed during execution",
+        "Draft 2020-12 schema parsed in strict AJV mode",
+        "planning work item parsed as JSON",
+        "scoped diff inspected before commit"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 8.2,
+      "commands": [
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_rank310_finite_hpl_incidence.py --write --guards",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-rank310-finite-hpl-incidence-v1.schema.json -d d_quotient_classical/certificates/NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1.json",
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_rank310_finite_hpl_incidence.py",
+        "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_rank310_finite_hpl_incidence"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 1.6,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This scoped theorem adds one content-addressed rank-310 incidence certificate and updates its direct atlas consumer; it does not freeze a paper theorem, change shared core algebra, or prepare a release."
+    }
+  },
+  "claim_boundary": "The receipt certifies the finite polynomial HPL incidence theorem and its atlas integration only. It does not certify an exact nonzero-parameter geometric rank-310 family, a whole-cylinder transverse causal theorem, a Hadamard state, or a quantum result."
+}
