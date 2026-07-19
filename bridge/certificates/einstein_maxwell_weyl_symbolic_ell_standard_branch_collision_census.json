@@ -1,0 +1,109 @@
+{
+  "claim_boundary": "This is a complete characteristic-shell census for standard q-minus/q-plus inputs at one separately tuned |k| per ell. It does not include extra-primary inputs, multiple |k| fibres, certify the complete bounded source equation, or make causal, residual, observational or quantum claims.",
+  "classification": {
+    "all_standard_qminus_qplus_input_pairs_covered": true,
+    "all_sum_difference_and_K0_K2k_channels_covered": true,
+    "causal_or_quantum_claim": false,
+    "complete_bounded_second_order_extension_certified": false,
+    "dynamical_null_variety_imported": true,
+    "extra_primary_or_multiple_abs_momentum_inputs_classified": false,
+    "qplus_involving_characteristic_collisions_excluded": true,
+    "unique_nonzero_frequency_standard_branch_collision_is_qminus_L2ell_p": true
+  },
+  "complete_collision_ledger": {
+    "exceptional_L1": "mixed K=0 difference lies strictly between 4/3 and 2, missing the certified 4/3 and 4 shells",
+    "homogeneous_L0": "nonzero-frequency homogeneous quotient is empty; zero-frequency constraint rows remain governed by the declared moment-map gate",
+    "qminus_qminus": "one collision: positive sum, K=0, polar p-primary L=2ell",
+    "qminus_qplus": "no characteristic collision",
+    "qplus_qplus": "no characteristic collision"
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "reason": "the nonzero-frequency shell ledger closes, but a complete zero-frequency and compatible-source join on the symbolic mixed sheets has not yet been certified",
+      "status": "OPEN"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "status": "CERTIFIED"
+    }
+  },
+  "definitions": {
+    "k_squared": "sqrt(2)*sqrt(ell)*sqrt(ell + 1) - ell/2 - 1/6",
+    "omega_minus_squared": "ell*(ell + 1) - ell/2 - 1/6",
+    "omega_plus_squared": "2*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + ell*(ell + 1) - ell/2 - 1/6",
+    "top_p_shell": "2*ell*(2*ell + 1) - 2/3",
+    "top_qplus_shell": "2*sqrt(ell)*sqrt(2*ell + 1) + 2*ell*(2*ell + 1)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_EVERY_INTEGER_ELL_ONE_TUNED_NONZERO_MOMENTUM_FIBRE",
+  "interpretation": "Adding the positive-energy q-plus balancing branch creates no new nonzero-frequency characteristic collision at the tuned fibre. The sole standard-branch resonance remains the q-minus L=2ell polar p shell already canceled on the two mixed-parity sheets. The remaining bounded gate is now the zero-frequency/source-compatibility join, not further dispersion arithmetic.",
+  "lifecycle_state": "CLASSIFIED",
+  "mixed_branch_exclusion": {
+    "K0_above_top_auxiliary_h": "4*sqrt(2)*sqrt(ell)*sqrt(ell + 1) - 2*ell - 4/3",
+    "K0_h_norm": "1377*ell**4 + 3402*ell**3 + 1521*ell**2 - 552*ell + 16",
+    "K0_h_positive_square": "4*(63*ell**2 + 60*ell - 4)/9",
+    "K0_h_vs_top_root_square": "4*(-36*sqrt(2)*ell**(3/2)*sqrt(ell + 1) - 24*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 63*ell**2 + 75*ell + 4)/9",
+    "K2_lower_square_gap": "2*(9*sqrt(2)*ell**(3/2)*sqrt(ell + 1) + 3*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 9*ell**3 - 6*ell**2 - 12*ell - 1)/9",
+    "K2_ordering": "P(2ell)<z<Q_plus(2ell); every lower target lies below P(2ell)",
+    "difference_K0": "(6*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell - sqrt(6*ell**2 + 3*ell - 1)*sqrt(12*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell - 1) - 1)/3",
+    "difference_K2_negative_witness": "(63*ell**2 + 48*ell - 16)/36",
+    "difference_K2k": "(-6*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 9*ell - sqrt(6*ell**2 + 3*ell - 1)*sqrt(12*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell - 1) + 1)/3",
+    "difference_interval": "4/3<z<2",
+    "difference_lower_square_witness": "(9*ell**4 + 36*ell**3 - 30*ell**2 - 60*ell + 1)/9",
+    "difference_upper_square_witness": "(9*ell**2 + 12*ell - 1)/9",
+    "sum_K0": "(6*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell + sqrt(6*ell**2 + 3*ell - 1)*sqrt(12*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell - 1) - 1)/3",
+    "sum_K2k": "(-6*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 9*ell + sqrt(6*ell**2 + 3*ell - 1)*sqrt(12*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell - 1) + 1)/3"
+  },
+  "next_gate": "join the common-zero moment-map construction, the symbolic mixed-parity sheets, the bounded twist-wave kernel and the zero-frequency compatible-source theorem to construct one all-ell bounded second-order jet",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census.py",
+    "generator_sha256": "dd37788f95eb16d97ff9412e7d9f7c850964b884d92fb23b928a58cf38d1ba4c",
+    "inputs": {
+      "exceptional_target": {
+        "path": "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
+        "sha256": "b56faf37e92d12f37b54c2c5c0224251a73669171a067adb5082f7d71956960d"
+      },
+      "parity_matrix": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.json",
+        "sha256": "0f8d41edd39e5dd6e6b5d7be58ffd21f19e44b614a31c0b77cfcd5620dc533e1"
+      },
+      "qminus_census": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
+        "sha256": "cc50b09f9140749d2744d42586cf8e052d16b8063b8c37737d448d1711bac289"
+      }
+    }
+  },
+  "qplus_self_exclusion": {
+    "proof": "both positive sums lie strictly above the largest L<=2ell target q-plus shell; same-branch differences have z<=0",
+    "sum_K0": "2*(12*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell - 1)/3",
+    "sum_K2k": "4*(sqrt(2)*sqrt(ell)*sqrt(ell + 1) + ell**2 + ell)"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_STANDARD_BRANCH_COLLISION_CENSUS",
+  "result_state": "TUNED_ALL_ELL_QPLUS_AND_QMINUS_STANDARD_BRANCH_COLLISION_CENSUS_COMPLETE",
+  "schema": "einstein-maxwell-weyl-symbolic-ell-standard-branch-collision-census-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census.schema.json",
+  "schema_sha256": "af16ca678262e4ca94277b9d1a407521f9fda7cac3eb36df7edbdaa5c4afe821",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 with circumference tuned separately for each ell",
+    "carrier": "all q-minus/q-plus self and cross products at signed momenta +/-k; no extra-primary inputs",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "every integer input ell>=2; target L=0,...,2ell",
+    "k": "+/-sqrt(sqrt(2*ell*(ell+1))-ell/2-1/6)",
+    "m": "all angular outputs allowed by the product; no coefficient claim",
+    "omega": "all positive sums and absolute differences of omega_minus and omega_plus",
+    "parity": "over-complete shell arithmetic before parity selection",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census"
+  ]
+}

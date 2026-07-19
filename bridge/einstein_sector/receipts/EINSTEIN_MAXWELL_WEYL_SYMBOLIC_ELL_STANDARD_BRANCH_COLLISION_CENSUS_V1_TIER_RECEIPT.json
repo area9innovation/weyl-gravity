@@ -1,0 +1,21 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_STANDARD_BRANCH_COLLISION_CENSUS",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "certificate": {"path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census.json", "sha256": "d26c544432b44d477f09eb516eeb6bc959fcc62e5c271dea542aada31e49c766"},
+    "producer": {"path": "bridge/einstein_sector/einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census.py", "sha256": "dd37788f95eb16d97ff9412e7d9f7c850964b884d92fb23b928a58cf38d1ba4c"},
+    "schema": {"path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census.schema.json", "sha256": "af16ca678262e4ca94277b9d1a407521f9fda7cac3eb36df7edbdaa5c4afe821"},
+    "independent_verifier": {"path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census.py", "sha256": "7f7732cdffd4a74d43e5a07df0a4ee9ef06ee41298d655f20b34737044c79ee9"},
+    "test": {"path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census.py", "sha256": "30622902d344a0996a8ea83ffb4853f1a81d649a9a9e5a98d6d3ec4617c7b5c2"},
+    "report": {"path": "bridge/einstein_sector/reports/einstein-maxwell-weyl-symbolic-ell-standard-branch-collision-census.md", "sha256": "da361aeee7b86ee6ecde478909c759957d6b6f601ccf34c306930b6fc8a43be1"}
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <producer> <verifier>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {"status": "PASS", "elapsed_seconds": "3.6", "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census --check", "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census.py", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census"]},
+    "tier_2": {"status": "PASS", "reason": "Exact inequalities cover every q-plus/q-minus pair and shell family; physical-fibre evaluations ell=2,...,32 independently guard the strict ordering implementation without serving as proof by scan."},
+    "atlas": {"status": "PASS", "commands": ["python3 bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py --check", "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py", "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json", "python3 -m unittest discover -s bridge/einstein_sector/atlas/tests -p test_*.py"]},
+    "tier_3": {"status": "NOT_RUN", "reason": "The theorem changes no field operator and leaves the complete bounded lifecycle open."}
+  },
+  "claim_boundary": "Standard q-minus/q-plus inputs at one separately tuned |k| for each ell>=2. Extra-primary inputs, multiple |k| fibres, complete bounded source compatibility and higher lifecycles remain fail-closed."
+}
