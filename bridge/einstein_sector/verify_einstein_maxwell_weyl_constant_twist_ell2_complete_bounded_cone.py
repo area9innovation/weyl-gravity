@@ -15,6 +15,12 @@ CERTIFICATE = ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_e
 SCHEMA = ROOT / "bridge/einstein_sector/schema/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.schema.json"
 
 
+def _even_polynomial_in_omega_squared(expression: str, omega: sp.Symbol, mu: sp.Symbol) -> sp.Expr:
+    polynomial = sp.Poly(sp.expand(sp.sympify(expression, locals={"omega": omega})), omega)
+    assert all(power[0] % 2 == 0 for power, _ in polynomial.terms())
+    return sp.factor(sum(coefficient * mu ** (power[0] // 2) for power, coefficient in polynomial.terms()))
+
+
 def main() -> None:
     value = json.loads(CERTIFICATE.read_text(encoding="utf-8"))
     schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
@@ -26,6 +32,24 @@ def main() -> None:
     for record in provenance["inputs"].values():
         assert record["sha256"] == hashlib.sha256((ROOT / record["path"]).read_bytes()).hexdigest()
 
+    inputs = {
+        name: json.loads((ROOT / record["path"]).read_text(encoding="utf-8"))
+        for name, record in provenance["inputs"].items()
+    }
+    omega, mu_symbol = sp.symbols("omega mu", real=True)
+    axial_ell1_determinant = _even_polynomial_in_omega_squared(
+        inputs["axial_ell1_operator"]["operator_theorem"]["nonzero_frequency_gauge_slice"]["determinant"],
+        omega,
+        mu_symbol,
+    )
+    polar_ell1_determinant = _even_polynomial_in_omega_squared(
+        inputs["polar_ell1_operator"]["operator_theorem"]["reduced_determinant"],
+        omega,
+        mu_symbol,
+    )
+    assert axial_ell1_determinant == mu_symbol * (mu_symbol - 4) * (3 * mu_symbol - 4)
+    assert polar_ell1_determinant == (mu_symbol - 4) * (3 * mu_symbol - 4) / 2
+
     root = sp.sqrt(3)
     frequencies = {"minus": 6 - 2 * root, "extra": sp.Rational(16, 3), "plus": 6 + 2 * root}
     for shell, mu in frequencies.items():
@@ -34,8 +58,8 @@ def main() -> None:
             q_value = sp.factor(mu**2 - 2 * eigenvalue * mu + eigenvalue * (eigenvalue - 2))
             assert p_value != 0 and q_value != 0
             if output_ell == 1:
-                axial_determinant = sp.factor(mu * (mu - 4) * (3 * mu - 4))
-                polar_determinant = sp.factor((mu - 4) * (3 * mu - 4) / 2)
+                axial_determinant = sp.factor(axial_ell1_determinant.subs(mu_symbol, mu))
+                polar_determinant = sp.factor(polar_ell1_determinant.subs(mu_symbol, mu))
             else:
                 axial_determinant = polar_determinant = sp.factor(p_value**2 * q_value)
             ledger = value["nonresonant_output_ledger"][shell][f"L{output_ell}"]

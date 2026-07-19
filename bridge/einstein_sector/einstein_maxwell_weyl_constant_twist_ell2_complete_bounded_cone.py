@@ -56,6 +56,12 @@ def _moment(vector: sp.Matrix, generator: sp.Matrix) -> sp.Expr:
     return sp.simplify((sp.conjugate(vector).T * generator * vector)[0])
 
 
+def _even_polynomial_in_omega_squared(expression: str, omega: sp.Symbol, mu: sp.Symbol) -> sp.Expr:
+    polynomial = sp.Poly(sp.expand(sp.sympify(expression, locals={"omega": omega})), omega)
+    _require(all(power[0] % 2 == 0 for power, _ in polynomial.terms()), "exceptional determinant is not even in omega")
+    return sp.factor(sum(coefficient * mu ** (power[0] // 2) for power, coefficient in polynomial.terms()))
+
+
 def build() -> dict[str, object]:
     records = {name: json.loads(path.read_text(encoding="utf-8")) for name, path in INPUTS.items()}
     _require(records["einstein_kernel"]["classification"]["both_Einstein_q_primary_twist_position_maps_classified"], "Einstein shell kernel changed")
@@ -74,6 +80,19 @@ def build() -> dict[str, object]:
     _require(records["polar_module"]["physical_ring"]["determinantal_ideals_over_R_phys_P_omega"]["I4"] == "(p^2*q)", "polar physical determinant changed")
 
     root = sp.sqrt(3)
+    omega, mu_symbol = sp.symbols("omega mu", real=True)
+    axial_ell1_determinant = _even_polynomial_in_omega_squared(
+        records["axial_ell1_operator"]["operator_theorem"]["nonzero_frequency_gauge_slice"]["determinant"],
+        omega,
+        mu_symbol,
+    )
+    polar_ell1_determinant = _even_polynomial_in_omega_squared(
+        records["polar_ell1_operator"]["operator_theorem"]["reduced_determinant"],
+        omega,
+        mu_symbol,
+    )
+    _require(axial_ell1_determinant == mu_symbol * (mu_symbol - 4) * (3 * mu_symbol - 4), "axial ell1 determinant changed")
+    _require(polar_ell1_determinant == (mu_symbol - 4) * (3 * mu_symbol - 4) / 2, "polar ell1 determinant changed")
     frequencies_squared = {
         "minus": 6 - 2 * root,
         "extra": sp.Rational(16, 3),
@@ -87,8 +106,8 @@ def build() -> dict[str, object]:
             q_value = sp.factor(mu**2 - 2 * eigenvalue * mu + eigenvalue * (eigenvalue - 2))
             _require(p_value != 0 and q_value != 0, f"{shell} acquired an L={output_ell} resonance")
             if output_ell == 1:
-                axial_determinant = sp.factor(mu * (mu - 4) * (3 * mu - 4))
-                polar_determinant = sp.factor((mu - 4) * (3 * mu - 4) / 2)
+                axial_determinant = sp.factor(axial_ell1_determinant.subs(mu_symbol, mu))
+                polar_determinant = sp.factor(polar_ell1_determinant.subs(mu_symbol, mu))
                 operator_scope = "exceptional axial h_t=0 gauge slice and polar U=0 quotient"
             else:
                 axial_determinant = sp.factor(p_value**2 * q_value)
