@@ -46,11 +46,13 @@ class ProductS2S2GhostSchurModifiedDeterminantPrecertificateTests(unittest.TestC
         self.assertLessEqual(Fraction(_endpoint(interval, 0)), exact_lower)
         self.assertGreaterEqual(Fraction(_endpoint(interval, 1)), exact_upper)
 
-    def test_tier3_and_full_vector_flags_fail_closed(self) -> None:
-        self.assertEqual(self.value["tier3_blocker"]["status"], "FAILED_NOT_A_PASS")
+    def test_tier3_promotion_and_full_vector_boundary(self) -> None:
+        self.assertEqual(self.value["tier3_promotion_receipt"]["status"], "PASSED")
+        self.assertEqual(self.value["tier3_promotion_receipt"]["tests_run"], 850)
         flags = self.value["claim_flags"]
         self.assertTrue(flags["MATCHED_EXCEPTIONAL_COUPLED_SCHUR_ENCLOSURE_DERIVED"])
-        self.assertFalse(flags["PRODUCT_WEIGHTED_R_K_COMPUTED"])
+        self.assertTrue(flags["PRODUCT_WEIGHTED_R_K_COMPUTED"])
+        self.assertTrue(flags["PRODUCT_FINITE_PART_R_K2_COMPUTED"])
         self.assertFalse(flags["FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED"])
         self.assertFalse(flags["LORENTZIAN_CERTIFIED"])
 

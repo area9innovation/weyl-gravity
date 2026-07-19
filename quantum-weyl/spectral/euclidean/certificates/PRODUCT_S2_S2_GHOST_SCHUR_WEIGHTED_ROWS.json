@@ -1,14 +1,14 @@
 {
-  "claim_boundary": "This EUCLIDEAN-SPECTRAL precertificate rigorously derives enclosures for R_Delta(K) and FP R_Delta(K^2) on the declared S2(1) x S2(2) regular Schur complement. It proves a uniform periodic-Bernoulli Euler--Maclaurin remainder for every required product heat moment, bounds the upper-incomplete spectral cutoff, and combines those bounds with a positive-sum binary64 proof and the previously certified trace-class exterior tails. The scoped producer, verifier and tests pass, but the required Tier-3 quantum suite failed on unrelated stale Cartan, relative, Lorentzian and transfer receipts after concurrent classical updates. Therefore the standard coefficient-computed flags remain false until that suite is reconciled and passes. This is not the full coupled vector ghost determinant, a generic-background form factor, complete Gamma1/Q1, a restored QME, or a Lorentzian causal, Hadamard, state-space, particle, positivity, scattering or unitarity theorem.",
+  "claim_boundary": "This EUCLIDEAN-SPECTRAL certificate rigorously computes directed enclosures for R_Delta(K) and FP R_Delta(K^2) on the declared S2(1) x S2(2) regular Schur complement. It proves a uniform periodic-Bernoulli Euler--Maclaurin remainder for every required product heat moment, bounds the upper-incomplete spectral cutoff, combines those bounds with a positive-sum binary64 proof and the previously certified trace-class exterior tails, and records the passing 850-test Tier-3 promotion receipt. The coefficient-computed lifecycle is restricted to these two special-background weighted rows. This is not the full coupled vector ghost determinant, a generic-background form factor, complete Gamma1/Q1, a restored QME, or a Lorentzian causal, Hadamard, state-space, particle, positivity, scattering or unitarity theorem.",
   "claim_flags": {
     "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
     "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
     "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": false,
     "LORENTZIAN_CERTIFIED": false,
-    "PRODUCT_FINITE_PART_R_K2_COMPUTED": false,
+    "PRODUCT_FINITE_PART_R_K2_COMPUTED": true,
     "PRODUCT_HEAT_EULER_MACLAURIN_REMAINDER_RIGOROUSLY_BOUNDED": true,
     "PRODUCT_WEIGHTED_ROW_RIGOROUS_ENCLOSURES_DERIVED": true,
-    "PRODUCT_WEIGHTED_R_K_COMPUTED": false
+    "PRODUCT_WEIGHTED_R_K_COMPUTED": true
   },
   "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
   "dependencies": {
@@ -152,15 +152,27 @@
       "numerator": 1773
     }
   },
-  "lifecycle_state": "PRECERTIFICATE_TIER3_FAILED_NO_PROMOTION",
-  "next_gate": "RECONCILE_THE_UNRELATED_STALE_CARTAN_RELATIVE_LORENTZIAN_AND_TRANSFER_RECEIPTS_THEN_RERUN_TIER3_AND_PROMOTE_THE_RIGOROUS_WEIGHTED_ROW_ENCLOSURES",
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "ASSEMBLE_THE_PROMOTED_WEIGHTED_ROWS_WITH_THE_MATCHED_SCHUR_FACTOR_AND_MINIMAL_VECTOR_GHOST_DETERMINANT",
   "result_id": "PRODUCT_S2_S2_GHOST_SCHUR_WEIGHTED_ROWS",
-  "result_state": "PRODUCT_WEIGHTED_ROWS_RIGOROUS_ENCLOSURES_DERIVED_TIER3_BLOCKED",
+  "result_state": "PRODUCT_WEIGHTED_ROWS_RIGOROUS_ENCLOSURES_COEFFICIENT_COMPUTED",
   "schema": "quantum-weyl-product-s2-s2-ghost-schur-weighted-rows-v1",
   "scope": {
     "background": "S2(1) x S2(2)",
     "exceptional_policy": "subtract (0,0),(1,0),(0,1) from every low-order product-zeta block; retain coupled factor 3^-6 separately",
     "weight": "Q=Delta_0 on the regular complement at mu_0=1"
+  },
+  "tier3_promotion_receipt": {
+    "command": "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl -p 'test_*.py' -q",
+    "errors": 0,
+    "failures": 0,
+    "quantum_evidence_commit": "75ef69a24eb7ad7cd27fa05601270abff13aa947",
+    "repository_head_at_start": "a08fbf2d3337d7a7a0f61889390fd0e69e28083f",
+    "scope_note": "quantum-weyl was committed; unrelated shared-workspace paths were dirty and are outside this promotion",
+    "status": "PASSED",
+    "test_elapsed_seconds": "658.135",
+    "tests_run": 850,
+    "wall_elapsed_seconds": "660.46"
   },
   "upper_incomplete_cutoff_proof": {
     "product_heat_tail_bound": {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Assemble the product Schur modified determinant, fail-closed at Tier 3."""
+"""Assemble the coefficient-computed product Schur modified determinant."""
 
 from __future__ import annotations
 
@@ -57,7 +57,9 @@ def build() -> dict[str, Any]:
     if (
         det3["claim_flags"]["PRODUCT_REGULAR_COMPLEMENT_DET3_VALUE_COMPUTED"] is not True
         or weighted["claim_flags"]["PRODUCT_WEIGHTED_ROW_RIGOROUS_ENCLOSURES_DERIVED"] is not True
-        or weighted["claim_flags"]["PRODUCT_WEIGHTED_R_K_COMPUTED"] is not False
+        or weighted["claim_flags"]["PRODUCT_WEIGHTED_R_K_COMPUTED"] is not True
+        or weighted["claim_flags"]["PRODUCT_FINITE_PART_R_K2_COMPUTED"] is not True
+        or weighted["tier3_promotion_receipt"]["status"] != "PASSED"
     ):
         raise ValueError("product Schur determinant dependency boundary drifted")
     mp.mp.dps = MP_IV_DPS + 30
@@ -77,8 +79,8 @@ def build() -> dict[str, Any]:
     result = {
         "schema": "quantum-weyl-product-s2-s2-ghost-schur-modified-determinant-precertificate-v1",
         "result_id": "PRODUCT_S2_S2_GHOST_SCHUR_MODIFIED_DETERMINANT_PRECERTIFICATE",
-        "result_state": "COUPLED_SCHUR_FACTOR_RIGOROUS_ENCLOSURE_DERIVED_TIER3_BLOCKED",
-        "lifecycle_state": "PRECERTIFICATE_TIER3_FAILED_NO_PROMOTION",
+        "result_state": "COUPLED_SCHUR_FACTOR_RIGOROUS_ENCLOSURE_COEFFICIENT_COMPUTED",
+        "lifecycle_state": "COEFFICIENT_COMPUTED",
         "dependency_tags": ["EUCLIDEAN-SPECTRAL"],
         "classical_commit": weighted["classical_commit"],
         "scope": weighted["scope"],
@@ -106,27 +108,18 @@ def build() -> dict[str, Any]:
         "claim_flags": {
             "REGULAR_MODIFIED_SCHUR_DETERMINANT_ENCLOSURE_DERIVED": True,
             "MATCHED_EXCEPTIONAL_COUPLED_SCHUR_ENCLOSURE_DERIVED": True,
-            "PRODUCT_WEIGHTED_R_K_COMPUTED": False,
-            "PRODUCT_FINITE_PART_R_K2_COMPUTED": False,
+            "PRODUCT_WEIGHTED_R_K_COMPUTED": True,
+            "PRODUCT_FINITE_PART_R_K2_COMPUTED": True,
             "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": False,
             "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": False,
             "COMPLETE_RENORMALIZED_Q1_SUPPLIED": False,
             "LORENTZIAN_CERTIFIED": False,
         },
-        "tier3_blocker": {
-            "command": "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl -p 'test_*.py' -q",
-            "tests_run": 830,
-            "elapsed_seconds": "629.08",
-            "failures": 20,
-            "errors": 12,
-            "failure_scopes": ["cartan", "relative", "lorentzian", "transfer"],
-            "spectral_package_failures": 0,
-            "status": "FAILED_NOT_A_PASS",
-        },
+        "tier3_promotion_receipt": weighted["tier3_promotion_receipt"],
         "dependencies": {name: _reference(path) for name, path in DEPENDENCIES.items()},
-        "next_gate": "RECONCILE_THE_STALE_TIER3_RECEIPTS_PROMOTE_THE_WEIGHTED_ROWS_THEN_COMBINE_THIS_SCHUR_FACTOR_WITH_THE_MINIMAL_VECTOR_GHOST_DETERMINANT",
+        "next_gate": "COMBINE_THE_PROMOTED_COUPLED_SCHUR_FACTOR_WITH_THE_MINIMAL_VECTOR_GHOST_DETERMINANT",
         "claim_boundary": (
-            "This EUCLIDEAN-SPECTRAL precertificate rigorously combines the regular det_3 enclosure, the derived weighted-row enclosures and the matched exceptional factor 3^-6 on S2(1) x S2(2). It does not promote the weighted rows or full coupled vector determinant because the required Tier-3 suite failed on stale Cartan, relative, Lorentzian and transfer receipts outside this spectral package. The minimal-vector determinant remains absent. No generic-background form factor, complete Gamma1/Q1, restored QME, Lorentzian causal construction, Hadamard state, particle, positivity, scattering or unitarity theorem follows."
+            "This EUCLIDEAN-SPECTRAL certificate rigorously combines the regular det_3 enclosure, the coefficient-computed weighted-row enclosures and the matched exceptional factor 3^-6 on S2(1) x S2(2), with the passing 850-test Tier-3 receipt inherited content-addressedly from the weighted rows. The resulting coupled Schur factor is coefficient-computed in this selected special-background weighted prescription; the minimal-vector determinant is assembled separately downstream. No generic-background form factor, complete Gamma1/Q1, restored QME, Lorentzian causal construction, Hadamard state, particle, positivity, scattering or unitarity theorem follows."
         ),
     }
     validate(result)
@@ -159,7 +152,7 @@ def main() -> int:
         emit(check=True)
     if not args.emit and not args.check:
         print(json.dumps(build(), indent=2, sort_keys=True))
-    print("PRODUCT S2xS2 SCHUR MODIFIED DETERMINANT: PRECERTIFICATE PASS")
+    print("PRODUCT S2xS2 SCHUR MODIFIED DETERMINANT: COEFFICIENT PASS")
     return 0
 
 

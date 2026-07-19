@@ -1357,10 +1357,13 @@ Those functions are now added to the physical-plus-ghost-`n=3` carrier
 representative in a future-proof `PARTIAL_BV` ledger. The exact `I28` quotient
 relation remains coefficientwise zero. The unresolved ghost gate is no longer
 three independent longitudinal/mixed `D_W` carriers: they are one Schur
-kernel. Its exact product spectrum is now known, while the bivariate infinite
-weighted finite-part sums and arbitrary-background finite Schur data remain
-open. The regular-complement `det_3` sum on the `(k1,k2)=(1,2)` fixture is
-closed by the receipt below.
+kernel. Its exact product spectrum, bivariate weighted finite-part rows,
+matched exceptional Schur factor, minimal-vector determinant and selected
+full vector-plus-Schur weighted logarithm are now computed on the
+`(k1,k2)=(1,2)` fixture. After the stale receipt chain was reconciled, the
+complete 850-test quantum Tier-3 suite passed in 658.135 test seconds and
+660.46 wall seconds. Those special-background rows are therefore
+`COEFFICIENT_COMPUTED`; arbitrary-background finite Schur data remain open.
 
 Receipts:
 [`generic-background-ghost-n1-n2-vector-integrated-functions.md`](../quantum-weyl/reports/generic-background-ghost-n1-n2-vector-integrated-functions.md) and
@@ -1369,7 +1372,7 @@ Receipts:
 Active gate:
 
 ```text
-ANALYTICALLY_CONTINUE_PRODUCT_WEIGHTED_R_K_AND_FINITE_PART_R_K2_THEN_ADD_REMAINING_BV_SECTORS
+INSERT_PROMOTED_PRODUCT_GHOST_DETERMINANT_IN_REMAINING_BV_LEDGER_AND_FIX_OPEN_FINITE_NORMALIZATIONS
 ```
 
 ## Non-Einstein product Schur spectrum (2026-07-19)

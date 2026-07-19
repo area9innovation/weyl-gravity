@@ -5,15 +5,15 @@
     "priming_policy": "the six matched vector-zero/Schur-pole directions occur only through the finite coupled factor 3^-6",
     "regular_modified_determinant": "log det_3(I+K)+R_Delta(K)-(1/2)FP R_Delta(K^2)"
   },
-  "claim_boundary": "This EUCLIDEAN-SPECTRAL precertificate rigorously combines the regular det_3 enclosure, the derived weighted-row enclosures and the matched exceptional factor 3^-6 on S2(1) x S2(2). It does not promote the weighted rows or full coupled vector determinant because the required Tier-3 suite failed on stale Cartan, relative, Lorentzian and transfer receipts outside this spectral package. The minimal-vector determinant remains absent. No generic-background form factor, complete Gamma1/Q1, restored QME, Lorentzian causal construction, Hadamard state, particle, positivity, scattering or unitarity theorem follows.",
+  "claim_boundary": "This EUCLIDEAN-SPECTRAL certificate rigorously combines the regular det_3 enclosure, the coefficient-computed weighted-row enclosures and the matched exceptional factor 3^-6 on S2(1) x S2(2), with the passing 850-test Tier-3 receipt inherited content-addressedly from the weighted rows. The resulting coupled Schur factor is coefficient-computed in this selected special-background weighted prescription; the minimal-vector determinant is assembled separately downstream. No generic-background form factor, complete Gamma1/Q1, restored QME, Lorentzian causal construction, Hadamard state, particle, positivity, scattering or unitarity theorem follows.",
   "claim_flags": {
     "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
     "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
     "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": false,
     "LORENTZIAN_CERTIFIED": false,
     "MATCHED_EXCEPTIONAL_COUPLED_SCHUR_ENCLOSURE_DERIVED": true,
-    "PRODUCT_FINITE_PART_R_K2_COMPUTED": false,
-    "PRODUCT_WEIGHTED_R_K_COMPUTED": false,
+    "PRODUCT_FINITE_PART_R_K2_COMPUTED": true,
+    "PRODUCT_WEIGHTED_R_K_COMPUTED": true,
     "REGULAR_MODIFIED_SCHUR_DETERMINANT_ENCLOSURE_DERIVED": true
   },
   "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
@@ -26,7 +26,7 @@
     "weighted_rows": {
       "path": "quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_WEIGHTED_ROWS.json",
       "result_id": "PRODUCT_S2_S2_GHOST_SCHUR_WEIGHTED_ROWS",
-      "sha256": "5f0c0ce35b39adc61bf328e8a0a288db311cd366930969253a868515c5062b42"
+      "sha256": "bac0dd8704a7bff2b64cedbcce07cd0a2693d3681d334b2d4bc7c4a015701181"
     }
   },
   "dependency_tags": [
@@ -47,29 +47,26 @@
       "upper": "-2.897842226409580733599193601184079493018010137739534345142711890673414495546372162"
     }
   },
-  "lifecycle_state": "PRECERTIFICATE_TIER3_FAILED_NO_PROMOTION",
-  "next_gate": "RECONCILE_THE_STALE_TIER3_RECEIPTS_PROMOTE_THE_WEIGHTED_ROWS_THEN_COMBINE_THIS_SCHUR_FACTOR_WITH_THE_MINIMAL_VECTOR_GHOST_DETERMINANT",
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "COMBINE_THE_PROMOTED_COUPLED_SCHUR_FACTOR_WITH_THE_MINIMAL_VECTOR_GHOST_DETERMINANT",
   "result_id": "PRODUCT_S2_S2_GHOST_SCHUR_MODIFIED_DETERMINANT_PRECERTIFICATE",
-  "result_state": "COUPLED_SCHUR_FACTOR_RIGOROUS_ENCLOSURE_DERIVED_TIER3_BLOCKED",
+  "result_state": "COUPLED_SCHUR_FACTOR_RIGOROUS_ENCLOSURE_COEFFICIENT_COMPUTED",
   "schema": "quantum-weyl-product-s2-s2-ghost-schur-modified-determinant-precertificate-v1",
   "scope": {
     "background": "S2(1) x S2(2)",
     "exceptional_policy": "subtract (0,0),(1,0),(0,1) from every low-order product-zeta block; retain coupled factor 3^-6 separately",
     "weight": "Q=Delta_0 on the regular complement at mu_0=1"
   },
-  "tier3_blocker": {
+  "tier3_promotion_receipt": {
     "command": "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl -p 'test_*.py' -q",
-    "elapsed_seconds": "629.08",
-    "errors": 12,
-    "failure_scopes": [
-      "cartan",
-      "relative",
-      "lorentzian",
-      "transfer"
-    ],
-    "failures": 20,
-    "spectral_package_failures": 0,
-    "status": "FAILED_NOT_A_PASS",
-    "tests_run": 830
+    "errors": 0,
+    "failures": 0,
+    "quantum_evidence_commit": "75ef69a24eb7ad7cd27fa05601270abff13aa947",
+    "repository_head_at_start": "a08fbf2d3337d7a7a0f61889390fd0e69e28083f",
+    "scope_note": "quantum-weyl was committed; unrelated shared-workspace paths were dirty and are outside this promotion",
+    "status": "PASSED",
+    "test_elapsed_seconds": "658.135",
+    "tests_run": 850,
+    "wall_elapsed_seconds": "660.46"
   }
 }

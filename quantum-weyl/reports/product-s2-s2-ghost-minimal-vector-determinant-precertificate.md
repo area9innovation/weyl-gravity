@@ -1,4 +1,4 @@
-# Product \(S^2\times S^2\) minimal-vector determinant precertificate
+# Product \(S^2\times S^2\) minimal-vector determinant certificate
 
 **Dependency tag:** `EUCLIDEAN-SPECTRAL`.
 
@@ -46,11 +46,13 @@ Every interval endpoint is converted from its exact binary MPF rational with
 decimal floor/ceiling rounding, so serialization cannot shrink the directed
 enclosure.
 
-This remains a precertificate because the inherited 830-test Tier-3
-promotion run failed on stale receipts outside this package. It is also a
-special-background determinant, not the remaining full BV ledger or a
-generic-background form factor. All QME, Lorentzian and Hadamard promotions
-remain false.
+The historical 830-test Tier-3 failure remains recorded, but it no longer
+blocks this result: after receipt reconciliation, the fresh 850-test suite
+passed with zero failures and zero errors. The minimal-vector determinant and
+selected full vector-plus-Schur weighted logarithm are therefore
+`COEFFICIENT_COMPUTED` on this special background. This is not the remaining
+full BV ledger or a generic-background form factor. All QME, Lorentzian and
+Hadamard promotions remain false.
 
 Receipts:
 
@@ -63,7 +65,8 @@ PYTHONPATH=quantum-weyl python3 -m unittest \
   quantum-weyl/spectral/euclidean/tests/test_product_s2_s2_ghost_minimal_vector_determinant_precertificate.py
 ```
 
-Tier 3 is not rerun by this fail-closed dependent calculation. The focused
-producer check passed in `30.0 s`, the independent verifier in `0.2 s`, and
-the six scoped tests in about `29.7 s`. The strict nested schema, exact dependency
-hashes and directed-interval identities are part of the affected chain.
+The promotion receipt records 850 tests in 658.135 test seconds and 660.46
+wall seconds. The focused producer, independent verifier and scoped tests
+continue to check the strict nested schema, exact dependency hashes and
+directed-interval identities. The compatibility filename retains
+`precertificate`; the lifecycle field is authoritative.

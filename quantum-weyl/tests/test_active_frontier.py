@@ -522,7 +522,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "ANALYTICALLY_CONTINUE_PRODUCT_WEIGHTED_R_K_AND_FINITE_PART_R_K2_THEN_ADD_REMAINING_BV_SECTORS",
+            "INSERT_PROMOTED_PRODUCT_GHOST_DETERMINANT_IN_REMAINING_BV_LEDGER_AND_FIX_OPEN_FINITE_NORMALIZATIONS",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

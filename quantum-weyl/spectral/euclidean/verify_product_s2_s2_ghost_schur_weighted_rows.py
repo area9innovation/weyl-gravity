@@ -154,10 +154,14 @@ def main() -> int:
     flags = payload["claim_flags"]
     assert flags["PRODUCT_WEIGHTED_ROW_RIGOROUS_ENCLOSURES_DERIVED"] is True
     assert flags["PRODUCT_HEAT_EULER_MACLAURIN_REMAINDER_RIGOROUSLY_BOUNDED"] is True
-    assert flags["PRODUCT_WEIGHTED_R_K_COMPUTED"] is False
-    assert flags["PRODUCT_FINITE_PART_R_K2_COMPUTED"] is False
+    assert flags["PRODUCT_WEIGHTED_R_K_COMPUTED"] is True
+    assert flags["PRODUCT_FINITE_PART_R_K2_COMPUTED"] is True
     assert flags["FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED"] is False
     assert flags["COMPLETE_RENORMALIZED_Q1_SUPPLIED"] is False
+    receipt = payload["tier3_promotion_receipt"]
+    assert receipt["status"] == "PASSED"
+    assert receipt["tests_run"] == 850
+    assert receipt["failures"] == receipt["errors"] == 0
     assert flags["LORENTZIAN_CERTIFIED"] is False
     print("PRODUCT S2xS2 SCHUR WEIGHTED ROWS: INDEPENDENT ENCLOSURE PASS")
     return 0

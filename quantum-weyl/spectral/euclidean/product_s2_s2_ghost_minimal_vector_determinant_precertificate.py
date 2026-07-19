@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rigorous minimal-vector determinant enclosure, held behind Tier 3."""
+"""Rigorous coefficient-computed minimal-vector determinant enclosure."""
 
 from __future__ import annotations
 
@@ -216,7 +216,8 @@ def build() -> dict[str, Any]:
     inputs = {name: json.loads(path.read_text()) for name, path in DEPENDENCIES.items()}
     if (
         inputs["carrier"]["claim_flags"]["PRODUCT_MINIMAL_VECTOR_MODE_CARRIER_SUPPLIED"] is not True
-        or inputs["schur_assembly"]["tier3_blocker"]["status"] != "FAILED_NOT_A_PASS"
+        or inputs["schur_assembly"]["tier3_promotion_receipt"]["status"] != "PASSED"
+        or inputs["schur_assembly"]["claim_flags"]["PRODUCT_WEIGHTED_R_K_COMPUTED"] is not True
     ):
         raise ValueError("minimal-vector determinant dependencies drifted")
     mp.mp.dps = MP_IV_DPS + 30
@@ -241,8 +242,8 @@ def build() -> dict[str, Any]:
     result = {
         "schema": "quantum-weyl-product-s2-s2-ghost-minimal-vector-determinant-precertificate-v1",
         "result_id": "PRODUCT_S2_S2_GHOST_MINIMAL_VECTOR_DETERMINANT_PRECERTIFICATE",
-        "result_state": "MINIMAL_VECTOR_AND_FULL_WEIGHTED_GHOST_ENCLOSURES_DERIVED_TIER3_BLOCKED",
-        "lifecycle_state": "PRECERTIFICATE_TIER3_FAILED_NO_PROMOTION",
+        "result_state": "MINIMAL_VECTOR_AND_FULL_WEIGHTED_GHOST_ENCLOSURES_COEFFICIENT_COMPUTED",
+        "lifecycle_state": "COEFFICIENT_COMPUTED",
         "dependency_tags": ["EUCLIDEAN-SPECTRAL"],
         "classical_commit": inputs["carrier"]["classical_commit"],
         "scope": inputs["carrier"]["scope"],
@@ -272,19 +273,19 @@ def build() -> dict[str, Any]:
         "claim_flags": {
             "MINIMAL_VECTOR_RIGOROUS_ENCLOSURE_DERIVED": True,
             "FULL_VECTOR_PLUS_SCHUR_WEIGHTED_ENCLOSURE_DERIVED": True,
-            "MINIMAL_VECTOR_INFINITE_WEIGHTED_DETERMINANT_COMPUTED": False,
-            "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": False,
+            "MINIMAL_VECTOR_INFINITE_WEIGHTED_DETERMINANT_COMPUTED": True,
+            "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": True,
             "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": False,
             "LORENTZIAN_CERTIFIED": False,
         },
-        "tier3_blocker": inputs["schur_assembly"]["tier3_blocker"],
+        "tier3_promotion_receipt": inputs["schur_assembly"]["tier3_promotion_receipt"],
         "dependencies": {
             name: {"path": str(path.relative_to(ROOT)), "result_id": inputs[name]["result_id"], "sha256": _sha256(path)}
             for name, path in DEPENDENCIES.items()
         },
-        "next_gate": "RECONCILE_AND_PASS_TIER3_THEN_PROMOTE_THE_FULL_WEIGHTED_PRODUCT_GHOST_ENCLOSURE_AND_INSERT_IT_IN_THE_REMAINING_BV_LEDGER",
+        "next_gate": "INSERT_THE_PROMOTED_PRODUCT_GHOST_DETERMINANT_IN_THE_REMAINING_BV_LEDGER_AND_FIX_THE_OPEN_FINITE_NORMALIZATIONS",
         "claim_boundary": (
-            "This EUCLIDEAN-SPECTRAL precertificate rigorously derives the two active minimal-vector modified determinants, their two-polarization weighted and separately zeta-regularized totals, and the selected full vector-plus-Schur weighted enclosure on S2(1) x S2(2). The standard computed flags remain false because the inherited 830-test Tier-3 promotion run failed on stale receipts outside this spectral package. This special-background determinant is not a generic-background form factor, complete BV ledger, Gamma1/Q1, restored QME, or Lorentzian causal, Hadamard, state-space, particle, positivity, scattering or unitarity theorem."
+            "This EUCLIDEAN-SPECTRAL certificate rigorously computes the two active minimal-vector modified determinants, their two-polarization weighted and separately zeta-regularized totals, and the selected full vector-plus-Schur weighted enclosure on S2(1) x S2(2). The inherited passing 850-test Tier-3 receipt promotes these special-background determinant rows to COEFFICIENT_COMPUTED. This is not a generic-background form factor, complete BV ledger, Gamma1/Q1, restored QME, or Lorentzian causal, Hadamard, state-space, particle, positivity, scattering or unitarity theorem."
         ),
     }
     validate(result)
@@ -317,7 +318,7 @@ def main() -> int:
         emit(check=True)
     if not args.emit and not args.check:
         print(json.dumps(build(), indent=2, sort_keys=True))
-    print("PRODUCT S2xS2 GHOST MINIMAL VECTOR DETERMINANT: PRECERTIFICATE PASS")
+    print("PRODUCT S2xS2 GHOST MINIMAL VECTOR DETERMINANT: COEFFICIENT PASS")
     return 0
 
 

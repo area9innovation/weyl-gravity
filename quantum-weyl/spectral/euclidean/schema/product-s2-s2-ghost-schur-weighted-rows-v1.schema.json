@@ -33,12 +33,12 @@
   },
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "euler_maclaurin_remainder_proof", "upper_incomplete_cutoff_proof", "direct_trace_class_rounding_proof", "direct_trace_class_exterior_bounds", "directed_interval_base_values", "weighted_rows", "claim_flags", "dependencies", "next_gate", "claim_boundary"],
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "euler_maclaurin_remainder_proof", "upper_incomplete_cutoff_proof", "direct_trace_class_rounding_proof", "direct_trace_class_exterior_bounds", "directed_interval_base_values", "weighted_rows", "claim_flags", "dependencies", "tier3_promotion_receipt", "next_gate", "claim_boundary"],
   "properties": {
     "schema": {"const": "quantum-weyl-product-s2-s2-ghost-schur-weighted-rows-v1"},
     "result_id": {"const": "PRODUCT_S2_S2_GHOST_SCHUR_WEIGHTED_ROWS"},
-    "result_state": {"const": "PRODUCT_WEIGHTED_ROWS_RIGOROUS_ENCLOSURES_DERIVED_TIER3_BLOCKED"},
-    "lifecycle_state": {"const": "PRECERTIFICATE_TIER3_FAILED_NO_PROMOTION"},
+    "result_state": {"const": "PRODUCT_WEIGHTED_ROWS_RIGOROUS_ENCLOSURES_COEFFICIENT_COMPUTED"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
     "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
     "classical_commit": {"type": "string", "minLength": 7},
     "scope": {
@@ -134,8 +134,8 @@
       "properties": {
         "PRODUCT_WEIGHTED_ROW_RIGOROUS_ENCLOSURES_DERIVED": {"const": true},
         "PRODUCT_HEAT_EULER_MACLAURIN_REMAINDER_RIGOROUSLY_BOUNDED": {"const": true},
-        "PRODUCT_WEIGHTED_R_K_COMPUTED": {"const": false},
-        "PRODUCT_FINITE_PART_R_K2_COMPUTED": {"const": false},
+        "PRODUCT_WEIGHTED_R_K_COMPUTED": {"const": true},
+        "PRODUCT_FINITE_PART_R_K2_COMPUTED": {"const": true},
         "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": {"const": false},
         "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
         "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
@@ -147,6 +147,23 @@
       "additionalProperties": false,
       "required": ["weighted_rows_preflight"],
       "properties": {"weighted_rows_preflight": {"$ref": "#/$defs/reference"}}
+    },
+    "tier3_promotion_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command", "repository_head_at_start", "quantum_evidence_commit", "tests_run", "test_elapsed_seconds", "wall_elapsed_seconds", "failures", "errors", "status", "scope_note"],
+      "properties": {
+        "command": {"type": "string", "minLength": 20},
+        "repository_head_at_start": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "quantum_evidence_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "tests_run": {"const": 850},
+        "test_elapsed_seconds": {"const": "658.135"},
+        "wall_elapsed_seconds": {"const": "660.46"},
+        "failures": {"const": 0},
+        "errors": {"const": 0},
+        "status": {"const": "PASSED"},
+        "scope_note": {"type": "string", "minLength": 50}
+      }
     },
     "next_gate": {"type": "string", "minLength": 20},
     "claim_boundary": {"type": "string", "minLength": 200}

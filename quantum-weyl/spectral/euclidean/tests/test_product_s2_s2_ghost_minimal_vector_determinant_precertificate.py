@@ -53,11 +53,13 @@ class ProductS2S2GhostMinimalVectorDeterminantPrecertificateTests(unittest.TestC
                     Decimal(rows["two_polarization_minimal_vector_zeta"][endpoint]),
                 )
 
-    def test_claims_remain_fail_closed(self) -> None:
+    def test_special_background_claims_are_promoted_and_scoped(self) -> None:
         flags = self.value["claim_flags"]
         self.assertTrue(flags["FULL_VECTOR_PLUS_SCHUR_WEIGHTED_ENCLOSURE_DERIVED"])
-        self.assertFalse(flags["FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED"])
+        self.assertTrue(flags["MINIMAL_VECTOR_INFINITE_WEIGHTED_DETERMINANT_COMPUTED"])
+        self.assertTrue(flags["FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED"])
         self.assertFalse(flags["LORENTZIAN_CERTIFIED"])
+        self.assertEqual(self.value["tier3_promotion_receipt"]["status"], "PASSED")
 
     def test_independent_verifier(self) -> None:
         self.assertEqual(independent_verify(), 0)

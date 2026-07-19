@@ -1,4 +1,4 @@
-# Product \(S^2\times S^2\) Schur modified determinant precertificate
+# Product \(S^2\times S^2\) Schur modified determinant certificate
 
 **Dependency tag:** `EUCLIDEAN-SPECTRAL`.
 
@@ -25,13 +25,13 @@ evaluation of `-6 log(3)` therefore gives the coupled Schur-factor enclosure
                              < -9.4895159584182388819...
 ```
 
-This is an assembly precertificate, not a lifecycle promotion. Its weighted
-row dependency remains `PRECERTIFICATE_TIER3_FAILED_NO_PROMOTION` after the
-830-test exhaustive run exposed 20 failures and 12 errors in stale Cartan,
-relative, Lorentzian and transfer receipts. The dependent minimal-vector
-precertificate now encloses the selected complete vector-plus-Schur weighted
-logarithm, but the standard full coupled determinant flag remains false until
-the same promotion gate passes.
+The historical 830-test run exposed stale Cartan, relative, Lorentzian and
+transfer receipts and correctly blocked promotion. After those receipts were
+reconciled, a fresh 850-test Tier-3 run passed in 658.135 test seconds and
+660.46 wall seconds with zero failures and zero errors. This promotes the
+selected special-background Schur factor to `COEFFICIENT_COMPUTED`. The full
+vector-plus-Schur flag remains the responsibility of the downstream
+minimal-vector assembly.
 
 The regenerated endpoints use exact-binary-to-decimal outward rounding rather
 than nearest-decimal display. The printed intervals therefore retain the
@@ -48,8 +48,8 @@ PYTHONPATH=quantum-weyl python3 -m unittest \
   quantum-weyl/spectral/euclidean/tests/test_product_s2_s2_ghost_schur_modified_determinant_precertificate.py
 ```
 
-Tier 3 is not rerun by this algebraic assembly: it introduces no new
-lifecycle promotion and inherits the explicit failed gate from its weighted
-row dependency. The focused producer, independent verifier, strict schema and
-five tests are the direct affected chain; the complete regenerated
-weighted/assembly/minimal-vector chain passes 17 tests in `37.69 s`.
+The algebraic assembly inherits the exact passing Tier-3 receipt from its
+weighted-row dependency. The focused producer, independent verifier, strict
+schema and tests remain the direct affected chain. The compatibility filename
+retains `precertificate` so existing content-addressed consumers do not break;
+the machine lifecycle and result state are authoritative.

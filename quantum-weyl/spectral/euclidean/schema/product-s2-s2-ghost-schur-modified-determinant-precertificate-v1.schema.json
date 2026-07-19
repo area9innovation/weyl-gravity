@@ -21,12 +21,12 @@
   },
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "assembly_identity", "directed_enclosures", "claim_flags", "tier3_blocker", "dependencies", "next_gate", "claim_boundary"],
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "assembly_identity", "directed_enclosures", "claim_flags", "tier3_promotion_receipt", "dependencies", "next_gate", "claim_boundary"],
   "properties": {
     "schema": {"const": "quantum-weyl-product-s2-s2-ghost-schur-modified-determinant-precertificate-v1"},
     "result_id": {"const": "PRODUCT_S2_S2_GHOST_SCHUR_MODIFIED_DETERMINANT_PRECERTIFICATE"},
-    "result_state": {"const": "COUPLED_SCHUR_FACTOR_RIGOROUS_ENCLOSURE_DERIVED_TIER3_BLOCKED"},
-    "lifecycle_state": {"const": "PRECERTIFICATE_TIER3_FAILED_NO_PROMOTION"},
+    "result_state": {"const": "COUPLED_SCHUR_FACTOR_RIGOROUS_ENCLOSURE_COEFFICIENT_COMPUTED"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
     "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
     "classical_commit": {"type": "string", "minLength": 7},
     "scope": {"type": "object"},
@@ -49,15 +49,31 @@
       "properties": {
         "REGULAR_MODIFIED_SCHUR_DETERMINANT_ENCLOSURE_DERIVED": {"const": true},
         "MATCHED_EXCEPTIONAL_COUPLED_SCHUR_ENCLOSURE_DERIVED": {"const": true},
-        "PRODUCT_WEIGHTED_R_K_COMPUTED": {"const": false},
-        "PRODUCT_FINITE_PART_R_K2_COMPUTED": {"const": false},
+        "PRODUCT_WEIGHTED_R_K_COMPUTED": {"const": true},
+        "PRODUCT_FINITE_PART_R_K2_COMPUTED": {"const": true},
         "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": {"const": false},
         "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
         "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
         "LORENTZIAN_CERTIFIED": {"const": false}
       }
     },
-    "tier3_blocker": {"type": "object"},
+    "tier3_promotion_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command", "repository_head_at_start", "quantum_evidence_commit", "tests_run", "test_elapsed_seconds", "wall_elapsed_seconds", "failures", "errors", "status", "scope_note"],
+      "properties": {
+        "command": {"type": "string", "minLength": 20},
+        "repository_head_at_start": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "quantum_evidence_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "tests_run": {"const": 850},
+        "test_elapsed_seconds": {"const": "658.135"},
+        "wall_elapsed_seconds": {"const": "660.46"},
+        "failures": {"const": 0},
+        "errors": {"const": 0},
+        "status": {"const": "PASSED"},
+        "scope_note": {"type": "string", "minLength": 50}
+      }
+    },
     "dependencies": {
       "type": "object",
       "additionalProperties": false,

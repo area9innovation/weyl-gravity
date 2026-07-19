@@ -56,23 +56,26 @@ def main() -> int:
     assert Decimal(stored_coupled["upper"]) >= Decimal(stored_regular["upper"]) + Decimal(stored_exceptional["upper"])
     assert Decimal(stored_coupled["upper"]) - Decimal(stored_coupled["lower"]) < Decimal("5.6e-8")
 
-    blocker = payload["tier3_blocker"]
-    assert blocker == {
+    receipt = payload["tier3_promotion_receipt"]
+    assert receipt == {
         "command": "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl -p 'test_*.py' -q",
-        "tests_run": 830,
-        "elapsed_seconds": "629.08",
-        "failures": 20,
-        "errors": 12,
-        "failure_scopes": ["cartan", "relative", "lorentzian", "transfer"],
-        "spectral_package_failures": 0,
-        "status": "FAILED_NOT_A_PASS",
+        "repository_head_at_start": "a08fbf2d3337d7a7a0f61889390fd0e69e28083f",
+        "quantum_evidence_commit": "75ef69a24eb7ad7cd27fa05601270abff13aa947",
+        "tests_run": 850,
+        "test_elapsed_seconds": "658.135",
+        "wall_elapsed_seconds": "660.46",
+        "failures": 0,
+        "errors": 0,
+        "status": "PASSED",
+        "scope_note": "quantum-weyl was committed; unrelated shared-workspace paths were dirty and are outside this promotion",
     }
     flags = payload["claim_flags"]
     assert flags["MATCHED_EXCEPTIONAL_COUPLED_SCHUR_ENCLOSURE_DERIVED"] is True
-    assert flags["PRODUCT_WEIGHTED_R_K_COMPUTED"] is False
+    assert flags["PRODUCT_WEIGHTED_R_K_COMPUTED"] is True
+    assert flags["PRODUCT_FINITE_PART_R_K2_COMPUTED"] is True
     assert flags["FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED"] is False
     assert flags["LORENTZIAN_CERTIFIED"] is False
-    print("PRODUCT S2xS2 SCHUR MODIFIED DETERMINANT: INDEPENDENT PRECERTIFICATE PASS")
+    print("PRODUCT S2xS2 SCHUR MODIFIED DETERMINANT: INDEPENDENT COEFFICIENT PASS")
     return 0
 
 

@@ -219,10 +219,11 @@ certified common decimal prefix `0.3263039`. Order-18 product-heat and rational
 tail estimates now also enclose weighted `R(K)`, finite-part `R(K^2)`, the
 matched exceptional Schur factor and both exact/coexact minimal-vector blocks.
 Their selected combined vector-plus-Schur weighted logarithm lies in
-`[19.0791598956...,19.0791630891...]`. These rows remain fail-closed
-precertificates because the required Tier-3 promotion run failed on stale
-receipts outside the spectral package. Arbitrary-background finite Schur rows
-and the remaining BV sectors remain open.
+`[19.0791598956...,19.0791630891...]`. After the stale receipt chain was
+reconciled, the fresh 850-test Tier-3 suite passed with zero failures and zero
+errors. These selected special-background rows are therefore
+`COEFFICIENT_COMPUTED`. Arbitrary-background finite Schur rows and the
+remaining BV sectors remain open.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute
@@ -546,15 +547,13 @@ the renormalized observable restriction remain open.
 
 The current coefficient-bearing critical path is:
 
-1. reconcile the unrelated stale Cartan, relative, Lorentzian and transfer
-   receipts exposed by the 830-test Tier-3 run, rerun that promotion gate, and
-   only then promote the rigorously derived `S2(1) x S2(2)` weighted `R(K)`,
-   finite-part `R(K^2)`, coupled Schur and minimal-vector enclosures; the
-   regular-complement `det_3`, matched exceptional factor `3^-6`, exact/coexact
-   carrier, Killing-zero priming, local zeta/weighted defect and both infinite
-   active scalar modified determinants are now derived, while arbitrary-
-   background finite rows still require a generic primed Green kernel or
-   spectral measure;
+1. insert the promoted `S2(1) x S2(2)` weighted `R(K)`, finite-part
+   `R(K^2)`, coupled Schur and minimal-vector determinant into the remaining BV
+   ledger; the regular-complement `det_3`, matched exceptional factor `3^-6`,
+   exact/coexact carrier, Killing-zero priming, local zeta/weighted defect and
+   both infinite active scalar modified determinants are coefficient-computed,
+   while arbitrary-background finite rows still require a generic primed
+   Green kernel or spectral measure;
 2. classify the parity-odd derivative sector and fix the finite `C2` and
    absolute dressed `R(g_hat)^2` normalizations and renormalized products;
 3. use those data to determine complete `Gamma1/Q1`;
@@ -578,13 +577,14 @@ exact chain was run separately at Tier 2 and is recorded in its acceptance
 report. A later weighted-row promotion attempt did trigger Tier 3: 830 tests
 ran in 626.559 seconds, with 20 failures and 12 errors confined to stale
 pinned Cartan, relative, Lorentzian and transfer receipts outside the spectral
-package. That run is recorded as a failure, not a pass; the rigorous
-weighted-row enclosure remains a precertificate with both standard
-coefficient-computed flags false.
+package. That historical run remains recorded as a failure, not a pass.
+After the receipts were reconciled, a fresh 850-test Tier-3 run passed in
+658.135 test seconds and 660.46 wall seconds with zero failures and zero
+errors. The weighted rows, coupled Schur factor and selected full
+vector-plus-Schur determinant are now `COEFFICIENT_COMPUTED` on the declared
+product background.
 
-The product minimal-vector precertificate was regenerated in `30.0 s`; its
-independent verifier passed in `0.2 s` and its six scoped tests passed in
-about `29.7 s`. The complete outward-serialization regression chain passes
-17 tests in `37.69 s`. Tier 3 was not rerun because this dependent result
-cannot promote while the recorded unrelated receipt failures remain
-unresolved.
+The promoted product chain regenerates in approximately 42 seconds and its
+three independent verifiers plus 18 scoped tests pass in approximately 36
+seconds. The compatibility filenames retain `precertificate`, but the
+machine lifecycle fields and passing Tier-3 receipt are authoritative.

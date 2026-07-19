@@ -67,10 +67,11 @@ rounding bound below `1.3e-9`.
 ## Claim boundary and next gate
 
 This derives the two weighted-row enclosures only on the declared Euclidean
-product background. Promotion and assembly must wait for the unrelated stale
-Tier-3 receipts to be reconciled and the suite rerun. A dependent
-precertificate now encloses the full minimal-vector and coupled Schur total,
-but cannot promote through that failed gate. Nothing here supplies
+product background. The unrelated stale receipt chain has now been reconciled,
+and the full 850-test quantum Tier-3 suite passes. The weighted rows are
+therefore promoted to `COEFFICIENT_COMPUTED`; the dependent minimal-vector and
+coupled Schur total is promoted under the same content-addressed receipt.
+Nothing here supplies
 generic-background form factors, complete
 `Gamma1/Q1`, a restored QME, or a Lorentzian causal/Hadamard theorem.
 
@@ -95,11 +96,12 @@ Observed scoped timings for the regenerated affected chain were:
 | producer/emit | 16.71 s | pass |
 | independent verifier | 0.08 s | pass |
 | 17-test weighted/assembly/minimal-vector chain | 37.69 s | pass |
-| full quantum Tier 3 (`830` tests) | 629.08 s | fail: 20 failures, 12 errors |
+| historical full quantum Tier 3 (`830` tests) | 629.08 s | fail: 20 failures, 12 errors |
+| promotion full quantum Tier 3 (`850` tests) | 660.46 s wall / 658.135 s tests | pass |
 
-Tier 3 was required because this result would otherwise promote two rows from
-`NOT_COMPUTED`. It failed only in pre-existing paths outside this spectral
-package: stale pinned Cartan, relative, Lorentzian and transfer certificates
-after concurrent classical updates. A failed exhaustive run is not a pass;
-the certificate therefore records `PRECERTIFICATE_TIER3_FAILED_NO_PROMOTION`
-and keeps both standard coefficient-computed flags false.
+Tier 3 was required because this result promotes two rows from `NOT_COMPUTED`.
+The historical failed run remains documented rather than reinterpreted as a
+pass. After the Cartan, relative, Lorentzian and transfer receipts were
+reconciled, the fresh 850-test run passed with zero failures and zero errors.
+The certificate records that exact command, evidence commits and timings and
+sets only the two special-background weighted-row flags true.

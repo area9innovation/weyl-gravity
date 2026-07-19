@@ -61,11 +61,18 @@ class ProductS2S2GhostSchurWeightedRowsTests(unittest.TestCase):
         flags = self.value["claim_flags"]
         self.assertTrue(flags["PRODUCT_WEIGHTED_ROW_RIGOROUS_ENCLOSURES_DERIVED"])
         self.assertTrue(flags["PRODUCT_HEAT_EULER_MACLAURIN_REMAINDER_RIGOROUSLY_BOUNDED"])
-        self.assertFalse(flags["PRODUCT_WEIGHTED_R_K_COMPUTED"])
-        self.assertFalse(flags["PRODUCT_FINITE_PART_R_K2_COMPUTED"])
+        self.assertTrue(flags["PRODUCT_WEIGHTED_R_K_COMPUTED"])
+        self.assertTrue(flags["PRODUCT_FINITE_PART_R_K2_COMPUTED"])
         self.assertFalse(flags["FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED"])
         self.assertFalse(flags["COMPLETE_RENORMALIZED_Q1_SUPPLIED"])
         self.assertFalse(flags["LORENTZIAN_CERTIFIED"])
+
+    def test_tier3_promotion_receipt(self) -> None:
+        receipt = self.value["tier3_promotion_receipt"]
+        self.assertEqual(receipt["status"], "PASSED")
+        self.assertEqual(receipt["tests_run"], 850)
+        self.assertEqual(receipt["failures"], 0)
+        self.assertEqual(receipt["errors"], 0)
 
     def test_independent_verifier(self) -> None:
         self.assertEqual(independent_verify(), 0)

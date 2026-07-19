@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rigorous weighted Schur rows on S2(1) x S2(2)."""
+"""Rigorous coefficient-computed weighted Schur rows on S2(1) x S2(2)."""
 
 from __future__ import annotations
 
@@ -39,6 +39,19 @@ TERM_CONDITIONING_MULTIPLIER = Fraction(16)
 BINARY64_UNIT_ROUNDOFF = Fraction(1, 2**53)
 SUM_ENVELOPE = Fraction(2)
 MP_IV_DPS = 70
+
+TIER3_PROMOTION_RECEIPT = {
+    "command": "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl -p 'test_*.py' -q",
+    "repository_head_at_start": "a08fbf2d3337d7a7a0f61889390fd0e69e28083f",
+    "quantum_evidence_commit": "75ef69a24eb7ad7cd27fa05601270abff13aa947",
+    "tests_run": 850,
+    "test_elapsed_seconds": "658.135",
+    "wall_elapsed_seconds": "660.46",
+    "failures": 0,
+    "errors": 0,
+    "status": "PASSED",
+    "scope_note": "quantum-weyl was committed; unrelated shared-workspace paths were dirty and are outside this promotion",
+}
 
 ROW_K_WEIGHTS = {
     (1, 0, 2): Fraction(2, 3),
@@ -356,8 +369,8 @@ def build() -> dict[str, Any]:
     result = {
         "schema": "quantum-weyl-product-s2-s2-ghost-schur-weighted-rows-v1",
         "result_id": "PRODUCT_S2_S2_GHOST_SCHUR_WEIGHTED_ROWS",
-        "result_state": "PRODUCT_WEIGHTED_ROWS_RIGOROUS_ENCLOSURES_DERIVED_TIER3_BLOCKED",
-        "lifecycle_state": "PRECERTIFICATE_TIER3_FAILED_NO_PROMOTION",
+        "result_state": "PRODUCT_WEIGHTED_ROWS_RIGOROUS_ENCLOSURES_COEFFICIENT_COMPUTED",
+        "lifecycle_state": "COEFFICIENT_COMPUTED",
         "dependency_tags": ["EUCLIDEAN-SPECTRAL"],
         "classical_commit": preflight["classical_commit"],
         "scope": preflight["scope"],
@@ -399,8 +412,8 @@ def build() -> dict[str, Any]:
         "claim_flags": {
             "PRODUCT_WEIGHTED_ROW_RIGOROUS_ENCLOSURES_DERIVED": True,
             "PRODUCT_HEAT_EULER_MACLAURIN_REMAINDER_RIGOROUSLY_BOUNDED": True,
-            "PRODUCT_WEIGHTED_R_K_COMPUTED": False,
-            "PRODUCT_FINITE_PART_R_K2_COMPUTED": False,
+            "PRODUCT_WEIGHTED_R_K_COMPUTED": True,
+            "PRODUCT_FINITE_PART_R_K2_COMPUTED": True,
             "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": False,
             "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": False,
             "COMPLETE_RENORMALIZED_Q1_SUPPLIED": False,
@@ -413,9 +426,10 @@ def build() -> dict[str, Any]:
                 "sha256": _sha256(PREFLIGHT),
             }
         },
-        "next_gate": "RECONCILE_THE_UNRELATED_STALE_CARTAN_RELATIVE_LORENTZIAN_AND_TRANSFER_RECEIPTS_THEN_RERUN_TIER3_AND_PROMOTE_THE_RIGOROUS_WEIGHTED_ROW_ENCLOSURES",
+        "tier3_promotion_receipt": TIER3_PROMOTION_RECEIPT,
+        "next_gate": "ASSEMBLE_THE_PROMOTED_WEIGHTED_ROWS_WITH_THE_MATCHED_SCHUR_FACTOR_AND_MINIMAL_VECTOR_GHOST_DETERMINANT",
         "claim_boundary": (
-            "This EUCLIDEAN-SPECTRAL precertificate rigorously derives enclosures for R_Delta(K) and FP R_Delta(K^2) on the declared S2(1) x S2(2) regular Schur complement. It proves a uniform periodic-Bernoulli Euler--Maclaurin remainder for every required product heat moment, bounds the upper-incomplete spectral cutoff, and combines those bounds with a positive-sum binary64 proof and the previously certified trace-class exterior tails. The scoped producer, verifier and tests pass, but the required Tier-3 quantum suite failed on unrelated stale Cartan, relative, Lorentzian and transfer receipts after concurrent classical updates. Therefore the standard coefficient-computed flags remain false until that suite is reconciled and passes. This is not the full coupled vector ghost determinant, a generic-background form factor, complete Gamma1/Q1, a restored QME, or a Lorentzian causal, Hadamard, state-space, particle, positivity, scattering or unitarity theorem."
+            "This EUCLIDEAN-SPECTRAL certificate rigorously computes directed enclosures for R_Delta(K) and FP R_Delta(K^2) on the declared S2(1) x S2(2) regular Schur complement. It proves a uniform periodic-Bernoulli Euler--Maclaurin remainder for every required product heat moment, bounds the upper-incomplete spectral cutoff, combines those bounds with a positive-sum binary64 proof and the previously certified trace-class exterior tails, and records the passing 850-test Tier-3 promotion receipt. The coefficient-computed lifecycle is restricted to these two special-background weighted rows. This is not the full coupled vector ghost determinant, a generic-background form factor, complete Gamma1/Q1, a restored QME, or a Lorentzian causal, Hadamard, state-space, particle, positivity, scattering or unitarity theorem."
         ),
     }
     validate(result)

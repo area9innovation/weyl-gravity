@@ -86,7 +86,7 @@
     "det3_proofs",
     "directed_enclosures",
     "claim_flags",
-    "tier3_blocker",
+    "tier3_promotion_receipt",
     "dependencies",
     "next_gate",
     "claim_boundary"
@@ -94,8 +94,8 @@
   "properties": {
     "schema": {"const": "quantum-weyl-product-s2-s2-ghost-minimal-vector-determinant-precertificate-v1"},
     "result_id": {"const": "PRODUCT_S2_S2_GHOST_MINIMAL_VECTOR_DETERMINANT_PRECERTIFICATE"},
-    "result_state": {"const": "MINIMAL_VECTOR_AND_FULL_WEIGHTED_GHOST_ENCLOSURES_DERIVED_TIER3_BLOCKED"},
-    "lifecycle_state": {"const": "PRECERTIFICATE_TIER3_FAILED_NO_PROMOTION"},
+    "result_state": {"const": "MINIMAL_VECTOR_AND_FULL_WEIGHTED_GHOST_ENCLOSURES_COEFFICIENT_COMPUTED"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
     "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
     "classical_commit": {"type": "string", "minLength": 7},
     "scope": {
@@ -177,30 +177,27 @@
       "properties": {
         "MINIMAL_VECTOR_RIGOROUS_ENCLOSURE_DERIVED": {"const": true},
         "FULL_VECTOR_PLUS_SCHUR_WEIGHTED_ENCLOSURE_DERIVED": {"const": true},
-        "MINIMAL_VECTOR_INFINITE_WEIGHTED_DETERMINANT_COMPUTED": {"const": false},
-        "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": {"const": false},
+        "MINIMAL_VECTOR_INFINITE_WEIGHTED_DETERMINANT_COMPUTED": {"const": true},
+        "FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED": {"const": true},
         "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
         "LORENTZIAN_CERTIFIED": {"const": false}
       }
     },
-    "tier3_blocker": {
+    "tier3_promotion_receipt": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["command", "elapsed_seconds", "tests_run", "failures", "errors", "failure_scopes", "spectral_package_failures", "status"],
+      "required": ["command", "repository_head_at_start", "quantum_evidence_commit", "tests_run", "test_elapsed_seconds", "wall_elapsed_seconds", "failures", "errors", "status", "scope_note"],
       "properties": {
         "command": {"type": "string", "minLength": 20},
-        "elapsed_seconds": {"$ref": "#/$defs/decimal"},
-        "tests_run": {"type": "integer", "minimum": 1},
-        "failures": {"type": "integer", "minimum": 1},
-        "errors": {"type": "integer", "minimum": 1},
-        "failure_scopes": {
-          "type": "array",
-          "items": {"type": "string", "minLength": 1},
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "spectral_package_failures": {"const": 0},
-        "status": {"const": "FAILED_NOT_A_PASS"}
+        "repository_head_at_start": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "quantum_evidence_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "tests_run": {"const": 850},
+        "test_elapsed_seconds": {"const": "658.135"},
+        "wall_elapsed_seconds": {"const": "660.46"},
+        "failures": {"const": 0},
+        "errors": {"const": 0},
+        "status": {"const": "PASSED"},
+        "scope_note": {"type": "string", "minLength": 50}
       }
     },
     "dependencies": {

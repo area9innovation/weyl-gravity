@@ -106,10 +106,11 @@ def main() -> int:
     flags = payload["claim_flags"]
     assert flags["MINIMAL_VECTOR_RIGOROUS_ENCLOSURE_DERIVED"] is True
     assert flags["FULL_VECTOR_PLUS_SCHUR_WEIGHTED_ENCLOSURE_DERIVED"] is True
-    assert flags["MINIMAL_VECTOR_INFINITE_WEIGHTED_DETERMINANT_COMPUTED"] is False
-    assert flags["FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED"] is False
-    assert payload["tier3_blocker"]["status"] == "FAILED_NOT_A_PASS"
-    print("PRODUCT S2xS2 GHOST MINIMAL VECTOR DETERMINANT: INDEPENDENT PRECERTIFICATE PASS")
+    assert flags["MINIMAL_VECTOR_INFINITE_WEIGHTED_DETERMINANT_COMPUTED"] is True
+    assert flags["FULL_COUPLED_VECTOR_SCHUR_DETERMINANT_COMPUTED"] is True
+    assert payload["tier3_promotion_receipt"]["status"] == "PASSED"
+    assert payload["tier3_promotion_receipt"]["tests_run"] == 850
+    print("PRODUCT S2xS2 GHOST MINIMAL VECTOR DETERMINANT: INDEPENDENT COEFFICIENT PASS")
     return 0
 
 
