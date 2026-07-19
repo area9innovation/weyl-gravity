@@ -58,6 +58,8 @@ DEPENDENCIES = {
     "generic_physical_hessian_covariant_Volterra_carrier": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_COVARIANT_VOLTERRA_CARRIER.json",
     "generic_physical_hessian_H1_H2_contact_residue_projection": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_RESIDUE_PROJECTION.json",
     "generic_physical_hessian_symmetric_mixed_boundary_incidence": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_SYMMETRIC_MIXED_BOUNDARY_INCIDENCE.json",
+    "generic_physical_hessian_triangle_corner_residues": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_CORNER_RESIDUES.json",
+    "generic_physical_hessian_full_boundary_incidence": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_FULL_BOUNDARY_INCIDENCE.json",
     "generic_background_ghost_CPT_obstruction": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
@@ -221,6 +223,12 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     ]
     physical_hessian_incidence = values[
         "generic_physical_hessian_symmetric_mixed_boundary_incidence"
+    ]
+    physical_hessian_triangle_residues = values[
+        "generic_physical_hessian_triangle_corner_residues"
+    ]
+    physical_hessian_full_incidence = values[
+        "generic_physical_hessian_full_boundary_incidence"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -577,6 +585,22 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
             "equal_box_tensor_reconstruction", {}
         ).get("combined_log_mu2_coefficient")
         != {"numerator": 15707, "denominator": 216}
+        or physical_hessian_triangle_residues.get("claim_flags", {}).get(
+            "GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_COMPUTED"
+        )
+        is not True
+        or physical_hessian_full_incidence.get("claim_flags", {}).get(
+            "FULL_TRIANGLE_CONTACT_BOUNDARY_INCIDENCE_ASSEMBLED"
+        )
+        is not True
+        or physical_hessian_full_incidence.get("claim_flags", {}).get(
+            "GENERIC_PHYSICAL_M14_DISPOSED"
+        )
+        is not True
+        or physical_hessian_full_incidence.get("claim_flags", {}).get(
+            "FINITE_LOCAL_MIXED_ROWS_FIXED"
+        )
+        is not False
         or generic_ghost_n3.get("angular_average", {}).get("coefficients", {}).get(
             "tr_R3"
         )
@@ -931,13 +955,13 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             complex_structure=("NOT_APPLICABLE", "classical second-order solvability crosswalk"),
             hadamard=("NO_CERTIFIED_MAP", "no background-specific causal quantum state"),
             state_space=("NO_CERTIFIED_MAP", "no interacting quantum state space"),
-            qme=("CERTIFIED", "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and scheme conversion remain fixed; symmetric triangle/contact incidence is exact and H2 cancellation there is refuted, while generic-box incidence, finite normalizations and complete Q1 remain underdetermined"),
+            qme=("CERTIFIED", "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and scheme conversion remain fixed; generic triangle/contact incidence is exact and M14 is a nonzero Mellin-renormalized scale row, while finite normalizations and complete Q1 remain underdetermined"),
             lifecycle=("NO_CERTIFIED_MAP", "the coefficient-bearing QME disposition, equal-box Mellin scale row, generic Volterra subtraction carrier and generic contact endpoint residues are complete, but the mixed-row incidence, generic primed Green/spectral carrier, repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent"),
             particle=("NO_CERTIFIED_MAP", "classical obstruction is not ghost removal"),
             crosswalk=("NO_CERTIFIED_MAP", "classical obstruction to interacting BRST disappearance or quantum constraint"),
         ),
         _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1", "FV_conformized_C2_log_Gamma1", "FV_anomaly_action_Ricci_sector", "algebraic_cubic_Weyl_carriers", "third_curvature_Weyl_manifest", "CPT_universal_third_curvature_kernels", "generic_physical_hessian_linear_curvature", "generic_physical_hessian_n3_triangle_fixture", "generic_physical_hessian_n3_five_carrier_projection", "generic_physical_hessian_n3_integration_obstruction", "generic_physical_hessian_curvature_squared", "generic_physical_hessian_mixed_H1_H2_corner_fixture", "generic_physical_hessian_mellin_subtraction_scale_row", "generic_physical_hessian_covariant_Volterra_carrier", "generic_physical_hessian_H1_H2_contact_residue_projection", "generic_physical_hessian_symmetric_mixed_boundary_incidence", "generic_background_ghost_CPT_obstruction", "generic_ghost_Endo_Duhamel_reduction", "generic_ghost_n1_n2_Hodge_resolvent_reduction", "generic_ghost_n1_n2_vector_CPT_projection", "generic_ghost_longitudinal_Schur_resummation", "generic_ghost_Schur_Schatten_split", "generic_ghost_Schur_Wodzicki_residue", "generic_ghost_Schur_weighted_trace_scale", "round_S4_ghost_Schur_finite_weighted_traces", "round_S4_ghost_Schur_zeta_factorization", "generic_ghost_Schur_weight_raised_zeta_factorization", "generic_ghost_n3_adiabatic_carrier", "generic_ghost_n3_triangle_kernel", "generic_ghost_n3_five_carrier_projection", "generic_ghost_n3_barycentric_factorization", "generic_ghost_n3_symmetric_point_simplex_integration", "scalar_flat_K_Ricci_crosswalk", "BoxR_scheme_conversion"),
-        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete—strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop—and the exact FV anomaly action proves structural dependence of the Ricci-scalar sector. A generic covariant Volterra carrier joins the six physical triangle cells and three H1-H2 contact cells under the common Mellin boundary extension. All contact endpoint residues are exact 33-row five-carrier functions with unseen replays. Their symmetric-point incidence with the triangle gives the nonzero scale row 15707/216 and refutes algebraic H2 cancellation there. Generic-box triangle residues, full incidence and M14 disposition remain open. Generic repository functions and coefficients, parity-odd derivative manifest, finite normalizations, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
+        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete—strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop—and the exact FV anomaly action proves structural dependence of the Ricci-scalar sector. A generic covariant Volterra carrier joins the six physical triangle cells and three H1-H2 contact cells under the common Mellin boundary extension. The three generic triangle corner residues and all contact endpoint residues are exact rational five-carrier functions. Their full incidence is nonzero, so algebraic H2 cancellation is refuted generically and M14 is disposed as a nonzero Mellin-renormalized scale row. Generic repository functions and coefficients, finite local rows, parity-odd derivative manifest, finite normalizations, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
     )
 
 
@@ -951,7 +975,7 @@ def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
         ("algebraic_cubic_weyl_carrier", "four-dimensional zero-derivative algebraic C3 carrier in its exact even/odd parity basis", ["LOCAL-ALGEBRAIC"], ("algebraic_cubic_Weyl_carriers",)),
         ("third_curvature_weyl_carrier_manifest", "five parity-even third-curvature conformal carrier labels modulo the exact four-dimensional symmetric functional relation", ["EUCLIDEAN-SPECTRAL"], ("third_curvature_Weyl_manifest",)),
         ("cpt_universal_third_curvature_kernel", "five exact universal CPT source kernels on the rank-one minimal scalar-Laplacian fixture; repository generic-background full-BV trace substitution open", ["EUCLIDEAN-SPECTRAL"], ("CPT_universal_third_curvature_kernels",)),
-        ("generic_background_physical_hessian_n3_fixture", "same-gauge rank-nine physical H1/H2 blocks with formal-adjoint completion; three-H1 five-carrier projection and M14 corner obstruction certified; a generic covariant Volterra carrier joins six ordered triangle cells and three H1-H2 contact cells under one Mellin extension; all contact endpoint residues are exact 33-row functions and their symmetric incidence refutes H2 cancellation, while generic-box incidence remains open", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("generic_physical_hessian_linear_curvature", "generic_physical_hessian_n3_triangle_fixture", "generic_physical_hessian_n3_five_carrier_projection", "generic_physical_hessian_n3_integration_obstruction", "generic_physical_hessian_curvature_squared", "generic_physical_hessian_mixed_H1_H2_corner_fixture", "generic_physical_hessian_mellin_subtraction_scale_row", "generic_physical_hessian_covariant_Volterra_carrier", "generic_physical_hessian_H1_H2_contact_residue_projection", "generic_physical_hessian_symmetric_mixed_boundary_incidence")),
+        ("generic_background_physical_hessian_n3_fixture", "same-gauge rank-nine physical H1/H2 blocks with formal-adjoint completion; three-H1 five-carrier projection and M14 corner obstruction certified; all generic triangle corner and contact endpoint residues are exact, their full incidence is nonzero, and M14 is disposed as a Mellin-renormalized scale row; finite local rows remain open", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("generic_physical_hessian_linear_curvature", "generic_physical_hessian_n3_triangle_fixture", "generic_physical_hessian_n3_five_carrier_projection", "generic_physical_hessian_n3_integration_obstruction", "generic_physical_hessian_curvature_squared", "generic_physical_hessian_mixed_H1_H2_corner_fixture", "generic_physical_hessian_mellin_subtraction_scale_row", "generic_physical_hessian_covariant_Volterra_carrier", "generic_physical_hessian_H1_H2_contact_residue_projection", "generic_physical_hessian_symmetric_mixed_boundary_incidence", "generic_physical_hessian_triangle_corner_residues", "generic_physical_hessian_full_boundary_incidence")),
         ("generic_background_diff_weyl_ghost_cpt_obstruction", "generic-background effective Diff-Weyl ghost determinant: direct minimal-CPT substitution obstructed; exact Endo-Duhamel reduction supplied; n=3 projected onto the scalar-flat ten-dimensional five-carrier quotient, with ten exact Delta cancellations, a unique direct I10 edge source and a pointwise I28 relation; all rows are integrated at the normalized symmetric point; the n=1+n=2 pure-vector CPT sum is exact and all longitudinal D_W towers are resummed into one normalized Schur kernel; its order-minus-two correction is in S_3, with exact Wres(K), Wres(K^2), Wres(log S_L), and the declared order-two weighted-trace pole/scale row; the round-S4 reference finite K/K2 rows, canonical det_3 tail and weighted modified determinant are complete; generic relative-IBP/corner-flux and edge-bubble data, physical Hessian and repository functions remain open", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("generic_background_ghost_CPT_obstruction", "generic_ghost_Endo_Duhamel_reduction", "generic_ghost_n1_n2_Hodge_resolvent_reduction", "generic_ghost_n1_n2_vector_CPT_projection", "generic_ghost_longitudinal_Schur_resummation", "generic_ghost_Schur_Schatten_split", "generic_ghost_Schur_Wodzicki_residue", "generic_ghost_Schur_weighted_trace_scale", "round_S4_ghost_Schur_finite_weighted_traces", "generic_ghost_Schur_weight_raised_zeta_factorization", "generic_ghost_n3_adiabatic_carrier", "generic_ghost_n3_triangle_kernel", "generic_ghost_n3_five_carrier_projection", "generic_ghost_n3_barycentric_factorization", "generic_ghost_n3_symmetric_point_simplex_integration", "scalar_flat_K_Ricci_crosswalk")),
         ("round_s4_schur_zeta_factorization", "round-unit-S4 primed scalar ghost Schur zeta factorization defect 5/3 and zeta determinant ratio; special-background non-particle spectral carrier", ["EUCLIDEAN-SPECTRAL"], ("round_S4_ghost_Schur_zeta_factorization",)),
         ("curvature_observable_generator", "support-local curvature-graph CCR generator", ["LORENTZIAN-CAUSAL"], ("curvature_CCR",)),

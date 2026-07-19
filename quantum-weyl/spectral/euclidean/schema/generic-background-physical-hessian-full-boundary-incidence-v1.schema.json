@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl/generic-background-physical-hessian-full-boundary-incidence-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "incidence_convention", "channel_rows", "generic_disposition", "exact_fixture_replay", "dependencies", "claim_flags", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-physical-hessian-full-boundary-incidence-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_FULL_BOUNDARY_INCIDENCE"},
+    "result_state": {"const": "GENERIC_TRIANGLE_CONTACT_BOUNDARY_INCIDENCE_ASSEMBLED_M14_NONZERO_RENORMALIZED"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {"type": "object"},
+    "incidence_convention": {"type": "object"},
+    "channel_rows": {"type": "array", "minItems": 11, "maxItems": 11},
+    "generic_disposition": {"type": "object"},
+    "exact_fixture_replay": {"type": "object"},
+    "dependencies": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["FULL_TRIANGLE_CONTACT_BOUNDARY_INCIDENCE_ASSEMBLED", "GENERIC_PHYSICAL_M14_DISPOSED", "GENERIC_PHYSICAL_M14_NONZERO_SCALE_ROW", "GENERIC_ALGEBRAIC_H2_CANCELLATION_REFUTED", "GENERIC_I28_QUOTIENT_RELATION_PRESERVED", "FINITE_LOCAL_MIXED_ROWS_FIXED", "PHYSICAL_THIRD_CURVATURE_FORM_FACTORS_COMPLETE", "QME_OR_ANOMALY_STATUS_CHANGED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "FULL_TRIANGLE_CONTACT_BOUNDARY_INCIDENCE_ASSEMBLED": {"const": true},
+        "GENERIC_PHYSICAL_M14_DISPOSED": {"const": true},
+        "GENERIC_PHYSICAL_M14_NONZERO_SCALE_ROW": {"const": true},
+        "GENERIC_ALGEBRAIC_H2_CANCELLATION_REFUTED": {"const": true},
+        "GENERIC_I28_QUOTIENT_RELATION_PRESERVED": {"const": true},
+        "FINITE_LOCAL_MIXED_ROWS_FIXED": {"const": false},
+        "PHYSICAL_THIRD_CURVATURE_FORM_FACTORS_COMPLETE": {"const": false},
+        "QME_OR_ANOMALY_STATUS_CHANGED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "next_gate": {"const": "FIX_FINITE_LOCAL_MIXED_ROWS_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS"},
+    "claim_boundary": {"type": "string", "minLength": 40}
+  }
+}

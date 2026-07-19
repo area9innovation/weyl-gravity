@@ -74,6 +74,8 @@ DEPENDENCIES = {
     "generic_physical_hessian_covariant_Volterra_carrier": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_COVARIANT_VOLTERRA_CARRIER.json",
     "generic_physical_hessian_H1_H2_contact_residue_projection": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_RESIDUE_PROJECTION.json",
     "generic_physical_hessian_symmetric_mixed_boundary_incidence": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_SYMMETRIC_MIXED_BOUNDARY_INCIDENCE.json",
+    "generic_physical_hessian_triangle_corner_residues": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_CORNER_RESIDUES.json",
+    "generic_physical_hessian_full_boundary_incidence": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_FULL_BOUNDARY_INCIDENCE.json",
     "generic_background_ghost_CPT_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
@@ -195,6 +197,8 @@ def _load() -> dict[str, dict[str, Any]]:
         "generic_physical_hessian_covariant_Volterra_carrier": "GENERIC_COVARIANT_VOLTERRA_SUBTRACTION_CARRIER_CONSTRUCTED_MIXED_ROWS_OPEN",
         "generic_physical_hessian_H1_H2_contact_residue_projection": "GENERIC_H1_H2_CONTACT_ENDPOINT_RESIDUES_PROJECTED_TO_FIVE_CARRIER_QUOTIENT",
         "generic_physical_hessian_symmetric_mixed_boundary_incidence": "SYMMETRIC_POINT_TRIANGLE_CONTACT_BOUNDARY_INCIDENCE_ASSEMBLED_H2_CANCELLATION_REFUTED",
+        "generic_physical_hessian_triangle_corner_residues": "GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_COMPUTED",
+        "generic_physical_hessian_full_boundary_incidence": "GENERIC_TRIANGLE_CONTACT_BOUNDARY_INCIDENCE_ASSEMBLED_M14_NONZERO_RENORMALIZED",
         "generic_background_ghost_CPT_obstruction": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
         "generic_ghost_Endo_Duhamel_reduction": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES",
         "generic_ghost_n1_n2_Hodge_resolvent_reduction": "CURVED_ENDO_N1_N2_REDUCED_EXACTLY_TO_FIVE_MINIMAL_VECTOR_SCALAR_RESOLVENT_CARRIERS",
@@ -265,6 +269,12 @@ def _load() -> dict[str, dict[str, Any]]:
     ]
     generic_physical_hessian_incidence = values[
         "generic_physical_hessian_symmetric_mixed_boundary_incidence"
+    ]
+    generic_physical_hessian_triangle_residues = values[
+        "generic_physical_hessian_triangle_corner_residues"
+    ]
+    generic_physical_hessian_full_incidence = values[
+        "generic_physical_hessian_full_boundary_incidence"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -790,6 +800,29 @@ def _load() -> dict[str, dict[str, Any]]:
         != "NOT_COMPUTED"
     ):
         raise ValueError("physical-Hessian symmetric mixed incidence frontier drifted")
+    triangle_residue_flags = generic_physical_hessian_triangle_residues.get("claim_flags", {})
+    full_incidence_flags = generic_physical_hessian_full_incidence.get("claim_flags", {})
+    if (
+        triangle_residue_flags.get("GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_COMPUTED")
+        is not True
+        or triangle_residue_flags.get("FULL_TRIANGLE_CONTACT_BOUNDARY_INCIDENCE_ASSEMBLED")
+        is not False
+        or generic_physical_hessian_triangle_residues.get("regressions", {}).get(
+            "symmetric_obstruction_rows_matched"
+        )
+        != 11
+        or full_incidence_flags.get("FULL_TRIANGLE_CONTACT_BOUNDARY_INCIDENCE_ASSEMBLED")
+        is not True
+        or full_incidence_flags.get("GENERIC_PHYSICAL_M14_DISPOSED") is not True
+        or full_incidence_flags.get("GENERIC_PHYSICAL_M14_NONZERO_SCALE_ROW")
+        is not True
+        or full_incidence_flags.get("FINITE_LOCAL_MIXED_ROWS_FIXED") is not False
+        or generic_physical_hessian_full_incidence.get("generic_disposition", {}).get("M14")
+        != "NONZERO_SCALE_ROW_RENORMALIZED_BY_COMMON_MELLIN_EXTENSION"
+        or generic_physical_hessian_full_incidence.get("exact_fixture_replay", {}).get("combined")
+        != {"numerator": 15707, "denominator": 216}
+    ):
+        raise ValueError("physical-Hessian full generic incidence frontier drifted")
     if (
         generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
         != "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
@@ -2184,8 +2217,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_SYMMETRIC_TRIANGLE_CONTACT_INCIDENCE_ASSEMBLED_H2_CANCELLATION_REFUTED_GENERIC_BOX_INCIDENCE_OPEN_Q1_UNDERDETERMINED",
-                "next_gate": "COMPUTE_GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_AND_ASSEMBLE_FULL_BOUNDARY_INCIDENCE",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_GENERIC_TRIANGLE_CONTACT_INCIDENCE_ASSEMBLED_M14_NONZERO_RENORMALIZED_FINITE_ROWS_OPEN_Q1_UNDERDETERMINED",
+                "next_gate": "FIX_FINITE_LOCAL_MIXED_ROWS_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -2200,8 +2233,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_SYMMETRIC_TRIANGLE_CONTACT_INCIDENCE_ASSEMBLED_GENERIC_BOX_INCIDENCE_GREEN_SPECTRAL_CARRIER_REPOSITORY_ASSEMBLY_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "COMPUTE_GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_AND_ASSEMBLE_FULL_BOUNDARY_INCIDENCE",
+                "status": "FORBIDDEN_GENERIC_TRIANGLE_CONTACT_INCIDENCE_ASSEMBLED_M14_NONZERO_RENORMALIZED_FINITE_LOCAL_ROWS_GREEN_SPECTRAL_CARRIER_REPOSITORY_ASSEMBLY_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "FIX_FINITE_LOCAL_MIXED_ROWS_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS",
             },
         },
         "supersession_ledger": [
@@ -2331,8 +2364,10 @@ def build() -> dict[str, Any]:
             "GENERIC_H1_H2_CONTACT_ENDPOINT_RESIDUES_PROJECTED": True,
             "SYMMETRIC_PHYSICAL_MIXED_INCIDENCE_ASSEMBLED": True,
             "SYMMETRIC_H2_CANCELLATION_OF_M14_REFUTED": True,
-            "GENERIC_PHYSICAL_MIXED_ROWS_ASSEMBLED": False,
-            "PHYSICAL_M14_CORNER_CLASS_DISPOSED": False,
+            "GENERIC_BOX_TRIANGLE_CORNER_RESIDUES_COMPUTED": True,
+            "GENERIC_PHYSICAL_MIXED_ROWS_ASSEMBLED": True,
+            "PHYSICAL_M14_CORNER_CLASS_DISPOSED": True,
+            "PHYSICAL_M14_NONZERO_SCALE_ROW_RENORMALIZED": True,
             "FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED": False,
             "CURVATURE_SQUARED_PHYSICAL_HESSIAN_LAYER_SUPPLIED": False,
             "PHYSICAL_N3_THREE_LINEAR_TRIANGLE_COMPUTED": False,
@@ -2440,7 +2475,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "COMPUTE_GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_AND_ASSEMBLE_FULL_BOUNDARY_INCIDENCE",
+            "FIX_FINITE_LOCAL_MIXED_ROWS_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS",
             "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
@@ -2554,8 +2589,11 @@ def build() -> dict[str, Any]:
             "rows and all six contact endpoints are now assembled coefficientwise: their exact "
             "TT-carrier values are -1975/72 and 2704/27, giving the nonzero combined scale row "
             "15707/216. Thus algebraic H2 cancellation of the symmetric M14 divergence is refuted. "
-            "The generic-box triangle corner residues, their full boundary incidence and finite local "
-            "rows remain open, so the generic M14 relative class is not yet disposed. The "
+            "The three generic-box triangle corner residues are now integrated for all eleven raw "
+            "channels as exact rational box functions and replay every symmetric obstruction row. "
+            "Their full incidence with all six contact endpoints is exact and generically nonzero. "
+            "Thus algebraic H2 cancellation is refuted generically and M14 is disposed as a nonzero "
+            "scale row renormalized by the common Mellin extension. Finite local rows remain open. The "
             "global carrier and five repository form-factor assembly remain open. At the "
             "normalized symmetric point all eleven coordinates are integrated exactly in "
             "terms of one Clausen master. This is not the generic five repository functions; "
@@ -2871,6 +2909,10 @@ def validate(result: dict[str, Any]) -> None:
         is not True
         or flags.get("SYMMETRIC_PHYSICAL_MIXED_INCIDENCE_ASSEMBLED") is not True
         or flags.get("SYMMETRIC_H2_CANCELLATION_OF_M14_REFUTED") is not True
+        or flags.get("GENERIC_BOX_TRIANGLE_CORNER_RESIDUES_COMPUTED") is not True
+        or flags.get("GENERIC_PHYSICAL_MIXED_ROWS_ASSEMBLED") is not True
+        or flags.get("PHYSICAL_M14_CORNER_CLASS_DISPOSED") is not True
+        or flags.get("PHYSICAL_M14_NONZERO_SCALE_ROW_RENORMALIZED") is not True
         or flags.get("FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED") is not False
         or flags.get("CURVATURE_SQUARED_PHYSICAL_HESSIAN_LAYER_SUPPLIED")
         is not False
@@ -3088,6 +3130,10 @@ def validate(result: dict[str, Any]) -> None:
             "GENERIC_H1_H2_CONTACT_ENDPOINT_RESIDUES_PROJECTED",
             "SYMMETRIC_PHYSICAL_MIXED_INCIDENCE_ASSEMBLED",
             "SYMMETRIC_H2_CANCELLATION_OF_M14_REFUTED",
+            "GENERIC_BOX_TRIANGLE_CORNER_RESIDUES_COMPUTED",
+            "GENERIC_PHYSICAL_MIXED_ROWS_ASSEMBLED",
+            "PHYSICAL_M14_CORNER_CLASS_DISPOSED",
+            "PHYSICAL_M14_NONZERO_SCALE_ROW_RENORMALIZED",
         }
     ):
         raise ValueError("active frontier quantum claim was over-promoted")

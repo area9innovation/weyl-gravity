@@ -197,11 +197,17 @@ class ActiveFrontierTests(unittest.TestCase):
                 "SYMMETRIC_H2_CANCELLATION_OF_M14_REFUTED"
             ]
         )
-        self.assertFalse(
+        self.assertTrue(
             self.payload["claim_flags"]["GENERIC_PHYSICAL_MIXED_ROWS_ASSEMBLED"]
         )
-        self.assertFalse(
+        self.assertTrue(
             self.payload["claim_flags"]["PHYSICAL_M14_CORNER_CLASS_DISPOSED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["GENERIC_BOX_TRIANGLE_CORNER_RESIDUES_COMPUTED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["PHYSICAL_M14_NONZERO_SCALE_ROW_RENORMALIZED"]
         )
         self.assertTrue(
             self.payload["claim_flags"][
@@ -475,7 +481,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "COMPUTE_GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_AND_ASSEMBLE_FULL_BOUNDARY_INCIDENCE",
+            "FIX_FINITE_LOCAL_MIXED_ROWS_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

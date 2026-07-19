@@ -54,6 +54,8 @@ INPUTS = {
     "generic_physical_hessian_covariant_Volterra_carrier": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_COVARIANT_VOLTERRA_CARRIER.json",
     "generic_physical_hessian_H1_H2_contact_residue_projection": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_RESIDUE_PROJECTION.json",
     "generic_physical_hessian_symmetric_mixed_boundary_incidence": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_SYMMETRIC_MIXED_BOUNDARY_INCIDENCE.json",
+    "generic_physical_hessian_triangle_corner_residues": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_CORNER_RESIDUES.json",
+    "generic_physical_hessian_full_boundary_incidence": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_FULL_BOUNDARY_INCIDENCE.json",
     "generic_background_ghost_CPT_obstruction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n3_adiabatic_carrier": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
@@ -135,6 +137,12 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     ]
     physical_hessian_incidence = values[
         "generic_physical_hessian_symmetric_mixed_boundary_incidence"
+    ]
+    physical_hessian_triangle_residues = values[
+        "generic_physical_hessian_triangle_corner_residues"
+    ]
+    physical_hessian_full_incidence = values[
+        "generic_physical_hessian_full_boundary_incidence"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -817,6 +825,12 @@ def build() -> dict[str, Any]:
     physical_hessian_incidence = values[
         "generic_physical_hessian_symmetric_mixed_boundary_incidence"
     ]
+    physical_hessian_triangle_residues = values[
+        "generic_physical_hessian_triangle_corner_residues"
+    ]
+    physical_hessian_full_incidence = values[
+        "generic_physical_hessian_full_boundary_incidence"
+    ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
@@ -983,6 +997,11 @@ def build() -> dict[str, Any]:
             "physical_Hessian_symmetric_triangle_full_log_coefficient": physical_hessian_incidence["equal_box_tensor_reconstruction"]["triangle_full_log_coefficient"],
             "physical_Hessian_symmetric_contact_full_log_coefficient": physical_hessian_incidence["equal_box_tensor_reconstruction"]["contact_full_log_coefficient"],
             "physical_Hessian_symmetric_combined_log_mu2_coefficient": physical_hessian_incidence["equal_box_tensor_reconstruction"]["combined_log_mu2_coefficient"],
+            "physical_Hessian_generic_triangle_corner_residues_computed": True,
+            "physical_Hessian_generic_triangle_symmetric_rows_replayed": physical_hessian_triangle_residues["regressions"]["symmetric_obstruction_rows_matched"],
+            "physical_Hessian_full_generic_boundary_incidence_assembled": True,
+            "physical_Hessian_generic_M14_disposed": True,
+            "physical_Hessian_generic_M14_disposition": physical_hessian_full_incidence["generic_disposition"]["M14"],
             "generic_background_ghost_minimal_CPT_substitution_obstructed": True,
             "generic_background_ghost_effective_divergence_coefficient": generic_ghost_cpt["algebraic_Weyl_ghost_elimination"]["beta_controls"][0]["effective_divergence_coefficient"],
             "generic_background_ghost_principal_eigenvalues": generic_ghost_cpt["nonminimal_principal_symbol"]["eigenvalues_e0"],
@@ -1118,12 +1137,12 @@ def build() -> dict[str, Any]:
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "COMPUTE_GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_AND_ASSEMBLE_FULL_BOUNDARY_INCIDENCE",
+            "status": "FIX_FINITE_LOCAL_MIXED_ROWS_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS",
             "required_inputs": [
                 "same-background compensator-inclusive classical contraction",
                 "finite C2 and absolute dressed Rhat2 normalization conditions",
                 "full generic-background primed Green/resolvent kernel or complete spectral measure for the reference-scale finite R(K), finite R(K^2), and det3 rows; the round-S4 special-background benchmark is complete but does not substitute for this global carrier",
-                "generic-box triangle corner-residue rows and their full boundary incidence with the exact generic H1-H2 endpoint rows on the certified covariant Volterra carrier, followed by renormalized mixed physical rows and an exact generic M14 disposition",
+                "finite local mixed rows on the certified covariant Volterra carrier, whose generic triangle/contact scale incidence and M14 disposition are now exact",
                 "remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
                 "renormalized BV operator data fixing complete Q1",
             ],

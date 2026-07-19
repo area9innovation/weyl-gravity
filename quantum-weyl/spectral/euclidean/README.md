@@ -170,8 +170,10 @@ left/right equality, two unseen fixtures and the symmetric `I28` quotient
 section replay exactly. The symmetric-point triangle/contact incidence is now
 assembled coefficientwise: `-1975/72+2704/27=15707/216`, so algebraic `H2`
 does not cancel the symmetric `M14` divergence. Generic-box triangle corner
-residues and incidence, finite local rows and renormalized mixed-row assembly
-remain open. See
+residues are now exact for all eleven channels, and their full incidence with
+the contact rows is generically nonzero. Thus `M14` is disposed as a
+Mellin-renormalized scale row. Finite local rows and complete form-factor
+assembly remain open. See
 [`generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md`](../../reports/generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md).
 
 Replay with:

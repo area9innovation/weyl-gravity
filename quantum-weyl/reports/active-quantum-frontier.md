@@ -167,9 +167,11 @@ symmetric `I28` quotient relation pass exactly. The triangle/contact boundary
 incidence is now assembled at the symmetric point. The full triangle and
 contact TT-carrier values are `-1975/72` and `2704/27`, giving the nonzero
 combined scale row `15707/216`; hence algebraic `H2` cancellation is refuted
-there. Generic-box triangle corner residues, their full incidence and finite
-local rows remain open, so the generic `M14` relative class is not yet
-disposed.
+there. All three generic-box triangle corner residues are now exact rational
+functions for every raw channel. Their full incidence with the contact rows
+is nonzero, so algebraic `H2` cancellation is refuted generically and `M14`
+is disposed as a scale row renormalized by the common Mellin extension.
+Finite local rows remain open.
 The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
 and rational corner flux. Four explicit primitives cover every orientation,

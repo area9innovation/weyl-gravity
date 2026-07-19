@@ -993,9 +993,11 @@ The symmetric-point boundary incidence is now exact: the full triangle row
 evaluates to `-1975/72`, the six contact endpoints to `2704/27`, and their
 sum is the nonzero Mellin scale row `15707/216`. Thus algebraic `H2`
 cancellation of the symmetric `M14` divergence is refuted coefficientwise.
-The next gate is the generic-box triangle corner-residue row and full
-boundary-incidence assembly on the certified covariant Volterra carrier,
-followed by the renormalized mixed rows and generic `M14` disposition. The original
+All three generic-box triangle corner residues are now exact rational
+functions for every raw channel. Their full incidence with the contact rows
+is nonzero, so generic algebraic `H2` cancellation is refuted and `M14` is
+disposed as a Mellin-renormalized scale row. The next gate is the finite local
+mixed rows and complete physical form-factor assembly. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
@@ -1019,9 +1021,10 @@ functions. The remaining coefficient gate begins with supplying the generic
 primed Green/spectral carrier needed to lift the exact round-`S4` finite
 benchmark. The covariant Volterra lift of the equal-box Mellin subtraction is
 now complete, as are all generic contact endpoint residues and their exact
-symmetric-point incidence. Its remaining physical gate is the generic-box
-triangle corner-residue row and full boundary incidence. The renormalized
-mixed rows must then decide the certified generic physical `M14` class. The isolated
+symmetric-point incidence. The generic corner residues and full boundary
+incidence are now exact, with nonzero Mellin-renormalized `M14` disposition.
+The remaining physical gate is the finite local mixed rows and complete
+form-factor assembly. The isolated
 three-linear integral may not be
 promoted before that route closes.
 Those are followed by the five

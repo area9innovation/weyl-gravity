@@ -390,6 +390,13 @@ def main() -> None:
         "numerator": 15707,
         "denominator": 216,
     }
+    assert claims["physical_Hessian_generic_triangle_corner_residues_computed"] is True
+    assert claims["physical_Hessian_generic_triangle_symmetric_rows_replayed"] == 11
+    assert claims["physical_Hessian_full_generic_boundary_incidence_assembled"] is True
+    assert claims["physical_Hessian_generic_M14_disposed"] is True
+    assert claims["physical_Hessian_generic_M14_disposition"] == (
+        "NONZERO_SCALE_ROW_RENORMALIZED_BY_COMMON_MELLIN_EXTENSION"
+    )
     assert payload["explicit_nonclaims"][
         "physical_n3_three_linear_triangle_integrated"
     ] is False
@@ -402,7 +409,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "COMPUTE_GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_AND_ASSEMBLE_FULL_BOUNDARY_INCIDENCE"
+        == "FIX_FINITE_LOCAL_MIXED_ROWS_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS"
     )
 
     dependencies = {}
@@ -436,7 +443,7 @@ def main() -> None:
         "denominator": 6561,
     }
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
-    assert len(payload["inputs"]) == 55
+    assert len(payload["inputs"]) == 57
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -483,6 +490,12 @@ def main() -> None:
     ]
     physical_hessian_incidence = dependencies[
         "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_SYMMETRIC_MIXED_BOUNDARY_INCIDENCE"
+    ]
+    physical_hessian_triangle_residues = dependencies[
+        "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_CORNER_RESIDUES"
+    ]
+    physical_hessian_full_incidence = dependencies[
+        "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_FULL_BOUNDARY_INCIDENCE"
     ]
     generic_ghost_cpt = dependencies["GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION"]
     generic_ghost_endo = dependencies["GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION"]
@@ -645,6 +658,15 @@ def main() -> None:
     assert physical_hessian_incidence["M14_disposition"][
         "generic_box_disposition"
     ] == "NOT_COMPUTED"
+    assert physical_hessian_triangle_residues["claim_flags"][
+        "GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_COMPUTED"
+    ] is True
+    assert physical_hessian_full_incidence["claim_flags"][
+        "FULL_TRIANGLE_CONTACT_BOUNDARY_INCIDENCE_ASSEMBLED"
+    ] is True
+    assert physical_hessian_full_incidence["claim_flags"][
+        "GENERIC_PHYSICAL_M14_DISPOSED"
+    ] is True
     assert generic_ghost_cpt["CPT_applicability_decision"]["verdict"] == (
         "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
     )

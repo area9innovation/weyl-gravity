@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl/generic-background-physical-hessian-triangle-corner-residues-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "derivation", "channel_rows", "regressions", "dependencies", "claim_flags", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-physical-hessian-triangle-corner-residues-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_CORNER_RESIDUES"},
+    "result_state": {"const": "GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_COMPUTED"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {"type": "object"},
+    "derivation": {"type": "object"},
+    "channel_rows": {"type": "array", "minItems": 11, "maxItems": 11},
+    "regressions": {"type": "object"},
+    "dependencies": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_COMPUTED", "ALL_THREE_TRIANGLE_CORNERS_INTEGRATED", "ALL_ELEVEN_RAW_CHANNELS_COMPUTED", "SYMMETRIC_OBSTRUCTION_REPLAYED_CHANNELWISE", "GENERIC_I28_QUOTIENT_RELATION_PRESERVED", "FULL_TRIANGLE_CONTACT_BOUNDARY_INCIDENCE_ASSEMBLED", "GENERIC_PHYSICAL_M14_DISPOSED", "FINITE_LOCAL_MIXED_ROWS_FIXED", "QME_OR_ANOMALY_STATUS_CHANGED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_COMPUTED": {"const": true},
+        "ALL_THREE_TRIANGLE_CORNERS_INTEGRATED": {"const": true},
+        "ALL_ELEVEN_RAW_CHANNELS_COMPUTED": {"const": true},
+        "SYMMETRIC_OBSTRUCTION_REPLAYED_CHANNELWISE": {"const": true},
+        "GENERIC_I28_QUOTIENT_RELATION_PRESERVED": {"const": true},
+        "FULL_TRIANGLE_CONTACT_BOUNDARY_INCIDENCE_ASSEMBLED": {"const": false},
+        "GENERIC_PHYSICAL_M14_DISPOSED": {"const": false},
+        "FINITE_LOCAL_MIXED_ROWS_FIXED": {"const": false},
+        "QME_OR_ANOMALY_STATUS_CHANGED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "next_gate": {"const": "ASSEMBLE_GENERIC_TRIANGLE_CONTACT_BOUNDARY_INCIDENCE_AND_DISPOSE_M14"},
+    "claim_boundary": {"type": "string", "minLength": 40}
+  }
+}

@@ -250,14 +250,22 @@ or quantum-master-equation result.
   `I28` reduction. Their symmetric-point boundary incidence is now assembled
   exactly: the triangle and contact contributions are `-1975/72` and
   `2704/27`, so algebraic `H2` does not cancel the nonzero `15707/216` scale
-  row. Generic-box triangle residues and incidence, finite local rows, `M14`
-  disposition, and five form-factor assembly remain fail-closed.
+  row. All three generic-box triangle corner residues are now exact rational
+  functions in every raw channel; their full incidence with the six contact
+  endpoints is nonzero. Thus generic algebraic `H2` cancellation is refuted
+  and `M14` is disposed as a Mellin-renormalized scale row. Finite local rows
+  and five form-factor assembly remain fail-closed.
 - [`reports/generic-background-physical-hessian-h1-h2-contact-residue-projection.md`](reports/generic-background-physical-hessian-h1-h2-contact-residue-projection.md)
   records those exact generic contact residues, scale-log kernels, frozen
   fixture ledger, independent unseen replay, and strict claim boundary.
 - [`reports/generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md`](reports/generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md)
   assembles the exact symmetric triangle/contact incidence, refutes `H2`
   cancellation there, and records the generic-box residue gate explicitly.
+- [`reports/generic-background-physical-hessian-triangle-corner-residues.md`](reports/generic-background-physical-hessian-triangle-corner-residues.md)
+  derives the three exact generic corner functions for all eleven channels.
+- [`reports/generic-background-physical-hessian-full-boundary-incidence.md`](reports/generic-background-physical-hessian-full-boundary-incidence.md)
+  assembles the generic triangle/contact scale rows and disposes `M14` without
+  promoting the still-open finite local part.
 - [`reports/local-dimension-four-candidates.md`](reports/local-dimension-four-candidates.md)
   records the generated three-dimensional quadratic curvature ansatz, its
   two-dimensional Weyl-closed kernel, independent target-native even/odd

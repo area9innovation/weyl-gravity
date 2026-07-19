@@ -300,11 +300,16 @@
       "denominator": 216,
       "numerator": 15707
     },
+    "physical_Hessian_full_generic_boundary_incidence_assembled": true,
+    "physical_Hessian_generic_M14_disposed": true,
+    "physical_Hessian_generic_M14_disposition": "NONZERO_SCALE_ROW_RENORMALIZED_BY_COMMON_MELLIN_EXTENSION",
     "physical_Hessian_generic_contact_endpoint_residues_projected": true,
     "physical_Hessian_generic_contact_formula_digest": "bce52f6ef0af9104989f0707ce9b33fa1b94e7514f63f953586ef126333966bb",
     "physical_Hessian_generic_contact_projection_row_count": 33,
     "physical_Hessian_generic_contact_unseen_fixture_count": 2,
     "physical_Hessian_generic_covariant_Volterra_carrier_computed": true,
+    "physical_Hessian_generic_triangle_corner_residues_computed": true,
+    "physical_Hessian_generic_triangle_symmetric_rows_replayed": 11,
     "physical_Hessian_linear_formula_digest": "e27ae279abf526de3f2af860fb16e8f79b23bfdaf6ce70bde69d30aa8c65fbef",
     "physical_Hessian_linear_source_row_counts": {
       "N_lambda": 8,
@@ -467,7 +472,7 @@
     "universal_CPT_third_curvature_kernels_imported": true
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "335a2090bc51646025f408b508cef055076f741f8bd557598d35975f74249862",
+  "compiled_pdf_sha256": "6ff86d202824911b839033b59ab1fa1e237c99f933ddb3979848407171ed8d56",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
@@ -628,6 +633,10 @@
       "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_CURVATURE_SQUARED",
       "sha256": "6992bdeb78808f559cf3a938c7dcbeefe115d10bfc5698895b2ee507e5a67f86"
     },
+    "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_FULL_BOUNDARY_INCIDENCE.json": {
+      "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_FULL_BOUNDARY_INCIDENCE",
+      "sha256": "b9ba2e684c77d428be2becac0c523a3783b75fecf57d537446b07247268699d9"
+    },
     "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_RESIDUE_PROJECTION.json": {
       "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_RESIDUE_PROJECTION",
       "sha256": "04990848c02bd6a4b1888ad87fb5e075fec3d7787023d08a90e78bb9f217d06a"
@@ -659,6 +668,10 @@
     "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_SYMMETRIC_MIXED_BOUNDARY_INCIDENCE.json": {
       "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_SYMMETRIC_MIXED_BOUNDARY_INCIDENCE",
       "sha256": "e3cb47a16830be418602ed7793e8c59e2a2fb4c4fbe33a5fc58227a9c6f9ce7f"
+    },
+    "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_CORNER_RESIDUES.json": {
+      "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_CORNER_RESIDUES",
+      "sha256": "0aa33182ae033d715908f1f931d96ae42f41211ecf6181e163ed9b88df83d550"
     },
     "quantum-weyl/spectral/euclidean/certificates/GENERIC_SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM.json": {
       "result_id": "GENERIC_SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM",
@@ -735,13 +748,13 @@
   },
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "92fe6bc463a158204585a0ecf2bb695814dee853ffd0be5e61b39b190ebdc7cc",
+  "manuscript_sha256": "7b1fdd2c8123d8e91bd6d2416b9ffdd6e93b6c4c9a33cb6893f3c775d5defa94",
   "next_gate": {
     "required_inputs": [
       "same-background compensator-inclusive classical contraction",
       "finite C2 and absolute dressed Rhat2 normalization conditions",
       "full generic-background primed Green/resolvent kernel or complete spectral measure for the reference-scale finite R(K), finite R(K^2), and det3 rows; the round-S4 special-background benchmark is complete but does not substitute for this global carrier",
-      "generic-box triangle corner-residue rows and their full boundary incidence with the exact generic H1-H2 endpoint rows on the certified covariant Volterra carrier, followed by renormalized mixed physical rows and an exact generic M14 disposition",
+      "finite local mixed rows on the certified covariant Volterra carrier, whose generic triangle/contact scale incidence and M14 disposition are now exact",
       "remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
       "renormalized BV operator data fixing complete Q1"
     ],
@@ -752,11 +765,11 @@
       "H3-to-H4 and H4-to-H5 maps",
       "pairing correction"
     ],
-    "status": "COMPUTE_GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_AND_ASSEMBLE_FULL_BOUNDARY_INCIDENCE"
+    "status": "FIX_FINITE_LOCAL_MIXED_ROWS_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS"
   },
   "publication_artifacts": {
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "3590169cfe4c5bd5d345d265fccc893a8a025c8bce43b04b91c1492d261fd4ae",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "780935ca8085bbd37bec76c49275f77843f12159a769b733b09d3f8e748aacd7",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "d3c5a78a27d47f16a812087561fa93894050dd14cb79bf971a58151bf7aa7f50",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "4e0a0c5b578407f6e72cb3f7d605a10ee9b10b88e7177d8f8448b606d8dee98f",
     "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "c30e5a712e62708eb6dfc7e2bee5dc8a6e16077a48b5ff2d8d8d1644754a4095",
     "paper/generate_12_quantum_anomaly_tables.py": "53fa1f003c9cedd320d7e2d8c8e8b589fcd5fc200c7c0362955107b68e62e4db",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "b7556226f31a06e73e9410c3e382c5eca6b77be3bce6004324ee1c0171b8e8c0",
