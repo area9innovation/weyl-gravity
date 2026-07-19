@@ -798,7 +798,9 @@ emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
 composition defects.
 
 `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` corrects the activation
-boundary.  `BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` now closes the
+boundary.  Its five finite capabilities include the four baseline consumers
+here and the detector/`Dhat_1` binding described below.
+`BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` closes the
 one-shell supplied-channel capability with exact rational arithmetic: it
 sums every passive column and both feedback channels and applies
 `g_b g_c^2 (two_j+1)/Vol_Berger`.  Its signed fixture gives exactly
@@ -838,8 +840,20 @@ engine to complex interval vectors and square interval-matrix kernels.  It
 checks dimensions, applies exact beta coefficients, propagates induced-
 infinity-norm source/operator remainders, and supports pointwise multiplication
 by the certified real switch-cell hulls.  The finite execution layer is ready;
-detector polynomials, exact spacetime `d/delta` matrices and harmonic emitter
-Cauchy coefficients are not yet jointly bound, so no `I_abc` follows.
+the subsequent detector/form binding closes only its first physical stage, so
+harmonic emitter Cauchy coefficients and `I_abc` remain open.
+
+`BERGER_RECOIL_DETECTOR_FORM_BINDING` assembles every D0/D1 passive-column
+advanced-Maxwell polynomial through `two_j=4` in the component-major
+spacetime basis `[scalar; theta1; theta2; theta3]` and applies the exact Berger
+`Dhat_1`.  Since its coefficient is `T=t_detector_center-t`, the physical
+derivative is `partial_t=-partial_T`; a sign mutation is detected.  The output
+remainder includes a new uniform bound for the derivative of the omitted
+cosine tail and induced-norm propagation through `d0,d1`, rather than reusing
+the pre-derivative remainder.  This certifies
+`Dhat_1 G_A,adv Deltahat_2[p_hat_a]` only.  Multiplication by `h_a`, the
+advanced massive-two-form image, Cauchy trace, positive-energy dual, full
+spatial tail and all `I_abc` intervals remain open.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as

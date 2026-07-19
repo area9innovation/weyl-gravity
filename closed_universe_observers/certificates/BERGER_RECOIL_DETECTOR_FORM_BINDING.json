@@ -1,0 +1,98 @@
+{
+  "atlas_status": "CERTIFIED",
+  "basis_binding": {
+    "coefficient_variable": "T=t_detector_center-t",
+    "input": "[scalar; theta1; theta2; theta3], each coframe block ordered by representation row",
+    "output": "[dt theta1;dt theta2;dt theta3;theta1 theta2;theta1 theta3;theta2 theta3]",
+    "physical_time_derivative": "partial_t=-partial_T"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result assembles every D0/D1 passive-column advanced-Maxwell polynomial through two_j=4 in the certified component-major spacetime one-form basis, then applies the exact Berger Dhat_1 with partial_t=-partial_T. Algebraic radicals are outward rationally enclosed. The output remainder includes a new uniform bound for the physical-time derivative of the omitted cosine tail and induced-norm propagation through d0 and d1. This binds the first physical preparation-form stage only. Switch multiplication, the advanced massive-two-form Green image, Cauchy trace, positive-energy dual, I_abc, recoil records, the second-order cone, Bridge 3 and quantum claims remain open.",
+  "claim_status": "FINITE_DETECTOR_ADVANCED_MAXWELL_DHAT1_BINDING_CERTIFIED_MASSIVE_PREPARATION_OPEN",
+  "dependency_refs": {
+    "detector_image": {
+      "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
+      "result_id": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE",
+      "sha256": "d61e8399ba235c22239ca52864aed148b1e2b4d2154685d12324bf4b3037e9dc"
+    },
+    "detector_provider": {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER.json",
+      "result_id": "BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER",
+      "sha256": "9c58de32f8937b4142532d70f5a17afa9e05722ff1b7a284c1d68de40682cb2d"
+    },
+    "form_signs": {
+      "path": "closed_universe_observers/certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json",
+      "result_id": "BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE",
+      "sha256": "47921d3753f9cd60d3574b4bd1fac3738412a2c7de51e6541a587bec0cde8dfd"
+    },
+    "matrix_engine": {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_MATRIX_INTERVAL_CONVOLUTION.json",
+      "result_id": "BERGER_RECOIL_MATRIX_INTERVAL_CONVOLUTION",
+      "sha256": "c50ef8c898ce195372a095e99c545fa60feb549c6dd308c90083c82f6caf9e75"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "fixtures": {
+    "D0_two_j0_column0_assembled_sha256": "d2e7856a89fecc0c92fdc7d1dafbef1b2f0321bcbe96d3f57572e38b3be922f5",
+    "D1_two_j4_column4_Dhat1_sha256": "ccca2f9e3b3da267ee2b8436a2bf3f5fbd9977ec7ad850038adbbf0cdcf57285",
+    "wrong_time_sign_detected": true
+  },
+  "flags": {
+    "ADVANCED_MASSIVE_TWO_FORM_IMAGE_EVALUATED": false,
+    "COMPONENT_MAJOR_BASIS_BINDING_CERTIFIED": true,
+    "EMITTER_CAUCHY_COEFFICIENTS_SERIALIZED": false,
+    "EXACT_SPACETIME_DHAT1_APPLIED_TO_DETECTOR_IMAGE": true,
+    "FINITE_DETECTOR_SPACETIME_ONE_FORM_POLYNOMIAL_ASSEMBLY_EXPORTED": true,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "PHYSICAL_TIME_DERIVATIVE_TAIL_BOUND_EXPORTED": true,
+    "QUANTUM_CLAIM": false
+  },
+  "mode_scope": {
+    "background": "compact positive Berger clock at fixed coupling",
+    "boundaries": "compact detector and switch supports; no spatial boundary",
+    "carrier": "detector-selected complex interval spacetime one- and two-form polynomials",
+    "charge_sector": "fixed-coupling Berger sector",
+    "degree": "Dhat_1: spacetime degree 1 to 2",
+    "ell": "two_j=0,...,4",
+    "k": "all passive columns k=0,...,two_j",
+    "m": "all component-major representation rows",
+    "omega": "advanced Maxwell polynomial in T plus uniform value and derivative remainders",
+    "parity": "D0 axial and D1 transverse detector profiles",
+    "theory": "classical pure-Weyl gravity plus Berger clock, Maxwell detector and massive two-form emitters"
+  },
+  "next_gate": "MULTIPLY_BY_EXACT_SWITCH_THEN_APPLY_ADVANCED_MASSIVE_TWO_FORM_GREEN_KERNEL",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_recoil_detector_form_binding.py",
+        "sha256": "ff55e8262a1024dd9d8d3051cb0b60a8f307969b6949cdd620b3db4bb63a4640"
+      },
+      {
+        "path": "closed_universe_observers/berger_recoil_detector_form_binding.py",
+        "sha256": "b18e1b7978bd0f9f48f32a6b9ca17587796f419ca60c2c0e0754b33aef8ff430"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_recoil_detector_form_binding.py",
+        "sha256": "d624e8750889e587891a296d8682aa6550762dc71b82022ce83037bb00162ccb"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_recoil_detector_form_binding.py",
+        "sha256": "6a12f9808eb95b42ecd0daa3b083c4e4114f5a566bb97297bc6eda67717bdcc7"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-recoil-detector-form-binding-v1.schema.json",
+        "sha256": "6c602d440fa6f22879c8d0127f51552c29b0f7b66f9df0e66770e18c57556ff3"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-recoil-detector-form-binding.md",
+        "sha256": "778729eaa2235fbe5f305e7c9b63954c6386f233873c389dacbe77b932806ad6"
+      }
+    ]
+  },
+  "result_id": "BERGER_RECOIL_DETECTOR_FORM_BINDING",
+  "schema": "closed-universe-berger-recoil-detector-form-binding-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}

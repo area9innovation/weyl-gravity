@@ -1,8 +1,13 @@
 {
   "atlas_status": "OBSTRUCTED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL readiness audit preserves the certified complete symbolic Peter-Weyl recoil word but rejects its promotion to a complete executable interval stream. Exact callable per-shell aggregation of supplied channel intervals is now certified, including the couplings, passive-column sum and Peter-Weyl weight. A detector-coefficient callable is also certified only on the validated advanced-Maxwell image for 2j=0,...,4. It is not a complete all-shell detector provider and is not a massive or recoil evaluation. A separate exact finite-slab polynomial convolution callable is certified. Exact finite Berger mode kernels are now separately interval-enclosed through 2j=4 on caller-declared rational slabs and positive massive mass domains, with uniform sine tails. The switches, detector intervals and typed form contractions are still not bound into a physical nested channel, so the complete nested-convolution row remains obstructed. No complete callable backend yet provides the remaining detector coefficient intervals or tail-aware four-stream stop loop. Supplying masses and couplings would therefore still not produce a physical recoil interval. The numerical input schema is certified only as a deferred exact contract in the gHat operator units; it contains no chosen physical values. This audit does not demote the symbolic operator theorem, evaluate recoil, restrict records to the second-order cone, activate Bridge 3, promote finite-r/all-orders observer stability, or make a quantum claim.",
-  "claim_status": "FOUR_FINITE_EXECUTION_CAPABILITIES_CERTIFIED_COMPLETE_STREAM_OBSTRUCTED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL readiness audit preserves the certified complete symbolic Peter-Weyl recoil word but rejects its promotion to a complete executable interval stream. Exact callable per-shell aggregation of supplied channel intervals is now certified, including the couplings, passive-column sum and Peter-Weyl weight. A detector-coefficient callable is also certified only on the validated advanced-Maxwell image for 2j=0,...,4. It is not a complete all-shell detector provider and is not a massive or recoil evaluation. A separate exact finite-slab polynomial convolution callable is certified. Exact finite Berger mode kernels are now separately interval-enclosed through 2j=4 on caller-declared rational slabs and positive massive mass domains, with uniform sine tails. Every finite detector column is now assembled and passed through exact Dhat_1 with a physical-time derivative-tail bound. The switch and subsequent massive Green/Cauchy stages are still not bound into a physical nested channel, so the complete nested-convolution row remains obstructed. No complete callable backend yet provides the remaining detector coefficient intervals or tail-aware four-stream stop loop. Supplying masses and couplings would therefore still not produce a physical recoil interval. The numerical input schema is certified only as a deferred exact contract in the gHat operator units; it contains no chosen physical values. This audit does not demote the symbolic operator theorem, evaluate recoil, restrict records to the second-order cone, activate Bridge 3, promote finite-r/all-orders observer stability, or make a quantum claim.",
+  "claim_status": "FIVE_FINITE_EXECUTION_CAPABILITIES_CERTIFIED_COMPLETE_STREAM_OBSTRUCTED",
   "dependency_refs": {
+    "finite_detector_form_binding": {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_DETECTOR_FORM_BINDING.json",
+      "result_id": "BERGER_RECOIL_DETECTOR_FORM_BINDING",
+      "sha256": "428841914c2eb5a27f151ee02fcca68a35775a27ad0444e3339f21b0c78db24a"
+    },
     "finite_detector_provider": {
       "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER.json",
       "result_id": "BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER",
@@ -46,6 +51,22 @@
   "execution_protocol": {
     "backend_module": "closed_universe_observers/berger_recoil_interval_stream.py",
     "backend_module_present": true,
+    "detector_form_backend_module": "closed_universe_observers/berger_recoil_detector_form_binding.py",
+    "detector_form_backend_module_present": true,
+    "discovered_detector_form_callables": [
+      "_apply_spacetime_dhat1",
+      "_assemble",
+      "_cosine_time_derivative_tail",
+      "_detector_mode",
+      "_interval_matrix",
+      "_matrix_norm_upper",
+      "_matrix_vector",
+      "_serialized_complex",
+      "_vector_add",
+      "_zero_vector",
+      "apply_spacetime_dhat1_to_detector_advanced_maxwell",
+      "assemble_detector_advanced_maxwell_polynomial"
+    ],
     "discovered_module_callables": [
       "_absolute_upper",
       "_identity_complex_matrix",
@@ -76,6 +97,7 @@
     "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": true,
     "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": false,
     "COMPLETE_SYMBOLIC_OPERATOR_WORD_RETAINED": true,
+    "FINITE_DETECTOR_ADVANCED_MAXWELL_DHAT1_BINDING_EXPORTED": true,
     "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED": true,
     "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED": true,
     "FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED": true,
@@ -110,7 +132,7 @@
       "name": "request_external_values_before_internal_backend"
     }
   ],
-  "next_gate": "BIND_SWITCH_PROFILE_DETECTOR_AND_FORM_INTERVALS_TO_FINITE_MODE_KERNELS",
+  "next_gate": "MULTIPLY_DHAT1_DETECTOR_IMAGE_BY_SWITCH_THEN_APPLY_ADVANCED_MASSIVE_GREEN_KERNEL",
   "numerical_input_contract": {
     "operator_units": "certified_gHat_clock_and_Berger_spatial_operator_units",
     "path": "closed_universe_observers/schema/berger-recoil-numerical-specialization-input-v1.schema.json",
@@ -122,7 +144,7 @@
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_recoil_stream_executable_readiness_audit.py",
-        "sha256": "544718369fd1fdc0fb4b41965ae2baf91dac7cb180c7ac2a1d09f9807e85098b"
+        "sha256": "e47df62aabcff8bb29aae80c8578461183dd34782d418cda57a0f232251dba56"
       },
       {
         "path": "closed_universe_observers/verify_berger_recoil_stream_executable_readiness_audit.py",
@@ -130,11 +152,11 @@
       },
       {
         "path": "closed_universe_observers/tests/test_berger_recoil_stream_executable_readiness_audit.py",
-        "sha256": "779a8797ca188f0510ae3b6e67b75042c5ad2b91f65362510ac0a6408816a43e"
+        "sha256": "26dbfafc852dd8c61615f2bed3d3ad0010fe3adbcc257fc74dd0a3b3983465b7"
       },
       {
         "path": "closed_universe_observers/schema/berger-recoil-stream-executable-readiness-audit-v1.schema.json",
-        "sha256": "35f07ecb3f86d46507afaf8979a6d684d70f5e9e4c5c8f9cc3abd40ec410ff7f"
+        "sha256": "3686327502a41f66e48513ba4132a8226ab85d602e0e2c4e9c012a37316e4f34"
       },
       {
         "path": "closed_universe_observers/schema/berger-recoil-numerical-specialization-input-v1.schema.json",
@@ -142,11 +164,15 @@
       },
       {
         "path": "closed_universe_observers/reports/berger-recoil-stream-executable-readiness-audit.md",
-        "sha256": "0d26eeaf8e59fe662d57235c67a2b077f0a3f2bde012ee64bd08db8c16b468c7"
+        "sha256": "42bb153ae365b67e561e5d5506d1e06a942d15da80428b0b1e06e1a6130e3425"
       },
       {
         "path": "closed_universe_observers/berger_recoil_interval_stream.py",
         "sha256": "f521ddd73a20fee0302ad58da5b7a952517403e6c3d7bba269cbb8ea70f19d8c"
+      },
+      {
+        "path": "closed_universe_observers/berger_recoil_detector_form_binding.py",
+        "sha256": "b18e1b7978bd0f9f48f32a6b9ca17587796f419ca60c2c0e0754b33aef8ff430"
       }
     ]
   },
@@ -179,6 +205,16 @@
         "evidence": "BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE",
         "id": "finite_exact_mode_kernel_interval_enclosure",
         "required_callable": "enclose_exact_mode_sine_kernel",
+        "status": "CERTIFIED"
+      },
+      {
+        "coverage": "D0_D1_all_passive_columns_two_j_inclusive_0_to_4",
+        "evidence": "BERGER_RECOIL_DETECTOR_FORM_BINDING",
+        "id": "finite_detector_advanced_maxwell_Dhat1_binding",
+        "required_callables": [
+          "assemble_detector_advanced_maxwell_polynomial",
+          "apply_spacetime_dhat1_to_detector_advanced_maxwell"
+        ],
         "status": "CERTIFIED"
       },
       {

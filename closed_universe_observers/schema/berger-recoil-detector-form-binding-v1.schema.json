@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "basis_binding", "fixtures", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-detector-form-binding-v1"},
+    "result_id": {"const": "BERGER_RECOIL_DETECTOR_FORM_BINDING"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "FINITE_DETECTOR_ADVANCED_MAXWELL_DHAT1_BINDING_CERTIFIED_MASSIVE_PREPARATION_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "basis_binding": {"type": "object"},
+    "fixtures": {"type": "object"},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "MULTIPLY_BY_EXACT_SWITCH_THEN_APPLY_ADVANCED_MASSIVE_TWO_FORM_GREEN_KERNEL"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

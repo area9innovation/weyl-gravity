@@ -511,7 +511,7 @@ both feedback switches, the physical massive correction, eight factored
 `g_b g_c^2` channels, four aggregate streams and the reconstruction weight
 `(two_j+1)/Vol_Berger`.  Its factorwise tail is indexed by the feedback
 emitter, `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` close.
-The first executable successors now close four finite capabilities.  The shell
+The first executable successors close four baseline finite capabilities.  The shell
 evaluator aggregates supplied exact rational channel intervals, requires both
 feedback channels and every passive column, applies `g_b g_c^2` and
 `(two_j+1)/Vol_Berger`, and detects deletion of those factors.  The detector
@@ -535,8 +535,14 @@ support zeros and the flat-bump derivative critical point certified.
 A dimension-checked complex matrix/vector Volterra successor now composes
 supplied finite form-valued polynomial stages with exact beta coefficients,
 real switch-cell multiplication and induced-norm remainder propagation.
-Detector-polynomial and exact `d/delta` matrix binding, extension beyond
-`two_j=4`, and the tail-aware
+The next successor now assembles every D0/D1 passive-column detector
+polynomial through `two_j=4` in the exact component-major spacetime one-form
+basis and applies `Dhat_1` with `partial_t=-partial_T`.  Its uniform output
+bound differentiates the omitted cosine tail and propagates both block tails
+through outward-enclosed `d0,d1` matrices.  This closes only the first
+physical preparation-form stage.  Switch multiplication followed by the
+advanced massive Green image and Cauchy/positive-energy preparation,
+extension beyond `two_j=4`, and the tail-aware
 four-stream stop loop remain `OBSTRUCTED`, so external numerical inputs remain
 deferred under the strict specialization schema.
 The coupling-stripped preparation successor fixes the formal-order convention
