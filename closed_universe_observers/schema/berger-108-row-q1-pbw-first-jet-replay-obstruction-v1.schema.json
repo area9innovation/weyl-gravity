@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-108-row-q1-pbw-first-jet-replay-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "coefficient_ring", "composed_q1", "odd_cyclicity_replay", "nilpotency_replay", "mutations", "activation_disposition", "exhaustive_specialization_diagnostic", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-q1-pbw-first-jet-replay-obstruction-v1"},
+    "result_id": {"const": "BERGER_108_ROW_Q1_PBW_FIRST_JET_REPLAY_OBSTRUCTION"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_FIRST_JET_NILPOTENCY_OBSTRUCTION"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {"type": "object", "minProperties": 7, "maxProperties": 7},
+    "coefficient_ring": {"type": "string"},
+    "composed_q1": {"type": "object", "required": ["shape", "bidegree_summaries", "unified_payload_exported", "deterministic_composition_module"], "properties": {"shape": {"const": [108, 108]}, "unified_payload_exported": {"const": false}}},
+    "odd_cyclicity_replay": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "nilpotency_replay": {"type": "object", "required": ["bidegree_summaries", "passing_bidegrees", "obstructed_bidegree", "first_jet_witness"], "properties": {"passing_bidegrees": {"const": ["(0, 0)", "(0, 1)", "(1, 1)"]}, "obstructed_bidegree": {"const": "(1, 0)"}, "first_jet_witness": {"type": "object", "required": ["operator_key", "target_time_mode", "sphere_normal_form", "selected_spatial_monomial", "selected_coefficient", "phase_definition", "strict_inequality", "coefficient_strict_upper", "coefficient_nonzero"], "properties": {"coefficient_nonzero": {"const": true}}}}},
+    "mutations": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object", "required": ["name", "detected"], "properties": {"detected": {"const": true}}}},
+    "activation_disposition": {"type": "object", "required": ["current_gate", "gate_status", "repair_target", "nonlinear_team_request_activated", "tangent_cone_observer_restriction_activated", "physical_branch_bridge_activated", "reason"], "properties": {"gate_status": {"const": "OBSTRUCTED"}, "nonlinear_team_request_activated": {"const": false}, "tangent_cone_observer_restriction_activated": {"const": false}, "physical_branch_bridge_activated": {"const": false}}},
+    "exhaustive_specialization_diagnostic": {"type": "object"},
+    "flags": {"type": "object", "required": ["COMPLETE_SCALAR_108_ROW_Q1_COMPOSED_IN_MEMORY", "ALL_FIRST_JET_COEFFICIENTS_ODD_CYCLIC", "ZEROTH_ORDER_Q1_SQUARED_ZERO", "KAPPA_Q1_SQUARED_ZERO", "MIXED_EPSILON_R_SQUARED_KAPPA_Q1_SQUARED_ZERO", "EPSILON_R_SQUARED_Q1_SQUARED_ZERO_IN_BACKGROUND_QUOTIENT", "FIRST_JET_NILPOTENCY_OBSTRUCTION_CERTIFIED", "MIXED_EPSILON_R_SQUARED_KAPPA_UNARY_COEFFICIENT_PASSES", "COMPLETE_FIRST_JET_UNARY_GATE", "APPARATUS_Q2_Q3_EXTENSION_AUTHORIZED", "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED", "QUANTUM_CLAIM"], "properties": {"COMPLETE_SCALAR_108_ROW_Q1_COMPOSED_IN_MEMORY": {"const": true}, "ALL_FIRST_JET_COEFFICIENTS_ODD_CYCLIC": {"const": true}, "ZEROTH_ORDER_Q1_SQUARED_ZERO": {"const": true}, "KAPPA_Q1_SQUARED_ZERO": {"const": true}, "MIXED_EPSILON_R_SQUARED_KAPPA_Q1_SQUARED_ZERO": {"const": true}, "EPSILON_R_SQUARED_Q1_SQUARED_ZERO_IN_BACKGROUND_QUOTIENT": {"const": false}, "FIRST_JET_NILPOTENCY_OBSTRUCTION_CERTIFIED": {"const": true}, "MIXED_EPSILON_R_SQUARED_KAPPA_UNARY_COEFFICIENT_PASSES": {"const": true}, "COMPLETE_FIRST_JET_UNARY_GATE": {"const": false}, "APPARATUS_Q2_Q3_EXTENSION_AUTHORIZED": {"const": false}, "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"const": "REPAIR_EPSILON_R_SQUARED_SHIFTED_GRAVITY_ROD_MEMORY_UNARY_COMPOSITION_AND_REPLAY_THE_EXACT_WITNESS"},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "provenance": {"type": "object"}
+  }
+}

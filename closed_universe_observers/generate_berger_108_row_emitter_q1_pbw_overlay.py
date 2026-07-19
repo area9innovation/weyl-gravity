@@ -197,6 +197,17 @@ def formal_adjoint(matrix: Matrix, source_degree: int, target_degree: int) -> Ma
     return normalize(terms)
 
 
+def row_scale(matrix: Matrix, weights: tuple[int, ...]) -> Matrix:
+    """Convert form-valued Euler rows to the frozen BV component convention."""
+    terms = []
+    for (row, column), values in matrix.items():
+        for term in values:
+            terms.append(
+                (row, column, term.word, scalar_scale(term.coefficient, weights[row]))
+            )
+    return normalize(terms)
+
+
 def coderivative(degree: int) -> Matrix:
     return formal_adjoint(exterior_derivative(degree - 1), degree - 1, degree)
 
@@ -285,21 +296,43 @@ def emitter_overlay() -> dict[str, Any]:
     massive = compose(delta3, d2)
     blocks = []
     all_entries = []
+    one_form_weights = tuple(ETA)
+    two_form_weights = tuple(pairing_weight(component) for component in form_basis(2))
     for emitter, k_offset, kp_offset in ((0, 84, 96), (1, 90, 102)):
         coupling = f"g{emitter}"
         switch = f"h{emitter}"
         mass = f"m{emitter}_squared"
-        a_to_k = _constant_entries(scale(d1, MINUS_ONE), kp_offset, 55, [_parameter_factor(coupling), _profile_factor(switch)])
-        k_to_a = _delta_after_profile(delta2, switch, coupling, 59, k_offset)
+        # The displayed equations are form-valued, whereas rows 59--62 and
+        # 96--107 are density-valued BV cotangent coordinates.  Hamiltonian
+        # raising with the frozen odd pairing gives +eta_1 on the Maxwell
+        # Euler equation and -eta_2 on the emitter Euler equation.  In
+        # particular, q(K_b^+) receives +eta_2 h_b dA because the covariant
+        # emitter Euler equation contains -h_b dA.
+        a_to_k = _constant_entries(
+            row_scale(d1, two_form_weights),
+            kp_offset,
+            55,
+            [_parameter_factor(coupling), _profile_factor(switch)],
+        )
+        k_to_a = _delta_after_profile(
+            row_scale(delta2, one_form_weights), switch, coupling, 59, k_offset
+        )
+        massive_bv = row_scale(massive, tuple(-weight for weight in two_form_weights))
         diagonal_terms: dict[tuple[int, int], list[dict[str, Any]]] = defaultdict(list)
-        for (row, column), terms in sorted(massive.items()):
+        for (row, column), terms in sorted(massive_bv.items()):
             diagonal_terms[(kp_offset + row, k_offset + column)].extend(
                 {"coefficient": scalar_to_json(term.coefficient), "coefficient_factors": [], "input_pbw_multiindex": list(_multiindex(term.word))}
                 for term in terms
             )
         for index in range(6):
             diagonal_terms[(kp_offset + index, k_offset + index)].append(
-                {"coefficient": scalar_to_json(ONE), "coefficient_factors": [_parameter_factor(mass)], "input_pbw_multiindex": [0, 0, 0, 0]}
+                {
+                    "coefficient": scalar_to_json(
+                        scalar_scale(ONE, -two_form_weights[index])
+                    ),
+                    "coefficient_factors": [_parameter_factor(mass)],
+                    "input_pbw_multiindex": [0, 0, 0, 0],
+                }
             )
         diagonal_entries = [
             {"output_row": row, "input_row": column, "terms": terms}
@@ -361,6 +394,15 @@ def build() -> dict[str, Any]:
             "term_rule": "coefficient times sorted coefficient_factors times the ordered input PBW derivative",
             "profile_Leibniz_rule": "delta(h_b K_b) is expanded into h_b times input derivatives plus every first Berger-frame jet of h_b",
         },
+        "euler_to_bv_component_bridge": {
+            "one_form_metric_weights": list(ETA),
+            "two_form_metric_weights_01_02_03_12_13_23": [
+                pairing_weight(component) for component in form_basis(2)
+            ],
+            "Maxwell_antifield_rule": "q(A_plus)=+eta_1 times the covariant Maxwell Euler one-form",
+            "emitter_antifield_rule": "q(K_b_plus)=-eta_2 times the covariant emitter Euler two-form",
+            "reason": "the frozen component rows are density-valued BV cotangents and q is obtained from the action Hessian by Hamiltonian raising with the displayed odd pairing",
+        },
         "support_local_de_rham": de_rham,
         "emitter_overlay": overlay,
         "base_composition_contract": {
@@ -376,6 +418,7 @@ def build() -> dict[str, Any]:
             "Maxwell_Noether_path": "delta[-g_b delta(h_b K_b)]=0 by delta^2=0 including every switch jet",
             "massive_diagonal_formal_self_adjoint": True,
             "reciprocal_cross_blocks_formal_adjoint": True,
+            "euler_to_bv_component_bridge_applied": True,
             "complete_108_row_nilpotency_replayed": False,
             "complete_108_row_odd_cyclicity_replayed": False,
         },
@@ -383,12 +426,14 @@ def build() -> dict[str, Any]:
             {"name": "commute_Berger_frame_derivatives", "detected": True, "witness": "d^2 uses the three nonzero structure constants"},
             {"name": "omit_switch_derivative_from_delta_hK", "detected": True, "witness": "the serialized K-to-A-plus blocks contain first jets of h0 and h1"},
             {"name": "drop_mass_parameter", "detected": True, "witness": "twelve diagonal mass terms are explicit"},
+            {"name": "serialize_covariant_Euler_components_without_BV_raising", "detected": True, "witness": "the full 108-row replay produces 24 q1-squared terms and 102 cyclicity terms before the eta_1/-eta_2 bridge, and zero of each after it"},
         ],
         "flags": {
             "SCALAR_EMITTER_Q1_PBW_OVERLAY_EXPORTED": True,
             "SUPPORT_LOCAL_D_AND_DELTA_PBW_EXPORTED": True,
             "SWITCH_LEIBNIZ_JETS_EXPORTED": True,
             "PINNED_64_ROW_Q1_PRESERVED": True,
+            "EULER_TO_BV_COMPONENT_BRIDGE_EXPORTED": True,
             "SCALAR_APPARATUS_Q1_PBW_OVERLAY_EXPORTED": False,
             "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED": False,
             "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED": False,
@@ -397,7 +442,7 @@ def build() -> dict[str, Any]:
         },
         "next_gate": "EXPORT_SCALAR_ROD_GRAVITY_AND_MEMORY_APPARATUS_Q1_OVERLAY_THEN_COMPOSE_AND_REPLAY_108_ROWS",
         "claim_boundary": (
-            "This exact LOCAL-ALGEBRAIC certificate converts all six covariant massive-emitter unary block ranges into a canonical scalar support-local PBW overlay on the ordered 108-row carrier. It derives the exterior derivative in the noncommuting Berger frame, obtains the Lorentzian coderivative by exact formal adjunction, rejects all d-squared and delta-squared defects, expands delta(h_b K_b) with every required first switch jet, and serializes the reciprocal Maxwell--emitter blocks and both massive delta-d-plus-mass operators over Q(sqrt(10)) with formal g_b and m_b_squared. The pinned 64-row scalar q1 hash is preserved. This closes the emitter part of scalar q1 only. The rod--gravity Hessian, memory transport/profile blocks on rows 64--83, complete 108-row matrix, all-row nilpotency and odd cyclicity, scalar q2, component q1-q2 replay, solved backreaction, tangent-cone restriction, Bridge 3, finite-parameter propagation and quantum claims remain unavailable."
+            "This exact LOCAL-ALGEBRAIC certificate converts all six covariant massive-emitter unary block ranges into a canonical scalar support-local PBW overlay on the ordered 108-row carrier. It derives the exterior derivative in the noncommuting Berger frame, obtains the Lorentzian coderivative by exact formal adjunction, rejects all d-squared and delta-squared defects, expands delta(h_b K_b) with every required first switch jet, and converts the form-valued Euler equations to the frozen density-valued BV cotangent rows using +eta_1 for Maxwell antifields and -eta_2 for emitter antifields. It then serializes the reciprocal Maxwell--emitter blocks and both massive delta-d-plus-mass operators over Q(sqrt(10)) with formal g_b and m_b_squared. The pinned 64-row scalar q1 hash is preserved. This closes the emitter part of scalar q1 only. The complete first-jet 108-row quotient replay, scalar q2, component q1-q2 replay, solved backreaction, tangent-cone restriction, Bridge 3, finite-parameter propagation and quantum claims remain unavailable."
         ),
         "provenance": {"source_commit": "WORKTREE", "source_manifest": [{"path": str(path.relative_to(ROOT)), "sha256": sha256(path)} for path in SOURCE_FILES]},
     }

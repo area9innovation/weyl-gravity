@@ -427,26 +427,37 @@ nonzero metric first jets and PBW-reduced scalar second jets.  Two hundred
 independent density variations check the symmetric metric Hessian.  The
 generated payload has 256 nonzero positions and 1,530 exact terms.
 
-The active local-interaction bridge is therefore the composition gate, not a
-missing-overlay gate: combine the pinned base, emitter, memory,
-shifted-`Phi2` and local rod/gravity payloads and replay complete 108-row
-nilpotency and odd cyclicity.  Its fail-closed atlas rows are
-`observer.berger.interaction.pbw_108_local_rod_hessian_overlay` (`CERTIFIED`
-locally, gauge survival `NO_CERTIFIED_MAP`) and
-`observer.berger.interaction.pbw_108_component_map` (`NO_CERTIFIED_MAP` until
-that replay).  This does not activate physical Bridge 3.
+The local-interaction composition gate has now fired with an obstruction.
+The first full replay found that the emitter overlay had serialized covariant
+Euler-form components directly into density-valued BV cotangent rows.
+Hamiltonian raising through the frozen pairing requires `+eta_1` on Maxwell
+antifield equations and `-eta_2` on emitter antifield equations.  That repair
+removes exactly 24 zeroth-order square terms and 102 cyclicity terms.  The
+repaired complete scalar `q1` is cyclic in all four first-jet bidegrees, and
+the `(0,0)`, `(0,1)` and `(1,1)` square coefficients vanish.
+
+The `epsilon_R_squared` coefficient is nevertheless `OBSTRUCTED` in the
+certified same-background quotient.  At output row 27, input row 0, identity
+PBW word and time mode zero, its `x0*x1` coefficient is
+`-27 s^4/40+27 s^2/32-2921/480`, `s=sin(sqrt(10)/12)`, which is strictly
+negative from `0<s^2<5/72`.  The active local-interaction bridge is therefore
+the repair of this shifted-gravity/rod-memory witness, followed by exact
+replay.  Its fail-closed row is
+`observer.berger.interaction.pbw_108_q1_first_jet_replay` (`OBSTRUCTED`);
+the component map remains `NO_CERTIFIED_MAP`.  This does not activate
+physical Bridge 3.
 
 ### Immediate priority after the polarization-emitter handoff
 
 1. Await and independently verify a provenance-complete external declaration
    of physical masses, couplings, inverse volume, shell/tail schedule,
    precision and stopping goal under the certified v2 recoil contract; do not
-   invent those values.  In parallel, use the certified component/jet contract,
-   six-rod/`Phi2` background differential quotient, scalar emitter overlay and
-   complete scalar memory first-jet, shifted-`Phi2` and local rod/gravity
-   overlays to compose and replay the complete 108-row `q1` PBW matrix before
-   attempting scalar `q2`, its replay, or a solved backreacted gravity-clock branch.
-   Covariant row coverage is not a substitute for either scalar payload.
+   invent those values.  In parallel, repair the exact
+   `epsilon_R_squared` output-27/input-0 scalar `q1^2` witness in the
+   shifted-gravity/rod-memory composition and replay it before attempting
+   scalar `q2`, its replay, tangent-cone restriction, or a solved
+   backreacted gravity-clock branch.  Covariant row coverage and odd
+   cyclicity are not substitutes for nilpotency.
    Treat realization of both preparations at the original common Hopf event
    as a stronger, separate localization target.
 2. Keep the full apparatus Dirac bracket, complete harmonic signal algebra,
@@ -1213,12 +1224,14 @@ defects through `two_j=4`; a flipped temporal coderivative sign is detected.
 This certifies the component typing used by the complete symbolic shell word,
 not a numerical time convolution or recoil scalar.
 
-The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
-mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
-apparatus `q2,q3`; only that completion activated the declared
-`K_Berger`-equivariance and observer-morphism work.  Those certificates do
-not promote finite-`r`, fixed-background linear-`K`, full-`q4`, or all-orders
-observer-morphism stability.
+The nonlinear-team sequencing handoff remains fail-closed.  The historical
+84-row mixed `epsilon_R^2 kappa` unary theorem remains valid in its declared
+coefficientwise scope, and the complete scalar 108-row `(1,1)` square
+coefficient also vanishes.  But the same scalar replay is obstructed at the
+`epsilon_R_squared` coefficient, so it does not authorize a new 108-row
+apparatus `q2,q3`, `K_Berger`-equivariance, or observer-morphism-stability
+extension.  Finite-`r`, fixed-background linear-`K`, full-`q4`, and all-orders
+stability remain unavailable.
 
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.
@@ -1250,27 +1263,30 @@ is `OBSTRUCTED` specifically on the unquotiented free algebra, while
 `observer.berger.interaction.pbw_108_background_differential_quotient` is
 `CERTIFIED`.  The scalar emitter contribution is separately `CERTIFIED` in
 `observer.berger.interaction.pbw_108_emitter_q1_overlay`, including all six
-blocks and explicit first switch jets.  The complete scalar promotion remains
-`NO_CERTIFIED_MAP`.  The sibling
+blocks, explicit first switch jets, and the repaired Euler-to-BV component
+bridge.  The sibling
 `observer.berger.interaction.pbw_108_memory_q1_overlay` is now also
 `CERTIFIED` through `Q11`.
 The sibling `observer.berger.interaction.pbw_108_shifted_q2_phi2_overlay`
 certifies the 64-row shifted-base contribution.  The sibling
 `observer.berger.interaction.pbw_108_local_rod_hessian_overlay` now certifies
 all six local gauge/wave/Hessian blocks, while retaining `NO_CERTIFIED_MAP`
-for gauge survival.  All local unary overlay inputs are now available; the
-complete scalar composition, all-row `q1` replay, scalar `q2` and its replay
-remain open.
+for gauge survival.  The new sibling
+`observer.berger.interaction.pbw_108_q1_first_jet_replay` is `OBSTRUCTED`:
+the complete composition is cyclic, but its `epsilon_R_squared` square has
+the exact strictly negative quotient witness above.  Scalar `q2`, its replay,
+and the nonlinear observer cone remain inactive until that witness is
+repaired.
 This does not activate the physical-
 branch bridge and does not identify any compact-product mode with a Berger
 apparatus row.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to
-`Z2^C={u:mu_X(u)=0,R_j^C(u)=0}` are still `OPEN` for bounded/quasiperiodic,
-smooth-secular, and causal/retarded corrections: no current certificate
-decides which detectable modes are obstructed or which balanced combinations
-survive.  The atlas cites
+`Z2^C={u:mu_X(u)=0,R_j^C(u)=0}` now have `NO_CERTIFIED_MAP` from the complete
+scalar apparatus while its unary is obstructed.  Individual detectable-mode
+obstruction and balanced-combination survival remain `OPEN`; the current
+unary obstruction does not by itself classify either.  The atlas cites
 `FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` for the general
 image/cokernel criterion without treating it as an evaluated observer cone.
 The emitter stress/clock source supplies a certified `q2` channel

@@ -44,6 +44,16 @@ def test_mass_terms_and_base_hash_are_pinned():
     assert len(value["base_composition_contract"]["base_payload_sha256"]) == 64
 
 
+def test_covariant_euler_rows_are_hamiltonian_raised_into_bv_cotangents():
+    value = build()
+    bridge = value["euler_to_bv_component_bridge"]
+    assert bridge["one_form_metric_weights"] == [-1, 1, 1, 1]
+    assert bridge["two_form_metric_weights_01_02_03_12_13_23"] == [
+        -1, -1, -1, 1, 1, 1
+    ]
+    assert value["flags"]["EULER_TO_BV_COMPONENT_BRIDGE_EXPORTED"]
+
+
 def test_complete_q1_remains_fail_closed_on_apparatus_overlay():
     value = build()
     assert value["flags"]["SCALAR_EMITTER_Q1_PBW_OVERLAY_EXPORTED"]

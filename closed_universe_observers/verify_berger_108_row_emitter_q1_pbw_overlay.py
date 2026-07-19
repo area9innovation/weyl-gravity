@@ -127,6 +127,13 @@ def compose(outer, inner):
     )
 
 
+def row_scale(operator, weights):
+    return {
+        (row, column, word): sp.simplify(weights[row] * coefficient)
+        for (row, column, word), coefficient in operator.items()
+    }
+
+
 def coefficient(value):
     rational, sqrt10 = value["rational"], value["sqrt10"]
     return sp.Rational(rational["numerator"], rational["denominator"]) + sp.Rational(
@@ -238,19 +245,45 @@ def main() -> int:
     delta2 = adjoint(exterior(1), 1, 2)
     delta3 = adjoint(exterior(2), 2, 3)
     massive = compose(delta3, d2)
+    one_form_weights = ETA
+    two_form_weights = tuple(
+        sp.prod(ETA[index] for index in component) for component in form_basis(2)
+    )
+    assert value["euler_to_bv_component_bridge"]["one_form_metric_weights"] == list(
+        one_form_weights
+    )
+    assert value["euler_to_bv_component_bridge"][
+        "two_form_metric_weights_01_02_03_12_13_23"
+    ] == list(two_form_weights)
     mass_terms = []
     for emitter in (0, 1):
         coupling, switch = f"g{emitter}", f"h{emitter}"
         k_offset, kp_offset = ((84, 96), (90, 102))[emitter]
         assert actual_terms(by_id[f"A_to_K{emitter}_plus"]) == expected_constant(
-            d1, kp_offset, 55, [parameter(coupling), profile(switch)], scale=-1
+            row_scale(d1, two_form_weights),
+            kp_offset,
+            55,
+            [parameter(coupling), profile(switch)],
         )
         assert actual_terms(by_id[f"K{emitter}_to_A_plus"]) == expected_profile_coderivative(
-            delta2, switch, coupling, 59, k_offset
+            row_scale(delta2, one_form_weights), switch, coupling, 59, k_offset
         )
-        expected_massive = expected_constant(massive, kp_offset, k_offset, [])
+        expected_massive = expected_constant(
+            row_scale(massive, tuple(-weight for weight in two_form_weights)),
+            kp_offset,
+            k_offset,
+            [],
+        )
         for index in range(6):
-            expected_massive[term_signature(kp_offset + index, k_offset + index, 1, [parameter(f"m{emitter}_squared")], ())] += 1
+            expected_massive[
+                term_signature(
+                    kp_offset + index,
+                    k_offset + index,
+                    -two_form_weights[index],
+                    [parameter(f"m{emitter}_squared")],
+                    (),
+                )
+            ] += 1
         assert actual_terms(by_id[f"K{emitter}_massive_equation"]) == expected_massive
         cross = by_id[f"K{emitter}_to_A_plus"]
         profile_jets = []
@@ -270,6 +303,7 @@ def main() -> int:
     assert len(mass_terms) == 12
     assert all(row == column + 12 for _, row, column in mass_terms)
     assert value["base_composition_contract"]["base_entry_count"] == 333
+    assert value["flags"]["EULER_TO_BV_COMPONENT_BRIDGE_EXPORTED"]
     assert not value["flags"]["SCALAR_APPARATUS_Q1_PBW_OVERLAY_EXPORTED"]
     assert not value["flags"]["SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED"]
     print("BERGER_108_ROW_EMITTER_Q1_PBW_OVERLAY independent verification: PASS")
