@@ -1579,9 +1579,72 @@ The exceptional bounded gate now has direct full-time `a,d` pivots in both
 parities.  The `a*t` coefficient is nonzero and removes the radion position
 from every bounded exceptional branch.  The constant `d` coefficient shares
 its `L=1,omega_e` carrier with the live exceptional-times-`ell=2`-extra
-difference channel, so the bounded cone remains fail-closed until those eight
-collision columns are computed jointly.  This is an Einstein-team input to
-Bridge 1, not a nonlinear bridge morphism or a causal promotion.
+difference channel.  Those eight axisymmetric collision columns are now
+direct: six adjoint projections vanish and the two survivors use the same
+`ell=2` polar-`e2` control amplitude, with coefficients `-768/5` and
+`-864/5`.  The bounded cone remains fail-closed until the `SO(3)` tensor,
+exceptional `L=2` self-defect, `d` control and five moment maps are solved
+jointly.  This is an Einstein-team input to Bridge 1, not a nonlinear bridge
+morphism or a causal promotion.
+
+The corresponding axisymmetric `L=1,L=2` system is now solved: its nonzero
+resonance-compatible locus is `16*r_x^2+3*r_p^2=115*d^2`, with explicit
+`ell=2` controls.  Its Hamiltonian moment map is strictly negative, so the
+next gate is the minimal Einstein-minus balance and every induced cross
+source.  Resonance compatibility alone does not promote the bounded cone.
+
+That minimal balance is now explicit on the pure-axial endpoint.  One axial
+`ell=2` Einstein-minus occupation cancels the Hamiltonian deficit while all
+other stabilizer moment maps stay zero, and forty exact algebraic comparisons
+exclude every new nonzero-frequency target-shell collision.  The bounded
+cone remains fail-closed at the actual quadratic-source gate.  A direct
+mixed-`ell` normalization audit has repaired the balance using `W_1=1/3` and
+`W_2=1/5`, and the complete combined zero-frequency source now cancels while
+every other zero-frequency output is invertible.  The remaining time-linear
+`d` gate is now direct and nonzero on the required Einstein-minus shell:
+`12*i*(3*sqrt(3)-1)*sqrt(6-2*sqrt(3))*d*A_-`.  Hence this endpoint is
+`OBSTRUCTED` for bounded/finite-quasiperiodic corrections but `CERTIFIED` for
+smooth exponential-polynomial corrections with a secular term.  The full
+exceptional mixed zero locus remains open.
+
+The obstruction now covers the entire axisymmetric ellipse under any one
+Einstein-minus dressing mode: for every `ell_d>=2` and either parity, the
+symbolic-`lambda` `d` pivot is nonzero (all `m` by `SO(3)`), so a nonzero
+dressing forces `d=0` while every ellipse point has `d!=0`.  This single-mode
+dressing family is bounded `OBSTRUCTED` and smooth-secular `CERTIFIED`.
+Multiple minus modes or additional carriers remain fail-closed because their
+quadratic pairs could share a shell functional.
+
+Exact dispersion inequalities now exclude that sharing for every arbitrary
+finite minus sum: `w_(a+b-1)<w_a+w_b<w_(a+b)` and
+`w'(x)<2/sqrt(3)` rule out three-minus and original-minus collisions.
+Consequently all finite Einstein-minus dressings are bounded `OBSTRUCTED`
+and smooth-secular `CERTIFIED`.  Only additional nonminus carriers or an
+infinite completed minus sector remain open.
+
+The infinite-minus gate is now also `OBSTRUCTED` on the declared smooth
+Wiener--Bohr completion.  Absolute convergence of every derivative-weighted
+harmonic sum makes Bohr-frequency and spherical-adjoint projection continuous,
+so the same pairwise dispersion theorem isolates the nonzero `d` pivot on each
+occupied coefficient.  This does not claim the maximal finite-energy/Sobolev
+completion, an infinite secular inverse, additional carriers, or causal
+transport; those atlas fields remain `OPEN` or `NO_CERTIFIED_MAP`.
+
+Standard generalized-zero additions do not enlarge this bounded cone.  The
+universal polynomial ideal gives `b=B=0` and `Q_e*a=0`; the surviving global
+Hamiltonian contribution is nonpositive, while electric, Wilson,
+circumference and constant-twist mixed columns have zero relevant minus-shell
+adjoint component.  The triangular `a` then `d` pivots therefore leave the
+same obstruction.  The next exceptional activation gate is now restricted to
+genuinely oscillatory nonminus carriers that could share a minus-shell
+functional.
+
+All additional `k=0` dipole oscillators are now excluded as well.  Physical
+and extra `ell=1` modes have the same negative Hamiltonian sign as the ellipse;
+their frequencies exceed every angularly allowed adjacent minus gap, and an
+exact low-ell audit removes all remaining `L=2,3` collisions.  The exceptional
+bounded activation gate is therefore narrowed to generic `ell>=2`
+Einstein-plus and extra-primary oscillator pairs.
 
 ### Classical ownership
 
