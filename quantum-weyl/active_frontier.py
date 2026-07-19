@@ -101,6 +101,7 @@ DEPENDENCIES = {
     "product_S2_S2_ghost_Schur_modified_determinant": HERE / "spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_MODIFIED_DETERMINANT_PRECERTIFICATE.json",
     "product_S2_S2_ghost_minimal_vector_carrier": HERE / "spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_MINIMAL_VECTOR_CARRIER.json",
     "product_S2_S2_ghost_minimal_vector_determinant": HERE / "spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_MINIMAL_VECTOR_DETERMINANT_PRECERTIFICATE.json",
+    "product_S2_S2_full_BV_join_boundary": HERE / "spectral/euclidean/certificates/PRODUCT_S2_S2_FULL_BV_JOIN_BOUNDARY.json",
     "generic_ghost_Schur_weight_raised_zeta_factorization": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION.json",
     "generic_ghost_n3_adiabatic_carrier": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
     "generic_ghost_n3_triangle_kernel": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json",
@@ -239,6 +240,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "product_S2_S2_ghost_Schur_modified_determinant": "COUPLED_SCHUR_FACTOR_RIGOROUS_ENCLOSURE_COEFFICIENT_COMPUTED",
         "product_S2_S2_ghost_minimal_vector_carrier": "MINIMAL_VECTOR_EXACT_COEXACT_SPECTRUM_AND_PRIMING_COMPUTED",
         "product_S2_S2_ghost_minimal_vector_determinant": "MINIMAL_VECTOR_AND_FULL_WEIGHTED_GHOST_ENCLOSURES_COEFFICIENT_COMPUTED",
+        "product_S2_S2_full_BV_join_boundary": "PRODUCT_GHOST_COEFFICIENT_COMPUTED_FULL_BV_JOIN_BLOCKED_BY_SAME_BACKGROUND_PHYSICAL_CARRIER",
         "generic_ghost_Schur_weight_raised_zeta_factorization": "GENERIC_WEIGHT_RAISED_SCHUR_ZETA_FACTORIZATION_LOCAL_DEFECT_COMPUTED",
         "scalar_flat_K_Ricci_crosswalk": "K_EQUALS_RICCI_MODULO_QUADRATIC_CURVATURE_ON_SCALAR_FLAT_DOMAIN",
         "generic_ghost_n3_five_carrier_projection": "N3_GHOST_TRIANGLE_PROJECTED_TO_SCALAR_FLAT_FIVE_CARRIER_QUOTIENT",
@@ -349,6 +351,7 @@ def _load() -> dict[str, dict[str, Any]]:
     product_s2_s2_ghost_schur_modified = values["product_S2_S2_ghost_Schur_modified_determinant"]
     product_s2_s2_ghost_minimal_carrier = values["product_S2_S2_ghost_minimal_vector_carrier"]
     product_s2_s2_ghost_minimal_determinant = values["product_S2_S2_ghost_minimal_vector_determinant"]
+    product_s2_s2_full_bv_join = values["product_S2_S2_full_BV_join_boundary"]
     generic_ghost_schur_weight_raised = values["generic_ghost_Schur_weight_raised_zeta_factorization"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
     generic_ghost_n3_triangle = values["generic_ghost_n3_triangle_kernel"]
@@ -1446,6 +1449,23 @@ def _load() -> dict[str, dict[str, Any]]:
         != "PASSED"
     ):
         raise ValueError("product-S2xS2 ghost minimal-vector determinant frontier drifted")
+    if (
+        product_s2_s2_full_bv_join.get("scope_comparison", {}).get("same_background")
+        is not False
+        or product_s2_s2_full_bv_join.get("join_decision", {}).get(
+            "round_full_BV_rows_can_be_reused_on_product"
+        )
+        is not False
+        or product_s2_s2_full_bv_join.get("claim_flags", {}).get(
+            "PRODUCT_FULL_BV_DETERMINANT_COMPUTED"
+        )
+        is not False
+        or product_s2_s2_full_bv_join.get("minimal_missing_carrier", {}).get(
+            "primary"
+        )
+        != "PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER"
+    ):
+        raise ValueError("product-S2xS2 full-BV join boundary drifted")
     if (
         generic_ghost_schur_weight_raised.get("generic_local_result", {}).get(
             "coefficient_of_(4pi)^-2_integral_R2"
@@ -2559,8 +2579,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_PHYSICAL_GHOST_N3_AND_VECTOR_N1_N2_FIVE_CARRIER_MELLIN_MS_REPRESENTATIVE_ASSEMBLED_LONGITUDINAL_SCHUR_RESUMMED_NON_EINSTEIN_PRODUCT_WEIGHTED_GHOST_DETERMINANT_COEFFICIENT_COMPUTED_REMAINING_BV_OPEN_Q1_UNDERDETERMINED",
-                "next_gate": "INSERT_PROMOTED_PRODUCT_GHOST_DETERMINANT_IN_REMAINING_BV_LEDGER_AND_FIX_OPEN_FINITE_NORMALIZATIONS",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_PHYSICAL_GHOST_N3_AND_VECTOR_N1_N2_FIVE_CARRIER_MELLIN_MS_REPRESENTATIVE_ASSEMBLED_LONGITUDINAL_SCHUR_RESUMMED_NON_EINSTEIN_PRODUCT_WEIGHTED_GHOST_DETERMINANT_COEFFICIENT_COMPUTED_CROSS_BACKGROUND_FULL_BV_JOIN_REJECTED_Q1_UNDERDETERMINED",
+                "next_gate": "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -2575,8 +2595,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_AND_MATCHED_QME",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_PHYSICAL_GHOST_N3_AND_VECTOR_N1_N2_FIVE_CARRIER_REPRESENTATIVE_ASSEMBLED_LONGITUDINAL_SCHUR_PRODUCT_WEIGHTED_GHOST_DETERMINANT_COEFFICIENT_COMPUTED_REMAINING_BV_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "INSERT_PROMOTED_PRODUCT_GHOST_DETERMINANT_IN_REMAINING_BV_LEDGER_AND_FIX_OPEN_FINITE_NORMALIZATIONS",
+                "status": "FORBIDDEN_PHYSICAL_GHOST_N3_AND_VECTOR_N1_N2_FIVE_CARRIER_REPRESENTATIVE_ASSEMBLED_LONGITUDINAL_SCHUR_PRODUCT_WEIGHTED_GHOST_DETERMINANT_COEFFICIENT_COMPUTED_SAME_BACKGROUND_PRODUCT_PHYSICAL_BV_LEDGER_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
             },
         },
         "supersession_ledger": [
@@ -2830,7 +2850,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "INSERT_PROMOTED_PRODUCT_GHOST_DETERMINANT_IN_REMAINING_BV_LEDGER_AND_FIX_OPEN_FINITE_NORMALIZATIONS",
+            "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
             "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",

@@ -522,7 +522,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "INSERT_PROMOTED_PRODUCT_GHOST_DETERMINANT_IN_REMAINING_BV_LEDGER_AND_FIX_OPEN_FINITE_NORMALIZATIONS",
+            "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

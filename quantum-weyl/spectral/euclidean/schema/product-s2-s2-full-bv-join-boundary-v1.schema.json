@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/product-s2-s2-full-bv-join-boundary-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "dependencies", "scope_comparison", "same_background_coverage", "round_full_BV_inventory", "minimal_missing_carrier", "join_decision", "claim_flags", "next_gate", "verification_receipts", "higher_tiers_not_run", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-product-s2-s2-full-bv-join-boundary-v1"},
+    "result_id": {"const": "PRODUCT_S2_S2_FULL_BV_JOIN_BOUNDARY"},
+    "result_state": {"const": "PRODUCT_GHOST_COEFFICIENT_COMPUTED_FULL_BV_JOIN_BLOCKED_BY_SAME_BACKGROUND_PHYSICAL_CARRIER"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["product_ghost", "round_full_BV"],
+      "properties": {
+        "product_ghost": {"$ref": "#/$defs/dependency"},
+        "round_full_BV": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "scope_comparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["product_ghost_background", "product_ghost_signature", "accepted_full_BV_background", "accepted_full_BV_gauge", "same_background", "same_classical_commit", "product_ghost_classical_commit", "round_full_BV_classical_commit", "cross_background_substitution_authorized", "reason"],
+      "properties": {
+        "product_ghost_background": {"const": "S2(1) x S2(2)"},
+        "product_ghost_signature": {"const": "Euclidean"},
+        "accepted_full_BV_background": {"const": "round S4"},
+        "accepted_full_BV_gauge": {"type": "string", "pattern": "round_S4"},
+        "same_background": {"const": false},
+        "same_classical_commit": {"type": "boolean"},
+        "product_ghost_classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "round_full_BV_classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "cross_background_substitution_authorized": {"const": false},
+        "reason": {"type": "string", "minLength": 80}
+      }
+    },
+    "same_background_coverage": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/coverage"}
+    },
+    "round_full_BV_inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["integration_row_count", "physical_factor_ids", "ghost_factor_ids", "all_rows_accounted_on_round_S4", "transported_to_product"],
+      "properties": {
+        "integration_row_count": {"const": 4},
+        "physical_factor_ids": {"const": ["repository_physical_upper", "repository_physical_lower"]},
+        "ghost_factor_ids": {"const": ["repository_scalar_ghost", "repository_vector_ghost"]},
+        "all_rows_accounted_on_round_S4": {"const": true},
+        "transported_to_product": {"const": false}
+      }
+    },
+    "minimal_missing_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary", "required_content", "why_TT_only_is_insufficient"],
+      "properties": {
+        "primary": {"const": "PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER"},
+        "required_content": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string", "minLength": 20}},
+        "why_TT_only_is_insufficient": {"type": "string", "minLength": 80}
+      }
+    },
+    "join_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["product_ghost_row_can_be_retained_as_partial_BV_evidence", "round_full_BV_rows_can_be_reused_on_product", "complete_product_BV_determinant", "complete_Gamma1", "complete_Q1", "finite_C2_normalization"],
+      "properties": {
+        "product_ghost_row_can_be_retained_as_partial_BV_evidence": {"const": true},
+        "round_full_BV_rows_can_be_reused_on_product": {"const": false},
+        "complete_product_BV_determinant": {"const": "NOT_COMPUTED"},
+        "complete_Gamma1": {"const": "NOT_COMPUTED"},
+        "complete_Q1": {"const": "NOT_COMPUTED"},
+        "finite_C2_normalization": {"const": "OPEN"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["PRODUCT_GHOST_DETERMINANT_COEFFICIENT_COMPUTED", "SAME_BACKGROUND_PHYSICAL_HESSIAN_AVAILABLE", "SAME_BACKGROUND_BV_MEASURE_LEDGER_AVAILABLE", "PRODUCT_FULL_BV_DETERMINANT_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_Q1_SUPPLIED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "PRODUCT_GHOST_DETERMINANT_COEFFICIENT_COMPUTED": {"const": true},
+        "SAME_BACKGROUND_PHYSICAL_HESSIAN_AVAILABLE": {"const": false},
+        "SAME_BACKGROUND_BV_MEASURE_LEDGER_AVAILABLE": {"const": false},
+        "PRODUCT_FULL_BV_DETERMINANT_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_Q1_SUPPLIED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "next_gate": {"const": "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER"},
+    "verification_receipts": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier_2", "tier_3"],
+      "properties": {
+        "tier_2": {"type": "string", "minLength": 30},
+        "tier_3": {"type": "string", "minLength": 30}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 5,
+          "maxProperties": 5,
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        },
+        "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sector", "status", "evidence", "background"],
+      "properties": {
+        "sector": {"enum": ["coupled_Diff_Weyl_ghost", "gauge_fixed_metric_Hessian", "York_Hodge_nonminimal_measure", "complete_BV_zero_mode_and_contour_ledger"]},
+        "status": {"enum": ["COEFFICIENT_COMPUTED", "NO_CERTIFIED_MAP"]},
+        "evidence": {"type": ["string", "null"]},
+        "background": {"const": "S2(1) x S2(2)"}
+      }
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["test_tier", "command", "status"],
+      "properties": {
+        "test_tier": {"const": 1},
+        "command": {"type": "string", "minLength": 30},
+        "status": {"const": "PASS"}
+      }
+    }
+  }
+}

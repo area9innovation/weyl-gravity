@@ -1,0 +1,135 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL composition theorem proves that the coefficient-computed S2(1) x S2(2) coupled ghost determinant cannot be joined to the accepted round-S4 full-BV multiplicity ledger. It identifies the same-background gauge-fixed metric Hessian spectral carrier, measure/Berezinian ledger and complete zero-mode/contour policy as the minimal missing inputs. It computes no new determinant, Gamma1 or Q1, fixes no finite C2 normalization, and makes no Lorentzian, Hadamard, particle, positivity or QME claim.",
+  "claim_flags": {
+    "COMPLETE_Q1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "PRODUCT_FULL_BV_DETERMINANT_COMPUTED": false,
+    "PRODUCT_GHOST_DETERMINANT_COEFFICIENT_COMPUTED": true,
+    "SAME_BACKGROUND_BV_MEASURE_LEDGER_AVAILABLE": false,
+    "SAME_BACKGROUND_PHYSICAL_HESSIAN_AVAILABLE": false
+  },
+  "dependencies": {
+    "product_ghost": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_MINIMAL_VECTOR_DETERMINANT_PRECERTIFICATE.json",
+      "result_id": "PRODUCT_S2_S2_GHOST_MINIMAL_VECTOR_DETERMINANT_PRECERTIFICATE",
+      "sha256": "f8d86b1b6ecfe978af11489c716fe11f49aaa3304e4c6ece6705f9e76ea66bed"
+    },
+    "round_full_BV": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
+      "result_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+      "sha256": "5bdc6ee4674e3a58ab0da0d4f8dc848ac7eebc4b84544c2079dee766362b9970"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "higher_tiers_not_run": {
+    "tier_2": "The result only compares two unchanged content-addressed certificates and introduces no new operator or coefficient.",
+    "tier_3": "No theorem lifecycle or coefficient is promoted; the certificate prevents an invalid cross-background promotion."
+  },
+  "join_decision": {
+    "complete_Gamma1": "NOT_COMPUTED",
+    "complete_Q1": "NOT_COMPUTED",
+    "complete_product_BV_determinant": "NOT_COMPUTED",
+    "finite_C2_normalization": "OPEN",
+    "product_ghost_row_can_be_retained_as_partial_BV_evidence": true,
+    "round_full_BV_rows_can_be_reused_on_product": false
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "minimal_missing_carrier": {
+    "primary": "PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER",
+    "required_content": [
+      "complete same-gauge fourth-order metric operator on S2(1) x S2(2), without assuming the round-S4 TT split",
+      "exact tensor-harmonic spectral decomposition or equivalent primed resolvent/heat carrier",
+      "bosonic contour and determinant phase policy",
+      "same-background York/Hodge and nonminimal Berezinian ledger",
+      "complete physical, ghost and conformal zero-mode accounting",
+      "content-addressed classical-snapshot compatibility proof"
+    ],
+    "why_TT_only_is_insufficient": "The selected product has unequal factor curvatures and is not the round Einstein fixture used to derive the two TT factors; off-shell gauge-fixed metric rows can mix York sectors."
+  },
+  "next_gate": "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
+  "provenance": {
+    "source_manifest": {
+      "quantum-weyl/spectral/euclidean/product_s2_s2_full_bv_join_boundary.py": "309c182ab9e9e00e2b5812f1c11d3a41971205af5f60feca84fd6933af81f8fe",
+      "quantum-weyl/spectral/euclidean/product_s2_s2_full_bv_join_boundary_certificate.py": "ee311feef5f428fea52cdc8da09f9d7f9bf704742269f7841618bf411f243bf7",
+      "quantum-weyl/spectral/euclidean/schema/product-s2-s2-full-bv-join-boundary-v1.schema.json": "2b9db713cfc12203212569c294d330e9e704b981fa03f799a8d7e714bbe75a97",
+      "quantum-weyl/spectral/euclidean/tests/test_product_s2_s2_full_bv_join_boundary.py": "5b3e8f8ea0257ef81a8e42bafca82f9ed66da680225cb3cdedd928cbd29ee35e",
+      "quantum-weyl/spectral/euclidean/verify_product_s2_s2_full_bv_join_boundary.py": "12f3b0d248aadc6900c6079a61f3798c1cf39818ff9f430f22c1b09451982ace"
+    },
+    "source_manifest_sha256": "e5b5e737ce831f5964930ea856aa992072879305836769aca3b2bd041f85a660"
+  },
+  "result_id": "PRODUCT_S2_S2_FULL_BV_JOIN_BOUNDARY",
+  "result_state": "PRODUCT_GHOST_COEFFICIENT_COMPUTED_FULL_BV_JOIN_BLOCKED_BY_SAME_BACKGROUND_PHYSICAL_CARRIER",
+  "round_full_BV_inventory": {
+    "all_rows_accounted_on_round_S4": true,
+    "ghost_factor_ids": [
+      "repository_scalar_ghost",
+      "repository_vector_ghost"
+    ],
+    "integration_row_count": 4,
+    "physical_factor_ids": [
+      "repository_physical_upper",
+      "repository_physical_lower"
+    ],
+    "transported_to_product": false
+  },
+  "same_background_coverage": [
+    {
+      "background": "S2(1) x S2(2)",
+      "evidence": "full_vector_plus_schur_weighted",
+      "sector": "coupled_Diff_Weyl_ghost",
+      "status": "COEFFICIENT_COMPUTED"
+    },
+    {
+      "background": "S2(1) x S2(2)",
+      "evidence": null,
+      "sector": "gauge_fixed_metric_Hessian",
+      "status": "NO_CERTIFIED_MAP"
+    },
+    {
+      "background": "S2(1) x S2(2)",
+      "evidence": null,
+      "sector": "York_Hodge_nonminimal_measure",
+      "status": "NO_CERTIFIED_MAP"
+    },
+    {
+      "background": "S2(1) x S2(2)",
+      "evidence": null,
+      "sector": "complete_BV_zero_mode_and_contour_ledger",
+      "status": "NO_CERTIFIED_MAP"
+    }
+  ],
+  "schema": "quantum-weyl-product-s2-s2-full-bv-join-boundary-v1",
+  "scope_comparison": {
+    "accepted_full_BV_background": "round S4",
+    "accepted_full_BV_gauge": "round_S4_fourth_order_TT_after_exact_York_Hodge_and_BRST_quartet_reduction",
+    "cross_background_substitution_authorized": false,
+    "product_ghost_background": "S2(1) x S2(2)",
+    "product_ghost_classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+    "product_ghost_signature": "Euclidean",
+    "reason": "A determinant row is background-dependent spectral data. The round-S4 TT factorization, York/Hodge cancellations and zero-mode policy cannot be transported to the unequal-curvature S2(1) x S2(2) product by matching factor names.",
+    "round_full_BV_classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+    "same_background": false,
+    "same_classical_commit": false
+  },
+  "verification_receipts": [
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.product_s2_s2_full_bv_join_boundary_certificate --check",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_product_s2_s2_full_bv_join_boundary",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/spectral/euclidean/tests/test_product_s2_s2_full_bv_join_boundary.py -v",
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}

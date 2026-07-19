@@ -283,7 +283,7 @@ def build() -> dict[str, Any]:
             name: {"path": str(path.relative_to(ROOT)), "result_id": inputs[name]["result_id"], "sha256": _sha256(path)}
             for name, path in DEPENDENCIES.items()
         },
-        "next_gate": "INSERT_THE_PROMOTED_PRODUCT_GHOST_DETERMINANT_IN_THE_REMAINING_BV_LEDGER_AND_FIX_THE_OPEN_FINITE_NORMALIZATIONS",
+        "next_gate": "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
         "claim_boundary": (
             "This EUCLIDEAN-SPECTRAL certificate rigorously computes the two active minimal-vector modified determinants, their two-polarization weighted and separately zeta-regularized totals, and the selected full vector-plus-Schur weighted enclosure on S2(1) x S2(2). The inherited passing 850-test Tier-3 receipt promotes these special-background determinant rows to COEFFICIENT_COMPUTED. This is not a generic-background form factor, complete BV ledger, Gamma1/Q1, restored QME, or Lorentzian causal, Hadamard, state-space, particle, positivity, scattering or unitarity theorem."
         ),

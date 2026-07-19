@@ -1372,7 +1372,7 @@ Receipts:
 Active gate:
 
 ```text
-INSERT_PROMOTED_PRODUCT_GHOST_DETERMINANT_IN_REMAINING_BV_LEDGER_AND_FIX_OPEN_FINITE_NORMALIZATIONS
+CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER
 ```
 
 ## Non-Einstein product Schur spectrum (2026-07-19)
@@ -1392,8 +1392,10 @@ kernel on a compact non-Einstein background and directly sees tracefree-Ricci
 anisotropy. It also corrects the priming policy: the three `(1,0)` and three
 `(0,1)` exact-vector zeros are poles of the separately written Schur factor.
 Their coupled determinant ratio is finite, `1/3` per mode, hence `3^-6` in
-total. The infinite bivariate sums have not yet been analytically continued,
-so no full coupled ghost determinant or new `Gamma1/Q1` is claimed.
+total. At this stage the infinite bivariate sums had not yet been analytically
+continued; the later weighted-row promotion above supersedes that numerical
+boundary. It still supplies no complete same-background BV determinant or new
+`Gamma1/Q1`.
 
 Receipt:
 [`product-s2-s2-ghost-schur-spectral-carrier.md`](../quantum-weyl/reports/product-s2-s2-ghost-schur-spectral-carrier.md).
@@ -1432,3 +1434,30 @@ future rows establish a Lorentzian QME or a particle state.
 
 Receipt:
 [`product-s2-s2-ghost-schur-det3-enclosure.md`](../quantum-weyl/reports/product-s2-s2-ghost-schur-det3-enclosure.md).
+
+## Product full-BV join boundary (2026-07-20)
+
+The promoted product ghost coefficient cannot be inserted into the accepted
+full-BV multiplicity ledger as previously phrased. The two artifacts are on
+different spectral backgrounds:
+
+```text
+coefficient-computed ghost row:  S2(1) x S2(2)
+accepted complete BV ledger:     round S4
+```
+
+The round-`S4` ledger uses its Einstein TT factorization, York/Hodge
+cancellations and fifteen-mode priming policy. None of those
+background-dependent spectral rows is transported to the unequal-curvature
+product by matching factor names. The product ghost determinant remains
+`COEFFICIENT_COMPUTED`, but the full-product join is fail-closed.
+
+The minimal physical import is now explicit: a complete same-gauge
+fourth-order metric Hessian on `S2(1) x S2(2)`, its tensor-harmonic spectrum or
+equivalent primed Green/heat carrier, the bosonic contour, and a
+same-background York/Hodge/nonminimal and zero-mode ledger. A TT-only import
+is insufficient because the off-shell non-Einstein product can mix York
+sectors.
+
+Receipt:
+[`product-s2-s2-full-bv-join-boundary.md`](../quantum-weyl/reports/product-s2-s2-full-bv-join-boundary.md).

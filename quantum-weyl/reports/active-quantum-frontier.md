@@ -547,13 +547,12 @@ the renormalized observable restriction remain open.
 
 The current coefficient-bearing critical path is:
 
-1. insert the promoted `S2(1) x S2(2)` weighted `R(K)`, finite-part
-   `R(K^2)`, coupled Schur and minimal-vector determinant into the remaining BV
-   ledger; the regular-complement `det_3`, matched exceptional factor `3^-6`,
-   exact/coexact carrier, Killing-zero priming, local zeta/weighted defect and
-   both infinite active scalar modified determinants are coefficient-computed,
-   while arbitrary-background finite rows still require a generic primed
-   Green kernel or spectral measure;
+1. construct the same-gauge metric Hessian spectral carrier and
+   York/Hodge/nonminimal measure and zero-mode ledger on `S2(1) x S2(2)`; the
+   promoted weighted `R(K)`, finite-part `R(K^2)`, coupled Schur and
+   minimal-vector ghost determinant remain coefficient-computed, but the
+   accepted complete BV ledger is on round `S4` and cannot be substituted
+   across backgrounds;
 2. classify the parity-odd derivative sector and fix the finite `C2` and
    absolute dressed `R(g_hat)^2` normalizations and renormalized products;
 3. use those data to determine complete `Gamma1/Q1`;
@@ -583,6 +582,12 @@ After the receipts were reconciled, a fresh 850-test Tier-3 run passed in
 errors. The weighted rows, coupled Schur factor and selected full
 vector-plus-Schur determinant are now `COEFFICIENT_COMPUTED` on the declared
 product background.
+
+The exact join-boundary certificate now rejects the previously phrased direct
+insertion into the round-`S4` ledger.  On the unequal-curvature product, the
+off-shell gauge-fixed metric operator need not preserve the round-Einstein TT
+split.  A same-background physical Hessian spectrum, bosonic contour,
+measure/Berezinian and complete zero-mode ledger must land first.
 
 The promoted product chain regenerates in approximately 42 seconds and its
 three independent verifiers plus 18 scoped tests pass in approximately 36
