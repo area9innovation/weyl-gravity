@@ -1751,12 +1751,15 @@ records bounded `OBSTRUCTED`, smooth infinite secular `OPEN`, and causal
 ### Classical ownership
 
 The authoritative support-local Berger tensors are now certified through
-arity three.  The classical team therefore moves to
-`RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1`: the committed triangle now
-imports the Einstein map, support-local cofiber, `H_product` equivariance and
-fixed-`N=2` endpoints by hash.  Residual equivariance and cofiber compatibility
-are certified; construct the observable pullback and relative-sector
-detectors without identifying the three noncyclic action forms.  The first
+arity three.  `RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1` now completes the
+linear same-background handoff: the all-row finite-order inclusion induces a
+contravariant support-local chain map on local polynomial observables,
+equivariant under `H_product`, while exact action-pairing coefficient
+functionals separate every certified nonzero generic and exceptional extra
+cofiber.  The coefficient detectors are `REDUCED-MODE`, not local Peierls or
+relational observables, and full `SO(4,2)`, final residual descent, nonlinear
+`f2`, causal Green transport and any Berger cross-background map remain
+false.  The first
 concrete observer fixture remains the Berger relational observable and
 operational redshift rail, using only the domain that survives the nonlinear
 and causal gates.  It must not duplicate the Einstein map or the Green

@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-residual-observable-functor-v1.schema.json",
+  "title": "Relative residual and observable functor certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "observable_pullback", "residual_equivariance", "relative_detectors", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-residual-observable-functor-v1"},
+    "result_id": {"const": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1"},
+    "result_state": {"const": "LINEAR_OBSERVABLE_PULLBACK_AND_RELATIVE_COFIBER_DETECTORS_CERTIFIED"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]}},
+    "scope": {"$ref": "#/$defs/stringObject"},
+    "dependencies": {"type": "object", "minProperties": 10, "additionalProperties": {"$ref": "#/$defs/artifact"}},
+    "observable_pullback": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "target", "linear_formula", "polynomial_formula", "chain_identity", "locality", "cohomology_map", "contravariant", "support_local"],
+      "properties": {
+        "source": {"type": "string"}, "target": {"type": "string"},
+        "linear_formula": {"type": "string"}, "polynomial_formula": {"type": "string"},
+        "chain_identity": {"type": "string"}, "locality": {"type": "string"},
+        "cohomology_map": {"type": "string"}, "contravariant": {"const": true},
+        "support_local": {"const": true}
+      }
+    },
+    "residual_equivariance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["group", "field_identity", "observable_identity", "time_generator", "endpoint_map", "endpoint_cofiber_dimension", "certified"],
+      "properties": {
+        "group": {"type": "string"}, "field_identity": {"type": "string"},
+        "observable_identity": {"type": "string"}, "time_generator": {"type": "string"},
+        "endpoint_map": {"type": "string"}, "endpoint_cofiber_dimension": {"const": 0},
+        "certified": {"const": true}
+      }
+    },
+    "relative_detectors": {
+      "type": "object", "additionalProperties": false,
+      "required": ["general_formula", "category", "sectors", "zero_cofiber_sectors"],
+      "properties": {
+        "general_formula": {"type": "string"}, "category": {"type": "string"},
+        "sectors": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/detector"}},
+        "zero_cofiber_sectors": {"const": ["homogeneous_generalized_zero", "axial_twist_primary", "global_residual_endpoints"]}
+      }
+    },
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["relative_observable_pullback_constructed", "observable_pullback_is_chain_map", "observable_pullback_support_local", "H_product_equivariance_exact", "time_translation_equivariance_exact", "cofiber_detectors_constructed", "detectors_annihilate_einstein_image", "detectors_separate_certified_extra_cofibers", "reduced_mode_pullback_kernel_nonzero", "endpoint_cofiber_zero", "full_SO42_equivariance_claimed", "standard_pairing_cyclic_relative_map", "full_relative_arity_two_morphism", "final_residual_quotient_computed", "causal_green_relative_functor", "Berger_cross_background_map", "quantum_lift"],
+      "properties": {
+        "relative_observable_pullback_constructed": {"const": true},
+        "observable_pullback_is_chain_map": {"const": true},
+        "observable_pullback_support_local": {"const": true},
+        "H_product_equivariance_exact": {"const": true},
+        "time_translation_equivariance_exact": {"const": true},
+        "cofiber_detectors_constructed": {"const": true},
+        "detectors_annihilate_einstein_image": {"const": true},
+        "detectors_separate_certified_extra_cofibers": {"const": true},
+        "reduced_mode_pullback_kernel_nonzero": {"const": true},
+        "endpoint_cofiber_zero": {"const": true},
+        "full_SO42_equivariance_claimed": {"const": false},
+        "standard_pairing_cyclic_relative_map": {"const": false},
+        "full_relative_arity_two_morphism": {"const": false},
+        "final_residual_quotient_computed": {"const": false},
+        "causal_green_relative_functor": {"const": false},
+        "Berger_cross_background_map": {"const": false},
+        "quantum_lift": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 20},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 8}}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}
+    },
+    "stringObject": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string"}},
+    "detector": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sector", "basis_rank", "basis", "gram", "orthogonal_to_einstein_image", "nonradical", "pullback_zero"],
+      "properties": {
+        "sector": {"type": "string"}, "basis_rank": {"const": 2},
+        "basis": {"type": "array", "minItems": 2},
+        "gram": {"oneOf": [{"type": "string"}, {"type": "array", "minItems": 2}]},
+        "orthogonal_to_einstein_image": {"const": true}, "nonradical": {"const": true}, "pullback_zero": {"const": true}
+      }
+    }
+  }
+}

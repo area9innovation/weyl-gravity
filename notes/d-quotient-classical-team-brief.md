@@ -609,6 +609,31 @@ Return exact defects rather than forcing equivariance.  A solution-level
 comparison is not an observable map, and `D_GAUGE` in one derived sector is
 not evidence that the cofiber construction commutes with that quotient.
 
+`RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1` now closes the linear version
+of this handoff.  Dualizing the complete finite-order all-row inclusion gives
+the contravariant support-local chain map
+
+\[
+\iota^*: \operatorname{Obs}_{\rm loc}(\mathcal C_{WM})
+\longrightarrow \operatorname{Obs}_{\rm loc}(\mathcal C_{EM}),
+\qquad O_f\longmapsto O_{\iota^\sharp f}.
+\]
+
+It is equivariant under the certified product residual group, including
+\(H=\partial_t\), and the global endpoint cofiber is zero.  On solution
+cohomology, inverse action-current Gram matrices give exact coefficient
+detectors for the generic axial, generic polar and both exceptional
+\(\ell=1\) extra cofibers; orthogonality makes their pullback zero and
+nondegeneracy makes them separating.  These detectors are `REDUCED-MODE`
+stationary coefficients, not support-local Peierls or relational observables.
+They exhibit a nonzero pre-residual kernel, not a quasi-isomorphism.  Full
+\(SO(4,2)\), final residual descent, the nonlinear relative morphism, causal
+Green transport, and a Berger cross-background observable map remain false
+or `NO_CERTIFIED_MAP`.  The block-diagonal charge derived sector does not
+commute with the full arity-two morphism because the direct Taub obstruction
+survives.  The classical lane now returns to the independent curved
+parent-to-metric C-G2 bridge.
+
 Use the shared row format:
 
 | Setting | Map \(\iota\) | Cofiber | Relative pairing | \(\mathfrak O_2\) | Residual action | Observable map | Quantum lift |

@@ -237,6 +237,16 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("128-row", entry["claim_boundary"])
         self.assertIn("cross incidence", entry["claim_boundary"])
 
+    def test_relative_observable_pullback_is_linear_and_same_background(self):
+        entry = next(item for item in atlas.build()["entries"] if "relative_observable_pullback_and_detectors" in item["id"])
+        self.assertEqual(entry["descriptions"]["observational"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+        self.assertEqual(entry["descriptions"]["quantum"], "NO_CERTIFIED_MAP")
+        self.assertIn("REDUCED-MODE", entry["claim_boundary"])
+        self.assertIn("not local Peierls or relational", entry["claim_boundary"])
+        self.assertIn("full SO(4,2)", entry["claim_boundary"])
+
     def test_relative_current_seed_is_local_but_not_a_divergence_cone(self):
         entry = next(item for item in atlas.build()["entries"] if "polarized_relative_noether_current_seed" in item["id"])
         self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")

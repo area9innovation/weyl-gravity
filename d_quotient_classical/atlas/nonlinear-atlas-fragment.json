@@ -1830,6 +1830,75 @@
       }
     },
     {
+      "claim_boundary": "The all-row finite-order inclusion induces a contravariant support-local chain map on local polynomial BRST observables and is equivariant under the certified product residual group, including time translation. Exact REDUCED-MODE coefficient detectors separate the generic axial, generic polar and exceptional ell1 extra cofibers while vanishing on the Einstein image. They are not local Peierls or relational observables; full SO(4,2), final residual descent, cyclic relative equivalence, f2, causal Green transport, Berger cross-background mapping and quantum transfer remain unproved or obstructed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "CERTIFIED",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1.json",
+          "result_id": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1",
+          "sha256": "94f213e795d6ba08403e053863f6007c668d8ef068bf15cf54c56c8914c823ea"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1",
+          "sha256": "1fc80971388e4442aff3e9b7e88362e2018d80c7164262918619e436d4a4711a"
+        }
+      ],
+      "id": "nonlinear.product.bridge1.relative_observable_pullback_and_detectors",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The detector ledger covers generic axial/polar and exceptional ell1 extra shells at their exact same-background mode scopes.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "Action-derived orthogonality and nondegenerate extra Gram matrices define coefficient detectors that annihilate the Einstein image.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The detector kernel exists before final residual quotient; no final residual survival or nonlinear interaction verdict follows.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The linear observable pullback is exact, but the full nonlinear relative morphism remains obstructed at f2.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "Finite-order dualization is support local, but no relative causal Green functor is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No smooth-secular nonlinear observable functor is certified.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The observable pullback is compatible with the imported H_product action and identity endpoint map; the separate five-charge derived receiver remains exact.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compact magnetic Plebanski-Hacyan product",
+        "boundaries": "closed S1_L x S2, fixed Chern class N=2, before the final residual quotient",
+        "carrier": "complete minimal all-row linear triangle and its support-local mapping cofiber",
+        "charge_sector": "fixed magnetic bundle with electric tangent and flat S1 holonomy retained",
+        "degree": "linear BRST observable DGA and solution-cohomology coefficient observables",
+        "ell": "ell>=2 generic; ell=1 exceptional; homogeneous and twist zero-cofiber dispositions",
+        "k": "all certified compact momenta",
+        "m": "all by SO3 equivariance",
+        "omega": "standard and extra certified shells",
+        "parity": "generic axial and polar plus certified exceptional sectors",
+        "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "Every real-structure-preserving product-equivariant cohomology-isomorphic correction is obstructed from being cyclic for the standard action-derived pairings on the generic physical fibres. This includes corrected nonidentity maps, declared chain-homotopy repairs and cohomologically exact current improvements. A noncyclic off-shell triangle carrying three distinct forms, an explicitly pairing-changed theorem, exceptional/global sectors and final residual descent remain OPEN or NO_CERTIFIED_MAP. This result does not by itself decide Delta2, ell3 on cohomology, observables, particles or quantum states.",
       "descriptions": {
         "causal": "NOT_APPLICABLE",
@@ -1905,7 +1974,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py",
-  "generated_by_sha256": "462a93e688400c04b7011592641a7743c75d53a898628da06534cf7e57d07513",
+  "generated_by_sha256": "6596c2b0c79c3951f10cf0cf410040c54ecb411c24526a0aba1bb96ce8adcea8",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

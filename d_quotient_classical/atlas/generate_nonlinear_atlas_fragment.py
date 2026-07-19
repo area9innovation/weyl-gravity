@@ -52,6 +52,7 @@ CERTS = {
     "relative_cyclic_five_current_cone": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1.json",
     "relative_global_five_charge_replay": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_GLOBAL_FIVE_CHARGE_REPLAY_V1.json",
     "relative_current_cofiber_assembly": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1.json",
+    "relative_observable_functor": ROOT / "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -403,6 +404,8 @@ def entries() -> list[dict[str, Any]]:
     relative_global_charge_replay_scope = relative_global_charge_replay["scope"]
     relative_current_cofiber_assembly = json.loads(CERTS["relative_current_cofiber_assembly"].read_text())
     relative_current_cofiber_assembly_scope = relative_current_cofiber_assembly["scope"]
+    relative_observable_functor = json.loads(CERTS["relative_observable_functor"].read_text())
+    relative_observable_functor_scope = relative_observable_functor["scope"]
     identity_cyclic_scope = json.loads(CERTS["identity_cyclic_obstruction"].read_text())["scope"]
     return [
         {
@@ -883,6 +886,24 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("relative_current_cofiber_assembly", "relative_global_five_charge_replay", "relative_charge_koszul_preflight", "relative_f2_taub_obstruction"),
             "claim_boundary": "The 78-row support-local unary mapping cofiber and 50-row cyclic current cone form a square-zero 128-row block-diagonal receiver. It exactly represents the five stabilizer-charge projection and its Koszul derived zero locus, but projecting any candidate f2 back to the Weyl summand reproduces the obstructed direct equation. A typed cross incidence, derived source pullback, modified unary map or different background is still required; arity three, causal, observational, particle and quantum claims remain false.",
+        },
+        {
+            "id": "nonlinear.product.bridge1.relative_observable_pullback_and_detectors",
+            "scope": relative_observable_functor_scope,
+            "descriptions": {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "CERTIFIED", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "The linear observable pullback is exact, but the full nonlinear relative morphism remains obstructed at f2."),
+                    ("OPEN", "No smooth-secular nonlinear observable functor is certified."),
+                    ("NO_CERTIFIED_MAP", "Finite-order dualization is support local, but no relative causal Green functor is certified."),
+                ),
+                dispersion=("CERTIFIED", "The detector ledger covers generic axial/polar and exceptional ell1 extra shells at their exact same-background mode scopes."),
+                pairing=("CERTIFIED", "Action-derived orthogonality and nondegenerate extra Gram matrices define coefficient detectors that annihilate the Einstein image."),
+                taub=("CERTIFIED", "The observable pullback is compatible with the imported H_product action and identity endpoint map; the separate five-charge derived receiver remains exact."),
+                resonance=("OPEN", "The detector kernel exists before final residual quotient; no final residual survival or nonlinear interaction verdict follows."),
+            ),
+            "evidence": _evidence("relative_observable_functor", "relative_current_cofiber_assembly"),
+            "claim_boundary": "The all-row finite-order inclusion induces a contravariant support-local chain map on local polynomial BRST observables and is equivariant under the certified product residual group, including time translation. Exact REDUCED-MODE coefficient detectors separate the generic axial, generic polar and exceptional ell1 extra cofibers while vanishing on the Einstein image. They are not local Peierls or relational observables; full SO(4,2), final residual descent, cyclic relative equivalence, f2, causal Green transport, Berger cross-background mapping and quantum transfer remain unproved or obstructed.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction",

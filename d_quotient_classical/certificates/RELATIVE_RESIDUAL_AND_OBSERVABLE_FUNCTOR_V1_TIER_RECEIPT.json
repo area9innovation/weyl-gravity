@@ -1,0 +1,27 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1_TIER_RECEIPT",
+  "artifact": {"path": "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1.json", "sha256": "94f213e795d6ba08403e053863f6007c668d8ef068bf15cf54c56c8914c823ea"},
+  "source_manifest": {
+    "d_quotient_classical/schema/relative-residual-observable-functor-v1.schema.json": "8223646e4941798bdaa90a49233e2cf070c4d568eadb6b19ee5f1a72de29ec9e",
+    "d_quotient_classical/relative/relative_residual_observable_functor.py": "711001cb03e38eca317702f5bee7b9798f447d1f77e7f9d1ecdf9e20052af508",
+    "d_quotient_classical/relative/verify_relative_residual_observable_functor.py": "d1a8a377c20040c963a24bf711c3a38f422480d594e38a384d583f5ab0daec1c",
+    "d_quotient_classical/relative/tests/test_relative_residual_observable_functor.py": "61eca414c31cbffddca8c0b253238331f016f5266149f64cb79bd7034a8aeb27",
+    "d_quotient_classical/reports/relative-residual-observable-functor-v1.md": "0288d54e1ecaa2a5298216fb509ffa3361e78d840351cff472ace1d79074f407"
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "checks": ["python source compilation", "strict Draft 2020-12 schema validation", "git diff --check"]},
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {"command": "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_residual_observable_functor --check --guards", "elapsed_seconds": 0.38, "max_rss_kb": 24316},
+        {"command": "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_relative_residual_observable_functor", "elapsed_seconds": 0.16, "max_rss_kb": 24164},
+        {"command": "python3 -m unittest d_quotient_classical.relative.tests.test_relative_residual_observable_functor", "elapsed_seconds": 0.21, "max_rss_kb": 25008},
+        {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-residual-observable-functor-v1.schema.json -d d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1.json", "elapsed_seconds": 2.06, "max_rss_kb": 197944}
+      ]
+    },
+    "tier_2": {"status": "NOT_RUN", "reason": "All imported chain maps and pairings are unchanged and content-addressed; the delivery applies formal dualization and exact reduced-mode Gram inverses."},
+    "tier_3": {"status": "NOT_RUN", "reason": "No theorem freeze, core-algebra change or release was requested."}
+  },
+  "claim_boundary": "The receipt covers the linear local observable pullback and four exact reduced-mode detector sectors. It does not certify full SO(4,2), final residual descent, a causal Green functor, Berger cross-background map or quantum lift."
+}
