@@ -2070,6 +2070,18 @@ marks only this resonance witness `CERTIFIED`; the complete odd-`L` ideals,
 same-fibre sources, Taub intersection, bounded and smooth-secular classes
 remain `OPEN`, and causal correction remains `NO_CERTIFIED_MAP`.
 
+Candidate 2 supplies the first complete odd-`L` fibrewise ideal.  Its exact
+scalar `L=3` parity pencil has a real invertible eigenbasis with eigenvalues
+`+lambda,-lambda`; the first binary-quartic transvectant then turns the two
+normal-form equations into independent rank-at-most-one conditions on two
+`5 x 2` matrices.  The resonance variety is therefore one irreducible
+complex dimension-12 Cartesian product in ambient dimension 20, defined by
+twenty minors.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_scalar_l3_zero_variety`
+marks only this complete ideal `CERTIFIED`.  The other fifteen fibrewise
+ideals, same-fibre sources, five Taub maps, bounded and smooth-secular classes
+remain `OPEN`; causal correction remains `NO_CERTIFIED_MAP`.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell
