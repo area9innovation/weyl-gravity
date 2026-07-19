@@ -187,7 +187,13 @@ gauge choices. One exact fixture gives a redshift ratio of (1+z=2).
 That is a real relational redshift calculation in a model, but not yet a
 prediction for a star or galaxy. The current observer programme is adding
 localized emitters, receivers, recoil and backreaction so that the global
-demonstration can become a more realistic measurement protocol.
+demonstration can become a more realistic measurement protocol. Its expanded
+108-part apparatus passes the basic cyclic consistency check, but fails a
+more demanding first-order consistency identity. The failure has been
+localized to a missing second-order clock transformation. Until that piece is
+derived and the test is replayed, the nonlinear detector cannot be promoted.
+This is a precise repair target, not a failure of the already certified
+linear redshift experiment.
 
 ### 2. Nonlinear balance removes some waves—and resonance adds another test
 
@@ -219,6 +225,14 @@ emerging rule is:
 > Global balance decides whether a formal next step exists; resonance helps
 > decide whether that next step can remain bounded.
 
+This is no longer based on one angular pattern. For the ordinary
+Einstein-like wave families, the same tuned balance-and-resonance geometry
+has now been proved for every angular momentum tested by the general
+formula. The first experiment combining two different absolute momenta has
+also computed all 164 planned basic couplings. Every basic coupling is
+individually obstructed, but combinations may still cancel; the full
+cancellation geometry remains open.
+
 The interaction story has also produced a useful correction. An apparent
 gravity–light interaction survived an initial reduction. Once the missing
 gauge structure was included, however, that term could be removed through
@@ -231,6 +245,17 @@ These findings do not yet prove long-term stability. They turn a vague fear
 about higher derivatives into explicit balance and resonance tests that can
 pass or fail mode by mode.
 
+There is also a deeper lesson about combining Einstein-like gravity with the
+larger Weyl theory. The linear embedding is exact, but at the first nonlinear
+order it develops a nonzero mismatch that cannot be repaired by a purely
+local correction on the complete compact wave space. Globally, that mismatch
+is measured by five conserved balances. Locally, however, the theory must
+first carry a flow of conserved current; the five charges appear only after
+that current is integrated over all of space. The canonical local current
+and its basic conservation identity have now been constructed from the full
+linear equations. The next test is to insert all five symmetries and prove
+that the integrated currents reproduce the five global balances.
+
 ### 3. Black-hole regularity does not trivially erase the additional family
 
 The black-hole programme begins with an exact family of spherical solutions
@@ -240,9 +265,10 @@ project obtains regular horizons, a consistent energy, horizon entropy and
 an exact first-law relation.
 
 The more difficult question concerns waves around the Schwarzschild member.
-The familiar Einstein axial gravitational wave is recovered, and the
-additional fourth-order content can be described through a curvature wave.
-That additional family has regular ingoing solutions at the future horizon.
+The familiar Einstein axial and polar gravitational waves are recovered, and
+the additional fourth-order content can be described through curvature
+waves. Those additional families have regular ingoing solutions at the
+future horizon.
 
 The action-derived classical pairing gives an unusual result. The ordinary
 Einstein wave is self-silent in the pure-Weyl pairing, while controlled
@@ -252,26 +278,27 @@ wave. This shows that the additional solution is not merely a duplicated
 factor in the equation. The sign is a classical structural fact, not yet a
 positive quantum probability or energy statement.
 
-The asymptotic conclusion is deliberately narrower than an earlier draft.
-The additional curvature wave has the same *leading* real-frequency
-characteristic as the Einstein wave in the tests completed so far. Horizon
-analyticity and that leading outer test do not force it to vanish. But a
-repeated characteristic can hide growing or logarithmic partners. The full
-metric falloff, finite flux at infinity and complete scattering problem have
-not yet been established.
+The outer-boundary calculation has now gone one important step further for
+both axial and polar wave patterns. Reconstructing the metric from the
+additional curvature waves produces enhanced or logarithmic tails. In the
+tested case, those tails make their total symplectic size at infinity
+diverge, while the Einstein waves remain finite. Requiring finite size
+therefore selects exactly the Einstein family in both parities at that
+fixture—even though the additional families remain regular at the horizon.
 
 The supported conclusion is therefore:
 
-> The additional axial family reaches the horizon regularly and is not
-> removed by the endpoint tests performed so far. Whether a complete
-> asymptotically flat boundary condition retains or excludes it remains open.
+> The additional axial and polar families reach the horizon regularly, but a
+> finite-size condition at infinity excludes them in one exactly checked
+> fixture. Whether this Einstein selection holds for all frequencies and
+> angular patterns remains open.
 
 There is also a perfectly local linear initial-data restriction that sets the
 extra curvature and its initial velocity to zero. The unanswered questions
-are whether that restriction is physically selected, whether it gives the
-right nondegenerate wave space, and whether interactions preserve it. Polar
-waves, complex frequencies, ringdown, stability and Hawking radiation remain
-future work.
+are whether finite norm selects the same space generally, whether that space
+has the right nondegenerate wave structure, and whether interactions preserve
+it. General frequencies and angular patterns, complex frequencies, ringdown,
+stability and Hawking radiation remain future work.
 
 ## The quantum fork
 
@@ -313,7 +340,7 @@ tested.
 |---|---|---|
 | Complete classical causal propagation on several controlled backgrounds | A causal clock-defined redshift signal, with realistic localized apparatus still under construction | Electrons, mass generation and Standard Model matter |
 | Gauge reduction and exact classical comparison rules | Additional compact and black-hole wave families, with their final physical status unresolved | A positive interacting quantum state and physical particles |
-| Global nonlinear balance conditions and explicit resonance obstructions | Static black-hole thermodynamics and horizon-reaching additional waves | Full black-hole scattering, stability, ringdown and Hawking radiation |
+| Global nonlinear balance conditions and explicit resonance obstructions | Static black-hole thermodynamics; additional waves reach the horizon but are excluded by finite size at infinity in both parities at one fixture | Full black-hole scattering, stability, ringdown and Hawking radiation |
 | A one-loop anomaly calculation and a compensator-based local repair in a changed theory | Candidate reduced quantum two-point functions with both positive and negative signs | Gravitational lensing, realistic cosmology, dark matter and dark energy |
 
 Light, gravitational waves, redshift and black holes therefore occur in

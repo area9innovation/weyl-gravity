@@ -9,7 +9,7 @@ The research programme was commissioned and directed by Asger Alstrup Palm
 orchestrator and corresponding human contact, but claims no technical
 contribution.
 
-Working manuscript, 18 July 2026. The theorem-frozen scope is
+Working manuscript, 19 July 2026. The theorem-frozen scope is
 `LOCAL-ALGEBRAIC` and `REDUCED-MODE`. Circulation remains conditional on the
 documented final human review described below.
 
@@ -54,8 +54,12 @@ all-orders solution. Post-freeze successor certificates now classify the
 complete finite-harmonic generic $k=0$ zero cone, one fixed-$|k|$
 opposite-momentum cone, and the full exceptional $\ell=1,k=0$ all-$m$ pure
 cone. A further tuned nonzero-$k$, axisymmetric $\ell=2$ certificate
-classifies the complete all-primary bounded cone on that declared fibre.
-These results sharpen the frontier without changing Theorems A and B below.
+classifies the complete all-primary bounded cone on that declared fibre, and
+the standard-branch resonance theorem now extends to every $\ell\geq2$ at
+the corresponding tuning. A two-absolute-momentum workload has closed all
+164 declared basis coefficients, but its arbitrary-amplitude zero variety
+remains open. These results sharpen the frontier without changing Theorems A
+and B below.
 
 ## 1. Introduction
 
@@ -1083,7 +1087,15 @@ and the landed results are:
    $k^2=2\sqrt3-7/6$, the complete all-primary bounded cone consists of two
    mixed axial--polar Einstein-minus sheets over an exact convex occupation
    polytope. The extra primary widens the allowed momentum-imbalance interval
-   but creates no additional shell collision.
+   but creates no additional shell collision;
+5. for every $\ell\geq2$, after the standard-branch tuning
+   $k^2=\sqrt{2\ell(\ell+1)}-\ell/2-1/6$, the complete axisymmetric standard
+   bounded cone is the origin plus two mixed axial--polar sheets on an exact
+   occupation interval;
+6. in the first two-absolute-momentum enlargement, all 108 axisymmetric
+   $L=4$ and all 56 declared nonaxisymmetric $L=1,3$ branch-basis
+   coefficients are exact and individually obstructed. The
+   arbitrary-amplitude cancellation variety is not yet closed.
 
 The remaining cone problem includes multiple $|k|$ fibres, infinite-mode
 Sobolev completion, homogeneous/twist/Wilson-line/charge mixtures, and the
@@ -1099,6 +1111,52 @@ by the exceptional all-$m$ theorem is a generalized homogeneous/twist
 zero-mode multiplied by an $\ell=2$ extra-primary mode at
 $\omega^2=16/3$.  Its bilinear source coefficient is now the sharp next gate;
 frequency differences and opposite nonzero momenta remain separate.
+
+### The relative nonlinear map lands first in currents, then in charges
+
+The same five charges now have an independent role in the attempted
+nonlinear Einstein--Maxwell-to-Weyl--Maxwell inclusion.  The complete
+action-derived $q_1,q_2,q_3$ data on the common 40-field carrier pass their
+internal nilpotency and cyclicity checks, and the linear inclusion $f_1$
+replays exactly.  At arity two, however, the strict defect
+
+\[
+\Delta_2=q^{\rm WM}_2(f_1,f_1)-f_1q^{\rm EM}_2
+\]
+
+is nonzero, with 50,854 exact coefficients.  The Taub pairing proves that no
+support-local $f_2$ can remove this defect on the full smooth periodic,
+fixed-bundle carrier.  After passage to the complete standard source
+cohomology, its global part is nevertheless represented exactly by the five
+relative quadratic charges
+
+\[
+(H,P_x,J_1,J_2,J_3).
+\]
+
+This does **not** permit those five numbers to be inserted directly as a
+support-local target bundle. A finite-order differential bilinear operation
+sends compactly supported inputs to compactly supported output, whereas a
+nonzero constant charge row has global support. The exact nonzero charge
+witness therefore forces the local receiver to be the horizontal
+Noether-current cone
+
+\[
+\Omega_H^3(M;\mathfrak g_{\rm stab}^*)
+\xrightarrow{d_H}
+\Omega_H^4(M;\mathfrak g_{\rm stab}^*),
+\]
+
+with the five charges obtained only after Cauchy-slice integration.  The
+canonical relative Hessian Green-current cone is now explicit: a finite
+telescoping identity closes on all fourteen physical rows and all
+coefficient jets, and its antisymmetrization supplies a local current of
+maximum derivative order three.  Precomposition with the five stabilizer
+actions, comparison with Lee--Wald by a horizontal improvement, cyclic BV
+dual rows, and equality with all five integrated charge blocks remain open.
+The result is therefore a
+precise architecture theorem and obstruction, not yet a nonlinear relative
+$L_\infty$ morphism.
 
 ## 11. Scope boundary
 
@@ -1120,15 +1178,24 @@ Post-freeze certified successors additionally establish:
   opposite-momentum cone, with boundedness not claimed;
 - the full exceptional $\ell=1,k=0$ all-$m$ pure-sector resonance no-go.
 - the tuned nonzero-$k$, axisymmetric $\ell=2$ all-primary bounded cone.
+- the all-$\ell$ tuned axisymmetric standard-branch bounded cone;
+- all 164 declared two-absolute-momentum branch-basis coefficients;
+- the arity-two relative defect, its Taub obstruction, the complete standard
+  five-charge receiver, and the necessity of a local Noether-current cone
+  before globalization.
 
 The following remain open:
 
 - mixed cones involving multiple $|k|$ fibres or infinite-mode completion;
+- the common two-momentum arbitrary-amplitude zero variety;
 - general mixed second-order closure;
 - integration of the certified jet to an exact or all-orders family;
 - homogeneous, twist, Wilson-line, charge, and other generalized global
   mixtures not covered by the all-$m$ exceptional theorem;
 - a final background-stabilizer quotient or relational observable;
+- stabilizer precomposition, Lee--Wald improvement comparison, cyclic BV
+  dual rows, integrated five-charge recovery, and a relative nonlinear
+  morphism beyond the obstructed strict inclusion;
 - Lorentzian causal propagation, asymptotic scattering, particles,
   quantization, ghosts, and unitarity.
 
@@ -1154,9 +1221,18 @@ algebraic arithmetic. The principal certificates are:
 | complete finite-harmonic generic $k=0$ cone | `bridge/certificates/einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order.json` |
 | fixed-$|k|$ opposite-momentum cone | `bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json` |
 | tuned nonzero-$k$ axisymmetric all-primary bounded cone | `bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.json` |
+| all-$\ell$ tuned standard-branch bounded cone | `bridge/certificates/einstein_maxwell_weyl_symbolic_ell_tuned_axisymmetric_bounded_cone.json` |
+| two-momentum axisymmetric $L=4$ matrices | `bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_axial_L4_matrix.json` and parity companions |
+| two-momentum nonaxisymmetric $L=1,3$ completion | `bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L1_L3_matrix.json` |
 | exceptional $\ell=1$ all-$m$ pure no-go | `bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_all_m_resonance.json` |
 | homogeneous nonzero-frequency quotient | `bridge/certificates/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.json` |
 | exceptional positive-sum resonance census | `bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_resonance_census.json` |
+| strict relative arity-two defect | `d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ARITY_TWO_DEFECT_V1.json` |
+| support-local $f_2$ Taub obstruction | `d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json` |
+| complete standard five-charge receiver | `d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json` |
+| finite-charge locality obstruction | `d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1.json` |
+| polarized relative Noether-current seed | `d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1.json` |
+| relative Hessian Green-current cone | `d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json` |
 
 Fast verification:
 

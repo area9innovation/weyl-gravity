@@ -88,7 +88,15 @@ complete axisymmetric all-primary bounded cone.  Its only shell resonance
 cuts out two mixed axial--polar Einstein-minus sheets, and the lower-frequency
 extra primary widens the exact interval on which positive-primary
 occupations can balance their energy and momentum.  The remaining oscillator
-columns are stated as open gates.
+columns are stated as open gates.  A successor theorem promotes the
+standard-branch part of this calculation to every \(\ell\geq2\): the exact
+two-parity resonance matrix has two mixed sheets and two one-sided planes,
+and charge balance reduces the complete tuned axisymmetric bounded cone to
+the origin together with the two mixed sheets on an explicit occupation
+interval.  A separate two-absolute-momentum computation has certified all
+108 axisymmetric \(L=4\) branch-basis coefficients and all 56 declared
+nonaxisymmetric \(L=1,3\) coefficients; every individual basis fixture is
+obstructed, while amplitude-level cancellations remain open.
 Consequently formal
 exponential-polynomial extendibility is a moment-map theorem, whereas
 bounded quasiperiodic extendibility is a strict resonance problem.
@@ -807,6 +815,77 @@ does enlarge the bounded nonlinear cone.  This is a theorem for one tuned
 \(\ell=2,m_A=0,|k|\) fibre, not for nonaxisymmetric modes, other harmonics or
 circumferences, or multiple absolute-momentum fibres.
 
+\section{All-angular-momentum promotion and the two-momentum workload}
+
+\subsection{The tuned standard-branch cone for every \texorpdfstring{\(\ell\geq2\)}{ell >= 2}}
+
+The standard Einstein-minus calculation admits a uniform angular-momentum
+promotion.  For each integer \(\ell\geq2\), tune the compact momentum by
+\begin{equation}\label{eq:symbolic-ell-tuning}
+ k^2=\sqrt{2\ell(\ell+1)}-\frac{\ell}{2}-\frac16.
+\end{equation}
+Let \(a_\pm\) and \(p_\pm\) denote the axial and polar Einstein-minus
+amplitudes at momenta \(\pm k\).  The complete standard-branch collision
+census has one relevant opposite-momentum characteristic shell.  Up to
+nonzero exact normalizations \(R_\ell>0\) and \(X_\ell\neq0\), its two
+adjoint pairings are
+\begin{align}
+ \mathcal R_{\rm polar}
+  &=R_\ell\left(a_+a_--\frac{\ell(\ell+1)}2p_+p_-\right),
+  \label{eq:symbolic-ell-polar}\\
+ \mathcal R_{\rm axial}
+  &=X_\ell\left(a_+p_--a_-p_+\right).
+  \label{eq:symbolic-ell-axial}
+\end{align}
+Their complex zero variety consists of two mixed sheets
+\begin{equation}\label{eq:symbolic-ell-sheets}
+ a_\pm=\sigma\sqrt{\frac{\ell(\ell+1)}2}\,p_\pm,
+ \qquad \sigma\in\{+1,-1\},
+\end{equation}
+and the two one-sided planes on which one momentum sign vanishes.
+
+\begin{theorem}[All-\(\ell\) tuned axisymmetric standard cone]
+\label{thm:symbolic-ell-standard-cone}
+For every \(\ell\geq2\) at the tuning \eqref{eq:symbolic-ell-tuning}, the
+complete bounded quasiperiodic cone on the declared axisymmetric standard
+Einstein-minus/Einstein-plus carrier is the origin together with the two
+mixed sheets \eqref{eq:symbolic-ell-sheets} satisfying
+\begin{equation}\label{eq:symbolic-ell-occupation-interval}
+ \frac{1-r_\ell}{1+r_\ell}
+ \leq \frac{|p_+|^2}{|p_-|^2}
+ \leq \frac{1+r_\ell}{1-r_\ell},
+ \qquad r_\ell:=\frac{\omega_-}{\omega_+}.
+\end{equation}
+The one-sided resonance planes meet the Hamiltonian and circle-momentum
+balance equations only at the origin.
+\end{theorem}
+
+The proof is uniform in \(\ell\): the exact collision census excludes every
+other standard-branch shell, equations
+\eqref{eq:symbolic-ell-polar}--\eqref{eq:symbolic-ell-axial} give the full
+resonance ideal, and the two global charge equations reduce to the elementary
+occupation interval \eqref{eq:symbolic-ell-occupation-interval}.  This is a
+genuine all-\(\ell\) theorem, but it is still separately tuned at each
+\(\ell\), axisymmetric, and confined to the standard branches.  It does not
+join different angular momenta or different absolute compact momenta.
+
+\subsection{Two absolute momenta: a branch-basis obstruction census}
+
+The first two-absolute-momentum enlargement has closed all 164 declared
+branch-basis coefficients.  The axisymmetric \(L=4\) calculation is
+complete: all 108 coefficients across axial--axial, polar--polar, and the two
+ordered cross-parity sectors are exact.  The nonaxisymmetric \(L=3\)
+calculation contributes 44 exact coefficients and the \(L=1\) companion the
+remaining 12.  Every declared
+individual branch-basis fixture in these two blocks has nonzero cokernel and
+a bounded obstruction.
+
+This is an exhaustive coefficient statement for the named basis columns,
+not yet a classification of their arbitrary-amplitude zero variety.
+Different columns may cancel after amplitudes are joined.  The common
+polynomial zero set is therefore retained as the open gate; no two-momentum
+tangent-cone theorem is claimed here.
+
 \section{Current bounded frontier}
 
 The electric, Wilson, and circumference columns are closed, and the first
@@ -976,9 +1055,10 @@ does not establish nonlinear stability.
 
 The manuscript is an \textsc{outline-allowed}/\textsc{draft-allowed}
 integration of committed certificates.  Its current source baseline is
-repository commit \texttt{cdf08f26a45fc93ac04b9da14bf9074d88e686d1}.
+repository commit \texttt{4657baebd558a4cbb50873812701b5911a3df861}.
 
 \begin{center}
+\small
 \begin{tabularx}{0.98\textwidth}{@{}Y Y@{}}
 \toprule
 Claim & Authoritative certificate\\
@@ -1009,6 +1089,14 @@ Opposite-momentum exponential-polynomial theorem &
 \cert{bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json}\\
 Tuned axisymmetric all-primary bounded cone &
 \cert{bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.json}\\
+All-\(\ell\) standard-branch resonance and bounded cone &
+\cert{bridge/certificates/einstein_maxwell_weyl_symbolic_ell_tuned_axisymmetric_bounded_cone.json}\\
+Two-momentum axisymmetric \(L=4\) matrices &
+\cert{bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_axial_L4_matrix.json} and the three parity companion matrices\\
+Two-momentum nonaxisymmetric \(L=3\) matrix &
+\cert{bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L3_matrix.json}\\
+Two-momentum nonaxisymmetric \(L=1,3\) completion &
+\cert{bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L1_L3_matrix.json}\\
 Moment-map/Taub bridge &
 \cert{bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json}\\
 \bottomrule
@@ -1024,9 +1112,10 @@ complete bounded cone.
 \section{Outlook}
 
 The immediate mathematical target is the full bounded finite-support cone.
-The next exact enlargement of Theorem~\ref{thm:tuned-all-primary-bounded} is
-the symbolic-\(\ell\) resonance coefficient and collision theorem, followed
-by a join of distinct \(|k|\) fibres without identifying their phase
+The symbolic-\(\ell\) standard-branch resonance and collision theorem is now
+closed, as is the complete 164-coefficient two-momentum branch-basis census.
+The next exact enlargement is the common amplitude-level zero variety,
+followed by a join of distinct \(|k|\) fibres without identifying their phase
 carriers.
 The immediate physical target is to compare its strata with the transferred
 Einstein/extra/Maxwell interaction tensor and with observer response.  A

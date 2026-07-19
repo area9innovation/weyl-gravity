@@ -1,8 +1,9 @@
 # Pure-Weyl gravity programme: executive summary for physicists
 
-**Last substantive update: 19 July 2026 — revised nonlinear tangent cone,
-black-hole axial endpoint result, observer response, and one-loop determinant
-programme.**
+**Last substantive update: 19 July 2026 — all-$\ell$ nonlinear cone,
+complete two-momentum basis census, relative Hessian-current bridge,
+two-parity black-hole finite-norm selection, observer obstruction, and product
+determinant carrier.**
 
 > **Research context.** Asger Alstrup Palm directs the programme and is the
 > accountable human contact. AI systems perform substantial derivation,
@@ -56,8 +57,10 @@ theory, or unitarity theorem presently exists.
 
 The current verdict is therefore neither “ghost removed” nor “theory ruled
 out.” Additional classical branches survive several gauge, radical, and
-endpoint tests; nonlinear and quantum calculations impose real obstructions;
-the decisive asymptotic and full-BV physical quotients remain open.
+horizon tests, while both parities at one Schwarzschild fixture are removed
+by finite symplectic norm at infinity. Nonlinear and quantum calculations impose
+further real obstructions; the general asymptotic and full-BV physical
+quotients remain open.
 
 ## Current verdict
 
@@ -65,7 +68,7 @@ the decisive asymptotic and full-BV physical quotients remain open.
 |---|---|---|
 | Complete causal free complexes on several declared backgrounds | Relational clocks, causal redshift, and localized detector preparations | Invariant branch-resolved interactions |
 | Explicit Einstein-image and additional fourth-order classical summands | Bounded nonlinear continuation on selected finite mode spaces | Complete bounded finite-support cone |
-| Nonzero Lee--Wald pairings for selected additional directions | Schwarzschild horizon admissibility and endpoint nonselection for an additional axial family | Asymptotic Bach phase space and scattering |
+| Nonzero Lee--Wald pairings for selected additional directions | Schwarzschild horizon admissibility plus two-parity finite-norm Einstein selection at one fixture | Asymptotic Bach phase space and scattering |
 | Exact nonlinear balance conditions and a strict local Euclidean one-loop anomaly | Compensator restoration in a changed theory and reduced Hadamard/Krein two-point functions | Positive full-BV state, Lorentzian QME, particles, and unitarity |
 
 The [public construction map](../certificate_graph/universe-building-dag.svg)
@@ -186,6 +189,16 @@ amplitude survives. Other balanced finite combinations can possess formal
 exponential-polynomial corrections with secular growth. The full bounded
 finite-support zero locus remains open.
 
+The standard-branch calculation now extends uniformly to every
+$\ell\ge2$ at a separately tuned compact momentum. Its exact resonance zero
+set consists of two mixed axial--polar sheets and two one-sided planes; after
+the global energy and momentum balances, the bounded cone is the origin plus
+the two mixed sheets on an explicit occupation interval. In a separate
+two-absolute-momentum enlargement, all 108 axisymmetric $L=4$ and all 56
+nonaxisymmetric $L=1,3$ branch-basis coefficients are exact and individually
+obstructed. This complete 164-coefficient basis census is not yet the
+arbitrary-amplitude zero variety: cross-column cancellations remain open.
+
 The Berger interaction programme has exact cyclic $q_2,q_3$ tensors and a
 retained mixed gravity--Maxwell $\ell_3$ representative on its declared
 mode space. That representative is an architectural result, not yet an
@@ -195,6 +208,19 @@ The second-jet image calculation is still active; no nontrivial cyclic
 deformation class or Einstein/additional/Maxwell mixing table is certified.
 The nonlinear symmetry that does close is
 $K_{\rm Berger}=D-\omega R$, not raw $D$.
+
+The Einstein--Maxwell-to-Weyl--Maxwell inclusion has also reached its first
+nonlinear obstruction. The common action-derived $q_1,q_2,q_3$ tensors pass
+their internal identities, but the strict arity-two inclusion defect is
+nonzero. Taub pairing rules out a support-local correcting $f_2$ on the full
+smooth periodic fixed-bundle carrier. Its global cohomological image is
+nevertheless exactly the five stabilizer charges. Locality therefore forces
+the relative receiver to be a Noether-current complex, with charges obtained
+only after integrating over a Cauchy slice. The canonical Hessian Green
+current and its local divergence identity are now exact on all fourteen
+physical rows. Stabilizer precomposition, cyclic-dual completion,
+Lee--Wald comparison, and recovery of all five integrated charges are the
+next gates.
 
 > **Immediate limitation.** Exponential-polynomial continuation is not
 > bounded stability, retarded solvability, Sobolev existence, an invariant
@@ -215,6 +241,10 @@ functions—the required short-distance singularity structure—with indefinite
 signs $(+,-,-)$. These Krein signs are signs in a candidate state pairing,
 not a full BRST-positive Hilbert space. The free curvature-observable CCR
 algebra is also exact, but it has no certified compatible positive state.
+On $S^2\times S^2$, a separate Euclidean spectral calculation now gives the
+exact longitudinal ghost Schur eigenvalue and a coupled exceptional-mode
+correction. It advances the determinant assembly but remains
+`EUCLIDEAN-SPECTRAL`, not a Lorentzian state or unitarity result.
 
 The black-hole programme classifies the static spherical Bach-flat family and
 obtains a consistently normalized energy, Wald entropy, and first law on its
@@ -224,14 +254,19 @@ has future-horizon-regular ingoing solutions. Controlled real-frequency
 fixtures give nonzero Einstein--additional and additional--additional horizon
 pairing, while the pure Einstein block is null in the pure-Weyl current.
 
-Horizon analyticity and the leading real-frequency asymptotic tests completed
-so far do not force the additional family to vanish. This is **scoped endpoint
-nonselection**, not a general causal-truncation no-go.
+Horizon analyticity alone does not force the additional family to vanish.
+But at $\ell=2$, $\omega=3/5$, the completed axial and polar metric
+reconstructions have divergent Einstein--extra and extra--extra slice norms,
+while the Einstein sector is finite (with an additional zero polar
+self-density in one sector). Thus finite symplectic norm at infinity selects
+exactly the Einstein sector in both parities at this fixture. This is a
+global phase-space selection, not a local horizon condition or a general
+all-frequency theorem.
 
-> **Immediate limitation.** The asymptotic Jordan structure, metric
-> reconstruction, finite-flux phase space, full exterior initial-boundary
-> problem, complex frequencies, polar current, ringdown, and stability remain
-> open.
+> **Immediate limitation.** A symbolic-frequency theorem, general $\ell$,
+> summability, a complete asymptotically
+> flat phase space, the exterior initial-boundary problem, complex
+> frequencies, ringdown, and stability remain open.
 
 ## Where the strongest criticism currently lands
 
@@ -243,8 +278,9 @@ The strongest criticism is correct on six points:
   unitarity or absence of radiative degrees of freedom.
 - Einstein inclusion is not nonlinear closure, symplectic equivalence, or an
   exclusive sector of Weyl gravity.
-- Additional classical branches survive selected gauge-radical and
-  black-hole endpoint tests.
+- Additional classical branches survive selected gauge-radical and horizon
+  tests, while finite symplectic norm excludes the extra branch in both
+  parities at one certified Schwarzschild fixture.
 - The Berger nonlinear generator is $K_{\rm Berger}=D-\omega R$, not raw
   $D$, and the retained interaction has no certified invariant branch
   meaning.
@@ -267,13 +303,13 @@ milestones are excluded.
 |---|---|---|---|
 | Free causal complex and residual cohomology | Complete cylinder causal complex; selected zero-charge residual vacuum and one-particle cohomology acyclic; $H^4\cong\mathbb C^2$ contains deformation classes | **Certified** | Closed free sector, not particles; [Papers 7--8](07-08-conformal-residual-cohomology-computational-supplement.pdf) |
 | Is $D$ gauge? | Charged on the unrestricted compact phase space; gauge on the Taub-zero derived sector | **Certified, sector-dependent** | Must be recomputed with boundaries and matter; [status ledger](../d_quotient_programme/reports/consolidated-status.md) |
-| Clocks and redshift | Healthy Berger clock and a gauge-invariant retarded Maxwell redshift fixture; localized leading detector responses exist | **Partial physical observable** | Common apparatus, all harmonics, recoil, and backreaction open; [Paper 9](09-relational-clocks-berger-d-cartan.pdf) |
+| Clocks and redshift | Healthy Berger clock and a gauge-invariant retarded Maxwell redshift fixture; localized leading detector responses exist | **Partial physical observable** | The 108-row apparatus first-jet unary is currently nilpotency-obstructed pending the second clock-map jet; [Paper 9](09-relational-clocks-berger-d-cartan.pdf) |
 | Einstein image and additional branches | Linear inclusion, axial additional nonradical block, and polar primary decomposition certified | **Certified classically** | Polar current, residual descent, causal boundaries, and quantization open; [Paper 92](92-extra-axial-lee-wald-bridge.pdf) |
-| Nonlinear tangent cone and resonances | Formal finite exponential-polynomial cone equals five-charge zero set; selected complete global plus $\ell=2$ bounded cone excludes nonzero additional-primary amplitudes | **Formal cone certified; bounded cone partial** | Full bounded finite-support, causal, infinite-mode, and all-order problems open; [Paper 13](13-compact-weyl-maxwell-second-order-tangent-cone.pdf) |
+| Nonlinear tangent cone and resonances | Formal finite exponential-polynomial cone equals five-charge zero set; tuned standard bounded cone is classified for every $\ell\ge2$; all 164 two-momentum basis coefficients are closed | **Formal cone and all-$\ell$ standard subcone certified; larger cone partial** | Arbitrary-amplitude two-momentum zero variety, causal, infinite-mode, and all-order problems open; [Paper 13](13-compact-weyl-maxwell-second-order-tangent-cone.pdf) |
 | Interaction and branch mixing | Retained mixed tensor is exact/cyclic; fuller ghost structure removes it through first jet | **Representative certified; invariant class open** | Second-jet image and branch-resolved operation not certified; [Paper 11](11-gravity-light-cyclic-causal-ell3.pdf) |
 | Free quantum observables and reduced states | Curvature CCR algebra exact; separate reduced E/A/L Hadamard carrier has signs $(+,-,-)$ | **Certified on distinct free carriers** | No full-BV positive state, particles, or interacting products; [state report](../quantum-weyl/reports/vacuum-cylinder-reduced-bridge4-hadamard.md) |
 | One-loop anomaly | Strict local Euclidean QME obstructed; compensator extension restores changed theory at one loop | **Strict obstructed / extension restored** | No Lorentzian QME or unitarity theorem; [Paper 12](12-pure-weyl-one-loop-bv-anomaly.pdf) |
-| Black holes | Static first law; Schwarzschild additional axial family is horizon-regular and survives tested leading endpoint conditions | **Static certified / endpoint result partial** | No general causal no-go, scattering phase space, stability, or ringdown; [Paper 14](14-pure-weyl-black-hole-radiation.pdf) |
+| Black holes | Static first law; additional axial and polar families reach the horizon, but finite symplectic norm at infinity selects the Einstein sector at the certified $\ell=2,\omega=3/5$ fixture | **Static certified / two-parity fixture classified** | Symbolic frequency, general $\ell$, full scattering phase space, stability, and ringdown open; [Paper 14](14-pure-weyl-black-hole-radiation.pdf) |
 | Asymptotic particles and unitarity | No theorem | **Open** | Requires asymptotic Bach phase space, positive physical state, scattering, and optical/unitarity tests |
 
 ## Highlights by audience
@@ -316,11 +352,12 @@ second detour or higher-spin consumer and a background-family theorem.
 ### Mathematical relativity and black holes
 
 The compact programme gives explicit charge-fibre-dependent Taub obstructions
-and resonant refinements; the black-hole programme gives a static first law,
-Ricci-carrier factorization, horizon reach, and scoped endpoint nonselection.
-Potentially distinctive elements are the exhaustive finite-mode cone and the
-pure-Weyl horizon pairing. The gates are the full bounded cone and a finite-flux
-Schwarzschild exterior phase space.
+and all-$\ell$ resonant refinements; the black-hole programme gives a static
+first law, Ricci-carrier factorization, horizon reach, and finite-norm
+Einstein selection in both parities at one fixture. Potentially distinctive elements
+are the exhaustive finite-mode cone and the pure-Weyl horizon/asymptotic
+pairing comparison. The gates are the joined two-momentum zero variety and a
+complete Schwarzschild exterior phase space.
 
 ### Relational observables and clocks
 
@@ -370,11 +407,11 @@ to its derivation and verifier.
 | Project | Current boundary | Exact next gate |
 |---|---|---|
 | [Cyclic causal Green transfer](90-cyclic-green-transfer-bridge.md) | Abstract conditional theorem with Berger, flat, and Nariai consumers; one Nariai formal tangent | Extend to a finite background family or second detour theory. |
-| [Charge-fibre obstruction](91-charge-fibre-taub-bridge.md) | Formal finite exponential-polynomial cone and selected bounded global plus $\ell=2$ subcone certified | Classify the remaining bounded shell-resonance zero locus. |
+| [Charge-fibre obstruction](91-charge-fibre-taub-bridge.md) | Formal cone, all-$\ell$ tuned standard cone, and all 164 two-momentum basis coefficients certified | Classify the common amplitude zero variety. |
 | [Additional axial/polar current](92-extra-axial-lee-wald-bridge.md) | Axial direct current and polar equation module certified | Compute the polar current, ungauged lift, residual descent, and physical boundary disposition. |
 | Relational clock and light | Global retarded redshift and localized leading detector preparations certified | Unite them in one backreacting clock-frequency comparison. |
-| Black-hole radiation | Static theorem, axial horizon reach/pairing fixtures, polar horizon reach, and scoped endpoint nonselection | Complete asymptotic Jordan/metric/finite-flux analysis before ringdown. |
-| Einstein--Weyl relative theory | Complete noncyclic linear triangle and Einstein--Maxwell tensors through $q_3$ | Import matching Weyl tensors and construct the relative nonlinear morphism. |
+| Black-hole radiation | Static theorem and horizon reach in both parities; finite norm at infinity selects Einstein in both parities at one fixture | Generalize in frequency and $\ell$, then construct the asymptotic phase space. |
+| Einstein--Weyl relative theory | Matching action-derived tensors through $q_3$; strict $f_1$ has a nonzero arity-two defect; global five-charge receiver and Hessian Green-current cone certified | Precompose all stabilizers, add cyclic duals, compare with Lee--Wald, and determine the correct relative nonlinear extension. |
 | Residual branch mixing | Retained cyclic representative and rank-46 carrier exist; physical interaction class not certified | Finish the second-jet image test and obtain an admissible branch resolution. |
 | Quantum anomaly and states | Strict anomaly, compensator restoration, reduced Hadamard carrier, and determinant subproblems certified | Assemble the physical Hessian/determinant and test the Lorentzian full-BV QME/state. |
 | Asymptotic Bach/BMS | Programme stage only | Construct differentiable charges, flux, falloffs, and signs at null infinity. |
@@ -428,6 +465,11 @@ symbolic laboratory rather than a collection of unchecked AI prose.
 - [Polar physical module certificate](../bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json)
 - [Complete noncyclic linear triangle](../bridge/einstein_sector/reports/einstein-weyl-relative-linear-triangle-v1.md)
 - [Einstein--Maxwell tensors through arity three](../bridge/einstein_sector/reports/einstein-maxwell-product-linfinity-through-arity-three.md)
+- [Relative arity-two defect](../d_quotient_classical/reports/einstein-weyl-relative-arity-two-defect.md)
+- [Relative five-charge receiver](../d_quotient_classical/reports/einstein-weyl-relative-complete-standard-five-charge-q2.md)
+- [Why the local receiver must be a current](../d_quotient_classical/reports/einstein-weyl-relative-finite-charge-support-local-lift-obstruction.md)
+- [Polarized relative current seed](../d_quotient_classical/reports/einstein-weyl-relative-polarized-noether-current-seed.md)
+- [Relative Hessian Green-current cone](../d_quotient_classical/reports/einstein-weyl-relative-hessian-green-current-cone.md)
 
 ### Nonlinear tangent cone and interactions
 
@@ -436,6 +478,10 @@ symbolic laboratory rather than a collection of unchecked AI prose.
 - [Standard global bounded cone](../bridge/einstein_sector/reports/einstein-maxwell-weyl-standard-global-bounded-second-order.md)
 - [Aligned additional bounded obstruction](../bridge/einstein_sector/reports/einstein-maxwell-weyl-global-extra-bounded-correction-obstruction.md)
 - [Aligned formal secular extension](../bridge/einstein_sector/reports/einstein-maxwell-weyl-global-extra-smooth-secular-second-order.md)
+- [All-ell tuned standard cone](../bridge/einstein_sector/reports/einstein-maxwell-weyl-symbolic-ell-tuned-axisymmetric-bounded-cone.md)
+- [Two-momentum axisymmetric workload](../bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-parity-workload.md)
+- [Two-momentum nonaxisymmetric L3 matrix](../bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-nonaxisymmetric-L3-matrix.md)
+- [Two-momentum nonaxisymmetric L1/L3 completion](../bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-nonaxisymmetric-L1-L3-completion.md)
 - [Berger first-jet redefinition](../d_quotient_classical/reports/berger-retained-mixed-ell3-first-jet-redefinition.md)
 - [Berger second-jet source](../d_quotient_classical/reports/berger-retained-mixed-ell3-second-jet-source.md)
 - [Rank-46 cyclic branch carrier](../d_quotient_classical/reports/berger-retained-46-stf2-prolongation-branch-carrier.md)
@@ -446,6 +492,7 @@ symbolic laboratory rather than a collection of unchecked AI prose.
 - [Localized emitter rank-two response](../closed_universe_observers/reports/berger-dynamical-emitter-cauchy-rank-two.md)
 - [Mass-uniform leading response](../closed_universe_observers/reports/berger-recoil-partitioned-leading-response-rank-two.md)
 - [First retarded emitter channel](../closed_universe_observers/reports/berger-recoil-free-emitter-first-retarded-maxwell-channel.md)
+- [108-row first-jet unary obstruction](../closed_universe_observers/reports/berger-108-row-q1-pbw-first-jet-replay-obstruction.md)
 
 ### Black holes
 
@@ -455,8 +502,10 @@ symbolic laboratory rather than a collection of unchecked AI prose.
 - [Axial horizon reach](../black_hole_programme/reports/bh2a-horizon-reach.md)
 - [Axial horizon pairing](../black_hole_programme/reports/bh2a-cross-flux.md)
 - [Scoped axial endpoint analysis](../black_hole_programme/reports/bh2a-causal-disposition.md)
+- [Axial finite-norm boundary class](../black_hole_programme/reports/bh2c-flux-class.md)
 - [Polar operator](../black_hole_programme/reports/bh2b-polar-split.md)
 - [Polar horizon reach](../black_hole_programme/reports/bh2b-polar-reach.md)
+- [Polar finite-norm boundary class](../black_hole_programme/reports/bh2c-polar-flux-class.md)
 
 ### Quantum anomaly and states
 
@@ -465,6 +514,7 @@ symbolic laboratory rather than a collection of unchecked AI prose.
 - [Reduced cylinder Hadamard/Krein carrier](../quantum-weyl/reports/vacuum-cylinder-reduced-bridge4-hadamard.md)
 - [Berger microlocal gate](../quantum-weyl/reports/berger-companion-hadamard-existence-audit.md)
 - [Generic ghost Schur reduction](../quantum-weyl/reports/generic-background-ghost-schur-schatten-split.md)
+- [Product $S^2\times S^2$ ghost Schur carrier](../quantum-weyl/reports/product-s2-s2-ghost-schur-spectral-carrier.md)
 
 ### Release and audit infrastructure
 
