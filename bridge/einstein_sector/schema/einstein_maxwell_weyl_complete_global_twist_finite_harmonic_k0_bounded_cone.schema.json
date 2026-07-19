@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "generality_level", "scope", "equation", "acyclic_dependency_audit", "finite_additivity_proof", "pairwise_sufficiency", "complete_bounded_zero_locus", "correction_classes", "classification", "interpretation", "next_gate", "claim_boundary", "provenance", "verification_receipt", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-complete-global-twist-finite-harmonic-k0-bounded-cone-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_TWIST_FINITE_HARMONIC_K0_BOUNDED_CONE"},
+    "result_state": {"const": "FINITE_GENERIC_K0_COMPLETE_STANDARD_GLOBAL_TWIST_BOUNDED_CONE_CLASSIFIED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "acyclic_dependency_audit": {"type": "object", "properties": {"successor_is_separate": {"const": true}, "successor_absent_from_transitive_predecessors": {"const": true}}},
+    "complete_bounded_zero_locus": {"type": "object", "properties": {"union_is_necessary_and_sufficient": {"const": true}}},
+    "correction_classes": {"type": "object", "properties": {"BOUNDED_OR_FINITE_QUASIPERIODIC": {"properties": {"status": {"const": "CERTIFIED"}}}, "CAUSAL_RETARDED": {"properties": {"status": {"const": "NO_CERTIFIED_MAP"}}}}},
+    "classification": {"type": "object", "properties": {"arbitrary_finite_generic_ell_complete_global_bounded_cone_classified": {"const": true}, "finite_multi_ell_constant_twist_column_classified": {"const": true}, "constant_twist_position_free_on_finite_wave_stratum": {"const": true}, "bounded_zero_locus_necessary_and_sufficient": {"const": true}, "infinite_harmonic_completion_classified": {"const": false}, "causal_or_quantum_claim": {"const": false}}},
+    "provenance": {"type": "object", "required": ["generator_path", "generator_sha256", "inputs"]}
+  }
+}

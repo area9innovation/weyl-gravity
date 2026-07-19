@@ -1,0 +1,150 @@
+{
+  "acyclic_dependency_audit": {
+    "historical_partial_predecessor": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FINITE_HARMONIC_K0_BOUNDED_CONE",
+    "only_replaced_statement": "A=0 on the historical finite-wave subcone",
+    "replacement": "A arbitrary on the complete finite generic k=0 H,J_i-zero wave cone",
+    "successor_absent_from_transitive_predecessors": true,
+    "successor_is_separate": true,
+    "transitive_dependency_edge_count": 431,
+    "transitive_predecessor_count": 139
+  },
+  "claim_boundary": "Complete only for the standard-global plus arbitrary finite generic ell>=2,k=0 carrier in the bounded class. Infinite harmonic completion, exceptional wave inputs, nonzero momentum, causal propagation, all-orders integration, residual observables and quantum transfer remain fail-closed.",
+  "classification": {
+    "all_orders_integrability": false,
+    "all_standard_globals_all_retained_m_both_parities_all_qp_branches_included": true,
+    "arbitrary_finite_generic_ell_complete_global_bounded_cone_classified": true,
+    "bounded_zero_locus_necessary_and_sufficient": true,
+    "causal_or_quantum_claim": false,
+    "constant_twist_position_free_on_finite_wave_stratum": true,
+    "constant_twist_position_free_on_wave_stratum": true,
+    "cross_ell_wave_superpositions_classified": true,
+    "exceptional_wave_inputs_classified": false,
+    "finite_multi_ell_constant_twist_column_classified": true,
+    "historical_A_zero_restriction_superseded": true,
+    "infinite_harmonic_completion_classified": false,
+    "nonzero_momentum_classified": false,
+    "one_fixed_ell_successor_recovered": true
+  },
+  "complete_bounded_zero_locus": {
+    "intersection": "wave=0,d=0 with c,W_x,A arbitrary",
+    "static_stratum": "wave=0: a=b=Q_e=B=0; c,d,W_x,A arbitrary",
+    "union_is_necessary_and_sufficient": true,
+    "wave_stratum": "wave!=0: a=b=d=Q_e=B=0; c,W_x,A arbitrary; total mu_H=mu_J1=mu_J2=mu_J3=0"
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "bounded finite-quasiperiodic corrections form a smooth subclass; unrestricted secular data are not reclassified",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "equation": "L_WM Phi^(2)=-(1/2)D^2E_WM[Phi^(1),Phi^(1)]",
+  "finite_additivity_proof": {
+    "blockwise_inverse": "for each ell, the same-shell source is zero and the L=ell-1,ell+1 sources have bounded inverses for every p/q coefficient",
+    "finite_assembly": "the sum contains finitely many bounded quasiperiodic corrections and is therefore bounded quasiperiodic",
+    "mixed_source_identity": "D2E[A,sum_ell u_ell]=sum_ell D2E[A,u_ell]",
+    "moment_map_independence": "the A-wave mixed inverse is available coefficientwise before imposing any blockwise moment-map equation; only the total wave-wave source requires total mu_H=mu_J_i=0",
+    "overlapping_output_channels": "harmless: if distinct input blocks reach the same output carrier, linearity of L makes the sum of their certified corrections a correction for the summed source",
+    "wave_decomposition": "u_wave=sum_(ell in S) u_ell with S finite and each u_ell retaining all m, parities and p/q multiplicities"
+  },
+  "generality_level": "G4_ARBITRARY_FINITE_GENERIC_ELL_SET_K0_COMPLETE_GLOBAL_CARRIER",
+  "interpretation": "At rest and at second order, constant SO(3) holonomy is a bounded spectator not only for one angular block but for every finite generic harmonic sum. Cross-ell wave products are controlled by the total stabilizer moment maps, while A-wave products assemble linearly from the fixed-ell inverses.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "treat exceptional ell=1 wave inputs and nonzero compact momentum without merging their dispersion or correction-class scopes",
+  "pairwise_sufficiency": {
+    "A_wave": "finite additivity of the every-fixed-ell zero-map and neighbor inverses",
+    "W_x_wave": "identically zero for every retained oscillator",
+    "assembly": "D2E is bilinear and L is linear, so all certified pairwise corrections add",
+    "c_wave": "bounded removable for every retained k=0 oscillator",
+    "remaining_wave_globals": "a=b=d=Q_e=B=0 on every nonzero-wave stratum",
+    "static_pairs": "complete standard generalized-zero bounded theorem",
+    "wave_wave_including_cross_ell": "the finite-harmonic wave theorem supplies a correction exactly on the total H,J_i zero cone"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone.py",
+    "generator_sha256": "b9a3ae1c46f810ddea78ad082ab013147d839e88001b0244844d2f7a91527d96",
+    "inputs": {
+      "circumference": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
+        "sha256": "80f36e27d91cf92211b94c2fbc8d74e97806c04b688f72e02284f8951f8fecb9"
+      },
+      "electric_wilson": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
+        "sha256": "50d0bf118e1699122b8bf4e0c3da7b8fb0295a9a4725d05c155122e8d2202676"
+      },
+      "finite_wave": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order.json",
+        "sha256": "45f91e2c9342f81dda1624c3ae347816a11ce25c5bf1a28508a7213e984d0d52"
+      },
+      "fixed_ell_successor": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone.json",
+        "sha256": "6ffb2279d37686514d18625392a6cf0fb44904324f857d43728c0983c1e7c6d4"
+      },
+      "partial_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.json",
+        "sha256": "73139889f7fb48c72bc5eb392efaf22c49110023fb9e5a65e2e47af1de0cc68f"
+      },
+      "standard_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      },
+      "twist_wave": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.json",
+        "sha256": "3d91382ed023b0e6bd8f0ca637824a2460de8a18eb9b6b2050dcf3faa61bf439"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_TWIST_FINITE_HARMONIC_K0_BOUNDED_CONE",
+  "result_state": "FINITE_GENERIC_K0_COMPLETE_STANDARD_GLOBAL_TWIST_BOUNDED_CONE_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-complete-global-twist-finite-harmonic-k0-bounded-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone.schema.json",
+  "schema_sha256": "414c2a68cab7879fc543d30490f9116f9a07a7e4df53f950f5b7994c1184cf15",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic correction",
+    "carrier": "complete standard homogeneous/twist data plus an arbitrary finite sum of generic ell>=2,k=0 q/p primaries",
+    "charge_sector": "fixed N=2 magnetic bundle; electric tangent allowed before elimination",
+    "degree": 2,
+    "ell": "an arbitrary finite subset of integers ell>=2 with global ell=0,1 data adjoined",
+    "k": 0,
+    "m": "all retained wave m values and all three real twist components",
+    "omega": "generalized zero and all retained p/q shell frequencies",
+    "parity": "homogeneous, axial and polar",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "status": "PASS"
+    },
+    "tier_1": {
+      "direct_consumer": "Einstein residual-atlas producer/verifier/tests PASS",
+      "elapsed_seconds": 1.35,
+      "independent_verifier": "PASS",
+      "status": "PASS",
+      "tests_run": 33
+    },
+    "tier_2": {
+      "criterion": "finite wave, fixed-ell A-wave, historical global necessity, standard-global, circumference, Wilson and one-block successor inputs are unchanged exact hashed dependencies",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "infinite harmonic, exceptional, momentum, causal and higher lifecycles remain fail-closed",
+      "status": "NOT_RUN"
+    }
+  }
+}

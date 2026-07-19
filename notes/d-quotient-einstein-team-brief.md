@@ -2764,6 +2764,14 @@ the obsolete `A=0` restriction.  The next bounded gate is the finite
 multi-`ell` constant-twist cross ledger.  Nonzero momentum, exceptional wave
 inputs and `CAUSAL_RETARDED` remain fail-closed.
 
+The finite multi-`ell` gate is now closed as well.  For a finite wave sum,
+bilinearity gives `D2E[A,sum u_ell]=sum D2E[A,u_ell]`; every summand has the
+fixed-`ell` bounded correction, and the pre-existing finite-wave theorem
+already covers all wave--wave cross-`ell` products.  Thus the same stratified
+cone holds for arbitrary finite generic `ell>=2` sums at `k=0`, with `A`
+free.  Infinite completion, exceptional inputs, nonzero momentum and causal
+propagation remain separate fail-closed scopes.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

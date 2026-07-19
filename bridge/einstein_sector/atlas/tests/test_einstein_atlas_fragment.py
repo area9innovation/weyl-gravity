@@ -200,10 +200,10 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
     def test_global_finite_harmonic_k0_bounded_cone_is_registered(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone"]
         second_order = entry["mode_data"]["second_order"]
-        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
-        self.assertIn("not classified", second_order["bounded_or_finite_quasiperiodic"]["statement"])
-        self.assertIn("mistyped output carrier", entry["mode_data"]["resonance"]["statement"])
-        self.assertIn("LIFECYCLE REOPENED", entry["claim_boundary"])
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("c,W_x,A", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("Infinite completion", entry["claim_boundary"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
     def test_constant_twist_projector_repair_is_authoritative(self) -> None:

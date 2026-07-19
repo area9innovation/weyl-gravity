@@ -53,6 +53,7 @@ CERTIFICATES = {
     "global_fixed_ell_k0_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
     "complete_global_twist_fixed_ell_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone.json",
     "global_finite_harmonic_k0_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.json",
+    "complete_global_twist_finite_harmonic_k0_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone.json",
     "constant_twist_wave_counterexample": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
     "constant_twist_extra_position_zero_locus": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus.json",
     "constant_twist_einstein_position_zero_locus": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.json",
@@ -571,14 +572,14 @@ def entries() -> list[dict[str, object]]:
         _entry(
             "einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone",
             _scope(theory="Weyl-Maxwell target", carrier="complete standard globals plus an arbitrary finite sum of generic axial/polar q/p primaries at rest", degree=2, parity="homogeneous, axial and polar", ell="arbitrary finite subset of ell>=2 with global ell=0,1 data adjoined", m="all retained wave m values and all three real twist components", k=0, omega="generalized zero and all retained q/p shells"),
-            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
             ("CERTIFIED", "The carrier contains every retained q/p primary across an arbitrary finite set of generic ell blocks and every standard global coordinate."),
             ("CERTIFIED", "The action-normalized finite-wave theorem and generic-lambda global pivots retain ell,m,parity and primary-shell separation."),
             ("CERTIFIED", "The total H,J_i equations retain cross-ell cancellations; every nonzero common zero contains an isolated Einstein-minus coefficient, and the homogeneous source separately excludes Q_e."),
-            ("OPEN", "Cross-ell wave products are off shell away from the stabilizer cokernel and the a,b,d pivots cannot be screened; the independent constant-twist resonance map remains unsolved."),
-            _second_order(("OPEN", "For every finite generic k=0 wave sum the wave-free static branch and complete A=0 common-moment-map wave subcone are certified; nonzero-A is open."), ("CERTIFIED", "The certified bounded subcones are real smooth spatially periodic finite exponential-polynomial corrections."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
-            _evidence("global_finite_harmonic_k0_bounded", "constant_twist_wave_counterexample", "global_fixed_ell_k0_bounded", "abd_generic_lambda_pivot", "standard_global_bounded", "taub", "abstract_cone"),
-            "This theorem covers arbitrary finite generic ell>=2 wave sums at k=0 only at A=0, plus the wave-free static branch. Nonzero-A and every higher scope remain fail-closed.",
+            ("CERTIFIED", "Bilinearity reduces A times a finite wave sum to the sum of the independently removable fixed-ell A-wave sources; wave-wave cross-ell products remain separately certified."),
+            _second_order(("CERTIFIED", "The exact finite-harmonic cone retains c,d,W_x,A without waves and c,W_x,A over every nonzero total H,J_i-zero wave sum."), ("CERTIFIED", "The bounded correction is a real smooth spatially periodic finite exponential-polynomial sum."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("complete_global_twist_finite_harmonic_k0_bounded", "global_finite_harmonic_k0_bounded", "fixed_ell_constant_twist_bounded_cone", "complete_global_twist_fixed_ell_bounded", "taub", "abstract_cone"),
+            "Complete only for arbitrary finite generic ell>=2 sums at k=0. Infinite completion, exceptional inputs, nonzero momentum and higher scopes remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.mixed.finite_generic_all_momenta_smooth_cone",
@@ -635,7 +636,7 @@ def entries() -> list[dict[str, object]]:
         "einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone",
         "einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone",
     }
-    reopened_generic_twist_rows = {"einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone"}
+    reopened_generic_twist_rows: set[str] = set()
     for entry in result:
         identifier = entry["id"]
         if identifier in superseded:
@@ -941,6 +942,15 @@ def build() -> dict[str, object]:
         raise AssertionError("complete fixed-ell global/twist cone changed")
     if complete_fixed_global["finite_multi_ell_twist_cone_classified"] or complete_fixed_global["causal_or_quantum_claim"]:
         raise AssertionError("complete fixed-ell global theorem exceeded its scope")
+    complete_finite_global = records["complete_global_twist_finite_harmonic_k0_bounded"]["classification"]
+    if not (
+        complete_finite_global["arbitrary_finite_generic_ell_complete_global_bounded_cone_classified"]
+        and complete_finite_global["constant_twist_position_free_on_wave_stratum"]
+        and complete_finite_global["bounded_zero_locus_necessary_and_sufficient"]
+    ):
+        raise AssertionError("complete finite-harmonic global successor changed")
+    if complete_finite_global["infinite_harmonic_completion_classified"] or complete_finite_global["causal_or_quantum_claim"]:
+        raise AssertionError("finite-harmonic successor exceeded its scope")
     if not records["global_self_coefficients"]["classification"]["complete_aligned_global_self_source_classified"]:
         raise AssertionError("global self coefficient input changed")
     if not records["extra_self_coefficients"]["classification"]["complete_C4_extra_self_source_coefficient_explicit"]:

@@ -1,0 +1,41 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_TWIST_FINITE_HARMONIC_K0_BOUNDED_CONE",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone.py": "b9a3ae1c46f810ddea78ad082ab013147d839e88001b0244844d2f7a91527d96",
+    "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone.json": "9036f1d2010b153b7396b7ba4ca5fad485c0f081dc2b5af1cc7b8cceef0d1dce",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone.schema.json": "414c2a68cab7879fc543d30490f9116f9a07a7e4df53f950f5b7994c1184cf15",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone.py": "71342efbd89bbb09cc63eddd82cc967fcbcce5fa2225a6435f114e891d44c6dc",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone.py": "78a5829f6009d515a87eda91771b72e8c47b091c94fb36ed0868ddc07ed14a5a",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-complete-global-twist-finite-harmonic-k0-bounded-cone.md": "58aae989aa1d5cb48dca865b94fae0f3ed85532844f9add6a505b022e0850f6d",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "0b52a53006f00862921db6beae3c1128e6285b933bcea85bf7d6380e636a4cf2",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "daaca869651e36275736db062ac3acfcf5ffad46a5b6f74608f91f3c016274e7",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "893b57686ab28ef7ecc427bbc0798bd32381bd854dd584e475be7e84600bd27a",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "f6c887e32ffff8341f3c33f159eccdc8e5b381c6165bcce658c1fe426a7c5863",
+    "notes/d-quotient-einstein-team-brief.md": "d64030b2e349a73212a41247cd428afe9d11046d4a7678b36d3a3a733302caf7"
+  },
+  "claim": {
+    "certified": "For the complete standard-global carrier plus an arbitrary finite generic ell>=2,k=0 wave sum, constant twist position is free and the bounded zero locus is the same static/nonzero-wave stratified cone as in the one-fixed-ell theorem.",
+    "proof": "Bilinearity decomposes A times the finite wave sum into independently removable fixed-ell mixed sources; the finite wave theorem separately solves all wave-wave cross-ell products on the total H,J_i zero cone.",
+    "open": "Infinite harmonic completion, exceptional wave inputs, nonzero momentum, causal propagation, all-orders integration, residual observables and quantum transfer."
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "elapsed_seconds": 0.20},
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.35,
+      "tests_run": 33,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json"
+      ]
+    },
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "The finite wave, fixed-ell A-wave, historical global necessity, standard-global, circumference, Wilson and one-block successor inputs are unchanged exact hashed dependencies."},
+    "tier_3": {"status": "NOT_RUN", "reason": "Infinite harmonic, exceptional, nonzero-momentum, causal and higher-lifecycle gates remain fail-closed."}
+  }
+}

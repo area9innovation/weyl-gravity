@@ -2924,39 +2924,34 @@
       }
     },
     {
-      "claim_boundary": "LIFECYCLE REOPENED for every constant-twist-dependent statement. The ell=2 corrected spectator theorem does not by itself identify or classify another ell or a finite multi-ell sum.",
+      "claim_boundary": "Complete only for arbitrary finite generic ell>=2 sums at k=0. Infinite completion, exceptional inputs, nonzero momentum and higher scopes remain fail-closed.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
-        "nonlinear": "OPEN",
+        "nonlinear": "CERTIFIED",
         "observational": "OPEN",
         "quantum": "OPEN",
         "symplectic": "CERTIFIED"
       },
       "evidence": [
         {
+          "path": "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_TWIST_FINITE_HARMONIC_K0_BOUNDED_CONE",
+          "sha256": "9036f1d2010b153b7396b7ba4ca5fad485c0f081dc2b5af1cc7b8cceef0d1dce"
+        },
+        {
           "path": "bridge/certificates/einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FINITE_HARMONIC_K0_BOUNDED_CONE",
           "sha256": "73139889f7fb48c72bc5eb392efaf22c49110023fb9e5a65e2e47af1de0cc68f"
         },
         {
-          "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
-          "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_WAVE_COUNTEREXAMPLE",
-          "sha256": "6ddebcd00b2934d513f0676d87f8ec2423f79ec30d1341cb73b484362b533c72"
+          "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_BOUNDED_CONE",
+          "sha256": "3d91382ed023b0e6bd8f0ca637824a2460de8a18eb9b6b2050dcf3faa61bf439"
         },
         {
-          "path": "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
-          "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FIXED_ELL_K0_BOUNDED_CONE",
-          "sha256": "9b6854e6405b6ffb028376c071ee69233dfd888a27b738985a7e56074cd1bc6c"
-        },
-        {
-          "path": "bridge/certificates/einstein_maxwell_weyl_abd_generic_lambda_pivot.json",
-          "result_id": "EINSTEIN_MAXWELL_WEYL_ABD_GENERIC_LAMBDA_PIVOT",
-          "sha256": "a0d9769e6363031fb0259f6a529919a19d45c37ed7d59027765d9311a77fc411"
-        },
-        {
-          "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
-          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_SECOND_ORDER",
-          "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+          "path": "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_TWIST_FIXED_ELL_BOUNDED_CONE",
+          "sha256": "6ffb2279d37686514d18625392a6cf0fb44904324f857d43728c0983c1e7c6d4"
         },
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
@@ -2980,13 +2975,13 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "The old constant-twist regression used a mistyped output carrier. This row retains only its twist-independent ingredients until a correctly typed fixed-ell source map is derived.",
-          "status": "OPEN"
+          "statement": "Bilinearity reduces A times a finite wave sum to the sum of the independently removable fixed-ell A-wave sources; wave-wave cross-ell products remain separately certified.",
+          "status": "CERTIFIED"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The nonzero-constant-twist bounded cone is not classified in this scope after the projector repair.",
-            "status": "OPEN"
+            "statement": "The exact finite-harmonic cone retains c,d,W_x,A without waves and c,W_x,A over every nonzero total H,J_i-zero wave sum.",
+            "status": "CERTIFIED"
           },
           "causal_retarded": {
             "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
@@ -2994,7 +2989,7 @@
           },
           "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
           "smooth_secular": {
-            "statement": "The certified bounded subcones are real smooth spatially periodic finite exponential-polynomial corrections.",
+            "statement": "The bounded correction is a real smooth spatially periodic finite exponential-polynomial sum.",
             "status": "CERTIFIED"
           }
         },
@@ -3230,7 +3225,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "e26c564f7d69ee71c591a4af583aa10237e309586ab2a65d5e86c63597fba437",
+  "generated_by_sha256": "0b52a53006f00862921db6beae3c1128e6285b933bcea85bf7d6380e636a4cf2",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

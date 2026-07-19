@@ -233,10 +233,12 @@ def verify() -> None:
         raise AssertionError("fixed-ell global replacement lifecycle is absent")
     finite_global = by_id["einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone"]
     finite_second = finite_global["mode_data"]["second_order"]
-    if finite_global["mode_data"]["resonance"]["status"] != "OPEN" or "mistyped output carrier" not in finite_global["mode_data"]["resonance"]["statement"]:
-        raise AssertionError("finite multi-ell constant-twist lifecycle was not kept open")
-    if finite_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
-        raise AssertionError("finite multi-ell constant-twist cone was over-promoted")
+    if finite_global["descriptions"]["nonlinear"] != "CERTIFIED" or finite_global["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("finite multi-ell constant-twist lifecycle was not promoted")
+    if finite_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("finite multi-ell constant-twist cone was hidden")
+    if "c,W_x,A" not in finite_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("finite multi-ell free twist position was hidden")
     if finite_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("finite multi-ell causal lifecycle was over-promoted")
     fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
