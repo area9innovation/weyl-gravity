@@ -1,0 +1,41 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1_TIER_RECEIPT",
+  "claim_ids": ["EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1"],
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1.json", "sha256": "d17a9249b6a385410ba8bd747259842c70bb811dfb0ce9aa74aa3d03c7fe6fad"},
+    "schema": {"path": "d_quotient_classical/schema/relative-316-row-cotangent-completion-v1.schema.json", "sha256": "66ab9a7e5a9f03a6f2a6f92d02df9832e949cd928570348382b1e97a6f22c074"},
+    "producer": {"path": "d_quotient_classical/relative/einstein_weyl_relative_316_row_cotangent_completion.py", "sha256": "7c30d9105a5b550414fb9871842cc3247cf42962ebee819780400405a3d9962f"},
+    "verifier": {"path": "d_quotient_classical/relative/verify_einstein_weyl_relative_316_row_cotangent_completion.py", "sha256": "e0406b687bede13b90ac5c887a0dc656adaea6c93e8d939648d48207b954e140"},
+    "tests": {"path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_316_row_cotangent_completion.py", "sha256": "286d2bc17e558424740562dc16c77442584d3881442b6b280856e8c341a422a4"},
+    "report": {"path": "d_quotient_classical/reports/einstein-weyl-relative-316-row-cotangent-completion.md", "sha256": "038eeb7a4d6a624e9d6266530f7be2b23b8dd8a674d30dea8c82f9f8478c8cd2"},
+    "generated_layout": {"path": "d_quotient_classical/generated/einstein_weyl_relative_316_row_cotangent_completion_v1/layout.json", "sha256": "169402914efbe822f7b68194c3feffaf2985b05c01a469deafea327978e51257"},
+    "atlas_fragment": {"path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "sha256": "720af33476ec113a08e844eb3f0c921de3bdf4ec9bcafe5b72f294e538969cf5"}
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "checks": ["Python compilation", "strict Draft 2020-12 schema", "scoped diff check", "content-hash replay"]},
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 5.0,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_316_row_cotangent_completion --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_316_row_cotangent_completion",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_316_row_cotangent_completion",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-316-row-cotangent-completion-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.8,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "PYTHONPATH=. python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "PYTHONPATH=. python3 -m d_quotient_classical.atlas.verify_classical_atlas_fragment",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {"status": "NOT_RUN", "reason": "This scoped unary carrier theorem changes no shared core algebra, freezes no paper, supplies no complete q2 and makes no causal or quantum promotion; unrelated Einstein, observer, quantum and black-hole work is concurrently dirty."}
+  },
+  "claim_boundary": "This receipt covers the row-resolved canonical T*[1] completion of the complete 78-row relative mapping cone, its direct sum with the 160-row current carrier, the exhaustive 316-row degree-one pairing, and the factorized support-local unary differential q_current direct_sum q_C direct_sum (-q_C^sharp). It changes the carrier and pairing and therefore does not refute or repair the standard-action-pairing inertia obstruction. The formal adjoint remains factorized rather than PBW-expanded. No complete q2, relative f2 repair, action-current comparison, causal Green operator, arity three, observable, particle or quantum theorem is certified."
+}

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/relative-316-row-cotangent-completion-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "bundle_classification", "unary_theorem", "generated_layout", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-316-row-cotangent-completion-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1"},
+    "result_state": {"const": "CANONICAL_ODD_COTANGENT_UNARY_COMPLETION_SELECTED"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "object", "minProperties": 11, "additionalProperties": {"type": "string"}},
+    "dependencies": {"type": "object", "minProperties": 9, "additionalProperties": {"$ref": "#/$defs/artifact"}},
+    "bundle_classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relative_cone_decomposition", "relative_cone_degree_ranks", "rank_only_addition_lower_bound", "rank_only_profile", "rank_only_profile_is_canonical_bundle_completion", "reason_rank_only_is_not_selected", "selected_added_bundle", "selected_added_degree_ranks_minus1_to3", "selected_added_rows", "completed_total_rows", "completed_degree_ranks"],
+      "properties": {
+        "relative_cone_decomposition": {"const": "W direct_sum E[1]"},
+        "relative_cone_degree_ranks": {"const": [5, 20, 28, 19, 6]},
+        "rank_only_addition_lower_bound": {"const": 28},
+        "rank_only_profile": {"const": {"degree_1": 9, "degree_2": 14, "degree_3": 5}},
+        "rank_only_profile_is_canonical_bundle_completion": {"const": false},
+        "reason_rank_only_is_not_selected": {"type": "string", "minLength": 40},
+        "selected_added_bundle": {"const": "C^vee[1] for the entire 78-row cone C"},
+        "selected_added_degree_ranks_minus1_to3": {"const": [6, 19, 28, 20, 5]},
+        "selected_added_rows": {"const": 78},
+        "completed_total_rows": {"const": 316},
+        "completed_degree_ranks": {"const": [10, 51, 97, 97, 51, 10]}
+      }
+    },
+    "unary_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formula", "q_C_formula", "q_C_squared_zero_imported", "cotangent_square_zero", "q1_squared_zero", "odd_pairing_nondegenerate", "unary_cyclicity_exact_by_cotangent_lift", "support_local", "uses_differential_inverse", "standard_action_pairings_identified", "standard_pairing_inertia_obstruction_evaded_by_changing_carrier_not_refuted"],
+      "properties": {
+        "formula": {"type": "string"},
+        "q_C_formula": {"type": "string"},
+        "q_C_squared_zero_imported": {"const": true},
+        "cotangent_square_zero": {"type": "string"},
+        "q1_squared_zero": {"const": true},
+        "odd_pairing_nondegenerate": {"const": true},
+        "unary_cyclicity_exact_by_cotangent_lift": {"const": true},
+        "support_local": {"const": true},
+        "uses_differential_inverse": {"const": false},
+        "standard_action_pairings_identified": {"const": false},
+        "standard_pairing_inertia_obstruction_evaded_by_changing_carrier_not_refuted": {"const": true}
+      }
+    },
+    "generated_layout": {"$ref": "#/$defs/pathHash"},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixed_238_row_carrier_reused", "canonical_316_row_unary_cyclic_carrier_exists", "complete_q2_on_316_rows", "relative_f2_obstruction_repaired", "action_current_pairing_transport_complete", "causal_green_data", "arity_three_or_quantum_claim"],
+      "properties": {
+        "fixed_238_row_carrier_reused": {"const": false},
+        "canonical_316_row_unary_cyclic_carrier_exists": {"const": true},
+        "complete_q2_on_316_rows": {"const": false},
+        "relative_f2_obstruction_repaired": {"const": false},
+        "action_current_pairing_transport_complete": {"const": false},
+        "causal_green_data": {"const": false},
+        "arity_three_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "EXTEND_OR_OBSTRUCT_Q2_ON_THE_316_ROW_COTANGENT_CARRIER_WITHOUT_IDENTIFYING_THE_COTANGENT_PAIRING_WITH_THE_ACTION_CURRENT"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "pathHash": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}}}
+  }
+}

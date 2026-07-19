@@ -1913,6 +1913,20 @@ now advances to classifying the covariant bundle types and unary incidence
 of at least those 28 completion rows before any complete relative `q2` solve;
 the existing scoped 188-row current theorem remains certified.
 
+The selected unary repair is now the canonical full cotangent carrier, not a
+dimension-only 28-row patch.
+`EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1` adjoins
+`C^vee[1]` for every row of the 78-row cone and direct-sums the result with the
+160-row current resolution.  Its degree ranks are
+`(10,51,97,97,51,10)`, and the factorized operator
+`q_current direct_sum q_C direct_sum (-q_C^sharp)` is support-local,
+square-zero and cyclic under the canonical cone/cotangent pairing.  The
+standard action pairings are not identified, so the generic cyclic-map
+inertia obstruction is not contradicted.  Compact-product Bridge 1 now moves
+to the exact `q2` extension/obstruction on this 316-row carrier, followed by a
+separate comparison between its canonical pairing and the action current;
+causal and quantum rows remain `NO_CERTIFIED_MAP`/`OPEN`.
+
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains
 `NO_CERTIFIED_MAP`; the relative functor may be prepared but Bridge 1 is not

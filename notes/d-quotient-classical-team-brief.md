@@ -2381,6 +2381,27 @@ carriers remain open.  The active bridge is therefore the bundle-type and
 incidence classification of a cyclic enlargement of at least 28 rows; no
 full `q2` solve should start before that carrier exists.
 
+The canonical carrier classification is now complete at unary order.
+`EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1` selects
+
+\[
+\mathcal C_{316}=\mathcal C_{160,\mathrm{current}}\oplus
+T^*[1]\operatorname{Cone}(\iota).
+\]
+
+The full 78-row cotangent addition has degree profile
+`(6,19,28,20,5)` in degrees `-1,...,3`; the completed ranks are
+`(10,51,97,97,51,10)`.  The exact factorized unary operator is
+`q_current direct_sum q_C direct_sum (-q_C^sharp)`, so square-zero,
+nondegeneracy, odd cyclicity and support locality follow without asking the
+obstructed Einstein-to-Weyl inclusion to preserve the standard action forms.
+This is deliberately a carrier-and-pairing change: it neither refutes the
+generic inertia obstruction nor identifies the new cotangent pairing with the
+Lee--Wald/current pairing.  The formal adjoint remains factorized rather than
+PBW-expanded.  The active gate is now the complete `q2` extension or its first
+normalized obstruction on these 316 rows; action-current comparison and
+causal propagation remain later gates.
+
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
 negative-norm one-particle class.  A counterexample is a successful result, not

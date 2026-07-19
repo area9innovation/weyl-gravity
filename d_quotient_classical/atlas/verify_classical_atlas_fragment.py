@@ -77,6 +77,13 @@ def verify() -> None:
         raise AssertionError("fixed 238-row minimal-enlargement boundary missing")
     if "EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1" not in {item["result_id"] for item in completion["evidence"]}:
         raise AssertionError("fixed 238-row rank evidence missing")
+    cotangent = by_id["classical.crosswalk.compact_product_relative_316_cotangent_carrier"]
+    if cotangent["descriptions"]["symplectic"] != "CERTIFIED" or cotangent["descriptions"]["nonlinear"] != "OPEN":
+        raise AssertionError("316-row unary cotangent lifecycle changed")
+    if cotangent["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("316-row cotangent carrier was overpromoted causally")
+    if "not either standard action-derived form" not in cotangent["claim_boundary"] or "Complete q2" not in cotangent["claim_boundary"]:
+        raise AssertionError("316-row cotangent claim boundary missing")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")
