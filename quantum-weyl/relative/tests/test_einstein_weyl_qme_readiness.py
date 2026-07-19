@@ -28,26 +28,40 @@ class EinsteinWeylQMEReadinessTests(unittest.TestCase):
         )
         self.assertEqual(
             row["map_iota"],
-            "PRINCIPAL_GENERIC_AXIAL_AND_GENERIC_POLAR_UNGAUGED_OFFSHELL_PREFLIGHT_IMPORTED_GLOBAL_V1_OPEN",
+            "COMPLETE_ALL_ROW_SUPPORT_LOCAL_NONCYCLIC_LINEAR_TRIANGLE_IMPORTED",
         )
         self.assertEqual(
             row["cofiber"],
-            "GENERIC_AXIAL_SOLUTION_COFIBER_CERTIFIED_POLAR_PRERESIDUAL_INCLUSION_CERTIFIED_GLOBAL_COFIBER_OPEN",
+            "SUPPORT_LOCAL_MAPPING_COFIBER_AND_EXACT_EXTRA_DETECTORS_IMPORTED",
+        )
+        self.assertEqual(
+            row["observable_map"],
+            "SUPPORT_LOCAL_LINEAR_BRST_DGA_PULLBACK_IMPORTED",
         )
         self.assertEqual(row["quantum_lift"], "ANALYTIC_FRAMEWORK_MISSING")
 
-    def test_partial_triangle_is_imported_but_rejected_as_v1(self) -> None:
+    def test_complete_linear_triangle_and_observable_functor_are_imported(self) -> None:
         gate = self.certificate["classical_import_gate"]
         self.assertEqual(
             gate["current_map_disposition"],
-            "PARTIAL_GENERIC_AXIAL_AND_POLAR_UNGAUGED_OFFSHELL_PREFLIGHT",
+            "COMPLETE_NONCYCLIC_LINEAR_TRIANGLE_AND_OBSERVABLE_PULLBACK_IMPORTED",
         )
         self.assertEqual(
-            self.certificate["dependency_refs"]["relative_linear_triangle_preflight"]["artifact_id"],
-            "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT",
+            self.certificate["dependency_refs"]["relative_linear_triangle"]["artifact_id"],
+            "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
         )
-        self.assertFalse(
+        self.assertEqual(
+            self.certificate["dependency_refs"]["relative_observable_functor"]["artifact_id"],
+            "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1",
+        )
+        self.assertTrue(
             self.certificate["claim_flags"]["CLASSICAL_RELATIVE_TRIANGLE_IMPORTED"]
+        )
+        self.assertTrue(
+            self.certificate["claim_flags"]["RELATIVE_OBSERVABLE_PULLBACK_IMPORTED"]
+        )
+        self.assertTrue(
+            self.certificate["claim_flags"]["RELATIVE_EQUIVARIANCE_IMPORTED"]
         )
 
     def test_polar_noether_lift_is_pinned_and_replayed_exactly(self) -> None:
@@ -81,42 +95,49 @@ class EinsteinWeylQMEReadinessTests(unittest.TestCase):
             ]
         )
 
-    def test_global_triangle_gap_ledger_is_exact_and_fail_closed(self) -> None:
+    def test_post_linear_gap_ledger_is_exact_and_fail_closed(self) -> None:
         ledger = self.certificate["relative_linear_triangle_gap_ledger"]
-        self.assertEqual(len(ledger["established"]), 3)
-        remaining = {row["sector"]: row["missing"] for row in ledger["remaining_for_V1"]}
+        self.assertEqual(len(ledger["established"]), 4)
+        remaining = {row["sector"]: row["missing"] for row in ledger["remaining_beyond_V1"]}
         self.assertEqual(
             set(remaining),
             {
-                "generic_polar_ell_ge_2",
-                "exceptional_ell_1",
-                "ell_0_and_global_twists",
-                "global_all_sector_assembly",
+                "cyclic_relative_structure",
+                "nonlinear_relative_morphism",
+                "quantum_relative_lift",
             },
         )
         self.assertIn(
-            "cyclic_BV_enhancement_or_normalized_obstruction",
-            remaining["generic_polar_ell_ge_2"],
+            "standard_pairing_cyclic_map_or_replacement",
+            remaining["cyclic_relative_structure"],
         )
         self.assertIn(
-            "common_Taub_zero_locus_and_null_subalgebra_classification",
-            remaining["generic_polar_ell_ge_2"],
+            "arity_three_relative_identity",
+            remaining["nonlinear_relative_morphism"],
         )
         self.assertIn(
-            "relative_linear_triangle_V1_certificate",
-            remaining["global_all_sector_assembly"],
+            "matched_Einstein_and_Weyl_QME_dispositions",
+            remaining["quantum_relative_lift"],
         )
 
-    def test_three_classical_spine_inputs_are_explicitly_missing(self) -> None:
+    def test_only_nonlinear_classical_spine_input_remains(self) -> None:
         gate = self.certificate["classical_import_gate"]
-        self.assertEqual(gate["status"], "NOT_SATISFIED")
-        self.assertEqual(len(gate["required_result_ids"]), 3)
+        self.assertEqual(gate["status"], "LINEAR_GATE_SATISFIED_NONLINEAR_GATE_OPEN")
+        self.assertEqual(len(gate["received_result_ids"]), 2)
+        self.assertEqual(
+            gate["remaining_result_ids"],
+            ["EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE"],
+        )
         self.assertIn("do not reconstruct", gate["forbidden_fallback"])
 
     def test_relative_anomaly_is_a_contract_not_a_claim(self) -> None:
         anomaly = self.certificate["relative_anomaly_contract"]
         self.assertEqual(anomaly["formal_expression"], "[A_rel]=[A_Weyl-iota_* A_Einstein]")
-        self.assertEqual(anomaly["status"], "NOT_CONSTRUCTED")
+        self.assertEqual(
+            anomaly["status"],
+            "CLASSICAL_PULLBACK_AVAILABLE_QUANTUM_CLASS_UNDEFINED",
+        )
+        self.assertNotIn("off_shell_BV_chain_map_iota", anomaly["required_before_definition"])
         self.assertIn("antifield", anomaly["separate_ledgers"])
         self.assertIn("boundary_corner", anomaly["separate_ledgers"])
 

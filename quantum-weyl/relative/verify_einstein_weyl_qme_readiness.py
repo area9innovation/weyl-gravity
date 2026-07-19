@@ -23,10 +23,10 @@ from .einstein_weyl_qme_readiness import (
     POLAR_LIFT,
     PH_STABILIZER,
     QUADRATIC_PREFLIGHT,
-    RELATIVE_FUNCTOR_PREFLIGHT,
+    RELATIVE_FUNCTOR,
     ROADMAP,
     STANDARD_INCLUSION,
-    TRIANGLE_PREFLIGHT,
+    LINEAR_TRIANGLE,
     _polar_exact_replay,
     validate,
 )
@@ -51,8 +51,8 @@ def verify() -> dict:
         "Berger_global_A104_partial": GLOBAL_A104,
         "quantum_team_brief": PLANNING_BRIEF,
         "universe_building_roadmap": ROADMAP,
-        "relative_linear_triangle_preflight": TRIANGLE_PREFLIGHT,
-        "relative_functor_preflight": RELATIVE_FUNCTOR_PREFLIGHT,
+        "relative_linear_triangle": LINEAR_TRIANGLE,
+        "relative_observable_functor": RELATIVE_FUNCTOR,
         "polar_ungauged_noether_lift": POLAR_LIFT,
         "Plebanski_Hacyan_stabilizer_authority": PH_STABILIZER,
     }
@@ -70,8 +70,8 @@ def verify() -> dict:
         if not working.is_file() or working.read_bytes() != content:
             raise ValueError(f"working/pinned classical evidence mismatch: {name}")
     evidence_dependencies = {
-        "relative_linear_triangle_preflight": "relative_linear_triangle_preflight",
-        "relative_functor_preflight": "relative_functor_preflight",
+        "relative_linear_triangle": "relative_linear_triangle",
+        "relative_observable_functor": "relative_observable_functor",
         "polar_ungauged_noether_lift": "polar_ungauged_noether_lift",
         "Plebanski_Hacyan_stabilizer_authority": "Plebanski_Hacyan_stabilizer_authority",
     }
@@ -93,29 +93,40 @@ def verify() -> dict:
         raise ValueError("polar exact polynomial replay drifted")
     verify_polar_lift_independently()
     verify_stabilizer_independently()
-    triangle = json.loads(TRIANGLE_PREFLIGHT.read_text())
-    classification = triangle.get("classification", {})
+    triangle = json.loads(LINEAR_TRIANGLE.read_text())
+    triangle_flags = triangle.get("acceptance_flags", {})
     if (
-        classification.get("principal_BV_chain_map_and_cone_certified") is not True
-        or classification.get("generic_axial_offshell_chain_map_certified") is not True
-        or classification.get("relative_linear_triangle_V1_certified") is not False
-        or classification.get("quantum_import_gate_satisfied") is not False
+        triangle.get("claim_status") != "CERTIFIED_OFF_SHELL_LINEAR_TRIANGLE"
+        or any(value is not True for value in triangle_flags.values())
+        or triangle.get("pairing_disposition", {}).get(
+            "standard_pairing_cyclic_map_exists"
+        )
+        is not False
+        or triangle.get("pairing_disposition", {}).get("three_forms_kept_distinct")
+        is not True
     ):
-        raise ValueError("partial triangle was over-promoted or weakened")
-    functor = json.loads(RELATIVE_FUNCTOR_PREFLIGHT.read_text())
+        raise ValueError("complete noncyclic triangle drifted")
+    functor = json.loads(RELATIVE_FUNCTOR.read_text())
+    classification = functor.get("classification", {})
     if (
-        functor.get("flags", {}).get("RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1")
-        is not False
-        or functor.get("flags", {}).get("EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED")
-        is not False
+        classification.get("relative_observable_pullback_constructed") is not True
+        or classification.get("observable_pullback_is_chain_map") is not True
+        or classification.get("observable_pullback_support_local") is not True
+        or classification.get("H_product_equivariance_exact") is not True
+        or classification.get("cofiber_detectors_constructed") is not True
+        or classification.get("full_relative_arity_two_morphism") is not False
+        or classification.get("quantum_lift") is not False
     ):
-        raise ValueError("relative functor preflight was over-promoted")
+        raise ValueError("relative observable functor drifted")
     mutations = (
-        ("classical_import_gate", "status", "SATISFIED"),
+        ("classical_import_gate", "status", "NONLINEAR_GATE_SATISFIED"),
         ("shared_relative_row", "quantum_lift", "QME_RESTORED"),
         ("qme_and_transfer_gate", "residual_quantum_transfer_authorized", True),
         ("claim_flags", "RELATIVE_ANOMALY_CLASS_DEFINED", True),
         ("claim_flags", "RELATIVE_HADAMARD_STATE", True),
+        ("claim_flags", "CLASSICAL_RELATIVE_TRIANGLE_IMPORTED", False),
+        ("claim_flags", "RELATIVE_OBSERVABLE_PULLBACK_IMPORTED", False),
+        ("claim_flags", "RELATIVE_EQUIVARIANCE_IMPORTED", False),
         ("claim_flags", "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED", False),
         ("claim_flags", "PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED", False),
     )

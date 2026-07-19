@@ -54,7 +54,10 @@ def main() -> int:
         OUTPUT.write_text(content)
     if args.check and (not OUTPUT.exists() or OUTPUT.read_text() != content):
         raise SystemExit(f"stale quantum relative readiness certificate: {OUTPUT}")
-    print("QUANTUM RELATIVE EINSTEIN-WEYL: G0 LEDGER READY, ANALYTIC FRAMEWORK MISSING")
+    print(
+        "QUANTUM RELATIVE EINSTEIN-WEYL: LINEAR IMPORT COMPLETE, "
+        "NONLINEAR/QME FRAMEWORK OPEN"
+    )
     return 0
 
 

@@ -558,17 +558,21 @@ class ActiveFrontierTests(unittest.TestCase):
             "CURVATURE_PROPAGATOR_WAVEFRONT_THEOREM_OR_BRST_HADAMARD_COVARIANCE",
         )
 
-    def test_relative_frontier_imports_polar_but_not_global_triangle(self) -> None:
+    def test_relative_frontier_imports_complete_linear_triangle_and_functor(self) -> None:
         flags = self.payload["claim_flags"]
         self.assertTrue(flags["POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED"])
         self.assertTrue(flags["PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED"])
+        self.assertTrue(flags["CLASSICAL_RELATIVE_TRIANGLE_IMPORTED"])
+        self.assertTrue(flags["RELATIVE_OBSERVABLE_PULLBACK_IMPORTED"])
+        self.assertTrue(flags["RELATIVE_EQUIVARIANCE_IMPORTED"])
         row = self.payload["active_rows"]["relative_Einstein_Weyl"]
         self.assertEqual(
             row["status"],
-            "PRINCIPAL_GENERIC_AXIAL_AND_GENERIC_POLAR_UNGAUGED_PREFLIGHTS_GLOBAL_V1_OPEN",
+            "COMPLETE_NONCYCLIC_LINEAR_TRIANGLE_OBSERVABLE_PULLBACK_AND_COFIBER_DETECTORS_IMPORTED_NONLINEAR_QME_OPEN",
         )
         self.assertEqual(
-            row["next_gate"], "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1"
+            row["next_gate"],
+            "EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_AND_MATCHED_QME",
         )
 
     def test_quantum_overclaim_is_rejected(self) -> None:

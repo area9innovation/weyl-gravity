@@ -535,13 +535,14 @@ The zero-frequency readiness audit proves that the partial `A104` does not
 determine the zero eigenspace and freezes a complete stationary-carrier
 receiving contract.
 
-The relative Einstein--Weyl rail now imports both generic axial and generic
-polar ungauged off-shell preflights. The polar consumer replays the exact
-ghost--field--equation--identity chain map and its 184+184-term local Green
-identity. It also imports the correct five-generator Plebański--Hacyan
-stabilizer and rejects an automatic `SO(4,2)` quotient. This remains preflight:
-polar cyclic BV enhancement, moment-map/Taub-zero descent,
-exceptional/global rows, and the global mapping cone are still open.
+The relative Einstein--Weyl rail now imports the final all-row support-local
+noncyclic linear triangle, exact mapping cofiber, `H_product` equivariance,
+and contravariant linear BRST-DGA observable pullback. The polar consumer
+remains an exact regression fixture for the 184+184-term local Green identity,
+and the correct five-generator Plebański--Hacyan stabilizer still forbids an
+automatic `SO(4,2)` quotient. The three action-derived forms remain distinct;
+cyclic replacement, complete `f2`, arity three, matched QME dispositions and
+the renormalized observable restriction remain open.
 
 The current coefficient-bearing critical path is:
 

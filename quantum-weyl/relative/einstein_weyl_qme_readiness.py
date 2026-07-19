@@ -26,12 +26,12 @@ LOCAL_CARTAN = ROOT / "quantum-weyl/cartan/certificates/LOCAL_ANOMALY_TO_D_CARTA
 GLOBAL_A104 = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY.json"
 PLANNING_BRIEF = ROOT / "notes/d-quotient-quantum-team-brief.md"
 ROADMAP = ROOT / "notes/universe-building-roadmap.md"
-TRIANGLE_PREFLIGHT = (
-    ROOT / "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json"
+LINEAR_TRIANGLE = (
+    ROOT / "bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json"
 )
-RELATIVE_FUNCTOR_PREFLIGHT = (
+RELATIVE_FUNCTOR = (
     ROOT
-    / "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1.json"
+    / "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1.json"
 )
 POLAR_LIFT = (
     ROOT
@@ -41,8 +41,8 @@ PH_STABILIZER = (
     ROOT
     / "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json"
 )
-TRIANGLE_PREFLIGHT_COMMIT = "9570f03c2a880dfbf600567a4d06ca9009b2cb8e"
-RELATIVE_FUNCTOR_PREFLIGHT_COMMIT = "1cd9f8e68774e68821b130ee01353075a42eae07"
+LINEAR_TRIANGLE_COMMIT = "7d2f639c907161e6d7455c8ce0fdc6c1d7c4bc25"
+RELATIVE_FUNCTOR_COMMIT = "8ee473621f8c3c1875aaee83f26477c6f6a3686c"
 POLAR_LIFT_COMMIT = "427e479db7b3d7bd15a01ca8e0940c27bb21ed4f"
 PH_STABILIZER_COMMIT = "607be99928ca94515af4b8d96e0faff2229329d7"
 
@@ -186,8 +186,8 @@ def _semantic_inputs() -> dict[str, Any]:
     quadratic = json.loads(QUADRATIC_PREFLIGHT.read_text())
     cartan = json.loads(LOCAL_CARTAN.read_text())
     a104 = json.loads(GLOBAL_A104.read_text())
-    triangle = json.loads(TRIANGLE_PREFLIGHT.read_text())
-    functor = json.loads(RELATIVE_FUNCTOR_PREFLIGHT.read_text())
+    triangle = json.loads(LINEAR_TRIANGLE.read_text())
+    functor = json.loads(RELATIVE_FUNCTOR.read_text())
     polar = json.loads(POLAR_LIFT.read_text())
     stabilizer = json.loads(PH_STABILIZER.read_text())
     if (
@@ -221,30 +221,33 @@ def _semantic_inputs() -> dict[str, Any]:
         or a104.get("claim_flags", {}).get("BERGER_HADAMARD_DATA") is not False
     ):
         raise ValueError("Lorentzian A104/Hadamard boundary drifted")
-    classification = triangle.get("classification", {})
+    triangle_flags = triangle.get("acceptance_flags", {})
     if (
-        triangle.get("result_id") != "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT"
-        or triangle.get("result_state")
-        != "PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_CHAIN_MAPS_CERTIFIED_FULL_CURVED_ALL_SECTOR_TRIANGLE_OPEN"
-        or classification.get("principal_BV_chain_map_and_cone_certified") is not True
-        or classification.get("generic_axial_offshell_chain_map_certified") is not True
-        or classification.get("generic_axial_solution_cofiber_and_pairing_certified") is not True
-        or classification.get("full_curved_all_sector_chain_map_certified") is not False
-        or classification.get("global_mapping_cofiber_complex_certified") is not False
-        or classification.get("relative_linear_triangle_V1_certified") is not False
-        or classification.get("quantum_import_gate_satisfied") is not False
+        triangle.get("result_id") != "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1"
+        or triangle.get("claim_status") != "CERTIFIED_OFF_SHELL_LINEAR_TRIANGLE"
+        or any(value is not True for value in triangle_flags.values())
+        or triangle.get("pairing_disposition", {}).get(
+            "standard_pairing_cyclic_map_exists"
+        )
+        is not False
+        or triangle.get("pairing_disposition", {}).get("three_forms_kept_distinct")
+        is not True
     ):
-        raise ValueError("partial relative triangle boundary drifted")
-    flags = functor.get("flags", {})
+        raise ValueError("complete relative linear triangle boundary drifted")
+    classification = functor.get("classification", {})
     if (
-        functor.get("result_id") != "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1"
+        functor.get("result_id") != "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1"
         or functor.get("result_state")
-        != "PARTIAL_OFFSHELL_PREFLIGHT_IMPORTED_FULL_TRIANGLE_MISSING"
-        or flags.get("RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1") is not True
-        or flags.get("EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED") is not False
-        or flags.get("RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1") is not False
+        != "LINEAR_OBSERVABLE_PULLBACK_AND_RELATIVE_COFIBER_DETECTORS_CERTIFIED"
+        or classification.get("relative_observable_pullback_constructed") is not True
+        or classification.get("observable_pullback_is_chain_map") is not True
+        or classification.get("observable_pullback_support_local") is not True
+        or classification.get("H_product_equivariance_exact") is not True
+        or classification.get("cofiber_detectors_constructed") is not True
+        or classification.get("full_relative_arity_two_morphism") is not False
+        or classification.get("quantum_lift") is not False
     ):
-        raise ValueError("relative functor preflight boundary drifted")
+        raise ValueError("relative observable functor boundary drifted")
     polar_flags = polar.get("classification", {})
     if (
         polar.get("result_id")
@@ -306,12 +309,8 @@ def _semantic_inputs() -> dict[str, Any]:
         "stabilizer": stabilizer,
         "inclusion_evidence": _committed_evidence(inclusion),
         "quadratic_evidence": _committed_evidence(quadratic),
-        "triangle_evidence": _pinned_path(
-            TRIANGLE_PREFLIGHT, TRIANGLE_PREFLIGHT_COMMIT
-        ),
-        "functor_evidence": _pinned_path(
-            RELATIVE_FUNCTOR_PREFLIGHT, RELATIVE_FUNCTOR_PREFLIGHT_COMMIT
-        ),
+        "triangle_evidence": _pinned_path(LINEAR_TRIANGLE, LINEAR_TRIANGLE_COMMIT),
+        "functor_evidence": _pinned_path(RELATIVE_FUNCTOR, RELATIVE_FUNCTOR_COMMIT),
         "polar_lift_evidence": _pinned_path(POLAR_LIFT, POLAR_LIFT_COMMIT),
         "stabilizer_evidence": _pinned_path(
             PH_STABILIZER, PH_STABILIZER_COMMIT
@@ -324,8 +323,8 @@ def build() -> dict[str, Any]:
     result = {
         "schema": "quantum-weyl-relative-einstein-weyl-qme-readiness-v1",
         "result_id": "QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS",
-        "result_state": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
-        "generality_level": "G0",
+        "result_state": "LINEAR_RELATIVE_TRIANGLE_AND_OBSERVABLE_PULLBACK_IMPORTED_NONLINEAR_QME_OPEN",
+        "generality_level": "G1_COMPLETE_LINEAR_RELATIVE_COMPLEX_ONE_BACKGROUND",
         "lifecycle_layer": "QUANTUM",
         "dependency_tags": [
             "LOCAL-ALGEBRAIC",
@@ -346,39 +345,41 @@ def build() -> dict[str, Any]:
             "Berger_global_A104_partial": _dependency(GLOBAL_A104),
             "quantum_team_brief": _dependency(PLANNING_BRIEF),
             "universe_building_roadmap": _dependency(ROADMAP),
-            "relative_linear_triangle_preflight": _dependency(TRIANGLE_PREFLIGHT),
-            "relative_functor_preflight": _dependency(RELATIVE_FUNCTOR_PREFLIGHT),
+            "relative_linear_triangle": _dependency(LINEAR_TRIANGLE),
+            "relative_observable_functor": _dependency(RELATIVE_FUNCTOR),
             "polar_ungauged_noether_lift": _dependency(POLAR_LIFT),
             "Plebanski_Hacyan_stabilizer_authority": _dependency(PH_STABILIZER),
         },
         "pinned_classical_evidence": {
             "standard_harmonic_inclusion": inputs["inclusion_evidence"],
             "quadratic_channel_preflight": inputs["quadratic_evidence"],
-            "relative_linear_triangle_preflight": inputs["triangle_evidence"],
-            "relative_functor_preflight": inputs["functor_evidence"],
+            "relative_linear_triangle": inputs["triangle_evidence"],
+            "relative_observable_functor": inputs["functor_evidence"],
             "polar_ungauged_noether_lift": inputs["polar_lift_evidence"],
             "Plebanski_Hacyan_stabilizer_authority": inputs[
                 "stabilizer_evidence"
             ],
         },
         "classical_import_gate": {
-            "status": "NOT_SATISFIED",
-            "current_map_disposition": "PARTIAL_GENERIC_AXIAL_AND_POLAR_UNGAUGED_OFFSHELL_PREFLIGHT",
-            "required_result_ids": [
+            "status": "LINEAR_GATE_SATISFIED_NONLINEAR_GATE_OPEN",
+            "current_map_disposition": "COMPLETE_NONCYCLIC_LINEAR_TRIANGLE_AND_OBSERVABLE_PULLBACK_IMPORTED",
+            "received_result_ids": [
                 "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
-                "EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE",
                 "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1",
+            ],
+            "remaining_result_ids": [
+                "EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE"
             ],
             "forbidden_fallback": "do not reconstruct the classical triangle or its maps inside quantum-weyl",
         },
         "shared_relative_row": {
             "setting": "compact Einstein-Maxwell product; complete standard harmonic tangent; fixed compact bundle; before any optional stabilizer reduction",
-            "map_iota": "PRINCIPAL_GENERIC_AXIAL_AND_GENERIC_POLAR_UNGAUGED_OFFSHELL_PREFLIGHT_IMPORTED_GLOBAL_V1_OPEN",
-            "cofiber": "GENERIC_AXIAL_SOLUTION_COFIBER_CERTIFIED_POLAR_PRERESIDUAL_INCLUSION_CERTIFIED_GLOBAL_COFIBER_OPEN",
-            "relative_pairing": "REDUCED_MODE_CLASSICAL_PULLBACK_NONDEGENERATE_NOT_RENORMALIZED",
+            "map_iota": "COMPLETE_ALL_ROW_SUPPORT_LOCAL_NONCYCLIC_LINEAR_TRIANGLE_IMPORTED",
+            "cofiber": "SUPPORT_LOCAL_MAPPING_COFIBER_AND_EXACT_EXTRA_DETECTORS_IMPORTED",
+            "relative_pairing": "THREE_ACTION_FORMS_DISTINCT_STANDARD_CYCLIC_MAP_OBSTRUCTED_NOT_RENORMALIZED",
             "O2": "PARTIAL_QUADRATIC_FIXTURES_ONLY_ARITY_THREE_DISPOSITION_OPEN",
-            "residual_action": "OPEN_RELATIVE_EQUIVARIANCE_NOT_EXPORTED",
-            "observable_map": "OPEN_RELATIVE_OBSERVABLE_PULLBACK_NOT_EXPORTED",
+            "residual_action": "H_PRODUCT_EQUIVARIANCE_IMPORTED_FINAL_RESIDUAL_QUOTIENT_OPEN",
+            "observable_map": "SUPPORT_LOCAL_LINEAR_BRST_DGA_PULLBACK_IMPORTED",
             "quantum_lift": "ANALYTIC_FRAMEWORK_MISSING",
         },
         "polar_exact_replay": {
@@ -407,61 +408,51 @@ def build() -> dict[str, Any]:
         "relative_linear_triangle_gap_ledger": {
             "established": [
                 {
-                    "sector": "principal_BV_symbol",
-                    "status": "CHAIN_MAP_AND_NONCHARACTERISTIC_CONE_CERTIFIED",
+                    "sector": "complete_all_row_linear_triangle",
+                    "status": "SUPPORT_LOCAL_NONCYCLIC_CHAIN_MAP_CERTIFIED",
                 },
                 {
-                    "sector": "generic_axial_ell_ge_2_all_allowed_k",
-                    "status": "STRICT_OFFSHELL_CHAIN_MAP_SOLUTION_COFIBER_AND_DIRECT_PAIRING_CERTIFIED",
+                    "sector": "relative_mapping_cofiber",
+                    "status": "GLOBAL_ENDPOINTS_AND_H_PRODUCT_EQUIVARIANCE_CERTIFIED",
                 },
                 {
-                    "sector": "generic_polar_ell_ge_2_all_allowed_k",
-                    "status": "UNGAUGED_GHOST_FIELD_EQUATION_IDENTITY_CHAIN_MAP_AND_LOCAL_GREEN_IDENTITY_CERTIFIED",
+                    "sector": "linear_local_observables",
+                    "status": "CONTRAVARIANT_SUPPORT_LOCAL_BRST_DGA_PULLBACK_CERTIFIED",
+                },
+                {
+                    "sector": "solution_cohomology_detectors",
+                    "status": "EXTRA_COFIBER_DETECTORS_CERTIFIED_REDUCED_MODE",
                 },
             ],
-            "remaining_for_V1": [
+            "remaining_beyond_V1": [
                 {
-                    "sector": "generic_polar_ell_ge_2",
+                    "sector": "cyclic_relative_structure",
                     "missing": [
-                        "cyclic_BV_enhancement_or_normalized_obstruction",
-                        "H_Px_Ji_moment_maps_on_Einstein_q_primary_and_extra_p_primary",
-                        "common_Taub_zero_locus_and_null_subalgebra_classification",
-                        "post_derived_sector_polar_relative_cofiber_and_pairing",
+                        "standard_pairing_cyclic_map_or_replacement",
+                        "renormalized_relative_pairing",
                     ],
                 },
                 {
-                    "sector": "exceptional_ell_1",
+                    "sector": "nonlinear_relative_morphism",
                     "missing": [
-                        "relative_offshell_equation_and_identity_row_maps",
-                        "exceptional_stabilizer_moment_maps_and_common_Taub_zero_locus",
-                        "mapping_cofiber_and_action_derived_cyclic_pairing",
+                        "complete_f2",
+                        "arity_three_relative_identity",
                     ],
                 },
                 {
-                    "sector": "ell_0_and_global_twists",
+                    "sector": "quantum_relative_lift",
                     "missing": [
-                        "relative_offshell_equation_and_identity_row_maps",
-                        "global_stabilizer_moment_maps_and_common_Taub_zero_locus",
-                        "fixed_charge_domain_and_global_mapping_cofiber",
-                        "action_derived_cyclic_pairing",
-                    ],
-                },
-                {
-                    "sector": "global_all_sector_assembly",
-                    "missing": [
-                        "degreewise_injective_or_derived_replacement_triangle",
-                        "global_mapping_cone_nilpotency_and_cohomology",
-                        "magnetic_bundle_patching_and_boundary_closure",
-                        "relative_linear_triangle_V1_certificate",
+                        "matched_Einstein_and_Weyl_QME_dispositions",
+                        "renormalized_observable_pullback",
+                        "causal_state_restriction",
                     ],
                 },
             ],
         },
         "relative_anomaly_contract": {
             "formal_expression": "[A_rel]=[A_Weyl-iota_* A_Einstein]",
-            "status": "NOT_CONSTRUCTED",
+            "status": "CLASSICAL_PULLBACK_AVAILABLE_QUANTUM_CLASS_UNDEFINED",
             "required_before_definition": [
-                "off_shell_BV_chain_map_iota",
                 "local_QME_disposition_for_Einstein_and_Weyl",
                 "renormalized_observable_algebras",
                 "renormalized_restriction_map",
@@ -474,16 +465,16 @@ def build() -> dict[str, Any]:
         },
         "framework_ledger": {
             "LOCAL_ALGEBRAIC": {
-                "status": "PARTIAL_INPUT_ONLY",
-                "evidence": "principal and generic-axial chain maps plus the generic-polar ungauged equation/Noether chain map exist; polar cyclic BV enhancement, residual descent, exceptional/global rows and restored QME do not",
+                "status": "COMPLETE_LINEAR_CLASSICAL_IMPORT_INTERACTING_QUANTUM_OPEN",
+                "evidence": "the all-row support-local noncyclic triangle, mapping cofiber, H_product equivariance and observable pullback are imported; a cyclic relative structure, f2/arity three and matched QME dispositions remain open",
             },
             "EUCLIDEAN_SPECTRAL": {
                 "status": "NOT_COMPUTED_RELATIVELY",
                 "evidence": "no matched Einstein/Weyl determinant and measure subtraction is imported",
             },
             "REDUCED_MODE": {
-                "status": "CLASSICAL_PAIRING_INPUT_ONLY",
-                "evidence": "standard harmonic on-shell pullback is nondegenerate but not a renormalized relative pairing",
+                "status": "CLASSICAL_COFIBER_DETECTORS_IMPORTED",
+                "evidence": "exact coefficient detectors separate the certified extra cofibers but are not support-local spacetime, Peierls or renormalized quantum observables",
             },
             "LORENTZIAN_CAUSAL": {
                 "status": "ANALYTIC_FRAMEWORK_MISSING",
@@ -502,7 +493,9 @@ def build() -> dict[str, Any]:
             "QUANTUM_RELATIVE_DEPENDENCY_LEDGER": True,
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED": True,
             "PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED": True,
-            "CLASSICAL_RELATIVE_TRIANGLE_IMPORTED": False,
+            "CLASSICAL_RELATIVE_TRIANGLE_IMPORTED": True,
+            "RELATIVE_OBSERVABLE_PULLBACK_IMPORTED": True,
+            "RELATIVE_EQUIVARIANCE_IMPORTED": True,
             "RELATIVE_ANOMALY_CLASS_DEFINED": False,
             "RELATIVE_QME_RESTORED": False,
             "RELATIVE_PAIRING_RENORMALIZED": False,
@@ -511,32 +504,31 @@ def build() -> dict[str, Any]:
             "QUANTUM_RELATIVE_LIFT": False,
         },
         "verdict": "ANALYTIC_FRAMEWORK_MISSING",
-        "next_gate": "IMPORT_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1_BY_HASH",
+        "next_gate": "IMPORT_EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_AND_COMPUTE_MATCHED_QME",
         "provenance": {
             "standard_inclusion_setting_id": inputs["inclusion"]["setting_id"],
             "quadratic_preflight_setting_id": inputs["quadratic"]["setting_id"],
-            "triangle_preflight_result_id": inputs["triangle"]["result_id"],
-            "relative_functor_preflight_result_id": inputs["functor"]["result_id"],
+            "triangle_result_id": inputs["triangle"]["result_id"],
+            "relative_functor_result_id": inputs["functor"]["result_id"],
             "polar_lift_result_id": inputs["polar"]["result_id"],
             "stabilizer_authority_result_id": inputs["stabilizer"]["result_id"],
         },
         "claim_boundary": (
-            "Registers a G0 quantum dependency ledger for the compact standard-harmonic "
+            "Registers a G1 complete linear relative import for the compact standard-harmonic "
             "Einstein-Maxwell to Weyl-Maxwell relative problem. It imports exact on-shell "
             "inclusion, classical reduced-mode pairing, partial quadratic evidence, and the "
-            "principal/generic-axial off-shell triangle preflight and the generic-polar ungauged "
-            "ghost-field-equation-identity chain map by content hash. The polar import also "
+            "all-row support-local noncyclic triangle and its mapping cofiber by content hash. "
+            "The polar precursor also "
             "replays its exact polynomial contraction, Noether and chain-map identities, while "
             "retaining the certified 184+184-term local Green identity boundary. The partial "
             "import also applies the correct Plebanski-Hacyan stabilizer authority: the "
             "connected algebra is R H plus R P_x plus so(3), universal nullity is refuted, "
             "and no absolute quotient is authorized before a common moment-map/Taub-zero "
-            "derived sector and null subalgebra are certified. The partial "
-            "triangle is explicitly rejected as EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1: "
-            "polar cyclic BV enhancement and stabilizer descent, exceptional/global relative "
-            "rows, and the global all-sector cone remain open. It does not construct "
-            "the full off-shell BV triangle, global mapping cofiber, "
-            "relative anomaly, QME restoration, renormalized pairing, state restriction, "
+            "derived sector and null subalgebra are certified. The final linear observable "
+            "functor supplies a contravariant support-local BRST-DGA pullback, exact H_product "
+            "equivariance and reduced cofiber detectors. The standard-pairing cyclic route, "
+            "complete f2, arity three and final residual quotient remain open. It does not construct "
+            "a relative anomaly class, QME restoration, renormalized pairing, state restriction, "
             "D-Cartan verdict, particle interpretation or Lorentzian quantum theory."
         ),
     }
@@ -549,18 +541,19 @@ def validate(result: dict[str, Any]) -> None:
         result.get("result_id")
         != "QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS"
         or result.get("result_state")
-        != "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING"
-        or result.get("generality_level") != "G0"
+        != "LINEAR_RELATIVE_TRIANGLE_AND_OBSERVABLE_PULLBACK_IMPORTED_NONLINEAR_QME_OPEN"
+        or result.get("generality_level")
+        != "G1_COMPLETE_LINEAR_RELATIVE_COMPLEX_ONE_BACKGROUND"
         or result.get("verdict") != "ANALYTIC_FRAMEWORK_MISSING"
     ):
         raise ValueError("relative quantum readiness identity drifted")
     gate = result.get("classical_import_gate", {})
     if (
-        gate.get("status") != "NOT_SATISFIED"
+        gate.get("status") != "LINEAR_GATE_SATISFIED_NONLINEAR_GATE_OPEN"
         or gate.get("current_map_disposition")
-        != "PARTIAL_GENERIC_AXIAL_AND_POLAR_UNGAUGED_OFFSHELL_PREFLIGHT"
+        != "COMPLETE_NONCYCLIC_LINEAR_TRIANGLE_AND_OBSERVABLE_PULLBACK_IMPORTED"
     ):
-        raise ValueError("classical relative import gate was over-promoted")
+        raise ValueError("classical relative import gate drifted")
     row = result.get("shared_relative_row", {})
     if row.get("quantum_lift") != "ANALYTIC_FRAMEWORK_MISSING":
         raise ValueError("relative quantum lift was over-promoted")
@@ -572,12 +565,18 @@ def validate(result: dict[str, Any]) -> None:
         flags.get("QUANTUM_RELATIVE_DEPENDENCY_LEDGER") is not True
         or flags.get("POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED") is not True
         or flags.get("PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED") is not True
+        or flags.get("CLASSICAL_RELATIVE_TRIANGLE_IMPORTED") is not True
+        or flags.get("RELATIVE_OBSERVABLE_PULLBACK_IMPORTED") is not True
+        or flags.get("RELATIVE_EQUIVARIANCE_IMPORTED") is not True
     ):
         raise ValueError("relative dependency ledger flag missing")
     allowed_true = {
         "QUANTUM_RELATIVE_DEPENDENCY_LEDGER",
         "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED",
         "PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED",
+        "CLASSICAL_RELATIVE_TRIANGLE_IMPORTED",
+        "RELATIVE_OBSERVABLE_PULLBACK_IMPORTED",
+        "RELATIVE_EQUIVARIANCE_IMPORTED",
     }
     if any(value is not False for key, value in flags.items() if key not in allowed_true):
         raise ValueError("relative quantum theorem was over-promoted")

@@ -249,7 +249,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "generic_ghost_n3_I29_integrated_function": "COEFFICIENT_COMPUTED",
         "generic_ghost_n3_symmetric_point_simplex_integration": "COEFFICIENT_COMPUTED",
         "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
-        "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
+        "relative_readiness": "LINEAR_RELATIVE_TRIANGLE_AND_OBSERVABLE_PULLBACK_IMPORTED_NONLINEAR_QME_OPEN",
     }
     for name, state in states.items():
         if values[name].get("result_state") != state:
@@ -2496,11 +2496,14 @@ def _load() -> dict[str, dict[str, Any]]:
         relative_flags.get("POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED") is not True
         or relative_flags.get("PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED")
         is not True
-        or relative_flags.get("CLASSICAL_RELATIVE_TRIANGLE_IMPORTED") is not False
+        or relative_flags.get("CLASSICAL_RELATIVE_TRIANGLE_IMPORTED") is not True
+        or relative_flags.get("RELATIVE_OBSERVABLE_PULLBACK_IMPORTED") is not True
+        or relative_flags.get("RELATIVE_EQUIVARIANCE_IMPORTED") is not True
         or relative_flags.get("QUANTUM_RELATIVE_LIFT") is not False
-        or relative_gate.get("status") != "NOT_SATISFIED"
+        or relative_gate.get("status")
+        != "LINEAR_GATE_SATISFIED_NONLINEAR_GATE_OPEN"
         or relative_gate.get("current_map_disposition")
-        != "PARTIAL_GENERIC_AXIAL_AND_POLAR_UNGAUGED_OFFSHELL_PREFLIGHT"
+        != "COMPLETE_NONCYCLIC_LINEAR_TRIANGLE_AND_OBSERVABLE_PULLBACK_IMPORTED"
     ):
         raise ValueError("relative Einstein-Weyl frontier drifted")
     return values
@@ -2558,8 +2561,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "CURVATURE_PROPAGATOR_WAVEFRONT_THEOREM_OR_BRST_HADAMARD_COVARIANCE",
             },
             "relative_Einstein_Weyl": {
-                "status": "PRINCIPAL_GENERIC_AXIAL_AND_GENERIC_POLAR_UNGAUGED_PREFLIGHTS_GLOBAL_V1_OPEN",
-                "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+                "status": "COMPLETE_NONCYCLIC_LINEAR_TRIANGLE_OBSERVABLE_PULLBACK_AND_COFIBER_DETECTORS_IMPORTED_NONLINEAR_QME_OPEN",
+                "next_gate": "EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_AND_MATCHED_QME",
             },
             "quantum_transfer": {
                 "status": "FORBIDDEN_PHYSICAL_GHOST_N3_AND_VECTOR_N1_N2_FIVE_CARRIER_REPRESENTATIVE_ASSEMBLED_LONGITUDINAL_SCHUR_PRODUCT_SPECTRUM_AND_REGULAR_DET3_COMPUTED_WEIGHTED_ROWS_REMAINING_BV_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
@@ -2668,6 +2671,9 @@ def build() -> dict[str, Any]:
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": True,
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED": True,
             "PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED": True,
+            "CLASSICAL_RELATIVE_TRIANGLE_IMPORTED": True,
+            "RELATIVE_OBSERVABLE_PULLBACK_IMPORTED": True,
+            "RELATIVE_EQUIVARIANCE_IMPORTED": True,
             "HADAMARD_EXISTENCE_THEOREM_APPLIES": False,
             "RANK_46_SUPPORT_LOCAL_PROJECTOR_CONSTRUCTED": False,
             "RANK_46_SUPPORT_LOCAL_CARRIER_IMPORTED": True,
@@ -3102,10 +3108,11 @@ def build() -> dict[str, Any]:
             "BRST/Krein and physical-positivity gate are recorded separately. "
             "The exact stationary-carrier import consumer is ready, but no classical manifest "
             "has been supplied and finite PBW data do not decide spectral isolation of zero. "
-            "The relative Einstein-Weyl rail imports exact generic axial and generic polar "
-            "ungauged off-shell preflights plus the correct five-generator stabilizer "
-            "authority, but polar cyclic/stabilizer descent and exceptional/global rows "
-            "still block the all-sector classical triangle. "
+            "The relative Einstein-Weyl rail imports the final all-row support-local "
+            "noncyclic linear triangle, exact mapping cofiber, H_product equivariance and "
+            "contravariant linear BRST-DGA observable pullback. The three action-derived "
+            "forms remain distinct; cyclic replacement, f2/arity three and matched QME "
+            "dispositions remain open. "
             "It does not establish a global BRST Hadamard state, renormalized Lorentzian "
             "products, a Lorentzian QME, residual quantum transfer, or rule out cancellation "
             "by nonstandard added matter."
@@ -3246,6 +3253,9 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("STATIONARY_GENERATOR_IMPORT_CONSUMER_READY") is not True
         or flags.get("POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED") is not True
         or flags.get("PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED") is not True
+        or flags.get("CLASSICAL_RELATIVE_TRIANGLE_IMPORTED") is not True
+        or flags.get("RELATIVE_OBSERVABLE_PULLBACK_IMPORTED") is not True
+        or flags.get("RELATIVE_EQUIVARIANCE_IMPORTED") is not True
         or flags.get("FIVE_UNIVERSAL_CPT_THIRD_CURVATURE_KERNELS_IMPORTED")
         is not True
         or flags.get("GENERIC_PHYSICAL_HESSIAN_LINEAR_CURVATURE_IMPORTED")
@@ -3488,6 +3498,9 @@ def validate(result: dict[str, Any]) -> None:
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY",
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED",
             "PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED",
+            "CLASSICAL_RELATIVE_TRIANGLE_IMPORTED",
+            "RELATIVE_OBSERVABLE_PULLBACK_IMPORTED",
+            "RELATIVE_EQUIVARIANCE_IMPORTED",
             "ZETA_SCALE_COEFFICIENT_COMPUTED",
             "ROUND_S4_SCHUR_R_K_COMPUTED",
             "ROUND_S4_SCHUR_FINITE_R_K2_COMPUTED",
