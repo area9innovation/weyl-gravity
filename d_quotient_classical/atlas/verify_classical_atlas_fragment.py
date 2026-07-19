@@ -58,6 +58,13 @@ def verify() -> None:
     if "Bridge 1 is not activated" not in berger_crosswalk["claim_boundary"]:
         raise AssertionError("Berger Bridge 1 activation gate missing")
     transverse = by_id["classical.nariai.transverse_kantowski_sachs_tangent"]
+
+    bach_open = by_id["classical.bach_flat.open_parent_detour"]
+    bach_ids = {item["result_id"] for item in bach_open["evidence"]}
+    if "BACH_FLAT_RANK310_NATURAL_SDR_V1" not in bach_ids:
+        raise AssertionError("class-wide Bach-flat rank-310 SDR missing")
+    if "no non-Einstein metric or rank-310 Green homotopy" not in bach_open["claim_boundary"]:
+        raise AssertionError("Bach-flat metric causal boundary missing")
     if transverse["descriptions"]["causal"] != "CERTIFIED":
         raise AssertionError("formal transverse causal theorem missing")
     transverse_ids = {item["result_id"] for item in transverse["evidence"]}

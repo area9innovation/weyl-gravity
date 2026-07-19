@@ -66,6 +66,7 @@ CERTS = {
     "Einstein_metric_biwave": ROOT / "d_quotient_classical/certificates/EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
     "Nariai_KS_rank310_transfer": ROOT / "d_quotient_classical/certificates/NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1.json",
     "Bach_parent": ROOT / "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
+    "Bach_rank310_SDR": ROOT / "d_quotient_classical/certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
 
@@ -262,15 +263,15 @@ def entries() -> list[dict[str, Any]]:
     ))
     values.append(_entry(
         "classical.bach_flat.open_parent_detour",
-        _scope(NARIAI, background="every globally hyperbolic Bach-flat four-manifold; explicit relative ADM radius-1/4 ball around Nariai", carrier="normal-adjoint-tractor Yang-Mills detour parent", degree="parent complex degrees", parity="all", ell="NOT_APPLICABLE without additional symmetry", m="NOT_APPLICABLE", k="all local covectors", omega="all"),
+        _scope(NARIAI, background="every globally hyperbolic Bach-flat four-manifold; explicit relative ADM radius-1/4 ball around Nariai", carrier="normal-adjoint-tractor Yang-Mills detour parent, plus the natural rank-310 mapping cone and its four-row metric retract", degree="parent, rank-310 and metric complex degrees", parity="all", ell="NOT_APPLICABLE without additional symmetry", m="NOT_APPLICABLE", k="all local covectors", omega="all"),
         {"causal": "CERTIFIED", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NOT_APPLICABLE", "quantum": "OPEN"},
         ("CERTIFIED", "The parent detour is degreewise Green hyperbolic on every declared globally hyperbolic Bach-flat background."),
-        ("CERTIFIED", "The parent is cyclic under its tractor fibre pairing and advanced/retarded adjoint reversal."),
+        ("CERTIFIED", "The parent is cyclic under its tractor fibre pairing and advanced/retarded adjoint reversal; separately, the class-wide rank-310 SDR and metric pairing pullback are support-local and cyclic."),
         ("OPEN", "No class-wide nonlinear tangent cone."),
         ("NOT_APPLICABLE", "No finite harmonic resonance decomposition is assumed on the open parent class."),
         _second(("OPEN", "No bounded harmonic class is declared."), ("OPEN", "No smooth-secular class-wide theorem."), ("OPEN", "Unary parent Green homotopy does not by itself solve nonlinear sourced second order.")),
-        _evidence("Bach_parent", "cone"),
-        "This certifies the parent, not a support-local metric/parent SDR or metric Bach Green homotopy throughout the whole relative-open class.",
+        _evidence("Bach_parent", "Bach_rank310_SDR", "cone"),
+        "The normal-tractor parent is Green hyperbolic on the full declared class, and the natural six-block rank-310 mapping cone now retracts support-locally and cyclically to the action-derived metric Bach complex. These are distinct statements: no non-Einstein metric or rank-310 Green homotopy follows until the metric Bach endpoint is proved Green hyperbolic. The pure parent-to-metric crosswalk also remains fail-closed; the certified SDR has the rank-310 cone as its source.",
     ))
     values.append(_entry(
         "classical.nariai.transverse_kantowski_sachs_tangent",

@@ -1956,9 +1956,14 @@ g_\Omega=\left(1+\frac1{10(1+t^2)}\right)^2g_N,
 
 which is Bach-flat and non-conformally-flat.  The class is open relative to
 the Bach-flat solution locus, not in the space of all metrics.  The next gate
-is now sharply the support-local metric/parent SDR stability theorem or its
-first normalized obstruction on this class; the parent Green theorem itself
-is no longer the issue.
+has now narrowed further.  `BACH_FLAT_RANK310_NATURAL_SDR_V1` uses a global
+ADM orthonormal-coframe/density transport and the universal normal-BGG,
+Yang--Mills detour and Noether identities to bind the complete six-block
+finite HPL construction on every member of the class.  The resulting
+rank-310 inclusion, projection and homotopy are finite-order, support-local
+and cyclic, and retract to the action-derived metric Bach complex.  The
+remaining issue is only the non-Einstein metric endpoint's Green homotopy;
+neither the parent theorem nor the parent/metric SDR is still open.
 
 `CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1` closes the metric half on the full
 bounded-smooth conformal orbit

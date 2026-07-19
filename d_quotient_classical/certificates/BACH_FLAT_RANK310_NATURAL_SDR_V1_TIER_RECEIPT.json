@@ -1,0 +1,40 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "BACH_FLAT_RANK310_NATURAL_SDR_V1_TIER_RECEIPT",
+  "claim_id": "BACH_FLAT_RANK310_NATURAL_SDR_V1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1.json", "sha256": "17b8805944409299ac9a3d3cb25fb6ffae5e6f9fe70b3b1f40b177e778137355"},
+    "schema": {"path": "d_quotient_classical/schema/bach-flat-rank310-natural-sdr-v1.schema.json", "sha256": "debb8d48b485e1b1ec416559960aeca000790b01f831ee3c918a5665dffeec41"},
+    "producer": {"path": "d_quotient_classical/causal_transfer/bach_flat_rank310_natural_sdr.py", "sha256": "cb27c8959cce3fd8864da2822cfdc19fc37e81ab5ccf06ec414df3d786c4aad5"},
+    "independent_verifier": {"path": "d_quotient_classical/causal_transfer/verify_bach_flat_rank310_natural_sdr.py", "sha256": "2c3d9b5d45e6f2e92849053f5dbfb71a1f6821f367a12bbc5d35e6393c97515d"},
+    "tests": {"path": "d_quotient_classical/causal_transfer/tests/test_bach_flat_rank310_natural_sdr.py", "sha256": "b4728d35409345742caf0988f15ca6c0a759259e0c4c371b7a72a6a9f19dbc2c"},
+    "invariant_proof": {"path": "d_quotient_classical/proofs/bach-flat-rank310-natural-sdr.md", "sha256": "643f8ca7993a6dc113d5a8fec768b4e069ad77ecbd90df5bbd2065ebdaa3f83e"},
+    "report": {"path": "d_quotient_classical/reports/bach-flat-rank310-natural-sdr.md", "sha256": "bb67240f51e3b271b14f81a9c061dacb79b5bf2e6ecd70f0656bc401d96490c9"},
+    "atlas_fragment": {"path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "sha256": "7a4e8bc73545a0d09628fd6ec62e87b60f76e769a81991e3f47ebfd6b927a92d"}
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "checks": ["Python and JSON parsed", "strict schema passed", "scoped diff inspected", "content hashes replayed"]},
+    "tier_1": {
+      "status": "PASS", "elapsed_seconds": 5.4, "peak_rss_kb": 69076,
+      "commands": [
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/bach_flat_rank310_natural_sdr.py --write --guards",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/bach-flat-rank310-natural-sdr-v1.schema.json -d d_quotient_classical/certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1.json",
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_bach_flat_rank310_natural_sdr.py",
+        "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_bach_flat_rank310_natural_sdr"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS", "elapsed_seconds": 0.4,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {"status": "NOT_RUN", "reason": "Scoped class-wide algebraic SDR promotion with unchanged content-addressed dependencies; no metric Green, paper freeze, release, shared-core change, nonlinear or quantum promotion."}
+  },
+  "claim_boundary": "This receipt certifies the finite-order support-local cyclic rank-310 SDR onto the action metric Bach complex throughout the declared relative-open Bach-flat ADM class. It does not certify a non-Einstein metric or rank-310 Green homotopy, an ambient-open metric class, Hadamard data, nonlinear closure or quantum claims."
+}

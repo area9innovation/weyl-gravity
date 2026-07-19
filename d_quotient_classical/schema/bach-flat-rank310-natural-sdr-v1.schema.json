@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/bach-flat-rank310-natural-sdr-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "scope", "bundle_transport", "operator_registry", "natural_construction", "universal_relations", "finite_SDR", "exact_checks", "flags", "claim_boundary", "next_gate", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "pure-weyl-bach-flat-rank310-natural-sdr-v1"},
+    "result_id": {"const": "BACH_FLAT_RANK310_NATURAL_SDR_V1"},
+    "result_state": {"const": "RELATIVE_G3_BACH_FLAT_RANK310_SUPPORT_LOCAL_CYCLIC_SDR_EXACT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Bach_flat_parent_class", "base_rank310_SDR", "six_block_HPL", "Yang_Mills_detour", "KS_common_slab_consumer"],
+      "properties": {
+        "Bach_flat_parent_class": {"$ref": "#/$defs/dependency"},
+        "base_rank310_SDR": {"$ref": "#/$defs/dependency"},
+        "six_block_HPL": {"$ref": "#/$defs/dependency"},
+        "Yang_Mills_detour": {"$ref": "#/$defs/dependency"},
+        "KS_common_slab_consumer": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "scope": {"$ref": "#/$defs/stringMapWithDegreeRanks"},
+    "bundle_transport": {
+      "type": "object", "additionalProperties": false,
+      "required": ["general_construction", "pairing_density", "globality", "support", "exact_fixture"],
+      "properties": {
+        "general_construction": {"type": "string", "minLength": 1},
+        "pairing_density": {"type": "string", "minLength": 1},
+        "globality": {"type": "string", "minLength": 1},
+        "support": {"type": "string", "minLength": 1},
+        "exact_fixture": {
+          "type": "object", "additionalProperties": false,
+          "required": ["fixture", "coframe_determinant", "density_multiplier", "isometry_defect_rank", "inverse_defect_rank", "shift_symbols_retained"],
+          "properties": {
+            "fixture": {"type": "string", "minLength": 1},
+            "coframe_determinant": {"const": "N s1 s2 s3"},
+            "density_multiplier": {"type": "string", "minLength": 1},
+            "isometry_defect_rank": {"const": 0},
+            "inverse_defect_rank": {"const": 0},
+            "shift_symbols_retained": {"const": ["b1", "b2", "b3"]}
+          }
+        }
+      }
+    },
+    "operator_registry": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "source", "target", "degree", "order_bound", "definition", "adjoint_partner"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1}, "source": {"type": "string", "minLength": 1},
+          "target": {"type": "string", "minLength": 1}, "degree": {"const": 1},
+          "order_bound": {"type": "integer", "minimum": 0, "maximum": 4},
+          "definition": {"type": "string", "minLength": 1}, "adjoint_partner": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "natural_construction": {"$ref": "#/$defs/stringMap"},
+    "universal_relations": {"$ref": "#/$defs/stringMap"},
+    "finite_SDR": {"$ref": "#/$defs/stringMap"},
+    "exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ADM_transport_isometric", "ADM_transport_invertible", "all_six_blocks_typed", "all_six_block_HPL_identities_zero", "both_quadratic_metric_cross_terms_retained", "all_310_rows_included", "support_local", "cyclic", "nonparallel_Weyl_consumer_replayed"],
+      "properties": {
+        "ADM_transport_isometric": {"const": true}, "ADM_transport_invertible": {"const": true},
+        "all_six_blocks_typed": {"const": true}, "all_six_block_HPL_identities_zero": {"const": true},
+        "both_quadratic_metric_cross_terms_retained": {"const": true}, "all_310_rows_included": {"const": true},
+        "support_local": {"const": true}, "cyclic": {"const": true},
+        "nonparallel_Weyl_consumer_replayed": {"const": true}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BACH_FLAT_RANK310_NATURAL_SDR_V1", "BACH_FLAT_RELATIVE_G3_RANK310_SDR", "BACH_FLAT_RANK310_CYCLICITY", "BACH_FLAT_METRIC_GREEN_HOMOTOPY_ON_CLASS", "BACH_FLAT_RANK310_GREEN_HOMOTOPY_ON_CLASS", "AMBIENT_OPEN_ALL_METRICS", "HADAMARD_STATE", "NONLINEAR_EXTENSION", "QUANTUM_CLAIM"],
+      "properties": {
+        "BACH_FLAT_RANK310_NATURAL_SDR_V1": {"const": true},
+        "BACH_FLAT_RELATIVE_G3_RANK310_SDR": {"const": true},
+        "BACH_FLAT_RANK310_CYCLICITY": {"const": true},
+        "BACH_FLAT_METRIC_GREEN_HOMOTOPY_ON_CLASS": {"const": false},
+        "BACH_FLAT_RANK310_GREEN_HOMOTOPY_ON_CLASS": {"const": false},
+        "AMBIENT_OPEN_ALL_METRICS": {"const": false}, "HADAMARD_STATE": {"const": false},
+        "NONLINEAR_EXTENSION": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {
+      "type": "object", "additionalProperties": false, "required": ["statement", "not_claimed"],
+      "properties": {"statement": {"type": "string", "minLength": 1}, "not_claimed": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}}
+    },
+    "next_gate": {"const": "C_G3_NON_EINSTEIN_BACH_METRIC_ENDPOINT_GREEN_OR_OBSTRUCTION"},
+    "source_manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "stringMap": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
+    "stringMapWithDegreeRanks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["class", "manifold", "carrier", "degree_ranks", "regularity"],
+      "properties": {
+        "class": {"type": "string", "minLength": 1}, "manifold": {"type": "string", "minLength": 1},
+        "carrier": {"type": "string", "minLength": 1}, "degree_ranks": {"const": [15, 140, 140, 15]},
+        "regularity": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

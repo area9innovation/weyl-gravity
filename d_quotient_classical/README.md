@@ -389,9 +389,15 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   `1/4` around Nariai has a common reference speed cone and contains the
   nonconstant, non-conformally-flat consumer
   `g_Omega=(1+1/(10(1+t^2)))^2 g_N`.  This is a genuine relative-open `G3`
-  parent class; the metric SDR and metric Bach Green theorem on that class
-  remain fail-closed:
+  parent class.  The natural normal-BGG construction now also supplies a
+  finite-order support-local cyclic rank-310 SDR onto the action-derived
+  metric Bach complex throughout that class.  The remaining fail-closed gate
+  is specifically the non-Einstein metric Bach Green theorem, and hence the
+  class-wide rank-310 Green homotopy:
   [`certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json`](certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json),
+  [`certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1.json`](certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1.json),
+  [`certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1_TIER_RECEIPT.json`](certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1_TIER_RECEIPT.json),
+  [`reports/bach-flat-rank310-natural-sdr.md`](reports/bach-flat-rank310-natural-sdr.md),
   [`reports/bach-flat-parent-green-stability.md`](reports/bach-flat-parent-green-stability.md)
 - Conformal-Nariai metric/all-row class: finite Diff--Weyl BV covariance,
   including the affine Weyl-ghost term and cotangent shear, transports the

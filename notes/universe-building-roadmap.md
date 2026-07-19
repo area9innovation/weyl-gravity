@@ -1626,6 +1626,11 @@ The support-local Bach-flat parent-to-metric causal bridge runs in parallel to
 this ladder.  It is the main generality bridge and may strengthen stages 1,
 3, 4 and 6, but a parent Green theorem does not by itself supply a metric
 branch map or physical state.
+Its algebraic comparison layer is now certified on the radius-`1/4`
+relative-open Bach-flat ADM class: the natural six-block rank-310 cone has a
+support-local cyclic SDR onto the action metric complex.  The remaining
+generality gate is precisely the non-Einstein metric Bach Green homotopy (and
+then its automatic rank-310 transfer), not another parent or SDR search.
 
 The near-term critical path is therefore
 

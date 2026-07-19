@@ -1,0 +1,191 @@
+{
+  "bundle_transport": {
+    "exact_fixture": {
+      "coframe_determinant": "N s1 s2 s3",
+      "density_multiplier": "sqrt(N s1 s2 s3) relative to the fixture reference density",
+      "fixture": "shifted diagonal ADM coframe",
+      "inverse_defect_rank": 0,
+      "isometry_defect_rank": 0,
+      "shift_symbols_retained": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "general_construction": "use the future unit normal and the positive spatial square root between h and h_N to identify ADM orthonormal coframes; induce the map on tensor, form and metric-split tractor slots",
+    "globality": "the positive spatial square root is a smooth global bundle map throughout the strict ADM ball",
+    "pairing_density": "multiply every paired slot by rho=(dvol_g/dvol_N)^(1/2)",
+    "support": "the transport and inverse are pointwise"
+  },
+  "claim_boundary": {
+    "not_claimed": [
+      "a metric Bach Green homotopy on non-Einstein members",
+      "a rank-310 Green homotopy on the full class",
+      "an ambient-open set in all smooth metrics",
+      "a component-expanded class-wide PBW table",
+      "Hadamard, nonlinear or quantum results"
+    ],
+    "statement": "Every metric in the certified relative-open Bach-flat ADM class carries a natural finite-order support-local cyclic rank-310 deformation retract onto its action-derived four-row metric Bach complex."
+  },
+  "dependency_refs": {
+    "Bach_flat_parent_class": {
+      "artifact_id": "BACH_FLAT_PARENT_GREEN_STABILITY_V1",
+      "path": "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
+      "sha256": "2ee8be4633c180f178ceff900cda2e6cc6b6f6c51bf7018e59cea3f63d5c14bf"
+    },
+    "KS_common_slab_consumer": {
+      "artifact_id": "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1.json",
+      "sha256": "58a266aa66d3070816038f229346c0676c88cbb812790700f6fa7eb264750e0e"
+    },
+    "Yang_Mills_detour": {
+      "artifact_id": "CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1",
+      "path": "d_quotient_classical/certificates/CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1.json",
+      "sha256": "1b5104082d72a2a6397b4a668a9a1008be22e1daf7481e5de37ad4c31126cee4"
+    },
+    "base_rank310_SDR": {
+      "artifact_id": "NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1.json",
+      "sha256": "112a21a1b46889143505c41773295845a627d2757c9d5218f0eded93a4dadaae"
+    },
+    "six_block_HPL": {
+      "artifact_id": "NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1.json",
+      "sha256": "95a3cc1329ec3af2130e965105ddfa801b344fadebe56750a4b1147c7c17dc62"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "ADM_transport_invertible": true,
+    "ADM_transport_isometric": true,
+    "all_310_rows_included": true,
+    "all_six_block_HPL_identities_zero": true,
+    "all_six_blocks_typed": true,
+    "both_quadratic_metric_cross_terms_retained": true,
+    "cyclic": true,
+    "nonparallel_Weyl_consumer_replayed": true,
+    "support_local": true
+  },
+  "finite_SDR": {
+    "Delta": "Q310,g-Q310,N in the transported split bundle",
+    "cyclic": "all split and original-coordinate adjunction identities follow from the exact six-block theorem",
+    "homotopy": "H_g=H_N-H_N Delta H_N",
+    "inclusion": "I_g=(1-H_N Delta)I_N",
+    "metric_differential": "pi_g Q310,g I_g is the natural four-row metric Bach differential and contains both forced quadratic cross terms",
+    "nilpotence": "(H_N Delta)^2=(Delta H_N)^2=0 by six-block incidence",
+    "projection": "pi_g=pi_N(1-Delta H_N)",
+    "support": "every entry is finite-order differential or pointwise"
+  },
+  "flags": {
+    "AMBIENT_OPEN_ALL_METRICS": false,
+    "BACH_FLAT_METRIC_GREEN_HOMOTOPY_ON_CLASS": false,
+    "BACH_FLAT_RANK310_CYCLICITY": true,
+    "BACH_FLAT_RANK310_GREEN_HOMOTOPY_ON_CLASS": false,
+    "BACH_FLAT_RANK310_NATURAL_SDR_V1": true,
+    "BACH_FLAT_RELATIVE_G3_RANK310_SDR": true,
+    "HADAMARD_STATE": false,
+    "NONLINEAR_EXTENSION": false,
+    "QUANTUM_CLAIM": false
+  },
+  "natural_construction": {
+    "coefficient_completeness": "all coefficients are determined naturally by the metric and its finite jets; no fitted or nonlocal coefficient occurs",
+    "fixed_maps": "p0,J0,r0 and the transported algebraic pairings",
+    "original_graph": "x=a-d_aut J0 s-L1 h and y=lambda+c Phi h, with forced cotangent transform",
+    "split_difference": "exactly Delta g,Delta k,Delta M,Delta B and the two adjoint blocks",
+    "varying_maps": "normal-BGG L0,L1; curvature-corrected d_aut; K; Yang--Mills M^D; Phi; action Bach Hessian B; formal adjoints"
+  },
+  "next_gate": "C_G3_NON_EINSTEIN_BACH_METRIC_ENDPOINT_GREEN_OR_OBSTRUCTION",
+  "operator_registry": [
+    {
+      "adjoint_partner": "Delta gsharp",
+      "definition": "-r0 (L0_epsilon-L0_0) p0",
+      "degree": 1,
+      "name": "Delta g",
+      "order_bound": 1,
+      "source": "epsilon_C0",
+      "target": "s_ker_p0"
+    },
+    {
+      "adjoint_partner": "Delta ksharp",
+      "definition": "(K_epsilon-K_0) p0",
+      "degree": 1,
+      "name": "Delta k",
+      "order_bound": 1,
+      "source": "epsilon_C0",
+      "target": "h_H1"
+    },
+    {
+      "adjoint_partner": "Delta M",
+      "definition": "M_epsilon^D-M_0^D",
+      "degree": 1,
+      "name": "Delta M",
+      "order_bound": 2,
+      "source": "x_C1",
+      "target": "x_sharp_C1dual"
+    },
+    {
+      "adjoint_partner": "Delta B",
+      "definition": "B_action,epsilon-B_action,0",
+      "degree": 1,
+      "name": "Delta B",
+      "order_bound": 4,
+      "source": "h_H1",
+      "target": "h_sharp_H1dual"
+    },
+    {
+      "adjoint_partner": "Delta g",
+      "definition": "(Delta g)^sharp",
+      "degree": 1,
+      "name": "Delta gsharp",
+      "order_bound": 1,
+      "source": "s_sharp_ker_p0_dual",
+      "target": "epsilon_sharp_C0dual"
+    },
+    {
+      "adjoint_partner": "Delta k",
+      "definition": "(Delta k)^sharp",
+      "degree": 1,
+      "name": "Delta ksharp",
+      "order_bound": 1,
+      "source": "h_sharp_H1dual",
+      "target": "epsilon_sharp_C0dual"
+    }
+  ],
+  "result_id": "BACH_FLAT_RANK310_NATURAL_SDR_V1",
+  "result_state": "RELATIVE_G3_BACH_FLAT_RANK310_SUPPORT_LOCAL_CYCLIC_SDR_EXACT",
+  "schema": "pure-weyl-bach-flat-rank310-natural-sdr-v1",
+  "scope": {
+    "carrier": "ten-block rank-310 curvature-corrected automorphism/parent-detour mapping cone",
+    "class": "the certified radius-1/4 relative ADM neighborhood of unit Nariai inside the smooth Bach-flat locus",
+    "degree_ranks": [
+      15,
+      140,
+      140,
+      15
+    ],
+    "manifold": "R x S1 x S2",
+    "regularity": "smooth; the SDR itself needs no uniform derivative bound"
+  },
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/bach_flat_rank310_natural_sdr.py": "cb27c8959cce3fd8864da2822cfdc19fc37e81ab5ccf06ec414df3d786c4aad5",
+    "d_quotient_classical/causal_transfer/tests/test_bach_flat_rank310_natural_sdr.py": "b4728d35409345742caf0988f15ca6c0a759259e0c4c371b7a72a6a9f19dbc2c",
+    "d_quotient_classical/causal_transfer/verify_bach_flat_rank310_natural_sdr.py": "2c3d9b5d45e6f2e92849053f5dbfb71a1f6821f367a12bbc5d35e6393c97515d",
+    "d_quotient_classical/proofs/bach-flat-rank310-natural-sdr.md": "643f8ca7993a6dc113d5a8fec768b4e069ad77ecbd90df5bbd2065ebdaa3f83e",
+    "d_quotient_classical/schema/bach-flat-rank310-natural-sdr-v1.schema.json": "debb8d48b485e1b1ec416559960aeca000790b01f831ee3c918a5665dffeec41"
+  },
+  "universal_relations": {
+    "BGG": "d_aut L0=L1 K and M^D L1=Phi",
+    "Kostant": "p0 L0=1, g J0=1, J0 g=1-L0 p0",
+    "Noether": "B_action K=0 and Ksharp B_action=0 on a Bach-flat background",
+    "cyclicity": "metric-compatible tractor connection, action Hessian and forced cotangent transform preserve the four pairings",
+    "detour": "Bach(g)=0 iff the normal tractor connection is Yang--Mills, so the corrected parent sequence is a complex"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/bach_flat_rank310_natural_sdr.py --write --guards",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/bach-flat-rank310-natural-sdr-v1.schema.json -d d_quotient_classical/certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1.json",
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_bach_flat_rank310_natural_sdr.py",
+    "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_bach_flat_rank310_natural_sdr"
+  ]
+}

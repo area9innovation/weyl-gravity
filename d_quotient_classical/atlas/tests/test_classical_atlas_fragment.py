@@ -88,6 +88,15 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
 
+    def test_bach_flat_class_separates_parent_causality_from_metric_sdr(self) -> None:
+        entry = self.entries["classical.bach_flat.open_parent_detour"]
+        self.assertEqual(entry["descriptions"]["causal"], "CERTIFIED")
+        self.assertIn(
+            "BACH_FLAT_RANK310_NATURAL_SDR_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("no non-Einstein metric or rank-310 Green homotopy", entry["claim_boundary"])
+
     def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_exact_branch"]
         self.assertEqual(entry["descriptions"]["causal"], "CERTIFIED")
