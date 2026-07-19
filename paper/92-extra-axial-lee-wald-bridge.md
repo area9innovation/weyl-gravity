@@ -1,8 +1,8 @@
-# Extra fourth-order modes: compact currents and black-hole causal tests
+# Extra fourth-order modes: compact currents and black-hole endpoint tests
 
 *Bridge note for conformal-gravity, higher-derivative quantization, and
 Einstein-from-conformal researchers. Status: compact classical current theorem
-and scoped Schwarzschild axial causal-disposition theorem, 19 July 2026.*
+and scoped Schwarzschild endpoint-nonselection result, 19 July 2026.*
 
 ## 1. Their object and the unresolved question
 
@@ -24,8 +24,10 @@ radical under the action-derived current, and where does the negative
 classical current direction lie? The axial block now answers the full current
 question; the polar block supplies an independent off-shell equation-module
 comparison whose direct current remains the next gate. A second, independent
-Schwarzschild laboratory now asks whether horizon regularity and causal decay
-can select the Einstein branch. In its first axial fixture, they cannot.
+Schwarzschild laboratory asks whether future-horizon analyticity and the
+presently tested leading outer asymptotics force the Ricci carrier to vanish.
+In the axial fixture they do not. This is an endpoint diagnostic, not a no-go
+against every local causal restriction.
 
 ```text
 H^0(Einstein--Maxwell)  --injects-->  H^0(Weyl--Maxwell)
@@ -47,7 +49,17 @@ H^0(Einstein--Maxwell)  --injects-->  H^0(Weyl--Maxwell)
 | Extra mode | fourth-order pole/Jordan/Fock excitation | quotient $Q_{\rm extra}=H^0_{WM}/i_*H^0_{EM}$ | Quotient solution directions are not yet particles. |
 | Gauge | BRST physical-state quotient or boundary selection | local Diff $\times$ Weyl $\times U(1)$, before final residual quotient | Boundary selection is not identified with gauge quotienting. |
 | Form | Dirac, $PT$, or Fock inner product | classical covariant Lee--Wald current | A classical sign is not a quantum norm. |
-| Selection | boundary condition or quartet mechanism | compact harmonic regularity and fixed bundle; local horizon regularity and asymptotic decay on Schwarzschild | The axial Schwarzschild local causal test is now negative; general scattering selection remains open. |
+| Selection | boundary condition or quartet mechanism | compact harmonic regularity and fixed bundle; horizon analyticity and a leading-symbol test on Schwarzschild | The tested endpoints do not force the Ricci carrier to vanish; Jordan structure, metric falloff, finite asymptotic flux, and general causal selection remain open. |
+
+The bridge lifecycle is deliberately split:
+
+| Component | Lifecycle | Missing gate |
+|---|---|---|
+| Compact axial Lee--Wald comparison | **Landed** | final residual descent and quantum interpretation |
+| Compact charge-fibre/nonlinear comparison | **Landed in Paper 91** | all-orders and causal extension |
+| Schwarzschild axial endpoint comparison | **Partial** | Jordan form, metric reconstruction, finite asymptotic flux, rigorous pairing bounds |
+| Schwarzschild polar comparison | **Partial** | polar current, outer behavior, and Zerilli control |
+| Lorentzian Einstein-from-conformal bridge | **Open** | differentiable exterior phase space and an admissible Einstein-sector boundary operator |
 
 ## 3. Reproduced benchmark
 
@@ -76,7 +88,13 @@ python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_physical_compl
 python3 black_hole_programme/verify_bh2a_cross_flux.py
 python3 black_hole_programme/verify_bh2a_causal_disposition.py
 python3 black_hole_programme/verify_bh2b_polar_split.py
+python3 black_hole_programme/verify_bh2b_polar_reach.py
 ```
+
+The file named `BH2A_CAUSAL_DISPOSITION` is imported only for its certified
+real-frequency characteristic polynomial and formal exponent data. Its older
+interpretive phrase “no local causal truncation” is not used: Paper 14's
+claim map explicitly narrows that interpretation to endpoint nonselection.
 
 ## 4. Added result
 
@@ -122,30 +140,43 @@ Lee--Wald form, ungauged BV/Noether lift, and residual descent remain open.
 
 The black-hole programme supplies a second laboratory in which boundary
 admissibility is a physical part of the question rather than a compact-mode
-regularity convention. For Schwarzschild mass $m=1$, axial $\ell=2$, and the
-declared real-frequency ingoing family, it certifies three successive facts:
+regularity convention. For axial $\ell=2$ on Schwarzschild, it supplies three
+separately typed results:
 
 1. the Einstein/Regge--Wheeler block is symplectically null in the pure-Weyl
    action current for conjugate wave pairs;
-2. the Einstein--extra and extra--extra horizon-flux blocks are nonzero at the
-   exact fixtures $\omega=3/5$, $2/7$, and the independent verifier fixture
-   $1/2$;
-3. the extra branch is horizon-regular, luminal and bounded at infinity with
-   the same leading falloff as the Einstein branch.
+2. controlled order-16 ingoing-series fixtures give nonzero
+   Einstein--additional and additional--additional horizon pairing at
+   $\omega=3/5$, $2/7$, with an independent gate at $1/2$; this is not a
+   symbolic all-frequency or interval-certified theorem;
+3. the curvature carrier $\psi_{ab}=\delta R_{ab}$ has a two-dimensional
+   analytic ingoing horizon family for nonzero real frequency, while the
+   leading outer characteristic polynomial is repeated and shares the
+   Einstein characteristic.
 
-Consequently, no ordinary local causal regularity or decay condition at
-either end removes the extra axial branch on this fixture. Selecting the
-Einstein branch alone would require an additional projection on scattering
-data that relates temporal ends, rather than a causal initial-boundary
-condition imposed locally. This is a scoped causal-disposition no-go. It does
-not establish instability, a quasinormal spectrum, a global scattering
-theory, or a quantum norm.
+The invariant solution-space statement is an exact sequence from Bach
+solutions to the realized Ricci image, not a canonical Einstein/additional
+direct sum. The repeated outer root may carry Jordan partners, and the
+certificate does not yet reconstruct their metric falloff or finite flux at
+null infinity. The justified conclusion is therefore
 
-The companion polar audit has also begun. On an arbitrary Ricci-flat
-background the linear Bach equation splits exactly into the Einstein
-condition and a trace-coupled Lichnerowicz-type system for the extra Ricci
-curvature. Polar horizon series, action-derived flux, outer-boundary
-disposition, and stability remain open.
+\[
+\boxed{\text{horizon analyticity plus the tested leading outer symbol}
+       \not\Rightarrow \delta R_{ab}=0.}
+\]
+
+This endpoint-nonselection result does not exclude every local causal
+truncation. At linear order, the Cauchy restriction
+$\psi|_\Sigma=\nabla_n\psi|_\Sigma=0$ propagates the Einstein kernel. Whether
+that restriction is interaction-stable or selected by a differentiable
+asymptotic phase space remains open.
+
+The polar audit has now advanced one step further. The trace-coupled Ricci
+carrier is exact on the certified $\ell=2$ system, and for real
+$\omega\ne0$ its horizon analysis leaves a two-parameter physical
+ingoing-regular family after quotienting the regular conformal-gauge
+direction. Polar Lee--Wald pairing, the Zerilli benchmark, the outer Jordan
+and metric analysis, stability, and ringdown remain open.
 
 ## 6. Consequence in their language
 
@@ -165,11 +196,13 @@ not refute the EAdS/dS boundary theorem; it asks whether its selection is
 causally preserved and symplectically appropriate in real time.
 
 The Schwarzschild result sharpens that question. A Maldacena-type selection
-may still define a valid sector, but in this Lorentzian axial laboratory it
-cannot be implemented merely as ordinary horizon regularity plus causal
-decay at infinity. It must act as a genuine branch selection on scattering
-data. That distinction is potentially relevant whenever a Euclidean or
-two-boundary prescription is interpreted as a real-time causal truncation.
+may still define a valid sector, but ordinary horizon analyticity and the
+currently tested leading outer symbol do not implement it automatically.
+The missing comparison is whether a precise local differential boundary
+operator or finite-flux asymptotic phase space selects the Ricci-flat kernel
+while retaining a nondegenerate physical pairing. That distinction matters
+whenever a Euclidean or two-boundary prescription is interpreted as a
+real-time Lorentzian sector.
 
 ## 7. Scope boundary
 
@@ -180,26 +213,31 @@ statement. The polar extra current and ungauged lift, final residual quotient,
 literal second expansion of the four-dimensional action density, and
 causal/asymptotic boundary phase spaces remain open. The compact negative
 direction may be removed, retained, or reinterpreted by those later gates.
-The black-hole theorem is only axial $\ell=2$, $m=1$, real frequency and the
-declared horizon/asymptotic domains. It is not a result for polar modes,
-complex frequencies, arbitrary multipoles or masses, the full exterior
-initial-boundary problem, nonlinear stability, ringdown, Hawking states, or
-asymptotic particles.
+The black-hole result is a `REDUCED-MODE` endpoint audit: axial $\ell=2$,
+nonzero real frequency, exact horizon-carrier data, controlled flux fixtures,
+and a leading asymptotic symbol. It is not `LORENTZIAN-CAUSAL`, and it is not
+a theorem about complex frequencies, arbitrary multipoles, a complete metric
+falloff class, the full exterior initial-boundary problem, nonlinear
+stability, ringdown, Hawking states, or asymptotic particles. The polar
+horizon-reach result is likewise mode-level and does not close the polar
+current or outer-boundary chain.
 
 ## 8. One useful question for adjacent experts
 
-> Is there an admissible Lorentzian boundary or BRST selection that removes
-> the negative Einstein-image master direction while treating the two
-> positive extra directions consistently, and can that selection be expressed
-> as a causal symplectic subquotient rather than a condition imposed at both
-> temporal ends?
+> Is there a local differential or finite-flux Lorentzian boundary condition
+> that selects the Ricci-flat kernel and yields a nondegenerate physical
+> symplectic subquotient, and how does it compare with the Einstein-branch
+> condition used in Euclidean AdS or de Sitter constructions?
 
 **Reproducibility receipt.** Sources: arXiv:1105.5632v2,
 arXiv:2109.12743v1, arXiv:2202.08298v2. Certificates:
 `AXIAL_LEE_WALD_COMPLETION`, `POLAR_PHYSICAL_COMPLETION`,
 `BH2A_CROSS_BLOCK_NONZERO_HORIZON_FLUX_FIXTURES`, and
-`BH2A_AXIAL_CAUSAL_DISPOSITION_EXTRA_BRANCH_UNAVOIDABLE`; verification
-commands are in section 3. Tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`, and the
-scoped black-hole result `LORENTZIAN-CAUSAL`. Open: polar current/lift,
-residual descent, full causal boundary phase spaces, stability, and quantum
-state.
+the symbol/exponent payload of
+`BH2A_AXIAL_CAUSAL_DISPOSITION_EXTRA_BRANCH_UNAVOIDABLE`, narrowed by the
+Paper 14 claim map; the polar horizon input is
+`BH2B_POLAR_EXTRA_BRANCH_REACHES_HORIZON_LINEAR_MODE_LEVEL`. Verification
+commands are in section 3. Tags: `LOCAL-ALGEBRAIC` and `REDUCED-MODE`.
+Open: asymptotic Jordan form, metric reconstruction, rigorous flux bounds,
+polar current/lift, residual descent, full causal boundary phase spaces,
+stability, and quantum state.

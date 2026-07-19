@@ -109,7 +109,7 @@ BASE_SCOPE = {
     "theory": "pure-Weyl gravity S = alpha Int sqrt(-g) C_abcd C^abcd",
     "background": "MK static spherical Bach vacuum, working gauge b = 1/a; Schwarzschild and three-horizon fixture controls",
     "boundaries": "exterior chart with fixed-falloff ensembles {gamma, k fixed}; horizons as simple roots of B; no asymptotic completion imposed",
-    "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
+    "charge_sector": "oriented generator chi = u d_t on u != 0 with f(J) = 1 representative; signed T = u B'(r_h)/(4 pi); H = -16 pi alpha beta^2 D2",
     "carrier": "metric perturbations of the static spherical chart",
 }
 
@@ -146,7 +146,7 @@ def entries():
             "second_order": SECOND_ORDER_OPEN,
         },
         "evidence": _evidence("BH0", "BH1", "BH1A", "BH1B"),
-        "claim_boundary": "exact Bach-flat three-parameter family, Laurent-class complete; residual gauge rank 2 with single invariant J = u^2 disc(Q); no causal exterior initial-boundary theorem, no physical matter/clock frame, no completeness beyond the Laurent class; symplectic status is the static and l=0-dynamical charge level only"
+        "claim_boundary": "exact Bach-flat three-parameter family, Laurent-class complete; on the complete Laurent locus Einstein requires gamma = 0 and w = 1 (gamma = 0 alone only on the MK sheet through w = 1); residual gauge rank 2 with single invariant J = u^2 disc(Q); no causal exterior initial-boundary theorem, no physical matter/clock frame, no completeness beyond the Laurent class; symplectic status is the static and l=0-dynamical charge level only"
                           + ("; frame-independence of charge and entropy certified at the linear level" if CERTS["BH1B"].exists() else "; frame-independence pending the BH-1B certificate"),
     })
 
@@ -242,39 +242,38 @@ def entries():
                 "operator pending certificate", "BH2A"),
             "lee_wald": _gated(
                 "CERTIFIED",
-                "general axial bilinear F^t, F^r certified with the off-shell 4-alpha identity; RW-block on-shell flux -192*pi*alpha*(w1^2-w2^2)*psi1*psi2/(5*w1*w2*r) vanishes for conjugate pairs, while exact real-frequency fixtures certify nonzero Einstein x extra and extra x extra horizon flux",
+                "general axial bilinear F^t, F^r certified with the off-shell 4-alpha identity; RW-block on-shell flux -192*pi*alpha*(w1^2-w2^2)*psi1*psi2/(5*w1*w2*r) vanishes for conjugate pairs, while controlled order-16 real-frequency fixtures exhibit nonzero Einstein x additional and additional x additional horizon pairing",
                 "mixed/extra horizon-flux fixtures not yet certified", "BH2AF", "BH2AC"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "no crosswalk to compact structures"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
         },
         "evidence": _evidence("BH2A", "BH2AF", "BH2AC"),
-        "claim_boundary": "Schwarzschild axial l=2 only: the action-derived Lee-Wald current, conjugate-pair RW null theorem, and nonzero mixed/extra horizon-flux fixtures are certified; symbolic frequency dependence, the full exterior initial-boundary problem, stability and ringdown remain open",
+        "claim_boundary": "Schwarzschild axial l=2 only: the action-derived Lee-Wald current and conjugate-pair RW null theorem are exact; controlled mixed/additional horizon-pairing fixtures are certified at their declared numerical tolerance; symbolic frequency dependence, rigorous error bounds, the full exterior initial-boundary problem, stability and ringdown remain open",
     })
 
     E.append({
         "id": "bh.mode.axial.extra-fourth-order-branch",
         "scope": _scope(degree=1, parity="odd", ell=2, m="all", k="n/a",
                         omega="dynamical"),
-        "descriptions": {desc: (_gstat("CERTIFIED", "BH2AD") if desc == "causal"
-                                else ("OPEN" if desc != "symplectic" else _gstat("CERTIFIED", "BH2AC")))
+        "descriptions": {desc: ("OPEN" if desc != "symplectic" else _gstat("CERTIFIED", "BH2AC"))
                          for desc in DESCRIPTIONS},
         "mode_data": {
             "dispersion": _gated(
                 "CERTIFIED",
-                "extra branch identified exactly: carrier psi_ab = delta Ric_ab satisfies the second-order Lichnerowicz-type equation (1/2) Box psi + C.psi = 0 on the Ricci-flat background (axial l=2); the naive split is OBSTRUCTED on non-Einstein backgrounds",
+                "the Ricci image is identified exactly: carrier psi_ab = delta Ric_ab satisfies the second-order Lichnerowicz-type equation (1/2) Box psi + C.psi = 0 on the Ricci-flat background (axial l=2); this gives an exact sequence, not a canonical metric direct sum; the two-term composition is OBSTRUCTED on non-Einstein backgrounds",
                 "operator pending certificate", "BH2A"),
             "lee_wald": _gated(
                 "CERTIFIED",
-                "fixture-level horizon flux closed: extra-branch Hermitian norm nonzero with i*F^r = +|v| pi alpha > 0 for alpha > 0 (omega in {3/5, 2/7}; verifier adds 1/2), Einstein x extra cross pairing nonzero; RW block certified null, so all pairing lives in the mixed and extra sectors; symbolic omega-dependence and outer boundary OPEN",
+                "controlled horizon fixtures at omega in {3/5, 2/7}, with verifier gate 1/2, exhibit nonzero Einstein x additional and additional x additional pairing for a chosen metric lift; RW block is exactly null; symbolic omega-dependence, rigorous error bounds, lift-invariant additional self-sign, and outer-boundary flux remain OPEN",
                 "extra-block and cross-block flux values and signs remain open", "BH2AC"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "must not be identified with the compact-cylinder extra branch without an explicit crosswalk"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
         },
         "evidence": _evidence("BH2A", "BH2AR", "BH2AC", "BH2AD"),
-        "claim_boundary": "Schwarzschild m=1, axial l=2, symbolic real frequency: the extra branch is horizon-regular, carries nonzero fixture-level horizon flux, and is bounded and luminal with Einstein-like leading falloff at infinity; no local causal decay or regularity condition removes it. Complex frequencies, general l/m, the full exterior initial-boundary problem, stability and ringdown remain OPEN"
-                          if all(CERTS[key].exists() for key in ("BH2AR", "BH2AC", "BH2AD")) else "operator-level identification only (Schwarzschild, l=2): horizon reach, domains, flux, causal disposition all OPEN",
+        "claim_boundary": "Schwarzschild axial l=2, nonzero real frequency: the Ricci carrier has a two-dimensional analytic ingoing horizon family; controlled fixtures have nonzero mixed/additional horizon pairing; the repeated leading outer characteristic does not by itself select the Einstein kernel. The asymptotic Jordan form, metric reconstruction, finite-flux falloff, general local boundary classification, complex frequencies, general l/m, stability and ringdown remain OPEN"
+                          if all(CERTS[key].exists() for key in ("BH2AR", "BH2AC", "BH2AD")) else "operator-level identification only (Schwarzschild, l=2): horizon reach, domains, flux, and endpoint disposition all OPEN",
     })
 
     E.append({
@@ -285,7 +284,7 @@ def entries():
         "mode_data": {
             "dispersion": _gated(
                 "CERTIFIED",
-                "polar l=2 rows derived; general branch-split identity delta B = (1/2) Box dRic + C.dRic - (1/6) grad grad dR - (1/12) g Box dR certified componentwise: Einstein branch injects, polar extra branch = trace-coupled second-order Lichnerowicz system",
+                "polar l=2 rows derived; Ricci-Bach composition delta B = (1/2) Box dRic + C.dRic - (1/6) grad grad dR - (1/12) g Box dR certified componentwise: the Einstein kernel injects and the realized Ricci image obeys a trace-coupled second-order Lichnerowicz system; no canonical metric direct sum is inferred",
                 "no even-parity exterior operator exists in the repository", "BH2BP"),
             "lee_wald": _claim("OPEN", "polar flux blocks open"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "no crosswalk to compact structures"),
@@ -293,7 +292,7 @@ def entries():
             "second_order": SECOND_ORDER_OPEN,
         },
         "evidence": _evidence("BH2BP"),
-        "claim_boundary": "operator-level split only (Schwarzschild, l=2): Zerilli benchmark, Einstein-branch polar flux, causal disposition all OPEN; the polar extra branch has its own entry",
+        "claim_boundary": "operator-level Ricci-Bach composition only (Schwarzschild, l=2): Zerilli benchmark, Einstein-kernel polar flux, and endpoint disposition all OPEN; the polar Ricci-carrier image has its own entry",
     })
 
     E.append({
@@ -340,8 +339,8 @@ def entries():
                         parity="n/a", ell="n/a", m="n/a", k="n/a", omega="n/a"),
         "descriptions": {desc: "NO_CERTIFIED_MAP" for desc in DESCRIPTIONS},
         "mode_data": {
-            "dispersion": _claim("NO_CERTIFIED_MAP", "bridge inactive; no native exterior modes exist yet"),
-            "lee_wald": _claim("NO_CERTIFIED_MAP", "Lee-Wald sign comparison requires the BH-2A flux matrix"),
+            "dispersion": _claim("NO_CERTIFIED_MAP", "native axial and polar exterior Ricci carriers exist, but no certified identification with compact-product modes exists"),
+            "lee_wald": _claim("NO_CERTIFIED_MAP", "compact and black-hole Lee-Wald forms are each partly known, but no cross-background pairing map exists"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "the compact Taub cone is not imported as a horizon theorem"),
             "resonance": _claim("NO_CERTIFIED_MAP", "bridge inactive"),
             "second_order": SECOND_ORDER_NO_MAP,
