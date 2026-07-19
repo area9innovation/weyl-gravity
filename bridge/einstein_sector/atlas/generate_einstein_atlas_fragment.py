@@ -31,6 +31,7 @@ CERTIFICATES = {
     "exceptional_difference_census": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_difference_frequency_nonresonance.json",
     "exceptional_ad_pivots": ROOT / "bridge/certificates/einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots.json",
     "exceptional_difference_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.json",
+    "exceptional_resonance_ellipse": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.json",
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
@@ -260,6 +261,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OPEN", "The unique polar-e2 control amplitude and d satisfy two explicit L1 equations, but the all-m tensor and joint L2/moment-map zero locus remain open."), ("CERTIFIED", "The complete finite-support smooth theorem allows finite secular inversion on the five-moment-map zero cone."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
             _evidence("exceptional_difference_matrix", "exceptional_ad_pivots", "exceptional_resonance", "d_completion", "abstract_cone"),
             "This is the complete axisymmetric L1 difference matrix, not the all-m bounded tangent cone. The L2 self channel, moment maps, nonzero momentum and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.mixed.exceptional_axisymmetric_resonance_ellipse",
+            _scope(theory="Weyl-Maxwell target", carrier="axisymmetric exceptional axial/polar dipoles, circumference velocity d, and ell2 extra control amplitudes", degree=2, parity="both exceptional parities with polar and axial ell2 controls", ell="inputs 1 and 2; resonant outputs L=1,2", m=0, k=0, omega="omega_exceptional and 2*omega_exceptional"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "Every input is a certified nonradical exceptional or generic-extra primary, with d in the standard generalized-zero block."),
+            ("CERTIFIED", "The exceptional and ell2 control current Grams are action-derived and positive on their extra-primary blocks."),
+            ("OBSTRUCTED", "P_x and rotations vanish, but mu_H is strictly negative on every nonzero point of the displayed resonance ellipse; an Einstein-minus occupation is required."),
+            ("CERTIFIED", "All L1/L2 resonant adjoint equations reduce to the exact nonempty ellipse 16*r_x^2+3*r_p^2=115*d^2 with explicit controls."),
+            _second_order(("OPEN", "The resonance-compatible ellipse is not yet a bounded second-order tangent because its Hamiltonian balance and all new Einstein-minus cross sources remain unsolved."), ("CERTIFIED", "The imported complete finite-support theorem supplies smooth secular inversion once all five moment maps vanish."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("exceptional_resonance_ellipse", "exceptional_difference_matrix", "exceptional_resonance", "d_completion", "abstract_cone"),
+            "This is an axisymmetric resonance-compatibility theorem. It does not certify the Hamiltonian-balanced enlargement, a complete second-order correction, all m, nonzero momentum or higher lifecycles.",
         ),
         _entry(
             "einstein.ph.wm.extra.exceptional_ell1_nonzero_k",
@@ -788,6 +801,11 @@ def build() -> dict[str, object]:
         raise AssertionError("exceptional difference matrix changed")
     if exceptional_difference["SO3_all_m_tensor_assembled"] or exceptional_difference["complete_exceptional_mixed_bounded_zero_locus_solved"] or exceptional_difference["causal_or_quantum_claim"]:
         raise AssertionError("exceptional difference matrix exceeded its scope")
+    exceptional_ellipse = records["exceptional_resonance_ellipse"]["classification"]
+    if not (exceptional_ellipse["axisymmetric_L1_L2_resonance_zero_locus_nonempty"] and exceptional_ellipse["explicit_resonance_ellipse_parameterized"] and exceptional_ellipse["Einstein_minus_balance_required"]):
+        raise AssertionError("exceptional resonance ellipse changed")
+    if exceptional_ellipse["Hamiltonian_moment_map_zero"] or exceptional_ellipse["complete_second_order_source_solved"] or exceptional_ellipse["causal_or_quantum_claim"]:
+        raise AssertionError("exceptional resonance ellipse exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

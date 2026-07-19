@@ -244,6 +244,16 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("all-m tensor", second_order["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
+    def test_exceptional_resonance_ellipse_requires_einstein_balance(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.exceptional_axisymmetric_resonance_ellipse"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OBSTRUCTED")
+        self.assertIn("strictly negative", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("16*r_x^2+3*r_p^2=115*d^2", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
     def test_constant_twist_projector_repair_is_authoritative(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
         self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")

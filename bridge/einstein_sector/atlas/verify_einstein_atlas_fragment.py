@@ -261,6 +261,14 @@ def verify() -> None:
         raise AssertionError("exceptional all-m/L2 gate was not fail-closed")
     if exceptional_difference_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("exceptional difference causal lifecycle was over-promoted")
+    exceptional_ellipse = by_id["einstein.ph.wm.mixed.exceptional_axisymmetric_resonance_ellipse"]
+    ellipse_second = exceptional_ellipse["mode_data"]["second_order"]
+    if exceptional_ellipse["descriptions"]["nonlinear"] != "OPEN" or exceptional_ellipse["mode_data"]["taub_maps"]["status"] != "OBSTRUCTED":
+        raise AssertionError("exceptional resonance ellipse lifecycle changed")
+    if "16*r_x^2+3*r_p^2=115*d^2" not in exceptional_ellipse["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("exceptional resonance ellipse was hidden")
+    if ellipse_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or ellipse_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("exceptional resonance ellipse exceeded its correction class")
     fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
     if fixed_ell_twist["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("fixed-ell bounded lifecycle was not promoted")

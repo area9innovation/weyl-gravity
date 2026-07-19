@@ -2837,6 +2837,24 @@ moment maps are solved jointly.  Certificate and atlas row
 `EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_ELL2_EXTRA_DIFFERENCE_MATRIX` retain
 nonzero momentum, causal, residual and quantum scopes fail-closed.
 
+The axisymmetric joint resonance equations are now solved exactly rather
+than merely reduced.  With `x=r_x*s`, `p=i*r_p*s`, `|s|=1`, the complete
+`L=1,L=2` adjoint system has the nonzero compatibility ellipse
+
+```text
+16*r_x^2+3*r_p^2=115*d^2.
+```
+
+Both polar `ell=2` controls are explicit and the invertible axial `d` map
+removes the mixed-parity defect.  This is not yet a bounded tangent-cone
+branch: the action-derived exceptional and generic-extra currents make
+`mu_H<0` everywhere on the nonzero ellipse, while `P_x=J_i=0`.  An
+opposite-sign Einstein-minus occupation is necessary.  Atlas row
+`einstein.ph.wm.mixed.exceptional_axisymmetric_resonance_ellipse` therefore
+has resonance `CERTIFIED`, Taub `OBSTRUCTED` on the undressed carrier and
+bounded second order `OPEN`.  The next gate is every new Einstein-minus cross
+source; no extension is inferred from charge balance alone.
+
 The nonzero-momentum twist face has now been intersected with the independent
 opposite-momentum phase divisor.  For every `ell>=2`, the exact choice
 
