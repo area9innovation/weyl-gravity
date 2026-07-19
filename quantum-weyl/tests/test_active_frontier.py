@@ -224,6 +224,11 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertTrue(
             self.payload["claim_flags"][
+                "PHYSICAL_TRIANGLE_SIX_MASTER_COORDINATES_COMPUTED"
+            ]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"][
                 "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE"
             ]
         )
@@ -494,7 +499,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "COMPUTE_PHYSICAL_MASTER_COORDINATE_FUNCTIONS_AND_ASSEMBLE_FIVE_THIRD_CURVATURE_FORM_FACTORS",
+            "COMPUTE_PHYSICAL_TRIANGLE_RELATIVE_IBP_BOUNDARY_FLUX_AND_ASSEMBLE_FIVE_THIRD_CURVATURE_FORM_FACTORS",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

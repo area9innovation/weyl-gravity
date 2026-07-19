@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-generic-background-physical-hessian-triangle-six-master-coordinates-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_state",
+    "dependency_tags", "classical_commit", "dependencies", "scope",
+    "selected_minor", "pivot_rows", "channel_rows", "solve_ledger",
+    "formula_digest", "claim_flags", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-physical-hessian-triangle-six-master-coordinates-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_SIX_MASTER_COORDINATES"},
+    "result_state": {"const": "ALL_ELEVEN_PHYSICAL_TRIANGLE_SIX_MASTER_COORDINATE_FUNCTIONS_COMPUTED"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {
+      "type": "array", "minItems": 2, "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+    },
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependencies": {
+      "type": "object", "minProperties": 3,
+      "additionalProperties": {"$ref": "#/$defs/reference"}
+    },
+    "scope": {"type": "object", "minProperties": 5, "additionalProperties": {"type": ["string", "integer", "boolean"]}},
+    "selected_minor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["constant", "factors", "total_degree", "term_count", "status"],
+      "properties": {
+        "constant": {"const": 132239526912},
+        "factors": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["factor", "power", "status"],
+            "properties": {
+              "factor": {"type": "string"}, "power": {"type": "integer", "minimum": 1},
+              "status": {"enum": ["CHART_SPURIOUS", "PHYSICAL_QUOTIENT_DENOMINATOR"]}
+            }
+          }
+        },
+        "total_degree": {"const": 53}, "term_count": {"type": "integer", "minimum": 1},
+        "status": {"const": "EXACT_POLYNOMIAL_RING_FACTORIZATION"}
+      }
+    },
+    "pivot_rows": {"type": "array", "minItems": 52, "maxItems": 52, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 54}},
+    "channel_rows": {
+      "type": "array", "minItems": 11, "maxItems": 11,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["channel_id", "target_box_degree", "master_coordinates"],
+        "properties": {
+          "channel_id": {"type": "string"}, "target_box_degree": {"type": "integer", "minimum": 0},
+          "master_coordinates": {
+            "type": "array", "minItems": 6, "maxItems": 6,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["master_id", "homogeneity_weight", "coordinate"],
+              "properties": {
+                "master_id": {"enum": ["J_triangle", "M_x1", "M_x2", "M14_singlet", "M15_standard_u", "M16_standard_v"]},
+                "homogeneity_weight": {"type": "integer", "minimum": -3, "maximum": 6},
+                "coordinate": {
+                  "type": "object", "additionalProperties": false,
+                  "required": ["numerator_terms", "denominator_terms"],
+                  "properties": {
+                    "numerator_terms": {"type": "array", "items": {"$ref": "#/$defs/poly_term"}},
+                    "denominator_terms": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/poly_term"}}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "solve_ledger": {"type": "object", "minProperties": 7, "additionalProperties": true},
+    "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "claim_flags": {
+      "type": "object", "minProperties": 11, "additionalProperties": {"type": "boolean"}
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 80}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"}, "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "rational": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "poly_term": {
+      "type": "object", "additionalProperties": false,
+      "required": ["exponents", "coefficient"],
+      "properties": {
+        "exponents": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0}},
+        "coefficient": {"$ref": "#/$defs/rational"}
+      }
+    }
+  }
+}

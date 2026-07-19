@@ -180,8 +180,12 @@ scalar-triangle masters, the `M14` singlet and the standard-`S3` pair
 all eleven physical rows stay in that span. The three new renormalized master
 values are now exact sector-decomposed rational/logarithmic functions in the
 same dominant-sector Mellin scheme, with exact scale derivatives and an
-independent two-fixture `S3` replay. The eleven physical master-coordinate
-functions and complete form-factor assembly remain open. See
+independent two-fixture `S3` replay. All 66 six-master coordinate functions
+for the eleven physical channels are now reduced exactly by a fraction-free
+polynomial-ring solve. The exact selected minor has chart factors times
+`lambda^5`; individual reduced coordinates have distinct denominators, while
+the three new-master coefficients are polynomial. The relative-IBP boundary
+flux and complete form-factor assembly remain open. See
 [`generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md`](../../reports/generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md).
 
 Replay with:

@@ -327,6 +327,9 @@ def main() -> None:
     assert payload["explicit_nonclaims"]
     assert all(value is False for value in payload["explicit_nonclaims"].values())
     assert payload["explicit_nonclaims"][
+        "physical_Hessian_triangle_boundary_flux_computed"
+    ] is False
+    assert payload["explicit_nonclaims"][
         "generic_ghost_full_Schur_regularized_determinant"
     ] is False
     assert payload["explicit_nonclaims"]["generic_ghost_renormalized_R_K"] is False
@@ -455,7 +458,9 @@ def main() -> None:
         "denominator": 6561,
     }
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
-    assert len(payload["inputs"]) == 60
+    assert claims["physical_Hessian_triangle_six_master_coordinates_computed"] is True
+    assert claims["physical_Hessian_triangle_six_master_coordinate_count"] == 66
+    assert len(payload["inputs"]) == 61
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

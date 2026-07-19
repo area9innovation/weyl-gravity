@@ -178,8 +178,11 @@ rank-49 tangent-plus-scalar-master span grows through the `M14` singlet and a
 standard-`S3` pair to exact generic rank 52, and five exact orbit ranks plus
 the generated `S3` crosswalk place all eleven physical rows in that span. The
 three new renormalized master values and their scale derivatives are now
-exact in the common Mellin scheme. The eleven physical master-coordinate
-functions and independent finite-counterterm normalization remain open.
+exact in the common Mellin scheme. All 66 reduced rational master-coordinate
+functions of the eleven physical channels are now exact; the selected minor
+factors into chart terms times `lambda^5`, while individual coordinates are
+reduced separately. The relative-IBP boundary flux and independent finite-
+counterterm normalization remain open.
 The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
 and rational corner flux. Four explicit primitives cover every orientation,
@@ -511,9 +514,9 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. compute the exact six-master coordinate functions of the eleven physical
-   channels and contract them with the now-evaluated Mellin-renormalized
-   `M14` singlet and standard-`S3` pair;
+1. compute the physical triangle's relative-IBP boundary flux and combine it
+   with the 66 exact master-coordinate functions and the evaluated Mellin-
+   renormalized `M14` singlet and standard-`S3` pair;
 2. combine those triangle rows with the 33 exact minimally-subtracted finite
    `H1-H2` contact rows (equal-box TT sum `3188/27`) and retain the independent
    mu-independent finite-counterterm normalization as an explicit scheme input;

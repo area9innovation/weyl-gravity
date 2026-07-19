@@ -59,6 +59,7 @@ INPUTS = {
     "generic_physical_hessian_H1_H2_contact_finite_rows": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_FINITE_ROWS.json",
     "generic_physical_hessian_triangle_master_completeness": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_MASTER_COMPLETENESS.json",
     "generic_physical_hessian_triangle_renormalized_master_values": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_RENORMALIZED_MASTER_VALUES.json",
+    "generic_physical_hessian_triangle_six_master_coordinates": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_SIX_MASTER_COORDINATES.json",
     "generic_background_ghost_CPT_obstruction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n3_adiabatic_carrier": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
@@ -155,6 +156,9 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     ]
     physical_hessian_triangle_master_values = values[
         "generic_physical_hessian_triangle_renormalized_master_values"
+    ]
+    physical_hessian_triangle_master_coordinates = values[
+        "generic_physical_hessian_triangle_six_master_coordinates"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -493,6 +497,16 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "PHYSICAL_N3_TRIANGLE_MASTER_COORDINATES_COMPUTED"
         )
         is not False
+        or physical_hessian_triangle_master_coordinates.get("claim_flags", {}).get(
+            "PHYSICAL_N3_TRIANGLE_MASTER_COORDINATES_COMPUTED"
+        )
+        is not True
+        or physical_hessian_triangle_master_coordinates.get("claim_flags", {}).get(
+            "PHYSICAL_N3_TRIANGLE_BOUNDARY_FLUX_COMPUTED"
+        )
+        is not False
+        or len(physical_hessian_triangle_master_coordinates.get("channel_rows", []))
+        != 11
         or generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
         != "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
         or generic_ghost_cpt.get("claim_flags", {}).get(
@@ -894,6 +908,9 @@ def build() -> dict[str, Any]:
     physical_hessian_triangle_master_values = values[
         "generic_physical_hessian_triangle_renormalized_master_values"
     ]
+    physical_hessian_triangle_master_coordinates = values[
+        "generic_physical_hessian_triangle_six_master_coordinates"
+    ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
@@ -1074,6 +1091,8 @@ def build() -> dict[str, Any]:
             "physical_Hessian_triangle_standard_S3_pair_required": True,
             "physical_Hessian_triangle_renormalized_new_master_values_computed": True,
             "physical_Hessian_triangle_renormalized_master_value_count": len(physical_hessian_triangle_master_values["master_rows"]),
+            "physical_Hessian_triangle_six_master_coordinates_computed": True,
+            "physical_Hessian_triangle_six_master_coordinate_count": sum(len(row["master_coordinates"]) for row in physical_hessian_triangle_master_coordinates["channel_rows"]),
             "generic_background_ghost_minimal_CPT_substitution_obstructed": True,
             "generic_background_ghost_effective_divergence_coefficient": generic_ghost_cpt["algebraic_Weyl_ghost_elimination"]["beta_controls"][0]["effective_divergence_coefficient"],
             "generic_background_ghost_principal_eigenvalues": generic_ghost_cpt["nonminimal_principal_symbol"]["eigenvalues_e0"],
@@ -1186,6 +1205,7 @@ def build() -> dict[str, Any]:
             "repository_generic_background_CPT_trace_substitution": False,
             "full_generic_physical_Hessian": False,
             "physical_n3_three_linear_triangle_integrated": False,
+            "physical_Hessian_triangle_boundary_flux_computed": False,
             "physical_Hessian_renormalized_subtraction_fixed": False,
             "physical_n3_M14_class_disposed": False,
             "generic_nonminimal_ghost_CPT_determinant": False,

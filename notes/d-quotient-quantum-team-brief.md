@@ -1174,7 +1174,7 @@ effective-action claims; the unsupported Hadamard assertion was removed from
 the abstract. Exact quotient, coefficient, determinant, spectral-sequence,
 matter, quartet, effective-action, and boundary tables are generated from eighteen hashed
 certificate inputs and pass an independent stale/tamper check. The claim map now
-binds sixty direct certificate dependencies, including the finite-contact, physical triangle master-completeness and renormalized master-value,
+binds sixty-one direct certificate dependencies, including the finite-contact, physical triangle master-completeness, renormalized master-value and six-master-coordinate,
 symmetric-point
 simplex and generic barycentric-factorization receipts and the formerly indirect pure-Diff/mixed quotient and factorwise
 coefficient ledger. The disposition
@@ -1242,3 +1242,22 @@ before the five third-curvature form factors can be assembled.
 
 Receipt:
 [`generic-background-physical-hessian-triangle-renormalized-master-values.md`](../quantum-weyl/reports/generic-background-physical-hessian-triangle-renormalized-master-values.md).
+
+## Physical triangle six-master coordinates (2026-07-19)
+
+All eleven physical three-`H1` triangle rows now have exact reduced rational
+coordinates in the completed rank-52 basis.  The selected 52-row minor
+factors exactly into monomial/chart terms times `lambda^5`.  A fraction-free
+polynomial-ring solve then proves the complete relative-IBP identity for each
+channel and reduces all 66 master coefficients entrywise.  The resulting
+denominators are not uniformly `lambda^5`: the old scalar-triangle derivative
+coordinates retain reduced chart/Kallen factors, whereas the `M14/M15/M16`
+coordinates are polynomial.  Five unseen fixtures replay all 330 coordinate
+values exactly.
+
+This closes the master-coordinate gate only.  The physical relative-IBP
+boundary flux must still be computed before the complete triangle and five
+repository third-curvature form factors can be assembled.
+
+Receipt:
+[`generic-background-physical-hessian-triangle-six-master-coordinates.md`](../quantum-weyl/reports/generic-background-physical-hessian-triangle-six-master-coordinates.md).
