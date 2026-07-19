@@ -1,0 +1,63 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_NORMALIZED_READOUT_Q2_PBW_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_NORMALIZED_READOUT_Q2_PBW",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The complete normalized two-detector readout cubic vertex is exported as 4,116 exact PBW operator keys and 11,012 differential profile-jet monomials. Together with the scalar-BV, six-rod metric and memory-transport blocks this closes receiver-apparatus q2. Dynamical-emitter q2, every q3, arity replay, K_Berger equivariance, observer-morphism stability, tangent-cone response, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile on changed Python; python3 -m json.tool on changed structured data; generator --check; git diff --check on explicit observer paths",
+      "elapsed_seconds": 1.2,
+      "status": "PASS",
+      "scope": "producer, verifier, tests, schemas, payload, certificate, generated atlas, comparison ledger, lifecycle, receipt and notes"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_normalized_readout_q2_pbw.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py",
+      "elapsed_seconds": 42.06,
+      "status": "PASS",
+      "scope": "44 exact first-jet, component replay, Jacobian mutation, cyclic payload, generated-atlas and fail-closed ledger tests"
+    },
+    {
+      "tier": 1,
+      "command": "normalized-readout generator --check; independent verifier; observer atlas verifier; comparison ledger verifier; residual-atlas schema validator",
+      "elapsed_seconds": 34.2,
+      "status": "PASS",
+      "scope": "dependency hashes, 4,116-key payload reconstruction, two direct component-family replays, generated claims and lifecycle"
+    },
+    {
+      "tier": 2,
+      "command": "python3 -m pytest -q on component contract, combined nonlinear clock chart, apparatus action gate, memory q1 overlay and normalized-profile mixed unary direct dependencies",
+      "elapsed_seconds": 57.66,
+      "status": "PASS",
+      "scope": "24 direct dependency-chain tests"
+    }
+  ],
+  "higher_tiers_not_run": {
+    "tier_3": "Scoped apparatus q2 subblock; not a freeze, release, shared-core change or theorem promotion."
+  },
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_normalized_readout_q2_pbw.py", "sha256": "7044b9e0b44ef38ff569e7527b809cdedf950a42dd3496d5eb01a25eb2de44a7"},
+    {"path": "closed_universe_observers/verify_berger_108_row_normalized_readout_q2_pbw.py", "sha256": "e9cade6eca66ed717d964d406f6167f46dee69302aa298fc0a46b75d39baa27b"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_normalized_readout_q2_pbw.py", "sha256": "f47fb0ba03bb4cdb6d1fd7acb83000db223d27387881ed5e366ee646ac978594"},
+    {"path": "closed_universe_observers/schema/berger-108-row-normalized-readout-q2-pbw-v1.schema.json", "sha256": "b9abd416dcb117dea44f3b1b91c2d7e03a45559a749cce495858b4c4b57df7ac"},
+    {"path": "closed_universe_observers/schema/berger-108-row-normalized-readout-q2-pbw-payload-v1.schema.json", "sha256": "f8f8f1bcc98c3784508c2221bfd17ca2e50e582a89209e5a5c43328501cfda6f"},
+    {"path": "closed_universe_observers/reports/berger-108-row-normalized-readout-q2-pbw.md", "sha256": "342b20a058d4eb2b6035c466c56ad82efe0dc4b67b4d392d62d61890c6c1135b"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_NORMALIZED_READOUT_Q2_PBW.json", "sha256": "f519f5b1488a561f550806e5365c9711e4f775193eb0e8555181262be2703c5a"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_NORMALIZED_READOUT_Q2_PBW_PAYLOAD.json", "sha256": "10a2ab97c1b78335758aac9dcccbd08077ff819a4ad96153425b603507954281"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "5511e3b9d2f64fab253b18ada70bb6da27961069dba5a277c7ae01d09e5e7840"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "ac948f7565a065e7e4d6b99913d7f21957f228fc31751883e6e94ef7da47668a"},
+    {"path": "planning/work-items/berger-108-row-apparatus-q2-q3-extension.json", "sha256": "847f69c3abb014e8ec865d7151e9590fe21a2328b34ec7596b2d54cb05d0f707"}
+  ],
+  "flags": {
+    "APPARATUS_NORMALIZED_READOUT_Q2_PBW_EXPORTED": true,
+    "COMPLETE_APPARATUS_Q2_SUBBLOCKS_EXPORTED": true,
+    "COMPLETE_SCALAR_108_ROW_Q2_EXPORTED": false,
+    "COMPLETE_SCALAR_108_ROW_Q3_EXPORTED": false,
+    "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "PHYSICAL_BRANCH_BRIDGE_ACTIVATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

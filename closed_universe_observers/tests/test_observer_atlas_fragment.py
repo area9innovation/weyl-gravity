@@ -60,6 +60,21 @@ def test_scalar_memory_q1_overlay_keeps_rod_and_complete_q1_fail_closed():
     }
 
 
+def test_normalized_readout_q2_closes_apparatus_but_not_emitter_or_cone():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.interaction.normalized_readout_q2_pbw"
+    )
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["descriptions"]["nonlinear"] == "CERTIFIED"
+    assert row["observer_data"]["clock_and_rod_dependence"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_108_ROW_NORMALIZED_READOUT_Q2_PBW" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
+
+
 def test_shifted_q2_phi2_overlay_keeps_local_rod_hessian_fail_closed():
     rows = {row["id"]: row for row in build()["entries"]}
     shifted = rows["observer.berger.interaction.pbw_108_shifted_q2_phi2_overlay"]

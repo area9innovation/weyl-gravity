@@ -27,6 +27,8 @@ python3 -m closed_universe_observers.generate_berger_global_rod_q1_solvability -
 python3 -m closed_universe_observers.verify_berger_global_rod_q1_solvability
 python3 -m closed_universe_observers.generate_berger_84_row_apparatus_handoff --check
 python3 -m closed_universe_observers.verify_berger_84_row_apparatus_handoff
+python3 -m closed_universe_observers.generate_berger_108_row_normalized_readout_q2_pbw --check
+python3 -m closed_universe_observers.verify_berger_108_row_normalized_readout_q2_pbw
 python3 -m closed_universe_observers.generate_berger_84_row_unary_pairing_green_gate --check
 python3 -m closed_universe_observers.verify_berger_84_row_unary_pairing_green_gate
 python3 -m closed_universe_observers.generate_berger_84_row_rod_gravity_unary --check

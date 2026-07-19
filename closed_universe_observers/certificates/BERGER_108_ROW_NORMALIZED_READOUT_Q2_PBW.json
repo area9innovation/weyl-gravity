@@ -1,0 +1,188 @@
+{
+  "activation_disposition": {
+    "arity_replay_certified": false,
+    "complete_apparatus_q2_exported": true,
+    "complete_emitter_q2_exported": false,
+    "complete_scalar_q2_exported": false,
+    "detector_response_on_second_order_cone_authorized": false,
+    "normalized_readout_q2_subblock_exported": true,
+    "physical_branch_bridge_activated": false,
+    "scalar_q3_exported": false
+  },
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate exports the complete normalized two-detector readout contribution to q2 on the canonical 108-row Berger carrier. It differentiates the action density -kappa p_a sqrt(-g) f_a(Theta) rho_a(R_a) J_a C_g(dA,dTheta wedge dR_aI(a)) in all six first-jet channels: volume, clock bump, three-variable rod bump, normalized transverse Gram Jacobian, inverse-metric contraction and polarization. The exact radius-1/128 detector profiles are inherited through the component contract. The J_a vertical coordinates are explicitly ordered by ten metric components, four clock-gradient components and twelve detector-rod-gradient components, so every first variation and every Berger-frame derivative produced by formal adjunction has a canonical differential coefficient-jet normal form. Direct symbolic differentiation of the full five-factor density and form contraction has zero defect; deleting the J_a variation is detected. Raising the same cubic action vertex through the signed odd pairing supplies the p-, Maxwell-, metric-, clock- and rod-cotangent rows, including all coefficient derivatives from exact PBW integration by parts, with exact graded input symmetry. A payload-key deletion changes the canonical hash. This certifies normalized readout q2 only. Together with the already certified scalar-BV, six-rod metric and memory-transport subblocks it still does not complete scalar q2 because the dynamical-emitter q2 sector remains open. Every q3 block, complete q1q2 and q2q2+q1q3 replay, K_Berger equivariance, observer-morphism stability, restriction of detector response to Z2, nonlinear rank, physical Bridge 3, finite-parameter causal propagation and quantum claims remain unavailable. No compact-product mode is identified with a Berger row.",
+  "claim_status": "CERTIFIED_COMPLETE_NORMALIZED_READOUT_Q2_PBW_SUBBLOCK",
+  "dependency_refs": {
+    "apparatus_action": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE.json",
+      "result_id": "BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE",
+      "sha256": "d94854ea0980d22b8a7e8b44a52dd50afa7afd8a0916aff52d3700d1eeb2d0b9"
+    },
+    "combined_clock_chart": {
+      "path": "closed_universe_observers/certificates/BERGER_NONLINEAR_CLOCK_COMBINED_CANONICAL_MAP_F2_F3.json",
+      "result_id": "BERGER_NONLINEAR_CLOCK_COMBINED_CANONICAL_MAP_F2_F3",
+      "sha256": "b35f50e238a15c1e226edf59779716987a6aee13c1917d7c9e65b9a39033f40a"
+    },
+    "component_contract": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json",
+      "result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+      "sha256": "4113635be1493e0eac5e945a970ce4989f0484d5fa658a10bf893c63f5ae707c"
+    },
+    "memory_q1": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_MEMORY_Q1_PBW_OVERLAY.json",
+      "result_id": "BERGER_108_ROW_MEMORY_Q1_PBW_OVERLAY",
+      "sha256": "d9ccee8e01ed54e531472db217b4b13bfb21748cfe9cb42c37fa57a4358afbef"
+    },
+    "normalized_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY.json",
+      "result_id": "BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY",
+      "sha256": "1dc8720b2e8a208094a40ab736d3e6459c8c5afb5308baca6c1e82c8b9e2f6f2"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "first_jet_and_cyclicity_audit": {
+    "J_vertical_coordinate_order": [
+      "g00",
+      "g01",
+      "g02",
+      "g03",
+      "g11",
+      "g12",
+      "g13",
+      "g22",
+      "g23",
+      "g33",
+      "q0",
+      "q1",
+      "q2",
+      "q3",
+      "r0_0",
+      "r0_1",
+      "r0_2",
+      "r0_3",
+      "r1_0",
+      "r1_1",
+      "r1_2",
+      "r1_3",
+      "r2_0",
+      "r2_1",
+      "r2_2",
+      "r2_3"
+    ],
+    "component_replay_defect_count": 0,
+    "component_replays": [
+      {
+        "component_replay_defect_count": 0,
+        "detector_id": "D0",
+        "serialized_component_family_count": 102
+      },
+      {
+        "component_replay_defect_count": 0,
+        "detector_id": "D1",
+        "serialized_component_family_count": 102
+      }
+    ],
+    "cyclicity_generation": "p, A, metric, clock and rod Euler rows are raised from one cubic action vertex using the canonical signed odd pairing and exact PBW integration by parts",
+    "direct_symbolic_defect_count": 0,
+    "factor_variations": [
+      "volume",
+      "clock_bump",
+      "rod_bump",
+      "normalized_Jacobian",
+      "inverse_metric_contraction",
+      "polarization"
+    ],
+    "field_strength_component_count": 6,
+    "graded_symmetry_defect_count": 0,
+    "jacobian_deletion_defect_count": 0
+  },
+  "flags": {
+    "APPARATUS_NORMALIZED_READOUT_Q2_CYCLIC": true,
+    "APPARATUS_NORMALIZED_READOUT_Q2_GRADED_SYMMETRIC": true,
+    "APPARATUS_NORMALIZED_READOUT_Q2_PBW_EXPORTED": true,
+    "COMPLETE_APPARATUS_Q2_SUBBLOCKS_EXPORTED": true,
+    "COMPLETE_SCALAR_108_ROW_Q2_EXPORTED": false,
+    "COMPLETE_SCALAR_108_ROW_Q3_EXPORTED": false,
+    "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
+    "QUANTUM_CLAIM": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "delete_normalized_Jacobian_first_variation"
+    },
+    {
+      "detected": true,
+      "name": "delete_last_normalized_readout_q2_key"
+    }
+  ],
+  "next_gate": "EXPORT_DYNAMICAL_EMITTER_Q2_PBW_BLOCK",
+  "payload_ref": {
+    "canonical_sha256": "204e0524a8ebd6bc19f498361f08877631d8017027158f9512b0173728d1df78",
+    "nonzero_output_rows": [
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      38,
+      59,
+      60,
+      61,
+      62,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      82,
+      83
+    ],
+    "operator_key_count": 4116,
+    "path": "closed_universe_observers/certificates/BERGER_108_ROW_NORMALIZED_READOUT_Q2_PBW_PAYLOAD.json",
+    "result_id": "BERGER_108_ROW_NORMALIZED_READOUT_Q2_PBW_PAYLOAD",
+    "serialized_term_count": 11012,
+    "sha256": "10a2ab97c1b78335758aac9dcccbd08077ff819a4ad96153425b603507954281"
+  },
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_108_row_normalized_readout_q2_pbw.py",
+        "sha256": "7044b9e0b44ef38ff569e7527b809cdedf950a42dd3496d5eb01a25eb2de44a7"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_108_row_normalized_readout_q2_pbw.py",
+        "sha256": "e9cade6eca66ed717d964d406f6167f46dee69302aa298fc0a46b75d39baa27b"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_108_row_normalized_readout_q2_pbw.py",
+        "sha256": "f47fb0ba03bb4cdb6d1fd7acb83000db223d27387881ed5e366ee646ac978594"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-108-row-normalized-readout-q2-pbw-v1.schema.json",
+        "sha256": "b9abd416dcb117dea44f3b1b91c2d7e03a45559a749cce495858b4c4b57df7ac"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-108-row-normalized-readout-q2-pbw-payload-v1.schema.json",
+        "sha256": "f8f8f1bcc98c3784508c2221bfd17ca2e50e582a89209e5a5c43328501cfda6f"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-108-row-normalized-readout-q2-pbw.md",
+        "sha256": "342b20a058d4eb2b6035c466c56ad82efe0dc4b67b4d392d62d61890c6c1135b"
+      }
+    ]
+  },
+  "result_id": "BERGER_108_ROW_NORMALIZED_READOUT_Q2_PBW",
+  "schema": "closed-universe-berger-108-row-normalized-readout-q2-pbw-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}
