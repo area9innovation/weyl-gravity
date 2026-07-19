@@ -95,6 +95,14 @@ def verify() -> None:
         raise AssertionError("quadratic Taylor placement missing from atlas")
     if "EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1" not in {item["result_id"] for item in pullback["evidence"]}:
         raise AssertionError("derived pullback preflight evidence missing")
+    if pullback["mode_data"]["second_order"]["smooth_secular"]["status"] != "CERTIFIED":
+        raise AssertionError("reduced smooth factorization theorem missing")
+    if pullback["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("smooth factorization was overpromoted to bounded corrections")
+    if "not a serialized all-mode PBW matrix" not in pullback["claim_boundary"]:
+        raise AssertionError("abstract quotient-coordinate matrix was overpromoted")
+    if "EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1" not in {item["result_id"] for item in pullback["evidence"]}:
+        raise AssertionError("reduced Taub factorization evidence missing")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")

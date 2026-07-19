@@ -76,6 +76,7 @@ CERTS = {
     "relative_316_cotangent_completion": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1.json",
     "relative_316_block_q2_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1.json",
     "relative_derived_taub_zero_pullback": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1.json",
+    "relative_reduced_taub_factorization": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
 
@@ -372,11 +373,11 @@ def entries() -> list[dict[str, Any]]:
         {"causal": "NO_CERTIFIED_MAP", "symplectic": "OPEN", "nonlinear": "OPEN", "observational": "NOT_APPLICABLE", "quantum": "OPEN"},
         ("NO_CERTIFIED_MAP", "No advanced/retarded homotopy has been constructed for the derived relative pullback."),
         ("OPEN", "The local current and unary cotangent pairings are certified separately, but their relative action-pairing comparison is not."),
-        ("OPEN", "The quadratic pullback architecture is certified; factorization of the relative obstruction class through the complete five-charge map is not yet computed."),
+        ("OPEN", "The relative obstruction class factors exactly through the five Taub charges in normalized smooth finite-harmonic quotient coordinates; the support-local current-level lift remains open."),
         ("NOT_APPLICABLE", "This is an equation-level derived source, not an observable or particle identification."),
-        _second(("OPEN", "Reduced-mode factorization through the complete five-charge map is the active gate."), ("OPEN", "No smooth-secular relative morphism theorem follows from the local current equation alone."), ("NO_CERTIFIED_MAP", "No causal-retarded lift of the factorization is available.")),
-        _evidence("five_current_de_rham_carrier", "five_current_de_rham_q2", "relative_316_cotangent_completion", "relative_316_block_q2_obstruction", "relative_derived_taub_zero_pullback"),
-        "The relative moment map has zero constant and linear terms, so the derived Taub-zero condition does not restrict the unary tangent complex and does not require a nonzero unary cross-incidence. Its first local equation is d_H B_X+j_X(u,u)/2=0 at arity two. The complete five-charge basis and local current representatives exist, but charge projection alone does not prove [Delta2]=A o mu_rel. Until that obstruction-module factorization and a support-local lift are constructed, the relative q2, action-pairing transport, causal bridge and quantum transfer remain OPEN.",
+        _second(("OPEN", "The five-charge factorization does not include the extra polynomial and resonant obstruction functionals of the bounded category."), ("CERTIFIED", "On Sym^2 H0 of every finite real standard-mode set in the smooth-secular category, ker D equals ker M_pol and the normalized quotient-coordinate factor is I5."), ("NO_CERTIFIED_MAP", "No causal-retarded lift of the factorization is available.")),
+        _evidence("five_current_de_rham_carrier", "five_current_de_rham_q2", "relative_316_cotangent_completion", "relative_316_block_q2_obstruction", "relative_derived_taub_zero_pullback", "relative_reduced_taub_factorization"),
+        "The relative moment map has zero constant and linear terms, so the derived Taub-zero condition does not restrict the unary tangent complex and does not require a nonzero unary cross-incidence. Its first local equation is d_H B_X+j_X(u,u)/2=0 at arity two. In the finite-harmonic smooth-secular target quotient, the complete five-dimensional cokernel theorem makes the normalized evaluation map an isomorphism and gives D=A M_pol with quotient-coordinate matrix I5 on Sym^2 H0, including cross-block pairs. This is not a serialized all-mode PBW matrix or a support-local lift. Until the current-level lift is constructed, the full relative q2, action-pairing transport, causal bridge and quantum transfer remain OPEN.",
     ))
     return values
 

@@ -160,9 +160,15 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertEqual(entry["descriptions"]["symplectic"], "OPEN")
         self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
         self.assertIn("does not restrict the unary tangent complex", entry["claim_boundary"])
-        self.assertIn("charge projection alone does not prove", entry["claim_boundary"])
         self.assertIn(
             "EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(entry["mode_data"]["second_order"]["smooth_secular"]["status"], "CERTIFIED")
+        self.assertIn("not a serialized all-mode PBW matrix", entry["claim_boundary"])
+        self.assertIn(
+            "EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
 

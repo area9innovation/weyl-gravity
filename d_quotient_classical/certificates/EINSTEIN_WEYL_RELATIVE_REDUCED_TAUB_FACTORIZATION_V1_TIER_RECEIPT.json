@@ -1,0 +1,22 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1_TIER_RECEIPT",
+  "claim_ids": ["EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1"],
+  "dependency_tags": ["REDUCED-MODE"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1.json", "sha256": "03fa69f3850c3962edbe892abf9caa4616a03ca7542e0d64ee433f6c8342c731"},
+    "schema": {"path": "d_quotient_classical/schema/relative-reduced-taub-factorization-v1.schema.json", "sha256": "413d1a374af0739c70ae12806e2cb3c83a0c71408d0f05219a3e862e08b356b8"},
+    "producer": {"path": "d_quotient_classical/relative/einstein_weyl_relative_reduced_taub_factorization.py", "sha256": "3c349f60fa1044446a0111eaa1e3d5e087367914c87baccdb6ff11ed35cb9ab5"},
+    "verifier": {"path": "d_quotient_classical/relative/verify_einstein_weyl_relative_reduced_taub_factorization.py", "sha256": "5eb89e591d945931c7b8e438392ccf7248e909b0fe99daccd6236f68827211be"},
+    "tests": {"path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_reduced_taub_factorization.py", "sha256": "e3fa13b49542af592713325e07cb2ae006543ba68ebc111c681ca1d2b50e41d1"},
+    "report": {"path": "d_quotient_classical/reports/einstein-weyl-relative-reduced-taub-factorization.md", "sha256": "08ca6d8cd36c89af9d6093e5bbdf8c575d537c1f57257e64f4725f0fd6c8e556"},
+    "atlas_fragment": {"path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "sha256": "26bc46b00ef897c494f1f8e5570ecba0019e2f2a94ef253d2925351460af107c"}
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "checks": ["Python compilation", "strict Draft 2020-12 schema", "scoped diff check", "content-hash replay"]},
+    "tier_1": {"status": "PASS", "elapsed_seconds": 5.5, "commands": ["PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_reduced_taub_factorization --check --guards", "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_reduced_taub_factorization", "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_reduced_taub_factorization", "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-reduced-taub-factorization-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1.json"]},
+    "tier_2": {"status": "PASS", "elapsed_seconds": 1.2, "commands": ["python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write", "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check", "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py", "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"]},
+    "tier_3": {"status": "NOT_RUN", "reason": "This exact REDUCED-MODE theorem changes no shared operator and makes no support-local, causal, paper-freeze or quantum promotion."}
+  },
+  "claim_boundary": "This receipt covers the abstract normalized quotient-coordinate factorization of the relative arity-two obstruction class through the five polarized Taub charges on Sym^2 H0 for the complete finite-harmonic standard source inventory in the smooth-secular target correction class. It does not cover a serialized all-mode PBW source-pair matrix, target primal representatives, a support-local current lift, bounded or causal correction classes, repaired full relative q2, action-pairing comparison, arity three, observables, particles or quantum transfer."
+}

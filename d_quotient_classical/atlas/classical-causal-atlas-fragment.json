@@ -1326,7 +1326,7 @@
       }
     },
     {
-      "claim_boundary": "The relative moment map has zero constant and linear terms, so the derived Taub-zero condition does not restrict the unary tangent complex and does not require a nonzero unary cross-incidence. Its first local equation is d_H B_X+j_X(u,u)/2=0 at arity two. The complete five-charge basis and local current representatives exist, but charge projection alone does not prove [Delta2]=A o mu_rel. Until that obstruction-module factorization and a support-local lift are constructed, the relative q2, action-pairing transport, causal bridge and quantum transfer remain OPEN.",
+      "claim_boundary": "The relative moment map has zero constant and linear terms, so the derived Taub-zero condition does not restrict the unary tangent complex and does not require a nonzero unary cross-incidence. Its first local equation is d_H B_X+j_X(u,u)/2=0 at arity two. In the finite-harmonic smooth-secular target quotient, the complete five-dimensional cokernel theorem makes the normalized evaluation map an isomorphism and gives D=A M_pol with quotient-coordinate matrix I5 on Sym^2 H0, including cross-block pairs. This is not a serialized all-mode PBW matrix or a support-local lift. Until the current-level lift is constructed, the full relative q2, action-pairing transport, causal bridge and quantum transfer remain OPEN.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "OPEN",
@@ -1359,6 +1359,11 @@
           "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1",
           "sha256": "d96fcda2d797c4222d42c6685ee2275158853852e2e29035158f912a4876896b"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1",
+          "sha256": "03fa69f3850c3962edbe892abf9caa4616a03ca7542e0d64ee433f6c8342c731"
         }
       ],
       "id": "classical.crosswalk.compact_product_derived_taub_zero_pullback",
@@ -1377,7 +1382,7 @@
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "Reduced-mode factorization through the complete five-charge map is the active gate.",
+            "statement": "The five-charge factorization does not include the extra polynomial and resonant obstruction functionals of the bounded category.",
             "status": "OPEN"
           },
           "causal_retarded": {
@@ -1386,12 +1391,12 @@
           },
           "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
           "smooth_secular": {
-            "statement": "No smooth-secular relative morphism theorem follows from the local current equation alone.",
-            "status": "OPEN"
+            "statement": "On Sym^2 H0 of every finite real standard-mode set in the smooth-secular category, ker D equals ker M_pol and the normalized quotient-coordinate factor is I5.",
+            "status": "CERTIFIED"
           }
         },
         "taub_maps": {
-          "statement": "The quadratic pullback architecture is certified; factorization of the relative obstruction class through the complete five-charge map is not yet computed.",
+          "statement": "The relative obstruction class factors exactly through the five Taub charges in normalized smooth finite-harmonic quotient coordinates; the support-local current-level lift remains open.",
           "status": "OPEN"
         }
       },
@@ -1411,7 +1416,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "b199641260ef5d0bbbf69712f6a41408b99338b612bce0d4f2a18ec3fc599fbc",
+  "generated_by_sha256": "47bd4bdf5b90278d05dcfba0ee831c44435ee132e3493e66db3bd937ba166bcd",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

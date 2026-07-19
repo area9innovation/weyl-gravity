@@ -2419,15 +2419,20 @@ unary tangent complex and does not require a nonzero unary cross-incidence.
 Its first canonical local equation is the arity-two current equation
 `d_H B_X+j_X(u,u)/2=0` for the five stabilizers.  The 160-row current
 resolution, 188-row q1/q2 interface and 316-row cyclic unary ambient carrier
-already provide the typed ingredients.  What remains open is the actual
-relative morphism: compute whether the obstruction class factors as
-`[Delta2]=A o mu_rel`, equivalently whether
-`ker(mu_rel) subset ker([Delta2])`, on the complete standard reduced-mode
-source-pair module.  Only after this finite factorization passes should a
-support-local current lift be attempted.  Charge projection alone does not
-prove the factorization, and neither success nor obstruction is currently
-claimed.  Modified endpoints and other backgrounds remain admissible; no
-causal or quantum consequence is inferred.
+already provide the typed ingredients.  The finite obstruction-module gate
+is now closed by `EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1`.
+On `B_standard=Sym^2(H^0(q1_EM)_standard)` in the finite-harmonic
+smooth-secular target category, the complete five-dimensional cokernel makes
+`chi_X([S])=(1/2)<zeta_X,S>` an isomorphism and the global current replay gives
+`chi([Delta2])=mu_rel,pol`.  Thus `D=A M_pol` with normalized
+quotient-coordinate matrix `I5`, and `ker(D)=ker(M_pol)`, including all
+cross-block pairs.  This is an abstract quotient-coordinate theorem, not a
+serialized all-mode PBW source-pair matrix; the stricter bounded category
+retains additional polynomial and resonant obstruction functionals.  The
+active gate is now to construct the support-local current-level lift of `A`,
+or return a normalized locality or cyclicity obstruction.  Modified endpoints
+and other backgrounds remain admissible; no causal or quantum consequence is
+inferred.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a

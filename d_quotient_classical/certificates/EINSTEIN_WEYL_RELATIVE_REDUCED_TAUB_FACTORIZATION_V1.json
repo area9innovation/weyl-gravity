@@ -1,0 +1,180 @@
+{
+  "claim_boundary": "This theorem is exact only in the complete finite-harmonic REDUCED-MODE source inventory with the SMOOTH_SECULAR target correction module. On the polarized domain Sym^2 H^0 it identifies the five normalized obstruction coordinates of the relative defect with the five polarized relative Taub moment maps and proves equality of their kernels. The displayed I5 is the normalized quotient-coordinate matrix of chi o A, not a serialized all-mode PBW source-pair solve or an export of five primal target representatives. It does not construct the required support-local current-level factor map, repair the full relative q2 on the 316-row carrier, compare the cotangent pairing with the action current, solve the stricter bounded correction problem, authorize arity three, or imply a Lorentzian-causal, observable, particle or quantum theorem.",
+  "classification": {
+    "arity_three_authorized": false,
+    "bounded_correction_factorization_certified": false,
+    "causal_retarded_factorization_certified": false,
+    "complete_standard_blocks_included": true,
+    "full_relative_q2_repaired": false,
+    "kernel_condition_exact": true,
+    "normalized_quotient_coordinate_matrix_exact": true,
+    "observable_particle_or_quantum_claim": false,
+    "reduced_mode_obstruction_factorization_exact": true,
+    "serialized_all_mode_source_pair_matrix_computed": false,
+    "support_local_current_representatives_available": true,
+    "support_local_relative_lift_constructed": false,
+    "target_primal_obstruction_representatives_exported": false
+  },
+  "dependencies": {
+    "complete_charge_q2": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json",
+      "sha256": "11e8119ab8fc9756fc5b4c5520e648599fd1264e7776cc79d91dc80645be1c56"
+    },
+    "complete_smooth_target": {
+      "artifact_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_FINITE_HARMONIC_SMOOTH_GLOBAL_SECOND_ORDER",
+      "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+      "sha256": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885"
+    },
+    "f2_taub_obstruction": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
+      "sha256": "b96fa2c3eb54a9df86d6e7b319d9244c8c54d023d8edc2425e8df29177c590dc"
+    },
+    "global_current_replay": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_GLOBAL_FIVE_CHARGE_REPLAY_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_GLOBAL_FIVE_CHARGE_REPLAY_V1.json",
+      "sha256": "9d0283f8824a9a26bbcc78536e9a5ce0679f4df08ba09a54389da7a9b240ec9a"
+    },
+    "pullback_preflight": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_DERIVED_TAUB_ZERO_PULLBACK_PREFLIGHT_V1.json",
+      "sha256": "d96fcda2d797c4222d42c6685ee2275158853852e2e29035158f912a4876896b"
+    }
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "factorization": {
+    "all_cross_block_terms_zero": true,
+    "all_standard_blocks": [
+      "generic_radiative_ell_ge_2",
+      "physical_ell1_all_k",
+      "homogeneous_ell0",
+      "axial_twist_ell1_k0"
+    ],
+    "factor_map": "A=chi^(-1) on the normalized five-coordinate obstruction quotient",
+    "identity": "chi([Delta2(u,v)])=mu_rel,pol(u,v)",
+    "kernel_identity": "ker(D:B_standard->O_smooth)=ker(M_pol:B_standard->k^5)",
+    "matrix": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "matrix_input_basis": [
+      "H",
+      "P_x",
+      "J_1",
+      "J_2",
+      "J_3"
+    ],
+    "matrix_output_basis": [
+      "H",
+      "P_x",
+      "J_1",
+      "J_2",
+      "J_3"
+    ],
+    "polarization_valid": true,
+    "relative_moment_map": "mu_rel,pol,X(u,v)=(1/2)<zeta_X,Delta2(u,v)>"
+  },
+  "lifecycle_status": "COEFFICIENT_COMPUTED",
+  "next_gate": "CONSTRUCT_THE_SUPPORT_LOCAL_CURRENT_LEVEL_LIFT_OF_A_OR_RETURN_A_NORMALIZED_LOCALITY_OR_CYCLICITY_OBSTRUCTION",
+  "normalization_witness": {
+    "expected": "-54*(1 + sqrt(3))/5",
+    "mode": "ell=2,m=0,k=0 axial Einstein-Maxwell plus branch",
+    "mu_rel_H_diagonal": "-54*(1 + sqrt(3))/5",
+    "nonzero": true
+  },
+  "obstruction_quotient": {
+    "adjoint_basis": [
+      "zeta_H",
+      "zeta_Px",
+      "zeta_J1",
+      "zeta_J2",
+      "zeta_J3"
+    ],
+    "constant_u1_obstruction_coordinate": false,
+    "coordinate_basis": [
+      "H",
+      "P_x",
+      "J_1",
+      "J_2",
+      "J_3"
+    ],
+    "coordinate_map": "chi_X([S])=(1/2)<zeta_X,S>",
+    "coordinate_map_injective": true,
+    "dimension": 5,
+    "injectivity_reason": "the complete output theorem proves that simultaneous vanishing of all five pairings is necessary and sufficient for S to lie in the smooth finite-harmonic target image",
+    "name": "O_smooth=coker(L_WM) after Noether and local gauge reduction"
+  },
+  "polarized_domain": {
+    "contains_all_cross_block_pairs": true,
+    "definition": "B_standard=Sym^2(H^0(q1_EM)_standard)",
+    "not_the_set_theoretic_quadratic_zero_cone": true,
+    "real_structure": "finite real/conjugation-closed standard mode sets, then filtered union",
+    "serialized_all_mode_source_pair_matrix": false,
+    "serialized_target_primal_obstruction_representatives": false
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_reduced_taub_factorization.py": "3c349f60fa1044446a0111eaa1e3d5e087367914c87baccdb6ff11ed35cb9ab5",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_reduced_taub_factorization.py": "e3fa13b49542af592713325e07cb2ae006543ba68ebc111c681ca1d2b50e41d1",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_reduced_taub_factorization.py": "5eb89e591d945931c7b8e438392ccf7248e909b0fe99daccd6236f68827211be",
+      "d_quotient_classical/schema/relative-reduced-taub-factorization-v1.schema.json": "413d1a374af0739c70ae12806e2cb3c83a0c71408d0f05219a3e862e08b356b8"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_reduced_taub_factorization --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_reduced_taub_factorization",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_reduced_taub_factorization"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1",
+  "result_state": "REDUCED_SMOOTH_OBSTRUCTION_CLASS_FACTORS_EXACTLY_THROUGH_FIVE_TAUB_CHARGES",
+  "schema": "pure-weyl-relative-reduced-taub-factorization-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product R_t x S1_L x S2",
+    "boundaries": "closed Cauchy slice S1_L x S2 before final stabilizer quotient",
+    "carrier": "symmetric source-pair module of the complete standard Einstein-Maxwell solution cohomology into the finite-harmonic smooth-secular Weyl-Maxwell target obstruction quotient",
+    "charge_sector": "fixed compact U(1) bundle P_N with N=2",
+    "degree": "arity-two target equation class modulo the smooth finite-harmonic target q1 image",
+    "ell": "all certified standard blocks: ell>=2, physical ell=1, twist ell=1 and homogeneous ell=0",
+    "k": "all compact Fourier momenta where the corresponding standard block exists",
+    "m": "all real SO(3) multiplicities",
+    "omega": "both generic Einstein branches, physical ell1 shell and generalized-zero blocks",
+    "parity": "generic axial/polar, physical ell1 axial/polar, homogeneous scalar and axial twist",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  }
+}

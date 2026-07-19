@@ -86,6 +86,15 @@ stationary route requires a corrected `q26`-compatible Cauchy lift. Either
 route still needs a positive or declared Krein covariance and the BRST Ward
 identities before a Berger Hadamard claim.
 
+The direct-route boundary is now sharper. The finite `A10 <-> C20`
+differential graph maps are wavefront-safe and the two ghost local
+parametrices are included, but the stationary slab Volterra maps are not yet
+a compact-support regular GreenHyp morphism. The next physical import is a
+nonstationary temporal-cutoff companion Green family; the quantum consumer
+must then prove response-map regularity and cone mapping. A global seed
+covariance with declared BV/Krein and physical-positivity policy remains a
+separate gate before the BRST Ward identities and 26-to-54 lift.
+
 No row may be used as evidence for another row merely because both use the
 word cylinder, wave, or Einstein.
 
@@ -97,7 +106,7 @@ The shortest independent paths are now:
 Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   attach the certified 188-row physical/current q2 interface to the 78-row relative mapping cofiber and solve or certify the remaining cross-incidence; causal Green data and the eighteen candidate-13 spectral receivers remain separate fail-closed gates
-Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; for Berger, pursue typed distributional companion transport on the certified 26-row causal homotopy while requesting a corrected q26-compatible Cauchy lift instead of the exactly rejected canonical graph lift; in parallel analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows, add remaining BV rows to the partial-BV five-carrier representative, classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
+Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; for Berger, request the nonstationary temporal-cutoff companion Green family and construct its regular response morphism plus a global seed covariance, while separately requesting a corrected q26-compatible Cauchy lift instead of the exactly rejected canonical graph lift; in parallel analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows, add remaining BV rows to the partial-BV five-carrier representative, classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; complete typed q2 and the 616,738-key q3 are executable, but the 108-row arity-two replay is OBSTRUCTED at bidegree (0,0), so derive the background-compatible apparatus BV/chart contribution before any arity-three, K_Berger, observer-morphism or Z2^C restriction
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
@@ -1964,11 +1973,18 @@ unary tangent complex; it neither defines a plain linear subcomplex nor
 requires a nonzero unary cross-incidence.  Its first local equation is the
 arity-two current equation `d_H B_X+j_X(u,u)/2=0`, already typed by the
 160-row current resolution and 188-row q1/q2 interface inside the 316-row
-cyclic unary ambient carrier.  Bridge 1 now targets the finite
-obstruction-module test `[Delta2]=A o mu_rel` on the complete standard
-reduced-mode blocks, followed—only if it passes—by a support-local current
-lift.  Charge projection alone does not settle this factorization; both the
-factorization and its obstruction remain `OPEN`.
+cyclic unary ambient carrier.
+
+`EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1` closes the finite
+smooth-secular obstruction-module gate on `Sym^2 H^0(q1_EM)`.  The complete
+target cokernel theorem makes `chi_X([S])=(1/2)<zeta_X,S>` an isomorphism onto
+the five charge coordinates, and the global current replay gives
+`chi([Delta2])=mu_rel,pol`.  Hence the normalized quotient-coordinate factor
+is `I5` and `ker(D)=ker(M_pol)`, including all standard cross-block pairs.
+This is not a serialized all-mode PBW matrix and does not cover the stricter
+bounded or causal correction categories.  Bridge 1 now targets the
+support-local current-level lift of this factor map, or a normalized
+locality/cyclicity obstruction.
 
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains
