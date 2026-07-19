@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-108-row-memory-q1-pbw-overlay-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "coefficient_contract", "memory_overlay", "identity_disposition", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-memory-q1-pbw-overlay-v1"},
+    "result_id": {"const": "BERGER_108_ROW_MEMORY_Q1_PBW_OVERLAY"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_SCALAR_MEMORY_Q1_FIRST_JET_OVERLAY"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 6, "maxProperties": 6},
+    "coefficient_contract": {"type": "object"},
+    "memory_overlay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["payload_ref", "block_count", "scalar_matrix_shape", "nonzero_matrix_position_count", "serialized_term_count", "entries_canonical_sha256", "row_support", "column_support"],
+      "properties": {
+        "payload_ref": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "result_id", "sha256"],
+          "properties": {
+            "path": {"const": "closed_universe_observers/certificates/BERGER_108_ROW_MEMORY_Q1_PBW_OVERLAY_PAYLOAD.json"},
+            "result_id": {"const": "BERGER_108_ROW_MEMORY_Q1_PBW_OVERLAY_PAYLOAD"},
+            "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "block_count": {"const": 16},
+        "scalar_matrix_shape": {"const": [108, 108]},
+        "nonzero_matrix_position_count": {"const": 20},
+        "serialized_term_count": {"const": 618},
+        "entries_canonical_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "row_support": {"const": [59, 60, 61, 62, 80, 81, 82, 83]},
+        "column_support": {"const": [55, 56, 57, 58, 70, 71, 72, 73]}
+      }
+    },
+    "identity_disposition": {
+      "type": "object",
+      "required": ["Q00_Q01_nilpotency_imported", "Q10_Q11_nilpotency_imported", "odd_cyclicity_by_explicit_formal_transpose", "complete_108_row_nilpotency_replayed", "complete_108_row_odd_cyclicity_replayed"],
+      "properties": {
+        "Q00_Q01_nilpotency_imported": {"const": true},
+        "Q10_Q11_nilpotency_imported": {"const": true},
+        "odd_cyclicity_by_explicit_formal_transpose": {"const": true},
+        "complete_108_row_nilpotency_replayed": {"const": false},
+        "complete_108_row_odd_cyclicity_replayed": {"const": false}
+      }
+    },
+    "flags": {
+      "type": "object",
+      "properties": {
+        "SCALAR_MEMORY_Q1_PBW_OVERLAY_EXPORTED": {"const": true},
+        "SCALAR_ROD_GRAVITY_Q1_PBW_OVERLAY_EXPORTED": {"const": false},
+        "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "EXPORT_SCALAR_ROD_GAUGE_HESSIAN_AND_SHIFTED_Q2_PHI2_OVERLAY"},
+    "claim_boundary": {"type": "string", "minLength": 500},
+    "provenance": {"type": "object"}
+  }
+}

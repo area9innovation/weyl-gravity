@@ -1,0 +1,40 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_MEMORY_Q1_PBW_OVERLAY_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_MEMORY_Q1_PBW_OVERLAY",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The complete two-channel memory q1 contribution through Q11 is scalarized with exact normalized profiles, Phi2 variations, frozen-density adjoints and the repaired invariant-frame Cartan sign. Rod/gravity blocks, complete q1 replay, scalar q2, causal, cone, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {"tier": 0, "command": "python3 -m py_compile on changed Python; python3 -m json.tool on changed structured data; git diff --check on explicit paths", "elapsed_seconds": "under 2", "status": "PASS"},
+    {"tier": 1, "command": "pytest -q memory overlay, emitter overlay, component contract, observer atlas and comparison-ledger tests", "elapsed_seconds": "24.10", "status": "PASS", "scope": "49 exact scalarization, adjoint, Cartan-sign, PBW, atlas and ledger tests"},
+    {"tier": 2, "command": "memory producer --check and independent verifier; residual-atlas verifier; comparison-ledger verifier", "elapsed_seconds": "4.30", "status": "PASS", "scope": "dependency hashes, compact payload binding, explicit formal transposes, generated claims and direct evidence consumers"},
+    {"tier": 2, "command": "ci/science-forge-shadow.sh", "elapsed_seconds": "6.15", "status": "ADVISORY_PASS", "scope": "bridge audit PASS; repository-wide coverage snapshot drift reported at 968 certificates versus 820"}
+  ],
+  "higher_tiers_not_run": {"tier_3": "This is a scoped observer memory-unary overlay, not a release, freeze, shared-core algebra change or paper theorem promotion."},
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_memory_q1_pbw_overlay.py", "sha256": "433c0b004554fd7b9a43482f4f5f42829bd9c0dc9fcb57a5284848c7acdfd3ea"},
+    {"path": "closed_universe_observers/verify_berger_108_row_memory_q1_pbw_overlay.py", "sha256": "3a212ce69c25780de30af6398de8da2b8750533a2a76677dc3e1d7e7948dbbca"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_memory_q1_pbw_overlay.py", "sha256": "69825418d4f0e4175cb3ab806cbe32d9daeb4e917aecef75bb8b087166d66295"},
+    {"path": "closed_universe_observers/schema/berger-108-row-memory-q1-pbw-overlay-v1.schema.json", "sha256": "7769d98ce415e43de1c088f8f8783ffcb67f82d02fc1759c75c58fff9f63abba"},
+    {"path": "closed_universe_observers/schema/berger-108-row-memory-q1-pbw-overlay-payload-v1.schema.json", "sha256": "fe442fffcfac18691dc1e8f3b0e152f197a7f29f1d63bf391f1f7f3c714feb31"},
+    {"path": "closed_universe_observers/reports/berger-108-row-memory-q1-pbw-overlay.md", "sha256": "5a3e7a46fc8a62687a97563c81c56d88152c174221bad6e830b6082eeb4fbfb0"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_MEMORY_Q1_PBW_OVERLAY.json", "sha256": "d9ccee8e01ed54e531472db217b4b13bfb21748cfe9cb42c37fa57a4358afbef"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_MEMORY_Q1_PBW_OVERLAY_PAYLOAD.json", "sha256": "ad78b9915379d1887eeac125b48d19eec51e3192d6b9822c32d1ef6fd5ee81fc"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "de09dad37cbbc6d8987037c45a3ba6277d63ad38127b0f8b839591aef30beb7a"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "7991b169e90a063842f009b3f15f90e22168bdda0021144466f63389ef6f614b"},
+    {"path": "planning/work-items/berger-108-row-memory-q1-pbw-overlay.json", "sha256": "7d2e852c404c1a6d1bb1e14db17b7d8cda9091998f1b4f38bd9ea3db7b1620c4"},
+    {"path": "planning/events/berger-108-row-memory-q1-pbw-overlay-ACTIVE-7027325f48aa2ba5.json", "sha256": "ede62a5b4ab5e5e30a65e83d8af3e6159682b585684b018c4635faaf223f3ac6"},
+    {"path": "planning/events/berger-108-row-memory-q1-pbw-overlay-DONE-184464c098d8c518.json", "sha256": "77cdbfbf654487b30b04d6b6c48fc14a3d074c9fb422c7678ed8745163f6c4c8"}
+  ],
+  "flags": {
+    "SCALAR_MEMORY_Q1_PBW_OVERLAY_EXPORTED": true,
+    "SCALAR_MEMORY_Q00_EXPORTED": true,
+    "SCALAR_MEMORY_Q01_EXPORTED": true,
+    "SCALAR_MEMORY_Q10_EXPORTED": true,
+    "SCALAR_MEMORY_Q11_EXPORTED": true,
+    "SCALAR_ROD_GRAVITY_Q1_PBW_OVERLAY_EXPORTED": false,
+    "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED": false,
+    "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

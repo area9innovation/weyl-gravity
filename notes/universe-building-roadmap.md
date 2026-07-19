@@ -978,7 +978,7 @@ survive the first backreacted, normalized apparatus interaction?
    positions and 204 PBW terms, including every first switch jet; exact
    `d^2=delta^2=0` and reciprocal formal adjunction hold, while the pinned
    64-row base is unchanged.  The complete two-channel memory first jet is now
-   scalarized in 16 blocks, 20 matrix positions and 622 terms, with exact
+   scalarized in 16 blocks, 20 matrix positions and 618 terms, with exact
    normalized profiles, `Phi2` transport/profile variations and explicit
    adjoint coefficient jets; its audit repaired the invariant-frame Cartan
    sign.  Export the remaining six-rod gauge/wave and gravity--rod Hessian

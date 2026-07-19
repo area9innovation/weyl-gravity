@@ -1,0 +1,145 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate scalarizes the complete two-channel memory contribution to the Berger 108-row unary differential through the certified first bidegree jet Q00+epsilon_R_squared Q10+kappa Q01+epsilon_R_squared*kappa Q11. It exports the clock transport and frozen-density adjoint, the exact normalized detector readout B_a and its adjoint, the Phi2-induced transport variation, and the normalized metric-profile variation with every coefficient derivative made explicit in the noncommuting Berger-frame PBW grammar. It does not export the six rod gauge/wave blocks, gravity--rod Hessian, shifted q2(Phi2,-) base block, a complete 108-row q1, the all-row nilpotency/cyclicity replay, scalar q2, backreaction solution, tangent-cone restriction, Bridge 3, causal propagation or any quantum claim.",
+  "claim_status": "CERTIFIED_SCALAR_MEMORY_Q1_FIRST_JET_OVERLAY",
+  "coefficient_contract": {
+    "adjoint_rule": "(a e_i)^sharp=-a e_i-e_i(a) in the frozen density-dual component pairing",
+    "backgrounds": [
+      "R0_1",
+      "R1_2",
+      "Phi2_00",
+      "Phi2_01",
+      "Phi2_02",
+      "Phi2_03",
+      "Phi2_11",
+      "Phi2_12",
+      "Phi2_13",
+      "Phi2_22",
+      "Phi2_23",
+      "Phi2_33"
+    ],
+    "base_field": "Q(sqrt(10))",
+    "profile_product": "chi_a=f_a*rho_a*J_a with exact component-contract profile specializations",
+    "unary_expansion": "Q00+epsilon_R_squared Q10+kappa Q01+epsilon_R_squared*kappa Q11"
+  },
+  "dependency_refs": {
+    "apparatus_handoff": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF.json",
+      "result_id": "BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF",
+      "sha256": "4e3202b7397b9b9fa0a5ce2ccfc243d3e9bda5f69d6339d329caaa3bfe9324ab"
+    },
+    "background_quotient": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_BACKGROUND_SPECIALIZATION_DIFFERENTIAL_IDEAL.json",
+      "result_id": "BERGER_108_ROW_BACKGROUND_SPECIALIZATION_DIFFERENTIAL_IDEAL",
+      "sha256": "ea6efe4d7680f48e20d088e5d97c21d730716f8c300932668afec9e9c16ec3e8"
+    },
+    "component_contract": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json",
+      "result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+      "sha256": "4113635be1493e0eac5e945a970ce4989f0484d5fa658a10bf893c63f5ae707c"
+    },
+    "memory_q10": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE.json",
+      "result_id": "BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE",
+      "sha256": "b355e03d72560526997829c6fe381ea7695a19e15a0b3adb4131bf03b96caf60"
+    },
+    "memory_q11": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY.json",
+      "result_id": "BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY",
+      "sha256": "1dc8720b2e8a208094a40ab736d3e6459c8c5afb5308baca6c1e82c8b9e2f6f2"
+    },
+    "memory_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE.json",
+      "result_id": "BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE",
+      "sha256": "1c51f49ae867c5792bf4ece12f58d03e55079a9baa1c8a0209adeb74913e093f"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "flags": {
+    "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED": false,
+    "QUANTUM_CLAIM": false,
+    "SCALAR_MEMORY_Q00_EXPORTED": true,
+    "SCALAR_MEMORY_Q01_EXPORTED": true,
+    "SCALAR_MEMORY_Q10_EXPORTED": true,
+    "SCALAR_MEMORY_Q11_EXPORTED": true,
+    "SCALAR_MEMORY_Q1_PBW_OVERLAY_EXPORTED": true,
+    "SCALAR_ROD_GRAVITY_Q1_PBW_OVERLAY_EXPORTED": false,
+    "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED": false
+  },
+  "identity_disposition": {
+    "Q00_Q01_nilpotency_imported": true,
+    "Q10_Q11_nilpotency_imported": true,
+    "complete_108_row_nilpotency_replayed": false,
+    "complete_108_row_odd_cyclicity_replayed": false,
+    "odd_cyclicity_by_explicit_formal_transpose": true
+  },
+  "memory_overlay": {
+    "block_count": 16,
+    "column_support": [
+      55,
+      56,
+      57,
+      58,
+      70,
+      71,
+      72,
+      73
+    ],
+    "entries_canonical_sha256": "97497a841682371f9a08b911188d1c03b39a4b0bc3ec076f3056423d518eede8",
+    "nonzero_matrix_position_count": 20,
+    "payload_ref": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_MEMORY_Q1_PBW_OVERLAY_PAYLOAD.json",
+      "result_id": "BERGER_108_ROW_MEMORY_Q1_PBW_OVERLAY_PAYLOAD",
+      "sha256": "ad78b9915379d1887eeac125b48d19eec51e3192d6b9822c32d1ef6fd5ee81fc"
+    },
+    "row_support": [
+      59,
+      60,
+      61,
+      62,
+      80,
+      81,
+      82,
+      83
+    ],
+    "scalar_matrix_shape": [
+      108,
+      108
+    ],
+    "serialized_term_count": 618
+  },
+  "next_gate": "EXPORT_SCALAR_ROD_GAUGE_HESSIAN_AND_SHIFTED_Q2_PHI2_OVERLAY",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_108_row_memory_q1_pbw_overlay.py",
+        "sha256": "433c0b004554fd7b9a43482f4f5f42829bd9c0dc9fcb57a5284848c7acdfd3ea"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_108_row_memory_q1_pbw_overlay.py",
+        "sha256": "3a212ce69c25780de30af6398de8da2b8750533a2a76677dc3e1d7e7948dbbca"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_108_row_memory_q1_pbw_overlay.py",
+        "sha256": "69825418d4f0e4175cb3ab806cbe32d9daeb4e917aecef75bb8b087166d66295"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-108-row-memory-q1-pbw-overlay-v1.schema.json",
+        "sha256": "7769d98ce415e43de1c088f8f8783ffcb67f82d02fc1759c75c58fff9f63abba"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-108-row-memory-q1-pbw-overlay-payload-v1.schema.json",
+        "sha256": "fe442fffcfac18691dc1e8f3b0e152f197a7f29f1d63bf391f1f7f3c714feb31"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-108-row-memory-q1-pbw-overlay.md",
+        "sha256": "5a3e7a46fc8a62687a97563c81c56d88152c174221bad6e830b6082eeb4fbfb0"
+      }
+    ]
+  },
+  "result_id": "BERGER_108_ROW_MEMORY_Q1_PBW_OVERLAY",
+  "schema": "closed-universe-berger-108-row-memory-q1-pbw-overlay-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}
