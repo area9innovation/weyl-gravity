@@ -12,6 +12,13 @@ The generated claim map records this distinction explicitly as
 `human_scientific_review_status: PENDING`, and
 `theorem_freeze_authorized: false`.
 
+A second consistency audit against the supplied referee text also removed a
+stale post-review frontier statement: the pole-four `I29` ghost function is
+complete and is no longer listed as open.  Its certificate and independent
+verifier are now printed beside the ten pole-three rows in the manuscript's
+reproduction ledger.  The physical fourth-order Hessian, full repository
+form-factor assembly, and generic primed Green/spectral carrier remain open.
+
 | Referee requirement | Revision disposition | Evidence |
 | --- | --- | --- |
 | Determinant-to-Slavnov bridge | Addressed. The four-factor determinant ledger now prints differential order as well as rank, factorwise two-carrier reconstruction of `(C²,E₄)`, exact sum, zero-mode policy, local spectral-cut/phase prescription, dimensional residue identity, ghost replacement, Diff completion, and quotient reduction. An explicit reduction diagram separates the divergent functional, bosonic Ward insertion, ghost-one cocycle, and quotient class. The text distinguishes the factorwise parity zero from the total `□R=0` scheme convention. The `5→10→5` bundles are named. | Main paper, “Coefficient-bearing one-loop breaking”; generated determinant and factorwise-coefficient tables; `REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json`; `REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH.json`; `REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json` |
