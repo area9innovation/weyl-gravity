@@ -462,6 +462,22 @@ def verify() -> None:
         raise AssertionError("polar-polar L4 correction classes were silently merged")
     if "two ordered cross-parity matrices" not in polar_matrix["claim_boundary"]:
         raise AssertionError("polar-polar L4 matrix hid the remaining parity workload")
+    forward = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_axial_polar_l4_matrix"]
+    if forward["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 27 scalar adjoint coefficients" not in forward["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("forward cross-parity L4 matrix was hidden")
+    if "reverse input order is not identified" not in forward["mode_data"]["dispersion"]["statement"] or "not the reverse order" not in forward["claim_boundary"]:
+        raise AssertionError("forward cross-parity order was merged")
+    forward_second = forward["mode_data"]["second_order"]
+    if forward_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or forward_second["smooth_secular"]["status"] != "OPEN" or forward_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("forward cross-parity correction classes were merged")
+    reverse = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_polar_axial_l4_matrix"]
+    if reverse["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 27 scalar adjoint coefficients" not in reverse["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("reverse cross-parity L4 matrix was hidden")
+    if "explicit role substitution, not name matching" not in reverse["mode_data"]["dispersion"]["statement"] or "108 of 108 axisymmetric L4 basis coefficients" not in reverse["claim_boundary"]:
+        raise AssertionError("reverse cross-parity role map or workload boundary was hidden")
+    reverse_second = reverse["mode_data"]["second_order"]
+    if reverse_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or reverse_second["smooth_secular"]["status"] != "OPEN" or reverse_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("reverse cross-parity correction classes were merged")
     aligned_phase = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
     aligned_phase_second = aligned_phase["mode_data"]["second_order"]
     if aligned_phase["descriptions"]["nonlinear"] != "OPEN":

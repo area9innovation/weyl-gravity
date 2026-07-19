@@ -3392,6 +3392,26 @@ now the two ordered cross-parity matrices, followed by the 56 nonaxisymmetric
 
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
+
+Both ordered cross-parity `L=4` matrices are now certified separately.  A
+shared action-derived slice contains 832 PBW terms in each input order and
+reproduces the direct four-dimensional axial--polar calibration.  Explicit
+role substitution, rather than a name-based mode identification, gives the
+polar-first/axial-second workload.  Each ordering has twelve circumference
+rows, twenty branch-basis fixtures and 27 target-adjoint coefficients.  All
+54 coefficients have exact rational intervals excluding zero, so all forty
+ordered fixtures are bounded/finite-quasiperiodic `OBSTRUCTED`.  Fail-closed
+atlas rows
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_axial_polar_l4_matrix` and
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_polar_axial_l4_matrix`
+therefore close 108 of 108 axisymmetric `L=4` basis coefficients.  This is
+still not the arbitrary-amplitude zero variety or complete two-fibre tangent
+cone.  Those remain `OPEN`, as do smooth-secular corrections; causal status
+remains `NO_CERTIFIED_MAP`.  The active coefficient gate is now the 56
+nonaxisymmetric `L=1,3` coefficients.  The active same-background Classical
+bridge remains Bridge 1 at its certified linear triangle lifecycle; these
+quadratic matrices are inputs and do not promote a nonlinear bridge map.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

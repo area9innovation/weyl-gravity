@@ -1,0 +1,80 @@
+{
+  "axial_amplitudes_Ht_Hx_Qt_Qx": [
+    "a_0",
+    "a_1",
+    "a_2",
+    "a_3"
+  ],
+  "claim_boundary": "This exact slice is only the axial L=4 action source from an ordered axial/polar input pair. It does not impose branch shells or classify a correction.",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "normalization": "diag(10,10,1/2,1/2) on raw projected PBW rows; fixed by the independent direct four-dimensional axial-plus-polar-minus fixture",
+  "parent": {
+    "action_sha256": "647ff2fe89c167b00f480ce421e089646d5c6459534d90e74a99d40b7a75d4bd",
+    "q2_sha256": "be4d163044138f4b3b093c54527c2484cfac9eea48a58c791e97926be8597fec",
+    "row_layout_sha256": "6236040676b7e699f5e48be6241143aa3bb5b7c9b4e07364826fc6f2b5ad24a2"
+  },
+  "pbw_support": {
+    "axial_input_rows": [
+      9,
+      12,
+      16,
+      17
+    ],
+    "both_input_orders_included": true,
+    "ordered_term_counts": {
+      "axial_then_polar": 832,
+      "polar_then_axial": 832
+    },
+    "output_rows": [
+      23,
+      26,
+      30,
+      31
+    ],
+    "polar_input_rows": [
+      6,
+      7,
+      10,
+      19
+    ]
+  },
+  "polar_amplitudes_At_B_Ct_U": [
+    "b_0",
+    "b_1",
+    "b_2",
+    "b_3"
+  ],
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_AXIAL_POLAR_L4_Q2_SLICE",
+  "schema": "einstein-maxwell-weyl-ell2-axial-polar-L4-q2-slice-v1",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "carrier": "ordered arbitrary axisymmetric axial then polar ell=2 gauge-slice representatives",
+    "degree": 2,
+    "ell": "2 times 2 -> 4",
+    "k": "arbitrary signed k_1,k_2",
+    "m": "0+0 -> 0",
+    "omega": "arbitrary omega_1,omega_2 before shell specialization",
+    "parity": "axial times polar input; axial L=4 output"
+  },
+  "source_action_row_order": [
+    "20*metric_t/2",
+    "-(-20*metric_x)/2",
+    "maxwell_t/2",
+    "maxwell_x/2"
+  ],
+  "source_action_rows": [
+    "-9*(3*a_0*b_0*k_1**4 + 6*a_0*b_0*k_1**3*k_2 + 14*a_0*b_0*k_1**2*k_2**2 - 9*a_0*b_0*k_1**2*omega_1**2 - 9*a_0*b_0*k_1**2*omega_1*omega_2 - 3*a_0*b_0*k_1**2*omega_2**2 + 46*a_0*b_0*k_1**2 + 11*a_0*b_0*k_1*k_2**3 - 9*a_0*b_0*k_1*k_2*omega_1**2 - 9*a_0*b_0*k_1*k_2*omega_1*omega_2 - 3*a_0*b_0*k_1*k_2*omega_2**2 + 172*a_0*b_0*k_1*k_2 + 4*a_0*b_0*k_2**4 + 78*a_0*b_0*k_2**2 - 54*a_0*b_0*omega_1**2 - 54*a_0*b_0*omega_1*omega_2 - 18*a_0*b_0*omega_2**2 + 452*a_0*b_0 - 12*a_0*b_1*k_1**3*omega_1 - 6*a_0*b_1*k_1**3*omega_2 - 18*a_0*b_1*k_1**2*k_2*omega_1 + 10*a_0*b_1*k_1**2*k_2*omega_2 - 6*a_0*b_1*k_1*k_2**2*omega_1 + 16*a_0*b_1*k_1*k_2**2*omega_2 - 132*a_0*b_1*k_1*omega_1 + 60*a_0*b_1*k_1*omega_2 + 8*a_0*b_1*k_2**3*omega_2 - 24*a_0*b_1*k_2*omega_1 + 60*a_0*b_1*k_2*omega_2 - 9*a_0*b_2*k_1**4 - 18*a_0*b_2*k_1**3*k_2 - 12*a_0*b_2*k_1**2*k_2**2 + 3*a_0*b_2*k_1**2*omega_1**2 + 3*a_0*b_2*k_1**2*omega_1*omega_2 + 11*a_0*b_2*k_1**2*omega_2**2 - 106*a_0*b_2*k_1**2 - 3*a_0*b_2*k_1*k_2**3 + 3*a_0*b_2*k_1*k_2*omega_1**2 + 3*a_0*b_2*k_1*k_2*omega_1*omega_2 + 11*a_0*b_2*k_1*k_2*omega_2**2 - 64*a_0*b_2*k_1*k_2 + 4*a_0*b_2*k_2**2*omega_2**2 + 18*a_0*b_2*k_2**2 - 18*a_0*b_2*omega_1**2 - 18*a_0*b_2*omega_1*omega_2 - 18*a_0*b_2*omega_2**2 + 356*a_0*b_2 - 48*a_0*b_3 + 3*a_1*b_0*k_1**3*omega_1 + 6*a_1*b_0*k_1**2*k_2*omega_1 + 14*a_1*b_0*k_1*k_2**2*omega_1 - 9*a_1*b_0*k_1*omega_1**3 - 9*a_1*b_0*k_1*omega_1**2*omega_2 - 3*a_1*b_0*k_1*omega_1*omega_2**2 + 16*a_1*b_0*k_1*omega_1 - 6*a_1*b_0*k_1*omega_2 + 11*a_1*b_0*k_2**3*omega_1 + 4*a_1*b_0*k_2**3*omega_2 - 9*a_1*b_0*k_2*omega_1**3 - 9*a_1*b_0*k_2*omega_1**2*omega_2 - 3*a_1*b_0*k_2*omega_1*omega_2**2 + 160*a_1*b_0*k_2*omega_1 + 36*a_1*b_0*k_2*omega_2 - 12*a_1*b_1*k_1**2*omega_1**2 - 6*a_1*b_1*k_1**2*omega_1*omega_2 - 48*a_1*b_1*k_1**2 - 18*a_1*b_1*k_1*k_2*omega_1**2 + 10*a_1*b_1*k_1*k_2*omega_1*omega_2 - 36*a_1*b_1*k_1*k_2 - 6*a_1*b_1*k_2**2*omega_1**2 + 16*a_1*b_1*k_2**2*omega_1*omega_2 + 8*a_1*b_1*k_2**2*omega_2**2 - 60*a_1*b_1*k_2**2 - 36*a_1*b_1*omega_1**2 + 144*a_1*b_1*omega_1*omega_2 + 72*a_1*b_1*omega_2**2 - 808*a_1*b_1 - 9*a_1*b_2*k_1**3*omega_1 - 18*a_1*b_2*k_1**2*k_2*omega_1 - 12*a_1*b_2*k_1*k_2**2*omega_1 + 3*a_1*b_2*k_1*omega_1**3 + 3*a_1*b_2*k_1*omega_1**2*omega_2 + 11*a_1*b_2*k_1*omega_1*omega_2**2 - 100*a_1*b_2*k_1*omega_1 + 18*a_1*b_2*k_1*omega_2 - 3*a_1*b_2*k_2**3*omega_1 + 3*a_1*b_2*k_2*omega_1**3 + 3*a_1*b_2*k_2*omega_1**2*omega_2 + 11*a_1*b_2*k_2*omega_1*omega_2**2 - 64*a_1*b_2*k_2*omega_1 + 4*a_1*b_2*k_2*omega_2**3 - 24*a_1*b_2*k_2*omega_2 - 4*a_2*b_0 - 4*a_2*b_2 - 8*a_2*b_3*k_1*k_2 - 48*a_2*b_3 + 8*a_3*b_1 - 8*a_3*b_3*k_2*omega_1)/14",
+    "-9*(3*a_0*b_0*k_1**3*omega_1 + 3*a_0*b_0*k_1**3*omega_2 + 3*a_0*b_0*k_1**2*k_2*omega_1 + 3*a_0*b_0*k_1**2*k_2*omega_2 + 11*a_0*b_0*k_1*k_2**2*omega_1 + 11*a_0*b_0*k_1*k_2**2*omega_2 - 9*a_0*b_0*k_1*omega_1**3 - 18*a_0*b_0*k_1*omega_1**2*omega_2 - 12*a_0*b_0*k_1*omega_1*omega_2**2 + 100*a_0*b_0*k_1*omega_1 - 3*a_0*b_0*k_1*omega_2**3 + 64*a_0*b_0*k_1*omega_2 + 4*a_0*b_0*k_2**3*omega_2 - 18*a_0*b_0*k_2*omega_1 + 24*a_0*b_0*k_2*omega_2 - 12*a_0*b_1*k_1**2*omega_1**2 - 18*a_0*b_1*k_1**2*omega_1*omega_2 - 6*a_0*b_1*k_1**2*omega_2**2 + 36*a_0*b_1*k_1**2 - 6*a_0*b_1*k_1*k_2*omega_1**2 + 10*a_0*b_1*k_1*k_2*omega_1*omega_2 + 16*a_0*b_1*k_1*k_2*omega_2**2 - 144*a_0*b_1*k_1*k_2 + 8*a_0*b_1*k_2**2*omega_2**2 - 72*a_0*b_1*k_2**2 + 48*a_0*b_1*omega_1**2 + 36*a_0*b_1*omega_1*omega_2 + 60*a_0*b_1*omega_2**2 - 808*a_0*b_1 - 9*a_0*b_2*k_1**3*omega_1 - 9*a_0*b_2*k_1**3*omega_2 - 9*a_0*b_2*k_1**2*k_2*omega_1 - 9*a_0*b_2*k_1**2*k_2*omega_2 - 3*a_0*b_2*k_1*k_2**2*omega_1 - 3*a_0*b_2*k_1*k_2**2*omega_2 + 3*a_0*b_2*k_1*omega_1**3 + 6*a_0*b_2*k_1*omega_1**2*omega_2 + 14*a_0*b_2*k_1*omega_1*omega_2**2 - 16*a_0*b_2*k_1*omega_1 + 11*a_0*b_2*k_1*omega_2**3 - 160*a_0*b_2*k_1*omega_2 + 6*a_0*b_2*k_2*omega_1 + 4*a_0*b_2*k_2*omega_2**3 - 36*a_0*b_2*k_2*omega_2 + 3*a_1*b_0*k_1**2*omega_1**2 + 3*a_1*b_0*k_1**2*omega_1*omega_2 + 18*a_1*b_0*k_1**2 + 3*a_1*b_0*k_1*k_2*omega_1**2 + 3*a_1*b_0*k_1*k_2*omega_1*omega_2 + 18*a_1*b_0*k_1*k_2 + 11*a_1*b_0*k_2**2*omega_1**2 + 11*a_1*b_0*k_2**2*omega_1*omega_2 + 4*a_1*b_0*k_2**2*omega_2**2 + 18*a_1*b_0*k_2**2 - 9*a_1*b_0*omega_1**4 - 18*a_1*b_0*omega_1**3*omega_2 - 12*a_1*b_0*omega_1**2*omega_2**2 + 106*a_1*b_0*omega_1**2 - 3*a_1*b_0*omega_1*omega_2**3 + 64*a_1*b_0*omega_1*omega_2 - 18*a_1*b_0*omega_2**2 + 356*a_1*b_0 - 12*a_1*b_1*k_1*omega_1**3 - 18*a_1*b_1*k_1*omega_1**2*omega_2 - 6*a_1*b_1*k_1*omega_1*omega_2**2 + 132*a_1*b_1*k_1*omega_1 + 24*a_1*b_1*k_1*omega_2 - 6*a_1*b_1*k_2*omega_1**3 + 10*a_1*b_1*k_2*omega_1**2*omega_2 + 16*a_1*b_1*k_2*omega_1*omega_2**2 - 60*a_1*b_1*k_2*omega_1 + 8*a_1*b_1*k_2*omega_2**3 - 60*a_1*b_1*k_2*omega_2 - 9*a_1*b_2*k_1**2*omega_1**2 - 9*a_1*b_2*k_1**2*omega_1*omega_2 + 54*a_1*b_2*k_1**2 - 9*a_1*b_2*k_1*k_2*omega_1**2 - 9*a_1*b_2*k_1*k_2*omega_1*omega_2 + 54*a_1*b_2*k_1*k_2 - 3*a_1*b_2*k_2**2*omega_1**2 - 3*a_1*b_2*k_2**2*omega_1*omega_2 + 18*a_1*b_2*k_2**2 + 3*a_1*b_2*omega_1**4 + 6*a_1*b_2*omega_1**3*omega_2 + 14*a_1*b_2*omega_1**2*omega_2**2 - 46*a_1*b_2*omega_1**2 + 11*a_1*b_2*omega_1*omega_2**3 - 172*a_1*b_2*omega_1*omega_2 + 4*a_1*b_2*omega_2**4 - 78*a_1*b_2*omega_2**2 + 452*a_1*b_2 + 48*a_1*b_3 + 8*a_2*b_1 - 8*a_2*b_3*k_1*omega_2 - 4*a_3*b_0 - 4*a_3*b_2 - 8*a_3*b_3*omega_1*omega_2 + 48*a_3*b_3)/14",
+    "9*(10*a_0*b_0 + 10*a_0*b_2 + 8*a_0*b_3*k_1*k_2 + 8*a_0*b_3*k_2**2 + 120*a_0*b_3 - 20*a_1*b_1 + 8*a_1*b_3*k_1*omega_2 + 8*a_1*b_3*k_2*omega_2 + a_2*b_0*k_1**2 + a_2*b_0*k_1*k_2 + 10*a_2*b_0 - a_2*b_2*k_1**2 - a_2*b_2*k_1*k_2 + 10*a_2*b_2 + a_3*b_0*k_1*omega_1 + a_3*b_0*k_2*omega_1 - 20*a_3*b_1 - a_3*b_2*k_1*omega_1 - a_3*b_2*k_2*omega_1)/35",
+    "-9*(20*a_0*b_1 - 8*a_0*b_3*k_2*omega_1 - 8*a_0*b_3*k_2*omega_2 - 10*a_1*b_0 - 10*a_1*b_2 - 8*a_1*b_3*omega_1*omega_2 - 8*a_1*b_3*omega_2**2 + 120*a_1*b_3 - a_2*b_0*k_1*omega_1 - a_2*b_0*k_1*omega_2 + 20*a_2*b_1 + a_2*b_2*k_1*omega_1 + a_2*b_2*k_1*omega_2 - a_3*b_0*omega_1**2 - a_3*b_0*omega_1*omega_2 - 10*a_3*b_0 + a_3*b_2*omega_1**2 + a_3*b_2*omega_1*omega_2 - 10*a_3*b_2)/35"
+  ],
+  "variables": [
+    "k_1",
+    "omega_1",
+    "k_2",
+    "omega_2"
+  ]
+}

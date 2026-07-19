@@ -1970,6 +1970,23 @@ The active coefficient gate is now the two ordered cross-parity matrices:
 54 of 108 axisymmetric `L=4` coefficients are resolved, with 56
 nonaxisymmetric `L=1,3` coefficients still open.
 
+The two ordered cross-parity matrices now close the axisymmetric gate.  The
+shared action-derived `q2` slice contains 832 axial-then-polar and 832
+polar-then-axial PBW terms; the reverse workload is obtained by explicit
+branch and signed-momentum role substitution rather than by identifying mode
+names.  Each ordering supplies 27 nonzero target-adjoint coefficients across
+twenty basis fixtures, so all forty ordered fixtures are
+bounded/finite-quasiperiodic `OBSTRUCTED`.  Atlas rows
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_axial_polar_l4_matrix` and
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_polar_axial_l4_matrix`
+record that 108 of 108 axisymmetric `L=4` basis coefficients are resolved.
+Arbitrary-amplitude cancellation loci and the complete two-fibre tangent cone
+remain `OPEN`; smooth-secular status is `OPEN` and causal status is
+`NO_CERTIFIED_MAP`.  The next coefficient gate is the 56 nonaxisymmetric
+`L=1,3` entries.  This remains nonlinear input to same-background Bridge 1,
+whose map lifecycle is still the separately certified linear relative
+triangle.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell

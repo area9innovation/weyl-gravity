@@ -159,6 +159,28 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("two ordered cross-parity matrices", entry["claim_boundary"])
 
+    def test_forward_cross_parity_l4_matrix_is_ordered_and_fail_closed(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_axial_polar_l4_matrix"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertIn("All 27 scalar adjoint coefficients", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("reverse input order is not identified", entry["mode_data"]["dispersion"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not the reverse order", entry["claim_boundary"])
+
+    def test_reverse_cross_parity_closes_basis_workload_only(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_polar_axial_l4_matrix"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertIn("explicit role substitution, not name matching", entry["mode_data"]["dispersion"]["statement"])
+        self.assertIn("All 27 scalar adjoint coefficients", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("108 of 108 axisymmetric L4 basis coefficients", entry["claim_boundary"])
+
     def test_twist_aligned_phase_divisor_requires_an_independent_functional(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
         second_order = entry["mode_data"]["second_order"]
