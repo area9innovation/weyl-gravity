@@ -1874,6 +1874,16 @@ smooth correction verdicts remain `OPEN`, causal transport remains
 `NO_CERTIFIED_MAP`, and no same-named carrier on another background is
 identified.
 
+Parity/angular selection now turns that location ledger into a finite source
+work plan.  Same-parity products populate polar even-`L` or axial odd-`L`
+targets; cross-parity products populate axial even-`L` or polar odd-`L`
+targets.  All 21 all-`m` rows survive, giving 84 allowed parity channels and,
+after generic `p`-primary multiplicities, 164 reduced scalar adjoint
+coefficients.  The split is 108 axisymmetric-accessible `L=4` coefficients
+and 56 `L=1,3` coefficients that require nonaxisymmetric fixtures.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload` certifies
+only this workload; the coefficients and tangent-cone verdict remain `OPEN`.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell

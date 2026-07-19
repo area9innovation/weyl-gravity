@@ -396,6 +396,18 @@ def verify() -> None:
     candidate_second = candidates["mode_data"]["second_order"]
     if candidate_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or candidate_second["smooth_secular"]["status"] != "OPEN" or candidate_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("two-absolute-momentum candidate correction classes were over-promoted")
+    parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
+    if parity_workload["descriptions"]["nonlinear"] != "OPEN":
+        raise AssertionError("two-absolute-momentum parity workload was promoted")
+    if parity_workload["mode_data"]["resonance"]["status"] != "CERTIFIED" or "56 odd-L" not in parity_workload["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("two-absolute-momentum parity workload was hidden")
+    if "164 reduced scalar adjoint coefficient" not in parity_workload["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("two-absolute-momentum source workload count was hidden")
+    if parity_workload["mode_data"]["taub_maps"]["status"] != "NOT_APPLICABLE":
+        raise AssertionError("two-absolute-momentum parity workload silently acquired a Taub claim")
+    workload_second = parity_workload["mode_data"]["second_order"]
+    if workload_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or workload_second["smooth_secular"]["status"] != "OPEN" or workload_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("two-absolute-momentum parity workload correction classes were over-promoted")
     aligned_phase = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
     aligned_phase_second = aligned_phase["mode_data"]["second_order"]
     if aligned_phase["descriptions"]["nonlinear"] != "OPEN":

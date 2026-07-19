@@ -3186,6 +3186,17 @@ and the complete two-fibre cone `OPEN`.  This is the active finite-momentum
 source-matrix gate complementary to the symbolic `q_minus` self-product
 coefficient.
 
+The parity/angular part of that gate is now closed.  Same-parity inputs land
+in polar even-`L` or axial odd-`L` targets, while cross-parity inputs land in
+axial even-`L` or polar odd-`L` targets.  No all-`m` candidate disappears:
+the 21 rows become 84 allowed parity channels.  After the two generic
+`p`-primary multiplicities are retained, the exact action-source workload is
+164 reduced scalar adjoint coefficients, split as 108 at `L=4`, 44 at `L=3`
+and 12 at exceptional `L=1`.  The 56 odd-`L` coefficients require a
+nonaxisymmetric fixture.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload` keeps every
+coefficient and all nonlinear verdicts `OPEN`.
+
 The complementary symbolic-`ell` self-product gate is also closed without
 extrapolating the direct `ell=2` source coefficient.  For every integer
 `ell>=2`, at
@@ -3213,11 +3224,13 @@ remain `OPEN`; smooth secular extension is `CERTIFIED` and causal transport
 is `NO_CERTIFIED_MAP`.
 
 The active same-background Classical bridge remains Bridge 1.  Its current
-activation gate is the symbolic polar `L=2*ell` source coefficient, and its
-fail-closed atlas row is
-`einstein.ph.wm.interaction.symbolic_ell_qminus_self_collision`.  This row
-retains the compact Plebański--Hacyan carrier and does not identify any mode
-across backgrounds.
+nonlinear activation gates are the symbolic polar `L=2*ell` source
+coefficient and the parity-typed 164-coefficient first-two-`|k|` workload.
+Their fail-closed atlas rows are
+`einstein.ph.wm.interaction.symbolic_ell_qminus_self_collision` and
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload`.  Both
+retain the compact Plebański--Hacyan carrier and identify no mode across
+backgrounds.
 
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.

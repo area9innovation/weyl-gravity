@@ -88,6 +88,7 @@ CERTIFICATES = {
     "finite_multimomentum_divisor": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_multimomentum_resonance_divisor.json",
     "ell2_two_abs_momentum_identity_audit": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_identity_audit.json",
     "ell2_two_abs_momentum_isolated_candidates": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.json",
+    "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "twist_aligned_opposite_momentum_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.json",
@@ -778,6 +779,18 @@ def entries() -> list[dict[str, object]]:
             "Exact resonance-location theorem only for ell=2 cross pairs between |n|=1 and |n|=2. Projected source coefficients, parity pruning, same-fibre rows, the complete two-fibre tangent cone and higher lifecycles remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 at the 21 isolated algebraic circumference candidates; before final residual quotient", carrier="parity-typed q-minus, p-extra and q-plus ell=2 cross pairs between |n|=1 and |n|=2", degree=2, parity="84 allowed axial/polar input-output channels; forbidden parity assignments removed", ell="input 2 x 2; candidate outputs L=1,3,4", m="all m through multiplicity-one V2 tensor V2 intertwiners; odd L requires nonaxisymmetric fixtures", k="signed n in {+/-1,+/-2} times 2*pi/L, restricted to cross-|n| pairs", omega="the exact SUM or DIFFERENCE channel assigned to each isolated row", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","All parity-typed input and target branch multiplicities retain their exact shell and compact-momentum labels."),
+            ("CERTIFIED","The action-derived generic and exceptional quotient multiplicities give 164 reduced scalar adjoint coefficient slots, split equally between axial and polar targets."),
+            ("NOT_APPLICABLE","Parity/angular selection does not replace the separate five compact stabilizer moment maps."),
+            ("CERTIFIED","Parity removes half of 168 naive assignments but no all-m shell row: 84 channels survive; 108 coefficients are L=4 axisymmetric fixtures and 56 odd-L coefficients require nonaxisymmetric fixtures."),
+            _second_order(("OPEN","None of the 164 projected source coefficients is inferred to vanish; bounded extension or obstruction remains undecided."),("OPEN","The parity workload does not solve resonant rows even when secular corrections are admitted."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _evidence("ell2_two_abs_momentum_parity_workload","ell2_two_abs_momentum_isolated_candidates","branch_dictionary"),
+            "Parity/angular workload theorem only for the 21 ell=2 cross-|n| candidates. No source zero, same-fibre classification, tangent-cone verdict or higher lifecycle is inferred.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="constant twist position plus paired axisymmetric +/-k Einstein-plus/minus standing waves", degree=2, parity="generic input parity retained; polar extra resonant output", ell="every one fixed integer ell>=2 with output L=2ell", m="m_A=0 inputs and M=0 output", k="one tuned allowed nonzero +/-k pair", omega="q-plus/minus inputs and p-primary sum-frequency output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
@@ -1137,6 +1150,11 @@ def build() -> dict[str, object]:
         raise AssertionError("ell2 two-absolute-momentum candidate ledger changed")
     if candidates["floating_point_sign_decision_used"] or candidates["projected_source_coefficients_computed"] or candidates["complete_two_fibre_tangent_cone_classified"] or candidates["causal_or_quantum_claim"]:
         raise AssertionError("ell2 two-absolute-momentum candidate ledger exceeded its scope")
+    parity_workload = records["ell2_two_abs_momentum_parity_workload"]["classification"]
+    if not (parity_workload["all_twenty_one_candidates_parity_typed"] and parity_workload["all_m_angular_nonvanishing_witnessed"] and parity_workload["odd_L_axisymmetric_fixtures_excluded"] and parity_workload["reduced_source_workload_complete"]):
+        raise AssertionError("ell2 two-absolute-momentum parity workload changed")
+    if parity_workload["projected_source_coefficients_computed"] or parity_workload["complete_two_fibre_tangent_cone_classified"] or parity_workload["causal_or_quantum_claim"]:
+        raise AssertionError("ell2 two-absolute-momentum parity workload exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

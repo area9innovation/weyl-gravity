@@ -47,6 +47,9 @@ smooth-secular and causal/retarded correction classes.  In particular:
 - on the first cross-fibre `ell=2`, `|n|=1,2` carrier, exact shell arithmetic
   leaves 21 distinct positive algebraic circumference candidates from 198
   canonical rows; projected nonlinear source coefficients remain `OPEN`;
+- exact parity/angular selection turns those candidates into 84 allowed
+  parity channels and 164 reduced scalar adjoint coefficients, including 56
+  odd-`L` coefficients for which an axisymmetric fixture is unavailable;
 - adjoining every certified exceptional and global linear block gives the
   complete finite-support smooth cone `mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0`;
   the bounded ledger additionally contains polynomial-growth `P_(j,r)` and

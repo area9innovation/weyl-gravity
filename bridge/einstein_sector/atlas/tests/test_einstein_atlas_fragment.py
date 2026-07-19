@@ -96,6 +96,18 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("Projected source coefficients", entry["claim_boundary"])
 
+    def test_first_two_abs_momentum_parity_workload_is_fail_closed(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("164 reduced scalar adjoint coefficient", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("56 odd-L", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "NOT_APPLICABLE")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
     def test_twist_aligned_phase_divisor_requires_an_independent_functional(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
         second_order = entry["mode_data"]["second_order"]
