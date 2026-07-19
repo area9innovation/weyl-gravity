@@ -1,0 +1,20 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_MIXED_SHEET_BOUNDED_EXTENSION",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "certificate": {"path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension.json", "sha256": "f893d66b49eb52444e06edbaf4b395e1a463851683cc533b9e0f3cd8d0c9fd9e"},
+    "producer": {"path": "bridge/einstein_sector/einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension.py", "sha256": "2b49e962810ee7ff4b8c22cf7cd95d90f6ace4796de67f9728448c415896d67d"},
+    "schema": {"path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension.schema.json", "sha256": "a87b15156396c5114a717ef5c69b64692f9b350898a74131e58c0903afb59a9b"},
+    "independent_verifier": {"path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension.py", "sha256": "c7327efb8fd2e80d48fdba2031fe97e4dac9504238e90df9e8c9cf5feb8421d3"},
+    "test": {"path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension.py", "sha256": "2ed49ebe5a8da9d5d3694c857f663451fa7177459787b6d187411de6241b62e4"},
+    "report": {"path": "bridge/einstein_sector/reports/einstein-maxwell-weyl-symbolic-ell-mixed-sheet-bounded-extension.md", "sha256": "b49d6132cc6751f7f3699f3c60066084afa713aa293e4dbfef7d8d98011d9d8a"}
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <producer> <verifier>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {"status": "PASS", "elapsed_seconds": "0.5", "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension --check", "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension.py", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension"]},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "reason": "The complete bounded adjoint-cokernel criterion, common-zero occupations, standard-branch collision census and all-ell parity matrix are unchanged hashed inputs."},
+    "tier_3": {"status": "NOT_RUN", "reason": "This is a scoped second-order join, not a full cone freeze, all-orders theorem or higher-lifecycle promotion."}
+  },
+  "claim_boundary": "Two explicit wave-only bounded families for each separately tuned ell>=2. The full sheet amplitude cone, extra inputs, multiple |k| fibres, all-orders and higher lifecycles remain fail-closed."
+}

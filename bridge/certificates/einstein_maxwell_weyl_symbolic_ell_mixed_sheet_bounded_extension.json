@@ -1,0 +1,105 @@
+{
+  "bounded_blockwise_proof": {
+    "abstract_criterion": "a bounded or finite-quasiperiodic correction exists exactly when all five mu_X and every finite R_(j,a) vanish",
+    "all_other_blocks": "off shell and algebraically invertible in the finite generic quotient",
+    "conclusion": "every finite quadratic source block lies in the bounded image of the reduced Weyl-Maxwell operator",
+    "nonzero_frequency_census": "the complete standard-branch census leaves exactly one shell collision, q-minus x q-minus to polar p at L=2ell,K=0,Omega=2omega_minus",
+    "unique_axial_output": "vanishes on either mixed sheet by a_+*p_- - a_-*p_+=0",
+    "unique_polar_output": "vanishes on either mixed sheet by a_+*a_- - ell*(ell+1)*p_+*p_-/2=0",
+    "zero_block": "the complete reduced zero-block cokernel is span{zeta_H,zeta_Px,zeta_J1,zeta_J2,zeta_J3}; all five pairings vanish"
+  },
+  "claim_boundary": "This certifies two explicit wave-only bounded second-order families for each separately tuned ell>=2. It does not classify the full sheet amplitude cone, extra-primary inputs, a fixed circumference across ell, multiple |k| fibres, all-orders integration, causal transport, residual descent, observation or quantum theory.",
+  "classification": {
+    "all_orders_integrability": false,
+    "both_symbolic_mixed_sheet_signs_covered": true,
+    "bounded_correction_exists_by_complete_cokernel_criterion": true,
+    "causal_or_quantum_claim": false,
+    "complete_standard_branch_quadratic_output_census_used": true,
+    "every_integer_ell_ge_2_has_nonzero_bounded_second_order_jet": true,
+    "extra_primary_or_multiple_abs_momentum_inputs_classified": false,
+    "five_moment_maps_and_all_bounded_resonant_functionals_vanish": true,
+    "full_mixed_sheet_amplitude_cone_classified": false
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "the bounded correction belongs to this larger class",
+      "status": "CERTIFIED"
+    }
+  },
+  "declared_tangent": {
+    "opposite_momentum_choice": "choose p_+=p_- nonzero and normalize the common scale so each signed q-minus density equals the displayed q-minus density",
+    "qminus_density_each_sign": "equal +k and -k densities (12*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell - 1)/(6*ell**2 + 3*ell - 1) on |ell,m=0>",
+    "qminus_ratio": "a_+=sigma*sqrt(ell*(ell+1)/2)*p_+ and a_-=sigma*sqrt(ell*(ell+1)/2)*p_-",
+    "qplus_choice": "choose equal +k and -k coefficients in any one action-normalized q-plus multiplicity",
+    "qplus_density_each_sign": "equal +k and -k densities 1 on |ell,m=0>",
+    "reality": "adjoin the negative-frequency complex conjugates",
+    "sheet_sign": "sigma=+1 or sigma=-1",
+    "twist": "zero"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "five_moment_maps": {
+    "mu_H": "zero by the imported action-normalized q-plus/q-minus density balance",
+    "mu_J1": "zero on m=0 rank-one densities",
+    "mu_J2": "zero on m=0 rank-one densities",
+    "mu_J3": "zero on m=0 rank-one densities",
+    "mu_Px": "zero because every occupied branch has equal +k and -k density"
+  },
+  "generality_level": "G3_EVERY_INTEGER_ELL_ONE_TUNED_NONZERO_MOMENTUM_FIBRE",
+  "interpretation": "The ell=2 balanced extension is not isolated. At every generic angular degree, the opposite signs of the axial and polar q-minus self-sources create two mixed sheets; a positive q-plus occupation cancels the compact Hamiltonian without introducing another shell collision. Hence each ell has two explicit nonzero bounded second-order jets. This proves nonlinear survival to second order for a standard Einstein-sector mixture, not nonlinear closure of the whole Einstein image.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify the full action-normalized amplitude cone on the two sheets and then join distinct absolute momentum fibres",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension.py",
+    "generator_sha256": "2b49e962810ee7ff4b8c22cf7cd95d90f6ace4796de67f9728448c415896d67d",
+    "inputs": {
+      "common_zero": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
+        "sha256": "096ebab87e36ee7b7eb7c46e51168c863105e38513da5ac8a30118c2ee11d624"
+      },
+      "finite_generic_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
+        "sha256": "dd1dec63c50d538a489205d48931720919ff9a43e23c52a45a9d1b80e5ff2513"
+      },
+      "parity_matrix": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.json",
+        "sha256": "0f8d41edd39e5dd6e6b5d7be58ffd21f19e44b614a31c0b77cfcd5620dc533e1"
+      },
+      "standard_census": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census.json",
+        "sha256": "d26c544432b44d477f09eb516eeb6bc959fcc62e5c271dea542aada31e49c766"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_MIXED_SHEET_BOUNDED_EXTENSION",
+  "result_state": "EVERY_ELL_HAS_TWO_NONZERO_MIXED_PARITY_STANDARD_BRANCH_BOUNDED_SECOND_ORDER_JETS",
+  "schema": "einstein-maxwell-weyl-symbolic-ell-mixed-sheet-bounded-extension-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension.schema.json",
+  "schema_sha256": "a87b15156396c5114a717ef5c69b64692f9b350898a74131e58c0903afb59a9b",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 with circumference tuned separately for each ell",
+    "carrier": "wave-only axisymmetric q-minus mixed-parity sheet plus equal-opposite-momentum q-plus balance; no twist or extra-primary input",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "every integer ell>=2",
+    "k": "-(-6*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 3*ell + 1)/6",
+    "m": "m=0 relative to the declared axis",
+    "omega": "q-minus and q-plus positive-frequency branches and their real conjugates",
+    "parity": "both q-minus parities with either common sheet sign; one normalized q-plus multiplicity",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension"
+  ]
+}
