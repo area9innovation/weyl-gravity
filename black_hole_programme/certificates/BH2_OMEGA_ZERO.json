@@ -1,0 +1,149 @@
+{
+  "claim_flags": {
+    "axial_static_sector_classified": true,
+    "einstein_controls_classified": true,
+    "general_l_certified": false,
+    "matching_to_l0_parameter_modes_certified": false,
+    "polar_static_sector_classified": true,
+    "static_flux_or_charge_certified": false,
+    "static_metric_composition_certified": false
+  },
+  "classification": {
+    "axial_carrier": {
+      "analytic_families": {
+        "0": {
+          "base_dim": 2,
+          "logfree_dirs": 2
+        }
+      },
+      "jordan": {
+        "-2": {
+          "alg": 1,
+          "geo": 1
+        },
+        "0": {
+          "alg": 3,
+          "geo": 2
+        }
+      },
+      "spectrum": {
+        "-2": 1,
+        "0": 3
+      }
+    },
+    "axial_einstein_rw": {
+      "analytic_families": {
+        "0": {
+          "base_dim": 1,
+          "logfree_dirs": 1
+        }
+      },
+      "jordan": {
+        "-1": {
+          "alg": 1,
+          "geo": 1
+        },
+        "0": {
+          "alg": 1,
+          "geo": 1
+        }
+      },
+      "spectrum": {
+        "-1": 1,
+        "0": 1
+      }
+    },
+    "polar_carrier_sliced": {
+      "analytic_families": {
+        "0": {
+          "base_dim": 3,
+          "logfree_dirs": 1
+        },
+        "1": {
+          "base_dim": 1,
+          "logfree_dirs": 1
+        }
+      },
+      "jordan": {
+        "-1": {
+          "alg": 1,
+          "geo": 1
+        },
+        "-3": {
+          "alg": 1,
+          "geo": 1
+        },
+        "0": {
+          "alg": 3,
+          "geo": 3
+        },
+        "1": {
+          "alg": 1,
+          "geo": 1
+        }
+      },
+      "spectrum": {
+        "-1": 1,
+        "-3": 1,
+        "0": 3,
+        "1": 1
+      }
+    },
+    "polar_einstein": {
+      "note": "the certified (K, H1) first-order system has explicit 1/omega coefficients; the static polar Einstein sector requires its own reduction (recorded as a missing object)",
+      "spectrum": "PARAMETRIZATION_DEGENERATES"
+    }
+  },
+  "declaration": {
+    "background_family": "Schwarzschild m = 1 fixture",
+    "conformal_frame": "working gauge; ingoing EF chart",
+    "frequency_domain": "omega = 0 exactly (the sector excluded by the reach certificates)",
+    "generator": "none; static-mode classification",
+    "horizon_condition": "regular-singular residue and log classification at r = 2m",
+    "infinity_condition": "none imposed",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "l = 2 carrier and Einstein first-order systems at omega = 0",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "headline": {
+    "axial": "residue {0 (alg 3, geo 2), -2}: one Jordan-block logarithm; TWO-parameter log-free static carrier family (matches the omega != 0 reach dimension)",
+    "consequence": "the omega = 0 caveat of the reach certificates is closed at the classification level: static carrier sectors are finite, log-classified, and nonempty in both parities",
+    "polar": "residue {0 (alg 3, geo 3), +1, -1, -3}: two exponent-0 directions log-obstructed at the +1 resonance; TWO-parameter log-free static family (one exponent-0 + one exponent-1 direction)"
+  },
+  "missing_objects": [
+    "static metric composition (delta Ric[h] = psi at omega = 0)",
+    "static flux/charge assignments for the log-free families",
+    "matching to the BH-1 l = 0 parameter modes",
+    "general l static sectors",
+    "a static-adapted reduction of the polar Einstein sector (the (K, H1) system degenerates at omega = 0)",
+    "any stability interpretation of the logarithmic solutions"
+  ],
+  "provenance": {
+    "axial_reach_certificate": "black_hole_programme/certificates/BH2A_HORIZON_REACH.json",
+    "axial_reach_certificate_sha256": "dcab47cf90e5a0120308b2031444539604d902c9cc5b788ce510f366f0d26d7f",
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh2_omega_zero.py",
+    "polar_einstein_certificate": "black_hole_programme/certificates/BH2B_POLAR_EINSTEIN.json",
+    "polar_einstein_certificate_sha256": "df58e1c00ef75450602009ec07f490fe594d1223a5fd54376d150e563cfe9780",
+    "polar_reach_certificate": "black_hole_programme/certificates/BH2B_POLAR_REACH.json",
+    "polar_reach_certificate_sha256": "c2639050b9d735d73daa756aed99c86e6882d354c99e13eb7a806a7a8d3ea977"
+  },
+  "result_id": "PURE_WEYL_BH2_OMEGA_ZERO",
+  "result_token": "BH2_OMEGA_ZERO_STATIC_SECTOR_CLASSIFIED",
+  "schema": "pure-weyl-bh2-omega-zero-v1",
+  "schema_path": "black_hole_programme/schema/bh2-omega-zero-v1.schema.json",
+  "schema_sha256": "af6717a06db5f1d6e9e477a1a3425b554bebc0f4b9b4cc281251614518776a58",
+  "stage_seconds": {
+    "axial_system": 0.8,
+    "classification": 4.0,
+    "einstein_systems": 0.2,
+    "polar_system": 2.8,
+    "total": 7.9
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2_omega_zero.py"
+}

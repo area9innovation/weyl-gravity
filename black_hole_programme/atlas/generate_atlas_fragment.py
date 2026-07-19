@@ -51,6 +51,7 @@ CERTS = {
     "BH2BC": PKG / "certificates" / "BH2B_POLAR_CROSS_FLUX.json",
     "BH2BD": PKG / "certificates" / "BH2B_POLAR_DISPOSITION.json",
     "BH4H": PKG / "certificates" / "BH4_HAWKING_MONODROMY.json",
+    "BH2Z": PKG / "certificates" / "BH2_OMEGA_ZERO.json",
 }
 
 
@@ -328,11 +329,11 @@ def entries():
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
         },
-        "evidence": _evidence("BH2BP", "BH2BR", "BH2BC", "BH2BD"),
+        "evidence": _evidence("BH2BP", "BH2BR", "BH2BC", "BH2BD", "BH2Z"),
         "claim_boundary": ("Schwarzschild polar l=2: horizon reach certified (two-parameter physical ingoing-regular family modulo conformal gauge, symbolic m, real omega != 0)"
                            + ("; fixture-level flux closed (omega = 3/5): nonzero Einstein x extra cross pairing, positive canonical extra-block norms" if CERTS["BH2BC"].exists() else "; flux matrix and signs OPEN")
                            + ("; causal disposition certified: Einstein characteristics (lambda^2-omega^2)^3, decaying Coulomb asymptotics r^-1..r^-3, no causal boundary prescription excludes the branch -- BH-2 closed at the l=2 mode level in BOTH parities" if CERTS["BH2BD"].exists() else "; causal disposition OPEN")
-                           + "; invariant extra-block sign theory, symbolic frequency, omega = 0, outer boundary, general l, stability all OPEN")
+                           + ("; omega = 0 static carrier sectors log-classified (two-parameter log-free families both parities)" if CERTS["BH2Z"].exists() else "; omega = 0 OPEN") + "; invariant extra-block sign theory, symbolic frequency, outer boundary, general l, stability all OPEN")
                           if CERTS["BH2BR"].exists() else "operator-level identification only: horizon reach OPEN",
     })
 
