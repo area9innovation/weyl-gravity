@@ -281,6 +281,16 @@ def verify() -> None:
         raise AssertionError("exceptional Einstein-minus correction-class distinction was hidden")
     if exceptional_minus_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("exceptional Einstein-minus causal lifecycle was over-promoted")
+    exceptional_single = by_id["einstein.ph.wm.mixed.exceptional_ellipse_single_minus_dressing_no_go"]
+    exceptional_single_second = exceptional_single["mode_data"]["second_order"]
+    if exceptional_single["descriptions"]["nonlinear"] != "OBSTRUCTED" or exceptional_single["mode_data"]["taub_maps"]["status"] != "CERTIFIED":
+        raise AssertionError("exceptional single-minus lifecycle changed")
+    if "every ell>=2" not in exceptional_single["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("generic-lambda d pivot was hidden")
+    if exceptional_single_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or "forces d=0" not in exceptional_single_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("single-minus no-go was hidden")
+    if exceptional_single_second["smooth_secular"]["status"] != "CERTIFIED" or exceptional_single_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("single-minus correction classes changed")
     fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
     if fixed_ell_twist["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("fixed-ell bounded lifecycle was not promoted")
@@ -325,6 +335,14 @@ def verify() -> None:
         raise AssertionError("twist-aligned smooth correction lifecycle changed")
     if aligned_obstruction_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("twist-aligned obstruction gained an uncertified causal map")
+    parity_matrix = by_id["einstein.ph.wm.interaction.opposite_momentum_ell2_parity_resonance_matrix"]
+    parity_second = parity_matrix["mode_data"]["second_order"]
+    if parity_matrix["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("two-parity L4 resonance matrix was hidden")
+    if parity_matrix["descriptions"]["nonlinear"] != "OPEN" or parity_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("mixed L4 null face was over-promoted")
+    if parity_second["smooth_secular"]["status"] != "CERTIFIED" or parity_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("two-parity correction classes changed")
     repair = by_id["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
     if repair["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("constant-twist projector repair was not promoted")

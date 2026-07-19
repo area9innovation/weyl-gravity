@@ -1,0 +1,20 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_SINGLE_MINUS_DRESSING_NO_GO_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "All-ell, both-parity bounded no-go for one axisymmetric Einstein-minus dressing of any point on the exceptional resonance ellipse.",
+  "content_sha256": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_single_minus_dressing_no_go.py": "7a65fdd8214d11569c0a160217df498e0b577c469f6ed62f434af6c34e47a1ee",
+    "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_single_minus_dressing_no_go.json": "a5cb22f4bfff1f49b8604d8d17b431d5d9e5f97fe5ab0d03c65abc6b18527310",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_single_minus_dressing_no_go.schema.json": "9fdb71a9e6af129da0ef39daa8fe1503c52ae6ead0726928c986ac2757984ae1",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_single_minus_dressing_no_go.py": "658aaa16e9db3b285ad1ddd901307924fc083359dcb711e1b4a2051eda0cd207",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_exceptional_ellipse_single_minus_dressing_no_go.py": "8df92363fe9e2157e38fa93d763c8a85fdf1ca9d1b934c8040fee462c7ef5aa4",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-exceptional-ellipse-single-minus-dressing-no-go.md": "dcc4972ccb1a7b88bd20665a34fcc88c8227f77556738838577b82c299b376e3"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <certificate and schema>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {"status": "PASS", "tests_run": 4, "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ellipse_single_minus_dressing_no_go --check", "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_single_minus_dressing_no_go.py", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ellipse_single_minus_dressing_no_go"], "elapsed_seconds": 0.2},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "reason": "The symbolic-lambda d pivots, current sign theorem and complete smooth theorem are unchanged exact inputs."},
+    "tier_3": {"status": "NOT_RUN", "reason": "The theorem excludes one dressing mode at a time and does not promote the full multi-carrier cone."}
+  },
+  "claim_boundary": "Multiple Einstein-minus modes or additional carriers could share shell functionals and remain open; nonzero-k, causal, residual and quantum scopes are not promoted."
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "charge_balance", "generic_obstruction", "correction_classes", "classification", "claim_boundary", "provenance"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_SINGLE_MINUS_DRESSING_NO_GO"},
+    "correction_classes": {
+      "type": "object",
+      "properties": {
+        "BOUNDED_OR_FINITE_QUASIPERIODIC": {"properties": {"status": {"const": "OBSTRUCTED"}}},
+        "SMOOTH_EXPONENTIAL_POLYNOMIAL": {"properties": {"status": {"const": "CERTIFIED"}}},
+        "CAUSAL_RETARDED": {"properties": {"status": {"const": "NO_CERTIFIED_MAP"}}}
+      }
+    }
+  }
+}

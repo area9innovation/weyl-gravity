@@ -2908,6 +2908,19 @@ branch, contradicting the ellipse domain.  The atlas row is therefore now
 shell term.  This settles one pure-axial endpoint, not the general
 exceptional mixed zero locus.
 
+The single-mode dressing question is now closed on the entire axisymmetric
+ellipse.  Every ellipse point has `d!=0` and negative `mu_H`.  For any fixed
+`ell_d>=2`, one real `m=0,k=0` Einstein-minus mode in either parity can be
+scaled to cancel `mu_H` while leaving the other four stabilizer maps zero.
+But the symbolic-`lambda` source theorem proves a nonzero `d` pivot for every
+physical `ell_d`, in both parities and all `m` by `SO(3)` multiplicity one.
+Its bounded shell ideal forces `d=0` whenever the dressing amplitude is
+nonzero.  Therefore no single Einstein-minus mode rescues any point of the
+ellipse in the bounded/finite-quasiperiodic class.  Smooth secular extension
+remains `CERTIFIED`.  Simultaneous multiple minus modes or additional
+carriers remain the next fail-closed enlargement because distinct quadratic
+pairs could then share a shell functional.
+
 The nonzero-momentum twist face has now been intersected with the independent
 opposite-momentum phase divisor.  For every `ell>=2`, the exact choice
 
@@ -2948,6 +2961,31 @@ actual bounded/finite-quasiperiodic obstruction.  Its five moment maps still
 vanish, and smooth exponential-polynomial extension remains `CERTIFIED` by a
 secular resonant correction.  This is an independence witness for the
 `R_j^bounded` functionals, not a classification of their general zero locus.
+
+The same tuned carrier has now been completed across axial and polar input
+parity at its `L=4,K=0,Omega=2*omega_minus` resonance.  With axial coefficients
+`a_+,a_-` and polar coefficients `p_+,p_-`, the two nonzero adjoint rows are
+
+```text
+R_polar=A*(a_+*a_--3*p_+*p_-),
+R_axial=C*(a_+*p_--a_-*p_+),
+```
+
+where both `A` and `C` are exact and nonzero.  The pure axial and pure polar
+standing waves are therefore individually obstructed, but this complete
+`L=4` matrix has the mixed null face
+
+```text
+a_+=sigma*sqrt(3)*p_+,
+a_-=sigma*sqrt(3)*p_-,
+sigma=+1 or -1.
+```
+
+Certificate and atlas row
+`EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_PARITY_RESONANCE_MATRIX`
+record the full direct diagonal/cross source ledger and reflection sign.  The
+bounded lifecycle on that mixed face remains `OPEN`: every other quadratic
+output, including the Einstein-plus balance channels, must still be checked.
 
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.

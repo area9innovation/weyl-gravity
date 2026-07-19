@@ -80,6 +80,15 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("one tuned ell=2", entry["claim_boundary"])
 
+    def test_two_parity_l4_null_face_does_not_claim_extension(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.opposite_momentum_ell2_parity_resonance_matrix"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
     def test_abd_matrix_is_input_not_full_nonlinear_theorem(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.abd_times_ell2_extra"]
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
@@ -273,6 +282,17 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
         self.assertIn("complete zero-frequency source cancels", second_order["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertIn("same-shell adjoint pairing", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
+    def test_no_single_minus_mode_rescues_the_exceptional_ellipse(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.exceptional_ellipse_single_minus_dressing_no_go"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("every ell>=2", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertIn("forces d=0", second_order["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 

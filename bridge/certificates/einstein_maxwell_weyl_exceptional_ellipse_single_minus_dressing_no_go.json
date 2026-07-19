@@ -1,0 +1,91 @@
+{
+  "charge_balance": {
+    "Einstein_minus_H_sign": "strictly positive in the Taub convention because the relative current weight is negative",
+    "amplitude_choice": "the unique positive squared amplitude cancels mu_H",
+    "ellipse_H_sign": "strictly negative away from the origin",
+    "other_stabilizers": "m=0 and k=0 give mu_Px=mu_J1=mu_J2=mu_J3=0"
+  },
+  "claim_boundary": "This theorem covers one Einstein-minus dressing mode at a time. It does not exclude cancellations among multiple minus modes or additional carriers, classify nonzero momentum, prove all-orders integration, or make causal, residual, particle or quantum claims.",
+  "classification": {
+    "all_orders_integrability": false,
+    "both_dressing_parities_covered": true,
+    "causal_or_quantum_claim": false,
+    "entire_axisymmetric_resonance_ellipse_covered": true,
+    "every_single_m0_Einstein_minus_dressing_ell_ge_2_covered": true,
+    "multiple_minus_modes_or_other_carriers_classified": false,
+    "smooth_secular_extension_certified": true,
+    "stabilizer_balance_possible_but_bounded_extension_obstructed": true
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "OBSTRUCTED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generic_obstruction": {
+    "SO3": {
+      "all_m": true,
+      "cross_parity": "axial and polar outputs occupy distinct parity blocks and cannot cancel",
+      "intertwiner": "each scalar global input defines an SO3 map V_ell to V_ell",
+      "jet_normalization_role": "the even/odd formal jet is a local normalization used to evaluate the unique equivariant coefficient; it is not an identification of the physical m or harmonic parity",
+      "multiplicity_one": "dim Hom_SO3(V_ell,V_ell)=1"
+    },
+    "axial_pivot": "-3*I*sqrt(-sqrt(2)*sqrt(lambda) + lambda)*(3*sqrt(2)*sqrt(lambda) - 1)",
+    "contradiction": "the nonzero dressing amplitude forces d=0 for bounded correction, but every ellipse point has d!=0",
+    "ellipse_fact": "d!=0 at every declared ellipse point",
+    "pivot_domain": "lambda=ell_d*(ell_d+1)>=6",
+    "polar_pivot": "lambda**2*(2*lambda - 1)/6",
+    "triangular_consequence": "in either parity, a nonzero Einstein-minus amplitude forces b=0, then a=0, then d=0 for bounded corrections"
+  },
+  "interpretation": "The endpoint obstruction is not an accident of ell=2 or axial parity. Every point of the exceptional resonance ellipse needs d!=0, whereas any single Einstein-minus mode capable of cancelling its Hamiltonian charge has a nonzero d-cross pivot in every physical ell and either parity. Thus no single-mode Einstein-minus dressing produces a bounded second-order tangent, although each stabilizer-balanced dressing has a smooth secular correction.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "test multi-minus and additional-carrier dressings, where distinct quadratic pairs could in principle share and cancel a d-times-minus shell functional",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_single_minus_dressing_no_go.py",
+    "generator_sha256": "7a65fdd8214d11569c0a160217df498e0b577c469f6ed62f434af6c34e47a1ee",
+    "inputs": {
+      "ellipse": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.json",
+        "sha256": "431b7b0015bb8691c610597d07ac24241aa9b295dc2b54dbadb39be6e136c2f1"
+      },
+      "generic_pivot": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_generic_lambda_pivot.json",
+        "sha256": "a0d9769e6363031fb0259f6a529919a19d45c37ed7d59027765d9311a77fc411"
+      },
+      "radiative_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_radiative_symplectic_restriction.json",
+        "sha256": "25a798211bea52cbf9d8becae64672ac327be7a09adb50e30e45fa8287a608b7"
+      },
+      "smooth": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+        "sha256": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_SINGLE_MINUS_DRESSING_NO_GO",
+  "schema": "einstein-maxwell-weyl-exceptional-ellipse-single-minus-dressing-no-go-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_single_minus_dressing_no_go.schema.json",
+  "schema_sha256": "9fdb71a9e6af129da0ef39daa8fe1503c52ae6ead0726928c986ac2757984ae1",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic correction",
+    "carrier": "any point of the axisymmetric exceptional resonance ellipse plus one axisymmetric Einstein-minus q-primary",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "exceptional/control inputs 1,2 and one dressing ell_d>=2",
+    "k": 0,
+    "m": "m=0 dressing; generic pivot itself is certified for all m",
+    "omega": "omega_minus^2=ell_d*(ell_d+1)-sqrt(2*ell_d*(ell_d+1))",
+    "parity": "the dressing may be axial or polar; output parities remain separate",
+    "theory": "Weyl-Maxwell target"
+  }
+}
