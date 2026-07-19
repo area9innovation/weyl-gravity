@@ -4174,7 +4174,7 @@
       }
     },
     {
-      "claim_boundary": "Exact resonance-location theorem only for ell=2 cross pairs between |n|=1 and |n|=2. Projected source coefficients, parity pruning, same-fibre rows, the complete two-fibre tangent cone and higher lifecycles remain fail-closed.",
+      "claim_boundary": "Exact resonance-location theorem only for ell=2 cross pairs between |n|=1 and |n|=2. The separate scalar theorem closes bounded origin for candidates 1-15; projected resonance joins remain open for 16-21. Higher lifecycles remain fail-closed.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "OPEN",
@@ -4187,6 +4187,11 @@
           "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_ISOLATED_CANDIDATES",
           "sha256": "27fe530f6d296453e4eaf504eed688b6a2480cac18e0581e839898c7868e3450"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_collision_scalar_separation_classification.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_COLLISION_SCALAR_SEPARATION_CLASSIFICATION",
+          "sha256": "bf36d4e2c0504b4028496b5ac64e7ee5c345ce667cdb595f981d030922c267f3"
         },
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_identity_audit.json",
@@ -4220,7 +4225,7 @@
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "Each of the 21 rows still requires parity/angular selection and its projected adjoint source coefficient before bounded extension or obstruction can be decided.",
+            "statement": "This resonance-location row does not import the later scalar theorem: indices 1-15 are bounded-origin there, while 16-21 still require resonance joins.",
             "status": "OPEN"
           },
           "causal_retarded": {
@@ -4229,7 +4234,7 @@
           },
           "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
           "smooth_secular": {
-            "statement": "Off-shell rows are removable, but the 21 exceptional rows and same-fibre sources prevent a complete smooth-secular promotion.",
+            "statement": "Off-shell rows are removable, but the exceptional rows and same-fibre sources prevent a complete smooth-secular promotion.",
             "status": "OPEN"
           }
         },
@@ -4249,6 +4254,100 @@
         "m": "all Clebsch-Gordan-allowed values",
         "omega": "the exact SUM or DIFFERENCE channel assigned row by row",
         "parity": "all input/output parity combinations conservatively retained before source projection",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
+      "claim_boundary": "This is an exact family ledger with 21 explicitly distinct circumference scopes, not a mode identification across backgrounds. It excludes exceptional/global inputs and leaves the six same-sign resonance joins, smooth cones, all-orders integration, causal correction, residual observables, particles and quantum states fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_collision_scalar_separation_classification.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_COLLISION_SCALAR_SEPARATION_CLASSIFICATION",
+          "sha256": "bf36d4e2c0504b4028496b5ac64e7ee5c345ce667cdb595f981d030922c267f3"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_ISOLATED_CANDIDATES",
+          "sha256": "27fe530f6d296453e4eaf504eed688b6a2480cac18e0581e839898c7868e3450"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_bounded_zero_block.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_FINITE_GENERIC_BOUNDED_ZERO_BLOCK",
+          "sha256": "e535423a968a562d64d0354343bbf6b9aa99d37e4bf6be37c2a542b0da97cc08"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
+          "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+          "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+          "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.ell2_collision_scalar_separation_classification",
+      "mode_data": {
+        "dispersion": {
+          "statement": "All 21 exact rho values and their signed momentum orientations are retained as distinct background rows in the imported ledger.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The action-derived q-minus negative and p-extra/q-plus positive current signs are checked in both parities.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The scalar theorem makes resonance ideals redundant for indices 1-15; the six same-sign indices 16-21 still require their candidate-specific amplitude/resonance joins.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The complete bounded generic cones are {0} for indices 1-15. For indices 16-21 the scalar common zero is nontrivial but the full bounded cone remains OPEN.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific retarded Weyl-Maxwell correction complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "R_c has a secular inverse, so this scalar bounded classification does not decide the 21 smooth-secular cones.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "Candidates 1-15 have exact rational strict separators in span(H,P_x,R_c); candidates 16-21 have exact positive Farkas dependencies and nonzero scalar-null occupations.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "21 distinct tuned compact magnetically supported Plebanski-Hacyan circumference fibres, retained as separate atlas subscopes",
+        "boundaries": "closed S1_L times S2 before final residual quotient",
+        "carrier": "candidatewise complete generic ell=2 q-minus, p-extra and q-plus coefficients on signed n=(1,-2) or n=(1,2) fibres",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": 2,
+        "k": "candidatewise signed two-fibre momenta; no cross-rho identification",
+        "m": "all m=-2,...,2",
+        "omega": "all generic q-minus, p-extra and q-plus shells",
+        "parity": "axial and polar",
         "theory": "Weyl-Maxwell target"
       }
     },
@@ -7790,7 +7889,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "ff5736241da81bf4de6bc7191889d922aae9b48413ec7beaa3b8d88d4f33cbd1",
+  "generated_by_sha256": "98e923046a7ba85422b41f526e50e00cf3d1e8101f3035d835553183075f4e5a",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

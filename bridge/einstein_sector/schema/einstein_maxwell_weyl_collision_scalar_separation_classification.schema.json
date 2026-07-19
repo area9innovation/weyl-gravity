@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_collision_scalar_separation_classification.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "generality_level", "scope", "normalization", "candidate_rows", "summary", "classification", "interpretation", "next_gate", "claim_boundary", "provenance", "verification_commands"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_COLLISION_SCALAR_SEPARATION_CLASSIFICATION"},
+    "result_state": {"const": "UNIVERSAL_OPPOSITE_SIGN_BOUNDED_ORIGIN_AND_SIX_SCALAR_NONSEPARABLE_COLLISION_FIBRES"},
+    "candidate_rows": {"type": "array", "minItems": 21, "maxItems": 21},
+    "classification": {
+      "type": "object",
+      "required": ["all_21_collision_backgrounds_checked_exactly", "floating_point_sign_decision_used", "universal_positive_rho_opposite_sign_separator_certified", "fifteen_strict_scalar_separators_certified", "fifteen_complete_bounded_generic_cones_are_origin", "six_positive_farkas_dependences_certified", "six_scalar_common_zero_sets_nontrivial", "six_full_resonance_joined_bounded_cones_classified", "cross_background_mode_identification_made", "exceptional_or_generalized_zero_inputs_included", "all_orders_integrability", "causal_residual_observational_or_quantum_claim"]
+    }
+  },
+  "additionalProperties": true
+}

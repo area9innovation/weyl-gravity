@@ -107,7 +107,19 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("Projected source coefficients", entry["claim_boundary"])
+        self.assertIn("separate scalar theorem", entry["claim_boundary"])
+
+    def test_collision_scalar_classifier_keeps_fifteen_six_split(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_collision_scalar_separation_classification"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("Candidates 1-15", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("indices 1-15", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("indices 16-21", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not a mode identification across backgrounds", entry["claim_boundary"])
 
     def test_first_two_abs_momentum_parity_workload_is_fail_closed(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]

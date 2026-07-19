@@ -3706,6 +3706,13 @@ positive.  This closes admissible collision candidates 1--15:
 Candidates 16--21 instead use `n=1,2`; the factorization is not definite
 there, so their amplitude-level bounded cones remain the active `OPEN` gate.
 No backgrounds or carriers are identified by name.
+The machine-readable theorem is
+`EINSTEIN_MAXWELL_WEYL_COLLISION_SCALAR_SEPARATION_CLASSIFICATION`.  It also
+supplies exact positive Farkas dependence weights for candidates 16--21, proving that
+their scalar common-zero sets are nontrivial while leaving their six
+candidate-specific resonance joins fail-closed.  The active Einstein gate is
+therefore no longer a 21-row search: it is precisely those six same-sign
+amplitude ideals.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).

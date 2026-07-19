@@ -953,8 +953,41 @@ named basis columns: different columns may cancel after amplitudes are joined.
 The candidate-13 fibre is the first case where the arbitrary-amplitude ideal,
 the zero-frequency receiver, and the correction-class-dependent range have
 all been joined, giving the complete formula displayed after
-Theorem~\ref{thm:bounded-ledger}.  The analogous common zero varieties at the
-other collision circumferences remain open.
+Theorem~\ref{thm:bounded-ledger}.  The other collision circumferences admit a
+sharp scalar classification.
+
+\begin{theorem}[Collision scalar-separation classification]
+On every positive-\(\rho\) generic carrier with signed momenta \((1,-2)\),
+the common zero of \(\mu_H,\mu_{P_x},R_c\) is the origin.  Consequently the
+complete bounded generic cone is \(\{0\}\) at collision candidates (1)
+through (15).  At each same-sign candidate (16) through (21), the scalar
+common zero is nontrivial and no strict separator in
+\(\operatorname{span}(\mu_H,\mu_{P_x},R_c)\) exists.  The six full
+resonance-joined bounded cones remain open.
+\end{theorem}
+
+\begin{proof}
+For the opposite-sign carrier let \((t_1,t_2)\) be the frequency midpoints
+between the Einstein-minus and extra branches at absolute momenta one and
+two.  The shell polynomial associated with
+\((a,b,c)=(1,t_2/2-t_1,-t_1t_2/2)\) factors as
+\[
+ Q_1(\omega)=(\omega-t_1)(\omega+t_2/2),\qquad
+ Q_{-2}(\omega)=(\omega-t_2)(\omega+2t_1).
+\]
+The second factors are positive.  The first factors are negative on the
+negative-current Einstein-minus branch and positive on the extra and
+Einstein-plus branches.  After the current sign is included, the resulting
+charge/pressure functional is a strictly positive sum of all absolute-current
+occupations.  For each of the six same-sign collision values, the certificate
+instead gives four positive exact cofactors \(y_i\) satisfying
+\[
+ \sum_i y_i s_i(\omega_i^2,n_i\omega_i,n_i^2)=0.
+\]
+Farkas duality excludes a strict scalar separator, while the same positive
+weights give a nonzero scalar common-zero occupation.  Finite-frequency
+resonances are separate conditions and are not inferred to vanish.
+\end{proof}
 
 \section{Current bounded frontier}
 
@@ -1141,6 +1174,8 @@ Complete candidate-13 bounded and smooth cone formulas &
 \cert{bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.json}\\
 Candidate-13 scalar-separation bounded-origin theorem &
 \cert{bridge/certificates/einstein_maxwell_weyl_candidate13_scalar_separation_no_go.json}\\
+All-collision scalar-separation classification &
+\cert{bridge/certificates/einstein_maxwell_weyl_collision_scalar_separation_classification.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1183,20 +1218,21 @@ Each certificate records its schema, imported hashes, exact commands, test
 tier, assumptions, and missing-object ledger.  The independent verifier for
 each named certificate must pass before this manuscript advances to
 \textsc{theorem-frozen}.  The current draft promotes only the scoped complete
-formulas displayed above.  The candidate-13 real bounded geometry is closed;
-the unrestricted finite-support bounded zero set and the other collision
-circumferences remain open.
+formulas displayed above.  The candidate-13 real bounded geometry and all
+fifteen opposite-sign collision carriers are closed; the unrestricted
+finite-support bounded zero set and the six same-sign resonance joins remain
+open.
 
 \section{Outlook}
 
-The immediate mathematical target is to determine which of the other exact
-collision circumferences admit a pressure-enhanced scalar separator and which
-retain a nonzero bounded cone.
+The immediate mathematical target is the six same-sign collision backgrounds
+whose scalar common zero is nontrivial: their resonance-amplitude ideals must
+be joined separately.
 The symbolic-\(\ell\) standard-branch resonance and collision theorem is now
 closed, as is the complete 164-coefficient two-momentum branch-basis census.
-The next exact enlargement is a fibrewise dual-inequality classification,
-followed where definiteness fails by the common amplitude-level zero variety
-and joins of distinct \(|k|\) fibres without identifying their phase carriers.
+The next exact enlargement is the six common amplitude-level zero varieties,
+followed by joins of distinct \(|k|\) fibres without identifying their phase
+carriers or circumference backgrounds.
 The immediate physical target is to compare its strata with the transferred
 Einstein/extra/Maxwell interaction tensor and with observer response.  A
 later causal theorem would replace the finite secular right inverses by

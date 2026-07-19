@@ -410,6 +410,16 @@ def verify() -> None:
     candidate_second = candidates["mode_data"]["second_order"]
     if candidate_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or candidate_second["smooth_secular"]["status"] != "OPEN" or candidate_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("two-absolute-momentum candidate correction classes were over-promoted")
+    scalar_collision = by_id["einstein.ph.wm.interaction.ell2_collision_scalar_separation_classification"]
+    scalar_collision_second = scalar_collision["mode_data"]["second_order"]
+    if scalar_collision["descriptions"]["nonlinear"] != "CERTIFIED" or "Candidates 1-15" not in scalar_collision["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("collision scalar-separation split was hidden")
+    if scalar_collision["mode_data"]["resonance"]["status"] != "OPEN":
+        raise AssertionError("six same-sign resonance joins were over-promoted")
+    if scalar_collision_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "indices 1-15" not in scalar_collision_second["bounded_or_finite_quasiperiodic"]["statement"] or "indices 16-21" not in scalar_collision_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("collision scalar bounded verdict changed")
+    if scalar_collision_second["smooth_secular"]["status"] != "OPEN" or scalar_collision_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "not a mode identification across backgrounds" not in scalar_collision["claim_boundary"]:
+        raise AssertionError("collision scalar classifier exceeded scope")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

@@ -1,0 +1,41 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_COLLISION_SCALAR_SEPARATION_CLASSIFICATION_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Exact scalar H/Px/Rc separation classification on all 21 ell=2 two-absolute-momentum collision backgrounds.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_collision_scalar_separation_classification.json": "bf36d4e2c0504b4028496b5ac64e7ee5c345ce667cdb595f981d030922c267f3",
+    "bridge/einstein_sector/einstein_maxwell_weyl_collision_scalar_separation_classification.py": "27cbe0066210c84698e1fb1ed48d070c10e4146023493d687117a2d33d206fe1",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_collision_scalar_separation_classification.schema.json": "6c276649fc9ee345747dd9aeced7fd722d70768eaed68e43365605c7fe0d8d00",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_collision_scalar_separation_classification.py": "5ad80b8990b27cdc46466cf4bf8e4d161c21cc72b8d4b4259a31f5bde25296c1",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_collision_scalar_separation_classification.py": "91401190c0284f1abb73b0a7cb416b223bab59a3198d678f658e42b678dc5ed0",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-collision-scalar-separation-classification.md": "44947bfa602800694d155206087f5ab207e9789860a9879b35c1bf82ed627c2c"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 3,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_collision_scalar_separation_classification --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_collision_scalar_separation_classification",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_collision_scalar_separation_classification"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The theorem imports the exact 21-row collision ledger, action-derived current signs and complete bounded zero-frequency receiver. It checks the universal midpoint factorization on all opposite-sign rows and exact positive cofactor/Farkas identities on all six same-sign rows."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The theorem promotes scalar bounded-origin results for the opposite-sign carrier and a six-row nonseparability ledger, not the six full resonance joins, smooth cones, exceptional/global carriers, all-orders, causal, residual, quantum or release lifecycles."
+    }
+  },
+  "claim_boundary": "Every positive-rho n=(1,-2) generic carrier has bounded cone {0}; candidates 16-21 have nontrivial scalar common zeros but their full bounded cones remain OPEN. No cross-background mode identification is made."
+}
