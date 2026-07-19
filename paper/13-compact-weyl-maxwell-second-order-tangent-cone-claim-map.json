@@ -2,7 +2,7 @@
   "schema": "paper-draft-source-map-v1",
   "paper_id": "PAPER_13_COMPACT_WEYL_MAXWELL_SECOND_ORDER_TANGENT_CONE",
   "lifecycle_state": "DRAFT_ALLOWED",
-  "source_baseline": "d6d58957f899c1433f43c1c37d1618eb298ffb86",
+  "source_baseline": "49899c9ac00ae082cb419ad89bc8c4135a9decb3",
   "manuscript": "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
   "certified_scope": {
@@ -22,6 +22,9 @@
     "collision_candidates_1_through_15_bounded_cone_origin": true,
     "same_sign_candidates_16_through_21_same_fibre_nonzero_defects": "864_OF_864",
     "same_sign_candidates_16_through_21_nonzero_bounded_points": "6_OF_6",
+    "same_sign_scalar_occupation_extreme_rays_per_candidate": 4,
+    "same_sign_candidatewise_extreme_ray_lifts": "24_OF_24",
+    "same_sign_arbitrary_nonnegative_sums_classified": false,
     "same_sign_candidates_16_through_21_complete_real_cones": false,
     "two_absolute_momentum_arbitrary_amplitude_zero_variety": false,
     "complete_finite_support_bounded_cone": false,
@@ -125,39 +128,49 @@
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.json",
       "git_blob": "a95cbb184e5b065a23193c248289d9d45ff3eb6a"
+    },
+    {
+      "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.json",
+      "git_blob": "f96cb9b0fbccddb398ad62beee060a5ee3b5fb80"
+    },
+    {
+      "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_extreme_ray_lifts.json",
+      "git_blob": "a21d8b759c3e7647dbaa42c97a1c00eaf650f2e4"
     }
   ],
   "verification_receipt": {
-    "date": "2026-07-19",
+    "date": "2026-07-20",
     "tier_0": {
       "status": "PASSED",
       "checks": [
         "JSON parse through paper/verify_13_14_draft_source_maps.py",
         "git diff --check on scoped paper paths",
         "three-pass pdflatex build with no undefined references or overfull boxes",
-        "PDF text audit for the tuned theorem, sharp 15/6 collision split and Paper 91 successor pointer"
+        "PDF text audit for the tuned theorem, sharp 15/6 collision split, universal four-ray corollary and Paper 91 successor pointer"
       ]
     },
     "tier_1": {
       "status": "PASSED",
-      "elapsed_seconds": 27.4,
+      "elapsed_seconds": 28.0,
       "checks": [
         "independent tuned all-primary cone verifier",
         "3 targeted tuned all-primary unit tests",
         "Paper 13/14 source-map verifier",
         "Paper 91 frozen claim-map verifier",
         "same-sign same-fibre census verifier and 2 tests",
-        "same-sign bounded-witness verifier and 3 tests"
+        "same-sign bounded-witness verifier and 3 tests",
+        "universal scalar extreme-ray verifier and 2 tests",
+        "24-ray amplitude-lift verifier and 2 tests"
       ]
     },
     "tier_2": {
       "status": "PASS_BY_CONTENT_ADDRESS",
-      "criterion": "The manuscript imports the content-addressed collision classifier, 864-defect same-fibre census and six bounded-witness theorem from the pinned d6d58957 baseline."
+      "criterion": "All 26 source blobs are pinned at baseline 49899c9a; the collision chain includes the classifier, 864-defect census, six bounded witnesses, universal four-ray scalar theorem and all 24 candidatewise lifts."
     },
     "broader_atlas_audit": {
       "status": "PASSED_AFTER_CONCURRENT_ATLAS_UPDATE",
       "checks": [
-        "86 atlas tests",
+        "88 atlas tests",
         "independent Einstein compact-product atlas verifier"
       ]
     },
@@ -166,5 +179,5 @@
       "criterion": "Paper 13 remains DRAFT_ALLOWED and no mathematical lifecycle state is promoted."
     }
   },
-  "next_gate": "SIX_SAME_SIGN_COLLISION_COMPLETE_REAL_CONE_DECOMPOSITIONS"
+  "next_gate": "SIX_SAME_SIGN_COLLISION_PAIRWISE_EXTREME_RAY_SUMS"
 }
