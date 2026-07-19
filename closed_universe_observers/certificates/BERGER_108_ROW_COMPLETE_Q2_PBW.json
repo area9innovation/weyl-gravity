@@ -49,7 +49,7 @@
     }
   },
   "atlas_status": "CERTIFIED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate assembles the complete scalar q2 tensor on the canonical 108-row Berger carrier. It zero-extends and adds seven independently certified, content-addressed sources: the complete 64-row gravity-clock-Maxwell payload, the universal apparatus scalar-BV orbit, six-rod metric interaction, memory transport, normalized two-detector readout, physical massive-emitter stress/switch interaction, and the massive-two-form Diff--BV cotangent orbit. Every source is normalized into one differential coefficient-jet PBW grammar with an explicit source label. The assembly contains 21,422 operator keys and 36,438 exact coefficient monomials. No operator key is shared by two source tensors, so the result is a disjoint additive assembly rather than an order-dependent overwrite; deleting any source changes the exact term count. All 108 rows share the same signed odd pairing and suspended graded-symmetric factorial convention through their certified dependencies. This completes and exports scalar q2 only. It does not export any apparatus/emitter q3 block, replay q1q2 or q2q2+q1q3 coefficientwise, prove K_Berger equivariance or observer-morphism stability, restrict detector response to Z2, promote nonlinear rank, activate physical Bridge 3, establish finite-parameter causal propagation or make a quantum claim. No compact-product mode is identified with a Berger row.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate assembles the complete scalar q2 tensor on the canonical 108-row Berger carrier. It zero-extends and adds seven independently certified, content-addressed sources: the typed 64-row gravity-clock-Maxwell coderivation payload, the universal apparatus scalar-BV orbit, six-rod metric interaction, memory transport, normalized two-detector readout, physical massive-emitter stress/switch interaction, and the massive-two-form Diff--BV cotangent orbit. The typed base presentation is required for nonlinear coderivation composition; it has the same lowered cubic action as the legacy output-normalized tensor but is not identified with it as an operator. Every source is normalized into one differential coefficient-jet PBW grammar with an explicit source label. The assembly contains 21,422 operator keys and 36,438 exact coefficient monomials. No operator key is shared by two source tensors, so the result is a disjoint additive assembly rather than an order-dependent overwrite; deleting any source changes the exact term count. All 108 rows share the same signed odd pairing and suspended graded-symmetric factorial convention through their certified dependencies. This certificate exports scalar q2 only; complete q3 is a separate certificate. It does not replay q1q2 or q2q2+q1q3 coefficientwise, prove K_Berger equivariance or observer-morphism stability, restrict detector response to Z2, promote nonlinear rank, activate physical Bridge 3, establish finite-parameter causal propagation or make a quantum claim. No compact-product mode is identified with a Berger row.",
   "claim_status": "CERTIFIED_COMPLETE_SCALAR_108_ROW_Q2_PBW_PAYLOAD",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC"
@@ -64,6 +64,11 @@
     "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false
   },
   "gate_refs": {
+    "base_typed_q2_q3": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
+      "sha256": "90a7a7703e30fc9fe2e97e1b4e3327bb1dc9b078c16b51c1cc2afd163b0842a6"
+    },
     "combined_clock_chart": {
       "path": "closed_universe_observers/certificates/BERGER_NONLINEAR_CLOCK_COMBINED_CANONICAL_MAP_F2_F3.json",
       "result_id": "BERGER_NONLINEAR_CLOCK_COMBINED_CANONICAL_MAP_F2_F3",
@@ -80,9 +85,9 @@
       "sha256": "636e08572fe0802b41377f3b0ab53941c2165e568768e57dc0bbdc03075f4795"
     }
   },
-  "next_gate": "EXPORT_COMPLETE_SCALAR_108_ROW_Q3_PBW_BLOCKS",
+  "next_gate": "REPLAY_COMPLETE_TYPED_108_ROW_Q1Q2_AND_Q2Q2_PLUS_Q1Q3",
   "payload_ref": {
-    "canonical_sha256": "9818dc3fec5b59584ac6ccf8c1bf70c8ff396751e97db80daa9f79e7875c2eec",
+    "canonical_sha256": "d94337ae813cf012146f09dad896e1f9bec414c4ae71712cad482036aa338656",
     "cross_source_operator_key_collision_count": 0,
     "cross_source_operator_key_collisions": [],
     "nonzero_output_rows": [
@@ -157,14 +162,14 @@
     "operator_key_count": 21422,
     "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q2_PBW_PAYLOAD.json",
     "serialized_term_count": 36438,
-    "sha256": "baea1d15e2fcbbe1cc2226cd13ac788070ac05567144998ea991c4f474a25593"
+    "sha256": "f4073c06d867528f09169400b86842454f25e2b4c7a8a07de6455b56dd1d8ccf"
   },
   "provenance": {
     "source_commit": "WORKTREE",
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_108_row_complete_q2_pbw.py",
-        "sha256": "7e7ff6d89ca4f14b0fcdb1baca4f7d26b48704f418a8b069e3a7eb086f491aaa"
+        "sha256": "cb18c44ec536aa5ea507ef0711c2be6baa2644b8ea201d92ee2f61a4e7c46e2b"
       },
       {
         "path": "closed_universe_observers/verify_berger_108_row_complete_q2_pbw.py",
@@ -172,11 +177,11 @@
       },
       {
         "path": "closed_universe_observers/tests/test_berger_108_row_complete_q2_pbw.py",
-        "sha256": "9ca65bfe843a79cf0f757b08a195e81721dd6b122673ef0878ca6eb6cee8f9e7"
+        "sha256": "2b81bf8e766aaf1b3538b7c3cbbfbd7a7f344ef2928b93005085520776c3d9e0"
       },
       {
         "path": "closed_universe_observers/schema/berger-108-row-complete-q2-pbw-v1.schema.json",
-        "sha256": "e6f05c1cfb68b3a548b2ea8efbe3a68b6f326b3af2e8699e524d49fff1b74c10"
+        "sha256": "7fbde5c0cb315c2021fe2cfdc26478f6d075d5e96c4abff47d40b479c262a506"
       },
       {
         "path": "closed_universe_observers/schema/berger-108-row-complete-q2-pbw-payload-v1.schema.json",
@@ -184,7 +189,7 @@
       },
       {
         "path": "closed_universe_observers/reports/berger-108-row-complete-q2-pbw.md",
-        "sha256": "9f142702761215c57a1f75e4a07358f2f6999d0628d4118b6304c8978031dca5"
+        "sha256": "d2f51716c29bf1f907505449af66b478f91f5c3d7d3f49ceb9a1542ad9042dae"
       }
     ]
   },

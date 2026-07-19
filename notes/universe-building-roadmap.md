@@ -1107,7 +1107,10 @@ survive the first backreacted, normalized apparatus interaction?
    keys, agrees termwise with Cartan's formula and recovers the certified
    scalar-BV normalization template.  The seven source tensors now assemble
    without a cross-source key collision into 21,422 operator keys and 36,438
-   exact coefficient monomials, completing scalar `q2`.  The six-rod physical
+   exact coefficient monomials, completing scalar `q2`.  The base source is
+   the typed gravity-clock-Maxwell coderivation required by its certified
+   mixed `q3`; the legacy output-normalized tensor has the same lowered cubic
+   action but is not used for nonlinear composition.  The six-rod physical
    metric `q3` successor now contributes 106,960 ordered PBW keys and 181,344
    exact coefficient monomials from the complete fourth action derivative,
    with exact order-four metric polarization, graded symmetry and two
@@ -1121,8 +1124,7 @@ survive the first backreacted, normalized apparatus interaction?
    exact q2 regression and cyclic completion.  The physical-emitter second
    metric/clock-switch jet adds 106,620 ordered keys and 107,988 exact
    coefficient monomials, including both switch second derivatives, with
-   exact q2 action regression and common-action cyclic completion.  The base
-   gravity-clock-Maxwell `q3` source remains to assemble.  The scalar-BV and
+   exact q2 action regression and common-action cyclic completion.  The scalar-BV and
    emitter Diff--BV sources now have an explicit structural-zero ledger: all
    1,152 q2 terms lower to constant-coefficient field-degree-three actions,
    so their fourth derivatives and q3 payloads vanish exactly.

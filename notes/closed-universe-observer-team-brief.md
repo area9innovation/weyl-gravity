@@ -1436,7 +1436,11 @@ adjunction supplies the emitter- and ghost-cotangent partners.  The same
 engine recovers the certified 24-term scalar BV template, fixing the graded
 signs and factorial normalization.  This completes emitter `q2`.  The
 canonical complete 108-row `q2` payload is now exported with 36,438 exact
-coefficient monomials and no cross-source key collision.  The first complete
+coefficient monomials and no cross-source key collision.  It now imports the
+typed gravity-clock-Maxwell coderivation required by the certified mixed
+`q3`, rather than the legacy output-normalized tensor; the two lower to the
+same cubic action but are not interchangeable in coderivation composition.
+The first complete
 `q3` successor is now certified:
 `BERGER_108_ROW_ROD_METRIC_Q3_PBW` differentiates the six-rod physical action
 through fourth order and exports 106,960 ordered PBW keys with 181,344 exact
@@ -1462,9 +1466,8 @@ well.  `BERGER_108_ROW_EMITTER_PHYSICAL_Q3_PBW` regresses all 768 q2 cubic
 action keys, retains both exact switch second derivatives and exports 106,620
 ordered PBW keys with 107,988 coefficient monomials on 27 cotangent rows.
 Its 520 first-jet comparisons, second-jet permutation audit, six direct mixed
-variations and common-action cyclic completion pass exactly.  These are four
-source subblocks, not complete `q3`: the base gravity-clock-Maxwell import
-remains to assemble.  The two remaining zero sources are now explicit rather
+variations and common-action cyclic completion pass exactly.  The two
+remaining zero sources are now explicit rather
 than omitted: `BERGER_108_ROW_Q3_STRUCTURAL_ZERO_LEDGER` lowers all 240
 scalar-BV and 912 emitter-Diff--BV q2 terms through the certified pairing and
 proves their authoritative actions have constant coefficients and field
@@ -1479,7 +1482,8 @@ next gate is the complete 108-row `q1q2` and `q2q2+q1q3` replay.
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to
 `Z2^C={u:mu_X(u)=0,R_j^C(u)=0}` now have `NO_CERTIFIED_MAP` from the complete
-scalar apparatus while its `q2,q3` extension is absent.  Individual
+scalar apparatus while its arity, equivariance and morphism gates remain
+open.  Individual
 detectable-mode obstruction and balanced-combination survival remain `OPEN`;
 the passing unary gate does not by itself classify either.  The atlas cites
 `FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` for the general

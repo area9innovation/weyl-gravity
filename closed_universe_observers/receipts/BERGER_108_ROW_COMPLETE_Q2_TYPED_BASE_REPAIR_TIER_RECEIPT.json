@@ -1,0 +1,69 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_COMPLETE_Q2_TYPED_BASE_REPAIR_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_COMPLETE_Q2_PBW",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The complete 108-row q2 assembly now imports the certified typed 64-row gravity-clock-Maxwell coderivation required by nonlinear q2/q3 composition. The 1,890 base keys and all global term/key counts are unchanged, while the Maxwell output normalization is no longer the non-functorial legacy presentation. No arity, K_Berger, observer-morphism, tangent-cone, Bridge 3, causal or quantum claim is promoted.",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m closed_universe_observers.generate_berger_108_row_complete_q2_pbw --emit; python3 -m closed_universe_observers.atlas.generate_observer_atlas_fragment --emit; py_compile; generator --check; git diff --check",
+      "elapsed_seconds": 41.42,
+      "peak_rss_mb": 384.18,
+      "status": "PASS",
+      "scope": "typed complete-q2 source repair, schemas, generated payload/certificate, atlas, work item and observer notes"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_complete_q2_pbw.py closed_universe_observers/tests/test_observer_atlas_fragment.py; python3 -m closed_universe_observers.verify_berger_108_row_complete_q2_pbw; python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+      "elapsed_seconds": 73.30,
+      "peak_rss_mb": 385.79,
+      "status": "PASS",
+      "scope": "44 exact assembly, typed-gate, source-deletion, atlas and lifecycle tests plus two independent verifiers"
+    },
+    {
+      "tier": 2,
+      "command": "content-hash and flag verification of BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3 and BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_TYPED_PAYLOAD",
+      "elapsed_seconds": "hash-gated",
+      "status": "PASS",
+      "scope": "unchanged certified typed base q2/q3 dependency"
+    }
+  ],
+  "higher_tiers_not_run": {
+    "tier_3": "Representation repair of one content-addressed q2 input; no arity or release promotion."
+  },
+  "input_crosswalk": {
+    "typed_payload": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_TYPED_PAYLOAD.json",
+      "sha256": "789c0a8fa75903a2f0a3c8e11138b64531185d08124c0d6b82dc46138b91a731",
+      "term_count": 1890
+    },
+    "legacy_payload_not_used": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_PAYLOAD.json",
+      "sha256": "953c70661220cc1de27ab25cdb80d9ae479f85ff0cd52483fa00a3b93e4c7501",
+      "term_count": 1890
+    },
+    "typed_gate": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3.json",
+      "sha256": "90a7a7703e30fc9fe2e97e1b4e3327bb1dc9b078c16b51c1cc2afd163b0842a6",
+      "required_flag": "BERGER_TYPED_COUPLED_Q2"
+    }
+  },
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_complete_q2_pbw.py", "sha256": "cb18c44ec536aa5ea507ef0711c2be6baa2644b8ea201d92ee2f61a4e7c46e2b"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_complete_q2_pbw.py", "sha256": "2b81bf8e766aaf1b3538b7c3cbbfbd7a7f344ef2928b93005085520776c3d9e0"},
+    {"path": "closed_universe_observers/schema/berger-108-row-complete-q2-pbw-v1.schema.json", "sha256": "7fbde5c0cb315c2021fe2cfdc26478f6d075d5e96c4abff47d40b479c262a506"},
+    {"path": "closed_universe_observers/reports/berger-108-row-complete-q2-pbw.md", "sha256": "d2f51716c29bf1f907505449af66b478f91f5c3d7d3f49ceb9a1542ad9042dae"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q2_PBW.json", "sha256": "29d6c42e583d5d08d4d3f9e782a320b191f82b1781a7500991366ec270b59619"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q2_PBW_PAYLOAD.json", "sha256": "f4073c06d867528f09169400b86842454f25e2b4c7a8a07de6455b56dd1d8ccf"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "ba1a792fc01c1f48396458ffaf1f13dc841f2f2e21363e2e66cf7b535a566231"},
+    {"path": "planning/work-items/berger-108-row-apparatus-q2-q3-extension.json", "sha256": "2544455b1a2a80109deec1edb30bbbbcbf5d30f297b13cd7a5447317054e2133"}
+  ],
+  "flags": {
+    "COMPLETE_SCALAR_108_ROW_TYPED_Q2_EXPORTED": true,
+    "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "PHYSICAL_BRANCH_BRIDGE_ACTIVATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
