@@ -1,0 +1,156 @@
+{
+  "bounded_correction": {
+    "constant_twist_A": "rotate A to the certified Y_10 axis, use the constant polar L=2 correction C_t2=-2|A|^2/3 in that normalization, and rotate the correction back",
+    "cross_terms": "c is absent from the direct homogeneous-twist source, d couples only to twist velocity B after a=0, and W_x has zero field strength; hence all surviving cross sources vanish",
+    "homogeneous_c_d_Wx": "the complete quadratic source vanishes when a=b=Q_e=0; c and W_x are spectators and d has zero self-source",
+    "regularity": "real, smooth, spatially periodic and time independent, hence bounded finite-quasiperiodic"
+  },
+  "claim_boundary": "This is the complete bounded second-order theorem for the standard generalized-zero carrier and a universal b=B=0 consequence for arbitrary finite inputs. It does not classify cancellations involving a,d,Q_e and oscillatory modes, solve the full bounded finite-support cone, prove causal propagation, all-orders integration, final residual descent, observables, particles or quantum theory.",
+  "classification": {
+    "all_orders_integrability": false,
+    "causal_retarded_map_certified": false,
+    "complete_finite_bounded_common_zero_locus_solved": false,
+    "complete_standard_generalized_zero_bounded_cone_classified": true,
+    "complete_standard_generalized_zero_polynomial_ideal_classified": true,
+    "oscillatory_cross_polynomial_ideal_classified": false,
+    "universal_b_and_twist_velocity_elimination_on_complete_finite_carrier": true
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "cone": "(c,d,W_x,A)",
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_SECULAR": {
+      "reason": "the bounded correction is contained in the smooth exponential-polynomial class",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "first_order_representatives": {
+    "homogeneous": "K=a+b*t, C=a*t^2+(b/3)t^3+c+d*t, A_x=W_x+Q_e*t",
+    "twist": "h_(x,a)=(A_a+B_a*t)X_a, a_x=-(A_a+B_a*t)Y_(1a)"
+  },
+  "interpretation": "Bounded second-order consistency does not remove all global data. It removes the homogeneous cubic Jordan velocity b and every twist velocity B, and the Taub equation then removes a and Q_e in the pure global sector. Static circumference, linear circle shear d, Wilson holonomy and constant SO3 twist survive with a bounded correction. In the full finite carrier, b=B=0 is already universal; only the residual a,d,Q_e times oscillator polynomial ideal and the bounded shell resonances remain.",
+  "lifecycle_state": "CLASSIFIED",
+  "moment_map_intersection": {
+    "after_polynomial_elimination": "mu_H=-(a^2+Q_e^2), mu_Px=0, mu_J=0",
+    "complete_bounded_tangent_cone": "Z2_global^bounded={(c,d,W_x,A): c,d,W_x real, A in R^3}",
+    "real_common_zero": "a=0, Q_e=0"
+  },
+  "next_gate": "compute the residual a,d,Q_e times arbitrary q/p oscillator polynomial maps after the universal b=B=0 elimination, then intersect their zero locus with the finite shell-resonance ledger R_(j,a)",
+  "polynomial_growth_ideal": {
+    "SO3_twist_leading_norm_squared": "2*(B_x**2 + B_y**2 + B_z**2)**2/3",
+    "SO3_twist_leading_tensor": "STF(B tensor B)",
+    "elimination": [
+      "the homogeneous E11 t^2 coefficient (15/2)b^2 forces b=0",
+      "the polar L=2 twist t^2 tensor STF(B tensor B) forces B=0 over the reals",
+      "after b=B=0 the only positive-degree global source coefficient is Q_e*a*t in Maxwell1"
+    ],
+    "homogeneous_positive_degree_coefficients": {
+      "E11": {
+        "1": "15*a*b",
+        "2": "15*b**2/2"
+      },
+      "Maxwell1": {
+        "1": "Q_e*a",
+        "2": "Q_e*b/2"
+      },
+      "sphere_trace": {
+        "1": "-15*a*b/2",
+        "2": "-15*b**2/4"
+      }
+    },
+    "real_polynomial_zero_locus": "b=0, B=0, Q_e*a=0",
+    "twist_polar_L2_metric_00_t2": "-7*B**2"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_standard_global_bounded_second_order.py",
+    "generator_sha256": "74e2d29a1ef5ffb60a8eb7e6e814d8223cb749b2b6b9da105487266a7d8a62f1",
+    "inputs": {
+      "abstract_cone": {
+        "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+        "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+      },
+      "complete_finite": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+        "sha256": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885"
+      },
+      "global_self": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
+        "sha256": "5035c84c0cbc7a35c8ea32dfc27e489be93bad919b77110d43e5c8f24909af30"
+      },
+      "homogeneous": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_quadric_second_order.json",
+        "sha256": "f496750e8af73098b0e9427e2a3b5f7d2bf3ac4c42a1455e3b7807cfa8e73fb6"
+      },
+      "moment_maps": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      },
+      "twist_orbit": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order.json",
+        "sha256": "a4fe918097c24f8d6f1d9b8ad283ab40ead71091920095e6bfcddc7406dcb756"
+      },
+      "twist_source": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.json",
+        "sha256": "c5594fb45209332f7d1bf8d143908a490bcaa2c3f794b72fe7f3302ddb93a43e"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_SECOND_ORDER",
+  "result_state": "COMPLETE_STANDARD_GENERALIZED_ZERO_BOUNDED_SECOND_ORDER_CONE_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-standard-global-bounded-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_standard_global_bounded_second_order.schema.json",
+  "schema_sha256": "97568981f2b65bbdda66e9e59a557e842d669e3e2990877ff465d2a9a69738ad",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic second-order correction",
+    "carrier": "homogeneous (a,b,c,d,Q_e,W_x) plus axial twist position/velocity vectors (A,B), with no oscillatory input",
+    "charge_sector": "fixed N=2 magnetic bundle; electric tangent Q_e allowed before elimination",
+    "degree": 2,
+    "ell": "input 0 and 1; output 0,1,2",
+    "k": 0,
+    "m": "all real twist components by SO3 covariance",
+    "omega": "generalized zero only",
+    "parity": "homogeneous and axial ell=1 generalized-zero inputs; polar L=0,2 and axial L=1 outputs kept distinct",
+    "theory": "Weyl-Maxwell target restricted to the complete standard generalized-zero image"
+  },
+  "universal_complete_carrier_corollary": {
+    "reason": "oscillator products are bounded; homogeneous-twist cross terms lie in L=1; therefore neither the homogeneous L=0 b^2*t^2 coefficient nor the twist L=2 STF(B tensor B)*t^2 coefficient can be canceled by any other certified input block",
+    "remaining_full_carrier_polynomial_gate": "classify a,d,Q_e crossed with the finite oscillatory carrier; c,W_x and constant A are certified spectator/modulus directions",
+    "statement": "for any complete finite-support input admitting a bounded second-order correction, b=0 and B=0"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_standard_global_bounded_second_order --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_standard_global_bounded_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_standard_global_bounded_second_order"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.12,
+      "max_rss_kb": 16228,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 1.36,
+      "max_rss_kb": 58756,
+      "status": "PASS",
+      "tests_run": 15
+    },
+    "tier_2": {
+      "criterion": "all direct four-dimensional source and current inputs are unchanged exact certificates",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "oscillatory cross-polynomial, complete bounded, causal, all-orders, residual and quantum gates remain excluded",
+      "status": "NOT_RUN"
+    }
+  }
+}

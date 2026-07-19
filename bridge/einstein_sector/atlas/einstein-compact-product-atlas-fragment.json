@@ -645,6 +645,85 @@
       }
     },
     {
+      "claim_boundary": "This is the complete bounded second-order theorem only for the standard generalized-zero carrier. Universally it forces b=B=0 in every finite-support bounded candidate, but a,d,Q_e times oscillatory modes, shell resonances, infinite sums, causal propagation, final residual states, observables and quantum transfer remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_SECOND_ORDER",
+          "sha256": "8d36197f365abf1fb5d923e15a5a5589da0f4881ebb9acc0d66cf688df2194b4"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
+          "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "id": "einstein.ph.wm.standard.global_bounded_cone",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The carrier is the complete standard generalized-zero block: K=a+b*t, C=a*t^2+(b/3)t^3+c+d*t, A_x=W_x+Q_e*t and twist A+B*t.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The homogeneous and twist Lee-Wald blocks are nondegenerate and mutually orthogonal before the final residual quotient.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The positive-degree ideal has real zero locus b=B=0 and Q_e*a=0; STF(B tensor B) supplies the SO3-complete twist witness.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The complete bounded cone is {(c,d,W_x,A)}. Its homogeneous source vanishes and constant A has a time-independent polar L=2 correction.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The bounded correction is also a smooth exponential-polynomial correction.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "After polynomial elimination the global moment maps force a=Q_e=0; c,d,W_x and constant A remain.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "complete homogeneous (a,b,c,d,Q_e,W_x) plus axial twist position/velocity vectors (A,B), with oscillatory inputs excluded",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "input 0 and 1; output 0,1,2",
+        "k": 0,
+        "m": "all real twist components by SO3 covariance",
+        "omega": "generalized zero only",
+        "parity": "homogeneous and axial ell=1 inputs; homogeneous, axial ell=1 and polar ell=2 outputs kept distinct",
+        "theory": "Weyl-Maxwell target restricted to the standard Einstein-Maxwell generalized-zero image"
+      }
+    },
+    {
       "claim_boundary": "This completes the d column of the resonant source matrix, not a complete second-order extension or the remaining homogeneous/twist columns.",
       "descriptions": {
         "causal": "OPEN",
@@ -1223,7 +1302,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "9e2ed3ad80e982756989fd51c9f5b9b83e6d9631d1ffb9e126b9f0911194375a",
+  "generated_by_sha256": "d5ad9f299e07bfbe9b2f17f8ff7084c0a66810d25b0b64c0a677538f80b23b14",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

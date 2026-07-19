@@ -125,6 +125,15 @@ def verify() -> None:
     if "P_(j,r)" not in complete_finite["mode_data"]["resonance"]["statement"]:
         raise AssertionError("polynomial bounded obstruction ledger is absent")
 
+    standard_global = by_id["einstein.ph.wm.standard.global_bounded_cone"]
+    global_second_order = standard_global["mode_data"]["second_order"]
+    if global_second_order["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("standard global bounded cone was lost")
+    if global_second_order["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("standard global causal lifecycle was over-promoted")
+    if "a,d,Q_e times oscillatory modes" not in standard_global["claim_boundary"]:
+        raise AssertionError("remaining polynomial gate was hidden")
+
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("cross-background fail-closed entry changed")

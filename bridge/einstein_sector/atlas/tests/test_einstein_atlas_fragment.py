@@ -83,6 +83,15 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("complete certified linear inventory", second_order["smooth_secular"]["statement"])
         self.assertIn("P_(j,r)", entry["mode_data"]["resonance"]["statement"])
 
+    def test_standard_global_bounded_cone_is_complete_but_scoped(self) -> None:
+        entry = self.entries["einstein.ph.wm.standard.global_bounded_cone"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("{(c,d,W_x,A)}", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("a,d,Q_e times oscillatory modes", entry["claim_boundary"])
+
 
 if __name__ == "__main__":
     unittest.main()

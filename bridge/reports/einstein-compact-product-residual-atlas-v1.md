@@ -48,6 +48,10 @@ smooth-secular and causal/retarded correction classes.  In particular:
   complete finite-support smooth cone `mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0`;
   the bounded ledger additionally contains polynomial-growth `P_(j,r)` and
   shell-resonance `R_(j,a)` functionals, whose common zero locus is `OPEN`;
+- on the complete standard generalized-zero carrier alone, the bounded cone
+  is exactly `(c,d,W_x,A)`: polynomial growth first forces `b=B=0`, then the
+  Taub equation forces `a=Q_e=0`; the same leading-degree argument makes
+  `b=B=0` universal in every complete finite-support bounded candidate;
 - every compact-product causal/retarded verdict remains fail-closed; the
   complete finite-support row uses `NO_CERTIFIED_MAP` because no retarded
   complex has been certified, while older scoped rows remain `OPEN`;

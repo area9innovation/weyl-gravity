@@ -2254,6 +2254,28 @@ fail-closed row is
 transport is `NO_CERTIFIED_MAP`; infinite-mode completion, all-orders
 integration, final residual descent, observational maps and quantum transfer
 remain open.
+
+The bounded polynomial ledger now has its first complete base stratum.  For
+the complete standard generalized-zero input
+`(a,b,c,d,Q_e,W_x;A,B)`, exact leading coefficients give
+
+```text
+(15/2)b^2 t^2 in homogeneous E11,
+STF(B tensor B)t^2 in polar L=2,
+Q_e*a*t after b=B=0.
+```
+
+Thus `P=0` is exactly `b=B=0, Q_e*a=0`.  Intersecting with the five moment
+maps forces `a=Q_e=0`, and the complete bounded cone in this carrier is
+`(c,d,W_x,A)`.  Its correction is bounded: the homogeneous source vanishes,
+and constant `A` uses the certified time-independent polar `L=2` correction.
+Moreover `b=B=0` is universal for every complete finite-support bounded
+candidate because no bounded oscillator product occupies either leading
+zero-frequency polynomial block.  The fail-closed atlas row is
+`einstein.ph.wm.standard.global_bounded_cone`.  The active next gate is the
+residual `a,d,Q_e` times arbitrary finite `q/p` oscillator polynomial map;
+only after that elimination should its zero locus be intersected with the
+shell-resonance ledger `R_(j,a)`.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

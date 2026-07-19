@@ -41,6 +41,7 @@ CERTIFICATES = {
     "extra_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
     "finite_generic_smooth": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
     "complete_finite_smooth": ROOT / "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+    "standard_global_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
     "branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
     "exceptional_offshell": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
     "covariant_chain_map": ROOT / "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
@@ -224,6 +225,18 @@ def entries() -> list[dict[str, object]]:
             "This certifies the A=0 twist-velocity orbit only; twist position and the full global cone remain open.",
         ),
         _entry(
+            "einstein.ph.wm.standard.global_bounded_cone",
+            _scope(theory="Weyl-Maxwell target restricted to the standard Einstein-Maxwell generalized-zero image", carrier="complete homogeneous (a,b,c,d,Q_e,W_x) plus axial twist position/velocity vectors (A,B), with oscillatory inputs excluded", degree=2, parity="homogeneous and axial ell=1 inputs; homogeneous, axial ell=1 and polar ell=2 outputs kept distinct", ell="input 0 and 1; output 0,1,2", m="all real twist components by SO3 covariance", k=0, omega="generalized zero only"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The carrier is the complete standard generalized-zero block: K=a+b*t, C=a*t^2+(b/3)t^3+c+d*t, A_x=W_x+Q_e*t and twist A+B*t."),
+            ("CERTIFIED", "The homogeneous and twist Lee-Wald blocks are nondegenerate and mutually orthogonal before the final residual quotient."),
+            ("CERTIFIED", "After polynomial elimination the global moment maps force a=Q_e=0; c,d,W_x and constant A remain."),
+            ("CERTIFIED", "The positive-degree ideal has real zero locus b=B=0 and Q_e*a=0; STF(B tensor B) supplies the SO3-complete twist witness."),
+            _second_order(("CERTIFIED", "The complete bounded cone is {(c,d,W_x,A)}. Its homogeneous source vanishes and constant A has a time-independent polar L=2 correction."), ("CERTIFIED", "The bounded correction is also a smooth exponential-polynomial correction."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("standard_global_bounded", "standard", "taub", "abstract_cone"),
+            "This is the complete bounded second-order theorem only for the standard generalized-zero carrier. Universally it forces b=B=0 in every finite-support bounded candidate, but a,d,Q_e times oscillatory modes, shell resonances, infinite sums, causal propagation, final residual states, observables and quantum transfer remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.d_times_ell2_extra",
             _scope(theory="Weyl-Maxwell target", carrier="homogeneous circumference velocity d crossed with the two extra-primary amplitudes in each parity", degree=2, parity="axial and polar", ell=2, m="all", k=0, omega="output omega_e^2=16/3"),
             {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
@@ -372,6 +385,15 @@ def build() -> dict[str, object]:
         raise AssertionError("complete finite-harmonic smooth theorem changed")
     if complete_finite["bounded_common_zero_locus_solved"]:
         raise AssertionError("complete finite theorem over-promoted the bounded cone")
+    standard_global_bounded = records["standard_global_bounded"]["classification"]
+    if not (
+        standard_global_bounded["complete_standard_generalized_zero_polynomial_ideal_classified"]
+        and standard_global_bounded["complete_standard_generalized_zero_bounded_cone_classified"]
+        and standard_global_bounded["universal_b_and_twist_velocity_elimination_on_complete_finite_carrier"]
+    ):
+        raise AssertionError("standard global bounded theorem changed")
+    if standard_global_bounded["complete_finite_bounded_common_zero_locus_solved"]:
+        raise AssertionError("standard global theorem over-promoted the complete bounded cone")
     if not records["aligned_twist_extra_coefficients"]["classification"]["aligned_twist_extra_L1_L3_block_coefficient_explicit"]:
         raise AssertionError("aligned twist--extra coefficient block changed")
     if records["aligned_twist_extra_coefficients"]["classification"]["complete_arbitrary_orbit_correction_coefficient_explicit"]:

@@ -1,0 +1,70 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_SECOND_ORDER",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "artifacts": {
+    "generator": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_standard_global_bounded_second_order.py",
+      "sha256": "74e2d29a1ef5ffb60a8eb7e6e814d8223cb749b2b6b9da105487266a7d8a62f1"
+    },
+    "certificate": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+      "sha256": "8d36197f365abf1fb5d923e15a5a5589da0f4881ebb9acc0d66cf688df2194b4"
+    },
+    "schema": {
+      "path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_standard_global_bounded_second_order.schema.json",
+      "sha256": "97568981f2b65bbdda66e9e59a557e842d669e3e2990877ff465d2a9a69738ad"
+    },
+    "independent_verifier": {
+      "path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_standard_global_bounded_second_order.py",
+      "sha256": "ed9321cf245e4675b7f3022e3456ddf4eb1e62a32928539aff8c29dc8b8e1f12"
+    },
+    "tests": {
+      "path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_standard_global_bounded_second_order.py",
+      "sha256": "ba6b9e722cac4f23d22640adf683c14ea66404c880f08fe38f469ddfd2d8db71"
+    },
+    "atlas_fragment": {
+      "path": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+      "sha256": "47e079cf6afdd334707d908fdbd29f6ac9ea9d5a0a277cc66e560545d8717bd0"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.12,
+      "max_rss_kb": 16228,
+      "commands": [
+        "python3 -m py_compile <scoped theorem and atlas Python paths>",
+        "python3 -m json.tool <scoped theorem schema, certificate and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.36,
+      "max_rss_kb": 58756,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_standard_global_bounded_second_order --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_standard_global_bounded_second_order.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_standard_global_bounded_second_order",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ],
+      "tests_run": 15
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "the direct homogeneous and twist source fixtures, SO3 orbit, global self-correction, moment maps, complete finite inventory and abstract bounded-cone theorem are unchanged exact inputs"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "a,d,Q_e oscillator cross-polynomials, the complete bounded cone, causal, all-orders, residual, observational and quantum gates remain excluded"
+    }
+  }
+}

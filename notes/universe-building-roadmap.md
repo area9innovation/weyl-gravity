@@ -1145,6 +1145,26 @@ generic subcarrier.  The bounded formula additionally contains independent
 polynomial-growth functionals `P_(j,r)` and shell-resonance functionals
 `R_(j,a)`; its common zero locus remains `OPEN`.
 
+The first complete bounded stratum is now classified.  On the full standard
+generalized-zero carrier `(a,b,c,d,Q_e,W_x;A,B)`, the homogeneous `E11`
+coefficient `(15/2)b^2 t^2` forces `b=0`, while the polar `L=2` tensor
+`STF(B tensor B)t^2` forces the complete twist-velocity vector `B=0`.
+The only remaining positive-degree global coefficient is `Q_e*a*t`.
+Intersecting with the compact moment maps then gives
+
+```text
+Z2_global^bounded={(c,d,W_x,A): c,d,W_x real, A in R^3}.
+```
+
+This surviving standard-global source has a time-independent correction.
+The two leading eliminations are also universal in the complete finite
+carrier: bounded oscillator products cannot cancel either zero-frequency
+`t^2` block, so every full bounded candidate already satisfies `b=B=0`.
+Atlas row `einstein.ph.wm.standard.global_bounded_cone` records the scoped
+theorem.  The active polynomial gate is now the residual `a,d,Q_e` times
+finite oscillatory carrier, followed by its intersection with the shell
+functionals `R_(j,a)`.
+
 This advances nonlinear input to the already activated compact-product
 linear bridge but does not certify a nonlinear relative morphism.  Atlas row
 `einstein.ph.wm.complete_finite_harmonic_smooth_cone` records the completed
