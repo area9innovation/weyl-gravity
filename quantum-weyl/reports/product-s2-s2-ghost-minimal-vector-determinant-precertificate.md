@@ -65,7 +65,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest \
   quantum-weyl/spectral/euclidean/tests/test_product_s2_s2_ghost_minimal_vector_determinant_precertificate.py
 ```
 
-The promotion receipt records 850 tests in 658.135 test seconds and 660.46
+The promotion receipt records 850 tests in 648.160 test seconds and 650.86
 wall seconds. The focused producer, independent verifier and scoped tests
 continue to check the strict nested schema, exact dependency hashes and
 directed-interval identities. The compatibility filename retains

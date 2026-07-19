@@ -27,8 +27,8 @@ evaluation of `-6 log(3)` therefore gives the coupled Schur-factor enclosure
 
 The historical 830-test run exposed stale Cartan, relative, Lorentzian and
 transfer receipts and correctly blocked promotion. After those receipts were
-reconciled, a fresh 850-test Tier-3 run passed in 658.135 test seconds and
-660.46 wall seconds with zero failures and zero errors. This promotes the
+reconciled, a fresh 850-test Tier-3 run passed in 648.160 test seconds and
+650.86 wall seconds with zero failures and zero errors. This promotes the
 selected special-background Schur factor to `COEFFICIENT_COMPUTED`. The full
 vector-plus-Schur flag remains the responsibility of the downstream
 minimal-vector assembly.

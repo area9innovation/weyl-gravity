@@ -97,7 +97,7 @@ Observed scoped timings for the regenerated affected chain were:
 | independent verifier | 0.08 s | pass |
 | 17-test weighted/assembly/minimal-vector chain | 37.69 s | pass |
 | historical full quantum Tier 3 (`830` tests) | 629.08 s | fail: 20 failures, 12 errors |
-| promotion full quantum Tier 3 (`850` tests) | 660.46 s wall / 658.135 s tests | pass |
+| promotion full quantum Tier 3 (`850` tests) | 650.86 s wall / 648.160 s tests | pass |
 
 Tier 3 was required because this result promotes two rows from `NOT_COMPUTED`.
 The historical failed run remains documented rather than reinterpreted as a

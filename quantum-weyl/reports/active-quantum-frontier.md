@@ -579,7 +579,7 @@ ran in 626.559 seconds, with 20 failures and 12 errors confined to stale
 pinned Cartan, relative, Lorentzian and transfer receipts outside the spectral
 package. That historical run remains recorded as a failure, not a pass.
 After the receipts were reconciled, a fresh 850-test Tier-3 run passed in
-658.135 test seconds and 660.46 wall seconds with zero failures and zero
+648.160 test seconds and 650.86 wall seconds with zero failures and zero
 errors. The weighted rows, coupled Schur factor and selected full
 vector-plus-Schur determinant are now `COEFFICIENT_COMPUTED` on the declared
 product background.

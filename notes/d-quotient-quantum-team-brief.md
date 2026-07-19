@@ -1361,8 +1361,8 @@ kernel. Its exact product spectrum, bivariate weighted finite-part rows,
 matched exceptional Schur factor, minimal-vector determinant and selected
 full vector-plus-Schur weighted logarithm are now computed on the
 `(k1,k2)=(1,2)` fixture. After the stale receipt chain was reconciled, the
-complete 850-test quantum Tier-3 suite passed in 658.135 test seconds and
-660.46 wall seconds. Those special-background rows are therefore
+complete 850-test quantum Tier-3 suite passed in 648.160 test seconds and
+650.86 wall seconds. Those special-background rows are therefore
 `COEFFICIENT_COMPUTED`; arbitrary-background finite Schur data remain open.
 
 Receipts:

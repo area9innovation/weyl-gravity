@@ -42,11 +42,11 @@ MP_IV_DPS = 70
 
 TIER3_PROMOTION_RECEIPT = {
     "command": "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl -p 'test_*.py' -q",
-    "repository_head_at_start": "a08fbf2d3337d7a7a0f61889390fd0e69e28083f",
-    "quantum_evidence_commit": "75ef69a24eb7ad7cd27fa05601270abff13aa947",
+    "repository_head_at_start": "65e1ada9c1cab1a27f88f9edff873bc9b8d1f418",
+    "quantum_evidence_commit": "65e1ada9c1cab1a27f88f9edff873bc9b8d1f418",
     "tests_run": 850,
-    "test_elapsed_seconds": "658.135",
-    "wall_elapsed_seconds": "660.46",
+    "test_elapsed_seconds": "648.160",
+    "wall_elapsed_seconds": "650.86",
     "failures": 0,
     "errors": 0,
     "status": "PASSED",
