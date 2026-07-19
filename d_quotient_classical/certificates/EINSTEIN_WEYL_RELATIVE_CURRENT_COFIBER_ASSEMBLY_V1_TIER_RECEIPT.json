@@ -1,0 +1,39 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1_TIER_RECEIPT",
+  "artifact": {
+    "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1.json",
+    "sha256": "1fc80971388e4442aff3e9b7e88362e2018d80c7164262918619e436d4a4711a"
+  },
+  "source_manifest": {
+    "d_quotient_classical/schema/relative-current-cofiber-assembly-v1.schema.json": "b63571c7eb832f987ccfd716a86f125fb598b7f29052bfad1597f11709345a3d",
+    "d_quotient_classical/relative/einstein_weyl_relative_current_cofiber_assembly.py": "e51aa2d647d68cb14605993ccac2f63696d97bc419085a1dcb48551000f8ca05",
+    "d_quotient_classical/relative/verify_einstein_weyl_relative_current_cofiber_assembly.py": "97be8a4fdeb83223414c3f912424bd59378d72ecd1e6e5992b209be35e399c92",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_current_cofiber_assembly.py": "84131365e5228d519f5fde5cef38edc6308fe3a4d0e8f45ab5d5264ecf5ca60b",
+    "d_quotient_classical/reports/einstein-weyl-relative-current-cofiber-assembly.md": "1553895bcd2f06a84bf49e5245731d10ff061333b3fa729b904896b7148b4068"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": ["python source compilation", "strict Draft 2020-12 schema validation", "git diff --check"]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {"command": "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_current_cofiber_assembly --check --guards", "elapsed_seconds": 0.19, "max_rss_kb": 24016},
+        {"command": "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_current_cofiber_assembly", "elapsed_seconds": 0.12, "max_rss_kb": 23340},
+        {"command": "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_current_cofiber_assembly", "elapsed_seconds": 0.13, "max_rss_kb": 24864},
+        {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-current-cofiber-assembly-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1.json", "elapsed_seconds": 1.25, "max_rss_kb": 201984}
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "All imported operators are content-addressed and unchanged; this delivery composes their certified interfaces without altering a shared mathematical input."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No theorem freeze, shared core-algebra change or release was requested."
+    }
+  },
+  "claim_boundary": "The receipt covers the 128-row block-diagonal assembly and its fail-closed projection argument. It does not certify a full relative f2, arity three, causal transport, observables or quantum transfer."
+}

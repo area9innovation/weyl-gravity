@@ -51,6 +51,7 @@ CERTS = {
     "relative_green_lee_wald_improvement": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1.json",
     "relative_cyclic_five_current_cone": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1.json",
     "relative_global_five_charge_replay": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_GLOBAL_FIVE_CHARGE_REPLAY_V1.json",
+    "relative_current_cofiber_assembly": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -400,6 +401,8 @@ def entries() -> list[dict[str, Any]]:
     relative_cyclic_current_cone_scope = relative_cyclic_current_cone["scope"]
     relative_global_charge_replay = json.loads(CERTS["relative_global_five_charge_replay"].read_text())
     relative_global_charge_replay_scope = relative_global_charge_replay["scope"]
+    relative_current_cofiber_assembly = json.loads(CERTS["relative_current_cofiber_assembly"].read_text())
+    relative_current_cofiber_assembly_scope = relative_current_cofiber_assembly["scope"]
     identity_cyclic_scope = json.loads(CERTS["identity_cyclic_obstruction"].read_text())["scope"]
     return [
         {
@@ -862,6 +865,24 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("relative_global_five_charge_replay", "relative_cyclic_five_current_cone", "relative_complete_standard_charge_q2", "relative_f2_taub_obstruction"),
             "claim_boundary": "This LOCAL-ALGEBRAIC plus REDUCED-MODE row uses exactness of the positive-contact variational-bicomplex row to obtain a smooth global improvement, whose closed-slice integral vanishes, and then replays all four complete standard blocks into H,P_x,J_1,J_2,J_3. It does not claim that the serialized Laurent coordinate primitive is itself global, turn Cauchy integration into a support-local map, repair f2, include target-only extra-Weyl inputs, solve a tangent cone, authorize arity three, or establish causal, observational, particle or quantum equivalence.",
+        },
+        {
+            "id": "nonlinear.product.bridge2.relative_current_cofiber_assembly",
+            "scope": relative_current_cofiber_assembly_scope,
+            "descriptions": {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OBSTRUCTED", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OBSTRUCTED", "The five-charge homotopy-moment-map receiver is complete, but block projection preserves the direct full-domain f2 obstruction."),
+                    ("OPEN", "The assembly does not decide a smooth-secular derived source pullback or a nonzero cross incidence."),
+                    ("NO_CERTIFIED_MAP", "No causal relative functor has been constructed on the assembled carrier."),
+                ),
+                dispersion=("NOT_APPLICABLE", "This is a typed derived receiver and projection theorem, not a dispersion calculation."),
+                pairing=("CERTIFIED", "The 50-row current summand is cyclic; the full relative triangle retains its three distinct forms and is not relabeled cyclic."),
+                taub=("CERTIFIED", "The local current descent and closed-slice integration reproduce all five moment-map Hessians in the Koszul receiver."),
+                resonance=("OBSTRUCTED", "Projection to the original Weyl target leaves the nonzero constant-lapse Taub obstruction unchanged."),
+            ),
+            "evidence": _evidence("relative_current_cofiber_assembly", "relative_global_five_charge_replay", "relative_charge_koszul_preflight", "relative_f2_taub_obstruction"),
+            "claim_boundary": "The 78-row support-local unary mapping cofiber and 50-row cyclic current cone form a square-zero 128-row block-diagonal receiver. It exactly represents the five stabilizer-charge projection and its Koszul derived zero locus, but projecting any candidate f2 back to the Weyl summand reproduces the obstructed direct equation. A typed cross incidence, derived source pullback, modified unary map or different background is still required; arity three, causal, observational, particle and quantum claims remain false.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction",

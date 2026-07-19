@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-current-cofiber-assembly-v1.schema.json",
+  "title": "Pure-Weyl relative current/cofiber assembly certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_status",
+    "dependency_tags", "scope", "dependencies", "unary_assembly",
+    "homotopy_moment_map_square", "projection_argument", "classification",
+    "next_gate", "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-current-cofiber-assembly-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1"},
+    "result_state": {"const": "LOCAL_HOMOTOPY_MOMENT_MAP_RECEIVER_ASSEMBLED_DIRECT_F2_OBSTRUCTION_PRESERVED"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array", "minItems": 2, "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]}
+    },
+    "scope": {"$ref": "#/$defs/stringObject"},
+    "dependencies": {
+      "type": "object", "minProperties": 8,
+      "additionalProperties": {"$ref": "#/$defs/artifact"}
+    },
+    "unary_assembly": {
+      "type": "object", "additionalProperties": false,
+      "required": ["construction", "mapping_cofiber_degree_dimensions", "mapping_cofiber_rows", "current_cone_degree_dimensions", "current_cone_rows", "assembled_rows", "square_zero", "support_local", "current_summand_cyclic", "whole_assembly_standard_pairing_cyclic", "whole_pairing_reason"],
+      "properties": {
+        "construction": {"type": "string"},
+        "mapping_cofiber_degree_dimensions": {"const": [5, 20, 28, 19, 6]},
+        "mapping_cofiber_rows": {"const": 78},
+        "current_cone_degree_dimensions": {"const": [5, 20, 20, 5]},
+        "current_cone_rows": {"const": 50},
+        "assembled_rows": {"const": 128},
+        "square_zero": {"const": true},
+        "support_local": {"const": true},
+        "current_summand_cyclic": {"const": true},
+        "whole_assembly_standard_pairing_cyclic": {"const": false},
+        "whole_pairing_reason": {"type": "string", "minLength": 20}
+      }
+    },
+    "homotopy_moment_map_square": {
+      "type": "object", "additionalProperties": false,
+      "required": ["local_operation", "local_identity", "on_shell_consequence", "global_map", "global_identity", "koszul_receiver", "constant_u1_output", "charge_basis", "charge_projected_arity_two_descent_exact"],
+      "properties": {
+        "local_operation": {"type": "string"}, "local_identity": {"type": "string"},
+        "on_shell_consequence": {"type": "string"}, "global_map": {"type": "string"},
+        "global_identity": {"type": "string"}, "koszul_receiver": {"type": "string"},
+        "constant_u1_output": {"const": false},
+        "charge_basis": {"const": ["H", "P_x", "J_1", "J_2", "J_3"]},
+        "charge_projected_arity_two_descent_exact": {"const": true}
+      }
+    },
+    "projection_argument": {"$ref": "#/$defs/stringObject"},
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mapping_cofiber_and_current_receiver_assembled", "assembled_unary_square_zero", "assembled_support_local", "five_charge_homotopy_moment_map_exact", "charge_projected_arity_two_descent_exact", "global_current_to_koszul_charge_replay_exact", "direct_support_local_map_to_constant_charge_fibre", "full_relative_arity_two_morphism_constructed", "direct_f2_obstruction_preserved", "whole_assembly_standard_pairing_cyclic", "arity_three_authorized", "causal_observable_particle_or_quantum_claim"],
+      "properties": {
+        "mapping_cofiber_and_current_receiver_assembled": {"const": true},
+        "assembled_unary_square_zero": {"const": true},
+        "assembled_support_local": {"const": true},
+        "five_charge_homotopy_moment_map_exact": {"const": true},
+        "charge_projected_arity_two_descent_exact": {"const": true},
+        "global_current_to_koszul_charge_replay_exact": {"const": true},
+        "direct_support_local_map_to_constant_charge_fibre": {"const": false},
+        "full_relative_arity_two_morphism_constructed": {"const": false},
+        "direct_f2_obstruction_preserved": {"const": true},
+        "whole_assembly_standard_pairing_cyclic": {"const": false},
+        "arity_three_authorized": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 20},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 8}}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "stringObject": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {"type": "string"}
+    }
+  }
+}

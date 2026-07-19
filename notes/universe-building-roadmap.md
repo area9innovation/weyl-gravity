@@ -1761,6 +1761,18 @@ concrete observer fixture remains the Berger relational observable and
 operational redshift rail, using only the domain that survives the nonlinear
 and causal gates.  It must not duplicate the Einstein map or the Green
 construction.
+
+The post-obstruction current receiver is also classified exactly.
+`EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1` direct-sums the 78-row
+unary mapping cofiber with the 50-row cyclic five-current cone.  This gives a
+support-local square-zero 128-row homotopy-moment-map receiver whose global
+descent is the five-generator Koszul derived zero locus.  It does not repair
+the full relative morphism: block projection reproduces the certified direct
+\(f_2\) Taub obstruction.  The fail-closed repair alternatives are a typed
+cross-incidence, a derived source pullback, a modified unary/endpoint map or a
+different background.  The independent linear observable-functor gate may
+proceed without waiting for one of those nonlinear repairs.
+
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains
 `NO_CERTIFIED_MAP`; the relative functor may be prepared but Bridge 1 is not

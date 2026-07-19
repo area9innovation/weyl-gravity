@@ -550,6 +550,21 @@ witness; its polar-chart smoothness is not asserted.  The direct support-local
 map into constant charge rows remains obstructed, and no \(f_2\) repair or
 arity-three promotion follows.
 
+`EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1` now performs the typed
+post-replay assembly.  The 78-row support-local unary mapping cofiber and the
+50-row cyclic five-current cone form a 128-row block-diagonal complex.  The
+local current operation, its exact divergence, closed-slice integral and the
+five-generator Koszul differential form the complete homotopy-moment-map
+receiver for the stabilizer-charge projection.  This is not the missing
+relative \(f_2\): if \(f'_2=(a,b)\) takes values in the enlarged direct sum,
+projection onto the original Weyl target gives the unchanged equation
+\([q_{1,W},a]=-\Delta_2\), where the constant-lapse Taub witness remains
+nonzero.  The current cone records and globalizes the obstruction but cannot
+cancel it without a nonzero typed cross-incidence or a genuinely derived
+source pullback.  Direct \(f_2\) and arity three remain fail-closed.  The
+classical lane therefore advances to the linear relative observable pullback;
+any nonlinear repair is a separate architecture gate.
+
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.
 The finite covariant HPL series and unique normalized degree-one correction
