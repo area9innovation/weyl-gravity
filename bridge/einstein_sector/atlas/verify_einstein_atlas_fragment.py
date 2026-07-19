@@ -538,7 +538,7 @@ def verify() -> None:
         raise AssertionError("scalar L1 ideals were hidden")
     if scalar_l1["mode_data"]["taub_maps"]["status"] != "OPEN" or scalar_l1_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or scalar_l1_second["smooth_secular"]["status"] != "OPEN" or scalar_l1_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("scalar L1 correction classes were merged")
-    if "eleven fibrewise ideals remain" not in scalar_l1["claim_boundary"] or "two-fibre tangent cone" not in scalar_l1["claim_boundary"]:
+    if "nine fibrewise ideals remain" not in scalar_l1["claim_boundary"] or "two-fibre tangent cone" not in scalar_l1["claim_boundary"]:
         raise AssertionError("scalar L1 theorem exceeded scope")
     candidate4 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_l4_zero_variety"]
     candidate4_second = candidate4["mode_data"]["second_order"]
@@ -548,8 +548,20 @@ def verify() -> None:
         raise AssertionError("candidate-4 L4 decomposition was hidden")
     if candidate4["mode_data"]["taub_maps"]["status"] != "OPEN" or candidate4_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or candidate4_second["smooth_secular"]["status"] != "OPEN" or candidate4_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("candidate-4 L4 correction classes were merged")
-    if "eleven fibrewise ideals remain" not in candidate4["claim_boundary"] or "two-fibre tangent cone" not in candidate4["claim_boundary"]:
+    if "nine fibrewise ideals remain" not in candidate4["claim_boundary"] or "two-fibre tangent cone" not in candidate4["claim_boundary"]:
         raise AssertionError("candidate-4 L4 theorem exceeded scope")
+    doublet_l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_target_doublet_l3_zero_varieties"]
+    doublet_l3_second = doublet_l3["mode_data"]["second_order"]
+    if doublet_l3["descriptions"]["nonlinear"] != "OPEN" or "Candidates 1 and 16 remain two separately tuned" not in doublet_l3["mode_data"]["dispersion"]["statement"]:
+        raise AssertionError("target-doublet L3 fibre scopes were hidden")
+    if "four target-adjoint rows reduce exactly to two first-transvectant equations" not in doublet_l3["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("target-doublet L3 normal form was hidden")
+    if doublet_l3["mode_data"]["resonance"]["status"] != "CERTIFIED" or "irreducible complex dimension-12" not in doublet_l3["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("target-doublet L3 ideals were hidden")
+    if doublet_l3["mode_data"]["taub_maps"]["status"] != "OPEN" or doublet_l3_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or doublet_l3_second["smooth_secular"]["status"] != "OPEN" or doublet_l3_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("target-doublet L3 correction classes were merged")
+    if "nine fibrewise ideals remain" not in doublet_l3["claim_boundary"] or "two-fibre tangent cone" not in doublet_l3["claim_boundary"]:
+        raise AssertionError("target-doublet L3 theorem exceeded scope")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]
     if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:

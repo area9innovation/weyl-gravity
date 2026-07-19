@@ -103,6 +103,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_scalar_L3_zero_variety": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L3_zero_variety.json",
     "ell2_two_abs_momentum_scalar_L1_zero_varieties": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L1_zero_varieties.json",
     "ell2_two_abs_momentum_candidate4_L4_zero_variety": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_L4_zero_variety.json",
+    "ell2_two_abs_momentum_target_doublet_L3_zero_varieties": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_target_doublet_L3_zero_varieties.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
@@ -963,8 +964,8 @@ def entries() -> list[dict[str, object]]:
             ("OPEN","The five stabilizer moment maps and same-fibre quadratic sources have not been restricted to these three varieties."),
             ("CERTIFIED","Each complete all-m resonance variety is one irreducible complex dimension-14 Cartesian product of two third-transvectant kernels; the exact rank-drop and elimination ideals are certified."),
             _second_order(("OPEN","Complete resonance ideals are necessary but not sufficient for bounded extension; same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on these varieties."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
-            _evidence("ell2_two_abs_momentum_scalar_L1_zero_varieties","ell2_two_abs_momentum_scalar_L3_zero_variety","ell2_two_abs_momentum_scalar_L4_zero_varieties","ell2_two_abs_momentum_candidate4_L4_zero_variety","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
-            "This classifies all three scalar L1 resonance ideals. Together with the separately certified six earlier fibres and candidate 4, eleven fibrewise ideals remain; the two-fibre tangent cone is still open. Same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
+            _evidence("ell2_two_abs_momentum_scalar_L1_zero_varieties","ell2_two_abs_momentum_scalar_L3_zero_variety","ell2_two_abs_momentum_scalar_L4_zero_varieties","ell2_two_abs_momentum_candidate4_L4_zero_variety","ell2_two_abs_momentum_target_doublet_L3_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
+            "This classifies all three scalar L1 resonance ideals. Together with the separately certified earlier fibres, candidate 4 and candidates 1/16, nine fibrewise ideals remain; the two-fibre tangent cone is still open. Same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_l4_zero_variety",
@@ -975,8 +976,20 @@ def entries() -> list[dict[str, object]]:
             ("OPEN","The five stabilizer moment maps and same-fibre quadratic sources have not been restricted to these four components."),
             ("CERTIFIED","The complete all-m resonance variety has exactly four ten-dimensional linear components over C: two one-fibre-zero planes and the two real mixed sheets with common parity ratio plus or minus sqrt(3)."),
             _second_order(("OPEN","The resonance variety is decomposed, but same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on the four components."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
-            _evidence("ell2_two_abs_momentum_candidate4_L4_zero_variety","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
-            "This classifies the candidate-4 target-doublet L4 resonance ideal. Together with the separately certified scalar classes, eleven fibrewise ideals remain; the two-fibre tangent cone, same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
+            _evidence("ell2_two_abs_momentum_candidate4_L4_zero_variety","ell2_two_abs_momentum_target_doublet_L3_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
+            "This classifies the candidate-4 target-doublet L4 resonance ideal. Together with the separately certified scalar and target-doublet L3 classes, nine fibrewise ideals remain; the two-fibre tangent cone, same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_two_abs_momentum_target_doublet_l3_zero_varieties",
+            _scope(theory="Weyl-Maxwell target", boundaries="candidate-1 and candidate-16 closed S1_L times S2 circumference fibres; before final residual quotient", carrier="complete scalar-input target-doublet all-m cross-|n| resonance varieties", degree=2, parity="axial and polar amplitudes on both momentum fibres", ell="input 2 x 2; output L=3", m="all magnetic components through the first binary-quartic transvectant", k="candidate-specific signed |n|=1 and |n|=2 momenta", omega="positive-frequency SUM channel", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","Candidates 1 and 16 remain two separately tuned physical circumference fibres; the shared normal form does not identify their backgrounds."),
+            ("CERTIFIED","In both fibres the four target-adjoint rows reduce exactly to two first-transvectant equations, with a real invertible sqrt(3) parity transform."),
+            ("OPEN","The five stabilizer moment maps and same-fibre quadratic sources have not been restricted to these determinantal cones."),
+            ("CERTIFIED","Each complete all-m resonance variety is one irreducible complex dimension-12 product of two rank-at-most-one 5-by-2 determinantal cones."),
+            _second_order(("OPEN","The resonance ideals are complete, but same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on these cones."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_target_doublet_L3_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
+            "This classifies candidates 1 and 16 only. Together with the separately certified eight earlier fibres, nine fibrewise ideals remain; the two-fibre tangent cone, same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
@@ -1679,6 +1692,28 @@ def build() -> dict[str, object]:
         or candidate4["causal_or_quantum_claim"]
     ):
         raise AssertionError("candidate-4 target-doublet theorem exceeded scope")
+    doublet_l3_value = records["ell2_two_abs_momentum_target_doublet_L3_zero_varieties"]
+    doublet_l3 = doublet_l3_value["classification"]
+    doublet_l3_summary = doublet_l3_value["summary"]
+    if not (
+        doublet_l3["both_target_doublet_L3_zero_varieties_classified"]
+        and doublet_l3["all_m_irreducible_decomposition_classified"]
+        and doublet_l3["target_rows_reduced_exactly"]
+        and doublet_l3_summary["classified_physical_fibres"] == 2
+        and doublet_l3_summary["dimension_per_fibre_over_C"] == 12
+        and doublet_l3_summary["irreducible_components_per_fibre_over_C"] == 1
+        and [item["candidate_index"] for item in doublet_l3_value["decompositions"]] == [1, 16]
+    ):
+        raise AssertionError("target-doublet L3 zero varieties changed")
+    if (
+        doublet_l3["other_nineteen_parent_fibre_zero_varieties_classified"]
+        or doublet_l3["same_fibre_quadratic_sources_classified"]
+        or doublet_l3["taub_common_zero_intersection_classified"]
+        or doublet_l3["complete_two_fibre_tangent_cone_classified"]
+        or doublet_l3["smooth_secular_classified"]
+        or doublet_l3["causal_or_quantum_claim"]
+    ):
+        raise AssertionError("target-doublet L3 theorem exceeded scope")
     if l3["arbitrary_amplitude_zero_variety_classified"] or l3["causal_or_quantum_claim"]:
         raise AssertionError("nonaxisymmetric L3 matrix exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:

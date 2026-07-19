@@ -2120,7 +2120,7 @@ all-`m` zero variety has exactly four real ten-complex-dimensional linear
 components: two one-fibre-zero planes and two mixed sheets with common parity
 ratio `+sqrt(3)` or `-sqrt(3)`.  The corresponding atlas row certifies only
 this resonance ideal.  After also closing the three scalar `L=1` ideals,
-eleven ideals, same-fibre sources, Taub intersection,
+nine ideals remain after the candidate-1/16 closure below; same-fibre sources, Taub intersection,
 bounded and smooth-secular classes remain `OPEN`; causal correction remains
 `NO_CERTIFIED_MAP`.
 
@@ -2132,10 +2132,23 @@ exactly the irreducible square-quartic cone, while rank at most one is
 supported only at zero.  The resulting height-three complete intersection is
 irreducible of dimension seven, so each physical parity product is
 irreducible of dimension 14 in ambient dimension 20.  The generated atlas
-combines these three fibres with candidate 4 and the earlier six complete
-ideals, leaving eleven fibrewise ideals `OPEN`.  Same-fibre sources, the five
+combines these three fibres with candidate 4, candidates 1/16 and the earlier
+six complete ideals, leaving nine fibrewise ideals `OPEN`.  Same-fibre sources, the five
 Taub maps, bounded and smooth-secular classes remain `OPEN`; causal correction
 remains `NO_CERTIFIED_MAP`.
+
+Candidates 1 and 16 complete the two scalar-input target-doublet `L=3`
+resonance ideals.  All four target-adjoint rows collapse exactly to the
+same-parity equation of ratio `-3` and the cross-parity equation of ratio
+`-1`.  A real invertible `sqrt(3)` parity transform gives two independent
+first-transvectant equations.  Their kernels are rank-at-most-one `5 x 2`
+determinantal cones, making each all-`m` variety irreducible of complex
+dimension 12 in ambient dimension 20.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_target_doublet_l3_zero_varieties`
+certifies these two ideals without merging their distinct backgrounds.  Nine
+fibrewise ideals remain `OPEN`; same-fibre sources, Taub intersection and
+bounded or smooth-secular correction classes remain `OPEN`, while causal
+correction remains `NO_CERTIFIED_MAP`.
 
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at

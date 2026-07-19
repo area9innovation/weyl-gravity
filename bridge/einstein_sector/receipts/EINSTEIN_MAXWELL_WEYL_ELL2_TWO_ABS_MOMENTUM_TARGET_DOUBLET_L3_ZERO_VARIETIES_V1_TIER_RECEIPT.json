@@ -1,0 +1,49 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_TARGET_DOUBLET_L3_ZERO_VARIETIES_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact all-m irreducible decomposition of the candidate-1/16 scalar-input target-doublet L3 cross-fibre resonance zero varieties.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_target_doublet_L3_zero_varieties.json": "1d66fbb93d452997c0ed47bd9e32cf6746d858d706d526c7df62d25f0c937f24",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_target_doublet_L3_zero_varieties.py": "3678f5006014ac40b6217f806dc17ed8f3f74b8bca344e5ef3d788b473c9500d",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_target_doublet_L3_zero_varieties.schema.json": "b67fbfb17ccbef91e38d43e3d152ccbc5f731c330245ea26d8f6dca11723a667",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_target_doublet_L3_zero_varieties.py": "33239873cdb93e7a2937a0fc1d5ae74f0a32817730b02067b41f8d45de542580",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_target_doublet_L3_zero_varieties.py": "026067b0a5c6e4c25fc1de597b030eb62963d670c870a63db21a910d821d27f6",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-target-doublet-L3-zero-varieties.md": "cbf6674da136d3d209e55471a7e511eae422a33808f2fe0f2f8528a76c67e160"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds_independent_verifier": 6.39,
+      "independent_verifier_max_rss_kib": 63688,
+      "tests_run": 76,
+      "commands": [
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_ell2_two_abs_momentum_target_doublet_L3_zero_varieties",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_target_doublet_L3_zero_varieties",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 5.74,
+      "max_rss_kib": 59724,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_two_abs_momentum_target_doublet_L3_zero_varieties --write",
+      "reason": "The producer selects candidates 1 and 16, proves all exact target-row ratios and nonvanishing witnesses, and exports the real first-transvectant determinantal normal form."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This classifies two parent resonance ideals, not the other parent fibres, same-fibre sources, Taub intersections, complete tangent cone or shared-core algebra."
+    }
+  },
+  "claim_boundary": "This certificate classifies candidates 1 and 16, two of the twenty-one parent amplitude fibres. Aggregate progress is recorded in the generated atlas. Same-fibre sources, five Taub maps, complete bounded and smooth-secular tangent cones, causal maps, residual observables and quantum claims remain OPEN or NO_CERTIFIED_MAP."
+}

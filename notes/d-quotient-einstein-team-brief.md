@@ -3514,7 +3514,7 @@ linear components: the two one-fibre-zero planes and two real mixed sheets
 with common parity ratio `+sqrt(3)` or `-sqrt(3)`.  Atlas row
 `einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_l4_zero_variety`
 marks this resonance decomposition `CERTIFIED`; after also closing the three
-scalar `L=1` ideals, eleven cross-fibre ideals remain.  Their
+scalar `L=1` ideals and candidates 1/16 below, nine cross-fibre ideals remain.  Their
 same-fibre sources, Taub join and correction classes remain fail-closed.
 
 All three scalar-internal `L=1` difference fibres, candidates `14,17,20`,
@@ -3527,10 +3527,22 @@ strata have dimensions `7,6,5`, and unmixedness of the height-three complete
 intersection proves that each transvectant kernel is irreducible of dimension
 7.  Hence each physical zero variety is one irreducible dimension-14 product
 inside dimension 20.  The scalar certificate remains theorem-local; the
-generated atlas combines it with candidate 4 and the earlier six classified
-fibres, leaving eleven fibrewise ideals `OPEN`.  Same-fibre sources, the five
+generated atlas combines it with candidate 4, candidates 1/16 and the earlier
+six classified fibres, leaving nine fibrewise ideals `OPEN`.  Same-fibre sources, the five
 Taub maps, bounded and smooth-secular corrections remain `OPEN`; causal
 correction remains `NO_CERTIFIED_MAP`.
+
+Candidates 1 and 16 now close the two scalar-input target-doublet `L=3`
+ideals.  In both separately tuned circumference fibres, the four adjoint rows
+have exact ratios `c_pp=-3 c_aa` and `c_pa=-c_ap`, with every controlling
+coefficient nonzero.  The real `sqrt(3)` parity transform reduces them to
+`T1(U_minus,V_plus)=0` and `T1(U_plus,V_minus)=0`.  Each first-transvectant
+kernel is a rank-at-most-one `5 x 2` determinantal cone of dimension six, so
+each physical zero variety is one irreducible dimension-12 product in ambient
+dimension 20.  The shared normal form does not identify the two backgrounds.
+The atlas marks only their resonance ideals `CERTIFIED`; nine fibrewise
+ideals, same-fibre sources, Taub join and correction classes remain
+fail-closed.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
