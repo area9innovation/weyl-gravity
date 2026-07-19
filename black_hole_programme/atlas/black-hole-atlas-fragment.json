@@ -437,7 +437,7 @@
       }
     },
     {
-      "claim_boundary": "operator-level Ricci-Bach composition only (Schwarzschild, l=2): Zerilli benchmark, Einstein-kernel polar flux, and endpoint disposition all OPEN; the polar Ricci-carrier image has its own entry",
+      "claim_boundary": "Schwarzschild (symbolic m), polar l=2, omega != 0: Einstein-kernel two-dimensionality and horizon benchmark certified; Zerilli-form master scalar, Einstein-kernel polar flux, and endpoint disposition all OPEN; the polar Ricci-carrier image has its own entry",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
@@ -450,12 +450,17 @@
           "path": "black_hole_programme/certificates/BH2B_POLAR_SPLIT.json",
           "result_id": "PURE_WEYL_BH2B_POLAR_SPLIT",
           "sha256": "1c84cd014d31e1f97b6489ef083d5e81bcf83ba08eb9aa749c19931e60d5b8d5"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH2B_POLAR_EINSTEIN.json",
+          "result_id": "PURE_WEYL_BH2B_POLAR_EINSTEIN",
+          "sha256": "df58e1c00ef75450602009ec07f490fe594d1223a5fd54376d150e563cfe9780"
         }
       ],
       "id": "bh.mode.polar",
       "mode_data": {
         "dispersion": {
-          "statement": "polar l=2 rows derived; Ricci-Bach composition delta B = (1/2) Box dRic + C.dRic - (1/6) grad grad dR - (1/12) g Box dR certified componentwise: the Einstein kernel injects and the realized Ricci image obeys a trace-coupled second-order Lichnerowicz system; no canonical metric direct sum is inferred",
+          "statement": "polar l=2 rows derived; Ricci-Bach composition delta B = (1/2) Box dRic + C.dRic - (1/6) grad grad dR - (1/12) g Box dR certified componentwise: the Einstein kernel injects and the realized Ricci image obeys a trace-coupled second-order Lichnerowicz system; no canonical metric direct sum is inferred; the Einstein kernel itself is reduced EXACTLY to the 2-dim first-order system dY/dr = M(r) Y, Y = (K, H1) (H2 = H0 forced, H0 algebraic), with horizon benchmark in adapted variables: t-chart exponents {+-2imw}, ingoing {0, -4imw} matching the axial RW benchmark; the Schroedinger-form master scalar remains fail-closed OPEN",
           "status": "CERTIFIED"
         },
         "lee_wald": {
@@ -687,7 +692,7 @@
     }
   ],
   "generated_by": "black_hole_programme/atlas/generate_atlas_fragment.py",
-  "generated_by_sha256": "67e8c0deb265df687377fab78d45be3f07b0316d87a917a706002219c2aeccfd",
+  "generated_by_sha256": "de8715c58b1dd03edcd064dde3cb77095720d467c771fce9abeff6247a4ac994",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

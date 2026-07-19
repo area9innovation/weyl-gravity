@@ -1,0 +1,91 @@
+{
+  "bach_kernel": "delta Ric = 0 implies delta B = 0 exactly by the certified general split identity (BH-2B stage 1)",
+  "claim_flags": {
+    "bach_kernel_injection_certified": true,
+    "causal_exclusion_decided": false,
+    "flux_or_sign_certified": false,
+    "general_l_certified": false,
+    "growth_or_stability_certified": false,
+    "h2_equals_h0_certified": true,
+    "horizon_benchmark_certified": true,
+    "master_scalar_certified": false,
+    "omega_zero_classified": false,
+    "outer_boundary_domain_certified": false,
+    "polar_einstein_reduction_certified": true,
+    "two_dimensionality_certified": true
+  },
+  "declaration": {
+    "background_family": "Schwarzschild (symbolic m)",
+    "conformal_frame": "working gauge; t-chart RW polar gauge, x = cos theta",
+    "frequency_domain": "omega != 0 Fourier modes",
+    "generator": "not used; mode-level statements only",
+    "horizon_condition": "regular-singular residue analysis at r = 2m in horizon-adapted variables (K, B H1)",
+    "infinity_condition": "none imposed",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "none; no flux or pairing claim",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd (Einstein branch: delta Ric = 0 modes of the split)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "horizon_analysis": {
+    "adapted_variables": "(K, B H1); raw (K, H1) has a double pole (t-chart artifact)",
+    "benchmark": "identical to the certified axial Regge-Wheeler benchmark: a one-parameter ingoing-regular polar Einstein family",
+    "ingoing_spectrum": [
+      "0",
+      "-4*I*m*omega"
+    ],
+    "t_chart_spectrum": [
+      "2*I*m*omega",
+      "-2*I*m*omega"
+    ]
+  },
+  "master_scalar": {
+    "statement": "no Schroedinger-form master combination psi = a K + b H1 with omega-independent potential was found within the searched bounded rational ansatz classes (poly/(r(3m+2r)) and poly/(r(3m+2r)^2) with and without omega^2 numerator terms; inverse metric-reconstruction ansatz poly/(3m+2r), i*omega*poly/((3m+2r)(r-2m))); the anchor remains fail-closed OPEN and no result here depends on it",
+    "status": "OPEN"
+  },
+  "missing_objects": [
+    "Schroedinger-form polar master scalar with omega-free potential (Zerilli anchor)",
+    "polar bilinear symplectic flux matrix and Lee-Wald signs",
+    "outer-boundary operator domains and falloff classification (polar)",
+    "causal disposition of the polar sector",
+    "general l; omega = 0 static sector; growth/stability data"
+  ],
+  "provenance": {
+    "bh2b_split_certificate": "black_hole_programme/certificates/BH2B_POLAR_SPLIT.json",
+    "bh2b_split_certificate_sha256": "1c84cd014d31e1f97b6489ef083d5e81bcf83ba08eb9aa749c19931e60d5b8d5",
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh2b_polar_einstein.py"
+  },
+  "reduction": {
+    "H0_algebraic": "(-3*m**2*omega*r*K(r) - 6*I*m**2*H1(r) + 2*I*m*omega**2*r**3*H1(r) - 3*m*omega*r**2*K(r) + 3*I*m*r*H1(r) - omega**3*r**5*K(r) - I*omega**2*r**4*H1(r) + 2*omega*r**3*K(r))/(-6*m**2*omega*r - m*omega*r**2 + 2*omega*r**3)",
+    "M": [
+      [
+        "(6*m**2 - omega**2*r**4)/(-6*m**2*r - m*r**2 + 2*r**3)",
+        "(-6*I*m - I*omega**2*r**3 - 6*I*r)/(3*m*omega*r**2 + 2*omega*r**3)"
+      ],
+      [
+        "(-9*I*m**2*omega*r - 4*I*m*omega*r**2 - I*omega**3*r**5 + 4*I*omega*r**3)/(12*m**3 - 4*m**2*r - 5*m*r**2 + 2*r**3)",
+        "(-6*m**2 - 7*m*r + omega**2*r**4)/(-6*m**2*r - m*r**2 + 2*r**3)"
+      ]
+    ],
+    "dimension": "exactly 2 per (l = 2, omega != 0)",
+    "gauge": "RW polar gauge h = (B H0, H1, H2/B, K) x P2 e^{i omega t}",
+    "system": "dY/dr = M(r) Y, Y = (K, H1); H0 algebraic in (K, H1); all seven delta-Ric rows are consequences (verified identically)",
+    "w_sector": "traceless angular row = (H0 - H2)/2: H2 = H0 forced"
+  },
+  "result_id": "PURE_WEYL_BH2B_POLAR_EINSTEIN",
+  "result_token": "BH2B_POLAR_EINSTEIN_BRANCH_REDUCED_TWO_DIMENSIONAL",
+  "schema": "pure-weyl-bh2b-polar-einstein-v1",
+  "schema_path": "black_hole_programme/schema/bh2b-polar-einstein-v1.schema.json",
+  "schema_sha256": "1a9df1c04b1ade6b9b1ed33657d15d0e970f9cc4d6af2985bd40b2913640b751",
+  "stage_seconds": {
+    "horizon": 0.6,
+    "reduction": 17.0,
+    "rows": 10.2,
+    "total": 28.2
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2b_polar_einstein.py"
+}

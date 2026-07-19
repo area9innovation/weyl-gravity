@@ -46,6 +46,7 @@ CERTS = {
     "BH2AD": PKG / "certificates" / "BH2A_CAUSAL_DISPOSITION.json",
     "BH2BP": PKG / "certificates" / "BH2B_POLAR_SPLIT.json",
     "BH2BR": PKG / "certificates" / "BH2B_POLAR_REACH.json",
+    "BH2BE": PKG / "certificates" / "BH2B_POLAR_EINSTEIN.json",
 }
 
 
@@ -284,15 +285,15 @@ def entries():
         "mode_data": {
             "dispersion": _gated(
                 "CERTIFIED",
-                "polar l=2 rows derived; Ricci-Bach composition delta B = (1/2) Box dRic + C.dRic - (1/6) grad grad dR - (1/12) g Box dR certified componentwise: the Einstein kernel injects and the realized Ricci image obeys a trace-coupled second-order Lichnerowicz system; no canonical metric direct sum is inferred",
-                "no even-parity exterior operator exists in the repository", "BH2BP"),
+                "polar l=2 rows derived; Ricci-Bach composition delta B = (1/2) Box dRic + C.dRic - (1/6) grad grad dR - (1/12) g Box dR certified componentwise: the Einstein kernel injects and the realized Ricci image obeys a trace-coupled second-order Lichnerowicz system; no canonical metric direct sum is inferred; the Einstein kernel itself is reduced EXACTLY to the 2-dim first-order system dY/dr = M(r) Y, Y = (K, H1) (H2 = H0 forced, H0 algebraic), with horizon benchmark in adapted variables: t-chart exponents {+-2imw}, ingoing {0, -4imw} matching the axial RW benchmark; the Schroedinger-form master scalar remains fail-closed OPEN",
+                "no even-parity exterior operator exists in the repository", "BH2BP", "BH2BE"),
             "lee_wald": _claim("OPEN", "polar flux blocks open"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "no crosswalk to compact structures"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
         },
-        "evidence": _evidence("BH2BP"),
-        "claim_boundary": "operator-level Ricci-Bach composition only (Schwarzschild, l=2): Zerilli benchmark, Einstein-kernel polar flux, and endpoint disposition all OPEN; the polar Ricci-carrier image has its own entry",
+        "evidence": _evidence("BH2BP", "BH2BE"),
+        "claim_boundary": "Schwarzschild (symbolic m), polar l=2, omega != 0: Einstein-kernel two-dimensionality and horizon benchmark certified; Zerilli-form master scalar, Einstein-kernel polar flux, and endpoint disposition all OPEN; the polar Ricci-carrier image has its own entry",
     })
 
     E.append({

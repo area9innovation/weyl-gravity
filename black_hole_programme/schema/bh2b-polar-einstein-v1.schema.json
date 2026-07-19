@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2b-polar-einstein-v1",
+  "title": "BH-2B stage 3: polar Einstein branch reduced to two dimensions",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "reduction",
+    "horizon_analysis",
+    "bach_kernel",
+    "master_scalar",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh2b-polar-einstein-v1" },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh2b-polar-einstein-v1.schema.json"
+    },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH2B_POLAR_EINSTEIN" },
+    "result_token": { "const": "BH2B_POLAR_EINSTEIN_BRANCH_REDUCED_TWO_DIMENSIONAL" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "frequency_domain",
+        "lifecycle"
+      ],
+      "properties": { "lifecycle": { "const": "CLASSIFIED" } }
+    },
+    "reduction": {
+      "type": "object",
+      "required": ["gauge", "w_sector", "system", "M", "H0_algebraic", "dimension"]
+    },
+    "horizon_analysis": {
+      "type": "object",
+      "required": [
+        "adapted_variables",
+        "t_chart_spectrum",
+        "ingoing_spectrum",
+        "benchmark"
+      ],
+      "properties": {
+        "t_chart_spectrum": { "const": ["2*I*m*omega", "-2*I*m*omega"] },
+        "ingoing_spectrum": { "const": ["0", "-4*I*m*omega"] }
+      }
+    },
+    "bach_kernel": { "type": "string" },
+    "master_scalar": {
+      "type": "object",
+      "required": ["status", "statement"],
+      "properties": { "status": { "const": "OPEN" } }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "polar_einstein_reduction_certified",
+        "h2_equals_h0_certified",
+        "two_dimensionality_certified",
+        "horizon_benchmark_certified",
+        "bach_kernel_injection_certified",
+        "master_scalar_certified",
+        "flux_or_sign_certified",
+        "outer_boundary_domain_certified",
+        "causal_exclusion_decided",
+        "growth_or_stability_certified",
+        "general_l_certified",
+        "omega_zero_classified"
+      ],
+      "properties": {
+        "polar_einstein_reduction_certified": { "const": true },
+        "h2_equals_h0_certified": { "const": true },
+        "two_dimensionality_certified": { "const": true },
+        "horizon_benchmark_certified": { "const": true },
+        "bach_kernel_injection_certified": { "const": true },
+        "master_scalar_certified": { "const": false },
+        "flux_or_sign_certified": { "const": false },
+        "outer_boundary_domain_certified": { "const": false },
+        "causal_exclusion_decided": { "const": false },
+        "growth_or_stability_certified": { "const": false },
+        "general_l_certified": { "const": false },
+        "omega_zero_classified": { "const": false }
+      }
+    },
+    "missing_objects": {
+      "type": "array",
+      "minItems": 5,
+      "items": { "type": "string" }
+    },
+    "stage_seconds": { "type": "object" },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "engine_path",
+        "engine_sha256",
+        "bh2b_split_certificate",
+        "bh2b_split_certificate_sha256"
+      ]
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh2b_polar_einstein.py"
+    }
+  }
+}
