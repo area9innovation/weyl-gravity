@@ -1,0 +1,52 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FINITE_HARMONIC_K0_BOUNDED_CONE_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FINITE_HARMONIC_K0_BOUNDED_CONE",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "generator": {"path": "bridge/einstein_sector/einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.py", "sha256": "67f612956d3add80e2b0e8927c7ee8a83106ef1baffd6ef43d88e8bf897b2400"},
+    "certificate": {"path": "bridge/certificates/einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.json", "sha256": "371437fc30a78411e9ddd84aa099ba90aab513bd6159ece06dd49dddb7186a5b"},
+    "schema": {"path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.schema.json", "sha256": "bc67c71f9259171a17299983ae262c75541f4a549a2b7f3c2a861afa143b80c3"},
+    "verifier": {"path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.py", "sha256": "cc4d475a16faa435d6b4879ec0edd6198df58191ceafbd4061b8bffd5030be3e"},
+    "tests": {"path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.py", "sha256": "4926648edcf1af64422d3693f5367305d66bf8013294b2f11ab4c9144c69a458"},
+    "report": {"path": "bridge/einstein_sector/reports/einstein-maxwell-weyl-global-finite-harmonic-k0-bounded-cone.md", "sha256": "5c497a6790590e1e688ba73038016a9a7de943d3a215e37c9b6ce4f1f5f0a384"},
+    "atlas_generator": {"path": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py", "sha256": "19bb6c94a8b861f6d632099ddec35569f65ce2f69c8917041dabca7d5ef75302"},
+    "atlas_fragment": {"path": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json", "sha256": "7cf3f616839a04d1dcadbd2120e4a1117ea8955b56348b73a3b49a061113ccf9"},
+    "atlas_verifier": {"path": "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py", "sha256": "fde68cd68a7e02ecbf5edf4a920c4bec066b697a4e54d52b241646da41fc7b2e"},
+    "atlas_tests": {"path": "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py", "sha256": "292092a1c142ca41602cd1eba2b70ca5cd162cd3cff2b8cf5b95ca401e948af1"},
+    "team_brief": {"path": "notes/d-quotient-einstein-team-brief.md", "sha256": "a7fd23056cc881cd625595d149041c7062f8bb8572e89a88d418094d374efb18"}
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.13,
+      "commands": [
+        "python3 -m py_compile <scoped theorem, verifier, tests and atlas paths>",
+        "python3 -m json.tool <scoped schema, certificate, receipt and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.39,
+      "tests_run": 27,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "finite-wave cross-ell theorem, generic-lambda pivots, blockwise global cone and exact global transport inputs were consumed by content hash"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "infinite harmonic completion, nonzero momentum, exceptional waves, causal, residual and quantum gates remain excluded"
+    }
+  }
+}

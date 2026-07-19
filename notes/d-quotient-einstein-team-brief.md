@@ -2460,8 +2460,18 @@ wave theorem yields the global bounded cone for every one fixed generic
 `ell` at `k=0`: the static `(c,d,W_x,A)` branch and the nonzero wave branch
 `mu_H=mu_J1=mu_J2=mu_J3=0`, `a=b=d=Q_e=B=0`, with `(c,W_x,A)` arbitrary.
 Atlas row `einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone` records
-necessity and sufficiency.  Cross-`ell` products and nonzero momentum are the
-next fail-closed gates.
+necessity and sufficiency.
+
+The cross-`ell` gate is now also closed for arbitrary finite generic sums at
+`k=0`.  The existing finite-wave theorem removes every wave-only obstruction
+on the total `H,J_i` zero cone.  Every nonzero point on that cone contains an
+Einstein-minus coefficient, whose unique `(ell,m,parity,omega_minus)` global
+cross channel has the nonzero symbolic pivot above and cannot cancel against
+another `ell` block.  Thus the same static/wave union holds for arbitrary
+finite generic rest-frame sums.  Atlas row
+`einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone` records the
+promotion.  Infinite harmonic completion, nonzero compact momentum and
+exceptional `ell=1` wave inputs remain fail-closed.
 
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.

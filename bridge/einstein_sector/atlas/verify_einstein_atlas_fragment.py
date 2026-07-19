@@ -224,6 +224,16 @@ def verify() -> None:
         raise AssertionError("generic-lambda pivot identity was hidden")
     if global_fixed_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("global fixed-ell causal lifecycle was over-promoted")
+    global_finite = by_id["einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone"]
+    global_finite_second = global_finite["mode_data"]["second_order"]
+    if global_finite_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("global finite-harmonic bounded cone was lost")
+    if "every finite generic k=0 wave sum" not in global_finite_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("global finite-harmonic scope was hidden")
+    if "cannot be screened" not in global_finite["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("cross-ell shell separation was hidden")
+    if global_finite_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("global finite-harmonic causal lifecycle was over-promoted")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

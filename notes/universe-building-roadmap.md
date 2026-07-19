@@ -1297,8 +1297,16 @@ formal Legendre jets.  Both pivots are nonzero for every physical
 complete global bounded cone for every one fixed `ell>=2` at `k=0`.  Atlas row
 `einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone` records the union of
 the static `(c,d,W_x,A)` branch and the nonzero common-moment-map wave branch
-with `a=b=d=Q_e=B=0`.  The active gates are now cross-`ell` bounded products
-and nonzero compact momentum.
+with `a=b=d=Q_e=B=0`.
+
+The finite cross-`ell` bounded gate is now closed as well.  The certified
+finite-wave theorem supplies the complete wave-only correction on the total
+`H,J_i` zero cone, and the symbolic global-times-minus pivot is isolated by
+`(ell,m,parity,omega_minus)`, so another angular block cannot screen it.
+Atlas row `einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone`
+therefore promotes the same static/wave union to arbitrary finite generic
+`k=0` sums.  The active bounded gates are infinite harmonic completion,
+nonzero compact momentum and exceptional `ell=1` wave inputs.
 
 This advances nonlinear input to the already activated compact-product
 linear bridge but does not certify a nonlinear relative morphism.  Atlas row
