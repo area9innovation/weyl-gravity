@@ -8,6 +8,11 @@ the induced infinity norm.  A sparse-to-dense adapter consumes the certified
 finite sine-kernel enclosure directly.  A companion callable encloses pointwise
 multiplication by a real switch-cell interval.
 
+The sparse adapter preserves the certified `tau_power` labels literally:
+the sine series occupies powers `1,3,5,...`, with structural zero matrices in
+the intervening slots.  Treating the six series orders as dense powers
+`0,1,2,...` is rejected by the regression fixture.
+
 The exact fixture sends the constant vector `(1,2)` through `diag(1,2)` and
 then the identity kernel, producing the `x^2` coefficient `(1/2,2)`.
 Dimension mismatches and acausal orientations fail closed.

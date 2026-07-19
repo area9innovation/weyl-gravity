@@ -534,14 +534,21 @@ callable as outward rational intervals on arbitrary rational cells, with exact
 support zeros and the flat-bump derivative critical point certified.
 A dimension-checked complex matrix/vector Volterra successor now composes
 supplied finite form-valued polynomial stages with exact beta coefficients,
-real switch-cell multiplication and induced-norm remainder propagation.
+real switch-cell multiplication and induced-norm remainder propagation.  Its
+sparse sine-kernel adapter preserves the certified powers
+`1,3,5,7,9,11`; a dense `0,...,5` placement was detected and repaired before
+physical use.
 The next successor now assembles every D0/D1 passive-column detector
 polynomial through `two_j=4` in the exact component-major spacetime one-form
 basis and applies `Dhat_1` with `partial_t=-partial_T`.  Its uniform output
 bound differentiates the omitted cosine tail and propagates both block tails
 through outward-enclosed `d0,d1` matrices.  This closes only the first
-physical preparation-form stage.  Switch multiplication followed by the
-advanced massive Green image and Cauchy/positive-energy preparation,
+physical preparation-form stage.  A further successor translates it to the
+advanced support coordinate, multiplies the normalized whole-support switch
+hull and applies the block-diagonal massive degree-one/degree-two wave kernel.
+It certifies the diagonal massive support-left image for all finite columns
+and runtime positive mass intervals.  The physical
+`I+mu^-2 Dhat_1 Deltahat_2` correction and Cauchy/positive-energy preparation,
 extension beyond `two_j=4`, and the tail-aware
 four-stream stop loop remain `OBSTRUCTED`, so external numerical inputs remain
 deferred under the strict specialization schema.

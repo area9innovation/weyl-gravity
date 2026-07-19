@@ -28,18 +28,31 @@ def kernel_stage_from_sine_enclosure(
 ) -> dict[str, object]:
     """Convert a sparse ``enclose_exact_mode_sine_kernel`` result to a dense stage."""
     dimension = int(enclosure["dimension"])
-    matrices = []
-    for coefficient in enclosure["coefficient_matrices"]:
+    rows = enclosure["coefficient_matrices"]
+    if not rows:
+        raise ValueError("sine-kernel enclosure has no coefficient matrices")
+    powers = [int(coefficient["tau_power"]) for coefficient in rows]
+    if len(set(powers)) != len(powers) or any(power < 0 or power % 2 != 1 for power in powers):
+        raise ValueError("sine-kernel tau powers must be distinct nonnegative odd integers")
+    matrices = [
+        [
+            [ComplexRationalInterval.point() for _ in range(dimension)]
+            for _ in range(dimension)
+        ]
+        for _ in range(max(powers) + 1)
+    ]
+    for coefficient, power in zip(rows, powers):
         matrix = [
             [ComplexRationalInterval.point() for _ in range(dimension)]
             for _ in range(dimension)
         ]
         for entry in coefficient["entries"]:
             matrix[int(entry["row"])][int(entry["column"])] = _complex_from_serialized(entry)
-        matrices.append(matrix)
+        matrices[power] = matrix
     return {
         "label": label or f"{enclosure['family']}_two_j{enclosure['two_j']}_degree{enclosure['form_degree']}",
         "coefficient_matrices": matrices,
+        "nonzero_tau_powers": powers,
         "uniform_remainder_upper": Fraction(enclosure["uniform_sine_kernel_remainder_upper"]),
     }
 

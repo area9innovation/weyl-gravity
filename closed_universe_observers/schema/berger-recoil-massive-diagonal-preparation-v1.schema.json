@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "coordinate_bridge", "fixtures", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-massive-diagonal-preparation-v1"},
+    "result_id": {"const": "BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "FINITE_SWITCHED_DIAGONAL_MASSIVE_ADVANCED_SUPPORT_LEFT_IMAGE_CERTIFIED_PHYSICAL_PROCA_CORRECTION_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 9, "maxProperties": 9},
+    "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "coordinate_bridge": {"type": "object"},
+    "fixtures": {"type": "object"},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "APPLY_PHYSICAL_I_PLUS_MASS_INVERSE_D_DELTA_CORRECTION_AND_EXPORT_CAUCHY_PAIR"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

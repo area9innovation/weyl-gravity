@@ -2,7 +2,7 @@
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `LORENTZIAN-CAUSAL`.
 
-The complete per-shell symbolic word now has five finite executable consumers.
+The complete per-shell symbolic word now has six finite executable consumers.
 Exact rational interval aggregation of supplied `I_abc[two_j,k]` values is
 certified, including every passive column, `g_b g_c^2`, and the Peter--Weyl
 weight.  A second callable returns exact real/imaginary coefficient intervals,
@@ -20,8 +20,11 @@ the actual finite Berger Maxwell and massive-two-form sine kernels through
 `two_j=4`, using a caller-declared finite slab and strictly positive rational
 mass-squared range with a uniform tail.  A fifth callable assembles every
 D0/D1 detector column through `two_j=4` and applies exact `Dhat_1`, including
-the physical-time derivative of the omitted cosine tail.  The switch,
-advanced massive Green, Cauchy and positive-energy stages are not yet bound.
+the physical-time derivative of the omitted cosine tail.  A sixth translates
+that source to the advanced support coordinate, multiplies the normalized
+switch hull and evaluates the block-diagonal massive wave image at the
+support-left slice.  The physical Proca correction, Cauchy momentum and
+positive-energy dual are not yet bound.
 
 The audit retains its explicit four-callable complete-backend protocol, records
 the shell evaluator `CERTIFIED`, and adds separate `CERTIFIED` finite detector
@@ -30,7 +33,7 @@ rows remain `OBSTRUCTED`.
 It also exports a strict exact-rational numerical
 input schema in the certified `gHat` operator units, but leaves every value
 undeclared.  The next gate extends coefficient access beyond `two_j=4` and
-binds the switch and massive-preparation factors into nested convolution; external specialization follows only after
+binds the physical Proca/Cauchy completion into nested convolution; external specialization follows only after
 the full protocol closes.
 
 The symbolic operator theorem remains `CERTIFIED`.  No recoil coefficient,

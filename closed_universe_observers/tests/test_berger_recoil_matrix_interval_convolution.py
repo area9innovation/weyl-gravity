@@ -78,15 +78,34 @@ def test_sparse_finite_kernel_serialization_adapts_to_dense_stage():
     enclosure = {
         "dimension": 2, "family": "Maxwell", "two_j": 0, "form_degree": 1,
         "uniform_sine_kernel_remainder_upper": "1/100",
-        "coefficient_matrices": [{"entries": [
+        "coefficient_matrices": [{"tau_power": 1, "entries": [
             {"row": 0, "column": 0, "real": {"lower": "1", "upper": "1"}, "imaginary": {"lower": "0", "upper": "0"}},
             {"row": 1, "column": 1, "real": {"lower": "2", "upper": "2"}, "imaginary": {"lower": "0", "upper": "0"}},
         ]}],
     }
     stage = kernel_stage_from_sine_enclosure(enclosure)
-    assert stage["coefficient_matrices"][0][0][0] == _point(1)
-    assert stage["coefficient_matrices"][0][0][1] == _point(0)
+    assert stage["coefficient_matrices"][0][0][0] == _point(0)
+    assert stage["coefficient_matrices"][1][0][0] == _point(1)
+    assert stage["coefficient_matrices"][1][0][1] == _point(0)
+    assert stage["nonzero_tau_powers"] == [1]
     assert stage["uniform_remainder_upper"] == Fraction(1, 100)
+
+
+def test_sparse_kernel_adapter_preserves_odd_tau_power_gaps():
+    enclosure = {
+        "dimension": 1, "family": "Maxwell", "two_j": 0, "form_degree": 0,
+        "uniform_sine_kernel_remainder_upper": "0",
+        "coefficient_matrices": [
+            {"tau_power": 1, "entries": [{"row": 0, "column": 0, "real": {"lower": "1", "upper": "1"}, "imaginary": {"lower": "0", "upper": "0"}}]},
+            {"tau_power": 3, "entries": [{"row": 0, "column": 0, "real": {"lower": "2", "upper": "2"}, "imaginary": {"lower": "0", "upper": "0"}}]},
+        ],
+    }
+    stage = kernel_stage_from_sine_enclosure(enclosure)
+    assert len(stage["coefficient_matrices"]) == 4
+    assert stage["coefficient_matrices"][0][0][0] == _point(0)
+    assert stage["coefficient_matrices"][1][0][0] == _point(1)
+    assert stage["coefficient_matrices"][2][0][0] == _point(0)
+    assert stage["coefficient_matrices"][3][0][0] == _point(2)
 
 
 def test_certificate_does_not_promote_physical_binding():

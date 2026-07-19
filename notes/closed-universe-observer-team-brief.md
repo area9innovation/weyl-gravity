@@ -798,8 +798,9 @@ emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
 composition defects.
 
 `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` corrects the activation
-boundary.  Its five finite capabilities include the four baseline consumers
-here and the detector/`Dhat_1` binding described below.
+boundary.  Its six finite capabilities include the four baseline consumers
+here, the detector/`Dhat_1` binding and the switched diagonal massive stage
+described below.
 `BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` closes the
 one-shell supplied-channel capability with exact rational arithmetic: it
 sums every passive column and both feedback channels and applies
@@ -820,8 +821,8 @@ caller-declared finite slab and, for massive blocks, a strictly positive
 rational mass-squared interval.  It exports all six interval coefficient
 matrices and a uniform induced-row-norm sine-series tail; nonpositive masses,
 nonzero Maxwell mass and noncontracting slabs fail closed.  This runtime mass
-domain is not a physical mass choice.  Exact switches, detector intervals and
-typed form contractions are not yet bound to the engine.  Thus the complete
+domain is not a physical mass choice.  The finite successor below now binds
+those inputs only through the diagonal massive wave image.  Thus the complete
 all-shell detector provider, physical nested-convolution backend and tail-aware aggregate stop
 loop remain `OBSTRUCTED`.  Supplying
 masses and couplings would still produce no physical interval.  The exact-
@@ -839,7 +840,10 @@ harmonic Cauchy coefficients of `tilde_u0,tilde_u1` remain open.
 engine to complex interval vectors and square interval-matrix kernels.  It
 checks dimensions, applies exact beta coefficients, propagates induced-
 infinity-norm source/operator remainders, and supports pointwise multiplication
-by the certified real switch-cell hulls.  The finite execution layer is ready;
+by the certified real switch-cell hulls.  Its sparse adapter now preserves the
+certified sine powers `1,3,5,7,9,11` with structural zero gaps; the earlier
+dense-index placement `0,1,2,3,4,5` was caught and repaired before physical
+composition.  The finite execution layer is ready;
 the subsequent detector/form binding closes only its first physical stage, so
 harmonic emitter Cauchy coefficients and `I_abc` remain open.
 
@@ -854,6 +858,19 @@ the pre-derivative remainder.  This certifies
 `Dhat_1 G_A,adv Deltahat_2[p_hat_a]` only.  Multiplication by `h_a`, the
 advanced massive-two-form image, Cauchy trace, positive-energy dual, full
 spatial tail and all `I_abc` intervals remain open.
+
+`BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION` translates that finite source
+from `T=t_detector_center-source_time` to the exact advanced support
+coordinate `y=t_support_right-source_time`.  Both detector/switch pairs give
+the certified shift `T=1/16+y`.  It multiplies the normalized whole-support
+`h_a` interval and applies the block-diagonal massive degree-one/degree-two
+sine kernels, enclosing the support-left image for every passive column
+through `two_j=4` and any caller-declared strictly positive mass-squared
+interval.  The whole-support switch hull is rigorous but coarse, and the mass
+interval is runtime parameterization rather than a physical choice.  This is
+the diagonal massive wave inverse only: the physical
+`I+mu^-2 Dhat_1 Deltahat_2` correction, Cauchy momentum, positive-energy dual,
+full spatial tail and `I_abc` remain open.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as
