@@ -291,6 +291,12 @@ def verify() -> None:
         raise AssertionError("single-minus no-go was hidden")
     if exceptional_single_second["smooth_secular"]["status"] != "CERTIFIED" or exceptional_single_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("single-minus correction classes changed")
+    exceptional_finite = by_id["einstein.ph.wm.mixed.exceptional_ellipse_finite_minus_dressing_no_go"]
+    finite_second = exceptional_finite["mode_data"]["second_order"]
+    if exceptional_finite["descriptions"]["nonlinear"] != "OBSTRUCTED" or "three-minus" not in exceptional_finite["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("finite-minus no-go was hidden")
+    if finite_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or finite_second["smooth_secular"]["status"] != "CERTIFIED" or finite_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("finite-minus correction classes changed")
     fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
     if fixed_ell_twist["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("fixed-ell bounded lifecycle was not promoted")

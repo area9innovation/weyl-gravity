@@ -37,6 +37,7 @@ CERTIFICATES = {
     "exceptional_zero_source": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_zero_frequency_source.json",
     "exceptional_bounded_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_bounded_obstruction.json",
     "exceptional_single_minus_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_single_minus_dressing_no_go.json",
+    "exceptional_finite_minus_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_finite_minus_dressing_no_go.json",
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
@@ -304,6 +305,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OBSTRUCTED", "Every ellipse point has d!=0, whereas any nonzero single Einstein-minus dressing forces d=0 in the bounded shell ideal."), ("CERTIFIED", "The complete finite-support smooth theorem supplies the corresponding secular correction on the five-moment-map zero cone."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
             _evidence("exceptional_single_minus_no_go", "exceptional_resonance_ellipse", "abd_generic_lambda_pivot", "radiative", "complete_finite_smooth", "abstract_cone"),
             "This excludes one dressing mode at a time. Multiple minus modes, additional carriers, nonzero momentum, all-orders integration and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.mixed.exceptional_ellipse_finite_minus_dressing_no_go",
+            _scope(theory="Weyl-Maxwell target", carrier="any axisymmetric exceptional resonance-ellipse point plus an arbitrary finite k=0 Einstein-minus q-primary sum", degree=2, parity="both dressing parities", ell="arbitrary finite subset of ell>=2", m="all m with total rotation moment map zero", k=0, omega="all occupied omega_minus(ell)"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","All finite dressing coefficients remain in explicit same-background Einstein-minus carrier blocks."),
+            ("CERTIFIED","Every occupied minus block has nondegenerate opposite-sign current weight."),
+            ("CERTIFIED","Amplitudes may balance all five stabilizer moment maps, but at least one minus coefficient is nonzero."),
+            ("CERTIFIED","Exact dispersion inequalities exclude all angularly allowed three-minus and original-minus collisions on a d-times-minus shell."),
+            _second_order(("OBSTRUCTED","The nonzero d-cross map acts independently on every occupied minus block, forcing all charge-balancing minus coefficients to vanish."),("CERTIFIED","The complete finite-support theorem supplies a smooth secular correction on the stabilizer zero cone."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell complex is certified.")),
+            _evidence("exceptional_finite_minus_no_go","exceptional_single_minus_no_go","abd_generic_lambda_pivot","complete_finite_smooth","abstract_cone"),
+            "Additional nonminus carriers, infinite completion, nonzero momentum, all-orders integration and higher lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.extra.exceptional_ell1_nonzero_k",
@@ -898,6 +911,11 @@ def build() -> dict[str, object]:
         raise AssertionError("exceptional single-minus no-go changed")
     if exceptional_single["multiple_minus_modes_or_other_carriers_classified"] or exceptional_single["causal_or_quantum_claim"]:
         raise AssertionError("exceptional single-minus no-go exceeded its scope")
+    exceptional_finite = records["exceptional_finite_minus_no_go"]["classification"]
+    if not (exceptional_finite["arbitrary_finite_minus_superpositions_covered"] and exceptional_finite["three_minus_shell_resonances_excluded_analytically"] and exceptional_finite["bounded_extension_obstructed"] and exceptional_finite["smooth_secular_extension_certified"]):
+        raise AssertionError("exceptional finite-minus no-go changed")
+    if exceptional_finite["additional_nonminus_carriers_classified"] or exceptional_finite["infinite_completion_classified"] or exceptional_finite["causal_or_quantum_claim"]:
+        raise AssertionError("exceptional finite-minus no-go exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

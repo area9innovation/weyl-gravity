@@ -1,0 +1,106 @@
+{
+  "claim_boundary": "This theorem covers arbitrary finite k=0 Einstein-minus dressings only. Additional nonminus carriers, infinite completion, nonzero momentum, all-orders, causal, residual and quantum claims remain open.",
+  "classification": {
+    "additional_nonminus_carriers_classified": false,
+    "all_orders_integrability": false,
+    "arbitrary_finite_minus_superpositions_covered": true,
+    "both_parities_and_all_m_covered": true,
+    "bounded_extension_obstructed": true,
+    "causal_or_quantum_claim": false,
+    "infinite_completion_classified": false,
+    "original_minus_shell_collisions_excluded_analytically": true,
+    "smooth_secular_extension_certified": true,
+    "three_minus_shell_resonances_excluded_analytically": true
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "OBSTRUCTED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "dispersion_lemma": {
+    "bounds": "0<delta(x)<1/2 and 1<w'(x)<2/sqrt(3)",
+    "consequence": "no angularly allowed sum or difference of two minus frequencies equals a third minus frequency",
+    "definition": "w(x)=sqrt(x*(x+1)-sqrt(2*x*(x+1))), delta(x)=x-w(x)",
+    "delta_witness": "delta>0 follows from 2*x*(x+1)>x^2; delta<1/2 follows from 2*x^2-3*x+1/16>0",
+    "domain": "real x>=2",
+    "integer_bracket": "w(a+b-1)<w(a)+w(b)<w(a+b) for integers a,b>=2",
+    "lower_derivative_witness": "3*t^2-2*t+1>0 for t=sqrt(2*x*(x+1))>=2sqrt(3)",
+    "upper_derivative_witness": "g(t)=2*t^2-4*t-9+6/t-3/t^2; g(2sqrt(3))=59/4-7sqrt(3)>0 and g'(t)>0"
+  },
+  "interpretation": "No finite collection of Einstein-minus waves rescues the exceptional resonance ellipse in the bounded correction class. The d-cross obstruction acts independently on every occupied minus carrier, and exact dispersion inequalities prevent quadratic minus pairs or the original exceptional/control modes from canceling it. Smooth secular extension remains available on the stabilizer zero cone.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "allow additional nonminus or nonzero-momentum carriers, or classify the infinite completed minus sector with a declared topology",
+  "obstruction": {
+    "charge_reason": "balancing the strictly negative ellipse mu_H requires at least one nonzero minus coefficient",
+    "contradiction": "bounded compatibility forces every minus coefficient to vanish because d!=0",
+    "d_cross_map": "nonzero scalar SO3 intertwiner on every occupied ell,m and separately in each parity",
+    "no_cancellation": "minus-minus and original-minus products cannot share a d-times-minus carrier"
+  },
+  "original_carrier_isolation": {
+    "ell2_control_shift": "|L-ell|<=2 but every two-step minus gap is <4/sqrt(3)=omega_control",
+    "exceptional_shift": "|L-ell|<=1 but every adjacent minus gap is <2/sqrt(3)=omega_exceptional",
+    "original_original_squared_frequency_audit": {
+      "all_unequal": true,
+      "candidate_squares": [
+        "4/3",
+        "16/3",
+        "12",
+        "64/3"
+      ],
+      "target_ell": [
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_finite_minus_dressing_no_go.py",
+    "generator_sha256": "789808786ff31194a65d4a58b30b7ed7b7f503fd2db4b16351bf4c1cdf3e2c79",
+    "inputs": {
+      "ellipse": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.json",
+        "sha256": "431b7b0015bb8691c610597d07ac24241aa9b295dc2b54dbadb39be6e136c2f1"
+      },
+      "pivot": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_generic_lambda_pivot.json",
+        "sha256": "a0d9769e6363031fb0259f6a529919a19d45c37ed7d59027765d9311a77fc411"
+      },
+      "single": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_single_minus_dressing_no_go.json",
+        "sha256": "a5cb22f4bfff1f49b8604d8d17b431d5d9e5f97fe5ab0d03c65abc6b18527310"
+      },
+      "smooth": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+        "sha256": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_FINITE_MINUS_DRESSING_NO_GO",
+  "schema": "einstein-maxwell-weyl-exceptional-ellipse-finite-minus-dressing-no-go-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_finite_minus_dressing_no_go.schema.json",
+  "schema_sha256": "48776384176dcef23e7a3be7a46b9cf76e5fa4b871da2902810430ec6bf86722",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic correction",
+    "carrier": "any axisymmetric exceptional resonance-ellipse point plus an arbitrary finite k=0 Einstein-minus q-primary sum",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "arbitrary finite subset of ell>=2",
+    "k": 0,
+    "m": "all m subject to total rotation moment map zero",
+    "omega": "all occupied omega_minus(ell)",
+    "parity": "both dressing parities",
+    "theory": "Weyl-Maxwell target"
+  }
+}

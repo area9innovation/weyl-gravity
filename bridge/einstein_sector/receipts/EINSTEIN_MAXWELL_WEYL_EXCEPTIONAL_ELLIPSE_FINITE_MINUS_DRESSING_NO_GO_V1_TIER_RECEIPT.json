@@ -1,0 +1,12 @@
+{
+  "receipt_id":"EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_FINITE_MINUS_DRESSING_NO_GO_V1_TIER_RECEIPT","date":"2026-07-19","scope":"Arbitrary finite k=0 Einstein-minus dressing no-go on the exceptional resonance ellipse.",
+  "content_sha256":{
+    "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_finite_minus_dressing_no_go.py":"789808786ff31194a65d4a58b30b7ed7b7f503fd2db4b16351bf4c1cdf3e2c79",
+    "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_finite_minus_dressing_no_go.json":"8b064462da92fd06e311eaf7f5c73540cd089af7d16d5a74571af2b04af115e3",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_finite_minus_dressing_no_go.schema.json":"48776384176dcef23e7a3be7a46b9cf76e5fa4b871da2902810430ec6bf86722",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_finite_minus_dressing_no_go.py":"40153acac625c4162c66468ba7ffdb6dc935e739a901dd0dfd687cf463df33e0",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_exceptional_ellipse_finite_minus_dressing_no_go.py":"b401cebe3d5493f1edd119c7b9c12b5f4522afacf2a1fd1c3be19896c130f6df",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-exceptional-ellipse-finite-minus-dressing-no-go.md":"472d50b83dd47629cd5f915729771275652d82e710823af8a4735625f31054c0"},
+  "verification":{"tier_0":{"status":"PASS","commands":["python3 -m py_compile <scoped paths>","git diff --check -- <scoped paths>"]},"tier_1":{"status":"PASS","tests_run":4,"commands":["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ellipse_finite_minus_dressing_no_go --check","python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_finite_minus_dressing_no_go.py","python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ellipse_finite_minus_dressing_no_go"]},"tier_2":{"status":"PASS_BY_CONTENT_ADDRESS","reason":"The generic d pivot and single-mode no-go are unchanged inputs; the new dispersion proof is exact symbolic algebra."},"tier_3":{"status":"NOT_RUN","reason":"Additional nonminus carriers and infinite completion remain open."}},
+  "claim_boundary":"Finite k=0 minus sums only; additional carriers, infinite completion, nonzero momentum, causal, residual and quantum claims remain fail-closed."
+}

@@ -296,6 +296,15 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
+    def test_no_finite_minus_sum_rescues_the_exceptional_ellipse(self) -> None:
+        entry=self.entries["einstein.ph.wm.mixed.exceptional_ellipse_finite_minus_dressing_no_go"]
+        second=entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"],"OBSTRUCTED")
+        self.assertIn("three-minus",entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"],"OBSTRUCTED")
+        self.assertEqual(second["smooth_secular"]["status"],"CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"],"NO_CERTIFIED_MAP")
+
     def test_constant_twist_projector_repair_is_authoritative(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
         self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")

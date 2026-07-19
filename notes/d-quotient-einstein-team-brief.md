@@ -2921,6 +2921,23 @@ remains `CERTIFIED`.  Simultaneous multiple minus modes or additional
 carriers remain the next fail-closed enlargement because distinct quadratic
 pairs could then share a shell functional.
 
+That possible cancellation is now excluded for an arbitrary finite sum of
+Einstein-minus modes.  Writing
+`w_l=sqrt(l(l+1)-sqrt(2*l(l+1)))`, exact inequalities give
+`0<l-w_l<1/2`, `1<w'(x)<2/sqrt(3)`, and hence
+
+```text
+w_(a+b-1) < w_a+w_b < w_(a+b).
+```
+
+There are no angularly allowed three-minus sum/difference resonances.  The
+upper derivative bound also excludes exceptional/control shifts into another
+minus shell.  Therefore the nonzero `d` intertwiner acts independently on
+every occupied `(ell,m,parity)` minus block and forces all charge-balancing
+coefficients to vanish.  Arbitrary finite minus dressings are bounded
+`OBSTRUCTED` and smooth-secular `CERTIFIED`.  Additional nonminus carriers or
+an infinite completed sector remain open.
+
 The nonzero-momentum twist face has now been intersected with the independent
 opposite-momentum phase divisor.  For every `ell>=2`, the exact choice
 
