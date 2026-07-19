@@ -12,6 +12,7 @@ def main() -> int:
     ids = {row["id"] for row in value["entries"]}
     assert "observer.berger.second_order_cone_restriction" in ids
     assert "observer.berger.detector_profile.recoil_numerical_input_contract_v2" in ids
+    assert "observer.berger.interaction.pbw_108_component_map" in ids
     crosswalks = [row for row in value["entries"] if row["id"].startswith("observer.crosswalk")]
     assert {row["id"] for row in crosswalks} == {
         "observer.crosswalk.berger_physical_branch_to_detector",

@@ -1,0 +1,40 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_PBW_INPUT_OBSTRUCTION_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_PBW_INPUT_OBSTRUCTION",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The pinned scalar 64-row PBW payload and covariant 108-row q1-q2 identity remain valid, but the certified dependency closure does not determine a canonical scalar 108-row PBW map. Exact factor-eight detector-profile and factor-two emitter-switch witnesses prove non-uniqueness. The atlas row is NO_CERTIFIED_MAP; no PBW payload, component replay, backreacted branch, tangent-cone, Bridge 3, finite-parameter, Lorentzian quantum or quantum claim is promoted.",
+  "commands": [
+    {"tier": 0, "command": "python3 -m py_compile closed_universe_observers/generate_berger_108_row_pbw_input_obstruction.py closed_universe_observers/verify_berger_108_row_pbw_input_obstruction.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "changed Python syntax"},
+    {"tier": 1, "command": "python3 -m closed_universe_observers.generate_berger_108_row_pbw_input_obstruction --check", "elapsed_seconds": "0.58", "status": "PASS", "scope": "dependency flags/hashes, pinned base payload, exact non-uniqueness witnesses, mutations, schema and freshness"},
+    {"tier": 1, "command": "python3 -m closed_universe_observers.verify_berger_108_row_pbw_input_obstruction", "elapsed_seconds": "0.12", "status": "PASS", "scope": "independent Fraction scaling derivation, dependency hashes, missing component objects and fail-closed flags"},
+    {"tier": 1, "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_pbw_input_obstruction.py", "elapsed_seconds": "1.09", "status": "PASS", "scope": "5 profile, switch, mutation, boundary and activation-contract tests"},
+    {"tier": 1, "command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json", "elapsed_seconds": "0.72", "status": "PASS", "scope": "generated fail-closed atlas schema and full mode scope"},
+    {"tier": 1, "command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment", "elapsed_seconds": "1.80", "status": "PASS", "scope": "generated atlas equality, evidence hashes and PBW NO_CERTIFIED_MAP row"},
+    {"tier": 1, "command": "python3 -m closed_universe_observers.verify_comparison_ledger", "elapsed_seconds": "0.25", "status": "PASS", "scope": "historical imports, live artifact hashes and PBW missing-object lifecycle"},
+    {"tier": 1, "command": "ci/science-forge-shadow.sh", "elapsed_seconds": "4.84", "status": "ADVISORY_PASS", "scope": "bridge audit PASS; reported coverage census drift 936 certificates versus snapshot 820"}
+  ],
+  "higher_tiers_not_run": {
+    "tier_2": "The changed object is a fail-closed observer-owned interface obstruction. Tier 1 verifies every imported hash and the directly affected atlas/ledger chain; no shared mathematical operator, generated PBW payload or downstream certificate input changed.",
+    "tier_3": "No theorem or lifecycle state was promoted, no shared core algebra changed, no release/freeze was requested, and the result explicitly leaves the PBW map unavailable."
+  },
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_pbw_input_obstruction.py", "sha256": "50b700bb7e3ce3f7b01047fcba6f26da7c4906fb57cda8304529b27a0172b2bd"},
+    {"path": "closed_universe_observers/verify_berger_108_row_pbw_input_obstruction.py", "sha256": "8e470437776c456d74517c72c8a6876e2d9521a83a6bd5c6cdd5ab8d356b7857"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_pbw_input_obstruction.py", "sha256": "e26e14fca7fe4cafb416149b81c3141a2b78eb7ca348825ccd4e04304999489f"},
+    {"path": "closed_universe_observers/schema/berger-108-row-pbw-input-obstruction-v1.schema.json", "sha256": "0356172ffcb3d574397c19f17afd54b57d8f7746ba1e9d10c2d9e8ad55bcc40f"},
+    {"path": "closed_universe_observers/reports/berger-108-row-pbw-input-obstruction.md", "sha256": "8d54f9ed5325ff573305c5074ed3c983ac6e0a721ce59b66fbee50a6aa6dec8f"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_PBW_INPUT_OBSTRUCTION.json", "sha256": "d2de3d909a15b07cbcefe0e9c130d6a6aba1f7eab7ab9761309d3a362a5d7672"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "a9de3b07157c9883abe93e3bea850b892e5e9ede1e53a23b81949a3737c9cf2f"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "f07634b3a9b16005dccc9fb8be61e2dc7dea4ef8f27f5bd7ca7b82dc3df02ef9"},
+    {"path": "planning/work-items/berger-emitter-q1-q2-pbw.json", "sha256": "0add0da923fed8049d18933645daba98cc83e2bce89c588ad0514c6081f3809c"}
+  ],
+  "flags": {
+    "PINNED_64_ROW_PBW_PAYLOAD_VERIFIED": true,
+    "COVARIANT_108_ROW_Q1_Q2_IDENTITY_PRESERVED": true,
+    "DEPENDENCY_CLOSURE_PBW_NONUNIQUENESS_CERTIFIED": true,
+    "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED": false,
+    "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

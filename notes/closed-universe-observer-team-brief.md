@@ -320,20 +320,30 @@ not yet a sparse support-local PBW payload or a component-coefficient PBW
 replay; those remain the algebraic refinement before a solved backreacted
 branch.
 
+`BERGER_108_ROW_PBW_INPUT_OBSTRUCTION` now identifies the first exact defect
+in that refinement.  The pinned 64-row scalar PBW tensor is hash-stable, but
+the apparatus artifact exports covariant Fréchet-derivative formulas without
+a differential coefficient-jet grammar or scalar component rows, and the
+108-row unary exports block ranges rather than a complete scalar PBW matrix.
+Within the certified dependency closure, normalized detector widths
+`epsilon` and `epsilon/2` change the centre readout coefficient by exactly
+eight, while unit-integral emitter-switch radii `r` and `r/2` change the
+interaction coefficient by exactly two.  The promotion is therefore
+`NO_CERTIFIED_MAP`, not a component replay.  Its activation contract is to
+import the later exact smearings and switches, declare a canonical
+coefficient-jet normal form and 108-row component/cotangent crosswalk, then
+export scalar `q1` and action-derived scalar `q2` payloads with all cyclic
+reciprocal orbits.
+
 ### Immediate priority after the polarization-emitter handoff
 
-1. Audit and activate the deferred exact numerical recoil input contract.  The
-   generic adapter now builds and binds every contiguous declared shell,
-   evaluates only its independent SU(2) columns, folds every exact partner,
-   aggregates all four detector/source entries and applies the fail-closed stop
-   rule before advancing.  Its actual `two_j=6` replay matches the prior 32
-   direct plus 24 exact reality-derived blocks.  Physical masses, couplings,
-   inverse volume and a stopping goal remain undeclared.  In
-   parallel, use the
-   exported emitter stress
-   and clock-switch source to refine the certified covariant 108-row
-   `q1 q2` identity into a support-local PBW payload before solving a
-   backreacted gravity-clock branch.
+1. Await and independently verify a provenance-complete external declaration
+   of physical masses, couplings, inverse volume, shell/tail schedule,
+   precision and stopping goal under the certified v2 recoil contract; do not
+   invent those values.  In parallel, satisfy the PBW activation contract
+   above before attempting the scalar 108-row replay or a solved backreacted
+   gravity-clock branch.  Covariant row coverage is not a substitute for the
+   missing component serializer.
    Treat realization of both preparations at the original common Hopf event
    as a stronger, separate localization target.
 2. Keep the full apparatus Dirac bracket, complete harmonic signal algebra,
@@ -1125,6 +1135,14 @@ schedule, all four tail radii after every shell, precision, and one declared
 stopping goal.  Until those values exist and a separate activation certificate
 verifies them, the physical response row remains `OPEN`; neither the adapter
 nor the v2 contract supplies physical values.
+
+The parallel local-interaction bridge is also fail-closed.  Its atlas row is
+`observer.berger.interaction.pbw_108_component_map`: the covariant identity
+and pinned 64-row base are preserved, but the scalar promotion is
+`NO_CERTIFIED_MAP` and the nonlinear axis is `OBSTRUCTED` by the missing
+coefficient-jet/component interface.  This does not activate the physical-
+branch bridge and does not identify any compact-product mode with a Berger
+apparatus row.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-108-row-pbw-input-obstruction-v1.schema.json",
+  "title": "Berger 108-row PBW input obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "pinned_base_and_interface_audit", "nonuniqueness_witnesses", "later_inputs_not_in_certified_dependency_closure", "minimal_activation_contract", "mutation_results", "flags", "atlas_status", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-pbw-input-obstruction-v1"},
+    "result_id": {"const": "BERGER_108_ROW_PBW_INPUT_OBSTRUCTION"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "OBSTRUCTED_CERTIFIED_DEPENDENCY_CLOSURE_DOES_NOT_DETERMINE_COMPONENT_PBW_PAYLOAD"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 6},
+    "pinned_base_and_interface_audit": {"type": "object"},
+    "nonuniqueness_witnesses": {
+      "type": "object",
+      "required": ["detector_profile", "emitter_switch"],
+      "properties": {
+        "detector_profile": {"type": "object", "properties": {"normalized_centre_value_ratio_B_over_A": {"const": "8"}, "readout_q2_coefficient_differs": {"const": true}}, "required": ["normalized_centre_value_ratio_B_over_A", "readout_q2_coefficient_differs"]},
+        "emitter_switch": {"type": "object", "properties": {"unit_integral_centre_value_ratio_B_over_A": {"const": "2"}, "emitter_q2_clock_and_interaction_coefficients_differ": {"const": true}}, "required": ["unit_integral_centre_value_ratio_B_over_A", "emitter_q2_clock_and_interaction_coefficients_differ"]}
+      }
+    },
+    "later_inputs_not_in_certified_dependency_closure": {"type": "object", "required": ["detector_smearings", "emitter_switches"]},
+    "minimal_activation_contract": {"type": "object"},
+    "mutation_results": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object", "properties": {"detected": {"const": true}}, "required": ["name", "detected"]}},
+    "flags": {
+      "type": "object",
+      "required": ["PINNED_64_ROW_PBW_PAYLOAD_VERIFIED", "COVARIANT_108_ROW_Q1_Q2_IDENTITY_PRESERVED", "DEPENDENCY_CLOSURE_PBW_NONUNIQUENESS_CERTIFIED", "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED", "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED", "FULL_NONLINEAR_EMITTER_BACKREACTION_INCLUDED", "QUANTUM_CLAIM"],
+      "properties": {
+        "PINNED_64_ROW_PBW_PAYLOAD_VERIFIED": {"const": true},
+        "COVARIANT_108_ROW_Q1_Q2_IDENTITY_PRESERVED": {"const": true},
+        "DEPENDENCY_CLOSURE_PBW_NONUNIQUENESS_CERTIFIED": {"const": true},
+        "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED": {"const": false},
+        "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED": {"const": false},
+        "FULL_NONLINEAR_EMITTER_BACKREACTION_INCLUDED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "atlas_status": {"const": "NO_CERTIFIED_MAP"},
+    "next_gate": {"const": "DECLARE_108_ROW_COMPONENT_AND_DIFFERENTIAL_COEFFICIENT_JET_CONTRACT_THEN_EXPORT_Q1_AND_Q2_PBW_PAYLOADS"},
+    "claim_boundary": {"type": "string", "minLength": 100},
+    "provenance": {"type": "object"}
+  }
+}
