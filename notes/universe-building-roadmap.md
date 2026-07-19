@@ -85,7 +85,7 @@ The shortest independent paths are now:
 ```text
 Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
-Classical:   extend the selected 160-row five-current de Rham/cotangent carrier by the action-derived q2 and replay the complete arity-two identity; causal Green data and the eighteen candidate-13 spectral receivers remain separate fail-closed gates
+Classical:   attach the certified 188-row physical/current q2 interface to the 78-row relative mapping cofiber and solve or certify the remaining cross-incidence; causal Green data and the eighteen candidate-13 spectral receivers remain separate fail-closed gates
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows now that its product spectrum, matched 3^-6 exceptional factor and regular-complement det3 are certified, then add remaining BV rows to the exact partial-BV five-carrier representative; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; complete q2 and the 616,738-key complete source-labelled q3 are executable, so replay the 108-row arity identities, then test K_Berger equivariance and observer-morphism stability, and only then restrict records to Z2^C
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
@@ -1886,6 +1886,17 @@ the full relative morphism: block projection reproduces the certified direct
 cross-incidence, a derived source pullback, a modified unary/endpoint map or a
 different background.  The independent linear observable-functor gate may
 proceed without waiting for one of those nonlinear repairs.
+
+The selected local replacement is now exact through its physical/current
+arity-two interface.  `EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1`
+supplies the 160-row shifted de Rham/cotangent carrier, and
+`EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1` derives the missing
+equation-field operation from `L_E=-L_F^sharp`.  Its Hessian pullback equals
+the complete Euler source for all five stabilizers, so the cyclic q1-q2
+identity closes on the 14+14 physical Hessian rows and every carrier row.
+This 188-row theorem does not silently solve the full 238-row problem: the
+ghost, identity and antifield cross-incidence with the 78-row mapping cofiber
+and the original direct-\(f_2\) obstruction remain the active classical gate.
 
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains

@@ -1,0 +1,51 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1_TIER_RECEIPT",
+  "claim_ids": ["EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1"],
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1.json", "sha256": "438d9d4035f655b0902bc328af18c8e526289b63085e1b49e1065501d8475cf6"},
+    "schema": {"path": "d_quotient_classical/schema/relative-five-current-de-rham-q2-v1.schema.json", "sha256": "dcbe558f7cb53b87be22fa99ba6d36c7ab3e2224522575e62b3120dcfee1f57f"},
+    "producer": {"path": "d_quotient_classical/relative/einstein_weyl_relative_five_current_de_rham_q2.py", "sha256": "77014020841cc4c6fcbc37524cf10cf9b2d076aee82e9f2f718e7fdc1c637659"},
+    "verifier": {"path": "d_quotient_classical/relative/verify_einstein_weyl_relative_five_current_de_rham_q2.py", "sha256": "c41cba5d51253d57faf162737c11093c3ea0ef4760a40937cd76c167e28f08bb"},
+    "tests": {"path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_five_current_de_rham_q2.py", "sha256": "7d2eaf4e40a4c7adb64264e5be2adc8f76b9e63f8c46562e16c72c9dfa3360c8"},
+    "report": {"path": "d_quotient_classical/reports/einstein-weyl-relative-five-current-de-rham-q2.md", "sha256": "03090df74af9df5f861d17aa4f4bda6e9267f044d0d923fedf39b4d28a4ae3f4"},
+    "generated_operations": {"path": "d_quotient_classical/generated/einstein_weyl_relative_five_current_de_rham_q2_v1/operations.json", "sha256": "2600220145db0665ac360ff675065db453e3c0f9068af0ffa68a8a3a6d9a1ed9"},
+    "atlas_fragment": {"path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "sha256": "edac0087329e01158ee5344ae5adb62e89c45c14827371911607020d13cdea59"}
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": ["Python compilation", "strict Draft 2020-12 schema", "scoped diff check", "content-hash replay"]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 119.45,
+      "rail_elapsed_seconds": {"producer_check": 37.29, "independent_verifier": 33.01, "unit_tests": 46.15, "strict_schema": 3.0},
+      "maximum_single_rail_seconds": 46.15,
+      "peak_rss_kb": 63132,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_five_current_de_rham_q2 --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_five_current_de_rham_q2",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_five_current_de_rham_q2",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-five-current-de-rham-q2-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 1,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This scoped theorem adds the physical/current q2 interface and its direct atlas consumer. It does not freeze a paper, change shared core algebra, promote the full relative morphism or claim causal Green data; unrelated quantum, observer, Einstein and black-hole work is concurrently dirty."
+    }
+  },
+  "claim_boundary": "This receipt covers the exact density-dual equation action, equation-field moment-map operation, five Hessian pullback identities and cyclic q1-q2 completion on the 14+14 physical Hessian interface and all 160 rows of the selected five-current de Rham carrier. It does not certify the remaining cross-incidence with the 78-row relative mapping cofiber, repair the direct f2 obstruction, encode the eighteen candidate-13 spectral receivers, construct causal Green data, authorize arity three or make a quantum claim."
+}

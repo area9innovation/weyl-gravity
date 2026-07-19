@@ -62,6 +62,10 @@ def verify() -> None:
     de_rham = by_id["classical.crosswalk.compact_product_five_current_de_rham_carrier"]
     if de_rham["descriptions"]["symplectic"] != "CERTIFIED" or de_rham["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
         raise AssertionError("five-current de Rham carrier lifecycle changed")
+    if de_rham["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("five-current de Rham q2 interface theorem missing")
+    if "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1" not in {item["result_id"] for item in de_rham["evidence"]}:
+        raise AssertionError("five-current de Rham q2 evidence missing")
     if "eighteen spectral resonance" not in de_rham["claim_boundary"]:
         raise AssertionError("five-current carrier was overextended to candidate-13 resonances")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]

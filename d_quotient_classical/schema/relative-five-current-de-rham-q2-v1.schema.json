@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/relative-five-current-de-rham-q2-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "operations", "generated_operations", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-five-current-de-rham-q2-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1"},
+    "result_state": {"const": "ACTION_DERIVED_CURRENT_INTERFACE_Q2_EXACT_FULL_RELATIVE_MORPHISM_OPEN"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"$ref": "#/$defs/scope"},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["de_rham_carrier", "five_current", "cyclic_current", "relative_hessian"],
+      "properties": {
+        "de_rham_carrier": {"$ref": "#/$defs/artifact"},
+        "five_current": {"$ref": "#/$defs/artifact"},
+        "cyclic_current": {"$ref": "#/$defs/artifact"},
+        "relative_hessian": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "operations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field_field_to_primal_three_form", "equation_field_to_primal_four_form", "equation_action", "cyclic_completion", "base_identity", "all_row_argument", "carrier_row_audit", "generator_records"],
+      "properties": {
+        "field_field_to_primal_three_form": {"type": "string", "minLength": 1},
+        "equation_field_to_primal_four_form": {"type": "string", "minLength": 1},
+        "equation_action": {"type": "string", "minLength": 1},
+        "cyclic_completion": {"type": "string", "minLength": 1},
+        "base_identity": {"type": "string", "minLength": 1},
+        "all_row_argument": {"type": "string", "minLength": 1},
+        "carrier_row_audit": {"$ref": "#/$defs/rowAudit"},
+        "generator_records": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["H", "P_x", "J_1", "J_2", "J_3"],
+          "properties": {
+            "H": {"$ref": "#/$defs/generatorRecord"},
+            "P_x": {"$ref": "#/$defs/generatorRecord"},
+            "J_1": {"$ref": "#/$defs/generatorRecord"},
+            "J_2": {"$ref": "#/$defs/generatorRecord"},
+            "J_3": {"$ref": "#/$defs/generatorRecord"}
+          }
+        }
+      }
+    },
+    "generated_operations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "portable_tables"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "portable_tables": {"type": "string", "minLength": 1}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["density_dual_equation_action_exact", "action_derived_equation_field_operation_exact", "all_five_hessian_pullback_factorizations_exact", "current_interface_q1q2_identity_exact", "current_interface_cyclic_completion_exact", "all_160_carrier_rows_audited", "added_potential_and_reducibility_q2_rows_zero", "finite_order_support_local", "full_relative_238_row_arity_two_morphism_constructed", "direct_f2_obstruction_repaired", "causal_green_homotopy_certified", "arity_three_authorized", "quantum_claim"],
+      "properties": {
+        "density_dual_equation_action_exact": {"const": true},
+        "action_derived_equation_field_operation_exact": {"const": true},
+        "all_five_hessian_pullback_factorizations_exact": {"const": true},
+        "current_interface_q1q2_identity_exact": {"const": true},
+        "current_interface_cyclic_completion_exact": {"const": true},
+        "all_160_carrier_rows_audited": {"const": true},
+        "added_potential_and_reducibility_q2_rows_zero": {"const": true},
+        "finite_order_support_local": {"const": true},
+        "full_relative_238_row_arity_two_morphism_constructed": {"const": false},
+        "direct_f2_obstruction_repaired": {"const": false},
+        "causal_green_homotopy_certified": {"const": false},
+        "arity_three_authorized": {"const": false},
+        "quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "ATTACH_THE_EXACT_CURRENT_INTERFACE_Q2_TO_THE_78_ROW_RELATIVE_MAPPING_COFIBER_AND_SOLVE_OR_CERTIFY_THE_REMAINING_CROSS_INCIDENCE"},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "claim_boundary": {"type": "string", "minLength": 80}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"type": "string"}, "background": {"type": "string"}, "boundaries": {"type": "string"},
+        "charge_sector": {"type": "string"}, "carrier": {"type": "string"}, "degree": {"type": "string"},
+        "parity": {"type": "string"}, "ell": {"type": "string"}, "m": {"type": "string"},
+        "k": {"type": "string"}, "omega": {"type": "string"}
+      }
+    },
+    "generatorRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field_action_terms", "field_action_sha256", "equation_action_terms", "equation_action_sha256", "field_field_current_monomials", "field_field_current_sha256", "equation_field_moment_terms", "equation_field_moment_sha256", "symmetrized_hessian_pullback_terms", "euler_source_terms", "hessian_pullback_defect_terms"],
+      "properties": {
+        "field_action_terms": {"type": "integer", "minimum": 1},
+        "field_action_sha256": {"$ref": "#/$defs/hash"},
+        "equation_action_terms": {"type": "integer", "minimum": 1},
+        "equation_action_sha256": {"$ref": "#/$defs/hash"},
+        "field_field_current_monomials": {"type": "integer", "minimum": 1},
+        "field_field_current_sha256": {"$ref": "#/$defs/hash"},
+        "equation_field_moment_terms": {"type": "integer", "minimum": 1},
+        "equation_field_moment_sha256": {"$ref": "#/$defs/hash"},
+        "symmetrized_hessian_pullback_terms": {"type": "integer", "minimum": 1},
+        "euler_source_terms": {"type": "integer", "minimum": 1},
+        "hessian_pullback_defect_terms": {"const": 0}
+      }
+    },
+    "rowAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row_count", "active_orbit_rows", "zero_q2_rows", "role_counts", "records"],
+      "properties": {
+        "row_count": {"const": 160},
+        "active_orbit_rows": {"const": 50},
+        "zero_q2_rows": {"const": 110},
+        "role_counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["field_field_current_output", "equation_field_moment_output", "field_field_current_cyclic_input", "equation_field_moment_cyclic_input", "zero_q2_row"],
+          "properties": {
+            "field_field_current_output": {"const": 20},
+            "equation_field_moment_output": {"const": 5},
+            "field_field_current_cyclic_input": {"const": 20},
+            "equation_field_moment_cyclic_input": {"const": 5},
+            "zero_q2_row": {"const": 110}
+          }
+        },
+        "records": {
+          "type": "array",
+          "minItems": 160,
+          "maxItems": 160,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["row", "row_id", "q2_role"],
+            "properties": {
+              "row": {"type": "integer", "minimum": 0, "maximum": 159},
+              "row_id": {"type": "string", "minLength": 1},
+              "q2_role": {"enum": ["field_field_current_output", "equation_field_moment_output", "field_field_current_cyclic_input", "equation_field_moment_cyclic_input", "zero_q2_row"]}
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}

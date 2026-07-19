@@ -71,6 +71,7 @@ CERTS = {
     "Bach_rank310_causal": ROOT / "d_quotient_classical/certificates/BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1.json",
     "candidate13_local_upgrade_obstruction": ROOT / "d_quotient_classical/certificates/CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1.json",
     "five_current_de_rham_carrier": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1.json",
+    "five_current_de_rham_q2": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
 
@@ -328,14 +329,14 @@ def entries() -> list[dict[str, Any]]:
     values.append(_entry(
         "classical.crosswalk.compact_product_five_current_de_rham_carrier",
         _scope(NARIAI, theory="Einstein-Maxwell source relative to Weyl-Maxwell target", background="compact magnetic Plebanski-Hacyan product, including candidate-13", boundaries="R_t x closed oriented S1_L x S2 with fixed N=2 magnetic bundle", charge_sector="H,P_x,J_1,J_2,J_3 simultaneous zero-charge derived sector", carrier="160-row shifted de Rham current resolution and cyclic cotangent completion", degree="-2,...,3 with ranks (5,25,50,50,25,5)", parity="odd cotangent pairing; both source parities", ell="not harmonic-reduced", m="not harmonic-reduced", k="not harmonic-reduced", omega="not harmonic-reduced"),
-        {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NOT_APPLICABLE", "quantum": "OPEN"},
+        {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "NOT_APPLICABLE", "quantum": "OPEN"},
         ("NO_CERTIFIED_MAP", "The support-local unary carrier is selected, but no Green homotopy has been constructed."),
         ("CERTIFIED", "The 160-row carrier has an exact odd pairing and Stokes-compatible unary differential."),
-        ("OPEN", "The action-derived current q2 has not yet been extended and replayed on all new reducibility and cotangent rows."),
+        ("CERTIFIED", "The action-derived current q2 and density-dual equation-field operation replay exactly on the 188-row physical-current interface; the full 238-row relative mapping-cofiber morphism remains open."),
         ("NOT_APPLICABLE", "This is an equation-level derived-source carrier, not an observable or particle map."),
         _second(("NOT_APPLICABLE", "No bounded-mode claim is made by the local de Rham carrier."), ("CERTIFIED", "For closed currents, dB=-j presents the five zero-charge conditions without projectors."), ("NO_CERTIFIED_MAP", "Causal Green data remain open.")),
-        _evidence("five_current_de_rham_carrier"),
-        "The carrier resolves only the five stabilizer-current classes. It does not encode candidate-13's eighteen spectral resonance receivers, repair the relative f2, authorize arity three, or supply causal or quantum transport.",
+        _evidence("five_current_de_rham_carrier", "five_current_de_rham_q2"),
+        "The carrier resolves only the five stabilizer-current classes. Its q2 theorem covers the 14+14 Hessian interface and all 160 current-carrier rows, not every ghost, identity and antifield row of the 78-row relative mapping cofiber. It does not encode candidate-13's eighteen spectral resonance receivers, repair the relative f2, authorize arity three, or supply causal or quantum transport.",
     ))
     return values
 

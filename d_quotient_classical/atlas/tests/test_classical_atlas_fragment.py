@@ -108,14 +108,19 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
 
-    def test_five_current_de_rham_carrier_is_unary_only(self) -> None:
+    def test_five_current_de_rham_carrier_has_scoped_q2_only(self) -> None:
         entry = self.entries["classical.crosswalk.compact_product_five_current_de_rham_carrier"]
         self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
         self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
-        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("full 238-row relative mapping-cofiber morphism remains open", entry["mode_data"]["taub_maps"]["statement"])
         self.assertIn("eighteen spectral resonance", entry["claim_boundary"])
         self.assertIn(
             "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
 

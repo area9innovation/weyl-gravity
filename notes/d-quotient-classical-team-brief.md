@@ -2348,10 +2348,21 @@ the cotangent resolution continues the old terminal dual-current rows.  Its midd
 equation is `d_H B_X+j_X/2=0`.  Since the product cylinder has one-dimensional
 third de Rham cohomology, this is a local derived presentation of the five
 zero-charge conditions without a Fourier projector.  It is intentionally
-noncontractible.  The active gate is now the complete action-derived `q2`
-extension and arity-two replay on all 160 rows.  Causal Green data, the direct
-relative `f2`, candidate-13's eighteen spectral resonance rows, arity three
-and quantum transfer remain fail-closed.
+noncontractible.
+
+`EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1` now closes the next scoped
+arity-two gate.  For the 14 physical relative fields and their 14 Hessian
+equations, the equation-density stabilizer action is derived as
+`L_E=-L_F^sharp`, and the forced moment operation
+`M_X(e,v)=1/2(v L_E e-e L_F v)` satisfies
+`d_H C_X(u,v)=M_X(Eu,v)+M_X(Ev,u)` with zero exact PBW defect for all five
+stabilizers.  Completing the two lowered tensors by cyclic rotation audits all
+160 carrier rows; the 110 added potential/reducibility rows outside those
+orbits have zero `q2`.  This is a 188-row physical-current interface theorem,
+not yet the complete 238-row relative morphism.  The active gate is therefore
+the remaining cross-incidence with the 78-row mapping cofiber.  Causal Green
+data, the direct relative `f2`, candidate-13's eighteen spectral resonance
+rows, arity three and quantum transfer remain fail-closed.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
