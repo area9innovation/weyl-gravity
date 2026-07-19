@@ -335,15 +335,26 @@ coefficient-jet normal form and 108-row component/cotangent crosswalk, then
 export scalar `q1` and action-derived scalar `q2` payloads with all cyclic
 reciprocal orbits.
 
+`BERGER_108_ROW_COMPONENT_JET_CONTRACT` now completes that activation
+contract.  It composes the ordered 108-row carrier and rank-108 signed odd
+pairing, fixes symmetric, one-form and ordered two-form component
+conventions, binds the exact radius-`1/128` detector profiles and the exact
+`h0/h1` switch radii, and supplies an executable arbitrary-finite
+differential coefficient normal form over `Q(sqrt(10))`.  The factor-eight
+and factor-two ambiguities are therefore removed for new consumers.  This is
+not yet scalar `q1` or `q2`: the next algebraic gate is the complete scalar
+108-row unary PBW matrix, followed by the action-derived bilinear tensor and
+independent component replay.
+
 ### Immediate priority after the polarization-emitter handoff
 
 1. Await and independently verify a provenance-complete external declaration
    of physical masses, couplings, inverse volume, shell/tail schedule,
    precision and stopping goal under the certified v2 recoil contract; do not
-   invent those values.  In parallel, satisfy the PBW activation contract
-   above before attempting the scalar 108-row replay or a solved backreacted
-   gravity-clock branch.  Covariant row coverage is not a substitute for the
-   missing component serializer.
+   invent those values.  In parallel, use the certified component/jet contract
+   to export the complete scalar 108-row `q1` PBW matrix before attempting
+   scalar `q2`, its replay, or a solved backreacted gravity-clock branch.
+   Covariant row coverage is not a substitute for either scalar payload.
    Treat realization of both preparations at the original common Hopf event
    as a stronger, separate localization target.
 2. Keep the full apparatus Dirac bracket, complete harmonic signal algebra,
@@ -1136,11 +1147,13 @@ stopping goal.  Until those values exist and a separate activation certificate
 verifies them, the physical response row remains `OPEN`; neither the adapter
 nor the v2 contract supplies physical values.
 
-The parallel local-interaction bridge is also fail-closed.  Its atlas row is
+The parallel local-interaction bridge remains fail-closed at the tensor map.
+Its atlas row is
 `observer.berger.interaction.pbw_108_component_map`: the covariant identity
-and pinned 64-row base are preserved, but the scalar promotion is
-`NO_CERTIFIED_MAP` and the nonlinear axis is `OBSTRUCTED` by the missing
-coefficient-jet/component interface.  This does not activate the physical-
+and pinned 64-row base are preserved, and the new sibling row
+`observer.berger.interaction.pbw_108_component_jet_contract` is `CERTIFIED`.
+The scalar promotion remains `NO_CERTIFIED_MAP` only because complete scalar
+`q1` and `q2` payloads have not yet been exported.  This does not activate the physical-
 branch bridge and does not identify any compact-product mode with a Berger
 apparatus row.
 

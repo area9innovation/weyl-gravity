@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "normalized_balance",
+    "frequency_census",
+    "classification",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_EINSTEIN_MINUS_FREQUENCY_GATE"
+    },
+    "lifecycle_state": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "frequency_census": {
+      "type": "object",
+      "required": ["records", "all_new_cross_frequencies_off_shell", "homogeneous_nonzero_frequency_output_empty"],
+      "properties": {
+        "records": {"type": "array", "minItems": 40, "maxItems": 40},
+        "all_new_cross_frequencies_off_shell": {"const": true},
+        "homogeneous_nonzero_frequency_output_empty": {"const": true}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "minimal_single_Einstein_minus_H_balance_explicit",
+        "mu_H_mu_Px_mu_Ji_all_zero_on_balanced_axisymmetric_fixture",
+        "all_Einstein_minus_exceptional_cross_shells_nonresonant",
+        "all_Einstein_minus_ell2_control_cross_shells_nonresonant",
+        "complete_quadratic_source_solved",
+        "zero_frequency_source_completed",
+        "bounded_second_order_extension_certified",
+        "causal_or_quantum_claim"
+      ]
+    }
+  }
+}

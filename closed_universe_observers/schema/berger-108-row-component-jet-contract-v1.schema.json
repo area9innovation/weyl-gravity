@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://area9.dk/pure-weyl/berger-108-row-component-jet-contract-v1.schema.json",
+  "type":"object","additionalProperties":false,
+  "required":["schema","result_id","setting_id","claim_status","dependency_tags","dependency_refs","carrier_contract","coefficient_algebra","activation_disposition","mutations","flags","next_gate","claim_boundary","provenance"],
+  "properties":{
+    "schema":{"const":"closed-universe-berger-108-row-component-jet-contract-v1"},
+    "result_id":{"const":"BERGER_108_ROW_COMPONENT_JET_CONTRACT"},
+    "setting_id":{"type":"string"},
+    "claim_status":{"const":"CERTIFIED_CANONICAL_108_ROW_COMPONENT_AND_DIFFERENTIAL_COEFFICIENT_JET_INTERFACE"},
+    "dependency_tags":{"const":["LOCAL-ALGEBRAIC"]},
+    "dependency_refs":{"type":"object","minProperties":7},
+    "carrier_contract":{"type":"object","required":["rows","rows_canonical_sha256","pairing_entries","pairing_canonical_sha256","pairing_shape","pairing_rank","component_conventions"],"properties":{"rows":{"type":"array","minItems":108,"maxItems":108},"pairing_entries":{"type":"array","minItems":108,"maxItems":108},"pairing_shape":{"const":[108,108]},"pairing_rank":{"const":108}}},
+    "coefficient_algebra":{"type":"object","required":["base_field","formal_parameters","generator_kinds","profile_generator","background_generator","normal_form","derivations","derivation_rule","jet_order","exact_profile_specializations","audit"],"properties":{"base_field":{"const":"Q(sqrt(10))"},"derivations":{"const":["e0","e1","e2","e3"]},"jet_order":{"const":"arbitrary finite; no truncation in the contract"}}},
+    "activation_disposition":{"type":"object","properties":{"component_basis_ambiguity_removed":{"const":true},"detector_width_ambiguity_removed":{"const":true},"switch_radius_ambiguity_removed":{"const":true},"coefficient_normal_form_executable":{"const":true},"scalar_q1_payload_exported":{"const":false},"scalar_q2_payload_exported":{"const":false},"component_q1_q2_replay_certified":{"const":false}},"required":["component_basis_ambiguity_removed","detector_width_ambiguity_removed","switch_radius_ambiguity_removed","coefficient_normal_form_executable","scalar_q1_payload_exported","scalar_q2_payload_exported","component_q1_q2_replay_certified"]},
+    "mutations":{"type":"array","minItems":5,"maxItems":5,"items":{"type":"object","properties":{"detected":{"const":true}},"required":["name","detected"]}},
+    "flags":{"type":"object","properties":{"CANONICAL_108_ROW_COMPONENT_CROSSWALK_CERTIFIED":{"const":true},"NONDEGENERATE_108_ROW_ODD_PAIRING_CERTIFIED":{"const":true},"DIFFERENTIAL_COEFFICIENT_JET_NORMAL_FORM_CERTIFIED":{"const":true},"EXACT_DETECTOR_AND_SWITCH_SPECIALIZATIONS_BOUND":{"const":true},"SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED":{"const":false},"SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED":{"const":false},"COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED":{"const":false},"QUANTUM_CLAIM":{"const":false}},"required":["CANONICAL_108_ROW_COMPONENT_CROSSWALK_CERTIFIED","NONDEGENERATE_108_ROW_ODD_PAIRING_CERTIFIED","DIFFERENTIAL_COEFFICIENT_JET_NORMAL_FORM_CERTIFIED","EXACT_DETECTOR_AND_SWITCH_SPECIALIZATIONS_BOUND","SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED","SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED","COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED","QUANTUM_CLAIM"]},
+    "next_gate":{"const":"EXPORT_COMPLETE_SCALAR_108_ROW_Q1_PBW_MATRIX_THEN_ACTION_DERIVED_Q2_TENSOR"},
+    "claim_boundary":{"type":"string","minLength":200},"provenance":{"type":"object"}
+  }
+}
