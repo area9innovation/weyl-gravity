@@ -227,6 +227,15 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("horizontal 3-form current", entry["claim_boundary"])
         self.assertIn("remain OPEN", entry["claim_boundary"])
 
+    def test_relative_current_seed_is_local_but_not_a_divergence_cone(self):
+        entry = next(item for item in atlas.build()["entries"] if "polarized_relative_noether_current_seed" in item["id"])
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["causal"], "OPEN")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "OPEN")
+        self.assertIn("off-shell horizontal divergence cone", entry["claim_boundary"])
+        self.assertIn("does not certify", entry["claim_boundary"])
+
     def test_generic_standard_pairing_cyclic_obstruction_is_scoped(self):
         entry = next(item for item in atlas.build()["entries"] if "generic_standard_pairing_cyclic_map_inertia_obstruction" in item["id"])
         self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")

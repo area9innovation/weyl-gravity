@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "status": "PASS",
+  "source_manifest": {
+    "d_quotient_classical/relative/einstein_weyl_relative_noether_current.py": "4c1de198390f600fba5887c420a093571c1ac310917b5a4df3811ecc732ce4c1",
+    "d_quotient_classical/relative/einstein_weyl_relative_polarized_noether_current_seed.py": "22cdf8b2021b2fccb1342964c7d18b2a40692c89937fa9f5addc67096904939c",
+    "d_quotient_classical/relative/verify_einstein_weyl_relative_polarized_noether_current_seed.py": "23622209d7dc8a6e513d2b6012c6df54e04a5e213636688ca68ecd3cb71b7143",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_noether_current.py": "93b673a22bf2a598bd3f17d5dab99dec4091f0cf97d0d103ce4bce331d5d5f66",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_polarized_noether_current_seed.py": "6a26f802b18bc868d1070c12d3ec4620ebde02d81fb1e6f5963c7137d8a8e77e",
+    "d_quotient_classical/schema/relative-polarized-noether-current-seed-v1.schema.json": "9fc9e86e8f77a8e8d2dd12c0ad52360424640f76987a52346000a8632191a1ff",
+    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1.json": "25aab484188126107c2495c100fca1b67b686f28dc60a2f8999c99155752fd95",
+    "d_quotient_classical/reports/einstein-weyl-relative-polarized-noether-current-seed.md": "c8b07d239fb83612dd7c2c15de2e176ed700805090cc2023289c3b68199a5cf3",
+    "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py": "f455d45a6551379c80a150ea75d3e8f4f0e0ea322ab051b7402f904ec6a05856",
+    "d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "3303c122c60ba627ee63aa6e055220cc0ec3b10993d5e87e1f663f12f171d417",
+    "d_quotient_classical/atlas/tests/test_nonlinear_atlas_fragment.py": "5fa7cd9c634c618b0871b041f344440586c38d68316a6bbb555ab3d78991124f",
+    "notes/d-quotient-classical-team-brief.md": "507a0d1778a0e4ac874ec767648773dcf2e0113f590750941ad9f85bfb85c94b"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "command": "py_compile, strict Draft 2020-12 AJV validation, manifest hashes and scoped git diff --check"
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 13.66,
+      "max_rss_kib": 63272,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_polarized_noether_current_seed --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_polarized_noether_current_seed",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_noether_current d_quotient_classical.relative.tests.test_einstein_weyl_relative_polarized_noether_current_seed d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-polarized-noether-current-seed-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1.json"
+      ],
+      "result": "26 tests passed; independent replay checked imported hashes, the gauge-covariant Cartan lift, exact nonzero spatial-current fixture, polarization symmetry, fail-closed bounds and downstream false-flag guards"
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The component evaluator, complete charge q2, Taub descent and moment-map bridge are unchanged SHA-pinned inputs."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This seed does not freeze the off-shell divergence cone, cyclic BV rows, causal enlargement or any paper theorem."
+    }
+  },
+  "claim_boundary": "The receipt certifies a nonzero finite-order support-local polarized relative Noether-current evaluator and its bundle-covariant Maxwell stabilizer lift. It does not certify the off-shell horizontal divergence identity, cyclic dual current/divergence rows, complete five-charge slice integration, repaired f2, arity three, causal propagation, observables, particles or quantum transfer."
+}

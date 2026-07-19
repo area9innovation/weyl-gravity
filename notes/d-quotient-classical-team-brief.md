@@ -435,16 +435,33 @@ horizontal equation cone
 \]
 
 with cyclic dual rows, followed by Cauchy-slice integration only after
-globalization.  The formal Noether identity and slice descent are certified;
-the portable coefficientwise relative current density and its BV completion
-remain open.
+globalization.  `EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1`
+now exports the finite-order support-local three-current at coefficient level:
+
+\[
+j_X(u,v)=\frac12\bigl(
+\omega_{\rm rel}(u,{\cal L}_Xv)+
+\omega_{\rm rel}(v,{\cal L}_Xu)\bigr),
+\qquad
+\omega_{\rm rel}=\omega_{\rm WM}-\omega_{\rm EM}.
+\]
+
+The metric lift is the tensor Lie derivative and the Maxwell lift is the
+fixed-bundle Cartan action \(\iota_Xda={\cal L}_Xa-d(\iota_Xa)\).  All four
+vector-density components are available, the polarization is symmetric, and
+an exact spatial fixture gives \(j_D^x=3x/8\), so the exported local carrier is
+nonzero.  The full off-shell divergence replay, cyclic dual rows and equality
+of the integrated current with every block of the complete five-charge
+operation remain open; the seed does not repair \(f_2\) or authorize arity
+three.
 
 The underlying action-derived Lee--Wald engine is now component-complete.
 `weyl_maxwell_current_component` and
 `einstein_maxwell_current_component` evaluate every vector-density component,
 while the established time-component functions remain exact wrappers.  This
 closes the API prerequisite for the relative current cone without promoting
-its still-unchecked off-shell divergence or cyclic BV rows.
+its still-unchecked off-shell divergence or cyclic BV rows.  The active local
+gate is `CERTIFY_OFF_SHELL_DIVERGENCE_CONE_AND_CYCLIC_DUAL_ROWS`.
 
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.

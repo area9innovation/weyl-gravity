@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-polarized-noether-current-seed-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "construction", "exact_fixtures", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-polarized-noether-current-seed-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1"},
+    "result_state": {"const": "LOCAL_CURRENT_SEED_EXPORTED"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}], "minItems": 1, "maxItems": 1},
+    "scope": {"$ref": "#/$defs/stringObject"},
+    "dependencies": {"type": "object", "additionalProperties": {"$ref": "#/$defs/artifact"}, "minProperties": 4, "maxProperties": 4},
+    "construction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["relative_current", "polarized_current", "metric_action", "maxwell_action", "horizontal_carrier", "global_charge_operation"],
+      "properties": {
+        "relative_current": {"const": "omega_Weyl-Maxwell - omega_Einstein-Maxwell"},
+        "polarized_current": {"const": "j_X(u,v)=(omega_rel(u,L_X v)+omega_rel(v,L_X u))/2"},
+        "metric_action": {"const": "ordinary tensor Lie derivative L_X h"},
+        "maxwell_action": {"const": "bundle-covariant lift i_X da = L_X a - d(i_X a)"},
+        "horizontal_carrier": {"const": "Omega_H^3(M;g_stab^*)"},
+        "global_charge_operation": {"const": "integrate the closed current over a Cauchy slice only after the divergence identity is imposed"}
+      }
+    },
+    "exact_fixtures": {
+      "type": "object", "additionalProperties": false,
+      "required": ["cartan_formula", "polarization_symmetric", "nonzero_spatial_fixture", "component_api"],
+      "properties": {
+        "cartan_formula": {"const": true},
+        "polarization_symmetric": {"const": true},
+        "nonzero_spatial_fixture": {"const": "j^x_D(t*x dxdy,t^2*x dxdy)=3*x/8 on Minkowski space"},
+        "component_api": {"const": "mu=0,1,2,3 with fail-closed bounds"}
+      }
+    },
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["all_four_action_current_components_exported", "bundle_covariant_stabilizer_action", "polarized_relative_current_exported", "finite_order_support_local", "off_shell_divergence_cone_certified", "slice_integral_matches_complete_five_charge_q2", "cyclic_dual_rows_certified", "direct_f2_repaired", "arity_three_authorized", "causal_observable_particle_or_quantum_claim"],
+      "properties": {
+        "all_four_action_current_components_exported": {"const": true},
+        "bundle_covariant_stabilizer_action": {"const": true},
+        "polarized_relative_current_exported": {"const": true},
+        "finite_order_support_local": {"const": true},
+        "off_shell_divergence_cone_certified": {"const": false},
+        "slice_integral_matches_complete_five_charge_q2": {"const": false},
+        "cyclic_dual_rows_certified": {"const": false},
+        "direct_f2_repaired": {"const": false},
+        "arity_three_authorized": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "CERTIFY_OFF_SHELL_DIVERGENCE_CONE_AND_CYCLIC_DUAL_ROWS"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_manifest", "verification_commands"], "properties": {"source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "minProperties": 5}, "verification_commands": {"type": "array", "items": {"type": "string"}, "minItems": 4}}},
+    "claim_boundary": {"type": "string", "minLength": 350}
+  },
+  "$defs": {
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "stringObject": {"type": "object", "additionalProperties": {"type": "string"}, "minProperties": 8}
+  }
+}

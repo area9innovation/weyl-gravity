@@ -45,6 +45,7 @@ CERTS = {
     "relative_standard_charge_q2": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_STANDARD_RADIATIVE_CHARGE_Q2_V1.json",
     "relative_complete_standard_charge_q2": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json",
     "relative_finite_charge_locality_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1.json",
+    "relative_polarized_noether_current_seed": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -382,6 +383,8 @@ def entries() -> list[dict[str, Any]]:
     relative_complete_charge_q2_scope = relative_complete_charge_q2["scope"]
     relative_locality_obstruction = json.loads(CERTS["relative_finite_charge_locality_obstruction"].read_text())
     relative_locality_obstruction_scope = relative_locality_obstruction["scope"]
+    relative_current_seed = json.loads(CERTS["relative_polarized_noether_current_seed"].read_text())
+    relative_current_seed_scope = relative_current_seed["scope"]
     identity_cyclic_scope = json.loads(CERTS["identity_cyclic_obstruction"].read_text())["scope"]
     return [
         {
@@ -736,6 +739,24 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("relative_finite_charge_locality_obstruction", "relative_complete_standard_charge_q2", "relative_charge_koszul_preflight"),
             "claim_boundary": "Only the direct support-local lift into constant finite charge rows is obstructed. The global reduced-mode charge receiver remains certified, while a local horizontal 3-form current to 4-form divergence cone, its cyclic dual completion, causal enlargement and later Cauchy-slice integration remain OPEN or NO_CERTIFIED_MAP.",
+        },
+        {
+            "id": "nonlinear.product.bridge2.polarized_relative_noether_current_seed",
+            "scope": relative_current_seed_scope,
+            "descriptions": {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "The local current is exported, but no bounded correction theorem follows before the off-shell divergence cone is certified."),
+                    ("OPEN", "The local current is exported, but no smooth-secular f2 primitive is constructed."),
+                    ("OPEN", "The seed is support local; its divergence cone and retarded Green enlargement remain unconstructed."),
+                ),
+                dispersion=("NOT_APPLICABLE", "This is a local current-density construction, not a dispersion calculation."),
+                pairing=("CERTIFIED", "All four action-derived relative Lee-Wald components and their symmetric stabilizer polarization are exported."),
+                taub=("OPEN", "Cauchy-slice integration has not yet been replayed against every block of the complete five-charge q2."),
+                resonance=("OPEN", "The off-shell current divergence and equation-row factorization remain the next gate."),
+            ),
+            "evidence": _evidence("relative_polarized_noether_current_seed", "relative_finite_charge_locality_obstruction", "relative_complete_standard_charge_q2"),
+            "claim_boundary": "This LOCAL-ALGEBRAIC row certifies a nonzero support-local polarized relative Noether-current seed with a bundle-covariant Maxwell stabilizer lift. It does not certify the off-shell horizontal divergence cone, cyclic dual rows, equality of all integrated five-charge blocks, a repaired f2, arity three, retarded propagation, an observable, a particle map or a quantum transfer.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction",

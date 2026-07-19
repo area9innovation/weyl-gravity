@@ -1,0 +1,87 @@
+{
+  "claim_boundary": "This artifact exports a finite-order support-local evaluator for all four components of the action-derived polarized relative Lee-Wald current and a bundle-covariant lift of each stabilizer generator to Maxwell connection perturbations. It verifies the Cartan formula, symmetry of polarization and an exact nonzero spatial-current fixture. It does not yet replay the full off-shell horizontal divergence identity against the Einstein-Maxwell and Weyl-Maxwell equation rows, construct the cyclic dual current/divergence rows, prove that Cauchy integration reproduces every block of the complete five-charge reduced q2, repair the direct f2 obstruction, authorize arity three, or establish causal, observational, particle or quantum claims.",
+  "classification": {
+    "all_four_action_current_components_exported": true,
+    "arity_three_authorized": false,
+    "bundle_covariant_stabilizer_action": true,
+    "causal_observable_particle_or_quantum_claim": false,
+    "cyclic_dual_rows_certified": false,
+    "direct_f2_repaired": false,
+    "finite_order_support_local": true,
+    "off_shell_divergence_cone_certified": false,
+    "polarized_relative_current_exported": true,
+    "slice_integral_matches_complete_five_charge_q2": false
+  },
+  "construction": {
+    "global_charge_operation": "integrate the closed current over a Cauchy slice only after the divergence identity is imposed",
+    "horizontal_carrier": "Omega_H^3(M;g_stab^*)",
+    "maxwell_action": "bundle-covariant lift i_X da = L_X a - d(i_X a)",
+    "metric_action": "ordinary tensor Lie derivative L_X h",
+    "polarized_current": "j_X(u,v)=(omega_rel(u,L_X v)+omega_rel(v,L_X u))/2",
+    "relative_current": "omega_Weyl-Maxwell - omega_Einstein-Maxwell"
+  },
+  "dependencies": {
+    "complete_charge_q2": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json",
+      "sha256": "11e8119ab8fc9756fc5b4c5520e648599fd1264e7776cc79d91dc80645be1c56"
+    },
+    "component_evaluator_receipt": {
+      "artifact_id": "WEYL_MAXWELL_LEE_WALD_COMPONENT_EVALUATOR_V1_TIER_RECEIPT",
+      "path": "d_quotient_classical/receipts/WEYL_MAXWELL_LEE_WALD_COMPONENT_EVALUATOR_V1_TIER_RECEIPT.json",
+      "sha256": "6af2534020b28d7a6111bac12130e73d968e47633f88389bc17fad415afd6a1d"
+    },
+    "moment_map_bridge": {
+      "artifact_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+      "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+      "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+    },
+    "taub_descent": {
+      "artifact_id": "COMPACT_HARMONIC_DOMAIN_AND_TAUB_DESCENT",
+      "path": "bridge/certificates/compact_harmonic_domain_taub_descent.json",
+      "sha256": "4607543c23acdf5df0110aa6df4a01d7e397e6a73afd2d416f3bdd8482048e09"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_fixtures": {
+    "cartan_formula": true,
+    "component_api": "mu=0,1,2,3 with fail-closed bounds",
+    "nonzero_spatial_fixture": "j^x_D(t*x dxdy,t^2*x dxdy)=3*x/8 on Minkowski space",
+    "polarization_symmetric": true
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "CERTIFY_OFF_SHELL_DIVERGENCE_CONE_AND_CYCLIC_DUAL_ROWS",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_noether_current.py": "4c1de198390f600fba5887c420a093571c1ac310917b5a4df3811ecc732ce4c1",
+      "d_quotient_classical/relative/einstein_weyl_relative_polarized_noether_current_seed.py": "22cdf8b2021b2fccb1342964c7d18b2a40692c89937fa9f5addc67096904939c",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_noether_current.py": "93b673a22bf2a598bd3f17d5dab99dec4091f0cf97d0d103ce4bce331d5d5f66",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_polarized_noether_current_seed.py": "23622209d7dc8a6e513d2b6012c6df54e04a5e213636688ca68ecd3cb71b7143",
+      "d_quotient_classical/schema/relative-polarized-noether-current-seed-v1.schema.json": "9fc9e86e8f77a8e8d2dd12c0ad52360424640f76987a52346000a8632191a1ff"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_polarized_noether_current_seed --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_polarized_noether_current_seed",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_noether_current",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-polarized-noether-current-seed-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1.json"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1",
+  "result_state": "LOCAL_CURRENT_SEED_EXPORTED",
+  "schema": "pure-weyl-relative-polarized-noether-current-seed-v1",
+  "scope": {
+    "background": "local coordinate presentation, with the magnetic product as the intended global specialization",
+    "boundaries": "local compactly supported jets; no Cauchy integration in this artifact",
+    "carrier": "horizontal relative Noether three-current encoded as a four-component vector density",
+    "charge_sector": "one arbitrary spacetime stabilizer generator X at a time",
+    "degree": "symmetric arity-two current seed",
+    "ell": "not harmonic-reduced",
+    "k": "not harmonic-reduced",
+    "m": "not harmonic-reduced",
+    "omega": "not harmonic-reduced",
+    "parity": "all",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  }
+}

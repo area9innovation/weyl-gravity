@@ -1287,6 +1287,80 @@
       }
     },
     {
+      "claim_boundary": "This LOCAL-ALGEBRAIC row certifies a nonzero support-local polarized relative Noether-current seed with a bundle-covariant Maxwell stabilizer lift. It does not certify the off-shell horizontal divergence cone, cyclic dual rows, equality of all integrated five-charge blocks, a repaired f2, arity three, retarded propagation, an observable, a particle map or a quantum transfer.",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1",
+          "sha256": "25aab484188126107c2495c100fca1b67b686f28dc60a2f8999c99155752fd95"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1",
+          "sha256": "b605cd3241322511552c4bf900b77ab8c7eb44d6b025cf24c95307b7c3874309"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1",
+          "sha256": "11e8119ab8fc9756fc5b4c5520e648599fd1264e7776cc79d91dc80645be1c56"
+        }
+      ],
+      "id": "nonlinear.product.bridge2.polarized_relative_noether_current_seed",
+      "mode_data": {
+        "dispersion": {
+          "statement": "This is a local current-density construction, not a dispersion calculation.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "All four action-derived relative Lee-Wald components and their symmetric stabilizer polarization are exported.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The off-shell current divergence and equation-row factorization remain the next gate.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The local current is exported, but no bounded correction theorem follows before the off-shell divergence cone is certified.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "The seed is support local; its divergence cone and retarded Green enlargement remain unconstructed.",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The local current is exported, but no smooth-secular f2 primitive is constructed.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "Cauchy-slice integration has not yet been replayed against every block of the complete five-charge q2.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "local coordinate presentation, with the magnetic product as the intended global specialization",
+        "boundaries": "local compactly supported jets; no Cauchy integration in this artifact",
+        "carrier": "horizontal relative Noether three-current encoded as a four-component vector density",
+        "charge_sector": "one arbitrary spacetime stabilizer generator X at a time",
+        "degree": "symmetric arity-two current seed",
+        "ell": "not harmonic-reduced",
+        "k": "not harmonic-reduced",
+        "m": "not harmonic-reduced",
+        "omega": "not harmonic-reduced",
+        "parity": "all",
+        "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "Every real-structure-preserving product-equivariant cohomology-isomorphic correction is obstructed from being cyclic for the standard action-derived pairings on the generic physical fibres. This includes corrected nonidentity maps, declared chain-homotopy repairs and cohomologically exact current improvements. A noncyclic off-shell triangle carrying three distinct forms, an explicitly pairing-changed theorem, exceptional/global sectors and final residual descent remain OPEN or NO_CERTIFIED_MAP. This result does not by itself decide Delta2, ell3 on cohomology, observables, particles or quantum states.",
       "descriptions": {
         "causal": "NOT_APPLICABLE",
@@ -1362,7 +1436,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py",
-  "generated_by_sha256": "33f204ade2507ec5ee783f7d217b2746a976e3f4e2fef7ea11025b6162a4c544",
+  "generated_by_sha256": "f455d45a6551379c80a150ea75d3e8f4f0e0ea322ab051b7402f904ec6a05856",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
