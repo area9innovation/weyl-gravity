@@ -2,23 +2,42 @@
   "schema": "paper-draft-source-map-v1",
   "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
   "lifecycle_state": "DRAFT_ALLOWED",
-  "source_baseline": "35ae48835e4ef0bafb87bb94ff515446879d632b",
+  "source_baseline": "3772269aa95e6c10ba59688a007396ca3df7b92a",
   "manuscript": "paper/14-pure-weyl-black-hole-radiation.tex",
-  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
   "certified_scope": {
     "static_laurent_family": true,
     "normalized_static_first_law": true,
     "linear_spherical_gauge_audit": true,
-    "axial_l2_branch_split": true,
-    "axial_horizon_reach": true,
-    "axial_flux_disposition": true,
-    "axial_local_causal_truncation_no_go": true,
-    "polar_branch_split": true,
+    "ricci_flat_ricci_bach_composition": true,
+    "axial_l2_exact_sequence_onto_realized_ricci_image": true,
+    "canonical_einstein_additional_direct_sum": false,
+    "axial_horizon_reach_for_ricci_carrier": true,
+    "full_metric_quotient_horizon_dimension": false,
+    "axial_einstein_self_pairing_exactly_null": true,
+    "axial_mixed_and_additional_pairing_controlled_fixtures": true,
+    "axial_mixed_pairing_symbolic_or_interval_certified": false,
+    "axial_tested_endpoint_nonselection": true,
+    "axial_local_causal_truncation_no_go": false,
+    "asymptotic_jordan_and_metric_falloff": false,
+    "polar_ricci_bach_composition": true,
     "polar_causal_chain": false,
     "complex_frequency_stability": false,
     "nonlinear_black_hole_theorem": false,
     "quantum_claim": false
   },
+  "known_source_scope_corrections": [
+    {
+      "source": "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
+      "issue": "The legacy phrase Einstein iff gamma=0 applies only to the Mannheim-Kazanas sheet through w=1.",
+      "manuscript_disposition": "On the complete Laurent locus the paper requires gamma=0 and w=1; the complementary (gamma,w)=(0,-1) point is explicitly excluded."
+    },
+    {
+      "source": "black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json",
+      "issue": "The certificate's causal-unavoidability interpretation exceeds its reduced-mode leading-asymptotic data.",
+      "manuscript_disposition": "The paper retains only endpoint regularity and leading-symbol nonselection, and explicitly recognizes zero Ricci-carrier Cauchy data as a local linear truncation."
+    }
+  ],
   "sources": [
     {
       "path": "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
@@ -57,5 +76,5 @@
       "git_blob": "5c4b95447a22210b37fc7832e858aced99c0043e"
     }
   ],
-  "next_gate": "BH2B_POLAR_HORIZON_REACH_FLUX_AND_CAUSAL_DISPOSITION"
+  "next_gate": "BH2A_ASYMPTOTIC_JORDAN_METRIC_RECONSTRUCTION_AND_RIGOROUS_FLUX_NONVANISHING"
 }

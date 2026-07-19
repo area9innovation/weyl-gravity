@@ -25,8 +25,8 @@
 \newcommand{\cert}[1]{\nolinkurl{#1}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
-\title{Fourth-Order Radiation of Pure-Weyl Black Holes\\
-\large Exact Branch Splitting, Horizon Flux, and a Causal Truncation No-Go}
+\title{Fourth-Order Perturbations of Pure-Weyl Black Holes\\
+\large Exact Ricci--Bach Composition, Horizon Pairing, and Endpoint Nonselection}
 \author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
 \and Claude Fable 5\thanks{Anthropic model and computational coauthor. The
 project was commissioned and coordinated by Asger Alstrup Palm
@@ -39,39 +39,38 @@ authorship.}}
 \maketitle
 
 \begin{abstract}
-We test whether the Einstein radiative branch of four-dimensional pure Weyl
-gravity can be selected by ordinary causal boundary conditions around a black
-hole.  We first classify an exact static spherical Bach-flat family within a
-declared Laurent ansatz, reproduce the Mannheim--Kazanas solution, and derive
-a residual-basic horizon generator.  On the static parameter slice its
-Lee--Wald Hamiltonian, Wald entropy, and temperature satisfy an exact first
-law at every simple horizon.  Arbitrary time-dependent spherical Weyl and
-diffeomorphism perturbations are null charge directions at linear order.
+We ask whether familiar one-ended Lorentzian endpoint conditions isolate the
+Einstein sector of four-dimensional pure Weyl gravity around a black hole.
+We first classify the Bach-flat locus in a declared static Laurent ansatz,
+recover the Mannheim--Kazanas component, and derive a residual-basic horizon
+generator.  On its nondegenerate static domain, the associated Lee--Wald
+Hamiltonian, Wald entropy, and signed surface-gravity temperature obey an
+exact first law at every simple horizon.  We correct an important sheet
+distinction: on the complete Laurent locus the metric is Einstein precisely
+when \(\gamma=0\) and \(w=1\), whereas \(\gamma=0\) alone suffices only on
+the Mannheim--Kazanas component through \(w=1\).
 
-We then study Schwarzschild perturbations.  In the axial \(\ell=2\) sector
-the fourth-order Bach equation factors exactly through the linearized Ricci
-tensor:
-\[
- \delta B_{ab}=\frac12\Box(\delta R_{ab})
-                +C_{acbd}(\delta R)^{cd}.
-\]
-The Einstein/Regge--Wheeler branch is \(\delta R_{ab}=0\); the extra branch
-is a second-order Lichnerowicz-type wave for
-\(\psi_{ab}=\delta R_{ab}\).  The extra branch has a two-parameter analytic
-ingoing family at the future horizon, is luminal and bounded at infinity for
-real frequency, and has the same leading asymptotic characteristics as the
-Einstein branch.  The action-derived Lee--Wald current makes the Einstein
-self-block null for conjugate waves, while independently verified fixtures
-give nonzero Einstein--extra and extra--extra horizon flux.
+On Schwarzschild, linearizing the Bach tensor gives an exact Ricci-carrier
+composition.  It defines an exact sequence from Bach solutions to curvature
+solutions, not a canonical Einstein/additional direct sum.  In the axial
+\(\ell=2\) carrier, \(\psi_{ab}=\delta R_{ab}\) obeys a second-order
+Lichnerowicz-type equation.  For nonzero real frequency its horizon system
+has a two-dimensional analytic ingoing \(\psi\)-space, so future-horizon
+regularity does not force \(\psi=0\).  The action-derived Lee--Wald current
+makes the Einstein self-block isotropic for conjugate Regge--Wheeler waves.
+Controlled finite-series fixtures at three frequencies exhibit nonzero
+Einstein--additional cross pairing and nonzero additional-sector pairing;
+these fixture results are not promoted to a symbolic all-frequency theorem.
 
-It follows that horizon regularity plus local causal decay cannot truncate
-the axial fourth-order exterior to its Einstein branch.  Such a truncation
-would require an additional projection on scattering data rather than a
-local initial-boundary condition.  In the polar \(\ell=2\) sector we prove
-the corresponding exact trace-coupled branch split; its horizon reach, flux,
-and causal disposition remain the next theorem gate.  We make no claim about
-complex frequencies, stability, quasinormal spectra, nonlinear evolution,
-Hawking radiation, or quantum unitarity.
+At infinity the certified characteristic polynomial is repeated.  Until its
+Jordan structure, metric reconstruction, finite-flux falloff, and polar
+analogue are completed, we claim only endpoint nonselection: horizon
+analyticity together with the presently tested real-frequency leading
+asymptotics does not imply \(\delta R_{ab}=0\).  This is not a no-go against
+all local causal truncations; the local Cauchy restriction
+\(\psi|_\Sigma=\nabla_n\psi|_\Sigma=0\) selects the Einstein kernel at the
+linear level.  We make no claim about stability, quasinormal spectra,
+nonlinear closure, Hawking radiation, or quantum unitarity.
 \end{abstract}
 
 \section*{AI authorship and computational accountability}
@@ -79,11 +78,12 @@ The named AI systems developed the programme, derivations, symbolic
 implementations, independent verification architecture, claim audits, and
 this manuscript.  Asger Alstrup Palm commissioned and coordinated the work
 and is the corresponding human contact.  Every certified statement below is
-bound to a machine-readable exact certificate and a separately implemented
+bound to a machine-readable certificate and a separately implemented
 verifier.  The cross-flux result uses controlled high-precision series
-evaluation with exact recurrence data and independent frequencies; all local
-tensor identities and polynomial classifications are exact.  The manuscript
-remains conditional on final human review.
+evaluation with exact recurrence data and independent frequencies; it is
+reported as fixture-level evidence, not interval-certified nonvanishing.
+All local tensor identities and polynomial classifications are exact.  The
+manuscript remains conditional on final human review.
 
 \tableofcontents
 
@@ -91,33 +91,68 @@ remains conditional on final human review.
 
 Fourth-order gravitational equations contain more local solutions than the
 Einstein equations.  A common proposal is to retain the Einstein branch by a
-boundary condition.  Around a Lorentzian black hole, that proposal must pass
-a causal test:
+boundary condition.  Around a one-ended Lorentzian black hole, a first test
+is:
 
 \begin{quote}
-Can regular initial data and local conditions at the future horizon and
-outer boundary remove the extra branch while retaining ordinary Einstein
-gravitational waves?
+Do future-horizon analyticity and the same leading outer admissibility tests
+used for Einstein waves force the additional Ricci carrier to vanish?
 \end{quote}
 
-The answer in the certified Schwarzschild axial \(\ell=2\) laboratory is
-no.  The extra branch is regular at the future horizon, propagates on the
-same real characteristics as the Einstein branch, has no growing real-
-frequency asymptotic solution, and carries nonzero action-derived horizon
-flux.  Ordinary local regularity and decay therefore admit it.
-
-This conclusion is narrower than a statement about the full theory.  It is
-an axial, linear, real-frequency causal-disposition theorem.  The polar
-branch has been split but not yet propagated through the same chain, and no
-complex-frequency stability analysis has been performed.
+The answer in the certified Schwarzschild axial \(\ell=2\) mode laboratory
+is no: the curvature carrier has regular ingoing horizon data, the leading
+real-frequency symbol does not separate it from the Einstein carrier, and
+controlled fixtures have nonzero action-derived horizon pairing.  This is
+an endpoint-admissibility result, not a classification of all local
+differential boundary conditions.  In particular, setting the Ricci carrier
+and its normal derivative to zero on a Cauchy surface is a local linear
+Einstein-sector restriction.  Whether that restriction is natural,
+interaction-stable, or compatible with a physical asymptotic phase space is
+open.
 
 \subsection{Claims and dependency tags}
 
 The static family and local operator identities carry
-\textsc{local-algebraic}.  Harmonic branch and current statements also carry
-\textsc{reduced-mode}.  The final axial disposition uses the declared
-horizon and asymptotic domains and is a scoped \textsc{lorentzian-causal}
-no-go.  It is not a complete exterior Green-hyperbolicity theorem.
+\textsc{local-algebraic}.  Harmonic branch, horizon, current, and asymptotic
+statements also carry \textsc{reduced-mode}.  No result in this manuscript
+is promoted to \textsc{lorentzian-causal}: there is no complete exterior
+Green-hyperbolicity theorem, metric-falloff phase space, or classified set of
+local differential boundary operators.
+
+\section{Relation to existing branch-selection programmes}
+
+The static Bach-flat family itself is classical
+\cite{Riegert,MannheimKazanas}.  Conformal-gravity thermodynamics with
+additional spin-two hair has also been studied in asymptotically AdS and
+Einstein--Weyl settings \cite{LuPangPopeVP}.  Our static contribution is
+therefore not a new family: it is the exact residual-basic normalization and
+simultaneous signed first-law identity within a declared local quotient.  A
+physical asymptotic normalization has not yet been selected.
+
+Maldacena's Einstein-from-conformal construction selects an Einstein sector
+by Euclidean AdS or late-time de Sitter boundary data \cite{Maldacena}.
+Critical- and logarithmic-gravity analyses similarly separate massless,
+massive, and generalized modes by asymptotic conditions
+\cite{LuPangPope,BergshoeffLog,DeserJoungWaldron}.  The null Einstein
+self-pairing and nonzero cross pairing found below should be read in that
+established degenerate-operator context.  Our different question is whether
+one-ended Lorentzian Schwarzschild endpoint tests force the Ricci carrier to
+vanish.
+
+Using \(\delta R_{ab}\) to expose higher-derivative spin-two modes is also a
+known strategy in fourth-order gravity \cite{Myung}.  Previous Weyl-black-hole
+quasinormal analyses often deliberately obtained a second-order master
+equation by conformal transport rather than retaining the full fourth-order
+Bach solution space \cite{MomenniaHendi}; test-field or effective-Einstein
+perturbations are different problems again.  Contemporary quadratic-gravity
+ringdown work finds both ordinary and additional spin-two sectors
+\cite{AntoniouGualtieriPani}.  The prospective advance here is narrower:
+the exact pure-Weyl Ricci--Bach sequence, its action-derived Schwarzschild
+horizon pairing, and failure of the tested endpoint conditions to imply
+\(\delta R_{ab}=0\).  The first-order-system analysis follows the general
+modified-gravity asymptotic methodology of \cite{LangloisNouiRoussille}; in
+particular, that methodology makes the unresolved repeated-root Jordan audit
+an essential next step rather than a technical detail.
 
 \section{Pure Weyl gravity and its covariant current}
 
@@ -162,19 +197,33 @@ The metric is Bach-flat if and only if
 \end{equation}
 The Mannheim--Kazanas parametrization is recovered by
 \[
- w=1-3\beta\gamma,qquad
+ w=1-3\beta\gamma,\qquad
  u=\beta(2-3\beta\gamma).
 \]
-Within this family the metric is Einstein if and only if \(\gamma=0\).
+On the complete Laurent locus the metric is Einstein if and only if
+\begin{equation}\label{eq:einstein-static-locus}
+ \gamma=0,\qquad w=1.
+\end{equation}
+On the Mannheim--Kazanas component through \(w=1\), this reduces to the
+single condition \(\gamma=0\).
 \end{theorem}
 
 Completeness here refers only to the Laurent ansatz.  The certificate does
-not claim a new proof of the global static spherical classification.
+not claim a new proof of the global static spherical classification.  The
+sheet qualification in \eqref{eq:einstein-static-locus} follows already from
+the scalar curvature
+\begin{equation}
+ R=12k-\frac{6\gamma}{r}+\frac{2(1-w)}{r^2}.
+\end{equation}
+In particular, the allowed point \((\gamma,w)=(0,-1)\) is not Einstein.
+The original static certificate's phrase ``Einstein iff \(\gamma=0\)'' is
+therefore used only on its explicitly parametrized Mannheim--Kazanas sheet;
+the manuscript does not propagate it to the complementary Laurent sheet.
 
 The form-preserving local \(\Diff\times\mathrm{Weyl}\) transformations act
 as dilation and translation on the cubic
 \[
- Q(x)=-ux^3+wx^2+\gamma x-k,qquad x=r^{-1}.
+ Q(x)=-ux^3+wx^2+\gamma x-k,\qquad x=r^{-1}.
 \]
 Their orbit rank is two.  A single continuous invariant may be taken as
 \[
@@ -204,13 +253,13 @@ is not integrable.  The obstruction disappears when the generator is
 normalized consistently with the residual quotient.
 
 \begin{theorem}[Normalized static generator]
-Let
+On a connected component with \(u\neq0\), choose the oriented generator
 \begin{equation}
  \chi=u\,\partial_t,
  \qquad u=\beta(2-3\beta\gamma).
 \end{equation}
-Up to a function of the single residual invariant \(J\), this normalization
-is forced by residual basicness and dilation weight.  Its Hamiltonian is
+Residual basicness and dilation weight determine the general normalization
+as \(u f(J)\partial_t\).  We select \(f(J)=1\).  Its Hamiltonian is
 \begin{equation}
  H=-16\pi\alpha\beta^2D_2,
  \qquad
@@ -233,6 +282,16 @@ satisfy
 identically modulo \(B(r_h)=0\).
 \end{theorem}
 
+Here \(T_h\) is the \emph{signed} surface-gravity temperature appropriate to
+the oriented first-law identity; the positive Hawking temperature would use
+\(|uB'(r_h)|/(4\pi)\).  On a component where \(u<0\), future-directedness
+uses \(-\chi\), flipping both \(H\) and \(T_h\) and preserving the first
+law.  The locus \(u=0\) is excluded because this normalization degenerates.
+For another allowed \(f(J)\), one has \(T_f=f(J)T_h\) and a reparametrized
+Hamiltonian satisfying \(\dd H_f=f(J)\dd H\); the first law remains true.
+Thus residual basicness fixes a class, not a unique physical normalization
+in the absence of an asymptotic clock.
+
 This is a theorem on the static parameter slice, not yet a general
 physical-process first law.  Its linear dynamical extension nevertheless
 passes a strong gauge audit: arbitrary time-dependent spherical Weyl
@@ -241,7 +300,31 @@ is conformally invariant on the symbolic family, and the normalized
 generator extension is unique at linear order under the declared boundary
 scalar rule.
 
-\section{Axial Schwarzschild branch splitting}
+\section{Ricci--Bach composition and the axial exact sequence}
+
+The parity-specific formulas are restrictions of one Ricci-flat identity.
+
+\begin{proposition}[Linearized Bach tensor on a Ricci-flat background]
+\label{prop:universal-ricci-bach}
+For a perturbation of a four-dimensional Ricci-flat metric,
+\begin{equation}\label{eq:universal-ricci-bach}
+ \delta B_{ab}=\frac12\Box(\delta R_{ab})
+ +C_{acbd}(\delta R)^{cd}
+ -\frac16\nabla_a\nabla_b\delta R
+ -\frac1{12}g_{ab}\Box\delta R.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Rewrite the four-dimensional Bach tensor in Ricci variables using the
+contracted Bianchi identity, then retain the terms linear in Ricci curvature
+about \(R_{ab}=0\).  Background derivatives and the curvature commutator give
+the displayed Weyl action.  The repository verifies
+\eqref{eq:universal-ricci-bach} independently, component by component, on the
+complete axial and polar \(\ell=2\) Regge--Wheeler-gauge carriers.  That
+computer check is carrier-complete but is not presented as a machine proof
+for arbitrary harmonic content.
+\end{proof}
 
 We now specialize the background to Schwarzschild and use axial
 Regge--Wheeler gauge,
@@ -260,45 +343,88 @@ Einstein subbranch reproduces the Regge--Wheeler equation for
  V_{\rm RW}=B\left(\frac6{r^2}-\frac{6m}{r^3}\right).
 \end{equation}
 
-\begin{theorem}[Axial composition identity]
-On a Ricci-flat background, for the certified axial carrier,
+\begin{corollary}[Axial composition]
+For the certified axial carrier, parity gives \(\delta R=0\), so
 \begin{equation}\label{eq:axial-split}
  \boxed{\delta B_{ab}
  =\frac12\Box(\delta R_{ab})
   +C_{acbd}(\delta R)^{cd}.}
 \end{equation}
-Consequently the Einstein branch \(\delta R_{ab}=0\) injects into the Bach
-kernel, while the extra branch is the second-order system
+Consequently the Einstein kernel \(\delta R_{ab}=0\) injects into the Bach
+kernel, while its curvature image obeys
 \begin{equation}
  \frac12\Box\psi_{ab}+C_{acbd}\psi^{cd}=0,
  \qquad \psi_{ab}:=\delta R_{ab}.
 \end{equation}
-\end{theorem}
+\end{corollary}
+
+Let \(\mathcal C_{\rm ax}\) be the fixed axial carrier and define
+\begin{align}
+ \mathcal H_B&=\{h\in\mathcal C_{\rm ax}:\delta B[h]=0\},&
+ \mathcal H_E&=\{h\in\mathcal H_B:\delta R[h]=0\},\\
+ \mathcal H_R&=\ker\!\left(\tfrac12\Box+C\circ\right)
+                \cap\operatorname{im}(\delta R|_{\mathcal C_{\rm ax}}).
+\end{align}
+Then the invariant statement supplied by the composition is the exact
+sequence
+\begin{equation}\label{eq:axial-exact-sequence}
+ 0\longrightarrow\mathcal H_E
+ \longrightarrow\mathcal H_B
+ \xrightarrow{\ \delta R\ }\mathcal H_R
+ \longrightarrow0.
+\end{equation}
+It does \emph{not} supply a canonical direct sum.  A metric lift \(h_X\) of
+\(\psi\in\mathcal H_R\), when it exists in the chosen domain, may be shifted
+by any \(h_E\in\mathcal H_E\).  Global lift existence, boundary conditions,
+and a gauge-independent splitting must therefore be proved separately.  In
+particular, ``additional branch'' below refers either to the curvature image
+\(\mathcal H_R\) or to an explicitly constructed lift, never to an assumed
+canonical complement.
 
 The identity is componentwise and off shell in the perturbation.  It does
 not extend in this two-term form to the certified non-Einstein static
-fixture.  Thus the clean branch split is a Ricci-flat-background theorem.
+fixture.  Thus the clean composition is a Ricci-flat-background theorem.
 
-\section{The extra branch reaches the future horizon}
+\section{The Ricci carrier reaches the future horizon}
 
 In ingoing coordinates \((v,r)\), Fourier modes are written
 \(e^{i\omega v}\).  The extra carrier's divergence constraint solves its
 third component polynomially; the apparent Schwarzschild-coordinate pole is
 a chart artifact.
 
-\begin{theorem}[Analytic ingoing family]
-For axial \(\ell=2\) and every frequency \(\omega\), the future horizon
+\begin{theorem}[Analytic ingoing curvature family]
+For axial \(\ell=2\) and \(\omega\in\R\setminus\{0\}\), the future horizon
 \(r=2m\) is a regular singular point of the extra first-order radial system.
 Its residue spectrum is
 \begin{equation}
  \{0,0,-4im\omega,-2-4im\omega\},
 \end{equation}
 and the zero eigenspace has dimension two.  Hence there is a two-parameter
-family of extra-branch solutions analytic at the future horizon, with no
-leading logarithm.
+family of \(\psi\)-solutions analytic at the future horizon, with no leading
+logarithm at the zero exponent.
 \end{theorem}
 
-Future-horizon regularity therefore does not select the Einstein branch.
+The restriction excludes \(\omega=0\), where the algebraic multiplicity of
+the zero residue exponent changes, and makes no claim at resonant complex
+frequencies.  Most importantly, the theorem counts the curvature carrier,
+not a quotient of metric solutions.  The currently certified dimensions are:
+
+\begin{center}
+\begin{tabularx}{0.94\textwidth}{@{}Y c Y@{}}
+\toprule
+Space & Ingoing/analytic dimension & Status\\
+\midrule
+Einstein Regge--Wheeler carrier & 1 & second-order control\\
+Ricci carrier \(\psi\) & 2 & exact residue calculation\\
+Full Bach metric solution space & not certified & reconstruction/domain open\\
+Metric quotient by the Einstein kernel & not certified & lift and gauge open\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Thus future-horizon regularity does not force \(\psi=0\).  Explicit metric
+lifts are constructed in the flux fixtures below, but the exact sequence
+\eqref{eq:axial-exact-sequence} has not yet been split globally.
 
 \section{Action-derived horizon flux}
 
@@ -311,26 +437,64 @@ Substituting two on-shell Regge--Wheeler solutions into the current
 \end{equation}
 For conjugate pairs \(\omega_2=\pm\omega_1\), this vanishes identically.
 
-\begin{theorem}[Axial flux disposition]
-On Schwarzschild, axial \(\ell=2\):
-\begin{enumerate}
-\item the Einstein/Regge--Wheeler self-block is symplectically null for
-      conjugate wave pairs;
-\item ingoing extra modes have a nonzero extra--extra horizon-flux pairing;
-\item the Einstein--extra cross pairing is nonzero.
-\end{enumerate}
-The last two statements are certified at \(m=1\) and independent real
-frequencies \(\omega=3/5,2/7,1/2\), using order-16 ingoing series and
-radius-stability checks.  The exact Regge--Wheeler null result is the
-in-run control.
+\begin{theorem}[Exact Einstein isotropy]
+On Schwarzschild in axial \(\ell=2\), the pure-Weyl Lee--Wald pairing of an
+Einstein Regge--Wheeler mode with its conjugate vanishes exactly:
+\begin{equation}
+ F^r(E_\omega,\overline{E_\omega})=0.
+\end{equation}
+Thus the Einstein line is isotropic in the presymplectic structure inherited
+from the pure \(C^2\) action.  This statement does not identify the Einstein
+symplectic form with the ordinary Einstein--Hilbert one.
 \end{theorem}
 
-For \(\alpha>0\), the certified ingoing extra fixtures obey
-\(iF^r_{XX}>0\) in the declared convention.  We do not promote that classical
-sign to a Hilbert norm.  The result needed here is nondegeneracy: the extra
-branch is not a zero-flux artifact.
+\begin{proposition}[Controlled horizon-pairing fixtures]
+For \(m=1\), axial \(\ell=2\), and conjugate-frequency Hermitian pairings,
+order-16 ingoing series give
+\begin{equation}
+ F^r(E_\omega,\overline{X_\omega})\neq0,
+ \qquad
+ F^r(X_\omega,\overline{X_\omega})\neq0
+\end{equation}
+at producer frequencies \(\omega=3/5,2/7\); an independent verifier repeats
+the nonvanishing gates at \(\omega=1/2\).  At the two stored frequencies the
+values, divided by \(\pi\alpha\) and sampled at two interior radii, are
+approximately
+\begin{center}
+\begin{tabular}{@{}c c c@{}}
+\toprule
+\(\omega\) & \(F^r(X,\bar X)/(\pi\alpha)\) &
+\(F^r(E,\bar X)/(\pi\alpha)\)\\
+\midrule
+\(3/5\) & \(-330.58i,-329.98i\) &
+\(-218.17+43.55i,-215.97+51.53i\)\\
+\(2/7\) & \(-71.92i,-71.95i\) &
+\(-162.82+27.99i,-163.92+33.03i\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+The exact Regge--Wheeler null identity is the in-run control.  These data are
+controlled numerical fixtures: they prove neither symbolic nonvanishing for
+all real \(\omega\) nor an interval-certified error bound.
+\end{proposition}
 
-\section{Asymptotic propagation and causal disposition}
+For a chosen lift basis \((E,X)\), the horizon block has the form
+\begin{equation}
+ \Omega_h=\begin{pmatrix}0&a\\-\bar a&b\end{pmatrix}.
+\end{equation}
+Under the admissible lift change \(X\mapsto X+cE\), the cross entry \(a\) is
+invariant while \(b\) changes.  The robust fixture-level conclusions are
+therefore Einstein isotropy, nonzero cross pairing, and full rank of the
+tested two-dimensional block.  The sign of \(iF^r_{XX}\) for one chosen lift
+is basis dependent and is not promoted to a branch signature or Hilbert
+norm.
+
+The stored report also records a repaired calculation: an earlier flux
+evaluation dropped the Fourier factor \(e^{i\omega t}\), causing all time
+derivatives to vanish silently.  The exact Regge--Wheeler null control exposed
+the defect; all displayed fixtures use the repaired full-time current.
+
+\section{Asymptotic symbol and endpoint nonselection}
 
 At real frequency and large radius, the extra carrier has dispersion
 \begin{equation}
@@ -340,43 +504,52 @@ and growth exponents
 \begin{equation}
  \sigma\in\{\pm2im\omega,\ \pm2im\omega-1\}.
 \end{equation}
-Thus it is luminal, with Coulomb logarithmic phases and amplitudes of order
-\(r^0\) or \(r^{-1}\).  There is no growing real-frequency asymptotic
-solution.  The Einstein control has the same leading characteristics and
-logarithmic phases.
+The simple-root reading would identify Coulomb logarithmic phases with
+amplitudes of order \(r^0\) and \(r^{-1}\).  But the characteristic is
+\emph{double}.  The polynomial alone does not determine geometric
+multiplicity.  As in \((D^2+\omega^2)^2h=0\), a Jordan chain may produce
+\(r_*e^{\pm i\omega r_*}\) even though every characteristic exponent is
+oscillatory.  The current certificate does not print the asymptotic
+first-order matrix, its Jordan form, or the reconstructed metric behavior.
+Its ``no growing asymptotics'' flag is therefore used only for the displayed
+curvature-carrier leading ansatz, not as an asymptotically flat metric
+theorem.
 
-\begin{theorem}[Axial causal truncation no-go]
-On the declared Schwarzschild axial \(\ell=2\), real-frequency mode domain,
-no boundary prescription based only on future-horizon regularity and local
-causal decay at the outer boundary excludes the extra branch while retaining
-the Einstein branch.  Selecting the Einstein branch requires an additional
-branch projection on scattering data, rather than a local causal
-initial-boundary condition.
+\begin{theorem}[Endpoint regularity-and-leading-symbol nonselection]
+On the declared Schwarzschild axial \(\ell=2\), nonzero-real-frequency mode
+carrier, future-horizon analyticity does not imply \(\delta R_{ab}=0\).
+Moreover, the presently certified leading characteristic polynomial and
+formal exponents do not supply an outer condition that distinguishes the
+Ricci carrier from the Einstein characteristic.  Hence these tested local
+endpoint diagnostics do not select the Einstein kernel.
 \end{theorem}
 
-\begin{proof}
-The extra branch has a two-dimensional ingoing-analytic horizon family, so
-horizon regularity admits it.  Its real-frequency outer solutions are
-bounded and have the same characteristic falloff class as the Einstein
-solutions, so local asymptotic decay does not distinguish it.  Its self and
-mixed Lee--Wald fluxes are nonzero, so it cannot be discarded as a radical
-direction.  A condition that removes its independent scattering amplitudes
-must therefore project branch data beyond these local endpoint conditions.
-\end{proof}
+This deliberately does \emph{not} say that every ordinary asymptotically
+flat radiation condition admits an additional metric mode.  That stronger
+statement requires: (i) the full asymptotic Jordan decomposition;
+(ii) reconstruction of \(h\) from \(\psi=\delta R[h]\); (iii) falloff in a
+regular tetrad or asymptotic gauge; and (iv) finite Lee--Wald flux at null
+infinity.  Nor is there a no-go against local causal selection.  Since
+\(\psi\) obeys a second-order hyperbolic equation, the local Cauchy condition
+\begin{equation}
+ \psi|_\Sigma=0,
+ \qquad
+ \nabla_n\psi|_\Sigma=0
+\end{equation}
+propagates \(\psi=0\) and selects the linear Einstein kernel.  The open
+physical questions are whether this restriction is preserved by nonlinear
+interactions and whether it follows from a differentiable asymptotic phase
+space rather than being imposed by hand.
 
-The conclusion is compatible with Euclidean or two-boundary Einstein-branch
-selection: such a prescription may define a sector.  The theorem says that
-the sector is not generated by ordinary one-ended Lorentzian regularity and
-decay in this axial laboratory.
-
-\section{Polar branch: exact split and open causal chain}
+\section{Polar carrier: exact composition and open causal chain}
 
 For polar \(\ell=2\) Regge--Wheeler-gauge perturbations, the trace variation
 \(\delta R\) need not vanish.  The axial formula acquires two universal
 trace terms.
 
-\begin{theorem}[Polar trace-coupled composition identity]
-On a Ricci-flat background,
+\begin{corollary}[Polar trace-coupled composition]
+On the certified polar \(\ell=2\) carrier,
+Proposition~\ref{prop:universal-ricci-bach} gives
 \begin{equation}\label{eq:polar-split}
  \boxed{
  \delta B_{ab}=\frac12\Box(\delta R_{ab})
@@ -384,12 +557,15 @@ On a Ricci-flat background,
  -\frac16\nabla_a\nabla_b\delta R
  -\frac1{12}g_{ab}\Box\delta R.}
 \end{equation}
-The Einstein polar branch injects by \(\delta R_{ab}=0\), while the extra
-branch is a second-order trace-coupled Lichnerowicz system for
+The Einstein polar kernel injects by \(\delta R_{ab}=0\), while the curvature
+image obeys a second-order trace-coupled Lichnerowicz system for
 \((\delta R_{ab},\delta R)\).
-\end{theorem}
+\end{corollary}
 
 This opens, but does not complete, the polar analogue of the axial chain.
+As in \eqref{eq:axial-exact-sequence}, composition yields an exact sequence
+onto the realized Ricci image; it does not by itself produce a canonical
+metric complement.
 The Zerilli benchmark, horizon indicial system, action-derived flux blocks,
 outer asymptotics, and causal disposition remain pending.  No parity-complete
 black-hole truncation theorem is claimed until those steps close.
@@ -402,17 +578,22 @@ black-hole truncation theorem is claimed until those steps close.
 Question & Certified answer & Scope\\
 \midrule
 Static Bach-flat black holes? & exact Laurent-family classification and
-three-horizon fixture & local/static\\
+three-horizon fixture; Einstein sheet corrected & local/static\\
 Differentiable energy? & residual-basic normalized generator, exact static
-first law & static slice; linear spherical gauge audit\\
+first law & \(u\neq0\); signed orientation; \(f(J)\) freedom\\
 Einstein axial waves present? & yes; exact Regge--Wheeler injection &
 Schwarzschild, axial $\ell=2$\\
-Extra axial waves present? & yes; second-order Ricci carrier & same\\
-Reach future horizon? & yes; two analytic ingoing amplitudes & mode level\\
-Carry current? & nonzero mixed and extra flux; Einstein self-block null &
-exact identity plus three frequency fixtures\\
-Removed by local causal boundaries? & no & real-frequency axial domain\\
-Polar split? & exact trace-coupled identity & causal chain still open\\
+Additional axial content? & nonzero second-order Ricci carrier; no canonical
+metric split & same\\
+Reach future horizon? & two analytic ingoing \(\psi\) amplitudes &
+nonzero-real-frequency carrier\\
+Carry current? & Einstein self-block exactly null; mixed/additional blocks
+nonzero in fixtures & exact identity plus three frequencies\\
+Selected by tested endpoints? & no: horizon and leading-symbol tests do not
+force \(\psi=0\) & not a general causal no-go\\
+Asymptotic metric radiation? & open & repeated-root Jordan, reconstruction,
+and finite flux missing\\
+Polar composition? & exact trace-coupled identity & causal chain still open\\
 Stable/ringing? & not established & complex frequencies open\\
 \bottomrule
 \end{tabularx}
@@ -423,26 +604,30 @@ Stable/ringing? & not established & complex frequencies open\\
 The paper does not establish:
 \begin{itemize}
 \item a complete exterior initial-boundary well-posedness theorem;
-\item general \(\ell,m\), the completed polar chain, or non-Einstein
-      background branch splitting;
+\item general \(\ell,m\), the completed polar chain, or a non-Einstein
+      background Ricci-carrier composition;
+\item a canonical splitting of the Bach solution space, or complete metric
+      reconstruction from every Ricci-carrier solution;
 \item complex-frequency poles, mode stability, quasinormal modes, or
       ringdown waveforms;
 \item a second-order physical-process first law or nonlinear horizon
       dynamics;
 \item asymptotically flat conformal-gravity scattering with a complete
-      boundary phase space;
+      boundary phase space, metric/tetrad falloffs, and finite null-infinity
+      flux;
 \item Hawking states, particles, a quantum BRST quotient, positivity, or
       unitarity.
 \end{itemize}
-In particular, ``causally unavoidable'' means unavoidable by the declared
-local axial boundary tests, not that every nonlinear or quantum state must
-contain the branch.
+In particular, the paper withdraws the broad phrase ``no local causal
+truncation.''  Zero Cauchy data for the Ricci carrier is a local linear
+truncation.  What is established is failure of the tested endpoint
+diagnostics to imply that truncation.
 
 \section{Certificate and reproduction ledger}
 
 The manuscript is an \textsc{outline-allowed}/\textsc{draft-allowed}
-integration of committed certificates at repository baseline
-\texttt{35ae48835e4ef0bafb87bb94ff515446879d632b}.
+integration of committed certificates at repository baseline recorded in
+its generated claim map.
 
 \begin{center}
 \begin{tabularx}{0.98\textwidth}{@{}Y Y@{}}
@@ -455,7 +640,7 @@ Normalized generator and first law &
 \cert{black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json}\\
 Linear spherical dynamical extension &
 \cert{black_hole_programme/certificates/BH1B_DYNAMICAL_EXTENSION.json}\\
-Axial operator and branch split &
+Axial operator and Ricci--Bach composition &
 \cert{black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json}\\
 Extra horizon reach &
 \cert{black_hole_programme/certificates/BH2A_HORIZON_REACH.json}\\
@@ -474,29 +659,36 @@ Polar trace-coupled split &
 Every certificate records a schema, exact or controlled-numerical payload,
 independent verifier, mutations or controls, command receipt, dependency
 tags, and missing claims.  This manuscript must not advance to
-\textsc{theorem-frozen} until its generated claim map and the polar scope are
-reviewed.  The axial theorem itself is already certificate-complete.
+\textsc{theorem-frozen} until the static certificate's complementary-sheet
+wording is repaired, the flux fixtures acquire rigorous nonvanishing bounds,
+and the asymptotic Jordan/metric analysis closes.  The polar scope remains a
+separate parity-completion gate.
 
 \section{Outlook}
 
-The next calculation is not a generic stability claim.  It is the polar
-analogue of the exact axial sequence:
+The next calculation is not a generic stability claim.  The principal gate
+is the repeated-root asymptotic problem:
 \[
- \text{Zerilli control}
- \longrightarrow \text{horizon reach}
- \longrightarrow \text{Lee--Wald flux}
- \longrightarrow \text{outer disposition}.
+ \text{first-order matrix and Jordan form}
+ \longrightarrow \text{metric reconstruction}
+ \longrightarrow \text{finite-flux boundary class}.
 \]
-Only then should complex-frequency structure and quasinormal boundary
-conditions be activated.  A later asymptotic phase-space construction must
-decide which generator is physical, which flux reaches null infinity, and
-whether the extra branch survives a globally differentiable charge algebra.
+In parallel, one rigorous interval or symbolic horizon-pairing fixture should
+replace the present controlled numerical nonvanishing.  The polar sequence
+then runs from the Zerilli control through horizon reach, Lee--Wald pairing,
+and the same outer audit.  Only after those steps should complex-frequency
+structure and quasinormal boundary conditions be activated.  A later
+asymptotic phase-space construction must decide which generator is physical,
+which flux reaches null infinity, and whether the additional curvature image
+survives a globally differentiable charge algebra.
 
 The present result already fixes an important baseline:
 \begin{center}
 \fbox{\parbox{0.82\textwidth}{\centering
-The extra axial branch is regular, radiative, and not removable by ordinary
-local causal boundary conditions.}}
+The axial non-Einstein curvature sector contains future-horizon-regular
+solutions and has nonzero controlled Lee--Wald pairing fixtures.  Horizon
+analyticity and the presently tested leading asymptotic diagnostics do not
+select the Einstein kernel.}}
 \end{center}
 
 \begingroup
@@ -542,6 +734,49 @@ hole entropy}, Phys. Rev. D \textbf{50} (1994) 846--864,
 J.~Maldacena,
 \emph{Einstein gravity from conformal gravity},
 \href{https://arxiv.org/abs/1105.5632}{arXiv:1105.5632}.
+
+\bibitem{LuPangPope}
+H.~L\"u, Y.~Pang, and C.~N.~Pope,
+\emph{Conformal gravity and extensions of critical gravity},
+\href{https://arxiv.org/abs/1106.4657}{arXiv:1106.4657}.
+
+\bibitem{DeserJoungWaldron}
+S.~Deser, E.~Joung, and A.~Waldron,
+\emph{Partial masslessness and conformal gravity},
+\href{https://arxiv.org/abs/1208.1307}{arXiv:1208.1307}.
+
+\bibitem{BergshoeffLog}
+E.~A.~Bergshoeff, O.~Hohm, J.~Rosseel, and P.~K.~Townsend,
+\emph{Modes of log gravity},
+\href{https://arxiv.org/abs/1102.4091}{arXiv:1102.4091}.
+
+\bibitem{LuPangPopeVP}
+H.~L\"u, Y.~Pang, C.~N.~Pope, and J.~F.~V\'azquez-Poritz,
+\emph{AdS and Lifshitz black holes in conformal and Einstein--Weyl
+gravities},
+\href{https://arxiv.org/abs/1204.1062}{arXiv:1204.1062}.
+
+\bibitem{Myung}
+Y.~S.~Myung,
+\emph{Stability of Schwarzschild black holes in fourth-order gravity
+revisited},
+\href{https://arxiv.org/abs/1306.3725}{arXiv:1306.3725}.
+
+\bibitem{MomenniaHendi}
+M.~Momennia and S.~H.~Hendi,
+\emph{Quasinormal modes of black holes in Weyl gravity: electromagnetic and
+gravitational perturbations},
+\href{https://arxiv.org/abs/1910.00428}{arXiv:1910.00428}.
+
+\bibitem{AntoniouGualtieriPani}
+G.~Antoniou, L.~Gualtieri, and P.~Pani,
+\emph{Gravitational quasinormal modes in quadratic gravity},
+Phys. Rev. D \textbf{111} (2025) 064059.
+
+\bibitem{LangloisNouiRoussille}
+D.~Langlois, K.~Noui, and H.~Roussille,
+\emph{Black hole perturbations in modified gravity},
+\href{https://arxiv.org/abs/2103.14750}{arXiv:2103.14750}.
 
 \bibitem{Stelle}
 K.~S.~Stelle,
