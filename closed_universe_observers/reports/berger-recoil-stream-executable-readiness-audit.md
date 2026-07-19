@@ -73,16 +73,19 @@ support zeros and the other 24 are zero-containing on the validation mass
 domain.  The four allowed `k=0` paths strictly contract in both components
 from two to four cells.  Couplings and shell scalars remain unevaluated.
 
+The exact SU(2) conjugate-column map now folds every complete complex channel
+to a real shell input without adding independently rounded imaginary boxes.
+All 24 column pairs and all eight bare channel sums in the `two_j=5` fixture
+pass this carrier audit.
+
 The fail-closed controller now implements the certified tail formula and
 tolerance, nonzero, sign, and determinant rules.  Its certificate-derived
 validation fixture remains `OPEN`; only a synthetic rank-two fixture exercises
-the stop branch.  The feedback evaluator itself still ends at `two_j=5`, and
-there is no certified map from its complex channel rectangles to the real
-shell scalars expected by the aggregator.
+the stop branch.  The feedback evaluator itself still ends at `two_j=5`.
 It also exports a strict exact-rational numerical
 input schema in the certified `gHat` operator units, but leaves every value
-undeclared.  The next gate binds all `two_j=6` feedback channel-columns and
-certifies the complex-to-real shell map;
+undeclared.  The next gate binds all `two_j=6` feedback channel-columns using
+the certified reality fold;
 external specialization follows only after the full protocol closes.
 
 The symbolic operator theorem remains `CERTIFIED`.  No recoil coefficient,

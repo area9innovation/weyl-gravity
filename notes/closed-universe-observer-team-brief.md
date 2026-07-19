@@ -323,10 +323,10 @@ branch.
 ### Immediate priority after the polarization-emitter handoff
 
 1. Bind every direct `two_j=6` absolute-`g^3` feedback channel-column block
-   and certify the map from the complex channel rectangles to the real shell
-   scalar.  The content-addressed generic direct-shell carrier and fail-closed
+   using the certified conjugate-column reality fold.  The content-addressed
+   generic direct-shell carrier, complex-to-real shell map and fail-closed
    four-stream tail controller are now certified; physical masses and
-   couplings remain deferred until the feedback/scalar map is complete.  In
+   couplings remain deferred until the `two_j=6` feedback gate is complete.  In
    parallel, use the
    exported emitter stress
    and clock-switch source to refine the certified covariant 108-row
@@ -838,8 +838,10 @@ matrices and a uniform induced-row-norm sine-series tail; nonpositive masses,
 nonzero Maxwell mass and noncontracting slabs fail closed.  This runtime mass
 domain is not a physical mass choice.  The finite chain now binds those inputs
 through the feedback evaluations described below.  The generic direct carrier
-and tail-stop controller are now `CERTIFIED`, while feedback coverage beyond
-`two_j=5` and complex-to-real shell extraction remain `OBSTRUCTED`.  Supplying
+and tail-stop controller are now `CERTIFIED`.  The exact SU(2) reality map also
+folds conjugate complex columns into real shell inputs and exports all eight
+bare `two_j=5` channel sums.  Feedback coverage beyond `two_j=5` remains
+`OBSTRUCTED`.  Supplying
 masses and couplings now would still
 not produce a certified physical recoil interval.  The exact-rational input
 schema remains deferred.
@@ -1012,8 +1014,19 @@ exact-`T` rail.  Its stop controller implements the exact radius
 `|g_b|D_aE_b sum_c |g_c|^2 C_c(m_c)` with tolerance, nonzero, sign and
 determinant goals.  The certificate-derived validation fixture remains
 `OPEN`; only a synthetic determinant fixture stops.  The active gate is all
-`two_j=6` feedback channel-columns plus the complex-channel-to-real-shell
-scalar map.
+`two_j=6` feedback channel-columns using the certified reality-pair fold.
+
+`BERGER_RECOIL_REAL_SHELL_EXTRACTION` closes the carrier mismatch without
+discarding imaginary intervals.  In the normalized symmetric-power
+convention, `conjugate(D_rc)=(-1)^(r-c)D_(two_j-r,two_j-c)`; its anti-linear
+row reversal intertwines the exact de Rham and Laplacian blocks, so the
+Hermitian Lorentzian pairing gives
+`I_abc[two_j,two_j-k]=conjugate(I_abc[two_j,k])`.  Each pair therefore
+contributes twice one representative real interval, and an even-shell central
+column contributes once.  Exact audits through `two_j=6` have zero defects,
+and all 24 pairs in the `two_j=5` fixture pass the conjugate-rectangle audit.
+This is not a physical mass/coupling choice, tail closure or recoil-corrected
+rank theorem.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as

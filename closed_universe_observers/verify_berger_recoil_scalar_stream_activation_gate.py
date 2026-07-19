@@ -30,13 +30,14 @@ def main() -> int:
     assert rows["complete_detector_coefficient_provider"] == "CERTIFIED"
     assert rows["tail_aware_aggregate_stop_loop"] == "CERTIFIED"
     assert rows["generic_direct_finite_shell_provider"] == "CERTIFIED"
-    assert rows["complex_channel_to_real_shell_scalar_map"] == "OBSTRUCTED"
+    assert rows["complex_channel_to_real_shell_scalar_map"] == "CERTIFIED"
     assert value["readiness"]["four_scalar_stream_active"] is False
     assert value["flags"]["FINITE_FIRST_OMITTED_SHELL_DIRECT_PROVIDER_TWO_J5_EXPORTED"] is True
     assert value["flags"]["TWO_J5_FEEDBACK_CHANNELS_EVALUATED"] is True
     assert value["flags"]["ALL_48_TWO_J5_CHANNEL_COLUMN_BLOCKS_EVALUATED"] is True
     assert value["flags"]["GENERIC_DIRECT_FINITE_SHELL_PROVIDER_EXPORTED"] is True
     assert value["flags"]["TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED"] is True
+    assert value["flags"]["COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED"] is True
     assert all(row["detected"] for row in value["mutation_results"])
     assert value["atlas_status"] == "OBSTRUCTED"
     print("Berger recoil scalar stream activation-gate verification: PASS")

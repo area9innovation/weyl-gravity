@@ -44,14 +44,15 @@ All four allowed `k=0` paths contract from two to four cells.
 A content-addressed generic direct-shell provider now generates a contiguous
 `two_j=6` sentinel, and the fail-closed four-stream tail controller implements
 the exact absolute-`g^3` envelope with interval, nonzero, sign, and determinant
-stops.  The certificate-derived validation fixture does not stop.  No
-`two_j=6` feedback block or complex-channel-to-real-shell scalar map is yet
-certified.
+stops.  The certificate-derived validation fixture does not stop.  The exact
+SU(2) conjugate-column theorem now certifies the complex-to-real shell map and
+exports all eight bare `two_j=5` channel sums.  No `two_j=6` feedback block is
+yet certified.
 
 The remaining sequence is:
 
-1. Bind every `two_j=6` feedback channel-column block and certify the
-   complex-channel-to-real-shell scalar map.
+1. Bind every `two_j=6` feedback channel-column block using the certified
+   conjugate-column reality fold.
 2. Only then declare numerical positive masses, nonzero couplings, and an
    interval, nonzero, sign, or rank-two stopping goal.
 3. Run the four response-specific streams and close them with the certified

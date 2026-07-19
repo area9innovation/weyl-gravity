@@ -24,7 +24,7 @@ def test_external_parameters_are_deferred_until_executable_backend():
     assert all(row["status"] == "OPEN" for row in value["readiness"]["external_rows"])
     assert all(row["activation"] == "DEFERRED" for row in value["readiness"]["external_rows"])
     assert value["sequencing_decision"]["current_active_gate"] == (
-        "bind every two_j=6 feedback channel-column block and certify the complex-channel-to-real-shell scalar map"
+        "bind every two_j=6 feedback channel-column block with certified reality-pair folding"
     )
     assert value["flags"]["FOUR_RECOIL_SCALAR_STREAM_ACTIVE"] is False
 
@@ -46,5 +46,5 @@ def test_missing_execution_capabilities_obstruct_activation():
     assert rows["nested_time_convolution_backend"] == "OBSTRUCTED"
     assert rows["tail_aware_aggregate_stop_loop"] == "CERTIFIED"
     assert rows["generic_direct_finite_shell_provider"] == "CERTIFIED"
-    assert rows["complex_channel_to_real_shell_scalar_map"] == "OBSTRUCTED"
+    assert rows["complex_channel_to_real_shell_scalar_map"] == "CERTIFIED"
     assert value["atlas_status"] == "OBSTRUCTED"

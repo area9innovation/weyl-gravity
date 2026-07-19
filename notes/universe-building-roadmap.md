@@ -67,7 +67,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, evaluate the generic H1-H2 contact kernels on the certified covariant Volterra carrier, and assemble the renormalized mixed rows before matching the universal CPT kernels to repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    bind all two_j=6 feedback channel-columns and certify the complex-channel-to-real-shell scalar map; the generic direct carrier and fail-closed tail-stop controller are certified, while physical specialization remains deferred, after which restrict records to Z2^C
+Observer:    bind all two_j=6 feedback channel-columns using the certified conjugate-column real-shell fold; the generic direct carrier, real-shell map and fail-closed tail-stop controller are certified, while physical specialization remains deferred, after which restrict records to Z2^C
 Black hole:  polar Einstein branch SYMPLECTICALLY NULL certified (critical-gravity structure now closed in both parities; conformal direction an exact off-shell flux degeneracy); next polar extra/cross flux blocks via the realized Ricci-image composition; Zerilli-form master scalar stays fail-closed OPEN
 ```
 
@@ -622,8 +622,10 @@ enclosures on the validation mass domain.  All four allowed `k=0` paths
 contract in both components from two to four cells.  The next gate is direct
 provider now has a content-addressed generic finite-shell successor with a
 contiguous `two_j=6` sentinel, and the fail-closed four-stream tail controller
-is certified.  The next gate is the complete `two_j=6` feedback binding and
-the complex-channel-to-real-shell scalar map; Peter--Weyl accumulation,
+is certified.  The exact SU(2) conjugate-column theorem now folds complex
+channel rectangles to real shell inputs and exports all eight `two_j=5`
+channel sums.  The next gate is the complete `two_j=6` feedback binding using
+that reality fold; Peter--Weyl accumulation,
 physical masses, quotient descent and second-order-cone restriction remain
 open.
 The coupling-stripped preparation successor fixes the formal-order convention
@@ -922,8 +924,9 @@ survive the first backreacted, normalized apparatus interaction?
    all 48 channel-column blocks there: 24 exact support zeros and 24 allowed
    zero-containing enclosures.  The generic direct carrier now has a
    contiguous `two_j=6` sentinel and the four-stream tail-stop controller is
-   certified.  Bind the `two_j=6` feedback blocks and close complex-to-real
-   shell extraction before composing the recoil stream.  The
+   certified.  Complex-to-real shell extraction is now certified by the
+   conjugate-column theorem.  Bind the `two_j=6` feedback blocks with that
+   pair fold before composing the recoil stream.  The
    independent emitter stress and reciprocal clock-switch `q2` jet is
    exported; its complete 108-row `q1 q2` identity is certified, while its
    support-local PBW refinement and a solved backreacted branch remain open.
@@ -1773,7 +1776,7 @@ for the outward-facing two-page note.
 | A2 | Linearization stability and charge fibres — Einstein | obstruction bilinear with harmonic selection rules, fixed-charge no-go, and explicit variable-charge extension | current compact harmonic domain; full paper waits for the complete bilinear |
 | A3 | Weyl anomaly coefficients and the `D` defect — quantum | independently reproduced `a,c` coefficients and the coefficient-bearing map to the actual Cartan defect | after the local anomaly complex closes |
 | A4 | Lorentzian Einstein-from-conformal comparison — Einstein | causal and symplectic complement to boundary branch selection | after compact Weyl--Maxwell pullback; boundary theorem requires its own phase space |
-| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, selected 108-row massive emitters, complete unary and causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, complete symbolic per-shell preparation/recoil word with four aggregate formulas, exact normalized switches, response-specific symbolic tail envelopes, finite all-channel/all-column `two_j=5` feedback binding, a generic direct-shell carrier with `two_j=6` sentinel, a fail-closed tail-stop controller, emitter stress/clock-switch `q2` backreaction, and covariant 108-row `q1 q2` | bind all `two_j=6` feedback channel-columns, certify the complex-channel-to-real-shell scalar map, then accept exact masses/couplings and a stopping goal, stream four recoil intervals, and restrict records to the second-order cone; in parallel refine `q1 q2` to a support-local PBW payload and solve the first backreacted branch |
+| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, selected 108-row massive emitters, complete unary and causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, complete symbolic per-shell preparation/recoil word with four aggregate formulas, exact normalized switches, response-specific symbolic tail envelopes, finite all-channel/all-column `two_j=5` feedback binding and real-shell extraction, a generic direct-shell carrier with `two_j=6` sentinel, a fail-closed tail-stop controller, emitter stress/clock-switch `q2` backreaction, and covariant 108-row `q1 q2` | bind all `two_j=6` feedback channel-columns with the certified reality fold, then accept exact masses/couplings and a stopping goal, stream four recoil intervals, and restrict records to the second-order cone; in parallel refine `q1 q2` to a support-local PBW payload and solve the first backreacted branch |
 | B2 | Asymptotic Bach/BMS — Einstein | falloffs, radiative data, differentiable charges, flux, and extra-branch sign | Lorentzian boundary phase space closed |
 | B3 | Nearby conformal detour/higher-spin pilot — classical | one causal transfer beyond spin two | abstract A1 theorem frozen |
 | B4 | Twistor/helicity fixture — nonlinear | one projected cubic or MHV comparison with branch/charge interpretation | physical transferred cubic tensor |
@@ -2035,7 +2038,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL` (fired; field-strength tail certified, dense rail unselected) | certify the finite-time massive retarded energy constant on the exact switch slabs and combine it with the graph tail inside the response-specific scalar stream; do not materialize the 14,177,143,864-entry sub-unit rail |
 | `BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT` (fired for symbolic positive masses) | certify the downstream Maxwell-to-detector dual norms and stream the four recoil scalar intervals; retain the unsmoothed longitudinal `1/m_b^2` contribution and do not invent numerical masses |
 | `BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS` (fired for both detectors and symbolic positive masses) | use the recoil-stream activation successor to separate the internal integrand from later numerical inputs; do not promote the symbolic radii to evaluated coefficients |
-| `BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE` (fired; generic direct-shell and tail-stop callables certified, complete stream obstructed) | bind all `two_j=6` feedback channel-columns, certify the complex-channel-to-real-shell scalar map, and defer external parameters until both are complete |
+| `BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE` (fired; generic direct-shell, real-shell and tail-stop callables certified, complete stream obstructed) | bind all `two_j=6` feedback channel-columns with the certified reality fold, and defer external parameters until that feedback gate is complete |
 | `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` (fired; fixed formal Cauchy data) | build the per-shell word for fixed `tilde_u_b`, symbolic positive masses and explicit `g_b g_c^2`; do not count the selection coupling twice |
 | `BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE` (fired; d/delta signs and wave split exact) | serialize the fixed-`tilde_u_b` per-shell recoil operator word using the exact spacetime blocks; do not infer a scalar value from convention closure |
 | `BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD` (fired; eight channels and four symbolic formulas complete) | pass through the executable-readiness audit; do not identify a typed operator word with a callable interval stream |
@@ -2056,8 +2059,9 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_SIX_MISMATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS` (fired; four exact causal zeros and two contracting zero-containing rails) | extend all eight channel providers beyond `two_j=4`; do not promote the finite validation-domain blocks to all-shell recoil scalars |
 | `BERGER_RECOIL_FIRST_OMITTED_SHELL_PROVIDER_TWO_J5` (fired; direct detector and kernel payload exported at the first omitted shell) | consume the certified 48-block binding, keep the hashed exact-`T` stream `NO_CERTIFIED_MAP`, and do not call one new shell an all-shell provider |
 | `BERGER_RECOIL_TWO_J5_ALL_CHANNEL_COLUMN_BINDING` (fired; 48 channel-column blocks evaluated, 24 exact support zeros and 24 allowed zero-containing enclosures) | consume the generic direct-shell/tail-stop successor, then bind `two_j=6` feedback and retain fail-closed zero containment |
-| `BERGER_RECOIL_DIRECT_SHELL_AND_TAIL_STOP_GATE` (fired; generic direct finite-shell carrier, contiguous `two_j=6` sentinel and four stop goals certified) | bind all eight channels and seven passive columns at `two_j=6`, then certify the complex-channel-to-real-shell scalar map; keep the hashed exact-`T` rail `NO_CERTIFIED_MAP` and do not promote the validation stop fixture |
-| `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` (fired; generic direct-shell and tail-stop callables certified, physical stream obstructed) | close `two_j=6` feedback and complex-to-real shell extraction before activating the exact numerical input schema |
+| `BERGER_RECOIL_DIRECT_SHELL_AND_TAIL_STOP_GATE` (fired; generic direct finite-shell carrier, contiguous `two_j=6` sentinel and four stop goals certified) | pass through the certified real-shell extraction, then bind all eight channels and seven passive columns at `two_j=6`; keep the hashed exact-`T` rail `NO_CERTIFIED_MAP` and do not promote the validation stop fixture |
+| `BERGER_RECOIL_REAL_SHELL_EXTRACTION` (fired; exact SU(2) conjugate-column theorem and eight real `two_j=5` channel sums certified) | fold conjugate column pairs during the `two_j=6` feedback evaluation; do not discard imaginary rectangles, choose physical parameters or infer recoil-corrected rank |
+| `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` (fired; generic direct-shell, real-shell and tail-stop callables certified, physical stream obstructed) | close `two_j=6` feedback before activating the exact numerical input schema |
 | `BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` (fired, capacity label superseded) | retain the streamed route and its computed `two_j=138` working rail, but use the normalization repair for the authoritative necessary capacity lower bound; do not treat either rail as a convergence cutoff |
 | `BERGER_STREAMABLE_POLARIZATION_SECTORS` (fired) | evaluate the diagonal/first-off-diagonal high-mode coefficients in the certified three-dimensional-or-smaller charge blocks and close the Green-weighted operator-norm tail |
 | `BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138` (fired) | apply the degree-ten temporal Green polynomial in exact charge blocks of dimension at most three through form `two_j=138`, then certify or obstruct the tail beyond that published working rail |

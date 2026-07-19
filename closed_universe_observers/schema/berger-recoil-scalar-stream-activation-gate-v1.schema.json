@@ -10,12 +10,12 @@
     "claim_status": {"type": "string"},
     "atlas_status": {"const": "OBSTRUCTED"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
-    "dependency_refs": {"type": "object", "minProperties": 18, "maxProperties": 18},
+    "dependency_refs": {"type": "object", "minProperties": 19, "maxProperties": 19},
     "readiness": {"type": "object", "required": ["internal_rows", "external_rows", "symbolic_modewise_word_ready", "internal_modewise_stream_ready", "numerical_specialization_ready", "four_scalar_stream_active"]},
     "sequencing_decision": {"type": "object"},
     "mutation_results": {"type": "array", "minItems": 2},
     "flags": {"type": "object"},
-    "next_gate": {"const": "BIND_TWO_J6_FEEDBACK_CHANNEL_COLUMNS_AND_CERTIFY_THE_COMPLEX_TO_REAL_SHELL_SCALAR_MAP"},
+    "next_gate": {"const": "BIND_TWO_J6_FEEDBACK_CHANNEL_COLUMNS_WITH_CERTIFIED_REALITY_PAIR_FOLDING"},
     "claim_boundary": {"type": "string"},
     "provenance": {"type": "object"}
   }

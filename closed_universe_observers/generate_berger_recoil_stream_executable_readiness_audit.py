@@ -29,6 +29,7 @@ PARTITIONED_FEEDBACK_BACKEND = PACKAGE / "berger_recoil_partitioned_feedback_cha
 MISMATCHED_FEEDBACK_BACKEND = PACKAGE / "berger_recoil_mismatched_feedback_channel.py"
 FIRST_OMITTED_BINDING_BACKEND = PACKAGE / "berger_recoil_first_omitted_shell_binding.py"
 DIRECT_SHELL_BACKEND = PACKAGE / "berger_recoil_direct_finite_shell_provider.py"
+REAL_SHELL_BACKEND = PACKAGE / "berger_recoil_real_shell_extraction.py"
 DEPENDENCIES = {
     "per_shell_word": PACKAGE / "certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
     "tail_envelopes": PACKAGE / "certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
@@ -50,6 +51,7 @@ DEPENDENCIES = {
     "finite_first_omitted_shell_provider": PACKAGE / "certificates/BERGER_RECOIL_FIRST_OMITTED_SHELL_PROVIDER_TWO_J5.json",
     "finite_two_j5_all_channel_column_binding": PACKAGE / "certificates/BERGER_RECOIL_TWO_J5_ALL_CHANNEL_COLUMN_BINDING.json",
     "direct_shell_and_tail_stop_gate": PACKAGE / "certificates/BERGER_RECOIL_DIRECT_SHELL_AND_TAIL_STOP_GATE.json",
+    "real_shell_extraction": PACKAGE / "certificates/BERGER_RECOIL_REAL_SHELL_EXTRACTION.json",
 }
 REQUIRED_CALLABLES = {
     "detector_profile_coefficient_provider": "detector_profile_coefficient_interval",
@@ -74,6 +76,7 @@ SOURCE_FILES = [
     MISMATCHED_FEEDBACK_BACKEND,
     FIRST_OMITTED_BINDING_BACKEND,
     DIRECT_SHELL_BACKEND,
+    REAL_SHELL_BACKEND,
 ]
 
 
@@ -102,6 +105,7 @@ def readiness_rows(
     matched_feedback_functions: set[str] | None = None,
     partitioned_feedback_functions: set[str] | None = None,
     mismatched_feedback_functions: set[str] | None = None,
+    real_shell_functions: set[str] | None = None,
     finite_detector_provider: bool = False,
     complete_detector_provider: bool = False,
     finite_nested_convolution: bool = False,
@@ -120,6 +124,7 @@ def readiness_rows(
     finite_two_j5_all_channel_column_binding: bool = False,
     generic_direct_shell_provider: bool = False,
     certified_tail_stop_gate: bool = False,
+    certified_real_shell_extraction: bool = False,
     complete_nested_convolution: bool = False,
     treat_symbolic_word_as_backend: bool = False,
 ) -> list[dict[str, Any]]:
@@ -130,6 +135,7 @@ def readiness_rows(
     matched_feedback_functions = matched_feedback_functions or set()
     partitioned_feedback_functions = partitioned_feedback_functions or set()
     mismatched_feedback_functions = mismatched_feedback_functions or set()
+    real_shell_functions = real_shell_functions or set()
     rows = [
         {
             "id": "complete_symbolic_operator_word",
@@ -407,9 +413,23 @@ def readiness_rows(
         },
         {
             "id": "complex_channel_to_real_shell_scalar_map",
-            "status": "OBSTRUCTED",
-            "required_callable": "physical_complex_channel_to_real_shell_scalar",
-            "evidence": "NO_CERTIFIED_MAP",
+            "status": (
+                "CERTIFIED"
+                if certified_real_shell_extraction
+                and "extract_real_channel_column_sum" in real_shell_functions
+                and "reality_reduced_columns" in real_shell_functions
+                else "OBSTRUCTED"
+            ),
+            "required_callables": [
+                "extract_real_channel_column_sum",
+                "reality_reduced_columns",
+            ],
+            "coverage": "generic direct finite-shell SU2 reality theorem plus all eight two_j5 channel sums",
+            "evidence": (
+                "BERGER_RECOIL_REAL_SHELL_EXTRACTION"
+                if certified_real_shell_extraction
+                else "NO_CERTIFIED_MAP"
+            ),
         },
     ]
     for identifier, callable_name in REQUIRED_CALLABLES.items():
@@ -472,6 +492,7 @@ def build() -> dict[str, Any]:
         "finite_first_omitted_shell_provider": "TWO_J4_TO_TWO_J5_DIRECT_CARRIER_CROSSWALK_CERTIFIED",
         "finite_two_j5_all_channel_column_binding": "ALL_48_TWO_J5_CHANNEL_COLUMN_BLOCKS_EVALUATED",
         "direct_shell_and_tail_stop_gate": "TAIL_AWARE_FOUR_STREAM_STOP_CALLABLE_EXPORTED",
+        "real_shell_extraction": "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -487,6 +508,7 @@ def build() -> dict[str, Any]:
     matched_feedback_functions = _backend_functions(MATCHED_FEEDBACK_BACKEND)
     partitioned_feedback_functions = _backend_functions(PARTITIONED_FEEDBACK_BACKEND)
     mismatched_feedback_functions = _backend_functions(MISMATCHED_FEEDBACK_BACKEND)
+    real_shell_functions = _backend_functions(REAL_SHELL_BACKEND)
     finite_detector_provider = values["finite_detector_provider"]["flags"][
         "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED"
     ]
@@ -544,6 +566,9 @@ def build() -> dict[str, Any]:
     certified_tail_stop_gate = values["direct_shell_and_tail_stop_gate"]["flags"][
         "TAIL_AWARE_FOUR_STREAM_STOP_CALLABLE_EXPORTED"
     ]
+    certified_real_shell_extraction = values["real_shell_extraction"]["flags"][
+        "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED"
+    ]
     rows = readiness_rows(
         functions,
         form_functions=form_functions,
@@ -553,6 +578,7 @@ def build() -> dict[str, Any]:
         matched_feedback_functions=matched_feedback_functions,
         partitioned_feedback_functions=partitioned_feedback_functions,
         mismatched_feedback_functions=mismatched_feedback_functions,
+        real_shell_functions=real_shell_functions,
         finite_detector_provider=finite_detector_provider,
         complete_detector_provider=generic_direct_shell_provider,
         finite_nested_convolution=finite_nested_convolution,
@@ -571,6 +597,7 @@ def build() -> dict[str, Any]:
         finite_two_j5_all_channel_column_binding=finite_two_j5_all_channel_column_binding,
         generic_direct_shell_provider=generic_direct_shell_provider,
         certified_tail_stop_gate=certified_tail_stop_gate,
+        certified_real_shell_extraction=certified_real_shell_extraction,
         complete_nested_convolution=complete_nested_convolution,
     )
     row_status = {row["id"]: row["status"] for row in rows}
@@ -589,6 +616,7 @@ def build() -> dict[str, Any]:
         matched_feedback_functions=set(),
         partitioned_feedback_functions=set(),
         mismatched_feedback_functions=set(),
+        real_shell_functions=set(),
         finite_detector_provider=finite_detector_provider,
         complete_detector_provider=complete_detector_provider,
         finite_nested_convolution=finite_nested_convolution,
@@ -607,6 +635,7 @@ def build() -> dict[str, Any]:
         finite_two_j5_all_channel_column_binding=finite_two_j5_all_channel_column_binding,
         generic_direct_shell_provider=False,
         certified_tail_stop_gate=False,
+        certified_real_shell_extraction=False,
         complete_nested_convolution=complete_nested_convolution,
         treat_symbolic_word_as_backend=True,
     )
@@ -642,9 +671,10 @@ def build() -> dict[str, Any]:
         "obstructed. "
         "A content-addressed generic direct-shell provider now supplies a contiguous "
         "two_j=6 sentinel and the tail-aware four-stream stop callable is certified. "
-        "The feedback backend itself is still evaluated only through two_j=5, and no "
-        "certified map yet turns its complex channel rectangles into the real shell "
-        "scalars consumed by the aggregator. "
+        "The exact SU(2) conjugate-column relation now supplies a certified map from "
+        "complex channel rectangles to real shell inputs; all eight two_j=5 channel "
+        "sums pass that carrier audit. The feedback backend itself is still evaluated "
+        "only through two_j=5. "
         "Supplying masses and "
         "couplings would therefore still not produce a physical recoil interval. The "
         "numerical input schema is certified only as a deferred exact "
@@ -657,7 +687,7 @@ def build() -> dict[str, Any]:
         "schema": "closed-universe-berger-recoil-stream-executable-readiness-audit-v1",
         "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
         "setting_id": values["per_shell_word"]["setting_id"],
-        "claim_status": "GENERIC_DIRECT_SHELL_AND_TAIL_STOP_CERTIFIED_COMPLEX_TO_REAL_FEEDBACK_STREAM_OBSTRUCTED",
+        "claim_status": "GENERIC_DIRECT_SHELL_REALITY_AND_TAIL_STOP_CERTIFIED_TWO_J6_FEEDBACK_STREAM_OBSTRUCTED",
         "atlas_status": "OBSTRUCTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
@@ -686,6 +716,8 @@ def build() -> dict[str, Any]:
             "partitioned_feedback_backend_module_present": PARTITIONED_FEEDBACK_BACKEND.exists(),
             "mismatched_feedback_backend_module": str(MISMATCHED_FEEDBACK_BACKEND.relative_to(ROOT)),
             "mismatched_feedback_backend_module_present": MISMATCHED_FEEDBACK_BACKEND.exists(),
+            "real_shell_backend_module": str(REAL_SHELL_BACKEND.relative_to(ROOT)),
+            "real_shell_backend_module_present": REAL_SHELL_BACKEND.exists(),
             "required_callables": REQUIRED_CALLABLES,
             "discovered_module_callables": sorted(functions),
             "discovered_detector_form_callables": sorted(form_functions),
@@ -695,6 +727,7 @@ def build() -> dict[str, Any]:
             "discovered_matched_feedback_callables": sorted(matched_feedback_functions),
             "discovered_partitioned_feedback_callables": sorted(partitioned_feedback_functions),
             "discovered_mismatched_feedback_callables": sorted(mismatched_feedback_functions),
+            "discovered_real_shell_callables": sorted(real_shell_functions),
             "interval_output_requirement": "directed-rounding lower/upper endpoints plus retained-shell and analytic-tail bounds",
         },
         "readiness": {
@@ -743,7 +776,7 @@ def build() -> dict[str, Any]:
             "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": row_status["shell_interval_evaluator"] == "CERTIFIED",
             "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": row_status["detector_profile_coefficient_provider"] == "CERTIFIED",
             "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": False,
-            "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED": False,
+            "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED": row_status["complex_channel_to_real_shell_scalar_map"] == "CERTIFIED",
             "TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED": row_status["tail_aware_aggregate_stop_loop"] == "CERTIFIED",
             "NUMERICAL_SPECIALIZATION_INPUT_SCHEMA_EXPORTED": True,
             "NUMERICAL_SPECIALIZATION_VALUES_DECLARED": False,
@@ -751,7 +784,7 @@ def build() -> dict[str, Any]:
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "BIND_TWO_J6_FEEDBACK_CHANNEL_COLUMNS_AND_CERTIFY_THE_COMPLEX_TO_REAL_SHELL_SCALAR_MAP",
+        "next_gate": "BIND_TWO_J6_FEEDBACK_CHANNEL_COLUMNS_WITH_CERTIFIED_REALITY_PAIR_FOLDING",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

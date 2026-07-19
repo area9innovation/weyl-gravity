@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "closed-universe-berger-recoil-real-shell-extraction-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "atlas_status",
+    "dependency_tags", "dependency_refs", "mode_scope", "reality_theorem",
+    "algebra_audits", "two_j5_real_channel_sums", "callable_contract",
+    "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-real-shell-extraction-v1"},
+    "result_id": {"const": "BERGER_RECOIL_REAL_SHELL_EXTRACTION"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LORENTZIAN-CAUSAL"}},
+    "mode_scope": {
+      "type": "object",
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]
+    },
+    "algebra_audits": {"type": "array", "minItems": 7, "maxItems": 7},
+    "two_j5_real_channel_sums": {"type": "array", "minItems": 8, "maxItems": 8},
+    "mutation_results": {
+      "type": "array", "minItems": 3,
+      "items": {"type": "object", "required": ["name", "detected"], "properties": {"detected": {"const": true}}}
+    },
+    "flags": {
+      "type": "object",
+      "required": ["GENERIC_FINITE_SHELL_SU2_REALITY_THEOREM_EXPORTED", "DE_RHAM_AND_LAPLACIAN_REALITY_INTERTWINING_CERTIFIED", "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED", "ALL_EIGHT_TWO_J5_REAL_CHANNEL_SUMS_EXPORTED", "TWO_J6_FEEDBACK_CHANNELS_EVALUATED", "PHYSICAL_MASS_COUPLING_SPECIALIZATION_EXPORTED", "FOUR_PHYSICAL_RECOIL_INTERVALS_EXPORTED", "QUANTUM_CLAIM"],
+      "properties": {
+        "GENERIC_FINITE_SHELL_SU2_REALITY_THEOREM_EXPORTED": {"const": true},
+        "DE_RHAM_AND_LAPLACIAN_REALITY_INTERTWINING_CERTIFIED": {"const": true},
+        "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED": {"const": true},
+        "ALL_EIGHT_TWO_J5_REAL_CHANNEL_SUMS_EXPORTED": {"const": true},
+        "TWO_J6_FEEDBACK_CHANNELS_EVALUATED": {"const": false},
+        "PHYSICAL_MASS_COUPLING_SPECIALIZATION_EXPORTED": {"const": false},
+        "FOUR_PHYSICAL_RECOIL_INTERVALS_EXPORTED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    }
+  }
+}
