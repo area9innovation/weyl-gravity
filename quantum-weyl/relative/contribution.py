@@ -17,7 +17,7 @@ PROGRAMME = ROOT / "d_quotient_programme"
 OUTPUT = PROGRAMME / "contributions/quantum-relative-einstein-weyl-readiness.json"
 SCHEMA = PROGRAMME / "schema/team-contribution-v1.schema.json"
 PHASES = PROGRAMME / "registry/phase_spaces.json"
-EVIDENCE_COMMIT = "58f6ad0ca4ed948b4db326ea9dc10b0bc3a2872d"
+EVIDENCE_COMMIT = "004888de60501c8a91c8edb6397fda3e2a0e2515"
 EVIDENCE_PATH = "quantum-weyl/relative/certificates/QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS.json"
 WORKING_EVIDENCE = ROOT / EVIDENCE_PATH
 
@@ -51,10 +51,14 @@ def build_contribution() -> dict[str, Any]:
         raise ValueError("working relative readiness certificate differs from pinned commit")
     if (
         evidence.get("result_state")
-        != "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING"
+        != "LINEAR_RELATIVE_TRIANGLE_AND_OBSERVABLE_PULLBACK_IMPORTED_NONLINEAR_QME_OPEN"
         or evidence.get("verdict") != "ANALYTIC_FRAMEWORK_MISSING"
         or evidence.get("shared_relative_row", {}).get("map_iota")
-        != "ONSHELL_MAP_ONLY_IMPORTED_BY_HASH"
+        != "COMPLETE_ALL_ROW_SUPPORT_LOCAL_NONCYCLIC_LINEAR_TRIANGLE_IMPORTED"
+        or evidence.get("claim_flags", {}).get("RELATIVE_OBSERVABLE_PULLBACK_IMPORTED")
+        is not True
+        or evidence.get("claim_flags", {}).get("RELATIVE_EQUIVARIANCE_IMPORTED")
+        is not True
         or evidence.get("qme_and_transfer_gate", {}).get("residual_quantum_transfer_authorized")
         is not False
     ):
@@ -72,16 +76,19 @@ def build_contribution() -> dict[str, Any]:
         "verdict": "ANALYTIC_FRAMEWORK_MISSING",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "established": [
-            "G0 relative quantum dependency ledger with a complete shared-spine row",
+            "G1 complete linear relative import on the compact Einstein-Maxwell product background",
             "content-hash import of the certified on-shell standard-harmonic inclusion and classical reduced-mode pullback pairing",
+            "content-hash import of the all-row support-local noncyclic off-shell linear triangle and exact mapping cofiber",
+            "contravariant support-local pullback on the linear local BRST observable DGA with exact H_product equivariance",
+            "exact reduced-mode coefficient detectors for every certified extra cofiber, explicitly not promoted to spacetime or quantum observables",
             "content-hash import of a partial quadratic relative preflight without promotion to a complete O2 or arity-three theorem",
             "formal relative anomaly subtraction target with bulk, antifield, boundary, zero-mode, measure, central and D-Cartan ledgers separated",
-            "explicit three-result classical import gate and fail-closed local QME, state, pairing and residual-transfer statuses",
+            "fail-closed nonlinear, local QME, state, pairing and residual-transfer statuses",
         ],
         "not_established": [
-            "an off-shell Einstein-Weyl BV chain map or mapping cofiber",
-            "the complete relative arity-two or arity-three Linfinity disposition",
-            "relative residual equivariance or observable pullback",
+            "a standard-pairing cyclic relative map or renormalized relative pairing",
+            "the complete relative f2 or arity-three Linfinity disposition",
+            "the final relative residual quotient or renormalized observable pullback",
             "Einstein or Weyl QME restoration and a defined relative anomaly class",
             "a renormalized relative pairing, BRST-compatible state restriction or quantum D-Cartan verdict",
             "a particle, Hilbert-space, unitarity or Lorentzian quantum theorem",
@@ -97,7 +104,7 @@ def build_contribution() -> dict[str, Any]:
             "PYTHONPATH=quantum-weyl python3 -m relative.contribution --check",
             "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/relative/tests -v",
         ],
-        "next_gate": "import EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 by content hash, while retaining ANALYTIC_FRAMEWORK_MISSING until the applicable local QME and renormalized observable algebra are constructed",
+        "next_gate": "import EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE, then compute matched Einstein and Weyl QME dispositions and a renormalized observable restriction while retaining ANALYTIC_FRAMEWORK_MISSING",
     }
 
 

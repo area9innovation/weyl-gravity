@@ -18,7 +18,10 @@ class RelativeQuantumContributionTests(unittest.TestCase):
         self.assertEqual(contribution["team_id"], "quantum")
         self.assertEqual(contribution["claim_status"], "BLOCKED")
         self.assertEqual(contribution["verdict"], "ANALYTIC_FRAMEWORK_MISSING")
-        self.assertIn("off-shell", " ".join(contribution["not_established"]))
+        self.assertIn("arity-three", " ".join(contribution["not_established"]))
+        self.assertTrue(
+            any("off-shell linear triangle" in row for row in contribution["established"])
+        )
 
     def test_promotion_is_rejected(self) -> None:
         mutant = deepcopy(build_contribution())
