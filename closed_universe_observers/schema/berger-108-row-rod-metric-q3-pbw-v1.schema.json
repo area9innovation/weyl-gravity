@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-108-row-rod-metric-q3-pbw-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "payload_ref", "action_and_cyclicity_audit", "mutation_results", "activation_disposition", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-rod-metric-q3-pbw-v1"},
+    "result_id": {"const": "BERGER_108_ROW_ROD_METRIC_Q3_PBW"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_COMPLETE_SIX_ROD_METRIC_Q3_PBW_SUBBLOCK"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "payload_ref": {"type": "object", "required": ["path", "result_id", "sha256", "operator_key_count", "serialized_term_count", "nonzero_output_rows", "canonical_sha256"]},
+    "action_and_cyclicity_audit": {
+      "type": "object",
+      "properties": {
+        "lower_order_density_component_defect_count": {"const": 0},
+        "direct_fourth_metric_variation_defect_count": {"const": 0},
+        "fourth_frechet_permutation_defect_count": {"const": 0},
+        "graded_symmetry_defect_count": {"const": 0},
+        "hhrr_to_hhr_formal_transpose_defect_count": {"const": 0},
+        "hhhr_to_hhh_formal_transpose_defect_count": {"const": 0}
+      }
+    },
+    "mutation_results": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"type": "object", "properties": {"detected": {"const": true}}}},
+    "activation_disposition": {
+      "type": "object",
+      "properties": {
+        "rod_metric_q3_subblock_exported": {"const": true},
+        "complete_scalar_q3_exported": {"const": false},
+        "arity_replay_certified": {"const": false},
+        "K_Berger_equivariance_certified": {"const": false},
+        "observer_morphism_stability_certified": {"const": false},
+        "detector_response_on_second_order_cone_authorized": {"const": false},
+        "physical_branch_bridge_activated": {"const": false}
+      }
+    },
+    "flags": {"type": "object"},
+    "next_gate": {"const": "EXPORT_MEMORY_TRANSPORT_Q3_PBW_BLOCK"},
+    "claim_boundary": {"type": "string", "minLength": 1200},
+    "provenance": {"type": "object"}
+  }
+}

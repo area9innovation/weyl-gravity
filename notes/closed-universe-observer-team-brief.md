@@ -1436,8 +1436,21 @@ adjunction supplies the emitter- and ghost-cotangent partners.  The same
 engine recovers the certified 24-term scalar BV template, fixing the graded
 signs and factorial normalization.  This completes emitter `q2`.  The
 canonical complete 108-row `q2` payload is now exported with 36,438 exact
-coefficient monomials and no cross-source key collision.  Every `q3`, arity
-replay and `O_detector|Z2^C` remain fail-closed.
+coefficient monomials and no cross-source key collision.  The first complete
+`q3` successor is now certified:
+`BERGER_108_ROW_ROD_METRIC_Q3_PBW` differentiates the six-rod physical action
+through fourth order and exports 106,960 ordered PBW keys with 181,344 exact
+coefficient monomials on all metric- and rod-cotangent outputs.  Its general
+determinant-log/inverse-metric jet agrees with all 17,760 lower-order
+components, four direct symbolic fourth variations, and 30,000 Frechet
+transpositions.  Independent PBW adjunction exactly recovers both
+rod-output cyclic families, including derivatives of finite background rod
+jets.  This is one source subblock, not complete `q3`: the base
+gravity-clock-Maxwell import, memory transport, normalized readout and
+physical-emitter blocks remain to assemble, while scalar-BV and emitter
+Diff--BV must be ledgered as structural zeros.  Arity replay and
+`O_detector|Z2^C` therefore remain fail-closed.  The active next gate is the
+complete memory-transport `q3` block.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to

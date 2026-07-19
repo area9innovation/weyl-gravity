@@ -1,0 +1,125 @@
+{
+  "action_and_cyclicity_audit": {
+    "cyclicity_scope": "complete six-rod quartic action tensor; all ordered metric permutations and both rod-containing PBW formal transposes",
+    "direct_fourth_metric_variation_defect_count": 0,
+    "direct_fourth_metric_variation_fixture_count": 64,
+    "fourth_frechet_adjacent_transposition_check_count": 30000,
+    "fourth_frechet_permutation_defect_count": 0,
+    "graded_symmetry_defect_count": 0,
+    "hhhr_to_hhh_formal_transpose_defect_count": 0,
+    "hhrr_to_hhr_formal_transpose_defect_count": 0,
+    "lower_order_density_component_comparison_count": 17760,
+    "lower_order_density_component_defect_count": 0
+  },
+  "activation_disposition": {
+    "K_Berger_equivariance_certified": false,
+    "arity_replay_certified": false,
+    "complete_scalar_q3_exported": false,
+    "detector_response_on_second_order_cone_authorized": false,
+    "observer_morphism_stability_certified": false,
+    "physical_branch_bridge_activated": false,
+    "rod_metric_q3_subblock_exported": true
+  },
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate exports the complete six-rod physical metric contribution to q3 on the canonical 108-row Berger carrier. It differentiates -epsilon_R_squared/2 sum sqrt(-gHat) gHat^{-1}(dR,dR) through fourth action order, using an order-general determinant-log partition formula and the noncommutative inverse-metric series. The order-one through order-three density jets agree componentwise with the independently certified q2 producer, direct fourth variations and all adjacent Frechet transpositions have zero defect. The h-h-r-r, h-h-h-r and h-h-h-h metric-output orbits and their h-h-r and h-h-h rod-output cyclic mates are serialized in deterministic row chunks. Exact noncommuting PBW formal adjunction, including derivatives of finite background rod jets, reproduces every rod-output key; graded input symmetry and a deletion mutation pass. This certifies only the rod metric q3 subblock. Base gravity-clock-Maxwell q3, memory, readout and emitter q3 remain separate; scalar-BV and emitter Diff-BV are structural q3 zeros but are not assembled here. Complete q3, arity replay, K_Berger equivariance, observer-morphism stability, O_detector restricted to Z2, nonlinear rank, physical Bridge 3, finite-parameter causal propagation and quantum claims remain unavailable. No cross-background mode identification is made.",
+  "claim_status": "CERTIFIED_COMPLETE_SIX_ROD_METRIC_Q3_PBW_SUBBLOCK",
+  "dependency_refs": {
+    "apparatus_action": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE.json",
+      "result_id": "BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE",
+      "sha256": "d94854ea0980d22b8a7e8b44a52dd50afa7afd8a0916aff52d3700d1eeb2d0b9"
+    },
+    "combined_clock_chart": {
+      "path": "closed_universe_observers/certificates/BERGER_NONLINEAR_CLOCK_COMBINED_CANONICAL_MAP_F2_F3.json",
+      "result_id": "BERGER_NONLINEAR_CLOCK_COMBINED_CANONICAL_MAP_F2_F3",
+      "sha256": "b35f50e238a15c1e226edf59779716987a6aee13c1917d7c9e65b9a39033f40a"
+    },
+    "component_contract": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json",
+      "result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+      "sha256": "4113635be1493e0eac5e945a970ce4989f0484d5fa658a10bf893c63f5ae707c"
+    },
+    "rod_metric_q2": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_ROD_METRIC_Q2_PBW.json",
+      "result_id": "BERGER_108_ROW_ROD_METRIC_Q2_PBW",
+      "sha256": "67774b75389c7e89c74e05c23fba260bf927055583cd1a5441c4efa4de38f7e4"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "flags": {
+    "APPARATUS_ROD_METRIC_Q3_CYCLIC": true,
+    "APPARATUS_ROD_METRIC_Q3_GRADED_SYMMETRIC": true,
+    "APPARATUS_ROD_METRIC_Q3_PBW_EXPORTED": true,
+    "COMPLETE_SCALAR_108_ROW_Q3_EXPORTED": false,
+    "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
+    "QUANTUM_CLAIM": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "delete_last_rod_q3_operator_key"
+    }
+  ],
+  "next_gate": "EXPORT_MEMORY_TRANSPORT_Q3_PBW_BLOCK",
+  "payload_ref": {
+    "canonical_sha256": "0c393331df8b2f87ca1f976f1d67c2812c8913fc864bba532e4c9dfa70ea0b47",
+    "nonzero_output_rows": [
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79
+    ],
+    "operator_key_count": 106960,
+    "path": "closed_universe_observers/certificates/BERGER_108_ROW_ROD_METRIC_Q3_PBW_PAYLOAD.json",
+    "result_id": "BERGER_108_ROW_ROD_METRIC_Q3_PBW_PAYLOAD",
+    "serialized_term_count": 181344,
+    "sha256": "e1c55373d6d61d321d65a85fab4a711c0eb79a3a3877111d76f398935f12f099"
+  },
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_108_row_rod_metric_q3_pbw.py",
+        "sha256": "a98f653d06f5422e0434b42a26b32354862ea8a67d84e0754b5bfc58be8ac02d"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_108_row_rod_metric_q3_pbw.py",
+        "sha256": "9e6ea83e99def872f237c1493eddffbef06218b41660a290623e0116ef2c2f5c"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_108_row_rod_metric_q3_pbw.py",
+        "sha256": "73b4cac79de04b24dc3d0b23d1ada9f4fa08319a53debaf2b5315873684e4862"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-108-row-rod-metric-q3-pbw-v1.schema.json",
+        "sha256": "cce3a10df08634c0c4de2cb9b6163c450313bfc1ac8436c5b45e1639228e8476"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-108-row-rod-metric-q3-pbw-payload-v1.schema.json",
+        "sha256": "0caf743b1cea892bb8a8167f021697fb13f6e0aae7f2b92b96041454a371ed72"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-108-row-rod-metric-q3-pbw.md",
+        "sha256": "f65a38b0ae141c023b6a0ed197e5f8c84edfd22ff3475a8374fda4fa3cac4557"
+      }
+    ]
+  },
+  "result_id": "BERGER_108_ROW_ROD_METRIC_Q3_PBW",
+  "schema": "closed-universe-berger-108-row-rod-metric-q3-pbw-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

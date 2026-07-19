@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-108-row-rod-metric-q3-pbw-payload-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "shape", "coefficient_field", "pbw_basis", "factorial_convention", "source_action", "storage", "orbit_blocks", "chunks", "nonzero_output_rows", "operator_key_count", "serialized_term_count", "canonical_sha256"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-rod-metric-q3-pbw-payload-v1"},
+    "result_id": {"const": "BERGER_108_ROW_ROD_METRIC_Q3_PBW_PAYLOAD"},
+    "shape": {"const": [108, 108, 108, 108]},
+    "coefficient_field": {"type": "string"},
+    "pbw_basis": {"type": "string"},
+    "factorial_convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+    "source_action": {"type": "string"},
+    "storage": {"const": "deterministic-gzip-strict-json-row-chunks"},
+    "orbit_blocks": {"type": "object", "minProperties": 5, "maxProperties": 5},
+    "chunks": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": {"type": "object", "required": ["output", "path", "file_sha256", "canonical_sha256", "operator_key_count", "serialized_term_count", "maximum_total_jet_order"]}
+    },
+    "nonzero_output_rows": {"const": [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 74, 75, 76, 77, 78, 79]},
+    "operator_key_count": {"type": "integer", "minimum": 1},
+    "serialized_term_count": {"type": "integer", "minimum": 1},
+    "canonical_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

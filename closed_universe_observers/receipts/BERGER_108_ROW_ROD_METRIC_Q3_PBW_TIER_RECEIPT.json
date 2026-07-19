@@ -1,0 +1,54 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_ROD_METRIC_Q3_PBW_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_ROD_METRIC_Q3_PBW",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The complete six-rod physical metric q3 subblock contains 106,960 ordered PBW operator keys and 181,344 exact coefficient monomials, with exact order-four density polarization, graded symmetry and cyclic completion. Complete scalar q3, arity replay, observer-cone response, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile on changed Python sources; JSON Schema validation; git diff --check on scoped paths",
+      "elapsed_seconds": 2.6,
+      "status": "PASS",
+      "scope": "rod q3 producer/verifier, strict schemas, generated atlas and scoped documentation"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_rod_metric_q3_pbw.py; python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment; python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "elapsed_seconds": 2.91,
+      "status": "PASS",
+      "scope": "5 fast invariants plus generated fail-closed atlas lifecycle and evidence-hash checks"
+    },
+    {
+      "tier": 2,
+      "command": "python3 -m closed_universe_observers.verify_berger_108_row_rod_metric_q3_pbw",
+      "elapsed_seconds": 58.47,
+      "peak_rss_mb": 892.15,
+      "status": "PASS",
+      "scope": "full exact rebuild of 106,960 keys, 181,344 monomials and 16 deterministic gzip row chunks; dependency and source hashes; 17,760 lower-order regressions; 64 direct fourth variations; 30,000 Frechet transpositions; graded symmetry; two PBW cyclic-transpose families; deletion mutation"
+    }
+  ],
+  "higher_tiers_not_run": {
+    "tier_3": "Scoped q3 source-subblock promotion; no complete q3 assembly, shared core algebra change, freeze, release or paper-theorem promotion."
+  },
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_rod_metric_q3_pbw.py", "sha256": "a98f653d06f5422e0434b42a26b32354862ea8a67d84e0754b5bfc58be8ac02d"},
+    {"path": "closed_universe_observers/verify_berger_108_row_rod_metric_q3_pbw.py", "sha256": "9e6ea83e99def872f237c1493eddffbef06218b41660a290623e0116ef2c2f5c"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_rod_metric_q3_pbw.py", "sha256": "73b4cac79de04b24dc3d0b23d1ada9f4fa08319a53debaf2b5315873684e4862"},
+    {"path": "closed_universe_observers/schema/berger-108-row-rod-metric-q3-pbw-v1.schema.json", "sha256": "cce3a10df08634c0c4de2cb9b6163c450313bfc1ac8436c5b45e1639228e8476"},
+    {"path": "closed_universe_observers/schema/berger-108-row-rod-metric-q3-pbw-payload-v1.schema.json", "sha256": "0caf743b1cea892bb8a8167f021697fb13f6e0aae7f2b92b96041454a371ed72"},
+    {"path": "closed_universe_observers/reports/berger-108-row-rod-metric-q3-pbw.md", "sha256": "f65a38b0ae141c023b6a0ed197e5f8c84edfd22ff3475a8374fda4fa3cac4557"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_ROD_METRIC_Q3_PBW.json", "sha256": "c402e0984394f95ab4c6d09b57994d9f8524aaef98defe5e5e1cb5d3d2953488"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_ROD_METRIC_Q3_PBW_PAYLOAD.json", "sha256": "e1c55373d6d61d321d65a85fab4a711c0eb79a3a3877111d76f398935f12f099"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "ef19b2f4256d89fa4e8787b62c6592c3e7154aa8d5a07a30773d3d72788669cb"},
+    {"path": "planning/work-items/berger-108-row-apparatus-q2-q3-extension.json", "sha256": "5e4252907982dc78f708aff3943c5a5e8ea7570bebb8690286d3d91f596b7cd5"}
+  ],
+  "flags": {
+    "APPARATUS_ROD_METRIC_Q3_PBW_EXPORTED": true,
+    "COMPLETE_SCALAR_108_ROW_Q3_EXPORTED": false,
+    "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "PHYSICAL_BRANCH_BRIDGE_ACTIVATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
