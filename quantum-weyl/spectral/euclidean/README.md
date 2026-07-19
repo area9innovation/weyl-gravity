@@ -154,7 +154,12 @@ source-row Fourier map, adjunction, loop routing and Wick reduction at one
 generic point.  The full alpha polynomial and five-carrier projection are
 now exact, and the projected algebraic curvature-squared Hessian is imported
 with its gauge-ordering crosswalk.  The integrated tensor triangle, `H2`
-polarization and mixed `H1`-`H2` rows remain open.
+polarization and mixed `H1`-`H2` rows remain open generically.  A rational
+equal-box TT fixture now performs the correct carrier comparison: all six
+labelled `H1`-cubed triangle orderings plus all three polarized mixed bubbles
+give the nonzero raw log coefficient `15707/216`.  Thus algebraic `H2` does
+not cancel the corner identically; the next gate is a covariant subtraction
+and renormalized distribution extension.
 
 Replay with:
 

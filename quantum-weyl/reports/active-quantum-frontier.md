@@ -149,9 +149,13 @@ and the total corner coefficient is `1/2`. The projected algebraic
 curvature-squared Hessian is now imported: nine nonzero rows survive on the
 scalar-flat carrier, the gauge-ordering commutator is crosswalked exactly,
 and the round-`S4` split `+24 K^2-16 K^2=+8 K^2` replays the known monic
-factorization. It must still be polarized and its mixed `H1`-`H2` rows tested
-against the corner class, or an explicit subtraction fixed; no cancellation
-is asserted.
+factorization. Its polarization and mixed trace are now operational on one
+rational equal-box TT fixture: all six labelled
+`H1`-cubed orderings and both endpoints of all three mixed bubbles give
+`-1975/72+2704/27=15707/216`, before `(4 pi)^-2`. Universal algebraic `H2`
+cancellation is therefore refuted on the fixture. A covariant subtraction and
+renormalized distribution extension remain open, so the `M14` relative class
+is not yet disposed.
 The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
 and rational corner flux. Four explicit primitives cover every orientation,
@@ -483,10 +487,10 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. polarize the imported curvature-squared layer of the same-gauge physical
-   Hessian and compute the mixed first-/second-curvature trace rows;
-2. test their sum against the certified `M14` corner class, or fix an explicit
-   renormalized subtraction, before integrating the physical five-carrier rows;
+1. fix a local covariant subtraction/distribution extension for the nonzero
+   raw physical corner/endpoint coefficient;
+2. assemble and integrate the renormalized mixed physical five-carrier rows,
+   then dispose the certified `M14` class in that declared extension;
 3. supply the full generic primed Green kernel or spectral measure for the
    global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the
    physical Hessian to integrate

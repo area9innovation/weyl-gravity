@@ -459,7 +459,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "POLARIZE_SCALAR_FLAT_H2_AND_COMPUTE_EXACT_MIXED_H1_H2_TRACE_AGAINST_M14_CORNER_CLASS",
+            "FIX_COVARIANT_SUBTRACTION_AND_ASSEMBLE_RENORMALIZED_MIXED_PHYSICAL_ROWS",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

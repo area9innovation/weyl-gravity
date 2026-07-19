@@ -1060,9 +1060,39 @@ contracted derivative indices in $\mathcal H_1$ contribute $-16K^2$, and
  24K^2-16K^2=8K^2
 \]
 reproduces the monic factorization $(A+2K)(A+4K)$.  This closes the algebraic
-$\mathcal H_2$ input.  Its polarization, the mixed
-$\mathcal H_1\mathcal H_2$ trace and the test against the certified
-$M_{14}$ corner class remain open; no cancellation is asserted.
+$\mathcal H_2$ input.  Its operational polarization and first exact mixed
+fixture are supplied next.
+\end{proposition}
+
+\begin{proposition}[Raw mixed physical corner/endpoint fixture]
+On the exact scalar-flat TT fixture
+\[
+ k_1=(1,0,0,0),\quad
+ k_2=\tfrac12(-1,1,1,1),\quad
+ k_3=\tfrac12(-1,-1,-1,-1),
+ \qquad k_i^2=1,
+\]
+the nine nonzero $\mathcal H_2$ rows admit an exact polarization between
+each pair of labelled external curvatures.  All three polarized matrices
+have rank nine and are formally self-adjoint.  The six labelled
+$\mathcal H_1^3$ orderings and both endpoints of all three labelled
+$\mathcal H_1\mathcal H_2$ bubbles give, before the common $(4\pi)^{-2}$
+factor,
+\[
+ c^{\rm raw}_{\mathcal H_1^3}=-\frac{1975}{72},\qquad
+ c^{\rm raw}_{\mathcal H_1\mathcal H_2}=\frac{2704}{27},\qquad
+ c^{\rm raw}_{\rm physical}=\frac{15707}{216}\ne0.
+\]
+The two terms live on different Feynman-parameter carriers: the first is a
+triangle-corner logarithm and the second a bubble-endpoint logarithm.  Thus
+the mixed term cannot be added to the interior triangle numerator.
+
+This exact nonzero fixture refutes a universal algebraic identity in which
+$\mathcal H_2$ automatically cancels the isolated $\mathcal H_1$ corner.
+It does not yet dispose the $M_{14}$ relative class or define a renormalized
+physical coefficient.  Those claims require a fixed local covariant
+subtraction/distribution extension that identifies the corner and endpoint
+carriers, followed by the renormalized mixed rows.
 \end{proposition}
 
 \begin{proposition}[Generic ghost obstruction to direct minimal-CPT matching]
@@ -1153,8 +1183,9 @@ tensor projection: the zero-derivative sector can feed $I_{10}$ and the
 longitudinal sectors can feed $I_{24},I_{25},I_{28},I_{29}$.  The next
 proposition performs that projection.  The curved-Endo one-/two-insertion
 rows are reduced to minimal resolvent carriers below; their evaluation and
-the polarized mixed physical-Hessian trace remain separate open
-calculations.
+the renormalized mixed physical-Hessian trace remain separate open
+calculations.  The exact raw equal-box fixture below does not replace the
+missing covariant subtraction.
 \end{proposition}
 
 \begin{proposition}[Exact Hodge--resolvent reduction of the ghost
@@ -1753,7 +1784,7 @@ All six $S_3$ relabellings vanish exactly.  At the symmetric point,
 which agrees with the independent simplex integration below.  Hence all
 eleven generic scalar-flat ghost $n=3$ functions are complete.  This does not
 assemble the full ghost determinant, determine the five repository form
-factors, or evaluate the polarized mixed physical-Hessian trace.
+factors, or supply the covariantly subtracted mixed physical-Hessian trace.
 \end{proposition}
 
 \begin{proposition}[Exact symmetric-point ghost triangle fixture]
@@ -1899,10 +1930,12 @@ order together with its projected algebraic curvature-squared block; the
 gauge-ordering commutator and round-$S^4$ split are exact.  Its formally
 self-adjoint momentum vertex, full three-linear alpha polynomial and exact
 five-carrier projection are fixed.  The isolated three-$\mathcal H_1$
-simplex integral is logarithmically corner obstructed at the symmetric point;
-its finite integration requires the polarized mixed
-$\mathcal H_1\mathcal H_2$ completion or an explicit subtraction.  The
-generic primed Green/spectral carrier and mixed physical trace, hence the
+simplex integral is logarithmically corner obstructed at the symmetric point.
+The exact equal-box mixed fixture is nonzero after adding all
+$\mathcal H_1\mathcal H_2$ endpoints, so universal algebraic cancellation is
+excluded.  A local covariant subtraction/distribution extension and the
+resulting renormalized mixed rows are still required.  The generic primed
+Green/spectral carrier and renormalized physical trace, hence the
 five complete repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
@@ -2069,11 +2102,12 @@ python3 paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py
 
 The immediate local-to-residual question is now sharp.  The pole-four
 $I_{29}$ row and all ten pole-three ghost rows are already reduced to the
-certified triangle/log master system.  Interpolate the exact common numerator
-from the now-operational physical three-linear fixture, project it onto the
-five scalar-flat carriers, and integrate that tensor triangle; polarize the
-imported curvature-squared block and compute the mixed first/second-curvature
-trace rows; then complete the substitutions needed to match
+certified triangle/log master system.  The exact physical three-linear
+numerator and its five-carrier projection are now operational, as is an
+exact polarized mixed fixture.  First fix a local covariant
+subtraction/distribution extension relating triangle corners to bubble
+endpoints, and assemble the renormalized mixed physical rows; then integrate
+the tensor triangle and complete the substitutions needed to match
 the five imported universal CPT kernels to repository parity-even third-
 curvature form-factor functions and coefficients on the certified carrier
 quotient, and classify the parity-odd derivative

@@ -348,15 +348,35 @@ def main() -> None:
         "denominator": 2,
     }
     assert claims["physical_n3_M14_nonzero_raw_orientation_count"] == 8
+    assert claims["physical_Hessian_operational_H2_polarization_fixture"] is True
+    assert claims["physical_Hessian_raw_H1_cubed_log_coefficient"] == {
+        "numerator": -1975,
+        "denominator": 72,
+    }
+    assert claims["physical_Hessian_raw_mixed_H1_H2_log_coefficient"] == {
+        "numerator": 2704,
+        "denominator": 27,
+    }
+    assert claims["physical_Hessian_raw_combined_log_coefficient"] == {
+        "numerator": 15707,
+        "denominator": 216,
+    }
+    assert claims[
+        "physical_Hessian_universal_algebraic_H2_cancellation_refuted_by_fixture"
+    ] is True
     assert payload["explicit_nonclaims"][
         "physical_n3_three_linear_triangle_integrated"
     ] is False
+    assert payload["explicit_nonclaims"][
+        "physical_Hessian_renormalized_subtraction_fixed"
+    ] is False
+    assert payload["explicit_nonclaims"]["physical_n3_M14_class_disposed"] is False
     assert payload["explicit_nonclaims"][
         "generic_ghost_zeta_multiplicative_anomaly_computed_without_declared_factorization"
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "COMPUTE_MIXED_H1_H2_TRACE_THEN_TEST_CORNER_CLASS_OR_FIX_SUBTRACTION"
+        == "FIX_COVARIANT_SUBTRACTION_THEN_ASSEMBLE_RENORMALIZED_MIXED_ROWS"
     )
 
     dependencies = {}
@@ -390,7 +410,7 @@ def main() -> None:
         "denominator": 6561,
     }
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
-    assert len(payload["inputs"]) == 50
+    assert len(payload["inputs"]) == 51
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -422,6 +442,9 @@ def main() -> None:
     ]
     physical_hessian_n3_obstruction = dependencies[
         "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_INTEGRATION_OBSTRUCTION"
+    ]
+    physical_hessian_mixed = dependencies[
+        "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MIXED_H1_H2_CORNER_FIXTURE"
     ]
     generic_ghost_cpt = dependencies["GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION"]
     generic_ghost_endo = dependencies["GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION"]
@@ -539,6 +562,17 @@ def main() -> None:
     assert physical_hessian_n3_obstruction["claim_flags"][
         "H2_CANCELLATION_OF_CORNER_CLASS_PROVED"
     ] is False
+    assert physical_hessian_mixed["result_state"] == (
+        "RAW_MIXED_PHYSICAL_LOG_COEFFICIENT_NONZERO_SUBTRACTION_REQUIRED"
+    )
+    assert physical_hessian_mixed["combined_raw_logarithm"]["sum"] == claims[
+        "physical_Hessian_raw_combined_log_coefficient"
+    ]
+    assert physical_hessian_mixed["claim_flags"][
+        "RAW_ALGEBRAIC_H2_CANCELLATION_IDENTITY_REFUTED_BY_FIXTURE"
+    ] is True
+    assert physical_hessian_mixed["claim_flags"]["RENORMALIZED_SUBTRACTION_FIXED"] is False
+    assert physical_hessian_mixed["claim_flags"]["PHYSICAL_M14_CORNER_CLASS_DISPOSED"] is False
     assert generic_ghost_cpt["CPT_applicability_decision"]["verdict"] == (
         "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
     )

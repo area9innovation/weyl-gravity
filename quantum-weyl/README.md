@@ -237,8 +237,12 @@ or quantum-master-equation result.
   the scalar-flat and round-`S4` restrictions, and activates the physical
   three-linear `n=3` vertex. The projected algebraic curvature-squared block
   is also imported with an exact gauge-ordering crosswalk and round-`S4`
-  normalization split. Its polarization, the mixed `H1`-`H2` trace, tensor
-  triangle integration, and five form-factor assembly remain fail-closed.
+  normalization split. On one rational equal-box TT fixture its polarization
+  and all labelled mixed bubbles are now exact: the combined raw triangle-
+  corner/bubble-endpoint logarithmic coefficient is `15707/216`, so universal
+  algebraic `H2` cancellation is refuted. A covariant subtraction,
+  renormalized tensor-triangle integration, and five form-factor assembly
+  remain fail-closed.
 - [`reports/local-dimension-four-candidates.md`](reports/local-dimension-four-candidates.md)
   records the generated three-dimensional quadratic curvature ansatz, its
   two-dimensional Weyl-closed kernel, independent target-native even/odd

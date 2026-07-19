@@ -49,6 +49,7 @@ INPUTS = {
     "generic_physical_hessian_n3_triangle_fixture": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_TRIANGLE_FIXTURE.json",
     "generic_physical_hessian_n3_five_carrier_projection": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_FIVE_CARRIER_PROJECTION.json",
     "generic_physical_hessian_n3_integration_obstruction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_INTEGRATION_OBSTRUCTION.json",
+    "generic_physical_hessian_mixed_H1_H2_corner_fixture": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MIXED_H1_H2_CORNER_FIXTURE.json",
     "generic_background_ghost_CPT_obstruction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n3_adiabatic_carrier": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
@@ -115,6 +116,9 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     ]
     physical_hessian_n3_obstruction = values[
         "generic_physical_hessian_n3_integration_obstruction"
+    ]
+    physical_hessian_mixed = values[
+        "generic_physical_hessian_mixed_H1_H2_corner_fixture"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -369,6 +373,22 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         != {"numerator": 1, "denominator": 2}
         or physical_hessian_n3_obstruction.get("claim_flags", {}).get(
             "H2_CANCELLATION_OF_CORNER_CLASS_PROVED"
+        )
+        is not False
+        or physical_hessian_mixed.get("result_state")
+        != "RAW_MIXED_PHYSICAL_LOG_COEFFICIENT_NONZERO_SUBTRACTION_REQUIRED"
+        or physical_hessian_mixed.get("combined_raw_logarithm", {}).get("sum")
+        != {"numerator": 15707, "denominator": 216}
+        or physical_hessian_mixed.get("claim_flags", {}).get(
+            "RAW_ALGEBRAIC_H2_CANCELLATION_IDENTITY_REFUTED_BY_FIXTURE"
+        )
+        is not True
+        or physical_hessian_mixed.get("claim_flags", {}).get(
+            "RENORMALIZED_SUBTRACTION_FIXED"
+        )
+        is not False
+        or physical_hessian_mixed.get("claim_flags", {}).get(
+            "PHYSICAL_M14_CORNER_CLASS_DISPOSED"
         )
         is not False
         or generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
@@ -742,6 +762,9 @@ def build() -> dict[str, Any]:
     physical_hessian_n3_obstruction = values[
         "generic_physical_hessian_n3_integration_obstruction"
     ]
+    physical_hessian_mixed = values[
+        "generic_physical_hessian_mixed_H1_H2_corner_fixture"
+    ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
@@ -779,7 +802,7 @@ def build() -> dict[str, Any]:
             "LOCAL-ALGEBRAIC",
             "EUCLIDEAN-SPECTRAL",
         ],
-        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact and the generic ghost n=3 triangle is projected exactly onto that quotient. Ten generic numerators cancel one Delta; only I10 has a nonzero direct open-edge restriction, while the I28 relation is pointwise. All ten pole-three rows have exact relative-IBP primitives. The exact S3-covariant scalar-triangle differential system reduces their derivative masters to J and two bubble-log ratios, while equal corner weights make the sole nonzero corner flux rational. The pole-four I29 row also reduces by a full 55-row exact relative-IBP identity to the same master basis, so all eleven generic ghost n=3 functions are complete and regress exactly to the symmetric-point integration. The curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3; Wres(K), Wres(K^2), and Wres(log S_L) are exact, the declared order-two weighted trace fixes the pole and scale row, and the round-S4 reference finite K/K2 rows, canonical det_3 tail, weighted modified determinant, and Einstein-ratio defect 5/3 are complete. The distinct generic weight-raised local defect is exactly -(1/4)Wres(K^2) and specializes to -1/3. A smoothing witness proves that the generic finite rows require a full Green kernel or spectral measure. The same-gauge physical three-H1 alpha numerator is exact and projected onto all eleven raw channels of the five-carrier quotient. Its isolated symmetric-point integral is logarithmically corner obstructed by a rank-one M14 class. The projected algebraic H2 block is now imported with an exact gauge-ordering commutator crosswalk and round-S4 split; the mixed H1-H2 trace must be tested against M14, or a subtraction fixed. Complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
+        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact and the generic ghost n=3 triangle is projected exactly onto that quotient. Ten generic numerators cancel one Delta; only I10 has a nonzero direct open-edge restriction, while the I28 relation is pointwise. All ten pole-three rows have exact relative-IBP primitives. The exact S3-covariant scalar-triangle differential system reduces their derivative masters to J and two bubble-log ratios, while equal corner weights make the sole nonzero corner flux rational. The pole-four I29 row also reduces by a full 55-row exact relative-IBP identity to the same master basis, so all eleven generic ghost n=3 functions are complete and regress exactly to the symmetric-point integration. The curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3; Wres(K), Wres(K^2), and Wres(log S_L) are exact, the declared order-two weighted trace fixes the pole and scale row, and the round-S4 reference finite K/K2 rows, canonical det_3 tail, weighted modified determinant, and Einstein-ratio defect 5/3 are complete. The distinct generic weight-raised local defect is exactly -(1/4)Wres(K^2) and specializes to -1/3. A smoothing witness proves that the generic finite rows require a full Green kernel or spectral measure. The same-gauge physical three-H1 alpha numerator is exact and projected onto all eleven raw channels of the five-carrier quotient. Its isolated symmetric-point integral is logarithmically corner obstructed by a rank-one M14 class. The projected algebraic H2 block is imported and operationally polarized on an exact equal-box TT fixture. All six H1-cubed orderings and all six mixed-bubble endpoints give the nonzero raw logarithmic coefficient 15707/216, refuting universal algebraic H2 cancellation on that fixture. A covariant subtraction/distribution extension is still required before M14 disposition or renormalized physical form factors. Complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
         "manuscript": _relative(MANUSCRIPT),
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
@@ -889,6 +912,11 @@ def build() -> dict[str, Any]:
             "physical_n3_M14_relative_rank_jump": physical_hessian_n3_obstruction["relative_quotient"]["M14_rank_jump"],
             "physical_n3_M14_total_log_corner_coefficient": physical_hessian_n3_obstruction["corner_asymptotic"]["total_log_1_over_epsilon_coefficient"],
             "physical_n3_M14_nonzero_raw_orientation_count": len(physical_hessian_n3_obstruction["nonzero_obstruction_channels"]),
+            "physical_Hessian_operational_H2_polarization_fixture": True,
+            "physical_Hessian_raw_H1_cubed_log_coefficient": physical_hessian_mixed["combined_raw_logarithm"]["three_H1_corner_coefficient"],
+            "physical_Hessian_raw_mixed_H1_H2_log_coefficient": physical_hessian_mixed["combined_raw_logarithm"]["mixed_H1_H2_endpoint_coefficient"],
+            "physical_Hessian_raw_combined_log_coefficient": physical_hessian_mixed["combined_raw_logarithm"]["sum"],
+            "physical_Hessian_universal_algebraic_H2_cancellation_refuted_by_fixture": True,
             "generic_background_ghost_minimal_CPT_substitution_obstructed": True,
             "generic_background_ghost_effective_divergence_coefficient": generic_ghost_cpt["algebraic_Weyl_ghost_elimination"]["beta_controls"][0]["effective_divergence_coefficient"],
             "generic_background_ghost_principal_eigenvalues": generic_ghost_cpt["nonminimal_principal_symbol"]["eigenvalues_e0"],
@@ -1001,6 +1029,8 @@ def build() -> dict[str, Any]:
             "repository_generic_background_CPT_trace_substitution": False,
             "full_generic_physical_Hessian": False,
             "physical_n3_three_linear_triangle_integrated": False,
+            "physical_Hessian_renormalized_subtraction_fixed": False,
+            "physical_n3_M14_class_disposed": False,
             "generic_nonminimal_ghost_CPT_determinant": False,
             "generic_nonminimal_ghost_insertion_traces_evaluated": False,
             "generic_ghost_all_five_n1_n2_carriers_evaluated": False,
@@ -1022,12 +1052,12 @@ def build() -> dict[str, Any]:
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "COMPUTE_MIXED_H1_H2_TRACE_THEN_TEST_CORNER_CLASS_OR_FIX_SUBTRACTION",
+            "status": "FIX_COVARIANT_SUBTRACTION_THEN_ASSEMBLE_RENORMALIZED_MIXED_ROWS",
             "required_inputs": [
                 "same-background compensator-inclusive classical contraction",
                 "finite C2 and absolute dressed Rhat2 normalization conditions",
                 "full generic-background primed Green/resolvent kernel or complete spectral measure for the reference-scale finite R(K), finite R(K^2), and det3 rows; the round-S4 special-background benchmark is complete but does not substitute for this global carrier",
-                "polarized mixed H1-H2 trace rows from the imported same-gauge generic-background physical H2 vertex, followed by an exact test of the certified M14 corner class, or an explicitly fixed renormalized subtraction",
+                "a local covariant subtraction/distribution extension identifying the triangle-corner and bubble-endpoint carriers, followed by renormalized mixed physical rows and an exact M14 disposition",
                 "remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
                 "renormalized BV operator data fixing complete Q1",
             ],

@@ -977,10 +977,16 @@ rows. The source `d=1` derivative ordering differs from the repository `d=0`
 ordering by the exact monic `H1` carrier `2 (nabla.h) Ric (nabla.h)` and
 therefore does not change algebraic `H2`. On round `S4`, algebraic
 `H2=+24 K2` and the contracted-derivative `H1` commutator is `-16 K2`,
-reproducing the full monic `+8 K2` remainder. The next gate is therefore
-polarization and evaluation of the mixed `H1-H2` rows against the same
-`M14` class, or an explicit renormalized subtraction. No `H2` cancellation
-is asserted. The original
+reproducing the full monic `+8 K2` remainder. The nine scalar-flat `H2` rows
+are now operationally polarized on one exact rational equal-box TT fixture.
+All six labelled `H1^3` orderings give raw coefficient `-1975/72`; both
+endpoints of all three labelled `H1-H2` bubbles give `2704/27`. Their sum is
+the nonzero raw logarithmic coefficient `15707/216` before `(4 pi)^-2`.
+This refutes universal algebraic `H2` cancellation on the fixture, but does
+not dispose `M14`: triangle corners and bubble endpoints remain different
+parameter carriers until a local covariant subtraction/distribution
+extension is fixed. The next gate is that subtraction and the renormalized
+mixed-row assembly. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
@@ -1001,11 +1007,12 @@ zeta term is also exact. The ten pole-three generic barycentric rows now have
 exact relative-simplex IBP primitives, a complete punctured-corner
 non-membership theorem, and complete exact `J`-plus-two-log integrated
 functions. The remaining coefficient gate begins with supplying the generic
-primed Green/spectral carrier needed to lift the exact round-`S4`
-finite benchmark, together with the polarized mixed `H1-H2` rows required to
-test the now-certified physical `M14` corner class (or an
-explicit subtraction prescription). The isolated three-linear integral may
-not be promoted before one of those routes closes.
+primed Green/spectral carrier needed to lift the exact round-`S4` finite
+benchmark, together with a local covariant subtraction/distribution extension
+joining the now-computed raw physical triangle corners and mixed-bubble
+endpoints. The renormalized mixed rows must then decide the certified physical
+`M14` class. The isolated three-linear integral may not be promoted before
+that route closes.
 Those are followed by the five
 parity-even third-curvature repository
 form-factor functions and coefficients,
