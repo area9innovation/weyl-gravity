@@ -1224,8 +1224,8 @@ negative control against promotion to a full generic Hessian.
 
 This input closes the tensor vertex
 $\operatorname{Tr}[(\mathcal H_0^{-1}\mathcal H_1)^3]$.  The exact raw
-mixed fixture below makes $\mathcal H_2$ operational; the renormalized
-triangle/bubble assembly remains open.
+mixed fixture below makes $\mathcal H_2$ operational and its Mellin scale row
+exact; the generic covariant triangle/bubble assembly remains open.
 
 \begin{verbatim}
 MOD="spectral.euclidean.generic_background_physical_hessian_"
@@ -1338,9 +1338,27 @@ and hence
  c^{\rm raw}_{\rm physical}=\frac{15707}{216}\ne0,
 \]
 before the common $(4\pi)^{-2}$ factor.  This exact fixture rejects universal
-raw algebraic cancellation by $\mathcal H_2$.  It does not identify the
-triangle and bubble carriers in a renormalized distribution, and therefore
-does not dispose $M_{14}$ or supply a physical form factor.
+raw algebraic cancellation by $\mathcal H_2$.  By itself it does not identify
+the triangle and bubble carriers in a renormalized distribution; the following
+prescription fixes that extension only on the declared equal-box fixture.
+
+The fixture-level distribution is fixed by a symmetric sector prescription.
+Each labelled triangle is decomposed into
+$S_i=\{\alpha_i\geq\alpha_j,\alpha_k\}$ and parameterized by
+\[
+ \alpha_i=1-r,\qquad \alpha_j=rt,\qquad \alpha_k=r(1-t),
+\]
+with the exact piecewise $r_{\max}(t)$ imposed by the sector inequalities.
+Each bubble is divided into the two half-intervals.  A common Mellin parameter
+$s$ and $z=\mu^2/Q^2$ on all eighteen labelled triangle boundaries and six
+bubble endpoints gives
+\[
+ \frac{z^s}{s}=\frac1s+\log z+O(s),\qquad
+ \frac{\partial\Gamma_{\rm fixture}^{\rm MS}}{\partial\log\mu^2}
+ =\frac1{(4\pi)^2}\frac{15707}{216}.
+\]
+Thus the scale row is exact on the fixture.  The generic covariant Volterra
+lift, finite local normalization and renormalized mixed rows remain open.
 
 \begin{verbatim}
 MOD="spectral.euclidean.generic_background_physical_hessian_"
@@ -1352,6 +1370,12 @@ PYTHONPATH=quantum-weyl python3 -m "$MOD"
 TEST="spectral.euclidean.tests.test_generic_background_physical_"
 TEST="${TEST}hessian_mixed_h1_h2_corner_fixture"
 PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}mellin_subtraction_scale_row"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
+MOD="${MOD}mellin_subtraction_scale_row"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
 \end{verbatim}
 
 \subsection{Exact physical three-linear interior triangle fixture}
@@ -2111,8 +2135,9 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-	\item a local covariant subtraction/distribution extension joining the
-physical triangle corners to bubble endpoints, followed by assembly of the
+	\item lift the equal-box Mellin subtraction joining physical triangle
+corners to bubble endpoints to the generic covariant Volterra carrier,
+followed by assembly of the
 renormalized mixed rows, integration of the now-projected physical
 three-linear tensor triangle, and assembly of the five
 repository parity-even third-curvature form-factor functions and coefficients,

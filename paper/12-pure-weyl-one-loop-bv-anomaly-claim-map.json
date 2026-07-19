@@ -293,6 +293,11 @@
     "physical_Hessian_H2_scalar_flat_effective_row_count": 9,
     "physical_Hessian_H2_source_row_count": 18,
     "physical_Hessian_algebraic_H2_imported": true,
+    "physical_Hessian_fixture_Mellin_minimal_subtraction_fixed": true,
+    "physical_Hessian_fixture_log_mu2_scale_coefficient": {
+      "denominator": 216,
+      "numerator": 15707
+    },
     "physical_Hessian_linear_formula_digest": "e27ae279abf526de3f2af860fb16e8f79b23bfdaf6ce70bde69d30aa8c65fbef",
     "physical_Hessian_linear_source_row_counts": {
       "N_lambda": 8,
@@ -441,7 +446,7 @@
     "universal_CPT_third_curvature_kernels_imported": true
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "95af9bbe0e3762c95df00b883b9f07586d136d0fda7e48dac0c19ece9caffb84",
+  "compiled_pdf_sha256": "7001d2749565aef6da62be512ebe6395dedc735049f0c14ca4f2f9eea6bacdc9",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
@@ -471,6 +476,7 @@
     "independent_cubic_Weyl_invariant_form_factors": false,
     "ordinary_Fredholm_determinant_class": false,
     "parity_odd_third_curvature_carrier_manifest": false,
+    "physical_Hessian_generic_covariant_Volterra_lift": false,
     "physical_Hessian_renormalized_subtraction_fixed": false,
     "physical_n3_M14_class_disposed": false,
     "physical_n3_three_linear_triangle_integrated": false,
@@ -484,7 +490,7 @@
     "unitarity_theorem": false,
     "zeta_factorization_without_local_multiplicative_anomaly": false
   },
-  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact and the generic ghost n=3 triangle is projected exactly onto that quotient. Ten generic numerators cancel one Delta; only I10 has a nonzero direct open-edge restriction, while the I28 relation is pointwise. All ten pole-three rows have exact relative-IBP primitives. The exact S3-covariant scalar-triangle differential system reduces their derivative masters to J and two bubble-log ratios, while equal corner weights make the sole nonzero corner flux rational. The pole-four I29 row also reduces by a full 55-row exact relative-IBP identity to the same master basis, so all eleven generic ghost n=3 functions are complete and regress exactly to the symmetric-point integration. The curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3; Wres(K), Wres(K^2), and Wres(log S_L) are exact, the declared order-two weighted trace fixes the pole and scale row, and the round-S4 reference finite K/K2 rows, canonical det_3 tail, weighted modified determinant, and Einstein-ratio defect 5/3 are complete. The distinct generic weight-raised local defect is exactly -(1/4)Wres(K^2) and specializes to -1/3. A smoothing witness proves that the generic finite rows require a full Green kernel or spectral measure. The same-gauge physical three-H1 alpha numerator is exact and projected onto all eleven raw channels of the five-carrier quotient. Its isolated symmetric-point integral is logarithmically corner obstructed by a rank-one M14 class. The projected algebraic H2 block is imported and operationally polarized on an exact equal-box TT fixture. All six H1-cubed orderings and all six mixed-bubble endpoints give the nonzero raw logarithmic coefficient 15707/216, refuting universal algebraic H2 cancellation on that fixture. A covariant subtraction/distribution extension is still required before M14 disposition or renormalized physical form factors. Complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
+  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact and the generic ghost n=3 triangle is projected exactly onto that quotient. Ten generic numerators cancel one Delta; only I10 has a nonzero direct open-edge restriction, while the I28 relation is pointwise. All ten pole-three rows have exact relative-IBP primitives. The exact S3-covariant scalar-triangle differential system reduces their derivative masters to J and two bubble-log ratios, while equal corner weights make the sole nonzero corner flux rational. The pole-four I29 row also reduces by a full 55-row exact relative-IBP identity to the same master basis, so all eleven generic ghost n=3 functions are complete and regress exactly to the symmetric-point integration. The curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3; Wres(K), Wres(K^2), and Wres(log S_L) are exact, the declared order-two weighted trace fixes the pole and scale row, and the round-S4 reference finite K/K2 rows, canonical det_3 tail, weighted modified determinant, and Einstein-ratio defect 5/3 are complete. The distinct generic weight-raised local defect is exactly -(1/4)Wres(K^2) and specializes to -1/3. A smoothing witness proves that the generic finite rows require a full Green kernel or spectral measure. The same-gauge physical three-H1 alpha numerator is exact and projected onto all eleven raw channels of the five-carrier quotient. Its isolated symmetric-point integral is logarithmically corner obstructed by a rank-one M14 class. The projected algebraic H2 block is imported and operationally polarized on an exact equal-box TT fixture. All six H1-cubed orderings and all six mixed-bubble endpoints give the nonzero raw logarithmic coefficient 15707/216. A largest-barycentric/half-interval common Mellin minimal subtraction promotes this to the exact fixture log(mu^2) scale row. The generic covariant Volterra lift is still required before M14 disposition or renormalized physical form factors. Complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
   "inputs": {
     "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json": {
       "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
@@ -602,6 +608,10 @@
       "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE",
       "sha256": "b8fd2da678cb64d0bae6adaacb888beb49af3d3e45ddd9bce93005fb9018e9f9"
     },
+    "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MELLIN_SUBTRACTION_SCALE_ROW.json": {
+      "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MELLIN_SUBTRACTION_SCALE_ROW",
+      "sha256": "17bb98fbbaa8e5d562b7b5fe97425a53cd3cf1b24a4d1de2e2ae338bd999433b"
+    },
     "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MIXED_H1_H2_CORNER_FIXTURE.json": {
       "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MIXED_H1_H2_CORNER_FIXTURE",
       "sha256": "2c2a3babf0a766dffb05b90aaf7e2c8cfe1bd25e003256bace7d5d8fa84a5619"
@@ -693,13 +703,13 @@
   },
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "d8788be6bc2a9c1c1081fa25e65a7f95fc52f896eb4f7472d08b942c40bd211c",
+  "manuscript_sha256": "5d486f1affb58d6e75d525f3ebd0064b3cff3f3a5b90e2c5ef797c311291d92e",
   "next_gate": {
     "required_inputs": [
       "same-background compensator-inclusive classical contraction",
       "finite C2 and absolute dressed Rhat2 normalization conditions",
       "full generic-background primed Green/resolvent kernel or complete spectral measure for the reference-scale finite R(K), finite R(K^2), and det3 rows; the round-S4 special-background benchmark is complete but does not substitute for this global carrier",
-      "a local covariant subtraction/distribution extension identifying the triangle-corner and bubble-endpoint carriers, followed by renormalized mixed physical rows and an exact M14 disposition",
+      "the generic covariant Volterra lift of the fixed equal-box Mellin subtraction, followed by renormalized mixed physical rows and an exact M14 disposition",
       "remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
       "renormalized BV operator data fixing complete Q1"
     ],
@@ -710,12 +720,12 @@
       "H3-to-H4 and H4-to-H5 maps",
       "pairing correction"
     ],
-    "status": "FIX_COVARIANT_SUBTRACTION_THEN_ASSEMBLE_RENORMALIZED_MIXED_ROWS"
+    "status": "LIFT_COMMON_MELLIN_SUBTRACTION_TO_GENERIC_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_MIXED_ROWS"
   },
   "publication_artifacts": {
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "1facb4cd99b891ca920953a6e2bc005877cffaeea465bc8ea7ae062d9637509e",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "58b21d260694babff8de6938c311193e9878f2fa148f7e282fe44eb0e0db06e0",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "3d0a348cb05da0af1b4aa9f07d947333db508bf3af0d633de9d88b4e66019a18",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "0baad5449da9e6ed0a375b8c10834441048e44535c8c57fa1ede432366442784",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "8a46d52e8658a6efd7e479360df6565309e0594c02422b47b900354cc5052c08",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "ab7af6e1dfa752f63c107301673df36c55b3397fc959852270de138cb858110b",
     "paper/generate_12_quantum_anomaly_tables.py": "53fa1f003c9cedd320d7e2d8c8e8b589fcd5fc200c7c0362955107b68e62e4db",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "b7556226f31a06e73e9410c3e382c5eca6b77be3bce6004324ee1c0171b8e8c0",
     "paper/verify_12_quantum_anomaly_tables.py": "30370f348cc90cf9d8063cb9c47bb7a7576a4951869ba3e9bf63039be75ad258"

@@ -158,8 +158,11 @@ polarization and mixed `H1`-`H2` rows remain open generically.  A rational
 equal-box TT fixture now performs the correct carrier comparison: all six
 labelled `H1`-cubed triangle orderings plus all three polarized mixed bubbles
 give the nonzero raw log coefficient `15707/216`.  Thus algebraic `H2` does
-not cancel the corner identically; the next gate is a covariant subtraction
-and renormalized distribution extension.
+not cancel the corner identically.  The resolved largest-barycentric triangle
+sectors and half-interval bubble sectors now carry one common Mellin minimal
+subtraction, yielding the exact fixture scale row
+`partial_log(mu^2) Gamma_MS=(4 pi)^-2 15707/216`.  A generic covariant
+Volterra lift and renormalized mixed-row assembly remain open.
 
 Replay with:
 

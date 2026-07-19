@@ -459,7 +459,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "FIX_COVARIANT_SUBTRACTION_AND_ASSEMBLE_RENORMALIZED_MIXED_PHYSICAL_ROWS",
+            "LIFT_COMMON_MELLIN_SUBTRACTION_TO_GENERIC_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_MIXED_ROWS",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

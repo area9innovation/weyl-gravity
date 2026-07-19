@@ -983,9 +983,11 @@ All six labelled `H1^3` orderings give raw coefficient `-1975/72`; both
 endpoints of all three labelled `H1-H2` bubbles give `2704/27`. Their sum is
 the nonzero raw logarithmic coefficient `15707/216` before `(4 pi)^-2`.
 This refutes universal algebraic `H2` cancellation on the fixture, but does
-not dispose `M14`: triangle corners and bubble endpoints remain different
-parameter carriers until a local covariant subtraction/distribution
-extension is fixed. The next gate is that subtraction and the renormalized
+not by itself dispose `M14`. The fixture distribution is now fixed by
+largest-barycentric triangle sectors, half-interval bubble sectors and one
+common Mellin parameter. Minimal subtraction promotes `15707/216` to the
+exact coefficient of `log(mu^2)` before `(4 pi)^-2`. The next gate is the
+generic covariant Volterra lift of that extension and the renormalized
 mixed-row assembly. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
@@ -1008,11 +1010,10 @@ exact relative-simplex IBP primitives, a complete punctured-corner
 non-membership theorem, and complete exact `J`-plus-two-log integrated
 functions. The remaining coefficient gate begins with supplying the generic
 primed Green/spectral carrier needed to lift the exact round-`S4` finite
-benchmark, together with a local covariant subtraction/distribution extension
-joining the now-computed raw physical triangle corners and mixed-bubble
-endpoints. The renormalized mixed rows must then decide the certified physical
-`M14` class. The isolated three-linear integral may not be promoted before
-that route closes.
+benchmark, together with the generic covariant Volterra lift of the now-fixed
+equal-box Mellin subtraction. The renormalized mixed rows must then decide the
+certified physical `M14` class. The isolated three-linear integral may not be
+promoted before that route closes.
 Those are followed by the five
 parity-even third-curvature repository
 form-factor functions and coefficients,

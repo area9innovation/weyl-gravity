@@ -154,7 +154,12 @@ rational equal-box TT fixture: all six labelled
 `H1`-cubed orderings and both endpoints of all three mixed bubbles give
 `-1975/72+2704/27=15707/216`, before `(4 pi)^-2`. Universal algebraic `H2`
 cancellation is therefore refuted on the fixture. A covariant subtraction and
-renormalized distribution extension remain open, so the `M14` relative class
+renormalized distribution extension were therefore required. On the scoped
+equal-box carrier that extension is now fixed by largest-barycentric triangle
+sectors, half-interval bubble sectors and one common Mellin parameter. It gives
+the exact scale row
+`partial_log(mu^2) Gamma_MS=(4 pi)^-2 15707/216`. Its generic covariant
+Volterra lift and mixed-row assembly remain open, so the `M14` relative class
 is not yet disposed.
 The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
@@ -487,10 +492,10 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. fix a local covariant subtraction/distribution extension for the nonzero
-   raw physical corner/endpoint coefficient;
+1. lift the fixed equal-box Mellin subtraction to the generic covariant
+   Volterra carrier;
 2. assemble and integrate the renormalized mixed physical five-carrier rows,
-   then dispose the certified `M14` class in that declared extension;
+   then dispose the certified `M14` class in that generic extension;
 3. supply the full generic primed Green kernel or spectral measure for the
    global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the
    physical Hessian to integrate

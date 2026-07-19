@@ -364,11 +364,19 @@ def main() -> None:
     assert claims[
         "physical_Hessian_universal_algebraic_H2_cancellation_refuted_by_fixture"
     ] is True
+    assert claims["physical_Hessian_fixture_Mellin_minimal_subtraction_fixed"] is True
+    assert claims["physical_Hessian_fixture_log_mu2_scale_coefficient"] == {
+        "numerator": 15707,
+        "denominator": 216,
+    }
     assert payload["explicit_nonclaims"][
         "physical_n3_three_linear_triangle_integrated"
     ] is False
     assert payload["explicit_nonclaims"][
         "physical_Hessian_renormalized_subtraction_fixed"
+    ] is False
+    assert payload["explicit_nonclaims"][
+        "physical_Hessian_generic_covariant_Volterra_lift"
     ] is False
     assert payload["explicit_nonclaims"]["physical_n3_M14_class_disposed"] is False
     assert payload["explicit_nonclaims"][
@@ -376,7 +384,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "FIX_COVARIANT_SUBTRACTION_THEN_ASSEMBLE_RENORMALIZED_MIXED_ROWS"
+        == "LIFT_COMMON_MELLIN_SUBTRACTION_TO_GENERIC_COVARIANT_VOLTERRA_CARRIER_AND_ASSEMBLE_MIXED_ROWS"
     )
 
     dependencies = {}
@@ -410,7 +418,7 @@ def main() -> None:
         "denominator": 6561,
     }
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
-    assert len(payload["inputs"]) == 51
+    assert len(payload["inputs"]) == 52
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -445,6 +453,9 @@ def main() -> None:
     ]
     physical_hessian_mixed = dependencies[
         "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MIXED_H1_H2_CORNER_FIXTURE"
+    ]
+    physical_hessian_mellin = dependencies[
+        "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_MELLIN_SUBTRACTION_SCALE_ROW"
     ]
     generic_ghost_cpt = dependencies["GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION"]
     generic_ghost_endo = dependencies["GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION"]
@@ -573,6 +584,15 @@ def main() -> None:
     ] is True
     assert physical_hessian_mixed["claim_flags"]["RENORMALIZED_SUBTRACTION_FIXED"] is False
     assert physical_hessian_mixed["claim_flags"]["PHYSICAL_M14_CORNER_CLASS_DISPOSED"] is False
+    assert physical_hessian_mellin["claim_flags"][
+        "FIXTURE_MINIMAL_SUBTRACTION_DISTRIBUTION_FIXED"
+    ] is True
+    assert physical_hessian_mellin["renormalization_scale_row"]["coefficient"] == (
+        claims["physical_Hessian_fixture_log_mu2_scale_coefficient"]
+    )
+    assert physical_hessian_mellin["claim_flags"][
+        "GENERIC_COVARIANT_VOLTERRA_LIFT_COMPUTED"
+    ] is False
     assert generic_ghost_cpt["CPT_applicability_decision"]["verdict"] == (
         "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
     )
