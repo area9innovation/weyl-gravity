@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "scope",
+    "candidate_rows",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-same-sign-phase-parity-fibre-product-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_PHASE_PARITY_FIBRE_PRODUCT"},
+    "candidate_rows": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": [
+          "candidate_index",
+          "rho",
+          "resonance_fibre_id",
+          "resonance_geometry",
+          "bounded_cone_formula",
+          "verdict"
+        ],
+        "properties": {
+          "candidate_index": {"type": "integer", "minimum": 16, "maximum": 21},
+          "rho": {"type": "string", "minLength": 1},
+          "resonance_fibre_id": {"type": "string", "minLength": 1},
+          "resonance_geometry": {"type": "object"},
+          "bounded_cone_formula": {"type": "object"},
+          "verdict": {"const": "EXACT_EQUATIONAL_FIBRE_PRODUCT_CERTIFIED_REAL_COMPONENT_DECOMPOSITION_OPEN"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "all_six_bounded_cones_have_exact_necessary_and_sufficient_equational_formulas",
+        "all_six_cross_fibre_complex_resonance_varieties_decomposed",
+        "all_same_fibre_nonzero_frequency_rows_removable",
+        "all_six_scalar_occupation_cones_classified",
+        "all_six_real_hermitian_phase_parity_intersections_decomposed"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

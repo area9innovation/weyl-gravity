@@ -1,0 +1,42 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_PHASE_PARITY_FIBRE_PRODUCT_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Exact necessary-and-sufficient bounded phase/parity fibre-product formulas on the six distinct same-sign collision backgrounds.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json": "32b6764cf13d724f89b91719aef17d3cf1d0a509e866ac9f8186115768b28f54",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.py": "d3fe25a8d158b4c3611a380fff320e8e82c43e429374f79cdca1e7433c4ff7d2",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.schema.json": "6523195171374fe944af2869959d76a1e70dad4aac939434743796a919288398",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.py": "f681e1957bdc1b9e0eb12ee0ff42fa1cc3f01fb4fa1fde8774dcadf0959a349b",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.py": "8d27295c33d8871b0b11f9e87d380a4610c929a97e6dd3b7ec982845f130bfc2",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-phase-parity-fibre-product.md": "1099ca69473b0352f503a131a991a0e2c0165e1579f8471a0dc3b1faf1eeb621"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 2,
+      "elapsed_seconds": 0.024,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_phase_parity_fibre_product --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_phase_parity_fibre_product",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_phase_parity_fibre_product"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The formula composes the complete finite-harmonic adjoint-cokernel theorem, all six scalar occupation cones, all six cross-fibre complex zero-variety decompositions, the exact 864-defect same-fibre census and the bounded scalar-cone sections."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No lifecycle state is promoted; real Hermitian component geometry, all-orders integration, causal correction and release preparation remain open."
+    }
+  },
+  "claim_boundary": "The bounded cones have complete equational fibre-product descriptions. Their irreducible real Hermitian components and singular strata are not classified."
+}
