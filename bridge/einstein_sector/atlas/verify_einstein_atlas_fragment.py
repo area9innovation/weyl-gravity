@@ -64,6 +64,16 @@ def verify() -> None:
     if "mu_X(u)=0 but R_bounded(u)!=0" not in independence["mode_data"]["resonance"]["statement"]:
         raise AssertionError("independence formula is absent")
 
+    difference_census = by_id["einstein.ph.wm.interaction.exceptional_ell1_k0_difference_frequency_census"]
+    if difference_census["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("exceptional difference-frequency census was lost")
+    if "Twenty-seven exact resultant" not in difference_census["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("exceptional exact elimination witness was hidden")
+    if difference_census["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("exceptional coefficientwise bounded cone was over-promoted")
+    if difference_census["mode_data"]["second_order"]["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("exceptional difference-frequency causal lifecycle was over-promoted")
+
     d_cross = by_id["einstein.ph.wm.interaction.d_times_ell2_extra"]
     if d_cross["mode_data"]["resonance"]["status"] != "CERTIFIED" or d_cross["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("d-cross compatibility boundary drifted")

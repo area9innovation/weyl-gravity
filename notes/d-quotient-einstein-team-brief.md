@@ -2473,6 +2473,18 @@ finite generic rest-frame sums.  Atlas row
 promotion.  Infinite harmonic completion, nonzero compact momentum and
 exceptional `ell=1` wave inputs remain fail-closed.
 
+The exceptional `ell=1,k=0` frequency census has nevertheless advanced.  For
+the obstructing `L=2`, `2*omega_e=4/sqrt(3)` shell, angular selection reduces
+generic difference-frequency inputs to 27 branch/offset families.  Exact
+resultant elimination produces integer polynomials with no integer root
+`ell>=2`.  Physical or exceptional dipoles paired with a generic input reduce
+to twelve `ell=2,3` cases, whose exact residual minimal polynomials all have
+nonzero constant term.  Thus unequal-frequency rest-frame oscillators cannot
+feed the exceptional resonance.  Atlas row
+`einstein.ph.wm.interaction.exceptional_ell1_k0_difference_frequency_census`
+keeps the remaining live global-times-`ell2`-extra coefficient and opposite
+nonzero momenta explicitly open.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

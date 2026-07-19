@@ -24,6 +24,13 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
         self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
 
+    def test_exceptional_difference_frequency_census_is_fail_closed(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.exceptional_ell1_k0_difference_frequency_census"]
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("Twenty-seven exact resultant", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
     def test_causal_compact_product_claims_remain_fail_closed(self) -> None:
         for entry in self.value["entries"]:
             if "crosswalk" not in entry["id"]:

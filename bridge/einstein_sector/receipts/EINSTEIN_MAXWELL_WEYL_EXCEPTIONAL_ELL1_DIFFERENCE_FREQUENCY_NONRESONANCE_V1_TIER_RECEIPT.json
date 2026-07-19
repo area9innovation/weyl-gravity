@@ -1,0 +1,52 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_DIFFERENCE_FREQUENCY_NONRESONANCE_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_DIFFERENCE_FREQUENCY_NONRESONANCE",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "generator": {"path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ell1_difference_frequency_nonresonance.py", "sha256": "5fd52f1445842b9648600eec748713ea54f7fb34471a57e7be46845e825088b1"},
+    "certificate": {"path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_difference_frequency_nonresonance.json", "sha256": "8474f158f79acfd7155ee07cab33e9d2bd6b7922f45fa83c0fa9d4936a004653"},
+    "schema": {"path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ell1_difference_frequency_nonresonance.schema.json", "sha256": "7a47b1179a754aa66d615aad90f1a8932332929405a0b3be2abc3903552ecf87"},
+    "verifier": {"path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_difference_frequency_nonresonance.py", "sha256": "01e1320f692ed56b7a63e6d86db309b17ebd6f7d4769fb2370fee7feecc10546"},
+    "tests": {"path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_exceptional_ell1_difference_frequency_nonresonance.py", "sha256": "c7185e476a35e873cc7120b740abb7de0bac3fdfdacaecb0a66bc3dab4150a94"},
+    "report": {"path": "bridge/einstein_sector/reports/einstein-maxwell-weyl-exceptional-ell1-difference-frequency-nonresonance.md", "sha256": "c9ee2961c5103df11d935ea0622bd16edd329de98a2f9add25795c2675d4abb4"},
+    "atlas_generator": {"path": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py", "sha256": "6d779a956e2a1b017dc324d6cfe807c98d9e52e75a5f48810d6ca0ecf6bdcfae"},
+    "atlas_fragment": {"path": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json", "sha256": "845cacdc4f932321294a46e292c628617e1a2eaf34bde08e2203e6c46cf3b6e3"},
+    "atlas_verifier": {"path": "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py", "sha256": "d0cd0b18862659e81f7617a18329c5dd22f8d1173842a065c00a34baab265074"},
+    "atlas_tests": {"path": "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py", "sha256": "3762d669ca0bd483f16da28d57116a620f11c083a98204f0ca86e94d816d4106"},
+    "team_brief": {"path": "notes/d-quotient-einstein-team-brief.md", "sha256": "47f89702bdaa72cc41cdd4fbd0a58339ba37f682a495d4219c72958911f47756"}
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.23,
+      "commands": [
+        "python3 -m py_compile <scoped theorem, verifier, tests and atlas paths>",
+        "python3 -m json.tool <scoped schema, certificate, receipt and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 5.39,
+      "tests_run": 28,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_difference_frequency_nonresonance --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_difference_frequency_nonresonance.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_difference_frequency_nonresonance",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "the producer and separately implemented verifier each reconstructed 27 exact resultant polynomials and twelve exact residual minimal polynomials"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "live source coefficients, opposite momentum, causal, residual and quantum gates remain excluded"
+    }
+  }
+}

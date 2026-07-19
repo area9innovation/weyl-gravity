@@ -1308,6 +1308,16 @@ therefore promotes the same static/wave union to arbitrary finite generic
 `k=0` sums.  The active bounded gates are infinite harmonic completion,
 nonzero compact momentum and exceptional `ell=1` wave inputs.
 
+Within the exceptional `ell=1,k=0` gate, the difference-frequency arithmetic
+is now complete.  The `L=2` triangle rule reduces generic pairs to three
+angular offsets and nine branch pairs; 27 exact resultant polynomials have no
+integer root `ell>=2`.  The twelve physical/exceptional-dipole--generic cases
+have exact residual minimal polynomials with nonzero constant term.  Atlas row
+`einstein.ph.wm.interaction.exceptional_ell1_k0_difference_frequency_census`
+therefore leaves only the previously isolated generalized-zero-global times
+`ell=2`-extra positive-sum column at `k=0`; its coefficientwise bounded locus
+and opposite nonzero momenta remain open.
+
 This advances nonlinear input to the already activated compact-product
 linear bridge but does not certify a nonlinear relative morphism.  Atlas row
 `einstein.ph.wm.complete_finite_harmonic_smooth_cone` records the completed
