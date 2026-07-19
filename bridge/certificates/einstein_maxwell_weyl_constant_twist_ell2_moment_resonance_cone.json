@@ -1,0 +1,404 @@
+{
+  "action_normalized_coordinates": {
+    "Einstein_minus": "u_minus in C^2 at m=0; A_minus=||u_minus||^2 in the sign-reversed positive branch metric",
+    "Einstein_plus": "u_plus in C^2 at m=0; A_plus=||u_plus||^2",
+    "K_basis_columns": [
+      [
+        "0",
+        "-4*sqrt(3)"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "15"
+      ]
+    ],
+    "K_orthogonal_neutral_basis_columns": [
+      [
+        "0",
+        "65"
+      ],
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "sqrt(3)"
+      ]
+    ],
+    "K_restricted_Gram": [
+      [
+        "9",
+        "0"
+      ],
+      [
+        "0",
+        "5116608"
+      ]
+    ],
+    "decomposition": "K_extra=(K tensor V_2) direct_sum (K_perp_G tensor |m=0>); the second summand is rotationally neutral",
+    "extra": "columns c_m in C^4 in order (axial_e1,axial_e2,polar_e1,polar_e2), with c_m in K for m!=0 and arbitrary c_0",
+    "extra_Gram_G": [
+      [
+        "1296",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "208/3",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "9",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "22464"
+      ]
+    ],
+    "neutral_restricted_Gram": [
+      [
+        "208/3",
+        "0"
+      ],
+      [
+        "0",
+        "5542992"
+      ]
+    ]
+  },
+  "claim_boundary": "This theorem classifies the simultaneous stabilizer moment maps and all same-shell constant-twist position resonances for the complete ell=2,k=0 q/p wave carrier. It does not classify twist velocity, nonresonant L=1,3 inversion, other ell or momentum, the complete bounded second-order equation, causal propagation, all-orders solutions, residual observables or quantum theory.",
+  "classification": {
+    "all_m_parities_and_relative_phases_included": true,
+    "all_orders_integrability": false,
+    "both_Einstein_shells_and_complete_extra_shell_included": true,
+    "bounded_full_second_order_equation_solved_on_common_cone": false,
+    "causal_retarded_sufficiency": false,
+    "complete_nonzero_A_ell2_twist_position_resonance_kernel_intersected_with_H_J": true,
+    "necessary_and_sufficient_common_zero_equations": true,
+    "nonaxisymmetric_common_zero_witness_certified": true,
+    "residual_or_quantum_claim": false,
+    "smooth_secular_finite_carrier_covered_by_existing_theorem": true
+  },
+  "common_zero_cone": {
+    "ambient_resonance_kernel": "16 complex dimensions (32 real) before H,J_a",
+    "angular_equations": {
+      "J_plus": "2<c_-2,c_-1>_G+sqrt(6)<c_-1,c_0>_G+sqrt(6)<c_0,c_1>_G+2<c_1,c_2>_G=0",
+      "J_z": "-2||c_-2||_G^2-||c_-1||_G^2+||c_1||_G^2+2||c_2||_G^2=0",
+      "equivalence": "J_plus=0 is the pair J_x=J_y=0; the Einstein m=0 columns and K_perp_G part of c_0 carry zero angular moment"
+    },
+    "constructive_parameterization": "choose arbitrary u_plus, c_0 and c_m in the resonance support satisfying J_z=J_plus=0; then choose arbitrary u_minus direction in C^2 with norm^2=((6+2sqrt(3))*A_plus+(16/3)*A_extra)/(6-2sqrt(3))",
+    "energy_equation": "(6+2*sqrt(3))*A_plus+(16/3)*A_extra-(6-2*sqrt(3))*A_minus=0",
+    "extra_occupation": "A_extra=sum_m c_m^dagger G c_m",
+    "generic_smooth_stratum_real_dimension": 28,
+    "linear_resonance_support": {
+      "Einstein_minus": "only m=0 axial/polar columns",
+      "Einstein_plus": "only m=0 axial/polar columns",
+      "extra": "c_0 arbitrary in C^4; c_m in K for m=+/-1,+/-2"
+    },
+    "necessary_and_sufficient": true,
+    "singular_at_origin_and_lower_rank_strata": true
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "reason": "this predecessor certificate stops at the exact moment/resonance cone; bounded sufficiency is certified separately by EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_COMPLETE_BOUNDED_CONE",
+      "status": "OPEN"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_SECULAR": {
+      "claim": "the existing complete finite-harmonic smooth-secular theorem contains this finite carrier; the present certificate adds the bounded resonance incidence only",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "A nonzero constant twist cuts the ell=2 wave space sharply but does not force axisymmetry. Both Einstein shells are confined to m=0, while two special extra multiplicities may occupy nonzero m. Their complete H,J_a intersection is an explicit quadratic cone, and opposite-m nonaxisymmetric extra pairs survive after an Einstein-minus energy balance.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "CLOSED_BY EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_COMPLETE_BOUNDED_CONE; retain this result as the exact predecessor moment/resonance decomposition",
+  "nonaxisymmetric_witness": {
+    "A_extra": "18",
+    "A_minus": "24+8*sqrt(3)",
+    "A_plus": "0",
+    "J_x_J_y_J_z": [
+      "0",
+      "0",
+      "0"
+    ],
+    "all_twist_position_resonances": "0",
+    "extra_columns": "c_-2=c_2=polar_e1; c_-1=c_0=c_1=0",
+    "interpretation": "the moment/resonance intersection is strictly larger than the axisymmetric face"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.py",
+    "generator_sha256": "b381fcca3dd06578738db4c631d46b100be8a165c607d4895f03026b6e85d072",
+    "inputs": {
+      "Einstein_twist_kernel": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.json",
+        "sha256": "dfb11f09666b853ae3f0cf0e6e0232ba0047922e412542ba496d9f1156c927a6"
+      },
+      "axial_extra_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_extra_detector.json",
+        "sha256": "cded7c650c5c75775402673dabb6b0a22ad6fdf8c4dad3a6f6a6deda8c51034a"
+      },
+      "extra_twist_kernel": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus.json",
+        "sha256": "54ed7e2669458f0c1e3119ca2cc973774beb514d7ab76e103640a17a59ee744e"
+      },
+      "moment_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
+        "sha256": "cf0cbbe2f8b99924c9045c99689481da882ff330e8007a18178488db8ca6a17b"
+      },
+      "polar_extra_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      }
+    }
+  },
+  "regularity_witness": {
+    "Jacobian_diagonal": [
+      "18",
+      "18",
+      "36",
+      "-2*(6-2*sqrt(3))*sqrt(24+8*sqrt(3))"
+    ],
+    "base_point": "the nonaxisymmetric witness with a real Einstein-minus coefficient sqrt(24+8*sqrt(3))",
+    "consequence": "a nonempty smooth real 28-dimensional stratum exists inside the 32-real-dimensional resonance kernel",
+    "constraint_order": [
+      "Re J_plus",
+      "Im J_plus",
+      "J_z",
+      "H"
+    ],
+    "rank": 4,
+    "test_variables": [
+      "Re(delta c_-1 along polar_e1)",
+      "Im(delta c_-1 along polar_e1)",
+      "real scale of c_2",
+      "real Einstein-minus scale"
+    ]
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_MOMENT_RESONANCE_CONE",
+  "result_state": "COMPLETE_NONZERO_CONSTANT_TWIST_ELL2_SHELL_RESONANCE_AND_STABILIZER_COMMON_ZERO_CONE_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-constant-twist-ell2-moment-resonance-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.schema.json",
+  "schema_sha256": "8825a488ae42997bb67fca7b62e675aa7b52ecc867f1f8019c8a615b824eb8e4",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic resonance class",
+    "carrier": "one nonzero constant axial twist position crossed with every axial/polar ell=2,k=0 Einstein-plus, Einstein-minus and extra-primary coefficient",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "global twist ell=1 crossed with wave ell=2",
+    "k": 0,
+    "m": "all m=-2,...,2 relative to the twist axis",
+    "omega": "generalized zero twist and all three ell2 q/p frequencies",
+    "parity": "both parities and all four extra multiplicities",
+    "theory": "Weyl-Maxwell target"
+  },
+  "spin_two_generators": {
+    "J_plus": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "2",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "sqrt(6)",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "sqrt(6)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "2",
+        "0"
+      ]
+    ],
+    "J_x": [
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "sqrt(6)/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "sqrt(6)/2",
+        "0",
+        "sqrt(6)/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "sqrt(6)/2",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "J_y": [
+      [
+        "0",
+        "I",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "-I",
+        "0",
+        "sqrt(6)*I/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-sqrt(6)*I/2",
+        "0",
+        "sqrt(6)*I/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-sqrt(6)*I/2",
+        "0",
+        "I"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-I",
+        "0"
+      ]
+    ],
+    "J_z": [
+      [
+        "-2",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "2"
+      ]
+    ],
+    "m_order": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ]
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.33,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 5.11,
+      "status": "PASS",
+      "tests_run": 40
+    },
+    "tier_2": {
+      "criterion": "both direct shellwise twist matrices and all action-derived current/moment inputs are unchanged hashed certificates",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "this predecessor does not promote a programme-wide freeze; its former bounded-sufficiency gate is closed by a separately scoped successor certificate",
+      "status": "NOT_RUN"
+    }
+  }
+}

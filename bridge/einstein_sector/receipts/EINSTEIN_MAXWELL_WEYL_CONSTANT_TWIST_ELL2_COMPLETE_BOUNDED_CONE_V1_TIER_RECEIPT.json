@@ -1,0 +1,70 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_COMPLETE_BOUNDED_CONE",
+  "precursor_result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_MOMENT_RESONANCE_CONE",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.py": "b381fcca3dd06578738db4c631d46b100be8a165c607d4895f03026b6e85d072",
+    "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.json": "2b0aa37c2c12a4a05c13cece020bc0bd1e8965f53c903c0191ba638c22822316",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.schema.json": "8825a488ae42997bb67fca7b62e675aa7b52ecc867f1f8019c8a615b824eb8e4",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.py": "2adb90410bfd31781baa8a30133f50bc89a8cbcc9a41126dfa12f9bef14d41f7",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.py": "098c8408149883a2c933fa1ed29d06300f77e330eae5cd4c4236d5bbf2dc6839",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-constant-twist-ell2-moment-resonance-cone.md": "b66dd6d2515abb8d0140a75185911f46418a1bc45da27b6c197bf7748fc10700",
+    "bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.py": "0c16808fc0bb52f0ea1c6df877d187d7b87146ce2714024fcc6c815c4e472df9",
+    "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.json": "6b6a01f1d459d7adf46db28a9ae8844e9285e0c34152d8239dcc65a1e264f81d",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.schema.json": "b95c82af75ae2e4671fbd7747828172dd711821133c38ea8fee12140cc738e60",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.py": "c13502e8215edb7323c2074faf30b15159f709e94b421aaabd2ec1e9f7af87c6",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.py": "1d54caade2b07b8fe6ef4ee23c563eb7a9916c76253835344cce05a55cbbd1d7",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-constant-twist-ell2-complete-bounded-cone.md": "4d80cb4a17a9fe4d0d2f4b604688688d57f1ba898bda61df8ca2e593844f48e5",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "43366c6abd2d669cb7315ce489ecfc9158fa5174fa8222f2b49405a267d35e70",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "7bbc5836b16e3f72fe4d87fda4d5f2a30bdfa26e5c0d2ff052fdadb4045bc5e9",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "2e11f309cc73af9e75e6a009a8de18b97adbc4c6ce63d4de1355e6fc04e37699",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "c9b7112506ab34010cb7edefecb5dab6e62eca06e4755a2a9908876f29fec171",
+    "notes/d-quotient-einstein-team-brief.md": "2cfba7351e0810de843a22cf76a5fb2dd2203f2106522f79c4173a4698e98680"
+  },
+  "claim": {
+    "certified": "The shell restrictions and H=J_i=0 are jointly necessary and sufficient for a bounded second-order correction on the constant-twist-plus-complete-ell2,k0 wave carrier.",
+    "independence_witness": "Equal polar_e1 amplitudes at m=+/-2, balanced by action-normalized Einstein-minus occupation 24+8*sqrt(3), give a nonaxisymmetric nonzero-A point.",
+    "open": "Twist velocity, other homogeneous tangents, other ell, nonzero momentum, causal propagation and all-orders integration."
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.33,
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.py bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.py bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.py bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.py bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.py",
+        "python3 -m json.tool bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.json",
+        "python3 -m json.tool bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.json",
+        "python3 -m json.tool bridge/einstein_sector/schema/einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.schema.json",
+        "python3 -m json.tool bridge/einstein_sector/schema/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.schema.json",
+        "python3 -m json.tool bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "git diff --check -- bridge/einstein_sector bridge/certificates notes/d-quotient-einstein-team-brief.md notes/universe-building-roadmap.md"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 5.11,
+      "tests_run": 40,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone",
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The direct q/p twist-shell maps, current-normalized moment cone, fixed-ell wave correction, exceptional ell1 operators, generic ell3 modules, and exact static twist branch are unchanged hashed inputs."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This promotes one scoped bounded carrier, not a programme-wide freeze; the declared larger scopes remain fail-closed."
+    }
+  }
+}

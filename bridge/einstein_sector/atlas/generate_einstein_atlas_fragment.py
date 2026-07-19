@@ -22,6 +22,7 @@ CERTIFICATES = {
     "axial_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
     "polar_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
     "taub": ROOT / "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+    "moment_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
     "balanced": ROOT / "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
     "exceptional_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
     "exceptional_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
@@ -47,12 +48,15 @@ CERTIFICATES = {
     "axial_all_m_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion.json",
     "global_axial_all_m_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_axial_ell2_all_m_minus_extra_bounded_cone.json",
     "global_ell2_both_parity_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_ell2_all_m_both_parity_bounded_cone.json",
+    "fixed_ell_combined": ROOT / "bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
     "abd_generic_lambda_pivot": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_generic_lambda_pivot.json",
     "global_fixed_ell_k0_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
     "global_finite_harmonic_k0_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.json",
     "constant_twist_wave_counterexample": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
     "constant_twist_extra_position_zero_locus": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus.json",
     "constant_twist_einstein_position_zero_locus": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.json",
+    "constant_twist_ell2_moment_resonance_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.json",
+    "constant_twist_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.json",
     "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
     "global_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
     "extra_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
@@ -424,6 +428,30 @@ def entries() -> list[dict[str, object]]:
             "This is a complete zero-locus theorem only for constant twist position times both ell=2 Einstein q-primary shells. It does not classify twist velocity, simultaneous moment and all-branch resonance equations, the complete mixed bounded cone, other ell or momentum, causal propagation, residual descent or quantum theory.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.constant_twist_ell2_moment_resonance_cone",
+            _scope(theory="Weyl-Maxwell target", carrier="one nonzero constant axial twist position crossed with every axial/polar ell=2,k=0 Einstein-plus, Einstein-minus and extra-primary coefficient", degree=2, parity="both parities and all four extra multiplicities", ell="global twist ell=1 crossed with wave ell=2", m="all m=-2,...,2 relative to the twist axis", k=0, omega="generalized zero twist and all three ell2 q/p frequencies"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The resonance carrier has sixteen complex dimensions: four Einstein q-primary and twelve extra p-primary directions after imposing every constant-twist same-shell projection."),
+            ("CERTIFIED", "The direct extra-coordinate Gram is diag(1296,208/3,9,22464); its resonance kernel splits G-orthogonally into two spin-two copies and two neutral m=0 directions."),
+            ("CERTIFIED", "The complete common zero cone is J_z=J_plus=0 on the two extra spin-two copies together with (6+2*sqrt(3))*A_plus+(16/3)*A_extra-(6-2*sqrt(3))*A_minus=0."),
+            ("CERTIFIED", "The twist-position resonance support and all H,J_i equations are necessary and sufficient. A nonaxisymmetric witness has c_-2=c_2=polar_e1, A_extra=18 and A_minus=24+8*sqrt(3)."),
+            _second_order(("OPEN", "This predecessor row stops at the exact moment/resonance cone; bounded sufficiency is certified by the separate constant_twist_ell2_complete_bounded_cone successor row."), ("CERTIFIED", "The existing complete finite-harmonic smooth exponential-polynomial theorem contains this finite carrier."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("constant_twist_ell2_moment_resonance_cone", "constant_twist_einstein_position_zero_locus", "constant_twist_extra_position_zero_locus", "moment_cone", "complete_finite_smooth"),
+            "This predecessor is the complete simultaneous stabilizer and same-shell twist-position resonance cone only for nonzero constant A and ell=2,k=0 waves. Its former L=1,3 inversion gate is closed only in the separately evidenced successor row; twist velocity, other ell/momenta, causal propagation, residual descent and quantum theory remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.mixed.constant_twist_ell2_complete_bounded_cone",
+            _scope(theory="Weyl-Maxwell target", carrier="one constant axial twist position plus the complete axial/polar ell=2,k=0 Einstein plus/minus and extra-primary wave carrier", degree=2, parity="axial and polar", ell="global 1 plus wave 2; outputs 0,...,4", m="all wave m; for nonzero A expressed relative to the twist axis", k=0, omega="generalized zero plus the three distinct ell2 positive-frequency shells"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The same-background carrier retains the complete q/p primary decomposition and the constant-twist global direction; no modes are identified across backgrounds."),
+            ("CERTIFIED", "The branch-normalized Lee--Wald forms define the four stabilizer moment equations and the raw-to-current coefficient crosswalk."),
+            ("CERTIFIED", "For nonzero A, the Einstein shells are supported at m_A=0, the nonzero-m extra coefficients lie in the two-dimensional internal position kernel, and H=J_i=0; this intersection is nonempty and includes an off-axis +/-2 witness."),
+            ("CERTIFIED", "The q/p shell kernels exhaust the twist--wave resonances; all L=1,3 outputs are off shell."),
+            _second_order(("CERTIFIED", "The displayed shell restrictions plus H=J_i=0 are necessary and sufficient for a bounded correction on the declared carrier."), ("CERTIFIED", "Every certified bounded correction is also smooth exponential-polynomial; the larger unrestricted secular cone is not reclassified."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl--Maxwell complex is certified.")),
+            _evidence("constant_twist_ell2_complete_bounded_cone", "constant_twist_einstein_position_zero_locus", "constant_twist_extra_position_zero_locus", "fixed_ell_combined", "standard_global_bounded", "taub"),
+            "This theorem excludes twist velocity and every other homogeneous tangent, other ell, nonzero or opposite momentum, unrestricted secular corrections, causal propagation, all-orders integration, residual descent, observables and quantum theory.",
+        ),
+        _entry(
             "einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone",
             _scope(theory="Weyl-Maxwell target", carrier="complete homogeneous and axial-twist globals plus axial ell=2,k=0 Einstein-minus and both extra primaries", degree=2, parity="homogeneous and axial", ell="input 0,1,2 with every output L=0,...,4", m="all wave m=-2,...,2 and arbitrary real twist vector", k=0, omega="generalized zero, sqrt(6-2*sqrt(3)), and 4/sqrt(3)"),
             {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
@@ -443,9 +471,9 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "The direct axial and polar m=0 action-source pivots promote by SO3 multiplicity one; all wave currents and Taub maps retain their action normalization."),
             ("CERTIFIED", "A nonzero common zero necessarily contains an Einstein-minus component; the full homogeneous source independently excludes electric tangent Q_e on the wave branch."),
             ("OPEN", "The A=0 ell2 output ledger is invertible off the stabilizer cokernel and its compatible L1 source has a constant right inverse; nonzero-A adds an independent twist-position resonance map."),
-            _second_order(("OPEN", "The wave-free static branch and the complete A=0 all-m axial--polar wave cone are certified; the nonzero-A wave zero locus is open."), ("CERTIFIED", "The certified bounded subcones are smooth finite exponential-polynomial corrections."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
-            _evidence("global_ell2_both_parity_bounded", "constant_twist_wave_counterexample", "global_axial_all_m_bounded", "axial_all_m_bounded", "abd_axial_minus", "abd_polar_minus", "standard_global_bounded", "taub", "abstract_cone"),
-            "The former arbitrary-A product claim is withdrawn. This row certifies the static branch and A=0 full ell=2,k=0 wave subcone; nonzero-A and every larger scope remain fail-closed.",
+            _second_order(("OPEN", "The static branch, the complete A=0 all-m axial--polar wave cone, and the constant-twist-only nonzero-A incidence cone are certified; interactions with the other homogeneous tangents remain open."), ("CERTIFIED", "The certified bounded subcones are smooth finite exponential-polynomial corrections."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl--Maxwell complex is certified.")),
+            _evidence("global_ell2_both_parity_bounded", "constant_twist_ell2_complete_bounded_cone", "constant_twist_wave_counterexample", "global_axial_all_m_bounded", "axial_all_m_bounded", "abd_axial_minus", "abd_polar_minus", "standard_global_bounded", "taub", "abstract_cone"),
+            "The former arbitrary-A product claim is withdrawn. This row preserves the static, A=0 wave, and scoped constant-twist-only nonzero-A subcones; the complete carrier with simultaneous twist and other homogeneous tangents remains fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
@@ -650,6 +678,27 @@ def build() -> dict[str, object]:
         raise AssertionError("constant-twist Einstein-shell position zero locus changed")
     if twist_einstein_zero_locus["classification"]["simultaneous_moment_and_all_branch_resonance_zero_locus_classified"]:
         raise AssertionError("Einstein-shell twist zero locus over-promoted the mixed wave cone")
+    twist_moment_cone = records["constant_twist_ell2_moment_resonance_cone"]
+    if not (
+        twist_moment_cone["classification"]["complete_nonzero_A_ell2_twist_position_resonance_kernel_intersected_with_H_J"]
+        and twist_moment_cone["classification"]["both_Einstein_shells_and_complete_extra_shell_included"]
+        and twist_moment_cone["classification"]["necessary_and_sufficient_common_zero_equations"]
+        and twist_moment_cone["classification"]["nonaxisymmetric_common_zero_witness_certified"]
+        and twist_moment_cone["common_zero_cone"]["generic_smooth_stratum_real_dimension"] == 28
+    ):
+        raise AssertionError("constant-twist ell2 moment/resonance cone changed")
+    if twist_moment_cone["classification"]["bounded_full_second_order_equation_solved_on_common_cone"]:
+        raise AssertionError("moment/resonance cone over-promoted bounded second order")
+    twist_complete = records["constant_twist_ell2_complete_bounded_cone"]["classification"]
+    if not (
+        twist_complete["simultaneous_moment_and_all_branch_resonance_zero_locus_classified"]
+        and twist_complete["complete_constant_twist_plus_ell2_wave_carrier_covered"]
+        and twist_complete["bounded_zero_locus_necessary_and_sufficient"]
+        and twist_complete["nonaxisymmetric_nonzero_A_survivor_exhibited"]
+    ):
+        raise AssertionError("complete constant-twist ell2 bounded cone changed")
+    if twist_complete["twist_velocity_or_other_global_tangents_classified"] or twist_complete["other_ell_or_nonzero_momentum_classified"]:
+        raise AssertionError("constant-twist ell2 cone exceeded its declared carrier")
     if not records["global_self_coefficients"]["classification"]["complete_aligned_global_self_source_classified"]:
         raise AssertionError("global self coefficient input changed")
     if not records["extra_self_coefficients"]["classification"]["complete_C4_extra_self_source_coefficient_explicit"]:

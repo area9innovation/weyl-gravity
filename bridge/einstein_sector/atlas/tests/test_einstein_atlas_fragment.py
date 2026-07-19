@@ -203,6 +203,21 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("combined complex kernel dimension is four", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
 
+    def test_constant_twist_moment_resonance_cone_is_registered(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.constant_twist_ell2_moment_resonance_cone"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("A_minus=24+8*sqrt(3)", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(entry["mode_data"]["second_order"]["smooth_secular"]["status"], "CERTIFIED")
+
+    def test_complete_constant_twist_ell2_bounded_cone_is_registered(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.constant_twist_ell2_complete_bounded_cone"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("off-axis +/-2 witness", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+
 
 if __name__ == "__main__":
     unittest.main()

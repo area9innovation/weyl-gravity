@@ -263,6 +263,24 @@ def verify() -> None:
         raise AssertionError("constant-twist Einstein-shell rank theorem was hidden")
     if twist_einstein_zero_locus["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
         raise AssertionError("constant-twist Einstein-shell zero locus over-promoted second order")
+    twist_moment_cone = by_id["einstein.ph.wm.interaction.constant_twist_ell2_moment_resonance_cone"]
+    if twist_moment_cone["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("constant-twist moment/resonance cone was lost")
+    if "A_minus=24+8*sqrt(3)" not in twist_moment_cone["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("nonaxisymmetric moment/resonance witness was hidden")
+    if twist_moment_cone["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("moment/resonance cone over-promoted bounded second order")
+    if twist_moment_cone["mode_data"]["second_order"]["smooth_secular"]["status"] != "CERTIFIED":
+        raise AssertionError("smooth finite-carrier coverage was lost")
+    twist_complete = by_id["einstein.ph.wm.mixed.constant_twist_ell2_complete_bounded_cone"]
+    if twist_complete["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("complete constant-twist ell2 cone was lost")
+    if twist_complete["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("complete constant-twist ell2 bounded correction was lost")
+    if "off-axis +/-2 witness" not in twist_complete["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("nonaxisymmetric constant-twist survivor was hidden")
+    if twist_complete["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("constant-twist cone over-promoted causal propagation")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

@@ -1300,9 +1300,21 @@ Consequently each q-primary shell retains only its axial/polar `m=0`
 coefficients, and the combined Einstein kernel has complex dimension four.
 Atlas row
 `einstein.ph.wm.interaction.constant_twist_ell2_einstein_position_zero_locus`
-records this shellwise theorem.  The active gate is its intersection with
-the twelve-dimensional extra kernel and the common stabilizer cone.  The direct polar
-Einstein-minus source now supplies successive full-polynomial pivots
+records this shellwise theorem.  Its intersection with the twelve-dimensional
+extra kernel and the common stabilizer cone is now exact on the declared
+constant-twist-plus-`ell=2,k=0` carrier: the Einstein coefficients vanish for
+`m!=0`, the nonzero-`m` extra coefficients lie in the displayed two-dimensional
+internal kernel, and `H=J_i=0`.  These conditions are necessary and sufficient
+for a bounded correction.  The nonresonant proof uses the exact exceptional
+axial/polar `L=1` quotient determinants, the generic `L=3` determinant
+`p^2 q`, and the second-order ungauged Noether identity before quotient
+inversion.  A balanced `polar_e1` pair at `m=+2,-2` supplies an
+explicit nonaxisymmetric survivor, so the nonzero-twist cone is strictly larger
+than the aligned face.  Atlas row
+`einstein.ph.wm.mixed.constant_twist_ell2_complete_bounded_cone` records the
+scoped theorem; twist velocity and all other global/harmonic enlargements remain
+fail-closed.  The direct polar Einstein-minus source now supplies successive
+full-polynomial pivots
 `66*b*z`, `198*a*z`,
 and `198*d*z`; rotational equivariance promotes them to every polar `m`.
 Together with the complete axial--polar `ell=2` common-zero theorem and the

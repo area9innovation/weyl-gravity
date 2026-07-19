@@ -1,0 +1,255 @@
+{
+  "claim_boundary": "This is complete only for constant twist position plus the full ell=2,k=0 generic wave carrier, with other global tangents set to zero. It does not classify twist velocity, electric/Wilson/circumference directions, other ell, nonzero or opposite momenta, unrestricted secular corrections, causal propagation, all-orders solutions, residual states, observables or quantum theory.",
+  "classification": {
+    "all_orders_integrability": false,
+    "bounded_zero_locus_necessary_and_sufficient": true,
+    "causal_or_quantum_claim": false,
+    "complete_constant_twist_plus_ell2_wave_carrier_covered": true,
+    "nonaxisymmetric_nonzero_A_survivor_exhibited": true,
+    "other_ell_or_nonzero_momentum_classified": false,
+    "simultaneous_moment_and_all_branch_resonance_zero_locus_classified": true,
+    "twist_velocity_or_other_global_tangents_classified": false
+  },
+  "coefficient_crosswalk": {
+    "current_normalization": "Choose the certified invertible internal maps S_s with C_s=S_s times raw_s and S_s^dagger*S_s equal to the positive branch current metric; these maps never mix m.",
+    "extra_raw_kernel_basis": [
+      "polar_e1",
+      "-4*sqrt(3)*axial_e1+15*polar_e2"
+    ],
+    "no_background_crosswalk": "All carriers are on the same compact Plebanski-Hacyan background and fixed magnetic bundle.",
+    "raw_wave_coefficients": "E_plus,E_minus in Mat_(2x5)(C), X_extra in Mat_(4x5)(C), with columns ordered m=-2,-1,0,1,2 and negative frequencies fixed by reality"
+  },
+  "complete_zero_locus": {
+    "A_nonzero_axis_choice": "Rotate A covariantly to |A|*e_z; rotate the coefficient solution back with the same SO3 action.",
+    "A_zero_branch": "For A=0 the complete wave cone is exactly mu_H=mu_J1=mu_J2=mu_J3=0, as in the fixed-ell theorem.",
+    "Einstein_resonance_equations": "E_plus[:,m]=E_minus[:,m]=0 for m=-2,-1,1,2; both axial/polar m=0 columns are arbitrary before moment equations.",
+    "explicit_moment_parameterization": {
+      "ambient_resonance_kernel": "16 complex dimensions (32 real) before H,J_a",
+      "angular_equations": {
+        "J_plus": "2<c_-2,c_-1>_G+sqrt(6)<c_-1,c_0>_G+sqrt(6)<c_0,c_1>_G+2<c_1,c_2>_G=0",
+        "J_z": "-2||c_-2||_G^2-||c_-1||_G^2+||c_1||_G^2+2||c_2||_G^2=0",
+        "equivalence": "J_plus=0 is the pair J_x=J_y=0; the Einstein m=0 columns and K_perp_G part of c_0 carry zero angular moment"
+      },
+      "constructive_parameterization": "choose arbitrary u_plus, c_0 and c_m in the resonance support satisfying J_z=J_plus=0; then choose arbitrary u_minus direction in C^2 with norm^2=((6+2sqrt(3))*A_plus+(16/3)*A_extra)/(6-2sqrt(3))",
+      "energy_equation": "(6+2*sqrt(3))*A_plus+(16/3)*A_extra-(6-2*sqrt(3))*A_minus=0",
+      "extra_occupation": "A_extra=sum_m c_m^dagger G c_m",
+      "generic_smooth_stratum_real_dimension": 28,
+      "linear_resonance_support": {
+        "Einstein_minus": "only m=0 axial/polar columns",
+        "Einstein_plus": "only m=0 axial/polar columns",
+        "extra": "c_0 arbitrary in C^4; c_m in K for m=+/-1,+/-2"
+      },
+      "necessary_and_sufficient": true,
+      "singular_at_origin_and_lower_rank_strata": true
+    },
+    "extra_resonance_equations": "For m=-2,-1,1,2 the raw four-component X_extra[:,m] lies in span{polar_e1,-4*sqrt(3)*axial_e1+15*polar_e2}; X_extra[:,0] is arbitrary.",
+    "moment_equations": {
+      "H": "omega_plus^2*tr(C_plus^dagger*C_plus)+omega_extra^2*tr(C_extra^dagger*C_extra)-omega_minus^2*tr(C_minus^dagger*C_minus)=0",
+      "J_a": "omega_plus*tr(C_plus^dagger*C_plus*T_2,a)+omega_extra*tr(C_extra^dagger*C_extra*T_2,a)-omega_minus*tr(C_minus^dagger*C_minus*T_2,a)=0, a=1,2,3",
+      "P_x": "identically zero at k=0"
+    },
+    "necessity_and_sufficiency": "The displayed resonance restrictions and four moment equations are jointly necessary and sufficient for a bounded second-order correction in the declared carrier.",
+    "nonzero_A_resonance_kernel_complex_dimension_before_moment_equations": 16
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "claim": "necessary and sufficient complete second-order tangent cone on the declared carrier",
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "claim": "the bounded corrections are a smooth subclass; the larger unrestricted secular cone is not reclassified here",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "independence_witnesses": {
+    "aligned_face": "All wave coefficients at m=0 satisfy the resonance equations; the known rotationally neutral two-parameter density cone is embedded.",
+    "excluded_counterexample": "A single off-axis axial_e1 coefficient is outside ker(P_position) and retains the certified 24*sqrt(3) adjoint witness.",
+    "off_axis_survivor": {
+      "action_normalized_balancing_Einstein_minus_occupation": "24+8*sqrt(3)",
+      "action_normalized_extra_occupation": "18",
+      "angular_amplitudes": "equal coherent amplitudes at m=+2 and m=-2, zero otherwise",
+      "balancing_Einstein_minus_m0_occupation": "-16/(3*(-3 + sqrt(3)))",
+      "energy_remainder": "0",
+      "extra_occupation_in_unit_current_coordinates": "2",
+      "extra_raw_internal_direction": "polar_e1, which lies in ker(P_position)",
+      "meaning": "The nonzero-A bounded cone is strictly larger than the aligned m=0 face.",
+      "spin_moments": [
+        "0",
+        "0",
+        "0"
+      ]
+    }
+  },
+  "interpretation": "A constant twist does not force the wave to align with its axis and does not erase the ell=2 cone. It imposes an exact incidence condition: Einstein q-primary waves become axisymmetric, while two special extra-primary combinations may remain off axis. Intersecting those linear resonance kernels with the indefinite stabilizer moment cone gives the complete bounded second-order cone for this carrier.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "adjoin twist velocity and the remaining homogeneous directions without merging scopes; then generalize the incidence theorem to arbitrary fixed ell and finite harmonic sums",
+  "nonresonant_output_ledger": {
+    "extra": {
+      "L1": {
+        "axial_reduced_determinant": "256/3",
+        "operator_scope": "exceptional axial h_t=0 gauge slice and polar U=0 quotient",
+        "p": "4",
+        "polar_reduced_determinant": "8",
+        "q": "64/9"
+      },
+      "L3": {
+        "axial_reduced_determinant": "736",
+        "operator_scope": "generic axial and polar physical-ring invariant factors (1,1,p,pq)",
+        "p": "-6",
+        "polar_reduced_determinant": "736",
+        "q": "184/9"
+      }
+    },
+    "minus": {
+      "L1": {
+        "axial_reduced_determinant": "-8*(-7 + 3*sqrt(3))*(-3 + sqrt(3))*(-1 + sqrt(3))",
+        "operator_scope": "exceptional axial h_t=0 gauge slice and polar U=0 quotient",
+        "p": "-2*(-7 + 3*sqrt(3))/3",
+        "polar_reduced_determinant": "2*(-7 + 3*sqrt(3))*(-1 + sqrt(3))",
+        "q": "-8*(-3 + 2*sqrt(3))"
+      },
+      "L3": {
+        "axial_reduced_determinant": "32*(1 + sqrt(3))*(3*sqrt(3) + 8)**2/3",
+        "operator_scope": "generic axial and polar physical-ring invariant factors (1,1,p,pq)",
+        "p": "-2*(3*sqrt(3) + 8)/3",
+        "polar_reduced_determinant": "32*(1 + sqrt(3))*(3*sqrt(3) + 8)**2/3",
+        "q": "24*(1 + sqrt(3))"
+      }
+    },
+    "plus": {
+      "L1": {
+        "axial_reduced_determinant": "8*(1 + sqrt(3))*(sqrt(3) + 3)*(3*sqrt(3) + 7)",
+        "operator_scope": "exceptional axial h_t=0 gauge slice and polar U=0 quotient",
+        "p": "2*(3*sqrt(3) + 7)/3",
+        "polar_reduced_determinant": "2*(1 + sqrt(3))*(3*sqrt(3) + 7)",
+        "q": "8*(3 + 2*sqrt(3))"
+      },
+      "L3": {
+        "axial_reduced_determinant": "-32*(-8 + 3*sqrt(3))**2*(-1 + sqrt(3))/3",
+        "operator_scope": "generic axial and polar physical-ring invariant factors (1,1,p,pq)",
+        "p": "2*(-8 + 3*sqrt(3))/3",
+        "polar_reduced_determinant": "-32*(-8 + 3*sqrt(3))**2*(-1 + sqrt(3))/3",
+        "q": "-24*(-1 + sqrt(3))"
+      }
+    }
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.py",
+    "generator_sha256": "0c16808fc0bb52f0ea1c6df877d187d7b87146ce2714024fcc6c815c4e472df9",
+    "inputs": {
+      "axial_ell1_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+        "sha256": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164"
+      },
+      "axial_module": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
+        "sha256": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb"
+      },
+      "axial_noether": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_operator.json",
+        "sha256": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6"
+      },
+      "einstein_kernel": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.json",
+        "sha256": "dfb11f09666b853ae3f0cf0e6e0232ba0047922e412542ba496d9f1156c927a6"
+      },
+      "extra_kernel": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus.json",
+        "sha256": "54ed7e2669458f0c1e3119ca2cc973774beb514d7ab76e103640a17a59ee744e"
+      },
+      "fixed_ell_extension": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
+        "sha256": "9c9b5db86f50a624f84a0ec6548d2c07030109626d076c0e5ee6f9e9115f9e54"
+      },
+      "moment_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
+        "sha256": "cf0cbbe2f8b99924c9045c99689481da882ff330e8007a18178488db8ca6a17b"
+      },
+      "moment_resonance_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.json",
+        "sha256": "2b0aa37c2c12a4a05c13cece020bc0bd1e8965f53c903c0191ba638c22822316"
+      },
+      "polar_ell1_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell1_k0_operator.json",
+        "sha256": "e8344bcfab80a3abe19bfe392f0f8576977fac1b1c34e4f20aee4aaeff74e77c"
+      },
+      "polar_module": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      },
+      "polar_noether": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+        "sha256": "1247963ba92efc60b7d6744140c6412e3667bb03010c2251db752d23d7707d34"
+      },
+      "static_extension": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      }
+    }
+  },
+  "quadratic_Noether_compatibility": {
+    "axial_and_polar_ungauged_complexes_imported": true,
+    "consequence": "every twist-wave quadratic source lies in the Noether-compatible source subspace before quotient inversion",
+    "nonlinear_identity": "R(Phi)^dagger E(Phi)=0 for the ungauged axial Diff x U1 and polar Diff x Weyl x U1 complexes",
+    "on_shell_reduction": "E_0=0 and DE[u]=0 imply R_0^dagger*(1/2 D^2E[u,u])=0",
+    "second_order_expansion": "R_0^dagger*(1/2 D^2E[u,u])+(DR[u])^dagger*DE[u]+(1/2 D^2R[u,u])^dagger*E_0=0"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_COMPLETE_BOUNDED_CONE",
+  "result_state": "COMPLETE_CONSTANT_TWIST_PLUS_ELL2_K0_BOUNDED_SECOND_ORDER_TANGENT_CONE_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-constant-twist-ell2-complete-bounded-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.schema.json",
+  "schema_sha256": "b95c82af75ae2e4671fbd7747828172dd711821133c38ea8fee12140cc738e60",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic correction class",
+    "carrier": "one arbitrary constant axial twist-position vector A plus the complete axial/polar ell=2,k=0 Einstein plus/minus and extra p-primary wave carrier",
+    "charge_sector": "fixed N=2 magnetic bundle; no electric, Wilson-line, circumference-velocity or twist-velocity tangent in this carrier",
+    "degree": 2,
+    "ell": "global ell=1 twist plus wave ell=2; all quadratic output L=0,...,4",
+    "k": 0,
+    "m": "all m=-2,...,2; for A!=0 components are expressed relative to the twist axis",
+    "omega": "generalized zero plus all three distinct ell2 positive-frequency shells",
+    "parity": "both axial and polar",
+    "theory": "Weyl-Maxwell target"
+  },
+  "source_decomposition_proof": {
+    "formula": "S(u)=S(wave,wave)+2*S(A,wave)+S(A,A)",
+    "superposition": "Linearity of the second-order equation in the correction adds the three bounded corrections.",
+    "twist_twist": "CERTIFIED removable on the exact standard static constant-twist branch.",
+    "twist_wave_nonresonant": "CERTIFIED removable: the exceptional L=1 axial/polar reduced determinants and generic L=3 p^2*q determinants are nonzero at all three input frequencies, while the expanded nonlinear Noether identity places the quadratic source in the compatible quotient source space.",
+    "twist_wave_resonant": "CERTIFIED zero exactly by the q-shell and p-shell kernel equations; the complete self-adjoint q/p primary decomposition exhausts the physical shell cokernel.",
+    "wave_wave": "CERTIFIED removable exactly when H=J_i=0 by the complete fixed-ell,k=0 all-m axial/polar theorem."
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.33,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 5.11,
+      "status": "PASS",
+      "tests_run": 40
+    },
+    "tier_2": {
+      "criterion": "both direct twist-shell theorems, the complete fixed-ell wave correction and the static twist correction are unchanged exact inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "other global directions and harmonics remain open; no programme-wide freeze is promoted",
+      "status": "NOT_RUN"
+    }
+  }
+}

@@ -2449,8 +2449,32 @@ axial and polar coefficients survive there on each shell, giving four complex
 Einstein directions across both frequencies.  Atlas row
 `einstein.ph.wm.interaction.constant_twist_ell2_einstein_position_zero_locus`
 records the theorem.  Intersecting these four directions and the twelve
-extra-shell directions with the common moment cone remains the active gate,
-so the full nonzero-`A` wave cone is not promoted.
+extra-shell directions with the common moment cone is now complete on the
+declared constant-twist-plus-`ell=2,k=0` carrier.  For nonzero `A`, rotate to
+its axis and impose
+
+```text
+E_plus[:,m]=E_minus[:,m]=0                  for m != 0,
+X_extra[:,m] in span{polar_e1,
+                     -4*sqrt(3)*axial_e1+15*polar_e2}  for m != 0,
+mu_H=mu_J1=mu_J2=mu_J3=0.
+```
+
+These equations are necessary and sufficient for a bounded second-order
+correction in that carrier.  Sufficiency follows by separating the source
+into wave--wave, twist--wave and twist--twist pieces: the first and last are
+already certified, the displayed kernels remove every `L=2` cross resonance,
+and all `L=1,3` cross outputs are strictly off both `p` and `q` shells.  This
+last step uses the exact exceptional axial/polar `L=1` quotient determinants,
+the generic `L=3` physical-ring determinant `p^2 q`, and the quadratic
+expansion of the ungauged Noether identity to place every source in the
+compatible quotient source space.  The
+cone is strictly larger than the aligned face: equal `polar_e1` amplitudes at
+`m=+2,-2` have zero angular moment and are balanced by an Einstein-minus
+`m=0` occupation.  Atlas row
+`einstein.ph.wm.mixed.constant_twist_ell2_complete_bounded_cone` records the
+theorem.  Twist velocity, other homogeneous tangents, other `ell`, nonzero
+momentum and causal/all-orders lifecycles remain open.
 
 The polar Einstein-minus cross source is now also direct and exact.  Its
 first action row has successive nonzero pivots `66*b*z`, `198*a*z`, and

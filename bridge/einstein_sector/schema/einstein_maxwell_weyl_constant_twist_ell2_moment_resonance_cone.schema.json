@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Constant-twist ell2 moment/resonance cone",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "action_normalized_coordinates",
+    "spin_two_generators", "common_zero_cone", "nonaxisymmetric_witness", "regularity_witness",
+    "correction_classes", "classification", "interpretation", "next_gate",
+    "claim_boundary", "provenance", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-constant-twist-ell2-moment-resonance-cone-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_MOMENT_RESONANCE_CONE"},
+    "result_state": {"const": "COMPLETE_NONZERO_CONSTANT_TWIST_ELL2_SHELL_RESONANCE_AND_STABILIZER_COMMON_ZERO_CONE_CLASSIFIED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "action_normalized_coordinates": {
+      "type": "object",
+      "required": ["extra_Gram_G", "K_basis_columns", "K_orthogonal_neutral_basis_columns", "decomposition"]
+    },
+    "common_zero_cone": {
+      "type": "object",
+      "required": [
+        "necessary_and_sufficient", "linear_resonance_support", "angular_equations",
+        "energy_equation", "constructive_parameterization",
+        "generic_smooth_stratum_real_dimension", "singular_at_origin_and_lower_rank_strata"
+      ],
+      "properties": {
+        "necessary_and_sufficient": {"const": true},
+        "generic_smooth_stratum_real_dimension": {"const": 28},
+        "singular_at_origin_and_lower_rank_strata": {"const": true}
+      }
+    },
+    "nonaxisymmetric_witness": {
+      "type": "object",
+      "required": ["A_extra", "A_minus", "J_x_J_y_J_z", "all_twist_position_resonances"]
+    },
+    "regularity_witness": {
+      "type": "object",
+      "required": ["Jacobian_diagonal", "rank", "consequence"],
+      "properties": {"rank": {"const": 4}}
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "complete_nonzero_A_ell2_twist_position_resonance_kernel_intersected_with_H_J",
+        "both_Einstein_shells_and_complete_extra_shell_included",
+        "all_m_parities_and_relative_phases_included",
+        "necessary_and_sufficient_common_zero_equations",
+        "nonaxisymmetric_common_zero_witness_certified",
+        "bounded_full_second_order_equation_solved_on_common_cone",
+        "causal_retarded_sufficiency", "residual_or_quantum_claim"
+      ],
+      "properties": {
+        "complete_nonzero_A_ell2_twist_position_resonance_kernel_intersected_with_H_J": {"const": true},
+        "both_Einstein_shells_and_complete_extra_shell_included": {"const": true},
+        "all_m_parities_and_relative_phases_included": {"const": true},
+        "necessary_and_sufficient_common_zero_equations": {"const": true},
+        "nonaxisymmetric_common_zero_witness_certified": {"const": true},
+        "bounded_full_second_order_equation_solved_on_common_cone": {"const": false},
+        "causal_retarded_sufficiency": {"const": false},
+        "residual_or_quantum_claim": {"const": false}
+      }
+    },
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": true
+}
