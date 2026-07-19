@@ -1,6 +1,6 @@
 {
   "atlas_status": "OBSTRUCTED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL activation gate separates the internal modewise recoil construction from later numerical specialization. The absolute-g3 operator, exact switches, finite Maxwell/massive kernels, selected exact-T clock transform, the four symbolic detector tail radii, the fixed coupling-stripped preparations, the Lorentzian spacetime form-block signs, and the complete symbolic per-shell preparation/recoil word are all certified. The symbolic word is ready, but the executable stream is still obstructed: exact shell aggregation is callable and the validated advanced-Maxwell detector coefficients are callable for 2j=0,...,4, but the latter are not a complete all-shell detector provider or a massive/recoil evaluation. A finite polynomial causal-convolution engine is certified, but the actual Berger mode kernels, switches and detector intervals are not bound to it. No complete nested backend or tail-aware aggregate stop loop is exported. Numerical masses, couplings and a stopping goal are therefore deferred; supplying them now would not produce an interval. The exact generic coefficient functional is not itself a numerical Green-image evaluation. Numerical values must not be invented. This gate does not evaluate a recoil scalar, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL activation gate separates the internal modewise recoil construction from later numerical specialization. The absolute-g3 operator, exact switches, finite Maxwell/massive kernels, selected exact-T clock transform, the four symbolic detector tail radii, the fixed coupling-stripped preparations, the Lorentzian spacetime form-block signs, and the complete symbolic per-shell preparation/recoil word are all certified. The symbolic word is ready, but the executable stream is still obstructed: exact shell aggregation is callable and the validated advanced-Maxwell detector coefficients are callable for 2j=0,...,4, but the latter are not a complete all-shell detector provider or a massive/recoil evaluation. A finite polynomial causal-convolution engine and exact finite Berger mode-kernel interval enclosures through 2j=4 are certified, but the switches, detector intervals and typed form contractions are not jointly bound to them. No complete nested backend or tail-aware aggregate stop loop is exported. Numerical masses, couplings and a stopping goal are therefore deferred; supplying them now would not produce an interval. The exact generic coefficient functional is not itself a numerical Green-image evaluation. Numerical values must not be invented. This gate does not evaluate a recoil scalar, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim.",
   "claim_status": "SYMBOLIC_WORD_READY_EXECUTABLE_RECOIL_STREAM_OBSTRUCTED",
   "dependency_refs": {
     "clock_transform": {
@@ -21,7 +21,12 @@
     "executable_readiness": {
       "path": "closed_universe_observers/certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json",
       "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
-      "sha256": "d04f7b8983063c9a4006df6412fa484675b99a019d0f02c8f530fd900441aeeb"
+      "sha256": "75c4cf060f8bf8de7c898732cc4f21bda70e3a9eac64e99085e7d103ef0c4d52"
+    },
+    "finite_kernel_intervals": {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE.json",
+      "result_id": "BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE",
+      "sha256": "e74d7806383f2dd1a62c82c93e3a149c32ae3357bd5018a85e12d2f5080374ae"
     },
     "mode_kernels": {
       "path": "closed_universe_observers/certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
@@ -69,6 +74,7 @@
     "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
     "EXECUTABLE_MODEWISE_RECOIL_STREAM_READY": false,
     "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED": true,
+    "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED": true,
     "FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED": true,
     "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
     "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": false,
@@ -93,13 +99,13 @@
       "name": "activate_stream_from_symbolic_tail_radius_alone"
     }
   ],
-  "next_gate": "BIND_ACTUAL_BERGER_INTERVALS_TO_NESTED_CONVOLUTION_AND_EXTEND_DETECTOR_PROVIDER",
+  "next_gate": "BIND_SWITCH_PROFILE_DETECTOR_AND_FORM_INTERVALS_TO_FINITE_MODE_KERNELS",
   "provenance": {
     "source_commit": "WORKTREE",
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py",
-        "sha256": "af7c4310ea06021857d152a492e91d849a1c8fd9637c5e42b82fd9b4f1e8800c"
+        "sha256": "e98e21d70b9c83abe8f510487c32dcae3c08b0f108869d48f70b23140a574d9d"
       },
       {
         "path": "closed_universe_observers/verify_berger_recoil_scalar_stream_activation_gate.py",
@@ -107,15 +113,15 @@
       },
       {
         "path": "closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py",
-        "sha256": "4fb1772460ef56228d78e7cbdb9111c0bd60d9eebd5f4d965ae9a05052ebd248"
+        "sha256": "5fccbb5d8d826d3fc12d0bfea1b27eed374a46353549d954c77fd6bbadf786b1"
       },
       {
         "path": "closed_universe_observers/schema/berger-recoil-scalar-stream-activation-gate-v1.schema.json",
-        "sha256": "cbdef93066c3f216762fcc5af2cd3bcb1ae5f4222b5430bf5f46cadc5503986e"
+        "sha256": "313a3d216c5c476263fe93986a57449437b12e7a1db4ba1eaef63c21067751c9"
       },
       {
         "path": "closed_universe_observers/reports/berger-recoil-scalar-stream-activation-gate.md",
-        "sha256": "d828dd2e7cfc6e8f60d7eef76da17b0cc4c0df8243f6a43ee733d80de2f6d544"
+        "sha256": "43fa434b53726b8e5cb6383f60765199f07f07ef0b104ed446a98806bd04fdb0"
       }
     ]
   },
@@ -203,6 +209,11 @@
         "status": "CERTIFIED"
       },
       {
+        "evidence_flag": "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED",
+        "id": "finite_exact_mode_kernel_interval_enclosure",
+        "status": "CERTIFIED"
+      },
+      {
         "evidence_flag": "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED",
         "id": "callable_shell_interval_backend",
         "status": "CERTIFIED"
@@ -230,7 +241,7 @@
   "schema": "closed-universe-berger-recoil-scalar-stream-activation-gate-v1",
   "sequencing_decision": {
     "completed_internal_gate": "complete symbolic preparation/recoil scalar operator word with exact Peter-Weyl reconstruction",
-    "current_active_gate": "bind actual Berger intervals to the finite nested-convolution engine and extend the detector provider beyond two_j=4",
+    "current_active_gate": "bind switches, detector profiles and typed form intervals to the finite mode kernels and nested-convolution engine, then extend the detector provider beyond two_j=4",
     "dense_profile_materialization": "NOT_SELECTED",
     "external_specialization_gate": "DEFERRED_UNTIL_EXECUTABLE_BACKEND",
     "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
