@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-scalar-L4-zero-varieties-v1",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "dependency_tags", "lifecycle_state", "scope", "representation_theorem", "decompositions", "summary", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-ell2-two-abs-momentum-scalar-L4-zero-varieties-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_SCALAR_L4_ZERO_VARIETIES"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "decompositions": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["fibre_id", "candidate_index", "rho", "branches", "ambient_dimension_over_C", "coefficients", "axisymmetric_source_coordinate_nonzero_intervals", "r_squared", "r_squared_interval", "s_over_r", "irreducible_components_over_C"],
+        "properties": {
+          "irreducible_components_over_C": {"type": "array", "minItems": 4, "maxItems": 4}
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["classified_physical_fibres", "irreducible_components_per_fibre_over_C", "one_sided_components_per_fibre", "mixed_proportionality_components_per_fibre", "mixed_components_real_on_declared_coefficient_embedding", "remaining_cross_fibre_physical_fibres_open"]
+    },
+    "classification": {
+      "type": "object",
+      "required": ["complete_scalar_internal_L4_zero_varieties_classified", "all_m_mixed_components_classified", "all_five_r_squared_values_positive_exactly", "remaining_sixteen_cross_fibre_zero_varieties_classified", "same_fibre_quadratic_sources_classified", "taub_common_zero_intersection_classified", "complete_two_fibre_tangent_cone_classified", "smooth_secular_classified", "causal_or_quantum_claim"]
+    }
+  }
+}

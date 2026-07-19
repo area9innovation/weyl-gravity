@@ -98,6 +98,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_nonaxisymmetric_L3_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L3_matrix.json",
     "ell2_two_abs_momentum_nonaxisymmetric_L1_L3_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L1_L3_matrix.json",
     "ell2_two_abs_momentum_cross_fibre_amplitude_system": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system.json",
+    "ell2_two_abs_momentum_scalar_L4_zero_varieties": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L4_zero_varieties.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
@@ -914,6 +915,18 @@ def entries() -> list[dict[str, object]]:
             "This is the complete necessary cross-fibre resonance system, not an irreducible zero-variety decomposition or tangent-cone theorem. Same-fibre sources, Taub intersections and higher correction classes remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ell2_two_abs_momentum_scalar_l4_zero_varieties",
+            _scope(theory="Weyl-Maxwell target", boundaries="five separately tuned closed S1_L times S2 circumference fibres; before final residual quotient", carrier="the scalar-internal all-m L4 resonance blocks on candidates 3,5,9,15,21", degree=2, parity="axial and polar amplitude quartics retained on both momentum fibres", ell="input 2 x 2; output L=4", m="all magnetic components through Sym^4(C^2) multiplication into Sym^8(C^2)", k="row-specific signed |n|=1 and |n|=2 momenta", omega="positive-frequency SUM channel; real tangents include conjugates", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The five physical circumference fibres 3,5,9,15,21 remain separate; no cross-background amplitude identification is used."),
+            ("CERTIFIED","The scalar parity coefficients use the action-derived normalized L4 coordinate, and every coefficient plus each sheet ratio has an exact nonzero interval witness."),
+            ("OPEN","The five stabilizer moment maps and same-fibre quadratic sources have not yet been intersected with these resonance components."),
+            ("CERTIFIED","Each complete all-m resonance zero variety has exactly four ten-dimensional linear components over C: two one-fibre-zero planes and two mixed proportionality sheets; all ten mixed sheets have real representatives."),
+            _second_order(("OPEN","The resonance varieties are decomposed, but same-fibre sources and their Taub intersection remain necessary before a bounded tangent-cone verdict."),("OPEN","Smooth-secular correction classes are not classified on these four-component varieties."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_scalar_L4_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
+            "This decomposes exactly five scalar-internal L4 cross-fibre resonance varieties, not the other sixteen fibres or the complete two-fibre tangent cone. Same-fibre sources, Taub intersections and higher correction classes remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="constant twist position plus paired axisymmetric +/-k Einstein-plus/minus standing waves", degree=2, parity="generic input parity retained; polar extra resonant output", ell="every one fixed integer ell>=2 with output L=2ell", m="m_A=0 inputs and M=0 output", k="one tuned allowed nonzero +/-k pair", omega="q-plus/minus inputs and p-primary sum-frequency output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
@@ -1508,6 +1521,27 @@ def build() -> dict[str, object]:
         or assembly["causal_or_quantum_claim"]
     ):
         raise AssertionError("cross-fibre amplitude system exceeded its scope")
+    scalar_l4_value = records["ell2_two_abs_momentum_scalar_L4_zero_varieties"]
+    scalar_l4 = scalar_l4_value["classification"]
+    scalar_l4_summary = scalar_l4_value["summary"]
+    if not (
+        scalar_l4["complete_scalar_internal_L4_zero_varieties_classified"]
+        and scalar_l4["all_m_mixed_components_classified"]
+        and scalar_l4["all_five_r_squared_values_positive_exactly"]
+        and scalar_l4_summary["classified_physical_fibres"] == 5
+        and scalar_l4_summary["irreducible_components_per_fibre_over_C"] == 4
+        and scalar_l4_summary["mixed_components_real_on_declared_coefficient_embedding"] == 10
+        and scalar_l4_summary["remaining_cross_fibre_physical_fibres_open"] == 16
+    ):
+        raise AssertionError("scalar-internal L4 zero varieties changed")
+    if (
+        scalar_l4["remaining_sixteen_cross_fibre_zero_varieties_classified"]
+        or scalar_l4["same_fibre_quadratic_sources_classified"]
+        or scalar_l4["taub_common_zero_intersection_classified"]
+        or scalar_l4["complete_two_fibre_tangent_cone_classified"]
+        or scalar_l4["causal_or_quantum_claim"]
+    ):
+        raise AssertionError("scalar-internal L4 zero varieties exceeded scope")
     if l3["arbitrary_amplitude_zero_variety_classified"] or l3["causal_or_quantum_claim"]:
         raise AssertionError("nonaxisymmetric L3 matrix exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:

@@ -1,0 +1,49 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_SCALAR_L4_ZERO_VARIETIES_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact irreducible decomposition of the five scalar-internal L4 cross-fibre all-m resonance zero varieties.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L4_zero_varieties.json": "dbac3d2cf643fe8b062eb7aa2aefe74c012379ee0a525afbfd24bb375550477d",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L4_zero_varieties.py": "4b7f914403b037f143bdf636295ff484f1b579320c5c41d6f26fd2a64d71ba33",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L4_zero_varieties.schema.json": "d6214897eab2f58b2b644bced51722d68f7fc61741a1b0aa9cafd34de0ff6c57",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L4_zero_varieties.py": "ef114a14cb0777ea1258cb735c9a695696d03c30d94e87538b2b2f0f219ae547",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L4_zero_varieties.py": "29b2d54e201a746bc342640ba1e597a9663c78954a618d31058a68bc755c3454",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-scalar-L4-zero-varieties.md": "d79926101d402ab2cad3f184add18d9a39a7d8865a5ede1b847c31def877a8bb"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds_independent_verifier": 0.84,
+      "independent_verifier_max_rss_kib": 61764,
+      "tests_run": 71,
+      "commands": [
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L4_zero_varieties",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L4_zero_varieties",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 1.48,
+      "max_rss_kib": 59952,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L4_zero_varieties --write",
+      "reason": "The producer selects the five scalar-internal L4 fibres, proves exact nonvanishing and positivity, and verifies both parity equations on the two mixed proportionality sheets in every fibre."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This classifies five resonance varieties, not the remaining sixteen fibres, same-fibre sources, Taub intersections, complete tangent cone or shared-core algebra."
+    }
+  },
+  "claim_boundary": "Exactly five scalar-internal L4 resonance varieties are decomposed. The remaining sixteen cross-fibre varieties, same-fibre sources, five Taub maps, complete bounded and smooth-secular tangent cones, causal maps, residual observables and quantum claims remain OPEN or NO_CERTIFIED_MAP."
+}

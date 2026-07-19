@@ -3466,6 +3466,19 @@ complete two-fibre tangent cone `OPEN`; causal correction remains
 zero-variety decomposition, beginning with the lowest-dimensional blocks.
 Bridge 1 remains at its independent linear triangle lifecycle.
 
+The first irreducible amplitude decomposition is now exact on the five
+scalar-internal `L=4` fibres, candidates `3,5,9,15,21`.  Identifying
+`V_2=Sym^4(C^2)` turns the `L=4` Clebsch--Gordan projection into multiplication
+of binary quartics.  Since `C[x,y]` has no zero divisors, each all-`m` zero
+variety has exactly four complex ten-dimensional components: the two
+one-fibre-zero planes and two mixed proportionality sheets.  Exact intervals
+prove all four parity coefficients nonzero and all five values of `r^2`
+positive, so all ten mixed sheets have real representatives.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_scalar_l4_zero_varieties`
+records resonance decomposition `CERTIFIED` but keeps same-fibre sources,
+the five Taub maps and bounded correction `OPEN`; causal correction remains
+`NO_CERTIFIED_MAP`.  Sixteen cross-fibre varieties remain for decomposition.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

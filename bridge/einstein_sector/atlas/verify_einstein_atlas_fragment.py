@@ -498,6 +498,16 @@ def verify() -> None:
         raise AssertionError("cross-fibre amplitude correction classes were merged")
     if "not an irreducible zero-variety decomposition" not in assembly["claim_boundary"]:
         raise AssertionError("cross-fibre amplitude system exceeded its zero-variety scope")
+    scalar_l4 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_scalar_l4_zero_varieties"]
+    scalar_l4_second = scalar_l4["mode_data"]["second_order"]
+    if scalar_l4["descriptions"]["nonlinear"] != "OPEN" or "fibres 3,5,9,15,21" not in scalar_l4["mode_data"]["dispersion"]["statement"]:
+        raise AssertionError("scalar L4 zero-variety scope was hidden")
+    if scalar_l4["mode_data"]["resonance"]["status"] != "CERTIFIED" or "exactly four ten-dimensional linear components" not in scalar_l4["mode_data"]["resonance"]["statement"] or "two mixed proportionality sheets" not in scalar_l4["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("scalar L4 zero-variety decomposition was hidden")
+    if scalar_l4["mode_data"]["taub_maps"]["status"] != "OPEN" or scalar_l4_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or scalar_l4_second["smooth_secular"]["status"] != "OPEN" or scalar_l4_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("scalar L4 correction classes were merged")
+    if "other sixteen fibres" not in scalar_l4["claim_boundary"] or "complete two-fibre tangent cone" not in scalar_l4["claim_boundary"]:
+        raise AssertionError("scalar L4 decomposition exceeded scope")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]
     if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:
