@@ -1,0 +1,45 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_SAME_FIBRE_RESONANCE_CENSUS_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact candidate-13 same-fibre shell census for all nonzero-frequency q-minus, p-extra and q-plus products on the |n|=1,2 fibres.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.json": "fd94929e0c18e87787e6ad1e241a29dae1f4bf46a33d8454a9bf7e5a5bdbfc41",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.py": "997fb0b357fee3708e68e8664c563d963cf02f815e8ba83f82884529e30a9053",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.py": "0e3345ab95e14e108742239482be88f470886d8ff6fd50707232b10917469296",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.py": "3be77c187f048d35312d516bd1b28effacdecec01ad88cafe31115149a30fa47",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.schema.json": "16eb3d9590628f924a06c7df244504187be27dbae4ec9561a00740afe997cdb4",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-same-fibre-resonance-census.md": "b9a33c6d52f6e7557db509ebb12628d569d82fcf9069a8b7cebed4fb52118493"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 80,
+      "commands": [
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 -m bridge.einstein_sector.atlas.verify_einstein_atlas_fragment",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "producer_elapsed_seconds": 2.34,
+      "independent_verifier_elapsed_seconds": 2.57,
+      "reason": "The exact replay enumerates all 18 nonzero-frequency same-fibre channels and independently isolates 144 L=1,...,4 shell defects away from zero. L=0 sums import the empty nonzero-Fourier quotient, while the separately typed K=0 unequal-branch differences import the empty homogeneous nonzero-frequency quotient."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a scoped characteristic-shell census and atlas lifecycle update, not a source-coefficient theorem, complete mixed tangent cone, shared-core algebra change, paper freeze or release gate."
+    }
+  },
+  "claim_boundary": "Every nonzero-frequency same-fibre channel in the declared candidate-13 branch inventory is off shell. Equal-branch zero-frequency homogeneous/twist sources and their Taub join remain OPEN; causal correction is NO_CERTIFIED_MAP."
+}

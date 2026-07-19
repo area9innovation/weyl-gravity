@@ -2299,8 +2299,14 @@ sheet.  Atlas row
 therefore records Taub and cross-fibre resonance `CERTIFIED`, bounded and
 smooth-secular correction `OPEN`, and causal correction `NO_CERTIFIED_MAP`.
 This is the active same-background Bridge 1 nonlinear input: the activation
-gate is the same-fibre adjoint-cokernel source ledger on the displayed mixed
-witness.  It is not a complete mixed-cone or second-order extension theorem.
+gate has now narrowed to the zero-frequency same-fibre adjoint-cokernel source
+ledger on the displayed mixed witness.  An exact census of 18 nonzero
+sum/difference channels gives 144 nonzero `ell=1,...,4` shell defects, and the
+`ell=0` sum channels use the empty nonzero-Fourier quotient.  The unequal-
+branch differences instead have `K=0,Omega!=0` and use the separately empty
+homogeneous nonzero-frequency quotient.  Thus no other same-fibre source
+matrix is required.  This is not a complete mixed-cone or second-order
+extension theorem.
 
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at

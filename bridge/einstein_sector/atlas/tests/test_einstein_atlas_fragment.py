@@ -361,15 +361,18 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("independence and activation witness", entry["claim_boundary"])
 
-    def test_candidate13_same_fibre_census_leaves_only_zero_frequency(self) -> None:
+    def test_candidate13_same_fibre_census_leaves_only_zero_frequency_gate(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_same_fibre_resonance_census"]
         second = entry["mode_data"]["second_order"]
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
-        self.assertIn("144 exact defects", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("144 exact", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("homogeneous nonzero-frequency quotient", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
-        self.assertIn("Equal-branch reality products", entry["mode_data"]["taub_maps"]["statement"])
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("complete nonzero-frequency same-fibre shell census", entry["claim_boundary"])
+        self.assertIn("K!=0 and K=0", entry["claim_boundary"])
 
     def test_nonaxisymmetric_l3_matrix_closes_basis_not_cone(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]

@@ -3641,8 +3641,14 @@ cross-fibre candidate-13 functional is independent of the five moment maps.
 The fail-closed atlas row
 `einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness`
 keeps bounded and smooth-secular extension `OPEN` and causal correction
-`NO_CERTIFIED_MAP`.  The active gate is now exactly the same-fibre quadratic
-adjoint-cokernel ledger restricted to this witness; this is input to the
+`NO_CERTIFIED_MAP`.  The complete same-fibre shell census now removes every
+nonzero-frequency row before a source calculation: 18 sum/difference channels
+give 144 exact nonzero `ell=1,...,4` shell defects.  For `ell=0`, sum channels
+use the empty nonzero-Fourier quotient, while unequal-branch differences have
+`K=0,Omega!=0` and use the separately empty homogeneous nonzero-frequency
+quotient.  The active gate is therefore only the
+zero-frequency homogeneous/twist quadratic adjoint-cokernel ledger restricted
+to this witness and joined to the five moment maps; this is input to the
 same-background Einstein–Weyl bridge, not a completed nonlinear bridge.
 
 See the authoritative queue in

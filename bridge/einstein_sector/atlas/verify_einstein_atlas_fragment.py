@@ -624,14 +624,12 @@ def verify() -> None:
         raise AssertionError("candidate-13 mixed witness exceeded scope")
     candidate13_same = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_same_fibre_resonance_census"]
     candidate13_same_second = candidate13_same["mode_data"]["second_order"]
-    if candidate13_same["mode_data"]["resonance"]["status"] != "CERTIFIED" or "144 exact defects" not in candidate13_same["mode_data"]["lee_wald"]["statement"]:
-        raise AssertionError("candidate-13 same-fibre shell census was hidden")
-    if candidate13_same["mode_data"]["taub_maps"]["status"] != "OPEN" or "Equal-branch reality products" not in candidate13_same["mode_data"]["taub_maps"]["statement"]:
-        raise AssertionError("candidate-13 zero-frequency same-fibre gate was hidden")
-    if candidate13_same_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or candidate13_same_second["smooth_secular"]["status"] != "OPEN" or candidate13_same_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+    if candidate13_same["mode_data"]["resonance"]["status"] != "CERTIFIED" or "144 exact" not in candidate13_same["mode_data"]["resonance"]["statement"] or "homogeneous nonzero-frequency quotient" not in candidate13_same["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-13 same-fibre census was hidden")
+    if candidate13_same["mode_data"]["taub_maps"]["status"] != "OPEN" or candidate13_same_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or candidate13_same_second["smooth_secular"]["status"] != "OPEN" or candidate13_same_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("candidate-13 same-fibre correction classes were merged")
-    if "not the mixed Einstein-extra tangent-cone theorem" not in candidate13_same["claim_boundary"]:
-        raise AssertionError("candidate-13 same-fibre census exceeded scope")
+    if "complete nonzero-frequency same-fibre shell census" not in candidate13_same["claim_boundary"] or "K!=0 and K=0" not in candidate13_same["claim_boundary"]:
+        raise AssertionError("candidate-13 same-fibre theorem boundary changed")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]
     if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:

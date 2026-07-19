@@ -110,7 +110,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_candidate13_L4_incidence_reduction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.json",
     "ell2_two_abs_momentum_candidate13_pure_extra_taub_join": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_pure_extra_taub_join.json",
     "ell2_two_abs_momentum_candidate13_mixed_null_witness": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness.json",
-    "ell2_two_abs_momentum_candidate13_same_fibre_resonance_census": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.json",
+    "ell2_two_abs_momentum_candidate13_same_fibre_census": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
@@ -1060,15 +1060,15 @@ def entries() -> list[dict[str, object]]:
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_same_fibre_resonance_census",
-            _scope(theory="Weyl-Maxwell target", boundaries="candidate-13 closed S1_L times S2 circumference fibre; before final residual quotient", carrier="same-fibre products of q_minus, p_extra and q_plus ell=2 modes on each |n|=1,2 momentum fibre", degree=2, parity="all input parity pairs and every angularly allowed output parity", ell="input 2 x 2; outputs L=0,1,2,3,4", m="all magnetic coefficients through SO(3) selection", k="same-fibre K=+/-2|n|kappa sums and K=0 unequal-branch differences", omega="all nonzero positive-positive sums and unequal-branch positive-negative differences", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            _scope(theory="Weyl-Maxwell target", boundaries="candidate-13 closed S1_L times S2 circumference fibre; before final residual quotient", carrier="same-fibre products of q-minus, p-extra and q-plus ell=2 modes on each |n|=1,2 momentum fibre", degree=2, parity="all parity combinations at the shell-arithmetic level", ell="input 2 x 2; outputs L=0,1,2,3,4 kept separate", m="all Clebsch-Gordan-allowed values", k="same-fibre sums K=2*n*sqrt(rho) and unequal-branch differences K=0", omega="positive-positive sums and unequal-branch positive-negative differences; equal-branch zero-frequency products excluded", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
-            ("CERTIFIED","The candidate-13 circumference and the q_minus, p_extra and q_plus branch dispersions are imported without identifying another background."),
-            ("CERTIFIED","The ell=0 nonzero-Fourier quotient is empty, and 144 exact defects exclude every ell=1 through ell=4 target shell across all 18 nonzero same-fibre channels."),
-            ("OPEN","Equal-branch reality products remain at zero frequency; their homogeneous and twist source rows have not been joined to all five stabilizer moment maps on the mixed carrier."),
-            ("CERTIFIED","Every nonzero-frequency same-fibre quadratic source is off shell, so no nonzero-frequency source matrix is required for the bounded gate."),
-            _second_order(("OPEN","The remaining zero-frequency source and Taub intersection is unclassified."),("OPEN","The smooth-secular mixed cone still requires the zero-frequency adjoint-cokernel join."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
-            _evidence("ell2_two_abs_momentum_candidate13_same_fibre_resonance_census","ell2_two_abs_momentum_candidate13_mixed_null_witness","ell2_two_abs_momentum_candidate13_L4_incidence_reduction","abstract_cone"),
-            "This is a complete nonzero-frequency same-fibre shell census, not the mixed Einstein-extra tangent-cone theorem. Zero-frequency source coefficients, Taub intersection, correction classes, residual, causal, observational and quantum lifecycles remain fail-closed.",
+            ("CERTIFIED","All three generic ell=2 branch dispersions are evaluated separately on each candidate-13 |n|=1,2 fibre."),
+            ("CERTIFIED","The shell inventory uses the action-derived q-minus, p-extra and q-plus branch dictionary; it makes no new current-sign claim."),
+            ("OPEN","The five moment maps are certified elsewhere, but their join to the remaining zero-frequency source matrix is not complete."),
+            ("CERTIFIED","All 18 nonzero-frequency same-fibre channels are off shell: 144 exact L=1,...,4 defects exclude zero; L=0 sums use the empty nonzero-Fourier quotient and L=0 differences use the empty homogeneous nonzero-frequency quotient."),
+            _second_order(("OPEN","Only equal-branch zero-frequency homogeneous/twist adjoint-cokernel rows remain, but they are not yet evaluated on the mixed carrier."),("OPEN","The smooth-secular verdict awaits the same zero-frequency source restriction."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_candidate13_same_fibre_census","ell2_two_abs_momentum_candidate13_mixed_null_witness","ell2_two_abs_momentum_candidate13_L4_incidence_reduction","abstract_cone"),
+            "This is a complete nonzero-frequency same-fibre shell census, not a source-coefficient or tangent-cone theorem. The L=0 K!=0 and K=0 cases use distinct certified quotient theorems. Equal-branch zero-frequency homogeneous/twist sources, their Taub join, bounded and smooth-secular correction, causal propagation, residual observables and quantum claims remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
@@ -1922,24 +1922,24 @@ def build() -> dict[str, object]:
         or candidate13_mixed["causal_residual_observational_or_quantum_claim"]
     ):
         raise AssertionError("candidate-13 mixed null witness exceeded scope")
-    candidate13_same = records["ell2_two_abs_momentum_candidate13_same_fibre_resonance_census"]
-    candidate13_same_classification = candidate13_same["classification"]
+    candidate13_same = records["ell2_two_abs_momentum_candidate13_same_fibre_census"]
+    candidate13_same_flags = candidate13_same["classification"]
     if not (
         candidate13_same["channel_count"] == 18
         and candidate13_same["nonzero_defect_count"] == 144
-        and candidate13_same_classification["candidate_13_all_nonzero_same_fibre_channels_off_shell"]
-        and candidate13_same_classification["ell0_nonzero_fourier_quotient_empty_imported"]
-        and candidate13_same_classification["ell1_through_ell4_nonzero_shell_defects_certified"]
-        and not candidate13_same_classification["same_fibre_nonzero_frequency_source_matrices_required_for_bounded_gate"]
+        and candidate13_same_flags["candidate_13_all_nonzero_same_fibre_channels_off_shell"]
+        and candidate13_same_flags["ell0_nonzero_fourier_quotient_empty_imported"]
+        and candidate13_same_flags["ell0_homogeneous_nonzero_frequency_quotient_empty_imported"]
+        and not candidate13_same_flags["same_fibre_nonzero_frequency_source_matrices_required_for_bounded_gate"]
     ):
-        raise AssertionError("candidate-13 same-fibre resonance census changed")
+        raise AssertionError("candidate-13 same-fibre census changed")
     if (
-        candidate13_same_classification["same_fibre_zero_frequency_source_matrices_classified"]
-        or candidate13_same_classification["mixed_Einstein_extra_taub_intersection_classified"]
-        or candidate13_same_classification["complete_mixed_two_fibre_tangent_cone_classified"]
-        or candidate13_same_classification["causal_or_quantum_claim"]
+        candidate13_same_flags["same_fibre_zero_frequency_source_matrices_classified"]
+        or candidate13_same_flags["mixed_Einstein_extra_taub_intersection_classified"]
+        or candidate13_same_flags["complete_mixed_two_fibre_tangent_cone_classified"]
+        or candidate13_same_flags["causal_or_quantum_claim"]
     ):
-        raise AssertionError("candidate-13 same-fibre resonance census exceeded scope")
+        raise AssertionError("candidate-13 same-fibre census exceeded scope")
     if l3["arbitrary_amplitude_zero_variety_classified"] or l3["causal_or_quantum_claim"]:
         raise AssertionError("nonaxisymmetric L3 matrix exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:

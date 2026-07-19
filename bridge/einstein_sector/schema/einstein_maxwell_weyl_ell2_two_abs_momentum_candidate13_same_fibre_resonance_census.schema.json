@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-same-fibre-resonance-census-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "target_shells", "channel_count", "nonzero_defect_count", "channels", "zero_frequency_remainder", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_SAME_FIBRE_RESONANCE_CENSUS"},
+    "channel_count": {"const": 18},
+    "nonzero_defect_count": {"const": 144},
+    "classification": {
+      "type": "object",
+      "required": ["candidate_13_all_nonzero_same_fibre_channels_off_shell", "ell0_nonzero_fourier_quotient_empty_imported", "ell0_homogeneous_nonzero_frequency_quotient_empty_imported", "same_fibre_zero_frequency_source_matrices_classified", "mixed_Einstein_extra_taub_intersection_classified", "complete_mixed_two_fibre_tangent_cone_classified"]
+    }
+  },
+  "additionalProperties": true
+}
