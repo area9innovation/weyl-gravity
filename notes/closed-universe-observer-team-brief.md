@@ -1333,8 +1333,20 @@ above.  Its successor
 `observer.berger.interaction.pbw_108_nonlinear_clock_second_jet` is
 `CERTIFIED` for same-background unary consistency and passes the mixed unary
 gate.  Scalar apparatus `q2,q3`, their arity replay and the nonlinear observer
-cone remain fail-closed until the newly authorized apparatus extension is
-exported and checked.
+cone remain fail-closed.  The interaction scalarization audit identified the
+first missing object as the nonlinear clock coordinate jet.  Its radial block
+is now fully canonical through `F3` with 38 `F2` and 38 `F3` entries and an
+exact cotangent lift.  The temporal clock equation `y0=x0+Theta(x)` now fixes
+the inverse shift through cubic degree and generates 36 quadratic plus 96
+cubic metric-field PBW components; all linear metric terms cancel under the
+inverse-Jacobian pullback.  This temporal result is only a field-chart
+subgate.  Because its Jacobian is differential, the signed-pairing BV
+cotangent lift still requires a formal-adjoint/integration-by-parts proof.
+The fail-closed atlas row is
+`observer.berger.interaction.nonlinear_clock_temporal_field_f2_f3`; complete
+scalar `q2,q3`, arity replay, `K_Berger` equivariance, observer-morphism
+stability and `O_detector|Z2^C` remain `NO_CERTIFIED_MAP` until that cotangent
+gate passes and the combined chart is replayed.
 This does not activate the physical-
 branch bridge and does not identify any compact-product mode with a Berger
 apparatus row.

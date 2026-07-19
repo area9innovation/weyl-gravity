@@ -1,0 +1,4741 @@
+{
+  "activation_disposition": {
+    "complete_clock_canonical_map_certified": false,
+    "detector_response_on_second_order_cone_authorized": false,
+    "physical_branch_bridge_activated": false,
+    "scalar_q2_q3_transport_authorized": false,
+    "temporal_BV_cotangent_lift_certified": false,
+    "temporal_field_F2_F3_certified": true
+  },
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate closes the field-coordinate half of the temporal nonlinear Berger clock chart. The physical clock condition y0=x0+Theta(x), yi=xi uniquely fixes the inverse shift through total cubic degree as s=-Theta+Theta Theta_0-Theta Theta_0^2-(Theta^2 Theta_00)/2. Substitution into s+Theta(y0+s,y)=0 has zero cubic residual; deleting the cubic terms is detected. Pulling the linearly dressed raw metric g=eta+H-B(Theta), B00=2 e0 Theta and B0i=ei Theta, through the exact inverse Jacobian cancels every linear correction and produces 36 quadratic plus 96 cubic metric-jet monomials. These are serialized as graded-symmetric F2/F3 components on metric rows 5--14 and Theta row 16 with exact ordered Berger PBW derivative labels and the factorial convention. Omitting the quadratic inverse-shift term changes the cubic field payload, and flipping the inverse-Jacobian sign destroys the linear cancellation. This field chart is not yet a BV canonical map: because it depends on derivatives of Theta and H, its signed-pairing cotangent lift requires the formal adjoint of the differential Jacobian and coefficientwise integration by parts. No temporal cotangent payload is asserted here. Consequently the combined radial-temporal canonical map, scalar apparatus q2/q3 transport, arity replay, K_Berger equivariance, observer-morphism stability, detector restriction to Z2, nonlinear rank, physical Bridge 3, finite-parameter causal and quantum claims remain fail-closed. No compact-product mode is identified with a Berger carrier row.",
+  "claim_status": "CERTIFIED_TEMPORAL_FIELD_F2_F3_BV_COTANGENT_OPEN",
+  "dependency_refs": {
+    "completed_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET.json",
+      "result_id": "BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET",
+      "sha256": "cacbd3be6bde8e80d142ca9012b024abd7a10472a2759b8f6e8b8af19b310481"
+    },
+    "component_contract": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json",
+      "result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+      "sha256": "4113635be1493e0eac5e945a970ce4989f0484d5fa658a10bf893c63f5ae707c"
+    },
+    "linear_clock_sdr": {
+      "path": "d_quotient_classical/certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json",
+      "result_id": "BERGER_MINIMAL_BV_CLOCK_SDR",
+      "sha256": "9e7503ed7fd6082b4164ae7b03d350c753f941cc45d639ffb02598ba8f262422"
+    },
+    "radial_chart": {
+      "path": "closed_universe_observers/certificates/BERGER_NONLINEAR_CLOCK_RADIAL_CANONICAL_MAP_F2_F3.json",
+      "result_id": "BERGER_NONLINEAR_CLOCK_RADIAL_CANONICAL_MAP_F2_F3",
+      "sha256": "10bafd62cb48a2b172377091ed4f461f775d2e82b4a71a1b2fd1cc4faab54a3e"
+    },
+    "scalarization_obstruction": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_APPARATUS_Q2_Q3_SCALARIZATION_OBSTRUCTION.json",
+      "result_id": "BERGER_108_ROW_APPARATUS_Q2_Q3_SCALARIZATION_OBSTRUCTION",
+      "sha256": "aa77a5e2e9edd83b4e7a259f5be9ae885959ff7b981de47faa83eccc089add15"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "flags": {
+    "COMPLETE_NONLINEAR_CLOCK_CANONICAL_MAP_EXPORTED": false,
+    "LINEAR_TEMPORAL_DRESSING_REPRODUCED": true,
+    "QUANTUM_CLAIM": false,
+    "SCALAR_APPARATUS_Q2_Q3_TRANSPORT_AUTHORIZED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "TEMPORAL_CLOCK_PHASE_INVERSE_CUBIC_CERTIFIED": true,
+    "TEMPORAL_NONLINEAR_CLOCK_COTANGENT_LIFT_CANONICAL": false,
+    "TEMPORAL_NONLINEAR_CLOCK_FIELD_F2_F3_EXPORTED": true
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "delete_cubic_inverse_shift_terms",
+      "residual": "Theta**2*Theta_00/2 + Theta*Theta_0**2"
+    },
+    {
+      "detected": true,
+      "name": "omit_quadratic_inverse_shift_term"
+    },
+    {
+      "detected": true,
+      "linear_defect_count": 1,
+      "name": "flip_inverse_jacobian_linear_sign"
+    },
+    {
+      "defect_component_count": 10,
+      "detected": true,
+      "name": "replace_multiplicity_factorials_by_full_arity_factorial"
+    }
+  ],
+  "next_gate": "DERIVE_SIGNED_PAIRING_TEMPORAL_DIFFERENTIAL_COTANGENT_LIFT_F2_F3",
+  "phase_inverse": {
+    "clock_equation": "s+Theta(y0+s,y)=0",
+    "inverse_shift_through_cubic": "-Theta**2*Theta_00/2 - Theta*Theta_0**2 + Theta*Theta_0 - Theta",
+    "residual_term_count": 0,
+    "residual_through_cubic": "0"
+  },
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_nonlinear_clock_temporal_field_f2_f3.py",
+        "sha256": "9379fb5718e4f2c6e8fe9775272158207b595cd7cbfb4a88926ba1520ab47d4f"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_nonlinear_clock_temporal_field_f2_f3.py",
+        "sha256": "c383a084d7c51971546e422ee3eddf10bd2a51c9c55d569742ee53330ea72288"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_nonlinear_clock_temporal_field_f2_f3.py",
+        "sha256": "ba020a4ad3b81c26f05400b9cdc65208e5b82e0786ab7ad798af0717f1c3fd80"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-nonlinear-clock-temporal-field-f2-f3-v1.schema.json",
+        "sha256": "1689c2fe29f39888a688dc5c6451abea26c37a66f31a8829af8bd3c1a21a6d45"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-nonlinear-clock-temporal-field-f2-f3.md",
+        "sha256": "8de2b3af1981b20c117fc3359850c0920a672c29a68fa5c600194e1f8f64810f"
+      }
+    ]
+  },
+  "result_id": "BERGER_NONLINEAR_CLOCK_TEMPORAL_FIELD_F2_F3",
+  "schema": "closed-universe-berger-nonlinear-clock-temporal-field-f2-f3-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension",
+  "taylor_payload": {
+    "F2": [
+      {
+        "coefficient": "-2",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "00",
+        "output_row": 5
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_00_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "00",
+        "output_row": 5
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "00",
+        "output_row": 5
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "01",
+        "output_row": 6
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_01",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "01",
+        "output_row": 6
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_01_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "01",
+        "output_row": 6
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "01",
+        "output_row": 6
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "02",
+        "output_row": 7
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_02",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "02",
+        "output_row": 7
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_02_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "02",
+        "output_row": 7
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "02",
+        "output_row": 7
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "03",
+        "output_row": 8
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_03",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "03",
+        "output_row": 8
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_03_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "03",
+        "output_row": 8
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "03",
+        "output_row": 8
+      },
+      {
+        "coefficient": "-2",
+        "inputs": [
+          {
+            "label": "H_01",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "11",
+        "output_row": 9
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_11_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 9
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "11",
+        "output_row": 9
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "11",
+        "output_row": 9
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_01",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_02",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_12_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 10
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_01",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_03",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_13_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 11
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "-2",
+        "inputs": [
+          {
+            "label": "H_02",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "22",
+        "output_row": 12
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_22_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 12
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "22",
+        "output_row": 12
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "22",
+        "output_row": 12
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_02",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_03",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_23_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 13
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "-2",
+        "inputs": [
+          {
+            "label": "H_03",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "33",
+        "output_row": 14
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "H_33_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 14
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "33",
+        "output_row": 14
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "33",
+        "output_row": 14
+      }
+    ],
+    "F2_entry_count": 36,
+    "F3": [
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "00",
+        "output_row": 5
+      },
+      {
+        "coefficient": "6",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "00",
+        "output_row": 5
+      },
+      {
+        "coefficient": "3",
+        "inputs": [
+          {
+            "label": "H_00_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "00",
+        "output_row": 5
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_00_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "00",
+        "output_row": 5
+      },
+      {
+        "coefficient": "-2",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "00",
+        "output_row": 5
+      },
+      {
+        "coefficient": "-12",
+        "inputs": [
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "00",
+        "output_row": 5
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1_0",
+            "pbw": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "01",
+        "output_row": 6
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "01",
+        "output_row": 6
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_00_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "01",
+        "output_row": 6
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_01",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "01",
+        "output_row": 6
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_01",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "01",
+        "output_row": 6
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_01_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "01",
+        "output_row": 6
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_01_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "01",
+        "output_row": 6
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "01",
+        "output_row": 6
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1_0",
+            "pbw": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "01",
+        "output_row": 6
+      },
+      {
+        "coefficient": "-4",
+        "inputs": [
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "01",
+        "output_row": 6
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2_0",
+            "pbw": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "02",
+        "output_row": 7
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "02",
+        "output_row": 7
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_00_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "02",
+        "output_row": 7
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_02",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "02",
+        "output_row": 7
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_02",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "02",
+        "output_row": 7
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_02_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "02",
+        "output_row": 7
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_02_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "02",
+        "output_row": 7
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "02",
+        "output_row": 7
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2_0",
+            "pbw": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "02",
+        "output_row": 7
+      },
+      {
+        "coefficient": "-4",
+        "inputs": [
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "02",
+        "output_row": 7
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "03",
+        "output_row": 8
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "03",
+        "output_row": 8
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_00_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "03",
+        "output_row": 8
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_03",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "03",
+        "output_row": 8
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_03",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "03",
+        "output_row": 8
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_03_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "03",
+        "output_row": 8
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_03_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "03",
+        "output_row": 8
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "03",
+        "output_row": 8
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "03",
+        "output_row": 8
+      },
+      {
+        "coefficient": "-4",
+        "inputs": [
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "03",
+        "output_row": 8
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "11",
+        "output_row": 9
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_01",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1_0",
+            "pbw": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "11",
+        "output_row": 9
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_01",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "11",
+        "output_row": 9
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_01_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "11",
+        "output_row": 9
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_11_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 9
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "11",
+        "output_row": 9
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_11_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 9
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "11",
+        "output_row": 9
+      },
+      {
+        "coefficient": "-2",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1_0",
+            "pbw": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "11",
+        "output_row": 9
+      },
+      {
+        "coefficient": "-4",
+        "inputs": [
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "11",
+        "output_row": 9
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_01",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2_0",
+            "pbw": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_01",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_01_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_02",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1_0",
+            "pbw": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_02",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_02_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_12_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 10
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_12_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 10
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1_0",
+            "pbw": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2_0",
+            "pbw": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "-2",
+        "inputs": [
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "12",
+        "output_row": 10
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_01",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_01",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_01_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 6
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_03",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1_0",
+            "pbw": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_03",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_03_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_13_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 11
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_13_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 11
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1_0",
+            "pbw": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "-2",
+        "inputs": [
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_1",
+            "pbw": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "13",
+        "output_row": 11
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "22",
+        "output_row": 12
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_02",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2_0",
+            "pbw": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "22",
+        "output_row": 12
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_02",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "22",
+        "output_row": 12
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_02_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "22",
+        "output_row": 12
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_22_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 12
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "22",
+        "output_row": 12
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_22_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 12
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "22",
+        "output_row": 12
+      },
+      {
+        "coefficient": "-2",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2_0",
+            "pbw": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "22",
+        "output_row": 12
+      },
+      {
+        "coefficient": "-4",
+        "inputs": [
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "22",
+        "output_row": 12
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_02",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_02",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_02_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 7
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_03",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2_0",
+            "pbw": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_03",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_03_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_23_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 13
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_23_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 13
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2_0",
+            "pbw": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "-1",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "-2",
+        "inputs": [
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_2",
+            "pbw": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "23",
+        "output_row": 13
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_00",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 5
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "33",
+        "output_row": 14
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_03",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "33",
+        "output_row": 14
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_03",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "33",
+        "output_row": 14
+      },
+      {
+        "coefficient": "2",
+        "inputs": [
+          {
+            "label": "H_03_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 8
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "33",
+        "output_row": 14
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_33_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 14
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "33",
+        "output_row": 14
+      },
+      {
+        "coefficient": "1",
+        "inputs": [
+          {
+            "label": "H_33_0_0",
+            "pbw": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "row": 14
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "33",
+        "output_row": 14
+      },
+      {
+        "coefficient": "-2",
+        "inputs": [
+          {
+            "label": "Theta",
+            "pbw": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "33",
+        "output_row": 14
+      },
+      {
+        "coefficient": "-4",
+        "inputs": [
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_3",
+            "pbw": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "row": 16
+          },
+          {
+            "label": "Theta_0",
+            "pbw": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "row": 16
+          }
+        ],
+        "output_component": "33",
+        "output_row": 14
+      }
+    ],
+    "F3_entry_count": 96,
+    "canonical_sha256": "1c0126fdde1a01d2397281bd11b0068b518e86d6f297308751cc735c78d43d55",
+    "component_rows": {
+      "metric": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "temporal_clock": 16
+    },
+    "factorial_convention": "F=F1+F2/2!+F3/3!+...; a multiset component equals its polynomial coefficient times the factorials of input multiplicities",
+    "pbw_convention": "e0^n0 e1^n1 e2^n2 e3^n3; e0 commutes with the Berger spatial frame",
+    "reconstruction_audit": {
+      "convention": "polynomial coefficient = symmetric component / product(input multiplicity factorials)",
+      "defect_component_count": 0,
+      "defect_term_count": 0
+    }
+  },
+  "temporal_field_chart": {
+    "coordinate_map": "y0=x0+Theta(x), yi=xi",
+    "correction_expressions": {
+      "00": "2*H_00*Theta*Theta_0_0 + 3*H_00*Theta_0**2 - 2*H_00*Theta_0 + 3*H_00_0*Theta*Theta_0 - H_00_0*Theta + H_00_0_0*Theta**2/2 - 2*Theta*Theta_0*Theta_0_0 - 2*Theta_0**3 + Theta_0**2",
+      "01": "H_00*Theta*Theta_1_0 + 2*H_00*Theta_0*Theta_1 - H_00*Theta_1 + H_00_0*Theta*Theta_1 + H_01*Theta*Theta_0_0 + H_01*Theta_0**2 - H_01*Theta_0 + 2*H_01_0*Theta*Theta_0 - H_01_0*Theta + H_01_0_0*Theta**2/2 - Theta*Theta_0*Theta_1_0 - Theta*Theta_0_0*Theta_1 - 2*Theta_0**2*Theta_1 + Theta_0*Theta_1",
+      "02": "H_00*Theta*Theta_2_0 + 2*H_00*Theta_0*Theta_2 - H_00*Theta_2 + H_00_0*Theta*Theta_2 + H_02*Theta*Theta_0_0 + H_02*Theta_0**2 - H_02*Theta_0 + 2*H_02_0*Theta*Theta_0 - H_02_0*Theta + H_02_0_0*Theta**2/2 - Theta*Theta_0*Theta_2_0 - Theta*Theta_0_0*Theta_2 - 2*Theta_0**2*Theta_2 + Theta_0*Theta_2",
+      "03": "H_00*Theta*Theta_3_0 + 2*H_00*Theta_0*Theta_3 - H_00*Theta_3 + H_00_0*Theta*Theta_3 + H_03*Theta*Theta_0_0 + H_03*Theta_0**2 - H_03*Theta_0 + 2*H_03_0*Theta*Theta_0 - H_03_0*Theta + H_03_0_0*Theta**2/2 - Theta*Theta_0*Theta_3_0 - Theta*Theta_0_0*Theta_3 - 2*Theta_0**2*Theta_3 + Theta_0*Theta_3",
+      "11": "H_00*Theta_1**2 + 2*H_01*Theta*Theta_1_0 + 2*H_01*Theta_0*Theta_1 - 2*H_01*Theta_1 + 2*H_01_0*Theta*Theta_1 + H_11_0*Theta*Theta_0 - H_11_0*Theta + H_11_0_0*Theta**2/2 - 2*Theta*Theta_1*Theta_1_0 - 2*Theta_0*Theta_1**2 + Theta_1**2",
+      "12": "H_00*Theta_1*Theta_2 + H_01*Theta*Theta_2_0 + H_01*Theta_0*Theta_2 - H_01*Theta_2 + H_01_0*Theta*Theta_2 + H_02*Theta*Theta_1_0 + H_02*Theta_0*Theta_1 - H_02*Theta_1 + H_02_0*Theta*Theta_1 + H_12_0*Theta*Theta_0 - H_12_0*Theta + H_12_0_0*Theta**2/2 - Theta*Theta_1*Theta_2_0 - Theta*Theta_1_0*Theta_2 - 2*Theta_0*Theta_1*Theta_2 + Theta_1*Theta_2",
+      "13": "H_00*Theta_1*Theta_3 + H_01*Theta*Theta_3_0 + H_01*Theta_0*Theta_3 - H_01*Theta_3 + H_01_0*Theta*Theta_3 + H_03*Theta*Theta_1_0 + H_03*Theta_0*Theta_1 - H_03*Theta_1 + H_03_0*Theta*Theta_1 + H_13_0*Theta*Theta_0 - H_13_0*Theta + H_13_0_0*Theta**2/2 - Theta*Theta_1*Theta_3_0 - Theta*Theta_1_0*Theta_3 - 2*Theta_0*Theta_1*Theta_3 + Theta_1*Theta_3",
+      "22": "H_00*Theta_2**2 + 2*H_02*Theta*Theta_2_0 + 2*H_02*Theta_0*Theta_2 - 2*H_02*Theta_2 + 2*H_02_0*Theta*Theta_2 + H_22_0*Theta*Theta_0 - H_22_0*Theta + H_22_0_0*Theta**2/2 - 2*Theta*Theta_2*Theta_2_0 - 2*Theta_0*Theta_2**2 + Theta_2**2",
+      "23": "H_00*Theta_2*Theta_3 + H_02*Theta*Theta_3_0 + H_02*Theta_0*Theta_3 - H_02*Theta_3 + H_02_0*Theta*Theta_3 + H_03*Theta*Theta_2_0 + H_03*Theta_0*Theta_2 - H_03*Theta_2 + H_03_0*Theta*Theta_2 + H_23_0*Theta*Theta_0 - H_23_0*Theta + H_23_0_0*Theta**2/2 - Theta*Theta_2*Theta_3_0 - Theta*Theta_2_0*Theta_3 - 2*Theta_0*Theta_2*Theta_3 + Theta_2*Theta_3",
+      "33": "H_00*Theta_3**2 + 2*H_03*Theta*Theta_3_0 + 2*H_03*Theta_0*Theta_3 - 2*H_03*Theta_3 + 2*H_03_0*Theta*Theta_3 + H_33_0*Theta*Theta_0 - H_33_0*Theta + H_33_0_0*Theta**2/2 - 2*Theta*Theta_3*Theta_3_0 - 2*Theta_0*Theta_3**2 + Theta_3**2"
+    },
+    "cubic_monomial_count": 96,
+    "inverse_jacobian": {
+      "K00": "q=1/(1+Theta_0(x(y)))",
+      "K0i": "a_i=-q Theta_i(x(y))",
+      "Ki0": "0",
+      "Kij": "delta_ij"
+    },
+    "linear_metric_defect_count": 0,
+    "linear_raw_metric": "g_raw=eta+H-B(Theta), B00=2 e0 Theta, B0i=ei Theta, Bij=0",
+    "per_component_counts": {
+      "00": {
+        "degree_1": 0,
+        "degree_2": 3,
+        "degree_3": 6
+      },
+      "01": {
+        "degree_1": 0,
+        "degree_2": 4,
+        "degree_3": 10
+      },
+      "02": {
+        "degree_1": 0,
+        "degree_2": 4,
+        "degree_3": 10
+      },
+      "03": {
+        "degree_1": 0,
+        "degree_2": 4,
+        "degree_3": 10
+      },
+      "11": {
+        "degree_1": 0,
+        "degree_2": 3,
+        "degree_3": 8
+      },
+      "12": {
+        "degree_1": 0,
+        "degree_2": 4,
+        "degree_3": 12
+      },
+      "13": {
+        "degree_1": 0,
+        "degree_2": 4,
+        "degree_3": 12
+      },
+      "22": {
+        "degree_1": 0,
+        "degree_2": 3,
+        "degree_3": 8
+      },
+      "23": {
+        "degree_1": 0,
+        "degree_2": 4,
+        "degree_3": 12
+      },
+      "33": {
+        "degree_1": 0,
+        "degree_2": 3,
+        "degree_3": 8
+      }
+    },
+    "quadratic_monomial_count": 36
+  }
+}

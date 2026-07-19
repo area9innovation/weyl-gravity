@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-nonlinear-clock-temporal-field-f2-f3-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "phase_inverse", "temporal_field_chart", "taylor_payload", "mutation_results", "activation_disposition", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-nonlinear-clock-temporal-field-f2-f3-v1"},
+    "result_id": {"const": "BERGER_NONLINEAR_CLOCK_TEMPORAL_FIELD_F2_F3"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_TEMPORAL_FIELD_F2_F3_BV_COTANGENT_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 5, "maxProperties": 5},
+    "phase_inverse": {"type": "object", "required": ["clock_equation", "inverse_shift_through_cubic", "residual_through_cubic", "residual_term_count"], "properties": {"residual_term_count": {"const": 0}}},
+    "temporal_field_chart": {"type": "object", "required": ["coordinate_map", "inverse_jacobian", "linear_raw_metric", "linear_metric_defect_count", "quadratic_monomial_count", "cubic_monomial_count", "per_component_counts", "correction_expressions"], "properties": {"linear_metric_defect_count": {"const": 0}, "quadratic_monomial_count": {"const": 36}, "cubic_monomial_count": {"const": 96}}},
+    "taylor_payload": {"type": "object", "required": ["factorial_convention", "component_rows", "pbw_convention", "F2", "F3", "F2_entry_count", "F3_entry_count", "canonical_sha256", "reconstruction_audit"], "properties": {"F2_entry_count": {"const": 36}, "F3_entry_count": {"const": 96}, "F2": {"type": "array", "minItems": 36, "maxItems": 36}, "F3": {"type": "array", "minItems": 96, "maxItems": 96}, "reconstruction_audit": {"type": "object", "properties": {"defect_component_count": {"const": 0}, "defect_term_count": {"const": 0}}}}},
+    "mutation_results": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "required": ["name", "detected"], "properties": {"detected": {"const": true}}}},
+    "activation_disposition": {"type": "object", "additionalProperties": false, "required": ["temporal_field_F2_F3_certified", "temporal_BV_cotangent_lift_certified", "complete_clock_canonical_map_certified", "scalar_q2_q3_transport_authorized", "detector_response_on_second_order_cone_authorized", "physical_branch_bridge_activated"], "properties": {"temporal_field_F2_F3_certified": {"const": true}, "temporal_BV_cotangent_lift_certified": {"const": false}, "complete_clock_canonical_map_certified": {"const": false}, "scalar_q2_q3_transport_authorized": {"const": false}, "detector_response_on_second_order_cone_authorized": {"const": false}, "physical_branch_bridge_activated": {"const": false}}},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "DERIVE_SIGNED_PAIRING_TEMPORAL_DIFFERENTIAL_COTANGENT_LIFT_F2_F3"},
+    "claim_boundary": {"type": "string", "minLength": 1300},
+    "provenance": {"type": "object"}
+  }
+}

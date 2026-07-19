@@ -87,7 +87,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows now that its product spectrum, matched 3^-6 exceptional factor and regular-complement det3 are certified, then add remaining BV rows to the exact partial-BV five-carrier representative; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; the radial nonlinear clock F2/F3 map and cotangent lift are certified, so derive the remaining temporal relational-time retraction, then regenerate scalar apparatus q2,q3, test the arity identities, K_Berger equivariance and observer-morphism stability, and only then restrict records to Z2^C
+Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; the radial nonlinear clock map is canonical and the temporal field retraction has 36 F2 plus 96 F3 PBW entries, so derive its signed formal-adjoint cotangent lift, then regenerate scalar apparatus q2,q3, test the arity identities, K_Berger equivariance and observer-morphism stability, and only then restrict records to Z2^C
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
 
@@ -1014,6 +1014,16 @@ survive the first backreacted, normalized apparatus interaction?
    gate and authorizes scalar apparatus `q2,q3`, `K_Berger` equivariance and
    observer-morphism stability; none of those successors, the tangent-cone
    restriction, or Bridge 3 is certified by the unary result itself.
+   The coordinate-jet successor is now partially closed without fitting the
+   unary residual.  The radial physical-metric relation supplies 38 `F2` plus
+   38 `F3` entries and its exact BV cotangent lift.  Independently, the
+   physical clock equation `y0=x0+Theta(x)` fixes the temporal inverse shift
+   through cubic degree; its inverse-Jacobian metric pullback has zero linear
+   defect and serializes 36 quadratic plus 96 cubic metric-field PBW
+   components.  Since this temporal chart is derivative-dependent, its
+   signed formal-adjoint cotangent lift is the active gate.  Until it passes,
+   the combined clock map, scalar interactions and all observer-cone
+   consumers remain fail-closed.
    A common source
    at the original Hopf event remains a stronger separate target.
 4. Separate a failure of the record map from a failure of the underlying
@@ -2744,6 +2754,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET` (fired; same-background first-bidegree unary and mixed gate pass) | export scalar apparatus `q2,q3` on the completed carrier, test `K_Berger` equivariance and observer-morphism stability, then determine whether detector response can be restricted to `Z2^C`; do not activate physical Bridge 3 without a same-background branch dictionary |
 | `BERGER_108_ROW_APPARATUS_Q2_Q3_SCALARIZATION_OBSTRUCTION` (fired with exact coordinate-jet nonuniqueness) | derive and serialize the action-normalized same-background nonlinear clock canonical map through `F2,F3` and its signed-pairing cotangent lift; then regenerate scalar `q2,q3` and replay the arity identities rather than fitting a tensor to them; keep `K_Berger`, observer morphism, `O_detector|Z2^C`, nonlinear rank and physical Bridge 3 fail-closed meanwhile |
 | `BERGER_NONLINEAR_CLOCK_RADIAL_CANONICAL_MAP_F2_F3` (fired; 38 F2 and 38 F3 entries plus canonical cotangent lift) | derive the remaining temporal relational-time retraction through `F2,F3` and its BV cotangent lift; do not infer it from the unary residual, and keep complete scalar `q2,q3`, arity replay, observer reduction and cone response fail-closed until the combined chart passes |
+| `BERGER_NONLINEAR_CLOCK_TEMPORAL_FIELD_F2_F3` (fired; clock inverse exact through cubic degree and 36 F2 plus 96 F3 metric-field PBW entries) | derive the signed-pairing formal-adjoint BV cotangent lift with coefficientwise integration by parts; do not call the derivative-dependent field chart canonical or activate scalar `q2,q3`, observer reduction, cone response or Bridge 3 before that lift and the combined chart pass |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |
 | `BERGER_26_ROW_GREEN_CERTIFIED` | the causal specialist extracts the abstract Green-transfer theorem or supports the observer rail; nonlinear capacity stays on interaction |
 | `COMPACT_EM_GLOBAL_PAIRING_CLOSED` and `WEYL_EM_PULLBACK_DECIDED` (fired) | Einstein extends the quadratic source test across mixed cones; one bounded design task may continue the asymptotic/black-hole complex |
