@@ -1,4 +1,4 @@
-WORK PACKAGE sf:program/work/berger  (state: ACTIVE, owner: observer)
+WORK PACKAGE sf:program/work/berger  (state: DONE, owner: observer)
 
 ## Objective
 Positive Berger clock apparatus (closed_universe_observers/): complete the two_j=6 feedback binding using the certified SU(2) conjugate-column real-shell fold. The exact conjugate-column theorem folds complex channel rectangles to real shell inputs and exports all eight two_j=5 channel sums; the generic direct carrier, real-shell map and fail-closed four-stream tail-stop controller are certified (roadmap, 'observer operational fragment' and the detailed apparatus stream).
