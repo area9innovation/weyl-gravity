@@ -434,6 +434,20 @@ def verify() -> None:
         raise AssertionError("axial q-minus L4 correction classes were silently merged")
     if "other 160 workload coefficients" not in triplet["claim_boundary"]:
         raise AssertionError("axial q-minus L4 triplet lost its unresolved workload")
+    axial_matrix = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_axial_axial_l4_matrix"]
+    if axial_matrix["descriptions"]["nonlinear"] != "OBSTRUCTED":
+        raise AssertionError("complete axial-axial L4 basis obstruction was hidden")
+    if axial_matrix["mode_data"]["resonance"]["status"] != "OBSTRUCTED" or "26 have exact rational intervals excluding zero" not in axial_matrix["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("axial-axial L4 interval witnesses were hidden")
+    if "distinct rows are not identified" not in axial_matrix["mode_data"]["dispersion"]["statement"]:
+        raise AssertionError("axial-axial L4 circumference rows were merged")
+    if axial_matrix["mode_data"]["taub_maps"]["status"] != "NOT_APPLICABLE":
+        raise AssertionError("axial-axial L4 resonances were merged with Taub maps")
+    axial_matrix_second = axial_matrix["mode_data"]["second_order"]
+    if axial_matrix_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or axial_matrix_second["smooth_secular"]["status"] != "OPEN" or axial_matrix_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("axial-axial L4 correction classes were silently merged")
+    if "not its arbitrary-amplitude zero variety" not in axial_matrix["claim_boundary"]:
+        raise AssertionError("axial-axial L4 matrix exceeded its basis-fixture scope")
     aligned_phase = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
     aligned_phase_second = aligned_phase["mode_data"]["second_order"]
     if aligned_phase["descriptions"]["nonlinear"] != "OPEN":

@@ -3360,6 +3360,21 @@ then 56 nonaxisymmetric `L=1,3` coefficients.  The three circumference fibres
 remain distinct, and no cross-background or cross-fibre identification is
 made.
 
+The complete axial--axial `L=4` branch-basis matrix is now certified.  One
+content-addressed action-derived generic source slice supplies all 27 polar
+target-adjoint coefficients for the twenty axial branch-basis fixtures across
+twelve separately tuned algebraic circumference rows.  Exact rational
+intervals prove that 26 coefficients are nonzero and one is zero; every one
+of the twenty basis fixtures has a nonzero complete cokernel vector.  Thus all
+twenty are bounded/finite-quasiperiodic `OBSTRUCTED`.  This is a basis-matrix
+theorem, not a classification of cancellations among arbitrary axial linear
+combinations.  Smooth-secular correction remains `OPEN`, causal correction
+remains `NO_CERTIFIED_MAP`, and the remaining gate is 81 axisymmetric `L=4`
+coefficients plus 56 nonaxisymmetric `L=1,3` coefficients.  Fail-closed atlas
+row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_axial_axial_l4_matrix`
+retains every branch, signed momentum, frequency and circumference label.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

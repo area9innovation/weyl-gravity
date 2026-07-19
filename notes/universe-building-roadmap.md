@@ -1939,6 +1939,18 @@ resolves four of 108 axisymmetric `L=4` adjoint coefficients; the remaining
 Smooth-secular status is `OPEN`, causal status is `NO_CERTIFIED_MAP`, and the
 three circumference fibres are not identified.
 
+The complete axial--axial `L=4` branch-basis matrix now resolves 27 of the 108
+axisymmetric coefficients.  Of these, 26 have exact rational intervals
+excluding zero and one vanishes; every one of the twenty declared axial
+branch-basis fixtures has a nonzero complete cokernel vector.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_axial_axial_l4_matrix`
+therefore marks each basis fixture bounded/finite-quasiperiodic `OBSTRUCTED`,
+while arbitrary axial linear combinations and smooth-secular corrections
+remain `OPEN` and causal correction remains `NO_CERTIFIED_MAP`.  The row is
+not an amplitude-cone theorem.  It retains the twelve algebraic circumference
+fibres separately.  The active coefficient gate is the remaining 81
+axisymmetric `L=4` coefficients, then 56 nonaxisymmetric `L=1,3` coefficients.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell

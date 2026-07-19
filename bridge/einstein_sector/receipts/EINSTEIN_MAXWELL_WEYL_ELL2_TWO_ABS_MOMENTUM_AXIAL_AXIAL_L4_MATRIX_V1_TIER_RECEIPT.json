@@ -1,0 +1,50 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_AXIAL_AXIAL_L4_MATRIX_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Complete 27-coefficient polar L4 target-adjoint matrix for the twenty axial ell=2 branch-basis fixtures crossing the retained |n|=1 and |n|=2 fibres.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_axial_L4_matrix.json": "d4e0c7176835dd0105a1d061bb0ee78a904274b6a48ce087047395124a1babcd",
+    "bridge/einstein_sector/einstein_maxwell_weyl_two_abs_momentum_axial_axial_L4_matrix.py": "eda03cdbef413dd663fec1d805e462329984f5d8c9dd18ab85764e679b47e580",
+    "bridge/einstein_sector/generated/einstein_maxwell_weyl_ell2_axial_axial_L4_q2_slice.json": "3488b9806f8433e2ff89259a114602193ac963ad5f0da343fe45463c8fa6d8f9",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_axial_L4_matrix.schema.json": "d69974356065555e7db7d2a335520b4105d53804cc8f2220da05f43db6b7ee42",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_axial_axial_L4_matrix.py": "7ad324ed5851e1cdaaa1a0b5d1008f0bfc67b5da0848fefd8c016931b7f1a111",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_axial_axial_L4_matrix.py": "d68bf3f1f0792994b303fcc6abda810e8357ed3e6f5e280f94a388fe36df6a62",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-axial-axial-L4-matrix.md": "cb9107db9f32dfee3d53f9d456c67bee03d9beb15183ac5fdf0dde7f6e673150"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 65,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_two_abs_momentum_axial_axial_L4_matrix --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_axial_axial_L4_matrix.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_axial_axial_L4_matrix",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 160.93,
+      "cpu_seconds": 158.87,
+      "max_rss_kib": 111532,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_two_abs_momentum_axial_axial_L4_matrix --write",
+      "reason": "The exhaustive producer re-specialized the content-addressed generic action-source slice and contracted all 27 target-adjoint coefficients. Exact outward rational intervals exclude zero for 26 components; the one zero is symbolic. The independent fast verifier separately reconstructs the generic slice and interval witnesses."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a G2 branch-basis matrix theorem, not a complete arbitrary-amplitude zero-variety or finite-harmonic tangent-cone freeze and not a shared-core algebra change."
+    }
+  },
+  "claim_boundary": "All twenty declared axial--axial branch-basis fixtures are bounded or finite-quasiperiodic OBSTRUCTED. Cancellations among arbitrary axial linear combinations, the other 81 axisymmetric L4 coefficients, all 56 nonaxisymmetric L1/L3 coefficients, smooth-secular correction, the complete two-fibre cone, residual, observable and quantum claims remain OPEN or NO_CERTIFIED_MAP as typed in the atlas."
+}
