@@ -65,6 +65,15 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("all 20 C4 extra/extra bilinear generators", entry["mode_data"]["second_order"]["smooth_secular"]["statement"])
         self.assertIn("no additional off-axis branch", entry["mode_data"]["resonance"]["statement"])
 
+    def test_finite_generic_multi_momentum_cone_is_fail_closed_by_category(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.finite_generic_all_momenta_smooth_cone"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second_order["causal_retarded"]["status"], "OPEN")
+        self.assertIn("multiple |k| fibres", second_order["smooth_secular"]["statement"])
+        self.assertIn("Exceptional/global input modes", entry["claim_boundary"])
+
 
 if __name__ == "__main__":
     unittest.main()

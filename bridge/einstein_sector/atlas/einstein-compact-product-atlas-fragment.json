@@ -1011,6 +1011,80 @@
       }
     },
     {
+      "claim_boundary": "This is the complete finite generic ell>=2 smooth-secular cone on the compact product. Exceptional/global input modes, the bounded resonance zero locus, infinite harmonic completion, causal/retarded propagation, all-orders integration, final residual states, observables and quantum transfer remain explicit open scopes.",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "CERTIFIED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_FINITE_GENERIC_SMOOTH_GLOBAL_SECOND_ORDER",
+          "sha256": "dd1dec63c50d538a489205d48931720919ff9a43e23c52a45a9d1b80e5ff2513"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "id": "einstein.ph.wm.mixed.finite_generic_all_momenta_smooth_cone",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Every input belongs to a certified generic q- or p-primary shell; every quadratic output is retained under its exact (L,M,K,Omega,parity) label.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The generic branch currents and the five compact stabilizer moment maps are action-normalized on every input fibre.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Bounded resonant functionals R_(j,a) are defined on every finite nonzero on-shell output block; their coefficientwise common zero locus remains open.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The exact bounded cone formula mu_X=R_(j,a)=0 is certified, but its coefficientwise zero locus has not been solved.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No compact-product causal/retarded Green theorem has been certified.",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "For arbitrary finite generic inputs, multiple |k| fibres and all relative phases, mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0 is necessary and sufficient for a real smooth spatially periodic finite exponential-polynomial second-order correction.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "After Noether and gauge descent, the complete persistent smooth-secular adjoint cokernel is span{H,P_x,J_1,J_2,J_3}.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "arbitrary finite generic-harmonic sum with all compact momentum fibres kept as distinct input and output blocks",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "all finite input ell>=2; every Clebsch-Gordan output L=0,...,ell_1+ell_2",
+        "k": "arbitrary finite set of allowed 2*pi*n/L values; signed output sums K retained",
+        "m": "arbitrary finite input m values and all selected output M",
+        "omega": "all signed input-shell sums and differences; finite polynomial prefactors allowed on resonant outputs",
+        "parity": "axial and polar, including cross-parity quadratic outputs",
+        "theory": "Weyl-Maxwell target with all generic Einstein and extra primaries"
+      }
+    },
+    {
       "claim_boundary": "Compact-product modes must not be called asymptotic gravitons or vacuum-cylinder residual classes without an explicit certified crosswalk.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -1070,7 +1144,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "2e5653dc4290ebec0d63e34b79e07cbd3de87dc708e6ee22cc2c3ad051e247f4",
+  "generated_by_sha256": "27d85ba71b5d20abad59c2068df152cb0aedbb7d42c8ac4eac42be4a8a806571",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

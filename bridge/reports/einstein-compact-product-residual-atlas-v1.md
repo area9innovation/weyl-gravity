@@ -4,7 +4,7 @@ Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`.
 
 The generated ledger at
 `bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json`
-seeds the common residual-atlas schema with eight stable entries for the
+seeds the common residual-atlas schema with stable entries for the
 compactified magnetically supported Plebański--Hacyan fixture.  Each entry
 carries the complete scope
 
@@ -40,6 +40,10 @@ smooth-secular and causal/retarded correction classes.  In particular:
   for smooth exponential-polynomial corrections, with coefficient-explicit
   global/global, all sixteen twist--extra, and all twenty `C^4` extra/extra
   bilinear generators;
+- the complete finite generic `ell>=2` carrier, including arbitrary finite
+  momentum fibres and relative phases, has smooth-secular tangent cone
+  `mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0`; its bounded resonant-functional formula
+  is certified but its coefficientwise zero locus remains `OPEN`;
 - every compact-product causal/retarded verdict remains `OPEN`;
 - the crosswalk to asymptotic or vacuum-cylinder modes is
   `NO_CERTIFIED_MAP`.

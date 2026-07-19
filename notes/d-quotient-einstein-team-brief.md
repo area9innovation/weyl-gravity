@@ -2209,8 +2209,28 @@ The fail-closed atlas row remains
 smooth-secular status is `CERTIFIED` with the complete coefficient ledger.
 Bridge 1 remains activated only at its separately certified compact-product
 noncyclic linear triangle lifecycle; this nonlinear result does not certify a
-relative `q2/q3` morphism.  Opposite momenta, distinct `m` superpositions not
-on the shared-axis orbit, multiple `|k|` fibres, causal/retarded transport,
+relative `q2/q3` morphism.
+
+The separate finite-generic enlargement is now complete in the smooth
+exponential-polynomial correction class.  Every finite sum of generic
+`ell>=2` axial/polar Einstein and extra primaries may carry arbitrary allowed
+compact momenta, `m` values and phases.  With output blocks kept distinct as
+`(L,M,K,Omega,parity)`, all nonzero Fourier blocks have algebraic or finite
+secular inverses.  The zero-block reduced adjoint cokernel is exactly the five
+stabilizer covectors, hence
+
+```text
+Z2^smooth={u:mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0}.
+```
+
+This includes opposite momenta, non-aligned generic harmonic
+superpositions, and multiple `|k|` fibres.  The bounded category remains
+separate: its exact finite resonance ledger `R_(j,a)` is defined and gives a
+necessary-and-sufficient formula with the moment maps, but its coefficientwise
+zero locus is `OPEN`.  The new fail-closed atlas row is
+`einstein.ph.wm.mixed.finite_generic_all_momenta_smooth_cone`.
+Exceptional/global input modes have not yet been adjoined to this arbitrary
+finite carrier.  Causal/retarded transport, infinite-mode completion,
 all-orders integration, final residual descent, observational maps and
 quantum transfer remain fail-closed.
 See the authoritative queue in

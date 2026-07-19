@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Finite generic harmonic smooth-global second-order cone",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "domain",
+    "provenance", "output_indexing", "complete_adjoint_cokernel_decomposition",
+    "bounded_resonance_functionals", "smooth_global_theorem",
+    "correction_classes", "classification", "interpretation", "next_gate",
+    "claim_boundary", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-finite-generic-smooth-global-second-order-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_FINITE_GENERIC_SMOOTH_GLOBAL_SECOND_ORDER"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "output_indexing": {"type": "object"},
+    "complete_adjoint_cokernel_decomposition": {"type": "object"},
+    "bounded_resonance_functionals": {"type": "object"},
+    "smooth_global_theorem": {"type": "object"},
+    "correction_classes": {"type": "object"},
+    "classification": {"type": "object"},
+    "verification_receipt": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,70 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_FINITE_GENERIC_SMOOTH_GLOBAL_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_FINITE_GENERIC_SMOOTH_GLOBAL_SECOND_ORDER",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "artifacts": {
+    "generator": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.py",
+      "sha256": "c2afa028270e0da3b0cd398ed3b46e1f83a7909c39d15e7de846156bb5c7f4a2"
+    },
+    "certificate": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
+      "sha256": "dd1dec63c50d538a489205d48931720919ff9a43e23c52a45a9d1b80e5ff2513"
+    },
+    "schema": {
+      "path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.schema.json",
+      "sha256": "85910ca23c4ffcdfa4c53506eeb99f0cecc5b943a421ffe91a621637fd5d18e9"
+    },
+    "independent_verifier": {
+      "path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_finite_generic_smooth_global_second_order.py",
+      "sha256": "6e9d068afba0916d5bf5698e3b50a0c208a3b3f339614327ba18de27763efda5"
+    },
+    "tests": {
+      "path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_finite_generic_smooth_global_second_order.py",
+      "sha256": "5be6c6205d9477a7641dee195aaa506303ea84fffd3bb728e990802ae7b5fb7e"
+    },
+    "atlas_fragment": {
+      "path": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+      "sha256": "79c382753f475fa10f2d1c36aff2e8356934efc1b1a81b26e70dac7cc1596cad"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.14,
+      "max_rss_kb": 15976,
+      "commands": [
+        "python3 -m py_compile <scoped theorem and atlas Python paths>",
+        "python3 -m json.tool <scoped theorem certificate and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.94,
+      "max_rss_kb": 57976,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_finite_generic_smooth_global_second_order --verify bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_finite_generic_smooth_global_second_order.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_finite_generic_smooth_global_second_order",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ],
+      "tests_run": 13
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "the exact exceptional L=0 and L=1 Fourier complexes, generic axial and polar Smith modules, compact moment-map/Taub bridge, fixed-k and opposite-momentum theorems, and abstract finite-block cone theorem are unchanged content-addressed inputs"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "exceptional/global inputs, bounded zero-locus, infinite-mode, causal, all-orders, residual and quantum lifecycles remain excluded"
+    }
+  }
+}

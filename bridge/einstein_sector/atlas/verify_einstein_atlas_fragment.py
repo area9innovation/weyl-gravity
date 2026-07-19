@@ -103,6 +103,17 @@ def verify() -> None:
     if "no additional off-axis branch" not in aligned["mode_data"]["resonance"]["statement"]:
         raise AssertionError("complete common-zero classification is absent")
 
+    finite_generic = by_id["einstein.ph.wm.mixed.finite_generic_all_momenta_smooth_cone"]
+    finite_second_order = finite_generic["mode_data"]["second_order"]
+    if finite_second_order["smooth_secular"]["status"] != "CERTIFIED":
+        raise AssertionError("finite generic smooth-secular theorem was lost")
+    if finite_second_order["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("finite generic bounded zero locus was over-promoted")
+    if finite_second_order["causal_retarded"]["status"] != "OPEN":
+        raise AssertionError("finite generic causal theorem was over-promoted")
+    if "multiple |k| fibres" not in finite_second_order["smooth_secular"]["statement"]:
+        raise AssertionError("multi-fibre scope is absent")
+
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("cross-background fail-closed entry changed")

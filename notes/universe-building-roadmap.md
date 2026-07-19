@@ -1109,15 +1109,35 @@ Therefore the complete one-fibre shared-axis `SO(3)` orbit is now
 coefficient-explicit at second order in the smooth exponential-polynomial
 class.
 
+The finite generic carrier has now been promoted separately to `G5` in the
+smooth exponential-polynomial category.  For an arbitrary finite sum of
+generic `ell>=2` Einstein-plus, Einstein-minus and extra-primary modes, with
+all axial/polar parities, `m`, allowed compact momenta and relative phases,
+the complete output label is `j=(L,M,K,Omega,parity)`.  Every nonzero Fourier
+block has zero physical smooth-secular cokernel by the direct exceptional
+`L=0,1` complexes or the generic Smith factors.  At the zero block the
+complete physical cokernel is exactly
+
+```text
+span{zeta_H,zeta_Px,zeta_J1,zeta_J2,zeta_J3}.
+```
+
+Thus multiple absolute-momentum fibres and non-aligned generic harmonic
+superpositions introduce no additional smooth-secular obstruction:
+`Z2^smooth={u:mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0}`.  For bounded corrections the
+finite exact ledger `R_(j,a)=<zeta_(j,a),S_j(u,u)>` is necessary and
+sufficient together with the moment maps, but its coefficientwise common
+zero locus remains `OPEN`.
+
 This advances nonlinear input to the already activated compact-product
-linear bridge but does not certify a nonlinear relative morphism.  Atlas row
-`einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face` retains
-`NO_CERTIFIED_MAP` for causal/retarded transport.  Opposite momenta,
-distinct non-aligned phase/multiplicity superpositions, multiple
-absolute-momentum fibres
-and the causal/retarded class remain open.  Residual equivariance, the
-observable map, the relative \(L_\infty\) morphism, and the quantum lift remain
-open until their own certificates land.
+linear bridge but does not certify a nonlinear relative morphism.  Atlas rows
+`einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face` and
+`einstein.ph.wm.mixed.finite_generic_all_momenta_smooth_cone` retain
+`NO_CERTIFIED_MAP`/`OPEN` for causal/retarded transport.  Exceptional/global
+input modes have not yet been adjoined to the arbitrary finite generic
+carrier.  Infinite-mode completion, the bounded resonance zero locus,
+residual equivariance, the observable map, the relative \(L_\infty\)
+morphism, and the quantum lift remain open until their own certificates land.
 
 ### Shared relative reporting contract
 
