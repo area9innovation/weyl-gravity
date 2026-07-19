@@ -1,0 +1,49 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_SCALAR_L1_ZERO_VARIETIES_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact parity-pencil and third-transvectant decomposition of all three scalar-internal L1 resonance varieties.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L1_zero_varieties.json": "cba54fec164a028febf7e440dfe740f3fb2eb13085e328e1fd88aa760a012739",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L1_zero_varieties.py": "6ef36f1025f8acae7beec0971a680726eba00b4af065a6bf190ad19baab0446d",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L1_zero_varieties.schema.json": "deae4623d70079137da87716222c3dd9064cec3e8fc256dfd7fafb6c6e9155fb",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L1_zero_varieties.py": "995ef20cc754543b21bcf802cd63af5bf412ed8313212a990935cb511dae4850",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L1_zero_varieties.py": "bd8b930747ad8e1b385ec58824e55814013ee8f86a587c4447ac9816827bf223",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-scalar-L1-zero-varieties.md": "94e7f1cb54b81918d0abd92a35a550625a63df4f64f61d9b19cd02dcd3547f29"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds_independent_verifier": 33.04,
+      "independent_verifier_max_rss_kib": 72328,
+      "tests_run": 76,
+      "commands": [
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L1_zero_varieties",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L1_zero_varieties",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 34.35,
+      "max_rss_kib": 68596,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L1_zero_varieties --write",
+      "reason": "The producer extracts all three exact parity pencils, proves their common eigenvalue square, and certifies the third-transvectant rank-drop, square-cone elimination, unmixedness and irreducible incidence decomposition."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This classifies three fibrewise resonance ideals, not the other parent fibres, same-fibre sources, Taub intersections, complete tangent cone or shared-core algebra."
+    }
+  },
+  "claim_boundary": "This certificate classifies three of the twenty-one parent amplitude fibres. Aggregate progress is recorded in the generated atlas. Same-fibre sources, five Taub maps, bounded and smooth-secular correction classes, causal maps, residual observables and quantum claims remain OPEN or NO_CERTIFIED_MAP."
+}
