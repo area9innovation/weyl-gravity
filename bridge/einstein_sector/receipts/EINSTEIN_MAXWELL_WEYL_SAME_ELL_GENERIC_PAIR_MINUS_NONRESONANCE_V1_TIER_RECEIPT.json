@@ -1,0 +1,41 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_ELL_GENERIC_PAIR_MINUS_NONRESONANCE_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Every equal-ell generic k=0 p/q oscillator pair tested against every angularly allowed Einstein-minus target shell.",
+  "content_sha256": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_ell_generic_pair_minus_nonresonance.py": "15cfd48c5a194ee99e7020da1f5de018b08051073475a11864ef0f2c40b71a40",
+    "bridge/certificates/einstein_maxwell_weyl_same_ell_generic_pair_minus_nonresonance.json": "763f0a85a52745ae797b180ff4b98b79612249d2bafd00c483275688aa747169",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_ell_generic_pair_minus_nonresonance.schema.json": "a5872eeae905c2051461a5ad34aaa1a8fdff956800dd517a1f81db1e4a57e825",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_ell_generic_pair_minus_nonresonance.py": "530292feb41fe5a4ae9c3357af62ad8f276a94c8e2bcb39aa2fd28d389a456ff",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_ell_generic_pair_minus_nonresonance.py": "5c10237846a91c8d1416074662aab756643fed10aafb598addc51ebfe5498d0d",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-ell-generic-pair-minus-nonresonance.md": "2c222787b06e0e6f8cbdc9ab5251cda98b32cc0af1dbe1c02b3790ec72856ad5"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_ell_generic_pair_minus_nonresonance --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_same_ell_generic_pair_minus_nonresonance.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_ell_generic_pair_minus_nonresonance"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The exact cross-ell all-branch theorem and the strict minus-frequency bracket are unchanged hashed inputs; equal-ell bounds are exact rational/algebraic inequalities."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Exceptional ell1 times generic pairs, source coefficients, nonzero momentum and causal propagation remain open."
+    }
+  },
+  "claim_boundary": "Complete k=0 generic-pair-to-minus shell arithmetic only; exceptional-generic, source, bounded-cone, causal, residual and quantum claims remain fail-closed."
+}
