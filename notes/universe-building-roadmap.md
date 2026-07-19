@@ -250,9 +250,13 @@ does not retain only those four blocks.  With identity input coordinates and
 the output transported by `tf_g0`, a conformal-Killing symbol channel changes
 by `5 epsilon^2(epsilon^2-12)/144`; its linear term vanishes but its quadratic
 term does not.  The finite rank-310 differential must therefore include
-`k=Kp0` and `ksharp`, and C-G2 now waits on the six-block HPL calculation
-before any common-slab promotion.  This does not demote the formal tangent
-theorem or obstruct a different support-local identification.
+`k=Kp0` and `ksharp`.  The resulting six-block HPL algebra now closes exactly:
+both resolvents terminate after one correction, the cyclic SDR identities
+vanish coefficientwise, and the compressed metric differential retains two
+forced quadratic cross terms.  C-G2 now waits on coefficientwise geometric
+binding of those six differences and the typed endpoint theorem on a declared
+common slab before any causal promotion.  This does not demote the formal
+tangent theorem or obstruct a different support-local identification.
 The analytic endpoint criterion is now background-independent:
 `TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1` proves that every exact endpoint
 `A=P2 P1+V` with normally hyperbolic factors and an order-at-most-two

@@ -1,0 +1,196 @@
+{
+  "analytic_consequence": {
+    "convergence_condition_required": false,
+    "nonlocal_HPL_inverse_required": false,
+    "quadratic_metric_cross_terms_may_be_dropped": false,
+    "remaining_input": "bind all six finite difference operators to the exact Kantowski-Sachs common-slab geometry and verify the metric biwave endpoint hypotheses"
+  },
+  "claim_boundary": "This exact theorem closes the algebraic HPL problem for the six-block finite incidence and proves that the quadratic metric cross terms cannot be discarded. It does not yet bind those abstract differences to the coefficient-complete Kantowski-Sachs geometry, verify the endpoint Volterra hypotheses there, promote a common-slab or whole-cylinder causal theorem, or establish Hadamard or quantum claims.",
+  "dependency_refs": {
+    "base_rank310_SDR": {
+      "artifact_id": "NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1.json",
+      "sha256": "112a21a1b46889143505c41773295845a627d2757c9d5218f0eded93a4dadaae"
+    },
+    "finite_KS_incidence_obstruction": {
+      "artifact_id": "NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1.json",
+      "sha256": "fbf8a5d54b428744aabc751ec6723cf8fdbc218090197ba5b951a39795cf49d5"
+    },
+    "four_block_HPL": {
+      "artifact_id": "NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1.json",
+      "sha256": "f85a910d1ab5325f767609c9f9ea2af029afeca341ab2fe6e39a0b4c564a115e"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "all_chain_retract_and_side_identities": true,
+    "both_HPL_resolvents_terminate": true,
+    "cyclicity_and_pairing_pullback": true,
+    "six_block_Q_squared": true,
+    "two_metric_quadratic_cross_terms_retained": true
+  },
+  "exact_fixture": {
+    "H_delta_nonzero_blocks": [
+      {
+        "column": 0,
+        "row": 0,
+        "value": "-1 L0D p0"
+      },
+      {
+        "column": 2,
+        "row": 4,
+        "value": "-1/2 MD"
+      },
+      {
+        "column": 7,
+        "row": 5,
+        "value": "Jsharp ksharpD"
+      }
+    ],
+    "block_count": 10,
+    "coefficient_algebra": "noncommutative exact finite-difference operator algebra",
+    "delta_H_nonzero_blocks": [
+      {
+        "column": 1,
+        "row": 3,
+        "value": "kD J"
+      },
+      {
+        "column": 8,
+        "row": 6,
+        "value": "-1/2 MD"
+      },
+      {
+        "column": 9,
+        "row": 9,
+        "value": "-1 p0sharp L0sharpD"
+      }
+    ],
+    "delta_nonzero_blocks": [
+      {
+        "column": 0,
+        "row": 1,
+        "value": "gD"
+      },
+      {
+        "column": 0,
+        "row": 3,
+        "value": "kD"
+      },
+      {
+        "column": 2,
+        "row": 6,
+        "value": "-1/2 MD"
+      },
+      {
+        "column": 3,
+        "row": 7,
+        "value": "BD"
+      },
+      {
+        "column": 5,
+        "row": 9,
+        "value": "gsharpD"
+      },
+      {
+        "column": 7,
+        "row": 9,
+        "value": "ksharpD"
+      }
+    ],
+    "finite_relations": [
+      "gD J=0",
+      "J gD=-L0D p0",
+      "p0 L0D=0",
+      "Jsharp gsharpD=0",
+      "gsharpD Jsharp=-p0sharp L0sharpD",
+      "L0sharpD p0sharp=0",
+      "(B+BD)(k+kD)=0",
+      "(ksharp+ksharpD)(B+BD)=0"
+    ],
+    "identity_defect_counts": {
+      "Delta_H_squared": 0,
+      "H_Delta_squared": 0,
+      "Q_new_odd_cyclic": 0,
+      "Q_new_squared": 0,
+      "homotopy_inclusion": 0,
+      "homotopy_odd_cyclic": 0,
+      "homotopy_squared": 0,
+      "inclusion_chain": 0,
+      "metric_pairing_pullback": 0,
+      "projection_chain": 0,
+      "projection_homotopy": 0,
+      "projection_inclusion": 0,
+      "projection_is_inclusion_adjoint": 0,
+      "retract": 0
+    },
+    "inverse_series_length": 2,
+    "metric_quadratic_cross_corrections": [
+      {
+        "column": 0,
+        "row": 1,
+        "value": "-1 kD L0D"
+      },
+      {
+        "column": 2,
+        "row": 3,
+        "value": "-1 L0sharpD ksharpD"
+      }
+    ],
+    "transferred_metric_differential": [
+      {
+        "column": 0,
+        "row": 1,
+        "value": "K + kD L0 + kD L0D"
+      },
+      {
+        "column": 1,
+        "row": 2,
+        "value": "B + BD"
+      },
+      {
+        "column": 2,
+        "row": 3,
+        "value": "Ksharp + L0sharp ksharpD + L0sharpD ksharpD"
+      }
+    ]
+  },
+  "flags": {
+    "HADAMARD_STATE": false,
+    "KS_SIX_BLOCK_GEOMETRIC_COEFFICIENT_BINDING": false,
+    "NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1": true,
+    "QUANTUM_CLAIM": false,
+    "SIX_BLOCK_FINITE_SUPPORT_LOCAL_HPL": true,
+    "TRANSVERSE_KS_COMMON_SLAB_CAUSAL_TRANSFER": false,
+    "TRANSVERSE_KS_GLOBAL_SMOOTH_CYLINDER_FAMILY": false
+  },
+  "next_gate": "NARIAI_KS_SIX_BLOCK_GEOMETRIC_BINDING_AND_COMMON_SLAB_ENDPOINT",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/nariai_parent_detour_mapping_cone_repair.py": "193ea3d204096d17b527172dca6fd018f23be0c880c611896163a928ada82d8f",
+      "d_quotient_classical/causal_transfer/nariai_rank310_six_block_finite_hpl.py": "0880149039d2f01f84822663f80b73e60a1be1c077676298790e3e76ef838b17",
+      "d_quotient_classical/causal_transfer/tests/test_nariai_rank310_six_block_finite_hpl.py": "4d09b80650108bfa084c6e44e9463b558e5c5825b919698d2aa20712fe2c097f",
+      "d_quotient_classical/causal_transfer/verify_nariai_rank310_six_block_finite_hpl.py": "c3f46953c9fa09ddb695bf1da352ba25fc4fd92fa1f666a012525b84c62ad491",
+      "d_quotient_classical/schema/nariai-rank310-six-block-finite-hpl-v1.schema.json": "3038e3364b0a3768883d76d4787ca7266360846bd1158afca4c59402bc012480"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_rank310_six_block_finite_hpl.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_rank310_six_block_finite_hpl.py",
+      "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_rank310_six_block_finite_hpl",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-rank310-six-block-finite-hpl-v1.schema.json -d d_quotient_classical/certificates/NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1.json"
+    ]
+  },
+  "result_id": "NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1",
+  "result_state": "SIX_BLOCK_FINITE_HPL_TERMINATES_WITH_EXACT_METRIC_CROSS_CORRECTIONS",
+  "schema": "pure-weyl-nariai-rank310-six-block-finite-hpl-v1",
+  "theorem": {
+    "finite_formulas": "I1=(1-H Delta)I0, p1=p0(1-Delta H), H1=H0-H0 Delta H0, qmet1=p1 Q1 I1",
+    "scope": "exact finite operator algebra once the six geometric difference blocks obey the displayed complement and gauge identities",
+    "statement": "For an exact cyclic rank-310 differential whose finite difference from the unit-Nariai split presentation occupies g,k,M,B and the two cyclic-dual blocks, both HPL resolvents terminate after one correction. The resulting cyclic support-local SDR is exact and the retained metric differential contains two forced quadratic gauge/splitting cross terms."
+  }
+}

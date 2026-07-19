@@ -2266,8 +2266,14 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    not retain only those four blocks: after the declared tracefree output
    transport, a conformal-Killing symbol channel changes first at order
    `epsilon^2`, forcing `k=Kp0` and `ksharp` into the finite incidence.  The
-   next gate is the resulting six-block HPL calculation.  This neither
-   demotes the formal theorem nor obstructs a common-slab construction.
+   six-block HPL calculation is now exact: both resolvents terminate after one
+   correction, all cyclic SDR identities close, and the metric endpoint
+   acquires the two required quadratic terms `-kD L0D` and
+   `-L0sharpD ksharpD`.  This is an abstract finite-operator theorem, not yet
+   the coefficient-complete Kantowski--Sachs realization.  The active gate is
+   to bind all six difference blocks to that exact geometry and verify the
+   typed biwave endpoint on a declared common slab.  This neither demotes the
+   formal theorem nor promotes a whole-cylinder causal result.
 9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` is now official:
    all six minimal roles, the Bach Euler coordinate, both Noether rows,
    Lie/Weyl covariance, and the four filtration identities replay. Quantum

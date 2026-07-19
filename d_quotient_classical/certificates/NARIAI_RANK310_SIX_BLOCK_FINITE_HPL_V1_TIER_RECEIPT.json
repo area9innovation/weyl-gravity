@@ -1,0 +1,72 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1_TIER_RECEIPT",
+  "claim_id": "NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "d_quotient_classical/certificates/NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1.json",
+      "sha256": "95a3cc1329ec3af2130e965105ddfa801b344fadebe56750a4b1147c7c17dc62"
+    },
+    "schema": {
+      "path": "d_quotient_classical/schema/nariai-rank310-six-block-finite-hpl-v1.schema.json",
+      "sha256": "3038e3364b0a3768883d76d4787ca7266360846bd1158afca4c59402bc012480"
+    },
+    "producer": {
+      "path": "d_quotient_classical/causal_transfer/nariai_rank310_six_block_finite_hpl.py",
+      "sha256": "0880149039d2f01f84822663f80b73e60a1be1c077676298790e3e76ef838b17"
+    },
+    "independent_verifier": {
+      "path": "d_quotient_classical/causal_transfer/verify_nariai_rank310_six_block_finite_hpl.py",
+      "sha256": "c3f46953c9fa09ddb695bf1da352ba25fc4fd92fa1f666a012525b84c62ad491"
+    },
+    "tests": {
+      "path": "d_quotient_classical/causal_transfer/tests/test_nariai_rank310_six_block_finite_hpl.py",
+      "sha256": "4d09b80650108bfa084c6e44e9463b558e5c5825b919698d2aa20712fe2c097f"
+    },
+    "report": {
+      "path": "d_quotient_classical/reports/nariai-rank310-six-block-finite-hpl.md",
+      "sha256": "eb2680088fe06e75c3885777a2e69a90b7ec706cbbf52b56d71dad9e901cc119"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "Python sources parsed during execution",
+        "strict Draft 2020-12 schema validation",
+        "planning work item parsed as JSON",
+        "scoped diff inspected before commit"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 4.4,
+      "commands": [
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_rank310_six_block_finite_hpl.py --write --guards",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-rank310-six-block-finite-hpl-v1.schema.json -d d_quotient_classical/certificates/NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1.json",
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_rank310_six_block_finite_hpl.py",
+        "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_rank310_six_block_finite_hpl"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.7,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This scoped theorem closes an algebraic HPL prerequisite and updates its direct atlas consumer; it does not freeze a paper theorem, change shared core algebra, or prepare a release."
+    }
+  },
+  "claim_boundary": "This receipt certifies the exact six-block finite HPL algebra, including its two mandatory quadratic metric cross terms, and its fail-closed atlas integration. It does not bind the six abstract difference operators to the coefficient-complete Kantowski--Sachs geometry, verify the typed endpoint hypotheses, or promote a common-slab, whole-cylinder, Hadamard, or quantum theorem."
+}

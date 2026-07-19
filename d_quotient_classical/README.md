@@ -653,6 +653,17 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1.json`](certificates/NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1.json),
   [`reports/nariai-ks-four-block-incidence-obstruction.md`](reports/nariai-ks-four-block-incidence-obstruction.md)
 
+- Six-block finite HPL theorem: after adjoining the required variations of
+  `k=K p0` and `ksharp`, both HPL resolvents still terminate after one
+  correction and every cyclic SDR identity vanishes in the exact
+  noncommutative operator algebra.  The transferred metric differential has
+  two mandatory quadratic cross terms, `-kD L0D` and
+  `-L0sharpD ksharpD`.  This closes the abstract six-block algebra only; the
+  coefficient-complete Kantowski--Sachs binding and endpoint/common-slab
+  causal theorem remain open:
+  [`certificates/NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1.json`](certificates/NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1.json),
+  [`reports/nariai-rank310-six-block-finite-hpl.md`](reports/nariai-rank310-six-block-finite-hpl.md)
+
 - Exact global disposition of the transverse Einstein branch: the
   Kantowski--Sachs family generating the certified tangent exists on every
   fixed compact time slab, but for every nonzero `0<|epsilon|<1` its areal

@@ -111,8 +111,12 @@ def verify() -> None:
     exact_ids = {item["result_id"] for item in transverse_exact["evidence"]}
     if "NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1" not in exact_ids:
         raise AssertionError("finite KS incidence obstruction missing")
-    if "include k and ksharp" not in transverse_exact["claim_boundary"]:
-        raise AssertionError("six-block next gate missing")
+    if "NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1" not in exact_ids:
+        raise AssertionError("six-block finite HPL theorem missing")
+    if "two forced quadratic metric cross terms" not in transverse_exact["claim_boundary"]:
+        raise AssertionError("six-block HPL consequence missing")
+    if "binding and the metric endpoint/common-slab causal theorem remain open" not in transverse_exact["claim_boundary"]:
+        raise AssertionError("six-block geometric activation gate missing")
 
 
 if __name__ == "__main__":

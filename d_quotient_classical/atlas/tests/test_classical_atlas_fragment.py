@@ -101,7 +101,12 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             "NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
-        self.assertIn("include k and ksharp", entry["claim_boundary"])
+        self.assertIn(
+            "NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("two forced quadratic metric cross terms", entry["claim_boundary"])
+        self.assertIn("common-slab causal theorem remain open", entry["claim_boundary"])
 
     def test_transverse_finite_hpl_is_evidence_not_geometric_promotion(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_tangent"]
