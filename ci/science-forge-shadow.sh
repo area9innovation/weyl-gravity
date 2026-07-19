@@ -122,7 +122,8 @@ trap cleanup EXIT
 # ---- Go discovery (gap 1: mise-managed Go absent from PATH) ----------------
 GO="go"
 if ! command -v go >/dev/null 2>&1; then
-  if command -v mise >/dev/null 2>&1 && mise exec -- go version >/dev/null 2>&1; then
+  if command -v mise >/dev/null 2>&1 &&
+     (cd "$FORGE_REPO" && mise exec -- go version >/dev/null 2>&1); then
     GO="mise exec -- go"
   else
     GO=""
