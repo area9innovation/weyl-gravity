@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-cyclic-five-current-cone-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "generated_layout", "cyclic_completion", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-cyclic-five-current-cone-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1"},
+    "result_state": {"const": "CYCLIC_BV_DUAL_FIVE_CURRENT_CONE_CERTIFIED"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "object", "minProperties": 10},
+    "dependencies": {"type": "object", "minProperties": 6},
+    "generated_layout": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "row_count", "degree_ranks"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "row_count": {"const": 50}, "degree_ranks": {"const": [5, 20, 20, 5]}
+      }
+    },
+    "cyclic_completion": {"type": "object", "minProperties": 8},
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["all_50_current_cone_rows_included", "odd_pairing_nondegenerate", "unary_current_cone_q1_squared_zero", "unary_current_cone_cyclic", "five_field_field_current_operations_exact", "forced_mixed_formal_adjoint_operations_exported", "arity_two_current_cone_cyclicity_exact", "finite_order_support_local", "cyclic_dual_bv_rows_certified", "global_improvement_smoothness_certified", "slice_integral_matches_complete_five_charge_q2", "direct_f2_repaired", "arity_three_authorized", "causal_observable_particle_or_quantum_claim"],
+      "properties": {
+        "all_50_current_cone_rows_included": {"const": true}, "odd_pairing_nondegenerate": {"const": true},
+        "unary_current_cone_q1_squared_zero": {"const": true}, "unary_current_cone_cyclic": {"const": true},
+        "five_field_field_current_operations_exact": {"const": true}, "forced_mixed_formal_adjoint_operations_exported": {"const": true},
+        "arity_two_current_cone_cyclicity_exact": {"const": true}, "finite_order_support_local": {"const": true},
+        "cyclic_dual_bv_rows_certified": {"const": true}, "global_improvement_smoothness_certified": {"const": false},
+        "slice_integral_matches_complete_five_charge_q2": {"const": false}, "direct_f2_repaired": {"const": false},
+        "arity_three_authorized": {"const": false}, "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "CERTIFY_GLOBAL_SUPERPOTENTIAL_AND_REPLAY_FIVE_CAUCHY_CHARGES"},
+    "provenance": {"type": "object", "minProperties": 2},
+    "claim_boundary": {"type": "string", "minLength": 80}
+  }
+}

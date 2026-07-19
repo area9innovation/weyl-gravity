@@ -1593,6 +1593,85 @@
       }
     },
     {
+      "claim_boundary": "This LOCAL-ALGEBRAIC row certifies the complete degree-rank (5,20,20,5) cyclic horizontal current cone and the factorized formal-adjoint completion of all five field-field current operations. It does not certify global smoothness of the coordinate superpotential, closed-slice cancellation, equality with every reduced charge block, a repaired f2, arity three, causal propagation, observables, particles or quantum transfer.",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1",
+          "sha256": "1f2d2c59d043e19bd142e487f387093d4e37a19258d6ad264f8ad37920a72da8"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1",
+          "sha256": "91c99cfa310b380933e24e374976c8c8d73ebe0edfadfb9237779fefb612e596"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1",
+          "sha256": "24f398bba251649fefec48bdbcc2aa35bf4ca113cdcf031819b9e1d820e491e9"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1",
+          "sha256": "11e8119ab8fc9756fc5b4c5520e648599fd1264e7776cc79d91dc80645be1c56"
+        }
+      ],
+      "id": "nonlinear.product.bridge2.relative_cyclic_five_current_cone",
+      "mode_data": {
+        "dispersion": {
+          "statement": "This is an all-field horizontal current/divergence BV cone, not a mode dispersion result.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "All 50 current, divergence and odd-BV dual rows carry a nondegenerate pairing; the mixed arity-two operations are the forced formal adjoints of the five exact field-field currents.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The cyclic receiver does not repair the independently certified direct f2 obstruction or authorize arity three.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The local current receiver is cyclic, but the closed-slice globalization and bounded relative f2 remain open.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "All current-cone maps are finite-order and support local; no retarded Green enlargement is certified.",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The cyclic local receiver does not construct a smooth-secular correction.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The local five-current operation is exact and cyclic, but global chart smoothness and its complete five-charge Cauchy integral remain unproved.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compact magnetic Plebanski-Hacyan product",
+        "boundaries": "local coefficient jets; no Cauchy integration",
+        "carrier": "cyclic BV completion of Omega_H^3(g_stab^*) to Omega_H^4(g_stab^*)",
+        "charge_sector": "H,P_x,J_1,J_2,J_3 connected-isometry stabilizers",
+        "degree": "(-1,0,1,2) with ranks (5,20,20,5)",
+        "ell": "not harmonic-reduced",
+        "k": "not harmonic-reduced",
+        "m": "not harmonic-reduced",
+        "omega": "not harmonic-reduced",
+        "parity": "canonical odd BV pairing",
+        "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "Every real-structure-preserving product-equivariant cohomology-isomorphic correction is obstructed from being cyclic for the standard action-derived pairings on the generic physical fibres. This includes corrected nonidentity maps, declared chain-homotopy repairs and cohomologically exact current improvements. A noncyclic off-shell triangle carrying three distinct forms, an explicitly pairing-changed theorem, exceptional/global sectors and final residual descent remain OPEN or NO_CERTIFIED_MAP. This result does not by itself decide Delta2, ell3 on cohomology, observables, particles or quantum states.",
       "descriptions": {
         "causal": "NOT_APPLICABLE",
@@ -1668,7 +1747,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py",
-  "generated_by_sha256": "29f66db8605efc44b072393ea5b6440303f4d0b788a40d90f24abe04dfb3f396",
+  "generated_by_sha256": "b884b4412503ef82b0ea2c84c77107e32bbdc7159c3f6d95fb8336e5f3563015",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

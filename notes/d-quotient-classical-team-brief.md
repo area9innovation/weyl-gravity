@@ -513,9 +513,26 @@ basis exports
 
 with 2,478 finite-order PBW terms and zero symbolic replay defect.  An
 independent coordinate-curvature-momentum fixture also matches the sparse
-Lee--Wald coefficient.  The next gate is the cyclic BV-dual completion and
-the global chart/Cauchy-slice cancellation needed to replay all five reduced
-charges.  No \(f_2\) repair or arity-three promotion follows yet.
+Lee--Wald coefficient.
+
+`EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1` now closes the cyclic
+row half of the successor gate.  The minimal local receiver has degree ranks
+
+\[
+(5,20,20,5),
+\]
+
+consisting of five dual-divergence rows, twenty dual-current rows, twenty
+current rows and five divergence rows.  Horizontal divergence and negative
+gradient are exact formal-adjoint unary blocks under the canonical odd
+pairing.  The five symmetric field--field current operations are retained
+coefficientwise; their two mixed operations are the forced finite-order
+formal adjoints, so the lowered cubic tensors are cyclic without a fitted
+pairing or sign.  The remaining gate is genuinely global: prove that the
+coordinate superpotential defines a smooth density across the sphere charts,
+discard its closed-Cauchy-slice integral, and replay all five integrated
+currents against the complete reduced charge operation.  Those claims remain
+false; no \(f_2\) repair or arity-three promotion follows yet.
 
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.

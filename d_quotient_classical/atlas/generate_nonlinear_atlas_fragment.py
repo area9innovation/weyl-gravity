@@ -49,6 +49,7 @@ CERTS = {
     "relative_hessian_green_current_cone": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json",
     "relative_five_stabilizer_current_cone": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1.json",
     "relative_green_lee_wald_improvement": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1.json",
+    "relative_cyclic_five_current_cone": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -394,6 +395,8 @@ def entries() -> list[dict[str, Any]]:
     relative_five_current_cone_scope = relative_five_current_cone["scope"]
     relative_current_improvement = json.loads(CERTS["relative_green_lee_wald_improvement"].read_text())
     relative_current_improvement_scope = relative_current_improvement["scope"]
+    relative_cyclic_current_cone = json.loads(CERTS["relative_cyclic_five_current_cone"].read_text())
+    relative_cyclic_current_cone_scope = relative_cyclic_current_cone["scope"]
     identity_cyclic_scope = json.loads(CERTS["identity_cyclic_obstruction"].read_text())["scope"]
     return [
         {
@@ -820,6 +823,24 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("relative_green_lee_wald_improvement", "relative_five_stabilizer_current_cone", "relative_hessian_green_current_cone", "relative_polarized_noether_current_seed"),
             "claim_boundary": "The exact 2,478-term support-local superpotential proves equality of the canonical Green and action Lee-Wald current representatives up to a horizontal divergence on the standard product-coordinate atlas. Cyclic BV-dual rows, global chart/slice cancellation, the complete five-charge Cauchy replay, repaired f2, arity three, causal, observational, particle and quantum claims remain OPEN or NO_CERTIFIED_MAP.",
+        },
+        {
+            "id": "nonlinear.product.bridge2.relative_cyclic_five_current_cone",
+            "scope": relative_cyclic_current_cone_scope,
+            "descriptions": {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "The local current receiver is cyclic, but the closed-slice globalization and bounded relative f2 remain open."),
+                    ("OPEN", "The cyclic local receiver does not construct a smooth-secular correction."),
+                    ("OPEN", "All current-cone maps are finite-order and support local; no retarded Green enlargement is certified."),
+                ),
+                dispersion=("NOT_APPLICABLE", "This is an all-field horizontal current/divergence BV cone, not a mode dispersion result."),
+                pairing=("CERTIFIED", "All 50 current, divergence and odd-BV dual rows carry a nondegenerate pairing; the mixed arity-two operations are the forced formal adjoints of the five exact field-field currents."),
+                taub=("OPEN", "The local five-current operation is exact and cyclic, but global chart smoothness and its complete five-charge Cauchy integral remain unproved."),
+                resonance=("OPEN", "The cyclic receiver does not repair the independently certified direct f2 obstruction or authorize arity three."),
+            ),
+            "evidence": _evidence("relative_cyclic_five_current_cone", "relative_green_lee_wald_improvement", "relative_five_stabilizer_current_cone", "relative_complete_standard_charge_q2"),
+            "claim_boundary": "This LOCAL-ALGEBRAIC row certifies the complete degree-rank (5,20,20,5) cyclic horizontal current cone and the factorized formal-adjoint completion of all five field-field current operations. It does not certify global smoothness of the coordinate superpotential, closed-slice cancellation, equality with every reduced charge block, a repaired f2, arity three, causal propagation, observables, particles or quantum transfer.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction",

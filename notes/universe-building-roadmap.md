@@ -1581,9 +1581,13 @@ Green current; all five connected stabilizers have zero-defect local
 current/divergence pairs; and
 `EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1` exports a 2,478-term
 support-local superpotential satisfying
-`omega_LW^mu-omega_G^mu=partial_nu U^(mu nu)` exactly.  The active Bridge-1
-gate is therefore the cyclic BV-dual completion plus global chart/Cauchy-slice
-cancellation and five-charge replay.  Until that lands, the atlas row remains
+`omega_LW^mu-omega_G^mu=partial_nu U^(mu nu)` exactly.  The receiver has also
+advanced through `EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1`: all
+50 current, divergence and odd-BV dual rows are included, its unary cone is
+cyclic, and the five field--field current maps have their forced finite-order
+mixed formal adjoints.  The active Bridge-1 remainder is therefore global
+chart/Cauchy-slice cancellation and five-charge replay.  Until that lands,
+the atlas row remains
 fail-closed for the global charge receiver, repaired `f2`, arity three and
 causal propagation.
 

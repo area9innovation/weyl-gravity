@@ -1,0 +1,47 @@
+{
+  "schema": "pure-weyl-verification-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1_TIER_RECEIPT",
+  "subject_result_id": "EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1",
+  "date": "2026-07-19",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": ["Python sources parsed during execution", "Draft 2020-12 schema accepted in strict AJV mode", "scoped git diff check"]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_cyclic_five_current_cone --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_cyclic_five_current_cone",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_cyclic_five_current_cone",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-cyclic-five-current-cone-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1.json"
+      ],
+      "elapsed_seconds": {"producer": 15.01, "independent_consumer": 7.50, "unit_tests": 11.612},
+      "peak_kib": {"producer": 93604, "independent_consumer": 93716},
+      "unit_tests": {"run": 3, "failures": 0, "errors": 0}
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The current-cone interface and nonlinear atlas evidence chain changed.",
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.atlas.generate_nonlinear_atlas_fragment --write",
+        "PYTHONPATH=. python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/nonlinear-atlas-fragment.json",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment"
+      ],
+      "atlas_unit_tests": {"run": 22, "failures": 0, "errors": 0}
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No release, theorem freeze, or shared core-algebra change was requested."
+    }
+  },
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1.json", "sha256": "1f2d2c59d043e19bd142e487f387093d4e37a19258d6ad264f8ad37920a72da8"},
+    "generated_layout": {"path": "d_quotient_classical/generated/einstein_weyl_relative_cyclic_five_current_cone_v1/layout.json", "sha256": "8fd1abfb936986af931971035f6e78ef9051cb081d8eba1b8ab4f62c2a95f263"},
+    "schema": {"path": "d_quotient_classical/schema/relative-cyclic-five-current-cone-v1.schema.json", "sha256": "0a3c9ff7f0574deb62e53ea088f429ed40501b4c8d5d2f1434356a927b5446f4"},
+    "producer": {"path": "d_quotient_classical/relative/einstein_weyl_relative_cyclic_five_current_cone.py", "sha256": "35ac93b852704bdb097ee47a794fb727ee44734f164a3e4c6efc8eb17503540f"},
+    "independent_consumer": {"path": "d_quotient_classical/relative/verify_einstein_weyl_relative_cyclic_five_current_cone.py", "sha256": "d126958768d6e6a0edb17c018e2351de6274b45643f83002c3016d49e5664dd8"},
+    "tests": {"path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_cyclic_five_current_cone.py", "sha256": "b06b33b824319d9fc7af1d0059e12392f1945d1783c2484f36697165b7b5e38f"}
+  },
+  "claim_boundary": "This receipt verifies the local 50-row cyclic current/divergence BV cone. It does not certify global chart smoothness, closed-slice cancellation, the complete five-charge Cauchy replay, repaired f2, arity three or a causal theorem."
+}
