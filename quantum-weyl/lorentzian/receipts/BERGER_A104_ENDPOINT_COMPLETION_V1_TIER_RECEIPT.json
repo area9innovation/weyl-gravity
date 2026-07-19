@@ -1,0 +1,54 @@
+{
+  "receipt_id": "BERGER_A104_ENDPOINT_COMPLETION_V1_TIER_RECEIPT",
+  "result_id": "BERGER_A104_ENDPOINT_COMPLETION",
+  "recorded_at": "2026-07-20",
+  "test_tiers": [
+    {
+      "command": "PYTHONPATH=. python3 -m d_quotient_classical.backreacted_clock.berger_endpoint_a24_cauchy_export --check",
+      "elapsed_seconds": 9.10,
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_a104_endpoint_completion_certificate --check",
+      "elapsed_seconds": 9.82,
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_a104_endpoint_completion",
+      "elapsed_seconds": 0.07,
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl:. python3 -m unittest d_quotient_classical/backreacted_clock/tests/test_berger_endpoint_a24_cauchy_export.py quantum-weyl/lorentzian/tests/test_berger_a104_endpoint_completion.py -v",
+      "elapsed_seconds": 16.35,
+      "status": "PASS_10_TESTS",
+      "tier": 1
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py -v && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "elapsed_seconds": 14.59,
+      "status": "PASS_7_TESTS_AND_3_VERIFIERS",
+      "tier": 2
+    },
+    {
+      "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s quantum-weyl/lorentzian/schema/berger-a104-endpoint-completion-v1.schema.json && npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/lorentzian/schema/berger-a104-endpoint-completion-v1.schema.json -d quantum-weyl/lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
+      "elapsed_seconds": 8.28,
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s quantum-weyl/lorentzian/schema/berger-endpoint-a24-cauchy-export-v1.schema.json && npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/lorentzian/schema/berger-endpoint-a24-cauchy-export-v1.schema.json -d d_quotient_classical/certificates/BERGER_ENDPOINT_A24_CAUCHY_EXPORT.json",
+      "elapsed_seconds": 6.71,
+      "status": "PASS",
+      "tier": 1
+    }
+  ],
+  "tier_0": {
+    "command": "python3 -m py_compile d_quotient_classical/backreacted_clock/berger_endpoint_a24_cauchy_export.py quantum-weyl/lorentzian/berger_a104_endpoint_completion.py quantum-weyl/lorentzian/berger_a104_endpoint_completion_certificate.py quantum-weyl/lorentzian/verify_berger_a104_endpoint_completion.py quantum-weyl/lorentzian/tests/test_berger_a104_endpoint_completion.py",
+    "status": "PASS"
+  },
+  "tier_3_not_run": "No shared core algebra, Hadamard/QME lifecycle, theorem freeze, release or tag is promoted. The affected classical-export, quantum-consumer and atlas chain is covered by tiers 0-2."
+}

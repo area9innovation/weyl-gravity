@@ -31,6 +31,7 @@ DEPENDENCIES = {
     "curvature_CCR": QROOT / "lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
     "Berger_causal_chain": QROOT / "lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
     "Berger_Hadamard_gate": QROOT / "lorentzian/certificates/BERGER_HADAMARD_CONSTRUCTION_GATE.json",
+    "Berger_A104_complete": QROOT / "lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
     "Slavnov_preflight": QROOT / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
     "Euclidean_elliptic_complex": QROOT / "spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json",
     "nonconformal_coefficient_match": QROOT / "spectral/euclidean/certificates/REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH.json",
@@ -197,6 +198,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     curvature = values["curvature_CCR"]
     causal = values["Berger_causal_chain"]
     hadamard = values["Berger_Hadamard_gate"]
+    berger_a104 = values["Berger_A104_complete"]
     slavnov = values["Slavnov_preflight"]
     elliptic = values["Euclidean_elliptic_complex"]
     coefficient = values["nonconformal_coefficient_match"]
@@ -308,6 +310,14 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         or hadamard.get("logical_separation", {}).get("complex_structure_or_covariance")
         != "NOT_CONSTRUCTED_ON_54_ROW_DISTRIBUTIONAL_COMPLEX"
         or hadamard.get("claim_flags", {}).get("BERGER_HADAMARD_DATA") is not False
+        or berger_a104.get("claim_flags", {}).get("BERGER_FULL_A104_CAUCHY_OPERATOR")
+        is not True
+        or berger_a104.get("coverage", {}).get("known_coordinates") != 10816
+        or berger_a104.get("coverage", {}).get("unknown_coordinates") != 0
+        or berger_a104.get("claim_flags", {}).get("BERGER_Q_CAUCHY_104")
+        is not False
+        or berger_a104.get("claim_flags", {}).get("BERGER_HADAMARD_DATA")
+        is not False
     ):
         raise ValueError("covariant/ Berger import boundary drifted")
 
@@ -1012,20 +1022,20 @@ def _berger_gap(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             "background": "compact positive Berger clock",
             "boundaries": "R x S3 with compact Cauchy surfaces",
             "charge_sector": "retained 26-row classical BV carrier",
-            "carrier": "causal 26-row complex; stationary spectral mode basis not supplied",
+            "carrier": "causal 26-row complex with complete exact 104-row Cauchy evolution table; closed stationary spectral mode basis not supplied",
             "degree": "all retained BV degrees",
             "parity": "NO_CERTIFIED_MAP",
             "ell": "NO_CERTIFIED_MAP",
             "m": "NO_CERTIFIED_MAP",
             "k": "NO_CERTIFIED_MAP",
-            "omega": "NO_CERTIFIED_MAP: generalized-zero and nonzero spectrum not imported",
+            "omega": "NO_CERTIFIED_MAP: complete finite coefficient table exists, but the closed generalized-zero and nonzero spectrum is not certified",
         },
         {"causal": "CERTIFIED", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "OBSTRUCTED"},
         {
             "dispersion": _claim("NO_CERTIFIED_MAP", "no stationary physical mode basis"),
             "lee_wald": _claim("NO_CERTIFIED_MAP", "carrier pairing exists but has no modewise restriction"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "no per-mode tangent-cone ledger"),
-            "resonance": _claim("NO_CERTIFIED_MAP", "generalized zero and nonzero stationary spectrum not imported"),
+            "resonance": _claim("NO_CERTIFIED_MAP", "full A104 is exact; closed-realization zero/Jordan and nonzero spectral ledgers are not computed"),
             "second_order": _second_order(
                 ("OPEN", "Berger finite-harmonic cone not classified"),
                 ("OPEN", "Berger finite-harmonic cone not classified"),
@@ -1035,11 +1045,11 @@ def _berger_gap(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
         _quantum_data(
             "CARRIER_IMPORT_GAP",
             ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
-            imported=("NO_CERTIFIED_MAP", "NO: causal carrier imported, no stationary mode crosswalk"),
+            imported=("NO_CERTIFIED_MAP", "NO: causal carrier and full A104 imported, no closed stationary mode crosswalk"),
             cocycle=("NO_CERTIFIED_MAP", "no per-mode cohomology ledger"),
             exactness=("NO_CERTIFIED_MAP", "no per-mode cohomology ledger"),
             pairing=("NO_CERTIFIED_MAP", "carrier pairing has no modewise restriction"),
-            complex_structure=("OPEN", "not constructed on the 54-row distributional complex"),
+            complex_structure=("OPEN", "q_Cauchy, Cauchy/Krein form, real structure and closed spectral splitting are not constructed"),
             hadamard=("OPEN", "not constructed"),
             state_space=("OPEN", "reduced Krein evidence does not define a Berger physical state space"),
             qme=("OBSTRUCTED", "strict fixed-field-content local Euclidean QME is obstructed"),
@@ -1047,8 +1057,8 @@ def _berger_gap(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             particle=("NO_CERTIFIED_MAP", "no mode basis or Hadamard state"),
             crosswalk=("NO_CERTIFIED_MAP", "retained 26 rows to stationary physical modes"),
         ),
-        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Slavnov_preflight", "regulated_Slavnov_breaking"),
-        "The 26/54-row causal carrier is imported, but it is not a stationary mode ledger. No physical mode, complex structure, Hadamard state, or particle is inferred.",
+        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_A104_complete", "Slavnov_preflight", "regulated_Slavnov_breaking"),
+        "The 26/54-row causal carrier and all 10,816 coefficients of A104 are imported, but finite PBW data are not a closed stationary mode ledger. q_Cauchy, the Cauchy/Krein form, real structure, zero isolation and the spectral covariance remain open. No physical mode, complex structure, Hadamard state, or particle is inferred.",
     )
 
 

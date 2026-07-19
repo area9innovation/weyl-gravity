@@ -1,0 +1,281 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus LORENTZIAN-CAUSAL composition imports the exact classical ghost and identity A12 blocks into the frozen global ordering and assembles every coefficient of A104. It does not construct q_Cauchy, the Cauchy/Krein form or real structure, prove closedness or isolate zero, split frequencies, construct a covariance or Hadamard state, restore a QME or make an interacting quantum claim.",
+  "claim_flags": {
+    "BERGER_A104_CLOSED_GENERATOR": false,
+    "BERGER_A104_ZERO_ISOLATED": false,
+    "BERGER_CAUCHY_KREIN_FORM": false,
+    "BERGER_FULL_A104_CAUCHY_OPERATOR": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_Q_CAUCHY_104": false,
+    "BERGER_STATIONARY_GENERATOR_ACCEPTED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "eb56d5aff7d622de423d4994051b0e048c4fb4bf",
+  "coverage": {
+    "closed_blocks": [
+      "ghost_A12",
+      "identity_A12"
+    ],
+    "known_coordinates": 10816,
+    "known_nonzero_sparse_entries": 470,
+    "total_coordinates": 10816,
+    "unknown_coordinates": 0
+  },
+  "dependency_refs": {
+    "classical_endpoint_A24_export": {
+      "artifact_id": "BERGER_ENDPOINT_A24_CAUCHY_EXPORT",
+      "path": "d_quotient_classical/certificates/BERGER_ENDPOINT_A24_CAUCHY_EXPORT.json",
+      "sha256": "117387e77b61e0402264b27ff9879708848ff3c7629d95cbc4f69617ea2a421e"
+    },
+    "known_entry_mask": {
+      "artifact_id": "global_A104_known_entry_mask",
+      "path": "quantum-weyl/lorentzian/generated/berger_a104_global_partial_assembly/global_A104_known_entry_mask.json",
+      "sha256": "6b20b0915c804665e0cd10cedb2175576f042503b26b40f675ca11e5dcd96991"
+    },
+    "partial_A104": {
+      "artifact_id": "BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY",
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY.json",
+      "sha256": "4e1857c5472eaaab68edb9f4b7af6bc6bf9f7839c74d30302e1acf7d3d485242"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "endpoint_insertion_ledger": [
+    {
+      "block_id": "ghost_A12",
+      "global_column_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57
+      ],
+      "global_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57
+      ],
+      "inserted_coordinates": 144,
+      "inserted_nonzero_sparse_entries": 27,
+      "local_shape": [
+        12,
+        12
+      ],
+      "source_block_sha256": "e32f6eb6d3f79b5cd1441e3399eab730b75eb32591a3ac334f3a4e6e1c03d393"
+    },
+    {
+      "block_id": "identity_A12",
+      "global_column_indices": [
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103
+      ],
+      "global_row_indices": [
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103
+      ],
+      "inserted_coordinates": 144,
+      "inserted_nonzero_sparse_entries": 27,
+      "local_shape": [
+        12,
+        12
+      ],
+      "source_block_sha256": "28fde1881defd32f6f64e7bd5c1b9cb3542aaf6fddba5e458f674d0bd60f0e58"
+    }
+  ],
+  "exact_checks": {
+    "all_288_unknown_coordinates_populated": true,
+    "all_factor_and_A12_internal_hashes_valid": true,
+    "both_local_orderings_match_frozen_slots": true,
+    "classical_export_strict_schema_valid": true,
+    "classical_snapshot_matches_partial_A104": true,
+    "endpoint_slots_disjoint": true,
+    "full_A104_has_no_unknown_coordinates": true,
+    "partial_10528_coordinates_preserved": true
+  },
+  "full_operator": {
+    "format": "JSON_EXACT_SPARSE_OPERATOR",
+    "path": "quantum-weyl/lorentzian/generated/berger_a104_endpoint_completion/global_A104.json",
+    "sha256": "37f0881c793f196175100e5e4784d18f6315e3654e3945c9972d9b212e662154"
+  },
+  "global_ordering": {
+    "degree_block_diagonal": true,
+    "degree_ranks": [
+      12,
+      40,
+      40,
+      12
+    ],
+    "row_ids": [
+      "c_spatial_1",
+      "c_spatial_2",
+      "c_spatial_3",
+      "aux[c_spatial_1]",
+      "aux[c_spatial_2]",
+      "aux[c_spatial_3]",
+      "h_hat_00",
+      "h_hat_01",
+      "h_hat_02",
+      "h_hat_03",
+      "h_hat_11",
+      "h_hat_12",
+      "h_hat_13",
+      "h_hat_22",
+      "h_hat_23",
+      "h_hat_33",
+      "aux[h_hat_00]",
+      "aux[h_hat_01]",
+      "aux[h_hat_02]",
+      "aux[h_hat_03]",
+      "aux[h_hat_11]",
+      "aux[h_hat_12]",
+      "aux[h_hat_13]",
+      "aux[h_hat_22]",
+      "aux[h_hat_23]",
+      "aux[h_hat_33]",
+      "h_hat_star_00",
+      "h_hat_star_01",
+      "h_hat_star_02",
+      "h_hat_star_03",
+      "h_hat_star_11",
+      "h_hat_star_12",
+      "h_hat_star_13",
+      "h_hat_star_22",
+      "h_hat_star_23",
+      "h_hat_star_33",
+      "aux[h_hat_star_00]",
+      "aux[h_hat_star_01]",
+      "aux[h_hat_star_02]",
+      "aux[h_hat_star_03]",
+      "aux[h_hat_star_11]",
+      "aux[h_hat_star_12]",
+      "aux[h_hat_star_13]",
+      "aux[h_hat_star_22]",
+      "aux[h_hat_star_23]",
+      "aux[h_hat_star_33]",
+      "c_spatial_star_1",
+      "c_spatial_star_2",
+      "c_spatial_star_3",
+      "aux[c_spatial_star_1]",
+      "aux[c_spatial_star_2]",
+      "aux[c_spatial_star_3]",
+      "partial_t[c_spatial_1]",
+      "partial_t[c_spatial_2]",
+      "partial_t[c_spatial_3]",
+      "partial_t[aux[c_spatial_1]]",
+      "partial_t[aux[c_spatial_2]]",
+      "partial_t[aux[c_spatial_3]]",
+      "partial_t[h_hat_00]",
+      "partial_t[h_hat_01]",
+      "partial_t[h_hat_02]",
+      "partial_t[h_hat_03]",
+      "partial_t[h_hat_11]",
+      "partial_t[h_hat_12]",
+      "partial_t[h_hat_13]",
+      "partial_t[h_hat_22]",
+      "partial_t[h_hat_23]",
+      "partial_t[h_hat_33]",
+      "partial_t[aux[h_hat_00]]",
+      "partial_t[aux[h_hat_01]]",
+      "partial_t[aux[h_hat_02]]",
+      "partial_t[aux[h_hat_03]]",
+      "partial_t[aux[h_hat_11]]",
+      "partial_t[aux[h_hat_12]]",
+      "partial_t[aux[h_hat_13]]",
+      "partial_t[aux[h_hat_22]]",
+      "partial_t[aux[h_hat_23]]",
+      "partial_t[aux[h_hat_33]]",
+      "partial_t[h_hat_star_00]",
+      "partial_t[h_hat_star_01]",
+      "partial_t[h_hat_star_02]",
+      "partial_t[h_hat_star_03]",
+      "partial_t[h_hat_star_11]",
+      "partial_t[h_hat_star_12]",
+      "partial_t[h_hat_star_13]",
+      "partial_t[h_hat_star_22]",
+      "partial_t[h_hat_star_23]",
+      "partial_t[h_hat_star_33]",
+      "partial_t[aux[h_hat_star_00]]",
+      "partial_t[aux[h_hat_star_01]]",
+      "partial_t[aux[h_hat_star_02]]",
+      "partial_t[aux[h_hat_star_03]]",
+      "partial_t[aux[h_hat_star_11]]",
+      "partial_t[aux[h_hat_star_12]]",
+      "partial_t[aux[h_hat_star_13]]",
+      "partial_t[aux[h_hat_star_22]]",
+      "partial_t[aux[h_hat_star_23]]",
+      "partial_t[aux[h_hat_star_33]]",
+      "partial_t[c_spatial_star_1]",
+      "partial_t[c_spatial_star_2]",
+      "partial_t[c_spatial_star_3]",
+      "partial_t[aux[c_spatial_star_1]]",
+      "partial_t[aux[c_spatial_star_2]]",
+      "partial_t[aux[c_spatial_star_3]]"
+    ],
+    "shape": [
+      104,
+      104
+    ]
+  },
+  "lifecycle_layer": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT",
+  "next_gate": "BERGER_Q52_Q_CAUCHY_104_AND_CAUCHY_KREIN_FORM",
+  "provenance": {
+    "source_manifest": {
+      "quantum-weyl/lorentzian/berger_a104_endpoint_completion.py": "2268396e9ef852b0d41b7b13e532c13726eecae41d862a73faa00052d73c4959",
+      "quantum-weyl/lorentzian/berger_a104_endpoint_completion_certificate.py": "59098c9f24b7bc0bd4255cd7c7199ec6f5c0711c3be41e9d4217eb2d158f2ab4",
+      "quantum-weyl/lorentzian/schema/berger-a104-endpoint-completion-v1.schema.json": "a996d0f6c22652ab042edd67f2b6065847c444995f02ecc351629a8e040b470d",
+      "quantum-weyl/lorentzian/tests/test_berger_a104_endpoint_completion.py": "2bcfe68f909003b4551d298c72383aff74652e34f4a6932b5a4a8fbf3da9d162",
+      "quantum-weyl/lorentzian/verify_berger_a104_endpoint_completion.py": "52c63d6351ec6bf915369a2b88cfda5c47f346a21c5f773482055b79d31e6159"
+    },
+    "source_manifest_sha256": "62f957dfeac5cef36cae47635a295079d6d972aae7dee136b6ca64fbca221177"
+  },
+  "remaining_stationary_carrier": {
+    "A104_Krein_skew_adjointness": "NOT_COMPUTED",
+    "A104_q_Cauchy_commutator": "NOT_COMPUTED",
+    "G_Cauchy_104": "NOT_CONSTRUCTED",
+    "q52_companion": "NOT_CONSTRUCTED",
+    "q_Cauchy_104": "NOT_CONSTRUCTED",
+    "real_structure_104": "NOT_CONSTRUCTED"
+  },
+  "result_id": "BERGER_A104_ENDPOINT_COMPLETION",
+  "result_state": "FULL_A104_104_BY_104_COEFFICIENTWISE_ASSEMBLED_Q_CAUCHY_PAIRING_OPEN",
+  "schema": "quantum-weyl-berger-a104-endpoint-completion-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

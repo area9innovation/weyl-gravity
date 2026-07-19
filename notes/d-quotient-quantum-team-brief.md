@@ -486,10 +486,10 @@ with its evidence and claim-boundary report at
 The fragment uses only `CERTIFIED`, `OBSTRUCTED`, `OPEN`, `NOT_APPLICABLE`,
 and `NO_CERTIFIED_MAP`.
 
-It currently emits fifteen common-envelope entries: six all-energy
+It currently emits twenty-three common-envelope entries: six all-energy
 vacuum-cylinder E/A/L mode-family rows, two non-particle residual deformation
 rows for `W_+^2` and `W_-^2`, one Berger carrier-gap row, one tangent-cone
-crosswalk, and five non-mode particle guards. Each row separately records classical import, BRST
+crosswalk, and thirteen non-mode particle guards. Each row separately records classical import, BRST
 closure and exactness, pairing, compatible complex structure, Hadamard
 two-point function, state-space signature, anomaly/QME dependency, and
 lifecycle state. The E/A/L positive-frequency and infinite-index Krein
@@ -1461,3 +1461,32 @@ sectors.
 
 Receipt:
 [`product-s2-s2-full-bv-join-boundary.md`](../quantum-weyl/reports/product-s2-s2-full-bv-join-boundary.md).
+
+## Berger full Cauchy evolution table (2026-07-20)
+
+The stationary/Hadamard rail is no longer blocked on the ghost and identity
+endpoint coefficients. The classical causal witness now exports the four
+exact second-order factors and their two rank-12 graph companions. The
+quantum consumer inserts those companions into the frozen degree-ordered
+rank-104 Cauchy carrier, preserves all 10,528 previously certified
+coordinates, and fixes all 10,816 coordinates of `A104` exactly. The final
+sparse operator has 470 nonzero entries.
+
+This is a finite `LOCAL-ALGEBRAIC` plus `LORENTZIAN-CAUSAL` evolution table,
+not a Hadamard state. The next gate is
+
+```text
+BERGER_Q52_Q_CAUCHY_104_AND_CAUCHY_KREIN_FORM
+```
+
+It must construct the degree-plus-one companion differential, its first-jet
+prolongation, the nondegenerate Cauchy/Krein form and the real structure, and
+verify nilpotency, BRST commutation, cyclic compatibility and Krein
+skew-adjointness. A common closed graded/Krein realization and an
+isolated-zero/Riesz--Jordan theorem remain an independent analytic gate after
+that. Only then can the positive-frequency covariance be promoted to a
+full-BV BRST Hadamard two-point function.
+
+Receipt:
+[`berger-a104-endpoint-completion.md`](../quantum-weyl/reports/berger-a104-endpoint-completion.md) and
+[`BERGER_A104_ENDPOINT_COMPLETION_V1_TIER_RECEIPT.json`](../quantum-weyl/lorentzian/receipts/BERGER_A104_ENDPOINT_COMPLETION_V1_TIER_RECEIPT.json).

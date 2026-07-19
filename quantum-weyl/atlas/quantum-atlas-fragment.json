@@ -1104,7 +1104,7 @@
       }
     },
     {
-      "claim_boundary": "The 26/54-row causal carrier is imported, but it is not a stationary mode ledger. No physical mode, complex structure, Hadamard state, or particle is inferred.",
+      "claim_boundary": "The 26/54-row causal carrier and all 10,816 coefficients of A104 are imported, but finite PBW data are not a closed stationary mode ledger. q_Cauchy, the Cauchy/Krein form, real structure, zero isolation and the spectral covariance remain open. No physical mode, complex structure, Hadamard state, or particle is inferred.",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "OPEN",
@@ -1122,6 +1122,11 @@
           "path": "quantum-weyl/lorentzian/certificates/BERGER_HADAMARD_CONSTRUCTION_GATE.json",
           "result_id": "BERGER_HADAMARD_CONSTRUCTION_GATE",
           "sha256": "741cac654d5e9d49691113ce65c2c6ddc7a50ea015f7dbd9690abd3448e44f2a"
+        },
+        {
+          "path": "quantum-weyl/lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
+          "result_id": "BERGER_A104_ENDPOINT_COMPLETION",
+          "sha256": "9461f484e51ba7ef27cf0924d532d262b7b4c1fd846fd35dec093204508f9e1c"
         },
         {
           "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
@@ -1145,7 +1150,7 @@
           "status": "NO_CERTIFIED_MAP"
         },
         "resonance": {
-          "statement": "generalized zero and nonzero stationary spectrum not imported",
+          "statement": "full A104 is exact; closed-realization zero/Jordan and nonzero spectral ledgers are not computed",
           "status": "NO_CERTIFIED_MAP"
         },
         "second_order": {
@@ -1190,11 +1195,11 @@
           "status": "NO_CERTIFIED_MAP"
         },
         "classical_mode_imported": {
-          "statement": "NO: causal carrier imported, no stationary mode crosswalk",
+          "statement": "NO: causal carrier and full A104 imported, no closed stationary mode crosswalk",
           "status": "NO_CERTIFIED_MAP"
         },
         "compatible_complex_structure": {
-          "statement": "not constructed on the 54-row distributional complex",
+          "statement": "q_Cauchy, Cauchy/Krein form, real structure and closed spectral splitting are not constructed",
           "status": "OPEN"
         },
         "dependency_tags": [
@@ -1223,13 +1228,13 @@
       "scope": {
         "background": "compact positive Berger clock",
         "boundaries": "R x S3 with compact Cauchy surfaces",
-        "carrier": "causal 26-row complex; stationary spectral mode basis not supplied",
+        "carrier": "causal 26-row complex with complete exact 104-row Cauchy evolution table; closed stationary spectral mode basis not supplied",
         "charge_sector": "retained 26-row classical BV carrier",
         "degree": "all retained BV degrees",
         "ell": "NO_CERTIFIED_MAP",
         "k": "NO_CERTIFIED_MAP",
         "m": "NO_CERTIFIED_MAP",
-        "omega": "NO_CERTIFIED_MAP: generalized-zero and nonzero spectrum not imported",
+        "omega": "NO_CERTIFIED_MAP: complete finite coefficient table exists, but the closed generalized-zero and nonzero spectrum is not certified",
         "parity": "NO_CERTIFIED_MAP",
         "theory": "pure-Weyl gravity plus positive scalar clock at fixed coupling"
       }
@@ -3475,7 +3480,7 @@
     }
   ],
   "generated_by": "quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
-  "generated_by_sha256": "2a22c976c33ad7a9e205ad55149b3bb64bc1c08fa4d0acf6e6e344f138727edb",
+  "generated_by_sha256": "bbf40e964f9684fb6e684212f1ed556166078d9d89e3a9052a23bc79b4d854a1",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

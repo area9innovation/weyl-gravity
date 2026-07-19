@@ -226,11 +226,16 @@ companion and the independent graph companion of its formal-adjoint endpoint
 produces two verified rank-40 first-order operators, covering 80 of the 104
 Cauchy components.  Ten exact sparse artifacts store their
 `K0,K1,K2,K2_inverse,A40` matrices.  The inherited 104-row degree, parity and
-Sobolev ledger is complete.  The remaining 24 ghost/identity Cauchy
-components are blocked precisely on four classical factor coefficient
-records that the existing endpoint contract marks requested but not
-exported.  `q_Cauchy_104` and the Cauchy Lagrange/Krein form are also open, so
-full `A104`, closedness, spectral isolation and Hadamard flags remain false.
+Sobolev ledger is complete.  The four classical factor coefficient records
+have now been exported and independently consumed.  Their two exact rank-12
+graph companions close the remaining ghost and identity slots without
+changing any of the 10,528 previously certified coordinates.  The resulting
+`A104` has all 10,816 coordinates fixed and 470 nonzero sparse entries.  This
+closes the finite coefficient table, not the stationary/Hadamard theorem.
+`q_Cauchy_104`, the Cauchy Lagrange/Krein form and real structure remain open;
+after those land, the common closed realization and isolated-zero/
+Riesz--Jordan theorem are still required before the spectral covariance can
+be constructed.
 
 Reproduce the current contract receipt with:
 

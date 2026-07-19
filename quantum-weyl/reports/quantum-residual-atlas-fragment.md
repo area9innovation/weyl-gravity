@@ -11,10 +11,10 @@ NOT_APPLICABLE
 NO_CERTIFIED_MAP
 ```
 
-The generator emits a strict common-envelope fragment with twenty entries:
+The generator emits a strict common-envelope fragment with twenty-three entries:
 six all-energy vacuum-cylinder E/A/L mode-family rows, two residual
 deformation-class rows, one Berger carrier-gap row, one classical-to-quantum
-tangent-cone crosswalk, and ten non-mode particle guards. Every row carries
+tangent-cone crosswalk, and thirteen non-mode particle guards. Every row carries
 the full declared mode scope and separately records classical
 import, BRST closure and exactness, pairing, compatible complex structure,
 Hadamard two-point function, state-space signature, anomaly/QME dependency,
@@ -27,9 +27,11 @@ with both `REDUCED-MODE` and `LORENTZIAN-CAUSAL` provenance. E is positive;
 A and L have negative Krein sign. This is a compact-cylinder reduced
 one-particle/Krein carrier, not a full-BV kernel, a positive graviton Hilbert
 space, an asymptotic scattering particle, or an interacting quantum result.
-The Berger causal
-26-row carrier is imported, but no stationary mode basis exists; its per-mode
-modewise fields remain `NO_CERTIFIED_MAP` or `OPEN`. Their strict interacting
+The Berger causal 26/54-row carrier and the complete exact 104-row Cauchy
+evolution table are imported, but no closed stationary mode basis exists;
+`q_Cauchy`, the Cauchy/Krein form, real structure and zero-frequency spectral
+ledger remain open. Its per-mode fields therefore remain `NO_CERTIFIED_MAP`
+or `OPEN`. Their strict interacting
 quantum lifecycle is separately `OBSTRUCTED` by the local Euclidean QME
 result; this does not alter the accepted classical causal carrier.
 

@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-a104-endpoint-completion-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "global_ordering", "endpoint_insertion_ledger", "full_operator", "coverage", "exact_checks", "remaining_stationary_carrier", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-a104-endpoint-completion-v1"},
+    "result_id": {"const": "BERGER_A104_ENDPOINT_COMPLETION"},
+    "result_state": {"const": "FULL_A104_104_BY_104_COEFFICIENTWISE_ASSEMBLED_Q_CAUCHY_PAIRING_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["partial_A104", "known_entry_mask", "classical_endpoint_A24_export"],
+      "properties": {
+        "partial_A104": {"$ref": "#/$defs/dependency"},
+        "known_entry_mask": {"$ref": "#/$defs/dependency"},
+        "classical_endpoint_A24_export": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "global_ordering": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shape", "row_ids", "degree_ranks", "degree_block_diagonal"],
+      "properties": {
+        "shape": {"const": [104, 104]},
+        "row_ids": {"type": "array", "minItems": 104, "maxItems": 104, "uniqueItems": true, "items": {"type": "string"}},
+        "degree_ranks": {"const": [12, 40, 40, 12]},
+        "degree_block_diagonal": {"const": true}
+      }
+    },
+    "endpoint_insertion_ledger": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "prefixItems": [
+        {"allOf": [{"$ref": "#/$defs/insertion"}, {"type": "object", "properties": {"block_id": {"const": "ghost_A12"}}}]},
+        {"allOf": [{"$ref": "#/$defs/insertion"}, {"type": "object", "properties": {"block_id": {"const": "identity_A12"}}}]}
+      ],
+      "items": false
+    },
+    "full_operator": {"$ref": "#/$defs/artifact"},
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total_coordinates", "known_coordinates", "unknown_coordinates", "known_nonzero_sparse_entries", "closed_blocks"],
+      "properties": {
+        "total_coordinates": {"const": 10816},
+        "known_coordinates": {"const": 10816},
+        "unknown_coordinates": {"const": 0},
+        "known_nonzero_sparse_entries": {"type": "integer", "minimum": 1},
+        "closed_blocks": {"const": ["ghost_A12", "identity_A12"]}
+      }
+    },
+    "exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["classical_export_strict_schema_valid", "classical_snapshot_matches_partial_A104", "all_factor_and_A12_internal_hashes_valid", "both_local_orderings_match_frozen_slots", "endpoint_slots_disjoint", "all_288_unknown_coordinates_populated", "partial_10528_coordinates_preserved", "full_A104_has_no_unknown_coordinates"],
+      "properties": {
+        "classical_export_strict_schema_valid": {"const": true},
+        "classical_snapshot_matches_partial_A104": {"const": true},
+        "all_factor_and_A12_internal_hashes_valid": {"const": true},
+        "both_local_orderings_match_frozen_slots": {"const": true},
+        "endpoint_slots_disjoint": {"const": true},
+        "all_288_unknown_coordinates_populated": {"const": true},
+        "partial_10528_coordinates_preserved": {"const": true},
+        "full_A104_has_no_unknown_coordinates": {"const": true}
+      }
+    },
+    "remaining_stationary_carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["q52_companion", "q_Cauchy_104", "G_Cauchy_104", "real_structure_104", "A104_q_Cauchy_commutator", "A104_Krein_skew_adjointness"],
+      "properties": {
+        "q52_companion": {"const": "NOT_CONSTRUCTED"},
+        "q_Cauchy_104": {"const": "NOT_CONSTRUCTED"},
+        "G_Cauchy_104": {"const": "NOT_CONSTRUCTED"},
+        "real_structure_104": {"const": "NOT_CONSTRUCTED"},
+        "A104_q_Cauchy_commutator": {"const": "NOT_COMPUTED"},
+        "A104_Krein_skew_adjointness": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_FULL_A104_CAUCHY_OPERATOR", "BERGER_Q_CAUCHY_104", "BERGER_CAUCHY_KREIN_FORM", "BERGER_STATIONARY_GENERATOR_ACCEPTED", "BERGER_A104_CLOSED_GENERATOR", "BERGER_A104_ZERO_ISOLATED", "BERGER_HADAMARD_DATA", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_FULL_A104_CAUCHY_OPERATOR": {"const": true},
+        "BERGER_Q_CAUCHY_104": {"const": false},
+        "BERGER_CAUCHY_KREIN_FORM": {"const": false},
+        "BERGER_STATIONARY_GENERATOR_ACCEPTED": {"const": false},
+        "BERGER_A104_CLOSED_GENERATOR": {"const": false},
+        "BERGER_A104_ZERO_ISOLATED": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_Q52_Q_CAUCHY_104_AND_CAUCHY_KREIN_FORM"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {
+          "type": "object", "minProperties": 5, "maxProperties": 5,
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        },
+        "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 120}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "path", "sha256"],
+      "properties": {
+        "format": {"const": "JSON_EXACT_SPARSE_OPERATOR"},
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "insertion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["block_id", "local_shape", "global_row_indices", "global_column_indices", "inserted_coordinates", "inserted_nonzero_sparse_entries", "source_block_sha256"],
+      "properties": {
+        "block_id": {"enum": ["ghost_A12", "identity_A12"]},
+        "local_shape": {"const": [12, 12]},
+        "global_row_indices": {"type": "array", "minItems": 12, "maxItems": 12, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 103}},
+        "global_column_indices": {"type": "array", "minItems": 12, "maxItems": 12, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 103}},
+        "inserted_coordinates": {"const": 144},
+        "inserted_nonzero_sparse_entries": {"type": "integer", "minimum": 1, "maximum": 144},
+        "source_block_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
