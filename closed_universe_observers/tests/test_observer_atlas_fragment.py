@@ -69,6 +69,19 @@ def test_shifted_q2_phi2_overlay_keeps_local_rod_hessian_fail_closed():
         evidence["result_id"] for evidence in shifted["evidence"]
     }
 
+
+def test_local_rod_hessian_overlay_closes_inputs_but_not_complete_q1():
+    rows = {row["id"]: row for row in build()["entries"]}
+    local = rows["observer.berger.interaction.pbw_108_local_rod_hessian_overlay"]
+    component = rows["observer.berger.interaction.pbw_108_component_map"]
+    assert local["descriptions"]["symplectic"] == "CERTIFIED"
+    assert local["observer_data"]["clock_and_rod_dependence"]["status"] == "CERTIFIED"
+    assert local["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert component["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_108_ROW_LOCAL_ROD_HESSIAN_PBW_OVERLAY" in {
+        evidence["result_id"] for evidence in local["evidence"]
+    }
+
 def test_tangent_cone_is_not_promoted():
     row = next(row for row in build()["entries"] if row["id"] == "observer.berger.second_order_cone_restriction")
     assert row["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "OPEN"

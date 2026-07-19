@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-108-row-local-rod-hessian-pbw-overlay-payload-v1.schema.json",
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "scalar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rational", "sqrt10"],
+      "properties": {
+        "rational": {"$ref": "#/$defs/rational"},
+        "sqrt10": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "multiindex4": {
+      "type": "array",
+      "prefixItems": [
+        {"type": "integer", "minimum": 0},
+        {"type": "integer", "minimum": 0},
+        {"type": "integer", "minimum": 0},
+        {"type": "integer", "minimum": 0}
+      ],
+      "items": false,
+      "minItems": 4
+    },
+    "factor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "name", "vertical_multiindex", "spacetime_multiindex"],
+      "properties": {
+        "kind": {"enum": ["parameter", "profile", "background"]},
+        "name": {"type": "string", "minLength": 1},
+        "vertical_multiindex": {
+          "type": "array",
+          "items": {"type": "integer", "minimum": 0}
+        },
+        "spacetime_multiindex": {"$ref": "#/$defs/multiindex4"}
+      }
+    },
+    "term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficient", "coefficient_factors", "input_pbw_multiindex"],
+      "properties": {
+        "coefficient": {"$ref": "#/$defs/scalar"},
+        "coefficient_factors": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/factor"}
+        },
+        "input_pbw_multiindex": {"$ref": "#/$defs/multiindex4"}
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["output_row", "input_row", "terms"],
+      "properties": {
+        "output_row": {"type": "integer", "minimum": 0, "maximum": 107},
+        "input_row": {"type": "integer", "minimum": 0, "maximum": 107},
+        "terms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/term"}
+        }
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "scalar_matrix_shape",
+    "blocks",
+    "block_count",
+    "nonzero_matrix_position_count",
+    "serialized_term_count",
+    "row_support",
+    "column_support",
+    "blocks_canonical_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-local-rod-hessian-pbw-overlay-payload-v1"},
+    "result_id": {"const": "BERGER_108_ROW_LOCAL_ROD_HESSIAN_PBW_OVERLAY_PAYLOAD"},
+    "scalar_matrix_shape": {"const": [108, 108]},
+    "blocks": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "entries"],
+          "properties": {
+            "id": {"const": "Gamma_R"},
+            "entries": {"type": "array", "minItems": 18, "maxItems": 18, "items": {"$ref": "#/$defs/entry"}}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "entries"],
+          "properties": {
+            "id": {"const": "Gamma_R_sharp"},
+            "entries": {"type": "array", "minItems": 18, "maxItems": 18, "items": {"$ref": "#/$defs/entry"}}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "entries"],
+          "properties": {
+            "id": {"const": "K_RR"},
+            "entries": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/entry"}}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "entries"],
+          "properties": {
+            "id": {"const": "K_Rh"},
+            "entries": {"type": "array", "minItems": 60, "maxItems": 60, "items": {"$ref": "#/$defs/entry"}}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "entries"],
+          "properties": {
+            "id": {"const": "K_hR"},
+            "entries": {"type": "array", "minItems": 60, "maxItems": 60, "items": {"$ref": "#/$defs/entry"}}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "entries"],
+          "properties": {
+            "id": {"const": "Delta_K_hh_rod"},
+            "entries": {"type": "array", "minItems": 94, "maxItems": 94, "items": {"$ref": "#/$defs/entry"}}
+          }
+        }
+      ],
+      "items": false,
+      "minItems": 6
+    },
+    "block_count": {"const": 6},
+    "nonzero_matrix_position_count": {"const": 256},
+    "serialized_term_count": {"const": 1530},
+    "row_support": {"const": [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 49, 50, 51, 64, 65, 66, 67, 68, 69, 74, 75, 76, 77, 78, 79]},
+    "column_support": {"const": [0, 1, 2, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 64, 65, 66, 67, 68, 69, 74, 75, 76, 77, 78, 79]},
+    "blocks_canonical_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

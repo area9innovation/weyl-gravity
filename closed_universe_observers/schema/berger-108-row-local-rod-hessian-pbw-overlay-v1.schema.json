@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-108-row-local-rod-hessian-pbw-overlay-v1.schema.json",
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "connection_audit",
+    "action_hessian_audit",
+    "mixed_wave_audit",
+    "operator_contract",
+    "identity_disposition",
+    "flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-local-rod-hessian-pbw-overlay-v1"},
+    "result_id": {"const": "BERGER_108_ROW_LOCAL_ROD_HESSIAN_PBW_OVERLAY"},
+    "setting_id": {"const": "compact_positive_berger_clock_observer_apparatus_extension"},
+    "claim_status": {"const": "CERTIFIED_SCALAR_LOCAL_ROD_GAUGE_WAVE_HESSIAN_OVERLAY"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["component_contract", "background_quotient", "rod_gravity_unary", "shifted_q2_phi2"],
+      "properties": {
+        "component_contract": {"$ref": "#/$defs/ref"},
+        "background_quotient": {"$ref": "#/$defs/ref"},
+        "rod_gravity_unary": {"$ref": "#/$defs/ref"},
+        "shifted_q2_phi2": {"$ref": "#/$defs/ref"}
+      }
+    },
+    "payload_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256", "block_count", "nonzero_matrix_position_count", "serialized_term_count", "row_support", "column_support", "blocks_canonical_sha256"],
+      "properties": {
+        "path": {"const": "closed_universe_observers/certificates/BERGER_108_ROW_LOCAL_ROD_HESSIAN_PBW_OVERLAY_PAYLOAD.json"},
+        "result_id": {"const": "BERGER_108_ROW_LOCAL_ROD_HESSIAN_PBW_OVERLAY_PAYLOAD"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "block_count": {"const": 6},
+        "nonzero_matrix_position_count": {"const": 256},
+        "serialized_term_count": {"const": 1530},
+        "row_support": {"const": [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 49, 50, 51, 64, 65, 66, 67, 68, 69, 74, 75, 76, 77, 78, 79]},
+        "column_support": {"const": [0, 1, 2, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 64, 65, 66, 67, 68, 69, 74, 75, 76, 77, 78, 79]},
+        "blocks_canonical_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "connection_audit": {
+      "type": "object",
+      "required": ["entry_count", "torsion_defect_count", "metric_compatibility_defect_count", "contracted_scalar_wave_connection_defect_count"],
+      "properties": {
+        "entry_count": {"const": 6},
+        "torsion_defect_count": {"const": 0},
+        "metric_compatibility_defect_count": {"const": 0},
+        "contracted_scalar_wave_connection_defect_count": {"const": 0}
+      }
+    },
+    "action_hessian_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["direct_second_variation_fixture_count", "direct_second_variation_defect_count", "metric_component_symmetry_defect_count"],
+      "properties": {
+        "direct_second_variation_fixture_count": {"const": 200},
+        "direct_second_variation_defect_count": {"const": 0},
+        "metric_component_symmetry_defect_count": {"const": 0}
+      }
+    },
+    "mixed_wave_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["direct_nonholonomic_metric_variation_fixture_count", "direct_nonholonomic_metric_variation_defect_count", "fixture_uses_nonzero_metric_first_jets", "fixture_uses_pbw_reduced_scalar_second_jets"],
+      "properties": {
+        "direct_nonholonomic_metric_variation_fixture_count": {"const": 10},
+        "direct_nonholonomic_metric_variation_defect_count": {"const": 0},
+        "fixture_uses_nonzero_metric_first_jets": {"const": true},
+        "fixture_uses_pbw_reduced_scalar_second_jets": {"const": true}
+      }
+    },
+    "operator_contract": {
+      "type": "object",
+      "required": ["blocks"],
+      "properties": {
+        "blocks": {"const": ["Gamma_R", "Gamma_R_sharp", "K_RR", "K_Rh", "K_hR", "Delta_K_hh_rod"]}
+      }
+    },
+    "identity_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["connection_torsion_and_metric_compatibility", "local_odd_cyclicity_by_explicit_transpose_and_symmetric_hessian", "covariant_rod_noether_identity_imported", "complete_108_row_q1_nilpotency_replayed", "complete_108_row_q1_odd_cyclicity_replayed"],
+      "properties": {
+        "connection_torsion_and_metric_compatibility": {"const": true},
+        "local_odd_cyclicity_by_explicit_transpose_and_symmetric_hessian": {"const": true},
+        "covariant_rod_noether_identity_imported": {"const": true},
+        "complete_108_row_q1_nilpotency_replayed": {"const": false},
+        "complete_108_row_q1_odd_cyclicity_replayed": {"const": false}
+      }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["SCALAR_ROD_LOCAL_HESSIAN_PBW_OVERLAY_EXPORTED", "SCALAR_ROD_GRAVITY_Q1_PBW_OVERLAY_EXPORTED", "SCALAR_SHIFTED_Q2_PHI2_PBW_OVERLAY_IMPORTED", "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED", "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "SCALAR_ROD_LOCAL_HESSIAN_PBW_OVERLAY_EXPORTED": {"const": true},
+        "SCALAR_ROD_GRAVITY_Q1_PBW_OVERLAY_EXPORTED": {"const": true},
+        "SCALAR_SHIFTED_Q2_PHI2_PBW_OVERLAY_IMPORTED": {"const": true},
+        "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED": {"const": false},
+        "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "COMPOSE_AND_REPLAY_COMPLETE_SCALAR_108_ROW_Q1"},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "source_manifest"],
+      "properties": {
+        "source_commit": {"const": "WORKTREE"},
+        "source_manifest": {"type": "array", "minItems": 6, "items": {"type": "object"}}
+      }
+    }
+  }
+}

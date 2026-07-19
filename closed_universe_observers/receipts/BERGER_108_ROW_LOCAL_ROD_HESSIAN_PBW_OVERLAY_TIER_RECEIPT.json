@@ -1,0 +1,38 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_LOCAL_ROD_HESSIAN_PBW_OVERLAY_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_LOCAL_ROD_HESSIAN_PBW_OVERLAY",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "result_boundary": "The exact six-rod local gauge, wave and gravity Hessian overlay is scalarized in the canonical 108-row PBW grammar; complete q1 composition/replay, gauge survival, full scalar q2, tangent-cone restriction, finite-parameter causal propagation, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {"tier": 0, "command": "python3 -m py_compile on changed Python; python3 -m json.tool on changed structured data", "elapsed_seconds": "1.96", "status": "PASS", "scope": "all local-overlay producer, verifier, generated atlas, schemas, certificates and lifecycle JSON"},
+    {"tier": 1, "command": "pytest -q local-rod overlay, observer-atlas and comparison-ledger tests", "elapsed_seconds": "42.46", "status": "PASS", "scope": "39 exact local Hessian, generated-claim and central-ledger tests"},
+    {"tier": 2, "command": "local-rod producer --check; independent reconstruction verifier; observer-atlas verifier; comparison-ledger verifier", "elapsed_seconds": "83.56 including Tier 1", "status": "PASS", "scope": "six blocks, 256 positions, 1,530 terms, exact Koszul connection, ten direct mixed-wave variations, 200 direct metric-Hessian variations, payload/evidence hashes and fail-closed consumers"},
+    {"tier": 2, "command": "ci/science-forge-shadow.sh", "elapsed_seconds": "1.91", "status": "ADVISORY_TOOL_FAILURE", "scope": "the advisory rail reported Forge binary/stdlib revision drift, then exited 1 on an unrelated SELFTEST unbound-variable error; no mathematical or lifecycle claim is based on this rail"}
+  ],
+  "higher_tiers_not_run": {"tier_3": "This is a scoped local unary overlay, not a classical/quantum freeze, release, shared-core change or theorem-lifecycle promotion; complete q1 remains explicitly fail-closed."},
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_local_rod_hessian_pbw_overlay.py", "sha256": "a9eddfbddf463c96a5208019ba7ab9c9b3162a4a7d6ca7180cf325dc6b744ab5"},
+    {"path": "closed_universe_observers/verify_berger_108_row_local_rod_hessian_pbw_overlay.py", "sha256": "340d526f4ed3f31bfe3889aa15402c15edbb508ba53797a2b161de66c87651ab"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_local_rod_hessian_pbw_overlay.py", "sha256": "d4a831e5d50b13f808c444891a3c20db47c802b655503299849f0b6b9e71336a"},
+    {"path": "closed_universe_observers/schema/berger-108-row-local-rod-hessian-pbw-overlay-v1.schema.json", "sha256": "39fe53c70c389a23e25c08dcb00af2558338135fa3f469dded157af36e8b1e4d"},
+    {"path": "closed_universe_observers/schema/berger-108-row-local-rod-hessian-pbw-overlay-payload-v1.schema.json", "sha256": "87c64bafd1ea237459758da53cc1b79bb72db4ea968e9fd8d3199c3c60dae8cd"},
+    {"path": "closed_universe_observers/reports/berger-108-row-local-rod-hessian-pbw-overlay.md", "sha256": "c493274de53e91ff23c0362580292ae469b28d937aef95ea2988025506e30afe"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_LOCAL_ROD_HESSIAN_PBW_OVERLAY.json", "sha256": "d23dcaa64f67a2b986f53846a424d330d7be67d41eabe63252208094280ca9c7"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_LOCAL_ROD_HESSIAN_PBW_OVERLAY_PAYLOAD.json", "sha256": "76ded2c416fe0f3c3a421ce9746b277de76f9112cf3c1f343f5af526463943e5"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "950f08feab396eb2003b32af90e9ef7e7a8ad6e0fa451d2fde1c442bb88f9f08"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "14b553aa68910235faf2be5ba91d41c93f1e9332e811a3229fe93a7d69821169"},
+    {"path": "planning/work-items/berger-108-row-local-rod-hessian-pbw-overlay.json", "sha256": "04a24d2d6fa9fe014ede199941bab6974060bdcdf82b0a024fc9c1359a51a73d"},
+    {"path": "planning/events/berger-108-row-local-rod-hessian-pbw-overlay-ACTIVE-b571b237005b2dfc.json", "sha256": "494d732c565190d5a689c95da1cd0f52b9992e3348569ebde7b5f491384168d5"},
+    {"path": "planning/events/berger-108-row-local-rod-hessian-pbw-overlay-DONE-c477e441218f27a4.json", "sha256": "9cddacfb6bdb967cc6ce46e18244636d498fa1c0458160660b771a8d42e207a2"}
+  ],
+  "flags": {
+    "SCALAR_ROD_LOCAL_HESSIAN_PBW_OVERLAY_EXPORTED": true,
+    "SCALAR_ROD_GRAVITY_Q1_PBW_OVERLAY_EXPORTED": true,
+    "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED": false,
+    "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED": false,
+    "TANGENT_CONE_RESTRICTION_CERTIFIED": false,
+    "BRIDGE_3_ACTIVE": false,
+    "QUANTUM_CLAIM": false
+  }
+}

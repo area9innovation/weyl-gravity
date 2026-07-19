@@ -984,10 +984,13 @@ survive the first backreacted, normalized apparatus interaction?
    adjoint coefficient jets; its audit repaired the invariant-frame Cartan
    sign.  The shifted `q2_64(Phi2,-)` base block is now independently
    contracted into 92,965 exact PBW terms on 310 positions, retaining every
-   Phi2 jet and the physical fourth-order witness `623/81`.  Export the
-   remaining six-rod gauge/wave and local gravity--rod Hessian blocks, then
-   compose and replay the complete
-   108-row `q1`, then export the action-derived scalar `q2` tensor and its
+   Phi2 jet and the physical fourth-order witness `623/81`.  The six-rod local
+   gauge/wave/Hessian overlay is now also exact: six blocks, 256 matrix
+   positions and 1,530 terms, with the nonholonomic Koszul connection, all ten
+   mixed scalar-wave columns and 200 metric-Hessian variations independently
+   audited.  Compose the pinned base, emitter, memory, shifted-`Phi2` and
+   local rod/gravity payloads and replay the complete 108-row `q1`, then
+   export the action-derived scalar `q2` tensor and its
    independent replay before a solved backreacted branch.
    A common source
    at the original Hopf event remains a stronger separate target.
