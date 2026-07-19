@@ -1,0 +1,42 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_EINSTEIN_MINUS_FREQUENCY_GATE_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact Hamiltonian balance and signed cross-frequency census for the pure-axial exceptional resonance-ellipse endpoint with one Einstein-minus oscillator.",
+  "content_sha256": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.py": "614dffc402bfb4828e8cb871a5807c0394abf7af84b97be384c772c16931a1fe",
+    "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.json": "5e1d6cc51195c06787faff22e793b221e8a59f47405dba4e82e41fad37dfbc89",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.schema.json": "159cf1a37c546a9d995f94a772a4bd817c08854df3fd89701fcd369b807c343b",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.py": "f4293ce5a95e7eebd6ee0c01d4c5a6da563b4f4292c600b6b7d2075159efa4b5",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.py": "c56d94cd78797f21b34c8c2fc5bceaefc9b90759e8937671c1f3a0f45f2dba0e",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-exceptional-ellipse-einstein-minus-frequency-gate.md": "f2ad7b74222f543f4d3de652d27740061b5505f0b11722d61a99e178bfdc9d96"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <certificate and schema>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ellipse_einstein_minus_frequency_gate"
+      ],
+      "elapsed_seconds": 4.4
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The imported current forms and target operators are unchanged certified inputs whose hashes are embedded in the generated certificate."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The bounded extension remains open at the quadratic-source gate; no theorem lifecycle was promoted."
+    }
+  },
+  "claim_boundary": "This receipt certifies the exact balance and forty noncollision tests only, not source compatibility, a bounded correction, all-m/nonzero-k coverage, causal propagation, residual descent or quantum theory."
+}

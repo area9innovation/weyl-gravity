@@ -2855,6 +2855,26 @@ has resonance `CERTIFIED`, Taub `OBSTRUCTED` on the undressed carrier and
 bounded second order `OPEN`.  The next gate is every new Einstein-minus cross
 source; no extension is inferred from charge balance alone.
 
+The minimal balance and its complete frequency arithmetic are now exact on
+the pure-axial ellipse endpoint.  With unit spatial harmonic norms, the
+negative Hamiltonian deficit is `(1557040/243)d^2`; one axial `ell=2`
+Einstein-minus oscillator cancels it at
+
+```text
+|e_-|^2=((9342240+7785200*sqrt(3))/9477)d^2.
+```
+
+Axisymmetry and `k=0` leave `P_x=J_i=0`, so all five moment maps vanish.
+Forty exact target-branch comparisons then show that every new
+Einstein-minus-times-exceptional and Einstein-minus-times-`ell=2`-control
+frequency is off shell; the possible homogeneous products occur at nonzero
+frequency, where the physical quotient is empty.  The fail-closed atlas row
+`einstein.ph.wm.mixed.exceptional_ellipse_einstein_minus_frequency_gate`
+therefore records Taub and frequency data as `CERTIFIED` but bounded second
+order as `OPEN`.  The next decisive calculation is the actual combined
+quadratic source, especially its zero-frequency block; charge balance and
+noncollision do not by themselves certify a correction.
+
 The nonzero-momentum twist face has now been intersected with the independent
 opposite-momentum phase divisor.  For every `ell>=2`, the exact choice
 
@@ -2875,6 +2895,26 @@ claim obstruction: the dynamical adjoint coefficient is still `OPEN`.
 Smooth exponential-polynomial extension is `CERTIFIED`, while
 `CAUSAL_RETARDED` remains `NO_CERTIFIED_MAP`.  The decisive bounded fixture is
 `ell=2`, `k^2=2*sqrt(3)-7/6`, projected into the polar `L=4` extra adjoint.
+
+That decisive fixture is now direct.  For the axial Einstein-minus `+k/-k`
+pair, the polar `L=4,K=0,Omega=2*omega_minus` action-row source pairs with the
+two target `p`-shell adjoints as
+
+```text
+0,
+-1152*(-265+149*sqrt(3))/203.
+```
+
+The second value is nonzero, with algebraic norm
+`265^2-3*149^2=3622`.  The Einstein-plus and twist cross terms occupy distinct
+frequency or momentum carriers, so no other term in the declared aligned
+tangent cancels it.  Certificate and atlas row
+`EINSTEIN_MAXWELL_WEYL_TWIST_ALIGNED_OPPOSITE_MOMENTUM_BOUNDED_OBSTRUCTION`
+therefore promote this one tuned `ell=2` tangent from an arithmetic gate to an
+actual bounded/finite-quasiperiodic obstruction.  Its five moment maps still
+vanish, and smooth exponential-polynomial extension remains `CERTIFIED` by a
+secular resonant correction.  This is an independence witness for the
+`R_j^bounded` functionals, not a classification of their general zero locus.
 
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
