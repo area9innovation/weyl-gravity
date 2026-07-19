@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "gate_refs", "payload_ref", "assembly_audit", "activation_disposition", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-complete-q3-pbw-v1"},
+    "result_id": {"const": "BERGER_108_ROW_COMPLETE_Q3_PBW"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_COMPLETE_SCALAR_108_ROW_Q3_PBW_PAYLOAD"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "gate_refs": {"type": "object", "minProperties": 8, "maxProperties": 8},
+    "payload_ref": {"type": "object", "properties": {"operator_key_count": {"const": 616738}, "serialized_term_count": {"const": 1439238}}},
+    "assembly_audit": {"type": "object", "properties": {"cross_source_operator_key_collision_count": {"const": 0}}},
+    "activation_disposition": {"type": "object", "properties": {"complete_scalar_q3_payload_assembled": {"const": true}, "structural_q3_zero_ledger_complete": {"const": true}, "arity_replay_certified": {"const": false}, "K_Berger_equivariance_certified": {"const": false}, "observer_morphism_stability_certified": {"const": false}, "detector_response_on_second_order_cone_authorized": {"const": false}, "physical_branch_bridge_activated": {"const": false}}},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "REPLAY_COMPLETE_108_ROW_COMPONENT_ARITY_IDENTITIES"},
+    "claim_boundary": {"type": "string", "minLength": 1400},
+    "provenance": {"type": "object"}
+  }
+}

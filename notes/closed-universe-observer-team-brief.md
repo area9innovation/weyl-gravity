@@ -1468,9 +1468,13 @@ remains to assemble.  The two remaining zero sources are now explicit rather
 than omitted: `BERGER_108_ROW_Q3_STRUCTURAL_ZERO_LEDGER` lowers all 240
 scalar-BV and 912 emitter-Diff--BV q2 terms through the certified pairing and
 proves their authoritative actions have constant coefficients and field
-degree three, so both fourth derivatives vanish.  Arity replay and
-`O_detector|Z2^C` remain fail-closed.  The active next gate is collision-safe
-base plus apparatus/emitter q3 assembly.
+degree three, so both fourth derivatives vanish.  The assembly gate now also
+passes: `BERGER_108_ROW_COMPLETE_Q3_PBW` zero-extends the certified typed base
+and combines all five nonzero sources plus the zero ledger into 43 hashed row
+chunks.  It contains 616,738 operator keys and 1,439,238 exact monomials with
+zero cross-source key collisions.  This completes q3, but it does not prove
+the extended identities.  `O_detector|Z2^C` remains fail-closed.  The active
+next gate is the complete 108-row `q1q2` and `q2q2+q1q3` replay.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to

@@ -1,0 +1,26 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_COMPLETE_Q3_PBW_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_COMPLETE_Q3_PBW",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The complete source-labelled scalar q3 payload contains 616,738 disjoint operator keys and 1,439,238 exact coefficient monomials. Arity replay, equivariance, cone response, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {"tier": 0, "command": "py_compile changed Python; validate JSON/schema; generator emit; git diff --check", "elapsed_seconds": 172.28, "peak_rss_mb": 1352.30, "status": "PASS", "scope": "row-streamed normalization and deterministic emission of six q3 source references into 43 compressed row chunks"},
+    {"tier": 1, "command": "pytest complete-q3 plus observer atlas verifier and residual-atlas validator", "elapsed_seconds": 4.19, "peak_rss_mb": 46.08, "status": "PASS", "scope": "2 fast invariants and fail-closed lifecycle/evidence validation"},
+    {"tier": 2, "command": "python3 -m closed_universe_observers.verify_berger_108_row_complete_q3_pbw", "elapsed_seconds": 214.38, "peak_rss_mb": 1351.69, "status": "PASS", "scope": "independent full rebuild; source/dependency hashes, 1,439,238 normalized monomials, 616,738 disjoint keys, 43 byte-identical row chunks, row/composition hashes and six source-deletion mutations"}
+  ],
+  "higher_tiers_not_run": {"tier_3": "Complete q3 payload export but no arity theorem or shared core algebra change; the affected identity chain is the next explicit gate rather than being implicitly promoted."},
+  "source_manifest": [
+    {"path":"closed_universe_observers/generate_berger_108_row_complete_q3_pbw.py","sha256":"5bd30d08162dccee14cd9599001d1489c1a441b9a2ef06a278704d32f188ad58"},
+    {"path":"closed_universe_observers/verify_berger_108_row_complete_q3_pbw.py","sha256":"156e8ef16bd112e6bcba92399544c90c89e8b08916a1f61efd9ce23c48b8ed35"},
+    {"path":"closed_universe_observers/tests/test_berger_108_row_complete_q3_pbw.py","sha256":"308eccb5e61b53ddd6f639897e5b5ce4944fdc5813b3c5f702af93fec52b262d"},
+    {"path":"closed_universe_observers/schema/berger-108-row-complete-q3-pbw-v1.schema.json","sha256":"38375cacefd3c939e097896d5e70c8e38b8354a0965c096a2739285d1abf7dc0"},
+    {"path":"closed_universe_observers/schema/berger-108-row-complete-q3-pbw-payload-v1.schema.json","sha256":"b31f44c1ad58e6cec2050c61b2cb31a199a04868d54cba593c5f759f426a8446"},
+    {"path":"closed_universe_observers/reports/berger-108-row-complete-q3-pbw.md","sha256":"7941be0a7b5b0a26e4721e8fb1744b350f43a19b8256ecd5e8afc1d2e0ac314c"},
+    {"path":"closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q3_PBW.json","sha256":"c0025d0410a0bcfef0335e4aba0a444cd682e556f7b2ac26eea6c2a0745de72f"},
+    {"path":"closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q3_PBW_PAYLOAD.json","sha256":"d9bd009ccd3809f6f47b6c1cd7d0105bdd3a4b167b4b920620a4a74dd9d43e89"},
+    {"path":"closed_universe_observers/atlas/observer-atlas-fragment.json","sha256":"3645365bda40f79832a862aed54d46189af96c688ba59d8fe8acac8e3a59b9e4"},
+    {"path":"planning/work-items/berger-108-row-apparatus-q2-q3-extension.json","sha256":"4e832fbd5f8d2e50e8e36ed13772488097cf9b0ef2fcc8e5e4bd724dc0213c2c"}
+  ],
+  "flags": {"COMPLETE_SCALAR_108_ROW_Q3_EXPORTED":true,"Q3_SOURCE_PROVENANCE_COMPLETE":true,"Q3_CROSS_SOURCE_OPERATOR_KEYS_DISJOINT":true,"STRUCTURAL_Q3_ZERO_LEDGER_COMPLETE":true,"COMPONENT_ARITY_IDENTITIES_CERTIFIED":false,"K_BERGER_EQUIVARIANCE_ON_COMPLETE_Q3_CERTIFIED":false,"OBSERVER_MORPHISM_STABILITY_ON_COMPLETE_Q3_CERTIFIED":false,"TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED":false,"PHYSICAL_BRANCH_BRIDGE_ACTIVATED":false,"QUANTUM_CLAIM":false}
+}
