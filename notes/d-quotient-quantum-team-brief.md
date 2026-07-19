@@ -959,11 +959,13 @@ through first curvature order as exact `V/N/U` ledgers with `9/8/5` source
 rows and `7/6/3` scalar-flat survivors. Its repository normalization and
 round-`S4` linear layer replay exactly, and the physical three-linear `n=3`
 vertex is ready. Its scalar-flat rank-nine momentum realization now passes
-the exact formal-adjoint identity, and one generic interior simplex fixture
-with `Delta=104/45` evaluates all four Wick orders to the nonzero kernel
-`-3532544138843839/319810083840000` before `(4 pi)^-2`. The full alpha
-polynomial, five-carrier projection, curvature-squared Hessian layer, mixed
-rows and tensor-triangle integration remain open. The original
+the exact formal-adjoint identity. The full three-`H1` alpha numerator is
+projected exactly onto all eleven raw channels of the five-carrier quotient:
+28 degree-six-unisolvent training fixtures and two unseen exact fixtures
+certify 5,755 rational Laurent terms with formula digest
+`7c91744da094939e86e96a6807b8f406c01b1e4b2991ef235e11dea2c2b3b3fe`.
+Generic tensor-triangle integration, the curvature-squared Hessian layer and
+mixed rows remain open. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
@@ -985,10 +987,9 @@ exact relative-simplex IBP primitives, a complete punctured-corner
 non-membership theorem, and complete exact `J`-plus-two-log integrated
 functions. The remaining coefficient gate begins with supplying the generic
 primed Green/spectral carrier needed to lift the exact round-`S4`
-finite benchmark, together with integration of the now-ready physical
-three-linear tensor vertex. Its immediate subgate is interpolation of the
-common numerator and exact projection onto the five scalar-flat carriers;
-the curvature-squared Hessian layer and mixed rows are a separate input.
+finite benchmark, together with integration of the now-exact physical
+three-linear five-carrier rows. The curvature-squared Hessian layer and mixed
+rows are a separate input.
 Those are followed by the five
 parity-even third-curvature repository
 form-factor functions and coefficients,
@@ -1088,6 +1089,9 @@ The first coefficient-bearing insertion projection is recorded in
 [`generic-background-ghost-n3-adiabatic-carrier.md`](../quantum-weyl/reports/generic-background-ghost-n3-adiabatic-carrier.md).
 The exact generic-momentum eleven-to-ten carrier projection is recorded in
 [`generic-background-ghost-n3-five-carrier-projection.md`](../quantum-weyl/reports/generic-background-ghost-n3-five-carrier-projection.md).
+The exact physical three-`H1` alpha numerator and its eleven-channel
+five-carrier projection are recorded in
+[`generic-background-physical-hessian-n3-five-carrier-projection.md`](../quantum-weyl/reports/generic-background-physical-hessian-n3-five-carrier-projection.md).
 The exact symmetric-point simplex integration and its branch guard are in
 [`generic-background-ghost-n3-symmetric-point-simplex-integration.md`](../quantum-weyl/reports/generic-background-ghost-n3-symmetric-point-simplex-integration.md).
 The exact generic denominator and boundary factorization is in

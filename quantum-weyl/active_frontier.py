@@ -66,6 +66,7 @@ DEPENDENCIES = {
     "CPT_universal_third_curvature_kernels": HERE / "transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json",
     "generic_physical_hessian_linear_curvature": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE.json",
     "generic_physical_hessian_n3_triangle_fixture": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_TRIANGLE_FIXTURE.json",
+    "generic_physical_hessian_n3_five_carrier_projection": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_FIVE_CARRIER_PROJECTION.json",
     "generic_background_ghost_CPT_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
@@ -179,6 +180,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "CPT_universal_third_curvature_kernels": "FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_REPOSITORY_CONFORMAL_GRAVITON_TRACE_SUBSTITUTION_OPEN",
         "generic_physical_hessian_linear_curvature": "SAME_GAUGE_TRACELESS_PHYSICAL_HESSIAN_LINEAR_CURVATURE_IMPORTED_N3_THREE_LINEAR_VERTEX_READY",
         "generic_physical_hessian_n3_triangle_fixture": "PHYSICAL_THREE_LINEAR_HESSIAN_TRIANGLE_OPERATIONAL_EXACT_INTERIOR_FIXTURE",
+        "generic_physical_hessian_n3_five_carrier_projection": "PHYSICAL_THREE_H1_COMMON_NUMERATOR_AND_FIVE_CARRIER_PROJECTION_EXACT",
         "generic_background_ghost_CPT_obstruction": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
         "generic_ghost_Endo_Duhamel_reduction": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES",
         "generic_ghost_n1_n2_Hodge_resolvent_reduction": "CURVED_ENDO_N1_N2_REDUCED_EXACTLY_TO_FIVE_MINIMAL_VECTOR_SCALAR_RESOLVENT_CARRIERS",
@@ -225,6 +227,9 @@ def _load() -> dict[str, dict[str, Any]]:
     ]
     generic_physical_hessian_n3_fixture = values[
         "generic_physical_hessian_n3_triangle_fixture"
+    ]
+    generic_physical_hessian_n3_projection = values[
+        "generic_physical_hessian_n3_five_carrier_projection"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -585,6 +590,31 @@ def _load() -> dict[str, dict[str, Any]]:
         or physical_n3_fixture.get("nonzero") is not True
     ):
         raise ValueError("generic physical-Hessian n=3 fixture frontier drifted")
+    physical_n3_projection_flags = generic_physical_hessian_n3_projection.get(
+        "claim_flags", {}
+    )
+    physical_n3_interpolation = generic_physical_hessian_n3_projection.get(
+        "interpolation_certificate", {}
+    )
+    if (
+        physical_n3_projection_flags.get(
+            "PHYSICAL_N3_FULL_ALPHA_POLYNOMIAL_COMPUTED"
+        )
+        is not True
+        or physical_n3_projection_flags.get(
+            "PHYSICAL_N3_FIVE_CARRIER_PROJECTION_COMPUTED"
+        )
+        is not True
+        or physical_n3_projection_flags.get("PHYSICAL_N3_TRIANGLE_INTEGRATED")
+        is not False
+        or physical_n3_projection_flags.get("CURVATURE_SQUARED_H2_IMPORTED")
+        is not False
+        or physical_n3_interpolation.get("training_fixture_count") != 28
+        or physical_n3_interpolation.get("degree_six_box_evaluation_rank_mod_prime")
+        != 28
+        or physical_n3_interpolation.get("unseen_fixture_count") != 2
+    ):
+        raise ValueError("generic physical-Hessian n=3 projection frontier drifted")
     if (
         generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
         != "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
@@ -2322,11 +2352,11 @@ def build() -> dict[str, Any]:
             "functional Hessian is one half of the source operator, while the normalized "
             "trace-log insertion is unchanged. On the scalar-flat domain 7, 6 and 3 rows "
             "survive, and the round-S4 restriction reproduces the complete linear layer. "
-            "The scalar-flat rank-nine momentum vertex is now completed by formal adjunction, "
-            "and one generic interior Feynman-simplex fixture evaluates all four Wick orders "
-            "of the physical +(1/6)Tr[(H0^-1 H1)^3] row exactly and nontrivially. This is an "
-            "operational coefficient-bearing fixture, not the full alpha polynomial. The "
-            "curvature-squared H2 layer, mixed H1-H2 rows, five-carrier projection and tensor triangle integration, "
+            "The scalar-flat rank-nine momentum vertex is now completed by formal adjunction. "
+            "Its full physical +(1/6)Tr[(H0^-1 H1)^3] alpha numerator is projected exactly "
+            "onto all eleven raw channels of the five-carrier quotient using 28 training "
+            "and two unseen fixtures. The curvature-squared H2 layer, mixed H1-H2 rows and "
+            "generic tensor-triangle integration, "
             "global carrier and five repository form-factor assembly remain open. At the "
             "normalized symmetric point all eleven coordinates are integrated exactly in "
             "terms of one Clausen master. This is not the generic five repository functions; "

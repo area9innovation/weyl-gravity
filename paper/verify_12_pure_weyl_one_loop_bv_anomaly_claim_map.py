@@ -334,8 +334,11 @@ def main() -> None:
     assert payload["explicit_nonclaims"][
         "physical_curvature_squared_Hessian_layer"
     ] is False
-    assert payload["explicit_nonclaims"]["physical_n3_full_alpha_polynomial"] is False
-    assert payload["explicit_nonclaims"]["physical_n3_five_carrier_projection"] is False
+    assert claims["physical_n3_full_alpha_polynomial_computed"] is True
+    assert claims["physical_n3_five_carrier_projection_computed"] is True
+    assert claims["physical_n3_projection_training_fixture_count"] == 28
+    assert claims["physical_n3_projection_unseen_fixture_count"] == 2
+    assert claims["physical_n3_projection_exact_term_count"] == 5755
     assert payload["explicit_nonclaims"][
         "physical_n3_three_linear_triangle_integrated"
     ] is False
@@ -344,7 +347,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "INTERPOLATE_PHYSICAL_N3_COMMON_NUMERATOR_PROJECT_TO_FIVE_CARRIERS_AND_IMPORT_CURVATURE_SQUARED_H2"
+        == "INTEGRATE_PHYSICAL_N3_FIVE_CARRIER_ROWS_AND_IMPORT_CURVATURE_SQUARED_H2"
     )
 
     dependencies = {}
@@ -378,7 +381,7 @@ def main() -> None:
         "denominator": 6561,
     }
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
-    assert len(payload["inputs"]) == 47
+    assert len(payload["inputs"]) == 48
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

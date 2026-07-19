@@ -1276,9 +1276,10 @@ Their common $\Delta^{-4}$ numerator and final kernel are respectively
  -\frac{3532544138843839}{11210083593750},\qquad
  -\frac{3532544138843839}{319810083840000}\,(4\pi)^{-2}.
 \]
-This nonzero value is one generic interior fixture.  The receipt keeps the
-full alpha polynomial, five-carrier projection, integrated triangle,
-curvature-squared Hessian layer and mixed rows fail-closed.
+This nonzero value is one generic interior fixture.  The separate projection
+receipt below closes the full alpha polynomial and five-carrier projection;
+the integrated triangle, curvature-squared Hessian layer and mixed rows remain
+fail-closed.
 
 \begin{verbatim}
 MOD="spectral.euclidean.generic_background_physical_hessian_"
@@ -1291,6 +1292,47 @@ TEST="spectral.euclidean.tests.test_generic_background_physical_"
 TEST="${TEST}hessian_n3_triangle_fixture"
 PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 \end{verbatim}
+
+\subsection{Exact physical three-linear five-carrier projection}
+
+The full rank-nine trace is evaluated as an exact sparse polynomial in
+$(\alpha_1,\alpha_2,\ell_0,\ldots,\ell_3)$, avoiding raw tensor-graph
+expansion.  On the scalar-flat TT carrier, reconstruction of each external
+linearized Riemann tensor supplies at most one inverse box.  Thus the uniform
+form is
+\[
+ (4\pi)^{-2}\sum_A I_A
+ \frac{N_A(\alpha_1,\alpha_2;x_1,x_2,x_3)}
+ {x_1x_2x_3\,\Delta^4},
+\]
+and after clearing $x_1x_2x_3$ the numerator degree is $6-d_A/2$.
+The degree-six box space has 28 monomials.  Twenty-eight deterministic exact
+momentum fixtures have modular rank 28 at the prime $1000003$, which proves
+the integral evaluation determinant is nonzero over $\mathbb Q$.  Exact
+rational interpolation gives 5755 nonzero terms across the eleven raw
+channels in the symmetric-$I_{28}$ quotient section.  Two unseen momentum
+fixtures replay all channels with zero defects.  The formula digest is
+\begin{verbatim}
+7c91744da094939e86e96a6807b8f406c01b1e4b2991ef235e11dea2c2b3b3fe
+\end{verbatim}
+The uniform inverse boxes are a feature of the declared scalar-flat
+$K/\mathrm{Ricci}$ coordinate and are not promoted to physical poles.
+
+\begin{verbatim}
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}n3_five_carrier_projection"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check-stored
+MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
+MOD="${MOD}n3_five_carrier_projection"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+TEST="spectral.euclidean.tests.test_generic_background_physical_"
+TEST="${TEST}hessian_n3_five_carrier_projection"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+The exhaustive generator uses \texttt{--check}; its exact fixture coordinates are
+content-addressed under ignored build storage.  Neither rail integrates the
+generic simplex rows or supplies $\mathcal H_2$.
 
 \subsection{Exact three-insertion adiabatic angular carrier}
 
@@ -1906,9 +1948,8 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-	\item interpolation and five-carrier projection of the now-operational
-physical three-linear common numerator, integration of its tensor triangle,
-and import of the curvature-squared Hessian layer and mixed rows,
+	\item integration of the now-projected physical three-linear tensor
+triangle and import of the curvature-squared Hessian layer and mixed rows,
 followed by assembly of the five
 repository parity-even third-curvature form-factor functions and coefficients,
 the parity-odd derivative carrier manifest, finite

@@ -132,15 +132,17 @@ difference `2` is a factorization-convention effect. The generic finite rows
 still require the full primed Green kernel or spectral measure. The same-gauge
 physical fourth-order Hessian is now imported through first curvature order.
 Its scalar-flat rank-nine momentum vertex has been constructed with the
-required formal-adjoint completion, and one generic interior Feynman-simplex
-fixture of the physical three-linear trace has been evaluated exactly. At
+required formal-adjoint completion, and its full three-linear alpha numerator
+has been projected exactly onto the five scalar-flat carriers. At
 `(x1,x2,x3)=(10,9,5)` and
 `(alpha0,alpha1,alpha2)=(7/15,1/5,1/3)`, the common denominator is
 `Delta=104/45`; the four Wick orders combine to
-`-3532544138843839/319810083840000` before `(4 pi)^-2`. This is a nonzero
-operational fixture, not the full alpha polynomial, its five-carrier
-projection, an integrated physical tensor triangle, or the missing
-curvature-squared Hessian layer.
+`-3532544138843839/319810083840000` before `(4 pi)^-2`. Twenty-eight
+degree-six-unisolvent training fixtures and two unseen exact fixtures certify
+the 5,755-term Laurent projection with formula digest
+`7c91744da094939e86e96a6807b8f406c01b1e4b2991ef235e11dea2c2b3b3fe`.
+The generic physical tensor-triangle integration and curvature-squared
+Hessian layer remain open.
 The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
 and rational corner flux. Four explicit primitives cover every orientation,
@@ -471,9 +473,8 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. interpolate the physical three-linear common numerator, project it onto
-   the five scalar-flat carriers, and integrate the resulting tensor
-   triangle;
+1. integrate the now-exact physical three-linear five-carrier rows in the
+   generic scalar-triangle master basis;
 2. import the curvature-squared layer of the same-gauge physical Hessian and
    compute the mixed first-/second-curvature trace rows;
 3. supply the full generic primed Green kernel or spectral measure for the
@@ -494,8 +495,9 @@ The frontier is `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, and
 
 Tier-1 rerun on 2026-07-19 covers frontier reproduction, independent
 verification, the scoped frontier tests, and strict Draft 2020-12 schema
-validation. The new physical-Hessian interior fixture additionally passes
-exact regeneration, independent recomputation and eight scoped tests. The coupled repair's affected
+validation. The physical five-carrier projection additionally passes 28
+checkpointed exact training fixtures, two unseen generator fixtures, one
+fresh no-cache unseen replay, and six scoped tests. The coupled repair's affected
 exact chain was run separately at Tier 2 and is recorded in its acceptance
 report. Tier 3 was not run because no quantum lifecycle or paper theorem is
 promoted.
