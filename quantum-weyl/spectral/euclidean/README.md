@@ -99,7 +99,19 @@ rank ten; the CPT-IV relation is fixed by removing the symmetric `I28`
 coordinate.  Every projected channel is stored as a rational
 Feynman-simplex numerator over the common `Delta^4`, and unseen exact
 momentum/alpha fixtures replay all 125 TT amplitudes.  This closes only the
-parametric `n=3` ghost projection. The combined pure-vector `n=1+n=2` slice
+parametric `n=3` ghost projection.
+
+At the normalized symmetric nonexceptional point `x1=x2=x3=1`, the eleven
+simplex integrals are now evaluated exactly in
+[`GENERIC_BACKGROUND_GHOST_N3_SYMMETRIC_POINT_SIMPLEX_INTEGRATION.json`](certificates/GENERIC_BACKGROUND_GHOST_N3_SYMMETRIC_POINT_SIMPLEX_INTEGRATION.json).
+They reduce to rational combinations of the single scalar master
+`J_triangle=4 Cl2(pi/3)/sqrt(3)`.  Exact rational divergence witnesses with
+checked open-edge and punctured-corner flux prove the four moment reductions;
+an independent quadrature replay guards against the false logarithm branches
+produced by naive iterated symbolic integration.  This is one coefficient-
+bearing kinematic fixture, not the generic functions of `(x1,x2,x3)`.
+
+The combined pure-vector `n=1+n=2` slice
 is now exact; the three longitudinal `D_W` towers are resummed into the
 normalized scalar Schur operator
 `S_L(W)=(2/3)I+(1/3)delta(F+W)^-1 d`. Its relative determinant kernel, a
@@ -145,6 +157,8 @@ PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_triangle_kernel
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n3_five_carrier_projection
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_five_carrier_projection
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n3_symmetric_point_simplex_integration
+PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_symmetric_point_simplex_integration
 ```
 
 Full regeneration of the five-carrier projection is an exact scientific-tier

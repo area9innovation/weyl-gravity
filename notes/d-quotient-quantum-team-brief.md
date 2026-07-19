@@ -882,9 +882,14 @@ Its scalar-flat normalization is now exact:
 differs at fourth curvature order; an independent TT fixture fixes the sign.
 Its eleven raw carrier orientations are now projected exactly to the
 ten-dimensional scalar-flat quotient section, with every parametric channel
-stored as a rational alpha/box numerator over the common `Delta^4`. This is
-the exact `n=3` ghost contribution before simplex integration, not the five
-complete repository functions. Exact proper-time integration now gives
+stored as a rational alpha/box numerator over the common `Delta^4`. At the
+normalized symmetric point `x1=x2=x3=1`, all eleven simplex integrals are now
+exact rational combinations of `J_triangle=4 Cl2(pi/3)/sqrt(3)`. Four
+rational divergence certificates include the open-edge and punctured-corner
+flux disposition, and an independent numerical replay catches the incorrect
+logarithm branches selected by naive iterated symbolic integration. This is a
+coefficient-bearing symmetric-point fixture, not the five complete generic
+repository functions. Exact proper-time integration now gives
 `G_H0=G_F-(1/3)d Delta_0^-2 delta` and reduces the curved `n=1/n=2`
 nonminimal architecture to five minimal vector/scalar resolvent carriers,
 with coefficients `(1,-1/3)` and `(-1/2,1/3,-1/18)`. The pure-vector
@@ -940,11 +945,13 @@ rejects a direct sum or name-based identification.
 
 The currently active coefficient-bearing ladder work is the QME-dependency
 rail for Bridge 5. The generic ghost's exact nonzero-momentum triangle has now
-been projected to the scalar-flat repository five-carrier quotient. Its three
+been projected to the scalar-flat repository five-carrier quotient and
+integrated analytically at `x1=x2=x3=1`. Its three
 longitudinal `D_W` towers are now one normalized scalar Schur series, with the
 all three Schur residue rows fixed and the round-`S4` canonical `det_3` tail
 and weighted modified determinant computed. The selected weight-raised local
-zeta term is also exact. The remaining local gate begins with supplying the
+zeta term is also exact. The remaining local gate begins with extending the
+exact simplex reduction away from the symmetric point and supplying the
 generic primed Green/spectral carrier needed to lift the exact round-`S4`
 finite benchmark, together with the physical fourth-order
 Hessian kernel, followed by the five
@@ -1046,6 +1053,8 @@ The first coefficient-bearing insertion projection is recorded in
 [`generic-background-ghost-n3-adiabatic-carrier.md`](../quantum-weyl/reports/generic-background-ghost-n3-adiabatic-carrier.md).
 The exact generic-momentum eleven-to-ten carrier projection is recorded in
 [`generic-background-ghost-n3-five-carrier-projection.md`](../quantum-weyl/reports/generic-background-ghost-n3-five-carrier-projection.md).
+The exact symmetric-point simplex integration and its branch guard are in
+[`generic-background-ghost-n3-symmetric-point-simplex-integration.md`](../quantum-weyl/reports/generic-background-ghost-n3-symmetric-point-simplex-integration.md).
 The exact anomaly action and Ricci-sector dependence theorem are recorded in
 [`fv-anomaly-action-ricci-sector.md`](../quantum-weyl/reports/fv-anomaly-action-ricci-sector.md).
 The generated atlas records it as
@@ -1067,8 +1076,9 @@ effective-action claims; the unsupported Hadamard assertion was removed from
 the abstract. Exact quotient, coefficient, determinant, spectral-sequence,
 matter, quartet, effective-action, and boundary tables are generated from eighteen hashed
 certificate inputs and pass an independent stale/tamper check. The claim map now
-binds thirty-nine direct certificate dependencies, including the formerly indirect
-pure-Diff/mixed quotient and factorwise coefficient ledger. The disposition
+binds forty direct certificate dependencies, including the symmetric-point
+simplex receipt and the formerly indirect pure-Diff/mixed quotient and factorwise
+coefficient ledger. The disposition
 is recorded in
 [`12-pure-weyl-one-loop-bv-anomaly-referee-response.md`](../paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md).
 The machine/literature traceability audit is complete; final human author signoff

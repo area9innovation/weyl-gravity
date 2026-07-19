@@ -1382,10 +1382,57 @@ PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 \end{verbatim}
 
 The result is the parametric $n=3$ ghost contribution in the declared
-scalar-flat quotient section. The simplex integrals, normalized longitudinal
-Schur $\mathcal R(K)$ and finite $\mathcal R(K^2)$ rows, physical fourth-order
-Hessian kernel, and their complete sum into five repository
-functions and coefficients remain open.
+scalar-flat quotient section. The generic kinematic simplex integrals,
+normalized longitudinal Schur $\mathcal R(K)$ and finite $\mathcal R(K^2)$
+rows, physical fourth-order Hessian kernel, and their complete sum into five
+repository functions and coefficients remain open.
+
+\subsection{Exact symmetric-point simplex integration}
+
+At $x_1=x_2=x_3=1$, permutation averaging preserves every simplex integral
+and reduces the eleven stored numerators to symmetric polynomials in
+\[
+ e_2=\alpha_0\alpha_1+\alpha_1\alpha_2+\alpha_2\alpha_0,
+ \qquad e_3=\alpha_0\alpha_1\alpha_2.
+\]
+The only transcendental master is
+\[
+ J_\triangle=\int_{\Delta_2}\frac{\dd^2\alpha}{e_2}
+ =\frac4{\sqrt3}\operatorname{Cl}_2\!\left(\frac\pi3\right)
+ =2.343907238689458890601562288872277\ldots .
+\]
+Four exact integration-by-parts identities give
+\[
+\begin{aligned}
+ \int\frac{e_3}{e_2}&=\frac{11-4J_\triangle}{54},&
+ \int\frac{e_3}{e_2^2}&=\frac{J_\triangle-2}{3},\\
+ \int\frac{e_3^2}{e_2^3}&=\frac{10J_\triangle-23}{54},&
+ \int\frac{e_3^3}{e_2^4}&=\frac{62J_\triangle-145}{486}.
+\end{aligned}
+\]
+For each row the receipt stores the rational polynomial defining the
+divergence vector field, verifies the divergence identity exactly, and
+records both open-edge and punctured-corner flux vanishing.  Substitution in
+the symmetrized carrier numerators gives the eleven values printed in the
+main paper.  The independent verifier reconstructs those numerators from the
+upstream 837-term projection, checks every rational identity, and separately
+quadratures the four smooth sector integrals and the one-dimensional Clausen
+master.  This second path is important: direct iterated symbolic integration
+of the unsymmetrized functions can choose inconsistent logarithm branches at
+the moving simplex endpoint.
+
+\begin{verbatim}
+MOD="spectral.euclidean.verify_generic_background_ghost_n3_"
+MOD="${MOD}symmetric_point_simplex_integration"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+TEST="spectral.euclidean.tests.test_generic_background_ghost_n3_"
+TEST="${TEST}symmetric_point_simplex_integration"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+This closes only the normalized symmetric-point ghost $n=3$ fixture.  The
+generic functions, complete ghost determinant, physical fourth-order Hessian,
+combined repository coefficients and complete $\Gamma_1/Q_1$ remain open.
 
 \subsection{Exact local BoxR scheme conversion}
 
@@ -1483,6 +1530,9 @@ while rejecting promotion of normalization alone to a five-carrier projection;
 \item replay the stored eleven-to-ten five-carrier projection on unseen exact
 momentum/simplex fixtures across all 125 TT tensor products, and reject a
 coefficient mutation even after its formula digest is recomputed;
+\item reconstruct the symmetric-point numerators from the upstream 837 terms,
+verify the four rational divergence identities and all boundary-flux orders,
+and compare the exact Clausen reduction with independent quadrature;
 \item reject changes to the cotangent signs, gradings, or quartet identity;
 \item validate every content hash used by the paper claim map.
 \end{itemize}

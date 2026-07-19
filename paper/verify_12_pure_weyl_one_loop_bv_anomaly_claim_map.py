@@ -297,11 +297,17 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
+        == "SUPPLY_GENERIC_KINEMATIC_CONTINUATION_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 39
+    assert claims["generic_ghost_n3_symmetric_point_simplex_integrated"] is True
+    assert claims["generic_ghost_n3_symmetric_point"] == {"x1": 1, "x2": 1, "x3": 1}
+    assert claims["generic_ghost_n3_symmetric_point_channel_count"] == 11
+    assert claims["generic_ghost_n3_symmetric_point_scalar_master"] == (
+        "4*Cl2(pi/3)/sqrt(3)"
+    )
+    assert len(payload["inputs"]) == 40
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

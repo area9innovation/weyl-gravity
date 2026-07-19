@@ -50,6 +50,7 @@ INPUTS = {
     "generic_ghost_n3_triangle_kernel": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json",
     "scalar_flat_K_Ricci_crosswalk": ROOT / "quantum-weyl/transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json",
     "generic_ghost_n3_five_carrier_projection": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION.json",
+    "generic_ghost_n3_symmetric_point_simplex_integration": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_SYMMETRIC_POINT_SIMPLEX_INTEGRATION.json",
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
     "generic_ghost_n1_n2_vector_CPT_projection": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION.json",
     "generic_ghost_longitudinal_Schur_resummation": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION.json",
@@ -102,6 +103,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     generic_ghost_n3_triangle = values["generic_ghost_n3_triangle_kernel"]
     scalar_flat_k_ricci = values["scalar_flat_K_Ricci_crosswalk"]
     generic_ghost_n3_projection = values["generic_ghost_n3_five_carrier_projection"]
+    generic_ghost_n3_symmetric = values["generic_ghost_n3_symmetric_point_simplex_integration"]
     generic_ghost_n1_n2 = values["generic_ghost_n1_n2_Hodge_resolvent_reduction"]
     generic_ghost_n1_n2_vector = values["generic_ghost_n1_n2_vector_CPT_projection"]
     generic_ghost_longitudinal_schur = values["generic_ghost_longitudinal_Schur_resummation"]
@@ -335,6 +337,15 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED"
         )
         is not False
+        or generic_ghost_n3_symmetric.get("claim_flags", {}).get(
+            "GENERIC_GHOST_N3_SYMMETRIC_POINT_SIMPLEX_INTEGRATED"
+        )
+        is not True
+        or len(generic_ghost_n3_symmetric.get("channel_rows", [])) != 11
+        or generic_ghost_n3_symmetric.get("claim_flags", {}).get(
+            "GENERIC_GHOST_N3_FULL_KINEMATIC_FUNCTIONS_COMPUTED"
+        )
+        is not False
         or generic_ghost_n1_n2.get("proper_time_to_resolvent", {}).get(
             "resolvent_identity"
         )
@@ -543,6 +554,7 @@ def build() -> dict[str, Any]:
     generic_ghost_n3_triangle = values["generic_ghost_n3_triangle_kernel"]
     scalar_flat_k_ricci = values["scalar_flat_K_Ricci_crosswalk"]
     generic_ghost_n3_projection = values["generic_ghost_n3_five_carrier_projection"]
+    generic_ghost_n3_symmetric = values["generic_ghost_n3_symmetric_point_simplex_integration"]
     generic_ghost_n1_n2 = values["generic_ghost_n1_n2_Hodge_resolvent_reduction"]
     generic_ghost_n1_n2_vector = values["generic_ghost_n1_n2_vector_CPT_projection"]
     generic_ghost_longitudinal_schur = values["generic_ghost_longitudinal_Schur_resummation"]
@@ -562,7 +574,7 @@ def build() -> dict[str, Any]:
             "LOCAL-ALGEBRAIC",
             "EUCLIDEAN-SPECTRAL",
         ],
-        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact, the generic ghost n=3 triangle is projected exactly onto that quotient, the curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3; Wres(K), Wres(K^2), and Wres(log S_L) are exact, the declared order-two weighted trace fixes the pole and scale row, and the round-S4 reference finite K/K2 rows, canonical det_3 tail, weighted modified determinant, and Einstein-ratio defect 5/3 are complete. The distinct generic weight-raised local defect is exactly -(1/4)Wres(K^2) and specializes to -1/3. A smoothing witness proves that the generic finite rows require a full Green kernel or spectral measure; simplex integration, the generic physical fourth-order kernel, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
+        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact, the generic ghost n=3 triangle is projected exactly onto that quotient, and all eleven coordinates are integrated analytically at the symmetric nonexceptional point. The curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3; Wres(K), Wres(K^2), and Wres(log S_L) are exact, the declared order-two weighted trace fixes the pole and scale row, and the round-S4 reference finite K/K2 rows, canonical det_3 tail, weighted modified determinant, and Einstein-ratio defect 5/3 are complete. The distinct generic weight-raised local defect is exactly -(1/4)Wres(K^2) and specializes to -1/3. A smoothing witness proves that the generic finite rows require a full Green kernel or spectral measure; generic kinematic simplex functions, the generic physical fourth-order kernel, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
         "manuscript": _relative(MANUSCRIPT),
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
@@ -660,6 +672,11 @@ def build() -> dict[str, Any]:
             "generic_ghost_n3_projection_raw_channel_count": generic_ghost_n3_projection["quotient_section"]["raw_effective_channel_count"],
             "generic_ghost_n3_projection_quotient_dimension": generic_ghost_n3_projection["quotient_section"]["quotient_dimension"],
             "generic_ghost_n3_projection_formula_digest": generic_ghost_n3_projection["formula_digest"],
+            "generic_ghost_n3_symmetric_point_simplex_integrated": True,
+            "generic_ghost_n3_symmetric_point": generic_ghost_n3_symmetric["scope"]["kinematic_point"],
+            "generic_ghost_n3_symmetric_point_channel_count": len(generic_ghost_n3_symmetric["channel_rows"]),
+            "generic_ghost_n3_symmetric_point_scalar_master": generic_ghost_n3_symmetric["scalar_triangle_master"]["closed_form"],
+            "generic_ghost_n3_symmetric_point_formula_digest": generic_ghost_n3_symmetric["formula_digest"],
             "generic_ghost_n1_n2_Hodge_resolvent_reduction": True,
             "generic_ghost_n1_n2_minimal_carrier_count": generic_ghost_n1_n2["log_determinant_expansion"]["carrier_count"],
             "generic_ghost_n1_coefficients": [
@@ -743,12 +760,12 @@ def build() -> dict[str, Any]:
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN",
+            "status": "SUPPLY_GENERIC_KINEMATIC_CONTINUATION_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN",
             "required_inputs": [
                 "same-background compensator-inclusive classical contraction",
                 "finite C2 and absolute dressed Rhat2 normalization conditions",
                 "full generic-background primed Green/resolvent kernel or complete spectral measure for the reference-scale finite R(K), finite R(K^2), and det3 rows; the round-S4 special-background benchmark is complete but does not substitute for this global carrier",
-                "simplex integration of the exact generic Diff-Weyl ghost n=3 five-carrier parametric projection",
+                "generic-kinematic continuation of the exact Diff-Weyl ghost n=3 simplex integration beyond the certified symmetric point",
                 "same-gauge generic-background physical fourth-order Hessian and remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
                 "renormalized BV operator data fixing complete Q1",
             ],

@@ -81,7 +81,10 @@ fixture. The eleven labelled `I10/I24/I25/I28/I29` orientations are now
 projected exactly onto the ten-dimensional scalar-flat quotient. Each channel
 is stored as a rational alpha/box numerator over `Delta^4`, and two unseen
 momentum fixtures replay all 125 TT amplitudes exactly. This is the parametric
-`n=3` integrand, not the five simplex-integrated repository functions. Exact
+`n=3` integrand. At `x1=x2=x3=1`, all eleven coordinates are now integrated
+exactly as rational combinations of `4 Cl2(pi/3)/sqrt(3)` using four rational
+divergence witnesses with checked boundary flux. This is one symmetric-point
+fixture, not the five generic repository functions. Exact
 Hodge-resolvent integration reduces the curved `n=1/n=2` architecture to five
 minimal vector/scalar carriers with rational coefficients
 `(1,-1/3)` and `(-1/2,1/3,-1/18)`. The combined pure-vector physical slice
@@ -432,11 +435,11 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. freeze the generic noncommuting zeta factorization and compute its local
-   order-minus-three/four BCH Wodzicki residue;
+1. extend the exact `n=3` simplex reduction away from the symmetric point or
+   supply the same-gauge generic-background physical fourth-order Hessian;
 2. supply the full generic primed Green kernel or spectral measure for the
    global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the
-   same-gauge generic-background physical fourth-order Hessian to integrate
+   physical Hessian to integrate
    the five parity-even repository form factors;
 3. classify the parity-odd derivative sector and fix the finite `C2` and
    absolute dressed `R(g_hat)^2` normalizations and renormalized products;

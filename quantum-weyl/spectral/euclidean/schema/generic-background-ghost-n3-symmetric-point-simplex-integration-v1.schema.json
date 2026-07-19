@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl/generic-background-ghost-n3-symmetric-point-simplex-integration-v1.schema.json",
+  "title": "Generic-background ghost n=3 symmetric-point simplex integration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "convention",
+    "scalar_triangle_master",
+    "master_moments",
+    "channel_rows",
+    "orientation_identities",
+    "formula_digest",
+    "coefficient_disposition",
+    "claim_flags",
+    "dependencies",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-ghost-n3-symmetric-point-simplex-integration-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_GHOST_N3_SYMMETRIC_POINT_SIMPLEX_INTEGRATION"},
+    "result_state": {"const": "COEFFICIENT_COMPUTED"},
+    "lifecycle_state": {"const": "N3_GHOST_SYMMETRIC_POINT_INTEGRATED_FULL_FUNCTIONS_AND_PHYSICAL_HESSIAN_OPEN"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 1},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "signature", "curvature_order", "kinematic_point", "input_block", "output"],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": "Euclidean"},
+        "curvature_order": {"const": 3},
+        "kinematic_point": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["x1", "x2", "x3"],
+          "properties": {"x1": {"const": 1}, "x2": {"const": 1}, "x3": {"const": 1}}
+        },
+        "input_block": {"type": "string", "minLength": 1},
+        "output": {"type": "string", "minLength": 1}
+      }
+    },
+    "convention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["simplex", "e2", "e3", "denominator", "overall_loop_prefactor", "W_and_Tr_log_multiplier"],
+      "properties": {
+        "simplex": {"type": "string", "minLength": 1},
+        "e2": {"type": "string", "minLength": 1},
+        "e3": {"type": "string", "minLength": 1},
+        "denominator": {"type": "string", "minLength": 1},
+        "overall_loop_prefactor": {"const": "(4*pi)^-2 excluded"},
+        "W_and_Tr_log_multiplier": {"const": "-8/3 already included upstream"}
+      }
+    },
+    "scalar_triangle_master": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["symbol", "simplex_integral", "closed_form", "sector_map", "one_dimensional_integrand", "angle_substitution", "clausen_convention", "exact_reduction_certificate", "decimal_60"],
+      "properties": {
+        "symbol": {"const": "J_triangle"},
+        "simplex_integral": {"const": "integral_simplex 1/e2"},
+        "closed_form": {"const": "4*Cl2(pi/3)/sqrt(3)"},
+        "sector_map": {"type": "string", "minLength": 1},
+        "one_dimensional_integrand": {"type": "string", "minLength": 1},
+        "angle_substitution": {"type": "string", "minLength": 1},
+        "clausen_convention": {"type": "string", "minLength": 1},
+        "exact_reduction_certificate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["sector_count", "sector_coordinates", "sector_jacobian", "sector_integrand", "y_antiderivative", "angle_measure_identity", "angle_log_ratio", "log_sine_intervals", "log_sine_primitive", "clausen_distribution_identities", "angle_integral", "final_value"],
+          "properties": {
+            "sector_count": {"const": 3},
+            "sector_coordinates": {"type": "string", "minLength": 1},
+            "sector_jacobian": {"const": "1/(1+x+y)^3"},
+            "sector_integrand": {"const": "1/((1+x+y)*(x+y+x*y))"},
+            "y_antiderivative": {"const": "log((x+(1+x)*y)/(1+x+y))/(x^2+x+1)"},
+            "angle_measure_identity": {"const": "dx/(x^2+x+1)=2*dphi/sqrt(3)"},
+            "angle_log_ratio": {"type": "string", "minLength": 1},
+            "log_sine_intervals": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/signedInterval"}},
+            "log_sine_primitive": {"type": "string", "minLength": 1},
+            "clausen_distribution_identities": {"const": ["Cl2(2*pi/3)=2*Cl2(pi/3)/3", "Cl2(4*pi/3)=-2*Cl2(pi/3)/3"]},
+            "angle_integral": {"const": "2*Cl2(pi/3)/3"},
+            "final_value": {"const": "4*Cl2(pi/3)/sqrt(3)"}
+          }
+        },
+        "decimal_60": {"type": "string", "pattern": "^-?[0-9]+\\.[0-9]+$"}
+      }
+    },
+    "master_moments": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/masterMoment"}
+    },
+    "channel_rows": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": {"$ref": "#/$defs/channelRow"}
+    },
+    "orientation_identities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["I24", "I25", "I28"],
+      "properties": {
+        "I24": {"const": ["I24_123=I24_213=I24_312"]},
+        "I25": {"const": ["I25_123=I25_213=I25_312"]},
+        "I28": {"const": ["I28_123=I28_132=I28_231=0"]}
+      }
+    },
+    "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "coefficient_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ghost_n3_symmetric_point_coordinates", "ghost_n3_full_kinematic_functions", "complete_ghost_third_curvature_functions", "physical_fourth_order_Hessian_functions", "complete_repository_third_curvature_functions"],
+      "properties": {
+        "ghost_n3_symmetric_point_coordinates": {"const": "COMPUTED"},
+        "ghost_n3_full_kinematic_functions": {"const": "NOT_COMPUTED"},
+        "complete_ghost_third_curvature_functions": {"const": "NOT_COMPUTED"},
+        "physical_fourth_order_Hessian_functions": {"const": "NOT_COMPUTED"},
+        "complete_repository_third_curvature_functions": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["GENERIC_GHOST_N3_SYMMETRIC_POINT_SIMPLEX_INTEGRATED", "GENERIC_GHOST_N3_FULL_KINEMATIC_FUNCTIONS_COMPUTED", "COMPLETE_GENERIC_GHOST_DETERMINANT_COMPUTED", "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "RESIDUAL_TRANSFER_AUTHORIZED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "GENERIC_GHOST_N3_SYMMETRIC_POINT_SIMPLEX_INTEGRATED": {"const": true},
+        "GENERIC_GHOST_N3_FULL_KINEMATIC_FUNCTIONS_COMPUTED": {"const": false},
+        "COMPLETE_GENERIC_GHOST_DETERMINANT_COMPUTED": {"const": false},
+        "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["five_carrier_projection"],
+      "properties": {"five_carrier_projection": {"$ref": "#/$defs/dependency"}}
+    },
+    "next_gate": {"const": "EXTEND_EXACT_SIMPLEX_REDUCTION_TO_GENERIC_X1_X2_X3_OR_SUPPLY_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "polyTerm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exponents", "coefficient"],
+      "properties": {
+        "exponents": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0}},
+        "coefficient": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "linearValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rational", "scalar_triangle_master_coefficient"],
+      "properties": {
+        "rational": {"$ref": "#/$defs/rational"},
+        "scalar_triangle_master_coefficient": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "signedInterval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sign", "lower_pi_units", "upper_pi_units"],
+      "properties": {
+        "sign": {"enum": [-1, 1]},
+        "lower_pi_units": {"$ref": "#/$defs/rational"},
+        "upper_pi_units": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "masterMoment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["moment_id", "powers", "value", "divergence_certificate"],
+      "properties": {
+        "moment_id": {"enum": ["M11", "M12", "M23", "M34"]},
+        "powers": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "value": {"$ref": "#/$defs/linearValue"},
+        "divergence_certificate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["denominator_power", "P_terms", "target", "vertex_order_points", "vertex_vanishing_orders", "open_edge_normal_flux", "punctured_corner_flux"],
+          "properties": {
+            "denominator_power": {"type": "integer", "minimum": 1, "maximum": 4},
+            "P_terms": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/polyTerm"}},
+            "target": {"type": "string", "minLength": 1},
+            "vertex_order_points": {"const": [[0, 0], [1, 0], [0, 1]]},
+            "vertex_vanishing_orders": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0}},
+            "open_edge_normal_flux": {"const": "ZERO"},
+            "punctured_corner_flux": {"const": "ZERO_BY_STORED_VANISHING_ORDERS"}
+          }
+        }
+      }
+    },
+    "momentContribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["moment_powers", "coefficient"],
+      "properties": {
+        "moment_powers": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0}},
+        "coefficient": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "channelRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["channel_id", "symmetric_numerator_terms", "moment_reduction", "integrated_value"],
+      "properties": {
+        "channel_id": {"type": "string", "pattern": "^I(10|24|25|28|29)_[123]{3}$"},
+        "symmetric_numerator_terms": {"type": "array", "items": {"$ref": "#/$defs/polyTerm"}},
+        "moment_reduction": {"type": "array", "items": {"$ref": "#/$defs/momentContribution"}},
+        "integrated_value": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["rational", "scalar_triangle_master_coefficient", "decimal_60"],
+          "properties": {
+            "rational": {"$ref": "#/$defs/rational"},
+            "scalar_triangle_master_coefficient": {"$ref": "#/$defs/rational"},
+            "decimal_60": {"type": "string", "pattern": "^-?[0-9]+\\.[0-9]+$"}
+          }
+        }
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
