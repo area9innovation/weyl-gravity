@@ -1,0 +1,43 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_ISOLATED_CANDIDATES_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact positive-circumference and unsquared temporal-sign classification for every ell=2 cross pair between compact momentum fibres |n|=1 and |n|=2.",
+  "content_sha256": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.py": "539a09d05d84e00829417e0dd54f3613008021cfa2bc1c00b3819e828f9e712d",
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.json": "27fe530f6d296453e4eaf504eed688b6a2480cac18e0581e839898c7868e3450",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.schema.json": "b5a81309dcc08d9ca4ab5fcc273d7387090b66839b82e51f7931c2802510491f",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.py": "998c0bc0e38b4f2fddbcfbf817f1088620d0b73582ad607f55d7d47e396d732a",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.py": "5102cf63e793adb29c5870cd9fea52e898aa4d11b5823eed598b3a682cf8b755",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-isolated-candidates.md": "9c961c559afb5c964e4e351201734f1b354abd374e58d2970fa583979bef0dfa"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.2,
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 20.8,
+      "tests_run": 4,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The 198-row identity audit and arbitrary-momentum divisor are unchanged hashed inputs; the verifier independently reconstructs all offsets, candidates and exact signs."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No source coefficient, shared operator or lifecycle freeze changed; the projected exceptional rows and complete two-fibre tangent cone remain open."
+    }
+  },
+  "claim_boundary": "Candidate classification only for ell=2 cross pairs between |n|=1 and |n|=2; parity selection, projected sources, same-fibre rows, full tangent cone, causal, residual and quantum claims remain fail-closed."
+}
