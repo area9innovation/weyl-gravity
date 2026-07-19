@@ -92,6 +92,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_candidate4_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json",
     "ell2_two_abs_momentum_axial_qminus_L4_triplet": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.json",
     "ell2_two_abs_momentum_axial_axial_L4_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_axial_L4_matrix.json",
+    "ell2_two_abs_momentum_polar_polar_L4_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_polar_polar_L4_matrix.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
@@ -836,6 +837,18 @@ def entries() -> list[dict[str, object]]:
             "This G2 row classifies the complete 27-coefficient axial-axial L4 basis matrix, not its arbitrary-amplitude zero variety. The other 81 axisymmetric and 56 odd-L coefficients, complete two-fibre tangent cone, smooth-secular and causal classes, residual descent and higher lifecycles remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ell2_two_abs_momentum_polar_polar_l4_matrix",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 at twelve separately tuned algebraic circumference rows; before final residual quotient", carrier="all twenty axisymmetric polar ell=2 branch-basis cross products between |n|=1 and |n|=2 that resonate at L=4", degree=2, parity="polar times polar input; polar L=4 output", ell="input 2 x 2; output L=4", m="0+0 -> M=0", k="row-specific signed compact momenta on |n|=1 and |n|=2; circumference rows retained separately", omega="row-specific positive-frequency SUM channel", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","Every q-minus, p-extra and q-plus polar input and target keeps its exact same-background branch, parity, harmonic, signed-momentum, frequency and circumference label; distinct rows are not identified."),
+            ("CERTIFIED","The action-derived generic polar-pair q2 slice supplies all 27 polar L=4 adjoint coefficients, reproduces the prior direct four-dimensional polar source and checks every input representative against the polar Hessian."),
+            ("NOT_APPLICABLE","These nonzero-frequency resonant functionals are independent of, and do not replace, the five compact stabilizer moment maps."),
+            ("OBSTRUCTED","Exactly one of 27 scalar components vanishes, while 26 have exact rational intervals excluding zero; every one of the twenty declared polar branch-basis fixtures has a nonzero complete cokernel vector."),
+            _second_order(("OBSTRUCTED","No bounded or finite-quasiperiodic correction exists for any of the twenty declared polar-polar branch-basis fixtures."),("OPEN","Smooth-secular corrections and cancellations among arbitrary polar linear combinations are not classified."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_polar_polar_L4_matrix","ell2_two_abs_momentum_axial_axial_L4_matrix","ell2_two_abs_momentum_parity_workload","polar_operator","abstract_cone"),
+            "This G2 row classifies the complete 27-coefficient polar-polar L4 basis matrix, not its arbitrary-amplitude zero variety. The two ordered cross-parity matrices, 56 odd-L coefficients, complete two-fibre tangent cone, smooth-secular and causal classes, residual descent and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="constant twist position plus paired axisymmetric +/-k Einstein-plus/minus standing waves", degree=2, parity="generic input parity retained; polar extra resonant output", ell="every one fixed integer ell>=2 with output L=2ell", m="m_A=0 inputs and M=0 output", k="one tuned allowed nonzero +/-k pair", omega="q-plus/minus inputs and p-primary sum-frequency output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
@@ -1322,6 +1335,24 @@ def build() -> dict[str, object]:
         or axial_matrix["causal_or_quantum_claim"]
     ):
         raise AssertionError("ell2 two-absolute-momentum axial-axial L4 matrix exceeded its scope")
+    polar_matrix_value = records["ell2_two_abs_momentum_polar_polar_L4_matrix"]
+    polar_matrix = polar_matrix_value["classification"]
+    polar_summary = polar_matrix_value["matrix_summary"]
+    if not (
+        polar_matrix["complete_polar_polar_L4_basis_matrix_classified"]
+        and polar_matrix["all_twenty_basis_fixtures_bounded_obstructed"]
+        and polar_summary["target_adjoint_coefficients"] == 27
+        and polar_summary["zero_target_adjoint_coefficients"] == 1
+        and polar_summary["nonzero_target_adjoint_coefficients"] == 26
+        and polar_matrix_value["direct_calibration"]["matches_direct_four_dimensional_source"]
+    ):
+        raise AssertionError("ell2 two-absolute-momentum polar-polar L4 matrix changed")
+    if (
+        polar_matrix["arbitrary_polar_linear_combinations_classified"]
+        or polar_matrix["all_axisymmetric_L4_coefficients_classified"]
+        or polar_matrix["causal_or_quantum_claim"]
+    ):
+        raise AssertionError("ell2 two-absolute-momentum polar-polar L4 matrix exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

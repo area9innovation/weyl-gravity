@@ -1951,6 +1951,21 @@ not an amplitude-cone theorem.  It retains the twelve algebraic circumference
 fibres separately.  The active coefficient gate is the remaining 81
 axisymmetric `L=4` coefficients, then 56 nonaxisymmetric `L=1,3` coefficients.
 
+The complete polar--polar `L=4` branch-basis matrix resolves the next 27
+axisymmetric coefficients.  Its generic action-derived slice reproduces the
+prior direct four-dimensional polar source and places every declared input
+representative in the exact polar Hessian kernel.  Twenty-six scalar
+adjoint coefficients have rational intervals excluding zero and one
+vanishes, but each of the twenty polar basis fixtures has a nonzero complete
+cokernel vector.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_polar_polar_l4_matrix`
+therefore marks all twenty fixtures bounded/finite-quasiperiodic
+`OBSTRUCTED`; arbitrary polar linear combinations and smooth-secular
+corrections remain `OPEN`, causal correction remains `NO_CERTIFIED_MAP`.
+The active coefficient gate is now the two ordered cross-parity matrices:
+54 of 108 axisymmetric `L=4` coefficients are resolved, with 56
+nonaxisymmetric `L=1,3` coefficients still open.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell

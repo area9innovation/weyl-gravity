@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-polar-polar-L4-matrix-v1",
+  "type": "object",
+  "required": ["schema", "result_id", "lifecycle_state", "dependency_tags", "scope", "source_slice", "direct_calibration", "candidate_rows", "matrix_summary", "second_order_verdict", "workload_progress", "classification", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-ell2-two-abs-momentum-polar-polar-L4-matrix-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_POLAR_POLAR_L4_MATRIX"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "candidate_rows": {"type": "array", "minItems": 12, "maxItems": 12},
+    "matrix_summary": {"type": "object", "properties": {"candidate_rows": {"const": 12}, "polar_input_basis_fixtures": {"const": 20}, "target_adjoint_coefficients": {"const": 27}}, "required": ["candidate_rows", "polar_input_basis_fixtures", "target_adjoint_coefficients", "basis_fixtures_with_nonzero_cokernel_vector"]},
+    "second_order_verdict": {"type": "object", "properties": {"smooth_secular_status": {"const": "OPEN"}, "causal_retarded_status": {"const": "NO_CERTIFIED_MAP"}}, "required": ["basis_fixture_statuses", "smooth_secular_status", "causal_retarded_status"]},
+    "workload_progress": {"type": "object", "properties": {"resolved_axisymmetric_L4_coefficients": {"const": 54}, "remaining_axisymmetric_L4_coefficients": {"const": 54}, "complete_two_fibre_tangent_cone_classified": {"const": false}}, "required": ["resolved_axisymmetric_L4_coefficients", "remaining_axisymmetric_L4_coefficients", "complete_two_fibre_tangent_cone_classified"]},
+    "classification": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  }
+}

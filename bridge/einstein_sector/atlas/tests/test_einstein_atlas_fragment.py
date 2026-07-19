@@ -146,6 +146,19 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("not its arbitrary-amplitude zero variety", entry["claim_boundary"])
 
+    def test_complete_polar_polar_l4_basis_matrix_is_fail_closed(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_polar_polar_l4_matrix"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OBSTRUCTED")
+        self.assertIn("26 have exact rational intervals excluding zero", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("distinct rows are not identified", entry["mode_data"]["dispersion"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "NOT_APPLICABLE")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("two ordered cross-parity matrices", entry["claim_boundary"])
+
     def test_twist_aligned_phase_divisor_requires_an_independent_functional(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
         second_order = entry["mode_data"]["second_order"]

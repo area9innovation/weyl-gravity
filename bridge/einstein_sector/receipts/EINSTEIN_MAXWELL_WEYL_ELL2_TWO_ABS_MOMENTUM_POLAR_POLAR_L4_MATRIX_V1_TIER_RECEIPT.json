@@ -1,0 +1,40 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_POLAR_POLAR_L4_MATRIX_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Complete 27-coefficient polar L4 target-adjoint matrix for the twenty polar ell=2 branch-basis fixtures crossing the retained |n|=1 and |n|=2 fibres.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_polar_polar_L4_matrix.json": "768207539cdf1c7707374f22ba23c0abb2ae9170235e4908b05a27adb0270345",
+    "bridge/einstein_sector/einstein_maxwell_weyl_two_abs_momentum_polar_polar_L4_matrix.py": "dfc2295ec29ad29e20708127494863ee5e495481cbb4defee356aa75c2d61e1c",
+    "bridge/einstein_sector/generated/einstein_maxwell_weyl_ell2_polar_polar_L4_q2_slice.json": "6bfc36e5b278ebb32182ad400dff1c3009f6e0c418f708ce928a84df7ad57125",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_polar_polar_L4_matrix.schema.json": "ed21e623953ccfb2833a65397b29aabe1938f3760492bbd985ebd924639acad8",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_polar_polar_L4_matrix.py": "a2bd1a854091cbd5e53645acc76769cee0aa3b149736d9a8c9bb97a78d961fcc",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_polar_polar_L4_matrix.py": "e6e2f39cb7cf10d27c0285cf05bbb2a8acbe7973a3dbb2411582fd1131c0d7a1",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-polar-polar-L4-matrix.md": "00b6e04dc127772a04b72c12e1bc06f7360dbddbfe856e3494de1da1461656ac"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <scoped JSON paths>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 66,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_two_abs_momentum_polar_polar_L4_matrix --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_polar_polar_L4_matrix.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_polar_polar_L4_matrix",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 760.26,
+      "cpu_seconds": 756.0,
+      "max_rss_kib": 115616,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_two_abs_momentum_polar_polar_L4_matrix --write",
+      "reason": "The strengthened producer revalidated every polar input representative against the action Hessian, reproduced the independent direct-coordinate opposite-momentum source, and contracted all 27 target-adjoint coefficients with exact interval witnesses."
+    },
+    "tier_3": {"status": "NOT_RUN", "reason": "This is a G2 branch-basis matrix theorem, not an arbitrary-amplitude zero-variety, complete tangent-cone freeze or shared-core algebra change."}
+  },
+  "claim_boundary": "All twenty declared polar--polar branch-basis fixtures are bounded or finite-quasiperiodic OBSTRUCTED. Arbitrary polar linear combinations, both ordered cross-parity matrices, all 56 nonaxisymmetric coefficients, smooth-secular and causal corrections, the complete two-fibre cone, residual, observable and quantum claims remain fail-closed."
+}

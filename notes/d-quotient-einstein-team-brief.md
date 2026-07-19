@@ -3375,6 +3375,21 @@ row
 `einstein.ph.wm.interaction.ell2_two_abs_momentum_axial_axial_l4_matrix`
 retains every branch, signed momentum, frequency and circumference label.
 
+The complete polar--polar `L=4` branch-basis matrix is now certified on the
+same twelve circumference rows.  Its content-addressed generic `q2` slice
+contains 1,576 PBW terms, reproduces the prior direct four-dimensional
+opposite-momentum polar source exactly, and checks every input representative
+against the polar action Hessian.  Again 26 of 27 target-adjoint coefficients
+have exact nonzero rational intervals and one vanishes, while every one of the
+twenty polar basis fixtures has a nonzero complete cokernel vector.  All
+twenty fixtures are therefore bounded/finite-quasiperiodic `OBSTRUCTED`.
+Arbitrary polar linear combinations and smooth-secular corrections remain
+`OPEN`; causal correction remains `NO_CERTIFIED_MAP`.  Fail-closed atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_polar_polar_l4_matrix`
+raises the resolved axisymmetric count to 54 of 108.  The activation gate is
+now the two ordered cross-parity matrices, followed by the 56 nonaxisymmetric
+`L=1,3` coefficients.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

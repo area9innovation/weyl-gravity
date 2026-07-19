@@ -448,6 +448,20 @@ def verify() -> None:
         raise AssertionError("axial-axial L4 correction classes were silently merged")
     if "not its arbitrary-amplitude zero variety" not in axial_matrix["claim_boundary"]:
         raise AssertionError("axial-axial L4 matrix exceeded its basis-fixture scope")
+    polar_matrix = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_polar_polar_l4_matrix"]
+    if polar_matrix["descriptions"]["nonlinear"] != "OBSTRUCTED":
+        raise AssertionError("complete polar-polar L4 basis obstruction was hidden")
+    if polar_matrix["mode_data"]["resonance"]["status"] != "OBSTRUCTED" or "26 have exact rational intervals excluding zero" not in polar_matrix["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("polar-polar L4 interval witnesses were hidden")
+    if "distinct rows are not identified" not in polar_matrix["mode_data"]["dispersion"]["statement"]:
+        raise AssertionError("polar-polar L4 circumference rows were merged")
+    if polar_matrix["mode_data"]["taub_maps"]["status"] != "NOT_APPLICABLE":
+        raise AssertionError("polar-polar L4 resonances were merged with Taub maps")
+    polar_matrix_second = polar_matrix["mode_data"]["second_order"]
+    if polar_matrix_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or polar_matrix_second["smooth_secular"]["status"] != "OPEN" or polar_matrix_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("polar-polar L4 correction classes were silently merged")
+    if "two ordered cross-parity matrices" not in polar_matrix["claim_boundary"]:
+        raise AssertionError("polar-polar L4 matrix hid the remaining parity workload")
     aligned_phase = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate"]
     aligned_phase_second = aligned_phase["mode_data"]["second_order"]
     if aligned_phase["descriptions"]["nonlinear"] != "OPEN":
