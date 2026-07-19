@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "scope", "spectator_proof", "complete_bounded_zero_locus", "correction_classes", "classification", "interpretation", "next_gate", "claim_boundary", "provenance", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-twist-circumference-wilson-ell2-complete-bounded-cone-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_TWIST_CIRCUMFERENCE_WILSON_ELL2_COMPLETE_BOUNDED_CONE"},
+    "result_state": {"const": "COMPLETE_C_WX_A_B_ELL2_BOUNDED_CONE_CLASSIFIED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "spectator_proof": {"type": "object", "required": ["circumference_wave", "circumference_twist", "Wilson_wave", "Wilson_twist", "self_and_mutual"]},
+    "complete_bounded_zero_locus": {"type": "object", "required": ["free_spectators", "twist_velocity", "remaining_equations", "product_structure", "necessity_and_sufficiency"]},
+    "correction_classes": {"type": "object", "required": ["BOUNDED_OR_FINITE_QUASIPERIODIC", "SMOOTH_EXPONENTIAL_POLYNOMIAL", "CAUSAL_RETARDED"]},
+    "classification": {"type": "object", "required": ["complete_c_Wx_A_B_plus_ell2_wave_carrier_covered", "circumference_and_Wilson_are_exact_bounded_spectators", "bounded_zero_locus_necessary_and_sufficient", "radion_circumference_velocity_or_electric_tangents_classified", "other_ell_or_nonzero_momentum_classified", "unrestricted_smooth_secular_cone_classified", "causal_or_quantum_claim", "all_orders_integrability"]},
+    "provenance": {"type": "object", "required": ["generator_path", "generator_sha256", "inputs"]}
+  }
+}

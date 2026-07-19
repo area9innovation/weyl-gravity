@@ -2177,6 +2177,85 @@
       }
     },
     {
+      "claim_boundary": "The dynamical globals a,d,Q_e, other harmonics and momenta, causal propagation, all-orders integration, residual observables and quantum theory remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_TWIST_CIRCUMFERENCE_WILSON_ELL2_COMPLETE_BOUNDED_CONE",
+          "sha256": "6848c12db7388bf09b7acc6fdb1e47c7f5608e29dbdbfd86fb2c0aee4278136f"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_TWIST_POSITION_VELOCITY_ELL2_COMPLETE_BOUNDED_CONE",
+          "sha256": "7e928ab1294b25c3c6ff36a6e4385c0afc9b32d34eaa9264af2875492a329cd0"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FIXED_ELL_K0_BOUNDED_CONE",
+          "sha256": "9b6854e6405b6ffb028376c071ee69233dfd888a27b738985a7e56074cd1bc6c"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_SECOND_ORDER",
+          "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+        }
+      ],
+      "id": "einstein.ph.wm.mixed.twist_circumference_wilson_ell2_complete_bounded_cone",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The c and W_x global directions are retained as distinct fixed-background tangent coordinates.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "Their source-theory pairings remain those of the standard homogeneous/Wilson block.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Exact k=0 radius transport removes the c-times-wave source, while every W_x mixed source vanishes because delta F=0.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The displayed product cone is necessary and sufficient on the declared carrier.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No retarded Weyl-Maxwell complex is certified on this background.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The bounded corrections are smooth exponential-polynomial; the unrestricted secular cone is not reclassified.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The bounded cone is R_c x R_Wx times the complete twist-wave cone: c and W_x are arbitrary, B=0, and the constant-position H,J_i and shell equations remain.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "constant circumference c, flat Wilson W_x, axial twist position/velocity A,B and the complete axial/polar ell=2,k=0 q/p wave carrier",
+        "charge_sector": "fixed magnetic bundle N=2; a,b,d,Q_e set to zero",
+        "degree": 2,
+        "ell": "global 0,1 plus wave 2; outputs 0,...,4",
+        "k": 0,
+        "m": "all twist components and wave m",
+        "omega": "generalized zero plus all ell2 shells",
+        "parity": "homogeneous spectators, axial generalized-zero twist and axial/polar waves",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "The former arbitrary-A product claim is withdrawn. This row certifies the static branch and A=0 axial ell=2,k=0 wave subcone only; nonzero-A, polar waves, other ell and momenta, infinite sums and higher lifecycles remain fail-closed.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -2785,7 +2864,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "19a328fb09d16be56d8b74e640521e6072fa3a5ca7d5481f3a4c529182fcf4d1",
+  "generated_by_sha256": "7bee1a58f3c190127869a7f91af495f6a58567f0a618b7d0c3de6337e903be8f",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

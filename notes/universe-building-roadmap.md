@@ -1323,6 +1323,13 @@ remain fail-closed.  The direct polar Einstein-minus source now supplies success
 full-polynomial pivots
 `66*b*z`, `198*a*z`,
 and `198*d*z`; rotational equivariance promotes them to every polar `m`.
+
+The `k=0` circumference and Wilson enlargement is now an exact product:
+`Z2_bounded(c,W_x,A,B,wave)=R_c x R_Wx x Z2_bounded(A,B,wave)`.  This uses
+the exact circle-radius transport for `c`, absence of a `c`-times-twist source,
+and `delta F(W_x dx)=0`.  The corresponding atlas row is
+`einstein.ph.wm.mixed.twist_circumference_wilson_ell2_complete_bounded_cone`;
+the dynamical `a,d,Q_e` gates remain separate and fail-closed.
 Together with the complete axial--polar `ell=2` common-zero theorem and the
 constant zero-frequency `L=1` right inverse, this closes the `A=0`
 global-plus-`ell=2,k=0` wave subcone across both parities, both Einstein

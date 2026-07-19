@@ -58,6 +58,7 @@ CERTIFICATES = {
     "constant_twist_ell2_moment_resonance_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_moment_resonance_cone.json",
     "constant_twist_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.json",
     "twist_position_velocity_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.json",
+    "twist_circumference_wilson_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.json",
     "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
     "global_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
     "extra_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
@@ -465,6 +466,18 @@ def entries() -> list[dict[str, object]]:
             "Other homogeneous tangents, other ell, nonzero or opposite momentum, the unrestricted secular cone, causal propagation, all-orders integration, residual observables and quantum theory remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.mixed.twist_circumference_wilson_ell2_complete_bounded_cone",
+            _scope(theory="Weyl-Maxwell target", carrier="constant circumference c, flat Wilson W_x, axial twist position/velocity A,B and the complete axial/polar ell=2,k=0 q/p wave carrier", degree=2, parity="homogeneous spectators, axial generalized-zero twist and axial/polar waves", ell="global 0,1 plus wave 2; outputs 0,...,4", m="all twist components and wave m", k=0, omega="generalized zero plus all ell2 shells", charge_sector="fixed magnetic bundle N=2; a,b,d,Q_e set to zero"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The c and W_x global directions are retained as distinct fixed-background tangent coordinates."),
+            ("CERTIFIED", "Their source-theory pairings remain those of the standard homogeneous/Wilson block."),
+            ("CERTIFIED", "The bounded cone is R_c x R_Wx times the complete twist-wave cone: c and W_x are arbitrary, B=0, and the constant-position H,J_i and shell equations remain."),
+            ("CERTIFIED", "Exact k=0 radius transport removes the c-times-wave source, while every W_x mixed source vanishes because delta F=0."),
+            _second_order(("CERTIFIED", "The displayed product cone is necessary and sufficient on the declared carrier."), ("CERTIFIED", "The bounded corrections are smooth exponential-polynomial; the unrestricted secular cone is not reclassified."), ("NO_CERTIFIED_MAP", "No retarded Weyl-Maxwell complex is certified on this background.")),
+            _evidence("twist_circumference_wilson_ell2_complete_bounded_cone", "twist_position_velocity_ell2_complete_bounded_cone", "global_fixed_ell_k0_bounded", "standard_global_bounded"),
+            "The dynamical globals a,d,Q_e, other harmonics and momenta, causal propagation, all-orders integration, residual observables and quantum theory remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone",
             _scope(theory="Weyl-Maxwell target", carrier="complete homogeneous and axial-twist globals plus axial ell=2,k=0 Einstein-minus and both extra primaries", degree=2, parity="homogeneous and axial", ell="input 0,1,2 with every output L=0,...,4", m="all wave m=-2,...,2 and arbitrary real twist vector", k=0, omega="generalized zero, sqrt(6-2*sqrt(3)), and 4/sqrt(3)"),
             {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
@@ -722,6 +735,15 @@ def build() -> dict[str, object]:
         raise AssertionError("twist-position/velocity ell2 bounded cone changed")
     if twist_position_velocity["other_homogeneous_tangents_classified"] or twist_position_velocity["unrestricted_smooth_secular_cone_classified"]:
         raise AssertionError("twist-position/velocity theorem exceeded its declared carrier or correction class")
+    spectator_cone = records["twist_circumference_wilson_ell2_complete_bounded_cone"]["classification"]
+    if not (
+        spectator_cone["complete_c_Wx_A_B_plus_ell2_wave_carrier_covered"]
+        and spectator_cone["circumference_and_Wilson_are_exact_bounded_spectators"]
+        and spectator_cone["bounded_zero_locus_necessary_and_sufficient"]
+    ):
+        raise AssertionError("c/Wx twist-wave product cone changed")
+    if spectator_cone["radion_circumference_velocity_or_electric_tangents_classified"]:
+        raise AssertionError("spectator theorem promoted a dynamical homogeneous direction")
     if not records["global_self_coefficients"]["classification"]["complete_aligned_global_self_source_classified"]:
         raise AssertionError("global self coefficient input changed")
     if not records["extra_self_coefficients"]["classification"]["complete_C4_extra_self_source_coefficient_explicit"]:

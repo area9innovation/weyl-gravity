@@ -225,6 +225,12 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
         self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
 
+    def test_circumference_wilson_twist_wave_product_is_registered(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.twist_circumference_wilson_ell2_complete_bounded_cone"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("R_c x R_Wx", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+
 
 if __name__ == "__main__":
     unittest.main()

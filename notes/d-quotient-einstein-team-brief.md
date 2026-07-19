@@ -2493,6 +2493,22 @@ records the necessity-and-sufficiency theorem.  Other homogeneous tangents,
 other `ell`, nonzero momentum, the unrestricted secular class and
 causal/all-orders lifecycles remain open.
 
+The next spectator enlargement is also complete.  At `k=0`, exact
+circle-radius transport supplies a bounded correction for every `c`-times-wave
+source, the direct generalized-zero source contains no `c`-times-twist term,
+and `W_x` has `delta F=0`, so all of its mixed Euler sources vanish.  Therefore
+
+```text
+Z2_bounded(c,W_x,A,B,wave)
+  = R_c x R_Wx x Z2_bounded(A,B,wave).
+```
+
+Atlas row
+`einstein.ph.wm.mixed.twist_circumference_wilson_ell2_complete_bounded_cone`
+records this exact product theorem.  The next genuinely dynamical global gates
+are the radion position `a`, circumference velocity `d`, and electric tangent
+`Q_e`; they are not being merged with the spectator result.
+
 The polar Einstein-minus cross source is now also direct and exact.  Its
 first action row has successive nonzero pivots `66*b*z`, `198*a*z`, and
 `198*d*z`, so Schur promotion gives the same `a=b=d=0` conclusion for every

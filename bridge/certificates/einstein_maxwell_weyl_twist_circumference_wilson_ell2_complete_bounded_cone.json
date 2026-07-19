@@ -1,0 +1,91 @@
+{
+  "claim_boundary": "This is complete only for c,W_x,A,B plus the ell=2,k=0 q/p wave carrier in the bounded class. It excludes a,b,d,Q_e, other ell and momentum, unrestricted secular corrections, causal propagation, all-orders integration, residual observables and quantum theory.",
+  "classification": {
+    "all_orders_integrability": false,
+    "bounded_zero_locus_necessary_and_sufficient": true,
+    "causal_or_quantum_claim": false,
+    "circumference_and_Wilson_are_exact_bounded_spectators": true,
+    "complete_c_Wx_A_B_plus_ell2_wave_carrier_covered": true,
+    "other_ell_or_nonzero_momentum_classified": false,
+    "radion_circumference_velocity_or_electric_tangents_classified": false,
+    "unrestricted_smooth_secular_cone_classified": false
+  },
+  "complete_bounded_zero_locus": {
+    "free_spectators": "c and W_x are arbitrary real tangent coordinates",
+    "necessity_and_sufficiency": "the spectator columns introduce no new cokernel equation, and their bounded corrections superpose with the complete twist-wave correction",
+    "product_structure": "Z2_bounded(c,W_x,A,B,wave)=R_c x R_Wx x Z2_bounded(A,B,wave)",
+    "remaining_equations": "exactly the constant-position ell2 q/p shell restrictions and mu_H=mu_J1=mu_J2=mu_J3=0",
+    "twist_velocity": "B=0"
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "claim": "the bounded correction is a smooth subclass; the unrestricted secular cone is not reclassified",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "The compact global data stratify into dynamical and spectator directions. At k=0, circumference position and Wilson holonomy form a flat product factor over the nonlinear twist-wave cone, whereas twist velocity is removed. The next enlargements a, d and Q_e cannot be treated as spectators.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "adjoin the radion position a, circumference velocity d and electric tangent Q_e as separate dynamical incidence problems",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.py",
+    "generator_sha256": "f71174a78bf7c6697d1e7308bdaf965ac9ad5c05e78ed9d0aa8d51ecc0c52f93",
+    "inputs": {
+      "circumference": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
+        "sha256": "80f36e27d91cf92211b94c2fbc8d74e97806c04b688f72e02284f8951f8fecb9"
+      },
+      "electric_wilson": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
+        "sha256": "50d0bf118e1699122b8bf4e0c3da7b8fb0295a9a4725d05c155122e8d2202676"
+      },
+      "global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      },
+      "twist_wave": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.json",
+        "sha256": "7e928ab1294b25c3c6ff36a6e4385c0afc9b32d34eaa9264af2875492a329cd0"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_TWIST_CIRCUMFERENCE_WILSON_ELL2_COMPLETE_BOUNDED_CONE",
+  "result_state": "COMPLETE_C_WX_A_B_ELL2_BOUNDED_CONE_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-twist-circumference-wilson-ell2-complete-bounded-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.schema.json",
+  "schema_sha256": "59ed9f6f1b81114513d5eed01aa870c8eeee2fa805a15c03c39b36069a0975c4",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic second-order correction",
+    "carrier": "constant circumference c, flat Wilson W_x, arbitrary axial twist position A and velocity B, plus the complete axial/polar ell=2,k=0 q/p wave carrier",
+    "charge_sector": "fixed N=2 magnetic bundle; electric, radion and circumference-velocity tangents set to zero",
+    "degree": 2,
+    "ell": "global 0,1 plus wave 2; outputs 0,...,4",
+    "k": 0,
+    "m": "all twist components and all wave m=-2,...,2",
+    "omega": "generalized zero plus all three ell2 shells",
+    "parity": "homogeneous spectators, axial generalized-zero twist and axial/polar waves",
+    "theory": "Weyl-Maxwell target"
+  },
+  "spectator_proof": {
+    "Wilson_twist": "the Euler operators depend on the U1 connection only through F=dA",
+    "Wilson_wave": "D^2E[W_x,u_wave]=0 because delta F(W_x dx)=0",
+    "circumference_twist": "the direct generalized-zero source contains no c-times-twist term",
+    "circumference_wave": "the exact circle-radius family transports every k=0 oscillator and supplies a bounded mixed correction",
+    "self_and_mutual": "c and W_x have zero self and mutual quadratic sources on the declared global face"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone"
+  ]
+}
