@@ -5,6 +5,7 @@ from __future__ import annotations
 import gc
 import hashlib
 import json
+from concurrent.futures import ProcessPoolExecutor
 from fractions import Fraction
 from pathlib import Path
 
@@ -27,13 +28,15 @@ def parse(value: str) -> sp.Expr:
     return sp.sympify(value, locals={"sqrt": sp.sqrt, "pi": sp.pi})
 
 
-def exact_square(left: sp.Expr, right: sp.Expr, factor: int) -> None:
+def exact_square(relation: tuple[sp.Expr, sp.Expr, int]) -> bool:
+    left, right, factor = relation
     residual = sp.sqrtdenest(left**2 - factor * right**2)
     algebraic = to_number_field(residual)
-    assert algebraic.as_expr() == 0
+    result = algebraic.as_expr() == 0
     del residual, algebraic
     clear_cache()
     gc.collect()
+    return result
 
 
 def verify() -> None:
@@ -52,6 +55,7 @@ def verify() -> None:
     }
     assert list(fibres) == [6, 10, 18]
     assert [item["candidate_index"] for item in value["decompositions"]] == [6, 10, 18]
+    exact_relations = []
     for item in value["decompositions"]:
         fibre = fibres[item["candidate_index"]]
         expected = {}
@@ -76,7 +80,7 @@ def verify() -> None:
                 + [(rows["pa"][j], rows["pp"][j], 128) for j in range(2)]
             )
         for index, (left, right, factor) in enumerate(relations):
-            exact_square(left, right, factor)
+            exact_relations.append((left, right, factor))
             witness = item["exact_relation_interval_witnesses"][index]
             assert witness["square_factor"] == factor
             left_interval, right_interval = witness["left"], witness["right"]
@@ -92,6 +96,8 @@ def verify() -> None:
         assert zero["spectator_dimension_over_C"] == 10
         assert zero["dimension_over_C"] == 22
         assert zero["irreducible_components_over_C"] == 1
+    with ProcessPoolExecutor(max_workers=min(12, len(exact_relations))) as pool:
+        assert all(pool.map(exact_square, exact_relations))
     classification = value["classification"]
     assert classification["all_three_multiplicity_two_L3_zero_varieties_classified"]
     assert classification["all_m_irreducible_decomposition_classified"]

@@ -5,6 +5,7 @@ import argparse
 import gc
 import hashlib
 import json
+from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
 import sympy as sp
@@ -58,17 +59,22 @@ def coefficient_rows(fibre: dict[str, object]) -> dict[str, list[sp.Expr]]:
     return rows
 
 
+def exact_squared_relation_vanishes(relation: tuple[sp.Expr, sp.Expr, int]) -> bool:
+    """Prove one magnitude relation in its real algebraic number field."""
+    left, right, square_factor = relation
+    residual = sp.sqrtdenest(left**2 - square_factor * right**2)
+    algebraic = to_number_field(residual)
+    result = algebraic.as_expr() == 0
+    del algebraic, residual
+    clear_cache()
+    gc.collect()
+    return result
+
+
 def exact_squared_relations_vanish(relations: list[tuple[sp.Expr, sp.Expr, int]]) -> bool:
-    """Prove each magnitude relation in its real algebraic number field."""
-    for left, right, square_factor in relations:
-        residual = sp.sqrtdenest(left**2 - square_factor * right**2)
-        algebraic = to_number_field(residual)
-        if algebraic.as_expr() != 0:
-            return False
-        del algebraic, residual
-        clear_cache()
-        gc.collect()
-    return True
+    """Prove independent algebraic-number relations concurrently."""
+    with ProcessPoolExecutor(max_workers=min(12, len(relations))) as pool:
+        return all(pool.map(exact_squared_relation_vanishes, relations))
 
 
 def decomposition(fibre: dict[str, object]) -> dict[str, object]:
