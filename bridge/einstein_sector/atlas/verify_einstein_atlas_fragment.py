@@ -478,6 +478,12 @@ def verify() -> None:
         raise AssertionError("symbolic mixed-sheet compatibility join changed")
     if mixed_sheet_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "all-orders integration" not in mixed_sheet["claim_boundary"]:
         raise AssertionError("symbolic mixed-sheet higher lifecycle was over-promoted")
+    tuned_cone = by_id["einstein.ph.wm.interaction.symbolic_ell_tuned_axisymmetric_bounded_cone"]
+    tuned_second = tuned_cone["mode_data"]["second_order"]
+    if tuned_cone["descriptions"]["nonlinear"] != "CERTIFIED" or tuned_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("symbolic tuned bounded cone was hidden")
+    if "sharp" not in tuned_cone["mode_data"]["taub_maps"]["statement"] or "multiple |k|" not in tuned_cone["claim_boundary"]:
+        raise AssertionError("symbolic tuned cone boundary changed")
     aligned_obstruction = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_bounded_obstruction"]
     aligned_obstruction_second = aligned_obstruction["mode_data"]["second_order"]
     if aligned_obstruction["descriptions"]["nonlinear"] != "OBSTRUCTED":

@@ -1984,6 +1984,21 @@ bounded `CERTIFIED`, causal `NO_CERTIFIED_MAP`.  The full amplitude cone,
 fixed circumference, multiple `|k|` fibres and all-orders integration remain
 separate gates.
 
+The complete tuned axisymmetric one-fibre cone is now the origin plus two
+mixed sheets with the sharp interval
+
+```text
+(1-r_ell)/(1+r_ell) <= |p_+|^2/|p_-|^2
+                     <= (1+r_ell)/(1-r_ell),
+r_ell=omega_minus/omega_plus.
+```
+
+The explicit q-plus occupations prove necessity and sufficiency and retain
+arbitrary relative phases.  Atlas row
+`einstein.ph.wm.interaction.symbolic_ell_tuned_axisymmetric_bounded_cone`
+is bounded `CERTIFIED`, causal `NO_CERTIFIED_MAP`.  The active nonlinear gate
+is now the remaining two-`|k|` source matrix, not the single-fibre cone.
+
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared
 certificate paths in the Einstein-team brief, with all of:

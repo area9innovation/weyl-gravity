@@ -212,6 +212,14 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("all-orders integration", entry["claim_boundary"])
 
+    def test_symbolic_tuned_axisymmetric_cone_is_complete_only_in_scope(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.symbolic_ell_tuned_axisymmetric_bounded_cone"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("sharp", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("multiple |k|", entry["claim_boundary"])
+
     def test_tuned_axisymmetric_bounded_cone_is_complete_only_in_scope(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.opposite_momentum_ell2_tuned_axisymmetric_bounded_cone"]
         second_order = entry["mode_data"]["second_order"]

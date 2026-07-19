@@ -1,0 +1,100 @@
+{
+  "claim_boundary": "Complete only for the tuned m=0 q-minus/q-plus one-|k| carrier at each ell. Extra-primary inputs, nonaxisymmetric data, fixed circumference across ell, multiple |k| fibres, all-orders and higher lifecycles remain fail-closed.",
+  "classification": {
+    "all_orders_integrability": false,
+    "both_mixed_sheet_components_and_origin_included": true,
+    "causal_or_quantum_claim": false,
+    "complete_tuned_axisymmetric_standard_branch_bounded_cone_classified": true,
+    "extra_primary_or_multiple_abs_momentum_inputs_classified": false,
+    "one_sided_planes_removed_by_moment_positivity": true,
+    "relative_phases_included": true,
+    "sharp_action_normalized_amplitude_interval_certified": true
+  },
+  "complete_cone": {
+    "components": "the origin plus two mixed-sheet components subject to the sharp closed amplitude interval",
+    "necessity": "resonance equations give the four-component zero variety; q-plus positivity removes the one-sided planes and imposes the interval",
+    "phases": "p_+ and p_- retain arbitrary complex phases; a_+/- have the common sheet sign relative to p_+/-",
+    "sufficiency": "the imported all-ell bounded-sheet theorem supplies a bounded correction at every point satisfying the moment equations"
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "frequency_ratio": {
+    "definition": "r_ell=omega_minus/omega_plus",
+    "r_ell": "sqrt(ell*(ell + 1) - ell/2 - 1/6)*sqrt(1/(2*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + ell*(ell + 1) - ell/2 - 1/6))",
+    "strict_range": "0<r_ell<1"
+  },
+  "generality_level": "G3_EVERY_INTEGER_ELL_ONE_TUNED_NONZERO_MOMENTUM_FIBRE",
+  "interpretation": "At each generic ell the bounded standard-branch tangent cone is neither the whole linear space nor an isolated ray. It has two finite-width mixed-parity components whose width is fixed by the q-minus/q-plus frequency ratio. This is a complete second-order cone only in the declared tuned axisymmetric one-fibre carrier.",
+  "lifecycle_state": "CLASSIFIED",
+  "moment_map_solution": {
+    "common_sheet_weight": "on either sheet N_+/-=kappa_ell*|p_+/-|^2 with the same kappa_ell>0",
+    "positivity_condition": "|N_+-N_-|<=r_ell*(N_++N_-)",
+    "qminus_occupations": "N_+/-=-h_minus(a_+/- e_A+p_+/- e_P,a_+/- e_A+p_+/- e_P)>=0",
+    "qplus_occupations": [
+      "B_+=(r_ell^2*(N_++N_-)+r_ell*(N_+-N_-))/2",
+      "B_-=(r_ell^2*(N_++N_-)-r_ell*(N_+-N_-))/2"
+    ],
+    "rotations": "J_1=J_2=J_3=0 on m=0",
+    "sharp_amplitude_interval": "-(sqrt(6*ell**2 + 3*ell - 1)*sqrt(1/(12*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell - 1)) - 1)/(sqrt(6*ell**2 + 3*ell - 1)*sqrt(1/(12*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell - 1)) + 1) <= |p_+|^2/|p_-|^2 <= -(sqrt(6*ell**2 + 3*ell - 1)*sqrt(1/(12*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell - 1)) + 1)/(sqrt(6*ell**2 + 3*ell - 1)*sqrt(1/(12*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 6*ell**2 + 3*ell - 1)) - 1)"
+  },
+  "next_gate": "join distinct absolute momentum fibres and compute the remaining two-fibre source coefficients",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_symbolic_ell_tuned_axisymmetric_bounded_cone.py",
+    "generator_sha256": "b5d3c5e807353895348483c1928744337ce55c7e89a7d74f3d7227c6ccb5e168",
+    "inputs": {
+      "bounded_sheet": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension.json",
+        "sha256": "f893d66b49eb52444e06edbaf4b395e1a463851683cc533b9e0f3cd8d0c9fd9e"
+      },
+      "moment_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_cone.json",
+        "sha256": "1ee6417b7f6be0c425e2f33dcf140abe1a4bbf8b0b08548eb0d4c6721c0a6d23"
+      },
+      "parity_matrix": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.json",
+        "sha256": "0f8d41edd39e5dd6e6b5d7be58ffd21f19e44b614a31c0b77cfcd5620dc533e1"
+      }
+    }
+  },
+  "resonance_zero_variety": {
+    "mixed_sheets": "a_+=sigma*sqrt(ell*(ell+1)/2)*p_+ and a_-=sigma*sqrt(ell*(ell+1)/2)*p_-, sigma=+/-1",
+    "one_sided_planes": "removed away from the origin by q-plus occupation positivity because r_ell<1",
+    "origin": "all q-minus amplitudes zero"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_TUNED_AXISYMMETRIC_BOUNDED_CONE",
+  "result_state": "COMPLETE_ALL_ELL_TUNED_AXISYMMETRIC_STANDARD_BRANCH_BOUNDED_CONE",
+  "schema": "einstein-maxwell-weyl-symbolic-ell-tuned-axisymmetric-bounded-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_symbolic_ell_tuned_axisymmetric_bounded_cone.schema.json",
+  "schema_sha256": "663d38bf28a0d725ab094d62152176bcba7a600ebcf213866b0cb03ccac4635c",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 with circumference tuned separately for each ell",
+    "carrier": "arbitrary m=0 axial/polar q-minus amplitudes at +/-k and arbitrary action-normalized q-plus balancing occupations; no twist or extra-primary input",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "every integer ell>=2",
+    "k": "+/-sqrt(sqrt(2*ell*(ell+1))-ell/2-1/6)",
+    "m": "m=0",
+    "omega": "q-minus and q-plus branches",
+    "parity": "both q-minus parities and either mixed-sheet sign",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_symbolic_ell_tuned_axisymmetric_bounded_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_tuned_axisymmetric_bounded_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_symbolic_ell_tuned_axisymmetric_bounded_cone"
+  ]
+}

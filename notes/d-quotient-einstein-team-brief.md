@@ -3293,10 +3293,25 @@ nonzero bounded second-order jets.  Atlas row
 records bounded `CERTIFIED`, causal `NO_CERTIFIED_MAP`, with full sheet-cone
 classification and all-orders integration still `OPEN`.
 
+The full tuned axisymmetric standard-branch cone is now classified.  With
+`r_ell=omega_minus/omega_plus`, either mixed sheet is bounded exactly when
+
+```text
+(1-r_ell)/(1+r_ell)
+ <= |p_+|^2/|p_-|^2 <=
+(1+r_ell)/(1-r_ell).
+```
+
+The explicit nonnegative q-plus occupations prove sufficiency; positivity
+removes both one-sided resonance planes except at the origin.  Thus the cone
+is the origin plus two finite-width mixed components, including arbitrary
+relative phases.  Atlas row
+`einstein.ph.wm.interaction.symbolic_ell_tuned_axisymmetric_bounded_cone`
+is complete only for the declared one-`|k|`, `m=0` carrier.
+
 The active same-background Classical bridge remains Bridge 1.  Its current
-nonlinear activation gates are the full action-normalized amplitude cone on
-the symbolic mixed sheets and the parity-typed 164-coefficient first-two-
-`|k|` workload.
+nonlinear activation gate is now the parity-typed first-two-`|k|` workload;
+the single-fibre symbolic amplitude cone is closed in its declared scope.
 Their fail-closed atlas rows are
 `einstein.ph.wm.interaction.symbolic_ell_mixed_sheet_bounded_extension` and
 `einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload`.  Both

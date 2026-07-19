@@ -96,6 +96,8 @@ CERTIFICATES = {
     "symbolic_ell_qminus_parity_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.json",
     "symbolic_ell_standard_branch_census": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_standard_branch_collision_census.json",
     "symbolic_ell_mixed_sheet_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_mixed_sheet_bounded_extension.json",
+    "symbolic_ell_tuned_axisymmetric_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_tuned_axisymmetric_bounded_cone.json",
+    "opposite_momentum_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_cone.json",
     "twist_aligned_opposite_momentum_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.json",
     "opposite_momentum_ell2_parity_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix.json",
     "opposite_momentum_ell2_mixed_parity_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension.json",
@@ -904,6 +906,18 @@ def entries() -> list[dict[str, object]]:
             "Two explicit wave-only bounded families are certified for each separately tuned ell>=2. The full sheet amplitude cone, extra-primary inputs, fixed circumference, multiple |k| fibres, all-orders integration and higher lifecycles remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.symbolic_ell_tuned_axisymmetric_bounded_cone",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned separately for each ell; before final residual quotient", carrier="arbitrary m=0 axial/polar q-minus amplitudes at +/-k and action-normalized q-plus balancing occupations; no extra-primary input", degree=2, parity="both q-minus parities and either mixed-sheet sign", ell="every integer ell>=2", m="m=0", k="one tuned +/-k pair", omega="q-minus and q-plus branches", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The same-background q-minus/q-plus branch labels and tuned signed momenta are retained."),
+            ("CERTIFIED","The cone uses the action-normalized q-branch occupations and exact p-shell adjoint matrix."),
+            ("CERTIFIED","The explicit B_+/- solution gives the sharp nonnegative occupation interval and removes the one-sided planes."),
+            ("CERTIFIED","The resonance zero variety and complete standard-branch census leave exactly two mixed components plus the origin."),
+            _second_order(("CERTIFIED","The origin plus both mixed sheets in the sharp amplitude interval are necessary and sufficient for bounded correction in the declared carrier."),("CERTIFIED","Every bounded correction is smooth exponential-polynomial."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _evidence("symbolic_ell_tuned_axisymmetric_cone","symbolic_ell_mixed_sheet_extension","symbolic_ell_qminus_parity_matrix","opposite_momentum_cone"),
+            "Complete only for the tuned m=0 q-minus/q-plus one-|k| carrier. Extra-primary inputs, nonaxisymmetric data, fixed circumference, multiple |k| fibres, all-orders and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.opposite_momentum_ell2_mixed_parity_bounded_extension",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with k^2=2*sqrt(3)-7/6 allowed; before final residual quotient", carrier="one constant twist position, paired m=0 axial/polar Einstein-minus waves and paired normalized Einstein-plus balancing waves", degree=2, parity="mixed axial/polar Einstein-minus input with one Einstein-plus multiplicity", ell="input ell=2; every quadratic output L=0,...,4", m="axisymmetric about the twist axis", k="+/-sqrt(2*sqrt(3)-7/6); outputs K=0,+/-2k", omega="all zero, sum and difference frequencies of the q-minus/q-plus inputs", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"OPEN","quantum":"OPEN"},
@@ -1225,6 +1239,11 @@ def build() -> dict[str, object]:
         raise AssertionError("symbolic-ell mixed-sheet bounded extension changed")
     if mixed_sheet["full_mixed_sheet_amplitude_cone_classified"] or mixed_sheet["extra_primary_or_multiple_abs_momentum_inputs_classified"] or mixed_sheet["all_orders_integrability"] or mixed_sheet["causal_or_quantum_claim"]:
         raise AssertionError("symbolic-ell mixed-sheet bounded extension exceeded its scope")
+    tuned_cone = records["symbolic_ell_tuned_axisymmetric_cone"]["classification"]
+    if not (tuned_cone["complete_tuned_axisymmetric_standard_branch_bounded_cone_classified"] and tuned_cone["both_mixed_sheet_components_and_origin_included"] and tuned_cone["sharp_action_normalized_amplitude_interval_certified"] and tuned_cone["one_sided_planes_removed_by_moment_positivity"] and tuned_cone["relative_phases_included"]):
+        raise AssertionError("symbolic-ell tuned bounded cone changed")
+    if tuned_cone["extra_primary_or_multiple_abs_momentum_inputs_classified"] or tuned_cone["all_orders_integrability"] or tuned_cone["causal_or_quantum_claim"]:
+        raise AssertionError("symbolic-ell tuned bounded cone exceeded its scope")
     two_fibre = records["ell2_two_abs_momentum_identity_audit"]["classification"]
     if not (two_fibre["complete_cross_abs_momentum_identity_audit"] and two_fibre["all_three_input_primary_branches_covered"] and two_fibre["all_physical_L1_to_L4_target_shells_covered"] and two_fibre["no_identity_resonant_channel"] and two_fibre["generic_circumference_cross_fibre_nonresonance_certified"]):
         raise AssertionError("ell2 two-absolute-momentum identity audit changed")
