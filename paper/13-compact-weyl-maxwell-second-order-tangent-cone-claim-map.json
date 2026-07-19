@@ -2,7 +2,7 @@
   "schema": "paper-draft-source-map-v1",
   "paper_id": "PAPER_13_COMPACT_WEYL_MAXWELL_SECOND_ORDER_TANGENT_CONE",
   "lifecycle_state": "DRAFT_ALLOWED",
-  "source_baseline": "49899c9ac00ae082cb419ad89bc8c4135a9decb3",
+  "source_baseline": "bf47690291ca82f0d429e620f411bfc6e08800bf",
   "manuscript": "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
   "certified_scope": {
@@ -24,7 +24,9 @@
     "same_sign_candidates_16_through_21_nonzero_bounded_points": "6_OF_6",
     "same_sign_scalar_occupation_extreme_rays_per_candidate": 4,
     "same_sign_candidatewise_extreme_ray_lifts": "24_OF_24",
-    "same_sign_arbitrary_nonnegative_sums_classified": false,
+    "same_sign_candidatewise_minor_circuit_audit": "120_MINORS_90_CIRCUITS",
+    "same_sign_bounded_projection_onto_scalar_cone_surjective": true,
+    "same_sign_complete_phase_parity_fibres_classified": false,
     "same_sign_candidates_16_through_21_complete_real_cones": false,
     "two_absolute_momentum_arbitrary_amplitude_zero_variety": false,
     "complete_finite_support_bounded_cone": false,
@@ -136,6 +138,14 @@
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_extreme_ray_lifts.json",
       "git_blob": "a21d8b759c3e7647dbaa42c97a1c00eaf650f2e4"
+    },
+    {
+      "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones.json",
+      "git_blob": "ae2c7d7ce53abedd148858cd570c3197cbc521eb"
+    },
+    {
+      "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_cone_sections.json",
+      "git_blob": "16f2d96570f2dcc2c10ea39ecd796ad4e61baf59"
     }
   ],
   "verification_receipt": {
@@ -160,17 +170,19 @@
         "same-sign same-fibre census verifier and 2 tests",
         "same-sign bounded-witness verifier and 3 tests",
         "universal scalar extreme-ray verifier and 2 tests",
-        "24-ray amplitude-lift verifier and 2 tests"
+        "24-ray amplitude-lift verifier and 2 tests",
+        "candidatewise 120-minor/90-circuit audit and 3 tests",
+        "complete scalar-cone section verifier and 2 tests"
       ]
     },
     "tier_2": {
       "status": "PASS_BY_CONTENT_ADDRESS",
-      "criterion": "All 26 source blobs are pinned at baseline 49899c9a; the collision chain includes the classifier, 864-defect census, six bounded witnesses, universal four-ray scalar theorem and all 24 candidatewise lifts."
+      "criterion": "All 28 source blobs are pinned at baseline bf476902; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts and a bounded section over every scalar-cone point."
     },
     "broader_atlas_audit": {
       "status": "PASSED_AFTER_CONCURRENT_ATLAS_UPDATE",
       "checks": [
-        "88 atlas tests",
+        "89 atlas tests",
         "independent Einstein compact-product atlas verifier"
       ]
     },
@@ -179,5 +191,5 @@
       "criterion": "Paper 13 remains DRAFT_ALLOWED and no mathematical lifecycle state is promoted."
     }
   },
-  "next_gate": "SIX_SAME_SIGN_COLLISION_PAIRWISE_EXTREME_RAY_SUMS"
+  "next_gate": "SIX_SAME_SIGN_COLLISION_PHASE_PARITY_FIBRE_DECOMPOSITIONS"
 }
