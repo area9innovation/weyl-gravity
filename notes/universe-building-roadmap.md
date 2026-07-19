@@ -86,7 +86,7 @@ The shortest independent paths are now:
 Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
-Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; compute exactly the three remaining longitudinal/mixed D_W carriers and their generic finite Schur rows, then add remaining BV rows to the exact physical-plus-ghost-n3-plus-vector-n1/n2 partial-BV carrier representative; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
+Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows now that its product spectrum, matched 3^-6 exceptional factor and regular-complement det3 are certified, then add remaining BV rows to the exact partial-BV five-carrier representative; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; in parallel derive the missing action-normalized same-background nonlinear clock F2/F3 map and cotangent lift, then regenerate scalar apparatus q2,q3, test the arity identities, K_Berger equivariance and observer-morphism stability, and only then restrict records to Z2^C
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
@@ -2057,6 +2057,19 @@ keeps the remaining sixteen ideals, same-fibre sources, five Taub maps and
 the complete two-fibre tangent cone `OPEN`.  Continue by internal block
 dimension before attempting the full Taub join.
 
+All nine odd-`L` fibres also contain exact mixed resonance-zero subspaces.
+Putting both declared signed-frequency `ell=2` carriers at highest weight
+`m=2` forces `M=4`, so the projection to each `L=1` or `L=3` target vanishes
+before any branch or adjoint coefficient is contracted.  The resulting nine
+subspaces have total complex dimension 42 and annihilate all 130 odd-`L`
+scalar equations.  The three difference rows retain their signed-frequency
+typing: `B` is negative-frequency and its positive-frequency reality partner
+has `m=-2`.  Fail-closed atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_odd_l_highest_weight_zero_subspaces`
+marks only this resonance witness `CERTIFIED`; the complete odd-`L` ideals,
+same-fibre sources, Taub intersection, bounded and smooth-secular classes
+remain `OPEN`, and causal correction remains `NO_CERTIFIED_MAP`.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell
@@ -2528,12 +2541,14 @@ rational basis. It has been added to a partial-BV five-carrier representative
 without disturbing the exact `I28` quotient. The longitudinal/mixed `D_W`
 towers are one normalized Schur kernel. Its exact non-Einstein
 `S2(k1) x S2(k2)` spectrum and degeneracies are now supplied, including the
-matched six-mode vector-zero/Schur-pole correction `3^-6`. The bivariate
-infinite sums, arbitrary-background finite Schur rows and remaining BV rows,
+matched six-mode vector-zero/Schur-pole correction `3^-6`. On the
+`S2(1) x S2(2)` fixture, the regular-complement `det_3` is rigorously enclosed
+with certified common prefix `0.3263039`. The weighted `R(K)` and finite-part
+`R(K2)` rows, arbitrary-background finite Schur rows and remaining BV rows,
 and therefore the complete repository form factors remain open. The selected generic weight-raised
 factorization and its local order-minus-three/four BCH residue are now exact.
-The canonical
-`det_3` tail and all three Schur residues are already fixed. The exact Endo--Duhamel,
+The canonical generic `det_3` construction, its product-fixture value and all
+three Schur residues are already fixed. The exact Endo--Duhamel,
 Hodge-resolvent and Schur reductions prove this list is complete through
 cubic curvature order, while the exact
 adiabatic angular carrier fixes one tensor projection of the n=3 row. The preceding direct-minimal-
