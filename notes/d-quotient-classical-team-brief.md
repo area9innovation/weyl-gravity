@@ -214,7 +214,7 @@ has its fail-closed disposition and the second is active:
    operator with coefficient jets through order four.  Its lifecycle remains
    `EXACT_PBW_REPRESENTATIVE_TARGET_Q1_REPLAY_PENDING`: coefficientwise target
    chain replay waits for the frozen Weyl--Maxwell `q1` payload.
-3. **Einstein delivered; Weyl active.**
+3. **Both interaction payloads delivered; relative solve active.**
    `EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1` now exports the
    complete same-background 38-row minimal Einstein--Maxwell
    \(q_1,q_2,q_3\), action, row layout and cyclic pairing. Its executable
@@ -223,21 +223,29 @@ has its fail-closed disposition and the second is active:
    identity and the complete arity-three identity instead of trusting opaque
    hashes. The consumer independently verifies unary pairing adjointness and
    higher input Koszul symmetry; it explicitly does not claim a second
-   derivation of the master-action cotangent lift. Export the corresponding
-   Weyl--Maxwell payload next so the nonlinear team can compute
-   \(\Delta_2\), the arity-three morphism defect, and the induced deformation
-   verdict.  Neither payload may be inferred from the other theory by matching
-   branch labels.  The nonlinear comparison must retain all three action forms
-   rather than silently replacing them by a standard-pairing cyclic map.
+   derivation of the master-action cotangent lift.
+   `WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1` now supplies the
+   corresponding action-derived 40-row Weyl--Maxwell package with fourth-order
+   coefficient jets.  Its independent consumer replays 1,835,845 ternary terms,
+   1,437,607 ordered cyclic transposes and every unary, arity-two and
+   arity-three defect row exactly over \(\mathbb Q\).  The V2 receiver imports
+   both packages and is now
+   `INPUTS_IMPORTED_RELATIVE_MORPHISM_SOLVE_READY`.  This is an input theorem,
+   not yet a relative \(L_\infty\) morphism: \(\Delta_2\), the arity-three
+   defect, the induced cohomology map and the separate even/odd deformation
+   verdict remain open.  Neither payload may be inferred from the other theory
+   by matching branch labels.  The nonlinear comparison must retain all three
+   action forms rather than silently replacing them by a standard-pairing
+   cyclic map.
    The receiver contract is now V2 and executable: opaque artifact hashes plus
    self-declared acceptance booleans are rejected.  Each theory must export a
    complete indexed BV row layout, the action and master terms, nondegenerate
    cyclic pairing, and rational sparse multilinear PBW tables for
    \(q_1,q_2,q_3\).  The receiver checks artifact scope and hashes, row and dual
    bounds, arities, term counts, derivative orders, duplicate support and
-   pairing rank before import. The Weyl action-derived table is now the sole
-   missing scientific input; neither the Einstein delivery nor the stricter
-   contract is itself a relative \(L_\infty\) theorem.
+   pairing rank before import.  Both action-derived tables now pass that
+   contract; their import still does not itself prove a relative
+   \(L_\infty\) theorem.
 
 ### Queued nonlinear-team handoffs (2026-07-18)
 
@@ -263,16 +271,15 @@ dependency chain, not three interchangeable branch-labelled calculations:
    either declare and justify a changed relative pairing or return the existing
    normalized obstruction; it may not silently relabel the noncyclic triangle
    as cyclic.  Its arity-two and arity-three corrections depend on item 3.
-3. **Same-background interaction payloads — active.**  The complete
-   Einstein--Maxwell \((q_1,q_2,q_3)\) payload is delivered.  The corresponding
-   Weyl--Maxwell payload is the current active gate.  Both must be derived from
-   their actions and exported in the strict executable V2 PBW contract.  Only
-   after both pass independent replay may the nonlinear team compute
-   \(\Delta_2\), the arity-three morphism defect, the induced cohomology map and
-   the separate even/odd deformation verdict.
+3. **Same-background interaction payloads — complete.**  The complete
+   Einstein--Maxwell and Weyl--Maxwell \((q_1,q_2,q_3)\) payloads are delivered,
+   action-derived and independently replayed in the strict executable V2 PBW
+   contract.  The nonlinear team may now compute \(\Delta_2\), solve the
+   allowed \(f_2\) homotopy equation, and then evaluate the arity-three
+   morphism defect and separate even/odd deformation verdict.
 
-The activation order is therefore `Weyl--Maxwell payload -> relative
-arity-two/three defect -> cyclic correction or obstruction`.  The Berger
+The activation order has advanced to `relative arity-two defect and f2 solve ->
+arity-three defect -> cyclic correction or obstruction`.  The Berger
 branch-carrier rail remains independent and fail-closed throughout.
 
 The transverse replay now has an associative coefficient-jet PBW algebra,

@@ -1,0 +1,87 @@
+{
+  "acceptance_flags": {
+    "ACTION_DERIVED": true,
+    "ARITY_THREE_IDENTITY_VERIFIED": true,
+    "CYCLIC_PAIRING_VERIFIED": true,
+    "EXECUTABLE_PBW_PAYLOAD": true,
+    "FULL_BV_ROWS": true,
+    "H_PRODUCT_EQUIVARIANT": true,
+    "INDEPENDENT_VERIFIER_PASS": true,
+    "Q1_Q2_IDENTITY_VERIFIED": true,
+    "SUPPORT_LOCAL": true
+  },
+  "background_id": "compact_magnetic_Plebanski_Hacyan_product",
+  "carrier_id": "weyl_maxwell_minimal_bv_40_product_coordinate_theta_jet",
+  "claim_boundary": "Complete same-background minimal Weyl-Maxwell BV Taylor package through q3 at the compact magnetic product. No relative, causal, branch, observable, or quantum claim.",
+  "claim_status": "CERTIFIED_THROUGH_ARITY_THREE",
+  "coefficient_field": "Q",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "executable_contract": {
+    "action_sha256": "647ff2fe89c167b00f480ce421e089646d5c6459534d90e74a99d40b7a75d4bd",
+    "coefficient_jet_order": 4,
+    "derivative_algebra": "coordinate-product-coefficient-jet-pbw-v1",
+    "operator_encoding": "sparse-multilinear-pbw-v1",
+    "pairing_arity": 2,
+    "q1_arity": 1,
+    "q2_arity": 2,
+    "q3_arity": 3,
+    "row_count": 40,
+    "row_layout_sha256": "6236040676b7e699f5e48be6241143aa3bb5b7c9b4e07364826fc6f2b5ad24a2"
+  },
+  "result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1",
+  "schema": "pure-weyl-relative-linfinity-product-taylor-input-v2",
+  "taylor_artifacts": {
+    "action": {
+      "kind": "action",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/action.json",
+      "result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_ACTION",
+      "sha256": "647ff2fe89c167b00f480ce421e089646d5c6459534d90e74a99d40b7a75d4bd"
+    },
+    "independent_verifier": {
+      "kind": "independent_verifier",
+      "path": "bridge/einstein_sector/verify_weyl_maxwell_product_linfinity.py",
+      "result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_INDEPENDENT_VERIFIER",
+      "sha256": "ffd6076e34c3aae43e9465dd1a54f355ace88f0efe5bf51094b4468ac4638d82"
+    },
+    "pairing": {
+      "kind": "pairing",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/pairing.json",
+      "result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_PAIRING",
+      "sha256": "67163136bc7db7938ff4d2167de30dafb05b6403f581e6f0c48e2c707e10b48c"
+    },
+    "q1": {
+      "kind": "operation",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/q1.json",
+      "result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q1",
+      "sha256": "43c00909830fde902cf1332eae804f6edd6ad263bef7ce61d08bdbd20449290b"
+    },
+    "q2": {
+      "kind": "operation",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/q2.json",
+      "result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q2",
+      "sha256": "be4d163044138f4b3b093c54527c2484cfac9eea48a58c791e97926be8597fec"
+    },
+    "q3": {
+      "kind": "operation",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/q3.json",
+      "result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q3",
+      "sha256": "0724112e8dff3d819298d05c709cf662042a35278e519c33a2b95900ca548b6f"
+    },
+    "row_layout": {
+      "kind": "row_layout",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/row_layout.json",
+      "result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_ROW_LAYOUT",
+      "sha256": "6236040676b7e699f5e48be6241143aa3bb5b7c9b4e07364826fc6f2b5ad24a2"
+    },
+    "verification_receipt": {
+      "kind": "verification_receipt",
+      "path": "bridge/einstein_sector/receipts/WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_TIER_RECEIPT.json",
+      "result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_TIER_RECEIPT",
+      "sha256": "222e7bb8fe321ec08ae942c90fa04cf02f24b6296662ad523cc171f6bc4f5806"
+    }
+  },
+  "theory_id": "Weyl-Maxwell"
+}

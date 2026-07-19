@@ -56,12 +56,20 @@ def _write_executable_taylor_fixture(directory: Path, result_id: str, theory_id:
 
 
 class RelativeLinfinityPreflightTests(unittest.TestCase):
-    def test_current_gate_imports_einstein_and_waits_for_weyl(self):
+    def test_current_gate_imports_both_product_taylor_packages(self):
         value = result.build()
         self.assertEqual(value["input_status"]["relative_linear_triangle"], "IMPORTED")
         self.assertEqual(value["input_status"]["einstein_product_q2_q3"], "IMPORTED")
-        self.assertEqual(value["input_status"]["weyl_product_q2_q3"], "MISSING")
-        self.assertFalse(value["claim_flags"]["ALL_SCIENTIFIC_INPUTS_IMPORTED"])
+        self.assertEqual(value["input_status"]["weyl_product_q2_q3"], "IMPORTED")
+        self.assertTrue(value["claim_flags"]["ALL_SCIENTIFIC_INPUTS_IMPORTED"])
+        self.assertEqual(
+            value["result_state"],
+            "INPUTS_IMPORTED_RELATIVE_MORPHISM_SOLVE_READY",
+        )
+        self.assertEqual(
+            value["next_gate"],
+            "COMPUTE_RELATIVE_ARITY_TWO_AND_THREE_DEFECTS",
+        )
         self.assertNotIn("relative_branch_dictionary", value["dependency_refs"])
         self.assertFalse(value["scope_guard"]["berger_tensors_eligible"])
         self.assertFalse(value["claim_flags"]["Q4_AUTHORIZED"])
@@ -168,7 +176,13 @@ class RelativeLinfinityPreflightTests(unittest.TestCase):
             result.validate_triangle(value)
 
     def test_missing_inputs_cannot_claim_ready(self):
-        value = result.build()
+        with tempfile.TemporaryDirectory(dir=result.ROOT) as temporary:
+            directory = Path(temporary)
+            absent = directory / "absent-weyl.json"
+            alternate = directory / "alternate-absent-weyl.json"
+            with patch.object(result, "WEYL_CANDIDATES", (absent, alternate)):
+                value = result.build()
+        self.assertEqual(value["input_status"]["weyl_product_q2_q3"], "MISSING")
         value["result_state"] = "INPUTS_IMPORTED_RELATIVE_MORPHISM_SOLVE_READY"
         with self.assertRaises(Exception):
             result.verify(value)

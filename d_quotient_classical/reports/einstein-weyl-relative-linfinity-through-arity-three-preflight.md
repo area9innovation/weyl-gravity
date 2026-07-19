@@ -1,6 +1,6 @@
 # Einstein--Weyl relative L-infinity preflight
 
-Result: `INPUT_BLOCKED_FULL_TRIANGLE_AND_PRODUCT_TAYLOR_PAYLOADS_MISSING`.
+Result: `INPUTS_IMPORTED_RELATIVE_MORPHISM_SOLVE_READY`.
 
 The full noncyclic three-form relative triangle and both same-background
 product Taylor payloads are required.  The Taylor handoff is now executable:

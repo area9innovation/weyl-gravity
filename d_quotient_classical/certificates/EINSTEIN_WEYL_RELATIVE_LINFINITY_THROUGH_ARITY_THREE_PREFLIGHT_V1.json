@@ -1,7 +1,7 @@
 {
   "claim_boundary": "This preflight prepares the compact-product relative L_infinity calculation but does not substitute sectoral solution cofibers or selected D^2E source fixtures for the full off-shell triangle and complete same-background Einstein/Weyl q2,q3 payloads. Berger tensors are explicitly ineligible. Until all three inputs arrive, Delta2, the arity-three morphism defect, cohomology survival, cyclic deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP or OPEN. The Berger filtered-cyclic ell3 obstruction is preserved and q4 is not authorized.",
   "claim_flags": {
-    "ALL_SCIENTIFIC_INPUTS_IMPORTED": false,
+    "ALL_SCIENTIFIC_INPUTS_IMPORTED": true,
     "COHOMOLOGY_OPERATION_DECIDED": false,
     "CYCLIC_DEFORMATION_CLASS_DECIDED": false,
     "PREFLIGHT_READY": true,
@@ -40,6 +40,11 @@
       "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
       "result_id": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1",
       "sha256": "a26b494c4cb5559f62bb738efe0b36e5f1ae43f3bdc425b8bf6e2f2c714fb4a3"
+    },
+    "weyl_product_taylor": {
+      "path": "bridge/certificates/WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
+      "result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1",
+      "sha256": "f78828e64525ecda924f34a75a1fe4ad8593b3fbf67cb2900ac221b98c454596"
     }
   },
   "dependency_tags": [
@@ -118,10 +123,10 @@
   "input_status": {
     "einstein_product_q2_q3": "IMPORTED",
     "relative_linear_triangle": "IMPORTED",
-    "weyl_product_q2_q3": "MISSING"
+    "weyl_product_q2_q3": "IMPORTED"
   },
   "lifecycle_status": "OPEN",
-  "next_gate": "SUPPLY_FULL_TRIANGLE_AND_SAME_BACKGROUND_PRODUCT_Q2_Q3_PAYLOADS",
+  "next_gate": "COMPUTE_RELATIVE_ARITY_TWO_AND_THREE_DEFECTS",
   "required_computation": [
     "Delta2=q2_Weyl(iota,iota)-iota*q2_Einstein on every declared channel",
     "exact iota2 primitive or normalized cofiber obstruction witness",
@@ -132,7 +137,7 @@
     "deformation nontriviality or displayed admissible removal without asserting a cyclic quasi-equivalence"
   ],
   "result_id": "EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1",
-  "result_state": "INPUT_BLOCKED_FULL_TRIANGLE_AND_PRODUCT_TAYLOR_PAYLOADS_MISSING",
+  "result_state": "INPUTS_IMPORTED_RELATIVE_MORPHISM_SOLVE_READY",
   "schema": "pure-weyl-relative-linfinity-through-arity-three-preflight-v1",
   "scope_guard": {
     "berger_filtered_obstruction_preserved": true,
@@ -147,7 +152,7 @@
   },
   "source_manifest": {
     "d_quotient_classical/relative/relative_linfinity_through_arity_three_preflight.py": "8eef63cf1d7635277a0ce87520263c6d0cf1f510dbbcf3541970c002631b5c6b",
-    "d_quotient_classical/relative/tests/test_relative_linfinity_through_arity_three_preflight.py": "5ae40e4e6ee15206152160e9c20d7759892a0fcd47105374477353a57a088f72",
+    "d_quotient_classical/relative/tests/test_relative_linfinity_through_arity_three_preflight.py": "9b287d6028b1607dcb52fe31bdf18e7ee885f9dbca6bc6e073585a7b07eee64a",
     "d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py": "25c5f9da4ed1a38087287f501459a14ea094dd35fd5fe884c88cf00d1c6ec716",
     "d_quotient_classical/schema/relative-linfinity-product-pbw-payload-v1.schema.json": "35cd03ebfca2374125b1711c60e85d7cd5657285ec15ed9b6791373d2fa8b5c0",
     "d_quotient_classical/schema/relative-linfinity-product-taylor-input-v2.schema.json": "0c03eb29ed9ea6a138c59d6d327c3f586c883521663fc25c352f571c8466fa5b",
