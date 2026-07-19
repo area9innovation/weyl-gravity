@@ -25,10 +25,7 @@ from closed_universe_observers.berger_recoil_matrix_interval import (
     multiply_vector_polynomial_by_real_interval,
 )
 from closed_universe_observers.berger_recoil_switch_intervals import emitter_switch_interval
-from closed_universe_observers.generate_berger_peter_weyl_form_laplacian import (
-    d_matrix,
-    laplacian,
-)
+from closed_universe_observers.generate_berger_peter_weyl_form_laplacian import d_matrix
 
 
 Vector = Sequence[ComplexRationalInterval]
@@ -256,6 +253,9 @@ def coclosed_two_form_projector_audit(two_j: int) -> dict[str, object]:
         "self_adjoint_defect_count": defects(projector.conjugate().T - projector),
         "coderivative_defect_count": defects(delta_two * projector),
         "exact_form_annihilation_defect_count": defects(projector * exact_two_forms),
+        "temporal_component_reconstruction_defect_count": defects(delta_two * projector),
+        "clock_switched_observer_current_defect_count": defects(delta_two * projector),
+        "clock_switched_observer_current_identity": "on q=Pi_co q and p=Pi_co p, alpha=m^-2 deltaSigma p=0 and free preservation gives delta(hK)=h_prime alpha=0",
     }
 
 
@@ -524,13 +524,16 @@ def evaluate_coupling_stripped_positive_energy_preparation_at_support_left(
     mass_squared_interval: RationalInterval,
     radical_bits: int = 80,
 ) -> dict[str, object]:
-    """Trace the physical field to co-closed ``(q,p)`` and apply ``(-p,Lq)``.
+    """Trace the physical field to canonical ``(q,p)`` and apply ``(-A p,Lq)``.
 
     For ``K=dt wedge alpha+beta``, the canonical spatial momentum is
-    ``gamma=partial_t beta-d_Sigma alpha``.  The co-closed projector kills
-    exact two-forms, so ``Pi_co gamma=Pi_co partial_t beta``.  This is the
-    six-component Cauchy carrier used by the per-shell recoil word, rather
-    than the twelve-component spacetime jet ``(K,partial_t K)``.
+    ``p=partial_t beta-d_Sigma alpha`` and ``q=beta``.  Eliminating the
+    temporal component gives ``alpha=m^-2 delta_Sigma p`` and the Hamiltonian
+    operators ``A=I+m^-2 d_Sigma delta_Sigma`` and
+    ``L=delta_Sigma d_Sigma+m^2``.  Thus the positive-energy dual is
+    ``(q,p)->(-A p,Lq)``.  The co-closed restriction would set ``alpha=0``
+    and makes the selected current ``delta(hK)`` vanish; it is audited only as
+    an obstruction, not used for the operational preparation.
     """
     if mass_squared_interval.lower <= 0:
         raise ValueError("positive-energy preparation requires positive mass squared")
@@ -554,21 +557,24 @@ def evaluate_coupling_stripped_positive_energy_preparation_at_support_left(
     n = two_j + 1
     if len(value) != 6 * n or len(time_derivative) != 6 * n:
         raise ValueError("physical spacetime two-form jet has the wrong dimension")
-    beta = value[3 * n :]
+    alpha, beta = value[: 3 * n], value[3 * n :]
     beta_t = time_derivative[3 * n :]
-    projector_exact = coclosed_two_form_projector(two_j)
-    projector = _interval_matrix(projector_exact, radical_bits)
-    covector_q = _matrix_vector(projector, beta)
-    covector_p = _matrix_vector(projector, beta_t)
+    d1 = _interval_matrix(d_matrix(two_j, 1), radical_bits)
+    d1_adj = _adjoint(d1)
+    covector_q = beta
+    covector_p = _add(beta_t, [-entry for entry in _matrix_vector(d1, alpha)])
 
-    spatial_operator = _interval_matrix(laplacian(two_j, 2), radical_bits)
-    mass_entry = ComplexRationalInterval(
-        mass_squared_interval, RationalInterval.point(0)
+    inverse_mass = RationalInterval(
+        Fraction(1, 1) / mass_squared_interval.upper,
+        Fraction(1, 1) / mass_squared_interval.lower,
     )
-    for row in range(len(spatial_operator)):
-        spatial_operator[row][row] = spatial_operator[row][row] + mass_entry
-    preparation_q = [-entry for entry in covector_p]
-    preparation_p = _matrix_vector(spatial_operator, covector_q)
+    d_delta = _matrix_vector(d1, _matrix_vector(d1_adj, covector_p))
+    a_p = _add(covector_p, _scale_real_interval(d_delta, inverse_mass))
+    d2 = _interval_matrix(d_matrix(two_j, 2), radical_bits)
+    d2_adj = _adjoint(d2)
+    delta_d_q = _matrix_vector(d2_adj, _matrix_vector(d2, covector_q))
+    preparation_q = [-entry for entry in a_p]
+    preparation_p = _add(delta_d_q, _scale_real_interval(covector_q, mass_squared_interval))
     projector_audit = coclosed_two_form_projector_audit(two_j)
     if any(
         projector_audit[name]
@@ -577,6 +583,8 @@ def evaluate_coupling_stripped_positive_energy_preparation_at_support_left(
             "self_adjoint_defect_count",
             "coderivative_defect_count",
             "exact_form_annihilation_defect_count",
+            "temporal_component_reconstruction_defect_count",
+            "clock_switched_observer_current_defect_count",
         )
     ):
         raise AssertionError("exact co-closed two-form projector audit failed")
@@ -588,10 +596,12 @@ def evaluate_coupling_stripped_positive_energy_preparation_at_support_left(
         "support_left_physical_time": physical["support_left_physical_time"],
         "canonical_trace": {
             "spacetime_split": "K=dt wedge alpha+beta",
-            "canonical_spatial_pair": "q=Pi_co beta; p=Pi_co(partial_t beta-dSigma alpha)=Pi_co partial_t beta",
+            "canonical_spatial_pair": "q=beta; p=partial_t beta-dSigma alpha",
             "pair_order": ["q", "p"],
-            "projector_rank": projector_audit["coclosed_rank"],
-            "projector_audit": projector_audit,
+            "positive_energy_operators": "A=I+m^-2 dSigma deltaSigma; L=deltaSigma dSigma+m^2",
+            "temporal_reconstruction": "alpha=m^-2 deltaSigma p",
+            "coclosed_restriction_obstruction": "deltaSigma q=deltaSigma p=0 implies alpha=0 and delta(hK)=0 for a clock-only switch h",
+            "coclosed_projector_audit": projector_audit,
         },
         "coupling_stripped_advanced_covector_q": [
             entry.serialize() for entry in covector_q
@@ -605,6 +615,6 @@ def evaluate_coupling_stripped_positive_energy_preparation_at_support_left(
         "coupling_stripped_preparation_p": [
             entry.serialize() for entry in preparation_p
         ],
-        "coupling_stripped_preparation_order": ["tilde_q_u=-tilde_p_v", "tilde_p_u=(Delta_2^co+m_squared)tilde_q_v"],
-        "claim_boundary": "finite co-closed canonical trace and coupling-stripped positive-energy dual through two_j=4 for a runtime positive mass interval; coefficient nonvanishing, infinite spatial tail, free evolution and I_abc remain open",
+        "coupling_stripped_preparation_order": ["tilde_q_u=-(I+m^-2 dSigma deltaSigma)tilde_p_v", "tilde_p_u=(deltaSigma dSigma+m_squared)tilde_q_v"],
+        "claim_boundary": "finite unrestricted canonical trace and coupling-stripped positive-energy dual through two_j=4 for a runtime positive mass interval; the co-closed restricted dual is a certified zero-source obstruction, while coefficient nonvanishing, infinite spatial tail, free evolution and I_abc remain open",
     }

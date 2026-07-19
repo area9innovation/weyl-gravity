@@ -23,6 +23,8 @@ def test_exact_coclosed_projector_rail():
             "self_adjoint_defect_count",
             "coderivative_defect_count",
             "exact_form_annihilation_defect_count",
+            "temporal_component_reconstruction_defect_count",
+            "clock_switched_observer_current_defect_count",
         )
     )
 
@@ -30,7 +32,9 @@ def test_exact_coclosed_projector_rail():
 def test_positive_energy_coefficient_certificate_is_fail_closed():
     value = build()
     assert value["flags"]["CANONICAL_SPATIAL_CAUCHY_TRACE_EXPORTED"]
+    assert value["flags"]["FULL_CANONICAL_POSITIVE_ENERGY_DUAL_CERTIFIED"]
     assert value["flags"]["COUPLING_STRIPPED_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS_EXPORTED"]
+    assert not value["flags"]["COCLOSED_RESTRICTED_DUAL_VALID_AS_OBSERVER_SOURCE"]
     assert not value["flags"]["RETAINED_COEFFICIENT_NONVANISHING_CERTIFIED"]
     assert not value["flags"]["FREE_EMITTER_EVOLUTION_BOUND"]
 

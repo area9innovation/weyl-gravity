@@ -10,6 +10,7 @@ from fractions import Fraction
 from pathlib import Path
 
 from jsonschema import Draft202012Validator
+import sympy as sp
 
 from closed_universe_observers.berger_recoil_interval_stream import RationalInterval
 from closed_universe_observers.berger_recoil_massive_diagonal_preparation import (
@@ -63,6 +64,22 @@ def _evaluate(values: dict[str, dict], detector: str, two_j: int, column: int) -
     )
 
 
+def canonical_positive_energy_dual_audit() -> dict[str, object]:
+    a, ell = sp.symbols("A L", positive=True)
+    omega = sp.Matrix([[0, 1], [-1, 0]])
+    dual = sp.Matrix([[0, -a], [ell, 0]])
+    gram = sp.simplify(omega * dual)
+    return {
+        "cauchy_order": ["q", "p"],
+        "A": "I+m^-2 dSigma deltaSigma",
+        "L": "deltaSigma dSigma+m^2",
+        "dual": "(q,p)->(-A p,L q)",
+        "omega_times_dual": [[sp.sstr(entry) for entry in gram.row(row)] for row in range(2)],
+        "energy": "<p,A p>+<q,L q>",
+        "strictly_positive": gram == sp.diag(ell, a),
+    }
+
+
 def build() -> dict[str, object]:
     values = {name: json.loads(path.read_text()) for name, path in DEPENDENCIES.items()}
     required = {
@@ -86,11 +103,16 @@ def build() -> dict[str, object]:
         "self_adjoint_defect_count",
         "coderivative_defect_count",
         "exact_form_annihilation_defect_count",
+        "temporal_component_reconstruction_defect_count",
+        "clock_switched_observer_current_defect_count",
     )
     if [row["coclosed_rank"] for row in projector_audits] != [0, 2, 3, 4, 5]:
         raise AssertionError("co-closed rank rail drifted")
     if any(row[field] for row in projector_audits for field in defect_fields):
         raise AssertionError("co-closed projector identity failed")
+    energy_audit = canonical_positive_energy_dual_audit()
+    if not energy_audit["strictly_positive"]:
+        raise AssertionError("full canonical positive-energy dual failed")
     fixtures = {
         "D0_two_j1_column0": _evaluate(values, "D0", 1, 0),
         "D1_two_j4_column4": _evaluate(values, "D1", 4, 4),
@@ -100,13 +122,13 @@ def build() -> dict[str, object]:
     if len(fixtures["D1_two_j4_column4"]["coupling_stripped_preparation_p"]) != 15:
         raise AssertionError("D1 preparation dimension drifted")
     boundary = (
-        "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result binds the finite physical spacetime two-form jet to the six-component emitter Cauchy carrier used by the recoil word. For K=dt wedge alpha+beta it constructs the exact orthogonal Hodge projector Pi_co onto ker(delta_Sigma) in every Berger block through two_j=4, verifies Pi_co^2=Pi_co=Pi_co^dagger, delta_Sigma Pi_co=0 and Pi_co d_Sigma=0, and takes q=Pi_co beta and p=Pi_co(partial_t beta-d_Sigma alpha)=Pi_co partial_t beta. It then applies the coupling-stripped positive-energy dual tilde_u=(-p,(Delta_2^co+m^2)q), returning outward rational interval coefficients for any D0/D1 passive column and caller-declared positive rational mass-squared interval. The serialized fixtures use m^2 in [1,2] only as a validation domain, not as a physical mass choice. This closes a finite canonical-trace and coefficient gate; it does not prove that any retained coefficient is nonzero, control the infinite spatial tail, evolve tilde_u through U_E, evaluate I_abc or recoil, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer stability, or make a quantum claim."
+        "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result binds the finite physical spacetime two-form jet to the six-component canonical emitter carrier used by the recoil word. For K=dt wedge alpha+beta it takes q=beta and p=partial_t beta-d_Sigma alpha. Eliminating the temporal component gives alpha=m^-2 delta_Sigma p, A=I+m^-2 d_Sigma delta_Sigma and L=delta_Sigma d_Sigma+m^2; the symplectic dual tilde_u=(-A p,L q) has positive energy <p,A p>+<q,L q>. The callable returns outward rational interval coefficients for any D0/D1 passive column and caller-declared positive rational mass-squared interval. Exact Hodge-projector audits also expose a necessary correction to the earlier restricted convention: delta_Sigma q=delta_Sigma p=0 forces alpha=0 and makes delta(hK)=0 for the selected clock-only switch, so the co-closed restricted dual is an observer-source zero mode and is not used here. The serialized fixtures use m^2 in [1,2] only as a validation domain, not as a physical mass choice. This closes a finite canonical-trace and coefficient gate; it does not prove that any retained coefficient is nonzero, control the infinite spatial tail, evolve tilde_u through U_E, evaluate I_abc or recoil, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer stability, or make a quantum claim."
     )
     return {
         "schema": "closed-universe-berger-recoil-positive-energy-preparation-coefficients-v1",
         "result_id": "BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS",
         "setting_id": values["physical_cauchy"]["setting_id"],
-        "claim_status": "FINITE_COCLOSED_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS_CERTIFIED_FULL_SPATIAL_SUM_OPEN",
+        "claim_status": "FINITE_FULL_CANONICAL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS_CERTIFIED_COCLOSED_SOURCE_ZERO",
         "atlas_status": "CERTIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
@@ -122,7 +144,7 @@ def build() -> dict[str, object]:
             "background": "compact positive Berger clock at fixed coupling",
             "boundaries": "support-left slice of h0 or h1; no spatial boundary",
             "charge_sector": "fixed-coupling Berger sector",
-            "carrier": "co-closed spatial two-form Cauchy covector and coupling-stripped positive-energy-dual preparation",
+            "carrier": "unrestricted canonical spatial two-form Cauchy covector and coupling-stripped positive-energy-dual preparation",
             "degree": "spatial two-form pair (q,p)",
             "parity": "D0 axial and D1 transverse detector labels; no further parity quotient",
             "ell": "two_j=0,...,4",
@@ -133,10 +155,12 @@ def build() -> dict[str, object]:
         "canonical_trace": {
             "full_form_jet_order": ["K", "partial_t K"],
             "spacetime_split": "K=dt wedge alpha+beta",
-            "canonical_pair": "(q,p)=(Pi_co beta,Pi_co(partial_t beta-dSigma alpha))",
-            "exact_form_reduction": "Pi_co dSigma=0, hence p=Pi_co partial_t beta",
-            "positive_energy_dual": "(q,p)->(-p,(Delta_2^co+m^2)q)",
+            "canonical_pair": "(q,p)=(beta,partial_t beta-dSigma alpha)",
+            "temporal_reconstruction": "alpha=m^-2 deltaSigma p",
+            "positive_energy_dual": "(q,p)->(-(I+m^-2 dSigma deltaSigma)p,(deltaSigma dSigma+m^2)q)",
+            "coclosed_restriction_disposition": "OBSTRUCTED_AS_OBSERVER_SOURCE: deltaSigma q=deltaSigma p=0 implies delta(hK)=0",
         },
+        "positive_energy_audit": energy_audit,
         "projector_audits": projector_audits,
         "coverage": {
             "detectors": ["D0", "D1"],
@@ -148,10 +172,12 @@ def build() -> dict[str, object]:
         "serialized_fixture_coefficients": fixtures,
         "flags": {
             "CANONICAL_SPATIAL_CAUCHY_TRACE_EXPORTED": True,
-            "EXACT_COCLOSED_TWO_FORM_PROJECTORS_TWO_J0_TO_4_CERTIFIED": True,
+            "EXACT_COCLOSED_ZERO_SOURCE_OBSTRUCTION_TWO_J0_TO_4_CERTIFIED": True,
+            "FULL_CANONICAL_POSITIVE_ENERGY_DUAL_CERTIFIED": True,
             "COUPLING_STRIPPED_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS_EXPORTED": True,
             "ALL_D0_D1_COLUMNS_TWO_J0_TO_4_CALLABLE": True,
             "RETAINED_COEFFICIENT_NONVANISHING_CERTIFIED": False,
+            "COCLOSED_RESTRICTED_DUAL_VALID_AS_OBSERVER_SOURCE": False,
             "INFINITE_SPATIAL_TAIL_CONTROLLED": False,
             "FREE_EMITTER_EVOLUTION_BOUND": False,
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,

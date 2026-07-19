@@ -244,6 +244,10 @@ then `u_a=(-p_a,L_a q_a)` has response
 `||p_a||^2+<q_a,L_a q_a>>0`.  The construction preserves the co-closed
 constraint and causal support and uses no response normalization.  Only the
 Berger harmonic coefficients and Green integrals remain unevaluated.
+The later finite canonical-trace audit below shows that this co-closed
+restriction is observationally null for the selected current
+`delta(hK)`.  Its support and energy statement remains a restricted operator
+fact, but it is superseded as the detector-selected source preparation.
 
 `BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE` now constructs exact finite Berger
 `SU(2)` blocks of `d_p` and `Delta_p`.  Blocks through `two_j=4` have zero
@@ -885,14 +889,17 @@ physical two-form Cauchy pair is callable for every finite column through
 not yet the canonical six-component emitter carrier.
 
 `BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS` closes that carrier
-binding.  With `K=dt wedge alpha+beta`, exact Berger Hodge projectors through
-`two_j=4` satisfy `Pi_co^2=Pi_co=Pi_co^dagger`,
-`deltaSigma Pi_co=0` and `Pi_co dSigma=0`.  Hence the canonical covector is
-`q=Pi_co beta`, `p=Pi_co(partial_t beta-dSigma alpha)=Pi_co partial_t beta`,
-and the callable exports the coupling-stripped preparation
-`tilde_u=(-p,(Delta_2^co+m^2)q)` for every finite D0/D1 passive column and
-runtime positive mass interval.  The serialized `[1,2]` mass-squared fixture
-is validation data, not a physical choice.  Retained-coefficient
+binding.  With `K=dt wedge alpha+beta`, the unrestricted canonical covector is
+`q=beta`, `p=partial_t beta-dSigma alpha`.  Eliminating the temporal component
+gives `alpha=m^-2 deltaSigma p`,
+`A=I+m^-2 dSigma deltaSigma` and `L=deltaSigma dSigma+m^2`; the callable
+therefore exports `tilde_u=(-A p,Lq)` for every finite D0/D1 passive column
+and runtime positive mass interval.  Exact Hodge-projector audits expose the
+required correction: `deltaSigma q=deltaSigma p=0` forces `alpha=0`, hence
+`delta(hK)=0` for the clock-only switch.  The earlier co-closed dual is a
+certified zero-source rail, not the operational preparation.  The serialized
+`[1,2]` mass-squared fixture is validation data, not a physical choice.
+Retained-coefficient
 nonvanishing, free emitter evolution, the full spatial tail and `I_abc`
 remain open.
 

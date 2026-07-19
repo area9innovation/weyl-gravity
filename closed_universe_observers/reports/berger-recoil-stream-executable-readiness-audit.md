@@ -25,9 +25,10 @@ that source to the advanced support coordinate, multiplies the normalized
 switch hull and evaluates the block-diagonal massive wave image at the
 support-left slice.  A seventh derives the cosine kernel, uses flat endpoint
 wave identities and applies the physical Proca correction to export the
-full-form Cauchy pair.  An eighth constructs the exact co-closed spatial
-Cauchy trace and applies the coupling-stripped positive-energy dual to return
-finite preparation coefficients.  Free emitter evolution and the first
+full-form Cauchy pair.  An eighth constructs the unrestricted canonical
+spatial trace and applies the full coupling-stripped positive-energy dual to
+return finite preparation coefficients.  It also proves that the earlier
+co-closed restriction gives a zero observer source for `delta(hK)`.  Free emitter evolution and the first
 retarded recoil channel are not yet bound.
 
 The audit retains its explicit four-callable complete-backend protocol, records
