@@ -16,7 +16,14 @@
 #   --full        = --fieldbv --fleet.
 #   --strict      fail-closed: any stage FAIL/timeout makes the script exit nonzero
 #                 (for when a team chooses to gate its CI on the substrate).
+#   --selftest-mutation  tamper a copy of the bridge lock and prove the audit
+#                 refuses it (exits 1 = fixture pass; exit 3 = BROKEN rail).
 #   --help        this help.
+#
+# Env: SF_SHADOW_OUT=<dir>  keep all artifacts (logs/receipts/DAGs/census) there.
+#      SF_FORGE_PIN=0.0.1   require the stamped release binary + verified stdlib.
+#      FORGE_REPO/FORGEBIN  substrate checkout / prebuilt checker (see below).
+# Two-lane model for repos in constant development: see THE TWO LANES below.
 #
 # The substrate lives in the tango/forge repo (NOT here). Override its location
 # with FORGE_REPO=/path/to/forge; the compiled checker with FORGEBIN=/path/to/bin.
@@ -33,13 +40,33 @@
 
 set -uo pipefail   # deliberately NOT -e: advisory mode runs every stage and reports.
 
-STRICT=0; DO_FIELDBV=0; DO_FLEET=0
+# ---- THE TWO LANES (both projects are in CONSTANT development) -------------
+# This rail must stay useful while BOTH repos move daily. Two lanes, honestly
+# labeled, same script:
+#
+#   DEV LANE (default): current physics tree + whatever forge binary/checkout
+#     is at hand (identity REPORTED, never silent). Drift is INFORMATION —
+#     the corpus grew, a cert was regenerated, a lock awaits its refresh
+#     sweep. Always exits 0; the value is the drift report itself. Run it
+#     like you run the test suite: casually, during development.
+#
+#   PINNED LANE (SF_FORGE_PIN=0.0.1 [--strict]): the reproducible rail for a
+#     CI job — stamped release binary with verified stdlib, committed
+#     machine-readable baseline, artifacts kept via SF_SHADOW_OUT. Here the
+#     same drift IS a finding: the point of the pin is noticing motion.
+#
+# Drift in a moving repo is not failure; UNEXPLAINED drift in a pinned lane
+# is. Locks/baselines refresh deliberately (commit the refreshed file when
+# the drift is understood) — never auto-rewritten by this script. Substrate
+# gaps found while developing go to planning/forge-requests/.
+STRICT=0; DO_FIELDBV=0; DO_FLEET=0; SELFTEST=0
 for arg in "$@"; do
   case "$arg" in
     --strict)  STRICT=1 ;;
     --fieldbv) DO_FIELDBV=1 ;;
     --fleet)   DO_FLEET=1 ;;
     --full)    DO_FIELDBV=1; DO_FLEET=1 ;;
+    --selftest-mutation) SELFTEST=1; STRICT=1 ;;
     --help|-h) sed -n '2,40p' "$0"; exit 0 ;;
     *) echo "unknown flag: $arg (try --help)"; exit 2 ;;
   esac
@@ -66,8 +93,41 @@ BIN=${FORGEBIN:-/tmp/forgebin}
 # green; the optional FORGE_ASAN sweep has 5 named pre-existing reds, filed in
 # forge/docs/limitations.md §B1 (none touch the certlab/science-forge tools).
 STAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-SCRATCH=$(mktemp -d "${TMPDIR:-/tmp}/sf-shadow.XXXXXX")
-trap 'rm -rf "$SCRATCH"' EXIT
+
+# ---- artifacts dir (request shadow-mode-adoption-hardening, gap 2) ---------
+# SF_SHADOW_OUT=<dir>: write build logs, receipts, DAGs and the census there
+# and KEEP them (the CI-upload path). Unset: a temp dir, deleted ONLY on a
+# clean advisory pass — on any FINDING or failure it is preserved and its path
+# printed, so a summary line never points at a deleted diagnostic. Nothing is
+# ever written into either source tree by default.
+if [ -n "${SF_SHADOW_OUT:-}" ]; then
+  SCRATCH=$(readlink -f "$SF_SHADOW_OUT"); mkdir -p "$SCRATCH" || exit 2
+  KEEP_ARTIFACTS=1
+else
+  SCRATCH=$(mktemp -d "${TMPDIR:-/tmp}/sf-shadow.XXXXXX")
+  KEEP_ARTIFACTS=0
+fi
+FINDINGS=0   # any non-PASS record; controls temp-dir preservation
+cleanup() {
+  if [ "$KEEP_ARTIFACTS" = 1 ]; then
+    echo "artifacts kept in $SCRATCH"
+  elif [ "$FINDINGS" = 0 ]; then
+    rm -rf "$SCRATCH"
+  else
+    echo "diagnostics preserved in $SCRATCH (findings above reference them)"
+  fi
+}
+trap cleanup EXIT
+
+# ---- Go discovery (gap 1: mise-managed Go absent from PATH) ----------------
+GO="go"
+if ! command -v go >/dev/null 2>&1; then
+  if command -v mise >/dev/null 2>&1 && mise exec -- go version >/dev/null 2>&1; then
+    GO="mise exec -- go"
+  else
+    GO=""
+  fi
+fi
 
 export FORGE_LIB="$FORGE_REPO/lib"
 
@@ -85,7 +145,7 @@ record() {  # name  status  detail
   SUMMARY+=("$(printf '%-26s %-14s %s' "$1" "$2" "$3")")
   case "$2" in
     PASS|OK|INFO) ;;
-    *) if [ "$STRICT" = 1 ]; then fail=1; fi ;;
+    *) FINDINGS=1; if [ "$STRICT" = 1 ]; then fail=1; fi ;;
   esac
 }
 
@@ -98,15 +158,77 @@ if [ ! -d "$CL" ]; then
 fi
 if [ ! -x "$BIN" ]; then
   echo "-- building the forge checker ($BIN) --"
-  if ( cd "$FORGE_REPO" && go build -o "$BIN" ./cmd/forge ) 2>"$SCRATCH/build.log"; then
-    record "preflight-build" "OK" "built $BIN"
+  if [ -z "$GO" ]; then
+    FINDINGS=1
+    record "preflight-build" "FAIL" "no Go toolchain (not on PATH, no working mise) — install Go or set FORGEBIN to a prebuilt binary"
+    printf '%s\n' "${SUMMARY[@]}"
+    [ "$STRICT" = 1 ] && exit 1 || exit 0
+  fi
+  if ( cd "$FORGE_REPO" && $GO build -o "$BIN" ./cmd/forge ) 2>"$SCRATCH/build.log"; then
+    record "preflight-build" "OK" "built $BIN (with: $GO)"
   else
-    record "preflight-build" "FAIL" "go build failed (see $SCRATCH/build.log kept? no — advisory)"
+    FINDINGS=1
+    record "preflight-build" "FAIL" "go build failed — log preserved: $SCRATCH/build.log"
     printf '%s\n' "${SUMMARY[@]}"
     [ "$STRICT" = 1 ] && exit 1 || exit 0
   fi
 fi
+
+# ---- toolchain identity (gap 3: report WHAT is auditing, verify a pin) -----
+# SF_FORGE_PIN=<semver> (e.g. 0.0.1): REQUIRE the binary to be a stamped
+# release of that version with a VERIFIED stdlib (the forge-v tag build line —
+# see the PINNED TOOLCHAIN note above); mismatch is a finding. Unset: report
+# the identity honestly (a dev build is allowed but never silent).
+VOUT=$("$BIN" version 2>&1 || true)
+VLINE=$(echo "$VOUT" | head -1)
+SLINE=$(echo "$VOUT" | grep '^stdlib:' || true)
+echo "toolchain    : $VLINE"
+echo "stdlib       : ${SLINE#stdlib: }"
+if [ -n "${SF_FORGE_PIN:-}" ]; then
+  case "$VLINE" in
+    "forge $SF_FORGE_PIN+"*|"forge $SF_FORGE_PIN ("*)
+      case "$SLINE" in
+        *verified*) record "toolchain-pin" "PASS" "$VLINE, stdlib verified" ;;
+        *) record "toolchain-pin" "FAIL" "version matches pin but stdlib NOT verified: ${SLINE:-<missing>} — use the stamped tag build line" ;;
+      esac ;;
+    *) record "toolchain-pin" "FAIL" "pinned $SF_FORGE_PIN but binary is: $VLINE — check out forge-v$SF_FORGE_PIN and use its stamped build line" ;;
+  esac
+else
+  case "$VLINE" in
+    *0.0.0-dev*) record "toolchain-id" "INFO" "UNPINNED dev build ($VLINE) — set SF_FORGE_PIN=0.0.1 for a verified release rail" ;;
+    *)           record "toolchain-id" "INFO" "$VLINE" ;;
+  esac
+fi
 CLF=("$BIN" -run -I "$CL" "$CL/certlab.forge" --)
+
+# ---- selftest: prove strict mode is actually fail-closed -------------------
+# --selftest-mutation: copy the bridge lock, flip one sha256 hex digit, audit
+# against the TAMPERED lock. The audit MUST fail (drift detected) and, under
+# the strict semantics this fixture always uses, the script exits nonzero —
+# the committable proof that a real drift cannot slide through as a pass. If
+# the tampered audit PASSES, that is a broken rail: exit 3, loudly.
+if [ "$SELFTEST" = 1 ]; then
+  echo "-- selftest: mutated-lock audit (MUST fail-closed) --"
+  python3 - "$CL/lock.bridge.json" "$SCRATCH/lock.tampered.json" <<'PY'
+import json,sys
+d=json.load(open(sys.argv[1]))
+def flip(h): return ('0' if h[0]!='0' else '1')+h[1:]
+files=d.get("files") or d.get("inputs") or {}
+k=sorted(files)[0]; files[k]=flip(files[k])
+json.dump(d,open(sys.argv[2],"w"))
+print(f"   tampered: {k}")
+PY
+  if out=$(cd "$CL" && timeout 180 "${CLF[@]}" audit manifest.bridge.json "$SCRATCH/lock.tampered.json" \
+            "$PHYS_ROOT" "$STAMP" "$SCRATCH/receipt.selftest.json" "$SCRATCH/dag.selftest.dot" 2>&1); then
+    echo "$out" | tail -3
+    echo "SELFTEST BROKEN: the audit ACCEPTED a tampered lock — the rail cannot be trusted. exit 3"
+    exit 3
+  else
+    echo "   audit refused the tampered lock (exit $?) — fail-closed confirmed"
+    echo "selftest: mutation detected as designed -> exit 1 (this nonzero exit IS the pass)"
+    exit 1
+  fi
+fi
 
 # ---- stage 1: bridge certificate audit (fast) -----------------------------
 echo "-- 1. bridge certificate audit (existence/drift/edges/dag/gates) --"
@@ -127,14 +249,23 @@ echo "-- 2. corpus coverage census (read-only inventory of this tree) --"
 if out=$(timeout 180 python3 "$CC/inventory.py" --physics-root "$PHYS_ROOT" \
           -o "$SCRATCH/coverage.json" 2>&1); then
   echo "   $(echo "$out" | tail -1)"
-  # surface drift vs the committed snapshot (coverage.md headline says 820 certs)
+  # gap 4: compare against the MACHINE-READABLE committed baseline in THIS
+  # repo (ci/science-forge-baseline.json), not a prose snapshot. The baseline
+  # is refreshed deliberately (commit the new file when drift is understood),
+  # never auto-rewritten by this script.
+  BASELINE="$PHYS_ROOT/ci/science-forge-baseline.json"
   ncerts=$(python3 -c "import json;print(json.load(open('$SCRATCH/coverage.json'))['coverage_summary']['total_certificates'])" 2>/dev/null || echo '?')
-  base=$(grep -oE '\*\*820\*\*' "$CC/coverage.md" >/dev/null 2>&1 && echo 820 || echo '?')
-  if [ "$ncerts" != "?" ] && [ "$base" = 820 ] && [ "$ncerts" != 820 ]; then
-    echo "   DRIFT: corpus now has $ncerts certificates vs $base in the committed snapshot (coverage.md)"
-    record "coverage-census" "DRIFT" "corpus grew to $ncerts certs (snapshot: 820) — refresh coverage.md"
+  if [ ! -f "$BASELINE" ]; then
+    record "coverage-census" "INFO" "$ncerts certificates inventoried; no baseline committed yet (ci/science-forge-baseline.json)"
   else
-    record "coverage-census" "PASS" "$ncerts certificates inventoried"
+    base=$(python3 -c "import json;print(json.load(open('$BASELINE'))['total_certificates'])" 2>/dev/null || echo '?')
+    bstamp=$(python3 -c "import json;print(json.load(open('$BASELINE')).get('stamp','?'))" 2>/dev/null || echo '?')
+    if [ "$ncerts" != "?" ] && [ "$base" != "?" ] && [ "$ncerts" != "$base" ]; then
+      echo "   DRIFT: corpus has $ncerts certificates vs baseline $base ($bstamp)"
+      record "coverage-census" "DRIFT" "$ncerts certs vs baseline $base ($bstamp) — review + recommit ci/science-forge-baseline.json"
+    else
+      record "coverage-census" "PASS" "$ncerts certificates == baseline ($bstamp)"
+    fi
   fi
 else
   rc=$?

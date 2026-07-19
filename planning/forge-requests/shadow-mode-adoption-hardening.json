@@ -1,13 +1,16 @@
 {
-  "id": "sf:forge-request/shadow-mode-adoption-hardening",
-  "kind": "work",
-  "schema": "work-v0",
-  "body": {
-    "owner": "physics-programme",
-    "state": "REQUESTED",
-    "objective": "Harden ci/science-forge-shadow.sh into a reproducible advisory adoption rail suitable for local use and a non-required CI job. The first live run on 2026-07-19 exposed four integration gaps: automatic build failed because Go is installed through mise but absent from PATH; the temporary build log and certlab receipts were deleted even when the summary instructed the reader to inspect them; the script documents forge-v0.0.1 but defaults to an unverified development checkout/binary; and the coverage comparison is hard-coded to the old 820-certificate prose snapshot while a read-only scan found 976 certificates. With a manually built current Forge binary, the advisory run correctly exited zero while reporting bridge hash drift and coverage drift.",
-    "depends_on": [],
-    "stop_condition": "from a clean pinned checkout, one documented command runs the default advisory shadow rail with Go supplied either directly or through mise, verifies the Forge version and stdlib identity, writes build logs plus bridge receipt/DAG and coverage census to a caller-selected persistent SF_SHADOW_OUT directory, compares coverage against a machine-readable committed baseline, reports the exact bridge drift, and exits zero; a separate --strict mutation fixture exits nonzero, and the resulting artifacts are suitable for upload by a non-required CI job",
-    "forbid": "re-locking or refreshing baselines from a dirty shared worktree; deleting failure diagnostics; silently following tango/forge development HEAD when a pinned release was requested; turning the whole physics CI fail-closed before a clean family baseline exists; weakening certlab drift or verifier failures into passes; writing generated audit artifacts into either source tree by default; treating shadow import or a green advisory run as retroactive certification of legacy results"
-  }
+ "id": "sf:forge-request/shadow-mode-adoption-hardening",
+ "kind": "work",
+ "schema": "work-v0",
+ "body": {
+  "owner": "physics-programme",
+  "state": "LANDED",
+  "objective": "Harden ci/science-forge-shadow.sh into a reproducible advisory adoption rail suitable for local use and a non-required CI job. The first live run on 2026-07-19 exposed four integration gaps: automatic build failed because Go is installed through mise but absent from PATH; the temporary build log and certlab receipts were deleted even when the summary instructed the reader to inspect them; the script documents forge-v0.0.1 but defaults to an unverified development checkout/binary; and the coverage comparison is hard-coded to the old 820-certificate prose snapshot while a read-only scan found 976 certificates. With a manually built current Forge binary, the advisory run correctly exited zero while reporting bridge hash drift and coverage drift.",
+  "depends_on": [],
+  "stop_condition": "from a clean pinned checkout, one documented command runs the default advisory shadow rail with Go supplied either directly or through mise, verifies the Forge version and stdlib identity, writes build logs plus bridge receipt/DAG and coverage census to a caller-selected persistent SF_SHADOW_OUT directory, compares coverage against a machine-readable committed baseline, reports the exact bridge drift, and exits zero; a separate --strict mutation fixture exits nonzero, and the resulting artifacts are suitable for upload by a non-required CI job",
+  "forbid": "re-locking or refreshing baselines from a dirty shared worktree; deleting failure diagnostics; silently following tango/forge development HEAD when a pinned release was requested; turning the whole physics CI fail-closed before a clean family baseline exists; weakening certlab drift or verifier failures into passes; writing generated audit artifacts into either source tree by default; treating shadow import or a green advisory run as retroactive certification of legacy results",
+  "notes": [
+   "2026-07-19 forge-coordinator: ACCEPTED + LANDED same day (script-local, no math layer needed). All four gaps closed in ci/science-forge-shadow.sh: (1) Go discovered via PATH then mise exec fallback, loud FAIL naming both when absent; (2) SF_SHADOW_OUT=<dir> keeps all artifacts (CI-upload path); unset = temp, deleted ONLY on a clean advisory pass \u2014 diagnostics are never deleted when a summary line references them; (3) toolchain identity always printed (version + stdlib line); SF_FORGE_PIN=0.0.1 requires the stamped release with verified stdlib, mismatch is a finding; (4) coverage compares against the machine-readable committed ci/science-forge-baseline.json (seeded at 976 certs, 2026-07-19) \u2014 refreshed deliberately, never auto-rewritten. Plus --selftest-mutation: tampers a lock copy, proves the audit refuses it (exit 1 = fixture pass, exit 3 = broken rail). Verified live: dev lane rc=0 with honest drift report; SF_FORGE_PIN mismatch advisory rc=0 / --strict rc=1; selftest rc=1. TWO-LANE model documented in the script header per the coordinator discussion: dev lane (drift is information, casual daily use) vs pinned lane (drift is a finding, CI). Your forbid list honored: no auto-relock, no source-tree writes by default, no silent HEAD-following, drift never weakened to pass."
+  ]
+ }
 }
