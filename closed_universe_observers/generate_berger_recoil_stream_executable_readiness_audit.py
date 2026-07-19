@@ -23,6 +23,7 @@ BACKEND = PACKAGE / "berger_recoil_interval_stream.py"
 FORM_BACKEND = PACKAGE / "berger_recoil_detector_form_binding.py"
 MASSIVE_BACKEND = PACKAGE / "berger_recoil_massive_diagonal_preparation.py"
 RETARDED_BACKEND = PACKAGE / "berger_recoil_free_emitter_retarded_channel.py"
+PARTITIONED_BACKEND = PACKAGE / "berger_recoil_partitioned_massive_preparation.py"
 DEPENDENCIES = {
     "per_shell_word": PACKAGE / "certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
     "tail_envelopes": PACKAGE / "certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
@@ -36,6 +37,7 @@ DEPENDENCIES = {
     "finite_physical_massive_cauchy": PACKAGE / "certificates/BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION.json",
     "finite_positive_energy_preparation": PACKAGE / "certificates/BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS.json",
     "finite_free_emitter_retarded_channel": PACKAGE / "certificates/BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL.json",
+    "finite_partitioned_leading_response_rank_two": PACKAGE / "certificates/BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO.json",
 }
 REQUIRED_CALLABLES = {
     "detector_profile_coefficient_provider": "detector_profile_coefficient_interval",
@@ -54,6 +56,7 @@ SOURCE_FILES = [
     FORM_BACKEND,
     MASSIVE_BACKEND,
     RETARDED_BACKEND,
+    PARTITIONED_BACKEND,
 ]
 
 
@@ -78,6 +81,7 @@ def readiness_rows(
     form_functions: set[str] | None = None,
     massive_functions: set[str] | None = None,
     retarded_functions: set[str] | None = None,
+    partitioned_functions: set[str] | None = None,
     finite_detector_provider: bool = False,
     complete_detector_provider: bool = False,
     finite_nested_convolution: bool = False,
@@ -87,12 +91,14 @@ def readiness_rows(
     finite_physical_massive_cauchy: bool = False,
     finite_positive_energy_preparation: bool = False,
     finite_free_emitter_retarded_channel: bool = False,
+    finite_partitioned_leading_response_rank_two: bool = False,
     complete_nested_convolution: bool = False,
     treat_symbolic_word_as_backend: bool = False,
 ) -> list[dict[str, Any]]:
     form_functions = form_functions or set()
     massive_functions = massive_functions or set()
     retarded_functions = retarded_functions or set()
+    partitioned_functions = partitioned_functions or set()
     rows = [
         {
             "id": "complete_symbolic_operator_word",
@@ -232,6 +238,25 @@ def readiness_rows(
                 else "NO_CERTIFIED_FINITE_CALLABLE"
             ),
         },
+        {
+            "id": "finite_partitioned_detector_selected_leading_response_rank_two",
+            "status": (
+                "CERTIFIED"
+                if finite_partitioned_leading_response_rank_two
+                and "evaluate_partitioned_positive_energy_preparation_at_support_left"
+                in partitioned_functions
+                else "OBSTRUCTED"
+            ),
+            "required_callable": "evaluate_partitioned_positive_energy_preparation_at_support_left",
+            "coverage": "D0_D1_two_j0_column0_mass_squared_interval_1_to_2_partition_count_32",
+            "evidence": (
+                "BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO"
+                if finite_partitioned_leading_response_rank_two
+                and "evaluate_partitioned_positive_energy_preparation_at_support_left"
+                in partitioned_functions
+                else "NO_CERTIFIED_FINITE_CALLABLE"
+            ),
+        },
     ]
     for identifier, callable_name in REQUIRED_CALLABLES.items():
         present = callable_name in functions
@@ -283,6 +308,7 @@ def build() -> dict[str, Any]:
         "finite_physical_massive_cauchy": "EMITTER_FULL_FORM_CAUCHY_PAIR_EXPORTED",
         "finite_positive_energy_preparation": "COUPLING_STRIPPED_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS_EXPORTED",
         "finite_free_emitter_retarded_channel": "FIRST_RETARDED_MAXWELL_CAUCHY_PAIR_AT_SUPPORT_RIGHT_EXPORTED",
+        "finite_partitioned_leading_response_rank_two": "FINITE_DETECTOR_SELECTED_LEADING_RESPONSE_RANK_TWO_ON_MASS_DOMAIN",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -294,6 +320,7 @@ def build() -> dict[str, Any]:
     form_functions = _backend_functions(FORM_BACKEND)
     massive_functions = _backend_functions(MASSIVE_BACKEND)
     retarded_functions = _backend_functions(RETARDED_BACKEND)
+    partitioned_functions = _backend_functions(PARTITIONED_BACKEND)
     finite_detector_provider = values["finite_detector_provider"]["flags"][
         "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED"
     ]
@@ -324,11 +351,15 @@ def build() -> dict[str, Any]:
     finite_free_emitter_retarded_channel = values[
         "finite_free_emitter_retarded_channel"
     ]["flags"]["FIRST_RETARDED_MAXWELL_CAUCHY_PAIR_AT_SUPPORT_RIGHT_EXPORTED"]
+    finite_partitioned_leading_response_rank_two = values[
+        "finite_partitioned_leading_response_rank_two"
+    ]["flags"]["FINITE_DETECTOR_SELECTED_LEADING_RESPONSE_RANK_TWO_ON_MASS_DOMAIN"]
     rows = readiness_rows(
         functions,
         form_functions=form_functions,
         massive_functions=massive_functions,
         retarded_functions=retarded_functions,
+        partitioned_functions=partitioned_functions,
         finite_detector_provider=finite_detector_provider,
         complete_detector_provider=complete_detector_provider,
         finite_nested_convolution=finite_nested_convolution,
@@ -338,6 +369,7 @@ def build() -> dict[str, Any]:
         finite_physical_massive_cauchy=finite_physical_massive_cauchy,
         finite_positive_energy_preparation=finite_positive_energy_preparation,
         finite_free_emitter_retarded_channel=finite_free_emitter_retarded_channel,
+        finite_partitioned_leading_response_rank_two=finite_partitioned_leading_response_rank_two,
         complete_nested_convolution=complete_nested_convolution,
     )
     row_status = {row["id"]: row["status"] for row in rows}
@@ -352,6 +384,7 @@ def build() -> dict[str, Any]:
         form_functions=set(),
         massive_functions=set(),
         retarded_functions=set(),
+        partitioned_functions=set(),
         finite_detector_provider=finite_detector_provider,
         complete_detector_provider=complete_detector_provider,
         finite_nested_convolution=finite_nested_convolution,
@@ -361,6 +394,7 @@ def build() -> dict[str, Any]:
         finite_physical_massive_cauchy=finite_physical_massive_cauchy,
         finite_positive_energy_preparation=finite_positive_energy_preparation,
         finite_free_emitter_retarded_channel=finite_free_emitter_retarded_channel,
+        finite_partitioned_leading_response_rank_two=finite_partitioned_leading_response_rank_two,
         complete_nested_convolution=complete_nested_convolution,
         treat_symbolic_word_as_backend=True,
     )
@@ -382,7 +416,7 @@ def build() -> dict[str, Any]:
         "through the block-diagonal massive wave kernel to the support-left slice. "
         "The physical Proca correction and full-form Cauchy pair are now finite "
         "callables. The unrestricted canonical trace and coupling-stripped full positive-energy dual "
-        "are also bound to finite preparation coefficients; the previously declared co-closed restriction is now certified to give a zero observer source. The unrestricted canonical preparation is now freely evolved on its exact switch slab, its conserved switched current is exported, and the first retarded Maxwell Cauchy pair is enclosed at the support-right slice. Propagation to the detector window and the d/Q_a contraction are not yet bound, "
+        "are also bound to finite preparation coefficients; the previously declared co-closed restriction is now certified to give a zero observer source. The unrestricted canonical preparation is now freely evolved on its exact switch slab, its conserved switched current is exported, and the first retarded Maxwell Cauchy pair is enclosed at the support-right slice. A cell-partitioned positive-switch refinement now proves both selected two_j=0 advanced Cauchy covectors nonzero uniformly for mass squared in [1,2]. Green adjunction identifies the two diagonal detector contractions with strict positive-energy lower bounds, so the leading selected response has rank two on that validation parameter domain. Arbitrary positive masses and the feedback detector contractions are not yet bound, "
         "so the complete nested-convolution row remains "
         "obstructed. "
         "No complete callable backend yet provides the remaining detector coefficient "
@@ -399,7 +433,7 @@ def build() -> dict[str, Any]:
         "schema": "closed-universe-berger-recoil-stream-executable-readiness-audit-v1",
         "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
         "setting_id": values["per_shell_word"]["setting_id"],
-        "claim_status": "NINE_FINITE_EXECUTION_CAPABILITIES_CERTIFIED_COMPLETE_STREAM_OBSTRUCTED",
+        "claim_status": "TEN_FINITE_EXECUTION_CAPABILITIES_CERTIFIED_COMPLETE_STREAM_OBSTRUCTED",
         "atlas_status": "OBSTRUCTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
@@ -420,11 +454,14 @@ def build() -> dict[str, Any]:
             "massive_preparation_backend_module_present": MASSIVE_BACKEND.exists(),
             "free_emitter_retarded_backend_module": str(RETARDED_BACKEND.relative_to(ROOT)),
             "free_emitter_retarded_backend_module_present": RETARDED_BACKEND.exists(),
+            "partitioned_preparation_backend_module": str(PARTITIONED_BACKEND.relative_to(ROOT)),
+            "partitioned_preparation_backend_module_present": PARTITIONED_BACKEND.exists(),
             "required_callables": REQUIRED_CALLABLES,
             "discovered_module_callables": sorted(functions),
             "discovered_detector_form_callables": sorted(form_functions),
             "discovered_massive_preparation_callables": sorted(massive_functions),
             "discovered_free_emitter_retarded_callables": sorted(retarded_functions),
+            "discovered_partitioned_preparation_callables": sorted(partitioned_functions),
             "interval_output_requirement": "directed-rounding lower/upper endpoints plus retained-shell and analytic-tail bounds",
         },
         "readiness": {
@@ -460,6 +497,7 @@ def build() -> dict[str, Any]:
             "FINITE_PHYSICAL_MASSIVE_ADVANCED_CAUCHY_PAIR_EXPORTED": row_status["finite_physical_massive_advanced_cauchy_pair"] == "CERTIFIED",
             "FINITE_COUPLING_STRIPPED_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS_EXPORTED": row_status["finite_coupling_stripped_positive_energy_preparation_coefficients"] == "CERTIFIED",
             "FINITE_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL_EXPORTED": row_status["finite_free_emitter_first_retarded_maxwell_channel"] == "CERTIFIED",
+            "FINITE_PARTITIONED_DETECTOR_SELECTED_LEADING_RESPONSE_RANK_TWO_EXPORTED": row_status["finite_partitioned_detector_selected_leading_response_rank_two"] == "CERTIFIED",
             "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": row_status["shell_interval_evaluator"] == "CERTIFIED",
             "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": False,
             "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": False,
@@ -470,7 +508,7 @@ def build() -> dict[str, Any]:
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "PROPAGATE_THE_SUPPORT_RIGHT_MAXWELL_CAUCHY_PAIR_TO_THE_DETECTOR_WINDOW_AND_CONTRACT_D_THEN_Q_A",
+        "next_gate": "EXTEND_PARTITIONED_RESPONSE_TO_DECLARED_PHYSICAL_MASS_DOMAINS_AND_ABSOLUTE_G3_FEEDBACK_CHANNELS",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

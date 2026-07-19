@@ -2,7 +2,7 @@
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `LORENTZIAN-CAUSAL`.
 
-The complete per-shell symbolic word now has nine finite executable consumers.
+The complete per-shell symbolic word now has ten finite executable consumers.
 Exact rational interval aggregation of supplied `I_abc[two_j,k]` values is
 certified, including every passive column, `g_b g_c^2`, and the Peter--Weyl
 weight.  A second callable returns exact real/imaginary coefficient intervals,
@@ -32,8 +32,13 @@ co-closed restriction gives a zero observer source for `delta(hK)`.  A ninth
 callable evolves the unrestricted canonical preparation through `U_E` on its
 exact switch slab, constructs the conserved switched current, and exports the
 first retarded Maxwell field/time-derivative pair at the support-right slice.
-It does not yet propagate that pair to a detector window or contract `d` and
-`Q_a`.
+A tenth replaces the zero-containing whole-support preparation hull with 32
+positive switch cells.  The `two_j=0,k=0` advanced Cauchy covectors for both
+detectors then exclude zero uniformly for `m_a^2 in [1,2]`; Green adjunction
+turns their strict positive-energy lower bounds into nonzero diagonal records.
+Together with the causal zero, the selected leading response has rank two on
+that validation parameter domain.  Arbitrary positive masses and the
+absolute-`g3` feedback contractions remain open.
 
 The audit retains its explicit four-callable complete-backend protocol, records
 the shell evaluator `CERTIFIED`, and adds separate `CERTIFIED` finite detector
@@ -41,9 +46,9 @@ kernel, and polynomial-convolution progress rows while all three incomplete phys
 rows remain `OBSTRUCTED`.
 It also exports a strict exact-rational numerical
 input schema in the certified `gHat` operator units, but leaves every value
-undeclared.  The next gate propagates the support-right Maxwell Cauchy pair to
-the detector window and contracts `d` and `Q_a`; external specialization
-follows only after the full protocol closes.
+undeclared.  The next gate extends the partitioned response witness to the
+declared physical mass domains and the absolute-`g3` feedback channels;
+external specialization follows only after the full protocol closes.
 
 The symbolic operator theorem remains `CERTIFIED`.  No recoil coefficient,
 second-order-cone restriction, physical-branch bridge, finite-parameter

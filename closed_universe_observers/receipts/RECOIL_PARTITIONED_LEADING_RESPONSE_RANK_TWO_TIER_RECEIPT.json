@@ -1,0 +1,93 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO_TIER_RECEIPT",
+  "run_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "claim_status": "FINITE_DETECTOR_SELECTED_LEADING_RESPONSE_RANK_TWO_CERTIFIED_ON_MASS_DOMAIN",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile closed_universe_observers/berger_recoil_partitioned_massive_preparation.py closed_universe_observers/generate_berger_recoil_partitioned_leading_response_rank_two.py closed_universe_observers/verify_berger_recoil_partitioned_leading_response_rank_two.py",
+      "elapsed_seconds": 0.2,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "pytest -q closed_universe_observers/tests/test_berger_recoil_partitioned_leading_response_rank_two.py closed_universe_observers/tests/test_berger_recoil_free_emitter_retarded_channel.py closed_universe_observers/tests/test_berger_recoil_positive_energy_preparation_coefficients.py closed_universe_observers/tests/test_berger_recoil_stream_executable_readiness_audit.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py",
+      "elapsed_seconds": 52.61,
+      "status": "PASS",
+      "summary": "Thirty-three scoped preparation, retarded-channel, partition-refinement, readiness, atlas and ledger tests passed."
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m closed_universe_observers.generate_berger_recoil_partitioned_leading_response_rank_two --check && python3 -m closed_universe_observers.verify_berger_recoil_partitioned_leading_response_rank_two && python3 -m closed_universe_observers.generate_berger_recoil_stream_executable_readiness_audit --check && python3 -m closed_universe_observers.verify_berger_recoil_stream_executable_readiness_audit",
+      "elapsed_seconds": 28.63,
+      "status": "PASS",
+      "summary": "The partition-refined rank-two certificate and its transitive readiness consumer reproduce exactly."
+    },
+    {
+      "tier": 1,
+      "command": "pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py",
+      "elapsed_seconds": 11.80,
+      "status": "PASS",
+      "summary": "Twenty-three atlas and ledger tests passed after the tangent-cone, redshift and full-gauge-quotient fields were made fail closed."
+    },
+    {
+      "tier": 2,
+      "command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 -m closed_universe_observers.verify_comparison_ledger",
+      "elapsed_seconds": 2.35,
+      "status": "PASS",
+      "summary": "The generated operational atlas row and central evidence hashes validate with physical masses, feedback recoil, tangent-cone transfer and Bridge 3 fail closed."
+    },
+    {
+      "tier": 0,
+      "command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md notes/universe-building-roadmap.md",
+      "elapsed_seconds": 0.1,
+      "status": "PASS"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO.json",
+      "sha256": "fe9441ad7028f1826b9ae585f42051c30a83c1f3273cfef1abecd64dbe5cd7fe"
+    },
+    {
+      "path": "closed_universe_observers/generate_berger_recoil_partitioned_leading_response_rank_two.py",
+      "sha256": "5b14e2dc2f2a0d27490c89e5ebc4c1494adcb4ee77f31c6e532749126b6a602d"
+    },
+    {
+      "path": "closed_universe_observers/berger_recoil_partitioned_massive_preparation.py",
+      "sha256": "c1c9cfd15c4c5ac4868a1467a29518af694850318b08e2577b7fa62511cdbfc8"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-recoil-partitioned-leading-response-rank-two-v1.schema.json",
+      "sha256": "9a110b4306aed6e9e7eaa43ad03e11655bbabd1210e53de4fd94c424e70f7510"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json",
+      "sha256": "2262e8d2e4df775baaa51759fad339e3bbf5d71eeb544495c650c456da0abc6b"
+    },
+    {
+      "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "sha256": "7fef95a694d6739cbd82ba9440c3102d10a2d86be0b0c42bd1f948b1cf03e487"
+    },
+    {
+      "path": "closed_universe_observers/ledgers/comparison_ledger.json",
+      "sha256": "a139897764b8b330e55257e7f919032d8a6aca4729e64f53ccd371f7792770be"
+    }
+  ],
+  "higher_tiers_not_run": [
+    {
+      "tier": 3,
+      "reason": "No freeze, release, shared core-algebra change or theorem promotion beyond the scoped parameter-domain observer certificate; the affected certificate chain and generated claims ledger were verified."
+    }
+  ],
+  "open_gates": [
+    "extension from the validation mass-squared family [1,2] to declared physical mass domains",
+    "absolute-g3 feedback contractions and four recoil scalar intervals",
+    "infinite-harmonic numerical reconstruction and tail-aware stop loop",
+    "second-order tangent-cone restriction",
+    "fixed-background K_Berger descent, finite-r observer-morphism stability and full apparatus Dirac reduction",
+    "same-background physical-branch dictionary required before Bridge 3"
+  ]
+}

@@ -802,11 +802,11 @@ emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
 composition defects.
 
 `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` corrects the activation
-boundary.  Its nine finite capabilities include the four baseline consumers,
+boundary.  Its ten finite capabilities include the four baseline consumers,
 the detector/`Dhat_1` binding, the switched diagonal massive stage, the
 physical full-form Cauchy pair and the canonical positive-energy preparation
 coefficients described below, plus the first freely evolved retarded Maxwell
-channel.
+channel and the partition-refined leading rank-two response.
 `BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` closes the
 one-shell supplied-channel capability with exact rational arithmetic: it
 sums every passive column and both feedback channels and applies
@@ -900,8 +900,9 @@ required correction: `deltaSigma q=deltaSigma p=0` forces `alpha=0`, hence
 `delta(hK)=0` for the clock-only switch.  The earlier co-closed dual is a
 certified zero-source rail, not the operational preparation.  The serialized
 `[1,2]` mass-squared fixture is validation data, not a physical choice.
-Retained-coefficient nonvanishing, the full spatial tail and `I_abc` remain
-open.
+Retained-coefficient nonvanishing is now certified on the `[1,2]`
+mass-squared validation domain by the partitioned successor below.  Arbitrary
+positive masses, the full spatial tail and `I_abc` remain open.
 
 `BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL` closes the finite
 `U_E` and first retarded-channel gate without promoting a detector record.
@@ -914,11 +915,28 @@ certify constraint preservation and `delta J=delta^2(hK)=0`; the finite
 Maxwell sine/cosine enclosures then export the field and physical-time
 derivative at the emitter support-right slice for every D0/D1 passive column.
 The whole-support derivative hull is rigorous but coarse.  This is the first
-leading Maxwell channel in the recoil word, not feedback recoil: it does not
-prove retained-channel nonvanishing, propagate to the detector window,
-contract `d` and `Q_a`, evaluate finite response rank or `I_abc`, control the
-infinite tail, or export any absolute-`g3` recoil scalar.  The next active gate
-is precisely that downstream detector propagation and contraction.
+leading Maxwell channel in the recoil word, not feedback recoil.  The
+partitioned Green-adjoint successor below closes its selected leading record
+and rank on a validation mass domain without claiming an absolute-`g3`
+feedback scalar.
+
+`BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO` removes the specific
+interval obstruction left by the whole-support preparation hull.  It retains
+the positive normalized switch on 32 rational cells, accumulates cellwise
+switch moments, and only then applies the massive sine/cosine blocks.  For
+both D0 and D1 the `two_j=0,k=0` advanced Cauchy covector has a coordinate
+rectangle excluding zero uniformly for `m_a^2 in [1,2]`.  The certificate
+exports strict rational coefficient-block lower bounds and the exact positive
+`1/Vol_Berger` Peter--Weyl factor for
+`E_a=<p_a,A_a p_a>+<q_a,L_a q_a>`; Green adjunction gives
+`M_aa=g_a E_a`.  Since causal support still gives `M_01=0`, the selected
+leading matrix `[[g0 E0,0],[M10,g1 E1]]` has rank two for nonzero couplings.
+The two-cell mutation has zero energy lower bounds, so the result is not an
+artifact of merely declaring two probes.  The mass interval is a validation
+parameter family, not a declaration of the physical emitter masses.
+Arbitrary positive masses, numerical infinite-harmonic reconstruction,
+absolute-`g3` feedback channels, tangent-cone survival and fixed-background
+`K_Berger` descent remain open.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as

@@ -38,6 +38,19 @@ def test_recoil_executable_readiness_is_fail_closed():
     }
 
 
+def test_partitioned_leading_rank_two_keeps_nonlinear_and_quotient_gates_open():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.detector_profile.recoil_partitioned_leading_response_rank_two"
+    )
+    assert row["descriptions"]["observational"] == "CERTIFIED"
+    assert row["descriptions"]["nonlinear"] == "OPEN"
+    assert row["observer_data"]["response_rank"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["relational_redshift_contribution"]["status"] == "OPEN"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "OPEN"
+
+
 def test_recoil_shell_aggregation_is_certified_without_physical_response_promotion():
     row = next(
         row for row in build()["entries"]

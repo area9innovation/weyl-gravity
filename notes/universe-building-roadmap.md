@@ -60,7 +60,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, and supply the same-gauge generic-background full-BV Hessian matching the exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    propagate the certified support-right finite Maxwell Cauchy pair to the detector window and contract d then Q_a, while extending coverage beyond two_j=4; then build the tail-aware loop before restricting records to Z2^C
+Observer:    extend the partition-refined rank-two response from its certified mass-squared validation domain to declared physical mass domains and absolute-g3 feedback channels, while extending coverage beyond two_j=4; then build the tail-aware loop before restricting records to Z2^C
 Black hole:  polar reach/flux/disposition via the certified general split; then complex-frequency structure
 ```
 
@@ -567,11 +567,22 @@ on its exact switch slab using
 kernels to give the field and time derivative at the support-right slice.
 Exact identities `A L=L A=Delta_2+m^2`, constraint preservation and
 `delta^2(hK)=0` hold through `two_j=4`.  This closes finite `U_E` and the
-first leading retarded Maxwell channel, not a detector record or feedback
-recoil coefficient.  Retained-channel nonvanishing, propagation to the
-detector window, `d/Q_a` contraction, extension beyond `two_j=4`, and the
-tail-aware four-stream stop loop remain `OBSTRUCTED`, so external numerical inputs remain
-deferred under the strict specialization schema.
+first leading retarded Maxwell channel, not by itself a detector record or
+feedback recoil coefficient.  Its whole-support hull leaves nonvanishing and
+the detector contraction open until the partitioned successor below.
+The partitioned successor removes the zero-containing whole-support switch
+hull before testing the record.  It accumulates 32 positive switch-cell
+moments and proves that the `two_j=0,k=0` advanced Cauchy covectors for D0 and
+D1 each have a coordinate rectangle excluding zero uniformly for
+`m_a^2 in [1,2]`.  Strict rational coefficient-block energy lower bounds,
+the exact positive `1/Vol_Berger` Peter--Weyl factor and Green adjunction then
+give nonzero diagonal records; with the causal zero `M_01=0`,
+the detector-selected leading matrix has rank two for nonzero couplings on
+that validation parameter domain.  This closes the selected leading `d/Q_a`
+contraction without forward detector-window reintegration.  Arbitrary
+positive/physical mass domains, extension beyond `two_j=4`, absolute-`g3`
+feedback channels and the tail-aware four-stream stop loop remain
+`OBSTRUCTED`; the validation interval is not a physical mass declaration.
 The coupling-stripped preparation successor fixes the formal-order convention
 needed by that stream.  Since the advanced detector covector is linear in
 nonzero `g_a`, write `v_a=g_a tilde_v_a` and hold its positive-energy dual
@@ -1717,8 +1728,9 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_RECOIL_MATRIX_INTERVAL_CONVOLUTION` (fired for dimension-checked complex vector/matrix polynomial stages) | bind finite detector polynomials and the exact spacetime `d/delta` matrices, then construct finite preparation coefficients; do not identify the generic fixture with a physical channel |
 | `BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION` (fired; finite full-form jet certified) | bind the full spacetime jet to the canonical spatial Cauchy carrier before applying the positive-energy dual; do not identify `(K,partial_t K)` with `(q,p)` |
 | `BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS` (fired; finite full-canonical coupling-stripped coefficients certified; co-closed source rail obstructed) | pass the finite preparations through the free-emitter/first-retarded-channel successor; retained-coefficient nonvanishing and the infinite spatial tail remain open |
-| `BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL` (fired; finite `U_E`, conserved switched current and support-right Maxwell Cauchy pair certified) | propagate to the detector window and contract `d` then `Q_a`; do not call this leading channel a detector record or feedback recoil coefficient |
-| `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` (fired; nine finite capabilities certified, complete provider/detector contraction/stop loop obstructed) | propagate and contract the first finite channel, extend the detector provider beyond `two_j=4`, and implement the tail-aware four-stream stop loop; only then activate the exact numerical input schema |
+| `BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL` (fired; finite `U_E`, conserved switched current and support-right Maxwell Cauchy pair certified) | use the exact Green-adjoint partitioned successor for the leading detector contraction; do not call the channel itself a feedback recoil coefficient |
+| `BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO` (fired; selected leading matrix rank two uniformly for `m_a^2 in [1,2]`) | extend the partitioned witness to declared physical mass domains and absolute-`g3` feedback channels; do not identify the validation family with physical masses or Bridge 3 |
+| `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` (fired; ten finite capabilities certified, complete provider/feedback contraction/stop loop obstructed) | extend the partitioned response beyond its validation mass domain and `two_j=4`, then implement the tail-aware four-stream stop loop; only then activate the exact numerical input schema |
 | `BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` (fired, capacity label superseded) | retain the streamed route and its computed `two_j=138` working rail, but use the normalization repair for the authoritative necessary capacity lower bound; do not treat either rail as a convergence cutoff |
 | `BERGER_STREAMABLE_POLARIZATION_SECTORS` (fired) | evaluate the diagonal/first-off-diagonal high-mode coefficients in the certified three-dimensional-or-smaller charge blocks and close the Green-weighted operator-norm tail |
 | `BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138` (fired) | apply the degree-ten temporal Green polynomial in exact charge blocks of dimension at most three through form `two_j=138`, then certify or obstruct the tail beyond that published working rail |

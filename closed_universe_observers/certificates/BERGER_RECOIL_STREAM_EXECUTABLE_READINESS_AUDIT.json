@@ -1,7 +1,7 @@
 {
   "atlas_status": "OBSTRUCTED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL readiness audit preserves the certified complete symbolic Peter-Weyl recoil word but rejects its promotion to a complete executable interval stream. Exact callable per-shell aggregation of supplied channel intervals is now certified, including the couplings, passive-column sum and Peter-Weyl weight. A detector-coefficient callable is also certified only on the validated advanced-Maxwell image for 2j=0,...,4. It is not a complete all-shell detector provider and is not a massive or recoil evaluation. A separate exact finite-slab polynomial convolution callable is certified. Exact finite Berger mode kernels are now separately interval-enclosed through 2j=4 on caller-declared rational slabs and positive massive mass domains, with uniform sine tails. Every finite detector column is now assembled and passed through exact Dhat_1 with a physical-time derivative-tail bound. The switched source is also propagated through the block-diagonal massive wave kernel to the support-left slice. The physical Proca correction and full-form Cauchy pair are now finite callables. The unrestricted canonical trace and coupling-stripped full positive-energy dual are also bound to finite preparation coefficients; the previously declared co-closed restriction is now certified to give a zero observer source. The unrestricted canonical preparation is now freely evolved on its exact switch slab, its conserved switched current is exported, and the first retarded Maxwell Cauchy pair is enclosed at the support-right slice. Propagation to the detector window and the d/Q_a contraction are not yet bound, so the complete nested-convolution row remains obstructed. No complete callable backend yet provides the remaining detector coefficient intervals or tail-aware four-stream stop loop. Supplying masses and couplings would therefore still not produce a physical recoil interval. The numerical input schema is certified only as a deferred exact contract in the gHat operator units; it contains no chosen physical values. This audit does not demote the symbolic operator theorem, evaluate recoil, restrict records to the second-order cone, activate Bridge 3, promote finite-r/all-orders observer stability, or make a quantum claim.",
-  "claim_status": "NINE_FINITE_EXECUTION_CAPABILITIES_CERTIFIED_COMPLETE_STREAM_OBSTRUCTED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL readiness audit preserves the certified complete symbolic Peter-Weyl recoil word but rejects its promotion to a complete executable interval stream. Exact callable per-shell aggregation of supplied channel intervals is now certified, including the couplings, passive-column sum and Peter-Weyl weight. A detector-coefficient callable is also certified only on the validated advanced-Maxwell image for 2j=0,...,4. It is not a complete all-shell detector provider and is not a massive or recoil evaluation. A separate exact finite-slab polynomial convolution callable is certified. Exact finite Berger mode kernels are now separately interval-enclosed through 2j=4 on caller-declared rational slabs and positive massive mass domains, with uniform sine tails. Every finite detector column is now assembled and passed through exact Dhat_1 with a physical-time derivative-tail bound. The switched source is also propagated through the block-diagonal massive wave kernel to the support-left slice. The physical Proca correction and full-form Cauchy pair are now finite callables. The unrestricted canonical trace and coupling-stripped full positive-energy dual are also bound to finite preparation coefficients; the previously declared co-closed restriction is now certified to give a zero observer source. The unrestricted canonical preparation is now freely evolved on its exact switch slab, its conserved switched current is exported, and the first retarded Maxwell Cauchy pair is enclosed at the support-right slice. A cell-partitioned positive-switch refinement now proves both selected two_j=0 advanced Cauchy covectors nonzero uniformly for mass squared in [1,2]. Green adjunction identifies the two diagonal detector contractions with strict positive-energy lower bounds, so the leading selected response has rank two on that validation parameter domain. Arbitrary positive masses and the feedback detector contractions are not yet bound, so the complete nested-convolution row remains obstructed. No complete callable backend yet provides the remaining detector coefficient intervals or tail-aware four-stream stop loop. Supplying masses and couplings would therefore still not produce a physical recoil interval. The numerical input schema is certified only as a deferred exact contract in the gHat operator units; it contains no chosen physical values. This audit does not demote the symbolic operator theorem, evaluate recoil, restrict records to the second-order cone, activate Bridge 3, promote finite-r/all-orders observer stability, or make a quantum claim.",
+  "claim_status": "TEN_FINITE_EXECUTION_CAPABILITIES_CERTIFIED_COMPLETE_STREAM_OBSTRUCTED",
   "dependency_refs": {
     "finite_detector_form_binding": {
       "path": "closed_universe_observers/certificates/BERGER_RECOIL_DETECTOR_FORM_BINDING.json",
@@ -32,6 +32,11 @@
       "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION.json",
       "result_id": "BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION",
       "sha256": "39cb2d9b5a7060d8888eab1d04ce9f7e88937f136c97b424fa25332fe31557da"
+    },
+    "finite_partitioned_leading_response_rank_two": {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO.json",
+      "result_id": "BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO",
+      "sha256": "fe9441ad7028f1826b9ae585f42051c30a83c1f3273cfef1abecd64dbe5cd7fe"
     },
     "finite_physical_massive_cauchy": {
       "path": "closed_universe_observers/certificates/BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION.json",
@@ -142,11 +147,22 @@
       "evaluate_nested_green_time_convolution_interval",
       "evaluate_recoil_shell_interval"
     ],
+    "discovered_partitioned_preparation_callables": [
+      "_add_box_error",
+      "_matrix_norm_upper",
+      "_real_interval_absolute_lower",
+      "_vector_norm_squared_lower",
+      "_vector_norm_upper",
+      "evaluate_partitioned_matrix_green_endpoint",
+      "evaluate_partitioned_positive_energy_preparation_at_support_left"
+    ],
     "free_emitter_retarded_backend_module": "closed_universe_observers/berger_recoil_free_emitter_retarded_channel.py",
     "free_emitter_retarded_backend_module_present": true,
     "interval_output_requirement": "directed-rounding lower/upper endpoints plus retained-shell and analytic-tail bounds",
     "massive_preparation_backend_module": "closed_universe_observers/berger_recoil_massive_diagonal_preparation.py",
     "massive_preparation_backend_module_present": true,
+    "partitioned_preparation_backend_module": "closed_universe_observers/berger_recoil_partitioned_massive_preparation.py",
+    "partitioned_preparation_backend_module_present": true,
     "required_callables": {
       "detector_profile_coefficient_provider": "detector_profile_coefficient_interval",
       "nested_time_convolution_backend": "evaluate_nested_green_time_convolution_interval",
@@ -163,6 +179,7 @@
     "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED": true,
     "FINITE_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL_EXPORTED": true,
     "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED": true,
+    "FINITE_PARTITIONED_DETECTOR_SELECTED_LEADING_RESPONSE_RANK_TWO_EXPORTED": true,
     "FINITE_PHYSICAL_MASSIVE_ADVANCED_CAUCHY_PAIR_EXPORTED": true,
     "FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED": true,
     "FINITE_SWITCHED_DIAGONAL_MASSIVE_ADVANCED_PREPARATION_EXPORTED": true,
@@ -197,7 +214,7 @@
       "name": "request_external_values_before_internal_backend"
     }
   ],
-  "next_gate": "PROPAGATE_THE_SUPPORT_RIGHT_MAXWELL_CAUCHY_PAIR_TO_THE_DETECTOR_WINDOW_AND_CONTRACT_D_THEN_Q_A",
+  "next_gate": "EXTEND_PARTITIONED_RESPONSE_TO_DECLARED_PHYSICAL_MASS_DOMAINS_AND_ABSOLUTE_G3_FEEDBACK_CHANNELS",
   "numerical_input_contract": {
     "operator_units": "certified_gHat_clock_and_Berger_spatial_operator_units",
     "path": "closed_universe_observers/schema/berger-recoil-numerical-specialization-input-v1.schema.json",
@@ -209,7 +226,7 @@
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_recoil_stream_executable_readiness_audit.py",
-        "sha256": "08110d8d236db3c0fcfe1b9f3f98f69934431dec274d86f82213ab06c3b556ad"
+        "sha256": "02272927d2f41600e8e0fcfec71a8baba459e7ced6c394d12bf45723df89e7c1"
       },
       {
         "path": "closed_universe_observers/verify_berger_recoil_stream_executable_readiness_audit.py",
@@ -217,11 +234,11 @@
       },
       {
         "path": "closed_universe_observers/tests/test_berger_recoil_stream_executable_readiness_audit.py",
-        "sha256": "d7339ed7ec3e700d443ff7a3e3ae91a96a66c7b7163f095ab8aeb4bfc59b4f38"
+        "sha256": "bfbbba5d0a32dea7106e41e3bfc39eee2f6cccc8b1d3f73bd7d247d326e470cf"
       },
       {
         "path": "closed_universe_observers/schema/berger-recoil-stream-executable-readiness-audit-v1.schema.json",
-        "sha256": "440a45a19eb0953d3ada2a534c60c59395b3c8656ebea60dff5b525ae4a5e770"
+        "sha256": "782fd6f894506ca93e739c7c3e0f3433c8e6ffdda603925e4e3a01e436b5a27a"
       },
       {
         "path": "closed_universe_observers/schema/berger-recoil-numerical-specialization-input-v1.schema.json",
@@ -229,7 +246,7 @@
       },
       {
         "path": "closed_universe_observers/reports/berger-recoil-stream-executable-readiness-audit.md",
-        "sha256": "d9961ec3e689a0a10fc4002085c2d1177ef5052638f6b790ecc5cd73e375534d"
+        "sha256": "d44e18f160bb8fe0947f9d554864ecb89a94807208495c0e769bead9930257bd"
       },
       {
         "path": "closed_universe_observers/berger_recoil_interval_stream.py",
@@ -246,6 +263,10 @@
       {
         "path": "closed_universe_observers/berger_recoil_free_emitter_retarded_channel.py",
         "sha256": "bb335d4b9acb9b7fbe514eeddbcc1ddbed0f722a2ecbd2b2f9410a81aa054c5e"
+      },
+      {
+        "path": "closed_universe_observers/berger_recoil_partitioned_massive_preparation.py",
+        "sha256": "c1c9cfd15c4c5ac4868a1467a29518af694850318b08e2577b7fa62511cdbfc8"
       }
     ]
   },
@@ -316,6 +337,13 @@
         "evidence": "BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL",
         "id": "finite_free_emitter_first_retarded_maxwell_channel",
         "required_callable": "evaluate_free_emitter_first_retarded_maxwell_channel_at_support_right",
+        "status": "CERTIFIED"
+      },
+      {
+        "coverage": "D0_D1_two_j0_column0_mass_squared_interval_1_to_2_partition_count_32",
+        "evidence": "BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO",
+        "id": "finite_partitioned_detector_selected_leading_response_rank_two",
+        "required_callable": "evaluate_partitioned_positive_energy_preparation_at_support_left",
         "status": "CERTIFIED"
       },
       {

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "partition_refinement_rails", "positive_energy_witnesses", "green_adjoint_response", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-partitioned-leading-response-rank-two-v1"},
+    "result_id": {"const": "BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "FINITE_DETECTOR_SELECTED_LEADING_RESPONSE_RANK_TWO_CERTIFIED_ON_MASS_DOMAIN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 12, "maxProperties": 12},
+    "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "partition_refinement_rails": {"type": "object", "required": ["D0", "D1"]},
+    "positive_energy_witnesses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["D0", "D1"],
+      "properties": {
+        "D0": {"$ref": "#/$defs/energyWitness"},
+        "D1": {"$ref": "#/$defs/energyWitness"}
+      }
+    },
+    "green_adjoint_response": {"type": "object"},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "EXTEND_THE_PARTITIONED_RESPONSE_WITNESS_TO_DECLARED_PHYSICAL_MASS_DOMAINS_AND_FEEDBACK_CHANNELS"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "$defs": {
+    "energyWitness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["energy_symbol", "coefficient_block_uniform_rational_lower_bound", "peter_weyl_weight", "berger_volume", "physical_energy_lower_bound", "strictly_positive"],
+      "properties": {
+        "energy_symbol": {"type": "string"},
+        "coefficient_block_uniform_rational_lower_bound": {"type": "string"},
+        "peter_weyl_weight": {"const": "(two_j+1)/Vol_Berger=1/(16*pi^2*c) for two_j=0"},
+        "berger_volume": {"const": "Vol_Berger=16 pi^2 c with c=3 sqrt(10)/20"},
+        "physical_energy_lower_bound": {"type": "string"},
+        "strictly_positive": {"const": true}
+      }
+    }
+  }
+}
