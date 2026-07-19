@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "representation_theorem",
+    "finite_matrix_gates",
+    "ell2_regression",
+    "exact_fixture_ledger",
+    "minimal_next_computation",
+    "correction_classes",
+    "classification",
+    "interpretation",
+    "next_gate",
+    "claim_boundary",
+    "provenance",
+    "verification_receipt",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-fixed-ell-constant-twist-factorization-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_FACTORIZATION"},
+    "result_state": {"const": "ALL_M_CONSTANT_TWIST_RESONANCE_REDUCED_TO_FIXED_ELL_MULTIPLICITY_MATRICES"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "representation_theorem": {
+      "type": "object",
+      "properties": {
+        "multiplicity": {"const": "dim Hom_SO3(V_1 tensor V_ell,V_ell)=1 for every integer ell>=1"},
+        "axis_kernel": {"const": "ker(A_hat dot J_ell)=V_(m_A=0)"}
+      },
+      "required": ["multiplicity", "factorization", "axis_spectrum", "axis_kernel", "proof"]
+    },
+    "ell2_regression": {
+      "type": "object",
+      "properties": {
+        "Einstein_minus_rank": {"const": 2},
+        "Einstein_plus_rank": {"const": 2},
+        "extra_rank": {"const": 2},
+        "extra_kernel_dimension": {"const": 12},
+        "matches_predecessors": {"const": true}
+      },
+      "required": ["Einstein_minus_rank", "Einstein_plus_rank", "extra_rank", "extra_kernel_dimension", "matches_predecessors"]
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "all_fixed_ell_all_m_factorization_certified": {"const": true},
+        "generic_ell_Einstein_matrix_determinants_computed": {"const": false},
+        "generic_ell_extra_matrix_rank_computed": {"const": false},
+        "complete_fixed_ell_constant_twist_cone_classified": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      },
+      "required": ["all_fixed_ell_all_m_factorization_certified", "generic_ell_Einstein_matrix_determinants_computed", "generic_ell_extra_matrix_rank_computed", "complete_fixed_ell_constant_twist_cone_classified", "causal_or_quantum_claim"]
+    },
+    "correction_classes": {
+      "type": "object",
+      "properties": {
+        "BOUNDED_OR_FINITE_QUASIPERIODIC": {"type": "object", "properties": {"status": {"const": "OPEN"}}, "required": ["status"]},
+        "CAUSAL_RETARDED": {"type": "object", "properties": {"status": {"const": "NO_CERTIFIED_MAP"}}, "required": ["status"]}
+      },
+      "required": ["BOUNDED_OR_FINITE_QUASIPERIODIC", "SMOOTH_EXPONENTIAL_POLYNOMIAL", "CAUSAL_RETARDED"]
+    }
+  },
+  "additionalProperties": true
+}

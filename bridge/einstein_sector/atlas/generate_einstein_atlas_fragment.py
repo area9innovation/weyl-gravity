@@ -61,6 +61,7 @@ CERTIFICATES = {
     "twist_circumference_wilson_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.json",
     "d_twist_ell2_complete_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone.json",
     "complete_global_twist_ell2_bounded_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.json",
+    "fixed_ell_constant_twist_factorization": ROOT / "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.json",
     "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
     "global_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
     "extra_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
@@ -528,6 +529,18 @@ def entries() -> list[dict[str, object]]:
             "This partial predecessor is superseded for the complete ell=2,k=0 global/twist carrier by einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone. Its historical static, A=0 wave and constant-twist-only strata remain certified; it must not be used to reopen the now-closed radion, electric or simultaneous-twist gates.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization",
+            _scope(theory="Weyl-Maxwell target", carrier="one nonzero constant axial twist position crossed with one arbitrary fixed generic ell,k=0 q/p wave block", degree=2, parity="axial and polar multiplicity spaces retained", ell="one arbitrary integer ell>=2", m="all m=-ell,...,ell", k=0, omega="each fixed-ell Einstein plus/minus q shell and extra p shell separately", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The fixed-ell q/p branch multiplicity spaces remain distinct; no cross-background or cross-branch identification is used."),
+            ("CERTIFIED","SO3 multiplicity one factors every all-m resonance map as (A_hat dot J_ell) tensor a finite action-normalized multiplicity matrix."),
+            ("NOT_APPLICABLE","This row isolates the resonance operator and does not add a stabilizer moment-map equation."),
+            ("CERTIFIED","The angular kernel is exactly m_A=0; all additional kernel directions are controlled by two 2x2 Einstein matrices and one 4x4 extra matrix."),
+            _second_order(("OPEN","The all-m problem is reduced exactly to Q_(ell,+/-) and P_ell, but their generic physical-fibre ranks and common moment/resonance zero cone are not yet computed."),("NOT_APPLICABLE","This is a bounded resonant-projection theorem, not a smooth-secular solvability theorem."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _evidence("fixed_ell_constant_twist_factorization","constant_twist_ell2_complete_bounded_cone","global_fixed_ell_k0_bounded"),
+            "The ell=2 ranks are exact regressions. Generic-ell finite matrices, their common cone, finite multi-ell sums, nonzero momentum, causal propagation and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
             _scope(theory="Weyl-Maxwell target", carrier="complete standard globals plus every axial/polar q/p primary in one arbitrary fixed generic ell block", degree=2, parity="homogeneous, axial and polar", ell="one fixed integer ell>=2 with global ell=0,1 data adjoined", m="all wave m=-ell,...,ell and all three real twist components", k=0, omega="generalized zero and every fixed-ell q/p shell"),
             {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
@@ -780,6 +793,11 @@ def build() -> dict[str, object]:
         raise AssertionError("complete global/twist ell2 cone changed")
     if full_global_ell2["other_ell_or_nonzero_momentum_classified"] or full_global_ell2["causal_or_quantum_claim"]:
         raise AssertionError("complete global/twist ell2 theorem exceeded its scope")
+    fixed_ell_twist = records["fixed_ell_constant_twist_factorization"]["classification"]
+    if not (fixed_ell_twist["all_fixed_ell_all_m_factorization_certified"] and fixed_ell_twist["all_m_problem_reduced_to_finite_multiplicity_matrices"]):
+        raise AssertionError("fixed-ell twist factorization changed")
+    if fixed_ell_twist["complete_fixed_ell_constant_twist_cone_classified"] or fixed_ell_twist["causal_or_quantum_claim"]:
+        raise AssertionError("fixed-ell twist reduction exceeded its scope")
     if not records["global_self_coefficients"]["classification"]["complete_aligned_global_self_source_classified"]:
         raise AssertionError("global self coefficient input changed")
     if not records["extra_self_coefficients"]["classification"]["complete_C4_extra_self_source_coefficient_explicit"]:

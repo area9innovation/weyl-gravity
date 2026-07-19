@@ -187,6 +187,13 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("generic C_A and C_P", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
+    def test_fixed_ell_constant_twist_factorization_is_registered(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("two 2x2 Einstein matrices", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+
     def test_global_finite_harmonic_k0_bounded_cone_is_registered(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone"]
         second_order = entry["mode_data"]["second_order"]

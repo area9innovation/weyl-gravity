@@ -236,6 +236,15 @@ def verify() -> None:
         raise AssertionError("generic-lambda pivot identity was hidden")
     if global_fixed_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("global fixed-ell causal lifecycle was over-promoted")
+    fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
+    if fixed_ell_twist["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("fixed-ell twist factorization was lost")
+    if "two 2x2 Einstein matrices" not in fixed_ell_twist["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("finite fixed-ell twist gate was hidden")
+    if fixed_ell_twist["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("fixed-ell twist cone was over-promoted")
+    if fixed_ell_twist["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("fixed-ell twist factorization over-promoted causal propagation")
     global_finite = by_id["einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone"]
     global_finite_second = global_finite["mode_data"]["second_order"]
     if global_finite_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":

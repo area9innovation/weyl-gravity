@@ -2652,6 +2652,80 @@
       }
     },
     {
+      "claim_boundary": "The ell=2 ranks are exact regressions. Generic-ell finite matrices, their common cone, finite multi-ell sums, nonzero momentum, causal propagation and higher lifecycles remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_FACTORIZATION",
+          "sha256": "4ae9d6ba656f97fdbefdca977b6136459ceb477ad8bf7cca744ea7886a6b4adc"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_COMPLETE_BOUNDED_CONE",
+          "sha256": "6016005b3c1a1a6cde0e0867d373278882e4411b58b51e31020d7bde0d95fdcb"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FIXED_ELL_K0_BOUNDED_CONE",
+          "sha256": "9b6854e6405b6ffb028376c071ee69233dfd888a27b738985a7e56074cd1bc6c"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The fixed-ell q/p branch multiplicity spaces remain distinct; no cross-background or cross-branch identification is used.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "SO3 multiplicity one factors every all-m resonance map as (A_hat dot J_ell) tensor a finite action-normalized multiplicity matrix.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The angular kernel is exactly m_A=0; all additional kernel directions are controlled by two 2x2 Einstein matrices and one 4x4 extra matrix.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The all-m problem is reduced exactly to Q_(ell,+/-) and P_ell, but their generic physical-fibre ranks and common moment/resonance zero cone are not yet computed.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No retarded Weyl-Maxwell complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "This is a bounded resonant-projection theorem, not a smooth-secular solvability theorem.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "This row isolates the resonance operator and does not add a stabilizer moment-map equation.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "one nonzero constant axial twist position crossed with one arbitrary fixed generic ell,k=0 q/p wave block",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": "one arbitrary integer ell>=2",
+        "k": 0,
+        "m": "all m=-ell,...,ell",
+        "omega": "each fixed-ell Einstein plus/minus q shell and extra p shell separately",
+        "parity": "axial and polar multiplicity spaces retained",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "This theorem is blockwise in one fixed ell at k=0 and only complete at A=0 or with no waves. Nonzero-A, cross-ell, nonzero-momentum, exceptional and higher scopes remain fail-closed.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -3052,7 +3126,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "324f27f269ec909d9509e41b6db2b90cc5b44d9db612ebc3a0002ab4b626629f",
+  "generated_by_sha256": "5073c1d7586ff1c96c06ad67bc40bbb3c6341a9901f7fd8fce863cadad722741",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

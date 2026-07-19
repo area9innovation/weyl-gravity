@@ -2551,6 +2551,25 @@ morphism.  The next activation gate is the fixed-generic-`ell` constant-twist
 incidence map, followed by finite `k=0` harmonic sums; exceptional `ell=1`,
 nonzero momentum and causal carriers stay separate and fail-closed.
 
+The fixed-generic-`ell` twist gate is now reduced to its minimal exact
+calculation.  For every integer `ell>=2`, multiplicity one in
+`V_1 tensor V_ell` forces each branchwise constant-position resonance map to
+factor as
+
+```text
+R_(ell,branch)(A) = (A_hat dot J_ell) tensor Q_(ell,branch).
+```
+
+After rotating `A` to the `z` axis, the angular eigenvalues are
+`-m/sqrt(ell*(ell+1))`; hence the universal angular kernel is precisely the
+axisymmetric `m_A=0` line.  The remaining work is finite: compute two `2x2`
+Einstein matrices `Q_(ell,+/-)` and one `4x4` extra matrix `P_ell` on the
+single transverse channel `m_A=1,m=0 -> M=1`.  The `ell=2` ranks reproduce the
+existing kernel dimensions exactly.  Atlas row
+`einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization` records
+the factorization as `CERTIFIED` while keeping the bounded cone `OPEN` and
+the causal row `NO_CERTIFIED_MAP` until those finite matrix ranks are proved.
+
 The polar Einstein-minus cross source is now also direct and exact.  Its
 first action row has successive nonzero pivots `66*b*z`, `198*a*z`, and
 `198*d*z`, so Schur promotion gives the same `a=b=d=0` conclusion for every

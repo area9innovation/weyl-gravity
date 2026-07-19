@@ -1,0 +1,289 @@
+{
+  "claim_boundary": "This certifies only the representation factorization and kernel/rank formulas. It does not assert the generic-ell finite matrices are nonzero, does not classify their common zero cone, and makes no secular, causal, all-orders, residual, observational or quantum claim.",
+  "classification": {
+    "all_fixed_ell_all_m_factorization_certified": true,
+    "all_m_problem_reduced_to_finite_multiplicity_matrices": true,
+    "causal_or_quantum_claim": false,
+    "complete_fixed_ell_constant_twist_cone_classified": false,
+    "ell2_regression_exact": true,
+    "finite_multi_ell_twist_cone_classified": false,
+    "generic_ell_Einstein_matrix_determinants_computed": false,
+    "generic_ell_extra_matrix_rank_computed": false
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "reason": "the representation reduction is certified, but the generic-ell multiplicity-matrix ranks are not",
+      "status": "OPEN"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "this theorem classifies a bounded resonant projection only",
+      "status": "NOT_APPLICABLE"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "ell2_regression": {
+    "Einstein_each_shell_kernel_dimension": 2,
+    "Einstein_minus_rank": 2,
+    "Einstein_plus_rank": 2,
+    "extra_kernel_dimension": 12,
+    "extra_rank": 2,
+    "matches_predecessors": true
+  },
+  "exact_fixture_ledger": [
+    {
+      "axis_coefficients": [
+        "sqrt(6)/3",
+        "sqrt(6)/6",
+        "0",
+        "-sqrt(6)/6",
+        "-sqrt(6)/3"
+      ],
+      "ell": 2,
+      "kernel_dimension": 1,
+      "lambda": 6,
+      "rank": 4,
+      "transverse_mA1_m0_coefficient": "sqrt(2)/2"
+    },
+    {
+      "axis_coefficients": [
+        "sqrt(3)/2",
+        "sqrt(3)/3",
+        "sqrt(3)/6",
+        "0",
+        "-sqrt(3)/6",
+        "-sqrt(3)/3",
+        "-sqrt(3)/2"
+      ],
+      "ell": 3,
+      "kernel_dimension": 1,
+      "lambda": 12,
+      "rank": 6,
+      "transverse_mA1_m0_coefficient": "sqrt(2)/2"
+    },
+    {
+      "axis_coefficients": [
+        "2*sqrt(5)/5",
+        "3*sqrt(5)/10",
+        "sqrt(5)/5",
+        "sqrt(5)/10",
+        "0",
+        "-sqrt(5)/10",
+        "-sqrt(5)/5",
+        "-3*sqrt(5)/10",
+        "-2*sqrt(5)/5"
+      ],
+      "ell": 4,
+      "kernel_dimension": 1,
+      "lambda": 20,
+      "rank": 8,
+      "transverse_mA1_m0_coefficient": "sqrt(2)/2"
+    },
+    {
+      "axis_coefficients": [
+        "sqrt(30)/6",
+        "2*sqrt(30)/15",
+        "sqrt(30)/10",
+        "sqrt(30)/15",
+        "sqrt(30)/30",
+        "0",
+        "-sqrt(30)/30",
+        "-sqrt(30)/15",
+        "-sqrt(30)/10",
+        "-2*sqrt(30)/15",
+        "-sqrt(30)/6"
+      ],
+      "ell": 5,
+      "kernel_dimension": 1,
+      "lambda": 30,
+      "rank": 10,
+      "transverse_mA1_m0_coefficient": "sqrt(2)/2"
+    },
+    {
+      "axis_coefficients": [
+        "sqrt(42)/7",
+        "5*sqrt(42)/42",
+        "2*sqrt(42)/21",
+        "sqrt(42)/14",
+        "sqrt(42)/21",
+        "sqrt(42)/42",
+        "0",
+        "-sqrt(42)/42",
+        "-sqrt(42)/21",
+        "-sqrt(42)/14",
+        "-2*sqrt(42)/21",
+        "-5*sqrt(42)/42",
+        "-sqrt(42)/7"
+      ],
+      "ell": 6,
+      "kernel_dimension": 1,
+      "lambda": 42,
+      "rank": 12,
+      "transverse_mA1_m0_coefficient": "sqrt(2)/2"
+    },
+    {
+      "axis_coefficients": [
+        "sqrt(14)/4",
+        "3*sqrt(14)/14",
+        "5*sqrt(14)/28",
+        "sqrt(14)/7",
+        "3*sqrt(14)/28",
+        "sqrt(14)/14",
+        "sqrt(14)/28",
+        "0",
+        "-sqrt(14)/28",
+        "-sqrt(14)/14",
+        "-3*sqrt(14)/28",
+        "-sqrt(14)/7",
+        "-5*sqrt(14)/28",
+        "-3*sqrt(14)/14",
+        "-sqrt(14)/4"
+      ],
+      "ell": 7,
+      "kernel_dimension": 1,
+      "lambda": 56,
+      "rank": 14,
+      "transverse_mA1_m0_coefficient": "sqrt(2)/2"
+    },
+    {
+      "axis_coefficients": [
+        "2*sqrt(2)/3",
+        "7*sqrt(2)/12",
+        "sqrt(2)/2",
+        "5*sqrt(2)/12",
+        "sqrt(2)/3",
+        "sqrt(2)/4",
+        "sqrt(2)/6",
+        "sqrt(2)/12",
+        "0",
+        "-sqrt(2)/12",
+        "-sqrt(2)/6",
+        "-sqrt(2)/4",
+        "-sqrt(2)/3",
+        "-5*sqrt(2)/12",
+        "-sqrt(2)/2",
+        "-7*sqrt(2)/12",
+        "-2*sqrt(2)/3"
+      ],
+      "ell": 8,
+      "kernel_dimension": 1,
+      "lambda": 72,
+      "rank": 16,
+      "transverse_mA1_m0_coefficient": "sqrt(2)/2"
+    }
+  ],
+  "finite_matrix_gates": {
+    "Einstein_minus": {
+      "bounded_kernel_if_rank_r": "2 + 2*ell*(2-r)",
+      "closure_gate": "det Q_(ell,-) != 0",
+      "input_dimension": 2,
+      "matrix": "Q_(ell,-)",
+      "output_dimension": 2
+    },
+    "Einstein_plus": {
+      "bounded_kernel_if_rank_r": "2 + 2*ell*(2-r)",
+      "closure_gate": "det Q_(ell,+) != 0",
+      "input_dimension": 2,
+      "matrix": "Q_(ell,+)",
+      "output_dimension": 2
+    },
+    "extra": {
+      "bounded_kernel_if_rank_r": "4 + 2*ell*(4-r)",
+      "closure_gate": "rank P_ell",
+      "input_dimension": 4,
+      "matrix": "P_ell",
+      "output_dimension": 4
+    },
+    "general_kernel_formula": "ker((A_hat dot J_ell) tensor Q)=V_(m_A=0) tensor M_in + V_ell tensor ker(Q)",
+    "intersection": "V_(m_A=0) tensor ker(Q)"
+  },
+  "interpretation": "The unresolved generic-ell twist gate is finite-dimensional, not an all-m source problem. Rotational covariance fixes every magnetic channel once two Einstein 2x2 matrices and one extra 4x4 matrix are known on a single transverse fixture.",
+  "lifecycle_state": "CLASSIFIED",
+  "minimal_next_computation": {
+    "Einstein_payload": "two 2x2 matrices Q_(ell,+/-)",
+    "all_m_replay_required": false,
+    "extra_payload": "one 4x4 matrix P_ell",
+    "promotion_rule": "once the finite matrices are action-normalized, the factorization determines every m exactly",
+    "required_channels": "one m_A=1,m=0 -> M=1 source fixture for every input multiplicity and every adjoint-output multiplicity"
+  },
+  "next_gate": "compute Q_(ell,+/-) and P_ell as exact functions of lambda=ell(ell+1), prove their physical-fibre ranks, then intersect their kernels with H,J_i=0",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.py",
+    "generator_sha256": "6cb7db3e8a601acf08bf86144325f406890eb94b73502089a18d1e51e25a9fe0",
+    "inputs": {
+      "ell2_einstein": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_einstein_position_zero_locus.json",
+        "sha256": "dfb11f09666b853ae3f0cf0e6e0232ba0047922e412542ba496d9f1156c927a6"
+      },
+      "ell2_extra": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus.json",
+        "sha256": "54ed7e2669458f0c1e3119ca2cc973774beb514d7ab76e103640a17a59ee744e"
+      },
+      "fixed_ell_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
+        "sha256": "9b6854e6405b6ffb028376c071ee69233dfd888a27b738985a7e56074cd1bc6c"
+      },
+      "fixed_ell_wave": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
+        "sha256": "9c9b5db86f50a624f84a0ec6548d2c07030109626d076c0e5ee6f9e9115f9e54"
+      }
+    }
+  },
+  "representation_theorem": {
+    "axis_kernel": "ker(A_hat dot J_ell)=V_(m_A=0)",
+    "axis_spectrum": "for A_hat=e_z the normalized angular factor is diag(-m/sqrt(ell*(ell+1))) for m=-ell,...,ell",
+    "factorization": "R_(ell,branch)(A)=(A_hat dot J_ell) tensor Q_(ell,branch), up to one fixed nonzero normalization scalar",
+    "fixture_channel": "m_A=1,m_wave=0 -> M_output=1 has normalized coefficient sqrt(2)/2 for every ell>=1",
+    "multiplicity": "dim Hom_SO3(V_1 tensor V_ell,V_ell)=1 for every integer ell>=1",
+    "proof": "Clebsch-Gordan multiplicity one gives the unique equivariant angular map; rotating nonzero A to e_z identifies it with the spin generator and yields the displayed spectrum.",
+    "tensor_product": "V_1 tensor V_ell = V_(ell-1) direct_sum V_ell direct_sum V_(ell+1)"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_FACTORIZATION",
+  "result_state": "ALL_M_CONSTANT_TWIST_RESONANCE_REDUCED_TO_FIXED_ELL_MULTIPLICITY_MATRICES",
+  "schema": "einstein-maxwell-weyl-fixed-ell-constant-twist-factorization-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.schema.json",
+  "schema_sha256": "e64cfe941664e5fef40c7b79f99f14d49de58dab50ce403d592a6f1d6193ec9c",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic resonance class",
+    "carrier": "one nonzero constant axial twist position A crossed with one arbitrary fixed generic ell,k=0 q/p wave block",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "one arbitrary integer ell>=2",
+    "k": 0,
+    "m": "all m=-ell,...,ell",
+    "omega": "each fixed-ell Einstein plus/minus q shell and extra p shell separately",
+    "parity": "axial and polar multiplicity spaces retained",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_fixed_ell_constant_twist_factorization --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_fixed_ell_constant_twist_factorization.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_fixed_ell_constant_twist_factorization"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.29,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 3.74,
+      "status": "PASS",
+      "tests_run": 39
+    },
+    "tier_2": {
+      "criterion": "the ell2 q/p factorizations and every-fixed-ell wave/global inputs are unchanged hashed dependencies",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "the physical-fibre multiplicity matrices remain the next calculation",
+      "status": "NOT_RUN"
+    }
+  }
+}

@@ -1481,6 +1481,15 @@ directions.  Atlas row
 domain for the relative `L_infinity` defects, not evidence that the linear
 cofiber is already a nonlinear morphism.
 
+The next Einstein activation gate has been reduced representation-theoretically:
+for each fixed generic `ell`, every all-`m` constant-twist resonance map is
+`(A_hat dot J_ell)` tensored with two `2x2` Einstein matrices or one `4x4`
+extra matrix.  The angular factor and its `m_A=0` kernel are certified; the
+generic physical-fibre ranks and common moment/resonance cone remain `OPEN`.
+This reduction is atlas row
+`einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization` and does
+not alter the Bridge 1 causal lifecycle.
+
 ### Classical ownership
 
 The authoritative support-local Berger tensors are now certified through
