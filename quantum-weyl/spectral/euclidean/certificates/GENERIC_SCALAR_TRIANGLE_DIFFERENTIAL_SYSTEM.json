@@ -1,0 +1,767 @@
+{
+  "claim_boundary": "This EUCLIDEAN-SPECTRAL certificate gives the exact two-log differential system for the positive nonexceptional massless scalar triangle and the exact corner angular moments needed by the pole-three relative-IBP rows. It does not by itself integrate a ghost channel, reduce the pole-four I29 row, supply the physical fourth-order Hessian, complete Gamma1/Q1, authorize residual transfer, or establish a Lorentzian, Hadamard, particle, positivity, scattering, or unitarity claim.",
+  "claim_flags": {
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "EQUAL_WEIGHT_CORNER_ANGULAR_SUM_COMPUTED": true,
+    "GHOST_CHANNEL_FUNCTIONS_COMPUTED": false,
+    "HOMOGENEITY_VERIFIED": true,
+    "I29_POLE4_REDUCED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "MIXED_DERIVATIVE_INTEGRABILITY_VERIFIED": true,
+    "S3_COVARIANCE_VERIFIED": true,
+    "SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM_COMPUTED": true,
+    "TWO_LOG_MASTER_REDUCTION_COMPUTED": true
+  },
+  "convention": {
+    "Kallen_lambda": "x1^2+x2^2+x3^2-2*x1*x2-2*x1*x3-2*x2*x3",
+    "derivative_masters": [
+      "M_x1=-dJ_triangle/dx1",
+      "M_x2=-dJ_triangle/dx2"
+    ],
+    "log_basis": [
+      "log(x2/x1)",
+      "log(x3/x1)"
+    ]
+  },
+  "corner_angular_system": {
+    "I_cos2": "(pi*a**3 - 4*a**2*b*log(a) + 4*a**2*b*log(b) + 2*a**2*b - pi*a*b**2 + 2*b**3)/(2*a**5 + 4*a**3*b**2 + 2*a*b**4)",
+    "I_sin2": "(2*a**3 - pi*a**2*b + 4*a*b**2*log(a) - 4*a*b**2*log(b) + 2*a*b**2 + pi*b**3)/(2*a**4*b + 4*a**2*b**3 + 2*b**5)",
+    "equal_weight_sum": "1/(a*b)",
+    "equal_weight_sum_defect": "ZERO"
+  },
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "derivative_rows": [
+    {
+      "formula": "(-J_triangle*x1**2 + J_triangle*x1*x2 + J_triangle*x1*x3 + 2*x1*log(x1) - x1*log(x2) - x1*log(x3) - x2*log(x2) + x2*log(x3) + x3*log(x2) - x3*log(x3))/(x1**3 - 2*x1**2*x2 - 2*x1**2*x3 + x1*x2**2 - 2*x1*x2*x3 + x1*x3**2)",
+      "variable": "x1"
+    },
+    {
+      "formula": "(J_triangle*x1*x2 - J_triangle*x2**2 + J_triangle*x2*x3 - x1*log(x1) + x1*log(x3) - x2*log(x1) + 2*x2*log(x2) - x2*log(x3) + x3*log(x1) - x3*log(x3))/(x1**2*x2 - 2*x1*x2**2 - 2*x1*x2*x3 + x2**3 - 2*x2**2*x3 + x2*x3**2)",
+      "variable": "x2"
+    },
+    {
+      "formula": "(J_triangle*x1*x3 + J_triangle*x2*x3 - J_triangle*x3**2 - x1*log(x1) + x1*log(x2) + x2*log(x1) - x2*log(x2) - x3*log(x1) - x3*log(x2) + 2*x3*log(x3))/(x1**2*x3 - 2*x1*x2*x3 - 2*x1*x3**2 + x2**2*x3 - 2*x2*x3**2 + x3**3)",
+      "variable": "x3"
+    }
+  ],
+  "formula_digest": "35a03bd413215d36badd00b5e8f6038f827f52ecdc8686ffbbf77422abdfcee5",
+  "identity_ledger": {
+    "S3_covariance": [
+      {
+        "defect": "ZERO",
+        "permutation": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "defect": "ZERO",
+        "permutation": [
+          0,
+          2,
+          1
+        ]
+      },
+      {
+        "defect": "ZERO",
+        "permutation": [
+          1,
+          0,
+          2
+        ]
+      },
+      {
+        "defect": "ZERO",
+        "permutation": [
+          1,
+          2,
+          0
+        ]
+      },
+      {
+        "defect": "ZERO",
+        "permutation": [
+          2,
+          0,
+          1
+        ]
+      },
+      {
+        "defect": "ZERO",
+        "permutation": [
+          2,
+          1,
+          0
+        ]
+      }
+    ],
+    "euler_defect": "ZERO",
+    "euler_homogeneity": "x1*d1J+x2*d2J+x3*d3J=-J",
+    "mixed_integrability": [
+      {
+        "defect": "ZERO",
+        "pair": [
+          1,
+          2
+        ]
+      },
+      {
+        "defect": "ZERO",
+        "pair": [
+          1,
+          3
+        ]
+      },
+      {
+        "defect": "ZERO",
+        "pair": [
+          2,
+          3
+        ]
+      }
+    ],
+    "symmetric_point_derivatives": [
+      "-J_triangle/3",
+      "-J_triangle/3",
+      "-J_triangle/3"
+    ]
+  },
+  "lifecycle_state": "SCALAR_TRIANGLE_DERIVATIVES_AND_CORNER_ANGULAR_SYSTEM_CERTIFIED",
+  "master_rows": {
+    "M_x1": {
+      "J_triangle": {
+        "denominator_terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              1,
+              1,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              1,
+              0,
+              1
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              0,
+              2,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              0,
+              0,
+              2
+            ]
+          }
+        ],
+        "numerator_terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "exponents": [
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "exponents": [
+              0,
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "log_x2_over_x1": {
+        "denominator_terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              3,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              2,
+              1,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              2,
+              0,
+              1
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              1,
+              2,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              1,
+              0,
+              2
+            ]
+          }
+        ],
+        "numerator_terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "exponents": [
+              0,
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "log_x3_over_x1": {
+        "denominator_terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              3,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              2,
+              1,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              2,
+              0,
+              1
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              1,
+              2,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              1,
+              0,
+              2
+            ]
+          }
+        ],
+        "numerator_terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "exponents": [
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              0,
+              0,
+              1
+            ]
+          }
+        ]
+      }
+    },
+    "M_x2": {
+      "J_triangle": {
+        "denominator_terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              1,
+              1,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              1,
+              0,
+              1
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              0,
+              2,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              0,
+              0,
+              2
+            ]
+          }
+        ],
+        "numerator_terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "exponents": [
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "exponents": [
+              0,
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "log_x2_over_x1": {
+        "denominator_terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              1,
+              1,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              1,
+              0,
+              1
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              0,
+              2,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              0,
+              0,
+              2
+            ]
+          }
+        ],
+        "numerator_terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "log_x3_over_x1": {
+        "denominator_terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              2,
+              1,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              1,
+              2,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              0,
+              3,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "exponents": [
+              0,
+              2,
+              1
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "numerator_terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "exponents": [
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "exponents": [
+              0,
+              0,
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "next_gate": "COMBINE_WITH_THE_TEN_POLE3_RELATIVE_IBP_ROWS_AND_THEIR_PUNCTURED_CORNER_FLUXES",
+  "provenance": {
+    "primary_source": {
+      "arxiv": "1909.04055",
+      "authors": "Barak Kol and Subhajit Mazumdar",
+      "role": "differential-system architecture and bubble descendants; every stored identity is independently replayed",
+      "title": "Triangle diagram, Distance Geometry and Symmetries of Feynman Integrals",
+      "url": "https://arxiv.org/abs/1909.04055"
+    }
+  },
+  "result_id": "GENERIC_SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM",
+  "result_state": "COEFFICIENT_COMPUTED",
+  "schema": "quantum-weyl-generic-scalar-triangle-differential-system-v1",
+  "scope": {
+    "dimension": 4,
+    "integral": "J_triangle=integral_simplex 1/Delta",
+    "kinematics": "positive nonexceptional x1,x2,x3 with Kallen lambda nonzero",
+    "signature": "Euclidean"
+  }
+}

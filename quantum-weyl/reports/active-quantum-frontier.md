@@ -89,7 +89,13 @@ is positive, and the three reduced `I28` orientations sum to zero pointwise.
 All ten pole-three rows now have exact relative-IBP primitives and reduce to
 the scalar triangle plus two first derivatives. Open-edge flux vanishes, but
 rank-stable normalized duals prove that corner-zero flux is impossible in the
-declared ansatz; two bubble-log directions are therefore unavoidable. At
+declared ansatz. The exact scalar-triangle differential system is now
+`S3`-covariant, homogeneous and integrable, and reduces those derivatives to
+the triangle plus two bubble-log ratios. In all four canonical primitives the
+only nonzero corner has equal angular weights, so its oriented integral is an
+exact rational function rather than a new logarithmic master. Consequently all
+ten pole-three generic functions are complete in the basis
+`(J,log(x2/x1),log(x3/x1),1)`. At
 `x1=x2=x3=1`, all eleven coordinates are now integrated
 exactly as rational combinations of `4 Cl2(pi/3)/sqrt(3)` using four rational
 divergence witnesses with checked boundary flux. This is one symmetric-point
@@ -125,12 +131,11 @@ through residue order and the local defect is
 difference `2` is a factorization-convention effect. The generic finite rows
 still require the full primed Green kernel or spectral measure. The generic
 physical fourth-order Hessian is also still absent.
-The ten pole-three generic barycentric rows now reduce by exact relative IBP
-to the scalar triangle and two first derivatives. Four explicit primitives
-cover every orientation, and normalized rank-stable dual witnesses prove
-that the punctured-corner logarithms cannot all be removed in the declared
-ansatz. The next coefficient gate is their conversion to two explicit
-bubble-log ratios together with reduction of the pole-four `I29` row.
+The ten pole-three generic barycentric rows are now fully integrated as exact
+rational combinations of the scalar triangle, two explicit bubble-log ratios,
+and rational corner flux. Four explicit primitives cover every orientation,
+and all ten formulas regress exactly to the independent symmetric-point
+integration. The next coefficient gate is solely the pole-four `I29` row.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute
@@ -169,6 +174,7 @@ See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstructi
 [`generic-background-diff-weyl-ghost-cpt-obstruction.md`](generic-background-diff-weyl-ghost-cpt-obstruction.md),
 [`generic-background-ghost-endo-duhamel-reduction.md`](generic-background-ghost-endo-duhamel-reduction.md),
 [`generic-background-ghost-schur-schatten-split.md`](generic-background-ghost-schur-schatten-split.md),
+[`generic-background-ghost-n3-pole3-integrated-functions.md`](generic-background-ghost-n3-pole3-integrated-functions.md),
 [`weyl-graviton-box-r-scheme-conversion.md`](weyl-graviton-box-r-scheme-conversion.md), and
 [`vacuum-cylinder-reduced-bridge4-hadamard.md`](vacuum-cylinder-reduced-bridge4-hadamard.md).
 
@@ -450,9 +456,8 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. convert the isolated punctured-corner carriers to two explicit bubble-log
-   ratios and reduce the pole-four `I29` row, or supply the same-gauge
-   generic-background physical fourth-order Hessian;
+1. reduce the pole-four `I29` row to the certified triangle/log master system,
+   or supply the same-gauge generic-background physical fourth-order Hessian;
 2. supply the full generic primed Green kernel or spectral measure for the
    global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the
    physical Hessian to integrate

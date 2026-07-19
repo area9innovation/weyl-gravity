@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/quantum-weyl/generic-scalar-triangle-differential-system-v1.schema.json",
+  "title": "Generic scalar triangle differential system",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_state",
+    "dependency_tags", "scope", "convention", "derivative_rows",
+    "master_rows", "identity_ledger", "corner_angular_system",
+    "formula_digest", "provenance", "claim_flags", "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-scalar-triangle-differential-system-v1"},
+    "result_id": {"const": "GENERIC_SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM"},
+    "result_state": {"const": "COEFFICIENT_COMPUTED"},
+    "lifecycle_state": {"const": "SCALAR_TRIANGLE_DERIVATIVES_AND_CORNER_ANGULAR_SYSTEM_CERTIFIED"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dimension", "signature", "kinematics", "integral"],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": "Euclidean"},
+        "kinematics": {"type": "string", "minLength": 1},
+        "integral": {"type": "string", "minLength": 1}
+      }
+    },
+    "convention": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Kallen_lambda", "log_basis", "derivative_masters"],
+      "properties": {
+        "Kallen_lambda": {"type": "string", "minLength": 1},
+        "log_basis": {"const": ["log(x2/x1)", "log(x3/x1)"]},
+        "derivative_masters": {"const": ["M_x1=-dJ_triangle/dx1", "M_x2=-dJ_triangle/dx2"]}
+      }
+    },
+    "derivative_rows": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["variable", "formula"],
+        "properties": {
+          "variable": {"enum": ["x1", "x2", "x3"]},
+          "formula": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "master_rows": {
+      "type": "object", "additionalProperties": false,
+      "required": ["M_x1", "M_x2"],
+      "properties": {
+        "M_x1": {"$ref": "#/$defs/masterRow"},
+        "M_x2": {"$ref": "#/$defs/masterRow"}
+      }
+    },
+    "identity_ledger": {
+      "type": "object", "additionalProperties": false,
+      "required": ["euler_homogeneity", "euler_defect", "mixed_integrability", "S3_covariance", "symmetric_point_derivatives"],
+      "properties": {
+        "euler_homogeneity": {"type": "string", "minLength": 1},
+        "euler_defect": {"const": "ZERO"},
+        "mixed_integrability": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {"$ref": "#/$defs/zeroPair"}
+        },
+        "S3_covariance": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["permutation", "defect"],
+            "properties": {
+              "permutation": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0, "maximum": 2}},
+              "defect": {"const": "ZERO"}
+            }
+          }
+        },
+        "symmetric_point_derivatives": {"const": ["-J_triangle/3", "-J_triangle/3", "-J_triangle/3"]}
+      }
+    },
+    "corner_angular_system": {
+      "type": "object", "additionalProperties": false,
+      "required": ["I_cos2", "I_sin2", "equal_weight_sum", "equal_weight_sum_defect"],
+      "properties": {
+        "I_cos2": {"type": "string", "minLength": 1},
+        "I_sin2": {"type": "string", "minLength": 1},
+        "equal_weight_sum": {"const": "1/(a*b)"},
+        "equal_weight_sum_defect": {"const": "ZERO"}
+      }
+    },
+    "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["primary_source"],
+      "properties": {
+        "primary_source": {
+          "type": "object", "additionalProperties": false,
+          "required": ["authors", "title", "arxiv", "url", "role"],
+          "properties": {
+            "authors": {"type": "string", "minLength": 1},
+            "title": {"type": "string", "minLength": 1},
+            "arxiv": {"const": "1909.04055"},
+            "url": {"const": "https://arxiv.org/abs/1909.04055"},
+            "role": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM_COMPUTED", "S3_COVARIANCE_VERIFIED",
+        "HOMOGENEITY_VERIFIED", "MIXED_DERIVATIVE_INTEGRABILITY_VERIFIED",
+        "TWO_LOG_MASTER_REDUCTION_COMPUTED", "EQUAL_WEIGHT_CORNER_ANGULAR_SUM_COMPUTED",
+        "GHOST_CHANNEL_FUNCTIONS_COMPUTED", "I29_POLE4_REDUCED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "LORENTZIAN_CERTIFIED"
+      ],
+      "properties": {
+        "SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM_COMPUTED": {"const": true},
+        "S3_COVARIANCE_VERIFIED": {"const": true},
+        "HOMOGENEITY_VERIFIED": {"const": true},
+        "MIXED_DERIVATIVE_INTEGRABILITY_VERIFIED": {"const": true},
+        "TWO_LOG_MASTER_REDUCTION_COMPUTED": {"const": true},
+        "EQUAL_WEIGHT_CORNER_ANGULAR_SUM_COMPUTED": {"const": true},
+        "GHOST_CHANNEL_FUNCTIONS_COMPUTED": {"const": false},
+        "I29_POLE4_REDUCED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 80}
+  },
+  "$defs": {
+    "q": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "term": {
+      "type": "object", "additionalProperties": false,
+      "required": ["exponents", "coefficient"],
+      "properties": {
+        "exponents": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0}},
+        "coefficient": {"$ref": "#/$defs/q"}
+      }
+    },
+    "rationalFunction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator_terms", "denominator_terms"],
+      "properties": {
+        "numerator_terms": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/term"}},
+        "denominator_terms": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/term"}}
+      }
+    },
+    "masterRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["J_triangle", "log_x2_over_x1", "log_x3_over_x1"],
+      "properties": {
+        "J_triangle": {"$ref": "#/$defs/rationalFunction"},
+        "log_x2_over_x1": {"$ref": "#/$defs/rationalFunction"},
+        "log_x3_over_x1": {"$ref": "#/$defs/rationalFunction"}
+      }
+    },
+    "zeroPair": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pair", "defect"],
+      "properties": {
+        "pair": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1, "maximum": 3}},
+        "defect": {"const": "ZERO"}
+      }
+    }
+  }
+}

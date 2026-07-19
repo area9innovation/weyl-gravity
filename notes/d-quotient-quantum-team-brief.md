@@ -899,8 +899,13 @@ scalar triangle and two independent first derivatives. Four explicit
 open-edge tangent primitives cover every orientation. The stronger
 corner-zero tangent-plus-master span has rank 26 while every target raises it
 to 27; normalized rank-stable dual witnesses therefore prove that punctured-
-corner logarithms are unavoidable. Their conversion to the two bubble/log
-ratios and the pole-four `I29` reduction remain open. Exact proper-time integration now gives
+corner flux is unavoidable. The exact scalar-triangle differential system is
+now `S3`-covariant, homogeneous and integrable and reduces the two derivatives
+to `J_triangle` plus `log(x2/x1)` and `log(x3/x1)`. In every canonical
+primitive the only nonzero corner has equal angular weights, so it integrates
+to a rational function. All ten generic pole-three functions are therefore
+complete and regress exactly to the symmetric-point certificate. Only the
+pole-four `I29` reduction remains open. Exact proper-time integration now gives
 `G_H0=G_F-(1/3)d Delta_0^-2 delta` and reduces the curved `n=1/n=2`
 nonminimal architecture to five minimal vector/scalar resolvent carriers,
 with coefficients `(1,-1/3)` and `(-1/2,1/3,-1/18)`. The pure-vector
@@ -962,10 +967,10 @@ longitudinal `D_W` towers are now one normalized scalar Schur series, with the
 all three Schur residue rows fixed and the round-`S4` canonical `det_3` tail
 and weighted modified determinant computed. The selected weight-raised local
 zeta term is also exact. The ten pole-three generic barycentric rows now have
-exact relative-simplex IBP primitives and a complete punctured-corner
-non-membership theorem. The remaining local gate begins with converting the
-isolated corner carriers to two explicit bubble-log ratios, reducing the
-pole-four `I29` row, and supplying the
+exact relative-simplex IBP primitives, a complete punctured-corner
+non-membership theorem, and complete exact `J`-plus-two-log integrated
+functions. The remaining local gate begins with reducing the pole-four `I29`
+row and supplying the
 generic primed Green/spectral carrier needed to lift the exact round-`S4`
 finite benchmark, together with the physical fourth-order
 Hessian kernel, followed by the five
@@ -1074,6 +1079,9 @@ The exact generic denominator and boundary factorization is in
 The ten-row relative-IBP reduction and normalized corner non-membership
 witnesses are in
 [`generic-background-ghost-n3-pole3-relative-ibp.md`](../quantum-weyl/reports/generic-background-ghost-n3-pole3-relative-ibp.md).
+The exact scalar-triangle differential system, rational corner flux and all
+ten generic pole-three functions are in
+[`generic-background-ghost-n3-pole3-integrated-functions.md`](../quantum-weyl/reports/generic-background-ghost-n3-pole3-integrated-functions.md).
 The exact anomaly action and Ricci-sector dependence theorem are recorded in
 [`fv-anomaly-action-ricci-sector.md`](../quantum-weyl/reports/fv-anomaly-action-ricci-sector.md).
 The generated atlas records it as

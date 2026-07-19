@@ -24,6 +24,9 @@ def main() -> None:
     assert "first admissible operator-choice difference & 3" in rendered
     assert "selected FV Weyl-orbit completion & certified" in rendered
     assert "independent cubic Weyl-invariant form factors & open" in rendered
+    assert "generated-generic-pole-three-functions" in rendered
+    assert "complete pole-three channel functions & 10" in rendered
+    assert "pole-four $I_{29}$ reduction & open" in rendered
     assert "generated-spectral-sequence" in rendered
     assert "generated-determinant-ledger" in rendered
     assert "generated-factorwise-coefficients" in rendered
@@ -69,6 +72,14 @@ def main() -> None:
     assert len(values["factor_coefficients"]["coefficient_result"]["factor_contributions"]) == 4
     assert values["factor_coefficients"]["coefficient_result"]["coefficients"]["C2"] == {"numerator": 199, "denominator": 30}
     assert values["matter"]["separating_witnesses"][0]["functional"] == [1, 0]
+    assert values["scalar_triangle_system"]["claim_flags"][
+        "SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM_COMPUTED"
+    ] is True
+    assert len(values["scalar_triangle_system"]["identity_ledger"]["S3_covariance"]) == 6
+    assert len(values["pole3_integrated_functions"]["channel_rows"]) == 10
+    assert values["pole3_integrated_functions"]["identity_ledger"][
+        "symmetric_point_regression_status"
+    ] == "ALL_EXACT_MATCH"
     print("Paper 12 generated quantum-anomaly tables: PASS")
 
 

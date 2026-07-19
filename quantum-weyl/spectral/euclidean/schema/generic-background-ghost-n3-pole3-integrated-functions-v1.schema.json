@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/quantum-weyl/generic-background-ghost-n3-pole3-integrated-functions-v1.schema.json",
+  "title": "Generic background ghost n=3 pole-three integrated functions",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_state",
+    "dependency_tags", "classical_commit", "scope", "convention",
+    "representative_corner_fluxes", "channel_rows", "identity_ledger",
+    "formula_digest", "coefficient_disposition", "claim_flags",
+    "dependencies", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-ghost-n3-pole3-integrated-functions-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_GHOST_N3_POLE3_INTEGRATED_FUNCTIONS"},
+    "result_state": {"const": "COEFFICIENT_COMPUTED"},
+    "lifecycle_state": {"const": "TEN_POLE3_GENERIC_FUNCTIONS_COMPLETE_I29_POLE4_OPEN"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dimension", "signature", "curvature_order", "kinematics", "included_channels", "excluded_channel"],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": "Euclidean"},
+        "curvature_order": {"const": 3},
+        "kinematics": {"type": "string", "minLength": 1},
+        "included_channels": {"type": "array", "minItems": 10, "maxItems": 10, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "excluded_channel": {"const": "I29_123 pole-four row"}
+      }
+    },
+    "convention": {
+      "type": "object", "additionalProperties": false,
+      "required": ["function_basis", "channel_formula", "corner_orientation", "overall_loop_prefactor", "W_and_Tr_log_multiplier"],
+      "properties": {
+        "function_basis": {"const": ["J_triangle", "log(x2/x1)", "log(x3/x1)", "1"]},
+        "channel_formula": {"type": "string", "minLength": 1},
+        "corner_orientation": {"type": "string", "minLength": 1},
+        "overall_loop_prefactor": {"const": "(4*pi)^-2 excluded"},
+        "W_and_Tr_log_multiplier": {"const": "-8/3 already included upstream"}
+      }
+    },
+    "representative_corner_fluxes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["I10_123", "I24_123", "I25_123", "I28_123"],
+      "properties": {
+        "I10_123": {"$ref": "#/$defs/cornerRow"},
+        "I24_123": {"$ref": "#/$defs/cornerRow"},
+        "I25_123": {"$ref": "#/$defs/cornerRow"},
+        "I28_123": {"$ref": "#/$defs/cornerRow"}
+      }
+    },
+    "channel_rows": {
+      "type": "array", "minItems": 10, "maxItems": 10,
+      "items": {"$ref": "#/$defs/channelRow"}
+    },
+    "identity_ledger": {
+      "type": "object", "additionalProperties": false,
+      "required": ["I28_integrated_relation", "I28_basis_coordinate_defects", "symmetric_point_regression_count", "symmetric_point_regression_status"],
+      "properties": {
+        "I28_integrated_relation": {"const": "I28_123+I28_132+I28_231=0"},
+        "I28_basis_coordinate_defects": {
+          "type": "object", "additionalProperties": false,
+          "required": ["J_triangle", "log_x2_over_x1", "log_x3_over_x1", "rational_corner"],
+          "properties": {
+            "J_triangle": {"const": "ZERO"},
+            "log_x2_over_x1": {"const": "ZERO"},
+            "log_x3_over_x1": {"const": "ZERO"},
+            "rational_corner": {"const": "ZERO"}
+          }
+        },
+        "symmetric_point_regression_count": {"const": 10},
+        "symmetric_point_regression_status": {"const": "ALL_EXACT_MATCH"}
+      }
+    },
+    "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "coefficient_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ten_pole3_generic_integrated_functions", "I29_pole4_reduction", "all_eleven_generic_integrated_functions", "physical_fourth_order_Hessian_functions"],
+      "properties": {
+        "ten_pole3_generic_integrated_functions": {"const": "COMPUTED"},
+        "I29_pole4_reduction": {"const": "NOT_COMPUTED"},
+        "all_eleven_generic_integrated_functions": {"const": "PARTIAL_10_OF_11_COMPLETE"},
+        "physical_fourth_order_Hessian_functions": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "TEN_POLE3_GENERIC_INTEGRATED_FUNCTIONS_COMPUTED", "CORNER_ANGULAR_FLUXES_EVALUATED",
+        "TWO_BUBBLE_LOG_RATIOS_EXPLICIT", "SYMMETRIC_POINT_REGRESSION_EXACT",
+        "INTEGRATED_I28_RELATION_VERIFIED", "I29_POLE4_REDUCED",
+        "ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_COMPUTED", "COMPLETE_GENERIC_GHOST_DETERMINANT_COMPUTED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "RESIDUAL_TRANSFER_AUTHORIZED", "LORENTZIAN_CERTIFIED"
+      ],
+      "properties": {
+        "TEN_POLE3_GENERIC_INTEGRATED_FUNCTIONS_COMPUTED": {"const": true},
+        "CORNER_ANGULAR_FLUXES_EVALUATED": {"const": true},
+        "TWO_BUBBLE_LOG_RATIOS_EXPLICIT": {"const": true},
+        "SYMMETRIC_POINT_REGRESSION_EXACT": {"const": true},
+        "INTEGRATED_I28_RELATION_VERIFIED": {"const": true},
+        "I29_POLE4_REDUCED": {"const": false},
+        "ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_COMPUTED": {"const": false},
+        "COMPLETE_GENERIC_GHOST_DETERMINANT_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object", "additionalProperties": false,
+      "required": ["relative_IBP", "scalar_triangle_differential_system", "symmetric_point_integration"],
+      "properties": {
+        "relative_IBP": {"$ref": "#/$defs/reference"},
+        "scalar_triangle_differential_system": {"$ref": "#/$defs/reference"},
+        "symmetric_point_integration": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "q": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "term": {
+      "type": "object", "additionalProperties": false,
+      "required": ["exponents", "coefficient"],
+      "properties": {
+        "exponents": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0}},
+        "coefficient": {"$ref": "#/$defs/q"}
+      }
+    },
+    "rationalFunction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator_terms", "denominator_terms"],
+      "properties": {
+        "numerator_terms": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/term"}},
+        "denominator_terms": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/term"}}
+      }
+    },
+    "cornerRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["nonzero_corner", "other_corner_fluxes", "U_C", "V_C", "U_C_minus_V_C", "oriented_integrated_flux"],
+      "properties": {
+        "nonzero_corner": {"const": "alpha0_vertex"},
+        "other_corner_fluxes": {"const": "ZERO"},
+        "U_C": {"$ref": "#/$defs/rationalFunction"},
+        "V_C": {"$ref": "#/$defs/rationalFunction"},
+        "U_C_minus_V_C": {"const": "ZERO"},
+        "oriented_integrated_flux": {"$ref": "#/$defs/rationalFunction"}
+      }
+    },
+    "basisCoordinates": {
+      "type": "object", "additionalProperties": false,
+      "required": ["J_triangle", "log_x2_over_x1", "log_x3_over_x1", "rational_corner"],
+      "properties": {
+        "J_triangle": {"$ref": "#/$defs/rationalFunction"},
+        "log_x2_over_x1": {"$ref": "#/$defs/rationalFunction"},
+        "log_x3_over_x1": {"$ref": "#/$defs/rationalFunction"},
+        "rational_corner": {"$ref": "#/$defs/rationalFunction"}
+      }
+    },
+    "channelRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["channel_id", "representative_id", "x_permutation", "function_basis_coordinates", "symmetric_point_regression"],
+      "properties": {
+        "channel_id": {"type": "string", "minLength": 1},
+        "representative_id": {"enum": ["I10_123", "I24_123", "I25_123", "I28_123"]},
+        "x_permutation": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0, "maximum": 2}},
+        "function_basis_coordinates": {"$ref": "#/$defs/basisCoordinates"},
+        "symmetric_point_regression": {
+          "type": "object", "additionalProperties": false,
+          "required": ["J_triangle_coefficient", "rational_term", "log_terms", "status"],
+          "properties": {
+            "J_triangle_coefficient": {"$ref": "#/$defs/q"},
+            "rational_term": {"$ref": "#/$defs/q"},
+            "log_terms": {"const": "ZERO_AT_X1_EQUALS_X2_EQUALS_X3"},
+            "status": {"const": "EXACT_MATCH"}
+          }
+        }
+      }
+    },
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

@@ -1474,8 +1474,47 @@ TEST="${TEST}pole3_relative_ibp"
 PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 \end{verbatim}
 
-The corner angular carriers are isolated but not yet integrated into the two
-independent bubble-log ratios.  The pole-four $I_{29}$ row also remains open.
+The nonzero corner flux is unavoidable, but the next calculation shows that
+it is rational for the canonical primitives rather than a new logarithmic
+master.
+
+\subsection{Scalar-triangle system and complete pole-three functions}
+
+The independently replayed scalar-triangle equations reduce
+$-\partial_{x_1}J_\triangle$ and $-\partial_{x_2}J_\triangle$ to the basis
+\[
+ J_\triangle,\qquad \log(x_2/x_1),\qquad \log(x_3/x_1).
+\]
+The producer verifies $S_3$ covariance, Euler homogeneity, all three mixed
+derivative identities, and the symmetric normalization
+$\partial_{x_i}J_\triangle=-J_\triangle/3$ at $x_1=x_2=x_3=1$.
+
+For all four orbit representatives the two coordinate-corner leading pairs
+vanish and the remaining pair obeys $U_C=V_C$.  Independent rational
+partial-fraction integration gives
+\[
+ \int_0^{\pi/2}
+ \frac{\cos^2\theta+\sin^2\theta}
+ {(a\cos\theta+b\sin\theta)^2}\,\dd\theta=\frac1{ab}.
+\]
+Thus the stored oriented corner carrier contributes the rational function
+$-U_C/(x_1x_3)$.  After the certified kinematic permutations, every one of
+the ten rows is stored as a rational linear combination of the three masters
+above and $1$.  The exact $I_{28}$ relation holds basis-coordinate by
+basis-coordinate, and all ten formulas reproduce the independent
+symmetric-point rational and Clausen coefficients.
+
+\begin{verbatim}
+MOD="spectral.euclidean.verify_generic_scalar_triangle_"
+MOD="${MOD}differential_system"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+MOD="spectral.euclidean.verify_generic_background_ghost_n3_"
+MOD="${MOD}pole3_integrated_functions"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+\end{verbatim}
+
+The pole-four $I_{29}$ row, complete ghost determinant and physical
+fourth-order Hessian remain open.
 
 \subsection{Exact symmetric-point simplex integration}
 
@@ -1520,9 +1559,11 @@ TEST="${TEST}symmetric_point_simplex_integration"
 PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 \end{verbatim}
 
-This closes only the normalized symmetric-point ghost $n=3$ fixture.  The
-generic functions, complete ghost determinant, physical fourth-order Hessian,
-combined repository coefficients and complete $\Gamma_1/Q_1$ remain open.
+This remains an independent normalized symmetric-point fixture.  The ten
+pole-three generic functions are now complete by the preceding differential
+and corner calculation; the pole-four $I_{29}$ function, complete ghost
+determinant, physical fourth-order Hessian, combined repository coefficients
+and complete $\Gamma_1/Q_1$ remain open.
 
 \subsection{Exact local BoxR scheme conversion}
 
@@ -1677,6 +1718,12 @@ PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_cubic_weyl_carrier_basis
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_n3_five_carrier_projection
+MOD="spectral.euclidean.verify_generic_scalar_triangle_"
+MOD="${MOD}differential_system"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+MOD="spectral.euclidean.verify_generic_background_ghost_n3_"
+MOD="${MOD}pole3_integrated_functions"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_longitudinal_schur_resummation
 PYTHONPATH=quantum-weyl python3 -m \

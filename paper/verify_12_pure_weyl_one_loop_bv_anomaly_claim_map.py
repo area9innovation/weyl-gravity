@@ -69,6 +69,8 @@ def main() -> None:
         "m_Q^{\\rm wr}(S_L)=-\\frac14\\operatorname{Wres}(K^2)",
         "Generic pole-three relative-simplex IBP reduction",
         "\\lambda(B_{\\rm corner-zero})=0",
+        "Complete generic functions for the ten pole-three rows",
+        "\\lambda\\,\\partial_{x_1}J_\\triangle",
         "0.4981635654196290984312532999414818723861192934",
         "-3.9781454856154116274753955548059869205821661933",
         "full primed Green kernel or equivalent spectral measure",
@@ -305,7 +307,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "SUPPLY_CORNER_LOG_I29_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
+        == "SUPPLY_I29_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
     )
 
     dependencies = {}
@@ -325,7 +327,10 @@ def main() -> None:
     assert claims["generic_ghost_n3_pole3_master_span_rank"] == 30
     assert claims["generic_ghost_n3_corner_zero_span_rank"] == 26
     assert claims["generic_ghost_n3_corner_zero_augmented_ranks"] == [27] * 10
-    assert len(payload["inputs"]) == 42
+    assert claims["scalar_triangle_differential_system_computed"] is True
+    assert claims["generic_ghost_n3_ten_pole3_integrated_functions"] is True
+    assert claims["generic_ghost_n3_pole3_integrated_symmetric_regressions"] == 10
+    assert len(payload["inputs"]) == 44
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -478,6 +483,31 @@ def main() -> None:
         "TEN_POLE3_ROWS_REDUCED_TO_J_AND_TWO_DERIVATIVE_MASTERS"
     ] is True
     assert generic_ghost_n3_relative_ibp["claim_flags"]["I29_POLE4_REDUCED"] is False
+    scalar_triangle = dependencies["GENERIC_SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM"]
+    assert scalar_triangle["claim_flags"][
+        "SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM_COMPUTED"
+    ] is True
+    assert scalar_triangle["claim_flags"]["TWO_LOG_MASTER_REDUCTION_COMPUTED"] is True
+    assert len(scalar_triangle["identity_ledger"]["S3_covariance"]) == 6
+    assert len(scalar_triangle["identity_ledger"]["mixed_integrability"]) == 3
+    assert claims["scalar_triangle_differential_formula_digest"] == scalar_triangle[
+        "formula_digest"
+    ]
+    integrated_pole3 = dependencies[
+        "GENERIC_BACKGROUND_GHOST_N3_POLE3_INTEGRATED_FUNCTIONS"
+    ]
+    assert len(integrated_pole3["channel_rows"]) == 10
+    assert integrated_pole3["claim_flags"][
+        "TEN_POLE3_GENERIC_INTEGRATED_FUNCTIONS_COMPUTED"
+    ] is True
+    assert integrated_pole3["claim_flags"]["CORNER_ANGULAR_FLUXES_EVALUATED"] is True
+    assert integrated_pole3["claim_flags"]["I29_POLE4_REDUCED"] is False
+    assert integrated_pole3["identity_ledger"]["symmetric_point_regression_status"] == (
+        "ALL_EXACT_MATCH"
+    )
+    assert claims["generic_ghost_n3_pole3_integrated_formula_digest"] == (
+        integrated_pole3["formula_digest"]
+    )
     assert generic_ghost_n1_n2["proper_time_to_resolvent"]["resolvent_identity"] == (
         "G_H0=G_F-(1/3)d Delta_0^-2 delta"
     )

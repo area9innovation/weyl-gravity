@@ -295,6 +295,21 @@ class ActiveFrontierTests(unittest.TestCase):
                 "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED"
             ]
         )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM_COMPUTED"
+            ]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "GENERIC_GHOST_N3_TEN_POLE3_INTEGRATED_FUNCTIONS_COMPUTED"
+            ]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "GENERIC_GHOST_N3_CORNER_ANGULAR_FLUXES_EVALUATED"
+            ]
+        )
         self.assertFalse(
             self.payload["claim_flags"][
                 "GENERIC_GHOST_LONGITUDINAL_DW_CARRIERS_EVALUATED"

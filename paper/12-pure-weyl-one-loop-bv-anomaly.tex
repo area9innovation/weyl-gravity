@@ -1540,10 +1540,50 @@ whose base rank equals the generic rank:
 \[
  \lambda(B_{\rm corner-zero})=0,\qquad \lambda(N)=1.
 \]
-Thus punctured-corner logarithms are unavoidable in the declared exhaustive
-degree ansatz.  Their conversion to two explicit descendant bubble-log
-ratios, the pole-four $I_{29}$ reduction, and the eleven complete generic
-functions remain open.
+Thus punctured-corner flux is unavoidable in the declared exhaustive degree
+ansatz.  This does not by itself imply a new logarithmic master: the following
+proposition evaluates the angular flux and the derivative masters explicitly.
+\end{proposition}
+
+\begin{proposition}[Complete generic functions for the ten pole-three rows]
+Let
+\[
+ \lambda=x_1^2+x_2^2+x_3^2
+ -2x_1x_2-2x_1x_3-2x_2x_3.
+\]
+The scalar-triangle differential system is
+\[
+ \lambda\,\partial_{x_1}J_\triangle
+ =(x_2+x_3-x_1)J_\triangle
+ -\frac{x_1+x_2-x_3}{x_1}\log\frac{x_2}{x_1}
+ -\frac{x_1+x_3-x_2}{x_1}\log\frac{x_3}{x_1},
+\]
+and its two cyclic images.  The certificate verifies all six $S_3$
+relabellings, Euler homogeneity and all three mixed-derivative identities.
+Consequently the two derivative masters above reduce to $J_\triangle$ and
+the two independent bubble-log ratios
+$\log(x_2/x_1),\log(x_3/x_1)$.
+
+For each of the four canonical relative-IBP primitives, the two coordinate
+vertices have zero leading pair.  At the sole nonzero vertex one has
+$U_C=V_C$, and hence
+\[
+ \int_0^{\pi/2}\frac{U_C\cos^2\theta+V_C\sin^2\theta}
+ {(x_1\cos\theta+x_3\sin\theta)^2}\,\dd\theta
+ =\frac{U_C}{x_1x_3}.
+\]
+Including the stored boundary orientation gives the rational corner term
+$-U_C/(x_1x_3)$, transported by the certified simplex permutations.
+Therefore every pole-three channel is now a complete exact function
+\[
+ A_J(x)J_\triangle+A_{21}(x)\log\frac{x_2}{x_1}
+ +A_{31}(x)\log\frac{x_3}{x_1}+R_{\rm corner}(x),
+\]
+with rational-function coefficients.  All ten rows regress exactly to the
+symmetric-point values below, and the integrated $I_{28}$ relation vanishes
+separately in all four basis coordinates.  The pole-four $I_{29}$ row, the
+complete eleven-channel ghost block and the physical fourth-order Hessian
+remain open.
 \end{proposition}
 
 \begin{proposition}[Exact symmetric-point ghost triangle fixture]
@@ -1654,8 +1694,8 @@ weight-raised convention, the noncommuting BCH trace and local defect
 $-\tfrac14\operatorname{Wres}(K^2)$ are exact and specialize to $-1/3$ on
 round $S^4$.  The smoothing theorem shows that the generic finite counterparts
 still require a full primed Green/spectral carrier.  That carrier, the generic
-corner-to-bubble-log conversion and pole-four $I_{29}$ reduction beyond the
-certified ten-row relative-IBP theorem, and the physical kernel, hence the
+pole-four $I_{29}$ reduction beyond the certified ten-row integrated theorem,
+and the physical kernel, hence the
 five complete repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
@@ -1784,6 +1824,12 @@ PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_n3_barycentric_factorization
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_n3_pole3_relative_ibp
+MOD="spectral.euclidean.verify_generic_scalar_triangle_"
+MOD="${MOD}differential_system"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+MOD="spectral.euclidean.verify_generic_background_ghost_n3_"
+MOD="${MOD}pole3_integrated_functions"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
 MOD="spectral.euclidean.verify_generic_background_ghost_n3_"
 MOD="${MOD}symmetric_point_simplex_integration"
 PYTHONPATH=quantum-weyl python3 -m "$MOD"
@@ -1799,9 +1845,8 @@ python3 paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py
 
 \section{Outlook}
 
-The immediate local-to-residual question is now sharp.  Construct exact
-corner-to-bubble-log reductions for the ten pole-three rows, reduce the
-pole-four $I_{29}$ row, and supply the same-
+The immediate local-to-residual question is now sharp.  Reduce the pole-four
+$I_{29}$ row to the certified triangle/log master system, and supply the same-
 gauge generic-background full-BV Hessian and trace substitutions needed to match
 the five imported universal CPT kernels to repository parity-even third-
 curvature form-factor functions and coefficients on the certified carrier

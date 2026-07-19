@@ -31,6 +31,8 @@ INPUTS = {
     "flat_tt_log": ROOT / "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_log": ROOT / "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
     "fv_conformized_log": ROOT / "quantum-weyl/transfer/certificates/FV_CONFORMIZED_C2_LOG_GAMMA1.json",
+    "scalar_triangle_system": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM.json",
+    "pole3_integrated_functions": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_POLE3_INTEGRATED_FUNCTIONS.json",
 }
 
 
@@ -68,6 +70,8 @@ def _load() -> dict[str, dict[str, Any]]:
     flat_tt_log = values["flat_tt_log"]
     curvature_squared_log = values["curvature_squared_log"]
     fv_conformized_log = values["fv_conformized_log"]
+    scalar_triangle_system = values["scalar_triangle_system"]
+    pole3_integrated_functions = values["pole3_integrated_functions"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
         or even.get("smallest_relative_sector", {}).get("closure_rank") != 6
@@ -131,6 +135,23 @@ def _load() -> dict[str, dict[str, Any]]:
         != "CERTIFIED"
         or fv_conformized_log.get("carrier_crosswalk", {}).get("identity_status")
         != "DISTINCT_CARRIERS_NO_IDENTIFICATION"
+        or scalar_triangle_system.get("claim_flags", {}).get(
+            "SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM_COMPUTED"
+        )
+        is not True
+        or len(scalar_triangle_system.get("identity_ledger", {}).get("S3_covariance", []))
+        != 6
+        or len(pole3_integrated_functions.get("channel_rows", [])) != 10
+        or pole3_integrated_functions.get("claim_flags", {}).get(
+            "TEN_POLE3_GENERIC_INTEGRATED_FUNCTIONS_COMPUTED"
+        )
+        is not True
+        or pole3_integrated_functions.get("identity_ledger", {}).get(
+            "symmetric_point_regression_status"
+        )
+        != "ALL_EXACT_MATCH"
+        or pole3_integrated_functions.get("claim_flags", {}).get("I29_POLE4_REDUCED")
+        is not False
     ):
         raise ValueError("Paper 12 generated-table dependency drifted")
     return values
@@ -171,6 +192,8 @@ def build() -> str:
     flat_tt_log = values["flat_tt_log"]
     curvature_squared_log = values["curvature_squared_log"]
     fv_conformized_log = values["fv_conformized_log"]
+    scalar_triangle_system = values["scalar_triangle_system"]
+    pole3_integrated_functions = values["pole3_integrated_functions"]
     even_orbits = json.loads(
         next(
             item["payload_json"]
@@ -390,6 +413,23 @@ finite $C^2/R^2$ normalization & open \\
 \end{{tabular}}
 \caption{{Covariant curvature-squared logarithm, its exact FV completion as a selected carrier, and the independent-data boundary.  The coefficient remains ${_q(fv_carrier['logarithmic_coefficient'])}$.}}
 \label{{tab:generated-curvature-squared-logarithm}}
+\end{{table}}
+
+\begin{{table}}[ht]
+\centering
+\begin{{tabular}}{{@{{}}lr@{{}}}}
+\toprule
+Generic ghost $n=3$ pole-three datum & certified value \\
+\midrule
+$S_3$ scalar-triangle differential identities & {len(scalar_triangle_system['identity_ledger']['S3_covariance'])} \\
+mixed-derivative integrability identities & {len(scalar_triangle_system['identity_ledger']['mixed_integrability'])} \\
+complete pole-three channel functions & {len(pole3_integrated_functions['channel_rows'])} \\
+symmetric-point exact regressions & {pole3_integrated_functions['identity_ledger']['symmetric_point_regression_count']} \\
+pole-four $I_{{29}}$ reduction & open \\
+\bottomrule
+\end{{tabular}}
+\caption{{Exact generic nonexceptional pole-three functions in the master basis $J_\triangle$, $\log(x_2/x_1)$, $\log(x_3/x_1)$ and a rational corner term.  This does not close the pole-four $I_{{29}}$ row or the complete ghost determinant.}}
+\label{{tab:generated-generic-pole-three-functions}}
 \end{{table}}
 
 \begin{{equation}}

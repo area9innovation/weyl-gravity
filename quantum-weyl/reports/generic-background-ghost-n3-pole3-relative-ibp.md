@@ -1,5 +1,13 @@
 # Generic-background ghost (n=3) pole-three relative IBP
 
+> **Superseded frontier note.** The derivative and punctured-corner carriers
+> isolated here have now been integrated exactly in
+> [`generic-background-ghost-n3-pole3-integrated-functions.md`](generic-background-ghost-n3-pole3-integrated-functions.md).
+> In the canonical primitives the only nonzero corner has equal angular
+> weights, so its integrated contribution is rational; the two bubble-log
+> ratios arise from the scalar-triangle derivative equations. The pole-four
+> `I29` row remains open.
+
 ## Scope
 
 This is an `EUCLIDEAN-SPECTRAL` result for the ten generic nonexceptional-
@@ -85,13 +93,16 @@ representative at the rank-stable fixture
 The generic base rank and fixture base rank are both (26).  Hence the
 normalized nonzero augmented minor at the fixture proves generic
 non-membership in the declared corner-zero ansatz; this is not merely a
-numerical rank guess.  Punctured-corner logarithms are unavoidable.
+numerical rank guess.  A punctured-corner flux is unavoidable in this
+primitive ansatz; this certificate alone does not determine whether the
+integrated flux is logarithmic or rational.
 
-The three local angular carriers have been isolated exactly, but not yet
-integrated.  Their conversion to the two independent descendant bubble-log
-ratios is the next gate.  This agrees with the standard scalar-triangle
-differential-equation architecture in which triangle derivatives couple to
-lower-topology bubble descendants; see Kol and Mazumdar,
+At the time of this reduction the three local angular carriers had been
+isolated exactly but not integrated.  The successor certificate shows their
+equal-weight sum is rational, while the two independent bubble-log ratios
+instead enter through the scalar-triangle differential equations.  This is
+consistent with the standard scalar-triangle architecture in which triangle
+derivatives couple to lower-topology bubble descendants; see Kol and Mazumdar,
 [arXiv:1909.04055](https://arxiv.org/abs/1909.04055).
 
 ## Claim boundary
