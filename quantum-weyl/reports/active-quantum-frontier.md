@@ -86,7 +86,10 @@ eleven numerators contain one exact `Delta` factor; only `I29` remains at pole
 order four. The homogeneous edge orders show that only `I10` has a nonzero
 direct restriction to an open simplex edge, every vertex integrability margin
 is positive, and the three reduced `I28` orientations sum to zero pointwise.
-This does not decide flux created by future IBP primitives. At
+All ten pole-three rows now have exact relative-IBP primitives and reduce to
+the scalar triangle plus two first derivatives. Open-edge flux vanishes, but
+rank-stable normalized duals prove that corner-zero flux is impossible in the
+declared ansatz; two bubble-log directions are therefore unavoidable. At
 `x1=x2=x3=1`, all eleven coordinates are now integrated
 exactly as rational combinations of `4 Cl2(pi/3)/sqrt(3)` using four rational
 divergence witnesses with checked boundary flux. This is one symmetric-point
@@ -122,10 +125,12 @@ through residue order and the local defect is
 difference `2` is a factorization-convention effect. The generic finite rows
 still require the full primed Green kernel or spectral measure. The generic
 physical fourth-order Hessian is also still absent.
-The next coefficient gate is an exact relative-simplex IBP construction for
-the generic barycentric rows, including punctured-corner flux and the `I10`
-edge-bubble disposition, followed by reduction to scalar-triangle and edge
-masters.
+The ten pole-three generic barycentric rows now reduce by exact relative IBP
+to the scalar triangle and two first derivatives. Four explicit primitives
+cover every orientation, and normalized rank-stable dual witnesses prove
+that the punctured-corner logarithms cannot all be removed in the declared
+ansatz. The next coefficient gate is their conversion to two explicit
+bubble-log ratios together with reduction of the pole-four `I29` row.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute
@@ -445,10 +450,9 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. construct exact relative-simplex IBP primitives for the generic `n=3`
-   barycentric rows, including punctured-corner flux and the `I10` edge-bubble
-   disposition, or supply the same-gauge generic-background physical
-   fourth-order Hessian;
+1. convert the isolated punctured-corner carriers to two explicit bubble-log
+   ratios and reduce the pole-four `I29` row, or supply the same-gauge
+   generic-background physical fourth-order Hessian;
 2. supply the full generic primed Green kernel or spectral measure for the
    global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the
    physical Hessian to integrate

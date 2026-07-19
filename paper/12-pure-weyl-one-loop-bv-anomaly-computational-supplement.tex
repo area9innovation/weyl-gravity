@@ -1422,10 +1422,60 @@ TEST="${TEST}barycentric_factorization"
 PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 \end{verbatim}
 
-The next calculation must solve for relative rational IBP primitives.  It
-must record their open-edge and punctured-corner flux separately and reduce
-the result to the scalar triangle and edge-bubble masters.  No generic
-integrated form factor is claimed by the present factorization.
+The next subsection performs this reduction for the ten pole-three rows.  No
+generic integrated form factor follows from the factorization alone.
+
+\subsection{Pole-three relative-simplex IBP reduction}
+
+With $C=1-A-B$, every open-edge tangent polynomial vector field in the
+declared ansatz is parameterized as
+\[
+ P=A(CU+BW),\qquad Q=B(CV-AW),
+\]
+where $U,V,W$ have affine degree at most four.  The producer solves the exact
+rational-function identity
+\[
+ N=\Delta(\partial_AP+\partial_BQ)
+ -2(P\partial_A\Delta+Q\partial_B\Delta)
+ +c_J\Delta^2+c_1AC\Delta+c_2AB\Delta
+\]
+for four orbit representatives.  Exact barycentric/kinematic permutations
+then cover all ten rows.  The quotient coordinates multiply
+$J_\triangle$, $-\partial_{x_1}J_\triangle$, and
+$-\partial_{x_2}J_\triangle$.
+
+The affine degree-seven carrier has dimension $36$.  Exact ranks are
+\[
+ \operatorname{rank}B_{\rm edge}=27,
+ \qquad
+ \operatorname{rank}(B_{\rm edge},M)=30,
+ \qquad
+ \operatorname{rank}(B_{\rm edge},M,N_1,\ldots,N_{10})=30.
+\]
+The stronger corner-zero subspace, obtained by imposing
+$U_A=W_A=V_B=W_B=U_C=V_C=0$, has rank $26$ after the masters are added.
+Each target raises the rank to $27$.  For every orbit representative the
+certificate stores an exact rational dual at the rank-stable fixture
+$(x_1,x_2,x_3)=(2,3,5)$ that annihilates the corner-zero span and evaluates
+to one on the target.  The equality of generic and fixture base ranks makes
+the resulting nonzero augmented minor a generic non-membership proof.
+
+The fast verifier uses two exact rational fixtures and replays every stored
+primitive, permutation orbit, normalized dual, hash and claim flag.  The
+full rational-function producer takes roughly $73$ seconds and is therefore
+the explicit Tier-2 exhaustive rail rather than an implicit per-test rebuild.
+
+\begin{verbatim}
+MOD="spectral.euclidean.verify_generic_background_ghost_n3_"
+MOD="${MOD}pole3_relative_ibp"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+TEST="spectral.euclidean.tests.test_generic_background_ghost_n3_"
+TEST="${TEST}pole3_relative_ibp"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+The corner angular carriers are isolated but not yet integrated into the two
+independent bubble-log ratios.  The pole-four $I_{29}$ row also remains open.
 
 \subsection{Exact symmetric-point simplex integration}
 

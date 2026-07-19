@@ -67,6 +67,8 @@ def main() -> None:
         "m_Q(A,B)=\\frac53",
         "Generic weight-raised Schur zeta factorization",
         "m_Q^{\\rm wr}(S_L)=-\\frac14\\operatorname{Wres}(K^2)",
+        "Generic pole-three relative-simplex IBP reduction",
+        "\\lambda(B_{\\rm corner-zero})=0",
         "0.4981635654196290984312532999414818723861192934",
         "-3.9781454856154116274753955548059869205821661933",
         "full primed Green kernel or equivalent spectral measure",
@@ -303,7 +305,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "SUPPLY_GENERIC_RELATIVE_IBP_PRIMITIVES_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
+        == "SUPPLY_CORNER_LOG_I29_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
     )
 
     dependencies = {}
@@ -319,7 +321,11 @@ def main() -> None:
     assert claims["generic_ghost_n3_pointwise_I28_relation"] == (
         "I28_123+I28_132+I28_231=0"
     )
-    assert len(payload["inputs"]) == 41
+    assert claims["generic_ghost_n3_pole3_relative_IBP_channel_count"] == 10
+    assert claims["generic_ghost_n3_pole3_master_span_rank"] == 30
+    assert claims["generic_ghost_n3_corner_zero_span_rank"] == 26
+    assert claims["generic_ghost_n3_corner_zero_augmented_ranks"] == [27] * 10
+    assert len(payload["inputs"]) == 42
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -349,6 +355,9 @@ def main() -> None:
     generic_ghost_n3_triangle = dependencies["GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL"]
     scalar_flat_k_ricci = dependencies["SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK"]
     generic_ghost_n3_projection = dependencies["GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION"]
+    generic_ghost_n3_relative_ibp = dependencies[
+        "GENERIC_BACKGROUND_GHOST_N3_POLE3_RELATIVE_IBP"
+    ]
     generic_ghost_n1_n2 = dependencies["GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION"]
     generic_ghost_n1_n2_vector = dependencies["GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION"]
     generic_ghost_longitudinal_schur = dependencies["GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION"]
@@ -458,6 +467,17 @@ def main() -> None:
     assert claims["generic_ghost_n3_projection_raw_channel_count"] == 11
     assert claims["generic_ghost_n3_projection_quotient_dimension"] == 10
     assert claims["generic_ghost_n3_projection_formula_digest"] == generic_ghost_n3_projection["formula_digest"]
+    assert len(generic_ghost_n3_relative_ibp["channel_rows"]) == 10
+    assert generic_ghost_n3_relative_ibp["rank_ledger"][
+        "open_edge_tangent_plus_master_and_targets_rank"
+    ] == 30
+    assert generic_ghost_n3_relative_ibp["rank_ledger"][
+        "corner_zero_tangent_plus_master_rank"
+    ] == 26
+    assert generic_ghost_n3_relative_ibp["claim_flags"][
+        "TEN_POLE3_ROWS_REDUCED_TO_J_AND_TWO_DERIVATIVE_MASTERS"
+    ] is True
+    assert generic_ghost_n3_relative_ibp["claim_flags"]["I29_POLE4_REDUCED"] is False
     assert generic_ghost_n1_n2["proper_time_to_resolvent"]["resolvent_identity"] == (
         "G_H0=G_F-(1/3)d Delta_0^-2 delta"
     )

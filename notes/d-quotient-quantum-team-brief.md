@@ -894,8 +894,13 @@ numerators also contain one exact `Delta` factor. After cancellation every
 raw orientation except `I10_123` vanishes on all three open simplex edges,
 the vertex integrability margins are positive, and the three `I28` rows obey
 their quotient relation pointwise. This isolates the only direct edge source;
-the relative-IBP primitives, their corner flux and the actual bubble/log
-coefficients remain open. Exact proper-time integration now gives
+all ten pole-three rows now also possess exact relative-IBP reductions to the
+scalar triangle and two independent first derivatives. Four explicit
+open-edge tangent primitives cover every orientation. The stronger
+corner-zero tangent-plus-master span has rank 26 while every target raises it
+to 27; normalized rank-stable dual witnesses therefore prove that punctured-
+corner logarithms are unavoidable. Their conversion to the two bubble/log
+ratios and the pole-four `I29` reduction remain open. Exact proper-time integration now gives
 `G_H0=G_F-(1/3)d Delta_0^-2 delta` and reduces the curved `n=1/n=2`
 nonminimal architecture to five minimal vector/scalar resolvent carriers,
 with coefficients `(1,-1/3)` and `(-1/2,1/3,-1/18)`. The pure-vector
@@ -956,9 +961,11 @@ integrated analytically at `x1=x2=x3=1`. Its three
 longitudinal `D_W` towers are now one normalized scalar Schur series, with the
 all three Schur residue rows fixed and the round-`S4` canonical `det_3` tail
 and weighted modified determinant computed. The selected weight-raised local
-zeta term is also exact. The remaining local gate begins with constructing
-exact relative simplex IBP primitives for the generic barycentric rows,
-including their punctured-corner flux and the `I10` edge-bubble data, and supplying the
+zeta term is also exact. The ten pole-three generic barycentric rows now have
+exact relative-simplex IBP primitives and a complete punctured-corner
+non-membership theorem. The remaining local gate begins with converting the
+isolated corner carriers to two explicit bubble-log ratios, reducing the
+pole-four `I29` row, and supplying the
 generic primed Green/spectral carrier needed to lift the exact round-`S4`
 finite benchmark, together with the physical fourth-order
 Hessian kernel, followed by the five
@@ -1064,6 +1071,9 @@ The exact symmetric-point simplex integration and its branch guard are in
 [`generic-background-ghost-n3-symmetric-point-simplex-integration.md`](../quantum-weyl/reports/generic-background-ghost-n3-symmetric-point-simplex-integration.md).
 The exact generic denominator and boundary factorization is in
 [`generic-background-ghost-n3-barycentric-factorization.md`](../quantum-weyl/reports/generic-background-ghost-n3-barycentric-factorization.md).
+The ten-row relative-IBP reduction and normalized corner non-membership
+witnesses are in
+[`generic-background-ghost-n3-pole3-relative-ibp.md`](../quantum-weyl/reports/generic-background-ghost-n3-pole3-relative-ibp.md).
 The exact anomaly action and Ricci-sector dependence theorem are recorded in
 [`fv-anomaly-action-ricci-sector.md`](../quantum-weyl/reports/fv-anomaly-action-ricci-sector.md).
 The generated atlas records it as

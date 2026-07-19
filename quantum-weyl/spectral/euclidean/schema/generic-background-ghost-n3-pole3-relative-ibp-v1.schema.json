@@ -1,0 +1,564 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl/generic-background-ghost-n3-pole3-relative-ibp-v1.schema.json",
+  "title": "Generic ghost n=3 pole-three relative-simplex IBP reduction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "convention",
+    "rank_ledger",
+    "channel_rows",
+    "representative_primitives",
+    "corner_zero_dual_witnesses",
+    "corner_flux_carrier",
+    "formula_digest",
+    "coefficient_disposition",
+    "claim_flags",
+    "dependencies",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-generic-background-ghost-n3-pole3-relative-ibp-v1"
+    },
+    "result_id": {
+      "const": "GENERIC_BACKGROUND_GHOST_N3_POLE3_RELATIVE_IBP"
+    },
+    "result_state": {
+      "const": "GENERIC_N3_TEN_POLE3_ROWS_REDUCED_TO_TRIANGLE_DERIVATIVE_MASTERS"
+    },
+    "lifecycle_state": {
+      "const": "CORNER_LOG_SYSTEM_AND_I29_POLE4_REDUCTION_OPEN"
+    },
+    "dependency_tags": {
+      "const": ["EUCLIDEAN-SPECTRAL"]
+    },
+    "classical_commit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dimension",
+        "signature",
+        "curvature_order",
+        "kinematics",
+        "included_channels",
+        "excluded_channel"
+      ],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": "Euclidean"},
+        "curvature_order": {"const": 3},
+        "kinematics": {
+          "const": "generic positive nonexceptional x1,x2,x3 with Kallen lambda nonzero"
+        },
+        "included_channels": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/poleThreeChannel"}
+        },
+        "excluded_channel": {"const": "I29_123 pole-four row"}
+      }
+    },
+    "convention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "affine_coordinates",
+        "alpha0",
+        "Delta",
+        "Kallen_lambda",
+        "master_basis",
+        "master_relation",
+        "primitive_parameterization",
+        "primitive_identity",
+        "primitive_gauge",
+        "overall_loop_prefactor",
+        "W_and_Tr_log_multiplier"
+      ],
+      "properties": {
+        "affine_coordinates": {"const": ["alpha1", "alpha2"]},
+        "alpha0": {"const": "1-alpha1-alpha2"},
+        "Delta": {
+          "const": "alpha0*alpha1*x1+alpha1*alpha2*x2+alpha2*alpha0*x3"
+        },
+        "Kallen_lambda": {
+          "const": "x1^2+x2^2+x3^2-2*x1*x2-2*x1*x3-2*x2*x3"
+        },
+        "master_basis": {
+          "const": [
+            "J_triangle=integral_simplex 1/Delta",
+            "M_x1=integral_simplex alpha0*alpha1/Delta^2=-dJ_triangle/dx1",
+            "M_x2=integral_simplex alpha1*alpha2/Delta^2=-dJ_triangle/dx2"
+          ]
+        },
+        "master_relation": {
+          "const": "x1*M_x1+x2*M_x2+x3*M_x3=J_triangle"
+        },
+        "primitive_parameterization": {
+          "const": "P=alpha1*(alpha0*U+alpha2*W), Q=alpha2*(alpha0*V-alpha1*W)"
+        },
+        "primitive_identity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primitive_gauge": {"$ref": "#/$defs/primitiveGauge"},
+        "overall_loop_prefactor": {"const": "(4*pi)^-2 excluded"},
+        "W_and_Tr_log_multiplier": {"const": "-8/3 already included upstream"}
+      }
+    },
+    "rank_ledger": {"$ref": "#/$defs/rankLedger"},
+    "channel_rows": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {"$ref": "#/$defs/channelRow"}
+    },
+    "representative_primitives": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["I10_123", "I24_123", "I25_123", "I28_123"],
+      "properties": {
+        "I10_123": {"$ref": "#/$defs/primitive"},
+        "I24_123": {"$ref": "#/$defs/primitive"},
+        "I25_123": {"$ref": "#/$defs/primitive"},
+        "I28_123": {"$ref": "#/$defs/primitive"}
+      }
+    },
+    "corner_zero_dual_witnesses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["I10_123", "I24_123", "I25_123", "I28_123"],
+      "properties": {
+        "I10_123": {"$ref": "#/$defs/dualWitness"},
+        "I24_123": {"$ref": "#/$defs/dualWitness"},
+        "I25_123": {"$ref": "#/$defs/dualWitness"},
+        "I28_123": {"$ref": "#/$defs/dualWitness"}
+      }
+    },
+    "corner_flux_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "alpha1_vertex_angular_form",
+        "alpha2_vertex_angular_form",
+        "alpha0_vertex_angular_form",
+        "theta_interval",
+        "interpretation"
+      ],
+      "properties": {
+        "status": {"const": "ISOLATED_NOT_INTEGRATED"},
+        "alpha1_vertex_angular_form": {"type": "string", "minLength": 1},
+        "alpha2_vertex_angular_form": {"type": "string", "minLength": 1},
+        "alpha0_vertex_angular_form": {"type": "string", "minLength": 1},
+        "theta_interval": {"const": "[0,pi/2]"},
+        "interpretation": {
+          "const": "two independent corner-log directions equivalent to descendant edge-bubble logarithm ratios"
+        }
+      }
+    },
+    "formula_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "coefficient_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ten_pole3_relative_IBP_reductions",
+        "corner_log_bubble_conversion",
+        "I29_pole4_reduction",
+        "generic_integrated_channel_functions"
+      ],
+      "properties": {
+        "ten_pole3_relative_IBP_reductions": {"const": "COMPUTED"},
+        "corner_log_bubble_conversion": {"const": "NOT_COMPUTED"},
+        "I29_pole4_reduction": {"const": "NOT_COMPUTED"},
+        "generic_integrated_channel_functions": {
+          "const": "PARTIAL_10_OF_11_DERIVATIVE_MASTER_FORM"
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "TEN_POLE3_ROWS_REDUCED_TO_J_AND_TWO_DERIVATIVE_MASTERS",
+        "FOUR_EXPLICIT_OPEN_EDGE_TANGENT_PRIMITIVE_REPRESENTATIVES",
+        "ALL_TEN_ORIENTATIONS_COVERED_BY_EXACT_PERMUTATION",
+        "OPEN_EDGE_NORMAL_FLUX_ZERO",
+        "ZERO_CORNER_FLUX_REDUCTION_EXISTS_IN_DECLARED_ANSATZ",
+        "CORNER_LOG_BUBBLE_SYSTEM_EVALUATED",
+        "I29_POLE4_REDUCED",
+        "GENERIC_GHOST_N3_FULL_KINEMATIC_FUNCTIONS_COMPUTED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "RESIDUAL_TRANSFER_AUTHORIZED",
+        "LORENTZIAN_CERTIFIED"
+      ],
+      "properties": {
+        "TEN_POLE3_ROWS_REDUCED_TO_J_AND_TWO_DERIVATIVE_MASTERS": {"const": true},
+        "FOUR_EXPLICIT_OPEN_EDGE_TANGENT_PRIMITIVE_REPRESENTATIVES": {"const": true},
+        "ALL_TEN_ORIENTATIONS_COVERED_BY_EXACT_PERMUTATION": {"const": true},
+        "OPEN_EDGE_NORMAL_FLUX_ZERO": {"const": true},
+        "ZERO_CORNER_FLUX_REDUCTION_EXISTS_IN_DECLARED_ANSATZ": {"const": false},
+        "CORNER_LOG_BUBBLE_SYSTEM_EVALUATED": {"const": false},
+        "I29_POLE4_REDUCED": {"const": false},
+        "GENERIC_GHOST_N3_FULL_KINEMATIC_FUNCTIONS_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["barycentric_factorization"],
+      "properties": {
+        "barycentric_factorization": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "next_gate": {
+      "const": "EVALUATE_SCALAR_TRIANGLE_DERIVATIVE_SYSTEM_AS_TWO_CORNER_LOG_RATIOS_AND_REDUCE_I29_POLE4"
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "polyTerm3": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exponents", "coefficient"],
+      "properties": {
+        "exponents": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"type": "integer", "minimum": 0}
+        },
+        "coefficient": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "rationalFunction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator_terms", "denominator_terms"],
+      "properties": {
+        "numerator_terms": {
+          "type": "array",
+          "minItems": 0,
+          "items": {"$ref": "#/$defs/polyTerm3"}
+        },
+        "denominator_terms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/polyTerm3"}
+        }
+      }
+    },
+    "poleThreeChannel": {
+      "type": "string",
+      "enum": [
+        "I10_123",
+        "I24_123",
+        "I24_213",
+        "I24_312",
+        "I25_123",
+        "I25_213",
+        "I25_312",
+        "I28_123",
+        "I28_132",
+        "I28_231"
+      ]
+    },
+    "permutation": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 0, "maximum": 2}
+    },
+    "primitiveGauge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "UV_W_affine_degree_bound",
+        "monomial_order",
+        "pivot_fixture",
+        "pivot_columns",
+        "pivot_rows",
+        "nonpivot_coefficients"
+      ],
+      "properties": {
+        "UV_W_affine_degree_bound": {"const": 4},
+        "monomial_order": {
+          "type": "array",
+          "minItems": 15,
+          "maxItems": 15,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {"type": "integer", "minimum": 0, "maximum": 4}
+          }
+        },
+        "pivot_fixture": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["x1", "x2", "x3"],
+          "properties": {
+            "x1": {"const": 2},
+            "x2": {"const": 3},
+            "x3": {"const": 5}
+          }
+        },
+        "pivot_columns": {
+          "type": "array",
+          "minItems": 27,
+          "maxItems": 27,
+          "uniqueItems": true,
+          "items": {"type": "integer", "minimum": 0, "maximum": 44}
+        },
+        "pivot_rows": {
+          "type": "array",
+          "minItems": 27,
+          "maxItems": 27,
+          "uniqueItems": true,
+          "items": {"type": "integer", "minimum": 0, "maximum": 35}
+        },
+        "nonpivot_coefficients": {"const": "ZERO"}
+      }
+    },
+    "channelRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "channel_id",
+        "representative_id",
+        "alpha_permutation",
+        "x_permutation",
+        "master_coordinates",
+        "integrated_form"
+      ],
+      "properties": {
+        "channel_id": {"$ref": "#/$defs/poleThreeChannel"},
+        "representative_id": {
+          "enum": ["I10_123", "I24_123", "I25_123", "I28_123"]
+        },
+        "alpha_permutation": {"$ref": "#/$defs/permutation"},
+        "x_permutation": {"$ref": "#/$defs/permutation"},
+        "master_coordinates": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["J_triangle", "M_x1", "M_x2"],
+          "properties": {
+            "J_triangle": {"$ref": "#/$defs/rationalFunction"},
+            "M_x1": {"$ref": "#/$defs/rationalFunction"},
+            "M_x2": {"$ref": "#/$defs/rationalFunction"}
+          }
+        },
+        "integrated_form": {
+          "const": "c_J*J_triangle-c_x1*dJ_triangle/dx1-c_x2*dJ_triangle/dx2"
+        }
+      }
+    },
+    "primitiveCoefficient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis_column",
+        "group",
+        "group_index",
+        "monomial_index",
+        "monomial_exponents",
+        "coefficient"
+      ],
+      "properties": {
+        "basis_column": {"type": "integer", "minimum": 0, "maximum": 44},
+        "group": {"enum": ["U", "V", "W"]},
+        "group_index": {"type": "integer", "minimum": 0, "maximum": 2},
+        "monomial_index": {"type": "integer", "minimum": 0, "maximum": 14},
+        "monomial_exponents": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "integer", "minimum": 0, "maximum": 4}
+        },
+        "coefficient": {"$ref": "#/$defs/rationalFunction"}
+      }
+    },
+    "cornerRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["corner_id", "leading_pair", "leading_pair_zero"],
+      "properties": {
+        "corner_id": {
+          "enum": ["alpha1_vertex", "alpha2_vertex", "alpha0_vertex"]
+        },
+        "leading_pair": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/rationalFunction"}
+        },
+        "leading_pair_zero": {"type": "boolean"}
+      }
+    },
+    "primitive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coefficient_count",
+        "coefficients",
+        "open_edge_normal_flux",
+        "corner_leading_rows",
+        "all_punctured_corner_fluxes_zero"
+      ],
+      "properties": {
+        "coefficient_count": {"type": "integer", "minimum": 1, "maximum": 27},
+        "coefficients": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 27,
+          "items": {"$ref": "#/$defs/primitiveCoefficient"}
+        },
+        "open_edge_normal_flux": {"const": "ZERO"},
+        "corner_leading_rows": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/cornerRow"}
+        },
+        "all_punctured_corner_fluxes_zero": {"type": "boolean"}
+      }
+    },
+    "dualCoefficient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["monomial_index", "monomial_exponents", "coefficient"],
+      "properties": {
+        "monomial_index": {"type": "integer", "minimum": 0, "maximum": 35},
+        "monomial_exponents": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "integer", "minimum": 0, "maximum": 7}
+        },
+        "coefficient": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "dualWitness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "annihilator_row_index",
+        "coefficient_count",
+        "coefficients",
+        "annihilates_corner_zero_span",
+        "generic_base_rank",
+        "fixture_base_rank",
+        "fixture",
+        "generic_nonmembership_reason",
+        "target_normalization"
+      ],
+      "properties": {
+        "annihilator_row_index": {"type": "integer", "minimum": 0, "maximum": 9},
+        "coefficient_count": {"type": "integer", "minimum": 1, "maximum": 36},
+        "coefficients": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 36,
+          "items": {"$ref": "#/$defs/dualCoefficient"}
+        },
+        "annihilates_corner_zero_span": {"const": true},
+        "generic_base_rank": {"const": 26},
+        "fixture_base_rank": {"const": 26},
+        "fixture": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["x1", "x2", "x3"],
+          "properties": {
+            "x1": {"const": 2},
+            "x2": {"const": 3},
+            "x3": {"const": 5}
+          }
+        },
+        "generic_nonmembership_reason": {
+          "const": "rank-stable rational fixture has a normalized nonzero augmented minor"
+        },
+        "target_normalization": {"const": "ONE"}
+      }
+    },
+    "rankLedger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "polynomial_space_dimension",
+        "open_edge_tangent_rank",
+        "open_edge_tangent_plus_master_rank",
+        "open_edge_tangent_plus_master_and_targets_rank",
+        "corner_zero_tangent_plus_master_rank",
+        "corner_zero_augmented_ranks"
+      ],
+      "properties": {
+        "polynomial_space_dimension": {"const": 36},
+        "open_edge_tangent_rank": {"const": 27},
+        "open_edge_tangent_plus_master_rank": {"const": 30},
+        "open_edge_tangent_plus_master_and_targets_rank": {"const": 30},
+        "corner_zero_tangent_plus_master_rank": {"const": 26},
+        "corner_zero_augmented_ranks": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["channel_id", "rank_source_channel", "augmented_rank"],
+            "properties": {
+              "channel_id": {"$ref": "#/$defs/poleThreeChannel"},
+              "rank_source_channel": {
+                "enum": ["I10_123", "I24_123", "I25_123", "I28_123"]
+              },
+              "augmented_rank": {"const": 27}
+            }
+          }
+        }
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {
+          "const": "GENERIC_BACKGROUND_GHOST_N3_BARYCENTRIC_FACTORIZATION"
+        },
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

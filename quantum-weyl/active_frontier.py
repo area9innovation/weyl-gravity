@@ -80,6 +80,7 @@ DEPENDENCIES = {
     "scalar_flat_K_Ricci_crosswalk": HERE / "transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json",
     "generic_ghost_n3_five_carrier_projection": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION.json",
     "generic_ghost_n3_barycentric_factorization": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_BARYCENTRIC_FACTORIZATION.json",
+    "generic_ghost_n3_pole3_relative_IBP": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_POLE3_RELATIVE_IBP.json",
     "generic_ghost_n3_symmetric_point_simplex_integration": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_SYMMETRIC_POINT_SIMPLEX_INTEGRATION.json",
     "BoxR_scheme_conversion": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": HERE / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
@@ -185,6 +186,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "scalar_flat_K_Ricci_crosswalk": "K_EQUALS_RICCI_MODULO_QUADRATIC_CURVATURE_ON_SCALAR_FLAT_DOMAIN",
         "generic_ghost_n3_five_carrier_projection": "N3_GHOST_TRIANGLE_PROJECTED_TO_SCALAR_FLAT_FIVE_CARRIER_QUOTIENT",
         "generic_ghost_n3_barycentric_factorization": "GENERIC_N3_BARYCENTRIC_DENOMINATOR_AND_BOUNDARY_FACTORIZATION_COMPUTED",
+        "generic_ghost_n3_pole3_relative_IBP": "GENERIC_N3_TEN_POLE3_ROWS_REDUCED_TO_TRIANGLE_DERIVATIVE_MASTERS",
         "generic_ghost_n3_symmetric_point_simplex_integration": "COEFFICIENT_COMPUTED",
         "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
         "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
@@ -224,6 +226,7 @@ def _load() -> dict[str, dict[str, Any]]:
     scalar_flat_k_ricci = values["scalar_flat_K_Ricci_crosswalk"]
     generic_ghost_n3_projection = values["generic_ghost_n3_five_carrier_projection"]
     generic_ghost_n3_barycentric = values["generic_ghost_n3_barycentric_factorization"]
+    generic_ghost_n3_relative_ibp = values["generic_ghost_n3_pole3_relative_IBP"]
     generic_ghost_n3_symmetric = values["generic_ghost_n3_symmetric_point_simplex_integration"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
@@ -931,6 +934,32 @@ def _load() -> dict[str, dict[str, Any]]:
         is not False
     ):
         raise ValueError("generic ghost n=3 barycentric factorization frontier drifted")
+    if (
+        len(generic_ghost_n3_relative_ibp.get("channel_rows", [])) != 10
+        or generic_ghost_n3_relative_ibp.get("rank_ledger", {}).get(
+            "open_edge_tangent_plus_master_and_targets_rank"
+        )
+        != 30
+        or generic_ghost_n3_relative_ibp.get("rank_ledger", {}).get(
+            "corner_zero_tangent_plus_master_rank"
+        )
+        != 26
+        or any(
+            row.get("augmented_rank") != 27
+            for row in generic_ghost_n3_relative_ibp.get("rank_ledger", {}).get(
+                "corner_zero_augmented_ranks", []
+            )
+        )
+        or generic_ghost_n3_relative_ibp.get("claim_flags", {}).get(
+            "TEN_POLE3_ROWS_REDUCED_TO_J_AND_TWO_DERIVATIVE_MASTERS"
+        )
+        is not True
+        or generic_ghost_n3_relative_ibp.get("claim_flags", {}).get(
+            "I29_POLE4_REDUCED"
+        )
+        is not False
+    ):
+        raise ValueError("generic ghost n=3 pole-three relative-IBP frontier drifted")
     if (
         box_r_scheme_conversion.get("decision", {}).get(
             "raw_zeta_BoxR_coefficient"
@@ -1796,8 +1825,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_BARYCENTRIC_FACTORIZATION_AND_SYMMETRIC_POINT_INTEGRATION_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_GENERIC_LOCAL_BCH_AND_GLOBAL_FINITE_CARRIERS_OPEN_Q1_UNDERDETERMINED",
-                "next_gate": "CONSTRUCT_GENERIC_RELATIVE_SIMPLEX_IBP_PRIMITIVES_WITH_CORNER_FLUX_AND_I10_EDGE_BUBBLE_DISPOSITION_OR_SUPPLY_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_BARYCENTRIC_FACTORIZATION_POLE3_RELATIVE_IBP_AND_SYMMETRIC_POINT_INTEGRATION_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_GENERIC_LOCAL_BCH_AND_GLOBAL_FINITE_CARRIERS_OPEN_Q1_UNDERDETERMINED",
+                "next_gate": "CONVERT_CORNER_CARRIERS_TO_BUBBLE_LOG_RATIOS_AND_REDUCE_I29_POLE4_OR_SUPPLY_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -1812,8 +1841,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_BARYCENTRIC_FACTORIZATION_AND_SYMMETRIC_POINT_INTEGRATION_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_GENERIC_BCH_GREEN_SPECTRAL_CARRIER_PHYSICAL_FOURTH_ORDER_KERNEL_GENERIC_IBP_AND_FORM_FACTOR_FUNCTIONS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "CONSTRUCT_GENERIC_RELATIVE_SIMPLEX_IBP_PRIMITIVES_WITH_CORNER_FLUX_AND_I10_EDGE_BUBBLE_DISPOSITION_OR_SUPPLY_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_BARYCENTRIC_FACTORIZATION_POLE3_RELATIVE_IBP_AND_SYMMETRIC_POINT_INTEGRATION_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_GENERIC_BCH_GREEN_SPECTRAL_CARRIER_PHYSICAL_FOURTH_ORDER_KERNEL_CORNER_LOG_I29_AND_FORM_FACTOR_FUNCTIONS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "CONVERT_CORNER_CARRIERS_TO_BUBBLE_LOG_RATIOS_AND_REDUCE_I29_POLE4_OR_SUPPLY_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             },
         },
         "supersession_ledger": [
@@ -1967,6 +1996,7 @@ def build() -> dict[str, Any]:
             "CUBIC_K_TO_RICCI_REPLACEMENT_CERTIFIED": True,
             "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_TARGET_COMPLETE": True,
             "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED": True,
+            "GENERIC_GHOST_N3_POLE3_RELATIVE_IBP_COMPUTED": True,
             "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED": False,
             "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED": False,
             "GENERIC_GHOST_LONGITUDINAL_DW_CARRIERS_EVALUATED": False,
@@ -2106,8 +2136,13 @@ def build() -> dict[str, Any]:
             "common Delta^-4 numerators stored as exact alpha/box polynomials. Ten generic "
             "numerators cancel one Delta exactly; only I10 has a nonzero direct open-edge "
             "restriction, every vertex margin is positive, and the I28 relation holds "
-            "pointwise. Relative-IBP primitives, corner flux, and the I10 bubble disposition "
-            "remain open. At the "
+            "pointwise. All ten pole-three rows now have exact relative-IBP reductions to "
+            "the scalar triangle and two first kinematic derivatives. Four explicit "
+            "open-edge tangent primitives cover every orientation. The corner-zero "
+            "tangent-plus-master span has rank 26 and every target raises it to 27, with "
+            "normalized rank-stable dual witnesses, so punctured-corner bubble logs are "
+            "unavoidable. Their conversion to two explicit log ratios and the pole-four "
+            "I29 reduction remain open. At the "
             "normalized symmetric point all eleven coordinates are integrated exactly in "
             "terms of one Clausen master. This is not the generic five repository functions; "
             "the n=1/n=2 pure-vector sum is now evaluated exactly from CPT rows 1, 3 and 14 as "
@@ -2453,6 +2488,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("CUBIC_K_TO_RICCI_REPLACEMENT_CERTIFIED") is not True
         or flags.get("GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_TARGET_COMPLETE") is not True
         or flags.get("GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED") is not True
+        or flags.get("GENERIC_GHOST_N3_POLE3_RELATIVE_IBP_COMPUTED") is not True
         or flags.get("GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED")
         is not False
         or flags.get("GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED")
@@ -2543,6 +2579,7 @@ def validate(result: dict[str, Any]) -> None:
             "CUBIC_K_TO_RICCI_REPLACEMENT_CERTIFIED",
             "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_TARGET_COMPLETE",
             "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED",
+            "GENERIC_GHOST_N3_POLE3_RELATIVE_IBP_COMPUTED",
             "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED",
             "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED",
             "GENERIC_GHOST_LONGITUDINAL_DW_CARRIERS_EVALUATED",
