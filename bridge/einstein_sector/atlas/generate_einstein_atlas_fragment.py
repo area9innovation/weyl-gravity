@@ -108,6 +108,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_rank_one_branch_zero_varieties": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_rank_one_branch_zero_varieties.json",
     "ell2_two_abs_momentum_regular_pencil_L4_zero_varieties": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_regular_pencil_L4_zero_varieties.json",
     "ell2_two_abs_momentum_candidate13_L4_incidence_reduction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.json",
+    "ell2_two_abs_momentum_candidate13_pure_extra_taub_join": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_pure_extra_taub_join.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
@@ -1034,14 +1035,14 @@ def entries() -> list[dict[str, object]]:
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_l4_incidence_reduction",
             _scope(theory="Weyl-Maxwell target", boundaries="candidate-13 closed S1_L times S2 circumference fibre; before final residual quotient", carrier="complete all-m L4 cross-|n| resonance block with two multiplicity-two p_extra source branches and scalar q_plus targets", degree=2, parity="axial and polar amplitudes", ell="input 2 x 2; output L=4", m="all magnetic components through two binary-octic product equations", k="signed |n|=1 and |n|=2 momenta (1,-2)", omega="positive-frequency SUM channel", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
-            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
             ("CERTIFIED","The exact candidate-13 p_extra/p_extra to q_plus collision and its separately tuned circumference fibre are retained without cross-background identification."),
             ("CERTIFIED","All four internal blocks are invertible, exact interval arithmetic gives four distinct nonzero real generalized roots, and an explicit three-root cancellation witness forbids the earlier one-eigenline factorization."),
-            ("OPEN","The five stabilizer moment maps and same-fibre quadratic sources have not been joined to the candidate-13 incidence variety."),
+            ("CERTIFIED","The time-translation Taub form is negative definite on the complete declared pure-extra carrier, so the prime resonance cone meets the common zero of all five stabilizer moment maps only at the origin."),
             ("CERTIFIED","The all-m equations define one prime complex dimension-22 cone in ambient dimension 40. Coordinate-boundary strata are at most dimension 20; all-active torsion strata are at most 21 and splitting-jump strata are at most 20."),
-            _second_order(("OPEN","The certified cross-fibre prime ideal, same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on the incidence variety."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
-            _evidence("ell2_two_abs_momentum_candidate13_L4_incidence_reduction","ell2_two_abs_momentum_regular_pencil_L4_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
-            "This is the complete candidate-13 cross-fibre zero-variety theorem. Same-fibre, Taub, bounded, smooth-secular, residual, causal, observational and quantum lifecycles remain fail-closed.",
+            _second_order(("OBSTRUCTED","Every nonzero real tangent in the candidate-13 pure-extra carrier violates the negative-definite time-translation Taub constraint."),("OBSTRUCTED","Allowing smooth secular propagation terms does not remove the stabilizer adjoint-cokernel pairing."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_candidate13_pure_extra_taub_join","ell2_two_abs_momentum_candidate13_L4_incidence_reduction","ell2_two_abs_momentum_regular_pencil_L4_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","taub","abstract_cone"),
+            "This is the complete candidate-13 cross-fibre zero-variety theorem and pure-extra Taub no-go. Same-fibre source matrices and the larger mixed Einstein-extra two-fibre cone remain open; causal, residual, observational and quantum lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
@@ -1865,6 +1866,21 @@ def build() -> dict[str, object]:
         or candidate13["causal_or_quantum_claim"]
     ):
         raise AssertionError("candidate-13 incidence reduction exceeded scope")
+    candidate13_taub = records["ell2_two_abs_momentum_candidate13_pure_extra_taub_join"]["classification"]
+    if not (
+        candidate13_taub["candidate_13_prime_resonance_cone_imported"]
+        and candidate13_taub["candidate_13_pure_extra_H_Taub_negative_definite"]
+        and candidate13_taub["candidate_13_resonance_Taub_common_zero_is_origin"]
+        and candidate13_taub["candidate_13_nonzero_pure_extra_bounded_extension_obstructed"]
+        and candidate13_taub["candidate_13_nonzero_pure_extra_smooth_secular_extension_obstructed"]
+    ):
+        raise AssertionError("candidate-13 pure-extra Taub join changed")
+    if (
+        candidate13_taub["candidate_13_same_fibre_source_matrices_classified"]
+        or candidate13_taub["mixed_Einstein_extra_two_fibre_cone_classified"]
+        or candidate13_taub["causal_residual_observational_or_quantum_claim"]
+    ):
+        raise AssertionError("candidate-13 pure-extra Taub join exceeded scope")
     if l3["arbitrary_amplitude_zero_variety_classified"] or l3["causal_or_quantum_claim"]:
         raise AssertionError("nonaxisymmetric L3 matrix exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:

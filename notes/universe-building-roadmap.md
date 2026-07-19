@@ -2264,9 +2264,13 @@ dimension 22 in ambient dimension 40.
 Atlas row
 `einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_l4_incidence_reduction`
 now records resonance `CERTIFIED`.  All 20 cross-fibre resonance ideals are
-therefore classified.  The next activation gate is their join with the
-same-fibre quadratic sources and the five Taub moment maps; bounded,
-smooth-secular and causal correction lifecycles remain fail-closed.
+therefore classified.  Candidate 13 is purely `p`-primary, so the generic
+negative-definite time-translation Taub form meets its prime resonance cone
+only at the origin.  Its nonzero real bounded and smooth-secular correction
+classes are therefore `OBSTRUCTED` without computing same-fibre source rows.
+The next activation gate is the larger mixed Einstein--extra carrier, where
+the Taub form is indefinite; same-fibre sources and all five moment maps must
+be joined there.  Causal correction remains `NO_CERTIFIED_MAP`.
 
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at

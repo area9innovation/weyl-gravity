@@ -3611,8 +3611,14 @@ height 18, so complete-intersection unmixedness leaves the dimension-22
 rank-two bundle closure as the unique component; its rank-18 Jacobian makes
 it generically reduced, hence the ideal is prime.  All 20 cross-fibre
 resonance ideals are now classified.  The atlas records candidate 13 as
-resonance `CERTIFIED`; joining these ideals to same-fibre sources and the five
-Taub maps is the next fail-closed gate.
+resonance `CERTIFIED`.  Because this carrier contains only generic
+`p`-primary modes, the complete pure-extra moment-map theorem restricts to a
+negative-definite `mu_H`; its intersection with the prime resonance cone is
+exactly the origin.  Every nonzero real candidate-13 pure-extra tangent is
+therefore bounded and smooth-secular `OBSTRUCTED`, independently of the
+uncomputed same-fibre rows.  The next fail-closed gate is the larger mixed
+Einstein--extra two-momentum carrier, where `mu_H` is indefinite and the
+same-fibre sources plus all five moment maps must be joined.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).

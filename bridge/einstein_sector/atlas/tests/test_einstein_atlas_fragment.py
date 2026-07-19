@@ -329,7 +329,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("all 20 cross-fibre ideals are now classified", entry["claim_boundary"])
 
-    def test_candidate13_prime_ideal_keeps_correction_classes_open(self) -> None:
+    def test_candidate13_prime_ideal_has_pure_extra_taub_no_go(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_l4_incidence_reduction"]
         second = entry["mode_data"]["second_order"]
         self.assertIn("separately tuned circumference fibre", entry["mode_data"]["dispersion"]["statement"])
@@ -338,11 +338,14 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
         self.assertIn("prime complex dimension-22 cone", entry["mode_data"]["resonance"]["statement"])
         self.assertIn("splitting-jump strata are at most 20", entry["mode_data"]["resonance"]["statement"])
-        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
-        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
-        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("only at the origin", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertEqual(second["smooth_secular"]["status"], "OBSTRUCTED")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("complete candidate-13 cross-fibre zero-variety theorem", entry["claim_boundary"])
+        self.assertIn("pure-extra Taub no-go", entry["claim_boundary"])
+        self.assertIn("larger mixed Einstein-extra", entry["claim_boundary"])
 
     def test_nonaxisymmetric_l3_matrix_closes_basis_not_cone(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]

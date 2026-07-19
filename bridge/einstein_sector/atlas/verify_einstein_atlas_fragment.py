@@ -600,15 +600,15 @@ def verify() -> None:
         raise AssertionError("regular-pencil L4 theorem exceeded scope")
     candidate13 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_l4_incidence_reduction"]
     candidate13_second = candidate13["mode_data"]["second_order"]
-    if candidate13["descriptions"]["nonlinear"] != "OPEN" or "separately tuned circumference fibre" not in candidate13["mode_data"]["dispersion"]["statement"]:
+    if candidate13["descriptions"]["nonlinear"] != "OBSTRUCTED" or "separately tuned circumference fibre" not in candidate13["mode_data"]["dispersion"]["statement"]:
         raise AssertionError("candidate-13 incidence fibre scope was hidden")
     if "four distinct nonzero real generalized roots" not in candidate13["mode_data"]["lee_wald"]["statement"] or "three-root cancellation witness" not in candidate13["mode_data"]["lee_wald"]["statement"]:
         raise AssertionError("candidate-13 exact pencil reduction was hidden")
     if candidate13["mode_data"]["resonance"]["status"] != "CERTIFIED" or "prime complex dimension-22 cone" not in candidate13["mode_data"]["resonance"]["statement"] or "splitting-jump strata are at most 20" not in candidate13["mode_data"]["resonance"]["statement"]:
         raise AssertionError("candidate-13 prime zero-variety theorem was hidden")
-    if candidate13["mode_data"]["taub_maps"]["status"] != "OPEN" or candidate13_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or candidate13_second["smooth_secular"]["status"] != "OPEN" or candidate13_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
-        raise AssertionError("candidate-13 correction classes were merged")
-    if "complete candidate-13 cross-fibre zero-variety theorem" not in candidate13["claim_boundary"] or "Same-fibre" not in candidate13["claim_boundary"]:
+    if candidate13["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "only at the origin" not in candidate13["mode_data"]["taub_maps"]["statement"] or candidate13_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or candidate13_second["smooth_secular"]["status"] != "OBSTRUCTED" or candidate13_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-13 pure-extra Taub lifecycle changed")
+    if "pure-extra Taub no-go" not in candidate13["claim_boundary"] or "larger mixed Einstein-extra" not in candidate13["claim_boundary"]:
         raise AssertionError("candidate-13 theorem boundary changed")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]

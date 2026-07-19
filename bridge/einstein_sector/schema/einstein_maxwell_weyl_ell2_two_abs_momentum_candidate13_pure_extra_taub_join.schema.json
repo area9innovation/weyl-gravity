@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-pure-extra-taub-join-v1.schema.json",
+  "title": "Candidate-13 pure-extra Taub join",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_sha256",
+    "result_id",
+    "dependency_tags",
+    "scope",
+    "real_tangent_domain",
+    "taub_restriction",
+    "common_zero_theorem",
+    "second_order_verdict",
+    "classification",
+    "provenance",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-pure-extra-taub-join-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_PURE_EXTRA_TAUB_JOIN"},
+    "classification": {
+      "type": "object",
+      "required": [
+        "candidate_13_prime_resonance_cone_imported",
+        "candidate_13_pure_extra_H_Taub_negative_definite",
+        "candidate_13_resonance_Taub_common_zero_is_origin",
+        "candidate_13_nonzero_pure_extra_bounded_extension_obstructed",
+        "candidate_13_nonzero_pure_extra_smooth_secular_extension_obstructed",
+        "candidate_13_same_fibre_source_matrices_classified",
+        "mixed_Einstein_extra_two_fibre_cone_classified",
+        "causal_residual_observational_or_quantum_claim"
+      ],
+      "properties": {
+        "candidate_13_prime_resonance_cone_imported": {"const": true},
+        "candidate_13_pure_extra_H_Taub_negative_definite": {"const": true},
+        "candidate_13_resonance_Taub_common_zero_is_origin": {"const": true},
+        "candidate_13_nonzero_pure_extra_bounded_extension_obstructed": {"const": true},
+        "candidate_13_nonzero_pure_extra_smooth_secular_extension_obstructed": {"const": true},
+        "candidate_13_same_fibre_source_matrices_classified": {"const": false},
+        "mixed_Einstein_extra_two_fibre_cone_classified": {"const": false},
+        "causal_residual_observational_or_quantum_claim": {"const": false}
+      }
+    }
+  },
+  "additionalProperties": true
+}

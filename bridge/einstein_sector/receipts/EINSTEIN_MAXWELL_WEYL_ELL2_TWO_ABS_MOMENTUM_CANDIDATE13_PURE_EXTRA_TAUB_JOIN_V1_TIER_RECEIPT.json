@@ -1,0 +1,47 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_PURE_EXTRA_TAUB_JOIN_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact join of the prime candidate-13 pure-extra resonance cone to the negative-definite time-translation Taub form.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_pure_extra_taub_join.json": "1d16a0346f0bf09c24ed30ee3b00ded9a78eb334eddfd736064dc08cd0658adc",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_pure_extra_taub_join.py": "eae1cd4985c6e9631787b1284e4753b648ec8cc5bea8fc2cdc19f6f39ce62852",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_pure_extra_taub_join.py": "a0b057d611fd27334b9068b4627a9539ae357f9609f9459b6fb93e7292a704ca",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_pure_extra_taub_join.py": "9a6338c1bb9bf3d6d65d32c47bf08acd2c2aee99cbcbf0f036826b2e807a78f2",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_pure_extra_taub_join.schema.json": "aac3d07f2e4871f77ab05aef34c403d9e574ab6b365b9f56157c5db73f865501",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-pure-extra-taub-join.md": "b4103a8d4226e52666ef0b214d2e0f32bab90f509bf2423b9216b22b7223f2ed"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 81,
+      "commands": [
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_pure_extra_taub_join",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 -m bridge.einstein_sector.atlas.verify_einstein_atlas_fragment",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "producer_elapsed_seconds": 0.04,
+      "producer_max_rss_kib": 16856,
+      "independent_verifier_elapsed_seconds": 0.51,
+      "independent_verifier_max_rss_kib": 57852,
+      "reason": "The logical join imports content-addressed prime-incidence and generic moment-map certificates, independently rechecks the pure p-primary carrier and positive Gram inertias, and verifies that the negative sum can vanish only at the origin."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a scoped pure-extra Taub corollary, not a shared-core, release, paper-freeze or programme-wide mixed-cone promotion."
+    }
+  },
+  "claim_boundary": "Every nonzero real tangent in the declared candidate-13 pure-extra two-momentum carrier is bounded and smooth-secular OBSTRUCTED by mu_H. The mixed Einstein-extra carrier, same-fibre source matrices, causal corrections, residual observables and quantum claims remain OPEN or NO_CERTIFIED_MAP."
+}
