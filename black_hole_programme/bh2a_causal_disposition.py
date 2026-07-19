@@ -232,8 +232,8 @@ def build_certificate() -> dict:
             "rw_control": "the Einstein master equation has the same characteristics and log-phases (simple roots): the branches are asymptotically indistinguishable by falloff",
         },
         "disposition": {
-            "statement": "at the axial l = 2 linear mode level, the extra branch reaches the horizon (ingoing-regular), carries nonzero flux, and is bounded oscillatory radiation on the Einstein characteristics at infinity; no causal decay or regularity prescription at either boundary excludes it",
-            "consequence": "exclusion could only be a branch projection on scattering data, constraining both temporal ends: not a causal initial-boundary condition; pure-Weyl black-hole exteriors cannot be causally truncated to the Einstein sector, and their radiation lives in the mixed/extra sectors",
+            "statement": "at the axial l = 2 linear mode level, the extra branch reaches the horizon (ingoing-regular), carries nonzero flux, and is bounded oscillatory radiation on the Einstein characteristics at infinity; none of the TESTED endpoint diagnostics (future-horizon analyticity, leading outer symbol and falloff class) excludes it. This is an endpoint-admissibility statement, not a classification of all local differential boundary operators: zero Cauchy data for the carrier is a local linear Einstein-sector restriction whose naturalness remains open",
+            "consequence": "within the tested endpoint prescriptions, exclusion could only be a branch projection on scattering data, constraining both temporal ends: not a causal initial-boundary condition. Pure-Weyl exteriors cannot be truncated to the Einstein sector by the TESTED endpoint conditions, and at the mode level their radiation lives in the mixed/extra sectors",
             "decision_tree": "realizes 'removing the extra branch requires a future boundary condition' at the mode level",
         },
         "claim_flags": {

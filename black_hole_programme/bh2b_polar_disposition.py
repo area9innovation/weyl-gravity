@@ -339,8 +339,8 @@ def build_certificate() -> dict:
             "gauge_control": "the conformal scalar wave has dispersion (lambda^2 - omega^2) and sigma = +-2 i omega - 1, matching one carrier branch (the gauge direction)",
         },
         "disposition": {
-            "statement": "at the polar l = 2 linear mode level, the extra branch reaches the horizon (two-parameter physical ingoing-regular family modulo conformal gauge), carries nonzero horizon flux (Einstein block null, cross block nonzero), and is bounded decaying oscillatory radiation on the Einstein characteristics at infinity; no causal decay or regularity prescription at either boundary excludes it",
-            "bh2_closure": "together with the axial disposition (BH-2A stage 5), BH-2 is closed at the l = 2 linear mode level in BOTH parity sectors: pure-Weyl black-hole exteriors cannot be causally truncated to the Einstein sector; their radiation lives in the mixed/extra sectors",
+            "statement": "at the polar l = 2 linear mode level, the extra branch reaches the horizon (two-parameter physical ingoing-regular family modulo conformal gauge), carries nonzero horizon flux (Einstein block null, cross block nonzero), and is bounded decaying oscillatory radiation on the Einstein characteristics at infinity; none of the TESTED endpoint diagnostics (future-horizon analyticity, leading outer symbol and falloff class) excludes it. This is an endpoint-admissibility statement, not a classification of all local differential boundary operators",
+            "bh2_closure": "together with the axial disposition (BH-2A stage 5), BH-2 is closed at the l = 2 linear mode level in BOTH parity sectors: pure-Weyl exteriors cannot be truncated to the Einstein sector by the TESTED endpoint conditions, and at the mode level their radiation lives in the mixed/extra sectors",
         },
         "claim_flags": {
             "dispersion_certified": True,

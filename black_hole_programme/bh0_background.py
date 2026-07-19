@@ -15,7 +15,9 @@ What is certified (all exact rational/symbolic sympy, LOCAL-ALGEBRAIC):
 3.  the Mannheim--Kazanas parametrization of the w-near-1 sheet, with
     Schwarzschild and Schwarzschild--(A)dS as Einstein controls;
 4.  the Einstein/extra split on the family: trace-free Ricci defect
-    E_thth = -gamma (r - 3 beta)/2, so Einstein <=> gamma = 0;
+    E_thth = -gamma (r - 3 beta)/2, so on the Mannheim-Kazanas sheet
+    (through w = 1) the subfamily is Einstein iff gamma = 0; on the
+    complete Laurent locus Einstein requires gamma = 0 AND w = 1;
 5.  the residual (diffeo x Weyl) action preserving the gauge-fixed form:
     a translation + dilation action on the cubic
     Q(x) = -u x^3 + w x^2 + gamma x - k, x = 1/r, of generic orbit rank 2,
