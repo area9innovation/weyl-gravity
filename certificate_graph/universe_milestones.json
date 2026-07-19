@@ -99,14 +99,16 @@
       "id": "taub_selection",
       "tier": "nonlinear_selection",
       "label": "Which waves survive nonlinear consistency?",
-      "detail": "broad balanced families continue, while exceptional resonances fail",
-      "next": "classify the remaining exceptional and infinite-wave cases",
+      "detail": "every finite combination in the complete compact wave catalog continues smoothly exactly when five balances vanish; the global-motion bounded subproblem is solved and two growing directions are universally excluded",
+      "next": "finish the oscillator and shell-resonance bounded cone, add infinite-wave inputs, and construct causal continuation",
       "status": "partial",
       "evidence": [
         "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
         "EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_K0_COMBINED_CONE_SECOND_ORDER",
         "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_SMOOTH_GLOBAL_SECOND_ORDER",
-        "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_TWIST_RESONANCE"
+        "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_TWIST_RESONANCE",
+        "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+        "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json"
       ]
     },
     {
@@ -141,42 +143,48 @@
       "id": "gravity_waves",
       "tier": "classical_physics",
       "label": "Gravitational waves",
-      "detail": "familiar waves and additional fourth-order waves both exist and carry measurable currents",
-      "next": "test radiation at infinity, stability and realistic detectors",
+      "detail": "familiar and extra waves both carry currents; at a Schwarzschild horizon the extra wave has nonzero mixed and self flux and survives local causal boundary tests",
+      "next": "extend the black-hole test to polar and complex-frequency waves, then test stability and detectors",
       "status": "partial",
       "evidence": [
         "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
         "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
-        "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION"
+        "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION",
+        "PURE_WEYL_BH2A_CROSS_FLUX",
+        "PURE_WEYL_BH2A_CAUSAL_DISPOSITION"
       ]
     },
     {
       "id": "redshift",
       "tier": "observers",
       "label": "Clocks measure redshift",
-      "detail": "an exact retarded example gives 1+z=2 and now feeds localized records",
-      "next": "complete a fully local frequency comparison including recoil",
+      "detail": "an exact retarded example gives 1+z=2; the finite leading two-channel response stays independent throughout a tested clock-mass range",
+      "next": "complete the all-wave response, one local frequency comparison, recoil and backreaction",
       "status": "partial",
       "evidence": [
         "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE",
         "BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE",
         "BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA",
-        "BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER"
+        "BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER",
+        "BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL",
+        "BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO"
       ]
     },
     {
       "id": "detector",
       "tier": "observers",
       "label": "Local emitters and detectors",
-      "detail": "two dynamical sources create two distinct persistent records",
-      "next": "complete detector recoil and infinite-wave control",
+      "detail": "two dynamical sources create two distinct persistent records; the first retarded emitter channel and a finite mass-uniform leading response are exact",
+      "next": "complete every spatial wave, nonlinear feedback and detector recoil",
       "status": "certified",
       "evidence": [
         "BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE",
         "BERGER_AFFINE_K_OBSERVER_MORPHISM",
         "BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO",
         "BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY",
-        "BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY"
+        "BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY",
+        "BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL",
+        "BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO"
       ]
     },
     {
@@ -207,15 +215,19 @@
       "id": "anomalies",
       "tier": "quantum_inputs",
       "label": "Do quantum effects break the rules?",
-      "detail": "local failure types are classified, one gravitational coefficient is matched, and a curved-background ghost residue is now exact",
-      "next": "finish the finite one-loop terms and decide whether the full quantum breaking can be repaired",
+      "detail": "the strict theory has a one-loop obstruction and a compensator repair; the ghost determinant has an exact spherical benchmark, generic local defect and all eleven integrated third-curvature functions",
+      "next": "assemble the full ghost and physical metric determinants, then build the Lorentzian quantum theory",
       "status": "partial",
       "evidence": [
         "AFN0_DIFF_MIXED_MINIMAL_BV_H14",
         "GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION",
         "REPOSITORY_ROUND_S4_EULER_COEFFICIENT",
         "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
-        "GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE"
+        "GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE",
+        "ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION",
+        "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION",
+        "GENERIC_BACKGROUND_GHOST_N3_POLE3_INTEGRATED_FUNCTIONS",
+        "GENERIC_BACKGROUND_GHOST_N3_I29_INTEGRATED_FUNCTION"
       ]
     },
     {
@@ -259,7 +271,7 @@
       "tier": "strong_gravity",
       "label": "Black holes at rest",
       "detail": "a static family has regular horizons, energy, entropy and an exact first law",
-      "next": "complete the mixed and extra-wave horizon fluxes",
+      "next": "construct a time-dependent horizon phase space and connect it to the wave sector",
       "status": "certified",
       "evidence": [
         "PURE_WEYL_STATIC_SPHERICAL_BACKGROUND",
@@ -270,13 +282,16 @@
       "id": "black_holes",
       "tier": "future_physics",
       "label": "Black holes with waves",
-      "detail": "ordinary and extra wave equations are identified; extra waves reach the horizon, while the ordinary branch alone gives zero in the theory's exact wave-flux test",
-      "next": "compute mixed and extra flux, then build causal evolution, ringdown and stability",
+      "detail": "the first extra axial wave is regular, bounded and luminal with nonzero mixed and self horizon flux; ordinary local causal boundary rules do not remove it",
+      "next": "test polar and complex-frequency waves, then build full exterior evolution, ringdown and stability",
       "status": "partial",
       "evidence": [
         "PURE_WEYL_BH2A_AXIAL_OPERATOR",
         "PURE_WEYL_BH2A_HORIZON_REACH",
-        "PURE_WEYL_BH2A_FLUX_MATRIX"
+        "PURE_WEYL_BH2A_FLUX_MATRIX",
+        "PURE_WEYL_BH2A_CROSS_FLUX",
+        "PURE_WEYL_BH2A_CAUSAL_DISPOSITION",
+        "PURE_WEYL_BH2B_POLAR_SPLIT"
       ]
     },
     {

@@ -1,25 +1,25 @@
 {
   "artifacts": {
-    "certificate-dag.dot": "2bbe53042c31e25f3e7424d12c86bdb9139bbcc8903c0f26b3055c4e9725f81a",
-    "certificate-dag.json": "5fa683fbc7d98fec240d0af2b7e028b9b65f30b8b78fc4d92dbbe2d2d4bc9e85",
-    "universe-building-dag.dot": "20a0c2e834276ea782a8f5bf8399e5e20c1223b2a0dd51874bcf44e5517968bf",
-    "unresolved-dependencies.json": "1b00ac39803a45bb9ccd4e7ead1ef3726cfc3b9e6233986c89a42b91091e25ae"
+    "certificate-dag.dot": "4ac5818eaeaadb2bbe412ee3aa5fbff5abb5c68efd4646ccd1a388f1b884ad07",
+    "certificate-dag.json": "86b324caa66d0712f1e10369648c74417b42f167b66ea8cce1dbc7beeb4d7599",
+    "universe-building-dag.dot": "c609e824cf093d5511453c85bd867a869a9499b4106bc79d8aed06bfa67ec364",
+    "unresolved-dependencies.json": "ec9ca41cd08184de330ded5220fb0f57f98d891022da0af091ef88010a592113"
   },
-  "certificate_count": 944,
+  "certificate_count": 1016,
   "claim_boundary": "The full graph records syntactically declared certificate dependencies and imports. The public graph is a curated evidence-backed milestone view. Neither graph promotes a certificate beyond its own lifecycle and dependency tags.",
-  "dependency_edge_count": 3558,
-  "input_json_bundle_sha256": "9e5d04e430227b0877d8e5f69dbe9f4ca650b0057b837cda5f9d77a142262b78",
+  "dependency_edge_count": 3993,
+  "input_json_bundle_sha256": "5822a4ac0354b1989d291105afe823c6da900fd378052b2bedffd8f2743ab6f3",
   "issue_counts": {
     "dependency_cycles": 0,
-    "duplicate_result_ids": 4,
+    "duplicate_result_ids": 7,
     "hash_mismatches": 6,
-    "nonordering_provenance_cross_links": 274,
+    "nonordering_provenance_cross_links": 298,
     "public_missing_evidence": 0,
     "unresolved_declared_json_dependencies": 9
   },
   "legacy_path_id_count": 216,
-  "milestone_manifest_sha256": "10ed42fb6094ea78609c02c227d1a40a2c446e5cba95eb7fd260b10282336ac4",
-  "modern_result_id_count": 728,
+  "milestone_manifest_sha256": "4dfbfc3bbeb80996f28ce1154410c6083618c7e0769be9996a41c40643d27a97",
+  "modern_result_id_count": 800,
   "navigation_group_count": 62,
   "public_evidence": {
     "anomalies": [
@@ -47,6 +47,26 @@
         "certificate_path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE.json",
         "certificate_status": "SCHUR_K_AND_LOGARITHM_WODZICKI_RESIDUES_COMPUTED",
         "reference": "GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE"
+      },
+      {
+        "certificate_path": "quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION.json",
+        "certificate_status": "ROUND_S4_ZETA_TO_WEIGHTED_SCHUR_FACTORIZATION_DEFECT_COMPUTED",
+        "reference": "ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION"
+      },
+      {
+        "certificate_path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION.json",
+        "certificate_status": "GENERIC_WEIGHT_RAISED_SCHUR_ZETA_FACTORIZATION_LOCAL_DEFECT_COMPUTED",
+        "reference": "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION"
+      },
+      {
+        "certificate_path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_POLE3_INTEGRATED_FUNCTIONS.json",
+        "certificate_status": "COEFFICIENT_COMPUTED",
+        "reference": "GENERIC_BACKGROUND_GHOST_N3_POLE3_INTEGRATED_FUNCTIONS"
+      },
+      {
+        "certificate_path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_I29_INTEGRATED_FUNCTION.json",
+        "certificate_status": "COEFFICIENT_COMPUTED",
+        "reference": "GENERIC_BACKGROUND_GHOST_N3_I29_INTEGRATED_FUNCTION"
       }
     ],
     "berger_branch_carrier": [
@@ -93,6 +113,21 @@
         "certificate_path": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
         "certificate_status": "UNCLASSIFIED",
         "reference": "PURE_WEYL_BH2A_FLUX_MATRIX"
+      },
+      {
+        "certificate_path": "black_hole_programme/certificates/BH2A_CROSS_FLUX.json",
+        "certificate_status": "UNCLASSIFIED",
+        "reference": "PURE_WEYL_BH2A_CROSS_FLUX"
+      },
+      {
+        "certificate_path": "black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json",
+        "certificate_status": "UNCLASSIFIED",
+        "reference": "PURE_WEYL_BH2A_CAUSAL_DISPOSITION"
+      },
+      {
+        "certificate_path": "black_hole_programme/certificates/BH2B_POLAR_SPLIT.json",
+        "certificate_status": "UNCLASSIFIED",
+        "reference": "PURE_WEYL_BH2B_POLAR_SPLIT"
       }
     ],
     "branch_mixing": [
@@ -187,6 +222,16 @@
         "certificate_path": "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY.json",
         "certificate_status": "CERTIFIED_108_ROW_COEFFICIENTWISE_CAUSAL_CHAIN_HOMOTOPY_THROUGH_G2",
         "reference": "BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY"
+      },
+      {
+        "certificate_path": "closed_universe_observers/certificates/BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL.json",
+        "certificate_status": "FINITE_FREE_EMITTER_AND_FIRST_RETARDED_MAXWELL_CHANNEL_CERTIFIED_DETECTOR_CONTRACTION_OPEN",
+        "reference": "BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL"
+      },
+      {
+        "certificate_path": "closed_universe_observers/certificates/BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO.json",
+        "certificate_status": "FINITE_DETECTOR_SELECTED_LEADING_RESPONSE_RANK_TWO_CERTIFIED_ON_MASS_DOMAIN",
+        "reference": "BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO"
       }
     ],
     "einstein_weyl_relative": [
@@ -233,6 +278,16 @@
         "certificate_path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
         "certificate_status": "POLAR_PHYSICAL_RING_EINSTEIN_PRIMARY_IMAGE_AND_ACTION_NORMALIZATION_CERTIFIED",
         "reference": "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION"
+      },
+      {
+        "certificate_path": "black_hole_programme/certificates/BH2A_CROSS_FLUX.json",
+        "certificate_status": "UNCLASSIFIED",
+        "reference": "PURE_WEYL_BH2A_CROSS_FLUX"
+      },
+      {
+        "certificate_path": "black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json",
+        "certificate_status": "UNCLASSIFIED",
+        "reference": "PURE_WEYL_BH2A_CAUSAL_DISPOSITION"
       }
     ],
     "gut": [],
@@ -338,6 +393,16 @@
         "certificate_path": "closed_universe_observers/certificates/BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER.json",
         "certificate_status": "CERTIFIED_TWO_LOCALIZED_CONSERVED_EMITTERS_AND_RANK_TWO_CAUSAL_RECORDS",
         "reference": "BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER"
+      },
+      {
+        "certificate_path": "closed_universe_observers/certificates/BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL.json",
+        "certificate_status": "FINITE_FREE_EMITTER_AND_FIRST_RETARDED_MAXWELL_CHANNEL_CERTIFIED_DETECTOR_CONTRACTION_OPEN",
+        "reference": "BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL"
+      },
+      {
+        "certificate_path": "closed_universe_observers/certificates/BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO.json",
+        "certificate_status": "FINITE_DETECTOR_SELECTED_LEADING_RESPONSE_RANK_TWO_CERTIFIED_ON_MASS_DOMAIN",
+        "reference": "BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO"
       }
     ],
     "residual": [
@@ -372,17 +437,27 @@
         "certificate_path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
         "certificate_status": "TWIST_BALANCED_EXCEPTIONAL_ELL1_TANGENT_RESONANTLY_OBSTRUCTED_AT_SECOND_ORDER",
         "reference": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_TWIST_RESONANCE"
+      },
+      {
+        "certificate_path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+        "certificate_status": "COMPLETE_CERTIFIED_FINITE_HARMONIC_TANGENT_CONE_EXTENDIBLE_SMOOTH_GLOBAL",
+        "reference": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json"
+      },
+      {
+        "certificate_path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "certificate_status": "COMPLETE_STANDARD_GENERALIZED_ZERO_BOUNDED_SECOND_ORDER_CONE_CLASSIFIED",
+        "reference": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json"
       }
     ]
   },
   "schema": "pure-weyl-certificate-graph-receipt-v1",
-  "source_commit": "167e46e03281b7845d2bea3f6b51f3a7c5856a85",
-  "source_treeish": "HEAD",
+  "source_commit": "e9f92fa4394bbd4114554a364fcf1886c67824ca",
+  "source_treeish": "e9f92fa4",
   "status_counts": {
-    "certified": 134,
-    "obstruction": 164,
+    "certified": 144,
+    "obstruction": 166,
     "open": 0,
-    "partial": 536,
-    "unclassified": 110
+    "partial": 588,
+    "unclassified": 118
   }
 }

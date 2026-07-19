@@ -241,19 +241,19 @@ def entries():
                 "operator pending certificate", "BH2A"),
             "lee_wald": _gated(
                 "CERTIFIED",
-                "general axial bilinear F^t, F^r certified with the off-shell 4-alpha identity; RW-block on-shell flux -192*pi*alpha*(w1^2-w2^2)*psi1*psi2/(5*w1*w2*r) vanishes for conjugate pairs: the Einstein branch is symplectically null; cross-block and extra-block values OPEN",
-                "bilinear flux matrix not yet constructed", "BH2AF"),
+                "general axial bilinear F^t, F^r certified with the off-shell 4-alpha identity; RW-block on-shell flux -192*pi*alpha*(w1^2-w2^2)*psi1*psi2/(5*w1*w2*r) vanishes for conjugate pairs, while exact real-frequency fixtures certify nonzero Einstein x extra and extra x extra horizon flux",
+                "mixed/extra horizon-flux fixtures not yet certified", "BH2AF", "BH2AC"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "no crosswalk to compact structures"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
         },
-        "evidence": _evidence("BH2A", "BH2AF"),
-        "claim_boundary": "Schwarzschild axial l=2 only: the action-derived Lee-Wald current and the conjugate-pair null theorem are certified, but the Einstein x extra and extra x extra flux blocks, operator domains, causal well-posedness, stability and ringdown remain open",
+        "evidence": _evidence("BH2A", "BH2AF", "BH2AC"),
+        "claim_boundary": "Schwarzschild axial l=2 only: the action-derived Lee-Wald current, conjugate-pair RW null theorem, and nonzero mixed/extra horizon-flux fixtures are certified; symbolic frequency dependence, the full exterior initial-boundary problem, stability and ringdown remain open",
     })
 
     E.append({
         "id": "bh.mode.axial.extra-fourth-order-branch",
-        "scope": _scope(degree=1, parity="odd", ell=">=2", m="all", k="n/a",
+        "scope": _scope(degree=1, parity="odd", ell=2, m="all", k="n/a",
                         omega="dynamical"),
         "descriptions": {desc: (_gstat("CERTIFIED", "BH2AD") if desc == "causal"
                                 else ("OPEN" if desc != "symplectic" else _gstat("CERTIFIED", "BH2AC")))
@@ -271,14 +271,14 @@ def entries():
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
         },
-        "evidence": _evidence("BH2A", "BH2AR"),
-        "claim_boundary": "operator-level identification (Schwarzschild, l=2) plus certified horizon reach: a two-parameter ingoing-regular extra-branch family exists at every frequency (EF-chart residue spectrum {0,0,-4*I*m*omega,-2-4*I*m*omega}, kernel rank 2), so exclusion can never be future-horizon regularity; outer-boundary domains, flux, and causal disposition remain OPEN"
-                          if CERTS["BH2AR"].exists() else "operator-level identification only (Schwarzschild, l=2): horizon reach, domains, flux, causal disposition all OPEN",
+        "evidence": _evidence("BH2A", "BH2AR", "BH2AC", "BH2AD"),
+        "claim_boundary": "Schwarzschild m=1, axial l=2, symbolic real frequency: the extra branch is horizon-regular, carries nonzero fixture-level horizon flux, and is bounded and luminal with Einstein-like leading falloff at infinity; no local causal decay or regularity condition removes it. Complex frequencies, general l/m, the full exterior initial-boundary problem, stability and ringdown remain OPEN"
+                          if all(CERTS[key].exists() for key in ("BH2AR", "BH2AC", "BH2AD")) else "operator-level identification only (Schwarzschild, l=2): horizon reach, domains, flux, causal disposition all OPEN",
     })
 
     E.append({
         "id": "bh.mode.polar",
-        "scope": _scope(degree=1, parity="even", ell=">=1", m="all", k="n/a",
+        "scope": _scope(degree=1, parity="even", ell=2, m="all", k="n/a",
                         omega="dynamical"),
         "descriptions": {desc: "OPEN" for desc in DESCRIPTIONS},
         "mode_data": {

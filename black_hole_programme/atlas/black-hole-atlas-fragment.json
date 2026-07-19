@@ -284,7 +284,7 @@
       }
     },
     {
-      "claim_boundary": "Schwarzschild axial l=2 only: the action-derived Lee-Wald current and the conjugate-pair null theorem are certified, but the Einstein x extra and extra x extra flux blocks, operator domains, causal well-posedness, stability and ringdown remain open",
+      "claim_boundary": "Schwarzschild axial l=2 only: the action-derived Lee-Wald current, conjugate-pair RW null theorem, and nonzero mixed/extra horizon-flux fixtures are certified; symbolic frequency dependence, the full exterior initial-boundary problem, stability and ringdown remain open",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
@@ -302,6 +302,11 @@
           "path": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
           "result_id": "PURE_WEYL_BH2A_FLUX_MATRIX",
           "sha256": "95ca6daeabb16bf93faa1bb721e3464fc5363899a344f0281d126f9a14204732"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH2A_CROSS_FLUX.json",
+          "result_id": "PURE_WEYL_BH2A_CROSS_FLUX",
+          "sha256": "8b5cea3acb71defe98e42af2aab496e405fa5ae5bf412810af6669b569f1c593"
         }
       ],
       "id": "bh.mode.axial.einstein-branch",
@@ -311,7 +316,7 @@
           "status": "CERTIFIED"
         },
         "lee_wald": {
-          "statement": "general axial bilinear F^t, F^r certified with the off-shell 4-alpha identity; RW-block on-shell flux -192*pi*alpha*(w1^2-w2^2)*psi1*psi2/(5*w1*w2*r) vanishes for conjugate pairs: the Einstein branch is symplectically null; cross-block and extra-block values OPEN",
+          "statement": "general axial bilinear F^t, F^r certified with the off-shell 4-alpha identity; RW-block on-shell flux -192*pi*alpha*(w1^2-w2^2)*psi1*psi2/(5*w1*w2*r) vanishes for conjugate pairs, while exact real-frequency fixtures certify nonzero Einstein x extra and extra x extra horizon flux",
           "status": "CERTIFIED"
         },
         "resonance": {
@@ -353,7 +358,7 @@
       }
     },
     {
-      "claim_boundary": "operator-level identification (Schwarzschild, l=2) plus certified horizon reach: a two-parameter ingoing-regular extra-branch family exists at every frequency (EF-chart residue spectrum {0,0,-4*I*m*omega,-2-4*I*m*omega}, kernel rank 2), so exclusion can never be future-horizon regularity; outer-boundary domains, flux, and causal disposition remain OPEN",
+      "claim_boundary": "Schwarzschild m=1, axial l=2, symbolic real frequency: the extra branch is horizon-regular, carries nonzero fixture-level horizon flux, and is bounded and luminal with Einstein-like leading falloff at infinity; no local causal decay or regularity condition removes it. Complex frequencies, general l/m, the full exterior initial-boundary problem, stability and ringdown remain OPEN",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "OPEN",
@@ -371,6 +376,16 @@
           "path": "black_hole_programme/certificates/BH2A_HORIZON_REACH.json",
           "result_id": "PURE_WEYL_BH2A_HORIZON_REACH",
           "sha256": "dcab47cf90e5a0120308b2031444539604d902c9cc5b788ce510f366f0d26d7f"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH2A_CROSS_FLUX.json",
+          "result_id": "PURE_WEYL_BH2A_CROSS_FLUX",
+          "sha256": "8b5cea3acb71defe98e42af2aab496e405fa5ae5bf412810af6669b569f1c593"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json",
+          "result_id": "PURE_WEYL_BH2A_CAUSAL_DISPOSITION",
+          "sha256": "036a8162e34de6292bae25b9f96bcbf80cb98d0cb9dc8f01b5de32f4a8ea54c4"
         }
       ],
       "id": "bh.mode.axial.extra-fourth-order-branch",
@@ -413,7 +428,7 @@
         "carrier": "metric perturbations of the static spherical chart",
         "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
         "degree": 1,
-        "ell": ">=2",
+        "ell": 2,
         "k": "n/a",
         "m": "all",
         "omega": "dynamical",
@@ -477,7 +492,7 @@
         "carrier": "metric perturbations of the static spherical chart",
         "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
         "degree": 1,
-        "ell": ">=1",
+        "ell": 2,
         "k": "n/a",
         "m": "all",
         "omega": "dynamical",
@@ -603,7 +618,7 @@
     }
   ],
   "generated_by": "black_hole_programme/atlas/generate_atlas_fragment.py",
-  "generated_by_sha256": "7409c0104ef38d2b9fac4c51c812e341209f89e7c7db9d255ade32f1148bd5c4",
+  "generated_by_sha256": "a5932cd5e395f88460af3ffebeba00863f5b41a09131c67456b4097c97488eac",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

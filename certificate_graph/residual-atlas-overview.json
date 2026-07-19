@@ -184,6 +184,91 @@
       "team": "einstein_boundary"
     },
     {
+      "claim_boundary": "This is the complete finite-support smooth-secular tangent cone on the compact Plebanski-Hacyan target before final residual quotient. Bounded classification, infinite-mode convergence, causal/retarded propagation, all-orders integration, residual states, observables and quantum transfer remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "The branch dictionary exhausts the declared finite linear input inventory: generic q/p, standard/extra dipoles, twists and homogeneous data.",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "Every input block has an action-derived current and the complete direct sum is the carrier for the covariant moment maps.",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "The bounded ledger has independent polynomial-growth P_(j,r) and shell-resonance R_(j,a) functionals; its common zero locus is open.",
+            "status": "CERTIFIED"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "The exact bounded formula mu_X=P_(j,r)=R_(j,a)=0 is certified, but its complete common zero locus is not solved.",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
+              "status": "NO_CERTIFIED_MAP"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "For every finite-support tangent in the complete certified linear inventory, vanishing of the five moment maps is necessary and sufficient for a real smooth spatially periodic finite exponential-polynomial second-order correction.",
+              "status": "CERTIFIED"
+            }
+          },
+          "taub_maps": {
+            "statement": "The complete smooth adjoint cokernel is exactly span{H,P_x,J_1,J_2,J_3}, paired with the five Taub moment maps.",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_FINITE_HARMONIC_SMOOTH_GLOBAL_SECOND_ORDER",
+          "sha256": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885"
+        },
+        {
+          "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
+          "sha256": "0bc9236181f6dab22602c63e79be0a1df1dae6e6ef9cd46958d753cf264e0ede"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "group": "compact_product",
+      "id": "einstein.ph.wm.complete_finite_harmonic_smooth_cone",
+      "label": "Einstein / ph / wm / complete finite harmonic smooth cone",
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "arbitrary finite-support sum of generic q/p primaries, standard/extra ell=1 modes, axial twists and homogeneous charge/holonomy/Jordan data",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "complete certified ell=0, ell=1 and generic ell>=2 inventory",
+        "k": "arbitrary finite set of allowed compact momenta, with generalized-zero global data at k=0",
+        "m": "all certified multiplicities",
+        "omega": "all certified oscillator shells and generalized-zero polynomial blocks; finite polynomial prefactors allowed in the correction",
+        "parity": "all certified axial, polar and homogeneous sectors",
+        "theory": "complete certified Weyl-Maxwell linear target"
+      },
+      "source": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+      "team": "einstein_boundary"
+    },
+    {
       "claim_boundary": "This is a same-background REDUCED-MODE solution cofiber whose coefficient map is the reduction of the certified natural support-local minimal chain map. It does not supply finite residual descent, causal propagation, a particle interpretation, or a cross-background map.",
       "descriptions": {
         "causal": "OPEN",
@@ -241,7 +326,7 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "22e64623b3d71b0f9806ef5346f116c33a97c3df21d85c3d3f0b170cf6bdf70d"
+          "sha256": "0bc9236181f6dab22602c63e79be0a1df1dae6e6ef9cd46958d753cf264e0ede"
         },
         {
           "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
@@ -534,7 +619,7 @@
       "team": "einstein_boundary"
     },
     {
-      "claim_boundary": "This correction-class split is complete only in one declared homogeneous/twist times ell=2,k=0 extra carrier. The mixed L=1,3 block is printed, but this is not a complete arbitrary-orbit coefficient list, opposite-momentum or multi-fibre classification, causal theorem, all-orders family, residual state or quantum claim.",
+      "claim_boundary": "This correction-class split and coefficient ledger are complete only in one declared homogeneous/twist times ell=2,k=0 shared-axis SO3 orbit. It is not an opposite-momentum or multi-fibre classification, causal theorem, all-orders family, residual state or quantum claim.",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OBSTRUCTED",
@@ -567,7 +652,7 @@
             },
             "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
             "smooth_secular": {
-              "statement": "Every orbit point admits a real smooth spatially periodic finite exponential-polynomial correction; the aligned twist--extra L=1,3 mixed block is coefficient-explicit with 13 exact corrections and 3 zero sources.",
+              "statement": "Every orbit point admits a real smooth spatially periodic finite exponential-polynomial correction. Global/global, all 16 aligned twist--extra L=1,3 channels, and all 20 C4 extra/extra bilinear generators are coefficient-explicit; the sole homogeneous source cancels as beta^2-Q_e^2/2-(2/3)X=0.",
               "status": "CERTIFIED"
             }
           },
@@ -579,6 +664,16 @@
       },
       "evidence": [
         {
+          "path": "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_ORBIT_SELF_SECOND_ORDER",
+          "sha256": "5035c84c0cbc7a35c8ea32dfc27e489be93bad919b77110d43e5c8f24909af30"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_EXTRA_SELF_SECOND_ORDER",
+          "sha256": "0e0687b2a1cbfbb631bf46c8372b6af8c0d77905e57a2fd73a7d9c0e30593cb8"
+        },
+        {
           "path": "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_ALIGNED_TWIST_ELL2_EXTRA_SMOOTH_CORRECTION",
           "sha256": "5788853a60c4fc0caada8b62c2f1e7328b4255a76a9c02dedef564548353cf13"
@@ -586,7 +681,7 @@
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_SMOOTH_SECULAR_SECOND_ORDER",
-          "sha256": "961548b8e8b8f850e044b55c9b6b82536ba83724b019a4a1137a916a81a21177"
+          "sha256": "8714786abc9d02029d03fe2faf04c3adbb40bd9f27baeaac5e8132552973b989"
         },
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
@@ -644,6 +739,171 @@
         "omega": "generalized-zero global/twist data crossed with omega_e=4/sqrt(3)",
         "parity": "all four axial/polar extra multiplicities retained",
         "theory": "Weyl-Maxwell target"
+      },
+      "source": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+      "team": "einstein_boundary"
+    },
+    {
+      "claim_boundary": "This is the complete finite generic ell>=2 smooth-secular cone on the compact product. Exceptional/global input modes, the bounded resonance zero locus, infinite harmonic completion, causal/retarded propagation, all-orders integration, final residual states, observables and quantum transfer remain explicit open scopes.",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "CERTIFIED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "Every input belongs to a certified generic q- or p-primary shell; every quadratic output is retained under its exact (L,M,K,Omega,parity) label.",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "The generic branch currents and the five compact stabilizer moment maps are action-normalized on every input fibre.",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "Bounded resonant functionals R_(j,a) are defined on every finite nonzero on-shell output block; their coefficientwise common zero locus remains open.",
+            "status": "CERTIFIED"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "The exact bounded cone formula mu_X=R_(j,a)=0 is certified, but its coefficientwise zero locus has not been solved.",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "No compact-product causal/retarded Green theorem has been certified.",
+              "status": "OPEN"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "For arbitrary finite generic inputs, multiple |k| fibres and all relative phases, mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0 is necessary and sufficient for a real smooth spatially periodic finite exponential-polynomial second-order correction.",
+              "status": "CERTIFIED"
+            }
+          },
+          "taub_maps": {
+            "statement": "After Noether and gauge descent, the complete persistent smooth-secular adjoint cokernel is span{H,P_x,J_1,J_2,J_3}.",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_FINITE_GENERIC_SMOOTH_GLOBAL_SECOND_ORDER",
+          "sha256": "dd1dec63c50d538a489205d48931720919ff9a43e23c52a45a9d1b80e5ff2513"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "group": "compact_product",
+      "id": "einstein.ph.wm.mixed.finite_generic_all_momenta_smooth_cone",
+      "label": "Einstein / ph / wm / mixed / finite generic all momenta smooth cone",
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "arbitrary finite generic-harmonic sum with all compact momentum fibres kept as distinct input and output blocks",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "all finite input ell>=2; every Clebsch-Gordan output L=0,...,ell_1+ell_2",
+        "k": "arbitrary finite set of allowed 2*pi*n/L values; signed output sums K retained",
+        "m": "arbitrary finite input m values and all selected output M",
+        "omega": "all signed input-shell sums and differences; finite polynomial prefactors allowed on resonant outputs",
+        "parity": "axial and polar, including cross-parity quadratic outputs",
+        "theory": "Weyl-Maxwell target with all generic Einstein and extra primaries"
+      },
+      "source": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+      "team": "einstein_boundary"
+    },
+    {
+      "claim_boundary": "This is the complete bounded second-order theorem only for the standard generalized-zero carrier. Universally it forces b=B=0 in every finite-support bounded candidate, but a,d,Q_e times oscillatory modes, shell resonances, infinite sums, causal propagation, final residual states, observables and quantum transfer remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "The carrier is the complete standard generalized-zero block: K=a+b*t, C=a*t^2+(b/3)t^3+c+d*t, A_x=W_x+Q_e*t and twist A+B*t.",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "The homogeneous and twist Lee-Wald blocks are nondegenerate and mutually orthogonal before the final residual quotient.",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "The positive-degree ideal has real zero locus b=B=0 and Q_e*a=0; STF(B tensor B) supplies the SO3-complete twist witness.",
+            "status": "CERTIFIED"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "The complete bounded cone is {(c,d,W_x,A)}. Its homogeneous source vanishes and constant A has a time-independent polar L=2 correction.",
+              "status": "CERTIFIED"
+            },
+            "causal_retarded": {
+              "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
+              "status": "NO_CERTIFIED_MAP"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "The bounded correction is also a smooth exponential-polynomial correction.",
+              "status": "CERTIFIED"
+            }
+          },
+          "taub_maps": {
+            "statement": "After polynomial elimination the global moment maps force a=Q_e=0; c,d,W_x and constant A remain.",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_SECOND_ORDER",
+          "sha256": "8d36197f365abf1fb5d923e15a5a5589da0f4881ebb9acc0d66cf688df2194b4"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
+          "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "group": "compact_product",
+      "id": "einstein.ph.wm.standard.global_bounded_cone",
+      "label": "Einstein / ph / wm / standard / global bounded cone",
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "complete homogeneous (a,b,c,d,Q_e,W_x) plus axial twist position/velocity vectors (A,B), with oscillatory inputs excluded",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "input 0 and 1; output 0,1,2",
+        "k": 0,
+        "m": "all real twist components by SO3 covariance",
+        "omega": "generalized zero only",
+        "parity": "homogeneous and axial ell=1 inputs; homogeneous, axial ell=1 and polar ell=2 outputs kept distinct",
+        "theory": "Weyl-Maxwell target restricted to the standard Einstein-Maxwell generalized-zero image"
       },
       "source": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
       "team": "einstein_boundary"
@@ -871,7 +1131,7 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "22e64623b3d71b0f9806ef5346f116c33a97c3df21d85c3d3f0b170cf6bdf70d"
+          "sha256": "0bc9236181f6dab22602c63e79be0a1df1dae6e6ef9cd46958d753cf264e0ede"
         },
         {
           "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
@@ -1561,7 +1821,7 @@
       "team": "closed_universe_observer"
     },
     {
-      "claim_boundary": "operator-defined compact Cauchy profiles; full coderivative and finite-mode advanced Maxwell image certified through two_j=4 with uniform temporal-kernel remainder; uniform small tail at that cutoff is OBSTRUCTED and the massive image is OPEN absolute g^2 response vanishes; first feedback is absolute g^3 (relative g^2); coefficient OPEN OPEN",
+      "claim_boundary": "full canonical preparation coefficients are callable through two_j=4; a 32-cell two_j=0 witness certifies leading rank two for mass squared in [1,2], while arbitrary positive masses, the infinite spatial tail and recoil remain OPEN absolute g^2 response vanishes; first feedback is absolute g^3 (relative g^2); coefficient OPEN OPEN",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "OPEN",
@@ -1572,7 +1832,7 @@
       "details": {
         "mode_data": {
           "dispersion": {
-            "statement": "carrier=two compact positive-energy massive-two-form Cauchy preparations u0,u1 and the leading detector record map; omega=massive mode spectrum; unevaluated full profile; M_ab=Q_a[d G_A,ret g_b delta(h_b K_b^(0))]",
+            "statement": "carrier=two compact positive-energy massive-two-form Cauchy preparations u0,u1 and the leading detector record map; omega=massive mode spectrum; unevaluated full profile; M_ab=Q_a[d G_A,ret g_b delta(h_b K_b^(0))]; the partition-refined detector-selected diagonal entries are certified nonzero for m_a^2 in [1,2]",
             "status": "CERTIFIED"
           },
           "lee_wald": {
@@ -1644,6 +1904,16 @@
           "path": "closed_universe_observers/certificates/BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION.json",
           "result_id": "BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION",
           "sha256": "266b15277a9b2e0cf8d4065b37e3d6dfdf711276d6497cb7ab667ebb9665fcdd"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS.json",
+          "result_id": "BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS",
+          "sha256": "e185ed4a67549af69256e7d258ed8c4a72a2177a7cc0aadbb54113eaf0d34c26"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO.json",
+          "result_id": "BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO",
+          "sha256": "fe9441ad7028f1826b9ae585f42051c30a83c1f3273cfef1abecd64dbe5cd7fe"
         },
         {
           "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
@@ -2030,6 +2300,101 @@
         "m": "central diagonal basis index two_j/2",
         "omega": "clock-integrated profile input; no Green kernel applied",
         "parity": "central diagonal scalar sentinel",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "includes the symbolic detector coefficient slot, both h_c factors, h-prime term, physical massive Proca correction, Peter-Weyl weight and no-spatial-boundary convention; callable evaluation is a separate obstructed gate CERTIFIED complete absolute-g3 word: eight a,b,c channels with g_b g_c^2 and feedback-indexed D_a C_c(m_c) E_A,b tails NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=typed Peter-Weyl Maxwell/emitter preparation and absolute-g3 recoil contractions; omega=exact advanced preparation and retarded recoil time convolutions with symbolic positive masses; OPEN numerically: four symbolic aggregate record formulas are serialized but no interval backend evaluates them",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "CERTIFIED at the factorwise causal word level; d/delta typing and conserved sources are exact",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "CERTIFIED complete absolute-g3 word: eight a,b,c channels with g_b g_c^2 and feedback-indexed D_a C_c(m_c) E_A,b tails; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
+          "result_id": "BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE",
+          "sha256": "28aec893743778eae6b9e22732a3e58a010de6075f9a9373f17a5352052ef08c"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES.json",
+          "result_id": "BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES",
+          "sha256": "83663f884e69735f5233a0231d3d974d7c4886f42664cf7f1f375a841ac96019"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS.json",
+          "result_id": "BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS",
+          "sha256": "4ce199552fa37a8c49b90cd5beba1d605152dacd5c8f8fa336d005357657aaf9"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json",
+          "result_id": "BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE",
+          "sha256": "47921d3753f9cd60d3574b4bd1fac3738412a2c7de51e6541a587bec0cde8dfd"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
+          "result_id": "BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS",
+          "sha256": "3120fc7f60a43c2990bb2aca2a1dd41b7ceec4f099bfb8b280998c6d177d5041"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
+          "result_id": "BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD",
+          "sha256": "2127d1611bfa8029daae03b837bf18f55acbfe4b5efef4e39a404ba53bcb77d2"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.complete_per_shell_recoil_operator_word",
+      "label": "Observer / berger / detector profile / complete per shell recoil operator word",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "typed Peter-Weyl Maxwell/emitter preparation and absolute-g3 recoil contractions",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "Maxwell 1-form, detector/emitter 2-form and emitter Cauchy pair",
+        "ell": "all two_j>=0; exact type audit through two_j=4",
+        "k": "all passive right columns k=0,...,two_j",
+        "m": "all representation rows within each block",
+        "omega": "exact advanced preparation and retarded recoil time convolutions with symbolic positive masses",
+        "parity": "all form polarizations",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
       },
       "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
@@ -2516,6 +2881,86 @@
       "team": "closed_universe_observer"
     },
     {
+      "claim_boundary": "uses J dSigma=d3R, validated B and B^2 radial integrals, exact rod derivative matrix, unit Maxwell energy propagation and both exact compact switch constants; complete modewise scalar integrand remains OPEN the absolute-g3 factorwise tail map is CERTIFIED symbolically as D_a(3H_b^2/m_b^2+8H_b/(3m_b))E_A for all four a,b; scalar coefficients remain OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "CERTIFIED",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=two compact detector energy covectors composed with two massive recoil channels; omega=retarded Maxwell propagation on exact clock windows; symbolic positive masses m_b; OPEN: both detector energy dual norms and all four symbolic recoil-tail radii are certified, but the four central scalar intervals are not evaluated",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "CERTIFIED for the gauge-invariant field-strength energy bound and conserved recoil source at this linear causal gate; nonlinear quotient descent remains OPEN",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "the absolute-g3 factorwise tail map is CERTIFIED symbolically as D_a(3H_b^2/m_b^2+8H_b/(3m_b))E_A for all four a,b; scalar coefficients remain OPEN; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL.json",
+          "result_id": "BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL",
+          "sha256": "f3d7e04d7f3035f7435dc1da5d8e9f8ad846ee23092ea618c8dc9c321343aa55"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT.json",
+          "result_id": "BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT",
+          "sha256": "f927e2e8eea5f5ef9bdbadd2d5c68d162eccb6d428b5356e6024f7d2405dd58e"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
+          "result_id": "BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS",
+          "sha256": "3120fc7f60a43c2990bb2aca2a1dd41b7ceec4f099bfb8b280998c6d177d5041"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.downstream_maxwell_detector_dual_norms",
+      "label": "Observer / berger / detector profile / downstream maxwell detector dual norms",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "two compact detector energy covectors composed with two massive recoil channels",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 2,
+        "ell": "all Berger shells controlled by the Maxwell graph tail",
+        "k": "detectors a=0,1 and massive channels b=0,1",
+        "m": "all supported representation rows",
+        "omega": "retarded Maxwell propagation on exact clock windows; symbolic positive masses m_b",
+        "parity": "D0 axial and D1 transverse detector polarizations",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
       "claim_boundary": "every omitted charge block obeys Lambda(j)=j^2+13j/40-1017/2480; above retained two_j=1024, Lambda(1025/2)=325899779/1240 and the exact spatial and coderivative Green multipliers add no L2 amplification; the evaluated profile Sobolev norm, numerical tail and massive continuation remain OPEN operator tail input only; absolute-g3 recoil remains OPEN NOT_APPLICABLE",
       "descriptions": {
         "causal": "CERTIFIED",
@@ -2746,6 +3191,156 @@
       "team": "closed_universe_observer"
     },
     {
+      "claim_boundary": "the transverse massive sector uses the finite-slab energy estimate and the exact longitudinal sector retains its unsmoothed 1/m_b^2 term; rational H_b bounds use the certified flat-bump core and exact switch radii absolute-g3 channel bound is CERTIFIED symbolically as (3H_b^2/m_b^2+8H_b/(3m_b)) E_A; four scalar coefficients remain OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=massive-two-form recoil current on the two exact compact switch slabs; omega=retarded massive propagation with symbolic positive masses m_b; OPEN: the switched recoil-current L1 tail is certified, but the downstream Maxwell-to-detector dual norm is absent",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "the conserved switched recoil source is gauge typed, but downstream detector and nonlinear quotient descent remain OPEN",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "absolute-g3 channel bound is CERTIFIED symbolically as (3H_b^2/m_b^2+8H_b/(3m_b)) E_A; four scalar coefficients remain OPEN; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL.json",
+          "result_id": "BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL",
+          "sha256": "f3d7e04d7f3035f7435dc1da5d8e9f8ad846ee23092ea618c8dc9c321343aa55"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT.json",
+          "result_id": "BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT",
+          "sha256": "f927e2e8eea5f5ef9bdbadd2d5c68d162eccb6d428b5356e6024f7d2405dd58e"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.massive_recoil_finite_slab_energy_constant",
+      "label": "Observer / berger / detector profile / massive recoil finite slab energy constant",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "massive-two-form recoil current on the two exact compact switch slabs",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 2,
+        "ell": "all Berger shells through the Maxwell graph-tail input",
+        "k": "two emitter channels b=0,1",
+        "m": "transverse and longitudinal massive sectors",
+        "omega": "retarded massive propagation with symbolic positive masses m_b",
+        "parity": "two selected massive polarization channels",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "each of d_Sigma A_Sigma, partial_t A_Sigma and d_Sigma A_0 is bounded by 2304 S_a Lambda^(-3/2); the component sum is about 3.01e5 above two_j=1024 and first falls below one at two_j=68743; dense materialization is not selected Maxwell graph-norm input to the absolute-g3 recoil coefficient; massive continuation remains OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=four-dimensional advanced Maxwell field-strength tail generated by the moving detector-selected profile; omega=advanced clock microphase with one field-strength derivative; OPEN: the four-dimensional field-strength tail is certified, but the massive-chain scalar has not been bounded",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "the bound controls the gauge-invariant field strength dA, but no full nonlinear quotient or scalar recoil follows",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "Maxwell graph-norm input to the absolute-g3 recoil coefficient; massive continuation remains OPEN; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE.json",
+          "result_id": "BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE",
+          "sha256": "53382edc9f355be47e9adaaaa1e1cd18097ee7bef39346aa48b227e60f3ab346"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL.json",
+          "result_id": "BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL",
+          "sha256": "f3d7e04d7f3035f7435dc1da5d8e9f8ad846ee23092ea618c8dc9c321343aa55"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.maxwell_energy_graph_norm_tail",
+      "label": "Observer / berger / detector profile / maxwell energy graph norm tail",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "four-dimensional advanced Maxwell field-strength tail generated by the moving detector-selected profile",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 2,
+        "ell": "tail form two_j>1024; sufficient component-sum bound target two_j>68743",
+        "k": "all omitted representation columns and exact charge blocks",
+        "m": "all omitted representation rows",
+        "omega": "advanced clock microphase with one field-strength derivative",
+        "parity": "D0 axial and D1 transverse field-strength components",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
       "claim_boundary": "operator-valued clock integration by parts gives moving-profile tail uppers about 196 above two_j=1024 and the first sub-unit sufficient cutoff two_j=3835; the bound is physical but not a complete Green image physical Maxwell-tail input only; absolute-g3 recoil remains OPEN NOT_APPLICABLE",
       "descriptions": {
         "causal": "CERTIFIED",
@@ -2910,6 +3505,1476 @@
         "m": "anchors r=128,256,384 with exact r-1,r,r+1 recurrence neighbors",
         "omega": "external clock power p=0; no Green kernel applied",
         "parity": "neighboring odd scalar shells two_j=1023,1025 feeding even form two_j=1024",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "the longitudinal massive inverse is 1/m_b^2, so the current Maxwell L2 tail has NO_CERTIFIED_MAP to a factorwise recoil bound; certify a correlated Maxwell energy/graph-norm tail and finite-time massive energy constant, or prove exact block cancellation absolute-g3 operator is fixed; numerical coefficient remains OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=factorwise Maxwell-to-massive-two-form recoil chain on the fixed detector-selected preparations; omega=retarded Maxwell and massive propagation on the exact causally ordered switch slabs; OPEN: the exact switch commutator types the required norm but does not evaluate a recoil scalar",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "the chain is gauge typed, but no numerical full-image or nonlinear quotient statement follows",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "absolute-g3 operator is fixed; numerical coefficient remains OPEN; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT.json",
+          "result_id": "BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT",
+          "sha256": "235afae162f5373b623504d5d4c83feaf929ce8ae9190bd9dd62ef6a8b7076cd"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE.json",
+          "result_id": "BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE",
+          "sha256": "53382edc9f355be47e9adaaaa1e1cd18097ee7bef39346aa48b227e60f3ab346"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_chain_graph_norm_gate",
+      "label": "Observer / berger / detector profile / recoil chain graph norm gate",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "factorwise Maxwell-to-massive-two-form recoil chain on the fixed detector-selected preparations",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 1,
+        "ell": "all finite Berger shells with a future graph-norm tail",
+        "k": "transverse and longitudinal massive sectors",
+        "m": "all supported representation rows",
+        "omega": "retarded Maxwell and massive propagation on the exact causally ordered switch slabs",
+        "parity": "D0 axial and D1 transverse response chains",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "all finite detector columns through two_j=4, outward-enclosed Berger d0/d1 matrices, partial_t=-partial_T and the differentiated cosine-tail remainder are CERTIFIED; massive propagation and the spatial tail remain OPEN finite input to the absolute-g3 word only; no I_abc interval NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "CERTIFIED",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=detector-selected complex interval spacetime one-form polynomials and their Dhat_1 two-form images; omega=advanced Maxwell polynomial in T with uniform value and physical-time-derivative remainders; OPEN: the physical detector-selected advanced-Maxwell Dhat_1 stage is callable, but the massive preparation and recoil contractions are not",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "the source uses the full four-dimensional coderivative and exact Dhat_1 typing; full finite-sum and fixed-background quotient survival remain OPEN",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "finite input to the absolute-g3 word only; no I_abc interval; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
+          "result_id": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE",
+          "sha256": "d61e8399ba235c22239ca52864aed148b1e2b4d2154685d12324bf4b3037e9dc"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER.json",
+          "result_id": "BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER",
+          "sha256": "9c58de32f8937b4142532d70f5a17afa9e05722ff1b7a284c1d68de40682cb2d"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json",
+          "result_id": "BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE",
+          "sha256": "47921d3753f9cd60d3574b4bd1fac3738412a2c7de51e6541a587bec0cde8dfd"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_DETECTOR_FORM_BINDING.json",
+          "result_id": "BERGER_RECOIL_DETECTOR_FORM_BINDING",
+          "sha256": "0527b172dd04fd997d5c8a61d37caa43b5ef6ebc9a0dc2770753cae0348c2add"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_detector_form_binding",
+      "label": "Observer / berger / detector profile / recoil detector form binding",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "detector-selected complex interval spacetime one-form polynomials and their Dhat_1 two-form images",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "Dhat_1: spacetime degree 1 to 2",
+        "ell": "two_j=0,...,4",
+        "k": "all passive columns k=0,...,two_j",
+        "m": "all component-major representation rows",
+        "omega": "advanced Maxwell polynomial in T with uniform value and physical-time-derivative remainders",
+        "parity": "D0 axial and D1 transverse detector profiles",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "all twenty physical finite blocks and six factored series coefficients are exact; mass intervals, remainders, switch multiplication and detector contractions remain OPEN algebraic input to the absolute-g3 channel only; no I_abc value NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=exact sparse Berger form-Laplacian matrices and factored sine-kernel coefficients c_n A^n; omega=tau powers 1,3,5,7,9,11 with symbolic positive mu_squared on massive blocks; OPEN: the exact kernel payload is not yet interval-enclosed or composed with switches and detector profiles",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "OPEN until the typed form contractions are evaluated",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "algebraic input to the absolute-g3 channel only; no I_abc value; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD.json",
+          "result_id": "BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD",
+          "sha256": "6eab8f0b88c17251fc844021c862220e50c8f122abd6f2d67d53567b44a0513d"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_exact_mode_kernel_payload",
+      "label": "Observer / berger / detector profile / recoil exact mode kernel payload",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "exact sparse Berger form-Laplacian matrices and factored sine-kernel coefficients c_n A^n",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "Maxwell 0,1 and massive-two-form 1,2",
+        "ell": "two_j=0,...,4",
+        "k": "all representation columns",
+        "m": "all representation rows",
+        "omega": "tau powers 1,3,5,7,9,11 with symbolic positive mu_squared on massive blocks",
+        "parity": "all finite form polarizations",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "exact real/imaginary rational intervals, structural zeros and modewise uniform remainders are callable for two_j=0,...,4; extension beyond two_j=4, the massive Green image, nested time convolution and full tail remain OPEN CERTIFIED only as a finite coefficient input to the absolute-g3 word; no massive or recoil coefficient is evaluated NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "CERTIFIED",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=exact rational coefficient lookup for the validated finite advanced-Maxwell detector covector image; omega=advanced massless Maxwell polynomial coefficients with certified uniform entire-series remainders; OPEN: the callable returns finite advanced-Maxwell detector coefficients but does not evaluate a nested recoil channel or record",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "OPEN for the full evaluated mode sum; the finite input uses the full four-dimensional coderivative",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "CERTIFIED only as a finite coefficient input to the absolute-g3 word; no massive or recoil coefficient is evaluated; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
+          "result_id": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE",
+          "sha256": "d61e8399ba235c22239ca52864aed148b1e2b4d2154685d12324bf4b3037e9dc"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER.json",
+          "result_id": "BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER",
+          "sha256": "9c58de32f8937b4142532d70f5a17afa9e05722ff1b7a284c1d68de40682cb2d"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_finite_detector_coefficient_provider",
+      "label": "Observer / berger / detector profile / recoil finite detector coefficient provider",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "exact rational coefficient lookup for the validated finite advanced-Maxwell detector covector image",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 1,
+        "ell": "two_j=0,...,4 only",
+        "k": "all serialized detector columns within the finite image",
+        "m": "validated spatial and temporal polynomial rows",
+        "omega": "advanced massless Maxwell polynomial coefficients with certified uniform entire-series remainders",
+        "parity": "D0 axial and D1 transverse detector profiles",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "all twenty blocks through two_j=4 can be enclosed with exact rational coefficient matrices and a uniform sine tail; nonpositive mass and noncontracting slabs fail closed; switch/profile/form binding remains OPEN CERTIFIED kernel input to the absolute-g3 word only; no I_abc interval NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=outward rational interval matrices for exact finite Berger sine kernels; omega=tau powers 1,3,5,7,9,11 plus a uniform finite-slab sine-series tail; OPEN: finite mode kernels are interval-enclosed but not multiplied by the exact switches, detector profiles or typed form contractions",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "OPEN until typed form contractions and the finite mode sum are evaluated",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "CERTIFIED kernel input to the absolute-g3 word only; no I_abc interval; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD.json",
+          "result_id": "BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD",
+          "sha256": "6eab8f0b88c17251fc844021c862220e50c8f122abd6f2d67d53567b44a0513d"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE.json",
+          "result_id": "BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE",
+          "sha256": "e74d7806383f2dd1a62c82c93e3a149c32ae3357bd5018a85e12d2f5080374ae"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_finite_mode_kernel_interval_enclosure",
+      "label": "Observer / berger / detector profile / recoil finite mode kernel interval enclosure",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "outward rational interval matrices for exact finite Berger sine kernels",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "Maxwell 0,1 and massive-two-form 1,2",
+        "ell": "two_j=0,...,4",
+        "k": "all representation columns",
+        "m": "all representation rows",
+        "omega": "tau powers 1,3,5,7,9,11 plus a uniform finite-slab sine-series tail",
+        "parity": "all finite form polarizations",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "exact beta factors and uniform remainder propagation are CERTIFIED; actual Maxwell/massive kernels, switches, detector coefficients and form contractions remain OPEN input engine for the absolute-g3 word; no I_abc interval is evaluated NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=supplied finite-slab polynomial interval Green-kernel and source enclosures; omega=exact beta-integral polynomial convolution plus uniform rational remainder; OPEN: the causal convolution engine is exact for supplied enclosures but is not bound to physical Berger channel data",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "NOT_APPLICABLE for a generic coefficient engine",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "input engine for the absolute-g3 word; no I_abc interval is evaluated; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION.json",
+          "result_id": "BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION",
+          "sha256": "39cb2d9b5a7060d8888eab1d04ce9f7e88937f136c97b424fa25332fe31557da"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_finite_nested_time_convolution",
+      "label": "Observer / berger / detector profile / recoil finite nested time convolution",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "supplied finite-slab polynomial interval Green-kernel and source enclosures",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "time-convolution engine independent of form-block degree",
+        "ell": "finite supplied mode block; no all-shell binding",
+        "k": "supplied passive column",
+        "m": "supplied block row",
+        "omega": "exact beta-integral polynomial convolution plus uniform rational remainder",
+        "parity": "retarded or advanced causal orientation",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "requires both feedback channels, exactly two_j+1 passive columns, and a positive inverse-volume interval; detector coefficients and nested Green convolutions remain OBSTRUCTED CERTIFIED exact g_b g_c^2 and passive-column aggregation for one absolute-g3 shell NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "CERTIFIED",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=exact rational aggregation of supplied absolute-g3 channel intervals in one Peter-Weyl shell; omega=already-enclosed nested causal channel values; OPEN: the callable aggregates supplied I_abc intervals but does not construct them",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "inherits typed channel inputs; no new quotient claim",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "CERTIFIED exact g_b g_c^2 and passive-column aggregation for one absolute-g3 shell; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
+          "result_id": "BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD",
+          "sha256": "2127d1611bfa8029daae03b837bf18f55acbfe4b5efef4e39a404ba53bcb77d2"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR.json",
+          "result_id": "BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR",
+          "sha256": "b83a0da0a40a0f986656a89dac2c45bfc40adcc38bbd78a03eb2ebc48264f6cb"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_finite_shell_interval_aggregator",
+      "label": "Observer / berger / detector profile / recoil finite shell interval aggregator",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "exact rational aggregation of supplied absolute-g3 channel intervals in one Peter-Weyl shell",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 2,
+        "ell": "one arbitrary two_j>=0 per call",
+        "k": "all k=0,...,two_j required",
+        "m": "already-contracted channel interval rows",
+        "omega": "already-enclosed nested causal channel values",
+        "parity": "D0 axial and D1 transverse detector labels",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "A L=L A=Delta_2+m^2, temporal reconstruction, delta J=0, exact support slices, finite massive/Maxwell kernels and support-right Cauchy evaluation are CERTIFIED; retained nonvanishing, detector propagation, infinite tail and I_abc remain OPEN CERTIFIED as the first leading Maxwell channel used by the absolute-g3 recoil word, but no feedback channel or recoil scalar is evaluated NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=coupling-stripped unrestricted canonical massive-two-form preparation, conserved switched Maxwell current and first retarded Maxwell Cauchy pair; omega=finite massive and Maxwell sine/cosine series through order five with uniform rational tails; OPEN: the first retarded Maxwell Cauchy pair is exported only at the emitter support-right slice; it has not been propagated to a detector window or contracted with d and Q_a",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "CERTIFIED for current conservation and Maxwell gauge at this finite source-to-field stage; fixed-background K_Berger quotient and full spatial sum remain OPEN",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "CERTIFIED as the first leading Maxwell channel used by the absolute-g3 recoil word, but no feedback channel or recoil scalar is evaluated; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json",
+          "result_id": "BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE",
+          "sha256": "47921d3753f9cd60d3574b4bd1fac3738412a2c7de51e6541a587bec0cde8dfd"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS.json",
+          "result_id": "BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS",
+          "sha256": "e185ed4a67549af69256e7d258ed8c4a72a2177a7cc0aadbb54113eaf0d34c26"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL.json",
+          "result_id": "BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL",
+          "sha256": "0edc5c27b5971c0aee2125a80d2b2dc5c225177c686e87aedf0a781aedb80310"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_free_emitter_first_retarded_maxwell_channel",
+      "label": "Observer / berger / detector profile / recoil free emitter first retarded maxwell channel",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "coupling-stripped unrestricted canonical massive-two-form preparation, conserved switched Maxwell current and first retarded Maxwell Cauchy pair",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "massive spatial two-form pair (q,p) to Maxwell spacetime one-form",
+        "ell": "two_j=0,...,4",
+        "k": "all passive columns k=0,...,two_j via the certified callable",
+        "m": "all component-major form rows",
+        "omega": "finite massive and Maxwell sine/cosine series through order five with uniform rational tails",
+        "parity": "D0 axial and D1 transverse detector labels",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "D0/D1 profiles, normalized switch hulls, block-diagonal degree1/degree2 massive kernels, odd tau powers and support-left evaluation are CERTIFIED; physical I+mu^-2 d delta correction and spatial tail remain OPEN finite preparation input to the absolute-g3 word only; no I_abc interval NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "CERTIFIED",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=switched detector-selected complex interval two-form polynomials and diagonal massive advanced-wave images; omega=advanced support coordinate with sine powers 1,3,5,7,9,11 and uniform source/kernel remainders; OPEN: a finite diagonal massive preparation image is callable, but no retarded recoil channel or corrected record is evaluated",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "the finite source is Dhat_1-typed; physical co-closed correction and full finite-sum quotient survival remain OPEN",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "finite preparation input to the absolute-g3 word only; no I_abc interval; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_SWITCH_INTERVAL_PROVIDER.json",
+          "result_id": "BERGER_RECOIL_SWITCH_INTERVAL_PROVIDER",
+          "sha256": "0c305308329664b7e76a42970b261086e9945fd24912516853a4a337504fb21b"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE.json",
+          "result_id": "BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE",
+          "sha256": "e74d7806383f2dd1a62c82c93e3a149c32ae3357bd5018a85e12d2f5080374ae"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_MATRIX_INTERVAL_CONVOLUTION.json",
+          "result_id": "BERGER_RECOIL_MATRIX_INTERVAL_CONVOLUTION",
+          "sha256": "f2fdcdb4d5bd735199d81e02542dd84cf1eda132952fd92828ceca0fd57c1501"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_DETECTOR_FORM_BINDING.json",
+          "result_id": "BERGER_RECOIL_DETECTOR_FORM_BINDING",
+          "sha256": "0527b172dd04fd997d5c8a61d37caa43b5ef6ebc9a0dc2770753cae0348c2add"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION.json",
+          "result_id": "BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION",
+          "sha256": "aa16a351c346b05cc9e231832cee996754b992c7485e70a0f31fb1d5c265782e"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_massive_diagonal_preparation",
+      "label": "Observer / berger / detector profile / recoil massive diagonal preparation",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "switched detector-selected complex interval two-form polynomials and diagonal massive advanced-wave images",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "spacetime two-form diagonal wave block",
+        "ell": "two_j=0,...,4",
+        "k": "all passive columns k=0,...,two_j",
+        "m": "all component-major two-form rows",
+        "omega": "advanced support coordinate with sine powers 1,3,5,7,9,11 and uniform source/kernel remainders",
+        "parity": "D0 axial and D1 transverse detector profiles",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "dimension checks, complex beta-integral composition and induced-norm remainders are CERTIFIED; detector polynomials, form matrices and Cauchy coefficients remain OPEN execution input to the absolute-g3 word only; no I_abc interval NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=complex interval vector polynomials and square matrix Green-kernel polynomials; omega=finite polynomial plus uniform source/operator remainder; OPEN: matrix/vector causal composition is callable but physical detector/form data are not bound",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "OPEN until exact spacetime d/delta matrices and conserved sources are bound",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "execution input to the absolute-g3 word only; no I_abc interval; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION.json",
+          "result_id": "BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION",
+          "sha256": "39cb2d9b5a7060d8888eab1d04ce9f7e88937f136c97b424fa25332fe31557da"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE.json",
+          "result_id": "BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE",
+          "sha256": "e74d7806383f2dd1a62c82c93e3a149c32ae3357bd5018a85e12d2f5080374ae"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_SWITCH_INTERVAL_PROVIDER.json",
+          "result_id": "BERGER_RECOIL_SWITCH_INTERVAL_PROVIDER",
+          "sha256": "0c305308329664b7e76a42970b261086e9945fd24912516853a4a337504fb21b"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json",
+          "result_id": "BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE",
+          "sha256": "47921d3753f9cd60d3574b4bd1fac3738412a2c7de51e6541a587bec0cde8dfd"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_MATRIX_INTERVAL_CONVOLUTION.json",
+          "result_id": "BERGER_RECOIL_MATRIX_INTERVAL_CONVOLUTION",
+          "sha256": "f2fdcdb4d5bd735199d81e02542dd84cf1eda132952fd92828ceca0fd57c1501"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_matrix_interval_convolution",
+      "label": "Observer / berger / detector profile / recoil matrix interval convolution",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "complex interval vector polynomials and square matrix Green-kernel polynomials",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "dimension-parametric finite form block",
+        "ell": "one supplied finite mode block",
+        "k": "one supplied passive column",
+        "m": "all supplied vector rows",
+        "omega": "finite polynomial plus uniform source/operator remainder",
+        "parity": "retarded or advanced causal orientation",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "the two-cell mutation has zero lower bounds, while 32-cell positive switch moments, finite exact form blocks and massive kernels certify both energies for m_a^2 in [1,2]; arbitrary positive masses, numerical infinite-harmonic reconstruction and recoil remain OPEN leading detector response is certified; absolute-g2 vanishes and absolute-g3 feedback remains OPEN OPEN",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "CERTIFIED",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=detector-selected full canonical massive-two-form preparations witnessed by partition-refined two_j=0,k=0 advanced Cauchy coefficients; omega=finite massive sine/cosine enclosure on m_0^2,m_1^2 in [1,2]; CERTIFIED on the validation mass domain: Green adjunction gives M_aa=g_a E_a; the coefficient-block lower bounds are strict and rational, and the physical energies include the exact positive Peter--Weyl factor 1/Vol_Berger",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "NO_CERTIFIED_MAP to the full apparatus quotient: the conserved Maxwell source and Maxwell-gauge-invariant dA record are certified, while fixed-background K_Berger descent and full apparatus Dirac reduction remain OPEN",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "NO_CERTIFIED_MAP: the exceptional compact-product resonance has no same-background Berger carrier crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: OPEN",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: OPEN",
+              "status": "OPEN"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: OPEN",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "leading detector response is certified; absolute-g2 vanishes and absolute-g3 feedback remains OPEN; detector restriction=OPEN",
+            "status": "OPEN"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO.json",
+          "result_id": "BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO",
+          "sha256": "ad84b7ba1de4d35affc4624415fe66ba4bb09927b71a77acc59257da924c9d78"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES.json",
+          "result_id": "BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES",
+          "sha256": "83663f884e69735f5233a0231d3d974d7c4886f42664cf7f1f375a841ac96019"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS.json",
+          "result_id": "BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS",
+          "sha256": "e185ed4a67549af69256e7d258ed8c4a72a2177a7cc0aadbb54113eaf0d34c26"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO.json",
+          "result_id": "BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO",
+          "sha256": "fe9441ad7028f1826b9ae585f42051c30a83c1f3273cfef1abecd64dbe5cd7fe"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_partitioned_leading_response_rank_two",
+      "label": "Observer / berger / detector profile / recoil partitioned leading response rank two",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "detector-selected full canonical massive-two-form preparations witnessed by partition-refined two_j=0,k=0 advanced Cauchy coefficients",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "massive spatial two-form Cauchy covector and positive-energy dual",
+        "ell": "two_j=0 witness",
+        "k": "passive column k=0",
+        "m": "all three spatial two-form component rows",
+        "omega": "finite massive sine/cosine enclosure on m_0^2,m_1^2 in [1,2]",
+        "parity": "D0 axial and D1 transverse detector labels",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "cosine derivative enclosure, F_tt=-AF, F_ttt=-AF_t at the flat boundary and exact spacetime d/delta blocks are CERTIFIED; positive-energy dual and spatial tail remain OPEN finite preparation input to absolute-g3 only; no I_abc NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "CERTIFIED",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=physical massive two-form value and physical-time derivative interval vectors; omega=advanced sine/cosine finite series with uniform remainders; OPEN: the physical massive preparation Cauchy pair is finite and callable, but no retarded recoil contraction is evaluated",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "the physical Proca correction enforces the spacetime coderivative constraint; it does not impose the observationally null spatial co-closed restriction; full spatial sum and fixed-background quotient remain OPEN",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "finite preparation input to absolute-g3 only; no I_abc; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json",
+          "result_id": "BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE",
+          "sha256": "47921d3753f9cd60d3574b4bd1fac3738412a2c7de51e6541a587bec0cde8dfd"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION.json",
+          "result_id": "BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION",
+          "sha256": "aa16a351c346b05cc9e231832cee996754b992c7485e70a0f31fb1d5c265782e"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION.json",
+          "result_id": "BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION",
+          "sha256": "9c3eb77cc487624bf67e8832a847daf614959a8723fed9eb1eaf7d69ced776a3"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_physical_massive_cauchy_preparation",
+      "label": "Observer / berger / detector profile / recoil physical massive cauchy preparation",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "physical massive two-form value and physical-time derivative interval vectors",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "spacetime two-form Cauchy pair",
+        "ell": "two_j=0,...,4",
+        "k": "all passive columns",
+        "m": "all component-major rows",
+        "omega": "advanced sine/cosine finite series with uniform remainders",
+        "parity": "D0 axial and D1 transverse",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "physical Proca-corrected jet, full canonical dual, zero-source mutation rail and outward interval coefficients are CERTIFIED; coefficient nonvanishing and the infinite tail remain OPEN finite preparation input to absolute-g3 only; its free U_E successor is separately certified, while I_abc remains OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "CERTIFIED",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=unrestricted canonical spatial two-form Cauchy covector and coupling-stripped positive-energy-dual preparation intervals; omega=advanced finite sine/cosine enclosure at the exact support-left slice; OPEN: finite full-canonical coupling-stripped preparation coefficients are callable, but no corrected detector record is evaluated; the co-closed restricted rail has identically zero delta(hK)",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "the unrestricted canonical reconstruction satisfies alpha=m^-2 deltaSigma p; the co-closed restriction is explicitly obstructed as an observer source; full spatial sum and fixed-background quotient remain OPEN",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "finite preparation input to absolute-g3 only; its free U_E successor is separately certified, while I_abc remains OPEN; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES.json",
+          "result_id": "BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES",
+          "sha256": "83663f884e69735f5233a0231d3d974d7c4886f42664cf7f1f375a841ac96019"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS.json",
+          "result_id": "BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS",
+          "sha256": "4ce199552fa37a8c49b90cd5beba1d605152dacd5c8f8fa336d005357657aaf9"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json",
+          "result_id": "BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE",
+          "sha256": "47921d3753f9cd60d3574b4bd1fac3738412a2c7de51e6541a587bec0cde8dfd"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION.json",
+          "result_id": "BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION",
+          "sha256": "9c3eb77cc487624bf67e8832a847daf614959a8723fed9eb1eaf7d69ced776a3"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS.json",
+          "result_id": "BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS",
+          "sha256": "e185ed4a67549af69256e7d258ed8c4a72a2177a7cc0aadbb54113eaf0d34c26"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_positive_energy_preparation_coefficients",
+      "label": "Observer / berger / detector profile / recoil positive energy preparation coefficients",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "unrestricted canonical spatial two-form Cauchy covector and coupling-stripped positive-energy-dual preparation intervals",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "spatial two-form pair (q,p)",
+        "ell": "two_j=0,...,4",
+        "k": "all passive columns k=0,...,two_j via the certified callable",
+        "m": "all component-major spatial two-form rows",
+        "omega": "advanced finite sine/cosine enclosure at the exact support-left slice",
+        "parity": "D0 axial and D1 transverse detector labels",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "four finite execution capabilities are certified; switch/profile/form binding, the complete detector provider and tail-aware stop loop remain obstructed; external numerical specialization is deferred the complete absolute-g3 symbolic word and four finite execution primitives are CERTIFIED in their stated scopes; physical channel intervals remain OBSTRUCTED NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OBSTRUCTED",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=four response-specific absolute-g3 recoil scalar shell streams; omega=Maxwell and massive block functional calculus with symbolic positive masses; OBSTRUCTED executable stream: shell aggregation, finite 2j<=4 detector coefficients, finite exact kernel intervals and a supplied-polynomial causal convolution engine are callable, but switch/profile/form binding and the stopping loop are absent",
+            "status": "OBSTRUCTED"
+          },
+          "lee_wald": {
+            "statement": "CERTIFIED at the typed shell-word level by d^2=delta^2=0 and conserved coderivative sources; no executable full-sum evaluation follows",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "the complete absolute-g3 symbolic word and four finite execution primitives are CERTIFIED in their stated scopes; physical channel intervals remain OBSTRUCTED; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
+          "result_id": "BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE",
+          "sha256": "28aec893743778eae6b9e22732a3e58a010de6075f9a9373f17a5352052ef08c"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES.json",
+          "result_id": "BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES",
+          "sha256": "83663f884e69735f5233a0231d3d974d7c4886f42664cf7f1f375a841ac96019"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT.json",
+          "result_id": "BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT",
+          "sha256": "235afae162f5373b623504d5d4c83feaf929ce8ae9190bd9dd62ef6a8b7076cd"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
+          "result_id": "BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS",
+          "sha256": "3120fc7f60a43c2990bb2aca2a1dd41b7ceec4f099bfb8b280998c6d177d5041"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS.json",
+          "result_id": "BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS",
+          "sha256": "4ce199552fa37a8c49b90cd5beba1d605152dacd5c8f8fa336d005357657aaf9"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json",
+          "result_id": "BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE",
+          "sha256": "47921d3753f9cd60d3574b4bd1fac3738412a2c7de51e6541a587bec0cde8dfd"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
+          "result_id": "BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD",
+          "sha256": "2127d1611bfa8029daae03b837bf18f55acbfe4b5efef4e39a404ba53bcb77d2"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER.json",
+          "result_id": "BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER",
+          "sha256": "9c58de32f8937b4142532d70f5a17afa9e05722ff1b7a284c1d68de40682cb2d"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION.json",
+          "result_id": "BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION",
+          "sha256": "39cb2d9b5a7060d8888eab1d04ce9f7e88937f136c97b424fa25332fe31557da"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD.json",
+          "result_id": "BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD",
+          "sha256": "6eab8f0b88c17251fc844021c862220e50c8f122abd6f2d67d53567b44a0513d"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE.json",
+          "result_id": "BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE",
+          "sha256": "e74d7806383f2dd1a62c82c93e3a149c32ae3357bd5018a85e12d2f5080374ae"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR.json",
+          "result_id": "BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR",
+          "sha256": "b83a0da0a40a0f986656a89dac2c45bfc40adcc38bbd78a03eb2ebc48264f6cb"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json",
+          "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
+          "sha256": "2262e8d2e4df775baaa51759fad339e3bbf5d71eeb544495c650c456da0abc6b"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE.json",
+          "result_id": "BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE",
+          "sha256": "5e0feb7427217b7b671ae4c133f657871e2bb1b6b97b3a048d15d2f10cb2a6fc"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_scalar_stream_activation",
+      "label": "Observer / berger / detector profile / recoil scalar stream activation",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "four response-specific absolute-g3 recoil scalar shell streams",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 2,
+        "ell": "all Berger shells with the complete generic contraction serialized",
+        "k": "detectors a=0,1 and source channels b=0,1",
+        "m": "all supported representation rows",
+        "omega": "Maxwell and massive block functional calculus with symbolic positive masses",
+        "parity": "D0 axial and D1 transverse detector profiles with two massive channels",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "the partitioned leading response is certified only for mass squared in [1,2]; arbitrary positive masses, feedback d/Q_a contractions, the complete detector provider and stream_recoil_intervals remain obstructed; physical numerical specialization is deferred absolute-g3 symbolic operator and ten finite execution primitives are CERTIFIED in their scopes; executable feedback coefficient OBSTRUCTED NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OBSTRUCTED",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=callable interval backend for the four response-specific absolute-g3 recoil shell streams; omega=nested advanced/retarded Maxwell and massive time convolutions; the detector-selected leading response is CERTIFIED rank two for mass squared in [1,2], but the callable shell aggregator still cannot create complete absolute-g3 feedback channel intervals",
+            "status": "OBSTRUCTED"
+          },
+          "lee_wald": {
+            "statement": "finite physical correction, unrestricted canonical reconstruction, conserved Maxwell source and leading Green-adjoint record are certified; the old co-closed rail is a zero-source obstruction; full spatial sum and recoil evaluation remain open",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "absolute-g3 symbolic operator and ten finite execution primitives are CERTIFIED in their scopes; executable feedback coefficient OBSTRUCTED; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
+          "result_id": "BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD",
+          "sha256": "2127d1611bfa8029daae03b837bf18f55acbfe4b5efef4e39a404ba53bcb77d2"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER.json",
+          "result_id": "BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER",
+          "sha256": "9c58de32f8937b4142532d70f5a17afa9e05722ff1b7a284c1d68de40682cb2d"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION.json",
+          "result_id": "BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION",
+          "sha256": "39cb2d9b5a7060d8888eab1d04ce9f7e88937f136c97b424fa25332fe31557da"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE.json",
+          "result_id": "BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE",
+          "sha256": "e74d7806383f2dd1a62c82c93e3a149c32ae3357bd5018a85e12d2f5080374ae"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR.json",
+          "result_id": "BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR",
+          "sha256": "b83a0da0a40a0f986656a89dac2c45bfc40adcc38bbd78a03eb2ebc48264f6cb"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_DETECTOR_FORM_BINDING.json",
+          "result_id": "BERGER_RECOIL_DETECTOR_FORM_BINDING",
+          "sha256": "0527b172dd04fd997d5c8a61d37caa43b5ef6ebc9a0dc2770753cae0348c2add"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION.json",
+          "result_id": "BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION",
+          "sha256": "aa16a351c346b05cc9e231832cee996754b992c7485e70a0f31fb1d5c265782e"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION.json",
+          "result_id": "BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION",
+          "sha256": "9c3eb77cc487624bf67e8832a847daf614959a8723fed9eb1eaf7d69ced776a3"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS.json",
+          "result_id": "BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS",
+          "sha256": "e185ed4a67549af69256e7d258ed8c4a72a2177a7cc0aadbb54113eaf0d34c26"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL.json",
+          "result_id": "BERGER_RECOIL_FREE_EMITTER_FIRST_RETARDED_MAXWELL_CHANNEL",
+          "sha256": "0edc5c27b5971c0aee2125a80d2b2dc5c225177c686e87aedf0a781aedb80310"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO.json",
+          "result_id": "BERGER_RECOIL_PARTITIONED_LEADING_RESPONSE_RANK_TWO",
+          "sha256": "fe9441ad7028f1826b9ae585f42051c30a83c1f3273cfef1abecd64dbe5cd7fe"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json",
+          "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
+          "sha256": "2262e8d2e4df775baaa51759fad339e3bbf5d71eeb544495c650c456da0abc6b"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_stream_executable_readiness",
+      "label": "Observer / berger / detector profile / recoil stream executable readiness",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "callable interval backend for the four response-specific absolute-g3 recoil shell streams",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 2,
+        "ell": "all two_j>=0 with a first validated finite-shell implementation required",
+        "k": "all passive right columns",
+        "m": "all supported representation rows",
+        "omega": "nested advanced/retarded Maxwell and massive time convolutions",
+        "parity": "D0 axial and D1 transverse detector profiles with two massive feedback channels",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "normalized switch value and physical-time derivative are enclosed on arbitrary rational cells; kernel convolution, detector profiles and form blocks remain OPEN switch input to the absolute-g3 word only; no I_abc interval NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=normalized h0/h1 value and physical-time-derivative interval hulls; omega=arbitrary rational physical-time cell; OPEN: exact switch and derivative intervals are callable but not composed with kernels or detector profiles",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "OPEN until typed form contractions are evaluated",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "switch input to the absolute-g3 word only; no I_abc interval; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES.json",
+          "result_id": "BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES",
+          "sha256": "ba2bc98d538c09530c1ac7021520b8559ee14bff040e5be8659ac829f98f6a34"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_SWITCH_INTERVAL_PROVIDER.json",
+          "result_id": "BERGER_RECOIL_SWITCH_INTERVAL_PROVIDER",
+          "sha256": "0c305308329664b7e76a42970b261086e9945fd24912516853a4a337504fb21b"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.recoil_switch_interval_provider",
+      "label": "Observer / berger / detector profile / recoil switch interval provider",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "normalized h0/h1 value and physical-time-derivative interval hulls",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "scalar clock switch multiplying massive two-forms",
+        "ell": "NOT_APPLICABLE temporal provider",
+        "k": "NOT_APPLICABLE",
+        "m": "NOT_APPLICABLE",
+        "omega": "arbitrary rational physical-time cell",
+        "parity": "switch even and derivative odd about each center",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "the two_j=3835 legacy rail would require 44,140,852 supported entries, 117,703,824 scalar recurrence applications and 662,112,780 clock-power intervals; stream fixed scalars and stop with |tail|<=B_ab E_N once B_ab is certified absolute-g3 operator is fixed, but its numerical scalar coefficient remains OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=all finite Berger profile charge blocks streamed into fixed detector/recoil scalar contractions; omega=direct exact charge-block clock transform; legacy p=0,...,28 materialization audited only; OPEN: the exact scalar stopping theorem is certified, but fixed massive-chain dual norms and the complete streamed integrand are absent",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "the full one-form tail and formal recoil operator are gauge-typed; the numerical massive-chain map remains NO_CERTIFIED_MAP",
+            "status": "NOT_APPLICABLE"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "absolute-g3 operator is fixed, but its numerical scalar coefficient remains OPEN; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_MOVING_PROFILE_CLOCK_DERIVATIVE_TAIL.json",
+          "result_id": "BERGER_MOVING_PROFILE_CLOCK_DERIVATIVE_TAIL",
+          "sha256": "83f9df58ad7c0542eba15da54da7739f49a2f483d3308eb8b9074b0f2721eadb"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE.json",
+          "result_id": "BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE",
+          "sha256": "63ec51f24e3d9adebd00b409a61ec8348d5a9ba636f3bacf984eec8a53fa0294"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM.json",
+          "result_id": "BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM",
+          "sha256": "09d51889e2396fa6388a769c9c37c69b1663f51581ed752ac26d1d9f7b776a42"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
+          "result_id": "BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE",
+          "sha256": "28aec893743778eae6b9e22732a3e58a010de6075f9a9373f17a5352052ef08c"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO.json",
+          "result_id": "BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO",
+          "sha256": "ad84b7ba1de4d35affc4624415fe66ba4bb09927b71a77acc59257da924c9d78"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT.json",
+          "result_id": "BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT",
+          "sha256": "235afae162f5373b623504d5d4c83feaf929ce8ae9190bd9dd62ef6a8b7076cd"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.response_specific_streaming_preflight",
+      "label": "Observer / berger / detector profile / response specific streaming preflight",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "all finite Berger profile charge blocks streamed into fixed detector/recoil scalar contractions",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 1,
+        "ell": "adaptive finite shells; unit L2 materialization comparison through two_j=3835",
+        "k": "all supported columns/charge blocks",
+        "m": "all supported representation rows streamed without dense retention",
+        "omega": "direct exact charge-block clock transform; legacy p=0,...,28 materialization audited only",
+        "parity": "D0 axial and D1 transverse moving profiles",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
       },
       "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
@@ -3426,6 +5491,81 @@
       "team": "closed_universe_observer"
     },
     {
+      "claim_boundary": "exact d/delta blocks diagonalize to partial_t^2+Delta on Maxwell and massive components and match the existing sine-kernel convention; profile coefficients and time convolutions remain OPEN the exact switch product rule adds +(partial_t h) alpha to the spatial recoil-current component; the absolute-g3 scalar remains OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=Lorentzian spacetime one-form and two-form Peter-Weyl blocks for the Maxwell-emitter recoil word; omega=partial_t symbol plus exact Delta_0,Delta_1,Delta_2 blocks; OPEN: this fixes the component signs of the per-shell operator word but evaluates no record",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "CERTIFIED at the block identity level by d^2=delta^2=0; full evaluated gauge-reduced sum remains OPEN",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "the exact switch product rule adds +(partial_t h) alpha to the spatial recoil-current component; the absolute-g3 scalar remains OPEN; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS.json",
+          "result_id": "BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS",
+          "sha256": "4ce199552fa37a8c49b90cd5beba1d605152dacd5c8f8fa336d005357657aaf9"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json",
+          "result_id": "BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE",
+          "sha256": "47921d3753f9cd60d3574b4bd1fac3738412a2c7de51e6541a587bec0cde8dfd"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.detector_profile.spacetime_form_block_sign_bridge",
+      "label": "Observer / berger / detector profile / spacetime form block sign bridge",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "Lorentzian spacetime one-form and two-form Peter-Weyl blocks for the Maxwell-emitter recoil word",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "1 and 2",
+        "ell": "all finite Berger representations; exact audit through two_j=4",
+        "k": "all right columns preserved by stationary spatial operators",
+        "m": "all representation rows",
+        "omega": "partial_t symbol plus exact Delta_0,Delta_1,Delta_2 blocks",
+        "parity": "all form polarizations",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
       "claim_boundary": "the exact-T temporal rail through two_j=138 remains certified, but coefficientwise uniform small-tail promotion at that cutoff is OBSTRUCTED by form two_j=139, column 69, q=-1/2; the current widened scalar evaluator is independently OBSTRUCTED at two_j=256 absolute-g3 coefficient remains blocked by the unresolved infinite-mode image NOT_APPLICABLE",
       "descriptions": {
         "causal": "OBSTRUCTED",
@@ -3570,6 +5710,96 @@
         "m": "all representation rows",
         "omega": "fixed clock-center spatial slice",
         "parity": "either selected detector polarization",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      },
+      "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "the full-canonical correction is certified in BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS; retained nonvanishing, free evolution and per-shell recoil contractions remain OPEN CERTIFIED explicit monomial g_b g_c^2 for every formal absolute-g3 channel, but the restricted preparation makes its physical source zero NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OBSTRUCTED",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "carrier=two coupling-stripped detector-selected positive-energy massive-two-form Cauchy preparations; omega=massive spectra with symbolic m_0,m_1>0; OBSTRUCTED for the old co-closed realization: deltaSigma q=deltaSigma p=0 implies alpha=0 and delta(hK)=0; scalar coupling factorization remains exact but cannot supply a nonzero record",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "the co-closed restriction is mathematically consistent but observationally null; the full-canonical finite successor restores the permitted source channel, with full harmonic survival OPEN",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "No exceptional-resonance question applies within this Berger carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "CERTIFIED explicit monomial g_b g_c^2 for every formal absolute-g3 channel, but the restricted preparation makes its physical source zero; detector restriction=NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES.json",
+          "result_id": "BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES",
+          "sha256": "83663f884e69735f5233a0231d3d974d7c4886f42664cf7f1f375a841ac96019"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO.json",
+          "result_id": "BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO",
+          "sha256": "ad84b7ba1de4d35affc4624415fe66ba4bb09927b71a77acc59257da924c9d78"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
+          "result_id": "BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE",
+          "sha256": "28aec893743778eae6b9e22732a3e58a010de6075f9a9373f17a5352052ef08c"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS.json",
+          "result_id": "BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS",
+          "sha256": "4ce199552fa37a8c49b90cd5beba1d605152dacd5c8f8fa336d005357657aaf9"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS.json",
+          "result_id": "BERGER_RECOIL_POSITIVE_ENERGY_PREPARATION_COEFFICIENTS",
+          "sha256": "e185ed4a67549af69256e7d258ed8c4a72a2177a7cc0aadbb54113eaf0d34c26"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "observer.berger.massive_emitter.coupling_stripped_preparations",
+      "label": "Observer / berger / massive emitter / coupling stripped preparations",
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "two coupling-stripped detector-selected positive-energy massive-two-form Cauchy preparations",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 1,
+        "ell": "all Berger shells; harmonic coefficients unevaluated",
+        "k": "all",
+        "m": "all",
+        "omega": "massive spectra with symbolic m_0,m_1>0",
+        "parity": "real two-form polarizations selected by D0 and D1",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
       },
       "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
@@ -5035,13 +7265,13 @@
       "team": "quantum"
     },
     {
-      "claim_boundary": "operator-level identification (Schwarzschild, l=2) plus certified horizon reach: a two-parameter ingoing-regular extra-branch family exists at every frequency (EF-chart residue spectrum {0,0,-4*I*m*omega,-2-4*I*m*omega}, kernel rank 2), so exclusion can never be future-horizon regularity; outer-boundary domains, flux, and causal disposition remain OPEN",
+      "claim_boundary": "Schwarzschild m=1, axial l=2, symbolic real frequency: the extra branch is horizon-regular, carries nonzero fixture-level horizon flux, and is bounded and luminal with Einstein-like leading falloff at infinity; no local causal decay or regularity condition removes it. Complex frequencies, general l/m, the full exterior initial-boundary problem, stability and ringdown remain OPEN",
       "descriptions": {
-        "causal": "OPEN",
+        "causal": "CERTIFIED",
         "nonlinear": "OPEN",
         "observational": "OPEN",
         "quantum": "OPEN",
-        "symplectic": "OPEN"
+        "symplectic": "CERTIFIED"
       },
       "details": {
         "mode_data": {
@@ -5050,8 +7280,8 @@
             "status": "CERTIFIED"
           },
           "lee_wald": {
-            "statement": "extra-block and cross-block flux values and signs remain open; all symplectic pairing must live in the Einstein x extra cross-block (RW branch certified null)",
-            "status": "OPEN"
+            "statement": "fixture-level horizon flux closed: extra-branch Hermitian norm nonzero with i*F^r = +|v| pi alpha > 0 for alpha > 0 (omega in {3/5, 2/7}; verifier adds 1/2), Einstein x extra cross pairing nonzero; RW block certified null, so all pairing lives in the mixed and extra sectors; symbolic omega-dependence and outer boundary OPEN",
+            "status": "CERTIFIED"
           },
           "resonance": {
             "statement": "no exterior cokernel object",
@@ -5088,6 +7318,16 @@
           "path": "black_hole_programme/certificates/BH2A_HORIZON_REACH.json",
           "result_id": "PURE_WEYL_BH2A_HORIZON_REACH",
           "sha256": "dcab47cf90e5a0120308b2031444539604d902c9cc5b788ce510f366f0d26d7f"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH2A_CROSS_FLUX.json",
+          "result_id": "PURE_WEYL_BH2A_CROSS_FLUX",
+          "sha256": "8b5cea3acb71defe98e42af2aab496e405fa5ae5bf412810af6669b569f1c593"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json",
+          "result_id": "PURE_WEYL_BH2A_CAUSAL_DISPOSITION",
+          "sha256": "036a8162e34de6292bae25b9f96bcbf80cb98d0cb9dc8f01b5de32f4a8ea54c4"
         }
       ],
       "group": "black_hole",
@@ -5099,7 +7339,7 @@
         "carrier": "metric perturbations of the static spherical chart",
         "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
         "degree": 1,
-        "ell": ">=2",
+        "ell": 2,
         "k": "n/a",
         "m": "all",
         "omega": "dynamical",
@@ -5259,7 +7499,7 @@
       "team": "black_hole"
     },
     {
-      "claim_boundary": "Schwarzschild axial l=2 only: the action-derived Lee-Wald current and the conjugate-pair null theorem are certified, but the Einstein x extra and extra x extra flux blocks, operator domains, causal well-posedness, stability and ringdown remain open",
+      "claim_boundary": "Schwarzschild axial l=2 only: the action-derived Lee-Wald current, conjugate-pair RW null theorem, and nonzero mixed/extra horizon-flux fixtures are certified; symbolic frequency dependence, the full exterior initial-boundary problem, stability and ringdown remain open",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
@@ -5274,7 +7514,7 @@
             "status": "CERTIFIED"
           },
           "lee_wald": {
-            "statement": "general axial bilinear F^t, F^r certified with the off-shell 4-alpha identity; RW-block on-shell flux -192*pi*alpha*(w1^2-w2^2)*psi1*psi2/(5*w1*w2*r) vanishes for conjugate pairs: the Einstein branch is symplectically null; cross-block and extra-block values OPEN",
+            "statement": "general axial bilinear F^t, F^r certified with the off-shell 4-alpha identity; RW-block on-shell flux -192*pi*alpha*(w1^2-w2^2)*psi1*psi2/(5*w1*w2*r) vanishes for conjugate pairs, while exact real-frequency fixtures certify nonzero Einstein x extra and extra x extra horizon flux",
             "status": "CERTIFIED"
           },
           "resonance": {
@@ -5312,6 +7552,11 @@
           "path": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
           "result_id": "PURE_WEYL_BH2A_FLUX_MATRIX",
           "sha256": "95ca6daeabb16bf93faa1bb721e3464fc5363899a344f0281d126f9a14204732"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH2A_CROSS_FLUX.json",
+          "result_id": "PURE_WEYL_BH2A_CROSS_FLUX",
+          "sha256": "8b5cea3acb71defe98e42af2aab496e405fa5ae5bf412810af6669b569f1c593"
         }
       ],
       "group": "black_hole",
@@ -5334,7 +7579,7 @@
       "team": "black_hole"
     },
     {
-      "claim_boundary": "no repository object exists",
+      "claim_boundary": "operator-level split only (Schwarzschild, l=2): Zerilli benchmark, horizon reach, flux, causal disposition all OPEN",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
@@ -5345,11 +7590,11 @@
       "details": {
         "mode_data": {
           "dispersion": {
-            "statement": "no even-parity exterior operator exists in the repository",
-            "status": "OPEN"
+            "statement": "polar l=2 rows derived; general branch-split identity delta B = (1/2) Box dRic + C.dRic - (1/6) grad grad dR - (1/12) g Box dR certified componentwise: Einstein branch injects, polar extra branch = trace-coupled second-order Lichnerowicz system",
+            "status": "CERTIFIED"
           },
           "lee_wald": {
-            "statement": "bilinear flux matrix is BH-2A/B",
+            "statement": "polar flux blocks open",
             "status": "OPEN"
           },
           "resonance": {
@@ -5377,7 +7622,13 @@
           }
         }
       },
-      "evidence": [],
+      "evidence": [
+        {
+          "path": "black_hole_programme/certificates/BH2B_POLAR_SPLIT.json",
+          "result_id": "PURE_WEYL_BH2B_POLAR_SPLIT",
+          "sha256": "1c84cd014d31e1f97b6489ef083d5e81bcf83ba08eb9aa749c19931e60d5b8d5"
+        }
+      ],
       "group": "black_hole",
       "id": "bh.mode.polar",
       "label": "Polar black-hole waves",
@@ -5387,7 +7638,7 @@
         "carrier": "metric perturbations of the static spherical chart",
         "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
         "degree": 1,
-        "ell": ">=1",
+        "ell": 2,
         "k": "n/a",
         "m": "all",
         "omega": "dynamical",
@@ -5886,7 +8137,7 @@
       "team": "d_quotient_classical"
     },
     {
-      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete\u2014strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop\u2014and the exact FV anomaly action proves structural dependence of the Ricci-scalar sector. The generic ghost n=3 triangle is projected exactly onto the scalar-flat ten-dimensional five-carrier quotient. For n=1+n=2, the pure-vector physical sum is evaluated exactly from CPT rows 1, 3 and 14, while all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. Its order-minus-two correction is in S_3, the canonical det_3 tail exists, and Wres(K), Wres(K^2), and Wres(log S_L) are exact. The finite R(K) and R(K^2) rows, reference-specific scale conversion, possible local zeta multiplicative term, simplex-integrated repository functions, generic physical fourth-order Hessian kernel, coefficients, parity-odd derivative manifest, finite normalizations, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
+      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete\u2014strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop\u2014and the exact FV anomaly action proves structural dependence of the Ricci-scalar sector. The generic ghost n=3 triangle is projected exactly onto the scalar-flat ten-dimensional five-carrier quotient; ten numerators cancel one Delta, only I10 has a nonzero direct open-edge restriction, the I28 relation holds pointwise, and all rows are integrated exactly at the normalized symmetric point. Relative-IBP primitives, punctured-corner flux and the I10 edge-bubble disposition remain open. For n=1+n=2, the pure-vector physical sum is evaluated exactly from CPT rows 1, 3 and 14, while all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. Its order-minus-two correction is in S_3; Wres(K), Wres(K^2), Wres(log S_L), and the declared order-two weighted-trace pole/scale row are exact. Both finite low-order rows, the canonical det_3 tail, the selected weighted modified determinant and the Einstein-ratio defect 5/3 are complete on the round-S4 spectral fixture. For the distinct generic weight-raised convention, the noncommuting local defect is exactly -(1/4)Wres(K^2) and specializes to -1/3. A smoothing witness proves that the generic finite values require a full primed Green kernel or spectral measure. Generic repository functions and coefficients beyond the certified barycentric factorization and symmetric fixture, the generic physical fourth-order Hessian kernel, parity-odd derivative manifest, finite normalizations, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "CERTIFIED",
@@ -5942,7 +8193,7 @@
             "status": "NO_CERTIFIED_MAP"
           },
           "anomaly_QME_dependency": {
-            "statement": "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and scheme conversion are fixed, the FV anomaly action fixes the Ricci-scalar sector, the generic ghost n=3 triangle is projected exactly onto the scalar-flat ten-dimensional five-carrier quotient, the pure-vector n=1+n=2 CPT sum is exact, and the longitudinal Schur correction has a canonical det_3 tail with exact Wres(K), Wres(K^2), and Wres(log S_L), while the finite R(K) and R(K^2) rows, reference-specific scale conversion, possible local zeta multiplicative term, simplex-integrated repository functions and coefficients, finite normalizations and complete Q1 are underdetermined",
+            "statement": "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and scheme conversion are fixed, the FV anomaly action fixes the Ricci-scalar sector, the generic ghost n=3 triangle is projected exactly onto the scalar-flat ten-dimensional five-carrier quotient, has ten exact Delta cancellations and one direct I10 edge source, and is integrated at the normalized symmetric point; the pure-vector n=1+n=2 CPT sum is exact, and the longitudinal Schur correction has exact Wres(K), Wres(K^2), Wres(log S_L), an exact declared order-two weighted-trace pole/scale row, exact round-S4 reference finite K/K2 rows, a rigorously enclosed round-S4 det_3 tail and weighted modified determinant, an exact Einstein-ratio defect 5/3, and an exact generic weight-raised local defect -(1/4)Wres(K^2) specializing to -1/3; generic relative-IBP/corner-flux and edge-bubble data, generic repository functions and coefficients, finite normalizations and complete Q1 are underdetermined",
             "status": "CERTIFIED"
           },
           "carrier_crosswalk": {
@@ -5963,7 +8214,7 @@
           ],
           "entry_kind": "CLASSICAL_TO_QUANTUM_CROSSWALK",
           "lifecycle_state": {
-            "statement": "the coefficient-bearing QME disposition, FV anomaly action, Ricci-sector dependence, selected FV carrier completion, algebraic C3 basis, parity-even third-curvature manifest, universal source kernels, exact n=3 scalar-flat five-carrier parametric projection, pure-vector n=1+n=2 CPT slice, longitudinal Schur resummation, canonical det_3 tail and all three critical Schur residues are complete in scope, but the finite R(K) and R(K^2) rows, reference-specific scale conversion, local zeta multiplicative term, the generic physical fourth-order Hessian kernel, simplex-integrated repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent",
+            "statement": "the coefficient-bearing QME disposition, FV anomaly action, Ricci-sector dependence, selected FV carrier completion, algebraic C3 basis, parity-even third-curvature manifest, universal source kernels, exact n=3 scalar-flat five-carrier parametric projection, generic barycentric factorization and symmetric-point integration, pure-vector n=1+n=2 CPT slice, longitudinal Schur resummation, all three critical Schur residues, the declared weighted-trace pole/scale row, complete round-S4 modified-determinant benchmark, exact round-S4 Einstein-ratio factorization defect, and exact selected generic weight-raised local factorization defect are complete in scope, but relative-IBP primitives and their corner/edge disposition, the generic primed Green/spectral carrier, the generic physical fourth-order Hessian kernel, generic repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent",
             "status": "NO_CERTIFIED_MAP"
           },
           "pairing_status": {
@@ -6107,6 +8358,26 @@
           "sha256": "536d2d44d2d60499c2167935b7e77fa80238a94cd9138bc2e462f7d33582cc10"
         },
         {
+          "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE.json",
+          "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE",
+          "sha256": "8073ad3800d4ad9662232769efeb45971e49b5eaf1f4b933714245d85771bd1d"
+        },
+        {
+          "path": "quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES.json",
+          "result_id": "ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES",
+          "sha256": "b16768333e62f624720130d1c922b42772f10bf7ad10ee1ac27832c847588591"
+        },
+        {
+          "path": "quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION.json",
+          "result_id": "ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION",
+          "sha256": "83a5a4583787b401330ede3b35fc48e5bd40335c5511ec2a97df54343c045ddd"
+        },
+        {
+          "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION.json",
+          "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION",
+          "sha256": "35573191405f151d5496deca171687c7b814fa0e491918331c8b8d07ca85e4bf"
+        },
+        {
           "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
           "result_id": "GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER",
           "sha256": "9475d5f80e50d61a6b7839e4f7f572ca7d9b9d84a8508f643b8d7353a2a63f1b"
@@ -6120,6 +8391,16 @@
           "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION.json",
           "result_id": "GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION",
           "sha256": "0c03bc71865c30a3a783ebf68939d61a4f81ccf796509115ffd56d32325b70af"
+        },
+        {
+          "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_BARYCENTRIC_FACTORIZATION.json",
+          "result_id": "GENERIC_BACKGROUND_GHOST_N3_BARYCENTRIC_FACTORIZATION",
+          "sha256": "2f52dd4912ac85e85c69468c888b8a38216418c143892ded7c507266a8c96ca8"
+        },
+        {
+          "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_SYMMETRIC_POINT_SIMPLEX_INTEGRATION.json",
+          "result_id": "GENERIC_BACKGROUND_GHOST_N3_SYMMETRIC_POINT_SIMPLEX_INTEGRATION",
+          "sha256": "73096ea4dea1232db39a8f68eb31a9a8468eac2ac69e6044c77fe6557223121f"
         },
         {
           "path": "quantum-weyl/transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json",
@@ -6467,6 +8748,21 @@
           "sha256": "536d2d44d2d60499c2167935b7e77fa80238a94cd9138bc2e462f7d33582cc10"
         },
         {
+          "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE.json",
+          "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE",
+          "sha256": "8073ad3800d4ad9662232769efeb45971e49b5eaf1f4b933714245d85771bd1d"
+        },
+        {
+          "path": "quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES.json",
+          "result_id": "ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES",
+          "sha256": "b16768333e62f624720130d1c922b42772f10bf7ad10ee1ac27832c847588591"
+        },
+        {
+          "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION.json",
+          "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION",
+          "sha256": "35573191405f151d5496deca171687c7b814fa0e491918331c8b8d07ca85e4bf"
+        },
+        {
           "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
           "result_id": "GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER",
           "sha256": "9475d5f80e50d61a6b7839e4f7f572ca7d9b9d84a8508f643b8d7353a2a63f1b"
@@ -6482,6 +8778,16 @@
           "sha256": "0c03bc71865c30a3a783ebf68939d61a4f81ccf796509115ffd56d32325b70af"
         },
         {
+          "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_BARYCENTRIC_FACTORIZATION.json",
+          "result_id": "GENERIC_BACKGROUND_GHOST_N3_BARYCENTRIC_FACTORIZATION",
+          "sha256": "2f52dd4912ac85e85c69468c888b8a38216418c143892ded7c507266a8c96ca8"
+        },
+        {
+          "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_SYMMETRIC_POINT_SIMPLEX_INTEGRATION.json",
+          "result_id": "GENERIC_BACKGROUND_GHOST_N3_SYMMETRIC_POINT_SIMPLEX_INTEGRATION",
+          "sha256": "73096ea4dea1232db39a8f68eb31a9a8468eac2ac69e6044c77fe6557223121f"
+        },
+        {
           "path": "quantum-weyl/transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json",
           "result_id": "SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK",
           "sha256": "5b6241ed77ee5ec7a89b210454786c99bbc96681709d89b8d868203c120bcf8f"
@@ -6493,7 +8799,7 @@
       "scope": {
         "background": "carrier-specific; no cross-background identification",
         "boundaries": "carrier-specific",
-        "carrier": "generic-background effective Diff-Weyl ghost determinant: direct minimal-CPT substitution obstructed; exact Endo-Duhamel reduction supplied; n=3 projected onto the scalar-flat ten-dimensional five-carrier quotient; the n=1+n=2 pure-vector CPT sum is exact and all longitudinal D_W towers are resummed into one normalized Schur kernel; its order-minus-two correction is in S_3, the canonical det_3 tail and exact Wres(K), Wres(K^2), and Wres(log S_L) are fixed, while the finite R(K) and R(K^2) rows, reference-specific scale conversion, possible local zeta multiplicative term and integrated repository functions remain open",
+        "carrier": "generic-background effective Diff-Weyl ghost determinant: direct minimal-CPT substitution obstructed; exact Endo-Duhamel reduction supplied; n=3 projected onto the scalar-flat ten-dimensional five-carrier quotient, with ten exact Delta cancellations, a unique direct I10 edge source and a pointwise I28 relation; all rows are integrated at the normalized symmetric point; the n=1+n=2 pure-vector CPT sum is exact and all longitudinal D_W towers are resummed into one normalized Schur kernel; its order-minus-two correction is in S_3, with exact Wres(K), Wres(K^2), Wres(log S_L), and the declared order-two weighted-trace pole/scale row; the round-S4 reference finite K/K2 rows, canonical det_3 tail and weighted modified determinant are complete; generic relative-IBP/corner-flux and edge-bubble data, physical Hessian and repository functions remain open",
         "charge_sector": "not a certified physical one-particle sector",
         "degree": "carrier-specific",
         "ell": "NO_CERTIFIED_MAP",
@@ -7583,6 +9889,126 @@
         "background": "carrier-specific; no cross-background identification",
         "boundaries": "carrier-specific",
         "carrier": "FV scalar-flat Weyl-orbit completion of the selected C log(Delta_C/mu^2) C carrier plus the exact FV anomaly action and dependent Ricci sector",
+        "charge_sector": "not a certified physical one-particle sector",
+        "degree": "carrier-specific",
+        "ell": "NO_CERTIFIED_MAP",
+        "k": "NO_CERTIFIED_MAP",
+        "m": "NO_CERTIFIED_MAP",
+        "omega": "NO_CERTIFIED_MAP",
+        "parity": "carrier-specific",
+        "theory": "pure-Weyl quantum programme"
+      },
+      "source": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "team": "quantum"
+    },
+    {
+      "claim_boundary": "This carrier remains valid in its local, spectral, or observable-algebra role, but no certified map turns it into a particle entry.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "not a physical residual mode shell",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "lee_wald": {
+            "statement": "no particle pairing crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "resonance": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "non-mode carrier guard",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "non-mode carrier guard",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "non-mode carrier guard",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "quantum_data": {
+          "BRST_cocycle": {
+            "statement": "carrier-specific; no physical residual mode imported",
+            "status": "NOT_APPLICABLE"
+          },
+          "BRST_exactness": {
+            "statement": "carrier-specific; no physical residual mode imported",
+            "status": "NOT_APPLICABLE"
+          },
+          "Hadamard_two_point_function": {
+            "statement": "no particle Hadamard crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "anomaly_QME_dependency": {
+            "statement": "carrier retains its own anomaly/QME dependency",
+            "status": "OPEN"
+          },
+          "carrier_crosswalk": {
+            "statement": "non-mode carrier to particle",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "classical_mode_imported": {
+            "statement": "carrier imported only in its declared non-particle role",
+            "status": "CERTIFIED"
+          },
+          "compatible_complex_structure": {
+            "statement": "no particle complex structure crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "dependency_tags": [
+            "EUCLIDEAN-SPECTRAL"
+          ],
+          "entry_kind": "NON_MODE_PARTICLE_GUARD",
+          "lifecycle_state": {
+            "statement": "not a particle lifecycle entry",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "pairing_status": {
+            "statement": "no particle pairing crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "particle_interpretation": {
+            "statement": "forbidden without an explicit physical residual-mode crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "state_space_status": {
+            "statement": "no particle state-space crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION.json",
+          "result_id": "ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION",
+          "sha256": "83a5a4583787b401330ede3b35fc48e5bd40335c5511ec2a97df54343c045ddd"
+        }
+      ],
+      "group": "bridges",
+      "id": "quantum.crosswalk.round_s4_schur_zeta_factorization_to_particle",
+      "label": "Quantum / crosswalk / round s4 schur zeta factorization to particle",
+      "scope": {
+        "background": "carrier-specific; no cross-background identification",
+        "boundaries": "carrier-specific",
+        "carrier": "round-unit-S4 primed scalar ghost Schur zeta factorization defect 5/3 and zeta determinant ratio; special-background non-particle spectral carrier",
         "charge_sector": "not a certified physical one-particle sector",
         "degree": "carrier-specific",
         "ell": "NO_CERTIFIED_MAP",
@@ -9483,7 +11909,7 @@
         {
           "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1",
-          "sha256": "2f5aa3e62634e0c74c54c0d1a860f9add2d29ebe2b359625465f29459527bfca"
+          "sha256": "0d952bdf76a6c2a75d1db9717adb407430226675275a9d9aa867e1e1ca4d4aa9"
         },
         {
           "path": "bridge/certificates/EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
@@ -9539,15 +11965,15 @@
   "inputs": [
     {
       "path": "black_hole_programme/atlas/black-hole-atlas-fragment.json",
-      "sha256": "930df1dddd67a2b8ac02f5fe8ed2b66b2a1c03e6052acf33747a5a7ef2ef92de"
+      "sha256": "69ddadc1a200fdb8ad2a003962307d367f2f438c5b1b3b96509d3b32940dbb81"
     },
     {
       "path": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
-      "sha256": "e0cf88987d3136a84e06d2fd87be6b3ebbfedd51d19ea14931d5b8fc257ccf3e"
+      "sha256": "47e079cf6afdd334707d908fdbd29f6ac9ea9d5a0a277cc66e560545d8717bd0"
     },
     {
       "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
-      "sha256": "4af0aecb074e0b4e3843711f45afe5b57216f885a747ed1cfd423e0ce3fc27cd"
+      "sha256": "7fef95a694d6739cbd82ba9440c3102d10a2d86be0b0c42bd1f948b1cf03e487"
     },
     {
       "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
@@ -9555,11 +11981,11 @@
     },
     {
       "path": "d_quotient_classical/atlas/nonlinear-atlas-fragment.json",
-      "sha256": "58d23291576a1342fde4da90d266e90651468640a263516314e377c334e4a956"
+      "sha256": "2d9e0ad3c63ef9c5766616894d2f5283d0b875c3256c58df22a95ccb1b60843b"
     },
     {
       "path": "quantum-weyl/atlas/quantum-atlas-fragment.json",
-      "sha256": "98172c0d73c1f589fb0403054984edbd85c0cd611c4735666f5622f541ba7d4c"
+      "sha256": "0ce58ef8dcb9606b7ae9dd101fb250263d0751da9eaa4deb2a32182b2d0b6bfd"
     }
   ],
   "publishable_inputs_only": true,
