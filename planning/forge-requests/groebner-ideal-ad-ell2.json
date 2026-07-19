@@ -1,18 +1,19 @@
 {
-  "id": "sf:forge-request/groebner-ideal-ad-ell2",
-  "kind": "work",
-  "schema": "work-v0",
-  "body": {
-    "owner": "physics-programme",
-    "state": "ACCEPTED",
-    "objective": "Exact polynomial-ideal and Groebner-basis machinery over Q, with a declared monomial order, reduction and ideal-membership witnesses, elimination support, and an independently checkable basis certificate. This blocks the Paper-13 a,d times ell=2 extra polynomial zero-locus stratum in bridge/certificates/einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.json and is the V1 adoption scout's M12 blocker. The installed msolve 0.9.4 C API is a candidate exact producer, but the Forge result and checker must use canonical Forge polynomial data rather than trusting an external transcript.",
-    "depends_on": [
-      "sf:program/work/bridge"
-    ],
-    "stop_condition": "a Forge gate reconstructs the committed Paper-13 ideal without running physics-repo Python, computes the declared reduced Groebner basis and zero-locus stratum, verifies the basis by exact S-polynomial/reduction and bidirectional ideal-membership witnesses, and cross-checks the certificate's embedded basis and monomial order; a decisive coefficient or exponent mutation is rejected",
-    "forbid": "floating-point coefficient paths; treating an msolve or other external-library rerun as independent verification; silently assuming the ideal is zero-dimensional; changing variable or monomial order without recording the crosswalk; hiding the external dependency version or licence; promoting the algebraic stratum to bounded, causal, nonlinear-all-order or physical-branch conclusions",
-    "notes": [
-      "2026-07-19 forge-coordinator: ACCEPTED \u2014 mirrored as sf:program/work/M12-groebner. Matches our own M12 second-half ranking and the V1 scout verdict. Plan: pure-Forge Buchberger over Q (declared monomial orders, reduced GB, S-poly verification, membership witnesses, elimination); msolve 0.9.4 (installed) used as an independent PRODUCER rail only \u2014 the verifying reductions are Forge-side, per your forbid."
-    ]
-  }
+ "id": "sf:forge-request/groebner-ideal-ad-ell2",
+ "kind": "work",
+ "schema": "work-v0",
+ "body": {
+  "owner": "physics-programme",
+  "state": "LANDED",
+  "objective": "Exact polynomial-ideal and Groebner-basis machinery over Q, with a declared monomial order, reduction and ideal-membership witnesses, elimination support, and an independently checkable basis certificate. This blocks the Paper-13 a,d times ell=2 extra polynomial zero-locus stratum in bridge/certificates/einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.json and is the V1 adoption scout's M12 blocker. The installed msolve 0.9.4 C API is a candidate exact producer, but the Forge result and checker must use canonical Forge polynomial data rather than trusting an external transcript.",
+  "depends_on": [
+   "sf:program/work/bridge"
+  ],
+  "stop_condition": "a Forge gate reconstructs the committed Paper-13 ideal without running physics-repo Python, computes the declared reduced Groebner basis and zero-locus stratum, verifies the basis by exact S-polynomial/reduction and bidirectional ideal-membership witnesses, and cross-checks the certificate's embedded basis and monomial order; a decisive coefficient or exponent mutation is rejected",
+  "forbid": "floating-point coefficient paths; treating an msolve or other external-library rerun as independent verification; silently assuming the ideal is zero-dimensional; changing variable or monomial order without recording the crosswalk; hiding the external dependency version or licence; promoting the algebraic stratum to bounded, causal, nonlinear-all-order or physical-branch conclusions",
+  "notes": [
+   "2026-07-19 forge-coordinator: ACCEPTED \u2014 mirrored as sf:program/work/M12-groebner. Matches our own M12 second-half ranking and the V1 scout verdict. Plan: pure-Forge Buchberger over Q (declared monomial orders, reduced GB, S-poly verification, membership witnesses, elimination); msolve 0.9.4 (installed) used as an independent PRODUCER rail only \u2014 the verifying reductions are Forge-side, per your forbid.",
+   "2026-07-19 forge-coordinator: LANDED(4f03ff2dc, tools/paper13/groebner_ad_ell2_gate.forge exit 20 both backends + ASan). math/groebner: explicit monomial orders, verified division witnesses, Buchberger -> canonical reduced GB, gb_verify bidirectional certificates, membership + elimination, over Rat and QExt. Your stop condition met in full: the committed a,d x ell=2 ideal reconstructed (cert sha256 in the gate header, no physics Python), reduced GB agrees across grevlex/lex (monomial ideal \u2014 crosswalk recorded), certificate basis AND the msolve-0.9.4 producer basis both accepted by Forge-side verification, decisive coefficient + exponent mutations rejected with membership flipped. One honesty note: your certificate's ideal is MONOMIAL, so a coefficient RESCALE is correctly non-decisive (asserted); the decisive coefficient mutation introduces a term. msolve GPL-2+, version + exact repro command recorded; producer rail only."
+  ]
+ }
 }

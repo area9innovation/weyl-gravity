@@ -1,18 +1,19 @@
 {
-  "id": "sf:forge-request/flint-arb-independent-oracle",
-  "kind": "work",
-  "schema": "work-v0",
-  "body": {
-    "owner": "physics-programme",
-    "state": "ACCEPTED",
-    "objective": "An optional, version-pinned FLINT 3.x / Arb / Acb / Calcium bridge that acts as an independent exact-or-rigorous oracle for Forge polynomial, spectral and validated-matrix kernels. Use a narrow C shim and canonical serialized values rather than exposing FLINT object layouts. First consumers are the repeated-root Schwarzschild asymptotic matrices behind Paper 14 and the Paper-13 resultant/minimal-polynomial fixtures. Ubuntu 26.04 supplies libflint-dev 3.4.0 but no flint.pc, so discovery must not require pkg-config.",
-    "depends_on": [
-      "sf:program/work/black-hole"
-    ],
-    "stop_condition": "a Forge gate records the FLINT build/version and independently cross-checks one committed Paper-14 repeated-root matrix characteristic/minimal polynomial plus rigorous Acb eigenvalue clusters, and one committed Paper-13 polynomial resultant; outputs are converted into canonical Forge exact values or explicitly tagged rigorous enclosures, and mutations of a matrix entry and enclosure bound are rejected",
-    "forbid": "using FLINT as both producer and verifier; treating an Arb/Acb enclosure as an exact symbolic value; allowing raw FLINT pointers or ownership to escape the adapter; depending only on pkg-config; replacing Forge canonical types with opaque external objects; omitting precision, version, build options, licence or dependency provenance; promoting a numerical enclosure to asymptotic admissibility, stability or a particle claim",
-    "notes": [
-      "2026-07-19 forge-coordinator: ACCEPTED \u2014 mirrored as sf:program/work/M15-flint-oracle. libflint-dev 3.4.0 confirmed installed with headers (Arb/Acb/Calcium merged into FLINT 3.x); discovery will not use pkg-config per your note. Narrow C shim + canonical serialized values; producer/verifier separation honored (FLINT is the INDEPENDENT rail, never both sides)."
-    ]
-  }
+ "id": "sf:forge-request/flint-arb-independent-oracle",
+ "kind": "work",
+ "schema": "work-v0",
+ "body": {
+  "owner": "physics-programme",
+  "state": "LANDED",
+  "objective": "An optional, version-pinned FLINT 3.x / Arb / Acb / Calcium bridge that acts as an independent exact-or-rigorous oracle for Forge polynomial, spectral and validated-matrix kernels. Use a narrow C shim and canonical serialized values rather than exposing FLINT object layouts. First consumers are the repeated-root Schwarzschild asymptotic matrices behind Paper 14 and the Paper-13 resultant/minimal-polynomial fixtures. Ubuntu 26.04 supplies libflint-dev 3.4.0 but no flint.pc, so discovery must not require pkg-config.",
+  "depends_on": [
+   "sf:program/work/black-hole"
+  ],
+  "stop_condition": "a Forge gate records the FLINT build/version and independently cross-checks one committed Paper-14 repeated-root matrix characteristic/minimal polynomial plus rigorous Acb eigenvalue clusters, and one committed Paper-13 polynomial resultant; outputs are converted into canonical Forge exact values or explicitly tagged rigorous enclosures, and mutations of a matrix entry and enclosure bound are rejected",
+  "forbid": "using FLINT as both producer and verifier; treating an Arb/Acb enclosure as an exact symbolic value; allowing raw FLINT pointers or ownership to escape the adapter; depending only on pkg-config; replacing Forge canonical types with opaque external objects; omitting precision, version, build options, licence or dependency provenance; promoting a numerical enclosure to asymptotic admissibility, stability or a particle claim",
+  "notes": [
+   "2026-07-19 forge-coordinator: ACCEPTED \u2014 mirrored as sf:program/work/M15-flint-oracle. libflint-dev 3.4.0 confirmed installed with headers (Arb/Acb/Calcium merged into FLINT 3.x); discovery will not use pkg-config per your note. Narrow C shim + canonical serialized values; producer/verifier separation honored (FLINT is the INDEPENDENT rail, never both sides).",
+   "2026-07-19 forge-coordinator: LANDED(9ed9c3acb, examples/flint_oracle_gate.forge exit 17 + tools/physics-linalg/flint_paper14_gate.forge exit 20, both backends + ASan). math/flint_oracle + a narrow C shim: -lflint direct (no pkg-config), every value crosses as a serialized string (no FLINT ownership escapes), runtime version recorded in every result. Exact channel charpoly/minpoly/resultant -> canonical Forge values, cross-railed against forge's own spectral/upoly kernels; Acb eigenvalue clusters as a TAGGED Enclosure type (exact-rational midpoint+radius, explicit precision, certified flag fails closed) \u2014 never promoted to exact. HONEST BOUNDARY per your escape clause: the Paper-14 repeated-root matrix is NOT committed as numeric entries (its dispersion polynomial (l^2-w^2)^2 is); the consumer gate uses the canonical semisimple realization and reports the capture gap \u2014 if you commit the concrete matrix, the gate upgrades in one edit."
+  ]
+ }
 }
