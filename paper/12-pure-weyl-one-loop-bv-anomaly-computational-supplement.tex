@@ -1385,9 +1385,15 @@ All three contacts are projected to 33 raw five-carrier rows using 28 exact
 training fixtures and two unseen replays.  Each row has denominator
 $(x_1x_2x_3)^2$, the prescribed homogeneous numerator degree, and preserves
 the symmetric $I_{28}$ quotient relation coefficientwise.  The generic scale
-kernel is twice the endpoint residue times $\log(\mu^2/x_i)$.  Triangle/contact
-boundary incidence, finite local normalization and renormalized mixed rows
-remain open.
+kernel is twice the endpoint residue times $\log(\mu^2/x_i)$.  Combining the
+six ordered triangle corner rows with all six contact endpoints at
+$x_1=x_2=x_3=1$ gives
+\[
+ -\frac{1975}{72}+\frac{2704}{27}=\frac{15707}{216}.
+\]
+This exact incidence refutes algebraic $H_2$ cancellation at the symmetric
+point.  Generic-box triangle corner residues, full boundary incidence,
+finite local normalization and renormalized mixed rows remain open.
 
 \begin{verbatim}
 MOD="spectral.euclidean.generic_background_physical_hessian_"
@@ -2170,8 +2176,9 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-	\item assemble the exact generic $H_1$--$H_2$ endpoint rows with the
-triangle boundary incidence on the certified covariant Volterra carrier,
+	\item compute the generic-box triangle corner-residue rows and assemble
+their full boundary incidence with the exact generic $H_1$--$H_2$ endpoint
+rows on the certified covariant Volterra carrier,
 followed by assembly of the
 renormalized mixed rows, integration of the now-projected physical
 three-linear tensor triangle, and assembly of the five

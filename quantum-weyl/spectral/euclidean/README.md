@@ -167,8 +167,12 @@ contact cells, their exact Schwinger measures, and one resolved-boundary
 Mellin extension. The logarithmic residues at all six generic contact
 endpoints are now evaluated and projected to 33 exact raw five-carrier rows;
 left/right equality, two unseen fixtures and the symmetric `I28` quotient
-section replay exactly. The triangle/contact boundary incidence, finite local
-rows and renormalized mixed-row assembly remain open.
+section replay exactly. The symmetric-point triangle/contact incidence is now
+assembled coefficientwise: `-1975/72+2704/27=15707/216`, so algebraic `H2`
+does not cancel the symmetric `M14` divergence. Generic-box triangle corner
+residues and incidence, finite local rows and renormalized mixed-row assembly
+remain open. See
+[`generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md`](../../reports/generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md).
 
 Replay with:
 

@@ -54,8 +54,10 @@ minimal subtraction with exact `log(mu^2)` scale coefficient `15707/216`
 before `(4 pi)^-2`. The generic covariant Volterra lift and all six generic
 contact endpoint residues are now exact; the latter form 33 raw five-carrier
 rows, pass two unseen momentum fixtures, and preserve the symmetric `I28`
-quotient relation. Triangle/contact boundary incidence and renormalized mixed
-rows remain open, so `M14` is not disposed.
+quotient relation. Their symmetric-point triangle/contact incidence is now
+exact and gives `-1975/72+2704/27=15707/216`, refuting algebraic `H2`
+cancellation there. Generic-box triangle residues, full incidence and
+renormalized mixed rows remain open, so generic `M14` is not disposed.
 
 No row may be used as evidence for another row merely because both use the
 word cylinder, wave, or Einstein.
@@ -68,7 +70,7 @@ The shortest independent paths are now:
 Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
-Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, assemble the exact generic H1-H2 endpoint rows with the triangle boundary incidence on the certified covariant Volterra carrier, and decide M14 before matching the universal CPT kernels to repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
+Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, compute the generic-box triangle corner-residue rows and assemble their full incidence with the exact H1-H2 endpoint rows on the certified covariant Volterra carrier, and decide generic M14 before matching the universal CPT kernels to repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    export the generic reality-folded direct-shell evaluation adapter used inside the stop loop; the complete two_j=6 validation shell is certified from 32 direct and 24 exact reality-derived blocks, while physical specialization remains deferred, after which restrict records to Z2^C
 Black hole:  polar Einstein branch SYMPLECTICALLY NULL certified (critical-gravity structure now closed in both parities; conformal direction an exact off-shell flux degeneracy); next polar extra/cross flux blocks via the realized Ricci-image composition; Zerilli-form master scalar stays fail-closed OPEN
 ```
@@ -1957,8 +1959,9 @@ Mellin minimal subtraction promotes the combined residue to the exact fixture
 `log(mu^2)` scale row. Its generic covariant Volterra lift is exact, with six
 ordered triangle cells, three contact cells and one common boundary extension.
 All six generic contact endpoint residues are now exact 33-row five-carrier
-functions. The `M14` disposition now requires their triangle/contact boundary
-incidence and renormalized mixed-row assembly. The selected generic weight-raised
+functions. Their symmetric-point incidence is exact and refutes algebraic
+`H2` cancellation; the generic `M14` disposition now requires generic-box
+triangle corner residues, full incidence and renormalized mixed-row assembly. The selected generic weight-raised
 factorization and its local order-minus-three/four BCH residue are now exact.
 The canonical
 `det_3` tail and all three Schur residues are already fixed. The exact Endo--Duhamel,

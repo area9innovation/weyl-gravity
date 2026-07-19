@@ -989,9 +989,13 @@ common Mellin parameter. Minimal subtraction promotes `15707/216` to the
 exact coefficient of `log(mu^2)` before `(4 pi)^-2`. All six generic contact
 endpoint residues are now exact and projected to 33 raw five-carrier rows,
 with two unseen momentum replays and the symmetric `I28` quotient relation.
-The next gate is their triangle/contact boundary-incidence assembly on the
-certified covariant Volterra carrier, followed by the renormalized mixed rows
-and `M14` disposition. The original
+The symmetric-point boundary incidence is now exact: the full triangle row
+evaluates to `-1975/72`, the six contact endpoints to `2704/27`, and their
+sum is the nonzero Mellin scale row `15707/216`. Thus algebraic `H2`
+cancellation of the symmetric `M14` divergence is refuted coefficientwise.
+The next gate is the generic-box triangle corner-residue row and full
+boundary-incidence assembly on the certified covariant Volterra carrier,
+followed by the renormalized mixed rows and generic `M14` disposition. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
@@ -1014,9 +1018,10 @@ non-membership theorem, and complete exact `J`-plus-two-log integrated
 functions. The remaining coefficient gate begins with supplying the generic
 primed Green/spectral carrier needed to lift the exact round-`S4` finite
 benchmark. The covariant Volterra lift of the equal-box Mellin subtraction is
-now complete, as are all generic contact endpoint residues. Its remaining
-physical gate is the triangle/contact boundary incidence. The renormalized
-mixed rows must then decide the certified physical `M14` class. The isolated
+now complete, as are all generic contact endpoint residues and their exact
+symmetric-point incidence. Its remaining physical gate is the generic-box
+triangle corner-residue row and full boundary incidence. The renormalized
+mixed rows must then decide the certified generic physical `M14` class. The isolated
 three-linear integral may not be
 promoted before that route closes.
 Those are followed by the five

@@ -247,11 +247,17 @@ or quantum-master-equation result.
   `H1-H2` contact cells under that extension. All three generic logarithmic
   contact endpoint residues are now exact 33-row functions on the same
   five-carrier quotient, with two unseen-fixture replays and exact symmetric
-  `I28` reduction. Triangle/contact boundary incidence, finite local rows,
-  `M14` disposition, and five form-factor assembly remain fail-closed.
+  `I28` reduction. Their symmetric-point boundary incidence is now assembled
+  exactly: the triangle and contact contributions are `-1975/72` and
+  `2704/27`, so algebraic `H2` does not cancel the nonzero `15707/216` scale
+  row. Generic-box triangle residues and incidence, finite local rows, `M14`
+  disposition, and five form-factor assembly remain fail-closed.
 - [`reports/generic-background-physical-hessian-h1-h2-contact-residue-projection.md`](reports/generic-background-physical-hessian-h1-h2-contact-residue-projection.md)
   records those exact generic contact residues, scale-log kernels, frozen
   fixture ledger, independent unseen replay, and strict claim boundary.
+- [`reports/generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md`](reports/generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md)
+  assembles the exact symmetric triangle/contact incidence, refutes `H2`
+  cancellation there, and records the generic-box residue gate explicitly.
 - [`reports/local-dimension-four-candidates.md`](reports/local-dimension-four-candidates.md)
   records the generated three-dimensional quadratic curvature ansatz, its
   two-dimensional Weyl-closed kernel, independent target-native even/odd

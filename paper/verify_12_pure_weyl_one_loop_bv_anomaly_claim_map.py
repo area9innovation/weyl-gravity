@@ -76,6 +76,7 @@ def main() -> None:
         "-3.9781454856154116274753955548059869205821661933",
         "full primed Green kernel or equivalent spectral measure",
         "Same-gauge physical-Hessian linear-curvature import",
+        "Algebraic $H_2$ cancellation of the symmetric $M_{14}$ divergence is therefore refuted",
     ]
     for fragment in required_manuscript_fragments:
         assert fragment in normalized_manuscript, fragment
@@ -375,6 +376,20 @@ def main() -> None:
     assert claims["physical_Hessian_generic_contact_endpoint_residues_projected"] is True
     assert claims["physical_Hessian_generic_contact_projection_row_count"] == 33
     assert claims["physical_Hessian_generic_contact_unseen_fixture_count"] == 2
+    assert claims["physical_Hessian_symmetric_mixed_boundary_incidence_assembled"] is True
+    assert claims["physical_Hessian_symmetric_H2_cancellation_refuted"] is True
+    assert claims["physical_Hessian_symmetric_triangle_full_log_coefficient"] == {
+        "numerator": -1975,
+        "denominator": 72,
+    }
+    assert claims["physical_Hessian_symmetric_contact_full_log_coefficient"] == {
+        "numerator": 2704,
+        "denominator": 27,
+    }
+    assert claims["physical_Hessian_symmetric_combined_log_mu2_coefficient"] == {
+        "numerator": 15707,
+        "denominator": 216,
+    }
     assert payload["explicit_nonclaims"][
         "physical_n3_three_linear_triangle_integrated"
     ] is False
@@ -387,7 +402,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "ASSEMBLE_TRIANGLE_AND_CONTACT_BOUNDARY_INCIDENCE_ON_COVARIANT_VOLTERRA_CARRIER_AND_DECIDE_M14"
+        == "COMPUTE_GENERIC_BOX_TRIANGLE_CORNER_RESIDUE_ROWS_AND_ASSEMBLE_FULL_BOUNDARY_INCIDENCE"
     )
 
     dependencies = {}
@@ -421,7 +436,7 @@ def main() -> None:
         "denominator": 6561,
     }
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
-    assert len(payload["inputs"]) == 54
+    assert len(payload["inputs"]) == 55
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -465,6 +480,9 @@ def main() -> None:
     ]
     physical_hessian_contacts = dependencies[
         "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_RESIDUE_PROJECTION"
+    ]
+    physical_hessian_incidence = dependencies[
+        "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_SYMMETRIC_MIXED_BOUNDARY_INCIDENCE"
     ]
     generic_ghost_cpt = dependencies["GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION"]
     generic_ghost_endo = dependencies["GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION"]
@@ -614,6 +632,19 @@ def main() -> None:
     assert physical_hessian_volterra["claim_flags"][
         "RENORMALIZED_GENERIC_MIXED_ROWS_ASSEMBLED"
     ] is False
+    assert physical_hessian_contacts["interpolation"]["row_count"] == 33
+    assert physical_hessian_contacts["claim_flags"][
+        "ALL_THREE_CONTACT_CELLS_PROJECTED"
+    ] is True
+    assert physical_hessian_incidence["claim_flags"][
+        "SYMMETRIC_POINT_TRIANGLE_CONTACT_INCIDENCE_ASSEMBLED"
+    ] is True
+    assert physical_hessian_incidence["claim_flags"][
+        "SYMMETRIC_POINT_H2_CANCELLATION_OF_M14_REFUTED"
+    ] is True
+    assert physical_hessian_incidence["M14_disposition"][
+        "generic_box_disposition"
+    ] == "NOT_COMPUTED"
     assert generic_ghost_cpt["CPT_applicability_decision"]["verdict"] == (
         "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
     )
