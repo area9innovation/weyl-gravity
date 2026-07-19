@@ -74,6 +74,16 @@ def test_finite_nested_convolution_is_certified_without_physical_binding():
     assert readiness["observer_data"]["detector_response"]["status"] == "OBSTRUCTED"
 
 
+def test_exact_mode_kernel_payload_is_certified_without_interval_promotion():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.detector_profile.recoil_exact_mode_kernel_payload"
+    )
+    assert row["descriptions"]["causal"] == "CERTIFIED"
+    assert row["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert row["observer_data"]["profile_green_boundary_dependencies"]["status"] == "CERTIFIED"
+
+
 def test_mixed_unary_precedes_apparatus_and_affine_k_morphism():
     value = build()
     row = next(row for row in value["entries"] if row["id"] == "observer.berger.massive_emitter.preparation_pair")

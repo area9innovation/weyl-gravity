@@ -104,6 +104,10 @@ rows now also cite a separately certified finite polynomial causal-convolution
 engine.  Actual Berger kernel/switch/profile binding remains `OBSTRUCTED`, as
 do the complete all-shell detector provider and tail-aware stop loop.  External parameters are
 deferred, so none of the four numerical streams is active.
+The exact-mode-kernel row is separately `CERTIFIED`: all twenty Maxwell and
+massive form blocks through `two_j=4` expose sparse exact operators and six
+factored sine-kernel coefficients.  It retains symbolic positive mass and does
+not promote an interval enclosure, Green image or channel value.
 The coupling-stripped preparation row is `CERTIFIED`: it factors the selection
 coupling from the advanced covector and fixes `tilde_u_b` as the formal Cauchy
 datum.  Leading columns carry `g_b`, while absolute-`g3` recoil channels carry

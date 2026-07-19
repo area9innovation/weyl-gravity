@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "symbolic_parameters", "blocks", "payload_sha256", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-exact-mode-kernel-payload-v1"},
+    "result_id": {"const": "BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "EXACT_ALGEBRAIC_FINITE_MODE_KERNEL_PAYLOAD_EXPORTED_INTERVAL_BINDING_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 3, "maxProperties": 3},
+    "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "symbolic_parameters": {"const": [{"name": "mu_squared", "domain": "positive_real", "specialization_status": "DEFERRED"}]},
+    "blocks": {
+      "type": "array", "minItems": 20, "maxItems": 20,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["two_j", "form_degree", "family", "dimension", "mass_squared", "operator_nonzero_entries", "series_coefficients", "recurrence_defect_count_through_order4"],
+        "properties": {
+          "two_j": {"type": "integer", "minimum": 0, "maximum": 4},
+          "form_degree": {"type": "integer", "minimum": 0, "maximum": 2},
+          "family": {"enum": ["Maxwell", "massive_two_form"]},
+          "dimension": {"type": "integer", "minimum": 1},
+          "mass_squared": {"enum": ["0", "mu_squared"]},
+          "operator_nonzero_entries": {"type": "array"},
+          "series_coefficients": {"type": "array", "minItems": 6, "maxItems": 6},
+          "recurrence_defect_count_through_order4": {"const": 0}
+        }
+      }
+    },
+    "payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["EXACT_SPARSE_MODE_OPERATORS_EXPORTED", "EXACT_SINE_KERNEL_SERIES_COEFFICIENTS_EXPORTED", "MAXWELL_AND_MASSIVE_BLOCKS_TWO_J0_TO_4_EXPORTED", "MASS_RANGE_DECLARED", "INTERVAL_KERNEL_ENCLOSURES_EXPORTED", "ACTUAL_SWITCH_AND_DETECTOR_BINDING_EXPORTED", "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED", "QUANTUM_CLAIM"],
+      "properties": {
+        "EXACT_SPARSE_MODE_OPERATORS_EXPORTED": {"const": true},
+        "EXACT_SINE_KERNEL_SERIES_COEFFICIENTS_EXPORTED": {"const": true},
+        "MAXWELL_AND_MASSIVE_BLOCKS_TWO_J0_TO_4_EXPORTED": {"const": true},
+        "MASS_RANGE_DECLARED": {"const": false},
+        "INTERVAL_KERNEL_ENCLOSURES_EXPORTED": {"const": false},
+        "ACTUAL_SWITCH_AND_DETECTOR_BINDING_EXPORTED": {"const": false},
+        "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "INTERVAL_ENCLOSE_ALGEBRAIC_KERNEL_PAYLOAD_AND_BIND_SWITCH_PROFILE_FACTORS"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

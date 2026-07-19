@@ -60,7 +60,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, and supply the same-gauge generic-background full-BV Hessian matching the exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    bind actual Berger kernels, switches and detector intervals to the certified finite nested-convolution engine while extending coefficient coverage beyond two_j=4, then build the tail-aware loop before restricting records to Z2^C
+Observer:    interval-enclose the exact finite Berger kernel payload and bind switches/detector intervals to the nested engine while extending coverage beyond two_j=4, then build the tail-aware loop before restricting records to Z2^C
 Black hole:  polar reach/flux/disposition via the certified general split; then complex-frequency structure
 ```
 
@@ -521,7 +521,10 @@ advanced-Maxwell image for `two_j=0,...,4`.  It is not a complete all-shell
 provider, massive image or recoil evaluation.  A finite-slab Volterra engine
 also composes supplied retarded/advanced polynomial interval kernels with
 exact beta factors and uniform rational remainder propagation.  Actual Berger
-kernel/switch/profile binding, extension beyond `two_j=4`, and the tail-aware
+form-Laplacian matrices and the first six factored sine-kernel coefficients
+are now machine-readable for all twenty Maxwell/massive blocks through
+`two_j=4`, with symbolic positive mass retained.  Their interval enclosure,
+switch/profile binding, extension beyond `two_j=4`, and the tail-aware
 four-stream stop loop remain `OBSTRUCTED`, so external numerical inputs remain
 deferred under the strict specialization schema.
 The coupling-stripped preparation successor fixes the formal-order convention
@@ -1646,6 +1649,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` (fired; exact supplied-channel aggregation certified) | construct physical `I_abc[two_j,k]` intervals with detector coefficients and nested causal convolutions; do not treat the exact fixture as recoil data |
 | `BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER` (fired for the validated advanced-Maxwell image through `two_j=4`) | extend coefficient access beyond `two_j=4` and through the massive/recoil chain; do not identify finite Maxwell coefficients with physical `I_abc` intervals |
 | `BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION` (fired for supplied polynomial interval enclosures) | bind the actual Berger Maxwell/massive kernels, switches, detector coefficients and form contractions; do not identify the exact beta-integral fixture with a physical channel |
+| `BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD` (fired for twenty physical blocks through `two_j=4`) | interval-enclose the algebraic coefficients over a declared positive-mass domain and bind switch/profile factors; do not invent masses or identify factored series data with a Green image |
 | `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` (fired; two finite capabilities certified, complete provider/nested convolution/stop loop obstructed) | extend the detector provider beyond `two_j=4`, implement the nested causal convolution and tail-aware four-stream stop loop; only then activate the exact numerical input schema |
 | `BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` (fired, capacity label superseded) | retain the streamed route and its computed `two_j=138` working rail, but use the normalization repair for the authoritative necessary capacity lower bound; do not treat either rail as a convergence cutoff |
 | `BERGER_STREAMABLE_POLARIZATION_SECTORS` (fired) | evaluate the diagonal/first-off-diagonal high-mode coefficients in the certified three-dimensional-or-smaller charge blocks and close the Green-weighted operator-norm tail |

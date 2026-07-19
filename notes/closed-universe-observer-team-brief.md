@@ -809,9 +809,12 @@ certified uniform remainder from the advanced-Maxwell image through
 `two_j=4`.  `BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION` additionally
 certifies exact beta-integral composition and rational uniform-remainder
 propagation for supplied finite-slab retarded/advanced polynomial enclosures.
-The actual Berger kernels, switches, detector intervals and form contractions
-are not yet bound to that engine.  Thus the complete all-shell detector
-provider, physical nested-convolution backend and tail-aware aggregate stop
+`BERGER_RECOIL_EXACT_MODE_KERNEL_PAYLOAD` now supplies the missing exact
+algebraic carrier: sparse form-Laplacian matrices and six factored sine-kernel
+coefficients for all twenty Maxwell/massive blocks through `two_j=4`, retaining
+symbolic positive mass.  Interval enclosure, switches, detector intervals and
+form contractions are not yet bound to the engine.  Thus the complete
+all-shell detector provider, physical nested-convolution backend and tail-aware aggregate stop
 loop remain `OBSTRUCTED`.  Supplying
 masses and couplings would still produce no physical interval.  The exact-
 rational input schema remains deferred.
