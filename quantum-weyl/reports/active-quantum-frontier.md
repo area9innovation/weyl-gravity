@@ -135,7 +135,11 @@ The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
 and rational corner flux. Four explicit primitives cover every orientation,
 and all ten formulas regress exactly to the independent symmetric-point
-integration. The next coefficient gate is solely the pole-four `I29` row.
+integration. The pole-four `I29` row is now also reduced by a full exact
+55-row relative-IBP identity with tangent/master/target ranks `46/49/49`.
+Its corner flux is rational, it uses the same three transcendental masters,
+and its symmetric-point value agrees exactly with the independent simplex
+integration. All eleven generic ghost `n=3` functions are therefore complete.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute
@@ -456,8 +460,7 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. reduce the pole-four `I29` row to the certified triangle/log master system,
-   or supply the same-gauge generic-background physical fourth-order Hessian;
+1. supply the same-gauge generic-background physical fourth-order Hessian;
 2. supply the full generic primed Green kernel or spectral measure for the
    global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the
    physical Hessian to integrate

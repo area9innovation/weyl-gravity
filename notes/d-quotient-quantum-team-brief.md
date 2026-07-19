@@ -904,8 +904,13 @@ now `S3`-covariant, homogeneous and integrable and reduces the two derivatives
 to `J_triangle` plus `log(x2/x1)` and `log(x3/x1)`. In every canonical
 primitive the only nonzero corner has equal angular weights, so it integrates
 to a rational function. All ten generic pole-three functions are therefore
-complete and regress exactly to the symmetric-point certificate. Only the
-pole-four `I29` reduction remains open. Exact proper-time integration now gives
+complete and regress exactly to the symmetric-point certificate. The sole
+pole-four `I29` row is also complete: an exact 55-row relative-IBP identity
+has ranks `46/49/49`, introduces no new transcendental master, and reduces
+the rational corner flux to the same `J_triangle` plus two-log basis. Its
+specialization is exactly
+`-496 J_triangle/6561 + 1160/6561`, closing all eleven generic ghost `n=3`
+functions. Exact proper-time integration now gives
 `G_H0=G_F-(1/3)d Delta_0^-2 delta` and reduces the curved `n=1/n=2`
 nonminimal architecture to five minimal vector/scalar resolvent carriers,
 with coefficients `(1,-1/3)` and `(-1/2,1/3,-1/18)`. The pure-vector
@@ -969,9 +974,8 @@ and weighted modified determinant computed. The selected weight-raised local
 zeta term is also exact. The ten pole-three generic barycentric rows now have
 exact relative-simplex IBP primitives, a complete punctured-corner
 non-membership theorem, and complete exact `J`-plus-two-log integrated
-functions. The remaining local gate begins with reducing the pole-four `I29`
-row and supplying the
-generic primed Green/spectral carrier needed to lift the exact round-`S4`
+functions. The remaining coefficient gate begins with supplying the generic
+primed Green/spectral carrier needed to lift the exact round-`S4`
 finite benchmark, together with the physical fourth-order
 Hessian kernel, followed by the five
 parity-even third-curvature repository
@@ -1082,6 +1086,9 @@ witnesses are in
 The exact scalar-triangle differential system, rational corner flux and all
 ten generic pole-three functions are in
 [`generic-background-ghost-n3-pole3-integrated-functions.md`](../quantum-weyl/reports/generic-background-ghost-n3-pole3-integrated-functions.md).
+The full 55-row pole-four reduction, rational corner flux and eleventh generic
+function are in
+[`generic-background-ghost-n3-i29-integrated-function.md`](../quantum-weyl/reports/generic-background-ghost-n3-i29-integrated-function.md).
 The exact anomaly action and Ricci-sector dependence theorem are recorded in
 [`fv-anomaly-action-ricci-sector.md`](../quantum-weyl/reports/fv-anomaly-action-ricci-sector.md).
 The generated atlas records it as

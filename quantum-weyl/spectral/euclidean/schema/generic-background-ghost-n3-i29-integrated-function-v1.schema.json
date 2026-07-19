@@ -1,0 +1,293 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/symplectic-reconstruction/quantum-weyl-generic-background-ghost-n3-i29-integrated-function-v1.schema.json",
+  "title": "Generic background ghost n=3 I29 integrated function",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "convention",
+    "rank_ledger",
+    "exact_reconstruction",
+    "master_coordinates",
+    "function_basis_coordinates",
+    "corner_flux",
+    "pivot_columns",
+    "tangent_rows",
+    "augmented_rows",
+    "identity_ledger",
+    "formula_digest",
+    "claim_flags",
+    "dependencies",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-ghost-n3-i29-integrated-function-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_GHOST_N3_I29_INTEGRATED_FUNCTION"},
+    "result_state": {"const": "COEFFICIENT_COMPUTED"},
+    "lifecycle_state": {"const": "ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_COMPLETE_REPOSITORY_ASSEMBLY_OPEN"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "EUCLIDEAN-SPECTRAL"}],
+      "items": false,
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "signature", "kinematics", "channel_id", "denominator_power", "output"],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": "Euclidean"},
+        "kinematics": {"type": "string", "minLength": 1},
+        "channel_id": {"const": "I29_123"},
+        "denominator_power": {"const": 4},
+        "output": {"type": "string", "minLength": 1}
+      }
+    },
+    "convention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Delta", "lambda", "target", "function_basis", "overall_loop_prefactor"],
+      "properties": {
+        "Delta": {"type": "string", "minLength": 1},
+        "lambda": {"type": "string", "minLength": 1},
+        "target": {"type": "string", "minLength": 1},
+        "function_basis": {
+          "type": "array",
+          "prefixItems": [
+            {"const": "J_triangle"},
+            {"const": "log_x2_over_x1"},
+            {"const": "log_x3_over_x1"},
+            {"const": "rational_corner"}
+          ],
+          "items": false,
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "overall_loop_prefactor": {"const": "not included"}
+      }
+    },
+    "rank_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tangent_rank", "tangent_plus_masters_rank", "tangent_plus_masters_and_target_rank", "ambient_numerator_dimension", "raw_tangent_column_count", "canonical_tangent_column_count", "master_count"],
+      "properties": {
+        "tangent_rank": {"const": 46},
+        "tangent_plus_masters_rank": {"const": 49},
+        "tangent_plus_masters_and_target_rank": {"const": 49},
+        "ambient_numerator_dimension": {"const": 55},
+        "raw_tangent_column_count": {"const": 84},
+        "canonical_tangent_column_count": {"const": 46},
+        "master_count": {"const": 3}
+      }
+    },
+    "exact_reconstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lambda_denominator_power", "master_numerator_degrees", "interpolation_point_count", "interpolation_points", "holdout_points", "full_55_row_symbolic_relative_IBP_defect"],
+      "properties": {
+        "lambda_denominator_power": {"const": 5},
+        "master_numerator_degrees": {
+          "type": "array",
+          "prefixItems": [{"const": 7}, {"const": 8}, {"const": 8}],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "interpolation_point_count": {"const": 45},
+        "interpolation_points": {"$ref": "#/$defs/points"},
+        "holdout_points": {"$ref": "#/$defs/points"},
+        "full_55_row_symbolic_relative_IBP_defect": {"const": "ZERO"}
+      }
+    },
+    "master_coordinates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["J_triangle", "M_x1", "M_x2"],
+      "properties": {
+        "J_triangle": {"$ref": "#/$defs/rationalFunction"},
+        "M_x1": {"$ref": "#/$defs/rationalFunction"},
+        "M_x2": {"$ref": "#/$defs/rationalFunction"}
+      }
+    },
+    "function_basis_coordinates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["J_triangle", "log_x2_over_x1", "log_x3_over_x1", "rational_corner"],
+      "properties": {
+        "J_triangle": {"$ref": "#/$defs/rationalFunction"},
+        "log_x2_over_x1": {"$ref": "#/$defs/rationalFunction"},
+        "log_x3_over_x1": {"$ref": "#/$defs/rationalFunction"},
+        "rational_corner": {"$ref": "#/$defs/rationalFunction"}
+      }
+    },
+    "corner_flux": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["corner_ids", "corner_numerator_degrees", "angular_moments", "integrated_corner_numerators_over_lambda5", "total_flux"],
+      "properties": {
+        "corner_ids": {
+          "type": "array",
+          "prefixItems": [{"const": "alpha0_vertex"}, {"const": "alpha1_vertex"}, {"const": "alpha2_vertex"}],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "corner_numerator_degrees": {
+          "type": "array",
+          "items": {"type": "integer", "minimum": 0, "maximum": 1},
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "angular_moments": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["I0", "I1"],
+          "properties": {
+            "I0": {"const": "(a+b)/(2*a^2*b^2)"},
+            "I1": {"const": "1/(2*a*b^2)"}
+          }
+        },
+        "integrated_corner_numerators_over_lambda5": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/rationalFunction"},
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "total_flux": {"$ref": "#/$defs/rationalFunction"}
+      }
+    },
+    "pivot_columns": {"$ref": "#/$defs/integerVector"},
+    "tangent_rows": {"$ref": "#/$defs/integerVector"},
+    "augmented_rows": {"$ref": "#/$defs/integerVector"},
+    "identity_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["S3_covariance", "symmetric_point", "symmetric_point_J_coefficient", "symmetric_point_rational_term", "symmetric_point_status"],
+      "properties": {
+        "S3_covariance": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["permutation", "defects"],
+            "properties": {
+              "permutation": {"$ref": "#/$defs/integerVector"},
+              "defects": {"const": "ZERO"}
+            }
+          },
+          "minItems": 6,
+          "maxItems": 6
+        },
+        "symmetric_point": {
+          "type": "array",
+          "prefixItems": [{"const": 1}, {"const": 1}, {"const": 1}],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "symmetric_point_J_coefficient": {"$ref": "#/$defs/rational"},
+        "symmetric_point_rational_term": {"$ref": "#/$defs/rational"},
+        "symmetric_point_status": {"const": "EXACT_MATCH"}
+      }
+    },
+    "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["I29_POLE4_REDUCED", "I29_GENERIC_INTEGRATED_FUNCTION_COMPUTED", "ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_COMPUTED", "I29_REQUIRES_NEW_TRANSCENDENTAL_MASTER", "I29_CORNER_FLUX_RATIONAL", "COMPLETE_GENERIC_GHOST_DETERMINANT_COMPUTED", "COMPLETE_REPOSITORY_CUBIC_FORM_FACTORS_ASSEMBLED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "LORENTZIAN_CERTIFIED", "RESIDUAL_TRANSFER_AUTHORIZED"],
+      "properties": {
+        "I29_POLE4_REDUCED": {"const": true},
+        "I29_GENERIC_INTEGRATED_FUNCTION_COMPUTED": {"const": true},
+        "ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_COMPUTED": {"const": true},
+        "I29_REQUIRES_NEW_TRANSCENDENTAL_MASTER": {"const": false},
+        "I29_CORNER_FLUX_RATIONAL": {"const": true},
+        "COMPLETE_GENERIC_GHOST_DETERMINANT_COMPUTED": {"const": false},
+        "COMPLETE_REPOSITORY_CUBIC_FORM_FACTORS_ASSEMBLED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["barycentric_factorization", "scalar_triangle_differential_system", "symmetric_point_integration"],
+      "properties": {
+        "barycentric_factorization": {"$ref": "#/$defs/reference"},
+        "scalar_triangle_differential_system": {"$ref": "#/$defs/reference"},
+        "symmetric_point_integration": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "next_gate": {"const": "ASSEMBLE_THE_ELEVEN_GHOST_FUNCTIONS_WITH_THE_PHYSICAL_FOURTH_ORDER_HESSIAN_INTO_THE_FIVE_REPOSITORY_CARRIERS"},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exponents", "coefficient"],
+      "properties": {
+        "exponents": {
+          "type": "array",
+          "items": {"type": "integer", "minimum": 0},
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "coefficient": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "rationalFunction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator_terms", "denominator_terms"],
+      "properties": {
+        "numerator_terms": {"type": "array", "items": {"$ref": "#/$defs/term"}},
+        "denominator_terms": {"type": "array", "items": {"$ref": "#/$defs/term"}, "minItems": 1}
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "integerVector": {
+      "type": "array",
+      "items": {"type": "integer", "minimum": 0}
+    },
+    "points": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {"type": "integer"},
+        "minItems": 3,
+        "maxItems": 3
+      }
+    }
+  }
+}

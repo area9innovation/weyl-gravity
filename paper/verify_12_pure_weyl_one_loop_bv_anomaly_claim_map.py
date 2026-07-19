@@ -70,6 +70,7 @@ def main() -> None:
         "Generic pole-three relative-simplex IBP reduction",
         "\\lambda(B_{\\rm corner-zero})=0",
         "Complete generic functions for the ten pole-three rows",
+        "Complete generic pole-four $I_{29}$ function",
         "\\lambda\\,\\partial_{x_1}J_\\triangle",
         "0.4981635654196290984312532999414818723861192934",
         "-3.9781454856154116274753955548059869205821661933",
@@ -307,7 +308,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "SUPPLY_I29_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
+        == "SUPPLY_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
     )
 
     dependencies = {}
@@ -330,7 +331,18 @@ def main() -> None:
     assert claims["scalar_triangle_differential_system_computed"] is True
     assert claims["generic_ghost_n3_ten_pole3_integrated_functions"] is True
     assert claims["generic_ghost_n3_pole3_integrated_symmetric_regressions"] == 10
-    assert len(payload["inputs"]) == 44
+    assert claims["generic_ghost_n3_I29_pole4_reduced"] is True
+    assert claims["generic_ghost_n3_I29_full_symbolic_defect"] == "ZERO"
+    assert claims["generic_ghost_n3_I29_symmetric_J_coefficient"] == {
+        "numerator": -496,
+        "denominator": 6561,
+    }
+    assert claims["generic_ghost_n3_I29_symmetric_rational_term"] == {
+        "numerator": 1160,
+        "denominator": 6561,
+    }
+    assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
+    assert len(payload["inputs"]) == 45
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

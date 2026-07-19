@@ -1513,8 +1513,63 @@ MOD="${MOD}pole3_integrated_functions"
 PYTHONPATH=quantum-weyl python3 -m "$MOD"
 \end{verbatim}
 
-The pole-four $I_{29}$ row, complete ghost determinant and physical
-fourth-order Hessian remain open.
+\subsection{Complete pole-four I29 function}
+
+The remaining carrier is
+\[
+ I_{29}^{123}=-\frac{16}{27}\int_{\Delta_2}
+ \frac{(\alpha_0\alpha_1\alpha_2)^3}{\Delta^4}.
+\]
+For a pole-four primitive the relative-IBP operator is
+\[
+ \frac{\partial_AP+\partial_BQ}{\Delta^3}
+ -3\frac{P\partial_A\Delta+Q\partial_B\Delta}{\Delta^4}.
+\]
+The ambient numerator dimension is $55$.  The 84 raw tangent columns reduce
+to a canonical rank-$46$ image.  With the scalar triangle and two derivative
+masters the exact ranks are
+\[
+ 46,\qquad 49,\qquad 49
+\]
+for the tangent, tangent-plus-master, and tangent-plus-master-plus-target
+spans.  Therefore $I_{29}$ introduces no new transcendental master.
+
+The three master coefficients have common denominator $\lambda^5$ and
+numerator degrees $7,8,8$.  The producer reconstructs them from 45 exact
+unisolvent fixtures, checks five independent holdouts, and then solves the
+remaining primitive coefficients and verifies the complete 55-row symbolic
+identity.  The last step, rather than interpolation, is the membership proof.
+
+All corner numerator degrees are one.  The exact moments
+\[
+ \int_0^1\frac{\dd t}{(a+(b-a)t)^3}
+ =\frac{a+b}{2a^2b^2},\qquad
+ \int_0^1\frac{t\,\dd t}{(a+(b-a)t)^3}
+ =\frac1{2ab^2}
+\]
+make the total corner flux rational.  Substitution of the independently
+certified scalar-triangle differential system gives the same
+$J_\triangle$, two-log, rational basis as the pole-three functions.  All six
+$S_3$ relabellings vanish, and the symmetric specialization is
+\[
+ I_{29}(1,1,1)=-\frac{496}{6561}J_\triangle+\frac{1160}{6561}.
+\]
+
+\begin{verbatim}
+TEST="spectral.euclidean.tests.test_generic_background_ghost_n3_"
+TEST="${TEST}i29_integrated_function"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+MOD="spectral.euclidean.verify_generic_background_ghost_n3_"
+MOD="${MOD}i29_integrated_function"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+\end{verbatim}
+
+The first command is the fast stored-artifact tier.  The second independently
+replays the exact 46-column solve and full identity.  The producer's
+approximately 45-second reconstruction is reserved for the publication tier.
+All eleven generic ghost $n=3$ functions are now complete; the full ghost
+determinant, physical fourth-order Hessian and repository form-factor assembly
+remain open.
 
 \subsection{Exact symmetric-point simplex integration}
 
@@ -1560,10 +1615,10 @@ PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 \end{verbatim}
 
 This remains an independent normalized symmetric-point fixture.  The ten
-pole-three generic functions are now complete by the preceding differential
-and corner calculation; the pole-four $I_{29}$ function, complete ghost
-determinant, physical fourth-order Hessian, combined repository coefficients
-and complete $\Gamma_1/Q_1$ remain open.
+pole-three functions and the pole-four $I_{29}$ function are now complete by
+the preceding calculations.  The complete ghost determinant, physical
+fourth-order Hessian, combined repository coefficients and complete
+$\Gamma_1/Q_1$ remain open.
 
 \subsection{Exact local BoxR scheme conversion}
 

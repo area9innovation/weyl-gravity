@@ -33,6 +33,7 @@ INPUTS = {
     "fv_conformized_log": ROOT / "quantum-weyl/transfer/certificates/FV_CONFORMIZED_C2_LOG_GAMMA1.json",
     "scalar_triangle_system": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM.json",
     "pole3_integrated_functions": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_POLE3_INTEGRATED_FUNCTIONS.json",
+    "i29_integrated_function": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_I29_INTEGRATED_FUNCTION.json",
 }
 
 
@@ -72,6 +73,7 @@ def _load() -> dict[str, dict[str, Any]]:
     fv_conformized_log = values["fv_conformized_log"]
     scalar_triangle_system = values["scalar_triangle_system"]
     pole3_integrated_functions = values["pole3_integrated_functions"]
+    i29_integrated_function = values["i29_integrated_function"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
         or even.get("smallest_relative_sector", {}).get("closure_rank") != 6
@@ -152,6 +154,25 @@ def _load() -> dict[str, dict[str, Any]]:
         != "ALL_EXACT_MATCH"
         or pole3_integrated_functions.get("claim_flags", {}).get("I29_POLE4_REDUCED")
         is not False
+        or i29_integrated_function.get("rank_ledger", {}).get("tangent_rank") != 46
+        or i29_integrated_function.get("rank_ledger", {}).get(
+            "tangent_plus_masters_rank"
+        )
+        != 49
+        or i29_integrated_function.get("rank_ledger", {}).get(
+            "tangent_plus_masters_and_target_rank"
+        )
+        != 49
+        or i29_integrated_function.get("exact_reconstruction", {}).get(
+            "full_55_row_symbolic_relative_IBP_defect"
+        )
+        != "ZERO"
+        or i29_integrated_function.get("claim_flags", {}).get("I29_POLE4_REDUCED")
+        is not True
+        or i29_integrated_function.get("claim_flags", {}).get(
+            "ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_COMPUTED"
+        )
+        is not True
     ):
         raise ValueError("Paper 12 generated-table dependency drifted")
     return values
@@ -194,6 +215,7 @@ def build() -> str:
     fv_conformized_log = values["fv_conformized_log"]
     scalar_triangle_system = values["scalar_triangle_system"]
     pole3_integrated_functions = values["pole3_integrated_functions"]
+    i29_integrated_function = values["i29_integrated_function"]
     even_orbits = json.loads(
         next(
             item["payload_json"]
@@ -419,16 +441,17 @@ finite $C^2/R^2$ normalization & open \\
 \centering
 \begin{{tabular}}{{@{{}}lr@{{}}}}
 \toprule
-Generic ghost $n=3$ pole-three datum & certified value \\
+Generic ghost $n=3$ datum & certified value \\
 \midrule
 $S_3$ scalar-triangle differential identities & {len(scalar_triangle_system['identity_ledger']['S3_covariance'])} \\
 mixed-derivative integrability identities & {len(scalar_triangle_system['identity_ledger']['mixed_integrability'])} \\
 complete pole-three channel functions & {len(pole3_integrated_functions['channel_rows'])} \\
 symmetric-point exact regressions & {pole3_integrated_functions['identity_ledger']['symmetric_point_regression_count']} \\
-pole-four $I_{{29}}$ reduction & open \\
+pole-four $I_{{29}}$ tangent/master/target ranks & {i29_integrated_function['rank_ledger']['tangent_rank']}/{i29_integrated_function['rank_ledger']['tangent_plus_masters_rank']}/{i29_integrated_function['rank_ledger']['tangent_plus_masters_and_target_rank']} \\
+complete generic channel functions & 11 \\
 \bottomrule
 \end{{tabular}}
-\caption{{Exact generic nonexceptional pole-three functions in the master basis $J_\triangle$, $\log(x_2/x_1)$, $\log(x_3/x_1)$ and a rational corner term.  This does not close the pole-four $I_{{29}}$ row or the complete ghost determinant.}}
+\caption{{Exact generic nonexceptional ghost $n=3$ functions in the master basis $J_\triangle$, $\log(x_2/x_1)$, $\log(x_3/x_1)$ and a rational corner term.  The ten pole-three rows and the pole-four $I_{{29}}$ row are complete; the full ghost determinant remains open.}}
 \label{{tab:generated-generic-pole-three-functions}}
 \end{{table}}
 

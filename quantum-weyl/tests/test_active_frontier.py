@@ -310,6 +310,14 @@ class ActiveFrontierTests(unittest.TestCase):
                 "GENERIC_GHOST_N3_CORNER_ANGULAR_FLUXES_EVALUATED"
             ]
         )
+        self.assertTrue(
+            self.payload["claim_flags"]["GENERIC_GHOST_N3_I29_POLE4_REDUCED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "GENERIC_GHOST_N3_ALL_ELEVEN_FUNCTIONS_COMPUTED"
+            ]
+        )
         self.assertFalse(
             self.payload["claim_flags"][
                 "GENERIC_GHOST_LONGITUDINAL_DW_CARRIERS_EVALUATED"

@@ -83,6 +83,7 @@ DEPENDENCIES = {
     "generic_ghost_n3_pole3_relative_IBP": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_POLE3_RELATIVE_IBP.json",
     "scalar_triangle_differential_system": HERE / "spectral/euclidean/certificates/GENERIC_SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM.json",
     "generic_ghost_n3_pole3_integrated_functions": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_POLE3_INTEGRATED_FUNCTIONS.json",
+    "generic_ghost_n3_I29_integrated_function": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_I29_INTEGRATED_FUNCTION.json",
     "generic_ghost_n3_symmetric_point_simplex_integration": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_SYMMETRIC_POINT_SIMPLEX_INTEGRATION.json",
     "BoxR_scheme_conversion": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": HERE / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
@@ -191,6 +192,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "generic_ghost_n3_pole3_relative_IBP": "GENERIC_N3_TEN_POLE3_ROWS_REDUCED_TO_TRIANGLE_DERIVATIVE_MASTERS",
         "scalar_triangle_differential_system": "COEFFICIENT_COMPUTED",
         "generic_ghost_n3_pole3_integrated_functions": "COEFFICIENT_COMPUTED",
+        "generic_ghost_n3_I29_integrated_function": "COEFFICIENT_COMPUTED",
         "generic_ghost_n3_symmetric_point_simplex_integration": "COEFFICIENT_COMPUTED",
         "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
         "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
@@ -233,6 +235,7 @@ def _load() -> dict[str, dict[str, Any]]:
     generic_ghost_n3_relative_ibp = values["generic_ghost_n3_pole3_relative_IBP"]
     scalar_triangle_system = values["scalar_triangle_differential_system"]
     generic_ghost_n3_integrated = values["generic_ghost_n3_pole3_integrated_functions"]
+    generic_ghost_n3_i29 = values["generic_ghost_n3_I29_integrated_function"]
     generic_ghost_n3_symmetric = values["generic_ghost_n3_symmetric_point_simplex_integration"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
@@ -998,6 +1001,32 @@ def _load() -> dict[str, dict[str, Any]]:
         is not False
     ):
         raise ValueError("generic ghost n=3 pole-three integrated-function frontier drifted")
+    if (
+        generic_ghost_n3_i29.get("rank_ledger", {}).get("tangent_rank") != 46
+        or generic_ghost_n3_i29.get("rank_ledger", {}).get(
+            "tangent_plus_masters_rank"
+        )
+        != 49
+        or generic_ghost_n3_i29.get("rank_ledger", {}).get(
+            "tangent_plus_masters_and_target_rank"
+        )
+        != 49
+        or generic_ghost_n3_i29.get("exact_reconstruction", {}).get(
+            "full_55_row_symbolic_relative_IBP_defect"
+        )
+        != "ZERO"
+        or generic_ghost_n3_i29.get("claim_flags", {}).get("I29_POLE4_REDUCED")
+        is not True
+        or generic_ghost_n3_i29.get("claim_flags", {}).get(
+            "ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_COMPUTED"
+        )
+        is not True
+        or generic_ghost_n3_i29.get("claim_flags", {}).get(
+            "COMPLETE_GENERIC_GHOST_DETERMINANT_COMPUTED"
+        )
+        is not False
+    ):
+        raise ValueError("generic ghost n=3 I29 integrated-function frontier drifted")
     if (
         box_r_scheme_conversion.get("decision", {}).get(
             "raw_zeta_BoxR_coefficient"
@@ -1863,8 +1892,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_BARYCENTRIC_FACTORIZATION_TEN_POLE3_GENERIC_FUNCTIONS_AND_SYMMETRIC_POINT_INTEGRATION_EXACT_I29_POLE4_OPEN_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_GENERIC_LOCAL_BCH_AND_GLOBAL_FINITE_CARRIERS_OPEN_Q1_UNDERDETERMINED",
-                "next_gate": "REDUCE_I29_POLE4_OR_SUPPLY_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_N3_ALL_ELEVEN_FUNCTIONS_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_GENERIC_LOCAL_BCH_GLOBAL_FINITE_CARRIERS_AND_PHYSICAL_HESSIAN_ASSEMBLY_OPEN_Q1_UNDERDETERMINED",
+                "next_gate": "SUPPLY_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_AND_ASSEMBLE_FIVE_REPOSITORY_CARRIERS",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -1879,8 +1908,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_BARYCENTRIC_FACTORIZATION_AND_TEN_POLE3_GENERIC_FUNCTIONS_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_GENERIC_BCH_GREEN_SPECTRAL_CARRIER_PHYSICAL_FOURTH_ORDER_KERNEL_I29_AND_FORM_FACTOR_FUNCTIONS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "REDUCE_I29_POLE4_OR_SUPPLY_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_FIVE_UNIVERSAL_CPT_KERNELS_AND_ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_FIXED_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_GENERIC_BCH_GREEN_SPECTRAL_CARRIER_PHYSICAL_FOURTH_ORDER_KERNEL_REPOSITORY_ASSEMBLY_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "SUPPLY_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_AND_ASSEMBLE_FIVE_REPOSITORY_CARRIERS",
             },
         },
         "supersession_ledger": [
@@ -2038,6 +2067,8 @@ def build() -> dict[str, Any]:
             "SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM_COMPUTED": True,
             "GENERIC_GHOST_N3_TEN_POLE3_INTEGRATED_FUNCTIONS_COMPUTED": True,
             "GENERIC_GHOST_N3_CORNER_ANGULAR_FLUXES_EVALUATED": True,
+            "GENERIC_GHOST_N3_I29_POLE4_REDUCED": True,
+            "GENERIC_GHOST_N3_ALL_ELEVEN_FUNCTIONS_COMPUTED": True,
             "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED": False,
             "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED": False,
             "GENERIC_GHOST_LONGITUDINAL_DW_CARRIERS_EVALUATED": False,
@@ -2187,8 +2218,11 @@ def build() -> dict[str, Any]:
             "For all four canonical primitives the only nonzero corner has equal angular "
             "weights, so its exact oriented integral is rational rather than a new logarithmic "
             "master. Combining these facts gives complete generic J-plus-two-log functions "
-            "for all ten pole-three rows, with exact symmetric-point regressions. Only the "
-            "pole-four I29 reduction remains open. At the "
+            "for all ten pole-three rows, with exact symmetric-point regressions. The sole "
+            "pole-four I29 row is now reduced by a full 55-row symbolic identity to the same "
+            "three masters; its three finite corner numerators are linear, its flux is rational, "
+            "and all six permutations and the symmetric-point value replay exactly. Thus all "
+            "eleven generic ghost n=3 functions are complete. At the "
             "normalized symmetric point all eleven coordinates are integrated exactly in "
             "terms of one Clausen master. This is not the generic five repository functions; "
             "the n=1/n=2 pure-vector sum is now evaluated exactly from CPT rows 1, 3 and 14 as "
@@ -2540,6 +2574,8 @@ def validate(result: dict[str, Any]) -> None:
         is not True
         or flags.get("GENERIC_GHOST_N3_CORNER_ANGULAR_FLUXES_EVALUATED")
         is not True
+        or flags.get("GENERIC_GHOST_N3_I29_POLE4_REDUCED") is not True
+        or flags.get("GENERIC_GHOST_N3_ALL_ELEVEN_FUNCTIONS_COMPUTED") is not True
         or flags.get("GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED")
         is not False
         or flags.get("GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED")
@@ -2634,6 +2670,8 @@ def validate(result: dict[str, Any]) -> None:
             "SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM_COMPUTED",
             "GENERIC_GHOST_N3_TEN_POLE3_INTEGRATED_FUNCTIONS_COMPUTED",
             "GENERIC_GHOST_N3_CORNER_ANGULAR_FLUXES_EVALUATED",
+            "GENERIC_GHOST_N3_I29_POLE4_REDUCED",
+            "GENERIC_GHOST_N3_ALL_ELEVEN_FUNCTIONS_COMPUTED",
             "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED",
             "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED",
             "GENERIC_GHOST_LONGITUDINAL_DW_CARRIERS_EVALUATED",

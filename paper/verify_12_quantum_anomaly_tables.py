@@ -26,7 +26,8 @@ def main() -> None:
     assert "independent cubic Weyl-invariant form factors & open" in rendered
     assert "generated-generic-pole-three-functions" in rendered
     assert "complete pole-three channel functions & 10" in rendered
-    assert "pole-four $I_{29}$ reduction & open" in rendered
+    assert "pole-four $I_{29}$ tangent/master/target ranks & 46/49/49" in rendered
+    assert "complete generic channel functions & 11" in rendered
     assert "generated-spectral-sequence" in rendered
     assert "generated-determinant-ledger" in rendered
     assert "generated-factorwise-coefficients" in rendered
@@ -80,6 +81,12 @@ def main() -> None:
     assert values["pole3_integrated_functions"]["identity_ledger"][
         "symmetric_point_regression_status"
     ] == "ALL_EXACT_MATCH"
+    assert values["i29_integrated_function"]["exact_reconstruction"][
+        "full_55_row_symbolic_relative_IBP_defect"
+    ] == "ZERO"
+    assert values["i29_integrated_function"]["claim_flags"][
+        "ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_COMPUTED"
+    ] is True
     print("Paper 12 generated quantum-anomaly tables: PASS")
 
 
