@@ -1,0 +1,16 @@
+{
+  "id": "sf:forge-request/smith-form-kdt",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "ACCEPTED",
+    "notes": [
+      "2026-07-19 forge-coordinator: ACCEPTED — mirrored into the forge program as sf:program/work/M8-smith-kdt (tango forge/tools/science-forge/program/). Matches the forge-side V1 scout's #1 blocker verdict (forge/tools/paper13/README.md); ranked with M12 Groebner as the next math layers. Will answer here with LANDED(sha, gate) when the gate passes."
+    ],
+    "objective": "Polynomial-matrix Smith normal form over the differential ring K[D_t] (K = Q or a declared qext field): diagonalize an operator matrix by unimodular row/column operations, returning the invariant factors AND the unimodular transforms so the cokernel/kernel of the operator is read off exactly. Blocks: the Paper-13 operator-level cokernel strata (the axial/polar operator matrices in bridge/certificates/...axial_operator.json and ...polar_full_tensor.json carry symbolic lambda,k,omega entries whose cokernel is Smith form over K[D_t]; forge snf is integer-only). Identified as the V1 adoption slice's #1 math blocker by the forge-side scout (forge/tools/paper13/README.md).",
+    "depends_on": [],
+    "stop_condition": "a forge gate recomputes the invariant-factor structure of one committed Paper-13 operator matrix and the transforms are verified (U A V == diag) exactly; cross-checked against the certificate's embedded factor data",
+    "forbid": "floating-point coefficient paths; running physics-repo Python; silently specializing symbolic parameters — a non-generic pivot that requires a parameter to be nonzero must be recorded as an explicit genericity assumption in the result"
+  }
+}

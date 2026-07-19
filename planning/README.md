@@ -22,6 +22,12 @@ planning/
     events -> ../events   symlink so sfc writes transitions into planning/events/
   events/                append-only WORK_ITEM_TRANSITIONED log (see its README)
   examples/              rendered briefs (planning/examples/<item>-brief.md)
+  forge-requests/        the physics -> forge GAP CHANNEL (see its README):
+                         file a work-v0 request when a workstream is blocked on
+                         a missing lib/math layer or a substrate defect; the
+                         forge coordinator sweeps it and answers in-file
+  FORGE-CONTRIB.md       how to improve the Forge substrate DIRECTLY (small
+                         fixes) vs when to file a forge-request instead
   README.md              this file
 ```
 
