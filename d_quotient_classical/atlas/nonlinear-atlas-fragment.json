@@ -1361,6 +1361,80 @@
       }
     },
     {
+      "claim_boundary": "The complete fourteen-field relative Hessian has an exact finite-order antisymmetric Green current and coefficientwise off-shell divergence identity. This does not yet identify it with the Lee-Wald representative up to a horizontal improvement, precompose all five stabilizer actions, add cyclic BV-dual rows, reproduce every global charge block, repair f2, authorize arity three, or establish causal, observational, particle or quantum claims.",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1",
+          "sha256": "3ca345c27e4fb2f07e5505872ea7da76633bde479733b5238f3ead474e02d16b"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1",
+          "sha256": "25aab484188126107c2495c100fca1b67b686f28dc60a2f8999c99155752fd95"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1",
+          "sha256": "11e8119ab8fc9756fc5b4c5520e648599fd1264e7776cc79d91dc80645be1c56"
+        }
+      ],
+      "id": "nonlinear.product.bridge2.relative_hessian_green_current_cone",
+      "mode_data": {
+        "dispersion": {
+          "statement": "This is an all-field local Green-concomitant identity.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "The antisymmetric current is derived from the complete action Hessians and their certified cyclic pairings.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The Green-current/Lee-Wald improvement comparison remains open.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The off-shell current cone is exact, but no bounded relative f2 is produced before stabilizer precomposition.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No retarded inverse has yet been transported through the current cone.",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The current cone does not construct a smooth-secular correction.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The five stabilizer actions and Cauchy integrations remain to be applied.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compact magnetic Plebanski-Hacyan product",
+        "boundaries": "local coefficient jets; no Cauchy integration",
+        "carrier": "antisymmetric horizontal Green three-current and its Euler-source four-form",
+        "charge_sector": "physical 14-field relative Hessian before stabilizer precomposition",
+        "degree": "unary Hessian concomitant underlying the arity-two charge receiver",
+        "ell": "not harmonic-reduced",
+        "k": "not harmonic-reduced",
+        "m": "not harmonic-reduced",
+        "omega": "not harmonic-reduced",
+        "parity": "all physical metric and Maxwell components",
+        "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "Every real-structure-preserving product-equivariant cohomology-isomorphic correction is obstructed from being cyclic for the standard action-derived pairings on the generic physical fibres. This includes corrected nonidentity maps, declared chain-homotopy repairs and cohomologically exact current improvements. A noncyclic off-shell triangle carrying three distinct forms, an explicitly pairing-changed theorem, exceptional/global sectors and final residual descent remain OPEN or NO_CERTIFIED_MAP. This result does not by itself decide Delta2, ell3 on cohomology, observables, particles or quantum states.",
       "descriptions": {
         "causal": "NOT_APPLICABLE",
@@ -1436,7 +1510,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py",
-  "generated_by_sha256": "f455d45a6551379c80a150ea75d3e8f4f0e0ea322ab051b7402f904ec6a05856",
+  "generated_by_sha256": "c29f13c6d9d70d0932bee1866c39760ed256501b2103dc2aebe03b2b699f0f00",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

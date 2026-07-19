@@ -1,0 +1,91 @@
+{
+  "claim_boundary": "This artifact constructs the exact antisymmetric Green concomitant of the complete fourteen-field relative action Hessian and verifies its off-shell horizontal divergence identity coefficientwise in the product PBW jet algebra. It is a local equation-level current cone, not yet the full five-charge Noether receiver. The five spacetime-stabilizer Lie actions have not been precomposed, the Green-current representative has not been compared with the action Lee-Wald representative by an explicit horizontal improvement, cyclic BV-dual current rows have not been adjoined, and Cauchy integration has not been replayed against every reduced charge block. It does not repair f2, authorize arity three, or establish causal, observational, particle or quantum claims.",
+  "classification": {
+    "antisymmetric_green_current_exported": true,
+    "arity_three_authorized": false,
+    "causal_observable_particle_or_quantum_claim": false,
+    "coefficient_jet_divergence_identity_exact": true,
+    "complete_14_field_relative_hessian_imported": true,
+    "cyclic_dual_bv_rows_certified": false,
+    "direct_f2_repaired": false,
+    "five_stabilizer_noether_precomposition_certified": false,
+    "formal_self_adjoint_pairings_imported": true,
+    "lee_wald_improvement_comparison_certified": false,
+    "off_shell_relative_hessian_divergence_cone_certified": true,
+    "slice_integral_matches_complete_five_charge_q2": false
+  },
+  "construction": {
+    "algorithm": "ordered multivariate Lagrange telescoping with exact coefficient jets",
+    "component_term_counts": [
+      922,
+      922,
+      920,
+      938
+    ],
+    "cyclic_representative": "omega_G=(B_E(u,v)-B_E(v,u))/2",
+    "generated_table": "d_quotient_classical/generated/einstein_weyl_relative_hessian_green_current_v1/current_basepoint.json",
+    "globalization": "the product is homogeneous; the complete equatorial coefficient jet globalizes the natural operator",
+    "identity": "d_H B_E(u,v)=<u,E_rel v>-<E_rel^sharp u,v>",
+    "maximum_bilinear_derivative_order": 3,
+    "relative_operator": "E_rel=E_Weyl-Maxwell-E_Einstein-Maxwell",
+    "total_term_count": 3702
+  },
+  "dependencies": {
+    "source_certificate": {
+      "artifact_id": "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1",
+      "path": "bridge/certificates/EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
+      "sha256": "be03e210b5699dd66e611e7c63f5cf23128140e3e3dcc377029d631203df8d88"
+    },
+    "source_q1": {
+      "artifact_id": "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q1",
+      "path": "bridge/einstein_sector/generated/einstein_maxwell_product_linfinity_v1/q1.json",
+      "sha256": "820d8f5515421676317b501c9970a65288527971f145849652ce8a3e0cdc1c50"
+    },
+    "target_certificate": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1",
+      "path": "bridge/certificates/WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
+      "sha256": "f78828e64525ecda924f34a75a1fe4ad8593b3fbf67cb2900ac221b98c454596"
+    },
+    "target_q1": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q1",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/q1.json",
+      "sha256": "43c00909830fde902cf1332eae804f6edd6ad263bef7ce61d08bdbd20449290b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "PRECOMPOSE_FIVE_STABILIZERS_AND_COMPARE_GREEN_CURRENT_WITH_LEE_WALD_CURRENT",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/generated/einstein_weyl_relative_hessian_green_current_v1/current_basepoint.json": "29ac1a2e675bd4ce8182a229decb63157ccdfa0b01791add2086a54d7831ae59",
+      "d_quotient_classical/relative/einstein_weyl_relative_hessian_green_current_cone.py": "05102e6342ba60fb9cc29b45cd967ff66ee569c4d0f03ad47e0f61b36d63bfe8",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_hessian_green_current_cone.py": "1aeb319f375acd0ceac2244a8833a1f6483084ac58fe116f7baa1ccb672d9978",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_hessian_green_current_cone.py": "79898a193e1a0959cf037544619ac5c17d6fbf43ba3eb59ab0ed863c1b3a10d8",
+      "d_quotient_classical/schema/relative-hessian-green-current-cone-v1.schema.json": "b3c8890bf2d49dc2dd4cdb88277f22b7fce066e354341346f9f234e3caaafd5e"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_hessian_green_current_cone --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_hessian_green_current_cone",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_hessian_green_current_cone",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-hessian-green-current-cone-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1",
+  "result_state": "OFF_SHELL_RELATIVE_HESSIAN_DIVERGENCE_CONE_CERTIFIED",
+  "schema": "pure-weyl-relative-hessian-green-current-cone-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "local coefficient jets; no Cauchy integration",
+    "carrier": "antisymmetric horizontal Green three-current and its Euler-source four-form",
+    "charge_sector": "physical 14-field relative Hessian before stabilizer precomposition",
+    "degree": "unary Hessian concomitant underlying the arity-two charge receiver",
+    "ell": "not harmonic-reduced",
+    "k": "not harmonic-reduced",
+    "m": "not harmonic-reduced",
+    "omega": "not harmonic-reduced",
+    "parity": "all physical metric and Maxwell components",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "status": "PASS",
+  "source_manifest": {
+    "d_quotient_classical/relative/einstein_weyl_relative_hessian_green_current_cone.py": "05102e6342ba60fb9cc29b45cd967ff66ee569c4d0f03ad47e0f61b36d63bfe8",
+    "d_quotient_classical/relative/verify_einstein_weyl_relative_hessian_green_current_cone.py": "79898a193e1a0959cf037544619ac5c17d6fbf43ba3eb59ab0ed863c1b3a10d8",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_hessian_green_current_cone.py": "1aeb319f375acd0ceac2244a8833a1f6483084ac58fe116f7baa1ccb672d9978",
+    "d_quotient_classical/schema/relative-hessian-green-current-cone-v1.schema.json": "b3c8890bf2d49dc2dd4cdb88277f22b7fce066e354341346f9f234e3caaafd5e",
+    "d_quotient_classical/generated/einstein_weyl_relative_hessian_green_current_v1/current_basepoint.json": "29ac1a2e675bd4ce8182a229decb63157ccdfa0b01791add2086a54d7831ae59",
+    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json": "3ca345c27e4fb2f07e5505872ea7da76633bde479733b5238f3ead474e02d16b",
+    "d_quotient_classical/reports/einstein-weyl-relative-hessian-green-current-cone.md": "5c516a74966d403aa96de6f1bd510f3c3bb02bd7e8d52a697c88753f1f56164f",
+    "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py": "c29f13c6d9d70d0932bee1866c39760ed256501b2103dc2aebe03b2b699f0f00",
+    "d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "5b430097f3cd8489beed168277c03ce2c08b0128d4d39ee82a0130f11f240ed9",
+    "d_quotient_classical/atlas/tests/test_nonlinear_atlas_fragment.py": "21756027faaba40d52d5f25f4a5a70328841ef69e993e08d0909dea6bb61fbb7",
+    "notes/d-quotient-classical-team-brief.md": "69940047345935abc855e2587ef4b69e91521b4aa3f547edbfeb816a66577c84"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "command": "py_compile, strict Draft 2020-12 AJV validation, source-manifest hashes and scoped git diff --check"
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.95,
+      "max_rss_kib": 35504,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_hessian_green_current_cone --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_hessian_green_current_cone",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_hessian_green_current_cone d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-hessian-green-current-cone-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json"
+      ],
+      "result": "23 tests passed; the independent consumer reconstructed all 1,093 relative Hessian monomials, replayed the coefficient-jet telescoping identity with zero defects, and checked antisymmetry of all 3,702 generated current terms"
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "Both complete action-derived q1 payloads and their cyclic-pairing certificates are unchanged SHA-pinned inputs."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This local equation-cone result does not freeze the five-charge comparison, cyclic BV extension, causal bridge or any paper theorem."
+    }
+  },
+  "claim_boundary": "The receipt certifies the exact finite-order antisymmetric Green current and off-shell coefficient-jet divergence identity for the complete fourteen-field relative action Hessian. It does not certify the five stabilizer precomposition, an explicit horizontal improvement relating this representative to the Lee-Wald current, cyclic BV-dual current rows, complete Cauchy charge integration, repaired f2, arity three, causal propagation, observables, particles or quantum transfer."
+}

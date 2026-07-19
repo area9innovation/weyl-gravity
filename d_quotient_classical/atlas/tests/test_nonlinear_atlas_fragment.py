@@ -236,6 +236,14 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("off-shell horizontal divergence cone", entry["claim_boundary"])
         self.assertIn("does not certify", entry["claim_boundary"])
 
+    def test_relative_hessian_green_current_cone_is_off_shell_but_not_globalized(self):
+        entry = next(item for item in atlas.build()["entries"] if "relative_hessian_green_current_cone" in item["id"])
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["causal"], "OPEN")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertIn("coefficientwise off-shell divergence identity", entry["claim_boundary"])
+        self.assertIn("does not yet", entry["claim_boundary"])
+
     def test_generic_standard_pairing_cyclic_obstruction_is_scoped(self):
         entry = next(item for item in atlas.build()["entries"] if "generic_standard_pairing_cyclic_map_inertia_obstruction" in item["id"])
         self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")

@@ -46,6 +46,7 @@ CERTS = {
     "relative_complete_standard_charge_q2": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPLETE_STANDARD_FIVE_CHARGE_Q2_V1.json",
     "relative_finite_charge_locality_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FINITE_CHARGE_SUPPORT_LOCAL_LIFT_OBSTRUCTION_V1.json",
     "relative_polarized_noether_current_seed": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1.json",
+    "relative_hessian_green_current_cone": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -385,6 +386,8 @@ def entries() -> list[dict[str, Any]]:
     relative_locality_obstruction_scope = relative_locality_obstruction["scope"]
     relative_current_seed = json.loads(CERTS["relative_polarized_noether_current_seed"].read_text())
     relative_current_seed_scope = relative_current_seed["scope"]
+    relative_green_cone = json.loads(CERTS["relative_hessian_green_current_cone"].read_text())
+    relative_green_cone_scope = relative_green_cone["scope"]
     identity_cyclic_scope = json.loads(CERTS["identity_cyclic_obstruction"].read_text())["scope"]
     return [
         {
@@ -757,6 +760,24 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("relative_polarized_noether_current_seed", "relative_finite_charge_locality_obstruction", "relative_complete_standard_charge_q2"),
             "claim_boundary": "This LOCAL-ALGEBRAIC row certifies a nonzero support-local polarized relative Noether-current seed with a bundle-covariant Maxwell stabilizer lift. It does not certify the off-shell horizontal divergence cone, cyclic dual rows, equality of all integrated five-charge blocks, a repaired f2, arity three, retarded propagation, an observable, a particle map or a quantum transfer.",
+        },
+        {
+            "id": "nonlinear.product.bridge2.relative_hessian_green_current_cone",
+            "scope": relative_green_cone_scope,
+            "descriptions": {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "The off-shell current cone is exact, but no bounded relative f2 is produced before stabilizer precomposition."),
+                    ("OPEN", "The current cone does not construct a smooth-secular correction."),
+                    ("OPEN", "No retarded inverse has yet been transported through the current cone."),
+                ),
+                dispersion=("NOT_APPLICABLE", "This is an all-field local Green-concomitant identity."),
+                pairing=("CERTIFIED", "The antisymmetric current is derived from the complete action Hessians and their certified cyclic pairings."),
+                taub=("OPEN", "The five stabilizer actions and Cauchy integrations remain to be applied."),
+                resonance=("OPEN", "The Green-current/Lee-Wald improvement comparison remains open."),
+            ),
+            "evidence": _evidence("relative_hessian_green_current_cone", "relative_polarized_noether_current_seed", "relative_complete_standard_charge_q2"),
+            "claim_boundary": "The complete fourteen-field relative Hessian has an exact finite-order antisymmetric Green current and coefficientwise off-shell divergence identity. This does not yet identify it with the Lee-Wald representative up to a horizontal improvement, precompose all five stabilizer actions, add cyclic BV-dual rows, reproduce every global charge block, repair f2, authorize arity three, or establish causal, observational, particle or quantum claims.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction",

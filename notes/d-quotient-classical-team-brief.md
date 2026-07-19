@@ -461,7 +461,31 @@ The underlying action-derived Lee--Wald engine is now component-complete.
 while the established time-component functions remain exact wrappers.  This
 closes the API prerequisite for the relative current cone without promoting
 its still-unchecked off-shell divergence or cyclic BV rows.  The active local
-gate is `CERTIFY_OFF_SHELL_DIVERGENCE_CONE_AND_CYCLIC_DUAL_ROWS`.
+gate was `CERTIFY_OFF_SHELL_DIVERGENCE_CONE_AND_CYCLIC_DUAL_ROWS`.
+
+`EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1` now closes the
+equation-level half of that gate without repeatedly rebuilding curved
+coordinates.  It imports the complete action-derived fourteen-field source
+and target Hessians and applies the ordered multivariate Lagrange identity to
+every coefficient-jet monomial.  The antisymmetrized relative Green current
+has component term counts
+
+\[
+(922,922,920,938),
+\]
+
+maximum total derivative order three, and the coefficientwise identity
+
+\[
+d_H B_E(u,v)=\langle u,E_{\rm rel}v\rangle
+-\langle E_{\rm rel}^{\sharp}u,v\rangle
+\]
+
+has zero defect on the complete PBW table.  The next gate is narrower:
+precompose the five stabilizer actions, derive the horizontal improvement
+between this canonical Green representative and the exported Lee--Wald
+representative, and only then add the cyclic BV-dual rows and replay all five
+Cauchy charges.  No \(f_2\) repair or arity-three promotion follows yet.
 
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.

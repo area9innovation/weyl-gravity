@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-hessian-green-current-cone-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "construction", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-hessian-green-current-cone-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1"},
+    "result_state": {"const": "OFF_SHELL_RELATIVE_HESSIAN_DIVERGENCE_CONE_CERTIFIED"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"$ref": "#/$defs/stringObject"},
+    "dependencies": {"type": "object", "additionalProperties": {"$ref": "#/$defs/artifact"}, "minProperties": 4, "maxProperties": 4},
+    "construction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["relative_operator", "identity", "algorithm", "cyclic_representative", "globalization", "generated_table", "component_term_counts", "total_term_count", "maximum_bilinear_derivative_order"],
+      "properties": {
+        "relative_operator": {"const": "E_rel=E_Weyl-Maxwell-E_Einstein-Maxwell"},
+        "identity": {"const": "d_H B_E(u,v)=<u,E_rel v>-<E_rel^sharp u,v>"},
+        "algorithm": {"const": "ordered multivariate Lagrange telescoping with exact coefficient jets"},
+        "cyclic_representative": {"const": "omega_G=(B_E(u,v)-B_E(v,u))/2"},
+        "globalization": {"type": "string", "minLength": 40},
+        "generated_table": {"const": "d_quotient_classical/generated/einstein_weyl_relative_hessian_green_current_v1/current_basepoint.json"},
+        "component_term_counts": {"const": [922, 922, 920, 938]},
+        "total_term_count": {"const": 3702},
+        "maximum_bilinear_derivative_order": {"const": 3}
+      }
+    },
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["complete_14_field_relative_hessian_imported", "formal_self_adjoint_pairings_imported", "antisymmetric_green_current_exported", "coefficient_jet_divergence_identity_exact", "off_shell_relative_hessian_divergence_cone_certified", "five_stabilizer_noether_precomposition_certified", "lee_wald_improvement_comparison_certified", "cyclic_dual_bv_rows_certified", "slice_integral_matches_complete_five_charge_q2", "direct_f2_repaired", "arity_three_authorized", "causal_observable_particle_or_quantum_claim"],
+      "properties": {
+        "complete_14_field_relative_hessian_imported": {"const": true},
+        "formal_self_adjoint_pairings_imported": {"const": true},
+        "antisymmetric_green_current_exported": {"const": true},
+        "coefficient_jet_divergence_identity_exact": {"const": true},
+        "off_shell_relative_hessian_divergence_cone_certified": {"const": true},
+        "five_stabilizer_noether_precomposition_certified": {"const": false},
+        "lee_wald_improvement_comparison_certified": {"const": false},
+        "cyclic_dual_bv_rows_certified": {"const": false},
+        "slice_integral_matches_complete_five_charge_q2": {"const": false},
+        "direct_f2_repaired": {"const": false},
+        "arity_three_authorized": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "PRECOMPOSE_FIVE_STABILIZERS_AND_COMPARE_GREEN_CURRENT_WITH_LEE_WALD_CURRENT"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_manifest", "verification_commands"], "properties": {"source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "minProperties": 5, "maxProperties": 5}, "verification_commands": {"type": "array", "items": {"type": "string"}, "minItems": 4}}},
+    "claim_boundary": {"type": "string", "minLength": 500}
+  },
+  "$defs": {
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "stringObject": {"type": "object", "additionalProperties": {"type": "string"}, "minProperties": 8}
+  }
+}
