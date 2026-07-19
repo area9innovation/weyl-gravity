@@ -1451,11 +1451,17 @@ Hessian has 69 canonical terms, recovers the certified eleven-term first jet
 and passes eight independent directional second variations.  The two-channel
 quartic action and its p-to-m/geometry formal adjoints produce 5,196 ordered
 rational PBW keys on fifteen cotangent rows, with zero symmetry or cyclicity
-defect.  These are two source subblocks, not complete `q3`: the base
-gravity-clock-Maxwell import, normalized readout and physical-emitter blocks
-remain to assemble, while scalar-BV and emitter Diff--BV must be ledgered as
-structural zeros.  Arity replay and `O_detector|Z2^C` therefore remain
-fail-closed.  The active next gate is normalized-readout `q3`.
+defect.  The normalized readout successor is now also complete:
+`BERGER_108_ROW_NORMALIZED_READOUT_Q3_PBW` retains all six declared
+second-profile derivative families, including the full 26-coordinate
+Jacobian Hessian, and exactly regresses the certified q2 first jet.  Its 23
+deterministic row chunks contain 338,364 operator keys and 1,085,112 exact
+profile-jet monomials; independent Maxwell and geometry formal transposes and
+graded symmetry pass.  These are three source subblocks, not complete `q3`:
+the base gravity-clock-Maxwell import and physical-emitter block remain to
+assemble, while scalar-BV and emitter Diff--BV must be ledgered as structural
+zeros.  Arity replay and `O_detector|Z2^C` therefore remain fail-closed.  The
+active next gate is physical-emitter `q3`.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to

@@ -1,0 +1,26 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_NORMALIZED_READOUT_Q3_PBW_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_NORMALIZED_READOUT_Q3_PBW",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The complete normalized two-detector readout q3 subblock contains 338,364 ordered PBW keys and 1,085,112 exact differential profile-jet monomials. Complete scalar q3, arity replay, cone response, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {"tier": 0, "command": "py_compile changed Python; validate JSON/schema; generator emit/check; git diff --check", "elapsed_seconds": 166.78, "peak_rss_mb": 2272.38, "status": "PASS", "scope": "exhaustive q3 assembly and deterministic emission into 23 compressed row chunks"},
+    {"tier": 1, "command": "pytest normalized-readout-q3 plus observer atlas verifier and residual-atlas validator", "elapsed_seconds": 4.60, "status": "PASS", "scope": "2 fast invariants and fail-closed lifecycle/evidence validation"},
+    {"tier": 2, "command": "python3 -m closed_universe_observers.verify_berger_108_row_normalized_readout_q3_pbw", "elapsed_seconds": 223.60, "peak_rss_mb": 2360.72, "status": "PASS", "scope": "independent full rebuild; 204-term q2 regression, 6,792 ordered second-jet entries, all f/rho/J Hessian families, 338,364 PBW keys, 1,085,112 monomials, symmetry, two cyclic transpose families, source/dependency/row hashes and deletion mutation"}
+  ],
+  "higher_tiers_not_run": {"tier_3": "Scoped q3 source subblock; no complete q3, shared core algebra, freeze, release or paper theorem."},
+  "source_manifest": [
+    {"path":"closed_universe_observers/generate_berger_108_row_normalized_readout_q3_pbw.py","sha256":"bf99aa66bc841c60e656b2083a91c6b7835c7a53b6500b0e712cbf8aeb506059"},
+    {"path":"closed_universe_observers/verify_berger_108_row_normalized_readout_q3_pbw.py","sha256":"11ea178a52f518574cbc445968fc9df96dd371fc981b1cdd994a3a03dc20ccc9"},
+    {"path":"closed_universe_observers/tests/test_berger_108_row_normalized_readout_q3_pbw.py","sha256":"e5a1bece31250e78a3be05f31289ee9cdf3e6c0d0d606244d4747f59b42af711"},
+    {"path":"closed_universe_observers/schema/berger-108-row-normalized-readout-q3-pbw-v1.schema.json","sha256":"75a342acfb929131cde2347af5231b60828bbc3ed08155ea3403469d98462d0d"},
+    {"path":"closed_universe_observers/schema/berger-108-row-normalized-readout-q3-pbw-payload-v1.schema.json","sha256":"41354848487c42214c4341a85eb9bee0536fac1c5cb4818ced19fe03c3c50cfb"},
+    {"path":"closed_universe_observers/reports/berger-108-row-normalized-readout-q3-pbw.md","sha256":"5a5daa48adf2dd14304d651350dfd5858c9f68f865c10a9d675c0dc1fc62eddf"},
+    {"path":"closed_universe_observers/certificates/BERGER_108_ROW_NORMALIZED_READOUT_Q3_PBW.json","sha256":"288a990d3cf927fc11604908843f4f2d3e1ad6f2ef51b5ef40aeb60e06908626"},
+    {"path":"closed_universe_observers/certificates/BERGER_108_ROW_NORMALIZED_READOUT_Q3_PBW_PAYLOAD.json","sha256":"e5458880fa668fdf29581c3183c4c33caf0f9dfbd922e29a2cc5b7bf2d2e38c7"},
+    {"path":"closed_universe_observers/atlas/observer-atlas-fragment.json","sha256":"7daded2ac4f920f7ac0a560f1b64ee1ebaabca76b3d6853ed32009b8e78221be"},
+    {"path":"planning/work-items/berger-108-row-apparatus-q2-q3-extension.json","sha256":"271f1ba0e756dffcbc63347c838ae9de5ee63c42fd6a99c25ce535e5406fa495"}
+  ],
+  "flags": {"APPARATUS_NORMALIZED_READOUT_Q3_PBW_EXPORTED":true,"COMPLETE_SCALAR_108_ROW_Q3_EXPORTED":false,"COMPONENT_ARITY_IDENTITIES_CERTIFIED":false,"TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED":false,"PHYSICAL_BRANCH_BRIDGE_ACTIVATED":false,"QUANTUM_CLAIM":false}
+}
