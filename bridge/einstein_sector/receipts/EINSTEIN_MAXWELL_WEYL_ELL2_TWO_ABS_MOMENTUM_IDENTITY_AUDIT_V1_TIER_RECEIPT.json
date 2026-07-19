@@ -1,0 +1,43 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_IDENTITY_AUDIT_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact identity-resonance audit for every ell=2 cross pair between compact momentum fibres |n|=1 and |n|=2.",
+  "content_sha256": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_identity_audit.py": "21c94349650527938c07049b134e54a726fbb00b8dd935c704e6835c7321c423",
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_identity_audit.json": "e3b281c88e475810f685db950758ab16a2fe2e722eeea112034a4050beca475b",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_identity_audit.schema.json": "71ab2ae7e37dd643693a8a53fd779abbe8efcf227a9f85b618cbd096c3efdddf",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_identity_audit.py": "d7520f7dccc77c4b3c4dd5d01b0795bb1258e4781a9215aaf101aa376c50c067",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_identity_audit.py": "0a125fe223999107a1be01bf50d21cfb18096c302231297e3544a9cc2c5ec141",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-identity-audit.md": "0856ff7086596c2e2546c553e34ce36c09de52450dfc5623e6fbb5cc59ff94ea"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.2,
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 14.0,
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_two_abs_momentum_identity_audit --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_identity_audit.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_identity_audit"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The arbitrary-momentum divisor and exact nonzero-Fourier scalar complex are unchanged hashed inputs; all 198 canonical rows are recomputed independently."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No source coefficient, shared operator or lifecycle freeze changed; isolated circumference candidates and the complete two-fibre tangent cone remain open."
+    }
+  },
+  "claim_boundary": "Identity-resonance audit only for ell=2 cross pairs between |n|=1 and |n|=2; isolated candidates, sources, same-fibre rows, full tangent cone, causal, residual and quantum claims remain fail-closed."
+}
