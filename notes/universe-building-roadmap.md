@@ -2142,7 +2142,7 @@ all-`m` zero variety has exactly four real ten-complex-dimensional linear
 components: two one-fibre-zero planes and two mixed sheets with common parity
 ratio `+sqrt(3)` or `-sqrt(3)`.  The corresponding atlas row certifies only
 this resonance ideal.  After also closing the three scalar `L=1` ideals,
-nine ideals remain after the candidate-1/16 closure below; same-fibre sources, Taub intersection,
+six ideals remain after the complete `L=3` closure below; same-fibre sources, Taub intersection,
 bounded and smooth-secular classes remain `OPEN`; causal correction remains
 `NO_CERTIFIED_MAP`.
 
@@ -2155,7 +2155,7 @@ supported only at zero.  The resulting height-three complete intersection is
 irreducible of dimension seven, so each physical parity product is
 irreducible of dimension 14 in ambient dimension 20.  The generated atlas
 combines these three fibres with candidate 4, candidates 1/16 and the earlier
-six complete ideals, leaving nine fibrewise ideals `OPEN`.  Same-fibre sources, the five
+six complete ideals and all `L=3` classes, leaving six fibrewise ideals `OPEN`.  Same-fibre sources, the five
 Taub maps, bounded and smooth-secular classes remain `OPEN`; causal correction
 remains `NO_CERTIFIED_MAP`.
 
@@ -2167,10 +2167,24 @@ first-transvectant equations.  Their kernels are rank-at-most-one `5 x 2`
 determinantal cones, making each all-`m` variety irreducible of complex
 dimension 12 in ambient dimension 20.  Atlas row
 `einstein.ph.wm.interaction.ell2_two_abs_momentum_target_doublet_l3_zero_varieties`
-certifies these two ideals without merging their distinct backgrounds.  Nine
+certifies these two ideals without merging their distinct backgrounds.  After
+the multiplicity-two closure below, six
 fibrewise ideals remain `OPEN`; same-fibre sources, Taub intersection and
 bounded or smooth-secular correction classes remain `OPEN`, while causal
 correction remains `NO_CERTIFIED_MAP`.
+
+Candidates 6, 10 and 18 close all remaining `L=3` fibrewise ideals.  Exact
+real-algebraic reduction proves the multiplicity-two source rows have factors
+`-24 sqrt(2)` and `-8 sqrt(2)`, with sign fixed by rational intervals.  The
+active parity pencil has `lambda^2=384`; one kernel quartic in each parity is
+a spectator.  The first-transvectant normal form therefore gives one
+irreducible dimension-22 variety in ambient dimension 30 for each separately
+tuned circumference fibre.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_multiplicity_two_l3_zero_varieties`
+marks only these three resonance ideals `CERTIFIED`.  Six `L=4` fibrewise
+ideals remain `OPEN`; same-fibre sources, Taub intersection and bounded or
+smooth-secular correction classes remain `OPEN`, while causal correction is
+`NO_CERTIFIED_MAP`.
 
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at

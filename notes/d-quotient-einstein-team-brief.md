@@ -3514,7 +3514,7 @@ linear components: the two one-fibre-zero planes and two real mixed sheets
 with common parity ratio `+sqrt(3)` or `-sqrt(3)`.  Atlas row
 `einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_l4_zero_variety`
 marks this resonance decomposition `CERTIFIED`; after also closing the three
-scalar `L=1` ideals and candidates 1/16 below, nine cross-fibre ideals remain.  Their
+scalar `L=1` ideals and all `L=3` closures below, six cross-fibre ideals remain.  Their
 same-fibre sources, Taub join and correction classes remain fail-closed.
 
 All three scalar-internal `L=1` difference fibres, candidates `14,17,20`,
@@ -3528,7 +3528,7 @@ intersection proves that each transvectant kernel is irreducible of dimension
 7.  Hence each physical zero variety is one irreducible dimension-14 product
 inside dimension 20.  The scalar certificate remains theorem-local; the
 generated atlas combines it with candidate 4, candidates 1/16 and the earlier
-six classified fibres, leaving nine fibrewise ideals `OPEN`.  Same-fibre sources, the five
+six classified fibres and all remaining `L=3` classes, leaving six fibrewise ideals `OPEN`.  Same-fibre sources, the five
 Taub maps, bounded and smooth-secular corrections remain `OPEN`; causal
 correction remains `NO_CERTIFIED_MAP`.
 
@@ -3540,9 +3540,21 @@ coefficient nonzero.  The real `sqrt(3)` parity transform reduces them to
 kernel is a rank-at-most-one `5 x 2` determinantal cone of dimension six, so
 each physical zero variety is one irreducible dimension-12 product in ambient
 dimension 20.  The shared normal form does not identify the two backgrounds.
-The atlas marks only their resonance ideals `CERTIFIED`; nine fibrewise
+The atlas marks only their resonance ideals `CERTIFIED`; after the following
+multiplicity-two closure, six fibrewise
 ideals, same-fibre sources, Taub join and correction classes remain
 fail-closed.
+
+Candidates 6, 10 and 18 complete every remaining `L=3` fibre.  Each has one
+multiplicity-two `p_extra` source branch.  Twelve exact squared radical
+identities, independently replayed in real algebraic number fields, give the
+negative factors `-24 sqrt(2)` and `-8 sqrt(2)`; rational isolating intervals
+fix the signs.  One internal functional per parity is active and one quartic
+per parity is a spectator.  The active pencil has `lambda^2=384` and reduces
+to two first-transvectant rank-one cones.  Including the ten spectator
+coordinates, each variety is irreducible of complex dimension 22 in ambient
+dimension 30.  Only the six `L=4` fibrewise ideals remain `OPEN`; same-fibre,
+Taub and correction lifecycles stay fail-closed.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).

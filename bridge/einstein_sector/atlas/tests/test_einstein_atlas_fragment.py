@@ -262,7 +262,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("nine fibrewise ideals remain", entry["claim_boundary"])
+        self.assertIn("six fibrewise ideals remain", entry["claim_boundary"])
 
     def test_candidate4_target_doublet_has_four_components_not_an_extension(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_l4_zero_variety"]
@@ -275,7 +275,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("nine fibrewise ideals remain", entry["claim_boundary"])
+        self.assertIn("six fibrewise ideals remain", entry["claim_boundary"])
 
     def test_target_doublet_l3_varieties_are_determinantal_not_extensions(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_target_doublet_l3_zero_varieties"]
@@ -288,7 +288,20 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("nine fibrewise ideals remain", entry["claim_boundary"])
+        self.assertIn("six fibrewise ideals remain", entry["claim_boundary"])
+
+    def test_multiplicity_two_l3_varieties_keep_spectators_and_open_extension(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_multiplicity_two_l3_zero_varieties"]
+        second = entry["mode_data"]["second_order"]
+        self.assertIn("Candidates 6, 10 and 18 remain three separately tuned", entry["mode_data"]["dispersion"]["statement"])
+        self.assertIn("parity-pencil square of 384", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("one spectator quartic per parity", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("irreducible complex dimension-22", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("six fibrewise ideals remain", entry["claim_boundary"])
 
     def test_nonaxisymmetric_l3_matrix_closes_basis_not_cone(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
