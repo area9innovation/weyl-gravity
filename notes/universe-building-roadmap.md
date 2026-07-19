@@ -1265,9 +1265,18 @@ Rotational equivariance now promotes the shell ideal to all axial
 right inverse after `J_i=0`.  Therefore the all-`m` axial wave-density cone is
 bounded without a Jordan correction.  Atlas row
 `einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone`
-records the resulting global theorem.  The active promotion is polar input
-and axial--polar cancellation; other harmonics retain their own full-time
-`a/d` gate.
+records the resulting global theorem.  The direct polar Einstein-minus
+source now supplies successive full-polynomial pivots `66*b*z`, `198*a*z`,
+and `198*d*z`; rotational equivariance promotes them to every polar `m`.
+Together with the complete axial--polar `ell=2` common-zero theorem and the
+constant zero-frequency `L=1` right inverse, this closes the full
+global-plus-`ell=2,k=0` bounded cone across both parities, both Einstein
+branches, and both extra-primary multiplicities.  Atlas row
+`einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone` records the
+union of the static `(c,d,W_x,A)` branch and the nonzero common-moment-map
+wave branch with `a=b=d=Q_e=B=0`.  The active promotion is now symbolic
+`ell` at `k=0`, followed by nonzero compact momentum and finite
+cross-harmonic bounded zero loci.
 
 This advances nonlinear input to the already activated compact-product
 linear bridge but does not certify a nonlinear relative morphism.  Atlas row

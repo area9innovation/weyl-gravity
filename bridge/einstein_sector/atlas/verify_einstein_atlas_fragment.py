@@ -197,6 +197,16 @@ def verify() -> None:
         raise AssertionError("global axial density cone was hidden")
     if global_axial_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("global axial causal lifecycle was over-promoted")
+    global_both = by_id["einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone"]
+    global_both_second = global_both["mode_data"]["second_order"]
+    if global_both_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("global both-parity ell2 bounded cone was lost")
+    if "axial--polar wave-cone" not in global_both_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("global both-parity cone was hidden")
+    if "constant right inverse" not in global_both["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("bounded zero-frequency L1 completion was hidden")
+    if global_both_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("global both-parity causal lifecycle was over-promoted")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

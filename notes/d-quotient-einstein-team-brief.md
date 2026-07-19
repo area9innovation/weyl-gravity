@@ -2400,8 +2400,29 @@ Thus the complete global-plus-axial-all-`m` cone is the union of the static
 `a=b=d=Q_e=B=0`, arbitrary `(c,W_x,A)`, and axial Einstein-minus/extra
 densities satisfying `H=J_1=J_2=J_3=0`.  Atlas row
 `einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone`
-records the theorem.  The next promotion is polar input and axial--polar
-cancellation, followed by general `ell,k` full-time `a/d` shell audits.
+records the theorem.
+
+The polar Einstein-minus cross source is now also direct and exact.  Its
+first action row has successive nonzero pivots `66*b*z`, `198*a*z`, and
+`198*d*z`, so Schur promotion gives the same `a=b=d=0` conclusion for every
+polar `m`.  Combining both parities with the complete `ell=2` common-zero
+theorem yields the full bounded carrier: every axial/polar Einstein-plus,
+Einstein-minus, and both extra-primary coefficient for all `m`, adjoined to
+the standard globals.  The cone is the union of the static `(c,d,W_x,A)`
+branch and the nonzero wave branch
+
+```text
+mu_H=mu_J1=mu_J2=mu_J3=0,
+a=b=d=Q_e=B=0,
+```
+
+with arbitrary `(c,W_x,A)`.  The exact constant `L=1` right inverse removes
+the last secular/Jordan caveat.  Atlas row
+`einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone` records
+necessity and sufficiency.  The active promotion is now symbolic `ell` at
+`k=0`, followed by nonzero compact momentum and finite cross-harmonic bounded
+zero loci.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

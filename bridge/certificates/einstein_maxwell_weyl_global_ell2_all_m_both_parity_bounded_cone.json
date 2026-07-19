@@ -1,0 +1,196 @@
+{
+  "bounded_zero_frequency_completion": {
+    "combined_compatibility": "total J_i=0 removes the only physical axial L1 zero-frequency cokernel; cross-parity terms add no further zero-frequency cokernel",
+    "compatible_source": [
+      "S0",
+      "S1",
+      "S0",
+      "S1"
+    ],
+    "consequence": "the older optional axial L1 polynomial/Jordan correction is replaced by a constant correction on the complete both-parity common-zero cone",
+    "constant_correction": [
+      "S0/2",
+      "-S1/2",
+      "0",
+      "0"
+    ],
+    "remainder": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "claim_boundary": "This theorem is complete for the full ell=2,k=0 wave block adjoined to the declared standard global data. It does not classify ell!=2, nonzero momentum, exceptional oscillators beyond the global twist, arbitrary finite cross-ell sums, infinite sums, all-orders integration, final residual descent, causal propagation, observables, particles or quantum theory.",
+  "classification": {
+    "all_m_both_parities_all_ell2_qp_branches_included": true,
+    "all_m_promotion_proved_by_SO3_multiplicity_one": true,
+    "all_orders_integrability": false,
+    "bounded_zero_locus_necessary_and_sufficient": true,
+    "causal_or_quantum_claim": false,
+    "complete_declared_global_plus_ell2_carrier_covered": true,
+    "complete_finite_harmonic_bounded_cone_classified": false,
+    "electric_taub_only_balance_excluded_by_full_source": true,
+    "general_ell_classified": false,
+    "nonzero_momentum_classified": false
+  },
+  "complete_bounded_cone": {
+    "branch_intersection": "u_wave=0,d=0 with c,W_x,A arbitrary",
+    "static_branch": "u_wave=0: (c,d,W_x,A) arbitrary, with a=b=Q_e=0 and B=0",
+    "union_is_necessary_and_sufficient": true,
+    "wave_branch": "u_wave is any nonzero point of {mu_H=mu_J1=mu_J2=mu_J3=0}; a=b=d=Q_e=0 and B=0; c,W_x and A in R^3 are arbitrary"
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_SECULAR": {
+      "reason": "the bounded correction is a special smooth exponential-polynomial correction",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "equation": "L_WM Phi^(2)=-(1/2)D^2E_WM[Phi^(1),Phi^(1)]",
+  "equivariant_promotion": {
+    "all_m_consequence": "in each parity, any nonzero Einstein-minus vector forces a=b=d=0",
+    "cross_parity_independence": "axial and polar outputs lie in inequivalent parity blocks and cannot cancel",
+    "m0_witnesses": {
+      "axial": "nonzero shell pivots at successive polynomial degrees t^2,t,1",
+      "polar": "full-source pivots 66,198,198 at successive polynomial degrees t^3,t^2,t"
+    },
+    "multiplicity_one": "dim Hom_SO3(V_2,V_2)=1",
+    "representation": "each homogeneous a,b,d input is an SO3 scalar and each fixed-parity ell=2 Einstein-minus input/output is one copy of V_2"
+  },
+  "independent_global_audits": {
+    "bounded_zero_frequency_image": "zero",
+    "constant_twist_transport": {
+      "consequence": "the exact flat-holonomy family transports every ell2 multiplet without a first-order frequency drift, so its mixed correction is bounded",
+      "covariant_momentum": "k -> k+epsilon*T_A",
+      "shell_derivative_at_k0": "0"
+    },
+    "electric_source_after_wave_common_zero": "Q_e^2*(-1/2,1/2,-1/2,0)",
+    "electric_witness": "E11=Q_e^2/2 forces Q_e=0 independently of the wave moment maps"
+  },
+  "interpretation": "The bounded Einstein sector does survive after the complete ell2 wave block is adjoined to the global phase space, but it is a stratified cone rather than a product with all global coordinates. Every nonzero wave point needs an Einstein-minus component and consequently removes a,b,d; the full zero-frequency source removes Q_e; twist velocity is universally removed. The surviving wave cone is exactly the already certified all-m both-parity ell2 stabilizer cone, times the static c, W_x and constant-twist holonomy spectators.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "propagate the a/d full-time shell audit and global bounded stratification to symbolic ell at k=0, then treat nonzero momentum where circumference transport is resonant",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_global_ell2_all_m_both_parity_bounded_cone.py",
+    "generator_sha256": "ca1733b415d25fb2abb1ff0c6c0d5f2053b130165c698410dc47b615010a1e96",
+    "inputs": {
+      "axial_bounded_completion": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion.json",
+        "sha256": "dab33111e1cd5b411bf20221a4edf29c80422b6216dcb982c45231991c4abcd3"
+      },
+      "axial_minus_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.json",
+        "sha256": "480b9bc2dcd06983a59b7a781a3377c62e83dc7231e3310d973fc9ef93ad40ae"
+      },
+      "circumference": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
+        "sha256": "80f36e27d91cf92211b94c2fbc8d74e97806c04b688f72e02284f8951f8fecb9"
+      },
+      "constant_twist": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      },
+      "electric_wilson": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
+        "sha256": "50d0bf118e1699122b8bf4e0c3da7b8fb0295a9a4725d05c155122e8d2202676"
+      },
+      "ell2_wave_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_combined_cone_second_order.json",
+        "sha256": "697399a0b286a14dcbce292330e3057dc0980a88c0c00a124108b04fa6fe31e4"
+      },
+      "homogeneous_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
+        "sha256": "236c308cec85b4edde24f0acd4fe4c2133c58516426041eab2d9ffb01be28d59"
+      },
+      "homogeneous_source": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_quadric_second_order.json",
+        "sha256": "f496750e8af73098b0e9427e2a3b5f7d2bf3ac4c42a1455e3b7807cfa8e73fb6"
+      },
+      "k0_moment_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
+        "sha256": "cf0cbbe2f8b99924c9045c99689481da882ff330e8007a18178488db8ca6a17b"
+      },
+      "polar_minus_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_polar_ell2_minus_resonance.json",
+        "sha256": "de4d48fb9e70c39916a46c1f8c0b6339d64033859557c1e9531f243808a05852"
+      },
+      "standard_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_ELL2_ALL_M_BOTH_PARITY_BOUNDED_CONE",
+  "result_state": "COMPLETE_GLOBAL_PLUS_ELL2_K0_ALL_M_BOTH_PARITY_BOUNDED_CONE_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-global-ell2-all-m-both-parity-bounded-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_global_ell2_all_m_both_parity_bounded_cone.schema.json",
+  "schema_sha256": "a20e6f2b11e97ad214a0114762851c823bf8002599de8e5ce24edbc2fab16dbb",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic correction",
+    "carrier": "complete standard homogeneous and twist data plus every axial/polar ell=2,k=0 Einstein-plus, Einstein-minus and both extra-primary coefficient for all m",
+    "charge_sector": "fixed N=2 magnetic bundle with electric tangent allowed",
+    "degree": 2,
+    "ell": "input 0,1,2 with complete ell2 quadratic output theorem",
+    "k": 0,
+    "m": "all -2,...,2 in both wave parities and all three real twist components",
+    "omega": "generalized zero and all ell2 q/p shells",
+    "parity": "homogeneous, axial and polar",
+    "theory": "Weyl-Maxwell target"
+  },
+  "sufficiency": {
+    "Wilson": "identically zero mixed source",
+    "circumference": "bounded k=0 exact-radius transport",
+    "constant_twist": "exact flat-holonomy transport with vanishing first shell derivative at k=0",
+    "electric": "absent on the bounded wave branch by the independent E11 witness",
+    "standard_static": "complete standard-global bounded theorem",
+    "wave_self": "complete all-m both-parity ell2 common-zero theorem plus the exact constant L1 right inverse (S0/2,-S1/2,0,0), so no secular/Jordan term is required"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_ell2_all_m_both_parity_bounded_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_global_ell2_all_m_both_parity_bounded_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_ell2_all_m_both_parity_bounded_cone"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.3,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 5.56,
+      "status": "PASS",
+      "tests_run": 30
+    },
+    "tier_2": {
+      "criterion": "the direct axial and polar global/minus sources and complete ell2 wave-cone theorem are unchanged exact inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "symbolic ell, nonzero momentum, complete finite bounded, causal, residual and quantum gates remain excluded",
+      "status": "NOT_RUN"
+    }
+  },
+  "wave_cone": {
+    "carrier": "the complete local-gauge-reduced ell2,k0 axial-plus-polar q/p block",
+    "equations": "mu_H(u)=mu_J1(u)=mu_J2(u)=mu_J3(u)=0; mu_Px(u)=0 identically",
+    "nonzero_implies_Einstein_minus": "the plus and both extra occupations have the same sign, so every nonzero common zero has a nonzero minus component in at least one parity",
+    "second_order": "the combined ell2 theorem solves every channel; its only former polynomial/Jordan caveat is removed by the exact constant L1 right inverse after total J_i=0",
+    "zero_frequency_L1_constant_correction": [
+      "S0/2",
+      "-S1/2",
+      "0",
+      "0"
+    ]
+  }
+}
