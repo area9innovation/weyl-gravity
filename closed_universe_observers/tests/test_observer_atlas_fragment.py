@@ -93,6 +93,14 @@ def test_emitter_diff_bv_q2_completes_emitter_only():
     assert "BERGER_108_ROW_EMITTER_DIFF_BV_Q2_PBW" in {evidence["result_id"] for evidence in row["evidence"]}
 
 
+def test_complete_q2_keeps_q3_and_cone_closed():
+    row = next(row for row in build()["entries"] if row["id"] == "observer.berger.interaction.complete_q2_pbw")
+    assert row["descriptions"]["nonlinear"] == "CERTIFIED"
+    assert row["observer_data"]["clock_and_rod_dependence"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "NO_CERTIFIED_MAP"
+
+
 def test_shifted_q2_phi2_overlay_keeps_local_rod_hessian_fail_closed():
     rows = {row["id"]: row for row in build()["entries"]}
     shifted = rows["observer.berger.interaction.pbw_108_shifted_q2_phi2_overlay"]

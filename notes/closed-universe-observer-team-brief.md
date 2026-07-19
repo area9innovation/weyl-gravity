@@ -484,8 +484,10 @@ successors are `observer.berger.interaction.apparatus_scalar_bv_q2_pbw`,
 `q2` subblocks are now `CERTIFIED`.  The physical emitter stress/switch
 successor `observer.berger.interaction.emitter_physical_q2_pbw` is also
 `CERTIFIED`, and `observer.berger.interaction.emitter_diff_bv_q2_pbw` now
-completes emitter `q2`.  One assembled 108-row `q2` payload, all `q3`,
-detector response and cone restriction remain `NO_CERTIFIED_MAP`.  Regenerate
+completes emitter `q2`.  `BERGER_108_ROW_COMPLETE_Q2_PBW` now assembles all
+seven source-labelled subblocks into 21,422 disjoint operator keys and
+completes scalar `q2`.  All `q3`, detector response and cone restriction
+remain `NO_CERTIFIED_MAP`.  Regenerate
 every remaining block rather than fitting it
 to the arity identities, then replay `q1q2`, `q2q2+q1q3`, `K_Berger`
 equivariance and observer-morphism stability.  Physical Bridge 3 remains
@@ -1432,9 +1434,10 @@ ghost components into 912 exact PBW keys.  The explicit non-holonomic
 two-form formula agrees termwise with `i_c dK+d(i_c K)`, and exact formal
 adjunction supplies the emitter- and ghost-cotangent partners.  The same
 engine recovers the certified 24-term scalar BV template, fixing the graded
-signs and factorial normalization.  This completes emitter `q2`, but one
-canonical complete 108-row `q2` payload, every `q3`, arity replay and
-`O_detector|Z2^C` remain fail-closed.
+signs and factorial normalization.  This completes emitter `q2`.  The
+canonical complete 108-row `q2` payload is now exported with 36,438 exact
+coefficient monomials and no cross-source key collision.  Every `q3`, arity
+replay and `O_detector|Z2^C` remain fail-closed.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to
