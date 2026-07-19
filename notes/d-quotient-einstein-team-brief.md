@@ -3479,6 +3479,20 @@ records resonance decomposition `CERTIFIED` but keeps same-fibre sources,
 the five Taub maps and bounded correction `OPEN`; causal correction remains
 `NO_CERTIFIED_MAP`.  Sixteen cross-fibre varieties remain for decomposition.
 
+The nine odd-`L` fibres now have an exact mixed-zero witness independent of
+their internal coefficient matrices.  Supporting both declared signed-
+frequency `ell=2` carriers at `m=2` forces `M=4`, so every projection to the
+three `L=1` or six `L=3` targets vanishes.  This gives complex highest-weight
+subspaces of total dimension 42 and kills all 130 odd-`L` scalar resonance
+equations.  For the three difference rows, `B` is explicitly the negative-
+frequency carrier and its positive-frequency reality partner has `m=-2`;
+no carriers are matched by name.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_odd_l_highest_weight_zero_subspaces`
+records resonance `CERTIFIED` but keeps the complete odd-`L` ideals,
+same-fibre sources, Taub join and both correction classes `OPEN`; causal
+correction remains `NO_CERTIFIED_MAP`.  These witnesses prove again that
+branch-basis obstruction is not an all-amplitude no-go.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

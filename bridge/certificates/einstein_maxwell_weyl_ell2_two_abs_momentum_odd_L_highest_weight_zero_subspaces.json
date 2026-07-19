@@ -1,0 +1,370 @@
+{
+  "claim_boundary": "This certifies a nontrivial mixed all-m resonance-zero subspace on each of the nine odd-L fibres, not their irreducible zero-variety decompositions. Same-fibre sources, Taub intersections, bounded and smooth-secular correction classes, residual descent and causal or quantum maps remain fail-closed.",
+  "classification": {
+    "all_nine_odd_L_highest_weight_zero_subspaces_certified": true,
+    "causal_or_quantum_claim": false,
+    "complete_odd_L_zero_varieties_classified": false,
+    "complete_two_fibre_tangent_cone_classified": false,
+    "mixed_nonzero_points_certified_on_every_odd_L_fibre": true,
+    "same_fibre_quadratic_sources_classified": false,
+    "smooth_secular_classified": false,
+    "taub_common_zero_intersection_classified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G2",
+  "lifecycle_state": "CLASSIFIED",
+  "provenance": {
+    "parent": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system.json",
+    "parent_sha256": "7c4e0ac43d1db48098d1250e09abdefbf209758167882b68239c6c9841c71046"
+  },
+  "representation_theorem": {
+    "coefficient_independence": "The angular factor vanishes before contraction with any branch, parity or target-adjoint coefficient matrix.",
+    "difference_channel_typing": "For temporal sign -1, B denotes the declared negative-frequency carrier; its real-tangent conjugate is a positive-frequency m=-2 carrier.",
+    "statement": "The tensor product of two ell=2 highest-weight carriers has M=4, hence its projection to every L=1 or L=3 target vanishes identically."
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_ODD_L_HIGHEST_WEIGHT_ZERO_SUBSPACES",
+  "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-odd-L-highest-weight-zero-subspaces-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces.schema.json",
+  "schema_sha256": "2fc51b60de000c82c96a68f7702d77487079e677b7022e873ed2ff4cff5466a1",
+  "scope": {
+    "background": "nine separately tuned compact magnetically supported Plebanski-Hacyan products",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "all nine cross-|n| fibres with odd target L=1 or L=3",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "2 times 2 -> L=1 or L=3",
+    "k": "row-specific signed |n|=1 and |n|=2 momenta",
+    "m": "both signed-frequency input carriers supported at m=2",
+    "omega": "six SUM rows and three signed DIFFERENCE rows",
+    "parity": "all declared input parities and branch copies retained on the aligned support",
+    "theory": "Weyl-Maxwell target"
+  },
+  "summary": {
+    "L1_difference_fibres": 3,
+    "L3_sum_fibres": 6,
+    "classified_physical_fibres": 9,
+    "remaining_cross_fibre_physical_fibres_without_full_decomposition": 16,
+    "sum_of_highest_weight_subspace_dimensions_over_C": 42,
+    "target_scalar_equations_vanishing": 130
+  },
+  "witnesses": [
+    {
+      "ambient_complex_amplitude_dimension": 20,
+      "branches": {
+        "first": "q_minus",
+        "second": "q_minus",
+        "target": "p_extra"
+      },
+      "candidate_index": 1,
+      "fibre_id": "L3_candidate_1",
+      "highest_weight_subspace_dimension_over_C": 4,
+      "mixed_nonzero_point": {
+        "all_other_coordinates": "0",
+        "first": "A[axial,branch-copy-0,m=2]=1",
+        "second": "B[axial,branch-copy-0,m=2]=1"
+      },
+      "output_ell": 3,
+      "real_tangent_completion": "For SUM rows add the ordinary conjugate carriers. For DIFFERENCE rows B is the declared negative-frequency carrier; its positive-frequency reality partner has m=-2. No positive- and negative-frequency carrier is identified by name.",
+      "rho": "17*(-709 + 459*sqrt(3))/10932",
+      "selection_rule": "m1=m2=2 gives M=4, while the certified target has L<4",
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "support": {
+        "first_signed_frequency_carrier": "A[parity,branch-copy,m]=0 unless m=2",
+        "internal_coordinates": "arbitrary in every declared parity and branch copy",
+        "second_signed_frequency_carrier": "B[parity,branch-copy,m]=0 unless m=2"
+      },
+      "target_scalar_equations_vanishing": 28,
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "ambient_complex_amplitude_dimension": 20,
+      "branches": {
+        "first": "q_minus",
+        "second": "q_minus",
+        "target": "q_plus"
+      },
+      "candidate_index": 2,
+      "fibre_id": "L3_candidate_2",
+      "highest_weight_subspace_dimension_over_C": 4,
+      "mixed_nonzero_point": {
+        "all_other_coordinates": "0",
+        "first": "A[axial,branch-copy-0,m=2]=1",
+        "second": "B[axial,branch-copy-0,m=2]=1"
+      },
+      "output_ell": 3,
+      "real_tangent_completion": "For SUM rows add the ordinary conjugate carriers. For DIFFERENCE rows B is the declared negative-frequency carrier; its positive-frequency reality partner has m=-2. No positive- and negative-frequency carrier is identified by name.",
+      "rho": "(-2103 + 324*sqrt(2) + 302*sqrt(6) + 1503*sqrt(3))/2162",
+      "selection_rule": "m1=m2=2 gives M=4, while the certified target has L<4",
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "support": {
+        "first_signed_frequency_carrier": "A[parity,branch-copy,m]=0 unless m=2",
+        "internal_coordinates": "arbitrary in every declared parity and branch copy",
+        "second_signed_frequency_carrier": "B[parity,branch-copy,m]=0 unless m=2"
+      },
+      "target_scalar_equations_vanishing": 14,
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "ambient_complex_amplitude_dimension": 30,
+      "branches": {
+        "first": "q_minus",
+        "second": "p_extra",
+        "target": "q_plus"
+      },
+      "candidate_index": 6,
+      "fibre_id": "L3_candidate_6",
+      "highest_weight_subspace_dimension_over_C": 6,
+      "mixed_nonzero_point": {
+        "all_other_coordinates": "0",
+        "first": "A[axial,branch-copy-0,m=2]=1",
+        "second": "B[axial,branch-copy-0,m=2]=1"
+      },
+      "output_ell": 3,
+      "real_tangent_completion": "For SUM rows add the ordinary conjugate carriers. For DIFFERENCE rows B is the declared negative-frequency carrier; its positive-frequency reality partner has m=-2. No positive- and negative-frequency carrier is identified by name.",
+      "rho": "(-225071 + 47682*sqrt(2) + 41931*sqrt(6) + 66231*sqrt(3))/292308",
+      "selection_rule": "m1=m2=2 gives M=4, while the certified target has L<4",
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "support": {
+        "first_signed_frequency_carrier": "A[parity,branch-copy,m]=0 unless m=2",
+        "internal_coordinates": "arbitrary in every declared parity and branch copy",
+        "second_signed_frequency_carrier": "B[parity,branch-copy,m]=0 unless m=2"
+      },
+      "target_scalar_equations_vanishing": 14,
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "ambient_complex_amplitude_dimension": 30,
+      "branches": {
+        "first": "p_extra",
+        "second": "q_minus",
+        "target": "q_plus"
+      },
+      "candidate_index": 10,
+      "fibre_id": "L3_candidate_10",
+      "highest_weight_subspace_dimension_over_C": 6,
+      "mixed_nonzero_point": {
+        "all_other_coordinates": "0",
+        "first": "A[axial,branch-copy-0,m=2]=1",
+        "second": "B[axial,branch-copy-0,m=2]=1"
+      },
+      "output_ell": 3,
+      "real_tangent_completion": "For SUM rows add the ordinary conjugate carriers. For DIFFERENCE rows B is the declared negative-frequency carrier; its positive-frequency reality partner has m=-2. No positive- and negative-frequency carrier is identified by name.",
+      "rho": "-(-910431*sqrt(3) - 326205*sqrt(6) + 48168*sqrt(2) + 1994230)/1916931",
+      "selection_rule": "m1=m2=2 gives M=4, while the certified target has L<4",
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "support": {
+        "first_signed_frequency_carrier": "A[parity,branch-copy,m]=0 unless m=2",
+        "internal_coordinates": "arbitrary in every declared parity and branch copy",
+        "second_signed_frequency_carrier": "B[parity,branch-copy,m]=0 unless m=2"
+      },
+      "target_scalar_equations_vanishing": 14,
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "ambient_complex_amplitude_dimension": 20,
+      "branches": {
+        "first": "q_plus",
+        "second": "q_minus",
+        "target": "extra"
+      },
+      "candidate_index": 14,
+      "fibre_id": "L1_candidate_14",
+      "highest_weight_subspace_dimension_over_C": 4,
+      "mixed_nonzero_point": {
+        "all_other_coordinates": "0",
+        "first": "A[axial,branch-copy-0,m=2]=1",
+        "second": "B[axial,branch-copy-0,m=2]=1"
+      },
+      "output_ell": 1,
+      "real_tangent_completion": "For SUM rows add the ordinary conjugate carriers. For DIFFERENCE rows B is the declared negative-frequency carrier; its positive-frequency reality partner has m=-2. No positive- and negative-frequency carrier is identified by name.",
+      "rho": "10*(-13 + 9*sqrt(3))/111",
+      "selection_rule": "m1=m2=2 gives M=4, while the certified target has L<4",
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "support": {
+        "first_signed_frequency_carrier": "A[parity,branch-copy,m]=0 unless m=2",
+        "internal_coordinates": "arbitrary in every declared parity and branch copy",
+        "second_signed_frequency_carrier": "B[parity,branch-copy,m]=0 unless m=2"
+      },
+      "target_scalar_equations_vanishing": 6,
+      "temporal_channel": "DIFFERENCE",
+      "temporal_signs": [
+        1,
+        -1
+      ]
+    },
+    {
+      "ambient_complex_amplitude_dimension": 20,
+      "branches": {
+        "first": "q_minus",
+        "second": "q_minus",
+        "target": "p_extra"
+      },
+      "candidate_index": 16,
+      "fibre_id": "L3_candidate_16",
+      "highest_weight_subspace_dimension_over_C": 4,
+      "mixed_nonzero_point": {
+        "all_other_coordinates": "0",
+        "first": "A[axial,branch-copy-0,m=2]=1",
+        "second": "B[axial,branch-copy-0,m=2]=1"
+      },
+      "output_ell": 3,
+      "real_tangent_completion": "For SUM rows add the ordinary conjugate carriers. For DIFFERENCE rows B is the declared negative-frequency carrier; its positive-frequency reality partner has m=-2. No positive- and negative-frequency carrier is identified by name.",
+      "rho": "17*(79 + 51*sqrt(3))/132",
+      "selection_rule": "m1=m2=2 gives M=4, while the certified target has L<4",
+      "signed_momenta": [
+        1,
+        2
+      ],
+      "support": {
+        "first_signed_frequency_carrier": "A[parity,branch-copy,m]=0 unless m=2",
+        "internal_coordinates": "arbitrary in every declared parity and branch copy",
+        "second_signed_frequency_carrier": "B[parity,branch-copy,m]=0 unless m=2"
+      },
+      "target_scalar_equations_vanishing": 28,
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "ambient_complex_amplitude_dimension": 20,
+      "branches": {
+        "first": "q_minus",
+        "second": "q_plus",
+        "target": "extra"
+      },
+      "candidate_index": 17,
+      "fibre_id": "L1_candidate_17",
+      "highest_weight_subspace_dimension_over_C": 4,
+      "mixed_nonzero_point": {
+        "all_other_coordinates": "0",
+        "first": "A[axial,branch-copy-0,m=2]=1",
+        "second": "B[axial,branch-copy-0,m=2]=1"
+      },
+      "output_ell": 1,
+      "real_tangent_completion": "For SUM rows add the ordinary conjugate carriers. For DIFFERENCE rows B is the declared negative-frequency carrier; its positive-frequency reality partner has m=-2. No positive- and negative-frequency carrier is identified by name.",
+      "rho": "10*(9*sqrt(3) + 77)/8529",
+      "selection_rule": "m1=m2=2 gives M=4, while the certified target has L<4",
+      "signed_momenta": [
+        1,
+        2
+      ],
+      "support": {
+        "first_signed_frequency_carrier": "A[parity,branch-copy,m]=0 unless m=2",
+        "internal_coordinates": "arbitrary in every declared parity and branch copy",
+        "second_signed_frequency_carrier": "B[parity,branch-copy,m]=0 unless m=2"
+      },
+      "target_scalar_equations_vanishing": 6,
+      "temporal_channel": "DIFFERENCE",
+      "temporal_signs": [
+        1,
+        -1
+      ]
+    },
+    {
+      "ambient_complex_amplitude_dimension": 30,
+      "branches": {
+        "first": "p_extra",
+        "second": "q_minus",
+        "target": "q_plus"
+      },
+      "candidate_index": 18,
+      "fibre_id": "L3_candidate_18",
+      "highest_weight_subspace_dimension_over_C": 6,
+      "mixed_nonzero_point": {
+        "all_other_coordinates": "0",
+        "first": "A[axial,branch-copy-0,m=2]=1",
+        "second": "B[axial,branch-copy-0,m=2]=1"
+      },
+      "output_ell": 3,
+      "real_tangent_completion": "For SUM rows add the ordinary conjugate carriers. For DIFFERENCE rows B is the declared negative-frequency carrier; its positive-frequency reality partner has m=-2. No positive- and negative-frequency carrier is identified by name.",
+      "rho": "(-12586 + 1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3))/25497",
+      "selection_rule": "m1=m2=2 gives M=4, while the certified target has L<4",
+      "signed_momenta": [
+        1,
+        2
+      ],
+      "support": {
+        "first_signed_frequency_carrier": "A[parity,branch-copy,m]=0 unless m=2",
+        "internal_coordinates": "arbitrary in every declared parity and branch copy",
+        "second_signed_frequency_carrier": "B[parity,branch-copy,m]=0 unless m=2"
+      },
+      "target_scalar_equations_vanishing": 14,
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "ambient_complex_amplitude_dimension": 20,
+      "branches": {
+        "first": "q_plus",
+        "second": "q_minus",
+        "target": "extra"
+      },
+      "candidate_index": 20,
+      "fibre_id": "L1_candidate_20",
+      "highest_weight_subspace_dimension_over_C": 4,
+      "mixed_nonzero_point": {
+        "all_other_coordinates": "0",
+        "first": "A[axial,branch-copy-0,m=2]=1",
+        "second": "B[axial,branch-copy-0,m=2]=1"
+      },
+      "output_ell": 1,
+      "real_tangent_completion": "For SUM rows add the ordinary conjugate carriers. For DIFFERENCE rows B is the declared negative-frequency carrier; its positive-frequency reality partner has m=-2. No positive- and negative-frequency carrier is identified by name.",
+      "rho": "-10*(-77 + 9*sqrt(3))/8529",
+      "selection_rule": "m1=m2=2 gives M=4, while the certified target has L<4",
+      "signed_momenta": [
+        1,
+        2
+      ],
+      "support": {
+        "first_signed_frequency_carrier": "A[parity,branch-copy,m]=0 unless m=2",
+        "internal_coordinates": "arbitrary in every declared parity and branch copy",
+        "second_signed_frequency_carrier": "B[parity,branch-copy,m]=0 unless m=2"
+      },
+      "target_scalar_equations_vanishing": 6,
+      "temporal_channel": "DIFFERENCE",
+      "temporal_signs": [
+        1,
+        -1
+      ]
+    }
+  ]
+}

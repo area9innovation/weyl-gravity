@@ -99,6 +99,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_nonaxisymmetric_L1_L3_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L1_L3_matrix.json",
     "ell2_two_abs_momentum_cross_fibre_amplitude_system": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system.json",
     "ell2_two_abs_momentum_scalar_L4_zero_varieties": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L4_zero_varieties.json",
+    "ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
@@ -927,6 +928,18 @@ def entries() -> list[dict[str, object]]:
             "This decomposes exactly five scalar-internal L4 cross-fibre resonance varieties, not the other sixteen fibres or the complete two-fibre tangent cone. Same-fibre sources, Taub intersections and higher correction classes remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ell2_two_abs_momentum_odd_l_highest_weight_zero_subspaces",
+            _scope(theory="Weyl-Maxwell target", boundaries="nine separately tuned closed S1_L times S2 circumference fibres; before final residual quotient", carrier="highest-weight aligned mixed subspaces on all cross-|n| fibres with target L=1 or L=3", degree=2, parity="all declared input parities and branch copies retained", ell="input 2 x 2; output L=1 or L=3", m="both declared signed-frequency carriers supported at m=2, hence M=4", k="row-specific signed |n|=1 and |n|=2 momenta", omega="six SUM rows and three signed DIFFERENCE rows; real partners retained", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","All nine physical circumference fibres remain distinct; the three L1 difference carriers and six L3 sum carriers are not identified across backgrounds or temporal signs."),
+            ("CERTIFIED","The action-derived branch and target data are retained, but the vanishing occurs already in the exact Clebsch--Gordan factor before any coefficient matrix is contracted."),
+            ("OPEN","The five stabilizer moment maps and same-fibre quadratic sources have not been restricted to these highest-weight subspaces."),
+            ("CERTIFIED","Supporting both signed-frequency ell=2 inputs at m=2 forces M=4, so all 130 scalar equations with target L=1 or L=3 vanish; every odd-L fibre has a mixed nonzero point."),
+            _second_order(("OPEN","These are cross-fibre resonance-zero subspaces, not bounded second-order solutions; same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on these subspaces."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
+            "This certifies mixed zero subspaces on all nine odd-L fibres, not their complete irreducible ideals or the two-fibre tangent cone. Same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="constant twist position plus paired axisymmetric +/-k Einstein-plus/minus standing waves", degree=2, parity="generic input parity retained; polar extra resonant output", ell="every one fixed integer ell>=2 with output L=2ell", m="m_A=0 inputs and M=0 output", k="one tuned allowed nonzero +/-k pair", omega="q-plus/minus inputs and p-primary sum-frequency output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
@@ -1542,6 +1555,27 @@ def build() -> dict[str, object]:
         or scalar_l4["causal_or_quantum_claim"]
     ):
         raise AssertionError("scalar-internal L4 zero varieties exceeded scope")
+    odd_value = records["ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces"]
+    odd = odd_value["classification"]
+    odd_summary = odd_value["summary"]
+    if not (
+        odd["all_nine_odd_L_highest_weight_zero_subspaces_certified"]
+        and odd["mixed_nonzero_points_certified_on_every_odd_L_fibre"]
+        and odd_summary["classified_physical_fibres"] == 9
+        and odd_summary["L1_difference_fibres"] == 3
+        and odd_summary["L3_sum_fibres"] == 6
+        and odd_summary["target_scalar_equations_vanishing"] == 130
+        and odd_summary["sum_of_highest_weight_subspace_dimensions_over_C"] == 42
+    ):
+        raise AssertionError("odd-L highest-weight zero subspaces changed")
+    if (
+        odd["complete_odd_L_zero_varieties_classified"]
+        or odd["same_fibre_quadratic_sources_classified"]
+        or odd["taub_common_zero_intersection_classified"]
+        or odd["complete_two_fibre_tangent_cone_classified"]
+        or odd["causal_or_quantum_claim"]
+    ):
+        raise AssertionError("odd-L highest-weight witness exceeded scope")
     if l3["arbitrary_amplitude_zero_variety_classified"] or l3["causal_or_quantum_claim"]:
         raise AssertionError("nonaxisymmetric L3 matrix exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:

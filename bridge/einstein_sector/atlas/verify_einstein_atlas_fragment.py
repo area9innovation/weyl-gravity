@@ -508,6 +508,16 @@ def verify() -> None:
         raise AssertionError("scalar L4 correction classes were merged")
     if "other sixteen fibres" not in scalar_l4["claim_boundary"] or "complete two-fibre tangent cone" not in scalar_l4["claim_boundary"]:
         raise AssertionError("scalar L4 decomposition exceeded scope")
+    odd = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_odd_l_highest_weight_zero_subspaces"]
+    odd_second = odd["mode_data"]["second_order"]
+    if odd["descriptions"]["nonlinear"] != "OPEN" or "three L1 difference carriers and six L3 sum carriers" not in odd["mode_data"]["dispersion"]["statement"]:
+        raise AssertionError("odd-L highest-weight carrier typing was hidden")
+    if odd["mode_data"]["resonance"]["status"] != "CERTIFIED" or "all 130 scalar equations" not in odd["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("odd-L highest-weight zero witness was hidden")
+    if odd["mode_data"]["taub_maps"]["status"] != "OPEN" or odd_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or odd_second["smooth_secular"]["status"] != "OPEN" or odd_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("odd-L witness correction classes were merged")
+    if "not their complete irreducible ideals" not in odd["claim_boundary"] or "two-fibre tangent cone" not in odd["claim_boundary"]:
+        raise AssertionError("odd-L witness exceeded scope")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]
     if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:

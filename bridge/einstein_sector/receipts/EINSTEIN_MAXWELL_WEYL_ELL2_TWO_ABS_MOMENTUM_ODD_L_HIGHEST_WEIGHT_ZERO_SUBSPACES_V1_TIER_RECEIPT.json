@@ -1,0 +1,47 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_ODD_L_HIGHEST_WEIGHT_ZERO_SUBSPACES_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact highest-weight mixed resonance-zero subspaces on all nine odd-L cross-fibre systems.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces.json": "611134cef55777d0f6df490fe675449cfd98cd3c8d5d5ebe0bee87e8c5420c71",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces.py": "3aa3c709932cbd9ef86a4bd80fa981a4960230a29035d7a949cf9a7c61eafff9",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces.schema.json": "2fc51b60de000c82c96a68f7702d77487079e677b7022e873ed2ff4cff5466a1",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces.py": "7b545bd534241dcfdca415c20075916a81f645bd4d214e0c3e47216cc72624cf",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces.py": "4ebbb50b0cad1febc41402bd12ee099f69ffd7998ab3f5d809364de23ccdd731",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-odd-L-highest-weight-zero-subspaces.md": "ac7459fa98ff4b1b326a8c01f267f624e085a86d088547a076db798eed3c9363"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 73,
+      "commands": [
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.36,
+      "max_rss_kib": 56176,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_two_abs_momentum_odd_L_highest_weight_zero_subspaces --write",
+      "reason": "The producer replays the nine physical fibres, checks their exact Clebsch-Gordan maps and signed temporal carriers, and proves the aligned m=2 support kills every L=1 and L=3 target equation."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This certifies nine resonance-zero subspaces, not the complete odd-L ideals, same-fibre sources, Taub intersections, tangent cone or shared-core algebra."
+    }
+  },
+  "claim_boundary": "All nine odd-L fibres have certified mixed resonance-zero subspaces. Complete irreducible ideals, same-fibre sources, five Taub maps, bounded and smooth-secular correction classes, causal maps, residual observables and quantum claims remain OPEN or NO_CERTIFIED_MAP."
+}

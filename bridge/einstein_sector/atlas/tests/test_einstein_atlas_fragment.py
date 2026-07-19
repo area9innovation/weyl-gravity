@@ -223,6 +223,19 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("other sixteen fibres", entry["claim_boundary"])
         self.assertIn("complete two-fibre tangent cone", entry["claim_boundary"])
 
+    def test_odd_l_highest_weight_subspaces_are_witnesses_not_cones(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_odd_l_highest_weight_zero_subspaces"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertIn("three L1 difference carriers and six L3 sum carriers", entry["mode_data"]["dispersion"]["statement"])
+        self.assertIn("all 130 scalar equations", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not their complete irreducible ideals", entry["claim_boundary"])
+
     def test_nonaxisymmetric_l3_matrix_closes_basis_not_cone(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
         second = entry["mode_data"]["second_order"]

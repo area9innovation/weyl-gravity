@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-odd-L-highest-weight-zero-subspaces-v1",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "dependency_tags", "lifecycle_state", "scope", "representation_theorem", "witnesses", "summary", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-ell2-two-abs-momentum-odd-L-highest-weight-zero-subspaces-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_ODD_L_HIGHEST_WEIGHT_ZERO_SUBSPACES"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "witnesses": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "type": "object",
+        "required": ["fibre_id", "candidate_index", "rho", "output_ell", "temporal_channel", "temporal_signs", "signed_momenta", "branches", "ambient_complex_amplitude_dimension", "highest_weight_subspace_dimension_over_C", "support", "selection_rule", "target_scalar_equations_vanishing", "mixed_nonzero_point", "real_tangent_completion"]
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["classified_physical_fibres", "L1_difference_fibres", "L3_sum_fibres", "target_scalar_equations_vanishing", "sum_of_highest_weight_subspace_dimensions_over_C", "remaining_cross_fibre_physical_fibres_without_full_decomposition"]
+    },
+    "classification": {
+      "type": "object",
+      "required": ["all_nine_odd_L_highest_weight_zero_subspaces_certified", "mixed_nonzero_points_certified_on_every_odd_L_fibre", "complete_odd_L_zero_varieties_classified", "same_fibre_quadratic_sources_classified", "taub_common_zero_intersection_classified", "complete_two_fibre_tangent_cone_classified", "smooth_secular_classified", "causal_or_quantum_claim"]
+    }
+  }
+}
