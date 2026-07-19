@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-generic-background-physical-plus-ghost-n3-third-curvature-form-factors-v1.schema.json",
+  "title": "Generic-background physical plus ghost-n3 third-curvature form factors",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "function_basis",
+    "assembly_convention",
+    "channel_rows",
+    "I28_relation",
+    "quotient_ledger",
+    "formula_digest",
+    "claim_flags",
+    "dependencies",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-physical-plus-ghost-n3-third-curvature-form-factors-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_PHYSICAL_PLUS_GHOST_N3_THIRD_CURVATURE_FORM_FACTORS"},
+    "result_state": {"const": "COEFFICIENT_COMPUTED"},
+    "lifecycle_state": {"type": "string", "minLength": 1},
+    "dependency_tags": {
+      "type": "array",
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "classical_commit": {"type": "string", "minLength": 1},
+    "scope": {"type": "object"},
+    "function_basis": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 7,
+      "maxItems": 7,
+      "uniqueItems": true
+    },
+    "assembly_convention": {"type": "object"},
+    "channel_rows": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "channel_id",
+          "carrier_id",
+          "label_order",
+          "assembly_recipe",
+          "source_row_digests",
+          "combined_coordinate_digests",
+          "combined_scale_digest",
+          "exact_holdouts"
+        ],
+        "properties": {
+          "channel_id": {"type": "string", "minLength": 1},
+          "carrier_id": {"enum": ["I10", "I24", "I25", "I28", "I29"]},
+          "label_order": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 3}, "minItems": 3, "maxItems": 3},
+          "assembly_recipe": {"type": "object"},
+          "source_row_digests": {"type": "object"},
+          "combined_coordinate_digests": {"type": "object"},
+          "combined_scale_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "exact_holdouts": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object"}}
+        }
+      }
+    },
+    "I28_relation": {"type": "object"},
+    "quotient_ledger": {"type": "object"},
+    "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"},
+      "required": [
+        "PHYSICAL_PLUS_GHOST_N3_FIVE_CARRIER_FUNCTIONS_ASSEMBLED",
+        "PHYSICAL_PLUS_GHOST_N3_MELLIN_MS_REPRESENTATIVE_COMPUTED",
+        "GHOST_N1_INSERTION_TRACE_COMPUTED",
+        "GHOST_N2_INSERTION_TRACE_COMPUTED",
+        "GENERIC_FINITE_SCHUR_ROWS_COMPUTED",
+        "ABSOLUTE_FINITE_C2_NORMALIZATION_FIXED",
+        "FULL_GHOST_DETERMINANT_COMPUTED",
+        "FULL_BV_FORM_FACTORS_COMPUTED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "RESIDUAL_TRANSFER_AUTHORIZED",
+        "LORENTZIAN_CERTIFIED"
+      ]
+    },
+    "dependencies": {"type": "object"},
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

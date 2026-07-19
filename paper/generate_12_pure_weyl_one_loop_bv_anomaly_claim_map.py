@@ -62,6 +62,7 @@ INPUTS = {
     "generic_physical_hessian_triangle_six_master_coordinates": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_SIX_MASTER_COORDINATES.json",
     "generic_physical_hessian_triangle_relative_IBP_boundary_flux": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_RELATIVE_IBP_BOUNDARY_FLUX.json",
     "generic_physical_hessian_third_curvature_form_factors": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_THIRD_CURVATURE_FORM_FACTORS.json",
+    "generic_physical_plus_ghost_n3_third_curvature_form_factors": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_PLUS_GHOST_N3_THIRD_CURVATURE_FORM_FACTORS.json",
     "generic_background_ghost_CPT_obstruction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n3_adiabatic_carrier": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
@@ -167,6 +168,9 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     ]
     physical_hessian_form_factors = values[
         "generic_physical_hessian_third_curvature_form_factors"
+    ]
+    physical_plus_ghost_n3 = values[
+        "generic_physical_plus_ghost_n3_third_curvature_form_factors"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -540,6 +544,18 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         )
         is not False
         or physical_hessian_form_factors.get("quotient_ledger", {}).get(
+            "quotient_dimension"
+        )
+        != 10
+        or physical_plus_ghost_n3.get("claim_flags", {}).get(
+            "PHYSICAL_PLUS_GHOST_N3_MELLIN_MS_REPRESENTATIVE_COMPUTED"
+        )
+        is not True
+        or physical_plus_ghost_n3.get("claim_flags", {}).get(
+            "FULL_BV_FORM_FACTORS_COMPUTED"
+        )
+        is not False
+        or physical_plus_ghost_n3.get("quotient_ledger", {}).get(
             "quotient_dimension"
         )
         != 10
@@ -953,6 +969,9 @@ def build() -> dict[str, Any]:
     physical_hessian_form_factors = values[
         "generic_physical_hessian_third_curvature_form_factors"
     ]
+    physical_plus_ghost_n3 = values[
+        "generic_physical_plus_ghost_n3_third_curvature_form_factors"
+    ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
@@ -992,6 +1011,7 @@ def build() -> dict[str, Any]:
         ],
         "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact and the generic ghost n=3 triangle is projected exactly onto that quotient. Ten generic numerators cancel one Delta; only I10 has a nonzero direct open-edge restriction, while the I28 relation is pointwise. All ten pole-three rows have exact relative-IBP primitives. The exact S3-covariant scalar-triangle differential system reduces their derivative masters to J and two bubble-log ratios, while equal corner weights make the sole nonzero corner flux rational. The pole-four I29 row also reduces by a full 55-row exact relative-IBP identity to the same master basis, so all eleven generic ghost n=3 functions are complete and regress exactly to the symmetric-point integration. The curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3; Wres(K), Wres(K^2), and Wres(log S_L) are exact, the declared order-two weighted trace fixes the pole and scale row, and the round-S4 reference finite K/K2 rows, canonical det_3 tail, weighted modified determinant, and Einstein-ratio defect 5/3 are complete. The distinct generic weight-raised local defect is exactly -(1/4)Wres(K^2) and specializes to -1/3. A smoothing witness proves that the generic finite rows require a full Green kernel or spectral measure. The same-gauge physical three-H1 alpha numerator is exact and projected onto all eleven raw channels of the five-carrier quotient. Its isolated symmetric-point integral is logarithmically corner obstructed by a rank-one M14 class. The projected algebraic H2 block is imported and operationally polarized on an exact equal-box TT fixture. All six H1-cubed orderings and all six mixed-bubble endpoints give the nonzero raw logarithmic coefficient 15707/216. A generic covariant Volterra carrier joins the six ordered triangle cells and three H1-H2 contact cells under the common Mellin extension. All generic contact endpoint residues are projected to 33 exact raw five-carrier functions with two unseen replays and exact I28 reduction. The three generic triangle corner functions and their full contact incidence are exact and nonzero, so M14 is disposed as a Mellin-renormalized scale row. The minimally-subtracted finite parts of all three H1-H2 contacts are also projected to 33 exact rational rows; their equal-box TT sum is 3188/27. The eleven integrated triangle channels, finite contacts and combined scale rows are now assembled into five exact carrier-labelled physical-Hessian Mellin-MS functions. Generic ghost and remaining BV finite rows, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
         "manuscript": _relative(MANUSCRIPT),
+        "latest_coefficient_update": "All eleven integrated generic scalar-flat ghost n=3 channels are added to the physical-Hessian Mellin-MS five-carrier representative with the exact ten-dimensional I28 quotient preserved; ghost n1/n2, generic finite Schur and remaining BV rows stay open.",
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
         "compiled_pdf_sha256": _sha256(PDF),
@@ -1144,6 +1164,10 @@ def build() -> dict[str, Any]:
             "physical_Hessian_form_factor_orientation_channel_count": physical_hessian_form_factors["quotient_ledger"]["raw_orientation_channel_count"],
             "physical_Hessian_form_factor_quotient_dimension": physical_hessian_form_factors["quotient_ledger"]["quotient_dimension"],
             "physical_Hessian_finite_C2_normalization": physical_hessian_form_factors["scheme_disposition"]["finite_C2_normalization"],
+            "physical_plus_ghost_n3_five_carrier_representative_assembled": True,
+            "physical_plus_ghost_n3_channel_count": physical_plus_ghost_n3["quotient_ledger"]["raw_channel_count"],
+            "physical_plus_ghost_n3_quotient_dimension": physical_plus_ghost_n3["quotient_ledger"]["quotient_dimension"],
+            "physical_plus_ghost_n3_I28_relation_status": physical_plus_ghost_n3["quotient_ledger"]["relation_status"],
             "generic_background_ghost_minimal_CPT_substitution_obstructed": True,
             "generic_background_ghost_effective_divergence_coefficient": generic_ghost_cpt["algebraic_Weyl_ghost_elimination"]["beta_controls"][0]["effective_divergence_coefficient"],
             "generic_background_ghost_principal_eigenvalues": generic_ghost_cpt["nonminimal_principal_symbol"]["eigenvalues_e0"],
@@ -1276,12 +1300,12 @@ def build() -> dict[str, Any]:
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "ADD_GENERIC_GHOST_AND_REMAINING_BV_ROWS_TO_THE_ASSEMBLED_PHYSICAL_HESSIAN_FORM_FACTORS",
+            "status": "COMPUTE_GHOST_N1_N2_AND_GENERIC_FINITE_SCHUR_ROWS_THEN_ADD_REMAINING_BV_SECTORS",
             "required_inputs": [
                 "same-background compensator-inclusive classical contraction",
                 "finite C2 and absolute dressed Rhat2 normalization conditions",
                 "full generic-background primed Green/resolvent kernel or complete spectral measure for the reference-scale finite R(K), finite R(K^2), and det3 rows; the round-S4 special-background benchmark is complete but does not substitute for this global carrier",
-                "generic ghost and remaining BV finite rows from a primed Green/resolvent kernel or complete spectral measure, to be added to the five assembled physical-Hessian Mellin-MS functions",
+                "curved-Endo ghost n1/n2 and generic finite Schur rows from a primed Green/resolvent kernel or complete spectral measure, to be added with remaining BV sectors to the physical-plus-ghost-n3 five-carrier representative",
                 "remaining trace substitutions matching the complete full-BV rows to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
                 "renormalized BV operator data fixing complete Q1",
             ],

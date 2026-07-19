@@ -243,6 +243,11 @@ class ActiveFrontierTests(unittest.TestCase):
             ]
         )
         self.assertTrue(
+            self.payload["claim_flags"][
+                "PHYSICAL_PLUS_GHOST_N3_MELLIN_MS_REPRESENTATIVE_COMPUTED"
+            ]
+        )
+        self.assertTrue(
             self.payload["claim_flags"]["PHYSICAL_N3_THREE_LINEAR_TRIANGLE_COMPUTED"]
         )
         self.assertTrue(
@@ -517,7 +522,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "ADD_GENERIC_GHOST_AND_REMAINING_BV_ROWS_AND_FIX_OR_PARAMETERIZE_THE_FINITE_C2_NORMALIZATION",
+            "COMPUTE_GHOST_N1_N2_AND_GENERIC_FINITE_SCHUR_ROWS_THEN_ADD_REMAINING_BV_SECTORS",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

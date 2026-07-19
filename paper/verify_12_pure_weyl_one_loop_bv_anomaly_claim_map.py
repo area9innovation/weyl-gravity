@@ -76,6 +76,7 @@ def main() -> None:
         "-3.9781454856154116274753955548059869205821661933",
         "full primed Green kernel or equivalent spectral measure",
         "Same-gauge physical-Hessian linear-curvature import",
+        "Physical plus ghost-$n=3$ carrier assembly",
         "Algebraic $H_2$ cancellation of the symmetric $M_{14}$ divergence is therefore refuted",
     ]
     for fragment in required_manuscript_fragments:
@@ -413,13 +414,17 @@ def main() -> None:
     assert claims["physical_Hessian_form_factor_carrier_count"] == 5
     assert claims["physical_Hessian_form_factor_orientation_channel_count"] == 11
     assert claims["physical_Hessian_form_factor_quotient_dimension"] == 10
+    assert claims["physical_plus_ghost_n3_five_carrier_representative_assembled"] is True
+    assert claims["physical_plus_ghost_n3_channel_count"] == 11
+    assert claims["physical_plus_ghost_n3_quotient_dimension"] == 10
+    assert claims["physical_plus_ghost_n3_I28_relation_status"] == "ZERO_COEFFICIENTWISE"
     assert claims["physical_Hessian_finite_C2_normalization"] == "NOT_FIXED"
     assert payload["explicit_nonclaims"][
         "generic_ghost_zeta_multiplicative_anomaly_computed_without_declared_factorization"
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "ADD_GENERIC_GHOST_AND_REMAINING_BV_ROWS_TO_THE_ASSEMBLED_PHYSICAL_HESSIAN_FORM_FACTORS"
+        == "COMPUTE_GHOST_N1_N2_AND_GENERIC_FINITE_SCHUR_ROWS_THEN_ADD_REMAINING_BV_SECTORS"
     )
 
     dependencies = {}
@@ -459,7 +464,7 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
     assert claims["physical_Hessian_triangle_corner_count"] == 33
     assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
-    assert len(payload["inputs"]) == 63
+    assert len(payload["inputs"]) == 64
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

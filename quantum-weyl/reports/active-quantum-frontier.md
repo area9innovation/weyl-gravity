@@ -201,7 +201,12 @@ integration. The pole-four `I29` row is now also reduced by a full exact
 55-row relative-IBP identity with tangent/master/target ranks `46/49/49`.
 Its corner flux is rational, it uses the same three transcendental masters,
 and its symmetric-point value agrees exactly with the independent simplex
-integration. All eleven generic ghost `n=3` functions are therefore complete.
+integration. All eleven generic ghost `n=3` functions are therefore complete
+and are now added channelwise to the physical-Hessian representative. Their
+upstream determinant multiplier is retained, two exact generic holdouts are
+stored per channel, and the coefficientwise `I28` relation survives. This is
+a partial-BV five-carrier representative: ghost `n=1/n=2`, finite Schur and
+remaining BV rows remain open.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute
@@ -524,10 +529,10 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. supply the full generic primed Green kernel or spectral measure for the
-   global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the
-   now-assembled physical-Hessian five-carrier representative to obtain the
-   complete parity-even repository form factors;
+1. compute the curved-Endo ghost `n=1/n=2` rows and supply the full generic
+   primed Green kernel or spectral measure for the global finite `R(K)`,
+   `R(K^2)` and `det_3` rows, then add these and the remaining BV sectors to
+   the physical-plus-ghost-`n=3` five-carrier representative;
 2. classify the parity-odd derivative sector and fix the finite `C2` and
    absolute dressed `R(g_hat)^2` normalizations and renormalized products;
 3. use those data to determine complete `Gamma1/Q1`;
@@ -542,7 +547,9 @@ The frontier is `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, and
 
 Tier-1 rerun on 2026-07-19 covers frontier reproduction, independent
 verification, the scoped frontier tests, and strict Draft 2020-12 schema
-validation. The physical five-carrier projection additionally passes 28
+validation. The partial-BV carrier assembly additionally passes exact
+reconstruction from four hashed inputs, two holdouts for each of eleven
+channels and the coefficientwise `I28` relation. The physical five-carrier projection additionally passes 28
 checkpointed exact training fixtures, two unseen generator fixtures, one
 fresh no-cache unseen replay, and six scoped tests. The coupled repair's affected
 exact chain was run separately at Tier 2 and is recorded in its acceptance

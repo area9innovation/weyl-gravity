@@ -1316,3 +1316,24 @@ complete `Gamma1/Q1` are therefore fail-closed.
 
 Receipt:
 [`generic-background-physical-hessian-third-curvature-form-factors.md`](../quantum-weyl/reports/generic-background-physical-hessian-third-curvature-form-factors.md).
+
+## Physical plus ghost-`n=3` assembly (2026-07-19)
+
+The complete integrated generic scalar-flat ghost `n=3` triangle is now
+added channelwise to the five-carrier physical-Hessian representative. The
+upstream fermionic determinant multiplier is already included, the common
+`(4*pi)^-2` factor remains excluded, and the exact `I28` relation survives in
+all seven function coordinates and the scale row. The result is therefore a
+ten-dimensional coefficient-bearing partial-BV representative.
+
+This does not close the generic ghost determinant. Curved-Endo ghost
+`n=1/n=2`, finite longitudinal-Schur rows, remaining BV sectors and the
+independent finite `C2` normalization remain open. The active coefficient
+gate is:
+
+```text
+COMPUTE_GHOST_N1_N2_AND_GENERIC_FINITE_SCHUR_ROWS_THEN_ADD_REMAINING_BV_SECTORS
+```
+
+Receipt:
+[`generic-background-physical-plus-ghost-n3-third-curvature-form-factors.md`](../quantum-weyl/reports/generic-background-physical-plus-ghost-n3-third-curvature-form-factors.md).

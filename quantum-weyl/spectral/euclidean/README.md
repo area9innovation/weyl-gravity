@@ -313,3 +313,10 @@ It specializes to `-1/3` on round `S4`, giving zeta ratio
 `-4.3114788189487449608...`. The exact difference `2` from the preceding
 `5/3` value records the change of factorization convention. The generic
 finite rows remain a separate global Green/spectral problem.
+
+The coefficient-bearing generic carrier assembly now combines the complete
+physical-Hessian Mellin-MS representative with all eleven integrated ghost
+`n=3` triangle functions. The exact ten-dimensional `I28` quotient is
+preserved. This remains a partial-BV result because ghost `n=1/n=2`, the
+generic finite Schur rows and remaining BV sectors are not computed. See
+[`generic-background-physical-plus-ghost-n3-third-curvature-form-factors.md`](../../reports/generic-background-physical-plus-ghost-n3-third-curvature-form-factors.md).

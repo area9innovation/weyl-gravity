@@ -397,6 +397,10 @@
     "physical_n3_projection_training_fixture_count": 28,
     "physical_n3_projection_unseen_fixture_count": 2,
     "physical_n3_three_linear_insertion_vertex_ready": true,
+    "physical_plus_ghost_n3_I28_relation_status": "ZERO_COEFFICIENTWISE",
+    "physical_plus_ghost_n3_channel_count": 11,
+    "physical_plus_ghost_n3_five_carrier_representative_assembled": true,
+    "physical_plus_ghost_n3_quotient_dimension": 10,
     "pure_Diff_and_mixed_additional_classes": 0,
     "raw_to_repository_R2_scheme_shift": {
       "basis": [
@@ -495,7 +499,7 @@
     "universal_CPT_third_curvature_kernels_imported": true
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "21f5fe81149a1dba01c3cef462503b08e4ea198be92f401b6ce559d1df38b98b",
+  "compiled_pdf_sha256": "4f6b97073c5bda43ff00eeecee83be72dfa71cba99ae096b571581da71f0ce71",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
@@ -717,6 +721,10 @@
       "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_SIX_MASTER_COORDINATES",
       "sha256": "d205896de6c5f2d6a534889e9bdb566a590b9e2c47a28d1def2ff5585994de9c"
     },
+    "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_PLUS_GHOST_N3_THIRD_CURVATURE_FORM_FACTORS.json": {
+      "result_id": "GENERIC_BACKGROUND_PHYSICAL_PLUS_GHOST_N3_THIRD_CURVATURE_FORM_FACTORS",
+      "sha256": "b622491829780643a208863ce3e20a28409eaed07fed832d07a3ab99d4fe344c"
+    },
     "quantum-weyl/spectral/euclidean/certificates/GENERIC_SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM.json": {
       "result_id": "GENERIC_SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM",
       "sha256": "d3de38ea404b3ecd203795d11dace62d4b553c4d40a91f92fb1d0f8d00f21b8c"
@@ -790,15 +798,16 @@
       "sha256": "5b6241ed77ee5ec7a89b210454786c99bbc96681709d89b8d868203c120bcf8f"
     }
   },
+  "latest_coefficient_update": "All eleven integrated generic scalar-flat ghost n=3 channels are added to the physical-Hessian Mellin-MS five-carrier representative with the exact ten-dimensional I28 quotient preserved; ghost n1/n2, generic finite Schur and remaining BV rows stay open.",
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "f3b8d6ff415cbdd65f3fbf27cf4a5475131d4cdaccf4443a8569aa5e2a63ea07",
+  "manuscript_sha256": "7853814b27759c9f7282c63d47b8186c733c0fd02c72d4653dbe5b556cb8e7d0",
   "next_gate": {
     "required_inputs": [
       "same-background compensator-inclusive classical contraction",
       "finite C2 and absolute dressed Rhat2 normalization conditions",
       "full generic-background primed Green/resolvent kernel or complete spectral measure for the reference-scale finite R(K), finite R(K^2), and det3 rows; the round-S4 special-background benchmark is complete but does not substitute for this global carrier",
-      "generic ghost and remaining BV finite rows from a primed Green/resolvent kernel or complete spectral measure, to be added to the five assembled physical-Hessian Mellin-MS functions",
+      "curved-Endo ghost n1/n2 and generic finite Schur rows from a primed Green/resolvent kernel or complete spectral measure, to be added with remaining BV sectors to the physical-plus-ghost-n3 five-carrier representative",
       "remaining trace substitutions matching the complete full-BV rows to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
       "renormalized BV operator data fixing complete Q1"
     ],
@@ -809,11 +818,11 @@
       "H3-to-H4 and H4-to-H5 maps",
       "pairing correction"
     ],
-    "status": "ADD_GENERIC_GHOST_AND_REMAINING_BV_ROWS_TO_THE_ASSEMBLED_PHYSICAL_HESSIAN_FORM_FACTORS"
+    "status": "COMPUTE_GHOST_N1_N2_AND_GENERIC_FINITE_SCHUR_ROWS_THEN_ADD_REMAINING_BV_SECTORS"
   },
   "publication_artifacts": {
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "2dc6fcf217bad910928addc99730e6c2252f936777a36bc4a3d58d99dd8bef7c",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "1cb83710acd2f3a1622e13bdef769aac6b14758577c3c07c3baf2dbd09e7205f",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "691cd8364809f12063be1a72339d0aca3bded6942eda116099a3c9514f6b1cea",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "d66f8221c01dcfa74116b1e90e1fd50017bdf7ad1db24489902c9a474fe9882c",
     "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "c30e5a712e62708eb6dfc7e2bee5dc8a6e16077a48b5ff2d8d8d1644754a4095",
     "paper/generate_12_quantum_anomaly_tables.py": "53fa1f003c9cedd320d7e2d8c8e8b589fcd5fc200c7c0362955107b68e62e4db",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "b7556226f31a06e73e9410c3e382c5eca6b77be3bce6004324ee1c0171b8e8c0",
