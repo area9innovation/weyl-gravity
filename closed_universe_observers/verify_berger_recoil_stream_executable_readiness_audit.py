@@ -44,6 +44,9 @@ def main() -> int:
     assert value["flags"]["TWO_J6_FEEDBACK_CHANNELS_EVALUATED"] is True
     assert value["flags"]["GENERIC_REALITY_FOLDED_SUCCESSIVE_SHELL_ADAPTER_EXPORTED"] is True
     assert value["flags"]["CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED"] is True
+    assert value["flags"]["NUMERICAL_SPECIALIZATION_INPUT_TRANSLATOR_EXPORTED"] is True
+    assert value["numerical_input_contract"]["status"] == "CERTIFIED_SCHEMA_AND_TRANSLATOR_VALUES_DEFERRED"
+    assert value["next_gate"] == "AWAIT_PROVENANCE_COMPLETE_EXPLICIT_EXTERNAL_VALUE_DECLARATION"
     assert all(row["detected"] for row in value["mutation_results"])
     print("Berger recoil executable-readiness audit verification: PASS")
     return 0

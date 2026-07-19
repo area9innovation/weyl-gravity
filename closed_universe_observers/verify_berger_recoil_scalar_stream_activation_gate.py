@@ -42,6 +42,11 @@ def main() -> int:
     assert value["flags"]["COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED"] is True
     assert value["flags"]["TWO_J6_FEEDBACK_CHANNELS_EVALUATED"] is True
     assert value["flags"]["GENERIC_REALITY_FOLDED_SUCCESSIVE_SHELL_ADAPTER_EXPORTED"] is True
+    external = {row["id"]: row for row in value["readiness"]["external_rows"]}
+    assert external["exact_numerical_input_contract_v2"]["status"] == "CERTIFIED"
+    assert value["flags"]["EXACT_NUMERICAL_INPUT_CONTRACT_V2_EXPORTED"] is True
+    assert value["flags"]["NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED"] is False
+    assert value["next_gate"] == "AWAIT_PROVENANCE_COMPLETE_EXPLICIT_EXTERNAL_VALUE_DECLARATION"
     assert all(row["detected"] for row in value["mutation_results"])
     assert value["atlas_status"] == "CERTIFIED"
     print("Berger recoil scalar stream activation-gate verification: PASS")

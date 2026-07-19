@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = ROOT / "closed_universe_observers"
 CERTIFICATE = PACKAGE / "certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json"
 SCHEMA = PACKAGE / "schema/berger-recoil-stream-executable-readiness-audit-v1.schema.json"
-INPUT_SCHEMA = PACKAGE / "schema/berger-recoil-numerical-specialization-input-v1.schema.json"
+INPUT_SCHEMA = PACKAGE / "schema/berger-recoil-numerical-specialization-input-v2.schema.json"
 REPORT = PACKAGE / "reports/berger-recoil-stream-executable-readiness-audit.md"
 BACKEND = PACKAGE / "berger_recoil_interval_stream.py"
 FORM_BACKEND = PACKAGE / "berger_recoil_detector_form_binding.py"
@@ -55,6 +55,7 @@ DEPENDENCIES = {
     "real_shell_extraction": PACKAGE / "certificates/BERGER_RECOIL_REAL_SHELL_EXTRACTION.json",
     "two_j6_reality_folded_binding": PACKAGE / "certificates/BERGER_RECOIL_TWO_J6_REALITY_FOLDED_BINDING.json",
     "reality_folded_stream_adapter": PACKAGE / "certificates/BERGER_RECOIL_REALITY_FOLDED_SHELL_STREAM_ADAPTER.json",
+    "numerical_input_contract": PACKAGE / "certificates/BERGER_RECOIL_NUMERICAL_INPUT_CONTRACT_V2.json",
 }
 REQUIRED_CALLABLES = {
     "detector_profile_coefficient_provider": "detector_profile_coefficient_interval",
@@ -548,6 +549,7 @@ def build() -> dict[str, Any]:
         "real_shell_extraction": "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED",
         "two_j6_reality_folded_binding": "ALL_56_TWO_J6_CHANNEL_COLUMN_BLOCKS_CERTIFIED",
         "reality_folded_stream_adapter": "CONTIGUOUS_SUCCESSIVE_SHELL_STREAM_ADAPTER_EXPORTED",
+        "numerical_input_contract": "EXACT_NUMERICAL_INPUT_CONTRACT_V2_EXPORTED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -748,8 +750,9 @@ def build() -> dict[str, Any]:
         "channel sums. The generic adapter now builds, binds, evaluates and folds each "
         "successive shell, aggregates all four entries and invokes the stop rule before advancing. "
         "An exact two_j=6 carrier-building replay reproduces the prior 56-block certificate. The "
-        "numerical input schema is certified only as a deferred exact "
-        "contract in the gHat operator units; it contains no chosen physical values, so "
+        "v2 numerical input schema and callable declaration translator are certified as an exact "
+        "contract in the gHat operator units, while legacy v1 is explicitly obstructed by its "
+        "runtime mismatch. The v2 contract contains no chosen physical values, so "
         "the four physical streams remain inactive. "
         "This audit does not demote the symbolic operator theorem, evaluate recoil, "
         "restrict records to the second-order cone, activate Bridge 3, promote finite-r/"
@@ -819,8 +822,11 @@ def build() -> dict[str, Any]:
         "numerical_input_contract": {
             "path": str(INPUT_SCHEMA.relative_to(ROOT)),
             "sha256": _sha256(INPUT_SCHEMA),
+            "certificate_path": str(DEPENDENCIES["numerical_input_contract"].relative_to(ROOT)),
+            "certificate_sha256": _sha256(DEPENDENCIES["numerical_input_contract"]),
             "operator_units": "certified_gHat_clock_and_Berger_spatial_operator_units",
-            "status": "CERTIFIED_SCHEMA_VALUES_DEFERRED",
+            "status": "CERTIFIED_SCHEMA_AND_TRANSLATOR_VALUES_DEFERRED",
+            "legacy_v1_status": "OBSTRUCTED_SCHEMA_RUNTIME_MISMATCH",
         },
         "mutation_results": [
             {
@@ -860,12 +866,13 @@ def build() -> dict[str, Any]:
             "GENERIC_REALITY_FOLDED_SUCCESSIVE_SHELL_ADAPTER_EXPORTED": row_status["generic_reality_folded_successive_shell_adapter"] == "CERTIFIED",
             "TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED": row_status["tail_aware_aggregate_stop_loop"] == "CERTIFIED",
             "NUMERICAL_SPECIALIZATION_INPUT_SCHEMA_EXPORTED": True,
+            "NUMERICAL_SPECIALIZATION_INPUT_TRANSLATOR_EXPORTED": True,
             "NUMERICAL_SPECIALIZATION_VALUES_DECLARED": False,
             "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": False,
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "AUDIT_AND_ACTIVATE_THE_DEFERRED_EXACT_NUMERICAL_INPUT_CONTRACT_WITHOUT_INVENTING_PHYSICAL_VALUES",
+        "next_gate": "AWAIT_PROVENANCE_COMPLETE_EXPLICIT_EXTERNAL_VALUE_DECLARATION",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

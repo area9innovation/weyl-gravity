@@ -1,4 +1,4 @@
-WORK PACKAGE sf:program/work/berger-numerical-input-contract  (state: ACTIVE, owner: observer)
+WORK PACKAGE sf:program/work/berger-numerical-input-contract  (state: DONE, owner: observer)
 
 ## Objective
 Positive Berger clock apparatus (closed_universe_observers/): repair and certify the deferred exact numerical-specialization input contract so a provenance-complete declaration can be translated without ambiguity into the generic reality-folded four-stream runtime. This gate declares no physical values and does not run a physical recoil stream.

@@ -39,6 +39,7 @@ DEPENDENCIES = {
     "real_shell_extraction": PACKAGE / "certificates/BERGER_RECOIL_REAL_SHELL_EXTRACTION.json",
     "two_j6_reality_folded_binding": PACKAGE / "certificates/BERGER_RECOIL_TWO_J6_REALITY_FOLDED_BINDING.json",
     "reality_folded_stream_adapter": PACKAGE / "certificates/BERGER_RECOIL_REALITY_FOLDED_SHELL_STREAM_ADAPTER.json",
+    "numerical_input_contract": PACKAGE / "certificates/BERGER_RECOIL_NUMERICAL_INPUT_CONTRACT_V2.json",
 }
 SOURCE_FILES = [
     Path(__file__),
@@ -191,8 +192,16 @@ def readiness_audit(values: dict[str, dict[str, Any]], *, drop_per_shell_word: b
         },
     ]
     external = [
+        {
+            "id": "exact_numerical_input_contract_v2",
+            "status": "CERTIFIED" if values["numerical_input_contract"]["flags"]["EXACT_NUMERICAL_INPUT_CONTRACT_V2_EXPORTED"] else "OBSTRUCTED",
+            "activation": "AVAILABLE",
+            "legacy_v1_status": "OBSTRUCTED_SCHEMA_RUNTIME_MISMATCH",
+        },
         {"id": "numerical_positive_masses", "status": "OPEN", "activation": "DEFERRED", "required_domain": "m_0>0 and m_1>0"},
         {"id": "numerical_nonzero_couplings", "status": "OPEN", "activation": "DEFERRED", "required_domain": "g_0!=0 and g_1!=0"},
+        {"id": "positive_inverse_Berger_volume", "status": "OPEN", "activation": "DEFERRED", "required_domain": "Vol_gHat(S^3)^(-1)>0"},
+        {"id": "contiguous_shell_and_four_tail_schedule", "status": "OPEN", "activation": "DEFERRED"},
         {"id": "scalar_stopping_goal", "status": "OPEN", "activation": "DEFERRED", "allowed": ["entry_tolerance", "entry_nonzero", "entry_sign", "rank_two"]},
     ]
     internal_ready = all(row["status"] == "CERTIFIED" for row in internal)
@@ -231,6 +240,7 @@ def build() -> dict[str, Any]:
         "real_shell_extraction": "COMPLEX_CHANNEL_TO_REAL_SHELL_SCALAR_MAP_CERTIFIED",
         "two_j6_reality_folded_binding": "ALL_56_TWO_J6_CHANNEL_COLUMN_BLOCKS_CERTIFIED",
         "reality_folded_stream_adapter": "CONTIGUOUS_SUCCESSIVE_SHELL_STREAM_ADAPTER_EXPORTED",
+        "numerical_input_contract": "EXACT_NUMERICAL_INPUT_CONTRACT_V2_EXPORTED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -282,8 +292,10 @@ def build() -> dict[str, Any]:
         "certifies the complex-to-real shell map. The generic successive-shell "
         "adapter builds and binds each shell, evaluates only independent columns, "
         "derives reality partners, aggregates all four entries and invokes the stop "
-        "gate after every shell. Numerical masses, couplings and a stopping goal remain "
-        "deferred pending an explicit input-contract activation. The exact "
+        "gate after every shell. The v2 numerical schema and callable translator are now "
+        "certified and legacy v1 is explicitly obstructed. Numerical masses, couplings, "
+        "inverse volume, shell/tail schedule, precision and a stopping goal remain deferred "
+        "pending a provenance-complete EXPLICIT_EXTERNAL_VALUES declaration. The exact "
         "generic coefficient functional is not itself a numerical Green-image "
         "evaluation. Numerical values must not be invented. This gate does not evaluate a recoil scalar, "
         "restrict to the tangent cone, activate Bridge 3, promote finite-r/"
@@ -308,8 +320,10 @@ def build() -> dict[str, Any]:
         "sequencing_decision": {
             "completed_internal_gate": "complete symbolic preparation/recoil scalar operator word with exact Peter-Weyl reconstruction",
             "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
-            "current_active_gate": "audit and activate the deferred exact numerical input contract without inventing physical values",
+            "current_active_gate": "await a provenance-complete explicit external value declaration",
             "external_specialization_gate": "DEFERRED_UNTIL_EXACT_VALUES_ARE_EXPLICITLY_DECLARED",
+            "numerical_input_contract_v2": "CERTIFIED_SCHEMA_AND_TRANSLATOR_VALUES_DEFERRED",
+            "legacy_input_contract_v1": "OBSTRUCTED_SCHEMA_RUNTIME_MISMATCH",
             "dense_profile_materialization": "NOT_SELECTED",
             "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP",
         },
@@ -352,12 +366,13 @@ def build() -> dict[str, Any]:
             "TWO_J6_FEEDBACK_CHANNELS_EVALUATED": True,
             "GENERIC_REALITY_FOLDED_SUCCESSIVE_SHELL_ADAPTER_EXPORTED": True,
             "NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED": False,
+            "EXACT_NUMERICAL_INPUT_CONTRACT_V2_EXPORTED": True,
             "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": False,
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "AUDIT_AND_ACTIVATE_THE_DEFERRED_EXACT_NUMERICAL_INPUT_CONTRACT_WITHOUT_INVENTING_PHYSICAL_VALUES",
+        "next_gate": "AWAIT_PROVENANCE_COMPLETE_EXPLICIT_EXTERNAL_VALUE_DECLARATION",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

@@ -1017,9 +1017,8 @@ contiguous `two_j=6` sentinel.  It retains `NO_CERTIFIED_MAP` to the hashed
 exact-`T` rail.  Its stop controller implements the exact radius
 `|g_b|D_aE_b sum_c |g_c|^2 C_c(m_c)` with tolerance, nonzero, sign and
     determinant goals.  The certificate-derived validation fixture remains
-    `OPEN`; only a synthetic determinant fixture stops.  The adapter gate is now
-    closed, and the active apparatus calculation is the exact numerical input-
-    contract audit.
+    `OPEN`; only a synthetic determinant fixture stops.  The adapter gate is
+    closed.
 
 `BERGER_RECOIL_REAL_SHELL_EXTRACTION` closes the carrier mismatch without
 discarding imaginary intervals.  In the normalized symmetric-power
@@ -1060,6 +1059,29 @@ The fail-closed atlas row is
 with operational response `CERTIFIED`, physical response rank `OPEN`, quotient
 survival `NO_CERTIFIED_MAP`, and all tangent-cone correction classes `OPEN`.
 
+`BERGER_RECOIL_NUMERICAL_INPUT_CONTRACT_V2` closes the next interface gate.
+The v2 schema accepts either positive rational mass intervals or positive
+mass-squared intervals, both nonzero couplings, a positive inverse Berger
+volume, a nonempty contiguous shell extension, four nonnegative tail radii
+after every shell, partition and directed-rounding precision, and exactly one
+of `entry_tolerance`, `entry_nonzero`, `entry_sign`, or `rank_two`.  The
+callable translator maps those fields exactly to every declaration-controlled
+argument of `run_reality_folded_shell_stream`; a separate independent
+rational implementation agrees on all four goals.  Eleven mutations reject
+the old goal spelling, missing inverse volume, missing, duplicate or
+noncontiguous shells, incomplete tails, nonpositive mass or volume, zero
+coupling, and absent provenance.
+
+The old v1 schema is retained as
+`OBSTRUCTED_SCHEMA_RUNTIME_MISMATCH`; it is not silently reinterpreted.  All
+four replay declarations are `VALIDATION_ONLY`, so physical specialization,
+four-stream activation, recoil-corrected rank, quotient descent, tangent-cone
+restriction, Bridge 3 and quantum claims remain false.  The fail-closed atlas
+row is
+`observer.berger.detector_profile.recoil_numerical_input_contract_v2`, with
+the contract dependency `CERTIFIED`, physical detector response and rank
+`OPEN`, quotient survival `NO_CERTIFIED_MAP`, and the cone columns `OPEN`.
+
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as
 `v_a=g_a tilde_v_a`; applying the positive-energy dual to `tilde_v_a` defines
@@ -1095,13 +1117,14 @@ may continue, but it does not activate a physical-branch interpretation.
 The separate compact-product exceptional-resonance crosswalk remains
 `NO_CERTIFIED_MAP` and is not a substitute.
 
-Within that inactive bridge, the currently active Berger calculation is the
-exact numerical recoil input-contract audit.  Its activation gate is explicit
-provenance and domain validation for both masses, both nonzero couplings, a
-positive Berger inverse-volume enclosure, a contiguous shell schedule, all
-four tail radii after every shell, and one declared stopping goal.  Until those
-values exist, the activation row remains operationally `OPEN`; the certified
-adapter row above records only internal executability.
+Within that inactive bridge, the numerical recoil input-contract audit is now
+complete.  The next activation gate requires a provenance-complete
+`EXPLICIT_EXTERNAL_VALUES` declaration for both mass domains, both nonzero
+couplings, a positive Berger inverse-volume enclosure, a contiguous shell
+schedule, all four tail radii after every shell, precision, and one declared
+stopping goal.  Until those values exist and a separate activation certificate
+verifies them, the physical response row remains `OPEN`; neither the adapter
+nor the v2 contract supplies physical values.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to

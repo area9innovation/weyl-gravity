@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "closed-universe-berger-recoil-numerical-specialization-input-v2.schema.json",
+  "$defs": {
+    "positiveRational": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]*(/[1-9][0-9]*)?$"
+    },
+    "nonnegativeRational": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)(/[1-9][0-9]*)?$"
+    },
+    "nonzeroRational": {
+      "type": "string",
+      "pattern": "^-?[1-9][0-9]*(/[1-9][0-9]*)?$"
+    },
+    "positiveInterval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lower", "upper"],
+      "properties": {
+        "lower": {"$ref": "#/$defs/positiveRational"},
+        "upper": {"$ref": "#/$defs/positiveRational"}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uri", "sha256"],
+      "properties": {
+        "uri": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "tailRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["two_j", "radii"],
+      "properties": {
+        "two_j": {"type": "integer", "minimum": 0},
+        "radii": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["00", "01", "10", "11"],
+          "properties": {
+            "00": {"$ref": "#/$defs/nonnegativeRational"},
+            "01": {"$ref": "#/$defs/nonnegativeRational"},
+            "10": {"$ref": "#/$defs/nonnegativeRational"},
+            "11": {"$ref": "#/$defs/nonnegativeRational"}
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "operator_units",
+    "declaration_status",
+    "provenance",
+    "mass_domain",
+    "couplings",
+    "inverse_berger_volume",
+    "carrier_cutoff_two_j",
+    "two_js",
+    "tail_radii_by_two_j",
+    "precision",
+    "stream_origin",
+    "stopping_goal",
+    "hashed_exact_T_stream_identification_status"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-recoil-numerical-specialization-input-v2"
+    },
+    "operator_units": {
+      "const": "certified_gHat_clock_and_Berger_spatial_operator_units"
+    },
+    "declaration_status": {
+      "enum": ["VALIDATION_ONLY", "EXPLICIT_EXTERNAL_VALUES"]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["declaration_id", "declared_by", "sources"],
+      "properties": {
+        "declaration_id": {"type": "string", "minLength": 1},
+        "declared_by": {"type": "string", "minLength": 1},
+        "sources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mass_domain",
+            "couplings",
+            "inverse_berger_volume",
+            "shell_schedule",
+            "tail_radii",
+            "precision",
+            "stopping_goal"
+          ],
+          "properties": {
+            "mass_domain": {"$ref": "#/$defs/source"},
+            "couplings": {"$ref": "#/$defs/source"},
+            "inverse_berger_volume": {"$ref": "#/$defs/source"},
+            "shell_schedule": {"$ref": "#/$defs/source"},
+            "tail_radii": {"$ref": "#/$defs/source"},
+            "precision": {"$ref": "#/$defs/source"},
+            "stopping_goal": {"$ref": "#/$defs/source"}
+          }
+        }
+      }
+    },
+    "mass_domain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["representation", "channels"],
+      "properties": {
+        "representation": {"enum": ["mass", "mass_squared"]},
+        "channels": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["0", "1"],
+          "properties": {
+            "0": {"$ref": "#/$defs/positiveInterval"},
+            "1": {"$ref": "#/$defs/positiveInterval"}
+          }
+        }
+      }
+    },
+    "couplings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["0", "1"],
+      "properties": {
+        "0": {"$ref": "#/$defs/nonzeroRational"},
+        "1": {"$ref": "#/$defs/nonzeroRational"}
+      }
+    },
+    "inverse_berger_volume": {"$ref": "#/$defs/positiveInterval"},
+    "carrier_cutoff_two_j": {"type": "integer", "minimum": 0},
+    "two_js": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 0}
+    },
+    "tail_radii_by_two_j": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/tailRow"}
+    },
+    "precision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["partition_count", "radical_bits", "outward_bits"],
+      "properties": {
+        "partition_count": {"type": "integer", "minimum": 1},
+        "radical_bits": {"type": "integer", "minimum": 8},
+        "outward_bits": {"type": "integer", "minimum": 8}
+      }
+    },
+    "stream_origin": {"const": "ZERO_PARTIALS_AT_CERTIFIED_CARRIER_CUTOFF"},
+    "stopping_goal": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "eta"],
+          "properties": {
+            "type": {"const": "entry_tolerance"},
+            "eta": {"$ref": "#/$defs/positiveRational"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "target"],
+          "properties": {
+            "type": {"const": "entry_nonzero"},
+            "target": {
+              "type": "array",
+              "prefixItems": [
+                {"type": "integer", "minimum": 0, "maximum": 1},
+                {"type": "integer", "minimum": 0, "maximum": 1}
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "target", "sign"],
+          "properties": {
+            "type": {"const": "entry_sign"},
+            "target": {
+              "type": "array",
+              "prefixItems": [
+                {"type": "integer", "minimum": 0, "maximum": 1},
+                {"type": "integer", "minimum": 0, "maximum": 1}
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "sign": {"enum": ["positive", "negative"]}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type"],
+          "properties": {"type": {"const": "rank_two"}}
+        }
+      ]
+    },
+    "hashed_exact_T_stream_identification_status": {"const": "NO_CERTIFIED_MAP"}
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "closed-universe-berger-recoil-numerical-input-contract-v2.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "atlas_status",
+    "dependency_tags", "dependency_refs", "mode_scope", "legacy_v1_audit",
+    "translator_contract", "validation_replays", "mutation_results", "flags",
+    "next_gate", "claim_boundary", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-numerical-input-contract-v2"},
+    "result_id": {"const": "BERGER_RECOIL_NUMERICAL_INPUT_CONTRACT_V2"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "CERTIFIED_EXACT_TRANSLATOR_PHYSICAL_VALUES_DEFERRED"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 1},
+    "mode_scope": {
+      "type": "object",
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]
+    },
+    "legacy_v1_audit": {
+      "type": "object",
+      "required": ["status", "missing_runtime_inputs", "goal_name_mismatches"],
+      "properties": {"status": {"const": "OBSTRUCTED_SCHEMA_RUNTIME_MISMATCH"}}
+    },
+    "translator_contract": {
+      "type": "object",
+      "required": ["input_schema", "module", "callable", "runtime_callable", "declaration_controlled_runtime_arguments", "static_certified_runtime_arguments", "physical_activation_policy"]
+    },
+    "validation_replays": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["goal_type", "declaration_status", "declaration_sha256", "serialized_runtime_kwargs", "physical_activation_eligible"],
+        "properties": {
+          "goal_type": {"enum": ["entry_tolerance", "entry_nonzero", "entry_sign", "rank_two"]},
+          "declaration_status": {"const": "VALIDATION_ONLY"},
+          "physical_activation_eligible": {"const": false}
+        }
+      }
+    },
+    "mutation_results": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["name", "detected"],
+        "properties": {"detected": {"const": true}}
+      }
+    },
+    "flags": {
+      "type": "object",
+      "required": [
+        "EXACT_NUMERICAL_INPUT_CONTRACT_V2_EXPORTED",
+        "CALLABLE_DECLARATION_TO_RUNTIME_TRANSLATOR_EXPORTED",
+        "MASS_AND_MASS_SQUARED_DOMAINS_SUPPORTED",
+        "ALL_FOUR_RUNTIME_STOPPING_GOALS_TRANSLATE",
+        "PROVENANCE_REQUIRED_FOR_EVERY_NUMERICAL_INPUT_CLASS",
+        "LEGACY_V1_SCHEMA_OBSTRUCTED",
+        "PHYSICAL_SPECIALIZATION_VALUES_DECLARED",
+        "FOUR_RECOIL_SCALAR_STREAM_ACTIVE",
+        "RECOIL_CORRECTED_RESPONSE_RANK_TWO_CERTIFIED",
+        "TANGENT_CONE_RESTRICTION_EVALUATED",
+        "PHYSICAL_BRANCH_BRIDGE_ACTIVE",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "EXACT_NUMERICAL_INPUT_CONTRACT_V2_EXPORTED": {"const": true},
+        "CALLABLE_DECLARATION_TO_RUNTIME_TRANSLATOR_EXPORTED": {"const": true},
+        "MASS_AND_MASS_SQUARED_DOMAINS_SUPPORTED": {"const": true},
+        "ALL_FOUR_RUNTIME_STOPPING_GOALS_TRANSLATE": {"const": true},
+        "PROVENANCE_REQUIRED_FOR_EVERY_NUMERICAL_INPUT_CLASS": {"const": true},
+        "LEGACY_V1_SCHEMA_OBSTRUCTED": {"const": true},
+        "PHYSICAL_SPECIALIZATION_VALUES_DECLARED": {"const": false},
+        "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": {"const": false},
+        "RECOIL_CORRECTED_RESPONSE_RANK_TWO_CERTIFIED": {"const": false},
+        "TANGENT_CONE_RESTRICTION_EVALUATED": {"const": false},
+        "PHYSICAL_BRANCH_BRIDGE_ACTIVE": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "AWAIT_PROVENANCE_COMPLETE_EXPLICIT_EXTERNAL_VALUE_DECLARATION"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  }
+}

@@ -36,6 +36,9 @@ def test_external_specialization_remains_deferred_after_backend_lands():
     assert value["readiness"]["internal_executable_stream_ready"] is True
     assert value["readiness"]["external_specialization_deferred"] is True
     assert value["flags"]["NUMERICAL_SPECIALIZATION_INPUT_SCHEMA_EXPORTED"] is True
+    assert value["flags"]["NUMERICAL_SPECIALIZATION_INPUT_TRANSLATOR_EXPORTED"] is True
+    assert value["numerical_input_contract"]["status"] == "CERTIFIED_SCHEMA_AND_TRANSLATOR_VALUES_DEFERRED"
+    assert value["numerical_input_contract"]["legacy_v1_status"] == "OBSTRUCTED_SCHEMA_RUNTIME_MISMATCH"
     assert value["flags"]["NUMERICAL_SPECIALIZATION_VALUES_DECLARED"] is False
 
 

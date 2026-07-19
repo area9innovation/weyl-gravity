@@ -21,11 +21,18 @@ def test_external_parameters_are_deferred_until_explicitly_declared():
     assert value["sequencing_decision"]["parameterization_during_internal_gate"] == (
         "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials"
     )
-    assert all(row["status"] == "OPEN" for row in value["readiness"]["external_rows"])
-    assert all(row["activation"] == "DEFERRED" for row in value["readiness"]["external_rows"])
-    assert value["sequencing_decision"]["current_active_gate"] == (
-        "audit and activate the deferred exact numerical input contract without inventing physical values"
+    rows = {row["id"]: row for row in value["readiness"]["external_rows"]}
+    assert rows["exact_numerical_input_contract_v2"]["status"] == "CERTIFIED"
+    assert rows["exact_numerical_input_contract_v2"]["activation"] == "AVAILABLE"
+    assert all(
+        row["status"] == "OPEN" and row["activation"] == "DEFERRED"
+        for identifier, row in rows.items()
+        if identifier != "exact_numerical_input_contract_v2"
     )
+    assert value["sequencing_decision"]["current_active_gate"] == (
+        "await a provenance-complete explicit external value declaration"
+    )
+    assert value["flags"]["EXACT_NUMERICAL_INPUT_CONTRACT_V2_EXPORTED"] is True
     assert value["flags"]["FOUR_RECOIL_SCALAR_STREAM_ACTIVE"] is False
 
 
