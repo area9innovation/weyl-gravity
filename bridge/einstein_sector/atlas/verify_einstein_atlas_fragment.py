@@ -538,7 +538,7 @@ def verify() -> None:
         raise AssertionError("scalar L1 ideals were hidden")
     if scalar_l1["mode_data"]["taub_maps"]["status"] != "OPEN" or scalar_l1_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or scalar_l1_second["smooth_secular"]["status"] != "OPEN" or scalar_l1_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("scalar L1 correction classes were merged")
-    if "four fibrewise ideals remain" not in scalar_l1["claim_boundary"] or "two-fibre tangent cone" not in scalar_l1["claim_boundary"]:
+    if "candidate 13 is the sole remaining fibrewise ideal" not in scalar_l1["claim_boundary"] or "two-fibre tangent cone" not in scalar_l1["claim_boundary"]:
         raise AssertionError("scalar L1 theorem exceeded scope")
     candidate4 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_l4_zero_variety"]
     candidate4_second = candidate4["mode_data"]["second_order"]
@@ -548,7 +548,7 @@ def verify() -> None:
         raise AssertionError("candidate-4 L4 decomposition was hidden")
     if candidate4["mode_data"]["taub_maps"]["status"] != "OPEN" or candidate4_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or candidate4_second["smooth_secular"]["status"] != "OPEN" or candidate4_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("candidate-4 L4 correction classes were merged")
-    if "four fibrewise ideals remain" not in candidate4["claim_boundary"] or "two-fibre tangent cone" not in candidate4["claim_boundary"]:
+    if "candidate 13 is the sole remaining fibrewise ideal" not in candidate4["claim_boundary"] or "two-fibre tangent cone" not in candidate4["claim_boundary"]:
         raise AssertionError("candidate-4 L4 theorem exceeded scope")
     doublet_l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_target_doublet_l3_zero_varieties"]
     doublet_l3_second = doublet_l3["mode_data"]["second_order"]
@@ -560,7 +560,7 @@ def verify() -> None:
         raise AssertionError("target-doublet L3 ideals were hidden")
     if doublet_l3["mode_data"]["taub_maps"]["status"] != "OPEN" or doublet_l3_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or doublet_l3_second["smooth_secular"]["status"] != "OPEN" or doublet_l3_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("target-doublet L3 correction classes were merged")
-    if "four fibrewise ideals remain" not in doublet_l3["claim_boundary"] or "two-fibre tangent cone" not in doublet_l3["claim_boundary"]:
+    if "candidate 13 is the sole remaining fibrewise ideal" not in doublet_l3["claim_boundary"] or "two-fibre tangent cone" not in doublet_l3["claim_boundary"]:
         raise AssertionError("target-doublet L3 theorem exceeded scope")
     multiplicity_l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_multiplicity_two_l3_zero_varieties"]
     multiplicity_l3_second = multiplicity_l3["mode_data"]["second_order"]
@@ -572,7 +572,7 @@ def verify() -> None:
         raise AssertionError("multiplicity-two L3 ideals were hidden")
     if multiplicity_l3["mode_data"]["taub_maps"]["status"] != "OPEN" or multiplicity_l3_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or multiplicity_l3_second["smooth_secular"]["status"] != "OPEN" or multiplicity_l3_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("multiplicity-two L3 correction classes were merged")
-    if "four fibrewise ideals remain" not in multiplicity_l3["claim_boundary"]:
+    if "candidate 13 is the sole remaining fibrewise ideal" not in multiplicity_l3["claim_boundary"]:
         raise AssertionError("multiplicity-two L3 theorem exceeded scope")
     rank_one_l4 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_rank_one_branch_l4_zero_varieties"]
     rank_one_l4_second = rank_one_l4["mode_data"]["second_order"]
@@ -584,8 +584,20 @@ def verify() -> None:
         raise AssertionError("multiplicity-two L4 ideals were hidden")
     if rank_one_l4["mode_data"]["taub_maps"]["status"] != "OPEN" or rank_one_l4_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or rank_one_l4_second["smooth_secular"]["status"] != "OPEN" or rank_one_l4_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("multiplicity-two L4 correction classes were merged")
-    if "Candidates 7, 11, 13 and 19 remain" not in rank_one_l4["claim_boundary"]:
+    if "candidate 13 is the sole remaining cross-fibre ideal" not in rank_one_l4["claim_boundary"]:
         raise AssertionError("multiplicity-two L4 theorem exceeded scope")
+    regular_l4 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_regular_pencil_l4_zero_varieties"]
+    regular_l4_second = regular_l4["mode_data"]["second_order"]
+    if regular_l4["descriptions"]["nonlinear"] != "OPEN" or "three separately tuned circumference fibres" not in regular_l4["mode_data"]["dispersion"]["statement"]:
+        raise AssertionError("regular-pencil L4 fibre scopes were hidden")
+    if "positive trace, determinant and discriminant" not in regular_l4["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("regular-pencil L4 exact root criterion was hidden")
+    if regular_l4["mode_data"]["resonance"]["status"] != "CERTIFIED" or "exactly six real-supported linear components" not in regular_l4["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("regular-pencil L4 decomposition was hidden")
+    if regular_l4["mode_data"]["taub_maps"]["status"] != "OPEN" or regular_l4_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or regular_l4_second["smooth_secular"]["status"] != "OPEN" or regular_l4_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("regular-pencil L4 correction classes were merged")
+    if "Candidate 13 is the sole remaining" not in regular_l4["claim_boundary"]:
+        raise AssertionError("regular-pencil L4 theorem exceeded scope")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]
     if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:

@@ -262,7 +262,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("four fibrewise ideals remain", entry["claim_boundary"])
+        self.assertIn("candidate 13 is the sole remaining fibrewise ideal", entry["claim_boundary"])
 
     def test_candidate4_target_doublet_has_four_components_not_an_extension(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_l4_zero_variety"]
@@ -275,7 +275,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("four fibrewise ideals remain", entry["claim_boundary"])
+        self.assertIn("candidate 13 is the sole remaining fibrewise ideal", entry["claim_boundary"])
 
     def test_target_doublet_l3_varieties_are_determinantal_not_extensions(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_target_doublet_l3_zero_varieties"]
@@ -288,7 +288,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("four fibrewise ideals remain", entry["claim_boundary"])
+        self.assertIn("candidate 13 is the sole remaining fibrewise ideal", entry["claim_boundary"])
 
     def test_multiplicity_two_l3_varieties_keep_spectators_and_open_extension(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_multiplicity_two_l3_zero_varieties"]
@@ -301,7 +301,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("four fibrewise ideals remain", entry["claim_boundary"])
+        self.assertIn("candidate 13 is the sole remaining fibrewise ideal", entry["claim_boundary"])
 
     def test_multiplicity_two_l4_varieties_have_four_spectator_extended_components(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_rank_one_branch_l4_zero_varieties"]
@@ -314,7 +314,20 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("Candidates 7, 11, 13 and 19 remain", entry["claim_boundary"])
+        self.assertIn("candidate 13 is the sole remaining cross-fibre ideal", entry["claim_boundary"])
+
+    def test_regular_pencil_l4_varieties_are_non_equidimensional_and_not_extensions(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_regular_pencil_l4_zero_varieties"]
+        second = entry["mode_data"]["second_order"]
+        self.assertIn("three separately tuned circumference fibres", entry["mode_data"]["dispersion"]["statement"])
+        self.assertIn("positive trace, determinant and discriminant", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("exactly six real-supported linear components", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("one dimension-20", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("Candidate 13 is the sole remaining", entry["claim_boundary"])
 
     def test_nonaxisymmetric_l3_matrix_closes_basis_not_cone(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]

@@ -2214,10 +2214,20 @@ has four real-supported complex dimension-20 components in ambient dimension
 30 after adjoining the ten spectator coordinates.  Atlas row
 `einstein.ph.wm.interaction.ell2_two_abs_momentum_rank_one_branch_l4_zero_varieties`
 records resonance `CERTIFIED`, bounded and smooth-secular correction `OPEN`,
-and causal correction `NO_CERTIFIED_MAP`.  Candidates `7,11,13,19` are the
-four remaining cross-fibre ideals.  Same-fibre sources, the Taub common-zero
-join and the complete bounded cone remain the activation gate; this result is
-an input to same-background Bridge 1 rather than a nonlinear bridge theorem.
+and causal correction `NO_CERTIFIED_MAP`.
+
+Candidates `7,11,19` now also close through their regular internal `4 x 4`
+pencils.  Exact interval arithmetic gives four distinct real pencil roots on
+each separately tuned fibre.  The all-`m` resonance variety has six linear
+components in ambient dimension 30: one dimension-20 scalar-fibre-zero
+component and five dimension-10 components, including four mixed eigenline
+components.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_regular_pencil_l4_zero_varieties`
+records resonance `CERTIFIED`, bounded and smooth-secular correction `OPEN`,
+and causal correction `NO_CERTIFIED_MAP`.  Candidate `13` is the sole
+remaining cross-fibre ideal.  Same-fibre sources, the Taub common-zero join
+and the complete bounded cone remain the activation gate; these results are
+inputs to same-background Bridge 1 rather than nonlinear bridge theorems.
 
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at

@@ -1,0 +1,51 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_REGULAR_PENCIL_L4_ZERO_VARIETIES_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact all-m irreducible decomposition of the candidate-7/11/19 regular-pencil L4 resonance zero varieties.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_regular_pencil_L4_zero_varieties.json": "516c436c81ddc6d5829bbb98328e9214afb43de6717ba7ca06b62d39f7cd9333",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_regular_pencil_L4_zero_varieties.py": "dba5d23f30409d5d6d3b21f5fcd3904b75a79668de7d7a27a4beeeed675913f4",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_regular_pencil_L4_zero_varieties.schema.json": "e0bd207400154b3351c6de7d88882a2a1d7422f52b9fc481c7c939564558a934",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_regular_pencil_L4_zero_varieties.py": "c9459c90181c67d76f19d5aecb70662468816acdcef8b1b940b1feed1bea6de8",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_regular_pencil_L4_zero_varieties.py": "365a5c5fadc4ff75026e6b298b1ea5af79054ca6fbf2dc50e41f6338730313ec",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-regular-pencil-L4-zero-varieties.md": "c5d7ea9a4e74a52d2e9e9798313d38d03289c47957480ada16d8eafbc230dee6"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 79,
+      "commands": [
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_regular_pencil_L4_zero_varieties",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "producer_elapsed_seconds": 1.31,
+      "producer_max_rss_kib": 58336,
+      "independent_verifier_elapsed_seconds": 3.47,
+      "independent_verifier_max_rss_kib": 61352,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_two_abs_momentum_regular_pencil_L4_zero_varieties --write",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_ell2_two_abs_momentum_regular_pencil_L4_zero_varieties"
+      ],
+      "reason": "Producer and verifier separately reconstruct the exact internal parity matrices, prove their invertibility with rational intervals, and certify positive squared-pencil trace, determinant and discriminant on all three physical fibres."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This classifies three parent resonance ideals, not candidate 13, same-fibre sources, Taub intersections, complete tangent cone or shared-core algebra."
+    }
+  },
+  "claim_boundary": "This certificate classifies candidates 7, 11 and 19 only and does not identify their distinct circumference backgrounds. Candidate 13, same-fibre sources, five Taub maps, bounded and smooth-secular tangent cones, causal maps, residual observables and quantum claims remain OPEN or NO_CERTIFIED_MAP."
+}

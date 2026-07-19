@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-regular-pencil-L4-zero-varieties-v1.schema.json",
+  "title": "Regular-pencil L4 cross-fibre zero varieties",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "scope",
+    "representation_theorem",
+    "decompositions",
+    "summary",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_REGULAR_PENCIL_L4_ZERO_VARIETIES"
+    },
+    "decompositions": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "three_regular_pencil_L4_zero_varieties_classified",
+        "all_m_irreducible_decomposition_classified",
+        "four_distinct_real_pencil_roots_certified",
+        "candidate_13_zero_variety_classified"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

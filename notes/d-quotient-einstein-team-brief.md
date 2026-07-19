@@ -3570,6 +3570,21 @@ the five Taub maps and every correction-class join fail-closed.  This is
 nonlinear input to active Bridge 1, not a promotion of its linear relative
 triangle or a cross-background mode dictionary.
 
+Candidates 7, 11 and 19 now close as a second `L=4` algebraic type.  After
+choosing the scalar source fibre first, their four target-doublet equations
+form a regular `4 x 4` internal pencil.  Exact rational intervals certify
+that all four parity matrices are invertible and that the squared pencil has
+positive trace, determinant and discriminant.  It therefore has two distinct
+positive squared roots and four distinct real pencil roots.  Diagonalization
+reduces the all-`m` equations to four binary-quartic products
+`(S_axial+z_i S_polar)D_i=0`.  The integral-domain argument gives exactly six
+linear irreducible components per fibre: a dimension-20 scalar-fibre-zero
+component, a dimension-10 doublet-fibre-zero component and four dimension-10
+real mixed eigenline components in ambient dimension 30.  The three tuned
+backgrounds remain separate atlas scopes.  Candidate 13 is now the sole
+unclassified cross-fibre ideal; same-fibre, Taub and correction-class joins
+remain fail-closed.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
