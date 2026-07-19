@@ -477,9 +477,10 @@ The currently active bridge is regeneration of the action-normalized
 same-background apparatus/emitter interactions through the certified combined
 nonlinear clock chart.  Its activation gate is the exact combined `F2,F3`
 canonical map and signed-pairing cotangent lift.  Its first fail-closed atlas
-successor is `observer.berger.interaction.apparatus_scalar_bv_q2_pbw`: the
-universal scalar-BV semidirect block is `CERTIFIED`, while complete apparatus
-`q2`, all `q3`, detector response and cone restriction remain
+successors are `observer.berger.interaction.apparatus_scalar_bv_q2_pbw` and
+`observer.berger.interaction.rod_metric_q2_pbw`: the universal scalar-BV
+semidirect and complete six-rod metric blocks are `CERTIFIED`, while complete
+apparatus `q2`, all `q3`, detector response and cone restriction remain
 `NO_CERTIFIED_MAP`.  Regenerate every remaining block rather than fitting it
 to the arity identities, then replay `q1q2`, `q2q2+q1q3`, `K_Berger`
 equivariance and observer-morphism stability.  Physical Bridge 3 remains
@@ -1370,10 +1371,21 @@ spatial diffeomorphism ghosts and their cotangents.  The 108-row pairing makes
 each relabeling a signed-pairing isometry, so graded symmetry and lowered
 cyclicity transfer termwise.  Ten independently hashed 24-term blocks give
 240 exact PBW terms, and deletion of one term is detected.  This closes only
-the universal scalar-BV `q2` sector.  Rod metric interaction, memory
-transport, normalized readout, emitter and cotangent `q2` sectors, every
-`q3`, the arity identities, `K_Berger` equivariance, observer-morphism
-stability and `O_detector|Z2^C` remain fail-closed.
+the universal scalar-BV `q2` sector.
+
+The complete rod metric-interaction `q2` sector is now a second executable
+subblock.  `BERGER_108_ROW_ROD_METRIC_Q2_PBW` polarizes
+`-epsilon_R_squared sqrt(-gHat) gHat^{-1}(dR,dR)/2` through the third
+Fréchet derivative of the densitized inverse metric.  Its `(h,r,r)`,
+`(h,h,r)` and `(h,h,h)` action orbits raise to all ten metric-cotangent and
+six rod-cotangent outputs.  The compact payload contains 7,840 sparse
+operator keys and 15,852 exact coefficient monomials.  It agrees with the
+independent unary Hessian in all 1,600 components, passes 640 direct third
+metric variations, and has zero Fréchet-permutation, graded-symmetry and
+noncommuting PBW cyclic-transpose defects.  Memory transport, normalized
+readout and emitter `q2` sectors, every `q3`, the arity identities,
+`K_Berger` equivariance, observer-morphism stability and
+`O_detector|Z2^C` remain fail-closed.
 This does not activate the physical-
 branch bridge and does not identify any compact-product mode with a Berger
 apparatus row.

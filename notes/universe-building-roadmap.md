@@ -87,7 +87,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows now that its product spectrum, matched 3^-6 exceptional factor and regular-complement det3 are certified, then add remaining BV rows to the exact partial-BV five-carrier representative; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; the combined nonlinear clock chart is canonical through F3 with all 69 radial-temporal cross terms, and the first 240-term scalar-BV apparatus q2 subblock is executable, so export the remaining apparatus/emitter q2 and every q3 block, test the arity identities, K_Berger equivariance and observer-morphism stability, and only then restrict records to Z2^C
+Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; the combined nonlinear clock chart is canonical through F3, and the scalar-BV plus complete six-rod metric q2 subblocks are executable, so export memory/readout/emitter q2 and every q3 block, test the arity identities, K_Berger equivariance and observer-morphism stability, and only then restrict records to Z2^C
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
 
@@ -1056,8 +1056,11 @@ survive the first backreacted, normalized apparatus interaction?
    regeneration of scalar apparatus/emitter `q2,q3` through this chart.  The
    first executable successor now exports the universal scalar-BV semidirect
    apparatus `q2` sector: ten signed-pairing-isometric blocks and 240 exact PBW
-   terms for the six rods and four memory/readout scalars.  Rod metric,
-   memory-transport, normalized-readout and emitter `q2`, every `q3`, the
+   terms for the six rods and four memory/readout scalars.  The complete
+   six-rod metric interaction now adds 7,840 PBW operator keys and 15,852
+   coefficient monomials on all metric- and rod-cotangent outputs, with exact
+   Hessian regression, third-variation and cyclic-transpose checks.
+   Memory-transport, normalized-readout and emitter `q2`, every `q3`, the
    interaction identities and all observer-cone consumers remain fail-closed.
    A common source
    at the original Hopf event remains a stronger separate target.

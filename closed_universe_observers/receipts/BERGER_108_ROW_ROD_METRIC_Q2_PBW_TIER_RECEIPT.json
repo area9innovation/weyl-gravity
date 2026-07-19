@@ -1,0 +1,36 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_ROD_METRIC_Q2_PBW_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_ROD_METRIC_Q2_PBW",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The complete six-rod physical-metric cubic action derivative is exported as 7,840 sparse q2 PBW keys and 15,852 coefficient monomials on all metric- and rod-cotangent outputs. Memory transport, normalized readout, emitter q2, every q3, complete arity replay, K_Berger equivariance, observer-morphism stability, tangent-cone response, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {"tier": 0, "command": "python3 -m py_compile on changed Python; python3 -m json.tool on changed structured data; generator --check; git diff --check on explicit observer paths", "elapsed_seconds": "under 1 plus final diff check", "status": "PASS", "scope": "producer, independent verifier, focused test, two schemas, payload, certificate, generated atlas, ledger, lifecycle work item, receipt and canonical observer notes"},
+    {"tier": 1, "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_rod_metric_q2_pbw.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": 95.92, "status": "PASS", "scope": "42 action-polarization, payload, symmetry, PBW cyclic-transpose, generated-atlas, evidence-hash and fail-closed ledger tests"},
+    {"tier": 1, "command": "python3 -m closed_universe_observers.verify_berger_108_row_rod_metric_q2_pbw; python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment; python3 -m closed_universe_observers.verify_comparison_ledger", "elapsed_seconds": 38.34, "status": "PASS", "scope": "independent dependency hashes, payload reconstruction, action/cyclicity audit, generated atlas and comparison-ledger lifecycle"},
+    {"tier": 2, "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_local_rod_hessian_pbw_overlay.py closed_universe_observers/tests/test_berger_nonlinear_clock_combined_canonical_map_f2_f3.py closed_universe_observers/tests/test_berger_84_row_apparatus_q2_q3_k_gate.py", "elapsed_seconds": 113.00, "status": "PASS", "scope": "13 tests for the direct dependency chain: prior rod Hessian, combined nonlinear clock chart and action-level apparatus q2/q3 theorem"}
+  ],
+  "higher_tiers_not_run": {"tier_3": "This is a scoped apparatus q2 subblock on content-addressed inputs, not a freeze, release, shared-core algebra change or paper theorem promotion."},
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_rod_metric_q2_pbw.py", "sha256": "5547936213fbe202fbd38be7e524a974363dc2a55c82f647718cab2281a0f20b"},
+    {"path": "closed_universe_observers/verify_berger_108_row_rod_metric_q2_pbw.py", "sha256": "88c6eee8257f5ee329cd826d0cbfb9128e66f3e5c13ee9013c9ba3ba4746c8b2"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_rod_metric_q2_pbw.py", "sha256": "0eea53f713a8addd10a49b081ae3f5a5fb12ce991725aff4d653238ba1279c5c"},
+    {"path": "closed_universe_observers/schema/berger-108-row-rod-metric-q2-pbw-v1.schema.json", "sha256": "64c1c4a5b3c5f4e66f0175ccb800ec8838309b7d514f9ea6da5d44bae26ff004"},
+    {"path": "closed_universe_observers/schema/berger-108-row-rod-metric-q2-pbw-payload-v1.schema.json", "sha256": "f658c16ce77c3c9ff033950659e9d992df746e8dfde98bcd8d646d4edc083bcf"},
+    {"path": "closed_universe_observers/reports/berger-108-row-rod-metric-q2-pbw.md", "sha256": "0a6a4a559ed03f5e3013d7b1224e69637681763de1d7a79f377f190a19913034"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_ROD_METRIC_Q2_PBW.json", "sha256": "67774b75389c7e89c74e05c23fba260bf927055583cd1a5441c4efa4de38f7e4"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_ROD_METRIC_Q2_PBW_PAYLOAD.json", "sha256": "68eff0e74edad63999d8eb559b9008a0825862c261d221c6301afe9415a6a368"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "e14508646475039ef64c4cdff72ed098f21586fec51ca9cd3cb49af98d018bb9"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "e3e24eed1bf992cb65d5dd3bafa35d10ea30e9a793db3793f4bb9e1753875af2"},
+    {"path": "planning/work-items/berger-108-row-apparatus-q2-q3-extension.json", "sha256": "4739313eb576d34244d69dc5d45781f3d852ee3605486fb7d3183abfa857ce51"}
+  ],
+  "flags": {
+    "APPARATUS_ROD_METRIC_Q2_PBW_EXPORTED": true,
+    "COMPLETE_SCALAR_108_ROW_Q2_EXPORTED": false,
+    "COMPLETE_SCALAR_108_ROW_Q3_EXPORTED": false,
+    "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "PHYSICAL_BRANCH_BRIDGE_ACTIVATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
