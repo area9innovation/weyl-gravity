@@ -3,12 +3,12 @@
   "date": "2026-07-19",
   "scope": "Typed bounded and smooth reduced-mode derived-source pullbacks from candidate 13 into the same-background relative current/cofiber receiver.",
   "content_sha256": {
-    "bridge/certificates/EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1.json": "0ef704c74602561c06f56e58ec87b03ac507b4d2e6559c65ae7950b078dea9ee",
-    "bridge/einstein_sector/einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "a193ba578faa156ba35b8aeed9636dc7b6ec0b1c849ceebfaee0476a3f949fdd",
-    "bridge/einstein_sector/schema/einstein-weyl-relative-candidate13-derived-source-crosswalk-v1.schema.json": "16360476a9fb3cab0557f0bdfba392c1f212cef797326674ae764ef745d46558",
-    "bridge/einstein_sector/verify_einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "a86550f7aaea667e50fea38db8eb63825fb72eb286ab598a7938af0e4413d21a",
-    "bridge/einstein_sector/tests/test_einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "7d09044d72ea7759510ed4e8a800242f012721475efdb8e0d13cddebfe4c533f",
-    "bridge/einstein_sector/reports/einstein-weyl-relative-candidate13-derived-source-crosswalk.md": "2e77d7885a81e653cdc9f0241b4f78dddeec6f9a6051bafdb2e54d393ef799ed"
+    "bridge/certificates/EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1.json": "2e9f92a6aee0446e79386fb395d840d96ac841a29681cca227ab076b169d5811",
+    "bridge/einstein_sector/einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "52f9d0a6a47f2c47791359b577bd717123075b39e1e5669b33b9b3b475afaa7e",
+    "bridge/einstein_sector/schema/einstein-weyl-relative-candidate13-derived-source-crosswalk-v1.schema.json": "c57669e4c8b187d0f4362b4ce46bcd56c3e28f686e35aadb9093e43eb560ec61",
+    "bridge/einstein_sector/verify_einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "a5302f3045b106c9628a69549deada3d035e67721768fb809cfccf86fa5b3bc8",
+    "bridge/einstein_sector/tests/test_einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "a785f0fa41533154cfff69ef686ba04cd07e2a975f4f4aff404b4b88eef42c61",
+    "bridge/einstein_sector/reports/einstein-weyl-relative-candidate13-derived-source-crosswalk.md": "27c9970bf6e658d34b6adffcdf6f24cab00a4e36edeea256871185c11a3b7f2e"
   },
   "verification": {
     "tier_0": {
@@ -21,7 +21,7 @@
     },
     "tier_1": {
       "status": "PASS",
-      "tests_run": 85,
+      "tests_run": 87,
       "commands": [
         "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_relative_candidate13_derived_source_crosswalk",
         "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
@@ -43,5 +43,5 @@
       "reason": "This is a reduced-mode derived-source crosswalk, not a support-local BV derived subcomplex, full relative f2 repair, arity-three morphism, causal functor, observable map, quantum theorem, freeze, or release."
     }
   },
-  "claim_boundary": "The candidate-13 bounded and smooth reduced-mode derived pullbacks are certified on their declared zero loci. The full-domain support-local f2 remains obstructed and arity three remains unauthorized."
+  "claim_boundary": "The candidate-13 bounded reduced-mode derived pullback is certified and equals {0}; the smooth pullback is certified and nontrivial. The full-domain support-local f2 remains obstructed and arity three remains unauthorized."
 }

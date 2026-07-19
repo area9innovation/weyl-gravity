@@ -99,7 +99,7 @@ def verify() -> None:
         raise AssertionError("relative candidate-13 resonance receiver was hidden")
     if relative_candidate13_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or relative_candidate13_second["smooth_secular"]["status"] != "CERTIFIED" or relative_candidate13_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("relative candidate-13 correction classes changed")
-    if "common zero of the five stabilizers, R_c and eighteen" not in relative_candidate13_second["bounded_or_finite_quasiperiodic"]["statement"]:
+    if "exactly {0}" not in relative_candidate13_second["bounded_or_finite_quasiperiodic"]["statement"]:
         raise AssertionError("relative candidate-13 bounded zero locus was hidden")
     if "full-domain support-local f2 remains obstructed" not in relative_candidate13["claim_boundary"] or "arity three is not authorized" not in relative_candidate13["claim_boundary"]:
         raise AssertionError("relative candidate-13 morphism boundary changed")
@@ -674,10 +674,16 @@ def verify() -> None:
         raise AssertionError("candidate-13 complete zero-block theorem was hidden")
     if candidate13_cone["mode_data"]["resonance"]["status"] != "CERTIFIED" or "18-coefficient prime" not in candidate13_cone["mode_data"]["resonance"]["statement"]:
         raise AssertionError("candidate-13 complete resonance theorem was hidden")
-    if candidate13_cone_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "R_c=R_13,1" not in candidate13_cone_second["bounded_or_finite_quasiperiodic"]["statement"] or candidate13_cone_second["smooth_secular"]["status"] != "CERTIFIED" or candidate13_cone_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+    if candidate13_cone_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "exactly {0}" not in candidate13_cone_second["bounded_or_finite_quasiperiodic"]["statement"] or candidate13_cone_second["smooth_secular"]["status"] != "CERTIFIED" or candidate13_cone_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("candidate-13 complete correction classes changed")
-    if "complete bounded and smooth second-order cone formula" not in candidate13_cone["claim_boundary"] or "existence of a nonzero bounded point remain open" not in candidate13_cone["claim_boundary"]:
+    if "complete real bounded-origin" not in candidate13_cone["claim_boundary"] or "complex zero variety" not in candidate13_cone["claim_boundary"]:
         raise AssertionError("candidate-13 complete cone boundary changed")
+    separator = by_id["einstein.ph.wm.interaction.candidate13_scalar_separation_no_go"]
+    separator_second = separator["mode_data"]["second_order"]
+    if separator["descriptions"]["nonlinear"] != "OBSTRUCTED" or "strictly positive occupation coefficient" not in separator["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-13 scalar separator was hidden")
+    if separator["mode_data"]["resonance"]["status"] != "NOT_APPLICABLE" or separator_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or separator_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-13 scalar separator exceeded scope")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]
     if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:

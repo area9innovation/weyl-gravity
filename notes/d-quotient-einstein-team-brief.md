@@ -3660,18 +3660,39 @@ rotations and every static `L>=2` block is invertible.  Hence
 `Z2_bounded={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_c=R_13,1=...=R_13,18=0}` and
 `Z2_smooth={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0}` are exact coefficientwise
 formulas.  Existence of a nonzero bounded point and the real component
-decomposition remain `OPEN`.
+decomposition were the last open candidate-13 bounded questions.  They are now
+closed by the exact separator
+
+```text
+D=-(8/(5L))*mu_H-(3/(2L*sqrt(rho)))*mu_Px-(2/rho)*R_c.
+```
+
+Using `1/2<rho<3/5`, exact square witnesses and rational frequency bounds,
+its occupation coefficients are bounded below by `379/1000`, `101/250`,
+`23/80` and `38/45` on the four extremal branch/fibre cases; the `q_plus`
+coefficients are larger than their `p_extra` partners.  The `q_minus` current
+sign supplies the remaining sign reversal.  Thus `D>0` for every nonzero real
+coefficient vector on the complete axial/polar, all-`m` candidate-13 carrier,
+so `Z2_bounded(candidate13)={0}`.  Rotations and the eighteen resonance
+equations are redundant for this origin proof.  The smooth cone remains
+nontrivial because `R_c` and the finite-frequency resonances have secular
+inverses.  This is a real positivity theorem, not a classification of the
+complex variety or another circumference.
 
 That Bridge 1 handoff is now explicit in
 `EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1`.  The
 candidate-13 bounded receiver is the typed direct sum of the five-current
 Koszul receiver, the circle-pressure component `R_c`, and the eighteen
 finite-frequency relative adjoint coefficients.  Their common zero is a
-necessary-and-sufficient bounded derived-source domain; the smooth derived
+necessary-and-sufficient bounded derived-source domain and is exactly `{0}`
+on this carrier; the smooth derived
 source retains only the five moment maps.  Both are `CERTIFIED` at
 `REDUCED-MODE`.  The frozen-unary full-domain support-local `f2`
 obstruction is preserved, no support-local derived BV subcomplex is
-constructed, and arity three remains unauthorized.
+constructed, and arity three remains unauthorized.  The active bridge gate is
+now the other collision circumferences: test for exact scalar separators
+fibre by fibre, with no name-based identification across their distinct
+background parameters.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).

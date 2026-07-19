@@ -19,6 +19,7 @@ INPUTS = {
     "current_cofiber_receiver": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1.json",
     "full_domain_f2_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
     "candidate13_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.json",
+    "scalar_separation": ROOT / "bridge/certificates/einstein_maxwell_weyl_candidate13_scalar_separation_no_go.json",
     "pressure_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.json",
     "bounded_zero_block": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_generic_bounded_zero_block.json",
 }
@@ -40,6 +41,7 @@ def build() -> dict[str, object]:
     receiver = records["current_cofiber_receiver"]
     obstruction = records["full_domain_f2_obstruction"]
     cone = records["candidate13_cone"]
+    separation = records["scalar_separation"]
 
     required_triangle_flags = {
         "OFF_SHELL_CHAIN_MAP_ALL_BV_ROWS",
@@ -67,6 +69,11 @@ def build() -> dict[str, object]:
     require(cone_flags["candidate13_known_bounded_functional_ledger_certified"], "candidate-13 known bounded ledger changed")
     require(cone_flags["complete_candidate13_bounded_functional_ledger_certified"], "candidate-13 bounded ledger changed")
     require(cone_flags["complete_candidate13_smooth_tangent_cone_formula_certified"], "candidate-13 smooth cone changed")
+    require(cone_flags["candidate13_complete_bounded_cone_is_origin"], "candidate-13 bounded origin theorem changed")
+    require(not cone_flags["nonzero_mixed_bounded_point_exists"], "candidate-13 nonzero bounded point appeared")
+    require(cone_flags["nonzero_mixed_bounded_point_nonexistence_certified"], "candidate-13 bounded nonexistence certificate changed")
+    require(separation["classification"]["exact_rational_Farkas_functional_certified"], "candidate-13 scalar separator changed")
+    require(separation["classification"]["candidate13_complete_bounded_cone_is_origin"], "candidate-13 scalar origin theorem changed")
     require(records["pressure_obstruction"]["classification"]["candidate13_bounded_or_finite_quasiperiodic_extension_obstructed"], "candidate-13 pressure witness changed")
     require(records["bounded_zero_block"]["classification"]["five_stabilizers_plus_circle_pressure_complete_on_finite_generic_zero_block"], "bounded zero-block theorem changed")
 
@@ -120,8 +127,8 @@ def build() -> dict[str, object]:
         "derived_source_pullback": {
             "BOUNDED_OR_FINITE_QUASIPERIODIC": {
                 "status": "CERTIFIED",
-                "domain": "O2_candidate13,bounded^{-1}(0)",
-                "sufficiency": "the complete bounded zero-block theorem and exact candidate-13 nonzero-frequency ledger exhaust the reduced adjoint cokernel",
+                "domain": "O2_candidate13,bounded^{-1}(0)={0} on the declared candidate-13 generic carrier",
+                "sufficiency": "the complete bounded receiver exhausts the reduced adjoint cokernel, and the exact scalar separator D in span(mu_H,mu_Px,R_c) is strictly positive on every nonzero declared coefficient vector",
             },
             "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
                 "status": "CERTIFIED",
@@ -133,7 +140,7 @@ def build() -> dict[str, object]:
                 "domain": "NO_CERTIFIED_MAP",
             },
             "smooth_nonempty": "the axial m=0 Einstein-minus/extra-primary witness is a nonzero point of the smooth pullback",
-            "bounded_witness_disposition": "the same witness is excluded from the bounded pullback because R_c<0",
+            "bounded_witness_disposition": "the same witness is excluded because R_c<0; in fact every nonzero declared tangent is excluded from the bounded pullback by the scalar separator",
         },
         "morphism_disposition": {
             "full_domain_support_local_f2": "OBSTRUCTED",
@@ -147,8 +154,10 @@ def build() -> dict[str, object]:
             "candidate13_five_plus_pressure_plus_eighteen_quadratic_receiver_typed": True,
             "bounded_derived_source_pullback_certified": True,
             "bounded_derived_source_known_necessary_ledger_certified": True,
+            "bounded_derived_source_pullback_is_origin": True,
+            "nonzero_mixed_bounded_derived_source_point_exists": False,
+            "nonzero_mixed_bounded_derived_source_point_nonexistence_certified": True,
             "smooth_derived_source_pullback_certified": True,
-            "nonzero_mixed_bounded_derived_source_point_certified": False,
             "nonzero_mixed_smooth_derived_source_point_certified": True,
             "full_domain_f2_obstruction_preserved": True,
             "support_local_BV_derived_subcomplex_constructed": False,
@@ -156,8 +165,8 @@ def build() -> dict[str, object]:
             "arity_three_authorized": False,
             "cross_background_causal_observational_or_quantum_claim": False,
         },
-        "interpretation": "The candidate-13 theorem realizes correction-class-sensitive reduced-mode derived-source pullbacks for the relative current-cofiber assembly. Bounded inversion retains the pressure and eighteen resonance receivers; smooth inversion retains only the five-current receiver. The displayed mixed witness belongs only to the smooth pullback.",
-        "next_gate": "decompose the bounded real zero variety or construct a nonzero bounded point; do not start arity three on the obstructed full-domain morphism",
+        "interpretation": "The candidate-13 theorem realizes correction-class-sensitive reduced-mode derived-source pullbacks for the relative current-cofiber assembly. The bounded pullback is exactly the origin because its pressure-enhanced scalar charge combination is definite, whereas the smooth pullback is the nontrivial five-current zero set. The displayed mixed witness belongs only to the smooth pullback.",
+        "next_gate": "test other collision circumferences for analogous scalar separators while keeping each background and carrier distinct; do not start arity three on the obstructed full-domain morphism",
         "claim_boundary": "This is a same-background REDUCED-MODE bounded and smooth derived-source crosswalk. It is not a support-local derived BV subcomplex, full-domain f2 repair, arity-three morphism, causal functor, cross-background map, observable, particle theorem, or quantum claim.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),

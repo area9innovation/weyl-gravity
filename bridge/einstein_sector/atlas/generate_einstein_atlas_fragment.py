@@ -113,6 +113,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_candidate13_same_fibre_census": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.json",
     "ell2_two_abs_momentum_candidate13_mixed_bounded_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension.json",
     "ell2_two_abs_momentum_candidate13_complete_mixed_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.json",
+    "candidate13_scalar_separation_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_candidate13_scalar_separation_no_go.json",
     "candidate13_mixed_pressure_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.json",
     "finite_generic_bounded_zero_block": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_generic_bounded_zero_block.json",
     "candidate13_bounded_zero_frequency": ROOT / "bridge/certificates/einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition.json",
@@ -246,9 +247,9 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED","The source, pulled-back target and cofiber action-derived forms remain three distinct noncyclic triangle forms."),
             ("CERTIFIED","The smooth zero-block map lands in the five-current/Koszul receiver; bounded inversion adds a distinct circle-pressure component R_c."),
             ("CERTIFIED","The finite-frequency relative map lands in the separate 18-dimensional candidate-13 adjoint-cokernel coefficient receiver."),
-            _second_order(("CERTIFIED","The bounded reduced source is solvable exactly on the common zero of the five stabilizers, R_c and eighteen resonance coefficients."),("CERTIFIED","The smooth derived source is the five-moment-map zero locus because the pressure and resonance components have secular inverses."),("NO_CERTIFIED_MAP","No background-specific retarded relative correction complex is certified.")),
-            _evidence("relative_candidate13_derived_source_crosswalk","relative_linear_triangle","relative_current_cofiber_receiver","relative_full_domain_f2_obstruction","ell2_two_abs_momentum_candidate13_complete_mixed_cone","finite_generic_bounded_zero_block","candidate13_bounded_zero_frequency","candidate13_mixed_pressure_obstruction","branch_dictionary"),
-            "This is a same-background REDUCED-MODE bounded and smooth derived-source crosswalk. It does not certify a nonzero bounded point. The frozen-unary full-domain support-local f2 remains obstructed, no support-local derived BV subcomplex is constructed, arity three is not authorized, and higher maps remain fail-closed.",
+            _second_order(("CERTIFIED","The bounded reduced-source pullback is exactly {0}: the common zero of the typed receiver is the origin by the exact scalar separator."),("CERTIFIED","The smooth derived source is the nontrivial five-moment-map zero locus because the pressure and resonance components have secular inverses."),("NO_CERTIFIED_MAP","No background-specific retarded relative correction complex is certified.")),
+            _evidence("relative_candidate13_derived_source_crosswalk","relative_linear_triangle","relative_current_cofiber_receiver","relative_full_domain_f2_obstruction","ell2_two_abs_momentum_candidate13_complete_mixed_cone","candidate13_scalar_separation_no_go","finite_generic_bounded_zero_block","candidate13_bounded_zero_frequency","candidate13_mixed_pressure_obstruction","branch_dictionary"),
+            "This is a same-background REDUCED-MODE bounded and smooth derived-source crosswalk. The bounded pullback is certified but contains only the origin; the smooth pullback is nontrivial. The frozen-unary full-domain support-local f2 remains obstructed, no support-local derived BV subcomplex is constructed, arity three is not authorized, and higher maps remain fail-closed.",
         ),
         _entry(
             "einstein.ph.em_wm.standard.generic_radiative",
@@ -1120,11 +1121,23 @@ def entries() -> list[dict[str, object]]:
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"OPEN","quantum":"OPEN"},
             ("CERTIFIED","The complete finite generic candidate-13 two-fibre carrier is kept on one exact circumference background."),
             ("CERTIFIED","The branch dictionary and stabilizer moment maps use the action-derived reduced current forms; no new quantum sign claim is made."),
-            ("CERTIFIED","The bounded zero-frequency receiver is exactly the five stabilizers plus circle pressure R_c; the smooth zero-frequency cokernel retains only the five stabilizers."),
+            ("CERTIFIED","The bounded zero-frequency receiver is exactly the five stabilizers plus circle pressure R_c; an exact combination of H, P_x and R_c is strictly positive on every nonzero declared tangent."),
             ("CERTIFIED","The bounded nonzero-frequency obstruction is exactly the 18-coefficient prime candidate-13 cross-fibre ideal; all same-fibre and other cross-fibre channels are off shell."),
-            _second_order(("CERTIFIED","The bounded cone is exactly mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_c=R_13,1=...=R_13,18=0."),("CERTIFIED","The smooth exponential-polynomial cone is exactly the common zero of the five stabilizer moment maps."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
-            _evidence("ell2_two_abs_momentum_candidate13_complete_mixed_cone","finite_generic_bounded_zero_block","candidate13_bounded_zero_frequency","candidate13_mixed_pressure_obstruction","ell2_two_abs_momentum_candidate13_mixed_bounded_extension","ell2_two_abs_momentum_candidate13_same_fibre_census","ell2_two_abs_momentum_candidate13_L4_incidence_reduction","finite_generic_smooth","abstract_cone"),
-            "This is a complete bounded and smooth second-order cone formula on the declared finite generic candidate-13 carrier. The real zero-locus components and existence of a nonzero bounded point remain open; all-orders, causal, residual, observational and quantum claims remain fail-closed.",
+            _second_order(("CERTIFIED","The bounded cone is exactly {0}; the scalar separator makes the five-stabilizer, R_c and R_13 common-zero formula definite on the real carrier."),("CERTIFIED","The smooth exponential-polynomial cone is exactly the nontrivial common zero of the five stabilizer moment maps."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_candidate13_complete_mixed_cone","candidate13_scalar_separation_no_go","finite_generic_bounded_zero_block","candidate13_bounded_zero_frequency","candidate13_mixed_pressure_obstruction","ell2_two_abs_momentum_candidate13_mixed_bounded_extension","ell2_two_abs_momentum_candidate13_same_fibre_census","ell2_two_abs_momentum_candidate13_L4_incidence_reduction","finite_generic_smooth","abstract_cone"),
+            "This is a complete real bounded-origin and smooth second-order cone theorem on the declared finite generic candidate-13 carrier. The complex zero variety, other collision circumferences, exceptional/global inputs, all-orders, causal, residual, observational and quantum claims remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.candidate13_scalar_separation_no_go",
+            _scope(theory="Weyl-Maxwell target", boundaries="candidate-13 closed S1_L times S2 circumference fibre; before final residual quotient", carrier="all generic ell=2 q-minus, p-extra and q-plus coefficients on signed n=1 and n=-2 fibres with reality conjugates", degree=2, parity="axial and polar", ell=2, m="all m=-2,...,2", k="signed n=1,-2 candidate-13 fibres", omega="all q-minus, p-extra and q-plus positive-frequency shells", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","The exact candidate-13 branch shells and signed momentum fibres are retained without cross-background identification."),
+            ("CERTIFIED","The q-minus current is negative while the p-extra and q-plus current blocks are positive, in both parities with positive angular Gram form."),
+            ("CERTIFIED","D=-(8/(5L))mu_H-(3/(2L sqrt(rho)))mu_Px-(2/rho)R_c has a strictly positive occupation coefficient on every declared branch and fibre."),
+            ("NOT_APPLICABLE","The no-go follows already from the scalar charge/pressure receiver; the eighteen finite-frequency coefficients are redundant on its zero set."),
+            _second_order(("OBSTRUCTED","Every nonzero real tangent in the declared carrier is bounded-obstructed; the bounded tangent cone is {0}."),("CERTIFIED","The separator does not constrain the smooth-secular cone because R_c has a secular inverse; that cone remains the five-moment-map zero set."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("candidate13_scalar_separation_no_go","ell2_two_abs_momentum_candidate13_complete_mixed_cone","candidate13_mixed_pressure_obstruction","standard","axial_current","polar_current","taub"),
+            "This exact positivity theorem is real, candidate-13-specific and limited to the declared generic two-fibre carrier. It does not classify the complex zero variety, another circumference, exceptional/global inputs, all-orders integration, causal correction, residual observables, particles or quantum states.",
         ),
         _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
@@ -2041,6 +2054,7 @@ def build() -> dict[str, object]:
         raise AssertionError("candidate-13 bounded zero-frequency specialization changed")
     candidate13_cone = records["ell2_two_abs_momentum_candidate13_complete_mixed_cone"]
     candidate13_cone_flags = candidate13_cone["classification"]
+    candidate13_separator_flags = records["candidate13_scalar_separation_no_go"]["classification"]
     if not (
         candidate13_cone_flags["complete_candidate13_bounded_tangent_cone_formula_certified"]
         and candidate13_cone_flags["candidate13_known_bounded_functional_ledger_certified"]
@@ -2051,13 +2065,18 @@ def build() -> dict[str, object]:
         and candidate13_cone_flags["five_stabilizer_functionals_necessary_and_sufficient_smooth"]
         and candidate13_cone_flags["same_fibre_nonzero_frequency_source_functionals_absent_after_shell_reduction"]
         and candidate13_cone_flags["pure_extra_face_is_origin"]
-        and not candidate13_cone_flags["nonzero_mixed_bounded_point_certified"]
+        and candidate13_cone_flags["candidate13_complete_bounded_cone_is_origin"]
+        and not candidate13_cone_flags["nonzero_mixed_bounded_point_exists"]
+        and candidate13_cone_flags["nonzero_mixed_bounded_point_nonexistence_certified"]
         and candidate13_cone_flags["nonzero_mixed_smooth_point_certified"]
+        and candidate13_cone_flags["real_algebraic_component_decomposition_classified"]
+        and candidate13_separator_flags["exact_rational_Farkas_functional_certified"]
+        and candidate13_separator_flags["strictly_positive_on_every_declared_branch_fibre_parity_and_m"]
+        and candidate13_separator_flags["candidate13_complete_bounded_cone_is_origin"]
     ):
         raise AssertionError("candidate-13 complete mixed cone changed")
     if (
-        candidate13_cone_flags["real_algebraic_component_decomposition_classified"]
-        or candidate13_cone_flags["all_orders_integrability"]
+        candidate13_cone_flags["all_orders_integrability"]
         or candidate13_cone_flags["causal_residual_observational_or_quantum_claim"]
     ):
         raise AssertionError("candidate-13 complete mixed cone exceeded scope")
@@ -2362,8 +2381,10 @@ def build() -> dict[str, object]:
         and relative_candidate13["candidate13_five_plus_pressure_plus_eighteen_quadratic_receiver_typed"]
         and relative_candidate13["bounded_derived_source_pullback_certified"]
         and relative_candidate13["bounded_derived_source_known_necessary_ledger_certified"]
+        and relative_candidate13["bounded_derived_source_pullback_is_origin"]
+        and not relative_candidate13["nonzero_mixed_bounded_derived_source_point_exists"]
+        and relative_candidate13["nonzero_mixed_bounded_derived_source_point_nonexistence_certified"]
         and relative_candidate13["smooth_derived_source_pullback_certified"]
-        and not relative_candidate13["nonzero_mixed_bounded_derived_source_point_certified"]
         and relative_candidate13["nonzero_mixed_smooth_derived_source_point_certified"]
         and relative_candidate13["full_domain_f2_obstruction_preserved"]
     ):

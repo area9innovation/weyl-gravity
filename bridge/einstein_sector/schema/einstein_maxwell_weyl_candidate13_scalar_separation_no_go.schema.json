@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-candidate13-scalar-separation-no-go-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "normalization", "exact_separation_certificate", "theorem", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-candidate13-scalar-separation-no-go-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_CANDIDATE13_SCALAR_SEPARATION_NO_GO"},
+    "scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "exact_separation_certificate": {
+      "type": "object",
+      "required": ["rho", "rho_interval", "separating_functional", "branch_coefficients", "frequency_bounds", "strict_lower_bounds"]
+    },
+    "theorem": {
+      "type": "object",
+      "required": ["positive_decomposition", "scalar_common_zero", "complete_bounded_cone", "reason_resonance_is_redundant"]
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "exact_rational_Farkas_functional_certified": {"const": true},
+        "strictly_positive_on_every_declared_branch_fibre_parity_and_m": {"const": true},
+        "candidate13_scalar_common_zero_is_origin": {"const": true},
+        "candidate13_complete_bounded_cone_is_origin": {"const": true},
+        "candidate13_nonzero_bounded_point_exists": {"const": false},
+        "real_bounded_component_decomposition_classified": {"const": true},
+        "smooth_cone_collapses_to_origin": {"const": false},
+        "exceptional_or_generalized_zero_inputs_included": {"const": false},
+        "all_orders_integrability": {"const": false},
+        "causal_residual_observational_or_quantum_claim": {"const": false}
+      },
+      "required": ["exact_rational_Farkas_functional_certified", "strictly_positive_on_every_declared_branch_fibre_parity_and_m", "candidate13_scalar_common_zero_is_origin", "candidate13_complete_bounded_cone_is_origin", "candidate13_nonzero_bounded_point_exists", "real_bounded_component_decomposition_classified", "smooth_cone_collapses_to_origin", "exceptional_or_generalized_zero_inputs_included", "all_orders_integrability", "causal_residual_observational_or_quantum_claim"]
+    }
+  },
+  "additionalProperties": true
+}

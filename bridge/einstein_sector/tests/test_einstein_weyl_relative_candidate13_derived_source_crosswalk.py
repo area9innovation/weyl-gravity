@@ -24,6 +24,15 @@ class RelativeCandidate13DerivedSourceCrosswalkTests(unittest.TestCase):
         self.assertIn("18-dimensional", payload["quadratic_receiver"]["relative_resonance_map"]["target"])
         self.assertIn("distinct summands", payload["quadratic_receiver"]["typing"])
 
+    def test_bounded_pullback_is_certified_origin_but_smooth_is_nonempty(self) -> None:
+        payload = build()
+        flags = payload["classification"]
+        self.assertTrue(flags["bounded_derived_source_pullback_is_origin"])
+        self.assertFalse(flags["nonzero_mixed_bounded_derived_source_point_exists"])
+        self.assertTrue(flags["nonzero_mixed_bounded_derived_source_point_nonexistence_certified"])
+        self.assertTrue(flags["nonzero_mixed_smooth_derived_source_point_certified"])
+        self.assertIn("={0}", payload["derived_source_pullback"]["BOUNDED_OR_FINITE_QUASIPERIODIC"]["domain"])
+
 
 if __name__ == "__main__":
     unittest.main()

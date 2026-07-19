@@ -52,6 +52,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("circle-pressure", entry["mode_data"]["taub_maps"]["statement"])
         self.assertIn("separate 18-dimensional", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("exactly {0}", second["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertEqual(second["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("full-domain support-local f2 remains obstructed", entry["claim_boundary"])
@@ -405,10 +406,20 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("exactly the five stabilizers plus circle pressure", entry["mode_data"]["taub_maps"]["statement"])
         self.assertIn("18-coefficient prime", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
-        self.assertIn("R_c=R_13,1", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("exactly {0}", second["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertEqual(second["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("existence of a nonzero bounded point remain open", entry["claim_boundary"])
+        self.assertIn("complete real bounded-origin", entry["claim_boundary"])
+
+    def test_candidate13_scalar_separator_is_fail_closed(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.candidate13_scalar_separation_no_go"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertIn("strictly positive occupation coefficient", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "NOT_APPLICABLE")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertIn("{0}", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
     def test_finite_generic_zero_block_is_complete_but_scoped(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.finite_generic_bounded_zero_block"]

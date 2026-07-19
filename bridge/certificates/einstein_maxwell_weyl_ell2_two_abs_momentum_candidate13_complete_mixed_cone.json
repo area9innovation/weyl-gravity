@@ -1,7 +1,8 @@
 {
-  "claim_boundary": "This is a complete coefficientwise bounded and smooth tangent-cone theorem on the declared finite generic candidate-13 carrier. It does not decompose the real zero variety, certify a nonzero bounded point, include exceptional/global inputs, prove all-orders integration, causal correction, residual or observational descent, or make quantum claims.",
+  "claim_boundary": "This is a complete bounded-origin and smooth cone theorem on the declared finite generic candidate-13 carrier. It does not include exceptional/global inputs, prove all-orders integration, causal correction, residual or observational descent, or make quantum claims.",
   "classification": {
     "all_orders_integrability": false,
+    "candidate13_complete_bounded_cone_is_origin": true,
     "candidate13_known_bounded_functional_ledger_certified": true,
     "causal_residual_observational_or_quantum_claim": false,
     "complete_candidate13_bounded_functional_ledger_certified": true,
@@ -10,10 +11,11 @@
     "five_stabilizer_functionals_necessary_and_sufficient_smooth": true,
     "five_stabilizer_pressure_and_eighteen_resonance_functionals_necessary_bounded": true,
     "five_stabilizer_pressure_and_eighteen_resonance_functionals_sufficient_bounded": true,
-    "nonzero_mixed_bounded_point_certified": false,
+    "nonzero_mixed_bounded_point_exists": false,
+    "nonzero_mixed_bounded_point_nonexistence_certified": true,
     "nonzero_mixed_smooth_point_certified": true,
     "pure_extra_face_is_origin": true,
-    "real_algebraic_component_decomposition_classified": false,
+    "real_algebraic_component_decomposition_classified": true,
     "same_fibre_nonzero_frequency_source_functionals_absent_after_shell_reduction": true
   },
   "coefficientwise_functionals": {
@@ -47,17 +49,18 @@
   ],
   "generality_level": "G4_COMPLETE_FINITE_CANDIDATE13_GENERIC_TWO_FIBRE_CARRIER",
   "geometry": {
+    "bounded_real_zero_locus": "{0}; the exact scalar separator D is strictly positive on every nonzero declared coefficient vector",
     "cross_fibre_resonance_variety": "the 18 candidate-13 equations alone define one prime complex dimension-22 cone in the 40-dimensional p-primary ambient space",
-    "mixed_nonzero_point": "the axial m=0 three-occupation witness lies in Z2_smooth but not Z2_bounded because R_c<0; no nonzero point of the complete bounded zero locus is presently certified",
+    "mixed_nonzero_point": "the axial m=0 three-occupation witness lies in Z2_smooth but not Z2_bounded because R_c<0",
     "pure_extra_face": "the bounded and smooth cones meet the declared pure-extra carrier only at the origin because mu_H is negative definite there",
-    "real_moment_map_intersection_decomposed": false
+    "real_moment_map_intersection_decomposed": true
   },
-  "interpretation": "At candidate 13 the bounded cone is exactly the common zero of the five moment maps, circle pressure and eighteen finite-frequency resonance coefficients. The smooth cone retains only the five moment maps. The displayed mixed witness violates R_c, so it is smooth-extendible but not boundedly extendible.",
+  "interpretation": "At candidate 13 the bounded cone collapses to the origin: an exact rational combination of H, P_x and circle pressure is positive definite on the full generic two-fibre carrier. The smooth cone remains the nontrivial five-moment-map zero set because pressure and finite-frequency resonances admit secular inverses.",
   "lifecycle_state": "CLASSIFIED",
-  "next_gate": "decompose the real bounded zero variety or construct a nonzero bounded point; separately retain the same-background relative crosswalk without promoting all-orders or causal structure",
+  "next_gate": "test whether analogous scalar separators exist at the other collision circumferences and keep exceptional or generalized-zero carriers separate",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.py",
-    "generator_sha256": "90210b9e5a9a47e114f0d43eef8f02f5ccae581b55942daac03484b3d9bf6496",
+    "generator_sha256": "d55a27d86d4cb21bac861ff883dd0b2b7f1d7a8a667613e6814ed92f511aae6c",
     "inputs": {
       "bounded_zero_block": {
         "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_bounded_zero_block.json",
@@ -94,14 +97,18 @@
       "same_fibre_census": {
         "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.json",
         "sha256": "fd94929e0c18e87787e6ad1e241a29dae1f4bf46a33d8454a9bf7e5a5bdbfc41"
+      },
+      "scalar_separation": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_candidate13_scalar_separation_no_go.json",
+        "sha256": "b771fdf18e78516c4aa640aeee44c04f35b628e39e23538bf7935beb53eec948"
       }
     }
   },
   "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_COMPLETE_MIXED_CONE",
-  "result_state": "COMPLETE_BOUNDED_AND_SMOOTH_COEFFICIENTWISE_CONES_ON_THE_CANDIDATE13_GENERIC_CARRIER",
+  "result_state": "CANDIDATE13_BOUNDED_CONE_IS_ORIGIN_AND_SMOOTH_CONE_IS_FIVE_MOMENT_MAP_ZERO_SET",
   "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-complete-mixed-cone-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.schema.json",
-  "schema_sha256": "07c352fc77111acb36821ae4d2af72520c8e11a9dcfe034132d2e2da49ee2322",
+  "schema_sha256": "370f54f76ebdb75f4ab3de93ed0bd28e42023a0ad33561a6fc09edb88cbb3493",
   "scope": {
     "background": "candidate-13 tuned compact magnetically supported Plebanski-Hacyan product",
     "boundaries": "closed S1_L times S2 before final residual quotient",

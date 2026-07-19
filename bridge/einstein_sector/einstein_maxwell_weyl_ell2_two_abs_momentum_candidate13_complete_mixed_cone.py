@@ -23,6 +23,7 @@ INPUTS = {
     "pressure_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.json",
     "bounded_zero_block": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_generic_bounded_zero_block.json",
     "candidate13_zero_block": ROOT / "bridge/certificates/einstein_maxwell_weyl_candidate13_bounded_zero_frequency_decomposition.json",
+    "scalar_separation": ROOT / "bridge/certificates/einstein_maxwell_weyl_candidate13_scalar_separation_no_go.json",
 }
 
 
@@ -46,6 +47,7 @@ def build() -> dict[str, object]:
     pressure = records["pressure_obstruction"]
     zero_block = records["bounded_zero_block"]
     candidate13_zero = records["candidate13_zero_block"]
+    separation = records["scalar_separation"]
 
     require(incidence["classification"]["candidate_13_ideal_prime"], "candidate-13 cross-fibre ideal changed")
     require(incidence["prime_zero_variety_theorem"]["equation_count"] == 18, "candidate-13 equation count changed")
@@ -62,6 +64,8 @@ def build() -> dict[str, object]:
     require(zero_block["classification"]["bounded_zero_frequency_necessity_and_sufficiency_certified"], "bounded zero-block sufficiency changed")
     require(candidate13_zero["classification"]["complete_candidate13_bounded_zero_frequency_receiver_certified"], "candidate-13 bounded zero-block specialization changed")
     require(candidate13_zero["classification"]["five_stabilizers_plus_circle_pressure_necessary_and_sufficient"], "candidate-13 zero-block sufficiency changed")
+    require(separation["classification"]["candidate13_complete_bounded_cone_is_origin"], "candidate-13 scalar separation changed")
+    require(not separation["classification"]["candidate13_nonzero_bounded_point_exists"], "candidate-13 bounded point unexpectedly appeared")
 
     normal_equations = incidence["pencil_reduction"]["normal_form_equations"]
     return {
@@ -69,7 +73,7 @@ def build() -> dict[str, object]:
         "schema_path": str(SCHEMA.relative_to(ROOT)),
         "schema_sha256": sha(SCHEMA),
         "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_COMPLETE_MIXED_CONE",
-        "result_state": "COMPLETE_BOUNDED_AND_SMOOTH_COEFFICIENTWISE_CONES_ON_THE_CANDIDATE13_GENERIC_CARRIER",
+        "result_state": "CANDIDATE13_BOUNDED_CONE_IS_ORIGIN_AND_SMOOTH_CONE_IS_FIVE_MOMENT_MAP_ZERO_SET",
         "lifecycle_state": "CLASSIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "generality_level": "G4_COMPLETE_FINITE_CANDIDATE13_GENERIC_TWO_FIBRE_CARRIER",
@@ -122,9 +126,10 @@ def build() -> dict[str, object]:
         },
         "geometry": {
             "pure_extra_face": "the bounded and smooth cones meet the declared pure-extra carrier only at the origin because mu_H is negative definite there",
-            "mixed_nonzero_point": "the axial m=0 three-occupation witness lies in Z2_smooth but not Z2_bounded because R_c<0; no nonzero point of the complete bounded zero locus is presently certified",
+            "bounded_real_zero_locus": "{0}; the exact scalar separator D is strictly positive on every nonzero declared coefficient vector",
+            "mixed_nonzero_point": "the axial m=0 three-occupation witness lies in Z2_smooth but not Z2_bounded because R_c<0",
             "cross_fibre_resonance_variety": "the 18 candidate-13 equations alone define one prime complex dimension-22 cone in the 40-dimensional p-primary ambient space",
-            "real_moment_map_intersection_decomposed": False,
+            "real_moment_map_intersection_decomposed": True,
         },
         "classification": {
             "complete_candidate13_bounded_tangent_cone_formula_certified": True,
@@ -136,15 +141,17 @@ def build() -> dict[str, object]:
             "five_stabilizer_functionals_necessary_and_sufficient_smooth": True,
             "same_fibre_nonzero_frequency_source_functionals_absent_after_shell_reduction": True,
             "pure_extra_face_is_origin": True,
-            "nonzero_mixed_bounded_point_certified": False,
+            "candidate13_complete_bounded_cone_is_origin": True,
+            "nonzero_mixed_bounded_point_exists": False,
+            "nonzero_mixed_bounded_point_nonexistence_certified": True,
             "nonzero_mixed_smooth_point_certified": True,
-            "real_algebraic_component_decomposition_classified": False,
+            "real_algebraic_component_decomposition_classified": True,
             "all_orders_integrability": False,
             "causal_residual_observational_or_quantum_claim": False,
         },
-        "interpretation": "At candidate 13 the bounded cone is exactly the common zero of the five moment maps, circle pressure and eighteen finite-frequency resonance coefficients. The smooth cone retains only the five moment maps. The displayed mixed witness violates R_c, so it is smooth-extendible but not boundedly extendible.",
-        "next_gate": "decompose the real bounded zero variety or construct a nonzero bounded point; separately retain the same-background relative crosswalk without promoting all-orders or causal structure",
-        "claim_boundary": "This is a complete coefficientwise bounded and smooth tangent-cone theorem on the declared finite generic candidate-13 carrier. It does not decompose the real zero variety, certify a nonzero bounded point, include exceptional/global inputs, prove all-orders integration, causal correction, residual or observational descent, or make quantum claims.",
+        "interpretation": "At candidate 13 the bounded cone collapses to the origin: an exact rational combination of H, P_x and circle pressure is positive definite on the full generic two-fibre carrier. The smooth cone remains the nontrivial five-moment-map zero set because pressure and finite-frequency resonances admit secular inverses.",
+        "next_gate": "test whether analogous scalar separators exist at the other collision circumferences and keep exceptional or generalized-zero carriers separate",
+        "claim_boundary": "This is a complete bounded-origin and smooth cone theorem on the declared finite generic candidate-13 carrier. It does not include exceptional/global inputs, prove all-orders integration, causal correction, residual or observational descent, or make quantum claims.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),
             "generator_sha256": sha(Path(__file__)),

@@ -2358,8 +2358,24 @@ vanishes identically, `L=1` contributes only the three rotations and static
 `L>=2` is invertible.  Therefore
 `Z2_bounded={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_c=R_13,1=...=R_13,18=0}` and
 `Z2_smooth={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0}` are exact coefficientwise
-formulas.  A nonzero bounded point and the real component decomposition remain
-`OPEN`.
+formulas.  The scalar-separation audit now closes the nonzero-point and real
+component questions on this carrier.
+With
+
+```text
+D=-(8/(5L))*mu_H-(3/(2L*sqrt(rho)))*mu_Px-(2/rho)*R_c,
+```
+
+exact interval and radical inequalities prove that every `q_minus`, `p_extra`
+and `q_plus` occupation on both signed fibres has a strictly positive
+coefficient in `D`, in both parities and for every `m`.  Hence the common zero
+of `mu_H,mu_Px,R_c` is already the origin and
+`Z2_bounded(candidate13)={0}`.  The rotations and eighteen resonance
+coefficients are redundant for this real no-go.  The smooth cone remains the
+nontrivial five-moment-map zero set because pressure and finite-frequency
+resonances admit secular inverses.  The complex zero variety, other collision
+circumferences and exceptional/global carriers remain separate fail-closed
+questions.
 The resulting Bridge 1 handoff is now typed by
 `EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1`: the five
 stabilizer components land in the current/Koszul receiver, `R_c` lands in a
@@ -2368,7 +2384,11 @@ land in the finite-frequency relative receiver.  The bounded and smooth
 derived-source pullbacks are certified on their declared zero loci.  This does
 not
 repair the full-domain support-local `f2`, construct a derived BV subcomplex,
-or authorize arity three.
+or authorize arity three.  On the declared carrier the bounded relative
+pullback is certified but equals only `{0}`; the smooth relative pullback is
+nontrivial.  The next same-background gate is to test the other collision
+circumferences for their own exact scalar separators without identifying their
+mode carriers with candidate 13.
 
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at

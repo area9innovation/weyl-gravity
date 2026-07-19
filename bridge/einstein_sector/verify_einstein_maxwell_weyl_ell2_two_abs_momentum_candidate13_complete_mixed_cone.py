@@ -40,6 +40,7 @@ def verify() -> None:
     assert records["bounded_zero_block"]["classification"]["five_stabilizers_plus_circle_pressure_complete_on_finite_generic_zero_block"]
     assert records["bounded_zero_block"]["classification"]["bounded_zero_frequency_necessity_and_sufficiency_certified"]
     assert records["candidate13_zero_block"]["classification"]["complete_candidate13_bounded_zero_frequency_receiver_certified"]
+    assert records["scalar_separation"]["classification"]["candidate13_complete_bounded_cone_is_origin"]
     assert payload["coefficientwise_functionals"]["stabilizer"] == ["mu_H", "mu_Px", "mu_J1", "mu_J2", "mu_J3"]
     assert payload["coefficientwise_functionals"]["candidate13_cross_fibre"]["count_over_C"] == 18
     assert "R_c=0" in payload["tangent_cones"]["BOUNDED_OR_FINITE_QUASIPERIODIC"]["formula"]
@@ -52,9 +53,11 @@ def verify() -> None:
     assert flags["complete_candidate13_smooth_tangent_cone_formula_certified"]
     assert flags["five_stabilizer_pressure_and_eighteen_resonance_functionals_necessary_bounded"]
     assert flags["five_stabilizer_pressure_and_eighteen_resonance_functionals_sufficient_bounded"]
-    assert not flags["nonzero_mixed_bounded_point_certified"]
+    assert flags["candidate13_complete_bounded_cone_is_origin"]
+    assert not flags["nonzero_mixed_bounded_point_exists"]
+    assert flags["nonzero_mixed_bounded_point_nonexistence_certified"]
     assert flags["nonzero_mixed_smooth_point_certified"]
-    assert not flags["real_algebraic_component_decomposition_classified"]
+    assert flags["real_algebraic_component_decomposition_classified"]
     assert not flags["all_orders_integrability"]
     assert not flags["causal_residual_observational_or_quantum_claim"]
     print("EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_COMPLETE_MIXED_CONE verifier: PASS")

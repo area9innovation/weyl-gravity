@@ -1,14 +1,14 @@
 {
   "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_COMPLETE_MIXED_CONE_V1_TIER_RECEIPT",
   "date": "2026-07-19",
-  "scope": "Complete coefficientwise bounded and smooth second-order cones on the finite generic candidate-13 carrier.",
+  "scope": "Complete real bounded-origin and smooth second-order cones on the finite generic candidate-13 carrier.",
   "content_sha256": {
-    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.json": "9c40fc56d8e1e8defd2952bfeeac99d284544f5dfc730b443413a27a453d977a",
-    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.py": "90210b9e5a9a47e114f0d43eef8f02f5ccae581b55942daac03484b3d9bf6496",
-    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.schema.json": "07c352fc77111acb36821ae4d2af72520c8e11a9dcfe034132d2e2da49ee2322",
-    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.py": "75d246b20c94a66993c1b46ef59b87443c2d5c696a69d0c6915c3e1a9c8d0086",
-    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.py": "d2f04325cfec549cda1cd2550a989e08305239a725a5283ec415891925ea6f3a",
-    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-complete-mixed-cone.md": "f3d40937f05bc36529e3bdf2665f86d6b5500a32d2a0adc7eb57f9ec0db156f7"
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.json": "02124af6a0411f4a7070506ea21f99b0414b17266fe27564037ac9e92a3a88ef",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.py": "d55a27d86d4cb21bac861ff883dd0b2b7f1d7a8a667613e6814ed92f511aae6c",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.schema.json": "370f54f76ebdb75f4ab3de93ed0bd28e42023a0ad33561a6fc09edb88cbb3493",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.py": "3f77ce76c5f106859d424434cbede450e1f27ccd5170e949fbd18bcc7d63f376",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.py": "41ecc7af35c2f184fe4d050bac4d59277f9b1af94638a1c223a0b12ad12b5857",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-complete-mixed-cone.md": "c292b88d7383039b595c6965e83d52f26a29814b935257767073503554e51beb"
   },
   "verification": {
     "tier_0": {
@@ -21,7 +21,7 @@
     },
     "tier_1": {
       "status": "PASS",
-      "tests_run": 85,
+      "tests_run": 87,
       "commands": [
         "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone",
         "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
@@ -40,8 +40,8 @@
     },
     "tier_3": {
       "status": "NOT_RUN",
-      "reason": "The bounded and smooth coefficientwise cones are promoted, but real component decomposition, a nonzero bounded point, all-orders integration, causal propagation, residual observables, quantum theory, and release remain open."
+      "reason": "The real bounded cone is promoted to the origin and the smooth cone remains the five-moment-map zero set, but the complex variety, other collision fibres, all-orders integration, causal propagation, residual observables, quantum theory and release remain open."
     }
   },
-  "claim_boundary": "The bounded cone is exactly the common zero of five stabilizers, R_c and eighteen finite-frequency coefficients; the smooth cone retains only the five stabilizers. Real component geometry and higher lifecycles remain OPEN or NO_CERTIFIED_MAP."
+  "claim_boundary": "The bounded cone is exactly {0} by scalar separation; the smooth cone retains only the five stabilizers and is nontrivial. The complex variety, other fibres and higher lifecycles remain OPEN or NO_CERTIFIED_MAP."
 }

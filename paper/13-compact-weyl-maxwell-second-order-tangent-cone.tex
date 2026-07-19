@@ -541,9 +541,49 @@ them to the eighteen finite-frequency coefficients gives the complete formula
  =\{\mu_H=\mu_{P_x}=\mu_{J_1}=\mu_{J_2}=\mu_{J_3}
       =R_c=\cR_{13,1}=\cdots=\cR_{13,18}=0\}.
 \]
-This formula does not by itself certify a nonzero real point of that bounded
-zero locus.  The explicit three-occupation fixture has \(R_c<0\), so it
-belongs to the smooth exponential-polynomial cone but not the bounded cone.
+\begin{theorem}[Candidate-13 bounded-origin theorem]
+On the complete real candidate-13 generic two-fibre carrier,
+\[
+ \cZ^{\rm qp}_{2,13}=\{0\}.
+\]
+The smooth exponential-polynomial cone does not collapse: it remains the
+common zero of the five stabilizer moment maps and contains the explicit
+three-occupation Einstein--extra fixture.
+\end{theorem}
+
+\begin{proof}
+Put
+\[
+ D=-\frac{8}{5L}\mu_H
+   -\frac{3}{2L\sqrt\rho}\mu_{P_x}
+   -\frac{2}{\rho}R_c,
+ \qquad
+ \rho=\frac{-250+461\sqrt{10}}{2132}.
+\]
+In occupation variables this is
+\[
+ D=\frac25\sum\omega^2h-\frac38\sum n\omega h-
+   \sum n^2h,
+ \qquad n\in\{1,-2\}.
+\]
+The Einstein-minus current is negative, while the extra and Einstein-plus
+current blocks are positive in both parities.  Since
+\(1/2<\rho<3/5\), exact rational bounds give positive coefficients at least
+\(379/1000\) and \(23/80\) on the two signed Einstein-minus fibres, and at
+least \(101/250\) and \(38/45\) on the corresponding extra fibres.  The
+Einstein-plus frequencies are larger and their common positive-branch
+coefficient is increasing.  Thus \(D\) is a strictly positive sum of the
+absolute-current Gram occupations for every parity and \(m\).  Vanishing of
+\(\mu_H,\mu_{P_x},R_c\) forces every occupation, hence the tangent, to vanish.
+The rotations and eighteen resonance equations are then automatic.  In the
+smooth correction class \(R_c\) and the finite-frequency resonances have
+secular inverses, so only the five moment maps remain.
+\end{proof}
+
+The earlier three-occupation fixture has \(R_c<0\), consistently placing it
+in the smooth cone but outside the bounded cone.  The theorem is a real
+positivity result on this exact circumference; it makes no identification
+with another collision fibre and does not classify the complex zero variety.
 
 \section{Complete standard generalized-zero subcone}
 
@@ -1099,6 +1139,8 @@ Finite-generic bounded zero-frequency receiver &
 \cert{bridge/certificates/einstein_maxwell_weyl_finite_generic_bounded_zero_block.json}\\
 Complete candidate-13 bounded and smooth cone formulas &
 \cert{bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.json}\\
+Candidate-13 scalar-separation bounded-origin theorem &
+\cert{bridge/certificates/einstein_maxwell_weyl_candidate13_scalar_separation_no_go.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1141,19 +1183,20 @@ Each certificate records its schema, imported hashes, exact commands, test
 tier, assumptions, and missing-object ledger.  The independent verifier for
 each named certificate must pass before this manuscript advances to
 \textsc{theorem-frozen}.  The current draft promotes only the scoped complete
-formulas displayed above; the real component geometry of the unrestricted
-finite-support bounded zero set remains open.
+formulas displayed above.  The candidate-13 real bounded geometry is closed;
+the unrestricted finite-support bounded zero set and the other collision
+circumferences remain open.
 
 \section{Outlook}
 
-The immediate mathematical target is the real component geometry and
-nontrivial-point problem for the complete bounded finite-support functional
-formula.
+The immediate mathematical target is to determine which of the other exact
+collision circumferences admit a pressure-enhanced scalar separator and which
+retain a nonzero bounded cone.
 The symbolic-\(\ell\) standard-branch resonance and collision theorem is now
 closed, as is the complete 164-coefficient two-momentum branch-basis census.
-The next exact enlargement is the common amplitude-level zero variety,
-followed by a join of distinct \(|k|\) fibres without identifying their phase
-carriers.
+The next exact enlargement is a fibrewise dual-inequality classification,
+followed where definiteness fails by the common amplitude-level zero variety
+and joins of distinct \(|k|\) fibres without identifying their phase carriers.
 The immediate physical target is to compare its strata with the transferred
 Einstein/extra/Maxwell interaction tensor and with observer response.  A
 later causal theorem would replace the finite secular right inverses by

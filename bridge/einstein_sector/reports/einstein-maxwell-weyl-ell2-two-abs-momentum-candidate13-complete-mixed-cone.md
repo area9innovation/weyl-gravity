@@ -29,8 +29,8 @@ resonances and pressure row have secular inverses and the cone is exactly the
 five-moment-map zero set.  The declared mixed witness lies in the smooth cone
 but is bounded-obstructed because `R_c<0`.
 
-This is a complete coefficientwise bounded and smooth theorem, but not an
-irreducible decomposition of either real zero variety or a certificate of a
-nonzero bounded point.  Exceptional/global inputs, all-orders
+The exact scalar separator strengthens this formula: the bounded real zero
+variety is only the origin, while the smooth cone remains nontrivial.
+Exceptional/global inputs, all-orders
 integration, causal correction, residual observables, and quantum claims are
 excluded.

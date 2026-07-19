@@ -20,11 +20,22 @@ R_c = (1/2) sum k_j^2 h_j
 ```
 
 Vanishing of all 24 components is necessary and sufficient for a bounded
-derived source by the finite-generic bounded zero-block theorem.  The
+derived source by the finite-generic bounded zero-block theorem.  Moreover,
+the exact scalar combination
+
+```text
+D = -(8/(5L)) mu_H -(3/(2L sqrt(rho))) mu_Px -(2/rho) R_c
+```
+
+is strictly positive on every nonzero real coefficient vector in the declared
+carrier.  Hence the bounded derived-source pullback is exactly the origin;
+the rotation and finite-frequency resonance equations are automatically zero
+there.  The
 smooth exponential-polynomial derived source is exactly the common zero of
 the five stabilizer components because both finite-frequency resonances and
 the pressure functional admit secular inverses.  The displayed mixed point belongs to
-the smooth pullback but is bounded-obstructed because `R_c<0`.
+the smooth pullback but is bounded-obstructed because `R_c<0`; the separator
+shows that no other nonzero bounded point exists on this carrier.
 
 This solves the quadratic extension equation on the typed bounded and smooth
 reduced-mode zero loci.

@@ -1,0 +1,41 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_CANDIDATE13_SCALAR_SEPARATION_NO_GO_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact real scalar-separation proof that the complete generic candidate-13 bounded tangent cone is the origin.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_candidate13_scalar_separation_no_go.json": "b771fdf18e78516c4aa640aeee44c04f35b628e39e23538bf7935beb53eec948",
+    "bridge/einstein_sector/einstein_maxwell_weyl_candidate13_scalar_separation_no_go.py": "50058d1eaeb6c3be68a34716788076a213b528f132ce08d0d6c13853bcecc44c",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_candidate13_scalar_separation_no_go.schema.json": "f289106c88d489e38eee8f234d2cd9daf9c303296f3c3e7296f37f0520a816be",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_candidate13_scalar_separation_no_go.py": "323171959776961e9cc2ede9f90a48555427411f13c0cbcb1a408680bd72fa9d",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_candidate13_scalar_separation_no_go.py": "717df37ef8f31e486408119b44bedddf82b3f530f6d8bc1dd03e1af892811e86",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-candidate13-scalar-separation-no-go.md": "c1a2cd544b9d63d4ef2190827a9a97c537fb76ea83035e535644146a82eac318"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 3,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_candidate13_scalar_separation_no_go --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_candidate13_scalar_separation_no_go",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_candidate13_scalar_separation_no_go"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The proof imports the exact moment-map and pressure normalizations, candidate-13 circumference, standard branch signs, axial/polar Lee-Wald blocks and complete bounded zero-frequency receiver, then verifies rational lower bounds on every declared occupation coefficient."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The theorem promotes one exact real candidate-13 bounded cone, not another circumference, the complex variety, all-orders integration, causal propagation, residual observables, quantum theory or a release."
+    }
+  },
+  "claim_boundary": "The real bounded candidate-13 generic two-fibre cone is exactly {0}; the smooth cone remains nontrivial, and every other background, carrier and higher lifecycle remains fail-closed."
+}

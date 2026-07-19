@@ -4,11 +4,13 @@
     "arity_three_authorized": false,
     "bounded_derived_source_known_necessary_ledger_certified": true,
     "bounded_derived_source_pullback_certified": true,
+    "bounded_derived_source_pullback_is_origin": true,
     "candidate13_five_plus_pressure_plus_eighteen_quadratic_receiver_typed": true,
     "cross_background_causal_observational_or_quantum_claim": false,
     "full_domain_f2_obstruction_preserved": true,
     "full_relative_arity_two_morphism_constructed": false,
-    "nonzero_mixed_bounded_derived_source_point_certified": false,
+    "nonzero_mixed_bounded_derived_source_point_exists": false,
+    "nonzero_mixed_bounded_derived_source_point_nonexistence_certified": true,
     "nonzero_mixed_smooth_derived_source_point_certified": true,
     "same_background_relative_branch_crosswalk_certified": true,
     "smooth_derived_source_pullback_certified": true,
@@ -20,9 +22,9 @@
   ],
   "derived_source_pullback": {
     "BOUNDED_OR_FINITE_QUASIPERIODIC": {
-      "domain": "O2_candidate13,bounded^{-1}(0)",
+      "domain": "O2_candidate13,bounded^{-1}(0)={0} on the declared candidate-13 generic carrier",
       "status": "CERTIFIED",
-      "sufficiency": "the complete bounded zero-block theorem and exact candidate-13 nonzero-frequency ledger exhaust the reduced adjoint cokernel"
+      "sufficiency": "the complete bounded receiver exhausts the reduced adjoint cokernel, and the exact scalar separator D in span(mu_H,mu_Px,R_c) is strictly positive on every nonzero declared coefficient vector"
     },
     "CAUSAL_RETARDED": {
       "domain": "NO_CERTIFIED_MAP",
@@ -33,10 +35,10 @@
       "status": "CERTIFIED",
       "sufficiency": "the eighteen finite-frequency relative components admit secular inverses"
     },
-    "bounded_witness_disposition": "the same witness is excluded from the bounded pullback because R_c<0",
+    "bounded_witness_disposition": "the same witness is excluded because R_c<0; in fact every nonzero declared tangent is excluded from the bounded pullback by the scalar separator",
     "smooth_nonempty": "the axial m=0 Einstein-minus/extra-primary witness is a nonzero point of the smooth pullback"
   },
-  "interpretation": "The candidate-13 theorem realizes correction-class-sensitive reduced-mode derived-source pullbacks for the relative current-cofiber assembly. Bounded inversion retains the pressure and eighteen resonance receivers; smooth inversion retains only the five-current receiver. The displayed mixed witness belongs only to the smooth pullback.",
+  "interpretation": "The candidate-13 theorem realizes correction-class-sensitive reduced-mode derived-source pullbacks for the relative current-cofiber assembly. The bounded pullback is exactly the origin because its pressure-enhanced scalar charge combination is definite, whereas the smooth pullback is the nontrivial five-current zero set. The displayed mixed witness belongs only to the smooth pullback.",
   "lifecycle_state": "CLASSIFIED",
   "morphism_disposition": {
     "arity_three_authorized": false,
@@ -45,10 +47,10 @@
     "full_relative_arity_two_morphism": "OPEN",
     "reason": "both declared reduced zero loci solve the quadratic extension equation in their correction classes, but the restriction does not construct a support-local BV subcomplex or repair the frozen-unary full-domain f2 equation"
   },
-  "next_gate": "decompose the bounded real zero variety or construct a nonzero bounded point; do not start arity three on the obstructed full-domain morphism",
+  "next_gate": "test other collision circumferences for analogous scalar separators while keeping each background and carrier distinct; do not start arity three on the obstructed full-domain morphism",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_weyl_relative_candidate13_derived_source_crosswalk.py",
-    "generator_sha256": "a193ba578faa156ba35b8aeed9636dc7b6ec0b1c849ceebfaee0476a3f949fdd",
+    "generator_sha256": "52f9d0a6a47f2c47791359b577bd717123075b39e1e5669b33b9b3b475afaa7e",
     "inputs": {
       "bounded_zero_block": {
         "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_bounded_zero_block.json",
@@ -60,7 +62,7 @@
       },
       "candidate13_cone": {
         "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.json",
-        "sha256": "9c40fc56d8e1e8defd2952bfeeac99d284544f5dfc730b443413a27a453d977a"
+        "sha256": "02124af6a0411f4a7070506ea21f99b0414b17266fe27564037ac9e92a3a88ef"
       },
       "current_cofiber_receiver": {
         "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1.json",
@@ -77,6 +79,10 @@
       "pressure_obstruction": {
         "path": "bridge/certificates/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.json",
         "sha256": "85ac9f723d7f7cb823ab4052ef3221820f0148295d697139cb95452773dc5530"
+      },
+      "scalar_separation": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_candidate13_scalar_separation_no_go.json",
+        "sha256": "b771fdf18e78516c4aa640aeee44c04f35b628e39e23538bf7935beb53eec948"
       }
     }
   },
@@ -116,7 +122,7 @@
   "result_state": "TYPED_BOUNDED_AND_SMOOTH_DERIVED_SOURCE_PULLBACKS_CERTIFIED_FULL_DOMAIN_F2_OBSTRUCTED",
   "schema": "pure-weyl-relative-candidate13-derived-source-crosswalk-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein-weyl-relative-candidate13-derived-source-crosswalk-v1.schema.json",
-  "schema_sha256": "16360476a9fb3cab0557f0bdfba392c1f212cef797326674ae764ef745d46558",
+  "schema_sha256": "c57669e4c8b187d0f4362b4ce46bcd56c3e28f686e35aadb9093e43eb560ec61",
   "scope": {
     "background": "candidate-13 compact magnetic Plebanski-Hacyan product",
     "boundaries": "closed S1_L times S2 before final residual quotient",

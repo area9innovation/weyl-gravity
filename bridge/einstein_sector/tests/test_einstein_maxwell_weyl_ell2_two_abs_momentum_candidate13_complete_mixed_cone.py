@@ -23,10 +23,12 @@ class Candidate13CompleteMixedConeTests(unittest.TestCase):
 
     def test_geometry_remains_fail_closed(self) -> None:
         payload = build()
-        self.assertFalse(payload["classification"]["nonzero_mixed_bounded_point_certified"])
+        self.assertFalse(payload["classification"]["nonzero_mixed_bounded_point_exists"])
+        self.assertTrue(payload["classification"]["nonzero_mixed_bounded_point_nonexistence_certified"])
         self.assertTrue(payload["classification"]["nonzero_mixed_smooth_point_certified"])
         self.assertTrue(payload["classification"]["complete_candidate13_bounded_tangent_cone_formula_certified"])
-        self.assertFalse(payload["classification"]["real_algebraic_component_decomposition_classified"])
+        self.assertTrue(payload["classification"]["candidate13_complete_bounded_cone_is_origin"])
+        self.assertTrue(payload["classification"]["real_algebraic_component_decomposition_classified"])
         self.assertFalse(payload["classification"]["all_orders_integrability"])
 
 
