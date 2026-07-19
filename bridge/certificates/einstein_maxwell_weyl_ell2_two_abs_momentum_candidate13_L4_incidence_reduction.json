@@ -1,11 +1,12 @@
 {
   "candidate_index": 13,
-  "claim_boundary": "This certificate reduces candidate 13 exactly, certifies its generic dimension-22 incidence component and exhibits genuine three-root cancellation. It does not classify the degenerate rank strata or the full zero variety. Same-fibre, Taub and correction-class joins remain fail-closed.",
+  "claim_boundary": "This certificate reduces candidate 13 exactly, certifies its generic dimension-22 incidence component, exhibits genuine three-root cancellation and bounds every coordinate-boundary incidence stratum by dimension 20. It does not classify the all-active degenerate rank strata or the full zero variety. Same-fibre, Taub and correction-class joins remain fail-closed.",
   "classification": {
     "candidate_13_exact_pencil_reduction_certified": true,
     "causal_or_quantum_claim": false,
     "complete_rank_stratification_certified": false,
     "complete_two_fibre_tangent_cone_classified": false,
+    "coordinate_boundary_dimension_20_certified": true,
     "four_distinct_real_generalized_roots_certified": true,
     "full_candidate_13_zero_variety_classified": false,
     "generic_component_dimension_22_certified": true,
@@ -14,6 +15,52 @@
     "smooth_secular_classified": false,
     "taub_common_zero_intersection_classified": false,
     "three_root_cancellation_witness_certified": true
+  },
+  "coordinate_boundary_stratification": {
+    "consequence": "no irreducible component of dimension at least 21 is contained in the coordinate boundary; its generic point lies in the torus where every A_i and every B_i is nonzero",
+    "maximum_boundary_incidence_dimension": 20,
+    "representative_linear_ranks": {
+      "0": 0,
+      "1": 5,
+      "2": 10,
+      "3": 15
+    },
+    "support_three": {
+      "active_kernel_formula": "d=dim(intersection_i A_i*Sym^4)=max(9-deg(lcm(A_1,A_2,A_3)),0)",
+      "generic_lcm_degree_at_least_9": {
+        "incidence_dimension_upper_bound": 20,
+        "kernel_dimension": 5,
+        "source_dimension_upper_bound": 15
+      },
+      "special_lcm_degree_r_at_most_8": {
+        "incidence_dimension_upper_bound": 17,
+        "kernel_dimension": "14-r",
+        "reason": "choose the projective degree-r lcm in dimension r and three nonzero affine scales; its degree-four divisors are a finite choice on each factorization type",
+        "source_dimension_upper_bound": "r+3"
+      },
+      "total_kernel_dimension": "5+d"
+    },
+    "support_variable": "s=number of nonzero A_i blocks; the same result holds after interchanging A and B",
+    "support_zero_one_two": [
+      {
+        "active_blocks": 0,
+        "incidence_dimension": 20,
+        "kernel_dimension": 20,
+        "source_dimension": 0
+      },
+      {
+        "active_blocks": 1,
+        "incidence_dimension": 20,
+        "kernel_dimension": 15,
+        "source_dimension": 5
+      },
+      {
+        "active_blocks": 2,
+        "incidence_dimension": 20,
+        "kernel_dimension": 10,
+        "source_dimension": 10
+      }
+    ]
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -185,13 +232,13 @@
   "remaining_rank_stratification_gate": {
     "full_zero_variety_classified": false,
     "required_bound": "dim{A: kernel_dimension>=k}+k <= 21 for every k>=3",
-    "statement": "prove that every source rank-drop stratum has total incidence dimension at most 21, then use complete-intersection unmixedness and the rank-18 Jacobian witness to prove the full ideal prime"
+    "statement": "on the all-active torus, prove that every source rank-drop stratum has total incidence dimension at most 21, then use complete-intersection unmixedness and the rank-18 Jacobian witness to prove the full ideal prime"
   },
   "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_L4_INCIDENCE_REDUCTION",
   "rho": "(-250 + 461*sqrt(10))/2132",
   "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-L4-incidence-reduction-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.schema.json",
-  "schema_sha256": "d85f0fad4d42787114c054d07eab31ca4b69005eef86137c67e382c09f0ba9d7",
+  "schema_sha256": "541101526dfa3d58156a27357f1d453886878d66d016ae4b27a7c6e5963537e0",
   "scope": {
     "background": "candidate-13 tuned compact magnetically supported Plebanski-Hacyan product",
     "boundaries": "closed S1_L times S2 before final residual quotient",

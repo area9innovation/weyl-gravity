@@ -3598,8 +3598,12 @@ incidence component.  The weights
 `lambda_2-lambda_3`, `lambda_3-lambda_1`, `lambda_1-lambda_2` also give an
 exact three-root cancellation solution, so the regular-pencil one-eigenline
 factorization cannot be imported.  This does not close the candidate-13
-ideal.  The active
-gate is the degenerate source-rank bound
+ideal.  The coordinate boundary is now completely bounded: support sizes
+zero, one, two and generic three have incidence dimension 20, while the
+special three-support lcm strata have dimension at most 17; the same holds
+after interchanging the two quartic factors.  Thus every still-dangerous
+component has generic point in the all-active torus.  The active gate is the all-active
+degenerate source-rank bound
 `dim{A:ker_dim>=k}+k<=21` for every `k>=3`; only after that bound may
 complete-intersection unmixedness and the rank-18 Jacobian witness promote the
 full ideal.  The atlas records this distinction explicitly as `OPEN`.

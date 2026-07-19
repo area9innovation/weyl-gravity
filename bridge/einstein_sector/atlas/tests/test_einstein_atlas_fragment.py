@@ -337,6 +337,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("three-root cancellation witness", entry["mode_data"]["lee_wald"]["statement"])
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
         self.assertIn("dimension-22 rank-18 open component", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("coordinate-boundary incidence stratum has dimension at most 20", entry["mode_data"]["resonance"]["statement"])
         self.assertIn("full ideal remain unclassified", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")

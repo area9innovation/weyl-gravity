@@ -32,6 +32,13 @@ class Candidate13L4IncidenceReductionTests(unittest.TestCase):
         self.assertTrue(self.value["classification"]["three_root_cancellation_witness_certified"])
         self.assertIn("three pencil eigenlines", self.value["mixed_root_cancellation_witness"]["nonfactorization"])
 
+    def test_coordinate_boundary_is_strictly_lower_dimensional(self) -> None:
+        boundary = self.value["coordinate_boundary_stratification"]
+        self.assertEqual(boundary["representative_linear_ranks"], {"0": 0, "1": 5, "2": 10, "3": 15})
+        self.assertEqual(boundary["maximum_boundary_incidence_dimension"], 20)
+        self.assertTrue(self.value["classification"]["coordinate_boundary_dimension_20_certified"])
+        self.assertIn("generic point lies in the torus", boundary["consequence"])
+
     def test_full_ideal_remains_open(self) -> None:
         classification = self.value["classification"]
         self.assertFalse(classification["complete_rank_stratification_certified"])

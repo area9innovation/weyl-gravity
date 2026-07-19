@@ -1038,7 +1038,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED","The exact candidate-13 p_extra/p_extra to q_plus collision and its separately tuned circumference fibre are retained without cross-background identification."),
             ("CERTIFIED","All four internal blocks are invertible, exact interval arithmetic gives four distinct nonzero real generalized roots, and an explicit three-root cancellation witness forbids the earlier one-eigenline factorization."),
             ("OPEN","The five stabilizer moment maps and same-fibre quadratic sources have not been joined to the candidate-13 incidence variety."),
-            ("OPEN","The all-m equations reduce exactly to two weighted sums of binary-quartic products and have a certified irreducible dimension-22 rank-18 open component, but the degenerate source-rank strata and full ideal remain unclassified."),
+            ("OPEN","The all-m equations reduce exactly to two weighted sums of binary-quartic products and have a certified irreducible dimension-22 rank-18 open component. Every coordinate-boundary incidence stratum has dimension at most 20; the all-active rank-drop strata and full ideal remain unclassified."),
             _second_order(("OPEN","The full cross-fibre ideal, same-fibre sources and Taub constraints remain unjoined."),("OPEN","Smooth-secular correction is not classified on the incidence variety."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("ell2_two_abs_momentum_candidate13_L4_incidence_reduction","ell2_two_abs_momentum_regular_pencil_L4_zero_varieties","ell2_two_abs_momentum_cross_fibre_amplitude_system","abstract_cone"),
             "This is an exact normal-form and generic-component gate, not the candidate-13 zero-variety theorem. The rank-drop stratification, full ideal, same-fibre, Taub, bounded, smooth-secular, residual, causal and quantum lifecycles remain fail-closed.",
@@ -1846,6 +1846,7 @@ def build() -> dict[str, object]:
         and candidate13["generic_rank_18_open_component_certified"]
         and candidate13["generic_component_dimension_22_certified"]
         and candidate13["three_root_cancellation_witness_certified"]
+        and candidate13["coordinate_boundary_dimension_20_certified"]
         and candidate13_generic["linear_rank"] == 18
         and candidate13_generic["kernel_dimension"] == 2
         and candidate13_generic["incidence_dimension_over_C"] == 22

@@ -604,7 +604,7 @@ def verify() -> None:
         raise AssertionError("candidate-13 incidence fibre scope was hidden")
     if "four distinct nonzero real generalized roots" not in candidate13["mode_data"]["lee_wald"]["statement"] or "three-root cancellation witness" not in candidate13["mode_data"]["lee_wald"]["statement"]:
         raise AssertionError("candidate-13 exact pencil reduction was hidden")
-    if candidate13["mode_data"]["resonance"]["status"] != "OPEN" or "dimension-22 rank-18 open component" not in candidate13["mode_data"]["resonance"]["statement"] or "full ideal remain unclassified" not in candidate13["mode_data"]["resonance"]["statement"]:
+    if candidate13["mode_data"]["resonance"]["status"] != "OPEN" or "dimension-22 rank-18 open component" not in candidate13["mode_data"]["resonance"]["statement"] or "coordinate-boundary incidence stratum has dimension at most 20" not in candidate13["mode_data"]["resonance"]["statement"] or "full ideal remain unclassified" not in candidate13["mode_data"]["resonance"]["statement"]:
         raise AssertionError("candidate-13 generic and full-ideal lifecycles were merged")
     if candidate13["mode_data"]["taub_maps"]["status"] != "OPEN" or candidate13_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or candidate13_second["smooth_secular"]["status"] != "OPEN" or candidate13_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("candidate-13 correction classes were merged")

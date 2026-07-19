@@ -100,6 +100,31 @@ def generic_rank_minor() -> sp.Expr:
     return determinant
 
 
+def support_rank(active_blocks: tuple[int, ...]) -> int:
+    """Rank of an exact representative on a declared coordinate-support stratum."""
+    lambdas = (1, 2, 3, 4)
+    representatives = (
+        [1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1],
+        [1, 4, 6, 4, 1],
+        [1, -4, 6, -4, 1],
+    )
+
+    def multiplication(value: list[int]) -> sp.Matrix:
+        matrix = sp.zeros(9, 5)
+        for left_index, coefficient in enumerate(value):
+            for right_index in range(5):
+                matrix[left_index + right_index, right_index] = coefficient
+        return matrix
+
+    blocks = [multiplication(representatives[index]) if index in active_blocks else sp.zeros(9, 5) for index in range(4)]
+    matrix = sp.Matrix.vstack(
+        sp.Matrix.hstack(*blocks),
+        sp.Matrix.hstack(*(lambdas[index] * blocks[index] for index in range(4))),
+    )
+    return matrix.rank()
+
+
 def build() -> dict[str, object]:
     parent = json.loads(PARENT.read_text())
     fibre = next(item for item in parent["physical_fibres"] if item["candidate_index"] == 13)
@@ -131,6 +156,9 @@ def build() -> dict[str, object]:
     )):
         raise AssertionError("candidate-13 real simple pencil criterion failed")
     rank_minor = generic_rank_minor()
+    boundary_ranks = {str(size): support_rank(tuple(range(size))) for size in range(4)}
+    if boundary_ranks != {"0": 0, "1": 5, "2": 10, "3": 15}:
+        raise AssertionError("candidate-13 coordinate-support ranks changed")
     return {
         "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-L4-incidence-reduction-v1",
         "schema_path": str(SCHEMA.relative_to(ROOT)),
@@ -188,8 +216,49 @@ def build() -> dict[str, object]:
             "verification": ["sum_i A_i*B_i=0", "sum_i lambda_i*A_i*B_i=0"],
             "nonfactorization": "the first three coefficients are nonzero because the generalized roots are distinct, so cancellation genuinely crosses three pencil eigenlines",
         },
+        "coordinate_boundary_stratification": {
+            "support_variable": "s=number of nonzero A_i blocks; the same result holds after interchanging A and B",
+            "representative_linear_ranks": boundary_ranks,
+            "support_zero_one_two": [
+                {
+                    "active_blocks": 0,
+                    "source_dimension": 0,
+                    "kernel_dimension": 20,
+                    "incidence_dimension": 20,
+                },
+                {
+                    "active_blocks": 1,
+                    "source_dimension": 5,
+                    "kernel_dimension": 15,
+                    "incidence_dimension": 20,
+                },
+                {
+                    "active_blocks": 2,
+                    "source_dimension": 10,
+                    "kernel_dimension": 10,
+                    "incidence_dimension": 20,
+                },
+            ],
+            "support_three": {
+                "active_kernel_formula": "d=dim(intersection_i A_i*Sym^4)=max(9-deg(lcm(A_1,A_2,A_3)),0)",
+                "total_kernel_dimension": "5+d",
+                "generic_lcm_degree_at_least_9": {
+                    "source_dimension_upper_bound": 15,
+                    "kernel_dimension": 5,
+                    "incidence_dimension_upper_bound": 20,
+                },
+                "special_lcm_degree_r_at_most_8": {
+                    "source_dimension_upper_bound": "r+3",
+                    "reason": "choose the projective degree-r lcm in dimension r and three nonzero affine scales; its degree-four divisors are a finite choice on each factorization type",
+                    "kernel_dimension": "14-r",
+                    "incidence_dimension_upper_bound": 17,
+                },
+            },
+            "maximum_boundary_incidence_dimension": 20,
+            "consequence": "no irreducible component of dimension at least 21 is contained in the coordinate boundary; its generic point lies in the torus where every A_i and every B_i is nonzero",
+        },
         "remaining_rank_stratification_gate": {
-            "statement": "prove that every source rank-drop stratum has total incidence dimension at most 21, then use complete-intersection unmixedness and the rank-18 Jacobian witness to prove the full ideal prime",
+            "statement": "on the all-active torus, prove that every source rank-drop stratum has total incidence dimension at most 21, then use complete-intersection unmixedness and the rank-18 Jacobian witness to prove the full ideal prime",
             "required_bound": "dim{A: kernel_dimension>=k}+k <= 21 for every k>=3",
             "full_zero_variety_classified": False,
         },
@@ -199,6 +268,7 @@ def build() -> dict[str, object]:
             "generic_rank_18_open_component_certified": True,
             "generic_component_dimension_22_certified": True,
             "three_root_cancellation_witness_certified": True,
+            "coordinate_boundary_dimension_20_certified": True,
             "complete_rank_stratification_certified": False,
             "full_candidate_13_zero_variety_classified": False,
             "same_fibre_quadratic_sources_classified": False,
@@ -208,7 +278,7 @@ def build() -> dict[str, object]:
             "causal_or_quantum_claim": False,
         },
         "provenance": {"parent": str(PARENT.relative_to(ROOT)), "parent_sha256": sha(PARENT)},
-        "claim_boundary": "This certificate reduces candidate 13 exactly, certifies its generic dimension-22 incidence component and exhibits genuine three-root cancellation. It does not classify the degenerate rank strata or the full zero variety. Same-fibre, Taub and correction-class joins remain fail-closed.",
+        "claim_boundary": "This certificate reduces candidate 13 exactly, certifies its generic dimension-22 incidence component, exhibits genuine three-root cancellation and bounds every coordinate-boundary incidence stratum by dimension 20. It does not classify the all-active degenerate rank strata or the full zero variety. Same-fibre, Taub and correction-class joins remain fail-closed.",
     }
 
 

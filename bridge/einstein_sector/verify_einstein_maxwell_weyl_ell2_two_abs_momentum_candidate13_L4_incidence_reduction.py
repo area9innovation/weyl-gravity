@@ -67,6 +67,25 @@ def rank_witness() -> sp.Expr:
     return sp.factor(matrix[:, retained].det(method="domain-ge"))
 
 
+def support_rank(active_blocks: tuple[int, ...]) -> int:
+    lambdas = (1, 2, 3, 4)
+    quartics = (
+        [1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1],
+        [1, 4, 6, 4, 1],
+        [1, -4, 6, -4, 1],
+    )
+    matrix = sp.zeros(18, 20)
+    for block in range(4):
+        if block not in active_blocks:
+            continue
+        for left_index, coefficient in enumerate(quartics[block]):
+            for right_index in range(5):
+                matrix[left_index + right_index, 5 * block + right_index] = coefficient
+                matrix[9 + left_index + right_index, 5 * block + right_index] = lambdas[block] * coefficient
+    return matrix.rank()
+
+
 def verify() -> None:
     certificate = json.loads(CERTIFICATE.read_text())
     schema = json.loads(SCHEMA.read_text())
@@ -112,6 +131,21 @@ def verify() -> None:
     weights = [lambda_2 - lambda_3, lambda_3 - lambda_1, lambda_1 - lambda_2]
     if sp.expand(sum(weights)) != 0 or sp.expand(sum(root * weight for root, weight in zip((lambda_1, lambda_2, lambda_3), weights))) != 0:
         raise AssertionError("candidate-13 three-root cancellation changed")
+    boundary = certificate["coordinate_boundary_stratification"]
+    ranks = {str(size): support_rank(tuple(range(size))) for size in range(4)}
+    if ranks != boundary["representative_linear_ranks"] or ranks != {"0": 0, "1": 5, "2": 10, "3": 15}:
+        raise AssertionError("candidate-13 coordinate-support ranks changed")
+    for row in boundary["support_zero_one_two"]:
+        if row["source_dimension"] + row["kernel_dimension"] != 20 or row["incidence_dimension"] != 20:
+            raise AssertionError("candidate-13 low-support dimension count changed")
+    for degree in range(4, 9):
+        intersection_dimension = 9 - degree
+        kernel_dimension = 5 + intersection_dimension
+        source_dimension_bound = degree + 3
+        if source_dimension_bound + kernel_dimension != 17:
+            raise AssertionError("candidate-13 three-support lcm bound changed")
+    if boundary["maximum_boundary_incidence_dimension"] != 20:
+        raise AssertionError("candidate-13 coordinate-boundary dimension changed")
     classification = certificate["classification"]
     if not (
         classification["candidate_13_exact_pencil_reduction_certified"]
@@ -119,6 +153,7 @@ def verify() -> None:
         and classification["generic_rank_18_open_component_certified"]
         and classification["generic_component_dimension_22_certified"]
         and classification["three_root_cancellation_witness_certified"]
+        and classification["coordinate_boundary_dimension_20_certified"]
     ):
         raise AssertionError("candidate-13 reduction was weakened")
     if (
