@@ -664,6 +664,39 @@ as in the axial sector: the endpoint-nonselection result is now
 this is not a classification of all local differential boundary
 operators.
 
+\emph{(v) Polar asymptotics and norm selection.}  The asymptotic gate now
+closes in the polar sector as well (\(\omega=3/5\) fixture).  Solving
+\(\delta\mathrm{Ric}[h]=\psi\) at infinity for each leading carrier formal
+solution, the polar composed lift is \emph{power-enhanced}: in the
+\(\mu=0\) sector the pure-power and logarithmic ans\"atze at the naive
+base all fail, and the lift requires exactly one extra power of \(r\)
+together with a single logarithm --- the inhomogeneous realization of the
+certified rank-one resonance (``at most one power of enhancement'') ---
+while the \(\mu=-2\omega\) sector lifts as a pure oscillatory power with
+neither enhancement nor logarithm, in contrast to the axial sector's
+two-sided logarithmic tails.  The exact conformal-gauge lift
+(\(h=\Phi g\), \(\Box\Phi=0\)) passes through the same machinery as a
+pure power, an internal control that also guards the source-series depth
+(the derived carrier sources carry positive \(r\)-weights, so shallow
+carrier jets corrupt the resonant staircase; the certified computation
+uses depth-12 jets with recorded validity margins).  Substituting the
+conjugate pair classes into the sphere-integrated slice density \(F^v\):
+the \(\mu=0\) Einstein self-pair is \emph{identically zero} in the slice
+density --- an extra degeneracy of that sector --- and the
+\(\mu=-2\omega\) Einstein self-pair falls as \(r^{-2}\), exactly the
+axial Einstein behavior, so the Einstein slice norm is finite in both
+sectors (the certified vanishing of the polar Einstein-branch
+\emph{radial} flux for conjugate pairs is a separate exact statement);
+meanwhile every pair involving a composed mode diverges, with leading
+powers \(r^{1}\) to \(r^{4}\), over all carrier representatives.
+
+\begin{theorem}[Polar fixture norm-selection at infinity]
+On the declared polar \(\ell=2\), \(\omega=3/5\) mode laboratory, the
+finite-slice-norm asymptotic class of the sphere-integrated presymplectic
+density contains exactly the Einstein sector: the norm-selection of the
+axial fixture theorem is parity complete at the fixture level.
+\end{theorem}
+
 \section{Horizon monodromy temperature}
 
 One statement of Hawking type is available at the
@@ -714,9 +747,11 @@ nonzero in fixtures & exact identity plus three frequencies\\
 Selected by tested endpoints? & no: horizon and leading-symbol tests do not
 force \(\psi=0\) & not a general causal no-go\\
 Asymptotic metric radiation? & carrier formal systems log-free; composed
-metric has logarithmic tails; finite-slice-norm class at infinity is
-exactly the Einstein sector & axial fixture $\omega=3/5$; tetrad falloff
-and phase-space construction open\\
+metric has logarithmic tails (axial) or one power of enhancement with a
+single log (polar $\mu=0$); finite-slice-norm class at infinity is
+exactly the Einstein sector in both parities, the polar $\mu=0$ Einstein
+pair identically zero in the slice density & fixture $\omega=3/5$, both
+parities; tetrad falloff and phase-space construction open\\
 Static ($\omega=0$) sectors? & log-classified: two-parameter log-free
 families both parities; polar Einstein variables degenerate &
 classification only; static composition open\\
@@ -752,8 +787,8 @@ The paper does not establish:
       dynamics;
 \item asymptotically flat conformal-gravity scattering with a complete
       boundary phase space and metric/tetrad falloffs (the fixture
-      norm-selection table is not yet a symbolic-frequency,
-      parity-complete, gauge-audited phase-space theorem);
+      norm-selection table is parity complete but not yet a
+      symbolic-frequency, gauge-audited phase-space theorem);
 \item Hawking states, particles, grey-body factors, luminosity, a quantum
       BRST quotient, positivity, or unitarity: the monodromy temperature is
       a mode-level continuation factor, not a quantum state construction.
@@ -812,6 +847,8 @@ Leading metric enhancement and flux symbol &
 \cert{black_hole_programme/certificates/BH2C_METRIC_LEADING.json}\\
 Composed log tails; Einstein norm-selection at infinity &
 \cert{black_hole_programme/certificates/BH2C_FLUX_CLASS.json}\\
+Polar composed classes; parity-complete norm-selection &
+\cert{black_hole_programme/certificates/BH2C_POLAR_FLUX_CLASS.json}\\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -820,9 +857,9 @@ Every certificate records a schema, exact or controlled-numerical payload,
 independent verifier, mutations or controls, command receipt, dependency
 tags, and missing claims.  This manuscript must not advance to
 \textsc{theorem-frozen} until the static certificate's complementary-sheet
-wording is repaired, the flux fixtures acquire rigorous nonvanishing bounds,
-and the asymptotic Jordan/metric analysis closes.  The polar scope remains a
-separate parity-completion gate.
+wording is repaired and the flux fixtures acquire rigorous nonvanishing
+bounds; the asymptotic Jordan/metric analysis and the polar
+parity-completion gate are now closed at the fixture level.
 
 \section{Outlook}
 
@@ -832,13 +869,16 @@ The repeated-root asymptotic gate
  \longrightarrow \text{metric reconstruction}
  \longrightarrow \text{finite-flux boundary class}
 \]
-has now run to its end at the fixture level: log-free carrier Jordan
-structure, log-tailed composed metrics, and the Einstein-only
-finite-slice-norm class at infinity.  The next calculations are its
-completions: the symbolic-frequency and polar norm-selection tables, the
-regular-tetrad falloff audit, and the asymptotically flat phase-space and
-charge-algebra construction that would promote the fixture
-norm-selection to a theorem about which flux reaches null infinity.  In
+has now run to its end at the fixture level in both parities: log-free
+carrier Jordan structure, log-tailed (axial) and power-enhanced
+single-log (polar) composed metrics, and the Einstein-only
+finite-slice-norm class at infinity, with the polar \(\mu=0\) Einstein
+pair identically zero in the slice density.  The next calculations are
+its completions: the
+symbolic-frequency table, the regular-tetrad falloff audit, and the
+asymptotically flat phase-space and charge-algebra construction that
+would promote the fixture norm-selection to a theorem about which flux
+reaches null infinity.  In
 parallel, one rigorous interval or symbolic horizon-pairing fixture
 should replace the present controlled numerical nonvanishing, and the
 representative-invariant sign theory for the carrier self-pairing should
