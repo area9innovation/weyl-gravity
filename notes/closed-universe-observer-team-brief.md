@@ -367,14 +367,29 @@ therefore remains `NO_CERTIFIED_MAP`; the next exact gate is the
 content-addressed six-rod/`Phi2` specialization and its Berger-frame-closed
 background equation ideal, followed by the scalar nilpotency/cyclicity replay.
 
+`BERGER_108_ROW_BACKGROUND_SPECIALIZATION_DIFFERENTIAL_IDEAL` now constructs
+that missing quotient without weakening the free-algebra obstruction.  It
+maps all six exact rods and all ten invariant-frame components of the physical
+real `Phi2` into
+`K[x0,x1,x2,x3,z,z_inverse]/(sum x_mu^2-1,z*z_inverse-1)`, with
+`e0 z=(I sqrt(58)/6)z` and the three exact Berger spatial derivations.  The
+kernel is closed under every ordered Berger-frame prolongation and the three
+nonzero PBW brackets.  All six rod wave residuals vanish, the imported
+`H_retained Phi2+q0_rod` residual remains zero on its complete certified
+finite sector, and the former four-term `e1(Box R0_1)` witness maps to zero.
+Thus the background missing-map gate is `CERTIFIED`, while the unquotiented
+free-algebra row correctly remains `OBSTRUCTED`.  No complete scalar 84- or
+108-row `q1` has yet been serialized or replayed; that is now the immediate
+local-interaction gate.
+
 ### Immediate priority after the polarization-emitter handoff
 
 1. Await and independently verify a provenance-complete external declaration
    of physical masses, couplings, inverse volume, shell/tail schedule,
    precision and stopping goal under the certified v2 recoil contract; do not
    invent those values.  In parallel, use the certified component/jet contract
-   to export the six-rod/`Phi2` background specialization and differential
-   equation ideal, then the complete scalar 108-row `q1` PBW matrix, before
+   to use the certified six-rod/`Phi2` background differential quotient to
+   export the complete scalar 108-row `q1` PBW matrix, before
    attempting scalar `q2`, its replay, or a solved backreacted gravity-clock branch.
    Covariant row coverage is not a substitute for either scalar payload.
    Treat realization of both preparations at the original common Hopf event
@@ -1176,9 +1191,11 @@ and pinned 64-row base are preserved, and the new sibling row
 `observer.berger.interaction.pbw_108_component_jet_contract` is `CERTIFIED`.
 The contract now includes the exact noncommuting Berger-frame PBW brackets;
 the new sibling row `observer.berger.interaction.pbw_108_q1_background_ideal`
-is `OBSTRUCTED`.  The scalar promotion remains `NO_CERTIFIED_MAP` because the
-background specialization/differential ideal and complete scalar `q1`,`q2`
-payloads have not yet been exported.  This does not activate the physical-
+is `OBSTRUCTED` specifically on the unquotiented free algebra, while
+`observer.berger.interaction.pbw_108_background_differential_quotient` is
+`CERTIFIED`.  The scalar promotion remains `NO_CERTIFIED_MAP` because the
+complete scalar `q1`,`q2` payloads have not yet been exported or replayed.
+This does not activate the physical-
 branch bridge and does not identify any compact-product mode with a Berger
 apparatus row.
 

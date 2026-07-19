@@ -77,7 +77,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, reduce the renormalized physical H1-cubed triangle bulk now that generic incidence, M14 disposition and all finite H1-H2 contact rows are exact, and assemble the repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; in parallel use the certified 108-row component/jet contract to export scalar q1 then scalar q2 and replay q1q2, then restrict records to Z2^C
+Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; in parallel use the certified 108-row component/jet contract and six-rod/Phi2 background differential quotient to export scalar q1 then scalar q2 and replay q1q2, then restrict records to Z2^C
 Black hole:  BH-2C per planning directive: claim repair (static complementary-sheet wording; rigorous exact/interval nonvanishing bounds for the mixed/extra flux fixtures) and the full asymptotic metric/Jordan analysis (repeated-root structure at infinity, metric reconstruction, finite-flux boundary class, both parities); NOT the old BH-0/BH-1 queue; ringdown stays coordinator-gated. Prior gate DONE (events black-hole-DONE/-ACTIVE in planning/events/)
 ```
 
@@ -959,11 +959,16 @@ survive the first backreacted, normalized apparatus interaction?
    initially commuting multiindex action: left differentiation now PBW-reduces
    with the three nonzero Berger frame brackets, all bracket defects vanish on
    profile and background generators, and deletion/sign mutations fail.
-   The next audit now finds a four-term free-jet residual
+   The next audit finds a four-term free-jet residual
    `e1(Box R0_1)` with exact separating value one: the six certified on-shell
    rods and `Phi2` have no content-addressed specialization or
-   Berger-frame-closed background equation ideal in this algebra.  Export that
-   specialization/differential ideal, then the complete scalar 108-row `q1`
+   Berger-frame-closed background equation ideal in the unquotiented algebra.
+   Its successor now exports the missing object: all six rods and all ten
+   physical `Phi2` components map into one exact Laurent-time polynomial-S3
+   differential algebra, its kernel is closed under the noncommuting Berger
+   frame, all shifted background residuals vanish, and the four-term witness
+   maps to zero.  The free-algebra obstruction remains scoped and valid; the
+   background quotient is `CERTIFIED`.  Export the complete scalar 108-row `q1`
    PBW matrix, action-derived scalar `q2` tensor and independent replay before
    a solved backreacted branch.
    A common source
@@ -1905,7 +1910,7 @@ for the outward-facing two-page note.
 | A2 | Linearization stability and charge fibres — Einstein | obstruction bilinear with harmonic selection rules, fixed-charge no-go, and explicit variable-charge extension | current compact harmonic domain; full paper waits for the complete bilinear |
 | A3 | Weyl anomaly coefficients and the `D` defect — quantum | independently reproduced `a,c` coefficients and the coefficient-bearing map to the actual Cartan defect | after the local anomaly complex closes |
 | A4 | Lorentzian Einstein-from-conformal comparison — Einstein | causal and symplectic complement to boundary branch selection | after compact Weyl--Maxwell pullback; boundary theorem requires its own phase space |
-| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, selected 108-row massive emitters, complete unary and causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, complete symbolic per-shell preparation/recoil word with four aggregate formulas, exact normalized switches, response-specific symbolic tail envelopes, finite all-channel/all-column `two_j=5` feedback binding and real-shell extraction, a complete reality-folded `two_j=6` validation shell, a generic contiguous-shell reality-folded four-stream adapter, a fail-closed tail-stop controller, an exact v2 provenance-complete declaration translator, emitter stress/clock-switch `q2` backreaction, covariant 108-row `q1 q2`, an exact obstruction to promoting it from the old dependency closure, and the corrected canonical 108-row component/differential-jet activation contract with exact noncommuting Berger PBW brackets | accept and independently verify explicit masses or mass-squared domains, couplings, inverse volume, shell/tail schedule, precision and stopping goal under v2, then stream four recoil intervals and restrict records to the second-order cone; in parallel export the complete scalar 108-row q1 PBW matrix, then action-derived scalar q2 and the independent replay before solving the first backreacted branch |
+| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, selected 108-row massive emitters, complete unary and causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, complete symbolic per-shell preparation/recoil word with four aggregate formulas, exact normalized switches, response-specific symbolic tail envelopes, finite all-channel/all-column `two_j=5` feedback binding and real-shell extraction, a complete reality-folded `two_j=6` validation shell, a generic contiguous-shell reality-folded four-stream adapter, a fail-closed tail-stop controller, an exact v2 provenance-complete declaration translator, emitter stress/clock-switch `q2` backreaction, covariant 108-row `q1 q2`, the scoped free-jet obstruction, the corrected canonical 108-row component/differential-jet activation contract with exact noncommuting Berger PBW brackets, and the certified content-addressed six-rod/`Phi2` background differential quotient | accept and independently verify explicit masses or mass-squared domains, couplings, inverse volume, shell/tail schedule, precision and stopping goal under v2, then stream four recoil intervals and restrict records to the second-order cone; in parallel export the complete scalar 108-row q1 PBW matrix, then action-derived scalar q2 and the independent replay before solving the first backreacted branch |
 | B2 | Asymptotic Bach/BMS — Einstein | falloffs, radiative data, differentiable charges, flux, and extra-branch sign | Lorentzian boundary phase space closed |
 | B3 | Nearby conformal detour/higher-spin pilot — classical | one causal transfer beyond spin two | abstract A1 theorem frozen |
 | B4 | Twistor/helicity fixture — nonlinear | one projected cubic or MHV comparison with branch/charge interpretation | physical transferred cubic tensor |

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-108-row-background-specialization-differential-ideal-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "target_differential_algebra", "background_specialization", "differential_ideal", "shifted_background_equations", "exact_checks", "mutations", "activation_disposition", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-background-specialization-differential-ideal-v1"},
+    "result_id": {"const": "BERGER_108_ROW_BACKGROUND_SPECIALIZATION_DIFFERENTIAL_IDEAL"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_CONTENT_ADDRESSED_BERGER_BACKGROUND_DIFFERENTIAL_QUOTIENT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {"type": "object", "minProperties": 7, "maxProperties": 7},
+    "target_differential_algebra": {"type": "object", "required": ["presentation", "carrier_interpretation", "derivations", "sphere_relation_derivative_defect_count", "coordinate_commutator_defect_count", "time_inverse_relation_derivative_defect_count"]},
+    "background_specialization": {"type": "object", "required": ["map", "rod_background_count", "Phi2_background_count", "records", "records_canonical_sha256"], "properties": {"rod_background_count": {"const": 6}, "Phi2_background_count": {"const": 10}, "records": {"type": "array", "minItems": 16, "maxItems": 16}}},
+    "differential_ideal": {"type": "object", "required": ["definition", "generator_count", "background_relation_count", "geometric_relation_count", "closure_rule", "Berger_frame_closed", "e1_Box_R0_1_quotient_normal_form"], "properties": {"generator_count": {"const": 18}, "background_relation_count": {"const": 16}, "geometric_relation_count": {"const": 2}, "Berger_frame_closed": {"const": true}, "e1_Box_R0_1_quotient_normal_form": {"const": []}}},
+    "shifted_background_equations": {"type": "object", "required": ["rod_wave_residual_nonzero_count", "metric_zero_mode_residual_nonzero_count", "metric_positive_mode_residual_nonzero_count", "metric_negative_mode_rule"], "properties": {"rod_wave_residual_nonzero_count": {"const": 0}, "metric_zero_mode_residual_nonzero_count": {"const": 0}, "metric_positive_mode_residual_nonzero_count": {"const": 0}}},
+    "exact_checks": {"type": "object", "required": ["background_count", "background_commutator_defect_count", "rod_wave_defect_count", "former_free_residual_term_count", "former_free_residual_quotient_term_count", "Phi2_reality_defect_count"], "properties": {"background_count": {"const": 16}, "background_commutator_defect_count": {"const": 0}, "rod_wave_defect_count": {"const": 0}, "former_free_residual_term_count": {"const": 4}, "former_free_residual_quotient_term_count": {"const": 0}, "Phi2_reality_defect_count": {"const": 0}}},
+    "mutations": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["name", "detected"], "properties": {"detected": {"const": true}}}},
+    "activation_disposition": {"type": "object", "required": ["prior_free_jet_obstruction_preserved", "prior_free_jet_obstruction_resolved_in_certified_quotient", "complete_scalar_84_row_q1_exported", "complete_scalar_108_row_q1_exported", "next_gate"], "properties": {"prior_free_jet_obstruction_preserved": {"const": true}, "prior_free_jet_obstruction_resolved_in_certified_quotient": {"const": true}, "complete_scalar_84_row_q1_exported": {"const": false}, "complete_scalar_108_row_q1_exported": {"const": false}}},
+    "flags": {"type": "object", "required": ["SIX_ROD_BACKGROUND_SPECIALIZATION_EXPORTED", "PHYSICAL_PHI2_BACKGROUND_SPECIALIZATION_EXPORTED", "BERGER_FRAME_DIFFERENTIAL_IDEAL_EXPORTED", "FREE_JET_Q1_OBSTRUCTION_RESOLVED_IN_QUOTIENT", "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED", "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED", "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED", "QUANTUM_CLAIM"], "properties": {"SIX_ROD_BACKGROUND_SPECIALIZATION_EXPORTED": {"const": true}, "PHYSICAL_PHI2_BACKGROUND_SPECIALIZATION_EXPORTED": {"const": true}, "BERGER_FRAME_DIFFERENTIAL_IDEAL_EXPORTED": {"const": true}, "FREE_JET_Q1_OBSTRUCTION_RESOLVED_IN_QUOTIENT": {"const": true}, "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED": {"const": false}, "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED": {"const": false}, "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"const": "REPLAY_COMPLETE_SCALAR_108_ROW_Q1_OVER_CERTIFIED_BACKGROUND_DIFFERENTIAL_QUOTIENT"},
+    "claim_boundary": {"type": "string", "minLength": 500},
+    "provenance": {"type": "object"}
+  }
+}

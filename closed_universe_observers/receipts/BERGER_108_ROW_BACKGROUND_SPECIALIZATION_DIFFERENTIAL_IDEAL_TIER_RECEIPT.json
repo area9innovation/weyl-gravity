@@ -1,0 +1,26 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_BACKGROUND_SPECIALIZATION_DIFFERENTIAL_IDEAL_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_BACKGROUND_SPECIALIZATION_DIFFERENTIAL_IDEAL",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "result_boundary": "The exact six-rod/Phi2 specialization and Berger-frame-stable differential kernel resolve the former four-term free-jet residual in the certified on-shell quotient. The free-algebra obstruction remains valid. Complete scalar q1/q2 payloads, component replay, cone, Bridge 3, finite-parameter and quantum claims remain unavailable.",
+  "commands": [
+    {"tier": 0, "command": "python3 -m py_compile on changed Python; python3 -m json.tool on changed structured data; git diff --check on explicit paths", "elapsed_seconds": "under 1", "status": "PASS"},
+    {"tier": 1, "command": "pytest -q closed_universe_observers/tests/test_berger_108_row_background_specialization_differential_ideal.py closed_universe_observers/tests/test_berger_108_row_q1_pbw_background_ideal_obstruction.py closed_universe_observers/tests/test_berger_108_row_component_jet_contract.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": "27.91", "status": "PASS", "scope": "47 exact specialization, obstruction, PBW, atlas and ledger tests"},
+    {"tier": 2, "command": "new producer --check and independent verifier; prior obstruction producer/verifier; residual atlas schema/verifier; comparison ledger verifier", "elapsed_seconds": "6.68", "status": "PASS", "scope": "dependency hashes, independent target-algebra bracket replay, generated claims and direct evidence consumers"},
+    {"tier": 2, "command": "ci/science-forge-shadow.sh", "elapsed_seconds": "5.03", "status": "ADVISORY_PASS", "scope": "bridge audit PASS; repository-wide coverage snapshot drift reported at 951 certificates versus 820"}
+  ],
+  "higher_tiers_not_run": {"tier_3": "This is a scoped observer background-quotient activation certificate, not a release, freeze, shared-core algebra change or paper theorem promotion."},
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_background_specialization_differential_ideal.py", "sha256": "61e908f71ef6ef17319b70e2705772d1557597f8c5b8f300929c97468463c599"},
+    {"path": "closed_universe_observers/verify_berger_108_row_background_specialization_differential_ideal.py", "sha256": "7444360d1b1d54f8a4e3606c863d39363183257c92c8e42a2ce6a921580dc6b1"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_background_specialization_differential_ideal.py", "sha256": "7c6ee2c3f7894dc854d8d22cacc292d072ad02823fc6f9e324b1a04ffa0ea4b4"},
+    {"path": "closed_universe_observers/schema/berger-108-row-background-specialization-differential-ideal-v1.schema.json", "sha256": "0067c704e1909913d6284fc170db4f4105471d65039ee8fdf8ae348d6cf292ee"},
+    {"path": "closed_universe_observers/reports/berger-108-row-background-specialization-differential-ideal.md", "sha256": "bcd2c0320e23b6a7eceb31a0001118f69a4909651bb7a21e20525e839b9d9e1b"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_BACKGROUND_SPECIALIZATION_DIFFERENTIAL_IDEAL.json", "sha256": "ea6efe4d7680f48e20d088e5d97c21d730716f8c300932668afec9e9c16ec3e8"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "83de5e6671cfe05d8279ab3009ed9f6a2c33bba362d9f562b7498069f73e0108"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "59b0f4652a707b898c3d3b7ca906cdd623c1340f390e874df8790678017ad3d0"},
+    {"path": "planning/work-items/berger-108-row-background-differential-quotient.json", "sha256": "fac66847931a97797849c42dacab6ad1d1d8cbfc9200675d655c9d1c2da8b3be"}
+  ],
+  "flags": {"SIX_ROD_BACKGROUND_SPECIALIZATION_EXPORTED": true, "PHYSICAL_PHI2_BACKGROUND_SPECIALIZATION_EXPORTED": true, "BERGER_FRAME_DIFFERENTIAL_IDEAL_EXPORTED": true, "FREE_JET_Q1_OBSTRUCTION_RESOLVED_IN_QUOTIENT": true, "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED": false, "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED": false, "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED": false, "QUANTUM_CLAIM": false}
+}
