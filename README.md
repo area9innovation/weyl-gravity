@@ -121,10 +121,10 @@ Paper IX still waits for at least one complete
 boundary or interaction theorem.
 
 General-audience article:
-[`How to Build a Universe—and Find Out Whether Its Ghosts Are Real`](paper/99-how-to-build-a-universe.md)
+[`Are Weyl Gravity's Ghosts Real? Building Model Universes to Find Out`](paper/99-how-to-build-a-universe.md)
 ([PDF](paper/99-how-to-build-a-universe.pdf)) explains the
-universe-building programme through spacetime, light, gravitational waves,
-clocks, redshift, interactions, and its symbolic reproducibility system
+ghost test through gauge, causality, nonlinear balance, black-hole waves,
+quantum consistency, and the project's symbolic reproducibility system
 without assuming advanced mathematics or physics.
 
 Certificate construction maps:
