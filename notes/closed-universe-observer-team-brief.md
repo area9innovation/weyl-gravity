@@ -483,8 +483,9 @@ successors are `observer.berger.interaction.apparatus_scalar_bv_q2_pbw`,
 `observer.berger.interaction.normalized_readout_q2_pbw`: all receiver-apparatus
 `q2` subblocks are now `CERTIFIED`.  The physical emitter stress/switch
 successor `observer.berger.interaction.emitter_physical_q2_pbw` is also
-`CERTIFIED`; the two-form Diff--BV emitter orbit, complete emitter `q2`, all
-`q3`, detector response and cone restriction remain `NO_CERTIFIED_MAP`.  Regenerate
+`CERTIFIED`, and `observer.berger.interaction.emitter_diff_bv_q2_pbw` now
+completes emitter `q2`.  One assembled 108-row `q2` payload, all `q3`,
+detector response and cone restriction remain `NO_CERTIFIED_MAP`.  Regenerate
 every remaining block rather than fitting it
 to the arity identities, then replay `q1q2`, `q2q2+q1q3`, `K_Berger`
 equivariance and observer-morphism stability.  Physical Bridge 3 remains
@@ -1409,7 +1410,8 @@ defect.  The cyclic completion contains 4,116 PBW operator keys and 11,012
 exact differential profile-jet monomials on 23 output rows; deleting either
 the Jacobian variation or one payload key is detected.  Together with the
 three earlier subblocks this closes receiver-apparatus `q2`.  Dynamical
-emitter `q2`, every `q3`, the arity identities,
+emitter `q2` is now separately complete; canonical all-row `q2` assembly,
+every `q3`, the arity identities,
 `K_Berger` equivariance, observer-morphism stability and
 `O_detector|Z2^C` remain fail-closed.
 This does not activate the physical-
@@ -1424,9 +1426,15 @@ stress, switched interaction stress and reciprocal `h_b'(Theta)` clock source
 for both massive two-forms.  Raising all slots gives 6,232 PBW keys and 6,340
 exact terms on the metric, clock, Maxwell and twelve emitter cotangent rows,
 with zero Hessian-recovery, metric-jet and symmetry defects.  The remaining
-emitter `q2` gate is precisely the two-form Diff--BV cotangent orbit; it is not
-inferred from scalar transport.  Complete `q2`, every `q3`, arity replay and
-`O_detector|Z2^C` therefore remain fail-closed.
+emitter gate is now closed by `BERGER_108_ROW_EMITTER_DIFF_BV_Q2_PBW`.
+It expands both `<K_b_plus,L_c K_b>` vertices with all four Diff/temporal
+ghost components into 912 exact PBW keys.  The explicit non-holonomic
+two-form formula agrees termwise with `i_c dK+d(i_c K)`, and exact formal
+adjunction supplies the emitter- and ghost-cotangent partners.  The same
+engine recovers the certified 24-term scalar BV template, fixing the graded
+signs and factorial normalization.  This completes emitter `q2`, but one
+canonical complete 108-row `q2` payload, every `q3`, arity replay and
+`O_detector|Z2^C` remain fail-closed.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to

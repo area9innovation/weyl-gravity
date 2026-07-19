@@ -1,0 +1,27 @@
+{
+  "schema":"closed-universe-test-tier-receipt-v1",
+  "result_id":"BERGER_108_ROW_EMITTER_DIFF_BV_Q2_PBW_TIER_RECEIPT",
+  "certificate_result_id":"BERGER_108_ROW_EMITTER_DIFF_BV_Q2_PBW",
+  "dependency_tags":["LOCAL-ALGEBRAIC"],
+  "result_boundary":"Both selected massive emitters' complete two-form Diff-BV cotangent orbit is exported as 912 exact PBW keys. Together with the separately certified physical block this completes emitter q2. One assembled 108-row q2 payload, every q3, arity replay, cone response, Bridge 3 and quantum claims remain unavailable.",
+  "commands":[
+    {"tier":0,"command":"python3 -m py_compile and json.tool on changed files; generator --check; git diff --check on explicit observer paths","elapsed_seconds":"under 3 plus final check","status":"PASS","scope":"producer, verifier, tests, schemas, payload, certificate, atlas, ledger, lifecycle, receipt and notes"},
+    {"tier":1,"command":"python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_emitter_diff_bv_q2_pbw.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py; independent emitter, atlas and ledger verifiers","elapsed_seconds":21.11,"status":"PASS","scope":"45 Cartan, scalar-template normalization, graded-symmetry, payload, atlas and lifecycle tests plus independent replay"},
+    {"tier":2,"command":"python3 -m pytest -q on component contract, scalar-BV q2 template, covariant emitter q1-q2 master identity and physical emitter q2 dependencies","elapsed_seconds":8.50,"status":"PASS","scope":"21 direct dependency-chain tests"}
+  ],
+  "higher_tiers_not_run":{"tier_3":"Scoped emitter Diff-BV q2 subblock; not a freeze, release, shared-core change or theorem promotion."},
+  "source_manifest":[
+    {"path":"closed_universe_observers/generate_berger_108_row_emitter_diff_bv_q2_pbw.py","sha256":"a59ca25f8ba95601ad82975896d02ba3e7cbb7694b88bdde6146e425c53af2a9"},
+    {"path":"closed_universe_observers/verify_berger_108_row_emitter_diff_bv_q2_pbw.py","sha256":"804378a8b2e0e319f1aa500dfb4a409e54e517822171baec73e90f318105f33c"},
+    {"path":"closed_universe_observers/tests/test_berger_108_row_emitter_diff_bv_q2_pbw.py","sha256":"f586dfccddee89c380abe3eaff9ea893d0ee180faf91162cbde31b0745a07bc1"},
+    {"path":"closed_universe_observers/schema/berger-108-row-emitter-diff-bv-q2-pbw-v1.schema.json","sha256":"ca62e1260bfbc25d853527b46f1460b2bed1122940112689906719f70e032eb9"},
+    {"path":"closed_universe_observers/schema/berger-108-row-emitter-diff-bv-q2-pbw-payload-v1.schema.json","sha256":"3f7aba845a40ec4eabf5abaf1656f6ea9d8bd499538210250e23eb22d514bae2"},
+    {"path":"closed_universe_observers/reports/berger-108-row-emitter-diff-bv-q2-pbw.md","sha256":"afc0bcbf5a1dd5d51a392a17a7f2fe2bbf3d6694dd85f5c662a9ced6a3fbea8e"},
+    {"path":"closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_DIFF_BV_Q2_PBW.json","sha256":"636e08572fe0802b41377f3b0ab53941c2165e568768e57dc0bbdc03075f4795"},
+    {"path":"closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_DIFF_BV_Q2_PBW_PAYLOAD.json","sha256":"248344883ced8e6e10199892116641473ff0099559688e01217a36c434ac6df7"},
+    {"path":"closed_universe_observers/atlas/observer-atlas-fragment.json","sha256":"76c49d0cd1ac01ec3e3f6047e4d17f746b6bcb16db0a1950d1f98e528e16c4c0"},
+    {"path":"closed_universe_observers/ledgers/comparison_ledger.json","sha256":"f1861796b624c20b280ad63bdfa6a59e11c29f9e51f930fab27b83cb8bbcadba"},
+    {"path":"planning/work-items/berger-108-row-apparatus-q2-q3-extension.json","sha256":"f496c9b4a94993a340d21a2dd516c413adbc9b455e41e8c2be5bf142448dc4cc"}
+  ],
+  "flags":{"EMITTER_DIFF_BV_Q2_PBW_EXPORTED":true,"EMITTER_DIFF_BV_Q2_CARTAN_REPLAY_CERTIFIED":true,"COMPLETE_EMITTER_Q2_PBW_EXPORTED":true,"COMPLETE_SCALAR_108_ROW_Q2_EXPORTED":false,"COMPLETE_SCALAR_108_ROW_Q3_EXPORTED":false,"COMPONENT_ARITY_IDENTITIES_CERTIFIED":false,"TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED":false,"PHYSICAL_BRANCH_BRIDGE_ACTIVATED":false,"QUANTUM_CLAIM":false}
+}

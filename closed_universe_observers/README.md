@@ -31,6 +31,8 @@ python3 -m closed_universe_observers.generate_berger_108_row_normalized_readout_
 python3 -m closed_universe_observers.verify_berger_108_row_normalized_readout_q2_pbw
 python3 -m closed_universe_observers.generate_berger_108_row_emitter_physical_q2_pbw --check
 python3 -m closed_universe_observers.verify_berger_108_row_emitter_physical_q2_pbw
+python3 -m closed_universe_observers.generate_berger_108_row_emitter_diff_bv_q2_pbw --check
+python3 -m closed_universe_observers.verify_berger_108_row_emitter_diff_bv_q2_pbw
 python3 -m closed_universe_observers.generate_berger_84_row_unary_pairing_green_gate --check
 python3 -m closed_universe_observers.verify_berger_84_row_unary_pairing_green_gate
 python3 -m closed_universe_observers.generate_berger_84_row_rod_gravity_unary --check
@@ -544,6 +546,11 @@ rows.  Representative common-action third derivatives are cyclic, and an
 exact reduced fixture verifies off-shell energy exchange with the clock.
 This closes the emitter-added `q2` stress/clock jet, not the complete
 componentwise 108-row `q1 q2` identity or a solved backreacted branch.
+The scalar Diff--BV successor now expands both `<K_b_plus,L_c K_b>` vertices
+in the non-holonomic Berger frame.  Its 912 exact PBW keys reproduce Cartan's
+formula and all cotangent partners, while the same completion engine recovers
+the certified scalar BV template.  This completes emitter `q2`; assembly of
+one complete 108-row `q2` payload remains separate.
 The master-identity successor now closes the covariant all-row step over the
 imported apparatus `r`-first-jet ring.  It classifies every output row
 0--107, checks the Maxwell, clock, Weyl, Diff-cotangent, and common-action
