@@ -1,0 +1,27 @@
+{
+  "schema":"closed-universe-test-tier-receipt-v1",
+  "result_id":"BERGER_108_ROW_COMPONENT_JET_CONTRACT_TIER_RECEIPT",
+  "certificate_result_id":"BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+  "dependency_tags":["LOCAL-ALGEBRAIC"],
+  "result_boundary":"The canonical 108-row component/cotangent carrier, rank-108 odd pairing, exact detector/switch specializations and executable arbitrary-finite differential coefficient-jet normal form are certified. Scalar q1/q2 PBW payloads, their replay, backreaction, cone restriction, Bridge 3, finite-parameter propagation and quantum claims remain unavailable.",
+  "commands":[
+    {"tier":0,"command":"python3 -m py_compile closed_universe_observers/berger_108_row_component_jet_contract.py closed_universe_observers/generate_berger_108_row_component_jet_contract.py closed_universe_observers/verify_berger_108_row_component_jet_contract.py","elapsed_seconds":"under 1","status":"PASS"},
+    {"tier":1,"command":"python3 -m closed_universe_observers.generate_berger_108_row_component_jet_contract --check","elapsed_seconds":"0.10","status":"PASS"},
+    {"tier":1,"command":"python3 -m closed_universe_observers.verify_berger_108_row_component_jet_contract","elapsed_seconds":"0.09","status":"PASS"},
+    {"tier":1,"command":"python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_component_jet_contract.py","elapsed_seconds":"0.33","status":"PASS","scope":"5 exact algebra, derivation, carrier and fail-closed tests"},
+    {"tier":1,"command":"python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment","elapsed_seconds":"1.12","status":"PASS"},
+    {"tier":1,"command":"python3 -m closed_universe_observers.verify_comparison_ledger","elapsed_seconds":"0.16","status":"PASS"},
+    {"tier":1,"command":"ci/science-forge-shadow.sh","elapsed_seconds":"3.14","status":"ADVISORY_PASS","scope":"bridge audit PASS; coverage drift 938 versus snapshot 820 reported"}
+  ],
+  "higher_tiers_not_run":{"tier_2":"All imported hashes and direct atlas/ledger consumers replay in Tier 1; no q1/q2 mathematical tensor changed.","tier_3":"This is an interface activation contract, not a theorem promotion, shared-core change, release or freeze."},
+  "source_manifest":[
+    {"path":"closed_universe_observers/berger_108_row_component_jet_contract.py","sha256":"f15468c28198d85e644fbd8b777d2078b0e8dea6879b5e944df9243f10119ca4"},
+    {"path":"closed_universe_observers/generate_berger_108_row_component_jet_contract.py","sha256":"35fe2b43291a78aad1101f05706a36fe5357f3e6a9e6089bc1051f64f0139791"},
+    {"path":"closed_universe_observers/verify_berger_108_row_component_jet_contract.py","sha256":"d236ab1e375a7a0af342cb40f24a1c295521f245377976e68473cf3433b38e61"},
+    {"path":"closed_universe_observers/tests/test_berger_108_row_component_jet_contract.py","sha256":"f79e06109e7ba576ab80ae44f7964bcc75397afc1f795a8899c31ad4ba065efd"},
+    {"path":"closed_universe_observers/schema/berger-108-row-component-jet-contract-v1.schema.json","sha256":"c39921c1b800f6c25d2e3e481ef0f0557fea16c0004b2d7d6d4f976829e7d579"},
+    {"path":"closed_universe_observers/reports/berger-108-row-component-jet-contract.md","sha256":"c4f3abc5a74299ef29e0840a970e4e404474d8ed913df78ce570d7bdd90309d3"},
+    {"path":"closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json","sha256":"073ab935c576cd5184e713955ce20605fafb7ffe71f9e3a023b5503d9b204d09"}
+  ],
+  "flags":{"CANONICAL_108_ROW_COMPONENT_CROSSWALK_CERTIFIED":true,"DIFFERENTIAL_COEFFICIENT_JET_NORMAL_FORM_CERTIFIED":true,"SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED":false,"SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED":false,"COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED":false,"QUANTUM_CLAIM":false}
+}
