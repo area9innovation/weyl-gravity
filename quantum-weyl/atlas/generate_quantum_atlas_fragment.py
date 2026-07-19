@@ -32,6 +32,7 @@ DEPENDENCIES = {
     "Berger_causal_chain": QROOT / "lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
     "Berger_Hadamard_gate": QROOT / "lorentzian/certificates/BERGER_HADAMARD_CONSTRUCTION_GATE.json",
     "Berger_A104_complete": QROOT / "lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
+    "Berger_graph_q_obstruction": QROOT / "lorentzian/certificates/BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION.json",
     "Slavnov_preflight": QROOT / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
     "Euclidean_elliptic_complex": QROOT / "spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json",
     "nonconformal_coefficient_match": QROOT / "spectral/euclidean/certificates/REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH.json",
@@ -199,6 +200,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     causal = values["Berger_causal_chain"]
     hadamard = values["Berger_Hadamard_gate"]
     berger_a104 = values["Berger_A104_complete"]
+    berger_graph_q = values["Berger_graph_q_obstruction"]
     slavnov = values["Slavnov_preflight"]
     elliptic = values["Euclidean_elliptic_complex"]
     coefficient = values["nonconformal_coefficient_match"]
@@ -317,6 +319,17 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         or berger_a104.get("claim_flags", {}).get("BERGER_Q_CAUCHY_104")
         is not False
         or berger_a104.get("claim_flags", {}).get("BERGER_HADAMARD_DATA")
+        is not False
+        or berger_graph_q.get("claim_flags", {}).get(
+            "BERGER_CANONICAL_GRAPH_Q_CAUCHY_LIFT_REJECTED"
+        ) is not True
+        or berger_graph_q.get("defects", {}).get(
+            "candidate_q_Cauchy_square", {}
+        ).get("nonzero_sparse_entries") != 157
+        or berger_graph_q.get("defects", {}).get(
+            "A104_candidate_q_Cauchy_commutator", {}
+        ).get("nonzero_sparse_entries") != 207
+        or berger_graph_q.get("claim_flags", {}).get("BERGER_Q_CAUCHY_104")
         is not False
     ):
         raise ValueError("covariant/ Berger import boundary drifted")
@@ -1049,16 +1062,16 @@ def _berger_gap(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             cocycle=("NO_CERTIFIED_MAP", "no per-mode cohomology ledger"),
             exactness=("NO_CERTIFIED_MAP", "no per-mode cohomology ledger"),
             pairing=("NO_CERTIFIED_MAP", "carrier pairing has no modewise restriction"),
-            complex_structure=("OPEN", "q_Cauchy, Cauchy/Krein form, real structure and closed spectral splitting are not constructed"),
-            hadamard=("OPEN", "not constructed"),
+            complex_structure=("OPEN", "the canonical q_Cauchy graph lift is exactly rejected; corrected lift, Cauchy/Krein form, real structure and closed spectral splitting remain open"),
+            hadamard=("OPEN", "direct 26-row causal Green homotopy is certified, but distributional companion transport, global bisolution, covariance and BRST Ward identities are not constructed"),
             state_space=("OPEN", "reduced Krein evidence does not define a Berger physical state space"),
             qme=("OBSTRUCTED", "strict fixed-field-content local Euclidean QME is obstructed"),
             lifecycle=("OBSTRUCTED", "classical causal import remains; strict interacting quantum lifecycle is blocked"),
             particle=("NO_CERTIFIED_MAP", "no mode basis or Hadamard state"),
             crosswalk=("NO_CERTIFIED_MAP", "retained 26 rows to stationary physical modes"),
         ),
-        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_A104_complete", "Slavnov_preflight", "regulated_Slavnov_breaking"),
-        "The 26/54-row causal carrier and all 10,816 coefficients of A104 are imported, but finite PBW data are not a closed stationary mode ledger. q_Cauchy, the Cauchy/Krein form, real structure, zero isolation and the spectral covariance remain open. No physical mode, complex structure, Hadamard state, or particle is inferred.",
+        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_A104_complete", "Berger_graph_q_obstruction", "Slavnov_preflight", "regulated_Slavnov_breaking"),
+        "The 26/54-row causal carrier and all 10,816 coefficients of A104 are imported. The tautological stationary q_Cauchy graph lift is rejected by 157 square and 207 evolution-commutator defects; this does not block the direct causal route, whose distributional transport and global BRST covariance remain open. No physical mode, complex structure, Hadamard state, or particle is inferred.",
     )
 
 

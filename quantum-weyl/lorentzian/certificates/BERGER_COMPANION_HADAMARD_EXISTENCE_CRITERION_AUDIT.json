@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "This LORENTZIAN-CAUSAL criterion audit proves that the certified null-cone decomposability of the Berger companion does not by itself supply a Hadamard state. Fewster's general existence theorem for bosonic fields applies to normally hyperbolic operators with positive-definite hermitian fibre metric; the companion already fails the normally-hyperbolic hypothesis through its nonzero nilpotent order-two principal block. Separately, the full graded BV lift requires BRST/Krein compatibility and positivity on physical cohomology. A local base-factor parametrix and a 26-to-54 covariance lift are ready, but the full stationary Cauchy/BRST/pairing/reality carrier, zero-frequency ledger, positive or declared Krein covariance and BRST Ward identity are not constructed. No Hadamard state, positivity, renormalized product, QME or quantum theorem is claimed.",
+  "claim_boundary": "This LORENTZIAN-CAUSAL criterion audit proves that the certified null-cone decomposability of the Berger companion does not by itself supply a Hadamard state. Fewster's general existence theorem for bosonic fields applies to normally hyperbolic operators with positive-definite hermitian fibre metric; the companion already fails the normally-hyperbolic hypothesis through its nonzero nilpotent order-two principal block. Separately, the full graded BV lift requires BRST/Krein compatibility and positivity on physical cohomology. The direct 26-row causal Green homotopy and full A104 coefficient table are ready, but the canonical stationary q_Cauchy graph lift is exactly rejected. The direct causal route still requires distributional companion transport and a global bisolution; the stationary route requires a corrected q-compatible lift, pairing/reality carrier and spectral ledger. Both still require a positive or declared Krein covariance and BRST Ward identity. No Hadamard state, positivity, renormalized product, QME or quantum theorem is claimed.",
   "claim_flags": {
     "BERGER_26_ROW_BRST_HADAMARD": false,
     "BERGER_54_ROW_BRST_HADAMARD": false,
@@ -16,6 +16,10 @@
       "result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
       "sha256": "1a2bb5b124734a5aa63fdd8c1285d4847b8ff5ea02aed8d6b840db19dfe23fc1"
     },
+    "causal_26": {
+      "result_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "61c0ce89045434676d99e723f7618da749f7208e5f49716b0ea9fc86bbaf7abb"
+    },
     "companion_decomposability": {
       "result_id": "BERGER_COMPANION_STATIONARY_DECOMPOSABILITY",
       "sha256": "a8fb9c9c5dc6718d35a42aa90fae3517e58a02f23611ed0da892bfb9a940a84c"
@@ -24,25 +28,25 @@
       "result_id": "BERGER_COMPANION_DECOMPOSABILITY_PREFLIGHT",
       "sha256": "13a7109c4e47c3f0abd6627e274611ff7bad27d1ac7137b92d8321a58051fd0a"
     },
+    "full_A104": {
+      "result_id": "BERGER_A104_ENDPOINT_COMPLETION",
+      "sha256": "9461f484e51ba7ef27cf0924d532d262b7b4c1fd846fd35dec093204508f9e1c"
+    },
     "graded_state_space": {
       "result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
       "sha256": "99768cf1e444ef3525f19621702ee64a68aea83f83349a1c5d6223d9c959ca35"
+    },
+    "graph_q_obstruction": {
+      "result_id": "BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION",
+      "sha256": "2ee25f93c1e8cab4c6053c4cc76f7efeafc99e266b718fcb8d3dad4f07a231df"
     },
     "hadamard_lift": {
       "result_id": "BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT",
       "sha256": "59d52928eb3e0063a4b0464b4592d4bd7d5d43e06860ee96999b6094a12b9723"
     },
-    "partial_A104": {
-      "result_id": "BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY",
-      "sha256": "4e1857c5472eaaab68edb9f4b7af6bc6bf9f7839c74d30302e1acf7d3d485242"
-    },
     "typed_moller": {
       "result_id": "BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT",
       "sha256": "9c4380d0b1c640b7b6ff44a564da0ca9194635fead9c8f2c2a7436869279c126"
-    },
-    "zero_frequency_readiness": {
-      "result_id": "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER_READINESS",
-      "sha256": "204b207b31b5df145e036f44762310af211a8353c721be4cb34aa7ac85e9cbfc"
     }
   },
   "dependency_tags": [
@@ -53,25 +57,29 @@
   "exact_input_checks": {
     "Cauchy_Krein_form_absent": true,
     "base_local_parametrix_certified": true,
+    "canonical_graph_q_Cauchy_lift_rejected": true,
     "companion_decomposable": true,
     "companion_principal_symbol_not_scalar_normal_wave": true,
+    "corrected_q_Cauchy_absent": true,
     "covariance_lift_ready_but_source_covariance_absent": true,
+    "direct_26_row_causal_green_homotopy_certified": true,
     "distributional_two_point_kernel_open": true,
-    "full_A104_absent": true,
+    "full_A104_complete": true,
     "physical_positivity_policy_open": true,
-    "q_Cauchy_absent": true,
     "smooth_zero_mode_completion_open": true,
-    "typed_moller_kernel_action_still_formal": true,
-    "zero_frequency_carrier_nonidentifiable": true
+    "typed_moller_kernel_action_still_formal": true
   },
   "existence_disposition": {
     "BRST_covariance_status": "NOT_CONSTRUCTED",
+    "canonical_stationary_q_Cauchy_lift_status": "REJECTED_WITH_EXACT_DEFECTS",
     "companion_distributional_transport_status": "OPEN",
     "decomposability_status": "CERTIFIED",
+    "direct_26_row_causal_green_homotopy_status": "CERTIFIED",
     "global_Hadamard_state_status": "NOT_CONSTRUCTED",
     "inference": "DECOMPOSABILITY_DOES_NOT_IMPLY_EXISTENCE_FOR_THIS_OPERATOR",
     "local_singular_parametrix_status": "CERTIFIED_ON_BASE_FACTORS",
-    "positive_two_point_bisolution_status": "NOT_CONSTRUCTED"
+    "positive_two_point_bisolution_status": "NOT_CONSTRUCTED",
+    "stationary_A104_status": "CERTIFIED_COEFFICIENTWISE"
   },
   "lifecycle_layer": "LORENTZIAN_HADAMARD_EXISTENCE_AUDIT",
   "literature_criterion": {
@@ -86,30 +94,30 @@
     "theorem_5_3_scope": "normally hyperbolic real formally hermitian Green-hyperbolic operator with positive-definite hermitian fibre metric"
   },
   "minimal_missing_carrier": {
-    "BRST_Ward_identity_for_two_point_kernel": "REQUIRED",
-    "Cauchy_Lagrange_Krein_form": "REQUIRED",
-    "common_closed_realization": "REQUIRED",
-    "complete_A104": "REQUIRED",
-    "positive_or_declared_Krein_covariance": "REQUIRED",
-    "q_Cauchy_104": "REQUIRED",
-    "real_structure_104": "REQUIRED",
-    "zero_frequency_Riesz_Jordan_ledger": "REQUIRED"
+    "BRST_Ward_identity_for_two_point_kernel": "REQUIRED_EITHER_ROUTE",
+    "Cauchy_Lagrange_Krein_form": "REQUIRED_FOR_STATIONARY_ROUTE",
+    "positive_or_declared_Krein_covariance": "REQUIRED_EITHER_ROUTE",
+    "q26_compatible_q_Cauchy_104": "REQUIRED_FOR_STATIONARY_ROUTE",
+    "real_structure_and_common_closed_realization": "REQUIRED_FOR_STATIONARY_ROUTE",
+    "smooth_global_bisolution_completion": "REQUIRED_FOR_DIRECT_CAUSAL_ROUTE",
+    "typed_companion_distributional_transport": "REQUIRED_FOR_DIRECT_CAUSAL_ROUTE",
+    "zero_frequency_Riesz_Jordan_ledger": "REQUIRED_FOR_STATIONARY_ROUTE"
   },
-  "next_gate": "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1",
+  "next_gate": "BERGER_TYPED_COMPANION_DISTRIBUTIONAL_TRANSPORT_OR_Q26_COMPATIBLE_CAUCHY_LIFT",
   "provenance": {
     "source_manifest": {
-      "../reports/berger-companion-hadamard-existence-audit.md": "2199780d9fda41f4acea58c51bcb3f4d700f916c184bc8093e023e0107cb58f6",
-      "README.md": "3e402841a95b7f61e9fdac5ad912819c9b5eb679ec41d460266b5824bba0977e",
-      "berger_companion_hadamard_existence_audit.py": "bdc80b6c9e74991e54fd9f6a10267734add755b665477b3ecf2d2aa9940c7f9e",
+      "../reports/berger-companion-hadamard-existence-audit.md": "ad5234271e3030ff67a313ba3c6eaf7cf60547a8b9b557c20b8330ecc5f9b51c",
+      "README.md": "358aba26fcfb0c2bd8785818b3fac009a7115f55c7fb43ca092a59c2c05e5501",
+      "berger_companion_hadamard_existence_audit.py": "d28a796fdece5f720eca05a20b692d9f4b54a5fc64b131dd1103a0288e32e4ea",
       "berger_companion_hadamard_existence_audit_certificate.py": "782be12163654286ca9cf8ccb111c3f5fcbcb5221c841383905c5d4da64d4c7f",
-      "schema/berger-companion-hadamard-existence-audit-v1.schema.json": "43369fec7bbc868365163bdbcf7f18f24908004c33137ede3502721c3f1e12a5",
-      "tests/test_berger_companion_hadamard_existence_audit.py": "cf2a97087b151cb70ba526ac0b817559f7d78e6492f2efb5d9c393962782f6bd",
+      "schema/berger-companion-hadamard-existence-audit-v1.schema.json": "e45c4ecaeb878bb188265a2ce4b41abf44d45bf25c520cd4e69aa15138aa488d",
+      "tests/test_berger_companion_hadamard_existence_audit.py": "e4095ba622bd98d34b1d8880da473c7197bfb7daa2597ebfa76ca459bce7a9a4",
       "verify_berger_companion_hadamard_existence_audit.py": "60b97bc683349b829f550c9ac8c3be799455e6a2d6607afac7c5ac9ae495c39c"
     },
-    "source_manifest_sha256": "29a4e4df014fd91fae6dac0c0dfba6eaa1dcb17f4f9dbf90c14042108af848f6"
+    "source_manifest_sha256": "d3085d5b3806971f0417c8e245628231703767a21fdfc2a7b1321a89677af196"
   },
   "result_id": "BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT",
-  "result_state": "DECOMPOSABILITY_CERTIFIED_EXISTENCE_NOT_IMPLIED_STATIONARY_POSITIVITY_CARRIER_OPEN",
+  "result_state": "DECOMPOSABILITY_CERTIFIED_DIRECT_CAUSAL_AND_STATIONARY_COMPLETIONS_OPEN",
   "schema": "quantum-weyl-berger-companion-hadamard-existence-audit-v1",
   "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
 }

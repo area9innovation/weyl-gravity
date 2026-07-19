@@ -1473,20 +1473,36 @@ coordinates, and fixes all 10,816 coordinates of `A104` exactly. The final
 sparse operator has 470 nonzero entries.
 
 This is a finite `LOCAL-ALGEBRAIC` plus `LORENTZIAN-CAUSAL` evolution table,
-not a Hadamard state. The next gate is
+not a Hadamard state. The tautological solution-graph lift
 
 ```text
-BERGER_Q52_Q_CAUCHY_104_AND_CAUCHY_KREIN_FORM
+q52 = i_solution q26 p_solution
 ```
 
-It must construct the degree-plus-one companion differential, its first-jet
-prolongation, the nondegenerate Cauchy/Krein form and the real structure, and
-verify nilpotency, BRST commutation, cyclic compatibility and Krein
-skew-adjointness. A common closed graded/Krein realization and an
-isolated-zero/Riesz--Jordan theorem remain an independent analytic gate after
-that. Only then can the positive-frequency covariance be promoted to a
-full-BV BRST Hadamard two-point function.
+is itself degree `+1` and nilpotent, but its exact stationary first-jet
+reduction is not: the candidate `q_Cauchy_104` has 157 nonzero entries in its
+square and 207 in its `A104` commutator. This is a scoped obstruction to that
+canonical graph lift, not a nonexistence theorem for corrected local lifts.
+
+The newer classical 26-row export independently certifies the complete
+advanced/retarded BRST chain homotopy, causal support, cyclic adjointness and
+`D`-equivariance. Therefore the graph-lift defect blocks only the stationary
+spectral route, not the direct causal Hadamard route. The active gates are now
+separate:
+
+```text
+direct causal: BERGER_TYPED_COMPANION_DISTRIBUTIONAL_TRANSPORT
+stationary:    BERGER_Q26_COMPATIBLE_COMPANION_CAUCHY_BRST_LIFT
+```
+
+The direct route must turn the base-factor parametrix and causal Volterra
+carrier into a global two-point bisolution. The stationary route must supply
+a corrected `q_Cauchy`, Cauchy/Krein form, real structure, common closed
+realization and zero-frequency ledger. Either route must still verify a
+positive or explicitly Krein covariance and both BRST Ward identities before
+a full-BV Hadamard claim.
 
 Receipt:
 [`berger-a104-endpoint-completion.md`](../quantum-weyl/reports/berger-a104-endpoint-completion.md) and
-[`BERGER_A104_ENDPOINT_COMPLETION_V1_TIER_RECEIPT.json`](../quantum-weyl/lorentzian/receipts/BERGER_A104_ENDPOINT_COMPLETION_V1_TIER_RECEIPT.json).
+[`BERGER_A104_ENDPOINT_COMPLETION_V1_TIER_RECEIPT.json`](../quantum-weyl/lorentzian/receipts/BERGER_A104_ENDPOINT_COMPLETION_V1_TIER_RECEIPT.json), plus
+[`berger-canonical-graph-q-cauchy-obstruction.md`](../quantum-weyl/reports/berger-canonical-graph-q-cauchy-obstruction.md).

@@ -23,8 +23,9 @@ DEPENDENCIES = {
     "companion_decomposability": HERE / "certificates/BERGER_COMPANION_STATIONARY_DECOMPOSABILITY.json",
     "graded_state_space": HERE / "certificates/BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT.json",
     "hadamard_lift": HERE / "certificates/BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT.json",
-    "partial_A104": HERE / "certificates/BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY.json",
-    "zero_frequency_readiness": HERE / "certificates/BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER_READINESS.json",
+    "causal_26": HERE / "../../d_quotient_classical/certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+    "full_A104": HERE / "certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
+    "graph_q_obstruction": HERE / "certificates/BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION.json",
 }
 
 
@@ -45,8 +46,9 @@ def evaluate() -> dict[str, Any]:
     principal = data["companion_principal"]
     decomposable = data["companion_decomposability"]
     state_space = data["graded_state_space"]
-    partial = data["partial_A104"]
-    readiness = data["zero_frequency_readiness"]
+    full_A104 = data["full_A104"]
+    graph_q = data["graph_q_obstruction"]
+    causal_26 = data["causal_26"]
 
     source_checks = {
         "base_local_parametrix_certified": data["base_parametrix"]["claim_flags"][
@@ -85,19 +87,26 @@ def evaluate() -> dict[str, Any]:
         is True
         and data["hadamard_lift"]["claim_flags"]["BERGER_26_ROW_BRST_HADAMARD"]
         is False,
-        "full_A104_absent": partial["claim_flags"][
+        "full_A104_complete": full_A104["claim_flags"][
             "BERGER_FULL_A104_CAUCHY_OPERATOR"
-        ]
-        is False,
-        "q_Cauchy_absent": partial["claim_flags"]["BERGER_Q_CAUCHY_104"] is False,
-        "Cauchy_Krein_form_absent": partial["claim_flags"][
+        ] is True
+        and full_A104["coverage"]["unknown_coordinates"] == 0,
+        "canonical_graph_q_Cauchy_lift_rejected": graph_q["claim_flags"][
+            "BERGER_CANONICAL_GRAPH_Q_CAUCHY_LIFT_REJECTED"
+        ] is True,
+        "corrected_q_Cauchy_absent": graph_q["claim_flags"][
+            "BERGER_Q_CAUCHY_104"
+        ] is False,
+        "Cauchy_Krein_form_absent": graph_q["claim_flags"][
             "BERGER_CAUCHY_KREIN_FORM"
-        ]
-        is False,
-        "zero_frequency_carrier_nonidentifiable": readiness["claim_flags"][
-            "ZERO_FREQUENCY_INPUT_NONIDENTIFIABILITY_CERTIFIED"
-        ]
-        is True,
+        ] is False,
+        "direct_26_row_causal_green_homotopy_certified": causal_26[
+            "result_state"
+        ] == "GREEN_CERTIFIED_HADAMARD_OPEN"
+        and all(
+            row["status"] == "VERIFIED"
+            for row in causal_26["green_proof_checks"].values()
+        ),
     }
     if not all(source_checks.values()):
         failed = [name for name, passed in source_checks.items() if not passed]
@@ -106,7 +115,7 @@ def evaluate() -> dict[str, Any]:
     return {
         "schema": "quantum-weyl-berger-companion-hadamard-existence-audit-v1",
         "result_id": "BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT",
-        "result_state": "DECOMPOSABILITY_CERTIFIED_EXISTENCE_NOT_IMPLIED_STATIONARY_POSITIVITY_CARRIER_OPEN",
+        "result_state": "DECOMPOSABILITY_CERTIFIED_DIRECT_CAUSAL_AND_STATIONARY_COMPLETIONS_OPEN",
         "lifecycle_layer": "LORENTZIAN_HADAMARD_EXISTENCE_AUDIT",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "setting_id": decomposable["setting_id"],
@@ -129,6 +138,9 @@ def evaluate() -> dict[str, Any]:
         "existence_disposition": {
             "decomposability_status": "CERTIFIED",
             "local_singular_parametrix_status": "CERTIFIED_ON_BASE_FACTORS",
+            "direct_26_row_causal_green_homotopy_status": "CERTIFIED",
+            "stationary_A104_status": "CERTIFIED_COEFFICIENTWISE",
+            "canonical_stationary_q_Cauchy_lift_status": "REJECTED_WITH_EXACT_DEFECTS",
             "companion_distributional_transport_status": "OPEN",
             "positive_two_point_bisolution_status": "NOT_CONSTRUCTED",
             "BRST_covariance_status": "NOT_CONSTRUCTED",
@@ -136,14 +148,14 @@ def evaluate() -> dict[str, Any]:
             "inference": "DECOMPOSABILITY_DOES_NOT_IMPLY_EXISTENCE_FOR_THIS_OPERATOR",
         },
         "minimal_missing_carrier": {
-            "complete_A104": "REQUIRED",
-            "q_Cauchy_104": "REQUIRED",
-            "Cauchy_Lagrange_Krein_form": "REQUIRED",
-            "real_structure_104": "REQUIRED",
-            "common_closed_realization": "REQUIRED",
-            "zero_frequency_Riesz_Jordan_ledger": "REQUIRED",
-            "positive_or_declared_Krein_covariance": "REQUIRED",
-            "BRST_Ward_identity_for_two_point_kernel": "REQUIRED",
+            "typed_companion_distributional_transport": "REQUIRED_FOR_DIRECT_CAUSAL_ROUTE",
+            "smooth_global_bisolution_completion": "REQUIRED_FOR_DIRECT_CAUSAL_ROUTE",
+            "q26_compatible_q_Cauchy_104": "REQUIRED_FOR_STATIONARY_ROUTE",
+            "Cauchy_Lagrange_Krein_form": "REQUIRED_FOR_STATIONARY_ROUTE",
+            "real_structure_and_common_closed_realization": "REQUIRED_FOR_STATIONARY_ROUTE",
+            "zero_frequency_Riesz_Jordan_ledger": "REQUIRED_FOR_STATIONARY_ROUTE",
+            "positive_or_declared_Krein_covariance": "REQUIRED_EITHER_ROUTE",
+            "BRST_Ward_identity_for_two_point_kernel": "REQUIRED_EITHER_ROUTE",
         },
         "claim_flags": {
             "BERGER_COMPANION_NULL_CONE_DECOMPOSABLE": True,
@@ -156,7 +168,7 @@ def evaluate() -> dict[str, Any]:
             "LORENTZIAN_QME_RESTORED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1",
+        "next_gate": "BERGER_TYPED_COMPANION_DISTRIBUTIONAL_TRANSPORT_OR_Q26_COMPATIBLE_CAUCHY_LIFT",
         "claim_boundary": (
             "This LORENTZIAN-CAUSAL criterion audit proves that the certified null-cone "
             "decomposability of the Berger companion does not by itself supply a Hadamard "
@@ -164,10 +176,12 @@ def evaluate() -> dict[str, Any]:
             "hyperbolic operators with positive-definite hermitian fibre metric; the companion "
             "already fails the normally-hyperbolic hypothesis through its nonzero nilpotent "
             "order-two principal block. Separately, the full graded BV lift requires BRST/Krein "
-            "compatibility and positivity on physical cohomology. A local base-factor parametrix "
-            "and a 26-to-54 covariance lift are ready, but "
-            "the full stationary Cauchy/BRST/pairing/reality carrier, zero-frequency ledger, "
-            "positive or declared Krein covariance and BRST Ward identity are not constructed. "
+            "compatibility and positivity on physical cohomology. The direct 26-row causal Green "
+            "homotopy and full A104 coefficient table are ready, but the canonical stationary "
+            "q_Cauchy graph lift is exactly rejected. The direct causal route still requires "
+            "distributional companion transport and a global bisolution; the stationary route "
+            "requires a corrected q-compatible lift, pairing/reality carrier and spectral "
+            "ledger. Both still require a positive or declared Krein covariance and BRST Ward identity. "
             "No Hadamard state, positivity, renormalized product, QME or quantum theorem is claimed."
         ),
     }
@@ -177,8 +191,10 @@ def validate(result: dict[str, Any]) -> None:
     if (
         result.get("result_id")
         != "BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT"
+        or result.get("result_state")
+        != "DECOMPOSABILITY_CERTIFIED_DIRECT_CAUSAL_AND_STATIONARY_COMPLETIONS_OPEN"
         or result.get("next_gate")
-        != "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1"
+        != "BERGER_TYPED_COMPANION_DISTRIBUTIONAL_TRANSPORT_OR_Q26_COMPATIBLE_CAUCHY_LIFT"
     ):
         raise ValueError("Hadamard existence audit identity drifted")
     if not all(result.get("exact_input_checks", {}).values()):

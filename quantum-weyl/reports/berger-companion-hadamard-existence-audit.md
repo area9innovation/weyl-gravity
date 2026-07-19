@@ -20,16 +20,20 @@ twenty-row bosonic companion. Separately, after a companion covariance is
 constructed, the graded 26-to-54 BV lift must satisfy BRST/Krein compatibility
 and positivity on physical cohomology. These are distinct gates.
 
-The local base-wave singular parametrix, companion decomposability, graded
-causal commutator and 26-to-54 covariance lift are ready. A state still
-requires the complete stationary `A104`, Cauchy BRST operator, Cauchy
-Lagrange/Krein form, real structure, common closed realization, isolated-zero
-ledger, positive or explicitly Krein covariance, and the BRST Ward identity
-for the resulting distributional kernel.
+The local base-wave singular parametrix, companion decomposability, complete
+26-row advanced/retarded BRST chain homotopy, 26-to-54 covariance lift and all
+10,816 coefficients of stationary `A104` are ready.  The canonical graph lift
+of `q26` to that Cauchy carrier is not: exact reduction leaves 157 nonzero
+entries in its square and 207 in its `A104` commutator.
 
-The exact next gate is therefore
-`IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1`. No Hadamard, positivity,
-renormalized-product, QME or quantum claim is promoted.
+This separates two valid routes.  The direct causal route requires typed
+distributional companion transport and a smooth global bisolution completion.
+The stationary route requires a corrected `q26`-compatible Cauchy lift, the
+Cauchy Lagrange/Krein form and real structure, a common closed realization and
+the zero-frequency Riesz/Jordan ledger.  Either route must then supply a
+positive or explicitly Krein covariance and verify the BRST Ward identity.
+No Hadamard, positivity, renormalized-product, QME or quantum claim is
+promoted.
 
 Primary scope reference: [Fewster, *Hadamard States for Decomposable
 Green-Hyperbolic Operators*](https://doi.org/10.1007/s00220-025-05512-1),

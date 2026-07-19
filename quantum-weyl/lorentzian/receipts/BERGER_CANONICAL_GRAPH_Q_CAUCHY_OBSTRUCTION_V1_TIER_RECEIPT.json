@@ -1,0 +1,50 @@
+{
+  "receipt_id": "BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Exact rejection of the canonical q26 solution-graph Cauchy lift, refresh of the two-route Hadamard existence audit, and fail-closed quantum brief, roadmap and atlas updates.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile quantum-weyl/lorentzian/berger_canonical_graph_q_cauchy_obstruction.py quantum-weyl/lorentzian/berger_canonical_graph_q_cauchy_obstruction_certificate.py quantum-weyl/lorentzian/verify_berger_canonical_graph_q_cauchy_obstruction.py quantum-weyl/lorentzian/tests/test_berger_canonical_graph_q_cauchy_obstruction.py",
+        "python3 -m json.tool quantum-weyl/lorentzian/schema/berger-canonical-graph-q-cauchy-obstruction-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/lorentzian/schema/berger-companion-hadamard-existence-audit-v1.schema.json",
+        "git diff --check -- <scoped paths>"
+      ],
+      "elapsed_seconds": 0.4
+    },
+    "tier_1": {
+      "status": "PASS",
+      "runs": [
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_canonical_graph_q_cauchy_obstruction_certificate --check",
+          "elapsed_seconds": 56.92,
+          "result": "PASS: q52 has 282 sparse entries; rejected q_Cauchy candidate has 1018; exact defect counts are 157 for q_Cauchy^2 and 207 for [A104,q_Cauchy]."
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_canonical_graph_q_cauchy_obstruction && PYTHONPATH=quantum-weyl python3 -m unittest lorentzian.tests.test_berger_canonical_graph_q_cauchy_obstruction && PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_companion_hadamard_existence_audit_certificate --check && PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_companion_hadamard_existence_audit && PYTHONPATH=quantum-weyl python3 -m unittest lorentzian.tests.test_berger_companion_hadamard_existence_audit",
+          "elapsed_seconds": 2.75,
+          "result": "PASS: independent obstruction verifier, 4 obstruction tests, refreshed Hadamard audit, independent audit verifier and 4 audit tests."
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest atlas.tests.test_quantum_atlas_fragment && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+          "elapsed_seconds": 8.27,
+          "result": "PASS: generated atlas check, independent verifier, 7 tests and common-schema validation."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The affected stationary/Hadamard consumer chain and generated quantum atlas were replayed; the independent 26-row causal Green certificate was consumed by content hash and its own verified proof ledger was not rebuilt."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, shared-core algebra change, Hadamard promotion, QME promotion or quantum-theorem lifecycle promotion occurred."
+    }
+  },
+  "claim_boundary": "The receipt certifies a scoped negative result for one canonical stationary graph lift and a fail-closed routing update. It does not prove nonexistence of corrected q-compatible companion lifts, construct a Cauchy/Krein form, a two-point bisolution, a Hadamard state, renormalized Lorentzian products, a restored QME or a quantum theory."
+}

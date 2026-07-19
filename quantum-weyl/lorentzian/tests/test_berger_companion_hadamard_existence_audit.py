@@ -43,13 +43,23 @@ class BergerCompanionHadamardExistenceAuditTests(unittest.TestCase):
             ]
         )
 
-    def test_stationary_receiving_contract_is_exact_next_gate(self) -> None:
+    def test_two_constructive_routes_are_kept_separate(self) -> None:
         self.assertEqual(
             self.certificate["next_gate"],
-            "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1",
+            "BERGER_TYPED_COMPANION_DISTRIBUTIONAL_TRANSPORT_OR_Q26_COMPATIBLE_CAUCHY_LIFT",
         )
-        self.assertTrue(
-            all(value == "REQUIRED" for value in self.certificate["minimal_missing_carrier"].values())
+        missing = self.certificate["minimal_missing_carrier"]
+        self.assertEqual(
+            missing["typed_companion_distributional_transport"],
+            "REQUIRED_FOR_DIRECT_CAUSAL_ROUTE",
+        )
+        self.assertEqual(
+            missing["q26_compatible_q_Cauchy_104"],
+            "REQUIRED_FOR_STATIONARY_ROUTE",
+        )
+        self.assertEqual(
+            missing["BRST_Ward_identity_for_two_point_kernel"],
+            "REQUIRED_EITHER_ROUTE",
         )
 
     def test_independent_verifier_and_mutations(self) -> None:

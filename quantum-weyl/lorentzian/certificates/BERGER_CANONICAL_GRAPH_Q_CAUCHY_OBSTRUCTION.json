@@ -1,0 +1,183 @@
+{
+  "candidate_artifacts": {
+    "candidate_q52_companion": {
+      "format": "JSON_EXACT_SPARSE_OPERATOR",
+      "path": "quantum-weyl/lorentzian/generated/berger_canonical_graph_q_cauchy_obstruction/candidate_q52_companion.json",
+      "sha256": "0a75da491c2c7ce6605135f87dcff740b528fa4f308a16a80569a7bc91beba5e"
+    },
+    "rejected_candidate_q_Cauchy_104": {
+      "format": "JSON_EXACT_SPARSE_OPERATOR",
+      "path": "quantum-weyl/lorentzian/generated/berger_canonical_graph_q_cauchy_obstruction/rejected_candidate_q_Cauchy_104.json",
+      "sha256": "116ea6304aa27d30c881bfac092c6058cf9d4571aa407ca5f47f1366d993bf50"
+    }
+  },
+  "candidate_definition": {
+    "q52": "i_solution q26 p_solution on each degreewise companion graph",
+    "q_Cauchy_104": "exact stationary first-jet reduction of q52 using full A104",
+    "scope": "THIS_CANONICAL_GRAPH_LIFT_ONLY_NOT_ALL_LOCAL_COMPANION_LIFTS"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC plus LORENTZIAN-CAUSAL audit rejects only the tautological solution-graph lift of q26 through the frozen A104: its stationary Cauchy reduction has nonzero square and evolution commutator. It is not a nonexistence theorem for corrected local companion lifts and does not invalidate the independently certified 26-row causal Green homotopy, construct a Cauchy/Krein form, a Hadamard state, renormalized products, a QME or a quantum theory.",
+  "claim_flags": {
+    "BERGER_CANONICAL_GRAPH_Q_CAUCHY_LIFT_REJECTED": true,
+    "BERGER_CAUCHY_KREIN_FORM": false,
+    "BERGER_FULL_A104_CAUCHY_OPERATOR": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_Q_CAUCHY_104": false,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "eb56d5aff7d622de423d4994051b0e048c4fb4bf",
+  "counts": {
+    "candidate_q_Cauchy_nonzero_sparse_entries": 1018,
+    "q52_nonzero_sparse_entries": 282
+  },
+  "defects": {
+    "A104_candidate_q_Cauchy_commutator": {
+      "first_witness": {
+        "column": 0,
+        "column_degree": -1,
+        "row": 68,
+        "row_degree": 0,
+        "sha256": "224bb966a902a9cf06d796c85f68815a8fd2f844262dc11d9bba0423d0e82c2f",
+        "terms": [
+          {
+            "coefficient": "-u*(3*u**3 - 8*u**2*v + 12*u*v**2 - 4*v**3)/3",
+            "derivative_exponents": [
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "2*u*(u - 2*v)/3",
+            "derivative_exponents": [
+              0,
+              3,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "2*u*(u - 2*v)/3",
+            "derivative_exponents": [
+              0,
+              1,
+              2,
+              0
+            ]
+          },
+          {
+            "coefficient": "2*u*(u - 2*v)/3",
+            "derivative_exponents": [
+              0,
+              1,
+              0,
+              2
+            ]
+          },
+          {
+            "coefficient": "2*u*(u - v)*(u + 4*v)/3",
+            "derivative_exponents": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "nonzero_sparse_entries": 207
+    },
+    "candidate_q_Cauchy_square": {
+      "first_witness": {
+        "column": 0,
+        "column_degree": -1,
+        "row": 30,
+        "row_degree": 1,
+        "sha256": "12ce3b84fd43f12959ae298140c5cbfc6de4c9d0717d8b28432ef33e20547b35",
+        "terms": [
+          {
+            "coefficient": "-alpha_B*u*v**2*(u - v)/9",
+            "derivative_exponents": [
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "alpha_B*u*(u - v)/9",
+            "derivative_exponents": [
+              0,
+              1,
+              0,
+              2
+            ]
+          },
+          {
+            "coefficient": "2*alpha_B*u*v*(u - v)/9",
+            "derivative_exponents": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "nonzero_sparse_entries": 157
+    }
+  },
+  "dependency_refs": {
+    "full_A104": {
+      "artifact_id": "BERGER_A104_ENDPOINT_COMPLETION",
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
+      "sha256": "9461f484e51ba7ef27cf0924d532d262b7b4c1fd846fd35dec093204508f9e1c"
+    },
+    "retained_q26": {
+      "artifact_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "candidate_is_exact_stationary_jet_reduction_of_q52": true,
+    "candidate_q_Cauchy_squared_zero": false,
+    "full_A104_commutes_with_candidate_q_Cauchy": false,
+    "q26_squared_zero": true,
+    "q52_has_degree_plus_one": true,
+    "q52_squared_zero": true,
+    "q_Cauchy_has_degree_plus_one": true
+  },
+  "lifecycle_layer": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT",
+  "minimal_missing_carrier": {
+    "object": "a q26-compatible companion/Cauchy BRST lift for the frozen A104, or a corrected BRST-compatible companion witness with its induced A104",
+    "required_checks": [
+      "q_Cauchy_has_degree_plus_one",
+      "q_Cauchy_squared_zero",
+      "full_A104_supercommutes_with_q_Cauchy",
+      "compatibility_with_the_retained_q26_solution_map"
+    ],
+    "status": "EXACTLY_IDENTIFIED"
+  },
+  "next_gate": "BERGER_Q26_COMPATIBLE_COMPANION_CAUCHY_BRST_LIFT",
+  "provenance": {
+    "coefficient_backend": "sparse exact QQ[alpha_B,u,v] monomials with PBW word reduction",
+    "source_manifest": {
+      "quantum-weyl/lorentzian/berger_canonical_graph_q_cauchy_obstruction.py": "a9f629af9aef9d223580d6dae90e3b97dcdaecf86d9b94cde8caf1c38ec1af97",
+      "quantum-weyl/lorentzian/berger_canonical_graph_q_cauchy_obstruction_certificate.py": "defc6565a22786228d2e7f54db315484a62e49ce3c89db0b1367eebaae5f4dfa",
+      "quantum-weyl/lorentzian/schema/berger-canonical-graph-q-cauchy-obstruction-v1.schema.json": "b3a95ad0f4a47aad5b3b71d58eab4504a5145c3d1feac4b21678f94cb057e234",
+      "quantum-weyl/lorentzian/tests/test_berger_canonical_graph_q_cauchy_obstruction.py": "815a34dec992cd8071dfeddaba2b5d464f4882458e5abc22db5a15e4b3bcf0db",
+      "quantum-weyl/lorentzian/verify_berger_canonical_graph_q_cauchy_obstruction.py": "5cab402be7b141976f225634377f1ac3d1d499ca668d37b4076266a830c27785"
+    },
+    "source_manifest_sha256": "bdaf06aad47bf1ebab7623f0cde67d3a9b9ba4af3ecb3940eeddac75aba9cd6b"
+  },
+  "result_id": "BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION",
+  "result_state": "CANONICAL_GRAPH_LIFT_REJECTED_ALTERNATIVE_Q_COMPANION_OPEN",
+  "schema": "quantum-weyl-berger-canonical-graph-q-cauchy-obstruction-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

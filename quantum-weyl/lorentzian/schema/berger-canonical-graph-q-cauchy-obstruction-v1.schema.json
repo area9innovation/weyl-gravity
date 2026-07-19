@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-canonical-graph-q-cauchy-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "candidate_definition", "exact_checks", "counts", "defects", "candidate_artifacts", "minimal_missing_carrier", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-canonical-graph-q-cauchy-obstruction-v1"},
+    "result_id": {"const": "BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION"},
+    "result_state": {"const": "CANONICAL_GRAPH_LIFT_REJECTED_ALTERNATIVE_Q_COMPANION_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["full_A104", "retained_q26"],
+      "properties": {
+        "full_A104": {"$ref": "#/$defs/dependency"},
+        "retained_q26": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "candidate_definition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["q52", "q_Cauchy_104", "scope"],
+      "properties": {
+        "q52": {"type": "string"},
+        "q_Cauchy_104": {"type": "string"},
+        "scope": {"const": "THIS_CANONICAL_GRAPH_LIFT_ONLY_NOT_ALL_LOCAL_COMPANION_LIFTS"}
+      }
+    },
+    "exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["q26_squared_zero", "q52_has_degree_plus_one", "q52_squared_zero", "q_Cauchy_has_degree_plus_one", "candidate_is_exact_stationary_jet_reduction_of_q52", "candidate_q_Cauchy_squared_zero", "full_A104_commutes_with_candidate_q_Cauchy"],
+      "properties": {
+        "q26_squared_zero": {"const": true},
+        "q52_has_degree_plus_one": {"const": true},
+        "q52_squared_zero": {"const": true},
+        "q_Cauchy_has_degree_plus_one": {"const": true},
+        "candidate_is_exact_stationary_jet_reduction_of_q52": {"const": true},
+        "candidate_q_Cauchy_squared_zero": {"const": false},
+        "full_A104_commutes_with_candidate_q_Cauchy": {"const": false}
+      }
+    },
+    "counts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["q52_nonzero_sparse_entries", "candidate_q_Cauchy_nonzero_sparse_entries"],
+      "properties": {
+        "q52_nonzero_sparse_entries": {"const": 282},
+        "candidate_q_Cauchy_nonzero_sparse_entries": {"const": 1018}
+      }
+    },
+    "defects": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_q_Cauchy_square", "A104_candidate_q_Cauchy_commutator"],
+      "properties": {
+        "candidate_q_Cauchy_square": {"allOf": [{"$ref": "#/$defs/defect"}, {"properties": {"nonzero_sparse_entries": {"const": 157}}}]},
+        "A104_candidate_q_Cauchy_commutator": {"allOf": [{"$ref": "#/$defs/defect"}, {"properties": {"nonzero_sparse_entries": {"const": 207}}}]}
+      }
+    },
+    "candidate_artifacts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_q52_companion", "rejected_candidate_q_Cauchy_104"],
+      "properties": {
+        "candidate_q52_companion": {"$ref": "#/$defs/artifact"},
+        "rejected_candidate_q_Cauchy_104": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "minimal_missing_carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "object", "required_checks"],
+      "properties": {
+        "status": {"const": "EXACTLY_IDENTIFIED"},
+        "object": {"type": "string", "minLength": 80},
+        "required_checks": {"type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_FULL_A104_CAUCHY_OPERATOR", "BERGER_CANONICAL_GRAPH_Q_CAUCHY_LIFT_REJECTED", "BERGER_Q_CAUCHY_104", "BERGER_CAUCHY_KREIN_FORM", "BERGER_HADAMARD_DATA", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_FULL_A104_CAUCHY_OPERATOR": {"const": true},
+        "BERGER_CANONICAL_GRAPH_Q_CAUCHY_LIFT_REJECTED": {"const": true},
+        "BERGER_Q_CAUCHY_104": {"const": false},
+        "BERGER_CAUCHY_KREIN_FORM": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_Q26_COMPATIBLE_COMPANION_CAUCHY_BRST_LIFT"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coefficient_backend", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "coefficient_backend": {"type": "string"},
+        "source_manifest": {"type": "object", "minProperties": 5, "maxProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 250}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "path", "sha256"],
+      "properties": {
+        "format": {"const": "JSON_EXACT_SPARSE_OPERATOR"},
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "defect": {
+      "type": "object", "additionalProperties": false,
+      "required": ["nonzero_sparse_entries", "first_witness"],
+      "properties": {
+        "nonzero_sparse_entries": {"type": "integer", "minimum": 1},
+        "first_witness": {
+          "type": "object", "additionalProperties": false,
+          "required": ["row", "column", "row_degree", "column_degree", "terms", "sha256"],
+          "properties": {
+            "row": {"type": "integer", "minimum": 0, "maximum": 103},
+            "column": {"type": "integer", "minimum": 0, "maximum": 103},
+            "row_degree": {"type": "integer", "minimum": -1, "maximum": 2},
+            "column_degree": {"type": "integer", "minimum": -1, "maximum": 2},
+            "terms": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["derivative_exponents", "coefficient"],
+                "properties": {
+                  "derivative_exponents": {
+                    "type": "array",
+                    "minItems": 4,
+                    "maxItems": 4,
+                    "items": {"type": "integer", "minimum": 0}
+                  },
+                  "coefficient": {"type": "string"}
+                }
+              }
+            },
+            "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        }
+      }
+    }
+  }
+}
