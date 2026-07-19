@@ -2,7 +2,7 @@
   "schema": "paper-draft-source-map-v1",
   "paper_id": "PAPER_13_COMPACT_WEYL_MAXWELL_SECOND_ORDER_TANGENT_CONE",
   "lifecycle_state": "DRAFT_ALLOWED",
-  "source_baseline": "3541eed90ba7231a25782eed3c4682aefeb47a34",
+  "source_baseline": "f99aff5aa2febdd4778aec9e78d2c8a0d75043bb",
   "manuscript": "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
   "certified_scope": {
@@ -29,6 +29,8 @@
     "same_sign_exact_bounded_fibre_product_formulas": "6_OF_6",
     "same_sign_resonance_face_stratifications": "6_OF_6",
     "same_sign_active_complex_component_counts": [1, 1, 1, 4, 1, 2],
+    "same_sign_automatic_face_fixed_occupation_rotation_links_connected": "5_OF_5",
+    "same_sign_axisymmetric_rotation_jacobian_rank": "RANK_2_AWAY_FROM_ORIGIN_RANK_0_AT_ORIGIN",
     "same_sign_complete_phase_parity_fibres_classified": false,
     "same_sign_real_hermitian_components_classified": false,
     "same_sign_candidates_16_through_21_complete_real_cones": false,
@@ -158,6 +160,14 @@
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
       "git_blob": "09c19cc996a39eb84ab004c37780a95da40c0933"
+    },
+    {
+      "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.json",
+      "git_blob": "afb984a68a470a668001406a9a0c9d8e4c2a1802"
+    },
+    {
+      "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.json",
+      "git_blob": "a30acd8e6f4f7bff43ab7e7c990771d15dbf08c8"
     }
   ],
   "verification_receipt": {
@@ -186,17 +196,19 @@
         "candidatewise 120-minor/90-circuit audit and 3 tests",
         "complete scalar-cone section verifier and 2 tests",
         "exact bounded phase/parity fibre-product verifier and 2 tests",
-        "resonance face-fibre verifier and 3 tests"
+        "resonance face-fibre verifier and 3 tests",
+        "automatic-face rotation-link verifier and 3 tests",
+        "axisymmetric rotation-singularity verifier and 3 tests"
       ]
     },
     "tier_2": {
       "status": "PASS_BY_CONTENT_ADDRESS",
-      "criterion": "All 30 source blobs are pinned at baseline 3541eed9; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts, scalar-cone sections, exact bounded fibre products and complete complex resonance-face strata."
+      "criterion": "All 32 source blobs are pinned at baseline f99aff5a; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts, scalar-cone sections, exact bounded fibre products, complete complex resonance-face strata, connected automatic-face rotation links and the axisymmetric rotation critical-locus theorem."
     },
     "broader_atlas_audit": {
       "status": "PASSED_AFTER_CONCURRENT_ATLAS_UPDATE",
       "checks": [
-        "91 atlas tests",
+        "93 atlas tests",
         "independent Einstein compact-product atlas verifier"
       ]
     },
@@ -205,5 +217,5 @@
       "criterion": "Paper 13 remains DRAFT_ALLOWED and no mathematical lifecycle state is promoted."
     }
   },
-  "next_gate": "SIX_SAME_SIGN_REAL_HERMITIAN_COMPONENT_AND_SINGULAR_STRATUM_DECOMPOSITIONS"
+  "next_gate": "AXISYMMETRIC_MU_J3_QUADRATIC_NORMAL_FORM_AND_ACTIVE_RESTRICTED_CURRENT_GATE"
 }
