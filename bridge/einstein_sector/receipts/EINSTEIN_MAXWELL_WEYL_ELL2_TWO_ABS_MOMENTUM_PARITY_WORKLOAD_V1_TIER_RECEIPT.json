@@ -1,0 +1,43 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_PARITY_WORKLOAD_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact parity/angular typing and reduced action-source workload for the 21 isolated ell=2 cross-|n| resonance candidates.",
+  "content_sha256": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.py": "d25ef4ccc95a868c1de23813c19d6c2875e6b08790be084ff85c2eead0ce26c1",
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json": "e762ad9600f6d7b22b2a0ec6ccbe25159f810d4b017016afa46d2128497e7b7c",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.schema.json": "76620ff28c02e9d6b58c12ed2cef7d29f2f7c0af835e09e9c993c269e259d9d4",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.py": "b83353db7bca779726532d8f55d17843b8a4180b0ef7b4fb5fd724d82db58750",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.py": "912266aae6ab88002109a2e2c71950c7ec6a8a3b301f7923df098668cc854d25",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-parity-workload.md": "389d401779ba04afacef68dc354983b2cacb306d1251a8db3d81474ad45c0d40"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.2,
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.97,
+      "tests_run": 4,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The 21-row exact candidate ledger, same/cross parity theorems, generic axial/polar multiplicities and exceptional cofiber are unchanged hashed inputs; the verifier independently recomputes parity, angular witnesses and all workload counts."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No projected source coefficient, shared operator or lifecycle freeze changed; the complete two-fibre tangent cone remains open."
+    }
+  },
+  "claim_boundary": "Parity/angular workload only; no source coefficient, extension, obstruction, causal, residual, observational or quantum claim is promoted."
+}

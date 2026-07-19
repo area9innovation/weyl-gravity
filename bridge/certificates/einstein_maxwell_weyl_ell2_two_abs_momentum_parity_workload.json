@@ -1,0 +1,1544 @@
+{
+  "claim_boundary": "This is a parity/angular workload theorem, not a projected-source or tangent-cone theorem. It does not infer any coefficient zero, extension, obstruction, causal, residual, observational or quantum claim.",
+  "classification": {
+    "all_m_angular_nonvanishing_witnessed": true,
+    "all_twenty_one_candidates_parity_typed": true,
+    "causal_or_quantum_claim": false,
+    "complete_two_fibre_tangent_cone_classified": false,
+    "odd_L_axisymmetric_fixtures_excluded": true,
+    "projected_source_coefficients_computed": false,
+    "reduced_source_workload_complete": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "Parity removes half of the naive source assignments but no complete candidate row. The dynamical gate is 164 action-derived reduced scalar adjoint coefficients; 56 odd-L coefficients require a nonaxisymmetric angular fixture.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the 108 axisymmetric L=4 coefficients in branch-multiplicity matrices, then the 56 nonaxisymmetric L=1,3 coefficients, preserving axial/polar and |n|-fibre labels",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.py",
+    "generator_sha256": "d25ef4ccc95a868c1de23813c19d6c2875e6b08790be084ff85c2eead0ce26c1",
+    "inputs": {
+      "axial_ring": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
+        "sha256": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb"
+      },
+      "candidates": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.json",
+        "sha256": "27fe530f6d296453e4eaf504eed688b6a2480cac18e0581e839898c7868e3450"
+      },
+      "cross_parity": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_cross_parity_output_resonance.json",
+        "sha256": "74303795afc84525ef81e12a0c32d9014b04c6c32928deb27ff7aa87795f84cd"
+      },
+      "exceptional_cofiber": {
+        "path": "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
+        "sha256": "b56faf37e92d12f37b54c2c5c0224251a73669171a067adb5082f7d71956960d"
+      },
+      "polar_ring": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      },
+      "same_parity": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_same_parity_output_resonance.json",
+        "sha256": "b1270dbf5d677edd9125f6f6119dbae22b8b701b37dab62c1ff6f06f8f23c928"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_PARITY_WORKLOAD",
+  "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-parity-workload-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.schema.json",
+  "schema_sha256": "76620ff28c02e9d6b58c12ed2cef7d29f2f7c0af835e09e9c993c269e259d9d4",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 with arbitrary common circumference L",
+    "carrier": "all q-minus, p-extra and q-plus ell=2 oscillators on the two absolute momentum fibres |n|=1 and |n|=2",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "input ell=2 times ell=2; over-complete output L=1,2,3,4 with L=0 handled by the exact nonzero-Fourier scalar complex",
+    "k": "signed n in {+/-1,+/-2} times 2*pi/L, restricted here to cross-|n| pairs",
+    "m": "all Clebsch-Gordan-allowed values",
+    "omega": "all signed temporal sum/difference channels",
+    "parity": "all input/output parity combinations conservatively retained",
+    "theory": "Weyl-Maxwell target"
+  },
+  "selection_theorem": {
+    "all_m_tensor_product": "V_2 tensor V_2 contains each V_L, L=0,...,4, with multiplicity one",
+    "allowed_parity_channels": 84,
+    "axisymmetric_fixture": "available for L=4; identically absent for odd L=1,3",
+    "candidate_rows_eliminated": 0,
+    "cross_input_parity": "axial even-L and polar odd-L targets",
+    "naive_input_output_parity_assignments": 168,
+    "same_input_parity": "polar even-L and axial odd-L targets"
+  },
+  "source_workload": {
+    "branch_multiplicity_per_parity": {
+      "extra": 1,
+      "p_extra": 2,
+      "q_minus": 1,
+      "q_plus": 1
+    },
+    "by_output_ell": {
+      "1": {
+        "parity_channels": 12,
+        "reduced_scalar_source_coefficients": 12
+      },
+      "3": {
+        "parity_channels": 24,
+        "reduced_scalar_source_coefficients": 44
+      },
+      "4": {
+        "parity_channels": 48,
+        "reduced_scalar_source_coefficients": 108
+      }
+    },
+    "even_L4_coefficients_with_axisymmetric_fixture": 108,
+    "odd_L_coefficients_requiring_nonaxisymmetric_fixture": 56,
+    "reduced_scalar_source_coefficients": 164,
+    "rows": [
+      {
+        "candidate_index": 1,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "q_minus",
+        "output_ell": 3,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "17*(-709 + 459*sqrt(3))/10932",
+        "second_branch": "q_minus",
+        "target_branch": "p_extra",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 2,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "q_minus",
+        "output_ell": 3,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "(-2103 + 324*sqrt(2) + 302*sqrt(6) + 1503*sqrt(3))/2162",
+        "second_branch": "q_minus",
+        "target_branch": "q_plus",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 3,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "q_minus",
+        "output_ell": 4,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "-(-32895*sqrt(3) + 900*sqrt(30) + 11135 + 7918*sqrt(10))/39286",
+        "second_branch": "q_minus",
+        "target_branch": "q_minus",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 4,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "q_minus",
+        "output_ell": 4,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "29*(-361 + 783*sqrt(3))/26772",
+        "second_branch": "q_minus",
+        "target_branch": "p_extra",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 5,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "q_minus",
+        "output_ell": 4,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "(-11135 + 900*sqrt(30) + 7918*sqrt(10) + 32895*sqrt(3))/39286",
+        "second_branch": "q_minus",
+        "target_branch": "q_plus",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 6,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "q_minus",
+        "output_ell": 3,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "(-225071 + 47682*sqrt(2) + 41931*sqrt(6) + 66231*sqrt(3))/292308",
+        "second_branch": "p_extra",
+        "target_branch": "q_plus",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 7,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "q_minus",
+        "output_ell": 4,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "(-822 + 1787*sqrt(3))/4516",
+        "second_branch": "p_extra",
+        "target_branch": "p_extra",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 8,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "q_minus",
+        "output_ell": 4,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "(-19997 + 7038*sqrt(30) + 51993*sqrt(10) + 100377*sqrt(3))/260988",
+        "second_branch": "p_extra",
+        "target_branch": "q_plus",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 9,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "q_minus",
+        "output_ell": 4,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "(-1703 - 523*sqrt(3) + 346*sqrt(30) + 2304*sqrt(10))/11618",
+        "second_branch": "q_plus",
+        "target_branch": "q_plus",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 10,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "p_extra",
+        "output_ell": 3,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "-(-910431*sqrt(3) - 326205*sqrt(6) + 48168*sqrt(2) + 1994230)/1916931",
+        "second_branch": "q_minus",
+        "target_branch": "q_plus",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 11,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "p_extra",
+        "output_ell": 4,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "(-3039 + 3757*sqrt(3))/8396",
+        "second_branch": "q_minus",
+        "target_branch": "p_extra",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 12,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "p_extra",
+        "output_ell": 4,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "(-3281065 - 65628*sqrt(30) + 2745603*sqrt(10) + 5655366*sqrt(3))/12590643",
+        "second_branch": "q_minus",
+        "target_branch": "q_plus",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 13,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "p_extra",
+        "output_ell": 4,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "(-250 + 461*sqrt(10))/2132",
+        "second_branch": "p_extra",
+        "target_branch": "q_plus",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 14,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "q_plus",
+        "output_ell": 1,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              1,
+              -1,
+              "sqrt(15)/15"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              1,
+              -1,
+              "sqrt(15)/15"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              1,
+              -1,
+              "sqrt(15)/15"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              1,
+              -1,
+              "sqrt(15)/15"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "10*(-13 + 9*sqrt(3))/111",
+        "second_branch": "q_minus",
+        "target_branch": "extra",
+        "temporal_channel": "DIFFERENCE"
+      },
+      {
+        "candidate_index": 15,
+        "canonical_signed_momenta": [
+          1,
+          -2
+        ],
+        "first_branch": "q_plus",
+        "output_ell": 4,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          }
+        ],
+        "relative_spatial_sign": -1,
+        "rho": "(-346*sqrt(30) - 1703 + 523*sqrt(3) + 2304*sqrt(10))/11618",
+        "second_branch": "q_minus",
+        "target_branch": "q_plus",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 16,
+        "canonical_signed_momenta": [
+          1,
+          2
+        ],
+        "first_branch": "q_minus",
+        "output_ell": 3,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          }
+        ],
+        "relative_spatial_sign": 1,
+        "rho": "17*(79 + 51*sqrt(3))/132",
+        "second_branch": "q_minus",
+        "target_branch": "p_extra",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 17,
+        "canonical_signed_momenta": [
+          1,
+          2
+        ],
+        "first_branch": "q_minus",
+        "output_ell": 1,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              1,
+              -1,
+              "sqrt(15)/15"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              1,
+              -1,
+              "sqrt(15)/15"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              1,
+              -1,
+              "sqrt(15)/15"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              1,
+              -1,
+              "sqrt(15)/15"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          }
+        ],
+        "relative_spatial_sign": 1,
+        "rho": "10*(9*sqrt(3) + 77)/8529",
+        "second_branch": "q_plus",
+        "target_branch": "extra",
+        "temporal_channel": "DIFFERENCE"
+      },
+      {
+        "candidate_index": 18,
+        "canonical_signed_momenta": [
+          1,
+          2
+        ],
+        "first_branch": "p_extra",
+        "output_ell": 3,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              -1,
+              -3,
+              "sqrt(14)/14"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 2,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          }
+        ],
+        "relative_spatial_sign": 1,
+        "rho": "(-12586 + 1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3))/25497",
+        "second_branch": "q_minus",
+        "target_branch": "q_plus",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 19,
+        "canonical_signed_momenta": [
+          1,
+          2
+        ],
+        "first_branch": "p_extra",
+        "output_ell": 4,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 4,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          }
+        ],
+        "relative_spatial_sign": 1,
+        "rho": "(849 + 601*sqrt(3))/92",
+        "second_branch": "q_minus",
+        "target_branch": "p_extra",
+        "temporal_channel": "SUM"
+      },
+      {
+        "candidate_index": 20,
+        "canonical_signed_momenta": [
+          1,
+          2
+        ],
+        "first_branch": "q_plus",
+        "output_ell": 1,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              1,
+              -1,
+              "sqrt(15)/15"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              1,
+              -1,
+              "sqrt(15)/15"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              1,
+              -1,
+              "sqrt(15)/15"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              -2,
+              1,
+              -1,
+              "sqrt(15)/15"
+            ],
+            "axisymmetric_fixture_available": false,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          }
+        ],
+        "relative_spatial_sign": 1,
+        "rho": "-10*(-77 + 9*sqrt(3))/8529",
+        "second_branch": "q_minus",
+        "target_branch": "extra",
+        "temporal_channel": "DIFFERENCE"
+      },
+      {
+        "candidate_index": 21,
+        "canonical_signed_momenta": [
+          1,
+          2
+        ],
+        "first_branch": "q_plus",
+        "output_ell": 4,
+        "parity_channels": [
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "polar"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "axial",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "polar",
+            "target_parity": "axial"
+          },
+          {
+            "angular_witness_m1_m2_M_3j": [
+              0,
+              0,
+              0,
+              "sqrt(70)/35"
+            ],
+            "axisymmetric_fixture_available": true,
+            "first_parity": "polar",
+            "reduced_scalar_source_coefficients": 1,
+            "second_parity": "axial",
+            "target_parity": "axial"
+          }
+        ],
+        "relative_spatial_sign": 1,
+        "rho": "(-153 + 24*sqrt(10) + 46*sqrt(30) + 197*sqrt(3))/222",
+        "second_branch": "q_minus",
+        "target_branch": "q_plus",
+        "temporal_channel": "SUM"
+      }
+    ],
+    "target_axial_coefficients": 82,
+    "target_polar_coefficients": 82
+  },
+  "symmetry_reduction": {
+    "already_quotiented": [
+      "simultaneous compact-momentum sign reversal",
+      "Hessian input exchange before fixing the |n|=1 then |n|=2 canonical order"
+    ],
+    "not_identified": [
+      "axial and polar source coefficients",
+      "branch assignments to the two absolute-momentum fibres",
+      "distinct algebraic circumference values"
+    ],
+    "reason": "No action-derived parity-duality intertwiner identifying those coefficient tensors has been certified."
+  }
+}
