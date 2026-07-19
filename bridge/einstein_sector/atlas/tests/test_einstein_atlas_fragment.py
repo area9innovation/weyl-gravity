@@ -167,6 +167,16 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("A=0", second_order["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertIn("twist-position resonance", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("superseded", entry["claim_boundary"])
+
+    def test_complete_global_twist_ell2_cone_closes_last_global_gates(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("E11=Q_e^2/2", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("static/wave union", second_order["bounded_or_finite_quasiperiodic"]["statement"])
 
     def test_global_fixed_ell_k0_bounded_cone_is_registered(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone"]
@@ -236,7 +246,6 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
         self.assertIn("forces d=0", entry["mode_data"]["taub_maps"]["statement"])
         self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
-
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,203 @@
+{
+  "claim_boundary": "Complete only for the full standard global/twist plus ell2,k0 carrier in the bounded class; other ell, momenta, unrestricted secular, causal, all-orders, residual, observational and quantum scopes remain open.",
+  "classification": {
+    "all_orders_integrability": false,
+    "bounded_zero_locus_necessary_and_sufficient": true,
+    "causal_or_quantum_claim": false,
+    "complete_standard_global_twist_plus_ell2_k0_carrier_covered": true,
+    "older_partial_global_ell2_row_superseded": true,
+    "other_ell_or_nonzero_momentum_classified": false,
+    "radion_and_electric_gates_independently_closed": true,
+    "static_and_wave_strata_explicit": true,
+    "unrestricted_smooth_secular_cone_classified": false
+  },
+  "complete_bounded_zero_locus": {
+    "intersection_of_stratum_closures": "wave=0,d=0 with c,W_x,A arbitrary",
+    "static_stratum": "wave=0: a=b=Q_e=B=0 with c,d,W_x,A arbitrary",
+    "union_is_necessary_and_sufficient": true,
+    "wave_stratum": "wave!=0: a=b=d=Q_e=B=0, c,W_x arbitrary, and A plus waves obey the complete constant-position shell restrictions and H=J_i=0"
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "claim": "each bounded correction lies in this smooth class; the larger unrestricted secular cone is not reclassified",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "electric_audit": {
+    "angular_separation": "Q_e times constant twist has ell=1 output and cannot cancel the homogeneous ell=0 E11 coefficient",
+    "bounded_zero_frequency_operator": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "consequence": "E11=Q_e^2/2 forces Q_e=0 on every real bounded wave stratum",
+    "independent_row": "the wave scalar source and every total-H cancellation have E11=0, whereas the pure-electric source has E11=Q_e^2/2",
+    "nonzero_frequency_cross_column": "Q_e times every certified oscillator is a bounded fixed-bundle linear image by electromagnetic-duality transport",
+    "pure_electric_source": [
+      "-Q_e**2/2",
+      "Q_e**2/2",
+      "-Q_e**2/2",
+      "0"
+    ],
+    "row_order": [
+      "E00",
+      "E11",
+      "sphere_trace",
+      "Maxwell1"
+    ],
+    "wave_scalar_row_direction": [
+      "1",
+      "0",
+      "1/2",
+      "0"
+    ]
+  },
+  "equation": "L_WM Phi^(2)=-(1/2)D^2E_WM[Phi^(1),Phi^(1)]",
+  "interpretation": "The complete compact ell2 bounded cone is stratified. The wave-free branch retains the static moduli c,d,W_x,A. Every nonzero wave removes d as well as a,b,Q_e,B, but retains c,W_x and the complete constant-twist incidence cone, including nonaxisymmetric survivors.",
+  "lifecycle_state": "CLASSIFIED",
+  "necessity_proof": {
+    "circumference_velocity": "the certified d successor forces d=0 on every nonzero wave stratum",
+    "electric": "E11=Q_e^2/2 forces Q_e=0 on every real bounded wave stratum",
+    "nonzero_wave_has_minus": "a and Q_e have the plus/extra sign, so any nonzero total moment-map zero containing waves has nonzero Einstein-minus occupation",
+    "predecessor_separation": "on the d-predecessor cone every old bounded cokernel component already vanishes; the radion shell pivot and electric homogeneous E11 row occupy distinct new components",
+    "radion": "any nonzero Einstein-minus coefficient forces a=0",
+    "universal_polynomial": "boundedness first forces b=B=0 and Q_e*a=0",
+    "wave_free": "the exact global moment map then forces a=Q_e=0 and leaves c,d,W_x,A"
+  },
+  "next_gate": "promote the constant-twist incidence map to arbitrary fixed ell and then finite k0 harmonic sums; keep exceptional ell1 and nonzero momentum separate",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.py",
+    "generator_sha256": "795c647b011b8a8e8b441f19f407c42d03acb1167e376f6ab71804acb4418edd",
+    "inputs": {
+      "axial_minus": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.json",
+        "sha256": "39ebaf9dcb4a7d6752ed6cdac995a98f38e89ea3cd7f348fbf61c6569796e875"
+      },
+      "d_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone.json",
+        "sha256": "4dcbf197afdda9fc7e777e562447c1c4203a2284d7f1b861cf807195e786362b"
+      },
+      "electric_transport": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
+        "sha256": "50d0bf118e1699122b8bf4e0c3da7b8fb0295a9a4725d05c155122e8d2202676"
+      },
+      "exceptional_moments": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      },
+      "global_ell2": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_global_ell2_all_m_both_parity_bounded_cone.json",
+        "sha256": "42864eac4f672db0111badbfb2ff37e2311f0fe627f6a381a6c380365d0c0c10"
+      },
+      "homogeneous_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
+        "sha256": "236c308cec85b4edde24f0acd4fe4c2133c58516426041eab2d9ffb01be28d59"
+      },
+      "homogeneous_source": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_quadric_second_order.json",
+        "sha256": "f496750e8af73098b0e9427e2a3b5f7d2bf3ac4c42a1455e3b7807cfa8e73fb6"
+      },
+      "moment_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
+        "sha256": "cf0cbbe2f8b99924c9045c99689481da882ff330e8007a18178488db8ca6a17b"
+      },
+      "polar_minus": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_polar_ell2_minus_resonance.json",
+        "sha256": "ede46396243d1bc3b8fd4c6d4a74e93634a4ff76569143a7ecf23afe22ef42ce"
+      },
+      "standard_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      },
+      "wave_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_combined_cone_second_order.json",
+        "sha256": "697399a0b286a14dcbce292330e3057dc0980a88c0c00a124108b04fa6fe31e4"
+      }
+    }
+  },
+  "radion_audit": {
+    "SO3_promotion": "a is a scalar and each fixed-parity ell=2 minus block is one V_2, so dim Hom_SO3(V_2,V_2)=1; the nonzero m=0 pivot is injective for every m",
+    "consequence": "any nonzero Einstein-minus coefficient forces a=0",
+    "m0_exact_ideals": {
+      "axial": "<b*z,a*z,d*z>",
+      "polar": "<b*z,a*z,d*z>"
+    },
+    "parity_separation": "axial and polar outputs are inequivalent parity blocks and cannot cancel"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_TWIST_ELL2_BOUNDED_CONE",
+  "result_state": "COMPLETE_STANDARD_GLOBAL_TWIST_PLUS_ELL2_K0_BOUNDED_CONE_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-complete-global-twist-ell2-bounded-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.schema.json",
+  "schema_sha256": "70db1a93882d23f7b950452fea1817cd22943429029ac339aac5bb96bfba780f",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic correction",
+    "carrier": "complete standard homogeneous (a,b,c,d,Q_e,W_x), axial twist (A,B), and every axial/polar ell=2,k=0 q/p wave coefficient",
+    "charge_sector": "fixed N=2 magnetic bundle with the complete standard electric/holonomy tangent block included",
+    "degree": 2,
+    "ell": "input 0,1,2 with all quadratic outputs",
+    "k": 0,
+    "m": "all twist and wave m",
+    "omega": "generalized zero plus all three ell2 shells",
+    "parity": "homogeneous, axial and polar",
+    "theory": "Weyl-Maxwell target"
+  },
+  "sufficiency_proof": {
+    "static": "the complete standard generalized-zero theorem supplies a bounded correction",
+    "wave": "after a=Q_e=0 the carrier and equations reduce exactly to the certified d-predecessor wave stratum"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.38,
+      "max_rss_kb": 17892,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 3.39,
+      "max_rss_kb": 59512,
+      "status": "PASS",
+      "tests_run": 39
+    },
+    "tier_2": {
+      "criterion": "the d predecessor, global moment theorem, both minus pivots, direct homogeneous source/operator, wave scalar descent and electric transport are exact hashed inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "other harmonics, momenta and higher lifecycles remain fail-closed",
+      "status": "NOT_RUN"
+    }
+  }
+}

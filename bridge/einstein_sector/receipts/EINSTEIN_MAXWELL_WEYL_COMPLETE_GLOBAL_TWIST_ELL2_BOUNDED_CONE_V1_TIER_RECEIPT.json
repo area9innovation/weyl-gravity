@@ -1,0 +1,60 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_TWIST_ELL2_BOUNDED_CONE",
+  "producing_date": "2026-07-19",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.py": "795c647b011b8a8e8b441f19f407c42d03acb1167e376f6ab71804acb4418edd",
+    "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.json": "a8134742491ad248e70be6a50fcc410689e34a5bd74189b31ce4fd9d1832cd00",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.schema.json": "70db1a93882d23f7b950452fea1817cd22943429029ac339aac5bb96bfba780f",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.py": "b9d2424c5c76ef93a2770e35c34940e8733f3f908606916625406e5e6f47355a",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.py": "72b5577ab9c61efb4cb67702805194ba5b8cc2ac7828dc85e5f49f77ce993c6f",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-complete-global-twist-ell2-bounded-cone.md": "0625a1bc409ee7b7ffbf4c8922670f1e7650e2c443c78f5cd7d93d9b72bcea84",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "324f27f269ec909d9509e41b6db2b90cc5b44d9db612ebc3a0002ab4b626629f",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "d7108348bdcc40049187226ecc39a35b374c4e1a46f7635147a5f17ff2c609f2",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "ac10ea61e22a78473e2e7f9d0a25a7c962c268db199518a999467b92b8f75cd0",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "915e507fdd616d088c16e190a8b75a36dac2421b1ae8a628db704bbd525fa486",
+    "notes/d-quotient-einstein-team-brief.md": "ded72de560679af64ad958ea642321794234cf1430fc2b44d28b4438a4fcbbc7",
+    "notes/universe-building-roadmap.md": "9394a408db6fdef170aa17e7dc30a0fa4c794ba84d25aed855af8e0478c949c2"
+  },
+  "claim": {
+    "certified": "The complete bounded standard-global/twist plus ell=2,k=0 cone is the union of the static (c,d,W_x,A) stratum and the nonzero-wave face with a=b=d=Q_e=B=0, free c,W_x, and the complete constant-position incidence equations.",
+    "open": "Other ell, nonzero momentum, unrestricted secular corrections, causal/retarded propagation, all-orders integration, residual observables and quantum transfer."
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.38,
+      "max_rss_kb": 17892,
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <certificate and schema>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 3.39,
+      "max_rss_kb": 59512,
+      "tests_run": 40,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The d predecessor, standard-global moment theorem, both exact Einstein-minus pivots, direct homogeneous source/operator, complete ell=2 wave scalar descent and electric duality transport are unchanged hashed inputs."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The theorem is a scoped successor, not a full-repository freeze or release; other harmonics, momenta and higher lifecycles remain fail-closed."
+    }
+  }
+}

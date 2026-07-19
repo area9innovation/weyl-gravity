@@ -2520,6 +2520,37 @@ face `d=0`.  Atlas row
 necessity-and-sufficiency theorem.  The remaining dynamical gates are `a` and
 `Q_e`.
 
+Those final two dynamical gates are now closed on the complete declared
+`ell=2,k=0` carrier.  A direct all-`m`, both-parity radion audit binds the
+nonzero `m=0` `a` pivot to the `SO(3)` multiplicity-one promotion and proves
+that axial and polar outputs cannot cancel.  Independently, the wave scalar
+source has zero `E11` entry even when its coefficient participates in the
+total Hamiltonian cancellation.  The bounded homogeneous image at zero
+frequency is zero while the electric self-source contains
+
+```text
+E11 = Q_e^2/2.
+```
+
+Consequently the complete bounded cone is the stratified union
+
+```text
+wave=0:  a=b=Q_e=B=0; c,d,W_x,A arbitrary,
+wave!=0: a=b=d=Q_e=B=0; c,W_x arbitrary;
+         A and the waves obey the complete constant-position incidence
+         equations and H=J_1=J_2=J_3=0.
+```
+
+Atlas row
+`einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone` supersedes the
+older partial global row.  It is `CERTIFIED` only for bounded or finite
+quasiperiodic corrections on this same-background carrier;
+`CAUSAL_RETARDED` remains `NO_CERTIFIED_MAP`.  Active Bridge 1 therefore gains
+a complete nonlinear domain filter at `ell=2,k=0`, not a nonlinear bridge
+morphism.  The next activation gate is the fixed-generic-`ell` constant-twist
+incidence map, followed by finite `k=0` harmonic sums; exceptional `ell=1`,
+nonzero momentum and causal carriers stay separate and fail-closed.
+
 The polar Einstein-minus cross source is now also direct and exact.  Its
 first action row has successive nonzero pivots `66*b*z`, `198*a*z`, and
 `198*d*z`, so Schur promotion gives the same `a=b=d=0` conclusion for every

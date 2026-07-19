@@ -224,6 +224,8 @@ def verify() -> None:
         raise AssertionError("global both-parity twist gap was hidden")
     if global_both_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("global both-parity causal lifecycle was over-promoted")
+    if "superseded" not in global_both["claim_boundary"]:
+        raise AssertionError("partial global ell2 predecessor did not point to its complete successor")
     global_fixed = by_id["einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone"]
     global_fixed_second = global_fixed["mode_data"]["second_order"]
     if global_fixed_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
@@ -302,6 +304,15 @@ def verify() -> None:
         raise AssertionError("d/twist stratified cone was lost")
     if d_cone["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
         raise AssertionError("d/twist bounded cone was demoted")
+    full_global_cone = by_id["einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone"]
+    if full_global_cone["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("complete global/twist ell2 bounded cone was lost")
+    if "E11=Q_e^2/2" not in full_global_cone["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("complete global electric cokernel witness was hidden")
+    if full_global_cone["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("complete global/twist ell2 bounded cone was demoted")
+    if full_global_cone["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("complete global/twist ell2 cone over-promoted causal propagation")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

@@ -1463,6 +1463,19 @@ Einstein--Maxwell `q1/q2/q3` payload is now imported, so the active classical
 relative gate is the same-background Weyl--Maxwell export. Compact-product
 causal Green data remain an independent open rail.
 
+The Einstein-owned nonlinear domain filter feeding Bridge 1 is now complete
+for the full standard homogeneous/twist plus axial/polar `ell=2,k=0` carrier
+in the bounded or finite-quasiperiodic correction class.  Its zero locus is a
+stratified union: the wave-free branch retains `(c,d,W_x,A)`, while every
+nonzero wave forces `a=b=d=Q_e=B=0` and leaves `(c,W_x)` times the certified
+constant-twist incidence cone.  The exact all-`m` radion pivot and the
+independent homogeneous `E11=Q_e^2/2` cokernel row close the last two global
+directions.  Atlas row
+`einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone` is
+`CERTIFIED`; its causal field remains `NO_CERTIFIED_MAP`.  This is an input
+domain for the relative `L_infinity` defects, not evidence that the linear
+cofiber is already a nonlinear morphism.
+
 ### Classical ownership
 
 The authoritative support-local Berger tensors are now certified through

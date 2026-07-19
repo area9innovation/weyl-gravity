@@ -2350,6 +2350,100 @@
       }
     },
     {
+      "claim_boundary": "Other ell, nonzero momentum, unrestricted secular corrections, causal propagation, all-orders integration, residual observables and quantum theory remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_TWIST_ELL2_BOUNDED_CONE",
+          "sha256": "e85b504b93daf0caa8f6754e6bf5b2d7ef1c5c6b65ded84e992b15cae1c66844"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_d_twist_ell2_complete_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_D_TWIST_ELL2_COMPLETE_BOUNDED_CONE",
+          "sha256": "4dcbf197afdda9fc7e777e562447c1c4203a2284d7f1b861cf807195e786362b"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_global_ell2_all_m_both_parity_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_ELL2_ALL_M_BOTH_PARITY_BOUNDED_CONE",
+          "sha256": "42864eac4f672db0111badbfb2ff37e2311f0fe627f6a381a6c380365d0c0c10"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ABD_AXIAL_ELL2_MINUS_RESONANCE",
+          "sha256": "39ebaf9dcb4a7d6752ed6cdac995a98f38e89ea3cd7f348fbf61c6569796e875"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_abd_polar_ell2_minus_resonance.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ABD_POLAR_ELL2_MINUS_RESONANCE",
+          "sha256": "ede46396243d1bc3b8fd4c6d4a74e93634a4ff76569143a7ecf23afe22ef42ce"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_SECOND_ORDER",
+          "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ELECTRIC_WILSON_COMPLETE_OSCILLATOR_TRANSPORT",
+          "sha256": "50d0bf118e1699122b8bf4e0c3da7b8fb0295a9a4725d05c155122e8d2202676"
+        }
+      ],
+      "id": "einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone",
+      "mode_data": {
+        "dispersion": {
+          "statement": "This is the complete same-background standard global/twist plus ell2,k0 carrier; no cross-background identification is used.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The action-derived moment and branch pairings distinguish the static moduli, dynamical globals and all q/p wave branches.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The all-m radion pivot and independent zero-frequency E11=Q_e^2/2 witness close the last two dynamical global directions.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The displayed static/wave union is necessary and sufficient for bounded corrections on the complete declared carrier.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No retarded Weyl-Maxwell complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Bounded corrections lie in the smooth exponential-polynomial class; the unrestricted secular cone is not reclassified.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The static stratum has a=b=Q_e=B=0; every nonzero wave additionally forces d=0, while c,W_x and the constant-twist incidence cone survive.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "complete standard homogeneous (a,b,c,d,Q_e,W_x), axial twist (A,B), and every axial/polar ell=2,k=0 q/p wave coefficient",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2 and the complete electric/holonomy tangent block included",
+        "degree": 2,
+        "ell": "input 0,1,2 with all quadratic outputs",
+        "k": 0,
+        "m": "all twist and wave m",
+        "omega": "generalized zero plus all ell2 shells",
+        "parity": "homogeneous, axial and polar",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "The former arbitrary-A product claim is withdrawn. This row certifies the static branch and A=0 axial ell=2,k=0 wave subcone only; nonzero-A, polar waves, other ell and momenta, infinite sums and higher lifecycles remain fail-closed.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -2449,7 +2543,7 @@
       }
     },
     {
-      "claim_boundary": "The former arbitrary-A product claim is withdrawn. This row preserves the static, A=0 wave, and scoped constant-twist-only nonzero-A subcones; the complete carrier with simultaneous twist and other homogeneous tangents remains fail-closed.",
+      "claim_boundary": "This partial predecessor is superseded for the complete ell=2,k=0 global/twist carrier by einstein.ph.wm.mixed.complete_global_twist_ell2_bounded_cone. Its historical static, A=0 wave and constant-twist-only strata remain certified; it must not be used to reopen the now-closed radion, electric or simultaneous-twist gates.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "OPEN",
@@ -2958,7 +3052,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "a440ff981905b24aef661f56403f2c2b303b0c4f3417ce0ae9dd95ad5693265a",
+  "generated_by_sha256": "324f27f269ec909d9509e41b6db2b90cc5b44d9db612ebc3a0002ab4b626629f",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
