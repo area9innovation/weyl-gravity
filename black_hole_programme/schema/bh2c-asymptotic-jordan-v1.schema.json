@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2c-asymptotic-jordan-v1",
+  "title": "BH-2C stage 1: asymptotic formal structure -- no Jordan logarithms",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "axial",
+    "polar",
+    "headline",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh2c-asymptotic-jordan-v1" },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh2c-asymptotic-jordan-v1.schema.json"
+    },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH2C_ASYMPTOTIC_JORDAN" },
+    "result_token": { "const": "BH2C_ASYMPTOTIC_FORMAL_SYSTEM_LOG_FREE_BOTH_PARITIES" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "frequency_domain",
+        "lifecycle"
+      ],
+      "properties": { "lifecycle": { "const": "CLASSIFIED" } }
+    },
+    "axial": { "type": "object" },
+    "polar": { "type": "object" },
+    "headline": {
+      "type": "object",
+      "required": ["statement", "paper_gate"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "axial_log_free_certified",
+        "polar_mu0_log_free_certified",
+        "polar_mu2w_log_free_fixture_certified",
+        "polar_mu2w_symbolic_certified",
+        "summability_certified",
+        "metric_reconstruction_certified",
+        "finite_flux_boundary_class_certified",
+        "general_l_certified"
+      ],
+      "properties": {
+        "axial_log_free_certified": { "const": true },
+        "polar_mu0_log_free_certified": { "const": true },
+        "polar_mu2w_log_free_fixture_certified": { "const": true },
+        "polar_mu2w_symbolic_certified": { "const": false },
+        "summability_certified": { "const": false },
+        "metric_reconstruction_certified": { "const": false },
+        "finite_flux_boundary_class_certified": { "const": false },
+        "general_l_certified": { "const": false }
+      }
+    },
+    "missing_objects": {
+      "type": "array",
+      "minItems": 5,
+      "items": { "type": "string" }
+    },
+    "stage_seconds": { "type": "object" },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "engine_path",
+        "engine_sha256",
+        "axial_disposition_certificate",
+        "axial_disposition_certificate_sha256",
+        "polar_disposition_certificate",
+        "polar_disposition_certificate_sha256"
+      ]
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh2c_asymptotic_jordan.py"
+    }
+  }
+}
