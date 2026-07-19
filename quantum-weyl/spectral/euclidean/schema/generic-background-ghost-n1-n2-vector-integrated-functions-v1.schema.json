@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "generic-background-ghost-n1-n2-vector-integrated-functions-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_state",
+    "dependency_tags", "classical_commit", "scope", "convention",
+    "moment_rows", "channel_rows", "identity_ledger", "formula_digest",
+    "claim_flags", "dependencies", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-ghost-n1-n2-vector-integrated-functions-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_INTEGRATED_FUNCTIONS"},
+    "result_state": {"const": "COEFFICIENT_COMPUTED"},
+    "lifecycle_state": {"type": "string", "minLength": 1},
+    "dependency_tags": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+    },
+    "classical_commit": {"type": "string", "minLength": 1},
+    "scope": {"type": "object"},
+    "convention": {"type": "object"},
+    "moment_rows": {
+      "type": "object", "additionalProperties": {"type": "string"},
+      "minProperties": 6, "maxProperties": 6
+    },
+    "channel_rows": {
+      "type": "array", "minItems": 11, "maxItems": 11,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": [
+          "channel_id", "carrier_id", "label_order", "source_integrand_digest",
+          "Delta_times_integrand", "numerator_total_degree",
+          "function_basis_coordinates", "identically_zero", "exact_holdouts"
+        ],
+        "properties": {
+          "channel_id": {"type": "string", "minLength": 1},
+          "carrier_id": {"enum": ["I10", "I24", "I25", "I28", "I29"]},
+          "label_order": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 3}, "minItems": 3, "maxItems": 3},
+          "source_integrand_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "Delta_times_integrand": {"type": "string"},
+          "numerator_total_degree": {"type": "integer", "minimum": 0, "maximum": 2},
+          "function_basis_coordinates": {"type": "object", "minProperties": 4, "maxProperties": 4},
+          "identically_zero": {"type": "boolean"},
+          "exact_holdouts": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object"}}
+        }
+      }
+    },
+    "identity_ledger": {"type": "object"},
+    "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "claim_flags": {
+      "type": "object", "additionalProperties": {"type": "boolean"},
+      "required": [
+        "GENERIC_GHOST_VECTOR_N1_N2_INTEGRATED_FUNCTIONS_COMPUTED",
+        "NO_NEW_TRANSCENDENTAL_MASTER_REQUIRED",
+        "ALL_FIVE_HODGE_RESOLVENT_CARRIERS_EVALUATED",
+        "GENERIC_GHOST_LONGITUDINAL_CARRIERS_EVALUATED",
+        "GENERIC_FINITE_SCHUR_ROWS_COMPUTED",
+        "COMPLETE_GENERIC_GHOST_THIRD_CURVATURE_FUNCTIONS_COMPUTED",
+        "FULL_BV_FORM_FACTORS_COMPUTED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "RESIDUAL_TRANSFER_AUTHORIZED",
+        "LORENTZIAN_CERTIFIED"
+      ]
+    },
+    "dependencies": {"type": "object"},
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

@@ -180,6 +180,14 @@ or quantum-master-equation result.
   evaluates the combined pure-vector `n=1+n=2` slice from CPT rows 1, 3 and
   14 and proves that the remaining three longitudinal carriers require
   nonminimal `D_W=delta W d` kernels.
+- [`reports/generic-background-ghost-n1-n2-vector-integrated-functions.md`](reports/generic-background-ghost-n1-n2-vector-integrated-functions.md)
+  integrates that pure-vector slice exactly into the common triangle,
+  two-log and rational basis, with six nonzero channels, five exact zeros and
+  no new transcendental master.
+- [`reports/generic-background-partial-bv-third-curvature-form-factors.md`](reports/generic-background-partial-bv-third-curvature-form-factors.md)
+  adds the vector slice to the physical-plus-ghost-`n=3` functions, preserves
+  the exact ten-dimensional `I28` quotient and leaves exactly three
+  longitudinal/mixed carriers plus remaining BV sectors open.
 - [`reports/generic-background-ghost-longitudinal-schur-resummation.md`](reports/generic-background-ghost-longitudinal-schur-resummation.md)
   resums those three longitudinal towers into one normalized scalar Schur
   determinant, fixes the cubic weights `(-1/3,1/9,-1/81)`, reproduces the

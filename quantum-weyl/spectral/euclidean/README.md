@@ -317,6 +317,14 @@ finite rows remain a separate global Green/spectral problem.
 The coefficient-bearing generic carrier assembly now combines the complete
 physical-Hessian Mellin-MS representative with all eleven integrated ghost
 `n=3` triangle functions. The exact ten-dimensional `I28` quotient is
-preserved. This remains a partial-BV result because ghost `n=1/n=2`, the
-generic finite Schur rows and remaining BV sectors are not computed. See
+preserved. This historical assembly is superseded as the active partial-BV
+ledger by the vector-`n=1+n=2` addition below. See
 [`generic-background-physical-plus-ghost-n3-third-curvature-form-factors.md`](../../reports/generic-background-physical-plus-ghost-n3-third-curvature-form-factors.md).
+
+The pure-vector ghost `n=1+n=2` slice is now integrated exactly by a complete
+quadratic simplex-moment reduction; see
+[`generic-background-ghost-n1-n2-vector-integrated-functions.md`](../../reports/generic-background-ghost-n1-n2-vector-integrated-functions.md).
+It is assembled with the physical and ghost-`n=3` rows in the fail-closed
+[`generic-background-partial-bv-third-curvature-form-factors.md`](../../reports/generic-background-partial-bv-third-curvature-form-factors.md).
+Only the three longitudinal/mixed `D_W` carriers, their generic finite Schur
+rows and remaining BV sectors are absent from that ledger.

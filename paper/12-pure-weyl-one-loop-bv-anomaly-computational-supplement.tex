@@ -1437,6 +1437,37 @@ representative still has quotient dimension ten.  Curved-Endo ghost
 $n=1/n=2$, generic finite Schur rows, remaining BV sectors and finite-$C^2$
 normalization remain open.
 
+The pure minimal-vector $n=1+n=2$ slice is now integrated separately.  Since
+every projected numerator has degree at most two, five exact simplex boundary
+identities solve its complete moment system.  Six channels are nonzero, five
+vanish, and all results use only the already certified scalar triangle, two
+bubble-log ratios and rational terms.  No new transcendental master is
+introduced.  The independent consumer reconstructs the exact moment matrix
+without importing producer formulas and numerically quadratures every
+nonzero channel at $(x_1,x_2,x_3)=(2,3,5)$.
+
+Adding these functions to the physical-plus-ghost-$n=3$ ledger yields the
+future-proof partial-BV five-carrier representative.  The symmetric-$I_{28}$
+relation remains zero in all seven function coordinates and the scale row,
+so the quotient dimension remains ten.  Exactly three longitudinal/mixed
+$D_W$ carriers, their generic finite Schur data and the remaining BV sectors
+remain open.
+
+\begin{verbatim}
+MOD="spectral.euclidean.generic_background_ghost_n1_n2_vector_"
+MOD="${MOD}integrated_functions"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+CHECK="spectral.euclidean.verify_generic_background_ghost_n1_n2_vector_"
+CHECK="${CHECK}integrated_functions"
+PYTHONPATH=quantum-weyl python3 -m "$CHECK"
+MOD="spectral.euclidean.generic_background_partial_bv_"
+MOD="${MOD}third_curvature_form_factors"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+CHECK="spectral.euclidean.verify_generic_background_partial_bv_"
+CHECK="${CHECK}third_curvature_form_factors"
+PYTHONPATH=quantum-weyl python3 -m "$CHECK"
+\end{verbatim}
+
 \begin{verbatim}
 MOD="spectral.euclidean.generic_background_physical_plus_ghost_n3_"
 MOD="${MOD}third_curvature_form_factors"
@@ -2236,10 +2267,11 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-	\item compute curved-Endo ghost $n=1/n=2$ and generic finite Schur rows
-using a full primed Green/resolvent kernel or complete spectral measure, then
-add them and the remaining BV sectors to the physical-plus-ghost-$n=3$
-five-carrier representative while keeping the independent finite-counterterm
+	\item compute the three remaining longitudinal/mixed $D_W$ carriers and
+their generic finite Schur rows using a full primed Green/resolvent kernel or
+complete spectral measure, then add them and the remaining BV sectors to the
+physical-plus-ghost-$n=3$-plus-vector-$n=1+n=2$ partial-BV five-carrier
+representative while keeping the independent finite-counterterm
 normalization explicit; then assemble the
 complete repository parity-even third-curvature functions and coefficients,
 the parity-odd derivative carrier manifest, finite

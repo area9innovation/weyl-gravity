@@ -1902,6 +1902,30 @@ independent finite $C^2$ normalization, and is not a complete $\Gamma_1$ or
 $Q_1$.
 \end{proposition}
 
+\begin{proposition}[Exact vector-$n=1+n=2$ integration and partial-BV assembly]
+For the pure minimal-vector slice, the projected numerator degree is at most
+two.  Five exact simplex boundary identities---the two first-moment
+$\partial_{\alpha_i}\log\Delta$ identities, two weighted cross-boundary
+identities, and $\int_{\Delta_2}\Delta/\Delta=1/2$---therefore determine every
+required moment.  All eleven channels reduce to
+\[
+ J_\triangle,\qquad \log\frac{x_2}{x_1},\qquad
+ \log\frac{x_3}{x_1},\qquad \mathbb Q(x_1,x_2,x_3),
+\]
+so no new transcendental master is required.  Six channels are nonzero and
+five vanish identically; an independent direct quadrature checks all six
+nonzero functions at a nonexceptional point.
+
+Adding these rows to the physical-plus-ghost-$n=3$ representative preserves
+the coefficientwise $I_{28}$ relation and the ten-dimensional quotient.  The
+result is an exact partial-BV five-carrier Mellin-MS representative containing
+the same-gauge physical Hessian, all ghost $n=3$ rows, and
+$N1_{\rm vector}+N2_{\rm vector,vector}$.  It excludes exactly the three
+longitudinal/mixed carriers containing $D_W=\delta Wd$, their generic finite
+Schur data, and the remaining BV sectors; it is not the complete ghost
+determinant, $\Gamma_1$, or $Q_1$.
+\end{proposition}
+
 \begin{proposition}[Exact symmetric-point ghost triangle fixture]
 At the normalized nonexceptional Euclidean point
 $x_1=x_2=x_3=1$, put
@@ -2039,9 +2063,13 @@ weight-raised convention, the noncommuting BCH trace and local defect
 $-\tfrac14\operatorname{Wres}(K^2)$ are exact and specialize to $-1/3$ on
 round $S^4$.  The smoothing theorem shows that the generic finite counterparts
 still require a full primed Green/spectral carrier.  All eleven generic
-ghost $n=3$ functions, including the pole-four $I_{29}$ row, are complete and
+  ghost $n=3$ functions, including the pole-four $I_{29}$ row, are complete and
 are now added to the physical-Hessian carrier representative with the exact
-$I_{28}$ quotient relation preserved.
+$I_{28}$ quotient relation preserved.  The pure-vector ghost $n=1+n=2$ slice
+is also integrated exactly: six channels are nonzero, five vanish, and no new
+transcendental master appears.  Adding it gives the exact partial-BV
+five-carrier representative; exactly three longitudinal/mixed $D_W$ carriers
+remain open in the ghost block.
 The same-gauge physical Hessian is now imported through first curvature
 order together with its projected algebraic curvature-squared block; the
 gauge-ordering commutator and round-$S^4$ split are exact.  Its formally
@@ -2107,6 +2135,8 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_FIVE_CARRIER_PROJECTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_INTEGRATION_OBSTRUCTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_INTEGRATED_FUNCTIONS.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PARTIAL_BV_THIRD_CURVATURE_FORM_FACTORS.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json}.
@@ -2243,10 +2273,13 @@ relative-IBP boundary fluxes and seven-function triangle decompositions are
 complete.  Those functions, the finite contact rows and the combined scale
 rows are now assembled into five carrier-labelled physical-Hessian
 Mellin-MS functions, and the complete integrated ghost-$n=3$ triangle is
-added in the same ten-dimensional quotient.  Keeping the independent
-finite-counterterm normalization explicit, compute curved-Endo ghost
-$n=1/n=2$ and generic finite Schur rows from a primed Green kernel or complete
-spectral measure and add the remaining BV sectors, then complete the
+added in the same ten-dimensional quotient.  The pure-vector ghost
+$n=1+n=2$ slice is integrated in the same triangle/two-log/rational basis and
+has been added as well.  Keeping the independent finite-counterterm
+normalization explicit, compute the exactly three remaining
+longitudinal/mixed $D_W$ carriers and their generic finite Schur rows from a
+primed Green kernel or complete spectral measure and add the remaining BV
+sectors, then complete the
 substitutions needed to match
 the five imported universal CPT kernels to repository parity-even third-
 curvature form-factor functions and coefficients on the certified carrier

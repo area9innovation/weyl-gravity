@@ -205,8 +205,12 @@ integration. All eleven generic ghost `n=3` functions are therefore complete
 and are now added channelwise to the physical-Hessian representative. Their
 upstream determinant multiplier is retained, two exact generic holdouts are
 stored per channel, and the coefficientwise `I28` relation survives. This is
-a partial-BV five-carrier representative: ghost `n=1/n=2`, finite Schur and
-remaining BV rows remain open.
+a partial-BV five-carrier representative. The pure-vector ghost `n=1+n=2`
+slice is now integrated exactly as well: six channels are nonzero, five
+vanish, and no new transcendental master is required. Adding it preserves
+the coefficientwise `I28` relation and the ten-dimensional quotient. Exactly
+three longitudinal/mixed `D_W` carriers, their generic finite Schur rows and
+the remaining BV sectors remain open.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute
@@ -529,10 +533,11 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. compute the curved-Endo ghost `n=1/n=2` rows and supply the full generic
-   primed Green kernel or spectral measure for the global finite `R(K)`,
-   `R(K^2)` and `det_3` rows, then add these and the remaining BV sectors to
-   the physical-plus-ghost-`n=3` five-carrier representative;
+1. compute the three remaining longitudinal/mixed `D_W` carriers and supply
+   the full generic primed Green kernel or spectral measure for their finite
+   Schur rows and the global finite `R(K)`, `R(K^2)` and `det_3` rows, then
+   add these and the remaining BV sectors to the current partial-BV
+   five-carrier representative;
 2. classify the parity-odd derivative sector and fix the finite `C2` and
    absolute dressed `R(g_hat)^2` normalizations and renormalized products;
 3. use those data to determine complete `Gamma1/Q1`;

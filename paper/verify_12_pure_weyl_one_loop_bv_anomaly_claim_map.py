@@ -77,6 +77,7 @@ def main() -> None:
         "full primed Green kernel or equivalent spectral measure",
         "Same-gauge physical-Hessian linear-curvature import",
         "Physical plus ghost-$n=3$ carrier assembly",
+        "Exact vector-$n=1+n=2$ integration and partial-BV assembly",
         "Algebraic $H_2$ cancellation of the symmetric $M_{14}$ divergence is therefore refuted",
     ]
     for fragment in required_manuscript_fragments:
@@ -232,6 +233,16 @@ def main() -> None:
     assert claims["generic_ghost_vector_n1_plus_n2_CPT_formula"] == (
         "6 Gamma1 S1 - 2 Gamma3 S3 - 2 Gamma14 S14"
     )
+    assert claims["generic_ghost_vector_n1_n2_integrated_functions"] is True
+    assert claims["generic_ghost_vector_n1_n2_nonzero_channel_count"] == 6
+    assert claims["generic_ghost_vector_n1_n2_zero_channel_count"] == 5
+    assert claims["generic_ghost_vector_n1_n2_no_new_master"] is True
+    assert claims["partial_BV_five_carrier_representative_computed"] is True
+    assert claims["partial_BV_quotient_dimension"] == 10
+    assert claims["partial_BV_I28_relation_status"] == {
+        "coordinates": ["ZERO"],
+        "scale": "ZERO",
+    }
     assert claims["generic_ghost_longitudinal_DW_missing_carriers"] == [
         "N1_LONGITUDINAL_SCALAR",
         "N2_VECTOR_LONGITUDINAL",
@@ -424,7 +435,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "COMPUTE_GHOST_N1_N2_AND_GENERIC_FINITE_SCHUR_ROWS_THEN_ADD_REMAINING_BV_SECTORS"
+        == "COMPUTE_THREE_LONGITUDINAL_SCHUR_CARRIERS_AND_REMAINING_BV_SECTORS"
     )
 
     dependencies = {}
@@ -464,7 +475,7 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
     assert claims["physical_Hessian_triangle_corner_count"] == 33
     assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
-    assert len(payload["inputs"]) == 64
+    assert len(payload["inputs"]) == 66
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -529,6 +540,12 @@ def main() -> None:
     ]
     generic_ghost_n1_n2 = dependencies["GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION"]
     generic_ghost_n1_n2_vector = dependencies["GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION"]
+    generic_ghost_vector_integrated = dependencies[
+        "GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_INTEGRATED_FUNCTIONS"
+    ]
+    partial_bv = dependencies[
+        "GENERIC_BACKGROUND_PARTIAL_BV_THIRD_CURVATURE_FORM_FACTORS"
+    ]
     generic_ghost_longitudinal_schur = dependencies["GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION"]
     generic_ghost_schur_schatten = dependencies["GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT"]
     generic_ghost_schur_wodzicki = dependencies["GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE"]
@@ -784,6 +801,24 @@ def main() -> None:
     assert generic_ghost_n1_n2_vector["claim_flags"][
         "ALL_FIVE_HODGE_RESOLVENT_CARRIERS_EVALUATED"
     ] is False
+    assert generic_ghost_vector_integrated["claim_flags"][
+        "GENERIC_GHOST_VECTOR_N1_N2_INTEGRATED_FUNCTIONS_COMPUTED"
+    ] is True
+    assert generic_ghost_vector_integrated["claim_flags"][
+        "NO_NEW_TRANSCENDENTAL_MASTER_REQUIRED"
+    ] is True
+    assert generic_ghost_vector_integrated["identity_ledger"][
+        "nonzero_channel_count"
+    ] == 6
+    assert generic_ghost_vector_integrated["identity_ledger"][
+        "zero_channel_count"
+    ] == 5
+    assert partial_bv["claim_flags"][
+        "PARTIAL_BV_FIVE_CARRIER_REPRESENTATIVE_COMPUTED"
+    ] is True
+    assert partial_bv["claim_flags"]["GHOST_VECTOR_N1_N2_INCLUDED"] is True
+    assert partial_bv["claim_flags"]["GHOST_LONGITUDINAL_CARRIERS_INCLUDED"] is False
+    assert partial_bv["quotient_ledger"]["quotient_dimension"] == 10
     assert generic_ghost_longitudinal_schur["claim_flags"][
         "GENERIC_GHOST_LONGITUDINAL_SCHUR_FACTORIZATION_COMPUTED"
     ] is True

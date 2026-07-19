@@ -167,7 +167,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             == "quantum.crosswalk.generic_background_diff_weyl_ghost_cpt_obstruction_to_particle"
         )
         self.assertIn(
-            "longitudinal D_W towers are resummed",
+            "exactly three longitudinal/mixed D_W carriers remain",
             ghost["scope"]["carrier"],
         )
         self.assertEqual(
@@ -180,6 +180,8 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
                 "GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION",
                 "GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION",
                 "GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION",
+                "GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_INTEGRATED_FUNCTIONS",
+                "GENERIC_BACKGROUND_PARTIAL_BV_THIRD_CURVATURE_FORM_FACTORS",
                 "GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION",
                 "GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT",
                 "GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE",

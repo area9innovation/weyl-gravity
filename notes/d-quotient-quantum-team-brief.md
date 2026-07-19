@@ -1328,8 +1328,8 @@ ten-dimensional coefficient-bearing partial-BV representative.
 
 This does not close the generic ghost determinant. Curved-Endo ghost
 `n=1/n=2`, finite longitudinal-Schur rows, remaining BV sectors and the
-independent finite `C2` normalization remain open. The active coefficient
-gate is:
+independent finite `C2` normalization remain open. The then-active coefficient
+gate, now superseded by the vector integration below, was:
 
 ```text
 COMPUTE_GHOST_N1_N2_AND_GENERIC_FINITE_SCHUR_ROWS_THEN_ADD_REMAINING_BV_SECTORS
@@ -1337,3 +1337,28 @@ COMPUTE_GHOST_N1_N2_AND_GENERIC_FINITE_SCHUR_ROWS_THEN_ADD_REMAINING_BV_SECTORS
 
 Receipt:
 [`generic-background-physical-plus-ghost-n3-third-curvature-form-factors.md`](../quantum-weyl/reports/generic-background-physical-plus-ghost-n3-third-curvature-form-factors.md).
+
+## Integrated vector `n=1+n=2` and partial-BV assembly (2026-07-19)
+
+The pure minimal-vector ghost slice is no longer open. Exact simplex-moment
+boundary identities integrate `N1_VECTOR+N2_VECTOR_VECTOR` into the existing
+triangle/two-log/rational basis. Six of the eleven channels are nonzero, five
+vanish, and no new transcendental master appears. An independent consumer
+reconstructs the exact moment solution and directly quadratures all nonzero
+channels.
+
+Those functions are now added to the physical-plus-ghost-`n=3` carrier
+representative in a future-proof `PARTIAL_BV` ledger. The exact `I28` quotient
+relation remains coefficientwise zero. The unresolved ghost gate is now
+exactly the three longitudinal/mixed `D_W` carriers and their generic finite
+Schur data, not all of `n=1/n=2`.
+
+Receipts:
+[`generic-background-ghost-n1-n2-vector-integrated-functions.md`](../quantum-weyl/reports/generic-background-ghost-n1-n2-vector-integrated-functions.md) and
+[`generic-background-partial-bv-third-curvature-form-factors.md`](../quantum-weyl/reports/generic-background-partial-bv-third-curvature-form-factors.md).
+
+Active gate:
+
+```text
+COMPUTE_THREE_LONGITUDINAL_SCHUR_CARRIERS_AND_REMAINING_BV_SECTORS
+```
