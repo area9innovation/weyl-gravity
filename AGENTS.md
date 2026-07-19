@@ -159,3 +159,22 @@ promote a claim.
 
 Before committing, complete the applicable tiers and inspect the exact
 staged diff.  Report unrelated working-tree changes without including them.
+
+<!-- science-forge:begin 14e2f2b8b60280ad -->
+This programme has adopted Science Forge — auditable, falsifiable computer-assisted research coordination.
+The substrate (exact kernels, certificate audits, the evidence graph, the `sfc` coordinator) lives in the
+tango/forge repo under `forge/tools/{science-forge,certlab,claimlang,physics-*}` + `forge/lib/math`; read
+`forge/tools/science-forge/GUIDE.md` THERE first. In THIS repo:
+- `planning/` is the work-item coordination model (one file per stream, append-only events, generated
+  briefs) — see `planning/README.md`; it is the operational face of `notes/universe-building-roadmap.md`.
+- `reports/science-forge-handoff-2026-07-19.md` is the substrate handoff (a new result, corpus drift
+  findings, and what is usable today, all read-only over this tree).
+- `ci/science-forge-shadow.sh` is the advisory certlab audit rail — read-only, reports drift WITHOUT
+  failing the build (`--strict` to fail closed).
+The five Science Forge laws are MANDATORY and match this repo's own discipline: fail closed (a skip or
+timeout is never a pass), append-only history (transitions and repairs are new events, never edits),
+independent rails (re-running a producer is reproduction, not verification), honest boundaries
+(does_not_establish is not a claim), and exact vs numeric are distinct types. This block is ADDITIVE and
+managed by hash markers; change the sources (`planning/`, the roadmap), never these bytes by hand.
+
+<!-- science-forge:end -->
