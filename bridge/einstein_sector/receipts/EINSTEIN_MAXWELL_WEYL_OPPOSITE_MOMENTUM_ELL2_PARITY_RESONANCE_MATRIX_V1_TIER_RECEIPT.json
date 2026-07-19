@@ -1,0 +1,62 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_PARITY_RESONANCE_MATRIX",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix.py": "df188dc987e42cee5548f029c815cfa6f0c8b6e4509fc5f86404457434330b20",
+    "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix.json": "e45a20b719ef7aabe8ed0bb56a3565251a59b92a6d102936447ddd0408609581",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix.schema.json": "e1247a0e40b34c51542503af44b71a2ffa55270f86511ca0b9f781222b2bb6ea",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix.py": "4b5d5e13eb3180cf03568fc9678e3f6efdd3dd3da34c9a9f823938a3796d98b6",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix.py": "3c9f406688b459f75de9f6329550e1c8c6b3be748375739e7bb8f38c97bec234",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-opposite-momentum-ell2-parity-resonance-matrix.md": "62eaf79fed30eaba93ece5e0d0d8b4fb034eafa7fbbd14a29463abf148782ec2",
+    "bridge/einstein_sector/einstein_maxwell_weyl_opposite_momentum_ell2_polar_resonant_source_explore.py": "87c1352e3a3107fc7fcec4610193a8beab6c86ab2fc425c261c09e9aa8e2aaa1",
+    "bridge/einstein_sector/einstein_maxwell_weyl_opposite_momentum_ell2_axial_polar_resonant_source_explore.py": "2139013c2f179a9dd3d6da281230e9dd3773575cf1887cb8ec0f4c5e8027d09f"
+  },
+  "claim": {
+    "certified": "The tuned ell=2 L=4 opposite-momentum resonance matrix is complete across axial and polar Einstein-minus input parity. Pure parity directions are obstructed, while its exact mixed null face is a_+=sigma*sqrt(3)*p_+ and a_-=sigma*sqrt(3)*p_-.",
+    "proof": "Three direct four-dimensional quadratic source blocks give the axial diagonal, polar diagonal and axial-polar cross adjoint pairings. The polar diagonal is -3 times the axial one; reflection reverses the cross coefficient. Both surviving coefficients have exact nonzero algebraic witnesses.",
+    "open": "Every remaining output block on the mixed null face, the Einstein-plus balance channels, the full bounded correction, other ell and momentum fibres, causal propagation and higher lifecycles."
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.22,
+      "commands": [
+        "python3 -m py_compile <producer, two direct engines, verifier, tests and atlas consumers>",
+        "python3 -m json.tool <certificate, schema and receipt>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.86,
+      "max_rss_kb": 59664,
+      "tests_run": 40,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 1087.46,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_opposite_momentum_ell2_polar_resonant_source_explore",
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_opposite_momentum_ell2_axial_polar_resonant_source_explore"
+      ],
+      "resources": {
+        "polar_polar": {"elapsed_seconds": 419.61, "max_rss_kb": 134252},
+        "axial_polar": {"elapsed_seconds": 667.85, "max_rss_kb": 131024},
+        "axial_axial": "PASS_BY_CONTENT_ADDRESS"
+      }
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The mixed L4 null face is not a complete bounded-cone or higher-lifecycle theorem."
+    }
+  }
+}

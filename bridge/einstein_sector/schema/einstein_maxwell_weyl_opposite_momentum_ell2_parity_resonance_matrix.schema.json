@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "generality_level", "scope", "direct_source_ledger", "reflection_audit", "resonance_matrix", "null_locus", "correction_classes", "classification", "provenance", "verification_receipt", "verification_commands", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-opposite-momentum-ell2-parity-resonance-matrix-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_PARITY_RESONANCE_MATRIX"},
+    "null_locus": {
+      "type": "object",
+      "required": ["pure_axial_verdict", "pure_polar_verdict", "mixed_L4_resonance_null_face_nonempty"],
+      "properties": {
+        "pure_axial_verdict": {"const": "OBSTRUCTED"},
+        "pure_polar_verdict": {"const": "OBSTRUCTED"},
+        "mixed_L4_resonance_null_face_nonempty": {"const": true}
+      }
+    },
+    "correction_classes": {
+      "type": "object",
+      "required": ["BOUNDED_OR_FINITE_QUASIPERIODIC", "SMOOTH_EXPONENTIAL_POLYNOMIAL", "CAUSAL_RETARDED"],
+      "properties": {
+        "BOUNDED_OR_FINITE_QUASIPERIODIC": {"properties": {"status": {"const": "OPEN"}}, "required": ["status"]},
+        "SMOOTH_EXPONENTIAL_POLYNOMIAL": {"properties": {"status": {"const": "CERTIFIED"}}, "required": ["status"]},
+        "CAUSAL_RETARDED": {"properties": {"status": {"const": "NO_CERTIFIED_MAP"}}, "required": ["status"]}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": ["complete_tuned_L4_two_parity_resonance_matrix_certified", "pure_axial_and_pure_polar_directions_obstructed", "mixed_L4_resonance_null_face_nonempty", "complete_bounded_second_order_extension_on_mixed_null_face", "general_bounded_zero_locus_classified", "causal_or_quantum_claim"],
+      "properties": {
+        "complete_tuned_L4_two_parity_resonance_matrix_certified": {"const": true},
+        "pure_axial_and_pure_polar_directions_obstructed": {"const": true},
+        "mixed_L4_resonance_null_face_nonempty": {"const": true},
+        "complete_bounded_second_order_extension_on_mixed_null_face": {"const": false},
+        "general_bounded_zero_locus_classified": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      }
+    }
+  }
+}

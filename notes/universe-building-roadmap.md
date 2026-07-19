@@ -1680,6 +1680,16 @@ independence of a phase-sensitive `R_j^bounded` from the Taub maps; the full
 bounded zero locus remains `OPEN`, and the causal lifecycle remains
 `NO_CERTIFIED_MAP`.
 
+The tuned `ell=2` phase functional is now complete across input parity on its
+`L=4` output.  Pure axial and pure polar standing waves are both obstructed,
+with diagonal coefficient ratio `-3`; the axial--polar cross row is nonzero
+and odd under momentum reflection.  The resulting two equations have the
+exact mixed null face `a_+=sigma*sqrt(3)*p_+`,
+`a_-=sigma*sqrt(3)*p_-`.  This is the next candidate bounded face, not an
+extension theorem: all remaining output blocks and the Einstein-plus balance
+channels are still `OPEN`.  Smooth secular extension is `CERTIFIED` and the
+causal lifecycle remains `NO_CERTIFIED_MAP`.
+
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared
 certificate paths in the Einstein-team brief, with all of:
