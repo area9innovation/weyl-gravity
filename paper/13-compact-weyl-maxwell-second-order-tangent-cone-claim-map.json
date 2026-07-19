@@ -2,7 +2,7 @@
   "schema": "paper-draft-source-map-v1",
   "paper_id": "PAPER_13_COMPACT_WEYL_MAXWELL_SECOND_ORDER_TANGENT_CONE",
   "lifecycle_state": "DRAFT_ALLOWED",
-  "source_baseline": "4657baebd558a4cbb50873812701b5911a3df861",
+  "source_baseline": "d6d58957f899c1433f43c1c37d1618eb298ffb86",
   "manuscript": "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
   "certified_scope": {
@@ -19,6 +19,10 @@
     "two_absolute_momentum_axisymmetric_L4_coefficients": "108_OF_108",
     "two_absolute_momentum_nonaxisymmetric_L3_coefficients": "44_OF_44",
     "two_absolute_momentum_nonaxisymmetric_L1_coefficients": "12_OF_12",
+    "collision_candidates_1_through_15_bounded_cone_origin": true,
+    "same_sign_candidates_16_through_21_same_fibre_nonzero_defects": "864_OF_864",
+    "same_sign_candidates_16_through_21_nonzero_bounded_points": "6_OF_6",
+    "same_sign_candidates_16_through_21_complete_real_cones": false,
     "two_absolute_momentum_arbitrary_amplitude_zero_variety": false,
     "complete_finite_support_bounded_cone": false,
     "causal_second_order_map": false,
@@ -109,6 +113,18 @@
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
       "git_blob": "dcc938c76586aafdacbb6f5ba7ffa9f2c0195533"
+    },
+    {
+      "path": "bridge/certificates/einstein_maxwell_weyl_collision_scalar_separation_classification.json",
+      "git_blob": "ffc891bd77e49ac12245d248bd10f54b920b222f"
+    },
+    {
+      "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_same_fibre_census.json",
+      "git_blob": "25dee3dbd2343ca30cc37f3640432083da562e5f"
+    },
+    {
+      "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.json",
+      "git_blob": "a95cbb184e5b065a23193c248289d9d45ff3eb6a"
     }
   ],
   "verification_receipt": {
@@ -119,27 +135,29 @@
         "JSON parse through paper/verify_13_14_draft_source_maps.py",
         "git diff --check on scoped paper paths",
         "three-pass pdflatex build with no undefined references or overfull boxes",
-        "PDF text audit for the tuned theorem and Paper 91 successor pointer"
+        "PDF text audit for the tuned theorem, sharp 15/6 collision split and Paper 91 successor pointer"
       ]
     },
     "tier_1": {
       "status": "PASSED",
-      "elapsed_seconds": 38.0,
+      "elapsed_seconds": 27.4,
       "checks": [
         "independent tuned all-primary cone verifier",
         "3 targeted tuned all-primary unit tests",
         "Paper 13/14 source-map verifier",
-        "Paper 91 frozen claim-map verifier"
+        "Paper 91 frozen claim-map verifier",
+        "same-sign same-fibre census verifier and 2 tests",
+        "same-sign bounded-witness verifier and 3 tests"
       ]
     },
     "tier_2": {
       "status": "PASS_BY_CONTENT_ADDRESS",
-      "criterion": "The mathematical operator and certificate are unchanged committed inputs; this change integrates their already-certified scoped theorem into the draft."
+      "criterion": "The manuscript imports the content-addressed collision classifier, 864-defect same-fibre census and six bounded-witness theorem from the pinned d6d58957 baseline."
     },
     "broader_atlas_audit": {
       "status": "PASSED_AFTER_CONCURRENT_ATLAS_UPDATE",
       "checks": [
-        "46 atlas tests plus 9 subtests",
+        "86 atlas tests",
         "independent Einstein compact-product atlas verifier"
       ]
     },
@@ -148,5 +166,5 @@
       "criterion": "Paper 13 remains DRAFT_ALLOWED and no mathematical lifecycle state is promoted."
     }
   },
-  "next_gate": "TWO_ABSOLUTE_MOMENTUM_AMPLITUDE_ZERO_VARIETY"
+  "next_gate": "SIX_SAME_SIGN_COLLISION_COMPLETE_REAL_CONE_DECOMPOSITIONS"
 }
