@@ -19,7 +19,7 @@ OUTPUT_PATH = PACKAGE_ROOT / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 SCHEMA_PATH = PROGRAMME_ROOT / "schema" / "team-contribution-v1.schema.json"
 GENERATOR_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "generators.json"
 PHASE_SPACE_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "phase_spaces.json"
-EVIDENCE_COMMIT = "a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6"
+EVIDENCE_COMMIT = "c1799356f9d2497bd8d6a65da8cc7d6e96ce9727"
 EVIDENCE_PATH = (
     "quantum-weyl/cartan/certificates/"
     "LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json"
@@ -101,17 +101,18 @@ def build_contribution() -> dict[str, Any]:
             "setting-specific import of the complete 54-row Berger helical D action with exact unary, contraction, and cyclic equivariance",
             "conditional support-local and cyclic reduction of the Berger 54-row causal homotopy problem to the retained 26-row endpoint",
             "strict content-addressed input contract for the retained 26-row Green/Hadamard endpoint with causal support and zero-mode gates",
+            "classical support-local q2 and cyclic two-sided-causal D-Cartan compatibility imported through arity two without quantum promotion",
             "strict sourced/restored renormalized D-Ward insertion contract forbidding Cartan classification before QME restoration",
         ],
         "not_established": [
-            "a complete Diff and antifield-dependent pure-Weyl anomaly basis",
             "a local-anomaly to admissible D-Cartan chain map",
-            "a renormalized observable algebra or actual Q_1",
+            "a coefficient-complete renormalized Q_1 in a declared strict or tau-adic quantum complex",
+            "a renormalized observable algebra and Lorentzian time-ordered products",
             "a restored local quantum master equation",
             "a residual quantum transfer, coefficient, or pairing correction",
             "a scalar-clock, boundary, corner, or Lorentzian causal quantum theorem",
             "the retained 26-row Berger Green homotopy, Hadamard data, or a full Lorentzian quantum construction",
-            "the full four-dimensional support-local q2 and arity-two D-Cartan verdict",
+            "the quantum D-Cartan class of the renormalized Ward insertion",
         ],
         "evidence": {
             "path": EVIDENCE_PATH,
@@ -123,7 +124,7 @@ def build_contribution() -> dict[str, Any]:
             "PYTHONPATH=quantum-weyl python3 -m cartan.contribution --check",
             "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -v",
         ],
-        "next_gate": "populate the prepared contracts with the full classical antifield/Koszul-Tate and support-local q2 exports, the retained 26-row Berger Green/Hadamard endpoint, and the regulated Slavnov/Ward operators; then classify the resulting admissible D-Cartan defect only after QME restoration",
+        "next_gate": "construct coefficient-complete renormalized Q1 and the applicable restored Ward operator in the declared strict or tau-adic complex; add compatible renormalized products and a BRST Hadamard state for any Lorentzian claim; then classify the admissible D-Cartan defect",
     }
 
 

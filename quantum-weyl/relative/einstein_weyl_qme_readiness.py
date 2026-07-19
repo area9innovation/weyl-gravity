@@ -24,8 +24,6 @@ STANDARD_INCLUSION = ROOT / "d_quotient_programme/contributions/einstein-maxwell
 QUADRATIC_PREFLIGHT = ROOT / "d_quotient_programme/contributions/einstein-maxwell-weyl-axial-quadratic-channel-preflight.json"
 LOCAL_CARTAN = ROOT / "quantum-weyl/cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json"
 GLOBAL_A104 = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY.json"
-PLANNING_BRIEF = ROOT / "notes/d-quotient-quantum-team-brief.md"
-ROADMAP = ROOT / "notes/universe-building-roadmap.md"
 LINEAR_TRIANGLE = (
     ROOT / "bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json"
 )
@@ -343,8 +341,6 @@ def build() -> dict[str, Any]:
             "quadratic_channel_preflight_contribution": _dependency(QUADRATIC_PREFLIGHT),
             "local_D_Cartan_comparison": _dependency(LOCAL_CARTAN),
             "Berger_global_A104_partial": _dependency(GLOBAL_A104),
-            "quantum_team_brief": _dependency(PLANNING_BRIEF),
-            "universe_building_roadmap": _dependency(ROADMAP),
             "relative_linear_triangle": _dependency(LINEAR_TRIANGLE),
             "relative_observable_functor": _dependency(RELATIVE_FUNCTOR),
             "polar_ungauged_noether_lift": _dependency(POLAR_LIFT),

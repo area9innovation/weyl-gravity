@@ -97,7 +97,9 @@ quantum transfer remains unauthorized.
 The certificate has strict Draft 2020-12 validation, exact source hashes,
 pinned final-triangle/functor and polar/stabilizer commit checks, an independent
 polynomial replay, classical Green-current replay, and fail-closed coefficient
-and claim mutations. Tier-1 receipts on 2026-07-19 are:
+and claim mutations. Volatile roadmap and team-brief prose are intentionally
+not semantic certificate dependencies; their edits cannot invalidate the
+mathematical import. Tier-1 receipts on 2026-07-19 are:
 
 | Command | Elapsed | Status |
 |---|---:|---|
