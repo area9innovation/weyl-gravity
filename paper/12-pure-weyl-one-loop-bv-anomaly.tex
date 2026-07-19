@@ -978,7 +978,27 @@ The import completely fixes the three-linear vertex
 \[
  \operatorname{Tr}\bigl[(\mathcal H_0^{-1}\mathcal H_1)^3\bigr].
 \]
-It does not integrate that tensor triangle, supply the curvature-squared
+The covariant rows have now also been converted to the exact scalar-flat
+rank-nine momentum vertex.  Formal adjunction requires
+\[
+ A(k,q)=\frac12\bigl[S(k,q)+S(-k,q+k)^T\bigr],
+ \qquad A(k,q)=A(-k,q+k)^T.
+\]
+The completed vertex has zero adjoint defects; the uncompleted source seed
+has 62 on the stored rational check.  At one generic nonexceptional fixture,
+\[
+ (k_1^2,k_2^2,k_3^2)=(10,9,5),\quad
+ (\alpha_0,\alpha_1,\alpha_2)=\left(\frac7{15},\frac15,\frac13\right),
+ \quad \Delta=\frac{104}{45},
+\]
+the exact loop trace has 210 monomials through loop degree six.  Its four Wick
+orders give, before the universal $(4\pi)^{-2}$ factor,
+\[
+ -\frac{3532544138843839}{319810083840000}\ne0.
+\]
+This is an operational interior fixture for the coefficient-bearing tensor
+triangle, not its full alpha polynomial or five-carrier projection.  It does
+not integrate that tensor triangle, supply the curvature-squared
 $\mathcal H_2$ layer, compute the mixed $\mathcal H_1\mathcal H_2$ rows, or
 assemble the five repository form factors.  Those are the next
 coefficient-bearing gates.
@@ -1786,8 +1806,10 @@ round $S^4$.  The smoothing theorem shows that the generic finite counterparts
 still require a full primed Green/spectral carrier.  All eleven generic
 ghost $n=3$ functions, including the pole-four $I_{29}$ row, are complete.
 The same-gauge physical Hessian is now imported through first curvature
-order and its three-linear $n=3$ vertex is fixed; the tensor triangle has not
-yet been integrated.  The generic primed Green/spectral carrier and the
+order; its formally self-adjoint momentum vertex and one exact generic
+interior three-linear $n=3$ fixture are fixed.  The full alpha polynomial,
+five-carrier projection and tensor-triangle integration remain open.  The
+generic primed Green/spectral carrier and the
 curvature-squared Hessian layer, hence the
 five complete repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and
@@ -1829,6 +1851,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json}.
 \item \cert{quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_TRIANGLE_FIXTURE.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json}.
@@ -1948,8 +1971,9 @@ python3 paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py
 
 The immediate local-to-residual question is now sharp.  The pole-four
 $I_{29}$ row and all ten pole-three ghost rows are already reduced to the
-certified triangle/log master system.  Compute the tensor triangle defined by
-the imported same-gauge linear-curvature physical Hessian, import its
+certified triangle/log master system.  Interpolate the exact common numerator
+from the now-operational physical three-linear fixture, project it onto the
+five scalar-flat carriers, and integrate that tensor triangle; then import its
 curvature-squared layer and mixed first/second-curvature trace rows, and then
 complete the substitutions needed to match
 the five imported universal CPT kernels to repository parity-even third-

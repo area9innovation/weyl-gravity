@@ -19,7 +19,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(kinds.count("NONPARTICLE_RESIDUAL_CLASS"), 2)
         self.assertEqual(kinds.count("CARRIER_IMPORT_GAP"), 1)
         self.assertEqual(kinds.count("CLASSICAL_TO_QUANTUM_CROSSWALK"), 1)
-        self.assertEqual(kinds.count("NON_MODE_PARTICLE_GUARD"), 11)
+        self.assertEqual(kinds.count("NON_MODE_PARTICLE_GUARD"), 12)
         cubic_guard = next(
             entry for entry in value["entries"]
             if entry["id"] == "quantum.crosswalk.algebraic_cubic_weyl_carrier_to_particle"
@@ -57,6 +57,16 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             "NO_CERTIFIED_MAP",
         )
         self.assertIn("minimal-CPT substitution obstructed", ghost_guard["scope"]["carrier"])
+        physical_guard = next(
+            entry for entry in value["entries"]
+            if entry["id"]
+            == "quantum.crosswalk.generic_background_physical_hessian_n3_fixture_to_particle"
+        )
+        self.assertIn("formal-adjoint completion", physical_guard["scope"]["carrier"])
+        self.assertEqual(
+            physical_guard["quantum_data"]["particle_interpretation"]["status"],
+            "NO_CERTIFIED_MAP",
+        )
         residual = [
             entry for entry in value["entries"]
             if entry["quantum_data"]["entry_kind"] == "NONPARTICLE_RESIDUAL_CLASS"
@@ -132,7 +142,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             entry for entry in build()["entries"]
             if entry["quantum_data"]["entry_kind"] == "NON_MODE_PARTICLE_GUARD"
         ]
-        self.assertEqual(len(guards), 11)
+        self.assertEqual(len(guards), 12)
         round_s4 = next(
             entry for entry in guards
             if entry["id"]

@@ -164,6 +164,17 @@ def main() -> None:
         "H_repository=(1/2)H_source"
     )
     assert claims["physical_n3_three_linear_insertion_vertex_ready"] is True
+    assert claims["physical_H1_formal_adjoint_momentum_vertex_verified"] is True
+    assert claims["physical_n3_exact_interior_simplex_fixture_computed"] is True
+    assert claims["physical_n3_interior_fixture_Delta"] == {
+        "numerator": 104,
+        "denominator": 45,
+    }
+    assert claims["physical_n3_interior_fixture_loop_monomial_count"] == 210
+    assert claims["physical_n3_interior_fixture_kernel_without_4pi2"] == {
+        "numerator": -3532544138843839,
+        "denominator": 319810083840000,
+    }
     assert claims["generic_background_ghost_minimal_CPT_substitution_obstructed"] is True
     assert claims["generic_background_ghost_effective_divergence_coefficient"] == {
         "numerator": 1,
@@ -323,6 +334,8 @@ def main() -> None:
     assert payload["explicit_nonclaims"][
         "physical_curvature_squared_Hessian_layer"
     ] is False
+    assert payload["explicit_nonclaims"]["physical_n3_full_alpha_polynomial"] is False
+    assert payload["explicit_nonclaims"]["physical_n3_five_carrier_projection"] is False
     assert payload["explicit_nonclaims"][
         "physical_n3_three_linear_triangle_integrated"
     ] is False
@@ -331,7 +344,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "COMPUTE_PHYSICAL_N3_THREE_LINEAR_TRIANGLE_AND_IMPORT_CURVATURE_SQUARED_HESSIAN_LAYER"
+        == "INTERPOLATE_PHYSICAL_N3_COMMON_NUMERATOR_PROJECT_TO_FIVE_CARRIERS_AND_IMPORT_CURVATURE_SQUARED_H2"
     )
 
     dependencies = {}
@@ -365,7 +378,7 @@ def main() -> None:
         "denominator": 6561,
     }
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
-    assert len(payload["inputs"]) == 46
+    assert len(payload["inputs"]) == 47
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -389,6 +402,9 @@ def main() -> None:
     cubic_weyl = dependencies["FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS"]
     third_curvature_weyl = dependencies["FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST"]
     cpt_kernels = dependencies["CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS"]
+    physical_hessian_n3_fixture = dependencies[
+        "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_TRIANGLE_FIXTURE"
+    ]
     generic_ghost_cpt = dependencies["GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION"]
     generic_ghost_endo = dependencies["GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION"]
     generic_ghost_n3 = dependencies["GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER"]
@@ -472,6 +488,21 @@ def main() -> None:
     assert cpt_kernels["claim_flags"]["FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED"] is True
     assert cpt_kernels["claim_flags"]["REPOSITORY_GENERIC_BACKGROUND_TRACE_SUBSTITUTION_SUPPLIED"] is False
     assert cpt_kernels["claim_flags"]["REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED"] is False
+    assert physical_hessian_n3_fixture["exact_interior_fixture"]["Delta"] == claims[
+        "physical_n3_interior_fixture_Delta"
+    ]
+    assert physical_hessian_n3_fixture["exact_interior_fixture"]["loop_trace"][
+        "monomial_count"
+    ] == claims["physical_n3_interior_fixture_loop_monomial_count"]
+    assert physical_hessian_n3_fixture["exact_interior_fixture"][
+        "kernel_without_(4pi)^-2"
+    ] == claims["physical_n3_interior_fixture_kernel_without_4pi2"]
+    assert physical_hessian_n3_fixture["exact_interior_fixture"][
+        "formal_adjoint_check"
+    ]["completed_vertex_defect_count"] == 0
+    assert physical_hessian_n3_fixture["claim_flags"][
+        "PHYSICAL_N3_FIVE_CARRIER_PROJECTION_COMPUTED"
+    ] is False
     assert generic_ghost_cpt["CPT_applicability_decision"]["verdict"] == (
         "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
     )

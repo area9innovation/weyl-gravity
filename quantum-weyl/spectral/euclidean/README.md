@@ -142,6 +142,19 @@ pole or scale coefficient still requires a declared reference-operator order
 and trace normalization. See
 [`GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE.json`](certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE.json).
 
+The imported same-gauge physical Hessian is now operational through first
+curvature order.  Its scalar-flat rank-nine momentum vertex has an exact
+formal-adjoint completion, and one generic interior physical `n=3` simplex
+fixture is evaluated in
+[`GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_TRIANGLE_FIXTURE.json`](certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_TRIANGLE_FIXTURE.json).
+For squared external momenta `(10,9,5)` and simplex point
+`(7/15,1/5,1/3)`, all four Wick orders combine to the nonzero exact kernel
+`-3532544138843839/319810083840000` before `(4 pi)^-2`.  This tests the
+source-row Fourier map, adjunction, loop routing and Wick reduction at one
+generic point.  The full alpha polynomial, five-carrier projection,
+integrated tensor triangle, curvature-squared Hessian layer and mixed rows
+remain open.
+
 Replay with:
 
 ```bash
@@ -172,6 +185,9 @@ PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_symmetric_point_simplex_integration
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n3_barycentric_factorization
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_barycentric_factorization
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_physical_hessian_n3_triangle_fixture --check
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_physical_hessian_n3_triangle_fixture
+PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_physical_hessian_n3_triangle_fixture
 ```
 
 Full regeneration of the five-carrier projection is an exact scientific-tier

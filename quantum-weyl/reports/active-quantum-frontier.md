@@ -129,8 +129,18 @@ through residue order and the local defect is
 `-(1/4)Wres(K^2)=-(4 pi)^-2 integral(R^2+2 Ric^2)/108`. It specializes to
 `-1/3` on round `S4`, with zeta ratio `-4.3114788189487449608...`; the exact
 difference `2` is a factorization-convention effect. The generic finite rows
-still require the full primed Green kernel or spectral measure. The generic
-physical fourth-order Hessian is also still absent.
+still require the full primed Green kernel or spectral measure. The same-gauge
+physical fourth-order Hessian is now imported through first curvature order.
+Its scalar-flat rank-nine momentum vertex has been constructed with the
+required formal-adjoint completion, and one generic interior Feynman-simplex
+fixture of the physical three-linear trace has been evaluated exactly. At
+`(x1,x2,x3)=(10,9,5)` and
+`(alpha0,alpha1,alpha2)=(7/15,1/5,1/3)`, the common denominator is
+`Delta=104/45`; the four Wick orders combine to
+`-3532544138843839/319810083840000` before `(4 pi)^-2`. This is a nonzero
+operational fixture, not the full alpha polynomial, its five-carrier
+projection, an integrated physical tensor triangle, or the missing
+curvature-squared Hessian layer.
 The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
 and rational corner flux. Four explicit primitives cover every orientation,
@@ -178,6 +188,7 @@ See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstructi
 [`generic-background-diff-weyl-ghost-cpt-obstruction.md`](generic-background-diff-weyl-ghost-cpt-obstruction.md),
 [`generic-background-ghost-endo-duhamel-reduction.md`](generic-background-ghost-endo-duhamel-reduction.md),
 [`generic-background-ghost-schur-schatten-split.md`](generic-background-ghost-schur-schatten-split.md),
+[`generic-background-physical-hessian-n3-triangle-fixture.md`](generic-background-physical-hessian-n3-triangle-fixture.md),
 [`generic-background-ghost-n3-pole3-integrated-functions.md`](generic-background-ghost-n3-pole3-integrated-functions.md),
 [`weyl-graviton-box-r-scheme-conversion.md`](weyl-graviton-box-r-scheme-conversion.md), and
 [`vacuum-cylinder-reduced-bridge4-hadamard.md`](vacuum-cylinder-reduced-bridge4-hadamard.md).
@@ -460,15 +471,19 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. supply the same-gauge generic-background physical fourth-order Hessian;
-2. supply the full generic primed Green kernel or spectral measure for the
+1. interpolate the physical three-linear common numerator, project it onto
+   the five scalar-flat carriers, and integrate the resulting tensor
+   triangle;
+2. import the curvature-squared layer of the same-gauge physical Hessian and
+   compute the mixed first-/second-curvature trace rows;
+3. supply the full generic primed Green kernel or spectral measure for the
    global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the
    physical Hessian to integrate
    the five parity-even repository form factors;
-3. classify the parity-odd derivative sector and fix the finite `C2` and
+4. classify the parity-odd derivative sector and fix the finite `C2` and
    absolute dressed `R(g_hat)^2` normalizations and renormalized products;
-4. use those data to determine complete `Gamma1/Q1`;
-5. import a same-background compensator-inclusive classical contraction
+5. use those data to determine complete `Gamma1/Q1`;
+6. import a same-background compensator-inclusive classical contraction
    before residual transfer.
 
 The same-background Lorentzian/Bridge 4 programme remains a parallel carrier
@@ -477,9 +492,10 @@ problem and does not substitute for these Euclidean coefficient inputs.
 The frontier is `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, and
 `LORENTZIAN-CAUSAL` bookkeeping. It is not a quantum theorem.
 
-Tier-1 rerun on 2026-07-18 covers frontier reproduction, independent
+Tier-1 rerun on 2026-07-19 covers frontier reproduction, independent
 verification, the scoped frontier tests, and strict Draft 2020-12 schema
-validation. The coupled repair's affected
+validation. The new physical-Hessian interior fixture additionally passes
+exact regeneration, independent recomputation and eight scoped tests. The coupled repair's affected
 exact chain was run separately at Tier 2 and is recorded in its acceptance
 report. Tier 3 was not run because no quantum lifecycle or paper theorem is
 promoted.

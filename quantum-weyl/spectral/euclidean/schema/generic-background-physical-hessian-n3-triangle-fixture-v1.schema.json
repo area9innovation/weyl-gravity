@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.example/schemas/generic-background-physical-hessian-n3-triangle-fixture-v1.schema.json",
+  "title": "Exact interior fixture for the physical three-linear Hessian triangle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "scalar_flat_momentum_vertex",
+    "parametric_formula",
+    "exact_interior_fixture",
+    "negative_controls",
+    "claim_flags",
+    "dependencies",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-physical-hessian-n3-triangle-fixture-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_TRIANGLE_FIXTURE"},
+    "result_state": {"const": "PHYSICAL_THREE_LINEAR_HESSIAN_TRIANGLE_OPERATIONAL_EXACT_INTERIOR_FIXTURE"},
+    "lifecycle_state": {"const": "COEFFICIENT_BEARING_FIXTURE_COMPUTED_FULL_PARAMETRIC_PROJECTION_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "signature", "background", "quantum_bundle", "curvature_order", "included_trace_row", "excluded_rows"],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": "Euclidean"},
+        "background": {"type": "string", "minLength": 40},
+        "quantum_bundle": {"const": "rank-nine traceless symmetric metric fluctuations"},
+        "curvature_order": {"const": 3},
+        "included_trace_row": {"type": "string", "minLength": 30},
+        "excluded_rows": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 25}}
+      }
+    },
+    "scalar_flat_momentum_vertex": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Fourier_convention", "source_seed_rows", "source_seed_formula_sha256", "within_pair_policy", "formal_adjoint_completion", "formal_adjoint_identity", "traceless_basis", "linearized_Riemann_reconstruction", "Riemann_checks"],
+      "properties": {
+        "Fourier_convention": {"type": "string", "minLength": 40},
+        "source_seed_rows": {"type": "array", "minItems": 16, "maxItems": 16, "items": {"$ref": "#/$defs/seedRow"}},
+        "source_seed_formula_sha256": {"$ref": "#/$defs/hash"},
+        "within_pair_policy": {"type": "string", "minLength": 50},
+        "formal_adjoint_completion": {"const": "A(k,q)=[S(k,q)+S(-k,q+k)^T]/2"},
+        "formal_adjoint_identity": {"const": "A(k,q)=A(-k,q+k)^T"},
+        "traceless_basis": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["description", "rank", "Gram_determinant", "Gram_matrix"],
+          "properties": {
+            "description": {"type": "string"},
+            "rank": {"const": 9},
+            "Gram_determinant": {"const": 256},
+            "Gram_matrix": {"$ref": "#/$defs/matrix9"}
+          }
+        },
+        "linearized_Riemann_reconstruction": {"type": "string", "minLength": 80},
+        "Riemann_checks": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}}
+      }
+    },
+    "parametric_formula": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["routing", "denominator", "Feynman_identity", "shift", "Delta", "physical_trace_log_multiplier", "Wick_coefficients_after_Feynman_and_trace_log", "common_integrand"],
+      "properties": {
+        "routing": {"const": ["q0=p", "q1=p+k1", "q2=p-k3"]},
+        "denominator": {"const": "(q0^2)^2 (q1^2)^2 (q2^2)^2"},
+        "Feynman_identity": {"type": "string", "minLength": 70},
+        "shift": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "Delta": {"type": "string"},
+        "physical_trace_log_multiplier": {"$ref": "#/$defs/rational"},
+        "Wick_coefficients_after_Feynman_and_trace_log": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/rational"}
+        },
+        "common_integrand": {"const": "(4 pi)^-2 N(alpha,k,R)/Delta^4"}
+      }
+    },
+    "exact_interior_fixture": {"$ref": "#/$defs/fixture"},
+    "negative_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["omit_formal_adjoint_completion", "flip_bosonic_n3_trace_log_sign", "promote_to_complete_form_factor"],
+      "properties": {
+        "omit_formal_adjoint_completion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["defect_count", "rejected"],
+          "properties": {"defect_count": {"type": "integer", "minimum": 1}, "rejected": {"const": true}}
+        },
+        "flip_bosonic_n3_trace_log_sign": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["expected_multiplier", "mutated_multiplier", "rejected"],
+          "properties": {"expected_multiplier": {"$ref": "#/$defs/rational"}, "mutated_multiplier": {"$ref": "#/$defs/rational"}, "rejected": {"const": true}}
+        },
+        "promote_to_complete_form_factor": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["attempted", "rejected", "reason"],
+          "properties": {"attempted": {"const": true}, "rejected": {"const": true}, "reason": {"type": "string", "minLength": 50}}
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PHYSICAL_H1_MOMENTUM_VERTEX_CONSTRUCTED",
+        "PHYSICAL_H1_FORMAL_ADJOINT_COMPLETION_VERIFIED",
+        "SCALAR_FLAT_LINEARIZED_RIEMANN_RECONSTRUCTION_VERIFIED",
+        "PHYSICAL_N3_EXACT_INTERIOR_SIMPLEX_FIXTURE_COMPUTED",
+        "PHYSICAL_N3_FULL_ALPHA_POLYNOMIAL_COMPUTED",
+        "PHYSICAL_N3_FIVE_CARRIER_PROJECTION_COMPUTED",
+        "PHYSICAL_N3_TRIANGLE_INTEGRATED",
+        "CURVATURE_SQUARED_H2_IMPORTED",
+        "PHYSICAL_MIXED_H1_H2_ROWS_COMPUTED",
+        "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "RESIDUAL_TRANSFER_AUTHORIZED",
+        "LORENTZIAN_CERTIFIED"
+      ],
+      "properties": {
+        "PHYSICAL_H1_MOMENTUM_VERTEX_CONSTRUCTED": {"const": true},
+        "PHYSICAL_H1_FORMAL_ADJOINT_COMPLETION_VERIFIED": {"const": true},
+        "SCALAR_FLAT_LINEARIZED_RIEMANN_RECONSTRUCTION_VERIFIED": {"const": true},
+        "PHYSICAL_N3_EXACT_INTERIOR_SIMPLEX_FIXTURE_COMPUTED": {"const": true},
+        "PHYSICAL_N3_FULL_ALPHA_POLYNOMIAL_COMPUTED": {"const": false},
+        "PHYSICAL_N3_FIVE_CARRIER_PROJECTION_COMPUTED": {"const": false},
+        "PHYSICAL_N3_TRIANGLE_INTEGRATED": {"const": false},
+        "CURVATURE_SQUARED_H2_IMPORTED": {"const": false},
+        "PHYSICAL_MIXED_H1_H2_ROWS_COMPUTED": {"const": false},
+        "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["physical_H1", "carrier_manifest", "K_Ricci_crosswalk"],
+      "properties": {
+        "physical_H1": {"$ref": "#/$defs/reference"},
+        "carrier_manifest": {"$ref": "#/$defs/reference"},
+        "K_Ricci_crosswalk": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "next_gate": {"const": "INTERPOLATE_PHYSICAL_N3_COMMON_NUMERATOR_PROJECT_TO_FIVE_CARRIERS_AND_IMPORT_CURVATURE_SQUARED_H2"},
+    "claim_boundary": {"type": "string", "minLength": 400}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 20}, "result_id": {"type": "string", "minLength": 10}, "sha256": {"$ref": "#/$defs/hash"}}
+    },
+    "seedRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["term_id", "coefficient", "formula"],
+      "properties": {"term_id": {"type": "string", "pattern": "^[VNU][0-9]{2}$"}, "coefficient": {"$ref": "#/$defs/rational"}, "formula": {"type": "string", "minLength": 10}}
+    },
+    "matrix9": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"$ref": "#/$defs/rational"}}
+    },
+    "matrix4": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}}
+    },
+    "wickRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["loop_metric_pair_count", "homogeneous_loop_degree", "raw_wick_contraction", "integrated_coefficient_after_physical_trace_log", "common_Delta_minus4_numerator_contribution"],
+      "properties": {
+        "loop_metric_pair_count": {"type": "integer", "minimum": 0, "maximum": 3},
+        "homogeneous_loop_degree": {"type": "integer", "enum": [0, 2, 4, 6]},
+        "raw_wick_contraction": {"$ref": "#/$defs/rational"},
+        "integrated_coefficient_after_physical_trace_log": {"$ref": "#/$defs/rational"},
+        "common_Delta_minus4_numerator_contribution": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["momenta", "box_invariants", "TT_basis_indices", "Ricci_tensors", "alpha", "Delta", "vertex_polynomial_digests", "formal_adjoint_check", "loop_trace", "wick_rows", "common_Delta_minus4_numerator", "kernel_without_(4pi)^-2", "nonzero"],
+      "properties": {
+        "momenta": {"const": [[1, -1, -2, -2], [-2, 1, 0, 2], [1, 0, 2, 0]]},
+        "box_invariants": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 1}},
+        "TT_basis_indices": {"const": [0, 1, 2]},
+        "Ricci_tensors": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/matrix4"}},
+        "alpha": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["alpha0", "alpha1", "alpha2"],
+          "properties": {"alpha0": {"$ref": "#/$defs/rational"}, "alpha1": {"$ref": "#/$defs/rational"}, "alpha2": {"$ref": "#/$defs/rational"}}
+        },
+        "Delta": {"$ref": "#/$defs/rational"},
+        "vertex_polynomial_digests": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/hash"}},
+        "formal_adjoint_check": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["incoming_q", "completed_vertex_defect_count", "uncompleted_seed_defect_count"],
+          "properties": {
+            "incoming_q": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}},
+            "completed_vertex_defect_count": {"const": 0},
+            "uncompleted_seed_defect_count": {"type": "integer", "minimum": 1}
+          }
+        },
+        "loop_trace": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["matrix_rank", "orientation", "maximum_loop_degree", "monomial_count", "polynomial_sha256"],
+          "properties": {
+            "matrix_rank": {"const": 9},
+            "orientation": {"const": "tr[A3(k3,q2) A2(k2,q1) A1(k1,q0)]"},
+            "maximum_loop_degree": {"const": 6},
+            "monomial_count": {"const": 210},
+            "polynomial_sha256": {"$ref": "#/$defs/hash"}
+          }
+        },
+        "wick_rows": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/wickRow"}},
+        "common_Delta_minus4_numerator": {"$ref": "#/$defs/rational"},
+        "kernel_without_(4pi)^-2": {"$ref": "#/$defs/rational"},
+        "nonzero": {"const": true}
+      }
+    }
+  }
+}

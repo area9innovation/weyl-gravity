@@ -65,6 +65,7 @@ DEPENDENCIES = {
     "third_curvature_Weyl_manifest": HERE / "transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json",
     "CPT_universal_third_curvature_kernels": HERE / "transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json",
     "generic_physical_hessian_linear_curvature": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE.json",
+    "generic_physical_hessian_n3_triangle_fixture": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_TRIANGLE_FIXTURE.json",
     "generic_background_ghost_CPT_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
@@ -177,6 +178,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "third_curvature_Weyl_manifest": "PARITY_EVEN_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST_COMPLETE_COEFFICIENT_FUNCTIONS_OPEN",
         "CPT_universal_third_curvature_kernels": "FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_REPOSITORY_CONFORMAL_GRAVITON_TRACE_SUBSTITUTION_OPEN",
         "generic_physical_hessian_linear_curvature": "SAME_GAUGE_TRACELESS_PHYSICAL_HESSIAN_LINEAR_CURVATURE_IMPORTED_N3_THREE_LINEAR_VERTEX_READY",
+        "generic_physical_hessian_n3_triangle_fixture": "PHYSICAL_THREE_LINEAR_HESSIAN_TRIANGLE_OPERATIONAL_EXACT_INTERIOR_FIXTURE",
         "generic_background_ghost_CPT_obstruction": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
         "generic_ghost_Endo_Duhamel_reduction": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES",
         "generic_ghost_n1_n2_Hodge_resolvent_reduction": "CURVED_ENDO_N1_N2_REDUCED_EXACTLY_TO_FIVE_MINIMAL_VECTOR_SCALAR_RESOLVENT_CARRIERS",
@@ -220,6 +222,9 @@ def _load() -> dict[str, dict[str, Any]]:
     cpt_third_curvature = values["CPT_universal_third_curvature_kernels"]
     generic_physical_hessian_linear = values[
         "generic_physical_hessian_linear_curvature"
+    ]
+    generic_physical_hessian_n3_fixture = values[
+        "generic_physical_hessian_n3_triangle_fixture"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -547,6 +552,39 @@ def _load() -> dict[str, dict[str, Any]]:
         or physical_linear_flags.get("PHYSICAL_N3_TRIANGLE_INTEGRATED") is not False
     ):
         raise ValueError("generic physical-Hessian linear-curvature frontier drifted")
+    physical_n3_fixture_flags = generic_physical_hessian_n3_fixture.get(
+        "claim_flags", {}
+    )
+    physical_n3_fixture = generic_physical_hessian_n3_fixture.get(
+        "exact_interior_fixture", {}
+    )
+    if (
+        physical_n3_fixture_flags.get("PHYSICAL_H1_MOMENTUM_VERTEX_CONSTRUCTED")
+        is not True
+        or physical_n3_fixture_flags.get(
+            "PHYSICAL_H1_FORMAL_ADJOINT_COMPLETION_VERIFIED"
+        )
+        is not True
+        or physical_n3_fixture_flags.get(
+            "PHYSICAL_N3_EXACT_INTERIOR_SIMPLEX_FIXTURE_COMPUTED"
+        )
+        is not True
+        or physical_n3_fixture_flags.get("PHYSICAL_N3_FULL_ALPHA_POLYNOMIAL_COMPUTED")
+        is not False
+        or physical_n3_fixture_flags.get("PHYSICAL_N3_FIVE_CARRIER_PROJECTION_COMPUTED")
+        is not False
+        or physical_n3_fixture_flags.get("PHYSICAL_N3_TRIANGLE_INTEGRATED")
+        is not False
+        or physical_n3_fixture.get("Delta")
+        != {"numerator": 104, "denominator": 45}
+        or physical_n3_fixture.get("formal_adjoint_check", {}).get(
+            "completed_vertex_defect_count"
+        )
+        != 0
+        or physical_n3_fixture.get("loop_trace", {}).get("monomial_count") != 210
+        or physical_n3_fixture.get("nonzero") is not True
+    ):
+        raise ValueError("generic physical-Hessian n=3 fixture frontier drifted")
     if (
         generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
         != "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
@@ -1941,8 +1979,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_SAME_GAUGE_TRACELESS_PHYSICAL_HESSIAN_LINEAR_CURVATURE_ROWS_IMPORTED_AND_N3_THREE_LINEAR_VERTEX_READY_GENERIC_GHOST_N3_ALL_ELEVEN_FUNCTIONS_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_PHYSICAL_H2_MIXED_ROWS_GLOBAL_FINITE_CARRIERS_AND_REPOSITORY_ASSEMBLY_OPEN_Q1_UNDERDETERMINED",
-                "next_gate": "COMPUTE_PHYSICAL_N3_THREE_LINEAR_TRIANGLE_AND_IMPORT_CURVATURE_SQUARED_HESSIAN_LAYER_THEN_ASSEMBLE_FIVE_REPOSITORY_CARRIERS",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_SAME_GAUGE_TRACELESS_PHYSICAL_HESSIAN_LINEAR_CURVATURE_ROWS_IMPORTED_FORMAL_ADJOINT_MOMENTUM_VERTEX_AND_EXACT_N3_INTERIOR_SIMPLEX_FIXTURE_COMPUTED_GENERIC_GHOST_N3_ALL_ELEVEN_FUNCTIONS_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_PHYSICAL_FULL_ALPHA_POLYNOMIAL_H2_MIXED_ROWS_GLOBAL_FINITE_CARRIERS_AND_REPOSITORY_ASSEMBLY_OPEN_Q1_UNDERDETERMINED",
+                "next_gate": "INTERPOLATE_PHYSICAL_N3_COMMON_NUMERATOR_PROJECT_TO_FIVE_CARRIERS_AND_IMPORT_CURVATURE_SQUARED_H2",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -1957,8 +1995,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_FIVE_UNIVERSAL_CPT_KERNELS_SAME_GAUGE_PHYSICAL_H1_LINEAR_CURVATURE_IMPORT_N3_THREE_LINEAR_VERTEX_AND_ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_FIXED_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_PHYSICAL_H2_MIXED_ROWS_GENERIC_BCH_GREEN_SPECTRAL_CARRIER_REPOSITORY_ASSEMBLY_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "COMPUTE_PHYSICAL_N3_THREE_LINEAR_TRIANGLE_AND_IMPORT_CURVATURE_SQUARED_HESSIAN_LAYER_THEN_ASSEMBLE_FIVE_REPOSITORY_CARRIERS",
+                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_FIVE_UNIVERSAL_CPT_KERNELS_SAME_GAUGE_PHYSICAL_H1_LINEAR_CURVATURE_IMPORT_FORMAL_ADJOINT_MOMENTUM_VERTEX_EXACT_N3_INTERIOR_SIMPLEX_FIXTURE_AND_ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_FIXED_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_PHYSICAL_FULL_ALPHA_POLYNOMIAL_H2_MIXED_ROWS_GENERIC_BCH_GREEN_SPECTRAL_CARRIER_REPOSITORY_ASSEMBLY_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "INTERPOLATE_PHYSICAL_N3_COMMON_NUMERATOR_PROJECT_TO_FIVE_CARRIERS_AND_IMPORT_CURVATURE_SQUARED_H2",
             },
         },
         "supersession_ledger": [
@@ -2083,6 +2121,8 @@ def build() -> dict[str, Any]:
             "FIVE_UNIVERSAL_CPT_THIRD_CURVATURE_KERNELS_IMPORTED": True,
             "GENERIC_PHYSICAL_HESSIAN_LINEAR_CURVATURE_IMPORTED": True,
             "PHYSICAL_N3_THREE_LINEAR_INSERTION_VERTEX_READY": True,
+            "PHYSICAL_H1_FORMAL_ADJOINT_MOMENTUM_VERTEX_VERIFIED": True,
+            "PHYSICAL_N3_EXACT_INTERIOR_SIMPLEX_FIXTURE_COMPUTED": True,
             "FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED": False,
             "CURVATURE_SQUARED_PHYSICAL_HESSIAN_LAYER_SUPPLIED": False,
             "PHYSICAL_N3_THREE_LINEAR_TRIANGLE_COMPUTED": False,
@@ -2190,7 +2230,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "COMPUTE_PHYSICAL_N3_THREE_LINEAR_TRIANGLE_AND_IMPORT_CURVATURE_SQUARED_HESSIAN_LAYER_THEN_ASSEMBLE_FIVE_REPOSITORY_CARRIERS",
+            "INTERPOLATE_PHYSICAL_N3_COMMON_NUMERATOR_PROJECT_TO_FIVE_CARRIERS_AND_IMPORT_CURVATURE_SQUARED_H2",
             "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
@@ -2282,8 +2322,11 @@ def build() -> dict[str, Any]:
             "functional Hessian is one half of the source operator, while the normalized "
             "trace-log insertion is unchanged. On the scalar-flat domain 7, 6 and 3 rows "
             "survive, and the round-S4 restriction reproduces the complete linear layer. "
-            "This closes the physical three-linear Tr[(H0^-1 H1)^3] vertex only. The "
-            "curvature-squared H2 layer, mixed H1-H2 rows, tensor triangle integration, "
+            "The scalar-flat rank-nine momentum vertex is now completed by formal adjunction, "
+            "and one generic interior Feynman-simplex fixture evaluates all four Wick orders "
+            "of the physical +(1/6)Tr[(H0^-1 H1)^3] row exactly and nontrivially. This is an "
+            "operational coefficient-bearing fixture, not the full alpha polynomial. The "
+            "curvature-squared H2 layer, mixed H1-H2 rows, five-carrier projection and tensor triangle integration, "
             "global carrier and five repository form-factor assembly remain open. At the "
             "normalized symmetric point all eleven coordinates are integrated exactly in "
             "terms of one Clausen master. This is not the generic five repository functions; "
@@ -2593,6 +2636,10 @@ def validate(result: dict[str, Any]) -> None:
         is not True
         or flags.get("PHYSICAL_N3_THREE_LINEAR_INSERTION_VERTEX_READY")
         is not True
+        or flags.get("PHYSICAL_H1_FORMAL_ADJOINT_MOMENTUM_VERTEX_VERIFIED")
+        is not True
+        or flags.get("PHYSICAL_N3_EXACT_INTERIOR_SIMPLEX_FIXTURE_COMPUTED")
+        is not True
         or flags.get("FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED") is not False
         or flags.get("CURVATURE_SQUARED_PHYSICAL_HESSIAN_LAYER_SUPPLIED")
         is not False
@@ -2693,6 +2740,8 @@ def validate(result: dict[str, Any]) -> None:
             "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE",
             "GENERIC_PHYSICAL_HESSIAN_LINEAR_CURVATURE_IMPORTED",
             "PHYSICAL_N3_THREE_LINEAR_INSERTION_VERTEX_READY",
+            "PHYSICAL_H1_FORMAL_ADJOINT_MOMENTUM_VERTEX_VERIFIED",
+            "PHYSICAL_N3_EXACT_INTERIOR_SIMPLEX_FIXTURE_COMPUTED",
             "FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED",
             "CURVATURE_SQUARED_PHYSICAL_HESSIAN_LAYER_SUPPLIED",
             "PHYSICAL_N3_THREE_LINEAR_TRIANGLE_COMPUTED",
