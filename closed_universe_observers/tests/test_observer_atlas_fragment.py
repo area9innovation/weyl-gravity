@@ -75,6 +75,15 @@ def test_normalized_readout_q2_closes_apparatus_but_not_emitter_or_cone():
     }
 
 
+def test_emitter_physical_q2_keeps_diff_bv_and_cone_fail_closed():
+    row = next(row for row in build()["entries"] if row["id"] == "observer.berger.interaction.emitter_physical_q2_pbw")
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["observer_data"]["emitter_preparation"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_108_ROW_EMITTER_PHYSICAL_Q2_PBW" in {evidence["result_id"] for evidence in row["evidence"]}
+
+
 def test_shifted_q2_phi2_overlay_keeps_local_rod_hessian_fail_closed():
     rows = {row["id"]: row for row in build()["entries"]}
     shifted = rows["observer.berger.interaction.pbw_108_shifted_q2_phi2_overlay"]

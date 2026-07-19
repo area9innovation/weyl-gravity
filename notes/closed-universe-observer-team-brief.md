@@ -481,8 +481,10 @@ successors are `observer.berger.interaction.apparatus_scalar_bv_q2_pbw`,
 `observer.berger.interaction.rod_metric_q2_pbw`,
 `observer.berger.interaction.memory_transport_q2_pbw` and
 `observer.berger.interaction.normalized_readout_q2_pbw`: all receiver-apparatus
-`q2` subblocks are now `CERTIFIED`, while dynamical-emitter `q2`, all `q3`,
-detector response and cone restriction remain `NO_CERTIFIED_MAP`.  Regenerate
+`q2` subblocks are now `CERTIFIED`.  The physical emitter stress/switch
+successor `observer.berger.interaction.emitter_physical_q2_pbw` is also
+`CERTIFIED`; the two-form Diff--BV emitter orbit, complete emitter `q2`, all
+`q3`, detector response and cone restriction remain `NO_CERTIFIED_MAP`.  Regenerate
 every remaining block rather than fitting it
 to the arity identities, then replay `q1q2`, `q2q2+q1q3`, `K_Berger`
 equivariance and observer-morphism stability.  Physical Bridge 3 remains
@@ -1413,6 +1415,18 @@ emitter `q2`, every `q3`, the arity identities,
 This does not activate the physical-
 branch bridge and does not identify any compact-product mode with a Berger
 apparatus row.
+
+The physical emitter interaction is now scalarized separately.
+`BERGER_108_ROW_EMITTER_PHYSICAL_Q2_PBW` begins with the exact quadratic
+component action and recovers every key of the certified emitter `q1` overlay
+before differentiating it.  Its cubic jet supplies the free kinetic/mass
+stress, switched interaction stress and reciprocal `h_b'(Theta)` clock source
+for both massive two-forms.  Raising all slots gives 6,232 PBW keys and 6,340
+exact terms on the metric, clock, Maxwell and twelve emitter cotangent rows,
+with zero Hessian-recovery, metric-jet and symmetry defects.  The remaining
+emitter `q2` gate is precisely the two-form Diff--BV cotangent orbit; it is not
+inferred from scalar transport.  Complete `q2`, every `q3`, arity replay and
+`O_detector|Z2^C` therefore remain fail-closed.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to

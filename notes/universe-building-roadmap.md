@@ -87,7 +87,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows now that its product spectrum, matched 3^-6 exceptional factor and regular-complement det3 are certified, then add remaining BV rows to the exact partial-BV five-carrier representative; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; every receiver-apparatus q2 subblock is executable, so export dynamical-emitter q2 and every q3 block, test the arity identities, K_Berger equivariance and observer-morphism stability, and only then restrict records to Z2^C
+Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; every receiver-apparatus q2 subblock and the physical emitter stress/switch q2 block are executable, so export the two-form Diff-BV emitter q2 orbit and every q3 block, test the arity identities, K_Berger equivariance and observer-morphism stability, and only then restrict records to Z2^C
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
 
@@ -1079,7 +1079,10 @@ survive the first backreacted, normalized apparatus interaction?
    readout now adds 4,116 PBW keys and 11,012 exact coefficient monomials from
    all six first-variation channels, including explicit 26-coordinate
    transverse-Jacobian vertical jets and exact cyclic adjoints.  All
-   receiver-apparatus `q2` blocks are therefore executable.  Dynamical-emitter
+   receiver-apparatus `q2` blocks are therefore executable.  The physical
+   massive-emitter stress/switch jet adds 6,232 PBW keys and 6,340 exact terms;
+   its quadratic action exactly recovers the certified emitter unary before
+   differentiation.  The two-form Diff--BV emitter orbit, complete emitter
    `q2`, every `q3`, the
    interaction identities and all observer-cone consumers remain fail-closed.
    A common source
