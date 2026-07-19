@@ -1,0 +1,102 @@
+{
+  "certified_reductions": {
+    "aligned_equal_absolute_momentum": {
+      "candidate_k_squared_n2rho": "(A**2 - 2*A*B - 2*A*C + B**2 - 2*B*C + C**2)/(4*(2*A + 2*B - C))",
+      "matches_existing_h4_divisor": true,
+      "signed_momenta": "n_1=n_2=n"
+    },
+    "opposite_equal_absolute_momentum": {
+      "candidate_k_squared_n2rho": "(A**2 - 2*A*B - 2*A*C + B**2 - 2*B*C + C**2)/(4*C)",
+      "matches_existing_h0_divisor": true,
+      "signed_momenta": "n_1=+n, n_2=-n"
+    },
+    "universal_qminus_top_extra_family": {
+      "candidate_rho": "-(-6*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 3*ell + 1)/6",
+      "expected": "-(-6*sqrt(2)*sqrt(ell)*sqrt(ell + 1) + 3*ell + 1)/6",
+      "inputs": "q-minus ell at opposite momenta n=+1,-1",
+      "target": "p-extra L=2ell at K=0"
+    }
+  },
+  "claim_boundary": "This is a finite-carrier shell-arithmetic theorem. It does not compute a quadratic source coefficient, classify identity-resonant rows, prove a bounded or secular correction, handle infinite momentum support, or establish causal, residual, all-orders or quantum claims.",
+  "classification": {
+    "all_signed_temporal_sum_difference_channels_covered": true,
+    "arbitrary_two_signed_momentum_integers_covered": true,
+    "causal_or_quantum_claim": false,
+    "complete_multifibre_tangent_cone_classified": false,
+    "finite_nonidentity_exceptional_circumference_set_certified": true,
+    "identity_resonant_channels_fail_closed": true,
+    "one_fibre_h0_h4_formulas_recovered": true,
+    "quadratic_source_coefficients_computed": false,
+    "squared_divisor_linear_in_circumference_parameter": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_divisor": {
+    "admissibility": "retain the candidate only when rho>0 and tau*(2*n_1*n_2*rho+D)>0; this removes roots introduced by squaring",
+    "candidate_rho_when_Q_nonzero": "(A**2 - 2*A*B - 2*A*C + B**2 - 2*B*C + C**2)/(4*(A*n_1*n_2 + A*n_2**2 + B*n_1**2 + B*n_1*n_2 - C*n_1*n_2))",
+    "circumference_parameter": "rho=(2*pi/L)^2>0 and k_n=n*sqrt(rho)",
+    "degenerate_cases": {
+      "Q_nonzero": "exactly one algebraic candidate before positivity and sign tests",
+      "Q_zero_constant_nonzero": "no resonance at any circumference",
+      "Q_zero_constant_zero": "an identity-resonant carrier for every circumference; it must remain an explicit source-matrix row"
+    },
+    "formal_symbols": [
+      "rho",
+      "A",
+      "B",
+      "C",
+      "n_1",
+      "n_2",
+      "tau"
+    ],
+    "input_shells": "omega_A^2=n_1^2*rho+A and omega_B^2=n_2^2*rho+B",
+    "linear_squared_divisor": "-A**2 + 2*A*B + 2*A*C + 4*A*n_1*n_2*rho + 4*A*n_2**2*rho - B**2 + 2*B*C + 4*B*n_1**2*rho + 4*B*n_1*n_2*rho - C**2 - 4*C*n_1*n_2*rho",
+    "output_shell": "Omega^2=(n_1+n_2)^2*rho+C",
+    "rho_coefficient_Q": "A*n_1*n_2 + A*n_2**2 + B*n_1**2 + B*n_1*n_2 - C*n_1*n_2",
+    "signed_temporal_channel": "Omega=sigma_1*omega_A+sigma_2*omega_B with tau=sigma_1*sigma_2 in {+1,-1}",
+    "unsquared_equation": "2*tau*sqrt((n_1^2*rho+A)*(n_2^2*rho+B))=2*n_1*n_2*rho+D, D=C-A-B"
+  },
+  "finite_carrier_theorem": {
+    "generic_circumference_consequence": "outside that finite set, all nonidentity nonzero-frequency cross-|k| blocks are off shell and have no resonant adjoint functional",
+    "identity_channel_rule": "Q=0 and 4*A*B-D^2=0 is not discarded or called generic; it is exported as an identity-resonant row requiring an explicit source matrix",
+    "source_rule": "a shell collision is only a candidate functional; no obstruction or extension is inferred until the projected quadratic source coefficient is computed",
+    "statement": "for a declared finite harmonic carrier, every nonidentity nonzero-frequency target-shell collision occurs at at most one positive algebraic value of rho; hence the exceptional circumference set is finite",
+    "zero_frequency_rule": "Omega=0 constraint-adjoint components remain the five stabilizer/Taub maps plus any separately certified exceptional cokernel and are not removed by this divisor"
+  },
+  "interpretation": "Multiple compact-momentum fibres do not produce an uncontrolled continuum of accidental resonances on a finite carrier. Each candidate is governed by a linear exact circumference divisor, while identity channels and source coefficients remain explicit independent gates.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "instantiate the identity-channel ledger and projected source matrices on the first two-|k| carrier, then intersect them with the additive five-moment-map cone",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_finite_multimomentum_resonance_divisor.py",
+    "generator_sha256": "0d799dc9141e34fba8e99317bf529b9a928611bb1fc887aea3e6c6e2204599d7",
+    "inputs": {
+      "branch_dictionary": {
+        "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+        "sha256": "0bc9236181f6dab22602c63e79be0a1df1dae6e6ef9cd46958d753cf264e0ede"
+      },
+      "one_fibre": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_phase_resonance_divisor.json",
+        "sha256": "3a58c94bce450cec2bf40eeda9d8bddb7f38617a62b4bcd37ebf5adbc50e3557"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_FINITE_MULTIMOMENTUM_RESONANCE_DIVISOR",
+  "schema": "einstein-maxwell-weyl-finite-multimomentum-resonance-divisor-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_finite_multimomentum_resonance_divisor.schema.json",
+  "schema_sha256": "fba675d9250214ec2e60c489cd90b6790cd144cabc3b8dae8694da3ab315bc92",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 with one common circumference L",
+    "carrier": "arbitrary finite set of positive-offset physical and extra oscillator branches at arbitrary signed compact momentum integers",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "arbitrary finite input and angularly allowed output set",
+    "k": "k_n=2*pi*n/L for arbitrary finitely many signed nonzero integers n",
+    "m": "arbitrary finite Clebsch-Gordan-allowed set",
+    "omega": "every signed quadratic sum/difference channel",
+    "parity": "all parities retained; the divisor is prior to source/parity projection",
+    "theory": "Weyl-Maxwell target"
+  }
+}

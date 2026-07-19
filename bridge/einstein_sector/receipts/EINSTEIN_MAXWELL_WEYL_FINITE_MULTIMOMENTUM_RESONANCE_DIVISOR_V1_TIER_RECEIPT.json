@@ -1,0 +1,43 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_FINITE_MULTIMOMENTUM_RESONANCE_DIVISOR_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact circumference divisor for every nonzero-frequency channel on an arbitrary finite compact-momentum carrier.",
+  "content_sha256": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_finite_multimomentum_resonance_divisor.py": "0d799dc9141e34fba8e99317bf529b9a928611bb1fc887aea3e6c6e2204599d7",
+    "bridge/certificates/einstein_maxwell_weyl_finite_multimomentum_resonance_divisor.json": "1128545b5237b2c3dbb0f0e786f6b254b2be11009eb6f7c11e26685437bc2a56",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_finite_multimomentum_resonance_divisor.schema.json": "fba675d9250214ec2e60c489cd90b6790cd144cabc3b8dae8694da3ab315bc92",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_finite_multimomentum_resonance_divisor.py": "22f99c9d31644abcf7fcfe20ac769b19a42ec63b84a2b6f512c10e7e7b4127ea",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_finite_multimomentum_resonance_divisor.py": "7f9261945b7d727fabbbec6af228bc0c7a04565a15b214c0558bb4ff8fd2dc84",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-finite-multimomentum-resonance-divisor.md": "45f9c6069ef0f163a8e5abf944d7d46597dd4a0c5f9cd206a1321d488506a236"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.2,
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.2,
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_finite_multimomentum_resonance_divisor --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_finite_multimomentum_resonance_divisor.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_finite_multimomentum_resonance_divisor"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The fixed-|k| divisor and same-background branch dictionary are unchanged hashed inputs; the new result is their exact arbitrary-integer momentum generalization."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No projected quadratic source, shared operator or lifecycle freeze changed; identity channels, full multifibre cone and causal propagation remain open."
+    }
+  },
+  "claim_boundary": "Finite-carrier shell arithmetic only; source coefficients, identity-resonant rows, bounded/secular corrections, infinite momentum support, causal, residual and quantum claims remain fail-closed."
+}
