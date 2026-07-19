@@ -85,7 +85,7 @@ The shortest independent paths are now:
 ```text
 Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
-Classical:   candidate-13's declared reduced-mode receiver is exactly obstructed from direct support-local promotion; construct a genuinely local equation-level cofiber or larger noncontractible mixed-bundle carrier, otherwise retain REDUCED-MODE only
+Classical:   extend the selected 160-row five-current de Rham/cotangent carrier by the action-derived q2 and replay the complete arity-two identity; causal Green data and the eighteen candidate-13 spectral receivers remain separate fail-closed gates
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows now that its product spectrum, matched 3^-6 exceptional factor and regular-complement det3 are certified, then add remaining BV rows to the exact partial-BV five-carrier representative; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; complete q2 plus rod, memory and 338,364-key normalized-readout q3 subblocks are executable, so export physical-emitter q3, assemble the base and structural-zero ledger, test the arity identities, K_Berger equivariance and observer-morphism stability, and only then restrict records to Z2^C
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
@@ -2393,6 +2393,26 @@ pullback is certified but equals only `{0}`; the smooth relative pullback is
 nontrivial.  The next same-background gate is to test the other collision
 circumferences for their own exact scalar separators without identifying their
 mode carriers with candidate 13.
+
+That gate is now classified exactly for all 21 collision backgrounds.  On
+every positive-`rho` opposite-sign carrier `n=(1,-2)`, let `t1,t2` be the
+midpoints between the `q_minus` and `p_extra` frequencies.  One charge/pressure
+covector factors as
+
+```text
+Q_1(omega)=(omega-t1)(omega+t2/2),
+Q_-2(omega)=(omega-t2)(omega+2*t1).
+```
+
+It is negative before the `q_minus` current sign and positive on the two
+positive-current branches.  Thus collision indices 1--15 all have complete
+bounded generic cone `{0}`.  At each same-sign index 16--21 an exact positive
+four-term Farkas dependence instead constructs a nonzero `H/P_x/R_c` scalar
+common zero and proves that no strict scalar separator exists.  Their full
+bounded cones remain `OPEN` until the six distinct resonance-amplitude joins
+are computed.  Atlas row
+`einstein.ph.wm.interaction.ell2_collision_scalar_separation_classification`
+records this 15/6 split without identifying any two circumference backgrounds.
 
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at

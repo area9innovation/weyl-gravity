@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/relative-five-current-de-rham-carrier-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "carrier", "symbol_certificate", "topological_equivalence", "candidate13_disposition", "generated_layout", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-five-current-de-rham-carrier-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1"},
+    "result_state": {"const": "SUPPORT_LOCAL_CYCLIC_DERIVED_SOURCE_CARRIER_SELECTED_Q2_AND_CAUSAL_OPEN"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "object", "minProperties": 10},
+    "dependencies": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/artifact"}},
+    "carrier": {"type": "object", "minProperties": 8},
+    "symbol_certificate": {"type": "object", "minProperties": 7},
+    "topological_equivalence": {"type": "object", "minProperties": 5},
+    "candidate13_disposition": {"type": "object", "minProperties": 4},
+    "generated_layout": {"$ref": "#/$defs/pathHash"},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["support_local_de_rham_carrier_selected", "unary_square_zero_exact", "unary_cyclicity_exact", "nonzero_symbol_koszul_complex_exact", "existing_five_current_cone_embeds", "five_charge_zero_locus_presented_without_projectors", "full_augmented_q2_identity_certified", "causal_green_homotopy_certified", "relative_arity_two_morphism_repaired", "candidate13_causal_crosswalk_certified", "arity_three_authorized", "quantum_claim"],
+      "properties": {
+        "support_local_de_rham_carrier_selected": {"const": true},
+        "unary_square_zero_exact": {"const": true},
+        "unary_cyclicity_exact": {"const": true},
+        "nonzero_symbol_koszul_complex_exact": {"const": true},
+        "existing_five_current_cone_embeds": {"const": true},
+        "five_charge_zero_locus_presented_without_projectors": {"const": true},
+        "full_augmented_q2_identity_certified": {"const": false},
+        "causal_green_homotopy_certified": {"const": false},
+        "relative_arity_two_morphism_repaired": {"const": false},
+        "candidate13_causal_crosswalk_certified": {"const": false},
+        "arity_three_authorized": {"const": false},
+        "quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "EXTEND_THE_ACTION_DERIVED_CURRENT_Q2_TO_THE_160_ROW_CARRIER_AND_VERIFY_THE_COMPLETE_ARITY_TWO_IDENTITY"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 80}
+  },
+  "$defs": {
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "pathHash": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  }
+}

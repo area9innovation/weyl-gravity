@@ -108,6 +108,17 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
 
+    def test_five_current_de_rham_carrier_is_unary_only(self) -> None:
+        entry = self.entries["classical.crosswalk.compact_product_five_current_de_rham_carrier"]
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertIn("eighteen spectral resonance", entry["claim_boundary"])
+        self.assertIn(
+            "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+
     def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_exact_branch"]
         self.assertEqual(entry["descriptions"]["causal"], "CERTIFIED")

@@ -745,6 +745,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   support-local Einstein--Weyl relative triangle:
   [`certificates/CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1.json`](certificates/CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1.json),
   [`reports/candidate13-reduced-source-support-local-upgrade-obstruction.md`](reports/candidate13-reduced-source-support-local-upgrade-obstruction.md)
+- Projector-free five-charge carrier: five copies of the shifted de Rham
+  current resolution and its cyclic cotangent completion give a 160-row
+  support-local carrier with degree ranks `(5,25,50,50,25,5)`.  The existing
+  50 current/divergence rows embed exactly.  The equation `d_H B_X+j_X/2=0`
+  presents vanishing of each closed-slice stabilizer charge without a global
+  projector because `H^3(R x S1 x S2)=R`.  The complete augmented `q2`
+  identity and causal Green homotopy are the next gates; the construction does
+  not encode candidate-13's eighteen spectral resonance receivers:
+  [`certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1.json`](certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1.json),
+  [`reports/einstein-weyl-relative-five-current-de-rham-carrier.md`](reports/einstein-weyl-relative-five-current-de-rham-carrier.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived

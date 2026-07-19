@@ -59,6 +59,11 @@ def verify() -> None:
         raise AssertionError("candidate-13 category obstruction missing")
     if "new local equation-level cofiber" not in candidate13["claim_boundary"]:
         raise AssertionError("candidate-13 obstruction was overgeneralized")
+    de_rham = by_id["classical.crosswalk.compact_product_five_current_de_rham_carrier"]
+    if de_rham["descriptions"]["symplectic"] != "CERTIFIED" or de_rham["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("five-current de Rham carrier lifecycle changed")
+    if "eighteen spectral resonance" not in de_rham["claim_boundary"]:
+        raise AssertionError("five-current carrier was overextended to candidate-13 resonances")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")

@@ -2337,6 +2337,20 @@ finite-harmonic tangent-cone theorem.  The bare normal-tractor-parent-to-metric
 crosswalk also remains fail-closed, while the observer team owns localized
 apparatus completion.
 
+The first admissible larger carrier is now selected at unary level by
+`EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1`.  For every connected
+stabilizer it completes the old current/divergence rows to the shifted de Rham
+chain and its cyclic cotangent chain.  The five-copy complex has 160 rows and
+degree ranks `(5,25,50,50,25,5)`; all 320 unary incidences, 160 odd-pairing
+terms and the 50-row legacy embedding are portable and exact.  Its middle
+equation is `d_H B_X+j_X/2=0`.  Since the product cylinder has one-dimensional
+third de Rham cohomology, this is a local derived presentation of the five
+zero-charge conditions without a Fourier projector.  It is intentionally
+noncontractible.  The active gate is now the complete action-derived `q2`
+extension and arity-two replay on all 160 rows.  Causal Green data, the direct
+relative `f2`, candidate-13's eighteen spectral resonance rows, arity three
+and quantum transfer remain fail-closed.
+
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
 negative-norm one-particle class.  A counterexample is a successful result, not

@@ -1,0 +1,47 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1_TIER_RECEIPT",
+  "claim_ids": ["EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1"],
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1.json", "sha256": "d326df60ecf2d42321b609f0a80d51380eeac83d277b7516b76488a6c51e0c8f"},
+    "schema": {"path": "d_quotient_classical/schema/relative-five-current-de-rham-carrier-v1.schema.json", "sha256": "519a39fdc7329f85c1e419551b15f39fccd3c3271626082dd9b4c39d634bc9b8"},
+    "producer": {"path": "d_quotient_classical/relative/einstein_weyl_relative_five_current_de_rham_carrier.py", "sha256": "dc630e930826fb9ad67df5ddc5556196970a46c1d3a9889de690b484536474e2"},
+    "verifier": {"path": "d_quotient_classical/relative/verify_einstein_weyl_relative_five_current_de_rham_carrier.py", "sha256": "0c7fa19de4a1837650b60218e9564672c18b8ba6da7ce5d8c5136d2fe2eb5204"},
+    "tests": {"path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_five_current_de_rham_carrier.py", "sha256": "1ad5287e983d01338d93b1449a831f1bc05f815417716d0a46632a2e88033201"},
+    "report": {"path": "d_quotient_classical/reports/einstein-weyl-relative-five-current-de-rham-carrier.md", "sha256": "5d5b540cbbc6bafc22c9f7a25d22d897cb8b7684f198d30f59cbceb1cc65b9e1"},
+    "generated_layout": {"path": "d_quotient_classical/generated/einstein_weyl_relative_five_current_de_rham_carrier_v1/layout.json", "sha256": "6c1dd81234a2b5f20fc52b795b6f04e843aee33808c6167541722ab3871bf6dd"},
+    "atlas_fragment": {"path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "sha256": "3540cb533c8161669df2a1b93ebbbdb6938a5ba508f7f6b2c565afdb078ca2bd"}
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "checks": ["Python compilation", "strict Draft 2020-12 schema", "scoped diff check", "content-hash replay"]},
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 4.51,
+      "peak_rss_kb": 204488,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_five_current_de_rham_carrier --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_five_current_de_rham_carrier",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_five_current_de_rham_carrier",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-five-current-de-rham-carrier-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.71,
+      "peak_rss_kb": 24880,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The new package changes only the scoped relative-current carrier and its direct atlas consumer. It does not freeze a paper, promote q2 or causal Green data, or modify shared core algebra; unrelated observer, black-hole and Paper-13 work is concurrently dirty."
+    }
+  },
+  "claim_boundary": "This receipt covers the exact unary, cyclic and symbol-level construction of the 160-row five-current de Rham/cotangent carrier and the injective embedding of the prior 50-row current cone. It does not certify the augmented q2 identities, a relative f2, bounded-mode equivalence, the eighteen candidate-13 resonance rows, a causal Green homotopy, arity three, observables, particles or quantum transfer."
+}

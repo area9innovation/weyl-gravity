@@ -1107,10 +1107,74 @@
         "parity": "both axial and polar",
         "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
       }
+    },
+    {
+      "claim_boundary": "The carrier resolves only the five stabilizer-current classes. It does not encode candidate-13's eighteen spectral resonance receivers, repair the relative f2, authorize arity three, or supply causal or quantum transport.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1",
+          "sha256": "d326df60ecf2d42321b609f0a80d51380eeac83d277b7516b76488a6c51e0c8f"
+        }
+      ],
+      "id": "classical.crosswalk.compact_product_five_current_de_rham_carrier",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The support-local unary carrier is selected, but no Green homotopy has been constructed.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "The 160-row carrier has an exact odd pairing and Stokes-compatible unary differential.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "This is an equation-level derived-source carrier, not an observable or particle map.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No bounded-mode claim is made by the local de Rham carrier.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "Causal Green data remain open.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "For closed currents, dB=-j presents the five zero-charge conditions without projectors.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The action-derived current q2 has not yet been extended and replayed on all new reducibility and cotangent rows.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compact magnetic Plebanski-Hacyan product, including candidate-13",
+        "boundaries": "R_t x closed oriented S1_L x S2 with fixed N=2 magnetic bundle",
+        "carrier": "160-row shifted de Rham current resolution and cyclic cotangent completion",
+        "charge_sector": "H,P_x,J_1,J_2,J_3 simultaneous zero-charge derived sector",
+        "degree": "-2,...,3 with ranks (5,25,50,50,25,5)",
+        "ell": "not harmonic-reduced",
+        "k": "not harmonic-reduced",
+        "m": "not harmonic-reduced",
+        "omega": "not harmonic-reduced",
+        "parity": "odd cotangent pairing; both source parities",
+        "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+      }
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "42bd982f5de1b7237989dd784b6b4c4626d7ff0c1ca8ee81eef7496d7f7b039a",
+  "generated_by_sha256": "d40e22b3dde6b6d7bc23b0f52744307f6c457ae5882c4ec08d705631a467d426",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
