@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Constant-twist ell2 extra position zero locus",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "equivariant_factorization",
+    "multiplicity_matrix", "complete_zero_locus", "fixtures",
+    "correction_classes", "classification", "interpretation", "next_gate",
+    "claim_boundary", "provenance", "verification_receipt",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-constant-twist-ell2-extra-position-zero-locus-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_EXTRA_POSITION_ZERO_LOCUS"},
+    "result_state": {"const": "COMPLETE_NONZERO_CONSTANT_TWIST_POSITION_RESONANCE_KERNEL_ON_ELL2_EXTRA_PRIMARY_CLASSIFIED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "scope": {"type": "object"},
+    "equivariant_factorization": {"type": "object"},
+    "multiplicity_matrix": {
+      "type": "object",
+      "required": ["rank", "kernel_basis"],
+      "properties": {
+        "rank": {"const": 2},
+        "kernel_basis": {"type": "array", "minItems": 2, "maxItems": 2}
+      }
+    },
+    "complete_zero_locus": {
+      "type": "object",
+      "required": [
+        "necessary_and_sufficient",
+        "ambient_positive_frequency_complex_dimension",
+        "kernel_positive_frequency_complex_dimension",
+        "operator_rank",
+        "real_tangent_dimension_after_adding_conjugate_negative_frequency"
+      ],
+      "properties": {
+        "necessary_and_sufficient": {"const": true},
+        "ambient_positive_frequency_complex_dimension": {"const": 20},
+        "kernel_positive_frequency_complex_dimension": {"const": 12},
+        "operator_rank": {"const": 8},
+        "real_tangent_dimension_after_adding_conjugate_negative_frequency": {"const": 24}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "complete_nonzero_A_ell2_extra_position_resonance_kernel_classified",
+        "all_m_and_all_four_extra_multiplicities_included",
+        "Einstein_q_primary_twist_position_map_classified",
+        "simultaneous_moment_and_all_branch_resonance_zero_locus_classified",
+        "full_second_order_equation_solved",
+        "causal_or_quantum_claim"
+      ],
+      "properties": {
+        "complete_nonzero_A_ell2_extra_position_resonance_kernel_classified": {"const": true},
+        "all_m_and_all_four_extra_multiplicities_included": {"const": true},
+        "Einstein_q_primary_twist_position_map_classified": {"const": false},
+        "simultaneous_moment_and_all_branch_resonance_zero_locus_classified": {"const": false},
+        "full_second_order_equation_solved": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      }
+    },
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": true
+}

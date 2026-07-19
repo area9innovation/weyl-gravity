@@ -2415,6 +2415,30 @@ locus is open.  Atlas rows
 `einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone`
 record the obstruction and corrected lifecycle.
 
+The replacement extra-shell incidence theorem is now complete.  The unique
+`SO(3)` map `V_1 tensor V_2 -> V_2` reduces every nonzero real twist to an
+axis calculation.  In the frame `A=|A| z`, its angular coefficient is
+
+```text
+<1,0;2,m|2,m>=-m/sqrt(6).
+```
+
+The internal four-by-four position matrix has rank two and kernel
+
+```text
+span{polar_e1, -4*sqrt(3)*axial_e1+15*polar_e2}.
+```
+
+Therefore the complete twist-position resonance-zero space on the
+positive-frequency `ell=2` extra shell has complex dimension twelve: the
+`m=0` internal coefficient is arbitrary, while every `m=+/-1,+/-2`
+coefficient must lie in that two-dimensional kernel.  This simultaneously
+contains the aligned face and excludes the off-axis counterexample.  Atlas
+row `einstein.ph.wm.interaction.constant_twist_ell2_extra_position_zero_locus`
+records necessity and sufficiency for this one resonance family.  The
+Einstein-plus/minus twist matrices and their intersection with the common
+moment cone remain open, so the full nonzero-`A` wave cone is not promoted.
+
 The polar Einstein-minus cross source is now also direct and exact.  Its
 first action row has successive nonzero pivots `66*b*z`, `198*a*z`, and
 `198*d*z`, so Schur promotion gives the same `a=b=d=0` conclusion for every

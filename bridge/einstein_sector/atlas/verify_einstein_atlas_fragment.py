@@ -249,6 +249,13 @@ def verify() -> None:
         raise AssertionError("constant-twist wave counterexample was lost")
     if "24*sqrt(3)" not in twist_counterexample["mode_data"]["resonance"]["statement"]:
         raise AssertionError("constant-twist adjoint witness was hidden")
+    twist_zero_locus = by_id["einstein.ph.wm.interaction.constant_twist_ell2_extra_position_zero_locus"]
+    if twist_zero_locus["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("constant-twist extra-shell zero locus was lost")
+    if "complex dimension is 12" not in twist_zero_locus["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("constant-twist zero-locus rank theorem was hidden")
+    if twist_zero_locus["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("constant-twist extra-shell zero locus over-promoted second order")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

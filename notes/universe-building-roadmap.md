@@ -1276,8 +1276,21 @@ wave-free static branch and the complete `A=0` wave cone, while the nonzero-`A`
 wave locus is open.  Atlas rows
 `einstein.ph.wm.interaction.constant_twist_wave_counterexample` and
 `einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone`
-record the witness and corrected lifecycle.  The direct polar Einstein-minus
-source now supplies successive full-polynomial pivots `66*b*z`, `198*a*z`,
+record the witness and corrected lifecycle.  The extra-shell portion of the
+replacement zero locus is now explicit.  For
+nonzero real `A`, rotate to `A=|A|z`; the unique `V_1 tensor V_2 -> V_2`
+intertwiner is diagonal with coefficient `-m/sqrt(6)`.  The internal position
+matrix has kernel
+`span{polar_e1,-4*sqrt(3)*axial_e1+15*polar_e2}`.  Hence the complete
+positive-frequency `ell=2` extra-shell resonance kernel has complex dimension
+12: all four `m=0` coefficients plus two internal directions for each
+`m=+/-1,+/-2`.  Atlas row
+`einstein.ph.wm.interaction.constant_twist_ell2_extra_position_zero_locus`
+records this exact incidence theorem without promoting the full wave cone.
+The next gate is the corresponding Einstein-plus/minus twist matrices and
+their intersection with the common stabilizer cone.  The direct polar
+Einstein-minus source now supplies successive full-polynomial pivots
+`66*b*z`, `198*a*z`,
 and `198*d*z`; rotational equivariance promotes them to every polar `m`.
 Together with the complete axial--polar `ell=2` common-zero theorem and the
 constant zero-frequency `L=1` right inverse, this closes the `A=0`

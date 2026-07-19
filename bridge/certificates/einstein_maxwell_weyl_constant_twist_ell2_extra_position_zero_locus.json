@@ -1,0 +1,179 @@
+{
+  "claim_boundary": "This is a complete resonant-functional zero locus only for constant twist position times the ell=2 extra p-primary at k=0. It does not classify twist times Einstein q-primary waves, simultaneous wave self-sources, the full nonzero-A bounded tangent cone, nonzero momentum, smooth or causal correction sufficiency, all-orders solutions, residual states, observables or quantum theory.",
+  "classification": {
+    "Einstein_q_primary_twist_position_map_classified": false,
+    "aligned_face_explained": true,
+    "all_m_and_all_four_extra_multiplicities_included": true,
+    "all_orders_integrability": false,
+    "causal_or_quantum_claim": false,
+    "complete_extra_shell_twist_position_zero_locus_classified": true,
+    "complete_mixed_wave_cone_classified": false,
+    "complete_nonzero_A_ell2_extra_position_resonance_kernel_classified": true,
+    "full_second_order_equation_solved": false,
+    "off_axis_kernel_strictly_nonzero": true,
+    "simultaneous_moment_and_all_branch_resonance_zero_locus_classified": false
+  },
+  "complete_zero_locus": {
+    "ambient_positive_frequency_complex_dimension": 20,
+    "coefficient_form": "the m_A=0 amplitudes are arbitrary; for each m_A=+/-1,+/-2 the four multiplicity coefficients must lie in ker(P)",
+    "complex_dimension": 12,
+    "formula": "ker((A_hat dot J_2) tensor P)=V_(m_A=0) tensor C^4 + V_2 tensor ker(P)",
+    "intersection": "V_(m_A=0) tensor ker(P)",
+    "kernel_positive_frequency_complex_dimension": 12,
+    "necessary_and_sufficient": true,
+    "operator_rank": 8,
+    "real_tangent_dimension_after_adding_conjugate_negative_frequency": 24
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "claim": "complete twist-position times ell2-extra resonant-functional zero locus only",
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_SECULAR": {
+      "reason": "this certificate classifies a bounded shell projection, not propagation solvability",
+      "status": "NOT_APPLICABLE"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "equivariant_factorization": {
+    "axis_Clebsch_Gordan": {
+      "-1": "sqrt(6)/6",
+      "-2": "sqrt(6)/3",
+      "0": "0",
+      "1": "-sqrt(6)/6",
+      "2": "-sqrt(6)/3"
+    },
+    "axis_choice": "for A!=0 choose an SO3 rotation carrying A to |A|*e_z; the zero locus is rotated back covariantly",
+    "axis_spin_operator": "diag(sqrt(6)/3,sqrt(6)/6,0,-sqrt(6)/6,-sqrt(6)/3), proportional to -J_z",
+    "multiplicity_statement": "dim Hom_SO3(V1 tensor V2,V2)=1",
+    "overall_scalar": "irrelevant to the zero locus and fixed nonzero by the certified m_A=1,m=0 fixture",
+    "resonance_operator": "nonzero scalar times (A_hat dot J_2) tensor P_position"
+  },
+  "fixtures": {
+    "aligned_face": "every m_A=0 extra amplitude lies in the resonance kernel, explaining the certified aligned constant-twist face",
+    "nonaligned_survivors": "off-axis amplitudes in polar_e1 or -4*sqrt(3)*axial_e1+15*polar_e2 evade the twist-position p-shell resonance",
+    "off_axis_obstruction": "axial_e1 at m_A=0 relative to the original wave axis becomes an m_A!=0 component for a perpendicular twist and maps to (0,24*sqrt(3),0,0)"
+  },
+  "interpretation": "Constant twist does not eliminate the complete extra primary. It kills eight of twenty complex positive-frequency coefficient directions through the bounded p-shell resonance and leaves a twelve-dimensional kernel: the axisymmetric m_A=0 face plus two special multiplicity combinations at every m. The earlier counterexample samples a direction outside this kernel.",
+  "lifecycle_state": "CLASSIFIED",
+  "multiplicity_matrix": {
+    "P_position": [
+      [
+        "0",
+        "24*sqrt(3)",
+        "0",
+        "0"
+      ],
+      [
+        "24*sqrt(3)",
+        "0",
+        "0",
+        "96/5"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "24/5",
+        "0",
+        "0"
+      ]
+    ],
+    "input_order": [
+      "axial_e1",
+      "axial_e2",
+      "polar_e1",
+      "polar_e2"
+    ],
+    "kernel_basis": [
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "-4*sqrt(3)",
+        "0",
+        "0",
+        "15"
+      ]
+    ],
+    "kernel_description": "span_C{polar_e1, -4*sqrt(3)*axial_e1+15*polar_e2}",
+    "output_order": [
+      "axial_w1",
+      "axial_w2",
+      "polar_w1",
+      "polar_w2"
+    ],
+    "rank": 2
+  },
+  "next_gate": "compute the corresponding constant-twist position matrices on the Einstein plus/minus q-primary shells, then intersect every branch kernel with the H,J_i moment cone",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus.py",
+    "generator_sha256": "d6a07e6683ca0d56adb532915379ba5bfc2cfb4ab8a538631a34a52f55eee7e4",
+    "inputs": {
+      "counterexample": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
+        "sha256": "6ddebcd00b2934d513f0676d87f8ec2423f79ec30d1341cb73b484362b533c72"
+      },
+      "twist_matrix": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
+        "sha256": "4096367d5477d63d5300f43829120f2c70358ab637ea51cc9948973cd8940b72"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_EXTRA_POSITION_ZERO_LOCUS",
+  "result_state": "COMPLETE_NONZERO_CONSTANT_TWIST_POSITION_RESONANCE_KERNEL_ON_ELL2_EXTRA_PRIMARY_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-constant-twist-ell2-extra-position-zero-locus-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus.schema.json",
+  "schema_sha256": "cd43b3787283fcb0ec53d2f893c93f1240249eac7730d4267f12fee13a070fbe",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic correction class",
+    "carrier": "one nonzero constant axial twist-position vector A crossed with the complete axial-plus-polar ell=2,k=0 extra p-primary multiplicity space",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "1 x 2 -> resonant L=2",
+    "k": 0,
+    "m": "all m=-2,...,2 relative to the twist axis",
+    "omega": "omega_extra=4/sqrt(3)",
+    "parity": "four extra multiplicities retained: axial e1,e2 and polar e1,e2",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 2.37,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 5.66,
+      "status": "PASS",
+      "tests_run": 30
+    },
+    "tier_2": {
+      "criterion": "the direct nonaxisymmetric tensor matrix and counterexample are immutable exact inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "the Einstein q-primary maps and simultaneous full cone remain open",
+      "status": "NOT_RUN"
+    }
+  }
+}
