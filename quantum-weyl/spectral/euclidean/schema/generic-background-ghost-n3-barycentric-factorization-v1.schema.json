@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl/generic-background-ghost-n3-barycentric-factorization-v1.schema.json",
+  "title": "Generic ghost n=3 barycentric factorization",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "convention", "factorization_summary", "channel_rows", "formula_digest", "IBP_disposition", "claim_flags", "dependencies", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-ghost-n3-barycentric-factorization-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_GHOST_N3_BARYCENTRIC_FACTORIZATION"},
+    "result_state": {"const": "GENERIC_N3_BARYCENTRIC_DENOMINATOR_AND_BOUNDARY_FACTORIZATION_COMPUTED"},
+    "lifecycle_state": {"const": "GENERIC_IBP_MASTER_REDUCTION_OPEN"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 1},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dimension", "signature", "curvature_order", "kinematics", "output"],
+      "properties": {
+        "dimension": {"const": 4}, "signature": {"const": "Euclidean"},
+        "curvature_order": {"const": 3},
+        "kinematics": {"const": "generic positive nonexceptional x1,x2,x3"},
+        "output": {"type": "string", "minLength": 1}
+      }
+    },
+    "convention": {
+      "type": "object", "additionalProperties": false,
+      "required": ["barycentric_order", "simplex", "Delta", "overall_loop_prefactor", "W_and_Tr_log_multiplier"],
+      "properties": {
+        "barycentric_order": {"const": ["alpha1", "alpha2", "alpha0"]},
+        "simplex": {"type": "string", "minLength": 1},
+        "Delta": {"const": "alpha0*alpha1*x1+alpha1*alpha2*x2+alpha2*alpha0*x3"},
+        "overall_loop_prefactor": {"const": "(4*pi)^-2 excluded"},
+        "W_and_Tr_log_multiplier": {"const": "-8/3 already included upstream"}
+      }
+    },
+    "factorization_summary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["raw_channel_count", "channels_with_exact_Delta_factor", "reduced_denominator_power_three_count", "reduced_denominator_power_four_count", "channels_with_nonzero_direct_open_edge_restriction", "channels_with_zero_direct_open_edge_restriction", "pointwise_I28_relation", "minimum_vertex_integrability_margin"],
+      "properties": {
+        "raw_channel_count": {"const": 11},
+        "channels_with_exact_Delta_factor": {"const": 10},
+        "reduced_denominator_power_three_count": {"const": 10},
+        "reduced_denominator_power_four_count": {"const": 1},
+        "channels_with_nonzero_direct_open_edge_restriction": {"const": ["I10_123"]},
+        "channels_with_zero_direct_open_edge_restriction": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "string"}},
+        "pointwise_I28_relation": {"const": "I28_123+I28_132+I28_231=0"},
+        "minimum_vertex_integrability_margin": {"const": 1}
+      }
+    },
+    "channel_rows": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/channelRow"}},
+    "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "IBP_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["generic_relative_IBP_primitives", "corner_flux_for_future_IBP_primitives", "edge_bubble_coefficients", "scalar_triangle_and_log_master_coefficients", "generic_integrated_channel_functions"],
+      "properties": {
+        "generic_relative_IBP_primitives": {"const": "NOT_COMPUTED"},
+        "corner_flux_for_future_IBP_primitives": {"const": "NOT_COMPUTED"},
+        "edge_bubble_coefficients": {"const": "NOT_COMPUTED"},
+        "scalar_triangle_and_log_master_coefficients": {"const": "NOT_COMPUTED"},
+        "generic_integrated_channel_functions": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["GENERIC_GHOST_N3_BARYCENTRIC_FACTORIZATION_COMPUTED", "TEN_OF_ELEVEN_UPSTREAM_NUMERATORS_HAVE_EXACT_DELTA_FACTOR", "ONLY_I10_HAS_NONZERO_DIRECT_OPEN_EDGE_RESTRICTION", "POINTWISE_I28_RELATION_VERIFIED", "GENERIC_RELATIVE_IBP_REDUCTION_COMPUTED", "GENERIC_EDGE_BUBBLE_COEFFICIENTS_COMPUTED", "GENERIC_GHOST_N3_FULL_KINEMATIC_FUNCTIONS_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "RESIDUAL_TRANSFER_AUTHORIZED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "GENERIC_GHOST_N3_BARYCENTRIC_FACTORIZATION_COMPUTED": {"const": true},
+        "TEN_OF_ELEVEN_UPSTREAM_NUMERATORS_HAVE_EXACT_DELTA_FACTOR": {"const": true},
+        "ONLY_I10_HAS_NONZERO_DIRECT_OPEN_EDGE_RESTRICTION": {"const": true},
+        "POINTWISE_I28_RELATION_VERIFIED": {"const": true},
+        "GENERIC_RELATIVE_IBP_REDUCTION_COMPUTED": {"const": false},
+        "GENERIC_EDGE_BUBBLE_COEFFICIENTS_COMPUTED": {"const": false},
+        "GENERIC_GHOST_N3_FULL_KINEMATIC_FUNCTIONS_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {"type": "object", "additionalProperties": false, "required": ["five_carrier_projection"], "properties": {"five_carrier_projection": {"$ref": "#/$defs/dependency"}}},
+    "next_gate": {"const": "CONSTRUCT_EXACT_RELATIVE_SIMPLEX_IBP_PRIMITIVES_AND_REDUCE_TO_SCALAR_TRIANGLE_PLUS_EDGE_BUBBLE_MASTERS"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "term": {"type": "object", "additionalProperties": false, "required": ["alpha_exponents", "box_exponents", "coefficient"], "properties": {"alpha_exponents": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0}}, "box_exponents": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0}}, "coefficient": {"$ref": "#/$defs/rational"}}},
+    "orders": {"type": "object", "additionalProperties": false, "minProperties": 3, "maxProperties": 3, "patternProperties": {"^(alpha[012]_(zero|vertex))$": {"type": "integer", "minimum": 0}}},
+    "channelRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["channel_id", "upstream_term_count", "delta_factor_power", "reduced_denominator_power", "homogeneous_alpha_degree", "homogeneous_box_degree", "edge_vanishing_orders", "vertex_vanishing_orders", "vertex_integrability_margins", "direct_open_edge_restriction", "reduced_numerator_terms"],
+      "properties": {
+        "channel_id": {"type": "string", "pattern": "^I(10|24|25|28|29)_[123]{3}$"},
+        "upstream_term_count": {"type": "integer", "minimum": 1},
+        "delta_factor_power": {"enum": [0, 1]},
+        "reduced_denominator_power": {"enum": [3, 4]},
+        "homogeneous_alpha_degree": {"enum": [7, 9]},
+        "homogeneous_box_degree": {"type": "integer", "minimum": 0, "maximum": 2},
+        "edge_vanishing_orders": {"$ref": "#/$defs/orders"},
+        "vertex_vanishing_orders": {"$ref": "#/$defs/orders"},
+        "vertex_integrability_margins": {"$ref": "#/$defs/orders"},
+        "direct_open_edge_restriction": {"enum": ["ZERO", "NONZERO"]},
+        "reduced_numerator_terms": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/term"}}
+      }
+    },
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "result_id": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  }
+}

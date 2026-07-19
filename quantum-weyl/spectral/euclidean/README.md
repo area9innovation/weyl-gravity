@@ -111,6 +111,17 @@ an independent quadrature replay guards against the false logarithm branches
 produced by naive iterated symbolic integration.  This is one coefficient-
 bearing kinematic fixture, not the generic functions of `(x1,x2,x3)`.
 
+At generic positive nonexceptional kinematics, the integrands themselves now
+have an exact homogeneous barycentric reduction in
+[`GENERIC_BACKGROUND_GHOST_N3_BARYCENTRIC_FACTORIZATION.json`](certificates/GENERIC_BACKGROUND_GHOST_N3_BARYCENTRIC_FACTORIZATION.json).
+Ten of eleven numerators contain one exact `Delta` factor, so their common
+pole order drops from four to three.  All raw orientations except `I10_123`
+vanish on every open simplex edge; their exact edge/vertex orders and positive
+corner-integrability margins are stored.  The `I28` quotient relation holds
+pointwise.  This identifies the only direct edge-restriction source but does
+not yet compute rational IBP primitives, their corner flux, bubble/log
+coefficients, or the generic integrated functions.
+
 The combined pure-vector `n=1+n=2` slice
 is now exact; the three longitudinal `D_W` towers are resummed into the
 normalized scalar Schur operator
@@ -159,6 +170,8 @@ PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_five_carrier_projection
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n3_symmetric_point_simplex_integration
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_symmetric_point_simplex_integration
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n3_barycentric_factorization
+PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_barycentric_factorization
 ```
 
 Full regeneration of the five-carrier projection is an exact scientific-tier

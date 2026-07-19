@@ -297,7 +297,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "SUPPLY_GENERIC_KINEMATIC_CONTINUATION_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
+        == "SUPPLY_GENERIC_RELATIVE_IBP_PRIMITIVES_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
     )
 
     dependencies = {}
@@ -307,7 +307,13 @@ def main() -> None:
     assert claims["generic_ghost_n3_symmetric_point_scalar_master"] == (
         "4*Cl2(pi/3)/sqrt(3)"
     )
-    assert len(payload["inputs"]) == 40
+    assert claims["generic_ghost_n3_generic_Delta_cancellation_count"] == 10
+    assert claims["generic_ghost_n3_unique_direct_edge_source"] == ["I10_123"]
+    assert claims["generic_ghost_n3_minimum_vertex_integrability_margin"] == 1
+    assert claims["generic_ghost_n3_pointwise_I28_relation"] == (
+        "I28_123+I28_132+I28_231=0"
+    )
+    assert len(payload["inputs"]) == 41
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

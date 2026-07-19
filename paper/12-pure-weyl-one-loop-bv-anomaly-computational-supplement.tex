@@ -1387,6 +1387,46 @@ normalized longitudinal Schur $\mathcal R(K)$ and finite $\mathcal R(K^2)$
 rows, physical fourth-order Hessian kernel, and their complete sum into five
 repository functions and coefficients remain open.
 
+\subsection{Generic barycentric factorization}
+
+The independent generic reduction substitutes $C=1-A-B$ only after testing
+divisibility by
+\[
+ \Delta=CAx_1+ABx_2+BCx_3.
+\]
+For ten rows the polynomial remainder after division by $\Delta$ vanishes
+exactly.  Rehomogenizing their quotients to alpha degree seven gives pole-
+three integrands.  The remaining $I_{29}$ numerator rehomogenizes directly
+to $-16A^3B^3C^3/27$ at pole four.
+
+The certificate stores every reduced rational coefficient and independently
+reconstructs all 837 upstream terms.  Monomial valuations then give the exact
+edge and vertex orders printed in the main paper.  The current integrands are
+locally integrable because every $v-p+2$ is positive, but this does not settle
+the flux of a future primitive.  The three pole-three $I_{28}$ rows reduce to
+\[
+\begin{aligned}
+ \widetilde N_{28}^{123}&=\frac{32}{243}A^2B^2C^2(2A-B-C),\\
+ \widetilde N_{28}^{132}&=-\frac{32}{243}A^2B^2C^2(A+B-2C),\\
+ \widetilde N_{28}^{231}&=-\frac{32}{243}A^2B^2C^2(A-2B+C),
+\end{aligned}
+\]
+so the quotient relation is a pointwise polynomial identity.
+
+\begin{verbatim}
+MOD="spectral.euclidean.verify_generic_background_ghost_n3_"
+MOD="${MOD}barycentric_factorization"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+TEST="spectral.euclidean.tests.test_generic_background_ghost_n3_"
+TEST="${TEST}barycentric_factorization"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+The next calculation must solve for relative rational IBP primitives.  It
+must record their open-edge and punctured-corner flux separately and reduce
+the result to the scalar triangle and edge-bubble masters.  No generic
+integrated form factor is claimed by the present factorization.
+
 \subsection{Exact symmetric-point simplex integration}
 
 At $x_1=x_2=x_3=1$, permutation averaging preserves every simplex integral
@@ -1530,6 +1570,10 @@ while rejecting promotion of normalization alone to a five-carrier projection;
 \item replay the stored eleven-to-ten five-carrier projection on unseen exact
 momentum/simplex fixtures across all 125 TT tensor products, and reject a
 coefficient mutation even after its formula digest is recomputed;
+\item divide every generic projected numerator by $\Delta$, reconstruct the
+ten exact cancellations and one pole-four remainder, verify every homogeneous
+edge/vertex order and the pointwise $I_{28}$ relation, while rejecting any
+promotion to a completed relative-IBP reduction;
 \item reconstruct the symmetric-point numerators from the upstream 837 terms,
 verify the four rational divergence identities and all boundary-flux orders,
 and compare the exact Clausen reduction with independent quadrature;

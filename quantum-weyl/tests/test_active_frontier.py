@@ -436,7 +436,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "FREEZE_GENERIC_NONCOMMUTING_ZETA_FACTORIZATION_AND_COMPUTE_ITS_BCH_RESIDUE_SEPARATELY_FROM_THE_GLOBAL_FINITE_ROWS",
+            "CONSTRUCT_EXACT_RELATIVE_SIMPLEX_IBP_PRIMITIVES_WITH_PUNCTURED_CORNER_FLUX_AND_I10_EDGE_BUBBLE_DISPOSITION",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

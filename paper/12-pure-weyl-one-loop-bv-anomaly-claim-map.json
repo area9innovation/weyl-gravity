@@ -172,8 +172,12 @@
       "denominator": 648,
       "numerator": 503
     },
+    "generic_ghost_n3_barycentric_formula_digest": "df89b7075e72b8c8a34c6e35a5a39bc25104948081c069bfafa97af6f308755a",
     "generic_ghost_n3_five_carrier_parametric_projection": true,
+    "generic_ghost_n3_generic_Delta_cancellation_count": 10,
+    "generic_ghost_n3_minimum_vertex_integrability_margin": 1,
     "generic_ghost_n3_nonzero_momentum_parametric_kernel": true,
+    "generic_ghost_n3_pointwise_I28_relation": "I28_123+I28_132+I28_231=0",
     "generic_ghost_n3_projection_formula_digest": "2b3c0de4147aa45b7b4f783495dfaa4097903f4db1f1cc84aa665a0ae467a245",
     "generic_ghost_n3_projection_quotient_dimension": 10,
     "generic_ghost_n3_projection_raw_channel_count": 11,
@@ -188,6 +192,9 @@
     "generic_ghost_n3_symmetric_point_scalar_master": "4*Cl2(pi/3)/sqrt(3)",
     "generic_ghost_n3_symmetric_point_simplex_integrated": true,
     "generic_ghost_n3_total_Wick_rows": 20,
+    "generic_ghost_n3_unique_direct_edge_source": [
+      "I10_123"
+    ],
     "generic_ghost_n3_zero_momentum_stabilizer": "S3",
     "generic_ghost_normalized_Schur_operator": "S_L(W)=(2/3)I+(1/3)delta(F+W)^-1 d",
     "generic_ghost_order_two_weighted_trace_pole_coefficients": {
@@ -342,7 +349,7 @@
     "universal_CPT_third_curvature_kernels_imported": true
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "8932cde33844e74e85d45554509ab4338e5afc1b6bdfa9561156ab42746fdc4b",
+  "compiled_pdf_sha256": "c3a30679ba11b6b0ce5060d0bf67ca3e9bfdf4a265b2ccf0dafad7b88421f4de",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
@@ -363,6 +370,7 @@
     "generic_ghost_longitudinal_DW_carriers_evaluated": false,
     "generic_ghost_longitudinal_Schur_form_factors_evaluated": false,
     "generic_ghost_n3_integrated_five_carrier_form_factors": false,
+    "generic_ghost_n3_relative_IBP_reduction": false,
     "generic_ghost_renormalized_R_K": false,
     "generic_ghost_zeta_multiplicative_anomaly_computed_without_declared_factorization": false,
     "generic_nonminimal_ghost_CPT_determinant": false,
@@ -381,7 +389,7 @@
     "unitarity_theorem": false,
     "zeta_factorization_without_local_multiplicative_anomaly": false
   },
-  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact, the generic ghost n=3 triangle is projected exactly onto that quotient, and all eleven coordinates are integrated analytically at the symmetric nonexceptional point. The curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3; Wres(K), Wres(K^2), and Wres(log S_L) are exact, the declared order-two weighted trace fixes the pole and scale row, and the round-S4 reference finite K/K2 rows, canonical det_3 tail, weighted modified determinant, and Einstein-ratio defect 5/3 are complete. The distinct generic weight-raised local defect is exactly -(1/4)Wres(K^2) and specializes to -1/3. A smoothing witness proves that the generic finite rows require a full Green kernel or spectral measure; generic kinematic simplex functions, the generic physical fourth-order kernel, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
+  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact and the generic ghost n=3 triangle is projected exactly onto that quotient. Ten generic numerators cancel one Delta; only I10 has a nonzero direct open-edge restriction, while the I28 relation is pointwise. All eleven coordinates are integrated analytically at the symmetric nonexceptional point. The curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3; Wres(K), Wres(K^2), and Wres(log S_L) are exact, the declared order-two weighted trace fixes the pole and scale row, and the round-S4 reference finite K/K2 rows, canonical det_3 tail, weighted modified determinant, and Einstein-ratio defect 5/3 are complete. The distinct generic weight-raised local defect is exactly -(1/4)Wres(K^2) and specializes to -1/3. A smoothing witness proves that the generic finite rows require a full Green kernel or spectral measure; generic relative-IBP/corner-flux and edge-bubble data, the generic physical fourth-order kernel, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
   "inputs": {
     "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json": {
       "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
@@ -446,6 +454,10 @@
     "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json": {
       "result_id": "GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER",
       "sha256": "9475d5f80e50d61a6b7839e4f7f572ca7d9b9d84a8508f643b8d7353a2a63f1b"
+    },
+    "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_BARYCENTRIC_FACTORIZATION.json": {
+      "result_id": "GENERIC_BACKGROUND_GHOST_N3_BARYCENTRIC_FACTORIZATION",
+      "sha256": "2f52dd4912ac85e85c69468c888b8a38216418c143892ded7c507266a8c96ca8"
     },
     "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION.json": {
       "result_id": "GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION",
@@ -546,13 +558,13 @@
   },
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "7f89711f2181259e2858f873814aada5838d6cd4469485089d6a0b4297630aa7",
+  "manuscript_sha256": "4dc749f06e7aa6fe4c583130b0dbb26c5e3a18f328bb86579d22f887745bf014",
   "next_gate": {
     "required_inputs": [
       "same-background compensator-inclusive classical contraction",
       "finite C2 and absolute dressed Rhat2 normalization conditions",
       "full generic-background primed Green/resolvent kernel or complete spectral measure for the reference-scale finite R(K), finite R(K^2), and det3 rows; the round-S4 special-background benchmark is complete but does not substitute for this global carrier",
-      "generic-kinematic continuation of the exact Diff-Weyl ghost n=3 simplex integration beyond the certified symmetric point",
+      "exact generic relative-simplex IBP primitives with punctured-corner flux and I10 edge-bubble disposition, reducing the certified barycentric rows to scalar-triangle and edge masters",
       "same-gauge generic-background physical fourth-order Hessian and remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
       "renormalized BV operator data fixing complete Q1"
     ],
@@ -563,12 +575,12 @@
       "H3-to-H4 and H4-to-H5 maps",
       "pairing correction"
     ],
-    "status": "SUPPLY_GENERIC_KINEMATIC_CONTINUATION_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
+    "status": "SUPPLY_GENERIC_RELATIVE_IBP_PRIMITIVES_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
   },
   "publication_artifacts": {
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "250af3705a5f810e25e475c47c436db32479413d9cc03154e467c15b0fd1f1c1",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "b754f47e31e68f08ef955315f6a9511d270a914b709e94076fce9002f80089ea",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "aeb6a6641bb4089f733c839ecc8aed0af30ccb2be3c4b51216ca4f5542c10e6e",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "2ca1a34f38c2871543d12255c3ea6c3b50ae38a268856e8a09f3390e258392ef",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "ebd4f63686f686b1964ecc1d6b7b39b181142209ceb1eca6dbb0aa9239d776e3",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "44b7333083f0eb3149e8d0ff67188a21e319594d6748fc8d1b42a0099c8db332",
     "paper/generate_12_quantum_anomaly_tables.py": "0f7bc635be1f8b2f51f12d586b8828d83132f785d2b6221df4bb3acf0671af78",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "c2ec89db2caaab73ae81cb690c6a91bf95dac7748970c10bafcd4794a4c8297a",
     "paper/verify_12_quantum_anomaly_tables.py": "bb7ebabf52deb62f7e55f0e7e991e6bb6a6a281fab34985881830271dd7f4f63"
