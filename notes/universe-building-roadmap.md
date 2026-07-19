@@ -87,7 +87,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   extend the selected 160-row five-current de Rham/cotangent carrier by the action-derived q2 and replay the complete arity-two identity; causal Green data and the eighteen candidate-13 spectral receivers remain separate fail-closed gates
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows now that its product spectrum, matched 3^-6 exceptional factor and regular-complement det3 are certified, then add remaining BV rows to the exact partial-BV five-carrier representative; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; complete q2 plus rod, memory, normalized-readout and 106,620-key physical-emitter q3 subblocks are executable, so assemble the base and structural-zero ledger, test the arity identities, K_Berger equivariance and observer-morphism stability, and only then restrict records to Z2^C
+Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; complete q2, four nonzero apparatus/emitter q3 subblocks and the two-source structural-zero ledger are executable, so assemble the certified 59,598-term base q3 with them, test the arity identities, K_Berger equivariance and observer-morphism stability, and only then restrict records to Z2^C
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
 
@@ -1122,9 +1122,10 @@ survive the first backreacted, normalized apparatus interaction?
    metric/clock-switch jet adds 106,620 ordered keys and 107,988 exact
    coefficient monomials, including both switch second derivatives, with
    exact q2 action regression and common-action cyclic completion.  The base
-   gravity-clock-Maxwell `q3` source remains to assemble; scalar-BV and
-   emitter Diff--BV are structural zeros still requiring an explicit source
-   ledger.
+   gravity-clock-Maxwell `q3` source remains to assemble.  The scalar-BV and
+   emitter Diff--BV sources now have an explicit structural-zero ledger: all
+   1,152 q2 terms lower to constant-coefficient field-degree-three actions,
+   so their fourth derivatives and q3 payloads vanish exactly.
    The interaction identities and all observer-cone consumers remain
    fail-closed.
    A common source

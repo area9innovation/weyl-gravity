@@ -1,0 +1,128 @@
+{
+  "activation_disposition": {
+    "apparatus_scalar_BV_q3_zero_certified": true,
+    "arity_replay_certified": false,
+    "complete_scalar_q3_exported": false,
+    "detector_response_on_second_order_cone_authorized": false,
+    "emitter_Diff_BV_q3_zero_certified": true,
+    "physical_branch_bridge_activated": false,
+    "structural_q3_zero_ledger_complete": true
+  },
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC ledger certifies that the apparatus scalar-BV and massive-two-form Diff--BV sources contribute identically zero to q3 on the canonical 108-row Berger carrier. It does not infer zero from a missing file. For every one of the 240 scalar-BV and 912 emitter-Diff--BV q2 terms, the certified nondegenerate odd pairing lowers the output and reconstructs a three-slot action term. Every coefficient is independent of the apparatus and emitter fields: the scalar source is exactly sum phi_plus L_c phi and the emitter source is exactly sum K_b_plus L_c K_b, with each Lie derivative bilinear in one ghost and one field. Hence both authoritative source actions are homogeneous of field degree three and their fourth Frechet derivatives vanish termwise. Their normalized 108^4 q3 payload is therefore the explicit empty tensor, not an uncomputed placeholder. Adding a spurious field-dependent coefficient promotes each source to degree four and is detected by the mutation rail. This closes only the two declared structural-zero sources. It does not assert that any physical rod, memory, readout, emitter-stress or base gravity-clock-Maxwell q3 source vanishes; those are separate nonzero certificates. Complete q3 still requires zero-extension and collision-safe assembly of the certified 64-row base plus four nonzero apparatus/emitter subblocks and this ledger. Component q1q2 and q2q2+q1q3 replay, K_Berger equivariance, observer-morphism stability, detector response on Z2, nonlinear rank, physical Bridge 3, finite-parameter causal propagation and quantum claims remain unavailable. No cross-background mode identification is made.",
+  "claim_status": "CERTIFIED_SCALAR_BV_AND_EMITTER_DIFF_BV_Q3_STRUCTURAL_ZEROS",
+  "dependency_refs": {
+    "apparatus_scalar_BV_q2": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_APPARATUS_SCALAR_BV_Q2_PBW.json",
+      "result_id": "BERGER_108_ROW_APPARATUS_SCALAR_BV_Q2_PBW",
+      "sha256": "8aca7503ca2a03d224a3f953d92a652e57e8cf526507f865d43e5db1f5958f7d"
+    },
+    "combined_clock_chart": {
+      "path": "closed_universe_observers/certificates/BERGER_NONLINEAR_CLOCK_COMBINED_CANONICAL_MAP_F2_F3.json",
+      "result_id": "BERGER_NONLINEAR_CLOCK_COMBINED_CANONICAL_MAP_F2_F3",
+      "sha256": "b35f50e238a15c1e226edf59779716987a6aee13c1917d7c9e65b9a39033f40a"
+    },
+    "component_contract": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json",
+      "result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+      "sha256": "4113635be1493e0eac5e945a970ce4989f0484d5fa658a10bf893c63f5ae707c"
+    },
+    "emitter_Diff_BV_q2": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_DIFF_BV_Q2_PBW.json",
+      "result_id": "BERGER_108_ROW_EMITTER_DIFF_BV_Q2_PBW",
+      "sha256": "636e08572fe0802b41377f3b0ab53941c2165e568768e57dc0bbdc03075f4795"
+    },
+    "emitter_Diff_BV_q2_payload": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_DIFF_BV_Q2_PBW_PAYLOAD.json",
+      "result_id": "BERGER_108_ROW_EMITTER_DIFF_BV_Q2_PBW_PAYLOAD",
+      "sha256": "248344883ced8e6e10199892116641473ff0099559688e01217a36c434ac6df7"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "empty_q3_payload": {
+    "canonical_sha256": "b28b32b4d0e178e2cb3e4814f1762f9285023bf4095e7a15199b08e60bd7ba2f",
+    "operator_key_count": 0,
+    "rows": [],
+    "serialized_term_count": 0,
+    "shape": [
+      108,
+      108,
+      108,
+      108
+    ]
+  },
+  "flags": {
+    "APPARATUS_SCALAR_BV_Q3_STRUCTURAL_ZERO": true,
+    "COMPLETE_SCALAR_108_ROW_Q3_EXPORTED": false,
+    "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
+    "EMITTER_DIFF_BV_Q3_STRUCTURAL_ZERO": true,
+    "QUANTUM_CLAIM": false,
+    "STRUCTURAL_Q3_ZERO_LEDGER_COMPLETE": true,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "insert_spurious_field_dependent_coefficient"
+    }
+  ],
+  "next_gate": "ASSEMBLE_COMPLETE_SCALAR_108_ROW_Q3_PBW",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_108_row_q3_structural_zero_ledger.py",
+        "sha256": "94e4539adfb27ac112b49fa3d6967cf90048f05dd4ea167794fc678885f1aa9c"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_108_row_q3_structural_zero_ledger.py",
+        "sha256": "54770966d1731547a7391aaf80a6c24f82c34e48a90beab812d13837d9068c8f"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_108_row_q3_structural_zero_ledger.py",
+        "sha256": "6ba39a446453cb9298ac6f11bac3ca48d791a157eb548d76568f8a32f9654c54"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-108-row-q3-structural-zero-ledger-v1.schema.json",
+        "sha256": "b29a6a3c1eb5b561e28392eb4db3110933b8116288735b26742dec070ec946a8"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-108-row-q3-structural-zero-ledger.md",
+        "sha256": "28cde9dabbe2b7c0b62d9f11280f9d15b379b0b6076628e31fd69273763a6d25"
+      }
+    ]
+  },
+  "result_id": "BERGER_108_ROW_Q3_STRUCTURAL_ZERO_LEDGER",
+  "schema": "closed-universe-berger-108-row-q3-structural-zero-ledger-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension",
+  "source_audits": [
+    {
+      "exact_action_field_degree": 3,
+      "fourth_frechet_derivative_term_count": 0,
+      "lowered_cubic_slot_count": 720,
+      "lowered_slot_sha256": "33aa26d8a22a3eea55bd9e53f1349d045bcae15a545e0b797deac5141eeec784",
+      "nonconstant_coefficient_factor_count": 0,
+      "pairing_lowering_defect_count": 0,
+      "q2_serialized_term_count": 240,
+      "q3_operator_key_count": 0,
+      "source": "apparatus_scalar_BV",
+      "source_action": "integral sum R_plus L_c R + sum(m_plus L_c m+p_plus L_c p)",
+      "structural_zero_certified": true
+    },
+    {
+      "exact_action_field_degree": 3,
+      "fourth_frechet_derivative_term_count": 0,
+      "lowered_cubic_slot_count": 2736,
+      "lowered_slot_sha256": "e44b0889539ac3e602d23ae4f3c3553eec1e154b92482e60865cb67fbb82cb90",
+      "nonconstant_coefficient_factor_count": 0,
+      "pairing_lowering_defect_count": 0,
+      "q2_serialized_term_count": 912,
+      "q3_operator_key_count": 0,
+      "source": "emitter_Diff_BV",
+      "source_action": "integral sum_b <K_b_plus,L_c K_b>",
+      "structural_zero_certified": true
+    }
+  ]
+}

@@ -1464,9 +1464,13 @@ ordered PBW keys with 107,988 coefficient monomials on 27 cotangent rows.
 Its 520 first-jet comparisons, second-jet permutation audit, six direct mixed
 variations and common-action cyclic completion pass exactly.  These are four
 source subblocks, not complete `q3`: the base gravity-clock-Maxwell import
-remains to assemble, while scalar-BV and emitter Diff--BV must be ledgered as
-structural zeros.  Arity replay and `O_detector|Z2^C` therefore remain
-fail-closed.  The active next gate is base-q3 plus structural-zero assembly.
+remains to assemble.  The two remaining zero sources are now explicit rather
+than omitted: `BERGER_108_ROW_Q3_STRUCTURAL_ZERO_LEDGER` lowers all 240
+scalar-BV and 912 emitter-Diff--BV q2 terms through the certified pairing and
+proves their authoritative actions have constant coefficients and field
+degree three, so both fourth derivatives vanish.  Arity replay and
+`O_detector|Z2^C` remain fail-closed.  The active next gate is collision-safe
+base plus apparatus/emitter q3 assembly.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "source_audits", "empty_q3_payload", "mutation_results", "activation_disposition", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-q3-structural-zero-ledger-v1"},
+    "result_id": {"const": "BERGER_108_ROW_Q3_STRUCTURAL_ZERO_LEDGER"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_SCALAR_BV_AND_EMITTER_DIFF_BV_Q3_STRUCTURAL_ZEROS"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 5, "maxProperties": 5},
+    "source_audits": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object", "properties": {"pairing_lowering_defect_count": {"const": 0}, "nonconstant_coefficient_factor_count": {"const": 0}, "exact_action_field_degree": {"const": 3}, "fourth_frechet_derivative_term_count": {"const": 0}, "q3_operator_key_count": {"const": 0}, "structural_zero_certified": {"const": true}}}},
+    "empty_q3_payload": {"type": "object", "properties": {"shape": {"const": [108, 108, 108, 108]}, "rows": {"const": []}, "operator_key_count": {"const": 0}, "serialized_term_count": {"const": 0}}},
+    "mutation_results": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"type": "object", "properties": {"detected": {"const": true}}}},
+    "activation_disposition": {"type": "object", "properties": {"structural_q3_zero_ledger_complete": {"const": true}, "complete_scalar_q3_exported": {"const": false}, "arity_replay_certified": {"const": false}, "detector_response_on_second_order_cone_authorized": {"const": false}}},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "ASSEMBLE_COMPLETE_SCALAR_108_ROW_Q3_PBW"},
+    "claim_boundary": {"type": "string", "minLength": 1200},
+    "provenance": {"type": "object"}
+  }
+}
