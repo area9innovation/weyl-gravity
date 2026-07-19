@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-hadamard-regular-morphism-boundary-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_layer",
+    "dependency_tags",
+    "classical_commit",
+    "setting_id",
+    "dependency_refs",
+    "exact_input_checks",
+    "finite_microlocal_closure",
+    "primary_theorem_scope",
+    "old_obligation_disposition",
+    "minimal_direct_route",
+    "classical_import_request",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-hadamard-regular-morphism-boundary-v1"},
+    "result_id": {"const": "BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY"},
+    "result_state": {"const": "FINITE_WAVEFRONT_MAPS_CERTIFIED_CUTOFF_REGULAR_MORPHISM_AND_SEED_COVARIANCE_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_HADAMARD_TRANSPORT_BOUNDARY"},
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["base_parametrix", "typed_moller", "companion_graph", "companion_decomposability", "typed_volterra", "classical_volterra"],
+      "properties": {
+        "base_parametrix": {"$ref": "#/$defs/dependency"},
+        "typed_moller": {"$ref": "#/$defs/dependency"},
+        "companion_graph": {"$ref": "#/$defs/dependency"},
+        "companion_decomposability": {"$ref": "#/$defs/dependency"},
+        "typed_volterra": {"$ref": "#/$defs/dependency"},
+        "classical_volterra": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "exact_input_checks": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {"const": true}
+    },
+    "finite_microlocal_closure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["graph_maps", "checks", "scope"],
+      "properties": {
+        "graph_maps": {
+          "type": "object",
+          "minProperties": 5,
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["formula", "maximum_order"],
+            "properties": {
+              "formula": {"type": "string", "minLength": 1},
+              "maximum_order": {"type": "integer", "minimum": 0, "maximum": 2}
+            }
+          }
+        },
+        "checks": {
+          "type": "object",
+          "minProperties": 5,
+          "additionalProperties": {"const": true}
+        },
+        "scope": {"const": "conditional wavefront safety for every already-defined input distribution"}
+      }
+    },
+    "primary_theorem_scope": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {"type": "object"}
+    },
+    "old_obligation_disposition": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "minimal_direct_route": {
+      "type": "object",
+      "minProperties": 9,
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "classical_import_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "required_scope", "status"],
+      "properties": {
+        "result_id": {"const": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY"},
+        "required_scope": {
+          "type": "array",
+          "minItems": 5,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "status": {"const": "NOT_SUPPLIED"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "BERGER_FINITE_GRAPH_WAVEFRONT_SAFETY",
+        "BERGER_LOCAL_GHOST_HADAMARD_FACTORS_INCLUDED",
+        "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY",
+        "BERGER_REGULAR_GREENHYP_MORPHISM",
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION",
+        "BERGER_26_ROW_BRST_HADAMARD",
+        "BERGER_54_ROW_BRST_HADAMARD",
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY",
+        "BERGER_HADAMARD_DATA",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "BERGER_FINITE_GRAPH_WAVEFRONT_SAFETY": {"const": true},
+        "BERGER_LOCAL_GHOST_HADAMARD_FACTORS_INCLUDED": {"const": true},
+        "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY": {"const": false},
+        "BERGER_REGULAR_GREENHYP_MORPHISM": {"const": false},
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": {"const": false},
+        "BERGER_26_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_54_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY_AND_GLOBAL_SEED_COVARIANCE"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_sources", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "primary_sources": {
+          "const": [
+            "https://arxiv.org/abs/1506.09122",
+            "https://arxiv.org/abs/2210.09278",
+            "https://arxiv.org/abs/2503.12537"
+          ]
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        },
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

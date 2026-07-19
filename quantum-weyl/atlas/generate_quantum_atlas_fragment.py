@@ -31,6 +31,7 @@ DEPENDENCIES = {
     "curvature_CCR": QROOT / "lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
     "Berger_causal_chain": QROOT / "lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
     "Berger_Hadamard_gate": QROOT / "lorentzian/certificates/BERGER_HADAMARD_CONSTRUCTION_GATE.json",
+    "Berger_Hadamard_regular_morphism_boundary": QROOT / "lorentzian/certificates/BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY.json",
     "Berger_A104_complete": QROOT / "lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
     "Berger_graph_q_obstruction": QROOT / "lorentzian/certificates/BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION.json",
     "Slavnov_preflight": QROOT / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
@@ -199,6 +200,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     curvature = values["curvature_CCR"]
     causal = values["Berger_causal_chain"]
     hadamard = values["Berger_Hadamard_gate"]
+    hadamard_boundary = values["Berger_Hadamard_regular_morphism_boundary"]
     berger_a104 = values["Berger_A104_complete"]
     berger_graph_q = values["Berger_graph_q_obstruction"]
     slavnov = values["Slavnov_preflight"]
@@ -312,6 +314,17 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         or hadamard.get("logical_separation", {}).get("complex_structure_or_covariance")
         != "NOT_CONSTRUCTED_ON_54_ROW_DISTRIBUTIONAL_COMPLEX"
         or hadamard.get("claim_flags", {}).get("BERGER_HADAMARD_DATA") is not False
+        or hadamard_boundary.get("claim_flags", {}).get(
+            "BERGER_FINITE_GRAPH_WAVEFRONT_SAFETY"
+        ) is not True
+        or hadamard_boundary.get("claim_flags", {}).get(
+            "BERGER_LOCAL_GHOST_HADAMARD_FACTORS_INCLUDED"
+        ) is not True
+        or hadamard_boundary.get("claim_flags", {}).get(
+            "BERGER_REGULAR_GREENHYP_MORPHISM"
+        ) is not False
+        or hadamard_boundary.get("classical_import_request", {}).get("status")
+        != "NOT_SUPPLIED"
         or berger_a104.get("claim_flags", {}).get("BERGER_FULL_A104_CAUCHY_OPERATOR")
         is not True
         or berger_a104.get("coverage", {}).get("known_coordinates") != 10816
@@ -1063,15 +1076,15 @@ def _berger_gap(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             exactness=("NO_CERTIFIED_MAP", "no per-mode cohomology ledger"),
             pairing=("NO_CERTIFIED_MAP", "carrier pairing has no modewise restriction"),
             complex_structure=("OPEN", "the canonical q_Cauchy graph lift is exactly rejected; corrected lift, Cauchy/Krein form, real structure and closed spectral splitting remain open"),
-            hadamard=("OPEN", "direct 26-row causal Green homotopy is certified, but distributional companion transport, global bisolution, covariance and BRST Ward identities are not constructed"),
+            hadamard=("OPEN", "finite graph wavefront safety and local ghost factors are certified; the temporal-cutoff Green family, regular response morphism, global seed covariance and BRST Ward identities are not constructed"),
             state_space=("OPEN", "reduced Krein evidence does not define a Berger physical state space"),
             qme=("OBSTRUCTED", "strict fixed-field-content local Euclidean QME is obstructed"),
             lifecycle=("OBSTRUCTED", "classical causal import remains; strict interacting quantum lifecycle is blocked"),
             particle=("NO_CERTIFIED_MAP", "no mode basis or Hadamard state"),
             crosswalk=("NO_CERTIFIED_MAP", "retained 26 rows to stationary physical modes"),
         ),
-        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_A104_complete", "Berger_graph_q_obstruction", "Slavnov_preflight", "regulated_Slavnov_breaking"),
-        "The 26/54-row causal carrier and all 10,816 coefficients of A104 are imported. The tautological stationary q_Cauchy graph lift is rejected by 157 square and 207 evolution-commutator defects; this does not block the direct causal route, whose distributional transport and global BRST covariance remain open. No physical mode, complex structure, Hadamard state, or particle is inferred.",
+        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_Hadamard_regular_morphism_boundary", "Berger_A104_complete", "Berger_graph_q_obstruction", "Slavnov_preflight", "regulated_Slavnov_breaking"),
+        "The 26/54-row causal carrier and all 10,816 coefficients of A104 are imported. Finite graph wavefront safety and local ghost factors are certified, but the nonstationary temporal-cutoff Green family, regular response morphism and seed covariance are absent. The tautological stationary q_Cauchy graph lift is independently rejected by 157 square and 207 evolution-commutator defects. No physical mode, complex structure, Hadamard state, or particle is inferred.",
     )
 
 

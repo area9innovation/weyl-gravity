@@ -1502,7 +1502,32 @@ realization and zero-frequency ledger. Either route must still verify a
 positive or explicitly Krein covariance and both BRST Ward identities before
 a full-BV Hadamard claim.
 
+The direct-route microlocal audit now closes two finite obligations without
+promoting a state. Every map in the exact `A10 <-> C20` graph SDR is a
+differential operator of order at most two, hence wavefront-safe on every
+already-defined input distribution; the two ghost-wave local parametrices are
+already included as direct-sum factors. The remaining transport problem is
+not six independent mysteries. The present stationary slab Volterra maps are
+not compact-to-compact regular GreenHyp morphisms, and their all-Sobolev
+factorial bounds do not supply a distribution-kernel wavefront estimate.
+
+The active direct bridge is therefore
+
+```text
+BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY
+  -> regular compact-support response morphism
+  -> companion Hadamard two-point distribution
+```
+
+Its activation gate is a smooth nonstationary cutoff family with typed Green
+operators, causal support and adjoint reversal, followed independently by a
+global seed covariance with declared BV/Krein and physical-positivity policy.
+The fail-closed atlas row remains `OPEN`: no full companion covariance, BRST
+Ward identity or physical state-space sign has been certified.
+
 Receipt:
 [`berger-a104-endpoint-completion.md`](../quantum-weyl/reports/berger-a104-endpoint-completion.md) and
 [`BERGER_A104_ENDPOINT_COMPLETION_V1_TIER_RECEIPT.json`](../quantum-weyl/lorentzian/receipts/BERGER_A104_ENDPOINT_COMPLETION_V1_TIER_RECEIPT.json), plus
 [`berger-canonical-graph-q-cauchy-obstruction.md`](../quantum-weyl/reports/berger-canonical-graph-q-cauchy-obstruction.md).
+The narrowed direct-route boundary is recorded in
+[`berger-hadamard-regular-morphism-boundary.md`](../quantum-weyl/reports/berger-hadamard-regular-morphism-boundary.md).

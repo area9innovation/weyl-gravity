@@ -137,6 +137,20 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             for entry in modes
         ))
 
+    def test_berger_hadamard_gap_names_regular_morphism_boundary(self) -> None:
+        berger = next(
+            entry for entry in build()["entries"]
+            if entry["id"] == "quantum.berger.carrier_gap.retained_26_stationary_modes"
+        )
+        hadamard = berger["quantum_data"]["Hadamard_two_point_function"]
+        self.assertEqual(hadamard["status"], "OPEN")
+        self.assertIn("temporal-cutoff Green family", hadamard["statement"])
+        self.assertIn("regular response morphism", hadamard["statement"])
+        self.assertIn(
+            "BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY",
+            {evidence["result_id"] for evidence in berger["evidence"]},
+        )
+
     def test_non_mode_carriers_are_not_particles(self) -> None:
         guards = [
             entry for entry in build()["entries"]

@@ -135,6 +135,7 @@ DEPENDENCIES = {
     "zero_frequency_readiness": HERE / "lorentzian/certificates/BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER_READINESS.json",
     "A104_partial": HERE / "lorentzian/certificates/BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY.json",
     "Hadamard_existence_audit": HERE / "lorentzian/certificates/BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT.json",
+    "Hadamard_regular_morphism_boundary": HERE / "lorentzian/certificates/BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY.json",
     "typed_biwave_Volterra_theorem": HERE / "lorentzian/certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORT.json",
     "stationary_generator_import_readiness": HERE / "lorentzian/certificates/BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS.json",
     "curvature_image_CCR": HERE / "lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
@@ -194,7 +195,8 @@ def _load() -> dict[str, dict[str, Any]]:
         "Hadamard_lift": "COVARIANCE_LIFT_CERTIFIED_ZERO_FREQUENCY_SPECTRAL_CARRIER_OPEN",
         "zero_frequency_readiness": "EXACT_MASK_NONIDENTIFIABILITY_CERTIFIED_FULL_STATIONARY_CARRIER_REQUIRED",
         "A104_partial": "GLOBAL_A104_104_BY_104_KNOWN_MASK_EXACT_TWO_A12_SLOTS_OPEN",
-        "Hadamard_existence_audit": "DECOMPOSABILITY_CERTIFIED_EXISTENCE_NOT_IMPLIED_STATIONARY_POSITIVITY_CARRIER_OPEN",
+        "Hadamard_existence_audit": "DECOMPOSABILITY_CERTIFIED_DIRECT_CAUSAL_AND_STATIONARY_COMPLETIONS_OPEN",
+        "Hadamard_regular_morphism_boundary": "FINITE_WAVEFRONT_MAPS_CERTIFIED_CUTOFF_REGULAR_MORPHISM_AND_SEED_COVARIANCE_OPEN",
         "typed_biwave_Volterra_theorem": "CONDITIONAL_TYPED_BIWAVE_GREEN_THEOREM_IMPORTED_HADAMARD_AND_PHYSICAL_NORMAL_FORM_OPEN",
         "stationary_generator_import_readiness": "CONSUMER_READY_STATIONARY_CARRIER_INPUT_NOT_SUPPLIED",
         "curvature_image_CCR": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_CERTIFIED_DIRECT_KERNEL_AND_STATE_OPEN",
@@ -2455,9 +2457,24 @@ def _load() -> dict[str, dict[str, Any]]:
         or existence_flags.get("BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION")
         is not False
         or existence.get("next_gate")
-        != "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1"
+        != "BERGER_TYPED_COMPANION_DISTRIBUTIONAL_TRANSPORT_OR_Q26_COMPATIBLE_CAUCHY_LIFT"
     ):
         raise ValueError("Hadamard existence criterion frontier drifted")
+    regular_boundary = values["Hadamard_regular_morphism_boundary"]
+    regular_flags = regular_boundary.get("claim_flags", {})
+    if (
+        regular_flags.get("BERGER_FINITE_GRAPH_WAVEFRONT_SAFETY") is not True
+        or regular_flags.get("BERGER_LOCAL_GHOST_HADAMARD_FACTORS_INCLUDED")
+        is not True
+        or regular_flags.get("BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY")
+        is not False
+        or regular_flags.get("BERGER_REGULAR_GREENHYP_MORPHISM") is not False
+        or regular_flags.get("BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION")
+        is not False
+        or regular_boundary.get("classical_import_request", {}).get("status")
+        != "NOT_SUPPLIED"
+    ):
+        raise ValueError("Hadamard regular-morphism frontier drifted")
     typed_biwave = values["typed_biwave_Volterra_theorem"]
     typed_flags = typed_biwave.get("claim_flags", {})
     if (
@@ -2584,7 +2601,7 @@ def build() -> dict[str, Any]:
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
-                "next_gate": "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
+                "next_gate": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY_REGULAR_RESPONSE_MORPHISM_AND_GLOBAL_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
             },
             "free_Lorentzian_algebra": {
                 "status": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED_AND_GAUGE_INVARIANT_OBSERVABLE_CAUSAL_PROPAGATOR_DEFINED_AUTONOMOUS_GREEN_AND_HADAMARD_STATE_OPEN",
@@ -2697,6 +2714,10 @@ def build() -> dict[str, Any]:
             "RANK_46_SUPPORT_LOCAL_CANDIDATE_IDENTIFIED": True,
             "BRANCH_CARRIER_ARCHITECTURE_PREFLIGHT_COMPLETE": True,
             "COMPANION_DECOMPOSABILITY_CERTIFIED": True,
+            "BERGER_FINITE_GRAPH_WAVEFRONT_SAFETY": True,
+            "BERGER_LOCAL_GHOST_HADAMARD_FACTORS_INCLUDED": True,
+            "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY": False,
+            "BERGER_REGULAR_GREENHYP_MORPHISM": False,
             "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED": True,
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": True,
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED": True,
@@ -2852,10 +2873,10 @@ def build() -> dict[str, Any]:
         "ordered_next_gates": [
             "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
             "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
-            "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
+            "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY_REGULAR_RESPONSE_MORPHISM_AND_GLOBAL_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
-            "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
+            "BERGER_REGULAR_GREENHYP_RESPONSE_MORPHISM_AND_GLOBAL_SEED_COVARIANCE",
             "RESTORE_QME_IN_A_CERTIFIED_EXTENDED_THEORY",
             "QUANTUM_RESIDUAL_TRANSFER_ONLY_AFTER_QME_RESTORATION",
             "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
@@ -3135,7 +3156,11 @@ def build() -> dict[str, Any]:
             "a quantum result. The Berger companion is null-cone decomposable, but this does "
             "not imply existence of a Hadamard state there: the bosonic analytic hypothesis "
             "failure and the later full-BV "
-            "BRST/Krein and physical-positivity gate are recorded separately. "
+            "BRST/Krein and physical-positivity gate are recorded separately. The finite "
+            "companion graph maps are wavefront-safe and the ghost local parametrices are "
+            "included, but the stationary slab Volterra maps are not yet a compact-support "
+            "regular GreenHyp morphism. A nonstationary temporal-cutoff Green family and a "
+            "global seed covariance are the two direct-route inputs still missing. "
             "The exact stationary-carrier import consumer is ready, but no classical manifest "
             "has been supplied and finite PBW data do not decide spectral isolation of zero. "
             "The relative Einstein-Weyl rail imports the final all-row support-local "
@@ -3524,6 +3549,8 @@ def validate(result: dict[str, Any]) -> None:
             "BRANCH_CARRIER_ARCHITECTURE_PREFLIGHT_COMPLETE",
             "RANK_46_SUPPORT_LOCAL_CARRIER_IMPORTED",
             "COMPANION_DECOMPOSABILITY_CERTIFIED",
+            "BERGER_FINITE_GRAPH_WAVEFRONT_SAFETY",
+            "BERGER_LOCAL_GHOST_HADAMARD_FACTORS_INCLUDED",
             "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED",
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY",
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED",

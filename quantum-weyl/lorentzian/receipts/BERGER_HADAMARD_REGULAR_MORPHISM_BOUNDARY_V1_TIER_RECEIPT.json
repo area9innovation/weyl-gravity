@@ -1,0 +1,49 @@
+{
+  "receipt_id": "BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Primary-source audit of the Berger direct-causal Hadamard route, finite graph and ghost-factor wavefront closure, minimal temporal-cutoff regular-morphism boundary, and fail-closed atlas/frontier/planning refresh.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python -m py_compile <changed Python modules>",
+        "python -m json.tool quantum-weyl/lorentzian/schema/berger-hadamard-regular-morphism-boundary-v1.schema.json",
+        "python -m json.tool quantum-weyl/lorentzian/certificates/BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY.json",
+        "git diff --check -- <scoped paths>"
+      ],
+      "elapsed_seconds": 0.5
+    },
+    "tier_1": {
+      "status": "PASS",
+      "runs": [
+        {
+          "command": "PYTHONPATH=quantum-weyl python -m lorentzian.berger_hadamard_regular_morphism_boundary_certificate --check && PYTHONPATH=quantum-weyl python -m lorentzian.verify_berger_hadamard_regular_morphism_boundary && PYTHONPATH=quantum-weyl python -m unittest quantum-weyl/lorentzian/tests/test_berger_hadamard_regular_morphism_boundary.py",
+          "elapsed_seconds": 1.07,
+          "result": "PASS: independent verifier and seven tests; finite A10/C20 graph wavefront safety and local ghost-factor inclusion certified, temporal-cutoff Green family and regular response morphism remain false."
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python -m unittest atlas.tests.test_quantum_atlas_fragment && python residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+          "elapsed_seconds": 8.56,
+          "result": "PASS: generated atlas, independent evidence replay, eight tests and common residual-atlas schema validation."
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python -m active_frontier_certificate --check && PYTHONPATH=quantum-weyl python -m verify_active_frontier && PYTHONPATH=quantum-weyl python -m unittest quantum-weyl/tests/test_active_frontier.py",
+          "elapsed_seconds": 2.25,
+          "result": "PASS: canonical frontier reproduces, independent verifier passes and eight scoped tests pass; a stale pre-existing Hadamard-audit state expectation was repaired."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The affected Hadamard boundary, generated atlas and canonical active-frontier consumer chain were replayed. Content-addressed causal, companion, Volterra and decomposability inputs were not rebuilt."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, shared-core algebra change, Hadamard-state promotion, QME promotion or quantum-theory lifecycle promotion occurred."
+    }
+  },
+  "claim_boundary": "Certifies a narrow microlocal routing theorem and two finite bookkeeping closures. It does not construct the temporal-cutoff Green family, a regular response morphism, a global seed covariance, a companion or BRST Hadamard state, physical positivity, renormalized Lorentzian products, a restored QME or a quantum theory."
+}

@@ -1,0 +1,163 @@
+{
+  "claim_boundary": "Certifies only that the finite companion graph maps are wavefront-safe on every already-defined distribution and that the two local ghost-wave parametrices are included as direct-sum factors. It proves that the current stationary slab Volterra maps do not yet meet the compact-support regular-morphism hypotheses used to transport Hadamard states. The minimal bypass is a nonstationary temporal-cutoff Green family plus a regular response map; a global seed covariance with an explicit BV/Krein and physical-positivity policy is separately required. No companion two-point function, BRST Hadamard covariance, positivity, QME or quantum theorem is claimed.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+    "BERGER_FINITE_GRAPH_WAVEFRONT_SAFETY": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_LOCAL_GHOST_HADAMARD_FACTORS_INCLUDED": true,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "BERGER_REGULAR_GREENHYP_MORPHISM": false,
+    "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY": false,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "classical_import_request": {
+    "required_scope": [
+      "smooth nonstationary cutoff coefficients on compact transition slabs",
+      "typed advanced and retarded Green operators for every cutoff",
+      "causal support and formal-adjoint reversal",
+      "uniform finite-slab Sobolev estimates",
+      "no stationary spectral or time-translation hypothesis"
+    ],
+    "result_id": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY",
+    "status": "NOT_SUPPLIED"
+  },
+  "dependency_refs": {
+    "base_parametrix": {
+      "result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+      "sha256": "1a2bb5b124734a5aa63fdd8c1285d4847b8ff5ea02aed8d6b840db19dfe23fc1"
+    },
+    "classical_volterra": {
+      "result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2",
+      "sha256": "61d0489f7b52b0bc64869bd24b2cd6f1badf8a85609eed5006fb3fe184e713b5"
+    },
+    "companion_decomposability": {
+      "result_id": "BERGER_COMPANION_STATIONARY_DECOMPOSABILITY",
+      "sha256": "a8fb9c9c5dc6718d35a42aa90fae3517e58a02f23611ed0da892bfb9a940a84c"
+    },
+    "companion_graph": {
+      "result_id": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT",
+      "sha256": "9fad67f1b4e159051774e7b1d93d4a6373487f65334039b5e30dda98ff451575"
+    },
+    "typed_moller": {
+      "result_id": "BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT",
+      "sha256": "9c4380d0b1c640b7b6ff44a564da0ca9194635fead9c8f2c2a7436869279c126"
+    },
+    "typed_volterra": {
+      "result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT",
+      "sha256": "b6f01563b642ba50ef329acfebb8c2fba582859ecef5d3832250f27519214abc"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_input_checks": {
+    "base_tensor_and_two_ghost_parametrices": true,
+    "full_kernel_action_open": true,
+    "graph_operator_exact": true,
+    "stationary_companion_decomposable": true,
+    "stationary_volterra_green_imported": true,
+    "volterra_hypotheses_stationary_only": true
+  },
+  "finite_microlocal_closure": {
+    "checks": {
+      "A10_graph_pullback_requires_no_Volterra_limit": true,
+      "all_graph_maps_finite_differential": true,
+      "finite_differential_maps_do_not_enlarge_wavefront_set": true,
+      "ghost_direct_sum_inclusion_requires_no_metric_Volterra_transport": true,
+      "ghost_factors_already_have_local_Hadamard_parametrices": true
+    },
+    "graph_maps": {
+      "graph_homotopy": {
+        "formula": "H(f1,f2)=(0,-f1)",
+        "maximum_order": 0
+      },
+      "solution_graph_inclusion": {
+        "formula": "J(h)=(h,Box_2 h)",
+        "maximum_order": 2
+      },
+      "solution_projection": {
+        "formula": "p_sol(h,y)=h",
+        "maximum_order": 0
+      },
+      "source_inclusion": {
+        "formula": "i_src(f)=(0,f)",
+        "maximum_order": 0
+      },
+      "source_projection": {
+        "formula": "p_src(f1,f2)=Box_2 f1+f2",
+        "maximum_order": 2
+      }
+    },
+    "scope": "conditional wavefront safety for every already-defined input distribution"
+  },
+  "lifecycle_layer": "LORENTZIAN_HADAMARD_TRANSPORT_BOUNDARY",
+  "minimal_direct_route": {
+    "N_plus_minus_cone_mapping": "OPEN",
+    "compact_to_compact_response_map": "OPEN",
+    "continuous_transpose_and_support_control": "OPEN",
+    "cutoff_Green_hyperbolicity": "OPEN",
+    "cutoff_null_cone_decomposability": "OPEN",
+    "global_seed_covariance_with_declared_Krein_policy": "OPEN",
+    "kernel_no_one_sided_zero_covectors": "OPEN",
+    "result_after_these_pass": "a companion Hadamard two-point distribution; BRST Ward and physical positivity remain separate",
+    "temporal_cutoff_family": "C_chi equals the base operator in one time region and the companion in another"
+  },
+  "next_gate": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY_AND_GLOBAL_SEED_COVARIANCE",
+  "old_obligation_disposition": {
+    "A10_graph_pullback_wavefront_safe": "CERTIFIED_FOR_EVERY_DEFINED_INPUT_DISTRIBUTION",
+    "C_plus_wavefront_relation_preserved": "COMPANION_DECOMPOSABILITY_CERTIFIED_TWO_POINT_KERNEL_OPEN",
+    "H\u00f6rmander_kernel_compositions_defined": "OPEN_FOR_FULL_VOLTERRA_MAP",
+    "Volterra_series_extend_to_the_required_distribution_spaces": "OPEN_OR_BYPASS_WITH_REGULAR_RESPONSE_MAP",
+    "ghost_biwave_factor_transport_included": "CERTIFIED_LOCAL_DIRECT_SUM_FACTOR_ONLY",
+    "smooth_left_and_right_defects_remain_smooth": "CERTIFIED_FOR_FINITE_DIFFERENTIAL_MAPS_OPEN_FOR_FULL_VOLTERRA_ACTION"
+  },
+  "primary_theorem_scope": {
+    "dappiaggi_drago_1506_09122": {
+      "applies_directly": false,
+      "failure": "the companion differs by an order-two triangular differential operator and is not normally hyperbolic",
+      "hypothesis": "normally hyperbolic operators differing by a smooth order-zero bundle potential"
+    },
+    "fewster_2503_12537_theorem_5_16": {
+      "applies_to_current_stationary_volterra_map": false,
+      "hypothesis": "regular GreenHyp morphism with compact-support control, continuous transpose, no one-sided zero covectors and cone mapping",
+      "reason": "the certified maps are slab solution/source resolvents, not a compact-to-compact regular GreenHyp morphism"
+    },
+    "fewster_2503_12537_theorem_5_3": {
+      "consequence": "normally hyperbolic bosonic RFHGHO with positive-definite Hermitian fibre metric admits Hadamard states",
+      "reason": "the repository has local parametrices but no imported global seed covariance with the declared BV/Krein and physical-positivity policy",
+      "supplies_current_seed_covariance": false
+    },
+    "fewster_2503_12537_theorem_5_4c": {
+      "consequence": "a state that is Hadamard on an open Cauchy slab is Hadamard globally",
+      "usable_after_global_state_exists": true
+    },
+    "moretti_murro_volpe_2210_09278": {
+      "applies_directly": false,
+      "hypothesis": "Proca Moller isomorphism plus propagation of the Proca Hadamard condition",
+      "useful_pattern": "construct a compact-support response map, prove its kernel wavefront bound, then propagate from a Cauchy slab"
+    }
+  },
+  "provenance": {
+    "primary_sources": [
+      "https://arxiv.org/abs/1506.09122",
+      "https://arxiv.org/abs/2210.09278",
+      "https://arxiv.org/abs/2503.12537"
+    ],
+    "source_manifest": {
+      "../reports/berger-hadamard-regular-morphism-boundary.md": "d61df0e9ebc94b22a278e9a9a95c50014584cf7567379b772911d467e49f8757",
+      "berger_hadamard_regular_morphism_boundary.py": "acaff07233e221cab456796af6223d08414795c255d68559217f7d2146b7b7c0",
+      "berger_hadamard_regular_morphism_boundary_certificate.py": "98e2af4effe6c94eef95bc895653b7e901306918e3632f748e3bb23a738c9fd1",
+      "schema/berger-hadamard-regular-morphism-boundary-v1.schema.json": "5f2b19c45b4a134982ca5b1e6a8bc474e4e03a94209245f3a4ef1af66f12abba",
+      "tests/test_berger_hadamard_regular_morphism_boundary.py": "283e32597f4107eb0480624e0ad9ad76246eba251bd324e94864681d8780f093",
+      "verify_berger_hadamard_regular_morphism_boundary.py": "3834b4ee9646ff9ab8f6883207c54ac97ff07fc65aa2a67c1f76c1aa156a0a29"
+    },
+    "source_manifest_sha256": "8b0da72cbbcce5ce62b885f1f824921397c0415d6919743abd60f478747e49e9"
+  },
+  "result_id": "BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY",
+  "result_state": "FINITE_WAVEFRONT_MAPS_CERTIFIED_CUTOFF_REGULAR_MORPHISM_AND_SEED_COVARIANCE_OPEN",
+  "schema": "quantum-weyl-berger-hadamard-regular-morphism-boundary-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

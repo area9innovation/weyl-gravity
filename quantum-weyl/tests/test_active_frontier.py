@@ -534,6 +534,10 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(flags["CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED"])
         self.assertTrue(flags["CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED"])
         self.assertTrue(flags["COMPANION_DECOMPOSABILITY_CERTIFIED"])
+        self.assertTrue(flags["BERGER_FINITE_GRAPH_WAVEFRONT_SAFETY"])
+        self.assertTrue(flags["BERGER_LOCAL_GHOST_HADAMARD_FACTORS_INCLUDED"])
+        self.assertFalse(flags["BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY"])
+        self.assertFalse(flags["BERGER_REGULAR_GREENHYP_MORPHISM"])
         self.assertTrue(flags["TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED"])
         self.assertTrue(flags["STATIONARY_GENERATOR_IMPORT_CONSUMER_READY"])
         self.assertFalse(flags["HADAMARD_EXISTENCE_THEOREM_APPLIES"])
@@ -547,7 +551,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             row["next_gate"],
-            "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
+            "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY_REGULAR_RESPONSE_MORPHISM_AND_GLOBAL_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
         )
         algebra_row = self.payload["active_rows"]["free_Lorentzian_algebra"]
         self.assertIn("PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED", algebra_row["status"])
