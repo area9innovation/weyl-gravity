@@ -41,6 +41,8 @@ CERTIFICATES = {
     "complete_global_ell2_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.json",
     "abd_axial_minus": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.json",
     "aligned_global_minus_extra_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone.json",
+    "axial_all_m_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion.json",
+    "global_axial_all_m_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_axial_ell2_all_m_minus_extra_bounded_cone.json",
     "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
     "global_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
     "extra_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
@@ -352,6 +354,18 @@ def entries() -> list[dict[str, object]]:
             "This is complete only on the aligned axial ell=2,m=0,k=0 face. Einstein-plus, polar input, all m, other ell and momenta, infinite sums, all-orders, residual, observational and quantum maps remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone",
+            _scope(theory="Weyl-Maxwell target", carrier="complete homogeneous and axial-twist globals plus axial ell=2,k=0 Einstein-minus and both extra primaries", degree=2, parity="homogeneous and axial", ell="input 0,1,2 with every output L=0,...,4", m="all wave m=-2,...,2 and arbitrary real twist vector", k=0, omega="generalized zero, sqrt(6-2*sqrt(3)), and 4/sqrt(3)"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The axial q/p wave block retains every m and both extra multiplicities; global a,b,d are rotational scalars."),
+            ("CERTIFIED", "Schur's lemma promotes the nonzero direct m=0 a,b,d shell pivots to scalar identities on V_2; the wave currents remain action-normalized."),
+            ("CERTIFIED", "The wave density matrices satisfy total H=J_1=J_2=J_3=0; the independent bounded homogeneous row excludes Q_e."),
+            ("CERTIFIED", "The zero-frequency axial L=1 source has the explicit constant right inverse (S0/2,-S1/2,0,0), so no Jordan growth is required after rotation descent."),
+            _second_order(("CERTIFIED", "The cone is the union of static (c,d,W_x,A) and nonzero axial wave-density branches with a=b=d=Q_e=B=0 and arbitrary (c,W_x,A)."), ("CERTIFIED", "The bounded theorem embeds in the smooth exponential-polynomial class."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("global_axial_all_m_bounded", "axial_all_m_bounded", "aligned_global_minus_extra_bounded", "abd_axial_minus", "standard_global_bounded", "taub", "abstract_cone"),
+            "This is complete only for axial ell=2,k=0 minus-plus-two-extra waves. Einstein-plus, polar wave input, other ell and momenta, infinite sums, all-orders, residual, observational and quantum maps remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.mixed.finite_generic_all_momenta_smooth_cone",
             _scope(theory="Weyl-Maxwell target with all generic Einstein and extra primaries", carrier="arbitrary finite generic-harmonic sum with all compact momentum fibres kept as distinct input and output blocks", degree=2, parity="axial and polar, including cross-parity quadratic outputs", ell="all finite input ell>=2; every Clebsch-Gordan output L=0,...,ell_1+ell_2", m="arbitrary finite input m values and all selected output M", k="arbitrary finite set of allowed 2*pi*n/L values; signed output sums K retained", omega="all signed input-shell sums and differences; finite polynomial prefactors allowed on resonant outputs"),
             {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
@@ -476,6 +490,23 @@ def build() -> dict[str, object]:
         raise AssertionError("aligned global minus-extra bounded cone changed")
     if aligned_global_wave["polar_or_all_m_input_classified"]:
         raise AssertionError("aligned global-wave theorem over-promoted all m or polar input")
+    axial_bounded = records["axial_all_m_bounded"]["classification"]
+    if not (
+        axial_bounded["all_m_axial_ell2_bounded_cone_classified"]
+        and axial_bounded["zero_L1_constant_right_inverse_explicit"]
+        and axial_bounded["prior_polynomial_Jordan_caveat_removed"]
+    ):
+        raise AssertionError("axial all-m bounded completion changed")
+    global_axial = records["global_axial_all_m_bounded"]["classification"]
+    if not (
+        global_axial["complete_declared_global_axial_all_m_carrier_covered"]
+        and global_axial["bounded_zero_locus_necessary_and_sufficient"]
+        and global_axial["all_wave_m_and_both_axial_extra_polarizations_included"]
+        and global_axial["SO3_shell_promotion_certified"]
+    ):
+        raise AssertionError("global axial all-m bounded cone changed")
+    if global_axial["polar_input_classified"]:
+        raise AssertionError("global axial theorem over-promoted polar input")
     if not records["global_self_coefficients"]["classification"]["complete_aligned_global_self_source_classified"]:
         raise AssertionError("global self coefficient input changed")
     if not records["extra_self_coefficients"]["classification"]["complete_C4_extra_self_source_coefficient_explicit"]:

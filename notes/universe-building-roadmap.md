@@ -1255,8 +1255,14 @@ x_minus=(972*x_e1+52*x_e2)/(27*(-6+5*sqrt(3))).
 Atlas row
 `einstein.ph.wm.mixed.aligned_global_axial_ell2_minus_extra_bounded_cone`
 records the complete declared union with the static `(c,d,W_x,A_z)` branch.
-The active promotion is all `m` and both parities; other harmonics retain
-their own full-time `a/d` gate.
+Rotational equivariance now promotes the shell ideal to all axial
+`m=-2,...,2`, and the zero-frequency `L=1` block has an explicit constant
+right inverse after `J_i=0`.  Therefore the all-`m` axial wave-density cone is
+bounded without a Jordan correction.  Atlas row
+`einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone`
+records the resulting global theorem.  The active promotion is polar input
+and axial--polar cancellation; other harmonics retain their own full-time
+`a/d` gate.
 
 This advances nonlinear input to the already activated compact-product
 linear bridge but does not certify a nonlinear relative morphism.  Atlas row

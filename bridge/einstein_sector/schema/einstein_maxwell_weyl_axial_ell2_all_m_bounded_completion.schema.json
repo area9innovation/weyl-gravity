@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Axial ell2 all-m bounded completion",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "zero_frequency_L1_completion",
+    "bounded_channel_audit", "second_order_theorem", "classification",
+    "interpretation", "next_gate", "claim_boundary", "provenance",
+    "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-axial-ell2-all-m-bounded-completion-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_AXIAL_ELL2_ALL_M_BOUNDED_COMPLETION"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "REDUCED-MODE"}},
+    "scope": {"type": "object"},
+    "zero_frequency_L1_completion": {"type": "object"},
+    "bounded_channel_audit": {"type": "object"},
+    "second_order_theorem": {"type": "object"},
+    "classification": {"type": "object"},
+    "provenance": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": true
+}

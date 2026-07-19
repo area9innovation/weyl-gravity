@@ -139,6 +139,13 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("x_minus=", second_order["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
+    def test_global_axial_all_m_bounded_cone_survives(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("wave-density", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
 
 if __name__ == "__main__":
     unittest.main()

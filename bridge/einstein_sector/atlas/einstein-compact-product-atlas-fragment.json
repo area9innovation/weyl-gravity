@@ -1530,6 +1530,100 @@
       }
     },
     {
+      "claim_boundary": "This is complete only for axial ell=2,k=0 minus-plus-two-extra waves. Einstein-plus, polar wave input, other ell and momenta, infinite sums, all-orders, residual, observational and quantum maps remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_global_axial_ell2_all_m_minus_extra_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_AXIAL_ELL2_ALL_M_MINUS_EXTRA_BOUNDED_CONE",
+          "sha256": "3b2cd839683b10be5ad55716f653394df1469d6a6b4345b00515a1d563df40d3"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_ELL2_ALL_M_BOUNDED_COMPLETION",
+          "sha256": "dab33111e1cd5b411bf20221a4edf29c80422b6216dcb982c45231991c4abcd3"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ALIGNED_GLOBAL_AXIAL_ELL2_MINUS_EXTRA_BOUNDED_CONE",
+          "sha256": "1907eb408256152813ff378eceae6441fdfbfaa28d5792090f437859b01ca721"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ABD_AXIAL_ELL2_MINUS_RESONANCE",
+          "sha256": "480b9bc2dcd06983a59b7a781a3377c62e83dc7231e3310d973fc9ef93ad40ae"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_SECOND_ORDER",
+          "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "id": "einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The axial q/p wave block retains every m and both extra multiplicities; global a,b,d are rotational scalars.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "Schur's lemma promotes the nonzero direct m=0 a,b,d shell pivots to scalar identities on V_2; the wave currents remain action-normalized.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The zero-frequency axial L=1 source has the explicit constant right inverse (S0/2,-S1/2,0,0), so no Jordan growth is required after rotation descent.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The cone is the union of static (c,d,W_x,A) and nonzero axial wave-density branches with a=b=d=Q_e=B=0 and arbitrary (c,W_x,A).",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The bounded theorem embeds in the smooth exponential-polynomial class.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The wave density matrices satisfy total H=J_1=J_2=J_3=0; the independent bounded homogeneous row excludes Q_e.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "complete homogeneous and axial-twist globals plus axial ell=2,k=0 Einstein-minus and both extra primaries",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "input 0,1,2 with every output L=0,...,4",
+        "k": 0,
+        "m": "all wave m=-2,...,2 and arbitrary real twist vector",
+        "omega": "generalized zero, sqrt(6-2*sqrt(3)), and 4/sqrt(3)",
+        "parity": "homogeneous and axial",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "This is the complete finite generic ell>=2 smooth-secular cone on the compact product. Exceptional/global input modes, the bounded resonance zero locus, infinite harmonic completion, causal/retarded propagation, all-orders integration, final residual states, observables and quantum transfer remain explicit open scopes.",
       "descriptions": {
         "causal": "OPEN",
@@ -1742,7 +1836,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "a7554e8ea5c2c4b19277cc43af783b4d2499bdfafb4a6f8fc02b49f3453325b1",
+  "generated_by_sha256": "670ca0c0432385c336c049601a83e875cfd45327c257c4a2183708f5df86fac1",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

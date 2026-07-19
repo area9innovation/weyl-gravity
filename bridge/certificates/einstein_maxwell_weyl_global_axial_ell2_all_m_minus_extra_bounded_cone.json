@@ -1,0 +1,163 @@
+{
+  "SO3_shell_promotion": {
+    "Schur_lemma": "End_SO3(V_2)=C*identity, so the m=0 direct coefficient fixes the map on every m",
+    "all_m": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "no_cross_m_cancellation": "the coefficient vector is the same nonzero scalar times the complete Einstein-minus amplitude vector in V_2",
+    "promoted_ideal": "for a nonzero Einstein-minus amplitude vector, b=0 from t^2, a=0 from t, and d=0 from the constant shell coefficient",
+    "representation": "each time-polynomial coefficient is an SO3 intertwiner V_2 -> V_2 because a,b,d are rotational scalars"
+  },
+  "bounded_necessity": {
+    "electric": "after the wave H source vanishes, the independent homogeneous row E11=Q_e^2/2 forces Q_e=0 because the bounded zero-frequency homogeneous image is zero",
+    "nonzero_wave": "the SO3-promoted shell ideal forces a=b=d=0",
+    "universal": "b=0 and B=0"
+  },
+  "bounded_sufficiency": {
+    "Wilson": "the cross source vanishes",
+    "circumference": "k=0 radius transport is bounded",
+    "constant_twist": "differentiate the exact flat SO3-holonomy family and its transported k=0 Jacobi field; the first-order shell shift vanishes and the mixed correction is bounded",
+    "static_branch": "the complete standard-global theorem",
+    "wave_self": "the complete axial ell2 all-m H,J cone has a real bounded finite-quasiperiodic correction; its zero L1 block has the certified constant right inverse"
+  },
+  "claim_boundary": "This theorem is complete only for axial ell=2,k=0 minus-plus-two-extra input with all m and the declared global modes. It excludes Einstein-plus, polar wave input, other ell or momenta, infinite sums, all-orders integration, final residual descent, causal propagation, observables, particles and quantum theory.",
+  "classification": {
+    "SO3_shell_promotion_certified": true,
+    "all_orders_integrability": false,
+    "all_wave_m_and_both_axial_extra_polarizations_included": true,
+    "bounded_zero_locus_necessary_and_sufficient": true,
+    "causal_or_quantum_claim": false,
+    "complete_declared_global_axial_all_m_carrier_covered": true,
+    "electric_bounded_near_miss_excluded": true,
+    "general_ell_or_nonzero_momentum_classified": false,
+    "polar_input_classified": false
+  },
+  "complete_bounded_cone": {
+    "static_branch": "wave=0: (c,d,W_x,A in R^3) arbitrary, with a=b=Q_e=0 and B=0",
+    "union_is_necessary_and_sufficient": true,
+    "wave_branch": "a=b=d=Q_e=0 and B=0; (c,W_x,A in R^3) arbitrary; (C_minus,C_extra) any nonzero point of the displayed H,J_a density cone"
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_SECULAR": {
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "equation": "L_WM Phi^(2)=-(1/2)D^2E_WM[Phi^(1),Phi^(1)]",
+  "interpretation": "The surviving opposite-sign bounded cone is not an axisymmetric accident. Rotational equivariance promotes the global shell obstruction to every m, while the complete all-m wave source has bounded inverses after H and J descent. The global block again stratifies: d survives only on the wave-free branch, electric charge is excluded by a non-Hamiltonian zero-frequency row, and the nonzero wave cone is multiplied only by circumference, Wilson and constant twist-position spectators.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the a,b,d shell source for the polar ell2 Einstein-minus representative and combine axial and polar density cones, retaining cross-parity cancellation",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_global_axial_ell2_all_m_minus_extra_bounded_cone.py",
+    "generator_sha256": "de10eb48fc4e82b86e5a0817c2dd1a7c6e36cbff6832e09600d8f6cfd539e051",
+    "inputs": {
+      "aligned": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_aligned_global_axial_ell2_minus_extra_bounded_cone.json",
+        "sha256": "1907eb408256152813ff378eceae6441fdfbfaa28d5792090f437859b01ca721"
+      },
+      "circumference": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
+        "sha256": "80f36e27d91cf92211b94c2fbc8d74e97806c04b688f72e02284f8951f8fecb9"
+      },
+      "constant_twist": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      },
+      "electric_wilson": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
+        "sha256": "50d0bf118e1699122b8bf4e0c3da7b8fb0295a9a4725d05c155122e8d2202676"
+      },
+      "homogeneous_source": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_quadric_second_order.json",
+        "sha256": "f496750e8af73098b0e9427e2a3b5f7d2bf3ac4c42a1455e3b7807cfa8e73fb6"
+      },
+      "minus_resonance": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_axial_ell2_minus_resonance.json",
+        "sha256": "480b9bc2dcd06983a59b7a781a3377c62e83dc7231e3310d973fc9ef93ad40ae"
+      },
+      "moment_maps": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+      },
+      "standard_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      },
+      "wave_all_m": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_second_order.json",
+        "sha256": "8d269ae894b110e984e809b29dc7aa4a3f86fd1de3efb9060679445cffc5f9c4"
+      },
+      "wave_bounded": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion.json",
+        "sha256": "dab33111e1cd5b411bf20221a4edf29c80422b6216dcb982c45231991c4abcd3"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_AXIAL_ELL2_ALL_M_MINUS_EXTRA_BOUNDED_CONE",
+  "result_state": "GLOBAL_PLUS_AXIAL_ELL2_ALL_M_MINUS_EXTRA_BOUNDED_CONE_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-global-axial-ell2-all-m-minus-extra-bounded-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_global_axial_ell2_all_m_minus_extra_bounded_cone.schema.json",
+  "schema_sha256": "b1f05f63b884e8cec0dba4266d162d2fc4b0f78b9cb93e039e31050a205db65c",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic correction",
+    "carrier": "complete homogeneous and axial-twist global data plus axial ell=2,k=0 Einstein-minus and both extra primaries, all m",
+    "charge_sector": "fixed N=2 magnetic bundle with electric tangent allowed",
+    "degree": 2,
+    "ell": "input 0,1,2 with every quadratic output L=0,...,4",
+    "k": 0,
+    "m": "all wave m=-2,...,2 and arbitrary real twist vector",
+    "omega": "generalized zero, sqrt(6-2*sqrt(3)), and 4/sqrt(3)",
+    "parity": "homogeneous and axial",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_axial_ell2_all_m_minus_extra_bounded_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_global_axial_ell2_all_m_minus_extra_bounded_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_axial_ell2_all_m_minus_extra_bounded_cone"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.24,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 3.0,
+      "status": "PASS",
+      "tests_run": 26
+    },
+    "tier_2": {
+      "criterion": "the direct m=0 shell map, all-m bounded wave theorem and global source/transport inputs are unchanged exact dependencies",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "polar, other-harmonic, causal, residual and quantum gates remain excluded",
+      "status": "NOT_RUN"
+    }
+  },
+  "wave_density_cone": {
+    "amplitudes": "C_minus in Mat_(1x5)(C), C_extra in Mat_(2x5)(C), with negative frequencies fixed by reality",
+    "densities": "rho_minus=C_minus^dagger*C_minus (rank<=1), rho_extra=C_extra^dagger*C_extra (rank<=2)",
+    "equations": {
+      "H": "omega_extra^2*A_extra-omega_minus^2*A_minus=0",
+      "J_a": "omega_extra*j_extra,a-omega_minus*j_minus,a=0 for a=1,2,3",
+      "P_x": "0 identically at k=0"
+    },
+    "nonzero_point_contains_minus_and_extra": true,
+    "occupation_and_spin": "A_s=tr(rho_s), j_s,a=tr(rho_s*T_2,a)"
+  }
+}

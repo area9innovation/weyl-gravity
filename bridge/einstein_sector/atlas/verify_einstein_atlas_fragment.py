@@ -189,6 +189,14 @@ def verify() -> None:
         raise AssertionError("aligned global-wave occupation cone was hidden")
     if aligned_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("aligned global-wave causal lifecycle was over-promoted")
+    global_axial = by_id["einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone"]
+    global_axial_second = global_axial["mode_data"]["second_order"]
+    if global_axial_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("global axial all-m bounded cone was lost")
+    if "wave-density" not in global_axial_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("global axial density cone was hidden")
+    if global_axial_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("global axial causal lifecycle was over-promoted")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

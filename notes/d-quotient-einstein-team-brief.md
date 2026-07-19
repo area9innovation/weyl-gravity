@@ -2383,10 +2383,27 @@ x_minus=(972*x_e1+52*x_e2)/(27*(-6+5*sqrt(3))),
 
 with `c,W_x,A_z` and the relative wave phases arbitrary.  Atlas row
 `einstein.ph.wm.mixed.aligned_global_axial_ell2_minus_extra_bounded_cone`
-records necessity and sufficiency.  The next promotion is all `m` and both
-parities, followed by general `ell,k` full-time `a/d` shell audits.  These
-nonlinear results are inputs to active Bridge 1; they do not promote the
-linear relative triangle to a nonlinear morphism.
+records necessity and sufficiency.
+
+The axial result now holds for every `m=-2,...,2`.  Since `a,b,d` are
+rotational scalars, each shell coefficient is an `SO(3)` intertwiner
+`V_2 -> V_2`; Schur's lemma promotes the direct `m=0` pivots to scalar
+identities, so distinct `m` components cannot cancel them.  The only possible
+all-`m` boundedness caveat was the zero-frequency axial `L=1` output.  After
+the three rotation moment maps vanish, its source is
+`(S0,S1,S0,S1)` and the constant coefficient correction
+`(S0/2,-S1/2,0,0)` solves the exact rank-two target operator.  No Jordan
+growth is needed.
+
+Thus the complete global-plus-axial-all-`m` cone is the union of the static
+`(c,d,W_x,A)` branch and the nonzero wave-density branch with
+`a=b=d=Q_e=B=0`, arbitrary `(c,W_x,A)`, and axial Einstein-minus/extra
+densities satisfying `H=J_1=J_2=J_3=0`.  Atlas row
+`einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone`
+records the theorem.  The next promotion is polar input and axial--polar
+cancellation, followed by general `ell,k` full-time `a/d` shell audits.
+These nonlinear results are inputs to active Bridge 1; they do not promote
+the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

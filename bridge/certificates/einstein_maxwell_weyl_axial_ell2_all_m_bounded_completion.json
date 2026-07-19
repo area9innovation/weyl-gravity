@@ -1,0 +1,152 @@
+{
+  "bounded_channel_audit": {
+    "all_nonzero_frequencies": "off every target shell and removed by algebraic finite-frequency inverses",
+    "axial_L1_zero": "the displayed constant right inverse applies after mu_J1=mu_J2=mu_J3=0",
+    "axial_L3_zero": "certified invertible quotient block",
+    "polar_L0_zero": "the source vanishes after mu_H=0",
+    "polar_L2_L4_zero": "certified algebraic inverses"
+  },
+  "claim_boundary": "This strengthens only the axial ell=2,k=0 all-m theorem. It does not include polar input, other ell or momenta, global modes, infinite sums, all-orders integration, residual descent, causal propagation, particles or quantum theory.",
+  "classification": {
+    "all_m_axial_ell2_bounded_cone_classified": true,
+    "all_orders_integrability": false,
+    "causal_or_quantum_claim": false,
+    "general_ell_classified": false,
+    "polar_input_parity_classified": false,
+    "prior_polynomial_Jordan_caveat_removed": true,
+    "zero_L1_constant_right_inverse_explicit": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "Non-axisymmetric axial data do not require a secular twist correction once the rotation moment maps vanish. The zero-frequency L1 source then lies in the rank-two constant image of the exact target operator, and a constant right inverse is explicit. The complete axial ell2 all-m wave cone is therefore bounded at second order.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "use this bounded wave theorem with the SO3-promoted global a,b,d shell ideal to classify the complete global-plus-axial-all-m carrier, then compute the polar Einstein-minus global shell block",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion.py",
+    "generator_sha256": "7489591d9d1f88b6348d57c63381a01f2eec66f10c1a491e3e0f95cc56e72b4f",
+    "inputs": {
+      "all_m": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_second_order.json",
+        "sha256": "8d269ae894b110e984e809b29dc7aa4a3f86fd1de3efb9060679445cffc5f9c4"
+      },
+      "ell1_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+        "sha256": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164"
+      },
+      "same_parity": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_same_parity_output_resonance.json",
+        "sha256": "b1270dbf5d677edd9125f6f6119dbae22b8b701b37dab62c1ff6f06f8f23c928"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_ELL2_ALL_M_BOUNDED_COMPLETION",
+  "result_state": "COMPLETE_AXIAL_ELL2_ALL_M_COMMON_ZERO_CONE_BOUNDED_SECOND_ORDER_EXTENDIBLE",
+  "schema": "einstein-maxwell-weyl-axial-ell2-all-m-bounded-completion-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion.schema.json",
+  "schema_sha256": "c2ca2ec9b0301523012669a610c1f9eb412b51271b423202f973402492843878",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic correction",
+    "carrier": "finite real axial ell=2,k=0 Einstein-plus/minus and both extra primaries, all m",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": 2,
+    "k": 0,
+    "m": "all -2,...,2",
+    "omega": "all q/p input sums and differences plus zero",
+    "parity": "axial input with every quadratic output parity",
+    "theory": "Weyl-Maxwell target"
+  },
+  "second_order_theorem": {
+    "bounded_or_finite_quasiperiodic": true,
+    "correction": "real, smooth, spatially periodic and finite quasiperiodic in time",
+    "domain": "the complete axial ell2 all-m common H,J_i zero cone",
+    "necessity_and_sufficiency": true
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_ell2_all_m_bounded_completion"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.2,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 2.4,
+      "status": "PASS",
+      "tests_run": 4
+    },
+    "tier_2": {
+      "criterion": "the all-m source theorem, exact ell1 operator and complete nonzero-frequency resonance ledger are unchanged exact inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "polar, other-harmonic, causal, residual and quantum gates remain excluded",
+      "status": "NOT_RUN"
+    }
+  },
+  "zero_frequency_L1_completion": {
+    "bounded": true,
+    "coefficient_order": [
+      "h_t",
+      "h_x",
+      "q_t",
+      "q_x"
+    ],
+    "compatible_source": [
+      "S0",
+      "S1",
+      "S0",
+      "S1"
+    ],
+    "constant_correction": [
+      "S0/2",
+      "-S1/2",
+      "0",
+      "0"
+    ],
+    "remainder": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "row_order": [
+      "2*metric_t",
+      "-2*metric_x",
+      "maxwell_t",
+      "maxwell_x"
+    ],
+    "zero_operator": [
+      [
+        "2",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "-2",
+        "0",
+        "-2"
+      ],
+      [
+        "2",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "-2",
+        "0",
+        "-2"
+      ]
+    ]
+  }
+}
