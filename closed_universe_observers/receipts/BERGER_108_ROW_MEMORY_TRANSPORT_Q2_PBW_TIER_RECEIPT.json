@@ -1,0 +1,28 @@
+{
+  "schema":"closed-universe-test-tier-receipt-v1",
+  "result_id":"BERGER_108_ROW_MEMORY_TRANSPORT_Q2_PBW_TIER_RECEIPT",
+  "certificate_result_id":"BERGER_108_ROW_MEMORY_TRANSPORT_Q2_PBW",
+  "dependency_tags":["LOCAL-ALGEBRAIC"],
+  "result_boundary":"The complete profile-free two-channel memory-transport cubic vertex is exported as 192 exact rational q2 PBW keys. Normalized readout, emitter q2, every q3, arity replay, K_Berger equivariance, observer-morphism stability, tangent-cone response, Bridge 3 and quantum claims remain unavailable.",
+  "commands":[
+    {"tier":0,"command":"python3 -m py_compile on changed Python; python3 -m json.tool on changed structured data; generator --check; git diff --check on explicit observer paths","elapsed_seconds":"under 1 plus final check","status":"PASS","scope":"producer, verifier, test, schemas, payload, certificate, atlas, ledger, lifecycle, receipt and notes"},
+    {"tier":1,"command":"python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_memory_transport_q2_pbw.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py","elapsed_seconds":38.43,"status":"PASS","scope":"42 velocity-jet, cyclic payload, atlas and ledger tests"},
+    {"tier":1,"command":"new independent verifier; observer atlas verifier; comparison ledger verifier","elapsed_seconds":6.37,"status":"PASS","scope":"dependency hashes, payload reconstruction, direct symbolic velocity audit and generated claims"},
+    {"tier":2,"command":"python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_memory_q1_pbw_overlay.py closed_universe_observers/tests/test_berger_nonlinear_clock_combined_canonical_map_f2_f3.py closed_universe_observers/tests/test_berger_84_row_apparatus_q2_q3_k_gate.py","elapsed_seconds":96.83,"status":"PASS","scope":"13 direct dependency-chain tests"}
+  ],
+  "higher_tiers_not_run":{"tier_3":"Scoped apparatus q2 subblock; not a freeze, release, shared-core change or theorem promotion."},
+  "source_manifest":[
+    {"path":"closed_universe_observers/generate_berger_108_row_memory_transport_q2_pbw.py","sha256":"cf2d941e116b65ccdee05b07227959dbf4a84483be421a686acf5d14cc6c4e47"},
+    {"path":"closed_universe_observers/verify_berger_108_row_memory_transport_q2_pbw.py","sha256":"e7e372e7004476b969e77142080dd27c21e6010fcb7afada3fe370f99b310ebb"},
+    {"path":"closed_universe_observers/tests/test_berger_108_row_memory_transport_q2_pbw.py","sha256":"fbb7810106d4aa474ecd8335b09b8219fedb9b92339799107651b65a7724ef52"},
+    {"path":"closed_universe_observers/schema/berger-108-row-memory-transport-q2-pbw-v1.schema.json","sha256":"d7f39d6d0a4242f1ca36743419d77181684e579c72e2e242921e22194f59d07a"},
+    {"path":"closed_universe_observers/schema/berger-108-row-memory-transport-q2-pbw-payload-v1.schema.json","sha256":"ce54c752db193c0b8da0b79a442ce7915a4b2baf847c09214bf709f93cbe962a"},
+    {"path":"closed_universe_observers/reports/berger-108-row-memory-transport-q2-pbw.md","sha256":"a8ef258ecfcf7274d8f951a6861a2ea06fa50e859005e1ca5f2e72ac2293b9d8"},
+    {"path":"closed_universe_observers/certificates/BERGER_108_ROW_MEMORY_TRANSPORT_Q2_PBW.json","sha256":"61eff9502731cd5a2c72e0f7725092da0181089bc975ac0ffed9e1fe2f549465"},
+    {"path":"closed_universe_observers/certificates/BERGER_108_ROW_MEMORY_TRANSPORT_Q2_PBW_PAYLOAD.json","sha256":"cd85d2cf9edc705bcefc7390bf6b2f591d2db69baaf19cb948de71bb3a6b68f8"},
+    {"path":"closed_universe_observers/atlas/observer-atlas-fragment.json","sha256":"cb8c7da59d299a09611c62d8bddf7e9ca13cb88fdad8865bdd00642df9a62d8c"},
+    {"path":"closed_universe_observers/ledgers/comparison_ledger.json","sha256":"b9aa49c929b9ef138048180ef1fb200af71d321fb3e1600d4f8b09a5b83d2980"},
+    {"path":"planning/work-items/berger-108-row-apparatus-q2-q3-extension.json","sha256":"6c09caa7c2552c86f6875716a6d70a2dd6bbf1750f040d3e55faed1fa89d3036"}
+  ],
+  "flags":{"APPARATUS_MEMORY_TRANSPORT_Q2_PBW_EXPORTED":true,"COMPLETE_SCALAR_108_ROW_Q2_EXPORTED":false,"COMPLETE_SCALAR_108_ROW_Q3_EXPORTED":false,"COMPONENT_ARITY_IDENTITIES_CERTIFIED":false,"TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED":false,"PHYSICAL_BRANCH_BRIDGE_ACTIVATED":false,"QUANTUM_CLAIM":false}
+}

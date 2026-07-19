@@ -2244,7 +2244,9 @@ The remaining candidate `13` is now reduced, but not yet closed.  Exact
 interval arithmetic gives four distinct real generalized roots for its pair
 of bilinear forms, reducing the all-`m` source to two weighted binary-octic
 product identities.  An exact rank-18 minor certifies an irreducible
-dimension-22 generic incidence component.  Atlas row
+dimension-22 generic incidence component.  A separate exact three-root
+cancellation witness proves that this carrier cannot be reduced to the
+regular-pencil one-eigenline sheets.  Atlas row
 `einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_l4_incidence_reduction`
 keeps resonance `OPEN`: the degenerate source-rank strata and hence the full
 ideal remain unclassified.  The activation gate is the finite rank-
