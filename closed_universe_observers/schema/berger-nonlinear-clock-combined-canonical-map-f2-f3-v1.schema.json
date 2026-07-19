@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-nonlinear-clock-combined-canonical-map-f2-f3-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "geometric_definition", "field_payload", "canonical_audit", "cotangent_payload", "payload_canonical_sha256", "mutation_results", "activation_disposition", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-nonlinear-clock-combined-canonical-map-f2-f3-v1"},
+    "result_id": {"const": "BERGER_NONLINEAR_CLOCK_COMBINED_CANONICAL_MAP_F2_F3"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_COMBINED_RADIAL_TEMPORAL_CANONICAL_MAP_F2_F3"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 6, "maxProperties": 6},
+    "geometric_definition": {"type": "object", "required": ["clock_map", "metric_map", "radial_map", "restriction_audit"], "properties": {"restriction_audit": {"type": "object", "properties": {"radial_restriction_defect_count": {"const": 0}, "temporal_restriction_defect_count": {"const": 0}, "mixed_radial_temporal_monomial_counts": {"const": {"degree_2": 5, "degree_3": 64}}, "deleted_mixed_term_count": {"const": 69}}}}},
+    "field_payload": {"type": "object", "required": ["F2", "F3", "F2_entry_count", "F3_entry_count", "reconstruction_defect_counts"], "properties": {"F2_entry_count": {"const": 55}, "F3_entry_count": {"const": 174}, "F2": {"type": "array", "minItems": 55, "maxItems": 55}, "F3": {"type": "array", "minItems": 174, "maxItems": 174}, "reconstruction_defect_counts": {"const": {"F2": 0, "F3": 0}}}},
+    "canonical_audit": {"type": "object", "required": ["A1", "A2", "B1", "B2", "P2", "P3", "adjoint_involution_defects", "canonical_inverse_defects", "sqrt10_term_count"], "properties": {"sqrt10_term_count": {"type": "integer", "minimum": 1}}},
+    "cotangent_payload": {"type": "object", "required": ["F2", "F3", "F2_entry_count", "F3_entry_count", "reconstruction_defects"], "properties": {"F2_entry_count": {"const": 132}, "F3_entry_count": {"const": 268}, "F2": {"type": "array", "minItems": 132, "maxItems": 132}, "F3": {"type": "array", "minItems": 268, "maxItems": 268}}},
+    "payload_canonical_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "mutation_results": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "required": ["name", "detected"], "properties": {"detected": {"const": true}}}},
+    "activation_disposition": {"type": "object", "properties": {"combined_clock_canonical_map_certified": {"const": true}, "scalar_q2_q3_transport_authorized": {"const": true}, "scalar_q2_q3_payload_exported": {"const": false}, "arity_replay_certified": {"const": false}, "K_Berger_equivariance_certified": {"const": false}, "observer_morphism_stability_certified": {"const": false}, "detector_response_on_second_order_cone_authorized": {"const": false}, "physical_branch_bridge_activated": {"const": false}}},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "REGENERATE_SCALAR_108_ROW_APPARATUS_AND_EMITTER_Q2_Q3_AND_REPLAY_ARITY_IDENTITIES"},
+    "claim_boundary": {"type": "string", "minLength": 1500},
+    "provenance": {"type": "object"}
+  }
+}

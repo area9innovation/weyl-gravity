@@ -1348,11 +1348,19 @@ including three necessary nonholonomic `sqrt(10)` terms.  The fail-closed
 atlas rows are
 `observer.berger.interaction.nonlinear_clock_temporal_field_f2_f3` and
 `observer.berger.interaction.nonlinear_clock_temporal_cotangent_f2_f3`.
-The radial and temporal submaps are separately canonical, but their mixed
-composition is not yet exported; complete scalar `q2,q3`, arity replay,
+The combined chart is now fixed by one geometric formula rather than by
+juxtaposition.  It has 55 `F2` plus 174 `F3` field entries and 132 `F2` plus
+268 `F3` cotangent entries.  Setting `Theta=0` and `R=0` reproduces the two
+certified submaps exactly; five quadratic and 64 cubic mixed terms are
+required.  Both combined formal adjoints are involutive, the signed canonical
+one-form inverse defects vanish through cubic degree, and every payload
+round-trips exactly.  The new fail-closed atlas row is
+`observer.berger.interaction.nonlinear_clock_combined_canonical_map_f2_f3`.
+This closes the coordinate-map nonuniqueness and authorizes regeneration of
+scalar `q2,q3`; it does not certify those tensors.  Arity replay,
 `K_Berger` equivariance, observer-morphism stability and
-`O_detector|Z2^C` remain `NO_CERTIFIED_MAP` until the mixed `F2/F3` and
-combined canonical one-form gate pass.
+`O_detector|Z2^C` remain `NO_CERTIFIED_MAP` until the transported interactions
+are exported and checked.
 This does not activate the physical-
 branch bridge and does not identify any compact-product mode with a Berger
 apparatus row.
