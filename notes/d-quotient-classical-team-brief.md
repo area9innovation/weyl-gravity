@@ -2271,9 +2271,13 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    acquires the two required quadratic terms `-kD L0D` and
    `-L0sharpD ksharpD`.  This is an abstract finite-operator theorem, not yet
    the coefficient-complete Kantowski--Sachs realization.  The active gate is
-   to bind all six difference blocks to that exact geometry and verify the
-   typed biwave endpoint on a declared common slab.  This neither demotes the
-   formal theorem nor promotes a whole-cylinder causal result.
+   now posed on an actual common causal domain: after the regular change
+   `b=1+epsilon y`, smooth ODE dependence gives, for every finite `T`, a
+   uniformly globally hyperbolic small-parameter family on `(-T,T)` with one
+   wider reference cone.  It remains to bind all six difference blocks to
+   that exact geometry and verify the typed biwave endpoint.  Neither the
+   domain theorem nor the HPL algebra promotes a causal map or a
+   whole-cylinder result.
 9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` is now official:
    all six minimal roles, the Bach Euler coordinate, both Noether rows,
    Lie/Weyl covariance, and the four filtration identities replay. Quantum

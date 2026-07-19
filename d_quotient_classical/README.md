@@ -664,6 +664,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1.json`](certificates/NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1.json),
   [`reports/nariai-rank310-six-block-finite-hpl.md`](reports/nariai-rank310-six-block-finite-hpl.md)
 
+- Common-slab causal domain: writing `b=1+epsilon y` regularizes the exact
+  Einstein flow at `epsilon=0`.  Smooth parameter dependence proves that for
+  every finite `T` there is a nonzero parameter interval on which the exact
+  Kantowski--Sachs metrics coexist on `(-T,T) x S1 x S2`, have positive scale
+  factors and compact Cauchy slices, and share one wider reference causal
+  cone.  This fixes the support domain but does not export the six geometric
+  operator differences or construct their Green homotopy:
+  [`certificates/NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1.json`](certificates/NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1.json),
+  [`reports/nariai-ks-common-slab-causal-domain.md`](reports/nariai-ks-common-slab-causal-domain.md)
+
 - Exact global disposition of the transverse Einstein branch: the
   Kantowski--Sachs family generating the certified tangent exists on every
   fixed compact time slab, but for every nonzero `0<|epsilon|<1` its areal

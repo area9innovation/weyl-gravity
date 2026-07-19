@@ -1,0 +1,40 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1_TIER_RECEIPT",
+  "claim_id": "NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1.json", "sha256": "e4d6a9a8cd71e1678ac5967c8a6078a393cde345f98fcb9082023de2ab96c6bf"},
+    "schema": {"path": "d_quotient_classical/schema/nariai-ks-common-slab-causal-domain-v1.schema.json", "sha256": "7df9b38541326bb15e5b2b80fafee52ff6f32232f3fc27f5aac5f446f71a2b1a"},
+    "producer": {"path": "d_quotient_classical/causal_transfer/nariai_ks_common_slab_causal_domain.py", "sha256": "2d5221902f83ff53cb1277921ca41f324c8f656d32bb8e63b620ab427df88081"},
+    "independent_verifier": {"path": "d_quotient_classical/causal_transfer/verify_nariai_ks_common_slab_causal_domain.py", "sha256": "7c2fa32a8e8d967c8f6a2af9f62158abb2be426b65a06f39eb06e6830a1e8854"},
+    "tests": {"path": "d_quotient_classical/causal_transfer/tests/test_nariai_ks_common_slab_causal_domain.py", "sha256": "4ecc1c942e4dbd5eff513d0814ee17c97e3bed88b569db7953d06a32bd3e242f"},
+    "report": {"path": "d_quotient_classical/reports/nariai-ks-common-slab-causal-domain.md", "sha256": "04237f3935a9d87309161f0ae9c4f90bcd76bb6b03a66c4e35fed249cc9167ce"}
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "checks": ["Python sources parsed during execution", "strict Draft 2020-12 schema validation", "planning JSON parsed", "scoped diff inspected before commit"]},
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 4.0,
+      "commands": [
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_ks_common_slab_causal_domain.py --write --guards",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-ks-common-slab-causal-domain-v1.schema.json -d d_quotient_classical/certificates/NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1.json",
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_ks_common_slab_causal_domain.py",
+        "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_ks_common_slab_causal_domain"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.7,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {"status": "NOT_RUN", "reason": "This is a scoped causal-domain theorem and direct atlas update, not a Green-transfer promotion, paper freeze, shared-core change, or release."}
+  },
+  "claim_boundary": "This receipt certifies the regularized common-slab existence theorem, compact Cauchy slices, and a common reference causal cone. It does not certify the coefficient-complete six-block operators, the compressed endpoint, a Green homotopy, a whole-cylinder family, Hadamard data, or quantum claims."
+}

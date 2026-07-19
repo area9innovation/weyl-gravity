@@ -113,10 +113,14 @@ def verify() -> None:
         raise AssertionError("finite KS incidence obstruction missing")
     if "NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1" not in exact_ids:
         raise AssertionError("six-block finite HPL theorem missing")
+    if "NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1" not in exact_ids:
+        raise AssertionError("KS common-slab causal-domain theorem missing")
     if "two forced quadratic metric cross terms" not in transverse_exact["claim_boundary"]:
         raise AssertionError("six-block HPL consequence missing")
-    if "binding and the metric endpoint/common-slab causal theorem remain open" not in transverse_exact["claim_boundary"]:
-        raise AssertionError("six-block geometric activation gate missing")
+    if "These two inputs do not yet give a causal map" not in transverse_exact["claim_boundary"]:
+        raise AssertionError("common-slab domain was overpromoted")
+    if "verification of the compressed metric endpoint remain open" not in transverse_exact["claim_boundary"]:
+        raise AssertionError("geometric endpoint activation gate missing")
 
 
 if __name__ == "__main__":

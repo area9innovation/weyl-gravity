@@ -257,6 +257,13 @@ forced quadratic cross terms.  C-G2 now waits on coefficientwise geometric
 binding of those six differences and the typed endpoint theorem on a declared
 common slab before any causal promotion.  This does not demote the formal
 tangent theorem or obstruct a different support-local identification.
+The common domain is now certified independently.  With
+`b=1+epsilon y`, the exact Einstein flow is a regular parameter-dependent ODE;
+for every finite `T`, a sufficiently small parameter interval gives positive
+scale factors on `(-T,T)`, compact Cauchy slices and one wider reference cone
+containing every family member's causal cone.  Thus the remaining common-slab
+gate is coefficientwise six-block geometric binding and the compressed metric
+endpoint, not existence of a shared globally hyperbolic support category.
 The analytic endpoint criterion is now background-independent:
 `TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1` proves that every exact endpoint
 `A=P2 P1+V` with normally hyperbolic factors and an order-at-most-two

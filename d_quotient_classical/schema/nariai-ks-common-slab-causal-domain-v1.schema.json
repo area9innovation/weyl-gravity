@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/nariai-ks-common-slab-causal-domain-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "theorem", "proof", "analytic_interface", "exact_checks", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-ks-common-slab-causal-domain-v1"},
+    "result_id": {"const": "NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1"},
+    "result_state": {"type": "string", "minLength": 1},
+    "dependency_tags": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]}},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exact_KS_branch", "six_block_HPL", "typed_biwave"],
+      "properties": {
+        "exact_KS_branch": {"$ref": "#/$defs/reference"},
+        "six_block_HPL": {"$ref": "#/$defs/reference"},
+        "typed_biwave": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["quantifiers", "domain", "background", "statement"],
+      "properties": {
+        "quantifiers": {"type": "string", "minLength": 1},
+        "domain": {"type": "string", "minLength": 1},
+        "background": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1}
+      }
+    },
+    "proof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["regularized_ode", "smooth_parameter_dependence", "positivity", "global_hyperbolicity", "common_cone", "bach_flatness"],
+      "properties": {
+        "regularized_ode": {"type": "object"},
+        "smooth_parameter_dependence": {"type": "string", "minLength": 1},
+        "positivity": {"type": "string", "minLength": 1},
+        "global_hyperbolicity": {"type": "string", "minLength": 1},
+        "common_cone": {"type": "string", "minLength": 1},
+        "bach_flatness": {"type": "string", "minLength": 1}
+      }
+    },
+    "analytic_interface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixed_support_category", "common_reference_causal_cone", "six_block_HPL_maps_remain_support_local_if_geometrically_bound", "typed_biwave_theorem_available_after_endpoint_hypotheses", "remaining_input"],
+      "properties": {
+        "fixed_support_category": {"type": "string", "minLength": 1},
+        "common_reference_causal_cone": {"const": true},
+        "six_block_HPL_maps_remain_support_local_if_geometrically_bound": {"const": true},
+        "typed_biwave_theorem_available_after_endpoint_hypotheses": {"const": true},
+        "remaining_input": {"type": "string", "minLength": 1}
+      }
+    },
+    "exact_checks": {"$ref": "#/$defs/booleanMap"},
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1", "KS_COMMON_SLAB_GLOBALLY_HYPERBOLIC_FAMILY", "KS_COMMON_REFERENCE_CAUSAL_CONE", "KS_SIX_BLOCK_GEOMETRIC_COEFFICIENT_BINDING", "KS_METRIC_ENDPOINT_TYPED_BIWAVE", "TRANSVERSE_KS_COMMON_SLAB_CAUSAL_TRANSFER", "TRANSVERSE_KS_GLOBAL_SMOOTH_CYLINDER_FAMILY", "HADAMARD_STATE", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1": {"const": true},
+        "KS_COMMON_SLAB_GLOBALLY_HYPERBOLIC_FAMILY": {"const": true},
+        "KS_COMMON_REFERENCE_CAUSAL_CONE": {"const": true},
+        "KS_SIX_BLOCK_GEOMETRIC_COEFFICIENT_BINDING": {"const": false},
+        "KS_METRIC_ENDPOINT_TYPED_BIWAVE": {"const": false},
+        "TRANSVERSE_KS_COMMON_SLAB_CAUSAL_TRANSFER": {"const": false},
+        "TRANSVERSE_KS_GLOBAL_SMOOTH_CYLINDER_FAMILY": {"const": false},
+        "HADAMARD_STATE": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "NARIAI_KS_SIX_BLOCK_GEOMETRIC_BINDING_AND_ENDPOINT"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "booleanMap": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"const": true}
+    }
+  }
+}

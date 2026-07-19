@@ -62,6 +62,7 @@ CERTS = {
     "Nariai_finite_HPL_incidence": ROOT / "d_quotient_classical/certificates/NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1.json",
     "Nariai_KS_four_block_obstruction": ROOT / "d_quotient_classical/certificates/NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1.json",
     "Nariai_six_block_HPL": ROOT / "d_quotient_classical/certificates/NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1.json",
+    "Nariai_KS_common_slab": ROOT / "d_quotient_classical/certificates/NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1.json",
     "Bach_parent": ROOT / "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
@@ -290,8 +291,8 @@ def entries() -> list[dict[str, Any]]:
         ("OPEN", "No second-order Taub classification beyond the exact homogeneous branch."),
         ("OBSTRUCTED", "The areal radius reaches zero with divergent Weyl curvature at finite proper time in one direction."),
         _second(("OBSTRUCTED", "The nonzero branch is not bounded or globally quasiperiodic on all R."), ("OBSTRUCTED", "The exact branch cannot remain smooth on the whole cylinder."), ("NO_CERTIFIED_MAP", "Slabwise evolution does not supply a whole-cylinder retarded causal bridge.")),
-        _evidence("Nariai_transverse_KS_obstruction", "Nariai_KS_four_block_obstruction", "Nariai_six_block_HPL"),
-        "The branch integrates the certified tangent on every fixed compact time slab but is globally singular for every nonzero 0<|epsilon|<1. In the declared fixed-coordinate tracefree transport, the finite conformal-Killing symbol first changes at order epsilon squared, so the four-block HPL theorem cannot be applied unchanged. The exact six-block operator algebra including k and ksharp now has terminating HPL resolvents, an exact cyclic SDR, and two forced quadratic metric cross terms. This algebraic theorem is conditional on binding the six difference operators to the coefficient-complete Kantowski--Sachs geometry; that binding and the metric endpoint/common-slab causal theorem remain open. This is not a no-go for non-Einstein Bach-flat deformations, alternative support-local identifications, different transverse data, or declared causal subdomains.",
+        _evidence("Nariai_transverse_KS_obstruction", "Nariai_KS_four_block_obstruction", "Nariai_six_block_HPL", "Nariai_KS_common_slab"),
+        "The branch integrates the certified tangent on every fixed compact time slab but is globally singular for every nonzero 0<|epsilon|<1. In the declared fixed-coordinate tracefree transport, the finite conformal-Killing symbol first changes at order epsilon squared, so the four-block HPL theorem cannot be applied unchanged. The exact six-block operator algebra including k and ksharp has terminating HPL resolvents, an exact cyclic SDR, and two forced quadratic metric cross terms. For every finite T, the regularized exact KS initial-value problem also supplies a uniformly globally hyperbolic small-parameter family on (-T,T) with one common wider causal cone. These two inputs do not yet give a causal map: coefficient-complete binding of the six operator differences and verification of the compressed metric endpoint remain open. This is not a no-go for non-Einstein Bach-flat deformations, alternative support-local identifications, different transverse data, or declared causal subdomains.",
     ))
     values.append(_entry(
         "classical.crosswalk.bach_flat_parent_to_metric",
