@@ -523,11 +523,12 @@ amplitudes of order \(r^0\) and \(r^{-1}\).  But the characteristic is
 \emph{double}.  The polynomial alone does not determine geometric
 multiplicity.  As in \((D^2+\omega^2)^2h=0\), a Jordan chain may produce
 \(r_*e^{\pm i\omega r_*}\) even though every characteristic exponent is
-oscillatory.  The current certificate does not print the asymptotic
-first-order matrix, its Jordan form, or the reconstructed metric behavior.
-Its ``no growing asymptotics'' flag is therefore used only for the displayed
-curvature-carrier leading ansatz, not as an asymptotically flat metric
-theorem.
+oscillatory.  This question is now certified: the integer-spaced
+exponent resonances within each characteristic sector are consistent, so
+the \emph{carrier} formal fundamental systems at infinity are log-free in
+both parity sectors (axial at symbolic real frequency; the polar
+\(\mu=-2\omega\) sector at two rational fixtures) --- no Jordan blocks at
+the formal carrier level.
 
 \begin{theorem}[Endpoint regularity-and-leading-symbol nonselection]
 On the declared Schwarzschild axial \(\ell=2\), nonzero-real-frequency mode
@@ -543,7 +544,34 @@ flat radiation condition admits an additional metric mode.  That stronger
 statement requires: (i) the full asymptotic Jordan decomposition;
 (ii) reconstruction of \(h\) from \(\psi=\delta R[h]\); (iii) falloff in a
 regular tetrad or asymptotic gauge; and (iv) finite Lee--Wald flux at null
-infinity.  Nor is there a no-go against local causal selection.  Since
+infinity.  Three of these four stations are now certified, and they
+\emph{reverse} the expectation the nonselection theorem might have
+suggested.  (i) The carrier Jordan decomposition is log-free in both
+parities.  (ii) Reconstruction is not: solving \(\delta R[h]=\psi\) at
+infinity, the pure-power ansatz is inconsistent and the single-log ansatz
+succeeds with nonzero log part in both characteristic sectors --- the
+composed metric carries \emph{logarithmic tails}, the inhomogeneous
+realization of the double characteristic root.  (iv) Substituting the
+formal pair classes into the sphere-integrated slice density \(F^v\)
+(axial \(\ell=2\), \(\omega=3/5\) fixture): the Einstein self-class falls
+as \(r^{-2}\) in both sectors and has \emph{finite} slice norm, while
+every class involving the composed modes has leading behavior between
+\(r^{0}\ln r\) and \(r^{2}\) and \emph{diverges}, invariantly under
+Einstein-shifts of the composed representative.
+
+\begin{theorem}[Fixture norm-selection at infinity]
+On the declared axial \(\ell=2\), \(\omega=3/5\) mode laboratory, the
+finite-slice-norm asymptotic class of the sphere-integrated presymplectic
+density contains exactly the Einstein sector.
+\end{theorem}
+
+Thus the two ends of the exterior play opposite roles: the tested horizon
+and leading-symbol diagnostics do not select the Einstein kernel, but
+symplectic-norm finiteness at infinity does --- as a phase-space
+normalization, not a local differential boundary condition.  Station
+(iii), falloff in a regular tetrad or asymptotic gauge, remains open, and
+the fixture scope (single frequency, axial parity) is recorded on the
+certificate.  Nor is there a no-go against local causal selection.  Since
 \(\psi\) obeys a second-order hyperbolic equation, the local Cauchy condition
 \begin{equation}
  \psi|_\Sigma=0,
@@ -685,8 +713,13 @@ Carry current? & Einstein self-block exactly null; mixed/additional blocks
 nonzero in fixtures & exact identity plus three frequencies\\
 Selected by tested endpoints? & no: horizon and leading-symbol tests do not
 force \(\psi=0\) & not a general causal no-go\\
-Asymptotic metric radiation? & open & repeated-root Jordan, reconstruction,
-and finite flux missing\\
+Asymptotic metric radiation? & carrier formal systems log-free; composed
+metric has logarithmic tails; finite-slice-norm class at infinity is
+exactly the Einstein sector & axial fixture $\omega=3/5$; tetrad falloff
+and phase-space construction open\\
+Static ($\omega=0$) sectors? & log-classified: two-parameter log-free
+families both parities; polar Einstein variables degenerate &
+classification only; static composition open\\
 Polar composition? & exact trace-coupled identity; realized image closes on
 the full analytic carrier space & Schwarzschild, polar $\ell=2$\\
 Polar reach and current? & two physical ingoing amplitudes modulo conformal
@@ -718,8 +751,9 @@ The paper does not establish:
 \item a second-order physical-process first law or nonlinear horizon
       dynamics;
 \item asymptotically flat conformal-gravity scattering with a complete
-      boundary phase space, metric/tetrad falloffs, and finite null-infinity
-      flux;
+      boundary phase space and metric/tetrad falloffs (the fixture
+      norm-selection table is not yet a symbolic-frequency,
+      parity-complete, gauge-audited phase-space theorem);
 \item Hawking states, particles, grey-body factors, luminosity, a quantum
       BRST quotient, positivity, or unitarity: the monodromy temperature is
       a mode-level continuation factor, not a quantum state construction.
@@ -770,6 +804,14 @@ Polar causal disposition &
 \cert{black_hole_programme/certificates/BH2B_POLAR_DISPOSITION.json}\\
 Horizon monodromy temperature &
 \cert{black_hole_programme/certificates/BH4_HAWKING_MONODROMY.json}\\
+Static-sector log classification &
+\cert{black_hole_programme/certificates/BH2_OMEGA_ZERO.json}\\
+Log-free carrier Jordan structure at infinity &
+\cert{black_hole_programme/certificates/BH2C_ASYMPTOTIC_JORDAN.json}\\
+Leading metric enhancement and flux symbol &
+\cert{black_hole_programme/certificates/BH2C_METRIC_LEADING.json}\\
+Composed log tails; Einstein norm-selection at infinity &
+\cert{black_hole_programme/certificates/BH2C_FLUX_CLASS.json}\\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -784,24 +826,25 @@ separate parity-completion gate.
 
 \section{Outlook}
 
-The next calculation is not a generic stability claim.  The principal gate
-is the repeated-root asymptotic problem:
+The repeated-root asymptotic gate
 \[
  \text{first-order matrix and Jordan form}
  \longrightarrow \text{metric reconstruction}
- \longrightarrow \text{finite-flux boundary class}.
+ \longrightarrow \text{finite-flux boundary class}
 \]
-In parallel, one rigorous interval or symbolic horizon-pairing fixture should
-replace the present controlled numerical nonvanishing, and the
-representative-invariant sign theory for the carrier self-pairing should be
-constructed.  The polar sequence has now run through composition, reach,
-pairing, and disposition; its outer Jordan/metric audit shares the axial
-gate above.  Only after those steps, and after coordinator review of the
-parity-complete mode-level closure, should complex-frequency structure and
-quasinormal boundary conditions be activated.  A later
-asymptotic phase-space construction must decide which generator is physical,
-which flux reaches null infinity, and whether the additional curvature image
-survives a globally differentiable charge algebra.
+has now run to its end at the fixture level: log-free carrier Jordan
+structure, log-tailed composed metrics, and the Einstein-only
+finite-slice-norm class at infinity.  The next calculations are its
+completions: the symbolic-frequency and polar norm-selection tables, the
+regular-tetrad falloff audit, and the asymptotically flat phase-space and
+charge-algebra construction that would promote the fixture
+norm-selection to a theorem about which flux reaches null infinity.  In
+parallel, one rigorous interval or symbolic horizon-pairing fixture
+should replace the present controlled numerical nonvanishing, and the
+representative-invariant sign theory for the carrier self-pairing should
+be constructed.  Only after those steps, and after coordinator review of
+the parity-complete mode-level closure, should complex-frequency
+structure and quasinormal boundary conditions be activated.
 
 The present result already fixes an important baseline:
 \begin{center}

@@ -2,7 +2,7 @@
   "schema": "paper-draft-source-map-v1",
   "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
   "lifecycle_state": "DRAFT_ALLOWED",
-  "source_baseline": "8ef7b7a0cc2d187eec981d7fd4577bd7be7422da",
+  "source_baseline": "0bb6ad6d2d40bee935fd44b9978b4e6b82adda02",
   "manuscript": "paper/14-pure-weyl-black-hole-radiation.tex",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -38,7 +38,13 @@
     "carrier_self_pairing_invariant_sign_theory": false,
     "horizon_monodromy_temperature_reduced_mode": true,
     "zerilli_schrodinger_master_scalar": false,
-    "hawking_state_or_flux_balance": false
+    "hawking_state_or_flux_balance": false,
+    "carrier_asymptotic_jordan_log_free": true,
+    "composed_metric_log_tails": true,
+    "finite_flux_class_fixture_einstein_selected": true,
+    "omega_zero_static_sector_classified": true,
+    "asymptotic_tetrad_falloff_audit": false,
+    "asymptotic_phase_space_charge_algebra": false
   },
   "known_source_scope_corrections": [
     {
@@ -118,7 +124,19 @@
     {
       "path": "black_hole_programme/certificates/BH2C_ASYMPTOTIC_JORDAN.json",
       "git_blob": "120c1f651fb560c2dc25f1b6fe2096a65ebdc593"
+    },
+    {
+      "path": "black_hole_programme/certificates/BH2_OMEGA_ZERO.json",
+      "git_blob": "44c81944ecec047e9c7f612e41e711c12ab9a05a"
+    },
+    {
+      "path": "black_hole_programme/certificates/BH2C_METRIC_LEADING.json",
+      "git_blob": "37e755acfa17e40489f6f7b4fc34d400ce9c4e0c"
+    },
+    {
+      "path": "black_hole_programme/certificates/BH2C_FLUX_CLASS.json",
+      "git_blob": "a5635f37d24cc3f2b3943551f27c7f7183ca0d5c"
     }
   ],
-  "next_gate": "BH2A_BH2B_ASYMPTOTIC_JORDAN_METRIC_RECONSTRUCTION_AND_INVARIANT_CARRIER_SIGN_THEORY"
+  "next_gate": "BH2C_SYMBOLIC_AND_POLAR_NORM_SELECTION_TABLES_AND_ASYMPTOTIC_PHASE_SPACE_CONSTRUCTION"
 }
