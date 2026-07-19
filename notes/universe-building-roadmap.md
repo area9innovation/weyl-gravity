@@ -1668,6 +1668,17 @@ momentum and causal transport remain explicitly `OPEN` or `NO_CERTIFIED_MAP`.
 The next Einstein gate is nonzero momentum; this result remains input to, not
 a promotion of, the same-background relative Bridge 1.
 
+The topology gap is also narrowed before that gate.  The complete `k=0` no-go
+extends from the all-orders weighted-`l1` Wiener class to the order-four
+uniformly almost-periodic Sobolev graph closure for every integer `s>=6`.
+Continuous Sobolev multiplication, Banach-valued Bohr projection and
+Bochner--Fejer density preserve the isolated `d*C_parity(lambda)` functional.
+This is strictly weaker than Wiener absolute summability, but it is not the
+sharp finite-energy/low-regularity space.  Atlas row
+`einstein.ph.wm.mixed.exceptional_ellipse_sobolev_bohr_complete_k0_no_go`
+records bounded `OBSTRUCTED`, smooth infinite secular `OPEN`, and causal
+`NO_CERTIFIED_MAP`; nonzero compact momentum remains the active Einstein gate.
+
 ### Classical ownership
 
 The authoritative support-local Berger tensors are now certified through

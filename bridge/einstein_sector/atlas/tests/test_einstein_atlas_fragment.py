@@ -387,6 +387,17 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("Maximal finite-energy/Sobolev", entry["claim_boundary"])
 
+    def test_complete_k0_no_go_extends_to_sobolev_bohr_domain(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.exceptional_ellipse_sobolev_bohr_complete_k0_no_go"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertIn("s>=6", entry["mode_data"]["dispersion"]["statement"])
+        self.assertIn("Bochner-Fejer", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("Sharp energy/low-regularity", entry["claim_boundary"])
+
     def test_constant_twist_projector_repair_is_authoritative(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
         self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")

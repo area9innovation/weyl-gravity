@@ -1,0 +1,43 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_SOBOLEV_BOHR_NO_GO_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Finite-order Sobolev--Bohr completion of the complete k=0 exceptional resonance-ellipse bounded no-go.",
+  "content_sha256": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_sobolev_bohr_no_go.py": "00f5a028043423e686d0392ecf77176a6ae1b10d8aa6be9f0005e773a21e0549",
+    "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_sobolev_bohr_no_go.json": "17701e18695f156df0228709cdb09de5802ac4afe097aaedd574ea8e15e04305",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_sobolev_bohr_no_go.schema.json": "97176bd0ab77c1ff6f689f3309c41d42cea92339bbda64f00fbdedc7756127bd",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_sobolev_bohr_no_go.py": "5c7525d271bb451d865caa90b6af11e652c4a3aab3dae82698810ba4a9cd96da",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_exceptional_ellipse_sobolev_bohr_no_go.py": "75648e48feef109efea1561e4684a6be4140f72de771ed8b2c600a7dcc4c946d",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-exceptional-ellipse-sobolev-bohr-no-go.md": "06243c48c985771f21b4dfbbbbe98fa2fcdbdf6841668071a5bf58a1f0de0e4d"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.2,
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 3.6,
+      "tests_run": 6,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ellipse_sobolev_bohr_no_go --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_sobolev_bohr_no_go.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ellipse_sobolev_bohr_no_go"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The complete k=0 pair census, global reduction and nonzero axial/polar pivots are unchanged hashed inputs; the new proof supplies continuous Sobolev products, Bohr projections and Bochner--Fejer passage to the completion."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No shared core operator or lifecycle freeze changed; sharp low-regularity energy, nonzero-momentum, infinite-secular and causal gates remain open."
+    }
+  },
+  "claim_boundary": "Complete only for k=0 in the declared integer s>=6 uniformly almost-periodic Sobolev graph domain with finite nonminus support; maximal energy/low regularity, infinite secular, nonzero momentum, causal, residual and quantum claims remain fail-closed."
+}

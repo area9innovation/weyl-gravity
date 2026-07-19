@@ -1,0 +1,98 @@
+{
+  "claim_boundary": "Complete only at k=0 in the declared s>=6 uniformly almost-periodic Sobolev graph domain with finite nonminus support. Maximal energy/low-regularity completion, infinite secular inversion, nonzero momentum, causal, residual, all-orders and quantum claims remain fail-closed.",
+  "classification": {
+    "bounded_uniformly_almost_periodic_sobolev_extension_obstructed": true,
+    "causal_or_quantum_claim": false,
+    "complete_declared_k0_carrier_covered": true,
+    "continuous_bohr_adjoint_projection_certified": true,
+    "continuous_quadratic_source_map_certified": true,
+    "finite_order_sobolev_bohr_completion_classified": true,
+    "maximal_finite_energy_or_low_regularity_completion_classified": false,
+    "nonzero_momentum_classified": false,
+    "smooth_infinite_secular_extension_classified": false,
+    "strict_extension_beyond_smooth_wiener_domain": true
+  },
+  "continuous_quadratic_projection_lemma": {
+    "angular_projection": "pairing with a fixed smooth spherical adjoint harmonic is continuous on H^(s-4)",
+    "axial_pivot": "-3*I*sqrt(-sqrt(2)*sqrt(lambda) + lambda)*(3*sqrt(2)*sqrt(lambda) - 1)",
+    "finite_approximation": "Bochner-Fejer approximants reduce every projected quadratic coefficient to the certified finite-support pair census; continuity passes the zero competitors to the limit",
+    "frequency_projection": "the Banach-valued Bohr coefficient M_Omega f=lim_(T->infinity)(2T)^(-1) integral_(-T)^T exp(i*Omega*t)f(t)dt is a contraction in the uniform H^(s-4) norm",
+    "isolated_coefficient": "d*C_parity(lambda)*c_(ell,m,parity)",
+    "polar_pivot": "lambda**2*(2*lambda - 1)/6",
+    "sobolev_product": "on S2, s>=6 makes every product of differentiated factors of total order at most four continuous into H^(s-4)",
+    "source_map": "the local fourth-order Weyl-Maxwell Hessian extends continuously from the declared graph domain to uniformly almost-periodic H^(s-4)-valued sources"
+  },
+  "correction_classes": {
+    "BOUNDED_UNIFORMLY_ALMOST_PERIODIC_SOBOLEV_GRAPH": {
+      "status": "OBSTRUCTED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_INFINITE_SECULAR": {
+      "reason": "no uniform inverse estimate controls a countable secular correction",
+      "status": "OPEN"
+    }
+  },
+  "declared_sobolev_bohr_domain": {
+    "bochner_fejer_density": "finite branch-labelled trigonometric sums are dense by definition in the declared graph norm",
+    "correction_space": "bounded uniformly almost-periodic fields in the corresponding order-four Sobolev graph domain",
+    "mode_space": "the closure of finite Einstein-minus sums in max_(0<=j<=4) sup_t ||partial_t^j u(t)||_{H^(s-j)(S2;E)}",
+    "not_claimed": "This is not the maximal energy space, a low-regularity solution theory, or an arbitrary distributional completion.",
+    "regularity": "integer s>=6",
+    "strictly_weaker_than_smooth_wiener": "in a Sobolev-normalized one-mode-per-ell basis, c_ell=(1+lambda_ell)^(-(s+2)/2) lies in the declared weighted l2 graph completion but fails the all-orders weighted l1 Wiener seminorms",
+    "typed_bundle": "E is the finite-rank axial-plus-polar fixed-bundle perturbation carrier; no parity or branch labels are identified"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "fredholm_contradiction": {
+    "left_hand_side": "the resonant adjoint projection of L v vanishes for every correction in the declared uniformly almost-periodic graph domain",
+    "resonant_requirement": "d!=0 and C_parity(lambda)!=0 force every Einstein-minus coefficient to vanish",
+    "taub_requirement": "the nonpositive ellipse, global and nonminus blocks require at least one nonzero Einstein-minus coefficient",
+    "verdict": "the bounded Sobolev-Bohr second-order tangent cone has empty intersection with the complete declared carrier over every nonzero ellipse point"
+  },
+  "interpretation": "The complete k=0 obstruction is not an artifact of absolute Fourier summability. It persists in a finite-order Sobolev graph completion because the nonlinear source and each resonant adjoint coefficient are continuous under Bochner-Fejer approximation.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "treat nonzero compact momentum; separately determine the sharp low-regularity or energy threshold and infinite secular estimates",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_sobolev_bohr_no_go.py",
+    "generator_sha256": "00f5a028043423e686d0392ecf77176a6ae1b10d8aa6be9f0005e773a21e0549",
+    "inputs": {
+      "complete_k0": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_complete_k0_no_go.json",
+        "sha256": "fa17424ae81e9745021c08f944f4cb5959d64a64315500049263a46433703e5e"
+      },
+      "pair_census": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell1_generic_pair_minus_nonresonance.json",
+        "sha256": "b7119ba966393d7c41d3f9f14d65b358607be0dde0070c96e8e3327bca34b184"
+      },
+      "pivot": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_generic_lambda_pivot.json",
+        "sha256": "a0d9769e6363031fb0259f6a529919a19d45c37ed7d59027765d9311a77fc411"
+      },
+      "wiener": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_wiener_minus_dressing_no_go.json",
+        "sha256": "411076a107d778e6f18140ad4e83ca395e78278d62e52713505e3065f2d4ef75"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_SOBOLEV_BOHR_NO_GO",
+  "schema": "einstein-maxwell-weyl-exceptional-ellipse-sobolev-bohr-no-go-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_sobolev_bohr_no_go.schema.json",
+  "schema_sha256": "97176bd0ab77c1ff6f689f3309c41d42cea92339bbda64f00fbdedc7756127bd",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded uniformly almost-periodic Sobolev correction",
+    "carrier": "any nonzero axisymmetric exceptional resonance-ellipse point, arbitrary standard generalized-zero data, arbitrary finite k=0 nonminus oscillators and a Sobolev-Bohr k=0 Einstein-minus sum",
+    "charge_sector": "fixed N=2 magnetic bundle with first-order electric tangent allowed",
+    "degree": 2,
+    "ell": "global 0,1; finite nonminus ell>=1; countable Einstein-minus ell>=2",
+    "k": 0,
+    "m": "all retained m with convergent stabilizer moment maps",
+    "omega": "generalized zero and the complete certified k=0 q/p oscillator inventory",
+    "parity": "all certified homogeneous, axial and polar parities",
+    "theory": "Weyl-Maxwell target"
+  }
+}

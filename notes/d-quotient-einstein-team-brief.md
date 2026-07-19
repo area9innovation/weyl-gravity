@@ -3007,6 +3007,22 @@ nonlinear relative morphism.  Its next activation gate is the nonzero-compact-
 momentum tangent cone; the fail-closed atlas row is the complete `k=0` no-go
 just named, and no cross-background mode identification is made.
 
+The absolute-summability hypothesis is no longer load-bearing.  For every
+integer `s>=6`, close finite minus sums in the order-four graph norm
+
+```text
+max_(0<=j<=4) sup_t ||partial_t^j u(t)||_(H^(s-j)(S2)).
+```
+
+Sobolev multiplication on `S2` makes the fourth-order quadratic source
+continuous into `H^(s-4)`.  Banach-valued Bohr extraction and spherical
+adjoint projection are continuous, so Bochner--Fejer finite approximants pass
+the certified pairwise zero competitors to the limit.  The same isolated
+`d*C_parity(lambda)` coefficient therefore proves bounded `OBSTRUCTED` on a
+strictly larger Sobolev--Bohr domain.  This is a finite-order topology theorem,
+not the sharp energy/low-regularity threshold; infinite secular, nonzero-`k`
+and causal gates remain unchanged.
+
 The nonzero-momentum twist face has now been intersected with the independent
 opposite-momentum phase divisor.  For every `ell>=2`, the exact choice
 

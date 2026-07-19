@@ -336,6 +336,16 @@ def verify() -> None:
         raise AssertionError("complete k0 no-go exceeded its certified correction classes")
     if "Maximal finite-energy/Sobolev" not in complete_k0_no_go["claim_boundary"]:
         raise AssertionError("complete k0 no-go lost its topology boundary")
+    sobolev_bohr = by_id["einstein.ph.wm.mixed.exceptional_ellipse_sobolev_bohr_complete_k0_no_go"]
+    if sobolev_bohr["descriptions"]["nonlinear"] != "OBSTRUCTED":
+        raise AssertionError("Sobolev-Bohr complete k0 no-go lost its lifecycle")
+    if sobolev_bohr["mode_data"]["resonance"]["status"] != "OBSTRUCTED" or "Bochner-Fejer" not in sobolev_bohr["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("Sobolev-Bohr projection theorem was hidden")
+    sobolev_second = sobolev_bohr["mode_data"]["second_order"]
+    if sobolev_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or sobolev_second["smooth_secular"]["status"] != "OPEN" or sobolev_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("Sobolev-Bohr correction classes changed")
+    if "Sharp energy/low-regularity" not in sobolev_bohr["claim_boundary"]:
+        raise AssertionError("Sobolev-Bohr no-go lost its low-regularity boundary")
     fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
     if fixed_ell_twist["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("fixed-ell bounded lifecycle was not promoted")

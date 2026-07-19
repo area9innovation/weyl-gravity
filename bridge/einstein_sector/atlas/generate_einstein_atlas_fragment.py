@@ -45,6 +45,7 @@ CERTIFICATES = {
     "cross_ell_generic_output_nonresonance": ROOT / "bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance.json",
     "ell1_generic_pair_minus_nonresonance": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell1_generic_pair_minus_nonresonance.json",
     "exceptional_complete_k0_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_complete_k0_no_go.json",
+    "exceptional_sobolev_bohr_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_sobolev_bohr_no_go.json",
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
@@ -387,6 +388,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OBSTRUCTED","The bounded smooth uniformly almost-periodic second-order tangent cone has empty intersection with the complete declared carrier over every nonzero ellipse point."),("OPEN","Finite secular sufficiency has no certified uniform inverse estimate for the countable Wiener-Bohr dressing."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell complex is certified.")),
             _evidence("exceptional_complete_k0_no_go","ell1_generic_pair_minus_nonresonance","exceptional_standard_global_minus_no_go","exceptional_wiener_minus_no_go","abstract_cone"),
             "Complete only at k=0 for finite nonminus support and the declared smooth Wiener-Bohr minus topology. Maximal finite-energy/Sobolev completions, infinite secular inversion, nonzero momentum, causal propagation, final residual descent, all-orders integration and quantum interpretation remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.mixed.exceptional_ellipse_sobolev_bohr_complete_k0_no_go",
+            _scope(theory="Weyl-Maxwell target", carrier="any nonzero axisymmetric exceptional resonance-ellipse point, arbitrary standard generalized-zero data, arbitrary finite k=0 nonminus oscillators and a Sobolev-Bohr k=0 Einstein-minus sum", degree=2, parity="all certified homogeneous, axial and polar parities", ell="global 0,1; finite nonminus ell>=1; countable Einstein-minus ell>=2", m="all retained m with convergent stabilizer moment maps", k=0, omega="generalized zero plus the complete certified k=0 q/p oscillator inventory"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The s>=6 Sobolev graph completion retains every same-background branch, parity, ell and m label without residual or cross-background identification."),
+            ("CERTIFIED","The declared graph topology is defined with a positive Sobolev norm; all imported Lee-Wald and Taub signs retain their action-derived normalization."),
+            ("CERTIFIED","The stabilizer maps converge on the declared graph domain, and every common zero over the nonpositive ellipse/nonminus carrier still needs nonzero Einstein-minus occupation."),
+            ("OBSTRUCTED","Continuous Sobolev products, Banach-valued Bohr projection and Bochner-Fejer density extend the isolated nonzero d*C_parity(lambda) minus-shell functional beyond the Wiener class."),
+            _second_order(("OBSTRUCTED","No bounded uniformly almost-periodic correction in the order-four s>=6 Sobolev graph domain exists over a nonzero ellipse point."),("OPEN","No uniform inverse estimate controls a countable secular correction."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell complex is certified.")),
+            _evidence("exceptional_sobolev_bohr_no_go","exceptional_complete_k0_no_go","abstract_cone"),
+            "Complete only at k=0 in the declared integer s>=6 uniformly almost-periodic Sobolev graph domain with finite nonminus support. Sharp energy/low-regularity completion, infinite secular inversion, nonzero momentum, causal propagation, final residual descent, all-orders integration and quantum interpretation remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.extra.exceptional_ell1_nonzero_k",
@@ -1052,6 +1065,11 @@ def build() -> dict[str, object]:
         raise AssertionError("complete k0 exceptional no-go changed")
     if complete_k0["maximal_sobolev_or_finite_energy_completion_classified"] or complete_k0["smooth_infinite_secular_extension_classified"] or complete_k0["nonzero_momentum_classified"] or complete_k0["all_orders_integrability"] or complete_k0["causal_or_quantum_claim"]:
         raise AssertionError("complete k0 exceptional no-go exceeded its scope")
+    sobolev_bohr = records["exceptional_sobolev_bohr_no_go"]["classification"]
+    if not (sobolev_bohr["finite_order_sobolev_bohr_completion_classified"] and sobolev_bohr["strict_extension_beyond_smooth_wiener_domain"] and sobolev_bohr["bounded_uniformly_almost_periodic_sobolev_extension_obstructed"] and sobolev_bohr["continuous_quadratic_source_map_certified"] and sobolev_bohr["continuous_bohr_adjoint_projection_certified"] and sobolev_bohr["complete_declared_k0_carrier_covered"]):
+        raise AssertionError("Sobolev-Bohr complete k0 no-go changed")
+    if sobolev_bohr["maximal_finite_energy_or_low_regularity_completion_classified"] or sobolev_bohr["smooth_infinite_secular_extension_classified"] or sobolev_bohr["nonzero_momentum_classified"] or sobolev_bohr["causal_or_quantum_claim"]:
+        raise AssertionError("Sobolev-Bohr complete k0 no-go exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:
