@@ -1,0 +1,118 @@
+{
+  "claim_boundary": "This theorem classifies only the unique L=2ell q-minus sum-frequency resonance matrix at one separately tuned |k| for each ell>=2. It does not certify full bounded extension on the null sheets, one fixed circumference, multiple |k| joins, causal transport, final residual descent, observation or quantum theory.",
+  "classification": {
+    "action_derived_two_parity_matrix_computed": true,
+    "all_three_coefficients_nonzero_every_integer_ell_ge_2": true,
+    "causal_or_quantum_claim": false,
+    "complete_resonance_zero_variety_classified": true,
+    "fixed_circumference_or_multiple_abs_momentum_classified": false,
+    "general_all_channel_bounded_extension_on_null_sheets": false,
+    "nonzero_two_momentum_null_sheets_exist_every_integer_ell_ge_2": true
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "certified_substatement": "off the displayed zero variety the unique p-shell collision obstructs bounded correction; complete all-channel inversion on the two sheets is not certified for general ell",
+      "status": "OPEN"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "the finite p-shell resonances admit the certified secular inverse once the stabilizer moment maps vanish",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_EVERY_INTEGER_ELL_AT_ONE_TUNED_NONZERO_MOMENTUM_FIBRE",
+  "interpretation": "The all-ell obstruction is parity-indefinite rather than definite: pure axial and pure polar products have opposite polar-output signs, and the axial-polar source supplies the independent axial-output equation. Their common zero set consists of two one-sided planes and two nonzero mixed-parity sheets. Thus the unique resonance admits cancellation at every ell, but this matrix alone does not prove a complete bounded second-order correction on those sheets.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "test all remaining output channels on the two symbolic mixed-parity sheets, then join the result to the fixed-circumference finite-multimomentum source matrix",
+  "nonvanishing_proofs": {
+    "axial_diagonal": "strictly positive by the imported all-ell axial theorem",
+    "cross_A_ell": "3*ell**3 + 8*ell**2 + 5*ell",
+    "cross_B_ell": "2*ell**2 + 5*ell + 1",
+    "cross_norm_factorization": "ell*(ell - 1)**3*(ell + 1)*(ell + 2)",
+    "cross_sign_for_positive_k": "strictly negative: A_ell>sqrt(2*ell*(ell+1))*B_ell",
+    "polar_diagonal": "strictly negative because its ratio to the positive axial coefficient is -ell*(ell+1)/2"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.py",
+    "generator_sha256": "4573d61d991c5f78b3e66c065fd1007028fa4c825416f2f64cea74dc4803d049",
+    "inputs": {
+      "axial_all_ell": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
+        "sha256": "9a616eadee536082d50a5cc137f2c5fefaf118232ed40bc53bc752951284d53a"
+      },
+      "ell2_direct_matrix": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix.json",
+        "sha256": "e45a20b719ef7aabe8ed0bb56a3565251a59b92a6d102936447ddd0408609581"
+      },
+      "symbolic_collision": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
+        "sha256": "cc50b09f9140749d2744d42586cf8e052d16b8063b8c37737d448d1711bac289"
+      }
+    },
+    "parent_action_sha256": "0151ec2dbf70571df4d0a8ec5c493c9e915b8c8ae1af2e5568db48a833f1b808",
+    "parent_q2_sha256": "be4d163044138f4b3b093c54527c2484cfac9eea48a58c791e97926be8597fec",
+    "parent_row_layout_sha256": "c029f01f51b9c0096adabf4208f3b12b32ab42c6ce058969e302360724b84c86",
+    "pbw_slice": {
+      "path": "bridge/einstein_sector/generated/einstein_maxwell_weyl_symbolic_ell_qminus_parity_pbw_slice.json",
+      "sha256": "ba3353116f39fe08033848dfa9bf3b049ed2d56fc94b0c8f4c5e0fff90493e5b"
+    }
+  },
+  "resonance_matrix": {
+    "R_axial_diagonal": "-8*ell**2*(ell + 1)*(2*ell + 1)*(-18*ell**4 + 9*ell**3*r - 24*ell**3 + 21*ell**2*r - 4*ell**2 - 9*ell*r - 16*ell + 11*r - 2)*binomial(2*ell, ell)**2/(3*(6*ell**2 + 3*ell - 1)*binomial(4*ell, 2*ell))",
+    "R_polar_diagonal": "4*ell**3*(ell + 1)**2*(2*ell + 1)*(-18*ell**4 + 9*ell**3*r - 24*ell**3 + 21*ell**2*r - 4*ell**2 - 9*ell*r - 16*ell + 11*r - 2)*binomial(2*ell, ell)**2/(3*(6*ell**2 + 3*ell - 1)*binomial(4*ell, 2*ell))",
+    "X_axial_polar": "4*ell**2*k*(ell + 1)*(2*ell + 1)*(-3*ell**3 + 2*ell**2*r - 8*ell**2 + 5*ell*r - 5*ell + r)*binomial(2*ell, ell)**2/binomial(4*ell, 2*ell)",
+    "axial_output_functional": "X_axial_polar*(a_+*p_- - a_-*p_+)",
+    "coefficient_symbols": [
+      "a_+",
+      "a_-",
+      "p_+",
+      "p_-"
+    ],
+    "polar_output_functional": "R_axial_diagonal*(a_+*a_- - ell*(ell+1)*p_+*p_-/2)",
+    "polar_over_axial_diagonal_ratio": "-ell*(ell+1)/2"
+  },
+  "resonance_zero_variety": {
+    "coordinate_planes": [
+      "a_+=p_+=0 with (a_-,p_-) arbitrary",
+      "a_-=p_-=0 with (a_+,p_+) arbitrary"
+    ],
+    "equations": [
+      "a_minus*a_plus - ell**2*p_minus*p_plus/2 - ell*p_minus*p_plus/2",
+      "-a_minus*p_plus + a_plus*p_minus"
+    ],
+    "set_theoretic_completeness": "If neither signed-momentum vector vanishes, the cross equation makes them proportional and the diagonal equation fixes the common ratio to either signed square root; the remaining cases are the two coordinate planes.",
+    "two_momentum_sheets": [
+      "a_+=+sqrt(ell*(ell+1)/2)*p_+ and a_-=+sqrt(ell*(ell+1)/2)*p_-",
+      "a_+=-sqrt(ell*(ell+1)/2)*p_+ and a_-=-sqrt(ell*(ell+1)/2)*p_-"
+    ]
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_QMINUS_PARITY_RESONANCE_MATRIX",
+  "result_state": "ALL_ELL_TUNED_QMINUS_TWO_PARITY_RESONANCE_MATRIX_AND_NULL_VARIETY_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-symbolic-ell-qminus-parity-resonance-matrix-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.schema.json",
+  "schema_sha256": "754464d43becdca490cb02f554b20cb3f29ef12caa380c7bf71fdb456aceba10",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 with circumference tuned separately for each ell",
+    "carrier": "axial and polar Einstein-minus coefficients at opposite tuned compact momenta inside the common-zero construction",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "every integer input ell>=2; output L=2*ell",
+    "k": "+/-sqrt(sqrt(2*ell*(ell+1))-ell/2-1/6)",
+    "m": "axisymmetric input and output, derived through the exact highest-weight coefficient",
+    "omega": "input omega_minus and output Omega=2*omega_minus",
+    "parity": "both input parities; polar and axial p-primary L=2ell outputs kept separate",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix"
+  ]
+}

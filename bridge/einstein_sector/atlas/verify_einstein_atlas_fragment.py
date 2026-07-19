@@ -414,7 +414,7 @@ def verify() -> None:
         raise AssertionError("twist-aligned phase gate over-promoted the bounded cone")
     if aligned_phase["mode_data"]["taub_maps"]["status"] != "CERTIFIED":
         raise AssertionError("twist-aligned common-zero witness was hidden")
-    if aligned_phase["mode_data"]["resonance"]["status"] != "CERTIFIED" or "dynamical adjoint coefficient remains OPEN" not in aligned_phase["mode_data"]["resonance"]["statement"]:
+    if aligned_phase["mode_data"]["resonance"]["status"] != "CERTIFIED" or "does not import the later dynamical matrix" not in aligned_phase["mode_data"]["resonance"]["statement"]:
         raise AssertionError("twist-aligned phase divisor was not fail-closed")
     if aligned_phase_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or aligned_phase_second["smooth_secular"]["status"] != "CERTIFIED":
         raise AssertionError("twist-aligned correction-class split changed")
@@ -442,6 +442,14 @@ def verify() -> None:
         raise AssertionError("symbolic-ell axial correction-class split changed")
     if symbolic_axial_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("symbolic-ell axial obstruction gained a causal map")
+    symbolic_parity = by_id["einstein.ph.wm.interaction.symbolic_ell_qminus_parity_resonance_matrix"]
+    symbolic_parity_second = symbolic_parity["mode_data"]["second_order"]
+    if symbolic_parity["mode_data"]["resonance"]["status"] != "CERTIFIED" or "two coordinate planes plus two nonzero mixed-parity sheets" not in symbolic_parity["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("symbolic-ell two-parity null variety was hidden")
+    if symbolic_parity["descriptions"]["nonlinear"] != "OPEN" or symbolic_parity_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("symbolic-ell null sheets were over-promoted")
+    if symbolic_parity_second["smooth_secular"]["status"] != "CERTIFIED" or symbolic_parity_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("symbolic-ell two-parity correction classes changed")
     aligned_obstruction = by_id["einstein.ph.wm.interaction.twist_aligned_opposite_momentum_bounded_obstruction"]
     aligned_obstruction_second = aligned_obstruction["mode_data"]["second_order"]
     if aligned_obstruction["descriptions"]["nonlinear"] != "OBSTRUCTED":

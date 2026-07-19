@@ -113,7 +113,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         second_order = entry["mode_data"]["second_order"]
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
-        self.assertIn("dynamical adjoint coefficient remains OPEN", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("does not import the later dynamical matrix", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
@@ -137,8 +137,8 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("axial source coefficient is certified", entry["claim_boundary"])
-        self.assertIn("polar/mixed coefficients", entry["claim_boundary"])
+        self.assertIn("dynamical two-parity matrix is certified", entry["claim_boundary"])
+        self.assertIn("full bounded inversion", entry["claim_boundary"])
 
     def test_symbolic_ell_axial_qminus_is_obstructed_but_not_causal(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.symbolic_ell_axial_qminus_obstruction"]
@@ -155,6 +155,16 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         entry = self.entries["einstein.ph.wm.interaction.opposite_momentum_ell2_parity_resonance_matrix"]
         second_order = entry["mode_data"]["second_order"]
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
+    def test_symbolic_ell_two_parity_matrix_keeps_null_sheets_open(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.symbolic_ell_qminus_parity_resonance_matrix"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("two coordinate planes plus two nonzero mixed-parity sheets", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
         self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")

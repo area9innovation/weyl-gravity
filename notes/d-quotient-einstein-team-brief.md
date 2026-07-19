@@ -3246,14 +3246,38 @@ member of the tuned **axial** twist-aligned common-zero family is bounded/
 finite-quasiperiodic `OBSTRUCTED`, while smooth secular correction remains
 `CERTIFIED`.  Atlas row
 `einstein.ph.wm.interaction.symbolic_ell_axial_qminus_obstruction` records the
-theorem.  Polar and mixed input coefficients remain explicitly `OPEN`.
+theorem.
+
+The polar and mixed coefficient gate is now also closed.  If `R_ell>0` is
+the preceding axial coefficient, the complete two-output resonance matrix is
+
+```text
+R_polar=R_ell*(a_+*a_- - ell*(ell+1)*p_+*p_-/2),
+R_axial=X_ell*(a_+*p_- - a_-*p_+),
+```
+
+where `X_ell` is nonzero for every `ell>=2`.  Its nonvanishing follows from
+
+```text
+(3*ell^3+8*ell^2+5*ell)^2
+-2*ell*(ell+1)*(2*ell^2+5*ell+1)^2
+=ell*(ell-1)^3*(ell+1)*(ell+2)>0.
+```
+
+The resonant zero variety is exactly the two one-sided signed-momentum planes
+plus the two mixed sheets
+`a_+=sigma*sqrt(ell*(ell+1)/2)*p_+` and
+`a_-=sigma*sqrt(ell*(ell+1)/2)*p_-`, `sigma=+/-1`.  Atlas row
+`einstein.ph.wm.interaction.symbolic_ell_qminus_parity_resonance_matrix`
+keeps full all-channel bounded inversion on those sheets `OPEN`; this is a
+resonance-matrix theorem, not yet a general second-order extension theorem.
 
 The active same-background Classical bridge remains Bridge 1.  Its current
-nonlinear activation gates are the symbolic polar and axial-polar mixed
-`L=2*ell` source coefficients and the parity-typed 164-coefficient
-first-two-`|k|` workload.
+nonlinear activation gates are all-channel inversion on the two symbolic
+mixed-parity sheets and the parity-typed 164-coefficient first-two-`|k|`
+workload.
 Their fail-closed atlas rows are
-`einstein.ph.wm.interaction.symbolic_ell_axial_qminus_obstruction` and
+`einstein.ph.wm.interaction.symbolic_ell_qminus_parity_resonance_matrix` and
 `einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload`.  Both
 retain the compact Plebański--Hacyan carrier and identify no mode across
 backgrounds.

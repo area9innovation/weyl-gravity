@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Symbolic-ell q-minus two-parity resonance matrix",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "scope",
+    "resonance_matrix",
+    "nonvanishing_proofs",
+    "resonance_zero_variety",
+    "correction_classes",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-symbolic-ell-qminus-parity-resonance-matrix-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_QMINUS_PARITY_RESONANCE_MATRIX"
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "action_derived_two_parity_matrix_computed",
+        "all_three_coefficients_nonzero_every_integer_ell_ge_2",
+        "complete_resonance_zero_variety_classified",
+        "nonzero_two_momentum_null_sheets_exist_every_integer_ell_ge_2",
+        "general_all_channel_bounded_extension_on_null_sheets",
+        "fixed_circumference_or_multiple_abs_momentum_classified",
+        "causal_or_quantum_claim"
+      ],
+      "properties": {
+        "action_derived_two_parity_matrix_computed": {"const": true},
+        "all_three_coefficients_nonzero_every_integer_ell_ge_2": {"const": true},
+        "complete_resonance_zero_variety_classified": {"const": true},
+        "nonzero_two_momentum_null_sheets_exist_every_integer_ell_ge_2": {"const": true},
+        "general_all_channel_bounded_extension_on_null_sheets": {"const": false},
+        "fixed_circumference_or_multiple_abs_momentum_classified": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      }
+    }
+  }
+}

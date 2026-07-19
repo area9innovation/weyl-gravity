@@ -1921,9 +1921,27 @@ with `A_ell=18*ell^4+24*ell^3+4*ell^2+16*ell+2` and
 Fail-closed atlas row
 `einstein.ph.wm.interaction.symbolic_ell_axial_qminus_obstruction` is bounded
 `OBSTRUCTED`, smooth secular `CERTIFIED`, and causal `NO_CERTIFIED_MAP` on the
-tuned axial common-zero family.  The active symbolic gate is now the polar
-and axial-polar mixed coefficient; the fixed-circumference/multiple-`|k|`
-join remains the separate finite source-matrix workload.
+tuned axial common-zero family.
+
+The complete symbolic two-parity matrix is now certified as well.  Its polar
+self-coefficient is exactly `-ell*(ell+1)/2` times the axial coefficient, and
+the axial--polar coefficient is nonzero because
+
+```text
+(3*ell^3+8*ell^2+5*ell)^2
+-2*ell*(ell+1)*(2*ell^2+5*ell+1)^2
+=ell*(ell-1)^3*(ell+1)*(ell+2)>0.
+```
+
+The two resonant equations have exactly two one-sided momentum planes and two
+nonzero mixed-parity sheets
+`a_+/-=sigma*sqrt(ell*(ell+1)/2)*p_+/-`.  Fail-closed atlas row
+`einstein.ph.wm.interaction.symbolic_ell_qminus_parity_resonance_matrix`
+marks resonance `CERTIFIED`, bounded correction `OPEN`, smooth secular
+`CERTIFIED`, and causal `NO_CERTIFIED_MAP`.  The active symbolic gate is now
+complete all-channel bounded inversion on these sheets; the fixed-
+circumference/multiple-`|k|` join remains the separate finite source-matrix
+workload.
 
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared

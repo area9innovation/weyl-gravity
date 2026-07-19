@@ -1,0 +1,48 @@
+{
+  "schema": "einstein-maxwell-weyl-symbolic-ell-qminus-parity-pbw-slice-v1",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_QMINUS_PARITY_PBW_SLICE",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "parent": {
+    "result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1",
+    "q2_sha256": "be4d163044138f4b3b093c54527c2484cfac9eea48a58c791e97926be8597fec",
+    "action_sha256": "0151ec2dbf70571df4d0a8ec5c493c9e915b8c8ae1af2e5568db48a833f1b808",
+    "row_layout_sha256": "c029f01f51b9c0096adabf4208f3b12b32ab42c6ce058969e302360724b84c86"
+  },
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "carrier": "highest-weight axial and polar Einstein-minus inputs at opposite compact momenta",
+    "degree": 2,
+    "ell": "symbolic integer ell>=2",
+    "m": "input m=ell and output M=2ell",
+    "k": "+k and -k on the tuned q-minus/p-shell collision divisor",
+    "omega": "two positive-frequency omega_minus inputs"
+  },
+  "definitions": {
+    "lambda": "ell*(ell+1)",
+    "r": "sqrt(2*ell*(ell+1))",
+    "k_squared": "r-ell/2-1/6",
+    "omega_squared": "ell*(ell+1)-ell/2-1/6",
+    "C_ell": "binomial(2*ell,ell)^2/binomial(4*ell,2*ell)"
+  },
+  "polar_qminus_highest_weight_representative": {
+    "A_t": "-2*ell*(ell+1)+(3*ell+1)*r/3",
+    "B": "2*r*signed_k*omega",
+    "C_t": "-2*ell*(ell+1)-(6*ell^2+3*ell-1)*r/3",
+    "U": "ell*(ell+1)"
+  },
+  "reduced_axisymmetric_pairings": {
+    "polar_output_from_axial_axial": "-8*C_ell*ell^2*(ell+1)*(2*ell+1)*(r*(9*ell^3+21*ell^2-9*ell+11)-(18*ell^4+24*ell^3+4*ell^2+16*ell+2))/(3*(6*ell^2+3*ell-1))",
+    "polar_output_from_polar_polar": "4*C_ell*ell^3*(ell+1)^2*(2*ell+1)*(r*(9*ell^3+21*ell^2-9*ell+11)-(18*ell^4+24*ell^3+4*ell^2+16*ell+2))/(3*(6*ell^2+3*ell-1))",
+    "axial_output_from_axial_plus_polar_minus": "4*C_ell*ell^2*(ell+1)*(2*ell+1)*k*(r*(2*ell^2+5*ell+1)-(3*ell^3+8*ell^2+5*ell))"
+  },
+  "exact_relations": {
+    "polar_polar_over_axial_axial": "-ell*(ell+1)/2",
+    "cross_norm_factorization": "ell*(ell-1)^3*(ell+1)*(ell+2)"
+  },
+  "extraction": {
+    "method": "evaluate the action-derived q2 on highest-weight representatives, contract with the p-shell dynamical adjoints, and transfer to m=0 with the exact top Gaunt factor",
+    "maximum_total_derivative_order": 4,
+    "highest_weight_isolates_L_2ell": true
+  },
+  "claim_boundary": "This content-addressed slice records only the three q-minus opposite-momentum resonant pairings. It is not the full q2 export and does not classify nonresonant source rows or bounded correction on the resonance-null variety."
+}

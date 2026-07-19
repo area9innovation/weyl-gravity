@@ -1,0 +1,79 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SYMBOLIC_ELL_QMINUS_PARITY_RESONANCE_MATRIX",
+  "producing_date": "2026-07-19",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.json",
+      "sha256": "0f8d41edd39e5dd6e6b5d7be58ffd21f19e44b614a31c0b77cfcd5620dc533e1"
+    },
+    "producer": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.py",
+      "sha256": "4573d61d991c5f78b3e66c065fd1007028fa4c825416f2f64cea74dc4803d049"
+    },
+    "pbw_slice": {
+      "path": "bridge/einstein_sector/generated/einstein_maxwell_weyl_symbolic_ell_qminus_parity_pbw_slice.json",
+      "sha256": "ba3353116f39fe08033848dfa9bf3b049ed2d56fc94b0c8f4c5e0fff90493e5b"
+    },
+    "schema": {
+      "path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.schema.json",
+      "sha256": "754464d43becdca490cb02f554b20cb3f29ef12caa380c7bf71fdb456aceba10"
+    },
+    "independent_verifier": {
+      "path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.py",
+      "sha256": "8fc2150c56872b797229f725b9cb3ce66cbb5ead29fdd6607c3e99ecc619af44"
+    },
+    "test": {
+      "path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.py",
+      "sha256": "9ea0b19fb2c074571ca42ce000c8cf2b6408d3ec58777aca1bb1410ed8c397b0"
+    },
+    "report": {
+      "path": "bridge/einstein_sector/reports/einstein-maxwell-weyl-symbolic-ell-qminus-parity-resonance-matrix.md",
+      "sha256": "a95d62b62776b83e19128edefb9df01272859c171ce431cf486f74d533416d73"
+    }
+  },
+  "parent_provenance": {
+    "q2_sha256": "be4d163044138f4b3b093c54527c2484cfac9eea48a58c791e97926be8597fec",
+    "action_sha256": "0151ec2dbf70571df4d0a8ec5c493c9e915b8c8ae1af2e5568db48a833f1b808",
+    "row_layout_sha256": "c029f01f51b9c0096adabf4208f3b12b32ab42c6ce058969e302360724b84c86"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.py bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.py",
+        "git diff --check -- <scoped theorem, atlas and note paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": "2.1",
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_symbolic_ell_qminus_parity_resonance_matrix"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "reason": "The exact ell=2 specialization of all three symbolic coefficients matches the independent direct four-dimensional parity matrix, while the diagonal and cross nonvanishing identities are proved symbolically for every ell>=2."
+    },
+    "atlas": {
+      "status": "PASS",
+      "commands": [
+        "python3 bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 -m unittest discover -s bridge/einstein_sector/atlas/tests -p test_*.py"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This scoped resonance-matrix theorem changes no shared field operator and promotes no full bounded, causal, observational or quantum lifecycle."
+    }
+  },
+  "claim_boundary": "One separately tuned |k| fibre for each ell>=2 and only the unique q-minus L=2ell sum-frequency resonance matrix. Complete bounded inversion on the null sheets, fixed circumference, multiple |k| joins and higher lifecycles remain fail-closed."
+}
