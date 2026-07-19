@@ -407,6 +407,15 @@ composition and replay.  The 618 terms live in a compact, schema-validated,
 content-addressed payload; the review-scale claim certificate retains the
 support, counts, canonical term digest and payload byte digest.
 
+`BERGER_108_ROW_SHIFTED_Q2_PHI2_PBW_OVERLAY` now closes the shifted-base
+portion of the rod/gravity first jet.  It contracts both ordered metric
+placements in the pinned 54-row gravity `q2` and 64-row Maxwell overlay,
+turning 185,930 placements into 92,965 exact PBW terms on 310 matrix
+positions.  Every derivative on the contracted metric argument is retained as
+a `Phi2` coefficient jet, and the independent reconstruction recovers the
+physical fourth-order coefficient `623/81`.  The six local rod gauge/wave and
+gravity--rod Hessian blocks remain the activation gate for composition.
+
 ### Immediate priority after the polarization-emitter handoff
 
 1. Await and independently verify a provenance-complete external declaration
@@ -415,7 +424,8 @@ support, counts, canonical term digest and payload byte digest.
    invent those values.  In parallel, use the certified component/jet contract,
    six-rod/`Phi2` background differential quotient, scalar emitter overlay and
    complete scalar memory first-jet overlay to export the remaining six-rod
-   gauge/wave, gravity--rod Hessian and shifted `q2(Phi2,-)` blocks, then
+   gauge/wave and local gravity--rod Hessian blocks (the shifted
+   `q2(Phi2,-)` payload is now certified), then
    compose and replay the complete 108-row `q1` PBW matrix before
    attempting scalar `q2`, its replay, or a solved backreacted gravity-clock branch.
    Covariant row coverage is not a substitute for either scalar payload.
@@ -1227,6 +1237,9 @@ blocks and explicit first switch jets.  The complete scalar promotion remains
 `observer.berger.interaction.pbw_108_memory_q1_overlay` is now also
 `CERTIFIED` through `Q11`, but the rod/gravity overlay, all-row `q1` replay,
 scalar `q2` and its replay have not yet been exported.
+The sibling `observer.berger.interaction.pbw_108_shifted_q2_phi2_overlay`
+certifies the 64-row shifted-base contribution while retaining
+`NO_CERTIFIED_MAP` for the still-missing local rod Hessian and complete replay.
 This does not activate the physical-
 branch bridge and does not identify any compact-product mode with a Berger
 apparatus row.

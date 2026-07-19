@@ -59,6 +59,16 @@ def test_scalar_memory_q1_overlay_keeps_rod_and_complete_q1_fail_closed():
         evidence["result_id"] for evidence in memory["evidence"]
     }
 
+
+def test_shifted_q2_phi2_overlay_keeps_local_rod_hessian_fail_closed():
+    rows = {row["id"]: row for row in build()["entries"]}
+    shifted = rows["observer.berger.interaction.pbw_108_shifted_q2_phi2_overlay"]
+    assert shifted["observer_data"]["recoil_backreaction_order"]["status"] == "CERTIFIED"
+    assert shifted["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_108_ROW_SHIFTED_Q2_PHI2_PBW_OVERLAY" in {
+        evidence["result_id"] for evidence in shifted["evidence"]
+    }
+
 def test_tangent_cone_is_not_promoted():
     row = next(row for row in build()["entries"] if row["id"] == "observer.berger.second_order_cone_restriction")
     assert row["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "OPEN"

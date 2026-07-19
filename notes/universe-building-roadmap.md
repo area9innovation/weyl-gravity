@@ -981,8 +981,11 @@ survive the first backreacted, normalized apparatus interaction?
    scalarized in 16 blocks, 20 matrix positions and 618 terms, with exact
    normalized profiles, `Phi2` transport/profile variations and explicit
    adjoint coefficient jets; its audit repaired the invariant-frame Cartan
-   sign.  Export the remaining six-rod gauge/wave and gravity--rod Hessian
-   blocks including shifted `q2(Phi2,-)`, then compose and replay the complete
+   sign.  The shifted `q2_64(Phi2,-)` base block is now independently
+   contracted into 92,965 exact PBW terms on 310 positions, retaining every
+   Phi2 jet and the physical fourth-order witness `623/81`.  Export the
+   remaining six-rod gauge/wave and local gravity--rod Hessian blocks, then
+   compose and replay the complete
    108-row `q1`, then export the action-derived scalar `q2` tensor and its
    independent replay before a solved backreacted branch.
    A common source

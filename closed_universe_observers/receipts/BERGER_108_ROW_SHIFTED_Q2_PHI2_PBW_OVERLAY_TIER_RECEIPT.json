@@ -1,0 +1,37 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_SHIFTED_Q2_PHI2_PBW_OVERLAY_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_SHIFTED_Q2_PHI2_PBW_OVERLAY",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "result_boundary": "The exact shifted q2_64(Phi2,-) unary coefficient is scalarized; local rod gauge/wave/Hessian blocks, complete q1 replay, full scalar q2, cone, causal finite-r, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {"tier": 0, "command": "python3 -m py_compile on changed Python; python3 -m json.tool on changed structured data; git diff --check on explicit paths", "elapsed_seconds": "under 3", "status": "PASS"},
+    {"tier": 1, "command": "pytest -q shifted-q2 overlay tests", "elapsed_seconds": "14.10", "status": "PASS", "scope": "4 exact contraction, derivative-order, principal-witness and fail-closed tests"},
+    {"tier": 1, "command": "pytest -q observer atlas and comparison-ledger tests", "elapsed_seconds": "23.92", "status": "PASS", "scope": "33 generated-atlas and central-ledger tests"},
+    {"tier": 2, "command": "shifted-q2 producer --check and independent reconstruction verifier", "elapsed_seconds": "53.82", "status": "PASS", "scope": "92,965-term reconstruction from both pinned q2 tensors, payload hashes and physical fourth-order witness"},
+    {"tier": 2, "command": "ci/science-forge-shadow.sh", "elapsed_seconds": "8.00", "status": "ADVISORY_FINDING", "scope": "observer-independent bridge certificate drift reported fail-closed; corpus coverage snapshot drifted to 972 certificates versus 820; advisory script exited zero"}
+  ],
+  "higher_tiers_not_run": {"tier_3": "This is a scoped shifted unary overlay, not a release, freeze, shared-core change or theorem promotion."},
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_shifted_q2_phi2_pbw_overlay.py", "sha256": "dc205ff10f8b4345601911edb6c8160353e9f4045aa885cd6da9d8a40cc72dd2"},
+    {"path": "closed_universe_observers/verify_berger_108_row_shifted_q2_phi2_pbw_overlay.py", "sha256": "dd9250096022a02150797542281df1361556d4f7db8f65a3e1d894400484a7aa"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_shifted_q2_phi2_pbw_overlay.py", "sha256": "fa4d3bd3c81789645f4b0dd39d4559916374c4b78f3ba36f46dfbc076906f883"},
+    {"path": "closed_universe_observers/schema/berger-108-row-shifted-q2-phi2-pbw-overlay-v1.schema.json", "sha256": "f9e9d96fed1bd3c5f097ab447310e96fc1f8f04aff307a2a15335419a17c50ed"},
+    {"path": "closed_universe_observers/schema/berger-108-row-shifted-q2-phi2-pbw-overlay-payload-v1.schema.json", "sha256": "a38ee3df390b1066937ea666415ce948f457d8fae872a1d4de614c81f43f8360"},
+    {"path": "closed_universe_observers/reports/berger-108-row-shifted-q2-phi2-pbw-overlay.md", "sha256": "54de9cd9b5f50207ff8dc72f961c8f91d52e40c75536bdefd7be7805ad8681b0"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_SHIFTED_Q2_PHI2_PBW_OVERLAY.json", "sha256": "14969397c4ac3a0cc0b3b8e5b6fe6248dbb21ddc080bc233eb6beeb00f46cc45"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_SHIFTED_Q2_PHI2_PBW_OVERLAY_PAYLOAD.json", "sha256": "83a0d450d6e131f3ea1a2d31e1192f3fe6ff6412d30b200d377d246613ab2e1f"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "ec057c1b13316d06b9dc07adbea8fb63e3fe728a69c8ee24500e4691110cf40f"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "839cad42540e9bd7dab4414cfd17cd709a4060b2553728aaf9a08f62996b6483"},
+    {"path": "planning/work-items/berger-108-row-shifted-q2-phi2-pbw-overlay.json", "sha256": "bad7df5d0b4c72d305bb5788debda74584658f33c04172dfa39c454f27faa426"},
+    {"path": "planning/events/berger-108-row-shifted-q2-phi2-pbw-overlay-ACTIVE-d74f8e8ff599a9dc.json", "sha256": "017a0803375ad1a5180e6e38a0f1169d1c099c8e4b03dcc2b723eea0550e4be7"},
+    {"path": "planning/events/berger-108-row-shifted-q2-phi2-pbw-overlay-DONE-68e5aa4e78ee54ba.json", "sha256": "d821fe744f43c0921e5ff3fe7d5cdde5ff3bfcfa3634b002b24e324a09d5b4f6"}
+  ],
+  "flags": {
+    "SCALAR_SHIFTED_Q2_PHI2_PBW_OVERLAY_EXPORTED": true,
+    "SCALAR_ROD_LOCAL_HESSIAN_PBW_OVERLAY_EXPORTED": false,
+    "SCALAR_ROD_GRAVITY_Q1_PBW_OVERLAY_EXPORTED": false,
+    "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
