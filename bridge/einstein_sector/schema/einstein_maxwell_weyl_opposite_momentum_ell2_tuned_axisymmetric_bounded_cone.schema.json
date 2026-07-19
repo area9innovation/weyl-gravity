@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "result_id", "dependency_tags", "scope", "resonance_zero_set", "moment_map_reduction", "nonzero_bounded_components", "necessity_and_sufficiency", "correction_classes", "classification", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-opposite-momentum-ell2-tuned-axisymmetric-bounded-cone-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_TUNED_AXISYMMETRIC_BOUNDED_CONE"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "resonance_zero_set": {
+      "type": "object",
+      "required": ["equations", "complete_complex_zero_set", "case_split_proof"],
+      "properties": {"complete_complex_zero_set": {"type": "array", "minItems": 4, "maxItems": 4}}
+    },
+    "classification": {
+      "type": "object",
+      "required": ["complete_tuned_axisymmetric_common_moment_and_resonance_cone_classified", "bounded_necessity_and_sufficiency_certified", "two_nonzero_mixed_parity_components_survive", "causal_or_quantum_claim"]
+    }
+  },
+  "additionalProperties": true
+}

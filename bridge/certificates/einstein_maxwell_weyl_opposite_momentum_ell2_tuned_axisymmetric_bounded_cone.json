@@ -1,0 +1,143 @@
+{
+  "claim_boundary": "This is the complete bounded cone only in the declared tuned ell=2 axisymmetric q-plus/q-minus/constant-twist carrier. It excludes p-primary inputs, nonaxisymmetric modes, other ell and circumferences, multiple |k| fibres, exceptional inputs beyond the twist, all-orders integration, causal propagation, particles and quantum theory.",
+  "classification": {
+    "all_orders_integrability": false,
+    "bounded_necessity_and_sufficiency_certified": true,
+    "causal_or_quantum_claim": false,
+    "complete_tuned_axisymmetric_common_moment_and_resonance_cone_classified": true,
+    "complete_tuned_axisymmetric_resonance_zero_set_classified": true,
+    "one_sided_travelling_components_excluded_by_momentum_balance": true,
+    "other_ell_or_momentum_fibres_classified": false,
+    "p_primary_inputs_included": false,
+    "two_nonzero_mixed_parity_components_survive": true
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "cone": "the origin plus the two displayed mixed components with the exact imbalance interval and q-plus occupation factorization",
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "the complete fixed-(ell,|k|) moment-map cone is smooth-secular extendible; the bounded cone is a subset",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "frequency_ratio": {
+    "definition": "r=omega_minus/omega_plus",
+    "r": "sqrt(174)/(6*sqrt(29/6 + 4*sqrt(3)))",
+    "strict_range": "0<r<1"
+  },
+  "generality_level": "G1_COMPLETE_ONE_TUNED_ELL2_AXISYMMETRIC_QPLUS_QMINUS_TWIST_CARRIER",
+  "interpretation": "At the tuned fibre, nonlinear bounded consistency does not delete the q-minus branch. It correlates axial and polar amplitudes by one of two exact signs and bounds the imbalance between opposite compact momenta. The positive q-plus branch then supplies the unique nonnegative Hamiltonian/momentum balance. The resulting solution set is a genuine mixed cone rather than a linear subspace.",
+  "lifecycle_state": "CLASSIFIED",
+  "moment_map_reduction": {
+    "H_and_Px_solution": [
+      "B_+ + B_- = r^2*(N_+ + N_-)",
+      "B_+ - B_- = r*(N_+ - N_-)",
+      "B_+ = (r^2*(N_+ + N_-)+r*(N_+ - N_-))/2",
+      "B_- = (r^2*(N_+ + N_-)-r*(N_+ - N_-))/2"
+    ],
+    "one_sided_planes": "T_plus_zero and T_minus_zero meet the common moment cone only at the origin because N_one_side>0 would require 1<=r",
+    "positivity_condition": "abs(N_+-N_-)<=r*(N_++N_-)",
+    "q_minus_occupations": "N_sigma=-h_minus(a_sigma e_A+p_sigma e_P,a_sigma e_A+p_sigma e_P)>=0, sigma=+,-",
+    "q_plus_occupations": "B_sigma>=0 in any normalized q-plus multiplicity factorization",
+    "rotations": "J_1=J_2=J_3=0 identically on m_A=0"
+  },
+  "necessity_and_sufficiency": {
+    "equation": "L_WM Phi^(2)=-(1/2)D^2E_WM[Phi^(1),Phi^(1)]",
+    "necessity": "bounded solvability forces the five stabilizer maps and both unique L4 adjoint rows to vanish; their complete solutions give the displayed two mixed planes, q-plus occupations and imbalance interval",
+    "sufficiency": "on either mixed plane inside the interval, choose the displayed nonnegative q-plus occupations; all five moment maps and the sole shell resonance vanish, so the certified 80-row blockwise theorem supplies a bounded finite-quasiperiodic correction"
+  },
+  "next_gate": "adjoin p-primary inputs at the same tuned fibre, then repeat the exact collision/source decomposition for symbolic ell and multiple absolute-momentum fibres",
+  "nonzero_bounded_components": {
+    "amplitudes": "a_+=sigma*sqrt(3)*p_+ and a_-=sigma*sqrt(3)*p_- with p_+,p_- nonzero complex amplitudes",
+    "complete_imbalance_interval": {
+      "condition": "(1-r)/(1+r)<=t<=(1+r)/(1-r)",
+      "lower": "(-sqrt(29) + sqrt(29 + 24*sqrt(3)))/(sqrt(29) + sqrt(29 + 24*sqrt(3)))",
+      "reciprocal_endpoints": true,
+      "upper": "(sqrt(29) + sqrt(29 + 24*sqrt(3)))/(-sqrt(29) + sqrt(29 + 24*sqrt(3)))",
+      "variable": "t=|p_+|^2/|p_-|^2"
+    },
+    "occupation_factorization": "on either component N_tau=c*|p_tau|^2 with the same c=3*g_A+g_P>0, so the parity weights cancel from the momentum-balance inequality",
+    "phase_freedom": "the phases of p_+ and p_- are independent; q-plus phases and multiplicity factorization are arbitrary at the fixed occupations",
+    "signs": [
+      "sigma=+1",
+      "sigma=-1"
+    ]
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone.py",
+    "generator_sha256": "13f6f3e8ada8eb89d6350c1e523d6c572fe82b2e96a049104bcc7a2fec4bea6f",
+    "inputs": {
+      "bounded_extension": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension.json",
+        "sha256": "c7215404170f9e0b013ce920767b130e54c03052b807117b0e8806f50c09fc0a"
+      },
+      "opposite_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_cone.json",
+        "sha256": "1ee6417b7f6be0c425e2f33dcf140abe1a4bbf8b0b08548eb0d4c6721c0a6d23"
+      },
+      "parity_matrix": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix.json",
+        "sha256": "e45a20b719ef7aabe8ed0bb56a3565251a59b92a6d102936447ddd0408609581"
+      }
+    }
+  },
+  "resonance_zero_set": {
+    "case_split_proof": "if p_+p_-!=0, divide the cross equation to get a_+/p_+=a_-/p_-=s and the diagonal equation gives s^2=3; if p_+=0 or p_-=0, the cross and diagonal equations give one of the two one-sided planes",
+    "complete_complex_zero_set": [
+      "C_plus: a_+=sqrt(3)*p_+, a_-=sqrt(3)*p_-",
+      "C_minus: a_+=-sqrt(3)*p_+, a_-=-sqrt(3)*p_-",
+      "T_plus_zero: a_+=p_+=0",
+      "T_minus_zero: a_-=p_-=0"
+    ],
+    "equations": [
+      "a_minus*a_plus - 3*p_minus*p_plus",
+      "-a_minus*p_plus + a_plus*p_minus"
+    ]
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_TUNED_AXISYMMETRIC_BOUNDED_CONE",
+  "result_state": "COMPLETE_TUNED_AXISYMMETRIC_QPLUS_QMINUS_TWIST_BOUNDED_CONE_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-opposite-momentum-ell2-tuned-axisymmetric-bounded-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone.schema.json",
+  "schema_sha256": "61b260d94239e524bbb8342a696ad9ab458405ab6d584e5cd5dfebce1529be78",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 with k^2=2*sqrt(3)-7/6 allowed",
+    "carrier": "one constant twist position plus arbitrary axisymmetric axial/polar q-minus amplitudes and arbitrary normalized q-plus balancing multiplicities at +/-k; no p-primary input",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "input ell=2; every quadratic output L=0,...,4",
+    "k": "+/-sqrt(2*sqrt(3)-7/6)",
+    "m": "m_A=0",
+    "omega": "q-minus and q-plus shells with bounded or finite-quasiperiodic corrections",
+    "parity": "both q-minus parities; arbitrary q-plus multiplicity factorization",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_1": {
+      "status": "PENDING",
+      "tests_run": 0
+    },
+    "tier_2": {
+      "criterion": "the complete direct resonance matrix and bounded blockwise theorem are unchanged inputs; this producer solves their exact finite-dimensional zero locus",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "other carriers and higher lifecycles remain open",
+      "status": "NOT_RUN"
+    }
+  }
+}

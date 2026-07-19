@@ -1,0 +1,49 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_TUNED_AXISYMMETRIC_BOUNDED_CONE",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone.py": "13f6f3e8ada8eb89d6350c1e523d6c572fe82b2e96a049104bcc7a2fec4bea6f",
+    "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone.json": "4314b0ccb856b02d56b4ba505edcff40acf7c069d6925ae38fba5891d31b35e6",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone.schema.json": "61b260d94239e524bbb8342a696ad9ab458405ab6d584e5cd5dfebce1529be78",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone.py": "64af72f55999445f22554676c940997342e30335f4feeb0633ac76511f78ec0b",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone.py": "9bc7361f980a9a5ca41f6d08059167ab935d59263da660128c88c827c2708334",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-opposite-momentum-ell2-tuned-axisymmetric-bounded-cone.md": "8effd1c6bdefedbc294681818ada044875e32b979e9d97898d5dca8874078206"
+  },
+  "claim": {
+    "certified": "The bounded second-order cone is necessary-and-sufficient in the tuned ell=2 axisymmetric q-plus/q-minus/constant-twist carrier: the origin plus two mixed axial-polar components with an exact opposite-momentum imbalance interval.",
+    "proof": "The complete two-row resonance ideal has four linear complex components. Hamiltonian and compact-momentum positivity exclude both one-sided planes and give the exact reciprocal interval on the two mixed planes. The prior 80-row theorem proves these are all bounded compatibility conditions.",
+    "open": "Extra p-primary inputs, nonaxisymmetric modes, other ell/circumference/absolute-momentum fibres, exceptional inputs beyond the twist, all-orders integration and causal/quantum lifecycles."
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <producer, verifier and test>",
+        "python3 -m json.tool <certificate, schema and receipt>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.9,
+      "tests_run": 45,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The complete direct parity matrix and 80-row bounded blockwise theorem are unchanged hashed inputs; this theorem exactly solves their finite-dimensional resonance/moment zero locus."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The result is complete only in one tuned carrier and does not promote higher lifecycles."
+    }
+  }
+}

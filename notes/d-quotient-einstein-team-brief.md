@@ -3030,6 +3030,24 @@ certifies one bounded finite-quasiperiodic second-order correction.  This is
 one tuned jet, not the full bounded cone or an all-orders solution; causal
 status remains `NO_CERTIFIED_MAP`.
 
+The full declared tuned axisymmetric carrier is now classified as well.  The
+two `L=4` resonance equations have four complex linear components: two mixed
+planes `a_+=sigma*sqrt(3)*p_+`, `a_-=sigma*sqrt(3)*p_-`, and two one-sided
+travelling planes.  The latter meet the common `H,P_x` cone only at the
+origin because `r=omega_minus/omega_plus<1`.  On either mixed plane the raw
+parity weights cancel, and nonnegative Einstein-plus balancing occupations
+exist exactly when
+
+```text
+(1-r)/(1+r) <= |p_+|^2/|p_-|^2 <= (1+r)/(1-r).
+```
+
+The phases at the two signed momenta remain independent.  Thus
+`EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_TUNED_AXISYMMETRIC_BOUNDED_CONE`
+is a necessity-and-sufficiency theorem for the origin plus two nonzero mixed
+components in the tuned `q_+`/`q_-`/constant-twist carrier.  Extra `p`-primary
+inputs, other `m,ell,|k|` fibres and higher lifecycles remain fail-closed.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in
