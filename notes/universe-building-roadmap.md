@@ -1850,6 +1850,17 @@ resonance `CERTIFIED` but nonlinear `OPEN`: projected source coefficients,
 zero-frequency Taub rows and the full multifibre cone are not inferred from
 shell arithmetic.
 
+The first identity-channel instantiation is now exact.  For the complete
+`ell=2` primary inventory on `|n|=1,2`, 198 canonical cross-fibre rows cover
+both relative spatial signs, all ordered primary pairs and every `L=1,...,4`
+target shell.  None has both divisor coefficients zero.  Thus there is no
+identity resonance and generic circumference makes every nonzero-frequency
+cross-fibre block off shell; only a finite algebraic exceptional set remains.
+Atlas row `einstein.ph.wm.interaction.ell2_two_abs_momentum_identity_audit`
+keeps those isolated source matrices, same-fibre rows, the two-fibre
+moment-map intersection and causal transport explicitly `OPEN` or
+`NO_CERTIFIED_MAP`.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell
