@@ -44,6 +44,7 @@ INPUTS = {
     "algebraic_cubic_Weyl_carriers": ROOT / "quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json",
     "third_curvature_Weyl_manifest": ROOT / "quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json",
     "CPT_universal_third_curvature_kernels": ROOT / "quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json",
+    "generic_physical_hessian_linear_curvature": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE.json",
     "generic_background_ghost_CPT_obstruction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n3_adiabatic_carrier": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
@@ -102,6 +103,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     cubic_weyl = values["algebraic_cubic_Weyl_carriers"]
     third_curvature_weyl = values["third_curvature_Weyl_manifest"]
     cpt_kernels = values["CPT_universal_third_curvature_kernels"]
+    physical_hessian_linear = values["generic_physical_hessian_linear_curvature"]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
@@ -263,6 +265,24 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         is not False
         or cpt_kernels.get("claim_flags", {}).get(
             "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED"
+        )
+        is not False
+        or physical_hessian_linear.get("gauge_crosswalk", {}).get("same_gauge")
+        is not True
+        or physical_hessian_linear.get("traceless_projector", {}).get(
+            "projected_traceless_rank"
+        )
+        != 9
+        or physical_hessian_linear.get("scalar_flat_restriction", {}).get(
+            "surviving_term_counts"
+        )
+        != {"N_lambda": 6, "U": 3, "V_rho_sigma": 7}
+        or physical_hessian_linear.get("third_curvature_applicability", {}).get(
+            "status"
+        )
+        != "PHYSICAL_N3_THREE_LINEAR_INSERTION_VERTEX_READY"
+        or physical_hessian_linear.get("claim_flags", {}).get(
+            "FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED"
         )
         is not False
         or generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
@@ -627,6 +647,7 @@ def build() -> dict[str, Any]:
     cubic_weyl = values["algebraic_cubic_Weyl_carriers"]
     third_curvature_weyl = values["third_curvature_Weyl_manifest"]
     cpt_kernels = values["CPT_universal_third_curvature_kernels"]
+    physical_hessian_linear = values["generic_physical_hessian_linear_curvature"]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
@@ -740,6 +761,15 @@ def build() -> dict[str, Any]:
                 row["gamma_box_homogeneity"]
                 for row in cpt_kernels["universal_kernels"]
             ],
+            "same_gauge_physical_Hessian_linear_curvature_imported": True,
+            "physical_Hessian_linear_formula_digest": physical_hessian_linear["source_operator"]["formula_digest"],
+            "physical_Hessian_linear_source_row_counts": {
+                name: len(rows)
+                for name, rows in physical_hessian_linear["source_operator"]["coefficient_rows"].items()
+            },
+            "physical_Hessian_scalar_flat_surviving_row_counts": physical_hessian_linear["scalar_flat_restriction"]["surviving_term_counts"],
+            "physical_Hessian_repository_normalization": physical_hessian_linear["repository_normalization"]["repository_functional_Hessian"],
+            "physical_n3_three_linear_insertion_vertex_ready": True,
             "generic_background_ghost_minimal_CPT_substitution_obstructed": True,
             "generic_background_ghost_effective_divergence_coefficient": generic_ghost_cpt["algebraic_Weyl_ghost_elimination"]["beta_controls"][0]["effective_divergence_coefficient"],
             "generic_background_ghost_principal_eigenvalues": generic_ghost_cpt["nonminimal_principal_symbol"]["eigenvalues_e0"],
@@ -850,6 +880,9 @@ def build() -> dict[str, Any]:
             "independent_cubic_Weyl_invariant_form_factors": False,
             "parity_odd_third_curvature_carrier_manifest": False,
             "repository_generic_background_CPT_trace_substitution": False,
+            "full_generic_physical_Hessian": False,
+            "physical_curvature_squared_Hessian_layer": False,
+            "physical_n3_three_linear_triangle_integrated": False,
             "generic_nonminimal_ghost_CPT_determinant": False,
             "generic_nonminimal_ghost_insertion_traces_evaluated": False,
             "generic_ghost_all_five_n1_n2_carriers_evaluated": False,
@@ -871,12 +904,13 @@ def build() -> dict[str, Any]:
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "SUPPLY_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN",
+            "status": "COMPUTE_PHYSICAL_N3_THREE_LINEAR_TRIANGLE_AND_IMPORT_CURVATURE_SQUARED_HESSIAN_LAYER",
             "required_inputs": [
                 "same-background compensator-inclusive classical contraction",
                 "finite C2 and absolute dressed Rhat2 normalization conditions",
                 "full generic-background primed Green/resolvent kernel or complete spectral measure for the reference-scale finite R(K), finite R(K^2), and det3 rows; the round-S4 special-background benchmark is complete but does not substitute for this global carrier",
-                "same-gauge generic-background physical fourth-order Hessian and remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
+                "curvature-squared H2 layer of the same-gauge generic-background physical fourth-order Hessian, the mixed H1-H2 trace rows, and integration of the now-ready three-H1 tensor triangle before assembly against the five universal CPT carriers",
+                "remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
                 "renormalized BV operator data fixing complete Q1",
             ],
             "required_outputs": [

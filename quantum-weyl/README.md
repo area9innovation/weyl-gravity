@@ -231,6 +231,12 @@ or quantum-master-equation result.
   identity, proves that no new transcendental master is required, evaluates
   its rational corner flux, and closes all eleven generic ghost `n=3`
   functions while keeping determinant and physical-Hessian assembly open.
+- [`reports/generic-background-physical-hessian-linear-curvature.md`](reports/generic-background-physical-hessian-linear-curvature.md)
+  imports the same-gauge traceless metric Hessian through first curvature
+  order as exact `V/N/U` ledgers, fixes the repository normalization, checks
+  the scalar-flat and round-`S4` restrictions, and activates the physical
+  three-linear `n=3` vertex. The curvature-squared layer, mixed rows, tensor
+  triangle integration, and five form-factor assembly remain fail-closed.
 - [`reports/local-dimension-four-candidates.md`](reports/local-dimension-four-candidates.md)
   records the generated three-dimensional quadratic curvature ansatz, its
   two-dimensional Weyl-closed kernel, independent target-native even/odd

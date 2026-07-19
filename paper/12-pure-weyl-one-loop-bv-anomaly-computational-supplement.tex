@@ -1189,6 +1189,57 @@ PYTHONPATH=quantum-weyl pytest -q \
  quantum-weyl/spectral/euclidean/tests/test_$M.py
 \end{verbatim}
 
+\subsection{Same-gauge physical-Hessian linear-curvature import}
+
+The source gauge
+$(\gamma_1,\gamma_2,\tau)=(1/2,-1/6,-1/4)$, together with $h=0$, is
+exactly the repository gauge
+$F_\mu=\nabla^\nu h_{\mu\nu}-(1/4)\nabla_\mu h$, $F_W=h$.
+The imported traceless rank-nine operator is
+\[
+ \mathcal H_{\rm src}=\widehat1\Box^2
+  +V^{\rho\sigma}\nabla_\rho\nabla_\sigma
+  +N^\rho\nabla_\rho+U+O(\mathcal R^2).
+\]
+The exact coefficient-ledger sizes are
+\[
+\begin{array}{c|ccc}
+ &V^{\rho\sigma}&N^\rho&U\\ \hline
+ \text{source rows}&9&8&5\\
+ R=0\text{ surviving rows}&7&6&3.
+\end{array}
+\]
+Every row carries its rational coefficient, source index seed, derivative
+orders, scalar-flat disposition and common formula digest.  The source
+archive and decompressed TeX hashes are also pinned, so the imported formula
+can be checked without trusting a paraphrase.
+
+The source quadratic prefactor $1/4$ means
+$\mathcal H_{\rm repo}=\mathcal H_{\rm src}/2$.  The generator independently
+constructs the traceless projector and verifies rank nine and idempotence.  It
+also checks the round-$S^4$ linear restriction: the source gives
+$A^2+6KA$, while the full repository fixture is
+$\tfrac12(A+2K)(A+4K)$.  The missing $+8K^2$ source term is retained as a
+negative control against promotion to a full generic Hessian.
+
+This input closes the tensor vertex
+$\operatorname{Tr}[(\mathcal H_0^{-1}\mathcal H_1)^3]$.  The
+curvature-squared $\mathcal H_2$ layer, mixed
+$\mathcal H_1\mathcal H_2$ rows, tensor-triangle integration and five-carrier
+assembly remain open.
+
+\begin{verbatim}
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}linear_curvature"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
+MOD="${MOD}linear_curvature"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+TEST="spectral.euclidean.tests.test_generic_background_physical_"
+TEST="${TEST}hessian_linear_curvature"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
 \subsection{Exact three-insertion adiabatic angular carrier}
 
 At cubic curvature order the three-insertion row uses only the flat Endo
@@ -1285,8 +1336,9 @@ one-/two-insertion towers are resummed by the preceding Schur factor; its
 $K$, $K^2$, and logarithmic residues and the declared order-two
 weighted-trace pole/scale row are fixed.  On round $S^4$ the two finite trace
 rows, canonical $\det_3$ tail, weighted modified determinant, and
-zeta-to-weighted defect $5/3$ are complete.  Their generic finite versions and
-the physical fourth-order carrier remain unevaluated; the selected generic
+zeta-to-weighted defect $5/3$ are complete.  Their generic finite versions,
+the physical tensor-triangle integral and curvature-squared Hessian layer
+remain unevaluated; the selected generic
 weight-raised BCH residue is exact.
 
 \begin{verbatim}
@@ -1384,7 +1436,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 The result is the parametric $n=3$ ghost contribution in the declared
 scalar-flat quotient section. The generic kinematic simplex integrals,
 normalized longitudinal Schur $\mathcal R(K)$ and finite $\mathcal R(K^2)$
-rows, physical fourth-order Hessian kernel, and their complete sum into five
+rows, physical tensor triangle and curvature-squared Hessian rows, and their complete sum into five
 repository functions and coefficients remain open.
 
 \subsection{Generic barycentric factorization}
@@ -1568,8 +1620,8 @@ The first command is the fast stored-artifact tier.  The second independently
 replays the exact 46-column solve and full identity.  The producer's
 approximately 45-second reconstruction is reserved for the publication tier.
 All eleven generic ghost $n=3$ functions are now complete; the full ghost
-determinant, physical fourth-order Hessian and repository form-factor assembly
-remain open.
+determinant, physical tensor-triangle integration, curvature-squared Hessian
+layer and repository form-factor assembly remain open.
 
 \subsection{Exact symmetric-point simplex integration}
 
@@ -1801,8 +1853,9 @@ The next theorem requires actual new physical input:
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
 \item evaluation of the generic Diff--Weyl ghost one- and two-Ricci
-insertion traces and the generic physical fourth-order Hessian kernel,
-followed by integration and assembly of the five
+insertion traces, integration of the now-ready physical three-linear tensor
+vertex, and import of the curvature-squared Hessian layer and mixed rows,
+followed by assembly of the five
 repository parity-even third-curvature form-factor functions and coefficients,
 the parity-odd derivative carrier manifest, finite
 $C^2$ and absolute dressed $R(\widehat g)^2$ normalization,

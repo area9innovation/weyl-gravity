@@ -954,7 +954,12 @@ the local defect is `-(1/4)Wres(K^2)=-(4 pi)^-2 integral(R^2+2 Ric^2)/108`.
 It specializes to `-1/3` on round `S4`, with zeta ratio
 `-4.31147881894874496080872888813932...`; the exact difference `2` from the
 Einstein-ratio defect is a factorization-convention effect. The generic finite
-rows and physical fourth-order Hessian remain open. The original
+rows remain open. The same-gauge traceless metric Hessian is now imported
+through first curvature order as exact `V/N/U` ledgers with `9/8/5` source
+rows and `7/6/3` scalar-flat survivors. Its repository normalization and
+round-`S4` linear layer replay exactly, and the physical three-linear `n=3`
+vertex is ready. The curvature-squared Hessian layer, mixed rows and tensor
+triangle integration remain open. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
@@ -976,8 +981,9 @@ exact relative-simplex IBP primitives, a complete punctured-corner
 non-membership theorem, and complete exact `J`-plus-two-log integrated
 functions. The remaining coefficient gate begins with supplying the generic
 primed Green/spectral carrier needed to lift the exact round-`S4`
-finite benchmark, together with the physical fourth-order
-Hessian kernel, followed by the five
+finite benchmark, together with integration of the now-ready physical
+three-linear tensor vertex and import of the curvature-squared Hessian layer
+and mixed rows, followed by the five
 parity-even third-curvature repository
 form-factor functions and coefficients,
 the parity-odd derivative manifest,

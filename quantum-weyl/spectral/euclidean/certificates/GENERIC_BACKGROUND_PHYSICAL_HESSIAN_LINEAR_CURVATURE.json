@@ -1,0 +1,948 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL import freezes the complete V, N and U rows linear in background curvature for the monic fourth-order traceless-tensor Hessian in the same beta=1/4 Diff gauge and h=0 Weyl gauge as the repository. The repository functional Hessian is one half of the source monic operator, while the normalized trace-log insertion is unchanged. Exact projector, scalar-flat and round-S4 checks show that the import completely supplies the first-curvature vertex and therefore the pure three-linear-insertion physical n=3 trace. The nonzero round-S4 curvature-squared remainder is retained as a fail-closed witness. This result does not supply the omitted curvature-squared zero-order Hessian, mixed H1-H2 third-curvature rows, an integrated physical triangle, the five complete repository form factors or coefficients, a complete Gamma1 or Q1, residual transfer, or any Lorentzian, Hadamard, particle, positivity, scattering or unitarity theorem.",
+  "claim_flags": {
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "CURVATURE_SQUARED_ZERO_ORDER_LAYER_SUPPLIED": false,
+    "FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED": false,
+    "LINEAR_CURVATURE_V_N_U_IMPORTED": true,
+    "LORENTZIAN_CERTIFIED": false,
+    "PHYSICAL_MIXED_N1_N2_THIRD_CURVATURE_ROWS_COMPUTED": false,
+    "PHYSICAL_N3_THREE_LINEAR_INSERTION_VERTEX_READY": true,
+    "PHYSICAL_N3_TRIANGLE_INTEGRATED": false,
+    "REPOSITORY_FIVE_FORM_FACTORS_COMPUTED": false,
+    "REPOSITORY_FUNCTIONAL_HESSIAN_NORMALIZED": true,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false,
+    "ROUND_S4_LINEAR_LAYER_CROSSCHECKED": true,
+    "SAME_GAUGE_CROSSWALK_CERTIFIED": true,
+    "SCALAR_FLAT_FIRST_CURVATURE_INSERTION_COMPLETE": true,
+    "TRACELESS_PROJECTOR_CERTIFIED": true
+  },
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "dependencies": {
+    "classical_snapshot_compatibility": {
+      "path": "quantum-weyl/classical_import/certificates/REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY.json",
+      "result_id": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY",
+      "sha256": "03953fd210a94b332eddb5e2d98a1dbde67a4bf6a8a4534f98989dd7a1956bac"
+    },
+    "generic_Diff_Weyl_ghost": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
+      "result_id": "GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION",
+      "sha256": "ee02a37c798d991354372d0371db46cf2e54cd1a119434ad775e0adc8b329bf8"
+    },
+    "round_S4_TT_hessian": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1.json",
+      "result_id": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
+      "sha256": "64b3d13ae34128530c2e71f3d3fb48faf543adaf544a89ee319fbe034d41ece3"
+    },
+    "universal_CPT_kernels": {
+      "path": "quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json",
+      "result_id": "CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS",
+      "sha256": "2de2d5561deb584c0f911e7a08bc05bb176b43fc367c43d17b48a0fbf110fffc"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "gauge_crosswalk": {
+    "generic_ghost_crosswalk": "the beta=1/4 repository Diff-Weyl ghost is the FP operator of the imported metric gauge",
+    "repository_Weyl_gauge": "F_W=h",
+    "repository_vector_gauge": "F_mu=nabla^nu h_mu_nu-(1/4)nabla_mu h",
+    "same_gauge": true,
+    "source_Weyl_gauge": "h=0",
+    "source_parameters": {
+      "gamma1": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "gamma2": {
+        "denominator": 6,
+        "numerator": -1
+      },
+      "tau": {
+        "denominator": 4,
+        "numerator": -1
+      }
+    },
+    "source_vector_gauge": "chi_mu=nabla_alpha h^alpha_mu+tau nabla_mu h"
+  },
+  "lifecycle_state": "COEFFICIENT_INPUT_IMPORTED_FULL_HESSIAN_OPEN",
+  "negative_controls": {
+    "V01_coefficient_mutation": {
+      "formula_digest_matches": false,
+      "mutated": {
+        "denominator": 3,
+        "numerator": -1
+      },
+      "rejected": true
+    },
+    "full_Hessian_promotion": {
+      "attempted": true,
+      "reason": "source omits curvature-squared zero-order terms and the round-S4 remainder is nonzero",
+      "rejected": true
+    },
+    "gauge_tau_mutation": {
+      "mutated_tau": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "rejected": true,
+      "same_gauge": false
+    }
+  },
+  "next_gate": "COMPUTE_PHYSICAL_N3_THREE_LINEAR_TRIANGLE_AND_IMPORT_CURVATURE_SQUARED_HESSIAN_LAYER",
+  "repository_normalization": {
+    "constant_overall_determinant_normalization": "excluded from the nonlocal n=3 insertion; it belongs to the separately declared local measure/finite normalization policy",
+    "flat_TT_leading_coefficient": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "repository_action": "S_red=integral sqrt(g)(Ric^2-R^2/3)=1/2 integral sqrt(g)(C^2-E4)",
+    "repository_functional_Hessian": "H_repository=(1/2)H_source",
+    "repository_leading_symbol": "(1/2)1hat Box^2",
+    "source_quadratic_prefactor": {
+      "denominator": 4,
+      "numerator": 1
+    },
+    "trace_log_linear_vertex_scale_invariant": "((H0/2)^-1)(H1/2)=H0^-1 H1"
+  },
+  "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE",
+  "result_state": "SAME_GAUGE_TRACELESS_PHYSICAL_HESSIAN_LINEAR_CURVATURE_IMPORTED_N3_THREE_LINEAR_VERTEX_READY",
+  "round_S4_linear_crosscheck": {
+    "TT_and_linear_curvature_policy": "use div(h)=0 and tr(h)=0; derivative commutators in V contribute only O(K^2)",
+    "direct_K_Box_rows": {
+      "V01_scalar_curvature": {
+        "denominator": 1,
+        "numerator": -8
+      },
+      "V08_Riemann_on_traceless_tensor": {
+        "denominator": 1,
+        "numerator": -4
+      },
+      "V09_Ricci_derivative_metric": {
+        "denominator": 1,
+        "numerator": 6
+      }
+    },
+    "interpretation": "the exact round-S4 remainder proves rather than hides that the imported source layer is not the full generic Hessian",
+    "missing_curvature_squared_fixture": "source monic +8 K^2, equivalently repository functional-Hessian +4 K^2",
+    "repository_full_round_S4_Hessian": "(1/2)(A+2K)(A+4K)=(1/2)A^2+3KA+4K^2; unit S4 has K=1",
+    "repository_linear_functional_Hessian": "(1/2)A^2+3 K A",
+    "sectional_curvature_symbol": "K",
+    "source_linear_operator": "A^2+6 K A with A=-Box"
+  },
+  "scalar_flat_restriction": {
+    "complete_first_curvature_insertion_on_scalar_flat_domain": true,
+    "conditions": [
+      "R=0",
+      "nabla R=0",
+      "nabla nabla R=0",
+      "Box R=0"
+    ],
+    "surviving_term_counts": {
+      "N_lambda": 6,
+      "U": 3,
+      "V_rho_sigma": 7
+    },
+    "surviving_term_ids": {
+      "N_lambda": [
+        "N02",
+        "N04",
+        "N05",
+        "N06",
+        "N07",
+        "N08"
+      ],
+      "U": [
+        "U03",
+        "U04",
+        "U05"
+      ],
+      "V_rho_sigma": [
+        "V03",
+        "V04",
+        "V05",
+        "V06",
+        "V07",
+        "V08",
+        "V09"
+      ]
+    }
+  },
+  "schema": "quantum-weyl-generic-background-physical-hessian-linear-curvature-v1",
+  "scope": {
+    "background": "generic local oriented metric; scalar-flat and round-S4 restrictions recorded",
+    "curvature_order": "complete through first order only",
+    "dimension": 4,
+    "domain": "local covariant jets; global Green, spectral-cut and zero-mode data excluded",
+    "field_bundle": "traceless symmetric rank-two metric fluctuations; pointwise rank nine",
+    "operator_order": 4,
+    "signature": "Euclidean"
+  },
+  "source_operator": {
+    "coefficient_rows": {
+      "N_lambda": [
+        {
+          "background_derivatives": 1,
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 1
+          },
+          "curvature_atom": "R",
+          "operator_derivatives": 1,
+          "scalar_flat_survives": false,
+          "seed": "delta_sym(mu,nu;alpha,beta) d^lambda R",
+          "term_id": "N01",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 1,
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -4
+          },
+          "curvature_atom": "Ric",
+          "operator_derivatives": 1,
+          "scalar_flat_survives": true,
+          "seed": "d_mu Ric_(alpha,beta) delta_nu^lambda",
+          "term_id": "N02",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 1,
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -2
+          },
+          "curvature_atom": "R",
+          "operator_derivatives": 1,
+          "scalar_flat_survives": false,
+          "seed": "d_alpha R g_(nu,beta) delta_mu^lambda",
+          "term_id": "N03",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 1,
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -2
+          },
+          "curvature_atom": "Ric",
+          "operator_derivatives": 1,
+          "scalar_flat_survives": true,
+          "seed": "d_mu Ric_(nu,beta) delta_alpha^lambda",
+          "term_id": "N04",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 1,
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "curvature_atom": "Ric",
+          "operator_derivatives": 1,
+          "scalar_flat_survives": true,
+          "seed": "d_alpha Ric_(mu,nu) delta_beta^lambda",
+          "term_id": "N05",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 1,
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "curvature_atom": "Ric",
+          "operator_derivatives": 1,
+          "scalar_flat_survives": true,
+          "seed": "d_alpha Ric_(mu,beta) delta_nu^lambda",
+          "term_id": "N06",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 1,
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -4
+          },
+          "curvature_atom": "Ric",
+          "operator_derivatives": 1,
+          "scalar_flat_survives": true,
+          "seed": "d_alpha Ric_mu^lambda g_(nu,beta)",
+          "term_id": "N07",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 1,
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "curvature_atom": "Riem",
+          "operator_derivatives": 1,
+          "scalar_flat_survives": true,
+          "seed": "d^lambda Riem_(mu,alpha,nu,beta)",
+          "term_id": "N08",
+          "total_engineering_order": 4
+        }
+      ],
+      "U": [
+        {
+          "background_derivatives": 2,
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -1
+          },
+          "curvature_atom": "R",
+          "operator_derivatives": 0,
+          "scalar_flat_survives": false,
+          "seed": "delta_sym(mu,nu;alpha,beta) Box R",
+          "term_id": "U01",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 2,
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -4
+          },
+          "curvature_atom": "R",
+          "operator_derivatives": 0,
+          "scalar_flat_survives": false,
+          "seed": "d_mu d_alpha R g_(nu,beta)",
+          "term_id": "U02",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 2,
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 4
+          },
+          "curvature_atom": "Ric",
+          "operator_derivatives": 0,
+          "scalar_flat_survives": true,
+          "seed": "d_mu d_nu Ric_(alpha,beta)",
+          "term_id": "U03",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 2,
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "curvature_atom": "Ric",
+          "operator_derivatives": 0,
+          "scalar_flat_survives": true,
+          "seed": "Box Ric_(mu,alpha) g_(nu,beta)",
+          "term_id": "U04",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 2,
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "curvature_atom": "Riem",
+          "operator_derivatives": 0,
+          "scalar_flat_survives": true,
+          "seed": "Box Riem_(mu,alpha,nu,beta)",
+          "term_id": "U05",
+          "total_engineering_order": 4
+        }
+      ],
+      "V_rho_sigma": [
+        {
+          "background_derivatives": 0,
+          "coefficient": {
+            "denominator": 3,
+            "numerator": -2
+          },
+          "curvature_atom": "R",
+          "operator_derivatives": 2,
+          "scalar_flat_survives": false,
+          "seed": "R delta_sym(mu,nu;alpha,beta) g^(rho,sigma)",
+          "term_id": "V01",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 0,
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 4
+          },
+          "curvature_atom": "R",
+          "operator_derivatives": 2,
+          "scalar_flat_survives": false,
+          "seed": "R g_(nu,beta) delta_sym(mu,alpha;rho,sigma)",
+          "term_id": "V02",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 0,
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 4
+          },
+          "curvature_atom": "Ric",
+          "operator_derivatives": 2,
+          "scalar_flat_survives": true,
+          "seed": "Ric_(alpha,beta) delta_sym(mu,nu;rho,sigma)",
+          "term_id": "V03",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 0,
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 4
+          },
+          "curvature_atom": "Ric",
+          "operator_derivatives": 2,
+          "scalar_flat_survives": true,
+          "seed": "Ric_(mu,nu) delta_sym(alpha,beta;rho,sigma)",
+          "term_id": "V04",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 0,
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "curvature_atom": "Ric",
+          "operator_derivatives": 2,
+          "scalar_flat_survives": true,
+          "seed": "Ric_(mu,alpha) delta_sym(nu,beta;rho,sigma)",
+          "term_id": "V05",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 0,
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -4
+          },
+          "curvature_atom": "Ric",
+          "operator_derivatives": 2,
+          "scalar_flat_survives": true,
+          "seed": "Ric_mu^rho g_(nu,beta) delta_alpha^sigma",
+          "term_id": "V06",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 0,
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -4
+          },
+          "curvature_atom": "Ric",
+          "operator_derivatives": 2,
+          "scalar_flat_survives": true,
+          "seed": "Ric_alpha^rho g_(nu,beta) delta_mu^sigma",
+          "term_id": "V07",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 0,
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "curvature_atom": "Riem",
+          "operator_derivatives": 2,
+          "scalar_flat_survives": true,
+          "seed": "Riem_(mu,alpha,nu,beta) g^(rho,sigma)",
+          "term_id": "V08",
+          "total_engineering_order": 4
+        },
+        {
+          "background_derivatives": 0,
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "curvature_atom": "Ric",
+          "operator_derivatives": 2,
+          "scalar_flat_survives": true,
+          "seed": "delta_sym(mu,nu;alpha,beta) Ric^(rho,sigma)",
+          "term_id": "V09",
+          "total_engineering_order": 4
+        }
+      ]
+    },
+    "formula_digest": "e27ae279abf526de3f2af860fb16e8f79b23bfdaf6ce70bde69d30aa8c65fbef",
+    "monic_operator": "H_source=1hat Box^2+V^(rho,sigma)nabla_rho nabla_sigma+N^rho nabla_rho+U+O(curvature^2)",
+    "quadratic_form": "S_conf^(2)=(1/4) integral sqrt(g) h H_source h",
+    "symmetrization": [
+      "mu<->nu",
+      "alpha<->beta",
+      "(mu,nu)<->(alpha,beta) with formal-adjoint derivative ordering"
+    ]
+  },
+  "source_provenance": {
+    "arxiv": "2308.05251v2",
+    "authors": "A. O. Barvinsky, G. H. S. Camargo, A. E. Kalugin, N. Ohta, and I. L. Shapiro",
+    "decompressed_tex_sha256": "7d8f044fbbc166ff67f4ff4258d6db5ff56d078a3c58884b9201e29d5b0ad118",
+    "doi": "10.1103/PhysRevD.108.086018",
+    "equation_labels": [
+      "gf-gen",
+      "gauge-min",
+      "Hmingen",
+      "traceless",
+      "Vrhosi",
+      "Nrho",
+      "U"
+    ],
+    "source_archive_sha256": "b77f6e6f2ad8ed324b5145824bee885f55348d5718ab47de4f07441deb188185",
+    "source_archive_url": "https://export.arxiv.org/e-print/2308.05251v2",
+    "source_scope_statement": "the displayed V,N,U rows retain only terms linear in the curvature because the source calculation targets Box R",
+    "source_url": "https://arxiv.org/abs/2308.05251",
+    "title": "On the local term in the anomaly-induced action of Weyl quantum gravity",
+    "transcription_policy": "exact rational coefficient ledger with source index seeds and declared symmetrization; no omitted curvature-squared row is reconstructed"
+  },
+  "third_curvature_applicability": {
+    "closed_trace_row": "Tr[(H0^-1 H1)^3] is completely determined by this import",
+    "flat_base": "H0=1hat Box^2",
+    "linear_insertion": "H1=V nabla nabla+N nabla+U",
+    "not_closed": [
+      "mixed Tr(H0^-1 H1 H0^-1 H2) contribution at third curvature order",
+      "curved-base and one-insertion rows involving the curvature-squared algebraic Hessian",
+      "tensor trace projection onto the five repository carrier functions",
+      "generic primed Green or complete spectral carrier"
+    ],
+    "status": "PHYSICAL_N3_THREE_LINEAR_INSERTION_VERTEX_READY"
+  },
+  "traceless_projector": {
+    "ambient_symmetric_rank": 10,
+    "formula": "1hat=delta_sym(mu,nu;alpha,beta)-(1/4)g_(mu,nu)g_(alpha,beta)",
+    "idempotent": true,
+    "matrix_in_symmetric_component_basis": [
+      [
+        {
+          "denominator": 4,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 4,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 4,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 4,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": 3
+        }
+      ]
+    ],
+    "projected_traceless_rank": 9
+  }
+}

@@ -75,6 +75,7 @@ def main() -> None:
         "0.4981635654196290984312532999414818723861192934",
         "-3.9781454856154116274753955548059869205821661933",
         "full primed Green kernel or equivalent spectral measure",
+        "Same-gauge physical-Hessian linear-curvature import",
     ]
     for fragment in required_manuscript_fragments:
         assert fragment in normalized_manuscript, fragment
@@ -148,6 +149,21 @@ def main() -> None:
     assert claims["universal_CPT_third_curvature_kernels_imported"] is True
     assert claims["universal_CPT_source_fixture_status"] == "COEFFICIENT_COMPUTED"
     assert claims["universal_CPT_kernel_box_homogeneities"] == [-1, -2, -2, -3, -4]
+    assert claims["same_gauge_physical_Hessian_linear_curvature_imported"] is True
+    assert claims["physical_Hessian_linear_source_row_counts"] == {
+        "N_lambda": 8,
+        "U": 5,
+        "V_rho_sigma": 9,
+    }
+    assert claims["physical_Hessian_scalar_flat_surviving_row_counts"] == {
+        "N_lambda": 6,
+        "U": 3,
+        "V_rho_sigma": 7,
+    }
+    assert claims["physical_Hessian_repository_normalization"] == (
+        "H_repository=(1/2)H_source"
+    )
+    assert claims["physical_n3_three_linear_insertion_vertex_ready"] is True
     assert claims["generic_background_ghost_minimal_CPT_substitution_obstructed"] is True
     assert claims["generic_background_ghost_effective_divergence_coefficient"] == {
         "numerator": 1,
@@ -303,12 +319,19 @@ def main() -> None:
     ] is False
     assert payload["explicit_nonclaims"]["generic_ghost_renormalized_R_K"] is False
     assert payload["explicit_nonclaims"]["generic_ghost_finite_part_R_K2"] is False
+    assert payload["explicit_nonclaims"]["full_generic_physical_Hessian"] is False
+    assert payload["explicit_nonclaims"][
+        "physical_curvature_squared_Hessian_layer"
+    ] is False
+    assert payload["explicit_nonclaims"][
+        "physical_n3_three_linear_triangle_integrated"
+    ] is False
     assert payload["explicit_nonclaims"][
         "generic_ghost_zeta_multiplicative_anomaly_computed_without_declared_factorization"
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "SUPPLY_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
+        == "COMPUTE_PHYSICAL_N3_THREE_LINEAR_TRIANGLE_AND_IMPORT_CURVATURE_SQUARED_HESSIAN_LAYER"
     )
 
     dependencies = {}
@@ -342,7 +365,7 @@ def main() -> None:
         "denominator": 6561,
     }
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
-    assert len(payload["inputs"]) == 45
+    assert len(payload["inputs"]) == 46
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

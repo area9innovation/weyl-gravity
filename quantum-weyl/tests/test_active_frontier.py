@@ -459,7 +459,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "CONSTRUCT_EXACT_RELATIVE_SIMPLEX_IBP_PRIMITIVES_WITH_PUNCTURED_CORNER_FLUX_AND_I10_EDGE_BUBBLE_DISPOSITION",
+            "COMPUTE_PHYSICAL_N3_THREE_LINEAR_TRIANGLE_AND_IMPORT_CURVATURE_SQUARED_HESSIAN_LAYER_THEN_ASSEMBLE_FIVE_REPOSITORY_CARRIERS",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

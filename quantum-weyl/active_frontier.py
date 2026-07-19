@@ -64,6 +64,7 @@ DEPENDENCIES = {
     "algebraic_cubic_Weyl_carriers": HERE / "transfer/certificates/FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json",
     "third_curvature_Weyl_manifest": HERE / "transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json",
     "CPT_universal_third_curvature_kernels": HERE / "transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json",
+    "generic_physical_hessian_linear_curvature": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE.json",
     "generic_background_ghost_CPT_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
@@ -175,6 +176,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "algebraic_cubic_Weyl_carriers": "ALGEBRAIC_C3_CARRIERS_COMPLETE_NONLOCAL_CUBIC_FORM_FACTORS_OPEN",
         "third_curvature_Weyl_manifest": "PARITY_EVEN_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST_COMPLETE_COEFFICIENT_FUNCTIONS_OPEN",
         "CPT_universal_third_curvature_kernels": "FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_REPOSITORY_CONFORMAL_GRAVITON_TRACE_SUBSTITUTION_OPEN",
+        "generic_physical_hessian_linear_curvature": "SAME_GAUGE_TRACELESS_PHYSICAL_HESSIAN_LINEAR_CURVATURE_IMPORTED_N3_THREE_LINEAR_VERTEX_READY",
         "generic_background_ghost_CPT_obstruction": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
         "generic_ghost_Endo_Duhamel_reduction": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES",
         "generic_ghost_n1_n2_Hodge_resolvent_reduction": "CURVED_ENDO_N1_N2_REDUCED_EXACTLY_TO_FIVE_MINIMAL_VECTOR_SCALAR_RESOLVENT_CARRIERS",
@@ -216,6 +218,9 @@ def _load() -> dict[str, dict[str, Any]]:
     cubic_weyl = values["algebraic_cubic_Weyl_carriers"]
     third_curvature_weyl = values["third_curvature_Weyl_manifest"]
     cpt_third_curvature = values["CPT_universal_third_curvature_kernels"]
+    generic_physical_hessian_linear = values[
+        "generic_physical_hessian_linear_curvature"
+    ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n1_n2 = values["generic_ghost_n1_n2_Hodge_resolvent_reduction"]
@@ -498,6 +503,50 @@ def _load() -> dict[str, dict[str, Any]]:
         != "NO_REPOSITORY_FORM_FACTOR_COEFFICIENT_CAN_BE_INFERRED_FROM_THE_CURRENT_SPECIAL_BACKGROUND_LEDGER"
     ):
         raise ValueError("universal CPT third-curvature kernel frontier drifted")
+    physical_linear_rows = generic_physical_hessian_linear.get(
+        "source_operator", {}
+    ).get("coefficient_rows", {})
+    physical_linear_flags = generic_physical_hessian_linear.get("claim_flags", {})
+    if (
+        generic_physical_hessian_linear.get("gauge_crosswalk", {}).get("same_gauge")
+        is not True
+        or generic_physical_hessian_linear.get("traceless_projector", {}).get(
+            "projected_traceless_rank"
+        )
+        != 9
+        or {name: len(rows) for name, rows in physical_linear_rows.items()}
+        != {"N_lambda": 8, "U": 5, "V_rho_sigma": 9}
+        or generic_physical_hessian_linear.get("repository_normalization", {}).get(
+            "repository_functional_Hessian"
+        )
+        != "H_repository=(1/2)H_source"
+        or generic_physical_hessian_linear.get("scalar_flat_restriction", {}).get(
+            "surviving_term_counts"
+        )
+        != {"N_lambda": 6, "U": 3, "V_rho_sigma": 7}
+        or generic_physical_hessian_linear.get(
+            "round_S4_linear_crosscheck", {}
+        ).get("missing_curvature_squared_fixture")
+        != "source monic +8 K^2, equivalently repository functional-Hessian +4 K^2"
+        or generic_physical_hessian_linear.get(
+            "third_curvature_applicability", {}
+        ).get("status")
+        != "PHYSICAL_N3_THREE_LINEAR_INSERTION_VERTEX_READY"
+        or physical_linear_flags.get("SAME_GAUGE_CROSSWALK_CERTIFIED") is not True
+        or physical_linear_flags.get("LINEAR_CURVATURE_V_N_U_IMPORTED") is not True
+        or physical_linear_flags.get(
+            "PHYSICAL_N3_THREE_LINEAR_INSERTION_VERTEX_READY"
+        )
+        is not True
+        or physical_linear_flags.get("FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED")
+        is not False
+        or physical_linear_flags.get(
+            "CURVATURE_SQUARED_ZERO_ORDER_LAYER_SUPPLIED"
+        )
+        is not False
+        or physical_linear_flags.get("PHYSICAL_N3_TRIANGLE_INTEGRATED") is not False
+    ):
+        raise ValueError("generic physical-Hessian linear-curvature frontier drifted")
     if (
         generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
         != "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
@@ -1892,8 +1941,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_N3_ALL_ELEVEN_FUNCTIONS_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_GENERIC_LOCAL_BCH_GLOBAL_FINITE_CARRIERS_AND_PHYSICAL_HESSIAN_ASSEMBLY_OPEN_Q1_UNDERDETERMINED",
-                "next_gate": "SUPPLY_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_AND_ASSEMBLE_FIVE_REPOSITORY_CARRIERS",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_SAME_GAUGE_TRACELESS_PHYSICAL_HESSIAN_LINEAR_CURVATURE_ROWS_IMPORTED_AND_N3_THREE_LINEAR_VERTEX_READY_GENERIC_GHOST_N3_ALL_ELEVEN_FUNCTIONS_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_PHYSICAL_H2_MIXED_ROWS_GLOBAL_FINITE_CARRIERS_AND_REPOSITORY_ASSEMBLY_OPEN_Q1_UNDERDETERMINED",
+                "next_gate": "COMPUTE_PHYSICAL_N3_THREE_LINEAR_TRIANGLE_AND_IMPORT_CURVATURE_SQUARED_HESSIAN_LAYER_THEN_ASSEMBLE_FIVE_REPOSITORY_CARRIERS",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -1908,8 +1957,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_FIVE_UNIVERSAL_CPT_KERNELS_AND_ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_FIXED_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_GENERIC_BCH_GREEN_SPECTRAL_CARRIER_PHYSICAL_FOURTH_ORDER_KERNEL_REPOSITORY_ASSEMBLY_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "SUPPLY_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_AND_ASSEMBLE_FIVE_REPOSITORY_CARRIERS",
+                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_FIVE_UNIVERSAL_CPT_KERNELS_SAME_GAUGE_PHYSICAL_H1_LINEAR_CURVATURE_IMPORT_N3_THREE_LINEAR_VERTEX_AND_ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_FIXED_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_PHYSICAL_H2_MIXED_ROWS_GENERIC_BCH_GREEN_SPECTRAL_CARRIER_REPOSITORY_ASSEMBLY_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "COMPUTE_PHYSICAL_N3_THREE_LINEAR_TRIANGLE_AND_IMPORT_CURVATURE_SQUARED_HESSIAN_LAYER_THEN_ASSEMBLE_FIVE_REPOSITORY_CARRIERS",
             },
         },
         "supersession_ledger": [
@@ -2032,6 +2081,11 @@ def build() -> dict[str, Any]:
             "STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED": True,
             "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE": True,
             "FIVE_UNIVERSAL_CPT_THIRD_CURVATURE_KERNELS_IMPORTED": True,
+            "GENERIC_PHYSICAL_HESSIAN_LINEAR_CURVATURE_IMPORTED": True,
+            "PHYSICAL_N3_THREE_LINEAR_INSERTION_VERTEX_READY": True,
+            "FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED": False,
+            "CURVATURE_SQUARED_PHYSICAL_HESSIAN_LAYER_SUPPLIED": False,
+            "PHYSICAL_N3_THREE_LINEAR_TRIANGLE_COMPUTED": False,
             "GENERIC_BACKGROUND_GHOST_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED": True,
             "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED": True,
             "GENERIC_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION_COMPUTED": True,
@@ -2136,8 +2190,8 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "CONSTRUCT_EXACT_RELATIVE_SIMPLEX_IBP_PRIMITIVES_WITH_PUNCTURED_CORNER_FLUX_AND_I10_EDGE_BUBBLE_DISPOSITION",
-            "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
+            "COMPUTE_PHYSICAL_N3_THREE_LINEAR_TRIANGLE_AND_IMPORT_CURVATURE_SQUARED_HESSIAN_LAYER_THEN_ASSEMBLE_FIVE_REPOSITORY_CARRIERS",
+            "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
@@ -2181,8 +2235,8 @@ def build() -> dict[str, Any]:
             "four-dimensional symmetric functional relation leaves ten. This is not ten "
             "computed form factors. The five exact universal CPT alpha kernels have now been "
             "imported and symmetrized; they are coefficient-bearing for the rank-one minimal "
-            "scalar-Laplacian source fixture. The repository tensor/ghost endomorphism and "
-            "connection-curvature trace substitutions on a generic background are not supplied, "
+            "scalar-Laplacian source fixture. At this point the repository tensor and ghost "
+            "trace substitutions were not yet supplied by those universal kernels alone, "
             "and the special-background determinant ranks cannot determine them. The exact "
             "generic Diff--Weyl ghost Schur complement is beta-independent but nonminimal, "
             "with principal spectrum (3/2,1,1,1), and generic tracefree Ricci curvature mixes "
@@ -2222,7 +2276,15 @@ def build() -> dict[str, Any]:
             "pole-four I29 row is now reduced by a full 55-row symbolic identity to the same "
             "three masters; its three finite corner numerators are linear, its flux is rational, "
             "and all six permutations and the symmetric-point value replay exactly. Thus all "
-            "eleven generic ghost n=3 functions are complete. At the "
+            "eleven generic ghost n=3 functions are complete. The same-gauge traceless "
+            "metric Hessian has now been imported through first curvature order as exact "
+            "V, N and U ledgers with 9, 8 and 5 source rows, respectively. The repository "
+            "functional Hessian is one half of the source operator, while the normalized "
+            "trace-log insertion is unchanged. On the scalar-flat domain 7, 6 and 3 rows "
+            "survive, and the round-S4 restriction reproduces the complete linear layer. "
+            "This closes the physical three-linear Tr[(H0^-1 H1)^3] vertex only. The "
+            "curvature-squared H2 layer, mixed H1-H2 rows, tensor triangle integration, "
+            "global carrier and five repository form-factor assembly remain open. At the "
             "normalized symmetric point all eleven coordinates are integrated exactly in "
             "terms of one Clausen master. This is not the generic five repository functions; "
             "the n=1/n=2 pure-vector sum is now evaluated exactly from CPT rows 1, 3 and 14 as "
@@ -2527,6 +2589,14 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED") is not True
         or flags.get("FIVE_UNIVERSAL_CPT_THIRD_CURVATURE_KERNELS_IMPORTED")
         is not True
+        or flags.get("GENERIC_PHYSICAL_HESSIAN_LINEAR_CURVATURE_IMPORTED")
+        is not True
+        or flags.get("PHYSICAL_N3_THREE_LINEAR_INSERTION_VERTEX_READY")
+        is not True
+        or flags.get("FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED") is not False
+        or flags.get("CURVATURE_SQUARED_PHYSICAL_HESSIAN_LAYER_SUPPLIED")
+        is not False
+        or flags.get("PHYSICAL_N3_THREE_LINEAR_TRIANGLE_COMPUTED") is not False
         or flags.get("GENERIC_BACKGROUND_GHOST_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED")
         is not True
         or flags.get("GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED")
@@ -2621,6 +2691,11 @@ def validate(result: dict[str, Any]) -> None:
             "STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE",
             "STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED",
             "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE",
+            "GENERIC_PHYSICAL_HESSIAN_LINEAR_CURVATURE_IMPORTED",
+            "PHYSICAL_N3_THREE_LINEAR_INSERTION_VERTEX_READY",
+            "FULL_GENERIC_PHYSICAL_HESSIAN_SUPPLIED",
+            "CURVATURE_SQUARED_PHYSICAL_HESSIAN_LAYER_SUPPLIED",
+            "PHYSICAL_N3_THREE_LINEAR_TRIANGLE_COMPUTED",
             "TT_HESSIAN_DICTIONARY_SEMANTIC_RECEIVER_READY",
             "FULL_BV_LEDGER_COMPOSER_READY",
             "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED",

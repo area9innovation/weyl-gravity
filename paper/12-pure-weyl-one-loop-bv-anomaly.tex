@@ -926,10 +926,62 @@ CPT rows.  The available round-sphere constrained determinant factors,
 Ricci-flat local \(b_4\) match and principal-symbol sequence do not determine
 those generic-background trace substitutions.  Consequently no repository
 third-curvature function or coefficient is inferred by summing bundle ranks.
-The minimal missing physical input is a same-gauge generic-background
-full-BV Hessian reduced to minimal Laplace-type blocks with all trace
-substitutions through curvature order three, or an equivalent direct
-nonminimal fourth-order CPT kernel, together with the matching measure.
+The minimal missing physical input was therefore a same-gauge
+generic-background metric Hessian.  The next proposition closes its complete
+linear-curvature layer while retaining the curvature-squared layer as an
+explicit open edge.
+\end{proposition}
+
+\begin{proposition}[Same-gauge physical-Hessian linear-curvature import]
+In the repository vector gauge
+\[
+ F_\mu=\nabla^\nu h_{\mu\nu}-\frac14\nabla_\mu h,
+ \qquad F_W=h,
+\]
+the gauge-fixed traceless metric Hessian of Barvinsky et
+al.~\cite{BarvinskyLocal} is imported through first curvature order as
+\[
+ \mathcal H_{\rm src}=\widehat 1\Box^2
+  +V^{\rho\sigma}\nabla_\rho\nabla_\sigma
+  +N^\rho\nabla_\rho+U+O(\mathcal R^2).
+\]
+The source gauge parameters
+$(\gamma_1,\gamma_2,\tau)=(1/2,-1/6,-1/4)$ reproduce this repository gauge
+after imposing $h=0$.  The traceless projector has pointwise rank nine.  The
+exact source ledger contains respectively nine, eight and five $V,N,U$ rows;
+on the scalar-flat domain seven, six and three survive.  Their rational
+coefficient vectors, index seeds, symmetrization policy and source hashes are
+stored in the machine receipt.
+
+Because the source writes
+$S^{(2)}=(1/4)\int\sqrt g\,h\mathcal H_{\rm src}h$, the repository functional
+Hessian is
+\[
+ \mathcal H_{\rm repo}=\frac12\mathcal H_{\rm src}.
+\]
+This agrees with the repository flat-TT leading coefficient.  The constant
+factor cancels from the normalized insertion,
+\[
+ ((\mathcal H_0/2)^{-1})(\mathcal H_1/2)
+   =\mathcal H_0^{-1}\mathcal H_1.
+\]
+On round $S^4$, writing $A=-\Box$ and $K$ for sectional curvature, the
+imported source rows give $A^2+6KA$, while the certified complete repository
+fixture is
+\[
+ \frac12(A+2K)(A+4K)=\frac12A^2+3KA+4K^2.
+\]
+Thus the linear check passes and the missing $+8K^2$ source term visibly
+certifies that this is not the full generic Hessian.
+
+The import completely fixes the three-linear vertex
+\[
+ \operatorname{Tr}\bigl[(\mathcal H_0^{-1}\mathcal H_1)^3\bigr].
+\]
+It does not integrate that tensor triangle, supply the curvature-squared
+$\mathcal H_2$ layer, compute the mixed $\mathcal H_1\mathcal H_2$ rows, or
+assemble the five repository form factors.  Those are the next
+coefficient-bearing gates.
 \end{proposition}
 
 \begin{proposition}[Generic ghost obstruction to direct minimal-CPT matching]
@@ -1020,7 +1072,7 @@ tensor projection: the zero-derivative sector can feed $I_{10}$ and the
 longitudinal sectors can feed $I_{24},I_{25},I_{28},I_{29}$.  The next
 proposition performs that projection.  The curved-Endo one-/two-insertion
 rows are reduced to minimal resolvent carriers below; their evaluation and
-the generic physical fourth-order Hessian kernel remain separate open
+the curvature-squared physical-Hessian layer remain separate open
 calculations.
 \end{proposition}
 
@@ -1620,7 +1672,7 @@ All six $S_3$ relabellings vanish exactly.  At the symmetric point,
 which agrees with the independent simplex integration below.  Hence all
 eleven generic scalar-flat ghost $n=3$ functions are complete.  This does not
 assemble the full ghost determinant, determine the five repository form
-factors, or supply the physical fourth-order Hessian.
+factors, or supply the missing curvature-squared physical-Hessian layer.
 \end{proposition}
 
 \begin{proposition}[Exact symmetric-point ghost triangle fixture]
@@ -1732,8 +1784,11 @@ weight-raised convention, the noncommuting BCH trace and local defect
 $-\tfrac14\operatorname{Wres}(K^2)$ are exact and specialize to $-1/3$ on
 round $S^4$.  The smoothing theorem shows that the generic finite counterparts
 still require a full primed Green/spectral carrier.  All eleven generic
-ghost $n=3$ functions, including the pole-four $I_{29}$ row, are complete;
-the generic primed Green/spectral carrier and the physical kernel, hence the
+ghost $n=3$ functions, including the pole-four $I_{29}$ row, are complete.
+The same-gauge physical Hessian is now imported through first curvature
+order and its three-linear $n=3$ vertex is fixed; the tensor triangle has not
+yet been integrated.  The generic primed Green/spectral carrier and the
+curvature-squared Hessian layer, hence the
 five complete repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
@@ -1773,6 +1828,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json}.
 \item \cert{quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json}.
 \item \cert{quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json}.
@@ -1892,8 +1948,10 @@ python3 paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py
 
 The immediate local-to-residual question is now sharp.  The pole-four
 $I_{29}$ row and all ten pole-three ghost rows are already reduced to the
-certified triangle/log master system.  Supply the same-gauge generic-background
-full-BV Hessian and trace substitutions needed to match
+certified triangle/log master system.  Compute the tensor triangle defined by
+the imported same-gauge linear-curvature physical Hessian, import its
+curvature-squared layer and mixed first/second-curvature trace rows, and then
+complete the substitutions needed to match
 the five imported universal CPT kernels to repository parity-even third-
 curvature form-factor functions and coefficients on the certified carrier
 quotient, and classify the parity-odd derivative

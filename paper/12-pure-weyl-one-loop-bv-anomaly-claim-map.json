@@ -285,6 +285,19 @@
     "minimal_Koszul_Tate_collapse_page": "E2",
     "nonlocal_R2_form_factor_disposition": "NOT_AN_INDEPENDENT_DATUM_IN_DECLARED_FV_CONFORMAL_DECOMPOSITION",
     "parity_even_third_curvature_carrier_count": 5,
+    "physical_Hessian_linear_formula_digest": "e27ae279abf526de3f2af860fb16e8f79b23bfdaf6ce70bde69d30aa8c65fbef",
+    "physical_Hessian_linear_source_row_counts": {
+      "N_lambda": 8,
+      "U": 5,
+      "V_rho_sigma": 9
+    },
+    "physical_Hessian_repository_normalization": "H_repository=(1/2)H_source",
+    "physical_Hessian_scalar_flat_surviving_row_counts": {
+      "N_lambda": 6,
+      "U": 3,
+      "V_rho_sigma": 7
+    },
+    "physical_n3_three_linear_insertion_vertex_ready": true,
     "pure_Diff_and_mixed_additional_classes": 0,
     "raw_to_repository_R2_scheme_shift": {
       "basis": [
@@ -360,6 +373,7 @@
       "numerator": -1
     },
     "round_S4_weight_raised_zeta_determinant_ratio": "-4.311478818948744960808728888139320253915499526632223505333333333333333",
+    "same_gauge_physical_Hessian_linear_curvature_imported": true,
     "scalar_flat_K_Ricci_linear_crosswalk": "K_munu=Ric_munu+O(curvature^2)",
     "scalar_triangle_differential_formula_digest": "35a03bd413215d36badd00b5e8f6038f827f52ecdc8686ffbbf77422abdfcee5",
     "scalar_triangle_differential_system_computed": true,
@@ -382,7 +396,7 @@
     "universal_CPT_third_curvature_kernels_imported": true
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "45f1a51341c189ede9e267c60c66fae14dce3b2253cf9f018f488c2c8e841d74",
+  "compiled_pdf_sha256": "7b372a6850f8da1b3d62960a83153534404e7eb4cdbfbf75a8973d106278215f",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
@@ -397,6 +411,7 @@
     "complete_renormalized_Q1_supplied": false,
     "finite_polynomial_in_tau_theorem": false,
     "full_BV_Bridge_4_particle_crosswalk": false,
+    "full_generic_physical_Hessian": false,
     "generic_ghost_all_five_n1_n2_carriers_evaluated": false,
     "generic_ghost_finite_part_R_K2": false,
     "generic_ghost_full_Schur_regularized_determinant": false,
@@ -411,6 +426,8 @@
     "independent_cubic_Weyl_invariant_form_factors": false,
     "ordinary_Fredholm_determinant_class": false,
     "parity_odd_third_curvature_carrier_manifest": false,
+    "physical_curvature_squared_Hessian_layer": false,
+    "physical_n3_three_linear_triangle_integrated": false,
     "positive_particle_Hilbert_space": false,
     "quantum_Cartan_identity": false,
     "renormalized_Lorentzian_products": false,
@@ -531,6 +548,10 @@
       "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE",
       "sha256": "536d2d44d2d60499c2167935b7e77fa80238a94cd9138bc2e462f7d33582cc10"
     },
+    "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE.json": {
+      "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE",
+      "sha256": "b8fd2da678cb64d0bae6adaacb888beb49af3d3e45ddd9bce93005fb9018e9f9"
+    },
     "quantum-weyl/spectral/euclidean/certificates/GENERIC_SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM.json": {
       "result_id": "GENERIC_SCALAR_TRIANGLE_DIFFERENTIAL_SYSTEM",
       "sha256": "d3de38ea404b3ecd203795d11dace62d4b553c4d40a91f92fb1d0f8d00f21b8c"
@@ -606,13 +627,14 @@
   },
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "20eb311f77d2e971cdd0b3f23500d8530c39a55db3b89718612f9949bfb269a0",
+  "manuscript_sha256": "828e56476aa9bac84e259e7b4660a5e601b9df388de8229eb48a6e7be43e11fa",
   "next_gate": {
     "required_inputs": [
       "same-background compensator-inclusive classical contraction",
       "finite C2 and absolute dressed Rhat2 normalization conditions",
       "full generic-background primed Green/resolvent kernel or complete spectral measure for the reference-scale finite R(K), finite R(K^2), and det3 rows; the round-S4 special-background benchmark is complete but does not substitute for this global carrier",
-      "same-gauge generic-background physical fourth-order Hessian and remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
+      "curvature-squared H2 layer of the same-gauge generic-background physical fourth-order Hessian, the mixed H1-H2 trace rows, and integration of the now-ready three-H1 tensor triangle before assembly against the five universal CPT carriers",
+      "remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
       "renormalized BV operator data fixing complete Q1"
     ],
     "required_outputs": [
@@ -622,12 +644,12 @@
       "H3-to-H4 and H4-to-H5 maps",
       "pairing correction"
     ],
-    "status": "SUPPLY_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
+    "status": "COMPUTE_PHYSICAL_N3_THREE_LINEAR_TRIANGLE_AND_IMPORT_CURVATURE_SQUARED_HESSIAN_LAYER"
   },
   "publication_artifacts": {
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "e9bd1d42f827663b6d6d71300a0325aa2a3b0827df901116ebaa970ee88b31e7",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "8beeb8d3d1e7c7f6e07da90a8290104229dcd069b469710cc56355dbcc54aa70",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "7c0957554020ea00de68dec6f0329ca52da920e1ae4ea7ab93fc8b685ea14b5f",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "6c05343386c54f9e894a0743b3b97c9d3c15c3465466416cadffd49ed007b99a",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "9c647963a0d91171311e4568deae062c84918aba96bfd471bd46ef6f030c978e",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "4d57ec9dc4c179fb863e748bc16e4bf4fd0ec3354edb2f945f8e409b90249efc",
     "paper/generate_12_quantum_anomaly_tables.py": "53fa1f003c9cedd320d7e2d8c8e8b589fcd5fc200c7c0362955107b68e62e4db",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "b7556226f31a06e73e9410c3e382c5eca6b77be3bce6004324ee1c0171b8e8c0",
     "paper/verify_12_quantum_anomaly_tables.py": "30370f348cc90cf9d8063cb9c47bb7a7576a4951869ba3e9bf63039be75ad258"
