@@ -1,0 +1,47 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_COMPLETE_MIXED_CONE_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Complete equation-level bounded and smooth second-order tangent cones on the finite generic candidate-13 carrier.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.json": "88fb6cc7509a06781af218da2871cbc0fb4be914871a8eca316617680371a82f",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.py": "68c9954ecf35ef1a88a0469bc9754330b065c701f71b43e1de70c4af840d7cc3",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.schema.json": "870094ad3312912b63fdbc35d3cd4a3da36e96967b339184adc476ad38fb2615",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.py": "ac87ca66b191f79e6db9670be8264ca17c7645ed68eba723d50a3a55bcc94164",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.py": "192ff35781bbf8e75c36f94ab4f8c8b2fc61ba4667bc205d7fc3c13fcface9ac",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-complete-mixed-cone.md": "42d63cf3f1cc2e142959f7a8d813486cf386b3f0e195a0d6e10d97b195df1aa5"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 83,
+      "commands": [
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 -m bridge.einstein_sector.atlas.verify_einstein_atlas_fragment",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "producer_elapsed_seconds": 0.11,
+      "producer_max_rss_kib": 24596,
+      "independent_verifier_elapsed_seconds": 0.11,
+      "independent_verifier_max_rss_kib": 24168,
+      "reason": "The theorem joins the exact 18-generator candidate-13 prime ideal, complete 18-channel same-fibre census, all-fibre collision isolation, five-dimensional zero-block cokernel theorem, pure-extra Taub no-go, and one nonzero mixed bounded point."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The theorem promotes a finite-carrier equation-level cone but not its irreducible real decomposition, exceptional/global inputs, all-orders integration, causal propagation, residual observables, quantum theory, or a release."
+    }
+  },
+  "claim_boundary": "The bounded and smooth second-order cones are complete as simultaneous coefficient equations on the declared finite generic candidate-13 carrier. Their irreducible real geometry and all higher lifecycles remain OPEN or NO_CERTIFIED_MAP."
+}

@@ -2314,8 +2314,18 @@ sum/difference channels gives 144 nonzero `ell=1,...,4` shell defects, and the
 `ell=0` sum channels use the empty nonzero-Fourier quotient.  The unequal-
 branch differences instead have `K=0,Omega!=0` and use the separately empty
 homogeneous nonzero-frequency quotient.  Thus no other same-fibre source
-matrix is required.  This is not a complete mixed-cone or second-order
-extension theorem.
+matrix is required.  The complete finite-generic cokernel theorem then closes
+the remaining zero block: it is exactly the five stabilizer covectors, all of
+which vanish on the displayed witness, and every static `L>=2` block is
+invertible.  Consequently this one mixed candidate-13 ray now has a certified
+bounded finite-quasiperiodic second-order correction.  The complete
+coefficientwise cone is now also certified:
+`Z2_bounded={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_13,1=...=R_13,18=0}` and
+`Z2_smooth={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0}`.  Its irreducible real geometry
+is open, but the next Bridge 1 gate now returns to the same-background
+Einstein–Weyl relative triangle/cofiber and explicit branch dictionary.
+All-orders, causal, residual, observational and quantum claims stay
+fail-closed.
 
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at

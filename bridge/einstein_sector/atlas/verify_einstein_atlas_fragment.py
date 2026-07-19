@@ -642,6 +642,18 @@ def verify() -> None:
         raise AssertionError("candidate-13 mixed correction classes changed")
     if "one exact axial m=0 mixed three-occupation second-order jet" not in candidate13_extension["claim_boundary"] or "not the full candidate-13 mixed tangent cone" not in candidate13_extension["claim_boundary"]:
         raise AssertionError("candidate-13 mixed extension exceeded scope")
+    candidate13_cone = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_complete_mixed_cone"]
+    candidate13_cone_second = candidate13_cone["mode_data"]["second_order"]
+    if candidate13_cone["descriptions"]["nonlinear"] != "CERTIFIED" or "complete finite generic candidate-13" not in candidate13_cone["mode_data"]["dispersion"]["statement"]:
+        raise AssertionError("candidate-13 complete cone scope changed")
+    if candidate13_cone["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "exactly the five stabilizer covectors" not in candidate13_cone["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-13 complete zero-block theorem was hidden")
+    if candidate13_cone["mode_data"]["resonance"]["status"] != "CERTIFIED" or "18-coefficient prime" not in candidate13_cone["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-13 complete resonance theorem was hidden")
+    if candidate13_cone_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "R_13,18=0" not in candidate13_cone_second["bounded_or_finite_quasiperiodic"]["statement"] or candidate13_cone_second["smooth_secular"]["status"] != "CERTIFIED" or candidate13_cone_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-13 complete correction classes changed")
+    if "complete equation-level tangent-cone theorem" not in candidate13_cone["claim_boundary"] or "irreducible real moment-map intersection" not in candidate13_cone["claim_boundary"]:
+        raise AssertionError("candidate-13 complete cone boundary changed")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]
     if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:

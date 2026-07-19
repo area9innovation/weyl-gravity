@@ -112,6 +112,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_candidate13_mixed_null_witness": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness.json",
     "ell2_two_abs_momentum_candidate13_same_fibre_census": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.json",
     "ell2_two_abs_momentum_candidate13_mixed_bounded_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension.json",
+    "ell2_two_abs_momentum_candidate13_complete_mixed_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
@@ -1084,6 +1085,18 @@ def entries() -> list[dict[str, object]]:
             "This certifies one exact axial m=0 mixed three-occupation second-order jet, not the full candidate-13 mixed tangent cone. Arbitrary phases and polar amplitudes, all-orders integration, causal propagation, residual observables and quantum claims remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_complete_mixed_cone",
+            _scope(theory="Weyl-Maxwell target", boundaries="candidate-13 closed S1_L times S2 circumference fibre; before final residual quotient", carrier="all generic ell=2 q-minus, p-extra and q-plus coefficients on signed n=1 and n=-2 collision fibres with reality conjugates", degree=2, parity="both axial and polar inputs and all selected output parities", ell="input ell=2; every quadratic output L=0,1,2,3,4", m="all m=-2,...,2 and every allowed output M", k="signed n=1 and n=-2 candidate-13 fibres and their conjugates", omega="all generic branch shells and quadratic signed sums", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The complete finite generic candidate-13 two-fibre carrier is kept on one exact circumference background."),
+            ("CERTIFIED","The branch dictionary and stabilizer moment maps use the action-derived reduced current forms; no new quantum sign claim is made."),
+            ("CERTIFIED","The complete zero-frequency adjoint cokernel is exactly the five stabilizer covectors, with no additional same-fibre functional."),
+            ("CERTIFIED","The bounded nonzero-frequency obstruction is exactly the 18-coefficient prime candidate-13 cross-fibre ideal; all same-fibre and other cross-fibre channels are off shell."),
+            _second_order(("CERTIFIED","The bounded cone is exactly {mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_13,1=...=R_13,18=0}."),("CERTIFIED","The smooth exponential-polynomial cone is exactly the common zero of the five stabilizer moment maps."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_candidate13_complete_mixed_cone","ell2_two_abs_momentum_candidate13_mixed_bounded_extension","ell2_two_abs_momentum_candidate13_same_fibre_census","ell2_two_abs_momentum_candidate13_L4_incidence_reduction","finite_generic_smooth","abstract_cone"),
+            "This is a complete equation-level tangent-cone theorem on the declared finite generic candidate-13 carrier. The irreducible real moment-map intersection, exceptional/global inputs, all-orders integration, causal propagation, residual observables and quantum claims remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="constant twist position plus paired axisymmetric +/-k Einstein-plus/minus standing waves", degree=2, parity="generic input parity retained; polar extra resonant output", ell="every one fixed integer ell>=2 with output L=2ell", m="m_A=0 inputs and M=0 output", k="one tuned allowed nonzero +/-k pair", omega="q-plus/minus inputs and p-primary sum-frequency output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
@@ -1969,6 +1982,24 @@ def build() -> dict[str, object]:
         or candidate13_extension_flags["causal_residual_observational_or_quantum_claim"]
     ):
         raise AssertionError("candidate-13 mixed bounded extension exceeded scope")
+    candidate13_cone = records["ell2_two_abs_momentum_candidate13_complete_mixed_cone"]
+    candidate13_cone_flags = candidate13_cone["classification"]
+    if not (
+        candidate13_cone_flags["complete_candidate13_bounded_tangent_cone_formula_certified"]
+        and candidate13_cone_flags["complete_candidate13_smooth_tangent_cone_formula_certified"]
+        and candidate13_cone_flags["five_stabilizer_and_eighteen_resonance_functionals_necessary_and_sufficient_bounded"]
+        and candidate13_cone_flags["five_stabilizer_functionals_necessary_and_sufficient_smooth"]
+        and candidate13_cone_flags["same_fibre_source_functionals_absent_after_shell_reduction"]
+        and candidate13_cone_flags["pure_extra_face_is_origin"]
+        and candidate13_cone_flags["nonzero_mixed_bounded_point_exists"]
+    ):
+        raise AssertionError("candidate-13 complete mixed cone changed")
+    if (
+        candidate13_cone_flags["real_algebraic_component_decomposition_classified"]
+        or candidate13_cone_flags["all_orders_integrability"]
+        or candidate13_cone_flags["causal_residual_observational_or_quantum_claim"]
+    ):
+        raise AssertionError("candidate-13 complete mixed cone exceeded scope")
     if l3["arbitrary_amplitude_zero_variety_classified"] or l3["causal_or_quantum_claim"]:
         raise AssertionError("nonaxisymmetric L3 matrix exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:

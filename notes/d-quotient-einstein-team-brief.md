@@ -3652,9 +3652,17 @@ reduced cokernel exactly with `H,P_x,J_1,J_2,J_3`, whose five pairings already
 vanish on the witness, while every static `L>=2` block is invertible.  Together
 with the isolated cross-fibre ledger this certifies a real bounded
 finite-quasiperiodic second-order correction for the declared mixed witness.
-The active gate is now the full candidate-13 mixed coefficient cone; this one
-extendible ray is input to the same-background Einstein–Weyl bridge, not a
-completed nonlinear bridge or an all-orders theorem.
+The full coefficientwise cone is now closed as well.  On the complete finite
+generic candidate-13 carrier,
+`Z2_bounded={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_13,1=...=R_13,18=0}`, whereas
+`Z2_smooth={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0}` because finite-frequency
+resonances admit secular inverses.  The prime pure-extra face meets either
+moment-map zero set only at the origin, while the mixed cone contains the
+certified bounded ray.  The real irreducible decomposition remains open, but
+is not needed for the equation-level tangent-cone theorem.  The active gate
+returns to the same-background Einstein–Weyl relative triangle/cofiber and
+branch dictionary; this nonlinear result is an input, not an all-orders or
+causal bridge.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-complete-mixed-cone-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "second_order_equation", "coefficientwise_functionals", "tangent_cones", "geometry", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_COMPLETE_MIXED_CONE"},
+    "second_order_equation": {"const": "L_WM v=-(1/2)D^2E_WM[u,u]"},
+    "coefficientwise_functionals": {
+      "type": "object",
+      "properties": {
+        "stabilizer": {"type": "array", "minItems": 5, "maxItems": 5},
+        "candidate13_cross_fibre": {"type": "object", "properties": {"count_over_C": {"const": 18}}, "required": ["count_over_C", "normal_form"]}
+      },
+      "required": ["stabilizer", "candidate13_cross_fibre", "same_fibre_nonzero_frequency", "zero_frequency"]
+    },
+    "tangent_cones": {
+      "type": "object",
+      "properties": {
+        "BOUNDED_OR_FINITE_QUASIPERIODIC": {"type": "object", "properties": {"status": {"const": "CERTIFIED"}}, "required": ["status", "formula"]},
+        "SMOOTH_EXPONENTIAL_POLYNOMIAL": {"type": "object", "properties": {"status": {"const": "CERTIFIED"}}, "required": ["status", "formula"]},
+        "CAUSAL_RETARDED": {"type": "object", "properties": {"status": {"const": "NO_CERTIFIED_MAP"}}, "required": ["status", "formula"]}
+      },
+      "required": ["BOUNDED_OR_FINITE_QUASIPERIODIC", "SMOOTH_EXPONENTIAL_POLYNOMIAL", "CAUSAL_RETARDED"]
+    },
+    "classification": {"type": "object", "required": ["complete_candidate13_bounded_tangent_cone_formula_certified", "complete_candidate13_smooth_tangent_cone_formula_certified", "five_stabilizer_and_eighteen_resonance_functionals_necessary_and_sufficient_bounded", "five_stabilizer_functionals_necessary_and_sufficient_smooth", "real_algebraic_component_decomposition_classified", "all_orders_integrability", "causal_residual_observational_or_quantum_claim"]}
+  },
+  "additionalProperties": true
+}
