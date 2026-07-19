@@ -75,7 +75,7 @@ Nonlinear:   preserve the filtered ell3 obstruction and await an admissible bran
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, fix the finite local mixed rows now that generic triangle/contact incidence and the nonzero Mellin-renormalized M14 disposition are exact, and assemble the repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    audit and activate the deferred exact numerical recoil input contract without inventing physical values; the generic reality-folded contiguous-shell adapter and internal four-entry stop loop are certified, while physical specialization remains deferred, after which restrict records to Z2^C
-Black hole:  BH-2 CLOSED at l=2 in BOTH parities (polar cross-flux fixtures: realized Ricci image full, nonzero Einstein x extra pairing, positive canonical extra norms; causal disposition: Einstein characteristics, decaying Coulomb asymptotics); Hawking monodromy temperature certified REDUCED-MODE (thermal factor e^{-omega/T_H} universal incl. the extra branch); next: coordinator review gate for BH-3 vocabulary; invariant flux-sign theory, general l, omega = 0 remain OPEN
+Black hole:  BH-2C per planning directive: claim repair (static complementary-sheet wording; rigorous exact/interval nonvanishing bounds for the mixed/extra flux fixtures) and the full asymptotic metric/Jordan analysis (repeated-root structure at infinity, metric reconstruction, finite-flux boundary class, both parities); NOT the old BH-0/BH-1 queue; ringdown stays coordinator-gated. Prior gate DONE (events black-hole-DONE/-ACTIVE in planning/events/)
 ```
 
 These jobs use different bottlenecks.  Running them in parallel is more useful
@@ -1547,6 +1547,14 @@ to arbitrary finite generic `ell>=2` sums at `k=0`.  Infinite harmonic
 completion, exceptional inputs, nonzero momentum and `CAUSAL_RETARDED` remain
 fail-closed.
 
+The exceptional bounded gate now has direct full-time `a,d` pivots in both
+parities.  The `a*t` coefficient is nonzero and removes the radion position
+from every bounded exceptional branch.  The constant `d` coefficient shares
+its `L=1,omega_e` carrier with the live exceptional-times-`ell=2`-extra
+difference channel, so the bounded cone remains fail-closed until those eight
+collision columns are computed jointly.  This is an Einstein-team input to
+Bridge 1, not a nonlinear bridge morphism or a causal promotion.
+
 ### Classical ownership
 
 The authoritative support-local Berger tensors are now certified through
@@ -1624,6 +1632,17 @@ quadratic-time source, while smooth exponential-polynomial sufficiency is
 certified by the complete finite output ledger and blockwise secular inverses.
 The causal class and coefficient-printed correction remain open.  This does
 not complete the relative bridge.
+
+On the compact-product bounded rail, the arbitrary finite generic `k=0`
+standard-global/twist cone is now complete.  The first `k!=0` interaction is
+also classified at the same-shell level:
+`EINSTEIN_MAXWELL_WEYL_NONZERO_K_CONSTANT_TWIST_SAME_SHELL` proves that the
+constant-twist Feynman--Hellmann operator has kernel exactly `m_A=0` on every
+fixed generic axial/polar `q/p` block and every allowed nonzero momentum.
+This row is an input to Bridge 1, not a nonlinear bridge morphism.  Its full
+bounded extension gate remains fail-closed pending neighboring angular
+outputs, opposite-momentum cross terms, multiple `|k|` fibres and the other
+global constraints; the causal row remains `NO_CERTIFIED_MAP`.
 
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared

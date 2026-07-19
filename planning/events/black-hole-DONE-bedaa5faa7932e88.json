@@ -1,0 +1,27 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-DONE-bedaa5faa7932e88",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "tools/science-forge/program/events/black-hole-DONE-bedaa5faa7932e88.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "black-hole",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-07-19",
+    "payload": {
+      "target": "sf:program/work/black-hole",
+      "to_state": "DONE",
+      "note": "Prior gate met and exceeded: polar extra/cross flux blocks certified via the realized Ricci-image composition (BH2B_POLAR_CROSS_FLUX, independent VbGeo verifier passed); Zerilli-form master scalar obstruction ledgered fail-closed (BH2B_POLAR_EINSTEIN); adversarial pass: a decisive flux-sign mutation of the certificate is rejected by the fast rail (receipt in session log). Additionally certified beyond the gate: polar causal disposition (BH-2 closed at l=2 both parities), REDUCED-MODE Hawking monodromy temperature, omega=0 static-sector classification, and the Paper 14 integration."
+    },
+    "native": {
+      "authored_by": "sfc work-event",
+      "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten \u2014 the effective state is the fold of these events over the base state."
+    }
+  }
+}

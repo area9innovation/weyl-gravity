@@ -1,0 +1,27 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-ACTIVE-f32279e4ea5a1c6a",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "tools/science-forge/program/events/black-hole-ACTIVE-f32279e4ea5a1c6a.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "planning",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-07-19",
+    "payload": {
+      "target": "sf:program/work/black-hole",
+      "to_state": "ACTIVE",
+      "note": "Restart directive: BH-2C claim repair and the full asymptotic metric/Jordan analysis. Claim repair = (a) the static certificate's complementary-sheet wording, (b) rigorous (exact-rational or interval) nonvanishing bounds for the mixed/extra flux fixtures replacing controlled-numerical language. Asymptotic analysis = repeated-root Jordan structure at r -> infinity, metric reconstruction from the carrier, and the finite-flux boundary class, both parities. NOT the old BH-0/BH-1 queue; NOT unrestricted ringdown (BH-3 vocabulary stays coordinator-gated)."
+    },
+    "native": {
+      "authored_by": "sfc work-event",
+      "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten \u2014 the effective state is the fold of these events over the base state."
+    }
+  }
+}
