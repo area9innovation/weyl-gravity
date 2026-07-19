@@ -281,6 +281,15 @@ def verify() -> None:
         raise AssertionError("nonaxisymmetric constant-twist survivor was hidden")
     if twist_complete["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
         raise AssertionError("constant-twist cone over-promoted causal propagation")
+    twist_position_velocity = by_id["einstein.ph.wm.mixed.twist_position_velocity_ell2_complete_bounded_cone"]
+    if twist_position_velocity["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("twist-position/velocity ell2 bounded cone was lost")
+    if "forces B=0" not in twist_position_velocity["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("twist-velocity polynomial obstruction was hidden")
+    if twist_position_velocity["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("twist-position/velocity bounded cone was demoted")
+    if twist_position_velocity["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("twist-position/velocity cone over-promoted causal propagation")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

@@ -18,7 +18,8 @@ A ghost in an equation is not automatically a ghost in nature. It may be a
 redundant description, a wave forbidden by a global constraint, a solution
 excluded by a physical boundary condition, or a genuine instability. Our
 project is building a sequence of exactly controlled model universes to find
-out which answer applies.
+out which answer applies—and whether the properties discovered separately
+can ultimately coexist in one theory.
 
 The rule is simple:
 
@@ -96,28 +97,64 @@ constraints and gauge relations must travel consistently with the wave. One
 of this project's main technical achievements is to test causality at that
 full-system level.
 
-## Several model universes, not one unfinished cosmos
+## Several laboratories, one eventual theory
 
-No single exactly solvable background answers every question. We therefore
-use several mathematical laboratories. Each removes some complications so
-that one issue can be tested exactly.
+The final ambition is not to keep a collection of unrelated miniature
+universes. It is to determine whether one coherent theory can describe
+causal spacetime, light, clocks, gravitational waves, interactions, black
+holes and quantum states at the same time.
 
-| Model laboratory | What it is used to test |
+Trying to test all of that in one calculation would hide the cause of every
+success or failure. Experimental science therefore uses wind tunnels,
+vacuum chambers and test tracks before asking one aircraft to fly. We use
+mathematical laboratories in the same way. Each laboratory removes selected
+complications and makes one physical requirement exact enough to challenge
+by calculation.
+
+Most of these laboratories place the same core Weyl equations on different
+spacetime backgrounds. A *background* is the controlled starting geometry,
+not a different law of nature. Other laboratories deliberately add light, a
+clock or a possible quantum repair. Those additions are candidate extensions
+of the theory and must be declared explicitly.
+
+| Model laboratory | Requirement isolated for the eventual theory |
 |---|---|
-| **Closed spherical universe** | Complete classical causal propagation, gauge reduction and candidate free quantum states. Space is finite but has no edge, like the surface of Earth one dimension higher. Its history is called the conformal cylinder. |
-| **Berger clock universe** | Matter clocks, causal light signals, redshift and the first interaction calculations. Its spatial sphere is deliberately deformed in a controlled way. |
-| **Compact circle-by-sphere universe** | Global balance conditions, nonlinear continuation and resonances of ordinary and additional gravitational waves coupled to electromagnetism. |
-| **Nariai curved universe** | Whether the causal construction survives on a geometrically different curved background and under a first controlled deformation. |
-| **Schwarzschild exterior** | Horizons, black-hole gravitational waves and whether familiar endpoint conditions remove the additional fourth-order family. |
+| **Closed spherical universe** | Can the complete gravity-and-gauge system propagate causally, and what remains after redundant descriptions and global charges are removed? Space is finite but has no edge, like the surface of Earth one dimension higher. Its history is called the conformal cylinder. |
+| **Berger clock universe** | Can matter provide clocks, can light carry a causal signal between them, and can redshift and the first interactions be defined without depending on coordinates? Its spatial sphere is deliberately deformed in a controlled way. |
+| **Compact circle-by-sphere universe** | Which ordinary and additional gravitational waves survive global balance, nonlinear continuation and resonance when electromagnetism is present? |
+| **Nariai curved universe** | Is the causal construction a reusable geometric mechanism rather than an accident of the closed spherical universe? |
+| **Schwarzschild exterior** | Does the same theory contain black holes, and do horizons and distant radiation conditions retain or eliminate the additional fourth-order waves? |
+| **Euclidean spherical calculation** | Do the quantum symmetry identities survive a one-loop test, and if not, what change of theory would be required to repair them? This is a quantum calculation tool, not a real-time universe with observers. |
 
-Results do not automatically transfer between these laboratories. A wave
-that is constrained in the compact circle-by-sphere universe has not thereby
-been removed from a Schwarzschild exterior. A boundary condition that works
-in a Euclidean calculation is not automatically a causal real-time rule. The
-one-loop quantum calculations use an additional Euclidean spherical
-laboratory: a calculation tool, not a real-time universe with observers.
-Every public claim is therefore labeled by its theory, background, charge
-sector, boundary conditions and stage of completion.
+Each experiment contributes a requirement, not a detachable piece that can
+simply be pasted into a final universe. The unification task is to place the
+results beneath one common set of equations and ask whether the relevant
+constructions agree where their domains overlap:
+
+> **Targeted model universes produce certified physical requirements. Those
+> requirements must then fit into one compatible theory—or produce a precise
+> no-go.**
+
+For example, the gravitational wave called Einstein-like in the compact
+laboratory must be identified with the corresponding wave near a black hole;
+the causal rule used for the clock signal must follow from the same gauge
+system; and any quantum repair must preserve rather than silently replace
+the classical observables already constructed. Interactions must then show
+whether these sectors remain compatible or force one another to change.
+
+Results therefore do not automatically transfer between laboratories. A
+wave constrained in the compact circle-by-sphere universe has not thereby
+been removed from a Schwarzschild exterior, and a boundary condition that
+works in a Euclidean calculation is not automatically a causal real-time
+rule. Every public claim is labeled by its theory, background, charge sector,
+boundary conditions and stage of completion.
+
+This separation is not a weakness to be hidden. It is how the project learns
+what the final theory must integrate. If all the requirements can be made
+compatible, the laboratories become different solutions and experiments
+inside one theory. If they cannot, the conflict identifies exactly where the
+proposed universe fails. A unified no-go result would also be a successful
+scientific outcome.
 
 ## Three things we have learned
 

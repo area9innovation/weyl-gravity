@@ -1312,8 +1312,14 @@ inversion.  A balanced `polar_e1` pair at `m=+2,-2` supplies an
 explicit nonaxisymmetric survivor, so the nonzero-twist cone is strictly larger
 than the aligned face.  Atlas row
 `einstein.ph.wm.mixed.constant_twist_ell2_complete_bounded_cone` records the
-scoped theorem; twist velocity and all other global/harmonic enlargements remain
-fail-closed.  The direct polar Einstein-minus source now supplies successive
+scoped theorem.  Adjoining the full twist-velocity vector does not enlarge the
+bounded cone: the uncancellable polar `L=2` coefficient
+`STF(B tensor B)*t^2`, with exact norm squared `2|B|^4/3`, forces `B=0` over
+the reals.  Thus the complete `A,B` plus `ell=2,k=0` bounded cone is exactly
+the preceding constant-position cone.  Atlas row
+`einstein.ph.wm.mixed.twist_position_velocity_ell2_complete_bounded_cone`
+records this successor theorem; other homogeneous and harmonic enlargements
+remain fail-closed.  The direct polar Einstein-minus source now supplies successive
 full-polynomial pivots
 `66*b*z`, `198*a*z`,
 and `198*d*z`; rotational equivariance promotes them to every polar `m`.

@@ -1,0 +1,61 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_TWIST_POSITION_VELOCITY_ELL2_COMPLETE_BOUNDED_CONE",
+  "predecessor_result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_ELL2_COMPLETE_BOUNDED_CONE",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.py": "a47cf617a78dd40cfb5c90ffd2832d2ddc34db2df952a69bd24e9c9464a0cf56",
+    "bridge/certificates/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.json": "7e928ab1294b25c3c6ff36a6e4385c0afc9b32d34eaa9264af2875492a329cd0",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.schema.json": "27097abbe35f01eb1d4dbf7cfb34926431c557f89fb433205874ce4db6b9e06c",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.py": "9ad9807b969f5dc34754ca28c1bdfe5399cb10a47d50b5568e9c98476ad862a8",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.py": "13eaade3c078b1c9e0a6e00589894f225a4f52c4820d25e00998ac045d2ac0f1",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-twist-position-velocity-ell2-complete-bounded-cone.md": "6161dc45728944655d895b9fb5081aadc67801da4875d7a9b6d9afa0d1f4efc3",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "19a328fb09d16be56d8b74e640521e6072fa3a5ca7d5481f3a4c529182fcf4d1",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "ecf6c85995a83bba7090119f4cb8c591b47297da4ae902684be5a6ef72ec8567",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "f406ca0ef6205334254b97daca13a84b91da7c3479b9378ee4a564310d0c4696",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "ca8f951514c9800b520c296268828668df548ae512c40b1741367c04d4ce3e85",
+    "notes/d-quotient-einstein-team-brief.md": "c8bc6b6748d25599c7d785a184530333e18e4f2f42ca8cb03f69f181420d7ab1",
+    "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_complete_bounded_cone.json": "6016005b3c1a1a6cde0e0867d373278882e4411b58b51e31020d7bde0d95fdcb",
+    "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+  },
+  "claim": {
+    "certified": "On the axial twist position/velocity plus complete ell=2,k=0 q/p wave carrier, bounded second-order extendibility is equivalent to B=0 and the complete constant-position cone equations.",
+    "direct_obstruction": "The imported polar L=2 source coefficient is -7*B^2 in an aligned fixture and SO(3) covariance promotes it to STF(B tensor B)*t^2 with norm squared 2|B|^4/3.",
+    "open": "Other homogeneous tangents, other ell and momenta, unrestricted smooth-secular corrections, causal propagation and all-orders integration."
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.24,
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.py bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.py bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py",
+        "python3 -m json.tool bridge/certificates/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.json",
+        "python3 -m json.tool bridge/einstein_sector/schema/einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.schema.json",
+        "python3 -m json.tool bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "git diff --check -- bridge/einstein_sector bridge/certificates notes/d-quotient-einstein-team-brief.md notes/universe-building-roadmap.md"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 3.03,
+      "tests_run": 35,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_twist_position_velocity_ell2_complete_bounded_cone",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The direct global polynomial-growth theorem and the complete constant-position ell2 cone are unchanged exact inputs and are imported by hash."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This promotes one scoped bounded carrier, not the full finite-harmonic tangent cone; larger directions remain fail-closed."
+    }
+  }
+}

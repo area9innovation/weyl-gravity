@@ -218,6 +218,13 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
         self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
 
+    def test_twist_position_velocity_ell2_bounded_cone_is_registered(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.twist_position_velocity_ell2_complete_bounded_cone"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("forces B=0", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+
 
 if __name__ == "__main__":
     unittest.main()

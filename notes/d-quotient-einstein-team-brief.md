@@ -2473,8 +2473,25 @@ cone is strictly larger than the aligned face: equal `polar_e1` amplitudes at
 `m=+2,-2` have zero angular moment and are balanced by an Einstein-minus
 `m=0` occupation.  Atlas row
 `einstein.ph.wm.mixed.constant_twist_ell2_complete_bounded_cone` records the
-theorem.  Twist velocity, other homogeneous tangents, other `ell`, nonzero
-momentum and causal/all-orders lifecycles remain open.
+theorem.
+
+The twist-velocity enlargement is now closed without a new shell inversion.
+For the full finite carrier the direct polar `L=2` source contains
+
+```text
+STF(B tensor B)*t^2,
+|STF(B tensor B)|^2 = (2/3)*|B|^4.
+```
+
+No bounded oscillator product can cancel this positive polynomial degree, so
+every bounded second-order correction forces the complete real twist velocity
+vector `B=0`.  The `A,B` plus complete `ell=2,k=0` cone therefore equals the
+constant-position cone displayed above, including its nonaxisymmetric
+`m=+/-2` survivor.  Atlas row
+`einstein.ph.wm.mixed.twist_position_velocity_ell2_complete_bounded_cone`
+records the necessity-and-sufficiency theorem.  Other homogeneous tangents,
+other `ell`, nonzero momentum, the unrestricted secular class and
+causal/all-orders lifecycles remain open.
 
 The polar Einstein-minus cross source is now also direct and exact.  Its
 first action row has successive nonzero pivots `66*b*z`, `198*a*z`, and
