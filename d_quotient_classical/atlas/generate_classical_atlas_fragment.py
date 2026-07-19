@@ -60,6 +60,7 @@ CERTS = {
     "Nariai_formal_metric_green_variation": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1.json",
     "Nariai_global_HPL_rank310_causal_variation": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1.json",
     "Nariai_finite_HPL_incidence": ROOT / "d_quotient_classical/certificates/NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1.json",
+    "Nariai_KS_four_block_obstruction": ROOT / "d_quotient_classical/certificates/NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1.json",
     "Bach_parent": ROOT / "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
@@ -288,8 +289,8 @@ def entries() -> list[dict[str, Any]]:
         ("OPEN", "No second-order Taub classification beyond the exact homogeneous branch."),
         ("OBSTRUCTED", "The areal radius reaches zero with divergent Weyl curvature at finite proper time in one direction."),
         _second(("OBSTRUCTED", "The nonzero branch is not bounded or globally quasiperiodic on all R."), ("OBSTRUCTED", "The exact branch cannot remain smooth on the whole cylinder."), ("NO_CERTIFIED_MAP", "Slabwise evolution does not supply a whole-cylinder retarded causal bridge.")),
-        _evidence("Nariai_transverse_KS_obstruction"),
-        "The branch integrates the certified tangent on every fixed compact time slab but is globally singular for every nonzero 0<|epsilon|<1. This is not a no-go for non-Einstein Bach-flat deformations, different transverse data or declared causal subdomains.",
+        _evidence("Nariai_transverse_KS_obstruction", "Nariai_KS_four_block_obstruction"),
+        "The branch integrates the certified tangent on every fixed compact time slab but is globally singular for every nonzero 0<|epsilon|<1. In the declared fixed-coordinate tracefree transport, the finite conformal-Killing symbol first changes at order epsilon squared, so the four-block HPL theorem cannot be applied unchanged; the next exact test must include k and ksharp. This is not a no-go for non-Einstein Bach-flat deformations. It also leaves open a six-block contraction, alternative support-local identifications, different transverse data and declared causal subdomains.",
     ))
     values.append(_entry(
         "classical.crosswalk.bach_flat_parent_to_metric",

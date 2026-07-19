@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/nariai-ks-four-block-incidence-obstruction-v1.schema.json",
+  "title": "Nariai KS four-block incidence obstruction v1",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "theorem", "exact_symbol_obstruction", "architecture_consequence", "exact_checks", "flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-ks-four-block-incidence-obstruction-v1"},
+    "result_id": {"const": "NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1"},
+    "result_state": {"const": "FOUR_BLOCK_HPL_INCIDENCE_FAILS_AT_FINITE_ORDER_TWO_IN_CANONICAL_KS_PRESENTATION"},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "LORENTZIAN-CAUSAL"}], "items": false, "minItems": 2, "maxItems": 2},
+    "dependency_refs": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "theorem": {
+      "type": "object",
+      "required": ["statement", "first_order_compatibility", "finite_order_verdict", "scope"],
+      "properties": {
+        "statement": {"type": "string", "minLength": 1},
+        "first_order_compatibility": {"type": "string", "minLength": 1},
+        "finite_order_verdict": {"type": "string", "minLength": 1},
+        "scope": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "exact_symbol_obstruction": {
+      "type": "object",
+      "required": ["parameter_range", "evaluation_event", "metric_at_event", "symbol_inputs", "conformal_Killing_convention", "base_channel", "finite_channel", "finite_minus_base", "first_epsilon_derivative_at_zero", "second_epsilon_derivative_at_zero", "strict_sign_on_range", "output_transport", "output_transport_determinant", "output_transport_invertible_on_range", "missing_blocks", "minimal_fixed_presentation_incidence_count"],
+      "properties": {
+        "parameter_range": {"type": "string", "minLength": 1},
+        "evaluation_event": {"type": "string", "minLength": 1},
+        "metric_at_event": {"type": "string", "minLength": 1},
+        "symbol_inputs": {"type": "string", "minLength": 1},
+        "conformal_Killing_convention": {"type": "string", "minLength": 1},
+        "base_channel": {"const": "3/2"},
+        "finite_channel": {"type": "string", "minLength": 1},
+        "finite_minus_base": {"type": "string", "minLength": 1},
+        "first_epsilon_derivative_at_zero": {"const": "0"},
+        "second_epsilon_derivative_at_zero": {"const": "-5/6"},
+        "strict_sign_on_range": {"const": "negative"},
+        "output_transport": {"type": "string", "minLength": 1},
+        "output_transport_determinant": {"type": "string", "minLength": 1},
+        "output_transport_invertible_on_range": {"const": true},
+        "missing_blocks": {"type": "array", "prefixItems": [{"const": "k=K p0"}, {"const": "ksharp=p0sharp Ksharp"}], "items": false, "minItems": 2, "maxItems": 2},
+        "minimal_fixed_presentation_incidence_count": {"const": 6}
+      },
+      "additionalProperties": false
+    },
+    "architecture_consequence": {
+      "type": "object",
+      "required": ["four_block_finite_HPL_directly_applicable", "formal_first_variation_retained", "smallest_next_test", "common_slab_causal_transfer_certified", "alternative_identification_ruled_out"],
+      "properties": {
+        "four_block_finite_HPL_directly_applicable": {"const": false},
+        "formal_first_variation_retained": {"const": true},
+        "smallest_next_test": {"type": "string", "minLength": 1},
+        "common_slab_causal_transfer_certified": {"const": false},
+        "alternative_identification_ruled_out": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {"$ref": "#/$defs/trueRecord"},
+    "flags": {
+      "type": "object",
+      "required": ["NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1", "CANONICAL_KS_FOUR_BLOCK_FINITE_INCIDENCE", "CANONICAL_KS_SIX_BLOCK_PREFLIGHT_REQUIRED", "TRANSVERSE_FORMAL_RANK310_CAUSAL_VARIATION", "TRANSVERSE_KS_COMMON_SLAB_CAUSAL_TRANSFER", "ALL_SUPPORT_LOCAL_IDENTIFICATIONS_OBSTRUCTED", "ALL_BACH_FLAT_FAMILIES_OBSTRUCTED", "HADAMARD_STATE", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1": {"const": true},
+        "CANONICAL_KS_FOUR_BLOCK_FINITE_INCIDENCE": {"const": false},
+        "CANONICAL_KS_SIX_BLOCK_PREFLIGHT_REQUIRED": {"const": true},
+        "TRANSVERSE_FORMAL_RANK310_CAUSAL_VARIATION": {"const": true},
+        "TRANSVERSE_KS_COMMON_SLAB_CAUSAL_TRANSFER": {"const": false},
+        "ALL_SUPPORT_LOCAL_IDENTIFICATIONS_OBSTRUCTED": {"const": false},
+        "ALL_BACH_FLAT_FAMILIES_OBSTRUCTED": {"const": false},
+        "HADAMARD_STATE": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "NARIAI_KS_SIX_BLOCK_FINITE_HPL_INCIDENCE"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "trueRecord": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+  }
+}

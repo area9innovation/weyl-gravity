@@ -108,6 +108,11 @@ def verify() -> None:
         raise AssertionError("transverse exact-family obstruction missing")
     if transverse_exact["mode_data"]["second_order"]["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("slabwise family was promoted to a global causal bridge")
+    exact_ids = {item["result_id"] for item in transverse_exact["evidence"]}
+    if "NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1" not in exact_ids:
+        raise AssertionError("finite KS incidence obstruction missing")
+    if "include k and ksharp" not in transverse_exact["claim_boundary"]:
+        raise AssertionError("six-block next gate missing")
 
 
 if __name__ == "__main__":

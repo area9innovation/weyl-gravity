@@ -1,0 +1,40 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1.json", "sha256": "fbf8a5d54b428744aabc751ec6723cf8fdbc218090197ba5b951a39795cf49d5"},
+    "schema": {"path": "d_quotient_classical/schema/nariai-ks-four-block-incidence-obstruction-v1.schema.json", "sha256": "3c19d3885c614f0001fa095da89cc8ca547c852f4aba4fe5b54c855dc8f501b4"},
+    "producer": {"path": "d_quotient_classical/causal_transfer/nariai_ks_four_block_incidence_obstruction.py", "sha256": "41c4ec940f5287a30747c2dbe37611080d763a52584ff76bb68171c1d7c82405"},
+    "independent_verifier": {"path": "d_quotient_classical/causal_transfer/verify_nariai_ks_four_block_incidence_obstruction.py", "sha256": "2f5ae30663c848269d76200ad5e5af8af3cf294baed10d0d4f06a0ce45e69d22"},
+    "tests": {"path": "d_quotient_classical/causal_transfer/tests/test_nariai_ks_four_block_incidence_obstruction.py", "sha256": "148a10d18ac522b6b50ccf7a2d4dd47290cafa4077efb55047859119cede1dd5"},
+    "report": {"path": "d_quotient_classical/reports/nariai-ks-four-block-incidence-obstruction.md", "sha256": "6a21406e6e5cb67dbff1b1b0a869fd30866f4b0029375223aee0bc2482cbae9f"}
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "checks": ["Python sources parsed during execution", "strict Draft 2020-12 schema validation", "planning JSON parsed", "scoped diff inspected before commit"]},
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 5.5,
+      "commands": [
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_ks_four_block_incidence_obstruction.py --write --guards",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-ks-four-block-incidence-obstruction-v1.schema.json -d d_quotient_classical/certificates/NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1.json",
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_ks_four_block_incidence_obstruction.py",
+        "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_ks_four_block_incidence_obstruction"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 1.4,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {"status": "NOT_RUN", "reason": "This is a scoped exact obstruction and direct atlas update, not a paper freeze, shared-core change, or release."}
+  },
+  "claim_boundary": "The receipt covers the canonical fixed-coordinate tracefree-transport symbol obstruction only. It does not obstruct six-block HPL, alternative support-local identifications, non-Einstein Bach-flat families, common-slab causal transfer after repair, Hadamard data, or quantum claims."
+}

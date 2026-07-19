@@ -643,6 +643,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1.json`](certificates/NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1.json),
   [`reports/nariai-rank310-finite-hpl-incidence.md`](reports/nariai-rank310-finite-hpl-incidence.md)
 
+- Exact applicability obstruction on the finite Kantowski--Sachs branch: in
+  the fixed-coordinate presentation with the tracefree output transported by
+  `tf_g0`, an explicit conformal-Killing symbol channel changes by
+  `5 epsilon^2(epsilon^2-12)/144`.  The first derivative vanishes, so the
+  formal tangent theorem survives, but the exact finite differential must
+  also vary `k=K p0` and its cyclic dual `ksharp`.  The next test is therefore
+  the six-block HPL incidence, not direct promotion of the four-block formula:
+  [`certificates/NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1.json`](certificates/NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1.json),
+  [`reports/nariai-ks-four-block-incidence-obstruction.md`](reports/nariai-ks-four-block-incidence-obstruction.md)
+
 - Exact global disposition of the transverse Einstein branch: the
   Kantowski--Sachs family generating the certified tangent exists on every
   fixed compact time slab, but for every nonzero `0<|epsilon|<1` its areal

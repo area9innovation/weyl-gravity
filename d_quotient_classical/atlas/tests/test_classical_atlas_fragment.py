@@ -97,6 +97,11 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             "NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
+        self.assertIn(
+            "NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("include k and ksharp", entry["claim_boundary"])
 
     def test_transverse_finite_hpl_is_evidence_not_geometric_promotion(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_tangent"]

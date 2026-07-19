@@ -1,0 +1,96 @@
+{
+  "architecture_consequence": {
+    "alternative_identification_ruled_out": false,
+    "common_slab_causal_transfer_certified": false,
+    "formal_first_variation_retained": true,
+    "four_block_finite_HPL_directly_applicable": false,
+    "smallest_next_test": "six-block finite HPL incidence including k and ksharp"
+  },
+  "claim_boundary": "This is an exact obstruction to applying the certified four-block finite HPL formula unchanged to the exact Kantowski-Sachs family in the canonical fixed-coordinate tensor/density identification. It preserves the global formal first variation because the defect begins at epsilon squared. It does not obstruct a six-block HPL contraction, another support-local triangular identification, a non-Einstein Bach-flat family, or a common-slab causal theorem after the enlarged incidence is solved; it proves no Hadamard or quantum claim.",
+  "dependency_refs": {
+    "exact_KS_branch": {
+      "artifact_id": "NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1.json",
+      "sha256": "efa472248ed0586bedfc33f595187fcdfc4b00a206020a08054e1260d5a578d3"
+    },
+    "finite_four_block_HPL": {
+      "artifact_id": "NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_RANK310_FINITE_HPL_INCIDENCE_THEOREM_V1.json",
+      "sha256": "f85a910d1ab5325f767609c9f9ea2af029afeca341ab2fe6e39a0b4c564a115e"
+    },
+    "formal_rank310_variation": {
+      "artifact_id": "NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1.json",
+      "sha256": "c17de40adca6db7d49928eaf07b7d61d9b918f8e0460ab976a5cd226e9294543"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "conformal_Killing_symbol_channel_derived": true,
+    "cyclic_dual_block_required": true,
+    "declared_output_transport_invertible": true,
+    "exact_KS_initial_metric_used": true,
+    "finite_symbol_defect_nonzero": true,
+    "linear_term_zero": true,
+    "quadratic_term_nonzero": true
+  },
+  "exact_symbol_obstruction": {
+    "base_channel": "3/2",
+    "conformal_Killing_convention": "sigma(K_g)(zeta)xi=2 zeta_(mu xi_nu)-(1/2)g_munu zeta_rho xi^rho",
+    "evaluation_event": "t=0 with identity input coordinates and output transport tf_g0:S2_0(g_epsilon)->S2_0(g0)",
+    "finite_channel": "(5*epsilon**4 - 60*epsilon**2 + 216)/144",
+    "finite_minus_base": "5*epsilon**2*(epsilon**2 - 12)/144",
+    "first_epsilon_derivative_at_zero": "0",
+    "metric_at_event": "diag(-1,1,b0^2,b0^2) with b0=1-epsilon^2/6",
+    "minimal_fixed_presentation_incidence_count": 6,
+    "missing_blocks": [
+      "k=K p0",
+      "ksharp=p0sharp Ksharp"
+    ],
+    "output_transport": "tf_g0 restricted from S2_0(g_epsilon) to S2_0(g0)",
+    "output_transport_determinant": "(epsilon**4 - 12*epsilon**2 + 72)/(2*(epsilon**2 - 6)**2)",
+    "output_transport_invertible_on_range": true,
+    "parameter_range": "0<|epsilon|<1",
+    "second_epsilon_derivative_at_zero": "-5/6",
+    "strict_sign_on_range": "negative",
+    "symbol_inputs": "zeta=dx^2, xi=d/dx^2"
+  },
+  "flags": {
+    "ALL_BACH_FLAT_FAMILIES_OBSTRUCTED": false,
+    "ALL_SUPPORT_LOCAL_IDENTIFICATIONS_OBSTRUCTED": false,
+    "CANONICAL_KS_FOUR_BLOCK_FINITE_INCIDENCE": false,
+    "CANONICAL_KS_SIX_BLOCK_PREFLIGHT_REQUIRED": true,
+    "HADAMARD_STATE": false,
+    "NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1": true,
+    "QUANTUM_CLAIM": false,
+    "TRANSVERSE_FORMAL_RANK310_CAUSAL_VARIATION": true,
+    "TRANSVERSE_KS_COMMON_SLAB_CAUSAL_TRANSFER": false
+  },
+  "next_gate": "NARIAI_KS_SIX_BLOCK_FINITE_HPL_INCIDENCE",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/nariai_ks_four_block_incidence_obstruction.py": "41c4ec940f5287a30747c2dbe37611080d763a52584ff76bb68171c1d7c82405",
+      "d_quotient_classical/causal_transfer/tests/test_nariai_ks_four_block_incidence_obstruction.py": "148a10d18ac522b6b50ccf7a2d4dd47290cafa4077efb55047859119cede1dd5",
+      "d_quotient_classical/causal_transfer/verify_nariai_ks_four_block_incidence_obstruction.py": "2f5ae30663c848269d76200ad5e5af8af3cf294baed10d0d4f06a0ce45e69d22",
+      "d_quotient_classical/schema/nariai-ks-four-block-incidence-obstruction-v1.schema.json": "3c19d3885c614f0001fa095da89cc8ca547c852f4aba4fe5b54c855dc8f501b4"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_ks_four_block_incidence_obstruction.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_ks_four_block_incidence_obstruction.py",
+      "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_ks_four_block_incidence_obstruction",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-ks-four-block-incidence-obstruction-v1.schema.json -d d_quotient_classical/certificates/NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1.json"
+    ]
+  },
+  "result_id": "NARIAI_KS_FOUR_BLOCK_INCIDENCE_OBSTRUCTION_V1",
+  "result_state": "FOUR_BLOCK_HPL_INCIDENCE_FAILS_AT_FINITE_ORDER_TWO_IN_CANONICAL_KS_PRESENTATION",
+  "schema": "pure-weyl-nariai-ks-four-block-incidence-obstruction-v1",
+  "theorem": {
+    "finite_order_verdict": "the first missing block occurs at order epsilon^2",
+    "first_order_compatibility": "the first derivative vanishes, so the certified formal four-block theorem is unchanged",
+    "scope": "canonical fixed-coordinate tensor/density identification on the exact Kantowski-Sachs branch",
+    "statement": "On the exact transverse Kantowski-Sachs branch, after the declared output transport tf_g0:S2_0(g_epsilon)->S2_0(g0), the fixed-coordinate conformal-Killing symbol differs from unit Nariai by 5 epsilon^2(epsilon^2-12)/144 in an explicit channel. Hence the exact finite rank-310 differential cannot retain only the four first-variation blocks; the gauge block k=Kp0 and its cyclic dual must also vary."
+  }
+}

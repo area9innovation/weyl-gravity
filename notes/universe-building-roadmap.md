@@ -242,14 +242,17 @@ compact slab and the global formal first variation remain certified.  A
 whole-cylinder transverse promotion must therefore use a non-Einstein
 Bach-flat family; alternatively, a slab/domain causal theorem must declare
 its boundaries and common support category explicitly.
-The rank-310 HPL denominator is no longer a separate analytic uncertainty.
-For the certified four-block transverse incidence,
-`Delta^2=(H Delta)^2=(Delta H)^2=0`; the normalized HPL maps terminate after
-one finite-order support-local correction and satisfy the complete cyclic SDR
-identities coefficientwise.  C-G2 therefore waits on an exact finite
-geometric square-zero cyclic `Q_epsilon` on a non-Einstein Bach-flat family or
-declared common causal slab.  This algebraic theorem does not promote the
-globally singular Kantowski--Sachs branch.
+The rank-310 HPL denominator is no longer a separate analytic uncertainty for
+the certified formal four-block transverse incidence:
+`Delta^2=(H Delta)^2=(Delta H)^2=0`, so its normalized HPL maps terminate after
+one finite-order support-local correction.  The exact Kantowski--Sachs family
+does not retain only those four blocks.  With identity input coordinates and
+the output transported by `tf_g0`, a conformal-Killing symbol channel changes
+by `5 epsilon^2(epsilon^2-12)/144`; its linear term vanishes but its quadratic
+term does not.  The finite rank-310 differential must therefore include
+`k=Kp0` and `ksharp`, and C-G2 now waits on the six-block HPL calculation
+before any common-slab promotion.  This does not demote the formal tangent
+theorem or obstruct a different support-local identification.
 The analytic endpoint criterion is now background-independent:
 `TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1` proves that every exact endpoint
 `A=P2 P1+V` with normally hyperbolic factors and an order-at-most-two
