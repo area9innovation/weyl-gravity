@@ -1,0 +1,13 @@
+{
+  "id": "sf:forge-request/shadow-mode-adoption-hardening",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Harden ci/science-forge-shadow.sh into a reproducible advisory adoption rail suitable for local use and a non-required CI job. The first live run on 2026-07-19 exposed four integration gaps: automatic build failed because Go is installed through mise but absent from PATH; the temporary build log and certlab receipts were deleted even when the summary instructed the reader to inspect them; the script documents forge-v0.0.1 but defaults to an unverified development checkout/binary; and the coverage comparison is hard-coded to the old 820-certificate prose snapshot while a read-only scan found 976 certificates. With a manually built current Forge binary, the advisory run correctly exited zero while reporting bridge hash drift and coverage drift.",
+    "depends_on": [],
+    "stop_condition": "from a clean pinned checkout, one documented command runs the default advisory shadow rail with Go supplied either directly or through mise, verifies the Forge version and stdlib identity, writes build logs plus bridge receipt/DAG and coverage census to a caller-selected persistent SF_SHADOW_OUT directory, compares coverage against a machine-readable committed baseline, reports the exact bridge drift, and exits zero; a separate --strict mutation fixture exits nonzero, and the resulting artifacts are suitable for upload by a non-required CI job",
+    "forbid": "re-locking or refreshing baselines from a dirty shared worktree; deleting failure diagnostics; silently following tango/forge development HEAD when a pinned release was requested; turning the whole physics CI fail-closed before a clean family baseline exists; weakening certlab drift or verifier failures into passes; writing generated audit artifacts into either source tree by default; treating shadow import or a green advisory run as retroactive certification of legacy results"
+  }
+}
