@@ -1025,14 +1025,15 @@ cokernel criterion then supplies a bounded finite-quasiperiodic second-order
 correction on each of the six backgrounds.
 \end{proof}
 
-\begin{corollary}[Universal scalar rays and their lifts]\label{cor:collision-rays}
+\begin{corollary}[Universal scalar cone and bounded section]\label{cor:collision-rays}
 For every \(\rho>0\) on a same-sign \(n=(1,2)\) carrier, the nonnegative
 \((\mu_H,\mu_{P_x},R_c)\)-null occupation cone has exactly four extreme
 rays.  Each contains both Einstein-minus nodes and chooses one of
 \(p_{\rm extra},q_+\) independently on each momentum fibre.  On each of
 the six collision backgrounds (16)--(21), all four scalar extreme rays admit
-a nonzero bounded amplitude lift.  Thus all 24 candidatewise extreme rays
-survive the complete second-order test individually.
+a nonzero bounded amplitude lift.  More strongly, every point of each complete
+four-ray scalar cone has a bounded amplitude lift.  Thus the bounded cone
+projects surjectively onto the scalar occupation cone on all six backgrounds.
 \end{corollary}
 
 \begin{proof}
@@ -1060,6 +1061,17 @@ two on candidate (19)'s regular-pencil eigenline and two on candidate (21)'s
 mixed-parity component.  Independent fibre rescaling matches the extreme-ray
 occupations.  This proves ray saturation only; cross terms between different
 ray lifts can reactivate the bilinear resonance map.
+
+For occupation-surjectivity, do not add fixed ray representatives.  Instead,
+given an arbitrary point of the scalar cone, choose all occupied vectors
+axial and axisymmetric on candidates (16), (17), (18), and (20).  The odd-
+\(L\) coefficient then vanishes independently of the six occupation values.
+On (19) and (21), place the two resonant vectors on one fixed real mixed
+\(L=4\) component and rescale the two fibres independently to their prescribed
+absolute-current norms; choose all spectator vectors axial with \(m=0\).
+This defines a section on every cone face, including pairwise ray sums and the
+origin.  It does not imply that every amplitude in the fibre over a given
+occupation is bounded.
 \end{proof}
 
 \section{Current bounded frontier}
@@ -1265,8 +1277,12 @@ Six same-sign collision bounded witnesses &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.json}\\
 Universal same-sign scalar extreme rays &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.json}\\
+Candidatewise 120-minor/90-circuit scalar audit &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones.json}\\
 All 24 same-sign scalar extreme-ray lifts &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_extreme_ray_lifts.json}\\
+Bounded sections over the complete same-sign scalar cones &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_cone_sections.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1318,14 +1334,14 @@ bounded zero set.
 
 The immediate mathematical target is the full real component geometry of the
 six same-sign collision cones.  Their nonemptiness, same-fibre shell census,
-universal four-ray scalar projection, and all 24 extreme-ray lifts are now
-closed.
+universal four-ray scalar projection, all 24 extreme-ray lifts, and a bounded
+section over every scalar-cone point are now closed.
 The symbolic-\(\ell\) standard-branch resonance and collision theorem is now
 closed, as is the complete 164-coefficient two-momentum branch-basis census.
-The next exact enlargement is to classify pairwise sums of the four lifted
-ray strata, retaining relative phases and parity vectors, followed by joins
-of distinct \(|k|\) fibres without identifying their phase carriers or
-circumference backgrounds.
+The next exact enlargement is to classify the complete phase/parity fibre of
+the resonance-zero map over each scalar-cone face.  Occupation-level pairwise
+sums need not be retested.  This is followed by joins of distinct \(|k|\)
+fibres without identifying their phase carriers or circumference backgrounds.
 The immediate physical target is to compare its strata with the transferred
 Einstein/extra/Maxwell interaction tensor and with observer response.  A
 later causal theorem would replace the finite secular right inverses by

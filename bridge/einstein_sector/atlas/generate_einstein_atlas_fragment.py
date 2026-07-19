@@ -92,7 +92,9 @@ CERTIFICATES = {
     "same_sign_collision_same_fibre_census": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_same_fibre_census.json",
     "same_sign_collision_bounded_witnesses": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.json",
     "same_sign_scalar_extreme_rays": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.json",
+    "same_sign_scalar_candidate_audit": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones.json",
     "same_sign_extreme_ray_lifts": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_extreme_ray_lifts.json",
+    "same_sign_scalar_cone_sections": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_cone_sections.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
     "ell2_two_abs_momentum_candidate4_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json",
     "ell2_two_abs_momentum_axial_qminus_L4_triplet": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.json",
@@ -877,7 +879,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED","Moment-curve circuit alternation gives exactly four scalar-null extreme rays: both q-minus nodes and one positive branch on each fibre."),
             ("OPEN","This scalar projection does not impose rotations or the candidate-specific bilinear resonance maps."),
             _second_order(("OPEN","The four scalar extreme rays are necessary occupation strata; their amplitude lifts are certified in a separate row."),("OPEN","The scalar cone alone does not classify smooth amplitude sums."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
-            _evidence("same_sign_scalar_extreme_rays","collision_scalar_separation","same_sign_collision_same_fibre_census"),
+            _evidence("same_sign_scalar_extreme_rays","same_sign_scalar_candidate_audit","collision_scalar_separation","same_sign_collision_same_fibre_census"),
             "This is the complete scalar nonnegative occupation cone for any positive-rho same-sign fibre. It does not classify arbitrary amplitude sums, rotations, resonances, full bounded cones or higher lifecycles.",
         ),
         _entry(
@@ -891,6 +893,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","Every one of the 24 scalar extreme rays has a nonzero bounded finite-quasiperiodic amplitude lift."),("CERTIFIED","Each declared lift also has a finite smooth correction; arbitrary sums remain unclassified."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_extreme_ray_lifts","same_sign_scalar_extreme_rays","same_sign_collision_bounded_witnesses","same_sign_collision_same_fibre_census"),
             "This is scalar-extreme-ray saturation, not a classification of arbitrary nonnegative sums: phase/parity cross terms can reactivate the bilinear resonance. Full cone geometry and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_scalar_cone_sections",
+            _scope(theory="Weyl-Maxwell target", background="six distinct collision candidates 16--21, retained separately", boundaries="closed S1_L times S2 before final residual quotient", carrier="one explicit axisymmetric amplitude section over every point of each complete four-ray scalar occupation cone", degree=2, parity="all-axial on odd-L candidates; fixed real mixed parity on candidates 19 and 21", ell="input ell=2; candidate-specific output L=1,3,4", m=0, k="signed n=(1,2)", omega="arbitrary nonnegative occupations on all six generic shells subject to H/Px/Rc=0", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","The section retains every scalar-cone point on each of six distinct rho fibres; no cross-background identification is made."),
+            ("CERTIFIED","Absolute-current normalization supplies independent nonnegative fibre scaling on the fixed real zero components."),
+            ("CERTIFIED","Every section is axisymmetric and lies over the complete H/Px/Rc common-zero cone, so all six zero-frequency receivers vanish."),
+            ("CERTIFIED","The odd-L all-axial section and the two real L4 mixed sections kill the cross-fibre resonance for arbitrary scalar-cone occupations; all same-fibre channels are removable."),
+            _second_order(("CERTIFIED","The bounded cone projects surjectively onto the complete scalar occupation cone on every candidate 16--21."),("CERTIFIED","The declared section has finite smooth corrections; the full phase/parity fibres remain unclassified."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_scalar_cone_sections","same_sign_extreme_ray_lifts","same_sign_scalar_extreme_rays","same_sign_collision_same_fibre_census"),
+            "This is occupation-surjectivity, not a statement that every amplitude over a scalar-null occupation is bounded. The complete phase/parity fibres, full real components and higher lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload",
@@ -1703,6 +1717,18 @@ def build() -> dict[str, object]:
         raise AssertionError("same-sign scalar extreme-ray theorem changed")
     if scalar_rays["rotation_or_resonance_zero_loci_joined"] or scalar_rays["full_bounded_cones_classified"] or scalar_rays["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("same-sign scalar extreme-ray theorem exceeded scope")
+    scalar_audit = records["same_sign_scalar_candidate_audit"]["classification"]
+    if not (
+        scalar_audit["all_six_scalar_occupation_cones_classified"]
+        and scalar_audit["all_six_receiver_matrices_rank_three"]
+        and scalar_audit["all_120_support_three_minors_nonzero"]
+        and scalar_audit["all_90_support_four_circuits_classified"]
+        and scalar_audit["four_positive_extreme_rays_per_candidate"]
+        and scalar_audit["universal_extreme_support_combinatorics"]
+    ):
+        raise AssertionError("same-sign candidatewise scalar occupation audit changed")
+    if scalar_audit["full_rotation_and_resonance_join_classified"] or scalar_audit["cross_background_mode_identification_made"] or scalar_audit["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("same-sign candidatewise scalar occupation audit exceeded scope")
     ray_lifts = records["same_sign_extreme_ray_lifts"]["classification"]
     if not (
         ray_lifts["all_24_scalar_extreme_rays_have_nonzero_bounded_lifts"]
@@ -1713,6 +1739,17 @@ def build() -> dict[str, object]:
         raise AssertionError("same-sign extreme-ray lift theorem changed")
     if ray_lifts["arbitrary_nonnegative_sums_of_lifts_classified"] or ray_lifts["six_full_real_bounded_cones_classified"] or ray_lifts["all_orders_integrability"] or ray_lifts["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("same-sign extreme-ray lift theorem exceeded scope")
+    cone_sections = records["same_sign_scalar_cone_sections"]["classification"]
+    if not (
+        cone_sections["all_six_complete_scalar_cones_have_bounded_amplitude_sections"]
+        and cone_sections["bounded_to_scalar_occupation_projection_surjective"]
+        and cone_sections["all_scalar_cone_faces_and_pairwise_ray_sums_covered"]
+        and cone_sections["all_rotation_moment_maps_zero_on_sections"]
+        and cone_sections["all_cross_and_same_fibre_bounded_functionals_zero_on_sections"]
+    ):
+        raise AssertionError("same-sign scalar-cone section theorem changed")
+    if cone_sections["every_amplitude_over_each_scalar_occupation_bounded"] or cone_sections["six_full_phase_parity_fibres_classified"] or cone_sections["all_orders_integrability"] or cone_sections["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("same-sign scalar-cone section theorem exceeded scope")
     parity_workload = records["ell2_two_abs_momentum_parity_workload"]["classification"]
     if not (parity_workload["all_twenty_one_candidates_parity_typed"] and parity_workload["all_m_angular_nonvanishing_witnessed"] and parity_workload["odd_L_axisymmetric_fixtures_excluded"] and parity_workload["reduced_source_workload_complete"]):
         raise AssertionError("ell2 two-absolute-momentum parity workload changed")

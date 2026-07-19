@@ -2471,9 +2471,20 @@ on each fibre.  All 24 candidatewise extreme rays lift to bounded second-order
 points: ten by an absent resonant factor, ten by the odd-`L` axisymmetric
 zero, and four by the real `L=4` components on candidates 19 and 21.  The
 fail-closed atlas separates the scalar cone row from the amplitude-lift row.
-Arbitrary nonnegative sums are not promoted, because their phase/parity cross
-terms may reactivate the resonance; the next gate is the six candidatewise
-pairwise-sum classification.
+Arbitrary sums of those fixed representatives are not promoted, because
+their phase/parity cross terms may reactivate the resonance.  The next
+paragraph replaces that addition problem by a fresh section over the full
+occupation cone.
+
+The occupation-level pairwise gate is now superseded by a complete section
+theorem.  For candidates 16, 17, 18 and 20, an all-axial axisymmetric section
+kills the odd-`L` resonance independently of occupations.  For candidates 19
+and 21, one fixed real mixed `L=4` component is homogeneous under independent
+fibre scaling and matches arbitrary prescribed resonant-pair norms.  Hence
+the bounded cone maps surjectively onto every point of each four-ray scalar
+cone, including all faces and ray sums.  The remaining gate is not occupation
+existence but the full phase/parity resonance-zero fibre; the atlas keeps that
+geometry `OPEN` and all causal maps `NO_CERTIFIED_MAP`.
 
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at

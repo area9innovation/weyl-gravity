@@ -1,0 +1,20 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_SCALAR_CONE_SECTIONS_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "A bounded axisymmetric amplitude section over every point of each complete same-sign scalar occupation cone on candidates 16--21.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_cone_sections.json": "0948ba03ecfc30c8c6a7eccdf020284566ff781623f8a9f4d94e99f954ef31e3",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_scalar_cone_sections.py": "a4cc0d30ee661194362f54262862e55f2a4c3fa51679cc66a4f0893a7c707688",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_scalar_cone_sections.schema.json": "f6ca0127db3818b17211f89bd606a308e684a7650ebf56015f244a9e99ee4896",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_scalar_cone_sections.py": "a9d2295e6cd28c5ac15e87398a1fd9d9b24dfa737e77b219420e06887ef67752",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_scalar_cone_sections.py": "0e374d28b4920f16da552d3edec51b859a12e47269371212148a6516170dd530",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-scalar-cone-sections.md": "3e9cf6051b585a092d97d9f37cc5356c32e4a5e93a539de025ee8c3e7bc3ed2d"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <scoped JSON paths>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {"status": "PASS", "tests_run": 2, "elapsed_seconds": 0.024, "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_scalar_cone_sections --check", "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_scalar_cone_sections", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_scalar_cone_sections"]},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "reason": "The section theorem composes the universal scalar cone, 24 ray lifts, complete finite-harmonic cokernel criterion, standard/extra current signs, 864-defect same-fibre census and exact real L4 zero varieties."},
+    "tier_3": {"status": "NOT_RUN", "reason": "The complete phase/parity fibres, full real components, all-orders integration, causal correction and release preparation remain open."}
+  },
+  "claim_boundary": "The bounded cone projects surjectively onto each scalar occupation cone. This does not say every amplitude in an occupation fibre is bounded or classify the full phase/parity geometry."
+}

@@ -3747,8 +3747,22 @@ axisymmetric odd-`L` zero, and the last four use the real `L=4` components on
 candidates 19 and 21.  Atlas rows
 `einstein.ph.wm.interaction.ell2_same_sign_scalar_extreme_rays` and
 `einstein.ph.wm.interaction.ell2_same_sign_extreme_ray_lifts` record this
-ray-saturation theorem.  Arbitrary sums remain `OPEN` because cross terms can
-reactivate the bilinear resonance; pairwise sums are the next exact gate.
+ray-saturation theorem.  Adding those fixed representatives can reactivate
+the bilinear resonance, so occupation-level sums require a separately chosen
+section, supplied next.
+
+That pairwise occupation gate admits a stronger closure.  One does not add
+the previously selected ray representatives; one chooses a fresh amplitude
+section over the scalar cone.  The all-axial `m=0` section kills the odd-`L`
+resonance on candidates 16, 17, 18 and 20 for arbitrary occupations.  Fixed
+real mixed `L=4` components on 19 and 21 are homogeneous under independent
+fibre rescaling and therefore match any prescribed resonant-pair norms.  Thus
+the bounded cone projects surjectively onto the complete scalar cone on all
+six backgrounds, including all faces and pairwise sums.  What remains `OPEN`
+is the complete phase/parity fibre: other amplitudes over the same occupation
+may still resonate.  Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_scalar_cone_sections` records this
+distinction.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).

@@ -1,0 +1,181 @@
+{
+  "claim_boundary": "This proves a bounded section and occupation-surjectivity, not that every amplitude with scalar-null occupations is bounded, not a full real component decomposition, and not an all-orders or higher-lifecycle result.",
+  "classification": {
+    "all_cross_and_same_fibre_bounded_functionals_zero_on_sections": true,
+    "all_orders_integrability": false,
+    "all_rotation_moment_maps_zero_on_sections": true,
+    "all_scalar_cone_faces_and_pairwise_ray_sums_covered": true,
+    "all_six_complete_scalar_cones_have_bounded_amplitude_sections": true,
+    "bounded_to_scalar_occupation_projection_surjective": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "every_amplitude_over_each_scalar_occupation_bounded": false,
+    "six_full_phase_parity_fibres_classified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G4_COMPLETE_SCALAR_CONE_SECTION_ON_SIX_DISTINCT_COLLISION_BACKGROUNDS",
+  "interpretation": "There is no further occupation-level obstruction on the six same-sign backgrounds: every point of the scalar H/Px/Rc cone is realized by at least one bounded second-order tangent. The remaining nonlinear geometry is entirely in the phase, parity and angular fibres of the occupation map.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify the complete resonance-zero phase/parity fibre over each scalar-cone face; do not re-test occupation nonemptiness",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_scalar_cone_sections.py",
+    "generator_sha256": "a4cc0d30ee661194362f54262862e55f2a4c3fa51679cc66a4f0893a7c707688",
+    "inputs": {
+      "axial_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "candidate19": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_regular_pencil_L4_zero_varieties.json",
+        "sha256": "516c436c81ddc6d5829bbb98328e9214afb43de6717ba7ca06b62d39f7cd9333"
+      },
+      "candidate21": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L4_zero_varieties.json",
+        "sha256": "dbac3d2cf643fe8b062eb7aa2aefe74c012379ee0a525afbfd24bb375550477d"
+      },
+      "finite_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
+        "sha256": "dd1dec63c50d538a489205d48931720919ff9a43e23c52a45a9d1b80e5ff2513"
+      },
+      "isolated": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.json",
+        "sha256": "27fe530f6d296453e4eaf504eed688b6a2480cac18e0581e839898c7868e3450"
+      },
+      "polar_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      },
+      "ray_lifts": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_extreme_ray_lifts.json",
+        "sha256": "3af0cec7a7e684f5c41661769a8848455d2064b4120bb639f146208256e876c5"
+      },
+      "same_fibre": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_same_fibre_census.json",
+        "sha256": "ad7133a8fa789f4848a5d3fd7ff6afef68b155b03f2c4e84065cc947c708f1c4"
+      },
+      "scalar_rays": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.json",
+        "sha256": "a52e9cffefb8822790ce75763d70eff3111e0a4d7757aa62bc4042782bcc02fa"
+      },
+      "standard_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+        "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_SCALAR_CONE_SECTIONS",
+  "result_state": "BOUNDED_CONE_PROJECTS_SURJECTIVELY_ONTO_EACH_COMPLETE_SCALAR_CONE",
+  "schema": "einstein-maxwell-weyl-same-sign-scalar-cone-sections-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_scalar_cone_sections.schema.json",
+  "schema_sha256": "f6ca0127db3818b17211f89bd606a308e684a7650ebf56015f244a9e99ee4896",
+  "scope": {
+    "background": "six distinct collision candidates 16--21, retained separately",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "one explicit axisymmetric amplitude section over every point of each complete four-ray scalar occupation cone",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidatewise signed n=(1,-2) or (1,2), never identified across rho",
+    "m": "all m=-2,...,2",
+    "omega": "all generic q-minus, p-extra and q-plus positive-frequency shells",
+    "parity": "axial and polar",
+    "theory": "Weyl-Maxwell target"
+  },
+  "section_rows": [
+    {
+      "bounded_verdict": "EVERY_SCALAR_NULL_OCCUPATION_HAS_A_BOUNDED_AMPLITUDE_LIFT",
+      "candidate_index": 16,
+      "rho": "17*(79 + 51*sqrt(3))/132",
+      "rotation_zero": "all amplitudes have m=0, hence mu_J1=mu_J2=mu_J3=0",
+      "same_fibre": "all nonzero-frequency same-fibre channels are off shell",
+      "scalar_domain": "C=cone(R1,R2,R3,R4), including every face and the origin",
+      "scalar_zero": "the occupation y lies in C, hence mu_H=mu_Px=R_c=0",
+      "section": {
+        "amplitudes": "for every occupied node j choose axial m=0 amplitude sqrt(y_j/kappa_j), with kappa_j the positive absolute-current coefficient",
+        "method": "ALL_AXIAL_AXISYMMETRIC_ODD_L_SECTION",
+        "resonance_zero": "<2,0;2,0|3,0>=0 independently of the occupations"
+      }
+    },
+    {
+      "bounded_verdict": "EVERY_SCALAR_NULL_OCCUPATION_HAS_A_BOUNDED_AMPLITUDE_LIFT",
+      "candidate_index": 17,
+      "rho": "10*(9*sqrt(3) + 77)/8529",
+      "rotation_zero": "all amplitudes have m=0, hence mu_J1=mu_J2=mu_J3=0",
+      "same_fibre": "all nonzero-frequency same-fibre channels are off shell",
+      "scalar_domain": "C=cone(R1,R2,R3,R4), including every face and the origin",
+      "scalar_zero": "the occupation y lies in C, hence mu_H=mu_Px=R_c=0",
+      "section": {
+        "amplitudes": "for every occupied node j choose axial m=0 amplitude sqrt(y_j/kappa_j), with kappa_j the positive absolute-current coefficient",
+        "method": "ALL_AXIAL_AXISYMMETRIC_ODD_L_SECTION",
+        "resonance_zero": "<2,0;2,0|1,0>=0 independently of the occupations"
+      }
+    },
+    {
+      "bounded_verdict": "EVERY_SCALAR_NULL_OCCUPATION_HAS_A_BOUNDED_AMPLITUDE_LIFT",
+      "candidate_index": 18,
+      "rho": "(-12586 + 1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3))/25497",
+      "rotation_zero": "all amplitudes have m=0, hence mu_J1=mu_J2=mu_J3=0",
+      "same_fibre": "all nonzero-frequency same-fibre channels are off shell",
+      "scalar_domain": "C=cone(R1,R2,R3,R4), including every face and the origin",
+      "scalar_zero": "the occupation y lies in C, hence mu_H=mu_Px=R_c=0",
+      "section": {
+        "amplitudes": "for every occupied node j choose axial m=0 amplitude sqrt(y_j/kappa_j), with kappa_j the positive absolute-current coefficient",
+        "method": "ALL_AXIAL_AXISYMMETRIC_ODD_L_SECTION",
+        "resonance_zero": "<2,0;2,0|3,0>=0 independently of the occupations"
+      }
+    },
+    {
+      "bounded_verdict": "EVERY_SCALAR_NULL_OCCUPATION_HAS_A_BOUNDED_AMPLITUDE_LIFT",
+      "candidate_index": 19,
+      "rho": "(849 + 601*sqrt(3))/92",
+      "rotation_zero": "all amplitudes have m=0, hence mu_J1=mu_J2=mu_J3=0",
+      "same_fibre": "all nonzero-frequency same-fibre channels are off shell",
+      "scalar_domain": "C=cone(R1,R2,R3,R4), including every face and the origin",
+      "scalar_zero": "the occupation y lies in C, hence mu_H=mu_Px=R_c=0",
+      "section": {
+        "amplitudes": "place the resonant p_extra(n=1),q_minus(n=2) vectors on one fixed real mixed eigenline and scale each fibre by sqrt(y_j/kappa_j); choose every spectator axial m=0",
+        "component_id": "mixed_eigenline_1",
+        "method": "REAL_REGULAR_PENCIL_L4_SECTION",
+        "resonance_zero": "bilinearity preserves the mixed-eigenline zero under independent nonnegative fibre scaling, including boundary values"
+      }
+    },
+    {
+      "bounded_verdict": "EVERY_SCALAR_NULL_OCCUPATION_HAS_A_BOUNDED_AMPLITUDE_LIFT",
+      "candidate_index": 20,
+      "rho": "-10*(-77 + 9*sqrt(3))/8529",
+      "rotation_zero": "all amplitudes have m=0, hence mu_J1=mu_J2=mu_J3=0",
+      "same_fibre": "all nonzero-frequency same-fibre channels are off shell",
+      "scalar_domain": "C=cone(R1,R2,R3,R4), including every face and the origin",
+      "scalar_zero": "the occupation y lies in C, hence mu_H=mu_Px=R_c=0",
+      "section": {
+        "amplitudes": "for every occupied node j choose axial m=0 amplitude sqrt(y_j/kappa_j), with kappa_j the positive absolute-current coefficient",
+        "method": "ALL_AXIAL_AXISYMMETRIC_ODD_L_SECTION",
+        "resonance_zero": "<2,0;2,0|1,0>=0 independently of the occupations"
+      }
+    },
+    {
+      "bounded_verdict": "EVERY_SCALAR_NULL_OCCUPATION_HAS_A_BOUNDED_AMPLITUDE_LIFT",
+      "candidate_index": 21,
+      "rho": "(-153 + 24*sqrt(10) + 46*sqrt(30) + 197*sqrt(3))/222",
+      "rotation_zero": "all amplitudes have m=0, hence mu_J1=mu_J2=mu_J3=0",
+      "same_fibre": "all nonzero-frequency same-fibre channels are off shell",
+      "scalar_domain": "C=cone(R1,R2,R3,R4), including every face and the origin",
+      "scalar_zero": "the occupation y lies in C, hence mu_H=mu_Px=R_c=0",
+      "section": {
+        "amplitudes": "set A_polar=r*A_axial and B_polar=s*B_axial on m=0, normalize their absolute-current norms to y_qplus1,y_qminus2, and choose every spectator axial m=0",
+        "component_id": "mixed_plus",
+        "method": "REAL_SCALAR_MIXED_PARITY_L4_SECTION",
+        "r": "sqrt(99881907)*sqrt(-49546720*sqrt(30) + 186927408*sqrt(10) + 630178600*sqrt(3) + 3753721565)/1298464791",
+        "resonance_zero": "the two scalar L4 equations vanish identically on the real mixed-plus component and remain zero under independent fibre scaling",
+        "s": "-sqrt(-49546720*sqrt(30) + 186927408*sqrt(10) + 630178600*sqrt(3) + 3753721565)*(-14844963*sqrt(99881907) - 1091040*sqrt(332939690) + 198400*sqrt(998819070) + 8098440*sqrt(33293969))/18129148531899717"
+      }
+    }
+  ],
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_scalar_cone_sections --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_scalar_cone_sections",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_scalar_cone_sections"
+  ]
+}

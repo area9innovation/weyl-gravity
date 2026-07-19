@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_scalar_cone_sections.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "scope", "section_rows", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_SCALAR_CONE_SECTIONS"},
+    "section_rows": {"type": "array", "minItems": 6, "maxItems": 6}
+  },
+  "additionalProperties": true
+}

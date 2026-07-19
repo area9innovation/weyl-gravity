@@ -452,6 +452,14 @@ def verify() -> None:
         raise AssertionError("same-sign extreme-ray lift verdict changed")
     if ray_lift_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "not a classification of arbitrary nonnegative sums" not in ray_lifts["claim_boundary"]:
         raise AssertionError("same-sign extreme-ray lift row exceeded ray-saturation scope")
+    sections = by_id["einstein.ph.wm.interaction.ell2_same_sign_scalar_cone_sections"]
+    section_second = sections["mode_data"]["second_order"]
+    if sections["mode_data"]["resonance"]["status"] != "CERTIFIED" or "arbitrary scalar-cone occupations" not in sections["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("same-sign scalar-cone sections were hidden")
+    if section_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "projects surjectively" not in section_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("same-sign scalar-cone section verdict changed")
+    if section_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "not a statement that every amplitude" not in sections["claim_boundary"]:
+        raise AssertionError("same-sign scalar-cone section row exceeded occupation-surjectivity scope")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

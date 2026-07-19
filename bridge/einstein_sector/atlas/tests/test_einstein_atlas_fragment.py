@@ -159,6 +159,15 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("not a classification of arbitrary nonnegative sums", entry["claim_boundary"])
 
+    def test_same_sign_scalar_cones_have_bounded_sections(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_scalar_cone_sections"]
+        second = entry["mode_data"]["second_order"]
+        self.assertIn("arbitrary scalar-cone occupations", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("projects surjectively", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not a statement that every amplitude", entry["claim_boundary"])
+
     def test_first_two_abs_momentum_parity_workload_is_fail_closed(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
         second = entry["mode_data"]["second_order"]
