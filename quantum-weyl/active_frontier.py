@@ -68,6 +68,7 @@ DEPENDENCIES = {
     "generic_physical_hessian_n3_triangle_fixture": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_TRIANGLE_FIXTURE.json",
     "generic_physical_hessian_n3_five_carrier_projection": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_FIVE_CARRIER_PROJECTION.json",
     "generic_physical_hessian_n3_integration_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_INTEGRATION_OBSTRUCTION.json",
+    "generic_physical_hessian_curvature_squared": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_CURVATURE_SQUARED.json",
     "generic_background_ghost_CPT_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
@@ -183,6 +184,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "generic_physical_hessian_n3_triangle_fixture": "PHYSICAL_THREE_LINEAR_HESSIAN_TRIANGLE_OPERATIONAL_EXACT_INTERIOR_FIXTURE",
         "generic_physical_hessian_n3_five_carrier_projection": "PHYSICAL_THREE_H1_COMMON_NUMERATOR_AND_FIVE_CARRIER_PROJECTION_EXACT",
         "generic_physical_hessian_n3_integration_obstruction": "ISOLATED_PHYSICAL_THREE_H1_TRIANGLE_HAS_LOGARITHMIC_SIMPLEX_CORNER_OBSTRUCTION",
+        "generic_physical_hessian_curvature_squared": "ALGEBRAIC_CURVATURE_SQUARED_PHYSICAL_HESSIAN_IMPORTED_GAUGE_ORDERING_CROSSWALKED",
         "generic_background_ghost_CPT_obstruction": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
         "generic_ghost_Endo_Duhamel_reduction": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES",
         "generic_ghost_n1_n2_Hodge_resolvent_reduction": "CURVED_ENDO_N1_N2_REDUCED_EXACTLY_TO_FIVE_MINIMAL_VECTOR_SCALAR_RESOLVENT_CARRIERS",
@@ -235,6 +237,9 @@ def _load() -> dict[str, dict[str, Any]]:
     ]
     generic_physical_hessian_n3_obstruction = values[
         "generic_physical_hessian_n3_integration_obstruction"
+    ]
+    generic_physical_hessian_curvature_squared = values[
+        "generic_physical_hessian_curvature_squared"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -645,6 +650,28 @@ def _load() -> dict[str, dict[str, Any]]:
         is not False
     ):
         raise ValueError("physical-Hessian n=3 integration obstruction frontier drifted")
+    physical_h2_flags = generic_physical_hessian_curvature_squared.get(
+        "claim_flags", {}
+    )
+    if (
+        physical_h2_flags.get("ALGEBRAIC_CURVATURE_SQUARED_H2_IMPORTED")
+        is not True
+        or physical_h2_flags.get("GAUGE_ORDERING_COMMUTATOR_CROSSWALK_CERTIFIED")
+        is not True
+        or physical_h2_flags.get("ROUND_S4_H2_COMMUTATOR_SPLIT_CERTIFIED")
+        is not True
+        or physical_h2_flags.get("PHYSICAL_MIXED_H1_H2_TRACE_COMPUTED")
+        is not False
+        or generic_physical_hessian_curvature_squared.get(
+            "scalar_flat_restriction", {}
+        ).get("effective_term_count")
+        != 9
+        or generic_physical_hessian_curvature_squared.get(
+            "round_S4_crosscheck", {}
+        ).get("sum")
+        != "+24 K^2-16 K^2=+8 K^2"
+    ):
+        raise ValueError("physical-Hessian curvature-squared frontier drifted")
     if (
         generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
         != "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
@@ -2039,8 +2066,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_SAME_GAUGE_TRACELESS_PHYSICAL_HESSIAN_LINEAR_CURVATURE_ROWS_IMPORTED_FORMAL_ADJOINT_MOMENTUM_VERTEX_AND_EXACT_N3_INTERIOR_SIMPLEX_FIXTURE_COMPUTED_GENERIC_GHOST_N3_ALL_ELEVEN_FUNCTIONS_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_PHYSICAL_FULL_ALPHA_POLYNOMIAL_H2_MIXED_ROWS_GLOBAL_FINITE_CARRIERS_AND_REPOSITORY_ASSEMBLY_OPEN_Q1_UNDERDETERMINED",
-                "next_gate": "INTERPOLATE_PHYSICAL_N3_COMMON_NUMERATOR_PROJECT_TO_FIVE_CARRIERS_AND_IMPORT_CURVATURE_SQUARED_H2",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_SAME_GAUGE_TRACELESS_PHYSICAL_HESSIAN_H1_AND_ALGEBRAIC_H2_IMPORTED_PHYSICAL_THREE_H1_FIVE_CARRIER_PROJECTION_AND_M14_CORNER_OBSTRUCTION_CERTIFIED_MIXED_H1_H2_ROWS_GLOBAL_FINITE_CARRIERS_AND_REPOSITORY_ASSEMBLY_OPEN_Q1_UNDERDETERMINED",
+                "next_gate": "POLARIZE_SCALAR_FLAT_H2_AND_COMPUTE_EXACT_MIXED_H1_H2_TRACE_AGAINST_M14_CORNER_CLASS",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -2055,8 +2082,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_FIVE_UNIVERSAL_CPT_KERNELS_SAME_GAUGE_PHYSICAL_H1_LINEAR_CURVATURE_IMPORT_FORMAL_ADJOINT_MOMENTUM_VERTEX_EXACT_N3_INTERIOR_SIMPLEX_FIXTURE_AND_ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_FIXED_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_WEIGHTED_TRACE_SCALE_ROUND_S4_FINITE_ROWS_AND_ZETA_FACTORIZATION_DEFECT_COMPUTED_PHYSICAL_FULL_ALPHA_POLYNOMIAL_H2_MIXED_ROWS_GENERIC_BCH_GREEN_SPECTRAL_CARRIER_REPOSITORY_ASSEMBLY_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "INTERPOLATE_PHYSICAL_N3_COMMON_NUMERATOR_PROJECT_TO_FIVE_CARRIERS_AND_IMPORT_CURVATURE_SQUARED_H2",
+                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_FIVE_UNIVERSAL_CPT_KERNELS_SAME_GAUGE_PHYSICAL_H1_AND_ALGEBRAIC_H2_IMPORT_PHYSICAL_THREE_H1_FIVE_CARRIER_PROJECTION_M14_CORNER_OBSTRUCTION_AND_ALL_ELEVEN_GENERIC_GHOST_N3_FUNCTIONS_CERTIFIED_MIXED_H1_H2_ROWS_GENERIC_BCH_GREEN_SPECTRAL_CARRIER_REPOSITORY_ASSEMBLY_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "POLARIZE_SCALAR_FLAT_H2_AND_COMPUTE_EXACT_MIXED_H1_H2_TRACE_AGAINST_M14_CORNER_CLASS",
             },
         },
         "supersession_ledger": [
@@ -2290,7 +2317,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "INTERPOLATE_PHYSICAL_N3_COMMON_NUMERATOR_PROJECT_TO_FIVE_CARRIERS_AND_IMPORT_CURVATURE_SQUARED_H2",
+            "POLARIZE_SCALAR_FLAT_H2_AND_COMPUTE_EXACT_MIXED_H1_H2_TRACE_AGAINST_M14_CORNER_CLASS",
             "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
@@ -2388,8 +2415,11 @@ def build() -> dict[str, Any]:
             "and two unseen fixtures. At the symmetric point its isolated simplex integral "
             "contains a logarithmic M14 corner class: the exact relative rank jumps 49 to 50, "
             "a normalized dual witness certifies non-membership, and the total corner coefficient "
-            "is 1/2. The curvature-squared H2 layer and mixed H1-H2 rows must be tested against "
-            "that class, or an explicit subtraction fixed; no H2 cancellation is asserted. The "
+            "is 1/2. The algebraic curvature-squared H2 block is now imported from the projected "
+            "monic source operator with an exact gauge-ordering crosswalk. Nine nonzero rows survive "
+            "on the scalar-flat carrier, while the round-S4 split +24K^2-16K^2=+8K^2 replays the "
+            "known factorization. H2 must still be polarized and the mixed H1-H2 rows tested against "
+            "the corner class, or an explicit subtraction fixed; no cancellation is asserted. The "
             "global carrier and five repository form-factor assembly remain open. At the "
             "normalized symmetric point all eleven coordinates are integrated exactly in "
             "terms of one Clausen master. This is not the generic five repository functions; "

@@ -145,9 +145,13 @@ At the symmetric point, the isolated physical three-`H1` integral is now
 proved logarithmically corner obstructed. The `M14=e3/e2^4` carrier raises
 the exact relative-IBP-plus-master rank from 49 to 50, a normalized dual
 witness annihilates the declared rank-49 span and evaluates to one on `M14`,
-and the total corner coefficient is `1/2`. The curvature-squared Hessian and
-mixed rows must be tested against this class, or an explicit subtraction
-fixed; no cancellation is asserted.
+and the total corner coefficient is `1/2`. The projected algebraic
+curvature-squared Hessian is now imported: nine nonzero rows survive on the
+scalar-flat carrier, the gauge-ordering commutator is crosswalked exactly,
+and the round-`S4` split `+24 K^2-16 K^2=+8 K^2` replays the known monic
+factorization. It must still be polarized and its mixed `H1`-`H2` rows tested
+against the corner class, or an explicit subtraction fixed; no cancellation
+is asserted.
 The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
 and rational corner flux. Four explicit primitives cover every orientation,
@@ -479,8 +483,8 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. import the curvature-squared layer of the same-gauge physical Hessian and
-   compute the mixed first-/second-curvature trace rows;
+1. polarize the imported curvature-squared layer of the same-gauge physical
+   Hessian and compute the mixed first-/second-curvature trace rows;
 2. test their sum against the certified `M14` corner class, or fix an explicit
    renormalized subtraction, before integrating the physical five-carrier rows;
 3. supply the full generic primed Green kernel or spectral measure for the

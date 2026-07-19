@@ -235,7 +235,9 @@ or quantum-master-equation result.
   imports the same-gauge traceless metric Hessian through first curvature
   order as exact `V/N/U` ledgers, fixes the repository normalization, checks
   the scalar-flat and round-`S4` restrictions, and activates the physical
-  three-linear `n=3` vertex. The curvature-squared layer, mixed rows, tensor
+  three-linear `n=3` vertex. The projected algebraic curvature-squared block
+  is also imported with an exact gauge-ordering crosswalk and round-`S4`
+  normalization split. Its polarization, the mixed `H1`-`H2` trace, tensor
   triangle integration, and five form-factor assembly remain fail-closed.
 - [`reports/local-dimension-four-candidates.md`](reports/local-dimension-four-candidates.md)
   records the generated three-dimensional quadratic curvature ansatz, its

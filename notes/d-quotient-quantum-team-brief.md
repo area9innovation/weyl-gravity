@@ -970,9 +970,17 @@ logarithmically corner obstructed. Its `S3`-averaged numerator contains
 from 49 to 50, a normalized dual witness annihilates the complete declared
 rank-49 span and evaluates to one on `M14`, and the total logarithmic corner
 coefficient is `1/2`. Eight raw orientations have nonzero obstruction
-coordinate. The next gate is therefore the curvature-squared `H2` and mixed
-rows tested against this same class, or an explicit renormalized subtraction.
-No `H2` cancellation is asserted. The original
+coordinate. The projected monic algebraic curvature-squared `H2` block is
+now imported from a separately hash-pinned primary source. Its pure-Weyl
+specialization has 18 projected rows and nine effective nonzero scalar-flat
+rows. The source `d=1` derivative ordering differs from the repository `d=0`
+ordering by the exact monic `H1` carrier `2 (nabla.h) Ric (nabla.h)` and
+therefore does not change algebraic `H2`. On round `S4`, algebraic
+`H2=+24 K2` and the contracted-derivative `H1` commutator is `-16 K2`,
+reproducing the full monic `+8 K2` remainder. The next gate is therefore
+polarization and evaluation of the mixed `H1-H2` rows against the same
+`M14` class, or an explicit renormalized subtraction. No `H2` cancellation
+is asserted. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
@@ -994,8 +1002,8 @@ exact relative-simplex IBP primitives, a complete punctured-corner
 non-membership theorem, and complete exact `J`-plus-two-log integrated
 functions. The remaining coefficient gate begins with supplying the generic
 primed Green/spectral carrier needed to lift the exact round-`S4`
-finite benchmark, together with the curvature-squared Hessian layer and mixed
-rows required to test the now-certified physical `M14` corner class (or an
+finite benchmark, together with the polarized mixed `H1-H2` rows required to
+test the now-certified physical `M14` corner class (or an
 explicit subtraction prescription). The isolated three-linear integral may
 not be promoted before one of those routes closes.
 Those are followed by the five

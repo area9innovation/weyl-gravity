@@ -331,9 +331,11 @@ def main() -> None:
     assert payload["explicit_nonclaims"]["generic_ghost_renormalized_R_K"] is False
     assert payload["explicit_nonclaims"]["generic_ghost_finite_part_R_K2"] is False
     assert payload["explicit_nonclaims"]["full_generic_physical_Hessian"] is False
-    assert payload["explicit_nonclaims"][
-        "physical_curvature_squared_Hessian_layer"
-    ] is False
+    assert claims["physical_Hessian_algebraic_H2_imported"] is True
+    assert claims["physical_Hessian_H2_source_row_count"] == 18
+    assert claims["physical_Hessian_H2_scalar_flat_effective_row_count"] == 9
+    assert claims["physical_Hessian_H2_round_algebraic_eigenvalue"] == "+24 K^2 identity"
+    assert claims["physical_Hessian_H2_round_commutator_split"] == "+24 K^2-16 K^2=+8 K^2"
     assert claims["physical_n3_full_alpha_polynomial_computed"] is True
     assert claims["physical_n3_five_carrier_projection_computed"] is True
     assert claims["physical_n3_projection_training_fixture_count"] == 28
@@ -354,7 +356,7 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "IMPORT_PHYSICAL_H2_AND_MIXED_ROWS_THEN_TEST_CORNER_CLASS_OR_FIX_SUBTRACTION"
+        == "COMPUTE_MIXED_H1_H2_TRACE_THEN_TEST_CORNER_CLASS_OR_FIX_SUBTRACTION"
     )
 
     dependencies = {}
@@ -388,7 +390,7 @@ def main() -> None:
         "denominator": 6561,
     }
     assert claims["generic_ghost_n3_all_eleven_functions_computed"] is True
-    assert len(payload["inputs"]) == 49
+    assert len(payload["inputs"]) == 50
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -414,6 +416,9 @@ def main() -> None:
     cpt_kernels = dependencies["CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS"]
     physical_hessian_n3_fixture = dependencies[
         "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_TRIANGLE_FIXTURE"
+    ]
+    physical_hessian_h2 = dependencies[
+        "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_CURVATURE_SQUARED"
     ]
     physical_hessian_n3_obstruction = dependencies[
         "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_INTEGRATION_OBSTRUCTION"
@@ -515,6 +520,15 @@ def main() -> None:
     ]["completed_vertex_defect_count"] == 0
     assert physical_hessian_n3_fixture["claim_flags"][
         "PHYSICAL_N3_FIVE_CARRIER_PROJECTION_COMPUTED"
+    ] is False
+    assert physical_hessian_h2["claim_flags"][
+        "ALGEBRAIC_CURVATURE_SQUARED_H2_IMPORTED"
+    ] is True
+    assert physical_hessian_h2["claim_flags"][
+        "GAUGE_ORDERING_DOES_NOT_CHANGE_ALGEBRAIC_H2"
+    ] is True
+    assert physical_hessian_h2["claim_flags"][
+        "PHYSICAL_MIXED_H1_H2_TRACE_COMPUTED"
     ] is False
     assert physical_hessian_n3_obstruction["relative_quotient"][
         "symmetric_point_relative_IBP_plus_master_rank"

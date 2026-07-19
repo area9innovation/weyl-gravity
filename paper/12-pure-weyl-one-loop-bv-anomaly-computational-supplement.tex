@@ -1223,8 +1223,7 @@ $\tfrac12(A+2K)(A+4K)$.  The missing $+8K^2$ source term is retained as a
 negative control against promotion to a full generic Hessian.
 
 This input closes the tensor vertex
-$\operatorname{Tr}[(\mathcal H_0^{-1}\mathcal H_1)^3]$.  The
-curvature-squared $\mathcal H_2$ layer, mixed
+$\operatorname{Tr}[(\mathcal H_0^{-1}\mathcal H_1)^3]$.  The mixed
 $\mathcal H_1\mathcal H_2$ rows, tensor-triangle integration and five-carrier
 assembly remain open.
 
@@ -1239,6 +1238,63 @@ TEST="spectral.euclidean.tests.test_generic_background_physical_"
 TEST="${TEST}hessian_linear_curvature"
 PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 \end{verbatim}
+
+\subsection{Projected algebraic curvature-squared Hessian import}
+
+The missing zero-order block is imported from the projected monic $U$ in the
+linear-split appendix of Ohta--Percacci, arXiv:1506.05526.  The source archive
+and decompressed TeX hashes are respectively
+\begin{verbatim}
+f340a38925ea92a23b8ec0b08d0a871a77f549c79d7c41962158bcac6787fe39
+03b79eb2fa03754c04aa1e1d653d4690e7a44a7f48f9ad402826ea670a8529e0
+\end{verbatim}
+The exact pure-Weyl specialization is
+\[
+ (\alpha,\beta,\gamma)=\left(\frac16,-1,\frac12\right),
+ \qquad K=\frac14P,
+ \qquad \mathcal H_2=4PWP.
+\]
+All eighteen projected rows are retained.  Six are killed by the traceless
+projector, one has the exact zero coefficient $\beta/2+\gamma=0$, and nine
+nonzero rows survive after imposing $R=0$.
+
+The source choice $(c,d)=(2/3,1)$ and repository choice
+$(-1/3,0)$ obey the same minimality condition $c-d=-1/3$.  Their exact
+ordering difference is
+\[
+ S_{\rm gf}(0)-S_{\rm gf}(1)
+ =\frac12\int\!\sqrt g\,
+ (\nabla\!\cdot h)_\mu R^{\mu\nu}(\nabla\!\cdot h)_\nu,
+\]
+or $\mathcal H_{1,\rm repo}-\mathcal H_{1,\rm src}=2G_{\rm Ric}$ in the
+monic Hessian.  Five rational component fixtures give the ratio two exactly.
+Because this carrier is linear in background curvature and differentiated in
+both fluctuation slots, it changes $\mathcal H_1$ but not algebraic
+$\mathcal H_2$.
+
+As a normalization guard, the thirteen unprojected source-$W$ rows evaluated
+on a unit round-$S^4$ TT tensor contribute
+\[
+ (18,-8,-6,6,36,0,32,0,0,-18,0,0,-36),
+\]
+which sum to $24$.  The separately known contracted-derivative contribution
+from $\mathcal H_1$ is $-16$, leaving the monic round remainder $+8$.
+
+\begin{verbatim}
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}curvature_squared"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
+MOD="${MOD}curvature_squared"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+TEST="spectral.euclidean.tests.test_generic_background_physical_"
+TEST="${TEST}hessian_curvature_squared"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+This closes the algebraic $\mathcal H_2$ input, not the physical coefficient
+row.  Polarization, the mixed $\mathcal H_1\mathcal H_2$ trace and its
+$M_{14}$ disposition remain open.
 
 \subsection{Exact physical three-linear interior triangle fixture}
 
@@ -1278,8 +1334,7 @@ Their common $\Delta^{-4}$ numerator and final kernel are respectively
 \]
 This nonzero value is one generic interior fixture.  The separate projection
 receipt below closes the full alpha polynomial and five-carrier projection;
-the integrated triangle, curvature-squared Hessian layer and mixed rows remain
-fail-closed.
+the integrated triangle and mixed rows remain fail-closed.
 
 \begin{verbatim}
 MOD="spectral.euclidean.generic_background_physical_hessian_"
@@ -1332,7 +1387,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 
 The exhaustive generator uses \texttt{--check}; its exact fixture coordinates are
 content-addressed under ignored build storage.  Neither rail integrates the
-generic simplex rows or supplies $\mathcal H_2$.
+generic simplex rows or supplies the mixed $\mathcal H_1\mathcal H_2$ trace.
 
 \subsection{\texorpdfstring{Exact obstruction to isolated three-$\mathcal H_1$ integration}{Exact obstruction to isolated three-H1 integration}}
 
@@ -1364,9 +1419,9 @@ $M_{14}$ coefficients are $15/2$ for $I_{10}$, $17/18$ for each $I_{24}$,
 $-121/9$ for each $I_{25}$, zero for each $I_{28}$, and $176/3$ for
 $I_{29}$.  Thus the isolated physical three-$\mathcal H_1$ trace is
 logarithmically corner divergent.  This is a minimal-missing-input theorem:
-the $\mathcal H_2$/mixed completion must be tested against the same class, or
-an explicit renormalized subtraction must be fixed.  It is not a proof that
-$\mathcal H_2$ cancels the class.
+the imported $\mathcal H_2$ must be polarized and the mixed completion tested
+against the same class, or an explicit renormalized subtraction must be
+fixed.  It is not a proof that $\mathcal H_2$ cancels the class.
 
 \begin{verbatim}
 MOD="spectral.euclidean.generic_background_physical_hessian_"
@@ -1477,8 +1532,8 @@ $K$, $K^2$, and logarithmic residues and the declared order-two
 weighted-trace pole/scale row are fixed.  On round $S^4$ the two finite trace
 rows, canonical $\det_3$ tail, weighted modified determinant, and
 zeta-to-weighted defect $5/3$ are complete.  Their generic finite versions,
-the physical tensor-triangle integral and curvature-squared Hessian layer
-remain unevaluated; the selected generic
+the physical tensor-triangle integral and mixed $\mathcal H_1\mathcal H_2$
+trace remain unevaluated; the selected generic
 weight-raised BCH residue is exact.
 
 \begin{verbatim}
@@ -1576,7 +1631,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 The result is the parametric $n=3$ ghost contribution in the declared
 scalar-flat quotient section. The generic kinematic simplex integrals,
 normalized longitudinal Schur $\mathcal R(K)$ and finite $\mathcal R(K^2)$
-rows, physical tensor triangle and curvature-squared Hessian rows, and their complete sum into five
+rows, physical tensor triangle and mixed $\mathcal H_1\mathcal H_2$ rows, and their complete sum into five
 repository functions and coefficients remain open.
 
 \subsection{Generic barycentric factorization}
@@ -1760,8 +1815,8 @@ The first command is the fast stored-artifact tier.  The second independently
 replays the exact 46-column solve and full identity.  The producer's
 approximately 45-second reconstruction is reserved for the publication tier.
 All eleven generic ghost $n=3$ functions are now complete; the full ghost
-determinant, physical tensor-triangle integration, curvature-squared Hessian
-layer and repository form-factor assembly remain open.
+determinant, physical tensor-triangle integration, mixed
+$\mathcal H_1\mathcal H_2$ trace and repository form-factor assembly remain open.
 
 \subsection{Exact symmetric-point simplex integration}
 
@@ -1995,7 +2050,7 @@ The next theorem requires actual new physical input:
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
 	\item integration of the now-projected physical three-linear tensor
-triangle and import of the curvature-squared Hessian layer and mixed rows,
+triangle and evaluation of the polarized mixed $\mathcal H_1\mathcal H_2$ rows,
 followed by assembly of the five
 repository parity-even third-curvature form-factor functions and coefficients,
 the parity-odd derivative carrier manifest, finite

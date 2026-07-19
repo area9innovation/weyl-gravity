@@ -151,9 +151,10 @@ For squared external momenta `(10,9,5)` and simplex point
 `(7/15,1/5,1/3)`, all four Wick orders combine to the nonzero exact kernel
 `-3532544138843839/319810083840000` before `(4 pi)^-2`.  This tests the
 source-row Fourier map, adjunction, loop routing and Wick reduction at one
-generic point.  The full alpha polynomial, five-carrier projection,
-integrated tensor triangle, curvature-squared Hessian layer and mixed rows
-remain open.
+generic point.  The full alpha polynomial and five-carrier projection are
+now exact, and the projected algebraic curvature-squared Hessian is imported
+with its gauge-ordering crosswalk.  The integrated tensor triangle, `H2`
+polarization and mixed `H1`-`H2` rows remain open.
 
 Replay with:
 

@@ -459,7 +459,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "INTERPOLATE_PHYSICAL_N3_COMMON_NUMERATOR_PROJECT_TO_FIVE_CARRIERS_AND_IMPORT_CURVATURE_SQUARED_H2",
+            "POLARIZE_SCALAR_FLAT_H2_AND_COMPUTE_EXACT_MIXED_H1_H2_TRACE_AGAINST_M14_CORNER_CLASS",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

@@ -927,9 +927,9 @@ Ricci-flat local \(b_4\) match and principal-symbol sequence do not determine
 those generic-background trace substitutions.  Consequently no repository
 third-curvature function or coefficient is inferred by summing bundle ranks.
 The minimal missing physical input was therefore a same-gauge
-generic-background metric Hessian.  The next proposition closes its complete
-linear-curvature layer while retaining the curvature-squared layer as an
-explicit open edge.
+generic-background metric Hessian.  The next propositions close its complete
+linear-curvature layer and import its projected algebraic curvature-squared
+block, while retaining the mixed trace as an explicit open edge.
 \end{proposition}
 
 \begin{proposition}[Same-gauge physical-Hessian linear-curvature import]
@@ -1010,10 +1010,59 @@ The common inverse boxes belong to the declared $K/\mathrm{Ricci}$ carrier
 coordinate and are not asserted to be new physical poles.
 
 This closes the full-alpha and five-carrier-projection subgate.  It does not
-integrate the generic tensor triangle, supply the curvature-squared
-$\mathcal H_2$ layer, compute the mixed $\mathcal H_1\mathcal H_2$ rows, or
-assemble the five complete repository form factors.  Those are the next
-coefficient-bearing gates.
+integrate the generic tensor triangle, compute the mixed
+$\mathcal H_1\mathcal H_2$ rows, or assemble the five complete repository
+form factors.  The algebraic $\mathcal H_2$ input is supplied next.
+\end{proposition}
+
+\begin{proposition}[Physical algebraic curvature-squared Hessian import]
+For the linear background split, Ohta and Percacci~\cite{OhtaPercacci}
+print the projected monic zero-order tensor $U$ of the quadratic-curvature
+Hessian.  Specializing their couplings to
+\[
+ (\alpha,\beta,\gamma)=\left(\frac16,-1,\frac12\right),
+ \qquad
+ \alpha R^2+\beta R_{\mu\nu}^2+\gamma R_{\mu\nu\rho\sigma}^2
+ =\frac12 C^2,
+\]
+gives $K=1/4$ on the traceless bundle and hence monic
+$\mathcal H_2=4PWP$.  The exact ledger retains all eighteen projected rows,
+including six trace-null rows and the source cancellation
+$(\beta/2+\gamma)R_{\mu\alpha}R_{\nu\beta}=0$.  Nine nonzero rows survive on
+the scalar-flat domain.
+
+The source orders the auxiliary gauge operator with
+$(c,d)=(2/3,1)$, whereas the repository operator corresponds to
+$(c,d)=(-1/3,0)$ at the common constraint $c-d=-1/3$.  Their difference is
+not an untracked change of $\mathcal H_2$:
+\[
+ Y_d-Y_0=d[\nabla_\mu,\nabla_\nu],
+ \qquad
+ S_{\rm gf}(0)-S_{\rm gf}(1)
+ =\frac12\int\!\sqrt g\,\chi_\mu R^{\mu\nu}\chi_\nu,
+ \quad \chi_\mu=\nabla^\nu h_{\mu\nu}.
+\]
+In monic-Hessian normalization this is the exact linear-curvature carrier
+\[
+ \mathcal H_{1,\rm repo}-\mathcal H_{1,\rm src}=2G_{\rm Ric},
+ \qquad
+ G_{\rm Ric}(L,H)=(\nabla\!\cdot L)_\mu
+ R^{\mu\nu}(\nabla\!\cdot H)_\nu .
+\]
+It contains one background Ricci tensor and derivatives on both
+fluctuations, so it changes $\mathcal H_1$ and contributes zero to the
+algebraic curvature-squared $\mathcal H_2$ block.
+
+On round $S^4$ the thirteen source-$W$ contributions sum exactly to
+$+24K^2$ on TT tensors.  This is not the full order-$K^2$ remainder:
+contracted derivative indices in $\mathcal H_1$ contribute $-16K^2$, and
+\[
+ 24K^2-16K^2=8K^2
+\]
+reproduces the monic factorization $(A+2K)(A+4K)$.  This closes the algebraic
+$\mathcal H_2$ input.  Its polarization, the mixed
+$\mathcal H_1\mathcal H_2$ trace and the test against the certified
+$M_{14}$ corner class remain open; no cancellation is asserted.
 \end{proposition}
 
 \begin{proposition}[Generic ghost obstruction to direct minimal-CPT matching]
@@ -1104,7 +1153,7 @@ tensor projection: the zero-derivative sector can feed $I_{10}$ and the
 longitudinal sectors can feed $I_{24},I_{25},I_{28},I_{29}$.  The next
 proposition performs that projection.  The curved-Endo one-/two-insertion
 rows are reduced to minimal resolvent carriers below; their evaluation and
-the curvature-squared physical-Hessian layer remain separate open
+the polarized mixed physical-Hessian trace remain separate open
 calculations.
 \end{proposition}
 
@@ -1704,7 +1753,7 @@ All six $S_3$ relabellings vanish exactly.  At the symmetric point,
 which agrees with the independent simplex integration below.  Hence all
 eleven generic scalar-flat ghost $n=3$ functions are complete.  This does not
 assemble the full ghost determinant, determine the five repository form
-factors, or supply the missing curvature-squared physical-Hessian layer.
+factors, or evaluate the polarized mixed physical-Hessian trace.
 \end{proposition}
 
 \begin{proposition}[Exact symmetric-point ghost triangle fixture]
@@ -1790,9 +1839,9 @@ Eight raw orientations have a nonzero $M_{14}$ coefficient: $I_{10}$, all
 three $I_{24}$ rows, all three $I_{25}$ rows, and $I_{29}$; all three
 $I_{28}$ rows have zero coefficient in this obstruction coordinate.
 Therefore the isolated three-$\mathcal H_1$ trace is not a finite physical
-simplex integral.  The curvature-squared $\mathcal H_2$ and mixed rows must
-be added and tested against the same class, or a renormalized subtraction
-must be fixed.  No cancellation by $\mathcal H_2$ is asserted.
+simplex integral.  The imported curvature-squared $\mathcal H_2$ must now be
+polarized and its mixed rows tested against the same class, or a renormalized
+subtraction must be fixed.  No cancellation by $\mathcal H_2$ is asserted.
 \end{proposition}
 
 \section{What does not follow}
@@ -1846,13 +1895,14 @@ round $S^4$.  The smoothing theorem shows that the generic finite counterparts
 still require a full primed Green/spectral carrier.  All eleven generic
 ghost $n=3$ functions, including the pole-four $I_{29}$ row, are complete.
 The same-gauge physical Hessian is now imported through first curvature
-order; its formally self-adjoint momentum vertex, full three-linear alpha
-polynomial and exact five-carrier projection are fixed.  The isolated
-three-$\mathcal H_1$ simplex integral is now proved logarithmically corner
-obstructed at the symmetric point; its finite integration requires the
-$\mathcal H_2$/mixed completion or an explicit subtraction.  The
-generic primed Green/spectral carrier and the
-curvature-squared Hessian layer, hence the
+order together with its projected algebraic curvature-squared block; the
+gauge-ordering commutator and round-$S^4$ split are exact.  Its formally
+self-adjoint momentum vertex, full three-linear alpha polynomial and exact
+five-carrier projection are fixed.  The isolated three-$\mathcal H_1$
+simplex integral is logarithmically corner obstructed at the symmetric point;
+its finite integration requires the polarized mixed
+$\mathcal H_1\mathcal H_2$ completion or an explicit subtraction.  The
+generic primed Green/spectral carrier and mixed physical trace, hence the
 five complete repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
@@ -1893,6 +1943,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json}.
 \item \cert{quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_CURVATURE_SQUARED.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_TRIANGLE_FIXTURE.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_FIVE_CARRIER_PROJECTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_N3_INTEGRATION_OBSTRUCTION.json}.
@@ -2020,9 +2071,9 @@ The immediate local-to-residual question is now sharp.  The pole-four
 $I_{29}$ row and all ten pole-three ghost rows are already reduced to the
 certified triangle/log master system.  Interpolate the exact common numerator
 from the now-operational physical three-linear fixture, project it onto the
-five scalar-flat carriers, and integrate that tensor triangle; then import its
-curvature-squared layer and mixed first/second-curvature trace rows, and then
-complete the substitutions needed to match
+five scalar-flat carriers, and integrate that tensor triangle; polarize the
+imported curvature-squared block and compute the mixed first/second-curvature
+trace rows; then complete the substitutions needed to match
 the five imported universal CPT kernels to repository parity-even third-
 curvature form-factor functions and coefficients on the certified carrier
 quotient, and classify the parity-odd derivative
@@ -2097,6 +2148,14 @@ A.~O. Barvinsky, G.~H.~S. Camargo, A.~E. Kalugin, N.~Ohta, and I.~L. Shapiro,
 Phys. Rev. D \textbf{108} (2023), 086018,
 \href{https://doi.org/10.1103/PhysRevD.108.086018}
 {doi:10.1103/PhysRevD.108.086018}.
+
+\bibitem{OhtaPercacci}
+N.~Ohta and R.~Percacci,
+\emph{Ultraviolet fixed points in conformal gravity and general quadratic
+theories},
+Class. Quantum Grav. \textbf{33} (2016), 035001,
+\href{https://doi.org/10.1088/0264-9381/33/3/035001}
+{doi:10.1088/0264-9381/33/3/035001}.
 
 \bibitem{Riegert}
 R.~J. Riegert,

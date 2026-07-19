@@ -1,0 +1,606 @@
+{
+  "claim_boundary": "This is a LOCAL-ALGEBRAIC and EUCLIDEAN-SPECTRAL physical-Hessian input certificate. It supplies algebraic H2 but neither completes the physical determinant nor changes the QME or Lorentzian lifecycle state.",
+  "claim_flags": {
+    "ALGEBRAIC_CURVATURE_SQUARED_H2_IMPORTED": true,
+    "GAUGE_ORDERING_COMMUTATOR_CROSSWALK_CERTIFIED": true,
+    "GAUGE_ORDERING_DOES_NOT_CHANGE_ALGEBRAIC_H2": true,
+    "PHYSICAL_M14_CORNER_CLASS_DISPOSED": false,
+    "PHYSICAL_MIXED_H1_H2_TRACE_COMPUTED": false,
+    "PHYSICAL_THIRD_CURVATURE_FUNCTIONS_COMPLETE": false,
+    "ROUND_S4_H2_COMMUTATOR_SPLIT_CERTIFIED": true,
+    "SCALAR_FLAT_H2_VERTEX_READY": true
+  },
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "coupling_specialization": {
+    "Euler_policy": "the pure C^2 representative is used directly; no Euler-equivalent raw W representative is substituted",
+    "identity": "alpha R^2+beta Ric^2+gamma Riem^2=(1/2)C^2",
+    "leading_K_on_traceless_bundle": {
+      "denominator": 4,
+      "numerator": 1
+    },
+    "monic_left_factor": {
+      "denominator": 1,
+      "numerator": 4
+    },
+    "pure_Weyl_choice": {
+      "alpha": {
+        "denominator": 6,
+        "numerator": 1
+      },
+      "beta": {
+        "denominator": 1,
+        "numerator": -1
+      },
+      "gamma": {
+        "denominator": 2,
+        "numerator": 1
+      }
+    },
+    "source_action": "alpha R^2+beta Ric^2+gamma Riem^2"
+  },
+  "dependencies": {
+    "physical_H1": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE.json",
+      "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_LINEAR_CURVATURE",
+      "sha256": "b8fd2da678cb64d0bae6adaacb888beb49af3d3e45ddd9bce93005fb9018e9f9"
+    },
+    "round_S4_TT_hessian": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1.json",
+      "result_id": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
+      "sha256": "64b3d13ae34128530c2e71f3d3fb48faf543adaf544a89ee319fbe034d41ece3"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "gauge_ordering_crosswalk": {
+    "common_trace_gauge": "h=0 so chi_mu=nabla^nu h_mu_nu",
+    "commutator_convention": "[nabla_mu,nabla_nu]chi^nu=Ric_mu_rho chi^rho",
+    "curvature_squared_consequence": "the ordering correction has one background Ricci tensor and derivatives on both fluctuations, hence contributes to H1 and contributes zero to algebraic H2",
+    "exact_fixture_ledger": [
+      {
+        "G_Ric": {
+          "denominator": 10,
+          "numerator": 29
+        },
+        "fixture": "F1",
+        "ratio": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "repository_minus_source": {
+          "denominator": 5,
+          "numerator": 29
+        }
+      },
+      {
+        "G_Ric": {
+          "denominator": 10,
+          "numerator": -61
+        },
+        "fixture": "F2",
+        "ratio": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "repository_minus_source": {
+          "denominator": 5,
+          "numerator": -61
+        }
+      },
+      {
+        "G_Ric": {
+          "denominator": 6,
+          "numerator": -1
+        },
+        "fixture": "F3",
+        "ratio": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "repository_minus_source": {
+          "denominator": 3,
+          "numerator": -1
+        }
+      },
+      {
+        "G_Ric": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "fixture": "F4",
+        "ratio": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "repository_minus_source": {
+          "denominator": 1,
+          "numerator": -2
+        }
+      },
+      {
+        "G_Ric": {
+          "denominator": 30,
+          "numerator": 53
+        },
+        "fixture": "F5",
+        "ratio": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "repository_minus_source": {
+          "denominator": 15,
+          "numerator": 53
+        }
+      }
+    ],
+    "minimality_constraint": "c-d=-1/3",
+    "monic_H1_difference": "H1_repository-H1_source=2 G_Ric, G_Ric(L,H)=(nabla.L)_mu Ric^mu_nu (nabla.H)^nu",
+    "operator_difference": "Y_d-Y_0=d[nabla_mu,nabla_nu]",
+    "quadratic_action_difference": "S_gf(d=0)-S_gf(d=1)=(1/2) integral chi_mu Ric^mu_nu chi^nu",
+    "repository_ordering": {
+      "c": {
+        "denominator": 3,
+        "numerator": -1
+      },
+      "d": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    "source_ordering": {
+      "c": {
+        "denominator": 3,
+        "numerator": 2
+      },
+      "d": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    }
+  },
+  "lifecycle_state": "COEFFICIENT_INPUT_IMPORTED_MIXED_TRACE_OPEN",
+  "negative_controls": {
+    "mixed_trace_promotion": {
+      "reason": "H2 is imported but its polarization, mixed trace, carrier projection and integration have not been computed",
+      "rejected": true
+    },
+    "raw_W_without_projection": {
+      "reason": "the operational tensor must be PWP and multiplied by K^-1 on the rank-nine bundle",
+      "rejected": true
+    },
+    "round_remainder_identification": {
+      "reason": "+24 K2 is algebraic U2 only; the full round remainder is +8 K2 after the H1 derivative commutator",
+      "rejected": true
+    }
+  },
+  "next_gate": "POLARIZE_SCALAR_FLAT_H2_AND_COMPUTE_EXACT_MIXED_H1_H2_TRACE_AGAINST_M14_CORNER_CLASS",
+  "result_id": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_CURVATURE_SQUARED",
+  "result_state": "ALGEBRAIC_CURVATURE_SQUARED_PHYSICAL_HESSIAN_IMPORTED_GAUGE_ORDERING_CROSSWALKED",
+  "round_S4_crosscheck": {
+    "algebraic_U2_on_TT": "+24 K^2 identity",
+    "full_monic_round_operator": "A^2+6KA+8K^2=(A+2K)(A+4K)",
+    "interpretation": "the algebraic H2 block is not the full order-K2 round remainder; contracted derivative indices in H1 supply the separate -16 K2 commutator row",
+    "linear_block_commutator_contribution_at_order_K2": "-16 K^2 identity",
+    "repository_functional_Hessian_sum": "+12 K^2-8 K^2=+4 K^2",
+    "sectional_curvature_symbol": "K",
+    "source_W_term_contributions_to_TT_eigenvalue": [
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 18
+        },
+        "term_id": "W01"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -8
+        },
+        "term_id": "W02"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -6
+        },
+        "term_id": "W03"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 6
+        },
+        "term_id": "W04"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 36
+        },
+        "term_id": "W05"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "term_id": "W06"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 32
+        },
+        "term_id": "W07"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "term_id": "W08"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "term_id": "W09"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -18
+        },
+        "term_id": "W10"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "term_id": "W11"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "term_id": "W12"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -36
+        },
+        "term_id": "W13"
+      }
+    ],
+    "sum": "+24 K^2-16 K^2=+8 K^2"
+  },
+  "scalar_flat_restriction": {
+    "algebraic_H2_complete_on_declared_domain": true,
+    "condition": "R=0",
+    "effective_nonzero_tracefree_term_ids": [
+      "H201",
+      "H208",
+      "H209",
+      "H211",
+      "H212",
+      "H213",
+      "H215",
+      "H216",
+      "H217"
+    ],
+    "effective_term_count": 9
+  },
+  "schema": "quantum-weyl-generic-background-physical-hessian-curvature-squared-v1",
+  "scope": {
+    "background": "generic local oriented metric; round-S4 and scalar-flat restrictions recorded",
+    "curvature_order": "algebraic second order only",
+    "dimension": 4,
+    "excluded": [
+      "two derivatives acting on one background curvature (already in the H1 U block)",
+      "mixed H1/H2 functional traces at third curvature order",
+      "global Green, spectral-cut, contour and zero-mode data"
+    ],
+    "field_bundle": "traceless symmetric rank-two metric fluctuations; pointwise rank nine",
+    "operator_order": 4,
+    "signature": "Euclidean"
+  },
+  "source_operator": {
+    "coefficient_rows": [
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": true,
+        "seed": "(R^2/6-Ric^2+Riem^2/2)(g_mn g_ab-g_ma g_nb)",
+        "source_cancellation": false,
+        "term_id": "H201",
+        "total_engineering_order": 4,
+        "tracefree_null": false
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": false,
+        "seed": "R g_nb Ric_ma",
+        "source_cancellation": false,
+        "term_id": "H202",
+        "total_engineering_order": 4,
+        "tracefree_null": false
+      },
+      {
+        "coefficient": {
+          "denominator": 2,
+          "numerator": -1
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": false,
+        "seed": "R g_ab Ric_mn",
+        "source_cancellation": false,
+        "term_id": "H203",
+        "total_engineering_order": 4,
+        "tracefree_null": true
+      },
+      {
+        "coefficient": {
+          "denominator": 2,
+          "numerator": -1
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": false,
+        "seed": "R g_mn Ric_ab",
+        "source_cancellation": false,
+        "term_id": "H204",
+        "total_engineering_order": 4,
+        "tracefree_null": true
+      },
+      {
+        "coefficient": {
+          "denominator": 3,
+          "numerator": 1
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": false,
+        "seed": "R Riem_manb",
+        "source_cancellation": false,
+        "term_id": "H205",
+        "total_engineering_order": 4,
+        "tracefree_null": false
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": true,
+        "seed": "g_ab Ric_mr Ric_n^r",
+        "source_cancellation": false,
+        "term_id": "H206",
+        "total_engineering_order": 4,
+        "tracefree_null": true
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": true,
+        "seed": "Ric_ma Ric_nb",
+        "source_cancellation": true,
+        "term_id": "H207",
+        "total_engineering_order": 4,
+        "tracefree_null": false
+      },
+      {
+        "coefficient": {
+          "denominator": 3,
+          "numerator": 2
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": true,
+        "seed": "Ric_mn Ric_ab",
+        "source_cancellation": false,
+        "term_id": "H208",
+        "total_engineering_order": 4,
+        "tracefree_null": false
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -2
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": true,
+        "seed": "g_nb Ric_mr Ric_a^r",
+        "source_cancellation": false,
+        "term_id": "H209",
+        "total_engineering_order": 4,
+        "tracefree_null": false
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": true,
+        "seed": "g_ab Ric^rl Riem_rm ln",
+        "source_cancellation": false,
+        "term_id": "H210",
+        "total_engineering_order": 4,
+        "tracefree_null": true
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -4
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": true,
+        "seed": "g_nb Ric^rl Riem_mr al",
+        "source_cancellation": false,
+        "term_id": "H211",
+        "total_engineering_order": 4,
+        "tracefree_null": false
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 12
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": true,
+        "seed": "Ric^r_m Riem_rabn",
+        "source_cancellation": false,
+        "term_id": "H212",
+        "total_engineering_order": 4,
+        "tracefree_null": false
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 8
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": true,
+        "seed": "Riem_ram l Riem_nb^rl",
+        "source_cancellation": false,
+        "term_id": "H213",
+        "total_engineering_order": 4,
+        "tracefree_null": false
+      },
+      {
+        "coefficient": {
+          "denominator": 2,
+          "numerator": -3
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": true,
+        "seed": "g_ab Riem_mrls Riem_n^rls",
+        "source_cancellation": false,
+        "term_id": "H214",
+        "total_engineering_order": 4,
+        "tracefree_null": true
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -2
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": true,
+        "seed": "Riem_ram l Riem^r_nb^l",
+        "source_cancellation": false,
+        "term_id": "H215",
+        "total_engineering_order": 4,
+        "tracefree_null": false
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 6
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": true,
+        "seed": "Riem_rm ln Riem^r_a^l_b",
+        "source_cancellation": false,
+        "term_id": "H216",
+        "total_engineering_order": 4,
+        "tracefree_null": false
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": true,
+        "seed": "g_nb Riem_m^rls Riem_a rls",
+        "source_cancellation": false,
+        "term_id": "H217",
+        "total_engineering_order": 4,
+        "tracefree_null": false
+      },
+      {
+        "coefficient": {
+          "denominator": 2,
+          "numerator": -3
+        },
+        "curvature_order": 2,
+        "operator_derivatives": 0,
+        "scalar_flat_survives": true,
+        "seed": "g_mn Riem_a rls Riem_b rls",
+        "source_cancellation": false,
+        "term_id": "H218",
+        "total_engineering_order": 4,
+        "tracefree_null": true
+      }
+    ],
+    "formula_digest": "125090e1defbb894bfea58825a741134f1afb472a6d14a7505f4744c876403c1",
+    "monic_operator": "H_source=1hat Box^2+H1+H2+O(curvature^3), H2=U_(2)",
+    "projection": "U=K^{-1} P W P on traceless symmetric tensors",
+    "symmetrization": [
+      "mu<->nu",
+      "alpha<->beta",
+      "(mu,nu)<->(alpha,beta)"
+    ]
+  },
+  "source_provenance": {
+    "arxiv": "1506.05526",
+    "authors": "Nobuyoshi Ohta and Roberto Percacci",
+    "decompressed_tex_sha256": "03b79eb2fa03754c04aa1e1d653d4690e7a44a7f48f9ad402826ea670a8529e0",
+    "doi": "10.1088/0264-9381/33/3/035001",
+    "equation_labels": [
+      "d",
+      "w",
+      "proj",
+      "hami",
+      "curm"
+    ],
+    "source_archive_sha256": "f340a38925ea92a23b8ec0b08d0a871a77f549c79d7c41962158bcac6787fe39",
+    "source_archive_url": "https://export.arxiv.org/e-print/1506.05526",
+    "source_location": "Appendix A, linear split, projected monic U in equation (curm)",
+    "source_scope_statement": "the source drops terms with two derivatives acting on a background curvature but prints every algebraic curvature-square term needed for H2",
+    "source_url": "https://arxiv.org/abs/1506.05526",
+    "title": "Ultraviolet Fixed Points in Conformal Gravity and General Quadratic Theories"
+  },
+  "third_curvature_applicability": {
+    "newly_closed_input": "the algebraic H2 vertex needed by Tr(H0^-1 H1 H0^-1 H2)",
+    "not_closed": [
+      "polarization of H2 into two labelled external curvatures",
+      "the exact mixed H1/H2 momentum numerator and tensor trace",
+      "projection and integration against the certified M14 corner class",
+      "complete physical third-curvature functions or anomaly coefficients"
+    ],
+    "status": "H2_VERTEX_READY_MIXED_TRACE_NOT_COMPUTED"
+  }
+}
