@@ -1,0 +1,49 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AD_EXCEPTIONAL_ELL1_RESONANCE_PIVOTS",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_ad_exceptional_ell1_source_explore.py": "d98008d6f521081ea528b97371ab95c2edc9a2336a9aa9f85b6d19a683577846",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots.py": "d18f89f68eda53c15810b4a6664cc74995ad452edfea715248a7d7d07e33e43c",
+    "bridge/certificates/einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots.json": "a35a0a737697dd8b012fc88e8fac9c44678a8a561e2773fc5592dc558e2f0b89",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots.schema.json": "1476848beefcc7dda7579f33aa666acc769a3aa263c0da9c9aeee96c06e2f78e",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots.py": "5590682a2d4ab458d6598dd030b639cd31af9a4cbb8b45a366d5a9564f38c617",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots.py": "5275832e24423ad3a299e302299f6034b1cdb733e8246f64384703023c64ea27",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ad-exceptional-ell1-resonance-pivots.md": "cc33aec91f7fa3cb1b864afdcc860b73f8c90c8b3347550ea7a0f0d8b7439798"
+  },
+  "claim": {
+    "certified": "Direct full-time a,d cross sources have nonzero exceptional ell=1 adjoint pivots in both parities and every m by SO3 equivariance.",
+    "consequence": "The polynomial a*t pivot removes a from every bounded exceptional branch after the universal b=B=0 conditions.",
+    "open": "The constant d pivot can be screened by the live exceptional-times-ell2-extra difference channel; its eight columns and the complete bounded zero locus remain open."
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.20,
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <certificate/schema/receipt>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.42,
+      "tests_run": 5,
+      "commands": [
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 10.5,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots --write",
+      "criterion": "The four direct four-dimensional bivariate Euler sources are the mathematical coefficient input and were recomputed exactly."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The live exceptional-times-ell2-extra collision, full bounded cone, nonzero momentum, causal, residual and quantum gates remain excluded."
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ad-exceptional-ell1-resonance-pivots-v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "scope",
+    "direct_source_rows",
+    "projected_adjoint_polynomials",
+    "collision_ledger",
+    "classification",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-ad-exceptional-ell1-resonance-pivots-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_AD_EXCEPTIONAL_ELL1_RESONANCE_PIVOTS"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "REDUCED-MODE"}
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "direct_axial_a_d_exceptional_sources_computed",
+        "direct_polar_a_d_exceptional_sources_computed",
+        "a_times_exceptional_leading_pivot_nonzero_both_parities",
+        "d_times_exceptional_constant_pivot_nonzero_both_parities",
+        "exceptional_times_ell2_extra_difference_collision_open",
+        "complete_exceptional_mixed_bounded_zero_locus_solved",
+        "causal_or_quantum_claim"
+      ]
+    }
+  }
+}

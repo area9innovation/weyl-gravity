@@ -1,0 +1,169 @@
+{
+  "action_row_order": {
+    "axial": [
+      "2*metric_t",
+      "-2*metric_x",
+      "maxwell_t",
+      "maxwell_x"
+    ],
+    "polar": [
+      "-metric_00",
+      "2*metric_01",
+      "-metric_11",
+      "4*maxwell_phi"
+    ]
+  },
+  "adjoint_witnesses": {
+    "axial": [
+      "0",
+      "-1/3",
+      "0",
+      "1"
+    ],
+    "polar": [
+      "0",
+      "1",
+      "0",
+      "0"
+    ]
+  },
+  "claim_boundary": "This is a direct coefficient theorem, not the complete exceptional mixed bounded cone. It does not assume away the live exceptional-times-ell2-extra difference collision, classify nonzero momentum, construct causal propagation, descend residual states, or make particle or quantum claims.",
+  "classification": {
+    "a_times_exceptional_leading_pivot_nonzero_both_parities": true,
+    "all_m_by_SO3_equivariance": true,
+    "causal_or_quantum_claim": false,
+    "complete_exceptional_mixed_bounded_zero_locus_solved": false,
+    "d_times_exceptional_constant_pivot_nonzero_both_parities": true,
+    "direct_axial_a_d_exceptional_sources_computed": true,
+    "direct_polar_a_d_exceptional_sources_computed": true,
+    "exceptional_times_ell2_extra_difference_collision_open": true,
+    "full_time_polynomial_dependence_retained": true
+  },
+  "collision_ledger": {
+    "a_time_degree": "the t coefficient cannot be supplied by a product of two stationary oscillators; after the universal b=B=0 conditions it forces a times every exceptional coefficient to vanish",
+    "exceptional_times_ell2_extra_difference": "LIVE: omega_(ell2 extra)=2*omega_exceptional, so the difference channel returns omega_exceptional and can screen the constant d pivot",
+    "generic_generic_pairs": "excluded at the exceptional L=1 roots by the imported cross-ell nonresonance theorem"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_source_rows": {
+    "axial": {
+      "a": [
+        "0",
+        "2*I*(sqrt(3)*t - 21*I)/3",
+        "0",
+        "2*I*(sqrt(3)*t + I)"
+      ],
+      "d": [
+        "0",
+        "sqrt(3)*I/3",
+        "0",
+        "sqrt(3)*I"
+      ]
+    },
+    "polar": {
+      "a": [
+        "0",
+        "-I*(2*sqrt(3)*t - 3*I)",
+        "0",
+        "0"
+      ],
+      "d": [
+        "0",
+        "-sqrt(3)*I",
+        "0",
+        "0"
+      ]
+    }
+  },
+  "exceptional_representatives": {
+    "axial_Ht_Hx_Qt_Qx": [
+      "0",
+      "1",
+      "0",
+      "-3"
+    ],
+    "polar_At_B_Ct_U": [
+      "0",
+      "1",
+      "0",
+      "0"
+    ]
+  },
+  "interpretation": "The radion and circumference-velocity columns do not disappear on the exceptional dipole. The full-time source has a nonzero a*t pivot in both parities, followed by a nonzero d constant pivot. This removes a from every bounded mixed exceptional branch, but d can only be eliminated after the live exceptional-times-ell2-extra difference-frequency source is computed.",
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "compute the eight axial/polar exceptional-times-ell2-extra L=1 difference-frequency adjoint columns and solve them jointly with the d control column and the exceptional L=2 self-defect",
+  "polynomial_consequences": {
+    "a_leading_coefficients": {
+      "axial": "16*sqrt(3)*I/9",
+      "polar": "-2*sqrt(3)*I"
+    },
+    "all_m_promotion": "a and d are rotational scalars, so both nonzero pivots are scalar SO3 intertwiners on V_1",
+    "d_coefficients_after_a_zero": {
+      "axial": "8*sqrt(3)*I/9",
+      "polar": "-sqrt(3)*I"
+    },
+    "one_isolated_exceptional_mode": "bounded compatibility forces a=0 and then d=0 for every nonzero axial or polar exceptional coefficient when no other L=1,omega_exceptional source is present"
+  },
+  "projected_adjoint_polynomials": {
+    "axial": {
+      "a": "4*I*(4*sqrt(3)*t + 15*I)/9",
+      "d": "8*sqrt(3)*I/9"
+    },
+    "polar": {
+      "a": "-I*(2*sqrt(3)*t - 3*I)",
+      "d": "-sqrt(3)*I"
+    }
+  },
+  "provenance": {
+    "direct_source_helper": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_ad_exceptional_ell1_source_explore.py",
+      "sha256": "d98008d6f521081ea528b97371ab95c2edc9a2336a9aa9f85b6d19a683577846"
+    },
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots.py",
+    "generator_sha256": "d18f89f68eda53c15810b4a6664cc74995ad452edfea715248a7d7d07e33e43c",
+    "inputs": {
+      "axial_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+        "sha256": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164"
+      },
+      "exceptional_L1_nonresonance": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_exceptional_L1_nonresonance.json",
+        "sha256": "dfe753f8fa95fb514aab785618a6f2d6818334cfd7182479201c0b6923e72471"
+      },
+      "polar_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell1_k0_operator.json",
+        "sha256": "e8344bcfab80a3abe19bfe392f0f8576977fac1b1c34e4f20aee4aaeff74e77c"
+      },
+      "standard_global_bounded": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AD_EXCEPTIONAL_ELL1_RESONANCE_PIVOTS",
+  "result_state": "FULL_TIME_A_D_TIMES_EXCEPTIONAL_ELL1_ADJOINT_PIVOTS_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-ad-exceptional-ell1-resonance-pivots-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots.schema.json",
+  "schema_sha256": "1476848beefcc7dda7579f33aa666acc769a3aa263c0da9c9aeee96c06e2f78e",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded/finite-quasiperiodic compatibility",
+    "carrier": "radion position a or circumference velocity d crossed with one exceptional ell=1 extra-primary mode",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "0 x 1 -> 1",
+    "k": 0,
+    "m": "m=0 direct fixture; every m by SO3 multiplicity one",
+    "omega": "omega_exceptional^2=4/3",
+    "parity": "axial and polar kept separate",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ad_exceptional_ell1_resonance_pivots"
+  ]
+}
