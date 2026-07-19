@@ -1690,6 +1690,17 @@ extension theorem: all remaining output blocks and the Einstein-plus balance
 channels are still `OPEN`.  Smooth secular extension is `CERTIFIED` and the
 causal lifecycle remains `NO_CERTIFIED_MAP`.
 
+The candidate face now contains one certified bounded jet.  At `ell=2`,
+`k^2=2*sqrt(3)-7/6`, take `p_+=p_-=1`,
+`a_+=a_-=sqrt(3)` and a normalized paired Einstein-plus occupation that
+cancels the Hamiltonian deficit.  An exact 80-row collision census finds no
+other exceptional, `p` or `q` shell hit across every quadratic output; the
+sole `L=4,K=0,2*omega_minus` hit is killed by the complete two-row parity
+matrix.  Together with the zero-block stabilizer decomposition, exact
+nonzero-Fourier `L=0` complex and aligned twist column, this proves a bounded
+finite-quasiperiodic second-order correction.  The full coefficient cone,
+other fibres, all-orders and causal lifecycles remain fail-closed.
+
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared
 certificate paths in the Einstein-team brief, with all of:

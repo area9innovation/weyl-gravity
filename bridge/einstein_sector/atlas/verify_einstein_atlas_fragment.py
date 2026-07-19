@@ -349,6 +349,16 @@ def verify() -> None:
         raise AssertionError("mixed L4 null face was over-promoted")
     if parity_second["smooth_secular"]["status"] != "CERTIFIED" or parity_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("two-parity correction classes changed")
+    mixed_bounded = by_id["einstein.ph.wm.interaction.opposite_momentum_ell2_mixed_parity_bounded_extension"]
+    mixed_bounded_second = mixed_bounded["mode_data"]["second_order"]
+    if mixed_bounded["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("tuned mixed-parity bounded jet was not promoted")
+    if mixed_bounded["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or mixed_bounded["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("tuned mixed-parity proof inputs were hidden")
+    if mixed_bounded_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("tuned mixed-parity bounded correction was hidden")
+    if mixed_bounded_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("tuned mixed-parity row gained an uncertified causal map")
     repair = by_id["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
     if repair["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("constant-twist projector repair was not promoted")

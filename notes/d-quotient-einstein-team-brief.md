@@ -3004,6 +3004,21 @@ record the full direct diagonal/cross source ledger and reflection sign.  The
 bounded lifecycle on that mixed face remains `OPEN`: every other quadratic
 output, including the Einstein-plus balance channels, must still be checked.
 
+That remaining fixture gate is now closed.  Choose
+`p_+=p_-=1`, `a_+=a_-=sqrt(3)` and add equal opposite-momentum normalized
+Einstein-plus occupation to cancel the Einstein-minus Hamiltonian deficit.
+An exact 80-row collision census retains the over-complete output range
+`L=1,2,3,4`, both `K=0,2k` squares, and every zero, sum and difference
+frequency.  Its unique nonzero-frequency shell hit is precisely the already
+computed `L=4,K=0,Omega=2*omega_minus` extra-primary block.  Both adjoint
+rows vanish on the declared mixed-parity face.  The zero block is exhausted
+by the five vanishing moment maps, the nonzero-Fourier `L=0` complex is exact,
+and the aligned constant-twist column is boundedly removable.  Therefore
+`EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_MIXED_PARITY_BOUNDED_EXTENSION`
+certifies one bounded finite-quasiperiodic second-order correction.  This is
+one tuned jet, not the full bounded cone or an all-orders solution; causal
+status remains `NO_CERTIFIED_MAP`.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in

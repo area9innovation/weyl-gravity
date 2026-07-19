@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "scope",
+    "declared_tangent",
+    "collision_census",
+    "bounded_blockwise_proof",
+    "correction_classes",
+    "classification",
+    "claim_boundary",
+    "provenance",
+    "verification_receipt"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-opposite-momentum-ell2-mixed-parity-bounded-extension-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_MIXED_PARITY_BOUNDED_EXTENSION"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "collision_census": {
+      "type": "object",
+      "required": ["checks", "check_count", "collisions"],
+      "properties": {
+        "checks": {"type": "array", "minItems": 80, "maxItems": 80},
+        "check_count": {"const": 80},
+        "collisions": {"type": "array", "minItems": 1, "maxItems": 1}
+      }
+    },
+    "correction_classes": {
+      "type": "object",
+      "required": ["BOUNDED_OR_FINITE_QUASIPERIODIC", "SMOOTH_EXPONENTIAL_POLYNOMIAL", "CAUSAL_RETARDED"]
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "complete_exact_collision_census_for_declared_tangent",
+        "unique_nonzero_frequency_collision_is_L4_p_two_omega_minus",
+        "unique_collision_canceled_on_mixed_parity_null_face",
+        "one_nonzero_tuned_bounded_second_order_tangent_certified",
+        "general_mixed_null_face_classified",
+        "causal_or_quantum_claim"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

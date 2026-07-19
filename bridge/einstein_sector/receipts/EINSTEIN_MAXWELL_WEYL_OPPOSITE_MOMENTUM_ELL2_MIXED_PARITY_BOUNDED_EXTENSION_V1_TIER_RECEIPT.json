@@ -1,0 +1,49 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_MIXED_PARITY_BOUNDED_EXTENSION",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension.py": "5081b429f0374c476eb30b159d18f6a4fc249a856b99b0e6a8be7cb08847ce08",
+    "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension.json": "c7215404170f9e0b013ce920767b130e54c03052b807117b0e8806f50c09fc0a",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension.schema.json": "09a9b7624837556a0aac036514c31acdad9be9c9fac8acca543a4f9d2641dfd5",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension.py": "e830a515a08806495c4dfd66614b1f22b006dd28a3800d8a106b18b304c0716f",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension.py": "227ae35e5d9d36bb7ecfcbe88b0d09d1bec2843bb41d4aa9c8142213264b0326",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-opposite-momentum-ell2-mixed-parity-bounded-extension.md": "8a892d6101c2f579e4c63a4070bb7793ca35fc3dbd829b6741fee7b52809bd70"
+  },
+  "claim": {
+    "certified": "One tuned twist-aligned mixed axial/polar Einstein-minus tangent, balanced by paired Einstein-plus occupation, admits a bounded finite-quasiperiodic Weyl-Maxwell second-order correction.",
+    "proof": "An exact 80-row collision census finds one nonzero-frequency target-shell collision in an angular over-approximation. The complete two-row direct L=4 adjoint matrix vanishes on the declared a=sqrt(3)p face; all other blocks are covered by the certified zero-block stabilizer decomposition, exceptional exact complex, generic off-shell inverses and aligned twist column.",
+    "open": "The full mixed coefficient cone, arbitrary phases, other ell/circumference/momentum fibres, exceptional inputs beyond the declared twist, all-orders integration and causal/quantum lifecycles."
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <producer, verifier and test>",
+        "python3 -m json.tool <certificate, schema and receipt>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 3.5,
+      "tests_run": 42,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The direct axial, polar and cross quadratic source blocks, exceptional operators, moment-map bridge and twist column are unchanged hashed inputs. This theorem adds exact collision arithmetic and a blockwise bounded assembly."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is one tuned bounded second-order jet, not a full cone freeze, all-orders result or release gate."
+    }
+  }
+}
