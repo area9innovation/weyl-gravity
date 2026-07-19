@@ -1,0 +1,130 @@
+{
+  "axial": {
+    "B0h": [
+      [
+        "0",
+        "-I*omega",
+        "-1"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "-2*I*omega"
+      ]
+    ],
+    "sectors": {
+      "-2*omega": {
+        "kernel_dim": 1,
+        "resonant": true
+      },
+      "0": {
+        "kernel_dim": 1,
+        "resonant": true
+      }
+    }
+  },
+  "claim_flags": {
+    "all_orders_reconstruction_certified": false,
+    "enhancement_bound_certified": true,
+    "finite_flux_boundary_class_certified": false,
+    "flux_leading_symbol_certified": true,
+    "general_l_certified": false,
+    "on_characteristic_vanishing_certified": true,
+    "polar_flux_symbol_certified": false,
+    "rank_one_resonance_certified": true
+  },
+  "declaration": {
+    "background_family": "Schwarzschild m = 1 fixture; symbolic omega",
+    "conformal_frame": "working gauge; ingoing EF chart (flux symbol in the certified t-chart bilinear)",
+    "generator": "none; leading asymptotic classification",
+    "horizon_condition": "none; infinity-local statement",
+    "infinity_condition": "leading order at r -> infinity",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "sourced composition h-systems and the certified axial Lee-Wald bilinear",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flux_symbol": {
+    "leading": "96*I*pi*alpha*(lambda_ - omega1)**2*(lambda_ + 2*omega1)/5",
+    "reading": "F^t ~ (96/5) pi i alpha (lam - omega)^2 (lam + 2 omega) r^{p1+p2} + subleading: the density VANISHES ON-CHARACTERISTIC (double zero at lam = omega): radiative pairs have subleading symplectic density and the finite-slice-norm question is decided at subleading order",
+    "relative_power": 0
+  },
+  "headline": {
+    "paper_gate": "the 'metric reconstruction' station of the outer gate is decided at leading order; the all-orders reconstruction and the finite-flux boundary class remain",
+    "statement": "the sourced composition h-systems are rank-1 resonant in both characteristic sectors and both parities: composed metric perturbations gain AT MOST ONE power of r over the carrier at infinity; the axial flux density symbol vanishes on-characteristic to leading order"
+  },
+  "missing_objects": [
+    "all-orders metric reconstruction (resonant-direction enhanced series)",
+    "finite-flux boundary class (subleading flux powers on-characteristic)",
+    "polar flux density symbol (needs the polar bilinear symbol extraction)",
+    "asymptotically flat phase space; summability",
+    "general l"
+  ],
+  "polar": {
+    "B0h": [
+      [
+        "0",
+        "I*omega/2",
+        "1/2",
+        "I*omega"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-2*I*omega",
+        "0"
+      ],
+      [
+        "0",
+        "I*omega",
+        "1/2",
+        "0"
+      ]
+    ],
+    "sectors": {
+      "-2*omega": {
+        "kernel_dim": 1,
+        "resonant": true
+      },
+      "0": {
+        "kernel_dim": 1,
+        "resonant": true
+      }
+    }
+  },
+  "provenance": {
+    "axial_flux_certificate": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
+    "axial_flux_certificate_sha256": "95ca6daeabb16bf93faa1bb721e3464fc5363899a344f0281d126f9a14204732",
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh2c_metric_leading.py",
+    "jordan_certificate": "black_hole_programme/certificates/BH2C_ASYMPTOTIC_JORDAN.json",
+    "jordan_certificate_sha256": "9ed3c744f2916042acee118ce380f469fdcad69bd2010e2deaae78486b97468e"
+  },
+  "result_id": "PURE_WEYL_BH2C_METRIC_LEADING",
+  "result_token": "BH2C_METRIC_RECONSTRUCTION_LEADING_ORDER_CLASSIFIED",
+  "schema": "pure-weyl-bh2c-metric-leading-v1",
+  "schema_path": "black_hole_programme/schema/bh2c-metric-leading-v1.schema.json",
+  "schema_sha256": "f532430c70705be042924b45c877805d55b43c631042b82ea339c45fb4fbb7e8",
+  "stage_seconds": {
+    "axial": 8.6,
+    "flux_symbol": 1.5,
+    "polar": 4.4,
+    "total": 14.7
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2c_metric_leading.py"
+}
