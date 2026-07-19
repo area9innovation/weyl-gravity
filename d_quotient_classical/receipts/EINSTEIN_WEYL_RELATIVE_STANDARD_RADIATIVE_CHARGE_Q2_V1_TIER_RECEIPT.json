@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_STANDARD_RADIATIVE_CHARGE_Q2_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-19",
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "status": "PASS",
+  "source_manifest": {
+    "d_quotient_classical/relative/einstein_weyl_relative_standard_charge_q2.py": "e45300680368a8f4da3e0ff86579b3f4f7d4f3b13a3303c933ee586eb05ead06",
+    "d_quotient_classical/relative/verify_einstein_weyl_relative_standard_charge_q2.py": "a955348d2a1769d21f38d274b5b4b587767a35afbeb65eac0cc9dda41bba990a",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_standard_charge_q2.py": "e8b0ed132e0bde072510423b4826be0af5988f565a9bfad853b1f70d98a6e362",
+    "d_quotient_classical/schema/relative-standard-radiative-charge-q2-v1.schema.json": "b94c240301a6e9245f890d5d20a878314fea910fa3930ccd8ab69766014b4a35",
+    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_STANDARD_RADIATIVE_CHARGE_Q2_V1.json": "0444e8038c6aa051a592cf18b293fd3090e040780e4015019942a31e274d32a2",
+    "d_quotient_classical/reports/einstein-weyl-relative-standard-radiative-charge-q2.md": "094bf2d7c584140251d0f7d4ef593023804c4c82f98209a7c8720637ceb53e3e",
+    "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py": "bae14768e3163b9d05d395690f8e83ff2a034160ca8e31867b55d5bef29466b2",
+    "d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "730e0a301632357afb468c83254a0878061d8f516879fb8dddd9f3892a37ad94",
+    "d_quotient_classical/atlas/tests/test_nonlinear_atlas_fragment.py": "40ef989762319994df37718a91424c3c066d72d70819055dd02626c80b75997a",
+    "notes/d-quotient-classical-team-brief.md": "a73b2e760ca6db2ec1fbfcb8511d4d98c29d5c23d5464bfa8fac89ebacc2e4dd"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "command": "python3 -m py_compile <producer, verifier, tests and atlas generator> && python3 -m json.tool <certificate and receipt> && strict Draft 2020-12 AJV validation && git diff --check on scoped paths"
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 6.95,
+      "max_rss_kib": 240132,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_standard_charge_q2 --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_standard_charge_q2",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_standard_charge_q2 d_quotient_classical.relative.tests.test_einstein_weyl_relative_charge_koszul_preflight d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-standard-radiative-charge-q2-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_STANDARD_RADIATIVE_CHARGE_Q2_V1.json"
+      ],
+      "result": "24 tests passed; the independent consumer replayed the exact five-charge basis, both relative branch coefficients, axial and polar coefficient forms, angular weight, factor-two Taub normalization, imported local-gauge quotient domains and all fail-closed boundaries"
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The unchanged unary cofiber, strict Delta2, radiative symplectic restriction, moment-map--Taub theorem, stabilizer representation and f2 obstruction are imported by SHA-256. The new consumer independently rebuilds every finite algebraic assertion made by this reduced-mode charge operation."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a fail-closed REDUCED-MODE coefficient export and atlas update, not an off-shell local lift, theorem freeze or release."
+    }
+  },
+  "claim_boundary": "Receipt for the exact five-output arity-two charge operation on standard-radiative Einstein q-primary cohomology after local gauge reduction. It records the relative moment-map obstruction. It does not include exceptional/global source cohomology, define a local current-density or support-local BV/Koszul operation, repair the obstructed direct f2, authorize arity three, or establish causal, observational, particle or quantum equivalence."
+}

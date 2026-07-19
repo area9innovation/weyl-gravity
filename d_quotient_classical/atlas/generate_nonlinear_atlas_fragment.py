@@ -42,6 +42,7 @@ CERTS = {
     "relative_arity_two_defect": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ARITY_TWO_DEFECT_V1.json",
     "relative_f2_taub_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
     "relative_charge_koszul_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1.json",
+    "relative_standard_charge_q2": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_STANDARD_RADIATIVE_CHARGE_Q2_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -373,6 +374,8 @@ def entries() -> list[dict[str, Any]]:
         "omega": "all product-mode frequencies required by the full relative triangle",
     }
     relative_charge_scope = relative_charge_koszul["scope"]
+    relative_charge_q2 = json.loads(CERTS["relative_standard_charge_q2"].read_text())
+    relative_charge_q2_scope = relative_charge_q2["scope"]
     identity_cyclic_scope = json.loads(CERTS["identity_cyclic_obstruction"].read_text())["scope"]
     return [
         {
@@ -659,8 +662,32 @@ def entries() -> list[dict[str, Any]]:
                 taub=("CERTIFIED", "Five Killing charges are retained; constant U1 reducibility is not a sixth Taub charge. The ell=2 plus H component is -54*(1+sqrt(3))/5."),
                 resonance=("OPEN", "The architecture is selected, but the complete off-shell five-charge polarization and repaired relative f2 remain open; arity three is unauthorized."),
             ),
-            "evidence": _evidence("relative_charge_koszul_preflight", "relative_f2_taub_obstruction", "relative_arity_two_defect", "relative_linfinity_preflight"),
+            "evidence": _evidence("relative_charge_koszul_preflight", "relative_standard_charge_q2", "relative_f2_taub_obstruction", "relative_arity_two_defect", "relative_linfinity_preflight"),
             "claim_boundary": "This REDUCED-MODE row selects a derived charge receiver, not a support-local nonlinear morphism. The certified unary mapping cofiber is retained; the five connected-isometry moment maps enter through a square-zero 32-dimensional exterior Koszul presentation. The constant U1 endpoint remains reducibility. Exceptional/global charge formulas, a complete off-shell polarization, support-local BV extension, repaired f2, arity three, causal propagation, observables, particles and quantum transfer remain OPEN or NO_CERTIFIED_MAP.",
+        },
+        {
+            "id": "nonlinear.product.bridge2.standard_radiative_five_charge_q2",
+            "scope": relative_charge_q2_scope,
+            "descriptions": {
+                "causal": "NO_CERTIFIED_MAP",
+                "symplectic": "CERTIFIED",
+                "nonlinear": "CERTIFIED",
+                "observational": "NO_CERTIFIED_MAP",
+                "quantum": "NO_CERTIFIED_MAP",
+            },
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "The five charge outputs are exact, but bounded solvability also requires the non-charge resonance functionals."),
+                    ("OPEN", "The reduced charge bracket does not itself construct a smooth-secular f2 correction."),
+                    ("NO_CERTIFIED_MAP", "No retarded local-current lift of the global charge bracket is certified."),
+                ),
+                dispersion=("CERTIFIED", "Both standard Einstein branches, both parities, every ell>=2 and every compact momentum are included."),
+                pairing=("CERTIFIED", "The exact axial/polar Einstein coefficient forms, angular weight and relative branch multipliers define the charge bracket."),
+                taub=("CERTIFIED", "q2_charge,X=<zeta_X,Delta2>; its diagonal half is the relative moment map for all five stabilizers. The H witness is -108*(1+sqrt(3))/5 before the diagonal half."),
+                resonance=("OPEN", "This operation records the five persistent charge obstructions but does not include exceptional/global inputs or non-charge bounded resonances."),
+            ),
+            "evidence": _evidence("relative_standard_charge_q2", "relative_charge_koszul_preflight", "relative_f2_taub_obstruction"),
+            "claim_boundary": "This is an exact five-output arity-two operation on the standard-radiative REDUCED-MODE relative receiver. It records rather than cancels the direct f2 obstruction. Exceptional/global source cohomology, off-shell local jets, a support-local BV/Koszul lift, repaired f2, arity three, causal propagation, observables, particles and quantum transfer remain OPEN or NO_CERTIFIED_MAP.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction",

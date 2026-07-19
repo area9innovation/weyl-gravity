@@ -991,6 +991,11 @@
           "sha256": "9e389ce322ad48665a5684c17296872fa401bb8080b189da8a36e3ff89703522"
         },
         {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_STANDARD_RADIATIVE_CHARGE_Q2_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_STANDARD_RADIATIVE_CHARGE_Q2_V1",
+          "sha256": "0444e8038c6aa051a592cf18b293fd3090e040780e4015019942a31e274d32a2"
+        },
+        {
           "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1",
           "sha256": "b96fa2c3eb54a9df86d6e7b319d9244c8c54d023d8edc2425e8df29177c590dc"
@@ -1046,6 +1051,80 @@
         "carrier": "standard radiative ell>=2 solution carrier together with the certified support-local unary mapping cofiber",
         "charge_sector": "fixed compact U(1) bundle P_N with N=2",
         "degree": "quadratic relative moment map and its Koszul generators",
+        "ell": "ell>=2",
+        "k": "2*pi*n/L for every n in Z",
+        "m": "all real SO(3) multiplicities",
+        "omega": "Einstein plus and minus branches",
+        "parity": "axial and polar",
+        "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+      }
+    },
+    {
+      "claim_boundary": "This is an exact five-output arity-two operation on the standard-radiative REDUCED-MODE relative receiver. It records rather than cancels the direct f2 obstruction. Exceptional/global source cohomology, off-shell local jets, a support-local BV/Koszul lift, repaired f2, arity three, causal propagation, observables, particles and quantum transfer remain OPEN or NO_CERTIFIED_MAP.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_STANDARD_RADIATIVE_CHARGE_Q2_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_STANDARD_RADIATIVE_CHARGE_Q2_V1",
+          "sha256": "0444e8038c6aa051a592cf18b293fd3090e040780e4015019942a31e274d32a2"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_CHARGE_KOSZUL_RECEIVER_PREFLIGHT_V1",
+          "sha256": "9e389ce322ad48665a5684c17296872fa401bb8080b189da8a36e3ff89703522"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1",
+          "sha256": "b96fa2c3eb54a9df86d6e7b319d9244c8c54d023d8edc2425e8df29177c590dc"
+        }
+      ],
+      "id": "nonlinear.product.bridge2.standard_radiative_five_charge_q2",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Both standard Einstein branches, both parities, every ell>=2 and every compact momentum are included.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The exact axial/polar Einstein coefficient forms, angular weight and relative branch multipliers define the charge bracket.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "This operation records the five persistent charge obstructions but does not include exceptional/global inputs or non-charge bounded resonances.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The five charge outputs are exact, but bounded solvability also requires the non-charge resonance functionals.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No retarded local-current lift of the global charge bracket is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The reduced charge bracket does not itself construct a smooth-secular f2 correction.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "q2_charge,X=<zeta_X,Delta2>; its diagonal half is the relative moment map for all five stabilizers. The H witness is -108*(1+sqrt(3))/5 before the diagonal half.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compact magnetic Plebanski-Hacyan product R_t x S1_L x S2",
+        "boundaries": "closed Cauchy slice S1_L x S2 before final stabilizer quotient",
+        "carrier": "complete standard radiative Einstein q-primary solution carrier",
+        "charge_sector": "fixed compact U(1) bundle P_N with N=2",
+        "degree": "symmetric arity-two output in the five-dimensional relative charge row",
         "ell": "ell>=2",
         "k": "2*pi*n/L for every n in Z",
         "m": "all real SO(3) multiplicities",
@@ -1130,7 +1209,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py",
-  "generated_by_sha256": "32084967a2ab0b2a302d1a2783cff404a1feee76a7428ff3101ce59552d87945",
+  "generated_by_sha256": "bae14768e3163b9d05d395690f8e83ff2a034160ca8e31867b55d5bef29466b2",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

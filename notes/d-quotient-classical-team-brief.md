@@ -363,6 +363,32 @@ including any required exceptional/global rows, or a typed obstruction to
 that lift.  Support-local BV/Koszul completion, (f_2), arity three, causal
 Green data, observables and quantum transfer remain fail-closed.
 
+`EINSTEIN_WEYL_RELATIVE_STANDARD_RADIATIVE_CHARGE_Q2_V1` now supplies the
+first exact arity-two operation on this receiver.  For every standard
+radiative Einstein branch, both parities, every (ell\ge2), and every compact
+momentum,
+
+\[
+q^{\rm charge}_{2,X}(u,v)
+=\langle\zeta_X,\Delta_2(u,v)\rangle,
+\qquad X\in\{H,P_x,J_1,J_2,J_3\}.
+\]
+
+The export contains the axial and polar Einstein coefficient matrices, the
+all-(ell) angular weight, the rotation action, selection rules, and the
+relative branch coefficients
+
+\[
+r_\pm=\pm\frac32\sqrt{2\ell(\ell+1)}.
+\]
+
+On the certified plus witness,
+(q^{\rm charge}_{2,H}(u,u)=-108(1+\sqrt3)/5), exactly twice the Taub
+quadratic value.  This bracket records the obstruction; it is not an
+(f_2) primitive.  The remaining extension is exceptional/global source
+cohomology followed by a genuinely local current-density lift if the
+programme still requires support-local BV data.
+
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.
 The finite covariant HPL series and unique normalized degree-one correction
