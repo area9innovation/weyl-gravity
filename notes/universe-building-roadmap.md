@@ -84,7 +84,7 @@ Nonlinear:   preserve the filtered ell3 obstruction and await an admissible bran
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, compute the physical relative-IBP boundary flux now that all 66 six-master coordinates and renormalized masters are exact, and assemble the repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; in parallel combine the certified emitter and complete memory first-jet scalar q1 overlays with the remaining rod/gravity and shifted-q2(Phi2,-) payload, compose/replay scalar q1, then export scalar q2 and replay q1q2 before restricting records to Z2^C
-Black hole:  BH-2C stations delivered: claim repair DONE (scoped disposition language, BH0 sheet wording, claim map re-pinned); Jordan gate DECIDED (log-free formal systems both parities); metric reconstruction CLASSIFIED at leading order (rank-1 resonance, <= one power enhancement; axial flux symbol vanishes on-characteristic). Residual: all-orders reconstruction, finite-flux subleading class, polar flux symbol; ringdown stays coordinator-gated
+Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
 
 These jobs use different bottlenecks.  Running them in parallel is more useful
@@ -1904,6 +1904,26 @@ channels have nonpositive reduced shell coordinate.  Fail-closed atlas row
 `NO_CERTIFIED_MAP`.  The next activation gate is the symbolic polar
 `L=2*ell` dynamical adjoint coefficient, followed by the other-primary source
 matrices on the finite-multimomentum divisor.
+
+The axial part of that activation gate is now a theorem for every `ell>=2`.
+The action-derived quadratic PBW operator can be evaluated on the
+highest-weight `Y_(ell,ell)` representative, where `M=2*ell` isolates the top
+output without interpolation.  After the exact axisymmetric Gaunt transfer,
+the polar p-shell adjoint pairing is strictly positive because
+
+```text
+A_ell^2-2*ell*(ell+1)*B_ell^2
+ =2*(ell-1)^3*(ell+2)*(81*ell^4+54*ell^3+42*ell-1)>0,
+```
+
+with `A_ell=18*ell^4+24*ell^3+4*ell^2+16*ell+2` and
+`B_ell=9*ell^3+21*ell^2-9*ell+11`.  Exact direct fibres `ell=2,...,6` agree.
+Fail-closed atlas row
+`einstein.ph.wm.interaction.symbolic_ell_axial_qminus_obstruction` is bounded
+`OBSTRUCTED`, smooth secular `CERTIFIED`, and causal `NO_CERTIFIED_MAP` on the
+tuned axial common-zero family.  The active symbolic gate is now the polar
+and axial-polar mixed coefficient; the fixed-circumference/multiple-`|k|`
+join remains the separate finite source-matrix workload.
 
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared
