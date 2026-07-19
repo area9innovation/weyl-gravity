@@ -1,0 +1,105 @@
+{
+  "claim_boundary": "This certifies one exact axial m=0 mixed three-occupation tangent and a bounded second-order correction before the final residual quotient. It does not classify the full mixed cone, arbitrary phases or polar amplitudes, prove all-orders integration, construct a causal correction, or make residual, observational or quantum claims.",
+  "classification": {
+    "all_cross_fibre_bounded_resonance_functionals_vanish": true,
+    "all_five_zero_frequency_adjoint_pairings_vanish": true,
+    "all_orders_integrability": false,
+    "all_same_fibre_nonzero_frequency_blocks_off_shell": true,
+    "candidate_13_mixed_witness_bounded_second_order_extendible": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "complete_finite_block_bounded_source_in_image": true,
+    "explicit_blockwise_correction_recipe_certified": true,
+    "full_candidate_13_mixed_tangent_cone_classified": false
+  },
+  "complete_blockwise_proof": {
+    "abstract_criterion": "a bounded or finite-quasiperiodic correction exists exactly when all five mu_X and every finite R_(j,a) vanish",
+    "correction_construction": "solve each finite off-shell block by its certified algebraic inverse, solve each zero-frequency compatible block by the certified reduced right inverse, and adjoin complex-conjugate blocks",
+    "cross_fibre_nonzero_frequency": "the only candidate-13 shell functional is zero because p_primary_n_minus2=0; all other isolated cross-fibre collision fibres have distinct circumference",
+    "same_fibre_nonzero_frequency": "all 18 channels are off shell by 144 exact defects; the two L=0 Fourier types use their separately certified empty quotients",
+    "spatial_class": "smooth and S1_L-periodic",
+    "temporal_class": "finite quasiperiodic with no secular term",
+    "zero_frequency_cokernel": "coker L_zero = span{zeta_H,zeta_Px,zeta_J1,zeta_J2,zeta_J3} modulo Noether identities",
+    "zero_frequency_consequence": "every constant source block lies in the image; L=0 and L=1 use the five vanishing stabilizer pairings, while every static L>=2 block is invertible after local gauge reduction",
+    "zero_frequency_pairings": {
+      "mu_H": "0",
+      "mu_J1": "0",
+      "mu_J2": "0",
+      "mu_J3": "0",
+      "mu_Px": "0"
+    }
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "the bounded correction lies in this larger class",
+      "status": "CERTIFIED"
+    }
+  },
+  "declared_tangent": {
+    "p_primary_n1_occupation": "1",
+    "p_primary_n_minus2_occupation": "0",
+    "q_minus_n1_occupation": "(1383*sqrt(10) + sqrt(3)*sqrt(1383*sqrt(10) + 33362)*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948) + 33362)/(-12792*sqrt(3) + 1383*sqrt(10) + 3*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542)*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948) + 37626)",
+    "q_minus_n_minus2_occupation": "(-sqrt(3)*sqrt(1383*sqrt(10) + 33362)*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542) + 1383*sqrt(10) + 33362)/(-12792*sqrt(3) + 5532*sqrt(10) + 35376 + 12*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542)*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948))",
+    "reality": "the resulting first-order tangent and its blockwise correction are real",
+    "relative_phases": "choose the positive real square roots of the displayed occupations; adjoin their negative-frequency complex conjugates"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G1_ONE_EXACT_MIXED_THREE_OCCUPATION_WITNESS",
+  "interpretation": "The candidate-13 mixed witness is not merely Taub-null. Its zero-frequency source has no adjoint-cokernel component, every nonzero same-fibre block is off shell, and its only possible cross-fibre shell coefficient vanishes. Hence the pure-extra obstruction is genuinely evaded by an Einstein-minus admixture at second order in the bounded class.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify the full mixed candidate-13 coefficient cone rather than extrapolating from this one extendible ray; causal/retarded extension remains a separate background-specific problem",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension.py",
+    "generator_sha256": "49d3c379f5384250998e66bda85c3cdc0e245e0b7f009f9bcf25189ea2898642",
+    "inputs": {
+      "finite_generic_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
+        "sha256": "dd1dec63c50d538a489205d48931720919ff9a43e23c52a45a9d1b80e5ff2513"
+      },
+      "isolated_cross_fibre_candidates": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.json",
+        "sha256": "27fe530f6d296453e4eaf504eed688b6a2480cac18e0581e839898c7868e3450"
+      },
+      "mixed_witness": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness.json",
+        "sha256": "cc7f8d781acc021152305734e4040f08e3d3d83d8e22ae1a26b90193f491f619"
+      },
+      "same_fibre_census": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.json",
+        "sha256": "fd94929e0c18e87787e6ad1e241a29dae1f4bf46a33d8454a9bf7e5a5bdbfc41"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_MIXED_BOUNDED_EXTENSION",
+  "result_state": "ONE_CANDIDATE13_MIXED_EINSTEIN_EXTRA_TANGENT_EXTENDS_TO_SECOND_ORDER_IN_THE_BOUNDED_CLASS",
+  "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-mixed-bounded-extension-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension.schema.json",
+  "schema_sha256": "ae6d63a4e2ff5786b518c720ab5748d2d9a98020879c99ace11edb4785d7420e",
+  "scope": {
+    "background": "candidate-13 tuned compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "one normalized axial p-primary mode at n=1 plus normalized axial q-minus modes at n=1 and n=-2; the p-primary n=-2 occupation is zero",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "input ell=2; candidate-13 cross-fibre output L=4",
+    "k": "signed momentum integers n=1 and n=-2 with k_n=n*sqrt(rho)",
+    "m": 0,
+    "omega": "p-primary at n=1 and q-minus at n=1,-2; positive-frequency carrier with conjugates understood",
+    "parity": "axial",
+    "theory": "Weyl-Maxwell target"
+  },
+  "second_order_equation": "L_WM v=-(1/2)D^2E_WM[u,u]",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension"
+  ]
+}

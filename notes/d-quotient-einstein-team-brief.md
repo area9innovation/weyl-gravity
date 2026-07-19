@@ -3646,10 +3646,15 @@ nonzero-frequency row before a source calculation: 18 sum/difference channels
 give 144 exact nonzero `ell=1,...,4` shell defects.  For `ell=0`, sum channels
 use the empty nonzero-Fourier quotient, while unequal-branch differences have
 `K=0,Omega!=0` and use the separately empty homogeneous nonzero-frequency
-quotient.  The active gate is therefore only the
-zero-frequency homogeneous/twist quadratic adjoint-cokernel ledger restricted
-to this witness and joined to the five moment maps; this is input to the
-same-background Einstein–Weyl bridge, not a completed nonlinear bridge.
+quotient.  The zero-frequency gate then closes without an additional
+coefficient table: the complete generic finite-harmonic theorem identifies its
+reduced cokernel exactly with `H,P_x,J_1,J_2,J_3`, whose five pairings already
+vanish on the witness, while every static `L>=2` block is invertible.  Together
+with the isolated cross-fibre ledger this certifies a real bounded
+finite-quasiperiodic second-order correction for the declared mixed witness.
+The active gate is now the full candidate-13 mixed coefficient cone; this one
+extendible ray is input to the same-background Einstein–Weyl bridge, not a
+completed nonlinear bridge or an all-orders theorem.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).

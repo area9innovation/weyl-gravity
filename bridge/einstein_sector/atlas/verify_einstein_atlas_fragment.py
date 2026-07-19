@@ -630,6 +630,18 @@ def verify() -> None:
         raise AssertionError("candidate-13 same-fibre correction classes were merged")
     if "complete nonzero-frequency same-fibre shell census" not in candidate13_same["claim_boundary"] or "K!=0 and K=0" not in candidate13_same["claim_boundary"]:
         raise AssertionError("candidate-13 same-fibre theorem boundary changed")
+    candidate13_extension = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_mixed_bounded_extension"]
+    candidate13_extension_second = candidate13_extension["mode_data"]["second_order"]
+    if candidate13_extension["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("candidate-13 mixed extension lifecycle changed")
+    if candidate13_extension["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "span{H,P_x,J_1,J_2,J_3}" not in candidate13_extension["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-13 zero-block cokernel join was hidden")
+    if candidate13_extension["mode_data"]["resonance"]["status"] != "CERTIFIED" or "other 20 collision circumferences are distinct" not in candidate13_extension["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-13 bounded resonance join was hidden")
+    if candidate13_extension_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or candidate13_extension_second["smooth_secular"]["status"] != "CERTIFIED" or candidate13_extension_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-13 mixed correction classes changed")
+    if "one exact axial m=0 mixed three-occupation second-order jet" not in candidate13_extension["claim_boundary"] or "not the full candidate-13 mixed tangent cone" not in candidate13_extension["claim_boundary"]:
+        raise AssertionError("candidate-13 mixed extension exceeded scope")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]
     if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:

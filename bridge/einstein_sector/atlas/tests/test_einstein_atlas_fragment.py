@@ -374,6 +374,18 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("complete nonzero-frequency same-fibre shell census", entry["claim_boundary"])
         self.assertIn("K!=0 and K=0", entry["claim_boundary"])
 
+    def test_candidate13_mixed_witness_has_bounded_second_order_extension(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_mixed_bounded_extension"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("span{H,P_x,J_1,J_2,J_3}", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not the full candidate-13 mixed tangent cone", entry["claim_boundary"])
+
     def test_nonaxisymmetric_l3_matrix_closes_basis_not_cone(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
         second = entry["mode_data"]["second_order"]

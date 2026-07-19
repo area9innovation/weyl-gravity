@@ -1,0 +1,47 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_MIXED_BOUNDED_EXTENSION_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Bounded second-order extension join for one exact candidate-13 mixed Einstein-minus/extra-primary tangent.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension.json": "4fb928eb28cd5ba76426d1407e69c032978857cf34199c094e49632015a8c4d2",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension.py": "49d3c379f5384250998e66bda85c3cdc0e245e0b7f009f9bcf25189ea2898642",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension.schema.json": "ae6d63a4e2ff5786b518c720ab5748d2d9a98020879c99ace11edb4785d7420e",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension.py": "3444d24ced14eda57880c8d65f27525b7a1d155b1ee413a40780de6f0f797efb",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension.py": "057e5029476764e9c51a29886370149ee63e6e37bb86322418e58b1605fbb971",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-mixed-bounded-extension.md": "5292df30849c3345427e69bbfb8d73f954c51ea379241b975fff22c33b887be2"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 81,
+      "commands": [
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 -m bridge.einstein_sector.atlas.verify_einstein_atlas_fragment",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "producer_elapsed_seconds": 0.11,
+      "producer_max_rss_kib": 24628,
+      "independent_verifier_elapsed_seconds": 0.10,
+      "independent_verifier_max_rss_kib": 24160,
+      "reason": "The join imports the independently certified five-dimensional zero-block cokernel, exact mixed moment-map cancellation, complete 18-channel same-fibre census, and isolated cross-fibre collision ledger."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This promotes one exact second-order jet, not the full candidate-13 cone, shared operator algebra, all-orders integration, causal propagation, residual observables, quantum theory, or a release."
+    }
+  },
+  "claim_boundary": "One declared axial m=0 candidate-13 mixed tangent has a bounded finite-quasiperiodic second-order correction. The full mixed cone and all higher lifecycles remain OPEN or NO_CERTIFIED_MAP."
+}
