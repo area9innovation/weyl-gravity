@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Nonaxisymmetric L1/L3 two-absolute-momentum source matrix",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "lifecycle_state",
+    "dependency_tags",
+    "generality_level",
+    "scope",
+    "source_slices",
+    "candidate_rows",
+    "matrix_summary",
+    "normalization",
+    "classification",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-ell2-two-abs-momentum-nonaxisymmetric-L1-L3-matrix-v1"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_NONAXISYMMETRIC_L1_L3_MATRIX"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "generality_level": {"const": "G2_COMPLETE_NONAXISYMMETRIC_L1_L3_BRANCH_BASIS_MATRIX"},
+    "scope": {"type": "object"},
+    "source_slices": {
+      "type": "object",
+      "required": ["path", "sha256", "result_id"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "result_id": {"type": "string"}
+      }
+    },
+    "candidate_rows": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "type": "object",
+        "required": [
+          "candidate_index",
+          "first_branch",
+          "second_branch",
+          "target_branch",
+          "output_ell",
+          "rho",
+          "signed_momenta",
+          "temporal_channel",
+          "temporal_signs",
+          "shell_defect",
+          "parity_channels"
+        ],
+        "properties": {
+          "candidate_index": {"type": "integer"},
+          "output_ell": {"enum": [1, 3]},
+          "temporal_channel": {"enum": ["SUM", "DIFFERENCE"]},
+          "shell_defect": {"const": "0"},
+          "parity_channels": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "object",
+              "required": ["first_parity", "second_parity", "target_parity", "target_cokernel_dimension", "basis_fixtures"],
+              "properties": {
+                "first_parity": {"enum": ["axial", "polar"]},
+                "second_parity": {"enum": ["axial", "polar"]},
+                "target_parity": {"enum": ["axial", "polar"]},
+                "target_cokernel_dimension": {"enum": [1, 2]},
+                "basis_fixtures": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "required": ["first_basis_index", "second_basis_index", "scaled_pairings", "phase_normalizations", "pairing_intervals", "nonzero_component", "bounded_status"],
+                    "properties": {
+                      "scaled_pairings": {"type": "array", "minItems": 1, "maxItems": 2, "items": {"type": "string"}},
+                      "phase_normalizations": {"type": "array", "minItems": 1, "maxItems": 2, "items": {"enum": ["sqrt(pi)", "-i*sqrt(pi)"]}},
+                      "pairing_intervals": {"type": "array", "minItems": 1, "maxItems": 2},
+                      "bounded_status": {"enum": ["OBSTRUCTED", "OPEN"]}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "matrix_summary": {
+      "type": "object",
+      "required": ["candidate_rows", "ordered_parity_channels", "ordered_input_basis_fixtures", "target_adjoint_coefficients", "zero_target_adjoint_coefficients", "nonzero_target_adjoint_coefficients", "basis_fixtures_with_nonzero_cokernel_vector", "basis_fixtures_without_this_resonant_witness"],
+      "properties": {
+        "candidate_rows": {"const": 9},
+        "ordered_parity_channels": {"const": 36},
+        "ordered_input_basis_fixtures": {"const": 48},
+        "target_adjoint_coefficients": {"const": 56},
+        "zero_target_adjoint_coefficients": {"type": "integer", "minimum": 0},
+        "nonzero_target_adjoint_coefficients": {"type": "integer", "minimum": 0},
+        "basis_fixtures_with_nonzero_cokernel_vector": {"type": "integer", "minimum": 0},
+        "basis_fixtures_without_this_resonant_witness": {"type": "integer", "minimum": 0}
+      }
+    },
+    "normalization": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "required": ["complete_nonaxisymmetric_L1_L3_branch_basis_matrix_classified", "all_56_odd_L_reduced_coefficients_classified", "certified_L3_submatrix_replayed", "all_164_branch_basis_coefficients_classified", "arbitrary_amplitude_zero_variety_classified", "complete_two_fibre_tangent_cone_classified", "smooth_secular_classified", "causal_or_quantum_claim"]
+    },
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

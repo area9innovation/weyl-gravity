@@ -96,6 +96,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_axial_polar_L4_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_polar_L4_matrix.json",
     "ell2_two_abs_momentum_polar_axial_L4_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_polar_axial_L4_matrix.json",
     "ell2_two_abs_momentum_nonaxisymmetric_L3_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L3_matrix.json",
+    "ell2_two_abs_momentum_nonaxisymmetric_L1_L3_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L1_L3_matrix.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
@@ -888,6 +889,18 @@ def entries() -> list[dict[str, object]]:
             "This row closes the 44-coefficient L3 basis matrix, not its arbitrary-amplitude zero variety. The twelve nonaxisymmetric L1 coefficients, complete two-fibre cone, smooth-secular and causal classes remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l1_matrix",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 at three separately tuned algebraic circumference rows; before final residual quotient", carrier="final twelve exceptional L1 difference-channel branch-basis coefficients, with the certified L3 submatrix replayed as a completion check", degree=2, parity="all four ordered axial/polar input pairs retained", ell="input 2 x 2; output L=1", m="multiplicity-one Clebsch-Gordan V1 carrier extracted at M=1", k="row-specific signed compact momenta on |n|=1 and |n|=2; circumference rows retained separately", omega="row-specific signed DIFFERENCE channel", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","All theory, background, boundary, charge, parity, harmonic, magnetic, signed-momentum, temporal-sign and circumference labels are retained; the L1 exceptional and generic L3/L4 targets are not merged."),
+            ("CERTIFIED","The action-derived Clebsch-Gordan projector reproduces all four L4 normalizations, replays the certified 44-coefficient L3 slice and contracts the final twelve L1 sources with the certified nonzero-k exceptional target covectors."),
+            ("NOT_APPLICABLE","These nonzero-frequency resonant functionals are independent of, and do not replace, the five compact stabilizer moment maps."),
+            ("OBSTRUCTED","All twelve exceptional L1 adjoint coefficients are nonzero; with the certified L3 and L4 matrices this closes all 164 declared branch-basis scalar coefficients."),
+            _second_order(("OBSTRUCTED","No bounded or finite-quasiperiodic correction exists for any of the twelve declared L1 branch-basis fixtures."),("OPEN","The arbitrary-amplitude common zero variety and smooth-secular correction class are not classified."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_nonaxisymmetric_L1_L3_completion","ell2_two_abs_momentum_nonaxisymmetric_L3_matrix","ell2_two_abs_momentum_polar_axial_L4_matrix","ell2_two_abs_momentum_parity_workload","exceptional_nonzero_k_cofiber","abstract_cone"),
+            "This final L1 row closes 164 of 164 branch-basis scalar coefficients across the separately certified L1, L3 and L4 matrices, not the arbitrary-amplitude zero variety or complete two-fibre tangent cone. Smooth-secular, causal, residual, observational and quantum lifecycles remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="constant twist position plus paired axisymmetric +/-k Einstein-plus/minus standing waves", degree=2, parity="generic input parity retained; polar extra resonant output", ell="every one fixed integer ell>=2 with output L=2ell", m="m_A=0 inputs and M=0 output", k="one tuned allowed nonzero +/-k pair", omega="q-plus/minus inputs and p-primary sum-frequency output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
@@ -1433,6 +1446,26 @@ def build() -> dict[str, object]:
         and l3_summary["basis_fixtures_with_nonzero_cokernel_vector"] == 36
     ):
         raise AssertionError("nonaxisymmetric L3 matrix changed")
+    completion_value = records["ell2_two_abs_momentum_nonaxisymmetric_L1_L3_completion"]
+    completion = completion_value["classification"]
+    completion_summary = completion_value["matrix_summary"]
+    if not (
+        completion["complete_nonaxisymmetric_L1_L3_branch_basis_matrix_classified"]
+        and completion["all_56_odd_L_reduced_coefficients_classified"]
+        and completion["certified_L3_submatrix_replayed"]
+        and completion["all_164_branch_basis_coefficients_classified"]
+        and completion_summary["target_adjoint_coefficients"] == 56
+        and completion_summary["nonzero_target_adjoint_coefficients"] == 56
+        and completion_summary["basis_fixtures_with_nonzero_cokernel_vector"] == 48
+    ):
+        raise AssertionError("complete nonaxisymmetric L1/L3 matrix changed")
+    if (
+        completion["arbitrary_amplitude_zero_variety_classified"]
+        or completion["complete_two_fibre_tangent_cone_classified"]
+        or completion["smooth_secular_classified"]
+        or completion["causal_or_quantum_claim"]
+    ):
+        raise AssertionError("complete branch-basis matrix exceeded its scope")
     if l3["arbitrary_amplitude_zero_variety_classified"] or l3["causal_or_quantum_claim"]:
         raise AssertionError("nonaxisymmetric L3 matrix exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:

@@ -2007,6 +2007,24 @@ causal correction remains `NO_CERTIFIED_MAP`.  The active coefficient gate
 is now the twelve nonaxisymmetric `L=1` entries.  The same-background Bridge 1
 lifecycle remains the certified linear relative triangle.
 
+The exceptional nonaxisymmetric `L=1` complement now closes the remaining
+twelve entries.  Its three circumference rows, four ordered parity channels
+per row and one complete exceptional adjoint per channel give twelve
+branch-basis fixtures and twelve coefficients.  Direct shell-kernel replay
+against both full `L=1` action Hessians precedes specialization, and every
+coefficient has an exact interval excluding zero.  Consequently all 56
+declared odd-`L` coefficients and all 48 odd-`L` branch-basis fixtures are
+bounded/finite-quasiperiodic `OBSTRUCTED`.  Together with the separately
+certified `L=4` matrices, 164 of 164 declared cross-fibre scalar basis
+coefficients are now closed.  Fail-closed atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l1_matrix`
+does not infer an arbitrary-amplitude theorem from the basis result:
+amplitude cancellations, the complete two-fibre tangent cone and smooth-
+secular correction remain `OPEN`, while causal correction remains
+`NO_CERTIFIED_MAP`.  The active gate is therefore the simultaneous amplitude
+zero variety across the now-certified `L=1,3,4` source matrices.  Bridge 1
+remains at its independent certified linear relative-triangle lifecycle.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell

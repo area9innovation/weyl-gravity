@@ -3427,6 +3427,25 @@ keeps arbitrary-amplitude cancellations and the complete two-fibre cone
 nonaxisymmetric `L=1` coefficients.  This remains nonlinear input to Bridge 1
 and does not change its certified linear-map lifecycle.
 
+The final nonaxisymmetric `L=1` complement is now exact at branch-basis
+scope.  The three exceptional circumference rows give twelve ordered parity
+fixtures and twelve target-adjoint coefficients.  The exceptional axial and
+polar adjoints first replay as kernels of the full `L=1` action Hessians on
+`omega^2-k^2=4/3`; every specialized coefficient then has an exact interval
+excluding zero.  Thus all twelve `L=1` fixtures are bounded/finite-
+quasiperiodic `OBSTRUCTED`, and the declared odd-`L` workload is complete:
+56 of 56 `L=1,3` coefficients and 48 of 48 branch-basis fixtures are closed.
+Together with the four certified `L=4` matrices, this closes 164 of 164
+declared cross-fibre scalar basis coefficients.
+Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l1_matrix`
+keeps the arbitrary-amplitude zero variety, smooth-secular correction and
+complete two-fibre tangent cone `OPEN`, with causal correction
+`NO_CERTIFIED_MAP`.  The active nonlinear gate is now the simultaneous
+amplitude zero variety across the certified `L=1,3,4` source matrices.  These
+quadratic data remain inputs to Bridge 1 and do not promote its separately
+certified linear map lifecycle.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

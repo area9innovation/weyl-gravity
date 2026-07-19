@@ -478,6 +478,16 @@ def verify() -> None:
     reverse_second = reverse["mode_data"]["second_order"]
     if reverse_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or reverse_second["smooth_secular"]["status"] != "OPEN" or reverse_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("reverse cross-parity correction classes were merged")
+    completion = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l1_matrix"]
+    completion_second = completion["mode_data"]["second_order"]
+    if completion["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All twelve exceptional L1 adjoint coefficients are nonzero" not in completion["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("complete cross-fibre branch-basis matrix was hidden")
+    if completion["mode_data"]["taub_maps"]["status"] != "NOT_APPLICABLE":
+        raise AssertionError("complete cross-fibre resonance functionals were merged with Taub maps")
+    if completion_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or completion_second["smooth_secular"]["status"] != "OPEN" or completion_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("complete cross-fibre correction classes were merged")
+    if "164 of 164 branch-basis scalar coefficients" not in completion["claim_boundary"] or "not the arbitrary-amplitude zero variety" not in completion["claim_boundary"]:
+        raise AssertionError("complete cross-fibre basis row exceeded its amplitude scope")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]
     if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:
