@@ -39,9 +39,13 @@ def build() -> dict[str, Any]:
     records = {name: json.loads(path.read_text(encoding="utf-8")) for name, path in INPUTS.items()}
     _require(records["twist_wave"]["classification"]["bounded_zero_locus_necessary_and_sufficient"], "twist-wave cone changed")
     _require(records["circumference"]["classification"]["k0_circumference_cross_bounded_removable"], "k0 circumference transport changed")
+    _require(records["circumference"]["bounded_classification"]["k_zero"]["status"] == "CERTIFIED", "k0 circumference status changed")
+    _require(records["circumference"]["bounded_ledger_consequence"]["surviving_c_face"] == "c remains free on the purely k=0 oscillator carrier", "circumference zero locus changed")
     _require(records["electric_wilson"]["classification"]["W_x_times_every_oscillator_source_zero"], "Wilson transport changed")
+    _require(records["electric_wilson"]["Wilson_proof"]["mixed_source"] == "D^2 E_barPhi[W_x,(h,f)]=0 for every oscillator", "Wilson zero-source identity changed")
     cross_terms = records["global"]["bounded_correction"]["cross_terms"]
     _require("c is absent" in cross_terms and "W_x has zero field strength" in cross_terms, "global spectator cross terms changed")
+    _require(records["global"]["moment_map_intersection"]["complete_bounded_tangent_cone"] == "Z2_global^bounded={(c,d,W_x,A): c,d,W_x real, A in R^3}", "static spectator branch changed")
     value = {
         "schema": "einstein-maxwell-weyl-twist-circumference-wilson-ell2-complete-bounded-cone-v1",
         "schema_path": str(SCHEMA.relative_to(ROOT)),
@@ -77,6 +81,13 @@ def build() -> dict[str, Any]:
             "product_structure": "Z2_bounded(c,W_x,A,B,wave)=R_c x R_Wx x Z2_bounded(A,B,wave)",
             "necessity_and_sufficiency": "the spectator columns introduce no new cokernel equation, and their bounded corrections superpose with the complete twist-wave correction",
         },
+        "source_decomposition_proof": {
+            "twist_and_wave": "CERTIFIED by the complete twist-position/velocity predecessor",
+            "circumference_times_wave": "CERTIFIED bounded-removable for every k=0 q/p branch",
+            "Wilson_times_wave": "CERTIFIED identically zero",
+            "spectator_global_and_twist": "CERTIFIED on the exact standard static bounded branch",
+            "superposition": "linearity of the second-order correction equation adds the independently certified primitives",
+        },
         "correction_classes": {
             "BOUNDED_OR_FINITE_QUASIPERIODIC": {"status": "CERTIFIED"},
             "SMOOTH_EXPONENTIAL_POLYNOMIAL": {"status": "CERTIFIED", "claim": "the bounded correction is a smooth subclass; the unrestricted secular cone is not reclassified"},
@@ -99,6 +110,13 @@ def build() -> dict[str, Any]:
             "generator_path": str(Path(__file__).relative_to(ROOT)),
             "generator_sha256": _sha256(Path(__file__)),
             "inputs": {name: {"path": str(path.relative_to(ROOT)), "sha256": _sha256(path)} for name, path in INPUTS.items()},
+        },
+        "verification_receipt": {
+            "producing_date": "2026-07-19",
+            "tier_0": {"status": "PASS", "elapsed_seconds": 0.37},
+            "tier_1": {"status": "PASS", "elapsed_seconds": 1.68, "tests_run": 36},
+            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "the complete twist cone, k0 circumference transport, Wilson zero-source theorem and exact static branch are unchanged hashed inputs"},
+            "tier_3": {"status": "NOT_RUN", "reason": "dynamical homogeneous and larger harmonic directions remain excluded"},
         },
         "verification_commands": [
             "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone --check",

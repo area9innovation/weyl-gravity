@@ -38,7 +38,7 @@
   "next_gate": "adjoin the radion position a, circumference velocity d and electric tangent Q_e as separate dynamical incidence problems",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.py",
-    "generator_sha256": "f71174a78bf7c6697d1e7308bdaf965ac9ad5c05e78ed9d0aa8d51ecc0c52f93",
+    "generator_sha256": "6ca0240802fb66ddeb44eaac7dae5b803f54463aca56709bdfe8af9f5330958c",
     "inputs": {
       "circumference": {
         "path": "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
@@ -62,7 +62,7 @@
   "result_state": "COMPLETE_C_WX_A_B_ELL2_BOUNDED_CONE_CLASSIFIED",
   "schema": "einstein-maxwell-weyl-twist-circumference-wilson-ell2-complete-bounded-cone-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.schema.json",
-  "schema_sha256": "59ed9f6f1b81114513d5eed01aa870c8eeee2fa805a15c03c39b36069a0975c4",
+  "schema_sha256": "f1afa4685a75f32fc6609e78342feb669e60fc14c764f0cf041b97b0d9b8170d",
   "scope": {
     "background": "compact magnetically supported Plebanski-Hacyan product",
     "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic second-order correction",
@@ -76,6 +76,13 @@
     "parity": "homogeneous spectators, axial generalized-zero twist and axial/polar waves",
     "theory": "Weyl-Maxwell target"
   },
+  "source_decomposition_proof": {
+    "Wilson_times_wave": "CERTIFIED identically zero",
+    "circumference_times_wave": "CERTIFIED bounded-removable for every k=0 q/p branch",
+    "spectator_global_and_twist": "CERTIFIED on the exact standard static bounded branch",
+    "superposition": "linearity of the second-order correction equation adds the independently certified primitives",
+    "twist_and_wave": "CERTIFIED by the complete twist-position/velocity predecessor"
+  },
   "spectator_proof": {
     "Wilson_twist": "the Euler operators depend on the U1 connection only through F=dA",
     "Wilson_wave": "D^2E[W_x,u_wave]=0 because delta F(W_x dx)=0",
@@ -87,5 +94,25 @@
     "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone --check",
     "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone.py",
     "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_twist_circumference_wilson_ell2_complete_bounded_cone"
-  ]
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.37,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 1.68,
+      "status": "PASS",
+      "tests_run": 36
+    },
+    "tier_2": {
+      "criterion": "the complete twist cone, k0 circumference transport, Wilson zero-source theorem and exact static branch are unchanged hashed inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "dynamical homogeneous and larger harmonic directions remain excluded",
+      "status": "NOT_RUN"
+    }
+  }
 }

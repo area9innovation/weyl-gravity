@@ -474,7 +474,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "The bounded cone is R_c x R_Wx times the complete twist-wave cone: c and W_x are arbitrary, B=0, and the constant-position H,J_i and shell equations remain."),
             ("CERTIFIED", "Exact k=0 radius transport removes the c-times-wave source, while every W_x mixed source vanishes because delta F=0."),
             _second_order(("CERTIFIED", "The displayed product cone is necessary and sufficient on the declared carrier."), ("CERTIFIED", "The bounded corrections are smooth exponential-polynomial; the unrestricted secular cone is not reclassified."), ("NO_CERTIFIED_MAP", "No retarded Weyl-Maxwell complex is certified on this background.")),
-            _evidence("twist_circumference_wilson_ell2_complete_bounded_cone", "twist_position_velocity_ell2_complete_bounded_cone", "global_fixed_ell_k0_bounded", "standard_global_bounded"),
+            _evidence("twist_circumference_wilson_ell2_complete_bounded_cone", "twist_position_velocity_ell2_complete_bounded_cone", "circumference_classification", "electric_wilson_transport", "standard_global_bounded"),
             "The dynamical globals a,d,Q_e, other harmonics and momenta, causal propagation, all-orders integration, residual observables and quantum theory remain fail-closed.",
         ),
         _entry(

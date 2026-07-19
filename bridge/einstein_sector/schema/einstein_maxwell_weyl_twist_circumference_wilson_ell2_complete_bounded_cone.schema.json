@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": true,
-  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "scope", "spectator_proof", "complete_bounded_zero_locus", "correction_classes", "classification", "interpretation", "next_gate", "claim_boundary", "provenance", "verification_commands"],
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "scope", "spectator_proof", "complete_bounded_zero_locus", "source_decomposition_proof", "correction_classes", "classification", "interpretation", "next_gate", "claim_boundary", "provenance", "verification_receipt", "verification_commands"],
   "properties": {
     "schema": {"const": "einstein-maxwell-weyl-twist-circumference-wilson-ell2-complete-bounded-cone-v1"},
     "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_TWIST_CIRCUMFERENCE_WILSON_ELL2_COMPLETE_BOUNDED_CONE"},
@@ -10,9 +10,11 @@
     "lifecycle_state": {"const": "CLASSIFIED"},
     "scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
     "spectator_proof": {"type": "object", "required": ["circumference_wave", "circumference_twist", "Wilson_wave", "Wilson_twist", "self_and_mutual"]},
-    "complete_bounded_zero_locus": {"type": "object", "required": ["free_spectators", "twist_velocity", "remaining_equations", "product_structure", "necessity_and_sufficiency"]},
-    "correction_classes": {"type": "object", "required": ["BOUNDED_OR_FINITE_QUASIPERIODIC", "SMOOTH_EXPONENTIAL_POLYNOMIAL", "CAUSAL_RETARDED"]},
-    "classification": {"type": "object", "required": ["complete_c_Wx_A_B_plus_ell2_wave_carrier_covered", "circumference_and_Wilson_are_exact_bounded_spectators", "bounded_zero_locus_necessary_and_sufficient", "radion_circumference_velocity_or_electric_tangents_classified", "other_ell_or_nonzero_momentum_classified", "unrestricted_smooth_secular_cone_classified", "causal_or_quantum_claim", "all_orders_integrability"]},
-    "provenance": {"type": "object", "required": ["generator_path", "generator_sha256", "inputs"]}
+    "complete_bounded_zero_locus": {"type": "object", "required": ["free_spectators", "twist_velocity", "remaining_equations", "product_structure", "necessity_and_sufficiency"], "properties": {"twist_velocity": {"const": "B=0"}}},
+    "source_decomposition_proof": {"type": "object", "required": ["twist_and_wave", "circumference_times_wave", "Wilson_times_wave", "spectator_global_and_twist", "superposition"]},
+    "correction_classes": {"type": "object", "required": ["BOUNDED_OR_FINITE_QUASIPERIODIC", "SMOOTH_EXPONENTIAL_POLYNOMIAL", "CAUSAL_RETARDED"], "properties": {"BOUNDED_OR_FINITE_QUASIPERIODIC": {"properties": {"status": {"const": "CERTIFIED"}}}, "CAUSAL_RETARDED": {"properties": {"status": {"const": "NO_CERTIFIED_MAP"}}}}},
+    "classification": {"type": "object", "required": ["complete_c_Wx_A_B_plus_ell2_wave_carrier_covered", "circumference_and_Wilson_are_exact_bounded_spectators", "bounded_zero_locus_necessary_and_sufficient", "radion_circumference_velocity_or_electric_tangents_classified", "other_ell_or_nonzero_momentum_classified", "unrestricted_smooth_secular_cone_classified", "causal_or_quantum_claim", "all_orders_integrability"], "properties": {"complete_c_Wx_A_B_plus_ell2_wave_carrier_covered": {"const": true}, "circumference_and_Wilson_are_exact_bounded_spectators": {"const": true}, "bounded_zero_locus_necessary_and_sufficient": {"const": true}, "radion_circumference_velocity_or_electric_tangents_classified": {"const": false}, "other_ell_or_nonzero_momentum_classified": {"const": false}, "unrestricted_smooth_secular_cone_classified": {"const": false}, "causal_or_quantum_claim": {"const": false}, "all_orders_integrability": {"const": false}}},
+    "provenance": {"type": "object", "required": ["generator_path", "generator_sha256", "inputs"]},
+    "verification_receipt": {"type": "object", "required": ["producing_date", "tier_0", "tier_1", "tier_2", "tier_3"]}
   }
 }

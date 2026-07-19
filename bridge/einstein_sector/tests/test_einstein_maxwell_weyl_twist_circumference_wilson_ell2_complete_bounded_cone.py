@@ -24,6 +24,11 @@ class TwistCircumferenceWilsonEll2ConeTests(unittest.TestCase):
     def test_twist_velocity_remains_zero(self) -> None:
         self.assertEqual(self.value["complete_bounded_zero_locus"]["twist_velocity"], "B=0")
 
+    def test_spectator_primitives_are_explicit(self) -> None:
+        proof = self.value["source_decomposition_proof"]
+        self.assertIn("k=0", proof["circumference_times_wave"])
+        self.assertEqual(proof["Wilson_times_wave"], "CERTIFIED identically zero")
+
     def test_dynamical_globals_are_not_promoted(self) -> None:
         classification = self.value["classification"]
         self.assertFalse(classification["radion_circumference_velocity_or_electric_tangents_classified"])
