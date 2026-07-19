@@ -10,6 +10,7 @@
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \theoremstyle{remark}
@@ -17,19 +18,23 @@
 
 \newcommand{\R}{\mathbb R}
 \newcommand{\C}{\mathbb C}
+\newcommand{\dd}{\mathrm d}
 \newcommand{\cE}{\mathcal E}
 \newcommand{\cL}{\mathcal L}
 \newcommand{\cZ}{\mathcal Z}
 \newcommand{\cP}{\mathcal P}
 \newcommand{\cR}{\mathcal R}
+\newcommand{\Xep}{\mathscr X_{\mathrm{ep}}}
+\newcommand{\Xqp}{\mathscr X_{\mathrm{qp}}}
 \newcommand{\Diff}{\operatorname{Diff}}
 \newcommand{\Sol}{\operatorname{Sol}}
 \newcommand{\coker}{\operatorname{coker}}
 \newcommand{\cert}[1]{\nolinkurl{#1}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
-\title{The Second-Order Tangent Cone of Compact Weyl--Maxwell Gravity\\
-\large Moment Maps, Secular Corrections, and Bounded Resonances}
+\title{The Finite-Harmonic Formal Second-Order Tangent Cone\\
+of Compact Weyl--Maxwell Gravity\\
+\large Moment Maps, Exponential-Polynomial Corrections, and Bounded Resonances}
 \author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
 \and Claude Fable 5\thanks{Anthropic model and computational coauthor. The
 project was commissioned and coordinated by Asger Alstrup Palm
@@ -53,13 +58,13 @@ The certified linear inventory contains the ordinary Einstein--Maxwell
 branches, two additional fourth-order branches in each generic parity,
 exceptional dipoles, a homogeneous generalized block, and axial twist modes.
 
-For corrections that are smooth, spatially periodic, and finite
-exponential-polynomials in time, the complete second-order obstruction space
-is five-dimensional.  Its covectors are precisely the Taub pairings with
-time translation, circle translation, and the three sphere rotations.  Thus
-the complete finite-support smooth tangent cone is
+For spatially periodic corrections with finite exponential-polynomial time
+dependence, the complete second-order obstruction space is five-dimensional.
+Its covectors are precisely the Taub pairings with time translation, circle
+translation, and the three sphere rotations.  Thus the complete
+finite-support exponential-polynomial tangent cone is
 \[
- \cZ^{\rm smooth}_2
+ \cZ^{\rm ep}_2
  =\{u:\mu_H(u)=\mu_{P_x}(u)=\mu_{J_1}(u)=
               \mu_{J_2}(u)=\mu_{J_3}(u)=0\}.
 \]
@@ -74,10 +79,14 @@ bounded-removable, and determine the full circumference column: a nonzero
 circle-radius tangent is compatible with a finite oscillator precisely when
 that oscillator has zero circle momentum.  A repaired full-time
 circumference-velocity fixture also exposes a nonzero polar polynomial
-obstruction that was invisible at \(t=0\).  The remaining bounded oscillator
-columns are stated as open gates.  Consequently smooth second-order
-extendibility is a moment-map theorem, whereas bounded extendibility is a
-strict resonance problem.
+obstruction that was invisible at \(t=0\); its full \(a,d\)-cross ideal on
+the \(\ell=2,k=0\) extra block is now classified.  On the complete
+global-plus-\(\ell=2,k=0\)-extra carrier, the bounded cone then collapses
+exactly to the standard static-global cone: no nonzero extra amplitude
+survives.  The remaining oscillator columns are stated as open gates.
+Consequently formal
+exponential-polynomial extendibility is a moment-map theorem, whereas
+bounded quasiperiodic extendibility is a strict resonance problem.
 
 All results are \textsc{local-algebraic} and \textsc{reduced-mode}.  They do
 not establish an all-orders family, a causal retarded correction, a final
@@ -102,7 +111,7 @@ scope, references, and exposition.
 Let \(\Phi(s)\) be a putative curve of solutions of the Weyl--Maxwell
 equations \(\cE(\Phi)=0\), expanded as
 \[
- \Phi(s)=\bar\Phi+s u+\frac{s^2}{2}v+O(s^3).
+ \Phi(s)=\bar\Phi+s u+s^2v+O(s^3).
 \]
 The first two equations are
 \begin{equation}\label{eq:second-order-equation}
@@ -110,13 +119,15 @@ The first two equations are
  \qquad
  \cL v=-\cE^{(2)}_{\bar\Phi}(u,u),
  \qquad
- \cL:=D\cE_{\bar\Phi}.
+ \cL:=D\cE_{\bar\Phi},
+ \qquad
+ \cE^{(2)}_{\bar\Phi}:=\frac12D^2\cE_{\bar\Phi}.
 \end{equation}
 The first equation describes the linear solution space.  The second asks
 whether the quadratic source lies in the image of the linearized operator in
 a specified function class.  Changing that function class changes the
-answer: a resonant source may have a smooth secular primitive but no bounded
-primitive.
+answer: a resonant source may have a finite exponential-polynomial secular
+primitive but no bounded quasiperiodic primitive.
 
 The paper answers the following finite-harmonic question.
 
@@ -129,20 +140,21 @@ required to remain bounded in time?
 
 The answer has two layers:
 \begin{align}
- u\in\cZ^{\rm smooth}_2
+ u\in\cZ^{\rm ep}_2
  &\Longleftrightarrow \mu_H=\mu_{P_x}=\mu_{J_1}=\mu_{J_2}=\mu_{J_3}=0,
- \label{eq:smooth-summary}\\
- u\in\cZ^{\rm bounded}_2
- &\Longrightarrow u\in\cZ^{\rm smooth}_2,
+ \label{eq:ep-summary}\\
+ u\in\cZ^{\rm qp}_2
+ &\Longleftrightarrow u\in\cZ^{\rm ep}_2,
  \quad \cP_{j,r}(u)=0,
  \quad \cR_{j,a}(u)=0 .
- \label{eq:bounded-summary}
+ \label{eq:qp-summary}
 \end{align}
 Here \(\cP_{j,r}\) are positive polynomial-growth coefficients and
 \(\cR_{j,a}\) are reduced adjoint pairings on nonzero characteristic shells.
-The first line is complete in the declared carrier.  The paper gives several
-complete columns of the second line but does not claim the complete common
-zero locus of all bounded obstructions.
+Both obstruction ledgers are complete in the declared finite carrier.  The
+paper gives several complete columns of the second line but does not claim a
+classification of the common quadratic zero locus of all bounded
+obstructions.
 
 \subsection{Dependency typing}
 
@@ -152,8 +164,9 @@ finite-module calculation.  It carries the dependency tags
 \textsc{local-algebraic}\qquad\textsc{reduced-mode}.
 \end{center}
 No theorem below carries \textsc{lorentzian-causal}.  In particular, a
-finite secular right inverse is not a retarded Green operator, and a bounded
-quasiperiodic correction is not an all-orders nonlinear solution.
+finite exponential-polynomial right inverse is not a retarded Green operator,
+and a bounded quasiperiodic correction is not an all-orders nonlinear
+solution.
 
 \section{Theory and common background}
 
@@ -172,7 +185,8 @@ Weyl--Maxwell theory.  The latter has local gauge group
 The spatial slice \(\Sigma=S^1\times S^2\) is compact.  Its background
 stabilizer algebra contains
 \[
- H=\partial_t,qquad P_x=\partial_x,qquad J_1,J_2,J_3\in\mathfrak{so}(3).
+ H=\partial_t,\qquad P_x=\partial_x,\qquad
+ J_1,J_2,J_3\in\mathfrak{so}(3).
 \]
 For a linear tangent \(u\), the corresponding covariant phase-space moment
 maps are quadratic forms
@@ -183,6 +197,57 @@ maps are quadratic forms
 On a closed slice, the covariant Taub bridge identifies these with the
 pairings of the quadratic field-equation source against the stabilizer
 cokernel covectors.
+
+\begin{proposition}[Taub moment maps on ordinary and generalized modes]
+\label{prop:generalized-taub}
+The five displayed automorphisms lift to the fixed magnetic bundle and act
+symplectically on every certified linear block.  For every linear solution,
+including the homogeneous and twist Jordan blocks,
+\begin{equation}\label{eq:taub-bridge}
+ \left\langle\zeta_X,
+ \cE^{(2)}_{\bar\Phi}(u,u)\right\rangle_\Sigma
+ =\mu_X(u)
+ =\frac12\Omega_\Sigma(u,\mathcal L_Xu),
+ \qquad X\in\{H,P_x,J_1,J_2,J_3\}.
+\end{equation}
+The right side is independent of the closed Cauchy slice \(\Sigma\).
+There is no sixth \(U(1)\) Taub covector in the fixed-bundle problem.
+\end{proposition}
+
+\begin{proof}
+Twice differentiating the action Noether identity pairs the quadratic
+constraint source with the adjoint reducibility parameter and gives
+\eqref{eq:taub-bridge}.  Because \(u\) and \(\mathcal L_Xu\) solve the
+linearized equations, their Lee--Wald current is conserved.  The difference
+between its integrals on two closed Cauchy slices is therefore the integral
+of an exact spacetime divergence and vanishes.  This argument uses neither a
+frequency eigenbasis nor boundedness, so it applies to polynomial Jordan
+solutions.
+
+Concretely, time translation acts on the homogeneous coordinates by
+\[
+ (a,b,c,d,Q_e,W_x)\longmapsto(b,0,d,2a,0,Q_e)
+\]
+and on each twist pair by \((A,B)\mapsto(B,0)\).  Substitution into the
+conserved Cauchy form gives, after omission of the common positive harmonic
+normalizations,
+\begin{align}
+ \mu_H^{\ell=0}&=-a^2-b^2+bd-Q_e^2,\\
+ \mu_H^{\rm twist}&=2|B|^2,
+ &\mu_{\mathbf J}^{\rm twist}&=-4A\times B.
+\end{align}
+Although the representatives contain powers of \(t\), these expressions are
+constant; the apparent time-dependent contributions cancel in the conserved
+current.
+
+The rotations lift as bundle automorphisms
+\(\widehat J_a=(J_a,\chi_a)\), with
+\(\iota_{J_a}\bar F+\dd\chi_a=0\) patchwise.  A constant \(U(1)\) parameter
+acts trivially on connection differences and is a reducibility parameter,
+not an independent Hamiltonian stabilizer.  Finally, fixing the Chern class
+of the magnetic bundle forbids a harmonic magnetic variation.  These facts
+leave exactly the five covectors in \eqref{eq:taub-bridge}.
+\end{proof}
 
 \section{The complete finite harmonic carrier}
 
@@ -205,11 +270,11 @@ indexed by
 Angular Clebsch--Gordan selection gives finitely many \(L\), while temporal
 and circle products give finite sums of input frequencies and momenta.
 
-\begin{definition}[Correction classes]
-Let \(\mathscr X_{\rm smooth}\) be the spatially periodic fields whose time
-coefficients are finite sums of \(t^p e^{-i\Omega t}\).  Let
-\(\mathscr X_{\rm bounded}\subset\mathscr X_{\rm smooth}\) be the subclass
-with \(p=0\).  Define
+\begin{definition}[Finite correction modules]
+Let \(\Xep\) be the spatially periodic fields whose time coefficients are
+finite sums of \(t^p e^{-i\Omega t}\), with \(p\in\mathbb N_0\) and a finite
+set of real frequencies.  Let \(\Xqp\subset\Xep\) be the finite bounded
+quasiperiodic subclass with \(p=0\).  Define
 \[
  \cZ_2^{\mathscr X}
  =\{u\in V_{\rm fin}:\exists v\in\mathscr X,
@@ -217,107 +282,278 @@ with \(p=0\).  Define
 \]
 \end{definition}
 
-The distinction is physical as well as analytic.  A secular coefficient is
-smooth for every finite time but prevents a uniformly bounded perturbative
-expansion.  It may signal a nearby family with shifted frequency, a required
-renormalization of parameters, or genuine resonant growth.  The certificate
-records only the exact second-order disposition.
+Every element of \(\Xep\) is smooth, but \(\Xep\) is not the full
+\(C^\infty\), Sobolev, distributional, or retarded function space.  The
+subscripts ``ep'' and ``qp'' are therefore load-bearing.  A secular
+coefficient is finite at every finite time but prevents a uniformly bounded
+perturbative expansion.  It may signal a nearby family with shifted
+frequency, a required renormalization of parameters, or genuine resonant
+growth.  The certificates decide only these two finite-module dispositions.
 
-\section{Smooth tangent-cone theorem}
+\section{Finite exponential-polynomial tangent-cone theorem}
 
-\begin{theorem}[Complete finite-support smooth tangent cone]
-\label{thm:smooth-cone}
-For the complete carrier \(V_{\rm fin}\) above,
+The sufficiency statement rests on a simple algebraic fact which we state
+explicitly because it is the step that distinguishes \(\Xep\) from
+\(\Xqp\).
+
+\begin{lemma}[Exponential-polynomial surjectivity]
+\label{lem:ep-surjectivity}
+Let \(P(D_t)\ne0\) be a constant-coefficient scalar differential operator.
+For every polynomial \(f(t)\) and real \(\Omega\), there is a polynomial
+\(g(t)\) such that
 \begin{equation}
+ P(D_t)\bigl(g(t)e^{-i\Omega t}\bigr)
+ =f(t)e^{-i\Omega t}.
+\end{equation}
+If \(-i\Omega\) is a root of \(P\) of multiplicity \(m\), one may take
+\(\deg g\leq\deg f+m\).  Consequently every nonzero invariant factor of a
+matrix operator over the fibre ring \(K[D_t]\) is surjective on \(\Xep\);
+only zero Smith factors contribute to its \(\Xep\)-cokernel.
+\end{lemma}
+
+\begin{proof}
+Conjugation by \(e^{-i\Omega t}\) replaces \(P(D_t)\) by
+\(P(D_t-i\Omega)\).  Factor
+\[
+ P(z-i\Omega)=z^mQ(z),\qquad Q(0)\ne0.
+\]
+The operator \(D_t^m\) is surjective on polynomials, increasing the required
+degree by at most \(m\).  On each finite-dimensional polynomial-degree
+filtration, \(Q(D_t)=Q(0)(1+N)\) with \(N\) nilpotent, hence has the finite
+inverse \(Q(0)^{-1}\sum_r(-N)^r\).  For a matrix operator, unimodular Smith
+transformations preserve \(\Xep\) and reduce the assertion to its scalar
+invariant factors.
+\end{proof}
+
+The complete output ledger after Noether restriction and local
+\(\Diff\times\mathrm{Weyl}\times U(1)\) reduction is as follows.  Here
+\(p\) and \(q\) are respectively the extra and Einstein characteristic
+polynomials; ``zero factors'' means persistent factors in the \(\Xep\)
+cokernel, not roots of a nonzero characteristic polynomial.
+
+\begin{center}
+\small
+\begin{tabularx}{0.99\textwidth}{@{}Y Y c Y@{}}
+\toprule
+Output stratum & Reduced operator or invariant factors & Zero factors &
+Cokernel interpretation\\
+\midrule
+Generic $L\ge2$, nonstatic & $1,1,p,pq$; off-shell inverse and Lemma
+\ref{lem:ep-surjectivity} on $p/q$ shells & 0 & none\\
+Generic $L\ge2$, static & $p=-(3\Lambda+3\kappa^2-2)/3<0$ and
+$q>0$ for $\Lambda\ge6$ & 0 & none\\
+Exceptional $L=1$, nonstatic & invertible off shell; nonzero factors on
+$\Omega^2-K^2=4,4/3$ & 0 & none in $\Xep$\\
+Scalar $L=0$, $(\Omega,K)\ne(0,0)$ & exact modulo local gauge and Noether
+identities & 0 & none\\
+Homogeneous $L=0$, $(\Omega,K)=(0,0)$ & constraints plus
+$D_t^4(C-K)$ and $D_t^2A_x$ & 2 & $\zeta_H,\zeta_{P_x}$\\
+Axial dipole $L=1$, $(\Omega,K)=(0,0)$ & twist polynomial operator;
+polar block invertible & 3 & $\zeta_{J_1},\zeta_{J_2},\zeta_{J_3}$\\
+Remaining certified global/twist outputs & contained in the preceding
+$L=0,1$ blocks & 0 additional & none additional\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+For completeness, put \(\kappa:=K_{\rm out}\) for the output circle
+momentum (unrelated to the homogeneous function \(K(t)\) below).  The static
+generic entries use
+\[
+ p=-\frac{3\Lambda+3\kappa^2-2}{3}<0,
+ \qquad
+ q=\Lambda^2+2\Lambda\kappa^2-2\Lambda+\kappa^4.
+\]
+Putting \(s=\Lambda-6\ge0\) and \(u=\kappa^2\ge0\) gives
+\[
+ q=s^2+2su+u^2+10s+12u+24>0,
+\]
+so no static \(L\ge2\) zero factor is hidden in the table.
+
+For the homogeneous source, quadratic products have degree at most six.
+The two dynamical invariants therefore have the explicit polynomial right
+inverses
+\[
+ D_t^4\!\left(\frac{t^{r+4}}{(r+1)(r+2)(r+3)(r+4)}\right)=t^r,
+ \qquad
+ D_t^2\!\left(\frac{t^{r+2}}{(r+1)(r+2)}\right)=t^r,
+ \quad 0\le r\le6.
+\]
+This displays rather than merely asserts the zero-block surjectivity.
+
+\begin{theorem}[Complete finite-support exponential-polynomial cone]
+\label{thm:ep-cone}
+For the complete carrier \(V_{\rm fin}\),
+\begin{equation}\label{eq:ep-cone}
  \boxed{
- \cZ^{\rm smooth}_2
+ \cZ^{\rm ep}_2
  =\{u\in V_{\rm fin}:\mu_H(u)=\mu_{P_x}(u)=
     \mu_{J_1}(u)=\mu_{J_2}(u)=\mu_{J_3}(u)=0\}.}
 \end{equation}
-Every point of this cone admits a spatially periodic second-order correction
-whose time dependence is a finite exponential-polynomial.  Conversely, each
-of the five moment maps must vanish for such a correction to exist.
+Every point of this cone admits a real, spatially periodic second-order
+correction in \(\Xep\), and each of the five equations is necessary.
 \end{theorem}
 
-\subsection{Proof architecture}
-
-The proof is blockwise but exhaustive.
-
-\paragraph{Nonzero output blocks.}
-Direct exceptional Fourier complexes and generic Smith modules remove every
-off-shell output algebraically.  On a characteristic shell, the scalar
-factor admits a finite secular primitive.  Thus resonance does not create a
-new cokernel in \(\mathscr X_{\rm smooth}\).
-
-\paragraph{Homogeneous zero block.}
-The only potentially non-surjective rows reduce to ordinary polynomial
-operators.  The operators \(D_t^4\) and \(D_t^2\) are surjective on the
-finite source polynomials generated at quadratic order, whose degree is at
-most six.
-
-\paragraph{Axial dipole zero block.}
-After gauge and Noether reduction, the only surviving covectors are the
-three lifted rotations.  The homogeneous zero block supplies the time and
-circle translations.  Therefore
-\begin{equation}
- \coker\cL_{\rm smooth}
+\begin{proof}
+Finite input support and Clebsch--Gordan selection produce finitely many
+output labels \(j=(L,M,K,\Omega,\text{parity})\), with temporal polynomial
+degree at most six.  The table exhausts those labels.  Lemma
+\ref{lem:ep-surjectivity} removes every nonzero invariant factor, including
+every nonzero-frequency resonance.  The displayed polynomial primitives
+remove the homogeneous dynamical rows.  Exactly five zero factors remain,
+so
+\[
+ \coker\cL_{\rm ep}
  =\operatorname{span}\{\zeta_H,\zeta_{P_x},
        \zeta_{J_1},\zeta_{J_2},\zeta_{J_3}\}.
-\end{equation}
-
-\paragraph{Covariant identification.}
-The exact Taub bridge identifies
-\(\langle\zeta_X,\cE^{(2)}(u,u)\rangle\) with \(\mu_X(u)\).
-This proves both necessity and sufficiency.
+\]
+Pairing the second-order equation with them and applying Proposition
+\ref{prop:generalized-taub} proves necessity.  Conversely, when all five
+moment maps vanish, every output source lies in the blockwise image.  The
+finite corrections and their conjugates assemble a real element of
+\(\Xep\), proving sufficiency.
+\end{proof}
 
 \begin{remark}
-The theorem is stronger than checking a chosen set of modes.  It includes
-arbitrary finite sums across the certified generic, exceptional, homogeneous,
-and twist blocks.  It is weaker than an infinite-mode Sobolev theorem and
-weaker than causal solvability.
+The theorem covers arbitrary finite sums across the certified generic,
+exceptional, homogeneous, and twist blocks.  It is not a theorem for the
+full smooth, Sobolev, distributional, infinite-mode, or causal function
+space.
 \end{remark}
 
-\section{What changes in the bounded category}
+\section{Complete bounded-obstruction decomposition}
 
-On \(\mathscr X_{\rm bounded}\), differentiation cannot invert a positive
-power of \(t\), and a resonant exponential has no bounded primitive.  The
-obstruction ledger consequently enlarges to
+On \(\Xqp\), differentiation cannot produce a positive power of \(t\), and
+a resonant pure exponential has no bounded quasiperiodic primitive.  For each
+finite output block \(j\), let \(\cP_{j,r}\) extract the coefficient of
+\(t^re^{-i\Omega_jt}\) for \(r>0\).  After all such coefficients vanish,
+let \(\cR_{j,a}\) pair the remaining pure exponential with an exact basis of
+the reduced left kernel of \(\cL_j(-i\Omega_j)\).  The stabilizer covectors
+at the genuine zero block are kept separately as \(\mu_X\).
+
+\begin{theorem}[Complete finite bounded-obstruction ledger]
+\label{thm:bounded-ledger}
+For every \(u\in V_{\rm fin}\), a second-order correction in \(\Xqp\) exists
+if and only if
 \begin{equation}\label{eq:bounded-cokernel}
- \{\mu_H,\mu_{P_x},\mu_{J_i}\}
- \cup\{\cP_{j,r}\}
- \cup\{\cR_{j,a}\}.
+ \mu_H(u)=\mu_{P_x}(u)=\mu_{J_i}(u)=0,
+ \qquad
+ \cP_{j,r}(u)=0,
+ \qquad
+ \cR_{j,a}(u)=0
 \end{equation}
-The certificates contain fixtures in which the last two families are
-independent of all five moment maps.  Hence the smooth cone is strictly
-larger than the bounded cone.
+for all finite output blocks and all corresponding indices.  These are the
+complete linear obstruction types in the declared finite module.  The common
+quadratic zero set of the resulting functionals is only partly classified.
+\end{theorem}
+
+\begin{proof}
+If a bounded quasiperiodic \(v\) exists, then \(\cL v\) is also bounded and
+quasiperiodic, so every positive polynomial coefficient \(\cP_{j,r}\)
+vanishes.  For each remaining pure-frequency block, finite-dimensional linear
+algebra says that \(\cL_j(-i\Omega_j)v_j=S_j\) is solvable precisely when
+\(S_j\) annihilates its reduced left kernel.  At the genuine zero block those
+pairings are the five Taub moment maps; at nonzero shells they are the
+\(\cR_{j,a}\).  Off-shell blocks are invertible.  Conversely, these
+conditions put every finite block source in the corresponding image, and the
+finite collection of solutions and conjugates assembles an element of
+\(\Xqp\).
+\end{proof}
+
+The certificates contain a moment-map-zero fixture with a nonzero
+\(\cP_{j,2}\) and another with a nonzero \(\cR_{j,a}\).  Thus both new
+families are independent of the five global charges, and
+\(\cZ_2^{\rm qp}\subsetneq\cZ_2^{\rm ep}\).
+
+\section{Complete standard generalized-zero subcone}
+
+The coordinates in the next theorem are concrete perturbations, not abstract
+labels.  In coordinates \((t,x,\theta,\phi)\), write
+\begin{align}
+ h_{xx}&=C(t),
+ &h_{\theta\theta}&=K(t),
+ &h_{\phi\phi}&=K(t)\sin^2\theta,
+ &a_x&=W_x+Q_et,\\
+ K(t)&=a+bt,
+ &C(t)&=at^2+\frac b3t^3+c+dt.
+\end{align}
+For an orthonormal real \(\ell=1\) basis \((Y_{1a},X_a)\), the twist block is
+\begin{equation}
+ h_{xA}=(A_a+B_at)X^a_A,
+ \qquad
+ a_x=-(A_a+B_at)Y_{1a}.
+\end{equation}
+
+\begin{center}
+\small
+\begin{tabularx}{0.98\textwidth}{@{}c Y c Y@{}}
+\toprule
+Coordinate & Linear representative & Time behaviour & Geometric meaning\\
+\midrule
+$a$ & sphere scale $K=a$ with induced $C=at^2$ & constant/quadratic &
+homogeneous radion/Jordan seed\\
+$b$ & $K=bt$, $C=bt^3/3$ & linear/cubic & homogeneous Jordan partner\\
+$c$ & $C=c$ & constant & circle circumference modulus\\
+$d$ & $C=dt$ & linear & circumference velocity\\
+$Q_e$ & $a_x=Q_et$ & linear & uniform electric tangent\\
+$W_x$ & $a_x=W_x$, $\dd a=0$ & constant & flat circle Wilson line\\
+$A\in\R^3$ & twist $h_{xA},a_x$ & constant & lifted $SO(3)$ mapping-torus holonomy\\
+$B\in\R^3$ & same twist carrier & linear & twist velocity/Jordan partner\\
+\bottomrule
+\end{tabularx}
+\end{center}
 
 \begin{theorem}[Standard generalized-zero bounded cone]
+\label{thm:standard-global-bounded}
 On the complete standard generalized-zero carrier with homogeneous
 coordinates \((a,b,c,d,Q_e,W_x)\) and axial twist position/velocity
 \((A,B)\), bounded second-order extension holds exactly on
 \begin{equation}
- a=b=Q_e=0,qquad B=0,qquad
- c,d,W_x\ \text{arbitrary},qquad A\in\R^3\ \text{arbitrary}.
+ a=b=Q_e=0,\qquad B=0,\qquad
+ c,d,W_x\ \text{arbitrary},\qquad A\in\R^3\ \text{arbitrary}.
 \end{equation}
 The surviving source has an explicit bounded correction.
 \end{theorem}
 
-The triangular positive-degree ideal supplies the proof.  Its leading rows
-contain
-\[
- \frac{15}{2}b^2t^2,qquad
- \operatorname{STF}(B\otimes B)t^2,qquad
- Q_e a\,t.
-\]
+The triangular positive-degree ideal supplies the proof.  The complete
+homogeneous positive-degree coefficients are
+\begin{center}
+\begin{tabular}{@{}c cc@{}}
+\toprule
+Equation row & coefficient of $t$ & coefficient of $t^2$\\
+\midrule
+$E_{11}$ & $15ab$ & $15b^2/2$\\
+sphere trace & $-15ab/2$ & $-15b^2/4$\\
+Maxwell $x$ row & $Q_ea$ & $Q_eb/2$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The remaining leading polynomial tensor is
+\(\operatorname{STF}(B\otimes B)t^2\), whose squared real coefficient is
+\(2|B|^4/3\).
 They force \(b=B=0\) and \(Q_ea=0\).  Intersecting with the five moment maps
-then forces \(a=Q_e=0\) on this carrier.  The remaining homogeneous source
-vanishes, while constant twist position is tangent to an exact lifted
+leaves
+\[
+ \mu_H=-(a^2+Q_e^2),\qquad \mu_{P_x}=0,\qquad\mu_{\mathbf J}=0,
+\]
+and hence forces \(a=Q_e=0\) on this carrier.  The remaining homogeneous
+source vanishes, while constant twist position is tangent to an exact lifted
 mapping-torus family and has a constant polar correction.
+
+Explicitly, on the universal cover identify
+\begin{equation}
+ (x,p)\sim(x+L,\exp(A^aJ_a)p),
+ \qquad p\in S^2,
+\end{equation}
+and lift the rotation to the magnetic bundle with its patchwise Maxwell
+compensator.  The local product fields descend by covariance.  Differentiating
+this exact quotient family at \(A=0\) gives the constant twist representative;
+the stored quadratic correction is its constant polar \(L=2\) Taylor term.
 
 \begin{corollary}[Universal polynomial elimination]
 For every point of the complete finite-support bounded cone,
 \[
- b=0,qquad B=0,qquad Q_ea=0.
+ b=0,\qquad B=0,\qquad Q_ea=0.
 \]
 Oscillatory products cannot cancel these zero-frequency polynomial rows.
 \end{corollary}
@@ -337,11 +573,14 @@ differentiating electromagnetic duality,
 \]
 At the background,
 \[
- h_{\rm cross}=0,qquad
+ h_{\rm cross}=0,\qquad
  f_{\rm cross}=\star_{\bar g}f+(D_g\star)[h]F_{\rm bg}.
 \]
-Its sphere period vanishes for \(\ell\ge1\), so it lifts globally on the
-fixed bundle.  Every Wilson--oscillator source vanishes because
+This is the mixed derivative at the purely magnetic background, not a claim
+that the finite duality orbit remains in one magnetic bundle component.  Its
+sphere period vanishes for \(\ell\ge1\), so this mixed correction itself
+lifts globally as a fixed-bundle connection difference.  Every
+Wilson--oscillator source vanishes because
 \(\delta A=W_xdx\) has \(\delta F=0\) and the local action depends on the
 connection through \(F\).
 \end{proposition}
@@ -357,8 +596,8 @@ if and only if
 \[
  c=0\qquad\text{or}\qquad k=0.
 \]
-For \(k\ne0\), the radius family gives a smooth secular correction but no
-bounded one.
+For \(k\ne0\), the radius family gives a correction in \(\Xep\) but none in
+\(\Xqp\).
 \end{theorem}
 
 Indeed, writing \(R^2=1+\eta c\),
@@ -372,10 +611,23 @@ Differentiating the exact family produces
  \left.\partial_\eta e^{-i\omega_Rt}\right|_0
  =\frac{i ck^2}{2\omega}t e^{-i\omega t}.
 \]
-The action-derived current is nonradical on every standard branch and extra
-multiplicity block, so the associated shell pairing cannot vanish when
-\(ck\ne0\).  This is a genuine \(\cR_{j,a}\) obstruction, not a polynomial
-\(\cP_{j,r}\) obstruction.
+To make the shell inference explicit, write the reduced matrix equation as
+\(L(\omega_R,R)u_R=0\), choose a left on-shell vector \(u^\dagger\), and
+differentiate at \(R=1\).  The Feynman--Hellmann identity is
+\begin{equation}\label{eq:circumference-FH}
+ \left\langle u^\dagger,(\partial_\eta L)u\right\rangle
+ =-\omega'_0
+   \left\langle u^\dagger,(\partial_\omega L)u\right\rangle
+ =\frac{ck^2}{2\omega}
+   \left\langle u^\dagger,(\partial_\omega L)u\right\rangle .
+\end{equation}
+The last factor is the current-normalized shell form.  It is nonzero on each
+standard branch and nondegenerate on every extra multiplicity block.  Hence
+the particular circumference source, not merely some source, has nonzero
+adjoint pairing whenever \(ck\ne0\) and the corresponding mode coefficient
+is nonzero.  This is a genuine \(\cR_{j,a}\) obstruction, not a polynomial
+\(\cP_{j,r}\) obstruction.  At \(k=0\), \(\omega'_0=0\) and differentiating
+the covariant circle indices gives an ordinary same-frequency correction.
 
 \section{Exceptional resonance as an independent obstruction}
 
@@ -390,24 +642,25 @@ pairing
 \[
  -\frac{8\sqrt3}{9}.
 \]
-The boundary axes retain their individual self-obstructions.  Thus the only
-axisymmetric two-polarization exceptional solution of the complete
-second-order equation is \(a_x=a_p=0\).  The example proves that resonant
-cokernel equations contain information independent of global charges.
+The boundary axes retain their individual bounded resonant
+self-obstructions.  Thus the only axisymmetric two-polarization exceptional
+configuration in this carrier admitting a correction in \(\Xqp\) is
+\(a_x=a_p=0\).  Nonzero configurations on the moment-map cone still admit
+the secular \(\Xep\) corrections guaranteed by Theorem~\ref{thm:ep-cone}.
+The example proves that bounded resonant cokernel equations contain
+information independent of global charges; it does not contradict the
+exponential-polynomial theorem.
 
 \section{Current bounded frontier}
 
-After the certified eliminations above, the full bounded problem is sharply
-localized.  The still-open rows are:
-\begin{enumerate}
-\item the homogeneous \(a\)-column against all oscillators;
-\item the homogeneous \(d\)-column against nonzero-momentum oscillators;
-\item shell resonances among bounded wave products and the remaining
-      exceptional/global blocks; and
-\item the common zero locus of these functionals for arbitrary finite sums.
-\end{enumerate}
-The electric, Wilson, and circumference columns are no longer open.  The
-first full-time velocity fixture also sharpens the remaining \(d\)-column.
+The electric, Wilson, and circumference columns are closed, and the first
+full-time velocity repair sharpens the \(a,d\)-frontier.  Earlier direct
+\(d\)-source fixtures were evaluated at \(t=0\).  They correctly proved that
+the constant shell-projection matrix is invertible, but they could not prove
+that the full source was bounded.  No frozen paper theorem asserted the
+stronger conclusion; the intermediate ``complete \(d\)-column'' reading is
+withdrawn and replaced by the following full-time statement.
+
 Locality gives
 \[
  \cE^{(2)}[dt,u](t)=t\,\cE^{(2)}[c,u](t)
@@ -422,27 +675,92 @@ is the nonzero eight-row vector
 Thus the isolated fixture has polynomial zero locus
 \(d z_{\mathrm{polar},2}=0\).  The previously computed constant-shell
 adjoint matrix remains valid, but cannot by itself establish boundedness.
-Joint cancellation with the \(a\)-column and same-channel sources remains
-open.  Any future completion must preserve the separation between
-positive-degree obstructions \(\cP\) and shell pairings \(\cR\).
+Combining this restored term with the four direct radion-position columns
+gives the complete positive-degree cross ideal on the
+\(\ell=2,k=0\) extra multiplet:
+\begin{equation}\label{eq:ad-polynomial-ideal}
+ \bigl\langle
+ a z_{\rm ax,1},a z_{\rm ax,2},a z_{\rm pol,1},a z_{\rm pol,2},
+ d z_{\rm pol,2}\bigr\rangle .
+\end{equation}
+These five monomials are already a Gr\"obner basis in the declared amplitude
+order.  Their zero locus has three faces:
+\begin{enumerate}
+\item all extra amplitudes zero, with \(a,d\) unrestricted by this cross
+      ledger;
+\item \(a=0\) and \(z_{\rm pol,2}=0\), with \(d\) and the two axial plus
+      first polar amplitudes free;
+\item \(a=d=0\), with all four extra amplitudes free.
+\end{enumerate}
+This is a complete \(\cP\)-zero locus for the declared cross block, not by
+itself a complete bounded cone.  Before the other conditions are imposed,
+its surviving faces must still satisfy moment maps, constant shell pairings,
+self-products, and twist cross terms.  On the complete global-plus-extra
+carrier those remaining conditions now close as follows.
+
+\begin{theorem}[Complete global plus \(\ell=2,k=0\) extra bounded cone]
+\label{thm:global-ell2-bounded}
+Adjoin all four axial/polar \(\ell=2,k=0\) extra-primary amplitudes
+\((x_{\rm ax,1},x_{\rm ax,2},x_{\rm pol,1},x_{\rm pol,2})\) to the complete
+homogeneous and twist carrier.  The \(\Xqp\) tangent cone is exactly
+\begin{equation}
+ \cZ^{\rm qp}_{2,\,\mathrm{global}+\ell2X}
+ =\{(c,d,W_x,A):c,d,W_x\in\R,\ A\in\R^3\}.
+\end{equation}
+In particular, it contains no nonzero \(\ell=2,k=0\) extra-primary
+direction.
+\end{theorem}
+
+\begin{proof}
+The universal polynomial rows first force \(b=B=0\) and \(Q_ea=0\).
+The remaining Hamiltonian moment map is
+\begin{align}
+ \mu_H&=-a^2-Q_e^2-\frac43X,\\
+ X&=1296|x_{\rm ax,1}|^2+\frac{208}{3}|x_{\rm ax,2}|^2
+   +22464|x_{\rm pol,1}|^2+12288|x_{\rm pol,2}|^2.
+\end{align}
+It is a strictly negative sum of squares, so its real zero locus has
+\(a=Q_e=x_{\rm ax,1}=x_{\rm ax,2}=x_{\rm pol,1}=x_{\rm pol,2}=0\).
+What remains is precisely the standard cone of
+Theorem~\ref{thm:standard-global-bounded}, whose bounded correction is already
+explicit.  The repaired ideal
+\eqref{eq:ad-polynomial-ideal} is automatically satisfied there.
+\end{proof}
+
+After these repairs, the still-open full-carrier work is:
+\begin{enumerate}
+\item standard Einstein oscillators, exceptional \(\ell=1\) inputs, other
+      harmonics, and nonzero momenta;
+\item their \(a,d\) polynomial columns and shell-pairing zero loci;
+\item shell resonances among bounded wave products and remaining mixed
+      blocks; and
+\item the common zero locus for arbitrary finite sums.
+\end{enumerate}
+Any future completion must preserve the separation between positive-degree
+obstructions \(\cP\) and shell pairings \(\cR\).
 
 \begin{center}
 \begin{tabularx}{0.96\textwidth}{@{}Y Y Y@{}}
 \toprule
-Carrier or column & Smooth correction & Bounded correction\\
+Carrier or column & $\Xep$ correction & $\Xqp$ correction\\
 \midrule
 Complete finite-support cone & iff five moment maps vanish & additional
 \(\cP\) and \(\cR\) conditions\\
 Standard generalized-zero block & classified & classified completely\\
+Global plus $\ell=2,k=0$ extra & moment-map cone contains balanced extra
+directions & bounded cone equals $(c,d,W_x,A)$; no extra wave\\
 Electric charge $\times$ oscillator & finite quasiperiodic & removable by
 duality transport\\
 Wilson $\times$ oscillator & zero source & zero source\\
 Circumference $\times$ $k=0$ mode & ordinary same-frequency & removable\\
 Circumference $\times$ $k\ne0$ mode & secular radius derivative & obstructed\\
-Velocity $d\times$ selected polar extra mode & smooth polynomial source &
+Velocity $d\times$ selected polar extra mode & finite polynomial source &
 nonzero $\cP_{j,1}$ unless canceled jointly\\
-Exceptional axial--polar interior & secular criterion fails & obstructed\\
-Remaining $a,d$ oscillator columns & allowed by smooth theorem on moment cone
+Exceptional axial--polar interior & secular primitive on moment cone &
+bounded-resonance obstructed\\
+$a,d\times\ell=2,k=0$ extra & allowed on moment cone & polynomial ideal
+\eqref{eq:ad-polynomial-ideal}, then $\cR$ still required\\
+Remaining $a,d$ oscillator columns & allowed by ep theorem on moment cone
 & open\\
 \bottomrule
 \end{tabularx}
@@ -460,8 +778,8 @@ nonlinear fixed-charge solution space.  This is nonlinear selection, not
 linear gauge removal.  Second, mixing Einstein and extra directions can
 cancel the moment maps, so no conclusion follows from the sign of a pure
 branch alone.  Third, even complete moment-map cancellation leaves bounded
-resonances.  Smooth formal continuation and bounded perturbative stability
-are therefore different claims.
+resonances.  Exponential-polynomial formal continuation and bounded
+perturbative stability are therefore different claims.
 
 The result supplies the middle map in the programme's residual atlas:
 \[
@@ -485,22 +803,28 @@ The following remain outside the theorem:
       conditions;
 \item observer coupling, particles, quantum BRST cohomology, and unitarity.
 \end{itemize}
-These exclusions are not cosmetic.  In particular, Theorem~\ref{thm:smooth-cone}
+These exclusions are not cosmetic.  In particular, Theorem~\ref{thm:ep-cone}
 does not establish nonlinear stability.
 
 \section{Certificate and reproduction ledger}
 
 The manuscript is an \textsc{outline-allowed}/\textsc{draft-allowed}
 integration of committed certificates.  Its current source baseline is
-repository commit \texttt{35ae48835e4ef0bafb87bb94ff515446879d632b}.
+repository commit \texttt{30eb2a3952d14bd8ec72dfcc1e975e55a2271d6d}.
 
 \begin{center}
 \begin{tabularx}{0.98\textwidth}{@{}Y Y@{}}
 \toprule
 Claim & Authoritative certificate\\
 \midrule
-Complete smooth finite-support cone &
+Complete finite-support exponential-polynomial cone and bounded ledger &
 \cert{bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json}\\
+Stabilizer action and lifted rotations &
+\cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
+Generalized-mode symplectic form &
+\cert{bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json}\\
+Generalized-mode moment maps &
+\cert{bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json}\\
 Standard generalized-zero bounded cone &
 \cert{bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json}\\
 Electric and Wilson transport &
@@ -509,9 +833,13 @@ Complete circumference column &
 \cert{bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json}\\
 First full-time velocity polynomial column &
 \cert{bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.json}\\
+Repaired $a,d\times\ell=2$ polynomial zero locus &
+\cert{bridge/certificates/einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.json}\\
+Complete global plus $\ell=2,k=0$ extra bounded cone &
+\cert{bridge/certificates/einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.json}\\
 Exceptional two-polarization resonance &
 \cert{bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.json}\\
-Opposite-momentum smooth theorem &
+Opposite-momentum exponential-polynomial theorem &
 \cert{bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json}\\
 Moment-map/Taub bridge &
 \cert{bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json}\\
