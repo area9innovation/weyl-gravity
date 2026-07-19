@@ -250,27 +250,30 @@ does not retain only those four blocks.  With identity input coordinates and
 the output transported by `tf_g0`, a conformal-Killing symbol channel changes
 by `5 epsilon^2(epsilon^2-12)/144`; its linear term vanishes but its quadratic
 term does not.  The finite rank-310 differential must therefore include
-`k=Kp0` and `ksharp`.  The resulting six-block HPL algebra now closes exactly:
+`k=Kp0` and `ksharp`.  The resulting six-block HPL algebra closes exactly:
 both resolvents terminate after one correction, the cyclic SDR identities
 vanish coefficientwise, and the compressed metric differential retains two
-forced quadratic cross terms.  C-G2 now waits on coefficientwise geometric
-binding of those six differences and the typed endpoint theorem on a declared
-common slab before any causal promotion.  This does not demote the formal
-tangent theorem or obstruct a different support-local identification.
+forced quadratic cross terms.  The geometric binding is now complete in
+invariant operator form.  An explicit KS fibre/density transport fixes the
+cyclic bundle; the natural normal-BGG splittings, Yang--Mills detour middle,
+action Bach Hessian and adjoints populate exactly the six blocks.  The curved
+triangular graph conjugation retains the automorphism and first-splitting
+rows.  A component-expanded PBW table is optional regression evidence, not
+missing mathematical input.
 The common domain is now certified independently.  With
 `b=1+epsilon y`, the exact Einstein flow is a regular parameter-dependent ODE;
 for every finite `T`, a sufficiently small parameter interval gives positive
 scale factors on `(-T,T)`, compact Cauchy slices and one wider reference cone
-containing every family member's causal cone.  Thus the remaining common-slab
-gate is coefficientwise six-block geometric binding, not existence of a shared
-globally hyperbolic support category or the compressed metric endpoint.  The
-latter is now exact on the entire Einstein slab family:
+containing every family member's causal cone.  The compressed metric endpoint
+is exact on the entire Einstein slab family:
 `B_action+K T/2=L_E(L_E-2/3)/2`, with
 `L_E=Box+2 Cdot-2/3`.  Both factors are normally hyperbolic and differ by a
 scalar shift, so the proof allows the nonparallel Weyl curvature of the
-nonzero Kantowski--Sachs metrics.  This promotes the four-row metric Green
-homotopy on every common slab while leaving the all-row rank-310 transfer
-fail-closed until the six geometric differences are bound coefficientwise.
+nonzero Kantowski--Sachs metrics.  Combining it with the natural six-block SDR
+promotes exact advanced/retarded homotopies on all 310 rows, with metric
+descent, on every declared common slab.  C-G2 is therefore closed slabwise.
+The nonzero family still has no whole-cylinder extension; non-Einstein
+Bach-flat metric transfer, Hadamard and quantum claims remain fail-closed.
 The analytic endpoint criterion is now background-independent:
 `TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1` proves that every exact endpoint
 `A=P2 P1+V` with normally hyperbolic factors and an order-at-most-two

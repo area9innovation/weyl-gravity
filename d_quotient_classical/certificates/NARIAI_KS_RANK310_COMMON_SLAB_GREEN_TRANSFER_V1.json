@@ -1,0 +1,252 @@
+{
+  "bundle_transport": {
+    "coefficient_field": "Q(a0,a,b) with a0,a,b positive",
+    "covector_isometry_defect_rank": 0,
+    "covector_transport_diagonal": [
+      "1",
+      "a0/a",
+      "1/b",
+      "1/b"
+    ],
+    "density_multiplier": "sqrt(a b^2/a0)",
+    "global_on_product_splitting": true,
+    "inverse_defect_rank": 0,
+    "inverse_transport_diagonal": [
+      "1",
+      "a/a0",
+      "b",
+      "b"
+    ],
+    "pointwise_support_preserving": true
+  },
+  "causal_transfer": {
+    "abstract_fixture_all_defects_zero": true,
+    "adjoint_reversal": "cyclic SDR plus endpoint reversal gives complementary-degree advanced/retarded reversal",
+    "chain_identity": "Q310_epsilon Lambda310,epsilon,+/-+Lambda310,epsilon,+/- Q310_epsilon=1_310",
+    "endpoint": "certified Einstein metric biwave homotopy Lambda_met,epsilon,+/-",
+    "formula": "Lambda310,epsilon,+/-=H_epsilon+I_epsilon Lambda_met,epsilon,+/- p_epsilon",
+    "metric_descent": "p_epsilon Lambda310,epsilon,+/- I_epsilon=Lambda_met,epsilon,+/-",
+    "support": "supp Lambda310,epsilon,+/- f subset J_g_epsilon^+/-(supp f), uniformly enclosed by the certified common reference cone"
+  },
+  "claim_boundary": {
+    "not_claimed": [
+      "a component-expanded 310-row PBW coefficient dump",
+      "a smooth nonzero KS family on the whole cylinder",
+      "a non-Einstein Bach-flat metric endpoint or rank-310 transfer",
+      "a timelike-boundary problem",
+      "Hadamard or wavefront-set control",
+      "nonlinear or quantum claims"
+    ],
+    "statement": "On every certified common slab of the exact Kantowski--Sachs Einstein family, the natural six-block rank-310 mapping-cone differential has a finite-order cyclic SDR onto the metric Bach complex and therefore inherits exact advanced and retarded all-row Green homotopies."
+  },
+  "coordinate_conjugation": {
+    "cotangent_rows": "the antifield transform is the forced formal-adjoint inverse of the displayed field transform",
+    "inverse_variables": "a=x+d_aut,epsilon J0 s+L1,epsilon h; lambda=y-c Phi_epsilon h",
+    "original_differential": "Q_original,epsilon=T_epsilon^{-1} Q_split,epsilon T_epsilon",
+    "original_homotopy": "Lambda_original,epsilon,+/-=T_epsilon^{-1} Lambda_split,epsilon,+/- T_epsilon",
+    "properties": "finite triangular differential automorphism, BV canonical, support preserving",
+    "split_variables": "x=a-d_aut,epsilon J0 s-L1,epsilon h; y=lambda+c Phi_epsilon h"
+  },
+  "dependency_refs": {
+    "Bach_flat_parent": {
+      "artifact_id": "BACH_FLAT_PARENT_GREEN_STABILITY_V1",
+      "path": "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
+      "sha256": "2ee8be4633c180f178ceff900cda2e6cc6b6f6c51bf7018e59cea3f63d5c14bf"
+    },
+    "Einstein_metric_endpoint": {
+      "artifact_id": "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
+      "sha256": "e2978cf23f577ab365729d139c8eabf0bcbc2277bc2a124d872c03c94b7b8a75"
+    },
+    "Yang_Mills_detour": {
+      "artifact_id": "CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1",
+      "path": "d_quotient_classical/certificates/CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1.json",
+      "sha256": "1b5104082d72a2a6397b4a668a9a1008be22e1daf7481e5de37ad4c31126cee4"
+    },
+    "abstract_causal_transfer": {
+      "artifact_id": "ABSTRACT_CYCLIC_CAUSAL_TRANSFER",
+      "path": "d_quotient_classical/certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json",
+      "sha256": "cb8f55fe5152a515a86dcfaf32e54c9c0d4ad68487e6bed7c1ed3ae517dbd04b"
+    },
+    "common_slab": {
+      "artifact_id": "NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1.json",
+      "sha256": "e4d6a9a8cd71e1678ac5967c8a6078a393cde345f98fcb9082023de2ab96c6bf"
+    },
+    "exact_KS_branch": {
+      "artifact_id": "NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1.json",
+      "sha256": "efa472248ed0586bedfc33f595187fcdfc4b00a206020a08054e1260d5a578d3"
+    },
+    "six_block_HPL": {
+      "artifact_id": "NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_RANK310_SIX_BLOCK_FINITE_HPL_V1.json",
+      "sha256": "95a3cc1329ec3af2130e965105ddfa801b344fadebe56750a4b1147c7c17dc62"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "all_310_rows_included": true,
+    "all_natural_blocks_support_local": true,
+    "all_row_chain_homotopy_exact": true,
+    "all_six_block_HPL_identities_zero": true,
+    "bundle_transport_invertible": true,
+    "bundle_transport_isometric": true,
+    "coordinate_conjugation_support_local": true,
+    "cyclic_adjoint_reversal": true,
+    "metric_descent_exact": true,
+    "metric_endpoint_dependency_exact": true,
+    "same_sided_causal_support": true,
+    "six_geometric_blocks_typed": true,
+    "six_registry_entries_distinct": true
+  },
+  "finite_SDR": {
+    "Delta": "Q310_epsilon-Q310_0 in the fixed transported bundle",
+    "all_identity_defects_zero": true,
+    "cyclic": "transported pairings are fixed and the six-block HPL preserves adjunction and odd cyclicity",
+    "homotopy": "H_epsilon=H0-H0 Delta H0",
+    "inclusion": "I_epsilon=(1-H0 Delta)I0",
+    "metric_differential": "qmet_epsilon=p_epsilon Q310_epsilon I_epsilon, including -Delta k Delta L0 and its cyclic dual",
+    "nilpotence": "(H0 Delta)^2=(Delta H0)^2=0",
+    "projection": "p_epsilon=p0(1-Delta H0)",
+    "support": "finite compositions of local differential and pointwise maps"
+  },
+  "flags": {
+    "COMPONENT_EXPANDED_PBW_TABLE": false,
+    "HADAMARD_STATE": false,
+    "KS_COMMON_SLAB_METRIC_DESCENT": true,
+    "KS_COMMON_SLAB_RANK310_CYCLIC_SDR": true,
+    "KS_COMMON_SLAB_RANK310_GREEN_HOMOTOPY": true,
+    "KS_NONZERO_WHOLE_CYLINDER_GREEN_THEOREM": false,
+    "KS_SIX_BLOCK_NATURAL_GEOMETRIC_BINDING": true,
+    "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1": true,
+    "NON_EINSTEIN_BACH_FLAT_METRIC_TRANSFER": false,
+    "QUANTUM_CLAIM": false
+  },
+  "geometric_relations": {
+    "BGG_intertwining": "M_epsilon L1_epsilon=Phi_epsilon",
+    "Kostant_retract": "p0 L0_epsilon=1; g_epsilon J0=1; J0 g_epsilon=1-L0_epsilon p0",
+    "Noether": "B_epsilon K_epsilon=0 and hence B_epsilon k_epsilon=0",
+    "Yang_Mills_condition": "Ric(g_epsilon)=g_epsilon implies Bach(g_epsilon)=0, so the normal tractor connection is Yang-Mills",
+    "dual_Noether": "ksharp_epsilon B_epsilon=0",
+    "six_block_incidence": "relative to epsilon=0 the transported split differential changes only in g,k,M,B,gsharp,ksharp"
+  },
+  "natural_geometric_binding": {
+    "Bach_difference": "Delta B=B_action,epsilon-B_action,0",
+    "all_coordinate_coefficients_determined_by_metric": true,
+    "all_entries_finite_order_differential": true,
+    "component_expanded_PBW_table_emitted": false,
+    "component_table_role": "optional regression export, not an existence hypothesis",
+    "difference_block_count": 6,
+    "dual_differences": [
+      "Delta gsharp=(Delta g)^sharp",
+      "Delta ksharp=(Delta k)^sharp"
+    ],
+    "fixed_algebraic_maps": [
+      "p0",
+      "J0",
+      "r0",
+      "four transported fibre pairings"
+    ],
+    "g_difference": "Delta g=r0[(1-L0_epsilon p0)-(1-L0_0 p0)]=-r0 Delta L0 p0",
+    "k_difference": "Delta k=(K_epsilon-K_0)p0",
+    "middle_difference": "Delta M=M_epsilon^D-M_0^D for the normal-tractor Yang-Mills detour middle",
+    "splittings": "L0_epsilon and L1_epsilon are the natural finite-order normal-BGG splitting operators"
+  },
+  "next_gate": "C_G2_KS_COMPONENT_PBW_REGRESSION_OR_CLOSE_PARENT_TO_METRIC_BRIDGE",
+  "operator_registry": [
+    {
+      "adjoint_partner": "Delta gsharp",
+      "definition": "-r0 (L0_epsilon-L0_0) p0",
+      "degree": 1,
+      "name": "Delta g",
+      "order_bound": 1,
+      "source": "epsilon_C0",
+      "target": "s_ker_p0"
+    },
+    {
+      "adjoint_partner": "Delta ksharp",
+      "definition": "(K_epsilon-K_0) p0",
+      "degree": 1,
+      "name": "Delta k",
+      "order_bound": 1,
+      "source": "epsilon_C0",
+      "target": "h_H1"
+    },
+    {
+      "adjoint_partner": "Delta M",
+      "definition": "M_epsilon^D-M_0^D",
+      "degree": 1,
+      "name": "Delta M",
+      "order_bound": 2,
+      "source": "x_C1",
+      "target": "x_sharp_C1dual"
+    },
+    {
+      "adjoint_partner": "Delta B",
+      "definition": "B_action,epsilon-B_action,0",
+      "degree": 1,
+      "name": "Delta B",
+      "order_bound": 4,
+      "source": "h_H1",
+      "target": "h_sharp_H1dual"
+    },
+    {
+      "adjoint_partner": "Delta g",
+      "definition": "(Delta g)^sharp",
+      "degree": 1,
+      "name": "Delta gsharp",
+      "order_bound": 1,
+      "source": "s_sharp_ker_p0_dual",
+      "target": "epsilon_sharp_C0dual"
+    },
+    {
+      "adjoint_partner": "Delta k",
+      "definition": "(Delta k)^sharp",
+      "degree": 1,
+      "name": "Delta ksharp",
+      "order_bound": 1,
+      "source": "h_sharp_H1dual",
+      "target": "epsilon_sharp_C0dual"
+    }
+  ],
+  "proof_basis": {
+    "BGG": "normal BGG splitting identities fix the complement and gauge reconstruction on every conformal metric",
+    "HPL": "the certified noncommutative six-block theorem proves every chain, retract, side and cyclic identity from these relations",
+    "Noether": "diffeomorphism/Weyl invariance gives B_action K=0 and its formal adjoint",
+    "detour": "the normal tractor connection is Yang--Mills exactly when the four-dimensional Bach tensor vanishes",
+    "endpoint": "the certified Einstein biwave theorem supplies the metric advanced and retarded homotopies",
+    "proof_kind": "natural-operator theorem with exact abstract replay; no component-expanded PBW coefficient table is asserted"
+  },
+  "result_id": "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1",
+  "result_state": "KS_COMMON_SLAB_NATURAL_SIX_BLOCK_SDR_AND_RANK310_CAUSAL_TRANSFER_EXACT",
+  "schema": "pure-weyl-nariai-ks-rank310-common-slab-green-transfer-v1",
+  "scope": {
+    "background": "exact Kantowski-Sachs Einstein family g_epsilon=-dt^2+a_epsilon^2 dchi^2+b_epsilon^2 dOmega2^2",
+    "boundary": "open globally hyperbolic slab; no imposed timelike boundary condition",
+    "carrier": "ten-block rank-310 normal-tractor/BGG mapping cone retracting to the four-row rank-26 metric Bach complex",
+    "degree_ranks": [
+      15,
+      140,
+      140,
+      15
+    ],
+    "domain": "for each finite T, the certified small-parameter common slab (-T,T) x S1 x S2"
+  },
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/nariai_ks_rank310_common_slab_green_transfer.py": "e5ad2789d5f7a4c6293565de57c172b69522b34b4b83804c1509dc6fd3aa97d7",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_ks_rank310_common_slab_green_transfer.py": "41de11f0d66af02ef8a1ac9df3cb4a75d36542e33a516c14825a1d30b9ed5967",
+    "d_quotient_classical/causal_transfer/verify_nariai_ks_rank310_common_slab_green_transfer.py": "7fffd06a958fd81659cdaa32e42da5d096961ede846326e67049c4a40a3b6f3f",
+    "d_quotient_classical/proofs/nariai-ks-rank310-common-slab-green-transfer.md": "3649074b6f52ebcd3386bb1e55acba174d175ffa426e1ccb33f173304b915b5d",
+    "d_quotient_classical/schema/nariai-ks-rank310-common-slab-green-transfer-v1.schema.json": "6b59bf7809fdedd0e805a5271ee9521abd792a028fe23689b0987151b9d342a2"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_ks_rank310_common_slab_green_transfer.py --write --guards",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-ks-rank310-common-slab-green-transfer-v1.schema.json -d d_quotient_classical/certificates/NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1.json",
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_ks_rank310_common_slab_green_transfer.py",
+    "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_ks_rank310_common_slab_green_transfer"
+  ]
+}

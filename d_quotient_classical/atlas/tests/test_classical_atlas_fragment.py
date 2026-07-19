@@ -93,7 +93,7 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertEqual(entry["descriptions"]["causal"], "CERTIFIED")
         self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
         self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("not a no-go for non-Einstein Bach-flat", entry["claim_boundary"])
+        self.assertIn("not a no-go for other non-Einstein Bach-flat", entry["claim_boundary"])
         self.assertIn(
             "NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1",
             {item["result_id"] for item in entry["evidence"]},
@@ -114,9 +114,14 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
+        self.assertIn(
+            "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
         self.assertIn("two forced quadratic metric cross terms", entry["claim_boundary"])
         self.assertIn("complete four-row metric endpoint", entry["claim_boundary"])
-        self.assertIn("does not yet give the rank-310 causal map", entry["claim_boundary"])
+        self.assertIn("exact rank-310 advanced/retarded homotopies", entry["claim_boundary"])
+        self.assertIn("not a whole-cylinder theorem", entry["claim_boundary"])
 
     def test_transverse_finite_hpl_is_evidence_not_geometric_promotion(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_tangent"]
@@ -125,7 +130,7 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
         self.assertIn("nonlocal-denominator", entry["claim_boundary"])
-        self.assertIn("until that geometric input exists", entry["claim_boundary"])
+        self.assertIn("separate exact-branch atlas row", entry["claim_boundary"])
 
 
 if __name__ == "__main__":

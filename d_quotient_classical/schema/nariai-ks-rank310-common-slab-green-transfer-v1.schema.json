@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/nariai-ks-rank310-common-slab-green-transfer-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "scope", "bundle_transport", "natural_geometric_binding", "operator_registry", "geometric_relations", "coordinate_conjugation", "proof_basis", "finite_SDR", "causal_transfer", "exact_checks", "flags", "claim_boundary", "next_gate", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-ks-rank310-common-slab-green-transfer-v1"},
+    "result_id": {"const": "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1"},
+    "result_state": {"const": "KS_COMMON_SLAB_NATURAL_SIX_BLOCK_SDR_AND_RANK310_CAUSAL_TRANSFER_EXACT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["exact_KS_branch", "common_slab", "six_block_HPL", "Einstein_metric_endpoint", "Bach_flat_parent", "Yang_Mills_detour", "abstract_causal_transfer"],
+      "properties": {
+        "exact_KS_branch": {"$ref": "#/$defs/dependency"},
+        "common_slab": {"$ref": "#/$defs/dependency"},
+        "six_block_HPL": {"$ref": "#/$defs/dependency"},
+        "Einstein_metric_endpoint": {"$ref": "#/$defs/dependency"},
+        "Bach_flat_parent": {"$ref": "#/$defs/dependency"},
+        "Yang_Mills_detour": {"$ref": "#/$defs/dependency"},
+        "abstract_causal_transfer": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["background", "domain", "boundary", "carrier", "degree_ranks"],
+      "properties": {
+        "background": {"type": "string", "minLength": 1}, "domain": {"type": "string", "minLength": 1},
+        "boundary": {"type": "string", "minLength": 1}, "carrier": {"type": "string", "minLength": 1},
+        "degree_ranks": {"const": [15, 140, 140, 15]}
+      }
+    },
+    "bundle_transport": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coefficient_field", "covector_transport_diagonal", "inverse_transport_diagonal", "density_multiplier", "covector_isometry_defect_rank", "inverse_defect_rank", "pointwise_support_preserving", "global_on_product_splitting"],
+      "properties": {
+        "coefficient_field": {"type": "string", "minLength": 1},
+        "covector_transport_diagonal": {"const": ["1", "a0/a", "1/b", "1/b"]},
+        "inverse_transport_diagonal": {"const": ["1", "a/a0", "b", "b"]},
+        "density_multiplier": {"const": "sqrt(a b^2/a0)"},
+        "covector_isometry_defect_rank": {"const": 0}, "inverse_defect_rank": {"const": 0},
+        "pointwise_support_preserving": {"const": true}, "global_on_product_splitting": {"const": true}
+      }
+    },
+    "natural_geometric_binding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixed_algebraic_maps", "splittings", "g_difference", "k_difference", "middle_difference", "Bach_difference", "dual_differences", "difference_block_count", "all_entries_finite_order_differential", "all_coordinate_coefficients_determined_by_metric", "component_expanded_PBW_table_emitted", "component_table_role"],
+      "properties": {
+        "fixed_algebraic_maps": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}},
+        "splittings": {"type": "string", "minLength": 1}, "g_difference": {"type": "string", "minLength": 1},
+        "k_difference": {"type": "string", "minLength": 1}, "middle_difference": {"type": "string", "minLength": 1},
+        "Bach_difference": {"type": "string", "minLength": 1},
+        "dual_differences": {"const": ["Delta gsharp=(Delta g)^sharp", "Delta ksharp=(Delta k)^sharp"]},
+        "difference_block_count": {"const": 6}, "all_entries_finite_order_differential": {"const": true},
+        "all_coordinate_coefficients_determined_by_metric": {"const": true}, "component_expanded_PBW_table_emitted": {"const": false},
+        "component_table_role": {"type": "string", "minLength": 1}
+      }
+    },
+    "operator_registry": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "source", "target", "degree", "order_bound", "definition", "adjoint_partner"],
+        "properties": {
+          "name": {"enum": ["Delta g", "Delta k", "Delta M", "Delta B", "Delta gsharp", "Delta ksharp"]},
+          "source": {"type": "string", "minLength": 1},
+          "target": {"type": "string", "minLength": 1},
+          "degree": {"const": 1},
+          "order_bound": {"type": "integer", "minimum": 0, "maximum": 4},
+          "definition": {"type": "string", "minLength": 1},
+          "adjoint_partner": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "geometric_relations": {"$ref": "#/$defs/stringMap"},
+    "coordinate_conjugation": {"$ref": "#/$defs/stringMap"},
+    "proof_basis": {"$ref": "#/$defs/stringMap"},
+    "finite_SDR": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Delta", "nilpotence", "inclusion", "projection", "homotopy", "metric_differential", "all_identity_defects_zero", "support", "cyclic"],
+      "properties": {
+        "Delta": {"type": "string", "minLength": 1}, "nilpotence": {"type": "string", "minLength": 1},
+        "inclusion": {"type": "string", "minLength": 1}, "projection": {"type": "string", "minLength": 1},
+        "homotopy": {"type": "string", "minLength": 1}, "metric_differential": {"type": "string", "minLength": 1},
+        "all_identity_defects_zero": {"const": true}, "support": {"type": "string", "minLength": 1},
+        "cyclic": {"type": "string", "minLength": 1}
+      }
+    },
+    "causal_transfer": {
+      "type": "object", "additionalProperties": false,
+      "required": ["endpoint", "formula", "chain_identity", "metric_descent", "support", "adjoint_reversal", "abstract_fixture_all_defects_zero"],
+      "properties": {
+        "endpoint": {"type": "string", "minLength": 1}, "formula": {"type": "string", "minLength": 1},
+        "chain_identity": {"type": "string", "minLength": 1}, "metric_descent": {"type": "string", "minLength": 1},
+        "support": {"type": "string", "minLength": 1}, "adjoint_reversal": {"type": "string", "minLength": 1},
+        "abstract_fixture_all_defects_zero": {"const": true}
+      }
+    },
+    "exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["bundle_transport_isometric", "bundle_transport_invertible", "six_geometric_blocks_typed", "six_registry_entries_distinct", "coordinate_conjugation_support_local", "all_natural_blocks_support_local", "all_six_block_HPL_identities_zero", "metric_endpoint_dependency_exact", "all_row_chain_homotopy_exact", "metric_descent_exact", "same_sided_causal_support", "cyclic_adjoint_reversal", "all_310_rows_included"],
+      "properties": {
+        "bundle_transport_isometric": {"const": true}, "bundle_transport_invertible": {"const": true},
+        "six_geometric_blocks_typed": {"const": true}, "six_registry_entries_distinct": {"const": true},
+        "coordinate_conjugation_support_local": {"const": true}, "all_natural_blocks_support_local": {"const": true},
+        "all_six_block_HPL_identities_zero": {"const": true}, "metric_endpoint_dependency_exact": {"const": true},
+        "all_row_chain_homotopy_exact": {"const": true}, "metric_descent_exact": {"const": true},
+        "same_sided_causal_support": {"const": true}, "cyclic_adjoint_reversal": {"const": true},
+        "all_310_rows_included": {"const": true}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1", "KS_SIX_BLOCK_NATURAL_GEOMETRIC_BINDING", "KS_COMMON_SLAB_RANK310_CYCLIC_SDR", "KS_COMMON_SLAB_RANK310_GREEN_HOMOTOPY", "KS_COMMON_SLAB_METRIC_DESCENT", "COMPONENT_EXPANDED_PBW_TABLE", "KS_NONZERO_WHOLE_CYLINDER_GREEN_THEOREM", "NON_EINSTEIN_BACH_FLAT_METRIC_TRANSFER", "HADAMARD_STATE", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1": {"const": true},
+        "KS_SIX_BLOCK_NATURAL_GEOMETRIC_BINDING": {"const": true},
+        "KS_COMMON_SLAB_RANK310_CYCLIC_SDR": {"const": true},
+        "KS_COMMON_SLAB_RANK310_GREEN_HOMOTOPY": {"const": true},
+        "KS_COMMON_SLAB_METRIC_DESCENT": {"const": true},
+        "COMPONENT_EXPANDED_PBW_TABLE": {"const": false},
+        "KS_NONZERO_WHOLE_CYLINDER_GREEN_THEOREM": {"const": false},
+        "NON_EINSTEIN_BACH_FLAT_METRIC_TRANSFER": {"const": false},
+        "HADAMARD_STATE": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {
+      "type": "object", "additionalProperties": false, "required": ["statement", "not_claimed"],
+      "properties": {"statement": {"type": "string", "minLength": 1}, "not_claimed": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}}}
+    },
+    "next_gate": {"const": "C_G2_KS_COMPONENT_PBW_REGRESSION_OR_CLOSE_PARENT_TO_METRIC_BRIDGE"},
+    "source_manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "stringMap": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}}
+  }
+}

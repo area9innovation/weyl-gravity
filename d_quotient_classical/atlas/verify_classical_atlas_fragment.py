@@ -119,12 +119,16 @@ def verify() -> None:
         raise AssertionError("KS common-slab causal-domain theorem missing")
     if "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1" not in exact_ids:
         raise AssertionError("Einstein metric biwave theorem missing")
+    if "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1" not in exact_ids:
+        raise AssertionError("KS rank-310 common-slab transfer missing")
     if "two forced quadratic metric cross terms" not in transverse_exact["claim_boundary"]:
         raise AssertionError("six-block HPL consequence missing")
     if "complete four-row metric endpoint" not in transverse_exact["claim_boundary"]:
         raise AssertionError("metric endpoint promotion missing")
-    if "does not yet give the rank-310 causal map" not in transverse_exact["claim_boundary"]:
-        raise AssertionError("rank-310 transfer was overpromoted")
+    if "exact rank-310 advanced/retarded homotopies" not in transverse_exact["claim_boundary"]:
+        raise AssertionError("rank-310 transfer was not promoted")
+    if "not a whole-cylinder theorem" not in transverse_exact["claim_boundary"]:
+        raise AssertionError("whole-cylinder boundary was lost")
 
 
 if __name__ == "__main__":

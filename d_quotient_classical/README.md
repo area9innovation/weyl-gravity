@@ -686,6 +686,19 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json`](certificates/EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json),
   [`reports/einstein-metric-biwave-green-homotopy.md`](reports/einstein-metric-biwave-green-homotopy.md)
 
+- Common-slab rank-310 causal transfer: an explicit fibre isometry and density
+  transport put every exact Kantowski--Sachs slab complex in one fixed cyclic
+  bundle.  The natural normal-BGG splittings, Yang--Mills detour middle,
+  action Bach Hessian and their adjoints occupy exactly the certified six
+  finite-HPL blocks.  The resulting support-local cyclic SDR, including the
+  curved triangular original-coordinate transform, transports the Einstein
+  metric biwave homotopies to all 310 rows with exact metric descent.  This is
+  a natural-operator theorem, not a component-expanded PBW export; it does not
+  extend a nonzero branch through its finite-time singularity:
+  [`certificates/NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1.json`](certificates/NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1.json),
+  [`certificates/NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1_TIER_RECEIPT.json`](certificates/NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1_TIER_RECEIPT.json),
+  [`reports/nariai-ks-rank310-common-slab-green-transfer.md`](reports/nariai-ks-rank310-common-slab-green-transfer.md)
+
 - Exact global disposition of the transverse Einstein branch: the
   Kantowski--Sachs family generating the certified tangent exists on every
   fixed compact time slab, but for every nonzero `0<|epsilon|<1` its areal

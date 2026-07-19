@@ -1,0 +1,54 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1_TIER_RECEIPT",
+  "claim_id": "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1.json", "sha256": "58a266aa66d3070816038f229346c0676c88cbb812790700f6fa7eb264750e0e"},
+    "schema": {"path": "d_quotient_classical/schema/nariai-ks-rank310-common-slab-green-transfer-v1.schema.json", "sha256": "6b59bf7809fdedd0e805a5271ee9521abd792a028fe23689b0987151b9d342a2"},
+    "producer": {"path": "d_quotient_classical/causal_transfer/nariai_ks_rank310_common_slab_green_transfer.py", "sha256": "e5ad2789d5f7a4c6293565de57c172b69522b34b4b83804c1509dc6fd3aa97d7"},
+    "independent_verifier": {"path": "d_quotient_classical/causal_transfer/verify_nariai_ks_rank310_common_slab_green_transfer.py", "sha256": "7fffd06a958fd81659cdaa32e42da5d096961ede846326e67049c4a40a3b6f3f"},
+    "tests": {"path": "d_quotient_classical/causal_transfer/tests/test_nariai_ks_rank310_common_slab_green_transfer.py", "sha256": "41de11f0d66af02ef8a1ac9df3cb4a75d36542e33a516c14825a1d30b9ed5967"},
+    "invariant_proof": {"path": "d_quotient_classical/proofs/nariai-ks-rank310-common-slab-green-transfer.md", "sha256": "3649074b6f52ebcd3386bb1e55acba174d175ffa426e1ccb33f173304b915b5d"},
+    "report": {"path": "d_quotient_classical/reports/nariai-ks-rank310-common-slab-green-transfer.md", "sha256": "c0bd1c9f505b55eb630a01d6b6464cf49f87d5c8a510ad390fa1812baa06403a"},
+    "atlas_fragment": {"path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "sha256": "5b031c7f7cec10bf68b5e168bbbec4b1879cab32d0f392e96d7fe317a84011cc"}
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "Python sources compiled",
+        "strict Draft 2020-12 schema validation",
+        "scoped diff inspected",
+        "source and dependency hashes replayed"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 6.0,
+      "peak_rss_kb": 69184,
+      "commands": [
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_ks_rank310_common_slab_green_transfer.py --write --guards",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-ks-rank310-common-slab-green-transfer-v1.schema.json -d d_quotient_classical/certificates/NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1.json",
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_ks_rank310_common_slab_green_transfer.py",
+        "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_ks_rank310_common_slab_green_transfer"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.5,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a scoped common-slab causal promotion using unchanged content-addressed HPL, parent and metric endpoint theorems; it is not a freeze, release, shared-core algebra change, whole-cylinder theorem or paper-theorem promotion."
+    }
+  },
+  "claim_boundary": "This receipt certifies the natural six-block operator binding, finite-order cyclic rank-310 SDR, original-coordinate BV-canonical conjugation, all-row advanced/retarded homotopies and exact metric descent on every certified Kantowski--Sachs common slab. It does not certify a component-expanded PBW table, a whole-cylinder nonzero KS family, non-Einstein Bach-flat metric transfer, Hadamard data, nonlinear closure or quantum claims."
+}

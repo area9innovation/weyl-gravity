@@ -2269,19 +2269,25 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    six-block HPL calculation is now exact: both resolvents terminate after one
    correction, all cyclic SDR identities close, and the metric endpoint
    acquires the two required quadratic terms `-kD L0D` and
-   `-L0sharpD ksharpD`.  This is an abstract finite-operator theorem, not yet
-   the coefficient-complete Kantowski--Sachs realization.  The active gate is
-   now posed on an actual common causal domain: after the regular change
+   `-L0sharpD ksharpD`.  The geometric binding is now complete in invariant
+   operator form: after an explicit fibre/density transport, the natural
+   normal-BGG splittings, Yang--Mills detour middle, action Bach Hessian and
+   adjoints populate exactly those six blocks, while the curved triangular
+   graph conjugation retains the automorphism and first-splitting rows.  A
+   component-expanded PBW table remains an optional regression artifact, not
+   missing theorem data.  The domain is the certified common causal slab:
+   after the regular change
    `b=1+epsilon y`, smooth ODE dependence gives, for every finite `T`, a
    uniformly globally hyperbolic small-parameter family on `(-T,T)` with one
    wider reference cone.  The metric endpoint is now exact on that whole
    Einstein slab family: the invariant identity
    `B_action+K T/2=L_E(L_E-2/3)/2`, with
    `L_E=Box+2 Cdot-2/3`, gives two normally hyperbolic factors without any
-   parallel-Weyl assumption.  Thus the remaining C-G2 gate is only the
-   coefficient-complete binding of the six rank-310 difference blocks to the
-   exact Kantowski--Sachs geometry.  The metric theorem does not promote the
-   all-row rank-310 map or a whole-cylinder nonzero family.
+   parallel-Weyl assumption.  The finite cyclic SDR therefore transports the
+   metric homotopy to exact advanced/retarded homotopies on all 310 rows, with
+   metric descent.  C-G2 is closed on every declared common slab.  The nonzero
+   family still has no whole-cylinder extension, and non-Einstein Bach-flat,
+   Hadamard and quantum promotions remain false.
 9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` is now official:
    all six minimal roles, the Bach Euler coordinate, both Noether rows,
    Lie/Weyl covariance, and the four filtration identities replay. Quantum
@@ -2329,10 +2335,11 @@ directions.  The curvature-corrected rank-310 parent-detour mapping cone is
 the selected replacement and already has a cyclic support-local SDR and
 advanced/retarded all-row contraction with exact metric descent at unit and
 conformal Nariai.  On the exact transverse Kantowski--Sachs Einstein branch,
-every finite common slab now also has a certified four-row metric biwave Green
-homotopy.  The active gate is the coefficient-complete geometric realization
-of the six-block rank-310 HPL differences on that slab.  The branch still
-develops finite-time Weyl-curvature blow-up for every nonzero small parameter,
+every finite common slab now has both the certified four-row metric biwave
+homotopy and its exact cyclic support-local transfer to all 310 rows.  The
+next optional regression is a component-expanded PBW spot check; the next
+scientific bridge is the non-Einstein Bach-flat parent-to-metric SDR.  The
+branch still develops finite-time Weyl-curvature blow-up for every nonzero small parameter,
 so no whole-cylinder promotion follows.  This scoped obstruction does not
 demote the formal rank-310 variation and does not cover all Bach-flat
 deformations.  Fixed
