@@ -172,8 +172,13 @@ assembled coefficientwise: `-1975/72+2704/27=15707/216`, so algebraic `H2`
 does not cancel the symmetric `M14` divergence. Generic-box triangle corner
 residues are now exact for all eleven channels, and their full incidence with
 the contact rows is generically nonzero. Thus `M14` is disposed as a
-Mellin-renormalized scale row. Finite local rows and complete form-factor
-assembly remain open. See
+Mellin-renormalized scale row. All 33 finite contact rows are exact in the
+declared minimal subtraction. The physical triangle carrier problem is now
+also closed: the 46 canonical relative-IBP tangent columns plus the three
+scalar-triangle masters, the `M14` singlet and the standard-`S3` pair
+`e3*(alpha1-alpha2)`, `e3*(alpha2-alpha0)` have exact generic rank 52, and
+all eleven physical rows stay in that span. The three new renormalized master
+values and complete form-factor assembly remain open. See
 [`generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md`](../../reports/generic-background-physical-hessian-symmetric-mixed-boundary-incidence.md).
 
 Replay with:

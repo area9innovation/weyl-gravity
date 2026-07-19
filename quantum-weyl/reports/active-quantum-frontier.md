@@ -173,8 +173,12 @@ is nonzero, so algebraic `H2` cancellation is refuted generically and `M14`
 is disposed as a scale row renormalized by the common Mellin extension.
 The 33 minimally-subtracted finite contact rows are also exact; two unseen
 tensor fixtures and coefficientwise `I28=0` pass, and their equal-box TT sum
-is `3188/27`. The renormalized `H1^3` triangle bulk and independent finite-
-counterterm normalization remain open.
+is `3188/27`. The physical triangle carrier inventory is now complete: the
+rank-49 tangent-plus-scalar-master span grows through the `M14` singlet and a
+standard-`S3` pair to exact generic rank 52, and five exact orbit ranks plus
+the generated `S3` crosswalk place all eleven physical rows in that span. The
+three new renormalized master values and independent finite-counterterm
+normalization remain open.
 The ten pole-three generic barycentric rows are now fully integrated as exact
 rational combinations of the scalar triangle, two explicit bubble-log ratios,
 and rational corner flux. Four explicit primitives cover every orientation,
@@ -506,10 +510,10 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. reduce the minimally-subtracted bulk of the physical `H1^3` triangle to
-   scalar-triangle and bubble-log masters; the generic boundary incidence and
-   nonzero `M14` scale-row disposition are already exact;
-2. combine that triangle bulk with the 33 exact minimally-subtracted finite
+1. evaluate the renormalized `M14` singlet and standard-`S3` pair in the
+   completed six-master physical triangle span; the generic boundary
+   incidence and nonzero `M14` scale-row disposition are already exact;
+2. combine those triangle master values with the 33 exact minimally-subtracted finite
    `H1-H2` contact rows (equal-box TT sum `3188/27`) and retain the independent
    mu-independent finite-counterterm normalization as an explicit scheme input;
 3. supply the full generic primed Green kernel or spectral measure for the

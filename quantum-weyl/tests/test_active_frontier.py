@@ -215,6 +215,14 @@ class ActiveFrontierTests(unittest.TestCase):
             ]
         )
         self.assertTrue(
+            self.payload["claim_flags"]["PHYSICAL_TRIANGLE_SIX_MASTER_SPAN_COMPLETE"]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"][
+                "RENORMALIZED_PHYSICAL_TRIANGLE_MASTER_VALUES_COMPUTED"
+            ]
+        )
+        self.assertTrue(
             self.payload["claim_flags"][
                 "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE"
             ]
@@ -486,7 +494,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "REDUCE_RENORMALIZED_PHYSICAL_TRIANGLE_BULK_AND_ASSEMBLE_THIRD_CURVATURE_FORM_FACTORS",
+            "EVALUATE_RENORMALIZED_SINGLET_AND_STANDARD_S3_MASTER_VALUES_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

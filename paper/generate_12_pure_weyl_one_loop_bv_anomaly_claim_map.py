@@ -57,6 +57,7 @@ INPUTS = {
     "generic_physical_hessian_triangle_corner_residues": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_CORNER_RESIDUES.json",
     "generic_physical_hessian_full_boundary_incidence": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_FULL_BOUNDARY_INCIDENCE.json",
     "generic_physical_hessian_H1_H2_contact_finite_rows": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_H1_H2_CONTACT_FINITE_ROWS.json",
+    "generic_physical_hessian_triangle_master_completeness": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_MASTER_COMPLETENESS.json",
     "generic_background_ghost_CPT_obstruction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n3_adiabatic_carrier": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
@@ -147,6 +148,9 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     ]
     physical_hessian_contact_finite = values[
         "generic_physical_hessian_H1_H2_contact_finite_rows"
+    ]
+    physical_hessian_triangle_masters = values[
+        "generic_physical_hessian_triangle_master_completeness"
     ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
@@ -461,6 +465,18 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "combined_contact_finite_value"
         )
         != {"numerator": 3188, "denominator": 27}
+        or physical_hessian_triangle_masters.get("claim_flags", {}).get(
+            "ALL_ELEVEN_PHYSICAL_ROWS_IN_SIX_MASTER_SPAN"
+        )
+        is not True
+        or physical_hessian_triangle_masters.get("claim_flags", {}).get(
+            "STANDARD_S3_MASTER_PAIR_REQUIRED"
+        )
+        is not True
+        or physical_hessian_triangle_masters.get("claim_flags", {}).get(
+            "RENORMALIZED_SIX_MASTER_VALUES_COMPUTED"
+        )
+        is not False
         or generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
         != "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
         or generic_ghost_cpt.get("claim_flags", {}).get(
@@ -856,6 +872,9 @@ def build() -> dict[str, Any]:
     physical_hessian_contact_finite = values[
         "generic_physical_hessian_H1_H2_contact_finite_rows"
     ]
+    physical_hessian_triangle_masters = values[
+        "generic_physical_hessian_triangle_master_completeness"
+    ]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
@@ -1031,6 +1050,9 @@ def build() -> dict[str, Any]:
             "physical_Hessian_generic_contact_finite_row_count": physical_hessian_contact_finite["interpolation"]["row_count"],
             "physical_Hessian_generic_contact_finite_unseen_fixture_count": physical_hessian_contact_finite["interpolation"]["unseen_fixture_count"],
             "physical_Hessian_equal_box_contact_finite_value": physical_hessian_contact_finite["equal_box_regression"]["combined_contact_finite_value"],
+            "physical_Hessian_triangle_six_master_span_complete": True,
+            "physical_Hessian_triangle_six_master_generic_rank": physical_hessian_triangle_masters["rank_ladder"][-1]["generic_rank"],
+            "physical_Hessian_triangle_standard_S3_pair_required": True,
             "generic_background_ghost_minimal_CPT_substitution_obstructed": True,
             "generic_background_ghost_effective_divergence_coefficient": generic_ghost_cpt["algebraic_Weyl_ghost_elimination"]["beta_controls"][0]["effective_divergence_coefficient"],
             "generic_background_ghost_principal_eigenvalues": generic_ghost_cpt["nonminimal_principal_symbol"]["eigenvalues_e0"],

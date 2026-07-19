@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl/generic-background-physical-hessian-triangle-master-completeness-v1.schema.json",
+  "title": "Generic physical-Hessian triangle master completeness",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "dependencies", "scope", "ambient_alpha_monomial_count", "raw_tangent_column_count", "canonical_tangent_pivot_count", "canonical_pivot_columns", "rank_ladder", "new_master_numerators", "S3_action", "physical_channel_orbit_crosswalk", "physical_channel_rows", "exact_rank_fixtures", "formula_digest", "claim_flags", "verification_policy", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-physical-hessian-triangle-master-completeness-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_PHYSICAL_HESSIAN_TRIANGLE_MASTER_COMPLETENESS"},
+    "result_state": {"const": "ALL_ELEVEN_PHYSICAL_TRIANGLE_ROWS_REDUCED_TO_SIX_MASTER_RELATIVE_IBP_SPAN"},
+    "lifecycle_state": {"const": "TRIANGLE_MASTER_CARRIERS_COMPLETE_RENORMALIZED_MASTER_VALUES_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 1},
+    "dependencies": {
+      "type": "object", "additionalProperties": false,
+      "required": ["physical_five_carrier_projection", "pole4_relative_IBP_architecture"],
+      "properties": {
+        "physical_five_carrier_projection": {"$ref": "#/$defs/dependency"},
+        "pole4_relative_IBP_architecture": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "scope": {"type": "object", "additionalProperties": false, "required": ["dimension", "signature", "kinematics", "input", "output"], "properties": {"dimension": {"const": 4}, "signature": {"const": "Euclidean"}, "kinematics": {"type": "string", "minLength": 1}, "input": {"type": "string", "minLength": 1}, "output": {"type": "string", "minLength": 1}}},
+    "ambient_alpha_monomial_count": {"const": 55},
+    "raw_tangent_column_count": {"const": 84},
+    "canonical_tangent_pivot_count": {"const": 46},
+    "canonical_pivot_columns": {"type": "array", "minItems": 52, "maxItems": 52, "items": {"type": "integer", "minimum": 0, "maximum": 89}},
+    "rank_ladder": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/rankRow"}},
+    "new_master_numerators": {"const": {"M14_singlet": "alpha0*alpha1*alpha2", "M15_standard_u": "alpha0*alpha1*alpha2*(alpha1-alpha2)", "M16_standard_v": "alpha0*alpha1*alpha2*(alpha2-alpha0)"}},
+    "S3_action": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/actionRow"}},
+    "physical_channel_orbit_crosswalk": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/orbitGenerator"}},
+    "physical_channel_rows": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/channelRow"}},
+    "exact_rank_fixtures": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fixtureRow"}},
+    "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["M14_SINGLET_REQUIRED", "STANDARD_S3_MASTER_PAIR_REQUIRED", "ALL_ELEVEN_PHYSICAL_ROWS_IN_SIX_MASTER_SPAN", "GENERIC_MASTER_SPAN_RANK_52", "RENORMALIZED_SIX_MASTER_VALUES_COMPUTED", "PHYSICAL_N3_TRIANGLE_INTEGRATED", "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "QME_RESTORED", "LORENTZIAN_CERTIFIED", "RESIDUAL_TRANSFER_AUTHORIZED"],
+      "properties": {
+        "M14_SINGLET_REQUIRED": {"const": true}, "STANDARD_S3_MASTER_PAIR_REQUIRED": {"const": true}, "ALL_ELEVEN_PHYSICAL_ROWS_IN_SIX_MASTER_SPAN": {"const": true}, "GENERIC_MASTER_SPAN_RANK_52": {"const": true},
+        "RENORMALIZED_SIX_MASTER_VALUES_COMPUTED": {"const": false}, "PHYSICAL_N3_TRIANGLE_INTEGRATED": {"const": false}, "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": {"const": false}, "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false}, "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false}, "QME_RESTORED": {"const": false}, "LORENTZIAN_CERTIFIED": {"const": false}, "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false}
+      }
+    },
+    "verification_policy": {"type": "object", "additionalProperties": false, "required": ["exhaustive_rail", "fast_rail"], "properties": {"exhaustive_rail": {"type": "string", "minLength": 1}, "fast_rail": {"type": "string", "minLength": 1}}},
+    "next_gate": {"const": "EVALUATE_RENORMALIZED_SINGLET_AND_STANDARD_S3_MASTER_VALUES_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "result_id": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "rankRow": {"type": "object", "additionalProperties": false, "required": ["added_master_id", "generic_rank"], "properties": {"added_master_id": {"enum": ["J_triangle", "M_x1", "M_x2", "M14_singlet", "M15_standard_u", "M16_standard_v"]}, "generic_rank": {"type": "integer", "minimum": 47, "maximum": 52}}},
+    "actionRow": {"type": "object", "additionalProperties": false, "required": ["alpha_permutation", "standard_pair_action_columns", "determinant", "trace"], "properties": {"alpha_permutation": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"enum": ["alpha0", "alpha1", "alpha2"]}}, "standard_pair_action_columns": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer"}}}, "determinant": {"enum": [-1, 1]}, "trace": {"enum": [-1, 0, 2]}}},
+    "orbitGenerator": {"type": "object", "additionalProperties": false, "required": ["generator_id", "channel_map"], "properties": {"generator_id": {"enum": ["swap_alpha0_alpha2", "swap_alpha1_alpha2"]}, "channel_map": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/orbitMap"}}}},
+    "orbitMap": {"type": "object", "additionalProperties": false, "required": ["source_channel_id", "target_channel_id"], "properties": {"source_channel_id": {"type": "string", "pattern": "^I(10|24|25|28|29)_[123]{3}$"}, "target_channel_id": {"type": "string", "pattern": "^I(10|24|25|28|29)_[123]{3}$"}}},
+    "channelRow": {"type": "object", "additionalProperties": false, "required": ["channel_id", "numerator_box_degree", "generic_augmented_rank", "membership_status"], "properties": {"channel_id": {"type": "string", "pattern": "^I(10|24|25|28|29)_[123]{3}$"}, "numerator_box_degree": {"type": "integer", "minimum": 3, "maximum": 6}, "generic_augmented_rank": {"const": 52}, "membership_status": {"const": "IN_SIX_MASTER_RELATIVE_IBP_SPAN"}}},
+    "fixtureRow": {"type": "object", "additionalProperties": false, "required": ["boxes", "six_master_rank", "six_master_plus_all_physical_rows_rank"], "properties": {"boxes": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 1}}, "six_master_rank": {"const": 52}, "six_master_plus_all_physical_rows_rank": {"const": 52}}}
+  }
+}

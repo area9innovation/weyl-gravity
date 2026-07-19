@@ -1174,7 +1174,7 @@ effective-action claims; the unsupported Hadamard assertion was removed from
 the abstract. Exact quotient, coefficient, determinant, spectral-sequence,
 matter, quartet, effective-action, and boundary tables are generated from eighteen hashed
 certificate inputs and pass an independent stale/tamper check. The claim map now
-binds fifty-eight direct certificate dependencies, including the finite-contact,
+binds fifty-nine direct certificate dependencies, including the finite-contact and physical triangle master-completeness,
 symmetric-point
 simplex and generic barycentric-factorization receipts and the formerly indirect pure-Diff/mixed quotient and factorwise
 coefficient ledger. The disposition
@@ -1182,3 +1182,37 @@ is recorded in
 [`12-pure-weyl-one-loop-bv-anomaly-referee-response.md`](../paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md).
 The machine/literature traceability audit is complete; final human author signoff
 remains before theorem freeze.
+
+## Physical triangle master completeness (2026-07-19)
+
+The coefficient-bearing physical `H1^3` gate has advanced from an unresolved
+generic fraction-field inventory to a complete carrier theorem.  The exact
+pole-four relative-IBP ladder is
+
+```text
+46 tangent columns + 3 scalar-triangle masters = rank 49
+  + e3                                  = rank 50
+  + e3*(alpha1-alpha2)                  = rank 51
+  + e3*(alpha2-alpha0)                  = rank 52
+```
+
+The last two rows form the standard two-dimensional `S3` representation.
+The eleven physical channels form five exact `S3` orbits, and each orbit
+representative leaves the exact generic augmented rank at 52.  Thus every
+physical numerator lies in this six-master relative-IBP span.  The exhaustive
+fraction-field evidence rail takes 8m38s; the independent fast rail replays
+the rank ladder, orbit crosswalk, dependency hashes and four exact fixtures
+in under 40 seconds.
+
+This is `LOCAL-ALGEBRAIC` plus `EUCLIDEAN-SPECTRAL`.  It does not yet evaluate
+the renormalized singlet or standard-`S3` master values, integrate the
+physical triangle, assemble the five third-curvature form factors, supply a
+complete `Gamma1` or `Q1`, restore a strict QME, authorize residual transfer,
+or promote a Lorentzian claim.  The active coefficient gate is now:
+
+```text
+EVALUATE_RENORMALIZED_SINGLET_AND_STANDARD_S3_MASTER_VALUES_AND_ASSEMBLE_PHYSICAL_THIRD_CURVATURE_FORM_FACTORS
+```
+
+Receipt:
+[`generic-background-physical-hessian-triangle-master-completeness.md`](../quantum-weyl/reports/generic-background-physical-hessian-triangle-master-completeness.md).
