@@ -2197,6 +2197,19 @@ ideals remain `OPEN`; same-fibre sources, Taub intersection and bounded or
 smooth-secular correction classes remain `OPEN`, while causal correction is
 `NO_CERTIFIED_MAP`.
 
+Candidates `8` and `12` close two of those six `L=4` ideals.  Exact
+algebraic-number relations reduce the doubled internal branch to one active
+plus one spectator quartic in each parity.  The active multiplication
+invariants are `r^2=1/3` and `r^2=1/40`; each all-`m` zero variety therefore
+has four real-supported complex dimension-20 components in ambient dimension
+30 after adjoining the ten spectator coordinates.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_rank_one_branch_l4_zero_varieties`
+records resonance `CERTIFIED`, bounded and smooth-secular correction `OPEN`,
+and causal correction `NO_CERTIFIED_MAP`.  Candidates `7,11,13,19` are the
+four remaining cross-fibre ideals.  Same-fibre sources, the Taub common-zero
+join and the complete bounded cone remain the activation gate; this result is
+an input to same-background Bridge 1 rather than a nonlinear bridge theorem.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-rank-one-branch-zero-varieties-v1",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "dependency_tags", "lifecycle_state", "scope", "carrier_crosswalk", "representation_theorem", "decompositions", "summary", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-ell2-two-abs-momentum-rank-one-branch-zero-varieties-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_RANK_ONE_BRANCH_ZERO_VARIETIES"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "decompositions": {"type": "array", "minItems": 2, "maxItems": 2},
+    "classification": {
+      "type": "object",
+      "required": ["both_multiplicity_two_L4_zero_varieties_classified", "all_m_irreducible_decomposition_classified", "internal_spectator_split_certified", "all_mixed_components_real", "other_nineteen_parent_fibre_zero_varieties_classified", "same_fibre_quadratic_sources_classified", "taub_common_zero_intersection_classified", "complete_two_fibre_tangent_cone_classified", "smooth_secular_classified", "causal_or_quantum_claim"]
+    }
+  }
+}

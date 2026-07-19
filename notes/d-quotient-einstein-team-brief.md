@@ -3556,6 +3556,20 @@ coordinates, each variety is irreducible of complex dimension 22 in ambient
 dimension 30.  Only the six `L=4` fibrewise ideals remain `OPEN`; same-fibre,
 Taub and correction lifecycles stay fail-closed.
 
+Candidates 8 and 12 now close two further multiplicity-two `L=4` fibres.
+After restoring the common positive axisymmetric conversion, eight exact
+algebraic-number identities prove squared internal-row ratios `3/40` and
+`120`; rational isolating intervals select the negative roots.  One internal
+quartic per parity is active and one is a spectator.  The active binary-
+quartic multiplication systems have `r^2=1/3` and `r^2=1/40`, respectively,
+so each has two one-fibre-zero planes and two real mixed proportionality
+sheets.  The spectator factor raises all four components to complex dimension
+20 in ambient dimension 30.  The generated atlas keeps the two circumference
+backgrounds distinct and leaves candidates `7,11,13,19`, same-fibre sources,
+the five Taub maps and every correction-class join fail-closed.  This is
+nonlinear input to active Bridge 1, not a promotion of its linear relative
+triangle or a cross-background mode dictionary.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
