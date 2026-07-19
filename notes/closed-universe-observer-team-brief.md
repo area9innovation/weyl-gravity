@@ -1339,14 +1339,20 @@ is now fully canonical through `F3` with 38 `F2` and 38 `F3` entries and an
 exact cotangent lift.  The temporal clock equation `y0=x0+Theta(x)` now fixes
 the inverse shift through cubic degree and generates 36 quadratic plus 96
 cubic metric-field PBW components; all linear metric terms cancel under the
-inverse-Jacobian pullback.  This temporal result is only a field-chart
-subgate.  Because its Jacobian is differential, the signed-pairing BV
-cotangent lift still requires a formal-adjoint/integration-by-parts proof.
-The fail-closed atlas row is
-`observer.berger.interaction.nonlinear_clock_temporal_field_f2_f3`; complete
-scalar `q2,q3`, arity replay, `K_Berger` equivariance, observer-morphism
-stability and `O_detector|Z2^C` remain `NO_CERTIFIED_MAP` until that cotangent
-gate passes and the combined chart is replayed.
+inverse-Jacobian pullback.  Its differential Jacobian has now been lifted by
+coefficientwise integration by parts in the noncommuting Berger PBW algebra.
+Both formal adjoints are involutive, and
+`P=p-B1 p+(B1^2-B2)p` has zero canonical one-form inverse defect through
+cubic degree.  The lift contributes 93 `F2` and 135 `F3` cotangent entries,
+including three necessary nonholonomic `sqrt(10)` terms.  The fail-closed
+atlas rows are
+`observer.berger.interaction.nonlinear_clock_temporal_field_f2_f3` and
+`observer.berger.interaction.nonlinear_clock_temporal_cotangent_f2_f3`.
+The radial and temporal submaps are separately canonical, but their mixed
+composition is not yet exported; complete scalar `q2,q3`, arity replay,
+`K_Berger` equivariance, observer-morphism stability and
+`O_detector|Z2^C` remain `NO_CERTIFIED_MAP` until the mixed `F2/F3` and
+combined canonical one-form gate pass.
 This does not activate the physical-
 branch bridge and does not identify any compact-product mode with a Berger
 apparatus row.

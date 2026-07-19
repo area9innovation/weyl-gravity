@@ -1,0 +1,37 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_NONLINEAR_CLOCK_TEMPORAL_COTANGENT_F2_F3_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_NONLINEAR_CLOCK_TEMPORAL_COTANGENT_F2_F3",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The temporal nonlinear clock field map now has an exact signed formal-adjoint BV cotangent lift through F3: 93 F2 plus 135 F3 entries, zero degree-two/three canonical one-form defects, exact factorial reconstruction, and retained nonholonomic Berger terms. Mixed radial-temporal composition, scalar q2/q3, observer reduction, tangent-cone response, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {"tier": 0, "command": "python3 -m py_compile on changed Python; jsonschema validation through generator/verifier; python3 -m json.tool on changed structured data; git diff --check on explicit observer paths", "elapsed_seconds": "under 10", "status": "PASS", "scope": "temporal cotangent generator, verifier, tests, schema, certificate, atlas, ledger, work item, receipt and canonical notes"},
+    {"tier": 1, "command": "pytest -q closed_universe_observers/tests/test_berger_nonlinear_clock_temporal_cotangent_f2_f3.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": "39.43", "status": "PASS", "scope": "42 exact formal-adjoint, canonical inverse, PBW payload, factorial round-trip, mutation, fail-closed atlas, evidence-hash and comparison-ledger tests"},
+    {"tier": 1, "command": "python3 -m closed_universe_observers.verify_berger_nonlinear_clock_temporal_cotangent_f2_f3; python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment; python3 -m closed_universe_observers.verify_comparison_ledger", "elapsed_seconds": "under 20", "status": "PASS", "scope": "dependency hashes, Frechet/formal-adjoint replay, 228-entry temporal cotangent reconstruction, four mutation rails, generated atlas and historical/live comparison ledger"}
+  ],
+  "higher_tiers_not_run": {"tier_2": "The temporal coordinate/cotangent submap and its direct generated-claims consumers were fully replayed; no shared classical unary, interaction tensor or combined radial-temporal chart was changed.", "tier_3": "This canonical subgate is not a freeze, release, shared-core algebra change, complete interaction theorem or paper promotion."},
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_nonlinear_clock_temporal_cotangent_f2_f3.py", "sha256": "95cfa03603522203a9df85a4a962ae6fd5ece30e424bdc4e122b61eccc36dcf5"},
+    {"path": "closed_universe_observers/verify_berger_nonlinear_clock_temporal_cotangent_f2_f3.py", "sha256": "6887d176b323486cc3750a3ffd3cec79abf064c1fb0e79038715421e096dbeba"},
+    {"path": "closed_universe_observers/tests/test_berger_nonlinear_clock_temporal_cotangent_f2_f3.py", "sha256": "fbd0306581886bdd252bdf4ff394e6908c9658676f54c98d1e447f84c7535e80"},
+    {"path": "closed_universe_observers/schema/berger-nonlinear-clock-temporal-cotangent-f2-f3-v1.schema.json", "sha256": "f7c2b31b5e5893b5a56217dbdb265083878c0ec60702f8358c5a98e7f26df318"},
+    {"path": "closed_universe_observers/reports/berger-nonlinear-clock-temporal-cotangent-f2-f3.md", "sha256": "99037bef6749ec9fc44b2a2506625d91ba2f13a9e0c3bdd4ffcceeb0a68d7caa"},
+    {"path": "closed_universe_observers/certificates/BERGER_NONLINEAR_CLOCK_TEMPORAL_COTANGENT_F2_F3.json", "sha256": "a4a275b8867f6a3a81992de149b563d68787288f622ef8d5789084a2fcbdcb5c"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "e7e762f98f96e987cd93ba85a69b46842c38c4952af37a8ca02b55913054f5cf"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "36760be311197de5e2a5cd09843c336070d3faf68fb464ff373dc47776246664"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "48b027b826b0b7326357f3753eab1a09e86a019bab7ffcc835d86664ff4414cf"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "bfa770846dd795148bd003d16f09081b54abf2664070638ef4bd6315af6b0525"},
+    {"path": "planning/work-items/berger-nonlinear-clock-canonical-map-f2-f3.json", "sha256": "ed36771bccf2a44f2e45f124e37a8daafdde3e24895607600afd0e70f88f7119"}
+  ],
+  "flags": {
+    "TEMPORAL_NONLINEAR_CLOCK_FIELD_F2_F3_EXPORTED": true,
+    "TEMPORAL_NONLINEAR_CLOCK_COTANGENT_LIFT_CANONICAL": true,
+    "TEMPORAL_FORMAL_ADJOINT_INTEGRATION_BY_PARTS_CERTIFIED": true,
+    "TEMPORAL_COTANGENT_FACTORIAL_ROUND_TRIP_CERTIFIED": true,
+    "COMBINED_NONLINEAR_CLOCK_CANONICAL_MAP_EXPORTED": false,
+    "SCALAR_APPARATUS_Q2_Q3_TRANSPORT_AUTHORIZED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "PHYSICAL_BRANCH_BRIDGE_ACTIVATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

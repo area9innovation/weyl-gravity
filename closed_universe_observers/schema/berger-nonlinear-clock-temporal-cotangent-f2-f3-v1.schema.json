@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-nonlinear-clock-temporal-cotangent-f2-f3-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "formal_adjoint_and_inverse_audit", "taylor_payload", "mutation_results", "activation_disposition", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-nonlinear-clock-temporal-cotangent-f2-f3-v1"},
+    "result_id": {"const": "BERGER_NONLINEAR_CLOCK_TEMPORAL_COTANGENT_F2_F3"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_TEMPORAL_FIELD_AND_BV_COTANGENT_F2_F3_COMBINED_CLOCK_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "formal_adjoint_and_inverse_audit": {"type": "object", "required": ["formal_adjoint_involution_defect", "canonical_one_form_inverse_defect", "nonholonomic_sqrt10_term_count"], "properties": {"nonholonomic_sqrt10_term_count": {"type": "integer", "minimum": 1}, "formal_adjoint_involution_defect": {"type": "object"}, "canonical_one_form_inverse_defect": {"type": "object"}}},
+    "taylor_payload": {"type": "object", "required": ["factorial_convention", "field_rows", "cotangent_rows", "F2", "F3", "F2_entry_count", "F3_entry_count", "canonical_sha256", "reconstruction_defects"], "properties": {"F2_entry_count": {"const": 93}, "F3_entry_count": {"const": 135}, "F2": {"type": "array", "minItems": 93, "maxItems": 93}, "F3": {"type": "array", "minItems": 135, "maxItems": 135}, "reconstruction_defects": {"type": "object"}}},
+    "mutation_results": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "required": ["name", "detected"], "properties": {"detected": {"const": true}}}},
+    "activation_disposition": {"type": "object", "additionalProperties": false, "required": ["temporal_field_F2_F3_certified", "temporal_BV_cotangent_lift_certified", "combined_radial_temporal_clock_map_certified", "scalar_q2_q3_transport_authorized", "detector_response_on_second_order_cone_authorized", "physical_branch_bridge_activated"], "properties": {"temporal_field_F2_F3_certified": {"const": true}, "temporal_BV_cotangent_lift_certified": {"const": true}, "combined_radial_temporal_clock_map_certified": {"const": false}, "scalar_q2_q3_transport_authorized": {"const": false}, "detector_response_on_second_order_cone_authorized": {"const": false}, "physical_branch_bridge_activated": {"const": false}}},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "COMPOSE_RADIAL_AND_TEMPORAL_CANONICAL_CHARTS_AND_EXPORT_MIXED_F2_F3"},
+    "claim_boundary": {"type": "string", "minLength": 1200},
+    "provenance": {"type": "object"}
+  }
+}
