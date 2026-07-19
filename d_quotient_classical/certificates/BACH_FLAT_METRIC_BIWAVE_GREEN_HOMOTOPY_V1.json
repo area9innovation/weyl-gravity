@@ -1,0 +1,149 @@
+{
+  "Volterra_binding": {
+    "P1_P2_normally_hyperbolic": true,
+    "both_inverse_identities": true,
+    "causal_support": true,
+    "commutativity_required": false,
+    "globalization_by_uniqueness": true,
+    "self_adjointness_required": false,
+    "smooth_order_two_graph_bound_on_each_finite_slab": true,
+    "stationarity_required": false,
+    "typed_adjoint_reversal": true
+  },
+  "claim_boundary": {
+    "not_claimed": [
+      "exact same-bundle factorization of the Bach witness",
+      "a metric theorem outside the declared globally hyperbolic compact-Cauchy class",
+      "the rank-310 all-row transfer, which is a separate dependency gate",
+      "Hadamard wavefront-set control",
+      "nonlinear stability or quantum master-equation restoration"
+    ],
+    "statement": "Every metric in the certified relative-open Bach-flat ADM class has a complete four-row metric Bach advanced/retarded Green homotopy. The proof uses a scalar biwave plus an order-at-most-two Volterra remainder, not exact factorization."
+  },
+  "complex": {
+    "Noether_identity": "B_action K=0 on every Bach-flat background",
+    "Q_squared": 0,
+    "adjoint_Noether_identity": "Ksharp B_action=0",
+    "arrows": [
+      "K",
+      "B_action",
+      "Ksharp"
+    ],
+    "formal_pairing": "action Hessian pairing between metric/equation and ghost/identity rows"
+  },
+  "dependency_refs": {
+    "Bach_flat_ADM_class": {
+      "artifact_id": "BACH_FLAT_PARENT_GREEN_STABILITY_V1",
+      "path": "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
+      "sha256": "2ee8be4633c180f178ceff900cda2e6cc6b6f6c51bf7018e59cea3f63d5c14bf"
+    },
+    "typed_biwave_volterra": {
+      "artifact_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1",
+      "path": "d_quotient_classical/certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1.json",
+      "sha256": "52c74ce7e725ff61d49644721bb3329ad385a903c477ed5654fca00d763be8f9"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "advanced_retarded_support": true,
+    "all_four_degree_blocks_bound_to_Volterra": true,
+    "covariant_third_order_layer_absent": true,
+    "cyclic_adjoint_reversal": true,
+    "four_row_complex_exact": true,
+    "universal_principal_fixture": true
+  },
+  "flags": {
+    "BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1": true,
+    "BACH_FLAT_METRIC_GREEN_HOMOTOPY_ON_CLASS": true,
+    "BACH_FLAT_RANK310_GREEN_HOMOTOPY_ON_CLASS": false,
+    "EXACT_SAME_BUNDLE_FACTORIZATION_ON_CLASS": false,
+    "HADAMARD_STATE": false,
+    "NONLINEAR_EXTENSION": false,
+    "QUANTUM_CLAIM": false
+  },
+  "homotopy": {
+    "chain_commutation": "QG_metric,+/-=G_metric,+/-Q",
+    "definition": "Lambda_metric,+/-=W_metric G_metric,+/-",
+    "degreewise_Green": "G_metric,+/-=(2 times the typed Volterra inverse of 2P_degree)",
+    "identity": "Q Lambda_metric,+/-+Lambda_metric,+/- Q=1"
+  },
+  "next_gate": "BACH_FLAT_RANK310_CAUSAL_TRANSFER",
+  "principal_symbol_checks": {
+    "B_K_principal": true,
+    "ghost_scalar_biwave": true,
+    "metric_scalar_biwave": true
+  },
+  "proof_artifacts": {
+    "analytic_binding": {
+      "path": "d_quotient_classical/generated/bach_flat_metric_biwave_green_homotopy_v1/analytic_binding.json",
+      "sha256": "4b79ee5fc6e7f9ab56ed82270ffc05d932cd180bf9d0f6d60753b5f91676d63d"
+    },
+    "covariant_order_lemma": {
+      "path": "d_quotient_classical/generated/bach_flat_metric_biwave_green_homotopy_v1/covariant_order_lemma.json",
+      "sha256": "3bbb14d4790a0edbbe9f3823238c31a62347e16adec8e73c02bc860bc25cfdd6"
+    },
+    "four_row_binding": {
+      "path": "d_quotient_classical/generated/bach_flat_metric_biwave_green_homotopy_v1/four_row_binding.json",
+      "sha256": "c6451b33e0511b764456b0f71dd0a4a637daf012914d449be16215292795c109"
+    }
+  },
+  "result_id": "BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+  "result_state": "RELATIVE_G3_BACH_FLAT_FOUR_ROW_METRIC_CAUSAL_HOMOTOPY_EXACT",
+  "schema": "pure-weyl-bach-flat-metric-biwave-green-homotopy-v1",
+  "scope": {
+    "carrier": "four-row trace-free metric Bach BV complex",
+    "class": {
+      "adm_form": "g=-N^2 dt^2+h_ij(dx^i+beta^i dt)(dx^j+beta^j dt)",
+      "conditions": [
+        "sup |N-1|<1/4",
+        "sup |beta|_hN<1/4",
+        "sup ||h_N^(-1/2)(h-h_N)h_N^(-1/2)||_op<1/4",
+        "Bach(g)=0",
+        "all coefficients are smooth"
+      ],
+      "manifold": "M=R x (S1 x S2)",
+      "nonempty": true,
+      "not_open_in_all_metrics": true,
+      "radius": "1/4",
+      "reference": "unit Nariai g_N=-dt^2+cosh(t)^2 dchi^2+dOmega_2^2",
+      "relatively_open": true,
+      "topology": "relative C0 ADM topology on the smooth Bach-flat locus; derivative-bounded refinements give the corresponding C_b^k classes"
+    },
+    "degree_ranks": [
+      4,
+      9,
+      9,
+      4
+    ],
+    "support": "compact sources to advanced/retarded causal support; smooth spacelike-compact solutions"
+  },
+  "source_manifest": {
+    "covariant_completion/minimal_witness/principal_symbols.py": "bc6643fef299088ae3f8176e2f9bbc152158da70d45845a0b48d2938cb0928f2",
+    "d_quotient_classical/causal_transfer/bach_flat_metric_biwave_green_homotopy.py": "f07f21c07432c169e7ec17165c1c36105bb81ce986144993aaac9c495520e4da",
+    "d_quotient_classical/causal_transfer/tests/test_bach_flat_metric_biwave_green_homotopy.py": "0fde3c9d8cdff84470961863d24be77977415a35bb7220e081824de94a9009d6",
+    "d_quotient_classical/causal_transfer/typed_biwave_volterra_green_theorem.py": "e1521acd8410aa5445a1313f13015bd56e55117d7de9b40d5f9a87ae10296de9",
+    "d_quotient_classical/causal_transfer/verify_bach_flat_metric_biwave_green_homotopy.py": "30c3d98366549d007daf3d4b7fd29d395174ca7cc760e6a59ba6f73dfb1a07d0",
+    "d_quotient_classical/schema/bach-flat-metric-biwave-green-homotopy-v1.schema.json": "dd0d7c1c4dffbeb811cc4ec9da26316728876461ee564a9392ae84be0e30c940"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/bach_flat_metric_biwave_green_homotopy.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_bach_flat_metric_biwave_green_homotopy.py",
+    "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_bach_flat_metric_biwave_green_homotopy",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/bach-flat-metric-biwave-green-homotopy-v1.schema.json -d d_quotient_classical/certificates/BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json"
+  ],
+  "witness": {
+    "backward_blocks": [
+      "T0/2",
+      "J_M^-1",
+      "T0sharp/2"
+    ],
+    "companion": "T0=Box delta-(1/3)d delta^2",
+    "exact_same_bundle_factorization_required": false,
+    "identity": "P_metric=Q_metric W_metric+W_metric Q_metric",
+    "normalized_factor_choice": "P1=P2=the appropriate rough wave operator Box; 2P_degree=P2 P1+V_degree",
+    "remainder_maximum_order": 2
+  }
+}

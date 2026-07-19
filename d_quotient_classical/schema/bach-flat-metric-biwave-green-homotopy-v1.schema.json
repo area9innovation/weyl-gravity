@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/bach-flat-metric-biwave-green-homotopy-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "scope", "complex", "witness", "principal_symbol_checks", "Volterra_binding", "homotopy", "proof_artifacts", "exact_checks", "flags", "claim_boundary", "next_gate", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "pure-weyl-bach-flat-metric-biwave-green-homotopy-v1"},
+    "result_id": {"const": "BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1"},
+    "result_state": {"const": "RELATIVE_G3_BACH_FLAT_FOUR_ROW_METRIC_CAUSAL_HOMOTOPY_EXACT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["typed_biwave_volterra", "Bach_flat_ADM_class"],
+      "properties": {
+        "typed_biwave_volterra": {"$ref": "#/$defs/dependency"},
+        "Bach_flat_ADM_class": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "scope": {"type": "object", "required": ["class", "carrier", "degree_ranks", "support"], "additionalProperties": false,
+      "properties": {
+        "class": {"type": "object", "minProperties": 8},
+        "carrier": {"type": "string", "minLength": 1},
+        "degree_ranks": {"const": [4, 9, 9, 4]},
+        "support": {"type": "string", "minLength": 1}
+      }
+    },
+    "complex": {"$ref": "#/$defs/nonemptyObject"},
+    "witness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["companion", "backward_blocks", "identity", "normalized_factor_choice", "remainder_maximum_order", "exact_same_bundle_factorization_required"],
+      "properties": {
+        "companion": {"type": "string", "minLength": 1},
+        "backward_blocks": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "identity": {"type": "string", "minLength": 1},
+        "normalized_factor_choice": {"type": "string", "minLength": 1},
+        "remainder_maximum_order": {"const": 2},
+        "exact_same_bundle_factorization_required": {"const": false}
+      }
+    },
+    "principal_symbol_checks": {"$ref": "#/$defs/trueMap"},
+    "Volterra_binding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["P1_P2_normally_hyperbolic", "smooth_order_two_graph_bound_on_each_finite_slab", "stationarity_required", "commutativity_required", "self_adjointness_required", "both_inverse_identities", "causal_support", "globalization_by_uniqueness", "typed_adjoint_reversal"],
+      "properties": {
+        "P1_P2_normally_hyperbolic": {"const": true},
+        "smooth_order_two_graph_bound_on_each_finite_slab": {"const": true},
+        "stationarity_required": {"const": false},
+        "commutativity_required": {"const": false},
+        "self_adjointness_required": {"const": false},
+        "both_inverse_identities": {"const": true},
+        "causal_support": {"const": true},
+        "globalization_by_uniqueness": {"const": true},
+        "typed_adjoint_reversal": {"const": true}
+      }
+    },
+    "homotopy": {"$ref": "#/$defs/stringMap"},
+    "proof_artifacts": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/proof"}},
+    "exact_checks": {"$ref": "#/$defs/trueMap"},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1", "BACH_FLAT_METRIC_GREEN_HOMOTOPY_ON_CLASS", "BACH_FLAT_RANK310_GREEN_HOMOTOPY_ON_CLASS", "EXACT_SAME_BUNDLE_FACTORIZATION_ON_CLASS", "HADAMARD_STATE", "NONLINEAR_EXTENSION", "QUANTUM_CLAIM"],
+      "properties": {
+        "BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1": {"const": true},
+        "BACH_FLAT_METRIC_GREEN_HOMOTOPY_ON_CLASS": {"const": true},
+        "BACH_FLAT_RANK310_GREEN_HOMOTOPY_ON_CLASS": {"const": false},
+        "EXACT_SAME_BUNDLE_FACTORIZATION_ON_CLASS": {"const": false},
+        "HADAMARD_STATE": {"const": false},
+        "NONLINEAR_EXTENSION": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "object", "additionalProperties": false, "required": ["statement", "not_claimed"], "properties": {"statement": {"type": "string", "minLength": 1}, "not_claimed": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}}},
+    "next_gate": {"const": "BACH_FLAT_RANK310_CAUSAL_TRANSFER"},
+    "source_manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "proof": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "nonemptyObject": {"type": "object", "minProperties": 1},
+    "stringMap": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
+    "trueMap": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+  }
+}

@@ -391,13 +391,21 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   `g_Omega=(1+1/(10(1+t^2)))^2 g_N`.  This is a genuine relative-open `G3`
   parent class.  The natural normal-BGG construction now also supplies a
   finite-order support-local cyclic rank-310 SDR onto the action-derived
-  metric Bach complex throughout that class.  The remaining fail-closed gate
-  is specifically the non-Einstein metric Bach Green theorem, and hence the
-  class-wide rank-310 Green homotopy:
+  metric Bach complex throughout that class.  The analytic gate is now closed
+  as well: the bare covariant companion turns every normalized four-row
+  degree block into `Box^2+V` with `ord(V)<=2`; the typed Volterra theorem
+  gives metric advanced/retarded homotopies, and the cyclic SDR lifts them to
+  all 310 rows.  This uses no exact same-bundle factorization and does not
+  create a bare-parent-to-metric SDR:
   [`certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json`](certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json),
   [`certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1.json`](certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1.json),
+  [`certificates/BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json`](certificates/BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json),
+  [`certificates/BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1.json`](certificates/BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1.json),
+  [`certificates/BACH_FLAT_METRIC_RANK310_CAUSAL_TRANSFER_V1_TIER_RECEIPT.json`](certificates/BACH_FLAT_METRIC_RANK310_CAUSAL_TRANSFER_V1_TIER_RECEIPT.json),
   [`certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1_TIER_RECEIPT.json`](certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1_TIER_RECEIPT.json),
   [`reports/bach-flat-rank310-natural-sdr.md`](reports/bach-flat-rank310-natural-sdr.md),
+  [`reports/bach-flat-metric-biwave-green-homotopy.md`](reports/bach-flat-metric-biwave-green-homotopy.md),
+  [`reports/bach-flat-rank310-causal-transfer.md`](reports/bach-flat-rank310-causal-transfer.md),
   [`reports/bach-flat-parent-green-stability.md`](reports/bach-flat-parent-green-stability.md)
 - Conformal-Nariai metric/all-row class: finite Diff--Weyl BV covariance,
   including the affine Weyl-ghost term and cotangent shear, transports the
@@ -405,8 +413,9 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   `g_phi=exp(2 phi)g_N` whenever `sup|exp(phi)-1|<1/9`.  This open class stays
   inside the parent ADM radius and contains the exact nonconstant consumer.
   The transformed maps satisfy the SDR identities, causal chain identity,
-  adjoint reversal, and exact metric descent.  Bach-flat directions transverse
-  to this conformal orbit remain open:
+  adjoint reversal, and exact metric descent.  The conformal orbit remains a
+  useful exact conjugation regression; transverse Bach-flat directions are
+  covered separately by the lower-order Volterra/rank-310 theorem above:
   [`certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json`](certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json),
   [`reports/conformal-nariai-310-causal-transfer.md`](reports/conformal-nariai-310-causal-transfer.md)
 - First genuinely transverse tangent: the exact Kantowski--Sachs variation
@@ -710,8 +719,8 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   fixed compact time slab, but for every nonzero `0<|epsilon|<1` its areal
   radius reaches zero with `C^2=12 C_epsilon^2/b^6` at finite proper time.
   Thus this branch cannot promote the formal variation to a smooth family on
-  all `R x S1 x S2`; non-Einstein Bach-flat families and declared causal
-  subdomains remain open:
+  all `R x S1 x S2`.  It does not obstruct the separately certified
+  non-Einstein relative Bach-flat ADM class or declared causal subdomains:
 
   [`reports/nariai-transverse-kantowski-sachs-global-obstruction.md`](reports/nariai-transverse-kantowski-sachs-global-obstruction.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete

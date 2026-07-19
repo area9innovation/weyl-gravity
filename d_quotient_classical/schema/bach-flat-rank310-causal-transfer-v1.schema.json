@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/bach-flat-rank310-causal-transfer-v1.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "scope", "transfer", "exact_checks", "flags", "claim_boundary", "next_gate", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "pure-weyl-bach-flat-rank310-causal-transfer-v1"},
+    "result_id": {"const": "BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1"},
+    "result_state": {"const": "RELATIVE_G3_BACH_FLAT_RANK310_ALL_ROW_CAUSAL_HOMOTOPY_EXACT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "additionalProperties": false, "required": ["metric_homotopy", "rank310_SDR", "abstract_transfer"], "properties": {"metric_homotopy": {"$ref": "#/$defs/dependency"}, "rank310_SDR": {"$ref": "#/$defs/dependency"}, "abstract_transfer": {"$ref": "#/$defs/dependency"}}},
+    "scope": {"type": "object", "additionalProperties": false, "required": ["class", "manifold", "carrier", "degree_ranks", "support"], "properties": {"class": {"type": "string", "minLength": 1}, "manifold": {"const": "R x S1 x S2"}, "carrier": {"type": "string", "minLength": 1}, "degree_ranks": {"const": [15, 140, 140, 15]}, "support": {"type": "string", "minLength": 1}}},
+    "transfer": {"$ref": "#/$defs/stringMap"},
+    "exact_checks": {"$ref": "#/$defs/trueMap"},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1", "BACH_FLAT_METRIC_GREEN_HOMOTOPY_ON_CLASS", "BACH_FLAT_RANK310_GREEN_HOMOTOPY_ON_CLASS", "PURE_PARENT_TO_METRIC_SDR", "EXACT_SAME_BUNDLE_FACTORIZATION_ON_CLASS", "HADAMARD_STATE", "NONLINEAR_EXTENSION", "QUANTUM_CLAIM"], "properties": {"BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1": {"const": true}, "BACH_FLAT_METRIC_GREEN_HOMOTOPY_ON_CLASS": {"const": true}, "BACH_FLAT_RANK310_GREEN_HOMOTOPY_ON_CLASS": {"const": true}, "PURE_PARENT_TO_METRIC_SDR": {"const": false}, "EXACT_SAME_BUNDLE_FACTORIZATION_ON_CLASS": {"const": false}, "HADAMARD_STATE": {"const": false}, "NONLINEAR_EXTENSION": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "claim_boundary": {"type": "object", "additionalProperties": false, "required": ["statement", "not_claimed"], "properties": {"statement": {"type": "string", "minLength": 1}, "not_claimed": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}}},
+    "next_gate": {"const": "CAUSAL_ATLAS_AND_COVARIANT_TRANSPORT_CONSUMERS"},
+    "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "stringMap": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
+    "trueMap": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+  }
+}

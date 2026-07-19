@@ -173,9 +173,9 @@ noncontractible mixed-bundle, all-mode `REDUCED-MODE`, or port alternatives
 currently supplies a Berger branch crosswalk.  No row-name or cross-background
 identification is allowed.  The active queue therefore advances to the
 compact-product off-shell noncyclic three-form Einstein--Weyl relative
-triangle, while a
-genuinely noncontractible Berger carrier and the support-local Bach-flat
-parent-to-metric causal bridge remain independent open rails.
+triangle, while a genuinely noncontractible Berger carrier remains open.
+The Bach-flat rank-310-to-metric causal rail is closed; only the categorically
+different bare-parent-to-metric crosswalk remains fail-closed.
 
 Three same-background handoffs follow the transverse replay; the first now
 has its fail-closed disposition and the second is active:
@@ -2260,9 +2260,10 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    Kantowski--Sachs Einstein continuation of the certified transverse tangent
    is now globally obstructed: for every nonzero `0<|epsilon|<1` the sphere
    radius reaches zero with divergent Weyl curvature at finite proper time.
-   Its slabwise family and formal causal variation remain exact.  The next
-   admissible target is a non-Einstein Bach-flat family or a causal theorem on
-   an explicitly declared common subdomain.
+   Its slabwise family and formal causal variation remain exact.  This
+   historical next-target statement is now discharged by the relative-open
+   non-Einstein Bach-flat metric/rank-310 Volterra theorem described below;
+   it does not cure the singular Einstein branch on the whole cylinder.
    The rank-310 HPL denominator is no longer part of the four-block risk: that
    formal transverse incidence obeys
    `Delta^2=(H Delta)^2=(Delta H)^2=0`, so both normalized resolvents terminate
@@ -2291,8 +2292,16 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    parallel-Weyl assumption.  The finite cyclic SDR therefore transports the
    metric homotopy to exact advanced/retarded homotopies on all 310 rows, with
    metric descent.  C-G2 is closed on every declared common slab.  The nonzero
-   family still has no whole-cylinder extension, and non-Einstein Bach-flat,
-   Hadamard and quantum promotions remain false.
+   family still has no whole-cylinder extension.  The formerly open
+   non-Einstein Bach-flat endpoint is now closed independently: the bare
+   covariant companion has scalar biwave leading symbol and no covariant
+   order-three remainder, so the typed Volterra theorem applies to all four
+   metric degrees with an order-at-most-two remainder.  The natural cyclic
+   SDR then gives `Lambda_310,+/-=H+I Lambda_metric,+/- pi` on all 310 rows
+   throughout the certified radius-`1/4` Bach-flat ADM class.  Exact
+   same-bundle factorization is neither used nor claimed.  The bare
+   normal-tractor parent still has no pure parent-to-metric SDR, and Hadamard
+   and quantum promotions remain false.
 9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` is now official:
    all six minimal roles, the Bach Euler coordinate, both Noether rows,
    Lie/Weyl covariance, and the four filtration identities replay. Quantum
@@ -2342,8 +2351,11 @@ advanced/retarded all-row contraction with exact metric descent at unit and
 conformal Nariai.  On the exact transverse Kantowski--Sachs Einstein branch,
 every finite common slab now has both the certified four-row metric biwave
 homotopy and its exact cyclic support-local transfer to all 310 rows.  The
-next optional regression is a component-expanded PBW spot check; the next
-scientific bridge is the non-Einstein Bach-flat parent-to-metric SDR.  The
+   next optional regression is a component-expanded PBW spot check.  The
+   non-Einstein Bach-flat metric endpoint and rank-310 causal bridge are now
+   closed on the full certified relative ADM class by the lower-order biwave
+   Volterra theorem plus the natural cyclic SDR.  The remaining crosswalk is
+   narrower: no pure normal-tractor-parent-to-metric SDR is inferred.  The
 branch still develops finite-time Weyl-curvature blow-up for every nonzero small parameter,
 so no whole-cylinder promotion follows.  This scoped obstruction does not
 demote the formal rank-310 variation and does not cover all Bach-flat

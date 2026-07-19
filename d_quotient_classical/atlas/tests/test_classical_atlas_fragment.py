@@ -88,14 +88,14 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
 
-    def test_bach_flat_class_separates_parent_causality_from_metric_sdr(self) -> None:
+    def test_bach_flat_class_has_metric_and_rank310_causal_transfer(self) -> None:
         entry = self.entries["classical.bach_flat.open_parent_detour"]
         self.assertEqual(entry["descriptions"]["causal"], "CERTIFIED")
-        self.assertIn(
-            "BACH_FLAT_RANK310_NATURAL_SDR_V1",
-            {item["result_id"] for item in entry["evidence"]},
-        )
-        self.assertIn("no non-Einstein metric or rank-310 Green homotopy", entry["claim_boundary"])
+        ids = {item["result_id"] for item in entry["evidence"]}
+        self.assertIn("BACH_FLAT_RANK310_NATURAL_SDR_V1", ids)
+        self.assertIn("BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1", ids)
+        self.assertIn("BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1", ids)
+        self.assertIn("pure normal-tractor-parent-to-metric crosswalk remains fail-closed", entry["claim_boundary"])
 
     def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_exact_branch"]

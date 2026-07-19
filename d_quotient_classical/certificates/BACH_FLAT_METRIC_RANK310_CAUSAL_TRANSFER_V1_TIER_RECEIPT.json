@@ -1,0 +1,59 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "BACH_FLAT_METRIC_RANK310_CAUSAL_TRANSFER_V1_TIER_RECEIPT",
+  "claim_ids": [
+    "BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+    "BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1"
+  ],
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "artifacts": {
+    "metric_certificate": {"path": "d_quotient_classical/certificates/BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json", "sha256": "f6f428c1d27526c918bfc0cc57975097452161ee9a0e61c5b3a34d1a3bf531ad"},
+    "metric_schema": {"path": "d_quotient_classical/schema/bach-flat-metric-biwave-green-homotopy-v1.schema.json", "sha256": "dd0d7c1c4dffbeb811cc4ec9da26316728876461ee564a9392ae84be0e30c940"},
+    "metric_producer": {"path": "d_quotient_classical/causal_transfer/bach_flat_metric_biwave_green_homotopy.py", "sha256": "f07f21c07432c169e7ec17165c1c36105bb81ce986144993aaac9c495520e4da"},
+    "metric_verifier": {"path": "d_quotient_classical/causal_transfer/verify_bach_flat_metric_biwave_green_homotopy.py", "sha256": "30c3d98366549d007daf3d4b7fd29d395174ca7cc760e6a59ba6f73dfb1a07d0"},
+    "metric_tests": {"path": "d_quotient_classical/causal_transfer/tests/test_bach_flat_metric_biwave_green_homotopy.py", "sha256": "0fde3c9d8cdff84470961863d24be77977415a35bb7220e081824de94a9009d6"},
+    "metric_report": {"path": "d_quotient_classical/reports/bach-flat-metric-biwave-green-homotopy.md", "sha256": "d237042064a5dc841090e9d189f9b4597d07cf1a4e50b98fbf960afceb0ee4d3"},
+    "rank310_certificate": {"path": "d_quotient_classical/certificates/BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1.json", "sha256": "b7fc3559345c59a02686388d101d2db76d597949f77450de1083c65b289fb86e"},
+    "rank310_schema": {"path": "d_quotient_classical/schema/bach-flat-rank310-causal-transfer-v1.schema.json", "sha256": "18cbe373b610f97b895b076d9f6356712161620266cdf3904a3d9f8fd5c313da"},
+    "rank310_producer": {"path": "d_quotient_classical/causal_transfer/bach_flat_rank310_causal_transfer.py", "sha256": "7faf4453df66f1020815f86576b3968099077b24466dc27c71c5d10625c4c76d"},
+    "rank310_verifier": {"path": "d_quotient_classical/causal_transfer/verify_bach_flat_rank310_causal_transfer.py", "sha256": "c535f9dc562801bcfb7f45adda6906d1b2986804f364941ba9715406429641eb"},
+    "rank310_tests": {"path": "d_quotient_classical/causal_transfer/tests/test_bach_flat_rank310_causal_transfer.py", "sha256": "50ff92ba2fac41ee8d1556c165e286d1951000ffb781d0683d547fe5b4ffdc19"},
+    "rank310_report": {"path": "d_quotient_classical/reports/bach-flat-rank310-causal-transfer.md", "sha256": "0bed497ce5c309abcee59aaa001b541cefa0da66ef7cbce839311c8c12bf59ae"},
+    "atlas_fragment": {"path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "sha256": "8dc03ac5d64b0e30556c16d757ae0cc0c8893277a5b563eaae7503035b9f3624"}
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": ["Python compilation", "strict Draft 2020-12 schemas", "scoped diff check", "content-hash replay"]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 36.0,
+      "peak_rss_kb": 75084,
+      "commands": [
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/bach_flat_metric_biwave_green_homotopy.py --check --guards",
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_bach_flat_metric_biwave_green_homotopy.py",
+        "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_bach_flat_metric_biwave_green_homotopy",
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/bach_flat_rank310_causal_transfer.py --check --guards",
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_bach_flat_rank310_causal_transfer.py",
+        "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_bach_flat_rank310_causal_transfer"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.7,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The affected content-addressed causal chain and direct atlas consumer passed. The repository-wide heavy rail was deferred because unrelated Einstein, quantum, observer and black-hole work is concurrently dirty; this delivery does not freeze a paper or release and does not change shared core algebra."
+    }
+  },
+  "claim_boundary": "This receipt covers the lower-order Volterra construction of the four-row metric Bach Green homotopy and its cyclic SDR lift to all 310 rows on the declared relative-open Bach-flat ADM class. It does not certify a bare-parent-to-metric SDR, an ambient-open metric class, exact factorization, Hadamard data, nonlinear stability or quantum claims."
+}

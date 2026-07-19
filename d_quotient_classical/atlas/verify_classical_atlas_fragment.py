@@ -63,8 +63,12 @@ def verify() -> None:
     bach_ids = {item["result_id"] for item in bach_open["evidence"]}
     if "BACH_FLAT_RANK310_NATURAL_SDR_V1" not in bach_ids:
         raise AssertionError("class-wide Bach-flat rank-310 SDR missing")
-    if "no non-Einstein metric or rank-310 Green homotopy" not in bach_open["claim_boundary"]:
-        raise AssertionError("Bach-flat metric causal boundary missing")
+    if "BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1" not in bach_ids:
+        raise AssertionError("class-wide Bach-flat metric homotopy missing")
+    if "BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1" not in bach_ids:
+        raise AssertionError("class-wide Bach-flat rank-310 causal transfer missing")
+    if "pure normal-tractor-parent-to-metric crosswalk remains fail-closed" not in bach_open["claim_boundary"]:
+        raise AssertionError("Bach-flat pure-parent crosswalk boundary missing")
     if transverse["descriptions"]["causal"] != "CERTIFIED":
         raise AssertionError("formal transverse causal theorem missing")
     transverse_ids = {item["result_id"] for item in transverse["evidence"]}

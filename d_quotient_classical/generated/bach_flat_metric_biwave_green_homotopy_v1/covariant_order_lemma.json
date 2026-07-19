@@ -1,0 +1,34 @@
+{
+  "claims": {
+    "K_T0_orders": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "K_order": 1,
+    "T0_K_orders": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "T0_order": 3,
+    "linearized_Bach_orders": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "third_order_absent": true
+  },
+  "companion": "T0=Box delta-(1/3)d delta^2",
+  "derivation": [
+    "The principal coefficients of K and T0 are contractions of g and are covariantly parallel.",
+    "Commuting covariant derivatives replaces two input derivatives by curvature; differentiating the commutator coefficients produces only lower input order.",
+    "In delta[(nabla^c nabla^d+Ric^cd/2) C_acbd], delta C has input orders two and zero; connection variations have input order one. Two outer derivatives therefore give input orders four, two, one and zero, never three.",
+    "Consequently every normalized witness block is Box^2 plus a smooth differential remainder of order at most two."
+  ],
+  "schema": "bach-flat-covariant-biwave-order-lemma-v1",
+  "scope": "four-dimensional smooth Bach-flat Lorentzian metrics; covariant normal form"
+}
