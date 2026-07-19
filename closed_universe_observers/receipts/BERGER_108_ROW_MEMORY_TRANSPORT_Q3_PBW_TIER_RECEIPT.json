@@ -1,0 +1,26 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_MEMORY_TRANSPORT_Q3_PBW_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_MEMORY_TRANSPORT_Q3_PBW",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The complete profile-free two-channel memory-transport q3 subblock contains 5,196 exact rational ordered PBW keys. Complete scalar q3, arity replay, cone response, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {"tier": 0, "command": "py_compile changed Python; validate changed JSON and schemas; git diff --check", "elapsed_seconds": 1.0, "status": "PASS", "scope": "memory q3 producer, verifier, payload, schemas, atlas and docs"},
+    {"tier": 1, "command": "pytest memory-q3; independent memory-q3 verifier; observer atlas verifier and residual-atlas validator", "elapsed_seconds": 7.6, "status": "PASS", "scope": "3 fast tests; full 5,196-key rebuild; 11-term first-jet recovery; 124 ordered/69 canonical second-jet terms; 8 directional components; symmetry, cyclic transposes, dependency/source/evidence hashes and deletion mutation"},
+    {"tier": 2, "command": "unchanged certified component carrier, clock chart, apparatus action, memory q1 and memory q2 dependencies checked by exact content hashes", "elapsed_seconds": "hash-gated", "status": "PASS", "scope": "direct dependency certificate chain"}
+  ],
+  "higher_tiers_not_run": {"tier_3": "Scoped q3 source subblock; no complete q3, shared core algebra, freeze, release or paper theorem."},
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_memory_transport_q3_pbw.py", "sha256": "f624c6208e74a0e0b230a9a5cb69a0c65b504ba975d72ec9e2715b01a036a372"},
+    {"path": "closed_universe_observers/verify_berger_108_row_memory_transport_q3_pbw.py", "sha256": "6e6655a295d18c21ad375d215b9ffdaa149764a61c59198bf525a44672339724"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_memory_transport_q3_pbw.py", "sha256": "aa24eb6538bb255c7dea2c0b30a2d2ec5205053220ba336b11cbe705f4a0e2d2"},
+    {"path": "closed_universe_observers/schema/berger-108-row-memory-transport-q3-pbw-v1.schema.json", "sha256": "779ee477713468e2505582f60e2efd2f6a5a88e61ee241373ae8e4320325c120"},
+    {"path": "closed_universe_observers/schema/berger-108-row-memory-transport-q3-pbw-payload-v1.schema.json", "sha256": "f938ebd88081cac9cf5e9ef33aa1c04f4644092932231ca0f7d9b80f509d4786"},
+    {"path": "closed_universe_observers/reports/berger-108-row-memory-transport-q3-pbw.md", "sha256": "75de22dda286d40d6ae9ba062836f7ece743e336b6a4ba27d6ecd05becc42dcf"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_MEMORY_TRANSPORT_Q3_PBW.json", "sha256": "bd61571e24e5d6ef9579a42f2c4b9beabf6c6fc7064c7ee6a07585424c34d3f5"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_MEMORY_TRANSPORT_Q3_PBW_PAYLOAD.json", "sha256": "9251693143278bd6753ebe44e7f2cf3cc8a02510fa45755c13c5833b8f12f24a"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "7b3963fd2c1f2df508d3f69d060853a57da0f660c99f010962f2202614224618"},
+    {"path": "planning/work-items/berger-108-row-apparatus-q2-q3-extension.json", "sha256": "e3520b2c12ade2c6c37f4e3240fc32a9e622606bb9ea3157dfde3156c65c6a59"}
+  ],
+  "flags": {"APPARATUS_MEMORY_TRANSPORT_Q3_PBW_EXPORTED": true, "COMPLETE_SCALAR_108_ROW_Q3_EXPORTED": false, "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false, "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false, "PHYSICAL_BRANCH_BRIDGE_ACTIVATED": false, "QUANTUM_CLAIM": false}
+}

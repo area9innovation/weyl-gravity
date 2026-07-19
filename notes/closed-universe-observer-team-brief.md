@@ -1445,12 +1445,17 @@ determinant-log/inverse-metric jet agrees with all 17,760 lower-order
 components, four direct symbolic fourth variations, and 30,000 Frechet
 transpositions.  Independent PBW adjunction exactly recovers both
 rod-output cyclic families, including derivatives of finite background rod
-jets.  This is one source subblock, not complete `q3`: the base
-gravity-clock-Maxwell import, memory transport, normalized readout and
-physical-emitter blocks remain to assemble, while scalar-BV and emitter
-Diff--BV must be ledgered as structural zeros.  Arity replay and
-`O_detector|Z2^C` therefore remain fail-closed.  The active next gate is the
-complete memory-transport `q3` block.
+jets.  The second complete source is
+`BERGER_108_ROW_MEMORY_TRANSPORT_Q3_PBW`.  Its exact 14-coordinate clock-flow
+Hessian has 69 canonical terms, recovers the certified eleven-term first jet
+and passes eight independent directional second variations.  The two-channel
+quartic action and its p-to-m/geometry formal adjoints produce 5,196 ordered
+rational PBW keys on fifteen cotangent rows, with zero symmetry or cyclicity
+defect.  These are two source subblocks, not complete `q3`: the base
+gravity-clock-Maxwell import, normalized readout and physical-emitter blocks
+remain to assemble, while scalar-BV and emitter Diff--BV must be ledgered as
+structural zeros.  Arity replay and `O_detector|Z2^C` therefore remain
+fail-closed.  The active next gate is normalized-readout `q3`.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to
