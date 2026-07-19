@@ -51,6 +51,20 @@ FORGE_REPO=${FORGE_REPO:-/home/alstrup/area9/tango/forge}
 CL="$FORGE_REPO/tools/certlab"
 CC="$FORGE_REPO/tools/science-forge/corpus-coverage"
 BIN=${FORGEBIN:-/tmp/forgebin}
+
+# PINNED TOOLCHAIN (since 2026-07-19): the substrate now has a stamped snapshot
+# release — tag forge-v0.0.1 in the tango repo (0.1.x is reserved for the
+# self-hosted toolchain). A CI checkout should pin the tag rather than track a
+# dev HEAD; the stamped binary self-verifies its stdlib (`forge version` prints
+# "stdlib: ... verified (h1:...)" and detects FORGE_LIB skew):
+#   git clone --branch forge-v0.0.1 --depth 1 <tango-remote> && cd tango/forge
+#   go build -ldflags "-X main.toolchainVersion=0.0.1 \
+#     -X main.stdlibHash=h1:0hip688Vp6OgC0OzaP1jG9bT+pvKheDPFPQG3ZWKk50=" \
+#     -o forge ./cmd/forge
+# then FORGE_REPO=<that checkout>/forge FORGEBIN=<that checkout>/forge/forge.
+# Release qualification: full both-backend examples corpus + package corpus
+# green; the optional FORGE_ASAN sweep has 5 named pre-existing reds, filed in
+# forge/docs/limitations.md §B1 (none touch the certlab/science-forge tools).
 STAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 SCRATCH=$(mktemp -d "${TMPDIR:-/tmp}/sf-shadow.XXXXXX")
 trap 'rm -rf "$SCRATCH"' EXIT
