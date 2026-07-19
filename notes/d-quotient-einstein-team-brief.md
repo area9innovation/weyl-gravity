@@ -3446,6 +3446,26 @@ amplitude zero variety across the certified `L=1,3,4` source matrices.  These
 quadratic data remain inputs to Bridge 1 and do not promote its separately
 certified linear map lifecycle.
 
+The cross-fibre amplitude system is now background-correct and fully
+factorized.  Exact algebraic comparison shows that the twenty-one collision
+rows have twenty-one distinct circumference parameters, so amplitudes from
+different rows cannot cancel.  After converting the `L=4` axisymmetric
+coefficients to normalized Clebsch--Gordan coordinates, the all-`m` lift gives
+418 complex scalar magnetic equations from 54 target-parity/adjoint equations,
+128 ordered branch-basis fixtures and all 164 internal coefficients (162
+nonzero and two zero components inside complete nonzero cokernel vectors).
+The three `L=1`, six `L=3` and twelve `L=4` physical fibres remain separate;
+negative-frequency equations are the conjugates for a real tangent.
+Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_cross_fibre_amplitude_system`
+marks the factorized equations and both mandatory one-fibre-zero planes
+`CERTIFIED`, but keeps the irreducible mixed zero varieties, same-fibre
+quadratic sources, their join with the five stabilizer moment maps and the
+complete two-fibre tangent cone `OPEN`; causal correction remains
+`NO_CERTIFIED_MAP`.  The active nonlinear gate is now the blockwise bilinear
+zero-variety decomposition, beginning with the lowest-dimensional blocks.
+Bridge 1 remains at its independent linear triangle lifecycle.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

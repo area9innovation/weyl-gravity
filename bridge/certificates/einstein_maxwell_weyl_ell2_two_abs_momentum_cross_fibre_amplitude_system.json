@@ -1,0 +1,2617 @@
+{
+  "amplitude_convention": {
+    "equation": "for every target parity, cokernel component j and M, sum C_j^{parity-pair}[r,s] <2,m1;2,m2|L,M> A[r,m1] B[s,m2] = 0",
+    "first": "A[parity,branch-copy,m] on the declared |n|=1 signed momentum",
+    "reality": "positive-frequency amplitudes are arbitrary complex coordinates; the negative-frequency equations are their conjugates for a real tangent",
+    "second": "B[parity,branch-copy,m] on the declared |n|=2 signed momentum"
+  },
+  "angular_maps": [
+    {
+      "convention": "SymPy/Wigner Clebsch-Gordan <2,m1;2,m2|L,M>",
+      "id": "cg_2x2_to_1",
+      "input_ell": [
+        2,
+        2
+      ],
+      "output_ell": 1,
+      "outputs": [
+        {
+          "M": -1,
+          "terms": [
+            {
+              "coefficient": "-sqrt(5)/5",
+              "first_m": -2,
+              "second_m": 1
+            },
+            {
+              "coefficient": "sqrt(30)/10",
+              "first_m": -1,
+              "second_m": 0
+            },
+            {
+              "coefficient": "-sqrt(30)/10",
+              "first_m": 0,
+              "second_m": -1
+            },
+            {
+              "coefficient": "sqrt(5)/5",
+              "first_m": 1,
+              "second_m": -2
+            }
+          ]
+        },
+        {
+          "M": 0,
+          "terms": [
+            {
+              "coefficient": "-sqrt(10)/5",
+              "first_m": -2,
+              "second_m": 2
+            },
+            {
+              "coefficient": "sqrt(10)/10",
+              "first_m": -1,
+              "second_m": 1
+            },
+            {
+              "coefficient": "-sqrt(10)/10",
+              "first_m": 1,
+              "second_m": -1
+            },
+            {
+              "coefficient": "sqrt(10)/5",
+              "first_m": 2,
+              "second_m": -2
+            }
+          ]
+        },
+        {
+          "M": 1,
+          "terms": [
+            {
+              "coefficient": "-sqrt(5)/5",
+              "first_m": -1,
+              "second_m": 2
+            },
+            {
+              "coefficient": "sqrt(30)/10",
+              "first_m": 0,
+              "second_m": 1
+            },
+            {
+              "coefficient": "-sqrt(30)/10",
+              "first_m": 1,
+              "second_m": 0
+            },
+            {
+              "coefficient": "sqrt(5)/5",
+              "first_m": 2,
+              "second_m": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "convention": "SymPy/Wigner Clebsch-Gordan <2,m1;2,m2|L,M>",
+      "id": "cg_2x2_to_3",
+      "input_ell": [
+        2,
+        2
+      ],
+      "output_ell": 3,
+      "outputs": [
+        {
+          "M": -3,
+          "terms": [
+            {
+              "coefficient": "-sqrt(2)/2",
+              "first_m": -2,
+              "second_m": -1
+            },
+            {
+              "coefficient": "sqrt(2)/2",
+              "first_m": -1,
+              "second_m": -2
+            }
+          ]
+        },
+        {
+          "M": -2,
+          "terms": [
+            {
+              "coefficient": "-sqrt(2)/2",
+              "first_m": -2,
+              "second_m": 0
+            },
+            {
+              "coefficient": "sqrt(2)/2",
+              "first_m": 0,
+              "second_m": -2
+            }
+          ]
+        },
+        {
+          "M": -1,
+          "terms": [
+            {
+              "coefficient": "-sqrt(30)/10",
+              "first_m": -2,
+              "second_m": 1
+            },
+            {
+              "coefficient": "-sqrt(5)/5",
+              "first_m": -1,
+              "second_m": 0
+            },
+            {
+              "coefficient": "sqrt(5)/5",
+              "first_m": 0,
+              "second_m": -1
+            },
+            {
+              "coefficient": "sqrt(30)/10",
+              "first_m": 1,
+              "second_m": -2
+            }
+          ]
+        },
+        {
+          "M": 0,
+          "terms": [
+            {
+              "coefficient": "-sqrt(10)/10",
+              "first_m": -2,
+              "second_m": 2
+            },
+            {
+              "coefficient": "-sqrt(10)/5",
+              "first_m": -1,
+              "second_m": 1
+            },
+            {
+              "coefficient": "sqrt(10)/5",
+              "first_m": 1,
+              "second_m": -1
+            },
+            {
+              "coefficient": "sqrt(10)/10",
+              "first_m": 2,
+              "second_m": -2
+            }
+          ]
+        },
+        {
+          "M": 1,
+          "terms": [
+            {
+              "coefficient": "-sqrt(30)/10",
+              "first_m": -1,
+              "second_m": 2
+            },
+            {
+              "coefficient": "-sqrt(5)/5",
+              "first_m": 0,
+              "second_m": 1
+            },
+            {
+              "coefficient": "sqrt(5)/5",
+              "first_m": 1,
+              "second_m": 0
+            },
+            {
+              "coefficient": "sqrt(30)/10",
+              "first_m": 2,
+              "second_m": -1
+            }
+          ]
+        },
+        {
+          "M": 2,
+          "terms": [
+            {
+              "coefficient": "-sqrt(2)/2",
+              "first_m": 0,
+              "second_m": 2
+            },
+            {
+              "coefficient": "sqrt(2)/2",
+              "first_m": 2,
+              "second_m": 0
+            }
+          ]
+        },
+        {
+          "M": 3,
+          "terms": [
+            {
+              "coefficient": "-sqrt(2)/2",
+              "first_m": 1,
+              "second_m": 2
+            },
+            {
+              "coefficient": "sqrt(2)/2",
+              "first_m": 2,
+              "second_m": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "convention": "SymPy/Wigner Clebsch-Gordan <2,m1;2,m2|L,M>",
+      "id": "cg_2x2_to_4",
+      "input_ell": [
+        2,
+        2
+      ],
+      "output_ell": 4,
+      "outputs": [
+        {
+          "M": -4,
+          "terms": [
+            {
+              "coefficient": "1",
+              "first_m": -2,
+              "second_m": -2
+            }
+          ]
+        },
+        {
+          "M": -3,
+          "terms": [
+            {
+              "coefficient": "sqrt(2)/2",
+              "first_m": -2,
+              "second_m": -1
+            },
+            {
+              "coefficient": "sqrt(2)/2",
+              "first_m": -1,
+              "second_m": -2
+            }
+          ]
+        },
+        {
+          "M": -2,
+          "terms": [
+            {
+              "coefficient": "sqrt(42)/14",
+              "first_m": -2,
+              "second_m": 0
+            },
+            {
+              "coefficient": "2*sqrt(7)/7",
+              "first_m": -1,
+              "second_m": -1
+            },
+            {
+              "coefficient": "sqrt(42)/14",
+              "first_m": 0,
+              "second_m": -2
+            }
+          ]
+        },
+        {
+          "M": -1,
+          "terms": [
+            {
+              "coefficient": "sqrt(14)/14",
+              "first_m": -2,
+              "second_m": 1
+            },
+            {
+              "coefficient": "sqrt(21)/7",
+              "first_m": -1,
+              "second_m": 0
+            },
+            {
+              "coefficient": "sqrt(21)/7",
+              "first_m": 0,
+              "second_m": -1
+            },
+            {
+              "coefficient": "sqrt(14)/14",
+              "first_m": 1,
+              "second_m": -2
+            }
+          ]
+        },
+        {
+          "M": 0,
+          "terms": [
+            {
+              "coefficient": "sqrt(70)/70",
+              "first_m": -2,
+              "second_m": 2
+            },
+            {
+              "coefficient": "2*sqrt(70)/35",
+              "first_m": -1,
+              "second_m": 1
+            },
+            {
+              "coefficient": "3*sqrt(70)/35",
+              "first_m": 0,
+              "second_m": 0
+            },
+            {
+              "coefficient": "2*sqrt(70)/35",
+              "first_m": 1,
+              "second_m": -1
+            },
+            {
+              "coefficient": "sqrt(70)/70",
+              "first_m": 2,
+              "second_m": -2
+            }
+          ]
+        },
+        {
+          "M": 1,
+          "terms": [
+            {
+              "coefficient": "sqrt(14)/14",
+              "first_m": -1,
+              "second_m": 2
+            },
+            {
+              "coefficient": "sqrt(21)/7",
+              "first_m": 0,
+              "second_m": 1
+            },
+            {
+              "coefficient": "sqrt(21)/7",
+              "first_m": 1,
+              "second_m": 0
+            },
+            {
+              "coefficient": "sqrt(14)/14",
+              "first_m": 2,
+              "second_m": -1
+            }
+          ]
+        },
+        {
+          "M": 2,
+          "terms": [
+            {
+              "coefficient": "sqrt(42)/14",
+              "first_m": 0,
+              "second_m": 2
+            },
+            {
+              "coefficient": "2*sqrt(7)/7",
+              "first_m": 1,
+              "second_m": 1
+            },
+            {
+              "coefficient": "sqrt(42)/14",
+              "first_m": 2,
+              "second_m": 0
+            }
+          ]
+        },
+        {
+          "M": 3,
+          "terms": [
+            {
+              "coefficient": "sqrt(2)/2",
+              "first_m": 1,
+              "second_m": 2
+            },
+            {
+              "coefficient": "sqrt(2)/2",
+              "first_m": 2,
+              "second_m": 1
+            }
+          ]
+        },
+        {
+          "M": 4,
+          "terms": [
+            {
+              "coefficient": "1",
+              "first_m": 2,
+              "second_m": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "claim_boundary": "This is the complete factorized necessary cross-fibre resonance system on the 21 separately tuned isolated-collision fibres. It defines, but does not irreducibly decompose, each amplitude zero variety. Same-fibre sources, the Taub intersection, the complete two-fibre tangent cone, smooth-secular and causal corrections remain fail-closed.",
+  "classification": {
+    "all_certified_cross_fibre_coefficients_lifted_to_all_m_equations": true,
+    "causal_or_quantum_claim": false,
+    "complete_two_fibre_tangent_cone_classified": false,
+    "factorized_cross_fibre_resonance_system_certified": true,
+    "irreducible_zero_variety_decomposition_classified": false,
+    "mandatory_first_fibre_zero_plane_certified": true,
+    "mandatory_second_fibre_zero_plane_certified": true,
+    "physical_circumference_fibres_kept_separate": true,
+    "same_fibre_quadratic_sources_classified": false,
+    "smooth_secular_classified": false,
+    "taub_common_zero_intersection_classified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G2",
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "physical_fibres": [
+    {
+      "angular_map": "cg_2x2_to_4",
+      "candidate_index": 3,
+      "coefficient_coordinate": {
+        "axisymmetric_to_reduced_conversion": "18*sqrt(70)*sqrt(pi)/175",
+        "statement": "stored axisymmetric P2 x P2 -> P4 pairings divided by the common exact conversion factor"
+      },
+      "complex_amplitude_variables": 20,
+      "fibre_id": "L4_candidate_3",
+      "first_branch": "q_minus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 4,
+      "reduced_internal_coefficients": 4,
+      "rho": "-(-32895*sqrt(3) + 900*sqrt(30) + 11135 + 7918*sqrt(10))/39286",
+      "scalar_magnetic_equations": 18,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "q_minus",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-1600*(-199*sqrt(210) - 918*sqrt(7) + 541*sqrt(21) + 351*sqrt(70))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-1600*(-199*sqrt(210) - 918*sqrt(7) + 541*sqrt(21) + 351*sqrt(70))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-640*(-7370*sqrt(7) - 1218*sqrt(210) + 2159*sqrt(70) + 4350*sqrt(21))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-1920*(-12530*sqrt(7) - 1842*sqrt(210) + 3251*sqrt(70) + 7350*sqrt(21))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_4",
+      "candidate_index": 4,
+      "coefficient_coordinate": {
+        "axisymmetric_to_reduced_conversion": "18*sqrt(70)*sqrt(pi)/175",
+        "statement": "stored axisymmetric P2 x P2 -> P4 pairings divided by the common exact conversion factor"
+      },
+      "complex_amplitude_variables": 20,
+      "fibre_id": "L4_candidate_4",
+      "first_branch": "q_minus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 4,
+      "reduced_internal_coefficients": 8,
+      "rho": "29*(-361 + 783*sqrt(3))/26772",
+      "scalar_magnetic_equations": 36,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "p_extra",
+      "target_cokernel_dimension_per_parity": 2,
+      "target_equations": [
+        {
+          "target_component_count": 2,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-30*(-118726870452909*sqrt(4528930)*sqrt(-361 + 783*sqrt(3)) - 943080106*sqrt(6793395)*sqrt(-80425176383 + 1320403600839*sqrt(3)) + 35969933144663*sqrt(13586790)*sqrt(-361 + 783*sqrt(3)) + 3330223128*sqrt(2264465)*sqrt(-80425176383 + 1320403600839*sqrt(3)))/(173418857670247*sqrt(pi))"
+                  ]
+                ],
+                [
+                  [
+                    "10*(-5765059458023840*sqrt(234255)*sqrt(787283067*sqrt(3) + 21333443597) - 1296339811332361177*sqrt(468510)*sqrt(9321*sqrt(3) + 29689) - 1222981801697470*sqrt(78085)*sqrt(174029058215 - 72813616647*sqrt(3)) - 325678094216137139*sqrt(468510)*sqrt(150163 - 30837*sqrt(3)) - 319728163954636*sqrt(234255)*sqrt(174029058215 - 72813616647*sqrt(3)) + 4024739466846122*sqrt(78085)*sqrt(787283067*sqrt(3) + 21333443597) + 1561188574172692501*sqrt(156170)*sqrt(150163 - 30837*sqrt(3)) + 5049482219051990623*sqrt(156170)*sqrt(9321*sqrt(3) + 29689))/(10446231729482668539*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "30*(-51791929822971*sqrt(4528930)*sqrt(-361 + 783*sqrt(3)) - 486009254*sqrt(6793395)*sqrt(-80425176383 + 1320403600839*sqrt(3)) + 988635912*sqrt(2264465)*sqrt(-80425176383 + 1320403600839*sqrt(3)) + 27119696007457*sqrt(13586790)*sqrt(-361 + 783*sqrt(3)))/(173418857670247*sqrt(pi))"
+                  ]
+                ],
+                [
+                  [
+                    "-5*(-12631390749216654255*sqrt(156170)*sqrt(9321*sqrt(3) + 29689) - 11906710885314908*sqrt(234255)*sqrt(787283067*sqrt(3) + 21333443597) - 10300463774465508*sqrt(78085)*sqrt(174029058215 - 72813616647*sqrt(3)) - 2032953870206350787*sqrt(468510)*sqrt(150163 - 30837*sqrt(3)) + 2063149642559912787*sqrt(156170)*sqrt(150163 - 30837*sqrt(3)) + 13478710264607430*sqrt(78085)*sqrt(787283067*sqrt(3) + 21333443597) + 8208806973262766*sqrt(234255)*sqrt(174029058215 - 72813616647*sqrt(3)) + 8943702568366047413*sqrt(468510)*sqrt(9321*sqrt(3) + 29689))/(41784926917930674156*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        },
+        {
+          "target_component_count": 2,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "0"
+                  ]
+                ],
+                [
+                  [
+                    "-160*(-265*sqrt(70) + 149*sqrt(210))/(203*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "0"
+                  ]
+                ],
+                [
+                  [
+                    "480*(-265*sqrt(70) + 149*sqrt(210))/(203*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_4",
+      "candidate_index": 5,
+      "coefficient_coordinate": {
+        "axisymmetric_to_reduced_conversion": "18*sqrt(70)*sqrt(pi)/175",
+        "statement": "stored axisymmetric P2 x P2 -> P4 pairings divided by the common exact conversion factor"
+      },
+      "complex_amplitude_variables": 20,
+      "fibre_id": "L4_candidate_5",
+      "first_branch": "q_minus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 4,
+      "reduced_internal_coefficients": 4,
+      "rho": "(-11135 + 900*sqrt(30) + 7918*sqrt(10) + 32895*sqrt(3))/39286",
+      "scalar_magnetic_equations": 18,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "q_plus",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "1600*(-351*sqrt(70) - 918*sqrt(7) + 541*sqrt(21) + 199*sqrt(210))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "1600*(-351*sqrt(70) - 918*sqrt(7) + 541*sqrt(21) + 199*sqrt(210))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "640*(-7370*sqrt(7) - 2159*sqrt(70) + 1218*sqrt(210) + 4350*sqrt(21))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "1920*(-12530*sqrt(7) - 3251*sqrt(70) + 1842*sqrt(210) + 7350*sqrt(21))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_4",
+      "candidate_index": 7,
+      "coefficient_coordinate": {
+        "axisymmetric_to_reduced_conversion": "18*sqrt(70)*sqrt(pi)/175",
+        "statement": "stored axisymmetric P2 x P2 -> P4 pairings divided by the common exact conversion factor"
+      },
+      "complex_amplitude_variables": 30,
+      "fibre_id": "L4_candidate_7",
+      "first_branch": "q_minus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 4,
+      "reduced_internal_coefficients": 16,
+      "rho": "(-822 + 1787*sqrt(3))/4516",
+      "scalar_magnetic_equations": 36,
+      "second_branch": "p_extra",
+      "second_branch_multiplicity_per_parity": 2,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "p_extra",
+      "target_cokernel_dimension_per_parity": 2,
+      "target_equations": [
+        {
+          "target_component_count": 2,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "5*(-3421527336096458508*sqrt(237090)*sqrt(625718791842 + 451376955797*sqrt(3)) - 347947784126060*sqrt(79030)*sqrt(73744224825660528426 + 49937912827987441739*sqrt(3)) - 35581240300083*sqrt(237090)*sqrt(73744224825660528426 + 49937912827987441739*sqrt(3)) + 2497275387488142234*sqrt(237090)*sqrt(-30601030710 + 167079152597*sqrt(3)) + 3898291750080219186*sqrt(79030)*sqrt(625718791842 + 451376955797*sqrt(3)) + 10289999116149376847*sqrt(79030)*sqrt(-30601030710 + 167079152597*sqrt(3)))/(149756112658748759239692*sqrt(pi))",
+                    "5*(-936088659143058*sqrt(237090)*sqrt(625718791842 + 451376955797*sqrt(3)) - 21742809373*sqrt(237090)*sqrt(73744224825660528426 + 49937912827987441739*sqrt(3)) - 18767423790*sqrt(79030)*sqrt(73744224825660528426 + 49937912827987441739*sqrt(3)) + 253230972449703*sqrt(79030)*sqrt(-30601030710 + 167079152597*sqrt(3)) + 1143448947553430*sqrt(237090)*sqrt(-30601030710 + 167079152597*sqrt(3)) + 1226480018918532*sqrt(79030)*sqrt(625718791842 + 451376955797*sqrt(3)))/(22107486368282958258*sqrt(pi))"
+                  ]
+                ],
+                [
+                  [
+                    "5*(-1290393163832031*sqrt(79030)*sqrt(5361*sqrt(3) + 15598) - 119902190417649*sqrt(79030)*sqrt(8758 - 2415*sqrt(3)) - 29023086852852*sqrt(237090)*sqrt(8758 - 2415*sqrt(3)) + 805384917689440*sqrt(237090)*sqrt(5361*sqrt(3) + 15598))/(25227257171871006*sqrt(pi))",
+                    "-5*(-62570225510385*sqrt(79030)*sqrt(5361*sqrt(3) + 15598) - 67648926015430*sqrt(237090)*sqrt(8758 - 2415*sqrt(3)) + 96114735693523*sqrt(79030)*sqrt(8758 - 2415*sqrt(3)) + 33674769496448*sqrt(237090)*sqrt(5361*sqrt(3) + 15598))/(4204542861978501*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "10*(-80716074*sqrt(70) + 63582349*sqrt(210))/(23709*sqrt(pi))",
+                    "5*(-2012942136123604143*sqrt(70)*sqrt(15918765 + 23466884*sqrt(3)) - 135238194558504*sqrt(70)*sqrt(-1478492287523445 + 1537180707609176*sqrt(3)) + 702467517583068048*sqrt(70)*sqrt(-20145891 + 17635676*sqrt(3)) + 229717137077285882*sqrt(210)*sqrt(15918765 + 23466884*sqrt(3)) + 640776902711754528*sqrt(210)*sqrt(-20145891 + 17635676*sqrt(3)) + 139480591449813*sqrt(210)*sqrt(-1478492287523445 + 1537180707609176*sqrt(3)))/(1848971605276302192*sqrt(pi))"
+                  ]
+                ],
+                [
+                  [
+                    "5*(-235186474031813241*sqrt(70)*sqrt(15918765 + 23466884*sqrt(3)) - 328088907524400192*sqrt(70)*sqrt(-20145891 + 17635676*sqrt(3)) + 159732714240*sqrt(70)*sqrt(-1478492287523445 + 1537180707609176*sqrt(3)) + 14564199932170558*sqrt(210)*sqrt(15918765 + 23466884*sqrt(3)) + 139057765749549120*sqrt(210)*sqrt(-20145891 + 17635676*sqrt(3)) + 19116752974563*sqrt(210)*sqrt(-1478492287523445 + 1537180707609176*sqrt(3)))/(1848971605276302192*sqrt(pi))",
+                    "-10*(-83611180*sqrt(70) + 43254009*sqrt(210))/(71127*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        },
+        {
+          "target_component_count": 2,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "(-16064994588556095477805110484*sqrt(79030)*sqrt(-30601030710 + 167079152597*sqrt(3)) - 8139650407062178291379757288*sqrt(237090)*sqrt(-30601030710 + 167079152597*sqrt(3)) + 132162931739107073288276920842*sqrt(79030)*sqrt(-822 + 1787*sqrt(3)) + 160271781674528785712611002557*sqrt(237090)*sqrt(-822 + 1787*sqrt(3)) + 7536674600104835172494650788*sqrt(237090)*sqrt(-304208185998 + 203105577173*sqrt(3)) + 14977599930590723367755017587*sqrt(79030)*sqrt(-304208185998 + 203105577173*sqrt(3)) + 2076979628857441851312372208*sqrt(237090)*sqrt(625718791842 + 451376955797*sqrt(3)) + 4043338872317292628965016996*sqrt(79030)*sqrt(625718791842 + 451376955797*sqrt(3)))/(14940371271671126154684015227022*sqrt(pi))",
+                    "-(-1873657141396207207288848*sqrt(79030)*sqrt(668915959743*sqrt(3) + 1674257087566) - 657048669109052211156562*sqrt(237090)*sqrt(668915959743*sqrt(3) + 1674257087566) - 13706351958876240003894334356*sqrt(237090)*sqrt(8758 - 2415*sqrt(3)) - 20795178381411728786350755510*sqrt(79030)*sqrt(8758 - 2415*sqrt(3)) + 985573003663578316734843*sqrt(237090)*sqrt(788990495302 - 154811061441*sqrt(3)) + 2810485712094310810933272*sqrt(79030)*sqrt(788990495302 - 154811061441*sqrt(3)) + 14556074275151026693842932739*sqrt(79030)*sqrt(5361*sqrt(3) + 15598) + 8870377783191556943035915366*sqrt(237090)*sqrt(5361*sqrt(3) + 15598))/(17048731006091053048327137954*sqrt(pi))"
+                  ]
+                ],
+                [
+                  [
+                    "(-11388006666400435728696137760*sqrt(79030)*sqrt(-30601030710 + 167079152597*sqrt(3)) - 5443078812745745428509050880*sqrt(237090)*sqrt(-30601030710 + 167079152597*sqrt(3)) + 505896650751375536565430356102*sqrt(79030)*sqrt(-822 + 1787*sqrt(3)) + 315952991643411120152321052809*sqrt(237090)*sqrt(-822 + 1787*sqrt(3)) + 5178114722207297891477469780*sqrt(237090)*sqrt(-304208185998 + 203105577173*sqrt(3)) + 10370431009666963814500298277*sqrt(79030)*sqrt(-304208185998 + 203105577173*sqrt(3)) + 1317087597405227559554907116*sqrt(237090)*sqrt(625718791842 + 451376955797*sqrt(3)) + 2960626941633086669516939138*sqrt(79030)*sqrt(625718791842 + 451376955797*sqrt(3)))/(7470185635835563077342007613511*sqrt(pi))",
+                    "-2*(-620664275552045861790*sqrt(79030)*sqrt(668915959743*sqrt(3) + 1674257087566) - 166558416493033883436*sqrt(237090)*sqrt(668915959743*sqrt(3) + 1674257087566) - 7033669246256874164537112*sqrt(79030)*sqrt(8758 - 2415*sqrt(3)) - 3842753571791114712830322*sqrt(237090)*sqrt(8758 - 2415*sqrt(3)) + 249837624739550825154*sqrt(237090)*sqrt(788990495302 - 154811061441*sqrt(3)) + 930996413328068792685*sqrt(79030)*sqrt(788990495302 - 154811061441*sqrt(3)) + 2557652976370145570440903*sqrt(237090)*sqrt(5361*sqrt(3) + 15598) + 4691552068172900558300460*sqrt(79030)*sqrt(5361*sqrt(3) + 15598))/(7550368027498252014316713*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-520*(-15091145106*sqrt(70) + 8116974527*sqrt(210))/(14446895379*sqrt(pi))",
+                    "-80*(-11874843533*sqrt(70) + 4255160164*sqrt(210))/(4815631793*sqrt(pi))"
+                  ]
+                ],
+                [
+                  [
+                    "-80*(-133087199412*sqrt(70) + 71037609743*sqrt(210))/(14446895379*sqrt(pi))",
+                    "80*(885834900*sqrt(210) + 6530342401*sqrt(70))/(4815631793*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_4",
+      "candidate_index": 8,
+      "coefficient_coordinate": {
+        "axisymmetric_to_reduced_conversion": "18*sqrt(70)*sqrt(pi)/175",
+        "statement": "stored axisymmetric P2 x P2 -> P4 pairings divided by the common exact conversion factor"
+      },
+      "complex_amplitude_variables": 30,
+      "fibre_id": "L4_candidate_8",
+      "first_branch": "q_minus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 4,
+      "reduced_internal_coefficients": 8,
+      "rho": "(-19997 + 7038*sqrt(30) + 51993*sqrt(10) + 100377*sqrt(3))/260988",
+      "scalar_magnetic_equations": 18,
+      "second_branch": "p_extra",
+      "second_branch_multiplicity_per_parity": 2,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "q_plus",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-40*(-941*sqrt(70) - 1490*sqrt(7) + 570*sqrt(21) + 639*sqrt(210))/(21*sqrt(pi))",
+                    "-40*(-12410*sqrt(7) - 2627*sqrt(70) + 5760*sqrt(21) + 2067*sqrt(210))/(63*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-20*(-705656166108*sqrt(46605)*sqrt(2528346047896216 + 1049197078612237*sqrt(10) + 739114697432359*sqrt(30) + 2504669303702806*sqrt(3)) - 27087362245112747*sqrt(93210)*sqrt(-19997 + 7038*sqrt(30) + 51993*sqrt(10) + 100377*sqrt(3)) - 61548869616759522*sqrt(9321)*sqrt(-19997 + 7038*sqrt(30) + 51993*sqrt(10) + 100377*sqrt(3)) - 65328889656*sqrt(18642)*sqrt(2528346047896216 + 1049197078612237*sqrt(10) + 739114697432359*sqrt(30) + 2504669303702806*sqrt(3)) + 17892557574956725*sqrt(31070)*sqrt(-19997 + 7038*sqrt(30) + 51993*sqrt(10) + 100377*sqrt(3)) + 537952803846*sqrt(6214)*sqrt(2528346047896216 + 1049197078612237*sqrt(10) + 739114697432359*sqrt(30) + 2504669303702806*sqrt(3)) + 159912132492178600*sqrt(3107)*sqrt(-19997 + 7038*sqrt(30) + 51993*sqrt(10) + 100377*sqrt(3)) + 989848270750*sqrt(15535)*sqrt(2528346047896216 + 1049197078612237*sqrt(10) + 739114697432359*sqrt(30) + 2504669303702806*sqrt(3)))/(2013722777763342009*sqrt(pi))",
+                    "20*(-5509994300244335*sqrt(31070)*sqrt(-421599*sqrt(3) + 7038*sqrt(30) + 51993*sqrt(10) + 1545931) - 7617333099788138*sqrt(9321)*sqrt(-421599*sqrt(3) + 7038*sqrt(30) + 51993*sqrt(10) + 1545931) - 35568549979729688*sqrt(3107)*sqrt(782*sqrt(30) + 5777*sqrt(10) + 11153*sqrt(3) + 36443) + 545052273658861*sqrt(93210)*sqrt(782*sqrt(30) + 5777*sqrt(10) + 11153*sqrt(3) + 36443) + 1192016612307181*sqrt(31070)*sqrt(782*sqrt(30) + 5777*sqrt(10) + 11153*sqrt(3) + 36443) + 11363447995600158*sqrt(9321)*sqrt(782*sqrt(30) + 5777*sqrt(10) + 11153*sqrt(3) + 36443) + 2425726845161761*sqrt(93210)*sqrt(-421599*sqrt(3) + 7038*sqrt(30) + 51993*sqrt(10) + 1545931) + 15588036600651784*sqrt(3107)*sqrt(-421599*sqrt(3) + 7038*sqrt(30) + 51993*sqrt(10) + 1545931))/(671240925921114003*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-20*(-4969538897447654549*sqrt(18642)*sqrt(2528346047896216 + 1049197078612237*sqrt(10) + 739114697432359*sqrt(30) + 2504669303702806*sqrt(3)) - 1397249203174803786*sqrt(46605)*sqrt(2528346047896216 + 1049197078612237*sqrt(10) + 739114697432359*sqrt(30) + 2504669303702806*sqrt(3)) - 173423412602356113*sqrt(6214)*sqrt(2528346047896216 + 1049197078612237*sqrt(10) + 739114697432359*sqrt(30) + 2504669303702806*sqrt(3)) + 27231154341646261945806*sqrt(31070)*sqrt(-19997 + 7038*sqrt(30) + 51993*sqrt(10) + 100377*sqrt(3)) + 318028702988251224*sqrt(15535)*sqrt(2528346047896216 + 1049197078612237*sqrt(10) + 739114697432359*sqrt(30) + 2504669303702806*sqrt(3)) + 460520239223176614399354*sqrt(3107)*sqrt(-19997 + 7038*sqrt(30) + 51993*sqrt(10) + 100377*sqrt(3)) + 209925145390169945432558*sqrt(93210)*sqrt(-19997 + 7038*sqrt(30) + 51993*sqrt(10) + 100377*sqrt(3)) + 1003628064921731013105950*sqrt(9321)*sqrt(-19997 + 7038*sqrt(30) + 51993*sqrt(10) + 100377*sqrt(3)))/(394168110242174328183669*sqrt(pi))",
+                    "-40*(-567873894301811369262345*sqrt(3107)*sqrt(782*sqrt(30) + 5777*sqrt(10) + 11153*sqrt(3) + 36443) - 71985931022378897780869*sqrt(93210)*sqrt(782*sqrt(30) + 5777*sqrt(10) + 11153*sqrt(3) + 36443) - 16551619772371092716013*sqrt(31070)*sqrt(782*sqrt(30) + 5777*sqrt(10) + 11153*sqrt(3) + 36443) + 11480896855278333758765*sqrt(9321)*sqrt(-421599*sqrt(3) + 7038*sqrt(30) + 51993*sqrt(10) + 1545931) + 18350035262286983144169*sqrt(31070)*sqrt(-421599*sqrt(3) + 7038*sqrt(30) + 51993*sqrt(10) + 1545931) + 125668430809505277798209*sqrt(9321)*sqrt(782*sqrt(30) + 5777*sqrt(10) + 11153*sqrt(3) + 36443) + 11524890869899915280417*sqrt(93210)*sqrt(-421599*sqrt(3) + 7038*sqrt(30) + 51993*sqrt(10) + 1545931) + 78370445648221240033887*sqrt(3107)*sqrt(-421599*sqrt(3) + 7038*sqrt(30) + 51993*sqrt(10) + 1545931))/(131389370080724776061223*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "5*(-13576364631731749*sqrt(42)*sqrt(2251000369584353100*sqrt(30) + 7925643921064910619*sqrt(3) + 5327046183444317050*sqrt(10) + 18252302899925830162) - 7961285566325958*sqrt(35)*sqrt(2251000369584353100*sqrt(30) + 7925643921064910619*sqrt(3) + 5327046183444317050*sqrt(10) + 18252302899925830162) - 32440977329911302947*sqrt(35)*sqrt(-195147809*sqrt(30) + 1345303303*sqrt(3) + 5036018737*sqrt(10) + 22700414791) - 5563472213467061998482816*sqrt(7) + 47943776409700817616768*sqrt(70) + 2219604961259038218*sqrt(42)*sqrt(-195147809*sqrt(30) + 1345303303*sqrt(3) + 5036018737*sqrt(10) + 22700414791) + 622107850199546763081408*sqrt(210) + 11619898385292988561203328*sqrt(21) + 40866993170101727597*sqrt(105)*sqrt(-195147809*sqrt(30) + 1345303303*sqrt(3) + 5036018737*sqrt(10) + 22700414791) + 113001219467215925203*sqrt(14)*sqrt(-195147809*sqrt(30) + 1345303303*sqrt(3) + 5036018737*sqrt(10) + 22700414791) + 4769261499569774*sqrt(105)*sqrt(2251000369584353100*sqrt(30) + 7925643921064910619*sqrt(3) + 5327046183444317050*sqrt(10) + 18252302899925830162) + 16874822642472417*sqrt(14)*sqrt(2251000369584353100*sqrt(30) + 7925643921064910619*sqrt(3) + 5327046183444317050*sqrt(10) + 18252302899925830162))/(507458139996362186268*sqrt(pi))",
+                    "-10*(-1605377528319930*sqrt(42)*sqrt(2251000369584353100*sqrt(30) + 7925643921064910619*sqrt(3) + 5327046183444317050*sqrt(10) + 18252302899925830162) - 1391164105275324*sqrt(35)*sqrt(2251000369584353100*sqrt(30) + 7925643921064910619*sqrt(3) + 5327046183444317050*sqrt(10) + 18252302899925830162) - 21534590593156680932*sqrt(14)*sqrt(-195147809*sqrt(30) + 1345303303*sqrt(3) + 5036018737*sqrt(10) + 22700414791) - 3819613178536454549*sqrt(35)*sqrt(-195147809*sqrt(30) + 1345303303*sqrt(3) + 5036018737*sqrt(10) + 22700414791) - 362734755024478333847868*sqrt(70) - 819177330843451355292180*sqrt(7) + 1871761005670788899*sqrt(105)*sqrt(-195147809*sqrt(30) + 1345303303*sqrt(3) + 5036018737*sqrt(10) + 22700414791) + 905362414525491645129820*sqrt(21) + 408687867792362727955860*sqrt(210) + 5079205676064404403*sqrt(42)*sqrt(-195147809*sqrt(30) + 1345303303*sqrt(3) + 5036018737*sqrt(10) + 22700414791) + 788664919332918*sqrt(105)*sqrt(2251000369584353100*sqrt(30) + 7925643921064910619*sqrt(3) + 5327046183444317050*sqrt(10) + 18252302899925830162) + 2988679542901758*sqrt(14)*sqrt(2251000369584353100*sqrt(30) + 7925643921064910619*sqrt(3) + 5327046183444317050*sqrt(10) + 18252302899925830162))/(380593604997271639701*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_4",
+      "candidate_index": 9,
+      "coefficient_coordinate": {
+        "axisymmetric_to_reduced_conversion": "18*sqrt(70)*sqrt(pi)/175",
+        "statement": "stored axisymmetric P2 x P2 -> P4 pairings divided by the common exact conversion factor"
+      },
+      "complex_amplitude_variables": 20,
+      "fibre_id": "L4_candidate_9",
+      "first_branch": "q_minus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 4,
+      "reduced_internal_coefficients": 4,
+      "rho": "(-1703 - 523*sqrt(3) + 346*sqrt(30) + 2304*sqrt(10))/11618",
+      "scalar_magnetic_equations": 18,
+      "second_branch": "q_plus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "q_plus",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-320*(-55*sqrt(210) - 180*sqrt(7) + 36*sqrt(70) + 575*sqrt(21))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "320*(-55*sqrt(210) - 36*sqrt(70) + 180*sqrt(7) + 575*sqrt(21))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "16000*(-17*sqrt(70) + 10*sqrt(7))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-48000*(-29*sqrt(70) + 34*sqrt(7))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_4",
+      "candidate_index": 11,
+      "coefficient_coordinate": {
+        "axisymmetric_to_reduced_conversion": "18*sqrt(70)*sqrt(pi)/175",
+        "statement": "stored axisymmetric P2 x P2 -> P4 pairings divided by the common exact conversion factor"
+      },
+      "complex_amplitude_variables": 30,
+      "fibre_id": "L4_candidate_11",
+      "first_branch": "p_extra",
+      "first_branch_multiplicity_per_parity": 2,
+      "output_ell": 4,
+      "reduced_internal_coefficients": 16,
+      "rho": "(-3039 + 3757*sqrt(3))/8396",
+      "scalar_magnetic_equations": 36,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "p_extra",
+      "target_cokernel_dimension_per_parity": 2,
+      "target_equations": [
+        {
+          "target_component_count": 2,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "5*(-477558699*sqrt(70) + 330511567*sqrt(210))/(44079*sqrt(pi))"
+                  ],
+                  [
+                    "-10*(-438422717915569278*sqrt(35)*sqrt(-126752550 + 218097607*sqrt(3)) - 6553677011440734*sqrt(70)*sqrt(-397063021395 + 488392259732*sqrt(3)) - 93449180970513283*sqrt(105)*sqrt(-126752550 + 218097607*sqrt(3)) + 5260958822517763239*sqrt(105)*sqrt(-115674 + 126661*sqrt(3)) + 17809079033199812463*sqrt(35)*sqrt(-115674 + 126661*sqrt(3)) + 3502881595397100*sqrt(210)*sqrt(-397063021395 + 488392259732*sqrt(3)))/(2566863310152361437*sqrt(pi))"
+                  ]
+                ],
+                [
+                  [
+                    "5*(-12720407294789334126*sqrt(35)*sqrt(-115674 + 126661*sqrt(3)) - 253303170589656711*sqrt(35)*sqrt(-126752550 + 218097607*sqrt(3)) - 2326909389478175*sqrt(105)*sqrt(-126752550 + 218097607*sqrt(3)) + 932411828203863*sqrt(210)*sqrt(-397063021395 + 488392259732*sqrt(3)) + 1616217789181590*sqrt(70)*sqrt(-397063021395 + 488392259732*sqrt(3)) + 7048008200457582582*sqrt(105)*sqrt(-115674 + 126661*sqrt(3)))/(2566863310152361437*sqrt(pi))"
+                  ],
+                  [
+                    "5*(-221393573*sqrt(70) + 121440429*sqrt(210))/(132237*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-10*sqrt(-3039 + 3757*sqrt(3))*(-12516606495*sqrt(440790) + 18149886839*sqrt(146930))/(221221966119*sqrt(pi))"
+                  ],
+                  [
+                    "-10*sqrt(-3039 + 3757*sqrt(3))*(-13123844009*sqrt(440790) + 17175628926*sqrt(146930))/(221221966119*sqrt(pi))"
+                  ]
+                ],
+                [
+                  [
+                    "10*(-32176773561198882*sqrt(440790)*sqrt(65 - 3*sqrt(3)) - 403606891736938*sqrt(440790)*sqrt(11271*sqrt(3) + 125219) + 551706898188717*sqrt(146930)*sqrt(11271*sqrt(3) + 125219) + 58808177496787437*sqrt(146930)*sqrt(65 - 3*sqrt(3)))/(303313459128264171*sqrt(pi))"
+                  ],
+                  [
+                    "5*(-4664941443213037*sqrt(440790)*sqrt(11271*sqrt(3) + 125219) - 12334417383099385*sqrt(440790)*sqrt(65 - 3*sqrt(3)) + 125551711503606577*sqrt(146930)*sqrt(65 - 3*sqrt(3)) + 5474916266074461*sqrt(146930)*sqrt(11271*sqrt(3) + 125219))/(707731404632616399*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        },
+        {
+          "target_component_count": 2,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-(-4217514506187751972362260373216*sqrt(73465)*sqrt(-8658759 + 8579987*sqrt(3)) - 1684376077345122689311223221*sqrt(73465)*sqrt(-8497293172959 + 25881336259883*sqrt(3)) - 691488886954905295099208081*sqrt(220395)*sqrt(-8497293172959 + 25881336259883*sqrt(3)) - 1124623137300147338788029121992*sqrt(220395)*sqrt(-8658759 + 8579987*sqrt(3)) + 258094993747280722618873532586*sqrt(146930)*sqrt(-3039 + 3757*sqrt(3)) + 153060526300896254702073318203*sqrt(440790)*sqrt(-3039 + 3757*sqrt(3)) + 55720477821556801998453163056*sqrt(220395)*sqrt(-10201794213 + 14556602105*sqrt(3)) + 171020481829841060449886285656*sqrt(73465)*sqrt(-10201794213 + 14556602105*sqrt(3)))/(9940033795366989128886034760412*sqrt(pi))"
+                  ],
+                  [
+                    "(-181280048256278962218576*sqrt(73465)*sqrt(67645961259*sqrt(3) + 509277299089) - 3560528256895898195543096118*sqrt(440790)*sqrt(65 - 3*sqrt(3)) - 3859926201500299179343997742*sqrt(146930)*sqrt(65 - 3*sqrt(3)) - 166861871037656503498524*sqrt(220395)*sqrt(259622059 - 455559*sqrt(3)) + 3972901691372773892822*sqrt(220395)*sqrt(67645961259*sqrt(3) + 509277299089) + 90262812716718642671689161*sqrt(146930)*sqrt(11271*sqrt(3) + 125219) + 85632200197814746846673173*sqrt(440790)*sqrt(11271*sqrt(3) + 125219) + 7613762026763716413180192*sqrt(73465)*sqrt(259622059 - 455559*sqrt(3)))/(405098372359139371116911703*sqrt(pi))"
+                  ]
+                ],
+                [
+                  [
+                    "-4*(-362565256826104851569699582892*sqrt(73465)*sqrt(-8658759 + 8579987*sqrt(3)) - 144077523063971002597084915*sqrt(73465)*sqrt(-8497293172959 + 25881336259883*sqrt(3)) - 56269535249232826564775145*sqrt(220395)*sqrt(-8497293172959 + 25881336259883*sqrt(3)) - 89219909336005853893983917646*sqrt(220395)*sqrt(-8658759 + 8579987*sqrt(3)) - 68364294269116245878836355888*sqrt(440790)*sqrt(-3039 + 3757*sqrt(3)) + 185137447881106902591731659503*sqrt(146930)*sqrt(-3039 + 3757*sqrt(3)) + 4546858753519579827935034150*sqrt(220395)*sqrt(-10201794213 + 14556602105*sqrt(3)) + 14543055632682289940431380960*sqrt(73465)*sqrt(-10201794213 + 14556602105*sqrt(3)))/(2485008448841747282221508690103*sqrt(pi))"
+                  ],
+                  [
+                    "4*(-183370491795890350350*sqrt(73465)*sqrt(67645961259*sqrt(3) + 509277299089) - 3410457691812963458730294*sqrt(440790)*sqrt(65 - 3*sqrt(3)) - 5333356025050639305437298*sqrt(146930)*sqrt(65 - 3*sqrt(3)) - 7624150428428801148*sqrt(220395)*sqrt(67645961259*sqrt(3) + 509277299089) + 320214317994009648216*sqrt(220395)*sqrt(259622059 - 455559*sqrt(3)) + 126975969737202007716447*sqrt(146930)*sqrt(11271*sqrt(3) + 125219) + 81310053562668072868355*sqrt(440790)*sqrt(11271*sqrt(3) + 125219) + 7701560655427394714700*sqrt(73465)*sqrt(259622059 - 455559*sqrt(3)))/(1350971227495938826973979*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "1040*(-39964566453*sqrt(70) + 19051898150*sqrt(210))/(70604385999*sqrt(pi))"
+                  ],
+                  [
+                    "40*(-379547872427*sqrt(70) + 163954608559*sqrt(210))/(23534795333*sqrt(pi))"
+                  ]
+                ],
+                [
+                  [
+                    "80*(-655290542859*sqrt(70) + 308458480183*sqrt(210))/(70604385999*sqrt(pi))"
+                  ],
+                  [
+                    "80*(-288104249237*sqrt(70) + 133186522017*sqrt(210))/(23534795333*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_4",
+      "candidate_index": 12,
+      "coefficient_coordinate": {
+        "axisymmetric_to_reduced_conversion": "18*sqrt(70)*sqrt(pi)/175",
+        "statement": "stored axisymmetric P2 x P2 -> P4 pairings divided by the common exact conversion factor"
+      },
+      "complex_amplitude_variables": 30,
+      "fibre_id": "L4_candidate_12",
+      "first_branch": "p_extra",
+      "first_branch_multiplicity_per_parity": 2,
+      "output_ell": 4,
+      "reduced_internal_coefficients": 8,
+      "rho": "(-3281065 - 65628*sqrt(30) + 2745603*sqrt(10) + 5655366*sqrt(3))/12590643",
+      "scalar_magnetic_equations": 18,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "q_plus",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "80*(-575276536434121110900864*sqrt(440672505)*sqrt(1839582742153047120628 + 1015160978048794818912*sqrt(10) + 837065107196586598419*sqrt(30) + 3358776670698987336657*sqrt(3)) - 707352776001520491106719*sqrt(440672505)*sqrt(712769123600287017421 + 277978735287752163230*sqrt(30) + 519510087799396188324*sqrt(10) + 1322416639426950209379*sqrt(3)) - 224129775115720474701608*sqrt(146890835)*sqrt(1839582742153047120628 + 1015160978048794818912*sqrt(10) + 837065107196586598419*sqrt(30) + 3358776670698987336657*sqrt(3)) - 133389480579051462577812*sqrt(176269002)*sqrt(712769123600287017421 + 277978735287752163230*sqrt(30) + 519510087799396188324*sqrt(10) + 1322416639426950209379*sqrt(3)) - 50904914011189692423120*sqrt(176269002)*sqrt(1839582742153047120628 + 1015160978048794818912*sqrt(10) + 837065107196586598419*sqrt(30) + 3358776670698987336657*sqrt(3)) + 2569246891161800849460*sqrt(58756334)*sqrt(1839582742153047120628 + 1015160978048794818912*sqrt(10) + 837065107196586598419*sqrt(30) + 3358776670698987336657*sqrt(3)) + 15838587964973529102789*sqrt(146890835)*sqrt(712769123600287017421 + 277978735287752163230*sqrt(30) + 519510087799396188324*sqrt(10) + 1322416639426950209379*sqrt(3)) + 3652456486099320192002752326957*sqrt(881345010)*sqrt(-3281065 - 65628*sqrt(30) + 2745603*sqrt(10) + 5655366*sqrt(3)) + 11628252703975620357438969743082*sqrt(88134501)*sqrt(-3281065 - 65628*sqrt(30) + 2745603*sqrt(10) + 5655366*sqrt(3)) + 1042233926078052939616515*sqrt(58756334)*sqrt(712769123600287017421 + 277978735287752163230*sqrt(30) + 519510087799396188324*sqrt(10) + 1322416639426950209379*sqrt(3)) + 30365292626700483742958722592142*sqrt(29378167)*sqrt(-3281065 - 65628*sqrt(30) + 2745603*sqrt(10) + 5655366*sqrt(3)) + 16150468812241139988057470926615*sqrt(293781670)*sqrt(-3281065 - 65628*sqrt(30) + 2745603*sqrt(10) + 5655366*sqrt(3)))/(738271893821994421320099527953643367*sqrt(pi))"
+                  ],
+                  [
+                    "-80*(-8546794302694495512818176537014*sqrt(29378167)*sqrt(-7292*sqrt(30) + 305067*sqrt(10) + 628374*sqrt(3) + 7096559) - 1487452026608735723020482756873*sqrt(881345010)*sqrt(-7292*sqrt(30) + 305067*sqrt(10) + 628374*sqrt(3) + 7096559) - 61210030058030168033400*sqrt(440672505)*sqrt(21380876460109671417*sqrt(3) + 10004281241951604251*sqrt(30) + 1395238818708444806016*sqrt(10) + 4983307566825173440180) - 133626204564669491032260*sqrt(58756334)*sqrt(21380876460109671417*sqrt(3) + 10004281241951604251*sqrt(30) + 1395238818708444806016*sqrt(10) + 4983307566825173440180) - 2359995664254357571702518068910*sqrt(88134501)*sqrt(-7292*sqrt(30) + 305067*sqrt(10) + 628374*sqrt(3) + 7096559) - 1219139892968619098174917400167*sqrt(293781670)*sqrt(-7292*sqrt(30) + 305067*sqrt(10) + 628374*sqrt(3) + 7096559) + 19601525457863961040147383639*sqrt(146890835)*sqrt(-1279911*sqrt(3) - 131256*sqrt(30) + 5491206*sqrt(10) + 31209799) + 454075137016250166897150310380*sqrt(58756334)*sqrt(-1279911*sqrt(3) - 131256*sqrt(30) + 5491206*sqrt(10) + 31209799) + 459570324651802111693302785181*sqrt(176269002)*sqrt(-1279911*sqrt(3) - 131256*sqrt(30) + 5491206*sqrt(10) + 31209799) + 708008426805144809819544459273*sqrt(440672505)*sqrt(-1279911*sqrt(3) - 131256*sqrt(30) + 5491206*sqrt(10) + 31209799) + 177791925808667057171760*sqrt(176269002)*sqrt(21380876460109671417*sqrt(3) + 10004281241951604251*sqrt(30) + 1395238818708444806016*sqrt(10) + 4983307566825173440180) + 207776528774846064036560*sqrt(146890835)*sqrt(21380876460109671417*sqrt(3) + 10004281241951604251*sqrt(30) + 1395238818708444806016*sqrt(10) + 4983307566825173440180))/(246090631273998140440033175984547789*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-80*(-3320641*sqrt(70) - 10339075*sqrt(7) + 4231505*sqrt(21) + 2497232*sqrt(210))/(117663*sqrt(pi))"
+                  ],
+                  [
+                    "-160*(-27818510*sqrt(7) - 7259171*sqrt(70) + 11822020*sqrt(21) + 5712685*sqrt(210))/(352989*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "160*(-18029289274835275313735455*sqrt(176269002)*sqrt(712769123600287017421 + 277978735287752163230*sqrt(30) + 519510087799396188324*sqrt(10) + 1322416639426950209379*sqrt(3)) - 3877005420404418345282672*sqrt(440672505)*sqrt(712769123600287017421 + 277978735287752163230*sqrt(30) + 519510087799396188324*sqrt(10) + 1322416639426950209379*sqrt(3)) - 202037912933552580997701*sqrt(58756334)*sqrt(712769123600287017421 + 277978735287752163230*sqrt(30) + 519510087799396188324*sqrt(10) + 1322416639426950209379*sqrt(3)) + 42888323171064155944734*sqrt(146890835)*sqrt(712769123600287017421 + 277978735287752163230*sqrt(30) + 519510087799396188324*sqrt(10) + 1322416639426950209379*sqrt(3)) + 21139483018886218929206669070348*sqrt(293781670)*sqrt(-3281065 - 65628*sqrt(30) + 2745603*sqrt(10) + 5655366*sqrt(3)) + 158564588114957842442155734586776*sqrt(29378167)*sqrt(-3281065 - 65628*sqrt(30) + 2745603*sqrt(10) + 5655366*sqrt(3)) + 66691529031073277029859100824554*sqrt(881345010)*sqrt(-3281065 - 65628*sqrt(30) + 2745603*sqrt(10) + 5655366*sqrt(3)) + 360113500558045937319848503270332*sqrt(88134501)*sqrt(-3281065 - 65628*sqrt(30) + 2745603*sqrt(10) + 5655366*sqrt(3)))/(738271893821994421320099527953643367*sqrt(pi))"
+                  ],
+                  [
+                    "-160*(-83678064607073653084814755905768*sqrt(29378167)*sqrt(-7292*sqrt(30) + 305067*sqrt(10) + 628374*sqrt(3) + 7096559) - 16011054148709391234858234673308*sqrt(293781670)*sqrt(-7292*sqrt(30) + 305067*sqrt(10) + 628374*sqrt(3) + 7096559) - 7591867027797981523091315230342*sqrt(881345010)*sqrt(-7292*sqrt(30) + 305067*sqrt(10) + 628374*sqrt(3) + 7096559) - 3686222504862183037626720525883*sqrt(176269002)*sqrt(-1279911*sqrt(3) - 131256*sqrt(30) + 5491206*sqrt(10) + 31209799) + 3233592843556127218969629670692*sqrt(88134501)*sqrt(-7292*sqrt(30) + 305067*sqrt(10) + 628374*sqrt(3) + 7096559) + 6159410754983511957002883483024*sqrt(146890835)*sqrt(-1279911*sqrt(3) - 131256*sqrt(30) + 5491206*sqrt(10) + 31209799) + 7899593816654383065568862051022*sqrt(440672505)*sqrt(-1279911*sqrt(3) - 131256*sqrt(30) + 5491206*sqrt(10) + 31209799) + 28316553643152919025833474714041*sqrt(58756334)*sqrt(-1279911*sqrt(3) - 131256*sqrt(30) + 5491206*sqrt(10) + 31209799))/(246090631273998140440033175984547789*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "40*(-1678542724035584525075934*sqrt(42)*sqrt(635982493837481542984297623*sqrt(30) + 2820336663065061534957365511*sqrt(3) + 3606616878928642095103302291*sqrt(10) + 14728622730113650771435704953) - 88554089054719623939264*sqrt(105)*sqrt(635982493837481542984297623*sqrt(30) + 2820336663065061534957365511*sqrt(3) + 3606616878928642095103302291*sqrt(10) + 14728622730113650771435704953) - 70715433319018846490736*sqrt(14)*sqrt(917912090614970243651747672*sqrt(30) + 3211890506263245670266732873*sqrt(3) + 11440028848153386482948426334*sqrt(10) + 39658866394220322850894180454) - 44517095819829246781632*sqrt(35)*sqrt(917912090614970243651747672*sqrt(30) + 3211890506263245670266732873*sqrt(3) + 11440028848153386482948426334*sqrt(10) + 39658866394220322850894180454) - 423584266493573352723564703854*sqrt(35)*sqrt(1901024667595*sqrt(30) + 9727624827537*sqrt(3) + 48270312871491*sqrt(10) + 235849962568079) + 1133153808692131592256*sqrt(105)*sqrt(917912090614970243651747672*sqrt(30) + 3211890506263245670266732873*sqrt(3) + 11440028848153386482948426334*sqrt(10) + 39658866394220322850894180454) + 9292718603721294448151530939093626840*sqrt(70) + 392296418440627081223814312176*sqrt(105)*sqrt(1901024667595*sqrt(30) + 9727624827537*sqrt(3) + 48270312871491*sqrt(10) + 235849962568079) + 48568011093741222942496*sqrt(42)*sqrt(917912090614970243651747672*sqrt(30) + 3211890506263245670266732873*sqrt(3) + 11440028848153386482948426334*sqrt(10) + 39658866394220322850894180454) + 44741338911880715354538230078420337840*sqrt(7) + 125644499827198234064280*sqrt(35)*sqrt(635982493837481542984297623*sqrt(30) + 2820336663065061534957365511*sqrt(3) + 3606616878928642095103302291*sqrt(10) + 14728622730113650771435704953) + 11092257217461222052728092901161863920*sqrt(210) + 2177421330194026990120051363311*sqrt(14)*sqrt(1901024667595*sqrt(30) + 9727624827537*sqrt(3) + 48270312871491*sqrt(10) + 235849962568079) + 75942910331799884392882643059838407272*sqrt(21) + 551842573693809181110615*sqrt(14)*sqrt(635982493837481542984297623*sqrt(30) + 2820336663065061534957365511*sqrt(3) + 3606616878928642095103302291*sqrt(10) + 14728622730113650771435704953) + 6263167504956865520214682197816*sqrt(42)*sqrt(1901024667595*sqrt(30) + 9727624827537*sqrt(3) + 48270312871491*sqrt(10) + 235849962568079))/(32677153645354134582048671004061527*sqrt(pi))"
+                  ],
+                  [
+                    "-160*(-326336961350446996289382*sqrt(105)*sqrt(635982493837481542984297623*sqrt(30) + 2820336663065061534957365511*sqrt(3) + 3606616878928642095103302291*sqrt(10) + 14728622730113650771435704953) - 846756475227813850533252*sqrt(14)*sqrt(635982493837481542984297623*sqrt(30) + 2820336663065061534957365511*sqrt(3) + 3606616878928642095103302291*sqrt(10) + 14728622730113650771435704953) - 3267552553594324826761855122645*sqrt(42)*sqrt(1901024667595*sqrt(30) + 9727624827537*sqrt(3) + 48270312871491*sqrt(10) + 235849962568079) - 34363970603290627923888*sqrt(105)*sqrt(917912090614970243651747672*sqrt(30) + 3211890506263245670266732873*sqrt(3) + 11440028848153386482948426334*sqrt(10) + 39658866394220322850894180454) - 9573126792594516605495083704773541912*sqrt(70) - 25100615088320126808002703193052445348*sqrt(7) - 26988900400347969013272*sqrt(14)*sqrt(917912090614970243651747672*sqrt(30) + 3211890506263245670266732873*sqrt(3) + 11440028848153386482948426334*sqrt(10) + 39658866394220322850894180454) - 12213208978722626225496*sqrt(42)*sqrt(917912090614970243651747672*sqrt(30) + 3211890506263245670266732873*sqrt(3) + 11440028848153386482948426334*sqrt(10) + 39658866394220322850894180454) + 3526028237686180258386022914*sqrt(35)*sqrt(1901024667595*sqrt(30) + 9727624827537*sqrt(3) + 48270312871491*sqrt(10) + 235849962568079) + 33235286428110176961282*sqrt(35)*sqrt(635982493837481542984297623*sqrt(30) + 2820336663065061534957365511*sqrt(3) + 3606616878928642095103302291*sqrt(10) + 14728622730113650771435704953) + 1060674730310391183246026675928*sqrt(14)*sqrt(1901024667595*sqrt(30) + 9727624827537*sqrt(3) + 48270312871491*sqrt(10) + 235849962568079) + 77428403886590360955072*sqrt(35)*sqrt(917912090614970243651747672*sqrt(30) + 3211890506263245670266732873*sqrt(3) + 11440028848153386482948426334*sqrt(10) + 39658866394220322850894180454) + 32192171411598664989604043356148369116*sqrt(21) + 14753175942775887836913418035668840220*sqrt(210) + 2181611053418751386301771639316*sqrt(105)*sqrt(1901024667595*sqrt(30) + 9727624827537*sqrt(3) + 48270312871491*sqrt(10) + 235849962568079) + 720014973392114036968185*sqrt(42)*sqrt(635982493837481542984297623*sqrt(30) + 2820336663065061534957365511*sqrt(3) + 3606616878928642095103302291*sqrt(10) + 14728622730113650771435704953))/(98031460936062403746146013012184581*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_4",
+      "candidate_index": 13,
+      "coefficient_coordinate": {
+        "axisymmetric_to_reduced_conversion": "18*sqrt(70)*sqrt(pi)/175",
+        "statement": "stored axisymmetric P2 x P2 -> P4 pairings divided by the common exact conversion factor"
+      },
+      "complex_amplitude_variables": 40,
+      "fibre_id": "L4_candidate_13",
+      "first_branch": "p_extra",
+      "first_branch_multiplicity_per_parity": 2,
+      "output_ell": 4,
+      "reduced_internal_coefficients": 16,
+      "rho": "(-250 + 461*sqrt(10))/2132",
+      "scalar_magnetic_equations": 18,
+      "second_branch": "p_extra",
+      "second_branch_multiplicity_per_parity": 2,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "q_plus",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "5*(-1446334544469*sqrt(3731)*sqrt(9977889717105428270 + 3309737639443300541*sqrt(10)) - 1164189991757832*sqrt(7462)*sqrt(39636628390 + 15664128607*sqrt(10)) + 13342447747*sqrt(37310)*sqrt(9977889717105428270 + 3309737639443300541*sqrt(10)) + 941614954259616*sqrt(18655)*sqrt(39636628390 + 15664128607*sqrt(10)) + 3329230117481460*sqrt(7462)*sqrt(96319643350 + 57109031743*sqrt(10)) + 3966157890205549*sqrt(18655)*sqrt(96319643350 + 57109031743*sqrt(10)))/(203639271712459370424*sqrt(pi))",
+                    "5*(-3909942902036*sqrt(3731)*sqrt(9977889717105428270 + 3309737639443300541*sqrt(10)) + 362428009452912*sqrt(7462)*sqrt(39636628390 + 15664128607*sqrt(10)) + 439479345034438*sqrt(18655)*sqrt(96319643350 + 57109031743*sqrt(10)) + 3256969708019040*sqrt(18655)*sqrt(39636628390 + 15664128607*sqrt(10)) + 10516411390298315*sqrt(7462)*sqrt(96319643350 + 57109031743*sqrt(10)) + 718019140531*sqrt(37310)*sqrt(9977889717105428270 + 3309737639443300541*sqrt(10)))/(203639271712459370424*sqrt(pi))"
+                  ],
+                  [
+                    "5*(-173042461807*sqrt(111930)*sqrt(1383*sqrt(10) + 33362) - 99999553375*sqrt(111930)*sqrt(1383*sqrt(10) + 7778) + 397457328330*sqrt(11193)*sqrt(1383*sqrt(10) + 33362) + 2273876345010*sqrt(11193)*sqrt(1383*sqrt(10) + 7778))/(123405175541193*sqrt(pi))",
+                    "10*(-313616809697*sqrt(111930)*sqrt(1383*sqrt(10) + 33362) + 4566860456702*sqrt(11193)*sqrt(1383*sqrt(10) + 7778) + 3174892514291*sqrt(111930)*sqrt(1383*sqrt(10) + 7778) + 6161417122456*sqrt(11193)*sqrt(1383*sqrt(10) + 33362))/(1110646579870737*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-40*(-84004319704*sqrt(7462)*sqrt(96319643350 + 57109031743*sqrt(10)) + 293909957089961*sqrt(3731)*sqrt(-250 + 461*sqrt(10)) + 722298381638527*sqrt(37310)*sqrt(-250 + 461*sqrt(10)) + 164911257275*sqrt(18655)*sqrt(96319643350 + 57109031743*sqrt(10)))/(140309884818908259*sqrt(pi))",
+                    "80*sqrt(1383*sqrt(10) + 33362)*(-2096281*sqrt(111930) + 26444175*sqrt(11193))/(11485909617*sqrt(pi))"
+                  ],
+                  [
+                    "-80*sqrt(-250 + 461*sqrt(10))*(7052570*sqrt(3731) + 5530139*sqrt(37310))/(487555887*sqrt(pi))",
+                    "80*sqrt(1383*sqrt(10) + 33362)*(716383*sqrt(111930) + 124411690*sqrt(11193))/(34457728851*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "80*(11991130*sqrt(7) + 6774739*sqrt(70))/(33579*sqrt(pi))",
+                    "10*(-138518848320277836*sqrt(105)*sqrt(2215565 + 1619954*sqrt(10)) - 208828080201332915*sqrt(42)*sqrt(2215565 + 1619954*sqrt(10)) + 72565469606812356*sqrt(105)*sqrt(-982435 + 7517066*sqrt(10)) + 116150629603139315*sqrt(42)*sqrt(-982435 + 7517066*sqrt(10)))/(24390410180285331*sqrt(pi))"
+                  ],
+                  [
+                    "10*(-64148188775993028*sqrt(105)*sqrt(2215565 + 1619954*sqrt(10)) - 85131594381277355*sqrt(42)*sqrt(2215565 + 1619954*sqrt(10)) + 53386407476098955*sqrt(42)*sqrt(-982435 + 7517066*sqrt(10)) + 38803050668335260*sqrt(105)*sqrt(-982435 + 7517066*sqrt(10)))/(24390410180285331*sqrt(pi))",
+                    "-80*(5441003*sqrt(70) + 18765710*sqrt(7))/(100737*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-80*(-574976799*sqrt(70) + 2680896104*sqrt(7))/(180203583*sqrt(pi))",
+                    "-160*(68295122*sqrt(70) + 1357095083*sqrt(7))/(180203583*sqrt(pi))"
+                  ],
+                  [
+                    "-160*(-289111633*sqrt(70) + 1911026888*sqrt(7))/(180203583*sqrt(pi))",
+                    "-320*(43661519*sqrt(70) + 427590557*sqrt(7))/(60067861*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_4",
+      "candidate_index": 15,
+      "coefficient_coordinate": {
+        "axisymmetric_to_reduced_conversion": "18*sqrt(70)*sqrt(pi)/175",
+        "statement": "stored axisymmetric P2 x P2 -> P4 pairings divided by the common exact conversion factor"
+      },
+      "complex_amplitude_variables": 20,
+      "fibre_id": "L4_candidate_15",
+      "first_branch": "q_plus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 4,
+      "reduced_internal_coefficients": 4,
+      "rho": "(-346*sqrt(30) - 1703 + 523*sqrt(3) + 2304*sqrt(10))/11618",
+      "scalar_magnetic_equations": 18,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "q_plus",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "320*(-55*sqrt(210) - 36*sqrt(70) + 180*sqrt(7) + 575*sqrt(21))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-320*(-55*sqrt(210) - 180*sqrt(7) + 36*sqrt(70) + 575*sqrt(21))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "16000*(-17*sqrt(70) + 10*sqrt(7))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-48000*(-29*sqrt(70) + 34*sqrt(7))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_4",
+      "candidate_index": 19,
+      "coefficient_coordinate": {
+        "axisymmetric_to_reduced_conversion": "18*sqrt(70)*sqrt(pi)/175",
+        "statement": "stored axisymmetric P2 x P2 -> P4 pairings divided by the common exact conversion factor"
+      },
+      "complex_amplitude_variables": 30,
+      "fibre_id": "L4_candidate_19",
+      "first_branch": "p_extra",
+      "first_branch_multiplicity_per_parity": 2,
+      "output_ell": 4,
+      "reduced_internal_coefficients": 16,
+      "rho": "(849 + 601*sqrt(3))/92",
+      "scalar_magnetic_equations": 36,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        2
+      ],
+      "target_branch": "p_extra",
+      "target_cokernel_dimension_per_parity": 2,
+      "target_equations": [
+        {
+          "target_component_count": 2,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "5*(833703*sqrt(70) + 796457*sqrt(210))/(161*sqrt(pi))"
+                  ],
+                  [
+                    "10*(-58462933806*sqrt(770)*sqrt(64691386695 + 37349755324*sqrt(3)) - 33712938348*sqrt(2310)*sqrt(64691386695 + 37349755324*sqrt(3)) - 3199802011731*sqrt(385)*sqrt(27858 + 16127*sqrt(3)) - 1841828522241*sqrt(1155)*sqrt(27858 + 16127*sqrt(3)) + 22463516854859*sqrt(105)*sqrt(3331470 + 1973083*sqrt(3)) + 38908747725354*sqrt(35)*sqrt(3331470 + 1973083*sqrt(3)))/(135163203*sqrt(pi))"
+                  ]
+                ],
+                [
+                  [
+                    "5*(-268632965250*sqrt(770)*sqrt(64691386695 + 37349755324*sqrt(3)) - 154648145523*sqrt(2310)*sqrt(64691386695 + 37349755324*sqrt(3)) - 76940705522646*sqrt(385)*sqrt(27858 + 16127*sqrt(3)) - 44312498912730*sqrt(1155)*sqrt(27858 + 16127*sqrt(3)) + 113949786547411*sqrt(105)*sqrt(3331470 + 1973083*sqrt(3)) + 197395267042683*sqrt(35)*sqrt(3331470 + 1973083*sqrt(3)))/(405489609*sqrt(pi))"
+                  ],
+                  [
+                    "-5*(-20776075*sqrt(70) + 2366031*sqrt(210))/(1449*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-10*sqrt(849 + 601*sqrt(3))*(-80355765*sqrt(4830) + 132356177*sqrt(1610))/(157879337*sqrt(pi))"
+                  ],
+                  [
+                    "-30*sqrt(849 + 601*sqrt(3))*(-3940147*sqrt(4830) + 3823258*sqrt(1610))/(22554191*sqrt(pi))"
+                  ]
+                ],
+                [
+                  [
+                    "-10*(-118340016892947*sqrt(1610)*sqrt(185*sqrt(3) + 329) - 67577429570136*sqrt(4830)*sqrt(185*sqrt(3) + 329) + 20378631842300*sqrt(4830)*sqrt(1803*sqrt(3) + 4019) + 35682065547093*sqrt(1610)*sqrt(1803*sqrt(3) + 4019))/(106645300209*sqrt(pi))"
+                  ],
+                  [
+                    "-5*(-56256891705691*sqrt(1610)*sqrt(185*sqrt(3) + 329) - 31978948822385*sqrt(4830)*sqrt(185*sqrt(3) + 329) + 9637621409171*sqrt(4830)*sqrt(1803*sqrt(3) + 4019) + 16960088070185*sqrt(1610)*sqrt(1803*sqrt(3) + 4019))/(35548433403*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        },
+        {
+          "target_component_count": 2,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-(-325311835040516090186712*sqrt(26565)*sqrt(18115767 + 10459513*sqrt(3)) - 454010442086842091984448*sqrt(8855)*sqrt(18115767 + 10459513*sqrt(3)) - 12349687046049403399517*sqrt(2415)*sqrt(24061583877 + 13936460987*sqrt(3)) - 14055149239986656915549*sqrt(805)*sqrt(24061583877 + 13936460987*sqrt(3)) + 27895630200713302879613058*sqrt(1610)*sqrt(849 + 601*sqrt(3)) + 18118290834721116710339603*sqrt(4830)*sqrt(849 + 601*sqrt(3)) + 176813745086562912804744*sqrt(8855)*sqrt(199192245 + 115042387*sqrt(3)) + 111138675947718955115808*sqrt(26565)*sqrt(199192245 + 115042387*sqrt(3)))/(30735059885986260755412*sqrt(pi))"
+                  ],
+                  [
+                    "(-48780186201099796766310*sqrt(1610)*sqrt(185*sqrt(3) + 329) - 28076339581485183153606*sqrt(4830)*sqrt(185*sqrt(3) + 329) - 6339650361353226258*sqrt(2415)*sqrt(4780211443*sqrt(3) + 8283010261) - 8832017952006936012*sqrt(805)*sqrt(4780211443*sqrt(3) + 8283010261) + 3488141077935640826579*sqrt(4830)*sqrt(1803*sqrt(3) + 4019) + 6066366618403891376451*sqrt(1610)*sqrt(1803*sqrt(3) + 4019) + 52992107712041616072*sqrt(805)*sqrt(434757209*sqrt(3) + 753054487) + 38037902168119357548*sqrt(2415)*sqrt(434757209*sqrt(3) + 753054487))/(8768084790600873171*sqrt(pi))"
+                  ]
+                ],
+                [
+                  [
+                    "-2*(-39292304802607336891860*sqrt(26565)*sqrt(18115767 + 10459513*sqrt(3)) - 67880874466950559005672*sqrt(8855)*sqrt(18115767 + 10459513*sqrt(3)) - 230741263566236800211*sqrt(2415)*sqrt(24061583877 + 13936460987*sqrt(3)) - 150751061772600723593*sqrt(805)*sqrt(24061583877 + 13936460987*sqrt(3)) + 5025157431954614258640*sqrt(8855)*sqrt(199192245 + 115042387*sqrt(3)) + 2930105629693212807420*sqrt(26565)*sqrt(199192245 + 115042387*sqrt(3)) + 17556149635677512123327547*sqrt(1610)*sqrt(849 + 601*sqrt(3)) + 10202047245242017673351954*sqrt(4830)*sqrt(849 + 601*sqrt(3)))/(7683764971496565188853*sqrt(pi))"
+                  ],
+                  [
+                    "4*(-75858295416955807386*sqrt(4830)*sqrt(185*sqrt(3) + 329) - 129168736327994215806*sqrt(1610)*sqrt(185*sqrt(3) + 329) - 21638230638361110*sqrt(805)*sqrt(4780211443*sqrt(3) + 8283010261) - 10311074550294852*sqrt(2415)*sqrt(4780211443*sqrt(3) + 8283010261) + 21910470601268015595*sqrt(1610)*sqrt(1803*sqrt(3) + 4019) + 12864042465920604371*sqrt(4830)*sqrt(1803*sqrt(3) + 4019) + 61866447301769112*sqrt(2415)*sqrt(434757209*sqrt(3) + 753054487) + 129829383830166660*sqrt(805)*sqrt(434757209*sqrt(3) + 753054487))/(381221077852211877*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-1040*(-1486684221*sqrt(70) + 858201482*sqrt(210))/(2431841013*sqrt(pi))"
+                  ],
+                  [
+                    "-920*(-539033689*sqrt(70) + 310769937*sqrt(210))/(810613671*sqrt(pi))"
+                  ]
+                ],
+                [
+                  [
+                    "80*(-650538501*sqrt(70) + 393318389*sqrt(210))/(2431841013*sqrt(pi))"
+                  ],
+                  [
+                    "80*(-1827419503*sqrt(70) + 1234115055*sqrt(210))/(810613671*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_4",
+      "candidate_index": 21,
+      "coefficient_coordinate": {
+        "axisymmetric_to_reduced_conversion": "18*sqrt(70)*sqrt(pi)/175",
+        "statement": "stored axisymmetric P2 x P2 -> P4 pairings divided by the common exact conversion factor"
+      },
+      "complex_amplitude_variables": 20,
+      "fibre_id": "L4_candidate_21",
+      "first_branch": "q_plus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 4,
+      "reduced_internal_coefficients": 4,
+      "rho": "(-153 + 24*sqrt(10) + 46*sqrt(30) + 197*sqrt(3))/222",
+      "scalar_magnetic_equations": 18,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        2
+      ],
+      "target_branch": "q_plus",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "320*(-55*sqrt(210) - 36*sqrt(70) + 180*sqrt(7) + 575*sqrt(21))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-320*(-55*sqrt(210) - 180*sqrt(7) + 36*sqrt(70) + 575*sqrt(21))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "16000*(-17*sqrt(70) + 10*sqrt(7))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-48000*(-29*sqrt(70) + 34*sqrt(7))/(7*sqrt(pi))"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_3",
+      "candidate_index": 1,
+      "coefficient_coordinate": {
+        "phase_normalizations_by_target_parity": {
+          "axial": [
+            "sqrt(pi)",
+            "sqrt(pi)"
+          ],
+          "polar": [
+            "sqrt(pi)",
+            "sqrt(pi)"
+          ]
+        },
+        "statement": "the stored reduced pairing is multiplied by a fixed nonzero target-coordinate phase; zero loci are unchanged"
+      },
+      "complex_amplitude_variables": 20,
+      "fibre_id": "L3_candidate_1",
+      "first_branch": "q_minus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 3,
+      "reduced_internal_coefficients": 8,
+      "rho": "17*(-709 + 459*sqrt(3))/10932",
+      "scalar_magnetic_equations": 28,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "p_extra",
+      "target_cokernel_dimension_per_parity": 2,
+      "target_equations": [
+        {
+          "target_component_count": 2,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "4*(-2849135744517*sqrt(63770)*sqrt(2337*sqrt(3) + 4345) + 117205934092*sqrt(191310)*sqrt(53539 - 14061*sqrt(3)) + 499028655351*sqrt(63770)*sqrt(53539 - 14061*sqrt(3)) + 889566836650*sqrt(191310)*sqrt(2337*sqrt(3) + 4345))/4821382063687"
+                  ]
+                ],
+                [
+                  [
+                    "-6*(-11724*sqrt(542045)*sqrt(-3437428955 + 8066318187*sqrt(3)) - 5965891*sqrt(3252270)*sqrt(-709 + 459*sqrt(3)) - 7024203*sqrt(1084090)*sqrt(-709 + 459*sqrt(3)) + 8970*sqrt(1626135)*sqrt(-3437428955 + 8066318187*sqrt(3)))/5292406217"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-(-1985701744676391336*sqrt(63770)*sqrt(2337*sqrt(3) + 4345) - 287455433064457360*sqrt(191310)*sqrt(53539 - 14061*sqrt(3)) - 1847866915434938*sqrt(95655)*sqrt(44103649991 - 25400927391*sqrt(3)) - 622356531326190*sqrt(31885)*sqrt(44103649991 - 25400927391*sqrt(3)) + 38558163163992605*sqrt(191310)*sqrt(2337*sqrt(3) + 4345) + 2566615107239307*sqrt(31885)*sqrt(183591149 - 88072701*sqrt(3)) + 2065851263989999*sqrt(95655)*sqrt(183591149 - 88072701*sqrt(3)) + 1550111111133993990*sqrt(63770)*sqrt(53539 - 14061*sqrt(3)))/474366138482036556"
+                  ]
+                ],
+                [
+                  [
+                    "9*(-58735594569*sqrt(1084090)*sqrt(-709 + 459*sqrt(3)) - 2649708*sqrt(542045)*sqrt(-3437428955 + 8066318187*sqrt(3)) + 14112770199*sqrt(3252270)*sqrt(-709 + 459*sqrt(3)) + 5737018*sqrt(1626135)*sqrt(-3437428955 + 8066318187*sqrt(3)))/4821382063687"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        },
+        {
+          "target_component_count": 2,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "24*(-39294066590*sqrt(1190)*sqrt(20808663999791 + 13507440527340*sqrt(3)) - 21743525854*sqrt(3570)*sqrt(20808663999791 + 13507440527340*sqrt(3)) - 165909061029568*sqrt(1785)*sqrt(-28660574 + 17271825*sqrt(3)) - 282849980858062*sqrt(595)*sqrt(-28660574 + 17271825*sqrt(3)) + 10871762927*sqrt(3570)*sqrt(-262149004451983 + 240098148975024*sqrt(3)) + 565699961716124*sqrt(595)*sqrt(68722 + 168711*sqrt(3)) + 19647033295*sqrt(1190)*sqrt(-262149004451983 + 240098148975024*sqrt(3)) + 331818122059136*sqrt(1785)*sqrt(68722 + 168711*sqrt(3)))/453543335578249"
+                  ]
+                ],
+                [
+                  [
+                    "64*(-385406268*sqrt(1190)*sqrt(20808663999791 + 13507440527340*sqrt(3)) - 212673062*sqrt(3570)*sqrt(20808663999791 + 13507440527340*sqrt(3)) - 1617381911003*sqrt(1785)*sqrt(-28660574 + 17271825*sqrt(3)) - 2777162317053*sqrt(595)*sqrt(-28660574 + 17271825*sqrt(3)) + 106336531*sqrt(3570)*sqrt(-262149004451983 + 240098148975024*sqrt(3)) + 5554324634106*sqrt(595)*sqrt(68722 + 168711*sqrt(3)) + 3234763822006*sqrt(1785)*sqrt(68722 + 168711*sqrt(3)) + 192703134*sqrt(1190)*sqrt(-262149004451983 + 240098148975024*sqrt(3)))/8463487052503"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-24*(-30673488274*sqrt(1190)*sqrt(20808663999791 + 13507440527340*sqrt(3)) - 17303865466*sqrt(3570)*sqrt(20808663999791 + 13507440527340*sqrt(3)) - 129711083539372*sqrt(1785)*sqrt(-28660574 + 17271825*sqrt(3)) - 217913866451486*sqrt(595)*sqrt(-28660574 + 17271825*sqrt(3)) + 435827732902972*sqrt(595)*sqrt(68722 + 168711*sqrt(3)) + 8651932733*sqrt(3570)*sqrt(-262149004451983 + 240098148975024*sqrt(3)) + 15336744137*sqrt(1190)*sqrt(-262149004451983 + 240098148975024*sqrt(3)) + 259422167078744*sqrt(1785)*sqrt(68722 + 168711*sqrt(3)))/453543335578249"
+                  ]
+                ],
+                [
+                  [
+                    "-32*(-594636402*sqrt(1190)*sqrt(20808663999791 + 13507440527340*sqrt(3)) - 341491006*sqrt(3570)*sqrt(20808663999791 + 13507440527340*sqrt(3)) - 2530175404234*sqrt(1785)*sqrt(-28660574 + 17271825*sqrt(3)) - 4259521624296*sqrt(595)*sqrt(-28660574 + 17271825*sqrt(3)) + 8519043248592*sqrt(595)*sqrt(68722 + 168711*sqrt(3)) + 170745503*sqrt(3570)*sqrt(-262149004451983 + 240098148975024*sqrt(3)) + 297318201*sqrt(1190)*sqrt(-262149004451983 + 240098148975024*sqrt(3)) + 5060350808468*sqrt(1785)*sqrt(68722 + 168711*sqrt(3)))/8463487052503"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_3",
+      "candidate_index": 2,
+      "coefficient_coordinate": {
+        "phase_normalizations_by_target_parity": {
+          "axial": [
+            "sqrt(pi)"
+          ],
+          "polar": [
+            "sqrt(pi)"
+          ]
+        },
+        "statement": "the stored reduced pairing is multiplied by a fixed nonzero target-coordinate phase; zero loci are unchanged"
+      },
+      "complex_amplitude_variables": 20,
+      "fibre_id": "L3_candidate_2",
+      "first_branch": "q_minus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 3,
+      "reduced_internal_coefficients": 4,
+      "rho": "(-2103 + 324*sqrt(2) + 302*sqrt(6) + 1503*sqrt(3))/2162",
+      "scalar_magnetic_equations": 14,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "q_plus",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-144*(-1580070324*sqrt(35)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)) - 374802888*sqrt(35)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) - 44364642*sqrt(210)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)) - 22393317*sqrt(210)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) + 105641883*sqrt(70)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) + 205140366*sqrt(70)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)) + 150009436*sqrt(105)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) + 822789244*sqrt(105)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)))/8842501087"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-864*(-297760890*sqrt(105)*sqrt(271662571190 + 118751039120*sqrt(6) + 297568147099*sqrt(3) + 365705118242*sqrt(2)) - 210547480434*sqrt(35)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)) - 34855265256*sqrt(210)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)) - 32597622*sqrt(70)*sqrt(271662571190 + 118751039120*sqrt(6) + 297568147099*sqrt(3) + 365705118242*sqrt(2)) + 1400680*sqrt(210)*sqrt(271662571190 + 118751039120*sqrt(6) + 297568147099*sqrt(3) + 365705118242*sqrt(2)) + 4196788054*sqrt(105)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) + 27122183463*sqrt(70)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) + 22564378331*sqrt(210)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) + 66985376097*sqrt(105)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)) + 78415180737*sqrt(35)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) + 111847066122*sqrt(70)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)) + 370499262*sqrt(35)*sqrt(271662571190 + 118751039120*sqrt(6) + 297568147099*sqrt(3) + 365705118242*sqrt(2)))/9558743675047"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "6912*(-769374154842*sqrt(70)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)) - 266674752*sqrt(210)*sqrt(271662571190 + 118751039120*sqrt(6) + 297568147099*sqrt(3) + 365705118242*sqrt(2)) - 34189070388*sqrt(70)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) - 16416139395*sqrt(105)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)) - 17597565993*sqrt(35)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) - 19895327943*sqrt(35)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)) + 10644350093*sqrt(105)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) + 32534484*sqrt(35)*sqrt(271662571190 + 118751039120*sqrt(6) + 297568147099*sqrt(3) + 365705118242*sqrt(2)) + 25536579660*sqrt(210)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) + 118768048*sqrt(105)*sqrt(271662571190 + 118751039120*sqrt(6) + 297568147099*sqrt(3) + 365705118242*sqrt(2)) + 207269167579*sqrt(210)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)) + 607748574*sqrt(70)*sqrt(271662571190 + 118751039120*sqrt(6) + 297568147099*sqrt(3) + 365705118242*sqrt(2)))/9558743675047"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-3456*(-528992655305*sqrt(210)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)) - 742163106156*sqrt(35)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)) - 139333290432*sqrt(35)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) - 31700132339*sqrt(210)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) + 69913895298*sqrt(105)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) + 261659351148*sqrt(105)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)) + 281872527303*sqrt(70)*sqrt(-5803370 + 274346*sqrt(2) + 370050*sqrt(6) + 3776677*sqrt(3)) + 797767112307*sqrt(70)*sqrt(43759 + 55479*sqrt(6) + 238673*sqrt(2) + 202891*sqrt(3)))/9558743675047"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_3",
+      "candidate_index": 6,
+      "coefficient_coordinate": {
+        "phase_normalizations_by_target_parity": {
+          "axial": [
+            "sqrt(pi)"
+          ],
+          "polar": [
+            "sqrt(pi)"
+          ]
+        },
+        "statement": "the stored reduced pairing is multiplied by a fixed nonzero target-coordinate phase; zero loci are unchanged"
+      },
+      "complex_amplitude_variables": 30,
+      "fibre_id": "L3_candidate_6",
+      "first_branch": "q_minus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 3,
+      "reduced_internal_coefficients": 8,
+      "rho": "(-225071 + 47682*sqrt(2) + 41931*sqrt(6) + 66231*sqrt(3))/292308",
+      "scalar_magnetic_equations": 14,
+      "second_branch": "p_extra",
+      "second_branch_multiplicity_per_parity": 2,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "q_plus",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "4*(-113846403892446165*sqrt(1705130)*sqrt(1766*sqrt(2) + 1553*sqrt(6) + 2453*sqrt(3) + 6099) - 11939097927229972*sqrt(2557695)*sqrt(1766*sqrt(2) + 1553*sqrt(6) + 2453*sqrt(3) + 6099) - 918756658046993*sqrt(5115390)*sqrt(-518385*sqrt(3) + 47682*sqrt(2) + 41931*sqrt(6) + 1528777) - 1002042506983008*sqrt(852565)*sqrt(-518385*sqrt(3) + 47682*sqrt(2) + 41931*sqrt(6) + 1528777) + 120571696597612*sqrt(2557695)*sqrt(-518385*sqrt(3) + 47682*sqrt(2) + 41931*sqrt(6) + 1528777) + 786747413719647*sqrt(1705130)*sqrt(-518385*sqrt(3) + 47682*sqrt(2) + 41931*sqrt(6) + 1528777) + 34716243909620784*sqrt(852565)*sqrt(1766*sqrt(2) + 1553*sqrt(6) + 2453*sqrt(3) + 6099) + 77594073973259589*sqrt(5115390)*sqrt(1766*sqrt(2) + 1553*sqrt(6) + 2453*sqrt(3) + 6099))/2464539945707673127",
+                    "-36*(-10594894029*sqrt(2557695)*sqrt(-322482491455974 - 28507531814141*sqrt(6) + 225795397315156*sqrt(3) + 282776235680017*sqrt(2)) - 486047599178923*sqrt(5115390)*sqrt(-225071 + 47682*sqrt(2) + 41931*sqrt(6) + 66231*sqrt(3)) - 4965056884*sqrt(5115390)*sqrt(-322482491455974 - 28507531814141*sqrt(6) + 225795397315156*sqrt(3) + 282776235680017*sqrt(2)) - 393896359890840*sqrt(852565)*sqrt(-225071 + 47682*sqrt(2) + 41931*sqrt(6) + 66231*sqrt(3)) + 9581677727*sqrt(852565)*sqrt(-322482491455974 - 28507531814141*sqrt(6) + 225795397315156*sqrt(3) + 282776235680017*sqrt(2)) + 503195967574356*sqrt(2557695)*sqrt(-225071 + 47682*sqrt(2) + 41931*sqrt(6) + 66231*sqrt(3)) + 12978117739*sqrt(1705130)*sqrt(-322482491455974 - 28507531814141*sqrt(6) + 225795397315156*sqrt(3) + 282776235680017*sqrt(2)) + 1300315891665373*sqrt(1705130)*sqrt(-225071 + 47682*sqrt(2) + 41931*sqrt(6) + 66231*sqrt(3)))/2464539945707673127"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-6*(-2532117600563744807*sqrt(35)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)) - 615371870889438676*sqrt(70)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)) - 23253252907140387*sqrt(105)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) + 330449287186359*sqrt(70)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) + 4837684551210404*sqrt(210)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) + 78275118636942889*sqrt(35)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) + 246222997361065773*sqrt(210)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)) + 1639427464555135943*sqrt(105)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)))/335178545549426466755",
+                    "4*(-41356740371952*sqrt(35)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)) - 2408489582272*sqrt(105)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) - 1630952777341*sqrt(70)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) - 6576282949796*sqrt(70)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)) - 527322140456*sqrt(210)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) + 167376656073*sqrt(210)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)) + 1271710602334*sqrt(35)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) + 26449762435468*sqrt(105)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)))/13759946859453445"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "16*(-55945078458710613309*sqrt(70)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)) - 3691511047867801501*sqrt(210)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) - 60967337757230353740*sqrt(35)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)) - 5658989432916356226*sqrt(35)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) - 2975213924061949332*sqrt(105)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) - 1190806319296414611*sqrt(70)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) + 73528677801929550362*sqrt(105)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)) + 72258108339749989595*sqrt(210)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)))/3016606909944838200795",
+                    "8*(-35272791062985579129*sqrt(70)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) - 25818057305486250408*sqrt(105)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) - 43324724959626389094*sqrt(35)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) - 10317277796591641949*sqrt(210)*sqrt(-215993220079 + 2642750685*sqrt(2) + 16553044629*sqrt(6) + 112961637795*sqrt(3)) + 6204408449707885495*sqrt(210)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)) + 138064043072631059338*sqrt(105)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)) + 526415743452088142160*sqrt(35)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)) + 378619215332512448889*sqrt(70)*sqrt(-163094109 + 74022145*sqrt(3) + 70064899*sqrt(6) + 255238795*sqrt(2)))/9049820729834514602385"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-64*(-47091303425038995581809*sqrt(852565)*sqrt(1766*sqrt(2) + 1553*sqrt(6) + 2453*sqrt(3) + 6099) - 7331519599437803546868*sqrt(5115390)*sqrt(1766*sqrt(2) + 1553*sqrt(6) + 2453*sqrt(3) + 6099) + 289998430307708399610*sqrt(5115390)*sqrt(-518385*sqrt(3) + 47682*sqrt(2) + 41931*sqrt(6) + 1528777) + 5791737493775131497432*sqrt(1705130)*sqrt(1766*sqrt(2) + 1553*sqrt(6) + 2453*sqrt(3) + 6099) + 853102595338551145732*sqrt(1705130)*sqrt(-518385*sqrt(3) + 47682*sqrt(2) + 41931*sqrt(6) + 1528777) + 1457082469806130348024*sqrt(852565)*sqrt(-518385*sqrt(3) + 47682*sqrt(2) + 41931*sqrt(6) + 1528777) + 916250008748635417261*sqrt(2557695)*sqrt(-518385*sqrt(3) + 47682*sqrt(2) + 41931*sqrt(6) + 1528777) + 15619275082070377468296*sqrt(2557695)*sqrt(1766*sqrt(2) + 1553*sqrt(6) + 2453*sqrt(3) + 6099))/180101185612479629101779",
+                    "-32*(-26111441587121130*sqrt(1705130)*sqrt(-322482491455974 - 28507531814141*sqrt(6) + 225795397315156*sqrt(3) + 282776235680017*sqrt(2)) - 1492538418787304926386*sqrt(852565)*sqrt(-225071 + 47682*sqrt(2) + 41931*sqrt(6) + 66231*sqrt(3)) - 10541448165826681*sqrt(2557695)*sqrt(-322482491455974 - 28507531814141*sqrt(6) + 225795397315156*sqrt(3) + 282776235680017*sqrt(2)) - 277246842769460631962*sqrt(5115390)*sqrt(-225071 + 47682*sqrt(2) + 41931*sqrt(6) + 66231*sqrt(3)) - 2980403837411975*sqrt(5115390)*sqrt(-322482491455974 - 28507531814141*sqrt(6) + 225795397315156*sqrt(3) + 282776235680017*sqrt(2)) + 10172052970238079*sqrt(852565)*sqrt(-322482491455974 - 28507531814141*sqrt(6) + 225795397315156*sqrt(3) + 282776235680017*sqrt(2)) + 1205292313975213109412*sqrt(1705130)*sqrt(-225071 + 47682*sqrt(2) + 41931*sqrt(6) + 66231*sqrt(3)) + 2244457355292570023568*sqrt(2557695)*sqrt(-225071 + 47682*sqrt(2) + 41931*sqrt(6) + 66231*sqrt(3)))/60033728537493209700593"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_3",
+      "candidate_index": 10,
+      "coefficient_coordinate": {
+        "phase_normalizations_by_target_parity": {
+          "axial": [
+            "sqrt(pi)"
+          ],
+          "polar": [
+            "sqrt(pi)"
+          ]
+        },
+        "statement": "the stored reduced pairing is multiplied by a fixed nonzero target-coordinate phase; zero loci are unchanged"
+      },
+      "complex_amplitude_variables": 30,
+      "fibre_id": "L3_candidate_10",
+      "first_branch": "p_extra",
+      "first_branch_multiplicity_per_parity": 2,
+      "output_ell": 3,
+      "reduced_internal_coefficients": 8,
+      "rho": "-(-910431*sqrt(3) - 326205*sqrt(6) + 48168*sqrt(2) + 1994230)/1916931",
+      "scalar_magnetic_equations": 14,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "q_plus",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "8*(-462044199165821864982*sqrt(44728390)*sqrt(-5352*sqrt(2) + 36245*sqrt(6) + 101159*sqrt(3) + 914378) - 129957779406215970862*sqrt(67092585)*sqrt(-5352*sqrt(2) + 36245*sqrt(6) + 101159*sqrt(3) + 914378) - 48365701195558484439*sqrt(67092585)*sqrt(-96069*sqrt(3) - 96336*sqrt(2) + 652410*sqrt(6) + 1762333) - 16208869217643053197*sqrt(134185170)*sqrt(-96069*sqrt(3) - 96336*sqrt(2) + 652410*sqrt(6) + 1762333) - 16056125872060467645*sqrt(22364195)*sqrt(-96069*sqrt(3) - 96336*sqrt(2) + 652410*sqrt(6) + 1762333) + 31673512451513562760*sqrt(22364195)*sqrt(-5352*sqrt(2) + 36245*sqrt(6) + 101159*sqrt(3) + 914378) + 152838475580662560074*sqrt(44728390)*sqrt(-96069*sqrt(3) - 96336*sqrt(2) + 652410*sqrt(6) + 1762333) + 234242431081803369352*sqrt(134185170)*sqrt(-5352*sqrt(2) + 36245*sqrt(6) + 101159*sqrt(3) + 914378))/1166914251734222287994887"
+                  ],
+                  [
+                    "-24*(-22268983793401544144*sqrt(134185170)*sqrt(-1994230 - 48168*sqrt(2) + 326205*sqrt(6) + 910431*sqrt(3)) - 15690434236324*sqrt(44728390)*sqrt(-1965720887691523091 - 657584432365702964*sqrt(6) + 1590800709942274902*sqrt(2) + 1414180820426843371*sqrt(3)) - 20603178010485*sqrt(22364195)*sqrt(-1965720887691523091 - 657584432365702964*sqrt(6) + 1590800709942274902*sqrt(2) + 1414180820426843371*sqrt(3)) + 4751699853643042962*sqrt(67092585)*sqrt(-1994230 - 48168*sqrt(2) + 326205*sqrt(6) + 910431*sqrt(3)) + 2384628328727*sqrt(134185170)*sqrt(-1965720887691523091 - 657584432365702964*sqrt(6) + 1590800709942274902*sqrt(2) + 1414180820426843371*sqrt(3)) + 23005155513134847476*sqrt(22364195)*sqrt(-1994230 - 48168*sqrt(2) + 326205*sqrt(6) + 910431*sqrt(3)) + 35726225803807295874*sqrt(44728390)*sqrt(-1994230 - 48168*sqrt(2) + 326205*sqrt(6) + 910431*sqrt(3)) + 23570613966921*sqrt(67092585)*sqrt(-1965720887691523091 - 657584432365702964*sqrt(6) + 1590800709942274902*sqrt(2) + 1414180820426843371*sqrt(3)))/1166914251734222287994887"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "8*(-5890065424435907663500*sqrt(105)*sqrt(-3376211156192535912667342 - 1365200933351628886001608*sqrt(6) + 2975143919327101264264410*sqrt(2) + 2441754528932290474740635*sqrt(3)) - 6836938288899945829800*sqrt(35)*sqrt(-3376211156192535912667342 - 1365200933351628886001608*sqrt(6) + 2975143919327101264264410*sqrt(2) + 2441754528932290474740635*sqrt(3)) - 3583458839106374773572783774*sqrt(210)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) - 8492512429305939865836156534*sqrt(35)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) - 7986724948720544486606197557*sqrt(70)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)) - 415155780744798762720*sqrt(210)*sqrt(-3376211156192535912667342 - 1365200933351628886001608*sqrt(6) + 2975143919327101264264410*sqrt(2) + 2441754528932290474740635*sqrt(3)) + 84584118621339072998315631*sqrt(105)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)) + 298310822159946427722763872*sqrt(105)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) + 1193433106279259692806105636*sqrt(70)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) + 1901612737503630090840*sqrt(70)*sqrt(-3376211156192535912667342 - 1365200933351628886001608*sqrt(6) + 2975143919327101264264410*sqrt(2) + 2441754528932290474740635*sqrt(3)) + 5795715386671730453582447426*sqrt(210)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)) + 24399872307763316775701344401*sqrt(35)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)))/397017379381016919625885509723495"
+                  ],
+                  [
+                    "-8*(-87574305968525554018916350002*sqrt(35)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)) - 12462768484871996389259711912*sqrt(210)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)) - 3766374739730759791620*sqrt(70)*sqrt(-3376211156192535912667342 - 1365200933351628886001608*sqrt(6) + 2975143919327101264264410*sqrt(2) + 2441754528932290474740635*sqrt(3)) - 1169094319396890977063175264*sqrt(105)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) - 221540067753943605840*sqrt(210)*sqrt(-3376211156192535912667342 - 1365200933351628886001608*sqrt(6) + 2975143919327101264264410*sqrt(2) + 2441754528932290474740635*sqrt(3)) + 2577229752680040286428811398*sqrt(105)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)) + 10751675521587926626856936364*sqrt(70)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)) + 9682394793074640831106224378*sqrt(35)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) + 14042723283145082366880*sqrt(35)*sqrt(-3376211156192535912667342 - 1365200933351628886001608*sqrt(6) + 2975143919327101264264410*sqrt(2) + 2441754528932290474740635*sqrt(3)) + 16138833328477055221761676653*sqrt(70)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) + 12803340709480974285314999943*sqrt(210)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) + 35464992774026714361760*sqrt(105)*sqrt(-3376211156192535912667342 - 1365200933351628886001608*sqrt(6) + 2975143919327101264264410*sqrt(2) + 2441754528932290474740635*sqrt(3)))/1191052138143050758877656529170485"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-128*(-4476507165674367951456*sqrt(44728390)*sqrt(-19489539124042604*sqrt(3) - 22780301534075505*sqrt(2) + 1128569905734201904*sqrt(6) + 2775028434101658739) - 3643762056151009735971524001*sqrt(44728390)*sqrt(-96069*sqrt(3) - 96336*sqrt(2) + 652410*sqrt(6) + 1762333) - 4530192868030216604964648846*sqrt(22364195)*sqrt(-96069*sqrt(3) - 96336*sqrt(2) + 652410*sqrt(6) + 1762333) - 3227619609423498608496*sqrt(22364195)*sqrt(-19489539124042604*sqrt(3) - 22780301534075505*sqrt(2) + 1128569905734201904*sqrt(6) + 2775028434101658739) - 1104903641010467504645175042*sqrt(67092585)*sqrt(-96069*sqrt(3) - 96336*sqrt(2) + 652410*sqrt(6) + 1762333) - 62523395121728743732465634*sqrt(134185170)*sqrt(-96069*sqrt(3) - 96336*sqrt(2) + 652410*sqrt(6) + 1762333) + 1649605681101896773721486334*sqrt(44728390)*sqrt(-5352*sqrt(2) + 36245*sqrt(6) + 101159*sqrt(3) + 914378) + 712323807129014873112*sqrt(67092585)*sqrt(-19489539124042604*sqrt(3) - 22780301534075505*sqrt(2) + 1128569905734201904*sqrt(6) + 2775028434101658739) + 2029364502371240787189749933*sqrt(67092585)*sqrt(-5352*sqrt(2) + 36245*sqrt(6) + 101159*sqrt(3) + 914378) + 5467490145295466326547450265*sqrt(22364195)*sqrt(-5352*sqrt(2) + 36245*sqrt(6) + 101159*sqrt(3) + 914378) + 2949065345389956113847749985*sqrt(134185170)*sqrt(-5352*sqrt(2) + 36245*sqrt(6) + 101159*sqrt(3) + 914378) + 3139659347338097433696*sqrt(134185170)*sqrt(-19489539124042604*sqrt(3) - 22780301534075505*sqrt(2) + 1128569905734201904*sqrt(6) + 2775028434101658739))/6710682310473403394244980195391"
+                  ],
+                  [
+                    "-128*(-423863267842140427728*sqrt(44728390)*sqrt(-4192252244875679573 - 1692250247656256112*sqrt(6) + 3453046395374513511*sqrt(2) + 2840634173088217668*sqrt(3)) - 384458737152411641814*sqrt(44728390)*sqrt(-1965720887691523091 - 657584432365702964*sqrt(6) + 1590800709942274902*sqrt(2) + 1414180820426843371*sqrt(3)) - 513377745325531286070*sqrt(22364195)*sqrt(-1965720887691523091 - 657584432365702964*sqrt(6) + 1590800709942274902*sqrt(2) + 1414180820426843371*sqrt(3)) - 442062420413246401176*sqrt(22364195)*sqrt(-4192252244875679573 - 1692250247656256112*sqrt(6) + 3453046395374513511*sqrt(2) + 2840634173088217668*sqrt(3)) - 13536724812469558092*sqrt(67092585)*sqrt(-1965720887691523091 - 657584432365702964*sqrt(6) + 1590800709942274902*sqrt(2) + 1414180820426843371*sqrt(3)) - 24223025406892191377091996*sqrt(44728390)*sqrt(-1994230 - 48168*sqrt(2) + 326205*sqrt(6) + 910431*sqrt(3)) + 106242586760545911069461839*sqrt(67092585)*sqrt(-1994230 - 48168*sqrt(2) + 326205*sqrt(6) + 910431*sqrt(3)) + 68576641810160464728*sqrt(67092585)*sqrt(-4192252244875679573 - 1692250247656256112*sqrt(6) + 3453046395374513511*sqrt(2) + 2840634173088217668*sqrt(3)) + 822065184039585959331310959*sqrt(22364195)*sqrt(-1994230 - 48168*sqrt(2) + 326205*sqrt(6) + 910431*sqrt(3)) + 178720649172279647429*sqrt(134185170)*sqrt(-1965720887691523091 - 657584432365702964*sqrt(6) + 1590800709942274902*sqrt(2) + 1414180820426843371*sqrt(3)) + 164869762604814692752*sqrt(134185170)*sqrt(-4192252244875679573 - 1692250247656256112*sqrt(6) + 3453046395374513511*sqrt(2) + 2840634173088217668*sqrt(3)) + 385726817324203109097805857*sqrt(134185170)*sqrt(-1994230 - 48168*sqrt(2) + 326205*sqrt(6) + 910431*sqrt(3)))/2236894103491134464748326731797"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "32*(-28412472087435006629099388772*sqrt(210)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) - 53596155467635976997143763552*sqrt(35)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) - 24776883213273865755803796444*sqrt(105)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) - 29217959296187158222214446017*sqrt(70)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) + 9332155117167898575105*sqrt(210)*sqrt(-22381442760912955304321887 - 5626135524257421953721093*sqrt(6) + 9849871526532857403160437*sqrt(2) + 12890548842577535715229461*sqrt(3)) + 22611592599082331203476*sqrt(70)*sqrt(-22381442760912955304321887 - 5626135524257421953721093*sqrt(6) + 9849871526532857403160437*sqrt(2) + 12890548842577535715229461*sqrt(3)) + 36180305158797621036540*sqrt(35)*sqrt(-22381442760912955304321887 - 5626135524257421953721093*sqrt(6) + 9849871526532857403160437*sqrt(2) + 12890548842577535715229461*sqrt(3)) + 23493111554152640034882*sqrt(105)*sqrt(-22381442760912955304321887 - 5626135524257421953721093*sqrt(6) + 9849871526532857403160437*sqrt(2) + 12890548842577535715229461*sqrt(3)) + 34957550488705478700600795186*sqrt(70)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)) + 33549669695692108326558788692*sqrt(105)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)) + 36657337949382816215938867830*sqrt(210)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)) + 99530374563875494151599339920*sqrt(35)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)))/132339126460338973208628503241165"
+                  ],
+                  [
+                    "256*(-14814389767327918343695358046*sqrt(105)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) - 16491761935868737299317812128*sqrt(70)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) - 21886350985035682486411516218*sqrt(35)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) - 6394104299724780671877034823*sqrt(210)*sqrt(-2490692876611 - 809253587259*sqrt(6) + 1795136387031*sqrt(2) + 1670365137873*sqrt(3)) + 20833059954165664567927577694*sqrt(70)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)) + 19243124489157630619265382173*sqrt(105)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)) + 47434665183602410901612786235*sqrt(35)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)) + 19402374993383543619545040135*sqrt(210)*sqrt(-1475729778731 + 164620789026*sqrt(2) + 216248555716*sqrt(6) + 623760367708*sqrt(3)))/397017379381016919625885509723495"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_1",
+      "candidate_index": 14,
+      "coefficient_coordinate": {
+        "phase_normalizations_by_target_parity": {
+          "axial": [
+            "sqrt(pi)"
+          ],
+          "polar": [
+            "sqrt(pi)"
+          ]
+        },
+        "statement": "the stored reduced pairing is multiplied by a fixed nonzero target-coordinate phase; zero loci are unchanged"
+      },
+      "complex_amplitude_variables": 20,
+      "fibre_id": "L1_candidate_14",
+      "first_branch": "q_plus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 1,
+      "reduced_internal_coefficients": 4,
+      "rho": "10*(-13 + 9*sqrt(3))/111",
+      "scalar_magnetic_equations": 6,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        -2
+      ],
+      "target_branch": "extra",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-80*(-1368*sqrt(74)*sqrt(16579 + 9783*sqrt(3)) - 328*sqrt(222)*sqrt(16579 + 9783*sqrt(3)) + 170145*sqrt(37)*sqrt(-13 + 9*sqrt(3)) + 101105*sqrt(111)*sqrt(-13 + 9*sqrt(3)))/50653"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "80*(-2549961*sqrt(222)*sqrt(16579 + 9783*sqrt(3)) - 3921777*sqrt(74)*sqrt(16579 + 9783*sqrt(3)) - 8640*sqrt(111)*sqrt(217083593 + 125335971*sqrt(3)) + 35286*sqrt(222)*sqrt(11713 + 6765*sqrt(3)) + 52331013*sqrt(111)*sqrt(-13 + 9*sqrt(3)) + 123740193*sqrt(37)*sqrt(-13 + 9*sqrt(3)) + 12480*sqrt(37)*sqrt(217083593 + 125335971*sqrt(3)) + 1592818*sqrt(74)*sqrt(11713 + 6765*sqrt(3)) + 1193037*sqrt(222)*sqrt(8521 + 22773*sqrt(3)) + 2627579*sqrt(74)*sqrt(8521 + 22773*sqrt(3)))/16867449"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-256*(-2766387131*sqrt(555)*sqrt(73 + 69*sqrt(3)) - 4011674730*sqrt(185)*sqrt(73 + 69*sqrt(3)) - 4426560*sqrt(185)*sqrt(4054723 + 2481351*sqrt(3)) - 962880*sqrt(555)*sqrt(4054723 + 2481351*sqrt(3)) + 152138230*sqrt(1110)*sqrt(-9181 + 5673*sqrt(3)) + 290013060*sqrt(370)*sqrt(-9181 + 5673*sqrt(3)) + 2698533618*sqrt(555)*sqrt(67 + 39*sqrt(3)) + 5731030026*sqrt(185)*sqrt(67 + 39*sqrt(3)))/624095613"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-256*(-3931375122*sqrt(185)*sqrt(73 + 69*sqrt(3)) - 2220364279*sqrt(555)*sqrt(73 + 69*sqrt(3)) - 1996280*sqrt(555)*sqrt(2917441 + 1686045*sqrt(3)) + 59726670*sqrt(370)*sqrt(113 + 195*sqrt(3)) + 35878960*sqrt(1110)*sqrt(113 + 195*sqrt(3)) + 3107160*sqrt(185)*sqrt(2917441 + 1686045*sqrt(3)) + 3883880850*sqrt(185)*sqrt(67 + 39*sqrt(3)) + 3029235862*sqrt(555)*sqrt(67 + 39*sqrt(3)))/624095613"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "DIFFERENCE",
+      "temporal_signs": [
+        1,
+        -1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_3",
+      "candidate_index": 16,
+      "coefficient_coordinate": {
+        "phase_normalizations_by_target_parity": {
+          "axial": [
+            "sqrt(pi)",
+            "sqrt(pi)"
+          ],
+          "polar": [
+            "sqrt(pi)",
+            "sqrt(pi)"
+          ]
+        },
+        "statement": "the stored reduced pairing is multiplied by a fixed nonzero target-coordinate phase; zero loci are unchanged"
+      },
+      "complex_amplitude_variables": 20,
+      "fibre_id": "L3_candidate_16",
+      "first_branch": "q_minus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 3,
+      "reduced_internal_coefficients": 8,
+      "rho": "17*(79 + 51*sqrt(3))/132",
+      "scalar_magnetic_equations": 28,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        2
+      ],
+      "target_branch": "p_extra",
+      "target_cokernel_dimension_per_parity": 2,
+      "target_equations": [
+        {
+          "target_component_count": 2,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-12*(-2290911532*sqrt(2310)*sqrt(801*sqrt(3) + 1541) - 3957127401*sqrt(770)*sqrt(801*sqrt(3) + 1541) + 2194431280*sqrt(2310)*sqrt(603*sqrt(3) + 2135) + 3804908763*sqrt(770)*sqrt(603*sqrt(3) + 2135))/102487"
+                  ]
+                ],
+                [
+                  [
+                    "2*(-2064*sqrt(6545)*sqrt(389103125 + 225100263*sqrt(3)) - 690*sqrt(19635)*sqrt(389103125 + 225100263*sqrt(3)) + 2393607*sqrt(13090)*sqrt(79 + 51*sqrt(3)) + 1489859*sqrt(39270)*sqrt(79 + 51*sqrt(3)))/9317"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-(-20680707406698*sqrt(385)*sqrt(12836181*sqrt(3) + 22280431) - 11927567681066*sqrt(1155)*sqrt(12836181*sqrt(3) + 22280431) - 522011542053240*sqrt(770)*sqrt(801*sqrt(3) + 1541) - 301381456898275*sqrt(2310)*sqrt(801*sqrt(3) + 1541) + 956903667307236*sqrt(770)*sqrt(603*sqrt(3) + 2135) + 552470304634270*sqrt(2310)*sqrt(603*sqrt(3) + 2135) + 15831527375655*sqrt(385)*sqrt(11833311*sqrt(3) + 20502589) + 9172815629303*sqrt(1155)*sqrt(11833311*sqrt(3) + 20502589))/40584852"
+                  ]
+                ],
+                [
+                  [
+                    "-3*(-315582*sqrt(19635)*sqrt(389103125 + 225100263*sqrt(3)) - 504948*sqrt(6545)*sqrt(389103125 + 225100263*sqrt(3)) + 460732649*sqrt(39270)*sqrt(79 + 51*sqrt(3)) + 806337921*sqrt(13090)*sqrt(79 + 51*sqrt(3)))/102487"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        },
+        {
+          "target_component_count": 2,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-8*(-363478503644*sqrt(595)*sqrt(122146 + 70935*sqrt(3)) - 176861430168*sqrt(1785)*sqrt(122146 + 70935*sqrt(3)) - 41979051*sqrt(3570)*sqrt(618970773821 + 357609122940*sqrt(3)) - 37047679*sqrt(1190)*sqrt(618970773821 + 357609122940*sqrt(3)) + 88430715084*sqrt(1785)*sqrt(130462 + 78261*sqrt(3)) + 181739251822*sqrt(595)*sqrt(130462 + 78261*sqrt(3)) + 74095358*sqrt(1190)*sqrt(570261923807 + 329275554204*sqrt(3)) + 83958102*sqrt(3570)*sqrt(570261923807 + 329275554204*sqrt(3)))/2395316847"
+                  ]
+                ],
+                [
+                  [
+                    "64*(-5780694*sqrt(3570)*sqrt(570261923807 + 329275554204*sqrt(3)) - 4112686*sqrt(1190)*sqrt(618970773821 + 357609122940*sqrt(3)) - 3225079919*sqrt(595)*sqrt(130462 + 78261*sqrt(3)) - 574654038*sqrt(1785)*sqrt(122146 + 70935*sqrt(3)) + 287327019*sqrt(1785)*sqrt(130462 + 78261*sqrt(3)) + 6450159838*sqrt(595)*sqrt(122146 + 70935*sqrt(3)) + 2890347*sqrt(3570)*sqrt(618970773821 + 357609122940*sqrt(3)) + 8225372*sqrt(1190)*sqrt(570261923807 + 329275554204*sqrt(3)))/1233951103"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-8*(-146242655*sqrt(1190)*sqrt(618970773821 + 357609122940*sqrt(3)) - 80058498*sqrt(3570)*sqrt(570261923807 + 329275554204*sqrt(3)) - 194504034048*sqrt(1785)*sqrt(122146 + 70935*sqrt(3)) - 132461671972*sqrt(595)*sqrt(122146 + 70935*sqrt(3)) + 66230835986*sqrt(595)*sqrt(130462 + 78261*sqrt(3)) + 97252017024*sqrt(1785)*sqrt(130462 + 78261*sqrt(3)) + 40029249*sqrt(3570)*sqrt(618970773821 + 357609122940*sqrt(3)) + 292485310*sqrt(1190)*sqrt(570261923807 + 329275554204*sqrt(3)))/2395316847"
+                  ]
+                ],
+                [
+                  [
+                    "-32*(-7049622*sqrt(3570)*sqrt(570261923807 + 329275554204*sqrt(3)) - 4962851*sqrt(1190)*sqrt(618970773821 + 357609122940*sqrt(3)) - 3999068728*sqrt(595)*sqrt(130462 + 78261*sqrt(3)) - 590834004*sqrt(1785)*sqrt(122146 + 70935*sqrt(3)) + 295417002*sqrt(1785)*sqrt(130462 + 78261*sqrt(3)) + 7998137456*sqrt(595)*sqrt(122146 + 70935*sqrt(3)) + 3524811*sqrt(3570)*sqrt(618970773821 + 357609122940*sqrt(3)) + 9925702*sqrt(1190)*sqrt(570261923807 + 329275554204*sqrt(3)))/1233951103"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_1",
+      "candidate_index": 17,
+      "coefficient_coordinate": {
+        "phase_normalizations_by_target_parity": {
+          "axial": [
+            "sqrt(pi)"
+          ],
+          "polar": [
+            "sqrt(pi)"
+          ]
+        },
+        "statement": "the stored reduced pairing is multiplied by a fixed nonzero target-coordinate phase; zero loci are unchanged"
+      },
+      "complex_amplitude_variables": 20,
+      "fibre_id": "L1_candidate_17",
+      "first_branch": "q_minus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 1,
+      "reduced_internal_coefficients": 4,
+      "rho": "10*(9*sqrt(3) + 77)/8529",
+      "scalar_magnetic_equations": 6,
+      "second_branch": "q_plus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        2
+      ],
+      "target_branch": "extra",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "240*(-198525505*sqrt(8529)*sqrt(9*sqrt(3) + 77) - 13728*sqrt(5686)*sqrt(505171143*sqrt(3) + 4634380189) + 160450105*sqrt(2843)*sqrt(9*sqrt(3) + 77) + 11392*sqrt(17058)*sqrt(505171143*sqrt(3) + 4634380189))/22978971107"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "80*(-13784908539*sqrt(5686)*sqrt(22526540085*sqrt(3) + 43470169783) - 8575713243*sqrt(17058)*sqrt(505171143*sqrt(3) + 4634380189) - 25036790401359*sqrt(8529)*sqrt(9*sqrt(3) + 77) - 36876364241389*sqrt(2843)*sqrt(9*sqrt(3) + 77) - 24640*sqrt(2843)*sqrt(28200884741215011*sqrt(3) + 278982461030424023) - 2880*sqrt(8529)*sqrt(28200884741215011*sqrt(3) + 278982461030424023) + 15065591754*sqrt(17058)*sqrt(1770881791 - 809969907*sqrt(3)) + 30870308418*sqrt(5686)*sqrt(1770881791 - 809969907*sqrt(3)) + 11338689339*sqrt(5686)*sqrt(505171143*sqrt(3) + 4634380189) + 7036759797*sqrt(17058)*sqrt(22526540085*sqrt(3) + 43470169783))/587962933714809"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-256*(-1212061477586892734*sqrt(42645)*sqrt(6493 - 2121*sqrt(3)) - 815931228218572962*sqrt(14215)*sqrt(6493 - 2121*sqrt(3)) - 203182320721811850*sqrt(14215)*sqrt(8709*sqrt(3) + 27127) - 636534478136810*sqrt(85290)*sqrt(45674985*sqrt(3) + 101819933) - 35925535211220*sqrt(28430)*sqrt(45674985*sqrt(3) + 101819933) + 4952489760*sqrt(14215)*sqrt(2706606364773975*sqrt(3) + 6078116384785501) + 99147813920*sqrt(42645)*sqrt(2706606364773975*sqrt(3) + 6078116384785501) + 564191804780013313*sqrt(42645)*sqrt(8709*sqrt(3) + 27127))/5014735861653605961"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "256*(-533303636302746157*sqrt(42645)*sqrt(8709*sqrt(3) + 27127) - 481642077827680*sqrt(85290)*sqrt(15627839 - 2045757*sqrt(3)) + 1805694840*sqrt(14215)*sqrt(946332627477823 - 131208780121539*sqrt(3)) + 35222235813090*sqrt(28430)*sqrt(15627839 - 2045757*sqrt(3)) + 70296047320*sqrt(42645)*sqrt(946332627477823 - 131208780121539*sqrt(3)) + 157405965502947426*sqrt(14215)*sqrt(8709*sqrt(3) + 27127) + 880969615654587930*sqrt(14215)*sqrt(6493 - 2121*sqrt(3)) + 1200080709559908026*sqrt(42645)*sqrt(6493 - 2121*sqrt(3)))/5014735861653605961"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "DIFFERENCE",
+      "temporal_signs": [
+        1,
+        -1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_3",
+      "candidate_index": 18,
+      "coefficient_coordinate": {
+        "phase_normalizations_by_target_parity": {
+          "axial": [
+            "sqrt(pi)"
+          ],
+          "polar": [
+            "sqrt(pi)"
+          ]
+        },
+        "statement": "the stored reduced pairing is multiplied by a fixed nonzero target-coordinate phase; zero loci are unchanged"
+      },
+      "complex_amplitude_variables": 30,
+      "fibre_id": "L3_candidate_18",
+      "first_branch": "p_extra",
+      "first_branch_multiplicity_per_parity": 2,
+      "output_ell": 3,
+      "reduced_internal_coefficients": 8,
+      "rho": "(-12586 + 1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3))/25497",
+      "scalar_magnetic_equations": 14,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        2
+      ],
+      "target_branch": "q_plus",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "8*(-3718782047936724*sqrt(594930)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 123398) - 3612533689190559*sqrt(297465)*sqrt(-1335*sqrt(3) + 3242*sqrt(6) + 25164*sqrt(2) + 51319) - 1588048368906928*sqrt(297465)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 123398) - 1953410050344174*sqrt(99155)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 123398) + 1666885214027019*sqrt(198310)*sqrt(-1335*sqrt(3) + 3242*sqrt(6) + 25164*sqrt(2) + 51319) + 2002272297432518*sqrt(594930)*sqrt(-1335*sqrt(3) + 3242*sqrt(6) + 25164*sqrt(2) + 51319) + 2902742221810490*sqrt(198310)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 123398) + 11760864269818153*sqrt(99155)*sqrt(-1335*sqrt(3) + 3242*sqrt(6) + 25164*sqrt(2) + 51319))/36523245034262007"
+                  ],
+                  [
+                    "8*(-46965564123*sqrt(297465)*sqrt(39626581833823 + 69757908791526*sqrt(2) + 56003816008032*sqrt(6) + 108075920745393*sqrt(3)) - 3998491285153776*sqrt(594930)*sqrt(-12586 + 1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3)) - 1248509688712060*sqrt(297465)*sqrt(-12586 + 1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3)) - 1989113517700026*sqrt(99155)*sqrt(-12586 + 1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3)) - 4482631677*sqrt(198310)*sqrt(39626581833823 + 69757908791526*sqrt(2) + 56003816008032*sqrt(6) + 108075920745393*sqrt(3)) + 17239557012*sqrt(594930)*sqrt(39626581833823 + 69757908791526*sqrt(2) + 56003816008032*sqrt(6) + 108075920745393*sqrt(3)) + 3792225419467778*sqrt(198310)*sqrt(-12586 + 1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3)) + 113848768349*sqrt(99155)*sqrt(39626581833823 + 69757908791526*sqrt(2) + 56003816008032*sqrt(6) + 108075920745393*sqrt(3)))/36523245034262007"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-8*(-161906978843809786076040*sqrt(35)*sqrt(3100457376596411282 + 2701960274298084462*sqrt(2) + 2814512436710915308*sqrt(6) + 4382158511320579371*sqrt(3)) - 14055954928529395897981930986*sqrt(35)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) - 28310774906727375865200*sqrt(210)*sqrt(3100457376596411282 + 2701960274298084462*sqrt(2) + 2814512436710915308*sqrt(6) + 4382158511320579371*sqrt(3)) - 3980768426529561736953034737*sqrt(35)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) - 2810188790495421597429628491*sqrt(70)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) - 2890458295844737361160*sqrt(70)*sqrt(3100457376596411282 + 2701960274298084462*sqrt(2) + 2814512436710915308*sqrt(6) + 4382158511320579371*sqrt(3)) + 438761477215805732542467298*sqrt(210)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) + 779575901849310934871903313*sqrt(105)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) + 1901089507485469597220053044*sqrt(70)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) + 2757257127752557914760798854*sqrt(210)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) + 8648752607481754686248811708*sqrt(105)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) + 118713205800172019921740*sqrt(105)*sqrt(3100457376596411282 + 2701960274298084462*sqrt(2) + 2814512436710915308*sqrt(6) + 4382158511320579371*sqrt(3)))/1182574378956065025007571839695"
+                  ],
+                  [
+                    "-8*(-31370832721370584870092331014*sqrt(35)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) - 29782826310435002453097106362*sqrt(35)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) - 11537381087280603000129454992*sqrt(70)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) - 199237982127863474361600*sqrt(35)*sqrt(3100457376596411282 + 2701960274298084462*sqrt(2) + 2814512436710915308*sqrt(6) + 4382158511320579371*sqrt(3)) - 3199833379354050670778866904*sqrt(210)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) - 18160299715442464684080*sqrt(210)*sqrt(3100457376596411282 + 2701960274298084462*sqrt(2) + 2814512436710915308*sqrt(6) + 4382158511320579371*sqrt(3)) + 17020778348774165789580*sqrt(70)*sqrt(3100457376596411282 + 2701960274298084462*sqrt(2) + 2814512436710915308*sqrt(6) + 4382158511320579371*sqrt(3)) + 2611006750894766174318515383*sqrt(70)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) + 3043258112524201002061572906*sqrt(105)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) + 20581529131957015339054458936*sqrt(105)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) + 15752588239939915404917627733*sqrt(210)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) + 263501416377513942855040*sqrt(105)*sqrt(3100457376596411282 + 2701960274298084462*sqrt(2) + 2814512436710915308*sqrt(6) + 4382158511320579371*sqrt(3)))/3547723136868195075022715519085"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-128*(-311289996115871609679*sqrt(594930)*sqrt(-1335*sqrt(3) + 3242*sqrt(6) + 25164*sqrt(2) + 51319) - 3159442354305312*sqrt(594930)*sqrt(43137605198628*sqrt(3) + 36236891391198*sqrt(6) + 187991458826967*sqrt(2) + 281744471969653) - 6072826861493928*sqrt(99155)*sqrt(43137605198628*sqrt(3) + 36236891391198*sqrt(6) + 187991458826967*sqrt(2) + 281744471969653) - 353338959424259412090*sqrt(99155)*sqrt(-1335*sqrt(3) + 3242*sqrt(6) + 25164*sqrt(2) + 51319) - 31985505146494379034*sqrt(297465)*sqrt(-1335*sqrt(3) + 3242*sqrt(6) + 25164*sqrt(2) + 51319) - 5414538293028066111*sqrt(297465)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 123398) + 68157992147107941310*sqrt(594930)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 123398) + 216560387808137919702*sqrt(198310)*sqrt(-1335*sqrt(3) + 3242*sqrt(6) + 25164*sqrt(2) + 51319) + 162782744683924641303*sqrt(198310)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 123398) + 2641108648682016*sqrt(297465)*sqrt(43137605198628*sqrt(3) + 36236891391198*sqrt(6) + 187991458826967*sqrt(2) + 281744471969653) + 397614686932205381507*sqrt(99155)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 123398) + 4916573009639152*sqrt(198310)*sqrt(43137605198628*sqrt(3) + 36236891391198*sqrt(6) + 187991458826967*sqrt(2) + 281744471969653))/931233178638578392479"
+                  ],
+                  [
+                    "-128*(-3375936307629990*sqrt(594930)*sqrt(39626581833823 + 69757908791526*sqrt(2) + 56003816008032*sqrt(6) + 108075920745393*sqrt(3)) - 3215599207567344*sqrt(594930)*sqrt(11917974382549 + 14148546924663*sqrt(2) + 18180628819326*sqrt(6) + 30266378142804*sqrt(3)) - 4021685180191728*sqrt(99155)*sqrt(39626581833823 + 69757908791526*sqrt(2) + 56003816008032*sqrt(6) + 108075920745393*sqrt(3)) - 5283769431166344*sqrt(99155)*sqrt(11917974382549 + 14148546924663*sqrt(2) + 18180628819326*sqrt(6) + 30266378142804*sqrt(3)) - 40765050704250950289*sqrt(297465)*sqrt(-12586 + 1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3)) + 315376517119782*sqrt(297465)*sqrt(39626581833823 + 69757908791526*sqrt(2) + 56003816008032*sqrt(6) + 108075920745393*sqrt(3)) + 130306780254390042879*sqrt(198310)*sqrt(-12586 + 1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3)) + 79157779519623676204*sqrt(594930)*sqrt(-12586 + 1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3)) + 3024817446251064*sqrt(297465)*sqrt(11917974382549 + 14148546924663*sqrt(2) + 18180628819326*sqrt(6) + 30266378142804*sqrt(3)) + 433611808516928700089*sqrt(99155)*sqrt(-12586 + 1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3)) + 3439829100726375*sqrt(198310)*sqrt(39626581833823 + 69757908791526*sqrt(2) + 56003816008032*sqrt(6) + 108075920745393*sqrt(3)) + 6747842212062304*sqrt(198310)*sqrt(11917974382549 + 14148546924663*sqrt(2) + 18180628819326*sqrt(6) + 30266378142804*sqrt(3)))/931233178638578392479"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-64*(-630365648293160601120837554*sqrt(105)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) - 499553077926210603293860343*sqrt(210)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) - 196329303297830478007841085*sqrt(210)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) + 30604505992288946025323232*sqrt(35)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) + 133892733022918522266147333*sqrt(70)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) + 229041035299420299284291334*sqrt(105)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) + 535895593160249162580897420*sqrt(35)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) + 1326797096447039902402928607*sqrt(70)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)))/131397153217340558334174648855"
+                  ],
+                  [
+                    "256*(-374316340695562065636321552*sqrt(70)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) - 126787094987852080939066008*sqrt(70)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) - 163188955025621600531666142*sqrt(35)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) - 79494920487110899564143975*sqrt(35)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) + 31283352451151309817803646*sqrt(105)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) + 116296002829158145024286693*sqrt(210)*sqrt(-29526751 + 439989255*sqrt(2) + 329593601*sqrt(6) + 799950525*sqrt(3)) + 107391303493026886137163995*sqrt(210)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)) + 158748927244512323442857459*sqrt(105)*sqrt(-782856251 + 483632536*sqrt(6) + 1511736390*sqrt(2) + 1420301460*sqrt(3)))/131397153217340558334174648855"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "SUM",
+      "temporal_signs": [
+        1,
+        1
+      ]
+    },
+    {
+      "angular_map": "cg_2x2_to_1",
+      "candidate_index": 20,
+      "coefficient_coordinate": {
+        "phase_normalizations_by_target_parity": {
+          "axial": [
+            "sqrt(pi)"
+          ],
+          "polar": [
+            "sqrt(pi)"
+          ]
+        },
+        "statement": "the stored reduced pairing is multiplied by a fixed nonzero target-coordinate phase; zero loci are unchanged"
+      },
+      "complex_amplitude_variables": 20,
+      "fibre_id": "L1_candidate_20",
+      "first_branch": "q_plus",
+      "first_branch_multiplicity_per_parity": 1,
+      "output_ell": 1,
+      "reduced_internal_coefficients": 4,
+      "rho": "-10*(-77 + 9*sqrt(3))/8529",
+      "scalar_magnetic_equations": 6,
+      "second_branch": "q_minus",
+      "second_branch_multiplicity_per_parity": 1,
+      "signed_momenta": [
+        1,
+        2
+      ],
+      "target_branch": "extra",
+      "target_cokernel_dimension_per_parity": 1,
+      "target_equations": [
+        {
+          "target_component_count": 1,
+          "target_parity": "axial",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-240*(-198525505*sqrt(8529)*sqrt(77 - 9*sqrt(3)) - 160450105*sqrt(2843)*sqrt(77 - 9*sqrt(3)) + 13728*sqrt(5686)*sqrt(4634380189 - 505171143*sqrt(3)) + 11392*sqrt(17058)*sqrt(4634380189 - 505171143*sqrt(3)))/22978971107"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "axial"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "-80*(-30870308418*sqrt(5686)*sqrt(809969907*sqrt(3) + 1770881791) - 8575713243*sqrt(17058)*sqrt(4634380189 - 505171143*sqrt(3)) - 11338689339*sqrt(5686)*sqrt(4634380189 - 505171143*sqrt(3)) - 25036790401359*sqrt(8529)*sqrt(77 - 9*sqrt(3)) - 2880*sqrt(8529)*sqrt(278982461030424023 - 28200884741215011*sqrt(3)) + 24640*sqrt(2843)*sqrt(278982461030424023 - 28200884741215011*sqrt(3)) + 36876364241389*sqrt(2843)*sqrt(77 - 9*sqrt(3)) + 7036759797*sqrt(17058)*sqrt(43470169783 - 22526540085*sqrt(3)) + 13784908539*sqrt(5686)*sqrt(43470169783 - 22526540085*sqrt(3)) + 15065591754*sqrt(17058)*sqrt(809969907*sqrt(3) + 1770881791))/587962933714809"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "polar"
+            }
+          ]
+        },
+        {
+          "target_component_count": 1,
+          "target_parity": "polar",
+          "terms": [
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "256*(-1212061477586892734*sqrt(42645)*sqrt(2121*sqrt(3) + 6493) - 636534478136810*sqrt(85290)*sqrt(101819933 - 45674985*sqrt(3)) - 4952489760*sqrt(14215)*sqrt(6078116384785501 - 2706606364773975*sqrt(3)) + 35925535211220*sqrt(28430)*sqrt(101819933 - 45674985*sqrt(3)) + 99147813920*sqrt(42645)*sqrt(6078116384785501 - 2706606364773975*sqrt(3)) + 203182320721811850*sqrt(14215)*sqrt(27127 - 8709*sqrt(3)) + 815931228218572962*sqrt(14215)*sqrt(2121*sqrt(3) + 6493) + 564191804780013313*sqrt(42645)*sqrt(27127 - 8709*sqrt(3)))/5014735861653605961"
+                  ]
+                ]
+              ],
+              "first_parity": "axial",
+              "second_parity": "polar"
+            },
+            {
+              "coefficient_matrices": [
+                [
+                  [
+                    "256*(-1200080709559908026*sqrt(42645)*sqrt(2121*sqrt(3) + 6493) - 70296047320*sqrt(42645)*sqrt(131208780121539*sqrt(3) + 946332627477823) + 1805694840*sqrt(14215)*sqrt(131208780121539*sqrt(3) + 946332627477823) + 35222235813090*sqrt(28430)*sqrt(2045757*sqrt(3) + 15627839) + 481642077827680*sqrt(85290)*sqrt(2045757*sqrt(3) + 15627839) + 157405965502947426*sqrt(14215)*sqrt(27127 - 8709*sqrt(3)) + 880969615654587930*sqrt(14215)*sqrt(2121*sqrt(3) + 6493) + 533303636302746157*sqrt(42645)*sqrt(27127 - 8709*sqrt(3)))/5014735861653605961"
+                  ]
+                ]
+              ],
+              "first_parity": "polar",
+              "second_parity": "axial"
+            }
+          ]
+        }
+      ],
+      "temporal_channel": "DIFFERENCE",
+      "temporal_signs": [
+        1,
+        -1
+      ]
+    }
+  ],
+  "provenance": {
+    "input_sha256": {
+      "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_axial_L4_matrix.json": "d4e0c7176835dd0105a1d061bb0ee78a904274b6a48ce087047395124a1babcd",
+      "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_polar_L4_matrix.json": "a2641007fcceed49c5ba81e0b90f3495a125542012f790d5123a645e834154bc",
+      "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L1_L3_matrix.json": "5eb8b3430aa27d323ae29424d5db41c4a8e04a55425d73608d606f259331d60e",
+      "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_polar_axial_L4_matrix.json": "0576ff6c1dd9ed3a341982139ed0855bd2d7024769db72d0a46de388e0440f68",
+      "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_polar_polar_L4_matrix.json": "768207539cdf1c7707374f22ba23c0abb2ae9170235e4908b05a27adb0270345"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CROSS_FIBRE_AMPLITUDE_SYSTEM",
+  "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-cross-fibre-amplitude-system-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system.schema.json",
+  "schema_sha256": "04a8bcf36d5f9115f9bbebf37b723c44a440ad59b7a3842cc6e03adfd63781e8",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; each algebraic circumference is a separate fibre",
+    "carrier": "all complex positive-frequency ell=2 amplitudes on |n|=1 and |n|=2 for the certified isolated cross-fibre collisions",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": "2 times 2 -> L=1,3,4",
+    "k": "signed |n|=1 and |n|=2 pairs retained row by row",
+    "m": "all m=-2,...,2 inputs and every output M",
+    "omega": "certified SUM or signed DIFFERENCE channel retained row by row",
+    "parity": "both input parities and both target parities retained",
+    "theory": "Weyl-Maxwell target"
+  },
+  "summary": {
+    "L1_fibres": 3,
+    "L3_fibres": 6,
+    "L4_fibres": 12,
+    "certified_reduced_internal_coefficients": 164,
+    "factorized_complex_scalar_magnetic_equations": 418,
+    "nonzero_reduced_internal_coefficients": 162,
+    "ordered_branch_basis_fixtures": 128,
+    "pairwise_distinct_algebraic_circumference_fibres": 21,
+    "target_parity_adjoint_equations_before_M_expansion": 54,
+    "zero_reduced_internal_coefficients": 2
+  }
+}

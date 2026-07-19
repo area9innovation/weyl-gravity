@@ -488,6 +488,16 @@ def verify() -> None:
         raise AssertionError("complete cross-fibre correction classes were merged")
     if "164 of 164 branch-basis scalar coefficients" not in completion["claim_boundary"] or "not the arbitrary-amplitude zero variety" not in completion["claim_boundary"]:
         raise AssertionError("complete cross-fibre basis row exceeded its amplitude scope")
+    assembly = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_cross_fibre_amplitude_system"]
+    assembly_second = assembly["mode_data"]["second_order"]
+    if assembly["descriptions"]["nonlinear"] != "OPEN" or "twenty-one pairwise distinct physical circumference" not in assembly["mode_data"]["dispersion"]["statement"]:
+        raise AssertionError("cross-fibre amplitude background partition was hidden")
+    if "54 target-parity/adjoint equations" not in assembly["mode_data"]["lee_wald"]["statement"] or "128 ordered branch-basis fixtures" not in assembly["mode_data"]["lee_wald"]["statement"] or "418 complex scalar magnetic" not in assembly["mode_data"]["lee_wald"]["statement"] or assembly["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("cross-fibre amplitude system was hidden")
+    if assembly["mode_data"]["taub_maps"]["status"] != "OPEN" or assembly_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or assembly_second["smooth_secular"]["status"] != "OPEN" or assembly_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("cross-fibre amplitude correction classes were merged")
+    if "not an irreducible zero-variety decomposition" not in assembly["claim_boundary"]:
+        raise AssertionError("cross-fibre amplitude system exceeded its zero-variety scope")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]
     if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:

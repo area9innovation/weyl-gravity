@@ -97,6 +97,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_polar_axial_L4_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_polar_axial_L4_matrix.json",
     "ell2_two_abs_momentum_nonaxisymmetric_L3_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L3_matrix.json",
     "ell2_two_abs_momentum_nonaxisymmetric_L1_L3_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L1_L3_matrix.json",
+    "ell2_two_abs_momentum_cross_fibre_amplitude_system": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
@@ -901,6 +902,18 @@ def entries() -> list[dict[str, object]]:
             "This final L1 row closes 164 of 164 branch-basis scalar coefficients across the separately certified L1, L3 and L4 matrices, not the arbitrary-amplitude zero variety or complete two-fibre tangent cone. Smooth-secular, causal, residual, observational and quantum lifecycles remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ell2_two_abs_momentum_cross_fibre_amplitude_system",
+            _scope(theory="Weyl-Maxwell target", boundaries="twenty-one separately tuned closed S1_L times S2 circumference fibres; before final residual quotient", carrier="factorized all-m bilinear resonance systems for complex positive-frequency ell=2 amplitudes on |n|=1 and |n|=2", degree=2, parity="both input and target parities retained with branch multiplicity matrices", ell="input 2 x 2; three L=1, six L=3 and twelve L=4 fibres", m="all input m=-2,...,2 and every output M through exact normalized Clebsch-Gordan tensors", k="row-specific signed compact momenta; physical circumference fibres kept separate", omega="row-specific signed SUM or DIFFERENCE channel; negative-frequency equations are conjugate", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","Exact algebraic comparison partitions the workload into twenty-one pairwise distinct physical circumference fibres; amplitudes are never cancelled across different backgrounds."),
+            ("CERTIFIED","The 54 target-parity/adjoint equations on 128 ordered branch-basis fixtures contain 164 action-derived internal coefficients (162 nonzero, two zero components); branch-multiplicity matrices and normalized Clebsch-Gordan maps lift them to 418 complex scalar magnetic equations."),
+            ("OPEN","The five compact stabilizer moment maps have not yet been joined to the twenty-one fibrewise resonance systems."),
+            ("CERTIFIED","The complete factorized cross-fibre equations and both mandatory one-fibre-zero planes are explicit; nontrivial mixed components remain undecomposed."),
+            _second_order(("OPEN","The irreducible mixed zero varieties, same-fibre quadratic sources and intersection with the stabilizer moment maps remain open."),("OPEN","Smooth-secular correction classes are not classified on the factorized amplitude varieties."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_cross_fibre_amplitude_system","ell2_two_abs_momentum_nonaxisymmetric_L1_L3_completion","ell2_two_abs_momentum_polar_axial_L4_matrix","ell2_two_abs_momentum_parity_workload","abstract_cone"),
+            "This is the complete necessary cross-fibre resonance system, not an irreducible zero-variety decomposition or tangent-cone theorem. Same-fibre sources, Taub intersections and higher correction classes remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
             _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with circumference tuned to the displayed allowed nonzero momentum; before final residual quotient", carrier="constant twist position plus paired axisymmetric +/-k Einstein-plus/minus standing waves", degree=2, parity="generic input parity retained; polar extra resonant output", ell="every one fixed integer ell>=2 with output L=2ell", m="m_A=0 inputs and M=0 output", k="one tuned allowed nonzero +/-k pair", omega="q-plus/minus inputs and p-primary sum-frequency output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
@@ -1466,6 +1479,35 @@ def build() -> dict[str, object]:
         or completion["causal_or_quantum_claim"]
     ):
         raise AssertionError("complete branch-basis matrix exceeded its scope")
+    assembly_value = records["ell2_two_abs_momentum_cross_fibre_amplitude_system"]
+    assembly = assembly_value["classification"]
+    assembly_summary = assembly_value["summary"]
+    if not (
+        assembly["all_certified_cross_fibre_coefficients_lifted_to_all_m_equations"]
+        and assembly["physical_circumference_fibres_kept_separate"]
+        and assembly["factorized_cross_fibre_resonance_system_certified"]
+        and assembly["mandatory_first_fibre_zero_plane_certified"]
+        and assembly["mandatory_second_fibre_zero_plane_certified"]
+        and assembly_summary["pairwise_distinct_algebraic_circumference_fibres"] == 21
+        and assembly_summary["L1_fibres"] == 3
+        and assembly_summary["L3_fibres"] == 6
+        and assembly_summary["L4_fibres"] == 12
+        and assembly_summary["target_parity_adjoint_equations_before_M_expansion"] == 54
+        and assembly_summary["ordered_branch_basis_fixtures"] == 128
+        and assembly_summary["certified_reduced_internal_coefficients"] == 164
+        and assembly_summary["nonzero_reduced_internal_coefficients"] == 162
+        and assembly_summary["zero_reduced_internal_coefficients"] == 2
+        and assembly_summary["factorized_complex_scalar_magnetic_equations"] == 418
+    ):
+        raise AssertionError("two-absolute-momentum cross-fibre amplitude system changed")
+    if (
+        assembly["irreducible_zero_variety_decomposition_classified"]
+        or assembly["taub_common_zero_intersection_classified"]
+        or assembly["same_fibre_quadratic_sources_classified"]
+        or assembly["complete_two_fibre_tangent_cone_classified"]
+        or assembly["causal_or_quantum_claim"]
+    ):
+        raise AssertionError("cross-fibre amplitude system exceeded its scope")
     if l3["arbitrary_amplitude_zero_variety_classified"] or l3["causal_or_quantum_claim"]:
         raise AssertionError("nonaxisymmetric L3 matrix exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:

@@ -1,0 +1,49 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CROSS_FIBRE_AMPLITUDE_SYSTEM_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Factorized all-m complex amplitude resonance system obtained from all 164 certified cross-|n| internal coefficients on twenty-one separately tuned physical circumference fibres.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system.json": "7c4e0ac43d1db48098d1250e09abdefbf209758167882b68239c6c9841c71046",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system.py": "ccb8ec369942110cdd3060ac2f55575a05a17193d64f4ef5c3d5aeb3e0a9bb6a",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system.schema.json": "04a8bcf36d5f9115f9bbebf37b723c44a440ad59b7a3842cc6e03adfd63781e8",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system.py": "efc1dc45226d3c98a45a5d78d2a032897a705e3027aea17e33110af729fcd37a",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system.py": "a05cc5f5de3b082628794fd091e5c4010b69fd17799d8a68ebe65ef24b361d4c",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-cross-fibre-amplitude-system.md": "81938cda874af7f9b65ab8514815bfdb8eb0c40176faf2da76944b45006b13bf"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds_independent_verifier": 3.64,
+      "independent_verifier_max_rss_kib": 71940,
+      "tests_run": 70,
+      "commands": [
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 31.37,
+      "max_rss_kib": 68536,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system --check",
+      "reason": "The exact replay normalizes every L4 axisymmetric coefficient, retains odd-L target phases, verifies all twenty-one algebraic circumference fibres separately, and assembles 418 complex scalar magnetic equations from all 164 internal coefficients."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a factorized necessary resonance-system gate, not an irreducible zero-variety decomposition, Taub intersection, complete tangent-cone freeze or shared-core algebra change."
+    }
+  },
+  "claim_boundary": "Both one-fibre-zero planes are certified components of every bilinear zero locus. Nontrivial mixed components, same-fibre sources, Taub intersections, complete bounded and smooth-secular tangent cones, causal maps, residual observables and quantum claims remain OPEN or NO_CERTIFIED_MAP."
+}

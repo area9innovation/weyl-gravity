@@ -193,6 +193,21 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("164 of 164 branch-basis scalar coefficients", entry["claim_boundary"])
         self.assertIn("not the arbitrary-amplitude zero variety", entry["claim_boundary"])
 
+    def test_cross_fibre_amplitude_system_stays_factorized_and_open(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_cross_fibre_amplitude_system"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertIn("twenty-one pairwise distinct physical circumference", entry["mode_data"]["dispersion"]["statement"])
+        self.assertIn("54 target-parity/adjoint equations", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("128 ordered branch-basis fixtures", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("418 complex scalar magnetic", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not an irreducible zero-variety decomposition", entry["claim_boundary"])
+
     def test_nonaxisymmetric_l3_matrix_closes_basis_not_cone(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
         second = entry["mode_data"]["second_order"]

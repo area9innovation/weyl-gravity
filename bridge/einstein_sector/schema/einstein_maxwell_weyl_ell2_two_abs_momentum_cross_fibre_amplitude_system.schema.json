@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-cross-fibre-amplitude-system-v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "dependency_tags",
+    "lifecycle_state",
+    "scope",
+    "amplitude_convention",
+    "angular_maps",
+    "physical_fibres",
+    "summary",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-ell2-two-abs-momentum-cross-fibre-amplitude-system-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CROSS_FIBRE_AMPLITUDE_SYSTEM"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "angular_maps": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "input_ell", "output_ell", "convention", "outputs"]
+      }
+    },
+    "physical_fibres": {
+      "type": "array",
+      "minItems": 21,
+      "maxItems": 21,
+      "items": {
+        "type": "object",
+        "required": [
+          "fibre_id",
+          "candidate_index",
+          "rho",
+          "output_ell",
+          "temporal_channel",
+          "temporal_signs",
+          "signed_momenta",
+          "first_branch",
+          "second_branch",
+          "target_branch",
+          "first_branch_multiplicity_per_parity",
+          "second_branch_multiplicity_per_parity",
+          "target_cokernel_dimension_per_parity",
+          "complex_amplitude_variables",
+          "reduced_internal_coefficients",
+          "scalar_magnetic_equations",
+          "angular_map",
+          "coefficient_coordinate",
+          "target_equations"
+        ],
+        "properties": {
+          "output_ell": {"enum": [1, 3, 4]},
+          "target_equations": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "required": ["target_parity", "target_component_count", "terms"]
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "pairwise_distinct_algebraic_circumference_fibres",
+        "L1_fibres",
+        "L3_fibres",
+        "L4_fibres",
+        "target_parity_adjoint_equations_before_M_expansion",
+        "ordered_branch_basis_fixtures",
+        "certified_reduced_internal_coefficients",
+        "nonzero_reduced_internal_coefficients",
+        "zero_reduced_internal_coefficients",
+        "factorized_complex_scalar_magnetic_equations"
+      ]
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "all_certified_cross_fibre_coefficients_lifted_to_all_m_equations",
+        "physical_circumference_fibres_kept_separate",
+        "factorized_cross_fibre_resonance_system_certified",
+        "mandatory_first_fibre_zero_plane_certified",
+        "mandatory_second_fibre_zero_plane_certified",
+        "irreducible_zero_variety_decomposition_classified",
+        "taub_common_zero_intersection_classified",
+        "same_fibre_quadratic_sources_classified",
+        "complete_two_fibre_tangent_cone_classified",
+        "smooth_secular_classified",
+        "causal_or_quantum_claim"
+      ]
+    }
+  }
+}
