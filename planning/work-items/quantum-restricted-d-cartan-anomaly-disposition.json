@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-restricted-d-cartan-anomaly-disposition",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-restricted-d-cartan-anomaly-disposition",
+  "source": {
+    "path": "planning/work-items/quantum-restricted-d-cartan-anomaly-disposition.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum-qme",
+    "state": "PROPOSED",
+    "objective": "Turn the sector-restricted anomaly calculation into the first exact quantum disposition of the D-Cartan identity on each declared zero-charge or clock sector.",
+    "stop_condition": "Import the terminal sector-restriction certificate and the certified classical identities [Q,iota_D]=L_D (or the exact Berger K_Berger replacement where applicable).  Compute the induced ghost-number-one Cartan defect A_D on the complete declared restricted cochain carrier, including measure and zero-mode contributions available at the dependency boundary.  Classify it as zero, BRST-exact with an explicit admissible counterterm/operator correction, nontrivial with an explicit cohomology witness, or SHORTFALL with a typed missing-input request.  Keep raw D and K_Berger distinct and produce exact producer/independent-verifier receipts.",
+    "current_gate": "sector-by-sector quantum Cartan defect classification",
+    "forbid": "no parity-only cyclic convention; no local Euclidean anomaly coefficient used as a Lorentzian operator identity without an imported bridge; no raw-D/K_Berger identification; no global anomaly, Hadamard, particle, positivity or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/quantum-strict-anomaly-restriction-zero-charge-sectors"
+    ],
+    "activates": [
+      "a corrected quantum Cartan contraction on any sector with exact removable defect",
+      "or a scoped no-go for the D quotient on any sector with a nontrivial defect"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/",
+      "reports/",
+      "paper/12-quantum-weyl-one-loop-qme.tex",
+      "paper/12-quantum-weyl-one-loop-qme-claim-map.json",
+      "notes/quantum-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "QUANTUM CONTINGENT RUNWAY.  Pull only after the restriction theorem lands; classify the exact defect rather than assuming anomaly freedom or failure.",
+    "notes": [
+      "This is the quantum version of the programme's central D-quotient question.",
+      "A local exactness witness must be admissible in the same field content and sector; the obstructed minimal compensator actions are not implicit counterterms."
+    ],
+    "input_commit": "c40cb43c4",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
