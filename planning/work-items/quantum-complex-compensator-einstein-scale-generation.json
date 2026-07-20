@@ -1,0 +1,52 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-complex-compensator-einstein-scale-generation",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-complex-compensator-einstein-scale-generation",
+  "source": {
+    "path": "planning/work-items/quantum-complex-compensator-einstein-scale-generation.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum",
+    "state": "PROPOSED",
+    "objective": "Decide whether the Einstein and cosmological scales in the complex-compensator theory are external inputs, gauge choices, genuine order parameters, or quantum-generated scales, and compute the resulting invariant low-energy action when that question is well defined.",
+    "stop_condition": "Import the terminal complex-compensator classical parent, its Einstein/additional exact sequence and the all-loop local counterterm module by exact hashes. Rewrite the renormalized action entirely in gauge-invariant variables, including g_hat and the physical phase, and identify every dimensionful datum already inserted through f, renormalization conditions, background choice or measure. Compute the beta functions and operator mixing for the Einstein-Hilbert, cosmological, C^2, R(g_hat)^2, phase and Maxwell directions in the declared formal algebra. Construct a gauge- and scheme-controlled effective-action or local-RG test for dimensional transmutation, with the applicable Nielsen/Slavnov-Taylor identities, and determine whether any nonzero scale is a gauge-invariant stationary datum rather than a choice of Weyl chart. If a scale is generated, derive the exact induced Planck coefficient, cosmological term, scalar spectrum and first decoupling conditions for additional fourth-order modes. If it is not, certify which scale must be supplied and why. Land independent beta/operator-mixing and Ward-identity checks plus a low-energy claim ledger that separates introduced, gauge-selected, spontaneous and anomaly-generated scales.",
+    "current_gate": "gauge-invariant origin and renormalization of the Einstein scale in the compensator extension",
+    "forbid": "no rho=f gauge choice called spontaneous breaking; no symbol f called a dynamically generated Planck scale; no Coleman-Weinberg potential interpreted without gauge and scheme identities; no Euclidean local effective action called a Lorentzian vacuum or stable phase; no heavy extra branch called decoupled without its pole, pairing and interaction analysis; no low-energy Einstein action promoted to scattering, phenomenology, Standard Model completion or quantum gravity",
+    "depends_on": [
+      "classical-complex-compensator-clock-bv-parent",
+      "bridge-compensator-einstein-extra-exact-sequence",
+      "quantum-tau-adic-all-loop-local-qme-stability"
+    ],
+    "activates": [
+      "an honest introduced-versus-generated Planck-scale verdict",
+      "a scoped invariant low-energy effective action for the changed theory",
+      "sf:program/work/quantum-complex-compensator-global-completion"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/local_bv/",
+      "quantum-weyl/anomalies/",
+      "quantum-weyl/spectral/",
+      "quantum-weyl/reports/",
+      "quantum-weyl/atlas/",
+      "bridge/",
+      "reports/",
+      "residual_atlas/",
+      "paper/",
+      "notes/d-quotient-quantum-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "LATE COMPENSATOR/BRIDGE GATE. Its purpose is to prevent the programme from quietly relabelling a gauge-fixed input f as emergent physics. A no-generation theorem with a precise required input is a successful result.",
+    "notes": [
+      "The classical bridge already asks for the exact Einstein-Hilbert coefficient; this item asks the distinct quantum question of where its scale comes from.",
+      "A gauge-invariant order parameter may fail to exist because the radial compensator is gauge. That failure is a substantive disposition, not a missing calculation.",
+      "Threshold or decoupling language is allowed only after the additional branch has an invariant pole and pairing interpretation in the same action."
+    ],
+    "input_commit": "29140f5c6717fe98e84d2e06b783753fff8de523",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
