@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-finite-harmonic-tier3-provenance-relock-ACTIVE-689f72fe259a8e49",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/bridge-finite-harmonic-tier3-provenance-relock-ACTIVE-689f72fe259a8e49.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "bridge-1", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-20T12:01:44Z", "seq": 1, "payload": {"target": "sf:program/work/bridge-finite-harmonic-tier3-provenance-relock", "to_state": "ACTIVE", "note": "pulled by bridge-1 (exclusive lease, expires 2026-07-21T00:01:44Z)"}, "native": {"authored_by": "sfc work-pull", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/bridge-finite-harmonic-tier3-provenance-relock"}]
+}

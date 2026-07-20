@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-finite-harmonic-tier3-provenance-relock-LEASE-RELEASE-excl-8b29da5de12c7df0",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/bridge-finite-harmonic-tier3-provenance-relock-LEASE-RELEASE-excl-8b29da5de12c7df0.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "bridge-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T23:51:38Z", "seq": 2, "predecessor": "sf:program/event/bridge-finite-harmonic-tier3-provenance-relock-LEASE-ACQUIRE-excl-6fa8aa02e045405a", "payload": {"target": "sf:program/work/bridge-finite-harmonic-tier3-provenance-relock", "agent": "bridge-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-20T23:51:38Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/bridge-finite-harmonic-tier3-provenance-relock"}]
+}
