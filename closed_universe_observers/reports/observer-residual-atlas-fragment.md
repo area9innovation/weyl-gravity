@@ -246,6 +246,14 @@ The unchanged leading detector response remains coordinate-level rank two,
 while full 112-row cohomology and response descent remain
 `NO_CERTIFIED_MAP`.
 
+The unary apparatus pushout is now `CERTIFIED` with a derived row count of
+160.  The 168-row direct sum is quotiented by eight independent relations
+identifying only two memories, two multipliers and their cotangents.  The
+remaining 48 material rows stay distinct.  The full-rank odd pairing,
+nilpotency, cyclicity, reality, \(K_{\rm Berger}\) commutation, embeddings,
+quotient and detector chain map pass.  The leading coordinate response is
+still rank two; its 160-row cohomological descent is `NO_CERTIFIED_MAP`.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.

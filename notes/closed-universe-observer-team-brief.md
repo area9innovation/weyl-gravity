@@ -2390,3 +2390,20 @@ coordinate level).  The active bridge is now the unary-only combination of
 this base with the dynamical apparatus parent.  Apparatus \(q_2,q_3\),
 \(\mathcal Z_2\), reduced memory, redshift, recoil and quantum promotion
 remain inactive.
+
+## Active bridge: combined 160-row apparatus unary
+
+The typed pushout of the positive-mixed 112-row base and 56-row material
+parent is certified.  Its 160 rows are derived from the 168-row direct sum
+by exactly eight semantic relations: two memories, two multipliers and their
+cotangents.  All 48 other material rows remain distinct from global scalar
+rods and massive emitters.  The complete unary, full-rank pairing, real and
+\(K_{\rm Berger}\) actions, embeddings, quotient, support sectors and
+detector-smearing chain map pass exactly.  The leading coordinate response
+remains rank two.
+
+The fail-closed atlas row is
+`observer.berger.interaction.apparatus_combined_q1_after_replacement_112`.
+The active gate is now the 160-row \(q_1\) cohomology, descended pairing and
+detector class.  Apparatus \(q_2,q_3\), \(\mathcal Z_2\), nonlinear memory,
+redshift, recoil and quantum claims remain inactive.

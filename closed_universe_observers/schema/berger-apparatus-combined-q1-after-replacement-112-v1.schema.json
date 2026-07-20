@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "atlas_status",
+    "dependency_tags", "dependency_refs", "payload_ref", "gate_results",
+    "next_gate", "claim_boundary", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-apparatus-combined-q1-after-replacement-112-v1"},
+    "result_id": {"const": "BERGER_APPARATUS_COMBINED_Q1_AFTER_REPLACEMENT_112"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "dependency_refs": {"type": "object", "minProperties": 6},
+    "payload_ref": {
+      "type": "object",
+      "required": ["path", "result_id", "sha256", "canonical_sha256"]
+    },
+    "gate_results": {
+      "type": "object",
+      "properties": {
+        "typed_160_row_pushout": {"const": "CERTIFIED"},
+        "complete_combined_q1_pairing_real_K_support": {"const": "CERTIFIED"}
+      },
+      "required": ["typed_160_row_pushout", "complete_combined_q1_pairing_real_K_support"]
+    },
+    "claim_boundary": {"type": "string", "minLength": 1400},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": true
+}
