@@ -1935,6 +1935,122 @@
       },
       "evidence": [
         {
+          "path": "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION.json",
+          "result_id": "RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION",
+          "sha256": "3cddce3166dccb2699e7150b4a1df8fc7464588e91e2c73ca13e2ced020b879e"
+        }
+      ],
+      "id": "quantum.crosswalk.relative_einstein_weyl_qme_defect_to_particle",
+      "mode_data": {
+        "dispersion": {
+          "statement": "not a physical residual mode shell",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "no particle pairing crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "non-mode carrier guard",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "non-mode carrier guard",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "quantum_data": {
+        "BRST_cocycle": {
+          "statement": "carrier-specific; no physical residual mode imported",
+          "status": "NOT_APPLICABLE"
+        },
+        "BRST_exactness": {
+          "statement": "carrier-specific; no physical residual mode imported",
+          "status": "NOT_APPLICABLE"
+        },
+        "Hadamard_two_point_function": {
+          "statement": "no particle Hadamard crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "anomaly_QME_dependency": {
+          "statement": "carrier retains its own anomaly/QME dependency",
+          "status": "OPEN"
+        },
+        "carrier_crosswalk": {
+          "statement": "non-mode carrier to particle",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "classical_mode_imported": {
+          "statement": "carrier imported only in its declared non-particle role",
+          "status": "CERTIFIED"
+        },
+        "compatible_complex_structure": {
+          "statement": "no particle complex structure crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "EUCLIDEAN-SPECTRAL",
+          "REDUCED-MODE"
+        ],
+        "entry_kind": "NON_MODE_PARTICLE_GUARD",
+        "lifecycle_state": {
+          "statement": "not a particle lifecycle entry",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "pairing_status": {
+          "statement": "no particle pairing crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "particle_interpretation": {
+          "statement": "forbidden without an explicit physical residual-mode crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "state_space_status": {
+          "statement": "no particle state-space crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "carrier-specific; no cross-background identification",
+        "boundaries": "carrier-specific",
+        "carrier": "compact-product Einstein-Maxwell to Weyl-Maxwell relative anomaly mapping cone; complete classical all-row noncyclic restriction imported, but the action-compatible cyclic pushforward and matched renormalized QME insertion pair are absent, so the relative class and coefficient are undefined",
+        "charge_sector": "not a certified physical one-particle sector",
+        "degree": "carrier-specific",
+        "ell": "NO_CERTIFIED_MAP",
+        "k": "NO_CERTIFIED_MAP",
+        "m": "NO_CERTIFIED_MAP",
+        "omega": "NO_CERTIFIED_MAP",
+        "parity": "carrier-specific",
+        "theory": "pure-Weyl quantum programme"
+      }
+    },
+    {
+      "claim_boundary": "This carrier remains valid in its local, spectral, or observable-algebra role, but no certified map turns it into a particle entry.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
           "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
           "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
           "sha256": "c84ab3ab6cc03370ced4f5bba209d55f64e0a42dd75874c15d560106dda76a90"
@@ -3590,7 +3706,7 @@
     }
   ],
   "generated_by": "quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
-  "generated_by_sha256": "5debe4c01a701d6beb93f7bc49db1c616701a07369bc5aaacc3a02809f2b9d89",
+  "generated_by_sha256": "b424e399941bf54df5f1e410dda458d1f83e421c50750ce413f548b4ebd1df8c",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

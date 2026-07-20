@@ -1892,3 +1892,39 @@ Certificate and report:
 
 - [`BOUNDARY_CORNER_ANOMALY_OPERATOR_DOMAIN_OBSTRUCTION.json`](../quantum-weyl/local_bv/certificates/BOUNDARY_CORNER_ANOMALY_OPERATOR_DOMAIN_OBSTRUCTION.json)
 - [`boundary-corner-anomaly-operator-domain-obstruction.md`](../quantum-weyl/reports/boundary-corner-anomaly-operator-domain-obstruction.md)
+
+## Relative Einstein--Weyl QME defect gate (2026-07-20)
+
+The strongest complete classical spine is now imported by exact hash:
+`EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` is the complete all-row,
+support-local noncyclic linear triangle on the compact
+Einstein--Maxwell/Weyl--Maxwell product, and
+`RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1` supplies the contravariant
+support-local BRST-DGA pullback and exact \(H_{\rm product}\) equivariance.
+
+This defines the linear classical convention
+
+\[
+C_{\rm rel}=\operatorname{Cone}(\iota^*:C_{\rm WM}\to C_{\rm EM})[-1].
+\]
+
+It does not yet define the requested one-loop relative anomaly. The
+target-valued subtraction
+\([\mathcal A_{\rm WM}-\iota_*\mathcal A_{\rm EM}]\) needs an
+action-compatible cyclic pushforward. The fixed 238-row carrier has an exact
+pairing-rank obstruction; the 316-row cotangent completion changes the
+carrier and pairing and is not the action-current pushforward. Independently,
+there is no matched pair of renormalized Einstein--Maxwell and Weyl--Maxwell
+QME insertions with common gauge, measure, antifield, zero-mode and regulator
+ledgers.
+
+The pure-Weyl vector
+\((199/30,-87/20,0,0)\) is therefore not reused as a coupled relative vector.
+The relative class and coefficient remain `NOT_DEFINED`. No relative
+determinant, QME restoration, cofiber-pairing renormalization, Lorentzian
+state or particle claim follows.
+
+Certificate and report:
+
+- [`RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION.json`](../quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION.json)
+- [`relative-einstein-weyl-qme-defect-nondefinition.md`](../quantum-weyl/reports/relative-einstein-weyl-qme-defect-nondefinition.md)

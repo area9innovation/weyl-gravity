@@ -62,6 +62,7 @@ DEPENDENCIES = {
     "WZ_cotangent_lift": QROOT / "anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
     "WZ_extended_local_BV": QROOT / "anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
     "one_loop_Q1_disposition": QROOT / "transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
+    "relative_Einstein_Weyl_QME_nondefinition": QROOT / "transfer/certificates/RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION.json",
     "anomaly_induced_Gamma1": QROOT / "transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_TT_log_Gamma1": QROOT / "transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_log_Gamma1": QROOT / "transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
@@ -260,6 +261,9 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     wz_lift = values["WZ_cotangent_lift"]
     wz_extended = values["WZ_extended_local_BV"]
     q1_disposition = values["one_loop_Q1_disposition"]
+    relative_qme_nondefinition = values[
+        "relative_Einstein_Weyl_QME_nondefinition"
+    ]
     anomaly_induced = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_log_Gamma1"]
     curvature_squared_log = values["curvature_squared_log_Gamma1"]
@@ -647,6 +651,27 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         != "UNDEFINED_NO_DIFFERENTIABLE_BOUNDARY_GENERATOR"
     ):
         raise ValueError("boundary/corner anomaly claim boundary drifted")
+    if (
+        relative_qme_nondefinition.get("verdict", {}).get("classification")
+        != "UNDEFINED"
+        or relative_qme_nondefinition.get("claim_flags", {}).get(
+            "COMPLETE_CLASSICAL_LINEAR_TRIANGLE_IMPORTED"
+        )
+        is not True
+        or relative_qme_nondefinition.get("claim_flags", {}).get(
+            "ACTION_COMPATIBLE_CYCLIC_PUSHFORWARD_IMPORTED"
+        )
+        is not False
+        or relative_qme_nondefinition.get("claim_flags", {}).get(
+            "RELATIVE_COEFFICIENT_COMPUTED"
+        )
+        is not False
+        or relative_qme_nondefinition.get("coefficient_ledger", {}).get(
+            "relative_vector"
+        )
+        != "UNDEFINED"
+    ):
+        raise ValueError("relative Einstein--Weyl QME boundary drifted")
     if (
         elliptic.get("claim_flags", {}).get(
             "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED"
@@ -1496,6 +1521,7 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
 def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     specs = [
         ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4; the same-background tau-adic classical D_compact contraction is imported, while the first Lorentzian analytic Ward operator T2_ren remains undefined and the Cartan image is UNDEFINED_ANALYTICALLY; on the declared cornered Euclidean carrier, the boundary/corner BV-BFV complex, full-BV elliptic boundary problem, anomaly coefficients and differentiable D boundary charge are undefined", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "local_anomaly_completion_audit", "boundary_corner_anomaly_obstruction", "quantum_Cartan_D_disposition", "renormalized_D_Ward_nondefinition", "unitary_matter_no_go", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1")),
+        ("relative_einstein_weyl_qme_defect", "compact-product Einstein-Maxwell to Weyl-Maxwell relative anomaly mapping cone; complete classical all-row noncyclic restriction imported, but the action-compatible cyclic pushforward and matched renormalized QME insertion pair are absent, so the relative class and coefficient are undefined", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"], ("relative_Einstein_Weyl_QME_nondefinition",)),
         ("euclidean_determinant_factor", "round-S4 TT or ghost determinant factor", ["EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "Euclidean_elliptic_complex", "nonconformal_coefficient_match")),
         ("flat_tt_log_form_factor", "nonzero-momentum flat-TT logarithmic effective-action form factor", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1")),
         ("curvature_squared_covariant_log_form_factor", "covariant C log(Delta_C/mu^2) C effective-action form factor through curvature order two", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1")),
@@ -1576,7 +1602,7 @@ def validate_fragment(value: dict[str, Any]) -> None:
         Draft202012Validator.check_schema(schema)
         Draft202012Validator(schema).validate(value)
     ids = [entry["id"] for entry in value["entries"]]
-    if len(ids) != len(set(ids)) or len(ids) != 23:
+    if len(ids) != len(set(ids)) or len(ids) != 24:
         raise ValueError("quantum atlas entry count or uniqueness drifted")
     by_id = {entry["id"]: entry for entry in value["entries"]}
     residual = [entry for entry in value["entries"] if entry["quantum_data"]["entry_kind"] == "NONPARTICLE_RESIDUAL_CLASS"]
@@ -1611,7 +1637,7 @@ def validate_fragment(value: dict[str, Any]) -> None:
     ):
         raise ValueError("classical tangent obstruction was promoted without the QME bridge")
     guards = [entry for entry in value["entries"] if entry["quantum_data"]["entry_kind"] == "NON_MODE_PARTICLE_GUARD"]
-    if len(guards) != 13 or any(
+    if len(guards) != 14 or any(
         entry["quantum_data"]["particle_interpretation"]["status"] != "NO_CERTIFIED_MAP"
         for entry in guards
     ):

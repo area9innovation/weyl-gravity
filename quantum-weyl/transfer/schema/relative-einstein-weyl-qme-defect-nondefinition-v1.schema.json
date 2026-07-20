@@ -1,0 +1,456 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/quantum-weyl/relative-einstein-weyl-qme-defect-nondefinition-v1.schema.json",
+  "title": "Relative Einstein-Weyl QME defect non-definition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "setting",
+    "classical_triangle",
+    "relative_anomaly_complex",
+    "requested_subtraction",
+    "coefficient_ledger",
+    "missing_object_ledger",
+    "separate_ledgers",
+    "verdict",
+    "claim_flags",
+    "exact_checks",
+    "dependency_refs",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-relative-einstein-weyl-qme-defect-nondefinition-v1"
+    },
+    "result_id": {
+      "const": "RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION"
+    },
+    "result_state": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE"
+      ]
+    },
+    "setting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "theory_pair",
+        "background",
+        "boundary_conditions",
+        "charge_sector",
+        "antifield_scope"
+      ],
+      "properties": {
+        "theory_pair": {
+          "const": "Einstein-Maxwell_to_Weyl-Maxwell"
+        },
+        "background": {
+          "const": "compact Einstein-Maxwell product"
+        },
+        "boundary_conditions": {
+          "type": "string",
+          "minLength": 20
+        },
+        "charge_sector": {
+          "type": "string",
+          "minLength": 40
+        },
+        "antifield_scope": {
+          "type": "string",
+          "minLength": 30
+        }
+      }
+    },
+    "classical_triangle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "selected_result_id",
+        "strength",
+        "observable_result_id",
+        "restriction_map",
+        "cyclic_map",
+        "H_product_equivariance"
+      ],
+      "properties": {
+        "selected_result_id": {
+          "const": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1"
+        },
+        "strength": {
+          "type": "string",
+          "minLength": 30
+        },
+        "observable_result_id": {
+          "const": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1"
+        },
+        "restriction_map": {
+          "type": "string",
+          "minLength": 30
+        },
+        "cyclic_map": {
+          "type": "string",
+          "pattern": "^NOT_SUPPLIED:.*$"
+        },
+        "H_product_equivariance": {
+          "const": "CERTIFIED_INCLUDING_TIME_TRANSLATION"
+        }
+      }
+    },
+    "relative_anomaly_complex": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "formal_complex",
+        "degree_n_elements",
+        "differential",
+        "closure_condition",
+        "classical_definition_status",
+        "one_loop_insertion_status"
+      ],
+      "properties": {
+        "formal_complex": {
+          "const": "Cone(iota_star:C_WM->C_EM)[-1]"
+        },
+        "degree_n_elements": {
+          "type": "string"
+        },
+        "differential": {
+          "type": "string"
+        },
+        "closure_condition": {
+          "type": "string"
+        },
+        "classical_definition_status": {
+          "const": "DEFINED_AT_LINEAR_OBSERVABLE_LEVEL"
+        },
+        "one_loop_insertion_status": {
+          "const": "UNDEFINED_MATCHED_RENORMALIZED_INSERTIONS_NOT_SUPPLIED"
+        }
+      }
+    },
+    "requested_subtraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "formal_expression",
+        "contravariant_map_available",
+        "covariant_action_compatible_iota_push_available",
+        "reason"
+      ],
+      "properties": {
+        "formal_expression": {
+          "const": "[A_rel]=[A_WM-iota_push A_EM]"
+        },
+        "contravariant_map_available": {
+          "const": true
+        },
+        "covariant_action_compatible_iota_push_available": {
+          "const": false
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 80
+        }
+      }
+    },
+    "coefficient_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strict_pure_Weyl_bulk_vector",
+        "Einstein_Maxwell_QME_insertion",
+        "Weyl_Maxwell_QME_insertion",
+        "relative_vector",
+        "warning"
+      ],
+      "properties": {
+        "strict_pure_Weyl_bulk_vector": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "ANOM_OMEGA_C2",
+            "ANOM_OMEGA_E4",
+            "ANOM_OMEGA_C_DUAL_C",
+            "ANOM_OMEGA_BOX_R"
+          ],
+          "properties": {
+            "ANOM_OMEGA_C2": {
+              "$ref": "#/$defs/rational"
+            },
+            "ANOM_OMEGA_E4": {
+              "$ref": "#/$defs/rational"
+            },
+            "ANOM_OMEGA_C_DUAL_C": {
+              "$ref": "#/$defs/rational"
+            },
+            "ANOM_OMEGA_BOX_R": {
+              "$ref": "#/$defs/rational"
+            }
+          }
+        },
+        "Einstein_Maxwell_QME_insertion": {
+          "const": "NOT_COMPUTED"
+        },
+        "Weyl_Maxwell_QME_insertion": {
+          "const": "NOT_COMPUTED_AS_MATCHED_COUPLED_TARGET"
+        },
+        "relative_vector": {
+          "const": "UNDEFINED"
+        },
+        "warning": {
+          "type": "string",
+          "minLength": 40
+        }
+      }
+    },
+    "missing_object_ledger": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "object_id",
+          "status"
+        ],
+        "properties": {
+          "object_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "MISSING",
+              "OBSTRUCTED_ON_FIXED_238_ROW_CARRIER"
+            ]
+          }
+        }
+      }
+    },
+    "separate_ledgers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "determinant_factorization",
+        "residual_action",
+        "boundary_corner",
+        "Lorentzian_state",
+        "relative_D_Cartan"
+      ],
+      "properties": {
+        "determinant_factorization": {
+          "const": "NOT_COMPUTED_RELATIVELY_NO_MATCHED_OPERATOR_MEASURE_PAIR"
+        },
+        "residual_action": {
+          "const": "H_PRODUCT_EQUIVARIANT_LINEAR_CLASSICAL_MAP_ONLY"
+        },
+        "boundary_corner": {
+          "type": "string",
+          "pattern": "^NOT_APPLICABLE.*$"
+        },
+        "Lorentzian_state": {
+          "const": "NOT_CONSTRUCTED"
+        },
+        "relative_D_Cartan": {
+          "const": "UNDEFINED_ANALYTICALLY"
+        }
+      }
+    },
+    "verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification",
+        "first_exact_obstruction",
+        "relative_anomaly_class",
+        "relative_coefficient",
+        "relative_QME_restored"
+      ],
+      "properties": {
+        "classification": {
+          "const": "UNDEFINED"
+        },
+        "first_exact_obstruction": {
+          "type": "string",
+          "minLength": 50
+        },
+        "relative_anomaly_class": {
+          "const": "NOT_DEFINED"
+        },
+        "relative_coefficient": {
+          "const": "NOT_DEFINED"
+        },
+        "relative_QME_restored": {
+          "const": false
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "COMPLETE_CLASSICAL_LINEAR_TRIANGLE_IMPORTED",
+        "CONTRAVARIANT_OBSERVABLE_RESTRICTION_IMPORTED",
+        "ACTION_COMPATIBLE_CYCLIC_PUSHFORWARD_IMPORTED",
+        "MATCHED_RELATIVE_QME_INSERTIONS_IMPORTED",
+        "RELATIVE_ANOMALY_CLASS_DEFINED",
+        "RELATIVE_COEFFICIENT_COMPUTED",
+        "PURE_WEYL_VECTOR_IS_RELATIVE_VECTOR",
+        "RELATIVE_QME_RESTORED",
+        "LORENTZIAN_RELATIVE_STATE_CERTIFIED"
+      ],
+      "properties": {
+        "COMPLETE_CLASSICAL_LINEAR_TRIANGLE_IMPORTED": {
+          "const": true
+        },
+        "CONTRAVARIANT_OBSERVABLE_RESTRICTION_IMPORTED": {
+          "const": true
+        },
+        "ACTION_COMPATIBLE_CYCLIC_PUSHFORWARD_IMPORTED": {
+          "const": false
+        },
+        "MATCHED_RELATIVE_QME_INSERTIONS_IMPORTED": {
+          "const": false
+        },
+        "RELATIVE_ANOMALY_CLASS_DEFINED": {
+          "const": false
+        },
+        "RELATIVE_COEFFICIENT_COMPUTED": {
+          "const": false
+        },
+        "PURE_WEYL_VECTOR_IS_RELATIVE_VECTOR": {
+          "const": false
+        },
+        "RELATIVE_QME_RESTORED": {
+          "const": false
+        },
+        "LORENTZIAN_RELATIVE_STATE_CERTIFIED": {
+          "const": false
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quantum_relative_readiness",
+        "relative_linear_triangle",
+        "relative_observable_functor",
+        "fixed_238_cyclic_rank_obstruction",
+        "canonical_316_cotangent_completion",
+        "pure_Weyl_local_anomaly"
+      ],
+      "properties": {
+        "quantum_relative_readiness": {
+          "$ref": "#/$defs/ref"
+        },
+        "relative_linear_triangle": {
+          "$ref": "#/$defs/ref"
+        },
+        "relative_observable_functor": {
+          "$ref": "#/$defs/ref"
+        },
+        "fixed_238_cyclic_rank_obstruction": {
+          "$ref": "#/$defs/ref"
+        },
+        "canonical_316_cotangent_completion": {
+          "$ref": "#/$defs/ref"
+        },
+        "pure_Weyl_local_anomaly": {
+          "$ref": "#/$defs/ref"
+        }
+      }
+    },
+    "next_gate": {
+      "type": "string",
+      "minLength": 50
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 150
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proof_type",
+        "source_manifest"
+      ],
+      "properties": {
+        "proof_type": {
+          "const": "EXACT_PINNED_TRIANGLE_IMPORT_AND_MISSING_CYCLIC_QME_ROW_AUDIT"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "properties": {
+        "numerator": {
+          "type": "integer"
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  }
+}

@@ -19,7 +19,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(kinds.count("NONPARTICLE_RESIDUAL_CLASS"), 2)
         self.assertEqual(kinds.count("CARRIER_IMPORT_GAP"), 1)
         self.assertEqual(kinds.count("CLASSICAL_TO_QUANTUM_CROSSWALK"), 1)
-        self.assertEqual(kinds.count("NON_MODE_PARTICLE_GUARD"), 13)
+        self.assertEqual(kinds.count("NON_MODE_PARTICLE_GUARD"), 14)
         cubic_guard = next(
             entry for entry in value["entries"]
             if entry["id"] == "quantum.crosswalk.algebraic_cubic_weyl_carrier_to_particle"
@@ -278,7 +278,22 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             entry for entry in build()["entries"]
             if entry["quantum_data"]["entry_kind"] == "NON_MODE_PARTICLE_GUARD"
         ]
-        self.assertEqual(len(guards), 13)
+        self.assertEqual(len(guards), 14)
+        relative = next(
+            entry for entry in guards
+            if entry["id"]
+            == "quantum.crosswalk.relative_einstein_weyl_qme_defect_to_particle"
+        )
+        self.assertIn(
+            "relative class and coefficient are undefined",
+            relative["scope"]["carrier"],
+        )
+        self.assertEqual(
+            {
+                evidence["result_id"] for evidence in relative["evidence"]
+            },
+            {"RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION"},
+        )
         round_s4 = next(
             entry for entry in guards
             if entry["id"]

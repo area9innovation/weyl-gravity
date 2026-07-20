@@ -1,0 +1,118 @@
+{
+  "receipt_id": "RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION_V1_TIER_RECEIPT",
+  "work_item": "sf:program/work/quantum-relative-einstein-weyl-qme-defect",
+  "recorded_at_utc": "2026-07-20T11:20:18Z",
+  "base_commit": "3529756679aec4527b5aa19b58b4e5df5cb34022",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION.json",
+      "sha256": "3cddce3166dccb2699e7150b4a1df8fc7464588e91e2c73ca13e2ced020b879e"
+    },
+    "report": {
+      "path": "quantum-weyl/reports/relative-einstein-weyl-qme-defect-nondefinition.md",
+      "sha256": "3e3f51ce9c0cbe7209a9366d15ee2624ba8d8bce11fdb999487ae8a87c5f02d0"
+    },
+    "atlas_fragment": {
+      "path": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "sha256": "ed3bfa611efac19e4a7d165ce369a3a88e59d95e052c1fa736bfe307ba7423f2"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.08,
+      "commands": [
+        "python3 -m py_compile quantum-weyl/transfer/relative_einstein_weyl_qme_defect_nondefinition.py quantum-weyl/transfer/relative_einstein_weyl_qme_defect_nondefinition_certificate.py quantum-weyl/transfer/verify_relative_einstein_weyl_qme_defect_nondefinition.py quantum-weyl/transfer/tests/test_relative_einstein_weyl_qme_defect_nondefinition.py quantum-weyl/atlas/generate_quantum_atlas_fragment.py quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py",
+        "python3 -m json.tool quantum-weyl/transfer/schema/relative-einstein-weyl-qme-defect-nondefinition-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION.json",
+        "python3 -m json.tool quantum-weyl/atlas/quantum-atlas-fragment.json",
+        "git diff --check -- <scoped relative-QME, atlas, report, receipt and quantum-brief paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m transfer.relative_einstein_weyl_qme_defect_nondefinition_certificate --check",
+          "elapsed_seconds": 0.89,
+          "result": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m transfer.verify_relative_einstein_weyl_qme_defect_nondefinition",
+          "elapsed_seconds": 0.95,
+          "result": "PASS_INDEPENDENT_REPLAY"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m unittest transfer.tests.test_relative_einstein_weyl_qme_defect_nondefinition -v",
+          "elapsed_seconds": 0.94,
+          "result": "PASS_6_TESTS"
+        },
+        {
+          "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/relative-einstein-weyl-qme-defect-nondefinition-v1.schema.json && npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/relative-einstein-weyl-qme-defect-nondefinition-v1.schema.json -d quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION.json",
+          "elapsed_seconds": 5.92,
+          "result": "PASS_DRAFT_2020_12_STRICT"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_AFFECTED_CHAIN",
+      "elapsed_seconds": 10.25,
+      "commands": [
+        "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --emit",
+        "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check",
+        "PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment",
+        "PYTHONPATH=quantum-weyl python3 -m unittest atlas.tests.test_quantum_atlas_fragment -v",
+        "python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json"
+      ],
+      "result": "PASS_8_TESTS_AND_4_GENERATOR_OR_VERIFIER_RAILS",
+      "criterion": "The imported classical triangle and observable map, the two exact cyclic-carrier dispositions, and the pure-Weyl anomaly vector are unchanged content-addressed inputs. The new independent consumer checked all six hashes and the atlas chain checked the fail-closed nonparticle row."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "The result is an exact relative-class nondefinition theorem. It promotes no relative coefficient, QME, residual transfer, Lorentzian state, theorem freeze, release, tag or shared core algebra."
+    }
+  },
+  "adversarial_controls": [
+    {
+      "mutation": "Replace the undefined relative coefficient with the strict pure-Weyl vector.",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "covered_by": "test_relative_coefficient_overpromotion_rejected"
+    },
+    {
+      "mutation": "Treat the contravariant support-local observable pullback as an action-compatible cyclic pushforward.",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "covered_by": "test_complete_linear_triangle_but_no_cyclic_pushforward"
+    }
+  ],
+  "independent_rail": {
+    "imports_producer": false,
+    "imports_certificate_emitter": false,
+    "replays": [
+      "complete all-row classical linear triangle and observable-map identity",
+      "fixed 238-row standard-pairing cyclic rank obstruction",
+      "316-row cotangent carrier change",
+      "absence of matched Einstein-Maxwell and Weyl-Maxwell QME insertions",
+      "strict pure-Weyl coefficient vector and its forbidden relative promotion",
+      "all dependency and source-manifest hashes"
+    ]
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_EXIT_ZERO_WITH_FINDINGS",
+    "elapsed_seconds": 7.48,
+    "command": "bash ci/science-forge-shadow.sh",
+    "findings": [
+      "The local Forge binary is an unpinned dirty development build whose build revision differs from the current stdlib checkout.",
+      "The pre-existing bridge certificate audit reported drift while existence, edges, DAG and gates passed.",
+      "The read-only coverage census found 1231 certificates against the 2026-07-19 baseline of 976."
+    ],
+    "effect_on_claim": "The shadow rail is advisory. These external findings were reported and were not used to promote the scoped nondefinition theorem."
+  },
+  "claim_boundary": "This receipt certifies that the strongest imported classical linear triangle supports a contravariant relative observable cone but not the requested coefficient-bearing target-valued one-loop QME subtraction. The fixed carrier lacks an action-compatible cyclic pushforward and matched renormalized Einstein-Maxwell/Weyl-Maxwell QME insertions are absent. It does not compute a relative coefficient, identify the strict pure-Weyl vector with a coupled relative vector, restore a QME, transfer to a residual complex, define an asymptotic charge, or establish a Lorentzian state, particles, positivity, scattering or unitarity."
+}

@@ -1,0 +1,171 @@
+{
+  "claim_boundary": "This exact result imports the strongest complete classical linear triangle and defines its relative mapping-cone convention, but proves that the requested coefficient-bearing one-loop relative class is not defined. It does not identify the pure-Weyl bulk vector with a coupled relative vector, compute a relative determinant, restore a QME, renormalize a cofiber pairing, define an asymptotic boundary charge, construct a Lorentzian state, or establish particles, positivity, scattering or unitarity.",
+  "claim_flags": {
+    "ACTION_COMPATIBLE_CYCLIC_PUSHFORWARD_IMPORTED": false,
+    "COMPLETE_CLASSICAL_LINEAR_TRIANGLE_IMPORTED": true,
+    "CONTRAVARIANT_OBSERVABLE_RESTRICTION_IMPORTED": true,
+    "LORENTZIAN_RELATIVE_STATE_CERTIFIED": false,
+    "MATCHED_RELATIVE_QME_INSERTIONS_IMPORTED": false,
+    "PURE_WEYL_VECTOR_IS_RELATIVE_VECTOR": false,
+    "RELATIVE_ANOMALY_CLASS_DEFINED": false,
+    "RELATIVE_COEFFICIENT_COMPUTED": false,
+    "RELATIVE_QME_RESTORED": false
+  },
+  "classical_triangle": {
+    "H_product_equivariance": "CERTIFIED_INCLUDING_TIME_TRANSLATION",
+    "cyclic_map": "NOT_SUPPLIED: the three action-derived pairings remain distinct and no standard-pairing cyclic relative map exists",
+    "observable_result_id": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1",
+    "restriction_map": "iota_star: Obs_WM -> Obs_EM is a contravariant support-local linear BRST-DGA chain map",
+    "selected_result_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+    "strength": "complete all-row finite-order support-local noncyclic linear triangle with exact mapping cofiber"
+  },
+  "coefficient_ledger": {
+    "Einstein_Maxwell_QME_insertion": "NOT_COMPUTED",
+    "Weyl_Maxwell_QME_insertion": "NOT_COMPUTED_AS_MATCHED_COUPLED_TARGET",
+    "relative_vector": "UNDEFINED",
+    "strict_pure_Weyl_bulk_vector": {
+      "ANOM_OMEGA_BOX_R": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "ANOM_OMEGA_C2": {
+        "denominator": 30,
+        "numerator": 199
+      },
+      "ANOM_OMEGA_C_DUAL_C": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "ANOM_OMEGA_E4": {
+        "denominator": 20,
+        "numerator": -87
+      }
+    },
+    "warning": "The pure-Weyl graviton vector cannot be reused as the Weyl-Maxwell target or relative coefficient vector."
+  },
+  "dependency_refs": {
+    "canonical_316_cotangent_completion": {
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1.json",
+      "result_id": "EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1",
+      "sha256": "d17a9249b6a385410ba8bd747259842c70bb811dfb0ce9aa74aa3d03c7fe6fad"
+    },
+    "fixed_238_cyclic_rank_obstruction": {
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1.json",
+      "result_id": "EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1",
+      "sha256": "7295dbd89c1e2ea45e0b5193df8fed95ad77c4047fd73441f20f76c5a9064932"
+    },
+    "pure_Weyl_local_anomaly": {
+      "path": "quantum-weyl/local_bv/certificates/LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json",
+      "result_id": "LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT",
+      "sha256": "07bf332cf1bece92f8a041002f3c787fe7e85e798871e4878fbbc3cd7b20bd3b"
+    },
+    "quantum_relative_readiness": {
+      "path": "quantum-weyl/relative/certificates/QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS.json",
+      "result_id": "QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS",
+      "sha256": "766ff582043f7dce0af5f96e006f142d933917b246d7bdef5f831ca1ccff1280"
+    },
+    "relative_linear_triangle": {
+      "path": "bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json",
+      "result_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+      "sha256": "d0ee5404fd8055e2b67525335142f7986a92516b047d80ded58ed2a3a731f3fa"
+    },
+    "relative_observable_functor": {
+      "path": "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1.json",
+      "result_id": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1",
+      "sha256": "94f213e795d6ba08403e053863f6007c668d8ef068bf15cf54c56c8914c823ea"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "exact_checks": {
+    "Einstein_QME_insertion_absent": true,
+    "all_row_linear_triangle_hash_matches_readiness": true,
+    "compact_product_has_no_asymptotic_boundary": true,
+    "contravariant_pullback_is_support_local_chain_map": true,
+    "cotangent_completion_changes_carrier_and_pairing": true,
+    "fixed_238_row_cyclic_pairing_obstructed": true,
+    "matched_relative_Euclidean_spectral_pair_absent": true,
+    "observable_pullback_hash_matches_readiness": true,
+    "pure_Weyl_vector_not_promoted_to_coupled_relative_vector": true,
+    "standard_action_pairing_cyclic_map_absent": true
+  },
+  "missing_object_ledger": [
+    {
+      "object_id": "MATCHED_EINSTEIN_MAXWELL_RENORMALIZED_QME_INSERTION",
+      "status": "MISSING"
+    },
+    {
+      "object_id": "MATCHED_WEYL_MAXWELL_RENORMALIZED_QME_INSERTION",
+      "status": "MISSING"
+    },
+    {
+      "object_id": "RENORMALIZED_RELATIVE_OBSERVABLE_PULLBACK",
+      "status": "MISSING"
+    },
+    {
+      "object_id": "ACTION_COMPATIBLE_CYCLIC_IOTA_PUSH",
+      "status": "OBSTRUCTED_ON_FIXED_238_ROW_CARRIER"
+    },
+    {
+      "object_id": "RENORMALIZED_ANTIFIELD_MEASURE_ZERO_MODE_MAPS",
+      "status": "MISSING"
+    },
+    {
+      "object_id": "COMMON_TAUB_ZERO_DERIVED_SECTOR_AND_NULL_QUOTIENT",
+      "status": "MISSING"
+    }
+  ],
+  "next_gate": "COMPUTE_MATCHED_EINSTEIN_MAXWELL_AND_WEYL_MAXWELL_QME_INSERTIONS_AND_CONSTRUCT_AN_ACTION_COMPATIBLE_RENORMALIZED_RELATIVE_MAP",
+  "provenance": {
+    "proof_type": "EXACT_PINNED_TRIANGLE_IMPORT_AND_MISSING_CYCLIC_QME_ROW_AUDIT",
+    "source_manifest": {
+      "../reports/relative-einstein-weyl-qme-defect-nondefinition.md": "3e3f51ce9c0cbe7209a9366d15ee2624ba8d8bce11fdb999487ae8a87c5f02d0",
+      "relative_einstein_weyl_qme_defect_nondefinition.py": "40716389c6b4d244f636c7f0fb421086e2f17b9c1ee9d70fb3d18d2a6c835bd5",
+      "relative_einstein_weyl_qme_defect_nondefinition_certificate.py": "3e67185dc23ad8164ad046c51fe439add6983399d1769c79a5179c3958c34561",
+      "schema/relative-einstein-weyl-qme-defect-nondefinition-v1.schema.json": "07061b77f7bee0ff8bd8e560517bfa33fe6fea465b0b3b1e38100090dd22c28a",
+      "tests/test_relative_einstein_weyl_qme_defect_nondefinition.py": "12464620fd9eb9fc6fc4a5feedded86e74ebdaf7357e5741b575c5230a526ae8",
+      "verify_relative_einstein_weyl_qme_defect_nondefinition.py": "9454bf9dd287abce4cf576a8cd5a4857ce6ff53769966ed6045009050d90b4ba"
+    }
+  },
+  "relative_anomaly_complex": {
+    "classical_definition_status": "DEFINED_AT_LINEAR_OBSERVABLE_LEVEL",
+    "closure_condition": "s_WM a_WM=0 and iota_star(a_WM)=s_EM b_EM",
+    "degree_n_elements": "(a_WM,b_EM) in C_WM^n direct_sum C_EM^(n-1)",
+    "differential": "D_rel(a_WM,b_EM)=(s_WM a_WM, iota_star(a_WM)-s_EM b_EM)",
+    "formal_complex": "Cone(iota_star:C_WM->C_EM)[-1]",
+    "one_loop_insertion_status": "UNDEFINED_MATCHED_RENORMALIZED_INSERTIONS_NOT_SUPPLIED"
+  },
+  "requested_subtraction": {
+    "contravariant_map_available": true,
+    "covariant_action_compatible_iota_push_available": false,
+    "formal_expression": "[A_rel]=[A_WM-iota_push A_EM]",
+    "reason": "A target-valued pushforward requires an action-compatible cyclic pairing. The fixed 238-row carrier has an exact rank obstruction; the 316-row cotangent completion changes the carrier and pairing and is not the action-current pushforward."
+  },
+  "result_id": "RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION",
+  "result_state": "COMPLETE_CLASSICAL_LINEAR_RESTRICTION_IMPORTED_RELATIVE_ONE_LOOP_CLASS_UNDEFINED_WITH_CYCLIC_AND_MATCHED_QME_ROWS_MISSING",
+  "schema": "quantum-weyl-relative-einstein-weyl-qme-defect-nondefinition-v1",
+  "separate_ledgers": {
+    "Lorentzian_state": "NOT_CONSTRUCTED",
+    "boundary_corner": "NOT_APPLICABLE_TO_COMPACT_PERIODIC_SETTING; NO_ASYMPTOTIC BOUNDARY CLAIM",
+    "determinant_factorization": "NOT_COMPUTED_RELATIVELY_NO_MATCHED_OPERATOR_MEASURE_PAIR",
+    "relative_D_Cartan": "UNDEFINED_ANALYTICALLY",
+    "residual_action": "H_PRODUCT_EQUIVARIANT_LINEAR_CLASSICAL_MAP_ONLY"
+  },
+  "setting": {
+    "antifield_scope": "complete classical all-row linear triangle imported; renormalized antifield insertion map not supplied",
+    "background": "compact Einstein-Maxwell product",
+    "boundary_conditions": "compact periodic S1 x S2 fixed bundle; no asymptotic boundary",
+    "charge_sector": "complete standard harmonic tangent before optional stabilizer reduction; absolute quotient unauthorized before common moment-map/Taub-zero and null-subalgebra certification",
+    "theory_pair": "Einstein-Maxwell_to_Weyl-Maxwell"
+  },
+  "verdict": {
+    "classification": "UNDEFINED",
+    "first_exact_obstruction": "NO_ACTION_COMPATIBLE_CYCLIC_PUSHFORWARD_ON_THE_IMPORTED_TRIANGLE_AND_NO_MATCHED_EINSTEIN_MAXWELL_WEYL_MAXWELL_RENORMALIZED_QME_INSERTION_PAIR",
+    "relative_QME_restored": false,
+    "relative_anomaly_class": "NOT_DEFINED",
+    "relative_coefficient": "NOT_DEFINED"
+  }
+}
