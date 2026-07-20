@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "residual_action_definition",
+    "original_444_space_gate",
+    "minimal_representation_closure",
+    "action_image_and_closed_cokernel",
+    "source_pair_orbit_types",
+    "witness_location",
+    "representation_content_theorem",
+    "candidate_family_disposition",
+    "mutations",
+    "proof_obligation_dag",
+    "activation_disposition",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-ward-cokernel-irrep-closure-obstruction-v1"
+    },
+    "result_id": {
+      "const": "BERGER_WARD_COKERNEL_IRREP_CLOSURE_OBSTRUCTION"
+    },
+    "setting_id": {"type": "string"},
+    "claim_status": {
+      "const": "OBSTRUCTED_444_WARD_SPACE_NOT_BERGER_REPRESENTATION_CLOSED"
+    },
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 4,
+      "maxProperties": 4
+    },
+    "payload_ref": {"type": "object"},
+    "residual_action_definition": {"type": "object"},
+    "original_444_space_gate": {"type": "object"},
+    "minimal_representation_closure": {"type": "object"},
+    "action_image_and_closed_cokernel": {"type": "object"},
+    "source_pair_orbit_types": {"type": "object"},
+    "witness_location": {"type": "object"},
+    "representation_content_theorem": {"type": "object"},
+    "candidate_family_disposition": {"type": "object"},
+    "mutations": {"type": "object"},
+    "proof_obligation_dag": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7
+    },
+    "activation_disposition": {"type": "object"},
+    "next_gate": {
+      "const": "DECLARE_A_REPRESENTATION_COMPLETE_A_K_HESSIAN_DOMAIN_ON_THE_900_COORDINATE_CLOSURE_AND_COMPUTE_ITS_ACTION_TO_WARD_IMAGE"
+    },
+    "claim_boundary": {"type": "string", "minLength": 2000},
+    "provenance": {"type": "object"}
+  }
+}

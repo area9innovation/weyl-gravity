@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "generator",
+    "original_coordinate_indices_in_closure",
+    "closure_coordinate_basis",
+    "sparse_generator_columns"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-ward-cokernel-irrep-closure-obstruction-payload-v1"
+    },
+    "result_id": {
+      "const": "BERGER_WARD_COKERNEL_IRREP_CLOSURE_OBSTRUCTION_PAYLOAD"
+    },
+    "generator": {"type": "object"},
+    "original_coordinate_indices_in_closure": {
+      "type": "array",
+      "minItems": 444,
+      "maxItems": 444
+    },
+    "closure_coordinate_basis": {
+      "type": "array",
+      "minItems": 900,
+      "maxItems": 900
+    },
+    "sparse_generator_columns": {"type": "array"}
+  }
+}

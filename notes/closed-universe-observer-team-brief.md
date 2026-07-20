@@ -1425,10 +1425,47 @@ cannot enlarge the image.  Together with the prior all-finite-outer-jet
 support theorem, the next necessary enlargement is not “more pairs” or
 “higher scalar jet”.  It must introduce at least one Berger-equivariant
 old-`A`--`K` Hessian representation channel with nonzero `A_0--K_12`
-projection.  The smallest such representation and its sufficiency remain
-`OPEN`.  The active fail-closed atlas row is now
+projection.  At this gate the smallest representation and its sufficiency
+were still `OPEN`; the representation-closure successor below resolves the
+module-level question without constructing an action.  The two-pair
+fail-closed atlas row is
 `observer.berger.interaction.two_pair_112_no_go`; q3, detector, redshift,
 cone, causal, branch, particle and quantum gates remain closed.
+
+`BERGER_WARD_COKERNEL_IRREP_CLOSURE_OBSTRUCTION` now resolves the requested
+representation analysis at its first fail-closed gate.  The certified
+444-coordinate old-`A`--`K` Ward space is not a Berger `U(1)` module:
+392 basis directions escape through 848 nonzero incidences to 424 distinct
+first-step outside coordinates.  Although the four action-image columns are
+invariant trivial lines, no action descends to the 440-dimensional
+vector-space cokernel, so it has no intrinsic Berger irrep decomposition.
+A projected action that discards the escaping coordinates is noncanonical and
+is not accepted as a repair.
+
+The unique coordinate closure has dimension 900, with exact real isotypic
+dimensions 460 at weight zero, 424 at weight two and 16 at weight four.
+Quotienting the unchanged four trivial action-image lines gives a new
+896-dimensional replacement carrier with dimensions `(456,424,16)`; it is
+not identified with the old 440-dimensional cokernel.  Each emitter-labelled
+half has dimensions `(230,212,8)`.  The normalization class `H=2` is a
+separate trivial line.  The complete typed-Maxwell source vector is an
+invariant nonzero trivial class, whereas the displayed `-2 g0 h0` coordinate
+alone generates one weight-zero line plus one real weight-two plane and is
+not itself invariant.
+
+At representation level, the smallest channel capable of reaching the typed
+obstruction is therefore one additional weight-zero real line, independent
+of the four metric-natural image lines and with nonzero `A_0--K_12`
+projection; a pure weight-two or weight-four channel is insufficient.  This
+is necessary and sufficient only at module level.  Action-level sufficiency
+remains `NO_CERTIFIED_MAP` until a representation-complete auxiliary
+`A`--`K` Hessian domain on the 900-coordinate closure is declared and its
+action-to-Ward differentiation map is computed.  That declaration and replay
+is the currently active unsplit bridge and its activation gate.  The
+fail-closed atlas row is
+`observer.berger.interaction.ward_cokernel_irrep_closure_obstruction`;
+detector, redshift, tangent-cone, physical-branch and quantum promotion remain
+unauthorized.
 
 Within that inactive bridge, the numerical recoil input-contract audit is now
 complete.  The next activation gate requires a provenance-complete

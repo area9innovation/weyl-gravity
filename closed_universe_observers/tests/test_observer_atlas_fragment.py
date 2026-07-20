@@ -552,3 +552,26 @@ def test_bounded_110_row_conjugate_pair_no_go_is_fail_closed():
     assert "BERGER_110_ROW_CONJUGATE_PAIR_EXTENSION_NO_GO" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_ward_cokernel_irrep_request_fails_closed_on_nonclosure():
+    row = next(
+        row
+        for row in build()["entries"]
+        if row["id"]
+        == "observer.berger.interaction.ward_cokernel_irrep_closure_obstruction"
+    )
+    assert row["descriptions"]["symplectic"] == "OBSTRUCTED"
+    assert row["descriptions"]["nonlinear"] == "OBSTRUCTED"
+    assert row["descriptions"]["observational"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "OBSTRUCTED"
+    assert "not closed under Berger U(1)" in row["observer_data"][
+        "clock_and_rod_dependence"
+    ]["statement"]
+    assert "one new weight-zero image line" in row["observer_data"][
+        "observer_source_channel"
+    ]["statement"]
+    assert "BERGER_WARD_COKERNEL_IRREP_CLOSURE_OBSTRUCTION" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

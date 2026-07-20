@@ -1,0 +1,126 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_WARD_COKERNEL_IRREP_CLOSURE_OBSTRUCTION_TIER_RECEIPT",
+  "subject_result_id": "BERGER_WARD_COKERNEL_IRREP_CLOSURE_OBSTRUCTION",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "science_forge_work_item": "sf:program/work/observer-ward-cokernel-irrep-decomposition",
+  "input_commit": "505eca5389e4c8cb0ea6969354c4f28dd9a078b4",
+  "tested_tree_head": "698e4efc8233bcffb4bde343ce20220ff584b88b",
+  "commands": [
+    {
+      "test_tier": 0,
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_ward_cokernel_irrep_closure_obstruction.py closed_universe_observers/verify_berger_ward_cokernel_irrep_closure_obstruction.py closed_universe_observers/tests/test_berger_ward_cokernel_irrep_closure_obstruction.py",
+      "elapsed_seconds": 0.03,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 0,
+      "command": "python3 -m json.tool on both schemas and both generated JSON artifacts; git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md",
+      "elapsed_seconds": 1.2,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.generate_berger_ward_cokernel_irrep_closure_obstruction --emit",
+      "elapsed_seconds": 1.29,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.generate_berger_ward_cokernel_irrep_closure_obstruction --check",
+      "elapsed_seconds": 1.19,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.verify_berger_ward_cokernel_irrep_closure_obstruction",
+      "elapsed_seconds": 2.02,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_ward_cokernel_irrep_closure_obstruction.py closed_universe_observers/tests/test_berger_112_row_two_pair_extension_no_go.py closed_universe_observers/tests/test_berger_common_action_obstruction_module.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+      "elapsed_seconds": 17.3,
+      "status": "PASS",
+      "detail": "57 passed"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+      "elapsed_seconds": 1.63,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 2,
+      "command": "independent Berger-generator reconstruction and exact representation closure in verify_berger_ward_cokernel_irrep_closure_obstruction",
+      "elapsed_seconds": 2.02,
+      "status": "PASS",
+      "detail": "reconstructed all 444 coordinate actions, detected 392 escaping basis directions, 424 outside coordinates and 848 incidences, closed to 900 coordinates, verified the generator payload, decomposed exact real weights (460,424,16), checked the invariant rank-four image, source cyclic types, H=2 line and the non-invariant -2 display coordinate"
+    },
+    {
+      "test_tier": "advisory",
+      "command": "bash ci/science-forge-shadow.sh",
+      "elapsed_seconds": 3.95,
+      "status": "ADVISORY_PASS_WITH_FINDINGS",
+      "detail": "pre-existing bridge certificate drift, unpinned dirty Forge build and corpus growth to 1206 certificates versus baseline 976"
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": "SATISFIED by the independent generator reconstruction, minimal representation closure, exact isotypic decomposition and generated atlas consumer",
+    "tier_3": "NOT_RUN: no freeze, release, paper theorem, shared-core algebra change or quantum promotion"
+  },
+  "artifacts": [
+    {
+      "path": "closed_universe_observers/generate_berger_ward_cokernel_irrep_closure_obstruction.py",
+      "sha256": "f7b42b81481c92d078c93cc40ce140957fc4811da6cd1ab1e0fa948a28a10cd6"
+    },
+    {
+      "path": "closed_universe_observers/verify_berger_ward_cokernel_irrep_closure_obstruction.py",
+      "sha256": "06bc2fea30baabb589645341d5bf25e792889070b1b7eec9fff4a9a633aa8039"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_berger_ward_cokernel_irrep_closure_obstruction.py",
+      "sha256": "da873763a61128a6c7b3eb00b5494750aecef915bd4f8e8aeef9237d9dd80aa6"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-ward-cokernel-irrep-closure-obstruction-v1.schema.json",
+      "sha256": "03b0eaeacd053d396bb1d8d6dcb8a2a298f5f338ca808a90e12211d1dee45841"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-ward-cokernel-irrep-closure-obstruction-payload-v1.schema.json",
+      "sha256": "77fdbd9ef1b7ae5d6b8892b17b6a5344c27521628030e3b81c9436a85f8873bc"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_WARD_COKERNEL_IRREP_CLOSURE_OBSTRUCTION.json",
+      "sha256": "e66532b70184500bea61a63bbfdf79f9f4575b0e181c00261afb4d861bb4c039"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_WARD_COKERNEL_IRREP_CLOSURE_OBSTRUCTION_PAYLOAD.json",
+      "sha256": "7d942ff560c125c7b50a7ae082816217b9b6e361fc3d25441853ae92452383ec"
+    },
+    {
+      "path": "closed_universe_observers/reports/berger-ward-cokernel-irrep-closure-obstruction.md",
+      "sha256": "77e6b88115bb923bb78acf169812db5832c32ff1a2684a0b4a54fc7e11cc325c"
+    },
+    {
+      "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "sha256": "99dc52c3e7c53c6c319323da78648a27b4be2b9904f33fd6eeb7f4d0d57b7e16"
+    }
+  ],
+  "flags": {
+    "ORIGINAL_444_SPACE_BERGER_CLOSED": false,
+    "INDUCED_ACTION_ON_440_COKERNEL_EXISTS": false,
+    "MINIMAL_900_COORDINATE_CLOSURE_CERTIFIED": true,
+    "CLOSED_896_QUOTIENT_ISOTYPIC_DECOMPOSITION_CERTIFIED": true,
+    "TYPED_MAXWELL_SOURCE_IS_NEW_WEIGHT_ZERO_LINE": true,
+    "DISPLAY_MINUS_TWO_COORDINATE_IS_INVARIANT": false,
+    "PURE_WEIGHT_TWO_OR_FOUR_CHANNEL_SUFFICIENT": false,
+    "REPRESENTATION_COMPLETE_ACTION_HESSIAN_EXISTS": false,
+    "COMPLETE_ARITY_TWO_IDENTITY": false,
+    "DETECTOR_REDSHIFT_AUTHORIZED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
