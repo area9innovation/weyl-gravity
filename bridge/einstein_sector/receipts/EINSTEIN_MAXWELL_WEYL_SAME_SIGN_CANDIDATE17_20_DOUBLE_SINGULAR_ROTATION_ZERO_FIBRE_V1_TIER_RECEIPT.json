@@ -1,0 +1,50 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_DOUBLE_SINGULAR_ROTATION_ZERO_FIBRE_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Connectedness of the complete candidate-17/20 double-singular fixed-positive-occupation lifted-rotation zero hub after both node-phase quotients.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.json": "c27f4f01d977387a324c102df35974a1e44bf64a231f5b28c8c92a4ee4f01eda",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.py": "f1bbf88854abddb5668c3cdb15a38e01935adb2d1b497f1baf70a7a2b095082d",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.py": "83cdef1587eb9cde1105e3b1c0535914e6a786aabe284252070146be4a47c50c",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.py": "4d9340fcbe1dfccebc66d98b36ae96cfaeae50603e62e635c97d551d55f633da",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.schema.json": "c477b9d471216dfad114f22213958a49401477849cea789d4778515ecb556507",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-candidate17-20-double-singular-rotation-zero-fibre.md": "48054d26753780b45d2d1c0c004ddde88b3d0cdf953ec72580f277c17f6f0784"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on the producer, independent verifier and focused test",
+        "python3 -m json.tool on the certificate and schema",
+        "git diff --check on the scoped theorem paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier does not import the producer. It replays the source intersection and dimension, independently derives the four-dimensional base and two projective-line fibres, checks the six-dimensional compact Kähler reduction and requires all larger connectedness flags to remain false."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutation": "Promote complete_singular_rotation_zero_quotient_connected from false to true.",
+      "result": "The schema rejects the promotion."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESSED_INPUT_REPLAY",
+      "reason": "The singular incidence, common-square resolution and lifted stabilizer inputs are hash-pinned. The theorem applies the same independently accepted compact Hamiltonian connectedness rail used by the candidate-16 singular theorem."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This closes only the double-singular hub at fixed occupations, not the larger component topology or programme freeze."
+    }
+  },
+  "claim_boundary": "CERTIFIED for the complete double-singular intersection hub on candidates 17 and 20 at every fixed positive occupation. Connectedness of either larger singular component, their full union, occupation gluing, final residual descent and later physical maps remain fail-closed."
+}

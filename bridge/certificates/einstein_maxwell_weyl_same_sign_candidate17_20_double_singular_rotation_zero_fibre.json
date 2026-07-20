@@ -1,0 +1,87 @@
+{
+  "claim_boundary": "This proves connectedness only for the complete double-singular intersection hub at each fixed positive occupation. It does not prove either larger singular component or their full union connected, glue occupations, perform final residual descent, or establish all-orders, causal, observational or quantum claims.",
+  "classification": {
+    "candidate17_double_singular_rotation_zero_hub_connected": true,
+    "candidate20_double_singular_rotation_zero_hub_connected": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "complete_singular_components_connected": false,
+    "complete_singular_rotation_zero_quotient_connected": false,
+    "final_residual_descent": false,
+    "occupation_strata_glued": false,
+    "positive_fixed_occupations_all_covered": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_EVERY_POSITIVE_FIXED_ACTIVE_OCCUPATION_PAIR_ON_CANDIDATES_17_AND_20",
+  "incidence_resolution": {
+    "affine_complex_dimension": 8,
+    "base": "P2_plus x P2_minus",
+    "base_complex_dimension": 4,
+    "compact": true,
+    "connected": true,
+    "connected_resolution_fibres": true,
+    "double_singular": "the product of the two one-factor incidence resolutions over P2_plus x P2_minus",
+    "equivariant_for_lifted_SO3": true,
+    "fixed_norm_phase_reduction": "P(L_plus direct_sum L_minus)_negative fibre_product_over_base P(L_plus direct_sum L_minus)_positive",
+    "kahler": true,
+    "negative_amplitude_bundle": "L_plus direct_sum L_minus with L_parity=O_P2_parity(-2)",
+    "one_factor": "Tot(O_P2(-2) direct_sum O_P2(-2)) -> S",
+    "positive_amplitude_bundle": "a second copy of L_plus direct_sum L_minus",
+    "reduced_complex_dimension": 6,
+    "surjective_to_target_hub": true
+  },
+  "interpretation": "The physical intersection of the two candidate-17/20 singular components is not merely nonempty: at each positive occupation it is one connected rotation-zero hub after node-phase reduction. This supplies a common connected target for later componentwise contraction, but does not yet prove that every point of either larger singular component reaches the hub.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "prove or disprove that every rotation-zero component of S_plus x K_minus and K_plus x S_minus meets the connected double-singular hub",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.py",
+    "generator_sha256": "f1bbf88854abddb5668c3cdb15a38e01935adb2d1b497f1baf70a7a2b095082d",
+    "inputs": {
+      "incidence": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.json",
+        "sha256": "3446655064527e6bedf6fa6f10b8653679d7a53b73a9abfae459f34067d3e648"
+      },
+      "singular_locus": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.json",
+        "sha256": "6b54d7672b9849998220716762f66a4ff81c4156dfd782c1b596c245862cb371"
+      },
+      "stabilizer": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_DOUBLE_SINGULAR_ROTATION_ZERO_FIBRE",
+  "result_state": "CANDIDATE17_20_DOUBLE_SINGULAR_FIXED_OCCUPATION_ROTATION_ZERO_HUB_CONNECTED",
+  "rotation_zero_fibre": {
+    "connectedness_input": "Kirwan connectedness for every moment-map fibre of a compact connected Hamiltonian K-manifold",
+    "moment_map": "the lifted diagonal SO(3) moment map pulled back to the compact fixed-occupation incidence resolution",
+    "nonempty_witness": "in the first parity factor set f=sqrt(6*N_minus)*e_0 and g=sqrt(96*N_plus)*e_0; set the second parity factor to zero",
+    "resolved_zero_fibre_connected": true,
+    "target_hub_zero_fibre_connected": true,
+    "target_hub_zero_fibre_is_continuous_image": true
+  },
+  "schema": "einstein-maxwell-weyl-same-sign-candidate17-20-double-singular-rotation-zero-fibre-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.schema.json",
+  "schema_sha256": "c477b9d471216dfad114f22213958a49401477849cea789d4778515ecb556507",
+  "scope": {
+    "background": "candidates 17 and 20 separately",
+    "boundaries": "closed S1_L times S2 before node-phase, lifted-rotation or final residual quotient",
+    "carrier": "the complete double-singular intersection S_plus x S_minus at fixed positive active occupations, after both common node-phase quotients",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidate-specific signed compact momenta, never identified across candidates",
+    "m": "all m=-2,...,2 in the binary-quartic carrier",
+    "omega": "candidate-specific difference collision into L=1 extra output",
+    "parity": "two exact factorized parity eigenchannels",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre"
+  ]
+}
