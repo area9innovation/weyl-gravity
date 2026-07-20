@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "scope",
+    "cartan_square_certificate",
+    "fixed_occupation_reduction",
+    "candidate_rows",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-same-sign-candidate17-20-common-square-rotation-quotient-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_COMMON_SQUARE_ROTATION_QUOTIENT"
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "one_parity_common_square_fixed_occupation_rotation_quotient_classified": {"const": true},
+        "candidate17_common_square_rotation_zero_quotient_always_one_point": {"const": true},
+        "candidate20_rotation_balance_divisor_nonempty": {"const": true},
+        "candidate20_on_balance_common_square_rotation_zero_quotient_closed_interval": {"const": true},
+        "unweighted_occupation_gap_sufficient_for_rotation_imbalance": {"const": false},
+        "candidate20_all_positive_occupations_have_point_quotient": {"const": false},
+        "complete_two_parity_singular_union_quotient_classified": {"const": false},
+        "causal_residual_observational_or_quantum_claim": {"const": false}
+      },
+      "required": [
+        "one_parity_common_square_fixed_occupation_rotation_quotient_classified",
+        "candidate17_common_square_rotation_zero_quotient_always_one_point",
+        "candidate20_rotation_balance_divisor_nonempty",
+        "candidate20_on_balance_common_square_rotation_zero_quotient_closed_interval",
+        "unweighted_occupation_gap_sufficient_for_rotation_imbalance",
+        "candidate20_all_positive_occupations_have_point_quotient",
+        "complete_two_parity_singular_union_quotient_classified",
+        "causal_residual_observational_or_quantum_claim"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

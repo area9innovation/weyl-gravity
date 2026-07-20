@@ -1,0 +1,56 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_COMMON_SQUARE_ROTATION_QUOTIENT_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Exact fixed-occupation lifted-SO(3) quotient of the one-parity common-square carrier on candidates 17 and 20, including the candidate-20 frequency-weighted balance divisor.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.json": "c1ed11a9fb9b168b7f1552f7f0fc372c12dc6840565bf7e4984a389dc7db5064",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.py": "737b3084a12a943290398a1ae0ab644913cb65702f81a7168bd8cbdfb22e7ba9",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.py": "4865e73a472ab7b581d640c9d25e5a0c24f898eed24b34ca160a467260ef56a9",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.py": "4e38f61d8093cf210097c4096981c9210e159fe60310592277708308465088f9",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.schema.json": "4f5c5a8801a085f73ddff31230190d09bd02657128b8c448589cc51224ef9aac",
+    "bridge/reports/einstein-maxwell-weyl-same-sign-candidate17-20-common-square-rotation-quotient.md": "4c7ec53cbc79303b2a60ffad3cbee8938df47c17c9968190a3ac541560608779"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.py bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.py",
+        "python3 -m json.tool bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.json",
+        "python3 -m json.tool bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.schema.json",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": {
+        "producer_check": 1.45,
+        "independent_verifier": 1.40,
+        "focused_tests": 1.45
+      },
+      "tests_run": 6,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier independently reconstructs the binary Cartan-square intertwiner, the symmetric-tracefree commutator identity, all four circuit-ray rotation coefficients and the positive candidate-20 balance ratio without importing the producer."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutation": "Erase the candidate-20 balance divisor by changing candidate20_rotation_balance_divisor_nonempty from true to false.",
+      "result": "The fail-closed schema rejects the mutation."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESSED_INPUT_REPLAY",
+      "reason": "The singular-locus, node-phase, current, scalar-ray and Taub-moment inputs are hash-pinned and replayed by both producer and verifier; no shared upstream mathematical object changed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a one-parity fixed-occupation quotient theorem, not the complete two-parity singular union, an atlas release or a programme freeze."
+    }
+  },
+  "claim_boundary": "CERTIFIED only for the one-parity common-square carrier. Candidate 17 has a point quotient throughout its active cone; candidate 20 has a point quotient off balance and an interval quotient on its exact balance divisor. The complete two-parity singular union remains open."
+}
