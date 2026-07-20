@@ -2,7 +2,7 @@
   "schema": "paper-draft-source-map-v1",
   "paper_id": "PAPER_13_COMPACT_WEYL_MAXWELL_SECOND_ORDER_TANGENT_CONE",
   "lifecycle_state": "DRAFT_ALLOWED",
-  "source_baseline": "e0817b78750d6bfe5558cf9430e0e9ed2e32e20c",
+  "source_baseline": "36acac733eea09ace40a25213e9a666fea1c6f8a",
   "manuscript": "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
   "certified_scope": {
@@ -38,6 +38,7 @@
     "same_sign_automatic_face_full_support_strata": "15_OF_15",
     "same_sign_candidate16_active_restricted_current": "NEGATIVE_KAHLER_ON_EVERY_COMPLEX_SMOOTH_STRATUM_GENERIC_REAL_RANK_20",
     "same_sign_candidate17_candidate20_axisymmetric_restricted_current": "SINGULAR_AFFINE_ZARISKI_TANGENT_INERTIA_6_10_0_PROJECTIVE_INERTIA_5_9_0_REAL_RANK_28",
+    "same_sign_candidate17_candidate20_smooth_active_restricted_current": "SMOOTH_FIXED_NORM_PROJECTIVE_RADICAL_AT_OCCUPATION_RATIO_13_OVER_192_INSIDE_BOUNDED_FIBRE_PRODUCT",
     "same_sign_candidate19_candidate21_active_linear_sheets": "SIX_COMPONENTS_EACH_CURRENT_INERTIA_5_5_0_AND_CONNECTED_FIXED_OCCUPATION_ROTATION_LINK",
     "same_sign_complete_phase_parity_fibres_classified": false,
     "same_sign_real_hermitian_components_classified": false,
@@ -200,10 +201,14 @@
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.json",
       "git_blob": "4d7d5dd258d4fe7cc03c9b46e9007b162de0569b"
+    },
+    {
+      "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.json",
+      "git_blob": "a2f3f753703c0fa8a3f4b8df48701ed508f80d09"
     }
   ],
   "verification_receipt": {
-    "date": "2026-07-19",
+    "date": "2026-07-20",
     "tier_0": {
       "status": "PASSED",
       "checks": [
@@ -236,17 +241,18 @@
         "complete unquotiented/phase-quotiented fixed-norm rotation-Hessian verifier and 3 tests",
         "candidate-16 active restricted-current verifier and 3 tests",
         "candidate-19/21 active linear-sheet rotation-link verifier and 3 tests",
-        "candidate-17/20 axisymmetric restricted-current verifier and 3 tests"
+        "candidate-17/20 axisymmetric restricted-current verifier and 3 tests",
+        "candidate-17/20 smooth active-current radical verifier and 3 tests"
       ]
     },
     "tier_2": {
       "status": "PASS_BY_CONTENT_ADDRESS",
-      "criterion": "All 38 source blobs are pinned at baseline e0817b78; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts, scalar-cone sections, exact bounded fibre products, complete complex resonance-face strata, connected automatic-face rotation links, the axisymmetric critical-locus theorem, its aligned and complete axial/polar Hessians, the candidate-16 stratumwise negative-Kahler restricted-current theorem, the candidate-17/20 singular axisymmetric Zariski-tangent current theorem, and all six candidate-19/21 linear-sheet current and connected-link theorems."
+      "criterion": "All 39 source blobs are pinned at baseline 36acac73; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts, scalar-cone sections, exact bounded fibre products, complete complex resonance-face strata, connected automatic-face rotation links, the axisymmetric critical-locus theorem, its aligned and complete axial/polar Hessians, the candidate-16 stratumwise negative-Kahler restricted-current theorem, the candidate-17/20 singular axisymmetric Zariski-tangent current theorem, the candidate-17/20 smooth bounded projective-current radical theorem, and all six candidate-19/21 linear-sheet current and connected-link theorems."
     },
     "broader_atlas_audit": {
       "status": "PASSED_AFTER_CONCURRENT_ATLAS_UPDATE",
       "checks": [
-        "99 atlas tests",
+        "100 atlas tests",
         "independent Einstein compact-product atlas verifier"
       ]
     },
@@ -255,5 +261,5 @@
       "criterion": "Paper 13 remains DRAFT_ALLOWED and no mathematical lifecycle state is promoted."
     }
   },
-  "next_gate": "CANDIDATE17_20_FULL_SMOOTH_RESTRICTED_CURRENT_AND_CANDIDATE18_ACTIVE_CURRENT_AND_CANDIDATE16_SINGULAR_TOPOLOGY"
+  "next_gate": "CANDIDATE18_RESTRICTED_CURRENT_AND_CANDIDATE17_20_PRESYMPLECTIC_DEGENERACY_DIVISOR_AND_CANDIDATE16_SINGULAR_TOPOLOGY"
 }
