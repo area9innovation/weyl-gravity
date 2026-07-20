@@ -1834,6 +1834,76 @@ This proposition concerns one parity endpoint of the connected hub.  It does
 not classify either complete two-parity singular component.
 \end{proof}
 
+\begin{proposition}[Balanced singular radial contraction]
+\label{prop:candidate-17-20-singular-radial-contraction}
+Fix positive active occupations on candidate \((17)\) or \((20)\).  On either
+complete singular component
+\[
+ \Sigma_+=S_+\times K_-,
+ \qquad
+ \Sigma_-=K_+\times S_-,
+\]
+there is an occupation-preserving radial path from every point to the
+double-singular hub whose rotational residual is exactly
+\[
+ \mu_{\rm rot}(t)
+   =(1-t^2)\delta\,\mu_{\rm sq},
+ \qquad
+ \delta=\omega_+N_+-\omega_-N_-.
+\]
+Consequently, on candidate \((20)\)'s exact balance divisor
+\(\delta=0\), the complete fixed-occupation singular-union
+rotation-zero fibre is connected.
+
+For candidate \((17)\), and for candidate \((20)\) off balance, the same
+conclusion is certified only on the phase-real common-square sublocus
+\(\mu_{\rm sq}=0\).
+\end{proposition}
+
+\begin{proof}
+Consider first a point of \(S\times K\).  Write \(A_\pm\) for the two node
+occupations carried by the common-square factor and \(B_\pm\) for those
+carried by the arbitrary kernel factor.  Scale the latter amplitudes by
+\(t\in[0,1]\), so their occupations become \(t^2B_\pm\), and add
+\((1-t^2)B_\pm\) to the square factor along one common-square direction.
+The total occupations \(N_\pm=A_\pm+B_\pm\) are unchanged.  Scaling
+preserves the third-transvectant kernel equation, and the receiving factor
+remains common-square, so the complete bilinear resonance continues to
+vanish.
+
+Let
+\(\alpha=\omega_+A_+-\omega_-A_-\) and let \(M_K\) denote the initial
+rotational moment of the kernel factor.  Initial rotation zero says
+\[
+ M_K=-\alpha\,\mu_{\rm sq}.
+\]
+Along the path, the kernel contribution scales by \(t^2\), whereas the
+square coefficient becomes
+\(\alpha+(1-t^2)(\omega_+B_+-\omega_-B_-)\).  Hence
+\[
+\begin{aligned}
+ \mu_{\rm rot}(t)
+ &=t^2M_K+
+   \bigl[\alpha+(1-t^2)(\omega_+B_+-\omega_-B_-)\bigr]\mu_{\rm sq}\\
+ &=(1-t^2)(\omega_+N_+-\omega_-N_-)\mu_{\rm sq}.
+\end{aligned}
+\]
+If the receiving square factor starts at its vertex, choose any square
+direction for \(t<1\).  Its transferred amplitude vanishes as \(t\to1\);
+initial rotation zero gives \(M_K=0\), and the same formula supplies a
+continuous balance-divisor path.  At \(t=0\) the arbitrary kernel factor is
+at its vertex, so the endpoint lies in \(S_+\times S_-\).  The construction
+is symmetric under exchange of the two parity factors.
+
+On candidate \((20)\)'s balance divisor the displayed residual vanishes for
+every initial point.  Every point of both singular components therefore
+joins the connected hub of
+Proposition~\ref{prop:candidate-17-20-double-singular-hub}, proving the
+claim.  Off balance, \(\mu_{\rm sq}=0\) is sufficient for the same radial
+path.  A nonzero residual obstructs this particular path only; it is not a
+nonradial no-go.
+\end{proof}
+
 \begin{proposition}[Candidate-(18) complete complex singular resolution]
 \label{prop:candidate-18-complex-singular-resolution}
 Let \(R_\pm=\operatorname{Rank}_{\leq1}(5\times2)_\pm\).  The complete
@@ -2424,6 +2494,8 @@ Candidate-(17)/(20) connected double-singular rotation-zero hub &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.json}\\
 Candidate-(17)/(20) one-parity common-square rotation quotient &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.json}\\
+Candidate-(17)/(20) singular radial contraction &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.json}\\
 Fixed-occupation node-phase-reduced divisors and local quotients &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json}\\
 Local lifted-rotation descent through current leaves &
@@ -2536,6 +2608,13 @@ Proposition~\ref{prop:candidate-17-20-common-square-quotient}: candidate
 \((17)\) always reduces to one orbit, whereas candidate \((20)\) acquires an
 interval quotient on its balance divisor.  In particular, the unweighted
 inequality \(N_->N_+\) is not sufficient to exclude rotational balance.  The
+complete candidate-\((20)\) singular union on that balance divisor now
+contracts to the connected hub by
+Proposition~\ref{prop:candidate-17-20-singular-radial-contraction}, including
+the receiving-square vertex.  Off balance, the same radial path covers the
+phase-real common-square sublocus, but its exact residual is not a nonradial
+no-go; complete singular connectedness remains open there and on candidate
+\((17)\).  The
 regular fixed-occupation node-phase reductions are classified by
 Proposition~\ref{prop:phase-reduced-presymplectic-divisors}.  The latter
 retains the common parity-node phases and candidate-(18) spectators rather

@@ -2795,6 +2795,27 @@ survives and its `SO(3)` quotient is a closed interval.  Off that divisor it
 is again one point.  Thus the unweighted occupation gap is not a sufficient
 rotation-imbalance test, and the larger two-parity singular components must
 retain the candidate-20 balance divisor explicitly.
+
+The complete singular union on that balance divisor is now connected by an
+exact radial contraction.  In either component
+`S_plus x K_minus` or `K_plus x S_minus`, scale the arbitrary kernel factor
+by `t` and transfer the released node occupations to one common-square
+direction.  Node norms and the third-transvectant resonance are preserved,
+and the exact rotational residual is
+
+```text
+mu_rotation(t)=(1-t^2)*delta*mu_square.
+```
+
+The construction includes the receiving-square vertex by choosing an
+arbitrary square direction whose transferred amplitude vanishes continuously
+at `t=1`.  Thus every candidate-20 balance-divisor rotation-zero point
+contracts to the connected double-singular hub, proving connectedness of the
+complete fixed-occupation singular-union zero fibre.  Off balance it proves
+the same only when `mu_square=0`; the nonzero displayed residual obstructs
+this radial path but is not a nonradial no-go.  Candidate 17 and candidate 20
+off balance remain `OPEN`.  The next gate is a moving-square-direction
+contraction or an invariant separating a zero-fibre component from the hub.
 All higher lifecycles remain fail-closed.  This is nonlinear input to
 same-background Bridge 1 with Classical,
 not a promotion of its certified linear relative triangle/cofiber.  The

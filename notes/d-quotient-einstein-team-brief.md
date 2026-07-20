@@ -4219,8 +4219,33 @@ point off balance and an interval on balance.  Atlas row
 `einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_common_square_rotation_quotient`
 is `CERTIFIED`.  In particular, the unweighted inequality
 `N_minus>N_plus` does not by itself exclude rotational balance.  The complete
-two-parity singular components and their contraction to the connected hub
-remain the active gate.
+two-parity singular components require a separate contraction theorem.
+
+That contraction is now exact on the candidate-20 balance divisor.  On either
+singular component, scale the arbitrary third-transvectant-kernel factor by
+`t` and transfer the released positive and negative node occupations into a
+fixed common-square direction.  Both node norms and the bilinear resonance
+remain fixed, while an initially rotation-zero point acquires precisely
+
+```text
+mu_rotation(t) = (1-t^2)*delta*mu_square.
+```
+
+The receiving-square vertex is included: choose any square direction for
+`t<1`; the transferred amplitude vanishes continuously at `t=1`.  Hence, when
+candidate 20 satisfies `delta=0`, every point of both complete singular
+components contracts to the connected double-singular hub.  The complete
+fixed-occupation singular-union rotation-zero fibre is therefore connected.
+Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_singular_radial_contraction`
+is `CERTIFIED`.
+
+Off balance, the same path remains rotation-zero on the phase-real
+common-square sublocus.  Its exact residual is an obstruction to this
+canonical radial contraction, not a nonradial no-go.  Candidate 17 and
+candidate 20 off balance therefore remain open.  The active gate is now to
+move the square direction during contraction or construct a quotient
+invariant that separates a zero-fibre component from the hub.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).

@@ -1,0 +1,76 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_SINGULAR_RADIAL_CONTRACTION_V1_INTEGRATION_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Fail-closed atlas, Einstein brief, canonical-roadmap and Paper 13 integration of the exact singular radial contraction and candidate-20 balance-divisor complete-singular connectedness theorem.",
+  "source_result": {
+    "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_SINGULAR_RADIAL_CONTRACTION",
+    "source_commit": "c9372084436ee9d679159968b1bd35478f223a31",
+    "source_blob": "1eba1595ad0fb83d27b3d7cca424bf67b807b6ef"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "content_sha256": {
+    "bridge/einstein_sector/atlas/EINSTEIN_ATLAS_V1_TIER_RECEIPT.json": "7ff8c96f7839a01102ef5f819e5cc74e8b0c6c055b82d2d097f0bb752c1b87b1",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "3b992810f4b5da21ac2a8154bcdac62570050bc1d2c9ffd810970a44b9519008",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "b5e93086414bed25cfd5b21e399fba3c18a7cc2515aed0811f786e8887246fb6",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "c4c2c8b7775bc668930ddf42fa35273acbacca6975f113a2c52ab93612b73bbf",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "cbfa91c01918af92155b712b605098777758ff5bfc7852a75ca23e186aad1e94",
+    "notes/d-quotient-einstein-team-brief.md": "1beb9326a4ade0baf34382f412dd47fdcfb9588142c9108e90122ee52e0b9429",
+    "notes/universe-building-roadmap.md": "f8e3aaf9e584f895abce35b40ce212e75bf6de42b9a5d60b9f0fdaa93e03551c",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json": "40076950a78a5e147b56f16c19148f100136f13d1f87a85822a8afb6ba20e390",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex": "6cbb07b7458f3261c1a454c5ca463e639ca899b61490a50546e8d461171c99e5",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.pdf": "6b58d53f40dc51e8ac7861331cbb4a3f8a68eced1484afd71c56b98f15d689ee"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on the atlas producer, independent verifier and focused tests",
+        "python3 -m json.tool on the atlas fragment, Paper 13 claim map and this receipt",
+        "git diff --check on the scoped integration paths",
+        "PDF text audit for the balanced singular radial-contraction proposition and fail-closed off-balance statement"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": {
+        "atlas_producer_write": 0.39,
+        "atlas_producer_check": 0.36,
+        "atlas_schema_validation": 0.33,
+        "atlas_independent_verifier": 0.34,
+        "atlas_tests": 0.06,
+        "paper_source_map": 0.26,
+        "paper_three_pass_build": 2.71
+      },
+      "tests_run": 115,
+      "commands": [
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 paper/verify_13_14_draft_source_maps.py",
+        "three pdflatex passes with -halt-on-error"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The atlas verifier independently requires the exact (1-t^2)*delta*mu_square residual, the receiving-square vertex case, the candidate-20 balance-divisor complete-singular conclusion and the OPEN off-balance boundary. Paper 13 pins 54 committed certificate blobs at source baseline c9372084."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutation": "Promote candidate-17 or candidate-20 off-balance complete-singular connectedness, or reinterpret the exact radial residual as a nonradial no-go.",
+      "result": "The source schema, generator assertions, atlas tests and independent atlas verifier reject each promotion."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The atlas imports the committed theorem certificate and its separately verified vertex repair. All prior atlas inputs remain content-addressed and unchanged; Paper 13 pins the new committed source blob explicitly."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Paper 13 remains DRAFT_ALLOWED; candidate 17 and candidate 20 off balance, occupation gluing, final residual descent and all higher lifecycles remain open."
+    }
+  },
+  "claim_boundary": "CERTIFIED only for the complete candidate-20 fixed-occupation singular union on the exact frequency-weighted balance divisor and for the phase-real radial subloci off balance. The exact off-balance residual obstructs the canonical radial path but is not a nonradial no-go. No occupation gluing, final residual, causal, observational, quantum or all-orders claim is made."
+}

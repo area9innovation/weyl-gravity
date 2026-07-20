@@ -452,6 +452,19 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("false inference", entry["claim_boundary"])
         self.assertIn("complete two-parity singular union", entry["claim_boundary"])
 
+    def test_candidate20_balanced_complete_singular_union_contracts_without_off_balance_promotion(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_singular_radial_contraction"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertIn("mu_rotation(t)=(1-t^2)*delta*mu_square", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("receiving square-factor vertex", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("S_plus x S_minus", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("complete fixed-occupation singular-union", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not a nonradial no-go", entry["claim_boundary"])
+        self.assertIn("retain OPEN complete-singular connectedness", entry["claim_boundary"])
+
     def test_same_sign_local_rotation_descent_is_basic_not_global(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent"]
         second = entry["mode_data"]["second_order"]

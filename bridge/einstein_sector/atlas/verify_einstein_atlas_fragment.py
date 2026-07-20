@@ -706,6 +706,18 @@ def verify() -> None:
         raise AssertionError("candidate-17/20 common-square correction scope changed")
     if "false inference" not in common_square["claim_boundary"] or "complete two-parity singular union" not in common_square["claim_boundary"]:
         raise AssertionError("candidate-17/20 common-square fail-closed boundary disappeared")
+    singular_radial = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_singular_radial_contraction"]
+    singular_radial_second = singular_radial["mode_data"]["second_order"]
+    if singular_radial["descriptions"]["symplectic"] != "CERTIFIED" or "mu_rotation(t)=(1-t^2)*delta*mu_square" not in singular_radial["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("candidate-17/20 singular radial identity was hidden")
+    if singular_radial["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "receiving square-factor vertex" not in singular_radial["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-20 balanced complete-singular contraction changed")
+    if "S_plus x S_minus" not in singular_radial["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-17/20 radial endpoint changed")
+    if singular_radial_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or singular_radial_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-17/20 singular radial correction scope changed")
+    if "not a nonradial no-go" not in singular_radial["claim_boundary"] or "retain OPEN complete-singular connectedness" not in singular_radial["claim_boundary"]:
+        raise AssertionError("candidate-17/20 singular radial fail-closed boundary disappeared")
     local_rotation = by_id["einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent"]
     local_rotation_second = local_rotation["mode_data"]["second_order"]
     if local_rotation["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "local simple symplectic leaf quotient" not in local_rotation["mode_data"]["lee_wald"]["statement"]:

@@ -119,6 +119,7 @@ CERTIFICATES = {
     "same_sign_candidate17_20_singular_component_incidence": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.json",
     "same_sign_candidate17_20_double_singular_rotation_zero_fibre": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.json",
     "same_sign_candidate17_20_common_square_rotation_quotient": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.json",
+    "same_sign_candidate17_20_singular_radial_contraction": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.json",
     "same_sign_active_phase_reduced_presymplectic_divisors": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
     "same_sign_active_local_rotation_leaf_descent": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
@@ -1207,6 +1208,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","The one-parity common-square carrier lies in the exact bounded tangent cone; candidate 20 bifurcates between a point quotient off balance and an interval quotient on balance."),("CERTIFIED","The same finite carrier belongs to the smooth exponential-polynomial correction class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_candidate17_20_common_square_rotation_quotient","same_sign_candidate17_20_double_singular_rotation_zero_fibre","same_sign_candidate17_20_axisymmetric_restricted_current","same_sign_scalar_extreme_rays","taub"),
             "This classifies only the one-parity common-square carrier at fixed occupations. It corrects the tempting but false inference that the unweighted occupation gap forbids rotational balance. The complete two-parity singular union, occupation gluing and every later physical descent remain open.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_singular_radial_contraction",
+            _scope(theory="Weyl-Maxwell target", background="candidates 17 and 20 separately; the complete-union theorem is candidate 20 on its exact active balance divisor", boundaries="closed S1_L times S2 after both free active-node phases and before lifted-rotation or final residual quotient", carrier="the complete singular union (S_plus x K_minus) union (K_plus x S_minus) at fixed positive active occupations, including the square-factor vertex strata", degree=2, parity="both labelled factorized parity channels", ell="input 2 x 2; output L=1", m="all m=-2,...,2 through the common-square and third-transvectant kernel factors", k="candidate-specific signed compact momenta, never identified across candidates", omega="candidate-specific DIFFERENCE collision with exact frequency-weighted balance coefficient", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Candidates 17 and 20 remain distinct. The complete singular-union conclusion applies only to candidate 20 on delta=omega_plus*N_plus-omega_minus*N_minus=0; off-balance conclusions are restricted to the phase-real common-square sublocus."),
+            ("CERTIFIED","Scaling the arbitrary kernel factor by t and transferring the released occupations into one common-square direction preserves both node norms and gives the exact residual mu_rotation(t)=(1-t^2)*delta*mu_square."),
+            ("CERTIFIED","On candidate 20's exact balance divisor every rotation-zero point of either complete singular component, including a receiving square-factor vertex, contracts continuously to the connected double-singular hub."),
+            ("CERTIFIED","The third-transvectant resonance remains zero under the radial kernel scaling and common-square transfer. At t=0 the path lies in S_plus x S_minus."),
+            _second_order(("CERTIFIED","On the candidate-20 balance divisor the complete fixed-occupation singular-union rotation-zero fibre is connected through the certified radial paths and connected hub; off balance only the phase-real radial subloci are certified."),("CERTIFIED","The same finite-dimensional radial paths lie in the smooth exponential-polynomial correction class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate17_20_singular_radial_contraction","same_sign_candidate17_20_common_square_rotation_quotient","same_sign_candidate17_20_double_singular_rotation_zero_fibre","same_sign_third_transvectant_singular_locus","taub"),
+            "The exact off-balance residual obstructs this canonical radial contraction when the common-square moment is nonzero; it is not a nonradial no-go. Candidate 17 and candidate 20 off balance therefore retain OPEN complete-singular connectedness. Occupation gluing, final residual descent, and causal, observational or quantum maps remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_same_sign_active_phase_reduced_presymplectic_divisors",
@@ -2314,6 +2327,18 @@ def build() -> dict[str, object]:
         raise AssertionError("candidate-17/20 common-square rotation quotient changed")
     if common_square["unweighted_occupation_gap_sufficient_for_rotation_imbalance"] or common_square["candidate20_all_positive_occupations_have_point_quotient"] or common_square["complete_two_parity_singular_union_quotient_classified"] or common_square["occupation_strata_glued"] or common_square["final_residual_descent"] or common_square["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("candidate-17/20 common-square rotation quotient exceeded scope")
+    singular_radial = records["same_sign_candidate17_20_singular_radial_contraction"]["classification"]
+    if not (
+        singular_radial["exact_radial_transfer_identity_certified"]
+        and singular_radial["square_factor_vertex_case_included"]
+        and singular_radial["candidate20_balance_complete_singular_union_contracts_to_hub"]
+        and singular_radial["candidate20_balance_complete_singular_rotation_zero_fibre_connected"]
+        and singular_radial["candidate17_phase_real_common_square_sublocus_contracts_to_hub"]
+        and singular_radial["candidate20_off_balance_phase_real_common_square_sublocus_contracts_to_hub"]
+    ):
+        raise AssertionError("candidate-17/20 singular radial contraction changed")
+    if singular_radial["candidate17_complete_singular_rotation_zero_fibre_connected"] or singular_radial["candidate20_off_balance_complete_singular_rotation_zero_fibre_connected"] or singular_radial["off_balance_nonradial_contraction_no_go"] or singular_radial["occupation_strata_glued"] or singular_radial["final_residual_descent"] or singular_radial["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-17/20 singular radial contraction exceeded scope")
     phase_reduced_divisors = records["same_sign_active_phase_reduced_presymplectic_divisors"]["classification"]
     if not (
         phase_reduced_divisors["candidate17_regular_fixed_occupation_phase_reduced_divisor_classified"]
