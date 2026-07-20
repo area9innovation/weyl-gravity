@@ -532,6 +532,28 @@ def verify() -> None:
         raise AssertionError("candidate-16 singular topology was promoted")
     if candidate16_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "candidates 17--21" not in candidate16_current["claim_boundary"]:
         raise AssertionError("candidate-16 active restricted-current theorem exceeded scope")
+    candidate16_singular = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate16_singular_rotation_zero_fibre"]
+    candidate16_singular_second = candidate16_singular["mode_data"]["second_order"]
+    if candidate16_singular["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "two endpoint CP^4" not in candidate16_singular["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("candidate-16 singular strata were hidden")
+    if candidate16_singular["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "connected lifted-SO(3)" not in candidate16_singular["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-16 rotation-zero connectedness changed")
+    if candidate16_singular["mode_data"]["resonance"]["status"] != "CERTIFIED" or "Kahler tenfold" not in candidate16_singular["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-16 incidence resolution changed")
+    if candidate16_singular_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or candidate16_singular_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-16 singular theorem correction scope changed")
+    if "does not declare a global orbifold" not in candidate16_singular["claim_boundary"] or "glue occupation strata" not in candidate16_singular["claim_boundary"]:
+        raise AssertionError("candidate-16 singular theorem boundary disappeared")
+    candidate16_gluing = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate16_occupation_gluing"]
+    candidate16_gluing_second = candidate16_gluing["mode_data"]["second_order"]
+    if candidate16_gluing["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "proper and surjective" not in candidate16_gluing["mode_data"]["taub_maps"]["statement"] or "complete normalized link is connected" not in candidate16_gluing["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-16 occupation gluing was hidden")
+    if candidate16_gluing["mode_data"]["resonance"]["status"] != "CERTIFIED" or "three-dimensional cone" not in candidate16_gluing["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-16 scalar base changed")
+    if candidate16_gluing_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or candidate16_gluing_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-16 occupation gluing correction scope changed")
+    if "cone origin" not in candidate16_gluing["claim_boundary"] or "other candidate backgrounds" not in candidate16_gluing["claim_boundary"]:
+        raise AssertionError("candidate-16 occupation gluing boundary disappeared")
     linear_sheets = by_id["einstein.ph.wm.interaction.ell2_same_sign_active_linear_sheet_rotation_links"]
     linear_second = linear_sheets["mode_data"]["second_order"]
     if linear_sheets["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "inertia (5,5,0)" not in linear_sheets["mode_data"]["lee_wald"]["statement"]:
@@ -580,6 +602,90 @@ def verify() -> None:
         raise AssertionError("smooth active divisor correction scope changed")
     if "Singular-locus reduction" not in active_divisors["claim_boundary"]:
         raise AssertionError("smooth active divisor boundary disappeared")
+    phase_reduced = by_id["einstein.ph.wm.interaction.ell2_same_sign_active_phase_reduced_presymplectic_divisors"]
+    phase_reduced_second = phase_reduced["mode_data"]["second_order"]
+    if phase_reduced["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "det(A H^{-1} A^dagger)=0" not in phase_reduced["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("phase-reduced active divisor was hidden")
+    if phase_reduced["mode_data"]["taub_maps"]["status"] != "OPEN" or "lifted SO(3)" not in phase_reduced["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("node-phase reduction was conflated with lifted rotations")
+    if "coupled 8x8" not in phase_reduced["mode_data"]["resonance"]["statement"] or "100 product charts" not in phase_reduced["mode_data"]["resonance"]["statement"] or "ten positive spectators" not in phase_reduced["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("phase-reduced divisor carrier dimensions changed")
+    if phase_reduced_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or phase_reduced_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("phase-reduced divisor correction scope changed")
+    if "Lifted-rotation reduction" not in phase_reduced["claim_boundary"] or "global/Hausdorff" not in phase_reduced["claim_boundary"]:
+        raise AssertionError("phase-reduced divisor boundary disappeared")
+    transvectant_singular = by_id["einstein.ph.wm.interaction.ell2_same_sign_third_transvectant_singular_locus"]
+    transvectant_singular_second = transvectant_singular["mode_data"]["second_order"]
+    if transvectant_singular["descriptions"]["symplectic"] != "OPEN" or transvectant_singular["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("complex singular-locus lifecycle changed")
+    if "P2 x P1" not in transvectant_singular["mode_data"]["resonance"]["statement"] or "two eleven-dimensional singular components" not in transvectant_singular["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("third-transvectant singular geometry was hidden")
+    if transvectant_singular["mode_data"]["lee_wald"]["status"] != "OPEN" or transvectant_singular["mode_data"]["taub_maps"]["status"] != "OPEN":
+        raise AssertionError("complex singular carrier was promoted through physical reduction")
+    if transvectant_singular_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or transvectant_singular_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("third-transvectant singular correction scope changed")
+    if "Real Hermitian intersections" not in transvectant_singular["claim_boundary"] or "lifted-rotation quotients" not in transvectant_singular["claim_boundary"]:
+        raise AssertionError("third-transvectant singular boundary disappeared")
+    candidate18_singular = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate18_complex_singular_resolution"]
+    candidate18_singular_second = candidate18_singular["mode_data"]["second_order"]
+    if candidate18_singular["descriptions"]["symplectic"] != "OPEN" or candidate18_singular["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("candidate-18 complex singular lifecycle changed")
+    if "two dimension-16 components" not in candidate18_singular["mode_data"]["resonance"]["statement"] or "dimension-10 spectator space" not in candidate18_singular["mode_data"]["resonance"]["statement"] or "dimension 22" not in candidate18_singular["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-18 complex singular geometry was hidden")
+    if candidate18_singular["mode_data"]["lee_wald"]["status"] != "OPEN" or candidate18_singular["mode_data"]["taub_maps"]["status"] != "OPEN":
+        raise AssertionError("candidate-18 complex carrier was promoted through physical reduction")
+    if candidate18_singular_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or candidate18_singular_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-18 complex singular correction scope changed")
+    if "Real Hermitian fixed-occupation strata" not in candidate18_singular["claim_boundary"] or "lifted-rotation quotients" not in candidate18_singular["claim_boundary"]:
+        raise AssertionError("candidate-18 complex singular boundary disappeared")
+    singular_sections = by_id["einstein.ph.wm.interaction.ell2_same_sign_active_singular_rotation_zero_sections"]
+    singular_sections_second = singular_sections["mode_data"]["second_order"]
+    if singular_sections["descriptions"]["symplectic"] != "OPEN" or singular_sections["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("active singular-section lifecycle changed")
+    if singular_sections["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "every N_minus>0 and N_plus>0" not in singular_sections["mode_data"]["taub_maps"]["statement"] or "node-phase actions free" not in singular_sections["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("unavoidable singular rotation-zero section was hidden")
+    if "common-square" not in singular_sections["mode_data"]["resonance"]["statement"] or "all ten spectators" not in singular_sections["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("singular-section carrier scope changed")
+    if singular_sections_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or singular_sections_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("singular-section correction scope changed")
+    if "does not classify the complete real singular components" not in singular_sections["claim_boundary"] or "connectedness" not in singular_sections["claim_boundary"]:
+        raise AssertionError("singular-section boundary disappeared")
+    candidate18_separation = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate18_singular_component_separation"]
+    candidate18_separation_second = candidate18_separation["mode_data"]["second_order"]
+    if candidate18_separation["descriptions"]["symplectic"] != "OPEN" or candidate18_separation["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("candidate-18 singular-separation lifecycle changed")
+    if candidate18_separation["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "At N_minus>0" not in candidate18_separation["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-18 singular separation was hidden")
+    if "at least two components" not in candidate18_separation["mode_data"]["resonance"]["statement"] or "clopen invariant subsets" not in candidate18_separation["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-18 singular component lower bound changed")
+    if candidate18_separation_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or candidate18_separation_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-18 singular-separation correction scope changed")
+    if "does not prove either component connected" not in candidate18_separation["claim_boundary"] or "full smooth-plus-singular zero fibre disconnected" not in candidate18_separation["claim_boundary"]:
+        raise AssertionError("candidate-18 singular-separation boundary disappeared")
+    candidate18_bridge = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate18_singular_smooth_bridge"]
+    candidate18_bridge_second = candidate18_bridge["mode_data"]["second_order"]
+    if candidate18_bridge["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "complex-smooth in its interior" not in candidate18_bridge["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("candidate-18 smooth bridge was hidden")
+    if candidate18_bridge["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "central m=0" not in candidate18_bridge["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-18 smooth bridge moment maps changed")
+    if "one endpoint lies in each singular component" not in candidate18_bridge["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-18 smooth bridge endpoints changed")
+    if candidate18_bridge_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or candidate18_bridge_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-18 smooth bridge correction scope changed")
+    if "does not prove every zero-fibre component" not in candidate18_bridge["claim_boundary"] or "global connectedness" not in candidate18_bridge["claim_boundary"]:
+        raise AssertionError("candidate-18 smooth bridge boundary disappeared")
+    local_rotation = by_id["einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent"]
+    local_rotation_second = local_rotation["mode_data"]["second_order"]
+    if local_rotation["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "local simple symplectic leaf quotient" not in local_rotation["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("local current-leaf descent was hidden")
+    if local_rotation["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "commutes locally" not in local_rotation["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("local lifted-rotation descent changed")
+    if local_rotation["mode_data"]["resonance"]["status"] != "CERTIFIED" or "distinct compatible structures" not in local_rotation["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("current radical was identified with rotation")
+    if local_rotation_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or local_rotation_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("local rotation-leaf correction scope changed")
+    if "does not construct a global leaf space" not in local_rotation["claim_boundary"] or "complete rotation-zero-fibre connectedness" not in local_rotation["claim_boundary"]:
+        raise AssertionError("local rotation-leaf boundary disappeared")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

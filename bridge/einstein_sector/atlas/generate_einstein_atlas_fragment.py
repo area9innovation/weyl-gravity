@@ -103,11 +103,20 @@ CERTIFICATES = {
     "same_sign_automatic_face_full_internal_rotation_normal_form": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.json",
     "same_sign_automatic_face_full_rotation_normal_form": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.json",
     "same_sign_candidate16_active_restricted_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.json",
+    "same_sign_candidate16_singular_rotation_zero_fibre": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre.json",
+    "same_sign_candidate16_occupation_gluing": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing.json",
     "same_sign_active_linear_sheet_rotation_links": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.json",
     "same_sign_candidate17_20_axisymmetric_restricted_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.json",
     "same_sign_L1_active_restricted_current_degeneracy": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.json",
     "same_sign_candidate18_active_restricted_current_degeneracy": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.json",
     "same_sign_active_presymplectic_divisors": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.json",
+    "same_sign_third_transvectant_singular_locus": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.json",
+    "same_sign_candidate18_complex_singular_resolution": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution.json",
+    "same_sign_active_singular_rotation_zero_sections": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.json",
+    "same_sign_candidate18_singular_component_separation": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.json",
+    "same_sign_candidate18_singular_smooth_bridge": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.json",
+    "same_sign_active_phase_reduced_presymplectic_divisors": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
+    "same_sign_active_local_rotation_leaf_descent": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
     "ell2_two_abs_momentum_candidate4_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json",
     "ell2_two_abs_momentum_axial_qminus_L4_triplet": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.json",
@@ -1016,6 +1025,30 @@ def entries() -> list[dict[str, object]]:
             "This closes only the candidate-16 stratumwise restricted-current gate. Singular Hamiltonian topology, candidates 17--21, final residual descent, all-orders integration and causal, observational or quantum claims remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate16_singular_rotation_zero_fibre",
+            _scope(theory="Weyl-Maxwell target", background="candidate 16 only at rho=17*(79+51*sqrt(3))/132", boundaries="closed S1_L times S2 before final residual quotient", carrier="the complete candidate-16 fixed-positive-node-norm active link, including both singular endpoints, after the two node-phase quotients", degree=2, parity="complete axial and polar q-minus current spaces", ell="input 2 x 2; output L=3", m="all m=-2,...,2 through the spin-two incidence resolution", k="candidatewise signed n=(1,-2) or (1,2), never identified across rho", omega="positive-frequency q-minus plus q-minus SUM collision into p-extra", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Candidate 16, its two q-minus nodes, rank-one factors, fixed occupations and lifted diagonal SO(3) action retain their declared same-background labels."),
+            ("CERTIFIED","The current stays negative Kahler on every smooth stratum; the singular locus consists of two endpoint CP^4 strata and is not misreported as a current radical."),
+            ("CERTIFIED","The compact connected incidence resolution has a nonempty connected lifted-SO(3) moment-map zero fibre; connected resolution fibres make the complete singular target zero fibre connected."),
+            ("CERTIFIED","Each rank-one factor is singular only at its vertex. The product resolution has complex dimension 12 and its positive-norm node-phase quotient is a compact connected Kahler tenfold."),
+            _second_order(("CERTIFIED","The imported all-m=0 point proves the fixed-occupation rotation-zero fibre nonempty, and the exact candidate-16 bounded fibre-product theorem supplies its second-order membership."),("CERTIFIED","The same finite carrier lies in the smooth-secular class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate16_singular_rotation_zero_fibre","same_sign_candidate16_active_restricted_current","same_sign_collision_bounded_witnesses","ell2_two_abs_momentum_target_doublet_L3_zero_varieties","taub"),
+            "This classifies candidate 16 at each fixed positive active occupation after node-phase quotient. It does not declare a global orbifold, glue occupation strata, perform final residual descent, prove all-orders integration, or supply causal, observational or quantum transport.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate16_occupation_gluing",
+            _scope(theory="Weyl-Maxwell target", background="candidate 16 only at rho=17*(79+51*sqrt(3))/132", boundaries="closed S1_L times S2 before final residual quotient", carrier="the complete candidate-16 active lifted-rotation zero link over every nonzero scalar occupation, after total-occupation normalization and both node-phase quotients", degree=2, parity="complete axial and polar q-minus current spaces", ell="input 2 x 2; output L=3", m="all m=-2,...,2 through the fixed-occupation incidence resolutions", k="candidatewise signed n=(1,-2) or (1,2), never identified across rho", omega="positive-frequency q-minus plus q-minus SUM collision into p-extra", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Only candidate 16 is glued over its own normalized scalar cone; the origin and all other circumference backgrounds remain separate."),
+            ("CERTIFIED","The negative Kahler current and incidence resolution are unchanged on every positive occupation fibre, including the two singular endpoint strata."),
+            ("CERTIFIED","The normalized scalar base is a compact connected two-polytope. The rotation-zero projection is proper and surjective with connected fibres, hence the complete normalized link is connected."),
+            ("CERTIFIED","Four positive scalar rays generate a three-dimensional cone; total-occupation normalization gives the exact compact base and both active q-minus norms stay strictly positive."),
+            _second_order(("CERTIFIED","The exact bounded section supplies surjectivity over the complete nonzero normalized scalar cone; fixed-occupation connectedness supplies every fibre."),("CERTIFIED","The same finite normalized link lies in the smooth-secular class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate16_occupation_gluing","same_sign_candidate16_singular_rotation_zero_fibre","same_sign_candidate16_active_restricted_current","same_sign_scalar_extreme_rays","same_sign_phase_parity_fibre_product"),
+            "This glues all nonzero candidate-16 scalar occupations after total-occupation normalization. The cone origin, other candidate backgrounds, final residual descent, all-orders integration and causal, observational or quantum transport remain outside the theorem.",
+        ),
+        _entry(
             "einstein.ph.wm.interaction.ell2_same_sign_active_linear_sheet_rotation_links",
             _scope(theory="Weyl-Maxwell target", background="candidates 19 and 21 only, retained as distinct compact Plebanski--Hacyan collision backgrounds", boundaries="closed S1_L times S2 before final residual quotient", carrier="the four real pencil-eigenline sheets of candidate 19 and two real parity-proportional sheets of candidate 21 at every fixed active occupation and spectator support stratum", degree=2, parity="complete axial/polar graph or eigenline subspaces on resonant nodes and complete spaces on spectators", ell="input 2 x 2; output L=4", m="all m=-2,...,2", k="signed n=(1,2), candidatewise and never identified across rho", omega="candidate-specific positive-frequency SUM collision", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
@@ -1074,6 +1107,90 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","The previously certified smooth radical witnesses remain inside the exact bounded fibre product; the divisor theorem classifies their tangent-current corank but does not glue occupations."),("CERTIFIED","The same finite witnesses lie in the smooth-secular class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_active_presymplectic_divisors","same_sign_L1_active_restricted_current_degeneracy","same_sign_candidate18_active_restricted_current_degeneracy","ell2_two_abs_momentum_scalar_L1_zero_varieties","ell2_two_abs_momentum_multiplicity_two_L3_zero_varieties","axial_current","polar_current"),
             "This classifies smooth tangent-space degeneracy divisors and linear presymplectic quotients only. Singular-locus reduction, constant-rank/global quotient topology, occupation gluing, final residual descent, all-orders integration and causal, observational or quantum maps remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_third_transvectant_singular_locus",
+            _scope(theory="Weyl-Maxwell target", background="candidates 17 and 20 separately", boundaries="closed S1_L times S2 before node-phase, lifted-rotation or final residual quotient", carrier="both parity factors of the complete complex third-transvectant resonance variety", degree=2, parity="two exact factorized parity eigenchannels", ell="input 2 x 2; output L=1", m="all m=-2,...,2 in the binary-quartic carrier", k="candidate-specific signed compact momenta, never identified across candidates", omega="candidate-specific difference collision into L=1 extra output", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"OPEN","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","The complete complex singular carriers are classified candidatewise and paritywise; candidates 17 and 20 remain distinct backgrounds."),
+            ("OPEN","The theorem does not restrict the Lee-Wald form to the real fixed-occupation singular strata or construct their presymplectic quotient."),
+            ("OPEN","Node phases and the lifted SO(3) moment-map zero condition have not yet been imposed on these singular components."),
+            ("CERTIFIED","For one factor rank J<3 exactly on (f,g)=(a v(lambda),b v(lambda)); its projectivization is P2 x P1. The two-parity product has exactly two eleven-dimensional singular components meeting in dimension eight."),
+            _second_order(("OPEN","The complex singular carrier has not yet been intersected with the real bounded fibre product."),("OPEN","No singular-stratum secular extension theorem is inferred."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_third_transvectant_singular_locus","ell2_two_abs_momentum_scalar_L1_zero_varieties","same_sign_active_presymplectic_divisors"),
+            "This is a complete complex-algebraic singular-locus theorem before fixed norms and group reduction. Real Hermitian intersections, node-phase and lifted-rotation quotients, global connectedness, occupation gluing, final residual descent and all later physical maps remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate18_complex_singular_resolution",
+            _scope(theory="Weyl-Maxwell target", background="candidate 18 only", boundaries="closed S1_L times S2 before node-phase, lifted-rotation or final residual quotient", carrier="ten positive current-orthogonal spectators times two rank-at-most-one 5x2 parity factors", degree=2, parity="both exact factorized parity channels", ell="input 2 x 2; output L=3", m="all m=-2,...,2; all ten spectators retained", k="candidate-specific allowed compact momenta, never identified across rho", omega="candidate-specific certified SUM collision", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"OPEN","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Only candidate 18 is classified; its ten spectators and two parity factors remain explicit and are not identified with another background."),
+            ("OPEN","The complex resolution has not yet been equipped with the real fixed-occupation Lee-Wald restriction or its radical quotient."),
+            ("OPEN","Node phases and the lifted SO(3) moment-map zero condition have not yet been imposed on the resolved carrier."),
+            ("CERTIFIED","The singular locus has exactly two dimension-16 components, where one rank-one factor is the vertex, meeting in the dimension-10 spectator space. The smooth connected incidence resolution has dimension 22 and connected fibres."),
+            _second_order(("OPEN","The resolved complex carrier has not yet been intersected with the real bounded fibre product."),("OPEN","No singular-stratum secular extension theorem is inferred."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate18_complex_singular_resolution","same_sign_active_presymplectic_divisors","same_sign_candidate18_active_restricted_current_degeneracy"),
+            "This classifies and resolves the complete candidate-18 complex carrier only. Real Hermitian fixed-occupation strata, current degeneracy on the resolution, node-phase and lifted-rotation quotients, connected zero fibres, occupation gluing and later physical maps remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_active_singular_rotation_zero_sections",
+            _scope(theory="Weyl-Maxwell target", background="candidates 17, 18 and 20 separately", boundaries="closed S1_L times S2 before node-phase, lifted-rotation or final residual quotient", carrier="real positive-frequency fixed-active-occupation links after conjugate reality completion", degree=2, parity="one declared parity factor carries the section and the other is at its singular vertex", ell="input 2 x 2; output L=1 on candidates 17/20 and L=3 on candidate 18", m="only m=0 is nonzero in the explicit section", k="candidate-specific allowed compact momenta, never identified across candidates", omega="candidate-specific certified collision frequency", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"OPEN","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","The explicit sections retain candidate, parity, node and momentum labels; no carrier is identified across backgrounds."),
+            ("OPEN","The sections lie on the real fixed-occupation singular carrier, but the resolved Lee-Wald current and singular presymplectic quotient remain unclassified."),
+            ("CERTIFIED","For every N_minus>0 and N_plus>0, an axisymmetric singular point has all three lifted rotational moment maps zero. Positive total node norms keep both node-phase actions free."),
+            ("CERTIFIED","Candidates 17/20 use the common-square third-transvectant singularity; candidate 18 uses one rank-one factor and the vertex of the other, with all ten spectators set explicitly to zero."),
+            _second_order(("CERTIFIED","The exact section lies in the already certified bounded real fibre product at every positive active occupation; this is an existence witness, not a component classification."),("CERTIFIED","The finite section also lies in the smooth-secular correction class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_active_singular_rotation_zero_sections","same_sign_third_transvectant_singular_locus","same_sign_candidate18_complex_singular_resolution","same_sign_active_phase_reduced_presymplectic_divisors","same_sign_collision_bounded_witnesses"),
+            "This proves unavoidable singular rotation-zero points at every positive active occupation. It does not classify the complete real singular components, their node-phase or lifted-rotation quotient, connectedness, occupation gluing, final residual descent or later physical maps.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate18_singular_component_separation",
+            _scope(theory="Weyl-Maxwell target", background="candidate 18 only", boundaries="closed S1_L times S2 before final residual quotient", carrier="the candidate-18 singular locus on every fixed level with strictly positive negative-current active-node occupation", degree=2, parity="both labelled factorized parity channels, not exchanged by the connected physical group", ell="input 2 x 2; output L=3", m="all m=-2,...,2; all ten spectators retained", k="candidate-specific allowed compact momenta, never identified across rho", omega="candidate-specific certified SUM collision", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"OPEN","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Only candidate 18 is covered. The two singular components retain their parity-factor labels and are not exchanged by node phases or lifted SO(3)."),
+            ("OPEN","The Lee-Wald current on each resolved singular component and any smooth bridge between the components remain unclassified."),
+            ("CERTIFIED","Both singular components contain rotation-zero points. At N_minus>0 their intersection is excluded, and the connected node-phase and lifted-rotation actions preserve each component."),
+            ("CERTIFIED","The singular fixed-positive-occupation locus is the disjoint union of two nonempty clopen invariant subsets; its rotation-zero quotient therefore has at least two components."),
+            _second_order(("CERTIFIED","The two explicit singular rotation-zero sections lie in the bounded real fibre product; no full-fibre disconnection is inferred."),("CERTIFIED","The same finite sections lie in the smooth-secular correction class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate18_singular_component_separation","same_sign_active_singular_rotation_zero_sections","same_sign_candidate18_complex_singular_resolution","same_sign_active_phase_reduced_presymplectic_divisors"),
+            "This proves a two-component lower bound for the candidate-18 singular rotation-zero quotient only. It does not prove either component connected or the full smooth-plus-singular zero fibre disconnected, and it does not glue occupations or perform later physical descent.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate18_singular_smooth_bridge",
+            _scope(theory="Weyl-Maxwell target", background="candidate 18 only", boundaries="closed S1_L times S2 before final residual quotient", carrier="an explicit central-m axisymmetric path in the complete fixed-positive-occupation resonance variety", degree=2, parity="both exact factorized parity channels", ell="input 2 x 2; output L=3", m="only m=0 is occupied along the bridge", k="candidate-specific allowed compact momenta, never identified across rho", omega="candidate-specific certified SUM collision", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Only candidate 18 is covered; the path retains the two labelled parity factors and does not identify another background."),
+            ("CERTIFIED","The bridge lies in the complete fixed-occupation carrier, is complex-smooth in its interior, and keeps both node-phase actions free."),
+            ("CERTIFIED","All three lifted rotational moment maps vanish along the path because only the central m=0 coefficient is occupied."),
+            ("CERTIFIED","At every positive occupation pair, one endpoint lies in each singular component and the open path lies in the smooth rank-one-by-rank-one carrier."),
+            _second_order(("CERTIFIED","The explicit path stays inside the exact bounded real fibre product at fixed occupations."),("CERTIFIED","The same finite path lies in the smooth-secular correction class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate18_singular_smooth_bridge","same_sign_candidate18_singular_component_separation","same_sign_active_phase_reduced_presymplectic_divisors","same_sign_candidate18_complex_singular_resolution"),
+            "This joins one certified point in each candidate-18 singular component through the smooth rotation-zero carrier at every positive occupation. It does not prove every zero-fibre component meets this bridge, global connectedness, occupation gluing or later physical descent.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_active_phase_reduced_presymplectic_divisors",
+            _scope(theory="Weyl-Maxwell target", background="three distinct collision candidates 17, 18 and 20, retained separately", boundaries="closed S1_L times S2 before lifted-rotation or final residual quotient", carrier="the complete smooth regular active resonance varieties at nonzero fixed active-node occupations after the two common node-phase quotients", degree=2, parity="both exact factorized parity channels with their common physical-node phases coupled", ell="input 2 x 2; output L=1 on candidates 17/20 and L=3 on candidate 18", m="all m=-2,...,2", k="candidate-specific allowed compact momenta, never identified across rho", omega="candidate-specific certified SUM or DIFFERENCE collision", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","The candidate-labelled branch and momentum carriers are unchanged; no parity factor, circumference background or spectator coordinate is identified with another."),
+            ("CERTIFIED","Appending the two total-node Hermitian horizontal rows gives A. On every regular chart det(A H^{-1} A^dagger)=0 is the complete fixed-occupation node-phase-reduced divisor; its determinantal ideals give every reduced corank."),
+            ("OPEN","The exact bounded witnesses still have all five stabilizer moments zero, but the lifted SO(3) zero fibre and quotient are not inferred from the node-phase reduction."),
+            ("CERTIFIED","Candidates 17/20 use one coupled 8x8 determinant with horizontal dimension 12; candidate 18 uses 100 product charts, a 10x30 augmented matrix, horizontal dimension 20 and retains all ten positive spectators."),
+            _second_order(("CERTIFIED","The imported candidate-17/18/20 radical points remain in the exact bounded fibre product. The general reduced divisor is a current theorem, not a claim that every divisor point satisfies all Taub and resonance functionals."),("CERTIFIED","The same finite witnesses lie in the smooth-secular class; no all-orders leaf is inferred."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_active_phase_reduced_presymplectic_divisors","same_sign_active_presymplectic_divisors","same_sign_L1_active_restricted_current_degeneracy","same_sign_candidate18_active_restricted_current_degeneracy","same_sign_phase_parity_fibre_product","axial_current","polar_current"),
+            "This classifies the smooth regular fixed-active-occupation current after the two common node phases only. Lifted-rotation reduction, global/Hausdorff leaf-space topology, singular-locus reduction, occupation gluing, final residual descent, all-orders integration and causal, observational or quantum maps remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent",
+            _scope(theory="Weyl-Maxwell target", background="three distinct collision candidates 17, 18 and 20, retained separately", boundaries="closed S1_L times S2 before global rotation or final residual quotient", carrier="every smooth constant-corank fixed-occupation active stratum after the two common node phases, on a simple saturated current-radical neighbourhood", degree=2, parity="both coupled parity channels; candidate-18 positive spectators retained", ell="input 2 x 2; output L=1 on candidates 17/20 and L=3 on candidate 18", m="all m=-2,...,2 under the lifted diagonal SO(3) action", k="candidate-specific allowed compact momenta, never identified across rho", omega="candidate-specific certified SUM or DIFFERENCE collision", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","The theorem applies candidatewise after the already certified common-node-phase reduction; it does not identify radical leaves, parity channels or backgrounds."),
+            ("CERTIFIED","The closed reduced Lee-Wald form descends through its constant-rank radical to each local simple symplectic leaf quotient."),
+            ("CERTIFIED","Hamiltonianity gives d<mu,xi>(r)=0 for every current radical r. The lifted rotation moment map is basic on radical leaves, and imposing mu=0 commutes locally with removing the radical."),
+            ("CERTIFIED","The current radical and lifted-rotation constraint remain distinct compatible structures; neither is substituted for the other."),
+            _second_order(("CERTIFIED","The previously certified bounded radical points retain their local rotation-zero condition on the leaf quotient; no complete fibre connectedness follows."),("CERTIFIED","The same local finite strata lie in the smooth-secular class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_active_local_rotation_leaf_descent","same_sign_active_phase_reduced_presymplectic_divisors","same_sign_active_presymplectic_divisors","same_sign_L1_active_restricted_current_degeneracy","same_sign_candidate18_active_restricted_current_degeneracy","taub"),
+            "This covers only smooth constant-corank fixed-occupation strata on local simple saturated neighbourhoods. It does not construct a global leaf space, prove complete rotation-zero-fibre connectedness, reduce singular strata, glue occupations or candidates, perform final residual descent, or establish all-orders, causal, observational or quantum claims.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload",
@@ -2002,6 +2119,29 @@ def build() -> dict[str, object]:
         raise AssertionError("candidate-16 active restricted-current theorem changed")
     if candidate16_current["rotation_zero_fibre_connected"] or candidate16_current["singular_stratum_moment_map_topology_classified"] or candidate16_current["candidates17_through21_restricted_currents_classified"] or candidate16_current["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("candidate-16 active restricted-current theorem exceeded scope")
+    candidate16_singular = records["same_sign_candidate16_singular_rotation_zero_fibre"]["classification"]
+    if not (
+        candidate16_singular["candidate16_complete_singular_locus_classified"]
+        and candidate16_singular["two_endpoint_CP4_strata"]
+        and candidate16_singular["positive_norm_incidence_resolution_compact_connected_kahler"]
+        and candidate16_singular["incidence_resolution_fibres_connected"]
+        and candidate16_singular["lifted_rotation_zero_fibre_nonempty"]
+        and candidate16_singular["lifted_rotation_zero_fibre_connected"]
+    ):
+        raise AssertionError("candidate-16 singular rotation-zero theorem changed")
+    if candidate16_singular["global_orbifold_claim"] or candidate16_singular["occupation_strata_glued"] or candidate16_singular["all_orders_integrability"] or candidate16_singular["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-16 singular rotation-zero theorem exceeded scope")
+    candidate16_gluing = records["same_sign_candidate16_occupation_gluing"]["classification"]
+    if not (
+        candidate16_gluing["candidate16_projectivized_scalar_base_classified"]
+        and candidate16_gluing["candidate16_fixed_occupation_zero_fibres_connected"]
+        and candidate16_gluing["candidate16_occupation_projection_proper_surjective"]
+        and candidate16_gluing["candidate16_complete_normalized_rotation_zero_link_connected"]
+        and candidate16_gluing["candidate16_active_occupation_gluing_closed"]
+    ):
+        raise AssertionError("candidate-16 occupation gluing changed")
+    if candidate16_gluing["origin_adjoined"] or candidate16_gluing["cross_candidate_gluing"] or candidate16_gluing["final_residual_descent"] or candidate16_gluing["all_orders_integrability"] or candidate16_gluing["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-16 occupation gluing exceeded scope")
     linear_sheets = records["same_sign_active_linear_sheet_rotation_links"]["classification"]
     if not (
         linear_sheets["candidate19_four_active_linear_sheets_classified"]
@@ -2057,6 +2197,80 @@ def build() -> dict[str, object]:
         raise AssertionError("same-sign active presymplectic-divisor theorem changed")
     if active_divisors["global_quotient_topology_classified"] or active_divisors["occupation_strata_glued"] or active_divisors["singular_locus_quotient_classified"] or active_divisors["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("same-sign active presymplectic-divisor theorem exceeded scope")
+    transvectant_singular = records["same_sign_third_transvectant_singular_locus"]["classification"]
+    if not (
+        transvectant_singular["candidate17_complete_complex_singular_locus_classified"]
+        and transvectant_singular["candidate20_complete_complex_singular_locus_classified"]
+        and transvectant_singular["both_parity_product_singular_components_classified"]
+        and transvectant_singular["singular_incidence_resolution_constructed"]
+    ):
+        raise AssertionError("third-transvectant singular-locus theorem changed")
+    if transvectant_singular["fixed_occupation_real_singular_strata_classified"] or transvectant_singular["node_phase_singular_reduction_classified"] or transvectant_singular["lifted_rotation_singular_reduction_classified"] or transvectant_singular["global_zero_fibre_connected"] or transvectant_singular["occupation_strata_glued"] or transvectant_singular["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("third-transvectant singular-locus theorem exceeded scope")
+    candidate18_singular = records["same_sign_candidate18_complex_singular_resolution"]["classification"]
+    if not (
+        candidate18_singular["candidate18_complete_complex_singular_locus_classified"]
+        and candidate18_singular["candidate18_global_complex_incidence_resolution_constructed"]
+        and candidate18_singular["ten_positive_spectators_retained"]
+    ):
+        raise AssertionError("candidate-18 complex singular resolution changed")
+    if candidate18_singular["fixed_occupation_real_singular_strata_classified"] or candidate18_singular["node_phase_singular_reduction_classified"] or candidate18_singular["lifted_rotation_singular_reduction_classified"] or candidate18_singular["global_zero_fibre_connected"] or candidate18_singular["occupation_strata_glued"] or candidate18_singular["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-18 complex singular resolution exceeded scope")
+    singular_sections = records["same_sign_active_singular_rotation_zero_sections"]["classification"]
+    if not (
+        singular_sections["candidate17_every_positive_occupation_has_singular_rotation_zero_point"]
+        and singular_sections["candidate18_every_positive_occupation_has_singular_rotation_zero_point"]
+        and singular_sections["candidate20_every_positive_occupation_has_singular_rotation_zero_point"]
+        and not singular_sections["singular_strata_avoidable_by_positive_norms"]
+        and not singular_sections["singular_strata_avoidable_by_rotation_zero_condition"]
+    ):
+        raise AssertionError("active singular rotation-zero sections changed")
+    if singular_sections["real_singular_component_decomposition_complete"] or singular_sections["node_phase_singular_quotient_classified"] or singular_sections["lifted_rotation_singular_quotient_classified"] or singular_sections["global_zero_fibre_connected"] or singular_sections["occupation_strata_glued"] or singular_sections["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("active singular rotation-zero sections exceeded scope")
+    candidate18_separation = records["same_sign_candidate18_singular_component_separation"]["classification"]
+    if not (
+        candidate18_separation["candidate18_both_singular_components_rotation_zero_nonempty"]
+        and candidate18_separation["candidate18_positive_occupation_singular_components_separated"]
+        and candidate18_separation["candidate18_singular_rotation_zero_quotient_at_least_two_components"]
+    ):
+        raise AssertionError("candidate-18 singular component separation changed")
+    if candidate18_separation["candidate18_each_component_connected"] or candidate18_separation["candidate18_full_rotation_zero_fibre_disconnected"] or candidate18_separation["smooth_strata_connect_components_classified"] or candidate18_separation["occupation_strata_glued"] or candidate18_separation["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-18 singular component separation exceeded scope")
+    candidate18_bridge = records["same_sign_candidate18_singular_smooth_bridge"]["classification"]
+    if not (
+        candidate18_bridge["bridge_exists_at_every_positive_occupation_pair"]
+        and candidate18_bridge["bridge_interior_complex_smooth"]
+        and candidate18_bridge["candidate18_singular_components_joined_in_full_rotation_zero_fibre"]
+        and candidate18_bridge["node_phase_actions_free_along_bridge"]
+    ):
+        raise AssertionError("candidate-18 singular smooth bridge changed")
+    if candidate18_bridge["all_singular_points_connected_to_bridge"] or candidate18_bridge["full_rotation_zero_fibre_connected"] or candidate18_bridge["global_leaf_space_classified"] or candidate18_bridge["occupation_strata_glued"] or candidate18_bridge["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-18 singular smooth bridge exceeded scope")
+    phase_reduced_divisors = records["same_sign_active_phase_reduced_presymplectic_divisors"]["classification"]
+    if not (
+        phase_reduced_divisors["candidate17_regular_fixed_occupation_phase_reduced_divisor_classified"]
+        and phase_reduced_divisors["candidate18_regular_fixed_occupation_phase_reduced_divisor_classified"]
+        and phase_reduced_divisors["candidate20_regular_fixed_occupation_phase_reduced_divisor_classified"]
+        and phase_reduced_divisors["common_node_phase_coupling_retained"]
+        and phase_reduced_divisors["candidate18_positive_spectators_retained"]
+        and phase_reduced_divisors["linear_presymplectic_quotient_on_every_regular_reduced_tangent_classified"]
+        and phase_reduced_divisors["constant_corank_local_leaf_quotient_classified"]
+    ):
+        raise AssertionError("same-sign active phase-reduced divisor theorem changed")
+    if phase_reduced_divisors["lifted_rotation_reduction_classified"] or phase_reduced_divisors["global_leaf_space_or_Hausdorff_quotient_classified"] or phase_reduced_divisors["singular_locus_reduction_classified"] or phase_reduced_divisors["occupation_strata_glued"] or phase_reduced_divisors["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("same-sign active phase-reduced divisor theorem exceeded scope")
+    local_rotation = records["same_sign_active_local_rotation_leaf_descent"]["classification"]
+    if not (
+        local_rotation["candidate17_local_rotation_leaf_descent_classified"]
+        and local_rotation["candidate18_local_rotation_leaf_descent_classified"]
+        and local_rotation["candidate20_local_rotation_leaf_descent_classified"]
+        and local_rotation["moment_map_basic_on_current_radical"]
+        and local_rotation["local_zero_fibre_and_radical_reductions_commute"]
+        and not local_rotation["node_phases_identified_with_rotations"]
+    ):
+        raise AssertionError("same-sign active local rotation-leaf descent changed")
+    if local_rotation["global_leaf_space_or_Hausdorff_quotient_classified"] or local_rotation["global_rotation_zero_fibre_connected"] or local_rotation["singular_locus_reduction_classified"] or local_rotation["occupation_strata_glued"] or local_rotation["final_residual_descent"] or local_rotation["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("same-sign active local rotation-leaf descent exceeded scope")
     parity_workload = records["ell2_two_abs_momentum_parity_workload"]["classification"]
     if not (parity_workload["all_twenty_one_candidates_parity_typed"] and parity_workload["all_m_angular_nonvanishing_witnessed"] and parity_workload["odd_L_axisymmetric_fixtures_excluded"] and parity_workload["reduced_source_workload_complete"]):
         raise AssertionError("ell2 two-absolute-momentum parity workload changed")

@@ -249,6 +249,31 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("candidates 17--21", entry["claim_boundary"])
 
+    def test_same_sign_candidate16_singular_rotation_zero_fibre_is_connected(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_candidate16_singular_rotation_zero_fibre"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["mode_data"]["lee_wald"]["status"], "CERTIFIED")
+        self.assertIn("two endpoint CP^4", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("connected lifted-SO(3)", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("Kahler tenfold", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("does not declare a global orbifold", entry["claim_boundary"])
+        self.assertIn("glue occupation strata", entry["claim_boundary"])
+
+    def test_same_sign_candidate16_occupations_glue_without_adding_origin(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_candidate16_occupation_gluing"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("proper and surjective", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("complete normalized link is connected", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("three-dimensional cone", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("cone origin", entry["claim_boundary"])
+        self.assertIn("other candidate backgrounds", entry["claim_boundary"])
+
     def test_same_sign_active_linear_sheet_rotation_links_are_componentwise(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_active_linear_sheet_rotation_links"]
         second = entry["mode_data"]["second_order"]
@@ -306,6 +331,98 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("Singular-locus reduction", entry["claim_boundary"])
+
+    def test_same_sign_phase_reduced_divisors_keep_common_phases_and_spectators(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_active_phase_reduced_presymplectic_divisors"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["mode_data"]["lee_wald"]["status"], "CERTIFIED")
+        self.assertIn("det(A H^{-1} A^dagger)=0", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertIn("lifted SO(3)", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("coupled 8x8", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("100 product charts", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("ten positive spectators", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("global/Hausdorff", entry["claim_boundary"])
+
+    def test_third_transvectant_singular_locus_is_complex_not_reduced(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_third_transvectant_singular_locus"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["symplectic"], "OPEN")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("P2 x P1", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("two eleven-dimensional singular components", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["lee_wald"]["status"], "OPEN")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("Real Hermitian intersections", entry["claim_boundary"])
+
+    def test_candidate18_singular_resolution_retains_spectators_without_reduction(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_candidate18_complex_singular_resolution"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["symplectic"], "OPEN")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("two dimension-16 components", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("dimension-10 spectator space", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("dimension 22", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["lee_wald"]["status"], "OPEN")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("Real Hermitian fixed-occupation strata", entry["claim_boundary"])
+
+    def test_active_singular_rotation_sections_are_unavoidable_not_complete(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_active_singular_rotation_zero_sections"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["symplectic"], "OPEN")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("every N_minus>0 and N_plus>0", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("node-phase actions free", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("common-square", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("does not classify the complete real singular components", entry["claim_boundary"])
+
+    def test_candidate18_singular_components_separate_without_full_disconnection(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_candidate18_singular_component_separation"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["symplectic"], "OPEN")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("At N_minus>0", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("at least two components", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("clopen invariant subsets", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("does not prove either component connected", entry["claim_boundary"])
+        self.assertIn("full smooth-plus-singular zero fibre disconnected", entry["claim_boundary"])
+
+    def test_candidate18_singular_components_have_smooth_bridge_not_global_connectedness(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_candidate18_singular_smooth_bridge"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["mode_data"]["lee_wald"]["status"], "CERTIFIED")
+        self.assertIn("complex-smooth in its interior", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("central m=0", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("one endpoint lies in each singular component", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("does not prove every zero-fibre component", entry["claim_boundary"])
+        self.assertIn("global connectedness", entry["claim_boundary"])
+
+    def test_same_sign_local_rotation_descent_is_basic_not_global(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent"]
+        second = entry["mode_data"]["second_order"]
+        self.assertIn("local simple symplectic leaf quotient", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("commutes locally", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("distinct compatible structures", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("does not construct a global leaf space", entry["claim_boundary"])
+        self.assertIn("complete rotation-zero-fibre connectedness", entry["claim_boundary"])
 
     def test_first_two_abs_momentum_parity_workload_is_fail_closed(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]

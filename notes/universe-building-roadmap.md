@@ -2716,8 +2716,57 @@ nondegenerate tangent-space quotient.  The candidate-17/20 exact bounded
 witness has conormal nullity one.  On candidate 18 the regular rank-one
 charts cover the smooth locus; on the aligned section the divisor factors as
 `(2*b*r-w_y)(6*b*r-w_x)=0`, and both branches have conormal nullity four.
-Global/Hausdorff quotient topology, singular-locus reduction, constant-rank
-gluing, candidate-16 singular topology and occupation gluing remain open.
+The regular fixed-occupation node-phase descent is now exact too.  Appending
+the two common physical-node horizontal rows gives
+`K_hat=A H^{-1}A^dagger`; its determinant and determinantal ideals classify
+the reduced divisor and every corank.  Candidates 17/20 use one coupled
+`8x8` determinant rather than a product of parity determinants.  Candidate
+18 uses 100 rank-one product charts, retains all ten positive spectators,
+and has horizontal complex dimension 20; its two aligned branches have
+reduced radical dimension four and quotient dimension 16.  Constant-corank
+strata have local simple symplectic leaf quotients.  The lifted rotational
+moment map is basic along every such current-radical leaf, and on each simple
+saturated neighbourhood imposing its zero condition commutes with removing
+the radical.  This is a local constant-corank theorem only: no global
+Hausdorff leaf space or complete rotation-zero-fibre topology is asserted.
+
+Candidate 16 is now closed separately at every fixed positive occupation.
+Its singular locus is two disjoint endpoint `CP^4` strata.  A compact
+connected Kähler incidence resolution with connected exceptional fibres is
+equivariant for lifted `SO(3)`; Kirwan connectedness and the certified
+axisymmetric point make the complete singular target rotation-zero fibre
+nonempty and connected without an orbifold claim.  Its nonzero occupation
+strata are now glued too: total-occupation normalization gives a compact
+connected two-polytope, and the complete rotation-zero projection is proper
+and surjective with connected fibres.  Thus candidate 16 has one connected
+normalized link across its full nonzero scalar cone; the cone origin is not
+adjoined.  The remaining common gate is the lifted-rotation reduction and
+occupation gluing of candidates 17/18/20, now with local radical/rotation
+compatibility certified.  Global/Hausdorff quotient topology, final residual
+descent and singular crossings outside the certified candidate-16 resolution
+remain open.  The complex singular carrier for candidates 17/20 is no longer
+unspecified: each parity-factor singular locus is the common-square
+Segre--Veronese carrier with projectivization `P^2 x P^1`, and the two-parity
+product has exactly two irreducible dimension-eleven components meeting in
+dimension eight.  Its real fixed-occupation intersection, node phases and
+lifted-rotation reduction are still fail-closed.  Candidate 18's complete
+complex carrier is likewise resolved: it is ten positive spectators times
+two rank-at-most-one `5x2` factors, with two dimension-sixteen singular
+components meeting in the dimension-ten spectator space and a smooth
+connected dimension-twenty-two product incidence resolution with connected
+fibres.  Its real fixed-occupation current and group reductions remain open.
+For all three candidates, singular rotation-zero points exist at every
+positive pair of active occupations, with both common node-phase actions
+free.  Thus neither positive norms nor the lifted rotational zero condition
+removes the singular strata; the next global theorem must reduce them
+explicitly rather than work only on the regular divisor atlas.  On candidate
+18, its two singular components are separated at every `N_minus>0`, are
+preserved by node phases and lifted rotations, and both meet the rotation-zero
+fibre.  Thus the singular rotation-zero quotient has at least two components.
+The two certified central sections are nevertheless joined, at every positive
+occupation pair, by an explicit fixed-occupation axisymmetric path whose
+interior is complex-smooth and whose node phases remain free.  Whether every
+component of the full rotation-zero fibre meets this bridge remains open.
 All higher lifecycles remain fail-closed.  This is nonlinear input to
 same-background Bridge 1 with Classical,
 not a promotion of its certified linear relative triangle/cofiber.  The

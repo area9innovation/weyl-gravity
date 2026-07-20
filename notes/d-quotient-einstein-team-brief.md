@@ -4027,6 +4027,151 @@ records this as `CERTIFIED` on every smooth active stratum and
 Hausdorff global quotient.  Singular-locus reduction, constant-rank gluing,
 occupation gluing and candidate-16 singular topology remain separate.
 
+The fixed-occupation node-phase descent is now separate and exact.  For
+candidates 17 and 20, the two parity factors share the negative- and
+positive-node phases, so their horizontal conormal matrix has shape `8x20`
+and the reduced divisor is the single coupled equation
+`det(A H^{-1}A^dagger)=0`, not the product of the affine factor
+determinants.  The bounded smooth point has reduced radical dimension two
+and quotient complex dimension ten; a second exact point has determinant
+`-3845153895680`, proving properness.
+
+Candidate 18 retains its ten positive current-orthogonal spectators.  Its
+complete regular node-phase-reduced atlas has 100 product charts with
+`A: C^30 -> C^10`.  On the central-angular section the determinant is
+
+```text
+-128*(t1^2+t2^2)
+ *(a^2-a*b*(t1^2+t2^2)+b^2*t1^2*t2^2-c^2)^4
+ /(9*b^7*(a-c)^4*(a+c)^3).
+```
+
+Both aligned branches have reduced radical dimension four and quotient
+complex dimension sixteen; `(t1,t2)=(0,1)` is exactly nondegenerate.  On
+every constant-corank smooth stratum the closed Lee--Wald form has an
+involutive radical and therefore a local simple symplectic leaf quotient.
+The new fail-closed atlas row is
+`einstein.ph.wm.interaction.ell2_same_sign_active_phase_reduced_presymplectic_divisors`.
+Lifted-rotation reduction, a global Hausdorff leaf space, singular-locus
+reduction and occupation gluing remain open.
+
+Candidate 16 is now closed separately at fixed positive occupations.  Each
+rank-at-most-one `5x2` factor is singular only at its vertex, so the complete
+projective singular locus is two disjoint endpoint `CP^4` strata.  The
+product incidence resolution has complex dimension 12; its positive-norm
+two-node-phase quotient is a compact connected Kähler tenfold with connected
+exceptional fibres.  The lifted diagonal `SO(3)` action extends to the
+resolution.  The certified axisymmetric bounded point makes its moment-map
+zero fibre nonempty, Kirwan connectedness makes the resolved fibre
+connected, and connected resolution fibres pass connectedness to the
+singular target.  The fail-closed atlas row is
+`einstein.ph.wm.interaction.ell2_same_sign_candidate16_singular_rotation_zero_fibre`.
+This does not declare the target an orbifold or glue different scalar
+occupations.
+
+The candidate-16 occupation gluing is now closed after total-occupation
+normalization.  Its three-dimensional four-ray scalar cone cuts a compact
+connected two-polytope at total occupation one, with both active `q_minus`
+norms strictly positive.  The complete rotation-zero link projects properly
+and surjectively onto this polytope; every fibre is connected by the
+incidence-resolution theorem.  Hence the full normalized link is connected
+over all nonzero candidate-16 occupations.  Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_candidate16_occupation_gluing`
+is `CERTIFIED`.  The cone origin and every other collision background remain
+separate.
+
+The candidate-17/18/20 lifted rotations now descend through the current
+leaves locally.  On every smooth constant-corank fixed-occupation stratum
+after the common node phases, Hamiltonianity gives
+
+```text
+d<mu,xi>(r) = Omega(xi_sharp,r) = 0
+```
+
+for every current-radical vector `r`.  Hence the lifted `SO(3)` moment map is
+basic on connected radical leaves.  On each simple saturated neighbourhood,
+both the Lee--Wald form and the moment map descend and
+
+```text
+(mu^{-1}(0) intersect U_0)/rad(Omega)
+  = mu_bar^{-1}(0).
+```
+
+Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent`
+is `CERTIFIED`.  This is a local constant-corank compatibility theorem: the
+current radical and rotational constraint are distinct, and no global leaf
+space, complete rotation-zero-fibre connectedness, singular reduction or
+occupation gluing is inferred.  The active gate is now the global
+candidatewise rotation-zero geometry and occupation gluing for candidates
+17, 18 and 20.
+
+The complete complex singular carrier is now known for candidates 17 and
+20.  In one third-transvectant parity factor, the Jacobian loses rank exactly
+on
+
+```text
+(f,g) = (a*v(lambda), b*v(lambda)),
+[lambda] in P^2, (a,b) in C^2,
+v = (3*l2^2, -3*l1*l2, l0*l2+2*l1^2, -3*l0*l1, 3*l0^2).
+```
+
+The projectivized singular locus is the smooth connected
+`P^2 x P^1` Segre--Veronese carrier.  For both parity factors the singular
+locus has exactly two irreducible dimension-eleven components, meeting in
+dimension eight.  This replaces an unspecified singular set with an explicit
+incidence model, but it is still before real fixed occupations, node phases,
+lifted rotations and current reduction.  Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_third_transvectant_singular_locus`
+therefore marks the nonlinear carrier `CERTIFIED` while keeping its
+symplectic and Taub maps `OPEN`.
+
+Candidate 18 now has the analogous complete complex resolution.  Its carrier
+is
+
+```text
+C^10_spectator x Rank_{<=1}(5x2)_plus x Rank_{<=1}(5x2)_minus.
+```
+
+The singular locus has exactly two dimension-sixteen components, obtained by
+collapsing either rank-one factor, and they meet in the dimension-ten
+spectator space.  The product incidence resolution is smooth, connected and
+dimension 22, with connected fibres; all ten positive spectators remain
+explicit.  Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_candidate18_complex_singular_resolution`
+is fail-closed in the same way: complex nonlinear geometry is `CERTIFIED`,
+while real fixed occupations, the resolved Lee--Wald current, node phases,
+lifted rotations and connected zero fibres remain `OPEN`.
+
+The singular carriers are also physically unavoidable at this stage.  For
+every positive pair `(N_minus,N_plus)` on candidates 17, 18 and 20, an exact
+axisymmetric section lies on the singular carrier and has all three lifted
+rotation moments zero.  Both total node norms remain positive, so this is not
+a fixed-norm artefact and both node-phase actions remain free.  Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_active_singular_rotation_zero_sections`
+is `CERTIFIED` at the existence level.  It proves that the global theorem
+must reduce singular strata; it does not yet classify their complete real
+components, quotient topology, connectedness or occupation gluing.
+
+Candidate 18 already has a sharp component lower bound on that singular
+quotient.  At every `N_minus>0`, the intersection of its two singular
+components is excluded because both negative-node columns vanish there.
+Each remaining component is nonempty on the rotation-zero fibre and is
+preserved by the common node phases and lifted `SO(3)`.  Therefore the
+singular rotation-zero quotient has at least two components.  This does not
+prove either component connected or the full smooth-plus-singular zero fibre
+disconnected; smooth strata may still join them.
+
+An exact smooth bridge now shows that they do join at the certified central
+sections.  For every positive occupation pair, a normalized two-component
+internal vector rotates from one parity factor to the other while preserving
+both occupations.  Only `m=0` is occupied, all three rotation moments vanish,
+the endpoints lie in the two singular components, and every interior point
+has both rank-one factors nonzero and is complex-smooth.  This removes the
+singular-component separation as a disconnection obstruction, but it still
+does not show that every rotation-zero component meets the bridge or that the
+full zero fibre is connected.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
