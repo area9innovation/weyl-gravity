@@ -1,0 +1,86 @@
+{
+  "claim_boundary": "This exact boundary-cokernel witness obstructs every A104 chain extension of the one serialized rational non-cone nilpotence/cohomology feasibility differential, including completely unrestricted new-row evolution blocks. It does not obstruct all 104-new-row non-cone differentials, raise the global 104-row lower bound, or construct a PBW operator, cyclic pairing, real involution, retained SDR, Hadamard state or quantum theory.",
+  "classification": {
+    "Hadamard_or_quantum_claim": false,
+    "all_104_row_noncone_differentials_obstructed": false,
+    "cyclic_pairing_constructed": false,
+    "fixed_noncone_witness_A104_chain_extension_exists": false,
+    "rational_PBW_operator_completion_constructed": false,
+    "real_involution_constructed": false,
+    "retained_SDR_constructed": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_obstruction": {
+    "artifact_id": "BERGER_Q26_104_ROW_NONCONE_EVOLUTION_BOUNDARY_COKERNEL_WITNESS_V1",
+    "boundary_cokernel_index": 25,
+    "free_new_evolution_blocks_eliminated": true,
+    "normalized_pairing": "-51/2",
+    "path": "d_quotient_classical/generated/berger_q26_104_row_noncone_evolution_extension_obstruction_v1/boundary_cokernel_witness.json",
+    "pure_old_boundary_index": 5,
+    "sha256": "86d7227429fd1579cfb2cc40927ca1733b6441c4498994aef24f48ce98b16c87",
+    "source_basis_index": 16
+  },
+  "lifecycle_status": "OBSTRUCTED",
+  "next_gate": "SOLVE_THE_SIMULTANEOUS_NILPOTENCE_AND_A104_EQUIVARIANCE_SYSTEM_BEFORE_IMPOSING_CYCLIC_FREE_ADJOINTNESS",
+  "pinned_inputs": {
+    "A104_certificate": {
+      "artifact_id": "BERGER_A104_ENDPOINT_COMPLETION",
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
+      "sha256": "9461f484e51ba7ef27cf0924d532d262b7b4c1fd846fd35dec093204508f9e1c"
+    },
+    "A104_operator": {
+      "artifact_id": "BERGER_A104_EXACT_SPARSE_OPERATOR",
+      "path": "quantum-weyl/lorentzian/generated/berger_a104_endpoint_completion/global_A104.json",
+      "sha256": "37f0881c793f196175100e5e4784d18f6315e3654e3945c9972d9b212e662154"
+    },
+    "noncone_feasibility_certificate": {
+      "artifact_id": "BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1",
+      "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1.json",
+      "sha256": "2574789469d366e30ee218c9e345caa32077080b8687bc9aad98659c3231e2c1"
+    },
+    "noncone_rational_differential": {
+      "artifact_id": "BERGER_Q26_104_ROW_NONCONE_RATIONAL_DIFFERENTIAL_WITNESS_V1",
+      "path": "d_quotient_classical/generated/berger_q26_104_row_noncone_rational_nilpotence_feasibility_v1/rational_noncone_differential.json",
+      "sha256": "bd32fd13b56ae3284040d487b5bd284730381e00040cb98d44bf41456a33f1b2"
+    }
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/berger_q26_104_row_noncone_evolution_extension_obstruction.py": "f18a579746491bc287fc0b388d675fd1b6a2bed40ce088476f2ecf7102f8a523",
+      "d_quotient_classical/causal_transfer/tests/test_berger_q26_104_row_noncone_evolution_extension_obstruction.py": "74ffd075d703fb9a903d927c418f01e6b41dcdd2da349a56e9a7c1ced91f32d8",
+      "d_quotient_classical/causal_transfer/verify_berger_q26_104_row_noncone_evolution_extension_obstruction.py": "754b000fcf8e8a06244003c119519f192dd1338ea95e936376cd31232eebab1d",
+      "d_quotient_classical/schema/berger-q26-104-row-noncone-evolution-extension-obstruction-v1.schema.json": "f5c8674d8229291584f34ae7758961166eedf430ea4bde98d482ec8356683656"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.berger_q26_104_row_noncone_evolution_extension_obstruction --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_104_row_noncone_evolution_extension_obstruction",
+      "PYTHONPATH=. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_104_row_noncone_evolution_extension_obstruction",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-104-row-noncone-evolution-extension-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_104_ROW_NONCONE_EVOLUTION_EXTENSION_OBSTRUCTION_V1.json"
+    ]
+  },
+  "result_id": "BERGER_Q26_104_ROW_NONCONE_EVOLUTION_EXTENSION_OBSTRUCTION_V1",
+  "result_state": "EXACT_RATIONAL_BOUNDARY_COKERNEL_OBSTRUCTS_A104_CHAIN_EXTENSION_ON_THE_NONCONE_FEASIBILITY_WITNESS",
+  "schema": "pure-weyl-berger-q26-104-row-noncone-evolution-extension-obstruction-v1",
+  "scope": {
+    "background": "fixed rational positive Berger clock",
+    "boundaries": "R_t x compact Berger S3; no spatial boundary",
+    "carrier": "the exact rational 208-row non-cone nilpotence feasibility witness only",
+    "charge_sector": "unquotiented retained-26 formal Cauchy carrier",
+    "degree": "left endpoint -1 -> 0",
+    "ell": "not harmonic-reduced",
+    "k": "derivative generators specialized to zero",
+    "m": "not harmonic-reduced",
+    "omega": "stationary A104 compression",
+    "parity": "BV grading; no pairing imposed",
+    "theory": "retained minimal pure-Weyl Berger BV complex"
+  },
+  "theorem": {
+    "conclusion": "no such chain endomorphism E exists on this fixed non-cone feasibility differential",
+    "contradiction": "the cokernel covector kills the old projection of im(d_-1), but evaluates to -51/2 on A104 e5",
+    "hypothesis": "E is any degree-zero chain endomorphism of the fixed rational 208-row differential whose old-old degree-zero compression equals the specialized frozen A104 block",
+    "identity": "E_0 d_-1 = d_-1 E_-1"
+  }
+}

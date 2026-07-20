@@ -191,6 +191,10 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             "BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
+        self.assertIn(
+            "BERGER_Q26_104_ROW_NONCONE_EVOLUTION_EXTENSION_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
 
     def test_berger_bikernel_support_gate_is_fail_closed(self) -> None:
         entry = self.entries[

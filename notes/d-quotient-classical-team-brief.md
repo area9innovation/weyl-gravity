@@ -2953,6 +2953,33 @@ equivariance, cyclicity, locality/PBW lifting or a nontrivial Berger
 representation.  It supplies no \(A_{104}\) lift, pairing, real
 involution, retained SDR, Hadamard or quantum datum.
 
+### Rational non-cone evolution-extension obstruction (2026-07-20)
+
+`BERGER_Q26_104_ROW_NONCONE_EVOLUTION_EXTENSION_OBSTRUCTION_V1`
+closes the evolution question for that one serialized feasibility
+differential without a global 3,488-by-6,978 solve.  At the left endpoint,
+
+\[
+d_{-1}e_{16}=(e_5,0),
+\]
+
+while the old covector \(e_{25}^*\) annihilates the old projection of the
+entire boundary space.  The specialized frozen evolution instead gives
+
+\[
+e_{25}^*A_{104}^{(0)}e_5=-\frac{51}{2}.
+\]
+
+Thus any putative chain identity
+\(E_0d_{-1}=d_{-1}E_{-1}\), with old-old degree-zero compression fixed to
+\(A_{104}^{(0)}\), yields the contradiction \(-51/2=0\).  This eliminates
+all unrestricted new-row evolution blocks at once.
+
+The obstruction is exact but candidate-specific.  It does not rule out
+another 104-new-row non-cone differential constructed simultaneously with
+the \(A_{104}\) equations, and it does not raise the global lower bound.
+Cyclicity, reality, retained SDR, Hadamard and quantum claims remain open.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

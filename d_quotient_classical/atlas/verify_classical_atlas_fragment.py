@@ -291,6 +291,13 @@ def verify() -> None:
         not in berger_cauchy_ids
     ):
         raise AssertionError("Berger non-cone feasibility evidence missing")
+    if (
+        "BERGER_Q26_104_ROW_NONCONE_EVOLUTION_EXTENSION_OBSTRUCTION_V1"
+        not in berger_cauchy_ids
+    ):
+        raise AssertionError(
+            "Berger non-cone evolution obstruction evidence missing"
+        )
     transverse = by_id["classical.nariai.transverse_kantowski_sachs_tangent"]
 
     bach_open = by_id["classical.bach_flat.open_parent_detour"]

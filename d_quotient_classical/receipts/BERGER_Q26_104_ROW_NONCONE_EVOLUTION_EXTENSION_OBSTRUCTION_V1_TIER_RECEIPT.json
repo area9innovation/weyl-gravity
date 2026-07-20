@@ -1,0 +1,100 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "BERGER_Q26_104_ROW_NONCONE_EVOLUTION_EXTENSION_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "BERGER_Q26_104_ROW_NONCONE_EVOLUTION_EXTENSION_OBSTRUCTION_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_NONCONE_EVOLUTION_EXTENSION_OBSTRUCTION_V1.json",
+      "sha256": "40ec4fbd5acd0ec8bd59426fd7c195b4253f1ea0e0ec4c3023fd61c7217677e9"
+    },
+    {
+      "path": "d_quotient_classical/generated/berger_q26_104_row_noncone_evolution_extension_obstruction_v1/boundary_cokernel_witness.json",
+      "sha256": "86d7227429fd1579cfb2cc40927ca1733b6441c4498994aef24f48ce98b16c87"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "3fdd03aa52b77b965389aa905bf2968d0ec942d24158a880eaa0d996e309ab88"
+    },
+    {
+      "path": "d_quotient_classical/reports/berger-q26-104-row-noncone-evolution-extension-obstruction-v1.md",
+      "sha256": "00228af1cd827837d6ad752eff4a5bb15e6f223ba791981b9519acd1fde743af"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile d_quotient_classical/causal_transfer/berger_q26_104_row_noncone_evolution_extension_obstruction.py d_quotient_classical/causal_transfer/verify_berger_q26_104_row_noncone_evolution_extension_obstruction.py d_quotient_classical/causal_transfer/tests/test_berger_q26_104_row_noncone_evolution_extension_obstruction.py",
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <scoped paths>",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.berger_q26_104_row_noncone_evolution_extension_obstruction --check --guards",
+        "elapsed_seconds": 0.59,
+        "status": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_104_row_noncone_evolution_extension_obstruction",
+        "elapsed_seconds": 0.47,
+        "status": "PASS",
+        "independent_rail": "reconstructs the exact boundary and A104 specialization directly from pinned payloads"
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_104_row_noncone_evolution_extension_obstruction",
+        "elapsed_seconds": 0.66,
+        "status": "PASS",
+        "tests": 4
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-104-row-noncone-evolution-extension-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_104_ROW_NONCONE_EVOLUTION_EXTENSION_OBSTRUCTION_V1.json",
+        "elapsed_seconds": 2.45,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_classical_atlas_fragment.py --check",
+        "elapsed_seconds": 0.13,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.13,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "elapsed_seconds": 0.15,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment",
+        "elapsed_seconds": 0.04,
+        "status": "PASS",
+        "tests": 19
+      }
+    ],
+    "reason": "The obstruction changes the fail-closed Berger crosswalk for the serialized non-cone feasibility candidate."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a candidate-specific exact obstruction, not the terminal 104-row theorem, a shared-core algebra change, freeze, release or tag."
+  },
+  "claim_boundary": "The exact left-endpoint boundary-cokernel witness obstructs A104 equivariance for the one serialized rational non-cone nilpotence/cohomology feasibility differential, even with unrestricted new-row evolution blocks. It does not obstruct every 104-new-row non-cone differential, raise the global lower bound, or construct cyclic, real, SDR, Hadamard or quantum data."
+}
