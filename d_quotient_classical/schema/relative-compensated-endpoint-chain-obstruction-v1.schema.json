@@ -1,0 +1,419 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-compensated-endpoint-chain-obstruction-v1.json",
+  "title": "Pure-Weyl relative compensated endpoint chain obstruction V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "scope",
+    "dependencies",
+    "compensated_endpoint",
+    "raw_operator_projection",
+    "flat_polynomial_obstruction",
+    "order_one_original_system_regression",
+    "minimal_covariant_symbol_repair",
+    "classification",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-relative-compensated-endpoint-chain-obstruction-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_WEYL_RELATIVE_COMPENSATED_ENDPOINT_CHAIN_OBSTRUCTION_V1"
+    },
+    "result_state": {
+      "const": "COMPENSATED_ENDPOINT_PAIRING_REPAIRED_BUT_EXISTING_CARRIER_CHAIN_LIFT_ALL_ORDER_OBSTRUCTED"
+    },
+    "lifecycle_status": {
+      "const": "OBSTRUCTED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC"
+      ]
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "theory",
+        "background",
+        "boundaries",
+        "charge_sector",
+        "carrier",
+        "degree",
+        "parity",
+        "ell",
+        "m",
+        "k",
+        "omega"
+      ],
+      "properties": {
+        "theory": {"type": "string"},
+        "background": {"type": "string"},
+        "boundaries": {"type": "string"},
+        "charge_sector": {"type": "string"},
+        "carrier": {"type": "string"},
+        "degree": {
+          "anyOf": [
+            {"type": "string"},
+            {"type": "integer"}
+          ]
+        },
+        "parity": {"type": "string"},
+        "ell": {
+          "anyOf": [
+            {"type": "string"},
+            {"type": "integer"}
+          ]
+        },
+        "m": {
+          "anyOf": [
+            {"type": "string"},
+            {"type": "integer"}
+          ]
+        },
+        "k": {
+          "anyOf": [
+            {"type": "string"},
+            {"type": "integer"}
+          ]
+        },
+        "omega": {
+          "anyOf": [
+            {"type": "string"},
+            {"type": "integer"}
+          ]
+        }
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "compensated_endpoint",
+        "order_one_obstruction",
+        "order_one_payload",
+        "target_q1",
+        "target_layout",
+        "current_layout"
+      ],
+      "properties": {
+        "compensated_endpoint": {"$ref": "#/$defs/artifact"},
+        "order_one_obstruction": {"$ref": "#/$defs/artifact"},
+        "order_one_payload": {"$ref": "#/$defs/artifact"},
+        "target_q1": {"$ref": "#/$defs/artifact"},
+        "target_layout": {"$ref": "#/$defs/artifact"},
+        "current_layout": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "compensated_endpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "formula",
+        "corrected_gram",
+        "lambda_H",
+        "lambda_P_x",
+        "independent_constant_u1_current_added",
+        "pairing_obstruction_removed"
+      ],
+      "properties": {
+        "formula": {"type": "string"},
+        "corrected_gram": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "array",
+            "minItems": 5,
+            "maxItems": 5,
+            "items": {"type": "string"}
+          }
+        },
+        "lambda_H": {"const": "0"},
+        "lambda_P_x": {"const": "0"},
+        "independent_constant_u1_current_added": {"const": false},
+        "pairing_obstruction_removed": {"const": true}
+      }
+    },
+    "raw_operator_projection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "flat_factor",
+        "current_term",
+        "target_q1_terms",
+        "Maxwell_contribution_to_c0_c1_flat_rows",
+        "higher_order_decoupling"
+      ],
+      "properties": {
+        "flat_factor": {"const": "(t,x)"},
+        "current_term": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_row",
+            "target_row",
+            "derivative",
+            "coefficient"
+          ],
+          "properties": {
+            "source_row": {"const": "P_H_3_t_theta_phi"},
+            "target_row": {"const": "P_H_4_t_x_theta_phi"},
+            "derivative": {"const": "x"},
+            "coefficient": {"const": "-1"}
+          }
+        },
+        "target_q1_terms": {
+          "type": "object",
+          "additionalProperties": {"type": "string"},
+          "minProperties": 4,
+          "maxProperties": 4
+        },
+        "Maxwell_contribution_to_c0_c1_flat_rows": {"type": "string"},
+        "higher_order_decoupling": {"type": "string"}
+      }
+    },
+    "flat_polynomial_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ring",
+        "unknowns",
+        "equations",
+        "lowest_degree_matrix",
+        "lowest_degree_rhs",
+        "rank_over_Q",
+        "augmented_rank_over_Q",
+        "left_null_witness",
+        "polynomial_elimination"
+      ],
+      "properties": {
+        "ring": {"const": "Q[tau,xi]"},
+        "unknowns": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"type": "string"}
+        },
+        "equations": {
+          "const": [
+            "-2*tau*u-xi*v=-xi",
+            "tau*v+2*xi*w=0"
+          ]
+        },
+        "lowest_degree_matrix": {
+          "const": [
+            [-2, 0, 0],
+            [0, -1, 0],
+            [0, 1, 0],
+            [0, 0, 2]
+          ]
+        },
+        "lowest_degree_rhs": {
+          "const": [0, -1, 0, 0]
+        },
+        "rank_over_Q": {"const": 3},
+        "augmented_rank_over_Q": {"const": 4},
+        "left_null_witness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "row_coefficients",
+            "matrix_evaluation",
+            "rhs_evaluation"
+          ],
+          "properties": {
+            "row_coefficients": {"const": [0, 1, 1, 0]},
+            "matrix_evaluation": {"const": [0, 0, 0]},
+            "rhs_evaluation": {"const": "-1"}
+          }
+        },
+        "polynomial_elimination": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "from_second_equation",
+            "remaining_membership_test",
+            "groebner_basis",
+            "normal_form_of_xi",
+            "membership"
+          ],
+          "properties": {
+            "from_second_equation": {"type": "string"},
+            "remaining_membership_test": {"type": "string"},
+            "groebner_basis": {"const": ["tau", "xi^2"]},
+            "normal_form_of_xi": {"const": "xi"},
+            "membership": {"const": false}
+          }
+        }
+      }
+    },
+    "order_one_original_system_regression": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "matrix_shape",
+        "matrix_rank_over_Q",
+        "compensated_augmented_rank_over_Q",
+        "witness_rows",
+        "witness_matrix_rows",
+        "compensated_rhs_on_witness_rows",
+        "left_null_coefficients",
+        "left_null_evaluation",
+        "reason_compensation_does_not_change_witness"
+      ],
+      "properties": {
+        "matrix_shape": {"const": [822, 406]},
+        "matrix_rank_over_Q": {"const": 398},
+        "compensated_augmented_rank_over_Q": {"const": 399},
+        "witness_rows": {"const": [70, 339]},
+        "witness_matrix_rows": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "prefixItems": [
+                {"type": "integer"},
+                {"type": "string"}
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            }
+          }
+        },
+        "compensated_rhs_on_witness_rows": {"const": ["0", "-1"]},
+        "left_null_coefficients": {"const": ["-1", "-1"]},
+        "left_null_evaluation": {"const": "1"},
+        "reason_compensation_does_not_change_witness": {"type": "string"}
+      }
+    },
+    "minimal_covariant_symbol_repair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "added_module",
+        "rank_in_four_dimensions",
+        "representation_identity",
+        "flat_added_component",
+        "extended_equations",
+        "unique_lowest_degree_solution",
+        "extended_matrix_determinant",
+        "minimality_scope",
+        "cyclic_dual_completion_constructed",
+        "full_chain_map_on_enlarged_carrier_constructed"
+      ],
+      "properties": {
+        "added_module": {"const": "Lambda^2(T^*M)"},
+        "rank_in_four_dimensions": {"const": 6},
+        "representation_identity": {"type": "string"},
+        "flat_added_component": {"const": "b=B_01"},
+        "extended_equations": {
+          "const": [
+            "-2*tau*u-xi*v-xi*b=-xi",
+            "tau*v-tau*b+2*xi*w=0"
+          ]
+        },
+        "unique_lowest_degree_solution": {
+          "const": {
+            "u": "0",
+            "v": "1/2",
+            "w": "0",
+            "b": "1/2"
+          }
+        },
+        "extended_matrix_determinant": {"const": "8"},
+        "minimality_scope": {"type": "string"},
+        "cyclic_dual_completion_constructed": {"const": false},
+        "full_chain_map_on_enlarged_carrier_constructed": {"const": false}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "compensated_endpoint_pairing_obstruction_removed",
+        "complete_existing_carrier_unary_chain_lift_exists",
+        "existing_carrier_all_finite_differential_orders_obstructed",
+        "obstruction_uses_order_extrapolation",
+        "first_new_invariant_obstruction_certified",
+        "minimal_covariant_symbol_carrier_repair_classified",
+        "full_chain_map_on_enlarged_carrier_constructed",
+        "relative_q2_or_f2_activated",
+        "causal_observable_nonlinear_particle_or_quantum_claim"
+      ],
+      "properties": {
+        "compensated_endpoint_pairing_obstruction_removed": {"const": true},
+        "complete_existing_carrier_unary_chain_lift_exists": {"const": false},
+        "existing_carrier_all_finite_differential_orders_obstructed": {"const": true},
+        "obstruction_uses_order_extrapolation": {"const": false},
+        "first_new_invariant_obstruction_certified": {"const": true},
+        "minimal_covariant_symbol_carrier_repair_classified": {"const": true},
+        "full_chain_map_on_enlarged_carrier_constructed": {"const": false},
+        "relative_q2_or_f2_activated": {"const": false},
+        "causal_observable_nonlinear_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {
+      "const": "DECLARE_A_CYCLIC_LAMBDA2_EQUATION_PAIR_EXTENSION_OR_CHANGE_THE_CURRENT_RESOLUTION_BEFORE_RESTARTING_THE_UNARY_CHAIN_LIFT"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_manifest",
+        "verification_commands"
+      ],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 4,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "verification_commands": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 400
+    }
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "path": {"type": "string"},
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  }
+}

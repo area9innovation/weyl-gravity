@@ -161,11 +161,19 @@ def verify() -> None:
         raise AssertionError("order-three obstruction disposition missing")
     if "EINSTEIN_WEYL_RELATIVE_ALL_ORDER_ENDPOINT_PAIRING_OBSTRUCTION_V1" not in evidence_ids:
         raise AssertionError("all-order endpoint-pairing obstruction evidence missing")
+    if "EINSTEIN_WEYL_RELATIVE_COMPENSATED_ENDPOINT_CHAIN_OBSTRUCTION_V1" not in evidence_ids:
+        raise AssertionError("compensated endpoint chain obstruction evidence missing")
     if "fixed diffeomorphism-only endpoint is obstructed at every finite differential order" not in pullback["claim_boundary"]:
         raise AssertionError("all-order fixed-endpoint disposition missing")
     if "corrected endpoint A2_comp" not in pullback["claim_boundary"]:
         raise AssertionError("correlated Maxwell endpoint repair missing")
-    if "does not construct the corrected chain map" not in pullback["claim_boundary"]:
+    if "rank 3 and augmented rank 4" not in pullback["claim_boundary"]:
+        raise AssertionError("compensated flat-symbol rank obstruction missing")
+    if "xi has nonzero normal form modulo (tau,xi^2)" not in pullback["claim_boundary"]:
+        raise AssertionError("compensated polynomial nonmembership missing")
+    if "minimal GL(4)-covariant tensor-symbol repair adjoins Lambda^2(T^*M)" not in pullback["claim_boundary"]:
+        raise AssertionError("minimal antisymmetric carrier repair missing")
+    if "full chain map are absent" not in pullback["claim_boundary"]:
         raise AssertionError("compensated endpoint was overpromoted")
     if pullback["mode_data"]["taub_maps"]["status"] != "OBSTRUCTED":
         raise AssertionError("order-one relative incidence not fail-closed")

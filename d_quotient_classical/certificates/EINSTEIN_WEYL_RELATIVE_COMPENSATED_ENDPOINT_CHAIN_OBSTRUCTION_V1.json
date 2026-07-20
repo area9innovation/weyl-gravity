@@ -1,0 +1,264 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC theorem proves that adding the certified correlated Maxwell compensators removes the endpoint-pairing obstruction but does not produce a unary chain map on the existing carriers. On the translation-invariant flat (t,x) zero-mode quotient, the H endpoint requires the polynomial symmetric-divergence system -2 tau u-xi v=-xi, tau v+2 xi w=0. Its lowest differential component has rank 3 and augmented rank 4, and equivalently xi has nonzero normal form modulo (tau,xi^2). Higher finite differential order cannot alter this lowest flat filtration component, so every product-equivariant finite-order support-local lift on the existing carrier is obstructed. The minimal GL(4)-covariant tensor-symbol repair is a Lambda^2(T^*M) equation component, which supplies the missing antisymmetric half with u=w=0 and v=b=1/2. This classifies only the symbol-level carrier repair; it does not construct its cyclic dual completion or full chain map, activate q2/f2, add an independent U(1) current, change the magnetic bundle, or establish causal, observable, nonlinear, particle or quantum claims.",
+  "classification": {
+    "causal_observable_nonlinear_particle_or_quantum_claim": false,
+    "compensated_endpoint_pairing_obstruction_removed": true,
+    "complete_existing_carrier_unary_chain_lift_exists": false,
+    "existing_carrier_all_finite_differential_orders_obstructed": true,
+    "first_new_invariant_obstruction_certified": true,
+    "full_chain_map_on_enlarged_carrier_constructed": false,
+    "minimal_covariant_symbol_carrier_repair_classified": true,
+    "obstruction_uses_order_extrapolation": false,
+    "relative_q2_or_f2_activated": false
+  },
+  "compensated_endpoint": {
+    "corrected_gram": [
+      [
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "formula": "A2_comp(P_X^4)=X^mu c_mu_star+lambda_X lambda_cov_star",
+    "independent_constant_u1_current_added": false,
+    "lambda_H": "0",
+    "lambda_P_x": "0",
+    "pairing_obstruction_removed": true
+  },
+  "dependencies": {
+    "compensated_endpoint": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ALL_ORDER_ENDPOINT_PAIRING_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ALL_ORDER_ENDPOINT_PAIRING_OBSTRUCTION_V1.json",
+      "sha256": "8fadb1c1c267e13f94595cc06644ce1949749cda53dd9d4770ab6c89c4865adf"
+    },
+    "current_layout": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1_LAYOUT",
+      "path": "d_quotient_classical/generated/einstein_weyl_relative_five_current_de_rham_carrier_v1/layout.json",
+      "sha256": "a9232ff409114a4c96c12e622c9f817be0541771993f07d079adcab1ce09b002"
+    },
+    "order_one_obstruction": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1.json",
+      "sha256": "7d9cb25672c2329d6b13aeb05d3303a214de614d941f0c3be5e8d9ec289b8464"
+    },
+    "order_one_payload": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1_SYSTEM",
+      "path": "d_quotient_classical/generated/einstein_weyl_relative_order_one_chain_obstruction_v1/system.json",
+      "sha256": "7e59bfe99c97d0697f0fb9d192711b66e6c51b1501ce74bed5c655fa06507209"
+    },
+    "target_layout": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_ROW_LAYOUT",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/row_layout.json",
+      "sha256": "6236040676b7e699f5e48be6241143aa3bb5b7c9b4e07364826fc6f2b5ad24a2"
+    },
+    "target_q1": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q1",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/q1.json",
+      "sha256": "43c00909830fde902cf1332eae804f6edd6ad263bef7ce61d08bdbd20449290b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "flat_polynomial_obstruction": {
+    "augmented_rank_over_Q": 4,
+    "equations": [
+      "-2*tau*u-xi*v=-xi",
+      "tau*v+2*xi*w=0"
+    ],
+    "left_null_witness": {
+      "matrix_evaluation": [
+        0,
+        0,
+        0
+      ],
+      "rhs_evaluation": "-1",
+      "row_coefficients": [
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    "lowest_degree_matrix": [
+      [
+        -2,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        2
+      ]
+    ],
+    "lowest_degree_rhs": [
+      0,
+      -1,
+      0,
+      0
+    ],
+    "polynomial_elimination": {
+      "from_second_equation": "v=2*xi*s and w=-tau*s",
+      "groebner_basis": [
+        "tau",
+        "xi^2"
+      ],
+      "membership": false,
+      "normal_form_of_xi": "xi",
+      "remaining_membership_test": "xi in ideal(tau,xi^2)"
+    },
+    "rank_over_Q": 3,
+    "ring": "Q[tau,xi]",
+    "unknowns": [
+      "u=g_00_star coefficient",
+      "v=g_01_star coefficient",
+      "w=g_11_star coefficient"
+    ]
+  },
+  "lifecycle_status": "OBSTRUCTED",
+  "minimal_covariant_symbol_repair": {
+    "added_module": "Lambda^2(T^*M)",
+    "cyclic_dual_completion_constructed": false,
+    "extended_equations": [
+      "-2*tau*u-xi*v-xi*b=-xi",
+      "tau*v-tau*b+2*xi*w=0"
+    ],
+    "extended_matrix_determinant": "8",
+    "flat_added_component": "b=B_01",
+    "full_chain_map_on_enlarged_carrier_constructed": false,
+    "minimality_scope": "minimal GL(4)-covariant tensor-symbol completion of the symmetric metric-equation carrier",
+    "rank_in_four_dimensions": 6,
+    "representation_identity": "(T^*M tensor T^*M)/Sym^2(T^*M)=Lambda^2(T^*M)",
+    "unique_lowest_degree_solution": {
+      "b": "1/2",
+      "u": "0",
+      "v": "1/2",
+      "w": "0"
+    }
+  },
+  "next_gate": "DECLARE_A_CYCLIC_LAMBDA2_EQUATION_PAIR_EXTENSION_OR_CHANGE_THE_CURRENT_RESOLUTION_BEFORE_RESTARTING_THE_UNARY_CHAIN_LIFT",
+  "order_one_original_system_regression": {
+    "compensated_augmented_rank_over_Q": 399,
+    "compensated_rhs_on_witness_rows": [
+      "0",
+      "-1"
+    ],
+    "left_null_coefficients": [
+      "-1",
+      "-1"
+    ],
+    "left_null_evaluation": "1",
+    "matrix_rank_over_Q": 398,
+    "matrix_shape": [
+      822,
+      406
+    ],
+    "reason_compensation_does_not_change_witness": "lambda_H=0 and the repair changes only the lambda_cov_star endpoint row, whereas both witness rows are c_0_star/c_1_star rows for the H-current input",
+    "witness_matrix_rows": [
+      [
+        [
+          7,
+          "1"
+        ]
+      ],
+      [
+        [
+          7,
+          "-1"
+        ]
+      ]
+    ],
+    "witness_rows": [
+      70,
+      339
+    ]
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_compensated_endpoint_chain_obstruction.py": "82d4aca0aaa8229967f830333391d8d1c4b47232f314e8beba429489876f1036",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_compensated_endpoint_chain_obstruction.py": "bf2440fc255ceb87ae8c5610e5eb34fabe1aa3120f92bd3c09b6dad83abcbd13",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_compensated_endpoint_chain_obstruction.py": "1b1df59d8cd830950eb34fe3e999d703b0919b0af9c787c3dc29c30b4377c783",
+      "d_quotient_classical/schema/relative-compensated-endpoint-chain-obstruction-v1.schema.json": "e15c94f4206afe53a7176221807e2d83400bc877186de3e8ee2c30db7efdf9c1"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_compensated_endpoint_chain_obstruction --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_compensated_endpoint_chain_obstruction",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_compensated_endpoint_chain_obstruction",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-compensated-endpoint-chain-obstruction-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_COMPENSATED_ENDPOINT_CHAIN_OBSTRUCTION_V1.json"
+    ]
+  },
+  "raw_operator_projection": {
+    "Maxwell_contribution_to_c0_c1_flat_rows": "zero because F has only theta-phi components",
+    "current_term": {
+      "coefficient": "-1",
+      "derivative": "x",
+      "source_row": "P_H_3_t_theta_phi",
+      "target_row": "P_H_4_t_x_theta_phi"
+    },
+    "flat_factor": "(t,x)",
+    "higher_order_decoupling": "product-equivariant coefficients are parallel in t,x; after restriction to the sphere-covariantly-constant zero mode, positive flat differential degree cannot change the lowest degree-one endpoint equation",
+    "target_q1_terms": {
+      "c_0_star<-d0(g_00_star)": "-2",
+      "c_0_star<-d1(g_01_star)": "-1",
+      "c_1_star<-d0(g_01_star)": "1",
+      "c_1_star<-d1(g_11_star)": "2"
+    }
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_COMPENSATED_ENDPOINT_CHAIN_OBSTRUCTION_V1",
+  "result_state": "COMPENSATED_ENDPOINT_PAIRING_REPAIRED_BUT_EXISTING_CARRIER_CHAIN_LIFT_ALL_ORDER_OBSTRUCTED",
+  "schema": "pure-weyl-relative-compensated-endpoint-chain-obstruction-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "closed oriented Cauchy slice with fixed N=2 magnetic bundle",
+    "carrier": "product-equivariant finite-order support-local relative chain maps on the existing shifted five-current and Weyl-Maxwell carriers",
+    "charge_sector": "connected spacetime stabilizers H,P_x,J_1,J_2,J_3; constant U(1) is not in K_P",
+    "degree": "unary top descent; flat (t,x) lowest differential filtration",
+    "ell": "global reducibility endpoint",
+    "k": "global reducibility endpoint",
+    "m": "global reducibility endpoint",
+    "omega": "zero reducibility frequency",
+    "parity": "unrestricted in the flat symbol block; covariant tensor repair classified",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  }
+}

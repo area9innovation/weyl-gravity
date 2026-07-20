@@ -253,12 +253,28 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
         self.assertIn(
+            "EINSTEIN_WEYL_RELATIVE_COMPENSATED_ENDPOINT_CHAIN_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
             "fixed diffeomorphism-only endpoint is obstructed at every finite differential order",
             entry["claim_boundary"],
         )
         self.assertIn("corrected endpoint A2_comp", entry["claim_boundary"])
         self.assertIn(
-            "does not construct the corrected chain map",
+            "rank 3 and augmented rank 4",
+            entry["claim_boundary"],
+        )
+        self.assertIn(
+            "xi has nonzero normal form modulo (tau,xi^2)",
+            entry["claim_boundary"],
+        )
+        self.assertIn(
+            "minimal GL(4)-covariant tensor-symbol repair adjoins Lambda^2(T^*M)",
+            entry["claim_boundary"],
+        )
+        self.assertIn(
+            "full chain map are absent",
             entry["claim_boundary"],
         )
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OBSTRUCTED")

@@ -2542,6 +2542,33 @@ and gives the constant exact Gram matrix `diag(-1,1,1,1,1)`.  It neither adds
 an independent constant `U(1)` current nor enlarges the carrier.  This removes
 the pairing obstruction only; the corrected chain map and `f2` remain open.
 
+The compensated unary gate is now disposed exactly.
+`EINSTEIN_WEYL_RELATIVE_COMPENSATED_ENDPOINT_CHAIN_OBSTRUCTION_V1`
+restricts the corrected endpoint equation to the translation-invariant
+\((t,x)\) zero mode and the `P_H_3_t_theta_phi` current component.  The
+lowest coefficient matrix has rank \(3\) and augmented rank \(4\), with a
+two-row left-null witness evaluating to \(-1\).  Equivalently, the remaining
+normal form is
+
+\[
+\xi\notin(\tau,\xi^2)\subset\mathbb Q[\tau,\xi].
+\]
+
+This is a filtration theorem, so every finite-order product-equivariant
+support-local unary lift on the existing symmetric equation carrier is
+obstructed; it is not an extrapolation from the order-one through order-three
+screens.  The unique minimal \(GL(4)\)-covariant tensor-symbol repair is an
+added \(\Lambda^2(T^*M)\) equation module.  Its flat \(B_{01}\) component
+gives
+
+\[
+u=w=0,\qquad v=b=\frac12.
+\]
+
+Only this symbol-level repair is classified.  Its cyclic dual completion and
+full chain map remain absent, so relative `q2/f2` is still inactive and no
+causal, observable, nonlinear, particle or quantum promotion follows.
+
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
 negative-norm one-particle class.  A counterexample is a successful result, not
