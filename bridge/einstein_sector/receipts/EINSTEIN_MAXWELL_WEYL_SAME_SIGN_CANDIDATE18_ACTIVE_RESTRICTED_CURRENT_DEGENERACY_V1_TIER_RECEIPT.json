@@ -1,0 +1,43 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_ACTIVE_RESTRICTED_CURRENT_DEGENERACY_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Two exact smooth bounded projective Lee--Wald current-radical families on candidate 18's complete active L=3 resonance variety.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.json": "c04877088d558153de865f0bbb0ef48103e3bcdc7105aaf9cf3cb1149553dfc7",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.py": "2257c05c56934a4d4203b30cc9aa67a3d8c63e24edace9d57f1fe6e8610e0f1d",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.schema.json": "b9de597398bdd1c08f8de84f22699ab65ab5a6c0b57a3e9d7a85b68ed16f166e",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.py": "80d1fe653239621db9ac67990fc6dcf01e2f85a829f6eadbc70cfc60705b9615",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.py": "1be8258e328fd8bc6ec84384ef782a08960792b2f3e43d123e33ba352764b879",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-candidate18-active-restricted-current-degeneracy.md": "7da7c628231955394374d9e7db9d39114015aa2328d42fdb020df055cc7532ca"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m json.tool bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.json",
+        "python3 -m json.tool bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.schema.json",
+        "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.py bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.py",
+        "git diff --check on the scoped paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 3,
+      "elapsed_seconds": 35.78,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_EXACT_RECOMPUTATION_AND_CONTENT_ADDRESS",
+      "reason": "The independent verifier reconstructs the parity pencil diagonalization, both current eigenlines, the rank-one smoothness rank, four-dimensional projective radical cancellation, and the exact positive R3+s18 R1 occupation lift from content-addressed inputs. Atlas integration is a separate follow-up commit."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is an explicit degeneracy-family theorem, not a freeze of the complete degeneracy divisor, presymplectic quotient, occupation gluing, all-orders integration or any causal/quantum lifecycle."
+    }
+  },
+  "claim_boundary": "OBSTRUCTED only for the global symplectic-orbifold interpretation of candidate 18's active variety. The two bounded smooth radical families are CERTIFIED; the complete presymplectic stratification remains OPEN."
+}

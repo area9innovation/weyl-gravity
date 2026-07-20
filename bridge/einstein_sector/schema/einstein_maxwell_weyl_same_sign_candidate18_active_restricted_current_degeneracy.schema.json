@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "active_current_reduction", "scalar_cone_witness", "full_bounded_witness", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-same-sign-candidate18-active-restricted-current-degeneracy-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_ACTIVE_RESTRICTED_CURRENT_DEGENERACY"},
+    "scalar_cone_witness": {
+      "type": "object",
+      "required": ["ray_mixture", "resulting_positive_over_negative_ratio", "all_six_scalar_constraints_zero", "active_resonant_norms_nonzero"],
+      "properties": {
+        "ray_mixture": {"const": "R3+s18*R1"},
+        "resulting_positive_over_negative_ratio": {"const": "1"},
+        "all_six_scalar_constraints_zero": {"const": true},
+        "active_resonant_norms_nonzero": {"const": true}
+      },
+      "additionalProperties": true
+    },
+    "classification": {
+      "type": "object",
+      "required": ["candidate18_active_restricted_current_degeneracy", "projective_radical_complex_dimension_per_family", "candidate18_global_active_component_symplectic_orbifold"],
+      "properties": {
+        "candidate18_active_restricted_current_degeneracy": {"const": true},
+        "projective_radical_complex_dimension_per_family": {"const": 4},
+        "candidate18_global_active_component_symplectic_orbifold": {"const": false}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

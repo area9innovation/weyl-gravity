@@ -1,0 +1,257 @@
+{
+  "active_current_reduction": {
+    "active_functional_coordinates": {
+      "U": "axial q-minus amplitude",
+      "V": "polar q-minus amplitude",
+      "X": "c_aa applied to the axial p-extra doublet",
+      "Y": "c_pp applied to the polar p-extra doublet"
+    },
+    "active_positive_weights": {
+      "3w_y_minus_w_x_interval": {
+        "decimal_digits": 30,
+        "excludes_zero": true,
+        "lower": "10445796999742149794407006935346019555762836599923204214342692507535536899251352731894034753083600855286330513873704971988655698082107336484139093335958627513475908525691701854757059306728754039524552140465510625743983319471769182336772119176377312863777539211412468155173451652234375000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/545280995358763936587497069346499054425077944206959261110567464665840790095995512473950194580656114386592425119754380586663125209329137100469806313645579719149526924100293888992029547669485252312584115263301589139604798482018513340124257264766454018753411962732829265026464489369559544527807443724610937061775686580465731282705598253633052841823795733814033003738630377330935555045636851602368985693",
+        "positive": true,
+        "upper": "522289849987107489720350362424709695778085570920045478703763775636317775666918920752246951586788447186055260992874402061422068365657464814923126309794443971108491747257102901272619129944721421240250458142726606802336401445006711486044810675443524399820221472515285153240124600723437500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/27264049767938196829374851608764842822914447402577327323002983764958088231602132231056477333538037842552559970358505471678845732320552051470995430840762835817680895460069573230415239179277941573076099389945143024623948477199431537387307289208492559709968489144581302881107428507508740167422847687690230263335913258568027504199175573677602718306186318444780278520489246197984950003578473070780847747"
+      },
+      "w_x_definition": "1/(c_aa*G_axial_extra^{-1}*c_aa^T)",
+      "w_x_interval": {
+        "decimal_digits": 30,
+        "excludes_zero": true,
+        "lower": "37432044161693967913508395847816378204222433650209644306495235511668485937500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/1250464362427366879840667868047514092613997312103745637208725790177589161751761519887360469787150311953975877950909465709426200090980237970621487675652731695534635487762572500819621726257101259",
+        "positive": true,
+        "upper": "9358011040423491978377098961955639740745566271624286655072559450862638281250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/312616090606841719960166947224935986978854943824503577658501138638265342798987144762560503838400487528230760254289669600495793119583683723005360801738110016332999496147484311402757918680410101"
+      },
+      "w_y_definition": "1/(c_pp*G_polar_extra^{-1}*c_pp^T)",
+      "w_y_interval": {
+        "decimal_digits": 30,
+        "excludes_zero": true,
+        "lower": "2788862558104767954535774394570626039849566033896479780605313709182900423588898466177390728480215713358276369446016335937500000000000000000000000000000000000000000000000000000000000000000000000000000000000/436062803341535883698259383456076126356162202037417943699200879940699412447435804347613440362196674027066205281494432718342268445699695121959351002059192666578332805450480955650771393810186111185821815486327",
+        "positive": true,
+        "upper": "557772511620953590907154878914360594361977297651866613625185957936542413241983752774743879518351691094609343201573859375000000000000000000000000000000000000000000000000000000000000000000000000000000000000/87212560668307176739651876266124554909583269470527129068013471204964807774270622420386295137479718520720588027012110842086592795149305909134584247624895166173337187182446617999322334708388781643456444273047"
+      }
+    },
+    "channel_current_matrices": {
+      "h_minus": "-1152 + 960*sqrt(3)",
+      "negative_node_absolute": "6*h_minus*I_2",
+      "positive_node": "[[w_x/12+w_y/4,-w_x/12+w_y/4],[-w_x/12+w_y/4,w_x/12+w_y/4]]"
+    },
+    "channel_transforms": {
+      "P": [
+        [
+          "sqrt(3)/6",
+          "-sqrt(3)/6"
+        ],
+        [
+          "1/2",
+          "1/2"
+        ]
+      ],
+      "Q": [
+        [
+          "sqrt(3)",
+          "-sqrt(3)"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "identities": [
+        "P^T*Q=I",
+        "P^T*[[0,3],[1,0]]*Q=diag(sqrt(3),-sqrt(3))"
+      ],
+      "resonance_factorization": "T1(f_plus,g_plus)=T1(f_minus,g_minus)=0"
+    },
+    "radical_geometry": {
+      "base_angular_quartic": "e0=(0,0,1,0,0)",
+      "base_channels": "f=z tensor e0; g=t*z tensor e0 with t^2 as displayed",
+      "fixed_norm_and_phase_descent": "e0 is orthogonal to r, so the four-complex-dimensional radical is fixed-norm tangent and survives both node-phase quotients",
+      "rank_one_smoothness": "both entries of z are nonzero, so both rank-one cone factors are at nonzero proportional pairs and are smooth",
+      "spectator_orthogonality": "the p-extra functional coordinates use the current-orthogonal complements of their kernels",
+      "transverse_radicals": "delta f=z tensor r; delta g=t*z tensor r for every r in e0-perp"
+    },
+    "smooth_radical_families": [
+      {
+        "active_rank_one_factors_nonzero": true,
+        "channel_eigenline": "symmetric",
+        "current_cancellation_remainder": [
+          "0",
+          "0"
+        ],
+        "node_scale_squared_formula": "(w_y/2)/(6*h_minus)",
+        "node_scale_squared_interval": {
+          "decimal_digits": 30,
+          "excludes_zero": true,
+          "lower": "40348127287395369712612476773301881363564323407067126455516691394428536220904202346316416789354972704836174326475930786132812500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/38667927778102115152340177955516638770206209534077883933031955692023991850631355887354578660590808367737169336320392991222897584383492168626315367758773630754468169377545362375435916541940940909218310616205958388671873698179525052598077",
+          "positive": true,
+          "upper": "744888503767299133155922648122810622812469681693197934862694922457989333923589413427809668160191895158399229702956542968750000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/713869435903423664350895589544044915502589091648651508957214203925107652619831264725624617913620699117272918382471883667257637627409065466598200725967582737466609476060891509520468197774319602541519845367654181406318970406239221983319"
+        },
+        "positive_current_eigenvalue_formula": "w_y/2",
+        "projective_current_radical_complex_dimension": 4,
+        "smooth_affine_resonance_dimension_over_C": 22,
+        "z": [
+          "1",
+          "1"
+        ]
+      },
+      {
+        "active_rank_one_factors_nonzero": true,
+        "channel_eigenline": "antisymmetric",
+        "current_cancellation_remainder": [
+          "0",
+          "0"
+        ],
+        "node_scale_squared_formula": "(w_x/6)/(6*h_minus)",
+        "node_scale_squared_interval": {
+          "decimal_digits": 30,
+          "excludes_zero": true,
+          "lower": "180517188279774150817459470716707070815115903019915337126230881132660522460937500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/110885095644263634909083933913535383638482598830590147057619479312866213164157054276702718643720601748119218228512684036680332680397629979702734066514267742311906451060009971803657756100329200393530577529992027468689426009",
+          "positive": true,
+          "upper": "4165781267994788095787526247309312562653831139433888290185434228482299804687500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/2558886822559930036363475236035872364252746181713814495230103407144739503246875744882782187178962927314343841788190258050356124786212836767865830434925305578708256031736380493668582100558791827692248556336726124392269877"
+        },
+        "positive_current_eigenvalue_formula": "w_x/6",
+        "projective_current_radical_complex_dimension": 4,
+        "smooth_affine_resonance_dimension_over_C": 22,
+        "z": [
+          "1",
+          "-1"
+        ]
+      }
+    ],
+    "source_normal_form": [
+      "T1(X,U)+T1(Y,V)=0",
+      "3*T1(X,V)+T1(Y,U)=0"
+    ]
+  },
+  "claim_boundary": "This is an exact smooth bounded degeneracy-family theorem on candidate 18, not a complete degeneracy-divisor, presymplectic-quotient, connected-component or occupation-gluing theorem. Final residual descent, all-orders integration and causal, observational or quantum maps remain fail-closed.",
+  "classification": {
+    "all_orders_integrability": false,
+    "candidate17_20_degeneracy_divisors_classified": false,
+    "candidate18_active_restricted_current_degeneracy": true,
+    "candidate18_global_active_component_symplectic_orbifold": false,
+    "causal_residual_observational_or_quantum_claim": false,
+    "complete_candidate18_degeneracy_divisor_classified": false,
+    "degeneracy_occurs_inside_the_exact_candidate18_scalar_cone": true,
+    "degenerate_points_are_bounded_second_order_tangents": true,
+    "degenerate_points_are_smooth_on_the_complete_active_resonance_variety": true,
+    "degenerate_points_have_all_five_stabilizer_moment_maps_zero": true,
+    "occupation_strata_glued": false,
+    "projective_radical_complex_dimension_per_family": 4,
+    "two_exact_internal_eigenline_families": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "full_bounded_witness": {
+    "bounded_second_order_membership": "CERTIFIED_BY_THE_EXACT_FIBRE_PRODUCT_THEOREM",
+    "resonance": "both rank-one first-transvectant equations vanish at nonzero proportional pairs",
+    "resonant_nodes": "use either displayed z eigenline with e0 angular carrier and scale the q-minus node by the displayed positive t",
+    "same_fibre_sources": "removable by the imported 864-defect census encoded in the exact fibre-product theorem",
+    "spectators": "use real m=0 representatives for every other occupied scalar-ray node",
+    "stabilizers": "the ratio-one scalar mixture kills H and P_x; e0 resonant carriers and m=0 spectators kill J1,J2,J3"
+  },
+  "generality_level": "G2_EXPLICIT_SMOOTH_DEGENERACY_FAMILIES_ON_CANDIDATE18",
+  "interpretation": "Candidate 18 completes the active same-sign current audit at the existence level: like candidates 17 and 20, its irreducible active variety contains smooth bounded projective current radicals. The mechanism is different and simpler: the scalar cone crosses equal positive/negative current occupation, and the two rank-one parity channels expose exact internal eigenlines on which four transverse spin-two directions cancel. The global active link is presymplectic rather than a symplectic orbifold.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify the candidate-17/18/20 current-degeneracy divisors and their presymplectic quotients; keep candidate-16 singular topology and occupation gluing separate",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.py",
+    "generator_sha256": "2257c05c56934a4d4203b30cc9aa67a3d8c63e24edace9d57f1fe6e8610e0f1d",
+    "inputs": {
+      "L1_current_audit": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.json",
+        "sha256": "0cf86338361f9f26bb1bf360892f6c61f2959a92f7f6eb1e0db70ed6aa609cd6"
+      },
+      "axial_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "fibre_product": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json",
+        "sha256": "32b6764cf13d724f89b91719aef17d3cf1d0a509e866ac9f8186115768b28f54"
+      },
+      "interval_code": {
+        "path": "bridge/einstein_sector/einstein_maxwell_weyl_two_abs_momentum_axial_axial_L4_matrix.py",
+        "sha256": "eda03cdbef413dd663fec1d805e462329984f5d8c9dd18ab85764e679b47e580"
+      },
+      "multiplicity_two_L3": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_multiplicity_two_L3_zero_varieties.json",
+        "sha256": "dca2676094fc0c34bdeeea70cdffe247ee296458cbccaf70f5d94a9559768cc6"
+      },
+      "polar_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      },
+      "resonance_faces": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
+        "sha256": "7607c649ebc628270669db8fd5e6ab813b281b82c83192a9cb7f7dbee09f3433"
+      },
+      "scalar_rays": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.json",
+        "sha256": "a52e9cffefb8822790ce75763d70eff3111e0a4d7757aa62bc4042782bcc02fa"
+      },
+      "stabilizer": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_ACTIVE_RESTRICTED_CURRENT_DEGENERACY",
+  "result_state": "CANDIDATE18_HAS_TWO_SMOOTH_BOUNDED_ACTIVE_CURRENT_RADICAL_FAMILIES",
+  "rho": "(-12586 + 1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3))/25497",
+  "scalar_cone_witness": {
+    "R1_positive_over_negative_minus_one_interval": {
+      "decimal_digits": 30,
+      "excludes_zero": true,
+      "lower": "-31641277649780888564612845831503700600320074437920115026128753235081674285442813401841661033/384762027447142287852081458874048116146713074851871581955474306000000000000000000000000000000",
+      "positive": false,
+      "upper": "-316412776497808885646128458117812376185742394942143884839634583363405451523396854578399714337/3847620274471422878520814588747269281838489670244018496611975136750000000000000000000000000000"
+    },
+    "R3_positive_over_negative_minus_one_interval": {
+      "decimal_digits": 30,
+      "excludes_zero": true,
+      "lower": "2246905755265906302705748887189174355649214792770692319476541053643500939880145492448890821697430/1133794587779020673413442326529464207985030480836617735422908555458166687694784678455772775415073",
+      "positive": true,
+      "upper": "561726438816476575676437221809460871948680400006877482635184033104437155687377193066501387225181/283448646944755168353360581631730966671650118006233433349628328716810962089991438657498917771100"
+    },
+    "active_negative_node": "q_minus_n2",
+    "active_positive_node": "p_extra_n1",
+    "active_resonant_norms_nonzero": true,
+    "all_occupations_nonnegative": true,
+    "all_six_scalar_constraints_zero": true,
+    "exact_occupation_difference_remainder": "0",
+    "ray_mixture": "R3+s18*R1",
+    "resulting_positive_over_negative_ratio": "1",
+    "s18_exact": "-(-2*sqrt(2833)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 21410) + sqrt(5666)*sqrt(-1335*sqrt(3) + 3242*sqrt(6) + 25164*sqrt(2) + 51319))*(-sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 21410) + sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 123398))*(-3*sqrt(-38913*sqrt(3) + 1621*sqrt(6) + 12582*sqrt(2) + 140396)*sqrt(3242*sqrt(6) + 25164*sqrt(2) + 51319 + 49659*sqrt(3)) - sqrt(2)*sqrt(-38913*sqrt(3) + 1621*sqrt(6) + 12582*sqrt(2) + 140396)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 123398) - sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 123398)*sqrt(3242*sqrt(6) + 25164*sqrt(2) + 51319 + 49659*sqrt(3)) - 75492 - 9726*sqrt(3) + 20760*sqrt(2) + 14751*sqrt(6) + 2*sqrt(2)*sqrt(-1335*sqrt(3) + 3242*sqrt(6) + 25164*sqrt(2) + 51319)*sqrt(3242*sqrt(6) + 25164*sqrt(2) + 51319 + 49659*sqrt(3)) + 4*sqrt(-38913*sqrt(3) + 1621*sqrt(6) + 12582*sqrt(2) + 140396)*sqrt(-1335*sqrt(3) + 3242*sqrt(6) + 25164*sqrt(2) + 51319))/((-sqrt(5666)*sqrt(3242*sqrt(6) + 25164*sqrt(2) + 51319 + 49659*sqrt(3)) + 2*sqrt(2833)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 123398))*(-sqrt(3242*sqrt(6) + 25164*sqrt(2) + 51319 + 49659*sqrt(3)) + sqrt(-1335*sqrt(3) + 3242*sqrt(6) + 25164*sqrt(2) + 51319))*(-3*sqrt(-38913*sqrt(3) + 1621*sqrt(6) + 12582*sqrt(2) + 140396)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 21410) - sqrt(-38913*sqrt(3) + 1621*sqrt(6) + 12582*sqrt(2) + 140396)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 123398) - sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 21410)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 123398) - 37746*sqrt(2) - 4863*sqrt(6) + 20760 + 14751*sqrt(3) + 2*sqrt(2)*sqrt(-1335*sqrt(3) + 3242*sqrt(6) + 25164*sqrt(2) + 51319)*sqrt(1621*sqrt(6) + 12582*sqrt(2) + 12081*sqrt(3) + 21410) + 2*sqrt(2)*sqrt(-38913*sqrt(3) + 1621*sqrt(6) + 12582*sqrt(2) + 140396)*sqrt(-1335*sqrt(3) + 3242*sqrt(6) + 25164*sqrt(2) + 51319)))",
+    "s18_interval": {
+      "decimal_digits": 30,
+      "excludes_zero": true,
+      "lower": "1852932537783262969828912979475950285892386921910944108791229280652671067375168282587331332202210027555289168891065164259074712170673185134783559673371964799681329689136437752421392217472/172878546747070160888034949946260950308594099080859376898368194556773694460336796098347015376735006170580074484073768115788267080300779651030039985794539705862709222800089931089269885551",
+      "positive": true,
+      "upper": "266822285440789867655363469054745746965579296822505186049505568662809428364596601109004139840872620616113874529380336225790472821754629165118325340638335448152097231819475986770122474675213/24894510731578103167877032776689708420279780105979923472645801732684114117884244437845294051382494541738642921056585083469109950867345305373644349669661942501766749635042500181838272567328"
+    }
+  },
+  "schema": "einstein-maxwell-weyl-same-sign-candidate18-active-restricted-current-degeneracy-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.schema.json",
+  "schema_sha256": "b9de597398bdd1c08f8de84f22699ab65ab5a6c0b57a3e9d7a85b68ed16f166e",
+  "scope": {
+    "background": "candidate 18 only at its certified compact Plebanski--Hacyan circumference",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "the complete axial/polar p-extra(n=1) x q-minus(n=2) active L=3 resonance variety, including its p-extra kernel spectators, at one exact scalar-cone occupation",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidatewise signed n=(1,-2) or (1,2), never identified across rho",
+    "m": "all m=-2,...,2",
+    "omega": "positive-frequency p-extra plus q-minus SUM collision into q-plus",
+    "parity": "both transformed rank-one parity channels; two exact internal current eigenlines",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy"
+  ]
+}
