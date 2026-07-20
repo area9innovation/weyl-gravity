@@ -1,0 +1,96 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1_TIER_RECEIPT",
+  "claim_id": "BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1.json",
+      "sha256": "2574789469d366e30ee218c9e345caa32077080b8687bc9aad98659c3231e2c1"
+    },
+    {
+      "path": "d_quotient_classical/generated/berger_q26_104_row_noncone_rational_nilpotence_feasibility_v1/rational_noncone_differential.json",
+      "sha256": "bd32fd13b56ae3284040d487b5bd284730381e00040cb98d44bf41456a33f1b2"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "4dadb1c6deb0c3b4c951ece785826bcde307e5c56879d1ac3225f2357eaf4fa9"
+    },
+    {
+      "path": "d_quotient_classical/reports/berger-q26-104-row-noncone-rational-nilpotence-feasibility-v1.md",
+      "sha256": "80362c12817bb259bf59f0dda7a98e006e098f9bc4aba973bb5b2d866dbdadf0"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile d_quotient_classical/causal_transfer/berger_q26_104_row_noncone_rational_nilpotence_feasibility.py d_quotient_classical/causal_transfer/verify_berger_q26_104_row_noncone_rational_nilpotence_feasibility.py d_quotient_classical/causal_transfer/tests/test_berger_q26_104_row_noncone_rational_nilpotence_feasibility.py",
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <scoped paths>",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.berger_q26_104_row_noncone_rational_nilpotence_feasibility --check --guards",
+        "elapsed_seconds": 15.31,
+        "status": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_104_row_noncone_rational_nilpotence_feasibility",
+        "elapsed_seconds": 1.16,
+        "status": "PASS",
+        "independent_rank_prime": 1013
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_104_row_noncone_rational_nilpotence_feasibility",
+        "elapsed_seconds": 14.98,
+        "status": "PASS",
+        "tests": 4
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-104-row-noncone-rational-nilpotence-feasibility-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1.json",
+        "elapsed_seconds": 3.46,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_classical_atlas_fragment.py --check",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment",
+        "status": "PASS",
+        "tests": 19
+      }
+    ],
+    "reason": "The feasibility witness changes the fail-closed Berger crosswalk by proving that nilpotency and retained cohomology ranks are not a general 104-row obstruction."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is an exact rational specialization control, not a PBW operator completion, terminal 104-row theorem, freeze, release or shared-core algebra change."
+  },
+  "claim_boundary": "The frozen old-old q blocks admit an exact rational non-cone square-zero specialization with retained cohomology. This is not a PBW operator completion and supplies no evolution lift, cyclic pairing, real involution, retained SDR, Hadamard state or quantum theory."
+}

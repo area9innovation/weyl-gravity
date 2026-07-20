@@ -153,6 +153,11 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             "retained q26 cohomology (1,1,1,1)",
             entry["claim_boundary"],
         )
+        self.assertIn("ranks (23,56,23)", entry["claim_boundary"])
+        self.assertIn(
+            "not a PBW operator extension",
+            entry["claim_boundary"],
+        )
         self.assertIn(
             "every non-cone 104-row factorization",
             entry["claim_boundary"],
@@ -180,6 +185,10 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         )
         self.assertIn(
             "BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
 

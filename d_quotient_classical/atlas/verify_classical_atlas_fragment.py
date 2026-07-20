@@ -250,7 +250,9 @@ def verify() -> None:
         not in berger_cauchy["claim_boundary"]
         or "retained q26 cohomology (1,1,1,1)"
         not in berger_cauchy["claim_boundary"]
-        or "every non-cone 104-row factorization"
+        or "ranks (23,56,23)"
+        not in berger_cauchy["claim_boundary"]
+        or "not a PBW operator extension"
         not in berger_cauchy["claim_boundary"]
     ):
         raise AssertionError("Berger carrier-extension boundary missing")
@@ -284,6 +286,11 @@ def verify() -> None:
         not in berger_cauchy_ids
     ):
         raise AssertionError("Berger fully mixed cone SDR evidence missing")
+    if (
+        "BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1"
+        not in berger_cauchy_ids
+    ):
+        raise AssertionError("Berger non-cone feasibility evidence missing")
     transverse = by_id["classical.nariai.transverse_kantowski_sachs_tangent"]
 
     bach_open = by_id["classical.bach_flat.open_parent_detour"]

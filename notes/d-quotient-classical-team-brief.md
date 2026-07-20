@@ -2930,6 +2930,29 @@ This closes the fully mixed canonical-cone branch, not general non-cone
 104-row factorizations.  The active gate is now to impose retained
 cohomology from the outset in the complete non-cone block system.
 
+### Rational non-cone nilpotence feasibility control (2026-07-20)
+
+`BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1`
+shows that the cone cohomology obstruction is not a general rank
+obstruction.  At the exact multiplicative specialization
+\(e_\mu=0\), \((\alpha_B,u,v)=(2,1,3)\), a non-cone 208-row
+differential keeps all three frozen old-old \(q_{\rm Cauchy}\) blocks,
+has ranks
+
+\[
+(23,56,23),
+\]
+
+squares to zero exactly and has cohomology \((1,1,1,1)\).  The payload
+stores all rational entries; an independent rail checks nilpotency and
+the ranks modulo a different good prime.
+
+This is deliberately a feasibility control, not a PBW operator
+completion.  It proves that the next obstruction must use evolution
+equivariance, cyclicity, locality/PBW lifting or a nontrivial Berger
+representation.  It supplies no \(A_{104}\) lift, pairing, real
+involution, retained SDR, Hadamard or quantum datum.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

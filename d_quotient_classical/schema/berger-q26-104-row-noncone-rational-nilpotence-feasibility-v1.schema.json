@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-q26-104-row-noncone-rational-nilpotence-feasibility-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "scope",
+    "pinned_inputs",
+    "exact_witness",
+    "classification",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-berger-q26-104-row-noncone-rational-nilpotence-feasibility-v1"
+    },
+    "result_id": {
+      "const": "BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1"
+    },
+    "result_state": {
+      "const": "RATIONAL_TRIVIAL_REPRESENTATION_NONCONE_NILPOTENCE_AND_RETAINED_COHOMOLOGY_FEASIBLE"
+    },
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
+    },
+    "scope": {"type": "object"},
+    "pinned_inputs": {
+      "type": "object",
+      "minProperties": 2,
+      "additionalProperties": {"$ref": "#/$defs/artifact"}
+    },
+    "exact_witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "path",
+        "sha256",
+        "coefficient_field",
+        "multiplicative_specialization",
+        "added_degree_profile",
+        "differential_ranks",
+        "cohomology_dimensions",
+        "old_old_q_blocks_fixed",
+        "q_ext_squared_zero"
+      ],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "coefficient_field": {"const": "QQ"},
+        "multiplicative_specialization": {"const": true},
+        "added_degree_profile": {"const": [12, 40, 40, 12]},
+        "differential_ranks": {"const": [23, 56, 23]},
+        "cohomology_dimensions": {"const": [1, 1, 1, 1]},
+        "old_old_q_blocks_fixed": {"const": true},
+        "q_ext_squared_zero": {"const": true}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nilpotence_rank_only_global_104_row_obstruction",
+        "retained_cohomology_rank_only_global_104_row_obstruction",
+        "rational_PBW_operator_completion_constructed",
+        "A104_evolution_lift_constructed",
+        "cyclic_pairing_constructed",
+        "real_involution_constructed",
+        "retained_SDR_constructed",
+        "Hadamard_or_quantum_claim"
+      ],
+      "properties": {
+        "nilpotence_rank_only_global_104_row_obstruction": {"const": false},
+        "retained_cohomology_rank_only_global_104_row_obstruction": {"const": false},
+        "rational_PBW_operator_completion_constructed": {"const": false},
+        "A104_evolution_lift_constructed": {"const": false},
+        "cyclic_pairing_constructed": {"const": false},
+        "real_involution_constructed": {"const": false},
+        "retained_SDR_constructed": {"const": false},
+        "Hadamard_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {
+      "const": "SOLVE_OR_OBSTRUCT_EVOLUTION_EQUIVARIANCE_AND_CYCLICITY_FOR_A_PBW_NONCONE_104_ROW_COMPLETION"
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 4,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "verification_commands": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
