@@ -1,0 +1,3933 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "atlas_export": {
+    "path": "residual_atlas/closed-s3-relative-phase-clock-fragment-v1.json",
+    "physical_mode_identification": "NO_CERTIFIED_MAP",
+    "status": "CERTIFIED_STRUCTURAL_FRAGMENT"
+  },
+  "claim_boundary": "This result is an exact finite-dimensional classical quotient atlas for two and three homogeneous phase fields on closed source-free S3. It classifies integer charge homomorphisms, primitive image and relative lattices, compact stabilizers, zero-charge fibres, reduced kinetic signs and raw-D/conditional K_Berger phase moment maps. It does not select a pure-Weyl action, repair the failed scale gauge, identify a physical residual mode, establish nonhomogeneous PDE or full BV/causal/Hadamard data, or certify a Conflux map.",
+  "claim_flags": {
+    "ARBITRARY_FINITE_N_CLASSIFICATION": false,
+    "CONFLUX_IDENTIFICATION": false,
+    "EXACT_TWO_AND_THREE_FIELD_ATLAS": true,
+    "FULL_BV_OR_CAUSAL_PARENT": false,
+    "HADAMARD_OR_QUANTUM": false,
+    "MODEL_SPECIFIC_ACTION_SELECTED": false,
+    "PHYSICAL_RESIDUAL_MODE": false,
+    "SCALE_GAUGE_REPAIR": false
+  },
+  "conflux_export": {
+    "certified_conflux_map": false,
+    "consumer_id": "sf:program/work/classical-closed-s3-relative-phase-clock-atlas",
+    "consumer_policy_status": "NO_CONSUMER_DECLARATION",
+    "consumer_request": {
+      "path": "planning/forge-requests/closed-s3-relative-phase-clock-atlas-conflux-consumer.json",
+      "sha256": "f8ea02a0b2e760b17552e27bc8f8456f33aa3a7b7b3f58405731fcf8af1fe1bc",
+      "state": "REQUESTED"
+    },
+    "field": "Q",
+    "generic_math_request": {
+      "path": "planning/forge-requests/exact-symplectic-poisson-moment-map-reduction.json",
+      "state": "ACCEPTED_NOT_LANDED"
+    },
+    "lifecycle_status": "NO_CERTIFIED_CONFLUX_IMPORTER",
+    "oracle_exclusion": "STRUCTURAL",
+    "raw_export_path": "d_quotient_classical/compensator/CLOSED_S3_RELATIVE_PHASE_CLOCK_CONFLUX_EXPORT_V1.json",
+    "raw_export_sha256": "b743663314a202487995b0cc42d3039a783ef33cc1e63ba11fa25afc02a0701e"
+  },
+  "content_hashes": {
+    "claim_boundary_sha256": "ac5f64a1d5a632eb75e12fb5d24269b54cd7a1dfa3678b59439f69d9f20a6c2b",
+    "conflux_boundary_sha256": "d461865850f27c45ecdbab3cc557e6c17407863f9a0462bbc05920c09d9015b1",
+    "exact_cases_sha256": "d2ef824e3c9c82a6e2617ad80ad37427bfaaa1df2d76e0adce59334ba0d62927",
+    "raw_export_sha256": "b743663314a202487995b0cc42d3039a783ef33cc1e63ba11fa25afc02a0701e",
+    "strata_sha256": "7ac3044ca8bc8771349c8d428365d5f0deefd73a4b2266e2843ed31001738e93",
+    "theorem_sha256": "9985eff2a22a73434bbe5b58292114fa1dee32cc91c6d1c685dab9f38d1de41a"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_cases": [
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n2_rank0_positive",
+      "field_count": 2,
+      "gauge_generator_count": 0,
+      "input_class": "POSITIVE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "3/5",
+            "-1/5"
+          ],
+          [
+            "-1/5",
+            "2/5"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 0,
+          "positive": 2,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [
+          [
+            "2",
+            "1"
+          ],
+          [
+            "1",
+            "3"
+          ]
+        ],
+        "M": [
+          [
+            "2",
+            "1"
+          ],
+          [
+            "1",
+            "3"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 0,
+          "positive": 2,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": true,
+        "horizontal_velocity_Minv_p": [
+          "4/5",
+          "-3/5"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "4/5",
+          "-3/5"
+        ],
+        "sign_status": "POSITIVE"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 1,
+        "primitive_image_lattice_basis_J": [
+          [],
+          []
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [],
+          []
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "7/5",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 0,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [],
+        "finite_stabilizer_order": 1,
+        "original_torus_action_faithful": true,
+        "relative_phase_torus_dimension": 2
+      },
+      "rank": 0,
+      "smith": {
+        "D": [
+          [],
+          []
+        ],
+        "U": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": []
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1",
+          "-1"
+        ],
+        "QT_p": [],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 2,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": true,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "1",
+          "-1"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n2_rank1_primitive_counterflow",
+      "field_count": 2,
+      "gauge_generator_count": 1,
+      "input_class": "POSITIVE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "5/6"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 0,
+          "positive": 1,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [
+          [
+            "6/5"
+          ]
+        ],
+        "M": [
+          [
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "3"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 0,
+          "positive": 2,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": true,
+        "horizontal_velocity_Minv_p": [
+          "-1/2",
+          "1/3"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "5/6"
+        ],
+        "sign_status": "POSITIVE"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 1,
+        "primitive_image_lattice_basis_J": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            -1
+          ],
+          [
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "5/6",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 1,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [],
+        "finite_stabilizer_order": 1,
+        "original_torus_action_faithful": true,
+        "relative_phase_torus_dimension": 1
+      },
+      "rank": 1,
+      "smith": {
+        "D": [
+          [
+            1
+          ],
+          [
+            0
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          1
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1"
+        ],
+        "QT_p": [
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 1,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": true,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "-1",
+          "1"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n2_rank1_primitive_coordinate",
+      "field_count": 2,
+      "gauge_generator_count": 1,
+      "input_class": "POSITIVE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "1/3"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 0,
+          "positive": 1,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [
+          [
+            "3"
+          ]
+        ],
+        "M": [
+          [
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "3"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 0,
+          "positive": 2,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": false,
+        "horizontal_velocity_Minv_p": [
+          "0",
+          "1/3"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "1/3"
+        ],
+        "sign_status": "POSITIVE"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 1,
+        "primitive_image_lattice_basis_J": [
+          [
+            1
+          ],
+          [
+            0
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            1
+          ],
+          [
+            0
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "1/3",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 1,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [],
+        "finite_stabilizer_order": 1,
+        "original_torus_action_faithful": true,
+        "relative_phase_torus_dimension": 1
+      },
+      "rank": 1,
+      "smith": {
+        "D": [
+          [
+            1
+          ],
+          [
+            0
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          1
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1"
+        ],
+        "QT_p": [
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 1,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": false,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n2_rank1_nonprimitive",
+      "field_count": 2,
+      "gauge_generator_count": 1,
+      "input_class": "POSITIVE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "7/3"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 0,
+          "positive": 1,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [
+          [
+            "3/7"
+          ]
+        ],
+        "M": [
+          [
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "3"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 0,
+          "positive": 2,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": true,
+        "horizontal_velocity_Minv_p": [
+          "-1",
+          "1/3"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "7/3"
+        ],
+        "sign_status": "POSITIVE"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 2,
+        "primitive_image_lattice_basis_J": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            -2
+          ],
+          [
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "7/3",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 1,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [
+          2
+        ],
+        "finite_stabilizer_order": 2,
+        "original_torus_action_faithful": false,
+        "relative_phase_torus_dimension": 1
+      },
+      "rank": 1,
+      "smith": {
+        "D": [
+          [
+            2
+          ],
+          [
+            0
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0
+          ],
+          [
+            -2,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          2
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1"
+        ],
+        "QT_p": [
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 1,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": true,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "-2",
+          "1"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n2_rank2_faithful",
+      "field_count": 2,
+      "gauge_generator_count": 2,
+      "input_class": "POSITIVE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [],
+        "A_inertia": {
+          "negative": 0,
+          "positive": 0,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [],
+        "M": [
+          [
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "3"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 0,
+          "positive": 2,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": false,
+        "horizontal_velocity_Minv_p": [
+          "0",
+          "0"
+        ],
+        "relative_velocity_NT_Minv_p": [],
+        "sign_status": "NOT_APPLICABLE_ZERO_DIMENSION"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 1,
+        "primitive_image_lattice_basis_J": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [],
+          []
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [],
+          []
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "0",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 2,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [],
+        "finite_stabilizer_order": 1,
+        "original_torus_action_faithful": true,
+        "relative_phase_torus_dimension": 0
+      },
+      "rank": 2,
+      "smith": {
+        "D": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          1,
+          1
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [],
+        "QT_p": [
+          "0",
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 0,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": false,
+        "fixture_is_nonzero": false,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n2_rank2_nonprimitive",
+      "field_count": 2,
+      "gauge_generator_count": 2,
+      "input_class": "POSITIVE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [],
+        "A_inertia": {
+          "negative": 0,
+          "positive": 0,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [],
+        "M": [
+          [
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "3"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 0,
+          "positive": 2,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": false,
+        "horizontal_velocity_Minv_p": [
+          "0",
+          "0"
+        ],
+        "relative_velocity_NT_Minv_p": [],
+        "sign_status": "NOT_APPLICABLE_ZERO_DIMENSION"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 8,
+        "primitive_image_lattice_basis_J": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [],
+          []
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [],
+          []
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "0",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 2,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [
+          2,
+          4
+        ],
+        "finite_stabilizer_order": 8,
+        "original_torus_action_faithful": false,
+        "relative_phase_torus_dimension": 0
+      },
+      "rank": 2,
+      "smith": {
+        "D": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          2,
+          4
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [],
+        "QT_p": [
+          "0",
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 0,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": false,
+        "fixture_is_nonzero": false,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n3_rank0_positive",
+      "field_count": 3,
+      "gauge_generator_count": 0,
+      "input_class": "POSITIVE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "11/18",
+            "-2/9",
+            "1/18"
+          ],
+          [
+            "-2/9",
+            "4/9",
+            "-1/9"
+          ],
+          [
+            "1/18",
+            "-1/9",
+            "5/18"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 0,
+          "positive": 3,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [
+          [
+            "2",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "3",
+            "1"
+          ],
+          [
+            "0",
+            "1",
+            "4"
+          ]
+        ],
+        "M": [
+          [
+            "2",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "3",
+            "1"
+          ],
+          [
+            "0",
+            "1",
+            "4"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 0,
+          "positive": 3,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": true,
+        "horizontal_velocity_Minv_p": [
+          "17/18",
+          "-8/9",
+          "13/18"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "17/18",
+          "-8/9",
+          "13/18"
+        ],
+        "sign_status": "POSITIVE"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 1,
+        "primitive_image_lattice_basis_J": [
+          [],
+          [],
+          []
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [],
+          [],
+          []
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "59/18",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 0,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [],
+        "finite_stabilizer_order": 1,
+        "original_torus_action_faithful": true,
+        "relative_phase_torus_dimension": 3
+      },
+      "rank": 0,
+      "smith": {
+        "D": [
+          [],
+          [],
+          []
+        ],
+        "U": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": []
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1",
+          "-1",
+          "2"
+        ],
+        "QT_p": [],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 3,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": true,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "1",
+          "-1",
+          "2"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n3_rank1_primitive",
+      "field_count": 3,
+      "gauge_generator_count": 1,
+      "input_class": "POSITIVE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "5/6",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "7/10"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 0,
+          "positive": 2,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [
+          [
+            "21/10",
+            "-3/2"
+          ],
+          [
+            "-3/2",
+            "5/2"
+          ]
+        ],
+        "M": [
+          [
+            "2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "5"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 0,
+          "positive": 3,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": true,
+        "horizontal_velocity_Minv_p": [
+          "-3/2",
+          "1/3",
+          "2/5"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "11/6",
+          "19/10"
+        ],
+        "sign_status": "POSITIVE"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 1,
+        "primitive_image_lattice_basis_J": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "169/30",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 1,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [],
+        "finite_stabilizer_order": 1,
+        "original_torus_action_faithful": true,
+        "relative_phase_torus_dimension": 2
+      },
+      "rank": 1,
+      "smith": {
+        "D": [
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            -1,
+            1,
+            0
+          ],
+          [
+            -1,
+            0,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          1
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1",
+          "2"
+        ],
+        "QT_p": [
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 2,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": true,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "-3",
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n3_rank1_nonprimitive",
+      "field_count": 3,
+      "gauge_generator_count": 1,
+      "input_class": "POSITIVE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "7/3",
+            "3"
+          ],
+          [
+            "3",
+            "47/10"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 0,
+          "positive": 2,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [
+          [
+            "141/59",
+            "-90/59"
+          ],
+          [
+            "-90/59",
+            "70/59"
+          ]
+        ],
+        "M": [
+          [
+            "2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "5"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 0,
+          "positive": 3,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": true,
+        "horizontal_velocity_Minv_p": [
+          "-4",
+          "1/3",
+          "2/5"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "25/3",
+          "62/5"
+        ],
+        "sign_status": "POSITIVE"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 2,
+        "primitive_image_lattice_basis_J": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            -2,
+            -3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "497/15",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 1,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [
+          2
+        ],
+        "finite_stabilizer_order": 2,
+        "original_torus_action_faithful": false,
+        "relative_phase_torus_dimension": 2
+      },
+      "rank": 1,
+      "smith": {
+        "D": [
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            -2,
+            1,
+            0
+          ],
+          [
+            -3,
+            0,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          2
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1",
+          "2"
+        ],
+        "QT_p": [
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 2,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": true,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "-8",
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n3_rank2_faithful",
+      "field_count": 3,
+      "gauge_generator_count": 2,
+      "input_class": "POSITIVE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "31/30"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 0,
+          "positive": 1,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [
+          [
+            "30/31"
+          ]
+        ],
+        "M": [
+          [
+            "2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "5"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 0,
+          "positive": 3,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": true,
+        "horizontal_velocity_Minv_p": [
+          "-1/2",
+          "-1/3",
+          "1/5"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "31/30"
+        ],
+        "sign_status": "POSITIVE"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 1,
+        "primitive_image_lattice_basis_J": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "31/30",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 2,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [],
+        "finite_stabilizer_order": 1,
+        "original_torus_action_faithful": true,
+        "relative_phase_torus_dimension": 1
+      },
+      "rank": 2,
+      "smith": {
+        "D": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            -1,
+            -1,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          1,
+          1
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1"
+        ],
+        "QT_p": [
+          "0",
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 1,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": true,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "-1",
+          "-1",
+          "1"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n3_rank2_nonprimitive",
+      "field_count": 3,
+      "gauge_generator_count": 2,
+      "input_class": "POSITIVE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "31/30"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 0,
+          "positive": 1,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [
+          [
+            "30/31"
+          ]
+        ],
+        "M": [
+          [
+            "2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "5"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 0,
+          "positive": 3,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": true,
+        "horizontal_velocity_Minv_p": [
+          "-1/2",
+          "-1/3",
+          "1/5"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "31/30"
+        ],
+        "sign_status": "POSITIVE"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 4,
+        "primitive_image_lattice_basis_J": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "31/30",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 2,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [
+          2,
+          2
+        ],
+        "finite_stabilizer_order": 4,
+        "original_torus_action_faithful": false,
+        "relative_phase_torus_dimension": 1
+      },
+      "rank": 2,
+      "smith": {
+        "D": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            -1,
+            -1,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          2,
+          2
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1"
+        ],
+        "QT_p": [
+          "0",
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 1,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": true,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "-1",
+          "-1",
+          "1"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n3_rank3_faithful",
+      "field_count": 3,
+      "gauge_generator_count": 3,
+      "input_class": "POSITIVE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [],
+        "A_inertia": {
+          "negative": 0,
+          "positive": 0,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [],
+        "M": [
+          [
+            "2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "5"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 0,
+          "positive": 3,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": false,
+        "horizontal_velocity_Minv_p": [
+          "0",
+          "0",
+          "0"
+        ],
+        "relative_velocity_NT_Minv_p": [],
+        "sign_status": "NOT_APPLICABLE_ZERO_DIMENSION"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 1,
+        "primitive_image_lattice_basis_J": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [],
+          [],
+          []
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [],
+          [],
+          []
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "0",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 3,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [],
+        "finite_stabilizer_order": 1,
+        "original_torus_action_faithful": true,
+        "relative_phase_torus_dimension": 0
+      },
+      "rank": 3,
+      "smith": {
+        "D": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          1,
+          1,
+          1
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [],
+        "QT_p": [
+          "0",
+          "0",
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 0,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": false,
+        "fixture_is_nonzero": false,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n3_rank3_nonprimitive",
+      "field_count": 3,
+      "gauge_generator_count": 3,
+      "input_class": "POSITIVE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [],
+        "A_inertia": {
+          "negative": 0,
+          "positive": 0,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [],
+        "M": [
+          [
+            "2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "5"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 0,
+          "positive": 3,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": false,
+        "horizontal_velocity_Minv_p": [
+          "0",
+          "0",
+          "0"
+        ],
+        "relative_velocity_NT_Minv_p": [],
+        "sign_status": "NOT_APPLICABLE_ZERO_DIMENSION"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 8,
+        "primitive_image_lattice_basis_J": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            2
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [],
+          [],
+          []
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [],
+          [],
+          []
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "0",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 3,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [
+          2,
+          2,
+          2
+        ],
+        "finite_stabilizer_order": 8,
+        "original_torus_action_faithful": false,
+        "relative_phase_torus_dimension": 0
+      },
+      "rank": 3,
+      "smith": {
+        "D": [
+          [
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            2
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          2,
+          2,
+          2
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [],
+        "QT_p": [
+          "0",
+          "0",
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 0,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": false,
+        "fixture_is_nonzero": false,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n2_indefinite_a",
+      "field_count": 2,
+      "gauge_generator_count": 1,
+      "input_class": "DECLARED_INDEFINITE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "1/6"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 0,
+          "positive": 1,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [
+          [
+            "6"
+          ]
+        ],
+        "M": [
+          [
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "-3"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 1,
+          "positive": 1,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": true,
+        "horizontal_velocity_Minv_p": [
+          "-1/2",
+          "-1/3"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "1/6"
+        ],
+        "sign_status": "POSITIVE"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 1,
+        "primitive_image_lattice_basis_J": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            -1
+          ],
+          [
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "1/6",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 1,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [],
+        "finite_stabilizer_order": 1,
+        "original_torus_action_faithful": true,
+        "relative_phase_torus_dimension": 1
+      },
+      "rank": 1,
+      "smith": {
+        "D": [
+          [
+            1
+          ],
+          [
+            0
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          1
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1"
+        ],
+        "QT_p": [
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 1,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": true,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "-1",
+          "1"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n2_indefinite_b",
+      "field_count": 2,
+      "gauge_generator_count": 1,
+      "input_class": "DECLARED_INDEFINITE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "-1/2"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 1,
+          "positive": 0,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [
+          [
+            "-2"
+          ]
+        ],
+        "M": [
+          [
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "-1"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 1,
+          "positive": 1,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": true,
+        "horizontal_velocity_Minv_p": [
+          "-1/2",
+          "-1"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "-1/2"
+        ],
+        "sign_status": "NEGATIVE"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 1,
+        "primitive_image_lattice_basis_J": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            -1
+          ],
+          [
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "-1/2",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 1,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [],
+        "finite_stabilizer_order": 1,
+        "original_torus_action_faithful": true,
+        "relative_phase_torus_dimension": 1
+      },
+      "rank": 1,
+      "smith": {
+        "D": [
+          [
+            1
+          ],
+          [
+            0
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          1
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1"
+        ],
+        "QT_p": [
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 1,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": true,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "-1",
+          "1"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n2_indefinite_c",
+      "field_count": 2,
+      "gauge_generator_count": 1,
+      "input_class": "DECLARED_INDEFINITE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "0"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 1,
+          "positive": 1,
+          "zero": -1
+        },
+        "Grel_equals_Ainv": null,
+        "M": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "-1"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 1,
+          "positive": 1,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": true,
+        "horizontal_velocity_Minv_p": [
+          "-1",
+          "-1"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "0"
+        ],
+        "sign_status": "DEGENERATE_DIRAC_REQUIRED"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 1,
+        "primitive_image_lattice_basis_J": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            -1
+          ],
+          [
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "0",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 1,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [],
+        "finite_stabilizer_order": 1,
+        "original_torus_action_faithful": true,
+        "relative_phase_torus_dimension": 1
+      },
+      "rank": 1,
+      "smith": {
+        "D": [
+          [
+            1
+          ],
+          [
+            0
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          1
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1"
+        ],
+        "QT_p": [
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 1,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": true,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "-1",
+          "1"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n3_indefinite_a",
+      "field_count": 3,
+      "gauge_generator_count": 1,
+      "input_class": "DECLARED_INDEFINITE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "-1/3"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 1,
+          "positive": 1,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [
+          [
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "-3"
+          ]
+        ],
+        "M": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-3"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 1,
+          "positive": 2,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": false,
+        "horizontal_velocity_Minv_p": [
+          "0",
+          "1/2",
+          "-1/3"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "1/2",
+          "-1/3"
+        ],
+        "sign_status": "INDEFINITE_KREIN"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 1,
+        "primitive_image_lattice_basis_J": [
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "1/6",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 1,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [],
+        "finite_stabilizer_order": 1,
+        "original_torus_action_faithful": true,
+        "relative_phase_torus_dimension": 2
+      },
+      "rank": 1,
+      "smith": {
+        "D": [
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          1
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1",
+          "1"
+        ],
+        "QT_p": [
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 2,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": false,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "0",
+          "1",
+          "1"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n3_indefinite_b",
+      "field_count": 3,
+      "gauge_generator_count": 1,
+      "input_class": "DECLARED_INDEFINITE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "-1/2",
+            "0"
+          ],
+          [
+            "0",
+            "-1/3"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 2,
+          "positive": 0,
+          "zero": 0
+        },
+        "Grel_equals_Ainv": [
+          [
+            "-2",
+            "0"
+          ],
+          [
+            "0",
+            "-3"
+          ]
+        ],
+        "M": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-3"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 2,
+          "positive": 1,
+          "zero": 0
+        },
+        "fixture_all_phase_velocities_nonzero": false,
+        "horizontal_velocity_Minv_p": [
+          "0",
+          "-1/2",
+          "-1/3"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "-1/2",
+          "-1/3"
+        ],
+        "sign_status": "NEGATIVE"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 1,
+        "primitive_image_lattice_basis_J": [
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "-5/6",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 1,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [],
+        "finite_stabilizer_order": 1,
+        "original_torus_action_faithful": true,
+        "relative_phase_torus_dimension": 2
+      },
+      "rank": 1,
+      "smith": {
+        "D": [
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          1
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1",
+          "1"
+        ],
+        "QT_p": [
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 2,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": false,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "0",
+          "1",
+          "1"
+        ]
+      }
+    },
+    {
+      "basis_change_witness": {
+        "gauge_coordinates": "gamma'=V^{-1}gamma",
+        "kinetic_matrix": "M'=U^{-T} M U^{-1}",
+        "momenta": "p'=U^{-T}p",
+        "phase_coordinates": "theta'=U theta",
+        "relative_characters": "psi=N^T theta"
+      },
+      "case_id": "n3_indefinite_c",
+      "field_count": 3,
+      "gauge_generator_count": 1,
+      "input_class": "DECLARED_INDEFINITE_KINETIC",
+      "kinetic_restriction": {
+        "A_equals_NT_Minv_N": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "A_inertia": {
+          "negative": 1,
+          "positive": 2,
+          "zero": -1
+        },
+        "Grel_equals_Ainv": null,
+        "M": [
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "M_inertia": {
+          "negative": 1,
+          "positive": 1,
+          "zero": 1
+        },
+        "fixture_all_phase_velocities_nonzero": false,
+        "horizontal_velocity_Minv_p": [
+          "1",
+          "0",
+          "1"
+        ],
+        "relative_velocity_NT_Minv_p": [
+          "0",
+          "1"
+        ],
+        "sign_status": "DEGENERATE_DIRAC_REQUIRED"
+      },
+      "lattices": {
+        "checks": {
+          "NT_B_identity": true,
+          "NT_J_zero": true,
+          "QT_N_zero": true,
+          "QV_equals_J_diag_d_then_zero": true
+        },
+        "primitive_image_index": 1,
+        "primitive_image_lattice_basis_J": [
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "raw_charge_lattice_basis_after_V": [
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "relative_character_lattice_basis_N": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "relative_tangent_lattice_basis_B": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "moment_maps": {
+        "K_Berger_activation_condition": "w=dot(psi) belongs to the continuous stabilizer of the potential",
+        "K_Berger_phase_with_matched_helical_stabilizer": "0",
+        "raw_D_identity": "D_phase=p^T M^{-1}p=Pi^T dot(psi)",
+        "raw_D_per_unit_volume": "1",
+        "unmatched_K_Berger_status": "NO_MODEL_SPECIFIC_POTENTIAL_SELECTED"
+      },
+      "orbit_and_stabilizer": {
+        "compact_gauge_orbit_dimension": 1,
+        "continuous_stabilizer_dimension": 0,
+        "finite_stabilizer_invariant_factors": [],
+        "finite_stabilizer_order": 1,
+        "original_torus_action_faithful": true,
+        "relative_phase_torus_dimension": 2
+      },
+      "rank": 1,
+      "smith": {
+        "D": [
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "U": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "UQV_equals_D": true,
+        "UQ_equals_DVinv": true,
+        "V": [
+          [
+            1
+          ]
+        ],
+        "det_U": 1,
+        "det_V": 1,
+        "invariant_factors": [
+          1
+        ]
+      },
+      "zero_total_charge_fibre": {
+        "Pi": [
+          "1",
+          "1"
+        ],
+        "QT_p": [
+          "0"
+        ],
+        "canonical_parameterization": "p=N Pi",
+        "dimension": 2,
+        "equation": "Q^T p=0",
+        "fixture_all_phase_momenta_nonzero": false,
+        "fixture_is_nonzero": true,
+        "nonzero_physical_relative_momentum_iff": "relative_dimension>0 and Pi!=0",
+        "p": [
+          "0",
+          "1",
+          "1"
+        ]
+      }
+    }
+  ],
+  "imports": [
+    {
+      "actual_sha256": "c88b41a26262c2e79f2e7dbcccf66c50e19cfc179ed96dad8a847fc81f4e2433",
+      "path": "d_quotient_classical/compensator/CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1.json",
+      "result_id": "CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1",
+      "result_state": "CERTIFIED_FINITE_HOMOGENEOUS_GAUSS_RELATIVE_CLOCK_STRUCTURE_THEOREM",
+      "sha256": "c88b41a26262c2e79f2e7dbcccf66c50e19cfc179ed96dad8a847fc81f4e2433",
+      "source_commit": "02a688837b866e9318ae92107744bba9c52de4d7"
+    }
+  ],
+  "proof_obligations": {
+    "conflux_rediscovery": "NOT_RUN_NO_CERTIFIED_IMPORTER",
+    "declared_indefinite_sign_examples": "VERIFIED_EXACTLY",
+    "gauss_charge_fibres": "VERIFIED_EXACTLY",
+    "positive_kinetic_sign": "VERIFIED_EXACTLY",
+    "primitive_lattice_duality": "VERIFIED_EXACTLY",
+    "rank_and_stabilizer_strata": "COMPLETE_FOR_N2_AND_N3",
+    "raw_D_and_conditional_K_Berger": "VERIFIED_EXACTLY",
+    "residual_atlas_fragment": "SCHEMA_VALIDATED",
+    "smith_witnesses": "VERIFIED_EXACTLY"
+  },
+  "result_id": "CLOSED_S3_RELATIVE_PHASE_CLOCK_ATLAS_V1",
+  "result_state": "CERTIFIED_EXACT_CLASSICAL_QUOTIENT_ATLAS_CONFLUX_PENDING",
+  "schema": "pure-weyl-closed-s3-relative-phase-clock-atlas-v1",
+  "scope": {
+    "boundary": false,
+    "carrier": "finite homogeneous phase quotient at fixed moduli",
+    "charge_domain": "integer matrices Q in Mat_{n x r}(Z)",
+    "external_sources": false,
+    "field_counts_fully_classified": [
+      2,
+      3
+    ],
+    "kinetic_domain": "symmetric exact rational M, positive or explicitly declared indefinite; singular M excluded",
+    "spatial_manifold": "closed smooth S3"
+  },
+  "strata": [
+    {
+      "K_Berger_restriction": "zero in the phase sector only when w=dot(psi) is a potential symmetry",
+      "canonical_effective_representative_D": [
+        [],
+        []
+      ],
+      "compact_orbit_dimension": 0,
+      "continuous_stabilizer_dimension_for_r_generators": "r-0",
+      "declared_indefinite_M_reduced_sign_rule": "inertia of A=N^T M^{-1}N; A singular requires Dirac reduction",
+      "field_count": 2,
+      "finite_stabilizer": "trivial",
+      "nonzero_physical_relative_momentum_exists": true,
+      "positive_M_reduced_sign": "POSITIVE",
+      "rank": 0,
+      "raw_D_restriction": "Pi^T A Pi",
+      "relative_phase_torus_dimension": 2,
+      "smith_parameter_locus": "no nonzero Smith factors",
+      "stratum_id": "n2_rank0",
+      "zero_charge_fibre_dimension": 2
+    },
+    {
+      "K_Berger_restriction": "zero in the phase sector only when w=dot(psi) is a potential symmetry",
+      "canonical_effective_representative_D": [
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "compact_orbit_dimension": 1,
+      "continuous_stabilizer_dimension_for_r_generators": "r-1",
+      "declared_indefinite_M_reduced_sign_rule": "inertia of A=N^T M^{-1}N; A singular requires Dirac reduction",
+      "field_count": 2,
+      "finite_stabilizer": "trivial",
+      "nonzero_physical_relative_momentum_exists": true,
+      "positive_M_reduced_sign": "POSITIVE",
+      "rank": 1,
+      "raw_D_restriction": "Pi^T A Pi",
+      "relative_phase_torus_dimension": 1,
+      "smith_parameter_locus": "d_i=1 for every i",
+      "stratum_id": "n2_rank1_primitive",
+      "zero_charge_fibre_dimension": 1
+    },
+    {
+      "K_Berger_restriction": "zero in the phase sector only when w=dot(psi) is a potential symmetry",
+      "canonical_effective_representative_D": [
+        [
+          2
+        ],
+        [
+          0
+        ]
+      ],
+      "compact_orbit_dimension": 1,
+      "continuous_stabilizer_dimension_for_r_generators": "r-1",
+      "declared_indefinite_M_reduced_sign_rule": "inertia of A=N^T M^{-1}N; A singular requires Dirac reduction",
+      "field_count": 2,
+      "finite_stabilizer": "direct sum_i Z/d_i over nonunit invariant factors",
+      "nonzero_physical_relative_momentum_exists": true,
+      "positive_M_reduced_sign": "POSITIVE",
+      "rank": 1,
+      "raw_D_restriction": "Pi^T A Pi",
+      "relative_phase_torus_dimension": 1,
+      "smith_parameter_locus": "0<d_1|...|d_k and at least one d_i>1",
+      "stratum_id": "n2_rank1_nonprimitive",
+      "zero_charge_fibre_dimension": 1
+    },
+    {
+      "K_Berger_restriction": "zero in the phase sector only when w=dot(psi) is a potential symmetry",
+      "canonical_effective_representative_D": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "compact_orbit_dimension": 2,
+      "continuous_stabilizer_dimension_for_r_generators": "r-2",
+      "declared_indefinite_M_reduced_sign_rule": "inertia of A=N^T M^{-1}N; A singular requires Dirac reduction",
+      "field_count": 2,
+      "finite_stabilizer": "trivial",
+      "nonzero_physical_relative_momentum_exists": false,
+      "positive_M_reduced_sign": "NOT_APPLICABLE_ZERO_DIMENSION",
+      "rank": 2,
+      "raw_D_restriction": "Pi^T A Pi",
+      "relative_phase_torus_dimension": 0,
+      "smith_parameter_locus": "d_i=1 for every i",
+      "stratum_id": "n2_rank2_primitive",
+      "zero_charge_fibre_dimension": 0
+    },
+    {
+      "K_Berger_restriction": "zero in the phase sector only when w=dot(psi) is a potential symmetry",
+      "canonical_effective_representative_D": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "compact_orbit_dimension": 2,
+      "continuous_stabilizer_dimension_for_r_generators": "r-2",
+      "declared_indefinite_M_reduced_sign_rule": "inertia of A=N^T M^{-1}N; A singular requires Dirac reduction",
+      "field_count": 2,
+      "finite_stabilizer": "direct sum_i Z/d_i over nonunit invariant factors",
+      "nonzero_physical_relative_momentum_exists": false,
+      "positive_M_reduced_sign": "NOT_APPLICABLE_ZERO_DIMENSION",
+      "rank": 2,
+      "raw_D_restriction": "Pi^T A Pi",
+      "relative_phase_torus_dimension": 0,
+      "smith_parameter_locus": "0<d_1|...|d_k and at least one d_i>1",
+      "stratum_id": "n2_rank2_nonprimitive",
+      "zero_charge_fibre_dimension": 0
+    },
+    {
+      "K_Berger_restriction": "zero in the phase sector only when w=dot(psi) is a potential symmetry",
+      "canonical_effective_representative_D": [
+        [],
+        [],
+        []
+      ],
+      "compact_orbit_dimension": 0,
+      "continuous_stabilizer_dimension_for_r_generators": "r-0",
+      "declared_indefinite_M_reduced_sign_rule": "inertia of A=N^T M^{-1}N; A singular requires Dirac reduction",
+      "field_count": 3,
+      "finite_stabilizer": "trivial",
+      "nonzero_physical_relative_momentum_exists": true,
+      "positive_M_reduced_sign": "POSITIVE",
+      "rank": 0,
+      "raw_D_restriction": "Pi^T A Pi",
+      "relative_phase_torus_dimension": 3,
+      "smith_parameter_locus": "no nonzero Smith factors",
+      "stratum_id": "n3_rank0",
+      "zero_charge_fibre_dimension": 3
+    },
+    {
+      "K_Berger_restriction": "zero in the phase sector only when w=dot(psi) is a potential symmetry",
+      "canonical_effective_representative_D": [
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "compact_orbit_dimension": 1,
+      "continuous_stabilizer_dimension_for_r_generators": "r-1",
+      "declared_indefinite_M_reduced_sign_rule": "inertia of A=N^T M^{-1}N; A singular requires Dirac reduction",
+      "field_count": 3,
+      "finite_stabilizer": "trivial",
+      "nonzero_physical_relative_momentum_exists": true,
+      "positive_M_reduced_sign": "POSITIVE",
+      "rank": 1,
+      "raw_D_restriction": "Pi^T A Pi",
+      "relative_phase_torus_dimension": 2,
+      "smith_parameter_locus": "d_i=1 for every i",
+      "stratum_id": "n3_rank1_primitive",
+      "zero_charge_fibre_dimension": 2
+    },
+    {
+      "K_Berger_restriction": "zero in the phase sector only when w=dot(psi) is a potential symmetry",
+      "canonical_effective_representative_D": [
+        [
+          2
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "compact_orbit_dimension": 1,
+      "continuous_stabilizer_dimension_for_r_generators": "r-1",
+      "declared_indefinite_M_reduced_sign_rule": "inertia of A=N^T M^{-1}N; A singular requires Dirac reduction",
+      "field_count": 3,
+      "finite_stabilizer": "direct sum_i Z/d_i over nonunit invariant factors",
+      "nonzero_physical_relative_momentum_exists": true,
+      "positive_M_reduced_sign": "POSITIVE",
+      "rank": 1,
+      "raw_D_restriction": "Pi^T A Pi",
+      "relative_phase_torus_dimension": 2,
+      "smith_parameter_locus": "0<d_1|...|d_k and at least one d_i>1",
+      "stratum_id": "n3_rank1_nonprimitive",
+      "zero_charge_fibre_dimension": 2
+    },
+    {
+      "K_Berger_restriction": "zero in the phase sector only when w=dot(psi) is a potential symmetry",
+      "canonical_effective_representative_D": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "compact_orbit_dimension": 2,
+      "continuous_stabilizer_dimension_for_r_generators": "r-2",
+      "declared_indefinite_M_reduced_sign_rule": "inertia of A=N^T M^{-1}N; A singular requires Dirac reduction",
+      "field_count": 3,
+      "finite_stabilizer": "trivial",
+      "nonzero_physical_relative_momentum_exists": true,
+      "positive_M_reduced_sign": "POSITIVE",
+      "rank": 2,
+      "raw_D_restriction": "Pi^T A Pi",
+      "relative_phase_torus_dimension": 1,
+      "smith_parameter_locus": "d_i=1 for every i",
+      "stratum_id": "n3_rank2_primitive",
+      "zero_charge_fibre_dimension": 1
+    },
+    {
+      "K_Berger_restriction": "zero in the phase sector only when w=dot(psi) is a potential symmetry",
+      "canonical_effective_representative_D": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "compact_orbit_dimension": 2,
+      "continuous_stabilizer_dimension_for_r_generators": "r-2",
+      "declared_indefinite_M_reduced_sign_rule": "inertia of A=N^T M^{-1}N; A singular requires Dirac reduction",
+      "field_count": 3,
+      "finite_stabilizer": "direct sum_i Z/d_i over nonunit invariant factors",
+      "nonzero_physical_relative_momentum_exists": true,
+      "positive_M_reduced_sign": "POSITIVE",
+      "rank": 2,
+      "raw_D_restriction": "Pi^T A Pi",
+      "relative_phase_torus_dimension": 1,
+      "smith_parameter_locus": "0<d_1|...|d_k and at least one d_i>1",
+      "stratum_id": "n3_rank2_nonprimitive",
+      "zero_charge_fibre_dimension": 1
+    },
+    {
+      "K_Berger_restriction": "zero in the phase sector only when w=dot(psi) is a potential symmetry",
+      "canonical_effective_representative_D": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "compact_orbit_dimension": 3,
+      "continuous_stabilizer_dimension_for_r_generators": "r-3",
+      "declared_indefinite_M_reduced_sign_rule": "inertia of A=N^T M^{-1}N; A singular requires Dirac reduction",
+      "field_count": 3,
+      "finite_stabilizer": "trivial",
+      "nonzero_physical_relative_momentum_exists": false,
+      "positive_M_reduced_sign": "NOT_APPLICABLE_ZERO_DIMENSION",
+      "rank": 3,
+      "raw_D_restriction": "Pi^T A Pi",
+      "relative_phase_torus_dimension": 0,
+      "smith_parameter_locus": "d_i=1 for every i",
+      "stratum_id": "n3_rank3_primitive",
+      "zero_charge_fibre_dimension": 0
+    },
+    {
+      "K_Berger_restriction": "zero in the phase sector only when w=dot(psi) is a potential symmetry",
+      "canonical_effective_representative_D": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "compact_orbit_dimension": 3,
+      "continuous_stabilizer_dimension_for_r_generators": "r-3",
+      "declared_indefinite_M_reduced_sign_rule": "inertia of A=N^T M^{-1}N; A singular requires Dirac reduction",
+      "field_count": 3,
+      "finite_stabilizer": "direct sum_i Z/d_i over nonunit invariant factors",
+      "nonzero_physical_relative_momentum_exists": false,
+      "positive_M_reduced_sign": "NOT_APPLICABLE_ZERO_DIMENSION",
+      "rank": 3,
+      "raw_D_restriction": "Pi^T A Pi",
+      "relative_phase_torus_dimension": 0,
+      "smith_parameter_locus": "0<d_1|...|d_k and at least one d_i>1",
+      "stratum_id": "n3_rank3_nonprimitive",
+      "zero_charge_fibre_dimension": 0
+    }
+  ],
+  "theorem": {
+    "compact_stabilizer": "ker(T^r -> T^n) has identity component T^{r-k} and component group direct_sum_i Z/d_i; unit factors are omitted.",
+    "component_support": {
+      "momenta": "There exists p in ker(Q^T) with all selected p_i nonzero iff every selected e_i is outside im_R(Q).",
+      "velocities": "There exists v in ker(Q^T M) with all selected v_i nonzero iff every selected e_i is outside im_R(MQ)."
+    },
+    "declared_indefinite_restriction": "For symmetric nonsingular declared-indefinite M, the regular relative sign is exactly inertia(A). If A is singular, the standard quotient is not promoted and an additional Dirac reduction is required.",
+    "moment_maps": {
+      "K_Berger": "K_phase=D_phase-R_w vanishes for a uniform helical solution only when w=dot(psi) lies in the continuous stabilizer of V.",
+      "raw_D": "D_phase/Vol=p^T M^{-1}p=Pi^T A Pi"
+    },
+    "positive_kinetic_restriction": "For M>0, A=N^T M^{-1}N and G_rel=A^{-1} are positive definite on every nonzero relative stratum.",
+    "smith_and_lattice_decomposition": "For UQV=D, J=U^{-1}E_gauge is a primitive image-lattice basis, B=U^{-1}E_relative is a quotient tangent-lattice basis and N=U^T E_relative is its dual relative-character basis. N^T J=0 and N^T B=1.",
+    "zero_charge_fibre": "Q^T p=0 iff p=N Pi. A nonzero physical relative momentum exists iff n-rank(Q)>0 and Pi is nonzero."
+  }
+}

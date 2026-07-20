@@ -3403,3 +3403,45 @@ Cross-team consolidation is governed by
 results must identify their generator, phase space, boundary conditions, and
 lifecycle layer using the shared registries before the programme ledger is
 regenerated.
+
+### Active closed-\(S^3\) relative-phase bridge (2026-07-21)
+
+The current bridge is the exact compact-charge quotient atlas, activated by
+`CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1`.  For two and three
+homogeneous phase fields it now classifies every rank and primitive/
+nonprimitive Smith stratum, including the compact orbit, continuous and
+finite stabilizer, primitive image lattice, relative character/tangent
+lattices, zero-total-charge fibre and exact reduced kinetic inertia.
+
+For \(UQV=D\), the certified bases are
+
+\[
+J=U^{-1}E_{\rm gauge},\qquad
+B=U^{-1}E_{\rm rel},\qquad
+N=U^TE_{\rm rel},
+\]
+
+with
+
+\[
+N^TJ=0,\qquad N^TB=1,\qquad
+p=N\Pi,\qquad
+G_{\rm rel}=(N^TM^{-1}N)^{-1}.
+\]
+
+Thus a nonzero physical relative momentum at zero compact charge exists
+exactly when \(n-\operatorname{rank}Q>0\) and \(\Pi\ne0\).  For \(M>0\) the
+relative metric is positive; for a declared-indefinite \(M\), the exact
+inertia of \(A=N^TM^{-1}N\) is reported, while singular \(A\) fails closed to
+an additional Dirac reduction.  The raw homogeneous phase moment map is
+\(D_{\rm phase}/\operatorname{Vol}=\Pi^TA\Pi\); its \(K_{\rm Berger}\)
+cancellation is conditional on a matched continuous potential stabilizer.
+
+The fail-closed atlas row is structural rather than a pure-Weyl physical mode:
+the symplectic/charge quotient is `CERTIFIED`, while the causal, quantum and
+background-carrier maps are `NO_CERTIFIED_MAP`.  A raw oracle-free exact
+payload is ready for Conflux, but the consumer-specific importer and generic
+M39 symplectic-reduction capability have not landed.  The current activation
+gate for the causal-parent preflight is therefore the completed physics atlas
+plus a separately certified Conflux consumer; neither this bridge nor a
+healthy relative phase repairs the independently failed scale-gauge sector.

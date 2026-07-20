@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/closed-s3-relative-phase-clock-conflux-export-v1.schema.json",
+  "title": "Oracle-free exact input payload for the closed-S3 relative-phase clock atlas",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "export_id",
+    "field",
+    "source_scope",
+    "oracle_exclusion",
+    "cases"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "schema": {
+      "const": "pure-weyl-closed-s3-relative-phase-clock-conflux-export-v1"
+    },
+    "export_id": {
+      "const": "CLOSED_S3_RELATIVE_PHASE_CLOCK_CONFLUX_EXPORT_V1"
+    },
+    "field": {
+      "const": "Q"
+    },
+    "source_scope": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "oracle_exclusion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "excluded_fields",
+        "statement"
+      ],
+      "properties": {
+        "excluded_fields": {
+          "type": "array",
+          "minItems": 8,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        },
+        "statement": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 19,
+      "maxItems": 19,
+      "items": {
+        "$ref": "#/$defs/case"
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "exact": {
+      "oneOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string",
+          "pattern": "^-?(0|[1-9][0-9]*)(/[1-9][0-9]*)?$"
+        }
+      ]
+    },
+    "integerRow": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "exactRow": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/exact"
+      }
+    },
+    "case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "field_count",
+        "gauge_generator_count",
+        "input_class",
+        "Q",
+        "M",
+        "relative_momentum_coordinates_Pi"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_]+$"
+        },
+        "field_count": {
+          "enum": [
+            2,
+            3
+          ]
+        },
+        "gauge_generator_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "input_class": {
+          "enum": [
+            "POSITIVE_KINETIC",
+            "DECLARED_INDEFINITE_KINETIC"
+          ]
+        },
+        "Q": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/integerRow"
+          }
+        },
+        "M": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/exactRow"
+          }
+        },
+        "relative_momentum_coordinates_Pi": {
+          "$ref": "#/$defs/exactRow"
+        }
+      }
+    }
+  }
+}

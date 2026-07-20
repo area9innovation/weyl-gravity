@@ -1,0 +1,83 @@
+import prelude;
+import testing;
+import math/rational;
+import math/qmat;
+import math/snf;
+import math/bigint;
+import ds/vec;
+
+fn e(r: i64, c: i64, n: i64) -> QEnt {
+  return new QEnt(r, c, rat(n, 1));
+}
+
+fn matrix(r: i64, c: i64, entries: Vec<QEnt>) -> QMat {
+  return qm_from_triplets(r, c, entries);
+}
+
+fn main() -> i64 {
+  // Two fields, primitive rank one: one relative character.
+  let eqe: Vec<QEnt> = vec_new<QEnt>(system_allocator(), 2);
+  vec_push(eqe, e(0, 0, 1)); vec_push(eqe, e(1, 0, 1));
+  let equal: QMat = matrix(2, 1, eqe);
+  let eqf: Vec<Big> = snf_invariant_factors(equal);
+  assert(snf_rank(equal) == 1);
+  assert(usize_to_i64(len(eqf)) == 1);
+  assert(vec_get_ref(eqf, (0:usize)) == big_from_i64(1));
+
+  // The exact reduced inverse metric for M=diag(2,3), N=(-1,1) is 5/6.
+  let aeq: Rat = rat(1, 2) + rat(1, 3);
+  assert(aeq == rat(5, 6));
+  let grel: Rat = rat(1, 1) / rat(5, 6);
+  assert(grel == rat(6, 5));
+
+  // Nonprimitive rank one retains the relative direction and adds Z/2 isotropy.
+  let npe: Vec<QEnt> = vec_new<QEnt>(system_allocator(), 2);
+  vec_push(npe, e(0, 0, 2)); vec_push(npe, e(1, 0, 4));
+  let nonprimitive: QMat = matrix(2, 1, npe);
+  let npf: Vec<Big> = snf_invariant_factors(nonprimitive);
+  assert(snf_rank(nonprimitive) == 1);
+  assert(vec_get_ref(npf, (0:usize)) == big_from_i64(2));
+
+  // Three fields, two faithful gauges: N=(-1,-1,1), A=31/30, Grel=30/31.
+  let tfe: Vec<QEnt> = vec_new<QEnt>(system_allocator(), 4);
+  vec_push(tfe, e(0, 0, 1)); vec_push(tfe, e(1, 1, 1));
+  vec_push(tfe, e(2, 0, 1)); vec_push(tfe, e(2, 1, 1));
+  let three_faithful: QMat = matrix(3, 2, tfe);
+  let tff: Vec<Big> = snf_invariant_factors(three_faithful);
+  assert(snf_rank(three_faithful) == 2);
+  assert(usize_to_i64(len(tff)) == 2);
+  assert(vec_get_ref(tff, (0:usize)) == big_from_i64(1));
+  assert(vec_get_ref(tff, (1:usize)) == big_from_i64(1));
+  let athree: Rat = (rat(1, 2) + rat(1, 3)) + rat(1, 5);
+  assert(athree == rat(31, 30));
+  let gthree: Rat = rat(1, 1) / rat(31, 30);
+  assert(gthree == rat(30, 31));
+
+  // Scaling all charges by two preserves rank while producing two Z/2 factors.
+  let tne: Vec<QEnt> = vec_new<QEnt>(system_allocator(), 4);
+  vec_push(tne, e(0, 0, 2)); vec_push(tne, e(1, 1, 2));
+  vec_push(tne, e(2, 0, 2)); vec_push(tne, e(2, 1, 2));
+  let three_nonprimitive: QMat = matrix(3, 2, tne);
+  let tnf: Vec<Big> = snf_invariant_factors(three_nonprimitive);
+  assert(snf_rank(three_nonprimitive) == 2);
+  assert(vec_get_ref(tnf, (0:usize)) == big_from_i64(2));
+  assert(vec_get_ref(tnf, (1:usize)) == big_from_i64(2));
+
+  // Exact declared-indefinite sign controls in relative dimension one.
+  let apos: Rat = rat(1, 2) - rat(1, 3);
+  let aneg: Rat = rat(1, 2) - rat(1, 1);
+  let azero: Rat = rat(1, 1) - rat(1, 1);
+  assert(rat_sign(apos) == 1);
+  assert(rat_sign(aneg) == 0 - 1);
+  assert(rat_sign(azero) == 0);
+
+  println("closed-S3 relative-phase clock quotient atlas: PASS");
+  drop(azero); drop(aneg); drop(apos);
+  drop(gthree); drop(athree);
+  drop(tnf); drop(three_nonprimitive);
+  drop(tff); drop(three_faithful);
+  drop(npf); drop(nonprimitive);
+  drop(grel); drop(aeq);
+  drop(eqf); drop(equal);
+  return 0;
+}
