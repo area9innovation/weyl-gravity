@@ -227,9 +227,15 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             evidence,
         )
         self.assertIn("COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1", evidence)
+        self.assertIn(
+            "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
+            evidence,
+        )
         self.assertIn("rank five", entry["claim_boundary"])
+        self.assertIn("integer maximal cofactors", entry["claim_boundary"])
         self.assertIn("sound speed squared 9/59", entry["claim_boundary"])
         self.assertIn("common good locus is EMPTY", entry["claim_boundary"])
+        self.assertIn("theorem-frozen", entry["claim_boundary"])
         self.assertIn(
             "no Candidate C_active is selected", entry["claim_boundary"]
         )

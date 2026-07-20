@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/active_clock_px2_independent_freeze_audit.py",
+      "sha256": "fb8d348b99abe3d6d2efb0dc77763d084bc0a46c5a8ae8e3f18911e4cba9cf10"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_active_clock_px2_independent_freeze_audit.py",
+      "sha256": "31d05b3c6cd5902712a7d4ba5918afb7a7d5cc3e4431451f978a658c3b4b1e93"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_active_clock_px2_independent_freeze_audit.py",
+      "sha256": "ff9e4042c5a05c7aaf68afe0d3e1c42ba3fdf37c3c9a64b676db32eb329d8233"
+    },
+    {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json",
+      "sha256": "9bda4b758616427bdbf401a499ffd2b7cd9dd69a87223f05fcdf636bb31cd533"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-active-clock-px2-independent-freeze-audit-v1.schema.json",
+      "sha256": "29db5558256c6d28138f2627cc23aec693c514ad7fbd83a1ea918c19467b837c"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-active-clock-px2-independent-freeze-audit-v1.md",
+      "sha256": "5baf8957b2ff5d5addb676aeb16769c3ddfff31779f8ed20e5fbbf0dfe455859"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "eb50e81f4b8bbb8c63194cc1d33bc34dd1c13d357454b66344f45169a6651f61"
+    },
+    {
+      "path": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
+      "sha256": "1f12c050a076b90b66795aa456107dad207513518b47348be7e5e45a8b73c3d4"
+    },
+    {
+      "path": "d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+      "sha256": "dd9bab27d3589a4f00da27ca2acf325263f0881431a796a7b729c49f1a97ed9f"
+    },
+    {
+      "path": "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+      "sha256": "67cbfe1c49cca509b3adae3a4b0c6fe1a07053a27108a984ee60a8a43088f754"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <independent-freeze audit, replay verifier and mutation tests>",
+        "elapsed_seconds": 0.1,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <independent-freeze certificate, schema and receipt>",
+        "elapsed_seconds": 0.1,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit independent-freeze, atlas, report and receipt paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/active_clock_px2_independent_freeze_audit.py --check",
+        "elapsed_seconds": 0.7,
+        "status": "PASS",
+        "independent_rail": "reads only the terminal JSON; imports and invokes no terminal producer; reconstructs the action basis by grading signatures, Berger geometry from q-dependent biaxial invariants, stress columns monomial-by-monomial, and the locus by integer maximal cofactors rather than RREF"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_active_clock_px2_independent_freeze_audit.py",
+        "elapsed_seconds": 0.81,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_active_clock_px2_independent_freeze_audit -v",
+        "elapsed_seconds": 0.91,
+        "status": "PASS",
+        "tests": 8,
+        "mutation_controls": "coefficient, background q, stress sign, omitted longitudinal gate, deleted zero stratum, sample-for-kernel substitution, Candidate export, universalization and quantum promotion are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-active-clock-px2-independent-freeze-audit-v1.schema.json -d d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json",
+        "elapsed_seconds": 1.33,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_classical_atlas_fragment.py --check",
+        "elapsed_seconds": 0.18,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "elapsed_seconds": 0.17,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment -v",
+        "elapsed_seconds": 0.05,
+        "status": "PASS",
+        "tests": 26
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.15,
+        "status": "PASS"
+      },
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 5.23,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift, corpus baseline growth from 976 to 1293 certificates, and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m unittest discover -v",
+        "elapsed_seconds": 1.44,
+        "status": "PASS",
+        "tests": 148,
+        "scope": "the repository-wide Python unittest discovery rail from physics/symplectic-reconstruction; standalone publication scripts, numeric scans, Lean builds and TeX builds are not unittest-discoverable and are not represented as covered"
+      }
+    ],
+    "reason": "The item promotes a scoped theorem-freeze lifecycle state, which triggers Tier 3 under AGENTS.md."
+  },
+  "claim_boundary": "The receipt freezes only the scoped no-go for dressed C^2+R^2+R gravity with the complete quadratic shift-symmetric P(X) clock, no HT and no new fields on the unit-cylinder and frozen q=9/40 Berger fixtures. It does not cover higher P(X), higher derivatives, nearby backgrounds, fixed-charge reductions, new fields or enlarged gauge groups. The full-discovery rail is exactly the Python unittest discover surface and does not imply Lean, numeric, TeX, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity coverage.",
+  "higher_tiers_not_run": []
+}

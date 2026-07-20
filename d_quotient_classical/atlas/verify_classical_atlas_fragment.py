@@ -234,11 +234,14 @@ def verify() -> None:
         or {
             "COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1",
             "COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1",
+            "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
         }
         - active_clock_ids
         or "rank five" not in active_clock["claim_boundary"]
+        or "integer maximal cofactors" not in active_clock["claim_boundary"]
         or "sound speed squared 9/59" not in active_clock["claim_boundary"]
         or "common good locus is EMPTY" not in active_clock["claim_boundary"]
+        or "theorem-frozen" not in active_clock["claim_boundary"]
         or "no Candidate C_active is selected" not in active_clock["claim_boundary"]
         or "not a universal k-essence or compensator no-go"
         not in active_clock["claim_boundary"]

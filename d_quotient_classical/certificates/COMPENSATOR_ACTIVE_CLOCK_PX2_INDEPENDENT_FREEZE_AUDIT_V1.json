@@ -1,0 +1,795 @@
+{
+  "action_basis_audit": {
+    "canonical_coefficient_basis": [
+      "alpha_B",
+      "alpha_R",
+      "M_P_squared",
+      "p0",
+      "p1",
+      "p2"
+    ],
+    "complete_within_declared_scope": true,
+    "method": "independent grading-signature census followed by four-dimensional invariant/IBP reduction; no producer module imported",
+    "replacement_only_rule": "the work item replaces only the phase sector of the already declared C^2+R^2+R action; mixed products such as R X are outside this scoped family",
+    "signature_orbits": [
+      {
+        "kept": [
+          "C^2",
+          "R^2"
+        ],
+        "removed": {
+          "Box R": "horizontal total derivative",
+          "E4": "topological in four dimensions"
+        },
+        "representatives": [
+          "C^2",
+          "R^2",
+          "E4",
+          "Box R"
+        ],
+        "signature": "metric_four_derivatives_even"
+      },
+      {
+        "kept": [
+          "R"
+        ],
+        "removed": {},
+        "representatives": [
+          "R"
+        ],
+        "signature": "metric_two_derivatives_even"
+      },
+      {
+        "kept": [
+          "p0",
+          "p1 X",
+          "p2 X^2"
+        ],
+        "removed": {},
+        "representatives": [
+          "1",
+          "X",
+          "X^2"
+        ],
+        "signature": "shift_symmetric_phase_polynomial_degree_at_most_two"
+      }
+    ],
+    "terminal_action_family_sha256_matches": true,
+    "terminal_action_family_sha256_recomputed": "c665462b1b98098613c3b325a1866133b32d681caec943a6c8e4a1460d0e7938"
+  },
+  "background_variation_audit": {
+    "clock_Euler": "PASS on both fixtures: constant theta on the cylinder; constant X, P_X and Dtheta=3/4 on Berger",
+    "derived_invariants": {
+      "Bach_orthonormal": [
+        "961/9600",
+        "403/9600",
+        "403/9600",
+        "31/1920"
+      ],
+      "Ricci_orthonormal": [
+        "0",
+        "71/80",
+        "71/80",
+        "9/80"
+      ],
+      "X": "-9/16",
+      "omega": "3/4",
+      "q": "9/40",
+      "scalar_curvature": "151/80",
+      "stress_sign": 1
+    },
+    "frozen_Berger_matrix": {
+      "column_count": 6,
+      "entries": [
+        {
+          "coefficient": "961/9600",
+          "column": 0,
+          "row": 0
+        },
+        {
+          "coefficient": "22801/6400",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "151/160",
+          "column": 2,
+          "row": 0
+        },
+        {
+          "coefficient": "1",
+          "column": 3,
+          "row": 0
+        },
+        {
+          "coefficient": "9/16",
+          "column": 4,
+          "row": 0
+        },
+        {
+          "coefficient": "-243/256",
+          "column": 5,
+          "row": 0
+        },
+        {
+          "coefficient": "403/9600",
+          "column": 0,
+          "row": 1
+        },
+        {
+          "coefficient": "20083/6400",
+          "column": 1,
+          "row": 1
+        },
+        {
+          "coefficient": "-9/160",
+          "column": 2,
+          "row": 1
+        },
+        {
+          "coefficient": "-1",
+          "column": 3,
+          "row": 1
+        },
+        {
+          "coefficient": "9/16",
+          "column": 4,
+          "row": 1
+        },
+        {
+          "coefficient": "-81/256",
+          "column": 5,
+          "row": 1
+        },
+        {
+          "coefficient": "31/1920",
+          "column": 0,
+          "row": 2
+        },
+        {
+          "coefficient": "-3473/1280",
+          "column": 1,
+          "row": 2
+        },
+        {
+          "coefficient": "-133/160",
+          "column": 2,
+          "row": 2
+        },
+        {
+          "coefficient": "-1",
+          "column": 3,
+          "row": 2
+        },
+        {
+          "coefficient": "9/16",
+          "column": 4,
+          "row": 2
+        },
+        {
+          "coefficient": "-81/256",
+          "column": 5,
+          "row": 2
+        }
+      ],
+      "row_count": 3,
+      "sha256": "ccf52d11956c6cc03c658d3a3634eda00863a763413773459daa099ebb0f1ba4"
+    },
+    "stacked_matrix": {
+      "column_count": 6,
+      "entries": [
+        {
+          "coefficient": "36",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "3",
+          "column": 2,
+          "row": 0
+        },
+        {
+          "coefficient": "1",
+          "column": 3,
+          "row": 0
+        },
+        {
+          "coefficient": "12",
+          "column": 1,
+          "row": 1
+        },
+        {
+          "coefficient": "-1",
+          "column": 2,
+          "row": 1
+        },
+        {
+          "coefficient": "-1",
+          "column": 3,
+          "row": 1
+        },
+        {
+          "coefficient": "961/9600",
+          "column": 0,
+          "row": 2
+        },
+        {
+          "coefficient": "22801/6400",
+          "column": 1,
+          "row": 2
+        },
+        {
+          "coefficient": "151/160",
+          "column": 2,
+          "row": 2
+        },
+        {
+          "coefficient": "1",
+          "column": 3,
+          "row": 2
+        },
+        {
+          "coefficient": "9/16",
+          "column": 4,
+          "row": 2
+        },
+        {
+          "coefficient": "-243/256",
+          "column": 5,
+          "row": 2
+        },
+        {
+          "coefficient": "403/9600",
+          "column": 0,
+          "row": 3
+        },
+        {
+          "coefficient": "20083/6400",
+          "column": 1,
+          "row": 3
+        },
+        {
+          "coefficient": "-9/160",
+          "column": 2,
+          "row": 3
+        },
+        {
+          "coefficient": "-1",
+          "column": 3,
+          "row": 3
+        },
+        {
+          "coefficient": "9/16",
+          "column": 4,
+          "row": 3
+        },
+        {
+          "coefficient": "-81/256",
+          "column": 5,
+          "row": 3
+        },
+        {
+          "coefficient": "31/1920",
+          "column": 0,
+          "row": 4
+        },
+        {
+          "coefficient": "-3473/1280",
+          "column": 1,
+          "row": 4
+        },
+        {
+          "coefficient": "-133/160",
+          "column": 2,
+          "row": 4
+        },
+        {
+          "coefficient": "-1",
+          "column": 3,
+          "row": 4
+        },
+        {
+          "coefficient": "9/16",
+          "column": 4,
+          "row": 4
+        },
+        {
+          "coefficient": "-81/256",
+          "column": 5,
+          "row": 4
+        }
+      ],
+      "row_count": 5,
+      "sha256": "1111c52bf539a07293985ca5ba77e8218f1fe0b4929ad48239344fc9f6be1f74"
+    },
+    "unit_cylinder_matrix": {
+      "column_count": 6,
+      "entries": [
+        {
+          "coefficient": "36",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "3",
+          "column": 2,
+          "row": 0
+        },
+        {
+          "coefficient": "1",
+          "column": 3,
+          "row": 0
+        },
+        {
+          "coefficient": "12",
+          "column": 1,
+          "row": 1
+        },
+        {
+          "coefficient": "-1",
+          "column": 2,
+          "row": 1
+        },
+        {
+          "coefficient": "-1",
+          "column": 3,
+          "row": 1
+        }
+      ],
+      "row_count": 2,
+      "sha256": "865b8d98701f708e21dc8f5950a22888a0ac40621ec5b14c58be8eb8c945d8af"
+    }
+  },
+  "claim_boundary": "This method-distinct exact audit freezes only the scoped result for dressed C^2+R^2+R gravity with the complete quadratic shift-symmetric P(X) sector, no HT and no new fields on the unit cylinder and frozen q=9/40 Berger clock. It reconstructs the declared invariant basis, background variation, integer cofactor locus, coupled inertia, sound cone, Lee-Wald and charge gates without importing or invoking the terminal producer. The stationary locus agrees and its seven-gate good locus is empty. This does not cover higher P(X), higher derivatives, nearby backgrounds, fixed-charge reductions, new fields or enlarged gauge groups. It exports no Candidate C_active or complete support-local causal parent and establishes no Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result.",
+  "claim_flags": {
+    "CANDIDATE_C_ACTIVE_SELECTED": false,
+    "COMPLETE_SUPPORT_LOCAL_CAUSAL_PARENT": false,
+    "HADAMARD_ANOMALY_QME_OR_QUANTUM": false,
+    "PARTICLE_SCATTERING_UNITARITY": false,
+    "SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO_THEOREM_FROZEN": true,
+    "UNIVERSAL_SCALAR_TENSOR_OR_K_ESSENCE_NO_GO": false
+  },
+  "content_hashes": {
+    "background_sha256": "aedcb185ad450403a85bece5d86be9539b62ceb4d3647796e731f42a3f2bef19",
+    "basis_sha256": "330eb845b57490d4f04ab84e21728d27d891960ed1e6cc1c365eee5618621b68",
+    "coupled_gate_sha256": "934d08c3d6b784be5a9e4484791eb7bfee0165597f9845ba02f1d837fbbc3e75",
+    "locus_sha256": "d1aded81c6a5c3ae5b6e10c82f640cf58d88076ddc1fedea84cea220f3f51134",
+    "mutations_sha256": "9d7cb8bb7be954b439ff9c6e37664077c23fb2019ae59f8d4558cc20b114ec31",
+    "singular_sha256": "c4f57aab435d73093c778d620019bfa7dd1e537f6594be03bf7dfda38b9f160d",
+    "verdict_sha256": "bd83ab08c620a0a8a7bd2d6c4d6e2f673e9f863735948fd81f849b880d319532"
+  },
+  "coupled_gate_audit": {
+    "clock_and_charge": {
+      "Berger_standard_sign": "P_X<0 and P_X+2X P_XX<0 iff t>0",
+      "P": "435537t/2105600",
+      "P_X": "-81t/200",
+      "Q_R_density": "243t/400",
+      "common_standard_sign_locus": "EMPTY",
+      "cylinder_standard_sign": "p1<0 iff t<0",
+      "longitudinal_P_X_plus_2X_P_XX": "-531t/200",
+      "matter_K_Berger_density": "-435537t/2105600",
+      "matter_raw_D_density": "523827t/2105600",
+      "monotonicity": "Dtheta=3/4!=0 and X=-9/16<0",
+      "sound_speed_squared": "9/59",
+      "total_generator_identity": "K_Berger=D-(3/4)R fixes the background; i_D Omega_total=(3/4)delta Q_R and i_K Omega_total=0"
+    },
+    "nonzero_stratum": {
+      "Lee_Wald": "omega^0=-3[delta u wedge delta Dpsi+delta psi wedge delta Du]-2p1 delta v wedge delta Dv",
+      "characteristic_polynomial": "spectral^2(spectral^2-2)^2",
+      "congruence_diagonal": {
+        "column_count": 3,
+        "entries": [
+          {
+            "coefficient": "-6",
+            "column": 0,
+            "row": 0
+          },
+          {
+            "coefficient": "6",
+            "column": 1,
+            "row": 1
+          },
+          {
+            "coefficient": "-36*t/25",
+            "column": 2,
+            "row": 2
+          }
+        ],
+        "row_count": 3,
+        "sha256": "df8d326cd2188d365091056ddccd124e5695f3d86e59a522a5da038b98663f36"
+      },
+      "inertia": {
+        "t<0": [
+          2,
+          1,
+          0
+        ],
+        "t>0": [
+          1,
+          2,
+          0
+        ]
+      },
+      "minimal_polynomial": "spectral^2(spectral^2-2)^2",
+      "rational_congruence": {
+        "column_count": 3,
+        "entries": [
+          {
+            "coefficient": "1",
+            "column": 0,
+            "row": 0
+          },
+          {
+            "coefficient": "1",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "1",
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": "-1",
+            "column": 1,
+            "row": 1
+          },
+          {
+            "coefficient": "1",
+            "column": 2,
+            "row": 2
+          }
+        ],
+        "row_count": 3,
+        "sha256": "8cf49443ebfb1cdd5cc8a7697ba65ae083c1c17755e2b496e7507d65065e04d4"
+      },
+      "raw_D_Hamiltonian": "H_D=-3DuDpsi+6psi u-6psi^2/M_P^2-p1(Dv)^2",
+      "raw_D_sign_witnesses": [
+        "+3",
+        "-3"
+      ],
+      "state_evolution": {
+        "column_count": 6,
+        "entries": [
+          {
+            "coefficient": "1",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "2",
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": "1645/(81*t)",
+            "column": 2,
+            "row": 1
+          },
+          {
+            "coefficient": "1",
+            "column": 3,
+            "row": 2
+          },
+          {
+            "coefficient": "2",
+            "column": 2,
+            "row": 3
+          },
+          {
+            "coefficient": "1",
+            "column": 5,
+            "row": 4
+          }
+        ],
+        "row_count": 6,
+        "sha256": "d9338b96aa1bf5f4cf23f283fcd31dae69e8801341e70eab68550ce5e18cdbdc"
+      },
+      "velocity_Hessian": {
+        "column_count": 3,
+        "entries": [
+          {
+            "coefficient": "-3",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "-3",
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": "-36*t/25",
+            "column": 2,
+            "row": 2
+          }
+        ],
+        "row_count": 3,
+        "sha256": "ed79a1a9322fca68326de30a7af24727ef02481547707b8b68579180d2e5c2af"
+      }
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "Berger_geometry_reconstructed_from_q": true,
+    "all_maximal_minors_recorded": true,
+    "coefficient_background_sign_and_omitted_gate_mutations_rejected": true,
+    "declared_action_basis_reconstructed": true,
+    "every_denominator_and_singular_stratum_checked": true,
+    "integer_cofactor_elimination_exact": true,
+    "no_candidate_exported": true,
+    "no_numerical_scan": true,
+    "principal_velocity_Lee_Wald_charge_clock_gates_rebuilt": true,
+    "producer_code_not_imported_or_invoked": true,
+    "stress_columns_varied_monomial_by_monomial": true,
+    "terminal_certificate_and_action_hash_pinned": true
+  },
+  "exact_real_locus_audit": {
+    "alternating_cofactor_gcd": 96422400,
+    "integer_matrix": {
+      "column_count": 6,
+      "entries": [
+        {
+          "coefficient": "36",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "3",
+          "column": 2,
+          "row": 0
+        },
+        {
+          "coefficient": "1",
+          "column": 3,
+          "row": 0
+        },
+        {
+          "coefficient": "12",
+          "column": 1,
+          "row": 1
+        },
+        {
+          "coefficient": "-1",
+          "column": 2,
+          "row": 1
+        },
+        {
+          "coefficient": "-1",
+          "column": 3,
+          "row": 1
+        },
+        {
+          "coefficient": "1922",
+          "column": 0,
+          "row": 2
+        },
+        {
+          "coefficient": "68403",
+          "column": 1,
+          "row": 2
+        },
+        {
+          "coefficient": "18120",
+          "column": 2,
+          "row": 2
+        },
+        {
+          "coefficient": "19200",
+          "column": 3,
+          "row": 2
+        },
+        {
+          "coefficient": "10800",
+          "column": 4,
+          "row": 2
+        },
+        {
+          "coefficient": "-18225",
+          "column": 5,
+          "row": 2
+        },
+        {
+          "coefficient": "806",
+          "column": 0,
+          "row": 3
+        },
+        {
+          "coefficient": "60249",
+          "column": 1,
+          "row": 3
+        },
+        {
+          "coefficient": "-1080",
+          "column": 2,
+          "row": 3
+        },
+        {
+          "coefficient": "-19200",
+          "column": 3,
+          "row": 3
+        },
+        {
+          "coefficient": "10800",
+          "column": 4,
+          "row": 3
+        },
+        {
+          "coefficient": "-6075",
+          "column": 5,
+          "row": 3
+        },
+        {
+          "coefficient": "62",
+          "column": 0,
+          "row": 4
+        },
+        {
+          "coefficient": "-10419",
+          "column": 1,
+          "row": 4
+        },
+        {
+          "coefficient": "-3192",
+          "column": 2,
+          "row": 4
+        },
+        {
+          "coefficient": "-3840",
+          "column": 3,
+          "row": 4
+        },
+        {
+          "coefficient": "2160",
+          "column": 4,
+          "row": 4
+        },
+        {
+          "coefficient": "-1215",
+          "column": 5,
+          "row": 4
+        }
+      ],
+      "row_count": 5,
+      "sha256": "75ba1504743888ef47ea1b86bbbc50da78895e02da501e8604f4b52afb26fcf4"
+    },
+    "maximal_minors_delete_column_0_to_5": [
+      -12847802688000,
+      26034048000,
+      624817152000,
+      937225728000,
+      -2284053811200,
+      3172296960000
+    ],
+    "method": "clear row denominators, compute all six signed maximal cofactors, divide by their integer gcd and normalize the last entry positive",
+    "primitive_integer_kernel": [
+      133245,
+      270,
+      -6480,
+      9720,
+      23688,
+      32900
+    ],
+    "rank": 5,
+    "rational_kernel_normalized_p2_one": [
+      "81/20",
+      "27/3290",
+      "-324/1645",
+      "486/1645",
+      "18/25",
+      "1"
+    ],
+    "real_locus": "t(81/20,27/3290,-324/1645,486/1645,18/25,1), t in R",
+    "row_denominator_scales": [
+      1,
+      1,
+      19200,
+      19200,
+      3840
+    ]
+  },
+  "freeze_verdict": {
+    "all_seven_gate_good_locus": "EMPTY",
+    "candidate_C_active_selected": false,
+    "decisive_independent_separators": [
+      "rational congruence diagonal (-6,6,-36t/25) is split for every t!=0",
+      "cylinder standard sign requires t<0 while Berger longitudinal sound and standard sign require t>0",
+      "t=0 is the zero action and has no pairing or dynamics"
+    ],
+    "producer_claim_survives": true,
+    "scoped_quadratic_active_clock_no_go_theorem_frozen": true,
+    "stationary_locus_agrees": true
+  },
+  "independence_boundary": {
+    "elimination_method": "integer maximal-cofactor kernel",
+    "geometry_method": "general biaxial Maurer-Cartan invariant formulas in q=c^2",
+    "producer_RREF_reused": false,
+    "producer_invoked": false,
+    "producer_module_imported": false,
+    "real_method": "exact univariate sign decomposition at t=0",
+    "terminal_JSON_read_only": true
+  },
+  "mutation_audit": [
+    {
+      "failure_code": "BERGER_ROW_MISMATCH",
+      "mutation_id": "COEFFICIENT_BERGER_P2",
+      "status": "REJECTED"
+    },
+    {
+      "failure_code": "BERGER_ROW_MISMATCH",
+      "mutation_id": "BACKGROUND_Q",
+      "status": "REJECTED"
+    },
+    {
+      "failure_code": "CYLINDER_ROW_MISMATCH",
+      "mutation_id": "STRESS_SIGN_CONVENTION",
+      "status": "REJECTED"
+    },
+    {
+      "failure_code": "OMITTED_LONGITUDINAL_GATE",
+      "mutation_id": "OMIT_LONGITUDINAL_SOUND_GATE",
+      "status": "REJECTED"
+    }
+  ],
+  "next_gate": "Treat the quadratic active-clock escape as a theorem-frozen scoped no-go. Any successor must enlarge the declared theory or vary the background and must receive its own exact seven-gate audit.",
+  "result_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
+  "result_state": "SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO_INDEPENDENTLY_FROZEN",
+  "schema": "pure-weyl-compensator-active-clock-px2-independent-freeze-audit-v1",
+  "singular_and_denominator_audit": {
+    "all_row_denominator_scales": [
+      1,
+      1,
+      19200,
+      19200,
+      3840
+    ],
+    "constant_denominators_nonzero": [
+      "20!=0",
+      "25!=0",
+      "200!=0",
+      "1645!=0",
+      "3290!=0",
+      "2105600!=0"
+    ],
+    "other_rank_change_strata": "NONE: a constant maximal minor is nonzero",
+    "t<0": {
+      "Berger_clock": "wrong sign",
+      "auxiliary_presentation_valid": true,
+      "cylinder_clock": "standard sign",
+      "gate_result": "FAIL",
+      "velocity_inertia": [
+        2,
+        1,
+        0
+      ]
+    },
+    "t=0": {
+      "action": "zero vector",
+      "gate_result": "FAIL",
+      "handled_before_auxiliary_division": true,
+      "pairing": "absent",
+      "principal_rank": 0
+    },
+    "t>0": {
+      "Berger_clock": "standard-sign hyperbolic",
+      "auxiliary_presentation_valid": true,
+      "cylinder_clock": "wrong sign",
+      "gate_result": "FAIL",
+      "velocity_inertia": [
+        1,
+        2,
+        0
+      ]
+    }
+  },
+  "terminal_import": {
+    "action_family_sha256": "c665462b1b98098613c3b325a1866133b32d681caec943a6c8e4a1460d0e7938",
+    "path": "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1.json",
+    "result_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1",
+    "sha256": "9ad148d6b632e215cd75636f5fd5b431fa85cf1698a63f725d8b3c9dfe61de89",
+    "source_commit": "c770752d132accb4e3b2bb59884d6faf10335fc8"
+  }
+}

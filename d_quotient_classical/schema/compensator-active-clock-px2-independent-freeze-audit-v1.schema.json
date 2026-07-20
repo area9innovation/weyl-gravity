@@ -1,0 +1,510 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/compensator-active-clock-px2-independent-freeze-audit-v1.schema.json",
+  "title": "Independent freeze audit of the quadratic active-clock locus",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "terminal_import",
+    "independence_boundary",
+    "action_basis_audit",
+    "background_variation_audit",
+    "exact_real_locus_audit",
+    "coupled_gate_audit",
+    "singular_and_denominator_audit",
+    "mutation_audit",
+    "freeze_verdict",
+    "exact_checks",
+    "claim_flags",
+    "claim_boundary",
+    "next_gate",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-compensator-active-clock-px2-independent-freeze-audit-v1"
+    },
+    "result_id": {
+      "const": "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1"
+    },
+    "result_state": {
+      "const": "SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO_INDEPENDENTLY_FROZEN"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "terminal_import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "sha256",
+        "action_family_sha256",
+        "source_commit"
+      ],
+      "properties": {
+        "path": {
+          "const": "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1.json"
+        },
+        "result_id": {
+          "const": "COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1"
+        },
+        "sha256": {
+          "const": "9ad148d6b632e215cd75636f5fd5b431fa85cf1698a63f725d8b3c9dfe61de89"
+        },
+        "action_family_sha256": {
+          "const": "c665462b1b98098613c3b325a1866133b32d681caec943a6c8e4a1460d0e7938"
+        },
+        "source_commit": {
+          "const": "c770752d132accb4e3b2bb59884d6faf10335fc8"
+        }
+      }
+    },
+    "independence_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "producer_module_imported",
+        "producer_invoked",
+        "producer_RREF_reused",
+        "terminal_JSON_read_only",
+        "geometry_method",
+        "elimination_method",
+        "real_method"
+      ],
+      "properties": {
+        "producer_module_imported": {
+          "const": false
+        },
+        "producer_invoked": {
+          "const": false
+        },
+        "producer_RREF_reused": {
+          "const": false
+        },
+        "terminal_JSON_read_only": {
+          "const": true
+        },
+        "geometry_method": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "elimination_method": {
+          "const": "integer maximal-cofactor kernel"
+        },
+        "real_method": {
+          "const": "exact univariate sign decomposition at t=0"
+        }
+      }
+    },
+    "action_basis_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "replacement_only_rule",
+        "signature_orbits",
+        "canonical_coefficient_basis",
+        "terminal_action_family_sha256_recomputed",
+        "terminal_action_family_sha256_matches",
+        "complete_within_declared_scope"
+      ],
+      "properties": {
+        "method": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "replacement_only_rule": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "signature_orbits": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "$ref": "#/$defs/nonempty-object"
+          }
+        },
+        "canonical_coefficient_basis": {
+          "const": [
+            "alpha_B",
+            "alpha_R",
+            "M_P_squared",
+            "p0",
+            "p1",
+            "p2"
+          ]
+        },
+        "terminal_action_family_sha256_recomputed": {
+          "const": "c665462b1b98098613c3b325a1866133b32d681caec943a6c8e4a1460d0e7938"
+        },
+        "terminal_action_family_sha256_matches": {
+          "const": true
+        },
+        "complete_within_declared_scope": {
+          "const": true
+        }
+      }
+    },
+    "background_variation_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "derived_invariants",
+        "unit_cylinder_matrix",
+        "frozen_Berger_matrix",
+        "stacked_matrix",
+        "clock_Euler"
+      ],
+      "properties": {
+        "derived_invariants": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "unit_cylinder_matrix": {
+          "$ref": "#/$defs/matrix"
+        },
+        "frozen_Berger_matrix": {
+          "$ref": "#/$defs/matrix"
+        },
+        "stacked_matrix": {
+          "$ref": "#/$defs/matrix"
+        },
+        "clock_Euler": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "exact_real_locus_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "row_denominator_scales",
+        "integer_matrix",
+        "maximal_minors_delete_column_0_to_5",
+        "alternating_cofactor_gcd",
+        "primitive_integer_kernel",
+        "rank",
+        "rational_kernel_normalized_p2_one",
+        "real_locus"
+      ],
+      "properties": {
+        "method": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "row_denominator_scales": {
+          "const": [
+            1,
+            1,
+            19200,
+            19200,
+            3840
+          ]
+        },
+        "integer_matrix": {
+          "$ref": "#/$defs/matrix"
+        },
+        "maximal_minors_delete_column_0_to_5": {
+          "const": [
+            -12847802688000,
+            26034048000,
+            624817152000,
+            937225728000,
+            -2284053811200,
+            3172296960000
+          ]
+        },
+        "alternating_cofactor_gcd": {
+          "const": 96422400
+        },
+        "primitive_integer_kernel": {
+          "const": [
+            133245,
+            270,
+            -6480,
+            9720,
+            23688,
+            32900
+          ]
+        },
+        "rank": {
+          "const": 5
+        },
+        "rational_kernel_normalized_p2_one": {
+          "const": [
+            "81/20",
+            "27/3290",
+            "-324/1645",
+            "486/1645",
+            "18/25",
+            "1"
+          ]
+        },
+        "real_locus": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "coupled_gate_audit": {
+      "$ref": "#/$defs/nonempty-object"
+    },
+    "singular_and_denominator_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "all_row_denominator_scales",
+        "constant_denominators_nonzero",
+        "t=0",
+        "t>0",
+        "t<0",
+        "other_rank_change_strata"
+      ],
+      "properties": {
+        "all_row_denominator_scales": {
+          "const": [
+            1,
+            1,
+            19200,
+            19200,
+            3840
+          ]
+        },
+        "constant_denominators_nonzero": {
+          "$ref": "#/$defs/nonempty-string-array"
+        },
+        "t=0": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "t>0": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "t<0": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "other_rank_change_strata": {
+          "const": "NONE: a constant maximal minor is nonzero"
+        }
+      }
+    },
+    "mutation_audit": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "mutation_id",
+          "status",
+          "failure_code"
+        ],
+        "properties": {
+          "mutation_id": {
+            "enum": [
+              "COEFFICIENT_BERGER_P2",
+              "BACKGROUND_Q",
+              "STRESS_SIGN_CONVENTION",
+              "OMIT_LONGITUDINAL_SOUND_GATE"
+            ]
+          },
+          "status": {
+            "const": "REJECTED"
+          },
+          "failure_code": {
+            "$ref": "#/$defs/nonempty"
+          }
+        }
+      }
+    },
+    "freeze_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "producer_claim_survives",
+        "stationary_locus_agrees",
+        "all_seven_gate_good_locus",
+        "candidate_C_active_selected",
+        "scoped_quadratic_active_clock_no_go_theorem_frozen",
+        "decisive_independent_separators"
+      ],
+      "properties": {
+        "producer_claim_survives": {
+          "const": true
+        },
+        "stationary_locus_agrees": {
+          "const": true
+        },
+        "all_seven_gate_good_locus": {
+          "const": "EMPTY"
+        },
+        "candidate_C_active_selected": {
+          "const": false
+        },
+        "scoped_quadratic_active_clock_no_go_theorem_frozen": {
+          "const": true
+        },
+        "decisive_independent_separators": {
+          "$ref": "#/$defs/nonempty-string-array"
+        }
+      }
+    },
+    "exact_checks": {
+      "$ref": "#/$defs/boolean-ledger"
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO_THEOREM_FROZEN",
+        "UNIVERSAL_SCALAR_TENSOR_OR_K_ESSENCE_NO_GO",
+        "CANDIDATE_C_ACTIVE_SELECTED",
+        "COMPLETE_SUPPORT_LOCAL_CAUSAL_PARENT",
+        "HADAMARD_ANOMALY_QME_OR_QUANTUM",
+        "PARTICLE_SCATTERING_UNITARITY"
+      ],
+      "properties": {
+        "SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO_THEOREM_FROZEN": {
+          "const": true
+        },
+        "UNIVERSAL_SCALAR_TENSOR_OR_K_ESSENCE_NO_GO": {
+          "const": false
+        },
+        "CANDIDATE_C_ACTIVE_SELECTED": {
+          "const": false
+        },
+        "COMPLETE_SUPPORT_LOCAL_CAUSAL_PARENT": {
+          "const": false
+        },
+        "HADAMARD_ANOMALY_QME_OR_QUANTUM": {
+          "const": false
+        },
+        "PARTICLE_SCATTERING_UNITARITY": {
+          "const": false
+        }
+      }
+    },
+    "claim_boundary": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "next_gate": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis_sha256",
+        "background_sha256",
+        "locus_sha256",
+        "coupled_gate_sha256",
+        "singular_sha256",
+        "mutations_sha256",
+        "verdict_sha256"
+      ],
+      "properties": {
+        "basis_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "background_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "locus_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "coupled_gate_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "singular_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "mutations_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "verdict_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nonempty-string-array": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/nonempty"
+      }
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "nonempty-object": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "boolean-ledger": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row_count",
+        "column_count",
+        "entries",
+        "sha256"
+      ],
+      "properties": {
+        "row_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "column_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "row",
+              "column",
+              "coefficient"
+            ],
+            "properties": {
+              "row": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "column": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "coefficient": {
+                "$ref": "#/$defs/nonempty"
+              }
+            }
+          }
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  }
+}
