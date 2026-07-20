@@ -39,12 +39,12 @@
     },
     "tier_1": {
       "status": "PASS",
-      "elapsed_seconds": 4.59,
+      "elapsed_seconds": 4.69,
       "tests_run": 16,
       "commands": [
         "PYTHONPATH=.:quantum-weyl python3 quantum-weyl/lorentzian/berger_physical_cohomology_positivity_disposition_certificate.py --check",
         "PYTHONPATH=.:quantum-weyl python3 quantum-weyl/lorentzian/verify_berger_physical_cohomology_positivity_disposition.py",
-        "PYTHONPATH=.:quantum-weyl python3 quantum-weyl/atlas/generate_quantum_atlas_fragment.py --emit",
+        "PYTHONPATH=.:quantum-weyl python3 quantum-weyl/atlas/generate_quantum_atlas_fragment.py --check",
         "PYTHONPATH=.:quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment",
         "PYTHONPATH=.:quantum-weyl pytest -q quantum-weyl/lorentzian/tests/test_berger_physical_cohomology_positivity_disposition.py quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py"
       ]
@@ -61,7 +61,7 @@
   "science_forge_shadow": {
     "status": "ADVISORY_EXIT_ZERO_WITH_FINDINGS",
     "command": "./ci/science-forge-shadow.sh",
-    "elapsed_seconds": 3.13,
+    "elapsed_seconds": 3.34,
     "findings": [
       "bridge certificate audit drift=FAIL",
       "coverage census drift: 1197 certificates versus baseline 976",
