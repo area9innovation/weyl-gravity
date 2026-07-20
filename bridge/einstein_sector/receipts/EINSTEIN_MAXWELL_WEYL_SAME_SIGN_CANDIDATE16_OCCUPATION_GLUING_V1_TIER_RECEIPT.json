@@ -1,0 +1,47 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE16_OCCUPATION_GLUING_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Proper connected-fibre gluing of the complete normalized nonzero candidate-16 rotation-zero link over its exact scalar occupation cone.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing.json": "1f97085655ff48ede87048d9ad65976e72af0a6e79f0f688a0003b21b2998add",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing.py": "874c18688aeebb5fcfbb0ade1c93f3d6b94ad591a212d231b58f15ae989fb06e",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing.py": "4354e70fbd539b8a351e16b317694c90648589f1315da066fd8bf5219d8c73bf",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing.py": "5dc1ccaa1563760ffa7e11ed155e52fa8daec1e70523dd2bf918d20dd25d00b1",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing.schema.json": "9b8eb7cbabc8df5d7d2a7bb9780756f01f298735154945b7e9ae699447c596dc",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-candidate16-occupation-gluing.md": "ce2bca638b6b6b66d402e0e75c0f4e1323232caf27cc2f21f34b1dca3b0eddd6"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on the producer, independent verifier and focused test",
+        "python3 -m json.tool on the certificate and schema",
+        "git diff --check on the scoped theorem paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 4,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing"
+      ]
+    },
+    "adversarial": {
+      "status": "PASS_AFTER_VERIFIER_REPAIR",
+      "first_attempt": "Changing the stored affine cone dimension from 3 to 4 was initially accepted, exposing a missing source-to-payload comparison.",
+      "repair": "The verifier now requires the stored cone dimension and ray count to equal the independently imported exact scalar-cone values.",
+      "final_result": "The same temporary mutation is rejected."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESSED_CONSUMER_REPLAY",
+      "reason": "The verifier independently imports the four exact positive rays, checks the three-dimensional cone, and requires the proper-surjection, connected-fibre and fail-closed lifecycle fields."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This closes candidate-16 nonzero occupation gluing only; it is not a programme freeze or shared-core algebra change."
+    }
+  },
+  "claim_boundary": "CERTIFIED on the normalized nonzero candidate-16 scalar cone. The origin, other backgrounds, final residual descent, all-orders integration and causal, observational or quantum maps remain outside the theorem."
+}

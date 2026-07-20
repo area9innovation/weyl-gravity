@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "scope",
+    "normalized_scalar_base",
+    "total_zero_link",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-same-sign-candidate16-occupation-gluing-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE16_OCCUPATION_GLUING"
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "candidate16_complete_normalized_rotation_zero_link_connected",
+        "candidate16_active_occupation_gluing_closed",
+        "origin_adjoined",
+        "cross_candidate_gluing"
+      ],
+      "properties": {
+        "candidate16_complete_normalized_rotation_zero_link_connected": {"const": true},
+        "candidate16_active_occupation_gluing_closed": {"const": true},
+        "origin_adjoined": {"const": false},
+        "cross_candidate_gluing": {"const": false}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

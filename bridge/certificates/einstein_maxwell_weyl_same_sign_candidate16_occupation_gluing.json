@@ -1,0 +1,88 @@
+{
+  "claim_boundary": "This glues all nonzero candidate-16 scalar occupations after total-occupation normalization. The cone origin, other candidate backgrounds, final residual descent, all-orders integration and causal, observational or quantum transport remain outside the theorem.",
+  "classification": {
+    "all_orders_integrability": false,
+    "candidate16_active_occupation_gluing_closed": true,
+    "candidate16_complete_normalized_rotation_zero_link_connected": true,
+    "candidate16_fixed_occupation_zero_fibres_connected": true,
+    "candidate16_occupation_projection_proper_surjective": true,
+    "candidate16_projectivized_scalar_base_classified": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "cross_candidate_gluing": false,
+    "final_residual_descent": false,
+    "origin_adjoined": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_COMPLETE_NORMALIZED_CANDIDATE16_ACTIVE_SCALAR_CONE",
+  "interpretation": "Candidate 16 is now connected not only at each fixed active occupation but across its entire normalized nonzero scalar cone. The result uses the exact four-ray convex base and proper connected-fibre descent; it does not identify any other collision background or turn the singular link into an orbifold.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "combine the closed candidate-16 link with the separately certified phase-reduced candidate-17/18/20 strata in the fail-closed atlas; candidates 19/21 remain separate linear sheets",
+  "normalized_scalar_base": {
+    "affine_cone_dimension": 3,
+    "all_active_q_minus_norms_strictly_positive": true,
+    "compact": true,
+    "connected": true,
+    "isomorphism_type": "a compact convex two-dimensional polytope with four certified vertices",
+    "normalization": "sum of the six nonnegative absolute-current occupations equals one",
+    "positive_extreme_rays": 4
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing.py",
+    "generator_sha256": "874c18688aeebb5fcfbb0ade1c93f3d6b94ad591a212d231b58f15ae989fb06e",
+    "inputs": {
+      "fibre_product": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json",
+        "sha256": "32b6764cf13d724f89b91719aef17d3cf1d0a509e866ac9f8186115768b28f54"
+      },
+      "fixed_occupation": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre.json",
+        "sha256": "c8373cdd722590a7ea43424554dec9c9db41edb811c149ce3c2ba9cdb817e10a"
+      },
+      "resonance_faces": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
+        "sha256": "7607c649ebc628270669db8fd5e6ab813b281b82c83192a9cb7f7dbee09f3433"
+      },
+      "scalar_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones.json",
+        "sha256": "80d15ff0fb545ff239d4cdcaf679b6cc78e87bbc2f685082ea6ae438e087fe54"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE16_OCCUPATION_GLUING",
+  "result_state": "CANDIDATE16_NORMALIZED_ACTIVE_ROTATION_ZERO_LINK_CONNECTED_ACROSS_ALL_NONZERO_OCCUPATIONS",
+  "schema": "einstein-maxwell-weyl-same-sign-candidate16-occupation-gluing-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing.schema.json",
+  "schema_sha256": "9b8eb7cbabc8df5d7d2a7bb9780756f01f298735154945b7e9ae699447c596dc",
+  "scope": {
+    "background": "candidate 16 only at rho=17*(79+51*sqrt(3))/132",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "the complete candidate-16 nonzero scalar occupation cone, normalized by total absolute-current occupation, with every fixed-occupation active resonance link",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidatewise signed n=(1,-2) or (1,2), never identified across rho",
+    "m": "all m=-2,...,2 through the spin-two incidence resolution",
+    "omega": "positive-frequency q-minus plus q-minus SUM collision into the L=3 p-extra target",
+    "parity": "complete axial and polar q-minus current spaces",
+    "theory": "Weyl-Maxwell target"
+  },
+  "total_zero_link": {
+    "closed_in_compact_product": true,
+    "complete_normalized_zero_link_connected": true,
+    "connected_fibre_input": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE16_SINGULAR_ROTATION_ZERO_FIBRE",
+    "connectedness_lemma": "a proper surjection with connected fibres over a connected base has connected total space",
+    "every_fibre_connected": true,
+    "projection": "forget amplitudes and retain the normalized six-node scalar occupation",
+    "projection_proper": true,
+    "projection_surjective": true,
+    "surjectivity_witness": "the imported axisymmetric bounded section over every scalar-cone point"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing"
+  ]
+}
