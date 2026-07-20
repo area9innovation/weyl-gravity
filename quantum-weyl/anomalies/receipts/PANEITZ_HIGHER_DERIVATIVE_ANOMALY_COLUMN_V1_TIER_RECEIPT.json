@@ -1,0 +1,91 @@
+{
+  "receipt_id": "PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN_V1_TIER_RECEIPT",
+  "result_id": "PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN",
+  "recorded_at": "2026-07-20",
+  "base_commit": "cc4fe5d24",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "input_hashes": {
+    "terminal_standard_matter_lattice": "3a6051c7f8cbf51baddd543b99d121d71c074ccf307344e12ece929db40de43e",
+    "terminal_gauge_representation_projection": "fd00a80ed827d32b1231415ac2667819546a1d13b8bfd35ebceaa2a4d351fc9b"
+  },
+  "output_hashes": {
+    "Paneitz_column_certificate": "cb6d708fb081d6a93fc64ab988f267cdd4a0c92651d872aaed5b59e3ecc3cb3c",
+    "matter_selection_atlas": "064cea7e320882cd233507ee67458764b58bf36f05e27ccf0c3161370d28b2ff",
+    "quantum_atlas_fragment": "5d483fd9a18427977c94c73daff9ad9272b53de4bae8ace1e4da701083473add",
+    "Paper_12_pdf": "092c72a896d1c3cb6006864157b41511818b1e6af8e50b948b449b128fca9eb6"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile <7 scoped Python files> && python3 -m json.tool <schema, certificate and atlas artifacts> && git diff --check -- <scoped paths>",
+      "elapsed_seconds": 0.24,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m anomalies.paneitz_higher_derivative_anomaly_column_certificate --check",
+      "elapsed_seconds": 0.32,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m anomalies.verify_paneitz_higher_derivative_anomaly_column",
+      "elapsed_seconds": 0.55,
+      "status": "PASS_INDEPENDENT_COEFFICIENT_SMITH_SEPARATOR_MODULAR_AND_MINIMALITY_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest anomalies.tests.test_paneitz_higher_derivative_anomaly_column",
+      "elapsed_seconds": 0.92,
+      "status": "PASS_9_TESTS_WITH_COEFFICIENT_FACTOR_ZERO_MODE_LATTICE_HEALTH_AND_GAUGE_MUTATIONS"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s quantum-weyl/anomalies/schema/paneitz-higher-derivative-anomaly-column-v1.schema.json && npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/anomalies/schema/paneitz-higher-derivative-anomaly-column-v1.schema.json -d quantum-weyl/anomalies/certificates/PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN.json",
+      "elapsed_seconds": 2.52,
+      "status": "PASS_DRAFT_2020_12_STRICT"
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_matter_selection_atlas_table --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_matter_selection_atlas_table && PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "elapsed_seconds": 3.3,
+      "status": "PASS_FOUR_GENERATOR_VERIFIER_RAILS_AND_COMMON_ATLAS_VALIDATOR"
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest anomalies.tests.test_paneitz_higher_derivative_anomaly_column atlas.tests.test_quantum_atlas_fragment",
+      "elapsed_seconds": 3.35,
+      "status": "PASS_18_SCOPED_AND_DIRECT_CONSUMER_TESTS"
+    },
+    {
+      "tier": 1,
+      "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 12-pure-weyl-one-loop-bv-anomaly.tex (twice)",
+      "elapsed_seconds": 2.53,
+      "status": "PASS_38_PAGE_PDF_WITH_NO_WARNINGS"
+    },
+    {
+      "tier": 2,
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 4.82,
+      "status": "ADVISORY_EXIT_0_WITH_PREEXISTING_BRIDGE_DRIFT_UNPINNED_TOOLCHAIN_AND_CORPUS_BASELINE_DRIFT_REPORTED"
+    }
+  ],
+  "deviations": [
+    {
+      "requested_next_conformal_gauge_field": "OBSTRUCTED_NO_DECLARED_COMPLETE_CARRIER",
+      "reason": "spin two is the strict Weyl graviton and may not be borrowed as added matter; the next genuinely new CHS field has no declared complete off-shell BV/reducibility, nonminimal, generic elliptic, zero-mode and two-route raw coefficient carrier"
+    },
+    {
+      "complete_higher_derivative_family": "NOT_CLASSIFIED",
+      "reason": "only the Paneitz scalar satisfies the full field-level declaration and two-route four-coordinate coefficient contract"
+    },
+    {
+      "raw_BoxR_cancellation": "EMPTY_IN_DECLARED_REFERENCE_SCHEME",
+      "reason": "an exact positive separator and mod-five witness decide the raw scheme, but BoxR remains a BRST-exact finite-R2 scheme coordinate rather than a nontrivial anomaly"
+    }
+  ],
+  "tier_3_not_run": "The work item closes OBSTRUCTED rather than freezing the requested higher-derivative family or a QME theorem. The isolated Paneitz field column, direct atlas consumers and Paper 12 fail-closed disposition are covered by tiers 0-2; no repository release, tag, Lorentzian certification or programme theorem freeze is promoted."
+}

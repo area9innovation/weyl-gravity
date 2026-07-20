@@ -1,0 +1,377 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/paneitz-higher-derivative-anomaly-column-v1.schema.json",
+  "title": "Paneitz higher-derivative anomaly column",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "input_pins",
+    "basis",
+    "field_declaration",
+    "operator_payload",
+    "coefficient_routes",
+    "verified_column",
+    "scheme_ledger",
+    "kinetic_sign_audit",
+    "projected_anomaly_lattice",
+    "raw_reference_scheme_lattice",
+    "next_gauge_field_gate",
+    "exact_checks",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-paneitz-higher-derivative-anomaly-column-v1"
+    },
+    "result_id": {"const": "PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN"},
+    "result_state": {
+      "const": "PANEITZ_COLUMN_CERTIFIED_PROJECTED_CONE_CHANGED_NEXT_GAUGE_CARRIER_OBSTRUCTED"
+    },
+    "lifecycle_status": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]
+    },
+    "input_pins": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["standard_matter_lattice", "gauge_representation_projection"],
+      "properties": {
+        "standard_matter_lattice": {"$ref": "#/$defs/pin"},
+        "gauge_representation_projection": {"$ref": "#/$defs/pin"}
+      }
+    },
+    "basis": {
+      "const": [
+        "ANOM_OMEGA_C2",
+        "ANOM_OMEGA_E4",
+        "ANOM_OMEGA_C_DUAL_C",
+        "ANOM_OMEGA_BOX_R"
+      ]
+    },
+    "field_declaration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "field_id",
+        "spacetime_dimension",
+        "field",
+        "antifield",
+        "minimal_BV_rows",
+        "nonminimal_BV_complex"
+      ],
+      "properties": {
+        "field_id": {"const": "real_Paneitz_scalar_P4"},
+        "spacetime_dimension": {"const": 4},
+        "field": {"type": "object", "minProperties": 5},
+        "antifield": {"type": "object", "minProperties": 5},
+        "minimal_BV_rows": {"type": "object", "minProperties": 3},
+        "nonminimal_BV_complex": {
+          "type": "string",
+          "pattern": "^EMPTY_FOR_THIS_FIELD:.*"
+        }
+      }
+    },
+    "operator_payload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action",
+        "operator",
+        "principal_symbol",
+        "Euclidean_ellipticity",
+        "Einstein_factorization",
+        "domain",
+        "zero_mode_policy",
+        "determinant_power_effective_action",
+        "contour_policy"
+      ],
+      "properties": {
+        "action": {"type": "string", "minLength": 1},
+        "operator": {"type": "string", "minLength": 1},
+        "principal_symbol": {"const": "(g^{mu nu} xi_mu xi_nu)^2"},
+        "Euclidean_ellipticity": {"const": "ELLIPTIC_ON_RIEMANNIAN_METRICS"},
+        "Einstein_factorization": {"type": "string", "minLength": 1},
+        "domain": {"type": "string", "minLength": 1},
+        "zero_mode_policy": {"type": "string", "minLength": 1},
+        "determinant_power_effective_action": {
+          "const": "+1/2 log det_prime(P4)"
+        },
+        "contour_policy": {"type": "string", "minLength": 1}
+      }
+    },
+    "coefficient_routes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "local_higher_order_heat_kernel",
+        "factorized_spectral_and_Casimir"
+      ],
+      "properties": {
+        "local_higher_order_heat_kernel": {"$ref": "#/$defs/route"},
+        "factorized_spectral_and_Casimir": {"$ref": "#/$defs/route"}
+      }
+    },
+    "verified_column": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field_id", "coordinates", "status", "parity_argument"],
+      "properties": {
+        "field_id": {"const": "real_Paneitz_scalar_P4"},
+        "coordinates": {"$ref": "#/$defs/vector4"},
+        "status": {"const": "APPENDED_TO_ENLARGED_EXACT_LATTICE"},
+        "parity_argument": {"type": "string", "minLength": 1}
+      }
+    },
+    "scheme_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_reference_scheme",
+        "BoxR_value",
+        "BoxR_status",
+        "nontrivial_quotient_coordinates"
+      ],
+      "properties": {
+        "raw_reference_scheme": {"type": "string", "minLength": 1},
+        "BoxR_value": {"$ref": "#/$defs/rational"},
+        "BoxR_status": {
+          "const": "COMPUTED_BUT_BRST_EXACT_AND_FINITE_R2_SCHEME_DEPENDENT"
+        },
+        "nontrivial_quotient_coordinates": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/rational"}
+        }
+      }
+    },
+    "kinetic_sign_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification",
+        "Einstein_resolvent_identity",
+        "opposite_residues",
+        "healthy_standard_sign_matter",
+        "boundary"
+      ],
+      "properties": {
+        "classification": {"const": "FOURTH_ORDER_KREIN_INDEFINITE_PRICE"},
+        "Einstein_resolvent_identity": {"type": "string", "minLength": 1},
+        "opposite_residues": {"const": true},
+        "healthy_standard_sign_matter": {"const": false},
+        "boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "projected_anomaly_lattice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "variables",
+        "integer_matrix_scaled_by_720",
+        "right_hand_side",
+        "rank",
+        "smith_invariant_factors",
+        "particular_solution",
+        "kernel_basis",
+        "complete_parameterization",
+        "nonnegative_integer_solution_exists",
+        "first_solution_by_minimal_vector_count",
+        "physical_price"
+      ],
+      "properties": {
+        "scope": {"type": "string", "minLength": 1},
+        "variables": {"const": ["N_s", "N_W_absolute", "N_D", "N_vector", "N_Paneitz"]},
+        "integer_matrix_scaled_by_720": {
+          "const": [[6, 18, 36, 72, -48], [-2, -11, -22, -124, 56]]
+        },
+        "right_hand_side": {"const": [-4776, 3132]},
+        "rank": {"const": 2},
+        "smith_invariant_factors": {"const": [1, 30]},
+        "particular_solution": {"const": [128, -308, 0, 0, 0]},
+        "kernel_basis": {
+          "const": [[0, -2, 1, 0, 0], [48, -20, 0, 1, 0], [-16, 8, 0, 0, 1]]
+        },
+        "complete_parameterization": {"type": "object", "minProperties": 7},
+        "nonnegative_integer_solution_exists": {"const": true},
+        "first_solution_by_minimal_vector_count": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["minimal_N_vector", "multiplicities", "minimality_witness"],
+          "properties": {
+            "minimal_N_vector": {"const": 61},
+            "multiplicities": {
+              "const": {
+                "N_s": 0,
+                "N_W_absolute": 0,
+                "N_D": 0,
+                "N_vector": 61,
+                "N_Paneitz": 191
+              }
+            },
+            "minimality_witness": {"type": "string", "minLength": 1}
+          }
+        },
+        "physical_price": {"type": "string", "minLength": 1}
+      }
+    },
+    "raw_reference_scheme_lattice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "integer_matrix_scaled_by_720",
+        "right_hand_side",
+        "rank",
+        "smith_invariant_factors",
+        "nonnegative_real_cone",
+        "nonnegative_integer_lattice",
+        "signed_integer_lattice",
+        "separating_functional",
+        "integer_modular_obstruction",
+        "scheme_warning"
+      ],
+      "properties": {
+        "scope": {"type": "string", "minLength": 1},
+        "integer_matrix_scaled_by_720": {
+          "const": [
+            [6, 18, 36, 72, -48],
+            [-2, -11, -22, -124, 56],
+            [4, 12, 24, -72, 48]
+          ]
+        },
+        "right_hand_side": {"const": [-4776, 3132, 0]},
+        "rank": {"const": 3},
+        "smith_invariant_factors": {"const": [1, 10, 120]},
+        "nonnegative_real_cone": {"const": "EMPTY"},
+        "nonnegative_integer_lattice": {"const": "EMPTY"},
+        "signed_integer_lattice": {"const": "EMPTY_IN_THIS_RAW_SCHEME"},
+        "separating_functional": {"type": "object", "minProperties": 3},
+        "integer_modular_obstruction": {"type": "object", "minProperties": 5},
+        "scheme_warning": {"type": "string", "minLength": 1}
+      }
+    },
+    "next_gauge_field_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate",
+        "status",
+        "reason",
+        "first_missing_carriers",
+        "column_appended",
+        "scope"
+      ],
+      "properties": {
+        "candidate": {"type": "string", "minLength": 1},
+        "status": {"const": "OBSTRUCTED_NO_DECLARED_COMPLETE_CARRIER"},
+        "reason": {"type": "string", "minLength": 1},
+        "first_missing_carriers": {
+          "type": "array",
+          "minItems": 5,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "column_appended": {"const": false},
+        "scope": {"type": "string", "minLength": 1}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 17,
+      "additionalProperties": {"const": true}
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PANEITZ_FULL_FOUR_COORDINATE_COLUMN_VERIFIED",
+        "PANEITZ_APPENDED_TO_ENLARGED_LATTICE",
+        "PROJECTED_NONNEGATIVE_CANCELLATION_EXISTS",
+        "RAW_SCHEME_NONNEGATIVE_CANCELLATION_EXISTS",
+        "HEALTHY_CANCELLATION_EXISTS",
+        "HIGHER_DERIVATIVE_GAUGE_COLUMN_VERIFIED",
+        "COMPLETE_HIGHER_DERIVATIVE_FAMILY_CLASSIFIED",
+        "STRICT_QME_RESTORED",
+        "LORENTZIAN_STATE_OR_UNITARITY_CERTIFIED"
+      ],
+      "properties": {
+        "PANEITZ_FULL_FOUR_COORDINATE_COLUMN_VERIFIED": {"const": true},
+        "PANEITZ_APPENDED_TO_ENLARGED_LATTICE": {"const": true},
+        "PROJECTED_NONNEGATIVE_CANCELLATION_EXISTS": {"const": true},
+        "RAW_SCHEME_NONNEGATIVE_CANCELLATION_EXISTS": {"const": false},
+        "HEALTHY_CANCELLATION_EXISTS": {"const": false},
+        "HIGHER_DERIVATIVE_GAUGE_COLUMN_VERIFIED": {"const": false},
+        "COMPLETE_HIGHER_DERIVATIVE_FAMILY_CLASSIFIED": {"const": false},
+        "STRICT_QME_RESTORED": {"const": false},
+        "LORENTZIAN_STATE_OR_UNITARITY_CERTIFIED": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "primary_sources", "source_manifest"],
+      "properties": {
+        "proof_type": {"type": "string", "minLength": 1},
+        "primary_sources": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"type": "object", "minProperties": 5}
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commit", "path", "sha256", "result_id"],
+      "properties": {
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{7,40}$"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "result_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "vector4": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/rational"}
+    },
+    "route": {
+      "type": "object",
+      "required": ["method", "gamma_DeltaJ", "column"],
+      "properties": {
+        "method": {"type": "string", "minLength": 1},
+        "gamma_DeltaJ": {"$ref": "#/$defs/rational"},
+        "column": {"$ref": "#/$defs/vector4"}
+      }
+    }
+  }
+}

@@ -22,6 +22,10 @@ JOINT_SOURCE = (
     / "anomalies/certificates/"
     "MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION.json"
 )
+PANEITZ_SOURCE = (
+    QROOT
+    / "anomalies/certificates/PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN.json"
+)
 OUTPUT = HERE / "matter-selection-atlas-table.json"
 STATUSES = ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"]
 
@@ -33,6 +37,7 @@ def _sha(path: Path) -> str:
 def build() -> dict[str, Any]:
     source = json.loads(SOURCE.read_text(encoding="utf-8"))
     joint = json.loads(JOINT_SOURCE.read_text(encoding="utf-8"))
+    paneitz = json.loads(PANEITZ_SOURCE.read_text(encoding="utf-8"))
     if (
         source.get("result_id") != "MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE"
         or source["claim_flags"]["HEALTHY_NONNEGATIVE_CANCELLATION_EXISTS"]
@@ -51,6 +56,17 @@ def build() -> dict[str, Any]:
         is not False
     ):
         raise ValueError("joint matter/gauge projection boundary drifted")
+    if (
+        paneitz.get("result_id") != "PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN"
+        or paneitz["claim_flags"][
+            "PANEITZ_FULL_FOUR_COORDINATE_COLUMN_VERIFIED"
+        ]
+        is not True
+        or paneitz["claim_flags"]["HEALTHY_CANCELLATION_EXISTS"] is not False
+        or paneitz["claim_flags"]["HIGHER_DERIVATIVE_GAUGE_COLUMN_VERIFIED"]
+        is not False
+    ):
+        raise ValueError("Paneitz matter-selection boundary drifted")
     rows = []
     for candidate in (
         "real_conformal_scalar",
@@ -122,13 +138,43 @@ def build() -> dict[str, Any]:
                 "Lorentzian_QME_status": "NO_CERTIFIED_MAP",
             },
             {
-                "candidate": "higher_derivative_conformal_matter",
+                "candidate": "real_Paneitz_scalar_P4",
+                "field_content_status": "CERTIFIED",
+                "coefficient_status": "CERTIFIED",
+                "strict_cancellation_status": "OPEN",
+                "healthy_standard_sign": False,
+                "vector": paneitz["verified_column"]["coordinates"],
+                "physical_price": (
+                    "fourth-order opposite-residue/Krein-indefinite scalar"
+                ),
+                "Lorentzian_QME_status": "NO_CERTIFIED_MAP",
+            },
+            {
+                "candidate": "standard_plus_Paneitz_projected_cancellation",
+                "field_content_status": "CERTIFIED",
+                "coefficient_status": "CERTIFIED",
+                "strict_cancellation_status": "CERTIFIED",
+                "healthy_standard_sign": False,
+                "vector": paneitz["projected_anomaly_lattice"][
+                    "first_solution_by_minimal_vector_count"
+                ]["multiplicities"],
+                "physical_price": (
+                    "61 vectors plus 191 Paneitz scalars; cancellation is "
+                    "only in the nontrivial quotient coordinates"
+                ),
+                "Lorentzian_QME_status": "NO_CERTIFIED_MAP",
+            },
+            {
+                "candidate": "higher_derivative_conformal_gauge_field",
                 "field_content_status": "OPEN",
                 "coefficient_status": "NO_CERTIFIED_MAP",
                 "strict_cancellation_status": "OPEN",
                 "healthy_standard_sign": False,
                 "vector": "NO_CERTIFIED_MAP",
-                "physical_price": "new BV complex and kinetic-sign analysis required",
+                "physical_price": (
+                    "complete off-shell BV, gauge-fixed elliptic, zero-mode "
+                    "and two-route coefficient carrier required"
+                ),
                 "Lorentzian_QME_status": "NO_CERTIFIED_MAP",
             },
         ]
@@ -148,6 +194,11 @@ def build() -> dict[str, Any]:
             "path": JOINT_SOURCE.relative_to(ROOT).as_posix(),
             "result_id": joint["result_id"],
             "sha256": _sha(JOINT_SOURCE),
+        },
+        "Paneitz_higher_derivative_source": {
+            "path": PANEITZ_SOURCE.relative_to(ROOT).as_posix(),
+            "result_id": paneitz["result_id"],
+            "sha256": _sha(PANEITZ_SOURCE),
         },
         "strict_gravity_status": "OBSTRUCTED",
         "rows": rows,

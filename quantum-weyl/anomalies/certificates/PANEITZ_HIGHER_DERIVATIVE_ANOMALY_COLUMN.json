@@ -1,0 +1,476 @@
+{
+  "basis": [
+    "ANOM_OMEGA_C2",
+    "ANOM_OMEGA_E4",
+    "ANOM_OMEGA_C_DUAL_C",
+    "ANOM_OMEGA_BOX_R"
+  ],
+  "claim_boundary": "This LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL result certifies the complete raw Paneitz scalar anomaly column and its exact lattice effect. Modulo the exact BoxR direction, 61 standard vectors plus 191 Paneitz scalars cancel the two even strict-gravity coordinates, but the Paneitz action carries a fourth-order opposite-residue price and is not healthy standard matter. In the displayed raw BoxR scheme the nonnegative cone is still empty; that type-D statement is scheme bookkeeping, not a new cohomological obstruction. No new conformal gauge-field column, strict QME restoration, Lorentzian state, positivity, particle, GUT, phenomenology, scattering or unitarity result follows.",
+  "claim_flags": {
+    "COMPLETE_HIGHER_DERIVATIVE_FAMILY_CLASSIFIED": false,
+    "HEALTHY_CANCELLATION_EXISTS": false,
+    "HIGHER_DERIVATIVE_GAUGE_COLUMN_VERIFIED": false,
+    "LORENTZIAN_STATE_OR_UNITARITY_CERTIFIED": false,
+    "PANEITZ_APPENDED_TO_ENLARGED_LATTICE": true,
+    "PANEITZ_FULL_FOUR_COORDINATE_COLUMN_VERIFIED": true,
+    "PROJECTED_NONNEGATIVE_CANCELLATION_EXISTS": true,
+    "RAW_SCHEME_NONNEGATIVE_CANCELLATION_EXISTS": false,
+    "STRICT_QME_RESTORED": false
+  },
+  "coefficient_routes": {
+    "factorized_spectral_and_Casimir": {
+      "Cappelli_Coste_relation": "E_c=a-gamma/16",
+      "column": [
+        {
+          "denominator": 15,
+          "numerator": -1
+        },
+        {
+          "denominator": 90,
+          "numerator": 7
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 15,
+          "numerator": 1
+        }
+      ],
+      "factor_rows": [
+        {
+          "R2_b4": {
+            "denominator": 2160,
+            "numerator": -1
+          },
+          "W2_b4": {
+            "denominator": 180,
+            "numerator": 1
+          },
+          "i": 0,
+          "operator": "-nabla^2+(1/6)*R"
+        },
+        {
+          "R2_b4": {
+            "denominator": 2160,
+            "numerator": 29
+          },
+          "W2_b4": {
+            "denominator": 180,
+            "numerator": 1
+          },
+          "i": 1,
+          "operator": "-nabla^2+(0)*R"
+        }
+      ],
+      "factorization": "P4=(-nabla^2)(-nabla^2+R/6)",
+      "gamma_DeltaJ": {
+        "denominator": 45,
+        "numerator": -32
+      },
+      "improved_Casimir_energy": {
+        "denominator": 30,
+        "numerator": -1
+      },
+      "method": "EINSTEIN_SHIFTED_LAPLACIAN_FACTOR_SUM_PLUS_MULTIPLICATIVE_ANOMALY_IMPROVED_CASIMIR",
+      "multiplicative_anomaly_policy": "retained in the improved Casimir energy; the full fourth-order determinant is fundamental and no product determinant is used for a finite part without this correction",
+      "summed_R2_b4": {
+        "denominator": 540,
+        "numerator": 7
+      },
+      "summed_W2_b4": {
+        "denominator": 90,
+        "numerator": 1
+      }
+    },
+    "local_higher_order_heat_kernel": {
+      "a": {
+        "denominator": 90,
+        "numerator": -7
+      },
+      "basis_conversion": "Delta=-nabla^2, J=R/6, Q4=(E4-W2)/4+DeltaR/6, b_BoxR=(4a-gamma)/6",
+      "c_minus_a": {
+        "denominator": 90,
+        "numerator": 1
+      },
+      "column": [
+        {
+          "denominator": 15,
+          "numerator": -1
+        },
+        {
+          "denominator": 90,
+          "numerator": 7
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 15,
+          "numerator": 1
+        }
+      ],
+      "gamma_DeltaJ": {
+        "denominator": 45,
+        "numerator": -32
+      },
+      "k": 2,
+      "method": "DIMENSIONALLY_CONTINUED_JUHL_GILKEY_HEAT_COEFFICIENT_WITH_BRANSON_ORSTED_CONFORMAL_PRINCIPLE",
+      "source_formula_scope": "local b4 of P4 on the declared Bach-flat regular chart; the total derivative is retained"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_checks": {
+    "Paneitz_elliptic_principal_symbol_verified": true,
+    "Paneitz_nonminimal_sector_correctly_empty": true,
+    "Paneitz_operator_and_minimal_BV_rows_declared": true,
+    "Paneitz_zero_mode_and_prime_determinant_policy_declared": true,
+    "factorized_spectral_and_improved_Casimir_route_complete": true,
+    "first_nonnegative_projected_solution_and_minimality_verified": true,
+    "kinetic_sign_price_not_called_healthy": true,
+    "local_higher_order_heat_route_complete": true,
+    "multiplicative_anomaly_not_discarded": true,
+    "next_gauge_column_fail_closed": true,
+    "parity_Ward_zero_verified": true,
+    "projected_Smith_lattice_replayed": true,
+    "raw_scheme_mod_five_integer_obstruction_verified": true,
+    "raw_scheme_positive_separator_verified": true,
+    "terminal_gauge_projection_imported_by_commit_and_hash": true,
+    "terminal_standard_matter_lattice_imported_by_commit_and_hash": true,
+    "two_routes_agree_on_c_minus_a_and_BoxR": true
+  },
+  "field_declaration": {
+    "antifield": {
+      "Grassmann_parity": "odd",
+      "antifield_number": 1,
+      "ghost_number": -1,
+      "symbol": "phi_star",
+      "tensor_type": "scalar_density"
+    },
+    "field": {
+      "Grassmann_parity": "even",
+      "Weyl_weight": 0,
+      "ghost_number": 0,
+      "symbol": "phi",
+      "tensor_type": "scalar"
+    },
+    "field_id": "real_Paneitz_scalar_P4",
+    "minimal_BV_rows": {
+      "delta_phi_star": "P4(phi)",
+      "gamma_phi": "Lie_xi(phi); the four-dimensional Weyl weight is zero",
+      "internal_gauge_ghosts": []
+    },
+    "nonminimal_BV_complex": "EMPTY_FOR_THIS_FIELD: the Paneitz scalar has no internal gauge symmetry; the ambient strict Diff x Weyl complex is not duplicated",
+    "spacetime_dimension": 4
+  },
+  "input_pins": {
+    "gauge_representation_projection": {
+      "commit": "287a43a8c",
+      "path": "quantum-weyl/anomalies/certificates/MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION.json",
+      "result_id": "MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION",
+      "sha256": "fd00a80ed827d32b1231415ac2667819546a1d13b8bfd35ebceaa2a4d351fc9b"
+    },
+    "standard_matter_lattice": {
+      "commit": "a2ca4f9f0",
+      "path": "quantum-weyl/anomalies/certificates/MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE.json",
+      "result_id": "MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE",
+      "sha256": "3a6051c7f8cbf51baddd543b99d121d71c074ccf307344e12ece929db40de43e"
+    }
+  },
+  "kinetic_sign_audit": {
+    "Einstein_resolvent_identity": "1/[Delta(Delta+R/6)]=(6/R)*(1/Delta-1/(Delta+R/6)) when R is nonzero",
+    "boundary": "this algebraic opposite-residue audit is not a construction of a Lorentzian Krein or Hilbert state",
+    "classification": "FOURTH_ORDER_KREIN_INDEFINITE_PRICE",
+    "healthy_standard_sign_matter": false,
+    "opposite_residues": true
+  },
+  "lifecycle_status": "COEFFICIENT_COMPUTED",
+  "next_gate": "SUPPLY_ONE_NEW_CONFORMAL_GAUGE_FIELD_WITH_COMPLETE_OFFSHELL_BV_GAUGE_FIXED_ELLIPTIC_AND_TWO_ROUTE_RAW_COEFFICIENT_DATA",
+  "next_gauge_field_gate": {
+    "candidate": "first_genuinely_new_conformal_higher_spin_gauge_field",
+    "column_appended": false,
+    "first_missing_carriers": [
+      "field_ghost_antifield_and_reducibility_dictionary",
+      "nonminimal_complex_and_gauge_fermion",
+      "generic_background_ellipticity_and_operator_domain",
+      "complete_ghost_nonminimal_determinant_and_zero_mode_ledger",
+      "two_route_raw_C2_E4_CdualC_BoxR_coefficient_payload"
+    ],
+    "reason": "spin two is the already-imported strict Weyl graviton and cannot be borrowed as added matter; the next CHS candidate has no repository-declared complete off-shell BV and generic-background gauge-fixed elliptic complex",
+    "scope": "repository import obstruction, not a no-go theorem for conformal higher-spin gauge fields",
+    "status": "OBSTRUCTED_NO_DECLARED_COMPLETE_CARRIER"
+  },
+  "operator_payload": {
+    "Einstein_factorization": "P4=Delta(Delta+R/6), Delta=-nabla^2",
+    "Euclidean_ellipticity": "ELLIPTIC_ON_RIEMANNIAN_METRICS",
+    "action": "S_P4=(1/2) integral sqrt(g) phi P4 phi",
+    "contour_policy": "Euclidean nonzero-mode spectral contour only; no Lorentzian state or positivity conclusion",
+    "determinant_power_effective_action": "+1/2 log det_prime(P4)",
+    "domain": "closed realization H4(M)->L2(M) on a declared compact boundaryless Riemannian background",
+    "operator": "P4=(nabla^2)^2+2 Ric^{mu nu} nabla_mu nabla_nu-(2/3)R nabla^2+(1/3)(nabla^mu R)nabla_mu",
+    "principal_symbol": "(g^{mu nu} xi_mu xi_nu)^2",
+    "zero_mode_policy": "det_prime(P4); restrict sources to ker(P4)^perp; constants are retained in the kernel ledger and omitted only from the primed determinant"
+  },
+  "projected_anomaly_lattice": {
+    "complete_parameterization": {
+      "N_D": "d",
+      "N_Paneitz": "p",
+      "N_W_absolute": "-308-2*d-20*v+8*p",
+      "N_s": "128-16*p+48*v",
+      "N_vector": "v",
+      "parameter_domain": "Z",
+      "parameters": [
+        "d",
+        "v",
+        "p"
+      ]
+    },
+    "first_solution_by_minimal_vector_count": {
+      "minimal_N_vector": 61,
+      "minimality_witness": "N_s>=0 gives p<=8+3v; N_W>=0 gives p>=ceil((308+20v)/8). These intervals are disjoint for 0<=v<=60 and meet uniquely at v=61,p=191.",
+      "multiplicities": {
+        "N_D": 0,
+        "N_Paneitz": 191,
+        "N_W_absolute": 0,
+        "N_s": 0,
+        "N_vector": 61
+      }
+    },
+    "integer_matrix_scaled_by_720": [
+      [
+        6,
+        18,
+        36,
+        72,
+        -48
+      ],
+      [
+        -2,
+        -11,
+        -22,
+        -124,
+        56
+      ]
+    ],
+    "kernel_basis": [
+      [
+        0,
+        -2,
+        1,
+        0,
+        0
+      ],
+      [
+        48,
+        -20,
+        0,
+        1,
+        0
+      ],
+      [
+        -16,
+        8,
+        0,
+        0,
+        1
+      ]
+    ],
+    "nonnegative_integer_solution_exists": true,
+    "particular_solution": [
+      128,
+      -308,
+      0,
+      0,
+      0
+    ],
+    "physical_price": "the solution uses 191 fourth-order Paneitz scalars; it is a nonnegative multiplicity solution but not healthy standard-sign matter",
+    "rank": 2,
+    "right_hand_side": [
+      -4776,
+      3132
+    ],
+    "scope": "scheme-independent nontrivial even quotient coordinates (C2,E4); p=0 separately",
+    "smith_invariant_factors": [
+      1,
+      30
+    ],
+    "variables": [
+      "N_s",
+      "N_W_absolute",
+      "N_D",
+      "N_vector",
+      "N_Paneitz"
+    ]
+  },
+  "provenance": {
+    "primary_sources": [
+      {
+        "arxiv": "1811.10380v2",
+        "source_tex_sha256": "7f5d97b1ff07be99fad0a7c0b739f7a72047d338efc1174a981b5bbf6c0f96ae",
+        "title": "Holographic Weyl anomaly for GJMS operators: one Laplacian to rule them all",
+        "url": "https://arxiv.org/abs/1811.10380",
+        "used_for": "Einstein factorization and exact a,c-a route"
+      },
+      {
+        "arxiv": "2501.17828v2",
+        "source_tex_sha256": "f5809824dd9c37b198d99bdbd272349787496bf3611d28f1ccc1450e0f11d80c",
+        "title": "On heat coefficients, multiplicative anomaly and 4D Casimir energy for GJMS operators",
+        "url": "https://arxiv.org/abs/2501.17828",
+        "used_for": "local Paneitz total derivative and independent multiplicative-anomaly-improved Casimir route"
+      }
+    ],
+    "proof_type": "TWO_ROUTE_HIGHER_ORDER_HEAT_AND_IMPROVED_SPECTRAL_COEFFICIENT_REPLAY_WITH_EXACT_LATTICE_WITNESSES",
+    "source_manifest": {
+      "../reports/paneitz-higher-derivative-anomaly-column.md": "8e5a697ddd811615e4b15262190939935539a1e79d0345caec0293f9ee5ddd8f",
+      "paneitz_higher_derivative_anomaly_column.py": "fc4efb680f078329f79c7d77fd28cea684e61de8eaada183c1104418bbd45fca",
+      "paneitz_higher_derivative_anomaly_column_certificate.py": "2968655842193b7e16be51573e2600ac04a9a02e6d1ce4eafb950632e2e7e26d",
+      "schema/paneitz-higher-derivative-anomaly-column-v1.schema.json": "49f23a710fc2dcb57d7a4adda6f930eab61f606c2296641d1ff83fa57c37d9cc",
+      "tests/test_paneitz_higher_derivative_anomaly_column.py": "121ed5bc94629f99e2f50276ac32d285374375343e1767eb53d7b5b4a76a7258",
+      "verify_paneitz_higher_derivative_anomaly_column.py": "b240322da7187f3a2c9ffc64bc5268c38344f81fd582fc2145170781c2dd7530"
+    }
+  },
+  "raw_reference_scheme_lattice": {
+    "integer_matrix_scaled_by_720": [
+      [
+        6,
+        18,
+        36,
+        72,
+        -48
+      ],
+      [
+        -2,
+        -11,
+        -22,
+        -124,
+        56
+      ],
+      [
+        4,
+        12,
+        24,
+        -72,
+        48
+      ]
+    ],
+    "integer_modular_obstruction": {
+      "column_pairings": [
+        10,
+        25,
+        50,
+        -340,
+        200
+      ],
+      "left_row_on_C2_E4_BoxR": [
+        0,
+        1,
+        3
+      ],
+      "modulus": 5,
+      "proof": "every column pairing is 0 mod 5, whereas the target is 2 mod 5",
+      "right_hand_side_pairing": 3132
+    },
+    "nonnegative_integer_lattice": "EMPTY",
+    "nonnegative_real_cone": "EMPTY",
+    "rank": 3,
+    "right_hand_side": [
+      -4776,
+      3132,
+      0
+    ],
+    "scheme_warning": "BoxR is BRST exact and shifts under a finite R2 counterterm. This raw-scheme obstruction is bookkeeping, not an additional nontrivial anomaly class.",
+    "scope": "common raw heat-kernel scheme coordinates (C2,E4,BoxR)",
+    "separating_functional": {
+      "coordinates_C2_E4_BoxR": [
+        -3,
+        -5,
+        3
+      ],
+      "gravity_value": {
+        "denominator": 20,
+        "numerator": 37
+      },
+      "species_values_scalar_Weyl_Dirac_vector_Paneitz": [
+        {
+          "denominator": 180,
+          "numerator": 1
+        },
+        {
+          "denominator": 720,
+          "numerator": 37
+        },
+        {
+          "denominator": 360,
+          "numerator": 37
+        },
+        {
+          "denominator": 180,
+          "numerator": 47
+        },
+        {
+          "denominator": 90,
+          "numerator": 1
+        }
+      ]
+    },
+    "signed_integer_lattice": "EMPTY_IN_THIS_RAW_SCHEME",
+    "smith_invariant_factors": [
+      1,
+      10,
+      120
+    ]
+  },
+  "result_id": "PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN",
+  "result_state": "PANEITZ_COLUMN_CERTIFIED_PROJECTED_CONE_CHANGED_NEXT_GAUGE_CARRIER_OBSTRUCTED",
+  "schema": "quantum-weyl-paneitz-higher-derivative-anomaly-column-v1",
+  "scheme_ledger": {
+    "BoxR_status": "COMPUTED_BUT_BRST_EXACT_AND_FINITE_R2_SCHEME_DEPENDENT",
+    "BoxR_value": {
+      "denominator": 15,
+      "numerator": 1
+    },
+    "nontrivial_quotient_coordinates": [
+      {
+        "denominator": 15,
+        "numerator": -1
+      },
+      {
+        "denominator": 90,
+        "numerator": 7
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      }
+    ],
+    "raw_reference_scheme": "local higher-order heat coefficient / multiplicative-anomaly-improved zeta-Casimir scheme"
+  },
+  "verified_column": {
+    "coordinates": [
+      {
+        "denominator": 15,
+        "numerator": -1
+      },
+      {
+        "denominator": 90,
+        "numerator": 7
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 15,
+        "numerator": 1
+      }
+    ],
+    "field_id": "real_Paneitz_scalar_P4",
+    "parity_argument": "real scalar natural operator, no epsilon/Hodge/chiral insertion, parity-even heat-kernel regulator implies p=-p=0",
+    "status": "APPENDED_TO_ENLARGED_EXACT_LATTICE"
+  }
+}

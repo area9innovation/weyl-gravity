@@ -2155,3 +2155,49 @@ ultraviolet-completion result.
 
 - [`MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION.json`](../quantum-weyl/anomalies/certificates/MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION.json)
 - [`matter-gauge-representation-projection-obstruction.md`](../quantum-weyl/reports/matter-gauge-representation-projection-obstruction.md)
+
+## First higher-derivative matter column (2026-07-20)
+
+The real four-dimensional Paneitz scalar is now a complete four-coordinate
+column:
+
+\[
+(c,-a,p,b_{\Box R})
+=
+\left(-\frac1{15},\frac7{90},0,\frac1{15}\right).
+\]
+
+The local dimensionally continued Juhl--Gilkey heat coefficient and an
+independent Einstein-factorized/multiplicative-anomaly-improved Casimir route
+agree on \(a=-7/90\), \(c-a=1/90\),
+\(\gamma_{\Delta J}=-32/45\), and the raw type-D conversion
+\(b_{\Box R}=(4a-\gamma)/6=1/15\).  The minimal added BV sector has
+\((\phi,\phi^*)\), no internal ghost, and no nonminimal rows.  Its primed
+determinant retains the kernel ledger explicitly.
+
+Modulo the exact type-D coordinate, the first nonnegative integer
+cancellation by vector count is
+
+\[
+N_V=61,\qquad N_{P_4}=191.
+\]
+
+This changes the formal projected cone but not the healthy cone.  The
+Einstein factorization gives opposite second-order residues, so the Paneitz
+scalar is recorded with a fourth-order Krein-indefinite price.  In the
+displayed raw \(\Box R\) scheme the nonnegative cone remains empty by the
+exact separator \((-3,-5,3)\); this is scheme bookkeeping rather than an
+additional anomaly class.
+
+The next conformal gauge-field column is fail-closed.  Spin two is the
+already-imported strict Weyl graviton, while the next genuinely new CHS
+candidate has no declared complete off-shell BV/reducibility and nonminimal
+complex, generic-background elliptic operator/domain, zero-mode ledger, or
+two-route raw coefficient payload.  No gauge column is appended.
+
+This is `LOCAL-ALGEBRAIC`/`EUCLIDEAN-SPECTRAL`.  It does not restore the
+strict QME or establish a Lorentzian state, positivity, particle, scattering
+or unitarity result.
+
+- [`PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN.json`](../quantum-weyl/anomalies/certificates/PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN.json)
+- [`paneitz-higher-derivative-anomaly-column.md`](../quantum-weyl/reports/paneitz-higher-derivative-anomaly-column.md)

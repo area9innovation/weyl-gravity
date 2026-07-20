@@ -1,11 +1,16 @@
 {
+  "Paneitz_higher_derivative_source": {
+    "path": "quantum-weyl/anomalies/certificates/PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN.json",
+    "result_id": "PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN",
+    "sha256": "cb6d708fb081d6a93fc64ab988f267cdd4a0c92651d872aaed5b59e3ecc3cb3c"
+  },
   "claim_boundary": "Selection by local Euclidean anomaly coordinates only. No row is a particle, Lorentzian state, phenomenology, GUT or unitarity claim.",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
   ],
   "generated_by": "quantum-weyl/atlas/generate_matter_selection_atlas_table.py",
-  "generated_by_sha256": "ca84eb4b677b6eb6a9cd57e1b9aa25c88ee4d2da2175fb50af7e09758425e52a",
+  "generated_by_sha256": "833ddb1ff0bd56f6e170d489436bc6200bcd9329015175ebb1456b222644195b",
   "joint_gauge_selection_source": {
     "path": "quantum-weyl/anomalies/certificates/MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION.json",
     "result_id": "MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION",
@@ -226,11 +231,54 @@
     },
     {
       "Lorentzian_QME_status": "NO_CERTIFIED_MAP",
-      "candidate": "higher_derivative_conformal_matter",
+      "candidate": "real_Paneitz_scalar_P4",
+      "coefficient_status": "CERTIFIED",
+      "field_content_status": "CERTIFIED",
+      "healthy_standard_sign": false,
+      "physical_price": "fourth-order opposite-residue/Krein-indefinite scalar",
+      "strict_cancellation_status": "OPEN",
+      "vector": [
+        {
+          "denominator": 15,
+          "numerator": -1
+        },
+        {
+          "denominator": 90,
+          "numerator": 7
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 15,
+          "numerator": 1
+        }
+      ]
+    },
+    {
+      "Lorentzian_QME_status": "NO_CERTIFIED_MAP",
+      "candidate": "standard_plus_Paneitz_projected_cancellation",
+      "coefficient_status": "CERTIFIED",
+      "field_content_status": "CERTIFIED",
+      "healthy_standard_sign": false,
+      "physical_price": "61 vectors plus 191 Paneitz scalars; cancellation is only in the nontrivial quotient coordinates",
+      "strict_cancellation_status": "CERTIFIED",
+      "vector": {
+        "N_D": 0,
+        "N_Paneitz": 191,
+        "N_W_absolute": 0,
+        "N_s": 0,
+        "N_vector": 61
+      }
+    },
+    {
+      "Lorentzian_QME_status": "NO_CERTIFIED_MAP",
+      "candidate": "higher_derivative_conformal_gauge_field",
       "coefficient_status": "NO_CERTIFIED_MAP",
       "field_content_status": "OPEN",
       "healthy_standard_sign": false,
-      "physical_price": "new BV complex and kinetic-sign analysis required",
+      "physical_price": "complete off-shell BV, gauge-fixed elliptic, zero-mode and two-route coefficient carrier required",
       "strict_cancellation_status": "OPEN",
       "vector": "NO_CERTIFIED_MAP"
     }
