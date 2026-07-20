@@ -1628,3 +1628,58 @@ indefinite/positive-state boundary are recorded in
 [`berger-free-dilation-hadamard-bisolution-seed.md`](../quantum-weyl/reports/berger-free-dilation-hadamard-bisolution-seed.md).
 Its exact Pauli--Jordan normalization is recorded in
 [`berger-free-dilation-krein-ccr-covariance.md`](../quantum-weyl/reports/berger-free-dilation-krein-ccr-covariance.md).
+
+## Berger physical-cohomology positivity disposition (2026-07-20)
+
+The active Bridge 4 consumer is the retained 26-row Berger carrier. Its
+activation gate is exact \(q_{26}\)-Ward descent of the global exact-CCR
+Hadamard candidate. For
+
+\[
+B_\Omega(f,h)=\langle f,\Omega_{26}^{+}h\rangle,
+\]
+
+the exact representative-change formula is
+
+\[
+B_\Omega(f+q_{26}u,h)-B_\Omega(f,h)
+=\langle u,W_{26}[H_{26}^{+},q_{26}]h\rangle
+\quad(q_{26}h=0),
+\]
+
+and, in the second argument,
+
+\[
+B_\Omega(f,h+q_{26}v)-B_\Omega(f,h)
+=\langle f,W_{26}[H_{26}^{+},q_{26}]v\rangle
+\quad(q_{26}f=0).
+\]
+
+The defect is smooth but is not certified zero or pairing-null. Therefore
+the candidate form has not descended to physical BRST cohomology, and
+nondegeneracy, symmetry-compatible complex structures, and positivity are
+not yet defined. The rank-40 indefinite signature is an auxiliary-dilation
+property; the vacuum-cylinder E/A/L signs are reduced-mode data on another
+background. Neither is a physical Berger norm.
+
+The fail-closed atlas row remains `OPEN`. The next activation gate is:
+
+```text
+RESTORE_Q26_WARD_DESCENT
+  -> COMPUTE_EXACT_PHYSICAL_COHOMOLOGY_PAIRING
+  -> CLASSIFY_SYMMETRY_COMPATIBLE_COMPLEX_STRUCTURES
+  -> DECIDE_POSITIVE_HILBERT / UNAVOIDABLE_KREIN / NO_ADMISSIBLE_STATE
+```
+
+This is an undefined-before-descent disposition, not a negative-norm or
+state-nonexistence theorem. Bridge 5 remains separately gated by both the
+classical tangent-cone bridge and the local QME disposition.
+
+Science Forge work item
+`sf:program/work/quantum-berger-physical-cohomology-positivity` therefore
+closes as `SHORTFALL`: its retained-Ward prerequisite is not met, while every
+currently declared available alternative carrier is explicitly disposed
+without a physical-norm promotion.
+
+Receipt:
+[`berger-physical-cohomology-positivity-disposition.md`](../quantum-weyl/reports/berger-physical-cohomology-positivity-disposition.md).

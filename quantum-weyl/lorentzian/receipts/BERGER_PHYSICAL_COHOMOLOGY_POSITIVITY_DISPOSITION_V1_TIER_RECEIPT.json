@@ -1,0 +1,73 @@
+{
+  "schema": "quantum-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_PHYSICAL_COHOMOLOGY_POSITIVITY_DISPOSITION_V1_TIER_RECEIPT",
+  "recorded_at_utc": "2026-07-20T08:44:02Z",
+  "base_commit": "c22892d2f136713133db1ca3dc02f058ef49c16e",
+  "dependency_tags": [
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "changed_claim": "For the retained Berger exact-CCR candidate, the exact variation under either even ghost-number-zero BRST representative change is controlled by the smooth Ward defect W26[H26_plus,q26]. Because that defect is not certified pairing-null, the candidate sesquilinear form is undefined on physical BRST cohomology. Auxiliary rank-40 and reduced vacuum-cylinder Krein signs are not physical Berger norms.",
+  "pre_receipt_failures": [
+    {
+      "status": "FAILED_CERTIFICATE",
+      "cause": "The first --check detected a stale source manifest after the implementation correction.",
+      "repair": "Regenerated the content-addressed certificate before verification."
+    },
+    {
+      "status": "FAILED_CERTIFICATE",
+      "cause": "The strict schema initially omitted the newly added Science Forge and does_not_establish fields.",
+      "repair": "Added both fail-closed fields to the Draft 2020-12 schema."
+    },
+    {
+      "status": "FAILED_VERIFIER",
+      "cause": "The independent consumer used the obsolete rank40 covariance path.",
+      "repair": "Pinned transported_covariances.full.state_space_status, matching the source certificate."
+    }
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.12,
+      "commands": [
+        "python3 -m py_compile quantum-weyl/lorentzian/berger_physical_cohomology_positivity_disposition.py quantum-weyl/lorentzian/berger_physical_cohomology_positivity_disposition_certificate.py quantum-weyl/lorentzian/verify_berger_physical_cohomology_positivity_disposition.py quantum-weyl/atlas/generate_quantum_atlas_fragment.py quantum-weyl/atlas/verify_quantum_atlas_fragment.py",
+        "python3 -m json.tool quantum-weyl/lorentzian/schema/berger-physical-cohomology-positivity-disposition-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/lorentzian/certificates/BERGER_PHYSICAL_COHOMOLOGY_POSITIVITY_DISPOSITION.json",
+        "python3 -m json.tool quantum-weyl/atlas/quantum-atlas-fragment.json",
+        "git diff --check -- <scoped quantum positivity, atlas, report, receipt and quantum brief paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 4.59,
+      "tests_run": 16,
+      "commands": [
+        "PYTHONPATH=.:quantum-weyl python3 quantum-weyl/lorentzian/berger_physical_cohomology_positivity_disposition_certificate.py --check",
+        "PYTHONPATH=.:quantum-weyl python3 quantum-weyl/lorentzian/verify_berger_physical_cohomology_positivity_disposition.py",
+        "PYTHONPATH=.:quantum-weyl python3 quantum-weyl/atlas/generate_quantum_atlas_fragment.py --emit",
+        "PYTHONPATH=.:quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment",
+        "PYTHONPATH=.:quantum-weyl pytest -q quantum-weyl/lorentzian/tests/test_berger_physical_cohomology_positivity_disposition.py quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The exact disposition certificate, strict schema, independent consumer, generated fail-closed atlas row and quantum team brief were checked together against all seven content-addressed carrier dependencies."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "The result is a Science Forge shortfall disposition and promotes no BRST Ward descent, physical cohomology form, positivity, Hadamard state, Lorentzian products, QME, release or theorem freeze."
+    }
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_EXIT_ZERO_WITH_FINDINGS",
+    "command": "./ci/science-forge-shadow.sh",
+    "elapsed_seconds": 3.13,
+    "findings": [
+      "bridge certificate audit drift=FAIL",
+      "coverage census drift: 1197 certificates versus baseline 976",
+      "Forge development binary and stdlib checkout differ and the toolchain is unpinned"
+    ],
+    "claim_use": "NOT_USED_FOR_PROMOTION"
+  },
+  "claim_boundary": "This certificate establishes why the currently available retained candidate cannot yet be evaluated for physical positivity. It is not a proof that no positive state exists, not a proof of an unavoidable physical Krein sector, and not a construction of physical BRST cohomology, a particle space, renormalized Lorentzian products, a Lorentzian QME or a Lorentzian quantum theory."
+}

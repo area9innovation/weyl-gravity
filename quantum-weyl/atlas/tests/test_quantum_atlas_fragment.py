@@ -144,6 +144,21 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         )
         hadamard = berger["quantum_data"]["Hadamard_two_point_function"]
         self.assertEqual(hadamard["status"], "OPEN")
+        self.assertEqual(
+            berger["quantum_data"]["pairing_status"]["status"], "OPEN"
+        )
+        self.assertIn(
+            "not yet certified to descend to BRST cohomology",
+            berger["quantum_data"]["pairing_status"]["statement"],
+        )
+        self.assertIn(
+            "changing either representative",
+            berger["quantum_data"]["pairing_status"]["statement"],
+        )
+        self.assertIn(
+            "physical positivity is undefined before BRST descent",
+            berger["quantum_data"]["state_space_status"]["statement"],
+        )
         self.assertIn("all twenty metric/formal-adjoint", hadamard["statement"])
         self.assertIn("six ghost/identity", hadamard["statement"])
         self.assertIn("exact-CCR retained-26 candidate", hadamard["statement"])
@@ -191,6 +206,10 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         )
         self.assertIn(
             "BERGER_RETAINED26_HADAMARD_WARD_REDUCTION",
+            {evidence["result_id"] for evidence in berger["evidence"]},
+        )
+        self.assertIn(
+            "BERGER_PHYSICAL_COHOMOLOGY_POSITIVITY_DISPOSITION",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
         self.assertIn(

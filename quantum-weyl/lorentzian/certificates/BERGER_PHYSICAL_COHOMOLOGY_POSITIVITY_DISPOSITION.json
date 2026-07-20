@@ -1,0 +1,229 @@
+{
+  "BRST_representative_change": {
+    "adjoint_convention": "<q26 u,v>=<u,q26sharp v> in the declared even sector",
+    "all_pass": true,
+    "checks": {
+      "candidate_pairing_is_B_f_h_equals_bracket_f_Omega_h": true,
+      "current_Ward_defect_is_not_certified_pairing_null": true,
+      "descent_requires_Ward_defect_to_be_pairing_null_on_closed_arguments": true,
+      "first_representative_change_is_f_to_f_plus_q_u": true,
+      "first_variation_is_bracket_u_DeltaWard_h_for_qh_zero": true,
+      "physical_form_is_not_defined_from_current_candidate": true,
+      "second_representative_change_is_h_to_h_plus_q_v": true,
+      "second_variation_is_bracket_f_DeltaWard_v_for_qf_zero": true,
+      "sector_is_even_ghost_number_zero": true
+    },
+    "descent_criterion": "the Ward defect pairs to zero with every exact/closed representative pair; the certified sufficient condition is W26[H26_plus,q26]=0",
+    "first_exact_variation": "B_Omega(f+q26 u,h)-B_Omega(f,h)=<u,(q26sharp Omega26_plus+Omega26_plus q26)h>=<u,W26[H26_plus,q26]h> for q26 h=0",
+    "first_representative_change": "[f]->[f+q26 u]",
+    "pairing": "B_Omega(f,h)=<f,Omega26_plus h>",
+    "pairing_descends": false,
+    "second_exact_variation": "B_Omega(f,h+q26 v)-B_Omega(f,h)=<f,(q26sharp Omega26_plus+Omega26_plus q26)v>=<f,W26[H26_plus,q26]v> for q26 f=0",
+    "second_representative_change": "[h]->[h+q26 v]",
+    "sector": "even ghost-number-zero homogeneous representatives",
+    "ward_defect_certified_pairing_null": false
+  },
+  "carrier_disposition": [
+    {
+      "BRST_descent": "NOT_CERTIFIED_SMOOTH_WARD_DEFECT_OPEN",
+      "carrier": "retained_26_exact_CCR_candidate",
+      "physical_form": "UNDEFINED",
+      "positivity_status": "NOT_APPLICABLE_BEFORE_DESCENT"
+    },
+    {
+      "BRST_descent": "NO_RETAINED_CHAIN_MAP_GRAPH_CLASS_OBSTRUCTED",
+      "carrier": "rank_40_auxiliary_Hermitian_dilation",
+      "physical_form": "NO_CERTIFIED_MAP",
+      "positivity_status": "AUXILIARY_KREIN_SIGNATURE_NOT_A_PHYSICAL_NORM"
+    },
+    {
+      "BRST_descent": "DIFFERENT_BACKGROUND_AND_REDUCED_MODE_CARRIER",
+      "carrier": "vacuum_cylinder_reduced_E_A_L_Krein_space",
+      "physical_form": "NO_CERTIFIED_MAP",
+      "positivity_status": "REDUCED_MODE_KREIN_ONLY"
+    },
+    {
+      "BRST_descent": "ALGEBRAIC_COHOMOLOGY_PRESENTATION_CERTIFIED",
+      "carrier": "curvature_image_CCR_algebra",
+      "physical_form": "NO_HADAMARD_TWO_POINT_FUNCTION",
+      "positivity_status": "OPEN"
+    }
+  ],
+  "claim_boundary": "The exact representative-change formula proves that the current exact-CCR candidate does not yet define a sesquilinear form on BRST cohomology because its smooth Ward defect is not certified zero or pairing-null. This is an undefined-before-descent result, not a negative-norm theorem. The rank-40 signature is auxiliary, the vacuum-cylinder E/A/L Krein ledger is a different reduced carrier, and the curvature CCR algebra has no Hadamard state. No physical cohomology basis, nondegenerate form, complex structure, positive Hilbert state, unavoidable physical Krein sector, particle, renormalized Lorentzian product, Lorentzian QME or quantum theory is certified.",
+  "claim_flags": {
+    "BERGER_AUXILIARY_SIGNATURE_NOT_PHYSICAL_NORM": true,
+    "BERGER_PHYSICAL_COHOMOLOGY_BASIS_COMPUTED": false,
+    "BERGER_PHYSICAL_KREIN_SECTOR_UNAVOIDABLE": false,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "BERGER_PHYSICAL_PAIRING_DESCENDS_TO_BRST_COHOMOLOGY": false,
+    "BERGER_POSITIVE_HILBERT_STATE_EXISTS": false,
+    "BERGER_REDUCED_EAL_SIGN_NOT_BERGER_PHYSICAL_NORM": true,
+    "BERGER_SYMMETRY_COMPATIBLE_COMPLEX_STRUCTURES_CLASSIFIED": false,
+    "LORENTZIAN_QME_RESTORED": false,
+    "QUANTUM_CLAIM": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "dependency_refs": {
+    "canonical_restriction_audit": {
+      "result_id": "BERGER_DILATION_TO_RETAINED26_RESTRICTION_AUDIT",
+      "sha256": "5d9892a100bc335cd5c8f7f78cf7a2bb42049d5cfc739b2f315db02d817c4b22"
+    },
+    "curvature_CCR_algebra": {
+      "result_id": "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA",
+      "sha256": "772db76938c91eb4b41a22ce4b4634c26ffd6bb68d7778a45a13ceac00ef80ed"
+    },
+    "graded_state_space_contract": {
+      "result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+      "sha256": "99768cf1e444ef3525f19621702ee64a68aea83f83349a1c5d6223d9c959ca35"
+    },
+    "rank40_auxiliary_covariance": {
+      "result_id": "BERGER_FULL_DILATION_HADAMARD_KREIN_CCR_COVARIANCE",
+      "sha256": "e44a2ffa5afca3496bd0487c61f6f21f940f1630a81a73497b635f581c315512"
+    },
+    "reduced_EAL_Krein_ledger": {
+      "result_id": "pure-weyl-one-particle-krein-v1",
+      "sha256": "c52f8b2fcee6573e55e72402008779fd706311b77e2463a774b9eb16ce12b374"
+    },
+    "regular_graph_obstruction": {
+      "result_id": "BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT",
+      "sha256": "8bece00c7a4dda8327e8c0dd6bc4ddf15f4e3712ac383048bb73bda861fa749e"
+    },
+    "retained26_Ward_reduction": {
+      "result_id": "BERGER_RETAINED26_HADAMARD_WARD_REDUCTION",
+      "sha256": "35bb185bbc975bbad80a6a4a029815bbc07781fdaa08f654e7652f2b2f6c9218"
+    }
+  },
+  "dependency_tags": [
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "does_not_establish": [
+    "a q26-invariant retained Hadamard two-point function",
+    "a sesquilinear form on Berger BRST cohomology",
+    "an exact Berger physical-cohomology basis",
+    "nondegeneracy or positivity of a physical form",
+    "an unavoidable physical Krein sector",
+    "a positive Hilbert state or particle interpretation",
+    "renormalized Lorentzian products",
+    "a restored Lorentzian quantum master equation",
+    "a Lorentzian quantum theory"
+  ],
+  "exact_input_checks": {
+    "canonical_auxiliary_restriction_annihilates_CCR": true,
+    "curvature_Hadamard_state_open": true,
+    "graded_policy_requires_descent_before_positivity": true,
+    "rank40_form_is_indefinite_auxiliary": true,
+    "reduced_Krein_is_not_distributional": true,
+    "regular_graph_route_obstructed": true,
+    "retained_BRST_Hadamard_not_certified": true,
+    "retained_candidate_exact_CCR_but_Ward_open": true
+  },
+  "lifecycle_layer": "LORENTZIAN_PHYSICAL_COHOMOLOGY_STATE_DISPOSITION",
+  "negative_controls": {
+    "drop_closed_representative_hypothesis": {
+      "adjoint_convention": "<q26 u,v>=<u,q26sharp v> in the declared even sector",
+      "all_pass": false,
+      "checks": {
+        "candidate_pairing_is_B_f_h_equals_bracket_f_Omega_h": true,
+        "current_Ward_defect_is_not_certified_pairing_null": true,
+        "descent_requires_Ward_defect_to_be_pairing_null_on_closed_arguments": true,
+        "first_representative_change_is_f_to_f_plus_q_u": true,
+        "first_variation_is_bracket_u_DeltaWard_h_for_qh_zero": false,
+        "physical_form_is_not_defined_from_current_candidate": true,
+        "second_representative_change_is_h_to_h_plus_q_v": true,
+        "second_variation_is_bracket_f_DeltaWard_v_for_qf_zero": true,
+        "sector_is_even_ghost_number_zero": true
+      },
+      "descent_criterion": "the Ward defect pairs to zero with every exact/closed representative pair; the certified sufficient condition is W26[H26_plus,q26]=0",
+      "first_exact_variation": "B_Omega(f+q26 u,h)-B_Omega(f,h)=<u,(q26sharp Omega26_plus+Omega26_plus q26)h>=<u,W26[H26_plus,q26]h> for q26 h=0",
+      "first_representative_change": "[f]->[f+q26 u]",
+      "pairing": "B_Omega(f,h)=<f,Omega26_plus h>",
+      "pairing_descends": false,
+      "second_exact_variation": "B_Omega(f,h+q26 v)-B_Omega(f,h)=<f,(q26sharp Omega26_plus+Omega26_plus q26)v>=<f,W26[H26_plus,q26]v> for q26 f=0",
+      "second_representative_change": "[h]->[h+q26 v]",
+      "sector": "even ghost-number-zero homogeneous representatives",
+      "ward_defect_certified_pairing_null": false
+    },
+    "drop_first_closed_representative_hypothesis": {
+      "adjoint_convention": "<q26 u,v>=<u,q26sharp v> in the declared even sector",
+      "all_pass": false,
+      "checks": {
+        "candidate_pairing_is_B_f_h_equals_bracket_f_Omega_h": true,
+        "current_Ward_defect_is_not_certified_pairing_null": true,
+        "descent_requires_Ward_defect_to_be_pairing_null_on_closed_arguments": true,
+        "first_representative_change_is_f_to_f_plus_q_u": true,
+        "first_variation_is_bracket_u_DeltaWard_h_for_qh_zero": true,
+        "physical_form_is_not_defined_from_current_candidate": true,
+        "second_representative_change_is_h_to_h_plus_q_v": true,
+        "second_variation_is_bracket_f_DeltaWard_v_for_qf_zero": false,
+        "sector_is_even_ghost_number_zero": true
+      },
+      "descent_criterion": "the Ward defect pairs to zero with every exact/closed representative pair; the certified sufficient condition is W26[H26_plus,q26]=0",
+      "first_exact_variation": "B_Omega(f+q26 u,h)-B_Omega(f,h)=<u,(q26sharp Omega26_plus+Omega26_plus q26)h>=<u,W26[H26_plus,q26]h> for q26 h=0",
+      "first_representative_change": "[f]->[f+q26 u]",
+      "pairing": "B_Omega(f,h)=<f,Omega26_plus h>",
+      "pairing_descends": false,
+      "second_exact_variation": "B_Omega(f,h+q26 v)-B_Omega(f,h)=<f,(q26sharp Omega26_plus+Omega26_plus q26)v>=<f,W26[H26_plus,q26]v> for q26 f=0",
+      "second_representative_change": "[h]->[h+q26 v]",
+      "sector": "even ghost-number-zero homogeneous representatives",
+      "ward_defect_certified_pairing_null": false
+    },
+    "pretend_Ward_defect_is_pairing_null": {
+      "adjoint_convention": "<q26 u,v>=<u,q26sharp v> in the declared even sector",
+      "all_pass": false,
+      "checks": {
+        "candidate_pairing_is_B_f_h_equals_bracket_f_Omega_h": true,
+        "current_Ward_defect_is_not_certified_pairing_null": false,
+        "descent_requires_Ward_defect_to_be_pairing_null_on_closed_arguments": true,
+        "first_representative_change_is_f_to_f_plus_q_u": true,
+        "first_variation_is_bracket_u_DeltaWard_h_for_qh_zero": true,
+        "physical_form_is_not_defined_from_current_candidate": false,
+        "second_representative_change_is_h_to_h_plus_q_v": true,
+        "second_variation_is_bracket_f_DeltaWard_v_for_qf_zero": true,
+        "sector_is_even_ghost_number_zero": true
+      },
+      "descent_criterion": "the Ward defect pairs to zero with every exact/closed representative pair; the certified sufficient condition is W26[H26_plus,q26]=0",
+      "first_exact_variation": "B_Omega(f+q26 u,h)-B_Omega(f,h)=<u,(q26sharp Omega26_plus+Omega26_plus q26)h>=<u,W26[H26_plus,q26]h> for q26 h=0",
+      "first_representative_change": "[f]->[f+q26 u]",
+      "pairing": "B_Omega(f,h)=<f,Omega26_plus h>",
+      "pairing_descends": true,
+      "second_exact_variation": "B_Omega(f,h+q26 v)-B_Omega(f,h)=<f,(q26sharp Omega26_plus+Omega26_plus q26)v>=<f,W26[H26_plus,q26]v> for q26 f=0",
+      "second_representative_change": "[h]->[h+q26 v]",
+      "sector": "even ghost-number-zero homogeneous representatives",
+      "ward_defect_certified_pairing_null": true
+    }
+  },
+  "next_gate": "RESTORE_Q26_WARD_DESCENT_THEN_COMPUTE_EXACT_PHYSICAL_COHOMOLOGY_PAIRING_AND_COMPLEX_STRUCTURES",
+  "physical_cohomology": {
+    "candidate_pairing_descent": "NOT_CERTIFIED",
+    "complex": "ker(q26)/im(q26) on the declared physical solution/test quotient",
+    "complex_structure_classification": "NOT_ACTIVATED",
+    "exact_basis": "NOT_COMPUTED_NO_STATIONARY_PHYSICAL_CROSSWALK",
+    "induced_sesquilinear_form": "UNDEFINED",
+    "nondegeneracy": "NOT_APPLICABLE",
+    "positivity_verdict": "NOT_ACTIVATED_BEFORE_WARD_DESCENT"
+  },
+  "provenance": {
+    "proof_type": "EXACT_BRST_REPRESENTATIVE_CHANGE_AND_FAIL_CLOSED_ALTERNATIVE_CARRIER_CLASSIFICATION",
+    "source_manifest": {
+      "../reports/berger-physical-cohomology-positivity-disposition.md": "a87fa72577112e180e43aee99ebf206ca0ce3b2d29f3d2ae9067cf4ab5bbd689",
+      "berger_physical_cohomology_positivity_disposition.py": "8fb7c8ba1c96c4bd1d1052e552aee300361ab1a9736a3d1f3ab029eef97d4ded",
+      "berger_physical_cohomology_positivity_disposition_certificate.py": "68000222ce2a3913b2fa13b7e02256c21e10e7125884e3aea894c04da3ba48cc",
+      "schema/berger-physical-cohomology-positivity-disposition-v1.schema.json": "6c9469d13315cdd586084e0a02914d788f6f6eb079a6af6b32abc3290328b8ad",
+      "tests/test_berger_physical_cohomology_positivity_disposition.py": "8d27e780128d933a2acf0b14b54d647952cb50446c6c092544fd06625bf1e8bb",
+      "verify_berger_physical_cohomology_positivity_disposition.py": "b6aa937449fb7c420081dc67d344f285fc72a124e4ada8d7df3c8c1ff0971ec4"
+    },
+    "source_manifest_sha256": "290ff6afcbee506c349328e7dfe240a4ea50a511217dee393f6d5738a9533a14"
+  },
+  "result_id": "BERGER_PHYSICAL_COHOMOLOGY_POSITIVITY_DISPOSITION",
+  "result_state": "PHYSICAL_SESQUILINEAR_FORM_UNDEFINED_BEFORE_Q26_WARD_DESCENT_AUXILIARY_AND_REDUCED_SIGNS_NOT_PHYSICAL",
+  "schema": "quantum-weyl-berger-physical-cohomology-positivity-disposition-v1",
+  "science_forge": {
+    "activation_gate": "CERTIFY_Q26_WARD_DESCENT_BEFORE_PHYSICAL_PAIRING",
+    "forbidden_promotions_respected": true,
+    "stop_condition_status": "SHORTFALL_PRECONDITION_NOT_MET",
+    "work_item": "sf:program/work/quantum-berger-physical-cohomology-positivity"
+  },
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

@@ -1,0 +1,298 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-berger-physical-cohomology-positivity-disposition-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_layer",
+    "dependency_tags",
+    "science_forge",
+    "classical_commit",
+    "setting_id",
+    "dependency_refs",
+    "exact_input_checks",
+    "BRST_representative_change",
+    "carrier_disposition",
+    "physical_cohomology",
+    "negative_controls",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "does_not_establish",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-berger-physical-cohomology-positivity-disposition-v1"
+    },
+    "result_id": {
+      "const": "BERGER_PHYSICAL_COHOMOLOGY_POSITIVITY_DISPOSITION"
+    },
+    "result_state": {
+      "const": "PHYSICAL_SESQUILINEAR_FORM_UNDEFINED_BEFORE_Q26_WARD_DESCENT_AUXILIARY_AND_REDUCED_SIGNS_NOT_PHYSICAL"
+    },
+    "lifecycle_layer": {
+      "const": "LORENTZIAN_PHYSICAL_COHOMOLOGY_STATE_DISPOSITION"
+    },
+    "dependency_tags": {"const": ["REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "science_forge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "work_item",
+        "stop_condition_status",
+        "activation_gate",
+        "forbidden_promotions_respected"
+      ],
+      "properties": {
+        "work_item": {
+          "const": "sf:program/work/quantum-berger-physical-cohomology-positivity"
+        },
+        "stop_condition_status": {
+          "const": "SHORTFALL_PRECONDITION_NOT_MET"
+        },
+        "activation_gate": {
+          "const": "CERTIFY_Q26_WARD_DESCENT_BEFORE_PHYSICAL_PAIRING"
+        },
+        "forbidden_promotions_respected": {"const": true}
+      }
+    },
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "setting_id": {
+      "const": "compact_positive_berger_clock_fixed_coupling_linearized"
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "retained26_Ward_reduction",
+        "regular_graph_obstruction",
+        "rank40_auxiliary_covariance",
+        "canonical_restriction_audit",
+        "graded_state_space_contract",
+        "curvature_CCR_algebra",
+        "reduced_EAL_Krein_ledger"
+      ],
+      "properties": {
+        "retained26_Ward_reduction": {"$ref": "#/$defs/reference"},
+        "regular_graph_obstruction": {"$ref": "#/$defs/reference"},
+        "rank40_auxiliary_covariance": {"$ref": "#/$defs/reference"},
+        "canonical_restriction_audit": {"$ref": "#/$defs/reference"},
+        "graded_state_space_contract": {"$ref": "#/$defs/reference"},
+        "curvature_CCR_algebra": {"$ref": "#/$defs/reference"},
+        "reduced_EAL_Krein_ledger": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "exact_input_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "retained_candidate_exact_CCR_but_Ward_open",
+        "retained_BRST_Hadamard_not_certified",
+        "regular_graph_route_obstructed",
+        "canonical_auxiliary_restriction_annihilates_CCR",
+        "rank40_form_is_indefinite_auxiliary",
+        "graded_policy_requires_descent_before_positivity",
+        "curvature_Hadamard_state_open",
+        "reduced_Krein_is_not_distributional"
+      ],
+      "properties": {
+        "retained_candidate_exact_CCR_but_Ward_open": {"const": true},
+        "retained_BRST_Hadamard_not_certified": {"const": true},
+        "regular_graph_route_obstructed": {"const": true},
+        "canonical_auxiliary_restriction_annihilates_CCR": {"const": true},
+        "rank40_form_is_indefinite_auxiliary": {"const": true},
+        "graded_policy_requires_descent_before_positivity": {"const": true},
+        "curvature_Hadamard_state_open": {"const": true},
+        "reduced_Krein_is_not_distributional": {"const": true}
+      }
+    },
+    "BRST_representative_change": {"$ref": "#/$defs/replay"},
+    "carrier_disposition": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/carrier"},
+      "allOf": [
+        {"contains": {"properties": {"carrier": {"const": "retained_26_exact_CCR_candidate"}}, "required": ["carrier"]}},
+        {"contains": {"properties": {"carrier": {"const": "rank_40_auxiliary_Hermitian_dilation"}}, "required": ["carrier"]}},
+        {"contains": {"properties": {"carrier": {"const": "vacuum_cylinder_reduced_E_A_L_Krein_space"}}, "required": ["carrier"]}},
+        {"contains": {"properties": {"carrier": {"const": "curvature_image_CCR_algebra"}}, "required": ["carrier"]}}
+      ]
+    },
+    "physical_cohomology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complex",
+        "exact_basis",
+        "candidate_pairing_descent",
+        "induced_sesquilinear_form",
+        "nondegeneracy",
+        "complex_structure_classification",
+        "positivity_verdict"
+      ],
+      "properties": {
+        "complex": {"type": "string"},
+        "exact_basis": {
+          "const": "NOT_COMPUTED_NO_STATIONARY_PHYSICAL_CROSSWALK"
+        },
+        "candidate_pairing_descent": {"const": "NOT_CERTIFIED"},
+        "induced_sesquilinear_form": {"const": "UNDEFINED"},
+        "nondegeneracy": {"const": "NOT_APPLICABLE"},
+        "complex_structure_classification": {"const": "NOT_ACTIVATED"},
+        "positivity_verdict": {
+          "const": "NOT_ACTIVATED_BEFORE_WARD_DESCENT"
+        }
+      }
+    },
+    "negative_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pretend_Ward_defect_is_pairing_null",
+        "drop_first_closed_representative_hypothesis",
+        "drop_closed_representative_hypothesis"
+      ],
+      "properties": {
+        "pretend_Ward_defect_is_pairing_null": {"$ref": "#/$defs/replay"},
+        "drop_first_closed_representative_hypothesis": {"$ref": "#/$defs/replay"},
+        "drop_closed_representative_hypothesis": {"$ref": "#/$defs/replay"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "BERGER_PHYSICAL_PAIRING_DESCENDS_TO_BRST_COHOMOLOGY",
+        "BERGER_PHYSICAL_COHOMOLOGY_BASIS_COMPUTED",
+        "BERGER_SYMMETRY_COMPATIBLE_COMPLEX_STRUCTURES_CLASSIFIED",
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY",
+        "BERGER_PHYSICAL_KREIN_SECTOR_UNAVOIDABLE",
+        "BERGER_POSITIVE_HILBERT_STATE_EXISTS",
+        "BERGER_AUXILIARY_SIGNATURE_NOT_PHYSICAL_NORM",
+        "BERGER_REDUCED_EAL_SIGN_NOT_BERGER_PHYSICAL_NORM",
+        "RENORMALIZED_LORENTZIAN_PRODUCTS",
+        "LORENTZIAN_QME_RESTORED",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "BERGER_PHYSICAL_PAIRING_DESCENDS_TO_BRST_COHOMOLOGY": {"const": false},
+        "BERGER_PHYSICAL_COHOMOLOGY_BASIS_COMPUTED": {"const": false},
+        "BERGER_SYMMETRY_COMPATIBLE_COMPLEX_STRUCTURES_CLASSIFIED": {"const": false},
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": {"const": false},
+        "BERGER_PHYSICAL_KREIN_SECTOR_UNAVOIDABLE": {"const": false},
+        "BERGER_POSITIVE_HILBERT_STATE_EXISTS": {"const": false},
+        "BERGER_AUXILIARY_SIGNATURE_NOT_PHYSICAL_NORM": {"const": true},
+        "BERGER_REDUCED_EAL_SIGN_NOT_BERGER_PHYSICAL_NORM": {"const": true},
+        "RENORMALIZED_LORENTZIAN_PRODUCTS": {"const": false},
+        "LORENTZIAN_QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {
+      "const": "RESTORE_Q26_WARD_DESCENT_THEN_COMPUTE_EXACT_PHYSICAL_COHOMOLOGY_PAIRING_AND_COMPLEX_STRUCTURES"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "proof_type": {
+          "const": "EXACT_BRST_REPRESENTATIVE_CHANGE_AND_FAIL_CLOSED_ALTERNATIVE_CARRIER_CLASSIFICATION"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "source_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 9,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 20}
+    },
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "replay": {
+      "type": "object",
+      "required": [
+        "pairing",
+        "sector",
+        "adjoint_convention",
+        "first_representative_change",
+        "first_exact_variation",
+        "second_representative_change",
+        "second_exact_variation",
+        "descent_criterion",
+        "ward_defect_certified_pairing_null",
+        "pairing_descends",
+        "checks",
+        "all_pass"
+      ],
+      "properties": {
+        "pairing": {"type": "string"},
+        "sector": {"const": "even ghost-number-zero homogeneous representatives"},
+        "adjoint_convention": {"type": "string"},
+        "first_representative_change": {"type": "string"},
+        "first_exact_variation": {"type": "string"},
+        "second_representative_change": {"type": "string"},
+        "second_exact_variation": {"type": "string"},
+        "descent_criterion": {"type": "string"},
+        "ward_defect_certified_pairing_null": {"type": "boolean"},
+        "pairing_descends": {"type": "boolean"},
+        "checks": {
+          "type": "object",
+          "minProperties": 9,
+          "additionalProperties": {"type": "boolean"}
+        },
+        "all_pass": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "carrier",
+        "BRST_descent",
+        "physical_form",
+        "positivity_status"
+      ],
+      "properties": {
+        "carrier": {"type": "string"},
+        "BRST_descent": {"type": "string"},
+        "physical_form": {
+          "enum": [
+            "UNDEFINED",
+            "NO_CERTIFIED_MAP",
+            "NO_HADAMARD_TWO_POINT_FUNCTION"
+          ]
+        },
+        "positivity_status": {"type": "string"}
+      }
+    }
+  }
+}

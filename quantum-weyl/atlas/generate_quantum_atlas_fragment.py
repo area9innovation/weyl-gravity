@@ -44,6 +44,7 @@ DEPENDENCIES = {
     "Berger_regular_graph_endpoint_descent": QROOT / "lorentzian/certificates/BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT.json",
     "Berger_ghost_identity_Hadamard_pair": QROOT / "lorentzian/certificates/BERGER_GHOST_IDENTITY_GLOBAL_HADAMARD_PAIR.json",
     "Berger_retained26_Hadamard_Ward_reduction": QROOT / "lorentzian/certificates/BERGER_RETAINED26_HADAMARD_WARD_REDUCTION.json",
+    "Berger_physical_cohomology_positivity": QROOT / "lorentzian/certificates/BERGER_PHYSICAL_COHOMOLOGY_POSITIVITY_DISPOSITION.json",
     "Berger_A104_complete": QROOT / "lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
     "Berger_graph_q_obstruction": QROOT / "lorentzian/certificates/BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION.json",
     "Slavnov_preflight": QROOT / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
@@ -231,6 +232,9 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     regular_graph_endpoint = values["Berger_regular_graph_endpoint_descent"]
     ghost_identity_pair = values["Berger_ghost_identity_Hadamard_pair"]
     retained26_ward = values["Berger_retained26_Hadamard_Ward_reduction"]
+    berger_physical_positivity = values[
+        "Berger_physical_cohomology_positivity"
+    ]
     berger_a104 = values["Berger_A104_complete"]
     berger_graph_q = values["Berger_graph_q_obstruction"]
     slavnov = values["Slavnov_preflight"]
@@ -520,6 +524,29 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         ) is not False
         or retained26_ward.get("next_gate")
         != "CONSTRUCT_Q26_EQUIVARIANT_GLOBAL_FEYNMAN_SELECTION_OR_SMOOTH_WARD_CORRECTION_WITH_DECLARED_BIKERNEL_SUPPORT_CLASS"
+        or berger_physical_positivity.get("physical_cohomology", {}).get(
+            "induced_sesquilinear_form"
+        )
+        != "UNDEFINED"
+        or berger_physical_positivity.get("claim_flags", {}).get(
+            "BERGER_PHYSICAL_PAIRING_DESCENDS_TO_BRST_COHOMOLOGY"
+        )
+        is not False
+        or berger_physical_positivity.get("claim_flags", {}).get(
+            "BERGER_AUXILIARY_SIGNATURE_NOT_PHYSICAL_NORM"
+        )
+        is not True
+        or berger_physical_positivity.get("claim_flags", {}).get(
+            "BERGER_REDUCED_EAL_SIGN_NOT_BERGER_PHYSICAL_NORM"
+        )
+        is not True
+        or berger_physical_positivity.get("science_forge", {}).get(
+            "stop_condition_status"
+        )
+        != "SHORTFALL_PRECONDITION_NOT_MET"
+        or len(berger_physical_positivity.get("does_not_establish", [])) < 9
+        or berger_physical_positivity.get("next_gate")
+        != "RESTORE_Q26_WARD_DESCENT_THEN_COMPUTE_EXACT_PHYSICAL_COHOMOLOGY_PAIRING_AND_COMPLEX_STRUCTURES"
         or berger_a104.get("claim_flags", {}).get("BERGER_FULL_A104_CAUCHY_OPERATOR")
         is not True
         or berger_a104.get("coverage", {}).get("known_coordinates") != 10816
@@ -1269,17 +1296,17 @@ def _berger_gap(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             imported=("NO_CERTIFIED_MAP", "NO: causal carrier and full A104 imported, no closed stationary mode crosswalk"),
             cocycle=("NO_CERTIFIED_MAP", "no per-mode cohomology ledger"),
             exactness=("NO_CERTIFIED_MAP", "no per-mode cohomology ledger"),
-            pairing=("NO_CERTIFIED_MAP", "carrier pairing has no modewise restriction"),
+            pairing=("OPEN", "the exact-CCR retained candidate is not yet certified to descend to BRST cohomology: changing either representative produces the smooth Ward defect, <u,W26[H26,q26]h> for f -> f+q26 u with q26 h=0 and <f,W26[H26,q26]v> for h -> h+q26 v with q26 f=0; the defect is not certified zero or pairing-null"),
             complex_structure=("OPEN", "the canonical q_Cauchy graph lift is exactly rejected; corrected lift, Cauchy/Krein form, real structure and closed spectral splitting remain open"),
             hadamard=("OPEN", "all twenty metric/formal-adjoint and six ghost/identity endpoint rows now have global Hadamard carriers; the cyclic witness assembles an exact-CCR retained-26 candidate, and its exact q26 Ward defect W26[H26,q26] is smooth; the compact-source causal homotopy is not yet extended to the required smooth two-variable support class, so a q26-equivariant global Feynman selection or certified smooth Ward correction is required before the conditional 26-to-54 lift"),
-            state_space=("OPEN", "reduced Krein evidence does not define a Berger physical state space"),
+            state_space=("OPEN", "physical positivity is undefined before BRST descent; the rank-40 indefinite signature is auxiliary and the vacuum-cylinder E/A/L Krein signs are reduced-mode data on a different background, so neither is a Berger physical norm"),
             qme=("OBSTRUCTED", "strict fixed-field-content local Euclidean QME is obstructed"),
             lifecycle=("OBSTRUCTED", "classical causal import remains; strict interacting quantum lifecycle is blocked"),
             particle=("NO_CERTIFIED_MAP", "no mode basis or Hadamard state"),
             crosswalk=("NO_CERTIFIED_MAP", "retained 26 rows to stationary physical modes"),
         ),
-        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_Hadamard_regular_morphism_boundary", "Berger_temporal_cutoff_Green_family", "Berger_cutoff_microlocal_response", "Berger_cutoff_Hermitian_dilation", "Berger_cutoff_Volterra_orientation_reduction", "Berger_cutoff_Volterra_normal_convergence", "Berger_free_dilation_Hadamard_seed", "Berger_free_dilation_Krein_covariance", "Berger_full_dilation_Krein_covariance", "Berger_dilation_retained26_restriction_audit", "Berger_regular_graph_endpoint_descent", "Berger_ghost_identity_Hadamard_pair", "Berger_retained26_Hadamard_Ward_reduction", "Berger_A104_complete", "Berger_graph_q_obstruction", "Slavnov_preflight", "regulated_Slavnov_breaking"),
-        "All 26 retained endpoint rows now have global Hadamard carriers. The cyclic backward witness gives an exact-CCR candidate Omega26=W26 H26, and its Ward defect is exactly the smooth kernel W26[H26,q26]. The existing advanced/retarded q26 homotopies act on compactly supported sources; applying them to an arbitrary smooth two-variable defect without a declared support extension is forbidden. The remaining gate is a q26-equivariant global Feynman selection or a continuous smooth-kernel Ward correction. The downstream omega54=iota omega26 pi lift remains certified conditionally. No retained-26 BRST covariance, physical mode, positive state, particle, renormalized Lorentzian product or Lorentzian QME is inferred.",
+        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_Hadamard_regular_morphism_boundary", "Berger_temporal_cutoff_Green_family", "Berger_cutoff_microlocal_response", "Berger_cutoff_Hermitian_dilation", "Berger_cutoff_Volterra_orientation_reduction", "Berger_cutoff_Volterra_normal_convergence", "Berger_free_dilation_Hadamard_seed", "Berger_free_dilation_Krein_covariance", "Berger_full_dilation_Krein_covariance", "Berger_dilation_retained26_restriction_audit", "Berger_regular_graph_endpoint_descent", "Berger_ghost_identity_Hadamard_pair", "Berger_retained26_Hadamard_Ward_reduction", "Berger_physical_cohomology_positivity", "Berger_A104_complete", "Berger_graph_q_obstruction", "Slavnov_preflight", "regulated_Slavnov_breaking"),
+        "All 26 retained endpoint rows now have global Hadamard carriers. The cyclic backward witness gives an exact-CCR candidate Omega26=W26 H26, and its Ward defect is exactly the smooth kernel W26[H26,q26]. The existing advanced/retarded q26 homotopies act on compactly supported sources; applying them to an arbitrary smooth two-variable defect without a declared support extension is forbidden. The exact two-sided representative-change calculation shows that the candidate sesquilinear form is not yet certified on BRST cohomology. Consequently positivity, nondegeneracy and compatible complex structures are not activated; auxiliary rank-40 and reduced vacuum-cylinder signs are not physical Berger norms. The remaining gate is a q26-equivariant global Feynman selection or a continuous smooth-kernel Ward correction. The downstream omega54=iota omega26 pi lift remains certified conditionally. No retained-26 BRST covariance, positive state, unavoidable physical Krein sector, particle, renormalized Lorentzian product or Lorentzian QME is inferred.",
     )
 
 

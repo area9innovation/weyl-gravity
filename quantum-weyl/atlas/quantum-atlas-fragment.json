@@ -1104,7 +1104,7 @@
       }
     },
     {
-      "claim_boundary": "All 26 retained endpoint rows now have global Hadamard carriers. The cyclic backward witness gives an exact-CCR candidate Omega26=W26 H26, and its Ward defect is exactly the smooth kernel W26[H26,q26]. The existing advanced/retarded q26 homotopies act on compactly supported sources; applying them to an arbitrary smooth two-variable defect without a declared support extension is forbidden. The remaining gate is a q26-equivariant global Feynman selection or a continuous smooth-kernel Ward correction. The downstream omega54=iota omega26 pi lift remains certified conditionally. No retained-26 BRST covariance, physical mode, positive state, particle, renormalized Lorentzian product or Lorentzian QME is inferred.",
+      "claim_boundary": "All 26 retained endpoint rows now have global Hadamard carriers. The cyclic backward witness gives an exact-CCR candidate Omega26=W26 H26, and its Ward defect is exactly the smooth kernel W26[H26,q26]. The existing advanced/retarded q26 homotopies act on compactly supported sources; applying them to an arbitrary smooth two-variable defect without a declared support extension is forbidden. The exact two-sided representative-change calculation shows that the candidate sesquilinear form is not yet certified on BRST cohomology. Consequently positivity, nondegeneracy and compatible complex structures are not activated; auxiliary rank-40 and reduced vacuum-cylinder signs are not physical Berger norms. The remaining gate is a q26-equivariant global Feynman selection or a continuous smooth-kernel Ward correction. The downstream omega54=iota omega26 pi lift remains certified conditionally. No retained-26 BRST covariance, positive state, unavoidable physical Krein sector, particle, renormalized Lorentzian product or Lorentzian QME is inferred.",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "OPEN",
@@ -1187,6 +1187,11 @@
           "path": "quantum-weyl/lorentzian/certificates/BERGER_RETAINED26_HADAMARD_WARD_REDUCTION.json",
           "result_id": "BERGER_RETAINED26_HADAMARD_WARD_REDUCTION",
           "sha256": "35bb185bbc975bbad80a6a4a029815bbc07781fdaa08f654e7652f2b2f6c9218"
+        },
+        {
+          "path": "quantum-weyl/lorentzian/certificates/BERGER_PHYSICAL_COHOMOLOGY_POSITIVITY_DISPOSITION.json",
+          "result_id": "BERGER_PHYSICAL_COHOMOLOGY_POSITIVITY_DISPOSITION",
+          "sha256": "9afc085188a58c47792f6afa40ddce73607530b3862168a397930887e31523dc"
         },
         {
           "path": "quantum-weyl/lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
@@ -1283,15 +1288,15 @@
           "status": "OBSTRUCTED"
         },
         "pairing_status": {
-          "statement": "carrier pairing has no modewise restriction",
-          "status": "NO_CERTIFIED_MAP"
+          "statement": "the exact-CCR retained candidate is not yet certified to descend to BRST cohomology: changing either representative produces the smooth Ward defect, <u,W26[H26,q26]h> for f -> f+q26 u with q26 h=0 and <f,W26[H26,q26]v> for h -> h+q26 v with q26 f=0; the defect is not certified zero or pairing-null",
+          "status": "OPEN"
         },
         "particle_interpretation": {
           "statement": "no mode basis or Hadamard state",
           "status": "NO_CERTIFIED_MAP"
         },
         "state_space_status": {
-          "statement": "reduced Krein evidence does not define a Berger physical state space",
+          "statement": "physical positivity is undefined before BRST descent; the rank-40 indefinite signature is auxiliary and the vacuum-cylinder E/A/L Krein signs are reduced-mode data on a different background, so neither is a Berger physical norm",
           "status": "OPEN"
         }
       },
@@ -3550,7 +3555,7 @@
     }
   ],
   "generated_by": "quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
-  "generated_by_sha256": "e4cc26a7e0190ccfc05d59dbc72853aed17279fbcd355afc39faac7db5df93c1",
+  "generated_by_sha256": "5436ef5e053c8995c76978a502c6c8e3a2327ea7b9b1642b9de4f7379ff3b969",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
