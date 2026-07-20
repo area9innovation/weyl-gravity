@@ -1,0 +1,44 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-minimal-action-classification-after-neither",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-minimal-action-classification-after-neither",
+  "source": {
+    "path": "planning/work-items/classical-compensator-minimal-action-classification-after-neither.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Replace one-candidate guessing with an exact minimal-action classification of dressed-trace repairs compatible with the cylinder, raw-D charge test and Berger clock.",
+    "stop_condition": "Begin only after classical-compensator-candidate-ab-neither-comparison terminates DONE and import its exact two-obstruction matrix. Declare a complete parity-even local action ansatz through four derivatives for the dressed metric and one complex compensator, allowing at most one auxiliary scalar and one reducible three-form/topological multiplier sector, modulo integration by parts, topological densities and invertible local field redefinitions. Derive the unit-cylinder stationary-background equations, the complete scalar/topological principal and velocity Hessians, their exact characteristic and minimal polynomials, Lee-Wald inertia, compact/global cohomology, raw-D Hamiltonian and the frozen Berger Euler/clock equations as polynomial conditions on the action coefficients. Use exact elimination, real-root/sign certificates and independent reconstruction to classify the coefficient locus satisfying all seven gates, or prove the first exact incompatibility separating them. If a nonempty locus exists, select one smallest rational fixture only after proving it lies in the good locus and emit its full action hash as Candidate C. If the locus is empty, state the completed ansatz and separator explicitly. File a typed Forge/math request and return SHORTFALL rather than replacing an exact semialgebraic or differential-module proof with numerical sampling.",
+    "current_gate": "complete coefficient-locus classification for the smallest declared dressed-trace action family",
+    "forbid": "no arbitrary Candidate C chosen before the coefficient locus is solved; no Einstein-background scalaron formula substituted for the non-Einstein cylinder Hessian; no gauge fixing used to hide a physical negative or topological direction; no fixed-flux superselection silently imposed; no raw-D/K_Berger identification; no numerical scan called complete; no anomaly, Hadamard, particle, scattering or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/classical-compensator-candidate-ab-neither-comparison"
+    ],
+    "activates": [
+      "one exact Candidate C action receiver if the good coefficient locus is nonempty",
+      "or a general scoped minimal-action no-go theorem",
+      "action-specific nonlinear, Einstein, observer and quantum work only after a passing action hash exists"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "reports/",
+      "residual_atlas/",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "CLASSICAL PROOF-FIRST CONTINGENT RUNWAY. This should be a coefficient-locus theorem, not a third isolated preflight.",
+    "notes": [
+      "Candidate A and B show that background stationarity, causal replacement of u, current sign, global topology, raw-D and Berger compatibility must be solved simultaneously.",
+      "The declared ansatz must be complete enough that an empty locus is meaningful, but its scope must remain explicit.",
+      "Downstream teams may consume only a passing selected-action hash, never a promising coefficient sample."
+    ],
+    "input_commit": "ae53fda6096e000fe8849f9af288fc71bd614e9b",
+    "stream": "classical"
+  },
+  "edges": []
+}
