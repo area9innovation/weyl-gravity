@@ -1,0 +1,233 @@
+{
+  "admissible_category": {
+    "branch_split": "filtered chain inclusion s:E_E->E_W and projection r:E_W->E_E with r*s=id, equivalently a cyclic self-adjoint q1-intertwining idempotent P_E=s*r with the declared principal anchor",
+    "equivalence": "conjugation by invertible filtered cyclic K_Berger-equivariant chain maps, together with admissible higher F2/F3 redefinitions; higher terms do not alter existence of the unary idempotent",
+    "nonlinear_split": "a cyclic filtered L_infinity isomorphism whose unary term realizes the branch split and whose higher F2/F3 terms respect the same filtration and residual action",
+    "objects": "finite filtered local BV complexes over Q(sqrt(10)) with q1, nondegenerate typed cyclic pairing, retained K_Berger action, and declared q2/q3/ell3 operations",
+    "pairing": "the certified typed odd BV pairing induced by the cyclic 64-to-36 SDR",
+    "residual_action": "K_Berger=D-omega*R on the retained 36-row carrier through arity three",
+    "unary_maps": [
+      "finite-order support-local PBW operators of nonnegative filtration",
+      "degree preserving q1 chain maps",
+      "typed-cyclic adjoint compatible",
+      "K_Berger equivariant on the retained carrier",
+      "no inverse Laplacian, Green operator, TT/helicity mode projector, or row-name branch assignment"
+    ]
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC theorem defines the principal Einstein-image/additional-Weyl extension, the admissible filtered cyclic category, and the first invariant lifting class beta_1. The exact standard-fibre witness beta_1=(1,0) rules out an arity-one branch projector and therefore every cyclic L_infinity branch split with the certified principal anchor on the retained 36-row carrier and its rank-46 contractible STF2 graph prolongation. It completely classifies finite page-level repairs: a repair must add a noncontractible boundary image covering im(beta_1), with one field direction and its cyclic dual minimally sufficient at the standard fibre. It does not construct the global K_Berger-equivariant bundle closure, solve higher filtered pages, identify retained rows with Einstein or extra-Weyl modes, project ell3, compute a mode-pair source table, establish causal propagation of an enlarged carrier, or make observational, quantum, ghost, scattering, or all-orders claims.",
+  "claim_flags": {
+    "ADMISSIBLE_FILTERED_CYCLIC_CATEGORY_DEFINED": true,
+    "ARITY_ONE_BRANCH_SPLIT_EXISTS": false,
+    "CYCLIC_L_INFINITY_BRANCH_SPLIT_EXISTS": false,
+    "ELL3_BRANCH_PROJECTION_AUTHORIZED": false,
+    "FIRST_EXTENSION_OBSTRUCTION_CLASS_CERTIFIED": true,
+    "GLOBAL_EQUIVARIANT_ENLARGEMENT_CONSTRUCTED": false,
+    "MODE_PAIR_SOURCE_TABLE_AUTHORIZED": false,
+    "PRINCIPAL_BRANCH_EXACT_SEQUENCE_DEFINED": true,
+    "QUANTUM_CLAIM": false,
+    "RANK46_CONTRACTIBLE_GRAPH_REPAIRS_OBSTRUCTION": false,
+    "STANDARD_FIBRE_MINIMAL_PAGE_REPAIR_CLASSIFIED": true
+  },
+  "dependency_refs": {
+    "principal_physical_branch_sequence": {
+      "artifact_id": "BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1.json",
+      "sha256": "b9c290a19270f423d98e998699dd68f86523eeb849d5816cca81215a7ba3236f"
+    },
+    "rank_46_contractible_cyclic_graph": {
+      "artifact_id": "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1.json",
+      "sha256": "13d164e952e35b96b5f755786dc86f069d3451f6e0a33eefe27f845e9866e1c7"
+    },
+    "retained_36_cyclic_pairing": {
+      "artifact_id": "BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR",
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR.json",
+      "sha256": "d347d89d138d53cec2822ceacd1abb5b9cd4d0199e454fc2b0cf63fe83918c88"
+    },
+    "retained_K_Berger_action": {
+      "artifact_id": "BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE",
+      "path": "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
+      "sha256": "104ff269ddf10ed80ff796c090a2de90a40c62adb0194954e4509b200304184e"
+    },
+    "retained_mixed_ell3_obstruction": {
+      "artifact_id": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json",
+      "sha256": "4051d27dd45fb5a8781348bccb4e21859cf736124cca026182978177ced62e44"
+    },
+    "subprincipal_lift_obstruction": {
+      "artifact_id": "BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1.json",
+      "sha256": "541645dd93039ccba3f3282aa5c76beebde1d07668289530f6524afe309d53ba"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "first_obstruction_class": {
+    "allowed_freedoms_quotiented": [
+      "every principal Hessian boundary",
+      "every physical-equation representative",
+      "every principal spatial-gauge change of the field representatives"
+    ],
+    "certified_rank_ledger": {
+      "allowed_boundary": 4,
+      "both_augmented": 5,
+      "cross_augmented": 4,
+      "plus_augmented": 5
+    },
+    "class": "beta_1=pi_coker(M)*T in Hom(H_hel,coker(M))",
+    "invariance": "an admissible unary change induces isomorphisms of coker(M) and H_hel, so beta_1 is conjugated; its zero/nonzero verdict and image rank are invariant",
+    "lifted_cross_coefficient": "71/40",
+    "lifted_polarization": "h_hat_23",
+    "lifting_map": "M=[sigma_4(H_retained), J_phys, sigma_2(V2)*sigma_1(K_spatial)]",
+    "name": "beta_1",
+    "necessary_and_sufficient_page_test": "the declared physical principal module lifts through the first nonzero filtered page iff beta_1=0, equivalently rank([M,T])=rank(M)",
+    "normalized_evaluation": [
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "normalized_witness": [
+      "-5/31",
+      "10/31",
+      "0",
+      "0",
+      "25/31",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "obstructed_polarization": "h_hat_22-h_hat_33",
+    "target": "T=sigma_2(V2)*I_phys"
+  },
+  "lifecycle_status": "OBSTRUCTED",
+  "minimal_page_enlargement_classification": {
+    "category": "finite-dimensional cyclic extensions of the first filtered lifting page, modulo filtered cyclic isomorphism and addition of contractible hyperbolic pairs",
+    "classification_table": [
+      {
+        "cyclic_BV_rows": 0,
+        "new_boundary_directions": 0,
+        "reason": "rank(o)=1",
+        "verdict": "OBSTRUCTED"
+      },
+      {
+        "cyclic_BV_rows": 2,
+        "new_boundary_directions": 1,
+        "reason": "one column spanning im(o) is necessary and sufficient at the standard fibre",
+        "verdict": "PAGE_SUFFICIENT_ONLY_IF_NONCONTRACTIBLE"
+      },
+      {
+        "cyclic_BV_rows": "2s",
+        "new_boundary_directions": "s>=1",
+        "reason": "complete rank criterion; extra contractible pairs do not contribute to coker(M)",
+        "verdict": "PAGE_SUFFICIENT_IFF_IM_O_SUBSET_IM_J"
+      }
+    ],
+    "contractible_case": "a filtered cyclic SDR enlargement induces an isomorphism on Q and has zero new image in the obstruction quotient, so it cannot change a nonzero o",
+    "equivariant_case": "with a certified residual action, replace im(o) by its smallest invariant submodule W; the minimum is dim(W) field directions and dim(W) cyclic-dual equation directions",
+    "general_obstruction_map": "o:H->Q=coker(M)",
+    "global_realization_boundary": "the rank of the K_Berger-equivariant global bundle closure W and the higher-page nilpotent/cyclic realization are not certified; the existing rank-46 STF2 graph is contractible and fails",
+    "minimum": "dim(Z)=rank(o); every minimal repair identifies Z isomorphically with im(o), and its cyclic completion is the hyperbolic pair Z direct-sum Z^vee",
+    "necessity_and_sufficiency": "the page lifts after enlargement iff im(o) is contained in im(j)",
+    "repair_datum": "an added field correction space Z with page-boundary map j:Z->Q; cyclicity adds the dual equation space Z^vee",
+    "standard_fibre": {
+      "active_boundary_shape": [
+        5,
+        4
+      ],
+      "canonical_new_boundary_column": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "extended_augmented_rank": 5,
+      "extended_boundary_rank": 5,
+      "minimum_cyclic_BV_rows": 2,
+      "minimum_new_field_directions": 1,
+      "normal_form_field": "Q(sqrt(10))",
+      "normalized_cokernel_evaluation": [
+        "1",
+        "0"
+      ],
+      "obstruction_image_rank": 1,
+      "one_new_boundary_direction_sufficient_at_page": true,
+      "physical_target_shape": [
+        5,
+        2
+      ],
+      "rank_ledger": {
+        "allowed_boundary": 4,
+        "both_augmented": 5,
+        "cross_augmented": 4,
+        "plus_augmented": 5
+      },
+      "zero_new_boundary_directions_sufficient": false
+    }
+  },
+  "mode_scope": {
+    "background": "compact positive Berger clock at the certified rational fixture",
+    "boundaries": "closed compact slice; support-local PBW operator category",
+    "carrier": "typed retained 36-row cyclic BV complex, with the certified rank-46 STF2 contractible graph test",
+    "charge_sector": "fixed coupling; retained gravity-clock-Maxwell bundle",
+    "degree": "full retained BV grading; physical branch anchor in degrees zero and one",
+    "ell": "NOT_APPLICABLE_LOCAL_PBW_CARRIER",
+    "k": "standard null-symbol fibre zeta=(1,1,0,0), not a compact harmonic momentum",
+    "m": "NOT_APPLICABLE_LOCAL_PBW_CARRIER",
+    "omega": "principal null characteristic; no mode-frequency crosswalk",
+    "parity": "complete declared retained carrier",
+    "theory": "Weyl gravity coupled to the positive Berger clock and Maxwell field"
+  },
+  "next_gate": "CONSTRUCT_NONCONTRACTIBLE_OR_MIXED_BUNDLE_REALIZATION_OF_THE_MINIMAL_OBSTRUCTION_MODULE",
+  "principal_exact_sequence": {
+    "Einstein_module": "E_E=H_hel tensor epsilon*A",
+    "Weyl_module": "E_W=H_hel tensor A",
+    "coefficient_field": "k=Q(sqrt(10))",
+    "dual_number_algebra": "A=k[epsilon]/(epsilon^2)",
+    "exactness": "ker(p_X)=im(i_E)=H_hel tensor epsilon*A",
+    "extra_module": "E_X=H_hel tensor A/(epsilon*A)",
+    "inclusion": "i_E(h tensor epsilon)=h tensor epsilon",
+    "interpretation": "an associated-principal repeated-wave extension; not an already lifted branch decomposition of the retained differential complex",
+    "polarization_module": "H_hel, projective rank two on the normalized null cone",
+    "quotient": "p_X(h tensor (a+b*epsilon))=h tensor a",
+    "sequence": "0 -> E_E -> E_W -> E_X -> 0"
+  },
+  "relation_to_retained_ell3": {
+    "branch_label_status": "NO_CERTIFIED_MAP",
+    "logical_relation": "the two classes are independent: beta_1 blocks branch projection before ell3 can be assigned to branches, while the ell3 witness concerns removal of the unsplit ternary operation",
+    "mode_pair_source_table_status": "NO_CERTIFIED_MAP",
+    "ternary_deformation_class": "the separate 22-row witness proves the retained mixed ell3 is nonremovable in the declared filtered cyclic F2/F3 class on the unsplit carrier",
+    "unary_extension_class": "beta_1 is the first filtered obstruction to lifting/splitting the physical branch sequence"
+  },
+  "result_id": "BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1",
+  "result_state": "ARITY_ONE_FILTERED_CYCLIC_BRANCH_SPLITTING_OBSTRUCTED_MINIMAL_PAGE_REPAIR_CLASSIFIED",
+  "schema": "pure-weyl-berger-filtered-cyclic-branch-extension-obstruction-v1",
+  "source_manifest": {
+    "d_quotient_classical/backreacted_clock/berger_filtered_cyclic_branch_extension_obstruction.py": "ac5e2aa4805e3a2f51b7f5e9e629ceca6c781eb0a1b48c10ac3da84e898e201b",
+    "d_quotient_classical/backreacted_clock/tests/test_berger_filtered_cyclic_branch_extension_obstruction.py": "1dd5524517d8bd1b5a0dbaf288bab10e6826de47a85263082bc7cdef08886630",
+    "d_quotient_classical/backreacted_clock/verify_berger_filtered_cyclic_branch_extension_obstruction.py": "72e815cb0b5f7df846b7d7e3012cea9f9d0e7822e0350390f1f4e45ab8c2c03d",
+    "d_quotient_classical/schema/berger-filtered-cyclic-branch-extension-obstruction-v1.schema.json": "dc6c5383f7e47b8c1031e0a3d1fdde6ade717f966f5b2223e4f3eb88b5d03b5d"
+  },
+  "splitting_theorem": {
+    "nonlinear_higher_map_consequence": "F2 and F3 cannot repair failure of the arity-one idempotent; no q2/q3/ell3 branch-mixing table is authorized",
+    "proof_chain": [
+      "a cyclic L_infinity branch split has a unary filtered cyclic chain split",
+      "a unary split restricts at the standard null fibre to a lift of both physical principal columns",
+      "the first-page lift exists iff beta_1 vanishes",
+      "the normalized exact witness evaluates beta_1 as (1,0)",
+      "therefore the unary split, and hence the full cyclic L_infinity split, does not exist in the declared category",
+      "the rank-46 STF2 enlargement is a cyclic contractible graph SDR with Schur complement A10, so it induces the same obstruction quotient and cannot kill beta_1"
+    ],
+    "statement": "No admissible filtered cyclic Einstein-image/additional-Weyl splitting with the certified physical principal anchor exists on the retained 36-row complex or on its certified rank-46 contractible STF2 graph prolongation."
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_filtered_cyclic_branch_extension_obstruction.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_filtered_cyclic_branch_extension_obstruction.py",
+    "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_filtered_cyclic_branch_extension_obstruction -v",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-filtered-cyclic-branch-extension-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1.json"
+  ]
+}

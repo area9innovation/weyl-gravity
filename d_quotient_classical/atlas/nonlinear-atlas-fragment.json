@@ -8,6 +8,75 @@
   ],
   "entries": [
     {
+      "claim_boundary": "The associated-principal Einstein/additional-Weyl sequence is exact, but its certified physical anchor does not lift to an admissible filtered cyclic branch split: beta_1 is nonzero. One noncontractible field direction and its cyclic dual are minimally page-sufficient at the standard fibre; global K_Berger-equivariant closure and later filtered pages remain open. The independent retained ell3 obstruction stays on the unsplit carrier, and branch labels, mode-pair sources, causal realization, observables and quantum states remain NO_CERTIFIED_MAP.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1.json",
+          "result_id": "BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1",
+          "sha256": "66fff0566ceccb887c1e5138984fe079203deedd5a6538ef1b55976918545a0e"
+        },
+        {
+          "path": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json",
+          "result_id": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1",
+          "sha256": "4051d27dd45fb5a8781348bccb4e21859cf736124cca026182978177ced62e44"
+        }
+      ],
+      "id": "nonlinear.berger.filtered_cyclic_branch_extension.beta1_obstruction",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The beta_1 theorem is a local filtered-symbol extension obstruction, not a branch dispersion calculation.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "The certified physical principal anchor has no support-local filtered cyclic chain split on the retained carrier or its contractible rank-46 STF2 graph prolongation.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "The normalized first-page cokernel witness evaluates on the physical columns as (1,0).",
+          "status": "OBSTRUCTED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The unary filtered branch-extension obstruction is not a bounded second-order tangent-cone calculation.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "No causal realization of the required noncontractible or mixed-bundle enlargement is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The unary filtered branch-extension obstruction is not a smooth-secular second-order correction theorem.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "beta_1 is an arity-one extension class, not a quadratic Taub moment map.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at the certified rational fixture",
+        "boundaries": "closed compact slice; support-local PBW operator category",
+        "carrier": "typed retained 36-row cyclic BV complex, with the certified rank-46 STF2 contractible graph test",
+        "charge_sector": "fixed coupling; retained gravity-clock-Maxwell bundle",
+        "degree": "full retained BV grading; physical branch anchor in degrees zero and one",
+        "ell": "NOT_APPLICABLE_LOCAL_PBW_CARRIER",
+        "k": "standard null-symbol fibre zeta=(1,1,0,0), not a compact harmonic momentum",
+        "m": "NOT_APPLICABLE_LOCAL_PBW_CARRIER",
+        "omega": "principal null characteristic; no mode-frequency crosswalk",
+        "parity": "complete declared retained carrier",
+        "theory": "Weyl gravity coupled to the positive Berger clock and Maxwell field"
+      }
+    },
+    {
       "claim_boundary": "The mixed ell3 representative is unremovable only within the declared nonnegative filtered derivative-aware cyclic F2/F3 class. Its branch, cohomology, particle, causal and quantum images remain open or lack a certified map.",
       "descriptions": {
         "causal": "OPEN",
@@ -77,7 +146,7 @@
       }
     },
     {
-      "claim_boundary": "Do not identify retained rows with Einstein-like, extra-Weyl, topological or Maxwell residual modes. A different noncontractible mixed-bundle carrier or explicitly REDUCED-MODE nonlocal split remains possible.",
+      "claim_boundary": "Do not identify retained rows with Einstein-like, extra-Weyl, topological or Maxwell residual modes. The nonzero beta_1 class now rules out the certified physical anchor on both the retained 36-row carrier and its contractible rank-46 STF2 graph prolongation. A noncontractible or mixed-bundle enlargement must cover the obstruction image; an explicitly REDUCED-MODE nonlocal split remains a different theorem.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "NO_CERTIFIED_MAP",
@@ -90,6 +159,11 @@
           "path": "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
           "result_id": "BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1",
           "sha256": "2a06fb31f888cab2d0c3e3481a559623098b3efba42cc0cd7b9b2759552e980c"
+        },
+        {
+          "path": "d_quotient_classical/certificates/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1.json",
+          "result_id": "BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1",
+          "sha256": "66fff0566ceccb887c1e5138984fe079203deedd5a6538ef1b55976918545a0e"
         },
         {
           "path": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json",
@@ -1974,7 +2048,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py",
-  "generated_by_sha256": "6596c2b0c79c3951f10cf0cf410040c54ecb411c24526a0aba1bb96ce8adcea8",
+  "generated_by_sha256": "1c10d1cbfd8ff67e522341213b294111eb873ab168ed8a3960f126c6d87e5ef7",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
@@ -1988,6 +2062,7 @@
   "verification_commands": [
     "python3 -m d_quotient_classical.atlas.generate_nonlinear_atlas_fragment --check",
     "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/nonlinear-atlas-fragment.json",
+    "python3 d_quotient_classical/atlas/verify_nonlinear_atlas_fragment.py",
     "python3 -m unittest d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment"
   ]
 }

@@ -3,6 +3,9 @@ import json
 import unittest
 
 from d_quotient_classical.atlas import generate_nonlinear_atlas_fragment as atlas
+from d_quotient_classical.atlas.verify_nonlinear_atlas_fragment import (
+    verify as verify_atlas,
+)
 from residual_atlas.validate_fragment import validate
 
 
@@ -10,6 +13,9 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
     def test_generated_fragment_is_current(self):
         self.assertEqual(json.loads(atlas.OUTPUT.read_text()), atlas.build())
         validate(atlas.OUTPUT)
+
+    def test_independent_atlas_verifier(self):
+        self.assertEqual(verify_atlas()["team"], "d_quotient_nonlinear")
 
     def test_branch_crosswalk_fails_closed(self):
         entry = next(item for item in atlas.build()["entries"] if ".crosswalk." in item["id"])
@@ -19,6 +25,23 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         entry = next(item for item in atlas.build()["entries"] if "filtered_cyclic_obstruction" in item["id"])
         self.assertEqual(entry["mode_data"]["dispersion"]["status"], "NOT_APPLICABLE")
         self.assertEqual(entry["descriptions"]["quantum"], "OPEN")
+
+    def test_unary_branch_extension_obstruction_is_fail_closed(self):
+        entry = next(
+            item
+            for item in atlas.build()["entries"]
+            if "filtered_cyclic_branch_extension" in item["id"]
+        )
+        self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+        self.assertEqual(entry["mode_data"]["dispersion"]["status"], "NOT_APPLICABLE")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "NOT_APPLICABLE")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OBSTRUCTED")
+        self.assertIn("(1,0)", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("minimally page-sufficient", entry["claim_boundary"])
+        self.assertIn("later filtered pages remain open", entry["claim_boundary"])
+        self.assertIn("NO_CERTIFIED_MAP", entry["claim_boundary"])
 
     def test_product_source_row_does_not_crosswalk_to_berger(self):
         entry = next(item for item in atlas.build()["entries"] if "axial_polar_einstein_minus" in item["id"])

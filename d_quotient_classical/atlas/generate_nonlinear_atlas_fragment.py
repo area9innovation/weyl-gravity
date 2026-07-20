@@ -20,6 +20,7 @@ STATUSES = ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_M
 AXES = ["causal", "symplectic", "nonlinear", "observational", "quantum"]
 CERTS = {
     "mixed_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json",
+    "cyclic_branch_extension": ROOT / "d_quotient_classical/certificates/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1.json",
     "dictionary": ROOT / "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
     "branch_projector": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
@@ -236,6 +237,7 @@ def bridge2_entry(importer: dict[str, Any], fallback_scope: dict[str, Any]) -> d
 
 def entries() -> list[dict[str, Any]]:
     branch_importer = json.loads(CERTS["branch_importer"].read_text())
+    cyclic_branch_extension = json.loads(CERTS["cyclic_branch_extension"].read_text())
     relative_linfinity = json.loads(CERTS["relative_linfinity_preflight"].read_text())
     linear_triangle_imported = relative_linfinity["input_status"]["relative_linear_triangle"] == "IMPORTED"
     einstein_taylor_imported = relative_linfinity["input_status"]["einstein_product_q2_q3"] == "IMPORTED"
@@ -409,6 +411,30 @@ def entries() -> list[dict[str, Any]]:
     identity_cyclic_scope = json.loads(CERTS["identity_cyclic_obstruction"].read_text())["scope"]
     return [
         {
+            "id": "nonlinear.berger.filtered_cyclic_branch_extension.beta1_obstruction",
+            "scope": cyclic_branch_extension["mode_scope"],
+            "descriptions": {
+                "causal": "NO_CERTIFIED_MAP",
+                "symplectic": "OBSTRUCTED",
+                "nonlinear": "OBSTRUCTED",
+                "observational": "NO_CERTIFIED_MAP",
+                "quantum": "NO_CERTIFIED_MAP",
+            },
+            "mode_data": _mode_data(
+                _second(
+                    ("NO_CERTIFIED_MAP", "The unary filtered branch-extension obstruction is not a bounded second-order tangent-cone calculation."),
+                    ("NO_CERTIFIED_MAP", "The unary filtered branch-extension obstruction is not a smooth-secular second-order correction theorem."),
+                    ("NO_CERTIFIED_MAP", "No causal realization of the required noncontractible or mixed-bundle enlargement is certified."),
+                ),
+                dispersion=("NOT_APPLICABLE", "The beta_1 theorem is a local filtered-symbol extension obstruction, not a branch dispersion calculation."),
+                pairing=("OBSTRUCTED", "The certified physical principal anchor has no support-local filtered cyclic chain split on the retained carrier or its contractible rank-46 STF2 graph prolongation."),
+                taub=("NOT_APPLICABLE", "beta_1 is an arity-one extension class, not a quadratic Taub moment map."),
+                resonance=("OBSTRUCTED", "The normalized first-page cokernel witness evaluates on the physical columns as (1,0)."),
+            ),
+            "evidence": _evidence("cyclic_branch_extension", "mixed_obstruction"),
+            "claim_boundary": "The associated-principal Einstein/additional-Weyl sequence is exact, but its certified physical anchor does not lift to an admissible filtered cyclic branch split: beta_1 is nonzero. One noncontractible field direction and its cyclic dual are minimally page-sufficient at the standard fibre; global K_Berger-equivariant closure and later filtered pages remain open. The independent retained ell3 obstruction stays on the unsplit carrier, and branch labels, mode-pair sources, causal realization, observables and quantum states remain NO_CERTIFIED_MAP.",
+        },
+        {
             "id": "nonlinear.berger.retained_mixed_ell3.filtered_cyclic_obstruction",
             "scope": obstruction_scope,
             "descriptions": {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OBSTRUCTED", "observational": "NO_CERTIFIED_MAP", "quantum": "OPEN"},
@@ -441,8 +467,8 @@ def entries() -> list[dict[str, Any]]:
                 taub=("NO_CERTIFIED_MAP", "No branch-resolved quadratic-source/cokernel table."),
                 resonance=("OBSTRUCTED", "The requested support-local same-bundle rank-36 branch projector is obstructed."),
             ),
-            "evidence": _evidence("branch_projector", "mixed_obstruction"),
-            "claim_boundary": "Do not identify retained rows with Einstein-like, extra-Weyl, topological or Maxwell residual modes. A different noncontractible mixed-bundle carrier or explicitly REDUCED-MODE nonlocal split remains possible.",
+            "evidence": _evidence("branch_projector", "cyclic_branch_extension", "mixed_obstruction"),
+            "claim_boundary": "Do not identify retained rows with Einstein-like, extra-Weyl, topological or Maxwell residual modes. The nonzero beta_1 class now rules out the certified physical anchor on both the retained 36-row carrier and its contractible rank-46 STF2 graph prolongation. A noncontractible or mixed-bundle enlargement must cover the obstruction image; an explicitly REDUCED-MODE nonlocal split remains a different theorem.",
         },
         {
             "id": "nonlinear.abstract.finite_harmonic.tangent_cone_naturality",
@@ -939,6 +965,7 @@ def build() -> dict[str, Any]:
         "verification_commands": [
             "python3 -m d_quotient_classical.atlas.generate_nonlinear_atlas_fragment --check",
             "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/nonlinear-atlas-fragment.json",
+            "python3 d_quotient_classical/atlas/verify_nonlinear_atlas_fragment.py",
             "python3 -m unittest d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment",
         ],
     }

@@ -1,0 +1,355 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-filtered-cyclic-branch-extension-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "mode_scope",
+    "principal_exact_sequence",
+    "admissible_category",
+    "first_obstruction_class",
+    "splitting_theorem",
+    "minimal_page_enlargement_classification",
+    "relation_to_retained_ell3",
+    "dependency_refs",
+    "source_manifest",
+    "verification_commands",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-berger-filtered-cyclic-branch-extension-obstruction-v1"
+    },
+    "result_id": {
+      "const": "BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1"
+    },
+    "result_state": {
+      "const": "ARITY_ONE_FILTERED_CYCLIC_BRANCH_SPLITTING_OBSTRUCTED_MINIMAL_PAGE_REPAIR_CLASSIFIED"
+    },
+    "lifecycle_status": {
+      "const": "OBSTRUCTED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC"
+      ]
+    },
+    "mode_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "theory",
+        "background",
+        "boundaries",
+        "charge_sector",
+        "carrier",
+        "degree",
+        "parity",
+        "ell",
+        "m",
+        "k",
+        "omega"
+      ],
+      "properties": {
+        "theory": {"type": "string", "minLength": 1},
+        "background": {"type": "string", "minLength": 1},
+        "boundaries": {"type": "string", "minLength": 1},
+        "charge_sector": {"type": "string", "minLength": 1},
+        "carrier": {"type": "string", "minLength": 1},
+        "degree": {"type": "string", "minLength": 1},
+        "parity": {"type": "string", "minLength": 1},
+        "ell": {"type": "string", "minLength": 1},
+        "m": {"type": "string", "minLength": 1},
+        "k": {"type": "string", "minLength": 1},
+        "omega": {"type": "string", "minLength": 1}
+      }
+    },
+    "principal_exact_sequence": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "coefficient_field",
+        "dual_number_algebra",
+        "polarization_module",
+        "sequence",
+        "Einstein_module",
+        "Weyl_module",
+        "extra_module",
+        "inclusion",
+        "quotient",
+        "exactness",
+        "interpretation"
+      ],
+      "properties": {
+        "coefficient_field": {"type": "string", "minLength": 1},
+        "dual_number_algebra": {"type": "string", "minLength": 1},
+        "polarization_module": {"type": "string", "minLength": 1},
+        "sequence": {"type": "string", "minLength": 1},
+        "Einstein_module": {"type": "string", "minLength": 1},
+        "Weyl_module": {"type": "string", "minLength": 1},
+        "extra_module": {"type": "string", "minLength": 1},
+        "inclusion": {"type": "string", "minLength": 1},
+        "quotient": {"type": "string", "minLength": 1},
+        "exactness": {"type": "string", "minLength": 1},
+        "interpretation": {"type": "string", "minLength": 1}
+      }
+    },
+    "admissible_category": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "objects",
+        "unary_maps",
+        "branch_split",
+        "nonlinear_split",
+        "equivalence",
+        "residual_action",
+        "pairing"
+      ],
+      "properties": {
+        "objects": {"type": "string", "minLength": 1},
+        "unary_maps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "branch_split": {"type": "string", "minLength": 1},
+        "nonlinear_split": {"type": "string", "minLength": 1},
+        "equivalence": {"type": "string", "minLength": 1},
+        "residual_action": {"type": "string", "minLength": 1},
+        "pairing": {"type": "string", "minLength": 1}
+      }
+    },
+    "first_obstruction_class": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "name",
+        "lifting_map",
+        "target",
+        "class",
+        "necessary_and_sufficient_page_test",
+        "allowed_freedoms_quotiented",
+        "certified_rank_ledger",
+        "normalized_witness",
+        "normalized_evaluation",
+        "obstructed_polarization",
+        "lifted_polarization",
+        "lifted_cross_coefficient",
+        "invariance"
+      ],
+      "properties": {
+        "name": {"const": "beta_1"},
+        "lifting_map": {"type": "string", "minLength": 1},
+        "target": {"type": "string", "minLength": 1},
+        "class": {"type": "string", "minLength": 1},
+        "necessary_and_sufficient_page_test": {"type": "string", "minLength": 1},
+        "allowed_freedoms_quotiented": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "certified_rank_ledger": {"type": "object"},
+        "normalized_witness": {"type": "array", "minItems": 1},
+        "normalized_evaluation": {
+          "const": [
+            [
+              "1",
+              "0"
+            ]
+          ]
+        },
+        "obstructed_polarization": {"type": "string", "minLength": 1},
+        "lifted_polarization": {"type": "string", "minLength": 1},
+        "lifted_cross_coefficient": {"const": "71/40"},
+        "invariance": {"type": "string", "minLength": 1}
+      }
+    },
+    "splitting_theorem": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "statement",
+        "proof_chain",
+        "nonlinear_higher_map_consequence"
+      ],
+      "properties": {
+        "statement": {"type": "string", "minLength": 1},
+        "proof_chain": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "nonlinear_higher_map_consequence": {"type": "string", "minLength": 1}
+      }
+    },
+    "minimal_page_enlargement_classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "category",
+        "general_obstruction_map",
+        "repair_datum",
+        "necessity_and_sufficiency",
+        "minimum",
+        "contractible_case",
+        "equivariant_case",
+        "standard_fibre",
+        "classification_table",
+        "global_realization_boundary"
+      ],
+      "properties": {
+        "category": {"type": "string", "minLength": 1},
+        "general_obstruction_map": {"type": "string", "minLength": 1},
+        "repair_datum": {"type": "string", "minLength": 1},
+        "necessity_and_sufficiency": {"type": "string", "minLength": 1},
+        "minimum": {"type": "string", "minLength": 1},
+        "contractible_case": {"type": "string", "minLength": 1},
+        "equivariant_case": {"type": "string", "minLength": 1},
+        "standard_fibre": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "normal_form_field",
+            "active_boundary_shape",
+            "physical_target_shape",
+            "rank_ledger",
+            "normalized_cokernel_evaluation",
+            "obstruction_image_rank",
+            "zero_new_boundary_directions_sufficient",
+            "one_new_boundary_direction_sufficient_at_page",
+            "canonical_new_boundary_column",
+            "extended_boundary_rank",
+            "extended_augmented_rank",
+            "minimum_new_field_directions",
+            "minimum_cyclic_BV_rows"
+          ],
+          "properties": {
+            "normal_form_field": {"const": "Q(sqrt(10))"},
+            "active_boundary_shape": {"const": [5, 4]},
+            "physical_target_shape": {"const": [5, 2]},
+            "rank_ledger": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "allowed_boundary",
+                "plus_augmented",
+                "cross_augmented",
+                "both_augmented"
+              ],
+              "properties": {
+                "allowed_boundary": {"const": 4},
+                "plus_augmented": {"const": 5},
+                "cross_augmented": {"const": 4},
+                "both_augmented": {"const": 5}
+              }
+            },
+            "normalized_cokernel_evaluation": {"const": ["1", "0"]},
+            "obstruction_image_rank": {"const": 1},
+            "zero_new_boundary_directions_sufficient": {"const": false},
+            "one_new_boundary_direction_sufficient_at_page": {"const": true},
+            "canonical_new_boundary_column": {
+              "const": ["0", "0", "0", "0", "1"]
+            },
+            "extended_boundary_rank": {"const": 5},
+            "extended_augmented_rank": {"const": 5},
+            "minimum_new_field_directions": {"const": 1},
+            "minimum_cyclic_BV_rows": {"const": 2}
+          }
+        },
+        "classification_table": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "global_realization_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "relation_to_retained_ell3": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "unary_extension_class",
+        "ternary_deformation_class",
+        "logical_relation",
+        "branch_label_status",
+        "mode_pair_source_table_status"
+      ],
+      "properties": {
+        "unary_extension_class": {"type": "string", "minLength": 1},
+        "ternary_deformation_class": {"type": "string", "minLength": 1},
+        "logical_relation": {"type": "string", "minLength": 1},
+        "branch_label_status": {"const": "NO_CERTIFIED_MAP"},
+        "mode_pair_source_table_status": {"const": "NO_CERTIFIED_MAP"}
+      }
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["artifact_id", "path", "sha256"],
+        "properties": {
+          "artifact_id": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "source_manifest": {
+      "type": "object",
+      "minProperties": 4,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PRINCIPAL_BRANCH_EXACT_SEQUENCE_DEFINED",
+        "ADMISSIBLE_FILTERED_CYCLIC_CATEGORY_DEFINED",
+        "FIRST_EXTENSION_OBSTRUCTION_CLASS_CERTIFIED",
+        "ARITY_ONE_BRANCH_SPLIT_EXISTS",
+        "CYCLIC_L_INFINITY_BRANCH_SPLIT_EXISTS",
+        "RANK46_CONTRACTIBLE_GRAPH_REPAIRS_OBSTRUCTION",
+        "STANDARD_FIBRE_MINIMAL_PAGE_REPAIR_CLASSIFIED",
+        "GLOBAL_EQUIVARIANT_ENLARGEMENT_CONSTRUCTED",
+        "ELL3_BRANCH_PROJECTION_AUTHORIZED",
+        "MODE_PAIR_SOURCE_TABLE_AUTHORIZED",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "PRINCIPAL_BRANCH_EXACT_SEQUENCE_DEFINED": {"const": true},
+        "ADMISSIBLE_FILTERED_CYCLIC_CATEGORY_DEFINED": {"const": true},
+        "FIRST_EXTENSION_OBSTRUCTION_CLASS_CERTIFIED": {"const": true},
+        "ARITY_ONE_BRANCH_SPLIT_EXISTS": {"const": false},
+        "CYCLIC_L_INFINITY_BRANCH_SPLIT_EXISTS": {"const": false},
+        "RANK46_CONTRACTIBLE_GRAPH_REPAIRS_OBSTRUCTION": {"const": false},
+        "STANDARD_FIBRE_MINIMAL_PAGE_REPAIR_CLASSIFIED": {"const": true},
+        "GLOBAL_EQUIVARIANT_ENLARGEMENT_CONSTRUCTED": {"const": false},
+        "ELL3_BRANCH_PROJECTION_AUTHORIZED": {"const": false},
+        "MODE_PAIR_SOURCE_TABLE_AUTHORIZED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {
+      "const": "CONSTRUCT_NONCONTRACTIBLE_OR_MIXED_BUNDLE_REALIZATION_OF_THE_MINIMAL_OBSTRUCTION_MODULE"
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

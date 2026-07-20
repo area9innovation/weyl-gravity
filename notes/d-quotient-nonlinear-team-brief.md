@@ -889,6 +889,70 @@ off-shell coefficient maps, the nonzero-`k` exceptional cofiber/pairing, and
 final residual descent remain open; Bridge 1 and the relative nonlinear
 receiver remain inactive.
 
+### Science Forge active gate: filtered cyclic branch-extension class
+
+The nonlinear stream is authoritative under Science Forge work item
+`sf:program/work/nonlinear-cyclic-extension-splitting-theorem`.  Its
+proof-first gate is now closed negatively by
+`BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1`.
+
+On the certified physical principal module, write
+
+\[
+A=\mathbb Q(\sqrt{10})[\epsilon]/(\epsilon^2),\qquad
+0\longrightarrow H_{\rm hel}\otimes\epsilon A
+\longrightarrow H_{\rm hel}\otimes A
+\longrightarrow H_{\rm hel}\otimes A/\epsilon A
+\longrightarrow0 .
+\]
+
+This is the associated-principal Einstein-layer/Weyl-layer/additional-Weyl
+sequence.  An admissible lift is a finite-order support-local filtered chain
+split preserving the typed cyclic pairing and retained \(K_{\rm Berger}\)
+action; Green, inverse-Laplacian, TT/helicity-mode and row-name projectors are
+excluded.  At the first nonzero filtered page its invariant lifting class is
+
+\[
+\beta_1=
+\pi_{\operatorname{coker}M}\,
+\sigma_2(V_2)I_{\rm phys},\qquad
+M=\bigl[
+\sigma_4(H_{\rm retained}),\,
+J_{\rm phys},\,
+\sigma_2(V_2)\sigma_1(K_{\rm spatial})
+\bigr].
+\]
+
+This quotient includes every principal Hessian boundary, physical-equation
+representative and spatial-gauge change.  The exact rank ledger is
+`rank(M)=4`, `rank(M,T_plus)=5`, `rank(M,T_cross)=4`; the normalized witness
+evaluates as `(1,0)`.  Therefore the complete physical principal module does
+not lift.  Since every cyclic filtered \(L_\infty\) branch decomposition has
+such a unary chain split, no admissible nonlinear split exists with this
+anchor.  The certified rank-46 STF2 graph prolongation cannot help: it is a
+cyclic contractible SDR with Schur complement `A10`, so it preserves the
+obstruction quotient.
+
+The bounded first-page enlargement problem is also complete.  For
+`o:H->Q=coker(M)`, an added field correction space `Z` with page map
+`j:Z->Q` repairs the page exactly when `im(o)` is contained in `im(j)`.
+Hence `dim Z=rank(o)` is minimal, cyclicity adds `Z^vee`, and all minimal
+repairs are the hyperbolic completion of `im(o)` up to filtered cyclic
+isomorphism and contractible pairs.  Here `rank(o)=1`: one noncontractible
+field direction and its cyclic dual, two BV rows, are necessary and
+sufficient at the standard fibre.  This is page-level sufficiency only.  The
+global \(K_{\rm Berger}\)-equivariant bundle closure, later filtered pages and
+a complete enlarged BV differential remain open.
+
+The unary class \(\beta_1\) and the retained ternary deformation obstruction
+are independent.  The former blocks branch projection; the latter blocks
+removal of the mixed retained `ell3` within the declared filtered cyclic
+`F2/F3` class on the unsplit carrier.  Neither authorizes a branch-labelled
+mixing or mode-pair source table.  The nonlinear atlas records the new
+fail-closed row
+`nonlinear.berger.filtered_cyclic_branch_extension.beta1_obstruction` and
+keeps the retained-to-branch crosswalk at `NO_CERTIFIED_MAP`.
+
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.
@@ -903,8 +967,9 @@ receiver remain inactive.
    metric-cone no-go, and do not promote this unary theorem to interacting
    retarded products, Hadamard data, or a quantum claim.
 4. Do not continue the obstructed rank-46 contractible-projector ansatz.
-   Choose between an unsplit retained observable and the smallest
-   noncontractible/mixed-bundle filtered enlargement.  Produce an
+   Realize the minimal obstruction module as a global noncontractible or
+   mixed-bundle filtered carrier, beginning with the \(K_{\rm Berger}\)-orbit
+   closure of `im(beta_1)`, or retain the unsplit observable.  Produce an
    Einstein-like/extra-Weyl/Maxwell mixing table only after that new carrier
    passes; a nonlocal split must remain explicitly `REDUCED-MODE`.
 5. Add apparatus \(q_2,q_3\), \(K_{\rm Berger}\)-equivariance, and observer

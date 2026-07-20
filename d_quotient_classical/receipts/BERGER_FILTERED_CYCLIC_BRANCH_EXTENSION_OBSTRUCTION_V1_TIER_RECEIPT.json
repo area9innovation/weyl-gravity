@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "status": "PASS",
+  "science_forge_item": "sf:program/work/nonlinear-cyclic-extension-splitting-theorem",
+  "source_manifest": {
+    "d_quotient_classical/backreacted_clock/berger_filtered_cyclic_branch_extension_obstruction.py": "ac5e2aa4805e3a2f51b7f5e9e629ceca6c781eb0a1b48c10ac3da84e898e201b",
+    "d_quotient_classical/backreacted_clock/verify_berger_filtered_cyclic_branch_extension_obstruction.py": "72e815cb0b5f7df846b7d7e3012cea9f9d0e7822e0350390f1f4e45ab8c2c03d",
+    "d_quotient_classical/backreacted_clock/tests/test_berger_filtered_cyclic_branch_extension_obstruction.py": "1dd5524517d8bd1b5a0dbaf288bab10e6826de47a85263082bc7cdef08886630",
+    "d_quotient_classical/schema/berger-filtered-cyclic-branch-extension-obstruction-v1.schema.json": "dc6c5383f7e47b8c1031e0a3d1fdde6ade717f966f5b2223e4f3eb88b5d03b5d",
+    "d_quotient_classical/certificates/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1.json": "66fff0566ceccb887c1e5138984fe079203deedd5a6538ef1b55976918545a0e",
+    "d_quotient_classical/reports/berger-filtered-cyclic-branch-extension-obstruction.md": "5a540ef6d26dc52f274d87afb465c18b59333a0116ced5031b82b51d82c82c1a",
+    "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py": "1c10d1cbfd8ff67e522341213b294111eb873ab168ed8a3960f126c6d87e5ef7",
+    "d_quotient_classical/atlas/verify_nonlinear_atlas_fragment.py": "0de3440c6096c54f74b916f3f93ed43b72a9d4189ed92abc1bc34b8061156d07",
+    "d_quotient_classical/atlas/tests/test_nonlinear_atlas_fragment.py": "184ed5f797572b412acf012ffaf8dc24d2760f9590b9448d53b42eb2ccf642f9",
+    "d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "97fa6685e37ba99b53b5af3a14fd0bb3105481774e83d6717c87dfbd74a8030a",
+    "notes/d-quotient-nonlinear-team-brief.md": "d5dabf981584142b4580dce47036a7cc105579bfc3e6d915b21b68d39a9fd77b"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <new producer, independent verifier, tests, atlas producer, atlas verifier and atlas tests>",
+        "jq -e . <new certificate, strict schema and nonlinear atlas fragment>",
+        "git diff --check -- <all scoped nonlinear paths>"
+      ],
+      "result": "All changed Python modules compiled, all structured artifacts parsed and the scoped diff had no whitespace errors."
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_filtered_cyclic_branch_extension_obstruction.py --check --guards",
+        "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_filtered_cyclic_branch_extension_obstruction.py",
+        "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_filtered_cyclic_branch_extension_obstruction -v",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-filtered-cyclic-branch-extension-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1.json",
+        "PYTHONPATH=. python3 -m d_quotient_classical.atlas.generate_nonlinear_atlas_fragment --check",
+        "PYTHONPATH=. python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/nonlinear-atlas-fragment.json",
+        "PYTHONPATH=. python3 d_quotient_classical/atlas/verify_nonlinear_atlas_fragment.py",
+        "PYTHONPATH=. python3 -m unittest d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v"
+      ],
+      "elapsed_seconds": {
+        "producer": 0.51,
+        "independent_verifier": 2.78,
+        "six_scoped_tests": 0.54,
+        "strict_schema": 1.44,
+        "atlas_producer": 0.14,
+        "atlas_schema": 0.13,
+        "atlas_independent_verifier": 0.13,
+        "twenty_six_atlas_tests": 1.33
+      },
+      "result": "The raw-operator independent rail rebuilt the exact boundary and target matrices, reproduced ranks 4/5/4/5 and the normalized (1,0) witness, and verified that one noncontractible page column is minimal while the contractible rank-46 graph and ell3 boundaries remain fail-closed. Six theorem tests and twenty-six atlas tests passed."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The principal physical quotient, subprincipal raw-operator obstruction, rank-46 cyclic graph SDR, retained cyclic pairing, K_Berger Cartan action and retained ell3 obstruction are unchanged SHA-256-pinned inputs. Their three directly affected independent verifiers were replayed before construction and passed in 3.16, 36.57 and 6.35 seconds respectively."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The result closes one scoped Science Forge work item by an exact obstruction; it does not freeze a paper, release a shared algebra core, construct the global enlarged carrier or promote any causal, observational or quantum claim."
+    }
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_FINDINGS",
+    "elapsed_seconds": 3.65,
+    "command": "bash ci/science-forge-shadow.sh",
+    "findings": [
+      "bridge certlab audit reported pre-existing lock drift while its existence, edge, DAG and gate checks passed",
+      "coverage census reported 1188 certificates versus the 976-certificate 2026-07-19 baseline",
+      "the advisory script exited zero by policy; these findings are not recorded as a passing strict gate"
+    ]
+  },
+  "claim_boundary": "This receipt certifies the LOCAL-ALGEBRAIC first filtered branch-extension obstruction and the complete finite first-page minimal repair classification. It does not construct the global K_Berger-equivariant obstruction bundle, a noncontractible or mixed-bundle BV carrier, later filtered pages, a branch-labelled ell3 operation, a mode-pair source table, causal propagation, observations, particles, ghosts, scattering, quantum states or all-orders closure."
+}
