@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2b-composed-repair-v1",
+  "title": "Polar composed-lift audit and exact constant horizon fluxes",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "supersedes",
+    "lift_statement",
+    "invariance_classification",
+    "fixtures",
+    "constancy_window",
+    "mutations",
+    "audit",
+    "verification_discipline",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-bh2b-composed-repair-v1"
+    },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh2b-composed-repair-v1.schema.json"
+    },
+    "schema_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_BH2B_COMPOSED_REPAIR"
+    },
+    "result_token": {
+      "const": "BH2B_POLAR_COMPOSED_LIFT_AUDITED_EXACT_CONSTANT_FLUX"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "lifecycle"
+      ],
+      "properties": {
+        "lifecycle": {
+          "const": "CLASSIFIED"
+        }
+      }
+    },
+    "supersedes": {
+      "type": "object",
+      "required": [
+        "cross_flux_certificate",
+        "cross_flux_certificate_sha256",
+        "cross_flux_scope",
+        "flux_class_certificate",
+        "flux_class_certificate_sha256",
+        "flux_class_scope"
+      ],
+      "properties": {
+        "cross_flux_certificate": {
+          "const": "black_hole_programme/certificates/BH2B_POLAR_CROSS_FLUX.json"
+        },
+        "flux_class_certificate": {
+          "const": "black_hole_programme/certificates/BH2C_POLAR_FLUX_CLASS.json"
+        }
+      }
+    },
+    "lift_statement": {
+      "type": "object",
+      "required": [
+        "all_analytic_carrier_modes_lift",
+        "basis",
+        "lift_ambiguity"
+      ],
+      "properties": {
+        "all_analytic_carrier_modes_lift": {
+          "const": true
+        }
+      }
+    },
+    "invariance_classification": {
+      "type": "object",
+      "required": [
+        "conformal_shifts",
+        "einstein_shifts",
+        "invariant_entries",
+        "representative_dependent_entries",
+        "canonical_representative"
+      ]
+    },
+    "fixtures": {
+      "type": "object",
+      "required": [
+        "3/5",
+        "2/7"
+      ],
+      "additionalProperties": {
+        "type": "object",
+        "minProperties": 15
+      }
+    },
+    "constancy_window": {
+      "type": "object",
+      "required": [
+        "checked_keys",
+        "all_zero",
+        "validity"
+      ],
+      "properties": {
+        "all_zero": {
+          "const": true
+        }
+      }
+    },
+    "mutations": {
+      "type": "object",
+      "required": [
+        "M1_row_audit",
+        "M2_window"
+      ]
+    },
+    "audit": {
+      "type": "object",
+      "required": [
+        "vv_residuals",
+        "einstein_combination",
+        "e0old_class",
+        "e0true_class",
+        "m2w_clean"
+      ],
+      "properties": {
+        "e0true_class": {
+          "const": "(-2, 0)"
+        },
+        "m2w_clean": {
+          "const": true
+        }
+      }
+    },
+    "verification_discipline": {
+      "type": "array",
+      "minItems": 3
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "exact_constant_flux_certified",
+        "all_carrier_modes_lift",
+        "invariance_classified",
+        "vv_vr_audit_complete",
+        "e0_row_superseded",
+        "einstein_selection_confirmed",
+        "symbolic_omega_certified",
+        "general_l_certified",
+        "invariant_sign_theory_certified"
+      ],
+      "properties": {
+        "exact_constant_flux_certified": {"const": true},
+        "all_carrier_modes_lift": {"const": true},
+        "invariance_classified": {"const": true},
+        "vv_vr_audit_complete": {"const": true},
+        "e0_row_superseded": {"const": true},
+        "einstein_selection_confirmed": {"const": true},
+        "symbolic_omega_certified": {"const": false},
+        "general_l_certified": {"const": false},
+        "invariant_sign_theory_certified": {"const": false}
+      }
+    },
+    "missing_objects": {
+      "type": "array",
+      "minItems": 4
+    },
+    "stage_seconds": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "pipeline_path",
+        "pipeline_sha256",
+        "reach_path",
+        "reach_sha256"
+      ]
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh2b_composed_repair.py"
+    }
+  }
+}

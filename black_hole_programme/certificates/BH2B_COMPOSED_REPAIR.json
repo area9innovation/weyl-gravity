@@ -1,0 +1,153 @@
+{
+  "audit": {
+    "e0old_class": "None (identically zero)",
+    "e0true_class": "(-2, 0)",
+    "einstein_combination": [
+      "1092528/1945718125 + 80352*I/77828725",
+      "-53568/15565745 + 728352*I/389143625",
+      "1"
+    ],
+    "m2w_clean": true,
+    "vv_residuals": {
+      "-1": {
+        "1": "154224/17850625 - 31104*I/3570125"
+      },
+      "0": {
+        "1": "3*I/5",
+        "2": "3"
+      },
+      "1": {
+        "2": "2",
+        "3": "3"
+      }
+    }
+  },
+  "claim_flags": {
+    "all_carrier_modes_lift": true,
+    "e0_row_superseded": true,
+    "einstein_selection_confirmed": true,
+    "exact_constant_flux_certified": true,
+    "general_l_certified": false,
+    "invariance_classified": true,
+    "invariant_sign_theory_certified": false,
+    "symbolic_omega_certified": false,
+    "vv_vr_audit_complete": true
+  },
+  "constancy_window": {
+    "all_zero": true,
+    "checked_keys": "1..7",
+    "validity": "B-component series depth bounds the certified window at rho^7"
+  },
+  "declaration": {
+    "background_family": "Schwarzschild exterior, m = 1 fixtures",
+    "conformal_frame": "fixed representative g (certified atlas)",
+    "generator": "EF ingoing-regular polar l = 2 mode families",
+    "horizon_condition": "ingoing-regular at rho = 0 (analytic)",
+    "infinity_condition": "formal power jets at r = infinity (BH2C norm-selection framework)",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "linear conjugate-pair Lee-Wald pairing",
+    "theory": "S = alpha * integral sqrt(-g) C_{abcd} C^{abcd}"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "fixtures": {
+    "2/7": {
+      "E|X0": "-330816/3955 - 10176*I/565",
+      "E|X1": "-1013904/38759 + 1719168*I/27685",
+      "E|X2": "-13189088/193795 - 980648*I/27685",
+      "X0|E": "330816/3955 - 10176*I/565",
+      "X0|X0": "-94557184*I/2351265",
+      "X0|X1": "-48047488/2351265 + 121948672*I/23042397",
+      "X0|X2": "-399424/5486285 - 3263193088*I/115211985",
+      "X1|E": "1013904/38759 + 1719168*I/27685",
+      "X1|X0": "48047488/2351265 + 121948672*I/23042397",
+      "X1|X1": "-44119418816*I/5645387265",
+      "X1|X2": "2033039024/161296779 + 3037861504*I/1129077453",
+      "X2|E": "13189088/193795 - 980648*I/27685",
+      "X2|X0": "399424/5486285 - 3263193088*I/115211985",
+      "X2|X1": "-2033039024/161296779 + 3037861504*I/1129077453",
+      "X2|X2": "-21606650432*I/1129077453"
+    },
+    "3/5": {
+      "E|X0": "-40512/5915 - 48000*I/1183",
+      "E|X1": "-10062672/147875 + 449856*I/29575",
+      "E|X2": "-3783648/147875 - 1549104*I/29575",
+      "X0|E": "40512/5915 - 48000*I/1183",
+      "X0|X0": "-2871808*I/35525",
+      "X0|X1": "-62592/875 - 20282624*I/888125",
+      "X0|X2": "-763456/177625 - 65327616*I/888125",
+      "X1|E": "10062672/147875 + 449856*I/29575",
+      "X1|X0": "62592/875 - 20282624*I/888125",
+      "X1|X1": "-1172815072*I/22203125",
+      "X1|X2": "235539984/4440625 - 601270848*I/22203125",
+      "X2|E": "3783648/147875 - 1549104*I/29575",
+      "X2|X0": "763456/177625 - 65327616*I/888125",
+      "X2|X1": "-235539984/4440625 - 601270848*I/22203125",
+      "X2|X2": "-1372825632*I/22203125"
+    }
+  },
+  "invariance_classification": {
+    "canonical_representative": "correction parameters zeroed (pipeline canonical choice)",
+    "conformal_shifts": "NO entry changes: every G pair is identically zero at every window key",
+    "einstein_shifts": "E row/column and controls invariant (E|E = 0 exactly); extra-block entries shift by exact multiples of the cross constants: delta F(Xi|Xj) = conj(beta_j) F(Xi|E) + beta_i F(E|Xj)",
+    "invariant_entries": [
+      "E|Xj cross constants (up to the E-slot normalization)",
+      "all controls"
+    ],
+    "representative_dependent_entries": [
+      "Xi|Xj extra block"
+    ]
+  },
+  "lift_statement": {
+    "all_analytic_carrier_modes_lift": true,
+    "basis": "the composition recursion (n = 0 Frobenius balance imposed, log-resonance fail-closed) plus the Einstein-family correction solve succeeds for every analytic carrier mode at both fixtures (horizon) and for all three carrier jets per sector (infinity, certified BH2C); re-asserted in this run",
+    "lift_ambiguity": "span(Einstein mode, conformal gauge mode) per slot"
+  },
+  "missing_objects": [
+    "symbolic-frequency window table (successor item)",
+    "general l",
+    "representative-invariant extra-block sign theory (null-quotient pairing)",
+    "outer-boundary (scattering-domain) counterparts",
+    "any dynamical-behaviour statement (vocabulary coordinator-gated)"
+  ],
+  "mutations": {
+    "M1_row_audit": "the superseded E0 representative fails vv with exact residual (2r+3)/r^2 (closed form; jet terminates); recorded in audit stage",
+    "M2_window": "a truncated (off-shell) a-slot X0 pseudo-mode drifts at keys [1, 2, 3, 4, 5, 6, 7] -- the constancy assert is decisive"
+  },
+  "provenance": {
+    "generator_path": "black_hole_programme/bh2b_composed_repair.py",
+    "pipeline_path": "black_hole_programme/bh2b_polar_cross_flux.py",
+    "pipeline_sha256": "d4ed550f3973b3b4475a1371d24f4e36ebdcbe3306861229dcd415d536c13a7a",
+    "reach_path": "black_hole_programme/bh2b_polar_reach.py",
+    "reach_sha256": "53314667714c6624e90f204a46d166ae2d7561bdd8e97b5011c235c939121c46"
+  },
+  "result_id": "PURE_WEYL_BH2B_COMPOSED_REPAIR",
+  "result_token": "BH2B_POLAR_COMPOSED_LIFT_AUDITED_EXACT_CONSTANT_FLUX",
+  "schema": "pure-weyl-bh2b-composed-repair-v1",
+  "schema_path": "black_hole_programme/schema/bh2b-composed-repair-v1.schema.json",
+  "schema_sha256": "d81d16100ab630d5d9c679229c6e210ba730fe6d6f9a8b07342dbafe95aba83b",
+  "stage_seconds": {
+    "infinity_audit": 162.8,
+    "mutation_m2": 415.6,
+    "total": 3002.7,
+    "windows_2/7": 1140.9,
+    "windows_3/5": 1283.3
+  },
+  "supersedes": {
+    "cross_flux_certificate": "black_hole_programme/certificates/BH2B_POLAR_CROSS_FLUX.json",
+    "cross_flux_certificate_sha256": "39530c7ea9173c5491cc082167e5c06f9439ddee1e5b151857235df965caf26d",
+    "cross_flux_scope": "fixture VALUES only: the radius-sampled numerical matrix entries and the 5e-2 r-independence tolerance are replaced by exact rho^0 constants with an exact all-zero constancy window rho^1..rho^7; the certificate's theorems (composition existence, Hermiticity, null controls, separation) are CONFIRMED, not repaired",
+    "flux_class_certificate": "black_hole_programme/certificates/BH2C_POLAR_FLUX_CLASS.json",
+    "flux_class_certificate_sha256": "e547439682a65a689c0c1bb8049a06e99638cbe91056918e3e5ffa39c1080f47",
+    "flux_class_scope": "the mu0-sector Einstein ROW ONLY: the shipped E0 representative (terminating sigma0=1 jet A=r, C=0, K=-5i/3) fails the never-imposed vv row with exact closed-form residual (2r+3)/r^2 and is not a linearized Einstein solution; the true Einstein mu0 direction is the unique vv-clean combination of the three mu0 power jets; E0|E0 'identically zero (extra mu0 degeneracy)' is replaced by E0true|E0true class (-2, 0) = the certified E2|E2 class; E|X and X|X classes and the Einstein norm-selection verdict are UNCHANGED"
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2b_composed_repair.py",
+  "verification_discipline": [
+    "bilinear coefficients extracted by differentiation of the multilinear polynomial structure (never .coeff on expanded giant trees)",
+    "exact Laurent-dict arithmetic with intermediate caps above the output window (towers first, coefficient last)",
+    "no nsimplify anywhere; residual verdicts are exact rationals",
+    "controls: imposed rows re-audited as positive controls before trusting the vv/vr verdicts"
+  ]
+}
