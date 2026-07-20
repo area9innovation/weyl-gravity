@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/relative-changed-theory-qme-disposition-v1.schema.json",
+  "title": "Relative changed-theory QME disposition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "input_pins",
+    "scope",
+    "finite_carrier_rail",
+    "local_cohomology_rail",
+    "repair_orbit_dispositions",
+    "orbit_invariance",
+    "coefficient_ledger",
+    "exact_checks",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-relative-changed-theory-qme-disposition-v1"},
+    "result_id": {"const": "RELATIVE_CHANGED_THEORY_QME_NONDEFINITION"},
+    "result_state": {
+      "const": "REDUCED_CYCLIC_REPAIRS_EXIST_BUT_RELATIVE_ONE_LOOP_QME_SUBTRACTION_UNDEFINED_ON_EVERY_REPAIR_ORBIT"
+    },
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]
+    },
+    "input_pins": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["terminal_repair", "strict_local_anomaly"],
+      "properties": {
+        "terminal_repair": {"$ref": "#/$defs/pin"},
+        "strict_local_anomaly": {"$ref": "#/$defs/localPin"}
+      }
+    },
+    "scope": {"type": "object"},
+    "finite_carrier_rail": {
+      "type": "object",
+      "required": [
+        "result_id",
+        "dependency_tags",
+        "generic_repair_orbits",
+        "exact_compatibility",
+        "finite_carrier_QME_operator",
+        "status"
+      ],
+      "properties": {
+        "result_id": {"const": "RELATIVE_CHANGED_THEORY_FINITE_CARRIER_COMPATIBILITY"},
+        "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+        "generic_repair_orbits": {"type": "object"},
+        "exact_compatibility": {
+          "type": "object",
+          "minProperties": 5,
+          "additionalProperties": {"const": true}
+        },
+        "finite_carrier_QME_operator": {"type": "object"},
+        "status": {"const": "CYCLIC_REDUCED_COHOMOLOGY_COMPATIBLE_QME_DATA_INCOMPLETE"}
+      }
+    },
+    "local_cohomology_rail": {
+      "type": "object",
+      "required": [
+        "result_id",
+        "dependency_tags",
+        "strict_Weyl_reference",
+        "repair_orbit_disposition",
+        "counterterm_quotient",
+        "relative_class"
+      ],
+      "properties": {
+        "result_id": {"const": "RELATIVE_CHANGED_THEORY_LOCAL_COHOMOLOGY_NONDEFINITION"},
+        "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+        "strict_Weyl_reference": {"type": "object"},
+        "repair_orbit_disposition": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"type": "object"}
+        },
+        "counterterm_quotient": {"type": "string", "minLength": 1},
+        "relative_class": {"const": "UNDEFINED"}
+      }
+    },
+    "repair_orbit_dispositions": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/disposition"}
+    },
+    "orbit_invariance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "relative_defect_invariant_across_orbits",
+        "reason",
+        "vanishing_due_to_strict_cancellation",
+        "vanishing_due_to_changed_theory"
+      ],
+      "properties": {
+        "relative_defect_invariant_across_orbits": {"const": "NOT_DEFINED"},
+        "reason": {"type": "string", "minLength": 1},
+        "vanishing_due_to_strict_cancellation": {"const": false},
+        "vanishing_due_to_changed_theory": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "coefficient_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strict_pure_Weyl_reference_vector",
+        "changed_pairing_relative_vector",
+        "changed_action_relative_vector",
+        "physical_auxiliary_relative_vector"
+      ],
+      "properties": {
+        "strict_pure_Weyl_reference_vector": {"type": "object"},
+        "changed_pairing_relative_vector": {"const": "UNDEFINED"},
+        "changed_action_relative_vector": {"const": "UNDEFINED"},
+        "physical_auxiliary_relative_vector": {"const": "UNDEFINED"}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 9,
+      "additionalProperties": {"const": true}
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "REDUCED_CYCLIC_REPAIR_ORBITS_CLASSIFIED",
+        "RELATIVE_ONE_LOOP_QME_DEFINED_ON_ANY_REPAIR_ORBIT",
+        "RELATIVE_COEFFICIENT_COMPUTED",
+        "STRICT_STANDARD_ACTION_RELATIVE_SUBTRACTION_REVIVED",
+        "STRICT_PURE_WEYL_ANOMALY_CANCELLED",
+        "LORENTZIAN_CAUSAL_OR_PARTICLE_CLAIM"
+      ],
+      "properties": {
+        "REDUCED_CYCLIC_REPAIR_ORBITS_CLASSIFIED": {"const": true},
+        "RELATIVE_ONE_LOOP_QME_DEFINED_ON_ANY_REPAIR_ORBIT": {"const": false},
+        "RELATIVE_COEFFICIENT_COMPUTED": {"const": false},
+        "STRICT_STANDARD_ACTION_RELATIVE_SUBTRACTION_REVIVED": {"const": false},
+        "STRICT_PURE_WEYL_ANOMALY_CANCELLED": {"const": false},
+        "LORENTZIAN_CAUSAL_OR_PARTICLE_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "source_manifest"],
+      "properties": {
+        "proof_type": {"type": "string", "minLength": 1},
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commit", "path", "sha256"],
+      "properties": {
+        "commit": {"const": "a4ed972a4"},
+        "path": {
+          "const": "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION.json"
+        },
+        "sha256": {
+          "const": "00b2e7a66fd81c0f2c1d6af3b4f37a0a7d10215a4405b0e1ac50c39dc41e8cf5"
+        }
+      }
+    },
+    "localPin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {
+          "const": "quantum-weyl/local_bv/certificates/LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json"
+        },
+        "sha256": {
+          "const": "07bf332cf1bece92f8a041002f3c787fe7e85e798871e4878fbbc3cd7b20bd3b"
+        }
+      }
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repair_orbit",
+        "reduced_cyclic_map",
+        "off_shell_chain_lift",
+        "common_regulator_domain",
+        "relative_one_loop_defect",
+        "minimal_additional_data"
+      ],
+      "properties": {
+        "repair_orbit": {
+          "enum": [
+            "pairing_deformation",
+            "quadratic_action_deformation",
+            "physical_auxiliary_extension"
+          ]
+        },
+        "reduced_cyclic_map": {"const": "EXISTS"},
+        "off_shell_chain_lift": {"const": "NOT_SUPPLIED"},
+        "common_regulator_domain": {"const": "NOT_SUPPLIED"},
+        "relative_one_loop_defect": {"const": "UNDEFINED"},
+        "minimal_additional_data": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

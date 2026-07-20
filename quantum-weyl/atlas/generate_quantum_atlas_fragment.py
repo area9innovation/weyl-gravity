@@ -66,6 +66,7 @@ DEPENDENCIES = {
     "relative_Einstein_Weyl_QME_nondefinition": QROOT / "transfer/certificates/RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION.json",
     "relative_Einstein_Weyl_cyclic_pushforward_obstruction": QROOT / "transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
     "relative_Einstein_Weyl_pairing_deformation_classification": QROOT / "transfer/certificates/RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION.json",
+    "relative_changed_theory_QME_nondefinition": QROOT / "transfer/certificates/RELATIVE_CHANGED_THEORY_QME_NONDEFINITION.json",
     "anomaly_induced_Gamma1": QROOT / "transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_TT_log_Gamma1": QROOT / "transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_log_Gamma1": QROOT / "transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
@@ -276,6 +277,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     relative_pairing_deformation = values[
         "relative_Einstein_Weyl_pairing_deformation_classification"
     ]
+    relative_changed_qme = values["relative_changed_theory_QME_nondefinition"]
     anomaly_induced = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_log_Gamma1"]
     curvature_squared_log = values["curvature_squared_log_Gamma1"]
@@ -754,6 +756,25 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         != "NOT_CONSTRUCTED"
     ):
         raise ValueError("relative Einstein--Weyl changed-pairing boundary drifted")
+    if (
+        relative_changed_qme.get("claim_flags", {}).get(
+            "REDUCED_CYCLIC_REPAIR_ORBITS_CLASSIFIED"
+        )
+        is not True
+        or relative_changed_qme.get("claim_flags", {}).get(
+            "RELATIVE_ONE_LOOP_QME_DEFINED_ON_ANY_REPAIR_ORBIT"
+        )
+        is not False
+        or relative_changed_qme.get("claim_flags", {}).get(
+            "RELATIVE_COEFFICIENT_COMPUTED"
+        )
+        is not False
+        or relative_changed_qme.get("orbit_invariance", {}).get(
+            "relative_defect_invariant_across_orbits"
+        )
+        != "NOT_DEFINED"
+    ):
+        raise ValueError("relative changed-theory QME boundary drifted")
     if (
         elliptic.get("claim_flags", {}).get(
             "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED"
@@ -1603,7 +1624,7 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
 def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     specs = [
         ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4; the same-background tau-adic classical D_compact contraction is imported, while the first Lorentzian analytic Ward operator T2_ren remains undefined and the Cartan image is UNDEFINED_ANALYTICALLY; on the declared cornered Euclidean carrier, the boundary/corner BV-BFV complex, full-BV elliptic boundary problem, anomaly coefficients and differentiable D boundary charge are undefined", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "local_anomaly_completion_audit", "boundary_corner_anomaly_obstruction", "quantum_Cartan_D_disposition", "renormalized_D_Ward_nondefinition", "unitary_matter_no_go", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1")),
-        ("relative_einstein_weyl_qme_defect", "compact-product Einstein-Maxwell to Weyl-Maxwell relative anomaly mapping cone; complete classical all-row noncyclic restriction imported, while exact generic action-form inertia obstructs an action-compatible cyclic pushforward; a complete reduced changed-theory comparison shows that rank-one pairing/action deformation or one positive same-q physical auxiliary is minimal, but no standard-action-preserving repair, full off-shell changed-action lift, matched insertion or relative coefficient exists", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"], ("relative_Einstein_Weyl_QME_nondefinition", "relative_Einstein_Weyl_cyclic_pushforward_obstruction", "relative_Einstein_Weyl_pairing_deformation_classification")),
+        ("relative_einstein_weyl_qme_defect", "compact-product Einstein-Maxwell to Weyl-Maxwell relative anomaly mapping cone; complete classical all-row noncyclic restriction imported, while exact generic action-form inertia obstructs the standard cyclic pushforward; rank-one pairing/action deformation or one positive same-q physical auxiliary repairs reduced cyclicity, but every changed-theory orbit still lacks an off-shell BV lift and common renormalized insertion functor, so the relative class, orbit invariance and coefficient are undefined", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"], ("relative_Einstein_Weyl_QME_nondefinition", "relative_Einstein_Weyl_cyclic_pushforward_obstruction", "relative_Einstein_Weyl_pairing_deformation_classification", "relative_changed_theory_QME_nondefinition")),
         ("euclidean_determinant_factor", "round-S4 TT or ghost determinant factor", ["EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "Euclidean_elliptic_complex", "nonconformal_coefficient_match")),
         ("flat_tt_log_form_factor", "nonzero-momentum flat-TT logarithmic effective-action form factor", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1")),
         ("curvature_squared_covariant_log_form_factor", "covariant C log(Delta_C/mu^2) C effective-action form factor through curvature order two", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1")),

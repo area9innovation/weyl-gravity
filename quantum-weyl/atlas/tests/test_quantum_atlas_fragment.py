@@ -304,6 +304,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
                 "RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION",
                 "RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION",
                 "RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION",
+                "RELATIVE_CHANGED_THEORY_QME_NONDEFINITION",
             },
         )
         round_s4 = next(

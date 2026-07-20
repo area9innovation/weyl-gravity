@@ -2063,3 +2063,28 @@ positivity, particle, scattering, or unitarity claim.
 
 - [`RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION.json`](../quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION.json)
 - [`relative-einstein-weyl-pairing-deformation-classification.md`](../quantum-weyl/reports/relative-einstein-weyl-pairing-deformation-classification.md)
+
+### QME disposition of the changed-theory repairs
+
+Every nontrivial generic repair orbit has now been audited separately. The
+finite reduced carrier is compatible: the cyclic maps are exact, real,
+product-equivariant, \(q\)-shell preserving, and do not mix the
+unequal-frequency \(p\) shell. This does not define a one-loop comparison.
+
+The pairing orbit lacks a full odd-pairing lift, cyclic chain map, and
+density/renormalized contraction. The quadratic-action orbit lacks a local
+action, master solution, gauge-fixed Hessian, and matched measure/regulator.
+The physical-auxiliary orbit lacks a local off-shell representation,
+differential, action, nonminimal completion, measure, and anomaly insertion.
+Accordingly the relative one-loop class and coefficient are `UNDEFINED` on
+all three orbits, and orbit invariance is itself not defined.
+
+The strict pure-Weyl vector remains reference data only. It is not promoted
+to any changed-theory or relative coefficient. This is a terminal
+non-definition theorem for the present complete reduced repair family and
+repository data state, not a no-go against a future full off-shell lift.
+
+- [`RELATIVE_CHANGED_THEORY_QME_NONDEFINITION.json`](../quantum-weyl/transfer/certificates/RELATIVE_CHANGED_THEORY_QME_NONDEFINITION.json)
+- [`RELATIVE_CHANGED_THEORY_FINITE_CARRIER_COMPATIBILITY.json`](../quantum-weyl/transfer/certificates/RELATIVE_CHANGED_THEORY_FINITE_CARRIER_COMPATIBILITY.json)
+- [`RELATIVE_CHANGED_THEORY_LOCAL_COHOMOLOGY_NONDEFINITION.json`](../quantum-weyl/transfer/certificates/RELATIVE_CHANGED_THEORY_LOCAL_COHOMOLOGY_NONDEFINITION.json)
+- [`relative-changed-theory-qme-disposition.md`](../quantum-weyl/reports/relative-changed-theory-qme-disposition.md)
