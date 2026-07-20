@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/relative-order-three-descent-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "scope",
+    "dependencies",
+    "cubic_symbol_space",
+    "direct_descent",
+    "indirect_descent",
+    "combined_obstruction",
+    "classification",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-order-three-descent-obstruction-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_ORDER_THREE_DESCENT_OBSTRUCTION_V1"},
+    "result_state": {"const": "CUBIC_PROLONGATION_CANNOT_REMOVE_ORDER_TWO_OBSTRUCTION"},
+    "lifecycle_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "object"},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["order_two_obstruction", "target_q1"],
+      "properties": {
+        "order_two_obstruction": {"$ref": "#/$defs/artifact"},
+        "target_q1": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "cubic_symbol_space": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "A1_order_three_invariant_dimension",
+        "A2_order_three_invariant_dimension",
+        "raw_A1_coefficient_count",
+        "canonical_derivative_words"
+      ],
+      "properties": {
+        "A1_order_three_invariant_dimension": {"const": 1108},
+        "A2_order_three_invariant_dimension": {"const": 144},
+        "raw_A1_coefficient_count": {"const": 5600},
+        "canonical_derivative_words": {"const": 20}
+      }
+    },
+    "direct_descent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "third_stabilizer_vector_jets_nonzero",
+        "second_source_action_jets_nonzero",
+        "direct_obstruction_sensitivity_nonzero_entries"
+      ],
+      "properties": {
+        "third_stabilizer_vector_jets_nonzero": {"const": 0},
+        "second_source_action_jets_nonzero": {"const": 0},
+        "direct_obstruction_sensitivity_nonzero_entries": {"const": 0}
+      }
+    },
+    "indirect_descent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity",
+        "order_two_rowspace_witness",
+        "effective_cubic_functional"
+      ],
+      "properties": {
+        "identity": {"const": "L2=y2*M2 and M2*x2+D3*x3=0 imply L2*x2=-y2*D3*x3"},
+        "order_two_rowspace_witness": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/witness"}
+        },
+        "effective_cubic_functional": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "raw_cubic_coefficient_count",
+            "nonzero_entries",
+            "zero_matrix_records_sha256"
+          ],
+          "properties": {
+            "raw_cubic_coefficient_count": {"const": 5600},
+            "nonzero_entries": {"const": 0},
+            "zero_matrix_records_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        }
+      }
+    },
+    "combined_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "direct_L3",
+        "indirect_minus_y2_D3",
+        "surviving_order_one_left_null_evaluation",
+        "complete_order_three_chain_map_exists"
+      ],
+      "properties": {
+        "direct_L3": {"const": "0"},
+        "indirect_minus_y2_D3": {"const": "0"},
+        "surviving_order_one_left_null_evaluation": {"const": "1"},
+        "complete_order_three_chain_map_exists": {"const": false}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complete_endpoint_normalized_order_three_chain_map_obstructed",
+        "all_finite_orders_obstructed",
+        "order_four_chain_map_obstructed",
+        "current_improvement_obstructed",
+        "larger_carrier_obstructed",
+        "f2_incidence_activated",
+        "causal_observable_particle_or_quantum_claim"
+      ],
+      "properties": {
+        "complete_endpoint_normalized_order_three_chain_map_obstructed": {"const": true},
+        "all_finite_orders_obstructed": {"const": false},
+        "order_four_chain_map_obstructed": {"const": false},
+        "current_improvement_obstructed": {"const": false},
+        "larger_carrier_obstructed": {"const": false},
+        "f2_incidence_activated": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "PROVE_A_GENERAL_SPENCER_PROLONGATION_OBSTRUCTION_OR_CHANGE_THE_ENDPOINT_CURRENT_INCIDENCE_OR_RELATIVE_CARRIER"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        },
+        "verification_commands": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 150}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["word", "output_local", "input_local", "coefficient"],
+      "properties": {
+        "word": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"type": "integer", "minimum": 0, "maximum": 3}
+        },
+        "output_local": {"type": "integer", "minimum": 0, "maximum": 5},
+        "input_local": {"type": "integer", "minimum": 0, "maximum": 19},
+        "coefficient": {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"}
+      }
+    }
+  }
+}

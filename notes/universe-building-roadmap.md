@@ -2101,6 +2101,19 @@ chain map is obstructed through order two.  Bridge 1 now chooses among an
 order-three sensitivity screen, a changed endpoint/current incidence, or a
 larger relative carrier; none is yet promoted.
 
+The order-three screen is now exact.
+`EINSTEIN_WEYL_RELATIVE_ORDER_THREE_DESCENT_OBSTRUCTION_V1` gives invariant
+cubic dimensions 1,108 (`A1`) and 144 (`A2`).  Direct sensitivity vanishes
+because the relevant third stabilizer-vector jets and second source-action
+jets are zero.  Indirect relaxation also vanishes: the four-row order-two
+functional gives `-y2 D3 = 0` coefficientwise on all 5,600 raw cubic `A1`
+coefficients before isotropy or cubic top descent.  Hence the
+endpoint-normalized chain map is obstructed through order three.  This is not
+an all-order theorem and does not obstruct order four, another endpoint or
+current incidence, or a larger carrier.  The active Classical Bridge-1 gate
+is now the general Spencer/filtered-cohomology disposition of this fixed
+family rather than another brute-force coefficient layer.
+
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains
 `NO_CERTIFIED_MAP`; the relative functor may be prepared but Bridge 1 is not

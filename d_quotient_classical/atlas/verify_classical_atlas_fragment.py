@@ -153,8 +153,14 @@ def verify() -> None:
         raise AssertionError("legal top-descent census missing")
     if "four-row exact rowspace witness" not in pullback["claim_boundary"]:
         raise AssertionError("top-descent rowspace witness missing")
-    if "does not obstruct order three" not in pullback["claim_boundary"]:
-        raise AssertionError("order-two obstruction was overpromoted")
+    if "EINSTEIN_WEYL_RELATIVE_ORDER_THREE_DESCENT_OBSTRUCTION_V1" not in evidence_ids:
+        raise AssertionError("order-three descent-obstruction evidence missing")
+    if "all 5,600 raw cubic A1 coefficients" not in pullback["claim_boundary"]:
+        raise AssertionError("order-three raw cubic census missing")
+    if "complete endpoint-normalized chain map is obstructed through order three" not in pullback["claim_boundary"]:
+        raise AssertionError("order-three obstruction disposition missing")
+    if "does not prove an all-order no-go or obstruct order four" not in pullback["claim_boundary"]:
+        raise AssertionError("order-three obstruction was overpromoted")
     if pullback["mode_data"]["taub_maps"]["status"] != "OBSTRUCTED":
         raise AssertionError("order-one relative incidence not fail-closed")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]

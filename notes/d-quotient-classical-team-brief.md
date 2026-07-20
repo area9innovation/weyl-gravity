@@ -2508,6 +2508,20 @@ invariant chain map exists through differential order two.  The result is
 scoped: order three, another endpoint/current incidence and larger relative
 carriers remain open, and `f2` is still not activated.
 
+The cubic prolongation has now been closed as a separate exact gate.
+`EINSTEIN_WEYL_RELATIVE_ORDER_THREE_DESCENT_OBSTRUCTION_V1` finds invariant
+order-three dimensions 1,108 for `A1` and 144 for `A2`.  All third jets of
+the transitive stabilizer fields and all second source-action jets vanish at
+the base point, so the direct cubic sensitivity is zero.  The only indirect
+route is the relaxed quadratic equation
+`L2 x2 = -y2 D3 x3`; its right-hand functional is coefficientwise zero on
+all 5,600 raw cubic `A1` coefficients, even before isotropy and the cubic
+top equation are imposed.  The normalized defect therefore survives every
+legal correction through differential order three.  This is not an
+all-finite-order no-go and says nothing about order four, a changed
+endpoint/current incidence, or a larger carrier.  The next gate is a
+proof-first Spencer/filtered-cohomology analysis, not a blind quartic search.
+
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
 negative-norm one-particle class.  A counterexample is a successful result, not

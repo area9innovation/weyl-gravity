@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ORDER_THREE_DESCENT_OBSTRUCTION_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-20",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "status": "PASS",
+  "artifacts": {
+    "certificate": {
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_THREE_DESCENT_OBSTRUCTION_V1.json",
+      "sha256": "8497c63d51b0213b5578b6443100150a3f1b7b298623b514c97e632947f0d49d"
+    },
+    "producer": {
+      "path": "d_quotient_classical/relative/einstein_weyl_relative_order_three_descent_obstruction.py",
+      "sha256": "d062282ed5a83ad550d8bb426bf7fa7d54f546daff35ffb2066229dfdf03f3ed"
+    },
+    "verifier": {
+      "path": "d_quotient_classical/relative/verify_einstein_weyl_relative_order_three_descent_obstruction.py",
+      "sha256": "841ffff2d0aa08602466998f8b619ac80ead81a9f7b38b3cb7da1822d2df1b9e"
+    },
+    "tests": {
+      "path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_order_three_descent_obstruction.py",
+      "sha256": "ec0fb4ecf2890727b30668b466b81f2abc9129291282e68215965813260dacbd"
+    },
+    "certificate_schema": {
+      "path": "d_quotient_classical/schema/relative-order-three-descent-obstruction-v1.schema.json",
+      "sha256": "661a7ea38d126b68e2eedb7f29d1732f5a17006dd900cd859f0decb6acc416d8"
+    },
+    "report": {
+      "path": "d_quotient_classical/reports/einstein-weyl-relative-order-three-descent-obstruction.md",
+      "sha256": "fa598a80dabf1c0872c4ba5a0f5098594851fe1c9ea5757415bd30671858c7ee"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "Python compilation",
+        "strict Draft 2020-12 certificate schema",
+        "JSON parsing",
+        "scoped diff check",
+        "content-hash replay"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "producer_elapsed_seconds": 1.24,
+      "producer_max_rss_kib": 60668,
+      "independent_verifier_elapsed_seconds": 0.88,
+      "independent_verifier_max_rss_kib": 59900,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_order_three_descent_obstruction --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_order_three_descent_obstruction",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_order_three_descent_obstruction",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-order-three-descent-obstruction-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_THREE_DESCENT_OBSTRUCTION_V1.json"
+      ],
+      "result": "Invariant cubic dimensions are 1,108 for A1 and 144 for A2. Direct cubic sensitivity is zero, and the effective indirect functional -y2 D3 is coefficientwise zero on all 5,600 raw cubic A1 coefficients."
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This scoped cubic obstruction promotes no all-finite-order theorem, repaired relative q2, causal bridge, paper theorem or release freeze."
+    }
+  },
+  "science_forge": {
+    "work_item": "sf:program/work/classical-relative-order-three-prolongation",
+    "transition": "OBSTRUCTED",
+    "event": "sf:program/event/classical-relative-order-three-prolongation-OBSTRUCTED-13fd63fa1d48a60d",
+    "coordination_note": "This bounded predecessor was closed before the authoritative stream cutover. Its successor must be acquired through the Science Forge classical queue; no successor is activated by this receipt.",
+    "advisory_shadow_status": "FINDINGS",
+    "advisory_scope": "The read-only advisory rail reported pre-existing bridge drift, an unpinned development Forge build, and corpus-baseline drift. It exited zero by design and is not evidence for the mathematical certificate."
+  },
+  "claim_boundary": "This receipt certifies that neither direct cubic sensitivity nor indirect cubic relaxation removes the endpoint-normalized chain obstruction, so the fixed invariant chain-map ansatz is obstructed through differential order three. It does not prove an all-finite-order no-go, obstruct order four or higher, decide another endpoint/current incidence or larger carrier, activate f2, or establish any causal, observable, particle or quantum claim."
+}

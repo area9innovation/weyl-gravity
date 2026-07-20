@@ -1,0 +1,125 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC theorem propagates the four-row order-two obstruction identity through one further differential order. All third stabilizer-vector jets and second source-action jets vanish at the base point, so direct cubic sensitivity is zero. More strongly, the effective indirect functional -y2 D3 vanishes coefficientwise on all 5,600 raw cubic A1 coefficients, before imposing isotropy or the cubic top equation. Hence no endpoint-normalized invariant chain map exists through differential order three. This does not prove an all-order obstruction, obstruct order four, decide another endpoint/current incidence or larger carrier, activate f2, or imply causal, observable, particle or quantum claims.",
+  "classification": {
+    "all_finite_orders_obstructed": false,
+    "causal_observable_particle_or_quantum_claim": false,
+    "complete_endpoint_normalized_order_three_chain_map_obstructed": true,
+    "current_improvement_obstructed": false,
+    "f2_incidence_activated": false,
+    "larger_carrier_obstructed": false,
+    "order_four_chain_map_obstructed": false
+  },
+  "combined_obstruction": {
+    "complete_order_three_chain_map_exists": false,
+    "direct_L3": "0",
+    "indirect_minus_y2_D3": "0",
+    "surviving_order_one_left_null_evaluation": "1"
+  },
+  "cubic_symbol_space": {
+    "A1_order_three_invariant_dimension": 1108,
+    "A2_order_three_invariant_dimension": 144,
+    "canonical_derivative_words": 20,
+    "raw_A1_coefficient_count": 5600
+  },
+  "dependencies": {
+    "order_two_obstruction": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ORDER_TWO_TOP_DESCENT_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_TWO_TOP_DESCENT_OBSTRUCTION_V1.json",
+      "sha256": "63fb1e8cc191f1471de4fa504581186dde1524337f0d30cdbe41db91b73a633c"
+    },
+    "target_q1": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q1",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/q1.json",
+      "sha256": "43c00909830fde902cf1332eae804f6edd6ad263bef7ce61d08bdbd20449290b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "direct_descent": {
+    "direct_obstruction_sensitivity_nonzero_entries": 0,
+    "second_source_action_jets_nonzero": 0,
+    "third_stabilizer_vector_jets_nonzero": 0
+  },
+  "indirect_descent": {
+    "effective_cubic_functional": {
+      "nonzero_entries": 0,
+      "raw_cubic_coefficient_count": 5600,
+      "zero_matrix_records_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    "identity": "L2=y2*M2 and M2*x2+D3*x3=0 imply L2*x2=-y2*D3*x3",
+    "order_two_rowspace_witness": [
+      {
+        "coefficient": "-1",
+        "input_local": 2,
+        "output_local": 1,
+        "word": [
+          0,
+          2,
+          2
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "input_local": 2,
+        "output_local": 0,
+        "word": [
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "coefficient": "-1/2",
+        "input_local": 1,
+        "output_local": 0,
+        "word": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "coefficient": "1/2",
+        "input_local": 0,
+        "output_local": 0,
+        "word": [
+          2,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  "lifecycle_status": "OBSTRUCTED",
+  "next_gate": "PROVE_A_GENERAL_SPENCER_PROLONGATION_OBSTRUCTION_OR_CHANGE_THE_ENDPOINT_CURRENT_INCIDENCE_OR_RELATIVE_CARRIER",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_order_three_descent_obstruction.py": "d062282ed5a83ad550d8bb426bf7fa7d54f546daff35ffb2066229dfdf03f3ed",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_order_three_descent_obstruction.py": "ec0fb4ecf2890727b30668b466b81f2abc9129291282e68215965813260dacbd",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_order_three_descent_obstruction.py": "841ffff2d0aa08602466998f8b619ac80ead81a9f7b38b3cb7da1822d2df1b9e",
+      "d_quotient_classical/schema/relative-order-three-descent-obstruction-v1.schema.json": "661a7ea38d126b68e2eedb7f29d1732f5a17006dd900cd859f0decb6acc416d8"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_order_three_descent_obstruction --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_order_three_descent_obstruction",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_order_three_descent_obstruction"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ORDER_THREE_DESCENT_OBSTRUCTION_V1",
+  "result_state": "CUBIC_PROLONGATION_CANNOT_REMOVE_ORDER_TWO_OBSTRUCTION",
+  "schema": "pure-weyl-relative-order-three-descent-obstruction-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "support-local homogeneous differential-operator ansatz before harmonic or causal reduction",
+    "carrier": "A1:P3(20)->W1(14), A2:P4(5)->W2(6)",
+    "charge_sector": "five connected spacetime stabilizer currents",
+    "degree": "one and two",
+    "ell": "not harmonic-reduced",
+    "k": "arbitrary local covector",
+    "m": "not harmonic-reduced",
+    "omega": "arbitrary local covector",
+    "parity": "even chain-map components",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  }
+}

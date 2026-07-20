@@ -239,7 +239,19 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             "complete endpoint-normalized chain map is obstructed through order two",
             entry["claim_boundary"],
         )
-        self.assertIn("does not obstruct order three", entry["claim_boundary"])
+        self.assertIn(
+            "EINSTEIN_WEYL_RELATIVE_ORDER_THREE_DESCENT_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("all 5,600 raw cubic A1 coefficients", entry["claim_boundary"])
+        self.assertIn(
+            "complete endpoint-normalized chain map is obstructed through order three",
+            entry["claim_boundary"],
+        )
+        self.assertIn(
+            "does not prove an all-order no-go or obstruct order four",
+            entry["claim_boundary"],
+        )
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OBSTRUCTED")
 
     def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:
