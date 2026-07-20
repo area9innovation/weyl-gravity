@@ -1,0 +1,20 @@
+{
+  "id": "sf:forge-request/bug-science-forge-shared-index-cross-stream-commit",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Make every Science Forge Git mutation fail closed against the shared Git index. In the authoritative multi-agent physics worktree, Observer had staged its scoped common-action replay package while Einstein invoked `s-f work pull` for bridge-relative-residual-action-descent. Commit 135cfff6c, whose intended Science Forge mutation was only the two bridge lease/ACTIVE events, also committed all twelve staged Observer scientific paths. Observer then closed in commit 5b08a2582 with report/current-commit 092d26077, even though its actual producer paths entered history through the unrelated Einstein activation commit 135cfff6c. The same shared-index mechanism also let coordinator commit 092d26077 absorb a staged roadmap hunk. This breaks coherent commit ownership and makes the Science Forge report commit pointer unreliable even though the scientific files themselves verify.",
+    "depends_on": [
+      "sf:program/work/bridge-relative-residual-action-descent",
+      "sf:program/work/observer-common-action-repair-observable-replay"
+    ],
+    "stop_condition": "Use an isolated temporary Git index for every `s-f` operation that creates a commit, or refuse before mutation when the real index contains entries outside that operation's exact intended path set. Add a deterministic shared-worktree regression with two agents: agent A stages reported scientific paths; agent B performs work pull/lease/transition/commit; B's commit must contain only B's generated events and A's staged index/worktree state must remain byte-identical. Then let A run work commit: its commit must contain exactly report.changed_paths intersect allowed_paths. Work report/close must also reject a claimed current_commit that does not contain the reported deliverables, unless an explicit verified imported-commit field names the actual producer. The fixture must cover a programme nested below the Git toplevel and preserve unrelated staged, unstaged, and untracked files.",
+    "forbid": "broad `git commit` against the process-global index; clearing, resetting, unstaging, stashing, overwriting, or committing another agent's index entries; serializing all research agents behind a global long-lived lock; rewriting commits 135cfff6c, 092d26077, or 5b08a2582; weakening report-and-allowlist intersection; treating a commit message or current HEAD as proof that reported paths are present; requiring separate worktrees as the only fix.",
+    "notes": [
+      "Minimal historical reproduction: `git show --name-status 135cfff6c` contains twelve `closed_universe_observers/` scientific paths plus only two intended `planning/events/bridge-relative-residual-action-descent-*` paths. `git show --name-status 5b08a2582` contains only Observer lifecycle events. `s-f streams-view` reports observer-common-action-repair-observable-replay last report 092d26077, while `git log -- closed_universe_observers/certificates/BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION.json` points to 135cfff6c.",
+      "The physics programme will preserve the published history and treat 135cfff6c as the actual imported producer for the Observer certificate. Future coordinator commits inspect `git diff --cached --name-only` before committing; this is a manual guard, not the requested substrate repair."
+    ]
+  }
+}
