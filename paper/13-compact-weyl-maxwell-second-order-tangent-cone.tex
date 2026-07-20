@@ -1904,6 +1904,91 @@ path.  A nonzero residual obstructs this particular path only; it is not a
 nonradial no-go.
 \end{proof}
 
+\begin{proposition}[Moving-square contraction and its sharp ansatz obstruction]
+\label{prop:candidate-17-20-moving-square-contraction}
+On either candidate-\((17)/(20)\) singular component, retain uniform scaling
+of the arbitrary \(K\) factor and exact transfer of its released occupations,
+but allow the receiving common-square direction to move continuously.  Put
+\[
+ \alpha=\omega_+A_+-\omega_-A_-,
+ \qquad
+ \delta=\omega_+N_+-\omega_-N_-.
+\]
+Then every point with \(\alpha\delta>0\) contracts to the connected
+double-singular hub.  The same holds for phase-real square directions and
+for the square-factor vertex.
+
+For a non-phase-real point with \(\delta\neq0\), the complementary declared
+ansatz is obstructed: if \(\alpha\delta<0\), its receiving coefficient has
+one interior zero at which the scaled kernel moment is nonzero; if
+\(\alpha=0\) and the square factor is nonzero, continuity fails at the
+initial endpoint.
+\end{proposition}
+
+\begin{proof}
+In the normalized Cartesian Cartan model, choose a projective phase so that
+\(z=x+iy\), \(x\cdot y=0\), and
+\(\lVert x\rVert^2+\lVert y\rVert^2=1\).  With
+\(u=2\lVert x\rVert\lVert y\rVert\), direct use of
+\[
+ [S(z),S(z)^\dagger]
+ =\bigl(z^\dagger z\bigr)
+  \bigl(zz^\dagger-\overline z\,z^T\bigr)
+\]
+and
+\(\lVert S(z)\rVert^2=(2+u^2)/3\) gives the normalized moment radius
+\[
+ F(u)=\frac{3u}{2+u^2},
+ \qquad
+ F'(u)=\frac{3(2-u^2)}{(2+u^2)^2}>0
+ \quad(0\leq u\leq1).
+\]
+Rotations supply every direction, so the complete normalized
+Cartan-square moment image is a closed ball.  In particular, every multiple
+\(r\mu_0\), \(0\leq r\leq1\), is reached continuously from an initial
+moment \(\mu_0\).
+
+Let \(s=t^2\) be the remaining occupation fraction in the uniformly scaled
+kernel factor.  The receiving square coefficient is
+\[
+ c(s)=s\alpha+(1-s)\delta.
+\]
+Initial rotation zero gives \(M_K=-\alpha\mu_0\).  Hence the moving-square
+choice
+\[
+ \mu_{\rm sq}(s)=r(s)\mu_0,
+ \qquad
+ r(s)=\frac{s\alpha}{c(s)}
+\]
+satisfies
+\[
+ -s\alpha\mu_0+c(s)\mu_{\rm sq}(s)=0.
+\]
+If \(\alpha\delta>0\), then
+\[
+ \frac{dr}{ds}=\frac{\alpha\delta}{c(s)^2}>0,
+ \qquad r(0)=0,\quad r(1)=1,
+\]
+so the Cartan moment ball supplies the entire path.  At \(s=0\) the kernel
+factor is at its vertex and the receiving square is phase-real, placing the
+endpoint in the connected hub.  The phase-real and square-vertex cases use
+zero square moment directly.
+
+If \(\alpha\delta<0\), then
+\[
+ s_0=-\frac{\delta}{\alpha-\delta}\in(0,1),
+ \qquad c(s_0)=0.
+\]
+For nonzero \(\mu_0\), the remaining kernel moment
+\(-s_0\alpha\mu_0\) is nonzero, so no square direction repairs this ansatz.
+If \(\alpha=0\), \(\delta\neq0\), and the initial nonvertex direction has
+\(\mu_0\neq0\), every \(s<1\) instead forces
+\(\mu_{\rm sq}(s)=0\), which cannot converge to \(\mu_0\).
+
+This classifies the stated ansatz, not independent node scaling or a general
+deformation of the \(K\) factor inside \(T_3(f,g)=0\).
+\end{proof}
+
 \begin{proposition}[Candidate-(18) complete complex singular resolution]
 \label{prop:candidate-18-complex-singular-resolution}
 Let \(R_\pm=\operatorname{Rank}_{\leq1}(5\times2)_\pm\).  The complete
@@ -2496,6 +2581,8 @@ Candidate-(17)/(20) one-parity common-square rotation quotient &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.json}\\
 Candidate-(17)/(20) singular radial contraction &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.json}\\
+Candidate-(17)/(20) moving-square contraction and ansatz obstruction &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json}\\
 Fixed-occupation node-phase-reduced divisors and local quotients &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json}\\
 Local lifted-rotation descent through current leaves &
@@ -2614,7 +2701,13 @@ Proposition~\ref{prop:candidate-17-20-singular-radial-contraction}, including
 the receiving-square vertex.  Off balance, the same radial path covers the
 phase-real common-square sublocus, but its exact residual is not a nonradial
 no-go; complete singular connectedness remains open there and on candidate
-\((17)\).  The
+\((17)\).  Proposition~\ref{prop:candidate-17-20-moving-square-contraction}
+then classifies the complete uniform-scaling ansatz with a moving square
+direction.  Candidate \((17)\)'s \(\alpha<0\) stratum and candidate
+\((20)\)'s off-balance \(\alpha\delta>0\) stratum contract to the hub; the
+opposite-sign non-phase-real region has an exact coefficient-zero
+obstruction within this ansatz.  Independent node scaling and deformation
+inside \(T_3(f,g)=0\) remain open.  The
 regular fixed-occupation node-phase reductions are classified by
 Proposition~\ref{prop:phase-reduced-presymplectic-divisors}.  The latter
 retains the common parity-node phases and candidate-(18) spectators rather

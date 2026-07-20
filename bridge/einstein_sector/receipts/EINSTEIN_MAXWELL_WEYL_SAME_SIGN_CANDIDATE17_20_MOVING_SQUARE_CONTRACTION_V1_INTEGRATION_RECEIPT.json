@@ -1,0 +1,60 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_MOVING_SQUARE_CONTRACTION_V1_INTEGRATION_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Fail-closed atlas, Einstein brief, canonical roadmap and Paper 13 integration of the candidate-17/20 uniform-scaling moving-square contraction and its complementary ansatz obstruction.",
+  "source_commit": "4735fe29258e5186eb579ce090fc01b00f2d8b38",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "content_sha256": {
+    "bridge/einstein_sector/atlas/EINSTEIN_ATLAS_V1_TIER_RECEIPT.json": "3a0b76fb0889ce5ed0dab9c08f80da51cd39e957fe5ee978e6c525c7ef89b440",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "4b428c41c76382ea605a98e0a8d182bfaa1546521b2632af5ece4c2fdf283dd9",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "6668bde96e298b0f5b8d3634cf9482cab0a6987e1692976cbb029ef9aedb42e6",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "16a7e7b196470192bb3ea7abcdb6d6475d97634bb943447d55573c64ee29ebe9",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "2efc1b2acac6ff8b3bc56ef009059d7584f5e4149dca04feba5c64d733ad49bd",
+    "bridge/einstein_sector/receipts/EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_MOVING_SQUARE_CONTRACTION_V1_TIER_RECEIPT.json": "b05266fb41d4e5299e0246ab4ed8041f77475918e12ca6c7db41d7c757e33acc",
+    "notes/d-quotient-einstein-team-brief.md": "2a9870f230569b5ed2653ad108cee8e9f3b53511627255e6a7ff272ab4f68366",
+    "notes/universe-building-roadmap.md": "5b64d45ea6a961f2b3dcf3b8ca89767975ac57c8ea36192c63f25f2d59068e45",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json": "b47cc7792ff6c9811f8924a726c42ba521bd21c315f5127e2332d89383cc1b65",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.pdf": "e608eda915b707bccf5b3f4f1cc3ba29da978ddf019087e11a8cf1ea008e6604",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex": "4594eb5be77f1f9cf3b0ce40c48babd3c1dfe4428fb37cfc2ac80ed5caa10e5a"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on the atlas producer, verifier and focused tests",
+        "python3 -m json.tool on the generated atlas, Paper 13 claim map and both moving-square receipts",
+        "git diff --check on the scoped integration paths",
+        "three-pass pdflatex build with no undefined references or overfull boxes"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": {
+        "moving_square": 8,
+        "atlas": 116
+      },
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 paper/verify_13_14_draft_source_maps.py"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "Paper 13 pins 55 committed inputs at source commit 4735fe29. The atlas row independently requires the closed Cartan moment ball, sign-compatible contraction, coefficient-zero and endpoint-continuity ansatz obstructions, and the OPEN nonuniform/general-path boundary."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "Paper 13 remains DRAFT_ALLOWED; complete off-balance connectedness, nonuniform kernel-node scaling, kernel-factor deformation, occupation gluing and all higher lifecycles remain open."
+    }
+  },
+  "claim_boundary": "CERTIFIED only for the complete uniform-scaling, occupation-transfer, arbitrary-moving-square ansatz. The complementary obstruction is not a general nonradial no-go. No complete off-balance connectedness or disconnection, occupation gluing, final residual, all-orders, causal, observational or quantum claim is made."
+}

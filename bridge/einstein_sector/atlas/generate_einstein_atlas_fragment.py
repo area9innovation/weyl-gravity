@@ -120,6 +120,7 @@ CERTIFICATES = {
     "same_sign_candidate17_20_double_singular_rotation_zero_fibre": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.json",
     "same_sign_candidate17_20_common_square_rotation_quotient": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.json",
     "same_sign_candidate17_20_singular_radial_contraction": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.json",
+    "same_sign_candidate17_20_moving_square_contraction": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json",
     "same_sign_active_phase_reduced_presymplectic_divisors": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
     "same_sign_active_local_rotation_leaf_descent": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
@@ -1220,6 +1221,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","On the candidate-20 balance divisor the complete fixed-occupation singular-union rotation-zero fibre is connected through the certified radial paths and connected hub; off balance only the phase-real radial subloci are certified."),("CERTIFIED","The same finite-dimensional radial paths lie in the smooth exponential-polynomial correction class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_candidate17_20_singular_radial_contraction","same_sign_candidate17_20_common_square_rotation_quotient","same_sign_candidate17_20_double_singular_rotation_zero_fibre","same_sign_third_transvectant_singular_locus","taub"),
             "The exact off-balance residual obstructs this canonical radial contraction when the common-square moment is nonzero; it is not a nonradial no-go. Candidate 17 and candidate 20 off balance therefore retain OPEN complete-singular connectedness. Occupation gluing, final residual descent, and causal, observational or quantum maps remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_moving_square_contraction",
+            _scope(theory="Weyl-Maxwell target", background="candidates 17 and 20 separately; balance, sign-compatible and complementary ansatz-obstruction strata are retained separately", boundaries="closed S1_L times S2 after both free active-node phases and before lifted-rotation or final residual quotient", carrier="both complete singular components under uniform scaling of the arbitrary K factor, exact occupation transfer and arbitrary continuous motion of the receiving common-square direction", degree=2, parity="both labelled factorized parity channels", ell="input 2 x 2; output L=1", m="all m=-2,...,2 through the normalized Cartan-square moment ball and third-transvectant kernel", k="candidate-specific signed compact momenta, never identified across candidates", omega="candidate-specific DIFFERENCE collision with alpha=omega_plus*A_plus-omega_minus*A_minus and delta=omega_plus*N_plus-omega_minus*N_minus", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Candidates 17 and 20 remain distinct. Candidate 20's delta=0 theorem is retained; off balance the new positive statement is exactly alpha*delta>0, together with phase-real directions and square vertices."),
+            ("CERTIFIED","The normalized Cartan-square moment map has the complete closed unit ball as image, with radius F(u)=3u/(2+u^2). For alpha*delta>0, r(s)=s*alpha/[s*alpha+(1-s)*delta] stays in [0,1] and cancels the scaled kernel moment."),
+            ("CERTIFIED","The entire uniform-scaling/moving-square ansatz is disposed. If alpha*delta<0 and the initial square moment is nonzero, the receiving coefficient has one interior zero while the kernel moment remains nonzero. At alpha=0 a nonvertex non-phase-real start has an endpoint-continuity obstruction."),
+            ("CERTIFIED","Uniform scaling preserves the third-transvectant kernel equation, every moved receiving factor remains common-square, and sign-compatible paths end in the connected double-singular hub."),
+            _second_order(("CERTIFIED","Candidate 17's complete alpha<0 stratum and candidate 20 off balance with alpha having the sign of delta contract to the hub; phase-real and square-vertex points remain covered. The complementary obstruction is only for the declared uniform-scaling ansatz."),("CERTIFIED","All declared paths are finite smooth exponential-polynomial carrier paths; no all-orders promotion is made."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate17_20_moving_square_contraction","same_sign_candidate17_20_singular_radial_contraction","same_sign_candidate17_20_common_square_rotation_quotient","same_sign_candidate17_20_double_singular_rotation_zero_fibre","same_sign_third_transvectant_singular_locus"),
+            "This is not a general nonradial no-go and does not establish complete candidate-17 or candidate-20 off-balance connectedness or disconnection. Independent K-node scaling, deformations of the K factor inside T3(f,g)=0, occupation gluing, final residual descent and causal, observational or quantum maps remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_same_sign_active_phase_reduced_presymplectic_divisors",
@@ -2339,6 +2352,20 @@ def build() -> dict[str, object]:
         raise AssertionError("candidate-17/20 singular radial contraction changed")
     if singular_radial["candidate17_complete_singular_rotation_zero_fibre_connected"] or singular_radial["candidate20_off_balance_complete_singular_rotation_zero_fibre_connected"] or singular_radial["off_balance_nonradial_contraction_no_go"] or singular_radial["occupation_strata_glued"] or singular_radial["final_residual_descent"] or singular_radial["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("candidate-17/20 singular radial contraction exceeded scope")
+    moving_square = records["same_sign_candidate17_20_moving_square_contraction"]["classification"]
+    if not (
+        moving_square["normalized_cartan_square_moment_image_closed_ball"]
+        and moving_square["uniform_kernel_scaling_moving_square_ansatz_classified"]
+        and moving_square["alpha_delta_positive_complete_singular_stratum_contracts_to_hub"]
+        and moving_square["candidate17_alpha_negative_complete_singular_stratum_contracts_to_hub"]
+        and moving_square["candidate20_off_balance_alpha_same_sign_delta_stratum_contracts_to_hub"]
+        and moving_square["square_factor_vertex_off_balance_contracts_to_hub"]
+        and moving_square["opposite_sign_interior_zero_obstruction_certified"]
+        and moving_square["zero_alpha_nonphase_real_continuity_obstruction_certified"]
+    ):
+        raise AssertionError("candidate-17/20 moving-square contraction changed")
+    if moving_square["candidate17_complete_singular_rotation_zero_fibre_connected"] or moving_square["candidate20_off_balance_complete_singular_rotation_zero_fibre_connected"] or moving_square["general_nonradial_no_go"] or moving_square["nonuniform_scaling_classified"] or moving_square["occupation_strata_glued"] or moving_square["final_residual_descent"] or moving_square["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-17/20 moving-square contraction exceeded scope")
     phase_reduced_divisors = records["same_sign_active_phase_reduced_presymplectic_divisors"]["classification"]
     if not (
         phase_reduced_divisors["candidate17_regular_fixed_occupation_phase_reduced_divisor_classified"]

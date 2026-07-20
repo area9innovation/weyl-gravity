@@ -718,6 +718,16 @@ def verify() -> None:
         raise AssertionError("candidate-17/20 singular radial correction scope changed")
     if "not a nonradial no-go" not in singular_radial["claim_boundary"] or "retain OPEN complete-singular connectedness" not in singular_radial["claim_boundary"]:
         raise AssertionError("candidate-17/20 singular radial fail-closed boundary disappeared")
+    moving_square = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_moving_square_contraction"]
+    moving_square_second = moving_square["mode_data"]["second_order"]
+    if moving_square["descriptions"]["symplectic"] != "CERTIFIED" or "closed unit ball" not in moving_square["mode_data"]["lee_wald"]["statement"] or "r(s)=s*alpha" not in moving_square["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("candidate-17/20 moving-square moment ball was hidden")
+    if moving_square["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "interior zero" not in moving_square["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-17/20 moving-square ansatz obstruction changed")
+    if moving_square_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or moving_square_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-17/20 moving-square correction scope changed")
+    if "not a general nonradial no-go" not in moving_square["claim_boundary"] or "Independent K-node scaling" not in moving_square["claim_boundary"]:
+        raise AssertionError("candidate-17/20 moving-square fail-closed boundary disappeared")
     local_rotation = by_id["einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent"]
     local_rotation_second = local_rotation["mode_data"]["second_order"]
     if local_rotation["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "local simple symplectic leaf quotient" not in local_rotation["mode_data"]["lee_wald"]["statement"]:

@@ -4243,9 +4243,44 @@ is `CERTIFIED`.
 Off balance, the same path remains rotation-zero on the phase-real
 common-square sublocus.  Its exact residual is an obstruction to this
 canonical radial contraction, not a nonradial no-go.  Candidate 17 and
-candidate 20 off balance therefore remain open.  The active gate is now to
-move the square direction during contraction or construct a quotient
-invariant that separates a zero-fibre component from the hub.
+candidate 20 off balance therefore require a moving-direction test.
+
+That complete moving-square ansatz is now classified.  For a normalized
+Cartan square, its rotational moment fills a closed ball:
+
+```text
+F(u)=3*u/(2+u^2),  0<=u<=1,
+F'(u)=3*(2-u^2)/(2+u^2)^2>0.
+```
+
+Split the frequency-weighted coefficient into the initial square allocation
+`alpha` and total `delta`.  Under uniform scaling `s=t^2` of the arbitrary
+kernel factor, the receiving coefficient and required moment scale are
+
+```text
+c(s)=s*alpha+(1-s)*delta,
+r(s)=s*alpha/c(s),
+dr/ds=alpha*delta/c(s)^2.
+```
+
+If `alpha*delta>0`, then `r` stays in `[0,1]`; moving the square direction
+along its moment ray cancels the kernel moment exactly and contracts the
+point to the connected hub.  Thus candidate 17's complete `alpha<0` stratum
+and candidate 20 off balance with `alpha` having the sign of `delta` are
+disposed positively.  Phase-real points and the off-balance square vertex
+also contract.
+
+The complementary failure is now exact but scoped.  If
+`alpha*delta<0` and the initial square moment is nonzero, `c(s)` has a unique
+interior zero while the scaled kernel moment remains nonzero.  If `alpha=0`
+at a nonvertex non-phase-real point, continuity fails at the starting
+endpoint.  These are no-go statements for the complete uniform-scaling,
+occupation-transfer, arbitrary-moving-square ansatz—not for general
+nonradial paths.  Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_moving_square_contraction`
+is `CERTIFIED`.  The active gate is now independent kernel-node scaling or
+deformation of the kernel factor inside `T3(f,g)=0` on the remaining
+`alpha*delta<=0` non-phase-real strata.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
