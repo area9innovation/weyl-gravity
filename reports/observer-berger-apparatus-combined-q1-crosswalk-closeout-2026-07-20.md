@@ -38,6 +38,6 @@ complete observer-atlas test module passed 60 tests in 26.09 s.  Two
 108-row unary and K-gate inputs.  Tier 3 was not run because this scoped
 obstruction is not a freeze, tag or release.
 
-CLOSE-OUT: OBSTRUCTION — the unchanged six-rod 108-row base has no background-preserving linear K_Berger completion, and parent material rods cannot supply the two missing global directions
+CLOSE-OUT: OBSTRUCTED — the unchanged six-rod 108-row base has no background-preserving linear K_Berger completion, and parent material rods cannot supply the two missing global directions
 
 EVIDENCE: `closed_universe_observers/certificates/BERGER_DYNAMICAL_APPARATUS_COMBINED_Q1_CROSSWALK_OBSTRUCTION.json`
