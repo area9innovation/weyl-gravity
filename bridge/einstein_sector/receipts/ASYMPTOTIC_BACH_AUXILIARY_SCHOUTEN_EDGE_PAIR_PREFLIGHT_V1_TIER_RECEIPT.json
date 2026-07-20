@@ -1,0 +1,57 @@
+{
+  "schema": "asymptotic-bach-auxiliary-schouten-edge-pair-preflight-receipt-v1",
+  "result_id": "ASYMPTOTIC_BACH_AUXILIARY_SCHOUTEN_EDGE_PAIR_PREFLIGHT_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.16,
+      "commands": [
+        "python3 -m py_compile <scoped producer, verifier and test>",
+        "python3 -m json.tool <scoped schema, certificate and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.27,
+      "commands": [
+        "PYTHONPATH=. python3 -m bridge.einstein_sector.asymptotic_bach_auxiliary_schouten_edge_pair_preflight --check",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_asymptotic_bach_auxiliary_schouten_edge_pair_preflight.py",
+        "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_asymptotic_bach_auxiliary_schouten_edge_pair_preflight -v",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-asymptotic-bach-auxiliary-schouten-edge-pair-fragment-v1.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.88,
+      "commands": [
+        "PYTHONPATH=. python3 -m bridge.einstein_sector.asymptotic_bach_local_counterterm_cohomology_obstruction --check",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_asymptotic_bach_local_counterterm_cohomology_obstruction.py"
+      ],
+      "reason": "The preflight consumes the fixed-boundary local-counterterm no-go by exact hash and changes its minimal-enlargement lifecycle."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a scoped fail-closed preflight with the boundary phase space still OPEN, not a theorem freeze, release, or shared-core change."
+    }
+  },
+  "source_manifest": {
+    "bridge/einstein_sector/asymptotic_bach_auxiliary_schouten_edge_pair_preflight.py": "7e1de00d9e3de3b9a685b382567228d40ad4e0ee480aca536d6d88fe423d534d",
+    "bridge/einstein_sector/verify_asymptotic_bach_auxiliary_schouten_edge_pair_preflight.py": "c0ff25a6a456c730efcea3937f56d05ab01624822db587fd65ca6208f92b24b2",
+    "bridge/einstein_sector/tests/test_asymptotic_bach_auxiliary_schouten_edge_pair_preflight.py": "924865e252ae692551777fb27da2cd1784ea7da960665c21023b7becc33293e6",
+    "bridge/einstein_sector/schema/asymptotic-bach-auxiliary-schouten-edge-pair-preflight-v1.schema.json": "151511f6270aa59ca5cb044ca3bf6ea8aafa71f85d44996bd0221dbb0b5a924c",
+    "bridge/einstein_sector/reports/asymptotic-bach-auxiliary-schouten-edge-pair-preflight-v1.md": "920ff624cf91224a97d782aa324b9112f654398f88d5beef7c21f738a9bae907",
+    "bridge/certificates/ASYMPTOTIC_BACH_AUXILIARY_SCHOUTEN_EDGE_PAIR_PREFLIGHT_V1.json": "e97bbcdf96ea9f7b47581841430399ccca77caf558acff137840a712e6a6ad43",
+    "residual_atlas/einstein-asymptotic-bach-auxiliary-schouten-edge-pair-fragment-v1.json": "9ef6f8328a24e0feb91232c96e40d2d97585c09438b0f537e8999ba2a839cf75",
+    "bridge/certificates/ASYMPTOTIC_BACH_LOCAL_COUNTERTERM_COHOMOLOGY_OBSTRUCTION_V1.json": "6ccb79e0626ff81fa2ffbe79166f578e50436078eaab3787da5c826112434b7d"
+  },
+  "independent_rail": {
+    "status": "PASS",
+    "method": "The verifier does not import the producer. It independently recomputes the auxiliary Legendre transform, rank-four tracefree normal-jet principal block, Weyl-ghost trace, pinned input hash and fail-closed atlas state."
+  },
+  "claim_boundary": "This receipt covers the exact full-tensor auxiliary Schouten formulation, its Lee-Wald potential, Weyl-ghost action and minimal tracefree normal-jet principal rank. It does not certify a cut symplectic form, Bondi weights, boundary gauge/BFV descent, p0/p1 renormalization, corner matching, P0/D_M charges, causal propagation or any particle, scattering, stability, positivity, unitarity or quantum claim."
+}

@@ -1,0 +1,197 @@
+{
+  "boundary_tests": {
+    "Iminus_i0_Iplus_corner_matching": "NO_CERTIFIED_MAP",
+    "cut_conservation_with_flux": "OPEN",
+    "cut_finiteness": "OPEN_REQUIRES_BONDI_WEIGHTS_FOR_S_AB",
+    "gauge_descent": "OPEN",
+    "nondegeneracy_after_exact_boundary_quotient": "OPEN",
+    "tracefree_normal_jet_principal_rank": "CERTIFIED_RANK_4"
+  },
+  "branch_dictionary": {
+    "Einstein_image": "delta Ricci_ab=0 implies s_ab=0, so the pure Einstein radiative branch remains isotropic unless paired with an independent auxiliary/edge response.",
+    "additional_Bach_direction": "s_ab!=0 records the second-order Schouten/Bach defect and distinguishes fourth-order data not visible in the leading metric coefficient alone.",
+    "p0_p1_warning": "The metric 1/r coefficient can receive both the p0 recursion and the p1 leading branch; falloff labels alone do not define independent canonical coordinates."
+  },
+  "charge_disposition": {
+    "D_M": "OPEN",
+    "D_rad": "NO_CERTIFIED_MAP",
+    "H_ESU": "NOT_APPLICABLE_ON_FIXED_MINKOWSKI_PATCH",
+    "P0": "OPEN"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC theorem identifies the exact full-tensor auxiliary Schouten variable, its first-order Lee-Wald current, Weyl-ghost transformation and minimal prequotient tracefree cut rank. It does not assign Bondi weights to pi_ab, construct the null-boundary ghost/antifield/BFV complex, renormalize the p0/p1 form, prove corner matching or gauge descent, compute P0/D_M charges, or establish causal, particle, scattering, stability, positivity, unitarity or quantum claims.",
+  "classification": {
+    "D_M_charge_computed": false,
+    "P0_charge_computed": false,
+    "Weyl_ghost_action_on_auxiliary_certified": true,
+    "boundary_gauge_descent_certified": false,
+    "causal_particle_scattering_stability_positivity_or_quantum_claim": false,
+    "corner_matching_certified": false,
+    "full_Bondi_BV_BFV_phase_space_constructed": false,
+    "full_tensor_auxiliary_action_exactly_equivalent_modulo_Euler": true,
+    "full_tensor_auxiliary_lee_wald_potential_derived": true,
+    "local_counterterm_no_go_imported_by_exact_hash": true,
+    "minimal_tracefree_edge_component_count_certified": true,
+    "prequotient_tracefree_normal_jet_principal_pairing_nondegenerate": true,
+    "renormalized_p0_p1_pairing_constructed": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_auxiliary_legendre_transform": {
+    "TT_one_polarization_current": "-dphi1*psi2 + dphi2*psi1",
+    "Weyl_ghost_action": {
+      "delta_sigma_A_ab": "alpha_B*(-partial_a partial_b sigma+(1/2)*eta_ab*Box sigma)",
+      "delta_sigma_A_trace": "alpha_B*box_sigma",
+      "delta_sigma_R": "-6*Box sigma",
+      "delta_sigma_Ricci_ab": "-2*partial_a partial_b sigma-eta_ab*Box sigma",
+      "delta_sigma_h_ab": "2*sigma*eta_ab",
+      "delta_sigma_s_ab": "-alpha_B*partial_a partial_b sigma",
+      "delta_sigma_s_trace": "-alpha_B*box_sigma"
+    },
+    "auxiliary_Hamiltonian": "-R2*alpha_B/12 + Ricci2*alpha_B/4",
+    "auxiliary_field_definition": "s_ab=alpha_B*Schouten_ab=(alpha_B/2)*(Ricci_ab-(1/6)*g_ab*R)",
+    "auxiliary_trace": "s=(alpha_B/6)*R",
+    "curvature_momentum": "A_ab=s_ab-(1/2)*g_ab*s",
+    "eliminated_density": "-R2*alpha_B/12 + Ricci2*alpha_B/4",
+    "first_order_density": "L_aux=s^ab Einstein_ab-(1/alpha_B)*(s_ab s^ab-s^2)",
+    "flat_bilinear_current": "omega_aux^mu=delta A_1^ab delta Gamma_2^mu_ab-delta A_1^(mu b) delta Gamma_2^a_ab-(1<->2)",
+    "fourth_order_bulk_density_modulo_Euler": "-R2*alpha_B/12 + Ricci2*alpha_B/4",
+    "inverse_relation": "Einstein_ab=(2/alpha_B)*(s_ab-g_ab*s); Ricci_ab=(1/alpha_B)*(2*s_ab+g_ab*s)",
+    "metric_only_rank": 0,
+    "potential": "Theta_aux^mu=sqrt(-g)*(A^ab delta Gamma^mu_ab-A^(mu b) delta Gamma^a_ab)",
+    "s_dot_Einstein": "-R2*alpha_B/6 + Ricci2*alpha_B/2",
+    "tracefree_normal_jet_principal_determinant": "1",
+    "tracefree_normal_jet_principal_matrix": [
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "-1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0",
+        "0"
+      ]
+    ],
+    "tracefree_normal_jet_principal_rank": 4
+  },
+  "gauge_ledger": {
+    "antifields_and_BFV_constraints": {
+      "statement": "No null-boundary antifield falloff, BFV charge or constraint resolution is supplied.",
+      "status": "NO_CERTIFIED_DOMAIN"
+    },
+    "boundary_ghost_complex": {
+      "statement": "Boundary-preserving ghost falloffs and the exact quotient of (h_AB,s_AB) are not constructed.",
+      "status": "OPEN"
+    },
+    "linear_Weyl": {
+      "statement": {
+        "delta_sigma_A_ab": "alpha_B*(-partial_a partial_b sigma+(1/2)*eta_ab*Box sigma)",
+        "delta_sigma_A_trace": "alpha_B*box_sigma",
+        "delta_sigma_R": "-6*Box sigma",
+        "delta_sigma_Ricci_ab": "-2*partial_a partial_b sigma-eta_ab*Box sigma",
+        "delta_sigma_h_ab": "2*sigma*eta_ab",
+        "delta_sigma_s_ab": "-alpha_B*partial_a partial_b sigma",
+        "delta_sigma_s_trace": "-alpha_B*box_sigma"
+      },
+      "status": "CERTIFIED_BULK"
+    },
+    "linear_diffeomorphisms": {
+      "statement": "On flat space delta Ricci_ab, s_ab and A_ab are invariant under linearized diffeomorphisms.",
+      "status": "CERTIFIED_BULK"
+    }
+  },
+  "generality_level": "G2_FULL_TENSOR_AUXILIARY_FIRST_ORDER_PREFLIGHT",
+  "lifecycle_state": "CLASSIFIED",
+  "minimality_theorem": {
+    "candidate": "The tracefree part s_AB^TF=A_AB^TF of the auxiliary Schouten field supplies exactly two components.",
+    "conclusion": "Within a local first-order full-tensor extension, s_AB^TF=A_AB^TF is a minimal-rank candidate edge variable; this is necessity plus nondegeneracy of the tracefree normal-jet principal block, not a constructed cut form or null-boundary quotient.",
+    "dimension_lower_bound": "A nondegenerate principal flux form on the two tracefree radiative metric normal-jet components requires at least two independent dual components.",
+    "input_no_go": "The h-only fixed-boundary Einstein-radiative horizontal presymplectic class is zero under every local JKM ambiguity.",
+    "rank_witness": {
+      "basis": "(nabla_n h_plus,nabla_n h_cross,s_plus,s_cross)",
+      "determinant": "1",
+      "matrix": [
+        [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1",
+          "0",
+          "0"
+        ]
+      ],
+      "rank": 4
+    }
+  },
+  "next_gate": "Derive the coupled Bondi recursion for (h_ab,s_ab), assign finite-flux weights, and compute the boundary BFV quotient and I-/i0/I+ corner matching.",
+  "provenance": {
+    "input": {
+      "path": "bridge/certificates/ASYMPTOTIC_BACH_LOCAL_COUNTERTERM_COHOMOLOGY_OBSTRUCTION_V1.json",
+      "result_id": "ASYMPTOTIC_BACH_LOCAL_COUNTERTERM_COHOMOLOGY_OBSTRUCTION_V1",
+      "sha256": "6ccb79e0626ff81fa2ffbe79166f578e50436078eaab3787da5c826112434b7d"
+    },
+    "pinned_input_sha256": "6ccb79e0626ff81fa2ffbe79166f578e50436078eaab3787da5c826112434b7d",
+    "producer_path": "bridge/einstein_sector/asymptotic_bach_auxiliary_schouten_edge_pair_preflight.py",
+    "producer_sha256": "7e1de00d9e3de3b9a685b382567228d40ad4e0ee480aca536d6d88fe423d534d"
+  },
+  "result_id": "ASYMPTOTIC_BACH_AUXILIARY_SCHOUTEN_EDGE_PAIR_PREFLIGHT_V1",
+  "result_state": "MINIMAL_FULL_TENSOR_AUXILIARY_EDGE_VARIABLE_AND_CURRENT_CERTIFIED_BOUNDARY_PHASE_SPACE_OPEN",
+  "schema": "asymptotic-bach-auxiliary-schouten-edge-pair-preflight-v1",
+  "schema_path": "bridge/einstein_sector/schema/asymptotic-bach-auxiliary-schouten-edge-pair-preflight-v1.schema.json",
+  "schema_sha256": "151511f6270aa59ca5cb044ca3bf6ea8aafa71f85d44996bd0221dbb0b5a924c",
+  "scope": {
+    "background": "Minkowski space",
+    "boundaries": "candidate local cut variables at I+; no global corner matching",
+    "carrier": "full bulk symmetric tensors (h_ab,s_ab), with s_ab=alpha_B*Schouten_ab on elimination and two tracefree sphere-tensor components retained at a cut",
+    "charge_sector": "radiative tracefree tensor block; Coulombic aspects absent",
+    "degree": 1,
+    "ell": "local tensor statement before harmonic specialization",
+    "k": "radial Bondi expansion, not compact momentum",
+    "m": "local tensor statement before harmonic specialization",
+    "omega": "arbitrary local profiles; no frequency shell selected",
+    "parity": "both tracefree tensor polarizations",
+    "theory": "linearized four-dimensional pure Weyl C^2 gravity in auxiliary-Schouten form"
+  },
+  "verdicts": {
+    "minimal_additional_variable": "AUXILIARY_SCHOUTEN_TRACEFREE_TENSOR_CERTIFIED",
+    "renormalized_boundary_phase_space": "OPEN",
+    "work_item": "SHORTFALL_FULL_STOP_CONDITION_NOT_MET"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.asymptotic_bach_auxiliary_schouten_edge_pair_preflight --check",
+    "PYTHONPATH=. python3 bridge/einstein_sector/verify_asymptotic_bach_auxiliary_schouten_edge_pair_preflight.py",
+    "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_asymptotic_bach_auxiliary_schouten_edge_pair_preflight -v",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-asymptotic-bach-auxiliary-schouten-edge-pair-fragment-v1.json"
+  ]
+}

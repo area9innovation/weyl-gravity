@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This LOCAL-ALGEBRAIC theorem identifies the exact full-tensor auxiliary Schouten variable, its first-order Lee-Wald current, Weyl-ghost transformation and minimal prequotient tracefree cut rank. It does not assign Bondi weights to pi_ab, construct the null-boundary ghost/antifield/BFV complex, renormalize the p0/p1 form, prove corner matching or gauge descent, compute P0/D_M charges, or establish causal, particle, scattering, stability, positivity, unitarity or quantum claims.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OPEN"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/ASYMPTOTIC_BACH_AUXILIARY_SCHOUTEN_EDGE_PAIR_PREFLIGHT_V1.json",
+          "result_id": "ASYMPTOTIC_BACH_AUXILIARY_SCHOUTEN_EDGE_PAIR_PREFLIGHT_V1",
+          "sha256": "e97bbcdf96ea9f7b47581841430399ccca77caf558acff137840a712e6a6ad43"
+        }
+      ],
+      "id": "einstein.asymptotic.minkowski.weyl.auxiliary_schouten_edge_pair",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The auxiliary Legendre theorem is local and off shell.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "omega_aux^mu=delta A_1^ab delta Gamma_2^mu_ab-delta A_1^(mu b) delta Gamma_2^a_ab-(1<->2)",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "No compact harmonic resonance carrier is identified with this boundary variable.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The theorem is linear and off shell.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "No retarded boundary Green complex is constructed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No quadratic source is evaluated.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "No second-order compact Taub map is evaluated.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "Minkowski space",
+        "boundaries": "candidate local cut variables at I+; no global corner matching",
+        "carrier": "full bulk symmetric tensors (h_ab,s_ab), with s_ab=alpha_B*Schouten_ab on elimination and two tracefree sphere-tensor components retained at a cut",
+        "charge_sector": "radiative tracefree tensor block; Coulombic aspects absent",
+        "degree": 1,
+        "ell": "local tensor statement before harmonic specialization",
+        "k": "radial Bondi expansion, not compact momentum",
+        "m": "local tensor statement before harmonic specialization",
+        "omega": "arbitrary local profiles; no frequency shell selected",
+        "parity": "both tracefree tensor polarizations",
+        "theory": "linearized four-dimensional pure Weyl C^2 gravity in auxiliary-Schouten form"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/asymptotic_bach_auxiliary_schouten_edge_pair_preflight.py",
+  "generated_by_sha256": "7e1de00d9e3de3b9a685b382567228d40ad4e0ee480aca536d6d88fe423d534d",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_boundary",
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.asymptotic_bach_auxiliary_schouten_edge_pair_preflight --check",
+    "PYTHONPATH=. python3 bridge/einstein_sector/verify_asymptotic_bach_auxiliary_schouten_edge_pair_preflight.py",
+    "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_asymptotic_bach_auxiliary_schouten_edge_pair_preflight -v",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-asymptotic-bach-auxiliary-schouten-edge-pair-fragment-v1.json"
+  ]
+}
