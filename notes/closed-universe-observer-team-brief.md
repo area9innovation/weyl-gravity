@@ -2115,12 +2115,13 @@ The team succeeds by locating the first exact bridge or the first exact
 obstruction.  It does not succeed by arguing that two closed universes sound
 similar.
 
-## Active bridge: temporal Maxwell-cotangent mapping cone
+## Active bridge: temporal-curl all-jet disposition
 
 The active item is
-`sf:program/work/observer-temporal-maxwell-cotangent-mapping-cone-construction`.
-It imports the terminal 2,613-versus-2,614 existing-row obstruction and the
-four-row disposition theorem by exact certificate and payload hashes.
+`sf:program/work/observer-temporal-curl-second-jet-or-all-jet-disposition`.
+It imports the terminal 2,613-versus-2,614 existing-row obstruction, the
+four-row disposition theorem and the completed filtered second-jet mapping
+cone by exact certificate, report and lifecycle hashes.
 
 One serialized quadratic action
 \[
@@ -2151,8 +2152,8 @@ survives with first coefficient
 Deleting any derivative tier leaves the source one rank outside the retained
 image.  The old 2,048-action module and the first-jet cone are exact negative
 controls.  This is a completeness obstruction only for the declared
-four-row filtered class through order two; the least unexcluded derivative
-enlargement is its filtered order-three action tier.
+four-row filtered class through order two.  Because the quotient is nonzero,
+the programme forbids a blind third-jet continuation.
 
 The fail-closed atlas row is
 `observer.berger.interaction.temporal_maxwell_cotangent_mapping_cone_construction`
@@ -2160,5 +2161,22 @@ The fail-closed atlas row is
 `observational=OBSTRUCTED`).  The arity-two obstruction is the stop point:
 \(K_{\rm Berger}\) covariance is not evaluated, and no raw-\(D\), \(q_3\),
 detector, memory, redshift, recoil-corrected rank, tangent-cone, branch or
-quantum result is promoted.  The next activation gate is
-`CLASSIFY_FILTERED_THIRD_JET_CURL_DOUBLET_BEFORE_K_BERGER_OR_OBSERVER_PROPAGATION`.
+quantum result is promoted.
+
+The replacement gate is an exact finite presentation of the
+all-finite-order IBP/PBW Hessian module over the declared connected
+Berger-\(U(1)\) differential-symbol ring.  The audited Forge snapshot has
+commutative Groebner membership over algebraic extensions and selected PBW
+straightening, but its declared ledger leaves differential-PBW/component
+crosswalks and module syzygies open.  The typed request is
+`sf:forge-request/observer-differential-pbw-module-membership`.
+
+The new fail-closed atlas row is
+`observer.berger.interaction.temporal_curl_all_jet_disposition_shortfall`
+(`symplectic=CERTIFIED`, `nonlinear=OPEN`,
+`observational=NO_CERTIFIED_MAP`).  This is a `SHORTFALL`, not an all-jet
+obstruction theorem: source membership, a Hilbert series, the irreducible
+cokernel and the minimal excluded enlargement are all `NO_CERTIFIED_MAP`.
+No \(K_{\rm Berger}\), \(q_3\), detector, redshift, recoil or
+tangent-cone observable is promoted.  The activation gate is
+`WAIT_FOR_FORGE_DIFFERENTIAL_PBW_MODULE_MEMBERSHIP_ENGINE_THEN_REPLAY_THE_ALL_JET_SOURCE_CLASS`.

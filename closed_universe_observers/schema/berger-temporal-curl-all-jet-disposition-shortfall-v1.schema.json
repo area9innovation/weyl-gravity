@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "predecessor_lifecycle",
+    "capability_audit",
+    "all_jet_disposition",
+    "controls",
+    "downstream_contract",
+    "downstream_disposition",
+    "assumption_ledger",
+    "missing_object_ledger",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-temporal-curl-all-jet-disposition-shortfall-v1"
+    },
+    "result_id": {
+      "const": "BERGER_TEMPORAL_CURL_ALL_JET_DISPOSITION_SHORTFALL"
+    },
+    "setting_id": {"type": "string"},
+    "claim_status": {
+      "const": "SHORTFALL_MISSING_EXACT_DIFFERENTIAL_PBW_MODULE_MEMBERSHIP"
+    },
+    "atlas_status": {"const": "OPEN"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 4,
+      "maxProperties": 4
+    },
+    "predecessor_lifecycle": {
+      "type": "object",
+      "properties": {
+        "science_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "lifecycle_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "terminal_state": {"const": "OBSTRUCTED"},
+        "branch_selected": {"const": "ALL_JET_FINITE_PRESENTATION"},
+        "reason": {"type": "string"}
+      },
+      "required": [
+        "science_commit",
+        "lifecycle_commit",
+        "terminal_state",
+        "branch_selected",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "capability_audit": {
+      "type": "object",
+      "properties": {
+        "forge_snapshot": {"type": "object"},
+        "available_exact_layers": {
+          "type": "array",
+          "minItems": 3
+        },
+        "missing_required_layers": {
+          "type": "array",
+          "minItems": 5
+        },
+        "why_available_layers_do_not_close_gate": {"type": "string"},
+        "audit_verdict": {
+          "const": "MISSING_REQUIRED_EXACT_MODULE_MACHINERY"
+        }
+      },
+      "required": [
+        "forge_snapshot",
+        "available_exact_layers",
+        "missing_required_layers",
+        "why_available_layers_do_not_close_gate",
+        "audit_verdict"
+      ],
+      "additionalProperties": false
+    },
+    "all_jet_disposition": {
+      "type": "object",
+      "properties": {
+        "declared_module": {"type": "string"},
+        "finite_presentation": {"const": "NO_CERTIFIED_MAP"},
+        "hilbert_series": {"const": "NO_CERTIFIED_MAP"},
+        "groebner_or_equivalent_normal_form": {
+          "const": "NO_CERTIFIED_MAP"
+        },
+        "syzygies": {"const": "NO_CERTIFIED_MAP"},
+        "source_membership_at_any_finite_order": {
+          "const": "NO_CERTIFIED_MAP"
+        },
+        "irreducible_cokernel_generator": {
+          "const": "NO_CERTIFIED_MAP"
+        },
+        "minimal_excluded_enlargement": {
+          "const": "NO_CERTIFIED_MAP"
+        },
+        "completeness_category": {"const": "NO_CERTIFIED_MAP"},
+        "status": {"const": "SHORTFALL"}
+      },
+      "required": [
+        "declared_module",
+        "finite_presentation",
+        "hilbert_series",
+        "groebner_or_equivalent_normal_form",
+        "syzygies",
+        "source_membership_at_any_finite_order",
+        "irreducible_cokernel_generator",
+        "minimal_excluded_enlargement",
+        "completeness_category",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "controls": {"type": "object"},
+    "downstream_contract": {"type": "object"},
+    "downstream_disposition": {"type": "object"},
+    "assumption_ledger": {"type": "array", "minItems": 3},
+    "missing_object_ledger": {"type": "array", "minItems": 5},
+    "next_gate": {
+      "const": "WAIT_FOR_FORGE_DIFFERENTIAL_PBW_MODULE_MEMBERSHIP_ENGINE_THEN_REPLAY_THE_ALL_JET_SOURCE_CLASS"
+    },
+    "claim_boundary": {"type": "string", "minLength": 800},
+    "provenance": {"type": "object"}
+  }
+}

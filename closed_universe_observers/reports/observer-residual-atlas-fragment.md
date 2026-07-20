@@ -146,6 +146,17 @@ promote a nonlinear detector or redshift map.  Its first unexcluded successor
 is a genuinely new Maxwell-cotangent `q1`-preimage mapping cone, not another
 existing-row action or a direct cross-background identification.
 
+The temporal-curl all-jet disposition is a separate `OPEN` row.  The exact
+filtered order-two predecessor remains `OBSTRUCTED` at ranks `2641<2642`,
+but no finite-order stabilization is promoted to an all-jet theorem.  The
+audited exact substrate lacks the differential-PBW module presentation,
+filtered-lift and syzygy machinery needed to decide source membership at
+arbitrary finite derivative order.  Those capabilities are tracked by the
+typed Forge request
+`sf:forge-request/observer-differential-pbw-module-membership`.  The all-jet
+cokernel, minimal excluded enlargement, detector response, redshift, recoil
+and cone restriction remain `NO_CERTIFIED_MAP`.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.
