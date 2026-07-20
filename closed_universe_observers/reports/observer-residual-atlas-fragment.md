@@ -273,6 +273,17 @@ undefined.  Therefore individual and balanced Z2 membership, nonlinear
 rank/kernel and persistent relational memory are not classified; the prior
 coordinate-level rank two remains only a linear parent result.
 
+The attempted executable-160 serialization repair terminates at a smaller
+producer shortfall.  The replacement-112 input has no normalized row-indexed
+(q_1) coefficients, and the material-parent-56 input has neither unary nor
+odd-pairing entries.  Action descriptions, principal symbols, ranks and zero-
+defect verdicts cannot be promoted to matrices.  Although the old 108-row
+payload has executable blocks, the changed positive-mixed Φ₂ and four new
+rod/cotangent rows forbid its substitution.  Two base-producer exports are
+therefore required before a method-distinct consumer can reconstruct and
+compare the 160-row pushout.  Physical reduction and every downstream
+observer result remain `NO_CERTIFIED_MAP`.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.

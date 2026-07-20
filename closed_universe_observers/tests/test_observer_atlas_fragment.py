@@ -210,6 +210,19 @@ def test_repaired_apparatus_z2_stops_at_physical_reduction():
     }
 
 
+def test_executable_160_export_stops_at_base_producer_coefficients():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.interaction.apparatus_160_executable_unary_export_input_shortfall"
+    )
+    assert row["descriptions"]["symplectic"] == "NO_CERTIFIED_MAP"
+    assert row["descriptions"]["nonlinear"] == "NOT_APPLICABLE"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_APPARATUS_160_EXECUTABLE_UNARY_EXPORT_INPUT_SHORTFALL" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
+
+
 def test_recoil_internal_readiness_is_certified_while_physical_activation_is_open():
     rows = {row["id"]: row for row in build()["entries"]}
     readiness = rows["observer.berger.detector_profile.recoil_stream_executable_readiness"]

@@ -1,0 +1,91 @@
+{
+  "base_input_audit": {
+    "material_parent_56": {
+      "action_formula_and_principal_transport_pair": "CERTIFIED",
+      "first_missing_object": "normalized row-indexed q1 and odd-pairing sparse entries on the declared 56-row order",
+      "pairing_rank": "CERTIFIED",
+      "physical_and_cotangent_row_lists": "CERTIFIED",
+      "required_fields_missing": [
+        "bidegrees",
+        "coefficient_ring",
+        "pairing_sparse_entries",
+        "q1_sparse_entries",
+        "row_dictionary",
+        "zero_mode_operator_blocks"
+      ],
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "replacement_112": {
+      "action_level_unary": "CERTIFIED",
+      "first_missing_object": "normalized row-indexed q1 sparse entries for the changed Phi2 background and eight-rod mixed action",
+      "pairing_entries": "CERTIFIED",
+      "required_fields_missing": [
+        "bidegree_blocks",
+        "coefficient_ring",
+        "operator_schema",
+        "sparse_entries",
+        "zero_mode_operator_blocks"
+      ],
+      "row_table": "CERTIFIED",
+      "status": "NO_CERTIFIED_MAP"
+    }
+  },
+  "export_disposition": {
+    "canonical_row_dictionary": "NO_CERTIFIED_MAP",
+    "complete_sparse_pairing": "NO_CERTIFIED_MAP",
+    "complete_sparse_q1": "NO_CERTIFIED_MAP",
+    "detector_smearing_matrix": "NO_CERTIFIED_MAP",
+    "direct_identity_replays": "NO_CERTIFIED_MAP",
+    "independent_byte_equivalent_reconstruction": "NO_CERTIFIED_MAP",
+    "physical_reduction_and_downstream": "NO_CERTIFIED_MAP",
+    "support_and_zero_mode_chain_groups": "NO_CERTIFIED_MAP"
+  },
+  "minimal_missing_producer_contracts": {
+    "material_parent_56_exporter": {
+      "must_export": [
+        "row_dictionary",
+        "coefficient_ring",
+        "bidegrees",
+        "q1_sparse_entries",
+        "pairing_sparse_entries",
+        "zero_mode_operator_blocks",
+        "real_and_K_actions",
+        "support_sector_blocks"
+      ],
+      "must_recompute": "the six D_K doublet blocks, their cotangent adjoints and the shared memory unary on one declared row order"
+    },
+    "replacement_112_exporter": {
+      "must_export": [
+        "coefficient_ring",
+        "operator_schema",
+        "bidegree_blocks",
+        "sparse_entries",
+        "zero_mode_operator_blocks",
+        "row_and_column_degree_table",
+        "real_and_K_actions"
+      ],
+      "must_recompute": "every changed Phi2-dependent, metric-rod, rod-cotangent and Diff-BV adjoint entry from the positive-mixed action"
+    },
+    "then": "reconstruct the rank-eight pushout quotient independently and compare normalized 160-row q1, pairing, embeddings, quotient and detector matrices byte for byte"
+  },
+  "non_substitution_replay": {
+    "old_108_block_count": 3,
+    "old_108_blocks_canonical_sha256": "9047a1d46d01541331e57be478e04f900c024ddee7c53ae81f9f97ac475bd62b",
+    "reason": "the positive-mixed replacement changes Phi2-dependent nonrod rows and adds four rod/cotangent rows; the old operator has neither change",
+    "verdict": "EXECUTABLE_BUT_FORBIDDEN_AS_REPLACEMENT_INPUT"
+  },
+  "required_160_export": {
+    "fields_named_by_physical_reduction": [
+      "coefficient_ring",
+      "operator_schema",
+      "bidegree_blocks",
+      "sparse_entries",
+      "chain_groups_by_support_sector",
+      "zero_mode_operator_blocks"
+    ],
+    "independent_byte_equivalent_reconstruction_required": true,
+    "normalized_matrix_hashes_required": true
+  },
+  "result_id": "BERGER_APPARATUS_160_EXECUTABLE_UNARY_EXPORT_INPUT_SHORTFALL_PAYLOAD",
+  "schema": "closed-universe-berger-apparatus-160-executable-unary-export-input-shortfall-payload-v1"
+}

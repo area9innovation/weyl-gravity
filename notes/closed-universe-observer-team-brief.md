@@ -2446,3 +2446,23 @@ The fail-closed atlas row is
 Its activation gate remains the executable 160-row (q_1) and exact physical
 contraction; only then may a same-carrier action-derived (q_2), correction-
 class receivers, restricted detector rank and persistent memory be computed.
+
+## Active bridge: executable 160-row unary producer shortfall
+
+The serialization repair stops before constructing a combined matrix.  The
+positive-mixed replacement payload exports its 112-row table, signed pairing
+and action-level unary identities, but not normalized row-indexed (q_1)
+coefficients.  The material-parent payload exports row lists, an action
+formula, a principal transport pair and a pairing rank, but neither (q_1) nor
+odd-pairing entries.  Thus an independent consumer cannot reconstruct either
+base block, much less compare the normalized 160-row pushout byte for byte.
+
+The executable old 108-row blocks are not a repair: they omit the four new
+rod/cotangent rows and the positive-mixed Φ₂-dependent changes.  The
+fail-closed atlas row is
+`observer.berger.interaction.apparatus_160_executable_unary_export_input_shortfall`.
+The activation gate is two content-addressed producer exports: the complete
+replacement-112 unary, and the complete material-parent-56 unary and pairing,
+each with coefficient ring, row degrees, support/zero-mode blocks and real/
+(K_{m Berger}) actions.  Only then may the consumer reconstruct the
+rank-eight quotient and proceed to physical reduction.

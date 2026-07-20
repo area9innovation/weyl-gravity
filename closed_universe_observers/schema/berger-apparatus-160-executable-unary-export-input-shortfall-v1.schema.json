@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "payload_ref", "export_disposition", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-apparatus-160-executable-unary-export-input-shortfall-v1"},
+    "result_id": {"const": "BERGER_APPARATUS_160_EXECUTABLE_UNARY_EXPORT_INPUT_SHORTFALL"},
+    "claim_status": {"const": "SHORTFALL_BASE_PRODUCERS_LACK_SERIALIZED_UNARY_COEFFICIENTS"},
+    "atlas_status": {"const": "NO_CERTIFIED_MAP"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {"type": "object", "minProperties": 10},
+    "payload_ref": {"type": "object", "required": ["path", "result_id", "sha256", "canonical_sha256"]},
+    "export_disposition": {"type": "object", "minProperties": 8},
+    "next_gate": {"const": "EXPORT_EXECUTABLE_REPLACEMENT_112_AND_MATERIAL_PARENT_56_UNARY_INPUTS"},
+    "claim_boundary": {"type": "string", "minLength": 1800},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": true
+}
