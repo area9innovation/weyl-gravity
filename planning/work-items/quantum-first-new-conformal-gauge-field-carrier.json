@@ -1,0 +1,40 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-first-new-conformal-gauge-field-carrier",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-first-new-conformal-gauge-field-carrier",
+  "source": {
+    "path": "planning/work-items/quantum-first-new-conformal-gauge-field-carrier.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum",
+    "state": "PROPOSED",
+    "objective": "Construct the first genuinely new four-dimensional conformal gauge-field BV/elliptic carrier that can support an independently certified anomaly column, or prove the first exact completeness obstruction for the smallest declared candidates.",
+    "stop_condition": "Import PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN from commit 4b72eb33c by exact hash and preserve its conclusion that the next gauge column is absent, not zero. Audit the two smallest genuinely new candidates beyond the already-counted Maxwell vector and strict Weyl graviton: the conformal spin-3/2 gauge field and the bosonic conformal spin-3 field. State a finite completeness criterion before selecting either candidate. For the first candidate meeting it, construct the full off-shell field/ghost/antifield and reducibility dictionary, minimal and nonminimal BV differentials, gauge fermion, generic-background gauge-fixed elliptic operator or exact obstruction to ellipticity, domains, real/chiral structure, zero modes, determinant powers and contour policy. Derive the raw (c,-a,p,b_BoxR) column by two independent certified routes and append it to the exact lattice, including a kinetic/Krein sign audit. If neither candidate admits a complete declared carrier from available local data, land a scoped obstruction identifying the first missing identity/operator and a strict receiver schema for the future carrier rather than copying a literature coefficient. Include independent nilpotency, determinant-ledger and coefficient verifiers plus decisive missing-ghost, wrong-chirality and omitted-nonminimal mutations.",
+    "current_gate": "first complete off-shell BV and elliptic carrier for a new conformal gauge field",
+    "forbid": "no literature anomaly coefficient without a complete carrier and two independent routes; no on-shell helicity count substituted for off-shell BV content; no flat-space factorization called generic-background ellipticity; no strict Weyl spin-two determinant counted again as added matter; no partial ghost determinant; no Euclidean contour called Lorentzian positivity; no finite candidate obstruction called a no-go for all conformal higher spins; no cancellation called QME restoration, GUT, Standard Model, unitarity or quantum gravity",
+    "depends_on": [],
+    "activates": [
+      "sf:program/work/quantum-conformal-higher-spin-anomaly-generating-function",
+      "a certified new conformal gauge-field ray in the anomaly lattice"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/",
+      "reports/",
+      "residual_atlas/",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "notes/d-quotient-quantum-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "IMMEDIATE SUCCESSOR to the Paneitz checkpoint. This is a carrier-construction gate, not a coefficient lookup. Start with a completeness table for spin 3/2 versus spin 3 and pick the smallest candidate whose entire BV/nonminimal/operator surface can be declared.",
+    "notes": [
+      "Maxwell is already included in standard matter and spin two is the strict Weyl graviton, so neither is a new anomaly ray.",
+      "A strict receiver plus the first exact missing-carrier obstruction is a successful outcome if a complete gauge-fixed complex cannot yet be constructed."
+    ],
+    "input_commit": "4b72eb33c",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
