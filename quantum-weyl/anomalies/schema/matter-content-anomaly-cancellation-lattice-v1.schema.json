@@ -1,0 +1,300 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/matter-content-anomaly-cancellation-lattice-v1.schema.json",
+  "title": "Matter-content anomaly-cancellation lattice",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "input_pins",
+    "basis",
+    "gravity_vector",
+    "coefficient_methods",
+    "matter_vectors_absolute_determinant",
+    "chiral_phase_ledger",
+    "Yang_Mills_rule",
+    "healthy_nonnegative_classification",
+    "signed_determinant_lattice",
+    "alternative_field_content",
+    "scheme_ledger",
+    "exact_checks",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-matter-content-anomaly-cancellation-lattice-v1"},
+    "result_id": {"const": "MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE"},
+    "result_state": {
+      "const": "HEALTHY_NONNEGATIVE_LATTICE_EMPTY_SIGNED_DETERMINANT_LATTICE_COMPLETE_COMPENSATOR_IS_CHANGED_THEORY"
+    },
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "input_pins": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strict_breaking",
+        "antifield_completion",
+        "BoxR_scheme_conversion"
+      ],
+      "properties": {
+        "strict_breaking": {"$ref": "#/$defs/pin"},
+        "antifield_completion": {"$ref": "#/$defs/pin"},
+        "BoxR_scheme_conversion": {"$ref": "#/$defs/pin"}
+      }
+    },
+    "basis": {
+      "const": [
+        "ANOM_OMEGA_C2",
+        "ANOM_OMEGA_E4",
+        "ANOM_OMEGA_C_DUAL_C",
+        "ANOM_OMEGA_BOX_R"
+      ]
+    },
+    "gravity_vector": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/rational"}
+    },
+    "coefficient_methods": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_heat_kernel", "independent_index_trace"],
+      "properties": {
+        "repository_heat_kernel": {"type": "object"},
+        "independent_index_trace": {"type": "object"}
+      }
+    },
+    "matter_vectors_absolute_determinant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "real_conformal_scalar",
+        "ordinary_homogeneous_conformal_compensator_scalar",
+        "left_Weyl_fermion",
+        "right_Weyl_fermion",
+        "Dirac_fermion",
+        "Abelian_gauge_vector"
+      ],
+      "properties": {
+        "real_conformal_scalar": {"$ref": "#/$defs/species"},
+        "ordinary_homogeneous_conformal_compensator_scalar": {
+          "$ref": "#/$defs/species"
+        },
+        "left_Weyl_fermion": {"$ref": "#/$defs/species"},
+        "right_Weyl_fermion": {"$ref": "#/$defs/species"},
+        "Dirac_fermion": {"$ref": "#/$defs/species"},
+        "Abelian_gauge_vector": {"$ref": "#/$defs/species"}
+      }
+    },
+    "chiral_phase_ledger": {
+      "type": "object",
+      "required": [
+        "declared_common_Ward_regulator",
+        "independent_Ward_preserving_methods",
+        "nonzero_Pontryagin_alternative",
+        "healthy_even_no_go_independent_of_phase_policy"
+      ],
+      "properties": {
+        "declared_common_Ward_regulator": {"type": "string", "minLength": 1},
+        "independent_Ward_preserving_methods": {"type": "object"},
+        "nonzero_Pontryagin_alternative": {
+          "type": "string",
+          "pattern": "^NOT_ADMITTED_IN_THE_COMMON_BV_COMPLEX:.*"
+        },
+        "healthy_even_no_go_independent_of_phase_policy": {"const": true}
+      }
+    },
+    "Yang_Mills_rule": {
+      "type": "object",
+      "required": ["vector", "ghost_policy", "interacting_gauge_beta_terms"],
+      "properties": {
+        "vector": {"type": "string", "minLength": 1},
+        "ghost_policy": {"type": "string", "minLength": 1},
+        "interacting_gauge_beta_terms": {"type": "string", "minLength": 1}
+      }
+    },
+    "healthy_nonnegative_classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "variables",
+        "explicit_search_box",
+        "unbounded_nonnegative_integer_lattice",
+        "unbounded_nonnegative_real_cone",
+        "separating_functional",
+        "QME_disposition"
+      ],
+      "properties": {
+        "variables": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+        "explicit_search_box": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["lower_bound_each", "upper_bound_each", "solution_set"],
+          "properties": {
+            "lower_bound_each": {"const": 0},
+            "upper_bound_each": {"const": 10000},
+            "solution_set": {"const": "EMPTY"}
+          }
+        },
+        "unbounded_nonnegative_integer_lattice": {"const": "EMPTY"},
+        "unbounded_nonnegative_real_cone": {"const": "EMPTY"},
+        "separating_functional": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "coordinates",
+            "gravity_value",
+            "all_standard_species_values_strictly_positive"
+          ],
+          "properties": {
+            "coordinates": {"const": [1, 0, 0, 0]},
+            "gravity_value": {"$ref": "#/$defs/rational"},
+            "all_standard_species_values_strictly_positive": {"const": true}
+          }
+        },
+        "QME_disposition": {"const": "REMAINS_OBSTRUCTED_IN_DECLARED_HEALTHY_FAMILY"}
+      }
+    },
+    "signed_determinant_lattice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "integer_matrix_scaled_by_720",
+        "right_hand_side",
+        "rank",
+        "smith_invariant_factors",
+        "particular_solution_Ns_NW_ND_NV",
+        "kernel_basis",
+        "complete_parameterization",
+        "complete_rational_parameterization",
+        "phase_sensitive_chiral_refinement",
+        "gauge_split"
+      ],
+      "properties": {
+        "integer_matrix_scaled_by_720": {
+          "const": [[6, 18, 36, 72], [-2, -11, -22, -124]]
+        },
+        "right_hand_side": {"const": [-4776, 3132]},
+        "rank": {"const": 2},
+        "smith_invariant_factors": {"const": [1, 30]},
+        "particular_solution_Ns_NW_ND_NV": {"const": [128, -308, 0, 0]},
+        "kernel_basis": {"const": [[0, -2, 1, 0], [48, -20, 0, 1]]},
+        "complete_parameterization": {"type": "object"},
+        "complete_rational_parameterization": {"type": "object"},
+        "phase_sensitive_chiral_refinement": {"type": "object"},
+        "gauge_split": {"type": "string", "minLength": 1}
+      }
+    },
+    "alternative_field_content": {
+      "type": "object",
+      "required": [
+        "negative_multiplicity",
+        "higher_derivative_conformal_fields",
+        "ordinary_homogeneous_conformal_compensator",
+        "shifting_Wess_Zumino_compensator"
+      ],
+      "properties": {
+        "negative_multiplicity": {"type": "string", "minLength": 1},
+        "higher_derivative_conformal_fields": {
+          "type": "string",
+          "pattern": "^NOT_CLASSIFIED:.*"
+        },
+        "ordinary_homogeneous_conformal_compensator": {"type": "string", "minLength": 1},
+        "shifting_Wess_Zumino_compensator": {
+          "type": "string",
+          "pattern": "^NOT_A_LATTICE_COLUMN:.*"
+        }
+      }
+    },
+    "scheme_ledger": {
+      "type": "object",
+      "required": ["C2_E4_CdualC", "BoxR", "strict_repository_BoxR"],
+      "properties": {
+        "C2_E4_CdualC": {"type": "string", "minLength": 1},
+        "BoxR": {"type": "string", "minLength": 1},
+        "strict_repository_BoxR": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {"const": true}
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "HEALTHY_NONNEGATIVE_CANCELLATION_EXISTS",
+        "COMPLETE_SIGNED_STANDARD_SPECIES_LATTICE_CLASSIFIED",
+        "HIGHER_DERIVATIVE_MATTER_CLASSIFIED",
+        "COMPENSATOR_IS_STRICT_CANCELLATION",
+        "LORENTZIAN_QME_OR_PARTICLE_CLAIM"
+      ],
+      "properties": {
+        "HEALTHY_NONNEGATIVE_CANCELLATION_EXISTS": {"const": false},
+        "COMPLETE_SIGNED_STANDARD_SPECIES_LATTICE_CLASSIFIED": {"const": true},
+        "HIGHER_DERIVATIVE_MATTER_CLASSIFIED": {"const": false},
+        "COMPENSATOR_IS_STRICT_CANCELLATION": {"const": false},
+        "LORENTZIAN_QME_OR_PARTICLE_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "source_manifest"],
+      "properties": {
+        "proof_type": {"type": "string", "minLength": 1},
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "species": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["vector", "statistics_and_complex"],
+      "properties": {
+        "vector": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/rational"}
+        },
+        "statistics_and_complex": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

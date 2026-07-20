@@ -2088,3 +2088,47 @@ repository data state, not a no-go against a future full off-shell lift.
 - [`RELATIVE_CHANGED_THEORY_FINITE_CARRIER_COMPATIBILITY.json`](../quantum-weyl/transfer/certificates/RELATIVE_CHANGED_THEORY_FINITE_CARRIER_COMPATIBILITY.json)
 - [`RELATIVE_CHANGED_THEORY_LOCAL_COHOMOLOGY_NONDEFINITION.json`](../quantum-weyl/transfer/certificates/RELATIVE_CHANGED_THEORY_LOCAL_COHOMOLOGY_NONDEFINITION.json)
 - [`relative-changed-theory-qme-disposition.md`](../quantum-weyl/reports/relative-changed-theory-qme-disposition.md)
+
+## Complete standard-matter anomaly lattice (2026-07-20)
+
+The strict gravity vector and its antifield completion have now been combined
+with the complete free conformal spin \(0,\frac12,1\) matter family.  The
+coefficient basis is
+
+\[
+(C^2,E_4,C\widetilde C,\Box R),
+\]
+
+and every scalar, left/right Weyl, Dirac and complete gauge-complex row agrees
+between an exact minimal-operator heat-kernel ledger and an independent
+integer index/central-charge reconstruction.  The Weyl-graviton \(\Box R\)
+scheme conversion is imported separately by hash; the scheme-dependent
+coordinate is not used to cancel either nontrivial class.  An ordinary
+homogeneous compensator with the scalar operator is the scalar row, whereas a
+shifting Wess--Zumino compensator changes the BV complex and is not a lattice
+column.
+
+The \(C^2\) coordinate is a strict separating functional: it is positive on
+the gravity vector and on every healthy standard-sign matter ray.  Hence both
+the nonnegative real cone and the unbounded nonnegative integer lattice are
+empty.  The complete formal signed determinant lattice is
+
+\[
+N_s=128+48t,\qquad
+N_W=-308-2u-20t,\qquad
+N_D=u,\qquad
+N_V=t,
+\]
+
+with Smith invariant factors \((1,30)\).  This parameterization is complete
+over \(\mathbb Z\), and the same affine formula is complete over
+\(\mathbb Q\).  Negative multiplicities mean inverse determinants or
+wrong-statistics powers, not healthy matter.
+
+This is `LOCAL-ALGEBRAIC`/`EUCLIDEAN-SPECTRAL`.  It does not restore the
+strict QME and supplies no Lorentzian state, particle, positivity,
+phenomenology, GUT, scattering or unitarity conclusion.
+
+- [`MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE.json`](../quantum-weyl/anomalies/certificates/MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE.json)
+- [`matter-content-anomaly-cancellation-lattice.md`](../quantum-weyl/reports/matter-content-anomaly-cancellation-lattice.md)
+- [`matter-selection-atlas-table.json`](../quantum-weyl/atlas/matter-selection-atlas-table.json)

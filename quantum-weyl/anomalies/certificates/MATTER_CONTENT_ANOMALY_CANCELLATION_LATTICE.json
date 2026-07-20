@@ -1,0 +1,638 @@
+{
+  "Yang_Mills_rule": {
+    "ghost_policy": "one complete FP/nonminimal gauge complex per generator",
+    "interacting_gauge_beta_terms": "not part of the purely gravitational four-coordinate vector",
+    "vector": "dim(ad G) times Abelian_gauge_vector"
+  },
+  "alternative_field_content": {
+    "higher_derivative_conformal_fields": "NOT_CLASSIFIED: require their own complete BV complexes and two-method anomaly vectors before adjoining new lattice columns",
+    "negative_multiplicity": "formal inverse determinant or wrong-statistics regulator power; an overall wrong-sign bosonic kinetic contour does not automatically implement negative multiplicity",
+    "ordinary_homogeneous_conformal_compensator": "counts as one real conformal scalar only if it is an ordinary standard-sign spectator",
+    "shifting_Wess_Zumino_compensator": "NOT_A_LATTICE_COLUMN: it enlarges the BV complex and local counterterm algebra, making H14 exact in the tau-adic theory"
+  },
+  "basis": [
+    "ANOM_OMEGA_C2",
+    "ANOM_OMEGA_E4",
+    "ANOM_OMEGA_C_DUAL_C",
+    "ANOM_OMEGA_BOX_R"
+  ],
+  "chiral_phase_ledger": {
+    "declared_common_Ward_regulator": "p=0 for each left or right Weyl determinant; the trace anomaly is exactly one half the Dirac anomaly",
+    "healthy_even_no_go_independent_of_phase_policy": true,
+    "independent_Ward_preserving_methods": {
+      "Pauli_Villars_Fujikawa": "https://arxiv.org/abs/1610.02304",
+      "Weyl_determinant_path_integral": "https://arxiv.org/abs/2309.08670"
+    },
+    "nonzero_Pontryagin_alternative": "NOT_ADMITTED_IN_THE_COMMON_BV_COMPLEX: regulator choices that generate a parity-odd trace term do not pass the declared simultaneous diffeomorphism, Lorentz and gauge Ward identities and are not a lattice column"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL theorem classifies the complete free standard-spin 0, 1/2 and 1 anomaly lattice in the declared schemes. It proves no healthy nonnegative cancellation and gives the full formal signed determinant lattice. A shifting compensator changes the BV complex; higher-derivative fields need new certified columns. No Lorentzian QME, state, positivity, particle, scattering, phenomenology, GUT or unitarity claim follows.",
+  "claim_flags": {
+    "COMPENSATOR_IS_STRICT_CANCELLATION": false,
+    "COMPLETE_SIGNED_STANDARD_SPECIES_LATTICE_CLASSIFIED": true,
+    "HEALTHY_NONNEGATIVE_CANCELLATION_EXISTS": false,
+    "HIGHER_DERIVATIVE_MATTER_CLASSIFIED": false,
+    "LORENTZIAN_QME_OR_PARTICLE_CLAIM": false
+  },
+  "coefficient_methods": {
+    "independent_index_trace": {
+      "convention_bridge": "repository coordinates are (c,-a,p,b); NV counts complete gauge vectors including ghosts; one Dirac equals one left plus one right Weyl absolute determinant",
+      "formula_even": "c=(Ns+3(NL+NR)+6ND+12NV)/120; a=(2Ns+11(NL+NR)+22ND+124NV)/720",
+      "formula_type_D_reference_scheme": "b=Ns/180+(NL+NR)/60+ND/30-NV/10",
+      "integer_species_count_rows_Ns_NW_ND_NV": {
+        "Abelian_gauge_vector": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "Dirac_fermion": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "left_Weyl_fermion": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "ordinary_homogeneous_conformal_compensator_scalar": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "real_conformal_scalar": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "right_Weyl_fermion": [
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      "method": "TRACE_ANOMALY_INDEX_AND_CENTRAL_CHARGE_RECONSTRUCTION",
+      "reconstructed_rows": {
+        "Abelian_gauge_vector": [
+          {
+            "denominator": 10,
+            "numerator": 1
+          },
+          {
+            "denominator": 180,
+            "numerator": -31
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 10,
+            "numerator": -1
+          }
+        ],
+        "Dirac_fermion": [
+          {
+            "denominator": 20,
+            "numerator": 1
+          },
+          {
+            "denominator": 360,
+            "numerator": -11
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 30,
+            "numerator": 1
+          }
+        ],
+        "left_Weyl_fermion": [
+          {
+            "denominator": 40,
+            "numerator": 1
+          },
+          {
+            "denominator": 720,
+            "numerator": -11
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 60,
+            "numerator": 1
+          }
+        ],
+        "ordinary_homogeneous_conformal_compensator_scalar": [
+          {
+            "denominator": 120,
+            "numerator": 1
+          },
+          {
+            "denominator": 360,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 180,
+            "numerator": 1
+          }
+        ],
+        "real_conformal_scalar": [
+          {
+            "denominator": 120,
+            "numerator": 1
+          },
+          {
+            "denominator": 360,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 180,
+            "numerator": 1
+          }
+        ],
+        "right_Weyl_fermion": [
+          {
+            "denominator": 40,
+            "numerator": 1
+          },
+          {
+            "denominator": 720,
+            "numerator": -11
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 60,
+            "numerator": 1
+          }
+        ]
+      }
+    },
+    "repository_heat_kernel": {
+      "Yang_Mills_rule": "multiply the complete gauge-vector row, including FP/nonminimal cancellation, by dim(ad G)",
+      "common_scheme": "zeta/minimal heat-kernel reference scheme; BoxR retained before finite R2 conversion",
+      "method": "MINIMAL_OPERATOR_SEELEY_DEWITT_TRACE_LEDGER",
+      "rows": {
+        "Dirac_minus_half_logdet_Dslash_squared": [
+          {
+            "denominator": 20,
+            "numerator": 1
+          },
+          {
+            "denominator": 360,
+            "numerator": -11
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 30,
+            "numerator": 1
+          }
+        ],
+        "Weyl_absolute_determinant_half_Dirac": [
+          {
+            "denominator": 40,
+            "numerator": 1
+          },
+          {
+            "denominator": 720,
+            "numerator": -11
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 60,
+            "numerator": 1
+          }
+        ],
+        "gauge_complex_scalar_FP_ghost_minus_logdet": [
+          {
+            "denominator": 60,
+            "numerator": -1
+          },
+          {
+            "denominator": 180,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 90,
+            "numerator": -1
+          }
+        ],
+        "gauge_one_form_boson_half_logdet": [
+          {
+            "denominator": 60,
+            "numerator": 7
+          },
+          {
+            "denominator": 45,
+            "numerator": -8
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 45,
+            "numerator": -4
+          }
+        ],
+        "gauge_vector_total": [
+          {
+            "denominator": 10,
+            "numerator": 1
+          },
+          {
+            "denominator": 180,
+            "numerator": -31
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 10,
+            "numerator": -1
+          }
+        ],
+        "ordinary_homogeneous_compensator_same_scalar_operator": [
+          {
+            "denominator": 120,
+            "numerator": 1
+          },
+          {
+            "denominator": 360,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 180,
+            "numerator": 1
+          }
+        ],
+        "real_conformal_scalar_half_logdet_Delta0_conf": [
+          {
+            "denominator": 120,
+            "numerator": 1
+          },
+          {
+            "denominator": 360,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 180,
+            "numerator": 1
+          }
+        ]
+      }
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_checks": {
+    "BoxR_is_scheme_dependent_and_excluded_from_even_cancellation": true,
+    "BoxR_scheme_conversion_imported_by_hash": true,
+    "Yang_Mills_multiplicity_is_adjoint_dimension": true,
+    "antifield_completion_imported_by_hash": true,
+    "compensator_changes_complex_and_counterterm_algebra": true,
+    "gravity_vector_imported_by_hash": true,
+    "healthy_nonnegative_box_is_empty_by_C2_separator": true,
+    "odd_phase_policy_is_separate_from_absolute_determinant": true,
+    "signed_affine_lattice_is_complete": true,
+    "two_exact_methods_agree_on_every_standard_species": true,
+    "vector_ghost_and_nonminimal_ledger_complete": true
+  },
+  "gravity_vector": [
+    {
+      "denominator": 30,
+      "numerator": 199
+    },
+    {
+      "denominator": 20,
+      "numerator": -87
+    },
+    {
+      "denominator": 1,
+      "numerator": 0
+    },
+    {
+      "denominator": 1,
+      "numerator": 0
+    }
+  ],
+  "healthy_nonnegative_classification": {
+    "QME_disposition": "REMAINS_OBSTRUCTED_IN_DECLARED_HEALTHY_FAMILY",
+    "explicit_search_box": {
+      "lower_bound_each": 0,
+      "solution_set": "EMPTY",
+      "upper_bound_each": 10000
+    },
+    "separating_functional": {
+      "all_standard_species_values_strictly_positive": true,
+      "coordinates": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "gravity_value": {
+        "denominator": 30,
+        "numerator": 199
+      }
+    },
+    "unbounded_nonnegative_integer_lattice": "EMPTY",
+    "unbounded_nonnegative_real_cone": "EMPTY",
+    "variables": [
+      "N_s",
+      "N_L",
+      "N_R",
+      "N_D",
+      "N_U1",
+      "N_YM_i"
+    ]
+  },
+  "input_pins": {
+    "BoxR_scheme_conversion": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
+      "sha256": "21fc06bb31a35f8aa8f1d8f35f6fe1e746a8ab881332e16072ee257b3a437b2c"
+    },
+    "antifield_completion": {
+      "path": "quantum-weyl/local_bv/certificates/LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json",
+      "sha256": "07bf332cf1bece92f8a041002f3c787fe7e85e798871e4878fbbc3cd7b20bd3b"
+    },
+    "strict_breaking": {
+      "path": "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
+      "sha256": "d11ebc782c6a388e2fd2d934e0a60c7016faf60b9c22691cceeeb6a8080bf3f8"
+    }
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "matter_vectors_absolute_determinant": {
+    "Abelian_gauge_vector": {
+      "statistics_and_complex": "REAL_VECTOR_PLUS_COMPLETE_FP_NONMINIMAL_COMPLEX",
+      "vector": [
+        {
+          "denominator": 10,
+          "numerator": 1
+        },
+        {
+          "denominator": 180,
+          "numerator": -31
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 10,
+          "numerator": -1
+        }
+      ]
+    },
+    "Dirac_fermion": {
+      "statistics_and_complex": "LEFT_PLUS_RIGHT_COMPLEX_FERMION",
+      "vector": [
+        {
+          "denominator": 20,
+          "numerator": 1
+        },
+        {
+          "denominator": 360,
+          "numerator": -11
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 30,
+          "numerator": 1
+        }
+      ]
+    },
+    "left_Weyl_fermion": {
+      "statistics_and_complex": "LEFT_CHIRAL_COMPLEX_FERMION_ABSOLUTE_DETERMINANT",
+      "vector": [
+        {
+          "denominator": 40,
+          "numerator": 1
+        },
+        {
+          "denominator": 720,
+          "numerator": -11
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 60,
+          "numerator": 1
+        }
+      ]
+    },
+    "ordinary_homogeneous_conformal_compensator_scalar": {
+      "statistics_and_complex": "REAL_STANDARD_SIGN_SCALAR_DETERMINANT_ALIAS",
+      "vector": [
+        {
+          "denominator": 120,
+          "numerator": 1
+        },
+        {
+          "denominator": 360,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 180,
+          "numerator": 1
+        }
+      ]
+    },
+    "real_conformal_scalar": {
+      "statistics_and_complex": "REAL_STANDARD_SIGN_BOSON",
+      "vector": [
+        {
+          "denominator": 120,
+          "numerator": 1
+        },
+        {
+          "denominator": 360,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 180,
+          "numerator": 1
+        }
+      ]
+    },
+    "right_Weyl_fermion": {
+      "statistics_and_complex": "RIGHT_CHIRAL_COMPLEX_FERMION_ABSOLUTE_DETERMINANT",
+      "vector": [
+        {
+          "denominator": 40,
+          "numerator": 1
+        },
+        {
+          "denominator": 720,
+          "numerator": -11
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 60,
+          "numerator": 1
+        }
+      ]
+    }
+  },
+  "next_gate": "ADD_A_NEW_MATTER_COLUMN_ONLY_AFTER_ITS_FULL_BV_COMPLEX_AND_TWO_INDEPENDENT_ANOMALY_COEFFICIENT_METHODS_ARE_CERTIFIED",
+  "provenance": {
+    "proof_type": "TWO_METHOD_EXACT_COEFFICIENT_REPLAY_DUAL_CONE_SEPARATION_AND_SMITH_AFFINE_LATTICE",
+    "source_manifest": {
+      "../reports/matter-content-anomaly-cancellation-lattice.md": "503ad209ac5e558178433c5223f882a66dda3143210ebd7bc8ff48fc7f245608",
+      "matter_content_anomaly_cancellation_lattice.py": "19735925cab50a2d3e3c3515aa43c1c3b21270a88b59bbb9eaa3d2cfe29078bb",
+      "matter_content_anomaly_cancellation_lattice_certificate.py": "a1a5fbb67bde2e31d788e3d0e3d1c342661c00494236ac363767c7e503d1ec3f",
+      "schema/matter-content-anomaly-cancellation-lattice-v1.schema.json": "f69c6ed8aee359f68d3c06f2fa162c8cd59d4b9057d459f595af7abeb26a752c",
+      "tests/test_matter_content_anomaly_cancellation_lattice.py": "c6061385d365cef18b0bb815edf7e23d1b1582c0c7a6992da0935a4507d41f92",
+      "verify_matter_content_anomaly_cancellation_lattice.py": "dc49bcc407217cbe38171b3947a3dadbcc43580515f84d1037604c511c49aee3"
+    }
+  },
+  "result_id": "MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE",
+  "result_state": "HEALTHY_NONNEGATIVE_LATTICE_EMPTY_SIGNED_DETERMINANT_LATTICE_COMPLETE_COMPENSATOR_IS_CHANGED_THEORY",
+  "schema": "quantum-weyl-matter-content-anomaly-cancellation-lattice-v1",
+  "scheme_ledger": {
+    "BoxR": "reference heat-kernel values displayed; arbitrary finite R2 counterterms shift this coordinate, so it is not used in the cancellation no-go or signed even lattice",
+    "C2_E4_CdualC": "scheme-independent within each declared determinant phase policy",
+    "strict_repository_BoxR": {
+      "denominator": 1,
+      "numerator": 0
+    }
+  },
+  "signed_determinant_lattice": {
+    "complete_parameterization": {
+      "N_D": "u",
+      "N_W_absolute": "-308-2*u-20*t",
+      "N_s": "128+48*t",
+      "N_vector_total": "t",
+      "parameter_domain": "Z",
+      "parameters": [
+        "u",
+        "t"
+      ]
+    },
+    "complete_rational_parameterization": {
+      "N_D": "u",
+      "N_W_absolute": "-308-2*u-20*t",
+      "N_s": "128+48*t",
+      "N_vector_total": "t",
+      "parameter_domain": "Q",
+      "parameters": [
+        "u",
+        "t"
+      ]
+    },
+    "gauge_split": "N_vector_total=N_U1+sum_i dim(ad G_i)*N_YM_i; every integer split of t gives the same gravitational anomaly vector",
+    "integer_matrix_scaled_by_720": [
+      [
+        6,
+        18,
+        36,
+        72
+      ],
+      [
+        -2,
+        -11,
+        -22,
+        -124
+      ]
+    ],
+    "kernel_basis": [
+      [
+        0,
+        -2,
+        1,
+        0
+      ],
+      [
+        48,
+        -20,
+        0,
+        1
+      ]
+    ],
+    "particular_solution_Ns_NW_ND_NV": [
+      128,
+      -308,
+      0,
+      0
+    ],
+    "phase_sensitive_chiral_refinement": {
+      "N_D": "u",
+      "N_L": "r",
+      "N_R": "-308-2*u-20*t-r",
+      "N_s": "128+48*t",
+      "N_vector_total": "t",
+      "declared_odd_coordinate": "p=0 for each chirality",
+      "parameters": [
+        "r",
+        "u",
+        "t"
+      ]
+    },
+    "rank": 2,
+    "right_hand_side": [
+      -4776,
+      3132
+    ],
+    "smith_invariant_factors": [
+      1,
+      30
+    ]
+  }
+}

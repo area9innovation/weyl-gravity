@@ -7,11 +7,25 @@ import unittest
 from jsonschema import ValidationError
 
 from atlas.generate_quantum_atlas_fragment import OUTPUT, build, validate_fragment
+from atlas.generate_matter_selection_atlas_table import build as build_matter_table
 from atlas.verify_quantum_atlas_fragment import verify
+from atlas.verify_matter_selection_atlas_table import verify as verify_matter_table
 from residual_atlas.validate_fragment import validate as validate_common_fragment
 
 
 class QuantumAtlasFragmentTests(unittest.TestCase):
+    def test_matter_selection_table_is_fail_closed(self) -> None:
+        value = build_matter_table()
+        self.assertEqual(value["strict_gravity_status"], "OBSTRUCTED")
+        self.assertTrue(all(
+            row["Lorentzian_QME_status"] == "NO_CERTIFIED_MAP"
+            for row in value["rows"]
+        ))
+        self.assertEqual(
+            verify_matter_table()["schema"],
+            "quantum-weyl-matter-selection-atlas-table-v1",
+        )
+
     def test_generated_entry_kinds_and_nonparticle_ledgers(self) -> None:
         value = build()
         kinds = [entry["quantum_data"]["entry_kind"] for entry in value["entries"]]
