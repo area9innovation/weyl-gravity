@@ -1,0 +1,229 @@
+{
+  "claim_boundary": "The normalized free Krein covariance is transported across both certified regular Cauchy GreenHyp morphisms to global Hadamard Krein covariances on the cutoff and full rank-40 Hermitian metric dilations. Their antisymmetric parts are exactly i times their respective project Pauli--Jordan distributions. The fibre form remains indefinite. No raw-companion or graded-BV restriction, BRST Ward identity, positive state, physical positivity, renormalized Lorentzian product, Lorentzian QME or full quantum theory is certified.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+    "BERGER_CUTOFF_DILATION_HADAMARD_KREIN_COVARIANCE": true,
+    "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING": true,
+    "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED": true,
+    "BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE": false,
+    "BERGER_FULL_DILATION_EXACT_CCR": true,
+    "BERGER_FULL_DILATION_HADAMARD_KREIN_COVARIANCE": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED": true,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "BERGER_REGULAR_GREENHYP_MORPHISM": true,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "dependency_refs": {
+    "Hermitian_dilation_and_Cauchy_legs": {
+      "result_id": "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION",
+      "sha256": "72a02a8335ac5d3010ddc7785a2e7dc6028bf139b282b61f7fbb4dc5340d64d9"
+    },
+    "cutoff_normal_topology_and_cone_mapping": {
+      "result_id": "BERGER_CUTOFF_VOLTERRA_NORMAL_TOPOLOGY_CONVERGENCE",
+      "sha256": "aed2b58a68215738986511cb4796ae75b37aa8b1f2d0373d7c15b08567d8aa3f"
+    },
+    "normalized_free_Krein_covariance": {
+      "result_id": "BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE",
+      "sha256": "34ef69351b814f678fd63f646b41f2c260aee204256c81587cfeedf25c10b16c"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_input_checks": {
+    "both_legs_regular": true,
+    "common_classical_snapshot": true,
+    "cutoff_and_formal_transpose_normal_convergence": true,
+    "cutoff_dilation_decomposable": true,
+    "cutoff_to_full_Cauchy_leg": true,
+    "free_exact_CCR": true,
+    "free_to_cutoff_Cauchy_leg": true,
+    "inverse_morphism_cone_action": true,
+    "normalized_free_Hadamard_Krein_covariance": true
+  },
+  "lifecycle_layer": "LORENTZIAN_DILATED_KREIN_COVARIANCE_TRANSPORT",
+  "literature_provenance": {
+    "arxiv": "2503.12537",
+    "scope_map": "The inverse Cauchy morphism formula and two-point transport law are instantiated on the certified rank-40 dilation. Positivity is not imported because the fibre form is indefinite.",
+    "source": "Christopher J. Fewster, Hadamard states for decomposable Green-hyperbolic operators",
+    "theorems": [
+      "Theorem 3.5(d,e)",
+      "Lemma 5.14",
+      "Lemma 5.15(c)",
+      "Theorem 5.16"
+    ]
+  },
+  "negative_controls": {
+    "omit_cone_action": {
+      "all_pass": false,
+      "checks": {
+        "cutoff_transport_is_Hadamard": false,
+        "cutoff_transport_is_bisolution": true,
+        "cutoff_transport_preserves_exact_CCR": true,
+        "equivalent_inverse_morphism_choice_does_not_change_covariance": true,
+        "full_transport_is_Hadamard": false,
+        "full_transport_is_bisolution": true,
+        "full_transport_preserves_exact_CCR": true,
+        "transport_is_well_defined_on_equation_of_motion_quotients": true,
+        "typed_chain_L_free_cutoff_then_L_cutoff_full": true
+      },
+      "composite": {
+        "CCR_calculation": "W_full-W_full^T=(W_free-W_free^T)o(T^sharp tensor T^sharp)=i E_free o(T^sharp tensor T^sharp)=i E_full",
+        "Hadamard_calculation": "WF(W_free) subset N_+xN_-; two applications of the regular inverse-morphism cone action give WF(W_full) subset N_+xN_-",
+        "full_Pauli_Jordan": "E_full=E_free o (T^sharp tensor T^sharp)",
+        "full_covariance": "W_full=W_free o (T^sharp tensor T^sharp)",
+        "inverse": "T=L_- o L_+:D_full->D_free"
+      },
+      "future_leg": {
+        "morphism": "S_+:D_chi->D_full",
+        "quotient_inverse": "L_+:D_full->D_chi, Lhat_+=Shat_+^{-1}"
+      },
+      "past_leg": {
+        "cutoff_Pauli_Jordan": "E_chi=E_free o (L_-^sharp tensor L_-^sharp)",
+        "cutoff_covariance": "W_chi=W_free o (L_-^sharp tensor L_-^sharp)",
+        "morphism": "S_-:D_free->D_chi",
+        "quotient_inverse": "L_-:D_chi->D_free, Lhat_-=Shat_-^{-1}"
+      }
+    },
+    "omit_quotient_inverse": {
+      "all_pass": false,
+      "checks": {
+        "cutoff_transport_is_Hadamard": false,
+        "cutoff_transport_is_bisolution": false,
+        "cutoff_transport_preserves_exact_CCR": false,
+        "equivalent_inverse_morphism_choice_does_not_change_covariance": false,
+        "full_transport_is_Hadamard": false,
+        "full_transport_is_bisolution": false,
+        "full_transport_preserves_exact_CCR": false,
+        "transport_is_well_defined_on_equation_of_motion_quotients": false,
+        "typed_chain_L_free_cutoff_then_L_cutoff_full": false
+      },
+      "composite": {
+        "CCR_calculation": "W_full-W_full^T=(W_free-W_free^T)o(T^sharp tensor T^sharp)=i E_free o(T^sharp tensor T^sharp)=i E_full",
+        "Hadamard_calculation": "WF(W_free) subset N_+xN_-; two applications of the regular inverse-morphism cone action give WF(W_full) subset N_+xN_-",
+        "full_Pauli_Jordan": "E_full=E_free o (T^sharp tensor T^sharp)",
+        "full_covariance": "W_full=W_free o (T^sharp tensor T^sharp)",
+        "inverse": "T=L_- o L_+:D_full->D_free"
+      },
+      "future_leg": {
+        "morphism": "S_+:D_chi->D_full",
+        "quotient_inverse": "L_+:D_full->D_chi, Lhat_+=Shat_+^{-1}"
+      },
+      "past_leg": {
+        "cutoff_Pauli_Jordan": "E_chi=E_free o (L_-^sharp tensor L_-^sharp)",
+        "cutoff_covariance": "W_chi=W_free o (L_-^sharp tensor L_-^sharp)",
+        "morphism": "S_-:D_free->D_chi",
+        "quotient_inverse": "L_-:D_chi->D_free, Lhat_-=Shat_-^{-1}"
+      }
+    },
+    "use_different_transport_for_CCR_sides": {
+      "all_pass": false,
+      "checks": {
+        "cutoff_transport_is_Hadamard": true,
+        "cutoff_transport_is_bisolution": true,
+        "cutoff_transport_preserves_exact_CCR": false,
+        "equivalent_inverse_morphism_choice_does_not_change_covariance": true,
+        "full_transport_is_Hadamard": true,
+        "full_transport_is_bisolution": true,
+        "full_transport_preserves_exact_CCR": false,
+        "transport_is_well_defined_on_equation_of_motion_quotients": true,
+        "typed_chain_L_free_cutoff_then_L_cutoff_full": true
+      },
+      "composite": {
+        "CCR_calculation": "W_full-W_full^T=(W_free-W_free^T)o(T^sharp tensor T^sharp)=i E_free o(T^sharp tensor T^sharp)=i E_full",
+        "Hadamard_calculation": "WF(W_free) subset N_+xN_-; two applications of the regular inverse-morphism cone action give WF(W_full) subset N_+xN_-",
+        "full_Pauli_Jordan": "E_full=E_free o (T^sharp tensor T^sharp)",
+        "full_covariance": "W_full=W_free o (T^sharp tensor T^sharp)",
+        "inverse": "T=L_- o L_+:D_full->D_free"
+      },
+      "future_leg": {
+        "morphism": "S_+:D_chi->D_full",
+        "quotient_inverse": "L_+:D_full->D_chi, Lhat_+=Shat_+^{-1}"
+      },
+      "past_leg": {
+        "cutoff_Pauli_Jordan": "E_chi=E_free o (L_-^sharp tensor L_-^sharp)",
+        "cutoff_covariance": "W_chi=W_free o (L_-^sharp tensor L_-^sharp)",
+        "morphism": "S_-:D_free->D_chi",
+        "quotient_inverse": "L_-:D_chi->D_free, Lhat_-=Shat_-^{-1}"
+      }
+    }
+  },
+  "next_gate": "CONSTRUCT_RAW_COMPANION_OR_GRADED_BV_RESTRICTION_OF_FULL_DILATION_COVARIANCE_AND_VERIFY_BRST_WARD_IDENTITY",
+  "open_boundary": {
+    "BRST_Ward_identity": "NOT_VERIFIED",
+    "Lorentzian_QME": "NOT_RESTORED",
+    "full_graded_BV_restriction": "NOT_CONSTRUCTED",
+    "physical_cohomology_positivity": "NOT_VERIFIED",
+    "positive_state": "NOT_CERTIFIED",
+    "raw_companion_restriction": "NOT_CONSTRUCTED",
+    "renormalized_Lorentzian_products": "NOT_CONSTRUCTED"
+  },
+  "provenance": {
+    "source_manifest": {
+      "../reports/berger-full-dilation-hadamard-krein-covariance-transport.md": "23d55bbcf93267aacd88edb6d7c9ed00580c7725a95a841f3080170f43590505",
+      "berger_full_dilation_hadamard_krein_covariance_transport.py": "6bd1419b9b8cb0dd2019894578c62ababb2ab7025d7956e0685bbf2bee028683",
+      "berger_full_dilation_hadamard_krein_covariance_transport_certificate.py": "af1368c008e06ece9f491c106044a2c0137c9b81d059e95002eb3fb4c830720c",
+      "schema/berger-full-dilation-hadamard-krein-covariance-transport-v1.schema.json": "4c35ce27d52c28bbb913591a82a25819909174303d6f4e2ae8d8f867b40d32dd",
+      "tests/test_berger_full_dilation_hadamard_krein_covariance_transport.py": "82194f7b37c3d73396b5682c6455897d58111b704aecb860dfdd9b00bf1124ae",
+      "verify_berger_full_dilation_hadamard_krein_covariance_transport.py": "c57b3498b7eeba152303960c7a510c2f876825cb0e4dc9202ef7a1b4300efac3"
+    },
+    "source_manifest_sha256": "2478044dbd63128733446c2c394f70141b2ab09e902f6e24a4d6c669cdee25bf",
+    "transport_proof_type": "EXACT_QUOTIENT_IDENTITY_PLUS_MICROLOCAL_THEOREM_INSTANTIATION"
+  },
+  "result_id": "BERGER_FULL_DILATION_HADAMARD_KREIN_CCR_COVARIANCE",
+  "result_state": "FULL_METRIC_DILATION_GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE_TRANSPORTED_GRADED_BV_AND_POSITIVITY_OPEN",
+  "schema": "quantum-weyl-berger-full-dilation-hadamard-krein-covariance-transport-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "transport": {
+    "all_pass": true,
+    "checks": {
+      "cutoff_transport_is_Hadamard": true,
+      "cutoff_transport_is_bisolution": true,
+      "cutoff_transport_preserves_exact_CCR": true,
+      "equivalent_inverse_morphism_choice_does_not_change_covariance": true,
+      "full_transport_is_Hadamard": true,
+      "full_transport_is_bisolution": true,
+      "full_transport_preserves_exact_CCR": true,
+      "transport_is_well_defined_on_equation_of_motion_quotients": true,
+      "typed_chain_L_free_cutoff_then_L_cutoff_full": true
+    },
+    "composite": {
+      "CCR_calculation": "W_full-W_full^T=(W_free-W_free^T)o(T^sharp tensor T^sharp)=i E_free o(T^sharp tensor T^sharp)=i E_full",
+      "Hadamard_calculation": "WF(W_free) subset N_+xN_-; two applications of the regular inverse-morphism cone action give WF(W_full) subset N_+xN_-",
+      "full_Pauli_Jordan": "E_full=E_free o (T^sharp tensor T^sharp)",
+      "full_covariance": "W_full=W_free o (T^sharp tensor T^sharp)",
+      "inverse": "T=L_- o L_+:D_full->D_free"
+    },
+    "future_leg": {
+      "morphism": "S_+:D_chi->D_full",
+      "quotient_inverse": "L_+:D_full->D_chi, Lhat_+=Shat_+^{-1}"
+    },
+    "past_leg": {
+      "cutoff_Pauli_Jordan": "E_chi=E_free o (L_-^sharp tensor L_-^sharp)",
+      "cutoff_covariance": "W_chi=W_free o (L_-^sharp tensor L_-^sharp)",
+      "morphism": "S_-:D_free->D_chi",
+      "quotient_inverse": "L_-:D_chi->D_free, Lhat_-=Shat_-^{-1}"
+    }
+  },
+  "transported_covariances": {
+    "cutoff": {
+      "CCR": "W_Dchi-W_Dchi^T=i E_Dchi",
+      "carrier": "cutoff rank-40 Hermitian metric dilation",
+      "status": "GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE"
+    },
+    "full": {
+      "CCR": "W_Dfull-W_Dfull^T=i E_Dfull",
+      "carrier": "full rank-40 Hermitian metric dilation",
+      "fibre_signature": [
+        20,
+        20
+      ],
+      "state_space_status": "INDEFINITE_KREIN_QUASIFREE_FUNCTIONAL_NOT_A_POSITIVE_STATE",
+      "status": "GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE"
+    }
+  }
+}

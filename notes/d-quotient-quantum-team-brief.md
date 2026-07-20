@@ -1521,7 +1521,8 @@ BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY [CERTIFIED]
   -> FREE_DILATION_GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE [CERTIFIED, INDEFINITE]
   -> CUTOFF_DPRIME_GAMMA_NORMAL_CONVERGENCE + DECOMPOSABILITY
      + MORPHISM_CONE_MAPPING [CERTIFIED]
-  -> normalized Krein covariance transport + exact CCR
+  -> FULL_DILATION_HADAMARD_KREIN_COVARIANCE + EXACT_CCR
+     [CERTIFIED, INDEFINITE]
   -> restriction to full graded BV carrier + BRST Ward identity
   -> companion Hadamard two-point distribution
 ```
@@ -1551,9 +1552,12 @@ compact-slab Volterra series and their formal transposes now converge in the
 fixed \(\mathcal D'_{\Gamma_\pm}\) normal topologies by a
 polynomial-times-factorial seminorm majorant. This certifies cutoff
 null-cone decomposability, exclusion of the two same-orientation sectors and
-the regular morphisms' cone action. The active analytic gate is now transport
-of the normalized free Krein covariance across both regular Cauchy morphisms
-with exact CCR verification. Restriction from
+the regular morphisms' cone action. Quotient-inverse Cauchy morphisms now
+transport the normalized free covariance to global Hadamard Krein
+covariances on the cutoff and full rank-40 metric dilations. Because the
+Pauli--Jordan form is transported by the identical maps, the cutoff and full
+antisymmetric parts equal \(iE_\chi\) and \(iE_{\rm full}\) exactly.
+Restriction from
 the doubled metric carrier to the full graded BV complex, the BRST Ward
 identity and the physical/Krein positivity policy remain independent gates.
 The fail-closed atlas row remains `OPEN`: no full companion covariance, BRST
@@ -1576,13 +1580,16 @@ oriented canonical relation \(\Gamma_\pm=\Delta\cup R_\pm\). The compact-slab
 series and their formal transposes now converge in the normal topology of
 \(\mathcal D'_{\Gamma_\pm}\): the exact seminorm majorant has polynomial
 growth times \(z^n/n!\), and its term ratio tends to zero. Consequently,
-cutoff decomposability and the regular morphism cone action are certified;
-only transport of the normalized covariance and its exact CCR remains at
-this stage. The finite-term reduction is recorded in
+cutoff decomposability and the regular morphism cone action are certified.
+The normalized covariance has now been transported through both legs with
+exact CCR; raw-companion/graded-BV restriction is the remaining state gate.
+The finite-term reduction is recorded in
 [`berger-cutoff-volterra-microlocal-orientation-reduction.md`](../quantum-weyl/reports/berger-cutoff-volterra-microlocal-orientation-reduction.md).
 The completed normal-topology theorem and its fail-closed transport boundary
 are recorded in
 [`berger-cutoff-volterra-normal-topology-convergence.md`](../quantum-weyl/reports/berger-cutoff-volterra-normal-topology-convergence.md).
+The completed two-leg covariance transport is recorded in
+[`berger-full-dilation-hadamard-krein-covariance-transport.md`](../quantum-weyl/reports/berger-full-dilation-hadamard-krein-covariance-transport.md).
 The now-certified independent free global bisolution input and its
 indefinite/positive-state boundary are recorded in
 [`berger-free-dilation-hadamard-bisolution-seed.md`](../quantum-weyl/reports/berger-free-dilation-hadamard-bisolution-seed.md).

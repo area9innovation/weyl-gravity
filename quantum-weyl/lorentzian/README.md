@@ -200,8 +200,11 @@ convergence of the kernels and their formal transposes in the normal
 topologies of the fixed `D'_Gamma_+/-` spaces using an exact
 polynomial-times-factorial seminorm majorant. Cutoff null-cone
 decomposability and the regular morphisms' cone action are therefore
-certified. The next gate transports the normalized free Krein covariance
-across both morphisms and verifies the exact CCR.
+certified. The normalized free Krein covariance now transports across both
+morphisms. The covariance and Pauli--Jordan form use the identical
+quotient-inverse maps, so the cutoff and full rank-40 metric dilations obey
+their exact CCR and retain the Hadamard wavefront relation. The next gate is
+a valid raw-companion or graded-BV restriction and its BRST Ward identity.
 
 The receiving side of that route is now executable.  The stationary-generator
 import readiness result requires content-addressed exact PBW records for
@@ -356,3 +359,12 @@ the distribution
 therefore has a globally Hadamard, exactly CCR-normalized Krein covariance.
 It remains indefinite and is not a positive state.  The receipt is
 [`berger-free-dilation-krein-ccr-covariance.md`](../reports/berger-free-dilation-krein-ccr-covariance.md).
+
+The quotient-inverse Cauchy morphisms now push this covariance through
+`D_free -> D_chi -> D_full`. Both transported bidistributions are global
+Hadamard Krein covariances and satisfy
+`W_D-W_D^T=i E_D` exactly. This is certified only on the cutoff and full
+rank-40 Hermitian metric dilations. Projection to the undoubled companion,
+extension to the full graded BV carrier, the BRST Ward identity and
+positivity remain open. See
+[`berger-full-dilation-hadamard-krein-covariance-transport.md`](../reports/berger-full-dilation-hadamard-krein-covariance-transport.md).

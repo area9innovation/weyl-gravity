@@ -1,0 +1,254 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-berger-full-dilation-hadamard-krein-covariance-transport-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_layer",
+    "dependency_tags",
+    "classical_commit",
+    "setting_id",
+    "dependency_refs",
+    "exact_input_checks",
+    "transport",
+    "transported_covariances",
+    "negative_controls",
+    "literature_provenance",
+    "open_boundary",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-berger-full-dilation-hadamard-krein-covariance-transport-v1"
+    },
+    "result_id": {
+      "const": "BERGER_FULL_DILATION_HADAMARD_KREIN_CCR_COVARIANCE"
+    },
+    "result_state": {
+      "const": "FULL_METRIC_DILATION_GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE_TRANSPORTED_GRADED_BV_AND_POSITIVITY_OPEN"
+    },
+    "lifecycle_layer": {
+      "const": "LORENTZIAN_DILATED_KREIN_COVARIANCE_TRANSPORT"
+    },
+    "dependency_tags": {
+      "const": ["LORENTZIAN-CAUSAL"]
+    },
+    "classical_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "setting_id": {
+      "const": "compact_positive_berger_clock_fixed_coupling_linearized"
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Hermitian_dilation_and_Cauchy_legs",
+        "cutoff_normal_topology_and_cone_mapping",
+        "normalized_free_Krein_covariance"
+      ],
+      "properties": {
+        "Hermitian_dilation_and_Cauchy_legs": {"$ref": "#/$defs/reference"},
+        "cutoff_normal_topology_and_cone_mapping": {"$ref": "#/$defs/reference"},
+        "normalized_free_Krein_covariance": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "exact_input_checks": {
+      "type": "object",
+      "additionalProperties": {"const": true},
+      "minProperties": 9
+    },
+    "transport": {"$ref": "#/$defs/replay"},
+    "transported_covariances": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cutoff", "full"],
+      "properties": {
+        "cutoff": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["carrier", "status", "CCR"],
+          "properties": {
+            "carrier": {"const": "cutoff rank-40 Hermitian metric dilation"},
+            "status": {"const": "GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE"},
+            "CCR": {"const": "W_Dchi-W_Dchi^T=i E_Dchi"}
+          }
+        },
+        "full": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "carrier",
+            "status",
+            "CCR",
+            "fibre_signature",
+            "state_space_status"
+          ],
+          "properties": {
+            "carrier": {"const": "full rank-40 Hermitian metric dilation"},
+            "status": {"const": "GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE"},
+            "CCR": {"const": "W_Dfull-W_Dfull^T=i E_Dfull"},
+            "fibre_signature": {"const": [20, 20]},
+            "state_space_status": {
+              "const": "INDEFINITE_KREIN_QUASIFREE_FUNCTIONAL_NOT_A_POSITIVE_STATE"
+            }
+          }
+        }
+      }
+    },
+    "negative_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "omit_quotient_inverse",
+        "omit_cone_action",
+        "use_different_transport_for_CCR_sides"
+      ],
+      "properties": {
+        "omit_quotient_inverse": {"$ref": "#/$defs/replay"},
+        "omit_cone_action": {"$ref": "#/$defs/replay"},
+        "use_different_transport_for_CCR_sides": {"$ref": "#/$defs/replay"}
+      }
+    },
+    "literature_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "arxiv", "theorems", "scope_map"],
+      "properties": {
+        "source": {"type": "string"},
+        "arxiv": {"const": "2503.12537"},
+        "theorems": {
+          "const": [
+            "Theorem 3.5(d,e)",
+            "Lemma 5.14",
+            "Lemma 5.15(c)",
+            "Theorem 5.16"
+          ]
+        },
+        "scope_map": {"type": "string"}
+      }
+    },
+    "open_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_companion_restriction",
+        "full_graded_BV_restriction",
+        "BRST_Ward_identity",
+        "positive_state",
+        "physical_cohomology_positivity",
+        "renormalized_Lorentzian_products",
+        "Lorentzian_QME"
+      ],
+      "properties": {
+        "raw_companion_restriction": {"const": "NOT_CONSTRUCTED"},
+        "full_graded_BV_restriction": {"const": "NOT_CONSTRUCTED"},
+        "BRST_Ward_identity": {"const": "NOT_VERIFIED"},
+        "positive_state": {"const": "NOT_CERTIFIED"},
+        "physical_cohomology_positivity": {"const": "NOT_VERIFIED"},
+        "renormalized_Lorentzian_products": {"const": "NOT_CONSTRUCTED"},
+        "Lorentzian_QME": {"const": "NOT_RESTORED"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED",
+        "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING",
+        "BERGER_REGULAR_GREENHYP_MORPHISM",
+        "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED",
+        "BERGER_CUTOFF_DILATION_HADAMARD_KREIN_COVARIANCE",
+        "BERGER_FULL_DILATION_HADAMARD_KREIN_COVARIANCE",
+        "BERGER_FULL_DILATION_EXACT_CCR",
+        "BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE",
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION",
+        "BERGER_26_ROW_BRST_HADAMARD",
+        "BERGER_54_ROW_BRST_HADAMARD",
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY",
+        "BERGER_HADAMARD_DATA",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED": {"const": true},
+        "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING": {"const": true},
+        "BERGER_REGULAR_GREENHYP_MORPHISM": {"const": true},
+        "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED": {"const": true},
+        "BERGER_CUTOFF_DILATION_HADAMARD_KREIN_COVARIANCE": {"const": true},
+        "BERGER_FULL_DILATION_HADAMARD_KREIN_COVARIANCE": {"const": true},
+        "BERGER_FULL_DILATION_EXACT_CCR": {"const": true},
+        "BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE": {"const": false},
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": {"const": false},
+        "BERGER_26_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_54_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {
+      "const": "CONSTRUCT_RAW_COMPANION_OR_GRADED_BV_RESTRICTION_OF_FULL_DILATION_COVARIANCE_AND_VERIFY_BRST_WARD_IDENTITY"
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "transport_proof_type",
+        "source_manifest",
+        "source_manifest_sha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "transport_proof_type": {
+          "const": "EXACT_QUOTIENT_IDENTITY_PLUS_MICROLOCAL_THEOREM_INSTANTIATION"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "source_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["past_leg", "future_leg", "composite", "checks", "all_pass"],
+      "properties": {
+        "past_leg": {"type": "object"},
+        "future_leg": {"type": "object"},
+        "composite": {"type": "object"},
+        "checks": {
+          "type": "object",
+          "additionalProperties": {"type": "boolean"},
+          "minProperties": 9
+        },
+        "all_pass": {"type": "boolean"}
+      }
+    }
+  }
+}

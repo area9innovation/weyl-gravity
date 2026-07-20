@@ -1,0 +1,52 @@
+{
+  "schema": "quantum-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_FULL_DILATION_HADAMARD_KREIN_CCR_COVARIANCE_V1_TIER_RECEIPT",
+  "recorded_at_utc": "2026-07-20T07:24:00Z",
+  "base_commit": "a10ea9ca6169d7225e9dcbbb9c97c2afccec1d4b",
+  "dependency_tags": ["LORENTZIAN-CAUSAL"],
+  "changed_claim": "The normalized free rank-40 Hadamard Krein covariance transports through both regular Cauchy GreenHyp quotient isomorphisms to cutoff and full metric-dilation covariances, preserving the Hadamard relation and exact project CCR.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.97,
+      "commands": [
+        "python -m py_compile quantum-weyl/lorentzian/berger_full_dilation_hadamard_krein_covariance_transport.py quantum-weyl/lorentzian/berger_full_dilation_hadamard_krein_covariance_transport_certificate.py quantum-weyl/lorentzian/verify_berger_full_dilation_hadamard_krein_covariance_transport.py quantum-weyl/lorentzian/tests/test_berger_full_dilation_hadamard_krein_covariance_transport.py quantum-weyl/active_frontier.py quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
+        "python -m json.tool quantum-weyl/lorentzian/schema/berger-full-dilation-hadamard-krein-covariance-transport-v1.schema.json",
+        "python -m json.tool quantum-weyl/schema/active-frontier-v1.schema.json",
+        "git diff --check -- quantum-weyl notes/d-quotient-quantum-team-brief.md notes/universe-building-roadmap.md"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 5.47,
+      "tests_run": 24,
+      "commands": [
+        "PYTHONPATH=quantum-weyl python -m lorentzian.berger_full_dilation_hadamard_krein_covariance_transport_certificate --check",
+        "PYTHONPATH=quantum-weyl python -m lorentzian.verify_berger_full_dilation_hadamard_krein_covariance_transport",
+        "PYTHONPATH=quantum-weyl python quantum-weyl/verify_active_frontier.py",
+        "PYTHONPATH=quantum-weyl python -m atlas.verify_quantum_atlas_fragment",
+        "PYTHONPATH=quantum-weyl python -m unittest quantum-weyl/lorentzian/tests/test_berger_full_dilation_hadamard_krein_covariance_transport.py quantum-weyl/tests/test_active_frontier.py quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py -v"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The new transport certificate and the affected active-frontier and generated atlas chain were regenerated and independently verified. The Cauchy-leg, normal-topology and free-covariance dependencies are content-addressed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "The result remains an indefinite auxiliary metric-dilation covariance and does not freeze or promote a raw-companion, graded-BV or positive state."
+    }
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_EXIT_ZERO_WITH_FINDINGS",
+    "command": "./ci/science-forge-shadow.sh",
+    "elapsed_seconds": 5.14,
+    "findings": [
+      "bridge certificate audit drift=FAIL",
+      "coverage census drift: 1181 certificates versus baseline 976",
+      "forge checkout revision differs from the unpinned dirty development binary"
+    ],
+    "claim_use": "NOT_USED_FOR_PROMOTION"
+  },
+  "claim_boundary": "This certificate constructs global Hadamard Krein covariances with exact CCR on the cutoff and full rank-40 Hermitian metric dilations. It does not provide a covariance on the undoubled raw companion or full 54-row graded BV carrier, verify the BRST Ward identity, establish positivity, construct renormalized Lorentzian products or restore a Lorentzian QME."
+}

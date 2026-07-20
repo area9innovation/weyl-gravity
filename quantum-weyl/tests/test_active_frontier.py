@@ -552,7 +552,11 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertTrue(flags["BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE"])
         self.assertTrue(flags["BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING"])
-        self.assertFalse(flags["BERGER_FULL_DILATION_HADAMARD_KREIN_COVARIANCE"])
+        self.assertTrue(
+            flags["BERGER_CUTOFF_DILATION_HADAMARD_KREIN_COVARIANCE"]
+        )
+        self.assertTrue(flags["BERGER_FULL_DILATION_HADAMARD_KREIN_COVARIANCE"])
+        self.assertTrue(flags["BERGER_FULL_DILATION_EXACT_CCR"])
         self.assertTrue(
             flags["BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED"]
         )
@@ -574,12 +578,12 @@ class ActiveFrontierTests(unittest.TestCase):
             row["status"],
         )
         self.assertIn(
-            "CUTOFF_VOLTERRA_NORMAL_CONVERGENCE_DECOMPOSABILITY",
+            "FULL_METRIC_DILATION_GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE",
             row["status"],
         )
         self.assertEqual(
             row["next_gate"],
-            "TRANSPORT_NORMALIZED_FREE_KREIN_COVARIANCE_ACROSS_THE_TWO_REGULAR_CAUCHY_MORPHISMS_AND_VERIFY_EXACT_CCR",
+            "CONSTRUCT_RAW_COMPANION_OR_GRADED_BV_RESTRICTION_OF_FULL_DILATION_COVARIANCE_AND_VERIFY_BRST_WARD_IDENTITY",
         )
         algebra_row = self.payload["active_rows"]["free_Lorentzian_algebra"]
         self.assertIn("PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED", algebra_row["status"])

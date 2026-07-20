@@ -520,10 +520,12 @@ their formal transposes now converge in the fixed
 polynomial-times-factorial seminorm majorant. This certifies cutoff null-cone
 decomposability, Pauli--Jordan same-orientation exclusion and the regular
 Cauchy morphisms' cone action. A global exact CCR-normalized Hadamard Krein
-covariance is independently certified on the free rank-40 dilation. Its
-transport across both regular morphisms, restriction to the full graded BV
-carrier, BRST Ward identity and physical positivity remain open. No positive
-state or full-BV Hadamard flag is promoted.
+covariance is independently certified on the free rank-40 dilation.
+Quotient-inverse Cauchy morphisms transport it to the cutoff and full
+rank-40 metric dilations while preserving the Hadamard relation and exact
+CCR. Their fibre form remains indefinite. Raw-companion or full graded-BV
+restriction, the BRST Ward identity and physical positivity remain open. No
+positive-state or full-BV Hadamard flag is promoted.
 The generic typed biwave Volterra theorem is now independently imported as
 reusable causal infrastructure. It distinguishes solution- and source-space
 resolvents, proves both factorial bounds and inverse identities, reverses the

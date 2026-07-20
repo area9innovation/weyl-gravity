@@ -171,11 +171,19 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         self.assertIn("compact-slab convergence", hadamard["statement"])
         self.assertIn("cutoff null-cone decomposability", hadamard["statement"])
         self.assertIn(
+            "transported to global Hadamard Krein covariances",
+            hadamard["statement"],
+        )
+        self.assertIn(
             "BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
         self.assertIn(
             "BERGER_CUTOFF_VOLTERRA_NORMAL_TOPOLOGY_CONVERGENCE",
+            {evidence["result_id"] for evidence in berger["evidence"]},
+        )
+        self.assertIn(
+            "BERGER_FULL_DILATION_HADAMARD_KREIN_CCR_COVARIANCE",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
         self.assertIn("exactly CCR-normalized free-dilation Krein covariance", hadamard["statement"])
