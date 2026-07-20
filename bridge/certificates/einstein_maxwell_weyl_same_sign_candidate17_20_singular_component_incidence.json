@@ -1,0 +1,80 @@
+{
+  "claim_boundary": "This proves component incidence at every positive occupation, not connectedness of either singular component or of the complete singular rotation-zero quotient. It does not glue occupations, perform final residual descent, or establish all-orders, causal, observational or quantum claims.",
+  "classification": {
+    "candidate17_20_complete_singular_rotation_zero_quotient_connected": false,
+    "candidate17_20_component_labels_prove_quotient_separation": false,
+    "candidate17_20_each_singular_component_connected": false,
+    "candidate17_positive_occupation_singular_component_images_intersect": true,
+    "candidate20_positive_occupation_singular_component_images_intersect": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "final_residual_descent": false,
+    "occupation_strata_glued": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_EVERY_POSITIVE_ACTIVE_OCCUPATION_PAIR_ON_CANDIDATES_17_AND_20",
+  "group_descent": {
+    "component_label_separation_lower_bound": 1,
+    "contrast_candidate18": "candidate 18 excludes its singular-component intersection when N_minus>0; candidates 17/20 retain theirs",
+    "intersection_is_invariant": "S_plus x S_minus is invariant under both common node phases and lifted diagonal SO(3)",
+    "quotient_images_intersect": "the images of Sigma_plus and Sigma_minus in the singular rotation-zero quotient meet at the orbit of the explicit positive-occupation intersection witness"
+  },
+  "incidence_theorem": {
+    "intersection": "Sigma_plus intersect Sigma_minus=S_plus x S_minus",
+    "intersection_complex_dimension": 8,
+    "node_phase_actions_free": true,
+    "occupation_checks": [
+      "(1/6)*(6*N_minus)=N_minus",
+      "(1/16)*(1/6)*(96*N_plus)=N_plus"
+    ],
+    "positive_occupation_intersection_witness": "in the first parity factor set f=sqrt(6*N_minus)*e_0 and g=sqrt(96*N_plus)*e_0; set the second parity factor to zero",
+    "rotation_moment_maps": "mu_J1=mu_J2=mu_J3=0 because the real completed section is axisymmetric",
+    "singular_components": [
+      "Sigma_plus=S_plus x K_minus",
+      "Sigma_minus=K_plus x S_minus"
+    ],
+    "witness_membership": "e_0 is the square-quartic kernel vector v([0:1:0])/2, so the occupied factor lies in S and the zero factor lies at the vertex; the product point lies in S_plus x S_minus"
+  },
+  "interpretation": "Unlike candidate 18, candidates 17 and 20 retain a physical positive-occupation intersection of their two algebraic singular components. Their quotient images meet on an explicit rotation-zero orbit, so component labels alone cannot prove disconnection. Complete connectedness remains open.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify connectedness inside each candidate-17/20 singular rotation-zero component and determine whether every component meets the explicit intersection orbit",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.py",
+    "generator_sha256": "0a55c3cce962b7a27ef7357a51d5dfc5036023ff8b4db71c40677d9fe43a957c",
+    "inputs": {
+      "sections": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.json",
+        "sha256": "b4786c500f0dc52d3dd25d98224d37431f0869d2fc37fa1e9031bf72104be254"
+      },
+      "singular_locus": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.json",
+        "sha256": "6b54d7672b9849998220716762f66a4ff81c4156dfd782c1b596c245862cb371"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_SINGULAR_COMPONENT_INCIDENCE",
+  "result_state": "CANDIDATE17_20_SINGULAR_ROTATION_ZERO_COMPONENT_IMAGES_INTERSECT_AT_EVERY_POSITIVE_OCCUPATION",
+  "schema": "einstein-maxwell-weyl-same-sign-candidate17-20-singular-component-incidence-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.schema.json",
+  "schema_sha256": "4c8ff90dc78396c154fb241eaf0d3b2dc3fe784f38bd0a22fcab5e23a30ebcad",
+  "scope": {
+    "background": "candidates 17 and 20 separately",
+    "boundaries": "closed S1_L times S2 before node-phase, lifted-rotation or final residual quotient",
+    "carrier": "the complete singular locus of both third-transvectant parity factors on every positive fixed-active-occupation level",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidate-specific signed compact momenta, never identified across candidates",
+    "m": "all m=-2,...,2 in the binary-quartic carrier",
+    "omega": "candidate-specific difference collision into L=1 extra output",
+    "parity": "two exact factorized parity eigenchannels",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence"
+  ]
+}

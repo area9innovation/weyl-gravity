@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "incidence_theorem", "group_descent", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-same-sign-candidate17-20-singular-component-incidence-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_SINGULAR_COMPONENT_INCIDENCE"},
+    "classification": {
+      "type": "object",
+      "properties": {
+        "candidate17_positive_occupation_singular_component_images_intersect": {"const": true},
+        "candidate20_positive_occupation_singular_component_images_intersect": {"const": true},
+        "candidate17_20_component_labels_prove_quotient_separation": {"const": false},
+        "candidate17_20_complete_singular_rotation_zero_quotient_connected": {"const": false}
+      },
+      "required": [
+        "candidate17_positive_occupation_singular_component_images_intersect",
+        "candidate20_positive_occupation_singular_component_images_intersect",
+        "candidate17_20_component_labels_prove_quotient_separation",
+        "candidate17_20_complete_singular_rotation_zero_quotient_connected"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

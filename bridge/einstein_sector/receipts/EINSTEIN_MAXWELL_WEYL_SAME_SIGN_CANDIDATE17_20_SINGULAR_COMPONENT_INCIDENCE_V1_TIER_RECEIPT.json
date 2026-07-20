@@ -1,0 +1,50 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_SINGULAR_COMPONENT_INCIDENCE_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Positive-occupation incidence of the two candidate-17/20 third-transvectant singular components after imposing the lifted-rotation zero condition.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.json": "3446655064527e6bedf6fa6f10b8653679d7a53b73a9abfae459f34067d3e648",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.py": "0a55c3cce962b7a27ef7357a51d5dfc5036023ff8b4db71c40677d9fe43a957c",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.py": "59f906e439dac87918ca3d900f62e6428686ece46e2455206ae5bce99fe98855",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.py": "cf94f96a4cd7f82568352c56d46977b4183c44029ed3ca2d0cd8ca59252b7272",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.schema.json": "4c8ff90dc78396c154fb241eaf0d3b2dc3fe784f38bd0a22fcab5e23a30ebcad",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-candidate17-20-singular-component-incidence.md": "4d0a07678fd8645bd6af28da7b5baf7f00ecfe97791c833e1ca63a95d1455967"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on the producer, independent verifier and focused test",
+        "python3 -m json.tool on the certificate and schema",
+        "git diff --check on the scoped theorem paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier does not import the producer. It independently reads the two-component singular-locus theorem and the positive-occupation rotation-zero sections, checks the eight-dimensional intersection, exact occupation normalizations and free node phases, and rejects a quotient-separation promotion."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutation": "Promote candidate17_20_component_labels_prove_quotient_separation from false to true.",
+      "result": "The schema rejects the promotion."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESSED_INPUT_REPLAY",
+      "reason": "Both input theorem certificates are hash-pinned; the new result is the exact incidence consequence of their displayed component intersection and physical section."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This closes component incidence only, not complete real connectedness, programme freeze or shared-core algebra."
+    }
+  },
+  "claim_boundary": "CERTIFIED at every positive occupation pair on candidates 17 and 20: the two algebraic singular-component images meet on an explicit rotation-zero orbit. Connectedness inside either component and of the complete singular quotient remains fail-closed."
+}
