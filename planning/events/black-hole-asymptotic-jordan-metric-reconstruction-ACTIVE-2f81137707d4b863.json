@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-asymptotic-jordan-metric-reconstruction-ACTIVE-2f81137707d4b863",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/black-hole-asymptotic-jordan-metric-reconstruction-ACTIVE-2f81137707d4b863.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-20T13:59:10Z", "seq": 5, "predecessor": "sf:program/event/black-hole-asymptotic-jordan-metric-reconstruction-RETIRED-7d9e2328a22a51f3", "payload": {"target": "sf:program/work/black-hole-asymptotic-jordan-metric-reconstruction", "to_state": "ACTIVE", "note": "Queue-race repair: black-hole-1 re-acquired the wrapper lease at 2026-07-20T13:56:41Z before the coordinator's RETIRED event landed. Preserve that in-flight metric-side symbolic checkpoint and its provenance; retire the wrapper after lease release, then continue through the three split items."}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/black-hole-asymptotic-jordan-metric-reconstruction"}]
+}
