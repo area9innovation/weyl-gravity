@@ -151,5 +151,4 @@ CCR affine class has 128 parameters and no positive member; the canonical
 Krein representative has inertia \((40,40)\), while positive pure
 finite-dimensional covariances require explicit time dependence.
 
-EVIDENCE:
-`quantum-weyl/lorentzian/certificates/BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION.json`
+EVIDENCE: quantum-weyl/lorentzian/certificates/BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION.json
