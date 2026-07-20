@@ -1,0 +1,47 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-local-anomaly-zero-charge-sector-chain-maps",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-local-anomaly-zero-charge-sector-chain-maps",
+  "source": {
+    "path": "planning/work-items/bridge-local-anomaly-zero-charge-sector-chain-maps.json",
+    "span": null
+  },
+  "body": {
+    "owner": "einstein",
+    "state": "PROPOSED",
+    "objective": "Construct or exactly obstruct the missing chain-level maps needed to restrict the strict local Weyl-anomaly classes to the conformal-cylinder Taub-zero derived fibre and the fixed-coupling positive Berger fluctuation complex.",
+    "stop_condition": "Import the terminal STRICT_ANOMALY_ZERO_CHARGE_RESTRICTION_NONDEFINITION result from commit 29140f5c6717fe98e84d2e06b783753fff8de523, its receiver schema, and the classical cylinder/Berger complexes by exact hashes. For each target construct the full local-to-background jet substitution on the Diff x Weyl field, ghost and antifield complex; the derived charge-sector inclusion; the residual projection; and the completed descent-domain and boundary map. Prove every chain, inclusion/projection and descent identity exactly. Compute the images of omega C^2, omega E4 and omega CdualC as ZERO, EXACT or NONTRIVIAL, with explicit primitives or nontriviality witnesses. Compute raw-D cylinder and K_Berger=D-omega R Cartan defects separately. The cylinder map must treat Taub-zero as a derived quadratic fibre rather than delete unary modes; the Berger map must not identify its internal 34-to-26 contraction with the missing local-BV restriction. Emit receiver-valid payloads under strict-anomaly-sector-restriction-map-v1, independent verifiers, decisive mutations, and a handoff that lets Quantum rerun the restriction theorem without reconstructing any map.",
+    "current_gate": "exact local-BV-to-derived-sector anomaly restriction maps for cylinder and Berger",
+    "forbid": "no evaluation of C^2 or E4 on a conformally flat background substituted for cohomological pullback; no AFN0 map called a full BV map; no unary deletion substituted for a derived Taub-zero fibre; no raw D used where K_Berger is the actual nonlinear symmetry; no imported classical contraction accepted without content hashes and independent chain verification; no ZERO or EXACT verdict without a witness; no local sector result promoted to universal strict-Weyl anomaly freedom, Lorentzian QME, positivity, particles or unitarity",
+    "depends_on": [],
+    "activates": [
+      "a rerun of the strict anomaly restriction theorem on both selected sectors",
+      "a sector-specific verdict on whether the Wess-Zumino compensator is necessary",
+      "a defined local-to-Cartan anomaly transfer for raw D and K_Berger"
+    ],
+    "allowed_paths": [
+      "bridge/",
+      "quantum-weyl/transfer/",
+      "quantum-weyl/reports/",
+      "d_quotient_classical/",
+      "closed_universe_observers/",
+      "reports/",
+      "residual_atlas/",
+      "notes/d-quotient-einstein-team-brief.md",
+      "notes/d-quotient-quantum-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "HIGH-VALUE BRIDGE PRODUCER. This is input-pinned rather than dependency-gated because the Quantum predecessor terminated correctly as OBSTRUCTED. Reuse its schema and non-definition certificate; do not rerun the consumer until the missing morphisms exist.",
+    "notes": [
+      "The source request is planning/forge-requests/local-anomaly-zero-charge-sector-chain-maps.json.",
+      "A proof that no map exists in a complete declared local differential class is an acceptable terminal obstruction.",
+      "The two backgrounds may have different dispositions; do not force a common verdict."
+    ],
+    "input_commit": "29140f5c6717fe98e84d2e06b783753fff8de523",
+    "stream": "bridge"
+  },
+  "edges": []
+}
