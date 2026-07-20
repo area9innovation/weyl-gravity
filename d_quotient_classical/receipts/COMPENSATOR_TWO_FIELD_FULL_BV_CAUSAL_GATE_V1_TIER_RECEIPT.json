@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_TWO_FIELD_FULL_BV_CAUSAL_GATE_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_TWO_FIELD_FULL_BV_CAUSAL_GATE_V1",
+  "date": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/two_field_full_bv_causal_gate.py",
+      "sha256": "a7dc53878b67c2b2c10cdd616a93c8be3890c511333a8cb3d4e74483264bd90d"
+    },
+    {
+      "path": "d_quotient_classical/compensator/COMPENSATOR_TWO_FIELD_FULL_BV_CAUSAL_GATE_V1.json",
+      "sha256": "f1c859640f8e03c8ce5a9cc171635701eea880dc0a790282facba15c7cd9a9b8"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_two_field_full_bv_causal_gate.py",
+      "sha256": "ac7e175caa9813ac82bd0f8a930ce5d35b8828b6f22a2ac91fdeda5a539494fe"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_two_field_full_bv_causal_gate.py",
+      "sha256": "3fc02380125b12687319fbbb4362293d4d06bf2f52190ca09eac1562f4e108d0"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-two-field-full-bv-causal-gate-v1.schema.json",
+      "sha256": "2d5e7e722b92eef02fa7d6032692fc220ed3110cce9acd5097cd3d3ff443c73c"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-two-field-full-bv-causal-gate-v1.md",
+      "sha256": "500a361450bcab612b366151b4fb591a69008603650678af9179465a182fc092"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <conditional producer, independent verifier and tests>; python3 -m json.tool <result and schema>; git diff --check -- <six explicit paths>",
+        "elapsed_seconds": 0.15,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/two_field_full_bv_causal_gate.py --check",
+        "elapsed_seconds": 0.03,
+        "status": "PASS",
+        "method": "hash-pinned two-field predecessor import and fail-closed activation predicate"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_two_field_full_bv_causal_gate.py",
+        "elapsed_seconds": 0.02,
+        "status": "PASS",
+        "independent_rail": "imports no producer module; independently hashes and reads the predecessor, rejects every success promotion, and checks that the positive compact rank-one result remains visible"
+      },
+      {
+        "command": "python3 -m unittest -v d_quotient_classical.compensator.tests.test_two_field_full_bv_causal_gate",
+        "elapsed_seconds": 0.05,
+        "status": "PASS",
+        "tests": 5
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-two-field-full-bv-causal-gate-v1.schema.json -d d_quotient_classical/compensator/COMPENSATOR_TWO_FIELD_FULL_BV_CAUSAL_GATE_V1.json",
+        "elapsed_seconds": 4.06,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "reason": "The imported predecessor is unchanged and content-addressed; this item adds only a conditional non-activation record and changes no shared mathematical input or affected certificate chain."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "No theorem or lifecycle success is promoted. The item records that a conditional full-BV and causal construction did not activate."
+  },
+  "claim_boundary": "This receipt certifies only the conditional decision that the two-field full BV and causal path did not activate because its hash-pinned predecessor has empty healthy locus and no selected action. Every downstream construction is explicitly NOT_ACTIVATED, not passed, failed by a new causal computation, or Lorentzian-certified. The closure preserves the positive predecessor result that primitive compact rank one leaves a neutral relative phase and the displayed Berger metric/Gauss fixture passes. No full BV rows, causal parent, Green homotopy, reduced pairing, relational observable, nonlinear q2 or quantum import was constructed. The predecessor's scoped exclusions are not broadened.",
+  "higher_tiers_not_run": [
+    2,
+    3
+  ]
+}

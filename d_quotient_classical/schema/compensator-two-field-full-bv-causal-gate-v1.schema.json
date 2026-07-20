@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/compensator-two-field-full-bv-causal-gate-v1.schema.json",
+  "title": "Conditional two-field full BV causal gate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "predecessor",
+    "activation_condition",
+    "activation_condition_satisfied",
+    "skipped_gates",
+    "terminal_verdict",
+    "claim_flags",
+    "claim_boundary",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-compensator-two-field-full-bv-causal-gate-v1"
+    },
+    "result_id": {
+      "const": "COMPENSATOR_TWO_FIELD_FULL_BV_CAUSAL_GATE_V1"
+    },
+    "result_state": {
+      "const": "NOT_ACTIVATED_EMPTY_PREDECESSOR_LOCUS"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "predecessor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "source_commit",
+        "result_id",
+        "result_state",
+        "healthy_locus",
+        "selected_action",
+        "full_BV_or_causal_completion_activated",
+        "compact_charge_lattice_result",
+        "first_obstruction"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "const": "e597c687ae064ac6809b674c056aa08d0167a9184b6addb95b5b7330c33dcc62"
+        },
+        "source_commit": {
+          "const": "2b1609cedc77e85dd71967fb46e49a4595c75763"
+        },
+        "result_id": {
+          "const": "COMPENSATOR_TWO_FIELD_CHARGE_MATRIX_PREFLIGHT_V1"
+        },
+        "result_state": {
+          "const": "SCOPED_TWO_FIELD_MINIMAL_CHARGE_MATRIX_GOOD_LOCUS_EMPTY"
+        },
+        "healthy_locus": {
+          "const": "EMPTY"
+        },
+        "selected_action": {
+          "const": false
+        },
+        "full_BV_or_causal_completion_activated": {
+          "const": false
+        },
+        "compact_charge_lattice_result": {
+          "type": "string",
+          "minLength": 1
+        },
+        "first_obstruction": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "activation_condition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "activation_condition_satisfied": {
+      "const": false
+    },
+    "skipped_gates": {
+      "type": "object",
+      "minProperties": 13,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "status",
+          "reason"
+        ],
+        "properties": {
+          "status": {
+            "const": "NOT_ACTIVATED"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result",
+        "full_gate_activated",
+        "selected_action",
+        "selected_charge_stratum",
+        "causal_parent_constructed",
+        "relative_clock_constructed",
+        "nonlinear_or_quantum_successor_activated",
+        "reason"
+      ],
+      "properties": {
+        "result": {
+          "const": "NOT_ACTIVATED_EMPTY_PREDECESSOR_LOCUS"
+        },
+        "full_gate_activated": {
+          "const": false
+        },
+        "selected_action": {
+          "const": false
+        },
+        "selected_charge_stratum": {
+          "const": false
+        },
+        "causal_parent_constructed": {
+          "const": false
+        },
+        "relative_clock_constructed": {
+          "const": false
+        },
+        "nonlinear_or_quantum_successor_activated": {
+          "const": false
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "minProperties": 7,
+      "additionalProperties": {
+        "const": false
+      }
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content_hashes": {
+      "type": "object",
+      "minProperties": 4,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    }
+  }
+}
