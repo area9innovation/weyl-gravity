@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-anomaly-zero-charge-restriction-nondefinition-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "input_pins",
+    "source_anomaly_basis",
+    "restriction_map_contracts",
+    "pullback_dispositions",
+    "Cartan_obstruction_dispositions",
+    "receiver_schema",
+    "producer_request",
+    "exact_checks",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-strict-anomaly-zero-charge-restriction-nondefinition-v1"},
+    "result_id": {"const": "STRICT_ANOMALY_ZERO_CHARGE_RESTRICTION_NONDEFINITION"},
+    "result_state": {"const": "PULLBACKS_UNDEFINED_TYPED_CHAIN_MAP_RECEIVER_REQUIRED"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "input_pins": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {"$ref": "#/$defs/pin"}
+    },
+    "source_anomaly_basis": {
+      "const": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_C_DUAL_C"]
+    },
+    "restriction_map_contracts": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"type": "object", "minProperties": 9}
+    },
+    "pullback_dispositions": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sector_id",
+          "class_id",
+          "status",
+          "background_evaluation_used_as_pullback",
+          "exact_primitive",
+          "nontriviality_witness",
+          "onset_ledger"
+        ],
+        "properties": {
+          "sector_id": {"enum": ["cylinder_Taub_zero", "Berger_fixed_coupling"]},
+          "class_id": {"enum": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_C_DUAL_C"]},
+          "status": {"const": "UNDEFINED_MISSING_CHAIN_MAP"},
+          "background_evaluation_used_as_pullback": {"const": false},
+          "exact_primitive": {"const": null},
+          "nontriviality_witness": {"const": null},
+          "onset_ledger": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["first_possible_h_order", "reason"],
+            "properties": {
+              "first_possible_h_order": {"type": "integer", "minimum": 0, "maximum": 2},
+              "reason": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      }
+    },
+    "Cartan_obstruction_dispositions": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"type": "object", "minProperties": 3}
+    },
+    "receiver_schema": {"type": "string", "minLength": 1},
+    "producer_request": {"type": "string", "minLength": 1},
+    "exact_checks": {"type": "object", "minProperties": 8, "additionalProperties": {"const": true}},
+    "claim_flags": {"type": "object", "minProperties": 6, "additionalProperties": {"const": false}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "source_manifest"],
+      "properties": {
+        "proof_type": {"type": "string", "minLength": 1},
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 7,
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "source_commit"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      }
+    }
+  }
+}

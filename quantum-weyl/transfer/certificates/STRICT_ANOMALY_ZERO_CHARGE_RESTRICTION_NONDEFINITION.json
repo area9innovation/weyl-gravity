@@ -1,0 +1,220 @@
+{
+  "Cartan_obstruction_dispositions": [
+    {
+      "generator": "raw_D",
+      "sector_id": "cylinder_Taub_zero",
+      "status": "UNDEFINED_MISSING_ANOMALY_PULLBACK"
+    },
+    {
+      "generator": "K_Berger=D-omega R",
+      "sector_id": "Berger_fixed_coupling",
+      "status": "UNDEFINED_MISSING_ANOMALY_PULLBACK"
+    },
+    {
+      "generator": "raw_D",
+      "sector_id": "Berger_fixed_coupling",
+      "status": "NOT_APPLICABLE_AFFINE_GENERATOR_NOT_CERTIFIED_CARTAN"
+    }
+  ],
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE result pins the complete local strict anomaly basis and the selected classical sector data, but proves that their cohomological pullbacks are undefined because the local-to-background and charge-to-residual chain maps are absent. Background vanishing and perturbative onset are not cohomological triviality. No sector anomaly freedom, primitive, Cartan anomaly, compensator dispensability, Lorentzian QME, state, particle, positivity or unitarity result follows.",
+  "claim_flags": {
+    "ANY_CARTAN_ANOMALY_COMPUTED": false,
+    "ANY_PULLBACK_COMPUTED": false,
+    "BERGER_RESTRICTED_ANOMALY_FREE": false,
+    "CYLINDER_RESTRICTED_ANOMALY_FREE": false,
+    "LORENTZIAN_QME_CERTIFIED": false,
+    "WZ_COMPENSATOR_DISPENSABLE_IN_SECTOR": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_checks": {
+    "Berger_C2_order_zero_derived_from_pinned_invariant": true,
+    "background_evaluation_not_used_as_pullback": true,
+    "classical_sector_artifacts_content_addressed": true,
+    "cylinder_onset_ledger_imported": true,
+    "local_anomaly_audit_pinned_at_requested_commit": true,
+    "no_compensator_dispensability_claim": true,
+    "no_restricted_anomaly_freedom_claim": true,
+    "raw_D_and_K_Berger_kept_distinct": true
+  },
+  "input_pins": {
+    "Berger_K_Cartan": {
+      "path": "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
+      "sha256": "104ff269ddf10ed80ff796c090a2de90a40c62adb0194954e4509b200304184e",
+      "source_commit": "b167d2bfaee02a541642fbdb360888eca31b6bf9"
+    },
+    "Berger_background": {
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687",
+      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+    },
+    "Berger_contraction": {
+      "path": "d_quotient_classical/certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json",
+      "sha256": "f69d8664fb139860fb3bcb89bdf82ee1659e158f6f925535b17e2de364060db4",
+      "source_commit": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847"
+    },
+    "Berger_fixed_coupling_charge": {
+      "path": "d_quotient_classical/certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json",
+      "sha256": "0ae894432b065f9f4ba116e6e2d42e69d1d60cd37dbf6ef21a14d7073c75b786",
+      "source_commit": "cc5df8d547f7d2119282590a824ce92cd1d76d17"
+    },
+    "cylinder_charge_audit": {
+      "path": "d_quotient_classical/certificates/compact_cylinder_d_charge_audit.json",
+      "sha256": "6e609dd850049fb7b85867033dbdce0b2b214f2d5196665015f8e2b552d493e4",
+      "source_commit": "4a2e94986b849bfc1b9efca5c9fae825289eb55a"
+    },
+    "cylinder_restriction_preflight": {
+      "path": "quantum-weyl/cylinder/certificates/AFN0_CYLINDER_RESTRICTION_PREFLIGHT.json",
+      "sha256": "02691f09c945afaabca5233ee574842c3cf9219fb329ed2e03a51ce5bc124613",
+      "source_commit": "81f535f0dd8a28bb700e5597906960e1b25e3e1a"
+    },
+    "cylinder_taub_map": {
+      "path": "field_bv_identification/zero_modes/certificates/taub_obstruction_map.json",
+      "sha256": "72ac747c0b15c85c75f7a86d983960f305e486c96ab594c056f9b3377cfbf540",
+      "source_commit": "9732ec1be74afd674bc50d8c1dfb37cfb1ed5dce"
+    },
+    "local_anomaly_audit": {
+      "path": "quantum-weyl/local_bv/certificates/LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json",
+      "sha256": "07bf332cf1bece92f8a041002f3c787fe7e85e798871e4878fbbc3cd7b20bd3b",
+      "source_commit": "c6d1c0bad4d7e609fccb8dc5581fab107a819d33"
+    }
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "Supply receiver-valid local-to-background, derived charge-sector and residual projection chain maps with descent boundary data; then compute the six pullbacks and the two distinct Cartan defects.",
+  "producer_request": "planning/forge-requests/local-anomaly-zero-charge-sector-chain-maps.json",
+  "provenance": {
+    "proof_type": "PINNED_MISSING_CHAIN_MAP_THEOREM_WITH_TYPED_RECEIVER",
+    "source_manifest": {
+      "../reports/strict-anomaly-zero-charge-restriction-nondefinition.md": "981a0808ec82a69c78b39e114bfae61639403cf3dd521a2d705a6b0e90ce8647",
+      "schema/strict-anomaly-sector-restriction-map-v1.schema.json": "02204ce211813e5491b60d44d8159141b011fd15da974c857a7d4c1bd90cb427",
+      "schema/strict-anomaly-zero-charge-restriction-nondefinition-v1.schema.json": "b48223a6f6aae073ec958fb30fdcbea41a804b202824176fa3f01b635d4b7544",
+      "strict_anomaly_zero_charge_restriction_nondefinition.py": "5b7545756e49b4a2f0a196308e4b67374a17d0364bb903dbc326cccafa638d45",
+      "strict_anomaly_zero_charge_restriction_nondefinition_certificate.py": "c82d5959746dd78e7264b98e1c3d6c124fab5ec2647e461ec4853fe0bd8bbda5",
+      "tests/test_strict_anomaly_zero_charge_restriction_nondefinition.py": "c706e9142c88f2a61af94e37391f5a0648d01fa4c5a2310ccfae1ba33d7be047",
+      "verify_strict_anomaly_zero_charge_restriction_nondefinition.py": "7ae8d5cb4df8abe7b4fd7bf391b3f45b49026feaaf9a1f18a616cec026e911d1"
+    }
+  },
+  "pullback_dispositions": [
+    {
+      "background_evaluation_used_as_pullback": false,
+      "class_id": "ANOM_OMEGA_C2",
+      "exact_primitive": null,
+      "nontriviality_witness": null,
+      "onset_ledger": {
+        "first_possible_h_order": 2,
+        "reason": "C(gbar)=0, so C2 starts with C1(h)^2"
+      },
+      "sector_id": "cylinder_Taub_zero",
+      "status": "UNDEFINED_MISSING_CHAIN_MAP"
+    },
+    {
+      "background_evaluation_used_as_pullback": false,
+      "class_id": "ANOM_OMEGA_E4",
+      "exact_primitive": null,
+      "nontriviality_witness": null,
+      "onset_ledger": {
+        "first_possible_h_order": 1,
+        "reason": "E4(gbar)=0 and the first variation is a total derivative; the full type-A descent needs the missing boundary/current map"
+      },
+      "sector_id": "cylinder_Taub_zero",
+      "status": "UNDEFINED_MISSING_CHAIN_MAP"
+    },
+    {
+      "background_evaluation_used_as_pullback": false,
+      "class_id": "ANOM_OMEGA_C_DUAL_C",
+      "exact_primitive": null,
+      "nontriviality_witness": null,
+      "onset_ledger": {
+        "first_possible_h_order": 2,
+        "reason": "C(gbar)=0, so C dual C starts with C1(h) dual C1(h)"
+      },
+      "sector_id": "cylinder_Taub_zero",
+      "status": "UNDEFINED_MISSING_CHAIN_MAP"
+    },
+    {
+      "background_evaluation_used_as_pullback": false,
+      "class_id": "ANOM_OMEGA_C2",
+      "exact_primitive": null,
+      "nontriviality_witness": null,
+      "onset_ledger": {
+        "first_possible_h_order": 0,
+        "reason": "the pinned Berger background has C2=4(a2-c2)^2/(3a8), nonzero on its solution interval"
+      },
+      "sector_id": "Berger_fixed_coupling",
+      "status": "UNDEFINED_MISSING_CHAIN_MAP"
+    },
+    {
+      "background_evaluation_used_as_pullback": false,
+      "class_id": "ANOM_OMEGA_E4",
+      "exact_primitive": null,
+      "nontriviality_witness": null,
+      "onset_ledger": {
+        "first_possible_h_order": 1,
+        "reason": "the static product R x Berger-S3 has zero Euler four-form; its first variation is a transgression"
+      },
+      "sector_id": "Berger_fixed_coupling",
+      "status": "UNDEFINED_MISSING_CHAIN_MAP"
+    },
+    {
+      "background_evaluation_used_as_pullback": false,
+      "class_id": "ANOM_OMEGA_C_DUAL_C",
+      "exact_primitive": null,
+      "nontriviality_witness": null,
+      "onset_ledger": {
+        "first_possible_h_order": 1,
+        "reason": "the static product has no time-index curvature, so the Pontryagin four-form vanishes at order zero"
+      },
+      "sector_id": "Berger_fixed_coupling",
+      "status": "UNDEFINED_MISSING_CHAIN_MAP"
+    }
+  ],
+  "receiver_schema": "quantum-weyl/transfer/schema/strict-anomaly-sector-restriction-map-v1.schema.json",
+  "restriction_map_contracts": [
+    {
+      "boundary_policy": "closed oriented S3 has no spatial corner; horizontal descent still requires a declared time/support or compact-time policy",
+      "certified_Cartan_generator": "raw_D",
+      "charge_sector_definition": "derived common zero fibre of all fifteen quadratic moment maps; not a linear unary subcomplex",
+      "charge_sector_inclusion": "MISSING_AS_CHAIN_MAP",
+      "domain": "formal local fluctuation jets completed in h on the declared smooth background, with full Diff x Weyl ghosts and antifields",
+      "local_to_background_jet_map": "MISSING",
+      "local_to_residual_projection": "MISSING",
+      "map_status": "UNDEFINED_MISSING_CHAIN_MAP",
+      "required_chain_identities": [
+        "j s = Q_background j",
+        "j d_h = d_background j",
+        "Q charge_inclusion = charge_inclusion Q_charge",
+        "pi_res Q_charge = Q_res pi_res",
+        "descent boundary current is compatible with the declared domain"
+      ],
+      "sector_id": "cylinder_Taub_zero"
+    },
+    {
+      "boundary_policy": "compact Berger S3 has no spatial corner; local descent still requires the declared temporal/support policy",
+      "certified_Cartan_generator": "K_Berger=D-omega R",
+      "charge_sector_definition": "fixed alpha_B and lambda smooth fluctuation complex with delta Q_R=0; the 34-to-26 contraction alone does not define a local-anomaly pullback",
+      "charge_sector_inclusion": "MISSING_AS_CHAIN_MAP",
+      "domain": "formal local fluctuation jets completed in h on the declared smooth background, with full Diff x Weyl ghosts and antifields",
+      "local_to_background_jet_map": "MISSING",
+      "local_to_residual_projection": "MISSING",
+      "map_status": "UNDEFINED_MISSING_CHAIN_MAP",
+      "required_chain_identities": [
+        "j s = Q_background j",
+        "j d_h = d_background j",
+        "Q charge_inclusion = charge_inclusion Q_charge",
+        "pi_res Q_charge = Q_res pi_res",
+        "descent boundary current is compatible with the declared domain"
+      ],
+      "sector_id": "Berger_fixed_coupling"
+    }
+  ],
+  "result_id": "STRICT_ANOMALY_ZERO_CHARGE_RESTRICTION_NONDEFINITION",
+  "result_state": "PULLBACKS_UNDEFINED_TYPED_CHAIN_MAP_RECEIVER_REQUIRED",
+  "schema": "quantum-weyl-strict-anomaly-zero-charge-restriction-nondefinition-v1",
+  "source_anomaly_basis": [
+    "ANOM_OMEGA_C2",
+    "ANOM_OMEGA_E4",
+    "ANOM_OMEGA_C_DUAL_C"
+  ]
+}

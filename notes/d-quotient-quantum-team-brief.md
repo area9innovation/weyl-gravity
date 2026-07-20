@@ -2227,3 +2227,39 @@ not a QME or Lorentzian result.
 
 - [`FIRST_NEW_CONFORMAL_GAUGE_FIELD_CARRIER_OBSTRUCTION.json`](../quantum-weyl/anomalies/certificates/FIRST_NEW_CONFORMAL_GAUGE_FIELD_CARRIER_OBSTRUCTION.json)
 - [`conformal-gauge-field-carrier-obstruction.md`](../quantum-weyl/reports/conformal-gauge-field-carrier-obstruction.md)
+
+## Strict anomaly restriction on selected zero-charge sectors (2026-07-20)
+
+The complete strict local anomaly basis has been pinned together with the
+selected conformal-cylinder Taub-zero and fixed-coupling Berger classical
+data. The restriction question is nevertheless not defined yet.
+
+For each of
+
+\[
+[\omega C^2],\qquad [\omega E_4],\qquad
+[\omega C\widetilde C],
+\]
+
+the pullback to both sectors is
+`UNDEFINED_MISSING_CHAIN_MAP`. The classical contractions act inside their
+fluctuation complexes; they do not provide the local-BV jet substitution,
+derived charge-sector inclusion, descent boundary current and residual
+projection required to pull back a relative local cohomology class.
+
+The background-order ledger is retained without promotion. On the conformal
+cylinder the first possible orders are \(h^2,h^1,h^2\), respectively. On the
+static Berger product they are \(h^0,h^1,h^1\). In particular, vanishing of
+a density on the background is not a zero cohomology class.
+
+The cylinder raw-\(D\) and Berger
+\(K_{\rm Berger}=D-\omega R\) Cartan defects remain separately undefined;
+affine raw \(D\) is not substituted for \(K_{\rm Berger}\). A strict receiver
+schema and producer request now state the missing maps and identities.
+
+This is `LOCAL-ALGEBRAIC`/`REDUCED-MODE`. It proves neither restricted-sector
+anomaly freedom nor compensator dispensability and establishes no
+Lorentzian QME, state or particle result.
+
+- [`STRICT_ANOMALY_ZERO_CHARGE_RESTRICTION_NONDEFINITION.json`](../quantum-weyl/transfer/certificates/STRICT_ANOMALY_ZERO_CHARGE_RESTRICTION_NONDEFINITION.json)
+- [`strict-anomaly-zero-charge-restriction-nondefinition.md`](../quantum-weyl/reports/strict-anomaly-zero-charge-restriction-nondefinition.md)

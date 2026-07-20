@@ -162,8 +162,20 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             {evidence["result_id"] for evidence in local_guard["evidence"]},
         )
         self.assertIn(
+            "STRICT_ANOMALY_ZERO_CHARGE_RESTRICTION_NONDEFINITION",
+            {evidence["result_id"] for evidence in local_guard["evidence"]},
+        )
+        self.assertIn(
             "differentiable D boundary charge",
             local_guard["scope"]["carrier"],
+        )
+        self.assertIn(
+            "UNDEFINED_MISSING_CHAIN_MAP",
+            local_guard["scope"]["carrier"],
+        )
+        self.assertIn(
+            "all three strict anomaly pullbacks remain undefined",
+            local_guard["quantum_data"]["anomaly_QME_dependency"]["statement"],
         )
         self.assertIn(
             "classical D_compact contraction is now imported",

@@ -1,0 +1,77 @@
+{
+  "receipt_id": "STRICT_ANOMALY_ZERO_CHARGE_RESTRICTION_NONDEFINITION_V1_TIER_RECEIPT",
+  "result_id": "STRICT_ANOMALY_ZERO_CHARGE_RESTRICTION_NONDEFINITION",
+  "recorded_at": "2026-07-20",
+  "base_commit": "769f364b1286fd251a4995ad5d47670a1fdf2626",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "input_hashes": {
+    "local_anomaly_audit": "07bf332cf1bece92f8a041002f3c787fe7e85e798871e4878fbbc3cd7b20bd3b",
+    "cylinder_restriction_preflight": "02691f09c945afaabca5233ee574842c3cf9219fb329ed2e03a51ce5bc124613",
+    "cylinder_taub_map": "72ac747c0b15c85c75f7a86d983960f305e486c96ab594c056f9b3377cfbf540",
+    "cylinder_charge_audit": "6e609dd850049fb7b85867033dbdce0b2b214f2d5196665015f8e2b552d493e4",
+    "berger_background": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687",
+    "berger_contraction": "f69d8664fb139860fb3bcb89bdf82ee1659e158f6f925535b17e2de364060db4",
+    "berger_fixed_coupling_charge": "0ae894432b065f9f4ba116e6e2d42e69d1d60cd37dbf6ef21a14d7073c75b786",
+    "berger_k_cartan": "104ff269ddf10ed80ff796c090a2de90a40c62adb0194954e4509b200304184e"
+  },
+  "output_hashes": {
+    "certificate": "d3eb2d00f6b91c2204c9d68418d4280e6da706671d630e4df50926e6b42ee30b",
+    "quantum_atlas": "77192a29577796eb25d9294e07a1aa6239b8c9bd9f83e82f42813b8699b916ee",
+    "producer_request": "e88e163cc3500be1f713bbf4d816d8da12045e6ad46b149e375ca7deb18aa8eb",
+    "report": "981a0808ec82a69c78b39e114bfae61639403cf3dd521a2d705a6b0e90ce8647"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile <five scoped modules> && git diff --check -- <scoped paths>",
+      "elapsed_seconds": 0.1,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m transfer.strict_anomaly_zero_charge_restriction_nondefinition_certificate --emit",
+      "elapsed_seconds": 0.9,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 quantum-weyl/transfer/verify_strict_anomaly_zero_charge_restriction_nondefinition.py",
+      "elapsed_seconds": 0.6,
+      "status": "PASS_INDEPENDENT_HASH_COMMIT_ONSET_AND_CARTAN_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest transfer.tests.test_strict_anomaly_zero_charge_restriction_nondefinition",
+      "elapsed_seconds": 1.1,
+      "status": "PASS_8_TESTS_WITH_BACKGROUND_EVALUATION_MAP_BOUNDARY_AND_GENERATOR_MUTATIONS"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli compile --strict=true -s quantum-weyl/transfer/schema/strict-anomaly-zero-charge-restriction-nondefinition-v1.schema.json",
+      "elapsed_seconds": 1.8,
+      "status": "FAIL_TOOLING_DEFAULT_DRAFT_2020_12_UNAVAILABLE_NO_CLAIM_PROMOTED"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/strict-anomaly-zero-charge-restriction-nondefinition-v1.schema.json && npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/strict-anomaly-zero-charge-restriction-nondefinition-v1.schema.json -d quantum-weyl/transfer/certificates/STRICT_ANOMALY_ZERO_CHARGE_RESTRICTION_NONDEFINITION.json && npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/strict-anomaly-sector-restriction-map-v1.schema.json",
+      "elapsed_seconds": 8.1,
+      "status": "PASS_DRAFT_2020_12_STRICT_RESULT_AND_RECEIVER"
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest atlas.tests.test_quantum_atlas_fragment && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "elapsed_seconds": 9.5,
+      "status": "PASS_9_TESTS_AND_3_VERIFIERS"
+    },
+    {
+      "tier": 2,
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 10.1,
+      "status": "ADVISORY_EXIT_0_WITH_PREEXISTING_BRIDGE_DRIFT_UNPINNED_FORGE_BUILD_AND_CORPUS_BASELINE_DRIFT_REPORTED"
+    }
+  ],
+  "tier_3_not_run": "No pullback, exactness or nontriviality witness, restricted anomaly freedom, compensator dispensability, QME restoration, Lorentzian causal theorem, freeze, release or tag is promoted. The pinned missing-chain-map theorem and its direct atlas consumers are covered by tiers 0-2."
+}

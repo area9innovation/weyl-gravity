@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-anomaly-sector-restriction-map-v1.schema.json",
+  "title": "Strict anomaly sector restriction map receiver",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "sector_id",
+    "background_jet_map",
+    "charge_sector_inclusion",
+    "residual_projection",
+    "chain_identities",
+    "domain",
+    "boundary_policy",
+    "class_images",
+    "Cartan_generator",
+    "Cartan_defect"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-strict-anomaly-sector-restriction-map-v1"},
+    "sector_id": {
+      "enum": ["cylinder_Taub_zero", "Berger_fixed_coupling"]
+    },
+    "background_jet_map": {"$ref": "#/$defs/map"},
+    "charge_sector_inclusion": {"$ref": "#/$defs/map"},
+    "residual_projection": {"$ref": "#/$defs/map"},
+    "chain_identities": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "domain": {"type": "string", "minLength": 1},
+    "boundary_policy": {"type": "string", "minLength": 1},
+    "class_images": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["class_id", "status", "representative", "witness"],
+        "properties": {
+          "class_id": {
+            "enum": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_C_DUAL_C"]
+          },
+          "status": {"enum": ["ZERO", "EXACT", "NONTRIVIAL"]},
+          "representative": {"type": "string", "minLength": 1},
+          "witness": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "Cartan_generator": {
+      "enum": ["raw_D", "K_Berger=D-omega R"]
+    },
+    "Cartan_defect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "representative", "witness"],
+      "properties": {
+        "status": {"enum": ["ZERO", "Q0_EXACT", "NONTRIVIAL"]},
+        "representative": {"type": "string", "minLength": 1},
+        "witness": {"type": "string", "minLength": 1}
+      }
+    }
+  },
+  "$defs": {
+    "map": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domain", "codomain", "matrix_or_rule", "proof_hash"],
+      "properties": {
+        "domain": {"type": "string", "minLength": 1},
+        "codomain": {"type": "string", "minLength": 1},
+        "matrix_or_rule": {"type": "string", "minLength": 1},
+        "proof_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
