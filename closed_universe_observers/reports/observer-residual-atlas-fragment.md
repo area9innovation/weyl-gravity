@@ -231,6 +231,21 @@ action, so its stress, \(\Phi_2\), unary and quotient remain
 `NO_CERTIFIED_MAP`.  No detector response, memory, redshift, recoil or
 tangent-cone observable is promoted.
 
+The positive mixed-action replacement passes the complete unary gate.
+Writing the eight rods as \(R=B\psi\) and their cotangents as
+\(R^+=B^{-T}\psi^+\), the exact form \(H=B^{-T}B^{-1}\) converts the
+changed rod action and odd pairing into eight canonical positive scalar BV
+pairs.  The coefficient-space generator is the standard skew complex
+structure.  The recomputed stress is homogeneous and time independent, its
+Noether and cokernel defects vanish, and its four-entry retained
+\(\Phi_2\) primitive is exact.  Nilpotency, cyclicity, reality and both
+principal and lower-order \(K_{\rm Berger}\) commutators vanish.  The rod
+principal operator \(H\Box\) has support-local Green parents
+\(G_{\rm scalar}H^{-1}\); this is not a full metric-BV propagator claim.
+The unchanged leading detector response remains coordinate-level rank two,
+while full 112-row cohomology and response descent remain
+`NO_CERTIFIED_MAP`.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.

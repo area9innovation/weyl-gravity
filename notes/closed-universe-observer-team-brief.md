@@ -2362,3 +2362,31 @@ gate is an action-derived invariant positive kinetic mixing with independently
 recomputed stress, background correction and complete unary.  The apparatus
 union, gauge reduction, \(\mathcal Z_2\), detector response, recoil, memory
 and relational redshift remain inactive.
+
+## Active bridge: positive-mixed replacement unary
+
+The successor
+`sf:program/work/observer-berger-replacement-112-positive-mixed-action`
+closes the changed-action unary gate.  With \(R=B\psi\),
+\(R^+=B^{-T}\psi^+\) and \(H=B^{-T}B^{-1}\), the eight-rod action and
+signed odd pairing are exactly conjugate to eight canonical positive scalar
+BV pairs.  The coefficient generator \(J=B^{-1}AB\) is the standard skew
+complex structure, so the principal and lower-order
+\(K_{\rm Berger}\)-commutators vanish.
+
+The changed background source was recomputed from the mixed action.  It is
+homogeneous and time independent with four sparse coefficients
+\(29/36,1/8,1/8,5/9\), has zero Noether and cokernel defects, and admits the
+exact retained primitive \(428/567,-29/21,-29/21,-6/7\).  The complete
+112-row action Hessian passes nilpotency, cyclicity, reality and the
+support-local rod Green-parent gate.  The unchanged leading coordinate
+response remains rank two, but full 112-row cohomology and detector descent
+are not inferred.
+
+The fail-closed atlas row is
+`observer.berger.interaction.replacement_112_positive_mixed_action`
+(`symplectic=CERTIFIED`, `observational=CERTIFIED` only at leading
+coordinate level).  The active bridge is now the unary-only combination of
+this base with the dynamical apparatus parent.  Apparatus \(q_2,q_3\),
+\(\mathcal Z_2\), reduced memory, redshift, recoil and quantum promotion
+remain inactive.
