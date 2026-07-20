@@ -1,0 +1,42 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_L1_ACTIVE_RESTRICTED_CURRENT_DEGENERACY_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Exact smooth projective restricted-current radicals inside the bounded active resonance cones of candidates 17 and 20.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.json": "fa384025deb8d34eb633af45bae55dd39f9c256b0870d31651c9011d696d7ecc",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.py": "f1a27a7bbc739c1d1bec5348ae925b8f6c692ebf86bae3e4d95e2732bc0509b4",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.schema.json": "ade507f6869f7e4ff746997b53ae46c8d5003c008d90c17bc3c9f35d745492cc",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.py": "f3e3224f6de12cb7f5c285efe8f3870e7e6c43c2d69fd6b644aeaf806acee137",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.py": "0d4d5cf44ae523d5d00c664fcacb309c1a9359712a99b6fe99b588844612ca5f",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-L1-active-restricted-current-degeneracy.md": "4852bab08662bebde2deed37bcd359b9dfb0a47e690021203baa68cf53de32cb"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 3,
+      "elapsed_seconds": 3.101,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_EXACT_RECOMPUTATION_AND_CONTENT_ADDRESS",
+      "reason": "The direct axial/polar action-current shell ratio, current-orthogonal parity pencil, smooth transvectant Jacobian, fixed-norm projective radical and positive scalar-cone ray mixtures are recomputed exactly from content-addressed inputs."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The full current-degeneracy divisors, candidate 18, occupation gluing and higher lifecycles remain open."
+    }
+  },
+  "claim_boundary": "This is a smooth degeneracy witness on candidates 17 and 20, not their complete presymplectic stratification or connected-component theorem."
+}

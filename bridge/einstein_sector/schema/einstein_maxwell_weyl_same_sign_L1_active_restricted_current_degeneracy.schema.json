@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "parity_current_reduction", "universal_smooth_radical", "scalar_cone_witnesses", "full_bounded_witness", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-same-sign-L1-active-restricted-current-degeneracy-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_L1_ACTIVE_RESTRICTED_CURRENT_DEGENERACY"},
+    "scalar_cone_witnesses": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["candidate_index", "resulting_positive_over_negative_ratio", "all_six_scalar_constraints_zero", "active_resonant_norms_nonzero"],
+        "properties": {
+          "candidate_index": {"enum": [17, 20]},
+          "resulting_positive_over_negative_ratio": {"const": "13/192"},
+          "all_six_scalar_constraints_zero": {"const": true},
+          "active_resonant_norms_nonzero": {"const": true}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

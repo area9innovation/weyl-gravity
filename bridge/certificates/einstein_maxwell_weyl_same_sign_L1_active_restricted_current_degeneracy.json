@@ -1,0 +1,345 @@
+{
+  "claim_boundary": "This is an explicit smooth degeneracy witness on candidates 17 and 20, not a complete degeneracy-divisor or connected-component classification. Candidate 18, occupation gluing, final residual descent, all-orders integration and causal, observational or quantum maps remain fail-closed.",
+  "classification": {
+    "all_orders_integrability": false,
+    "candidate17_smooth_active_restricted_current_degeneracy": true,
+    "candidate18_active_restricted_current_classified": false,
+    "candidate20_smooth_active_restricted_current_degeneracy": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "complete_presymplectic_stratification_classified": false,
+    "degeneracy_occurs_inside_each_exact_scalar_cone": true,
+    "degenerate_points_are_bounded_second_order_tangents": true,
+    "degenerate_points_have_all_five_stabilizer_moment_maps_zero": true,
+    "global_active_component_symplectic_orbifold": false,
+    "occupation_strata_glued": false,
+    "proper_moment_map_connected_fibre_theorem_applicable_globally": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "full_bounded_witness": {
+    "bounded_second_order_membership": "CERTIFIED_BY_THE_EXACT_FIBRE_PRODUCT_THEOREM",
+    "resonance": "both T3 eigenchannel equations vanish exactly",
+    "resonant_channels": "use the displayed smooth (f,g) point in both parity eigenchannels and scale the two nodes to the certified 13/192 absolute-current occupation ratio",
+    "rotations": "the displayed resonant f and g have zero J1,J2,J3 moments individually; m=0 spectators do too",
+    "same_fibre_sources": "removable by the imported 864-defect same-fibre census",
+    "spectators": "real m=0 current eigenlines realize the remaining scalar-cone occupations"
+  },
+  "generality_level": "G2_EXPLICIT_SMOOTH_DEGENERACY_WITNESS_ON_BOTH_L1_ACTIVE_BACKGROUNDS",
+  "interpretation": "The candidate-17/20 active varieties are not globally symplectic after fixed norms and node-phase reduction. The obstruction is not a singular point of the resonance variety: an exact smooth, rotation-neutral bounded point carries a surviving projective current radical. Therefore the ordinary smooth Hamiltonian connected-fibre theorem cannot classify these active links globally; a presymplectic stratification or further quotient is required.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify the candidate-17/20 current-degeneracy divisor and its presymplectic quotient, and compute the remaining candidate-18 restricted current",
+  "parity_current_reduction": {
+    "consequence": "the two third-transvectant eigenchannels are current-orthogonal and carry identical-sign copies of the same negative-node plus positive-node Hermitian problem",
+    "current_orthogonal_first_node_matrix": "Q=[[sqrt(3),-sqrt(3)],[1,1]], with Q^T diag(1,3) Q=6 I",
+    "current_orthogonal_second_node_matrix": "P is a nonzero scalar multiple of Q, so P^T diag(1,3) P is a positive scalar multiple of I",
+    "direct_action_current_shell_audit": {
+      "q_minus": {
+        "axial_representative_norm": "-192*(-6 + 5*sqrt(3))",
+        "common_sign": "negative",
+        "polar_over_axial_ratio": "3",
+        "polar_representative_norm": "-576*(-6 + 5*sqrt(3))"
+      },
+      "q_plus": {
+        "axial_representative_norm": "192*(6 + 5*sqrt(3))",
+        "common_sign": "positive",
+        "polar_over_axial_ratio": "3",
+        "polar_representative_norm": "576*(6 + 5*sqrt(3))"
+      }
+    },
+    "q_branch_axial_polar_current_ratio": "h_polar/h_axial=3 on both q_minus and q_plus branch representatives",
+    "source_pencil_relation": "c_pp=3*c_aa and c_ap=c_pa"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.py",
+    "generator_sha256": "f1a27a7bbc739c1d1bec5348ae925b8f6c692ebf86bae3e4d95e2732bc0509b4",
+    "inputs": {
+      "axial_basis_code": {
+        "path": "bridge/einstein_sector/einstein_maxwell_weyl_two_abs_momentum_axial_axial_L4_matrix.py",
+        "sha256": "eda03cdbef413dd663fec1d805e462329984f5d8c9dd18ab85764e679b47e580"
+      },
+      "axial_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "axial_current_code": {
+        "path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_lee_wald_completion.py",
+        "sha256": "887ca77725241df1018df63b5afc461ea5cbdad9a590581651f049b5800bc68c"
+      },
+      "fibre_product": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json",
+        "sha256": "32b6764cf13d724f89b91719aef17d3cf1d0a509e866ac9f8186115768b28f54"
+      },
+      "polar_basis_code": {
+        "path": "bridge/einstein_sector/einstein_maxwell_weyl_two_abs_momentum_polar_polar_L4_matrix.py",
+        "sha256": "dfc2295ec29ad29e20708127494863ee5e495481cbb4defee356aa75c2d61e1c"
+      },
+      "polar_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      },
+      "polar_current_code": {
+        "path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_lee_wald_gate.py",
+        "sha256": "ca486a4cc5e3d92f3c7ece63453f0668c6dfb24ee53f85b6bb630e708e409bbf"
+      },
+      "resonance_faces": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
+        "sha256": "7607c649ebc628270669db8fd5e6ab813b281b82c83192a9cb7f7dbee09f3433"
+      },
+      "scalar_L1": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L1_zero_varieties.json",
+        "sha256": "cba54fec164a028febf7e440dfe740f3fb2eb13085e328e1fd88aa760a012739"
+      },
+      "scalar_rays": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.json",
+        "sha256": "a52e9cffefb8822790ce75763d70eff3111e0a4d7757aa62bc4042782bcc02fa"
+      },
+      "stabilizer": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+      },
+      "standard_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+        "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_L1_ACTIVE_RESTRICTED_CURRENT_DEGENERACY",
+  "result_state": "CANDIDATES_17_AND_20_HAVE_SMOOTH_BOUNDED_ACTIVE_POINTS_WITH_PROJECTIVE_CURRENT_RADICALS",
+  "scalar_cone_witnesses": [
+    {
+      "active_ray": "R3",
+      "active_ray_positive_over_negative_ratio": "(-4*sqrt(6493 - 2121*sqrt(3)) + sqrt(27127 - 8349*sqrt(3)))*(-2*sqrt(6493 - 2121*sqrt(3)) + sqrt(45*sqrt(3) + 23129))/(2*(-sqrt(8709*sqrt(3) + 27127) + sqrt(27127 - 8349*sqrt(3)))*(-sqrt(8709*sqrt(3) + 27127) + 2*sqrt(45*sqrt(3) + 23129)))",
+      "active_ray_ratio_minus_13_over_192_interval": {
+        "decimal_digits": 30,
+        "excludes_zero": true,
+        "lower": "17913890745759746554239417093115987997957316354807864994740655941/98333686893270399167746196825087186432314173767683227025475748224",
+        "positive": true,
+        "upper": "53741672237279239662718251280093201212315481716175254464399083747/295001060679811197503238590474999697304500591482793399514687018368"
+      },
+      "active_resonant_norms_nonzero": true,
+      "all_occupations_nonnegative": true,
+      "all_six_scalar_constraints_zero": true,
+      "automatic_ray": "R1",
+      "automatic_ray_coefficient_interval": {
+        "decimal_digits": 30,
+        "excludes_zero": true,
+        "lower": "1492908789917337638070351358098540052024240661270918417920777892163094270234812061865755170983331/69258756555060283271528976038210654385298478197919157844724745523434869126526736078622135388662",
+        "positive": true,
+        "upper": "186613598739667204758793919765194143798400958732467601817373380093732403608723695622827348409385/8657344569382535408941122004636319030291625636526413906702799040518855689855298111693216821934"
+      },
+      "automatic_ray_coefficient_s": "-2*(-2*sqrt(6493 - 2121*sqrt(3)) + sqrt(45*sqrt(3) + 6071))*(-384*sqrt(6493 - 2121*sqrt(3))*sqrt(45*sqrt(3) + 23129) - 1742145*sqrt(3) - 192*sqrt(6493 - 2121*sqrt(3))*sqrt(27127 - 8349*sqrt(3)) + 13*sqrt(27127 - 8349*sqrt(3))*sqrt(8709*sqrt(3) + 27127) + 26*sqrt(45*sqrt(3) + 23129)*sqrt(8709*sqrt(3) + 27127) + 70*sqrt(27127 - 8349*sqrt(3))*sqrt(45*sqrt(3) + 23129) + 4633973)/(13*(-sqrt(8709*sqrt(3) + 27127) + 4*sqrt(6493 - 2121*sqrt(3)))*(-sqrt(8709*sqrt(3) + 27127) + sqrt(27127 - 8349*sqrt(3)))*(-sqrt(8709*sqrt(3) + 27127) + 2*sqrt(45*sqrt(3) + 23129)))",
+      "candidate_index": 17,
+      "negative_resonant_node": "q_minus_n1",
+      "occupation_vector": "1*R3 + s_17*R1",
+      "positive_resonant_node": "q_plus_n2",
+      "resulting_positive_over_negative_ratio": "13/192",
+      "rho": "10*(9*sqrt(3) + 77)/8529"
+    },
+    {
+      "active_ray": "R2",
+      "active_ray_positive_over_negative_ratio": "(-sqrt(17058)*sqrt(27127 - 8709*sqrt(3)) + 4*sqrt(8529)*sqrt(12986 - 4287*sqrt(3)))*(-2*sqrt(6071 - 45*sqrt(3)) + sqrt(27127 - 8709*sqrt(3)))/(2*(-sqrt(17058)*sqrt(2121*sqrt(3) + 6493) + sqrt(8529)*sqrt(12986 - 4287*sqrt(3)))*(-sqrt(6071 - 45*sqrt(3)) + 2*sqrt(2121*sqrt(3) + 6493)))",
+      "active_ray_ratio_minus_13_over_192_interval": {
+        "decimal_digits": 30,
+        "excludes_zero": true,
+        "lower": "1960611332169490475929370033209143973389815249060403589828465382423851798579143087778888604317273/6244343043123459462065871576043584759317948121209159311564888871957003268890118115392849638640000",
+        "positive": true,
+        "upper": "2352733598603388571115244039876381055271887670799511022606913488699943979072538534267718947621747/7493211651748151354479045891245626859377298619587354675648938895330031478874946442789173590982656"
+      },
+      "active_resonant_norms_nonzero": true,
+      "all_occupations_nonnegative": true,
+      "all_six_scalar_constraints_zero": true,
+      "automatic_ray": "R1",
+      "automatic_ray_coefficient_interval": {
+        "decimal_digits": 30,
+        "excludes_zero": true,
+        "lower": "29245210672313617534898482541561749453900427277319072097571119811794482010034934531433697184821456655907332706995962089016555001/9548029060348612939992848457316998521735825430466181297471325421055736472767772712835670192952027827008069971555519927457895000",
+        "positive": true,
+        "upper": "57028160811011554193052040956673931563643059008445251103493357279550324328745462983192542082315375840841912514501184619309305841/18618656667679795232986054491746171245051765494691136114912922293023410937432392066075670246694147680506834079185132973989263808"
+      },
+      "automatic_ray_coefficient_s": "-(-sqrt(27127 - 8709*sqrt(3)) + 2*sqrt(23129 - 45*sqrt(3)))*(-384*sqrt(8529)*sqrt(12986 - 4287*sqrt(3))*sqrt(27127 - 8709*sqrt(3)) - 192*sqrt(17058)*sqrt(6071 - 45*sqrt(3))*sqrt(27127 - 8709*sqrt(3)) - 2673630*sqrt(5686) + 13*sqrt(17058)*sqrt(6071 - 45*sqrt(3))*sqrt(2121*sqrt(3) + 6493) + 26*sqrt(8529)*sqrt(12986 - 4287*sqrt(3))*sqrt(2121*sqrt(3) + 6493) + 2435374*sqrt(17058) + 755*sqrt(8529)*sqrt(6071 - 45*sqrt(3))*sqrt(12986 - 4287*sqrt(3)))/(13*(-sqrt(17058)*sqrt(2121*sqrt(3) + 6493) + sqrt(8529)*sqrt(12986 - 4287*sqrt(3)))*(-sqrt(6071 - 45*sqrt(3)) + 2*sqrt(2121*sqrt(3) + 6493))*(-sqrt(27127 - 8709*sqrt(3)) + 4*sqrt(2121*sqrt(3) + 6493)))",
+      "candidate_index": 20,
+      "negative_resonant_node": "q_minus_n2",
+      "occupation_vector": "1*R2 + s_20*R1",
+      "positive_resonant_node": "q_plus_n1",
+      "resulting_positive_over_negative_ratio": "13/192",
+      "rho": "-10*(-77 + 9*sqrt(3))/8529"
+    }
+  ],
+  "schema": "einstein-maxwell-weyl-same-sign-L1-active-restricted-current-degeneracy-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.schema.json",
+  "schema_sha256": "ade507f6869f7e4ff746997b53ae46c8d5003c008d90c17bc3c9f35d745492cc",
+  "scope": {
+    "background": "candidates 17 and 20 only, retained as distinct compact Plebanski--Hacyan collision backgrounds",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "the complete axial/polar q-minus x q-plus L=1 active resonance varieties K_T3_plus x K_T3_minus at one exact scalar-cone occupation on each background",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidatewise signed n=(1,-2) or (1,2), never identified across rho",
+    "m": "all m=-2,...,2",
+    "omega": "candidate-specific positive/negative-frequency DIFFERENCE collision into the exceptional extra target",
+    "parity": "both exact real parity eigenchannels, transformed current-orthogonally from axial/polar amplitudes",
+    "theory": "Weyl-Maxwell target"
+  },
+  "universal_smooth_radical": {
+    "absolute_current_occupation_ratio_positive_over_negative": "13/192",
+    "affine_tangent_complex_dimension": 7,
+    "ambient_radical_vector_delta_f_delta_g": [
+      "0",
+      "1/4",
+      "0",
+      "1/4",
+      "0",
+      "0",
+      "1",
+      "0",
+      "1",
+      "0"
+    ],
+    "angular_Gram": [
+      "1",
+      "1/4",
+      "1/6",
+      "1/4",
+      "1"
+    ],
+    "base_norms": {
+      "f": "2",
+      "g": "13/6"
+    },
+    "fixed_norm_tangency": {
+      "f_inner_delta_f": "0",
+      "g_inner_delta_g": "0"
+    },
+    "individual_rotation_moments": {
+      "J1": [
+        "0",
+        "0"
+      ],
+      "J2_times_i": [
+        "0",
+        "0"
+      ],
+      "J3": [
+        "0",
+        "0"
+      ]
+    },
+    "jacobian_rank": 3,
+    "normalized_positive_to_negative_current_coefficient_ratio": "1/16",
+    "projective_descent": "the radical is nonzero, fixed-norm tangent and orthogonal to both phase directions, so it survives the two node-phase quotients",
+    "restricted_tangent_Gram": [
+      [
+        "-1/6",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-2",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "-1",
+        "-15/16",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-3/128",
+        "0",
+        "3/128",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/96",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "3/128",
+        "0",
+        "-3/128",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "-15/16"
+      ]
+    ],
+    "restricted_tangent_nullity": 1,
+    "restricted_tangent_rank": 6,
+    "smooth_point": {
+      "f": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "g": [
+        "1",
+        "0",
+        "1",
+        "0",
+        "1"
+      ]
+    },
+    "third_transvectant_matrix": [
+      [
+        "-f3",
+        "3*f2",
+        "-3*f1",
+        "f0",
+        "0"
+      ],
+      [
+        "-f4",
+        "2*f3",
+        "0",
+        "-2*f1",
+        "f0"
+      ],
+      [
+        "0",
+        "-f4",
+        "3*f3",
+        "-3*f2",
+        "f1"
+      ]
+    ]
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy"
+  ]
+}
