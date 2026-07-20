@@ -25,6 +25,7 @@ BilinearKey = tuple[int, tuple[int, ...], int, tuple[int, ...]]
 BilinearRow = dict[BilinearKey, replay.Polynomial]
 GradedBilinearRows = dict[Bidegree, dict[int, BilinearRow]]
 SUPPORTED_BIDEGREES: tuple[Bidegree, ...] = ((0, 0), (1, 0), (0, 1), (1, 1))
+EMITTER_SWITCH_CLOCK_RATE = Fraction(3, 4)
 
 
 def add_degree(left: Bidegree, right: Bidegree) -> Bidegree:
@@ -91,6 +92,67 @@ def add_bilinear_term(
         row[key] = value
     elif key in row:
         del row[key]
+
+
+def specialize_emitter_switch_profiles(value: replay.Polynomial) -> replay.Polynomial:
+    """Restrict h_b jets to h_b(Theta_bar), e0 Theta_bar=3/4, ei Theta_bar=0.
+
+    The exact emitter switches are functions of the relational clock rather
+    than independent spacetime profiles.  On the pinned homogeneous Berger
+    background, spatial switch jets vanish and each temporal derivative
+    raises the one-variable switch jet with a factor 3/4.
+    """
+
+    terms = []
+    rate = (EMITTER_SWITCH_CLOCK_RATE, Fraction(0))
+    for monomial, coefficient in value.items():
+        factors = []
+        current = coefficient
+        killed = False
+        for kind, name, vertical, spacetime in monomial:
+            if kind != "profile":
+                factors.append((kind, name, vertical, spacetime))
+                continue
+            if name not in {"h0", "h1"}:
+                factors.append((kind, name, vertical, spacetime))
+                continue
+            if len(vertical) > 1:
+                raise ValueError(f"unsupported emitter switch vertical jet: {vertical}")
+            if any(spacetime[axis] for axis in (1, 2, 3)):
+                killed = True
+                break
+            time_order = spacetime[0]
+            for _ in range(time_order):
+                current = replay.scalar_mul(current, rate)
+            vertical_order = (vertical[0] if vertical else 0) + time_order
+            factors.append(
+                replay.generator(
+                    kind,
+                    name,
+                    (vertical_order,) if vertical_order else (),
+                    (0, 0, 0, 0),
+                )
+            )
+        if not killed:
+            terms.append((current, factors))
+    return replay.normalize(terms)
+
+
+def specialize_bilinear_rows(
+    rows: dict[int, BilinearRow],
+) -> dict[int, BilinearRow]:
+    """Apply the exact emitter-switch background quotient coefficientwise."""
+
+    output: dict[int, BilinearRow] = {}
+    for target, row in rows.items():
+        specialized = {
+            key: coefficient
+            for key, value in row.items()
+            if (coefficient := specialize_emitter_switch_profiles(value))
+        }
+        if specialized:
+            output[target] = specialized
+    return output
 
 
 def apply_output_word(

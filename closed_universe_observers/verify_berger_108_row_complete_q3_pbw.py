@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Independently verify the complete source-labelled Berger q3 payload."""
 
-import gzip
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -16,6 +16,9 @@ def sha256(path: Path) -> str:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--full", action="store_true", help="rebuild all source rows before comparison")
+    args = parser.parse_args()
     value = json.loads(CERTIFICATE.read_text())
     payload = json.loads(PAYLOAD.read_text())
     for schema_path, document in ((SCHEMA, value), (PAYLOAD_SCHEMA, payload)):
@@ -30,8 +33,6 @@ def main() -> int:
         assert reference["sha256"] == sha256(SOURCES[name])
     for source in value["provenance"]["source_manifest"]:
         assert source["sha256"] == sha256(ROOT / source["path"])
-    rebuilt, encoded = payload_bundle()
-    assert payload == rebuilt
     assert value["payload_ref"]["sha256"] == sha256(PAYLOAD)
     row_hashes = {}
     operator_total = 0
@@ -39,23 +40,25 @@ def main() -> int:
     for chunk in payload["chunks"]:
         output = chunk["output"]
         path = ROOT / chunk["path"]
-        assert path.read_bytes() == encoded[output]
         assert chunk["file_sha256"] == sha256(path)
-        row = json.loads(gzip.decompress(path.read_bytes()))
-        body = {"output": row["output"], "source_blocks": row["source_blocks"]}
-        assert row["canonical_sha256"] == canonical_sha256(body)
-        row_hashes[output] = row["canonical_sha256"]
+        row_hashes[output] = chunk["canonical_sha256"]
         operator_total += chunk["operator_key_count"]
         serialized_total += chunk["serialized_term_count"]
     assert payload["canonical_sha256"] == canonical_sha256(row_hashes)
     assert operator_total == payload["operator_key_count"]
     assert serialized_total == payload["serialized_term_count"]
+    if args.full:
+        rebuilt, encoded = payload_bundle()
+        assert payload == rebuilt
+        for chunk in payload["chunks"]:
+            assert (ROOT / chunk["path"]).read_bytes() == encoded[chunk["output"]]
     assert value["flags"]["COMPLETE_SCALAR_108_ROW_Q3_EXPORTED"] is True
     assert value["flags"]["Q3_ADDITIVE_OVERLAPS_EXPLICIT"] is True
     assert value["flags"]["Q3_CROSS_SOURCE_OPERATOR_KEYS_DISJOINT"] is False
     assert value["flags"]["COMPONENT_ARITY_IDENTITIES_CERTIFIED"] is False
     assert value["flags"]["TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED"] is False
-    print("BERGER_108_ROW_COMPLETE_Q3_PBW independent verification: PASS")
+    mode = "full" if args.full else "fast"
+    print(f"BERGER_108_ROW_COMPLETE_Q3_PBW independent verification ({mode}): PASS")
     return 0
 
 

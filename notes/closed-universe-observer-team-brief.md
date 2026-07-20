@@ -1494,18 +1494,21 @@ the extended identities.  The first identity replay is now decisive:
 rod action through `R_dressed=R_raw-Theta e0(Rbar)` and the unique cotangent
 shift.  Exact conjugation leaves the certified unary unchanged, and its 192
 generated q2 keys remove the former `+e0 e1 R0_1` witness and all six
-rod/rod-cotangent defect rows.  `BERGER_108_ROW_ARITY_TWO_OBSTRUCTION` now
-finds 4,228 nonzero operator keys and 4,552 exact coefficient monomials at
-bidegree `(0,0)`, on 24 output rows.  The typed 64-row base remains an exact
-zero control.  The first remaining witness is
-`c_spatial_1_star <- (e1 A_0,K0_01)` with coefficient `-2 g0 e1(h0)`.
-It source-isolates to the typed Maxwell, physical-emitter and emitter-Diff--BV
-q2 sources crossed with base/emitter unary sources; because it contains a
-formal coupling and switch-profile jet, the six-rod background quotient is
-explicitly `NOT_APPLICABLE`.  The required repair is a common-action
-rederivation of this typed Maxwell-emitter orbit in the suspended
-graded-symmetric factorial convention, followed by the full first-bidegree
-replay.  Arity three, `K_Berger`, observer-morphism stability and
+rod/rod-cotangent defect rows.  The generic physical-emitter action Hessian
+now also retains multiplicity two when its two remaining slots coincide; the
+exact `3 h_hat_00 K0_01^2` fixture emits coefficient six, and the physical q3
+first-jet regression passes against that repaired q2.
+`BERGER_108_ROW_ARITY_TWO_OBSTRUCTION` finds 3,984 formal keys and 4,272
+monomials at bidegree `(0,0)`.  The exact emitter-switch quotient, with
+`e0 Theta_bar=3/4` and all spatial clock jets zero, reduces this to 2,772 keys
+and 2,820 monomials on 24 output rows.  The typed 64-row base remains an exact
+zero control.  The first genuine same-background witness is
+`c_spatial_1_star <- (e1 A_0,e1 K0_01)` with coefficient `-3 g0 h0`.
+It source-isolates to the typed Maxwell and physical-emitter q2 sources
+crossed with base/emitter unary sources.  The required repair is a common-
+action rederivation of this shared-field orbit after the now-fixed factorial
+convention, followed by the later memory/clock rows and the full first-
+bidegree replay.  Arity three, `K_Berger`, observer-morphism stability and
 `O_detector|Z2^C` remain fail-closed.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are

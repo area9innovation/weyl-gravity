@@ -223,8 +223,8 @@ def add_term(tensor: Tensor, output: int, slots: tuple[Slot, Slot, Slot], coeffi
 
 
 def add_permutations(tensor: Tensor, output: int, slots: tuple[Slot, Slot, Slot], coefficient: Polynomial) -> None:
-    values = {tuple(slots[index] for index in order) for order in itertools.permutations(range(3))}
-    for permuted in sorted(values):
+    values = [tuple(slots[index] for index in order) for order in itertools.permutations(range(3))]
+    for permuted in values:
         add_term(tensor, output, permuted, coefficient)  # type: ignore[arg-type]
 
 

@@ -248,9 +248,12 @@ def tensor_add(tensor: Tensor, output: int, left: Factor, right: Factor, coeffic
 
 
 def tensor_add_symmetric(tensor: Tensor, output: int, left: Factor, right: Factor, coefficient: Polynomial) -> None:
+    # ``coefficient`` is the coefficient of the commutative cubic action
+    # monomial.  When the two unvaried slots coincide, its second derivative
+    # has multiplicity two.  Suppressing the repeated insertion here emitted
+    # half of precisely those diagonal Hessian entries.
     tensor_add(tensor, output, left, right, coefficient)
-    if left != right:
-        tensor_add(tensor, output, right, left, coefficient)
+    tensor_add(tensor, output, right, left, coefficient)
 
 
 def action_to_unary(action: Action) -> Operator:
@@ -312,6 +315,22 @@ def q1_hessian_recovery_audit() -> dict[str, Any]:
     keys = set(rebuilt) | set(expected)
     defects = sum(rebuilt.get(key, {}) != expected.get(key, {}) for key in keys)
     return {"rebuilt_operator_key_count": len(rebuilt), "certified_operator_key_count": len(expected), "q1_hessian_recovery_defect_count": defects}
+
+
+def identical_slot_hessian_audit() -> dict[str, Any]:
+    """Detect loss of the multiplicity-two derivative of h K^2."""
+
+    action: Action = {}
+    action_add(action, (((5), ()), ((84), ()), ((84), ())), constant(3))
+    tensor = action_to_q2(action)
+    key = 27, 84, (), 84, ()
+    expected = constant(6)
+    return {
+        "fixture": "3 h_hat_00 K0_01 K0_01",
+        "expected_metric_output_coefficient": serialize(expected),
+        "actual_metric_output_coefficient": serialize(tensor.get(key, {})),
+        "identical_slot_hessian_defect_count": int(tensor.get(key, {}) != expected),
+    }
 
 
 def metric_jet_audit() -> dict[str, Any]:
@@ -379,10 +398,11 @@ def build(*, payload: dict[str, Any] | None = None, payload_sha256: str | None =
         if values[name]["flags"][flag] is not True:
             raise AssertionError(f"required gate dropped: {name}.{flag}")
     q1_audit = q1_hessian_recovery_audit()
+    multiplicity_audit = identical_slot_hessian_audit()
     metric_audit = metric_jet_audit()
     tensor = action_to_q2(physical_cubic_action()[0])
     symmetry = symmetry_defects(tensor)
-    if q1_audit["q1_hessian_recovery_defect_count"] or metric_audit["metric_bilinear_first_jet_defect_count"] or symmetry:
+    if q1_audit["q1_hessian_recovery_defect_count"] or multiplicity_audit["identical_slot_hessian_defect_count"] or metric_audit["metric_bilinear_first_jet_defect_count"] or symmetry:
         raise AssertionError("emitter physical q2 audit failed")
     payload = payload or payload_document()
     rendered_payload = json.dumps(payload, sort_keys=True, separators=(",", ":")) + "\n"
@@ -390,13 +410,13 @@ def build(*, payload: dict[str, Any] | None = None, payload_sha256: str | None =
     mutated = list(payload["rows"])
     mutated[-1] = {"output": mutated[-1]["output"], "terms": mutated[-1]["terms"][:-1]}
     boundary = (
-        "This exact LOCAL-ALGEBRAIC certificate exports the complete physical-action contribution of both selected massive two-form emitters to q2 on the canonical 108-row Berger carrier. The component action is fixed by an exact Hessian recovery: its quadratic free and switched Maxwell--emitter terms reproduce every key of the previously certified scalar emitter q1 overlay with zero defect, including Lorentzian form weights and switch Leibniz jets. Exact first variation of the densitized two- and three-form pairings supplies the free kinetic and mass stress, the switched interaction stress, and the reciprocal clock-switch source. Raising every slot of the same cubic action through the signed odd pairing generates all metric-, clock-, Maxwell- and emitter-cotangent cyclic mates with noncommuting Berger-frame PBW integration by parts and exact graded input symmetry. Independent symbolic fixtures verify the metric bilinear first jets, and deleting one payload term changes the canonical hash. This closes the physical emitter stress/switch q2 subblock only. The two-form Diff--BV q2 cotangent orbit remains to be scalarized before complete emitter or complete 108-row q2 can be claimed. Every q3 block, component q1q2 and q2q2+q1q3 replay, K_Berger equivariance, observer-morphism stability, detector response on Z2, nonlinear rank, physical Bridge 3, finite-parameter causal propagation and quantum claims remain unavailable. No compact-product mode is identified with a Berger row."
+        "This exact LOCAL-ALGEBRAIC certificate exports the complete physical-action contribution of both selected massive two-form emitters to q2 on the canonical 108-row Berger carrier. The component action is fixed by an exact Hessian recovery: its quadratic free and switched Maxwell--emitter terms reproduce every key of the previously certified scalar emitter q1 overlay with zero defect, including Lorentzian form weights and switch Leibniz jets. Exact first variation of the densitized two- and three-form pairings supplies the free kinetic and mass stress, the switched interaction stress, and the reciprocal clock-switch source. Raising every slot of the same cubic action through the signed odd pairing generates all metric-, clock-, Maxwell- and emitter-cotangent cyclic mates with noncommuting Berger-frame PBW integration by parts and exact graded input symmetry. The action Hessian now retains multiplicity two when the two remaining slots coincide; an independent 3 h_hat_00 K0_01^2 fixture detects the former half-weight diagonal emission. Independent symbolic fixtures verify the metric bilinear first jets, and deleting one payload term changes the canonical hash. This closes the physical emitter stress/switch q2 subblock only. The two-form Diff--BV q2 cotangent orbit remains to be scalarized before complete emitter or complete 108-row q2 can be claimed. Every q3 block, component q1q2 and q2q2+q1q3 replay, K_Berger equivariance, observer-morphism stability, detector response on Z2, nonlinear rank, physical Bridge 3, finite-parameter causal propagation and quantum claims remain unavailable. No compact-product mode is identified with a Berger row."
     )
     return {
         "schema": "closed-universe-berger-108-row-emitter-physical-q2-pbw-v1", "result_id": "BERGER_108_ROW_EMITTER_PHYSICAL_Q2_PBW", "setting_id": values["component_contract"]["setting_id"], "claim_status": "CERTIFIED_COMPLETE_EMITTER_PHYSICAL_ACTION_Q2_PBW_SUBBLOCK", "atlas_status": "CERTIFIED", "dependency_tags": ["LOCAL-ALGEBRAIC"],
         "dependency_refs": {name: {"path": str(path.relative_to(ROOT)), "result_id": values[name]["result_id"], "sha256": sha256(path)} for name, path in DEPENDENCIES.items()},
         "payload_ref": {"path": str(PAYLOAD.relative_to(ROOT)), "result_id": payload["result_id"], "sha256": payload_sha256, "operator_key_count": payload["operator_key_count"], "serialized_term_count": payload["serialized_term_count"], "nonzero_output_rows": payload["nonzero_output_rows"], "canonical_sha256": payload["canonical_sha256"]},
-        "action_and_cyclicity_audit": {"q1_hessian_recovery": q1_audit, "metric_first_jet": metric_audit, "graded_symmetry_defect_count": symmetry, "cyclicity_generation": "all physical emitter q2 rows are Euler derivatives of one component action and are raised with the canonical signed odd pairing"},
+        "action_and_cyclicity_audit": {"q1_hessian_recovery": q1_audit, "identical_slot_hessian": multiplicity_audit, "metric_first_jet": metric_audit, "graded_symmetry_defect_count": symmetry, "cyclicity_generation": "all physical emitter q2 rows are Euler derivatives of one component action and are raised with the canonical signed odd pairing"},
         "mutation_results": [{"name": "delete_last_emitter_physical_q2_term", "detected": canonical_sha256(mutated) != payload["canonical_sha256"]}],
         "activation_disposition": {"emitter_physical_q2_subblock_exported": True, "emitter_diff_BV_q2_subblock_exported": False, "complete_emitter_q2_exported": False, "complete_scalar_q2_exported": False, "scalar_q3_exported": False, "arity_replay_certified": False, "detector_response_on_second_order_cone_authorized": False, "physical_branch_bridge_activated": False},
         "flags": {"EMITTER_PHYSICAL_Q2_PBW_EXPORTED": True, "EMITTER_PHYSICAL_Q2_GRADED_SYMMETRIC": True, "EMITTER_PHYSICAL_Q2_CYCLIC": True, "EMITTER_Q1_HESSIAN_RECOVERED_EXACTLY": True, "EMITTER_DIFF_BV_Q2_PBW_EXPORTED": False, "COMPLETE_EMITTER_Q2_PBW_EXPORTED": False, "COMPLETE_SCALAR_108_ROW_Q2_EXPORTED": False, "COMPLETE_SCALAR_108_ROW_Q3_EXPORTED": False, "COMPONENT_ARITY_IDENTITIES_CERTIFIED": False, "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": False, "QUANTUM_CLAIM": False},

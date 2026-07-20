@@ -308,9 +308,31 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--emit", action="store_true")
     parser.add_argument("--check", action="store_true")
+    parser.add_argument(
+        "--reuse-payload",
+        action="store_true",
+        help="validate the existing content-addressed payload/chunks and refresh certificate metadata",
+    )
     args = parser.parse_args()
-    payload, encoded = payload_bundle()
-    rendered_payload = json.dumps(payload, sort_keys=True, separators=(",", ":")) + "\n"
+    if args.reuse_payload:
+        payload = json.loads(PAYLOAD.read_text())
+        encoded: dict[int, bytes] = {}
+        for name, reference in payload["source_payload_refs"].items():
+            if reference["sha256"] != sha256(SOURCES[name]):
+                raise SystemExit(f"stale complete q3 source payload: {name}")
+        if payload["composition_sha256"] != composition_hash():
+            raise SystemExit("stale complete q3 composition hash")
+        for chunk in payload["chunks"]:
+            path = ROOT / chunk["path"]
+            if not path.exists() or sha256(path) != chunk["file_sha256"]:
+                raise SystemExit(f"stale complete q3 row chunk: {chunk['output']}")
+        row_hashes = {chunk["output"]: chunk["canonical_sha256"] for chunk in payload["chunks"]}
+        if canonical_sha256(row_hashes) != payload["canonical_sha256"]:
+            raise SystemExit("stale complete q3 canonical row-hash ledger")
+        rendered_payload = PAYLOAD.read_text()
+    else:
+        payload, encoded = payload_bundle()
+        rendered_payload = json.dumps(payload, sort_keys=True, separators=(",", ":")) + "\n"
     payload_schema = json.loads(PAYLOAD_SCHEMA.read_text())
     Draft202012Validator.check_schema(payload_schema)
     Draft202012Validator(payload_schema).validate(payload)
@@ -320,18 +342,20 @@ def main() -> int:
     Draft202012Validator(schema).validate(value)
     rendered = json.dumps(value, indent=2, sort_keys=True) + "\n"
     if args.emit:
-        GENERATED.mkdir(parents=True, exist_ok=True)
-        for output, data in encoded.items():
-            (GENERATED / f"row_{output:03d}.json.gz").write_bytes(data)
-        PAYLOAD.write_text(rendered_payload)
+        if not args.reuse_payload:
+            GENERATED.mkdir(parents=True, exist_ok=True)
+            for output, data in encoded.items():
+                (GENERATED / f"row_{output:03d}.json.gz").write_bytes(data)
+            PAYLOAD.write_text(rendered_payload)
         CERTIFICATE.write_text(rendered)
     if args.check:
         if not PAYLOAD.exists() or PAYLOAD.read_text() != rendered_payload or not CERTIFICATE.exists() or CERTIFICATE.read_text() != rendered:
             raise SystemExit("stale complete q3 artifact")
-        for output, data in encoded.items():
-            path = GENERATED / f"row_{output:03d}.json.gz"
-            if not path.exists() or path.read_bytes() != data:
-                raise SystemExit(f"stale complete q3 row {output}")
+        if not args.reuse_payload:
+            for output, data in encoded.items():
+                path = GENERATED / f"row_{output:03d}.json.gz"
+                if not path.exists() or path.read_bytes() != data:
+                    raise SystemExit(f"stale complete q3 row {output}")
     print("BERGER_108_ROW_COMPLETE_Q3_PBW generation: PASS")
     return 0
 

@@ -31,6 +31,7 @@ DEPENDENCIES = {
     "completed_q1": P / "certificates/BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET.json",
     "complete_typed_q2": P / "certificates/BERGER_108_ROW_COMPLETE_Q2_PBW.json",
     "complete_q3": P / "certificates/BERGER_108_ROW_COMPLETE_Q3_PBW.json",
+    "emitter_switches": P / "certificates/BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES.json",
 }
 SOURCE_FILES = [
     Path(__file__),
@@ -112,22 +113,33 @@ def replay_audit() -> dict[str, Any]:
     q1 = replay.load_q1()
     q2 = arity.load_q2()
     defect = arity.arity_two_degree((0, 0), q1, q2)
-    summary = arity.bilinear_summary(defect)
-    expected = {
-        "operator_key_count": 4228,
-        "serialized_term_count": 4552,
+    formal_summary = arity.bilinear_summary(defect)
+    expected_formal = {
+        "operator_key_count": 3984,
+        "serialized_term_count": 4272,
         "nonzero_output_rows": [
             49, 50, 51, 52, 59, 60, 61, 62, 80, 81, 82, 83, 96, 97,
             98, 99, 100, 101, 102, 103, 104, 105, 106, 107,
         ],
         "maximum_total_input_order": 3,
     }
+    if formal_summary != expected_formal:
+        raise AssertionError(f"formal arity-two obstruction drifted: {formal_summary}")
+
+    specialized_defect = arity.specialize_bilinear_rows(defect)
+    summary = arity.bilinear_summary(specialized_defect)
+    expected = {
+        "operator_key_count": 2772,
+        "serialized_term_count": 2820,
+        "nonzero_output_rows": expected_formal["nonzero_output_rows"],
+        "maximum_total_input_order": 3,
+    }
     if summary != expected:
-        raise AssertionError(f"complete arity-two obstruction drifted: {summary}")
+        raise AssertionError(f"switch-specialized arity-two obstruction drifted: {summary}")
 
     first = min(
         (target, key, coefficient)
-        for target, row in defect.items()
+        for target, row in specialized_defect.items()
         for key, coefficient in row.items()
     )
     witness = _witness_record(*first)
@@ -161,9 +173,12 @@ def replay_audit() -> dict[str, Any]:
             witness["output_row"], (0, 0), q1,
             arity.load_q2(sources={source}), parity,
         )
+        row = arity.specialize_bilinear_rows({witness["output_row"]: row}).get(
+            witness["output_row"], {}
+        )
         if witness_key in row:
             source_values[source] = serialize(row[witness_key])
-    if set(source_values) != {"base_maxwell_typed", "emitter_physical", "emitter_Diff_BV"}:
+    if set(source_values) != {"base_maxwell_typed", "emitter_physical"}:
         raise AssertionError(f"first-witness source isolation drifted: {source_values}")
 
     q1_source_values = {}
@@ -173,6 +188,9 @@ def replay_audit() -> dict[str, Any]:
             witness["output_row"], (0, 0), source_q1, complete_q2,
             parity,
         )
+        row = arity.specialize_bilinear_rows({witness["output_row"]: row}).get(
+            witness["output_row"], {}
+        )
         if witness_key in row:
             q1_source_values[source] = serialize(row[witness_key])
     if set(q1_source_values) != {"base_gravity_clock_maxwell", "emitter"}:
@@ -180,6 +198,12 @@ def replay_audit() -> dict[str, Any]:
 
     return {
         "tested_bidegree": [0, 0],
+        "formal_differential_coefficient_defect_summary": formal_summary,
+        "emitter_switch_specialization": {
+            "clock_rate_e0_Theta_bar": "3/4",
+            "spatial_clock_jets": "e1(Theta_bar)=e2(Theta_bar)=e3(Theta_bar)=0",
+            "chain_rule": "e0^p h_b^(n)(Theta_bar)=(3/4)^p h_b^(n+p)(Theta_bar); every spatial h_b jet vanishes",
+        },
         "complete_defect_summary": summary,
         "first_lexicographic_defect": witness,
         "first_defect_q2_source_isolation": source_values,
@@ -190,39 +214,45 @@ def replay_audit() -> dict[str, Any]:
     }
 
 
-def build() -> dict[str, Any]:
+def build(*, audit: dict[str, Any] | None = None) -> dict[str, Any]:
     values = {name: json.loads(path.read_text()) for name, path in DEPENDENCIES.items()}
     required = {
         "component_contract": "NONDEGENERATE_108_ROW_ODD_PAIRING_CERTIFIED",
         "completed_q1": "COMPLETE_FIRST_BIDEGREE_UNARY_GATE",
         "complete_typed_q2": "COMPLETE_SCALAR_108_ROW_Q2_EXPORTED",
         "complete_q3": "COMPLETE_SCALAR_108_ROW_Q3_EXPORTED",
+        "emitter_switches": "EXACT_H0_H1_SWITCH_PROFILES_SERIALIZED",
     }
     for name, flag in required.items():
         if values[name]["flags"].get(flag) is not True:
             raise AssertionError(f"required gate dropped: {name}.{flag}")
-    audit = replay_audit()
+    audit = audit or replay_audit()
     boundary = (
         "This exact LOCAL-ALGEBRAIC/REDUCED-MODE obstruction replays the lowest "
         "(epsilon_R_squared,kappa)=(0,0) coefficient of q1 q2+q2(q1,-)+(-1)^|x|q2(-,q1) "
         "on the canonical 108-row Berger differential-coefficient PBW carrier. The "
         "typed 64-row gravity-clock-Maxwell base is an exact zero control. The "
         "action-derived dressed-rod clock correction removes the former +e0 e1 R0_1 "
-        "witness and all six rod/rod-cotangent defect rows, but the remaining complete "
-        "source-labelled extension has 4,228 nonzero operator keys and 4,552 exact "
-        "coefficient monomials on 24 output rows. The new first lexicographic witness "
-        "is the shared typed Maxwell--emitter orbit: its c_spatial_1_star output with "
-        "e1 A_0 and K0_01 inputs has coefficient -2 g0 e1(h0). It source-isolates to "
-        "the typed Maxwell q2 crossed with emitter q1 plus the physical and Diff--BV "
-        "emitter q2 contributions crossed with base/emitter q1. Since this witness is at bidegree "
+        "witness and all six rod/rod-cotangent defect rows. The physical-emitter action "
+        "exporter now also restores the multiplicity-two second derivative when its two "
+        "remaining action slots coincide; this removes 244 further formal operator keys. "
+        "The exact h_b(Theta_bar) chain-rule quotient then kills every spatial switch jet "
+        "and replaces e0^p h_b^(n) by (3/4)^p h_b^(n+p). Before that quotient the residual "
+        "has 3,984 keys and 4,272 monomials; after it the decisive same-background residual "
+        "has 2,772 keys and 2,820 monomials on 24 output rows. Its first lexicographic "
+        "witness is the shared typed Maxwell--emitter orbit: c_spatial_1_star on e1 A_0 "
+        "and e1 K0_01 has coefficient -3 g0 h0. It source-isolates to the typed Maxwell "
+        "and physical-emitter q2 sources crossed with the base/emitter q1 sources. Since "
+        "this witness is at bidegree "
         "(0,0), neither the epsilon_R_squared nonlinear-clock unary correction nor "
         "any q3 term can cancel it inside the declared arity-two identity. The "
         "remaining first-bidegree coefficients are deliberately not evaluated once "
         "this lowest-cost falsifier fires; they are recorded as skipped, not passed. "
         "Therefore the complete arity-two identity is OBSTRUCTED. This "
         "certificate does not guess the remaining repair: the typed Maxwell-emitter "
-        "raising and factorial conventions must be rederived together from the common "
-        "action and then replayed. The two-sided "
+        "shared-field orbit must be rederived from the common action after the now-fixed "
+        "identical-slot factorial convention, and the later memory/clock orbit must also "
+        "be replayed. The two-sided "
         "source isolation is diagnostic only: it identifies the q2 and q1 sources "
         "of the first key, not a proof that no other apparatus or emitter orbit is "
         "missing. The existing q2 and q3 payloads "
@@ -288,8 +318,37 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--emit", action="store_true")
     parser.add_argument("--check", action="store_true")
+    parser.add_argument(
+        "--reuse-audit",
+        action="store_true",
+        help="reuse the emitted exact replay audit while refreshing validated metadata",
+    )
     args = parser.parse_args()
-    value = build()
+    audit = None
+    if args.reuse_audit:
+        existing = json.loads(CERTIFICATE.read_text())
+        audit = existing["arity_two_replay"]
+        formal = audit["formal_differential_coefficient_defect_summary"]
+        specialized = audit["complete_defect_summary"]
+        witness = audit["first_lexicographic_defect"]
+        if (formal["operator_key_count"], formal["serialized_term_count"]) != (3984, 4272):
+            raise SystemExit("stale formal arity-two audit")
+        if (specialized["operator_key_count"], specialized["serialized_term_count"]) != (2772, 2820):
+            raise SystemExit("stale switch-specialized arity-two audit")
+        if audit["typed_64_row_base_control_summary"]["operator_key_count"] != 0:
+            raise SystemExit("stale typed-base arity-two control")
+        if audit["emitter_switch_specialization"]["clock_rate_e0_Theta_bar"] != "3/4":
+            raise SystemExit("stale emitter-switch specialization")
+        if (
+            witness["output_row"], witness["left_input_row"], witness["left_pbw_multiindex"],
+            witness["right_input_row"], witness["right_pbw_multiindex"],
+        ) != (49, 55, [0, 1, 0, 0], 84, [0, 1, 0, 0]):
+            raise SystemExit("stale same-background arity-two witness")
+        if set(audit["first_defect_q2_source_isolation"]) != {"base_maxwell_typed", "emitter_physical"}:
+            raise SystemExit("stale q2 source isolation")
+        if set(audit["first_defect_q1_source_isolation"]) != {"base_gravity_clock_maxwell", "emitter"}:
+            raise SystemExit("stale q1 source isolation")
+    value = build(audit=audit)
     schema = json.loads(SCHEMA.read_text())
     Draft202012Validator.check_schema(schema)
     Draft202012Validator(schema).validate(value)
