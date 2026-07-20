@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-parity-odd-one-loop-coefficient-disposition",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-parity-odd-one-loop-coefficient-disposition",
+  "source": {
+    "path": "planning/work-items/quantum-parity-odd-one-loop-coefficient-disposition.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum-qme",
+    "state": "PROPOSED",
+    "objective": "Determine whether strict parity-even pure Weyl gravity generates any parity-odd third-curvature form-factor coefficient at one Euclidean loop, and separate a symmetry-forced zero from a missing regulated trace.",
+    "stop_condition": "Import the independently frozen parity-odd carrier and the exact strict pure-Weyl minimal/nonminimal Hessian and ghost determinant data.  Define parity and orientation reversal on every field, ghost, antifield, zero-mode and determinant block and on the chosen regulator/measure.  Prove the regulated one-loop trace is parity invariant and hence all nonexact odd-carrier coefficients vanish, or compute the first nonzero coefficient with an exact spectral/heat-kernel witness, or certify the first missing orientation-sensitive regulator/measure datum that leaves the coefficient undefined.  Treat the local Pontryagin anomaly representative separately from nonlocal derivative-decorated odd form factors.  Check scheme dependence and finite odd counterterms explicitly, and use a method-distinct spectral or invariant trace verifier.",
+    "current_gate": "zero, nonzero or precisely undefined parity-odd one-loop coefficient vector",
+    "forbid": "no parity-even classical action alone used as proof that the quantum measure is parity invariant; no local Pontryagin class conflated with all odd nonlocal form factors; no coefficient inferred from carrier dimension; no Lorentzian, QME, state, particle or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/quantum-parity-odd-third-curvature-independent-audit"
+    ],
+    "activates": [
+      "a complete even/odd one-loop third-curvature effective-action table",
+      "or the exact regulator/measure input required to define the odd coefficient"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/",
+      "reports/",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json",
+      "notes/d-quotient-quantum-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "QUANTUM COEFFICIENT GATE.  Prefer an exact parity/measure theorem; if the measure data are incomplete, certify nondefinition rather than guessing zero.",
+    "notes": [
+      "A symmetry-forced zero would close an open half of the one-loop effective-action architecture without selecting a compensator action.",
+      "A nondefinition result is useful only if it names the exact missing determinant or regulator datum."
+    ],
+    "input_commit": "6d4eceb71",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
