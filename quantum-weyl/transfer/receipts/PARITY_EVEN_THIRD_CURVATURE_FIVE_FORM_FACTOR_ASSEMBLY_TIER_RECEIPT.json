@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "PARITY_EVEN_THIRD_CURVATURE_FIVE_FORM_FACTOR_ASSEMBLY_TIER_RECEIPT",
+  "claim_id": "PARITY_EVEN_THIRD_CURVATURE_FIVE_FORM_FACTOR_ASSEMBLY",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "artifacts": [
+    {
+      "path": "quantum-weyl/spectral/euclidean/parity_even_third_curvature_five_form_factor_assembly.py",
+      "sha256": "67cf57c0f6b317a9f90f4518bd65c398b076eaab957b3eea8998cc6c28a9d42a"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/verify_parity_even_third_curvature_five_form_factor_assembly.py",
+      "sha256": "08ef019ff6557764d080e247b8e4c03b88fc270564b742e047f04ed618904146"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/tests/test_parity_even_third_curvature_five_form_factor_assembly.py",
+      "sha256": "a6b789a16cf44923b2876032dc42b08be496a514a632572897e50a5655252027"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/schema/parity-even-third-curvature-five-form-factor-assembly-v1.schema.json",
+      "sha256": "d7a051985ca1d55c52c226523238409964b0533e173e8c4c67b566bbf0946a99"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/certificates/PARITY_EVEN_THIRD_CURVATURE_FIVE_FORM_FACTOR_ASSEMBLY.json",
+      "sha256": "c474dedff8923233d94998e04e044c5931f03df69fcbf973c650d665f7246f06"
+    },
+    {
+      "path": "quantum-weyl/reports/parity-even-third-curvature-five-form-factor-assembly.md",
+      "sha256": "1f50cbd08ef213f1519a07a875498c168fc944f542a3de82b10e6908bc173216"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, independent verifier, tests>",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <schema, certificate, receipt>",
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit parity-even five-form-factor paths>",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.parity_even_third_curvature_five_form_factor_assembly --check",
+        "status": "PASS",
+        "elapsed_seconds": 0.20
+      },
+      {
+        "command": "PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_parity_even_third_curvature_five_form_factor_assembly",
+        "status": "PASS",
+        "elapsed_seconds": 35.75,
+        "independent_rail": "does not import or call the producer; reconstructs all eleven exact physical plus ghost-n3 plus vector-ghost channels from the original determinant factors and independently checks the quotient relation, contact and special-background holdouts, Schur scale, multiplicity ledger, nondefinition witness and receiver contract"
+      },
+      {
+        "command": "PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_parity_even_third_curvature_five_form_factor_assembly -v",
+        "status": "PASS",
+        "elapsed_seconds": 35.20,
+        "tests": 6,
+        "mutation_controls": "one channel/sign digest, contact coefficient, scale density, zero-mode policy and full-BV promotion are rejected; exact reconstruction runs once and targeted mutations do not replay the expensive SymPy elimination"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/spectral/euclidean/schema/parity-even-third-curvature-five-form-factor-assembly-v1.schema.json -d quantum-weyl/spectral/euclidean/certificates/PARITY_EVEN_THIRD_CURVATURE_FIVE_FORM_FACTOR_ASSEMBLY.json",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "reason": "All mathematical inputs are unchanged content-addressed predecessors. This result assembles and audits their maximal determined quotient and records a nondefinition boundary; no shared operator, imported schema or downstream theorem was changed."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped coefficient/obstruction close-out, not a freeze, release, tag or shared-core-algebra change."
+  },
+  "claim_boundary": "The receipt certifies the maximal partial-BV generic parity-even five-carrier quotient and the first missing generic finite Schur relative-trace kernel. It does not supply the full generic ghost or BV form factors, finite local C2 or dressed R2 normalization, Gamma1, Q1, anomaly/QME disposition, residual transfer, Lorentzian theory, Hadamard state, particle interpretation, scattering or unitarity.",
+  "higher_tiers_not_run": [
+    {
+      "tier": 2,
+      "criterion": "No mathematical input, shared operator, schema consumer or promoted theorem changed."
+    },
+    {
+      "tier": 3,
+      "criterion": "No freeze, release, tag, shared-core algebra change or explicit full-suite request occurred."
+    }
+  ]
+}

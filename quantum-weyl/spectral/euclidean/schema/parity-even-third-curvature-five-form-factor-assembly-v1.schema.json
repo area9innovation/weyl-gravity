@@ -1,0 +1,385 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl/parity-even-third-curvature-five-form-factor-assembly-v1.schema.json",
+  "title": "Parity-even third-curvature five-form-factor assembly boundary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "carrier_quotient",
+    "maximal_determined_quotient",
+    "local_normalization_constants",
+    "holdouts",
+    "longitudinal_Schur_boundary",
+    "first_missing_analytic_datum",
+    "sector_disposition",
+    "dependencies",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-parity-even-third-curvature-five-form-factor-assembly-v1"
+    },
+    "result_id": {
+      "const": "PARITY_EVEN_THIRD_CURVATURE_FIVE_FORM_FACTOR_ASSEMBLY"
+    },
+    "result_state": {
+      "const": "MAXIMAL_PARTIAL_BV_FIVE_CARRIER_QUOTIENT_COMPUTED_FULL_BV_NONDEFINED_BY_MISSING_GENERIC_SCHUR_FINITE_KERNEL"
+    },
+    "lifecycle_state": {
+      "const": "OBSTRUCTED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ]
+    },
+    "classical_commit": {
+      "type": "string",
+      "minLength": 7
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dimension",
+        "signature",
+        "background",
+        "parity",
+        "subtraction",
+        "overall_loop_prefactor"
+      ],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": "Euclidean"},
+        "background": {"type": "string", "minLength": 1},
+        "parity": {"const": "EVEN"},
+        "subtraction": {"type": "string", "minLength": 1},
+        "overall_loop_prefactor": {"const": "(4*pi)^-2 excluded"}
+      }
+    },
+    "carrier_quotient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "carrier_function_count",
+        "raw_labelled_channel_count",
+        "effective_labelled_channel_count",
+        "functional_relation",
+        "functional_relation_status",
+        "source_permutation_covariance"
+      ],
+      "properties": {
+        "carrier_function_count": {"const": 5},
+        "raw_labelled_channel_count": {"const": 11},
+        "effective_labelled_channel_count": {"const": 10},
+        "functional_relation": {"const": "I28_123+I28_132+I28_231=0"},
+        "functional_relation_status": {"const": "ZERO_COEFFICIENTWISE"},
+        "source_permutation_covariance": {"type": "string", "minLength": 1}
+      }
+    },
+    "maximal_determined_quotient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "included_sectors",
+        "excluded_sectors",
+        "formula_digest",
+        "function_basis",
+        "quotient_ledger",
+        "channel_row_digests",
+        "scale_status"
+      ],
+      "properties": {
+        "status": {"const": "COEFFICIENT_COMPUTED_PARTIAL_BV"},
+        "included_sectors": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"type": "string"}
+        },
+        "excluded_sectors": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string"}
+        },
+        "formula_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "function_basis": {
+          "const": [
+            "J_triangle",
+            "log_x2_over_x1",
+            "log_x3_over_x1",
+            "rational_corner",
+            "M14_singlet",
+            "M15_standard_u",
+            "M16_standard_v"
+          ]
+        },
+        "quotient_ledger": {
+          "type": "object",
+          "required": [
+            "quotient_dimension",
+            "raw_channel_count",
+            "raw_channel_order",
+            "relation_status",
+            "unique_relation"
+          ],
+          "properties": {
+            "quotient_dimension": {"const": 10},
+            "raw_channel_count": {"const": 11},
+            "raw_channel_order": {
+              "type": "array",
+              "minItems": 11,
+              "maxItems": 11,
+              "uniqueItems": true,
+              "items": {"type": "string"}
+            },
+            "relation_status": {"const": "ZERO_COEFFICIENTWISE"},
+            "unique_relation": {"const": "I28_123+I28_132+I28_231=0"}
+          },
+          "additionalProperties": false
+        },
+        "channel_row_digests": {
+          "type": "object",
+          "minProperties": 11,
+          "maxProperties": 11,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "scale_status": {"type": "string", "minLength": 1}
+      }
+    },
+    "local_normalization_constants": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strict_C2", "dressed_R2"],
+      "properties": {
+        "strict_C2": {"$ref": "#/$defs/localConstant"},
+        "dressed_R2": {"$ref": "#/$defs/localConstant"}
+      }
+    },
+    "holdouts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["equal_box_contact", "flat_TT", "round_S4", "product_S2_S2"],
+      "properties": {
+        "equal_box_contact": {"type": "object"},
+        "flat_TT": {
+          "type": "object",
+          "required": ["status", "leading_coefficient"],
+          "properties": {
+            "status": {"const": "EXACT_NORMALIZATION_ONLY"},
+            "leading_coefficient": {
+              "const": {"numerator": 1, "denominator": 2}
+            }
+          },
+          "additionalProperties": false
+        },
+        "round_S4": {
+          "type": "object",
+          "required": ["status", "zero_mode_policy_applied", "finite_rows_digest"],
+          "properties": {
+            "status": {"const": "SPECIAL_BACKGROUND_EXACT_NOT_INTERPOLATED"},
+            "zero_mode_policy_applied": {"const": true},
+            "finite_rows_digest": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "product_S2_S2": {
+          "type": "object",
+          "required": ["status", "weighted_rows_digest", "det3_enclosure_digest"],
+          "properties": {
+            "status": {
+              "const": "SPECIAL_BACKGROUND_RIGOROUS_INTERVAL_NOT_INTERPOLATED"
+            },
+            "weighted_rows_digest": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "det3_enclosure_digest": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "longitudinal_Schur_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "normalized_operator",
+        "scale_response",
+        "scale_density",
+        "reference_finite_R_K",
+        "reference_finite_R_K2",
+        "full_regularized_determinant"
+      ],
+      "properties": {
+        "normalized_operator": {"type": "string", "minLength": 1},
+        "scale_response": {"type": "string", "minLength": 1},
+        "scale_density": {"type": "string", "minLength": 1},
+        "reference_finite_R_K": {"const": "NOT_COMPUTED"},
+        "reference_finite_R_K2": {"const": "NOT_COMPUTED"},
+        "full_regularized_determinant": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "first_missing_analytic_datum": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "datum_id",
+        "why_first",
+        "nondefinition_witness",
+        "receiver_contract"
+      ],
+      "properties": {
+        "datum_id": {"const": "GENERIC_PRIMED_SCHUR_FINITE_RELATIVE_TRACE_KERNEL"},
+        "why_first": {"type": "string", "minLength": 1},
+        "nondefinition_witness": {
+          "type": "object",
+          "required": ["status", "required_generic_input"],
+          "properties": {
+            "status": {"const": "MINIMAL_MISSING_GLOBAL_CARRIER_THEOREM"},
+            "required_generic_input": {"type": "string", "minLength": 1}
+          }
+        },
+        "receiver_contract": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "background",
+            "operator",
+            "weight",
+            "required_data",
+            "required_checks",
+            "regularization"
+          ],
+          "properties": {
+            "background": {"type": "string", "minLength": 1},
+            "operator": {"type": "string", "minLength": 1},
+            "weight": {"type": "string", "minLength": 1},
+            "required_data": {
+              "type": "array",
+              "minItems": 7,
+              "items": {"type": "string", "minLength": 1}
+            },
+            "required_checks": {
+              "type": "array",
+              "minItems": 5,
+              "items": {"type": "string", "minLength": 1}
+            },
+            "regularization": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "sector_disposition": {
+      "type": "object",
+      "required": [
+        "physical_Hessian",
+        "ghost_n3",
+        "ghost_vector_n1_n2",
+        "ghost_longitudinal_and_mixed",
+        "remaining_BV",
+        "finite_C2_normalization",
+        "ghost_longitudinal_Schur_scale",
+        "ghost_longitudinal_Schur_reference_finite_rows",
+        "full_BV_multiplicity",
+        "full_generic_BV_five_form_factors"
+      ],
+      "properties": {
+        "physical_Hessian": {"const": "COMPUTED"},
+        "ghost_n3": {"const": "COMPUTED"},
+        "ghost_vector_n1_n2": {"const": "COMPUTED"},
+        "ghost_longitudinal_and_mixed": {"const": "NOT_COMPUTED"},
+        "remaining_BV": {"const": "NOT_COMPUTED"},
+        "finite_C2_normalization": {"const": "NOT_FIXED"},
+        "ghost_longitudinal_Schur_scale": {"const": "COMPUTED"},
+        "ghost_longitudinal_Schur_reference_finite_rows": {"const": "NONDEFINED"},
+        "full_BV_multiplicity": {"const": "PINNED_SPECIAL_BACKGROUND_LEDGER"},
+        "full_generic_BV_five_form_factors": {"const": "NOT_COMPUTED"}
+      },
+      "additionalProperties": false
+    },
+    "dependencies": {
+      "type": "object",
+      "minProperties": 14,
+      "maxProperties": 14,
+      "additionalProperties": {"$ref": "#/$defs/reference"}
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "FIVE_CARRIER_MANIFEST_PINNED",
+        "ELEVEN_PHYSICAL_H1_CUBED_CHANNELS_PINNED",
+        "CONTACT_AND_RELATIVE_IBP_ROWS_INCLUDED",
+        "MAXIMAL_PARTIAL_BV_QUOTIENT_COMPUTED",
+        "SCHUR_SCALE_RESPONSE_COMPUTED",
+        "GENERIC_SCHUR_REFERENCE_FINITE_ROWS_COMPUTED",
+        "FULL_GENERIC_BV_FIVE_FORM_FACTORS_COMPUTED",
+        "SPECIAL_BACKGROUND_ROWS_INTERPOLATED_TO_GENERIC",
+        "LOCAL_NORMALIZATIONS_FOLDED_INTO_NONLOCAL_FUNCTIONS",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "QME_OR_LORENTZIAN_PROMOTED"
+      ],
+      "properties": {
+        "FIVE_CARRIER_MANIFEST_PINNED": {"const": true},
+        "ELEVEN_PHYSICAL_H1_CUBED_CHANNELS_PINNED": {"const": true},
+        "CONTACT_AND_RELATIVE_IBP_ROWS_INCLUDED": {"const": true},
+        "MAXIMAL_PARTIAL_BV_QUOTIENT_COMPUTED": {"const": true},
+        "SCHUR_SCALE_RESPONSE_COMPUTED": {"const": true},
+        "GENERIC_SCHUR_REFERENCE_FINITE_ROWS_COMPUTED": {"const": false},
+        "FULL_GENERIC_BV_FIVE_FORM_FACTORS_COMPUTED": {"const": false},
+        "SPECIAL_BACKGROUND_ROWS_INTERPOLATED_TO_GENERIC": {"const": false},
+        "LOCAL_NORMALIZATIONS_FOLDED_INTO_NONLOCAL_FUNCTIONS": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "QME_OR_LORENTZIAN_PROMOTED": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "localConstant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "folded_into_nonlocal_functions"],
+      "properties": {
+        "status": {"type": "string", "minLength": 1},
+        "folded_into_nonlocal_functions": {"const": false}
+      }
+    }
+  }
+}
