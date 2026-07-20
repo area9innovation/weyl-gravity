@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-finite-harmonic-cone-structural-theorem-LEASE-RELEASE-excl-cd23ec2648d3897c",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/bridge-finite-harmonic-cone-structural-theorem-LEASE-RELEASE-excl-cd23ec2648d3897c.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "bridge-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T12:00:36Z", "seq": 2, "predecessor": "sf:program/event/bridge-finite-harmonic-cone-structural-theorem-LEASE-ACQUIRE-excl-63e398d7252d406d", "payload": {"target": "sf:program/work/bridge-finite-harmonic-cone-structural-theorem", "agent": "bridge-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-20T12:00:36Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/bridge-finite-harmonic-cone-structural-theorem"}]
+}
