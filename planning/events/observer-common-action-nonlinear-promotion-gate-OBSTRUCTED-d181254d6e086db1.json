@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-common-action-nonlinear-promotion-gate-OBSTRUCTED-d181254d6e086db1",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/observer-common-action-nonlinear-promotion-gate-OBSTRUCTED-d181254d6e086db1.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "observer-1", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-20T12:00:56Z", "seq": 2, "predecessor": "sf:program/event/observer-common-action-nonlinear-promotion-gate-ACTIVE-24568a4930f4d438", "payload": {"target": "sf:program/work/observer-common-action-nonlinear-promotion-gate", "to_state": "OBSTRUCTED", "note": "the order-three common action repairs the typed-source quotient, but two exact quartic completions with the same q1/q2 give different q3", "evidence_basis": "closed_universe_observers/certificates/BERGER_ORDER_THREE_COMMON_ACTION_PROMOTION_GATE.json"}, "native": {"authored_by": "sfc close-out", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/observer-common-action-nonlinear-promotion-gate"}]
+}
