@@ -1,0 +1,75 @@
+{
+  "schema": "verification-tier-receipt-v1",
+  "result_id": "RESIDUAL_BRANCH_MANIFEST_V1",
+  "work_item": "sf:program/work/bridge-residual-atlas-branch-manifest",
+  "recorded_at": "2026-07-20T09:15:05Z",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "source_snapshot_commit": "ba746d608a86ffb8ce7d8d1adf8503e29e8db9b1",
+  "claim_boundary": "Generated provenance and exact mapping ledger only. Dependency tags are copied across typed source cells and do not promote a branch to LORENTZIAN-CAUSAL or quantum status.",
+  "content_hashes": {
+    "residual_atlas/generate_branch_manifest.py": "dee146fbb528e6e7e722a9eb03a7b4b191924ae1f3a0186f6a4c4a34a339dc59",
+    "residual_atlas/verify_branch_manifest.py": "1bb10bb3dec88e9f813aa5488c241cf8a9cdd84b7df58a3227a65ff0091a14eb",
+    "residual_atlas/tests/test_branch_manifest.py": "f3c3249dd13c43c664abc2148a4e91f4a9b847a64d16d2e08375c559a2fdb4b5",
+    "residual_atlas/schema/residual-branch-manifest-v1.schema.json": "059aca39a610c91c7a2c622e5809759215ef1743438a4b57ab147e94b37a2f38",
+    "residual_atlas/residual-branch-manifest-v1.json": "bec09e7f4795adb2f7d3136cfad828528b077e15f3d366717273827beae7e2a1",
+    "reports/residual-branch-manifest-v1.md": "41fcc48da60a1b87e6828a9f0741d60a15add05b534c74f78f4a5ff08ad5398e"
+  },
+  "coverage": {
+    "fragments": 6,
+    "source_rows": 309,
+    "stable_branches": 18,
+    "explicit_crosswalks": 5
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile residual_atlas/generate_branch_manifest.py residual_atlas/verify_branch_manifest.py residual_atlas/tests/test_branch_manifest.py",
+        "python3 -m json.tool residual_atlas/residual-branch-manifest-v1.json",
+        "python3 -m json.tool residual_atlas/schema/residual-branch-manifest-v1.schema.json",
+        "git diff --check -- residual_atlas reports/residual-branch-manifest-v1.md notes/d-quotient-einstein-team-brief.md"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 residual_atlas/generate_branch_manifest.py --check",
+        "python3 residual_atlas/verify_branch_manifest.py",
+        "python3 -m unittest residual_atlas.tests.test_branch_manifest"
+      ],
+      "tests": 6,
+      "elapsed_seconds": 3.21,
+      "mutation_control": "Independent verifier rejects a changed observed source status."
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The generator schema-validates and hashes every entry in all six committed source fragments; the independent verifier reloads each fragment from the pinned Git object and rechecks every mapped field path."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No theorem freeze, shared mathematical operator change or release preparation; this is a generated integration ledger over immutable source objects."
+    }
+  },
+  "science_forge_shadow": {
+    "status": "FINDINGS_RECORDED_NOT_A_PASS",
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 4.38,
+    "findings": [
+      "pre-existing certlab drift",
+      "coverage census drift: 1202 certificates versus baseline 976",
+      "unpinned dirty development Forge binary whose build revision differs from the stdlib checkout"
+    ],
+    "effect_on_claim": "The advisory rail exited zero by design; the findings are not verification and do not promote any manifest cell."
+  },
+  "fail_closed_controls": [
+    "no branch identification across backgrounds by name",
+    "no empty cell interpreted as zero",
+    "no reduced Lee-Wald sign interpreted as a quantum norm",
+    "no observer or interaction status inferred without a source field",
+    "no causal status transferred between carriers"
+  ]
+}

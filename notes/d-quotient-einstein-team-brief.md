@@ -4450,6 +4450,33 @@ active nonlinear input to same-background Bridge 1.  The next gate is the
 typed finite-harmonic resonance-functional join; no global flux-varying,
 final-residual, causal, observational or quantum map is inferred.
 
+The active Science Forge atlas-integration lane is
+`bridge-residual-atlas-branch-manifest`.  Version 1 pins one committed
+six-fragment snapshot and traces 18 stable branch identifiers through eight
+typed cells:
+
+```text
+linear operator, causal carrier, Lee-Wald pairing, Taub map,
+second order, interaction readiness, observer coupling, quantum status.
+```
+
+The manifest inventories all 309 source rows with exact fragment and row
+digests.  Stable identifiers cover the compact-product Einstein `q` image,
+generic and exceptional additional-Weyl cofibers, physical exceptional
+Einstein image, homogeneous/twist and electric/Wilson global blocks, cylinder
+`E/A/L`, the nonparticle `W_+^2,W_-^2` deformation classes, the unsplit Berger
+carrier, and four native black-hole branches.  Source mappings retain exact
+field paths and observed statuses; no empty cell is treated as zero.
+
+Five explicit crosswalk rows are fail-closed.  Compact product to vacuum
+cylinder and black hole is `NO_CERTIFIED_MAP`; compact exceptional to Berger
+observer and Berger branch to detector are `NO_CERTIFIED_MAP`; the unsplit
+Berger carrier to compact Einstein/extra branches is `OBSTRUCTED` by the
+certified projector witness.  The generated human trace is
+`reports/residual-branch-manifest-v1.md`.  The active gate is provenance and
+mapping completeness only; it derives no new causal, interaction,
+observational or quantum science.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

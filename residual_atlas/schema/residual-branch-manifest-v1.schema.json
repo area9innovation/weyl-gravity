@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Authoritative residual branch manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "source_snapshot_commit",
+    "generated_by",
+    "generated_by_sha256",
+    "status_vocabulary",
+    "cell_axes",
+    "fragments",
+    "branches",
+    "crosswalks",
+    "coverage",
+    "claim_boundary",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-residual-branch-manifest-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "source_snapshot_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "generated_by": {"type": "string"},
+    "generated_by_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "status_vocabulary": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/status"},
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "cell_axes": {
+      "const": [
+        "linear_operator",
+        "causal_carrier",
+        "lee_wald_pairing",
+        "taub_map",
+        "second_order",
+        "interaction_readiness",
+        "observer_coupling",
+        "quantum_status"
+      ]
+    },
+    "fragments": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"$ref": "#/$defs/fragment"}
+    },
+    "branches": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/branch"}
+    },
+    "crosswalks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/crosswalk"}
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fragment_count", "total_source_rows", "stable_branch_count", "crosswalk_count", "row_inventory_sha256"],
+      "properties": {
+        "fragment_count": {"type": "integer", "minimum": 6},
+        "total_source_rows": {"type": "integer", "minimum": 1},
+        "stable_branch_count": {"type": "integer", "minimum": 1},
+        "crosswalk_count": {"type": "integer", "minimum": 1},
+        "row_inventory_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  },
+  "$defs": {
+    "status": {
+      "enum": ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"]
+    },
+    "scopeValue": {
+      "anyOf": [
+        {"type": "string"},
+        {"type": "integer"},
+        {"type": "number"},
+        {"type": "array", "items": {"anyOf": [{"type": "string"}, {"type": "integer"}, {"type": "number"}]}}
+      ]
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"$ref": "#/$defs/scopeValue"},
+        "background": {"$ref": "#/$defs/scopeValue"},
+        "boundaries": {"$ref": "#/$defs/scopeValue"},
+        "charge_sector": {"$ref": "#/$defs/scopeValue"},
+        "carrier": {"$ref": "#/$defs/scopeValue"},
+        "degree": {"$ref": "#/$defs/scopeValue"},
+        "parity": {"$ref": "#/$defs/scopeValue"},
+        "ell": {"$ref": "#/$defs/scopeValue"},
+        "m": {"$ref": "#/$defs/scopeValue"},
+        "k": {"$ref": "#/$defs/scopeValue"},
+        "omega": {"$ref": "#/$defs/scopeValue"}
+      }
+    },
+    "sourceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fragment", "entry_id", "field_path", "observed_status", "observed_statement"],
+      "properties": {
+        "fragment": {"type": "string"},
+        "entry_id": {"type": "string"},
+        "field_path": {"type": "string"},
+        "observed_status": {"$ref": "#/$defs/status"},
+        "observed_statement": {"type": "string"}
+      }
+    },
+    "cell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "statement", "sources"],
+      "properties": {
+        "status": {"$ref": "#/$defs/status"},
+        "statement": {"type": "string", "minLength": 1},
+        "sources": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/sourceRef"}}
+      }
+    },
+    "sourceRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fragment", "entry_id", "map_role"],
+      "properties": {
+        "fragment": {"type": "string"},
+        "entry_id": {"type": "string"},
+        "map_role": {
+          "enum": [
+            "IDENTICAL_CARRIER",
+            "CHIRAL_SPLIT",
+            "DECLARED_SUBBRANCH",
+            "INTERACTION_INPUT",
+            "OBSERVER_CROSSWALK",
+            "QUANTUM_CROSSWALK",
+            "NO_MAP_WITNESS"
+          ]
+        }
+      }
+    },
+    "cells": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "linear_operator",
+        "causal_carrier",
+        "lee_wald_pairing",
+        "taub_map",
+        "second_order",
+        "interaction_readiness",
+        "observer_coupling",
+        "quantum_status"
+      ],
+      "properties": {
+        "linear_operator": {"$ref": "#/$defs/cell"},
+        "causal_carrier": {"$ref": "#/$defs/cell"},
+        "lee_wald_pairing": {"$ref": "#/$defs/cell"},
+        "taub_map": {"$ref": "#/$defs/cell"},
+        "second_order": {"$ref": "#/$defs/cell"},
+        "interaction_readiness": {"$ref": "#/$defs/cell"},
+        "observer_coupling": {"$ref": "#/$defs/cell"},
+        "quantum_status": {"$ref": "#/$defs/cell"}
+      }
+    },
+    "branch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "scope", "source_rows", "cells", "claim_boundary"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^branch\\.[a-z0-9._-]+$"},
+        "kind": {
+          "enum": [
+            "EINSTEIN_IMAGE",
+            "ADDITIONAL_WEYL",
+            "MAXWELL_GLOBAL",
+            "GLOBAL_GENERALIZED_ZERO",
+            "UNSPLIT_MIXED",
+            "ONE_PARTICLE_FAMILY",
+            "NONPARTICLE_RESIDUAL_CLASS",
+            "BLACK_HOLE_BRANCH"
+          ]
+        },
+        "scope": {"$ref": "#/$defs/scope"},
+        "source_rows": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/sourceRow"}},
+        "cells": {"$ref": "#/$defs/cells"},
+        "claim_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "fragment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "path", "team", "sha256", "entry_count", "entry_ids", "entry_ids_sha256"],
+      "properties": {
+        "key": {"type": "string"},
+        "path": {"type": "string"},
+        "team": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "entry_count": {"type": "integer", "minimum": 1},
+        "entry_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "entry_ids_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "crosswalk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "from_branches", "to_branches", "status", "statement", "source"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^crosswalk\\.[a-z0-9._-]+$"},
+        "from_branches": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "to_branches": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "status": {"$ref": "#/$defs/status"},
+        "statement": {"type": "string", "minLength": 1},
+        "source": {"$ref": "#/$defs/sourceRef"}
+      }
+    }
+  }
+}
