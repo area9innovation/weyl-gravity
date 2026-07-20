@@ -89,3 +89,6 @@ The activation commit for this work item also contained pre-existing
 observer files that another team had placed in the shared Git index.  The
 published commit was not rewritten.  This scientific commit stages explicit
 paths only and its exact staged diff is inspected before publication.
+
+CLOSE-OUT: DONE — the complete stop condition is met
+EVIDENCE: EINSTEIN_WEYL_RELATIVE_RESIDUAL_ACTION_DESCENT_V1_TIER_RECEIPT
