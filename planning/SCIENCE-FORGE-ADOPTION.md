@@ -119,6 +119,7 @@ not imply adoption of all.
 
 | Capability | Default status in this programme |
 | --- | --- |
+| `s-f overview --now T` status dashboard | **adopted — run it FIRST each session**: one fast read-only stdout view of what's running / ready next / blocked & why / draining / just-landed, per stream. Its bulky companion is `s-f streams-view -o file.md`. Read-only, deterministic, safe to run anytime. |
 | `s-f` work coordination | adopted according to the rollout table above |
 | Existing repository certificates and verifiers | authoritative within their declared scopes |
 | Certlab audit and evidence graph | advisory unless a particular family has passed its explicit cutover gate |
