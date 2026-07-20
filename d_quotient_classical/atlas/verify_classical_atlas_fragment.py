@@ -109,6 +109,10 @@ def verify() -> None:
         raise AssertionError("typed support-local lift missing from atlas")
     if "not the existing block-diagonal 316 profile" not in pullback["claim_boundary"]:
         raise AssertionError("distinct 316-row gradings were conflated")
+    if "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1" not in {item["result_id"] for item in pullback["evidence"]}:
+        raise AssertionError("portable full-current evidence missing")
+    if "30,494 canonical terms" not in pullback["claim_boundary"] or "coefficient jets stop at order one" not in pullback["claim_boundary"]:
+        raise AssertionError("portable current scope or order boundary missing")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")

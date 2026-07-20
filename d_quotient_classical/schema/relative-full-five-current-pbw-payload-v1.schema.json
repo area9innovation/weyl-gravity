@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-full-five-current-pbw-payload-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "background_id", "coefficient_field",
+    "operation", "cochain_degree", "source_carrier", "target_carrier",
+    "field_order", "output_rows", "generator_order",
+    "input_exchange_symmetry", "coefficient_profiles", "coefficient_profile_count",
+    "maximum_input_derivative_order", "maximum_coefficient_jet_order",
+    "canonical_term_counts", "diagonal_term_counts", "expanded_term_counts",
+    "term_count", "expanded_term_count", "terms",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-full-five-current-pbw-payload-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1_PAYLOAD"},
+    "background_id": {"const": "compact_magnetic_Plebanski_Hacyan_product"},
+    "coefficient_field": {"const": "Q"},
+    "operation": {"const": "q2(field,field)->K_P^1=Omega^3(M;g_stab^*)"},
+    "cochain_degree": {"const": 1},
+    "source_carrier": {"type": "string", "minLength": 1},
+    "target_carrier": {"type": "string", "minLength": 1},
+    "field_order": {"type": "array", "items": {"$ref": "#/$defs/field"}, "minItems": 14, "maxItems": 14},
+    "output_rows": {"type": "array", "items": {"$ref": "#/$defs/outputRow"}, "minItems": 20, "maxItems": 20},
+    "generator_order": {"$ref": "#/$defs/generatorOrder"},
+    "input_exchange_symmetry": {"const": "symmetric_expand_off_diagonal"},
+    "maximum_input_derivative_order": {"const": 4},
+    "maximum_coefficient_jet_order": {"const": 1},
+    "coefficient_profiles": {"type": "array", "items": {"$ref": "#/$defs/coefficientProfile"}, "minItems": 239, "maxItems": 239},
+    "coefficient_profile_count": {"const": 239},
+    "canonical_term_counts": {"$ref": "#/$defs/canonicalCounts"},
+    "diagonal_term_counts": {"$ref": "#/$defs/diagonalCounts"},
+    "expanded_term_counts": {"$ref": "#/$defs/expandedCounts"},
+    "term_count": {"const": 30494},
+    "expanded_term_count": {"const": 60890},
+    "terms": {"type": "array", "items": {"$ref": "#/$defs/term"}, "minItems": 30494, "maxItems": 30494},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "generator": {"enum": ["H", "P_x", "J_1", "J_2", "J_3"]},
+    "generatorOrder": {
+      "type": "array",
+      "prefixItems": [{"const": "H"}, {"const": "P_x"}, {"const": "J_1"}, {"const": "J_2"}, {"const": "J_3"}],
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}, "maxItems": 4},
+    "coefficientWord": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}, "maxItems": 1},
+    "field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["local_field", "row", "row_id", "bundle_id"],
+      "properties": {
+        "local_field": {"type": "integer", "minimum": 0, "maximum": 13},
+        "row": {"type": "integer", "minimum": 0},
+        "row_id": {"type": "string", "minLength": 1},
+        "bundle_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "outputRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generator", "vector_density_component", "component_axis", "horizontal_three_form_basis", "vector_density_to_form_sign", "row", "row_id"],
+      "properties": {
+        "generator": {"$ref": "#/$defs/generator"},
+        "vector_density_component": {"enum": ["t", "x", "theta", "phi"]},
+        "component_axis": {"type": "integer", "minimum": 0, "maximum": 3},
+        "horizontal_three_form_basis": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}, "minItems": 3, "maxItems": 3},
+        "vector_density_to_form_sign": {"enum": [-1, 1]},
+        "row": {"type": "integer", "minimum": 0, "maximum": 159},
+        "row_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["local_field", "row", "row_id", "word"],
+      "properties": {
+        "local_field": {"type": "integer", "minimum": 0, "maximum": 13},
+        "row": {"type": "integer", "minimum": 0},
+        "row_id": {"type": "string", "minLength": 1},
+        "word": {"$ref": "#/$defs/word"}
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row", "row_id"],
+      "properties": {
+        "row": {"type": "integer", "minimum": 0, "maximum": 159},
+        "row_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "coefficientJet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["word", "coefficient"],
+      "properties": {
+        "word": {"$ref": "#/$defs/coefficientWord"},
+        "coefficient": {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"}
+      }
+    },
+    "coefficientProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index", "coefficient_jets"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0, "maximum": 238},
+        "coefficient_jets": {"type": "array", "items": {"$ref": "#/$defs/coefficientJet"}, "minItems": 1}
+      }
+    },
+    "term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generator", "output", "inputs", "coefficient_profile"],
+      "properties": {
+        "generator": {"$ref": "#/$defs/generator"},
+        "output": {"$ref": "#/$defs/output"},
+        "inputs": {"type": "array", "prefixItems": [{"$ref": "#/$defs/input"}, {"$ref": "#/$defs/input"}], "minItems": 2, "maxItems": 2},
+        "coefficient_profile": {"type": "integer", "minimum": 0, "maximum": 238}
+      }
+    },
+    "canonicalCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["H", "P_x", "J_1", "J_2", "J_3"],
+      "properties": {
+        "H": {"const": 4611}, "P_x": {"const": 4611}, "J_1": {"const": 4608}, "J_2": {"const": 7296}, "J_3": {"const": 9368}
+      }
+    },
+    "diagonalCounts": {
+      "type": "object", "additionalProperties": false, "required": ["H", "P_x", "J_1", "J_2", "J_3"],
+      "properties": {"H": {"const": 12}, "P_x": {"const": 12}, "J_1": {"const": 12}, "J_2": {"const": 18}, "J_3": {"const": 44}}
+    },
+    "expandedCounts": {
+      "type": "object", "additionalProperties": false, "required": ["H", "P_x", "J_1", "J_2", "J_3"],
+      "properties": {
+        "H": {"const": 9210}, "P_x": {"const": 9210}, "J_1": {"const": 9204}, "J_2": {"const": 14574}, "J_3": {"const": 18692}
+      }
+    }
+  }
+}

@@ -1994,7 +1994,13 @@ mapping cone before cotangent completion.  The resulting cyclic candidate
 `(5,25,56,72,72,56,25,5)` in degrees `-3,...,4`.  It is categorically
 distinct from the certified block-diagonal 316-row unary carrier with profile
 `(10,51,97,97,51,10)`, whose scoped q2 obstruction remains valid.  Bridge 1
-now targets the complete invariant top descent for `A^1,A^2`, followed by
+now has the complete portable current input:
+`EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1` binds 30,494
+canonical symmetric terms (60,890 after ordered expansion) and 239 exact
+coefficient profiles to the 14 source-field and 20 P3 rows.  Coefficient jets
+are exported through order one, so any positive-order `A^1` solve must first
+request the corresponding higher-jet current payload.  Bridge 1 targets the
+complete invariant top descent for `A^1,A^2`, followed by
 the fifteen-row incidence `Delta2-A^1 C=delta(f2)`, or a normalized
 locality/cyclicity obstruction.  No support-local lift or repaired relative
 q2 has yet been promoted.

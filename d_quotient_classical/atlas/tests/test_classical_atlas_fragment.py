@@ -177,6 +177,12 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         )
         self.assertIn("degree-zero chain map A:K_P->C_W", entry["claim_boundary"])
         self.assertIn("not the existing block-diagonal 316 profile", entry["claim_boundary"])
+        self.assertIn(
+            "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("30,494 canonical terms", entry["claim_boundary"])
+        self.assertIn("coefficient jets stop at order one", entry["claim_boundary"])
 
     def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_exact_branch"]

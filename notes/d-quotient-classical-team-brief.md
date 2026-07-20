@@ -2436,11 +2436,18 @@ mapping cone before cyclic completion.  Thus the relevant candidate is
 `T*[1](Cone(iota) direct_sum K_P[1])`, still 316 rows but with degree ranks
 `(5,25,56,72,72,56,25,5)` in degrees `-3,...,4`; it is not the existing
 block-diagonal 316-row carrier.  No coefficient of `A` has been solved.  The
-active exact gate is the invariant top descent
+portable-current input is now closed by
+`EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1`: all five
+field-field currents are bound to the 14 source fields and 20 primal
+three-form rows in a strict exact payload with 30,494 canonical symmetric
+terms, 60,890 terms after expansion and 239 deduplicated coefficient
+profiles.  The coefficient jets are complete only through order one; this is
+enough for an algebraic `A^1`, but positive-order postcomposition requires a
+corresponding higher-jet regeneration.  The active exact gate is the invariant top descent
 `q1_W^(1->2) A^1=A^2 d_H^(3->4)`, followed by
 `Delta2-A^1 C=delta(f2)` on the fifteen nonzero defect rows, beginning with
-`f2=0`.  A complete invariant Hom/order ansatz and portable current tables
-are the missing inputs.  Modified endpoints and other backgrounds remain
+`f2=0`.  A complete invariant Hom/order ansatz is the remaining missing
+input.  Modified endpoints and other backgrounds remain
 admissible; no causal or quantum consequence is inferred.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,

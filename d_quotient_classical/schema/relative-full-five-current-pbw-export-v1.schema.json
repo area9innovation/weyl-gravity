@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-full-five-current-pbw-export-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "payload", "typing", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-full-five-current-pbw-export-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1"},
+    "result_state": {"const": "COMPLETE_PORTABLE_FIVE_CURRENT_PBW_TABLE_EXPORTED_TOP_DESCENT_OPEN"},
+    "lifecycle_status": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}], "minItems": 1, "maxItems": 1},
+    "scope": {"$ref": "#/$defs/stringObject"},
+    "dependencies": {
+      "type": "object", "additionalProperties": false,
+      "required": ["five_current", "current_q2", "current_carrier", "cyclic_current", "source_layout", "current_layout"],
+      "properties": {
+        "five_current": {"$ref": "#/$defs/artifact"}, "current_q2": {"$ref": "#/$defs/artifact"},
+        "current_carrier": {"$ref": "#/$defs/artifact"}, "cyclic_current": {"$ref": "#/$defs/artifact"},
+        "source_layout": {"$ref": "#/$defs/artifact"}, "current_layout": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "payload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "bytes", "term_count", "expanded_term_count", "coefficient_profile_count", "generator_term_counts", "maximum_input_derivative_order", "maximum_coefficient_jet_order"],
+      "properties": {
+        "path": {"const": "d_quotient_classical/generated/einstein_weyl_relative_full_five_current_pbw_export_v1/current_q2.json"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "bytes": {"type": "integer", "minimum": 1},
+        "term_count": {"const": 30494},
+        "expanded_term_count": {"const": 60890},
+        "coefficient_profile_count": {"const": 239},
+        "generator_term_counts": {"$ref": "#/$defs/counts"},
+        "maximum_input_derivative_order": {"const": 4},
+        "maximum_coefficient_jet_order": {"const": 1}
+      }
+    },
+    "typing": {
+      "type": "object", "additionalProperties": false,
+      "required": ["domain", "codomain", "vector_density_to_three_form", "ordered_input_table_is_symmetric", "coefficient_profiles_are_exact_rationals"],
+      "properties": {
+        "domain": {"type": "string", "minLength": 1}, "codomain": {"type": "string", "minLength": 1},
+        "vector_density_to_three_form": {"type": "string", "minLength": 1},
+        "ordered_input_table_is_symmetric": {"const": true}, "coefficient_profiles_are_exact_rationals": {"const": true}
+      }
+    },
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["complete_full_five_current_pbw_export", "source_and_output_rows_typed", "coefficientwise_source_replay_exact", "support_local_chain_map_A_constructed", "top_descent_solved", "relative_q2_repaired", "causal_observable_particle_or_quantum_claim"],
+      "properties": {
+        "complete_full_five_current_pbw_export": {"const": true}, "source_and_output_rows_typed": {"const": true},
+        "coefficientwise_source_replay_exact": {"const": true}, "support_local_chain_map_A_constructed": {"const": false},
+        "top_descent_solved": {"const": false}, "relative_q2_repaired": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "DECLARE_THE_COMPLETE_INVARIANT_HOM_ORDER_ANSATZ_FOR_A1_A2_AND_SOLVE_TOP_DESCENT"},
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"$ref": "#/$defs/stringObject"},
+        "verification_commands": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 3, "maxItems": 3}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "stringObject": {"type": "object", "additionalProperties": {"type": "string"}},
+    "counts": {"type": "object", "additionalProperties": false, "required": ["H", "P_x", "J_1", "J_2", "J_3"], "properties": {"H": {"const": 4611}, "P_x": {"const": 4611}, "J_1": {"const": 4608}, "J_2": {"const": 7296}, "J_3": {"const": 9368}}}
+  }
+}

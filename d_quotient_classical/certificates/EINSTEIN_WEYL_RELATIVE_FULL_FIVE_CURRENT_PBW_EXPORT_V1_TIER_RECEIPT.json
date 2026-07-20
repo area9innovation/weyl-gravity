@@ -1,0 +1,85 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1_TIER_RECEIPT",
+  "claim_ids": [
+    "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1"
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1.json",
+      "sha256": "da8543a143d2c6a1aae419c712102b229c490fca8e7514088919d2f36ca5e3d5"
+    },
+    "certificate_schema": {
+      "path": "d_quotient_classical/schema/relative-full-five-current-pbw-export-v1.schema.json",
+      "sha256": "65908402cd38ebbd036b4ae0a5dad9f3a27dbcd492cfa6000132e6d011a5e99c"
+    },
+    "payload_schema": {
+      "path": "d_quotient_classical/schema/relative-full-five-current-pbw-payload-v1.schema.json",
+      "sha256": "1ece9c2c4ecddd5497ef50a712aa11e4685adf87d002bbf45f44d5bbd95d4ebe"
+    },
+    "producer": {
+      "path": "d_quotient_classical/relative/einstein_weyl_relative_full_five_current_pbw_export.py",
+      "sha256": "4503f49de4c8dc8c320288ccea348c69e8aa9ff27bd72aa76927579b1b495c9b"
+    },
+    "verifier": {
+      "path": "d_quotient_classical/relative/verify_einstein_weyl_relative_full_five_current_pbw_export.py",
+      "sha256": "5b16a62dab74635f59db2d2a636cbff6b9a30fcf003332d7fc9bbc6dab5620ac"
+    },
+    "tests": {
+      "path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_full_five_current_pbw_export.py",
+      "sha256": "fee92ae3afe67e86209d92b6731a21cb2e5945debf75626c372d2515a54f1ccd"
+    },
+    "report": {
+      "path": "d_quotient_classical/reports/einstein-weyl-relative-full-five-current-pbw-export.md",
+      "sha256": "ce3eecaf05f119e4b5bdf87236eef2645689a31a4ffe9d77ae4d863b40fcb800"
+    },
+    "payload": {
+      "path": "d_quotient_classical/generated/einstein_weyl_relative_full_five_current_pbw_export_v1/current_q2.json",
+      "sha256": "a1a55c452c97b06050d630126d82d26660febba3d838cef6045c79dd2038d868"
+    },
+    "atlas_fragment": {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "ffa3104e2dd8121513af1e6d9f381e7a9ff37ff7ee3f19850524cd4c6f6a0daf"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "Python compilation",
+        "strict Draft 2020-12 schemas for the certificate and payload",
+        "scoped diff check",
+        "content-hash replay"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 71.78,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_full_five_current_pbw_export --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_full_five_current_pbw_export",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_full_five_current_pbw_export",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-full-five-current-pbw-export-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1.json",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-full-five-current-pbw-payload-v1.schema.json -d d_quotient_classical/generated/einstein_weyl_relative_full_five_current_pbw_export_v1/current_q2.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.71,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This scoped export adds a content-addressed current payload and its direct atlas consumer. It changes no shared operator, does not solve the relative top descent, and promotes no causal, paper-freeze or quantum claim."
+    }
+  },
+  "claim_boundary": "This receipt covers the complete canonical symmetric PBW export of the five Green-current representatives on the 14-row Einstein-Maxwell field carrier into the 20-row primal current carrier. The independent verifier reconstructs and polarizes the currents without calling the producer's polarization routine. The payload contains 30,494 canonical terms, 60,890 ordered terms and 239 coefficient profiles. Coefficient jets stop at order one; the degree-zero relative lift, its top descent, higher current coefficient jets, causal data, particle interpretation and quantum consequences remain open."
+}

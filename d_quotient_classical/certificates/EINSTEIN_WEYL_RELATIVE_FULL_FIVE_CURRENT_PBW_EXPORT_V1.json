@@ -1,0 +1,104 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC export serializes every coefficient of the five support-local field-field current operations as a profile-deduplicated symmetric table in the exact source-field and primal-three-form row coordinates needed by the shifted relative lift. It replays an already certified operation rather than deriving a new current theorem. Its coefficient jets are complete through order one, so this artifact alone does not authorize differential postcomposition by A1 of positive order. It does not construct the current-to-Weyl chain map A, solve the top descent, repair relative q2, compare pairings or certify bounded, causal, observable, particle or quantum claims.",
+  "classification": {
+    "causal_observable_particle_or_quantum_claim": false,
+    "coefficientwise_source_replay_exact": true,
+    "complete_full_five_current_pbw_export": true,
+    "relative_q2_repaired": false,
+    "source_and_output_rows_typed": true,
+    "support_local_chain_map_A_constructed": false,
+    "top_descent_solved": false
+  },
+  "dependencies": {
+    "current_carrier": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1.json",
+      "sha256": "44aded404db4128523362cab071b275b56db8de9bd3e77599f41a3d6ded3c883"
+    },
+    "current_layout": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1_LAYOUT",
+      "path": "d_quotient_classical/generated/einstein_weyl_relative_five_current_de_rham_carrier_v1/layout.json",
+      "sha256": "a9232ff409114a4c96c12e622c9f817be0541771993f07d079adcab1ce09b002"
+    },
+    "current_q2": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1.json",
+      "sha256": "438d9d4035f655b0902bc328af18c8e526289b63085e1b49e1065501d8475cf6"
+    },
+    "cyclic_current": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CYCLIC_FIVE_CURRENT_CONE_V1.json",
+      "sha256": "1f2d2c59d043e19bd142e487f387093d4e37a19258d6ad264f8ad37920a72da8"
+    },
+    "five_current": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1.json",
+      "sha256": "24f398bba251649fefec48bdbcc2aa35bf4ca113cdcf031819b9e1d820e491e9"
+    },
+    "source_layout": {
+      "artifact_id": "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_ROW_LAYOUT",
+      "path": "bridge/einstein_sector/generated/einstein_maxwell_product_linfinity_v1/row_layout.json",
+      "sha256": "bf5fa0162c076d88e91d7461fe9f9c5efe982a66a34508091250da3aea22c016"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "lifecycle_status": "COEFFICIENT_COMPUTED",
+  "next_gate": "DECLARE_THE_COMPLETE_INVARIANT_HOM_ORDER_ANSATZ_FOR_A1_A2_AND_SOLVE_TOP_DESCENT",
+  "payload": {
+    "bytes": 14900203,
+    "coefficient_profile_count": 239,
+    "expanded_term_count": 60890,
+    "generator_term_counts": {
+      "H": 4611,
+      "J_1": 4608,
+      "J_2": 7296,
+      "J_3": 9368,
+      "P_x": 4611
+    },
+    "maximum_coefficient_jet_order": 1,
+    "maximum_input_derivative_order": 4,
+    "path": "d_quotient_classical/generated/einstein_weyl_relative_full_five_current_pbw_export_v1/current_q2.json",
+    "sha256": "a1a55c452c97b06050d630126d82d26660febba3d838cef6045c79dd2038d868",
+    "term_count": 30494
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_five_stabilizer_current.py": "1c7285f9ffc71655d8be8d0357658f771fcb021c79402fc8439099b3a1ce296f",
+      "d_quotient_classical/relative/einstein_weyl_relative_full_five_current_pbw_export.py": "4503f49de4c8dc8c320288ccea348c69e8aa9ff27bd72aa76927579b1b495c9b",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_full_five_current_pbw_export.py": "fee92ae3afe67e86209d92b6731a21cb2e5945debf75626c372d2515a54f1ccd",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_full_five_current_pbw_export.py": "5b16a62dab74635f59db2d2a636cbff6b9a30fcf003332d7fc9bbc6dab5620ac",
+      "d_quotient_classical/schema/relative-full-five-current-pbw-export-v1.schema.json": "65908402cd38ebbd036b4ae0a5dad9f3a27dbcd492cfa6000132e6d011a5e99c",
+      "d_quotient_classical/schema/relative-full-five-current-pbw-payload-v1.schema.json": "1ece9c2c4ecddd5497ef50a712aa11e4685adf87d002bbf45f44d5bbd95d4ebe"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_full_five_current_pbw_export --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_full_five_current_pbw_export",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_full_five_current_pbw_export"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1",
+  "result_state": "COMPLETE_PORTABLE_FIVE_CURRENT_PBW_TABLE_EXPORTED_TOP_DESCENT_OPEN",
+  "schema": "pure-weyl-relative-full-five-current-pbw-export-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "local coefficient jets on M=R x S1 x S2; no harmonic or Green reduction",
+    "carrier": "14 relative physical fields, their 14 Hessian equations, and the 160-row five-current de Rham/cotangent carrier",
+    "charge_sector": "H,P_x,J_1,J_2,J_3",
+    "degree": "physical field-equation interface plus carrier degrees -2 through 3",
+    "ell": "not harmonic-reduced",
+    "k": "not harmonic-reduced",
+    "m": "not harmonic-reduced",
+    "omega": "not harmonic-reduced",
+    "parity": "canonical cyclic odd pairing",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  },
+  "typing": {
+    "codomain": "K_P^1=Omega^3(M;g_stab^*) with 20 declared primal rows",
+    "coefficient_profiles_are_exact_rationals": true,
+    "domain": "Sym^2 of the 14 Einstein-Maxwell physical field rows",
+    "ordered_input_table_is_symmetric": true,
+    "vector_density_to_three_form": "J^mu maps to i_(partial_mu)(dt wedge dx wedge dtheta wedge dphi), with signs (+,-,+,-)"
+  }
+}
