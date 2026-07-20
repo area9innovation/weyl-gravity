@@ -548,6 +548,16 @@ def verify() -> None:
         raise AssertionError("candidate-17/20 singular topology was promoted")
     if candidate17_20_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "candidate-17/20 axisymmetric" not in candidate17_20["claim_boundary"]:
         raise AssertionError("candidate-17/20 axisymmetric theorem exceeded scope")
+    L1_degeneracy = by_id["einstein.ph.wm.interaction.ell2_same_sign_l1_active_restricted_current_degeneracy"]
+    L1_degeneracy_second = L1_degeneracy["mode_data"]["second_order"]
+    if L1_degeneracy["mode_data"]["lee_wald"]["status"] != "OBSTRUCTED" or "13/192" not in L1_degeneracy["mode_data"]["lee_wald"]["statement"] or "current radical" not in L1_degeneracy["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("candidate-17/20 smooth restricted-current degeneracy was hidden")
+    if L1_degeneracy["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "all five stabilizer" not in L1_degeneracy["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-17/20 smooth radical lost its stabilizer-zero scope")
+    if L1_degeneracy_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "R3+sR1" not in L1_degeneracy_second["bounded_or_finite_quasiperiodic"]["statement"] or L1_degeneracy_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-17/20 smooth degeneracy exceeded its correction scope")
+    if "not a complete degeneracy-divisor" not in L1_degeneracy["claim_boundary"]:
+        raise AssertionError("candidate-17/20 degeneracy-divisor boundary disappeared")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

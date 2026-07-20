@@ -103,6 +103,58 @@ def branch_parity_current_ratios() -> dict[str, object]:
     return rows
 
 
+def parity_transform_audit(candidate_index: int, pencil: dict[str, object]) -> dict[str, object]:
+    """Derive the current-orthogonal channel normalization from the L1 pencil."""
+    intervals = pencil["coefficient_nonzero_intervals"]
+    epsilon = 1 if intervals["aa"]["positive"] == intervals["ap"]["positive"] else -1
+    a, lam = sp.symbols("c_aa lambda", nonzero=True, real=True)
+    r = epsilon * sp.sqrt(3)
+    b = a * lam * r
+
+    D = sp.diag(1, 3)
+    Q = sp.Matrix([[r, -r], [1, 1]])
+    C0 = sp.Matrix([[a, b], [b, 3 * a]])
+    P = sp.simplify((C0 * Q).inv().T)
+    diagonal = sp.diag(1 / (6 * a * (lam + 1)), -1 / (6 * a * (lam - 1)))
+    if (P - Q * diagonal).applyfunc(lambda value: sp.factor(sp.radsimp(value))) != sp.zeros(2):
+        raise AssertionError(f"candidate-{candidate_index} second-node transform changed")
+    if Q.T * D * Q != 6 * sp.eye(2):
+        raise AssertionError("first-node current orthogonality changed")
+    P_gram = (P.T * D * P).applyfunc(lambda value: sp.factor(sp.radsimp(value)))
+    expected_P_gram = sp.diag(
+        1 / (6 * a**2 * (lam + 1) ** 2),
+        1 / (6 * a**2 * (lam - 1) ** 2),
+    )
+    if (P_gram - expected_P_gram).applyfunc(lambda value: sp.factor(sp.radsimp(value))) != sp.zeros(2):
+        raise AssertionError("second-node current orthogonality changed")
+
+    S = sp.diag(sp.Rational(3, 2) * a * (lam + 1), sp.Rational(3, 2) * a * (lam - 1))
+    normalized = (P * S).applyfunc(lambda value: sp.factor(sp.radsimp(value)))
+    expected_normalized = Q * sp.diag(sp.Rational(1, 4), -sp.Rational(1, 4))
+    if normalized != expected_normalized:
+        raise AssertionError("channel normalization changed")
+    normalized_gram = (normalized.T * D * normalized).applyfunc(sp.factor)
+    if normalized_gram != sp.Rational(3, 8) * sp.eye(2):
+        raise AssertionError("normalized second-node current changed")
+
+    return {
+        "candidate_index": candidate_index,
+        "epsilon": epsilon,
+        "c_ap_over_c_aa_lambda": sp.sstr(r),
+        "Q": [[sp.sstr(value) for value in row] for row in Q.tolist()],
+        "Q_transpose_D_Q": [[str(value) for value in row] for row in (Q.T * D * Q).tolist()],
+        "P_factorization": "P=Q*diag(1/(6*c_aa*(lambda+1)),-1/(6*c_aa*(lambda-1)))",
+        "P_transpose_D_P": [
+            "1/(6*c_aa^2*(lambda+1)^2)",
+            "1/(6*c_aa^2*(lambda-1)^2)",
+        ],
+        "channel_rescaling": "S=diag(3*c_aa*(lambda+1)/2,3*c_aa*(lambda-1)/2)",
+        "normalized_second_node_transform": "P*S=Q*diag(1/4,-1/4)",
+        "normalized_second_node_Gram": [[sp.sstr(value) for value in row] for row in normalized_gram.tolist()],
+        "normalized_positive_to_negative_current_ratio": "1/16",
+    }
+
+
 def transvectant_data() -> dict[str, object]:
     f_symbols = sp.symbols("f0:5")
     g_symbols = sp.symbols("g0:5")
@@ -290,6 +342,7 @@ def build() -> dict[str, object]:
     decompositions = {
         row["candidate_index"]: row for row in records["scalar_L1"]["decompositions"]
     }
+    transform_rows = []
     for index in (17, 20):
         row = decompositions[index]
         if row["zero_variety"] != {
@@ -304,6 +357,7 @@ def build() -> dict[str, object]:
         pencil = row["parity_pencil"]
         if pencil["relations"] != ["c_pp=3*c_aa", "c_ap=c_pa"] or pencil["lambda_squared"] != "128/5":
             raise AssertionError("L1 parity pencil changed")
+        transform_rows.append(parity_transform_audit(index, row))
 
     transvectant = transvectant_data()
     branch_ratios = branch_parity_current_ratios()
@@ -329,9 +383,11 @@ def build() -> dict[str, object]:
             "q_branch_axial_polar_current_ratio": "h_polar/h_axial=3 on both q_minus and q_plus branch representatives",
             "direct_action_current_shell_audit": branch_ratios,
             "source_pencil_relation": "c_pp=3*c_aa and c_ap=c_pa",
-            "current_orthogonal_first_node_matrix": "Q=[[sqrt(3),-sqrt(3)],[1,1]], with Q^T diag(1,3) Q=6 I",
-            "current_orthogonal_second_node_matrix": "P is a nonzero scalar multiple of Q, so P^T diag(1,3) P is a positive scalar multiple of I",
-            "consequence": "the two third-transvectant eigenchannels are current-orthogonal and carry identical-sign copies of the same negative-node plus positive-node Hermitian problem",
+            "exact_transform_audit": transform_rows,
+            "current_orthogonal_first_node_matrix": "Q=[[epsilon*sqrt(3),-epsilon*sqrt(3)],[1,1]], with Q^T diag(1,3) Q=6 I",
+            "current_orthogonal_second_node_matrix": "P=Q*diag(1/(6*c_aa*(lambda+1)),-1/(6*c_aa*(lambda-1))); its two positive diagonal Gram weights are unequal",
+            "normalized_second_node_matrix": "after the independent channel rescaling S, P*S=Q*diag(1/4,-1/4) and (P*S)^T diag(1,3) (P*S)=3*I/8",
+            "consequence": "the two third-transvectant eigenchannels are current-orthogonal; independent nonzero channel rescalings put both into the same normalized negative-node plus positive-node Hermitian problem with coefficient ratio 1/16",
         },
         "universal_smooth_radical": transvectant,
         "scalar_cone_witnesses": scalar_rows,

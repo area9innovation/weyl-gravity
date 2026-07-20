@@ -1422,6 +1422,67 @@ the restricted current on the full smooth locus or justify a connected-fibre
 argument there.
 \end{proof}
 
+\begin{proposition}[Smooth current radicals on candidates (17) and (20)]
+\label{prop:candidate-17-20-smooth-current-radical}
+Each complete active third-transvectant variety contains a smooth bounded
+point, with all five stabilizer moment maps zero, at which the fixed-norm
+projective Lee--Wald current has a nonzero radical.  Consequently neither
+active variety is globally symplectic, and the smooth symplectic-orbifold
+connected-fibre theorem cannot be applied globally.
+\end{proposition}
+
+\begin{proof}
+The exact parity pencil has coefficient matrix
+\(C_0=\bigl(\begin{smallmatrix}a&b\\b&3a\end{smallmatrix}\bigr)\), with
+\(b/(a\lambda)=\epsilon\sqrt3\), \(\epsilon=\pm1\), and
+\(\lambda^2=128/5\).  Put
+\[
+ D=\operatorname{diag}(1,3),\qquad
+ Q=\begin{pmatrix}\epsilon\sqrt3&-\epsilon\sqrt3\\1&1\end{pmatrix},
+ \qquad P^{T}=(C_0Q)^{-1}.
+\]
+Then \(Q^TDQ=6I\), while
+\[
+ P=Q\operatorname{diag}\!\left(
+ \frac1{6a(\lambda+1)},-\frac1{6a(\lambda-1)}\right).
+\]
+Thus the second transform is not a scalar multiple of the first.  After the
+independent channel rescaling
+\[
+ S=\operatorname{diag}\!\left(
+ \frac32a(\lambda+1),\frac32a(\lambda-1)\right),
+ \qquad PS=Q\operatorname{diag}(1/4,-1/4),
+\]
+both eigenchannels have normalized positive-to-negative current coefficient
+ratio \(1/16\).
+
+In either channel take
+\[
+ f=(1,0,0,0,1),\qquad g=(1,0,1,0,1).
+\]
+The third-transvectant equations vanish and their Jacobian has rank three,
+so this is a smooth point with seven-dimensional affine tangent.  Restricting
+\(-H\oplus H/16\), where
+\(H=\operatorname{diag}(1,1/4,1/6,1/4,1)\), gives rank six and the exact
+radical
+\[
+ \delta f=(0,1/4,0,1/4,0),\qquad
+ \delta g=(0,1,0,1,0).
+\]
+It is tangent to both norm levels and orthogonal to both phase directions,
+so it survives projectivization.  Since
+\(H(f,f)=2\) and \(H(g,g)=13/6\), its positive-to-negative occupation ratio
+is \(13/192\).  Exact positive mixtures \(R_3+sR_1\) on candidate (17) and
+\(R_2+sR_1\) on candidate (20) realize that ratio inside their scalar cones.
+The reflection-symmetric representatives and their spectators have zero
+angular moments, while the scalar-cone equations kill the time and circle
+moments.  The exact bounded fibre-product theorem then supplies the stated
+bounded points.
+
+This is an existence theorem for a smooth degeneracy locus, not a
+classification of its divisor or presymplectic quotient.
+\end{proof}
+
 \section{Current bounded frontier}
 
 The electric, Wilson, and circumference columns are closed, and the first
@@ -1651,6 +1712,8 @@ Candidate-(19)/(21) active linear-sheet rotation links &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.json}\\
 Candidate-(17)/(20) axisymmetric Zariski-tangent currents &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.json}\\
+Candidate-(17)/(20) smooth active-current radicals &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1724,12 +1787,14 @@ separate restricted-current gate is now closed: both resonant nodes are
 \(q_-\), so the complete axial/polar restriction is negative K\"ahler on
 every complex smooth stratum, with generic real rank \(20\).  Its singular
 projective strata and rotation-zero topology remain open, as do the
-full smooth-locus restricted currents on candidates (17) and (20), and the
 candidate-(18) nonlinear variety.  On the candidate-(17)/(20) axisymmetric
-sections, exact occupation inequalities nevertheless make the complete
-Zariski-tangent current nondegenerate, with affine inertia \((6,10,0)\) and
-projective inertia \((5,9,0)\); those section points remain algebraically
-singular.  The four candidate-(19) and two candidate-(21) real linear sheets
+sections, exact occupation inequalities make the complete Zariski-tangent
+current nondegenerate, with affine inertia \((6,10,0)\) and projective inertia
+\((5,9,0)\); those section points remain algebraically singular.  Away from
+that section, each active variety also contains an exact smooth bounded point
+with a surviving projective current radical.  Hence neither is a global
+symplectic orbifold; its degeneracy divisor and presymplectic quotient remain
+open.  The four candidate-(19) and two candidate-(21) real linear sheets
 are closed
 separately: every core has current inertia \((5,5,0)\) and one connected
 fixed-occupation rotation-zero link, with spectator factors included.  No

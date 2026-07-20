@@ -3943,6 +3943,33 @@ current and connected rotation-zero topology remain open.  Atlas row
 `einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_axisymmetric_restricted_current`
 records that exact scope.  Candidate 18 is untouched.
 
+A separate smooth-locus witness now rules out the naive global symplectic-
+orbifold strategy on both candidates.  At the exact smooth third-
+transvectant point
+
+```text
+f=(1,0,0,0,1),  g=(1,0,1,0,1),
+```
+
+the seven-complex-dimensional tangent current has rank six.  Its surviving
+projective radical is
+
+```text
+delta f=(0,1/4,0,1/4,0),  delta g=(0,1,0,1,0).
+```
+
+The parity transforms require care: the second transform is not a scalar
+multiple of the first.  Instead `P=Q diag(d_+,d_-)`; after independent
+channel normalization, `PS=Q diag(1/4,-1/4)`, so both channels have exact
+positive-to-negative coefficient ratio `1/16`.  The resulting occupation
+ratio is `13/192`.  Positive mixtures `R3+sR1` on candidate 17 and `R2+sR1`
+on candidate 20 place the witness inside the respective exact scalar cones,
+with all five stabilizer moment maps zero.  Thus both full active varieties
+contain smooth bounded points where the restricted current is degenerate.
+Their degeneracy divisors and presymplectic quotients remain open; candidate
+18 remains the next untouched active-current gate.  The fail-closed atlas row
+is `einstein.ph.wm.interaction.ell2_same_sign_l1_active_restricted_current_degeneracy`.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

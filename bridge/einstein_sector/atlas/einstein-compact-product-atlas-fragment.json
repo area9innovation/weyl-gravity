@@ -5682,6 +5682,115 @@
       }
     },
     {
+      "claim_boundary": "This is an exact smooth current-degeneracy witness on candidates 17 and 20, not a complete degeneracy-divisor or connected-component classification. Candidate 18, occupation gluing, final residual descent, all-orders integration and causal, observational or quantum maps remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_L1_ACTIVE_RESTRICTED_CURRENT_DEGENERACY",
+          "sha256": "0cf86338361f9f26bb1bf360892f6c61f2959a92f7f6eb1e0db70ed6aa609cd6"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_AXISYMMETRIC_RESTRICTED_CURRENT",
+          "sha256": "1bc56a8cdfbd87ae5da434cc74ca05dcf34a7af4407ff75891700f01155103d6"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_RESONANCE_FACE_FIBRES",
+          "sha256": "7607c649ebc628270669db8fd5e6ab813b281b82c83192a9cb7f7dbee09f3433"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_scalar_L1_zero_varieties.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_SCALAR_L1_ZERO_VARIETIES",
+          "sha256": "cba54fec164a028febf7e440dfe740f3fb2eb13085e328e1fd88aa760a012739"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_SCALAR_EXTREME_RAYS",
+          "sha256": "a52e9cffefb8822790ce75763d70eff3111e0a4d7757aa62bc4042782bcc02fa"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_PHASE_PARITY_FIBRE_PRODUCT",
+          "sha256": "32b6764cf13d724f89b91719aef17d3cf1d0a509e866ac9f8186115768b28f54"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
+          "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+          "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+          "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.ell2_same_sign_l1_active_restricted_current_degeneracy",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The candidate-17 and candidate-20 backgrounds, branch/momentum nodes, exact scalar-ray mixtures and smooth transvectant carrier remain separate.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "At positive/negative occupation ratio 13/192, the smooth fixed-norm projective tangent has an exact nonzero current radical; neither complete active variety is globally symplectic.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "Both third-transvectant equations vanish in both current-orthogonal parity eigenchannels; the Jacobian has full rank three per channel.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Positive ray mixtures R3+sR1 on candidate 17 and R2+sR1 on candidate 20 place the smooth radical witness inside the exact necessary-and-sufficient bounded fibre product.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific retarded Weyl-Maxwell correction complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The same finite witnesses lie in the smooth-secular cone; the full presymplectic degeneracy divisor remains open.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The smooth witness has zero J1,J2,J3 moments individually, and the exact scalar-cone lift kills H and P_x; all five stabilizer moment maps vanish.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "candidates 17 and 20 only, retained as distinct compact Plebanski--Hacyan collision backgrounds",
+        "boundaries": "closed S1_L times S2 before final residual quotient",
+        "carrier": "one exact smooth nonaxisymmetric point in each complete K_T3_plus x K_T3_minus active resonance variety, lifted to an exact scalar-cone occupation",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": "input 2 x 2; output L=1",
+        "k": "signed n=(1,2), candidatewise and never identified across rho",
+        "m": "real reflection-symmetric m=0,+/-2 base with m=+/-1 current radical; all rotation moments vanish",
+        "omega": "candidate-specific q-minus/q-plus DIFFERENCE collision",
+        "parity": "both current-orthogonal real parity eigenchannels",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "Parity/angular workload theorem only for the 21 ell=2 cross-|n| candidates. No source zero, same-fibre classification, tangent-cone verdict or higher lifecycle is inferred.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -9219,7 +9328,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "42e91fd1930ba9074287003b4db5e22ecd359e933f12edfe4d484c35e5b0af77",
+  "generated_by_sha256": "518df44365687280e69ee2134cc10ab18427737fe7583a27302d730751e20e91",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

@@ -9,11 +9,16 @@ class SameSignL1ActiveRestrictedCurrentDegeneracyTests(unittest.TestCase):
         self.assertEqual(json.loads(OUTPUT.read_text()), build())
 
     def test_smooth_projective_radical_is_exact(self) -> None:
-        witness = build()["universal_smooth_radical"]
+        payload = build()
+        witness = payload["universal_smooth_radical"]
         self.assertEqual(witness["jacobian_rank"], 3)
         self.assertEqual(witness["restricted_tangent_nullity"], 1)
         self.assertEqual(witness["absolute_current_occupation_ratio_positive_over_negative"], "13/192")
         self.assertEqual(witness["fixed_norm_tangency"], {"f_inner_delta_f": "0", "g_inner_delta_g": "0"})
+        transforms = payload["parity_current_reduction"]["exact_transform_audit"]
+        self.assertEqual([row["epsilon"] for row in transforms], [1, -1])
+        self.assertTrue(all(row["normalized_second_node_transform"] == "P*S=Q*diag(1/4,-1/4)" for row in transforms))
+        self.assertTrue(all(row["normalized_positive_to_negative_current_ratio"] == "1/16" for row in transforms))
 
     def test_both_scalar_cones_contain_the_degeneracy_ratio(self) -> None:
         payload = build()

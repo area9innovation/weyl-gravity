@@ -1,14 +1,14 @@
 {
   "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_L1_ACTIVE_RESTRICTED_CURRENT_DEGENERACY_V1_TIER_RECEIPT",
   "date": "2026-07-20",
-  "scope": "Exact smooth projective restricted-current radicals inside the bounded active resonance cones of candidates 17 and 20.",
+  "scope": "Exact smooth bounded projective Lee--Wald current-radical witnesses on the candidate-17 and candidate-20 L=1 active resonance varieties.",
   "content_sha256": {
-    "bridge/certificates/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.json": "fa384025deb8d34eb633af45bae55dd39f9c256b0870d31651c9011d696d7ecc",
-    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.py": "f1a27a7bbc739c1d1bec5348ae925b8f6c692ebf86bae3e4d95e2732bc0509b4",
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.json": "0cf86338361f9f26bb1bf360892f6c61f2959a92f7f6eb1e0db70ed6aa609cd6",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.py": "ce0994ad45f00985b24c53e8ba3f12cdf431dfd106da0ee4583cc0994f4122a0",
     "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.schema.json": "ade507f6869f7e4ff746997b53ae46c8d5003c008d90c17bc3c9f35d745492cc",
-    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.py": "f3e3224f6de12cb7f5c285efe8f3870e7e6c43c2d69fd6b644aeaf806acee137",
-    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.py": "0d4d5cf44ae523d5d00c664fcacb309c1a9359712a99b6fe99b588844612ca5f",
-    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-L1-active-restricted-current-degeneracy.md": "4852bab08662bebde2deed37bcd359b9dfb0a47e690021203baa68cf53de32cb"
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.py": "fd27aa71bcd1f95e0d4328b274a6fe155974767b5832dfacae717f3ebb1e9007",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.py": "12d61756d399dddafe4e8b27ed90401f9006ce7a15fb82c303758f128b13fd9a",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-L1-active-restricted-current-degeneracy.md": "e1c5fb750d7ba0ce1f49360cb8647b4d16b84641da2ef9bf3ed80b05f99c8bf8"
   },
   "verification": {
     "tier_0": {
@@ -22,7 +22,7 @@
     "tier_1": {
       "status": "PASS",
       "tests_run": 3,
-      "elapsed_seconds": 3.101,
+      "elapsed_seconds": 9.87,
       "commands": [
         "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy --check",
         "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy",
@@ -30,13 +30,19 @@
       ]
     },
     "tier_2": {
-      "status": "PASS_BY_EXACT_RECOMPUTATION_AND_CONTENT_ADDRESS",
-      "reason": "The direct axial/polar action-current shell ratio, current-orthogonal parity pencil, smooth transvectant Jacobian, fixed-norm projective radical and positive scalar-cone ray mixtures are recomputed exactly from content-addressed inputs."
+      "status": "PASS_BY_AFFECTED_ATLAS_CHAIN",
+      "elapsed_seconds": 1.08,
+      "tests_run": 100,
+      "commands": [
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 -m bridge.einstein_sector.atlas.verify_einstein_atlas_fragment",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
     },
     "tier_3": {
       "status": "NOT_RUN",
-      "reason": "The full current-degeneracy divisors, candidate 18, occupation gluing and higher lifecycles remain open."
+      "reason": "This is an explicit smooth degeneracy witness, not a freeze of the complete degeneracy divisor, presymplectic quotient, candidate-18 active current, all-orders integration or any causal/quantum lifecycle."
     }
   },
-  "claim_boundary": "This is a smooth degeneracy witness on candidates 17 and 20, not their complete presymplectic stratification or connected-component theorem."
+  "claim_boundary": "OBSTRUCTED only for the global symplectic-orbifold interpretation of the candidate-17/20 active varieties. The bounded points themselves are CERTIFIED; their complete presymplectic stratification remains OPEN."
 }
