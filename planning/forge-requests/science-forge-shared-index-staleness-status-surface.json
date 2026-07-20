@@ -13,6 +13,7 @@
     "forbid": "no `git reset`, `git read-tree HEAD` or index replacement that can discard another agent's staged intent; no broad add/commit; no rewriting commits; no treating staged entries as owned merely because they are under one work item's allowlist; no hiding true conflicts; no requirement that all agents serialize behind one global lock; no mutation from the read-only status command",
     "notes": [
       "Live recurrence on 2026-07-20: after atomic isolated-index planning commits, raw status showed `D  planning/work-items/quantum-dressed-canonical-berezinian-locality-preflight.json` and `??` for the same existing file because HEAD advanced while the shared index remained at its old tree.",
+      "The risk became concrete minutes later: raw coordination commit 032aa6c70, which has no Science Forge WORK_COMMITTED receipt, unintentionally deleted nine unrelated selected-action work items/events already present in parent 244791802. Exact blobs were restored in 8a8fb31c8. This does not show that `s-f work commit` violated its isolated-index guarantee; it shows that leaving an apparently ordinary but stale raw index available as an unguarded escape hatch can still corrupt concurrent planning history.",
       "The SF5 guarantee that isolated commits read/write the shared index zero times is correct and must be preserved; this request addresses the user-facing consequence rather than weakening isolation.",
       "A per-agent persistent index or virtual status layer is acceptable if raw-Git escape hatches are documented and guarded."
     ]
