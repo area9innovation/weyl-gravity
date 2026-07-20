@@ -1,0 +1,21 @@
+{
+  "id": "sf:forge-request/variational-bicomplex-action-hessian-current",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add a generic exact finite-jet variational-bicomplex layer that derives Euler-Lagrange equations, Hessians, boundary potentials, presymplectic currents and Noether identities from a local action while retaining total-derivative terms. The first consumer is sf:program/work/classical-compensator-kinetic-braiding-quadratic-visibility, whose decisive Gate 2A requires the complete metric-plus-clock second variation of sqrt(-g_hat) G(X) Box_hat theta, including connection and boundary variations. The same substrate would replace private action-variation code in the black-hole Lee-Wald and observer apparatus programmes and would give Conflux a common structural representation of action-equivalent formulas.",
+    "depends_on": [
+      "sf:program/work/classical-compensator-kinetic-braiding-quadratic-visibility",
+      "sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class"
+    ],
+    "stop_condition": "Provide typed local fields, graded jets, horizontal and vertical differentials, total derivatives, integration-by-parts homotopies, contact degree, declared boundary/support classes and graded signs over exact coefficient fields. From an input local Lagrangian, compute first and second variations, Euler-Lagrange operators, linearized operators, bilinear Hessians, a boundary presymplectic potential, the antisymmetrized Lee-Wald current and gauge Noether identities, with explicit ambiguity terms under L -> L+dB and theta -> theta+dY. Support tensor-valued fields through the existing tensor/curvature layer without putting Weyl-specific formulas in lib/math. Independently verify the first variational formula, Hessian symmetry modulo boundary terms, current conservation modulo equations and one Noether identity. Reproduce Einstein-Hilbert, Maxwell and scalar controls; then decide whether the complete kinetic-braiding second variation vanishes on the constant-clock cylinder and reproduce one pure-Weyl Lee-Wald fixture. Emit canonical jet-term, IBP-relation and current manifests that Conflux can compare modulo declared total derivatives and field permutations.",
+    "forbid": "no scalar-only variation used for a metric-plus-clock theorem; no boundary term dropped before the support or boundary class is declared; no coordinate simplification assumed covariant; no physics-specific Bach or Berger operator hard-coded into lib/math; no symbolic expression equality called action equivalence without an IBP witness; no producer differentiation reused as the independent variational rail; no current sign promoted to a quantum norm",
+    "notes": [
+      "Priority 1. This is the highest-leverage bridge from existing exact jets/tensors to action-derived physics.",
+      "The first implementation may be finite jet order and coordinate-local. It must preserve boundary terms and fail closed outside its declared jet/support class.",
+      "Conflux adoption benefit: Lagrangians, equations, Hessians and currents become different certified views of one source object rather than unrelated JSON payloads."
+    ]
+  }
+}

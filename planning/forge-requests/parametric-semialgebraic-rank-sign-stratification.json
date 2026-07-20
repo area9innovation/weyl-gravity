@@ -1,0 +1,21 @@
+{
+  "id": "sf:forge-request/parametric-semialgebraic-rank-sign-stratification",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add exact parameter-dependent linear algebra and bounded semialgebraic stratification above ratfunc, qmat, Groebner, resultants and Sturm isolation. The immediate consumer is sf:program/work/classical-compensator-kinetic-braiding-locus: its cylinder/Berger comparison must classify Hessian ranks, inertia, hyperbolicity, charge degeneracy and stationary coefficient loci over symbolic couplings, not at sampled rational points. The same layer is needed by sf:program/work/bridge-component-incidence-classification. Conflux can already ingest exact matrices and coefficient dictionaries, but it cannot discover physically meaningful strata if generic pivots silently discard exceptional parameter loci.",
+    "depends_on": [
+      "sf:program/work/classical-compensator-kinetic-braiding-locus",
+      "sf:program/work/bridge-component-incidence-classification"
+    ],
+    "stop_condition": "Provide typed matrices over multivariate rational-function fields with denominator-domain tracking; specialization-safe rank, kernel, cokernel, determinant, generalized-eigenspace and inertia queries; determinantal rank strata with explicit minors and saturation by declared nonzero denominators; and a bounded-dimensional real-semialgebraic decision layer for polynomial equalities and strict/weak sign inequalities. The decision layer must emit YES/NO/UNDECIDED with replayable witnesses such as rational sample plus isolating boxes, Sturm/subresultant sign certificates, Positivstellensatz or exact cell-decomposition paths, and exact separators for empty loci. Demonstrate it by reproducing COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1, classifying the full lowest-order kinetic-braiding coefficient locus on the declared cylinder/Berger fixtures, and deciding one existing compact incidence quotient with exceptional rank walls retained. Export canonical stratum manifests through the existing Conflux generic IR descriptors so structure discovery can compare chambers, rank jumps and invariant signs without reading source verdicts.",
+    "forbid": "no numerical scan called a complete locus; no generic-pivot RREF used across a specialization wall; no denominator cancellation without domain provenance; no floating sign used as exact evidence; no claim of a general-purpose complete CAD implementation from a bounded consumer slice; no physics-specific cylinder, Berger or moment-map equations embedded in lib/math; no Conflux rule allowed to read the expected PASS/FAIL verdict; no producer decomposition reused as the independent checker",
+    "notes": [
+      "Priority 1. This is the common mathematical bottleneck for the active-clock escalation ladder and several exact cone/incidence problems.",
+      "A narrow first slice is sufficient: low parameter count, rational/algebraic coefficients, determinantal strata plus exact sign chambers. Return UNDECIDED outside the certified class.",
+      "Reuse D6 generic manifests and M16 symbolic matrices; this request is for specialization-safe mathematics, not another importer."
+    ]
+  }
+}

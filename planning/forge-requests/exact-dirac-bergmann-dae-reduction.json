@@ -1,0 +1,21 @@
+{
+  "id": "sf:forge-request/exact-dirac-bergmann-dae-reduction",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add proof-carrying exact constraint analysis for finite harmonic or homogeneous Lagrangian systems: singular Hessians, descriptor pencils, Dirac-Bergmann stabilization and reduced kinetic/principal forms. The first consumer is the conditional Gate 2B in sf:program/work/classical-compensator-kinetic-braiding-locus. If kinetic braiding is quadratically visible, its health cannot be decided from the velocity Hessian alone; lapse, shift, metric trace, clock and auxiliary directions must be reduced through all primary and secondary constraints. This layer is also necessary before Conflux may compare candidate Horndeski/DHOST mechanisms by constraint architecture rather than by superficial Hessian patterns.",
+    "depends_on": [
+      "sf:program/work/classical-compensator-kinetic-braiding-locus",
+      "sf:program/work/classical-compensator-degenerate-curvature-coupling-locus"
+    ],
+    "stop_condition": "Accept an exact polynomial or rational finite-dimensional Lagrangian/Hamiltonian reduction with declared parameters, configuration grading, gauge candidates and optional spatial-symbol variables. Compute the Legendre Hessian and null covectors; generate primary constraints; stabilize them under the total Hamiltonian; classify first- and second-class constraints with exact Poisson matrices; expose reducibility and rank-changing parameter strata; construct the reduced tangent/phase space and induced symplectic and kinetic forms; and compute descriptor-system Kronecker/Weierstrass blocks, differential index, characteristic roots and Jordan chains where defined. Emit either a complete reduction with dimension, inertia and propagation witnesses or the first exact inconsistency/nonclosure separator. Verify by an independent substitution/bracket rail on regular, gauge, second-class and rank-jump controls, then run the complete homogeneous kinetic-braiding Berger block and one declared quartic-Horndeski preflight. Serialize the constraint graph and strata through Conflux without treating a guessed gauge choice as a proved reduction.",
+    "forbid": "no velocity-Hessian sign called a physical sign before constraint reduction; no numerical rank at a generic point used across parameter walls; no gauge fixing substituted for first-class classification; no equation deletion by visual inspection; no physics-specific ADM row ordering in lib/math; no full PDE hyperbolicity claim from a finite harmonic reduction; no Conflux-discovered relation promoted until replayed by the exact constraint engine",
+    "notes": [
+      "Priority 2 and conditional on Gate 2A finding a nonzero braiding block.",
+      "A descriptor-pencil plus stabilization first slice is acceptable before a general Poisson-manifold API, provided all scope limits are typed.",
+      "This is the mathematical discriminator between harmless kinetic mixing and a genuine new constraint."
+    ]
+  }
+}

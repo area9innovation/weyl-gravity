@@ -1,0 +1,21 @@
+{
+  "id": "sf:forge-request/formal-pde-symbol-spencer-involutivity",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add exact formal-PDE symbol, prolongation and Spencer-cohomology machinery for finite-order differential complexes. The first consumer is sf:program/work/classical-relative-spencer-prolongation-theorem, which seeks an all-finite-order disposition of an endpoint-normalized relative chain-lift obstruction instead of repeating order-by-order coefficient searches. Differential PBW membership M17 addresses operator-module membership, but it does not yet provide symbol tableaux, prolongation ranks, Cartan characters or a finite-type/involutivity theorem. These structures are also natural Conflux objects for discovering when many low-order failures are one persistent graded obstruction.",
+    "depends_on": [
+      "sf:program/work/classical-relative-spencer-prolongation-theorem",
+      "sf:program/work/classical-nearby-detour-causal-pilot"
+    ],
+    "stop_condition": "Accept a finite presentation of linear differential operators with bundles/gradings, symbol variables, declared commutators and optional symmetry group action. Construct principal-symbol modules, prolongations, compatibility operators, Spencer delta complexes and exact cohomology; compute Cartan characters and finite-type/involutivity dispositions where the relevant hypotheses are decidable; relate filtered differential operators to their associated graded modules; and transport a normalized defect into a basis-independent graded cohomology class. Emit either a persistence theorem through all finite orders in a declared finite-type class, the first possible transgression order, or UNDECIDED with the missing theorem named. Independently verify low-order dimensions and cocycle/nonboundary witnesses. Reproduce the existing order-one through order-three relative obstruction fixtures and then decide the declared endpoint/current-incidence family. Export tableaux, prolongation maps and cohomology witnesses through the Conflux generic matrix/module IR so discovery can propose persistent patterns but cannot certify them without the Spencer replay.",
+    "forbid": "no finite list of failed orders called an all-order theorem; no commutative symbol calculation substituted for a noncommutative filtered operator identity without a proved associated-graded bridge; no generic regularity assumption hidden at exceptional covectors; no physics-specific tractor or endpoint incidence embedded in lib/math; no Conflux extrapolation promoted without an exact finite-type, involutivity or cohomology witness; no sampled momentum directions called symbol exactness",
+    "notes": [
+      "Priority 3. This complements rather than replaces M17 differential-PBW membership.",
+      "A first slice over constant-coefficient linear systems and rational tableaux is enough to test the active relative-chain consumer.",
+      "This is a high-value discovery interface: it turns repeated coefficient no-gos into one reusable mathematical obstruction when the theorem actually applies."
+    ]
+  }
+}

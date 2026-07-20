@@ -1,0 +1,21 @@
+{
+  "id": "sf:forge-request/validated-vector-bvp-connection-flux",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Complete the validated-ODE layer for coupled vector systems, singular endpoints and boundary-value/connection problems. M13b landed scalar quadrature and scalar IVP enclosures, but the active black-hole consumer sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class requires a rigorous map from horizon Frobenius data to an outer radiation basis and certified Lee-Wald flux. Formal series and selected high-precision fixtures are not a global exterior theorem. The output must also be ingestible by Conflux as interval evidence without collapsing exact and numerical lifecycles.",
+    "depends_on": [
+      "sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class",
+      "sf:program/work/black-hole-endpoint-nonselection-assembly"
+    ],
+    "stop_condition": "Provide validated real and complex vector IVP integration, represented by real blocks where needed, with interval Jacobians, adaptive step/refinement, existence and uniqueness enclosures, fundamental matrices and wrapping control. Add regular-singular endpoint initialization from exact Laurent/Frobenius recurrences with a certified truncation remainder; linear two-point BVP and shooting/multiple-shooting solvers; connection matrices between independently normalized endpoint bases; parameter/frequency interval continuation; and certified bilinear-current/flux transport with conservation-defect bounds. Every result must retain initial boxes, truncation bounds, step receipts and refusal reasons. Reproduce scalar M13b controls, a coupled exactly solvable Fuchsian system and a conserved symplectic-current control, then enclose one Schwarzschild Einstein/additional horizon-to-outer connection and exclude zero for the declared mixed flux or return a scoped refusal identifying the missing analytic bound. Export interval boxes and exact anchors through a typed Conflux evidence adapter that forbids interval overlap from being read as exact equality.",
+    "forbid": "no float trajectory called a proof; no local Frobenius series called a global solution; no unproved interval extension supplied silently by a caller; no BVP convergence without an existence/uniqueness or validated Newton witness; no sampled frequencies called a symbolic-frequency theorem; no interval overlap called equality; no black-hole radial equations embedded in lib/math; no producer integration reused as the independent current-conservation rail",
+    "notes": [
+      "Priority 2. This closes the explicit boundary left by M13b rather than duplicating it.",
+      "A first accepted deliverable may target linear rational-coefficient systems with one regular-singular endpoint and a finite outer radius.",
+      "Conflux should use these objects for bounded candidate generation and comparison only; interval evidence remains NUMERIC-CERTIFIED, not EXACT."
+    ]
+  }
+}
