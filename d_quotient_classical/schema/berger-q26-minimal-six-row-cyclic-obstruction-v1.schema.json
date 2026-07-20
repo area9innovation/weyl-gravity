@@ -1,0 +1,312 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.invalid/schema/berger-q26-minimal-six-row-cyclic-obstruction-v1.schema.json",
+  "title": "Berger q26 minimal six-row cyclic obstruction v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "scope",
+    "pinned_input",
+    "dependencies",
+    "complete_declared_six_row_class",
+    "rank_audit",
+    "obstruction",
+    "next_lower_bound",
+    "decoupled_control",
+    "exact_payload",
+    "classification",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-berger-q26-minimal-six-row-cyclic-obstruction-v1"
+    },
+    "result_id": {
+      "const": "BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1"
+    },
+    "result_state": {
+      "const": "EXACT_SIX_ROW_EXTENSION_HAS_UNAVOIDABLE_FOUR_DIMENSIONAL_PAIRING_RADICAL"
+    },
+    "lifecycle_status": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "LORENTZIAN-CAUSAL"}
+      ],
+      "items": false
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "theory", "background", "boundaries", "charge_sector", "carrier",
+        "degree", "parity", "ell", "m", "k", "omega"
+      ],
+      "properties": {
+        "theory": {"type": "string", "minLength": 1},
+        "background": {"type": "string", "minLength": 1},
+        "boundaries": {"type": "string", "minLength": 1},
+        "charge_sector": {"type": "string", "minLength": 1},
+        "carrier": {"type": "string", "minLength": 1},
+        "degree": {"type": "string", "minLength": 1},
+        "parity": {"type": "string", "minLength": 1},
+        "ell": {"type": "string", "minLength": 1},
+        "m": {"type": "string", "minLength": 1},
+        "k": {"type": "string", "minLength": 1},
+        "omega": {"type": "string", "minLength": 1}
+      }
+    },
+    "pinned_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "commit", "path", "sha256", "working_repair_sha256",
+        "scientific_fields_identical"
+      ],
+      "properties": {
+        "commit": {"const": "988f8ee6c59b539ae516eb8a8f882a57a95f71e0"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha"},
+        "working_repair_sha256": {"$ref": "#/$defs/sha"},
+        "scientific_fields_identical": {"const": true}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "minProperties": 4,
+      "additionalProperties": {"$ref": "#/$defs/artifactRef"}
+    },
+    "complete_declared_six_row_class": {
+      "type": "object",
+      "minProperties": 10,
+      "required": [
+        "row_count", "new_row_count", "grading_profiles", "coefficient_class",
+        "q_blocks", "evolution_blocks", "gauge_constraint_meanings",
+        "companion_changes", "pairing_blocks",
+        "real_involution", "graded_adjointness", "admissible_redefinitions",
+        "excluded", "completeness_reason"
+      ],
+      "properties": {
+        "row_count": {"const": 110},
+        "new_row_count": {"const": 6},
+        "grading_profiles": {"type": "string", "minLength": 1},
+        "coefficient_class": {"type": "string", "minLength": 1},
+        "q_blocks": {"type": "string", "minLength": 1},
+        "evolution_blocks": {"type": "string", "minLength": 1},
+        "gauge_constraint_meanings": {"type": "string", "minLength": 1},
+        "companion_changes": {"type": "string", "minLength": 1},
+        "pairing_blocks": {"type": "string", "minLength": 1},
+        "real_involution": {"type": "string", "minLength": 1},
+        "graded_adjointness": {"type": "string", "minLength": 1},
+        "admissible_redefinitions": {"type": "string", "minLength": 1},
+        "excluded": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "completeness_reason": {"type": "string", "minLength": 50}
+      },
+      "additionalProperties": false
+    },
+    "rank_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "degrees", "base_ranks", "factorization_lower_bounds",
+        "complete_six_row_profiles", "unique_six_row_additions",
+        "six_row_extended_ranks", "odd_pairing_degree", "dual_degree_rule",
+        "dual_pair_audit", "minimum_pairing_radical_dimension",
+        "minimum_total_additions_after_cyclic_rank_completion",
+        "unique_rank_minimal_cyclic_additions",
+        "additional_rows_beyond_six_required_at_least"
+      ],
+      "properties": {
+        "degrees": {"const": [-1, 0, 1, 2]},
+        "base_ranks": {"const": [12, 40, 40, 12]},
+        "factorization_lower_bounds": {
+          "const": {"degree_0": 5, "degree_1": 1}
+        },
+        "complete_six_row_profiles": {"const": [[0, 5, 1, 0]]},
+        "unique_six_row_additions": {"const": [0, 5, 1, 0]},
+        "six_row_extended_ranks": {"const": [12, 45, 41, 12]},
+        "odd_pairing_degree": {"const": 1},
+        "dual_degree_rule": {"const": "d_dual=1-d"},
+        "dual_pair_audit": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "degree", "dual_degree", "rank", "dual_rank",
+              "minimum_radical_dimension"
+            ],
+            "properties": {
+              "degree": {"type": "integer"},
+              "dual_degree": {"type": "integer"},
+              "rank": {"type": "integer", "minimum": 0},
+              "dual_rank": {"type": "integer", "minimum": 0},
+              "minimum_radical_dimension": {"type": "integer", "minimum": 0}
+            }
+          }
+        },
+        "minimum_pairing_radical_dimension": {"const": 4},
+        "minimum_total_additions_after_cyclic_rank_completion": {"const": 10},
+        "unique_rank_minimal_cyclic_additions": {"const": [0, 5, 5, 0]},
+        "additional_rows_beyond_six_required_at_least": {"const": 4}
+      }
+    },
+    "obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "necessary_factorization_profile", "extended_degree_ranks",
+        "pairing_requirement", "failed_pair", "rank_deficit", "conclusion",
+        "simultaneous_system_status"
+      ],
+      "properties": {
+        "necessary_factorization_profile": {"const": [0, 5, 1, 0]},
+        "extended_degree_ranks": {"const": [12, 45, 41, 12]},
+        "pairing_requirement": {"type": "string", "minLength": 1},
+        "failed_pair": {"const": [0, 1]},
+        "rank_deficit": {"const": 4},
+        "conclusion": {"type": "string", "minLength": 1},
+        "simultaneous_system_status": {
+          "const": "INCONSISTENT_BEFORE_PBW_COEFFICIENT_SOLVE"
+        }
+      }
+    },
+    "next_lower_bound": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_added_rows_at_least", "degree_minus1", "degree_0",
+        "degree_plus1", "degree_plus2",
+        "additional_cyclic_dual_rows_beyond_six_at_least", "status",
+        "sufficiency_warning"
+      ],
+      "properties": {
+        "total_added_rows_at_least": {"const": 10},
+        "degree_minus1": {"const": 0},
+        "degree_0": {"const": 5},
+        "degree_plus1": {"const": 5},
+        "degree_plus2": {"const": 0},
+        "additional_cyclic_dual_rows_beyond_six_at_least": {"const": 4},
+        "status": {"const": "NECESSARY_NOT_SUFFICIENT"},
+        "sufficiency_warning": {"type": "string", "minLength": 1}
+      }
+    },
+    "decoupled_control": {"$ref": "#/$defs/decoupledControl"},
+    "exact_payload": {"$ref": "#/$defs/artifactRef"},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complete_six_row_grading_enumerated",
+        "frozen_157_207_decoupled_control_preserved",
+        "nondegenerate_degree_one_pairing_on_six_row_extension",
+        "six_row_cyclic_BV_extension_exists",
+        "minimum_total_row_addition_lower_bound",
+        "ten_row_extension_sufficient",
+        "noncyclic_or_presymplectic_six_row_extension_obstructed",
+        "larger_cyclic_extension_obstructed",
+        "Hadamard_or_quantum_claim"
+      ],
+      "properties": {
+        "complete_six_row_grading_enumerated": {"const": true},
+        "frozen_157_207_decoupled_control_preserved": {"const": true},
+        "nondegenerate_degree_one_pairing_on_six_row_extension": {"const": false},
+        "six_row_cyclic_BV_extension_exists": {"const": false},
+        "minimum_total_row_addition_lower_bound": {"const": 10},
+        "ten_row_extension_sufficient": {"const": false},
+        "noncyclic_or_presymplectic_six_row_extension_obstructed": {"const": false},
+        "larger_cyclic_extension_obstructed": {"const": false},
+        "Hadamard_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {
+      "const": "CLASSIFY_AND_SOLVE_THE_RANK_MINIMAL_TEN_ROW_PROFILE_5_DEGREE_ZERO_PLUS_5_DEGREE_ONE"
+    },
+    "claim_boundary": {"type": "string", "minLength": 200},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 4,
+          "additionalProperties": {"$ref": "#/$defs/sha"}
+        },
+        "verification_commands": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "artifactRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha"}
+      }
+    },
+    "sparseRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path", "sha256", "internal_sha256", "nonzero_sparse_entries"
+      ],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha"},
+        "internal_sha256": {"$ref": "#/$defs/sha"},
+        "nonzero_sparse_entries": {"type": "integer", "minimum": 1}
+      }
+    },
+    "decoupledControl": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shape", "q_old_old", "A_old_old", "old_new_blocks",
+        "new_old_blocks", "new_new_blocks",
+        "q_square_nonzero_sparse_entries",
+        "A_q_commutator_nonzero_sparse_entries", "status"
+      ],
+      "properties": {
+        "shape": {"const": [110, 110]},
+        "q_old_old": {"$ref": "#/$defs/sparseRef"},
+        "A_old_old": {"$ref": "#/$defs/sparseRef"},
+        "old_new_blocks": {"const": "ZERO"},
+        "new_old_blocks": {"const": "ZERO"},
+        "new_new_blocks": {"const": "ZERO"},
+        "q_square_nonzero_sparse_entries": {"const": 157},
+        "A_q_commutator_nonzero_sparse_entries": {"const": 207},
+        "status": {"const": "MUTATION_CONTROL_NOT_A_SOLUTION"}
+      }
+    }
+  }
+}

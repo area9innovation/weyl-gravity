@@ -238,7 +238,11 @@ def verify() -> None:
     if (
         "at least five new degree-zero rows and one new degree-one row"
         not in berger_cauchy["claim_boundary"]
-        or "six-row sufficiency is not proved"
+        or "complete cyclic six-row class is empty"
+        not in berger_cauchy["claim_boundary"]
+        or "at least ten added rows"
+        not in berger_cauchy["claim_boundary"]
+        or "Ten-row sufficiency is not proved"
         not in berger_cauchy["claim_boundary"]
     ):
         raise AssertionError("Berger carrier-extension boundary missing")
@@ -247,6 +251,11 @@ def verify() -> None:
     }
     if "BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1" not in berger_cauchy_ids:
         raise AssertionError("Berger Cauchy obstruction evidence missing")
+    if (
+        "BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1"
+        not in berger_cauchy_ids
+    ):
+        raise AssertionError("Berger minimal six-row cyclic evidence missing")
     transverse = by_id["classical.nariai.transverse_kantowski_sachs_tangent"]
 
     bach_open = by_id["classical.bach_flat.open_parent_detour"]

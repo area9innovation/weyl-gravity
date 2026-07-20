@@ -139,10 +139,18 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         ]
         self.assertEqual(entry["descriptions"]["causal"], "OBSTRUCTED")
         self.assertEqual(entry["descriptions"]["quantum"], "NO_CERTIFIED_MAP")
-        self.assertIn("six-row sufficiency is not proved", entry["claim_boundary"])
+        self.assertIn(
+            "complete cyclic six-row class is empty", entry["claim_boundary"]
+        )
+        self.assertIn("at least ten added rows", entry["claim_boundary"])
+        self.assertIn("Ten-row sufficiency is not proved", entry["claim_boundary"])
         self.assertIn("Changed companions", entry["claim_boundary"])
         self.assertIn(
             "BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
 

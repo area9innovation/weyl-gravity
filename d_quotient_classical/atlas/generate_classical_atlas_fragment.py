@@ -39,6 +39,7 @@ CERTS = {
     "Berger_projector": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
     "Berger_bridge1_disposition": ROOT / "d_quotient_classical/certificates/BERGER_BRIDGE1_ADMISSIBLE_CARRIER_DISPOSITION_V1.json",
     "Berger_q26_Cauchy_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1.json",
+    "Berger_q26_six_row_cyclic_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1.json",
     "Nariai_conformal": ROOT / "d_quotient_classical/certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json",
     "Nariai_single": ROOT / "d_quotient_classical/certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json",
     "Nariai_bridge_disposition": ROOT / "d_quotient_classical/certificates/NARIAI_CURVATURE_METRIC_BRIDGE_DISPOSITION_V1.json",
@@ -306,8 +307,11 @@ def entries() -> list[dict[str, Any]]:
         ("NOT_APPLICABLE", "This is a unary formal Cauchy-carrier obstruction, not a Taub or tangent-cone map."),
         ("NOT_APPLICABLE", "No mode or resonance identification is made on the rejected carrier."),
         _second(("NOT_APPLICABLE", "This is a unary carrier crosswalk."), ("NOT_APPLICABLE", "This is a unary carrier crosswalk."), ("NOT_APPLICABLE", "This is a unary carrier crosswalk.")),
-        _evidence("Berger_q26_Cauchy_obstruction"),
-        "The no-lift theorem is complete only for the frozen 104-row formal Cauchy graph with the normalized q52 solution-map identity. It holds at every finite PBW differential order because that identity fixes q_C uniquely. Any enlargement needs at least five new degree-zero rows and one new degree-one row, but six-row sufficiency is not proved. Changed companions, changed A104 data and larger carriers remain open. No Hadamard, positivity, QME, particle or quantum claim follows.",
+        _evidence(
+            "Berger_q26_Cauchy_obstruction",
+            "Berger_q26_six_row_cyclic_obstruction",
+        ),
+        "The no-lift theorem is complete only for the frozen 104-row formal Cauchy graph with the normalized q52 solution-map identity. It holds at every finite PBW differential order because that identity fixes q_C uniquely. Factorization requires at least five new degree-zero rows and one new degree-one row. The resulting unique exactly-six-row profile has degree ranks (12,45,41,12), so every degree-one odd pairing has a radical of dimension at least four. Hence the complete cyclic six-row class is empty and cyclic rank completion requires at least ten added rows with profile (0,5,5,0). Ten-row sufficiency is not proved. Changed companions, changed A104 data, noncyclic or presymplectic six-row operators and larger carriers remain open. No Hadamard, positivity, QME, particle or quantum claim follows.",
     ))
     values.append(_entry(
         "classical.nariai.conformal_orbit.rank310_metric",

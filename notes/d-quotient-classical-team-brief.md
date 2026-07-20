@@ -2794,6 +2794,32 @@ necessary only.  A sufficient extension, changed companion, changed
 The atlas row is therefore `OBSTRUCTED` for this frozen causal crosswalk and
 `NO_CERTIFIED_MAP` in the quantum column.
 
+### Minimal six-row Berger cyclic obstruction (2026-07-20)
+
+`BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1` closes the first carrier
+extension count forced by the frozen-graph theorem.  Exactly six added rows
+can satisfy the degreewise factorization lower bound in only one way:
+
+\[
+(n_{-1},n_0,n_1,n_2)=(0,5,1,0).
+\]
+
+It changes the frozen degree ranks from \((12,40,40,12)\) to
+\((12,45,41,12)\).  A nondegenerate BV odd pairing of degree one requires
+\(\operatorname{rank}C^d=\operatorname{rank}C^{1-d}\); consequently every
+pairing on this six-row carrier has a radical of dimension at least four.
+This proves that the complete exactly-six-row cyclic class is empty before
+any PBW coefficient solve, independently of finite differential order,
+degree-preserving companion changes, real involutions, adjoint conventions
+and invertible support-local row redefinitions.
+
+The next necessary cyclic rank profile is \((0,5,5,0)\), so at least ten
+rows must be added.  This is a lower bound, not a construction or sufficiency
+claim.  The exact decoupled control preserves the inherited 1018 \(q_C\)
+entries, 470 \(A_{104}\) entries, 157 square defects and 207 commutator
+defects.  Noncyclic or presymplectic six-row operators, larger carriers,
+Cauchy/Krein data, Hadamard states and quantum conclusions remain open.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

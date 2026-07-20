@@ -1,0 +1,112 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/certificates/BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1.json",
+      "sha256": "9c7e4c6db7eb39274852ba3fe5b45e9e0e25c6442fe20bbc4091ec6afec0cda7"
+    },
+    {
+      "path": "d_quotient_classical/generated/berger_q26_minimal_six_row_cyclic_obstruction_v1/degree_and_sparse_control.json",
+      "sha256": "25f4dd71ec50113476e47f13fd14c338872fda936550f3f811c0e70a5197516a"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "07efac614703f00652e5d3950fb5cd8d1b9a3e711a53ed7fff81fe98b9674142"
+    },
+    {
+      "path": "d_quotient_classical/reports/berger-q26-minimal-six-row-cyclic-obstruction-v1.md",
+      "sha256": "b86dfa4d4f20432049a65e5b8d93e7a11b8b37daddc9e34dae435d89be7b9c12"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile d_quotient_classical/causal_transfer/berger_q26_minimal_six_row_cyclic_obstruction.py d_quotient_classical/causal_transfer/verify_berger_q26_minimal_six_row_cyclic_obstruction.py d_quotient_classical/causal_transfer/tests/test_berger_q26_minimal_six_row_cyclic_obstruction.py",
+        "elapsed_seconds": 0.06,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <scoped paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.berger_q26_minimal_six_row_cyclic_obstruction --check --guards",
+        "elapsed_seconds": 0.3,
+        "status": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_minimal_six_row_cyclic_obstruction",
+        "elapsed_seconds": 0.15,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_minimal_six_row_cyclic_obstruction",
+        "elapsed_seconds": 0.15,
+        "status": "PASS",
+        "tests": 8
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-minimal-six-row-cyclic-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1.json",
+        "elapsed_seconds": 1.55,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "elapsed_seconds": 0.17,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.16,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "elapsed_seconds": 0.15,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment",
+        "elapsed_seconds": 0.06,
+        "status": "PASS",
+        "tests": 19
+      }
+    ],
+    "reason": "The stronger six-row cyclic obstruction changes the authoritative Berger classical-to-quantum atlas crosswalk."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped intermediate obstruction and next lower bound, not a repository freeze, release, shared-core algebra change, or programme-wide lifecycle promotion."
+  },
+  "advisory_science_forge_shadow": {
+    "command": "bash ci/science-forge-shadow.sh",
+    "elapsed_seconds": 4.05,
+    "process_status": "PASS_ADVISORY",
+    "findings": [
+      "bridge certificate audit reports pre-existing drift",
+      "coverage census reports 1234 certificates versus the 2026-07-19 baseline of 976",
+      "Forge checkout differs from the advisory binary build revision"
+    ],
+    "claim_effect": "NONE; advisory findings are recorded and no strict gate was promoted"
+  },
+  "claim_boundary": "The unique exactly-six-row degree profile forced by the predecessor has extended ranks (12,45,41,12), so every degree-one odd pairing has a radical of dimension at least four. The complete declared cyclic six-row class is empty and cyclic rank completion requires at least ten added rows. Ten-row sufficiency, noncyclic six-row operators, changed companions, larger carriers, Cauchy/Krein data, Hadamard states and quantum claims remain open."
+}

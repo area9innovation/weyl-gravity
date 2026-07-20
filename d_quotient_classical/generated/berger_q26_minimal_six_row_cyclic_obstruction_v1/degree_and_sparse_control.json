@@ -1,0 +1,141 @@
+{
+  "decoupled_sparse_control": {
+    "A_old_old": {
+      "internal_sha256": "d0ecbb1b6af5add0488592de0212b710bd19e40e5b9913e171e2bd22fc9616f4",
+      "nonzero_sparse_entries": 470,
+      "path": "quantum-weyl/lorentzian/generated/berger_a104_endpoint_completion/global_A104.json",
+      "sha256": "37f0881c793f196175100e5e4784d18f6315e3654e3945c9972d9b212e662154"
+    },
+    "A_q_commutator_nonzero_sparse_entries": 207,
+    "new_new_blocks": "ZERO",
+    "new_old_blocks": "ZERO",
+    "old_new_blocks": "ZERO",
+    "q_old_old": {
+      "internal_sha256": "6676e81e91d84eb272b1d36b74390276e891e245acb0c1719876424e9a315821",
+      "nonzero_sparse_entries": 1018,
+      "path": "quantum-weyl/lorentzian/generated/berger_canonical_graph_q_cauchy_obstruction/rejected_candidate_q_Cauchy_104.json",
+      "sha256": "116ea6304aa27d30c881bfac092c6058cf9d4571aa407ca5f47f1366d993bf50"
+    },
+    "q_square_nonzero_sparse_entries": 157,
+    "shape": [
+      110,
+      110
+    ],
+    "status": "MUTATION_CONTROL_NOT_A_SOLUTION"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "rank_audit": {
+    "additional_rows_beyond_six_required_at_least": 4,
+    "base_ranks": [
+      12,
+      40,
+      40,
+      12
+    ],
+    "complete_six_row_profiles": [
+      [
+        0,
+        5,
+        1,
+        0
+      ]
+    ],
+    "degrees": [
+      -1,
+      0,
+      1,
+      2
+    ],
+    "dual_degree_rule": "d_dual=1-d",
+    "dual_pair_audit": [
+      {
+        "degree": -1,
+        "dual_degree": 2,
+        "dual_rank": 12,
+        "minimum_radical_dimension": 0,
+        "rank": 12
+      },
+      {
+        "degree": 0,
+        "dual_degree": 1,
+        "dual_rank": 41,
+        "minimum_radical_dimension": 4,
+        "rank": 45
+      }
+    ],
+    "factorization_lower_bounds": {
+      "degree_0": 5,
+      "degree_1": 1
+    },
+    "minimum_pairing_radical_dimension": 4,
+    "minimum_total_additions_after_cyclic_rank_completion": 10,
+    "odd_pairing_degree": 1,
+    "six_row_extended_ranks": [
+      12,
+      45,
+      41,
+      12
+    ],
+    "unique_rank_minimal_cyclic_additions": [
+      0,
+      5,
+      5,
+      0
+    ],
+    "unique_six_row_additions": [
+      0,
+      5,
+      1,
+      0
+    ]
+  },
+  "result_id": "BERGER_Q26_SIX_ROW_DEGREE_SPARSE_CONTROL_V1",
+  "row_ordering": {
+    "new_rows": [
+      {
+        "degree": 0,
+        "forced_role": "intermediate carrier for inherited degree -1 to +1 square defect",
+        "id": "factorization_constraint_1",
+        "row": 104
+      },
+      {
+        "degree": 0,
+        "forced_role": "intermediate carrier for inherited degree -1 to +1 square defect",
+        "id": "factorization_constraint_2",
+        "row": 105
+      },
+      {
+        "degree": 0,
+        "forced_role": "intermediate carrier for inherited degree -1 to +1 square defect",
+        "id": "factorization_constraint_3",
+        "row": 106
+      },
+      {
+        "degree": 0,
+        "forced_role": "intermediate carrier for inherited degree -1 to +1 square defect",
+        "id": "factorization_constraint_4",
+        "row": 107
+      },
+      {
+        "degree": 0,
+        "forced_role": "intermediate carrier for inherited degree -1 to +1 square defect",
+        "id": "factorization_constraint_5",
+        "row": 108
+      },
+      {
+        "degree": 1,
+        "forced_role": "intermediate carrier for inherited degree 0 to +2 square defect",
+        "id": "factorization_identity_1",
+        "row": 109
+      }
+    ],
+    "old_rows": {
+      "start": 0,
+      "stop_exclusive": 104
+    }
+  },
+  "schema": "pure-weyl-berger-q26-six-row-degree-sparse-control-v1"
+}
