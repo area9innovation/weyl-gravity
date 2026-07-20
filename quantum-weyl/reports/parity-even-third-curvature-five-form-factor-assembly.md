@@ -121,5 +121,5 @@ PYTHONPATH=quantum-weyl python3 -m unittest \
 EVIDENCE:
 `quantum-weyl/spectral/euclidean/certificates/PARITY_EVEN_THIRD_CURVATURE_FIVE_FORM_FACTOR_ASSEMBLY.json`
 
-CLOSE-OUT: `OBSTRUCTED` — the maximal exact partial-BV quotient is frozen and
+CLOSE-OUT: OBSTRUCTED — the maximal exact partial-BV quotient is frozen and
 the first missing generic finite Schur kernel has a complete receiver contract.
