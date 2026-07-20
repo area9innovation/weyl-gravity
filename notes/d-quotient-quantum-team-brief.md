@@ -1526,7 +1526,9 @@ BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY [CERTIFIED]
   -> CANONICAL_20_ROW_SUMMAND_RESTRICTION [OBSTRUCTED]
   -> COMPLETE_REGULAR_GRAPH_INTERTWINER_CLASS [OBSTRUCTED: J=0]
   -> METRIC/FORMAL-ADJOINT_ENDPOINT_HADAMARD + EXACT CCR [CERTIFIED]
-  -> global ghost/identity pair + smooth q26 Ward completion
+  -> GLOBAL_GHOST/IDENTITY_HADAMARD + EXACT CCR [CERTIFIED]
+  -> OMEGA26=W26 H26 EXACT-CCR CANDIDATE [CERTIFIED]
+  -> smooth q26-equivariant Feynman/Ward completion
   -> certified 26-to-54 lift + BRST Ward identity
   -> companion Hadamard two-point distribution
 ```
@@ -1569,11 +1571,18 @@ is now classified: \(C^\dagger J=JC\) forces \(J=0\), so no regular graph
 restriction survives. The differently typed source inclusions
 \(i_{\rm src}\) and \(p_{\rm sol}^\dagger\) do, however, descend the
 rank-40 kernel to a 20-row metric/formal-adjoint endpoint Hadamard kernel
-with exact CCR. The remaining direct task is now precise: construct a global
-exact Hadamard pair for the three ghost and three identity rows and solve the
-smooth \(q_{26}\)-compatible Ward completion. The conditional 26-to-54 lift
-is already certified and must not be rebuilt. The BRST Ward identity and
-physical/Krein positivity policy remain independent gates.
+with exact CCR. The three ghost and three identity rows now also have a
+global exact-CCR Hadamard pair, constructed from their two normally
+hyperbolic factors and formal adjoint. With all endpoint carriers available,
+the cyclic witness gives
+\(\Omega_{26}^{+}=W_{26}H_{26}^{+}\), and its exact Ward defect is the smooth
+kernel \(W_{26}[H_{26}^{+},q_{26}]\). The remaining direct task is a
+\(q_{26}\)-equivariant global Feynman selection or a smooth correction on a
+declared past/future-compact or time-slice bikernel class. The existing
+compact-source causal homotopy does not by itself authorize that extension.
+The conditional 26-to-54 lift is already certified and must not be rebuilt.
+The BRST Ward identity and physical/Krein positivity policy remain
+independent gates.
 The fail-closed atlas row remains `OPEN`: no full companion covariance, BRST
 Ward identity or physical state-space sign has been certified.
 
@@ -1610,6 +1619,10 @@ are recorded in
 The complete regular graph-class obstruction and the certified metric
 endpoint descent are recorded in
 [`berger-regular-graph-intertwiner-endpoint-descent.md`](../quantum-weyl/reports/berger-regular-graph-intertwiner-endpoint-descent.md).
+The completed six-row pair and exact retained Ward reduction are recorded in
+[`berger-ghost-identity-global-hadamard-pair.md`](../quantum-weyl/reports/berger-ghost-identity-global-hadamard-pair.md)
+and
+[`berger-retained26-hadamard-ward-reduction.md`](../quantum-weyl/reports/berger-retained26-hadamard-ward-reduction.md).
 The now-certified independent free global bisolution input and its
 indefinite/positive-state boundary are recorded in
 [`berger-free-dilation-hadamard-bisolution-seed.md`](../quantum-weyl/reports/berger-free-dilation-hadamard-bisolution-seed.md).

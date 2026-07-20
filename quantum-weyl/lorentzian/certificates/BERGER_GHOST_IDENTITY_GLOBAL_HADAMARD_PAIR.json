@@ -1,0 +1,273 @@
+{
+  "claim_boundary": "The two certified rank-three normally hyperbolic ghost factors and their formal-adjoint identity factors define a rank-twelve normally hyperbolic Hermitian dilation. Global Hadamard existence, transpose exact-CCR normalization and the typed source pullback certify the six-row ghost/identity endpoint pair. This is not yet a retained-26 BRST covariance: the block-diagonal metric plus ghost candidate must still be tested and smoothly corrected against q26. No 26- or 54-row BRST Hadamard flag, positivity, particle, renormalized Lorentzian product, Lorentzian QME or quantum theory is certified.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_GHOST_IDENTITY_EXACT_GRADED_CCR": true,
+    "BERGER_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK": true,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE": false,
+    "LORENTZIAN_QME_RESTORED": false,
+    "QUANTUM_CLAIM": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "dependency_refs": {
+    "exact_CCR_normalization": {
+      "result_id": "BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE",
+      "sha256": "34ef69351b814f678fd63f646b41f2c260aee204256c81587cfeedf25c10b16c"
+    },
+    "ghost_identity_endpoint_factors": {
+      "result_id": "BERGER_ENDPOINT_FACTOR_INPUT_IMPORT",
+      "sha256": "1d4d25ff38f1e87516b21fbe2a786ed626897f16bce80411d289e89031450749"
+    },
+    "global_Hadamard_existence_theorem": {
+      "result_id": "BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED",
+      "sha256": "4c0f6650a627817db419c9d1c8ddf797d99258009705e7da9868fc52f41217cf"
+    },
+    "global_endpoint_Cauchy_coefficients": {
+      "result_id": "BERGER_A104_ENDPOINT_COMPLETION",
+      "sha256": "9461f484e51ba7ef27cf0924d532d262b7b4c1fd846fd35dec093204508f9e1c"
+    },
+    "graded_state_space_contract": {
+      "result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+      "sha256": "99768cf1e444ef3525f19621702ee64a68aea83f83349a1c5d6223d9c959ca35"
+    },
+    "typed_metric_endpoint_descent": {
+      "result_id": "BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT",
+      "sha256": "8bece00c7a4dda8327e8c0dd6bc4ddf15f4e3712ac383048bb73bda861fa749e"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_input_checks": {
+    "endpoint_rows_are_three_plus_three": true,
+    "ghost_endpoint_is_two_normally_hyperbolic_factors": true,
+    "global_Hadamard_existence_theorem_certified": true,
+    "global_endpoint_Cauchy_coefficients_complete": true,
+    "graded_real_structure_certified": true,
+    "identity_endpoint_is_formal_adjoint_factorization": true,
+    "transpose_exact_CCR_normalization_certified": true,
+    "typed_endpoint_pullback_pattern_certified": true
+  },
+  "ghost_identity_Hermitian_dilation": {
+    "Hermitian_dilation": "D_gi=diag(C_g,C_g^dagger)",
+    "all_pass": true,
+    "checks": {
+      "ghost_companion_is_rank6_second_order": true,
+      "ghost_factor_1_is_rank3_normally_hyperbolic": true,
+      "ghost_factor_2_is_rank3_normally_hyperbolic": true,
+      "global_Hadamard_theorem_applies": true,
+      "identity_companion_is_formal_adjoint": true,
+      "off_diagonal_H6_is_nondegenerate_signature_6_6": true,
+      "rank12_dilation_is_formally_H6_selfadjoint": true,
+      "rank12_dilation_principal_symbol_is_q_I12": true
+    },
+    "fibre_form": "H6=[[0,I6],[I6,0]]",
+    "ghost_companion": "C_g=[[P_g1,-I3],[0,P_g2]] on rank 6",
+    "ghost_endpoint": "P_g=P_g2 o P_g1 on rank 3",
+    "identity_companion": "C_i=C_g^dagger on rank 6",
+    "principal_symbol": "sigma_2(D_gi)=q I12",
+    "signature": [
+      6,
+      6
+    ],
+    "theorem_replay": {
+      "conclusions": {
+        "global_Feynman_propagator_exists": true,
+        "omega_has_Hadamard_wavefront_relation": true,
+        "omega_is_formally_selfadjoint": true,
+        "omega_minus_i_GF_minus_Gadv_is_exact_bisolution": true
+      },
+      "hypotheses": {
+        "formal_selfadjointness_for_that_form": true,
+        "globally_hyperbolic_spacetime": true,
+        "nondegenerate_sesquilinear_form": true,
+        "normally_hyperbolic_operator": true,
+        "smooth_finite_rank_complex_bundle": true
+      },
+      "theorem_applies": true
+    }
+  },
+  "global_pair": {
+    "equations": "P_g W_gi=W_gi P_g^dagger=0 in typed blocks",
+    "ghost_rows": 3,
+    "graded_CCR": "W_gi-W_gi^sharp_graded=i Delta_gi",
+    "identity_rows": 3,
+    "kernel": "W_gi=K_gi^dagger W_Dgi K_gi",
+    "positivity": "NOT_APPLICABLE_TO_GHOST_IDENTITY_KREIN_PAIR",
+    "rows": 6,
+    "status": "GLOBAL_GHOST_IDENTITY_HADAMARD_EXACT_CCR_PAIR_CERTIFIED",
+    "wavefront_status": "GLOBAL_HADAMARD_RELATION"
+  },
+  "lifecycle_layer": "LORENTZIAN_RETAINED_BV_HADAMARD_RESTRICTION",
+  "negative_controls": {
+    "remove_formal_adjoint_identity_relation": {
+      "Hermitian_dilation": "D_gi=diag(C_g,C_g^dagger)",
+      "all_pass": false,
+      "checks": {
+        "ghost_companion_is_rank6_second_order": true,
+        "ghost_factor_1_is_rank3_normally_hyperbolic": true,
+        "ghost_factor_2_is_rank3_normally_hyperbolic": true,
+        "global_Hadamard_theorem_applies": false,
+        "identity_companion_is_formal_adjoint": false,
+        "off_diagonal_H6_is_nondegenerate_signature_6_6": true,
+        "rank12_dilation_is_formally_H6_selfadjoint": false,
+        "rank12_dilation_principal_symbol_is_q_I12": true
+      },
+      "fibre_form": "H6=[[0,I6],[I6,0]]",
+      "ghost_companion": "C_g=[[P_g1,-I3],[0,P_g2]] on rank 6",
+      "ghost_endpoint": "P_g=P_g2 o P_g1 on rank 3",
+      "identity_companion": "C_i=C_g^dagger on rank 6",
+      "principal_symbol": "sigma_2(D_gi)=q I12",
+      "signature": [
+        6,
+        6
+      ],
+      "theorem_replay": {
+        "conclusions": {
+          "global_Feynman_propagator_exists": false,
+          "omega_has_Hadamard_wavefront_relation": false,
+          "omega_is_formally_selfadjoint": false,
+          "omega_minus_i_GF_minus_Gadv_is_exact_bisolution": false
+        },
+        "hypotheses": {
+          "formal_selfadjointness_for_that_form": false,
+          "globally_hyperbolic_spacetime": true,
+          "nondegenerate_sesquilinear_form": true,
+          "normally_hyperbolic_operator": true,
+          "smooth_finite_rank_complex_bundle": true
+        },
+        "theorem_applies": false
+      }
+    },
+    "remove_second_normally_hyperbolic_factor": {
+      "Hermitian_dilation": "D_gi=diag(C_g,C_g^dagger)",
+      "all_pass": false,
+      "checks": {
+        "ghost_companion_is_rank6_second_order": false,
+        "ghost_factor_1_is_rank3_normally_hyperbolic": true,
+        "ghost_factor_2_is_rank3_normally_hyperbolic": false,
+        "global_Hadamard_theorem_applies": false,
+        "identity_companion_is_formal_adjoint": true,
+        "off_diagonal_H6_is_nondegenerate_signature_6_6": true,
+        "rank12_dilation_is_formally_H6_selfadjoint": true,
+        "rank12_dilation_principal_symbol_is_q_I12": false
+      },
+      "fibre_form": "H6=[[0,I6],[I6,0]]",
+      "ghost_companion": "C_g=[[P_g1,-I3],[0,P_g2]] on rank 6",
+      "ghost_endpoint": "P_g=P_g2 o P_g1 on rank 3",
+      "identity_companion": "C_i=C_g^dagger on rank 6",
+      "principal_symbol": "sigma_2(D_gi)=q I12",
+      "signature": [
+        6,
+        6
+      ],
+      "theorem_replay": {
+        "conclusions": {
+          "global_Feynman_propagator_exists": false,
+          "omega_has_Hadamard_wavefront_relation": false,
+          "omega_is_formally_selfadjoint": false,
+          "omega_minus_i_GF_minus_Gadv_is_exact_bisolution": false
+        },
+        "hypotheses": {
+          "formal_selfadjointness_for_that_form": true,
+          "globally_hyperbolic_spacetime": true,
+          "nondegenerate_sesquilinear_form": true,
+          "normally_hyperbolic_operator": false,
+          "smooth_finite_rank_complex_bundle": true
+        },
+        "theorem_applies": false
+      }
+    },
+    "use_symmetric_untyped_source_inclusion": {
+      "all_pass": false,
+      "causal_kernel": "K_gi^dagger H6 E_Dgi K_gi=[[0,E_g^dagger],[E_g,0]]",
+      "checks": {
+        "combined_source_map_is_order_zero": true,
+        "ghost_source_inclusion_is_0_I3": true,
+        "identity_source_inclusion_is_I3_0": false,
+        "opposite_cross_block_is_formal_adjoint": false,
+        "order_zero_pullback_preserves_Hadamard_wavefront_inclusion": false,
+        "pulled_cross_block_is_endpoint_Pauli_Jordan": false,
+        "same_map_descends_Hadamard_kernel_and_exact_CCR": false
+      },
+      "covariance": "W_gi=K_gi^dagger W_Dgi K_gi",
+      "source_map": "K_gi=diag(i_src,p_sol^dagger)",
+      "symbolic_pulled_matrix": [
+        [
+          "0",
+          "d"
+        ],
+        [
+          "d",
+          "0"
+        ]
+      ]
+    }
+  },
+  "next_gate": "ASSEMBLE_BLOCK_DIAGONAL_26_ROW_CANDIDATE_AND_COMPUTE_EXACT_Q26_WARD_DEFECT",
+  "provenance": {
+    "proof_type": "NORMALLY_HYPERBOLIC_HERMITIAN_DILATION_GLOBAL_HADAMARD_EXISTENCE_TRANSPOSE_CCR_NORMALIZATION_AND_TYPED_PULLBACK",
+    "source_manifest": {
+      "../reports/berger-ghost-identity-global-hadamard-pair.md": "74dc999e82ce4ddd93f63a42ff729ef04071ec871430a8a3d75dee705e59298f",
+      "berger_ghost_identity_global_hadamard_pair.py": "cd51b3eacf4a79c2c90a38e061f7a26e8d1b8efc820f105843d98998f76bc469",
+      "berger_ghost_identity_global_hadamard_pair_certificate.py": "b76c906e4b7a9631729118194964a35792ce458f4188d17f0f54ea50f318bb40",
+      "schema/berger-ghost-identity-global-hadamard-pair-v1.schema.json": "c52d29a501522e04be27bca1ac13a764c9465a21bbabbab093ee8040eed0b7e5",
+      "tests/test_berger_ghost_identity_global_hadamard_pair.py": "2f108dcf56bd1bd6b9a19f162ff3f456a005d4dce200a870a18f6e1e637c60af",
+      "verify_berger_ghost_identity_global_hadamard_pair.py": "843dd328bf2b77e18309b9aec75b111efa5d07952ee230116a4a108417c4cbae"
+    },
+    "source_manifest_sha256": "f5a1ba7e7a3642ad0429e5e44620d20da506f5ee0b2a921874478ea3403ce41f"
+  },
+  "result_id": "BERGER_GHOST_IDENTITY_GLOBAL_HADAMARD_PAIR",
+  "result_state": "GLOBAL_SIX_ROW_GHOST_IDENTITY_HADAMARD_EXACT_CCR_PAIR_CERTIFIED_Q26_WARD_ASSEMBLY_OPEN",
+  "schema": "quantum-weyl-berger-ghost-identity-global-hadamard-pair-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "transpose_exact_CCR_normalization": {
+    "CCR_calculation": "W_project-W_project^T=i[(GFsym-G_adv)-(GFsym-G_ret)]=i(G_ret-G_adv)=i E_project",
+    "GFsym": "(GF+GF^T)/2",
+    "all_pass": true,
+    "identities": {
+      "GFsym_is_Feynman_propagator": true,
+      "GFsym_transpose_equals_GFsym": true,
+      "Gadv_transpose_equals_Gret": true,
+      "Gret_transpose_equals_Gadv": true,
+      "P_transpose_equals_P": true,
+      "Wproject_is_exact_bisolution": true,
+      "Wproject_minus_transpose_equals_i_Eproject": true,
+      "Wproject_wavefront_relation_is_Hadamard": true
+    },
+    "project_distribution": "W_project=+i(GFsym-G_adv)=-W_source",
+    "project_green_convention": "E_project=G_ret-G_adv=-G_source",
+    "source_distribution": "W_source=-i(GFsym-G_adv)",
+    "source_green_convention": "G_source=G_adv-G_ret"
+  },
+  "typed_endpoint_pullback": {
+    "all_pass": true,
+    "causal_kernel": "K_gi^dagger H6 E_Dgi K_gi=[[0,E_g^dagger],[E_g,0]]",
+    "checks": {
+      "combined_source_map_is_order_zero": true,
+      "ghost_source_inclusion_is_0_I3": true,
+      "identity_source_inclusion_is_I3_0": true,
+      "opposite_cross_block_is_formal_adjoint": true,
+      "order_zero_pullback_preserves_Hadamard_wavefront_inclusion": true,
+      "pulled_cross_block_is_endpoint_Pauli_Jordan": true,
+      "same_map_descends_Hadamard_kernel_and_exact_CCR": true
+    },
+    "covariance": "W_gi=K_gi^dagger W_Dgi K_gi",
+    "source_map": "K_gi=diag(i_src,p_sol^dagger)",
+    "symbolic_pulled_matrix": [
+      [
+        "0",
+        "b"
+      ],
+      [
+        "b",
+        "0"
+      ]
+    ]
+  }
+}

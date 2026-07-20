@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-berger-retained26-hadamard-ward-reduction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_layer",
+    "dependency_tags",
+    "classical_commit",
+    "setting_id",
+    "dependency_refs",
+    "exact_input_checks",
+    "ward_reduction",
+    "smooth_support_class_audit",
+    "candidate_status",
+    "negative_controls",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-berger-retained26-hadamard-ward-reduction-v1"
+    },
+    "result_id": {"const": "BERGER_RETAINED26_HADAMARD_WARD_REDUCTION"},
+    "result_state": {
+      "const": "ALL_26_ENDPOINT_ROWS_GLOBAL_HADAMARD_EXACT_CCR_CANDIDATE_ASSEMBLED_SMOOTH_Q26_WARD_CARRIER_OPEN"
+    },
+    "lifecycle_layer": {
+      "const": "LORENTZIAN_RETAINED_BV_HADAMARD_RESTRICTION"
+    },
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "setting_id": {
+      "const": "compact_positive_berger_clock_fixed_coupling_linearized"
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {"$ref": "#/$defs/reference"}
+    },
+    "exact_input_checks": {
+      "type": "object",
+      "minProperties": 7,
+      "additionalProperties": {"const": true}
+    },
+    "ward_reduction": {"$ref": "#/$defs/replay"},
+    "smooth_support_class_audit": {"$ref": "#/$defs/replay"},
+    "candidate_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "all_26_endpoint_rows_have_global_Hadamard_carriers",
+        "full_exact_graded_CCR_from_cyclic_witness",
+        "Ward_defect_formula_computed",
+        "Ward_defect_is_smooth",
+        "Ward_defect_vanishes",
+        "smooth_correction_constructed",
+        "retained_26_BRST_Hadamard"
+      ],
+      "properties": {
+        "all_26_endpoint_rows_have_global_Hadamard_carriers": {"const": true},
+        "full_exact_graded_CCR_from_cyclic_witness": {"const": true},
+        "Ward_defect_formula_computed": {"const": true},
+        "Ward_defect_is_smooth": {"const": true},
+        "Ward_defect_vanishes": {"const": "NOT_DECIDED"},
+        "smooth_correction_constructed": {"const": false},
+        "retained_26_BRST_Hadamard": {"const": false}
+      }
+    },
+    "negative_controls": {
+      "type": "object",
+      "minProperties": 3,
+      "additionalProperties": {"$ref": "#/$defs/replay"}
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "BERGER_ALL_26_ENDPOINT_HADAMARD_CARRIERS",
+        "BERGER_26_ROW_HADAMARD_EXACT_CCR_CANDIDATE",
+        "BERGER_26_ROW_WARD_DEFECT_SMOOTH",
+        "BERGER_SMOOTH_Q26_WARD_COMPLETION",
+        "BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE",
+        "BERGER_26_ROW_BRST_HADAMARD",
+        "BERGER_54_ROW_BRST_HADAMARD",
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY",
+        "BERGER_HADAMARD_DATA",
+        "RENORMALIZED_LORENTZIAN_PRODUCTS",
+        "LORENTZIAN_QME_RESTORED",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "BERGER_ALL_26_ENDPOINT_HADAMARD_CARRIERS": {"const": true},
+        "BERGER_26_ROW_HADAMARD_EXACT_CCR_CANDIDATE": {"const": true},
+        "BERGER_26_ROW_WARD_DEFECT_SMOOTH": {"const": true},
+        "BERGER_SMOOTH_Q26_WARD_COMPLETION": {"const": false},
+        "BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE": {"const": false},
+        "BERGER_26_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_54_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "RENORMALIZED_LORENTZIAN_PRODUCTS": {"const": false},
+        "LORENTZIAN_QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {
+      "const": "CONSTRUCT_Q26_EQUIVARIANT_GLOBAL_FEYNMAN_SELECTION_OR_SMOOTH_WARD_CORRECTION_WITH_DECLARED_BIKERNEL_SUPPORT_CLASS"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "proof_type": {
+          "const": "EXACT_KINETIC_WITNESS_EXPANSION_LOCAL_HADAMARD_INTERTWINING_AND_SUPPORT_CLASS_AUDIT"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "source_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "replay": {
+      "type": "object",
+      "required": ["all_pass"],
+      "properties": {"all_pass": {"type": "boolean"}},
+      "additionalProperties": true
+    }
+  }
+}

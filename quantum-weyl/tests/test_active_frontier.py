@@ -575,9 +575,16 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(
             flags["BERGER_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK"]
         )
-        self.assertFalse(
+        self.assertTrue(
             flags["BERGER_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR"]
         )
+        self.assertTrue(flags["BERGER_GHOST_IDENTITY_EXACT_GRADED_CCR"])
+        self.assertTrue(flags["BERGER_ALL_26_ENDPOINT_HADAMARD_CARRIERS"])
+        self.assertTrue(
+            flags["BERGER_26_ROW_HADAMARD_EXACT_CCR_CANDIDATE"]
+        )
+        self.assertTrue(flags["BERGER_26_ROW_WARD_DEFECT_SMOOTH"])
+        self.assertFalse(flags["BERGER_SMOOTH_Q26_WARD_COMPLETION"])
         self.assertFalse(flags["BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE"])
         self.assertTrue(flags["BERGER_COVARIANCE_LIFT_26_TO_54"])
         self.assertTrue(
@@ -601,14 +608,14 @@ class ActiveFrontierTests(unittest.TestCase):
             row["status"],
         )
         self.assertIn(
-            "BERGER_REGULAR_GRAPH_CLASS_OBSTRUCTED_METRIC_ENDPOINT_"
-            "HADAMARD_CCR_PULLBACK_CERTIFIED_GHOST_WARD_COMPLETION_OPEN",
+            "BERGER_ALL_26_ENDPOINT_HADAMARD_CARRIERS_AND_EXACT_CCR_"
+            "CANDIDATE_ASSEMBLED_SMOOTH_Q26_WARD_COMPLETION_OPEN",
             row["status"],
         )
         self.assertEqual(
             row["next_gate"],
-            "CONSTRUCT_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR_AND_SOLVE_SMOOTH_"
-            "BRST_WARD_COMPLETION_ON_26_ROWS",
+            "CONSTRUCT_Q26_EQUIVARIANT_GLOBAL_FEYNMAN_SELECTION_OR_SMOOTH_"
+            "WARD_CORRECTION_WITH_DECLARED_BIKERNEL_SUPPORT_CLASS",
         )
         algebra_row = self.payload["active_rows"]["free_Lorentzian_algebra"]
         self.assertIn("PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED", algebra_row["status"])

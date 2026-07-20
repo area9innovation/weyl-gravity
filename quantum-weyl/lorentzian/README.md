@@ -376,10 +376,17 @@ support-local differential graph class bounded on the certified anisotropic
 Sobolev spaces is now classified: `Cdagger J=J C` forces `J=0`, so that
 route is obstructed as well. The correctly typed source map
 `diag(i_src,p_sol_dagger)` nevertheless pulls the rank-40 kernel back to a
-20-row metric/formal-adjoint endpoint Hadamard kernel with exact CCR. A
-global Hadamard pair on the three ghost and three identity rows and a smooth
-`q26`-compatible Ward completion remain open. The conditional 26-to-54 lift
-is already certified. See
+20-row metric/formal-adjoint endpoint Hadamard kernel with exact CCR. The
+three ghost and three identity rows now also have a global exact-CCR
+Hadamard pair, obtained from their normally hyperbolic factor companions.
+With all endpoint carriers available, the cyclic witness gives
+`Omega26_plus=W26 H26_plus`; its Ward defect is exactly the smooth kernel
+`W26[H26_plus,q26]`. A `q26`-equivariant global Feynman selection or a
+continuous correction on a declared smooth bikernel support class remains
+open. The compact-source causal homotopies are not silently extended. The
+conditional 26-to-54 lift is already certified. See
 [`berger-dilation-retained26-restriction-audit.md`](../reports/berger-dilation-retained26-restriction-audit.md)
 and
-[`berger-regular-graph-intertwiner-endpoint-descent.md`](../reports/berger-regular-graph-intertwiner-endpoint-descent.md).
+[`berger-regular-graph-intertwiner-endpoint-descent.md`](../reports/berger-regular-graph-intertwiner-endpoint-descent.md),
+[`berger-ghost-identity-global-hadamard-pair.md`](../reports/berger-ghost-identity-global-hadamard-pair.md), and
+[`berger-retained26-hadamard-ward-reduction.md`](../reports/berger-retained26-hadamard-ward-reduction.md).

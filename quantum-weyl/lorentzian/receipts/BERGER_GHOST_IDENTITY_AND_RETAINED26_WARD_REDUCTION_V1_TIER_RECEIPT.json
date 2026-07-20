@@ -1,0 +1,53 @@
+{
+  "schema": "quantum-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_GHOST_IDENTITY_AND_RETAINED26_WARD_REDUCTION_V1_TIER_RECEIPT",
+  "recorded_at_utc": "2026-07-20T08:26:46Z",
+  "base_commit": "94abc202f376e0df820bc8e26afc0688a54962db",
+  "dependency_tags": ["LORENTZIAN-CAUSAL"],
+  "changed_claim": "The six retained ghost/identity rows admit a global Hadamard exact-graded-CCR pair through their rank-twelve normally hyperbolic Hermitian dilation. Together with the certified metric endpoint carriers, the cyclic witness assembles an exact-CCR 26-row candidate. Its exact q26 Ward defect is W26[H26,q26] and is smooth. A q26-equivariant global Feynman selection or continuous correction on a declared smooth bikernel support class remains open.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.39,
+      "commands": [
+        "python3 -m py_compile quantum-weyl/lorentzian/berger_ghost_identity_global_hadamard_pair.py quantum-weyl/lorentzian/berger_ghost_identity_global_hadamard_pair_certificate.py quantum-weyl/lorentzian/verify_berger_ghost_identity_global_hadamard_pair.py quantum-weyl/lorentzian/berger_retained26_hadamard_ward_reduction.py quantum-weyl/lorentzian/berger_retained26_hadamard_ward_reduction_certificate.py quantum-weyl/lorentzian/verify_berger_retained26_hadamard_ward_reduction.py quantum-weyl/active_frontier.py quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
+        "python3 -m json.tool quantum-weyl/lorentzian/schema/berger-ghost-identity-global-hadamard-pair-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/lorentzian/schema/berger-retained26-hadamard-ward-reduction-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/schema/active-frontier-v1.schema.json",
+        "git diff --check -- quantum-weyl notes/d-quotient-quantum-team-brief.md notes/universe-building-roadmap.md"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 6.79,
+      "tests_run": 32,
+      "commands": [
+        "PYTHONPATH=.:quantum-weyl pytest -q quantum-weyl/lorentzian/tests/test_berger_ghost_identity_global_hadamard_pair.py quantum-weyl/lorentzian/tests/test_berger_retained26_hadamard_ward_reduction.py quantum-weyl/tests/test_active_frontier.py quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py",
+        "PYTHONPATH=.:quantum-weyl python3 quantum-weyl/lorentzian/verify_berger_ghost_identity_global_hadamard_pair.py",
+        "PYTHONPATH=.:quantum-weyl python3 quantum-weyl/lorentzian/verify_berger_retained26_hadamard_ward_reduction.py",
+        "PYTHONPATH=.:quantum-weyl python3 quantum-weyl/verify_active_frontier.py",
+        "PYTHONPATH=.:quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "Both new analytic certificates and their complete active-frontier and generated-atlas consumer chain were regenerated and independently verified. The endpoint factors, classical causal homotopy, metric endpoint kernel, local Hadamard singular calculus and graded pairing are content-addressed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "The result does not promote the smooth q26 Ward completion, retained-26 or 54-row BRST Hadamard covariance, positivity, renormalized Lorentzian products, a Lorentzian QME or a programme freeze."
+    }
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_EXIT_ZERO_WITH_FINDINGS",
+    "command": "./ci/science-forge-shadow.sh",
+    "elapsed_seconds": 3.89,
+    "findings": [
+      "bridge certificate audit drift=FAIL",
+      "coverage census drift: 1193 certificates versus baseline 976",
+      "Forge development binary is unpinned and lib has uncommitted changes"
+    ],
+    "claim_use": "NOT_USED_FOR_PROMOTION"
+  },
+  "claim_boundary": "All retained endpoint sectors have global Hadamard carriers and the cyclic witness gives an exact-CCR candidate with a smooth, explicitly reduced Ward defect. The compact-source identity q26 Lambda+Lambda q26=1 is not asserted on arbitrary smooth two-variable kernels. No smooth Ward correction, q26-invariant covariance, 26-to-54 Hadamard lift, positivity, particle interpretation, renormalized Lorentzian product or Lorentzian QME is certified."
+}

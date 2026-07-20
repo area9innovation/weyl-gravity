@@ -529,11 +529,15 @@ form, so naïve summand restriction is rejected. The complete smooth
 support-local differential graph class bounded on the certified anisotropic
 Sobolev spaces is also obstructed: its only intertwiner is zero. The
 correctly typed source pullback does certify the 20-row metric/formal-adjoint
-endpoint Hadamard kernel with exact CCR. A global exact Hadamard pair on the
-six ghost/identity rows and a smooth \(q_{26}\)-compatible Ward completion
-remain required; the conditional 26-to-54 lift is already certified. The
-BRST Ward identity and physical positivity remain open. No positive-state or
-full-BV Hadamard flag is promoted.
+endpoint Hadamard kernel with exact CCR. The six ghost/identity rows now also
+have a global Hadamard exact-CCR pair. The cyclic witness assembles an
+exact-CCR retained-26 candidate whose Ward defect is exactly
+\(W_{26}[H_{26}^{+},q_{26}]\) and is smooth. A \(q_{26}\)-equivariant global
+Feynman selection or a continuous correction on a declared smooth bikernel
+support class remains required; compact-source homotopies are not silently
+extended. The conditional 26-to-54 lift is already certified. The BRST Ward
+identity and physical positivity remain open. No positive-state or full-BV
+Hadamard flag is promoted.
 The generic typed biwave Volterra theorem is now independently imported as
 reusable causal infrastructure. It distinguishes solution- and source-space
 resolvents, proves both factorial bounds and inverse identities, reverses the

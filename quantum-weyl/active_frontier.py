@@ -146,6 +146,8 @@ DEPENDENCIES = {
     "full_dilation_Hadamard_Krein_CCR_covariance": HERE / "lorentzian/certificates/BERGER_FULL_DILATION_HADAMARD_KREIN_CCR_COVARIANCE.json",
     "dilation_retained26_restriction_audit": HERE / "lorentzian/certificates/BERGER_DILATION_TO_RETAINED26_RESTRICTION_AUDIT.json",
     "regular_graph_intertwiner_endpoint_descent": HERE / "lorentzian/certificates/BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT.json",
+    "ghost_identity_global_Hadamard_pair": HERE / "lorentzian/certificates/BERGER_GHOST_IDENTITY_GLOBAL_HADAMARD_PAIR.json",
+    "retained26_Hadamard_Ward_reduction": HERE / "lorentzian/certificates/BERGER_RETAINED26_HADAMARD_WARD_REDUCTION.json",
     "typed_biwave_Volterra_theorem": HERE / "lorentzian/certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORT.json",
     "stationary_generator_import_readiness": HERE / "lorentzian/certificates/BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS.json",
     "curvature_image_CCR": HERE / "lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
@@ -217,6 +219,8 @@ def _load() -> dict[str, dict[str, Any]]:
         "full_dilation_Hadamard_Krein_CCR_covariance": "FULL_METRIC_DILATION_GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE_TRANSPORTED_GRADED_BV_AND_POSITIVITY_OPEN",
         "dilation_retained26_restriction_audit": "CANONICAL_SUMMAND_RESTRICTION_OBSTRUCTED_GRAPH_INTERTWINER_OR_DIRECT_RETAINED26_COVARIANCE_REQUIRED",
         "regular_graph_intertwiner_endpoint_descent": "REGULAR_GRAPH_INTERTWINERS_OBSTRUCTED_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK_CERTIFIED_GHOST_WARD_COMPLETION_OPEN",
+        "ghost_identity_global_Hadamard_pair": "GLOBAL_SIX_ROW_GHOST_IDENTITY_HADAMARD_EXACT_CCR_PAIR_CERTIFIED_Q26_WARD_ASSEMBLY_OPEN",
+        "retained26_Hadamard_Ward_reduction": "ALL_26_ENDPOINT_ROWS_GLOBAL_HADAMARD_EXACT_CCR_CANDIDATE_ASSEMBLED_SMOOTH_Q26_WARD_CARRIER_OPEN",
         "typed_biwave_Volterra_theorem": "CONDITIONAL_TYPED_BIWAVE_GREEN_THEOREM_IMPORTED_HADAMARD_AND_PHYSICAL_NORMAL_FORM_OPEN",
         "stationary_generator_import_readiness": "CONSUMER_READY_STATIONARY_CARRIER_INPUT_NOT_SUPPLIED",
         "curvature_image_CCR": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_CERTIFIED_DIRECT_KERNEL_AND_STATE_OPEN",
@@ -2766,6 +2770,27 @@ def _load() -> dict[str, dict[str, Any]]:
         != "CONSTRUCT_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR_AND_SOLVE_SMOOTH_BRST_WARD_COMPLETION_ON_26_ROWS"
     ):
         raise ValueError("regular graph/endpoint descent frontier drifted")
+    ghost_pair = values["ghost_identity_global_Hadamard_pair"]
+    ghost_flags = ghost_pair.get("claim_flags", {})
+    ward_reduction = values["retained26_Hadamard_Ward_reduction"]
+    ward_flags = ward_reduction.get("claim_flags", {})
+    if (
+        ghost_flags.get("BERGER_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR")
+        is not True
+        or ghost_flags.get("BERGER_GHOST_IDENTITY_EXACT_GRADED_CCR")
+        is not True
+        or ghost_flags.get("BERGER_26_ROW_BRST_HADAMARD") is not False
+        or ward_flags.get("BERGER_ALL_26_ENDPOINT_HADAMARD_CARRIERS")
+        is not True
+        or ward_flags.get("BERGER_26_ROW_HADAMARD_EXACT_CCR_CANDIDATE")
+        is not True
+        or ward_flags.get("BERGER_26_ROW_WARD_DEFECT_SMOOTH") is not True
+        or ward_flags.get("BERGER_SMOOTH_Q26_WARD_COMPLETION") is not False
+        or ward_flags.get("BERGER_26_ROW_BRST_HADAMARD") is not False
+        or ward_reduction.get("next_gate")
+        != "CONSTRUCT_Q26_EQUIVARIANT_GLOBAL_FEYNMAN_SELECTION_OR_SMOOTH_WARD_CORRECTION_WITH_DECLARED_BIKERNEL_SUPPORT_CLASS"
+    ):
+        raise ValueError("ghost pair or retained-26 Ward frontier drifted")
     typed_biwave = values["typed_biwave_Volterra_theorem"]
     typed_flags = typed_biwave.get("claim_flags", {})
     if (
@@ -2891,8 +2916,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
             },
             "free_Lorentzian_state": {
-                "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_REGULAR_GRAPH_CLASS_OBSTRUCTED_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK_CERTIFIED_GHOST_WARD_COMPLETION_OPEN",
-                "next_gate": "CONSTRUCT_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR_AND_SOLVE_SMOOTH_BRST_WARD_COMPLETION_ON_26_ROWS",
+                "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_ALL_26_ENDPOINT_HADAMARD_CARRIERS_AND_EXACT_CCR_CANDIDATE_ASSEMBLED_SMOOTH_Q26_WARD_COMPLETION_OPEN",
+                "next_gate": "CONSTRUCT_Q26_EQUIVARIANT_GLOBAL_FEYNMAN_SELECTION_OR_SMOOTH_WARD_CORRECTION_WITH_DECLARED_BIKERNEL_SUPPORT_CLASS",
             },
             "free_Lorentzian_algebra": {
                 "status": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED_AND_GAUGE_INVARIANT_OBSERVABLE_CAUSAL_PROPAGATOR_DEFINED_AUTONOMOUS_GREEN_AND_HADAMARD_STATE_OPEN",
@@ -3030,7 +3055,12 @@ def build() -> dict[str, Any]:
             "BERGER_REGULAR_GRAPH_INTERTWINER_CLASS_COMPLETE": True,
             "BERGER_NONDEGENERATE_REGULAR_GRAPH_INTERTWINER_EXISTS": False,
             "BERGER_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK": True,
-            "BERGER_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR": False,
+            "BERGER_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR": True,
+            "BERGER_GHOST_IDENTITY_EXACT_GRADED_CCR": True,
+            "BERGER_ALL_26_ENDPOINT_HADAMARD_CARRIERS": True,
+            "BERGER_26_ROW_HADAMARD_EXACT_CCR_CANDIDATE": True,
+            "BERGER_26_ROW_WARD_DEFECT_SMOOTH": True,
+            "BERGER_SMOOTH_Q26_WARD_COMPLETION": False,
             "BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED": True,
             "BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE": False,
             "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED": True,
@@ -3191,7 +3221,7 @@ def build() -> dict[str, Any]:
         "ordered_next_gates": [
             "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
             "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
-            "CONSTRUCT_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR_AND_SOLVE_SMOOTH_BRST_WARD_COMPLETION_ON_26_ROWS",
+            "CONSTRUCT_Q26_EQUIVARIANT_GLOBAL_FEYNMAN_SELECTION_OR_SMOOTH_WARD_CORRECTION_WITH_DECLARED_BIKERNEL_SUPPORT_CLASS",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_REGULAR_GREENHYP_RESPONSE_MORPHISM_AND_GLOBAL_SEED_COVARIANCE",
@@ -3505,8 +3535,11 @@ def build() -> dict[str, Any]:
             "support-local differential graph class bounded on the certified anisotropic "
             "Sobolev spaces is now obstructed by the generically invertible V2 principal symbol. "
             "The correctly typed source pullback nevertheless gives the metric/formal-adjoint "
-            "endpoint Hadamard kernel with exact CCR. A global ghost/identity pair and smooth "
-            "BRST-compatible completion remain required; the conditional 26-to-54 lift is "
+            "endpoint Hadamard kernel with exact CCR. The global six-row ghost/identity pair "
+            "is also certified. The cyclic witness assembles all 26 endpoint carriers into an "
+            "exact-CCR candidate whose Ward defect is the smooth kernel "
+            "W26[H26,q26]. A q26-equivariant global Feynman selection or a smooth correction "
+            "on a declared bikernel support class remains required; the conditional 26-to-54 lift is "
             "already certified. The BRST Ward identity and "
             "physical-cohomology positivity remain open. "
             "The exact stationary-carrier import consumer is ready, but no classical manifest "
@@ -3657,7 +3690,12 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("BERGER_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK")
         is not True
         or flags.get("BERGER_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR")
-        is not False
+        is not True
+        or flags.get("BERGER_GHOST_IDENTITY_EXACT_GRADED_CCR") is not True
+        or flags.get("BERGER_ALL_26_ENDPOINT_HADAMARD_CARRIERS") is not True
+        or flags.get("BERGER_26_ROW_HADAMARD_EXACT_CCR_CANDIDATE") is not True
+        or flags.get("BERGER_26_ROW_WARD_DEFECT_SMOOTH") is not True
+        or flags.get("BERGER_SMOOTH_Q26_WARD_COMPLETION") is not False
         or flags.get("BERGER_REGULAR_GREENHYP_MORPHISM") is not True
         or flags.get("BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED")
         is not True
@@ -3974,6 +4012,11 @@ def validate(result: dict[str, Any]) -> None:
             "BERGER_COVARIANCE_LIFT_26_TO_54",
             "BERGER_REGULAR_GRAPH_INTERTWINER_CLASS_COMPLETE",
             "BERGER_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK",
+            "BERGER_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR",
+            "BERGER_GHOST_IDENTITY_EXACT_GRADED_CCR",
+            "BERGER_ALL_26_ENDPOINT_HADAMARD_CARRIERS",
+            "BERGER_26_ROW_HADAMARD_EXACT_CCR_CANDIDATE",
+            "BERGER_26_ROW_WARD_DEFECT_SMOOTH",
             "BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED",
             "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED",
             "BERGER_FREE_DILATION_TRANSPOSE_SYMMETRIC_FEYNMAN_PROPAGATOR",

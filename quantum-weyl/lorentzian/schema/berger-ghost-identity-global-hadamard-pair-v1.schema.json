@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-berger-ghost-identity-global-hadamard-pair-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_layer",
+    "dependency_tags",
+    "classical_commit",
+    "setting_id",
+    "dependency_refs",
+    "exact_input_checks",
+    "ghost_identity_Hermitian_dilation",
+    "transpose_exact_CCR_normalization",
+    "typed_endpoint_pullback",
+    "global_pair",
+    "negative_controls",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-berger-ghost-identity-global-hadamard-pair-v1"
+    },
+    "result_id": {"const": "BERGER_GHOST_IDENTITY_GLOBAL_HADAMARD_PAIR"},
+    "result_state": {
+      "const": "GLOBAL_SIX_ROW_GHOST_IDENTITY_HADAMARD_EXACT_CCR_PAIR_CERTIFIED_Q26_WARD_ASSEMBLY_OPEN"
+    },
+    "lifecycle_layer": {
+      "const": "LORENTZIAN_RETAINED_BV_HADAMARD_RESTRICTION"
+    },
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "setting_id": {
+      "const": "compact_positive_berger_clock_fixed_coupling_linearized"
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {"$ref": "#/$defs/reference"}
+    },
+    "exact_input_checks": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {"const": true}
+    },
+    "ghost_identity_Hermitian_dilation": {"$ref": "#/$defs/replay"},
+    "transpose_exact_CCR_normalization": {"$ref": "#/$defs/replay"},
+    "typed_endpoint_pullback": {"$ref": "#/$defs/replay"},
+    "global_pair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rows",
+        "ghost_rows",
+        "identity_rows",
+        "kernel",
+        "equations",
+        "wavefront_status",
+        "graded_CCR",
+        "positivity",
+        "status"
+      ],
+      "properties": {
+        "rows": {"const": 6},
+        "ghost_rows": {"const": 3},
+        "identity_rows": {"const": 3},
+        "kernel": {"type": "string"},
+        "equations": {"type": "string"},
+        "wavefront_status": {"const": "GLOBAL_HADAMARD_RELATION"},
+        "graded_CCR": {"const": "W_gi-W_gi^sharp_graded=i Delta_gi"},
+        "positivity": {
+          "const": "NOT_APPLICABLE_TO_GHOST_IDENTITY_KREIN_PAIR"
+        },
+        "status": {
+          "const": "GLOBAL_GHOST_IDENTITY_HADAMARD_EXACT_CCR_PAIR_CERTIFIED"
+        }
+      }
+    },
+    "negative_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "remove_second_normally_hyperbolic_factor",
+        "remove_formal_adjoint_identity_relation",
+        "use_symmetric_untyped_source_inclusion"
+      ],
+      "properties": {
+        "remove_second_normally_hyperbolic_factor": {"$ref": "#/$defs/replay"},
+        "remove_formal_adjoint_identity_relation": {"$ref": "#/$defs/replay"},
+        "use_symmetric_untyped_source_inclusion": {"$ref": "#/$defs/replay"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "BERGER_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR",
+        "BERGER_GHOST_IDENTITY_EXACT_GRADED_CCR",
+        "BERGER_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK",
+        "BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE",
+        "BERGER_26_ROW_BRST_HADAMARD",
+        "BERGER_54_ROW_BRST_HADAMARD",
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY",
+        "BERGER_HADAMARD_DATA",
+        "RENORMALIZED_LORENTZIAN_PRODUCTS",
+        "LORENTZIAN_QME_RESTORED",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "BERGER_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR": {"const": true},
+        "BERGER_GHOST_IDENTITY_EXACT_GRADED_CCR": {"const": true},
+        "BERGER_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK": {"const": true},
+        "BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE": {"const": false},
+        "BERGER_26_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_54_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "RENORMALIZED_LORENTZIAN_PRODUCTS": {"const": false},
+        "LORENTZIAN_QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {
+      "const": "ASSEMBLE_BLOCK_DIAGONAL_26_ROW_CANDIDATE_AND_COMPUTE_EXACT_Q26_WARD_DEFECT"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "proof_type": {
+          "const": "NORMALLY_HYPERBOLIC_HERMITIAN_DILATION_GLOBAL_HADAMARD_EXISTENCE_TRANSPOSE_CCR_NORMALIZATION_AND_TYPED_PULLBACK"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "source_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "replay": {
+      "type": "object",
+      "required": ["all_pass"],
+      "properties": {"all_pass": {"type": "boolean"}},
+      "additionalProperties": true
+    }
+  }
+}

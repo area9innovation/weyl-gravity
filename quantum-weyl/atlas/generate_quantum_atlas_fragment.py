@@ -42,6 +42,8 @@ DEPENDENCIES = {
     "Berger_full_dilation_Krein_covariance": QROOT / "lorentzian/certificates/BERGER_FULL_DILATION_HADAMARD_KREIN_CCR_COVARIANCE.json",
     "Berger_dilation_retained26_restriction_audit": QROOT / "lorentzian/certificates/BERGER_DILATION_TO_RETAINED26_RESTRICTION_AUDIT.json",
     "Berger_regular_graph_endpoint_descent": QROOT / "lorentzian/certificates/BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT.json",
+    "Berger_ghost_identity_Hadamard_pair": QROOT / "lorentzian/certificates/BERGER_GHOST_IDENTITY_GLOBAL_HADAMARD_PAIR.json",
+    "Berger_retained26_Hadamard_Ward_reduction": QROOT / "lorentzian/certificates/BERGER_RETAINED26_HADAMARD_WARD_REDUCTION.json",
     "Berger_A104_complete": QROOT / "lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
     "Berger_graph_q_obstruction": QROOT / "lorentzian/certificates/BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION.json",
     "Slavnov_preflight": QROOT / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
@@ -227,6 +229,8 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         "Berger_dilation_retained26_restriction_audit"
     ]
     regular_graph_endpoint = values["Berger_regular_graph_endpoint_descent"]
+    ghost_identity_pair = values["Berger_ghost_identity_Hadamard_pair"]
+    retained26_ward = values["Berger_retained26_Hadamard_Ward_reduction"]
     berger_a104 = values["Berger_A104_complete"]
     berger_graph_q = values["Berger_graph_q_obstruction"]
     slavnov = values["Slavnov_preflight"]
@@ -496,6 +500,26 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         ) is not False
         or regular_graph_endpoint.get("next_gate")
         != "CONSTRUCT_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR_AND_SOLVE_SMOOTH_BRST_WARD_COMPLETION_ON_26_ROWS"
+        or ghost_identity_pair.get("claim_flags", {}).get(
+            "BERGER_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR"
+        ) is not True
+        or ghost_identity_pair.get("claim_flags", {}).get(
+            "BERGER_GHOST_IDENTITY_EXACT_GRADED_CCR"
+        ) is not True
+        or retained26_ward.get("claim_flags", {}).get(
+            "BERGER_ALL_26_ENDPOINT_HADAMARD_CARRIERS"
+        ) is not True
+        or retained26_ward.get("claim_flags", {}).get(
+            "BERGER_26_ROW_HADAMARD_EXACT_CCR_CANDIDATE"
+        ) is not True
+        or retained26_ward.get("claim_flags", {}).get(
+            "BERGER_26_ROW_WARD_DEFECT_SMOOTH"
+        ) is not True
+        or retained26_ward.get("claim_flags", {}).get(
+            "BERGER_SMOOTH_Q26_WARD_COMPLETION"
+        ) is not False
+        or retained26_ward.get("next_gate")
+        != "CONSTRUCT_Q26_EQUIVARIANT_GLOBAL_FEYNMAN_SELECTION_OR_SMOOTH_WARD_CORRECTION_WITH_DECLARED_BIKERNEL_SUPPORT_CLASS"
         or berger_a104.get("claim_flags", {}).get("BERGER_FULL_A104_CAUCHY_OPERATOR")
         is not True
         or berger_a104.get("coverage", {}).get("known_coordinates") != 10816
@@ -1247,15 +1271,15 @@ def _berger_gap(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             exactness=("NO_CERTIFIED_MAP", "no per-mode cohomology ledger"),
             pairing=("NO_CERTIFIED_MAP", "carrier pairing has no modewise restriction"),
             complex_structure=("OPEN", "the canonical q_Cauchy graph lift is exactly rejected; corrected lift, Cauchy/Krein form, real structure and closed spectral splitting remain open"),
-            hadamard=("OPEN", "finite graph wavefront safety, local ghost factors, compact-slab convergence, cutoff null-cone decomposability and morphism cone mapping are certified; the exactly CCR-normalized covariance has been transported to global Hadamard Krein covariances on the cutoff and full rank-40 metric dilations; canonical summand restriction is obstructed and the complete smooth support-local differential graph-intertwiner class contains only zero, while the correctly typed source pullback certifies the 20-row metric/formal-adjoint endpoint Hadamard kernel with exact CCR; a global ghost/identity Hadamard pair and smooth BRST Ward completion are required before applying the already-certified 26-to-54 lift"),
+            hadamard=("OPEN", "all twenty metric/formal-adjoint and six ghost/identity endpoint rows now have global Hadamard carriers; the cyclic witness assembles an exact-CCR retained-26 candidate, and its exact q26 Ward defect W26[H26,q26] is smooth; the compact-source causal homotopy is not yet extended to the required smooth two-variable support class, so a q26-equivariant global Feynman selection or certified smooth Ward correction is required before the conditional 26-to-54 lift"),
             state_space=("OPEN", "reduced Krein evidence does not define a Berger physical state space"),
             qme=("OBSTRUCTED", "strict fixed-field-content local Euclidean QME is obstructed"),
             lifecycle=("OBSTRUCTED", "classical causal import remains; strict interacting quantum lifecycle is blocked"),
             particle=("NO_CERTIFIED_MAP", "no mode basis or Hadamard state"),
             crosswalk=("NO_CERTIFIED_MAP", "retained 26 rows to stationary physical modes"),
         ),
-        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_Hadamard_regular_morphism_boundary", "Berger_temporal_cutoff_Green_family", "Berger_cutoff_microlocal_response", "Berger_cutoff_Hermitian_dilation", "Berger_cutoff_Volterra_orientation_reduction", "Berger_cutoff_Volterra_normal_convergence", "Berger_free_dilation_Hadamard_seed", "Berger_free_dilation_Krein_covariance", "Berger_full_dilation_Krein_covariance", "Berger_dilation_retained26_restriction_audit", "Berger_regular_graph_endpoint_descent", "Berger_A104_complete", "Berger_graph_q_obstruction", "Slavnov_preflight", "regulated_Slavnov_breaking"),
-        "The global exact CCR-normalized Hadamard Krein covariance transports to the cutoff and full rank-40 metric dilations. Their fibre form has signature (20,20), so neither is a positive state. Exact block pullback proves that both canonical 20-row summands are isotropic and receive zero causal CCR. The complete smooth support-local differential graph-intertwiner class bounded on the certified anisotropic Sobolev scale is also obstructed: its only element is zero. The correctly typed metric/formal-adjoint source map nevertheless descends a 20-row endpoint Hadamard kernel with exact CCR. A global exact ghost/identity Hadamard pair and a smooth q26-compatible Ward completion are still required. The downstream omega54=iota omega26 pi lift is already certified conditionally. No retained-26/full-BV covariance, BRST Ward identity, physical mode, positive state, or particle is inferred.",
+        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_Hadamard_regular_morphism_boundary", "Berger_temporal_cutoff_Green_family", "Berger_cutoff_microlocal_response", "Berger_cutoff_Hermitian_dilation", "Berger_cutoff_Volterra_orientation_reduction", "Berger_cutoff_Volterra_normal_convergence", "Berger_free_dilation_Hadamard_seed", "Berger_free_dilation_Krein_covariance", "Berger_full_dilation_Krein_covariance", "Berger_dilation_retained26_restriction_audit", "Berger_regular_graph_endpoint_descent", "Berger_ghost_identity_Hadamard_pair", "Berger_retained26_Hadamard_Ward_reduction", "Berger_A104_complete", "Berger_graph_q_obstruction", "Slavnov_preflight", "regulated_Slavnov_breaking"),
+        "All 26 retained endpoint rows now have global Hadamard carriers. The cyclic backward witness gives an exact-CCR candidate Omega26=W26 H26, and its Ward defect is exactly the smooth kernel W26[H26,q26]. The existing advanced/retarded q26 homotopies act on compactly supported sources; applying them to an arbitrary smooth two-variable defect without a declared support extension is forbidden. The remaining gate is a q26-equivariant global Feynman selection or a continuous smooth-kernel Ward correction. The downstream omega54=iota omega26 pi lift remains certified conditionally. No retained-26 BRST covariance, physical mode, positive state, particle, renormalized Lorentzian product or Lorentzian QME is inferred.",
     )
 
 

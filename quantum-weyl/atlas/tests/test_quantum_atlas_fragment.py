@@ -144,12 +144,11 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         )
         hadamard = berger["quantum_data"]["Hadamard_two_point_function"]
         self.assertEqual(hadamard["status"], "OPEN")
-        self.assertIn("global Hadamard Krein covariances", hadamard["statement"])
-        self.assertIn("morphism cone mapping", hadamard["statement"])
-        self.assertIn("canonical summand restriction", hadamard["statement"])
-        self.assertIn("graph-intertwiner class contains only zero", hadamard["statement"])
-        self.assertIn("metric/formal-adjoint endpoint", hadamard["statement"])
-        self.assertIn("ghost/identity Hadamard pair", hadamard["statement"])
+        self.assertIn("all twenty metric/formal-adjoint", hadamard["statement"])
+        self.assertIn("six ghost/identity", hadamard["statement"])
+        self.assertIn("exact-CCR retained-26 candidate", hadamard["statement"])
+        self.assertIn("Ward defect", hadamard["statement"])
+        self.assertIn("smooth two-variable support class", hadamard["statement"])
         self.assertIn(
             "BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY",
             {evidence["result_id"] for evidence in berger["evidence"]},
@@ -166,8 +165,6 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
-        self.assertIn("compact-slab convergence", hadamard["statement"])
-        self.assertIn("cutoff null-cone decomposability", hadamard["statement"])
         self.assertIn(
             "BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION",
             {evidence["result_id"] for evidence in berger["evidence"]},
@@ -188,7 +185,14 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             "BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
-        self.assertIn("exactly CCR-normalized covariance", hadamard["statement"])
+        self.assertIn(
+            "BERGER_GHOST_IDENTITY_GLOBAL_HADAMARD_PAIR",
+            {evidence["result_id"] for evidence in berger["evidence"]},
+        )
+        self.assertIn(
+            "BERGER_RETAINED26_HADAMARD_WARD_REDUCTION",
+            {evidence["result_id"] for evidence in berger["evidence"]},
+        )
         self.assertIn(
             "BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED",
             {evidence["result_id"] for evidence in berger["evidence"]},
