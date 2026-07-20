@@ -548,7 +548,10 @@ class ActiveFrontierTests(unittest.TestCase):
             flags["BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED"]
         )
         self.assertFalse(flags["BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE"])
-        self.assertFalse(flags["BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED"])
+        self.assertTrue(flags["BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED"])
+        self.assertTrue(
+            flags["BERGER_FREE_DILATION_TRANSPOSE_SYMMETRIC_FEYNMAN_PROPAGATOR"]
+        )
         self.assertFalse(flags["BERGER_REGULAR_GREENHYP_MORPHISM"])
         self.assertTrue(flags["TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED"])
         self.assertTrue(flags["STATIONARY_GENERATOR_IMPORT_CONSUMER_READY"])
@@ -563,7 +566,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             row["next_gate"],
-            "PROVE_COMPACT_SLAB_VOLTERRA_CONVERGENCE_IN_DPRIME_GAMMA_NORMAL_TOPOLOGY_THEN_TRANSPORT_FREE_BISOLUTION_AND_NORMALIZE_KREIN_CCR_OR_CORRECTED_STATIONARY_BRST_LIFT",
+            "PROVE_COMPACT_SLAB_VOLTERRA_CONVERGENCE_IN_DPRIME_GAMMA_NORMAL_TOPOLOGY_THEN_TRANSPORT_NORMALIZED_KREIN_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
         )
         algebra_row = self.payload["active_rows"]["free_Lorentzian_algebra"]
         self.assertIn("PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED", algebra_row["status"])

@@ -1,0 +1,160 @@
+{
+  "analytic_boundary": {
+    "BRST_Ward_identity": "NOT_VERIFIED",
+    "cutoff_full_transport": "OPEN_DPRIME_GAMMA_CONVERGENCE",
+    "full_graded_BV_restriction": "NOT_CONSTRUCTED",
+    "physical_cohomology_positivity": "NOT_VERIFIED",
+    "positive_state": "NOT_CERTIFIED",
+    "raw_companion_restriction": "NOT_CONSTRUCTED"
+  },
+  "claim_boundary": "The real free dilation admits a transpose-symmetric Feynman propagator. After the explicit source-to-project sign map, the resulting global Hadamard bidistribution has antisymmetric part exactly i times the project Pauli-Jordan operator. This certifies a normalized Krein covariance on the indefinite free rank-40 auxiliary carrier, not a positive state. It does not transport the covariance to the cutoff/full dilation, restrict it to the raw companion or graded BV carrier, verify a BRST Ward identity or physical positivity, construct renormalized products, restore a Lorentzian QME or establish a quantum theory.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+    "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING": false,
+    "BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED": true,
+    "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED": true,
+    "BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE": false,
+    "BERGER_FREE_DILATION_TRANSPOSE_SYMMETRIC_FEYNMAN_PROPAGATOR": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "covariance": {
+    "CCR": "W_Dfree-W_Dfree^T=i E_Dfree",
+    "carrier": "free rank-40 Hermitian dilation",
+    "distribution": "W_Dfree=+i(GFsym,Dfree-Gadv,Dfree)",
+    "equations": "D_free W_Dfree=W_Dfree D_free^T=0",
+    "fibre_form": "H=[[0,I20],[I20,0]]",
+    "signature": [
+      20,
+      20
+    ],
+    "state_space_status": "INDEFINITE_KREIN_QUASIFREE_FUNCTIONAL_NOT_A_POSITIVE_STATE",
+    "status": "GLOBAL_FREE_DILATION_KREIN_CCR_COVARIANCE_NORMALIZED",
+    "wavefront_status": "GLOBAL_HADAMARD_RELATION"
+  },
+  "dependency_refs": {
+    "base_wave_normalization": {
+      "result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+      "sha256": "1a2bb5b124734a5aa63fdd8c1285d4847b8ff5ea02aed8d6b840db19dfe23fc1"
+    },
+    "flat_normalization": {
+      "result_id": "BERGER_FLAT_HADAMARD_NORMALIZATION",
+      "sha256": "7b8e22d21a5975585da9c1f57d147f83a2319824e6e3aa7fc89cd74338cbc7a1"
+    },
+    "free_dilation_Hadamard_seed": {
+      "result_id": "BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED",
+      "sha256": "4c0f6650a627817db419c9d1c8ddf797d99258009705e7da9868fc52f41217cf"
+    },
+    "graded_state_space_contract": {
+      "result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+      "sha256": "99768cf1e444ef3525f19621702ee64a68aea83f83349a1c5d6223d9c959ca35"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_input_checks": {
+    "base_normalization_artifact_pinned": true,
+    "fibre_form_indefinite": true,
+    "free_dilation_formally_H_selfadjoint": true,
+    "free_dilation_real": true,
+    "global_free_Hadamard_bisolution_seed": true,
+    "project_flat_CCR": true,
+    "project_green_convention": true
+  },
+  "lifecycle_layer": "LORENTZIAN_FREE_KREIN_COVARIANCE",
+  "literature_provenance": {
+    "arxiv": "2510.11492",
+    "construction": "the proof of Theorem 4: GFsym=(GF+GF^T)/2 is a symmetric Feynman propagator; symmetry gives the exact Pauli-Jordan relation",
+    "scope_map": "only the transpose-symmetrization and CCR identity are used; the positive-definite hypothesis needed for a state is not asserted",
+    "source": "Christopher J. Fewster and Alexander Strohmaier, On the construction of Hadamard states from Feynman propagators"
+  },
+  "negative_controls": {
+    "missing_real_symmetric_operator": {
+      "CCR_calculation": "W_project-W_project^T=i[(GFsym-G_adv)-(GFsym-G_ret)]=i(G_ret-G_adv)=i E_project",
+      "GFsym": "(GF+GF^T)/2",
+      "all_pass": false,
+      "identities": {
+        "GFsym_is_Feynman_propagator": false,
+        "GFsym_transpose_equals_GFsym": false,
+        "Gadv_transpose_equals_Gret": false,
+        "Gret_transpose_equals_Gadv": false,
+        "P_transpose_equals_P": false,
+        "Wproject_is_exact_bisolution": false,
+        "Wproject_minus_transpose_equals_i_Eproject": false,
+        "Wproject_wavefront_relation_is_Hadamard": false
+      },
+      "project_distribution": "W_project=+i(GFsym-G_adv)=-W_source",
+      "project_green_convention": "E_project=G_ret-G_adv=-G_source",
+      "source_distribution": "W_source=-i(GFsym-G_adv)",
+      "source_green_convention": "G_source=G_adv-G_ret"
+    },
+    "omit_transpose_symmetrization": {
+      "CCR_calculation": "W_project-W_project^T=i[(GFsym-G_adv)-(GFsym-G_ret)]=i(G_ret-G_adv)=i E_project",
+      "GFsym": "(GF+GF^T)/2",
+      "all_pass": false,
+      "identities": {
+        "GFsym_is_Feynman_propagator": false,
+        "GFsym_transpose_equals_GFsym": false,
+        "Gadv_transpose_equals_Gret": true,
+        "Gret_transpose_equals_Gadv": true,
+        "P_transpose_equals_P": true,
+        "Wproject_is_exact_bisolution": false,
+        "Wproject_minus_transpose_equals_i_Eproject": false,
+        "Wproject_wavefront_relation_is_Hadamard": false
+      },
+      "project_distribution": "W_project=+i(GFsym-G_adv)=-W_source",
+      "project_green_convention": "E_project=G_ret-G_adv=-G_source",
+      "source_distribution": "W_source=-i(GFsym-G_adv)",
+      "source_green_convention": "G_source=G_adv-G_ret"
+    },
+    "use_source_sign_without_convention_map": {
+      "antisymmetric_part": "-i E_project",
+      "coefficient": "-i",
+      "matches_project_CCR": false
+    }
+  },
+  "next_gate": "PROVE_DPRIME_GAMMA_VOLTERRA_CONVERGENCE_THEN_TRANSPORT_NORMALIZED_KREIN_COVARIANCE_TO_FULL_DILATION",
+  "provenance": {
+    "base_normalization_result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+    "flat_normalization_result_id": "BERGER_FLAT_HADAMARD_NORMALIZATION",
+    "graded_contract_result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+    "seed_result_id": "BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED",
+    "source_manifest": {
+      "../reports/berger-free-dilation-krein-ccr-covariance.md": "c1a27e2df48473f4a7714dd1b3bae2171bf4527dfb6985e6152572c38fb625cd",
+      "berger_free_dilation_krein_ccr_covariance.py": "a22cb5c9f380ae54e98ac94690fa26e0ac1c0ad301b13e5c8cc0899a9d1ebf74",
+      "berger_free_dilation_krein_ccr_covariance_certificate.py": "c10f8c06d4d3129668ba24525247c8c4672527838440d2671580a8ac3e1bd8ce",
+      "schema/berger-free-dilation-krein-ccr-covariance-v1.schema.json": "2f2639918d9cb830b75c3fa8e59708bff73d182bbe4fe937eccfef66836ba431",
+      "tests/test_berger_free_dilation_krein_ccr_covariance.py": "e6309bba50668202de9628d550a2e6616485320e07875e57698329feb4fdc36d",
+      "verify_berger_free_dilation_krein_ccr_covariance.py": "7aabfeaec98f520f8525a80358ecb6fbccedb3d892d2d55673ebd6f95bfaa2f7"
+    },
+    "source_manifest_sha256": "091790a4f212f2531cbc8d3e543f359a559c7669395ed8805c22476379be09d0"
+  },
+  "result_id": "BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE",
+  "result_state": "FREE_DILATION_GLOBAL_HADAMARD_KREIN_COVARIANCE_CCR_NORMALIZED_POSITIVE_STATE_AND_BV_TRANSPORT_OPEN",
+  "schema": "quantum-weyl-berger-free-dilation-krein-ccr-covariance-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "transpose_symmetrization": {
+    "CCR_calculation": "W_project-W_project^T=i[(GFsym-G_adv)-(GFsym-G_ret)]=i(G_ret-G_adv)=i E_project",
+    "GFsym": "(GF+GF^T)/2",
+    "all_pass": true,
+    "identities": {
+      "GFsym_is_Feynman_propagator": true,
+      "GFsym_transpose_equals_GFsym": true,
+      "Gadv_transpose_equals_Gret": true,
+      "Gret_transpose_equals_Gadv": true,
+      "P_transpose_equals_P": true,
+      "Wproject_is_exact_bisolution": true,
+      "Wproject_minus_transpose_equals_i_Eproject": true,
+      "Wproject_wavefront_relation_is_Hadamard": true
+    },
+    "project_distribution": "W_project=+i(GFsym-G_adv)=-W_source",
+    "project_green_convention": "E_project=G_ret-G_adv=-G_source",
+    "source_distribution": "W_source=-i(GFsym-G_adv)",
+    "source_green_convention": "G_source=G_adv-G_ret"
+  }
+}

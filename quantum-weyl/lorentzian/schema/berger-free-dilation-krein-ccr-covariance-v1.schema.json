@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/quantum-weyl/berger-free-dilation-krein-ccr-covariance-v1.schema.json",
+  "title": "Berger free dilation Krein CCR covariance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer",
+    "dependency_tags", "classical_commit", "setting_id", "dependency_refs",
+    "exact_input_checks", "transpose_symmetrization", "covariance",
+    "negative_controls", "literature_provenance", "analytic_boundary",
+    "claim_flags", "next_gate", "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-free-dilation-krein-ccr-covariance-v1"},
+    "result_id": {"const": "BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE"},
+    "result_state": {"const": "FREE_DILATION_GLOBAL_HADAMARD_KREIN_COVARIANCE_CCR_NORMALIZED_POSITIVE_STATE_AND_BV_TRANSPORT_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_FREE_KREIN_COVARIANCE"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LORENTZIAN-CAUSAL"}],
+      "items": false
+    },
+    "classical_commit": {"type": "string", "minLength": 7},
+    "setting_id": {"type": "string", "minLength": 1},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/dependency"},
+      "required": ["free_dilation_Hadamard_seed", "graded_state_space_contract", "base_wave_normalization", "flat_normalization"]
+    },
+    "exact_input_checks": {
+      "type": "object",
+      "additionalProperties": {"const": true},
+      "minProperties": 6
+    },
+    "transpose_symmetrization": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["GFsym", "identities", "all_pass"],
+      "properties": {"all_pass": {"const": true}}
+    },
+    "covariance": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["distribution", "CCR", "signature", "state_space_status", "status"],
+      "properties": {
+        "CCR": {"const": "W_Dfree-W_Dfree^T=i E_Dfree"},
+        "signature": {
+          "type": "array",
+          "prefixItems": [{"const": 20}, {"const": 20}],
+          "items": false
+        },
+        "state_space_status": {"const": "INDEFINITE_KREIN_QUASIFREE_FUNCTIONAL_NOT_A_POSITIVE_STATE"},
+        "status": {"const": "GLOBAL_FREE_DILATION_KREIN_CCR_COVARIANCE_NORMALIZED"}
+      }
+    },
+    "negative_controls": {"type": "object", "additionalProperties": true},
+    "literature_provenance": {"type": "object", "additionalProperties": {"type": "string"}},
+    "analytic_boundary": {"type": "object", "additionalProperties": {"type": "string"}},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED",
+        "BERGER_FREE_DILATION_TRANSPOSE_SYMMETRIC_FEYNMAN_PROPAGATOR",
+        "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED",
+        "BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE",
+        "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING",
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION",
+        "BERGER_26_ROW_BRST_HADAMARD", "BERGER_54_ROW_BRST_HADAMARD",
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY", "BERGER_HADAMARD_DATA",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED": {"const": true},
+        "BERGER_FREE_DILATION_TRANSPOSE_SYMMETRIC_FEYNMAN_PROPAGATOR": {"const": true},
+        "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED": {"const": true},
+        "BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE": {"const": false},
+        "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING": {"const": false},
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": {"const": false},
+        "BERGER_26_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_54_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "PROVE_DPRIME_GAMMA_VOLTERRA_CONVERGENCE_THEN_TRANSPORT_NORMALIZED_KREIN_COVARIANCE_TO_FULL_DILATION"},
+    "provenance": {"type": "object", "additionalProperties": true},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

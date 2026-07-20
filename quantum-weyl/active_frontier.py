@@ -141,6 +141,7 @@ DEPENDENCIES = {
     "cutoff_companion_Hermitian_dilation": HERE / "lorentzian/certificates/BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION.json",
     "cutoff_Volterra_microlocal_orientation_reduction": HERE / "lorentzian/certificates/BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION.json",
     "free_dilation_Hadamard_bisolution_seed": HERE / "lorentzian/certificates/BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED.json",
+    "free_dilation_Krein_CCR_covariance": HERE / "lorentzian/certificates/BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE.json",
     "typed_biwave_Volterra_theorem": HERE / "lorentzian/certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORT.json",
     "stationary_generator_import_readiness": HERE / "lorentzian/certificates/BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS.json",
     "curvature_image_CCR": HERE / "lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
@@ -207,6 +208,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "cutoff_companion_Hermitian_dilation": "METRIC_COMPANION_RFHGHO_DILATION_AND_TWO_REGULAR_CAUCHY_MORPHISMS_CERTIFIED_CONE_ACTION_AND_STATE_OPEN",
         "cutoff_Volterra_microlocal_orientation_reduction": "FINITE_VOLTERRA_TERMS_ORIENTED_SINGLE_HORMANDER_CONVERGENCE_GATE_OPEN",
         "free_dilation_Hadamard_bisolution_seed": "GLOBAL_FREE_DILATION_HADAMARD_BISOLUTION_EXISTS_POSITIVE_STATE_AND_BV_RESTRICTION_OPEN",
+        "free_dilation_Krein_CCR_covariance": "FREE_DILATION_GLOBAL_HADAMARD_KREIN_COVARIANCE_CCR_NORMALIZED_POSITIVE_STATE_AND_BV_TRANSPORT_OPEN",
         "typed_biwave_Volterra_theorem": "CONDITIONAL_TYPED_BIWAVE_GREEN_THEOREM_IMPORTED_HADAMARD_AND_PHYSICAL_NORMAL_FORM_OPEN",
         "stationary_generator_import_readiness": "CONSUMER_READY_STATIONARY_CARRIER_INPUT_NOT_SUPPLIED",
         "curvature_image_CCR": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_CERTIFIED_DIRECT_KERNEL_AND_STATE_OPEN",
@@ -2613,6 +2615,29 @@ def _load() -> dict[str, dict[str, Any]]:
         != "PROVE_DPRIME_GAMMA_VOLTERRA_CONVERGENCE_THEN_TRANSPORT_FREE_BISOLUTION_AND_NORMALIZE_KREIN_CCR"
     ):
         raise ValueError("free-dilation Hadamard-bisolution frontier drifted")
+    free_covariance = values["free_dilation_Krein_CCR_covariance"]
+    free_covariance_flags = free_covariance.get("claim_flags", {})
+    if (
+        free_covariance_flags.get(
+            "BERGER_FREE_DILATION_TRANSPOSE_SYMMETRIC_FEYNMAN_PROPAGATOR"
+        )
+        is not True
+        or free_covariance_flags.get(
+            "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED"
+        )
+        is not True
+        or free_covariance_flags.get(
+            "BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE"
+        )
+        is not False
+        or free_covariance_flags.get(
+            "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION"
+        )
+        is not False
+        or free_covariance.get("next_gate")
+        != "PROVE_DPRIME_GAMMA_VOLTERRA_CONVERGENCE_THEN_TRANSPORT_NORMALIZED_KREIN_COVARIANCE_TO_FULL_DILATION"
+    ):
+        raise ValueError("free-dilation Krein-CCR covariance frontier drifted")
     typed_biwave = values["typed_biwave_Volterra_theorem"]
     typed_flags = typed_biwave.get("claim_flags", {})
     if (
@@ -2738,8 +2763,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
             },
             "free_Lorentzian_state": {
-                "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_AND_FINITE_VOLTERRA_ORIENTATION_CERTIFIED_POSITIVE_STATE_TRANSPORT_AND_FULL_GRADED_BV_OPEN",
-                "next_gate": "PROVE_COMPACT_SLAB_VOLTERRA_CONVERGENCE_IN_DPRIME_GAMMA_NORMAL_TOPOLOGY_THEN_TRANSPORT_FREE_BISOLUTION_AND_NORMALIZE_KREIN_CCR_OR_CORRECTED_STATIONARY_BRST_LIFT",
+                "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_FREE_DILATION_GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE_AND_FINITE_VOLTERRA_ORIENTATION_CERTIFIED_POSITIVE_STATE_TRANSPORT_AND_FULL_GRADED_BV_OPEN",
+                "next_gate": "PROVE_COMPACT_SLAB_VOLTERRA_CONVERGENCE_IN_DPRIME_GAMMA_NORMAL_TOPOLOGY_THEN_TRANSPORT_NORMALIZED_KREIN_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
             },
             "free_Lorentzian_algebra": {
                 "status": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED_AND_GAUGE_INVARIANT_OBSERVABLE_CAUSAL_PROPAGATOR_DEFINED_AUTONOMOUS_GREEN_AND_HADAMARD_STATE_OPEN",
@@ -2864,7 +2889,8 @@ def build() -> dict[str, Any]:
             "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED": False,
             "BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED": True,
             "BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE": False,
-            "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED": False,
+            "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED": True,
+            "BERGER_FREE_DILATION_TRANSPOSE_SYMMETRIC_FEYNMAN_PROPAGATOR": True,
             "BERGER_REGULAR_GREENHYP_MORPHISM": False,
             "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED": True,
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": True,
@@ -3322,9 +3348,12 @@ def build() -> dict[str, Any]:
             "cutoff decomposability and the morphism cone action. Independently, the free "
             "rank-40 Hermitian dilation now satisfies the hypotheses of the global "
             "normally-hyperbolic Feynman theorem, so an exact formally self-adjoint "
-            "Hadamard bisolution seed exists. Its fibre form has signature (20,20), and "
+            "Hadamard bisolution seed exists. Transpose symmetrization and the explicit "
+            "source-to-project sign map now fix its antisymmetric part exactly to i times "
+            "the project Pauli--Jordan operator, giving a normalized free Krein covariance. "
+            "Its fibre form has signature (20,20), and "
             "the companion Jordan incidence rules out a positive-definite symmetrizer on "
-            "that same auxiliary carrier. Transport, Krein CCR normalization, graded-BV "
+            "that same auxiliary carrier. Transport, graded-BV "
             "restriction, the BRST Ward identity and physical-cohomology positivity remain open. "
             "The exact stationary-carrier import consumer is ready, but no classical manifest "
             "has been supplied and finite PBW data do not decide spectral isolation of zero. "
@@ -3447,7 +3476,11 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE")
         is not False
         or flags.get("BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED")
-        is not False
+        is not True
+        or flags.get(
+            "BERGER_FREE_DILATION_TRANSPOSE_SYMMETRIC_FEYNMAN_PROPAGATOR"
+        )
+        is not True
         or flags.get("VACUUM_CYLINDER_REDUCED_BRIDGE4_ACTIVATED") is not True
         or flags.get("REDUCED_COMPATIBLE_COMPLEX_STRUCTURE_CERTIFIED") is not True
         or flags.get("REDUCED_KREIN_HADAMARD_TWO_POINT_CERTIFIED") is not True
@@ -3741,6 +3774,8 @@ def validate(result: dict[str, Any]) -> None:
             "BERGER_FINITE_VOLTERRA_TERMS_MICROLOCALLY_ORIENTED",
             "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_GATE_ISOLATED",
             "BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED",
+            "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED",
+            "BERGER_FREE_DILATION_TRANSPOSE_SYMMETRIC_FEYNMAN_PROPAGATOR",
             "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED",
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY",
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED",

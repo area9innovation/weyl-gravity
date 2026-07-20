@@ -343,3 +343,13 @@ cutoff/full regular morphisms still waits on convergence in the fixed
 graded-BV restriction, the BRST Ward identity and physical-cohomology
 positivity remain separate gates.  The receipt is
 [`berger-free-dilation-hadamard-bisolution-seed.md`](../reports/berger-free-dilation-hadamard-bisolution-seed.md).
+
+Reality improves this seed further.  Transpose-averaging its Feynman
+propagator preserves the inverse and wavefront properties.  After mapping the
+source convention to the project convention \(E=G_{\rm ret}-G_{\rm adv}\),
+the distribution
+\(W_{\rm free}=+i(G_F^{\rm sym}-G_{\rm adv})\) obeys
+\(W_{\rm free}-W_{\rm free}^T=iE_{\rm free}\) exactly.  The free dilation
+therefore has a globally Hadamard, exactly CCR-normalized Krein covariance.
+It remains indefinite and is not a positive state.  The receipt is
+[`berger-free-dilation-krein-ccr-covariance.md`](../reports/berger-free-dilation-krein-ccr-covariance.md).

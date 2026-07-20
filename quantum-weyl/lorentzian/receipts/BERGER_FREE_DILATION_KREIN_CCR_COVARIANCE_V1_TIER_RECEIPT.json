@@ -1,0 +1,52 @@
+{
+  "schema": "quantum-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE_V1_TIER_RECEIPT",
+  "recorded_at_utc": "2026-07-20T06:48:49Z",
+  "base_commit": "35b245adef83d25b617c110e7d067298c245745d",
+  "dependency_tags": ["LORENTZIAN-CAUSAL"],
+  "changed_claim": "The global free-dilation Hadamard seed can be transpose-symmetrized and sign-mapped to a Krein covariance whose antisymmetric part is exactly i times the project Pauli-Jordan operator.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.13,
+      "commands": [
+        "python -m py_compile quantum-weyl/lorentzian/berger_free_dilation_krein_ccr_covariance.py quantum-weyl/lorentzian/berger_free_dilation_krein_ccr_covariance_certificate.py quantum-weyl/lorentzian/verify_berger_free_dilation_krein_ccr_covariance.py quantum-weyl/active_frontier.py quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
+        "python -m json.tool quantum-weyl/lorentzian/schema/berger-free-dilation-krein-ccr-covariance-v1.schema.json",
+        "python -m json.tool quantum-weyl/lorentzian/certificates/BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE.json",
+        "git diff --check -- quantum-weyl notes/d-quotient-quantum-team-brief.md notes/universe-building-roadmap.md"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 8.28,
+      "tests_run": 23,
+      "commands": [
+        "PYTHONPATH=quantum-weyl python -m lorentzian.berger_free_dilation_krein_ccr_covariance_certificate --check",
+        "PYTHONPATH=quantum-weyl python -m lorentzian.verify_berger_free_dilation_krein_ccr_covariance",
+        "PYTHONPATH=quantum-weyl python -m unittest lorentzian.tests.test_berger_free_dilation_krein_ccr_covariance tests.test_active_frontier atlas.tests.test_quantum_atlas_fragment",
+        "PYTHONPATH=quantum-weyl python -m verify_active_frontier",
+        "PYTHONPATH=quantum-weyl python -m atlas.verify_quantum_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The affected active-frontier and atlas chain was regenerated and independently verified; the pinned free seed, real structure and flat normalization inputs were unchanged and content-addressed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No full-BV state, positive state, lifecycle promotion, shared core-algebra change, freeze or release."
+    }
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_EXIT_ZERO_WITH_FINDINGS",
+    "command": "./ci/science-forge-shadow.sh",
+    "elapsed_seconds": 4.37,
+    "findings": [
+      "bridge certificate audit drift=FAIL",
+      "coverage census drift: 1174 certificates versus baseline 976",
+      "forge checkout revision differs from the unpinned dirty development binary"
+    ],
+    "claim_use": "NOT_USED_FOR_PROMOTION"
+  },
+  "claim_boundary": "The covariance lives on the indefinite free rank-40 auxiliary dilation. No positive state, cutoff/full transport, raw-companion or graded-BV restriction, BRST Ward identity, physical positivity, renormalized Lorentzian products, Lorentzian QME or quantum theory is certified."
+}

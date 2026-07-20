@@ -1518,8 +1518,8 @@ BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY [CERTIFIED]
   -> CUTOFF_FACTORWISE_NULL_KERNEL [CERTIFIED]
   -> REGULAR_INTERNAL_TIMESLICE_SOURCE_MAP [CERTIFIED]
   -> METRIC_RFHGHO_DILATION + TWO_REGULAR_CAUCHY_MORPHISMS [CERTIFIED]
-  -> FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED [CERTIFIED, INDEFINITE]
-  -> morphism cone mapping + same-orientation exclusion + seed transport/Krein normalization
+  -> FREE_DILATION_GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE [CERTIFIED, INDEFINITE]
+  -> morphism cone mapping + same-orientation exclusion + covariance transport
   -> restriction to full graded BV carrier + BRST Ward identity
   -> companion Hadamard two-point distribution
 ```
@@ -1541,9 +1541,13 @@ bisolution by the normally-hyperbolic Feynman existence theorem. Its
 certified fibre form has signature \((20,20)\), and the companion Jordan
 incidence precludes a positive-definite symmetrizer on that same auxiliary
 carrier. This is therefore a bisolution seed, not a positive state. The
+real structure also permits transpose symmetrization of the Feynman
+propagator. After the explicit source-to-project sign map, the resulting
+global distribution obeys the project CCR exactly and is now a normalized
+free Krein covariance. It remains non-positive. The
 active analytic gate is still the regular morphisms' cone action together
 with exclusion of the two same-orientation sectors, followed by transport
-and Krein CCR normalization of that seed. Restriction from
+of that covariance. Restriction from
 the doubled metric carrier to the full graded BV complex, the BRST Ward
 identity and the physical/Krein positivity policy remain independent gates.
 The fail-closed atlas row remains `OPEN`: no full companion covariance, BRST
@@ -1576,3 +1580,5 @@ recorded in
 The now-certified independent free global bisolution input and its
 indefinite/positive-state boundary are recorded in
 [`berger-free-dilation-hadamard-bisolution-seed.md`](../quantum-weyl/reports/berger-free-dilation-hadamard-bisolution-seed.md).
+Its exact Pauli--Jordan normalization is recorded in
+[`berger-free-dilation-krein-ccr-covariance.md`](../quantum-weyl/reports/berger-free-dilation-krein-ccr-covariance.md).
