@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-compensator-d-cartan-contraction-export-LEASE-RELEASE-excl-2f8c69b2ca2026bb",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/classical-compensator-d-cartan-contraction-export-LEASE-RELEASE-excl-2f8c69b2ca2026bb.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "classical-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T09:48:37Z", "seq": 2, "predecessor": "sf:program/event/classical-compensator-d-cartan-contraction-export-LEASE-ACQUIRE-excl-ef1b7b741c78e3de", "payload": {"target": "sf:program/work/classical-compensator-d-cartan-contraction-export", "agent": "classical-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-20T09:48:37Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/classical-compensator-d-cartan-contraction-export"}]
+}
