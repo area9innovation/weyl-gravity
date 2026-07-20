@@ -1,0 +1,38 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-compensator-independent-weyl-connection-after-degenerate-clock-DONE-c0ffee1600000003",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "planning/events/classical-compensator-independent-weyl-connection-after-degenerate-clock-DONE-c0ffee1600000003.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "coordinator",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [
+      "sf:program/event/classical-compensator-independent-weyl-connection-after-degenerate-clock-RETIRED-c0ffee1600000002"
+    ],
+    "when": "2026-07-20T23:31:00+02:00",
+    "seq": 3,
+    "predecessor": "sf:program/event/classical-compensator-independent-weyl-connection-after-degenerate-clock-RETIRED-c0ffee1600000002",
+    "payload": {
+      "target": "sf:program/work/classical-compensator-independent-weyl-connection-after-degenerate-clock",
+      "to_state": "DONE",
+      "note": "The already-running resident completed the scoped minimal real-Weyl-connection calculation after the coordinator priority retirement.  COMPENSATOR_INDEPENDENT_WEYL_CONNECTION_LEVEL4_NO_GO_V1 proves the independent trace-gauge/nonzero Berger-clock intersection empty.  This out-of-order result does not discharge the convention-correct Horndeski Level-3b gate.",
+      "evidence_basis": "`d_quotient_classical/receipts/COMPENSATOR_INDEPENDENT_WEYL_CONNECTION_LEVEL4_NO_GO_V1_TIER_RECEIPT.json`; scientific commit `255c53253`"
+    },
+    "native": {
+      "authored_by": "coordinator integration",
+      "policy": "append-only chronology preserves ACTIVE -> priority RETIRED -> scientifically completed DONE rather than erasing the race"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/classical-compensator-independent-weyl-connection-after-degenerate-clock"
+    }
+  ]
+}
