@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-active-clock-px2-locus",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-active-clock-px2-locus",
+  "source": {
+    "path": "planning/work-items/classical-compensator-active-clock-px2-locus.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Test the smallest excluded active-clock enlargement of the empty minimal compensator locus: a complete quadratic k-essence phase action P(X)=p0+p1 X+p2 X^2 on the same dressed metric.",
+    "stop_condition": "Import COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1 by exact hash.  Replace only the linear phase kinetic-plus-potential sector by the complete polynomial P(X)=p0+p1 X+p2 X^2, X=ghat^{ab} partial_a theta partial_b theta, with no HT sector, no new fields and otherwise the same parity-even dressed C^2+R^2+R action.  Derive the unit-cylinder and frozen Berger stationary equations, the complete coupled homogeneous dressed-trace/auxiliary-scalar/clock Hessian, its exact principal and velocity inertia strata, characteristic/minimal polynomials, sound-cone and hyperbolicity inequalities, Lee-Wald form, raw-D and K_Berger charges, and the clock relational monotonicity conditions as polynomial or semialgebraic conditions on all coefficients.  Apply all seven gates simultaneously.  Use exact elimination and real-root/sign certificates to classify the full good coefficient locus.  If nonempty, select the smallest rational interior fixture only after proving every gate and export its full action hash as Candidate C_active; if empty, give an exact separator and the complete declared ansatz.  File a typed Forge/math request and return SHORTFALL rather than using a numerical scan as completeness evidence.",
+    "current_gate": "complete seven-gate coefficient locus for the quadratic active-clock P(X) enlargement",
+    "forbid": "no reuse of the minimal-family empty determinant after P(X) changes the Berger rows; no Einstein-background scalaron formula substituted for the full cylinder Hessian; no prescribed clock trajectory without its Euler equation; no positivity from P_X alone without the longitudinal P_X+2XP_XX condition and coupled gravitational inertia; no HT superselection or hidden global quotient; no Candidate C sample before the locus theorem; no anomaly, Hadamard, particle, scattering or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/classical-compensator-minimal-action-classification-after-neither"
+    ],
+    "activates": [
+      "action-specific nonlinear, observer, Einstein and quantum consumers only if Candidate C_active passes all seven gates",
+      "or a scoped active-clock P(X)-quadratic no-go and the next explicitly enlarged theory class"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "reports/",
+      "residual_atlas/",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "CLASSICAL PROOF-FIRST SUCCESSOR.  This is the smallest explicit active-clock retuning excluded from the minimal-family theorem; solve its whole locus rather than proposing another point.",
+    "notes": [
+      "The minimal theorem proves that a linear clock sector cannot make the cylinder and Berger fixture compatible while also repairing the trace healthily.",
+      "Quadratic P(X) changes the Berger stress and clock perturbation cone while leaving the constant-clock cylinder value controlled, so it is the least new coefficient direction that can test the active-clock escape.",
+      "The result remains one declared EFT truncation and must not become a universal scalar-tensor no-go."
+    ],
+    "input_commit": "a5924e707352bab92db2caa4c19cf4223c60f0e3",
+    "stream": "classical"
+  },
+  "edges": []
+}
