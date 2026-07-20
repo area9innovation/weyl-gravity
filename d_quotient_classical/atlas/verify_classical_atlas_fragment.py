@@ -144,6 +144,30 @@ def verify() -> None:
         raise AssertionError(
             "changed-action compensator causal atlas boundary drifted"
         )
+    candidate_b = by_id[
+        "classical.complex_compensator.vacuum_cylinder."
+        "unimodular_threeform_candidate_b"
+    ]
+    candidate_b_ids = {item["result_id"] for item in candidate_b["evidence"]}
+    if (
+        candidate_b["descriptions"]["causal"] != "OBSTRUCTED"
+        or candidate_b["descriptions"]["symplectic"] != "OBSTRUCTED"
+        or candidate_b["descriptions"]["nonlinear"] != "NOT_APPLICABLE"
+        or candidate_b["descriptions"]["observational"] != "NO_CERTIFIED_MAP"
+        or candidate_b["descriptions"]["quantum"] != "OPEN"
+        or "COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1"
+        not in candidate_b_ids
+        or "not a particle carrier" not in candidate_b["scope"]["carrier"]
+        or "kernel (D/2,1,0)" not in candidate_b["claim_boundary"]
+        or "H3(S3)=R" not in candidate_b["claim_boundary"]
+        or "Hc4(R x S3)=R" not in candidate_b["claim_boundary"]
+        or "Candidate B is therefore OBSTRUCTED"
+        not in candidate_b["claim_boundary"]
+        or "No Hadamard" not in candidate_b["claim_boundary"]
+    ):
+        raise AssertionError(
+            "unimodular three-form Candidate-B atlas boundary drifted"
+        )
     stability = by_id["classical.crosswalk.weak_background_causal_vs_residual_d"]
     if (
         stability["descriptions"]["causal"] != "CERTIFIED"

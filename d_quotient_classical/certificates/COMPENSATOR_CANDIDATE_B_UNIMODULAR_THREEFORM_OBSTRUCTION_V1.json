@@ -1,0 +1,516 @@
+{
+  "Berger_gate": {
+    "HT_metric_equation": "forces lambda_HT_bar=0 because the imported base Euler rows vanish",
+    "ambient_D_charge": "H_D=V_Berger lambda_HT",
+    "base_metric_and_clock_equations": "PASS by imported exact fixture",
+    "cohomology_class": "[vol_Berger] != 0 in H^3(S3)",
+    "compatibility_status": "FAIL_WITHOUT_NEW_GLOBAL_SUPERSELECTION_OR_GAUGE",
+    "fixture": "a=1, c^2=9/40, alpha_B=5, rho^2=1, omega_clock=3/4, lambda_scalar=119/480",
+    "helical_reclassification": "stationarity would require adjoining the global closed-three-form shift to K_Berger=D-omega_clock R",
+    "normalized_spatial_volume_coefficient": "3*sqrt(10)/20",
+    "raw_D_action": "L_D A_3_bar=vol_Berger",
+    "small_gauge_compensator_exists": false,
+    "volume_constraint_solution": "A_3_bar=t vol_Berger",
+    "zero_on_background_but_not_differentially_zero": "H_D=0 at lambda_HT=0, while dH_D=V_Berger d lambda_HT !=0"
+  },
+  "action_and_BV": {
+    "CME_proof": "S_base is Diff invariant, vol_hat-dA_3 is a top form, and the abelian reducibility tower is exact at the operator level; the displayed master action is their canonical BV cotangent lift",
+    "Weyl_quartet_homotopy": "unchanged h_W with Q_W h_W+h_W Q_W=1 on (tau,omega,omega_star,tau_hat_star)",
+    "action_sha256": "8c1466831f8b6aecdc771cd0aed7de07a5c7a5777a88ede90e638ba7ea6d6f51",
+    "cyclic_pairing": "integral_M [delta A_3 wedge delta A_3_star+delta C_2 wedge delta C_2_star+delta C_1 wedge delta C_1_star+delta C_0 delta C_0_star+delta lambda_HT delta lambda_HT_star], with graded signs",
+    "diff_completion": "add L_xi to every form/scalar and the canonical cotangent moment maps; [L_xi,d]=0 and Qxi=xi^nu partial_nu xi",
+    "intrinsic_rows": {
+      "Q_A_3": "d C_2",
+      "Q_A_3_star": "d lambda_HT",
+      "Q_C_0": "0",
+      "Q_C_0_star": "-d C_1_star",
+      "Q_C_1": "d C_0",
+      "Q_C_1_star": "-d C_2_star",
+      "Q_C_2": "d C_1",
+      "Q_C_2_star": "-d A_3_star",
+      "Q_lambda_HT": "0",
+      "Q_lambda_HT_star": "-[vol(g_hat)-dA_3]"
+    },
+    "manifest": {
+      "Weyl_sector": "the original (tau,omega,omega_star,tau_hat_star) quartet is unchanged because S_HT uses only g_hat",
+      "couplings": {
+        "M_P_squared": "1/6",
+        "V0": "1/4",
+        "alpha_R": "0",
+        "f": "1",
+        "kappa_r": "-1",
+        "kappa_theta": "1"
+      },
+      "density": "alpha_B C(g_hat)^2/8 + M_P^2 R(g_hat)/2 - V0 - (nabla theta)^2/2 + lambda_HT [1-(d A_3)/vol(g_hat)]",
+      "form_notation": "S_HT=int_M lambda_HT [vol(g_hat)-d A_3]",
+      "global_internal_symmetry": "U(1) shift of theta",
+      "metric_gauge_group_after_dressing": "Diff",
+      "three_form_gauge_tower": "A_3 -> A_3+d epsilon_2; epsilon_2~epsilon_2+d epsilon_1; epsilon_1~epsilon_1+d epsilon_0"
+    },
+    "minimal_field_inventory": [
+      {
+        "form_degree": 3,
+        "ghost_number": 0,
+        "parity": 0,
+        "role": "three_form_potential",
+        "symbol": "A_3"
+      },
+      {
+        "form_degree": 2,
+        "ghost_number": 1,
+        "parity": 1,
+        "role": "three_form_gauge_ghost",
+        "symbol": "C_2"
+      },
+      {
+        "form_degree": 1,
+        "ghost_number": 2,
+        "parity": 0,
+        "role": "first_reducibility_ghost",
+        "symbol": "C_1"
+      },
+      {
+        "form_degree": 0,
+        "ghost_number": 3,
+        "parity": 1,
+        "role": "second_reducibility_ghost",
+        "symbol": "C_0"
+      },
+      {
+        "form_degree": 0,
+        "ghost_number": 0,
+        "parity": 0,
+        "role": "unimodular_multiplier",
+        "symbol": "lambda_HT"
+      },
+      {
+        "form_degree": 1,
+        "ghost_number": -1,
+        "parity": 1,
+        "role": "minimal_antifield",
+        "symbol": "A_3_star"
+      },
+      {
+        "form_degree": 2,
+        "ghost_number": -2,
+        "parity": 0,
+        "role": "minimal_antifield",
+        "symbol": "C_2_star"
+      },
+      {
+        "form_degree": 3,
+        "ghost_number": -3,
+        "parity": 1,
+        "role": "minimal_antifield",
+        "symbol": "C_1_star"
+      },
+      {
+        "form_degree": 4,
+        "ghost_number": -4,
+        "parity": 0,
+        "role": "minimal_antifield",
+        "symbol": "C_0_star"
+      },
+      {
+        "form_degree": 4,
+        "ghost_number": -1,
+        "parity": 1,
+        "role": "minimal_antifield",
+        "symbol": "lambda_HT_star"
+      }
+    ],
+    "minimal_master_action": "S_min=S_base+int lambda_HT(vol_hat-dA_3)+int[A_3_star(L_xi A_3+dC_2)+C_2_star(L_xi C_2+dC_1)+C_1_star(L_xi C_1+dC_0)+C_0_star L_xi C_0+lambda_HT_star L_xi lambda_HT]+strict dressed cotangent rows",
+    "nilpotency_proof": "intrinsic nilpotency is d^2=0; the Diff semidirect completion is nilpotent because the Lie derivative is a representation commuting with d; antifield rows are the canonical cotangent lift",
+    "nonminimal_inventory": [
+      {
+        "Q_image": "b_2",
+        "form_degree": 2,
+        "role": "antighost",
+        "symbol": "bar_C_2"
+      },
+      {
+        "Q_image": "0",
+        "form_degree": 2,
+        "role": "multiplier",
+        "symbol": "b_2"
+      },
+      {
+        "Q_image": "0",
+        "form_degree": 2,
+        "role": "antifield",
+        "symbol": "bar_C_2_star"
+      },
+      {
+        "Q_image": "-bar_C_star",
+        "form_degree": 2,
+        "role": "antifield",
+        "symbol": "b_2_star"
+      },
+      {
+        "Q_image": "b_1",
+        "form_degree": 1,
+        "role": "antighost",
+        "symbol": "bar_C_1"
+      },
+      {
+        "Q_image": "0",
+        "form_degree": 1,
+        "role": "multiplier",
+        "symbol": "b_1"
+      },
+      {
+        "Q_image": "0",
+        "form_degree": 3,
+        "role": "antifield",
+        "symbol": "bar_C_1_star"
+      },
+      {
+        "Q_image": "-bar_C_star",
+        "form_degree": 3,
+        "role": "antifield",
+        "symbol": "b_1_star"
+      },
+      {
+        "Q_image": "b_0",
+        "form_degree": 0,
+        "role": "antighost",
+        "symbol": "bar_C_0"
+      },
+      {
+        "Q_image": "0",
+        "form_degree": 0,
+        "role": "multiplier",
+        "symbol": "b_0"
+      },
+      {
+        "Q_image": "0",
+        "form_degree": 4,
+        "role": "antifield",
+        "symbol": "bar_C_0_star"
+      },
+      {
+        "Q_image": "-bar_C_star",
+        "form_degree": 4,
+        "role": "antifield",
+        "symbol": "b_0_star"
+      }
+    ],
+    "real_structure": "all classical forms and lambda_HT are real"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL obstruction hash-imports the frozen compensator action and tau-adic trace obstruction, derives the complete local reducible three-form BV tower, and proves two Candidate-B failures. The HT multiplier cannot make the non-Einstein unit cylinder stationary because it does not change the trace-free Ricci Euler row. Independently, the linearized HT block trades u for an arbitrary harmonic three-form flux history and retains H_c^4 and H^3 global data. The exact flux/multiplier current gives a nontrivial raw-D charge, and the frozen Berger solution requires a nonexact D shift of A_3. This is a scoped no-go for Candidate B with the declared action, background and small gauge group. It does not rule out an active-clock retuning, a fixed-lambda/flux superselection theory, or an enlarged global gauge quotient. It establishes no Hadamard, anomaly, QME, particle, scattering or unitarity result.",
+  "claim_flags": {
+    "ANOMALY_OR_QME": false,
+    "BERGER_RAW_D_PRESERVED": false,
+    "CANDIDATE_B_ACTION_DEFINED": true,
+    "CANDIDATE_B_FULL_CAUSAL_PARENT": false,
+    "DRESSED_TRACE_CONTRACTED": false,
+    "GLOBAL_FLUX_CONTROLLED_WITHOUT_EXTRA_DATA": false,
+    "HADAMARD_STATE": false,
+    "PARTICLE_SCATTERING_UNITARITY": false,
+    "UNIT_CYLINDER_BACKGROUND_ON_SHELL": false
+  },
+  "dependencies": {
+    "action_preflight": {
+      "path": "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1.json",
+      "result_id": "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1",
+      "sha256": "a537e31bf667520443903551b5bf2596dff9a1c35fade88d2ffc1e89c1e0b836",
+      "source_commit": "306ff78a2001f23124d412e9a2f41531bec74f78"
+    },
+    "positive_Berger_clock": {
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687",
+      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+    },
+    "strict_tau_obstruction": {
+      "path": "d_quotient_classical/certificates/TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1.json",
+      "result_id": "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
+      "sha256": "db1f998a0920adb94cf4fcbffb1b9eb2ea6537876aff9513aac4e4d9ec2b51b9",
+      "source_commit": "2b834dc751d6948366fd5c3d99174c268fa50d21"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "domain": {
+    "background": "unit vacuum cylinder R_t x S3",
+    "boundaries": "closed S3 Cauchy surfaces; no timelike boundary",
+    "chart": "formal rho!=0 dressed compensator chart",
+    "signature": "(-,+,+,+)",
+    "spacetime_dimension": 4,
+    "support_domains": [
+      "Gamma_c",
+      "Gamma_sc",
+      "one-sided advanced/retarded domains"
+    ]
+  },
+  "exact_checks": {
+    "Berger_D_shift_nonexact": true,
+    "CME_by_cotangent_lift": true,
+    "HT_Hessian_formally_self_adjoint": true,
+    "HT_Hessian_polynomial_kernel_nonzero": true,
+    "HT_multiplier_cannot_repair_tracefree_residual": true,
+    "Q_squared_zero": true,
+    "Weyl_quartet_contracts": true,
+    "action_hash_frozen": true,
+    "compact_support_H4_nonzero": true,
+    "cyclic_pairing": true,
+    "dependency_hashes": true,
+    "intrinsic_cotangent_signs_verified": true,
+    "raw_D_charge_nonconstant_on_ambient_phase_space": true,
+    "real_structure": true,
+    "reducibility_d_squared_zero": true,
+    "spatial_H3_flux_nonzero": true,
+    "unit_cylinder_tracefree_residual_nonzero": true
+  },
+  "global_topology": {
+    "compact_U1_two_gerbe_sectors": "a modulo the integral period lattice; the discrete large-gauge identification is not contracted by the local BV complex",
+    "compact_support_betti_Hc0_to_Hc4": [
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    "compact_support_obstruction": "Omega_c^4/d Omega_c^3=H_c^4=R, detected by integration over M",
+    "compact_top_form_generator": "f(t) dt wedge vol_S3 with integral_R f dt=1",
+    "cosmological_mode": "d lambda_HT=0 leaves one constant H0 mode before the metric equation selects lambda_HT=0 on the frozen backgrounds",
+    "derivation": "H*(R x S3)=H*(S3); H_c^k(R x S3)=H^(k-1)(S3)",
+    "harmonic_three_form_generator": "vol_S3",
+    "manifold": "R_t x S3",
+    "no_local_Poincare_promotion": true,
+    "ordinary_de_Rham_betti_H0_to_H4": [
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    "real_three_form_sectors": "a in R",
+    "small_gauge": "A_3 -> A_3+d epsilon_2 leaves a(t) unchanged",
+    "small_gauge_invariant_flux": "a(t)=integral_S3 A_3"
+  },
+  "linearized_topological_block": {
+    "Hessian": {
+      "column_count": 3,
+      "entries": [
+        {
+          "coefficient": "2",
+          "column": 2,
+          "row": 0
+        },
+        {
+          "coefficient": "D",
+          "column": 2,
+          "row": 1
+        },
+        {
+          "coefficient": "2",
+          "column": 0,
+          "row": 2
+        },
+        {
+          "coefficient": "-D",
+          "column": 1,
+          "row": 2
+        }
+      ],
+      "row_count": 3,
+      "sha256": "5c82745d07255b0ce9e7175f0a35d501093bfddfaf12932440d476269bfbe339"
+    },
+    "arbitrary_compact_support_status": "every compactly supported u with zero spacetime integral has a compactly supported a primitive; nonzero integral changes the one-sided asymptotic flux and represents H_c^4",
+    "complete_Green_inverse_exists": false,
+    "field_equations": [
+      "2 lambda_HT=0",
+      "D lambda_HT=0",
+      "2u-Da=0"
+    ],
+    "flux_multiplier_pairing": {
+      "D_flux_translation_vector_normalized": [
+        "1",
+        "0"
+      ],
+      "Hamiltonian": "H_D=V_S3 lambda_HT",
+      "Lee_Wald_matrix": {
+        "column_count": 2,
+        "entries": [
+          {
+            "coefficient": "1",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "-1",
+            "column": 0,
+            "row": 1
+          }
+        ],
+        "row_count": 2,
+        "sha256": "26492f9ba3289c3c0ced10ee48021161c3138ae0733fee878ee06b0c76c0333a"
+      },
+      "determinant": "1",
+      "fixed_lambda_zero_tangent": "the pairing restricts to zero only after imposing the lambda_HT=0 superselection tangent",
+      "i_D_Omega": [
+        "0",
+        "1"
+      ],
+      "ordered_basis": [
+        "a",
+        "lambda_HT"
+      ],
+      "rank": 2
+    },
+    "formal_adjoint_rule": "D^sharp=-D",
+    "formal_self_adjoint": true,
+    "generic_rank_over_Q(D)": 2,
+    "ordered_fields": [
+      "u",
+      "a=integral_S3(delta A_3)",
+      "lambda_HT"
+    ],
+    "polynomial_kernel": {
+      "identity": "H_B(D)(D/2,1,0)^T=0",
+      "interpretation": "u=(D/2)a with arbitrary flux history a",
+      "vector": [
+        "D/2",
+        "1",
+        "0"
+      ]
+    },
+    "quadratic_density": "lambda_HT(2u-Da)",
+    "reason": "the polynomial kernel is infinite-dimensional before the harmonic zero-frequency class is considered",
+    "zero_frequency": {
+      "interpretation": "harmonic S3 three-form flux",
+      "kernel": [
+        "0",
+        "1",
+        "0"
+      ],
+      "matrix": {
+        "column_count": 3,
+        "entries": [
+          {
+            "coefficient": "2",
+            "column": 2,
+            "row": 0
+          },
+          {
+            "coefficient": "2",
+            "column": 0,
+            "row": 2
+          }
+        ],
+        "row_count": 3,
+        "sha256": "f42d4006aaf0b893a2672b5a6c5246c32e97a548fbc162ef39c266164ed55be2"
+      },
+      "rank": 2
+    }
+  },
+  "next_gate": "Run the common Candidate-A/Candidate-B comparison; both declared minimal repairs are obstructed, so test the fail-closed NEITHER verdict without constructing a hybrid.",
+  "result_id": "COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1",
+  "result_state": "OBSTRUCTED",
+  "schema": "pure-weyl-compensator-candidate-b-unimodular-threeform-obstruction-v1",
+  "seven_gate_disposition": [
+    {
+      "gate": 1,
+      "name": "action_derived_BV_CME",
+      "reason": "the reducible abelian three-form tower has its full cotangent and nonminimal inventory",
+      "status": "PASS_AT_FORMAL_LOCAL_LEVEL"
+    },
+    {
+      "gate": 2,
+      "name": "compact_support_u_elimination",
+      "reason": "u=(D/2)a is an arbitrary polynomial-kernel family; H_c^4 leaves an additional integrated class",
+      "status": "FAIL"
+    },
+    {
+      "gate": 3,
+      "name": "complete_support_local_causal_parent",
+      "reason": "the frozen background is off shell and the HT Hessian has a nonzero Q(D) kernel",
+      "status": "FAIL"
+    },
+    {
+      "gate": 4,
+      "name": "cyclicity_and_reduced_pairing",
+      "reason": "the flux/multiplier current is exact and nondegenerate before the frozen-branch restriction",
+      "status": "PASS_WITH_UNCONTROLLED_GLOBAL_PAIR"
+    },
+    {
+      "gate": 5,
+      "name": "no_negative_or_uncontrolled_topological_direction",
+      "reason": "arbitrary flux histories are null on the lambda_HT=0 solution tangent and are not generated by the small reducible gauge tower",
+      "status": "FAIL"
+    },
+    {
+      "gate": 6,
+      "name": "zero_charge_D_sector",
+      "reason": "i_D Omega=V_S3 d lambda_HT; raw D is not a presymplectic null direction on the ambient topological phase space",
+      "status": "FAIL_WITHOUT_SUPERSELECTION"
+    },
+    {
+      "gate": 7,
+      "name": "healthy_Berger_clock_compatibility",
+      "reason": "the required A_3 background has a nonexact raw-D shift in H3(S3)",
+      "status": "FAIL_WITHOUT_NEW_GLOBAL_RECLASSIFICATION"
+    }
+  ],
+  "unit_cylinder_background_obstruction": {
+    "background": {
+      "A_3_bar": "t vol_S3",
+      "R": "6",
+      "Ricci_orthonormal": [
+        "0",
+        "2",
+        "2",
+        "2"
+      ],
+      "lambda_HT_bar": "undetermined_before_metric_equation",
+      "metric": "g_hat_bar=-dt^2+dOmega_3^2",
+      "theta_bar": "constant"
+    },
+    "invariant_identity": "E_TF=(M_P^2/2)[Ric-(R/4)g]",
+    "metric_Euler_orthonormal": [
+      "lambda_HT/2 + 1/8",
+      "1/24 - lambda_HT/2",
+      "1/24 - lambda_HT/2",
+      "1/24 - lambda_HT/2"
+    ],
+    "multiplier_independence": true,
+    "reason": "lambda_HT and V0 multiply g_ab and cannot cancel the nonzero trace-free Ricci tensor of the non-Einstein cylinder",
+    "simultaneous_equations_have_solution": false,
+    "tracefree_Euler_matrix": {
+      "column_count": 4,
+      "entries": [
+        {
+          "coefficient": "1/8",
+          "column": 0,
+          "row": 0
+        },
+        {
+          "coefficient": "1/24",
+          "column": 1,
+          "row": 1
+        },
+        {
+          "coefficient": "1/24",
+          "column": 2,
+          "row": 2
+        },
+        {
+          "coefficient": "1/24",
+          "column": 3,
+          "row": 3
+        }
+      ],
+      "row_count": 4,
+      "sha256": "1ac0af3ab8a48affa96cdbffe8510bc05fab30da8ef5f92329b67a11a8fd4dba"
+    },
+    "tracefree_Euler_orthonormal": [
+      "1/8",
+      "1/24",
+      "1/24",
+      "1/24"
+    ]
+  }
+}

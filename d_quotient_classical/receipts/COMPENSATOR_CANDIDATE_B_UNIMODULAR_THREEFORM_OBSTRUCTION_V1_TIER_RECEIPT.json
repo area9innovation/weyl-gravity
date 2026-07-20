@@ -1,0 +1,148 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/candidate_b_unimodular_threeform_obstruction.py",
+      "sha256": "3060d664dd7810196786ca3b13d1efbc8cb76c047cd7fc386e579ab319e2043d"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_candidate_b_unimodular_threeform_obstruction.py",
+      "sha256": "21ca138c3559f7521c90e60c6c70b7755f253dfde66867bdfeeecf6bbd5f1475"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_candidate_b_unimodular_threeform_obstruction.py",
+      "sha256": "13147972644b056a0afc0e1e77f0ffd66257a6fc87067ec33eebe42df41cdec7"
+    },
+    {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1.json",
+      "sha256": "e8a8aeb97398c3b8812b20118daa56850e32a516bf4e9db15c00b99cec7a8faa"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-candidate-b-unimodular-threeform-obstruction-v1.schema.json",
+      "sha256": "3efc285c4e70ccf85c2a7e9c19aaeaab25064d03dca46e65765d4c7d3ef66fc4"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-candidate-b-unimodular-threeform-obstruction-v1.md",
+      "sha256": "aa5fc7b3545d032972807eb4d79f372df011dde855724f94993e2edbca2f9dd8"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "ba29210d0ab895dc1c03448a73797c8f1f6ac9bd57ccb54f025fdb0e6bcef5dd"
+    },
+    {
+      "path": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
+      "sha256": "a7d1826b59bcab8f6dc7e8617544f7089200f0800aa63131a65e1ff10af01327"
+    },
+    {
+      "path": "d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+      "sha256": "6eb73a9f46c8ea1d8c278aba776ccae3fe24bd587a4ba76df15f81c2d5ee41a5"
+    },
+    {
+      "path": "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+      "sha256": "3e0728cc9aed23a0fc69d323c0efeb5e46bd78aaef452597584fd04c98715728"
+    },
+    {
+      "path": "notes/d-quotient-classical-team-brief.md",
+      "sha256": "77c4fe1d5921018df1e935cb1b06bce8906a4f839d1059f433c727bcc91fa8c7"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <Candidate-B producer, independent verifier, mutation tests, and affected atlas Python paths>",
+        "elapsed_seconds": 0.08,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <Candidate-B schema and certificate>",
+        "elapsed_seconds": 0.06,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit Candidate-B certificate, atlas and classical-brief paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/candidate_b_unimodular_threeform_obstruction.py --check",
+        "elapsed_seconds": 0.6,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_candidate_b_unimodular_threeform_obstruction.py",
+        "elapsed_seconds": 0.49,
+        "status": "PASS",
+        "independent_rail": "does not import the producer; reconstructs the frozen-cylinder trace-free Euler residual, HT polynomial kernel, de Rham and compact-support topology, Lee-Wald D contraction and Berger H3 obstruction"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_candidate_b_unimodular_threeform_obstruction -v",
+        "elapsed_seconds": 0.76,
+        "status": "PASS",
+        "tests": 9,
+        "mutation_controls": "on-shell promotion, trace-free residual deletion, kernel sign, Hc4 deletion, H3 small-gauge promotion, causal-parent promotion and Hadamard promotion are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-candidate-b-unimodular-threeform-obstruction-v1.schema.json -d d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1.json",
+        "elapsed_seconds": 1.41,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "elapsed_seconds": 0.18,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.17,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "elapsed_seconds": 0.18,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment -v",
+        "elapsed_seconds": 0.05,
+        "status": "PASS",
+        "tests": 23
+      },
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 4.66,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift, corpus baseline growth from 976 to 1279 certificates, and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ],
+    "reason": "The new terminal Candidate-B obstruction adds a fail-closed classical atlas row, so the exact affected atlas chain and advisory evidence audit were replayed."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped terminal Candidate-B obstruction, not a release, freeze, tag or change to shared core algebra. The exact producer, independent reconstruction, nine mutations, strict schema and affected atlas chain are the proportionate falsification rail."
+  },
+  "claim_boundary": "The receipt certifies the declared Candidate-B obstruction on the frozen unit vacuum cylinder and the exact global three-form/compact-support topology on R x S3. It does not certify an active-clock retuning, fixed-flux superselection theory, enlarged global gauge quotient, Hadamard state, anomaly cancellation, QME, particle space, scattering or unitarity.",
+  "higher_tiers_not_run": [
+    {
+      "tier": 3,
+      "criterion": "No paper theorem freeze, release, tag, shared-core algebra change or explicit full-suite request occurred."
+    }
+  ]
+}

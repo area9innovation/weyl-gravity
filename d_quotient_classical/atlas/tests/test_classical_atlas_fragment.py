@@ -127,6 +127,29 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertIn("Candidate A is therefore OBSTRUCTED", entry["claim_boundary"])
         self.assertIn("Hadamard/Feynman state", entry["claim_boundary"])
 
+    def test_unimodular_threeform_candidate_b_is_globally_obstructed(self) -> None:
+        entry = self.entries[
+            "classical.complex_compensator.vacuum_cylinder."
+            "unimodular_threeform_candidate_b"
+        ]
+        self.assertEqual(entry["descriptions"]["causal"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "NOT_APPLICABLE")
+        self.assertEqual(
+            entry["descriptions"]["observational"], "NO_CERTIFIED_MAP"
+        )
+        self.assertEqual(entry["descriptions"]["quantum"], "OPEN")
+        self.assertIn("not a particle carrier", entry["scope"]["carrier"])
+        self.assertIn(
+            "COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("kernel (D/2,1,0)", entry["claim_boundary"])
+        self.assertIn("H3(S3)=R", entry["claim_boundary"])
+        self.assertIn("Hc4(R x S3)=R", entry["claim_boundary"])
+        self.assertIn("Candidate B is therefore OBSTRUCTED", entry["claim_boundary"])
+        self.assertIn("No Hadamard", entry["claim_boundary"])
+
     def test_sharp_green_transfer_crosswalk_has_no_mode_identification(self) -> None:
         theorem_id = "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1"
         for chirality in ("plus", "minus"):

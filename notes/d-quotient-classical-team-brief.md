@@ -3258,6 +3258,55 @@ equations with four explicit nonzero rational residuals.  Candidate A now
 enters the common A/B comparison as `OBSTRUCTED`; Candidate B is the next
 classical gate.
 
+### Candidate-B unimodular/three-form obstruction (2026-07-20)
+
+`COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1` derives the
+reducible \(A_3,C_2,C_1,C_0\) BV tower and then closes Candidate B
+negatively on two independent exact tests.
+
+First, on the frozen unit-cylinder convention with \(\alpha_R=0\) and
+constant phase, the HT multiplier changes only the metric-proportional Euler
+row.  The trace-free row remains
+
+\[
+E_{\mu\nu}^{\rm TF}
+=\frac{M_P^2}{2}
+\left(\operatorname{Ric}_{\mu\nu}-\frac14R g_{\mu\nu}\right)
+=\operatorname{diag}\left(\frac18,\frac1{24},\frac1{24},\frac1{24}\right).
+\]
+
+No value of \(\lambda_{\rm HT}\) makes the non-Einstein cylinder stationary.
+
+Second, independently of that background failure, the homogeneous HT block
+has
+
+\[
+L_{\rm HT}^{(2)}=\lambda_{\rm HT}(2u-\dot a),\qquad
+H_B(D)=
+\begin{pmatrix}
+0&0&2\\
+0&0&D\\
+2&-D&0
+\end{pmatrix}
+\]
+
+and the exact polynomial kernel \((D/2,1,0)^T\).  The dressed trace is
+therefore re-encoded as arbitrary harmonic-three-form flux history rather
+than contracted.  The global ledger retains
+\(H^3(\mathbb R\times S^3)=\mathbb R\) and
+\(H_c^4(\mathbb R\times S^3)=\mathbb R\), with Lee--Wald pair
+\(\Omega_{\rm top}=\delta a\wedge\delta\lambda_{\rm HT}\) and raw-\(D\)
+Hamiltonian \(H_D=V_{S^3}\lambda_{\rm HT}\).
+
+On the frozen Berger clock, \(\bar\lambda_{\rm HT}=0\) but the volume
+constraint requires \(\bar A_3=t\,\mathrm{vol}_{\rm Berger}\).  Hence
+\(\mathcal L_D\bar A_3=\mathrm{vol}_{\rm Berger}\), a nonzero
+\(H^3(S^3)\) class that cannot be removed by the small two-form gauge
+parameter.  Candidate B is `OBSTRUCTED` unless one changes the background,
+enlarges the global gauge group, or declares a fixed flux/cosmological
+superselection theory.  The common A/B comparison should therefore test the
+fail-closed `NEITHER` verdict; it must not construct a silent hybrid.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

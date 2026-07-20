@@ -1,0 +1,678 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/compensator-candidate-b-unimodular-threeform-obstruction-v1.schema.json",
+  "title": "Candidate B unimodular three-form obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "dependencies",
+    "domain",
+    "action_and_BV",
+    "unit_cylinder_background_obstruction",
+    "linearized_topological_block",
+    "global_topology",
+    "Berger_gate",
+    "seven_gate_disposition",
+    "exact_checks",
+    "claim_flags",
+    "claim_boundary",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-compensator-candidate-b-unimodular-threeform-obstruction-v1"
+    },
+    "result_id": {
+      "const": "COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1"
+    },
+    "result_state": {
+      "const": "OBSTRUCTED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_preflight",
+        "strict_tau_obstruction",
+        "positive_Berger_clock"
+      ],
+      "properties": {
+        "action_preflight": {
+          "$ref": "#/$defs/dependency"
+        },
+        "strict_tau_obstruction": {
+          "$ref": "#/$defs/dependency"
+        },
+        "positive_Berger_clock": {
+          "$ref": "#/$defs/dependency"
+        }
+      }
+    },
+    "domain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "spacetime_dimension",
+        "signature",
+        "background",
+        "boundaries",
+        "support_domains",
+        "chart"
+      ],
+      "properties": {
+        "spacetime_dimension": {
+          "const": 4
+        },
+        "signature": {
+          "const": "(-,+,+,+)"
+        },
+        "background": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boundaries": {
+          "type": "string",
+          "minLength": 1
+        },
+        "support_domains": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "chart": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "action_and_BV": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifest",
+        "action_sha256",
+        "minimal_field_inventory",
+        "nonminimal_inventory",
+        "minimal_master_action",
+        "intrinsic_rows",
+        "diff_completion",
+        "nilpotency_proof",
+        "CME_proof",
+        "cyclic_pairing",
+        "real_structure",
+        "Weyl_quartet_homotopy"
+      ],
+      "properties": {
+        "manifest": {
+          "type": "object"
+        },
+        "action_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "minimal_field_inventory": {
+          "type": "array",
+          "minItems": 10,
+          "items": {
+            "type": "object"
+          }
+        },
+        "nonminimal_inventory": {
+          "type": "array",
+          "minItems": 12,
+          "items": {
+            "type": "object"
+          }
+        },
+        "minimal_master_action": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "intrinsic_rows": {
+          "type": "object",
+          "minProperties": 10
+        },
+        "diff_completion": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "nilpotency_proof": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "CME_proof": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "cyclic_pairing": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "real_structure": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "Weyl_quartet_homotopy": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "unit_cylinder_background_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "background",
+        "metric_Euler_orthonormal",
+        "tracefree_Euler_orthonormal",
+        "tracefree_Euler_matrix",
+        "invariant_identity",
+        "multiplier_independence",
+        "simultaneous_equations_have_solution",
+        "reason"
+      ],
+      "properties": {
+        "background": {
+          "type": "object"
+        },
+        "metric_Euler_orthonormal": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "string"
+          }
+        },
+        "tracefree_Euler_orthonormal": {
+          "const": [
+            "1/8",
+            "1/24",
+            "1/24",
+            "1/24"
+          ]
+        },
+        "tracefree_Euler_matrix": {
+          "$ref": "#/$defs/matrix"
+        },
+        "invariant_identity": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "multiplier_independence": {
+          "const": true
+        },
+        "simultaneous_equations_have_solution": {
+          "const": false
+        },
+        "reason": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "linearized_topological_block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ordered_fields",
+        "quadratic_density",
+        "Hessian",
+        "formal_adjoint_rule",
+        "formal_self_adjoint",
+        "generic_rank_over_Q(D)",
+        "polynomial_kernel",
+        "zero_frequency",
+        "field_equations",
+        "arbitrary_compact_support_status",
+        "complete_Green_inverse_exists",
+        "reason",
+        "flux_multiplier_pairing"
+      ],
+      "properties": {
+        "ordered_fields": {
+          "const": [
+            "u",
+            "a=integral_S3(delta A_3)",
+            "lambda_HT"
+          ]
+        },
+        "quadratic_density": {
+          "const": "lambda_HT(2u-Da)"
+        },
+        "Hessian": {
+          "$ref": "#/$defs/matrix"
+        },
+        "formal_adjoint_rule": {
+          "const": "D^sharp=-D"
+        },
+        "formal_self_adjoint": {
+          "const": true
+        },
+        "generic_rank_over_Q(D)": {
+          "const": 2
+        },
+        "polynomial_kernel": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "vector",
+            "identity",
+            "interpretation"
+          ],
+          "properties": {
+            "vector": {
+              "const": [
+                "D/2",
+                "1",
+                "0"
+              ]
+            },
+            "identity": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "interpretation": {
+              "$ref": "#/$defs/nonempty"
+            }
+          }
+        },
+        "zero_frequency": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "matrix",
+            "rank",
+            "kernel",
+            "interpretation"
+          ],
+          "properties": {
+            "matrix": {
+              "$ref": "#/$defs/matrix"
+            },
+            "rank": {
+              "const": 2
+            },
+            "kernel": {
+              "const": [
+                "0",
+                "1",
+                "0"
+              ]
+            },
+            "interpretation": {
+              "$ref": "#/$defs/nonempty"
+            }
+          }
+        },
+        "field_equations": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "arbitrary_compact_support_status": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "complete_Green_inverse_exists": {
+          "const": false
+        },
+        "reason": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "flux_multiplier_pairing": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "ordered_basis",
+            "Lee_Wald_matrix",
+            "rank",
+            "determinant",
+            "D_flux_translation_vector_normalized",
+            "i_D_Omega",
+            "Hamiltonian",
+            "fixed_lambda_zero_tangent"
+          ],
+          "properties": {
+            "ordered_basis": {
+              "const": [
+                "a",
+                "lambda_HT"
+              ]
+            },
+            "Lee_Wald_matrix": {
+              "$ref": "#/$defs/matrix"
+            },
+            "rank": {
+              "const": 2
+            },
+            "determinant": {
+              "const": "1"
+            },
+            "D_flux_translation_vector_normalized": {
+              "const": [
+                "1",
+                "0"
+              ]
+            },
+            "i_D_Omega": {
+              "const": [
+                "0",
+                "1"
+              ]
+            },
+            "Hamiltonian": {
+              "const": "H_D=V_S3 lambda_HT"
+            },
+            "fixed_lambda_zero_tangent": {
+              "$ref": "#/$defs/nonempty"
+            }
+          }
+        }
+      }
+    },
+    "global_topology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifold",
+        "ordinary_de_Rham_betti_H0_to_H4",
+        "compact_support_betti_Hc0_to_Hc4",
+        "derivation",
+        "harmonic_three_form_generator",
+        "compact_top_form_generator",
+        "small_gauge_invariant_flux",
+        "small_gauge",
+        "real_three_form_sectors",
+        "compact_U1_two_gerbe_sectors",
+        "cosmological_mode",
+        "compact_support_obstruction",
+        "no_local_Poincare_promotion"
+      ],
+      "properties": {
+        "manifold": {
+          "const": "R_t x S3"
+        },
+        "ordinary_de_Rham_betti_H0_to_H4": {
+          "const": [
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "compact_support_betti_Hc0_to_Hc4": {
+          "const": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "derivation": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "harmonic_three_form_generator": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "compact_top_form_generator": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "small_gauge_invariant_flux": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "small_gauge": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "real_three_form_sectors": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "compact_U1_two_gerbe_sectors": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "cosmological_mode": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "compact_support_obstruction": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "no_local_Poincare_promotion": {
+          "const": true
+        }
+      }
+    },
+    "Berger_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixture",
+        "base_metric_and_clock_equations",
+        "HT_metric_equation",
+        "volume_constraint_solution",
+        "normalized_spatial_volume_coefficient",
+        "raw_D_action",
+        "cohomology_class",
+        "small_gauge_compensator_exists",
+        "helical_reclassification",
+        "ambient_D_charge",
+        "zero_on_background_but_not_differentially_zero",
+        "compatibility_status"
+      ],
+      "properties": {
+        "fixture": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "base_metric_and_clock_equations": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "HT_metric_equation": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "volume_constraint_solution": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "normalized_spatial_volume_coefficient": {
+          "const": "3*sqrt(10)/20"
+        },
+        "raw_D_action": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "cohomology_class": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "small_gauge_compensator_exists": {
+          "const": false
+        },
+        "helical_reclassification": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "ambient_D_charge": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "zero_on_background_but_not_differentially_zero": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "compatibility_status": {
+          "const": "FAIL_WITHOUT_NEW_GLOBAL_SUPERSELECTION_OR_GAUGE"
+        }
+      }
+    },
+    "seven_gate_disposition": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "gate",
+          "name",
+          "status",
+          "reason"
+        ],
+        "properties": {
+          "gate": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7
+          },
+          "name": {
+            "$ref": "#/$defs/nonempty"
+          },
+          "status": {
+            "$ref": "#/$defs/nonempty"
+          },
+          "reason": {
+            "$ref": "#/$defs/nonempty"
+          }
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "CANDIDATE_B_ACTION_DEFINED",
+        "CANDIDATE_B_FULL_CAUSAL_PARENT",
+        "DRESSED_TRACE_CONTRACTED",
+        "GLOBAL_FLUX_CONTROLLED_WITHOUT_EXTRA_DATA",
+        "UNIT_CYLINDER_BACKGROUND_ON_SHELL",
+        "BERGER_RAW_D_PRESERVED",
+        "HADAMARD_STATE",
+        "ANOMALY_OR_QME",
+        "PARTICLE_SCATTERING_UNITARITY"
+      ],
+      "properties": {
+        "CANDIDATE_B_ACTION_DEFINED": {
+          "const": true
+        },
+        "CANDIDATE_B_FULL_CAUSAL_PARENT": {
+          "const": false
+        },
+        "DRESSED_TRACE_CONTRACTED": {
+          "const": false
+        },
+        "GLOBAL_FLUX_CONTROLLED_WITHOUT_EXTRA_DATA": {
+          "const": false
+        },
+        "UNIT_CYLINDER_BACKGROUND_ON_SHELL": {
+          "const": false
+        },
+        "BERGER_RAW_D_PRESERVED": {
+          "const": false
+        },
+        "HADAMARD_STATE": {
+          "const": false
+        },
+        "ANOMALY_OR_QME": {
+          "const": false
+        },
+        "PARTICLE_SCATTERING_UNITARITY": {
+          "const": false
+        }
+      }
+    },
+    "claim_boundary": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "next_gate": {
+      "$ref": "#/$defs/nonempty"
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "source_commit",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "result_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "source_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row_count",
+        "column_count",
+        "entries",
+        "sha256"
+      ],
+      "properties": {
+        "row_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "column_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "row",
+              "column",
+              "coefficient"
+            ],
+            "properties": {
+              "row": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "column": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "coefficient": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  }
+}
