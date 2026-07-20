@@ -42,10 +42,17 @@ class Candidate1720MovingSquareContractionTests(unittest.TestCase):
             self.payload["classification"]["opposite_sign_interior_zero_obstruction_certified"]
         )
 
-    def test_zero_alpha_boundary_is_not_silently_merged(self) -> None:
-        self.assertIn("preventing continuity", self.payload["moving_square_ansatz"]["zero_alpha_boundary"])
+    def test_zero_alpha_boundary_has_two_stage_contraction(self) -> None:
+        self.assertIn(
+            "first keep s=1",
+            self.payload["moving_square_ansatz"]["zero_alpha_two_stage_contraction"],
+        )
         self.assertTrue(
-            self.payload["classification"]["zero_alpha_nonphase_real_continuity_obstruction_certified"]
+            self.payload["classification"]["zero_alpha_complete_stratum_contracts_to_hub"]
+        )
+        self.assertIn(
+            "coefficient-zero square pre-rotation",
+            self.payload["complete_ansatz_disposition"]["alpha_zero"],
         )
         self.assertTrue(
             self.payload["classification"]["square_factor_vertex_off_balance_contracts_to_hub"]

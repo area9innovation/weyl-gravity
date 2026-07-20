@@ -48,17 +48,23 @@ s_0 = -delta/(alpha-delta),
 ```
 
 while the scaled kernel moment remains nonzero when `mu_0` is nonzero.  No
-motion of the square direction can repair that zero.  At `alpha=0`,
-`delta!=0`, a nonvertex non-phase-real starting direction instead has an
-endpoint-continuity obstruction.
+motion of the square direction can repair that zero.
+
+At `alpha=0`, however, the initial square coefficient and the complete
+kernel moment both vanish.  Keep the occupations and kernel factor fixed
+while moving the coefficient-zero square direction continuously to a
+phase-real direction.  Then perform the uniform contraction with zero square
+moment.  This two-stage path contracts the complete `alpha=0` stratum.  The
+earlier endpoint-continuity claim omitted the admissible first segment and
+is withdrawn.
 
 ## Candidatewise consequence
 
-- Candidate 17 has `delta<0`.  Its complete `alpha<0` singular stratum
+- Candidate 17 has `delta<0`.  Its complete `alpha<=0` singular stratum
   contracts; the `alpha>0`, non-phase-real stratum hits the coefficient-zero
   obstruction.
 - Candidate 20 remains complete on `delta=0`.  Off balance, the full
-  `alpha*delta>0` stratum contracts.
+  `alpha*delta>0` and `alpha=0` strata contract.
 - Phase-real directions and square vertices retain the earlier contraction.
 
 ## Boundary

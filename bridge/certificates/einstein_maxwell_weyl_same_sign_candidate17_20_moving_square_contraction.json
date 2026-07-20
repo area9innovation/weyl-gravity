@@ -1,8 +1,8 @@
 {
   "candidate_disposition": {
-    "candidate17": "delta<0 everywhere; the complete alpha<0 stratum contracts, while alpha>0 with mu_0 nonzero meets the interior coefficient-zero obstruction and alpha=0 has the declared boundary obstruction",
+    "candidate17": "delta<0 everywhere; the complete alpha<=0 stratum contracts, while alpha>0 with mu_0 nonzero meets the interior coefficient-zero obstruction",
     "candidate20_balance": "the complete singular union remains connected by the earlier theorem",
-    "candidate20_off_balance": "the alpha*delta>0 stratum contracts; the opposite-sign and zero-alpha non-phase-real strata are obstructed only within the declared ansatz"
+    "candidate20_off_balance": "the alpha*delta>0 and alpha=0 strata contract; the opposite-sign non-phase-real stratum is obstructed only within the declared ansatz"
   },
   "cartan_square_moment_ball": {
     "cartan_model": "S(z)=z*z^T-(z^T*z/3)I",
@@ -31,12 +31,12 @@
     "opposite_sign_interior_zero_obstruction_certified": true,
     "square_factor_vertex_off_balance_contracts_to_hub": true,
     "uniform_kernel_scaling_moving_square_ansatz_classified": true,
-    "zero_alpha_nonphase_real_continuity_obstruction_certified": true
+    "zero_alpha_complete_stratum_contracts_to_hub": true
   },
   "complete_ansatz_disposition": {
     "alpha_delta_negative_with_mu_nonzero": "OBSTRUCTED within this ansatz at the unique interior zero of c(s)",
     "alpha_delta_positive": "all points contract by the moving-square path because the required normalized moment scale stays in [0,1]",
-    "alpha_zero_delta_nonzero_nonvertex_mu_nonzero": "OBSTRUCTED within this ansatz by endpoint discontinuity",
+    "alpha_zero": "all points contract by a coefficient-zero square pre-rotation followed by the phase-real uniform contraction",
     "delta_zero": "all points contract by the previously certified fixed-direction balance theorem",
     "mu_zero_or_square_vertex": "all points contract through a phase-real square direction",
     "outside_ansatz": "nonuniform node scaling, deformation of the K factor beyond scalar multiplication, and general nonradial paths remain OPEN"
@@ -46,7 +46,7 @@
     "REDUCED-MODE"
   ],
   "generality_level": "G3_COMPLETE_UNIFORM_SCALING_MOVING_SQUARE_ANSATZ_ON_BOTH_SINGULAR_COMPONENTS",
-  "interpretation": "The fixed-direction residual is partly removable: the Cartan-square moment can move through a complete ball and cancels the scaled kernel moment whenever alpha and delta have the same sign. The complementary sign crossing is a genuine zero-coefficient obstruction to the entire uniform-scaling/moving-square ansatz, but not to paths that deform the K factor or scale its two nodes nonuniformly.",
+  "interpretation": "The fixed-direction residual is partly removable: the Cartan-square moment can move through a complete ball and cancels the scaled kernel moment whenever alpha and delta have the same sign. The alpha=0 boundary also contracts after a coefficient-zero pre-rotation; the former endpoint-continuity claim omitted this admissible first segment and is withdrawn. The remaining opposite-sign crossing is a genuine zero-coefficient obstruction to the entire repaired uniform-scaling/moving-square ansatz, but not to paths that deform the K factor or scale its two nodes nonuniformly.",
   "lifecycle_state": "CLASSIFIED",
   "moving_square_ansatz": {
     "endpoint": "at s=0 the K factor is at its vertex and the square direction is phase-real, so the endpoint lies in the connected double-singular hub",
@@ -60,12 +60,12 @@
     "sign_compatible_case": "if alpha*delta>0 then c(s) never vanishes and r(s) lies in [0,1], with r(0)=0 and r(1)=1",
     "square_coefficient": "c(s)=s*alpha+(1-s)*delta",
     "total_coefficient": "delta=omega_plus*N_plus-omega_minus*N_minus",
-    "zero_alpha_boundary": "if alpha=0, delta is nonzero, the square factor is nonvertex and mu_0 is nonzero, then every s<1 forces mu_square(s)=0, preventing continuity to mu_0 at s=1"
+    "zero_alpha_two_stage_contraction": "if alpha=0 then initial rotation zero gives M_K=0; first keep s=1 and move the coefficient-zero square direction continuously to a phase-real direction, then uniformly scale the K factor with mu_square=0"
   },
   "next_gate": "on the remaining alpha*delta<=0 non-phase-real strata, allow independent K-node scaling and deformation inside T3(f,g)=0, or construct an invariant that survives those enlarged paths",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.py",
-    "generator_sha256": "dd89f26f4be8ada21da528a236da7c63fbef49000edfc60f8916f58113375529",
+    "generator_sha256": "8e3becf3b672b46273af979e1132fd196b64ddfa934bd494ff67343800ed3bdb",
     "inputs": {
       "common_square": {
         "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.json",
@@ -82,10 +82,10 @@
     }
   },
   "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_MOVING_SQUARE_CONTRACTION",
-  "result_state": "UNIFORM_KERNEL_SCALING_WITH_ARBITRARY_MOVING_SQUARE_DIRECTION_CLASSIFIED",
+  "result_state": "UNIFORM_KERNEL_SCALING_WITH_ARBITRARY_MOVING_SQUARE_DIRECTION_CLASSIFIED_AFTER_ZERO_ALPHA_REPAIR",
   "schema": "einstein-maxwell-weyl-same-sign-candidate17-20-moving-square-contraction-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.schema.json",
-  "schema_sha256": "fd76b2c045ce0e7bc91301dfc34c5520c19159ed9095188ee2307ca46e31e96a",
+  "schema_sha256": "cd081acc05c1af5c6fba5e7f0617db71cab9ae83353f1cb819df74f914fde215",
   "scope": {
     "background": "candidates 17 and 20 separately; candidate 20 balance, candidatewise off-balance sign-compatible strata and the complementary ansatz obstruction are retained separately",
     "boundaries": "closed S1_L times S2 before node-phase, lifted-rotation or final residual quotient",

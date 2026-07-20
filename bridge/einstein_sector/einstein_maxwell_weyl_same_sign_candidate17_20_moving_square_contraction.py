@@ -75,7 +75,7 @@ def moving_square_identity() -> dict[str, object]:
         "sign_compatible_case": "if alpha*delta>0 then c(s) never vanishes and r(s) lies in [0,1], with r(0)=0 and r(1)=1",
         "endpoint": "at s=0 the K factor is at its vertex and the square direction is phase-real, so the endpoint lies in the connected double-singular hub",
         "opposite_sign_zero": "if alpha*delta<0 then s_0=-delta/(alpha-delta) lies in (0,1), c(s_0)=0, and the remaining kernel moment -s_0*alpha*mu_0 is nonzero when mu_0 is nonzero",
-        "zero_alpha_boundary": "if alpha=0, delta is nonzero, the square factor is nonvertex and mu_0 is nonzero, then every s<1 forces mu_square(s)=0, preventing continuity to mu_0 at s=1",
+        "zero_alpha_two_stage_contraction": "if alpha=0 then initial rotation zero gives M_K=0; first keep s=1 and move the coefficient-zero square direction continuously to a phase-real direction, then uniformly scale the K factor with mu_square=0",
     }
 
 
@@ -103,7 +103,7 @@ def build() -> dict[str, object]:
         "schema_path": str(SCHEMA.relative_to(ROOT)),
         "schema_sha256": sha(SCHEMA),
         "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_MOVING_SQUARE_CONTRACTION",
-        "result_state": "UNIFORM_KERNEL_SCALING_WITH_ARBITRARY_MOVING_SQUARE_DIRECTION_CLASSIFIED",
+        "result_state": "UNIFORM_KERNEL_SCALING_WITH_ARBITRARY_MOVING_SQUARE_DIRECTION_CLASSIFIED_AFTER_ZERO_ALPHA_REPAIR",
         "lifecycle_state": "CLASSIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "generality_level": "G3_COMPLETE_UNIFORM_SCALING_MOVING_SQUARE_ANSATZ_ON_BOTH_SINGULAR_COMPONENTS",
@@ -119,13 +119,13 @@ def build() -> dict[str, object]:
             "mu_zero_or_square_vertex": "all points contract through a phase-real square direction",
             "alpha_delta_positive": "all points contract by the moving-square path because the required normalized moment scale stays in [0,1]",
             "alpha_delta_negative_with_mu_nonzero": "OBSTRUCTED within this ansatz at the unique interior zero of c(s)",
-            "alpha_zero_delta_nonzero_nonvertex_mu_nonzero": "OBSTRUCTED within this ansatz by endpoint discontinuity",
+            "alpha_zero": "all points contract by a coefficient-zero square pre-rotation followed by the phase-real uniform contraction",
             "outside_ansatz": "nonuniform node scaling, deformation of the K factor beyond scalar multiplication, and general nonradial paths remain OPEN",
         },
         "candidate_disposition": {
-            "candidate17": "delta<0 everywhere; the complete alpha<0 stratum contracts, while alpha>0 with mu_0 nonzero meets the interior coefficient-zero obstruction and alpha=0 has the declared boundary obstruction",
+            "candidate17": "delta<0 everywhere; the complete alpha<=0 stratum contracts, while alpha>0 with mu_0 nonzero meets the interior coefficient-zero obstruction",
             "candidate20_balance": "the complete singular union remains connected by the earlier theorem",
-            "candidate20_off_balance": "the alpha*delta>0 stratum contracts; the opposite-sign and zero-alpha non-phase-real strata are obstructed only within the declared ansatz",
+            "candidate20_off_balance": "the alpha*delta>0 and alpha=0 strata contract; the opposite-sign non-phase-real stratum is obstructed only within the declared ansatz",
         },
         "classification": {
             "normalized_cartan_square_moment_image_closed_ball": True,
@@ -135,7 +135,7 @@ def build() -> dict[str, object]:
             "candidate20_off_balance_alpha_same_sign_delta_stratum_contracts_to_hub": True,
             "square_factor_vertex_off_balance_contracts_to_hub": True,
             "opposite_sign_interior_zero_obstruction_certified": True,
-            "zero_alpha_nonphase_real_continuity_obstruction_certified": True,
+            "zero_alpha_complete_stratum_contracts_to_hub": True,
             "candidate17_complete_singular_rotation_zero_fibre_connected": False,
             "candidate20_off_balance_complete_singular_rotation_zero_fibre_connected": False,
             "general_nonradial_no_go": False,
@@ -144,7 +144,7 @@ def build() -> dict[str, object]:
             "final_residual_descent": False,
             "causal_residual_observational_or_quantum_claim": False,
         },
-        "interpretation": "The fixed-direction residual is partly removable: the Cartan-square moment can move through a complete ball and cancels the scaled kernel moment whenever alpha and delta have the same sign. The complementary sign crossing is a genuine zero-coefficient obstruction to the entire uniform-scaling/moving-square ansatz, but not to paths that deform the K factor or scale its two nodes nonuniformly.",
+        "interpretation": "The fixed-direction residual is partly removable: the Cartan-square moment can move through a complete ball and cancels the scaled kernel moment whenever alpha and delta have the same sign. The alpha=0 boundary also contracts after a coefficient-zero pre-rotation; the former endpoint-continuity claim omitted this admissible first segment and is withdrawn. The remaining opposite-sign crossing is a genuine zero-coefficient obstruction to the entire repaired uniform-scaling/moving-square ansatz, but not to paths that deform the K factor or scale its two nodes nonuniformly.",
         "next_gate": "on the remaining alpha*delta<=0 non-phase-real strata, allow independent K-node scaling and deformation inside T3(f,g)=0, or construct an invariant that survives those enlarged paths",
         "claim_boundary": "This completely classifies only the uniform K-factor scaling plus occupation-transfer ansatz with an arbitrary moving common-square direction. It does not establish candidate-17 or candidate-20 off-balance complete-singular connectedness or disconnection, classify nonuniform K-node scaling or general nonradial paths, glue occupations, perform final residual descent, or establish all-orders, causal, observational or quantum claims.",
         "provenance": {

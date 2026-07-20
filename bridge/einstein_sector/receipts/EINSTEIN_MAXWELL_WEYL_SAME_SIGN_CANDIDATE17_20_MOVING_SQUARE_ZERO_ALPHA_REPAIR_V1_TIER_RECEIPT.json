@@ -1,0 +1,60 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_MOVING_SQUARE_ZERO_ALPHA_REPAIR_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Repair the alpha=0 boundary of the uniform-scaling/moving-square contraction theorem by including the admissible coefficient-zero pre-rotation segment.",
+  "supersedes_claim": {
+    "source_commit": "4735fe29258e5186eb579ce090fc01b00f2d8b38",
+    "certificate_sha256": "37af3e92e12eee184f35d08cd948e82d3e7428952e9be643f0781f36c475fe40",
+    "withdrawn_statement": "A nonvertex non-phase-real alpha=0 point has an endpoint-continuity obstruction within the declared moving-square ansatz."
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json": "f1458873fe0edaa9ba727ecf6fc0020b544328f8a7d55b0925d28626c198e037",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.py": "8e3becf3b672b46273af979e1132fd196b64ddfa934bd494ff67343800ed3bdb",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.schema.json": "cd081acc05c1af5c6fba5e7f0617db71cab9ae83353f1cb819df74f914fde215",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.py": "9004ade6f4c787009e994e190dbe942e5a6102b2112ce522de8d693f804c7088",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.py": "9caffd7d5c8ef6154f04cb64124f01885236405346c7ce4d5285f3d63398465f",
+    "bridge/reports/einstein-maxwell-weyl-same-sign-candidate17-20-moving-square-contraction.md": "5c7a2f5fcc285be23e71bd7062492a7dc9c88c804b0cc7cb3bc129a5fb133f4c"
+  },
+  "repair_theorem": {
+    "initial_identity": "alpha=0 and initial rotation zero imply M_K=0, while the square coefficient is also zero.",
+    "segment_one": "Keep the kernel factor and occupations fixed and move the square direction continuously through the Cartan moment ball to a phase-real direction; both its coefficient and M_K remain zero.",
+    "segment_two": "Keep the square moment zero and uniformly scale the kernel factor to its vertex; the scaled kernel moment remains zero.",
+    "conclusion": "The complete alpha=0 stratum contracts to the connected double-singular hub. Candidate 17 is positively disposed on alpha<=0; the opposite-sign alpha*delta<0 interior wall remains the complementary obstruction within this ansatz."
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on the repaired producer, independent verifier and focused tests",
+        "python3 -m json.tool on the repaired certificate, schema and this receipt",
+        "git diff --check on the scoped repair paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 8,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier separately requires the repaired alpha=0 contraction flag, the coefficient-zero pre-rotation disposition and the explicit withdrawal of the former endpoint-continuity claim; it retains the independently derived opposite-sign coefficient-wall identity."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "No upstream operator, transvectant variety, moment map or Cartan moment-ball input changed. The repair adds a previously omitted path segment at the already certified coefficient-zero endpoint."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "Complete off-balance connectedness, independent node scaling, kernel-factor deformation, occupation gluing and higher lifecycles remain open."
+    }
+  },
+  "claim_boundary": "The repair certifies the complete alpha=0 stratum only within the fixed-occupation singular carrier and corrects the uniform-scaling/moving-square classification. It does not remove the alpha*delta<0 interior-wall obstruction within that ansatz or establish a general nonradial no-go, complete off-balance connectedness, occupation gluing, final residual, causal, observational, quantum or all-orders claim."
+}
