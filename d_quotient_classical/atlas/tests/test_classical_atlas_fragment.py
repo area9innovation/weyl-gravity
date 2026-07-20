@@ -181,6 +181,34 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertIn("not a universal compensator no-go", entry["claim_boundary"])
         self.assertIn("No Hadamard", entry["claim_boundary"])
 
+    def test_minimal_compensator_action_good_locus_is_empty(self) -> None:
+        entry = self.entries[
+            "classical.complex_compensator.vacuum_cylinder."
+            "minimal_action_good_locus"
+        ]
+        self.assertEqual(entry["descriptions"]["causal"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "NOT_APPLICABLE")
+        self.assertEqual(
+            entry["descriptions"]["observational"], "NO_CERTIFIED_MAP"
+        )
+        self.assertEqual(entry["descriptions"]["quantum"], "OPEN")
+        evidence = {item["result_id"] for item in entry["evidence"]}
+        self.assertIn(
+            "COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1",
+            evidence,
+        )
+        self.assertIn(
+            "COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1",
+            evidence,
+        )
+        self.assertIn("-91791/81920", entry["claim_boundary"])
+        self.assertIn("velocity inertia (1,1)", entry["claim_boundary"])
+        self.assertIn("declared minimal good locus is EMPTY", entry["claim_boundary"])
+        self.assertIn("no Candidate C is selected", entry["claim_boundary"])
+        self.assertIn("not a universal compensator no-go", entry["claim_boundary"])
+        self.assertIn("No Hadamard", entry["claim_boundary"])
+
     def test_sharp_green_transfer_crosswalk_has_no_mode_identification(self) -> None:
         theorem_id = "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1"
         for chirality in ("plus", "minus"):

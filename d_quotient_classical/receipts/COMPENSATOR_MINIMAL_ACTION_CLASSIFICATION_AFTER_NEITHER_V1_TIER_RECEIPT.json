@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/minimal_action_classification_after_neither.py",
+      "sha256": "f5f97c6ab06624d20f06974890f8874ad0bc697cf64797901465ffcca4951190"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_minimal_action_classification_after_neither.py",
+      "sha256": "b26f8e9eed59e538a8712db18e663a0b121922dd8a8077c21d31491285dc578f"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_minimal_action_classification_after_neither.py",
+      "sha256": "865eec725d5f87df70d8e8b3c1ceba1f3199584b407a6a5261a128f012d59294"
+    },
+    {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1.json",
+      "sha256": "41ce6db6ab8fc58f4cc1ecedb205f732fd3dcee645f9408506d3535545f7026a"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-minimal-action-classification-after-neither-v1.schema.json",
+      "sha256": "5f2ae02927826a2018393f1dc92c002023afdd70a948446593106dbff8642a30"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-minimal-action-classification-after-neither-v1.md",
+      "sha256": "486bf1c8b7c5fe1da79945837012207d284fb68acfe04e3fcc59169606a9d027"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "dba188962ed5b4a4e0889ceff786668c1984c3ee8f86cf62518387f39246f55a"
+    },
+    {
+      "path": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
+      "sha256": "e1d4c081b79ec7fd891f5b504988ecf1b7e05a1eccbbbaf2dc9c7ebda10a4c19"
+    },
+    {
+      "path": "d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+      "sha256": "2177bd1741c356dcc6d98f54382d224d4860460c8773164f6f047862b8276429"
+    },
+    {
+      "path": "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+      "sha256": "fa7a49d7f3a61dc3532c098ef6323289c0278ef7c96f2095510639119b0639b2"
+    },
+    {
+      "path": "notes/d-quotient-classical-team-brief.md",
+      "sha256": "463bd651a1013bdd97c17dd3fd32d04dd1cbcd5942656c88636adc6df55e1fd0"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <minimal-action producer, independent verifier, mutation tests, and affected atlas Python paths>",
+        "elapsed_seconds": 0.09,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <minimal-action schema and certificate>",
+        "elapsed_seconds": 0.1,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit minimal-action, atlas, report, receipt and classical-brief paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/minimal_action_classification_after_neither.py --check",
+        "elapsed_seconds": 0.81,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_minimal_action_classification_after_neither.py",
+        "elapsed_seconds": 0.89,
+        "status": "PASS",
+        "independent_rail": "does not import the producer; reconstructs the cylinder and Berger Euler matrices from exact geometry, verifies the determinant/rank and two fixture controls, replays scalar/HT/combined characteristic and minimal polynomials, matrix hashes, topology and empty-locus selection"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_minimal_action_classification_after_neither -v",
+        "elapsed_seconds": 1.77,
+        "status": "PASS",
+        "tests": 11,
+        "mutation_controls": "dependency drift, cylinder and Berger Euler rows, separator rank, scalar inertia, HT zero mode, Hc4, Candidate-C export, hybrid selection and universal/quantum promotion are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-minimal-action-classification-after-neither-v1.schema.json -d d_quotient_classical/certificates/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1.json",
+        "elapsed_seconds": 2.21,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "elapsed_seconds": 0.12,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.12,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "elapsed_seconds": 0.12,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment -v",
+        "elapsed_seconds": 0.04,
+        "status": "PASS",
+        "tests": 25
+      },
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 3.71,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift, corpus baseline growth from 976 to 1284 certificates, and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ],
+    "reason": "The scoped minimal-action no-go adds a fail-closed atlas row and closes every selected-action receiver in this declared family, so the affected atlas chain and advisory evidence audit were replayed."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped coefficient-locus theorem, not a release, freeze, tag or shared-core-algebra change. The exact producer, independent reconstruction, eleven mutations, strict schema and affected atlas chain are the proportionate falsification rail."
+  },
+  "claim_boundary": "The receipt certifies an empty seven-gate locus only in the declared minimal formal-polar action family with four metric and at most two compensator derivatives plus an optional minimal HT sector under the small gauge group. It does not cover higher-derivative phase EFT, multiplier extensions, fixed-flux/global-quotient theories or an independent conformal gauge connection, and it establishes no Candidate C, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result.",
+  "higher_tiers_not_run": [
+    {
+      "tier": 3,
+      "criterion": "No paper theorem freeze, release, tag, shared-core algebra change or explicit full-suite request occurred."
+    }
+  ]
+}

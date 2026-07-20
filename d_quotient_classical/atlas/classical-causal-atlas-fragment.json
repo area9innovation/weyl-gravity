@@ -787,6 +787,75 @@
       }
     },
     {
+      "claim_boundary": "The no-HT stationary equations have exact determinant -91791/81920 on the common unit-cylinder and frozen-Berger fixtures, so only the zero bulk vector remains; it has no phase pairing or causal trace parent. Independently, every nonzero-R^2 cylinder repair has velocity inertia (1,1), real roots +/-sqrt(2), size-two Jordan blocks and a both-sign raw-D Hamiltonian. The optional HT branch retains H3/Hc4, a D=0 kernel, nonconstant ambient raw-D Hamiltonian and the nonexact Berger volume shift. The declared minimal good locus is EMPTY and no Candidate C is selected. This is not a universal compensator no-go: higher-derivative phase EFT, multiplier extensions, fixed-flux/global-quotient and independent-conformal-gauge theories remain outside scope. No Hadamard, anomaly/QME, particle, scattering, positivity or unitarity conclusion follows.",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1.json",
+          "result_id": "COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1",
+          "sha256": "5e253ebe424dd43e308622044d93af72fd6de911b927f354977413957dbb16c4"
+        },
+        {
+          "path": "d_quotient_classical/certificates/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1.json",
+          "result_id": "COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1",
+          "sha256": "41ce6db6ab8fc58f4cc1ecedb205f732fd3dcee645f9408506d3535545f7026a"
+        }
+      ],
+      "id": "classical.complex_compensator.vacuum_cylinder.minimal_action_good_locus",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Without HT the exact cylinder-plus-Berger stationary matrix is invertible and leaves only a dynamically empty coefficient vector; with HT a global D=0 kernel survives.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "The nonzero-R^2 cylinder branch has split Lee-Wald inertia, while the HT branch retains the flux/multiplier pair and uncontrolled global direction.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "No Candidate C, selected action hash, carrier, complex structure, two-point function or observational mode is exported.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No selected action exists for a bounded second-order tangent cone.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "The declared minimal action family has empty causal/physical seven-gate locus.",
+            "status": "OBSTRUCTED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No selected action exists for a smooth-secular tangent cone.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "No coefficient point passes all seven gates, so no action-specific nonlinear receiver is active.",
+          "status": "OBSTRUCTED"
+        }
+      },
+      "scope": {
+        "background": "unit conformal cylinder R_t x S3",
+        "boundaries": "closed compact Cauchy surface S3; no spatial boundary",
+        "carrier": "coefficient-locus comparison of bulk scalar/metric and optional topological carriers; good locus empty, no Candidate C carrier and not a particle carrier",
+        "charge_sector": "unreduced raw-D sector; optional HT branch retains all H3 flux and constant multiplier sectors under the small reducible gauge group",
+        "degree": "all BV degrees inherited from the action preflight and optional reducible A3/C2/C1/C0 cotangent tower",
+        "ell": "all cylinder scalar harmonics; frozen Berger clock at q=9/40",
+        "k": "all local covectors plus compact/global H3 and Hc4 classes",
+        "m": "all",
+        "omega": "raw D=partial_t; scalar auxiliary roots +/-sqrt(2); HT harmonic D=0 mode retained",
+        "parity": "parity-even bulk action; Euler is topological and Pontryagin excluded",
+        "theory": "complete declared minimal formal-polar action family with four metric and at most two compensator derivatives, one R^2 auxiliary presentation and optional minimal HT sector"
+      }
+    },
+    {
       "claim_boundary": "Causality is unary and the cyclic Cartan theorem stops at arity three. The retained-26 homotopy extends to one-sided past/future/time-compact smooth bikernel LF classes with cyclic adjoint control, but the certified factorization has a cutoff-escape continuity obstruction on the full smooth Frechet class. The imported smooth Ward kernel has no one-sided support profile, so no Ward or Hadamard promotion follows. Raw affine D, arity four, Hadamard/QME, and a branch-resolved physical projector remain false.",
       "descriptions": {
         "causal": "CERTIFIED",
@@ -2098,7 +2167,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "7f9580218cb3f3d6db12de2c1b4f09abadf8e2d238e11468ea1cb84937925a54",
+  "generated_by_sha256": "e1d4c081b79ec7fd891f5b504988ecf1b7e05a1eccbbbaf2dc9c7ebda10a4c19",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

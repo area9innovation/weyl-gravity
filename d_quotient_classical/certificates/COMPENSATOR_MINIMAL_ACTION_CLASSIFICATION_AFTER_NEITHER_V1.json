@@ -1,0 +1,711 @@
+{
+  "action_family": {
+    "auxiliary_scalar": "when alpha_R!=0 use chi R-chi^2/(4 alpha_R); this is an invertible algebraic presentation of R^2",
+    "coefficient_basis_mod_topology": [
+      "alpha_B",
+      "alpha_R",
+      "M_P_squared",
+      "Z_theta",
+      "V0"
+    ],
+    "completeness_argument": "Global U(1) makes theta shift invariant and forces the engineering-dimension-four potential to lambda rho^4/4. At two scalar derivatives the radial conformal Laplacian and rho^2(nabla theta)^2 are the two independent polar invariants. In four dimensions the curvature-squared quotient is spanned by C^2,R^2,E4,P4 modulo Box R and algebraic identities.",
+    "declared_scope": "minimal formal rho!=0 polar complex-compensator family: four metric derivatives, at most two compensator derivatives, constant real couplings and global U(1)",
+    "dressed_action": "S_bulk=int vol_g_hat[alpha_B C^2/8+alpha_R R^2+M_P^2 R/2-Z_theta (nabla theta)^2/2-V_0+alpha_E E4]",
+    "horizontal_exact": "Box R",
+    "modulo": [
+      "integration by parts",
+      "four-dimensional curvature identities",
+      "Euler topological density",
+      "nonzero HT coefficient rescaling",
+      "invertible algebraic R^2 auxiliary-field presentation"
+    ],
+    "outside_declared_minimal_class": [
+      "higher-than-two-derivative theta operators",
+      "nonconstant theta-dependent couplings",
+      "a kinetic or nonlinear potential for the topological multiplier",
+      "large/global three-form gauge quotient",
+      "fixed flux or lambda_HT superselection",
+      "an independent conformal gauge connection"
+    ],
+    "parity_odd_excluded": "Pontryagin P4",
+    "three_form_gauge_group": "small reducible A3 -> A3+d epsilon2, epsilon2~epsilon2+d epsilon1, epsilon1~epsilon1+d epsilon0; no global H3 quotient",
+    "topological_density": "alpha_E E4 is retained for provenance and quotiented from local Euler/Hessian tests",
+    "topological_extension": "epsilon_HT int lambda_HT(vol_g_hat-dA3), epsilon_HT in {0,1}; every nonzero coefficient is normalized to one by an invertible multiplier rescaling"
+  },
+  "action_family_sha256": "edd6b520237957bc4fb2ac7d2d3b31d7917d38a1a7de61748faefa1aa91ccf2c",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL theorem classifies the imported minimal formal-polar family with four metric and at most two compensator derivatives, one algebraic R^2 auxiliary presentation and an optional minimal HT sector under the declared small gauge group. Its seven-gate good locus is empty. It does not cover higher-derivative theta EFT operators, multiplier kinetic/potential extensions, fixed-flux sectors, large/global three-form quotients, active-clock retunings or an independent conformal gauge connection. No Candidate C, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result is exported.",
+  "claim_flags": {
+    "CANDIDATE_C_SELECTED": false,
+    "HADAMARD_OR_QUANTUM_RESULT": false,
+    "PARTICLE_SCATTERING_POSITIVITY_UNITARITY": false,
+    "SCOPED_MINIMAL_ACTION_NO_GO": true,
+    "SELECTED_ACTION_RECEIVER": false,
+    "UNIVERSAL_COMPENSATOR_NO_GO": false
+  },
+  "content_hashes": {
+    "action_family_sha256": "edd6b520237957bc4fb2ac7d2d3b31d7917d38a1a7de61748faefa1aa91ccf2c",
+    "classification_sha256": "287172bf30b7aeaf370789f6de8a0e5030f0155fe029bccd30758e18f079836f",
+    "quadratic_global_sha256": "3f2f46ba86e3ee3d5755f3f6306e1760224cbba02ed2df5ff23587a073122dc8",
+    "stationary_system_sha256": "64feb961d90deb0fb2909acfa66b943a80b88a5e70b240a59c9dc9e2dc59d3bf"
+  },
+  "dependencies": {
+    "action_preflight": {
+      "path": "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1.json",
+      "result_id": "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1",
+      "sha256": "a537e31bf667520443903551b5bf2596dff9a1c35fade88d2ffc1e89c1e0b836",
+      "source_commit": "306ff78a2001f23124d412e9a2f41531bec74f78"
+    },
+    "candidate_AB_comparison": {
+      "lifecycle_commit": "165d339946e36e5f2d30370a6f8d9370e1a87e89",
+      "path": "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1.json",
+      "result_id": "COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1",
+      "sha256": "5e253ebe424dd43e308622044d93af72fd6de911b927f354977413957dbb16c4",
+      "source_commit": "af86eb2ce4190e48fda2d276298de844bb50f4f7"
+    },
+    "positive_Berger_clock": {
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687",
+      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+    },
+    "strict_trace_obstruction": {
+      "path": "d_quotient_classical/certificates/TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1.json",
+      "result_id": "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
+      "sha256": "db1f998a0920adb94cf4fcbffb1b9eb2ea6537876aff9513aac4e4d9ec2b51b9",
+      "source_commit": "2b834dc751d6948366fd5c3d99174c268fa50d21"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "Berger_equations_reconstructed": true,
+    "Berger_original_fixture_regression": true,
+    "Berger_shift_nonexact": true,
+    "H3_Hc4_replayed": true,
+    "HT_polynomial_kernel": true,
+    "combined_D_zero_kernel": true,
+    "comparison_imported_NEITHER": true,
+    "cylinder_equations_exact": true,
+    "good_locus_empty": true,
+    "no_HT_kernel_zero": true,
+    "no_HT_stacked_determinant_nonzero": true,
+    "no_candidate_C_exported": true,
+    "preflight_basis_imported": true,
+    "raw_D_Hamiltonian_nonconstant": true,
+    "scalar_Lee_Wald_inertia_split": true,
+    "scalar_auxiliary_characteristic_and_minimal_polynomials": true
+  },
+  "next_gate": "Do not activate a selected-action consumer. Any successor must declare one of the excluded enlarged theory classes and rerun all seven gates from its own action hash.",
+  "quadratic_and_global_analysis": {
+    "HT_topological": {
+      "Lee_Wald_pair": "Omega_top=gamma delta a wedge delta lambda_HT",
+      "activation": "epsilon_HT=1 after invertible rescaling of a nonzero HT coefficient",
+      "characteristic_polynomial": "spectral*(spectral^2+gamma^2 D^2-4 gamma^2)",
+      "generic_rank_over_Q(D)": 2,
+      "minimal_polynomial": "spectral*(spectral^2+gamma^2 D^2-4 gamma^2)",
+      "operator_H_of_D": {
+        "column_count": 3,
+        "entries": [
+          {
+            "coefficient": "2*gamma",
+            "column": 2,
+            "row": 0
+          },
+          {
+            "coefficient": "D*gamma",
+            "column": 2,
+            "row": 1
+          },
+          {
+            "coefficient": "2*gamma",
+            "column": 0,
+            "row": 2
+          },
+          {
+            "coefficient": "-D*gamma",
+            "column": 1,
+            "row": 2
+          }
+        ],
+        "row_count": 3,
+        "sha256": "ae6cf5b1660e56c9c2aeed9aa30310a1ead9313563121acaa89308b078532eec"
+      },
+      "operator_basis": [
+        "u",
+        "a",
+        "lambda_HT"
+      ],
+      "polynomial_kernel": [
+        "D/2",
+        "1",
+        "0"
+      ],
+      "quadratic_density": "L_HT=lambda_HT(2u-Da)",
+      "raw_D_Hamiltonian": "H_D=gamma V_S3 lambda_HT",
+      "velocity_Hessian": {
+        "column_count": 3,
+        "entries": [],
+        "row_count": 3,
+        "sha256": "643b3081a6a34092049a3e1b57ddc6a4269d992e6eaa061c336e6dd48e65715a"
+      },
+      "velocity_characteristic_polynomial": "spectral^3",
+      "velocity_inertia": [
+        0,
+        0,
+        3
+      ],
+      "velocity_minimal_polynomial": "spectral",
+      "zero_frequency_kernel": [
+        "0",
+        "1",
+        "0"
+      ]
+    },
+    "combined_auxiliary_HT": {
+      "Krylov_cyclic_vector": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "Krylov_determinant": "-108 D P^3 gamma^3",
+      "characteristic_polynomial": "spectral^4-12 spectral^3/M_P^2+(gamma^2 D^2-9 P^2-4 gamma^2)spectral^2+(48 gamma^2-12 gamma^2 D^2)spectral/M_P^2-9 gamma^2 D^2 P^2",
+      "determinant": "-9 gamma^2 D^2 P^2",
+      "global_D_zero_kernel_survives": [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      "minimal_polynomial": "equal to the characteristic polynomial over Q(M_P^2,P,D,gamma)",
+      "operator_H_of_P_D": {
+        "column_count": 4,
+        "entries": [
+          {
+            "coefficient": "-3*P",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "2*gamma",
+            "column": 3,
+            "row": 0
+          },
+          {
+            "coefficient": "-3*P",
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": "12/M",
+            "column": 1,
+            "row": 1
+          },
+          {
+            "coefficient": "D*gamma",
+            "column": 3,
+            "row": 2
+          },
+          {
+            "coefficient": "2*gamma",
+            "column": 0,
+            "row": 3
+          },
+          {
+            "coefficient": "-D*gamma",
+            "column": 2,
+            "row": 3
+          }
+        ],
+        "row_count": 4,
+        "sha256": "61af9f7f2a207b562876cdda48dbdb96afca35f2a00416db67156562b487ab0d"
+      },
+      "operator_basis": [
+        "u",
+        "psi",
+        "a",
+        "lambda_HT"
+      ],
+      "velocity_Hessian": {
+        "column_count": 4,
+        "entries": [
+          {
+            "coefficient": "-3",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "-3",
+            "column": 0,
+            "row": 1
+          }
+        ],
+        "row_count": 4,
+        "sha256": "4c99251adff09210f5e85b647e0f4664263ee749405ffa6ec2f8281e020e0cc1"
+      },
+      "velocity_characteristic_polynomial": "spectral^2(spectral^2-9)",
+      "velocity_inertia": [
+        1,
+        1,
+        2
+      ],
+      "velocity_minimal_polynomial": "spectral(spectral^2-9)"
+    },
+    "scalar_auxiliary": {
+      "D_evolution_matrix": {
+        "column_count": 4,
+        "entries": [
+          {
+            "coefficient": "1",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "2",
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": "-4/M",
+            "column": 2,
+            "row": 1
+          },
+          {
+            "coefficient": "1",
+            "column": 3,
+            "row": 2
+          },
+          {
+            "coefficient": "2",
+            "column": 2,
+            "row": 3
+          }
+        ],
+        "row_count": 4,
+        "sha256": "27c7b74c4776277a4497f3add5af48fb0c822adc46db28f8b3f3ae1545f2fa4e"
+      },
+      "Hamiltonian": "H_D=-3 D(u)D(psi)+6 psi u-6 psi^2/M_P^2",
+      "Jordan_block_size": 2,
+      "Lee_Wald_current": "omega^0=-3[delta u wedge delta D(psi)+delta psi wedge delta D(u)]",
+      "activation": "epsilon_HT=0, alpha_R!=0 and unit-cylinder stationarity",
+      "characteristic_polynomial": "(spectral^2-2)^2",
+      "cylinder_relations": [
+        "M_P^2=-24 alpha_R",
+        "V_0=3 M_P^2/2=-36 alpha_R"
+      ],
+      "evolution_basis": [
+        "u",
+        "D(u)",
+        "psi",
+        "D(psi)"
+      ],
+      "minimal_polynomial": "(spectral^2-2)^2",
+      "negative_witness": "(u,D(u),psi,D(psi))=(0,1,0,1) gives H_D=-3",
+      "operator_H_of_P": {
+        "column_count": 2,
+        "entries": [
+          {
+            "coefficient": "-3*P",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "-3*P",
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": "12/M",
+            "column": 1,
+            "row": 1
+          }
+        ],
+        "row_count": 2,
+        "sha256": "c9d1d902a4106a4e188f311ef4b6a771966d9a99698a66a22978df4644f289f7"
+      },
+      "operator_basis": [
+        "u",
+        "psi"
+      ],
+      "operator_characteristic_polynomial": "spectral^2-12 spectral/M_P^2-9 P^2",
+      "operator_determinant": "-9 P^2",
+      "operator_minimal_polynomial": "spectral^2-12 spectral/M_P^2-9 P^2",
+      "positive_witness": "(u,D(u),psi,D(psi))=(0,1,0,-1) gives H_D=3",
+      "quadratic_density": "L_hom=-3 D(psi)D(u)-6 psi u+6 psi^2/M_P^2",
+      "real_roots": [
+        "-sqrt(2)",
+        "sqrt(2)"
+      ],
+      "shift": "chi=2 alpha_R R; psi=chi+M_P^2/2",
+      "velocity_Hessian": {
+        "column_count": 2,
+        "entries": [
+          {
+            "coefficient": "-3",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "-3",
+            "column": 0,
+            "row": 1
+          }
+        ],
+        "row_count": 2,
+        "sha256": "c0912c166020700bbe5b24d8b771d1e226603bf168712537316c09ca5a708736"
+      },
+      "velocity_characteristic_polynomial": "spectral^2-9",
+      "velocity_inertia": [
+        1,
+        1,
+        0
+      ],
+      "velocity_minimal_polynomial": "spectral^2-9"
+    }
+  },
+  "result_id": "COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1",
+  "result_state": "SCOPED_MINIMAL_ACTION_GOOD_LOCUS_EMPTY",
+  "schema": "pure-weyl-compensator-minimal-action-classification-after-neither-v1",
+  "selection": {
+    "candidate_C_action": null,
+    "candidate_C_action_hash": null,
+    "candidate_C_selected": false,
+    "downstream_selected_action_work_authorized": false,
+    "hybrid_selected": false
+  },
+  "seven_gate_classification": {
+    "all_seven_gate_good_locus": "EMPTY",
+    "epsilon_HT_one": {
+      "decisive_failure_gates": [
+        3,
+        5,
+        6,
+        7
+      ],
+      "reason": "the retained H3/Hc4 flux-multiplier pair gives a D=0 kernel, nonconstant ambient raw-D Hamiltonian and nonexact frozen-Berger D shift",
+      "stationary_potentials_may_differ_by_lambda_background": true
+    },
+    "epsilon_HT_zero": {
+      "decisive_failure_gates": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "independent_cylinder_subclassification": {
+        "alpha_R_nonzero": "split velocity inertia, real repeated roots and both-sign raw-D Hamiltonian: gate 5 FAIL",
+        "alpha_R_zero": "cylinder stationarity forces M_P^2=V0=0, so the C^2 trace remains the imported compact-support causal obstruction: gates 2 and 3 FAIL"
+      },
+      "reason": "the exact cylinder-plus-Berger matrix is invertible; the zero bulk vector has no phase pairing and leaves the dressed trace without a causal parent",
+      "stationary_coefficient_locus": "ZERO_VECTOR_ONLY"
+    },
+    "logical_separator": "epsilon_HT=0 => det(M_cylinder+Berger)!=0 and only the dynamically empty vector remains; epsilon_HT=1 => H3/Hc4, raw-D and Berger global gates fail"
+  },
+  "stationary_background_equations": {
+    "Euler_formula_on_constant_R_and_covariantly_constant_theta": "alpha_B B_ab+alpha_R(4R Ric_ab-R^2 g_ab)+M_P^2 G_ab-T_ab[Z_theta,V0]=0",
+    "coefficient_order": [
+      "alpha_B",
+      "alpha_R",
+      "M_P_squared",
+      "Z_theta",
+      "V0"
+    ],
+    "frozen_Berger_clock": {
+      "Bach_orthonormal": [
+        "961/9600",
+        "403/9600",
+        "403/9600",
+        "31/1920"
+      ],
+      "Ricci_orthonormal": [
+        "0",
+        "71/80",
+        "71/80",
+        "9/80"
+      ],
+      "background": "a=1, q=c^2=9/40, omega_clock=3/4, R=151/80",
+      "independent_rows": [
+        "E_00",
+        "E_horizontal",
+        "E_vertical"
+      ],
+      "matrix": {
+        "column_count": 5,
+        "entries": [
+          {
+            "coefficient": "961/9600",
+            "column": 0,
+            "row": 0
+          },
+          {
+            "coefficient": "22801/6400",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "151/160",
+            "column": 2,
+            "row": 0
+          },
+          {
+            "coefficient": "-9/32",
+            "column": 3,
+            "row": 0
+          },
+          {
+            "coefficient": "-1",
+            "column": 4,
+            "row": 0
+          },
+          {
+            "coefficient": "403/9600",
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": "20083/6400",
+            "column": 1,
+            "row": 1
+          },
+          {
+            "coefficient": "-9/160",
+            "column": 2,
+            "row": 1
+          },
+          {
+            "coefficient": "-9/32",
+            "column": 3,
+            "row": 1
+          },
+          {
+            "coefficient": "1",
+            "column": 4,
+            "row": 1
+          },
+          {
+            "coefficient": "31/1920",
+            "column": 0,
+            "row": 2
+          },
+          {
+            "coefficient": "-3473/1280",
+            "column": 1,
+            "row": 2
+          },
+          {
+            "coefficient": "-133/160",
+            "column": 2,
+            "row": 2
+          },
+          {
+            "coefficient": "-9/32",
+            "column": 3,
+            "row": 2
+          },
+          {
+            "coefficient": "1",
+            "column": 4,
+            "row": 2
+          }
+        ],
+        "row_count": 3,
+        "sha256": "55d84e5c88ad19c4c34a6757987b1a26bea6b2899f72bae48752695128b1a3ee"
+      },
+      "phase_equation": "Box theta=0: PASS identically"
+    },
+    "no_HT_stacked_system": {
+      "determinant": "-91791/81920",
+      "elimination_result": "alpha_B=alpha_R=M_P^2=Z_theta=V0=0",
+      "kernel": [],
+      "matrix": {
+        "column_count": 5,
+        "entries": [
+          {
+            "coefficient": "36",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "3",
+            "column": 2,
+            "row": 0
+          },
+          {
+            "coefficient": "-1",
+            "column": 4,
+            "row": 0
+          },
+          {
+            "coefficient": "12",
+            "column": 1,
+            "row": 1
+          },
+          {
+            "coefficient": "-1",
+            "column": 2,
+            "row": 1
+          },
+          {
+            "coefficient": "1",
+            "column": 4,
+            "row": 1
+          },
+          {
+            "coefficient": "961/9600",
+            "column": 0,
+            "row": 2
+          },
+          {
+            "coefficient": "22801/6400",
+            "column": 1,
+            "row": 2
+          },
+          {
+            "coefficient": "151/160",
+            "column": 2,
+            "row": 2
+          },
+          {
+            "coefficient": "-9/32",
+            "column": 3,
+            "row": 2
+          },
+          {
+            "coefficient": "-1",
+            "column": 4,
+            "row": 2
+          },
+          {
+            "coefficient": "403/9600",
+            "column": 0,
+            "row": 3
+          },
+          {
+            "coefficient": "20083/6400",
+            "column": 1,
+            "row": 3
+          },
+          {
+            "coefficient": "-9/160",
+            "column": 2,
+            "row": 3
+          },
+          {
+            "coefficient": "-9/32",
+            "column": 3,
+            "row": 3
+          },
+          {
+            "coefficient": "1",
+            "column": 4,
+            "row": 3
+          },
+          {
+            "coefficient": "31/1920",
+            "column": 0,
+            "row": 4
+          },
+          {
+            "coefficient": "-3473/1280",
+            "column": 1,
+            "row": 4
+          },
+          {
+            "coefficient": "-133/160",
+            "column": 2,
+            "row": 4
+          },
+          {
+            "coefficient": "-9/32",
+            "column": 3,
+            "row": 4
+          },
+          {
+            "coefficient": "1",
+            "column": 4,
+            "row": 4
+          }
+        ],
+        "row_count": 5,
+        "sha256": "4d68aa78f7373204467195b246ea96bb96ef95be6b4c0fb54a9032844b3a18d6"
+      },
+      "meaning": "no nonzero action in the declared no-HT family makes both frozen backgrounds stationary",
+      "rank": 5,
+      "rref": "I_5"
+    },
+    "unit_cylinder": {
+      "background": "g_hat=-dt^2+dOmega_3^2, R=6, Ric_orthonormal=(0,2,2,2), theta=constant",
+      "equivalent_relations": [
+        "M_P^2=-24 alpha_R",
+        "V0=3 M_P^2/2=-36 alpha_R"
+      ],
+      "independent_rows": [
+        "E_00",
+        "E_horizontal"
+      ],
+      "matrix": {
+        "column_count": 5,
+        "entries": [
+          {
+            "coefficient": "36",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "3",
+            "column": 2,
+            "row": 0
+          },
+          {
+            "coefficient": "-1",
+            "column": 4,
+            "row": 0
+          },
+          {
+            "coefficient": "12",
+            "column": 1,
+            "row": 1
+          },
+          {
+            "coefficient": "-1",
+            "column": 2,
+            "row": 1
+          },
+          {
+            "coefficient": "1",
+            "column": 4,
+            "row": 1
+          }
+        ],
+        "row_count": 2,
+        "sha256": "e92e156680d98759b3132daf81730c2bbed45a51e68fe06d8930c599b7686dad"
+      }
+    }
+  },
+  "topology": {
+    "Berger_raw_D_shift": "L_D A3_bar=vol_Berger",
+    "Berger_volume_constraint": "A3_bar=t vol_Berger",
+    "H3_generator": "vol_S3",
+    "Hc4_generator": "f(t) dt wedge vol_S3 with integral_R f dt=1",
+    "compact_support_betti_Hc0_to_Hc4": [
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    "manifold": "R_t x S3",
+    "ordinary_de_Rham_betti_H0_to_H4": [
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    "small_gauge_exact": false
+  }
+}

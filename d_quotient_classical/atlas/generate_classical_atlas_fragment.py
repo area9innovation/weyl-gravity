@@ -37,6 +37,7 @@ CERTS = {
     "complex_compensator_candidate_a_obstruction": ROOT / "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1.json",
     "complex_compensator_candidate_b_obstruction": ROOT / "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1.json",
     "complex_compensator_candidate_ab_neither": ROOT / "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1.json",
+    "complex_compensator_minimal_action_no_go": ROOT / "d_quotient_classical/certificates/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1.json",
     "Berger_green": ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
     "Berger_bikernel_support_gate": ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
     "Berger_Cartan": ROOT / "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
@@ -393,6 +394,29 @@ def entries() -> list[dict[str, Any]]:
         _second(("NOT_APPLICABLE", "No selected action exists for a bounded second-order cone."), ("NOT_APPLICABLE", "No selected action exists for a smooth-secular second-order cone."), ("OBSTRUCTED", "The two declared minimal actions fail the common causal/physical seven-gate receiver rule.")),
         _evidence("complex_compensator_candidate_a_obstruction", "complex_compensator_candidate_b_obstruction", "complex_compensator_candidate_ab_neither"),
         "The exact comparison pins both terminal obstruction artifacts, their scientific and lifecycle commits, action hashes and the common unit-cylinder, coupling, raw-D, frozen-Berger-clock and small-gauge conventions. Candidate A fails gates 3, 5, 6 and 7; Candidate B fails gates 2, 3, 5, 6 and 7. The terminal selection is NEITHER. No score averaging or hybrid is permitted, and no selected action hash or carrier is exported. This is not a universal compensator no-go: differently tuned/backgrounded R(g_hat)^2, active-clock fixed-flux/lambda, enlarged-gauge and bounded minimal-action classes remain open. No Hadamard, anomaly/QME, particle, scattering, positivity or unitarity conclusion follows.",
+    ))
+    values.append(_entry(
+        "classical.complex_compensator.vacuum_cylinder.minimal_action_good_locus",
+        _scope(
+            VACUUM,
+            theory="complete declared minimal formal-polar action family with four metric and at most two compensator derivatives, one R^2 auxiliary presentation and optional minimal HT sector",
+            charge_sector="unreduced raw-D sector; optional HT branch retains all H3 flux and constant multiplier sectors under the small reducible gauge group",
+            carrier="coefficient-locus comparison of bulk scalar/metric and optional topological carriers; good locus empty, no Candidate C carrier and not a particle carrier",
+            degree="all BV degrees inherited from the action preflight and optional reducible A3/C2/C1/C0 cotangent tower",
+            parity="parity-even bulk action; Euler is topological and Pontryagin excluded",
+            ell="all cylinder scalar harmonics; frozen Berger clock at q=9/40",
+            m="all",
+            k="all local covectors plus compact/global H3 and Hc4 classes",
+            omega="raw D=partial_t; scalar auxiliary roots +/-sqrt(2); HT harmonic D=0 mode retained",
+        ),
+        {"causal": "OBSTRUCTED", "symplectic": "OBSTRUCTED", "nonlinear": "NOT_APPLICABLE", "observational": "NO_CERTIFIED_MAP", "quantum": "OPEN"},
+        ("OBSTRUCTED", "Without HT the exact cylinder-plus-Berger stationary matrix is invertible and leaves only a dynamically empty coefficient vector; with HT a global D=0 kernel survives."),
+        ("OBSTRUCTED", "The nonzero-R^2 cylinder branch has split Lee-Wald inertia, while the HT branch retains the flux/multiplier pair and uncontrolled global direction."),
+        ("OBSTRUCTED", "No coefficient point passes all seven gates, so no action-specific nonlinear receiver is active."),
+        ("NO_CERTIFIED_MAP", "No Candidate C, selected action hash, carrier, complex structure, two-point function or observational mode is exported."),
+        _second(("NOT_APPLICABLE", "No selected action exists for a bounded second-order tangent cone."), ("NOT_APPLICABLE", "No selected action exists for a smooth-secular tangent cone."), ("OBSTRUCTED", "The declared minimal action family has empty causal/physical seven-gate locus.")),
+        _evidence("complex_compensator_candidate_ab_neither", "complex_compensator_minimal_action_no_go"),
+        "The no-HT stationary equations have exact determinant -91791/81920 on the common unit-cylinder and frozen-Berger fixtures, so only the zero bulk vector remains; it has no phase pairing or causal trace parent. Independently, every nonzero-R^2 cylinder repair has velocity inertia (1,1), real roots +/-sqrt(2), size-two Jordan blocks and a both-sign raw-D Hamiltonian. The optional HT branch retains H3/Hc4, a D=0 kernel, nonconstant ambient raw-D Hamiltonian and the nonexact Berger volume shift. The declared minimal good locus is EMPTY and no Candidate C is selected. This is not a universal compensator no-go: higher-derivative phase EFT, multiplier extensions, fixed-flux/global-quotient and independent-conformal-gauge theories remain outside scope. No Hadamard, anomaly/QME, particle, scattering, positivity or unitarity conclusion follows.",
     ))
     values.append(_entry(
         "classical.berger.retained_gravity_clock_maxwell",

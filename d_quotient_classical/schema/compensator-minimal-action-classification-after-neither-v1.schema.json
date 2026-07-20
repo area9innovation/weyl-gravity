@@ -1,0 +1,894 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/compensator-minimal-action-classification-after-neither-v1.schema.json",
+  "title": "Minimal compensator-action classification after NEITHER",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "dependencies",
+    "action_family",
+    "action_family_sha256",
+    "stationary_background_equations",
+    "quadratic_and_global_analysis",
+    "topology",
+    "seven_gate_classification",
+    "selection",
+    "exact_checks",
+    "claim_flags",
+    "claim_boundary",
+    "next_gate",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-compensator-minimal-action-classification-after-neither-v1"
+    },
+    "result_id": {
+      "const": "COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1"
+    },
+    "result_state": {
+      "const": "SCOPED_MINIMAL_ACTION_GOOD_LOCUS_EMPTY"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_preflight",
+        "positive_Berger_clock",
+        "strict_trace_obstruction",
+        "candidate_AB_comparison"
+      ],
+      "properties": {
+        "action_preflight": {
+          "$ref": "#/$defs/import"
+        },
+        "positive_Berger_clock": {
+          "$ref": "#/$defs/import"
+        },
+        "strict_trace_obstruction": {
+          "$ref": "#/$defs/import"
+        },
+        "candidate_AB_comparison": {
+          "$ref": "#/$defs/import-with-lifecycle"
+        }
+      }
+    },
+    "action_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "declared_scope",
+        "dressed_action",
+        "coefficient_basis_mod_topology",
+        "topological_density",
+        "horizontal_exact",
+        "parity_odd_excluded",
+        "auxiliary_scalar",
+        "topological_extension",
+        "three_form_gauge_group",
+        "completeness_argument",
+        "modulo",
+        "outside_declared_minimal_class"
+      ],
+      "properties": {
+        "declared_scope": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "dressed_action": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "coefficient_basis_mod_topology": {
+          "const": [
+            "alpha_B",
+            "alpha_R",
+            "M_P_squared",
+            "Z_theta",
+            "V0"
+          ]
+        },
+        "topological_density": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "horizontal_exact": {
+          "const": "Box R"
+        },
+        "parity_odd_excluded": {
+          "const": "Pontryagin P4"
+        },
+        "auxiliary_scalar": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "topological_extension": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "three_form_gauge_group": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "completeness_argument": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "modulo": {
+          "$ref": "#/$defs/nonempty-string-array"
+        },
+        "outside_declared_minimal_class": {
+          "type": "array",
+          "minItems": 6,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        }
+      }
+    },
+    "action_family_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "stationary_background_equations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coefficient_order",
+        "Euler_formula_on_constant_R_and_covariantly_constant_theta",
+        "unit_cylinder",
+        "frozen_Berger_clock",
+        "no_HT_stacked_system"
+      ],
+      "properties": {
+        "coefficient_order": {
+          "const": [
+            "alpha_B",
+            "alpha_R",
+            "M_P_squared",
+            "Z_theta",
+            "V0"
+          ]
+        },
+        "Euler_formula_on_constant_R_and_covariantly_constant_theta": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "unit_cylinder": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "background",
+            "independent_rows",
+            "matrix",
+            "equivalent_relations"
+          ],
+          "properties": {
+            "background": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "independent_rows": {
+              "const": [
+                "E_00",
+                "E_horizontal"
+              ]
+            },
+            "matrix": {
+              "$ref": "#/$defs/matrix"
+            },
+            "equivalent_relations": {
+              "$ref": "#/$defs/nonempty-string-array"
+            }
+          }
+        },
+        "frozen_Berger_clock": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "background",
+            "Bach_orthonormal",
+            "Ricci_orthonormal",
+            "independent_rows",
+            "matrix",
+            "phase_equation"
+          ],
+          "properties": {
+            "background": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "Bach_orthonormal": {
+              "$ref": "#/$defs/nonempty-string-array"
+            },
+            "Ricci_orthonormal": {
+              "$ref": "#/$defs/nonempty-string-array"
+            },
+            "independent_rows": {
+              "const": [
+                "E_00",
+                "E_horizontal",
+                "E_vertical"
+              ]
+            },
+            "matrix": {
+              "$ref": "#/$defs/matrix"
+            },
+            "phase_equation": {
+              "$ref": "#/$defs/nonempty"
+            }
+          }
+        },
+        "no_HT_stacked_system": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "matrix",
+            "determinant",
+            "rank",
+            "rref",
+            "kernel",
+            "elimination_result",
+            "meaning"
+          ],
+          "properties": {
+            "matrix": {
+              "$ref": "#/$defs/matrix"
+            },
+            "determinant": {
+              "const": "-91791/81920"
+            },
+            "rank": {
+              "const": 5
+            },
+            "rref": {
+              "const": "I_5"
+            },
+            "kernel": {
+              "const": []
+            },
+            "elimination_result": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "meaning": {
+              "$ref": "#/$defs/nonempty"
+            }
+          }
+        }
+      }
+    },
+    "quadratic_and_global_analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scalar_auxiliary",
+        "HT_topological",
+        "combined_auxiliary_HT"
+      ],
+      "properties": {
+        "scalar_auxiliary": {
+          "$ref": "#/$defs/scalar-analysis"
+        },
+        "HT_topological": {
+          "$ref": "#/$defs/ht-analysis"
+        },
+        "combined_auxiliary_HT": {
+          "$ref": "#/$defs/combined-analysis"
+        }
+      }
+    },
+    "topology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifold",
+        "ordinary_de_Rham_betti_H0_to_H4",
+        "compact_support_betti_Hc0_to_Hc4",
+        "H3_generator",
+        "Hc4_generator",
+        "Berger_volume_constraint",
+        "Berger_raw_D_shift",
+        "small_gauge_exact"
+      ],
+      "properties": {
+        "manifold": {
+          "const": "R_t x S3"
+        },
+        "ordinary_de_Rham_betti_H0_to_H4": {
+          "const": [
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "compact_support_betti_Hc0_to_Hc4": {
+          "const": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "H3_generator": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "Hc4_generator": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "Berger_volume_constraint": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "Berger_raw_D_shift": {
+          "const": "L_D A3_bar=vol_Berger"
+        },
+        "small_gauge_exact": {
+          "const": false
+        }
+      }
+    },
+    "seven_gate_classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "epsilon_HT_zero",
+        "epsilon_HT_one",
+        "all_seven_gate_good_locus",
+        "logical_separator"
+      ],
+      "properties": {
+        "epsilon_HT_zero": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "stationary_coefficient_locus",
+            "decisive_failure_gates",
+            "reason",
+            "independent_cylinder_subclassification"
+          ],
+          "properties": {
+            "stationary_coefficient_locus": {
+              "const": "ZERO_VECTOR_ONLY"
+            },
+            "decisive_failure_gates": {
+              "const": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                7
+              ]
+            },
+            "reason": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "independent_cylinder_subclassification": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "alpha_R_nonzero",
+                "alpha_R_zero"
+              ],
+              "properties": {
+                "alpha_R_nonzero": {
+                  "$ref": "#/$defs/nonempty"
+                },
+                "alpha_R_zero": {
+                  "$ref": "#/$defs/nonempty"
+                }
+              }
+            }
+          }
+        },
+        "epsilon_HT_one": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "stationary_potentials_may_differ_by_lambda_background",
+            "decisive_failure_gates",
+            "reason"
+          ],
+          "properties": {
+            "stationary_potentials_may_differ_by_lambda_background": {
+              "const": true
+            },
+            "decisive_failure_gates": {
+              "const": [
+                3,
+                5,
+                6,
+                7
+              ]
+            },
+            "reason": {
+              "$ref": "#/$defs/nonempty"
+            }
+          }
+        },
+        "all_seven_gate_good_locus": {
+          "const": "EMPTY"
+        },
+        "logical_separator": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_C_selected",
+        "candidate_C_action",
+        "candidate_C_action_hash",
+        "hybrid_selected",
+        "downstream_selected_action_work_authorized"
+      ],
+      "properties": {
+        "candidate_C_selected": {
+          "const": false
+        },
+        "candidate_C_action": {
+          "type": "null"
+        },
+        "candidate_C_action_hash": {
+          "type": "null"
+        },
+        "hybrid_selected": {
+          "const": false
+        },
+        "downstream_selected_action_work_authorized": {
+          "const": false
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 15,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "SCOPED_MINIMAL_ACTION_NO_GO",
+        "UNIVERSAL_COMPENSATOR_NO_GO",
+        "CANDIDATE_C_SELECTED",
+        "SELECTED_ACTION_RECEIVER",
+        "HADAMARD_OR_QUANTUM_RESULT",
+        "PARTICLE_SCATTERING_POSITIVITY_UNITARITY"
+      ],
+      "properties": {
+        "SCOPED_MINIMAL_ACTION_NO_GO": {
+          "const": true
+        },
+        "UNIVERSAL_COMPENSATOR_NO_GO": {
+          "const": false
+        },
+        "CANDIDATE_C_SELECTED": {
+          "const": false
+        },
+        "SELECTED_ACTION_RECEIVER": {
+          "const": false
+        },
+        "HADAMARD_OR_QUANTUM_RESULT": {
+          "const": false
+        },
+        "PARTICLE_SCATTERING_POSITIVITY_UNITARITY": {
+          "const": false
+        }
+      }
+    },
+    "claim_boundary": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "next_gate": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_family_sha256",
+        "stationary_system_sha256",
+        "quadratic_global_sha256",
+        "classification_sha256"
+      ],
+      "properties": {
+        "action_family_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "stationary_system_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "quadratic_global_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "classification_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nonempty-string-array": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/nonempty"
+      }
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "sha256",
+        "source_commit"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "result_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_commit": {
+          "$ref": "#/$defs/commit"
+        }
+      }
+    },
+    "import-with-lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "sha256",
+        "source_commit",
+        "lifecycle_commit"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "result_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_commit": {
+          "$ref": "#/$defs/commit"
+        },
+        "lifecycle_commit": {
+          "$ref": "#/$defs/commit"
+        }
+      }
+    },
+    "matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row_count",
+        "column_count",
+        "entries",
+        "sha256"
+      ],
+      "properties": {
+        "row_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "column_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "row",
+              "column",
+              "coefficient"
+            ],
+            "properties": {
+              "row": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "column": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "coefficient": {
+                "$ref": "#/$defs/nonempty"
+              }
+            }
+          }
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "scalar-analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "activation",
+        "cylinder_relations",
+        "shift",
+        "quadratic_density",
+        "operator_basis",
+        "operator_H_of_P",
+        "operator_determinant",
+        "operator_characteristic_polynomial",
+        "operator_minimal_polynomial",
+        "velocity_Hessian",
+        "velocity_characteristic_polynomial",
+        "velocity_minimal_polynomial",
+        "velocity_inertia",
+        "evolution_basis",
+        "D_evolution_matrix",
+        "characteristic_polynomial",
+        "minimal_polynomial",
+        "real_roots",
+        "Jordan_block_size",
+        "Lee_Wald_current",
+        "Hamiltonian",
+        "positive_witness",
+        "negative_witness"
+      ],
+      "properties": {
+        "activation": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "cylinder_relations": {
+          "$ref": "#/$defs/nonempty-string-array"
+        },
+        "shift": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "quadratic_density": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "operator_basis": {
+          "$ref": "#/$defs/nonempty-string-array"
+        },
+        "operator_H_of_P": {
+          "$ref": "#/$defs/matrix"
+        },
+        "operator_determinant": {
+          "const": "-9 P^2"
+        },
+        "operator_characteristic_polynomial": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "operator_minimal_polynomial": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "velocity_Hessian": {
+          "$ref": "#/$defs/matrix"
+        },
+        "velocity_characteristic_polynomial": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "velocity_minimal_polynomial": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "velocity_inertia": {
+          "const": [
+            1,
+            1,
+            0
+          ]
+        },
+        "evolution_basis": {
+          "$ref": "#/$defs/nonempty-string-array"
+        },
+        "D_evolution_matrix": {
+          "$ref": "#/$defs/matrix"
+        },
+        "characteristic_polynomial": {
+          "const": "(spectral^2-2)^2"
+        },
+        "minimal_polynomial": {
+          "const": "(spectral^2-2)^2"
+        },
+        "real_roots": {
+          "const": [
+            "-sqrt(2)",
+            "sqrt(2)"
+          ]
+        },
+        "Jordan_block_size": {
+          "const": 2
+        },
+        "Lee_Wald_current": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "Hamiltonian": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "positive_witness": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "negative_witness": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "ht-analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "activation",
+        "quadratic_density",
+        "operator_basis",
+        "operator_H_of_D",
+        "generic_rank_over_Q(D)",
+        "polynomial_kernel",
+        "characteristic_polynomial",
+        "minimal_polynomial",
+        "zero_frequency_kernel",
+        "velocity_Hessian",
+        "velocity_characteristic_polynomial",
+        "velocity_minimal_polynomial",
+        "velocity_inertia",
+        "Lee_Wald_pair",
+        "raw_D_Hamiltonian"
+      ],
+      "properties": {
+        "activation": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "quadratic_density": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "operator_basis": {
+          "$ref": "#/$defs/nonempty-string-array"
+        },
+        "operator_H_of_D": {
+          "$ref": "#/$defs/matrix"
+        },
+        "generic_rank_over_Q(D)": {
+          "const": 2
+        },
+        "polynomial_kernel": {
+          "const": [
+            "D/2",
+            "1",
+            "0"
+          ]
+        },
+        "characteristic_polynomial": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "minimal_polynomial": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "zero_frequency_kernel": {
+          "const": [
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        "velocity_Hessian": {
+          "$ref": "#/$defs/matrix"
+        },
+        "velocity_characteristic_polynomial": {
+          "const": "spectral^3"
+        },
+        "velocity_minimal_polynomial": {
+          "const": "spectral"
+        },
+        "velocity_inertia": {
+          "const": [
+            0,
+            0,
+            3
+          ]
+        },
+        "Lee_Wald_pair": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "raw_D_Hamiltonian": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "combined-analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operator_basis",
+        "operator_H_of_P_D",
+        "determinant",
+        "characteristic_polynomial",
+        "minimal_polynomial",
+        "Krylov_cyclic_vector",
+        "Krylov_determinant",
+        "velocity_Hessian",
+        "velocity_characteristic_polynomial",
+        "velocity_minimal_polynomial",
+        "velocity_inertia",
+        "global_D_zero_kernel_survives"
+      ],
+      "properties": {
+        "operator_basis": {
+          "$ref": "#/$defs/nonempty-string-array"
+        },
+        "operator_H_of_P_D": {
+          "$ref": "#/$defs/matrix"
+        },
+        "determinant": {
+          "const": "-9 gamma^2 D^2 P^2"
+        },
+        "characteristic_polynomial": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "minimal_polynomial": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "Krylov_cyclic_vector": {
+          "const": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        "Krylov_determinant": {
+          "const": "-108 D P^3 gamma^3"
+        },
+        "velocity_Hessian": {
+          "$ref": "#/$defs/matrix"
+        },
+        "velocity_characteristic_polynomial": {
+          "const": "spectral^2(spectral^2-9)"
+        },
+        "velocity_minimal_polynomial": {
+          "const": "spectral(spectral^2-9)"
+        },
+        "velocity_inertia": {
+          "const": [
+            1,
+            1,
+            2
+          ]
+        },
+        "global_D_zero_kernel_survives": {
+          "const": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      }
+    }
+  }
+}

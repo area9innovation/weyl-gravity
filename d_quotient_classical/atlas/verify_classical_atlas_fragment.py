@@ -194,6 +194,32 @@ def verify() -> None:
         or "No Hadamard" not in comparison["claim_boundary"]
     ):
         raise AssertionError("Candidate A/B NEITHER atlas boundary drifted")
+    minimal = by_id[
+        "classical.complex_compensator.vacuum_cylinder."
+        "minimal_action_good_locus"
+    ]
+    minimal_ids = {item["result_id"] for item in minimal["evidence"]}
+    if (
+        minimal["descriptions"]["causal"] != "OBSTRUCTED"
+        or minimal["descriptions"]["symplectic"] != "OBSTRUCTED"
+        or minimal["descriptions"]["nonlinear"] != "NOT_APPLICABLE"
+        or minimal["descriptions"]["observational"] != "NO_CERTIFIED_MAP"
+        or minimal["descriptions"]["quantum"] != "OPEN"
+        or {
+            "COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1",
+            "COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1",
+        }
+        - minimal_ids
+        or "-91791/81920" not in minimal["claim_boundary"]
+        or "velocity inertia (1,1)" not in minimal["claim_boundary"]
+        or "declared minimal good locus is EMPTY"
+        not in minimal["claim_boundary"]
+        or "no Candidate C is selected" not in minimal["claim_boundary"]
+        or "not a universal compensator no-go"
+        not in minimal["claim_boundary"]
+        or "No Hadamard" not in minimal["claim_boundary"]
+    ):
+        raise AssertionError("minimal compensator-action atlas boundary drifted")
     stability = by_id["classical.crosswalk.weak_background_causal_vs_residual_d"]
     if (
         stability["descriptions"]["causal"] != "CERTIFIED"

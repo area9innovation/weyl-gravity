@@ -3331,6 +3331,46 @@ independent-conformal-gauge and bounded minimal-action classes remain open.
 No Hadamard, anomaly/QME, particle, scattering, positivity or unitarity claim
 follows.
 
+### Minimal-action coefficient locus after NEITHER (2026-07-20)
+
+`COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1` replaces a
+third-candidate guess with an exact two-branch theorem in the frozen minimal
+formal-polar class. The parity-even bulk coefficient vector is
+
+\[
+x=(\alpha_B,\alpha_R,M_P^2,Z_\theta,V_0)^T,
+\]
+
+with an optional minimal HT sector normalized by
+\(\epsilon_{\rm HT}\in\{0,1\}\).
+
+For \(\epsilon_{\rm HT}=0\), the two independent unit-cylinder Euler rows
+and three frozen-Berger-clock rows form a \(5\times5\) rational matrix with
+
+\[
+\det M_{\rm cyl+Berger}=-\frac{91791}{81920}.
+\]
+
+Its exact RREF is \(I_5\), so the only common stationary vector is \(x=0\).
+That vector has neither a phase pairing nor a causal trace parent. Independently,
+the nonzero-\(\alpha_R\) cylinder branch has split Lee--Wald velocity inertia
+\((1,1)\), real roots \(\pm\sqrt2\), size-two Jordan blocks and a both-sign
+raw-\(D\) Hamiltonian.
+
+For \(\epsilon_{\rm HT}=1\), the background multiplier may shift the two
+effective potentials separately, but the combined auxiliary/HT determinant
+contains an exact \(D^2\) factor. The harmonic \(H^3(S^3)\) direction,
+\(H_c^4\) class, flux/multiplier Lee--Wald pair, nonconstant raw-\(D\)
+Hamiltonian and nonexact Berger volume shift survive. Thus gates \(3,5,6,7\)
+fail without a changed global quotient or superselection theory.
+
+The seven-gate good locus is empty in this explicit minimal class. No
+Candidate C, action hash or selected-action downstream authorization is
+exported. The theorem does not cover higher-derivative phase EFT operators,
+multiplier kinetic/potential extensions, fixed-flux sectors, large/global
+three-form quotients or an independent conformal gauge connection, and it
+establishes no Hadamard or quantum result.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;
