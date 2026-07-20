@@ -2115,31 +2115,36 @@ The team succeeds by locating the first exact bridge or the first exact
 obstruction.  It does not succeed by arguing that two closed universes sound
 similar.
 
-## Active bridge: quartic completion moduli to the arity-three gate
+## Active bridge: auxiliary Diff--BV covariance at arity three
 
 The active bridge is
-`sf:program/work/observer-post-common-action-frontier-input-pinned`.  Its
-activation gate imports the terminal
-`BERGER_ORDER_THREE_COMMON_ACTION_PROMOTION_GATE` certificate and payload by
-exact content hash.  The order-three result retains its certified
-36-module, constant-unary, Maxwell-invariant \(q_1,q_2\) repair.
+`sf:program/work/observer-quartic-completion-moduli-and-observable-invariance`.
+Its activation gate imports the terminal common-action repair, the complete
+108-row \(q_2\), and all twelve quartic completion actions by exact content
+hash.
 
-The complete smallest quartic ansatz is
-\(\frac12\chi^2 g_bh_bK_{b,ab}e_cA_d\).  Per emitter, its 96 raw monomials
-have 28 Berger-\(U(1)\) invariant combinations.  Exact Maxwell variation has
-rank 22, leaving six actions per emitter.  All twelve actions use the same
-odd pairing as the repaired cubic action, leave \(q_1,q_2\) unchanged at
-zero auxiliary background, and generate twelve independent cyclic \(q_3\)
-columns.
+The twelve action-derived \([q_1,q_{3,i}]\) columns have exact rank twelve,
+and their cyclicity, Maxwell and Berger-\(U(1)\) defects vanish.  The full
+arity-three equation nevertheless has an invariant coefficient that none of
+them reaches:
+\[
+ c^{*}_{1}\leftarrow(e_0e_0e_2A_0,\chi,K_{0,12})
+ \quad\hbox{has coefficient}\quad -4g_0h_0 .
+\]
+It is the unique composition of the emitter Diff--BV term
+\(c^{*}_{1}\leftarrow(e_0K^+_{0,02},K_{0,12})\) with the repair term
+\(K^+_{0,02}\leftarrow(e_0e_2A_0,\chi)\).
 
-The nonlinear bridge remains fail-closed because the existing equations
-impose no condition on the resulting
-\(\mathbb Q(\sqrt{10})^{12}\) coefficient space.  No unique \(q_3\),
-complete arity-three identity, \(K_{\rm Berger}\) descent, detector, memory,
-redshift, recoil-corrected rank or tangent-cone restriction is promoted.
+The arity-three admissible locus is therefore empty before any quotient by
+admissible cyclic canonical transformations or field redefinitions.  Such
+invertible transformations transport rather than erase a nonzero master
+defect.  The first missing representation is the auxiliary
+\((\chi,\chi^+)\) Diff--BV scalar orbit.  No \(K_{\rm Berger}\), detector,
+memory, redshift, recoil-corrected rank or tangent-cone restriction is
+promoted.
 
 The fail-closed atlas row is
-`observer.berger.interaction.quartic_common_action_completion_module`
+`observer.berger.interaction.quartic_completion_moduli_observer_invariance`
 (`symplectic=CERTIFIED`, `nonlinear=OBSTRUCTED`,
 `observational=OBSTRUCTED`).  The next activation gate is
-`COMPUTE_FULL_ARITY_THREE_MASTER_EQUATION_ON_12_PARAMETER_QUARTIC_FAMILY`.
+`ADJOIN_AUXILIARY_DIFF_BV_SCALAR_ORBIT_AND_REPLAY_ARITY_TWO_THREE`.
