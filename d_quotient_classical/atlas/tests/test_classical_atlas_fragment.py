@@ -66,6 +66,22 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             nariai["claim_boundary"],
         )
 
+    def test_weak_background_causal_and_d_verdicts_are_separate(self) -> None:
+        entry = self.entries[
+            "classical.crosswalk.weak_background_causal_vs_residual_d"
+        ]
+        self.assertEqual(entry["descriptions"]["causal"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["symplectic"], "NO_CERTIFIED_MAP")
+        self.assertIn(
+            "WEAK_BACKGROUND_CAUSAL_VS_D_STABILITY_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "Causal stability and residual-D stability are separate",
+            entry["claim_boundary"],
+        )
+        self.assertIn("Hadamard and quantum claims remain open", entry["claim_boundary"])
+
     def test_correction_classes_are_separate(self) -> None:
         for entry in self.entries.values():
             second = entry["mode_data"]["second_order"]

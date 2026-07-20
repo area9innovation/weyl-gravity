@@ -29,6 +29,7 @@ LEGACY_VACUUM = {
 CERTS = {
     "vacuum": VACUUM_EVIDENCE,
     "green_transfer_theorem": ROOT / "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
+    "weak_background_stability": ROOT / "d_quotient_classical/certificates/WEAK_BACKGROUND_CAUSAL_VS_D_STABILITY_V1.json",
     "vacuum_WZ_D_Cartan": ROOT / "d_quotient_classical/certificates/WESS_ZUMINO_D_CARTAN_CONTRACTION_V1.json",
     "Berger_green": ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
     "Berger_bikernel_support_gate": ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
@@ -321,6 +322,31 @@ def entries() -> list[dict[str, Any]]:
         _second(("OPEN", "No bounded harmonic class is declared."), ("OPEN", "No smooth-secular class-wide theorem."), ("OPEN", "Unary parent Green homotopy does not by itself solve nonlinear sourced second order.")),
         _evidence("Bach_parent", "Bach_rank310_SDR", "Bach_metric_biwave", "Bach_rank310_causal", "cone"),
         "The metric endpoint closes without exact same-bundle factorization: the bare covariant companion gives scalar biwave leading symbol, the third-order covariant layer vanishes, and the remaining order-at-most-two operator is covered by the typed Volterra theorem. The natural cyclic SDR then lifts the metric homotopy to all 310 rows. The pure normal-tractor-parent-to-metric crosswalk remains fail-closed; the certified SDR has the curvature-corrected rank-310 cone, not the bare parent, as its source. Hadamard, nonlinear and quantum claims remain open.",
+    ))
+    values.append(_entry(
+        "classical.crosswalk.weak_background_causal_vs_residual_d",
+        _scope(
+            NARIAI,
+            theory="free pure-Weyl classical BV complex; comparison of background-stability domains",
+            background="global conformal-cylinder orbit; relative radius-1/4 Bach-flat ADM class around Nariai; exact small Kantowski-Sachs Einstein family on common finite slabs",
+            boundaries="closed compact Cauchy surfaces and no timelike boundary; Kantowski-Sachs result only on declared open slabs",
+            charge_sector="unquotiented causal complex versus a separately declared fixed residual D target",
+            carrier="background-family crosswalk, not a mode or particle carrier",
+            degree="all unary BV degrees for causal transfer; residual D complement only when its activation gates hold",
+            parity="all",
+            ell="NO_CERTIFIED_MAP without a background symmetry decomposition",
+            m="NO_CERTIFIED_MAP without a background symmetry decomposition",
+            k="all local covectors in the causal theorem",
+            omega="D weights only on a declared symmetry- and gap-compatible residual carrier",
+        ),
+        {"causal": "CERTIFIED", "symplectic": "NO_CERTIFIED_MAP", "nonlinear": "NOT_APPLICABLE", "observational": "NOT_APPLICABLE", "quantum": "OPEN"},
+        ("CERTIFIED", "Advanced/retarded cyclic Green homotopies persist on the declared conformal, relative Bach-flat and finite-slab Einstein domains."),
+        ("NO_CERTIFIED_MAP", "A broad-class residual D pairing or weight decomposition is not inferred; it requires a declared conformal-Killing family, D-equivariant contraction and nonzero-weight gap."),
+        ("CERTIFIED", "Inside the conformal-cylinder class, the fixed tau-adic target persists when D(phi)=0 and has the exact augmentation defect sigma_D when D(phi) is nonzero."),
+        ("OBSTRUCTED", "For Omega=1+1/(10(1+t^2)) and D=partial_t, the fixed augmentation defect is sigma_D(1)=-1/21 although the causal complex remains certified."),
+        _second(("NOT_APPLICABLE", "This is a unary background-stability crosswalk."), ("NOT_APPLICABLE", "This is a unary background-stability crosswalk."), ("NOT_APPLICABLE", "No nonlinear sourced equation is solved by this theorem.")),
+        _evidence("weak_background_stability"),
+        "Causal stability and residual-D stability are separate lifecycle statements. The Bach-flat class is open only relative to the smooth Bach-flat locus. The Kantowski-Sachs family is causal on every certified common finite slab but the declared nonzero branch is not a whole-cylinder neighbourhood. If the conformal-Killing generator is absent, the D row is NO_CERTIFIED_MAP; causal persistence does not remove a mode or establish a D quotient. Hadamard and quantum claims remain open.",
     ))
     values.append(_entry(
         "classical.nariai.transverse_kantowski_sachs_tangent",

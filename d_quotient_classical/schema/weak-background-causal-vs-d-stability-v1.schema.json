@@ -1,0 +1,465 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-weak-background-causal-vs-d-stability-v1.schema.json",
+  "title": "Weak-background causal versus residual D stability certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "dependency_refs",
+    "background_classes",
+    "causal_stability_theorem",
+    "residual_d_stability_theorem",
+    "fixtures",
+    "cross_class_ledger",
+    "exact_checks",
+    "flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-weak-background-causal-vs-d-stability-v1"
+    },
+    "result_id": {
+      "const": "WEAK_BACKGROUND_CAUSAL_VS_D_STABILITY_V1"
+    },
+    "result_state": {
+      "const": "CAUSAL_STABILITY_DOMAINS_CERTIFIED_D_CARTAN_SYMMETRY_BOUNDARY_EXACT"
+    },
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "const": "LOCAL-ALGEBRAIC"
+        },
+        {
+          "const": "LORENTZIAN-CAUSAL"
+        }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {
+        "$ref": "#/$defs/artifactRef"
+      }
+    },
+    "background_classes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "globally_conformal_cylinder",
+        "bach_flat_nariai_adm",
+        "conformally_einstein_ks_slabs"
+      ],
+      "properties": {
+        "globally_conformal_cylinder": {
+          "$ref": "#/$defs/backgroundClass"
+        },
+        "bach_flat_nariai_adm": {
+          "$ref": "#/$defs/backgroundClass"
+        },
+        "conformally_einstein_ks_slabs": {
+          "$ref": "#/$defs/backgroundClass"
+        }
+      }
+    },
+    "causal_stability_theorem": {
+      "type": "object",
+      "required": [
+        "hyperbolicity_conditions",
+        "hpl_formulas",
+        "support_boundary"
+      ],
+      "properties": {
+        "hyperbolicity_conditions": {
+          "type": "array",
+          "minItems": 5,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "hpl_formulas": {
+          "type": "object",
+          "required": [
+            "resolvents",
+            "inclusion",
+            "projection",
+            "homotopy",
+            "transferred_differential",
+            "causal_lift"
+          ],
+          "properties": {
+            "resolvents": {
+              "type": "string",
+              "minLength": 1
+            },
+            "inclusion": {
+              "type": "string",
+              "minLength": 1
+            },
+            "projection": {
+              "type": "string",
+              "minLength": 1
+            },
+            "homotopy": {
+              "type": "string",
+              "minLength": 1
+            },
+            "transferred_differential": {
+              "type": "string",
+              "minLength": 1
+            },
+            "causal_lift": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "support_boundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "residual_d_stability_theorem": {
+      "type": "object",
+      "required": [
+        "geometric_activation_gate",
+        "cartan_activation_gate",
+        "finite_residual_gap_gate",
+        "conformal_specialization",
+        "fixed_augmentation_gate",
+        "verdict"
+      ],
+      "properties": {
+        "geometric_activation_gate": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cartan_activation_gate": {
+          "type": "string",
+          "minLength": 1
+        },
+        "finite_residual_gap_gate": {
+          "type": "string",
+          "minLength": 1
+        },
+        "conformal_specialization": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fixed_augmentation_gate": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verdict": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "fixtures": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "positive_conformal_fixture",
+        "negative_conformal_fixture",
+        "finite_residual_fixture"
+      ],
+      "properties": {
+        "positive_conformal_fixture": {
+          "type": "object",
+          "required": [
+            "background",
+            "Omega_sp",
+            "bounds",
+            "generator",
+            "sigma_D",
+            "causal_complex",
+            "fixed_augmentation_D_Cartan"
+          ],
+          "properties": {
+            "background": {
+              "type": "string"
+            },
+            "Omega_sp": {
+              "type": "string"
+            },
+            "bounds": {
+              "type": "string"
+            },
+            "generator": {
+              "type": "string"
+            },
+            "sigma_D": {
+              "type": "string"
+            },
+            "causal_complex": {
+              "type": "string"
+            },
+            "fixed_augmentation_D_Cartan": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "negative_conformal_fixture": {
+          "type": "object",
+          "required": [
+            "background",
+            "Omega_tm",
+            "bounds",
+            "generator",
+            "sigma_D",
+            "normalized_point",
+            "augmentation_equivariance_defect",
+            "causal_complex",
+            "fixed_augmentation_D_Cartan",
+            "repair_not_supplied"
+          ],
+          "properties": {
+            "background": {
+              "type": "string"
+            },
+            "Omega_tm": {
+              "type": "string"
+            },
+            "bounds": {
+              "type": "string"
+            },
+            "generator": {
+              "type": "string"
+            },
+            "sigma_D": {
+              "type": "string"
+            },
+            "normalized_point": {
+              "type": "string"
+            },
+            "augmentation_equivariance_defect": {
+              "type": "string"
+            },
+            "causal_complex": {
+              "type": "string"
+            },
+            "fixed_augmentation_D_Cartan": {
+              "type": "string"
+            },
+            "repair_not_supplied": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "finite_residual_fixture": {
+          "type": "object",
+          "required": [
+            "unperturbed_nonzero_weights",
+            "perturbed_nonzero_weights",
+            "neumann_ratio",
+            "cartan_defect_rank",
+            "contraction_defect_rank",
+            "weight_crossing_mutation",
+            "weight_crossing_rank"
+          ],
+          "properties": {
+            "unperturbed_nonzero_weights": {
+              "$ref": "#/$defs/stringPair"
+            },
+            "perturbed_nonzero_weights": {
+              "$ref": "#/$defs/stringPair"
+            },
+            "neumann_ratio": {
+              "const": "1/2"
+            },
+            "cartan_defect_rank": {
+              "const": 0
+            },
+            "contraction_defect_rank": {
+              "const": 0
+            },
+            "weight_crossing_mutation": {
+              "$ref": "#/$defs/stringPair"
+            },
+            "weight_crossing_rank": {
+              "const": 2
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "cross_class_ledger": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "class",
+          "causal_complex",
+          "fixed_residual_D"
+        ],
+        "properties": {
+          "class": {
+            "type": "string",
+            "minLength": 1
+          },
+          "causal_complex": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fixed_residual_D": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 9,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "WEAK_BACKGROUND_CAUSAL_VS_D_STABILITY_V1",
+        "CONFORMAL_CYLINDER_CAUSAL_OPEN_CLASS",
+        "BACH_FLAT_RELATIVE_ADM_CAUSAL_OPEN_CLASS",
+        "KS_COMMON_SLAB_CAUSAL_STABILITY",
+        "CAUSAL_STABILITY_IMPLIES_D_CARTAN_STABILITY",
+        "D_CARTAN_ON_ALL_BACH_FLAT_BACKGROUNDS",
+        "KS_NONZERO_WHOLE_CYLINDER_NEIGHBOURHOOD",
+        "HADAMARD_TRANSFER",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "WEAK_BACKGROUND_CAUSAL_VS_D_STABILITY_V1": {
+          "const": true
+        },
+        "CONFORMAL_CYLINDER_CAUSAL_OPEN_CLASS": {
+          "const": true
+        },
+        "BACH_FLAT_RELATIVE_ADM_CAUSAL_OPEN_CLASS": {
+          "const": true
+        },
+        "KS_COMMON_SLAB_CAUSAL_STABILITY": {
+          "const": true
+        },
+        "CAUSAL_STABILITY_IMPLIES_D_CARTAN_STABILITY": {
+          "const": false
+        },
+        "D_CARTAN_ON_ALL_BACH_FLAT_BACKGROUNDS": {
+          "const": false
+        },
+        "KS_NONZERO_WHOLE_CYLINDER_NEIGHBOURHOOD": {
+          "const": false
+        },
+        "HADAMARD_TRANSFER": {
+          "const": false
+        },
+        "QUANTUM_CLAIM": {
+          "const": false
+        }
+      }
+    },
+    "next_gate": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_manifest",
+        "verification_commands"
+      ],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 4,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "verification_commands": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "artifactRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "backgroundClass": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "stringPair": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    }
+  }
+}

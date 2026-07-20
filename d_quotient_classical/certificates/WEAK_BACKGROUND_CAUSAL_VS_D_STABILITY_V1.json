@@ -1,0 +1,215 @@
+{
+  "background_classes": {
+    "bach_flat_nariai_adm": {
+      "causal_verdict": "CERTIFIED",
+      "manifold": "R x (S1 x S2)",
+      "mechanism": "normally hyperbolic parent; metric biwave Volterra homotopy; natural finite-order cyclic rank-310 SDR; sharp transfer theorem",
+      "metrics": "smooth Bach-flat ADM metrics in the declared radius-1/4 ball about unit Nariai",
+      "open_set": "relative radius 1/4, not ambient-open in all metrics",
+      "topology": "relative C0 ADM topology on the smooth Bach-flat locus; C_b^k refinements when derivative estimates are invoked"
+    },
+    "conformally_einstein_ks_slabs": {
+      "causal_verdict": "CERTIFIED_ON_EACH_COMMON_SLAB",
+      "manifold": "(-T,T) x S1 x S2",
+      "mechanism": "common wider cone, metric biwave homotopy and nilpotent six-block cyclic HPL",
+      "metrics": "exact Kantowski-Sachs Einstein family g_epsilon",
+      "open_set": "for every T>0 there exists delta_T>0 with |epsilon|<delta_T",
+      "topology": "smooth parameter topology on each fixed finite slab",
+      "whole_cylinder_verdict": "OBSTRUCTED_FOR_THE_DECLARED_NONZERO_BRANCH"
+    },
+    "globally_conformal_cylinder": {
+      "causal_verdict": "CERTIFIED",
+      "manifold": "R x S3",
+      "mechanism": "pointwise support-local BV-canonical conjugation; causal sets are unchanged",
+      "metrics": "g_phi=exp(2phi)g0",
+      "open_set": "||phi||_C0<epsilon, epsilon>0",
+      "topology": "bounded-smooth Frechet topology"
+    }
+  },
+  "causal_stability_theorem": {
+    "hpl_formulas": {
+      "causal_lift": "Lambda_C,+/-=H_Delta+I_Delta Lambda_E,+/- p_Delta",
+      "homotopy": "H_Delta=R H=H L",
+      "inclusion": "I_Delta=R I",
+      "projection": "p_Delta=p L",
+      "resolvents": "R=(1+H Delta)^(-1), L=(1+Delta H)^(-1)",
+      "transferred_differential": "q_Delta=q+p Delta R I"
+    },
+    "hyperbolicity_conditions": [
+      "one common globally hyperbolic support category, or pointwise conformal equality of causal sets",
+      "normally hyperbolic diagonal companions or a certified biwave-plus-order-at-most-two Volterra normal form",
+      "smooth coefficient bounds on each finite slab; quantitative Sobolev uniformity requires the corresponding C_b^k bounds",
+      "finite-order support-local cyclic inclusion, projection and homotopy",
+      "finite filtration nilpotence, or an independently justified finite-order support-local inverse, for the HPL resolvents"
+    ],
+    "support_boundary": "No support statement follows if a required inverse, shear, projector or homotopy is pseudodifferential, infinite-order or otherwise non-support-local."
+  },
+  "claim_boundary": "This theorem certifies the first scoped background-stability domains for the classical cyclic causal complex and separates them from residual D-Cartan persistence. It hash-consumes, rather than reproduces, the globally conformal-cylinder, relative-open Bach-flat and Kantowski--Sachs slabwise producers. The fixed tau-adic augmentation obstruction is a same-background carrier statement, not loss of the causal complex and not removal of a physical mode. The Bach-flat class is open only relative to the smooth Bach-flat locus. No arbitrary-background, timelike-boundary, Hadamard, nonlinear, particle, QME or quantum theorem is claimed.",
+  "cross_class_ledger": [
+    {
+      "causal_complex": "CERTIFIED",
+      "class": "globally conformal cylinder, D(phi)=0",
+      "fixed_residual_D": "CERTIFIED"
+    },
+    {
+      "causal_complex": "CERTIFIED",
+      "class": "globally conformal cylinder, D(phi)!=0",
+      "fixed_residual_D": "OBSTRUCTED_BY_AFFINE_TARGET_DEFECT"
+    },
+    {
+      "causal_complex": "CERTIFIED",
+      "class": "relative-open Bach-flat Nariai ADM ball",
+      "fixed_residual_D": "NO_CERTIFIED_MAP unless a CKV family and D-equivariant contraction are separately supplied"
+    },
+    {
+      "causal_complex": "CERTIFIED_ON_COMMON_FINITE_SLABS",
+      "class": "exact conformally Einstein Kantowski-Sachs branch",
+      "fixed_residual_D": "NO_CERTIFIED_MAP for undeclared generators"
+    }
+  ],
+  "dependency_refs": {
+    "bach_flat_metric": {
+      "artifact_id": "BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+      "path": "d_quotient_classical/certificates/BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
+      "sha256": "f6f428c1d27526c918bfc0cc57975097452161ee9a0e61c5b3a34d1a3bf531ad"
+    },
+    "bach_flat_parent": {
+      "artifact_id": "BACH_FLAT_PARENT_GREEN_STABILITY_V1",
+      "path": "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
+      "sha256": "2ee8be4633c180f178ceff900cda2e6cc6b6f6c51bf7018e59cea3f63d5c14bf"
+    },
+    "bach_flat_rank310": {
+      "artifact_id": "BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1",
+      "path": "d_quotient_classical/certificates/BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1.json",
+      "sha256": "b7fc3559345c59a02686388d101d2db76d597949f77450de1083c65b289fb86e"
+    },
+    "bach_flat_sdr": {
+      "artifact_id": "BACH_FLAT_RANK310_NATURAL_SDR_V1",
+      "path": "d_quotient_classical/certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1.json",
+      "sha256": "17b8805944409299ac9a3d3cb25fb6ffae5e6f9fe70b3b1f40b177e778137355"
+    },
+    "conformal_cylinder_orbit": {
+      "artifact_id": "CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1",
+      "path": "d_quotient_classical/certificates/CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1.json",
+      "sha256": "6555e983ae42095fdef87b79f6530c4f3a2293fec3e54d43135116e04ef26a7a"
+    },
+    "ks_common_slab": {
+      "artifact_id": "NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_KS_COMMON_SLAB_CAUSAL_DOMAIN_V1.json",
+      "sha256": "e4d6a9a8cd71e1678ac5967c8a6078a393cde345f98fcb9082023de2ab96c6bf"
+    },
+    "ks_global_obstruction": {
+      "artifact_id": "NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_KANTOWSKI_SACHS_GLOBAL_OBSTRUCTION_V1.json",
+      "sha256": "efa472248ed0586bedfc33f595187fcdfc4b00a206020a08054e1260d5a578d3"
+    },
+    "ks_rank310": {
+      "artifact_id": "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1.json",
+      "sha256": "58a266aa66d3070816038f229346c0676c88cbb812790700f6fa7eb264750e0e"
+    },
+    "sharp_transfer_theorem": {
+      "artifact_id": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1",
+      "path": "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
+      "sha256": "98c57a89861ce198e8ad072bc43859f84b5c6d96df85d0013f729d24dd1d1df7"
+    },
+    "wz_d_cartan": {
+      "artifact_id": "WESS_ZUMINO_D_CARTAN_CONTRACTION_V1",
+      "path": "d_quotient_classical/certificates/WESS_ZUMINO_D_CARTAN_CONTRACTION_V1.json",
+      "sha256": "7d55dd68a6d5460fc5abb8d0d338e56b3890de2209aa72b4a7838ac31d9b3507"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "causal_and_D_verdicts_separated": true,
+    "conformal_negative_fixture_exact": true,
+    "conformal_positive_fixture_exact": true,
+    "dependency_hashes_recorded": true,
+    "finite_residual_neumann_fixture_exact": true,
+    "finite_slab_and_whole_cylinder_separated": true,
+    "normalized_D_target_defect_minus_1_over_21": true,
+    "relative_and_ambient_openness_separated": true,
+    "weight_crossing_mutation_rejected": true
+  },
+  "fixtures": {
+    "finite_residual_fixture": {
+      "cartan_defect_rank": 0,
+      "contraction_defect_rank": 0,
+      "neumann_ratio": "1/2",
+      "perturbed_nonzero_weights": [
+        "3/2",
+        "-1/2"
+      ],
+      "unperturbed_nonzero_weights": [
+        "1",
+        "-1"
+      ],
+      "weight_crossing_mutation": [
+        "2",
+        "0"
+      ],
+      "weight_crossing_rank": 2
+    },
+    "negative_conformal_fixture": {
+      "Omega_tm": "1 + 1/(10*t**2 + 10)",
+      "augmentation_equivariance_defect": "-1/21",
+      "background": "g_tm=Omega_tm^2(-dt^2+dOmega_3^2)",
+      "bounds": "1<Omega_tm<=11/10",
+      "causal_complex": "CERTIFIED",
+      "fixed_augmentation_D_Cartan": "OBSTRUCTED",
+      "generator": "D=partial_t",
+      "normalized_point": "t=1",
+      "repair_not_supplied": "translated compensator-background orbit or another affine D-stable target",
+      "sigma_D": "-2*t/((t**2 + 1)*(10*t**2 + 11))"
+    },
+    "positive_conformal_fixture": {
+      "Omega_sp": "1+z/10, where z:S3->[ -1,1 ] is the height function",
+      "background": "g_sp=Omega_sp^2(-dt^2+dOmega_3^2)",
+      "bounds": "9/10<=Omega_sp<=11/10",
+      "causal_complex": "CERTIFIED by pointwise BV-canonical conformal transport",
+      "fixed_augmentation_D_Cartan": "CERTIFIED because sigma_D=0",
+      "generator": "D=partial_t",
+      "sigma_D": "0"
+    }
+  },
+  "flags": {
+    "BACH_FLAT_RELATIVE_ADM_CAUSAL_OPEN_CLASS": true,
+    "CAUSAL_STABILITY_IMPLIES_D_CARTAN_STABILITY": false,
+    "CONFORMAL_CYLINDER_CAUSAL_OPEN_CLASS": true,
+    "D_CARTAN_ON_ALL_BACH_FLAT_BACKGROUNDS": false,
+    "HADAMARD_TRANSFER": false,
+    "KS_COMMON_SLAB_CAUSAL_STABILITY": true,
+    "KS_NONZERO_WHOLE_CYLINDER_NEIGHBOURHOOD": false,
+    "QUANTUM_CLAIM": false,
+    "WEAK_BACKGROUND_CAUSAL_VS_D_STABILITY_V1": true
+  },
+  "next_gate": "MICROLOCAL_HADAMARD_TRANSPORT_REQUIRES_AN_INDEPENDENT_WAVEFRONT_SET_INPUT; RESIDUAL_D_EXTENSION_REQUIRES_A_DECLARED_CKV_FAMILY_AND_D_EQUIVARIANT_TARGET",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/tests/test_weak_background_causal_vs_d_stability.py": "9819eaa2293be6f8916981309df7f180a1c3ab7576de7c1a02e185c6092a6059",
+      "d_quotient_classical/causal_transfer/verify_weak_background_causal_vs_d_stability.py": "2a2fbe13352bf18ff2b1ed200f27976ea169daebf74ad06a2c82901439ab6aaa",
+      "d_quotient_classical/causal_transfer/weak_background_causal_vs_d_stability.py": "90a35971830bc8fc76ace656c2a4b1e2aff9641aa2719b14b569f43061ed5d49",
+      "d_quotient_classical/schema/weak-background-causal-vs-d-stability-v1.schema.json": "0041d2ae3730ae6db68535a237d2eeb3cb57ba906f35a9b04ddf416cf6f2b26d"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/weak_background_causal_vs_d_stability.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_weak_background_causal_vs_d_stability.py",
+      "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_weak_background_causal_vs_d_stability",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/weak-background-causal-vs-d-stability-v1.schema.json -d d_quotient_classical/certificates/WEAK_BACKGROUND_CAUSAL_VS_D_STABILITY_V1.json"
+    ]
+  },
+  "residual_d_stability_theorem": {
+    "cartan_activation_gate": "[Q_epsilon,iota_D,epsilon]_+=L_D,epsilon and the inclusion, projection and homotopy must be D-equivariant on the declared target carrier.",
+    "conformal_specialization": "If L_D g0=2 sigma0 g0, then L_D(exp(2phi)g0)=2(sigma0+D(phi))exp(2phi)g0.",
+    "finite_residual_gap_gate": "On the contracted complement, L_D,0 must be invertible and ||L_D,0^(-1)(L_D,epsilon-L_D,0)||<1 in a declared operator norm; then the Neumann inverse exists and h_D,epsilon=iota_D,epsilon L_D,epsilon^(-1).",
+    "fixed_augmentation_gate": "For the tau-adic target pi(tau)=0, pi L_D(tau)-L_D pi(tau)=sigma_D. Thus sigma_D=0 is necessary for that fixed target even when D remains conformal Killing.",
+    "geometric_activation_gate": "A declared family (D_epsilon,sigma_epsilon) must solve L_D g=2 sigma_D g on the same background family. If it does not, the residual D row is NO_CERTIFIED_MAP.",
+    "verdict": "Residual D-Cartan stability is certified only on the symmetry-, gap- and carrier-compatible sublocus; it is not inferred from causal stability."
+  },
+  "result_id": "WEAK_BACKGROUND_CAUSAL_VS_D_STABILITY_V1",
+  "result_state": "CAUSAL_STABILITY_DOMAINS_CERTIFIED_D_CARTAN_SYMMETRY_BOUNDARY_EXACT",
+  "schema": "pure-weyl-weak-background-causal-vs-d-stability-v1"
+}

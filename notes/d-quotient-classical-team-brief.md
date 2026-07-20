@@ -2719,6 +2719,53 @@ their imported endpoint data.  It does not transfer wavefront sets, construct
 a Hadamard two-point function, select a complex structure, prove positivity,
 or establish a particle or quantum claim.
 
+### Weak-background causal stability versus residual \(D\) (2026-07-20)
+
+`WEAK_BACKGROUND_CAUSAL_VS_D_STABILITY_V1` separates two statements that had
+previously been distributed across several background certificates.
+
+The complete cyclic causal complex persists on the bounded-smooth global
+conformal-cylinder orbit, throughout the radius-`1/4` relative ADM
+neighbourhood of unit Nariai inside the smooth Bach-flat locus, and on every
+common finite slab of the exact small Kantowski--Sachs Einstein family.  The
+mechanisms are respectively pointwise BV-canonical conjugation, the
+biwave--Volterra metric theorem plus the natural cyclic rank-310 SDR, and the
+finite six-block HPL with a common wider causal cone.
+
+Residual \(D\)-Cartan persistence is narrower.  It requires a declared
+conformal-Killing family, the Cartan and equivariance identities on the same
+target carrier, and an invertible nonzero-weight operator on the contracted
+complement.  The finite-carrier gap condition is
+
+\[
+\left\|L_{D,0}^{-1}(L_{D,\epsilon}-L_{D,0})\right\|<1.
+\]
+
+The same conformally flat cylinder class already separates the verdicts.  For
+\(D=\partial_t\) and a spatial conformal factor
+\(\Omega_{\rm sp}=1+z/10\), the fixed tau-adic target remains
+\(D\)-equivariant.  For
+
+\[
+\Omega_{\rm tm}=1+\frac1{10(1+t^2)}
+\]
+
+the causal complex still transports exactly, but the fixed augmentation has
+
+\[
+\pi{\cal L}_D\tau-{\cal L}_D\pi\tau
+=D\log\Omega_{\rm tm},\qquad
+D\log\Omega_{\rm tm}\big|_{t=1}=-\frac1{21}.
+\]
+
+Thus causal persistence neither supplies nor implies a residual
+\(D\)-quotient.  On a broader Bach-flat or conformally Einstein family with
+no declared conformal-Killing continuation, the residual row is
+`NO_CERTIFIED_MAP`, not `CERTIFIED` and not mode removal.  The exact
+Kantowski--Sachs branch remains slabwise causal but is not a nonzero
+whole-cylinder neighbourhood.  Hadamard, nonlinear and quantum promotions
+remain outside this theorem.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

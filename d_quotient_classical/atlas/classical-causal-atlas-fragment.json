@@ -25,7 +25,7 @@
         {
           "path": "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
           "result_id": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1",
-          "sha256": "ee68eedf48f8ad63b892018945ccf9141baafc409302128a4ddece92e2ac97b3"
+          "sha256": "98c57a89861ce198e8ad072bc43859f84b5c6d96df85d0013f729d24dd1d1df7"
         },
         {
           "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
@@ -99,7 +99,7 @@
         {
           "path": "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
           "result_id": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1",
-          "sha256": "ee68eedf48f8ad63b892018945ccf9141baafc409302128a4ddece92e2ac97b3"
+          "sha256": "98c57a89861ce198e8ad072bc43859f84b5c6d96df85d0013f729d24dd1d1df7"
         },
         {
           "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
@@ -173,7 +173,7 @@
         {
           "path": "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
           "result_id": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1",
-          "sha256": "ee68eedf48f8ad63b892018945ccf9141baafc409302128a4ddece92e2ac97b3"
+          "sha256": "98c57a89861ce198e8ad072bc43859f84b5c6d96df85d0013f729d24dd1d1df7"
         },
         {
           "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
@@ -247,7 +247,7 @@
         {
           "path": "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
           "result_id": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1",
-          "sha256": "ee68eedf48f8ad63b892018945ccf9141baafc409302128a4ddece92e2ac97b3"
+          "sha256": "98c57a89861ce198e8ad072bc43859f84b5c6d96df85d0013f729d24dd1d1df7"
         }
       ],
       "id": "classical.vacuum_cylinder.deformation.w_plus_squared",
@@ -316,7 +316,7 @@
         {
           "path": "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
           "result_id": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1",
-          "sha256": "ee68eedf48f8ad63b892018945ccf9141baafc409302128a4ddece92e2ac97b3"
+          "sha256": "98c57a89861ce198e8ad072bc43859f84b5c6d96df85d0013f729d24dd1d1df7"
         }
       ],
       "id": "classical.vacuum_cylinder.deformation.w_minus_squared",
@@ -612,7 +612,7 @@
         {
           "path": "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
           "result_id": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1",
-          "sha256": "ee68eedf48f8ad63b892018945ccf9141baafc409302128a4ddece92e2ac97b3"
+          "sha256": "98c57a89861ce198e8ad072bc43859f84b5c6d96df85d0013f729d24dd1d1df7"
         },
         {
           "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
@@ -814,6 +814,70 @@
         "omega": "all",
         "parity": "all",
         "theory": "free pure-Weyl metric BV complex and normal-adjoint-tractor parent"
+      }
+    },
+    {
+      "claim_boundary": "Causal stability and residual-D stability are separate lifecycle statements. The Bach-flat class is open only relative to the smooth Bach-flat locus. The Kantowski-Sachs family is causal on every certified common finite slab but the declared nonzero branch is not a whole-cylinder neighbourhood. If the conformal-Killing generator is absent, the D row is NO_CERTIFIED_MAP; causal persistence does not remove a mode or establish a D quotient. Hadamard and quantum claims remain open.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/WEAK_BACKGROUND_CAUSAL_VS_D_STABILITY_V1.json",
+          "result_id": "WEAK_BACKGROUND_CAUSAL_VS_D_STABILITY_V1",
+          "sha256": "32d75fc8c23ae9fdef0edf27a8a656b5355509e7c4a38a4650174d1342e905fb"
+        }
+      ],
+      "id": "classical.crosswalk.weak_background_causal_vs_residual_d",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Advanced/retarded cyclic Green homotopies persist on the declared conformal, relative Bach-flat and finite-slab Einstein domains.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "A broad-class residual D pairing or weight decomposition is not inferred; it requires a declared conformal-Killing family, D-equivariant contraction and nonzero-weight gap.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "For Omega=1+1/(10(1+t^2)) and D=partial_t, the fixed augmentation defect is sigma_D(1)=-1/21 although the causal complex remains certified.",
+          "status": "OBSTRUCTED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "This is a unary background-stability crosswalk.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "No nonlinear sourced equation is solved by this theorem.",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "This is a unary background-stability crosswalk.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "Inside the conformal-cylinder class, the fixed tau-adic target persists when D(phi)=0 and has the exact augmentation defect sigma_D when D(phi) is nonzero.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "global conformal-cylinder orbit; relative radius-1/4 Bach-flat ADM class around Nariai; exact small Kantowski-Sachs Einstein family on common finite slabs",
+        "boundaries": "closed compact Cauchy surfaces and no timelike boundary; Kantowski-Sachs result only on declared open slabs",
+        "carrier": "background-family crosswalk, not a mode or particle carrier",
+        "charge_sector": "unquotiented causal complex versus a separately declared fixed residual D target",
+        "degree": "all unary BV degrees for causal transfer; residual D complement only when its activation gates hold",
+        "ell": "NO_CERTIFIED_MAP without a background symmetry decomposition",
+        "k": "all local covectors in the causal theorem",
+        "m": "NO_CERTIFIED_MAP without a background symmetry decomposition",
+        "omega": "D weights only on a declared symmetry- and gap-compatible residual carrier",
+        "parity": "all",
+        "theory": "free pure-Weyl classical BV complex; comparison of background-stability domains"
       }
     },
     {
@@ -1580,7 +1644,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "b94fe022dc30e637b6e91d764e0c129c23b0a1b49f58cc3b7e068da891764b01",
+  "generated_by_sha256": "ab0cbffdd43bd682bb4ff4b81a2563499e8c60ee4da4a4334990c369fe8d7047",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

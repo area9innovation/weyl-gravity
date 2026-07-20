@@ -78,6 +78,18 @@ def verify() -> None:
         not in wz["claim_boundary"]
     ):
         raise AssertionError("Wess-Zumino D-Cartan atlas boundary drifted")
+    stability = by_id["classical.crosswalk.weak_background_causal_vs_residual_d"]
+    if (
+        stability["descriptions"]["causal"] != "CERTIFIED"
+        or stability["descriptions"]["symplectic"] != "NO_CERTIFIED_MAP"
+        or "WEAK_BACKGROUND_CAUSAL_VS_D_STABILITY_V1"
+        not in {item["result_id"] for item in stability["evidence"]}
+        or "Causal stability and residual-D stability are separate"
+        not in stability["claim_boundary"]
+        or "NO_CERTIFIED_MAP" not in stability["claim_boundary"]
+        or "Hadamard and quantum claims remain open" not in stability["claim_boundary"]
+    ):
+        raise AssertionError("weak-background causal-versus-D boundary drifted")
     crosswalk = by_id["classical.crosswalk.bach_flat_parent_to_metric"]
     if set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("parent/metric crosswalk overpromoted")
