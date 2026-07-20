@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-retuned-background-locus-after-stability",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-retuned-background-locus-after-stability",
+  "source": {
+    "path": "planning/work-items/classical-compensator-retuned-background-locus-after-stability.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Use the exact active-clock background-stability theorem to locate the nearest genuinely viable retuned background/action locus, or prove that no such locus exists in the declared deformation family.",
+    "stop_condition": "Import the terminal active-clock background-stability certificate.  If it exports a first rank, inertia, sound-cone or charge bifurcation surface, solve the complete real algebraic stationary and seven-gate conditions on that surface and its adjacent chambers; do not select a point before classifying the locus.  If the verdict is constant on the entire declared family, certify that bounded family no-go and identify the first assumption that must be relaxed.  For every nonempty candidate component, prove background existence, coupled principal hyperbolicity, velocity inertia, clock health, raw-D/K charge, reduced pairing and support-local causal parent before choosing the smallest rational witness.  Recompute rather than transport the Berger clock and cylinder data.  Export a content-addressed action/background pair only if every gate passes.",
+    "current_gate": "nearest exact bifurcation or viable retuned action/background component after the stability theorem",
+    "forbid": "no numerical continuation called a locus theorem; no preferred sample before exact elimination; no crossing a rank or inertia discriminant without separate strata; no frozen-fixture charge imported to a retuned background; no generic k-essence or arbitrary-background claim beyond the declared family; no quantum promotion",
+    "depends_on": [
+      "sf:program/work/classical-compensator-active-clock-background-stability"
+    ],
+    "activates": [
+      "one selected retuned action/background causal carrier",
+      "or a background-family no-go and the exact assumption that must next be enlarged"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "reports/",
+      "residual_atlas/",
+      "paper/12-quantum-weyl-local-anomaly-and-compensator.tex",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "CLASSICAL BIFURCATION CONSUMER.  Convert the stability result into the closest exact changed laboratory rather than beginning another isolated candidate.",
+    "notes": [
+      "A proof that the whole declared deformation family stays obstructed is a successful terminal result.",
+      "A rational fixture is evidence only after membership in a complete good component is proved."
+    ],
+    "input_commit": "f64be4a57",
+    "stream": "classical"
+  },
+  "edges": []
+}

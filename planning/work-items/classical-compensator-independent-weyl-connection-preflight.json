@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-independent-weyl-connection-preflight",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-independent-weyl-connection-preflight",
+  "source": {
+    "path": "planning/work-items/classical-compensator-independent-weyl-connection-preflight.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Classify the smallest action-derived independent Weyl-connection/gauge-generator extension capable of removing the dressed-trace obstruction after the minimal scalar and three-form routes.",
+    "stop_condition": "Import the minimal-action empty-locus theorem and the terminal fixed-flux/global-quotient preflight.  Declare a complete minimal local parity-even ansatz for one independent Weyl connection, its curvature, the complex compensator and dressed metric at the lowest derivative order that can change the trace complex, modulo integration by parts and invertible local field redefinitions.  Derive the full gauge transformations, reducibility if present, ghosts, antifields, cotangent lift, real structure and odd pairing from the action.  Compute the unit-cylinder and Berger stationary equations and the complete scalar/longitudinal principal-symbol complex.  Determine exact cohomology, velocity inertia, charge generators and support-local Green parent.  Prove either one passing coefficient component with an explicit contraction of the former dressed-trace class, or an exact rank/sign/charge obstruction for the whole declared ansatz.",
+    "current_gate": "complete minimal independent-Weyl-connection action and BV preflight",
+    "forbid": "no extra gauge row without an action and cotangent lift; no Stueckelberg counting used as cohomology; no gauge fixing used to erase a physical sign; no sampled coefficient search called complete; no automatic inheritance of the old cylinder or Berger solutions; no anomaly, Hadamard, particle or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/classical-compensator-ht-fixed-flux-global-quotient-preflight"
+    ],
+    "activates": [
+      "a selected independent-connection causal BV carrier",
+      "or a scoped minimal independent-connection no-go and the next exact enlargement"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "reports/",
+      "residual_atlas/",
+      "paper/12-quantum-weyl-local-anomaly-and-compensator.tex",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "CLASSICAL NEW-GENERATOR LANE.  This is a genuine theory change; prove its complete minimal coefficient locus before any nonlinear or quantum consumer is activated.",
+    "notes": [
+      "The purpose is to test the remaining 'completed additional gauge generator' option left open by the compensator no-go.",
+      "Do not combine this extension with Candidate A or B unless the complete action ansatz explicitly includes and classifies the combination."
+    ],
+    "input_commit": "a5924e707",
+    "stream": "classical"
+  },
+  "edges": []
+}

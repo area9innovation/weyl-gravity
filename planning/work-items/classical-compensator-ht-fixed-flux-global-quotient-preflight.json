@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-ht-fixed-flux-global-quotient-preflight",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-ht-fixed-flux-global-quotient-preflight",
+  "source": {
+    "path": "planning/work-items/classical-compensator-ht-fixed-flux-global-quotient-preflight.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Determine whether an explicitly changed Henneaux--Teitelboim theory with fixed flux/cosmological superselection and a declared global three-form quotient removes Candidate B's exact global obstruction without hiding a physical clock or charge.",
+    "stop_condition": "Import COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1 and COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1 by hashes.  Define the global field space, small and large gauge groups, flux lattice or real-flux convention, fixed-lambda and fixed-flux tangent conditions, boundary data and allowed transition functions before reducing any rows.  Derive the action-derived reducible BV complex and cotangent lift on the unit cylinder and frozen Berger carrier.  Prove whether the harmonic H3/Hc4 pair is removed, frozen or remains physical; whether the dressed trace obtains a complete support-local retarded/advanced parent; and whether the reduced pairing is nondegenerate with controlled sign.  Recompute raw D and K_Berger Hamiltonians, the Berger background shift, the clock phase observable and every zero mode.  Certify either one coherent changed theory passing all seven gates, or the first exact incompatibility of every declared fixed-flux/global-quotient choice.  Export the global quotient and superselection data as first-class certificate inputs rather than prose assumptions.",
+    "current_gate": "exact fixed-flux/global-quotient disposition of the Candidate B topological obstruction",
+    "forbid": "no silent deletion of the H3 mode; no local Poincare lemma used as a global quotient; no fixed-lambda tangent called gauge without its phase-space definition; no raw D substituted for K_Berger; no inherited causal inverse before the reduced global carrier is proved; no anomaly, Hadamard, particle, scattering or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/classical-compensator-minimal-action-classification-after-neither"
+    ],
+    "activates": [
+      "one content-addressed fixed-flux changed-action carrier if every gate passes",
+      "or a scoped global-quotient no-go identifying the next necessary enlargement"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "reports/",
+      "residual_atlas/",
+      "paper/12-quantum-weyl-local-anomaly-and-compensator.tex",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "CLASSICAL CHANGED-THEORY PREFLIGHT.  Candidate B explicitly left this global option open; make every superselection and quotient choice mathematical and auditable.",
+    "notes": [
+      "A passing result is a new theory, not a repair equivalent to strict pure Weyl gravity.",
+      "An exact obstruction is equally terminal and should prevent downstream action-specific work."
+    ],
+    "input_commit": "a5924e707",
+    "stream": "classical"
+  },
+  "edges": []
+}
