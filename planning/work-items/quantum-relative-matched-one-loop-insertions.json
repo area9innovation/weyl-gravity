@@ -1,0 +1,38 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-relative-matched-one-loop-insertions",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-relative-matched-one-loop-insertions",
+  "source": {
+    "path": "planning/work-items/quantum-relative-matched-one-loop-insertions.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum",
+    "state": "PROPOSED",
+    "objective": "Construct matched renormalized one-loop QME insertions for Einstein-Maxwell and Weyl-Maxwell on the same compact-product background, gauge, measure, zero-mode prescription and regulator, so the relative quantum question has legitimate source and target data.",
+    "stop_condition": "Import the relative nondefinition certificate at commit 91b720aca and, when pulled, the terminal artifact of quantum-relative-einstein-weyl-cyclic-pushforward-after-obstruction by exact hash. Declare one common background, boundary condition, gauge fixing, antifield convention, measure, zero-mode removal and regularization scheme. Classify the local anomaly/counterterm bases separately for Einstein-Maxwell and Weyl-Maxwell, then compute or exactly reduce their coefficient-bearing renormalized QME insertions with two independent methods where feasible. Export each insertion before any subtraction. If and only if the cyclic pushforward exists, form and classify the relative insertion; otherwise certify that the two absolute insertions exist while the relative class remains undefined. Land dependency tags, schemes, counterterm ambiguity, exact or interval coefficients, independent verification and decisive convention mutations.",
+    "current_gate": "matched coefficient-bearing source and target one-loop insertions; relative subtraction only behind the cyclic-pushforward gate",
+    "forbid": "no reuse of the pure-Weyl coefficient vector as Weyl-Maxwell data; no subtraction across unmatched gauges, measures or zero modes; no determinant equality called a BV QME insertion; no relative anomaly if the cyclic pushforward is obstructed; no Euclidean result promoted to Lorentzian causality, positivity, particles, scattering or unitarity",
+    "depends_on": [],
+    "activates": [
+      "a coefficient-bearing relative anomaly calculation if the pushforward exists",
+      "an exact relative-quantum no-go if it does not",
+      "Paper 12 lifecycle and comparison-table updates"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/local_bv/",
+      "quantum-weyl/spectral/",
+      "quantum-weyl/reports/",
+      "reports/",
+      "paper/12-quantum-weyl-anomaly.tex",
+      "notes/d-quotient-quantum-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "QUANTUM RESERVE 2. Compute the two absolute insertions in one matched convention even if the current pushforward closes as an obstruction; that negative outcome forbids only the relative subtraction.",
+    "input_commit": "91b720aca",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}

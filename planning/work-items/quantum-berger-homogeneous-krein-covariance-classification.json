@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-berger-homogeneous-krein-covariance-classification",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-berger-homogeneous-krein-covariance-classification",
+  "source": {
+    "path": "planning/work-items/quantum-berger-homogeneous-krein-covariance-classification.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum",
+    "state": "PROPOSED",
+    "objective": "Classify every evolution-invariant quasifree covariance on the certified homogeneous Berger metric-antifield block after the stationary compatible-complex-structure obstruction, and decide exactly what positive, indefinite or nonstationary structures remain possible on that reduced carrier.",
+    "stop_condition": "Import commit 31875f5b6 and BERGER_C26_NORMALIZED_HADAMARD_REPRESENTATIVE_OBSTRUCTION by exact hashes. Use the exact common characteristic polynomial and action-derived commutator/Krein form to solve the full linear matrix equations for real, Hermitian and evolution-invariant two-point covariances on the homogeneous block, including the two simple real evolution eigenline pairs. Classify positivity, degeneracy, Krein signature, purity and compatibility with the real involution; prove a no-go if positivity is impossible or export the complete parameter cone if candidates exist. Separate stationary covariances from explicitly time-dependent alternatives and state which microlocal/Hadamard conditions are undefined on this finite reduced block. Land exact algebraic certificates, an independent solver/verifier and mutations of the real roots, commutator and involution.",
+    "current_gate": "complete reduced homogeneous covariance cone after failure of stationary compatible complex structure",
+    "forbid": "no finite reduced-mode covariance called a full BV Hadamard state; no Krein form called a probability inner product; no omission of real eigenlines; no numerical root samples used as exact classification; no QME, particle, scattering or unitarity promotion",
+    "depends_on": [],
+    "activates": [
+      "a precise reduced-mode quantum interpretation of the Berger homogeneous obstruction",
+      "the choice between nonstationary, Krein and BRST-removal routes",
+      "a scoped update to the quantum state claims ledger"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/lorentzian/",
+      "quantum-weyl/reports/",
+      "quantum-weyl/atlas/",
+      "reports/",
+      "notes/d-quotient-quantum-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "QUANTUM RESERVE 1. This is a proof-first exact covariance-cone calculation on the already certified homogeneous block; it does not wait for the full q26 Cauchy carrier.",
+    "input_commit": "31875f5b6",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
