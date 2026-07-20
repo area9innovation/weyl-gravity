@@ -31,5 +31,5 @@ This receipt does not establish infinite-harmonic, Sobolev, causal/retarded,
 all-orders, final-residual, scattering, particle, positivity, or quantum
 claims.
 
-CLOSE-OUT: CERTIFIED — unified provenance relock and finite-support theorem lifecycle promotion
+CLOSE-OUT: DONE — unified provenance relock and finite-support theorem lifecycle promotion
 EVIDENCE: EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_TIER3_PROVENANCE_RELOCK_V1
