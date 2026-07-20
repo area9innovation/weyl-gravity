@@ -82,7 +82,13 @@ def _witness_record(
     rows = json.loads(replay.COMPONENT.read_text())["carrier_contract"]["rows"]
     evaluator = replay.BackgroundEvaluator()
     quotient_modes = []
-    for mode, expression in sorted(evaluator.polynomial(coefficient).items()):
+    try:
+        evaluated = evaluator.polynomial(coefficient)
+        quotient_status = "EVALUATED_IN_CERTIFIED_BACKGROUND_QUOTIENT"
+    except ValueError:
+        evaluated = {}
+        quotient_status = "NOT_APPLICABLE_FORMAL_PARAMETER_PROFILE_COEFFICIENT"
+    for mode, expression in sorted(evaluated.items()):
         normal = replay.sphere_normal_form(expression)
         if normal != 0:
             quotient_modes.append({"time_mode": mode, "normal_form": sp.sstr(normal)})
@@ -96,6 +102,7 @@ def _witness_record(
         "right_input_row_id": rows[right]["row_id"],
         "right_pbw_multiindex": list(_multiindex_from_word(right_word)),
         "coefficient": serialize(coefficient),
+        "background_quotient_evaluation_status": quotient_status,
         "background_quotient_nonzero_modes": quotient_modes,
     }
 
@@ -107,12 +114,11 @@ def replay_audit() -> dict[str, Any]:
     defect = arity.arity_two_degree((0, 0), q1, q2)
     summary = arity.bilinear_summary(defect)
     expected = {
-        "operator_key_count": 4408,
-        "serialized_term_count": 4732,
+        "operator_key_count": 4228,
+        "serialized_term_count": 4552,
         "nonzero_output_rows": [
-            49, 50, 51, 52, 59, 60, 61, 62, 64, 65, 66, 67, 68, 69,
-            80, 81, 82, 83, 96, 97, 98, 99, 100, 101, 102, 103, 104,
-            105, 106, 107,
+            49, 50, 51, 52, 59, 60, 61, 62, 80, 81, 82, 83, 96, 97,
+            98, 99, 100, 101, 102, 103, 104, 105, 106, 107,
         ],
         "maximum_total_input_order": 3,
     }
@@ -125,7 +131,11 @@ def replay_audit() -> dict[str, Any]:
         for key, coefficient in row.items()
     )
     witness = _witness_record(*first)
-    if not witness["background_quotient_nonzero_modes"]:
+    if (
+        witness["background_quotient_evaluation_status"]
+        == "EVALUATED_IN_CERTIFIED_BACKGROUND_QUOTIENT"
+        and not witness["background_quotient_nonzero_modes"]
+    ):
         raise AssertionError("first arity-two witness vanished in the background quotient")
 
     base_defect = arity.arity_two_degree(
@@ -143,7 +153,7 @@ def replay_audit() -> dict[str, Any]:
         arity.replay.word(witness["right_pbw_multiindex"]),
     )
     for source in (
-        "base_gravity_clock", "base_maxwell_typed", "apparatus_scalar_BV", "rod_metric",
+        "base_gravity_clock", "base_maxwell_typed", "apparatus_scalar_BV", "dressed_rod_clock", "rod_metric",
         "memory_transport", "normalized_readout", "emitter_physical",
         "emitter_Diff_BV",
     ):
@@ -153,19 +163,19 @@ def replay_audit() -> dict[str, Any]:
         )
         if witness_key in row:
             source_values[source] = serialize(row[witness_key])
-    if set(source_values) != {"base_gravity_clock"}:
+    if set(source_values) != {"base_maxwell_typed", "emitter_physical", "emitter_Diff_BV"}:
         raise AssertionError(f"first-witness source isolation drifted: {source_values}")
 
     q1_source_values = {}
-    base_gravity_q2 = arity.load_q2(sources={"base_gravity_clock"})
+    complete_q2 = arity.load_q2()
     for source, source_q1 in _q1_source_parts().items():
         row = arity.arity_two_row(
-            witness["output_row"], (0, 0), source_q1, base_gravity_q2,
+            witness["output_row"], (0, 0), source_q1, complete_q2,
             parity,
         )
         if witness_key in row:
             q1_source_values[source] = serialize(row[witness_key])
-    if set(q1_source_values) != {"local_rod"}:
+    if set(q1_source_values) != {"base_gravity_clock_maxwell", "emitter"}:
         raise AssertionError(f"first-witness q1 source isolation drifted: {q1_source_values}")
 
     return {
@@ -196,23 +206,23 @@ def build() -> dict[str, Any]:
         "This exact LOCAL-ALGEBRAIC/REDUCED-MODE obstruction replays the lowest "
         "(epsilon_R_squared,kappa)=(0,0) coefficient of q1 q2+q2(q1,-)+(-1)^|x|q2(-,q1) "
         "on the canonical 108-row Berger differential-coefficient PBW carrier. The "
-        "typed 64-row gravity-clock-Maxwell base is an exact zero control, but the "
-        "complete source-labelled extension has 4,408 nonzero operator keys and "
-        "4,732 exact coefficient monomials on 30 output rows. The first lexicographic "
-        "witness is the cross-composition of the gravity q2 source with the local-rod "
-        "unary overlay and remains nonzero "
-        "after evaluation in the certified six-rod/Phi2 background differential "
-        "quotient. Concretely, its c_spatial_1_star output with tau and "
-        "R0_1_plus inputs has coefficient +e0 e1 R0_1 and nonvanishing time "
-        "modes in exact sphere normal form. Since this witness is at bidegree "
+        "typed 64-row gravity-clock-Maxwell base is an exact zero control. The "
+        "action-derived dressed-rod clock correction removes the former +e0 e1 R0_1 "
+        "witness and all six rod/rod-cotangent defect rows, but the remaining complete "
+        "source-labelled extension has 4,228 nonzero operator keys and 4,552 exact "
+        "coefficient monomials on 24 output rows. The new first lexicographic witness "
+        "is the shared typed Maxwell--emitter orbit: its c_spatial_1_star output with "
+        "e1 A_0 and K0_01 inputs has coefficient -2 g0 e1(h0). It source-isolates to "
+        "the typed Maxwell q2 crossed with emitter q1 plus the physical and Diff--BV "
+        "emitter q2 contributions crossed with base/emitter q1. Since this witness is at bidegree "
         "(0,0), neither the epsilon_R_squared nonlinear-clock unary correction nor "
         "any q3 term can cancel it inside the declared arity-two identity. The "
         "remaining first-bidegree coefficients are deliberately not evaluated once "
         "this lowest-cost falsifier fires; they are recorded as skipped, not passed. "
         "Therefore the complete arity-two identity is OBSTRUCTED. This "
-        "certificate does not guess a repair: a background-compatible mixed "
-        "gravity-rod binary/chart contribution or a revised unary/binary crosswalk "
-        "must be derived from the common action and then replayed. The two-sided "
+        "certificate does not guess the remaining repair: the typed Maxwell-emitter "
+        "raising and factorial conventions must be rederived together from the common "
+        "action and then replayed. The two-sided "
         "source isolation is diagnostic only: it identifies the q2 and q1 sources "
         "of the first key, not a proof that no other apparatus or emitter orbit is "
         "missing. The existing q2 and q3 payloads "
@@ -242,7 +252,7 @@ def build() -> dict[str, Any]:
         "arity_two_replay": audit,
         "repair_gate": {
             "status": "OPEN",
-            "required_object": "derive the background-compatible mixed gravity-rod binary/chart contribution or revise the unary/binary crosswalk from the common action; do not fit coefficients to the defect",
+            "required_object": "rederive the typed Maxwell-emitter shared-field q2 orbit from the common BV action in the suspended graded-symmetric factorial convention; do not flip or fit isolated coefficients",
             "acceptance": "the complete (0,0) defect and then every first-bidegree q1q2 coefficient vanish exactly, with the typed 64-row base retained as a zero control",
         },
         "activation_disposition": {
@@ -262,7 +272,7 @@ def build() -> dict[str, Any]:
             "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "DERIVE_MIXED_GRAVITY_ROD_BINARY_CHART_CONTRIBUTION_AND_REPLAY_Q1Q2",
+        "next_gate": "REDERIVE_TYPED_MAXWELL_EMITTER_COMMON_ACTION_ORBIT_AND_REPLAY_Q1Q2",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

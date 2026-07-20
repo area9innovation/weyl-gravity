@@ -109,7 +109,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   attach the certified 188-row physical/current q2 interface to the 78-row relative mapping cofiber and solve or certify the remaining cross-incidence; causal Green data and the eighteen candidate-13 spectral receivers remain separate fail-closed gates
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; for Berger, use the certified temporal-cutoff Green family to prove cutoff microlocal propagation and its regular response morphism, then supply a global seed covariance, while separately requesting a corrected q26-compatible Cauchy lift instead of the exactly rejected canonical graph lift; in parallel analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows, add remaining BV rows to the partial-BV five-carrier representative, classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; corrected complete q2 (171,567 keys) and q3 (6,427,496 keys) explicitly include the separate gravity payloads, but the 108-row arity-two replay is OBSTRUCTED at bidegree (0,0), so derive the mixed gravity-rod binary/chart contribution before any arity-three, K_Berger, observer-morphism or Z2^C restriction
+Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; corrected complete q2 (171,759 keys) and q3 (6,427,496 keys) explicitly include the separate gravity payloads, and the action-derived dressed-rod clock correction removes the former rod witness, but the 108-row arity-two replay remains OBSTRUCTED at bidegree (0,0) on a distinct typed Maxwell-emitter common-action orbit, which must be rederived before any arity-three, K_Berger, observer-morphism or Z2^C restriction
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
 
@@ -1155,18 +1155,24 @@ survive the first backreacted, normalized apparatus interaction?
    apparatus/emitter sources into 43 hashed rows with 6,427,496 operator keys
    and 7,251,368 coefficient monomials.  Its 32,928 shared gravity/rod keys
    retain both source blocks and add without overwrite.  The corrected complete
-   q2 analog has 171,567 keys and 186,743 monomials from eight sources, including
+   q2 analog now has 171,759 keys and 186,935 monomials from nine sources, including
    160 explicit gravity/rod overlaps.  Complete q2 and q3 are exported;
    the extended-carrier arity identities are not promoted.  The exact
    arity-two replay now stops already at bidegree `(0,0)`: the typed 64-row
-   base control is zero, while the 108-row extension has 4,408 nonzero keys
-   and 4,732 coefficient monomials on 30 output rows.  Its first witness is
-   `c_spatial_1_star <- (tau,R0_1_plus)` with coefficient `+e0 e1 R0_1`;
-   two-sided isolation assigns the binary side to gravity q2 and the unary
-   side to the local-rod overlay, and both exact time modes survive the
-   background quotient.  The repair gate is a common-action derivation of the
-   mixed gravity-rod binary/chart contribution or a corrected unary/binary crosswalk—not a fitted
-   cancellation.  Arity three, `K_Berger`, the observer morphism and
+   action-derived `BERGER_108_ROW_DRESSED_ROD_CLOCK_Q2_PBW` conjugates the raw
+   full-Diff rod action through `R_dressed=R_raw-Theta e0(Rbar)` and its
+   cotangent lift.  Its 192 keys leave the certified unary exactly unchanged,
+   remove the former `+e0 e1 R0_1` witness and eliminate all six
+   rod/rod-cotangent defect rows.  The remaining extension has 4,228 nonzero
+   keys and 4,552 coefficient monomials on 24 output rows.  Its first witness
+   is `c_spatial_1_star <- (e1 A_0,K0_01)` with coefficient
+   `-2 g0 e1(h0)`.  Two-sided isolation assigns it to the typed Maxwell,
+   physical-emitter and emitter-Diff--BV q2 sources crossed with the base and
+   emitter unary sources.  This formal switch-profile coefficient is outside
+   the six-rod background quotient by declared scope.  The repair gate is a
+   common-action rederivation of the typed Maxwell-emitter raising and
+   suspended-factorial convention—not a fitted sign flip.  Arity three,
+   `K_Berger`, the observer morphism and
    `O_detector|Z2^C` remain unavailable.
    The interaction identities and all observer-cone consumers remain
    fail-closed.

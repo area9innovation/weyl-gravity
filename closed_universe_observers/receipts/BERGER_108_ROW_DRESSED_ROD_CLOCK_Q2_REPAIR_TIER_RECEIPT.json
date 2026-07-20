@@ -1,0 +1,71 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_DRESSED_ROD_CLOCK_Q2_REPAIR_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_DRESSED_ROD_CLOCK_Q2_PBW",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "result_boundary": "The raw full-Diff six-rod action has been transported through the exact background-dependent linear clock dressing and its cotangent lift. The resulting 192-key additive q2 correction leaves the certified q1 unchanged, removes the former +e0 e1 R0_1 witness and all six rod/rod-cotangent defect rows. Complete q2 now has 171,759 keys and 186,935 coefficient monomials from nine sources. Arity two remains OBSTRUCTED at bidegree (0,0) with 4,228 keys and 4,552 monomials on 24 rows; the first remaining exact witness is -2 g0 e1(h0) in the typed Maxwell-emitter common-action orbit. Arity three, K_Berger equivariance, observer-morphism stability, detector restriction to the second-order cone, physical Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile on changed Python; generator JSON-schema validation; residual-atlas validation; git diff --check on explicit observer paths",
+      "elapsed_seconds": "under 10 excluding deterministic artifact generation",
+      "status": "PASS",
+      "scope": "dressed-rod clock q2 generator/verifier, complete q2 assembly, arity obstruction, schemas, generated atlas, work item and canonical observer notes"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m pytest -q test_berger_108_row_dressed_rod_clock_q2_pbw.py test_berger_108_row_complete_q2_pbw.py test_berger_108_row_arity_two_obstruction.py; scoped fast verifiers; observer atlas verifier and residual-atlas validator",
+      "elapsed_seconds": 53.04,
+      "peak_rss_mb": 653.52,
+      "status": "PASS",
+      "scope": "10 scoped unit tests plus fast schema, dependency-hash, assembly, fail-closed lifecycle and generated-atlas invariants"
+    },
+    {
+      "tier": 2,
+      "command": "exact dressed-rod clock conjugation and q2 reconstruction; complete q2 regeneration; exhaustive exact degree-zero q1q2 replay",
+      "elapsed_seconds": {
+        "dressed_rod_clock_generator": 24.75,
+        "complete_q2_generator": 11.98,
+        "arity_exhaustive_generator": 221.15
+      },
+      "peak_rss_mb": {
+        "dressed_rod_clock": 294.81,
+        "arity": 623.20
+      },
+      "status": "PASS",
+      "scope": "exact triangular inverse and unary conjugation, canonical-one-form cotangent cancellation, 192-key chart-derived correction, nine-source q2 assembly, typed 64-row zero control, complete remaining obstruction census and two-sided Maxwell-emitter source isolation"
+    }
+  ],
+  "higher_tiers_not_run": {
+    "remaining_first_bidegrees": "Not run because the exact (0,0) coefficient still falsifies the complete arity-two identity.",
+    "arity_three_and_downstream": "Not authorized after the repaired degree-zero arity-two stop condition exposed the separate emitter orbit.",
+    "tier_3": "Scoped rod-clock crosswalk repair and obstruction refinement; no theorem freeze, shared core-algebra promotion or release."
+  },
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_dressed_rod_clock_q2_pbw.py", "sha256": "bc79990986d4f9adf0da0797d39a7a18663af4b7a45fdcea5b77e18d64ec9d78"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_DRESSED_ROD_CLOCK_Q2_PBW.json", "sha256": "932291d7cd41cfd49e1e8c945ecc44c9c56bdb0f4516ba6db609a92c2a316c5e"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_DRESSED_ROD_CLOCK_Q2_PBW_PAYLOAD.json", "sha256": "7582b8860e67cd46c31ce67d54050f552ea427afa34c086841cabae64d631603"},
+    {"path": "closed_universe_observers/generate_berger_108_row_complete_q2_pbw.py", "sha256": "ce935654c3c7ed5780151c40c8591dc5593adf0822b21d40c00fa43e98aa811c"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q2_PBW.json", "sha256": "cd98e38990ddfc597753e68e4b9942e1374158daa44324a23ca4087455356281"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q2_PBW_PAYLOAD.json", "sha256": "04c4cc362aed35de736202b6302cb5f98fe5dcecd23eb30ac26492a261c04f45"},
+    {"path": "closed_universe_observers/generate_berger_108_row_arity_two_obstruction.py", "sha256": "b7da694b2ca81f4b7a5c06920c027bfc8fc9122f4d611436a5bff3a5e7b440f2"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_ARITY_TWO_OBSTRUCTION.json", "sha256": "98dd69fb4c508a2162d01eae7f8595520c958529c35a217ade50efd29b5fb29f"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "55eba8cd71b31a6a6d60a95f3fe129f7feac3f4b63c42e41db4d4bb4fc823b64"},
+    {"path": "planning/work-items/berger-108-row-apparatus-q2-q3-extension.json", "sha256": "fd8b71c088fa530d7c3f98af8a104c32c9ceca58a16f2aa22db7e13d7450c357"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "58615624929aaffaf755becb9a1099bcc726c8d6d370362e1f5e376b0eb9456f"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "ccaf5626f8803ae2a06a99c173a35a3af80ea5a430f0d97cfd271793f9dcb398"}
+  ],
+  "flags": {
+    "DRESSED_ROD_CLOCK_Q2_PBW_CORRECTION_EXPORTED": true,
+    "CLOCK_DRESSING_LEAVES_CERTIFIED_Q1_UNCHANGED": true,
+    "COMPLETE_SCALAR_108_ROW_Q2_EXPORTED": true,
+    "TYPED_64_ROW_BASE_ARITY_TWO_CONTROL_ZERO": true,
+    "COMPLETE_108_ROW_ARITY_TWO_OBSTRUCTED": true,
+    "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
+    "K_BERGER_EQUIVARIANCE_ON_COMPLETE_INTERACTION_CERTIFIED": false,
+    "OBSERVER_MORPHISM_STABILITY_CERTIFIED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "PHYSICAL_BRANCH_BRIDGE_ACTIVATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-108-row-dressed-rod-clock-q2-pbw-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "clock_dressing_audit", "payload_ref", "mutation_results", "activation_disposition", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-dressed-rod-clock-q2-pbw-v1"},
+    "result_id": {"const": "BERGER_108_ROW_DRESSED_ROD_CLOCK_Q2_PBW"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"type": "string"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"type": "array", "items": {"type": "string"}},
+    "dependency_refs": {"type": "object"},
+    "clock_dressing_audit": {"type": "object"},
+    "payload_ref": {"type": "object"},
+    "mutation_results": {"type": "array"},
+    "activation_disposition": {"type": "object"},
+    "flags": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

@@ -11,41 +11,46 @@
     "source_deletion_mutations": {
       "apparatus_scalar_BV": {
         "detected": true,
-        "remaining_term_count": 186503
+        "remaining_term_count": 186695
       },
       "base_gravity_clock": {
         "detected": true,
-        "remaining_term_count": 36438
+        "remaining_term_count": 36630
       },
       "base_maxwell_typed": {
         "detected": true,
-        "remaining_term_count": 184853
+        "remaining_term_count": 185045
+      },
+      "dressed_rod_clock": {
+        "detected": true,
+        "remaining_term_count": 186743
       },
       "emitter_Diff_BV": {
         "detected": true,
-        "remaining_term_count": 185831
+        "remaining_term_count": 186023
       },
       "emitter_physical": {
         "detected": true,
-        "remaining_term_count": 180403
+        "remaining_term_count": 180595
       },
       "memory_transport": {
         "detected": true,
-        "remaining_term_count": 186551
+        "remaining_term_count": 186743
       },
       "normalized_readout": {
         "detected": true,
-        "remaining_term_count": 175731
+        "remaining_term_count": 175923
       },
       "rod_metric": {
         "detected": true,
-        "remaining_term_count": 170891
+        "remaining_term_count": 171083
       }
     },
     "source_term_counts": {
       "apparatus_scalar_BV": 240,
       "base_gravity_clock": 150305,
       "base_maxwell_typed": 1890,
+      "dressed_rod_clock": 192,
       "emitter_Diff_BV": 912,
       "emitter_physical": 6340,
       "memory_transport": 192,
@@ -54,7 +59,7 @@
     }
   },
   "atlas_status": "CERTIFIED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate assembles the complete scalar q2 tensor on the canonical 108-row Berger carrier. It zero-extends and adds eight independently certified, content-addressed sources: the 64-row gravity-clock q2 payload, its separate typed Maxwell overlay, the universal apparatus scalar-BV orbit, six-rod metric interaction, memory transport, normalized two-detector readout, physical massive-emitter stress/switch interaction, and the massive-two-form Diff--BV cotangent orbit. The Maxwell file is an additive overlay and is never treated as a materialized replacement for the gravity payload. The typed base presentation is required for nonlinear coderivation composition; it has the same lowered cubic action as the legacy output-normalized tensor but is not identified with it as an operator. Every source is normalized into one differential coefficient-jet PBW grammar with an explicit source label. The exact assembly counts and overlap audit are recorded in the payload. Shared operator keys are retained as separate source-labelled coefficient monomials and therefore add in coderivation evaluation; no contribution is overwritten. Deleting any source changes the exact term count. All 108 rows share the same signed odd pairing and suspended graded-symmetric factorial convention through their certified dependencies. This certificate exports scalar q2 only; complete q3 is a separate certificate. It does not replay q1q2 or q2q2+q1q3 coefficientwise, prove K_Berger equivariance or observer-morphism stability, restrict detector response to Z2, promote nonlinear rank, activate physical Bridge 3, establish finite-parameter causal propagation or make a quantum claim. No compact-product mode is identified with a Berger row.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate assembles the complete scalar q2 tensor on the canonical 108-row Berger carrier. It zero-extends and adds nine independently certified, content-addressed sources: the 64-row gravity-clock q2 payload, its separate typed Maxwell overlay, the universal apparatus scalar-BV orbit, the action-derived dressed-rod clock correction, six-rod metric interaction, memory transport, normalized two-detector readout, physical massive-emitter stress/switch interaction, and the massive-two-form Diff--BV cotangent orbit. The Maxwell file is an additive overlay and is never treated as a materialized replacement for the gravity payload. The typed base presentation is required for nonlinear coderivation composition; it has the same lowered cubic action as the legacy output-normalized tensor but is not identified with it as an operator. Every source is normalized into one differential coefficient-jet PBW grammar with an explicit source label. The exact assembly counts and overlap audit are recorded in the payload. Shared operator keys are retained as separate source-labelled coefficient monomials and therefore add in coderivation evaluation; no contribution is overwritten. Deleting any source changes the exact term count. All 108 rows share the same signed odd pairing and suspended graded-symmetric factorial convention through their certified dependencies. This certificate exports scalar q2 only; complete q3 is a separate certificate. It does not certify q1q2: the rod-clock orbit is repaired but a separate typed Maxwell-emitter orbit remains obstructed. It likewise does not replay q2q2+q1q3, prove K_Berger equivariance or observer-morphism stability, restrict detector response to Z2, promote nonlinear rank, activate physical Bridge 3, establish finite-parameter causal propagation or make a quantum claim. No compact-product mode is identified with a Berger row.",
   "claim_status": "CERTIFIED_COMPLETE_SCALAR_108_ROW_Q2_PBW_PAYLOAD",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC"
@@ -98,7 +103,7 @@
   },
   "next_gate": "REPLAY_COMPLETE_TYPED_108_ROW_Q1Q2_AND_Q2Q2_PLUS_Q1Q3",
   "payload_ref": {
-    "canonical_sha256": "d84635f68d0fea73429b4d8092af4b54c1290d93ed4034a1087977b786973496",
+    "canonical_sha256": "0d3dfe1e1b241e1e7e1618c19d5a7ffa13459df9aed68df0035c84a359974641",
     "cross_source_operator_key_collision_count": 160,
     "cross_source_operator_key_collisions": [
       {
@@ -3875,17 +3880,17 @@
       106,
       107
     ],
-    "operator_key_count": 171567,
+    "operator_key_count": 171759,
     "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q2_PBW_PAYLOAD.json",
-    "serialized_term_count": 186743,
-    "sha256": "3a7c9d5c8fc9bcd98a14c34e6426a5e5cdf53f652142bb6ce37bd0c5f16ff7fe"
+    "serialized_term_count": 186935,
+    "sha256": "04c4cc362aed35de736202b6302cb5f98fe5dcecd23eb30ac26492a261c04f45"
   },
   "provenance": {
     "source_commit": "WORKTREE",
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_108_row_complete_q2_pbw.py",
-        "sha256": "6ab14e080f072134a010ec4f3390058d73060941844d49040e39468f903d3dec"
+        "sha256": "ce935654c3c7ed5780151c40c8591dc5593adf0822b21d40c00fa43e98aa811c"
       },
       {
         "path": "closed_universe_observers/verify_berger_108_row_complete_q2_pbw.py",
@@ -3893,7 +3898,7 @@
       },
       {
         "path": "closed_universe_observers/tests/test_berger_108_row_complete_q2_pbw.py",
-        "sha256": "a731a5060076e8fdfcef0b2eb1089b9f44f52dc599867645346107300d51d6f6"
+        "sha256": "14f022a64b141e441ed320dae4bf4268c964ed9a51507eb1c42756d65b657c04"
       },
       {
         "path": "closed_universe_observers/schema/berger-108-row-complete-q2-pbw-v1.schema.json",
@@ -3901,11 +3906,11 @@
       },
       {
         "path": "closed_universe_observers/schema/berger-108-row-complete-q2-pbw-payload-v1.schema.json",
-        "sha256": "0be0f6cd5d8256320473cb99506a2b32d4aa363eb1f2ce232e8c86b53ca549cd"
+        "sha256": "e4a405c9860b6429656a4caaba88778156d6af5ef5e3a36525ce49e8e34acdf5"
       },
       {
         "path": "closed_universe_observers/reports/berger-108-row-complete-q2-pbw.md",
-        "sha256": "7c78248ce92ae818bc72ded413e8353562b7961379b1df88f5ab67d953cb32fc"
+        "sha256": "c03fa854156f63d977499e1c61d64f126c2377f68a145804e10fbfe20a143a45"
       }
     ]
   },

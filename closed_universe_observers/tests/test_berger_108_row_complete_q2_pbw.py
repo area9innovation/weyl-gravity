@@ -13,14 +13,15 @@ def test_complete_q2_source_counts_and_explicit_additive_overlaps():
         "base_gravity_clock": 150305,
         "base_maxwell_typed": 1890,
         "apparatus_scalar_BV": 240,
+        "dressed_rod_clock": 192,
         "rod_metric": 15852,
         "memory_transport": 192,
         "normalized_readout": 11012,
         "emitter_physical": 6340,
         "emitter_Diff_BV": 912,
     }
-    assert value["assembly_audit"]["operator_key_count"] == 171567
-    assert value["assembly_audit"]["serialized_term_count"] == 186743
+    assert value["assembly_audit"]["operator_key_count"] == 171759
+    assert value["assembly_audit"]["serialized_term_count"] == 186935
     assert value["assembly_audit"]["cross_source_operator_key_collision_count"] == 160
     assert {tuple(item["sources"]) for item in value["assembly_audit"]["cross_source_operator_key_collisions"]} == {("base_gravity_clock", "rod_metric")}
 

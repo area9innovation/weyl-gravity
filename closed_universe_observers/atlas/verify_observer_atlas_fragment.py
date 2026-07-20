@@ -23,6 +23,7 @@ def main() -> int:
     assert "observer.berger.interaction.pbw_108_apparatus_q2_q3_scalarization_obstruction" in ids
     assert "observer.berger.interaction.nonlinear_clock_radial_canonical_map_f2_f3" in ids
     assert "observer.berger.interaction.apparatus_scalar_bv_q2_pbw" in ids
+    assert "observer.berger.interaction.dressed_rod_clock_q2_pbw" in ids
     assert "observer.berger.interaction.rod_metric_q2_pbw" in ids
     assert "observer.berger.interaction.memory_transport_q2_pbw" in ids
     assert "observer.berger.interaction.normalized_readout_q2_pbw" in ids

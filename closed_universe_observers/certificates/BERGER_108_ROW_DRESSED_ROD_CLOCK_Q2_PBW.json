@@ -1,0 +1,150 @@
+{
+  "activation_disposition": {
+    "K_Berger_equivariance_authorized": false,
+    "arity_three_replay_authorized": false,
+    "complete_arity_two_identity": "OBSTRUCTED_BY_SEPARATE_EMITTER_ORBIT",
+    "detector_response_on_second_order_cone_authorized": false,
+    "observer_morphism_stability_authorized": false,
+    "rod_clock_crosswalk_repaired": true
+  },
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE certificate repairs the six-rod temporal gauge orbit without changing the certified clock-dressed unary. It starts from the full raw scalar Diff--BV action, including the temporal ghost tau, and conjugates it by the background-dependent triangular map R_dressed=R_raw-Theta e0(Rbar) with the unique cotangent shift preserving the canonical one-form. Exact operator composition proves that this map sends the raw temporal rod unary and its cotangent mate back to the already-certified spatial-only q1 with zero defect. Applying the same map to the raw base-plus-rod scalar q2 and subtracting the prior dressed presentation produces 192 exact differential-coefficient PBW keys on 17 rows. This is an action/chart-derived additive correction, not a fit to an arity witness. It does not repair the independently exposed Maxwell-emitter coefficient orbit, certify the complete q1q2 or q2q2+q1q3 identities, K_Berger equivariance, observer-morphism stability, detector response on Z2, nonlinear rank, physical Bridge 3, finite-parameter causality or a quantum claim. No cross-background mode identification is made.",
+  "claim_status": "CERTIFIED_DRESSED_ROD_CLOCK_Q2_ADDITIVE_CORRECTION",
+  "clock_dressing_audit": {
+    "canonical_one_form_cross_term_count": 12,
+    "canonical_one_form_cross_term_defect_count": 0,
+    "cotangent_map": "Theta_star_dressed=Theta_star_raw+sum e0(Rbar_aI) R_aI_plus",
+    "field_map": "R_dressed=R_raw-Theta e0(Rbar)",
+    "left_inverse_defect_summary": {
+      "column_support": [],
+      "matrix_position_count": 0,
+      "maximum_input_order": 0,
+      "operator_key_count": 0,
+      "row_support": [],
+      "serialized_term_count": 0
+    },
+    "raw_temporal_unary_term_count": 12,
+    "right_inverse_defect_summary": {
+      "column_support": [],
+      "matrix_position_count": 0,
+      "maximum_input_order": 0,
+      "operator_key_count": 0,
+      "row_support": [],
+      "serialized_term_count": 0
+    },
+    "unary_conjugation_defect_summary": {
+      "column_support": [],
+      "matrix_position_count": 0,
+      "maximum_input_order": 0,
+      "operator_key_count": 0,
+      "row_support": [],
+      "serialized_term_count": 0
+    }
+  },
+  "dependency_refs": {
+    "apparatus_scalar_BV": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_APPARATUS_SCALAR_BV_Q2_PBW.json",
+      "result_id": "BERGER_108_ROW_APPARATUS_SCALAR_BV_Q2_PBW",
+      "sha256": "8aca7503ca2a03d224a3f953d92a652e57e8cf526507f865d43e5db1f5958f7d"
+    },
+    "background_quotient": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_BACKGROUND_SPECIALIZATION_DIFFERENTIAL_IDEAL.json",
+      "result_id": "BERGER_108_ROW_BACKGROUND_SPECIALIZATION_DIFFERENTIAL_IDEAL",
+      "sha256": "45afd94c2d06f8d5d4a9de93327bd3604be29c931ca25257e66bcac31cea8850"
+    },
+    "combined_clock_chart": {
+      "path": "closed_universe_observers/certificates/BERGER_NONLINEAR_CLOCK_COMBINED_CANONICAL_MAP_F2_F3.json",
+      "result_id": "BERGER_NONLINEAR_CLOCK_COMBINED_CANONICAL_MAP_F2_F3",
+      "sha256": "b35f50e238a15c1e226edf59779716987a6aee13c1917d7c9e65b9a39033f40a"
+    },
+    "completed_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET.json",
+      "result_id": "BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET",
+      "sha256": "cacbd3be6bde8e80d142ca9012b024abd7a10472a2759b8f6e8b8af19b310481"
+    },
+    "component_contract": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json",
+      "result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+      "sha256": "4113635be1493e0eac5e945a970ce4989f0484d5fa658a10bf893c63f5ae707c"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flags": {
+    "CLOCK_DRESSING_CANONICAL_ONE_FORM_PRESERVED": true,
+    "CLOCK_DRESSING_LEAVES_CERTIFIED_Q1_UNCHANGED": true,
+    "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
+    "DRESSED_ROD_CLOCK_Q2_PBW_CORRECTION_EXPORTED": true,
+    "QUANTUM_CLAIM": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "delete_last_dressed_rod_clock_q2_term"
+    }
+  ],
+  "next_gate": "REPAIR_TYPED_MAXWELL_EMITTER_COMMON_ACTION_ORBIT_AND_REPLAY_Q1Q2",
+  "payload_ref": {
+    "canonical_sha256": "ddc0484998cdd083c2a6689c3519d4c815da100b42dbaa48a970f753887265ee",
+    "maximum_total_input_order": 1,
+    "nonzero_output_rows": [
+      38,
+      49,
+      50,
+      51,
+      52,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79
+    ],
+    "operator_key_count": 192,
+    "path": "closed_universe_observers/certificates/BERGER_108_ROW_DRESSED_ROD_CLOCK_Q2_PBW_PAYLOAD.json",
+    "result_id": "BERGER_108_ROW_DRESSED_ROD_CLOCK_Q2_PBW_PAYLOAD",
+    "serialized_term_count": 192,
+    "sha256": "7582b8860e67cd46c31ce67d54050f552ea427afa34c086841cabae64d631603"
+  },
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_108_row_dressed_rod_clock_q2_pbw.py",
+        "sha256": "bc79990986d4f9adf0da0797d39a7a18663af4b7a45fdcea5b77e18d64ec9d78"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_108_row_dressed_rod_clock_q2_pbw.py",
+        "sha256": "3c4683bd098695279ec6ffd414dfdd1f942733a018213f0c995b510dbc4d255b"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_108_row_dressed_rod_clock_q2_pbw.py",
+        "sha256": "04446914417d1ee0382b6c2f78122d41cde9c4675fae0d4d25d6bb3317c7c267"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-108-row-dressed-rod-clock-q2-pbw-v1.schema.json",
+        "sha256": "ae66f90a7cb8d88496e2f5da2733ac4b35aaffa343c3c72be532f0ea54aaac26"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-108-row-dressed-rod-clock-q2-pbw-payload-v1.schema.json",
+        "sha256": "ee184c0eed08cfd15125f046d473fdb06582cddb3e3839375ba763b5006c7697"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-108-row-dressed-rod-clock-q2-pbw.md",
+        "sha256": "4f153b3b44499d61c8314a3bb96653ebeaf189b44cf6e6b9a8d96376e4318602"
+      }
+    ]
+  },
+  "result_id": "BERGER_108_ROW_DRESSED_ROD_CLOCK_Q2_PBW",
+  "schema": "closed-universe-berger-108-row-dressed-rod-clock-q2-pbw-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

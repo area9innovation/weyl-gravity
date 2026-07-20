@@ -1306,6 +1306,14 @@ may continue, but it does not activate a physical-branch interpretation.
 The separate compact-product exceptional-resonance crosswalk remains
 `NO_CERTIFIED_MAP` and is not a substitute.
 
+The currently active unsplit bridge is the Berger interaction bridge from the
+certified unary and source-labelled `q2/q3` tensors to an actual observer
+coderivation.  Its activation gate is exact vanishing of every first-bidegree
+`q1q2` coefficient.  Its fail-closed atlas row is
+`observer.berger.interaction.complete_arity_two_obstruction`, presently
+`OBSTRUCTED` by the typed Maxwell-emitter witness above.  This active bridge
+does not activate physical Bridge 3.
+
 Within that inactive bridge, the numerical recoil input-contract audit is now
 complete.  The next activation gate requires a provenance-complete
 `EXPLICIT_EXTERNAL_VALUES` declaration for both mass domains, both nonzero
@@ -1478,22 +1486,25 @@ now also passes: `BERGER_108_ROW_COMPLETE_Q3_PBW` separately zero-extends the
 then combines the four nonzero apparatus/emitter sources plus the zero ledger
 into 43 hashed row chunks.  It contains 6,427,496 operator keys and 7,251,368
 exact monomials; 32,928 gravity/rod shared keys retain both source blocks and
-add without overwrite.  The corrected complete `q2` analog contains 171,567
-keys and 186,743 monomials from eight sources, with 160 explicit gravity/rod
+add without overwrite.  The corrected complete `q2` analog now contains 171,759
+keys and 186,935 monomials from nine sources, with 160 explicit gravity/rod
 overlaps.  This completes q2 and q3, but it does not prove
 the extended identities.  The first identity replay is now decisive:
-`BERGER_108_ROW_ARITY_TWO_OBSTRUCTION` finds 4,408 nonzero operator keys and
-4,732 exact coefficient monomials already at bidegree `(0,0)`, on 30 output
-rows.  The typed 64-row base is an exact zero control.  The first
-lexicographic witness is
-`c_spatial_1_star <- (tau,R0_1_plus)` with coefficient `+e0 e1 R0_1`;
-two-sided isolation assigns its binary side to gravity `q2` and its unary side
-to the local-rod overlay, and its two time modes remain nonzero in the
-certified background quotient.  A trial four-ghost row clone does not repair
-this mixed defect and is not part of the certified payload.  The required
-repair is a common-action derivation of the background-compatible mixed
-gravity-rod binary/chart contribution, or a corrected unary/binary crosswalk,
-followed by the full first-bidegree
+`BERGER_108_ROW_DRESSED_ROD_CLOCK_Q2_PBW` first transports the raw full-Diff
+rod action through `R_dressed=R_raw-Theta e0(Rbar)` and the unique cotangent
+shift.  Exact conjugation leaves the certified unary unchanged, and its 192
+generated q2 keys remove the former `+e0 e1 R0_1` witness and all six
+rod/rod-cotangent defect rows.  `BERGER_108_ROW_ARITY_TWO_OBSTRUCTION` now
+finds 4,228 nonzero operator keys and 4,552 exact coefficient monomials at
+bidegree `(0,0)`, on 24 output rows.  The typed 64-row base remains an exact
+zero control.  The first remaining witness is
+`c_spatial_1_star <- (e1 A_0,K0_01)` with coefficient `-2 g0 e1(h0)`.
+It source-isolates to the typed Maxwell, physical-emitter and emitter-Diff--BV
+q2 sources crossed with base/emitter unary sources; because it contains a
+formal coupling and switch-profile jet, the six-rod background quotient is
+explicitly `NOT_APPLICABLE`.  The required repair is a common-action
+rederivation of this typed Maxwell-emitter orbit in the suspended
+graded-symmetric factorial convention, followed by the full first-bidegree
 replay.  Arity three, `K_Berger`, observer-morphism stability and
 `O_detector|Z2^C` remain fail-closed.
 

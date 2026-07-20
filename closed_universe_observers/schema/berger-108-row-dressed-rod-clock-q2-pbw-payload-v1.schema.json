@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-108-row-dressed-rod-clock-q2-pbw-payload-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "shape", "coefficient_field", "pbw_basis", "factorial_convention", "source_action", "rows", "operator_key_count", "serialized_term_count", "nonzero_output_rows", "maximum_total_input_order", "canonical_sha256"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-dressed-rod-clock-q2-pbw-payload-v1"},
+    "result_id": {"const": "BERGER_108_ROW_DRESSED_ROD_CLOCK_Q2_PBW_PAYLOAD"},
+    "shape": {"const": [108, 108, 108]},
+    "coefficient_field": {"type": "string"},
+    "pbw_basis": {"type": "string"},
+    "factorial_convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+    "source_action": {"type": "string"},
+    "rows": {"type": "array", "minItems": 17, "maxItems": 17},
+    "operator_key_count": {"const": 192},
+    "serialized_term_count": {"const": 192},
+    "nonzero_output_rows": {"const": [38,49,50,51,52,64,65,66,67,68,69,74,75,76,77,78,79]},
+    "maximum_total_input_order": {"const": 1},
+    "canonical_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
