@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "result_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "payload_ref", "proof_first_structure", "complete_action_ansatz", "nilpotency_and_cyclicity", "arity_two_gate", "arity_three_and_quartic_gate", "first_missing_action_representation", "K_Berger_and_observer_disposition", "mutations", "proof_obligation_dag", "assumption_ledger", "missing_object_ledger", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-direct-temporal-ak-diff-covariance-repair-v1"},
+    "result_id": {"const": "BERGER_DIRECT_TEMPORAL_AK_DIFF_COVARIANCE_REPAIR"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"type": "array", "contains": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"]}}
+  },
+  "additionalProperties": true
+}

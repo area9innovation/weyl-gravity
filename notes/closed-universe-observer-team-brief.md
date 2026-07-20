@@ -2117,50 +2117,50 @@ similar.
 
 ## Active bridge: temporal and quartic Diff--BV covariance descendants
 
-The completed bridge item is
-`sf:program/work/observer-auxiliary-diff-bv-scalar-orbit-repair`.  It imports
-the terminal 636-key repair, complete source-labelled 108-row \(q_2\), all
-twelve quartic completion actions and the previous \(-4g_0h_0\) obstruction
-by exact content hash.
+The active item is
+`sf:program/work/observer-direct-temporal-ak-hessian-diff-covariance-repair`.
+It imports the terminal scalar-orbit repair from commit `fbc422cfa` by exact
+content hash and tests the complete 932-dimensional order-three action module
+per emitter, both reflection parities and all differentiated
+\(\chi/K/A\) placements.  Two clock-normal profile-jet scalar densities,
+electric and magnetic, complete a 934-column ambient action module per
+emitter.  This deliberately overcomplete module contains the bounded
+support-local Diff/Weyl/Maxwell/Berger-\(U(1)\) scalar-density ansatz, so an
+obstruction in its image is also an obstruction for the constrained family.
 
-The complete local scalar representation is the unique weight-zero neutral
-vertex
+The direct temporal projection is repairable:
 \[
- \alpha\int\chi^+c^ae_a\chi,\qquad a=0,1,2,3 .
+ \operatorname{rank}(\operatorname{im}q_2)=
+ \operatorname{rank}(\operatorname{im}q_2+\mathcal S)=934
 \]
-Differentiating its three slots through the signed odd pairing gives 32
-graded-symmetric \(q_2\) keys: the scalar, scalar-cotangent and Diff-cotangent
-outputs for all four frame components.  Its 30-key contractible-pair
-covariance block cancels the inherited block if and only if \(\alpha=1\).
-Weyl and Maxwell act trivially on the neutral pair, while the complete
-\(e_1/e_2\), \(c^1/c^2\) contraction is Berger-\(U(1)\)-invariant.
+for each source-isolated emitter on the
+\(\tau^*\leftarrow(e_0e_1A_0,K_{b,01})\) rows.  Thus the previous
+\(+g_bh_b\) coordinate is not itself a no-go once the missing temporal
+\(A\)--\(K\) profile lines are present.
 
-That uniquely normalized orbit does not close the master equation.  The
-earliest source-isolated arity-two coefficient remains
+Full covariance supplies the decisive falsifier.  On the joint
+\(\tau^*,A^+_0\) projection the action image has rank 934 while adjoining the
+typed source raises it to 935, leaving 42 quotient coordinates per emitter.
+The first exact class is
 \[
- \tau^*\leftarrow(e_0e_1A_0,K_{0,01})
- \quad\hbox{with coefficient}\quad +g_0h_0 .
+ A^+_0\leftarrow(\tau,e_0e_1K_{0,01})
+ \quad\hbox{with coefficient}\quad -3g_0h_0 ,
 \]
-It is independent of \(\alpha\) and all twelve quartic parameters.  The
-scalar orbit has no old \(A\)--\(K\) Hessian, and the 636-key repair has no
-\(\chi^+\leftarrow(e_0e_1A_0,K_{0,01})\) key.  Hence the arity-two admissible
-locus is empty before \(q_3\) can contribute.
+with the emitter-1 analogue.  Freeing the inherited emitter Diff--BV
+normalization gives ranks \(935<936\), so the class is not a normalization
+artifact.  Removing either profile line is also detected by the verifier.
 
-The later diagnostic also remains obstructed: the scalar-repair cross
-coefficient at
-\[
- c^{*}_{1}\leftarrow(e_0e_0e_2A_0,\chi,K_{0,12})
-\]
-is exactly zero, so the inherited \(-4g_0h_0\) coefficient survives.  The next
-activation gate must adjoin both an action-derived temporal \(A\)--\(K\)
-Hessian selected by the direct arity-two identity and a quartic
-Diff-covariance descendant whose \(q_1\)-image reaches the spatial
-\(c^*_1\) row.
+The next missing representation is a temporal Maxwell/emitter-antifield
+covariance module beginning with \(A^+/\tau/K\) and cyclic
+\(K^+/\tau/A\) descendants.  Because no \(q_1\)-closed arity-two action locus
+survives, no common-action quartic \(q_3\) is promoted.  Five physical metric
+\(q_1\) routes to the spatial ghost-antifield row are retained fail-closed;
+the imported \(-4g_0h_0\) arity-three coefficient is diagnostic only.
 
 The fail-closed atlas row is
-`observer.berger.interaction.auxiliary_diff_bv_scalar_orbit_repair`
+`observer.berger.interaction.direct_temporal_ak_diff_covariance_repair`
 (`symplectic=CERTIFIED`, `nonlinear=OBSTRUCTED`,
 `observational=OBSTRUCTED`).  No \(K_{\rm Berger}\), detector, memory,
 redshift, recoil-corrected rank or tangent-cone restriction is promoted.  The
 next activation gate is
-`ADJOIN_TEMPORAL_AK_ARITY_TWO_AND_QUARTIC_DIFF_COVARIANCE_DESCENDANTS_AND_REPLAY`.
+`ADJOIN_TEMPORAL_MAXWELL_EMITTER_ANTIFIELD_COVARIANCE_MODULE_AND_REPLAY_ARITY_TWO_BEFORE_ANY_Q3_OR_OBSERVER_PROPAGATION`.

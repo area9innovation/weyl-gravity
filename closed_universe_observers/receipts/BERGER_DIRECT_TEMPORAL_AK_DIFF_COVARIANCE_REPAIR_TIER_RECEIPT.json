@@ -1,0 +1,98 @@
+{
+  "schema": "pure-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_DIRECT_TEMPORAL_AK_DIFF_COVARIANCE_REPAIR_TIER_RECEIPT",
+  "science_forge_work_item": "sf:program/work/observer-direct-temporal-ak-hessian-diff-covariance-repair",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "claim_result_id": "BERGER_DIRECT_TEMPORAL_AK_DIFF_COVARIANCE_REPAIR",
+  "claim_certificate_sha256": "194f60b7b1c6498145f9a9e366730fea8ffe0bc9bd229d0ed96a4abc5411349e",
+  "payload_sha256": "c9139ed35f9fb1a31ca6c9bdf2a2c6767d58886f5383a765b0012da4d2a4e715",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile closed_universe_observers/generate_berger_direct_temporal_ak_diff_covariance_repair.py closed_universe_observers/verify_berger_direct_temporal_ak_diff_covariance_repair.py closed_universe_observers/tests/test_berger_direct_temporal_ak_diff_covariance_repair.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "elapsed_seconds": 0.06,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m closed_universe_observers.generate_berger_direct_temporal_ak_diff_covariance_repair --check",
+          "elapsed_seconds": 83.16,
+          "status": "PASS",
+          "summary": "Byte-reproduced the exact certificate, payload and human report from the pinned inputs."
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=<temporary-directory> paper/09-relational-clocks-berger-d-cartan.tex",
+          "elapsed_seconds": 0.54,
+          "status": "PASS",
+          "summary": "Paper 09 claim-boundary edit compiled in an isolated temporary output directory."
+        },
+        {
+          "command": "git diff --check -- <scoped observer paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m closed_universe_observers.generate_berger_direct_temporal_ak_diff_covariance_repair --emit",
+          "elapsed_seconds": 64.86,
+          "status": "PASS",
+          "summary": "Generated the 934-column-per-emitter ambient action image, direct and full-covariance rank audits, quotient witnesses, certificate, payload and report."
+        },
+        {
+          "command": "python3 -m closed_universe_observers.verify_berger_direct_temporal_ak_diff_covariance_repair",
+          "elapsed_seconds": 64.06,
+          "status": "PASS",
+          "independent_rail": true,
+          "summary": "Independently reconstructed the action Hessians, ranks, first quotient class and all source, representation and coefficient mutations."
+        },
+        {
+          "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_direct_temporal_ak_diff_covariance_repair.py",
+          "elapsed_seconds": 0.75,
+          "status": "PASS",
+          "summary": "5 passed"
+        },
+        {
+          "command": "python3 -m closed_universe_observers.atlas.generate_observer_atlas_fragment && python3 -m pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "elapsed_seconds": 21.83,
+          "status": "PASS",
+          "summary": "53 passed"
+        },
+        {
+          "command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+          "elapsed_seconds": 1.27,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "All imported classical, q1, q2 and order-three action objects are unchanged content-addressed inputs; the new scoped exact certificate, independent verifier and every direct observer-atlas consumer were exercised at Tier 1."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, tag, release, shared-core algebra change or theorem promotion was made; the scientific disposition is an exact scoped obstruction."
+    }
+  },
+  "boundaries": {
+    "exact_arithmetic": true,
+    "numeric_evidence_used": false,
+    "ambient_action_columns_per_emitter": 934,
+    "bounded_symmetry_constrained_ansatz_contained_in_ambient_module": true,
+    "direct_tau_star_projection_repaired": true,
+    "full_covariance_admissible_locus": "EMPTY",
+    "first_quotient_coefficient": "-3 g0 h0",
+    "quartic_q3_derived_or_promoted": false,
+    "quartic_q3_reason": "No q1-closed arity-two common-action locus exists on which a quartic descendant could be promoted.",
+    "K_Berger_compatibility_replay_performed": false,
+    "detector_memory_redshift_or_recoil_replay_performed": false,
+    "tangent_cone_branch_or_quantum_claim": false
+  }
+}

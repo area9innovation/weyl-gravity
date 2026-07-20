@@ -750,3 +750,27 @@ def test_auxiliary_scalar_diff_bv_orbit_is_complete_but_still_obstructed():
     assert "BERGER_AUXILIARY_DIFF_BV_SCALAR_ORBIT_REPAIR" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_direct_temporal_ak_is_repairable_but_full_covariance_is_obstructed():
+    row = next(
+        row
+        for row in build()["entries"]
+        if row["id"]
+        == "observer.berger.interaction.direct_temporal_ak_diff_covariance_repair"
+    )
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["descriptions"]["nonlinear"] == "OBSTRUCTED"
+    assert row["descriptions"]["observational"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == (
+        "NO_CERTIFIED_MAP"
+    )
+    assert "-3 g0 h0" in row[
+        "observer_data"
+    ]["survives_gauge_reduction"]["statement"]
+    assert "temporal Maxwell/emitter antifield" in row[
+        "observer_data"
+    ]["observer_source_channel"]["statement"]
+    assert "BERGER_DIRECT_TEMPORAL_AK_DIFF_COVARIANCE_REPAIR" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
