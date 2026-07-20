@@ -25,6 +25,9 @@ Every team adopts the following operating contract immediately:
    a pass.
 6. Generated boards, briefs, graphs, and views are read-only products. Never
    edit them as sources.
+7. Structure-seeking work is proof-first: formulate the candidate theorem,
+   proof obligations, counterexample strategy, and exact finite remainder
+   before launching a large coefficient search or exploratory Conflux run.
 
 Science Forge coordinates work. It does not certify a scientific statement
 merely because an agent reports that the work is complete. Scientific authority
@@ -49,6 +52,35 @@ The four shadow streams become authoritative only after the coordinator records
 a successful programme-wide acceptance run. Until then, only the black-hole
 and observer teams should acquire leases or close work through `s-f`. Shadow
 teams must not create parallel lifecycle histories.
+
+### First proof-first pilot
+
+The observer stream is the first authoritative proof-first case:
+
+```text
+sf:program/work/observer-common-action-compatibility-theorem
+```
+
+It consumes the certified full-rank common-action Ward obstruction. The agent
+must first derive an invariant Ward/Noether compatibility theorem and a
+complete bounded minimal-extension ansatz. Exact computation then checks the
+finite proof obligations. Conflux may run only after its observer importer
+independently rediscovers the known determinant, rank, nullity, persistent
+witness, and decisive mutation from the raw payload.
+
+For every later structure-seeking ticket, record these five objects in the work
+item's `notes` or `resource_hint`:
+
+1. **Mathematical target:** the invariant object being classified.
+2. **Candidate theorem:** a statement that can be true or false.
+3. **Proof obligations:** conceptual lemmas separated from finite identities.
+4. **Counterexample strategy:** the smallest mutation or fixture that can
+   falsify the theorem.
+5. **Certificate boundary:** exactly which remaining identities require
+   machine verification and which physical promotions remain forbidden.
+
+This is not a requirement to prove a guessed theorem. A minimal exact
+counterexample or obstruction is an equally valid close-out.
 
 ## 3. Tool and capability boundary
 
@@ -130,10 +162,10 @@ block`; missing Forge/Conflux capabilities use `planning/forge-requests/`.
 
 | Priority | Work item | Scope |
 | ---: | --- | --- |
-| 1 | `sf:program/work/nonlinear-conflux-branch-mixing-discovery` | branch selection, cyclic-redefinition invariants, and interaction-closed subcarriers |
-| 2 | `sf:program/work/classical-conflux-relative-lift-discovery` | order-one differential lift synthesis or minimal exact obstruction |
-| 3 | `sf:program/work/bridge-conflux-atlas-generalization` | common symplectic-divisor and rotation-zero normal forms |
-| 4 | `sf:program/work/observer-conflux-common-action-diagnosis` | only after the repaired common-action Ward payload is certified |
+| 1 | `sf:program/work/observer-common-action-compatibility-theorem` | first proof-first pilot; Ward compatibility and minimal carrier/action enlargement |
+| 2 | `sf:program/work/nonlinear-conflux-branch-mixing-discovery` | branch selection, cyclic-redefinition invariants, and interaction-closed subcarriers |
+| 3 | `sf:program/work/classical-conflux-relative-lift-discovery` | order-one differential lift synthesis or minimal exact obstruction |
+| 4 | `sf:program/work/bridge-conflux-atlas-generalization` | common symplectic-divisor and rotation-zero normal forms |
 | 5 | `sf:program/work/quantum-conflux-local-algebra-discovery` | local BV/anomaly/counterterm algebra only |
 
 No black-hole Conflux successor exists yet. Hadamard, microlocal, positivity,
