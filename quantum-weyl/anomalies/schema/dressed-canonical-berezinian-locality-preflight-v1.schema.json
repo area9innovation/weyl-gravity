@@ -1,0 +1,512 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl-dressed-canonical-berezinian-locality-preflight-v1.schema.json",
+  "title": "Dressed canonical BV Berezinian locality preflight",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "input_pins",
+    "scope",
+    "atom_pairing_import",
+    "canonical_cotangent_map",
+    "finite_cutoff_berezinian",
+    "unchanged_and_contractible_blocks",
+    "continuum_disposition",
+    "real_contour_and_global_chart",
+    "receiver_contract",
+    "lifecycle",
+    "claim_flags",
+    "exact_checks",
+    "next_gate",
+    "claim_boundary",
+    "proof_sha256"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-dressed-canonical-berezinian-locality-preflight-v1"
+    },
+    "result_id": {
+      "const": "DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT"
+    },
+    "result_state": {
+      "const": "EXACT_NONUNIT_FINITE_BV_BEREZINIAN_CONTINUUM_ACTION_INDEPENDENCE_OBSTRUCTED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC"
+      ]
+    },
+    "input_pins": {
+      "type": "object",
+      "required": [
+        "complex_compensator_action",
+        "tau_adic_minimal_cotangent_lift",
+        "general_nonminimal_contraction"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "complex_compensator_action": {
+          "$ref": "#/$defs/reference"
+        },
+        "tau_adic_minimal_cotangent_lift": {
+          "$ref": "#/$defs/reference"
+        },
+        "general_nonminimal_contraction": {
+          "$ref": "#/$defs/reference"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "spacetime_dimension",
+        "metric_component_rank",
+        "chart",
+        "canonical_map_direction",
+        "locality",
+        "selected_action"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "spacetime_dimension": {
+          "const": 4
+        },
+        "metric_component_rank": {
+          "const": 10
+        },
+        "chart": {
+          "const": "rho=f exp(-tau), f>0, rho!=0"
+        },
+        "canonical_map_direction": {
+          "const": "old_variables_to_dressed_variables"
+        },
+        "locality": {
+          "const": "POINTWISE_SUPPORT_LOCAL_FORMAL_TAU_ADIC"
+        },
+        "selected_action": {
+          "const": "NOT_SELECTED_CANDIDATE_A_OR_B"
+        }
+      }
+    },
+    "atom_pairing_import": {
+      "type": "object",
+      "required": [
+        "field_inventory_count",
+        "field_inventory_sha256",
+        "BV_manifest_sha256",
+        "minimal_atom_count",
+        "minimal_generator_count",
+        "remaining_odd_pairing",
+        "nonminimal_component_multiplicity",
+        "completeness_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "field_inventory_count": {
+          "const": 18
+        },
+        "field_inventory_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "BV_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "minimal_atom_count": {
+          "const": 24
+        },
+        "minimal_generator_count": {
+          "const": 8
+        },
+        "remaining_odd_pairing": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "nonminimal_component_multiplicity": {
+          "const": {
+            "diffeomorphism": 4,
+            "Weyl": 1
+          }
+        },
+        "completeness_status": {
+          "const": "COMPLETE_DECLARED_LOCAL_BV_ATOM_AND_PAIRING_LEDGER"
+        }
+      }
+    },
+    "canonical_cotangent_map": {
+      "type": "object",
+      "required": [
+        "forward",
+        "inverse",
+        "canonical_one_form_identity",
+        "composition_defect",
+        "inverse_composition_defect",
+        "one_form_defect"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "forward": {
+          "const": {
+            "g_hat": "exp(-2 tau) g",
+            "tau": "tau",
+            "g_hat_star": "exp(2 tau) g_star",
+            "tau_hat_star": "tau_star+2 g.g_star"
+          }
+        },
+        "inverse": {
+          "const": {
+            "g": "exp(2 tau) g_hat",
+            "tau": "tau",
+            "g_star": "exp(-2 tau) g_hat_star",
+            "tau_star": "tau_hat_star-2 g_hat.g_hat_star"
+          }
+        },
+        "canonical_one_form_identity": {
+          "const": "g_star delta g+tau_star delta tau=g_hat_star delta g_hat+tau_hat_star delta tau"
+        },
+        "composition_defect": {
+          "const": "ZERO"
+        },
+        "inverse_composition_defect": {
+          "const": "ZERO"
+        },
+        "one_form_defect": {
+          "const": "ZERO"
+        }
+      }
+    },
+    "finite_cutoff_berezinian": {
+      "type": "object",
+      "required": [
+        "cutoff_carrier",
+        "base_field_log_J_per_cell",
+        "parity_reversed_cotangent_log_J_per_cell",
+        "full_BV_log_J_per_cell",
+        "full_BV_Ber_per_cell",
+        "full_BV_log_J_N_cells",
+        "inverse_log_J_N_cells",
+        "cotangent_factor_count",
+        "is_identically_one",
+        "composition_log_defect",
+        "polar_precursor"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "cutoff_carrier": {
+          "type": "string"
+        },
+        "base_field_log_J_per_cell": {
+          "const": "-20 tau"
+        },
+        "parity_reversed_cotangent_log_J_per_cell": {
+          "const": "-20 tau"
+        },
+        "full_BV_log_J_per_cell": {
+          "const": "-40 tau"
+        },
+        "full_BV_Ber_per_cell": {
+          "const": "exp(-40 tau)"
+        },
+        "full_BV_log_J_N_cells": {
+          "const": "-40 sum_i tau_i"
+        },
+        "inverse_log_J_N_cells": {
+          "const": "40 sum_i tau_i"
+        },
+        "cotangent_factor_count": {
+          "const": 2
+        },
+        "is_identically_one": {
+          "const": false
+        },
+        "composition_log_defect": {
+          "const": 0
+        },
+        "polar_precursor": {
+          "type": "object",
+          "required": [
+            "base_log_abs_J_per_cell",
+            "full_BV_log_abs_Ber_per_cell",
+            "orientation"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "base_log_abs_J_per_cell": {
+              "const": "-19 tau-log(f)"
+            },
+            "full_BV_log_abs_Ber_per_cell": {
+              "const": "-38 tau-2 log(f)"
+            },
+            "orientation": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "unchanged_and_contractible_blocks": {
+      "const": {
+        "theta_and_theta_star": "IDENTITY_BEREZINIAN_ONE",
+        "Diff_ghost_and_xi_star": "IDENTITY_BEREZINIAN_ONE",
+        "Weyl_ghost_and_omega_star": "IDENTITY_COORDINATE_BLOCK",
+        "nonminimal_fields_and_antifields": "IDENTITY_COORDINATE_BLOCK",
+        "Weyl_quartet_reduction": "NOT_AN_INVERTIBLE_COORDINATE_CHANGE; its finite common-carrier torsion is one because Q_W h_W+h_W Q_W=1",
+        "nonminimal_doublet_torsion": "ONE_ONLY_ON_A_COMMON_DUAL_COMPATIBLE_CARRIER"
+      }
+    },
+    "continuum_disposition": {
+      "type": "object",
+      "required": [
+        "formal_regulated_expression",
+        "covariant_heat_kernel_bulk_asymptotic",
+        "action_independent_exact_part",
+        "selected_hessian_recomputations",
+        "zero_mode_defect",
+        "spectral_cutoff_closure",
+        "counterterm_module",
+        "verdict"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "formal_regulated_expression": {
+          "const": "log Ber_R=-40 Tr_R(tau) for the tau-coordinate BV map"
+        },
+        "covariant_heat_kernel_bulk_asymptotic": {
+          "const": "Tr[tau exp(-L/Lambda^2)] has local Seeley-DeWitt bulk coefficients for a declared Laplace-type L"
+        },
+        "action_independent_exact_part": {
+          "const": [
+            "the coefficient -40",
+            "the pointwise multiplication insertion tau",
+            "the inverse and composition identities",
+            "unit torsion of equally regulated algebraic quartets"
+          ]
+        },
+        "selected_hessian_recomputations": {
+          "const": [
+            "regulator operator and bundle connection",
+            "dual-compatible cutoff/projector",
+            "finite subtraction and local counterterm projection",
+            "boundary heat coefficients and boundary conditions",
+            "zero-mode projector and priming",
+            "bosonic multiplier thimbles and determinant phases"
+          ]
+        },
+        "zero_mode_defect": {
+          "const": "-40 Tr(Pi_0 tau) is finite-rank and generally global; Pi_0 is undefined before the selected Hessian/background"
+        },
+        "spectral_cutoff_closure": {
+          "const": "multiplication by exp(-2 tau) does not preserve a generic spectral cutoff subspace"
+        },
+        "counterterm_module": {
+          "const": "NOT_UNIQUE_ACTION_INDEPENDENTLY: heat-kernel coefficients, power divergences, boundary terms and finite normalization depend on the selected regulator/domain"
+        },
+        "verdict": {
+          "const": "PRECISE_MEASURE_REGULARIZATION_OBSTRUCTION_TO_ACTION_INDEPENDENT_CONTINUUM_LOCALITY"
+        }
+      }
+    },
+    "real_contour_and_global_chart": {
+      "const": {
+        "g_tau_g_hat": "REAL_TO_REAL_ON_RHO_POSITIVE_POLAR_CHART",
+        "rho_tau_orientation": "FIXED_REVERSAL_D_RHO=-RHO_D_TAU",
+        "theta": "LOCAL_CIRCLE_LIFT_UNCHANGED; WINDING_NOT_TRIVIALIZED",
+        "antifields": "FORMAL_BEREZIN_DUALS_NO_REAL_THIMBLE",
+        "nonminimal_multipliers": "UNCHANGED_BY_MAP; THEIR_SELECTED_GAUSSIAN_THIMBLES_REMAIN_OPEN",
+        "global_polar_transition": "NO_SINGLE_TAU_CHART_ACROSS_RHO=0_OR_NONTRIVIAL_PHASE_WINDING"
+      }
+    },
+    "receiver_contract": {
+      "const": {
+        "schema": "quantum-weyl/anomalies/schema/dressed-canonical-berezinian-selected-hessian-receiver-v1.schema.json",
+        "synthetic_fixture": "quantum-weyl/anomalies/fixtures/dressed_canonical_berezinian_selected_hessian_accept.json",
+        "action_independent_payload": [
+          "raw_finite_BV_log_J_coefficient",
+          "canonical_one_form_identity",
+          "quartet_common_carrier_torsion",
+          "polar_chart_orientation"
+        ],
+        "must_be_recomputed": [
+          "selected_hessian",
+          "regulator_and_dual_projectors",
+          "zero_modes",
+          "boundary_domain",
+          "contours_and_phases",
+          "renormalized_local_jacobian"
+        ]
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "required": [
+        "finite_cutoff_raw_Berezinian",
+        "continuum_action_independent_locality",
+        "selected_action_regulated_Jacobian",
+        "QAP",
+        "anomaly_coefficients",
+        "Lorentzian_QME"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "finite_cutoff_raw_Berezinian": {
+          "const": "CERTIFIED_NONUNIT"
+        },
+        "continuum_action_independent_locality": {
+          "const": "OBSTRUCTED"
+        },
+        "selected_action_regulated_Jacobian": {
+          "const": "OPEN"
+        },
+        "QAP": {
+          "const": "NOT_INFERRED"
+        },
+        "anomaly_coefficients": {
+          "const": "NOT_COMPUTED_HERE"
+        },
+        "Lorentzian_QME": {
+          "const": "OPEN"
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "ACTION_INDEPENDENT_CONTINUUM_JACOBIAN_LOCAL",
+        "ALL_ORDER_REGULATOR_CONSTRUCTED",
+        "ANOMALY_COEFFICIENTS_COMPUTED",
+        "FINITE_BV_BEREZINIAN_IDENTICALLY_ONE",
+        "GLOBAL_ANOMALIES_EXCLUDED",
+        "LORENTZIAN_QME_CERTIFIED",
+        "QAP_ESTABLISHED",
+        "SELECTED_ACTION_HESSIAN_IMPORTED",
+        "UNIQUE_COUNTERTERM_MODULE_ACTION_INDEPENDENT"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ACTION_INDEPENDENT_CONTINUUM_JACOBIAN_LOCAL": {
+          "const": false
+        },
+        "ALL_ORDER_REGULATOR_CONSTRUCTED": {
+          "const": false
+        },
+        "ANOMALY_COEFFICIENTS_COMPUTED": {
+          "const": false
+        },
+        "FINITE_BV_BEREZINIAN_IDENTICALLY_ONE": {
+          "const": false
+        },
+        "GLOBAL_ANOMALIES_EXCLUDED": {
+          "const": false
+        },
+        "LORENTZIAN_QME_CERTIFIED": {
+          "const": false
+        },
+        "QAP_ESTABLISHED": {
+          "const": false
+        },
+        "SELECTED_ACTION_HESSIAN_IMPORTED": {
+          "const": false
+        },
+        "UNIQUE_COUNTERTERM_MODULE_ACTION_INDEPENDENT": {
+          "const": false
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "required": [
+        "input_hashes_pinned",
+        "complete_atom_pairing_ledger_imported",
+        "metric_rank_is_ten",
+        "base_exponent_is_minus_twenty",
+        "cotangent_exponent_is_minus_twenty",
+        "full_BV_exponent_is_minus_forty",
+        "polar_full_exponent_is_minus_thirty_eight",
+        "forward_inverse_composition",
+        "canonical_one_form",
+        "missing_antifield_factor_rejected",
+        "tau_hat_star_sign_mutation_rejected"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "input_hashes_pinned": {
+          "const": true
+        },
+        "complete_atom_pairing_ledger_imported": {
+          "const": true
+        },
+        "metric_rank_is_ten": {
+          "const": true
+        },
+        "base_exponent_is_minus_twenty": {
+          "const": true
+        },
+        "cotangent_exponent_is_minus_twenty": {
+          "const": true
+        },
+        "full_BV_exponent_is_minus_forty": {
+          "const": true
+        },
+        "polar_full_exponent_is_minus_thirty_eight": {
+          "const": true
+        },
+        "forward_inverse_composition": {
+          "const": true
+        },
+        "canonical_one_form": {
+          "const": true
+        },
+        "missing_antifield_factor_rejected": {
+          "const": true
+        },
+        "tau_hat_star_sign_mutation_rejected": {
+          "const": true
+        }
+      }
+    },
+    "next_gate": {
+      "type": "string",
+      "minLength": 20
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 200
+    },
+    "proof_sha256": {
+      "$ref": "#/$defs/sha256"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "reference": {
+      "type": "object",
+      "required": [
+        "path",
+        "result_id",
+        "sha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "result_id": {
+          "type": "string"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/dressed-canonical-berezinian-selected-hessian-receiver-v1.schema.json",
+  "title": "Selected-action dressed Berezinian receiver",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "fixture_status",
+    "preflight",
+    "selected_action",
+    "regulator_domain",
+    "recomputed_outputs",
+    "nonclaims"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "dressed-canonical-berezinian-selected-hessian-receiver-v1"
+    },
+    "result_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "fixture_status": {
+      "enum": [
+        "PHYSICAL_SELECTED_ACTION_INPUT",
+        "SYNTHETIC_ACCEPTANCE_FIXTURE_NOT_PHYSICAL_INPUT"
+      ]
+    },
+    "preflight": {
+      "type": "object",
+      "required": [
+        "result_id",
+        "path",
+        "sha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "result_id": {
+          "const": "DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT"
+        },
+        "path": {
+          "const": "quantum-weyl/anomalies/certificates/DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT.json"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "selected_action": {
+      "type": "object",
+      "required": [
+        "result_id",
+        "hessian_certificate",
+        "candidate"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "result_id": {
+          "type": "string"
+        },
+        "hessian_certificate": {
+          "type": "string"
+        },
+        "candidate": {
+          "enum": [
+            "A",
+            "B",
+            "SYNTHETIC"
+          ]
+        }
+      }
+    },
+    "regulator_domain": {
+      "type": "object",
+      "required": [
+        "regulator_class",
+        "primal_dual_projectors",
+        "zero_mode_policy",
+        "boundary_policy",
+        "contour_policy"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "regulator_class": {
+          "type": "string",
+          "minLength": 3
+        },
+        "primal_dual_projectors": {
+          "const": "COMMON_DUAL_COMPATIBLE_VERIFIED"
+        },
+        "zero_mode_policy": {
+          "type": "string",
+          "minLength": 3
+        },
+        "boundary_policy": {
+          "type": "string",
+          "minLength": 3
+        },
+        "contour_policy": {
+          "type": "string",
+          "minLength": 3
+        }
+      }
+    },
+    "recomputed_outputs": {
+      "type": "object",
+      "required": [
+        "renormalized_local_jacobian",
+        "counterterm_projection",
+        "continuum_locality"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "renormalized_local_jacobian": {
+          "type": "string",
+          "minLength": 3
+        },
+        "counterterm_projection": {
+          "type": "string",
+          "minLength": 3
+        },
+        "continuum_locality": {
+          "const": "VERIFIED_FOR_SELECTED_HESSIAN_ONLY"
+        }
+      }
+    },
+    "nonclaims": {
+      "type": "object",
+      "required": [
+        "QAP",
+        "anomaly_coefficients",
+        "global_anomalies",
+        "Lorentzian_QME"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "QAP": {
+          "const": "NOT_INFERRED"
+        },
+        "anomaly_coefficients": {
+          "const": "NOT_INFERRED"
+        },
+        "global_anomalies": {
+          "const": "NOT_INFERRED"
+        },
+        "Lorentzian_QME": {
+          "const": "NOT_INFERRED"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "fixture_status": {
+            "const": "SYNTHETIC_ACCEPTANCE_FIXTURE_NOT_PHYSICAL_INPUT"
+          }
+        },
+        "required": [
+          "fixture_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "selected_action": {
+            "type": "object",
+            "properties": {
+              "candidate": {
+                "const": "SYNTHETIC"
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "selected_action": {
+            "type": "object",
+            "properties": {
+              "candidate": {
+                "enum": [
+                  "A",
+                  "B"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

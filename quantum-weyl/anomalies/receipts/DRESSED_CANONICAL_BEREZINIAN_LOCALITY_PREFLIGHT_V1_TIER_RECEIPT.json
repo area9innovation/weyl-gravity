@@ -1,0 +1,81 @@
+{
+  "receipt_id": "DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT_V1_TIER_RECEIPT",
+  "result_id": "DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT",
+  "recorded_at": "2026-07-20",
+  "base_commit": "306ff78a2001f23124d412e9a2f41531bec74f78",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "input_hashes": {
+    "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1": "a537e31bf667520443903551b5bf2596dff9a1c35fade88d2ffc1e89c1e0b836",
+    "WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT": "b265dc9d86938ed7bee0f57a1394e26e762e99841a89b1310b950542e0c2e2b1",
+    "GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION": "4513be48247605774f02aaba69faf3a2a9c9a65eb8a3550c36a873a85c87da1a"
+  },
+  "output_hashes": {
+    "certificate": "28d6821e0774767f991ce79d507dd0059eae2f274c7114c4bec8a07ccc915371",
+    "receiver_fixture": "2b348dafa689071ae18dd76723f171b9e86ee71592d82d9b1e66cc8be0147ba8",
+    "certificate_schema": "adae67878ea487a91572a276a53c518ca0c0d1636f3933b53456ea5c87e0cd34",
+    "receiver_schema": "185c8a35e2b9feca7eb498b5225377cae01d696d83096015e66f09451caf7270",
+    "producer": "492a775e2777a600a10cf353e93f611dbc634f378a0872c42c8ed4f6911af0c6",
+    "independent_replay": "462d609230eebaf5c31b92b12ac367a9ddd8a1f9f45f1868ed243cca0854761b",
+    "mutation_tests": "074fcc5b1dbbbcd7d5589e8601ff329c32fec9b9011209adc41f5f8d320de417",
+    "report": "e3679aef0a96be181fdd33213a484632eb39349b3f5e0d4194f5e671204130c2"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/anomalies/dressed_canonical_berezinian_locality_preflight.py quantum-weyl/anomalies/verify_dressed_canonical_berezinian_locality_preflight.py quantum-weyl/anomalies/tests/test_dressed_canonical_berezinian_locality_preflight.py",
+      "elapsed_seconds": 0.08,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "python3 -m json.tool <certificate, receiver fixture, two schemas and tier receipt> && git diff --check -- <nine scoped paths>",
+      "elapsed_seconds": 0.81,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m anomalies.dressed_canonical_berezinian_locality_preflight --check",
+      "elapsed_seconds": 0.09,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m anomalies.verify_dressed_canonical_berezinian_locality_preflight",
+      "elapsed_seconds": 0.08,
+      "status": "PASS_INDEPENDENT_BLOCK_DETERMINANT_POLAR_AND_CANONICAL_ONE_FORM_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest anomalies.tests.test_dressed_canonical_berezinian_locality_preflight",
+      "elapsed_seconds": 0.37,
+      "status": "PASS_7_TESTS_WITH_MISSING_COTANGENT_SIGN_UNIT_LOCALITY_AND_QAP_MUTATIONS_REJECTED"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/anomalies/schema/dressed-canonical-berezinian-locality-preflight-v1.schema.json -d quantum-weyl/anomalies/certificates/DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT.json",
+      "elapsed_seconds": 2.49,
+      "status": "PASS_DRAFT_2020_12_STRICT_WITH_EXACT_NESTED_CONTRACT"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/anomalies/schema/dressed-canonical-berezinian-selected-hessian-receiver-v1.schema.json -d quantum-weyl/anomalies/fixtures/dressed_canonical_berezinian_selected_hessian_accept.json",
+      "elapsed_seconds": 2.52,
+      "status": "PASS_DRAFT_2020_12_STRICT_WITH_SYNTHETIC_PHYSICAL_CONDITIONAL"
+    },
+    {
+      "tier": 1,
+      "command": "initial strict receiver-schema validation after adding the synthetic/physical conditional",
+      "elapsed_seconds": 2.56,
+      "status": "FAIL_REPAIRED_STRICT_TYPES_REQUIRED_EXPLICIT_OBJECT_TYPE_IN_CONDITIONAL_SUBSCHEMAS"
+    },
+    {
+      "tier": 2,
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 9.09,
+      "status": "ADVISORY_EXIT_0_WITH_PREEXISTING_BRIDGE_CERTIFICATE_DRIFT_UNPINNED_FORGE_BUILD_AND_CORPUS_BASELINE_DRIFT_REPORTED"
+    }
+  ],
+  "tier_3_not_run": "No selected-action determinant, continuum Jacobian, QAP, anomaly coefficient, QME, global anomaly, Lorentzian result, freeze, release or tag is promoted. The result is a scoped LOCAL-ALGEBRAIC finite-carrier calculation and exact action-independent continuum-locality obstruction covered by tiers 0-2."
+}
