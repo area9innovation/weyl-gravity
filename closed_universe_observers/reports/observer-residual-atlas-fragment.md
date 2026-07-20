@@ -254,6 +254,14 @@ nilpotency, cyclicity, reality, \(K_{\rm Berger}\) commutation, embeddings,
 quotient and detector chain map pass.  The leading coordinate response is
 still rank two; its 160-row cohomological descent is `NO_CERTIFIED_MAP`.
 
+That physical reduction is now theorem-frozen as a machine-readable
+nondefinition.  The 160-row payload exports an action-level composition and
+zero identity defects, but no coefficient ring, sparse (q_1) entries,
+support-sector chain groups or zero-mode matrices.  Since the changed
+positive-mixed Φ₂ affects non-rod rows, the executable old 108-row operator
+cannot be substituted.  No kernel, image, contraction, descended pairing,
+memory class or physical detector rank is therefore promoted.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.

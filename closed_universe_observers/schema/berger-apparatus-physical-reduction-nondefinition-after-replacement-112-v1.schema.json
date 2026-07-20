@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "atlas_status",
+    "dependency_tags", "dependency_refs", "payload_ref",
+    "reduction_disposition", "next_gate", "claim_boundary", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-apparatus-physical-reduction-nondefinition-after-replacement-112-v1"},
+    "result_id": {"const": "BERGER_APPARATUS_PHYSICAL_REDUCTION_NONDEFINITION_AFTER_REPLACEMENT_112"},
+    "atlas_status": {"const": "NO_CERTIFIED_MAP"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "dependency_refs": {"type": "object", "minProperties": 7},
+    "payload_ref": {"type": "object", "required": ["path", "result_id", "sha256", "canonical_sha256"]},
+    "reduction_disposition": {"type": "object", "minProperties": 8},
+    "claim_boundary": {"type": "string", "minLength": 1400},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": true
+}

@@ -2407,3 +2407,19 @@ The fail-closed atlas row is
 The active gate is now the 160-row \(q_1\) cohomology, descended pairing and
 detector class.  Apparatus \(q_2,q_3\), \(\mathcal Z_2\), nonlinear memory,
 redshift, recoil and quantum claims remain inactive.
+
+## Active bridge: executable 160-row reduction input
+
+Physical reduction is fail-closed despite the valid unary pushout.  Its
+payload describes the action composition and identity checks but does not
+export executable (q_1) coefficients by support and zero-mode sector.  The
+changed positive-mixed Φ₂ forbids importing the older 108-row operator.
+Consequently exact cohomology, contraction, descended pairing, memory and
+detector-record classes remain `NO_CERTIFIED_MAP`.
+
+The fail-closed atlas row is
+`observer.berger.interaction.apparatus_physical_reduction_nondefinition_after_replacement_112`.
+The activation gate is a content-addressed 160-row (q_1) export containing
+the coefficient ring, bidegree blocks, sparse entries, chain groups for every
+support/zero-mode sector and the exact detector-smearing matrix.  Only then
+may π, (i), (h) and reduced response rank be computed.
