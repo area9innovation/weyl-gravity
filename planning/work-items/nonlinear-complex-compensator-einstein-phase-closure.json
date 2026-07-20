@@ -1,0 +1,45 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/nonlinear-complex-compensator-einstein-phase-closure",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "nonlinear-complex-compensator-einstein-phase-closure",
+  "source": {
+    "path": "planning/work-items/nonlinear-complex-compensator-einstein-phase-closure.json",
+    "span": null
+  },
+  "body": {
+    "owner": "nonlinear",
+    "state": "PROPOSED",
+    "objective": "Determine whether the Einstein-like metric-plus-phase sector of the complex-compensator theory closes under the first nonlinear interactions or necessarily sources additional fourth-order modes.",
+    "stop_condition": "Import the complete action-derived complex-compensator classical BV parent and its contraction by exact hashes. Derive q2, q3 and the first required q4 identity directly from the single action, transfer them cyclically to the reduced g_hat-plus-theta model, and compute the branch-resolved tensors in exact Einstein-image, additional-Weyl, phase-clock and Maxwell coordinates. Test every mixed channel needed to decide E/theta/Maxwell closure, including resonant (+lambda,-lambda)->0 and homogeneous charge channels. Prove whether pi_X q_n(E/theta/Maxwell,...) vanishes, is exact/removable under the complete admissible cyclic L_infinity redefinition family, or gives an invariant nonzero cohomology/deformation class. Join surviving sources to the Taub moment map and bounded-resonance ledger. If the Einstein phase closes only on a constrained cone, state that cone exactly; if it fails, exhibit the first source coefficient and independent verifier.",
+    "current_gate": "branch-resolved nonlinear closure or sourcing theorem for the compensator Einstein phase",
+    "forbid": "no vertex copied from strict Weyl or the old Berger action; no retained representative called invariant before deformation-cohomology reduction; no vanishing selected coefficient called branch closure; no one-particle absence used to dismiss a physical interaction; no formal secular correction called stability; no anomaly, quantum, particle, scattering or unitarity promotion",
+    "depends_on": [
+      "classical-complex-compensator-clock-bv-parent"
+    ],
+    "activates": [
+      "sf:program/work/bridge-compensator-einstein-extra-exact-sequence",
+      "sf:program/work/quantum-complex-compensator-clock-synthesis",
+      "an interaction-level verdict for the emergent Einstein phase"
+    ],
+    "allowed_paths": [
+      "d_quotient_nonlinear/",
+      "bridge/",
+      "reports/",
+      "residual_atlas/",
+      "paper/11-interacting-cyclic-l-infinity-transfer.tex",
+      "notes/d-quotient-nonlinear-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "COMPENSATOR NONLINEAR CONSUMER. First compute the sparse branch mixing table; only then attempt a broad transferred minimal model. An invariant source of the extra branch is as valuable as closure.",
+    "notes": [
+      "The Einstein phase is a sector of a changed theory, not the strict pure-Weyl Einstein image.",
+      "Use the invariant metric and the reduced phase field after the radial quartet contraction.",
+      "Keep formal extendibility, bounded continuation and stability as separate lifecycles."
+    ],
+    "input_commit": "b511e41b3c9b481705e6ea048683c7b3a59278d1",
+    "stream": "nonlinear"
+  },
+  "edges": []
+}

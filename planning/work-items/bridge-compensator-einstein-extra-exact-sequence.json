@@ -1,0 +1,46 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-compensator-einstein-extra-exact-sequence",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-compensator-einstein-extra-exact-sequence",
+  "source": {
+    "path": "planning/work-items/bridge-compensator-einstein-extra-exact-sequence.json",
+    "span": null
+  },
+  "body": {
+    "owner": "einstein",
+    "state": "PROPOSED",
+    "objective": "Build the exact linear and first nonlinear bridge between the compensator theory's invariant-metric Einstein phase and its additional fourth-order sector, including the physical scale, symplectic forms and charge fibres.",
+    "stop_condition": "Import the terminal classical complex-compensator parent and nonlinear closure result by exact hashes. In g_hat and theta variables construct an exact sequence of linear complexes 0 -> E_Einstein+clock+Maxwell -> E_compensator-Weyl -> E_extra -> 0, prove exactness or identify the first failed image/kernel equality, and state whether any splitting is canonical. Transport the covariant/shifted symplectic forms, residual generator action and relational-observable map; compute the invariant normal form under all admissible lift shears. Derive the exact Einstein-Hilbert coefficient, Planck scale and cosmological term in the rho=f chart and compare the linear equations and pairings with ordinary Einstein-matter theory. Import q2/q3 only after the linear bridge is fixed, then decide whether the extension is closed, sourced or constrained by the nonlinear tangent cone. Export one branch dictionary shared by the atlas, observer and quantum consumers plus independent chain, pairing and scale-generation verifiers.",
+    "current_gate": "exact compensator-theory Einstein/additional extension with symplectic and nonlinear meaning",
+    "forbid": "no direct sum assumed from a composition; no gauge-fixed rho=f expression called a physical scale without invariant interpretation; no inherited Weyl pairing called the Einstein symplectic form without comparison; no lift-dependent extra self-sign called invariant; no interaction imported before a branch dictionary exists; no low-energy agreement, scattering, black-hole or quantum claim beyond the certified carrier",
+    "depends_on": [
+      "classical-complex-compensator-clock-bv-parent",
+      "nonlinear-complex-compensator-einstein-phase-closure"
+    ],
+    "activates": [
+      "a unified residual-atlas branch dictionary for the compensator theory",
+      "a precise low-energy Einstein-phase comparison",
+      "sf:program/work/quantum-complex-compensator-clock-synthesis"
+    ],
+    "allowed_paths": [
+      "bridge/",
+      "reports/",
+      "residual_atlas/",
+      "paper/",
+      "notes/d-quotient-einstein-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "COMPENSATOR EINSTEIN BRIDGE. Reuse the black-hole and compact-product lesson that the invariant object is an exact sequence plus pairing normal form, not a preferred Einstein/extra direct sum.",
+    "notes": [
+      "The output should let one branch label be followed through propagation, pairing, nonlinear sourcing and observation.",
+      "Failure of exactness or symplectic agreement is a decisive theorem, not an implementation shortfall.",
+      "The Planck scale may be introduced, gauge-selected or dynamically generated; classify which statement is actually proved."
+    ],
+    "input_commit": "a860f97fab17a8a6b23b28d8738b0f4167ded9fb",
+    "stream": "bridge"
+  },
+  "edges": []
+}
