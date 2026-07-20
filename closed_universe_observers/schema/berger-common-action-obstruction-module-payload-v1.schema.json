@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "coefficient_field",
+    "orbit_definition",
+    "coordinate_basis",
+    "vectors",
+    "canonical_linear_reduction"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-common-action-obstruction-module-payload-v1"
+    },
+    "result_id": {
+      "const": "BERGER_COMMON_ACTION_OBSTRUCTION_MODULE_PAYLOAD"
+    },
+    "coefficient_field": {"type": "string"},
+    "orbit_definition": {
+      "type": "object",
+      "required": [
+        "background",
+        "output_row",
+        "output_row_id",
+        "bidegree",
+        "q1_source",
+        "q2_sources",
+        "old_input_suborbit",
+        "completeness_rule"
+      ]
+    },
+    "coordinate_basis": {
+      "type": "array",
+      "minItems": 444,
+      "maxItems": 444
+    },
+    "vectors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "emitter_Diff_BV",
+        "base_maxwell_typed",
+        "z_00",
+        "z_01",
+        "z_10",
+        "z_11",
+        "source_total",
+        "normalized_110_residual"
+      ],
+      "properties": {
+        "emitter_Diff_BV": {"type": "array", "minItems": 228, "maxItems": 228},
+        "base_maxwell_typed": {"type": "array", "minItems": 120, "maxItems": 120},
+        "z_00": {"type": "array", "minItems": 30, "maxItems": 30},
+        "z_01": {"type": "array", "minItems": 30, "maxItems": 30},
+        "z_10": {"type": "array", "minItems": 90, "maxItems": 90},
+        "z_11": {"type": "array", "minItems": 90, "maxItems": 90},
+        "source_total": {"type": "array"},
+        "normalized_110_residual": {"type": "array"}
+      }
+    },
+    "canonical_linear_reduction": {
+      "type": "object",
+      "required": [
+        "column_order",
+        "pivot_coordinate_indices",
+        "cokernel_representative_coordinate_indices",
+        "coordinate_functionals_annihilating_the_entire_image"
+      ]
+    }
+  }
+}

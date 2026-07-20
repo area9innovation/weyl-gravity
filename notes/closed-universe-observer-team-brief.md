@@ -1360,15 +1360,43 @@ the complete auxiliary action basis has zero `A_0--K_12` Hessian support.
 Decoupling restores the prior coefficient, the sign mutation doubles it, and
 the inherited factor-two null-vector remains a mutation only.
 
-The currently active bridge is therefore a strictly larger-carrier or
-higher-order action-extension declaration.  Its activation gate remains
-regeneration of both `q1` and `q2` from one nondegenerate pairing followed by
-independent substitution into the original arity-two verifier.  The typed
-Conflux request remains `REQUESTED` and was not run; even after it lands, a
-candidate alone cannot pass this gate.  The new fail-closed atlas row is
-`observer.berger.interaction.conjugate_pair_110_no_go`, with nonlinear status
-`OBSTRUCTED` and every detector/cone map `NO_CERTIFIED_MAP`.  This active
-bridge does not activate physical Bridge 3.
+`BERGER_COMMON_ACTION_OBSTRUCTION_MODULE` now replaces an unguided
+larger-carrier or higher-jet search by an invariant necessary gate.  The
+normalization triangle is the cokernel of the three-edge field-rescaling
+incidence map: it has rank two, primitive cycle functional `(1,-1,-1)`, and
+the frozen 2-adic edge-valuation vector `(1,0,0)` projects to one, recovering
+`H=2`.  On the complete declared old-`A`--`K` orbit, emitter `q1` is crossed
+with every `emitter_Diff_BV` and `base_maxwell_typed` `q2` coefficient rather
+than only the two earlier witnesses.  This gives 444 exact
+`Q(sqrt(10))`-monomial coordinates.  Modulo pair rescaling, the bounded
+110-row action-to-Ward map factors through
+
+```text
+z_sb=u_s beta_b/p,
+z_00 z_11-z_01 z_10=0.
+```
+
+Its four-column linear envelope has rank four and cokernel dimension 440.
+Both complete source-pair vectors raise the rank to five and therefore define
+nonzero cokernel classes.  The normalized rank-one point
+`[[0,0],[-1,-1]]` cancels the two old `+g_b h_b` projections but all four
+columns vanish on `tau_star <- (e1 A_0,e2 K0_12)`, so its
+`-2 g0 h0` typed-Maxwell projection survives.
+
+The currently active bridge is therefore an action basis with a nonzero
+`A_0--K_12` auxiliary Hessian projection.  At least one nondegenerate
+degree-`(0,1)` conjugate pair is necessary.  Increasing only the outer scalar
+PBW jet order of the metric-natural `<K,dA>` Hessian is insufficient at every
+finite order because it changes words and coefficients, not old component
+labels.  A new clock/frame or parity-odd tensor channel, or another carrier
+mechanism, is necessary but not yet sufficient; the number of pairs beyond
+one remains `OPEN`.  Activation still requires a complete declared action
+basis, regeneration of `q1,q2` from one nondegenerate pairing, recomputation
+of the obstruction map, and independent substitution into the original Ward
+row.  Conflux was not enabled.  The active fail-closed atlas row is
+`observer.berger.interaction.common_action_obstruction_module`, with
+nonlinear/observational status `OBSTRUCTED` and every detector/cone map
+`NO_CERTIFIED_MAP`.  This bridge does not activate physical Bridge 3.
 
 Within that inactive bridge, the numerical recoil input-contract audit is now
 complete.  The next activation gate requires a provenance-complete

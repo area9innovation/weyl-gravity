@@ -1,0 +1,124 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_COMMON_ACTION_OBSTRUCTION_MODULE_TIER_RECEIPT",
+  "subject_result_id": "BERGER_COMMON_ACTION_OBSTRUCTION_MODULE",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "science_forge_work_item": "sf:program/work/observer-common-action-obstruction-module",
+  "input_commit": "2077af36",
+  "tested_tree_head": "78936d039c0604c3fe74c4c9708dc39c38590019",
+  "commands": [
+    {
+      "test_tier": 0,
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_common_action_obstruction_module.py closed_universe_observers/verify_berger_common_action_obstruction_module.py closed_universe_observers/tests/test_berger_common_action_obstruction_module.py",
+      "elapsed_seconds": 0.06,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 0,
+      "command": "python3 -m json.tool on both schemas and both generated JSON artifacts; git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md",
+      "elapsed_seconds": 0.04,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.generate_berger_common_action_obstruction_module --check",
+      "elapsed_seconds": 6.8,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.verify_berger_common_action_obstruction_module",
+      "elapsed_seconds": 6.57,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_common_action_obstruction_module.py closed_universe_observers/tests/test_berger_110_row_conjugate_pair_extension_no_go.py closed_universe_observers/tests/test_berger_108_row_common_action_compatibility_theorem.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+      "elapsed_seconds": 16.28,
+      "status": "PASS",
+      "detail": "56 passed"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "elapsed_seconds": 0.48,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+      "elapsed_seconds": 1.09,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 2,
+      "command": "independent raw source-pair and action-column reconstruction in verify_berger_common_action_obstruction_module",
+      "elapsed_seconds": 6.57,
+      "status": "PASS",
+      "detail": "recomputed all 348 declared old source coordinates and 240 action-column entries; verified a nonzero 4x4 Q(sqrt(10)) pivot minor, 440 quotient representatives, both source-pair cokernel classes, H=2, -2 g0 h0 and the rank-one action locus"
+    },
+    {
+      "test_tier": "advisory",
+      "command": "bash ci/science-forge-shadow.sh",
+      "elapsed_seconds": 5.64,
+      "status": "ADVISORY_PASS_WITH_FINDINGS",
+      "detail": "pre-existing bridge certificate drift, unpinned dirty Forge build and corpus growth to 1197 certificates versus baseline 976"
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": "SATISFIED by independent reconstruction from source-labelled q1/q2 and action-derived auxiliary operators plus the generated atlas consumer",
+    "tier_3": "NOT_RUN: no freeze, release, paper theorem, shared-core algebra change or quantum promotion"
+  },
+  "artifacts": [
+    {
+      "path": "closed_universe_observers/generate_berger_common_action_obstruction_module.py",
+      "sha256": "f121059f8a12e261fb76acb037a14e4584b67fb9194738b23795aa9b5257b889"
+    },
+    {
+      "path": "closed_universe_observers/verify_berger_common_action_obstruction_module.py",
+      "sha256": "d376e8025fef8ea22e87c1d8ffc6010de683a4bf6e9e01d698681b7b6996e1ae"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_berger_common_action_obstruction_module.py",
+      "sha256": "e56aef54c62d59d665c47ea3609943240734a69670fc52874b7056b4547b610a"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-common-action-obstruction-module-v1.schema.json",
+      "sha256": "d0fda4da993680832dcf976d2bffc4f3f9871aa98252500b985555afc26ecf49"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-common-action-obstruction-module-payload-v1.schema.json",
+      "sha256": "7a1948c16162aa73d39654a73c2e5f59fe9a75316ed3ce86481b8575737c188d"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_COMMON_ACTION_OBSTRUCTION_MODULE.json",
+      "sha256": "f8dd21f6931a8e8dc45fdcf8364bd6decf04bf95ece8330e37aed1286d90802a"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_COMMON_ACTION_OBSTRUCTION_MODULE_PAYLOAD.json",
+      "sha256": "0001a791e5980fb6337a308cf291ba8f083522a17b905c440cb0b7f47284f059"
+    },
+    {
+      "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "sha256": "52983c225d32d7042144170fab5a3c579477abe23e9acfe1282bf942d08c3dbd"
+    }
+  ],
+  "flags": {
+    "NORMALIZATION_COKERNEL_DIMENSION_ONE": true,
+    "H_TWO_RECOVERED_BY_CYCLE_PROJECTION": true,
+    "DECLARED_SOURCE_PAIR_ORBIT_COMPLETE": true,
+    "ACTION_IMAGE_RANK_FOUR": true,
+    "ACTION_COKERNEL_DIMENSION_440": true,
+    "BOTH_SOURCE_PAIR_CLASSES_NONZERO_IN_COKERNEL": true,
+    "TYPED_MAXWELL_MINUS_TWO_PROJECTION_NONZERO": true,
+    "OUTER_SCALAR_JET_ORDER_ALONE_INSUFFICIENT": true,
+    "NEW_COMMON_ACTION_CANDIDATE_EXISTS": false,
+    "COMPLETE_ARITY_TWO_IDENTITY": false,
+    "Q3_AUTHORIZED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

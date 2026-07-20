@@ -1,0 +1,479 @@
+{
+  "action_to_ward_map": {
+    "domain_parameters": {
+      "field_redefinition": "chi -> r chi, chi_plus -> r^-1 chi_plus; u_s -> r u_s, beta_b -> r^-1 beta_b",
+      "hessian": [
+        "beta_0",
+        "beta_1"
+      ],
+      "pairing": "p!=0",
+      "unary": [
+        "u_0=mu",
+        "u_1=lambda"
+      ]
+    },
+    "field_redefinition_quotient": "the four z_sb are invariant under the admissible pair rescaling, so both the Segre equation and the image/cokernel are quotient-defined",
+    "invariant_product_coordinates": "z_sb=u_s*beta_b/p, s,b in {0,1}",
+    "linear_envelope": {
+      "canonical_pivot_count": 4,
+      "canonical_quotient_representative_count": 440,
+      "codomain_dimension": 444,
+      "cokernel_dimension": 440,
+      "column_order": [
+        "z_00",
+        "z_01",
+        "z_10",
+        "z_11"
+      ],
+      "image_rank": 4,
+      "zero_image_coordinate_functional_count": 204
+    },
+    "nonlinear_action_locus": {
+      "description": "rank-at-most-one Segre cone",
+      "equation": "z_00*z_11-z_01*z_10=0",
+      "matrix": [
+        [
+          "z_00",
+          "z_01"
+        ],
+        [
+          "z_10",
+          "z_11"
+        ]
+      ],
+      "normalized_110_point": [
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "normalized_point_satisfies_equation": true
+    }
+  },
+  "activation_disposition": {
+    "K_Berger_equivariance_authorized": false,
+    "complete_arity_two_identity": false,
+    "detector_response_on_second_order_cone_authorized": false,
+    "new_common_action_candidate_exists": false,
+    "observer_morphism_stability_authorized": false,
+    "obstruction_module_reusable": true,
+    "physical_branch_bridge_activated": false,
+    "q3_authorized": false,
+    "quantum_promotion_authorized": false,
+    "smallest_sufficient_extension_found": false
+  },
+  "atlas_status": "OBSTRUCTED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE result replaces two serial ansatz checks by a reusable obstruction module on one explicitly declared same-background source-pair orbit. The orbit contains every switch-specialized tau_star coefficient with emitter q1, either emitter_Diff_BV or typed-Maxwell q2, and old A rows 55--58 crossed with massive-two-form K rows 84--95 in either order. Formal coefficient monomials are independent and coefficients lie in Q(sqrt(10)). The action-to-Ward map is computed for the complete bounded 110-row action class inherited from its certified no-go. Modulo the admissible pair rescaling it factors through four invariant products z_sb constrained by the rank-one Segre equation. Its four-column linear envelope has exact rank four in a 444-dimensional codomain and exact cokernel dimension 440. Both declared source-pair vectors and their sum define nonzero cokernel classes. Coordinate projections recover cancellation of the two old +g_b h_b witnesses and the surviving typed-Maxwell coefficient -2 g0 h0. Independently, the prime-valuation incidence cokernel of the normalization triangle is one-dimensional and its 2-adic cycle projection recovers H=2. The lower-bound theorem applies to extensions that preserve the frozen component embedding and try to enlarge only the outer scalar unary jet of the metric-natural <K,dA> Hessian: such derivatives never change A/K row labels, so a nonzero A_0--K_12 Hessian projection is necessary and scalar outer jet order alone is insufficient at every finite order. At least one degree-(0,1) conjugate pair is also necessary; whether one broader pair suffices, whether two pairs are required, and which clock/frame or parity-odd representation is smallest remain OPEN. No claim is made against arbitrary higher actions or carriers. No new action candidate is fitted or promoted, and no q3, K_Berger, observer-morphism, detector, tangent-cone, causal, branch, particle, positivity, Conflux, or quantum conclusion is authorized. No compact-product mode is identified with a Berger row.",
+  "claim_status": "CERTIFIED_SCOPED_COMMON_ACTION_OBSTRUCTION_MODULE",
+  "complete_declared_source_pair_orbit": {
+    "action_column_coordinate_counts": {
+      "z_00": 30,
+      "z_01": 30,
+      "z_10": 90,
+      "z_11": 90
+    },
+    "codomain_basis_sha256": "b7ade14e42657eb38fdd5247a39ad3842b273c16d55cbf52bc8d91b31a84aebd",
+    "prior_projection_recovery": [
+      {
+        "coordinate": 0,
+        "image_coefficient": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "image_column": "z_10",
+        "normalized_parameter": -1,
+        "residual": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "source_coefficient": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "coordinate": 1,
+        "image_coefficient": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "image_column": "z_11",
+        "normalized_parameter": -1,
+        "residual": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "source_coefficient": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    ],
+    "scope": {
+      "background": "same pinned Berger clock background",
+      "bidegree": [
+        0,
+        0
+      ],
+      "completeness_rule": "filter the complete recomputed source-pair rows by old A--K row membership only; no key, jet order, or coefficient is selected by its value",
+      "old_input_suborbit": "all switch-specialized ordered A rows 55--58 crossed with K rows 84--95, in both input orders, with every PBW key and formal coefficient monomial retained",
+      "output_row": 52,
+      "output_row_id": "tau_star",
+      "q1_source": "emitter",
+      "q2_sources": [
+        "emitter_Diff_BV",
+        "base_maxwell_typed"
+      ]
+    },
+    "source_coordinate_counts": {
+      "base_maxwell_typed": 120,
+      "emitter_Diff_BV": 228
+    },
+    "source_pair_cokernel_classification": {
+      "base_maxwell_typed": {
+        "augmented_rank": 5,
+        "coefficient": [
+          [
+            -2,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "coordinate_projection": 9,
+        "status": "NONZERO_COKERNEL_CLASS"
+      },
+      "emitter_Diff_BV": {
+        "augmented_rank": 5,
+        "coefficient": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "coordinate_projection": 42,
+        "status": "NONZERO_COKERNEL_CLASS"
+      },
+      "source_total": {
+        "augmented_rank": 5,
+        "status": "NONZERO_COKERNEL_CLASS"
+      }
+    },
+    "typed_maxwell_projection_recovery": {
+      "all_action_columns_zero": true,
+      "coordinate": 9,
+      "display": "-2 g0 h0",
+      "normalized_110_residual_coefficient": [
+        [
+          -2,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "source_coefficient": [
+        [
+          -2,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "ward_key": {
+        "coefficient_monomial": [
+          [
+            "parameter",
+            "g0",
+            [],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            "profile",
+            "h0",
+            [],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        "ward_key": [
+          55,
+          [
+            1
+          ],
+          87,
+          [
+            2
+          ]
+        ]
+      }
+    }
+  },
+  "dependency_refs": {
+    "compatibility_theorem": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMMON_ACTION_COMPATIBILITY_THEOREM.json",
+      "result_id": "BERGER_108_ROW_COMMON_ACTION_COMPATIBILITY_THEOREM",
+      "sha256": "d0c9a410ffbe65a5a14e286e338a3374a5baac655ed72dd227aef34702d07f31"
+    },
+    "component_contract": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json",
+      "result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+      "sha256": "4113635be1493e0eac5e945a970ce4989f0484d5fa658a10bf893c63f5ae707c"
+    },
+    "conjugate_pair_no_go": {
+      "path": "closed_universe_observers/certificates/BERGER_110_ROW_CONJUGATE_PAIR_EXTENSION_NO_GO.json",
+      "result_id": "BERGER_110_ROW_CONJUGATE_PAIR_EXTENSION_NO_GO",
+      "sha256": "14adb35a29b7efb445832d5d0c5c803960727e767a1c89307c8a0cc49c655191"
+    },
+    "emitter_diff_q2": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_DIFF_BV_Q2_PBW.json",
+      "result_id": "BERGER_108_ROW_EMITTER_DIFF_BV_Q2_PBW",
+      "sha256": "94026fd75e277fcff9078ff44008fcbd6af36d7e2a0eeba8bcacef46272c9619"
+    },
+    "emitter_q1": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_Q1_PBW_OVERLAY.json",
+      "result_id": "BERGER_108_ROW_EMITTER_Q1_PBW_OVERLAY",
+      "sha256": "e4cbe2b62d21573a891ecbf4369558b8680e16b82d6d7907f62121bd5062d28a"
+    },
+    "typed_maxwell_q2": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
+      "sha256": "90a7a7703e30fc9fe2e97e1b4e3327bb1dc9b078c16b51c1cc2afd163b0842a6"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "minimal_lower_bound_theorem": {
+    "additional_pair_count_beyond_one": "OPEN",
+    "carrier_pair_lower_bound": 1,
+    "outer_scalar_jet_order_alone": "INSUFFICIENT_AT_EVERY_FINITE_ORDER",
+    "representation_content": "must leave the declared metric-natural <K,dA> Hessian component support or use a different carrier mechanism",
+    "required_degrees": [
+      0,
+      1
+    ],
+    "required_hessian_projection": "A_0--K_12 nonzero",
+    "sufficiency_of_clock_frame_or_parity_odd_insertion": "OPEN",
+    "theorem": "Any common-action extension of the frozen component embedding that repairs the displayed orbit must contain at least one nondegenerate complementary degree-(0,1) pair and must have an auxiliary old-field Hessian with nonzero A_0--K_12 component projection. Increasing only the outer scalar unary PBW jet order of the metric-natural <K,dA> Hessian cannot supply that projection at any finite order, because outer derivatives alter words and coefficients but not old row labels. Therefore a new A--K tensor/representation channel (for example a declared clock/frame or parity-odd insertion) or a different carrier mechanism is necessary."
+  },
+  "mutations": {
+    "break_rank_one_product_relation": {
+      "determinant": 1,
+      "rejected_by_nonlinear_action_locus": true,
+      "z_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "drop_typed_maxwell_source": {
+      "detected": true,
+      "typed_projection_after_drop": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "inject_forbidden_A0_K12_hessian_coordinate": {
+      "detected": true,
+      "scientific_status": "SUPPORT_MUTATION_ONLY; no cyclic action or original Ward substitution is claimed",
+      "typed_projection_enters_linear_envelope": true
+    },
+    "replace_typed_factor_two_by_one": {
+      "cycle_projection": 0,
+      "detected": true,
+      "scientific_status": "MUTATION_ONLY_NOT_A_REPAIR",
+      "v2_vector": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "next_gate": "DECLARE_A_COMPLETE_ACTION_BASIS_WITH_NONZERO_A0_K12_HESSIAN_PROJECTION_THEN_RECOMPUTE_THIS_MAP_AND_SUBSTITUTE_THE_ORIGINAL_WARD_ROW",
+  "normalization_cokernel": {
+    "coefficient_domain": "prime-valuation lattice tensored with Q; displayed prime p=2",
+    "cokernel_dimension": 1,
+    "cycle_projection": 1,
+    "edge_order": [
+      "Maxwell_tau",
+      "Maxwell_emitter",
+      "emitter_tau"
+    ],
+    "field_redefinition_incidence": [
+      [
+        1,
+        0,
+        -1
+      ],
+      [
+        1,
+        -1,
+        0
+      ],
+      [
+        0,
+        1,
+        -1
+      ]
+    ],
+    "field_scale_order": [
+      "Maxwell",
+      "emitter",
+      "tau"
+    ],
+    "frozen_edge_ratios": [
+      2,
+      1,
+      1
+    ],
+    "frozen_v2_vector": [
+      1,
+      0,
+      0
+    ],
+    "invariance": "every rational field rescaling adds an incidence-column valuation vector, annihilated by (1,-1,-1)",
+    "primitive_cycle_functional": [
+      1,
+      -1,
+      -1
+    ],
+    "rank": 2,
+    "recovered_holonomy": "H=2"
+  },
+  "payload_ref": {
+    "canonical_sha256": "0665a8b620dfc55fe7354e80bf20c46eef69e3073f2b5f4b50279cfcb0bb9e8d",
+    "path": "closed_universe_observers/certificates/BERGER_COMMON_ACTION_OBSTRUCTION_MODULE_PAYLOAD.json",
+    "result_id": "BERGER_COMMON_ACTION_OBSTRUCTION_MODULE_PAYLOAD",
+    "sha256": "0001a791e5980fb6337a308cf291ba8f083522a17b905c440cb0b7f47284f059"
+  },
+  "proof_obligation_dag": [
+    {
+      "id": "P1_NORMALIZATION_COKERNEL",
+      "status": "CERTIFIED"
+    },
+    {
+      "id": "P2_COMPLETE_DECLARED_ORBIT",
+      "status": "CERTIFIED"
+    },
+    {
+      "id": "P3_ACTION_MAP_MODULO_REDEFINITION",
+      "status": "CERTIFIED"
+    },
+    {
+      "id": "P4_EXACT_IMAGE_AND_COKERNEL",
+      "status": "CERTIFIED"
+    },
+    {
+      "id": "P5_WITNESS_PROJECTIONS",
+      "status": "CERTIFIED"
+    },
+    {
+      "id": "P6_MINIMAL_NECESSARY_LOWER_BOUND",
+      "status": "CERTIFIED"
+    },
+    {
+      "id": "P7_SMALLEST_SUFFICIENT_EXTENSION",
+      "status": "OPEN_NOT_REQUIRED_AFTER_LOWER_BOUND"
+    }
+  ],
+  "provenance": {
+    "input_commit": "2077af36",
+    "science_forge_work_item": "sf:program/work/observer-common-action-obstruction-module",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_common_action_obstruction_module.py",
+        "sha256": "f121059f8a12e261fb76acb037a14e4584b67fb9194738b23795aa9b5257b889"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_common_action_obstruction_module.py",
+        "sha256": "d376e8025fef8ea22e87c1d8ffc6010de683a4bf6e9e01d698681b7b6996e1ae"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_common_action_obstruction_module.py",
+        "sha256": "e56aef54c62d59d665c47ea3609943240734a69670fc52874b7056b4547b610a"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-common-action-obstruction-module-v1.schema.json",
+        "sha256": "d0fda4da993680832dcf976d2bffc4f3f9871aa98252500b985555afc26ecf49"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-common-action-obstruction-module-payload-v1.schema.json",
+        "sha256": "7a1948c16162aa73d39654a73c2e5f59fe9a75316ed3ce86481b8575737c188d"
+      }
+    ]
+  },
+  "result_id": "BERGER_COMMON_ACTION_OBSTRUCTION_MODULE",
+  "schema": "closed-universe-berger-common-action-obstruction-module-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

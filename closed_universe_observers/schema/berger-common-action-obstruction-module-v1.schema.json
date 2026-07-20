@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "normalization_cokernel",
+    "action_to_ward_map",
+    "complete_declared_source_pair_orbit",
+    "minimal_lower_bound_theorem",
+    "proof_obligation_dag",
+    "mutations",
+    "activation_disposition",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-common-action-obstruction-module-v1"
+    },
+    "result_id": {
+      "const": "BERGER_COMMON_ACTION_OBSTRUCTION_MODULE"
+    },
+    "setting_id": {"type": "string"},
+    "claim_status": {
+      "const": "CERTIFIED_SCOPED_COMMON_ACTION_OBSTRUCTION_MODULE"
+    },
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 6,
+      "maxProperties": 6
+    },
+    "payload_ref": {"type": "object"},
+    "normalization_cokernel": {
+      "type": "object",
+      "required": [
+        "field_redefinition_incidence",
+        "rank",
+        "cokernel_dimension",
+        "primitive_cycle_functional",
+        "frozen_v2_vector",
+        "cycle_projection",
+        "recovered_holonomy"
+      ]
+    },
+    "action_to_ward_map": {
+      "type": "object",
+      "required": [
+        "domain_parameters",
+        "invariant_product_coordinates",
+        "nonlinear_action_locus",
+        "linear_envelope",
+        "field_redefinition_quotient"
+      ]
+    },
+    "complete_declared_source_pair_orbit": {"type": "object"},
+    "minimal_lower_bound_theorem": {"type": "object"},
+    "proof_obligation_dag": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7
+    },
+    "mutations": {"type": "object"},
+    "activation_disposition": {"type": "object"},
+    "next_gate": {
+      "const": "DECLARE_A_COMPLETE_ACTION_BASIS_WITH_NONZERO_A0_K12_HESSIAN_PROJECTION_THEN_RECOMPUTE_THIS_MAP_AND_SUBSTITUTE_THE_ORIGINAL_WARD_ROW"
+    },
+    "claim_boundary": {"type": "string", "minLength": 1500},
+    "provenance": {"type": "object"}
+  }
+}
