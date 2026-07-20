@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "restricted_current_theorem", "rotation_link_theorem", "candidate_rows", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-same-sign-active-linear-sheet-rotation-links-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_LINEAR_SHEET_ROTATION_LINKS"},
+    "candidate_rows": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["candidate_index", "active_component_count", "components", "verdict"],
+        "properties": {
+          "candidate_index": {"enum": [19, 21]},
+          "active_component_count": {"type": "integer", "minimum": 2, "maximum": 4},
+          "components": {"type": "array", "minItems": 2, "maxItems": 4},
+          "verdict": {"const": "ALL_ACTIVE_LINEAR_SHEET_ROTATION_LINKS_CONNECTED_COMPONENTWISE"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

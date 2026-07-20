@@ -1,0 +1,42 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_LINEAR_SHEET_ROTATION_LINKS_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Restricted Lee--Wald nondegeneracy and componentwise connected lifted-rotation zero links on all four candidate-19 and both candidate-21 active real linear sheets.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.json": "04688cf4db7d39fae06d95d9ab5fe92ee426000722b1187cee2c0e0d539b9aa6",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.py": "920dbd96ea9f0c41ab31aeda42ec18685308107eb0344c4656563415c916d9b1",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.schema.json": "1f2482409ab711283e3557f8fa127673a7671e37eea349739fd99988c9102c60",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.py": "59387eb229f3d49e4231f8ec6a4e91d49d9fa6492e113030fb922e2bfee40cd5",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.py": "51e5219ae8dc6dfaaf023f8228d44986c0e4c6c1c3dded0e65b5ec81d79d3efd",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-active-linear-sheet-rotation-links.md": "ac6c48d10ee4807984c30c0b76a51493c115b9ab049aa0b988c583da85c22d98"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 3,
+      "elapsed_seconds": 0.008,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS_AND_DEFINITE_SUBSPACE_AUDIT",
+      "reason": "The six real linear sheets, their current signs, the exact bounded fibre product, lifted stabilizer and direct action-derived axial/polar currents are content-addressed. Each active core is an orthogonal positive C^5 plus negative C^5 sum, and the compact projective component satisfies the proper moment-map theorem hypotheses."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Candidates 17, 18 and 20, candidate-16 singular topology, occupation gluing and higher lifecycles remain open."
+    }
+  },
+  "claim_boundary": "Only the six smooth active real linear sheets on candidates 19 and 21 are classified; distinct sheets are not identified."
+}
