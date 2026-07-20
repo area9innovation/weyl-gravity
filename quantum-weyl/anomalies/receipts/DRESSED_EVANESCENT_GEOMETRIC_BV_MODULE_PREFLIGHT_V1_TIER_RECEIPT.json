@@ -1,0 +1,64 @@
+{
+  "receipt_id": "DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT_V1_TIER_RECEIPT",
+  "result_id": "DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT",
+  "recorded_at": "2026-07-20",
+  "base_commit": "e2c48b7a2e96652f929845f700337a30cbf9e0ea",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "input_hashes": {
+    "TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION": "20915ec21d0c96534a7091b57ee2c3baf5728526a32d00de83dd75b4b94e7e5f",
+    "H04_GAUGE_FIXED_BV_RESULT": "ffcb1318fecd34b20695e29f8b1e545d74b0b5ba33709971bd9eefd578d4ca97",
+    "H14_GAUGE_FIXED_BV_RESULT": "a7730a34b21d2068cc73e46c563ce929195a3d9a7c7626d3843788b54e0592b3",
+    "WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY": "fa21fc6071ae52277d9953b68c47773686117f1426cc50899fdf8c124d2ba616",
+    "WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT": "b265dc9d86938ed7bee0f57a1394e26e762e99841a89b1310b950542e0c2e2b1"
+  },
+  "output_hashes": {
+    "certificate": "8685f36ddfbc6a77cdab8048965fb54b575e160a96962651c05a66c167390724",
+    "producer": "a7380d2d89686a6b2436397043e32604d199ff811d8afdf880d4cbf6080a94dc",
+    "independent_replay": "13f270cef9ef3ed6788c985dd5cb075f43378a5ea13482c4b8bdb7739edfed65",
+    "mutation_tests": "2ccd41acb465677549e3d47fe6520b5f3e535b9bd603bdb7162a1ab3bebf3eb4",
+    "schema": "5b10214f4c0bf6b37bc3a657ee9425533b3d089efc618c9d1958606827d5f260",
+    "report": "18f42153ecb7dd32c14c7db087593e187130c699f6140fbb8ab8446697aaae47"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/anomalies/dressed_evanescent_geometric_bv_module_preflight.py quantum-weyl/anomalies/verify_dressed_evanescent_geometric_bv_module_preflight.py quantum-weyl/anomalies/tests/test_dressed_evanescent_geometric_bv_module_preflight.py",
+      "elapsed_seconds": 0.07,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m anomalies.dressed_evanescent_geometric_bv_module_preflight --check",
+      "elapsed_seconds": 0.1,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m anomalies.verify_dressed_evanescent_geometric_bv_module_preflight",
+      "elapsed_seconds": 0.07,
+      "status": "PASS_INDEPENDENT_RATIONAL_PROJECTION_CD2_DERIVATIVE_EULER_MS_WITNESS_AND_QUARTET_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest anomalies.tests.test_dressed_evanescent_geometric_bv_module_preflight",
+      "elapsed_seconds": 0.22,
+      "status": "PASS_7_TESTS_WITH_PRE_SUBTRACTION_EULER_IDENTIFICATION_FULL_BV_MIXING_AND_CANDIDATE_GUESS_MUTATIONS_REJECTED"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/anomalies/schema/dressed-evanescent-geometric-bv-module-preflight-v1.schema.json -d quantum-weyl/anomalies/certificates/DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT.json",
+      "elapsed_seconds": 2.74,
+      "status": "PASS_DRAFT_2020_12_STRICT_WITH_SEPARATE_FAIL_CLOSED_CANDIDATE_A_AND_B_SLOTS"
+    },
+    {
+      "tier": 2,
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 9.41,
+      "status": "ADVISORY_EXIT_0_WITH_PREEXISTING_BRIDGE_CERTIFICATE_DRIFT_UNPINNED_FORGE_BUILD_AND_CORPUS_BASELINE_DRIFT_REPORTED"
+    }
+  ],
+  "tier_3_not_run": "No selected-action BV module, Hessian, determinant, one-loop mixing coefficient, QAP, anomaly coefficient, all-loop QME, Lorentzian result, freeze, release or tag is promoted. The scoped exact common AFN0 premodule and first missing-completion obstruction are covered by tiers 0-2."
+}

@@ -1,0 +1,541 @@
+{
+  "brst_and_quartet_disposition": {
+    "Diff_relative_closure": "EXACT_MODULO_D_H_ON_AFN0_PREMODULE",
+    "Diff_top_density": "gamma_Diff(sqrt(g_hat) I d^d x)=d_h i_xi(sqrt(g_hat) I d^d x)",
+    "Weyl_action_on_g_hat": "Q_W g_hat=0",
+    "positive_antifield_closure": "NOT_DEFINED_WITHOUT_DELTA_D",
+    "quartet_closure": "EXACT_ON_IMPORTED_ALGEBRAIC_QUARTET",
+    "quartet_homotopy": "Q_W h_W+h_W Q_W=N_quartet",
+    "quartet_rows": "Q_W tau=omega; Q_W omega=0; quartet cotangent pair"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL preflight certifies the complete action-independent parity-even antifield-zero pure-metric dimension-four curvature premodule, its exact d-to-4 projection, the first epsilon derivative of C_d^2, and the Euler-continuation finite-shift torsor. It exactly obstructs completion to a common full BV module because the d-dimensional Koszul-Tate differential is selected-action data; the parity-odd continuation also requires an explicit dimensional epsilon/gamma5 scheme. It does not compute a selected Hessian, determinant, mixing coefficient, QAP, anomaly coefficient, all-loop or Lorentzian QME, state, particle, scattering or unitarity result.",
+  "claim_flags": {
+    "ALL_LOOP_QME_PROMOTED": false,
+    "CANDIDATE_A_ROWS_GUESSED": false,
+    "CANDIDATE_B_ROWS_GUESSED": false,
+    "FULL_EVANESCENT_BV_MODULE_COMPLETE": false,
+    "ONE_LOOP_MIXING_COMPUTED": false,
+    "PARITY_ODD_CONTINUATION_SELECTED": false,
+    "QAP_ESTABLISHED": false
+  },
+  "common_afn0_geometric_premodule": {
+    "basis_completeness": "COMPLETE_PARITY_EVEN_PURE_METRIC_SCALAR_DENSITIES_AT_CURVATURE_ORDER_TWO_AND_TOTAL_DERIVATIVE_ORDER_FOUR",
+    "coefficient_ring": "Q(d) localized at (d-1)(d-2), expanded in Q[[epsilon]] around d=4",
+    "euler_lovelock_continuation": "E_d^(0)=Riem^2-4 Ric^2+R^2",
+    "even_raw_basis": [
+      "Riem(g_hat)^2",
+      "Ric(g_hat)^2",
+      "R(g_hat)^2",
+      "Box R(g_hat)"
+    ],
+    "generic_d_weyl_squared": "C_d^2=Riem^2-4/(d-2) Ric^2+2/((d-1)(d-2)) R^2",
+    "parity_odd_d_dimensional_status": "NO_ACTION_INDEPENDENT_CONTINUATION_WITHOUT_DECLARED_LEVI_CIVITA_GAMMA5_OR_HV_SPLIT_SCHEME",
+    "parity_odd_four_dimensional_receiver": "C(g_hat) dual C(g_hat)",
+    "total_derivative": "Box R=d_h(nabla R)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "evanescent_continuations": {
+    "C_d_squared_first_epsilon_physical_coordinates": [
+      {
+        "denominator": 2,
+        "numerator": -1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 18,
+        "numerator": -1
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      }
+    ],
+    "C_d_squared_first_epsilon_raw_coordinates": [
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": -1
+      },
+      {
+        "denominator": 18,
+        "numerator": 5
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      }
+    ],
+    "Euler_continuation_torsor": "E_d^(X)=E_d^(0)+epsilon X+O(epsilon^2), X in span_Q{C2,E4,R2,BoxR} plus any declared scheme-specific evanescent carriers",
+    "Euler_residue": {
+      "denominator": 20,
+      "numerator": -87
+    },
+    "basis_change": "X -> X+M is a continuation-basis change only when pole coefficients and finite-renormalization maps transform together",
+    "finite_shift_map": "X_coordinates -> (-87/20) X_coordinates",
+    "minimal_subtraction_projection_commutator_witness": {
+      "baseline_finite_C2": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "choice": "X=C2",
+      "difference_nonzero": true,
+      "shifted_finite_C2": {
+        "denominator": 20,
+        "numerator": -87
+      }
+    },
+    "physically_distinct_subtraction": "holding minimal-subtraction coordinates fixed while changing X changes the finite local action by a X"
+  },
+  "exact_checks": {
+    "C_d_squared_derivative_projected": true,
+    "C_d_squared_derivative_raw": true,
+    "Euler_residue_nonzero": true,
+    "MS_projection_noncommutes": true,
+    "candidate_slots_fail_closed": true,
+    "four_dimensional_H04_H14_imported": true,
+    "input_hashes_pinned": true,
+    "projection_left_inverse": true,
+    "projection_right_inverse": true,
+    "quartet_contraction_imported": true
+  },
+  "four_dimensional_projection": {
+    "dressed_extended_projection": {
+      "horizontal_exact": [
+        "BoxR"
+      ],
+      "retained_even": [
+        "C2",
+        "E4",
+        "R2"
+      ],
+      "retained_odd": [
+        "CdualC"
+      ]
+    },
+    "left_composition": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ],
+    "physical_basis_order": [
+      "C2",
+      "E4",
+      "R2",
+      "BoxR"
+    ],
+    "physical_definitions_from_raw_matrix": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -4
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ],
+    "projection_rank": 4,
+    "raw_basis_order": [
+      "Riem2",
+      "Ric2",
+      "R2",
+      "BoxR"
+    ],
+    "raw_from_physical_matrix": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": -1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ],
+    "right_composition": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ],
+    "strict_quotient_projection": {
+      "horizontal_exact": [
+        "BoxR"
+      ],
+      "not_strict_Weyl_invariant": [
+        "R2"
+      ],
+      "retained": [
+        "C2",
+        "E4"
+      ]
+    }
+  },
+  "full_bv_obstruction": {
+    "consequence": [
+      "positive-antifield evanescent cocycles cannot be enumerated",
+      "s_d closure and exactness cannot be decided",
+      "one-loop mixing into physical operators cannot be computed",
+      "subdivergence closure and a QAP cannot be established"
+    ],
+    "finite_renormalization_map": "PARAMETERIZED_BY_CONTINUATION_X_BUT_NOT_SELECTED",
+    "first_missing_object": "ACTION_SELECTED_D_DIMENSIONAL_KOSZUL_TATE_DIFFERENTIAL",
+    "one_loop_mixing_map": "UNDEFINED_ACTION_INDEPENDENTLY",
+    "parity_odd_independent_obstruction": "a noninteger-dimensional epsilon/gamma5 prescription and its BRST-compatible finite-renormalization rules are absent",
+    "reason": "delta_d(phi_star)=Euler-Lagrange_d(phi) and the Noether identity rows depend on the selected Candidate A scalar or Candidate B reducible-three-form master action",
+    "verdict": "PRECISE_MISSING_EVANESCENT_ANTIFIELD_COMPLETION_AND_PARITY_ODD_DIMENSIONAL_SCHEME"
+  },
+  "input_pins": {
+    "dr_ms_obstruction": {
+      "path": "quantum-weyl/anomalies/certificates/TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION.json",
+      "result_id": "TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION",
+      "sha256": "20915ec21d0c96534a7091b57ee2c3baf5728526a32d00de83dd75b4b94e7e5f"
+    },
+    "extended_H04_H14": {
+      "path": "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
+      "result_id": "WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY",
+      "sha256": "fa21fc6071ae52277d9953b68c47773686117f1426cc50899fdf8c124d2ba616"
+    },
+    "quartet_cotangent_lift": {
+      "path": "quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
+      "result_id": "WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT",
+      "sha256": "b265dc9d86938ed7bee0f57a1394e26e762e99841a89b1310b950542e0c2e2b1"
+    },
+    "strict_H04": {
+      "path": "quantum-weyl/local_bv/cohomology/H04_GAUGE_FIXED_BV_RESULT.json",
+      "result_id": "H04_GAUGE_FIXED_BV_RESULT",
+      "sha256": "ffcb1318fecd34b20695e29f8b1e545d74b0b5ba33709971bd9eefd578d4ca97"
+    },
+    "strict_H14": {
+      "path": "quantum-weyl/local_bv/cohomology/H14_GAUGE_FIXED_BV_RESULT.json",
+      "result_id": "H14_GAUGE_FIXED_BV_RESULT",
+      "sha256": "a7730a34b21d2068cc73e46c563ce929195a3d9a7c7626d3843788b54e0592b3"
+    }
+  },
+  "lifecycle": {
+    "Lorentzian_QME": "OPEN",
+    "all_loop_QME": "NOT_PROMOTED",
+    "common_even_AFN0_premodule": "CLASSIFIED",
+    "d_to_4_projection": "CERTIFIED",
+    "full_d_dimensional_BV_module": "OBSTRUCTED_ACTION_INDEPENDENTLY",
+    "one_loop_mixing": "NOT_COMPUTED",
+    "regulator_QAP": "NOT_ESTABLISHED"
+  },
+  "next_gate": "Select Candidate A or B, import its d-dimensional master action and Koszul-Tate rows, choose a parity-odd dimensional scheme, and compute the action-specific evanescent mixing matrix.",
+  "proof_sha256": "4db353e3fbeec3b4d3b6bf8fe512ac60fe9273767c6770a981ab47a02271d55c",
+  "result_id": "DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT",
+  "result_state": "COMMON_AFN0_GEOMETRIC_PREMODULE_EXACT_FULL_BV_ACTION_INDEPENDENCE_OBSTRUCTED",
+  "schema": "quantum-weyl-dressed-evanescent-geometric-bv-module-preflight-v1",
+  "scope": {
+    "dimension": "d=4-epsilon",
+    "engineering_dimension": 4,
+    "regularity": "FORMAL_EPSILON_AND_TAU_ADIC_REGULAR_BACH_CHART",
+    "selected_action": "NONE_CANDIDATE_A_OR_B_NOT_SELECTED",
+    "variables": "dressed metric g_hat, Diff ghost, algebraic Weyl quartet, and their declared four-dimensional BV cotangents"
+  },
+  "selected_action_extension_receiver": {
+    "candidate_A_scalar": {
+      "required": [
+        "scalar fields and antifields",
+        "d-dimensional master action and delta_d rows",
+        "Hessian and gauge fixing",
+        "evanescent mixing and finite projection"
+      ],
+      "status": "UNFILLED_UNTIL_ACTION_SELECTION"
+    },
+    "candidate_B_reducible_three_form": {
+      "required": [
+        "three-form tower fields ghosts ghosts-for-ghosts and antifields",
+        "d-dimensional reducible master action and delta_d rows",
+        "Hessian gauge fixing and zero-mode policy",
+        "evanescent mixing and finite projection"
+      ],
+      "status": "UNFILLED_UNTIL_ACTION_SELECTION"
+    },
+    "common_payload": [
+      "even_raw_basis",
+      "d_to_4_projection_matrices",
+      "C_d_squared_first_epsilon_coordinates",
+      "Euler_continuation_torsor",
+      "Diff_relative_closure",
+      "algebraic_quartet_contraction"
+    ],
+    "common_required_after_selection": [
+      "parity-odd dimensional prescription",
+      "subdivergence mixing matrix",
+      "independent QAP proof"
+    ]
+  }
+}

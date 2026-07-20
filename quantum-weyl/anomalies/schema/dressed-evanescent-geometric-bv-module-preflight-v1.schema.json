@@ -1,0 +1,568 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl-dressed-evanescent-geometric-bv-module-preflight-v1.schema.json",
+  "title": "Dressed evanescent geometric BV module preflight",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "input_pins",
+    "scope",
+    "common_afn0_geometric_premodule",
+    "four_dimensional_projection",
+    "evanescent_continuations",
+    "brst_and_quartet_disposition",
+    "full_bv_obstruction",
+    "selected_action_extension_receiver",
+    "lifecycle",
+    "claim_flags",
+    "exact_checks",
+    "next_gate",
+    "claim_boundary",
+    "proof_sha256"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-dressed-evanescent-geometric-bv-module-preflight-v1"
+    },
+    "result_id": {
+      "const": "DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT"
+    },
+    "result_state": {
+      "const": "COMMON_AFN0_GEOMETRIC_PREMODULE_EXACT_FULL_BV_ACTION_INDEPENDENCE_OBSTRUCTED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ]
+    },
+    "input_pins": {
+      "type": "object",
+      "required": [
+        "dr_ms_obstruction",
+        "strict_H04",
+        "strict_H14",
+        "extended_H04_H14",
+        "quartet_cotangent_lift"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "dr_ms_obstruction": {
+          "$ref": "#/$defs/reference"
+        },
+        "strict_H04": {
+          "$ref": "#/$defs/reference"
+        },
+        "strict_H14": {
+          "$ref": "#/$defs/reference"
+        },
+        "extended_H04_H14": {
+          "$ref": "#/$defs/reference"
+        },
+        "quartet_cotangent_lift": {
+          "$ref": "#/$defs/reference"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "dimension",
+        "variables",
+        "engineering_dimension",
+        "regularity",
+        "selected_action"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "dimension": {
+          "const": "d=4-epsilon"
+        },
+        "variables": {
+          "type": "string",
+          "minLength": 30
+        },
+        "engineering_dimension": {
+          "const": 4
+        },
+        "regularity": {
+          "const": "FORMAL_EPSILON_AND_TAU_ADIC_REGULAR_BACH_CHART"
+        },
+        "selected_action": {
+          "const": "NONE_CANDIDATE_A_OR_B_NOT_SELECTED"
+        }
+      }
+    },
+    "common_afn0_geometric_premodule": {
+      "type": "object",
+      "required": [
+        "coefficient_ring",
+        "even_raw_basis",
+        "basis_completeness",
+        "generic_d_weyl_squared",
+        "euler_lovelock_continuation",
+        "total_derivative",
+        "parity_odd_four_dimensional_receiver",
+        "parity_odd_d_dimensional_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "coefficient_ring": {
+          "type": "string"
+        },
+        "even_raw_basis": {
+          "const": [
+            "Riem(g_hat)^2",
+            "Ric(g_hat)^2",
+            "R(g_hat)^2",
+            "Box R(g_hat)"
+          ]
+        },
+        "basis_completeness": {
+          "const": "COMPLETE_PARITY_EVEN_PURE_METRIC_SCALAR_DENSITIES_AT_CURVATURE_ORDER_TWO_AND_TOTAL_DERIVATIVE_ORDER_FOUR"
+        },
+        "generic_d_weyl_squared": {
+          "type": "string"
+        },
+        "euler_lovelock_continuation": {
+          "type": "string"
+        },
+        "total_derivative": {
+          "type": "string"
+        },
+        "parity_odd_four_dimensional_receiver": {
+          "const": "C(g_hat) dual C(g_hat)"
+        },
+        "parity_odd_d_dimensional_status": {
+          "const": "NO_ACTION_INDEPENDENT_CONTINUATION_WITHOUT_DECLARED_LEVI_CIVITA_GAMMA5_OR_HV_SPLIT_SCHEME"
+        }
+      }
+    },
+    "four_dimensional_projection": {
+      "type": "object",
+      "required": [
+        "raw_basis_order",
+        "physical_basis_order",
+        "physical_definitions_from_raw_matrix",
+        "raw_from_physical_matrix",
+        "left_composition",
+        "right_composition",
+        "projection_rank",
+        "strict_quotient_projection",
+        "dressed_extended_projection"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "raw_basis_order": {
+          "const": [
+            "Riem2",
+            "Ric2",
+            "R2",
+            "BoxR"
+          ]
+        },
+        "physical_basis_order": {
+          "const": [
+            "C2",
+            "E4",
+            "R2",
+            "BoxR"
+          ]
+        },
+        "physical_definitions_from_raw_matrix": {
+          "$ref": "#/$defs/rational_matrix_4"
+        },
+        "raw_from_physical_matrix": {
+          "$ref": "#/$defs/rational_matrix_4"
+        },
+        "left_composition": {
+          "$ref": "#/$defs/identity_matrix_4"
+        },
+        "right_composition": {
+          "$ref": "#/$defs/identity_matrix_4"
+        },
+        "projection_rank": {
+          "const": 4
+        },
+        "strict_quotient_projection": {
+          "type": "object"
+        },
+        "dressed_extended_projection": {
+          "type": "object"
+        }
+      }
+    },
+    "evanescent_continuations": {
+      "type": "object",
+      "required": [
+        "C_d_squared_first_epsilon_raw_coordinates",
+        "C_d_squared_first_epsilon_physical_coordinates",
+        "Euler_continuation_torsor",
+        "basis_change",
+        "physically_distinct_subtraction",
+        "Euler_residue",
+        "finite_shift_map",
+        "minimal_subtraction_projection_commutator_witness"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "C_d_squared_first_epsilon_raw_coordinates": {
+          "$ref": "#/$defs/rational_vector_4"
+        },
+        "C_d_squared_first_epsilon_physical_coordinates": {
+          "$ref": "#/$defs/rational_vector_4"
+        },
+        "Euler_continuation_torsor": {
+          "type": "string",
+          "minLength": 50
+        },
+        "basis_change": {
+          "type": "string"
+        },
+        "physically_distinct_subtraction": {
+          "type": "string"
+        },
+        "Euler_residue": {
+          "const": {
+            "numerator": -87,
+            "denominator": 20
+          }
+        },
+        "finite_shift_map": {
+          "const": "X_coordinates -> (-87/20) X_coordinates"
+        },
+        "minimal_subtraction_projection_commutator_witness": {
+          "type": "object",
+          "required": [
+            "choice",
+            "baseline_finite_C2",
+            "shifted_finite_C2",
+            "difference_nonzero"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "choice": {
+              "const": "X=C2"
+            },
+            "baseline_finite_C2": {
+              "const": {
+                "numerator": 0,
+                "denominator": 1
+              }
+            },
+            "shifted_finite_C2": {
+              "const": {
+                "numerator": -87,
+                "denominator": 20
+              }
+            },
+            "difference_nonzero": {
+              "const": true
+            }
+          }
+        }
+      }
+    },
+    "brst_and_quartet_disposition": {
+      "type": "object",
+      "required": [
+        "Diff_top_density",
+        "Diff_relative_closure",
+        "Weyl_action_on_g_hat",
+        "quartet_rows",
+        "quartet_homotopy",
+        "quartet_closure",
+        "positive_antifield_closure"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "Diff_top_density": {
+          "type": "string"
+        },
+        "Diff_relative_closure": {
+          "const": "EXACT_MODULO_D_H_ON_AFN0_PREMODULE"
+        },
+        "Weyl_action_on_g_hat": {
+          "const": "Q_W g_hat=0"
+        },
+        "quartet_rows": {
+          "type": "string"
+        },
+        "quartet_homotopy": {
+          "const": "Q_W h_W+h_W Q_W=N_quartet"
+        },
+        "quartet_closure": {
+          "const": "EXACT_ON_IMPORTED_ALGEBRAIC_QUARTET"
+        },
+        "positive_antifield_closure": {
+          "const": "NOT_DEFINED_WITHOUT_DELTA_D"
+        }
+      }
+    },
+    "full_bv_obstruction": {
+      "type": "object",
+      "required": [
+        "first_missing_object",
+        "reason",
+        "consequence",
+        "parity_odd_independent_obstruction",
+        "one_loop_mixing_map",
+        "finite_renormalization_map",
+        "verdict"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "first_missing_object": {
+          "const": "ACTION_SELECTED_D_DIMENSIONAL_KOSZUL_TATE_DIFFERENTIAL"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 80
+        },
+        "consequence": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "parity_odd_independent_obstruction": {
+          "type": "string",
+          "minLength": 80
+        },
+        "one_loop_mixing_map": {
+          "const": "UNDEFINED_ACTION_INDEPENDENTLY"
+        },
+        "finite_renormalization_map": {
+          "const": "PARAMETERIZED_BY_CONTINUATION_X_BUT_NOT_SELECTED"
+        },
+        "verdict": {
+          "const": "PRECISE_MISSING_EVANESCENT_ANTIFIELD_COMPLETION_AND_PARITY_ODD_DIMENSIONAL_SCHEME"
+        }
+      }
+    },
+    "selected_action_extension_receiver": {
+      "type": "object",
+      "required": [
+        "common_payload",
+        "candidate_A_scalar",
+        "candidate_B_reducible_three_form",
+        "common_required_after_selection"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "common_payload": {
+          "type": "array",
+          "minItems": 6,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "candidate_A_scalar": {
+          "$ref": "#/$defs/unfilled_slot"
+        },
+        "candidate_B_reducible_three_form": {
+          "$ref": "#/$defs/unfilled_slot"
+        },
+        "common_required_after_selection": {
+          "type": "array",
+          "minItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "lifecycle": {
+      "type": "object"
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": {
+        "const": false
+      },
+      "minProperties": 7
+    },
+    "exact_checks": {
+      "type": "object",
+      "additionalProperties": {
+        "const": true
+      },
+      "minProperties": 10
+    },
+    "next_gate": {
+      "type": "string",
+      "minLength": 100
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 300
+    },
+    "proof_sha256": {
+      "$ref": "#/$defs/sha256"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "reference": {
+      "type": "object",
+      "required": [
+        "path",
+        "result_id",
+        "sha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "result_id": {
+          "type": "string"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "rational": {
+      "type": "object",
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "numerator": {
+          "type": "integer"
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "rational_vector_4": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/$defs/rational"
+      }
+    },
+    "rational_matrix_4": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/$defs/rational_vector_4"
+      }
+    },
+    "identity_matrix_4": {
+      "const": [
+        [
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 1,
+            "denominator": 1
+          }
+        ]
+      ]
+    },
+    "unfilled_slot": {
+      "type": "object",
+      "required": [
+        "status",
+        "required"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "const": "UNFILLED_UNTIL_ACTION_SELECTION"
+        },
+        "required": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
