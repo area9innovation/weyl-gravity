@@ -117,6 +117,10 @@ def verify() -> None:
         raise AssertionError("order-zero lift obstruction evidence missing")
     if "rank 305" not in pullback["claim_boundary"] or "positive-order lifts" not in pullback["claim_boundary"]:
         raise AssertionError("order-zero obstruction scope missing")
+    if "EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1" not in {item["result_id"] for item in pullback["evidence"]}:
+        raise AssertionError("endpoint normalization evidence missing")
+    if "A2(P_X^4)=X^mu c_mu_star" not in pullback["claim_boundary"]:
+        raise AssertionError("endpoint normalization formula missing")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")

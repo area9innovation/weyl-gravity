@@ -2449,8 +2449,11 @@ Rham tails.  Hence every metric output of `A^1` vanishes, while `Delta2`
 contains a normalized fourth-order `g_00_star` witness; the strict incidence
 `Delta2=A^1 C` with `f2=0` has no order-zero solution.  This is not a global
 no-go.  Positive-order postcomposition first requires higher current
-coefficient jets and a frozen endpoint normalization.  The active exact gate
-is the complete order-one invariant top descent, followed by
+coefficient jets.  The endpoint normalization is now frozen by
+`EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1`:
+`A^2(P_X^4)=X^mu c_mu_star`, with positive orientation sign and no U(1) or
+Weyl-identity component.  The active exact gate is the complete order-one
+invariant top descent with that endpoint fixed, followed by
 `Delta2-A^1 C=delta(f2)` on the fifteen nonzero defect rows.  Modified
 endpoints and other backgrounds remain
 admissible; no causal or quantum consequence is inferred.

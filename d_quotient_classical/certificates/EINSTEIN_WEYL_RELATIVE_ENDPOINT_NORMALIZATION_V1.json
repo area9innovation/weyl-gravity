@@ -1,0 +1,181 @@
+{
+  "A2": [
+    {
+      "generator": "H",
+      "source_row": "P_H_4_t_x_theta_phi",
+      "target_terms": [
+        {
+          "coefficient": "1",
+          "row": "c_0_star"
+        }
+      ]
+    },
+    {
+      "generator": "P_x",
+      "source_row": "P_P_x_4_t_x_theta_phi",
+      "target_terms": [
+        {
+          "coefficient": "1",
+          "row": "c_1_star"
+        }
+      ]
+    },
+    {
+      "generator": "J_1",
+      "source_row": "P_J_1_4_t_x_theta_phi",
+      "target_terms": [
+        {
+          "coefficient": "1",
+          "row": "c_3_star"
+        }
+      ]
+    },
+    {
+      "generator": "J_2",
+      "source_row": "P_J_2_4_t_x_theta_phi",
+      "target_terms": [
+        {
+          "coefficient": "cos(phi)",
+          "row": "c_2_star"
+        },
+        {
+          "coefficient": "-sin(phi)*cot(theta)",
+          "row": "c_3_star"
+        }
+      ]
+    },
+    {
+      "generator": "J_3",
+      "source_row": "P_J_3_4_t_x_theta_phi",
+      "target_terms": [
+        {
+          "coefficient": "sin(phi)",
+          "row": "c_2_star"
+        },
+        {
+          "coefficient": "cos(phi)*cot(theta)",
+          "row": "c_3_star"
+        }
+      ]
+    }
+  ],
+  "claim_boundary": "This LOCAL-ALGEBRAIC certificate freezes the top endpoint required of the shifted five-current chain map: A2 sends the oriented P4 generator for each spacetime stabilizer X to X^mu c_mu_star, with sign fixed by the current and BV endpoint pairings. It excludes the constant U(1) and Weyl identity rows for the stated reasons. Combined with the complete order-zero kernel theorem it rules out an endpoint-normalized order-zero chain map, but it does not rule out positive differential order, construct A1, solve the coefficient descent, repair relative q2 or establish causal, observable, particle or quantum claims.",
+  "classification": {
+    "causal_observable_particle_or_quantum_claim": false,
+    "endpoint_normalization_exact": true,
+    "endpoint_normalized_order_zero_chain_map_exists": false,
+    "endpoint_sign_fixed_by_pairing": true,
+    "positive_order_chain_map_ruled_out": false,
+    "relative_q2_repaired": false,
+    "support_local_chain_map_A_constructed": false
+  },
+  "consequence_for_lift_search": {
+    "endpoint_A2_target": "diffeomorphism identity rows only",
+    "endpoint_normalized_order_zero_chain_map_exists": false,
+    "order_zero_kernel_A2_target": "lambda_cov_star only",
+    "positive_order_chain_map_ruled_out": false,
+    "required_next_ansatz": "finite-order differential A1,A2 with the displayed order-zero endpoint part fixed"
+  },
+  "dependencies": {
+    "current_layout": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1_LAYOUT",
+      "path": "d_quotient_classical/generated/einstein_weyl_relative_five_current_de_rham_carrier_v1/layout.json",
+      "sha256": "a9232ff409114a4c96c12e622c9f817be0541771993f07d079adcab1ce09b002"
+    },
+    "linear_triangle": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_COMPONENTS_V1",
+      "path": "bridge/einstein_sector/generated/einstein_weyl_relative_linear_triangle_v1/components.json",
+      "sha256": "d3f10bd90c85f72bdc71ea72178bdda435fc9d4b892ec90634ee86f9e5d7c84f"
+    },
+    "order_zero_obstruction": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1.json",
+      "sha256": "bd33c26b1bdec9d9c6f3a9948da382966e878608e55bd88cceae64dfff3e720d"
+    },
+    "shifted_cone": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1.json",
+      "sha256": "f32c6686a77630aa798b81a997d6bf90900654290b144bf66586ad94ebb846f3"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "derivation": {
+    "Weyl_component": "zero because connected conformal reducibilities are product Killing fields on this background",
+    "current_endpoint_basis": [
+      "H",
+      "P_x",
+      "J_1",
+      "J_2",
+      "J_3"
+    ],
+    "forced_formula": "A2(P_X^4)=X^mu c_mu_star",
+    "global_endpoint_map": "identity on (partial_t,partial_x,J_1,J_2,J_3,u1_constant)",
+    "orientation_sign": 1,
+    "pairing_identity": "<c,A2(P_X^4)>=X^mu c_mu for every target diffeomorphism ghost c",
+    "target_identity_basis": [
+      "c_0_star",
+      "c_1_star",
+      "c_2_star",
+      "c_3_star",
+      "lambda_cov_star",
+      "sigma_W_star"
+    ],
+    "u1_component": "zero because the five-current carrier resolves spacetime stabilizers only"
+  },
+  "equatorial_basepoint_values": {
+    "H": {
+      "c_0_star": "1"
+    },
+    "J_1": {
+      "c_3_star": "1"
+    },
+    "J_2": {
+      "c_2_star": "1"
+    },
+    "J_3": {},
+    "P_x": {
+      "c_1_star": "1"
+    },
+    "global_map_rank": 5,
+    "point": {
+      "phi": "0",
+      "theta": "pi/2"
+    },
+    "pointwise_rank": 4,
+    "rank_note": "J_3 vanishes at the selected equatorial base point but is a nonzero global Killing field; pointwise rank is not global endpoint rank"
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "SOLVE_THE_COMPLETE_ORDER_ONE_INVARIANT_TOP_DESCENT_WITH_THIS_A2_ENDPOINT_NORMALIZATION_FIXED",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_endpoint_normalization.py": "e55b49e771989b6c6cca2412248e4c8af098f436d84e6c8f47240fdcedc81585",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_endpoint_normalization.py": "52af621108ed9b5f6cddce4001a760cbdc1dd1acdafd0438501d27e27a5eedc1",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_endpoint_normalization.py": "ce82c60c4c275588975962a4ce9ec5341ecf1adfe94bcbf74bffff21aae46841",
+      "d_quotient_classical/schema/relative-endpoint-normalization-v1.schema.json": "0621617701ea0d14cbf601c9e15f10b6ac030cb39fa1bb4b40e649c53b7e9dcd"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_endpoint_normalization --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_endpoint_normalization",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_endpoint_normalization",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-endpoint-normalization-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1.json"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1",
+  "result_state": "FIVE_STABILIZER_ENDPOINT_NORMALIZATION_FROZEN_ORDER_ONE_LIFT_OPEN",
+  "schema": "pure-weyl-relative-endpoint-normalization-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "closed oriented Cauchy slice with fixed N=2 magnetic bundle",
+    "carrier": "top endpoint A2:P4(5)->W2(6) of the shifted current chain map",
+    "charge_sector": "connected spacetime stabilizers H,P_x,J_1,J_2,J_3; constant U(1) is not in K_P",
+    "degree": 2,
+    "ell": "global reducibility endpoint",
+    "k": "global reducibility endpoint",
+    "m": "global reducibility endpoint",
+    "omega": "zero reducibility frequency",
+    "parity": "even identity-density endpoint",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1_TIER_RECEIPT",
+  "claim_ids": ["EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1"],
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1.json", "sha256": "85e42b7c6258bf1d31277a162aa3d664fd3d790255f891866de842fd26d5c55d"},
+    "schema": {"path": "d_quotient_classical/schema/relative-endpoint-normalization-v1.schema.json", "sha256": "0621617701ea0d14cbf601c9e15f10b6ac030cb39fa1bb4b40e649c53b7e9dcd"},
+    "producer": {"path": "d_quotient_classical/relative/einstein_weyl_relative_endpoint_normalization.py", "sha256": "e55b49e771989b6c6cca2412248e4c8af098f436d84e6c8f47240fdcedc81585"},
+    "verifier": {"path": "d_quotient_classical/relative/verify_einstein_weyl_relative_endpoint_normalization.py", "sha256": "ce82c60c4c275588975962a4ce9ec5341ecf1adfe94bcbf74bffff21aae46841"},
+    "tests": {"path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_endpoint_normalization.py", "sha256": "52af621108ed9b5f6cddce4001a760cbdc1dd1acdafd0438501d27e27a5eedc1"},
+    "report": {"path": "d_quotient_classical/reports/einstein-weyl-relative-endpoint-normalization.md", "sha256": "9cd77dc7fc8d4513c66c940e7ece10fd1ba3ce67079e584febc010d0179bbe7b"},
+    "atlas_fragment": {"path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "sha256": "a470c4558c7f61e8db0cf9c1d6470e15ae38c71fb06c08359b62361fa549766c"}
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "checks": ["Python compilation", "strict Draft 2020-12 schema", "scoped diff check", "content-hash replay"]},
+    "tier_1": {
+      "status": "PASS", "elapsed_seconds": 3.18,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_endpoint_normalization --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_endpoint_normalization",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_endpoint_normalization",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-endpoint-normalization-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS", "elapsed_seconds": 0.81,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {"status": "NOT_RUN", "reason": "This scoped endpoint normalization changes no shared operator and explicitly leaves the positive-order chain map, relative q2, causal and paper-freeze gates open."}
+  },
+  "claim_boundary": "This receipt covers the exact top-endpoint formula A2(P_X^4)=X^mu c_mu_star for the five spacetime stabilizers, its pairing/orientation sign, the absence of U(1) and Weyl-identity components, and its incompatibility with the complete order-zero top-descent kernel. Positive-order lifts, A1, the coefficient descent, relative q2, causal data, observables, particles and quantum claims remain open."
+}

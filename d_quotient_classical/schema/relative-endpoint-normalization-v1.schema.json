@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/relative-endpoint-normalization-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "derivation", "A2", "equatorial_basepoint_values", "consequence_for_lift_search", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-endpoint-normalization-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1"},
+    "result_state": {"const": "FIVE_STABILIZER_ENDPOINT_NORMALIZATION_FROZEN_ORDER_ONE_LIFT_OPEN"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"type": "string"}, "background": {"type": "string"}, "boundaries": {"type": "string"},
+        "charge_sector": {"type": "string"}, "carrier": {"type": "string"}, "degree": {"const": 2},
+        "parity": {"type": "string"}, "ell": {"type": "string"}, "m": {"type": "string"},
+        "k": {"type": "string"}, "omega": {"type": "string"}
+      }
+    },
+    "dependencies": {
+      "type": "object", "additionalProperties": false,
+      "required": ["linear_triangle", "shifted_cone", "current_layout", "order_zero_obstruction"],
+      "properties": {
+        "linear_triangle": {"$ref": "#/$defs/artifact"}, "shifted_cone": {"$ref": "#/$defs/artifact"},
+        "current_layout": {"$ref": "#/$defs/artifact"}, "order_zero_obstruction": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "derivation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["global_endpoint_map", "current_endpoint_basis", "target_identity_basis", "pairing_identity", "orientation_sign", "forced_formula", "u1_component", "Weyl_component"],
+      "properties": {
+        "global_endpoint_map": {"const": "identity on (partial_t,partial_x,J_1,J_2,J_3,u1_constant)"},
+        "current_endpoint_basis": {"const": ["H", "P_x", "J_1", "J_2", "J_3"]},
+        "target_identity_basis": {"const": ["c_0_star", "c_1_star", "c_2_star", "c_3_star", "lambda_cov_star", "sigma_W_star"]},
+        "pairing_identity": {"const": "<c,A2(P_X^4)>=X^mu c_mu for every target diffeomorphism ghost c"},
+        "orientation_sign": {"const": 1},
+        "forced_formula": {"const": "A2(P_X^4)=X^mu c_mu_star"},
+        "u1_component": {"type": "string", "minLength": 20}, "Weyl_component": {"type": "string", "minLength": 20}
+      }
+    },
+    "A2": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["generator", "source_row", "target_terms"],
+        "properties": {
+          "generator": {"enum": ["H", "P_x", "J_1", "J_2", "J_3"]},
+          "source_row": {"type": "string", "minLength": 1},
+          "target_terms": {
+            "type": "array", "minItems": 1, "maxItems": 2,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["row", "coefficient"],
+              "properties": {"row": {"enum": ["c_0_star", "c_1_star", "c_2_star", "c_3_star"]}, "coefficient": {"type": "string", "minLength": 1}}
+            }
+          }
+        }
+      }
+    },
+    "equatorial_basepoint_values": {
+      "type": "object", "additionalProperties": false,
+      "required": ["point", "H", "P_x", "J_1", "J_2", "J_3", "pointwise_rank", "global_map_rank", "rank_note"],
+      "properties": {
+        "point": {"const": {"theta": "pi/2", "phi": "0"}},
+        "H": {"const": {"c_0_star": "1"}}, "P_x": {"const": {"c_1_star": "1"}},
+        "J_1": {"const": {"c_3_star": "1"}}, "J_2": {"const": {"c_2_star": "1"}},
+        "J_3": {"const": {}}, "pointwise_rank": {"const": 4}, "global_map_rank": {"const": 5},
+        "rank_note": {"type": "string", "minLength": 40}
+      }
+    },
+    "consequence_for_lift_search": {
+      "type": "object", "additionalProperties": false,
+      "required": ["order_zero_kernel_A2_target", "endpoint_A2_target", "endpoint_normalized_order_zero_chain_map_exists", "positive_order_chain_map_ruled_out", "required_next_ansatz"],
+      "properties": {
+        "order_zero_kernel_A2_target": {"const": "lambda_cov_star only"},
+        "endpoint_A2_target": {"const": "diffeomorphism identity rows only"},
+        "endpoint_normalized_order_zero_chain_map_exists": {"const": false},
+        "positive_order_chain_map_ruled_out": {"const": false},
+        "required_next_ansatz": {"const": "finite-order differential A1,A2 with the displayed order-zero endpoint part fixed"}
+      }
+    },
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["endpoint_normalization_exact", "endpoint_sign_fixed_by_pairing", "endpoint_normalized_order_zero_chain_map_exists", "positive_order_chain_map_ruled_out", "support_local_chain_map_A_constructed", "relative_q2_repaired", "causal_observable_particle_or_quantum_claim"],
+      "properties": {
+        "endpoint_normalization_exact": {"const": true}, "endpoint_sign_fixed_by_pairing": {"const": true},
+        "endpoint_normalized_order_zero_chain_map_exists": {"const": false}, "positive_order_chain_map_ruled_out": {"const": false},
+        "support_local_chain_map_A_constructed": {"const": false}, "relative_q2_repaired": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "SOLVE_THE_COMPLETE_ORDER_ONE_INVARIANT_TOP_DESCENT_WITH_THIS_A2_ENDPOINT_NORMALIZATION_FIXED"},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"],
+      "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}}
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"$ref": "#/$defs/sha256"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      }
+    }
+  }
+}

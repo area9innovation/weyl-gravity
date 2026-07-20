@@ -2648,9 +2648,14 @@ inequalities make the negative `q_minus` occupation strictly larger than the
 positive `q_plus` occupation throughout each active cone.  Their complete
 affine Zariski-tangent current is therefore nondegenerate with inertia
 `(6,10,0)`; after the node scalings are removed it has projective inertia
-`(5,9,0)` and real rank `28`.  This does not classify either full smooth
-third-transvectant locus.  Candidate 18 and those smooth loci still require
-direct componentwise current tests.  All higher lifecycles remain fail-
+`(5,9,0)` and real rank `28`.  A separate exact smooth point on each full
+third-transvectant variety has a surviving projective current radical at
+positive-to-negative occupation ratio `13/192`, and positive scalar-ray
+mixtures place both witnesses inside the bounded fibre product with all five
+stabilizer moments zero.  Thus neither candidate-17/20 active variety is a
+global symplectic orbifold.  Their presymplectic degeneracy divisors and
+quotients remain open.  Candidate 18 still requires a direct active-current
+test.  All higher lifecycles remain fail-
 closed.  This is nonlinear input to same-background Bridge 1 with Classical,
 not a promotion of its certified linear relative triangle/cofiber.  The
 bridge activates only on the declared restricted-current carriers; singular
