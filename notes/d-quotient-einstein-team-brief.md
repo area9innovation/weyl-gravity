@@ -3993,9 +3993,39 @@ is therefore `OBSTRUCTED` only for the global symplectic-orbifold reading and
 `CERTIFIED` for bounded second-order membership.  The active existence-level
 current audit is now complete: candidate 16 is definite, candidates 19/21
 are nondegenerate linear sheets, and candidates 17/18/20 contain smooth
-bounded radicals.  The next common gate is the presymplectic degeneracy
-divisor and quotient on candidates 17, 18 and 20, with candidate-16 singular
-topology and occupation gluing kept separate.
+bounded radicals.
+
+The common smooth presymplectic gate is now closed.  If `J` is the full-rank
+Jacobian of a smooth active resonance variety and `H` its invertible ambient
+Lee--Wald Hermitian current, then
+
+```text
+K = J H^{-1} J^dagger
+```
+
+identifies its kernel with the restricted-current radical by
+`lambda -> H^{-1}J^dagger lambda`.  Thus `det K=0` is the complete smooth
+degeneracy locus, the determinantal ideals of `K` give every higher-corank
+stratum, and `ker J/rad` has an induced nondegenerate current.  For candidates
+17 and 20 this gives the two-factor third-transvectant divisor; at the exact
+bounded witness `K` has rank two and nullity one.  For candidate 18 the same
+construction works on every regular rank-one chart.  On the aligned section
+its internal factor is
+
+```text
+det C(r) = (2*b*r-w_y)*(6*b*r-w_x)/(b^2*w_x*w_y),
+```
+
+so the symmetric and antisymmetric branches have full conormal nullity four.
+The ten current-orthogonal spectators stay nondegenerate and the affine
+presymplectic quotient there has complex dimension `18`.
+
+Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_active_presymplectic_divisors`
+records this as `CERTIFIED` on every smooth active stratum and
+`NO_CERTIFIED_MAP` causally.  This is a tangent-space quotient theorem, not a
+Hausdorff global quotient.  Singular-locus reduction, constant-rank gluing,
+occupation gluing and candidate-16 singular topology remain separate.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).

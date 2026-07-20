@@ -2693,10 +2693,19 @@ has eigenlines `(1,1)` and `(1,-1)`, the scalar cone crosses equal active
 occupation on the positive mixture `R3+s18 R1`, and each resulting smooth
 bounded family has a four-complex-dimensional projective current radical.
 Thus none of the candidate-17/18/20 active varieties is a global symplectic
-orbifold.  Their presymplectic degeneracy divisors and quotients remain open;
-candidate-16 singular topology and occupation gluing remain separate.  All
-higher lifecycles remain fail-
-closed.  This is nonlinear input to same-background Bridge 1 with Classical,
+orbifold.  Their complete smooth presymplectic loci are now determinantal:
+with smooth constraint Jacobian `J` and ambient current `H`, the conormal
+matrix `K=J H^{-1}J^dagger` has kernel canonically isomorphic to the
+restricted-current radical.  Hence `det K=0` is the smooth degeneracy locus,
+its determinantal ideals classify every corank, and `ker J/rad` is the
+nondegenerate tangent-space quotient.  The candidate-17/20 exact bounded
+witness has conormal nullity one.  On candidate 18 the regular rank-one
+charts cover the smooth locus; on the aligned section the divisor factors as
+`(2*b*r-w_y)(6*b*r-w_x)=0`, and both branches have conormal nullity four.
+Global/Hausdorff quotient topology, singular-locus reduction, constant-rank
+gluing, candidate-16 singular topology and occupation gluing remain open.
+All higher lifecycles remain fail-closed.  This is nonlinear input to
+same-background Bridge 1 with Classical,
 not a promotion of its certified linear relative triangle/cofiber.  The
 bridge activates only on the declared restricted-current carriers; singular
 topology and every absent componentwise map remain `NO_CERTIFIED_MAP` or

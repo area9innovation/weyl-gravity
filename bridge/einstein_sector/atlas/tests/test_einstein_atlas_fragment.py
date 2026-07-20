@@ -293,6 +293,19 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("not a complete degeneracy-divisor", entry["claim_boundary"])
 
+    def test_same_sign_active_presymplectic_divisors_are_smooth_only(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_active_presymplectic_divisors"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["mode_data"]["lee_wald"]["status"], "CERTIFIED")
+        self.assertIn("det(J H^{-1} J^dagger)=0", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("tangent-space quotient", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("conormal nullity is one", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("nullity-four", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("Singular-locus reduction", entry["claim_boundary"])
+
     def test_first_two_abs_momentum_parity_workload_is_fail_closed(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
         second = entry["mode_data"]["second_order"]

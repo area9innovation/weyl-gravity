@@ -107,6 +107,7 @@ CERTIFICATES = {
     "same_sign_candidate17_20_axisymmetric_restricted_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.json",
     "same_sign_L1_active_restricted_current_degeneracy": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.json",
     "same_sign_candidate18_active_restricted_current_degeneracy": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.json",
+    "same_sign_active_presymplectic_divisors": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
     "ell2_two_abs_momentum_candidate4_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json",
     "ell2_two_abs_momentum_axial_qminus_L4_triplet": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.json",
@@ -1061,6 +1062,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","The positive exact mixture R3+s18 R1 gives equal p-extra(n=1) and q-minus(n=2) absolute-current occupation and lies in the necessary-and-sufficient bounded fibre product."),("CERTIFIED","The same finite witnesses lie in the smooth-secular cone; the complete presymplectic degeneracy divisor remains open."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_candidate18_active_restricted_current_degeneracy","same_sign_resonance_face_fibres","ell2_two_abs_momentum_multiplicity_two_L3_zero_varieties","same_sign_scalar_extreme_rays","same_sign_phase_parity_fibre_product","standard","axial_current","polar_current","taub"),
             "This is an exact smooth bounded current-degeneracy-family theorem on candidate 18, not a complete degeneracy-divisor, presymplectic-quotient, connected-component or occupation-gluing classification. Final residual descent, all-orders integration and causal, observational or quantum maps remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_active_presymplectic_divisors",
+            _scope(theory="Weyl-Maxwell target", background="three distinct collision candidates 17, 18 and 20, retained separately", boundaries="closed S1_L times S2 before final residual quotient", carrier="the complete smooth active third-transvectant products on candidates 17/20 and rank-one-quartic product with current-orthogonal spectators on candidate 18", degree=2, parity="both exact factorized parity channels", ell="input 2 x 2; output L=1 on candidates 17/20 and L=3 on candidate 18", m="all m=-2,...,2", k="candidate-specific allowed compact momenta, never identified across rho", omega="candidate-specific certified SUM or DIFFERENCE collision", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","The third-transvectant and rank-one carriers remain candidate-labelled; the theorem uses no cross-background mode identification."),
+            ("CERTIFIED","On every smooth chart the restricted-current radical is ker(J H^{-1} J^dagger); det(J H^{-1} J^dagger)=0 is the complete degeneracy divisor and its determinantal ideals give every corank stratum."),
+            ("CERTIFIED","Quotienting each smooth tangent by that exact radical gives a finite-dimensional nondegenerate Hermitian current. This is a tangent-space quotient, not a global Hausdorff quotient or residual reduction."),
+            ("CERTIFIED","The imported active resonance ideals supply the full-row-rank Jacobians on their smooth loci. At the candidate-17/20 witness the conormal nullity is one; candidate 18 has two aligned conormal-nullity-four branches."),
+            _second_order(("CERTIFIED","The previously certified smooth radical witnesses remain inside the exact bounded fibre product; the divisor theorem classifies their tangent-current corank but does not glue occupations."),("CERTIFIED","The same finite witnesses lie in the smooth-secular class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_active_presymplectic_divisors","same_sign_L1_active_restricted_current_degeneracy","same_sign_candidate18_active_restricted_current_degeneracy","ell2_two_abs_momentum_scalar_L1_zero_varieties","ell2_two_abs_momentum_multiplicity_two_L3_zero_varieties","axial_current","polar_current"),
+            "This classifies smooth tangent-space degeneracy divisors and linear presymplectic quotients only. Singular-locus reduction, constant-rank/global quotient topology, occupation gluing, final residual descent, all-orders integration and causal, observational or quantum maps remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload",
@@ -2033,6 +2046,17 @@ def build() -> dict[str, object]:
         raise AssertionError("candidate-18 smooth current-degeneracy theorem changed")
     if candidate18_degeneracy["candidate18_global_active_component_symplectic_orbifold"] or candidate18_degeneracy["complete_candidate18_degeneracy_divisor_classified"] or candidate18_degeneracy["occupation_strata_glued"] or candidate18_degeneracy["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("candidate-18 smooth current-degeneracy theorem exceeded scope")
+    active_divisors = records["same_sign_active_presymplectic_divisors"]["classification"]
+    if not (
+        active_divisors["candidate17_smooth_divisor_classified"]
+        and active_divisors["candidate18_smooth_divisor_classified"]
+        and active_divisors["candidate20_smooth_divisor_classified"]
+        and active_divisors["presymplectic_linear_quotient_on_every_smooth_stratum_classified"]
+        and active_divisors["higher_corank_strata_fail_closed_by_determinantal_ideals"]
+    ):
+        raise AssertionError("same-sign active presymplectic-divisor theorem changed")
+    if active_divisors["global_quotient_topology_classified"] or active_divisors["occupation_strata_glued"] or active_divisors["singular_locus_quotient_classified"] or active_divisors["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("same-sign active presymplectic-divisor theorem exceeded scope")
     parity_workload = records["ell2_two_abs_momentum_parity_workload"]["classification"]
     if not (parity_workload["all_twenty_one_candidates_parity_typed"] and parity_workload["all_m_angular_nonvanishing_witnessed"] and parity_workload["odd_L_axisymmetric_fixtures_excluded"] and parity_workload["reduced_source_workload_complete"]):
         raise AssertionError("ell2 two-absolute-momentum parity workload changed")

@@ -1,0 +1,59 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_PRESYMPLECTIC_DIVISORS_V1_INTEGRATION_RECEIPT",
+  "date": "2026-07-20",
+  "evidence_commit": "b1daa708eeb9f8bf40f47eac832bcb2fc12b2e0f",
+  "scope": "Fail-closed integration of the smooth active presymplectic-divisor theorem into the residual atlas, Einstein brief, canonical roadmap, and Paper 13.",
+  "content_sha256": {
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "74a2d36eb37a74d81a364012a89eb615fd2f06b61ebb79f28bb781987dfb0522",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "9d6723fdb5e37c0bc9dd9d419604334e80aa487a03bcf9223cb72c3676d75c1b",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "0270a8121926361c87592c4c595e93522dff35132ebe9b895f90ba3c12d6ef85",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "1407271464ed6906c0e0e688d8ecda77c098d217cef21d6c1cb31b1f49321eba",
+    "notes/d-quotient-einstein-team-brief.md": "4422bea89713a432b83e471e850681c1d006936bd49be5c27c703ecb4a359228",
+    "notes/universe-building-roadmap.md": "79f36bef255f978e425b38393a175417724d15ff075e7e3f1a795f193ebf2707",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex": "be262f06600421a5b23d79ce92f41c0efff77550bae461f377460ddfb117717e",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json": "542e36af30de478e18732612ed0fbc49acb8f1155da79978889472e4c433867e",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.pdf": "771b941a5fbe24e7e1e49b5826b4d41591a1076dcf4c7d6f0919bbea2bd7f510"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py residual_atlas/validate_fragment.py",
+        "python3 -m json.tool paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json",
+        "git diff --check on all scoped integration paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "atlas_tests_run": 102,
+      "atlas_elapsed_seconds": 0.40,
+      "paper_build_elapsed_seconds": 2.06,
+      "commands": [
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 -m bridge.einstein_sector.atlas.verify_einstein_atlas_fragment",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 paper/verify_13_14_draft_source_maps.py",
+        "three pdflatex passes for paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex"
+      ],
+      "paper_result": "29 pages; no undefined references, warnings, overfull boxes, or underfull boxes"
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESSED_CONSUMER_REPLAY",
+      "reason": "The atlas pins the evidence certificate and independently checks the three smooth-divisor flags, tangent-space quotient boundary, witness coranks, bounded lifecycle and absent causal map."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No theorem freeze or shared-core algebra changed; this commit integrates the already certified smooth-divisor theorem."
+    },
+    "science_forge_shadow": {
+      "status": "ADVISORY_FINDINGS",
+      "elapsed_seconds": 3.91,
+      "bridge_audit": "FAIL_DRIFT",
+      "coverage_census": "DRIFT_1152_CERTIFICATES_VS_BASELINE_976",
+      "boundary": "The advisory script exited zero by design. These findings are recorded as drift, not treated as a pass and not attributed to this scoped certificate without a certlab relock."
+    }
+  },
+  "atlas_row": "einstein.ph.wm.interaction.ell2_same_sign_active_presymplectic_divisors",
+  "claim_boundary": "The atlas certifies the conormal divisor and finite-dimensional tangent-space quotient on smooth active strata only. It retains OPEN for singular/global quotient topology and occupation gluing, and NO_CERTIFIED_MAP for causal, observational and quantum transport."
+}

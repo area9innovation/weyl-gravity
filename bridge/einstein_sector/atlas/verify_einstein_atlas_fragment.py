@@ -568,6 +568,18 @@ def verify() -> None:
         raise AssertionError("candidate-18 smooth degeneracy exceeded its correction scope")
     if "not a complete degeneracy-divisor" not in candidate18_degeneracy["claim_boundary"]:
         raise AssertionError("candidate-18 degeneracy-divisor boundary disappeared")
+    active_divisors = by_id["einstein.ph.wm.interaction.ell2_same_sign_active_presymplectic_divisors"]
+    active_divisors_second = active_divisors["mode_data"]["second_order"]
+    if active_divisors["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "det(J H^{-1} J^dagger)=0" not in active_divisors["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("smooth active presymplectic divisor was hidden")
+    if active_divisors["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "tangent-space quotient" not in active_divisors["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("smooth active presymplectic quotient changed")
+    if "conormal nullity is one" not in active_divisors["mode_data"]["resonance"]["statement"] or "nullity-four" not in active_divisors["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("smooth active divisor witness ranks changed")
+    if active_divisors_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or active_divisors_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("smooth active divisor correction scope changed")
+    if "Singular-locus reduction" not in active_divisors["claim_boundary"]:
+        raise AssertionError("smooth active divisor boundary disappeared")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

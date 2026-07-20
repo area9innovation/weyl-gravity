@@ -1479,8 +1479,8 @@ angular moments, while the scalar-cone equations kill the time and circle
 moments.  The exact bounded fibre-product theorem then supplies the stated
 bounded points.
 
-This is an existence theorem for a smooth degeneracy locus, not a
-classification of its divisor or presymplectic quotient.
+This is the explicit bounded point used below to calibrate the complete
+smooth determinantal locus.
 \end{proof}
 
 \begin{proposition}[Smooth current radicals on candidate (18)]
@@ -1547,8 +1547,82 @@ The \(m=0\) resonant carriers and spectators kill the three rotation moments,
 while the scalar cone kills the time and circle moments.  The exact bounded
 fibre-product theorem completes the claim.
 
-This proves two smooth degeneracy families, not their complete divisor or
-presymplectic quotient.
+This proves the two aligned branches used below to calibrate the complete
+smooth determinantal locus.
+\end{proof}
+
+\begin{proposition}[Smooth presymplectic divisors and quotients]
+\label{prop:smooth-presymplectic-divisors}
+On the complete smooth active resonance varieties of candidates
+\((17),(18),(20)\), let \(J\) denote the full-row-rank constraint Jacobian
+and \(H\) the invertible ambient Lee--Wald Hermitian current.  Then
+\[
+ K=JH^{-1}J^\dagger
+\]
+has
+\[
+ \ker K\cong\operatorname{rad}\!\left(H|_{\ker J}\right),
+ \qquad
+ \lambda\longmapsto H^{-1}J^\dagger\lambda .
+\]
+Consequently \(\det K=0\) is the complete smooth current-degeneracy locus,
+the determinantal ideals of \(K\) classify its higher-corank strata, and
+\(\ker J/\operatorname{rad}\) carries an induced nondegenerate Hermitian
+current.
+
+For candidates \((17)\) and \((20)\), each parity factor has
+\[
+ K_3(f,g)=J_3(f,g)H_3^{-1}J_3(f,g)^\dagger,
+ \qquad H_3=-H_{\rm ang}\oplus H_{\rm ang}/16,
+\]
+and the two-parity divisor is
+\(\det K_3(f_+,g_+)\det K_3(f_-,g_-)=0\).
+At the smooth bounded point of the preceding proposition,
+\[
+ K_3=
+ \begin{pmatrix}
+ 24&0&24\\
+ 0&30&0\\
+ 24&0&24
+ \end{pmatrix},
+\]
+so its nullity is one.
+
+For candidate \((18)\), the same formula on every regular rank-one chart
+gives a chart-independent divisor.  On the aligned section, writing
+\(r=|t|^2\) and \(b=6h_->0\), its internal conormal factor satisfies
+\[
+ \det C(r)=
+ \frac{(2br-w_y)(6br-w_x)}{b^2w_xw_y}.
+\]
+The two factors are the symmetric and antisymmetric branches above.  Since
+\(3w_y-w_x>0\), each is a simple internal branch with full conormal nullity
+four.  Including the ten nondegenerate current-orthogonal spectators, the
+affine presymplectic quotient has complex dimension \(18\) there.
+\end{proposition}
+
+\begin{proof}
+If \(v\in\ker J\) is radical, nondegeneracy of \(H\) implies
+\(Hv=J^\dagger\lambda\) for a unique conormal coefficient \(\lambda\).
+The tangent equation is then
+\(0=Jv=JH^{-1}J^\dagger\lambda=K\lambda\).
+Conversely every \(\lambda\in\ker K\) gives such a radical vector.  Full row
+rank of \(J\) makes the displayed map injective.  This proves the general
+claim and its quotient statement.
+
+For the third-transvectant factors, direct exact substitution of the three
+constraint rows and \(H_3\) gives the displayed matrix at the bounded point.
+For candidate \((18)\), use a regular chart
+\(F_i=f_\alpha g_i-f_i g_\alpha\), \(i\ne\alpha\), on each rank-one factor.
+Chart changes act on \(J\) by an invertible conormal matrix and hence on
+\(K\) by congruence, preserving its zero locus and nullity.  At the aligned
+point the angular conormal factor is invertible, while the internal factor is
+\(C(r)=rG_p^{-1}-I/b\) up to invertible diagonal congruence.  Its determinant
+is the displayed factorization.  The certified strict inequality
+\(3w_y-w_x>0\) makes the complementary eigenvalue nonzero on either branch,
+so tensoring with the four-dimensional angular conormal factor gives nullity
+four.  The spectator statement follows from their certified
+current-orthogonal positive complement.
 \end{proof}
 
 \section{Current bounded frontier}
@@ -1784,6 +1858,8 @@ Candidate-(17)/(20) smooth active-current radicals &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.json}\\
 Candidate-(18) smooth active-current radical families &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.json}\\
+Complete smooth active presymplectic divisors and tangent quotients &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1863,14 +1939,15 @@ current nondegenerate, with affine inertia \((6,10,0)\) and projective inertia
 \((5,9,0)\); those section points remain algebraically singular.  Away from
 that section, each active variety also contains an exact smooth bounded point
 with a surviving projective current radical.  Hence neither is a global
-symplectic orbifold; its degeneracy divisor and presymplectic quotient remain
-open.  Candidate (18) has the same global verdict by a different exact
+symplectic orbifold.  Candidate (18) has the same global verdict by a different exact
 mechanism: its two rank-one parity channels have current eigenlines
 \((1,1)\) and \((1,-1)\), the scalar cone crosses equal active occupation on
 the positive mixture \(R_3+s_{18}R_1\), and each resulting smooth bounded
-family has a four-complex-dimensional projective radical.  Thus the common
-next gate for candidates (17), (18), and (20) is their presymplectic
-degeneracy divisor and quotient, not another existence witness.  The four
+family has a four-complex-dimensional projective radical.  The complete
+smooth presymplectic loci and tangent quotients are now classified by
+Proposition~\ref{prop:smooth-presymplectic-divisors}.  What remains is the
+global/Hausdorff quotient topology, singular-locus reduction, constant-rank
+gluing and occupation gluing.  The four
 candidate-(19) and two candidate-(21) real linear sheets
 are closed
 separately: every core has current inertia \((5,5,0)\) and one connected
