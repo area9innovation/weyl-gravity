@@ -1,5 +1,10 @@
 # planning/ — the programme coordination model (Science Forge work items)
 
+All resident teams begin with
+[`SCIENCE-FORGE-ADOPTION.md`](SCIENCE-FORGE-ADOPTION.md). It defines the current
+authoritative/shadow rollout, `s-f` workflow, Conflux capability boundary, and
+the recorded physics-to-Forge request protocol.
+
 This directory coordinates the programme's forward workstreams as **Science
 Forge work items**: one file per stream, an append-only event log, and briefs
 that the coordinator renders *from* the items instead of inventing them ad hoc.

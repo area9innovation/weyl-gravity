@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-local-einstein-cauchy-truncation-DONE-c1130dbd440ac339",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/black-hole-local-einstein-cauchy-truncation-DONE-c1130dbd440ac339.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-20T06:25:00Z", "seq": 2, "predecessor": "sf:program/event/black-hole-local-einstein-cauchy-truncation-ACTIVE-72b9bde71c26942b", "payload": {"target": "sf:program/work/black-hole-local-einstein-cauchy-truncation", "to_state": "DONE", "note": "Append-only chronology repair: the prior bare-date DONE event did not override the earlier ACTIVE event. Scientific close-out remains the already certified BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION result and receipts in commits 9ce24e16 and 317742a5; this event changes coordination state only."}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/black-hole-local-einstein-cauchy-truncation"}]
+}

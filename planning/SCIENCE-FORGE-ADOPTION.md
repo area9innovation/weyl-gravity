@@ -83,6 +83,62 @@ Schwarzschild operators, rational-function coefficients, frequency parameters,
 repeated roots, and asymptotic series. Continue using the established
 Python/SymPy/FLINT certificate and verifier pipeline.
 
+### Conflux documentation
+
+An enabled Conflux ticket must begin by reading:
+
+1. `/home/alstrup/area9/tango/forge/tools/science-forge/conflux/README.md` —
+   production commands, typed importers, rediscovery, bounded exploration, and
+   lifecycle boundaries;
+2. `/home/alstrup/area9/tango/forge/tools/science-forge/conflux/DISCOVERY-SWEEP.md`
+   — the family-by-family discovery method;
+3. `/home/alstrup/area9/tango/forge/tools/science-forge/conflux/PROVENANCE.md`
+   — source hashes and fixture provenance;
+4. `/home/alstrup/area9/tango/forge/docs/structure-finding-thesis.md` — the
+   mathematical discovery strategy and equivalence ladder;
+5. `planning/forge-requests/README.md` — the physics-to-Forge request protocol.
+
+Reading the general Conflux material does not enable Conflux for a ticket. The
+ticket's own capability boundary remains decisive.
+
+### Coordinating with the Forge/Conflux team
+
+If an enabled physics ticket discovers that Conflux lacks an importer, exact
+field, rule kind, verifier seam, resource limit, or CLI operation:
+
+1. Preserve the physics result as `BLOCKED`, `OBSTRUCTED`, or `SHORTFALL`; do
+   not silently replace the missing operation.
+2. Create `planning/forge-requests/<slug>.json` using schema `work-v0` and the
+   protocol in `planning/forge-requests/README.md`.
+3. Name the exact physics consumer, input schemas and hashes, minimal
+   reproduction command, stop condition, independent rail, and forbidden
+   shortcuts.
+4. Put the blocked physics work-item IDs in `depends_on`.
+5. Commit and push the request in this repository. Do not edit the Tango
+   repository from a resident physics ticket.
+6. The Forge coordinator answers in the same request file with
+   `REQUESTED -> ACCEPTED -> LANDED(commit,gate)` or `DECLINED(reason)`.
+7. A resident physics team independently runs the delivered consumer gate
+   before unblocking its work. The Forge producer's own successful rerun is
+   reproduction, not independent verification.
+
+Compiler or runtime bugs use `sf:forge-request/bug-<slug>` and must include a
+minimal reproducer. Cross-physics dependencies continue to use `s-f work
+block`; missing Forge/Conflux capabilities use `planning/forge-requests/`.
+
+### Ranked Conflux successor tickets
+
+| Priority | Work item | Scope |
+| ---: | --- | --- |
+| 1 | `sf:program/work/nonlinear-conflux-branch-mixing-discovery` | branch selection, cyclic-redefinition invariants, and interaction-closed subcarriers |
+| 2 | `sf:program/work/classical-conflux-relative-lift-discovery` | order-one differential lift synthesis or minimal exact obstruction |
+| 3 | `sf:program/work/bridge-conflux-atlas-generalization` | common symplectic-divisor and rotation-zero normal forms |
+| 4 | `sf:program/work/observer-conflux-common-action-diagnosis` | only after the repaired common-action Ward payload is certified |
+| 5 | `sf:program/work/quantum-conflux-local-algebra-discovery` | local BV/anomaly/counterterm algebra only |
+
+No black-hole Conflux successor exists yet. Hadamard, microlocal, positivity,
+particle, scattering, and unitarity questions are outside these tickets.
+
 ## 4. Start of every session
 
 Existing long-lived agent sessions should retain their context. They do not

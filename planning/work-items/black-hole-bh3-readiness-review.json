@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/black-hole-bh3-readiness-review",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "black-hole-bh3-readiness-review",
+  "source": {"path": "tools/science-forge/program/black-hole-bh3-readiness-review.json", "span": null},
+  "body": {"owner": "black-hole", "state": "PROPOSED", "objective": "Perform the coordinator-gated BH-3 readiness review: determine whether the certified two-parity, symbolic-frequency, invariant-pairing, and generic-l results are sufficient to introduce complex-frequency, quasinormal-mode, stability, and ringdown vocabulary, and issue the next bounded work item or a typed missing-prerequisite request.", "stop_condition": "Produce a fail-closed readiness receipt mapping every proposed BH-3 claim to prerequisites, boundaries, and tests. If all entry gates pass, create one bounded complex-frequency/QNM successor ticket; otherwise file typed requests for every missing prerequisite. Do not perform the BH-3 calculation in this review.", "current_gate": "all pre-BH3 Schwarzschild branch, pairing, and general-l prerequisites terminal", "forbid": "no Conflux; no stability, QNM, ringdown, scattering, or observational claim in the review itself; no bypass of asymptotic phase-space, complex-frequency, or boundary-condition prerequisites", "depends_on": ["sf:program/work/black-hole-general-l-extension"], "activates": ["one bounded BH-3 complex-frequency pilot, if and only if the readiness gate passes"], "allowed_paths": ["planning/work-items/", "planning/events/", "planning/forge-requests/", "black_hole_programme/reports/", "notes/d-quotient-black-hole-team-brief.md", "notes/universe-building-roadmap.md"], "resource_hint": "Priority 5 black-hole successor. This is a gate review only. Conflux is disabled; create a new bounded BH-3 ticket only after every prerequisite is terminal.", "input_commit": "71d963328843a1e24480f7debc951905b072ae1c", "stream": "black-hole"},
+  "edges": []
+}
