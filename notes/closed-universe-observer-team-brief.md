@@ -1310,14 +1310,18 @@ The currently active unsplit bridge is the Berger interaction bridge from the
 certified unary and source-labelled `q2/q3` tensors to an actual observer
 coderivation.  Its activation gate is exact vanishing of every first-bidegree
 `q1q2` coefficient.  Its fail-closed atlas row is
-`observer.berger.interaction.complete_arity_two_obstruction`, presently
-`OBSTRUCTED` by the relational temporal emitter-Diff witness above.  The
-quadratic Maxwell/emitter form-clock chart has now been tested explicitly and
-cannot by itself repair that witness: its signed canonical correction is a
-`q1` cocycle and changes the residual by zero.  The active gate is now a raw
-temporal common-action Ward re-export on this same carrier, not another chart
-choice.  This active bridge
-does not activate physical Bridge 3.
+`observer.berger.interaction.temporal_common_action_carrier_obstruction`.
+The requested raw temporal common-action re-export is now complete and the row
+is `OBSTRUCTED`.  The typed Maxwell orbit requires
+`s_Maxwell=2 s_tau`, while the switched emitter Hessian and temporal
+emitter-Diff orbit require `s_Maxwell=s_emitter=s_tau`.  The exact
+three-constraint matrix has determinant `-1`, so no nondegenerate common
+raising pairing exists on the present frozen 108-row carrier.  The prior
+`tau_star <- (e0 e1 A_0,K0_01)` coefficient `+g0 h0` is independently
+reproduced and survives replacement of `q2_typed` by the action-equivalent
+legacy presentation.  A successor must change and re-certify the typed carrier
+or action normalization, then regenerate `q1,q2` from one pairing.  This
+active bridge does not activate physical Bridge 3.
 
 Within that inactive bridge, the numerical recoil input-contract audit is now
 complete.  The next activation gate requires a provenance-complete
@@ -1522,12 +1526,20 @@ formal-adjoint cotangent lift, give 76 field plus 172 cotangent `F2` keys.
 Their induced coordinate corrections have 3,108, 1,968, 212 and 440 operator
 keys in bidegrees `(0,0)`, `(1,0)`, `(0,1)` and `(1,1)`, respectively, and
 each has identically zero `q1q2` residual.  Hence this chart changes the
-existing obstruction by exactly zero.  The required repair is a fresh
-coefficientwise export of the raw temporal gravity-clock-Maxwell-emitter Ward
-orbit from one common action, including the later memory/clock rows, followed
-by transport of the complete zero identity through the clock chart.  The
-earlier covariant row-coverage theorem is not substituted for this component
-PBW calculation.  Arity three, `K_Berger`, observer-morphism stability and
+existing obstruction by exactly zero.
+`BERGER_108_ROW_TEMPORAL_COMMON_ACTION_WARD_ORBIT_OBSTRUCTION` now performs
+the fresh action-level re-export and finds a carrier obstruction before a
+complete zero identity can be transported.  In scale order
+`(s_Maxwell,s_emitter,s_tau)`, the three exact action-lowering rows are
+`(1,0,-2)`, `(1,-1,0)` and `(0,1,-1)`; determinant `-1` rules out a
+nondegenerate common pairing.  Replacing the imported factor two by one makes
+the matrix singular with null vector `(1,1,1)`, but that is a mutation, not an
+authorized coefficient flip.  Replacing the typed Maxwell operation by its
+action-equivalent legacy presentation also leaves the first PBW witness
+unchanged.  Later memory/clock rows are therefore not evaluated after this
+first persistent falsifier and are not marked as passed.  The earlier
+covariant row-coverage theorem is not substituted for this component PBW
+calculation.  Arity three, `K_Berger`, observer-morphism stability and
 `O_detector|Z2^C` remain fail-closed.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are

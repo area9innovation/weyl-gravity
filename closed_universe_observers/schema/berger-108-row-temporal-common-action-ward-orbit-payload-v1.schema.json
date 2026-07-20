@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "declared_common_action",
+    "q1_orbit_terms",
+    "q2_orbit_terms",
+    "normalization_compatibility",
+    "factor_two_mutation",
+    "action_equivalent_presentation_mutation",
+    "prior_residual_comparison",
+    "later_memory_clock_rows",
+    "canonical_sha256"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-108-row-temporal-common-action-ward-orbit-payload-v1"
+    },
+    "result_id": {
+      "const": "BERGER_108_ROW_TEMPORAL_COMMON_ACTION_WARD_ORBIT_PAYLOAD"
+    },
+    "setting_id": {"type": "string"},
+    "declared_common_action": {"type": "object"},
+    "q1_orbit_terms": {"type": "array", "minItems": 5, "maxItems": 5},
+    "q2_orbit_terms": {"type": "array", "minItems": 5, "maxItems": 5},
+    "normalization_compatibility": {
+      "type": "object",
+      "required": [
+        "matrix",
+        "determinant",
+        "rank",
+        "nullity",
+        "nondegenerate_common_action_pairing_exists"
+      ]
+    },
+    "factor_two_mutation": {"type": "object"},
+    "action_equivalent_presentation_mutation": {"type": "object"},
+    "prior_residual_comparison": {"type": "object"},
+    "later_memory_clock_rows": {"type": "object"},
+    "canonical_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

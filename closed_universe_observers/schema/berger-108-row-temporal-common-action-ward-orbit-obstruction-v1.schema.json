@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "common_action_export",
+    "persistent_witness",
+    "mutation_results",
+    "activation_disposition",
+    "flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-108-row-temporal-common-action-ward-orbit-obstruction-v1"
+    },
+    "result_id": {
+      "const": "BERGER_108_ROW_TEMPORAL_COMMON_ACTION_WARD_ORBIT_OBSTRUCTION"
+    },
+    "setting_id": {"type": "string"},
+    "claim_status": {
+      "const": "OBSTRUCTED_COMMON_ACTION_TEMPORAL_WARD_ORBIT_ON_PRESENT_108_ROW_CARRIER"
+    },
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {"type": "object", "minProperties": 11, "maxProperties": 11},
+    "payload_ref": {"type": "object"},
+    "common_action_export": {
+      "type": "object",
+      "required": [
+        "constraint_matrix",
+        "constraint_determinant",
+        "constraint_rank",
+        "nondegenerate_common_action_pairing_exists",
+        "disposition"
+      ]
+    },
+    "persistent_witness": {"type": "object"},
+    "mutation_results": {"type": "object"},
+    "activation_disposition": {"type": "object"},
+    "flags": {"type": "object"},
+    "next_gate": {
+      "const": "FIND_A_MINIMAL_TYPED_CARRIER_OR_ACTION_NORMALIZATION_REPAIR_THEN_REGENERATE_Q1_Q2_FROM_ONE_PAIRING"
+    },
+    "claim_boundary": {"type": "string", "minLength": 1800},
+    "provenance": {"type": "object"}
+  }
+}

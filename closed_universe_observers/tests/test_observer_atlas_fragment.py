@@ -111,6 +111,22 @@ def test_complete_arity_two_obstruction_stops_interaction_consumers():
     assert "BERGER_108_ROW_ARITY_TWO_OBSTRUCTION" in {evidence["result_id"] for evidence in row["evidence"]}
 
 
+def test_temporal_common_action_obstruction_is_fail_closed_and_evidenced():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"]
+        == "observer.berger.interaction.temporal_common_action_carrier_obstruction"
+    )
+    assert row["descriptions"]["symplectic"] == "OBSTRUCTED"
+    assert row["descriptions"]["nonlinear"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "OBSTRUCTED"
+    assert "determinant -1" in row["observer_data"]["clock_and_rod_dependence"]["statement"]
+    assert "BERGER_108_ROW_TEMPORAL_COMMON_ACTION_WARD_ORBIT_OBSTRUCTION" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
+
+
 def test_shifted_q2_phi2_overlay_keeps_local_rod_hessian_fail_closed():
     rows = {row["id"]: row for row in build()["entries"]}
     shifted = rows["observer.berger.interaction.pbw_108_shifted_q2_phi2_overlay"]
