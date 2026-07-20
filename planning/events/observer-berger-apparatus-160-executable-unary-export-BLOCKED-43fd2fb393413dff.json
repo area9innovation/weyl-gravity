@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-berger-apparatus-160-executable-unary-export-BLOCKED-43fd2fb393413dff",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/observer-berger-apparatus-160-executable-unary-export-BLOCKED-43fd2fb393413dff.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "observer-1", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-20T23:39:30+02:00", "seq": 4, "predecessor": "sf:program/event/observer-berger-apparatus-160-executable-unary-export-ACTIVE-f6faa6f06a3c6e61", "payload": {"target": "sf:program/work/observer-berger-apparatus-160-executable-unary-export", "to_state": "BLOCKED", "note": "SHORTFALL (precondition not met): executable replacement-112 and material-parent-56 — needs content-addressed executable replacement-112 and material-parent-56 q1/pairing producer exports", "missing_dependency": "content-addressed executable replacement-112 and material-parent-56 q1/pairing producer exports"}, "native": {"authored_by": "sfc close-out", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/observer-berger-apparatus-160-executable-unary-export"}]
+}
