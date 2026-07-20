@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scalar-flat-berger-schur-surrogate-obstruction-v1.schema.json",
+  "title": "Scalar-flat Berger Schur surrogate obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "input_commit",
+    "scope",
+    "exact_scalar_decomposition",
+    "operator_obstruction",
+    "analytic_consequence",
+    "claim_flags",
+    "dependencies",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "../schema/scalar-flat-berger-schur-surrogate-obstruction-v1.schema.json"
+    },
+    "schema": {
+      "const": "quantum-weyl-scalar-flat-berger-schur-surrogate-obstruction-v1"
+    },
+    "result_id": {
+      "const": "SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION"
+    },
+    "result_state": {
+      "const": "REQUESTED_ONE_INVERSE_SCALAR_SURROGATE_IS_NOT_THE_NORMALIZED_SCHUR_OPERATOR"
+    },
+    "lifecycle_state": {
+      "const": "EXACT_FIRST_OPERATOR_BLOCK_OBSTRUCTION"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]
+    },
+    "input_commit": {
+      "type": "string",
+      "minLength": 7
+    },
+    "scope": {
+      "type": "object",
+      "required": ["background", "carrier", "deformation", "priming"]
+    },
+    "exact_scalar_decomposition": {
+      "type": "object",
+      "required": [
+        "orthonormal_frame_from_standard_SU2",
+        "labels",
+        "Delta_0_eigenvalue",
+        "D_W_definition",
+        "D_W_eigenvalue",
+        "commutator",
+        "constant_mode",
+        "lowest_nonconstant_blocks"
+      ]
+    },
+    "operator_obstruction": {
+      "type": "object",
+      "required": [
+        "requested_surrogate",
+        "requested_surrogate_correction_order",
+        "surrogate_principal_symbol_witnesses",
+        "normalized_Schur",
+        "normalized_Schur_principal_symbol",
+        "normalized_Schur_correction_order",
+        "normalized_Schur_first_variation",
+        "lowest_block",
+        "verdict"
+      ]
+    },
+    "analytic_consequence": {
+      "type": "object",
+      "required": [
+        "requested_complete_measure_constructible_as_written",
+        "reason",
+        "first_missing_correct_object",
+        "smaller_follow_on_request"
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "SCALAR_FOURIER_SU2_DELTA_AND_DW_BLOCKS_COMPUTED",
+        "ONE_INVERSE_SURROGATE_OBSTRUCTED",
+        "TRUE_COUPLED_VECTOR_SCHUR_BLOCKS_COMPUTED",
+        "COMPLETE_PRIMED_SCHUR_RESOLVENT_COMPUTED",
+        "INSERTION_EIGENPROJECTORS_THROUGH_THIRD_VARIATION_COMPUTED",
+        "CERTIFIED_DET3_OR_WEIGHTED_TRACE_TAIL_COMPUTED",
+        "FIVE_BACKGROUND_SPECIFIC_FUNCTIONS_COMPUTED",
+        "QME_OR_LORENTZIAN_PROMOTED"
+      ],
+      "properties": {
+        "SCALAR_FOURIER_SU2_DELTA_AND_DW_BLOCKS_COMPUTED": {"const": true},
+        "ONE_INVERSE_SURROGATE_OBSTRUCTED": {"const": true},
+        "TRUE_COUPLED_VECTOR_SCHUR_BLOCKS_COMPUTED": {"const": false},
+        "COMPLETE_PRIMED_SCHUR_RESOLVENT_COMPUTED": {"const": false},
+        "INSERTION_EIGENPROJECTORS_THROUGH_THIRD_VARIATION_COMPUTED": {"const": false},
+        "CERTIFIED_DET3_OR_WEIGHTED_TRACE_TAIL_COMPUTED": {"const": false},
+        "FIVE_BACKGROUND_SPECIFIC_FUNCTIONS_COMPUTED": {"const": false},
+        "QME_OR_LORENTZIAN_PROMOTED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "required": ["receiver_shortfall", "normalized_Schur_operator"]
+    },
+    "next_gate": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

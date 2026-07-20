@@ -1,0 +1,324 @@
+{
+  "$schema": "../schema/scalar-flat-berger-schur-surrogate-obstruction-v1.schema.json",
+  "analytic_consequence": {
+    "first_missing_correct_object": "Fourier/SU(2) finite vector blocks of A(t)=F+tW, their primed inverses, and the coupled scalar Schur blocks (2/3)I+(1/3)delta A(t)^-1 d",
+    "reason": "the requested scalar operator is not the frozen normalized Schur operator and would compute a different order-zero determinant",
+    "requested_complete_measure_constructible_as_written": false,
+    "smaller_follow_on_request": "planning/forge-requests/scalar-flat-berger-coupled-vector-schur-blocks.json"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL result imports the exact scalar-flat Berger datum and the frozen normalized Schur factorization. It computes the exact scalar Fourier/SU(2) blocks of Delta_0 and delta W d and proves that the one-inverse scalar surrogate named by the successor request is not the normalized Schur operator: its correction has order zero and a direction-dependent principal symbol, while the true normalized Schur correction begins at order -2; their first j=1/2 block derivatives are 4/9 and -64/81. The complete coupled vector blocks, primed resolvent, insertion eigenprojectors, certified tails, five finite functions, Gamma1/Q1, QME, Lorentzian, Hadamard, state, particle, positivity, scattering and unitarity claims remain open.",
+  "claim_flags": {
+    "CERTIFIED_DET3_OR_WEIGHTED_TRACE_TAIL_COMPUTED": false,
+    "COMPLETE_PRIMED_SCHUR_RESOLVENT_COMPUTED": false,
+    "FIVE_BACKGROUND_SPECIFIC_FUNCTIONS_COMPUTED": false,
+    "INSERTION_EIGENPROJECTORS_THROUGH_THIRD_VARIATION_COMPUTED": false,
+    "ONE_INVERSE_SURROGATE_OBSTRUCTED": true,
+    "QME_OR_LORENTZIAN_PROMOTED": false,
+    "SCALAR_FOURIER_SU2_DELTA_AND_DW_BLOCKS_COMPUTED": true,
+    "TRUE_COUPLED_VECTOR_SCHUR_BLOCKS_COMPUTED": false
+  },
+  "dependencies": {
+    "normalized_Schur_operator": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION",
+      "sha256": "b40ec3a8bd3a21d8e0ece7c98f98e1776e8c47d557b8c8b5427e422b60c65a78"
+    },
+    "receiver_shortfall": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/BACKGROUND_SPECIFIC_FIVE_FORM_FACTOR_SPECTRAL_REALIZATION_SHORTFALL.json",
+      "result_id": "BACKGROUND_SPECIFIC_FIVE_FORM_FACTOR_SPECTRAL_REALIZATION_SHORTFALL",
+      "sha256": "45c0debd97f904f80d4454d69582515761a97eafb83e9babc69af91eadcab890"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_scalar_decomposition": {
+    "D_W_definition": "D_W=delta W d with W=-2 Ric",
+    "D_W_eigenvalue": "2j(j+1)-3m^2",
+    "Delta_0_eigenvalue": "n^2+j(j+1)-(3/4)m^2",
+    "commutator": "[Delta_0,D_W]=0 on scalar blocks",
+    "constant_mode": {
+      "D_W": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "Delta_0": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "multiplicity": 1,
+      "n": 0,
+      "status": "PRIMED_CONSTANT_MODE",
+      "twice_j": 0,
+      "twice_m": 0
+    },
+    "labels": "n in Z; j in {0,1/2,1,...}; m=-j,...,j; left multiplicity 2j+1",
+    "lowest_nonconstant_blocks": [
+      {
+        "D_W": {
+          "denominator": 4,
+          "numerator": 3
+        },
+        "Delta_0": {
+          "denominator": 16,
+          "numerator": 9
+        },
+        "derivatives_agree": false,
+        "multiplicity": 2,
+        "n": 0,
+        "one_inverse_surrogate_t_derivative": {
+          "denominator": 9,
+          "numerator": 4
+        },
+        "status": "NONZERO_SCALAR_MODE",
+        "true_normalized_Schur_t_derivative": {
+          "denominator": 81,
+          "numerator": -64
+        },
+        "twice_j": 1,
+        "twice_m": -1
+      },
+      {
+        "D_W": {
+          "denominator": 4,
+          "numerator": 3
+        },
+        "Delta_0": {
+          "denominator": 16,
+          "numerator": 9
+        },
+        "derivatives_agree": false,
+        "multiplicity": 2,
+        "n": 0,
+        "one_inverse_surrogate_t_derivative": {
+          "denominator": 9,
+          "numerator": 4
+        },
+        "status": "NONZERO_SCALAR_MODE",
+        "true_normalized_Schur_t_derivative": {
+          "denominator": 81,
+          "numerator": -64
+        },
+        "twice_j": 1,
+        "twice_m": 1
+      },
+      {
+        "D_W": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "Delta_0": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "derivatives_agree": true,
+        "multiplicity": 1,
+        "n": 1,
+        "one_inverse_surrogate_t_derivative": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "status": "NONZERO_SCALAR_MODE",
+        "true_normalized_Schur_t_derivative": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "twice_j": 0,
+        "twice_m": 0
+      },
+      {
+        "D_W": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "Delta_0": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "derivatives_agree": false,
+        "multiplicity": 3,
+        "n": 0,
+        "one_inverse_surrogate_t_derivative": {
+          "denominator": 3,
+          "numerator": 2
+        },
+        "status": "NONZERO_SCALAR_MODE",
+        "true_normalized_Schur_t_derivative": {
+          "denominator": 3,
+          "numerator": -1
+        },
+        "twice_j": 2,
+        "twice_m": 0
+      },
+      {
+        "D_W": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "Delta_0": {
+          "denominator": 4,
+          "numerator": 5
+        },
+        "derivatives_agree": false,
+        "multiplicity": 3,
+        "n": 0,
+        "one_inverse_surrogate_t_derivative": {
+          "denominator": 15,
+          "numerator": 4
+        },
+        "status": "NONZERO_SCALAR_MODE",
+        "true_normalized_Schur_t_derivative": {
+          "denominator": 75,
+          "numerator": -16
+        },
+        "twice_j": 2,
+        "twice_m": 2
+      }
+    ],
+    "orthonormal_frame_from_standard_SU2": "e1=E1, e2=E2, e3=E3/2 with [E1,E2]=E3 cyclically"
+  },
+  "input_commit": "384d46761",
+  "lifecycle_state": "EXACT_FIRST_OPERATOR_BLOCK_OBSTRUCTION",
+  "next_gate": "DERIVE_THE_TRUE_COUPLED_VECTOR_A_EQUALS_F_PLUS_TW_BLOCK_PENCIL_BEFORE_ANY_GLOBAL_SPECTRAL_SUM",
+  "operator_obstruction": {
+    "lowest_block": {
+      "D_W": {
+        "denominator": 4,
+        "numerator": 3
+      },
+      "Delta_0": {
+        "denominator": 16,
+        "numerator": 9
+      },
+      "derivatives_agree": false,
+      "multiplicity": 2,
+      "n": 0,
+      "one_inverse_surrogate_t_derivative": {
+        "denominator": 9,
+        "numerator": 4
+      },
+      "status": "NONZERO_SCALAR_MODE",
+      "true_normalized_Schur_t_derivative": {
+        "denominator": 81,
+        "numerator": -64
+      },
+      "twice_j": 1,
+      "twice_m": 1
+    },
+    "normalized_Schur": "S_L(t)=(2/3)I+(1/3)delta(F+tW)^-1 d",
+    "normalized_Schur_correction_order": -2,
+    "normalized_Schur_first_variation": "-(1/3) Delta_0^-1 delta W d Delta_0^-1",
+    "normalized_Schur_principal_symbol": "1",
+    "requested_surrogate": "S_tilde(t)=I+(t/3) Delta_0^-1 delta W d",
+    "requested_surrogate_correction_order": 0,
+    "surrogate_principal_symbol_witnesses": [
+      {
+        "W_xi_xi": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "surrogate_principal_symbol": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "unit_covector": "theta"
+      },
+      {
+        "W_xi_xi": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "surrogate_principal_symbol": {
+          "denominator": 3,
+          "numerator": 5
+        },
+        "unit_covector": "e1"
+      },
+      {
+        "W_xi_xi": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "surrogate_principal_symbol": {
+          "denominator": 3,
+          "numerator": 5
+        },
+        "unit_covector": "e2"
+      },
+      {
+        "W_xi_xi": {
+          "denominator": 1,
+          "numerator": -4
+        },
+        "surrogate_principal_symbol": {
+          "denominator": 3,
+          "numerator": -1
+        },
+        "unit_covector": "e3"
+      }
+    ],
+    "verdict": "THE_ONE_INVERSE_SURROGATE_FAILS_BOTH_PRINCIPAL_SYMBOL_AND_FIRST_BLOCK_TESTS"
+  },
+  "result_id": "SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION",
+  "result_state": "REQUESTED_ONE_INVERSE_SCALAR_SURROGATE_IS_NOT_THE_NORMALIZED_SCHUR_OPERATOR",
+  "schema": "quantum-weyl-scalar-flat-berger-schur-surrogate-obstruction-v1",
+  "scope": {
+    "background": {
+      "Maurer_Cartan_convention": "[e1,e2]=2e3, [e2,e3]=(1/2)e1, [e3,e1]=(1/2)e2",
+      "a": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "background_id": "EUCLIDEAN_SCALAR_FLAT_BERGER_S1_S3_A1_C2",
+      "boundary": "EMPTY",
+      "c": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "candidate_contour": "Q=Delta_0+Pi_0 positive; det3/log use the Agmon ray exp(i*pi/2) R_+ and the phase continuous from S_L(t)=I+tK; the spectral payload must certify primed invertibility and crossings",
+      "compact": true,
+      "dimension": 4,
+      "manifold": "S1_(length 2*pi) x SU(2)",
+      "metric": "g=dtheta^2+sigma1^2+sigma2^2+4 sigma3^2",
+      "non_Einstein": true,
+      "non_conformally_flat": true,
+      "orientation": "dtheta wedge sigma1 wedge sigma2 wedge sigma3",
+      "reference_scale": "mu_0=1 in a^(-1) units",
+      "ricci_orthonormal_diagonal": [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        }
+      ],
+      "ricci_squared": {
+        "denominator": 1,
+        "numerator": 6
+      },
+      "scalar_curvature": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "signature": "Euclidean",
+      "weyl_squared": {
+        "denominator": 1,
+        "numerator": 12
+      }
+    },
+    "carrier": "scalar Fourier/SU(2) blocks only",
+    "deformation": "W -> t W at t=0",
+    "priming": "remove only (n,j,m)=(0,0,0) from Delta_0^-1"
+  }
+}

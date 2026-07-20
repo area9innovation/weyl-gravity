@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION_TIER_RECEIPT",
+  "claim_id": "SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "artifacts": [
+    {
+      "path": "quantum-weyl/spectral/euclidean/scalar_flat_berger_schur_surrogate_obstruction.py",
+      "sha256": "d2c9bb5209688158e16630d9d8abbc3544f6ef2aed4900405e3bdae0bf6605a1"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/verify_scalar_flat_berger_schur_surrogate_obstruction.py",
+      "sha256": "8248c9c1dac7411a612df90fc62279cf7537551c42451ffed807a11edb6c5ca2"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/tests/test_scalar_flat_berger_schur_surrogate_obstruction.py",
+      "sha256": "95871736aa4ade95d68a0a64c3a8d0a66eef1930a34e04fb01703cd5311951e9"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/schema/scalar-flat-berger-schur-surrogate-obstruction-v1.schema.json",
+      "sha256": "5b4e9814817c2ce10d786eaf9d1ee9b6635a063143f2a25594775c5b8e063f0d"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION.json",
+      "sha256": "687aa26ec62e34dfa9adde53f4d1793741a97b9829c7dee55b71f11f6d54f2d5"
+    },
+    {
+      "path": "quantum-weyl/reports/scalar-flat-berger-schur-surrogate-obstruction.md",
+      "sha256": "a26ece09663d28276b9a5da2f2fe4f581c59dd2ea19221176a74a6fa8f5eeb9b"
+    },
+    {
+      "path": "planning/forge-requests/scalar-flat-berger-coupled-vector-schur-blocks.json",
+      "sha256": "d41a25e1f9f8da0293a56348443d08b1588131aef353175f8dd243303f48fd2a"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, independent verifier, tests>",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <schema, certificate, request, receipt>",
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit Berger Schur obstruction paths>",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 quantum-weyl/spectral/euclidean/scalar_flat_berger_schur_surrogate_obstruction.py --check",
+        "status": "PASS",
+        "elapsed_seconds": 0.21
+      },
+      {
+        "command": "python3 quantum-weyl/spectral/euclidean/verify_scalar_flat_berger_schur_surrogate_obstruction.py",
+        "status": "PASS",
+        "elapsed_seconds": 0.67,
+        "independent_rail": "constructs the spin-one-half Pauli matrices directly, recomputes Delta_0 and delta W d, and contracts the principal symbol without importing the producer"
+      },
+      {
+        "command": "python3 -m unittest quantum-weyl/spectral/euclidean/tests/test_scalar_flat_berger_schur_surrogate_obstruction.py -v",
+        "status": "PASS",
+        "elapsed_seconds": 0.47,
+        "tests": 6,
+        "mutation_controls": "principal symbol, lowest block, complete resolvent, five-function and QME/Lorentzian promotions are rejected"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "reason": "The imported content-addressed operators are unchanged and the result is a new terminal obstruction leaf; no shared operator or downstream coefficient theorem was modified."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "No freeze, release, tag or shared-core-algebra change occurred."
+  },
+  "claim_boundary": "The receipt certifies exact scalar Fourier/SU(2) Delta_0 and delta W d blocks on the selected scalar-flat Berger product and an independent first-block proof that the requested one-inverse scalar surrogate is not the normalized Schur operator. It does not certify the true coupled vector Schur blocks, complete primed resolvent, insertion projectors, determinant tails, five finite functions, Gamma1/Q1, QME, Lorentzian, Hadamard, state, particle, positivity, scattering or unitarity claims.",
+  "higher_tiers_not_run": [
+    {
+      "tier": 2,
+      "criterion": "No shared mathematical input or downstream promoted receiver changed."
+    },
+    {
+      "tier": 3,
+      "criterion": "No lifecycle freeze, release, tag or explicit full-suite request."
+    }
+  ]
+}

@@ -2504,3 +2504,62 @@ Lorentzian, Hadamard, state or particle result.
 
 - [`BACKGROUND_SPECIFIC_FIVE_FORM_FACTOR_SPECTRAL_REALIZATION_SHORTFALL.json`](../quantum-weyl/spectral/euclidean/certificates/BACKGROUND_SPECIFIC_FIVE_FORM_FACTOR_SPECTRAL_REALIZATION_SHORTFALL.json)
 - [`background-specific-five-form-factor-spectral-shortfall.md`](../quantum-weyl/reports/background-specific-five-form-factor-spectral-shortfall.md)
+
+## Scalar-flat Berger Schur operator correction (2026-07-20)
+
+The first successor pass found an exact operator-level obstruction before
+attempting the global representation sum.  On the selected Berger product,
+the scalar Fourier/\(SU(2)\) blocks are
+
+\[
+\Delta_0=n^2+j(j+1)-\frac34m^2,\qquad
+\delta Wd=2j(j+1)-3m^2,
+\]
+
+with \(W=-2\operatorname{Ric}\), \(n\in\mathbb Z\), and left multiplicity
+\(2j+1\).
+
+The requested surrogate
+
+\[
+\widetilde S(t)=1+\frac t3\Delta_0^{-1}\delta Wd
+\]
+
+is not the frozen normalized Schur operator.  Its correction is order zero,
+with unit-covector principal-symbol values
+
+\[
+1,\quad \frac53,\quad \frac53,\quad-\frac13,
+\]
+
+whereas the normalized Schur factor
+
+\[
+S_L(t)=\frac23+\frac13\delta(F+tW)^{-1}d
+\]
+
+has identity principal symbol and begins at order \(-2\).  Its first
+variation is
+
+\[
+-\frac13\Delta_0^{-1}\delta Wd\,\Delta_0^{-1}.
+\]
+
+The lowest \(n=0,j=1/2,|m|=1/2\) block separates the formulas exactly:
+the one-inverse derivative is \(4/9\), while the normalized-Schur derivative
+is \(-64/81\).
+
+The complete spectral measure therefore cannot be constructed from the
+operator stated in the original request.  The next strictly smaller gate is
+the true finite vector block pencil \(A_{njm}(t)=F_{njm}+tW\), its primed
+inverse, and the coupled scalar block
+\(\frac23+\frac13\delta A_{njm}(t)^{-1}d\).  A corrected typed request now
+records that gate.
+
+This exact obstruction is `LOCAL-ALGEBRAIC`/`EUCLIDEAN-SPECTRAL`. It does not
+compute the coupled vector resolvent, insertion projectors, certified tails,
+five finite functions, \(\Gamma_1\), \(Q_1\), QME, Lorentzian, Hadamard,
+state or particle data.
+
+- [`SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION.json`](../quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION.json)
+- [`scalar-flat-berger-schur-surrogate-obstruction.md`](../quantum-weyl/reports/scalar-flat-berger-schur-surrogate-obstruction.md)
