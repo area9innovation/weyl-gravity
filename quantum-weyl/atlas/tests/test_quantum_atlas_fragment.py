@@ -189,9 +189,9 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         )
         self.assertIn("all twenty metric/formal-adjoint", hadamard["statement"])
         self.assertIn("six ghost/identity", hadamard["statement"])
-        self.assertIn("exact-CCR retained-26 candidate", hadamard["statement"])
-        self.assertIn("Ward defect", hadamard["statement"])
-        self.assertIn("smooth two-variable support class", hadamard["statement"])
+        self.assertIn("existence theorems and symbolic pullbacks", hadamard["statement"])
+        self.assertIn("normalized content-addressed H26", hadamard["statement"])
+        self.assertIn("undefined x/y support", hadamard["statement"])
         self.assertIn(
             "BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY",
             {evidence["result_id"] for evidence in berger["evidence"]},
@@ -234,6 +234,10 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         )
         self.assertIn(
             "BERGER_RETAINED26_HADAMARD_WARD_REDUCTION",
+            {evidence["result_id"] for evidence in berger["evidence"]},
+        )
+        self.assertIn(
+            "BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
         self.assertIn(

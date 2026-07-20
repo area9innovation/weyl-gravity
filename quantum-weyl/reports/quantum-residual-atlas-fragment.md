@@ -30,10 +30,15 @@ space, an asymptotic scattering particle, or an interacting quantum result.
 The Berger causal 26/54-row carrier and the complete exact 104-row Cauchy
 evolution table are imported, but no closed stationary mode basis exists;
 `q_Cauchy`, the Cauchy/Krein form, real structure and zero-frequency spectral
-ledger remain open. Its per-mode fields therefore remain `NO_CERTIFIED_MAP`
-or `OPEN`. Their strict interacting
-quantum lifecycle is separately `OBSTRUCTED` by the local Euclidean QME
-result; this does not alter the accepted classical causal carrier.
+ledger remain open. All 26 endpoint rows have global Hadamard carriers at the
+existence-theorem level, but the inputs do not serialize one normalized
+content-addressed \(H_{26,+}\) kernel or mode table. Hence the smooth
+\(C_{26}=[H_{26,+},q_{26}]\) remainder has undefined x/y support and
+pairing-null status; this is missing data, not a negative support result. Its
+per-mode fields therefore remain `NO_CERTIFIED_MAP` or `OPEN`. Their strict
+interacting quantum lifecycle is separately `OBSTRUCTED` by the local
+Euclidean QME result; this does not alter the accepted classical causal
+carrier.
 The smooth nonstationary temporal-cutoff companion Green family is now also
 certified, including two-sided inverse identities, causal support and
 formal-adjoint reversal. This does not promote the Berger row: cutoff-kernel

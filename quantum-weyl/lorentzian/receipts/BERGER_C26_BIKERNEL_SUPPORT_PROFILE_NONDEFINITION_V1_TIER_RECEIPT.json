@@ -1,0 +1,115 @@
+{
+  "receipt_id": "BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION_V1_TIER_RECEIPT",
+  "work_item": "sf:program/work/quantum-c26-bikernel-support-profile-export",
+  "recorded_at_utc": "2026-07-20T10:23:20Z",
+  "base_commit": "3ccff80fceb46c5f78853e4cd15b0a95987ddfba",
+  "pre_commit_head": "332dc23d57a979f9fb0e4a482584239aded1cede",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION.json",
+      "sha256": "b3a4058c83f5fc2dc77dc1e50a6b1f3624eebbbe049c43de0ce45d62d768184a"
+    },
+    "report": {
+      "path": "quantum-weyl/reports/berger-c26-bikernel-support-profile-nondefinition.md",
+      "sha256": "0336c387dd5636f04a123e07a5f111e311145c4ac5a4544a7e58c1142a354451"
+    },
+    "atlas_fragment": {
+      "path": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "sha256": "45d152833ecc08adccae4136908c701f9d38d16700adf04eff13ccc0d330e741"
+    },
+    "classical_consumer_gate": {
+      "path": "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
+      "sha256": "c1641afda62662377492f821d1875b7cfcef5f7d98dee4590fa68794fb733d55"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile quantum-weyl/lorentzian/berger_c26_bikernel_support_profile_nondefinition.py quantum-weyl/lorentzian/berger_c26_bikernel_support_profile_nondefinition_certificate.py quantum-weyl/lorentzian/verify_berger_c26_bikernel_support_profile_nondefinition.py quantum-weyl/lorentzian/tests/test_berger_c26_bikernel_support_profile_nondefinition.py",
+        "python3 -m json.tool quantum-weyl/lorentzian/schema/berger-c26-bikernel-support-profile-nondefinition-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/lorentzian/certificates/BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION.json",
+        "git diff --check -- scoped paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_c26_bikernel_support_profile_nondefinition_certificate --check",
+          "elapsed_seconds": 0.03,
+          "result": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_c26_bikernel_support_profile_nondefinition",
+          "elapsed_seconds": 0.27,
+          "result": "PASS_INDEPENDENT_REPLAY"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m unittest lorentzian.tests.test_berger_c26_bikernel_support_profile_nondefinition lorentzian.tests.test_berger_retained26_hadamard_ward_reduction",
+          "elapsed_seconds": 0.28,
+          "result": "PASS_16_TESTS"
+        },
+        {
+          "command": "python3 d_quotient_classical/causal_transfer/verify_berger_26_row_smooth_bikernel_homotopy_support_gate.py",
+          "elapsed_seconds": 0.09,
+          "result": "PASS_INDEPENDENT_CLASSICAL_CONSUMER"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py -v && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+          "elapsed_seconds": 4.66,
+          "result": "PASS_ATLAS_GENERATOR_INDEPENDENT_VERIFIER_8_TESTS_COMMON_SCHEMA"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_AFFECTED_CHAIN",
+      "criterion": "The Ward reduction, three symbolic/existential endpoint exports and the classical one-sided support gate were pinned by hash and checked semantically. The independent producer-free verifier, direct Ward tests, classical consumer verifier and generated atlas chain passed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a fail-closed first-carrier obstruction. It does not promote a Hadamard covariance, positivity result, QME, freeze, release or shared core algebra."
+    }
+  },
+  "adversarial_controls": [
+    {
+      "mutation": "Replace undefined x-past-compact support by TRUE.",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "covered_by": "test_support_promotion_is_rejected"
+    },
+    {
+      "mutation": "Promote the retained candidate to BRST Hadamard.",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "covered_by": "test_hadamard_promotion_is_rejected"
+    }
+  ],
+  "independent_rail": {
+    "imports_producer": false,
+    "imports_certificate_emitter": false,
+    "replays": [
+      "C26 formula, smoothness and undecided vanishing from the retained Ward export",
+      "symbolic ghost/identity, metric/adjoint and free-dilation carrier formulas",
+      "absence of serialized kernels, mode tables and executable distribution evaluators in the declared endpoint payload",
+      "classical one-sided support domains and full-smooth cutoff-escape obstruction",
+      "undefined x/y support and pairing-null statuses",
+      "all dependency and source-manifest hashes"
+    ]
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_FINDINGS",
+    "elapsed_seconds": 3.62,
+    "command": "bash ci/science-forge-shadow.sh",
+    "findings": [
+      "The local Forge binary is an unpinned dirty development build whose build revision differs from the current stdlib checkout.",
+      "The pre-existing bridge certificate audit reported drift while existence, edges, DAG and gates passed.",
+      "The read-only coverage census found 1220 certificates against the 2026-07-19 baseline of 976."
+    ],
+    "effect_on_claim": "The shadow rail is advisory. These external findings were reported and were not used to promote the scoped non-definition theorem."
+  },
+  "claim_boundary": "This receipt proves only that the current content-addressed endpoint exports do not define one normalized H26_plus representative from which C26 support and pairing-null data can be computed. It preserves certified smoothness and the classical one-sided homotopy theorem. It neither constructs nor rules out an equivariant representative, and it does not establish retained BRST Hadamard data, positivity, particles, renormalized Lorentzian products, a Lorentzian QME, scattering or unitarity."
+}

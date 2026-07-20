@@ -1800,3 +1800,33 @@ Certificate and report:
 
 - [`RENORMALIZED_D_WARD_INSERTION_NONDEFINITION.json`](../quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_NONDEFINITION.json)
 - [`renormalized-d-ward-insertion-nondefinition.md`](../quantum-weyl/reports/renormalized-d-ward-insertion-nondefinition.md)
+
+## C26 bikernel support-profile gate (2026-07-20)
+
+The Hadamard-critical support request now has a precise first obstruction.
+The retained Ward reduction certifies
+
+\[
+C_{26}=[H_{26,+},q_{26}]
+\]
+
+as smooth, but the endpoint artifacts export only existence theorems and
+symbolic pullback formulas. They do not select or serialize one normalized
+content-addressed \(H_{26,+}\) representative. Exact x/y past-, future- and
+time-compact support and pairing-null status are consequently
+`UNDEFINED_NO_NORMALIZED_SERIALIZED_H26_REPRESENTATIVE`, not false.
+
+The classical side already has continuous one-sided homotopies on the
+past-/future-/time-compact LF domains and a cutoff-escape obstruction on the
+full smooth compact-open Fréchet class. It cannot choose among those branches
+until the quantum producer supplies a fixed \(H_{26,+}\), its mode/kernel
+data, the \(q_{26}\) action in both variables, and the serialized commutator
+\(C_{26}\).
+
+Certificate and report:
+
+- [`BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION.json`](../quantum-weyl/lorentzian/certificates/BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION.json)
+- [`berger-c26-bikernel-support-profile-nondefinition.md`](../quantum-weyl/reports/berger-c26-bikernel-support-profile-nondefinition.md)
+
+This is `LORENTZIAN-CAUSAL` and does not promote retained BRST Hadamard data,
+positivity, particles, renormalized products or a Lorentzian QME.

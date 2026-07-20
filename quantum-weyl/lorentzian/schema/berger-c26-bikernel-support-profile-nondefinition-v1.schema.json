@@ -1,0 +1,447 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.example/schemas/berger-c26-bikernel-support-profile-nondefinition-v1.schema.json",
+  "title": "Berger retained C26 bikernel support-profile non-definition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "setting_id",
+    "lifecycle_layer",
+    "claim_boundary",
+    "representation_audit",
+    "representative_ambiguity",
+    "support_profile",
+    "first_obstruction",
+    "classical_consumer_disposition",
+    "claim_flags",
+    "exact_checks",
+    "dependency_refs",
+    "next_gate",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-berger-c26-support-profile-nondefinition-v1"
+    },
+    "result_id": {
+      "const": "BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION"
+    },
+    "result_state": {
+      "const": "C26_SYMBOLIC_SMOOTHNESS_CERTIFIED_SUPPORT_AND_PAIRING_NULL_UNDEFINED_UNTIL_NORMALIZED_H26_IS_SERIALIZED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "setting_id": {
+      "const": "compact_positive_berger_clock_fixed_coupling_linearized"
+    },
+    "lifecycle_layer": {
+      "const": "LORENTZIAN_RETAINED_BV_HADAMARD_RESTRICTION"
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 100
+    },
+    "representation_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "H26_formula",
+        "C26_formula",
+        "C26_regularness",
+        "H26_fixed_representative",
+        "C26_content_addressed_bikernel",
+        "blocks",
+        "conclusion"
+      ],
+      "properties": {
+        "H26_formula": {
+          "type": "string"
+        },
+        "C26_formula": {
+          "const": "C26=[H26_plus,q26]"
+        },
+        "C26_regularness": {
+          "const": "SMOOTH_WITH_EMPTY_WAVEFRONT_SET"
+        },
+        "H26_fixed_representative": {
+          "const": false
+        },
+        "C26_content_addressed_bikernel": {
+          "const": false
+        },
+        "blocks": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/block"
+          }
+        },
+        "conclusion": {
+          "const": "EXISTENCE_AND_SYMBOLIC_FORMULAS_DO_NOT_DEFINE_THE_REPRESENTATIVE_DEPENDENT_SUPPORT_PROFILE"
+        }
+      }
+    },
+    "representative_ambiguity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowed_replacement",
+        "K_type",
+        "induced_remainder",
+        "scope"
+      ],
+      "properties": {
+        "allowed_replacement": {
+          "const": "H26_plus -> H26_plus+K"
+        },
+        "K_type": {
+          "type": "string"
+        },
+        "induced_remainder": {
+          "const": "C26 -> C26+[K,q26]"
+        },
+        "scope": {
+          "type": "string"
+        }
+      }
+    },
+    "support_profile": {
+      "$ref": "#/$defs/supportProfile"
+    },
+    "first_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "obstruction_id",
+        "classification",
+        "typed_response",
+        "minimal_next_payload",
+        "consumer_typed_need"
+      ],
+      "properties": {
+        "obstruction_id": {
+          "const": "MISSING_NORMALIZED_SERIALIZED_H26_REPRESENTATIVE"
+        },
+        "classification": {
+          "const": "NO_CERTIFIED_MAP"
+        },
+        "typed_response": {
+          "const": "C26_SUPPORT_PROFILE_UNDEFINED_AT_EXISTENTIAL_STATE_SELECTION"
+        },
+        "minimal_next_payload": {
+          "type": "array",
+          "minItems": 7,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 10
+          }
+        },
+        "consumer_typed_need": {
+          "const": "C26_BIKERNEL_SUPPORT_PROFILE_OR_SERIALIZED_SMOOTH_REMAINDER"
+        }
+      }
+    },
+    "classical_consumer_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "one_sided_homotopies_available",
+        "C26_positive_domain_membership",
+        "C26_specific_smooth_correction",
+        "next_action"
+      ],
+      "properties": {
+        "one_sided_homotopies_available": {
+          "const": true
+        },
+        "C26_positive_domain_membership": {
+          "const": "NOT_DECIDABLE_FROM_CURRENT_EXPORT"
+        },
+        "C26_specific_smooth_correction": {
+          "const": "NOT_CONSTRUCTED"
+        },
+        "next_action": {
+          "type": "string"
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "C26_SMOOTH",
+        "C26_SERIALIZED",
+        "C26_X_SUPPORT_PROFILE_CERTIFIED",
+        "C26_Y_SUPPORT_PROFILE_CERTIFIED",
+        "C26_PAIRING_NULL_CERTIFIED",
+        "NORMALIZED_H26_REPRESENTATIVE_SUPPLIED",
+        "RETAINED_26_BRST_HADAMARD",
+        "PHYSICAL_POSITIVITY_CERTIFIED",
+        "LORENTZIAN_QME_RESTORED",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "C26_SMOOTH": {
+          "const": true
+        },
+        "C26_SERIALIZED": {
+          "const": false
+        },
+        "C26_X_SUPPORT_PROFILE_CERTIFIED": {
+          "const": false
+        },
+        "C26_Y_SUPPORT_PROFILE_CERTIFIED": {
+          "const": false
+        },
+        "C26_PAIRING_NULL_CERTIFIED": {
+          "const": false
+        },
+        "NORMALIZED_H26_REPRESENTATIVE_SUPPLIED": {
+          "const": false
+        },
+        "RETAINED_26_BRST_HADAMARD": {
+          "const": false
+        },
+        "PHYSICAL_POSITIVITY_CERTIFIED": {
+          "const": false
+        },
+        "LORENTZIAN_QME_RESTORED": {
+          "const": false
+        },
+        "QUANTUM_CLAIM": {
+          "const": false
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "all_dependencies_match_expected_result_ids",
+        "ward_remainder_formula_and_smoothness_imported",
+        "ward_vanishing_remains_not_decided",
+        "endpoint_exports_are_symbolic_or_existential",
+        "no_endpoint_block_serializes_a_kernel_or_mode_table",
+        "classical_positive_domain_membership_is_not_exported",
+        "classical_full_smooth_factorization_obstruction_imported",
+        "unknown_support_is_not_encoded_as_false"
+      ],
+      "properties": {
+        "all_dependencies_match_expected_result_ids": {
+          "const": true
+        },
+        "ward_remainder_formula_and_smoothness_imported": {
+          "const": true
+        },
+        "ward_vanishing_remains_not_decided": {
+          "const": true
+        },
+        "endpoint_exports_are_symbolic_or_existential": {
+          "const": true
+        },
+        "no_endpoint_block_serializes_a_kernel_or_mode_table": {
+          "const": true
+        },
+        "classical_positive_domain_membership_is_not_exported": {
+          "const": true
+        },
+        "classical_full_smooth_factorization_obstruction_imported": {
+          "const": true
+        },
+        "unknown_support_is_not_encoded_as_false": {
+          "const": true
+        }
+      }
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ward_reduction",
+        "ghost_identity_pair",
+        "metric_endpoint_pair",
+        "free_dilation_pair",
+        "classical_support_gate"
+      ],
+      "properties": {
+        "ward_reduction": {
+          "$ref": "#/$defs/reference"
+        },
+        "ghost_identity_pair": {
+          "$ref": "#/$defs/reference"
+        },
+        "metric_endpoint_pair": {
+          "$ref": "#/$defs/reference"
+        },
+        "free_dilation_pair": {
+          "$ref": "#/$defs/reference"
+        },
+        "classical_support_gate": {
+          "$ref": "#/$defs/reference"
+        }
+      }
+    },
+    "next_gate": {
+      "const": "SERIALIZE_NORMALIZED_H26_THEN_COMPUTE_C26_SUPPORT_AND_PAIRING_NULL_STATUS"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proof_type",
+        "source_manifest",
+        "source_manifest_sha256"
+      ],
+      "properties": {
+        "proof_type": {
+          "const": "PINNED_EXPORT_AUDIT_WITH_INDEPENDENT_NONDEFINITION_REPLAY"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "source_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "block_id",
+        "source_result_id",
+        "declared_formula",
+        "representation_kind",
+        "serialized_bikernel",
+        "stationary_mode_table",
+        "executable_distribution_evaluator",
+        "smooth_part_normalization_fixed"
+      ],
+      "properties": {
+        "block_id": {
+          "enum": [
+            "ghost_identity",
+            "metric_metric_adjoint",
+            "free_dilation_seed"
+          ]
+        },
+        "source_result_id": {
+          "type": "string"
+        },
+        "declared_formula": {
+          "type": "string"
+        },
+        "representation_kind": {
+          "enum": [
+            "SYMBOLIC_PULLBACK_PLUS_EXISTENCE_THEOREM",
+            "SYMBOLIC_PULLBACK_MATRIX",
+            "SYMBOLIC_FEYNMAN_EXISTENCE_SELECTION"
+          ]
+        },
+        "serialized_bikernel": {
+          "const": false
+        },
+        "stationary_mode_table": {
+          "const": false
+        },
+        "executable_distribution_evaluator": {
+          "const": false
+        },
+        "smooth_part_normalization_fixed": {
+          "const": false
+        }
+      }
+    },
+    "supportProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x_past_compact",
+        "x_future_compact",
+        "x_time_compact",
+        "y_past_compact",
+        "y_future_compact",
+        "y_time_compact",
+        "stationary_harmonic_support",
+        "pairing_null_on_closed_exact_pairs",
+        "full_smooth_class_membership",
+        "full_smooth_factorized_homotopy"
+      ],
+      "properties": {
+        "x_past_compact": {
+          "$ref": "#/$defs/undefined"
+        },
+        "x_future_compact": {
+          "$ref": "#/$defs/undefined"
+        },
+        "x_time_compact": {
+          "$ref": "#/$defs/undefined"
+        },
+        "y_past_compact": {
+          "$ref": "#/$defs/undefined"
+        },
+        "y_future_compact": {
+          "$ref": "#/$defs/undefined"
+        },
+        "y_time_compact": {
+          "$ref": "#/$defs/undefined"
+        },
+        "stationary_harmonic_support": {
+          "$ref": "#/$defs/undefined"
+        },
+        "pairing_null_on_closed_exact_pairs": {
+          "$ref": "#/$defs/undefined"
+        },
+        "full_smooth_class_membership": {
+          "const": "CERTIFIED_BY_SMOOTHNESS"
+        },
+        "full_smooth_factorized_homotopy": {
+          "const": "OBSTRUCTED_BY_CLASSICAL_CUTOFF_ESCAPE_THEOREM"
+        }
+      }
+    },
+    "undefined": {
+      "const": "UNDEFINED_NO_NORMALIZED_SERIALIZED_H26_REPRESENTATIVE"
+    }
+  }
+}
