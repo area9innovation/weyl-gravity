@@ -11,7 +11,8 @@
     "forbid": "mapping SHORTFALL to DONE or OBSTRUCTED; deleting or rewriting historical events; retaining ACTIVE without a live lease; special-casing the quantum item; automatically claiming that a free-text dependency is satisfied; weakening one-lease discipline.",
     "notes": [
       "Minimal reproduction: inspect planning/events/quantum-berger-physical-cohomology-positivity-ACTIVE-6e0d97ce2b569f74.json and ACTIVE-63b09e927f0eef79.json, followed by their LEASE-RELEASE events. Run `s-f work ready --stream quantum-qme --now 2026-07-20T08:51:15Z`; before the coordinator BLOCKED repair it returned the unchanged positivity item.",
-      "The scientific prerequisite is the retained-26 q26 Ward descent. Commit dff73ba4 closed the item as shortfall; commits ec0a0954 and 619e5ca5 record the repeated pull and redirect to the actual Ward gate."
+      "The scientific prerequisite is the retained-26 q26 Ward descent. Commit dff73ba4 closed the item as shortfall; commits ec0a0954 and 619e5ca5 record the repeated pull and redirect to the actual Ward gate.",
+      "Second independent recurrence on 2026-07-20: bridge-asymptotic-bach-boundary-counterterm-corner landed the exact local-counterterm obstruction at b0b82745e and reported SHORTFALL because the enlarged p0/p1 BV-BFV phase space remained open. The close/release left the item pullable, and bridge-1 immediately emitted a new ACTIVE seq-3 event and lease at 10:32:08Z instead of taking the separately queued renormalized-edge-pair successor. This confirms the defect is generic across streams and scientific dispositions."
     ]
   }
 }
