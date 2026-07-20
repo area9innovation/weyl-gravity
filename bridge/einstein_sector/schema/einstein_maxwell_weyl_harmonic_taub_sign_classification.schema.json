@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Einstein-Maxwell/Weyl-Maxwell harmonic Taub-sign classification",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "generality_level",
+    "scope",
+    "provenance",
+    "normalization",
+    "exact_algebra",
+    "harmonic_sign_ledger",
+    "finite_sum_theorem",
+    "charge_fibre_theorem",
+    "maximal_theorem",
+    "classification",
+    "claim_boundary",
+    "next_gate",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-harmonic-taub-sign-classification-v1"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_HARMONIC_TAUB_SIGN_CLASSIFICATION"},
+    "result_state": {"type": "string"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]}
+    },
+    "generality_level": {"type": "string"},
+    "scope": {
+      "type": "object",
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["generator_path", "generator_sha256", "inputs"]
+    },
+    "normalization": {"type": "object"},
+    "exact_algebra": {"type": "object"},
+    "harmonic_sign_ledger": {
+      "type": "object",
+      "required": [
+        "generic_extra_p_primary",
+        "exceptional_extra_ell1",
+        "generic_Einstein_q_primary",
+        "physical_ell1_standard",
+        "homogeneous_generalized_zero",
+        "axial_twist_generalized_zero"
+      ]
+    },
+    "finite_sum_theorem": {"type": "object"},
+    "charge_fibre_theorem": {"type": "object"},
+    "maximal_theorem": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "required": [
+        "generic_extra_all_ell_all_k_both_parities_negative",
+        "exceptional_extra_ell1_all_k_both_parities_negative",
+        "finite_pure_extra_harmonic_sums_negative",
+        "opposite_momentum_and_relative_phase_independence",
+        "Einstein_q_minus_opposite_sign_all_ell_both_parities",
+        "homogeneous_and_twist_solution_cofibers_zero",
+        "homogeneous_inertia_and_charge_role_classified",
+        "constant_twist_exact_zero_energy_counterexample",
+        "variable_magnetic_flux_extension_classified",
+        "full_mixed_second_order_cone_classified",
+        "causal_or_quantum_claim"
+      ],
+      "additionalProperties": {"type": "boolean"}
+    },
+    "claim_boundary": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

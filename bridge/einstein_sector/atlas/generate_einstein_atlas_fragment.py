@@ -23,6 +23,7 @@ CERTIFICATES = {
     "axial_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
     "polar_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
     "taub": ROOT / "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+    "harmonic_taub_sign": ROOT / "bridge/certificates/einstein_maxwell_weyl_harmonic_taub_sign_classification.json",
     "stabilizer": ROOT / "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
     "moment_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
     "balanced": ROOT / "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
@@ -313,6 +314,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OBSTRUCTED", "Every nonzero real pure-extra tangent violates the fixed-bundle time-translation Taub constraint."), ("OBSTRUCTED", "Allowing secular propagation corrections does not remove the certified stabilizer moment-map obstruction."), open_causal),
             _evidence("axial_operator", "polar_operator", "axial_current", "polar_current", "taub", "abstract_cone"),
             "The obstruction is classical and fixed-bundle. It does not erase the linear mode, prove a quantum ghost, or supply a Lorentzian-causal no-go.",
+        ),
+        _entry(
+            "einstein.ph.wm.taub.harmonic_sign_stratification",
+            _scope(theory="Einstein-Maxwell source included in Weyl-Maxwell target", carrier="all certified generic and exceptional q/p oscillators plus homogeneous and twist generalized-zero blocks", degree=2, parity="axial and polar where present", ell="homogeneous 0, exceptional 1, generic ell>=2", m="all certified SO3 multiplicities", k="all allowed compact momenta on oscillator blocks; k=0 on global blocks", omega="stationary q/p shells and separately typed generalized-zero polynomial classes"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            ("CERTIFIED", "Every certified additional-Weyl solution-cofiber oscillator is retained: generic p-primary modes and exceptional ell=1 extra modes, both parities and every allowed momentum."),
+            ("CERTIFIED", "The complete extra cofiber has positive current and strictly negative mu_H; the Einstein q-minus primary has the opposite sign in both parities for every ell>=2."),
+            ("CERTIFIED", "Opposite momenta, relative phases and multiple |k| fibres cannot cancel the pure-extra H sum; electric variation contributes with the same negative sign."),
+            ("CERTIFIED", "Homogeneous and twist cofibers vanish, so their indefinite/zero Taub strata are Einstein-image blocks rather than counterexamples to extra-cofiber definiteness."),
+            _second_order(("OPEN", "Pure-extra oscillator directions are obstructed, but the complete mixed bounded cone is not classified by the sign theorem."), ("OPEN", "The Taub sign theorem obstructs pure-extra directions even with secular corrections, while the full mixed smooth-secular cone remains open."), ("NO_CERTIFIED_MAP", "No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("harmonic_taub_sign", "taub", "exceptional_current", "exceptional_nonzero_k_cofiber", "radiative"),
+            "Fixed magnetic bundle only. Uniform flux variation, complete resonance functionals, final residual descent, all-orders integration, causal propagation and quantum interpretation remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.mixed.ell2_k0_balanced_jet",
@@ -1922,6 +1935,17 @@ def build() -> dict[str, object]:
         raise AssertionError("standard inclusion input lost completeness")
     if not records["taub"]["classification"]["all_nonzero_generic_pure_extra_fixed_bundle_tangents_second_order_obstructed"]:
         raise AssertionError("generic pure-extra Taub input changed")
+    harmonic_taub = records["harmonic_taub_sign"]["classification"]
+    if not (
+        harmonic_taub["generic_extra_all_ell_all_k_both_parities_negative"]
+        and harmonic_taub["exceptional_extra_ell1_all_k_both_parities_negative"]
+        and harmonic_taub["finite_pure_extra_harmonic_sums_negative"]
+        and harmonic_taub["Einstein_q_minus_opposite_sign_all_ell_both_parities"]
+        and harmonic_taub["homogeneous_and_twist_solution_cofibers_zero"]
+    ):
+        raise AssertionError("harmonic Taub-sign stratification changed")
+    if harmonic_taub["full_mixed_second_order_cone_classified"] or harmonic_taub["causal_or_quantum_claim"]:
+        raise AssertionError("harmonic Taub-sign stratification exceeded its scope")
     if not records["balanced"]["classification"]["complete_second_order_extension_constructed"]:
         raise AssertionError("balanced second-order extension input changed")
     if not records["exceptional_resonance"]["classification"]["complete_all_m_exceptional_ell1_two_polarization_cone_second_order_obstructed"]:

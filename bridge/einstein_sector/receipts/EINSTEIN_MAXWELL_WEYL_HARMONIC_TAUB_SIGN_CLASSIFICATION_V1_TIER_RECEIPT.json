@@ -1,0 +1,76 @@
+{
+  "schema": "verification-tier-receipt-v1",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_HARMONIC_TAUB_SIGN_CLASSIFICATION",
+  "work_item": "sf:program/work/bridge-harmonic-taub-sign-generalization",
+  "recorded_at": "2026-07-20T09:05:16Z",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "claim_boundary": "Compact Plebanski-Hacyan harmonic Taub/current signs at fixed magnetic bundle before final residual quotient; no causal, observational or quantum promotion.",
+  "content_hashes": {
+    "bridge/certificates/einstein_maxwell_weyl_harmonic_taub_sign_classification.json": "4a89b93798b46c3a841790dc4bcb7350c429ddd50caf85f2396fa02866b11104",
+    "bridge/einstein_sector/einstein_maxwell_weyl_harmonic_taub_sign_classification.py": "db8cc4545e38a7ad5329052ee06a4c1e75593653ed5fd63119f78cd110612948",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_harmonic_taub_sign_classification.schema.json": "ff61de9a37c14ecc5fa8fac738869b00b305ead2af32a2c27b33f646168614b0",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_harmonic_taub_sign_classification.py": "63f6603672ca34e833b40767eced992fc2cca9b72e0b33a1f7cbd9196ba96423",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_harmonic_taub_sign_classification.py": "edcce655538c2f6ce63e7e71b71786e7ce3fd83f76e033d3c1723c70e98b8701",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "65ed59a11a0a2f73983dbcbf2fef97b7c5db6fb2ce4bd11e277ea648032b6d1b",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "0b13edafa9df08fc5e0c5451a8a8f7cddac2f5cdb4de5237008928f9b9612a9a",
+    "bridge/reports/einstein-maxwell-weyl-harmonic-taub-sign-classification.md": "16706eb202d8cbe77c575188c1e7737e6be67f00cbc617f8ace5d82606e5b6c9"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_harmonic_taub_sign_classification.py bridge/einstein_sector/verify_einstein_maxwell_weyl_harmonic_taub_sign_classification.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_harmonic_taub_sign_classification.py bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
+        "git diff --check -- <scoped harmonic-Taub paths>"
+      ],
+      "elapsed_seconds": 0.06
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_harmonic_taub_sign_classification --verify bridge/certificates/einstein_maxwell_weyl_harmonic_taub_sign_classification.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_harmonic_taub_sign_classification.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_harmonic_taub_sign_classification"
+      ],
+      "tests": 4,
+      "elapsed_seconds": 1.27
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The generated residual-atlas fragment directly consumes the new certificate.",
+      "commands": [
+        "python3 bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ],
+      "tests": 120,
+      "elapsed_seconds": 0.71
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze/tag, shared core algebra change or release preparation was requested; the exact imported certificates are content-addressed and unchanged."
+    }
+  },
+  "science_forge_shadow": {
+    "status": "FINDINGS_RECORDED_NOT_A_PASS",
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 3.72,
+    "findings": [
+      "pre-existing certlab drift",
+      "coverage census drift: 1202 certificates versus baseline 976",
+      "unpinned dirty development Forge binary whose build revision differs from the stdlib checkout"
+    ],
+    "effect_on_claim": "The advisory rail exited zero by design; its findings are not counted as verification and do not promote the claim."
+  },
+  "higher_lifecycle_exclusions": [
+    "full mixed second-order cone",
+    "variable magnetic-flux phase space",
+    "final residual quotient",
+    "all-orders integration",
+    "LORENTZIAN-CAUSAL propagation",
+    "observational map",
+    "quantum norm or ghost theorem"
+  ]
+}

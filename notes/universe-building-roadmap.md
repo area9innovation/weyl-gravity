@@ -921,6 +921,24 @@ structural in harmonic number and branch, rather than accidents of the
 exact selection-rule theorem plus the first counterexample to naive
 generalization, with a certified `ell=3` or `ell=4` source/cokernel block.
 
+**Landed sign gate.**  The exact harmonic stratification now proves that the
+complete certified additional-Weyl solution cofiber is Hamiltonian-Taub
+negative on every nonzero finite real tangent: generic `p` primaries for all
+`ell>=2` and allowed `k`, plus exceptional `ell=1` extra primaries for all
+allowed `k`, in both parities.  Opposite momenta, relative phases and
+multiple `|k|` fibres do not change the sign.  The Einstein `q_minus`
+primary supplies the opposite sign for every `ell>=2` in both parities.
+Homogeneous and twist blocks are separately typed: their solution cofibers
+vanish, the homogeneous form has inertia `(1,3)` on `(a,b,d,Q_e)`, and
+constant twist position is an exact zero-energy mapping-torus modulus.
+Electric variation has the pure-extra sign and cannot rescue that
+obstruction; uniform magnetic variation is outside the fixed-bundle tangent.
+The generated atlas row
+`einstein.ph.wm.taub.harmonic_sign_stratification` keeps the full mixed cone
+`OPEN` and causal/retarded transfer `NO_CERTIFIED_MAP`.  The next gate is to
+join this sign ledger to the finite-harmonic resonance-functionals ledger,
+not to infer universal target definiteness.
+
 ### Nonlinear team — N-G4 invariant meaning of the retained \(\ell_3\)
 
 **Primary question:** is the landed mixed retained `ell3` a genuine cyclic

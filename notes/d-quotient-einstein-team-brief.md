@@ -4420,6 +4420,36 @@ export the resulting fixed-occupation contraction through the existing
 same-background relative triangle/cofiber.  No absent polar, exceptional,
 charge or boundary map is inferred.
 
+The Science Forge work item
+`bridge-harmonic-taub-sign-generalization` has now closed its structural sign
+gate.  Exact all-`ell` axial and polar current weights, the exceptional
+`ell=1` current at zero and nonzero compact momentum, the global moment maps,
+the zero homogeneous/twist solution cofibers and a two-absolute-momentum
+control combine to give:
+
+```text
+complete certified extra solution cofiber, nonzero finite real tangent:
+    mu_H < 0;
+Einstein q_minus, ell>=2, both parities:
+    mu_H > 0.
+```
+
+Opposite momenta, relative phases and multiple `|k|` fibres cannot cancel the
+pure-extra Hamiltonian sum.  Electric variation contributes `-Q_e^2` and
+therefore cannot rescue it; uniform magnetic variation is not a tangent on
+the fixed bundle.  The global generalized-zero blocks are not extra-Weyl
+exceptions: both solution cofibers vanish.  Instead the homogeneous form is
+indefinite with inertia `(1,3)` on `(a,b,d,Q_e)`, while constant twist
+position is an exact zero-energy mapping-torus modulus.
+
+Atlas row `einstein.ph.wm.taub.harmonic_sign_stratification` is fail-closed:
+the current and sign classification is `CERTIFIED`, pure-extra bounded and
+smooth-secular extensions are `OBSTRUCTED`, the full mixed cone remains
+`OPEN`, and causal/retarded transfer is `NO_CERTIFIED_MAP`.  This is the
+active nonlinear input to same-background Bridge 1.  The next gate is the
+typed finite-harmonic resonance-functional join; no global flux-varying,
+final-residual, causal, observational or quantum map is inferred.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

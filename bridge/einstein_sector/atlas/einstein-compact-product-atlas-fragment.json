@@ -374,6 +374,90 @@
       }
     },
     {
+      "claim_boundary": "Fixed magnetic bundle only. Uniform flux variation, complete resonance functionals, final residual descent, all-orders integration, causal propagation and quantum interpretation remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_harmonic_taub_sign_classification.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_HARMONIC_TAUB_SIGN_CLASSIFICATION",
+          "sha256": "4a89b93798b46c3a841790dc4bcb7350c429ddd50caf85f2396fa02866b11104"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_CURRENT_TAUB",
+          "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+        },
+        {
+          "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
+          "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1",
+          "sha256": "00fc3fa6da7273ca3ae8a5c51a973f5a91b898b58b49e4bf2d7d0c30711f994c"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_radiative_symplectic_restriction.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_RADIATIVE_SYMPLECTIC_RESTRICTION",
+          "sha256": "25a798211bea52cbf9d8becae64672ac327be7a09adb50e30e45fa8287a608b7"
+        }
+      ],
+      "id": "einstein.ph.wm.taub.harmonic_sign_stratification",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Every certified additional-Weyl solution-cofiber oscillator is retained: generic p-primary modes and exceptional ell=1 extra modes, both parities and every allowed momentum.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The complete extra cofiber has positive current and strictly negative mu_H; the Einstein q-minus primary has the opposite sign in both parities for every ell>=2.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Homogeneous and twist cofibers vanish, so their indefinite/zero Taub strata are Einstein-image blocks rather than counterexamples to extra-cofiber definiteness.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Pure-extra oscillator directions are obstructed, but the complete mixed bounded cone is not classified by the sign theorem.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific retarded Weyl-Maxwell correction complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The Taub sign theorem obstructs pure-extra directions even with secular corrections, while the full mixed smooth-secular cone remains open.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "Opposite momenta, relative phases and multiple |k| fibres cannot cancel the pure-extra H sum; electric variation contributes with the same negative sign.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "all certified generic and exceptional q/p oscillators plus homogeneous and twist generalized-zero blocks",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "homogeneous 0, exceptional 1, generic ell>=2",
+        "k": "all allowed compact momenta on oscillator blocks; k=0 on global blocks",
+        "m": "all certified SO3 multiplicities",
+        "omega": "stationary q/p shells and separately typed generalized-zero polynomial classes",
+        "parity": "axial and polar where present",
+        "theory": "Einstein-Maxwell source included in Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "This is one explicit second-order jet, not the full mixed cone, an exact nonlinear family, or an all-orders closure theorem.",
       "descriptions": {
         "causal": "OPEN",
@@ -11023,7 +11107,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "2d074971dc11b77175c391ba484969b8ec233c32974ce60103ff5f809cb55b45",
+  "generated_by_sha256": "65ed59a11a0a2f73983dbcbf2fef97b7c5db6fb2ce4bd11e277ea648032b6d1b",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

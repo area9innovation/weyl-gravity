@@ -1,0 +1,234 @@
+{
+  "charge_fibre_theorem": {
+    "electric_tangent": {
+      "allowed": true,
+      "contribution": "-Q_e^2",
+      "mixed": "can balance a positive q-minus or twist-velocity contribution only as first-order data",
+      "pure_extra": "cannot cancel the negative pure-extra mu_H"
+    },
+    "enlarged_continuous_flux_family": {
+      "effect": "may absorb the scalar constant-lapse component but defines a different phase space",
+      "full_second_order_extension": "NO_CERTIFIED_MAP",
+      "status": "OPEN"
+    },
+    "fixed_magnetic_bundle": "uniform magnetic flux variation is not a tangent because c_1(P_N) is locally constant",
+    "second_order_charge_shift": "cannot change an already nonzero adjoint-cokernel pairing"
+  },
+  "claim_boundary": "This theorem is exact only on the compact Plebanski-Hacyan background and the declared local-gauge-reduced harmonic carriers. It classifies Taub signs and the fixed-bundle charge effect, not every resonance functional, the full mixed tangent cone, final residual descent, all-orders integration, causal propagation, particles, ghosts or quantum norms.",
+  "classification": {
+    "Einstein_q_minus_opposite_sign_all_ell_both_parities": true,
+    "causal_or_quantum_claim": false,
+    "constant_twist_exact_zero_energy_counterexample": true,
+    "exceptional_extra_ell1_all_k_both_parities_negative": true,
+    "finite_pure_extra_harmonic_sums_negative": true,
+    "full_mixed_second_order_cone_classified": false,
+    "generic_extra_all_ell_all_k_both_parities_negative": true,
+    "homogeneous_and_twist_solution_cofibers_zero": true,
+    "homogeneous_inertia_and_charge_role_classified": true,
+    "opposite_momentum_and_relative_phase_independence": true,
+    "variable_magnetic_flux_extension_classified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_algebra": {
+    "generic_root": "r=sqrt(2*lambda)>2 for lambda=ell*(ell+1)>=6",
+    "homogeneous_determinant": "-1/4",
+    "homogeneous_inertia": {
+      "negative": 3,
+      "positive": 1,
+      "zero": 0
+    },
+    "homogeneous_quadratic_matrix_on_a_b_d_Qe": [
+      [
+        "-1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "1/2",
+        "0"
+      ],
+      [
+        "0",
+        "1/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-1"
+      ]
+    ],
+    "q_relative_weights": {
+      "minus": "-3*sqrt(2)*sqrt(lambda)/2 + 1",
+      "plus": "3*sqrt(2)*sqrt(lambda)/2 + 1"
+    },
+    "q_sign_witnesses": {
+      "minus": "1-(3/2)*sqrt(2*lambda)<0 because sqrt(2*lambda)>=sqrt(12)>2",
+      "plus": "1+(3/2)*sqrt(2*lambda)>0"
+    }
+  },
+  "finite_sum_theorem": {
+    "consequence": "every nonzero finite real tangent supported only on certified p-primary extra cofiber blocks has mu_H<0",
+    "independence_from_other_moment_maps": "P_x and rotation charges may cancel across fibres, but they cannot cancel the strictly negative H sum",
+    "multiple_abs_k": "pure-extra contributions add with the same strict negative sign",
+    "opposite_momenta": "k and -k have the same omega^2 and current Gram; relative phases do not change mu_H",
+    "orthogonality": "H is diagonal across unequal (ell,m,k,parity,shell) blocks after the reality pairing"
+  },
+  "generality_level": "G3_COMPACT_PH_ALL_CERTIFIED_HARMONIC_SIGN_BLOCKS",
+  "harmonic_sign_ledger": {
+    "axial_twist_generalized_zero": {
+      "common_zero": "B=0 with arbitrary A",
+      "constant_position_extension": "CERTIFIED exact mapping-torus family",
+      "inertia_on_A_B": {
+        "negative": 0,
+        "positive": 3,
+        "zero": 3
+      },
+      "mu_H": "2*|B|^2",
+      "scope": "ell=1,k=0 real twist position A and velocity B",
+      "solution_cofiber": "0; this is entirely the Einstein image, not an additional-Weyl branch",
+      "velocity_extension_in_isolation": "OBSTRUCTED"
+    },
+    "exceptional_extra_ell1": {
+      "bounded": "OBSTRUCTED",
+      "causal_retarded": "NO_CERTIFIED_MAP",
+      "frequency_squared": "k^2+4/3>0",
+      "k_zero_Gram": [
+        "16",
+        "3"
+      ],
+      "mu_H": "negative definite on every nonzero real exceptional extra tangent",
+      "nonzero_k_Gram": {
+        "axial": "4*(3*k^2+4)",
+        "polar": "4*(3*k^2+4)"
+      },
+      "scope": "ell=1, every allowed k, all m, axial and polar",
+      "smooth_secular": "OBSTRUCTED"
+    },
+    "generic_Einstein_q_primary": {
+      "minus": "negative current, hence positive mu_H",
+      "plus": "positive current, hence negative mu_H",
+      "pure_Einstein_extension": "OPEN",
+      "role": "the q-minus Einstein image supplies the opposite sign required for mixed Einstein-extra cancellation",
+      "scope": "ell>=2, all allowed k, all m, both parities"
+    },
+    "generic_extra_p_primary": {
+      "bounded": "OBSTRUCTED",
+      "causal_retarded": "NO_CERTIFIED_MAP",
+      "current_inertia_per_parity": [
+        2,
+        0
+      ],
+      "frequency_squared": "k^2+lambda-2/3>0",
+      "mu_H": "negative definite on every nonzero real finite harmonic tangent",
+      "scope": "ell>=2, all allowed k, all m, both parities",
+      "smooth_secular": "OBSTRUCTED"
+    },
+    "homogeneous_generalized_zero": {
+      "common_zero": "a^2+b^2-b*d+Q_e^2=0 with c,W_x free",
+      "extension": "OPEN except on separately certified fixtures",
+      "inertia_on_a_b_d_Qe": {
+        "negative": 3,
+        "positive": 1,
+        "zero": 0
+      },
+      "kernel": [
+        "c",
+        "W_x"
+      ],
+      "mu_H": "-a^2-b^2+b*d-Q_e^2",
+      "scope": "ell=0,k=0 coordinates (a,b,c,d,Q_e,W_x)",
+      "solution_cofiber": "0; this is entirely the Einstein image, not an additional-Weyl branch"
+    },
+    "physical_ell1_standard": {
+      "mu_H": "negative definite",
+      "role": "same sign as q-plus and the extra cofiber; cannot balance a pure-extra tangent",
+      "scope": "ell=1 standard shell"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "maximal_theorem": {
+    "counterexample": "nonzero constant twist position A has mu_H=0 and extends along an exact mapping-torus family",
+    "statement": "On the fixed magnetic bundle, the complete certified additional-Weyl solution cofiber is Taub-negative on every nonzero finite real harmonic tangent. The only certified opposite oscillator sign is the Einstein q-minus primary. Homogeneous and twist generalized-zero blocks do not weaken the extra-cofiber theorem because their solution cofibers vanish; instead they form separate Einstein-image strata with an indefinite homogeneous cone and exact constant-twist moduli.",
+    "universal_target_definiteness": false
+  },
+  "next_gate": "combine this sign stratification with the finite-harmonic resonance-functionals ledger to classify the complete bounded and smooth-secular second-order cones; keep causal/retarded corrections fail-closed",
+  "normalization": {
+    "definition": "mu_X(u)=1/2*Omega_WM(u,L_X u)",
+    "meaning": "signs are classical action-derived Taub/current signs before final residual quotient, not quantum norms",
+    "stationary_H_formula": "mu_H=-(L/4)*omega^2*c^dagger*G*c"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_harmonic_taub_sign_classification.py",
+    "generator_sha256": "db8cc4545e38a7ad5329052ee06a4c1e75593653ed5fd63119f78cd110612948",
+    "inputs": {
+      "axial_q": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_all_ell_symplectic_restriction.json",
+        "sha256": "b0854ac65f2a9c525492eef33fd543611ea78c24623769c7e02eeeee8b0eb22a"
+      },
+      "exceptional_k0": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+        "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+      },
+      "exceptional_nonzero_k": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
+        "sha256": "00fc3fa6da7273ca3ae8a5c51a973f5a91b898b58b49e4bf2d7d0c30711f994c"
+      },
+      "generic_taub": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+      },
+      "global_moments": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      },
+      "homogeneous_cofiber": {
+        "path": "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
+        "sha256": "b92210530ac733d4323a3be3ae381c9f43d12dc24b7667b978dd2ce603d360fe"
+      },
+      "opposite_momentum": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_pure_extra_taub_join.json",
+        "sha256": "1d16a0346f0bf09c24ed30ee3b00ded9a78eb334eddfd736064dc08cd0658adc"
+      },
+      "polar_q": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_all_ell_symplectic_restriction.json",
+        "sha256": "828089c487a834b7c2718a00177ff68633e930d178e898563531b70d5917cb02"
+      },
+      "twist_cofiber": {
+        "path": "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
+        "sha256": "94309d5f8a3710e0527b5325a42329165b848bf61f50cfa12746a341e213d21c"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_HARMONIC_TAUB_SIGN_CLASSIFICATION",
+  "result_state": "CERTIFIED_EXTRA_COFIBER_SIGN_AND_STANDARD_GLOBAL_STRATIFICATION",
+  "schema": "einstein-maxwell-weyl-harmonic-taub-sign-classification-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_harmonic_taub_sign_classification.schema.json",
+  "schema_sha256": "ff61de9a37c14ecc5fa8fac738869b00b305ead2af32a2c27b33f646168614b0",
+  "scope": {
+    "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+    "boundaries": "closed Cauchy slice S1_L x S2 before final residual quotient",
+    "carrier": "generic q/p oscillators, exceptional ell=1 oscillators, homogeneous generalized-zero block and axial twist block",
+    "charge_sector": "fixed magnetic U(1) bundle P_N; electric tangent Q_e retained where declared",
+    "degree": 2,
+    "ell": "generic ell>=2, exceptional ell=1 and homogeneous ell=0",
+    "k": "every allowed compact momentum on oscillator blocks; k=0 on homogeneous and twist blocks",
+    "m": "all certified SO(3) multiplicities",
+    "omega": "stationary q/p shells or the separately declared generalized-zero polynomial class",
+    "parity": "axial and polar where present",
+    "theory": "Einstein-Maxwell source included in Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_harmonic_taub_sign_classification --verify bridge/certificates/einstein_maxwell_weyl_harmonic_taub_sign_classification.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_harmonic_taub_sign_classification.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_harmonic_taub_sign_classification"
+  ]
+}
