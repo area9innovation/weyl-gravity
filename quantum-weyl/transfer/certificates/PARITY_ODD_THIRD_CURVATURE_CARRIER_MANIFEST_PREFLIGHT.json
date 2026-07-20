@@ -1,0 +1,122 @@
+{
+  "available_exact_inputs": {
+    "odd_hodge_companion": "constructed existence witness, explicitly not a complete basis",
+    "parity_even_nonlocal_quotient": {
+      "functional_relation_rank": 1,
+      "quotient_labelled_dimension": 10,
+      "raw_labelled_dimension": 11
+    },
+    "single_epsilon_graph_enumerator": "exact signed contraction-orbit enumeration only for bounded ambient total degrees three and four",
+    "zero_derivative_odd_anchor": "one nonzero parity-odd algebraic C^3 class with one Hodge dual"
+  },
+  "capability_audit": {
+    "canonical_quotient_normal_form": "NOT_IMPLEMENTED",
+    "degree_six_single_epsilon_factor_orbits": "NOT_MATERIALIZED",
+    "differential_bianchi_syzygy_module": "NOT_IMPLEMENTED",
+    "jet_commutator_syzygy_module": "NOT_IMPLEMENTED",
+    "labelled_integration_by_parts_module": "NOT_IMPLEMENTED",
+    "labelled_laplacian_coefficient_module": "NOT_IMPLEMENTED",
+    "pontryagin_transgression_submodule": "NOT_IMPLEMENTED",
+    "raw_single_epsilon_contraction_graphs": "AVAILABLE_ONLY_BELOW_REQUIRED_DEGREE",
+    "single_epsilon_four_dimensional_schouten_module": "NOT_IMPLEMENTED"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL preflight identifies the first exact missing operation preventing a complete parity-odd derivative-decorated third-curvature carrier manifest. Existing artifacts prove one algebraic odd C^3 anchor and can enumerate bounded single-epsilon contraction orbits, but they do not provide the degree-six labelled-jet module or its combined Bianchi, commutator, integration-by-parts, four-dimensional Schouten and Pontryagin/transgression syzygy quotient. Therefore no carrier basis, stabilizer list, functional relation or quotient dimension is promoted. This is a tooling/invariant-generation obstruction, not a vanishing theorem, coefficient, anomaly, QME, Lorentzian, state, particle or unitarity result.",
+  "claim_flags": {
+    "COEFFICIENT_COMPUTED": false,
+    "EXACT_COMPLETENESS_BLOCKER_IDENTIFIED": true,
+    "NUMERICAL_SAMPLING_PROMOTED": false,
+    "PARITY_EVEN_DUALIZATION_ASSUMED_COMPLETE": false,
+    "PARITY_ODD_DERIVATIVE_CARRIER_MANIFEST_COMPLETE": false,
+    "PARITY_ODD_QUOTIENT_DIMENSION_COMPUTED": false,
+    "PONTRYAGIN_CLASS_CONFLATED_WITH_NONLOCAL_ODD_SECTOR": false,
+    "QME_OR_LORENTZIAN_PROMOTED": false
+  },
+  "decision": {
+    "canonical_representatives": "NOT_COMPUTED",
+    "coefficient_status": "NOT_COMPUTED",
+    "complete_manifest": "NOT_COMPUTED",
+    "effective_labelled_channels": "NOT_COMPUTED",
+    "even_basis_dualization_promoted": false,
+    "functional_relations": "NOT_COMPUTED",
+    "quotient_dimension": "NOT_COMPUTED",
+    "sampling_used": false,
+    "source_generic_stabilizers": "NOT_COMPUTED"
+  },
+  "dependencies": {
+    "algebraic_cubic_weyl_carriers": {
+      "path": "quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json",
+      "result_id": "FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS",
+      "sha256": "921a5ce8ad89ca8289781883f5c72527008dae7e72c0e8bcbcf3dd7b61896b3d"
+    },
+    "ambient_intrinsic_orbits": {
+      "path": "quantum-weyl/local_bv/certificates/AFN0_AMBIENT_INTRINSIC_ORBIT_CERTIFICATE_DEGREES_THREE_FOUR.json",
+      "result_id": "AFN0_AMBIENT_INTRINSIC_ORBIT_CERTIFICATE_DEGREES_THREE_FOUR",
+      "sha256": "f794a34a9cfe26c2bbdd5c621edec35e51a1705f5910fc43c7a84e7ff20a2d20"
+    },
+    "four_dimensional_even_schouten_quotient": {
+      "path": "quantum-weyl/local_bv/certificates/LOCAL_FOUR_DIMENSIONAL_SCHOUTEN_QUOTIENT_CERTIFICATE.json",
+      "result_id": "LOCAL_FOUR_DIMENSIONAL_SCHOUTEN_QUOTIENT_CERTIFICATE",
+      "sha256": "e17eda0fdc3be3f53603b6a4bfaee727aa15787a856305c9c5e64a1091f8b0da"
+    },
+    "parity_even_nonlocal_manifest": {
+      "path": "quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json",
+      "result_id": "FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST",
+      "sha256": "203cc58ea7d2b1cfd468bc660c616e8319250ab522614bcbc16410b1c7006c4c"
+    },
+    "schouten_zero_weyl_image": {
+      "path": "quantum-weyl/local_bv/certificates/LOCAL_SCHOUTEN_ZERO_WEYL_IMAGE_CERTIFICATE.json",
+      "result_id": "LOCAL_SCHOUTEN_ZERO_WEYL_IMAGE_CERTIFICATE",
+      "sha256": "ffaecf1763e39297833d8958ee932dc10c86123f7112daeceaf3d94635be0b79"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "first_missing_operation": {
+    "input": "degree-six scalar contractions of three labelled Weyl/K jets and one epsilon over Q[Box_1,Box_2,Box_3] localized only by the declared kernel-free inverse policy",
+    "operation_id": "EXACT_SINGLE_EPSILON_LABELLED_JET_SYZYGY_QUOTIENT",
+    "quotient_by": [
+      "algebraic and differential Bianchi syzygies",
+      "covariant-jet commutator syzygies through curvature order three",
+      "integration-by-parts syzygies over the labelled-Laplacian module",
+      "four-dimensional five-index Schouten syzygies with one epsilon",
+      "locally exact Pontryagin/transgression submodule"
+    ],
+    "required_outputs": [
+      "canonical module basis and normal form",
+      "complete syzygy matrix with exact generators",
+      "S3 source-label action and stabilizers",
+      "Pontryagin/transgression exact-submodule coordinates",
+      "characteristic-zero quotient rank and dual nonmembership witnesses"
+    ],
+    "why_first": "without this operation neither raw carrier generation nor equivalence of epsilon placements is exhaustive; consequently a quotient dimension or carrier list cannot be certified"
+  },
+  "forge_request": {
+    "path": "planning/forge-requests/single-epsilon-labelled-jet-syzygy-quotient.json",
+    "request_id": "sf:forge-request/single-epsilon-labelled-jet-syzygy-quotient",
+    "status": "REQUESTED"
+  },
+  "lifecycle_state": "OBSTRUCTED",
+  "missing_operation_ledger": [
+    "degree-six single-epsilon covariant-jet contraction generation",
+    "module coefficients over labelled Box_1,Box_2,Box_3 with source-label action",
+    "algebraic and differential Bianchi syzygies",
+    "covariant-jet commutator syzygies through curvature order three",
+    "integration-by-parts syzygies over the labelled-Laplacian module",
+    "four-dimensional five-index Schouten syzygies with one epsilon",
+    "locally exact Pontryagin/transgression submodule"
+  ],
+  "next_gate": "land and independently gate the exact single-epsilon labelled-jet syzygy quotient before enumerating or reducing the odd carriers",
+  "result_id": "PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_PREFLIGHT",
+  "result_state": "OBSTRUCTED_MISSING_SINGLE_EPSILON_LABELLED_JET_SYZYGY_QUOTIENT",
+  "schema": "quantum-weyl-parity-odd-third-curvature-carrier-manifest-preflight-v1",
+  "scope": {
+    "background": "noncompact asymptotically flat scalar-flat conformal representative",
+    "coefficient_module": "real analytic functions of three labelled Laplacians on the declared kernel-free source complement",
+    "curvature_order": 3,
+    "dimension": 4,
+    "parity": "ODD",
+    "signature": "EUCLIDEAN"
+  }
+}

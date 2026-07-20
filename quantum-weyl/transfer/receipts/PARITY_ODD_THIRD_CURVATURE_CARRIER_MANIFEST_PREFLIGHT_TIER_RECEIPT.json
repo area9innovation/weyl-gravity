@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_PREFLIGHT_TIER_RECEIPT",
+  "claim_id": "PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_PREFLIGHT",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "artifacts": [
+    {
+      "path": "quantum-weyl/transfer/parity_odd_third_curvature_preflight.py",
+      "sha256": "9e2fce19a606cf1beee14ef4c50253bb2974e30887de122065ef36279b8f3d66"
+    },
+    {
+      "path": "quantum-weyl/transfer/verify_parity_odd_third_curvature_preflight.py",
+      "sha256": "75bcf72a803c98df4e4dffc9fc69ce4b893df30445311040049e275915ab29b3"
+    },
+    {
+      "path": "quantum-weyl/transfer/tests/test_parity_odd_third_curvature_preflight.py",
+      "sha256": "dc85e3e88020c5918d6bb1e7e871314ea40477ed198b439592ed8e40c39935a8"
+    },
+    {
+      "path": "quantum-weyl/transfer/schema/parity-odd-third-curvature-carrier-manifest-preflight-v1.schema.json",
+      "sha256": "86b64c6a2b85f7e706ac87992bd242c402a38b3778fd06383a802df814c34fc9"
+    },
+    {
+      "path": "quantum-weyl/transfer/certificates/PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_PREFLIGHT.json",
+      "sha256": "cc5dfb9266668ea3f3de4f9fdba6652573540a00fea8601e8a6e9f6dcac54455"
+    },
+    {
+      "path": "quantum-weyl/reports/parity-odd-third-curvature-carrier-manifest-preflight.md",
+      "sha256": "73026181bbd6b389a39929ca65e765271f9b6305213d9f6b3ccc20f122107c98"
+    },
+    {
+      "path": "planning/forge-requests/single-epsilon-labelled-jet-syzygy-quotient.json",
+      "sha256": "6efddbdbcc5f3759fe5122dada97f02aa066c8e050d09d1ac520f10dc96a238b"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, independent verifier, tests>",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <schema, certificate, receipt, Forge request>",
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit parity-odd preflight paths>",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=quantum-weyl python3 -m transfer.parity_odd_third_curvature_preflight --check",
+        "status": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=quantum-weyl python3 -m transfer.verify_parity_odd_third_curvature_preflight",
+        "status": "PASS",
+        "independent_rail": "does not import or call the producer; follows exact dependency hashes and independently checks every open-operation witness, the typed request and strict-schema mutations"
+      },
+      {
+        "command": "PYTHONPATH=quantum-weyl python3 -m unittest transfer.tests.test_parity_odd_third_curvature_preflight -v",
+        "status": "PASS",
+        "tests": 6,
+        "mutation_controls": "dimension, even-dualization, numerical sampling, completeness and missing-syzygy promotions are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/parity-odd-third-curvature-carrier-manifest-preflight-v1.schema.json -d quantum-weyl/transfer/certificates/PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_PREFLIGHT.json",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "reason": "The result imports unchanged content-addressed predecessors and certifies a missing invariant-generation operation; no shared mathematical input or downstream theorem was changed."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped obstruction preflight, not a freeze, release, tag or shared-core-algebra change."
+  },
+  "claim_boundary": "The receipt certifies the first exact missing operation preventing a complete parity-odd derivative-decorated third-curvature carrier quotient. It does not provide a carrier basis, stabilizers, functional relations, quotient dimension, coefficient, anomaly, QME, Lorentzian, state, particle or unitarity result.",
+  "higher_tiers_not_run": [
+    {
+      "tier": 2,
+      "criterion": "No mathematical input, shared operator, schema consumer or promoted theorem changed."
+    },
+    {
+      "tier": 3,
+      "criterion": "No freeze, release, tag, shared-core algebra change or explicit full-suite request occurred."
+    }
+  ]
+}

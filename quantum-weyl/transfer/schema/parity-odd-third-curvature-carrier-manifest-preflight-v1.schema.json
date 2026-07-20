@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-parity-odd-third-curvature-carrier-manifest-preflight-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "available_exact_inputs",
+    "capability_audit",
+    "first_missing_operation",
+    "missing_operation_ledger",
+    "decision",
+    "forge_request",
+    "dependencies",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-parity-odd-third-curvature-carrier-manifest-preflight-v1"
+    },
+    "result_id": {
+      "const": "PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_PREFLIGHT"
+    },
+    "result_state": {
+      "const": "OBSTRUCTED_MISSING_SINGLE_EPSILON_LABELLED_JET_SYZYGY_QUOTIENT"
+    },
+    "lifecycle_state": {"const": "OBSTRUCTED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]
+    },
+    "scope": {"type": "object"},
+    "available_exact_inputs": {"type": "object"},
+    "capability_audit": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    },
+    "first_missing_operation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation_id", "input", "quotient_by", "required_outputs", "why_first"],
+      "properties": {
+        "operation_id": {"const": "EXACT_SINGLE_EPSILON_LABELLED_JET_SYZYGY_QUOTIENT"},
+        "input": {"type": "string", "minLength": 1},
+        "quotient_by": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+        "required_outputs": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+        "why_first": {"type": "string", "minLength": 1}
+      }
+    },
+    "missing_operation_ledger": {
+      "type": "array",
+      "minItems": 7,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complete_manifest",
+        "canonical_representatives",
+        "source_generic_stabilizers",
+        "effective_labelled_channels",
+        "functional_relations",
+        "quotient_dimension",
+        "coefficient_status",
+        "sampling_used",
+        "even_basis_dualization_promoted"
+      ],
+      "properties": {
+        "complete_manifest": {"const": "NOT_COMPUTED"},
+        "canonical_representatives": {"const": "NOT_COMPUTED"},
+        "source_generic_stabilizers": {"const": "NOT_COMPUTED"},
+        "effective_labelled_channels": {"const": "NOT_COMPUTED"},
+        "functional_relations": {"const": "NOT_COMPUTED"},
+        "quotient_dimension": {"const": "NOT_COMPUTED"},
+        "coefficient_status": {"const": "NOT_COMPUTED"},
+        "sampling_used": {"const": false},
+        "even_basis_dualization_promoted": {"const": false}
+      }
+    },
+    "forge_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request_id", "path", "status"],
+      "properties": {
+        "request_id": {"const": "sf:forge-request/single-epsilon-labelled-jet-syzygy-quotient"},
+        "path": {"const": "planning/forge-requests/single-epsilon-labelled-jet-syzygy-quotient.json"},
+        "status": {"const": "REQUESTED"}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "result_id", "sha256"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "result_id": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "EXACT_COMPLETENESS_BLOCKER_IDENTIFIED",
+        "PARITY_ODD_DERIVATIVE_CARRIER_MANIFEST_COMPLETE",
+        "PARITY_ODD_QUOTIENT_DIMENSION_COMPUTED",
+        "PARITY_EVEN_DUALIZATION_ASSUMED_COMPLETE",
+        "NUMERICAL_SAMPLING_PROMOTED",
+        "PONTRYAGIN_CLASS_CONFLATED_WITH_NONLOCAL_ODD_SECTOR",
+        "COEFFICIENT_COMPUTED",
+        "QME_OR_LORENTZIAN_PROMOTED"
+      ],
+      "properties": {
+        "EXACT_COMPLETENESS_BLOCKER_IDENTIFIED": {"const": true},
+        "PARITY_ODD_DERIVATIVE_CARRIER_MANIFEST_COMPLETE": {"const": false},
+        "PARITY_ODD_QUOTIENT_DIMENSION_COMPUTED": {"const": false},
+        "PARITY_EVEN_DUALIZATION_ASSUMED_COMPLETE": {"const": false},
+        "NUMERICAL_SAMPLING_PROMOTED": {"const": false},
+        "PONTRYAGIN_CLASS_CONFLATED_WITH_NONLOCAL_ODD_SECTOR": {"const": false},
+        "COEFFICIENT_COMPUTED": {"const": false},
+        "QME_OR_LORENTZIAN_PROMOTED": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

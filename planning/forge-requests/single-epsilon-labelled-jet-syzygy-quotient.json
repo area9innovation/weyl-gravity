@@ -1,0 +1,15 @@
+{
+  "id": "sf:forge-request/single-epsilon-labelled-jet-syzygy-quotient",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "quantum-qme",
+    "state": "REQUESTED",
+    "objective": "Add a generic exact module-quotient engine for single-epsilon covariant jets with labelled commuting operator variables. The first consumer is sf:program/work/quantum-parity-odd-third-curvature-carrier-manifest, blocked at quantum-weyl/transfer/certificates/PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_PREFLIGHT.json. Existing physics code enumerates signed epsilon/metric contraction orbits only at bounded lower degree and separately handles even Bianchi/IBP/Schouten quotients; it cannot form the combined degree-six single-epsilon syzygy module over Q[Box_1,Box_2,Box_3], so dualizing the parity-even carriers is not a completeness proof.",
+    "depends_on": [
+      "sf:program/work/quantum-parity-odd-third-curvature-carrier-manifest"
+    ],
+    "stop_condition": "Provide a typed exact API accepting tensor-factor slot symmetries, one oriented epsilon, covariant-derivative jets, commuting labelled operator variables and a source-label permutation action. It must generate all grading-compatible contractions orbit-first; impose algebraic/differential Bianchi and declared-order jet-commutator relations; form integration-by-parts syzygies without erasing labelled Box placement; generate dimension-d Schouten relations by (d+1)-antisymmetrization; accept a user-supplied exact/transgression submodule such as Pontryagin descent; and emit a characteristic-zero canonical module basis, normal forms, syzygy matrix, quotient rank, stabilizers, relations and dual nonmembership witnesses. Demonstrate the API on the existing even four-dimensional order-six quotient, reproduce the one algebraic odd C^3 anchor, and independently solve the parity-odd third-curvature consumer with unseen exact algebraic-curvature/jet fixtures and mutations of epsilon orientation, Bianchi signs, IBP labels, Schouten rank and transgression rows.",
+    "forbid": "no numerical tensor sampling called a canonical quotient; no insertion of one epsilon into an even basis assumed exhaustive; no finite-field rank without characteristic-zero lift or one-sided theorem; no unlabelled IBP that commutes through arbitrary form factors; no physics-specific Weyl-gravity carrier list embedded in forge/lib/math; no producer search reused as the independent verifier; no local Pontryagin anomaly class identified with every nonlocal parity-odd form factor"
+  }
+}
