@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/relative-full-five-current-second-jet-manifest-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "background_id", "coefficient_field", "operation",
+    "generator_order", "axis_order", "field_order", "output_rows",
+    "maximum_input_derivative_order", "maximum_coefficient_jet_order",
+    "chunk_encoding", "chunk_count", "canonical_term_count",
+    "expanded_term_count", "local_coefficient_profile_count",
+    "generator_term_counts", "chunks", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-full-five-current-second-jet-manifest-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_SECOND_JET_EXPORT_V1_MANIFEST"},
+    "background_id": {"const": "compact_magnetic_Plebanski_Hacyan_product"},
+    "coefficient_field": {"const": "Q"},
+    "operation": {"const": "q2(field,field)->K_P^1=Omega^3(M;g_stab^*)"},
+    "generator_order": {"const": ["H", "P_x", "J_1", "J_2", "J_3"]},
+    "axis_order": {"const": ["t", "x", "theta", "phi"]},
+    "field_order": {"type": "array", "minItems": 14, "maxItems": 14},
+    "output_rows": {"type": "array", "minItems": 20, "maxItems": 20},
+    "maximum_input_derivative_order": {"const": 4},
+    "maximum_coefficient_jet_order": {"const": 2},
+    "chunk_encoding": {"const": "deterministic-gzip-of-canonical-compact-json; mtime=0; empty filename"},
+    "chunk_count": {"const": 20},
+    "canonical_term_count": {"type": "integer", "minimum": 10000},
+    "expanded_term_count": {"type": "integer", "minimum": 20000},
+    "local_coefficient_profile_count": {"type": "integer", "minimum": 20},
+    "generator_term_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["H", "P_x", "J_1", "J_2", "J_3"],
+      "properties": {
+        "H": {"type": "integer", "minimum": 1},
+        "P_x": {"type": "integer", "minimum": 1},
+        "J_1": {"type": "integer", "minimum": 1},
+        "J_2": {"type": "integer", "minimum": 1},
+        "J_3": {"type": "integer", "minimum": 1}
+      }
+    },
+    "chunks": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "items": {"$ref": "#/$defs/chunk"}
+    },
+    "claim_boundary": {"type": "string", "minLength": 150}
+  },
+  "$defs": {
+    "chunk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generator", "component_axis", "path", "sha256",
+        "uncompressed_sha256", "bytes", "uncompressed_bytes",
+        "canonical_term_count", "expanded_term_count",
+        "coefficient_profile_count"
+      ],
+      "properties": {
+        "generator": {"enum": ["H", "P_x", "J_1", "J_2", "J_3"]},
+        "component_axis": {"type": "integer", "minimum": 0, "maximum": 3},
+        "path": {"type": "string", "pattern": "\\.json\\.gz$"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "uncompressed_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "bytes": {"type": "integer", "minimum": 1},
+        "uncompressed_bytes": {"type": "integer", "minimum": 1},
+        "canonical_term_count": {"type": "integer", "minimum": 0},
+        "expanded_term_count": {"type": "integer", "minimum": 0},
+        "coefficient_profile_count": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

@@ -2044,8 +2044,17 @@ endpoint normalization through
 or Weyl-identity component.  It now requests sufficient higher current
 coefficient jets.  The complete `SO(2)`-invariant order-one ansatz is frozen by
 `EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1`: it has 406 free
-coefficients after endpoint fixing, while the full incidence requires current
-coefficient jets through order two.  After that export, Bridge 1 solves the
+coefficients after endpoint fixing.  The coefficient-depth prerequisite is
+now exact:
+`EINSTEIN_WEYL_RELATIVE_HESSIAN_SECOND_CURRENT_INPUT_V1` proves from the
+action-derived unary rows that 278 raw target fifth jets and 36 raw source
+third jets reduce to the required relative equatorial-parity profile, rather
+than being silently truncated.
+`EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_SECOND_JET_EXPORT_V1` streams the
+complete five-current operation through coefficient-jet order two into twenty
+deterministic content-addressed chunks with 36,539 canonical symmetric terms
+and 72,953 ordered terms.  Its independent replay matches all 30,494 V1 terms,
+and peak producer RSS is 184,756 KiB.  Bridge 1 now solves the 406-parameter
 order-one chain system and then the fifteen-row incidence
 `Delta2-A^1 C=delta(f2)`.  No support-local lift or
 repaired relative q2 has yet been promoted.

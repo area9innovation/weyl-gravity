@@ -182,7 +182,7 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
         self.assertIn("30,494 canonical terms", entry["claim_boundary"])
-        self.assertIn("coefficient jets stop at order one", entry["claim_boundary"])
+        self.assertIn("V1 current table", entry["claim_boundary"])
         self.assertIn(
             "EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1",
             {item["result_id"] for item in entry["evidence"]},
@@ -199,7 +199,18 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
         self.assertIn("406 free coefficients", entry["claim_boundary"])
-        self.assertIn("coefficient jets through order two", entry["claim_boundary"])
+        self.assertIn("complete through coefficient-jet order two", entry["claim_boundary"])
+        self.assertIn(
+            "EINSTEIN_WEYL_RELATIVE_HESSIAN_SECOND_CURRENT_INPUT_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_SECOND_JET_EXPORT_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("36,539 canonical terms", entry["claim_boundary"])
+        self.assertIn("twenty independently hashed chunks", entry["claim_boundary"])
+        self.assertIn("current input is now sufficient", entry["claim_boundary"])
 
     def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_exact_branch"]

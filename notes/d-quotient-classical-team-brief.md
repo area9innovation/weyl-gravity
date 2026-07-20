@@ -2457,9 +2457,19 @@ invariant top descent with that endpoint fixed.
 `EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1` classifies the complete
 `SO(2)` ansatz: 364 `A^1` coefficients through order one and 42 derivative
 coefficients for `A^2`, hence 406 free coefficients after endpoint fixing.
-The full coefficient incidence requires current coefficient jets through
-order two, so the next export extends the current payload before solving the
-chain system and then
+The coefficient-depth prerequisite is now closed rather than assumed.
+`EINSTEIN_WEYL_RELATIVE_HESSIAN_SECOND_CURRENT_INPUT_V1` rebuilds the
+authoritative action coefficients deeply enough to expose 278 raw target
+fifth jets and 36 raw source third jets; exact densitization and relative
+subtraction prove that the corresponding unavailable relative odd-depth jets
+vanish.  `EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_SECOND_JET_EXPORT_V1`
+then streams the complete current through coefficient-jet order two into
+twenty deterministic content-addressed chunks.  They contain 36,539 canonical
+symmetric terms and 72,953 ordered terms, with independent chunkwise
+coefficient replay and exact agreement with all 30,494 V1 terms.  Peak
+generation RSS is 184,756 KiB, so the export does not materialize the complete
+current table at once.  The active gate is now the exact 406-parameter
+order-one chain solve, followed by
 `Delta2-A^1 C=delta(f2)` on the fifteen nonzero defect rows.  Modified
 endpoints and other backgrounds remain
 admissible; no causal or quantum consequence is inferred.

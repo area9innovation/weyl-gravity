@@ -1,0 +1,116 @@
+{
+  "checkpoint_provenance": {
+    "checkpoint_stage_record_sha256": "d5d8991c26227a61ff883dc26a23cf4a0c32c8a59846047b93a2432ab82daed1",
+    "fingerprint": "ac923be427404bf66cac4adaf5b55f3400b03247d8e2f14091ac873f2cff046e",
+    "physical_equation_row_sha256": {
+      "row-20.pkl": "9c18c39b4056f6a3206b0bd37f86b82a8679979995cfc6869f8e6e4d4a58e88c",
+      "row-21.pkl": "f61d0782aee001cf42a37d782715489fbaf52ea029297f5f07ad5e51fcf1d889",
+      "row-22.pkl": "c816458d7acf197bd42ae5a16c4e45af480aa1da988931ecc1c083b3bd5503d3",
+      "row-23.pkl": "47eedeb2dd2eac9ea8718eacfa42b024de8c87936afad7d5304134cee891fad0",
+      "row-24.pkl": "f18ee9323c39776e127f1f426dc05f214ce1e32615198a8346060ab1f739acff",
+      "row-25.pkl": "2da48f9d822f5357ad656b8c0fb927cc47cda568b0a267f2abdc2a6124b15a1b",
+      "row-26.pkl": "6a70ea513f54a764f7421c0799146083937354448afc0026fdeaa19be48fb686",
+      "row-27.pkl": "28978e8c59ea379ccef6b7ec2d85b4ce2d35a360572efa2a0253d17de52b3fbd",
+      "row-28.pkl": "9686dc3efa2ac85e4e32db20b17d4d636c29c2c515a6872f965fb16b3f82df3f",
+      "row-29.pkl": "c6451a57e707fdd7e7e87197528dd481eac91957cd49d039b6ac54b41be3cd54",
+      "row-30.pkl": "078171722e92f1f8b8f6a5b69d5f1e21bcd94d8db2da68e97f87efee7a0d6538",
+      "row-31.pkl": "83b8631c17bb2a4ba6fb63c7d20773881613339d81213947053191839cb56d8e",
+      "row-32.pkl": "80ca1fe89fd2346817b71ab8c6558fd1c84dd03064dbff7d14d10d1513e6c980",
+      "row-33.pkl": "f39ecd540fa4eb5fc7c762234da474637281a99db7eb9c36da91b41d88a4feaf"
+    },
+    "rebuild_command": "PYTHONPATH=. python3 -m bridge.einstein_sector.run_weyl_maxwell_product_checkpointed --resume",
+    "role": "content-addressed action-derived acceleration for target coefficient jets of orders five; not a separately committed mathematical input"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC certificate closes the previously missing coefficient-depth prerequisite for a second-jet Green-current export. The deep rail rebuilds the Einstein coefficients from the action and reads the content-addressed action-derived Weyl checkpoint; the fast independent rail checks exact density calculus, profile completeness and every overlap with the frozen unary exports. It does not itself export the five currents, solve the 406-parameter chain system, construct A or f2, repair the relative q2 or establish any bounded, causal, observable, particle or quantum claim.",
+  "classification": {
+    "action_derived_relative_hessian_profiles_extended": true,
+    "causal_observable_particle_or_quantum_claim": false,
+    "five_current_second_jet_exported": false,
+    "relative_q2_repaired": false,
+    "second_current_coefficient_derivatives_authorized": true,
+    "support_local_chain_map_A_constructed": false
+  },
+  "dependencies": {
+    "einstein_action": {
+      "artifact_id": "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1",
+      "path": "bridge/certificates/EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
+      "sha256": "be03e210b5699dd66e611e7c63f5cf23128140e3e3dcc377029d631203df8d88"
+    },
+    "einstein_q1": {
+      "artifact_id": "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q1",
+      "path": "bridge/einstein_sector/generated/einstein_maxwell_product_linfinity_v1/q1.json",
+      "sha256": "820d8f5515421676317b501c9970a65288527971f145849652ce8a3e0cdc1c50"
+    },
+    "relative_hessian": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json",
+      "sha256": "fa237b92636a1e8ab95bcca0eab14cf3f2f92448a1a0791e8da8a889de20bc13"
+    },
+    "weyl_action": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1",
+      "path": "bridge/certificates/WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
+      "sha256": "f78828e64525ecda924f34a75a1fe4ad8593b3fbf67cb2900ac221b98c454596"
+    },
+    "weyl_q1": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q1",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/q1.json",
+      "sha256": "43c00909830fde902cf1332eae804f6edd6ad263bef7ce61d08bdbd20449290b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "derivation": {
+    "density": "exact multivariate Leibniz multiplication by sin(theta)",
+    "frozen_lower_jet_replay": "all existing target jets through order four and source jets through order two agree coefficientwise on their declared domains",
+    "required_order": "Green telescoping of an order-r monomial followed by two coefficient derivatives needs Hessian coefficient jets through r+1",
+    "source": "Einstein-Maxwell q1 rebuilt directly from the authoritative action Taylor producer through coefficient order three",
+    "target": "Weyl-Maxwell q1 read from the content-addressed checkpoint produced by the authoritative action Taylor producer through coefficient order five"
+  },
+  "lifecycle_status": "COEFFICIENT_COMPUTED",
+  "next_gate": "STREAM_THE_FIVE_CURRENT_COEFFICIENT_JETS_THROUGH_ORDER_TWO",
+  "payload": {
+    "bytes": 394729,
+    "maximum_coefficient_jet_order": 5,
+    "maximum_operator_order": 4,
+    "newly_visible_term_count": 0,
+    "path": "d_quotient_classical/generated/einstein_weyl_relative_hessian_second_current_input_v1/relative_hessian.json",
+    "raw_source_third_jet_count": 36,
+    "raw_target_fifth_jet_count": 278,
+    "relative_fifth_jet_count": 0,
+    "relative_source_order_third_jet_count": 0,
+    "sha256": "e018b982a0b5e1b7c96da45885d861190642a4f195505a18541dc72d0ff6a828",
+    "term_count": 836
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_hessian_second_current_input.py": "967519085e57a4ca5749161fb74d9a4ef4aa6ecc235e34944f159b3f7567037f",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_hessian_second_current_input.py": "bcec80e6e1e5a07469f37937ae21fc09d19051f2754f3c5e3a02bca1d4c0e666",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_hessian_second_current_input.py": "5f9fb303ed056f8cd96cbaa11a7562a41bb13a8c77da3ef33cf0c83025bf622a",
+      "d_quotient_classical/schema/relative-hessian-second-current-input-v1.schema.json": "8cbc6d8e3c36f020e2e259e24c84ef5c6d89920e185fc4e4203e45cbb5870c6b",
+      "d_quotient_classical/schema/relative-hessian-second-current-payload-v1.schema.json": "fb5b7868bfad2658d4e523a53788a182937dfbeca18b31bbc058e97cf1d61def"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_hessian_second_current_input --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_hessian_second_current_input",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_hessian_second_current_input",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_hessian_second_current_input --deep-rebuild"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_HESSIAN_SECOND_CURRENT_INPUT_V1",
+  "result_state": "ACTION_DERIVED_RELATIVE_HESSIAN_JETS_SUFFICIENT_FOR_SECOND_CURRENT_DERIVATIVES",
+  "schema": "pure-weyl-relative-hessian-second-current-input-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "local coefficient jets at the homogeneous equatorial base point",
+    "carrier": "14 source fields to 14 relative Euler rows",
+    "charge_sector": "physical 14-field relative Hessian before five-stabilizer precomposition",
+    "degree": "unary Hessian input",
+    "ell": "not harmonic-reduced",
+    "k": "arbitrary local covector",
+    "m": "not harmonic-reduced",
+    "omega": "arbitrary local covector",
+    "parity": "even physical sector",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  }
+}

@@ -111,7 +111,7 @@ def verify() -> None:
         raise AssertionError("distinct 316-row gradings were conflated")
     if "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1" not in {item["result_id"] for item in pullback["evidence"]}:
         raise AssertionError("portable full-current evidence missing")
-    if "30,494 canonical terms" not in pullback["claim_boundary"] or "coefficient jets stop at order one" not in pullback["claim_boundary"]:
+    if "30,494 canonical terms" not in pullback["claim_boundary"] or "V1 current table" not in pullback["claim_boundary"]:
         raise AssertionError("portable current scope or order boundary missing")
     if "EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1" not in {item["result_id"] for item in pullback["evidence"]}:
         raise AssertionError("order-zero lift obstruction evidence missing")
@@ -123,8 +123,17 @@ def verify() -> None:
         raise AssertionError("endpoint normalization formula missing")
     if "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1" not in {item["result_id"] for item in pullback["evidence"]}:
         raise AssertionError("order-one invariant ansatz evidence missing")
-    if "406 free coefficients" not in pullback["claim_boundary"] or "coefficient jets through order two" not in pullback["claim_boundary"]:
+    if "406 free coefficients" not in pullback["claim_boundary"] or "complete through coefficient-jet order two" not in pullback["claim_boundary"]:
         raise AssertionError("order-one solver contract missing")
+    evidence_ids = {item["result_id"] for item in pullback["evidence"]}
+    if "EINSTEIN_WEYL_RELATIVE_HESSIAN_SECOND_CURRENT_INPUT_V1" not in evidence_ids:
+        raise AssertionError("second-current Hessian coefficient-depth evidence missing")
+    if "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_SECOND_JET_EXPORT_V1" not in evidence_ids:
+        raise AssertionError("streamed second-current export evidence missing")
+    if "36,539 canonical terms" not in pullback["claim_boundary"] or "twenty independently hashed chunks" not in pullback["claim_boundary"]:
+        raise AssertionError("streamed second-current census missing")
+    if "current input is now sufficient" not in pullback["claim_boundary"]:
+        raise AssertionError("order-one current-input gate not promoted")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")

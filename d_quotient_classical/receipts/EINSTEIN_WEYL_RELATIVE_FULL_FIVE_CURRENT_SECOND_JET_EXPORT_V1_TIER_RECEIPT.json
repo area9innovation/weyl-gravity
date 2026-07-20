@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_SECOND_JET_EXPORT_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-20",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "status": "PASS",
+  "source_manifest": {
+    "d_quotient_classical/relative/einstein_weyl_relative_hessian_second_current_input.py": "967519085e57a4ca5749161fb74d9a4ef4aa6ecc235e34944f159b3f7567037f",
+    "d_quotient_classical/relative/verify_einstein_weyl_relative_hessian_second_current_input.py": "5f9fb303ed056f8cd96cbaa11a7562a41bb13a8c77da3ef33cf0c83025bf622a",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_hessian_second_current_input.py": "bcec80e6e1e5a07469f37937ae21fc09d19051f2754f3c5e3a02bca1d4c0e666",
+    "d_quotient_classical/schema/relative-hessian-second-current-input-v1.schema.json": "8cbc6d8e3c36f020e2e259e24c84ef5c6d89920e185fc4e4203e45cbb5870c6b",
+    "d_quotient_classical/schema/relative-hessian-second-current-payload-v1.schema.json": "fb5b7868bfad2658d4e523a53788a182937dfbeca18b31bbc058e97cf1d61def",
+    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_SECOND_CURRENT_INPUT_V1.json": "07ebf9a05e6bebcc997a1b710a68c39f1473595fcb156f326bfa6d6f09a5ae1e",
+    "d_quotient_classical/generated/einstein_weyl_relative_hessian_second_current_input_v1/relative_hessian.json": "e018b982a0b5e1b7c96da45885d861190642a4f195505a18541dc72d0ff6a828",
+    "d_quotient_classical/relative/einstein_weyl_relative_full_five_current_second_jet_export.py": "a81f11d267fcebc155a92ead95646033f9c642328415134f6d49bb3323015f64",
+    "d_quotient_classical/relative/verify_einstein_weyl_relative_full_five_current_second_jet_export.py": "6f52fcd935f9789ada377ec8448335eb260c381d0e43a8d5d83126a6dce38c71",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_full_five_current_second_jet_export.py": "743bd7928859373ed669a6ba6c38680cdd69e8e2bca9d7a982b72a79c6e02663",
+    "d_quotient_classical/schema/relative-full-five-current-second-jet-export-v1.schema.json": "371c3098d1033390693670076041bcfe19ab987d0b570ed19e702c3a5baddd6b",
+    "d_quotient_classical/schema/relative-full-five-current-second-jet-manifest-v1.schema.json": "b86a61ea745222931d4000e73bd86b2429bfd6de3de9d488c4c5a4b01b2e79fa",
+    "d_quotient_classical/schema/relative-full-five-current-second-jet-chunk-v1.schema.json": "d60b2dacb77ddf8ee23f37e53f8d450b43a50d8400fe39daeba5b46320fd557a",
+    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_SECOND_JET_EXPORT_V1.json": "138ef26a3642afffbaf5cb4c947b797bab5806f5c3953e87f5d6104881c22953",
+    "d_quotient_classical/generated/einstein_weyl_relative_full_five_current_second_jet_export_v1/manifest.json": "20a411f024c81899585d4cfefc083c3073e00a880bc02bed600aeeedc2318b37",
+    "d_quotient_classical/atlas/generate_classical_atlas_fragment.py": "e25fe571162e57963aa504e0344de54346db9a9b459dd36c47cf0da437015069",
+    "d_quotient_classical/atlas/verify_classical_atlas_fragment.py": "79a7917d1025f716fdd28afada4aed1c07382c62a7bc66bbfe4248153eacfd4c",
+    "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py": "582f729f4e8a90697a99f7e38ceba9ef78c32c8769e1bce6fcf3619ccb4bd359",
+    "d_quotient_classical/atlas/classical-causal-atlas-fragment.json": "f45ac3143312a264105875ff606ae2f0edea5a4a7f51b6ee864e414cb551dcc9",
+    "notes/d-quotient-classical-team-brief.md": "2609181b5394a2ab360be780fa9b2d65d7c35c3e4c145f7c57f89ab0a9f60690"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "command": "py_compile, json.tool, strict Draft 2020-12 validation, source-manifest hashes and scoped git diff --check"
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 67.47,
+      "max_rss_kib": 184756,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_hessian_second_current_input --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_hessian_second_current_input",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_full_five_current_second_jet_export --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_full_five_current_second_jet_export",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_hessian_second_current_input d_quotient_classical.relative.tests.test_einstein_weyl_relative_full_five_current_second_jet_export d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ],
+      "result": "action-depth prerequisite passed; 20 independently replayed chunks contain 36,539 canonical and 72,953 expanded terms; all 30,494 V1 terms replay exactly"
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 59.91,
+      "max_rss_kib": 155284,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_hessian_second_current_input --deep-rebuild"
+      ],
+      "result": "the Einstein unary rows were rebuilt from the authoritative action at coefficient order three and the content-addressed Weyl checkpoint supplied order-five rows; 36 raw source third jets and 278 raw target fifth jets reduce to zero unavailable relative odd-depth coefficients"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This scoped coefficient export does not freeze the order-one lift, relative q2, causal bridge or a paper theorem."
+    }
+  },
+  "advisory_shadow": {
+    "status": "PASS_WITH_REPORTED_DRIFT",
+    "command": "ci/science-forge-shadow.sh",
+    "exit_code": 0,
+    "findings": [
+      "bridge certlab drift reported by the shared advisory baseline",
+      "coverage census reports 1163 certificates against the 2026-07-19 baseline of 976"
+    ],
+    "scope": "Read-only advisory findings were pre-existing/shared-programme drift; neither finding promoted or invalidated this scoped exact export."
+  },
+  "claim_boundary": "This receipt certifies the action-depth prerequisite and the memory-bounded complete five-current coefficient export through order two. It does not solve the 406-parameter order-one chain system, construct A or f2, repair the relative q2, compare action pairings or establish bounded, causal, observable, particle or quantum claims."
+}

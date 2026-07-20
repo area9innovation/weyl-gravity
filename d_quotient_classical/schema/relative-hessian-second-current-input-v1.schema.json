@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/relative-hessian-second-current-input-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_status",
+    "dependency_tags", "scope", "dependencies", "payload", "derivation",
+    "checkpoint_provenance", "classification", "next_gate", "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-hessian-second-current-input-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_HESSIAN_SECOND_CURRENT_INPUT_V1"},
+    "result_state": {"const": "ACTION_DERIVED_RELATIVE_HESSIAN_JETS_SUFFICIENT_FOR_SECOND_CURRENT_DERIVATIVES"},
+    "lifecycle_status": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "object"},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relative_hessian", "einstein_action", "weyl_action", "einstein_q1", "weyl_q1"],
+      "properties": {
+        "relative_hessian": {"$ref": "#/$defs/artifact"},
+        "einstein_action": {"$ref": "#/$defs/artifact"},
+        "weyl_action": {"$ref": "#/$defs/artifact"},
+        "einstein_q1": {"$ref": "#/$defs/artifact"},
+        "weyl_q1": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path", "sha256", "bytes", "term_count", "newly_visible_term_count", "maximum_operator_order",
+        "maximum_coefficient_jet_order", "raw_target_fifth_jet_count",
+        "raw_source_third_jet_count", "relative_fifth_jet_count",
+        "relative_source_order_third_jet_count"
+      ],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "bytes": {"type": "integer", "minimum": 1},
+        "term_count": {"type": "integer", "minimum": 800},
+        "newly_visible_term_count": {"type": "integer", "minimum": 0},
+        "maximum_operator_order": {"const": 4},
+        "maximum_coefficient_jet_order": {"const": 5},
+        "raw_target_fifth_jet_count": {"type": "integer", "minimum": 1},
+        "raw_source_third_jet_count": {"type": "integer", "minimum": 1},
+        "relative_fifth_jet_count": {"const": 0},
+        "relative_source_order_third_jet_count": {"const": 0}
+      }
+    },
+    "derivation": {"type": "object"},
+    "checkpoint_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fingerprint", "checkpoint_stage_record_sha256",
+        "physical_equation_row_sha256", "rebuild_command", "role"
+      ],
+      "properties": {
+        "fingerprint": {"const": "ac923be427404bf66cac4adaf5b55f3400b03247d8e2f14091ac873f2cff046e"},
+        "checkpoint_stage_record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "physical_equation_row_sha256": {
+          "type": "object",
+          "minProperties": 14,
+          "maxProperties": 14,
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        },
+        "rebuild_command": {"type": "string", "minLength": 20},
+        "role": {"type": "string", "minLength": 80}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_derived_relative_hessian_profiles_extended",
+        "second_current_coefficient_derivatives_authorized",
+        "five_current_second_jet_exported", "support_local_chain_map_A_constructed",
+        "relative_q2_repaired", "causal_observable_particle_or_quantum_claim"
+      ],
+      "properties": {
+        "action_derived_relative_hessian_profiles_extended": {"const": true},
+        "second_current_coefficient_derivatives_authorized": {"const": true},
+        "five_current_second_jet_exported": {"const": false},
+        "support_local_chain_map_A_constructed": {"const": false},
+        "relative_q2_repaired": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "STREAM_THE_FIVE_CURRENT_COEFFICIENT_JETS_THROUGH_ORDER_TWO"},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

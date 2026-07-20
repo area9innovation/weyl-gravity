@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/relative-full-five-current-second-jet-export-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_status",
+    "dependency_tags", "scope", "dependencies", "manifest", "streaming",
+    "classification", "next_gate", "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-full-five-current-second-jet-export-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_SECOND_JET_EXPORT_V1"},
+    "result_state": {"const": "COMPLETE_STREAMED_FIVE_CURRENT_SECOND_COEFFICIENT_JETS_EXPORTED"},
+    "lifecycle_status": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "object"},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hessian_second_current_input", "current_export_v1", "current_payload_v1"],
+      "properties": {
+        "hessian_second_current_input": {"$ref": "#/$defs/artifact"},
+        "current_export_v1": {"$ref": "#/$defs/artifact"},
+        "current_payload_v1": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path", "sha256", "bytes", "chunk_count", "canonical_term_count",
+        "expanded_term_count", "generator_term_counts",
+        "maximum_coefficient_jet_order"
+      ],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "bytes": {"type": "integer", "minimum": 1},
+        "chunk_count": {"const": 20},
+        "canonical_term_count": {"type": "integer", "minimum": 10000},
+        "expanded_term_count": {"type": "integer", "minimum": 20000},
+        "generator_term_counts": {"type": "object"},
+        "maximum_coefficient_jet_order": {"const": 2}
+      }
+    },
+    "streaming": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit", "maximum_live_chunks", "global_profile_table_materialized",
+        "deterministic_compression", "content_addressed_chunks"
+      ],
+      "properties": {
+        "unit": {"const": "one generator and one vector-density component"},
+        "maximum_live_chunks": {"const": 1},
+        "global_profile_table_materialized": {"const": false},
+        "deterministic_compression": {"const": true},
+        "content_addressed_chunks": {"const": true}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complete_full_five_current_second_jet_export",
+        "coefficientwise_v1_overlap_replayed",
+        "support_local_chain_map_A_constructed",
+        "order_one_top_descent_solved", "relative_q2_repaired",
+        "causal_observable_particle_or_quantum_claim"
+      ],
+      "properties": {
+        "complete_full_five_current_second_jet_export": {"const": true},
+        "coefficientwise_v1_overlap_replayed": {"const": true},
+        "support_local_chain_map_A_constructed": {"const": false},
+        "order_one_top_descent_solved": {"const": false},
+        "relative_q2_repaired": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "SOLVE_OR_OBSTRUCT_THE_406_PARAMETER_ORDER_ONE_CHAIN_SYSTEM"},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
