@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "contract_ref",
+    "request_ref",
+    "capability_audit",
+    "correction_class_disposition",
+    "observer_disposition",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-apparatus-z2-memory-response-crosswalk-v1"
+    },
+    "result_id": {
+      "const": "BERGER_APPARATUS_Z2_MEMORY_RESPONSE_CROSSWALK"
+    },
+    "claim_status": {
+      "const": "SHORTFALL_MISSING_SAME_BACKGROUND_BERGER_Z2_RECEIVER"
+    },
+    "atlas_status": {
+      "const": "OPEN"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]
+    },
+    "correction_class_disposition": {
+      "const": {
+        "bounded_or_quasiperiodic": "NO_CERTIFIED_MAP",
+        "causal_or_retarded": "NO_CERTIFIED_MAP",
+        "smooth_secular": "NO_CERTIFIED_MAP"
+      }
+    },
+    "next_gate": {
+      "const": "INSTANTIATE_COMBINED_Q1_THEN_DELIVER_SAME_BACKGROUND_BERGER_Z2_RECEIVER"
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 1400
+    }
+  },
+  "additionalProperties": true
+}

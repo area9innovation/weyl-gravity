@@ -2239,3 +2239,33 @@ The atlas row
 is fail-closed: physical classes, descended pairing, memory representatives
 and reduced rank two are `NO_CERTIFIED_MAP`.  The parent action and its
 coordinate-level leading rank are retained in their original scope.
+
+## Active bridge: same-background Berger Z2 memory receiver
+
+The current item is
+`sf:program/work/observer-berger-apparatus-z2-memory-response`.  Its
+activation gate is the combined-q1 reduction followed by an exact
+same-background second-order integrability receiver for the two certified
+preparation directions.
+
+The parent action preserves a leading triangular rank-two response, but does
+not serialize \(D^2E\) on
+\((u_0,u_0),(u_0,u_1),(u_1,u_1)\), the complete quadratic output closure,
+stabilizer moment-map/Taub projections, nonzero-shell reduced adjoint
+cokernels or their resonant pairings.  The solved global-rod source sector is
+not this detector-selected preparation sector.  The compact-product
+finite-harmonic theorem supplies only the abstract image/cokernel criterion
+and has `NO_CERTIFIED_MAP` to these Berger rows.
+
+`BERGER_APPARATUS_SAME_BACKGROUND_Z2_RECEIVER_CONTRACT` requires separate
+bounded/quasiperiodic, smooth secular and causal/retarded receivers, exact
+amplitude ideals, componentwise response ranks/kernels and transported
+relational-memory representatives.  The typed classical request is
+`sf:program/request/observer-berger-apparatus-z2-memory-response-to-classical-29bed3bc4a756983`.
+
+The fail-closed atlas row is
+`observer.berger.interaction.apparatus_z2_memory_response_preflight`.
+Leading rank two stays certified only in the parent probe-branch scope.
+Individual preparation membership, balanced combinations, nonlinear rank,
+gauge survival on \(\mathcal Z_2\), persistent memory, recoil and redshift
+remain `NO_CERTIFIED_MAP`.

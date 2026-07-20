@@ -176,6 +176,19 @@ interfaces.  No isolated 56-row calculation is called physical reduction;
 memory representatives and reduced response rank remain
 `NO_CERTIFIED_MAP`.
 
+The apparatus Z2-memory preflight is another separate `OPEN` row.  The
+abstract finite-harmonic image/cokernel theorem has no certified carrier map
+to the two Berger preparation directions.  Their three symmetric quadratic
+pairs, including the mixed pair, have not been sent through a complete
+same-background output closure, stabilizer moment-map/Taub projections or
+reduced nonzero-shell adjoint cokernels.  One exact receiver contract keeps
+bounded/quasiperiodic, smooth secular and causal/retarded correction classes
+distinct and is paired with the typed classical request
+`sf:program/request/observer-berger-apparatus-z2-memory-response-to-classical-29bed3bc4a756983`.
+The parent leading rank two is retained in its original scope; individual
+and balanced Z2 membership, nonlinear rank/kernel and persistent relational
+memory are `NO_CERTIFIED_MAP`.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.
