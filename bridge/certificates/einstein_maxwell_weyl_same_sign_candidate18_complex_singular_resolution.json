@@ -1,0 +1,83 @@
+{
+  "claim_boundary": "This classifies and resolves the complete complex carrier only. It does not classify its real Hermitian fixed-occupation strata, current degeneracy on the resolution, node-phase or lifted-rotation quotients, connected zero fibres, occupation gluing, final residual descent, all-orders integration, or causal, observational or quantum maps.",
+  "classification": {
+    "candidate18_complete_complex_singular_locus_classified": true,
+    "candidate18_global_complex_incidence_resolution_constructed": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "final_residual_descent": false,
+    "fixed_occupation_real_singular_strata_classified": false,
+    "global_zero_fibre_connected": false,
+    "lifted_rotation_singular_reduction_classified": false,
+    "node_phase_singular_reduction_classified": false,
+    "occupation_strata_glued": false,
+    "ten_positive_spectators_retained": true
+  },
+  "complete_carrier": {
+    "Sigma_minus": "C^10 x R_plus x {0}",
+    "Sigma_plus": "C^10 x {0} x R_minus",
+    "complex_dimension": 22,
+    "component_complex_dimension": 16,
+    "global_incidence_resolution": "C^10 x Tot(O_{P^4}(-1)^oplus2) x Tot(O_{P^4}(-1)^oplus2)",
+    "intersection": "C^10 x {0} x {0}",
+    "intersection_complex_dimension": 10,
+    "irreducible_singular_components": 2,
+    "isomorphism": "C^10_spectator x R_plus x R_minus",
+    "resolution_complex_dimension": 22,
+    "resolution_fibres_connected": true,
+    "resolution_smooth_connected": true,
+    "singular_locus": "Sigma_plus union Sigma_minus"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_COMPLETE_COMPLEX_CARRIER_BEFORE_NORM_AND_GROUP_REDUCTION",
+  "interpretation": "Candidate 18's complex singularities come only from collapse of one or both rank-one parity factors; the ten positive spectators never create singularities and remain explicit in both components. A smooth connected incidence resolution with connected fibres is now available for the later real Hamiltonian analysis.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "impose the real fixed-occupation and lifted-rotation equations on the resolved carrier while retaining all ten spectators; do not infer Kirwan connectedness until the resolved fixed-norm current is shown symplectic",
+  "one_factor": {
+    "complex_dimension": 6,
+    "equation_count": 10,
+    "exceptional_fibre": "P^4 over the vertex",
+    "incidence_resolution": "Tot(O_{P^4}(-1) direct-sum O_{P^4}(-1)) -> R",
+    "irreducible": true,
+    "origin_jacobian_rank": 0,
+    "proof": "GL(5,C) x GL(2,C) is transitive on nonzero rank-one matrices; the exact canonical Jacobian rank is four, while all ten minor differentials vanish at the origin",
+    "rank_one_jacobian_rank": 4,
+    "singular_locus": "the vertex 0 only",
+    "variety": "R=Rank_{<=1}(5x2)"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution.py",
+    "generator_sha256": "02b4393b9f74d1cf577a425bd6aa7ade777713095bca3ac87ce3e0cd38d8d71d",
+    "inputs": {
+      "active_divisors": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.json",
+        "sha256": "d92056a32e72613a28c92568a639e922c1a4511733e9670c4354936dd7cef082"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_COMPLEX_SINGULAR_RESOLUTION",
+  "result_state": "CANDIDATE18_COMPLETE_COMPLEX_SINGULAR_LOCUS_AND_INCIDENCE_RESOLUTION_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-same-sign-candidate18-complex-singular-resolution-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution.schema.json",
+  "schema_sha256": "e7b7174cfbca3f92c00f9e34eb2fa1e7822e85ecc97f632bf5e7fc46ece86e25",
+  "scope": {
+    "background": "candidate 18 only",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "the complete complex candidate-18 carrier: ten positive current-orthogonal spectators times two rank-at-most-one 5x2 parity factors",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidate-specific allowed compact momenta, never identified across rho",
+    "m": "all m=-2,...,2",
+    "omega": "candidate-specific certified SUM or DIFFERENCE collision",
+    "parity": "both exact factorized parity channels",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution"
+  ]
+}

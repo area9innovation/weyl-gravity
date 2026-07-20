@@ -1,0 +1,55 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_COMPLEX_SINGULAR_RESOLUTION_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Complete complex singular-locus and incidence-resolution theorem for candidate 18 with all ten positive spectators retained.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution.json": "ce8d59ac4208ef226c4858849af1f26093fb44fb1dfea27e210425820983c480",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution.py": "02b4393b9f74d1cf577a425bd6aa7ade777713095bca3ac87ce3e0cd38d8d71d",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution.py": "5d1d326551dd2f5d0045b0588349545c1a827b5e3b90edbec84b4b6ec4390605",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution.py": "eef94dcfd78e7a7fcfc64e4d3e5ec42fceb0fca21057207931f1d87f81643f0e",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution.schema.json": "e7b7174cfbca3f92c00f9e34eb2fa1e7822e85ecc97f632bf5e7fc46ece86e25",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-candidate18-complex-singular-resolution.md": "cd72626a3136c2aabfacd677fa09bdda1f188b5436d9a8b067069d0a49b3fbbc"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on producer, independent verifier and focused test",
+        "python3 -m json.tool on certificate and schema",
+        "git diff --check on scoped paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": {
+        "producer_check": 0.50,
+        "independent_verifier": 0.49,
+        "focused_tests": 0.48
+      },
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier reconstructs all ten determinantal minors and their Jacobian without importing the producer, checks rank four at a canonical nonzero rank-one point and rank zero at the vertex, and independently checks every component dimension."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutation": "Promote global_zero_fibre_connected from false to true.",
+      "result": "The schema rejects the promotion."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESSED_INPUT_REPLAY",
+      "reason": "The complete candidate-18 rank-one carrier and spectator declaration are hash-pinned; the new singular and resolution dimensions are independently recomputed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a complex singular-carrier theorem, not a real Hamiltonian quotient, paper freeze or shared-core algebra change."
+    }
+  },
+  "claim_boundary": "CERTIFIED for candidate 18's complete complex carrier before fixed norms and group reduction. Real current strata, node phases, lifted rotations, global topology, occupation gluing and later physical maps remain fail-closed."
+}

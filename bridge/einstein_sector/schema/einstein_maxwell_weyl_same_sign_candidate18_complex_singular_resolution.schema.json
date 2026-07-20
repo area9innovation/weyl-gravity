@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "one_factor", "complete_carrier", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-same-sign-candidate18-complex-singular-resolution-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_COMPLEX_SINGULAR_RESOLUTION"},
+    "classification": {
+      "type": "object",
+      "properties": {
+        "candidate18_complete_complex_singular_locus_classified": {"const": true},
+        "candidate18_global_complex_incidence_resolution_constructed": {"const": true},
+        "ten_positive_spectators_retained": {"const": true},
+        "fixed_occupation_real_singular_strata_classified": {"const": false},
+        "lifted_rotation_singular_reduction_classified": {"const": false},
+        "global_zero_fibre_connected": {"const": false}
+      },
+      "required": ["candidate18_complete_complex_singular_locus_classified", "candidate18_global_complex_incidence_resolution_constructed", "ten_positive_spectators_retained", "fixed_occupation_real_singular_strata_classified", "lifted_rotation_singular_reduction_classified", "global_zero_fibre_connected"],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
