@@ -1,0 +1,20 @@
+{
+  "id": "sf:forge-request/science-forge-transactional-provenance-relock",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add a fail-closed, content-addressed provenance-relock planner and transaction runner. The first consumer is sf:program/work/bridge-finite-harmonic-tier3-provenance-relock: one backward-compatible Lee-Wald component API change caused a multi-layer stale-hash cascade, and the resident Bridge team currently has to regenerate dozens of producer families in a shared dirty worktree before discovering the next stale frontier. Certlab detects drift well but does not yet compute and execute the minimal topologically ordered relock closure as one auditable migration.",
+    "depends_on": [
+      "sf:program/work/bridge-finite-harmonic-tier3-provenance-relock"
+    ],
+    "stop_condition": "Given a target certificate, paper gate or result set and a pinned input commit, compute the exact stale transitive closure from declared dependency_refs plus corroborating code-read edges; classify each edge as producer replay, independent verification, schema migration, paper citation or unresolved/undeclared dependency; emit a deterministic topological batch plan with estimated cache hits and resource hints; execute each batch in an isolated worktree or equivalent candidate tree; run producer and independent verifier rails separately; stop at the first semantic defect; and commit only a complete verified batch. Emit one migration receipt containing old/new hashes, commands, elapsed/resource data, cache keys, changed paths, unresolved drift, and proof that unrelated files were not mutated. Demonstrate the gate on the current Bridge finite-harmonic Tier-3 cascade and either relock it completely or return the exact minimal unresolved semantic frontier.",
+    "forbid": "no blind mass rewriting of hashes; no producer replay counted as independent verification; no mutation in the resident shared worktree; no broad git add; no partial downstream relock committed as if the target gate passed; no traversal based only on filename similarity; no undeclared code-read edge silently promoted to an authoritative dependency; no timeout or skipped verifier treated as pass; no paper theorem promotion by this tool",
+    "notes": [
+      "The current Bridge run is an ideal acceptance fixture because the scoped theorem passes while the package-wide provenance closure is stale.",
+      "This should reuse Certlab, the evidence graph, staged-tree verification and content-addressed caches rather than create a separate migration system.",
+      "A dry-run plan is useful immediately even before transactional execution lands."
+    ]
+  }
+}

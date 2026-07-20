@@ -1,0 +1,18 @@
+{
+  "id": "sf:forge-request/science-forge-dashboard-transition-lag-and-advisory-evidence-overlay",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Extend the accepted compact coordinator dashboard with explicit transition-lag diagnostics and a separately typed advisory evidence overlay. During the 2026-07-20 monitoring run, quantum-matter-content-anomaly-cancellation-lattice committed its certified result at a2ca4f9f0 and filed a DONE work report before its terminal transition arrived in 869f367e0; observer-auxiliary-diff-bv-scalar-orbit-repair likewise committed fbc422cfa before the OBSTRUCTED lifecycle close in 2b7058353. The coordinator needs to distinguish ordinary short commit/report/close latency from a stranded ACTIVE lease, and to see when a terminal item has no successor resident wakeup, without treating Git or OS state as authoritative science.",
+    "depends_on": [],
+    "stop_condition": "Add deterministic dashboard findings for at least: (1) ACTIVE_WITH_TERMINAL_REPORT when the newest authoritative WORK_REPORTED disposition is DONE, OBSTRUCTED or SHORTFALL but no matching terminal transition follows it; (2) TERMINAL_WITH_LIVE_LEASE; (3) TERMINAL_WITH_READY_SUCCESSOR_BUT_NO_ACTIVE_RESIDENT after a caller-specified grace interval measured only from explicit event timestamps and --now; (4) REPORTED_COMMIT_NOT_ANCESTOR_OF_HEAD or missing reported commit; and (5) optional UNREPORTED_ALLOWED_PATH_COMMIT and LIVE_PROCESS_HEARTBEAT overlays, both visibly ADVISORY and never folded into lifecycle or result state. Show event/commit identifiers and the exact recommended coordinator action. Provide fixtures for normal short latency, permanently stranded close, shared-worktree foreign commit, clock-free deterministic grace handling, and successful automatic successor pull. The feature may land as part of the accepted SF8 overview item or a follow-up, but must share its single-pass fold and remain fast.",
+    "forbid": "no automatic close, lease release, successor pull, process kill, Git mutation or scientific promotion; no uncommitted file called a result; no OS process or window title treated as agent identity or lifecycle evidence; no raw git-log subject used as a certificate verdict; no wall-clock fallback; no warning before an explicitly configured deterministic grace interval; no second full programme parse that erases the dashboard fast path",
+    "notes": [
+      "This supplements, rather than duplicates, science-forge-coordinator-overview-dashboard.json.",
+      "The two live examples resolved correctly within minutes; the requested value is recognizing when the same intermediate state does not resolve.",
+      "A runtime or Git overlay is operational evidence only. WORK_REPORTED plus terminal transitions remain authoritative."
+    ]
+  }
+}
