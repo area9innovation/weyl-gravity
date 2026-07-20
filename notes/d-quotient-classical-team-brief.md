@@ -2482,6 +2482,19 @@ be tested.  The next choices are order two, another current representative,
 or a larger relative carrier.  None is silently promoted, and no causal or
 quantum consequence is inferred.
 
+The next-order screen is now exact rather than speculative.
+`EINSTEIN_WEYL_RELATIVE_ORDER_TWO_OBSTRUCTION_SENSITIVITY_V1` derives the
+coefficient descent caused by second jets of the transitive stabilizer
+`J_2`.  The complete invariant homogeneous order-two `A1` symbol space has
+dimension 626.  Its induced map to the one-dimensional order-one obstruction
+quotient has rank one: two explicit `SO(2)`-invariant symbols have normalized
+evaluations `-1` and `+1`.  Thus the two-row witness is not rigid under the
+next differential order.  This authorizes the complete endpoint-normalized
+order-two solve and rules out promoting the order-one result into an
+all-finite-order no-go.  It does not prove that the remaining chain equations
+are simultaneously consistent, does not activate `f2`, and does not yet
+require a carrier enlargement or current change.
+
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
 negative-norm one-particle class.  A counterexample is a successful result, not

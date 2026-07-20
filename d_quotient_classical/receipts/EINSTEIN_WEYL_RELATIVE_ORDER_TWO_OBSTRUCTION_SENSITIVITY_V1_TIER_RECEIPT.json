@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ORDER_TWO_OBSTRUCTION_SENSITIVITY_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-20",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "status": "PASS",
+  "artifacts": {
+    "certificate": {
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_TWO_OBSTRUCTION_SENSITIVITY_V1.json",
+      "sha256": "e978e495f571f8e8340814d681645a10590b07a2668d3a4a710cca95db3cbb02"
+    },
+    "producer": {
+      "path": "d_quotient_classical/relative/einstein_weyl_relative_order_two_obstruction_sensitivity.py",
+      "sha256": "96946a3f79d78549f5fe429619247014fd2e586d3ac63efa20253793fa0ac5ac"
+    },
+    "verifier": {
+      "path": "d_quotient_classical/relative/verify_einstein_weyl_relative_order_two_obstruction_sensitivity.py",
+      "sha256": "fdedda5e6858a0ac14a2ff7eac747d7fa3584031b3108b563af23ced37d7c65e"
+    },
+    "tests": {
+      "path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_order_two_obstruction_sensitivity.py",
+      "sha256": "89df79512b19e1b605ec2e8ad4581fd56e1bca37230354a9bb43cce902a5709a"
+    },
+    "schema": {
+      "path": "d_quotient_classical/schema/relative-order-two-obstruction-sensitivity-v1.schema.json",
+      "sha256": "82b5e886a6b81ec87929909176efa4eb20c34f88f5505f0d648445fcc98d16a4"
+    },
+    "report": {
+      "path": "d_quotient_classical/reports/einstein-weyl-relative-order-two-obstruction-sensitivity.md",
+      "sha256": "e2b2e0b36b38c7964a321ed5d819439c2e90ab093d805f9f473d2f77a761b245"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "Python compilation",
+        "strict Draft 2020-12 schema validation",
+        "JSON parsing",
+        "scoped diff check",
+        "content-hash replay"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "producer_elapsed_seconds": 2.84,
+      "producer_max_rss_kib": 60608,
+      "independent_verifier_elapsed_seconds": 1.33,
+      "independent_verifier_max_rss_kib": 60480,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_order_two_obstruction_sensitivity --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_order_two_obstruction_sensitivity",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_order_two_obstruction_sensitivity",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-order-two-obstruction-sensitivity-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_TWO_OBSTRUCTION_SENSITIVITY_V1.json"
+      ],
+      "result": "The complete 626-dimensional invariant A1 order-two symbol space has rank-one surjective sensitivity onto the one-dimensional order-one obstruction quotient; explicit invariant candidates evaluate to -1 and +1."
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This scoped sensitivity theorem promotes no chain-map existence, relative q2, causal bridge, paper theorem or release freeze."
+    }
+  },
+  "science_forge_advisory": {
+    "command": "ci/science-forge-shadow.sh",
+    "status": "FINDINGS",
+    "scope_effect": "The advisory bridge audit reported pre-existing corpus drift and the coverage census exceeded its 2026-07-19 baseline. The rail exited zero by design. These findings do not enter the scoped exact sensitivity proof and were not treated as a pass for any affected bridge certificate."
+  },
+  "claim_boundary": "This receipt certifies only that order-two invariant A1 symbols act nontrivially and surjectively on the one-dimensional order-one obstruction quotient. It authorizes but does not solve the complete order-two chain system, activate f2, require a current change or carrier enlargement, or establish causal, observable, particle or quantum claims."
+}

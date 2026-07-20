@@ -1,0 +1,223 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC sensitivity theorem proves that the complete 626-dimensional invariant A1 order-two symbol space is not annihilated by the one-dimensional order-one obstruction quotient: two explicit isotropy-invariant symbols evaluate to -1 and +1. It authorizes, but does not solve, the full order-two chain system. It does not establish an order-two chain map, activate f2, require a carrier enlargement, decide current improvements, or imply any causal, observable, particle or quantum claim.",
+  "classification": {
+    "all_finite_orders_obstructed": false,
+    "carrier_enlargement_required": false,
+    "causal_observable_particle_or_quantum_claim": false,
+    "current_improvement_obstructed": false,
+    "f2_incidence_activated": false,
+    "full_order_two_solve_authorized": true,
+    "order_two_chain_map_exists": false,
+    "order_two_chain_map_obstructed": false,
+    "order_two_symbol_can_change_order_one_obstruction": true
+  },
+  "dependencies": {
+    "invariant_ansatz": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1.json",
+      "sha256": "53658ff578ae143051629765d12b4681816421c108b95222c50a9ac06f385fc1"
+    },
+    "order_one_obstruction": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1.json",
+      "sha256": "7d9cb25672c2329d6b13aeb05d3303a214de614d941f0c3be5e8d9ec289b8464"
+    },
+    "target_q1": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q1",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/q1.json",
+      "sha256": "43c00909830fde902cf1332eae804f6edd6ad263bef7ce61d08bdbd20449290b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "induced_sensitivity": {
+    "derivation": "second jets of the transitive stabilizer J_2 feed the first coefficient jet of A1; q1_W then reaches the normalized two-row obstruction",
+    "explicit_invariant_candidates": [
+      {
+        "id": "time_plane_scalar",
+        "isotropy_residual_nonzero_entries": 0,
+        "normalized_obstruction_sensitivity": "-1",
+        "records": [
+          {
+            "A1_output_local": 5,
+            "P3_input_local": 2,
+            "coefficient": "1",
+            "word": [
+              0,
+              2
+            ]
+          },
+          {
+            "A1_output_local": 6,
+            "P3_input_local": 2,
+            "coefficient": "1",
+            "word": [
+              0,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "id": "space_plane_scalar",
+        "isotropy_residual_nonzero_entries": 0,
+        "normalized_obstruction_sensitivity": "1",
+        "records": [
+          {
+            "A1_output_local": 2,
+            "P3_input_local": 2,
+            "coefficient": "1",
+            "word": [
+              1,
+              2
+            ]
+          },
+          {
+            "A1_output_local": 3,
+            "P3_input_local": 2,
+            "coefficient": "1",
+            "word": [
+              1,
+              3
+            ]
+          }
+        ]
+      }
+    ],
+    "rank_to_obstruction_quotient": 1,
+    "raw_nonzero_coordinates": [
+      {
+        "A1_output_local": 5,
+        "P3_input_local": 2,
+        "coefficient": "-1",
+        "word": [
+          0,
+          2
+        ]
+      },
+      {
+        "A1_output_local": 2,
+        "P3_input_local": 2,
+        "coefficient": "1",
+        "word": [
+          1,
+          2
+        ]
+      }
+    ],
+    "surjective": true
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "SOLVE_THE_COMPLETE_ENDPOINT_NORMALIZED_INVARIANT_ORDER_TWO_CHAIN_SYSTEM_BEFORE_ACTIVATING_F2",
+  "obstruction_quotient": {
+    "dimension": 1,
+    "normalized_left_null_evaluation": "1",
+    "source_certificate_augmented_rank": 399,
+    "source_certificate_rank": 398,
+    "witness_rows": [
+      {
+        "input_local": 2,
+        "input_row": 82,
+        "input_row_id": "P_H_3_t_theta_phi",
+        "output_local": 1,
+        "output_row": 35,
+        "output_row_id": "c_1_star",
+        "rhs": "0",
+        "row": 70,
+        "word": [
+          0
+        ]
+      },
+      {
+        "input_local": 2,
+        "input_row": 82,
+        "input_row_id": "P_H_3_t_theta_phi",
+        "output_local": 0,
+        "output_row": 34,
+        "output_row_id": "c_0_star",
+        "rhs": "-1",
+        "row": 339,
+        "word": [
+          1
+        ]
+      }
+    ]
+  },
+  "order_two_symbol_space": {
+    "bundle_map": "A1:P3(20)->W1(14)",
+    "canonical_derivative_words": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "homogeneous_invariant_dimension": 626,
+    "isotropy": "SO(2)"
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_order_two_obstruction_sensitivity.py": "96946a3f79d78549f5fe429619247014fd2e586d3ac63efa20253793fa0ac5ac",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_order_two_obstruction_sensitivity.py": "89df79512b19e1b605ec2e8ad4581fd56e1bca37230354a9bb43cce902a5709a",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_order_two_obstruction_sensitivity.py": "fdedda5e6858a0ac14a2ff7eac747d7fa3584031b3108b563af23ced37d7c65e",
+      "d_quotient_classical/schema/relative-order-two-obstruction-sensitivity-v1.schema.json": "82b5e886a6b81ec87929909176efa4eb20c34f88f5505f0d648445fcc98d16a4"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_order_two_obstruction_sensitivity --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_order_two_obstruction_sensitivity",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_order_two_obstruction_sensitivity"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ORDER_TWO_OBSTRUCTION_SENSITIVITY_V1",
+  "result_state": "ORDER_TWO_SYMBOLS_ACT_NONTRIVIALLY_ON_ORDER_ONE_OBSTRUCTION",
+  "schema": "pure-weyl-relative-order-two-obstruction-sensitivity-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "support-local homogeneous differential-operator ansatz before harmonic or causal reduction",
+    "carrier": "A1:P3(20)->W1(14), A2:P4(5)->W2(6)",
+    "charge_sector": "five connected spacetime stabilizer currents",
+    "degree": "one and two",
+    "ell": "not harmonic-reduced",
+    "k": "arbitrary local covector",
+    "m": "not harmonic-reduced",
+    "omega": "arbitrary local covector",
+    "parity": "even chain-map components",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  }
+}

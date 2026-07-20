@@ -216,6 +216,22 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         )
         self.assertIn("rank 398 and augmented rank 399", entry["claim_boundary"])
         self.assertIn("before f2 can be tested", entry["claim_boundary"])
+        self.assertIn(
+            "EINSTEIN_WEYL_RELATIVE_ORDER_TWO_OBSTRUCTION_SENSITIVITY_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "626-dimensional invariant A1 order-two symbol space",
+            entry["claim_boundary"],
+        )
+        self.assertIn(
+            "sensitivity has rank one and is surjective",
+            entry["claim_boundary"],
+        )
+        self.assertIn(
+            "does not establish that a simultaneous order-two chain map exists",
+            entry["claim_boundary"],
+        )
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OBSTRUCTED")
 
     def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:

@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/relative-order-two-obstruction-sensitivity-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "scope",
+    "dependencies",
+    "obstruction_quotient",
+    "order_two_symbol_space",
+    "induced_sensitivity",
+    "classification",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-order-two-obstruction-sensitivity-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_ORDER_TWO_OBSTRUCTION_SENSITIVITY_V1"},
+    "result_state": {"const": "ORDER_TWO_SYMBOLS_ACT_NONTRIVIALLY_ON_ORDER_ONE_OBSTRUCTION"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC"]
+    },
+    "scope": {"type": "object"},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "order_one_obstruction": {"$ref": "#/$defs/artifact"},
+        "invariant_ansatz": {"$ref": "#/$defs/artifact"},
+        "target_q1": {"$ref": "#/$defs/artifact"}
+      },
+      "required": ["order_one_obstruction", "invariant_ansatz", "target_q1"]
+    },
+    "obstruction_quotient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dimension",
+        "source_certificate_rank",
+        "source_certificate_augmented_rank",
+        "normalized_left_null_evaluation",
+        "witness_rows"
+      ],
+      "properties": {
+        "dimension": {"const": 1},
+        "source_certificate_rank": {"const": 398},
+        "source_certificate_augmented_rank": {"const": 399},
+        "normalized_left_null_evaluation": {"const": "1"},
+        "witness_rows": {"type": "array", "minItems": 2, "maxItems": 2}
+      }
+    },
+    "order_two_symbol_space": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bundle_map",
+        "isotropy",
+        "homogeneous_invariant_dimension",
+        "canonical_derivative_words"
+      ],
+      "properties": {
+        "bundle_map": {"const": "A1:P3(20)->W1(14)"},
+        "isotropy": {"const": "SO(2)"},
+        "homogeneous_invariant_dimension": {"const": 626},
+        "canonical_derivative_words": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10
+        }
+      }
+    },
+    "induced_sensitivity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "derivation",
+        "raw_nonzero_coordinates",
+        "explicit_invariant_candidates",
+        "rank_to_obstruction_quotient",
+        "surjective"
+      ],
+      "properties": {
+        "derivation": {"type": "string", "minLength": 20},
+        "raw_nonzero_coordinates": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/record"}
+        },
+        "explicit_invariant_candidates": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "records",
+              "isotropy_residual_nonzero_entries",
+              "normalized_obstruction_sensitivity"
+            ],
+            "properties": {
+              "id": {"type": "string"},
+              "records": {
+                "type": "array",
+                "minItems": 2,
+                "items": {"$ref": "#/$defs/record"}
+              },
+              "isotropy_residual_nonzero_entries": {"const": 0},
+              "normalized_obstruction_sensitivity": {"enum": ["-1", "1"]}
+            }
+          }
+        },
+        "rank_to_obstruction_quotient": {"const": 1},
+        "surjective": {"const": true}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "order_two_symbol_can_change_order_one_obstruction",
+        "full_order_two_solve_authorized",
+        "order_two_chain_map_exists",
+        "order_two_chain_map_obstructed",
+        "all_finite_orders_obstructed",
+        "current_improvement_obstructed",
+        "carrier_enlargement_required",
+        "f2_incidence_activated",
+        "causal_observable_particle_or_quantum_claim"
+      ],
+      "properties": {
+        "order_two_symbol_can_change_order_one_obstruction": {"const": true},
+        "full_order_two_solve_authorized": {"const": true},
+        "order_two_chain_map_exists": {"const": false},
+        "order_two_chain_map_obstructed": {"const": false},
+        "all_finite_orders_obstructed": {"const": false},
+        "current_improvement_obstructed": {"const": false},
+        "carrier_enlargement_required": {"const": false},
+        "f2_incidence_activated": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "SOLVE_THE_COMPLETE_ENDPOINT_NORMALIZED_INVARIANT_ORDER_TWO_CHAIN_SYSTEM_BEFORE_ACTIVATING_F2"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        },
+        "verification_commands": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "word",
+        "A1_output_local",
+        "P3_input_local",
+        "coefficient"
+      ],
+      "properties": {
+        "word": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "integer", "minimum": 0, "maximum": 3}
+        },
+        "A1_output_local": {"type": "integer", "minimum": 0, "maximum": 13},
+        "P3_input_local": {"type": "integer", "minimum": 0, "maximum": 19},
+        "coefficient": {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"}
+      }
+    }
+  }
+}

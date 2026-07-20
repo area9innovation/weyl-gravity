@@ -2064,6 +2064,17 @@ activated.  Bridge 1 must next classify order two, change the current
 representative, or enlarge the relative carrier.  No support-local lift or
 repaired relative q2 has been promoted.
 
+The first discriminator among those choices is now certified by
+`EINSTEIN_WEYL_RELATIVE_ORDER_TWO_OBSTRUCTION_SENSITIVITY_V1`.  Second
+stabilizer jets induce a nonzero descent from the complete
+626-dimensional invariant `A1` order-two symbol space to the
+one-dimensional order-one obstruction quotient.  Two sparse
+`SO(2)`-invariant symbols evaluate to `-1` and `+1`, so the sensitivity map
+has rank one and is onto.  Consequently the order-one witness is not an
+all-order obstruction and the full order-two chain solve is the active
+Bridge-1 gate.  Existence, `f2`, action-pairing transport and the causal
+bridge remain fail-closed.
+
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains
 `NO_CERTIFIED_MAP`; the relative functor may be prepared but Bridge 1 is not

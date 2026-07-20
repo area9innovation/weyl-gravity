@@ -138,6 +138,14 @@ def verify() -> None:
         raise AssertionError("order-one obstruction ranks missing")
     if "before f2 can be tested" not in pullback["claim_boundary"]:
         raise AssertionError("f2 dependency boundary missing")
+    if "EINSTEIN_WEYL_RELATIVE_ORDER_TWO_OBSTRUCTION_SENSITIVITY_V1" not in evidence_ids:
+        raise AssertionError("order-two obstruction-sensitivity evidence missing")
+    if "626-dimensional invariant A1 order-two symbol space" not in pullback["claim_boundary"]:
+        raise AssertionError("order-two invariant sensitivity census missing")
+    if "sensitivity has rank one and is surjective" not in pullback["claim_boundary"]:
+        raise AssertionError("order-two obstruction quotient action missing")
+    if "does not establish that a simultaneous order-two chain map exists" not in pullback["claim_boundary"]:
+        raise AssertionError("order-two sensitivity was overpromoted")
     if pullback["mode_data"]["taub_maps"]["status"] != "OBSTRUCTED":
         raise AssertionError("order-one relative incidence not fail-closed")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
