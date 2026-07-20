@@ -575,3 +575,26 @@ def test_ward_cokernel_irrep_request_fails_closed_on_nonclosure():
     assert "BERGER_WARD_COKERNEL_IRREP_CLOSURE_OBSTRUCTION" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_minimal_invariant_scalar_hessian_reaches_display_but_not_source():
+    row = next(
+        row
+        for row in build()["entries"]
+        if row["id"]
+        == "observer.berger.interaction.minimal_invariant_scalar_hessian_channel_no_go"
+    )
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["descriptions"]["nonlinear"] == "OBSTRUCTED"
+    assert row["descriptions"]["observational"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "OBSTRUCTED"
+    assert "all eight transverse pseudoscalar coordinates" in row[
+        "observer_data"
+    ]["survives_gauge_reduction"]["statement"]
+    assert "raises it to seven" in row["observer_data"][
+        "observer_source_channel"
+    ]["statement"]
+    assert "BERGER_MINIMAL_INVARIANT_SCALAR_HESSIAN_CHANNEL_NO_GO" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

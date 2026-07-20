@@ -1,0 +1,126 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_MINIMAL_INVARIANT_SCALAR_HESSIAN_CHANNEL_NO_GO_TIER_RECEIPT",
+  "subject_result_id": "BERGER_MINIMAL_INVARIANT_SCALAR_HESSIAN_CHANNEL_NO_GO",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "science_forge_work_item": "sf:program/work/observer-minimal-invariant-scalar-hessian-channel",
+  "input_commit": "bab60f60",
+  "tested_tree_head": "aaaaf9c240534c23001890dca6f9fd475a6b0257",
+  "commands": [
+    {
+      "test_tier": 0,
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_minimal_invariant_scalar_hessian_channel_no_go.py closed_universe_observers/verify_berger_minimal_invariant_scalar_hessian_channel_no_go.py closed_universe_observers/tests/test_berger_minimal_invariant_scalar_hessian_channel_no_go.py",
+      "elapsed_seconds": 0.04,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 0,
+      "command": "python3 -m json.tool on both schemas and both generated JSON artifacts; git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md",
+      "elapsed_seconds": 1.2,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.generate_berger_minimal_invariant_scalar_hessian_channel_no_go --emit",
+      "elapsed_seconds": 0.47,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.generate_berger_minimal_invariant_scalar_hessian_channel_no_go --check",
+      "elapsed_seconds": 0.34,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.verify_berger_minimal_invariant_scalar_hessian_channel_no_go",
+      "elapsed_seconds": 0.41,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_minimal_invariant_scalar_hessian_channel_no_go.py closed_universe_observers/tests/test_berger_ward_cokernel_irrep_closure_obstruction.py closed_universe_observers/tests/test_berger_common_action_obstruction_module.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+      "elapsed_seconds": 16.62,
+      "status": "PASS",
+      "detail": "58 passed"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+      "elapsed_seconds": 1.57,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 2,
+      "command": "independent local-action differentiation and 900-coordinate quotient reconstruction in verify_berger_minimal_invariant_scalar_hessian_channel_no_go",
+      "elapsed_seconds": 0.41,
+      "status": "PASS",
+      "detail": "independently classified the two transverse invariants and unique reflection-odd line, differentiated four local action monomials to 48 cyclic q2 keys, reconstructed both Ward columns, checked exact Berger equivariance, ranks 4/6/7, the 112-coordinate invariant residual and the 24-coordinate profile-first-jet obstruction"
+    },
+    {
+      "test_tier": "advisory",
+      "command": "bash ci/science-forge-shadow.sh",
+      "elapsed_seconds": 3.05,
+      "status": "ADVISORY_PASS_WITH_FINDINGS",
+      "detail": "pre-existing bridge certificate drift, unpinned dirty Forge build and corpus growth to 1210 certificates versus baseline 976"
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": "SATISFIED by independent action differentiation, representation classification, exact closure quotient and generated atlas consumer",
+    "tier_3": "NOT_RUN: no freeze, release, paper theorem, shared-core algebra change or quantum promotion"
+  },
+  "artifacts": [
+    {
+      "path": "closed_universe_observers/generate_berger_minimal_invariant_scalar_hessian_channel_no_go.py",
+      "sha256": "096a75329fb965e34b7f6215118746f93dbf16621d3f0f0025b979578c730817"
+    },
+    {
+      "path": "closed_universe_observers/verify_berger_minimal_invariant_scalar_hessian_channel_no_go.py",
+      "sha256": "3e9bee33e198073fe2f87b4c7cfde965e5828a83f3afe3b467727093b0b37959"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_berger_minimal_invariant_scalar_hessian_channel_no_go.py",
+      "sha256": "93af500b6021b8007c6b29749799716f87271159370a7bd6b35abe60b7b89ef0"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-minimal-invariant-scalar-hessian-channel-no-go-v1.schema.json",
+      "sha256": "446cdf47d6873288bebb25220961bde05e8ef196b7486151a4aa8229ec132d1f"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-minimal-invariant-scalar-hessian-channel-no-go-payload-v1.schema.json",
+      "sha256": "f181d97bea79a77a7778a6343d399e58de708c778e943c8b24f05814c1de3316"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_MINIMAL_INVARIANT_SCALAR_HESSIAN_CHANNEL_NO_GO.json",
+      "sha256": "ea546dcda0fc75d1a6bab315487d43d833274b2e48fd54caae0e3be4187f737c"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_MINIMAL_INVARIANT_SCALAR_HESSIAN_CHANNEL_NO_GO_PAYLOAD.json",
+      "sha256": "21e1d10f6f00a6a86318b37b1fa9a03706cb24a766b2eec6e189d18721a108c2"
+    },
+    {
+      "path": "closed_universe_observers/reports/berger-minimal-invariant-scalar-hessian-channel-no-go.md",
+      "sha256": "96f3c4967d404e7c22c34fae04bb44a28d95a5a7f916704f91925f4c57b9b289"
+    },
+    {
+      "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "sha256": "3639a2c7d07ed297fe260f0791467467093cc52e73be270510a2388ff973c28e"
+    }
+  ],
+  "flags": {
+    "ADDITIONAL_OUTER_SCALAR_PAIR_ADDED": false,
+    "UNIQUE_REFLECTION_ODD_TRANSVERSE_INVARIANT_CERTIFIED": true,
+    "LOCAL_ACTION_HESSIAN_AND_CYCLIC_Q2_CERTIFIED": true,
+    "DISPLAYED_MINUS_TWO_PROJECTION_CANCELLED": true,
+    "COMPLETE_TYPED_MAXWELL_SOURCE_IN_IMAGE": false,
+    "PROFILE_FIRST_JET_OBSTRUCTION_CERTIFIED": true,
+    "REPRESENTATION_COMPLETE_COMMON_ACTION_EXISTS": false,
+    "OBSERVER_Q1_Q2_FREEZE_AUTHORIZED": false,
+    "Q3_AUTHORIZED": false,
+    "DETECTOR_REDSHIFT_AUTHORIZED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

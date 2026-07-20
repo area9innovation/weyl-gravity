@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "closure_basis_ref",
+    "local_action_entries",
+    "cyclic_q2_entries",
+    "ward_vectors_on_900_coordinate_closure"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-minimal-invariant-scalar-hessian-channel-no-go-payload-v1"
+    },
+    "result_id": {
+      "const": "BERGER_MINIMAL_INVARIANT_SCALAR_HESSIAN_CHANNEL_NO_GO_PAYLOAD"
+    },
+    "closure_basis_ref": {"type": "object"},
+    "local_action_entries": {"type": "object"},
+    "cyclic_q2_entries": {"type": "object"},
+    "ward_vectors_on_900_coordinate_closure": {"type": "object"}
+  }
+}

@@ -1461,11 +1461,48 @@ is necessary and sufficient only at module level.  Action-level sufficiency
 remains `NO_CERTIFIED_MAP` until a representation-complete auxiliary
 `A`--`K` Hessian domain on the 900-coordinate closure is declared and its
 action-to-Ward differentiation map is computed.  That declaration and replay
-is the currently active unsplit bridge and its activation gate.  The
-fail-closed atlas row is
+was the representation-closure successor gate; its result is recorded below.
+The representation-closure fail-closed atlas row is
 `observer.berger.interaction.ward_cokernel_irrep_closure_obstruction`;
 detector, redshift, tangent-cone, physical-branch and quantum promotion remain
 unauthorized.
+
+`BERGER_MINIMAL_INVARIANT_SCALAR_HESSIAN_CHANNEL_NO_GO` now performs that
+action-level realization test on the exact 900-coordinate closure.  It reuses
+the certified single degree-`(0,1)` scalar conjugate pair and adds no further
+outer scalar pair.  On the transverse Berger plane the invariant rank-two
+tensors are exactly `delta_ij` and `epsilon_ij`; imposing transverse-reflection
+oddness selects the unique epsilon line.  The local common action
+
+```text
+S_epsilon = sum_b gamma_b integral chi g_b h_b
+            epsilon^ij (e_i A_0)(e_j K_b,12)
+```
+
+has two monomials per emitter.  Exact differentiation through the signed odd
+pairing produces 24 cyclic `q2` keys and four invariant Ward coordinates per
+emitter.  These two source-labelled columns add rank two to the old rank-four
+image.  The resulting closed quotient has dimension 894 and exact isotypic
+dimensions `(454,424,16)`.
+
+The unique normalization `gamma_0=gamma_1=2` cancels all eight transverse
+pseudoscalar coordinates, including the displayed `-2 g0 h0` term.  This
+shows why a nonzero decisive-coordinate projection was necessary but not
+sufficient: the complete typed-Maxwell source still raises the enlarged image
+rank from six to seven.  Its normalized residual has 112 coordinates and is
+again an invariant weight-zero line.
+
+The next obstruction is already visible without another broad search.  The
+24-coordinate profile-first-jet sector proportional to `g_b h_b'` has zero
+epsilon-channel support; the projected old-plus-epsilon image has rank two,
+and adjoining that source sector raises it to three.  The currently active
+unsplit bridge is therefore classification of local Berger-invariant scalar
+Hessian channels with nonzero profile-first-jet Ward projection.  The
+fail-closed atlas row is
+`observer.berger.interaction.minimal_invariant_scalar_hessian_channel_no_go`.
+The non-closed 440-dimensional carrier is not decomposed, no fitted column or
+extra scalar pair is admitted, and q3, detector, redshift, tangent-cone,
+physical-branch and quantum promotion remain unauthorized.
 
 Within that inactive bridge, the numerical recoil input-contract audit is now
 complete.  The next activation gate requires a provenance-complete

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "auxiliary_cyclic_domain",
+    "transverse_tensor_classification",
+    "local_common_action",
+    "image_in_representation_closure",
+    "normalized_residual",
+    "next_invariant_obstruction",
+    "mutations",
+    "proof_obligation_dag",
+    "activation_disposition",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-minimal-invariant-scalar-hessian-channel-no-go-v1"
+    },
+    "result_id": {
+      "const": "BERGER_MINIMAL_INVARIANT_SCALAR_HESSIAN_CHANNEL_NO_GO"
+    },
+    "setting_id": {"type": "string"},
+    "claim_status": {
+      "const": "OBSTRUCTED_MINIMAL_EPSILON_HESSIAN_LEAVES_PROFILE_JET_CLASS"
+    },
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "dependency_refs": {"type": "object", "minProperties": 6, "maxProperties": 6},
+    "payload_ref": {"type": "object"},
+    "auxiliary_cyclic_domain": {"type": "object"},
+    "transverse_tensor_classification": {"type": "object"},
+    "local_common_action": {"type": "object"},
+    "image_in_representation_closure": {"type": "object"},
+    "normalized_residual": {"type": "object"},
+    "next_invariant_obstruction": {"type": "object"},
+    "mutations": {"type": "object"},
+    "proof_obligation_dag": {"type": "array", "minItems": 7, "maxItems": 7},
+    "activation_disposition": {"type": "object"},
+    "next_gate": {
+      "const": "CLASSIFY_LOCAL_BERGER_INVARIANT_SCALAR_HESSIAN_CHANNELS_WITH_NONZERO_PROFILE_FIRST_JET_WARD_PROJECTION"
+    },
+    "claim_boundary": {"type": "string", "minLength": 1800},
+    "provenance": {"type": "object"}
+  }
+}
