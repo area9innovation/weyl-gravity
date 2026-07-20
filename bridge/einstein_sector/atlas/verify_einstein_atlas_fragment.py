@@ -762,6 +762,18 @@ def verify() -> None:
         raise AssertionError("complete deformable-kernel lifecycle drifted")
     if "does not identify candidates 17 and 20" not in complete_deformable["claim_boundary"] or "occupation strata" not in complete_deformable["claim_boundary"] or "all-orders" not in complete_deformable["claim_boundary"]:
         raise AssertionError("complete deformable-kernel fail-closed boundary disappeared")
+    component_classification = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_component_incidence_classification"]
+    component_second = component_classification["mode_data"]["second_order"]
+    if component_classification["descriptions"]["nonlinear"] != "CERTIFIED" or "four exhaustive occupation strata" not in component_classification["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("candidate-specific component stratum ledger was hidden")
+    if component_classification["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "exactly one path component" not in component_classification["mode_data"]["taub_maps"]["statement"] or "no nonincident component" not in component_classification["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-specific pi_0 classification changed")
+    if "G=0" not in component_classification["mode_data"]["resonance"]["statement"] or "F=0" not in component_classification["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-specific incidence strata disappeared")
+    if component_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or component_second["smooth_secular"]["status"] != "CERTIFIED" or component_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("component-incidence lifecycle drifted")
+    if "does not identify candidates" not in component_classification["claim_boundary"] or "glue distinct total occupations" not in component_classification["claim_boundary"] or "final residual descent" not in component_classification["claim_boundary"]:
+        raise AssertionError("component-incidence fail-closed boundary disappeared")
     independent_scaling = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_independent_node_scaling_contraction"]
     independent_second = independent_scaling["mode_data"]["second_order"]
     if independent_scaling["descriptions"]["nonlinear"] != "CERTIFIED" or "I={(x,y)" not in independent_scaling["mode_data"]["taub_maps"]["statement"] or "positive collinearity" not in independent_scaling["mode_data"]["taub_maps"]["statement"]:

@@ -4392,6 +4392,27 @@ separate.  Distinct total-occupation gluing, a global Hausdorff leaf space,
 final residual descent, all-orders integration and causal, observational or
 quantum maps remain open or `NO_CERTIFIED_MAP`.
 
+The successor component-classification ledger makes the resulting
+`pi_0` statement explicit rather than leaving it implicit in the universal
+path.  Candidate 17 on `delta<0<alpha`, candidate 20 on
+`delta<0<alpha`, and candidate 20 on `alpha<0<delta` each have exactly one
+admissible component, and that component meets `I={c=0=M_K}`.  The
+occupation partition is
+
+```text
+x>0,y>0;  x=0,y>0;  x>0,y=0;  x=y=0.
+```
+
+It is refined by every realized compact stabilizer type.  In particular,
+the `F=0` and `G=0` boundaries retain their vanished-node phase stabilizers,
+and the origin retains the full kernel-pair isotropy.  The paths are paths
+of the whole stratified quotient and may cross orbit-type frontiers through
+compact-group slices; no freeness assumption or principal-stratum deletion
+is used.  Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_component_incidence_classification`
+is bounded and smooth-secular `CERTIFIED`, while occupation gluing and final
+residual descent remain fail-closed.
+
 The active Bridge-1 handoff is therefore no longer kernel-direction
 topology.  Its next admissible gate is to decide whether the intended final
 residual quotient requires gluing distinct total-occupation strata and then

@@ -1,0 +1,80 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_COMPONENT_INCIDENCE_CLASSIFICATION_V1_TIER_RECEIPT",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_COMPONENT_INCIDENCE_CLASSIFICATION",
+  "date": "2026-07-20",
+  "scope": "Candidate-specific pi_0 and zero-wall-incidence classification of the fixed-positive-active-occupation candidate-17/20 strict-sign admissible compact quotients, retaining all four occupation strata and every realized compact stabilizer type.",
+  "input_baseline": "9dd1c629",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_component_incidence_classification.json": "4fa03d6456b271a2ec64da3019dc070d80f995a94df4a44184d386c2fcd283c7",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_component_incidence_classification.py": "abaf6431fd7c3e7b4519814afda3a9357345c0d6941b4b80b423eb54bb46de99",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_component_incidence_classification.schema.json": "a42bbb1c2b68a4b49656cad306b33bc6c70398f65b1f1e3098485ea9e46b900b",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate17_20_component_incidence_classification.py": "e27725ea6cefe19221bb5f321082f490d1e9101ff0ac6c705c7a390cf7c7bc51",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate17_20_component_incidence_classification.py": "6271883d05f9c01949b5f5cd7b3596240375aba94a000edd730eda7811f7f4d2",
+    "bridge/reports/einstein-maxwell-weyl-same-sign-candidate17-20-component-incidence-classification.md": "1d4352e72830a3a9db5def00e6faef7b098efb873d69e0b8e309b1ae55df7740"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on the producer, independent verifier, focused tests and atlas consumers",
+        "python3 -m json.tool on the theorem certificate, schema, atlas and receipts",
+        "git diff --check on the scoped theorem, atlas, report and brief paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.93,
+      "tests_run": {
+        "theorem": 6,
+        "atlas": 120
+      },
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_component_incidence_classification --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_component_incidence_classification",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_component_incidence_classification",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 -m residual_atlas.validate_fragment bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 -m bridge.einstein_sector.atlas.verify_einstein_atlas_fragment",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier independently reconstructs both one-zero-node incidence identities, two rational chamber fixtures, both wrong-node mutation signs, the exhaustive four-case occupation truth table, forced zero-node stabilizers and the candidate-specific singleton-component logic from content-addressed predecessors."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutations": [
+        "Delete F rather than G in the negative-delta chamber.",
+        "Delete G rather than F in the positive-delta chamber.",
+        "Omit either one-zero-node occupation stratum or the maximally nonfree origin.",
+        "Promote candidate identification, total-occupation gluing, final residual descent or a causal/observer/quantum map."
+      ],
+      "result": "The wrong-node fixtures have opposite wall signs; the four-case truth table becomes incomplete if a boundary is omitted; schema and focused tests reject every forbidden promotion."
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The affected content-addressed incidence-normal-form, complete-contraction, moving-square, balanced-radial and connected-hub inputs feed the new candidate-specific classification. Its regenerated atlas row passed schema validation, independent evidence-link verification and all 120 atlas tests."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a theorem-level presentation successor for an already certified fixed-occupation finite-carrier contraction, not a repository freeze, release, shared-core algebra change, distinct-occupation gluing, final residual descent or higher-lifecycle promotion."
+    },
+    "science_forge_advisory_shadow": {
+      "status": "FINDINGS_RECORDED_NOT_A_PASS",
+      "elapsed_seconds": 3.36,
+      "command": "ci/science-forge-shadow.sh",
+      "findings": [
+        "The advisory bridge certlab audit reported pre-existing hash drift across multiple registered bridge artifacts and the intentionally regenerated Einstein atlas receipt.",
+        "The advisory coverage census found 1198 certificates versus its 976-certificate 2026-07-19 baseline.",
+        "The toolchain identified an unpinned development Forge binary whose build revision differs from the current Forge checkout."
+      ],
+      "disposition": "The shadow rail is advisory and exited zero by design; its FAIL/DRIFT findings are not recorded as a pass and do not promote this theorem. The scoped producer, independent verifier, schema and atlas consumer rails above remain the claim evidence."
+    }
+  },
+  "claim_boundary": "CERTIFIED only for candidate-specific pi_0 and incidence on the compact fixed-positive-active-occupation singular carriers. Candidate identification, distinct total-occupation gluing, global Hausdorff quotient construction outside the carrier, final residual descent, all mixed cones or evolution, causal propagation, observation and quantum claims remain open or fail-closed."
+}

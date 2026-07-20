@@ -124,6 +124,7 @@ CERTIFICATES = {
     "same_sign_candidate17_20_independent_node_scaling_contraction": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.json",
     "same_sign_candidate17_20_deformable_kernel_incidence_normal_form": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.json",
     "same_sign_candidate17_20_deformable_kernel_complete_contraction": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction.json",
+    "same_sign_candidate17_20_component_incidence_classification": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_component_incidence_classification.json",
     "same_sign_active_phase_reduced_presymplectic_divisors": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
     "same_sign_active_local_rotation_leaf_descent": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
@@ -1272,6 +1273,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","Combining the new opposite-sign path with the repaired same-sign/alpha=0 path and candidate-20 balance contraction proves the complete fixed-positive-occupation singular rotation-zero unions connected for candidates 17 and 20."),("CERTIFIED","All paths are finite smooth exponential-polynomial carrier paths; this is not an all-orders solution theorem."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_candidate17_20_deformable_kernel_complete_contraction","same_sign_candidate17_20_deformable_kernel_incidence_normal_form","same_sign_candidate17_20_moving_square_contraction","same_sign_candidate17_20_singular_radial_contraction","same_sign_candidate17_20_double_singular_rotation_zero_fibre","same_sign_third_transvectant_singular_locus"),
             "This closes fixed-positive-active-occupation singular rotation-zero topology only. It does not identify candidates 17 and 20, glue distinct total-occupation strata, construct a global Hausdorff leaf space beyond this carrier, perform final residual descent, establish all-orders integration, or supply causal, observational or quantum maps.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_component_incidence_classification",
+            _scope(theory="Weyl-Maxwell target", background="candidate 17 and candidate 20 retained separately; the two candidate-20 off-balance delta-sign chambers are also separate", boundaries="closed S1_L times S2 on each fixed positive active occupation after compactifying both K-node occupations and quotienting node phases and lifted rotations, before occupation gluing or final residual descent", carrier="the strict alpha*delta<0 admissible orbit spaces with four exhaustive occupation strata and every realized compact orbit type, including nonfree stabilizers", degree=2, parity="both labelled factorized parity channels", ell="input 2 x 2; output L=1", m="all m=-2,...,2 in the compact spin-two kernel carrier", k="candidate-specific signed compact momenta, never identified across candidates", omega="candidate-specific DIFFERENCE collision in the strict opposite-sign chambers", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Candidate 17 has one rho_17 component ledger; candidate 20 has separate negative- and positive-delta rho_20 ledgers. No mode or background identification is made."),
+            ("CERTIFIED","The four exhaustive occupation strata are interior, F-zero, G-zero and origin, each refined by every realized compact stabilizer type. Zero-node phase stabilizers and the full origin isotropy are retained."),
+            ("CERTIFIED","Each of the three strict-sign candidate chambers has exactly one path component. Its unique component meets I={c=0=M_K}; no nonincident component exists."),
+            ("CERTIFIED","For delta<0 the incidence lies on G=0 at x=-delta/a; for delta>0 it lies on F=0 at y=delta/b. The independently checked wrong-node paths cross the wall prematurely."),
+            _second_order(("CERTIFIED","The candidate-specific pi_0 classification completes the fixed-positive-occupation bounded singular carrier."),("CERTIFIED","The same finite carrier paths are smooth exponential-polynomial paths; this does not establish all-orders integration."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate17_20_component_incidence_classification","same_sign_candidate17_20_deformable_kernel_complete_contraction","same_sign_candidate17_20_deformable_kernel_incidence_normal_form","same_sign_candidate17_20_moving_square_contraction","same_sign_candidate17_20_singular_radial_contraction","same_sign_candidate17_20_double_singular_rotation_zero_fibre"),
+            "This classifies candidate-specific pi_0 and zero-wall incidence only on fixed positive active occupations. It does not identify candidates, glue distinct total occupations, construct a global Hausdorff quotient outside this carrier, perform final residual descent, solve all mixed cones or evolution, or establish causal, observational or quantum claims.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_same_sign_active_phase_reduced_presymplectic_divisors",
@@ -2453,6 +2466,22 @@ def build() -> dict[str, object]:
         raise AssertionError("candidate-17/20 complete deformable-kernel contraction changed")
     if deformable_complete["candidate17_candidate20_identified"] or deformable_complete["occupation_strata_glued"] or deformable_complete["final_residual_descent"] or deformable_complete["all_orders_integration"] or deformable_complete["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("candidate-17/20 complete deformable-kernel contraction exceeded scope")
+    component_classification = records["same_sign_candidate17_20_component_incidence_classification"]["classification"]
+    if not (
+        component_classification["candidate17_strict_sign_component_count_one"]
+        and component_classification["candidate20_negative_delta_strict_sign_component_count_one"]
+        and component_classification["candidate20_positive_delta_strict_sign_component_count_one"]
+        and component_classification["every_strict_sign_component_meets_incidence"]
+        and component_classification["four_occupation_strata_exhaustive_and_disjoint"]
+        and component_classification["zero_node_boundaries_retained"]
+        and component_classification["nonfree_orbit_types_retained"]
+        and component_classification["singular_stabilizers_retained"]
+        and component_classification["fixed_positive_occupation_complete_candidate17_connected"]
+        and component_classification["fixed_positive_occupation_complete_candidate20_connected"]
+    ):
+        raise AssertionError("candidate-17/20 component-incidence classification changed")
+    if component_classification["nonincident_component_exists"] or component_classification["candidate17_candidate20_identified"] or component_classification["occupation_strata_glued_across_distinct_total_occupations"] or component_classification["final_residual_descent"] or component_classification["all_mixed_cones_or_evolution_claim"] or component_classification["causal_observer_or_quantum_claim"]:
+        raise AssertionError("candidate-17/20 component-incidence classification exceeded scope")
     phase_reduced_divisors = records["same_sign_active_phase_reduced_presymplectic_divisors"]["classification"]
     if not (
         phase_reduced_divisors["candidate17_regular_fixed_occupation_phase_reduced_divisor_classified"]

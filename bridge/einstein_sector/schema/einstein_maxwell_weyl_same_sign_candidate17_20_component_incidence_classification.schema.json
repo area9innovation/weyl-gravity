@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/einstein-maxwell-weyl-same-sign-candidate17-20-component-incidence-classification-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "generality_level",
+    "scope",
+    "exact_incidence_algebra",
+    "quotient",
+    "occupation_strata",
+    "orbit_type_refinement",
+    "candidate_components",
+    "complete_candidate_assembly",
+    "independence_witnesses",
+    "classification",
+    "interpretation",
+    "next_gate",
+    "claim_boundary",
+    "provenance",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-same-sign-candidate17-20-component-incidence-classification-v1"
+    },
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_COMPONENT_INCIDENCE_CLASSIFICATION"
+    },
+    "result_state": {
+      "const": "CANDIDATE17_20_STRICT_SIGN_ADMISSIBLE_QUOTIENTS_HAVE_ONE_INCIDENT_COMPONENT"
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "generality_level": {
+      "const": "G4_CANDIDATE_SPECIFIC_PI0_AND_STRATUM_DISPOSITION"
+    },
+    "scope": {"type": "object"},
+    "exact_incidence_algebra": {"type": "object"},
+    "quotient": {"type": "object"},
+    "occupation_strata": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "condition",
+          "transvectant",
+          "forced_stabilizer",
+          "closure_meets"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"enum": ["interior", "F_zero", "G_zero", "origin"]},
+          "condition": {"type": "string"},
+          "transvectant": {"type": "string"},
+          "forced_stabilizer": {"type": "string"},
+          "closure_meets": {
+            "type": "array",
+            "items": {"enum": ["F_zero", "G_zero", "origin"]}
+          }
+        }
+      }
+    },
+    "orbit_type_refinement": {"type": "object"},
+    "candidate_components": {
+      "type": "object",
+      "required": [
+        "candidate17",
+        "candidate20_negative_delta",
+        "candidate20_positive_delta"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "candidate17": {"$ref": "#/$defs/candidate"},
+        "candidate20_negative_delta": {"$ref": "#/$defs/candidate"},
+        "candidate20_positive_delta": {"$ref": "#/$defs/candidate"}
+      }
+    },
+    "complete_candidate_assembly": {"type": "object"},
+    "independence_witnesses": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate17_strict_sign_component_count_one",
+        "candidate20_negative_delta_strict_sign_component_count_one",
+        "candidate20_positive_delta_strict_sign_component_count_one",
+        "every_strict_sign_component_meets_incidence",
+        "nonincident_component_exists",
+        "four_occupation_strata_exhaustive_and_disjoint",
+        "zero_node_boundaries_retained",
+        "nonfree_orbit_types_retained",
+        "singular_stabilizers_retained",
+        "candidate17_candidate20_identified",
+        "fixed_positive_occupation_complete_candidate17_connected",
+        "fixed_positive_occupation_complete_candidate20_connected",
+        "occupation_strata_glued_across_distinct_total_occupations",
+        "final_residual_descent",
+        "all_mixed_cones_or_evolution_claim",
+        "causal_observer_or_quantum_claim"
+      ],
+      "properties": {
+        "candidate17_strict_sign_component_count_one": {"const": true},
+        "candidate20_negative_delta_strict_sign_component_count_one": {"const": true},
+        "candidate20_positive_delta_strict_sign_component_count_one": {"const": true},
+        "every_strict_sign_component_meets_incidence": {"const": true},
+        "nonincident_component_exists": {"const": false},
+        "four_occupation_strata_exhaustive_and_disjoint": {"const": true},
+        "zero_node_boundaries_retained": {"const": true},
+        "nonfree_orbit_types_retained": {"const": true},
+        "singular_stabilizers_retained": {"const": true},
+        "candidate17_candidate20_identified": {"const": false},
+        "fixed_positive_occupation_complete_candidate17_connected": {"const": true},
+        "fixed_positive_occupation_complete_candidate20_connected": {"const": true},
+        "occupation_strata_glued_across_distinct_total_occupations": {"const": false},
+        "final_residual_descent": {"const": false},
+        "all_mixed_cones_or_evolution_claim": {"const": false},
+        "causal_observer_or_quantum_claim": {"const": false}
+      }
+    },
+    "interpretation": {"type": "string", "minLength": 100},
+    "next_gate": {"type": "string", "minLength": 50},
+    "claim_boundary": {"type": "string", "minLength": 150},
+    "provenance": {
+      "type": "object",
+      "required": ["generator_path", "generator_sha256", "inputs"],
+      "additionalProperties": false,
+      "properties": {
+        "generator_path": {"type": "string"},
+        "generator_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "inputs": {
+          "type": "object",
+          "additionalProperties": {"$ref": "#/$defs/input"}
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string"}
+    }
+  },
+  "$defs": {
+    "candidate": {
+      "type": "object",
+      "required": [
+        "candidate_id",
+        "candidate_scope",
+        "strict_opposite_sign_chamber",
+        "component_count",
+        "components",
+        "nonincident_components"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "candidate_id": {"enum": [17, 20]},
+        "candidate_scope": {"type": "string"},
+        "strict_opposite_sign_chamber": {
+          "enum": ["delta<0<alpha", "alpha<0<delta"]
+        },
+        "component_count": {"const": 1},
+        "components": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "contains",
+              "meets_incidence",
+              "incidence_stratum",
+              "incidence_coordinates",
+              "path"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {"type": "string"},
+              "contains": {"type": "string"},
+              "meets_incidence": {"const": true},
+              "incidence_stratum": {"enum": ["F_zero", "G_zero"]},
+              "incidence_coordinates": {"type": "string"},
+              "path": {"type": "string"}
+            }
+          }
+        },
+        "nonincident_components": {"const": []}
+      }
+    },
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

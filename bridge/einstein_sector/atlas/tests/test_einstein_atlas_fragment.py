@@ -547,6 +547,34 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("occupation strata", entry["claim_boundary"])
         self.assertIn("all-orders", entry["claim_boundary"])
 
+    def test_candidate17_20_component_incidence_classification_is_candidate_specific(self) -> None:
+        entry = self.entries[
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_component_incidence_classification"
+        ]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn(
+            "four exhaustive occupation strata",
+            entry["mode_data"]["lee_wald"]["statement"],
+        )
+        self.assertIn(
+            "exactly one path component",
+            entry["mode_data"]["taub_maps"]["statement"],
+        )
+        self.assertIn(
+            "no nonincident component",
+            entry["mode_data"]["taub_maps"]["statement"],
+        )
+        self.assertIn("G=0", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("F=0", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(
+            second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED"
+        )
+        self.assertEqual(second["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("does not identify candidates", entry["claim_boundary"])
+        self.assertIn("glue distinct total occupations", entry["claim_boundary"])
+
     def test_same_sign_local_rotation_descent_is_basic_not_global(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent"]
         second = entry["mode_data"]["second_order"]

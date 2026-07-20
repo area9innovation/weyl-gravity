@@ -1,0 +1,234 @@
+{
+  "candidate_components": {
+    "candidate17": {
+      "candidate_id": 17,
+      "candidate_scope": "rho_17; delta<0 on the complete nonzero active cone",
+      "component_count": 1,
+      "components": [
+        {
+          "contains": "every admissible orbit in A_17",
+          "id": "candidate17_hub_component",
+          "incidence_coordinates": "x=-delta/a in (0,1), y=0",
+          "incidence_stratum": "G_zero",
+          "meets_incidence": true,
+          "path": "delete G by convexity, time-reverse F to zero moment, cross I, then scale to the connected candidate-17 hub"
+        }
+      ],
+      "nonincident_components": [],
+      "strict_opposite_sign_chamber": "delta<0<alpha"
+    },
+    "candidate20_negative_delta": {
+      "candidate_id": 20,
+      "candidate_scope": "rho_20 off balance with delta<0",
+      "component_count": 1,
+      "components": [
+        {
+          "contains": "every admissible orbit in A_20^-",
+          "id": "candidate20_negative_delta_hub_component",
+          "incidence_coordinates": "x=-delta/a in (0,1), y=0",
+          "incidence_stratum": "G_zero",
+          "meets_incidence": true,
+          "path": "delete G by convexity, time-reverse F to zero moment, cross I, then scale to the connected candidate-20 hub"
+        }
+      ],
+      "nonincident_components": [],
+      "strict_opposite_sign_chamber": "delta<0<alpha"
+    },
+    "candidate20_positive_delta": {
+      "candidate_id": 20,
+      "candidate_scope": "rho_20 off balance with delta>0",
+      "component_count": 1,
+      "components": [
+        {
+          "contains": "every admissible orbit in A_20^+",
+          "id": "candidate20_positive_delta_hub_component",
+          "incidence_coordinates": "x=0, y=delta/b in (0,1)",
+          "incidence_stratum": "F_zero",
+          "meets_incidence": true,
+          "path": "delete F by convexity, time-reverse G to zero moment, cross I, then scale to the connected candidate-20 hub"
+        }
+      ],
+      "nonincident_components": [],
+      "strict_opposite_sign_chamber": "alpha<0<delta"
+    }
+  },
+  "claim_boundary": "This classifies pi_0 and zero-wall incidence only for the candidate-17 and candidate-20 compact fixed-positive-active-occupation singular carriers, with candidate scopes separate and all occupation/orbit-type strata retained. It does not glue distinct total occupations, prove a global Hausdorff leaf space outside this carrier, perform final residual descent, solve all mixed cones or evolution, or establish causal, observer or quantum claims.",
+  "classification": {
+    "all_mixed_cones_or_evolution_claim": false,
+    "candidate17_candidate20_identified": false,
+    "candidate17_strict_sign_component_count_one": true,
+    "candidate20_negative_delta_strict_sign_component_count_one": true,
+    "candidate20_positive_delta_strict_sign_component_count_one": true,
+    "causal_observer_or_quantum_claim": false,
+    "every_strict_sign_component_meets_incidence": true,
+    "final_residual_descent": false,
+    "fixed_positive_occupation_complete_candidate17_connected": true,
+    "fixed_positive_occupation_complete_candidate20_connected": true,
+    "four_occupation_strata_exhaustive_and_disjoint": true,
+    "nonfree_orbit_types_retained": true,
+    "nonincident_component_exists": false,
+    "occupation_strata_glued_across_distinct_total_occupations": false,
+    "singular_stabilizers_retained": true,
+    "zero_node_boundaries_retained": true
+  },
+  "complete_candidate_assembly": {
+    "candidate17": {
+      "alpha_less_equal_zero": "already contracts by the repaired moving-square theorem",
+      "alpha_positive": "is the unique incident strict-sign component classified here",
+      "fixed_positive_occupation_component_count": 1
+    },
+    "candidate20": {
+      "delta_zero": "the balance divisor contracts by the radial theorem",
+      "fixed_positive_occupation_component_count": 1,
+      "off_balance_alpha_delta_negative": "the negative- and positive-delta chambers each have the unique incident component classified here",
+      "off_balance_alpha_delta_positive_or_alpha_zero": "contracts by the repaired moving-square theorem"
+    },
+    "intersection": "the two singular components meet in the separately certified connected double-singular hub"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_incidence_algebra": {
+    "coefficient": "c=delta+a*x-b*y",
+    "incidence_to_hub": {
+      "coefficient": "(s - 1)*(a*x - b*y)",
+      "kernel_moment": "M_K(s)=s*M_K=0",
+      "path": "(x,y)->(s*x,s*y)"
+    },
+    "negative_delta_incidence": {
+      "coordinates": "x=-delta/a, y=0",
+      "identity": "0",
+      "stratum": "G_zero"
+    },
+    "positive_delta_incidence": {
+      "coordinates": "x=0, y=delta/b",
+      "identity": "0",
+      "stratum": "F_zero"
+    }
+  },
+  "generality_level": "G4_CANDIDATE_SPECIFIC_PI0_AND_STRATUM_DISPOSITION",
+  "independence_witnesses": {
+    "candidate_separation": "candidate identifiers, coefficients, momenta and atlas scopes remain distinct even though the invariant proof template is shared",
+    "negative_delta": {
+      "fixture": "a=3, b=1, delta=-1, alpha=1",
+      "incidence": "x=1/3, y=0",
+      "wrong_node_endpoint": "deleting F gives c=delta-b=-2<0 and crosses the wall prematurely"
+    },
+    "positive_delta": {
+      "fixture": "a=1, b=3, delta=1, alpha=-1",
+      "incidence": "x=0, y=1/3",
+      "wrong_node_endpoint": "deleting G gives c=delta+a=2>0 and crosses the wall prematurely"
+    }
+  },
+  "interpretation": "There is no hidden disconnected deformable-kernel branch in either candidate. In each strict opposite-sign chamber the admissible compact quotient has exactly one path component, and that component reaches the appropriate one-zero-node incidence. Zero occupations and enhanced stabilizers are boundary/orbit-type strata inside the same component, not discarded exceptional cases. This remains a fixed-positive-active-occupation finite-carrier result.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "do not reopen component incidence; decide separately whether the intended final residual quotient requires gluing distinct total-occupation fibres, then export the fixed-occupation result through the same-background relative bridge",
+  "occupation_strata": [
+    {
+      "closure_meets": [
+        "F_zero",
+        "G_zero",
+        "origin"
+      ],
+      "condition": "x>0 and y>0",
+      "forced_stabilizer": "none beyond the actual projective pair stabilizer H_[F,G]",
+      "id": "interior",
+      "transvectant": "T3(F,G)=0"
+    },
+    {
+      "closure_meets": [
+        "origin"
+      ],
+      "condition": "x=0 and y>0",
+      "forced_stabilizer": "U(1)_F is contained in Stab(F,G)",
+      "id": "F_zero",
+      "transvectant": "T3(0,G)=0 identically"
+    },
+    {
+      "closure_meets": [
+        "origin"
+      ],
+      "condition": "x>0 and y=0",
+      "forced_stabilizer": "U(1)_G is contained in Stab(F,G)",
+      "id": "G_zero",
+      "transvectant": "T3(F,0)=0 identically"
+    },
+    {
+      "closure_meets": [],
+      "condition": "x=0 and y=0",
+      "forced_stabilizer": "U(1)_F x U(1)_G x SO(3)_lifted fixes the kernel pair",
+      "id": "origin",
+      "transvectant": "T3(0,0)=0 identically"
+    }
+  ],
+  "orbit_type_refinement": {
+    "component_disposition": "every realized occupation/orbit-type stratum is contained in the unique candidate-specific hub component",
+    "definition": "for every conjugacy class (H) actually realized in G=U(1)_F x U(1)_G x SO(3)_lifted, refine each occupation stratum by A_(H)={z:Stab_G(z) is conjugate to H}/G",
+    "generic_and_nonfree": "the union over all realized (H) is exact and disjoint; H is not assumed trivial, finite or constant, and no nonfree orbit is deleted",
+    "path_rule": "the component theorem is a theorem of the whole compact stratified quotient; its paths may cross orbit-type frontiers and are lifted through compact-group slices, so no freeness or fixed-orbit-type assumption enters",
+    "zero_node_forced_isotropy": {
+      "F_zero": "H contains U(1)_F",
+      "G_zero": "H contains U(1)_G",
+      "origin": "H contains the full kernel-pair action U(1)_F x U(1)_G x SO(3)_lifted"
+    }
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_component_incidence_classification.py",
+    "generator_sha256": "abaf6431fd7c3e7b4519814afda3a9357345c0d6941b4b80b423eb54bb46de99",
+    "inputs": {
+      "balanced_radial": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.json",
+        "sha256": "7980fa6c403b4ba1cdf055f42d426301c6477d6ecf02c833a734a4ece7a03c62"
+      },
+      "complete_contraction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction.json",
+        "sha256": "77657bb079caa4ff50f5e8e425015a3f416d99f9672d7335bddeb17e540b4654"
+      },
+      "connected_hub": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.json",
+        "sha256": "c27f4f01d977387a324c102df35974a1e44bf64a231f5b28c8c92a4ee4f01eda"
+      },
+      "incidence_normal_form": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.json",
+        "sha256": "e1854d1dec455a89c59c563c5a7e5fcc33158f058fc6df671f47cab9b60cd060"
+      },
+      "moving_square": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json",
+        "sha256": "4463e4218892d8527bfde308ce0237887c2c3ff0ac814e204bc5a87ddf0cbb68"
+      }
+    }
+  },
+  "quotient": {
+    "admissible_orbit_space": "A=A_tilde/(U(1)_F x U(1)_G x SO(3)_lifted)",
+    "admissible_prequotient": "A_tilde={(F,G) in Kbar:||M_K(F,G)||<=|c(F,G)|}",
+    "component_logic": "the certified path from every admissible point to the same connected candidate-specific hub lies in A and crosses I in the strict-sign chambers; therefore pi_0(A) is a singleton and its unique component meets I",
+    "group": "U(1)_F x U(1)_G x SO(3)_lifted",
+    "prequotient": "Kbar={(F,G) in C^5 x C^5:T3(F,G)=0, ||F||_W<=1, ||G||_W<=1}",
+    "zero_wall_incidence": "I={[F,G] in A:c(F,G)=0 and M_K(F,G)=0}"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_COMPONENT_INCIDENCE_CLASSIFICATION",
+  "result_state": "CANDIDATE17_20_STRICT_SIGN_ADMISSIBLE_QUOTIENTS_HAVE_ONE_INCIDENT_COMPONENT",
+  "schema": "einstein-maxwell-weyl-same-sign-candidate17-20-component-incidence-classification-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_component_incidence_classification.schema.json",
+  "schema_sha256": "a42bbb1c2b68a4b49656cad306b33bc6c70398f65b1f1e3098485ea9e46b900b",
+  "scope": {
+    "background": "candidate 17 and candidate 20 retained as separate rho_17 and rho_20 scopes; candidate-20 positive- and negative-delta chambers are also retained separately",
+    "boundaries": "closed S1_L times S2 before node-phase, lifted-rotation or final residual quotient",
+    "carrier": "the compact admissible orbit spaces A in the strict alpha*delta<0 chambers, with the complete four occupation strata and every compact orbit type retained",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "correction_class": "bounded or finite-quasiperiodic second-order tangent cone",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidate-specific signed compact momenta, never identified across candidates",
+    "m": "all m=-2,...,2 in the binary-quartic carrier",
+    "omega": "candidate-specific difference collision into L=1 extra output",
+    "parity": "two exact factorized parity eigenchannels",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_component_incidence_classification --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_component_incidence_classification",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_component_incidence_classification"
+  ]
+}
