@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-complex-compensator-action-quartet-preflight",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-complex-compensator-action-quartet-preflight",
+  "source": {
+    "path": "planning/work-items/classical-complex-compensator-action-quartet-preflight.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Freeze the local action, BV field content and radial-quartet reduction for the complex conformal compensator before any causal or background-specific construction, so the compensator programme has an independently reusable algebraic source of truth.",
+    "stop_condition": "Declare the complete bounded-derivative local action ansatz for Phi=rho exp(i theta) coupled to pure Weyl gravity, including the conformal rho^2 R term, radial and phase kinetic terms, admissible Weyl-invariant potential, internal U(1) choice and the formal Wess-Zumino functional kept at its correct hbar lifecycle. Fix transformations g->exp(2 sigma)g, rho->exp(-sigma)rho, theta invariant, tau=-log(rho/f), and g_hat=(rho/f)^2 g. Derive the full minimal and nonminimal BV differential, antifield equations, odd pairing and cotangent lift from the action; prove the classical master equation, nilpotency, cyclicity and real structure exactly. Construct the tau/Weyl-ghost quartet contraction in the formal rho!=0 chart and compute the reduced g_hat-plus-theta quadratic action and pairing. Determine the exact Einstein-Hilbert coefficient, Planck-scale convention, cosmological term, residual scalar spectrum and every independent higher-curvature coupling after rho=f gauge fixing. Classify whether theta is physical, gauged or globally charged under each declared internal-symmetry choice. Export strict schemas, sparse operators, symbolic action identities and independent mutation tests. Stop before causal Green operators, Berger clock backgrounds, anomaly coefficients or quantum states.",
+    "current_gate": "single action-derived local BV and quartet-reduction preflight for the complex compensator-clock theory",
+    "forbid": "no Wess-Zumino hbar counterterm inserted into the classical action without lifecycle labeling; no radial sign called healthy before quotient reduction; no theta called physical without fixing the internal U1 status; no rho=f gauge chart called spontaneous breaking; no Einstein scale claimed without the exact coefficient and convention; no causal, anomaly, Hadamard, particle, scattering or unitarity claim",
+    "depends_on": [],
+    "activates": [
+      "a pinned algebraic input for classical-complex-compensator-clock-bv-parent",
+      "a reusable same-action field inventory for Observer, Nonlinear, Bridge and Quantum",
+      "an exact local obstruction if the proposed clock/scale roles are incompatible"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "closed_universe_observers/",
+      "reports/",
+      "residual_atlas/",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "INDEPENDENT CLASSICAL RESERVE. Pull if the tau-adic causal export closes or blocks. This item owns local algebra only; it should finish before the larger compensator causal parent re-derives or consumes the same data.",
+    "notes": [
+      "The formal rho!=0 chart is the natural interpretation of the tau-adic completion, but its domain and inverse series must be explicit.",
+      "The phase-clock role and the radial-compensator role must remain distinct.",
+      "An exact sign, symmetry or action obstruction is a successful result and should narrow the larger parent item."
+    ],
+    "input_commit": "eaa4225255107cedf7611462655d8eab6717ee77",
+    "stream": "classical"
+  },
+  "edges": []
+}
