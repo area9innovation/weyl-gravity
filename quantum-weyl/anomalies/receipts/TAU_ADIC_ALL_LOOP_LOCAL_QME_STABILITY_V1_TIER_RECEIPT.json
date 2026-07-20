@@ -1,0 +1,78 @@
+{
+  "receipt_id": "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY_V1_TIER_RECEIPT",
+  "result_id": "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY",
+  "recorded_at": "2026-07-20",
+  "base_commit": "ac551124e",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "input_hashes": {
+    "WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY_at_69f01998": "fa21fc6071ae52277d9953b68c47773686117f1426cc50899fdf8c124d2ba616",
+    "LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT_at_c6d1c0ba": "07bf332cf1bece92f8a041002f3c787fe7e85e798871e4878fbbc3cd7b20bd3b"
+  },
+  "output_hashes": {
+    "certificate": "a0ce9774fc1417d4e108a6b834173bc41fd433ed45bfcfdcf2d63063969f33bc",
+    "quantum_atlas": "e91a96c4670dd60990a9d1686ee8cfc79e819e3dd0969460f91fa12ef4738bd4",
+    "report": "8dd69fb9f67881340e9733ccfc77a7cae5c534bea6c50aa634f71fae6818de55",
+    "paper12_tex": "d2cedfb85a8bf7b1bc5ef2c606c186bdf253767fff30188858cedc0c1982fc1f",
+    "qap_regulator_request": "6ca8079243303d5547e37e7f218c97c1abeaf62878c6a948ee97ed957cbea92b",
+    "paper12_claim_map_refresh_request": "60874008b17ddaab4701d3186393dd73b16a594466683304fcea9aba40a54395"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile <four scoped modules> && python3 -m json.tool <schema, certificate and two requests> && git diff --check -- <scoped paths>",
+      "elapsed_seconds": 0.2,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m anomalies.tau_adic_all_loop_qme_stability_certificate --check",
+      "elapsed_seconds": 0.1,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 quantum-weyl/anomalies/verify_tau_adic_all_loop_qme_stability.py",
+      "elapsed_seconds": 0.7,
+      "status": "PASS_INDEPENDENT_HISTORICAL_PINS_COHOMOLOGY_AND_FILTERED_INDUCTION"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest anomalies.tests.test_tau_adic_all_loop_qme_stability",
+      "elapsed_seconds": 0.1,
+      "status": "PASS_7_TESTS_WITH_RHAT2_POSITIVE_AFN_QAP_AND_FILTERED_INVERSE_MUTATIONS"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s quantum-weyl/anomalies/schema/tau-adic-all-loop-local-qme-stability-v1.schema.json && npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/anomalies/schema/tau-adic-all-loop-local-qme-stability-v1.schema.json -d quantum-weyl/anomalies/certificates/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json",
+      "elapsed_seconds": 4.0,
+      "status": "PASS_DRAFT_2020_12_STRICT"
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest atlas.tests.test_quantum_atlas_fragment && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "elapsed_seconds": 9.9,
+      "status": "PASS_9_TESTS_AND_3_VERIFIERS"
+    },
+    {
+      "tier": 1,
+      "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=/tmp paper/12-pure-weyl-one-loop-bv-anomaly.tex (twice)",
+      "elapsed_seconds": 2.8,
+      "status": "PASS_40_PAGE_PDF_NO_WARNINGS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py",
+      "elapsed_seconds": 0.2,
+      "status": "FAIL_CLAIM_MAP_MANUSCRIPT_HASH_STALE_NO_PUBLICATION_FREEZE_PROMOTED_REQUEST_FILED"
+    },
+    {
+      "tier": 2,
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 9.2,
+      "status": "ADVISORY_EXIT_0_WITH_PREEXISTING_BRIDGE_DRIFT_UNPINNED_FORGE_BUILD_AND_CORPUS_BASELINE_DRIFT_REPORTED"
+    }
+  ],
+  "tier_3_not_run": "No unconditional all-loop QME, constructed regulator, global-anomaly exclusion, Lorentzian QME, residual transfer, freeze, release or tag is promoted. The conditional formal local theorem and atlas are covered by tiers 0-2; the publication claim-map integration remains fail-closed under a routed request."
+}

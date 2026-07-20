@@ -1,0 +1,20 @@
+{
+  "id": "sf:forge-request/tau-adic-all-loop-qap-regulator",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "quantum-analytic-renormalization",
+    "state": "REQUESTED",
+    "objective": "Construct or import an all-order subtraction/regulator scheme for the formal tau-adic compensator theory that proves the quantum action principle used by TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY. The first consumer is sf:program/work/quantum-tau-adic-all-loop-local-qme-stability. The scheme must keep each first Slavnov/QME breaking local, ghost number one and homogeneous engineering dimension four in the declared completed local algebra; prove Wess-Zumino consistency; preserve continuity in the formal filtration and the regular coupling chart; and distinguish reproduction from an independent regulator/QAP verification.",
+    "depends_on": [
+      "sf:program/work/quantum-tau-adic-all-loop-local-qme-stability"
+    ],
+    "stop_condition": "A content-addressed regulator/subtraction payload independently verifies the local quantum action principle at arbitrary loop order on the declared formal coupling chart, including domain, measure, nonminimal sector, tau-adic continuity, power-counting, counterterm closure and positive-antifield insertions; or an exact incompatibility theorem identifies the first failed hypothesis. It satisfies a strict receiver schema and cannot promote a local Euclidean statement to a Lorentzian QME.",
+    "forbid": "No one-loop determinant or H14=0 restated as a regulator theorem; no dimensional-regularization slogan substituted for a measure/domain construction; no finite tau truncation; no omission of R(g_hat)^2 or positive-antifield insertions; no strict-theory anomaly freedom or equivalence claim; no convergence, global-anomaly, Lorentzian-product, state, particle or unitarity promotion.",
+    "notes": [
+      "The conditional algebraic induction is complete once the QAP hypotheses hold; this request owns only the missing analytic/regulator realization of those hypotheses.",
+      "A standard algebraic-renormalization theorem may be imported only with an explicit hypothesis map to the fourth-order gravity complex and formal tau-adic local domain.",
+      "This is a physics-domain request routed through the programme coordinator, not a request to patch Forge lib/math."
+    ]
+  }
+}

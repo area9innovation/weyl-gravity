@@ -67,8 +67,12 @@ extended local Euclidean QME at one loop.
 
 The two dispositions refer to different theories and are not contradictory:
 strict field content is obstructed, while the formal $\tau$-adic compensator
-extension is locally restored at one loop.  Neither statement is an all-loop
-or Lorentzian QME theorem.
+extension is locally restored at one loop.  Under an explicitly declared
+local quantum action principle, the complete extended
+$H^{1,4}=0$ result and stable four-direction $H^{0,4}$ module give a
+conditional order-by-order formal local QME restoration theorem.  No
+all-order regulator implementing that hypothesis, Lorentzian QME, or
+equivalence to the strict theory is claimed.
 \end{abstract}
 
 \section*{AI-use disclosure and computational accountability}
@@ -677,6 +681,71 @@ satisfies
 Hence the compensator-extended local Euclidean QME is restored at one loop in
 the declared formal $\tau$-adic algebra.
 \end{corollary}
+
+\begin{theorem}[Conditional all-order formal local restoration]
+Let the coefficient ring be completed in
+\[
+ \mathfrak m=(\hbar,z_C,z_E,z_{R^2},z_P),
+\]
+and retain homogeneous engineering-dimension-four local functionals in the
+formal $\tau$-adic analytic jet algebra.  Assume an all-order quantum action
+principle with the following properties: after restoration through order
+$n-1$, the first order-$n$ breaking is a local ghost-one element of this
+algebra; it obeys the linearized Wess--Zumino consistency condition modulo
+$\dd$; subtraction is continuous in the $\mathfrak m$-adic filtration; and
+the regular Koszul--Tate chart persists under the formal coupling
+deformation.
+
+Under these hypotheses the compensator-extended local QME can be restored at
+every finite formal order.  Its complete stable counterterm module is
+\[
+ \begin{split}
+ H^{0,4}_{\rm ext,even}
+   &=\operatorname{span}\{C(\ghat)^2,E_4(\ghat),R(\ghat)^2\},\\
+ H^{0,4}_{\rm ext,odd}
+   &=\operatorname{span}\{C(\ghat)\widetilde C(\ghat)\},
+ \end{split}
+\]
+modulo $\dd$-exact terms, while exact ghost-zero terms generate local
+canonical transformations.  In particular, $R(\ghat)^2$ is an indispensable
+independent coupling direction.
+\end{theorem}
+
+\begin{proof}
+The imported extended calculation is antifield-complete and gives
+$H^{1,4}_{\rm ext}=0$ in both parities.  A counterterm deformation
+$\delta_{\rm ct}$ raises the complete filtration, so the regular
+Koszul--Tate contraction persists by the formal homological-perturbation
+inverse
+\[
+ (1+h\delta_{\rm ct})^{-1}
+   =\sum_{k\geq0}(-h\delta_{\rm ct})^k .
+\]
+Thus the zero ghost-one $E_1$ page remains zero after every formal coupling
+deformation.  If $\cA_n$ is the first order-$n$ breaking, the quantum action
+principle and consistency give
+\[
+ s_{{\rm ext},n-1}\cA_n+\dd a_n=0.
+\]
+Vanishing relative cohomology yields
+\[
+ \cA_n=s_{{\rm ext},n-1}B_n+\dd C_n.
+\]
+Adding $-B_n$ removes the breaking.  The closed ambiguity lies in the
+displayed $H^{0,4}$ module and is absorbed by coupling redefinitions, total
+derivatives, and canonical transformations.  Hence the induction repeats at
+every finite formal order.  The exact recurrence and its independent replay
+are stored in
+\texttt{TAU\_ADIC\_ALL\_LOOP\_LOCAL\_QME\_STABILITY}.
+\end{proof}
+
+This is the standard algebraic-renormalization induction based on local BRST
+cohomology~\cite{BarnichBrandtHenneauxI}.  The theorem is conditional: the
+repository has not constructed an all-order regulator or subtraction scheme
+that proves the stated quantum action principle on the completed
+$\tau$-adic domain.  The infinite $\tau$ expansions of dressed invariants are
+formal completions of four independent cohomology generators, not an
+infinite tower of independent couplings.
 
 \begin{proposition}[The restored QME does not determine a unique $Q_1$]
 Define the coefficient-bearing one-loop Wess--Zumino functional by
@@ -2206,10 +2275,12 @@ subtraction must be fixed.  No cancellation by $\mathcal H_2$ is asserted.
 
 \section{What does not follow}
 
-The strict obstruction and extended restoration are local one-loop results.
-They do not establish:
+The strict obstruction and coefficient-bearing extended restoration are
+local one-loop results; the all-order extension above is a conditional formal
+local induction.  They do not establish:
 \begin{itemize}
-\item an all-loop extended QME;
+\item an unconditional all-loop extended QME or a regulator realizing the
+declared quantum action principle;
 \item a Lorentzian renormalized time-ordered product or Slavnov identity;
 \item a BRST-compatible global Hadamard state;
 \item positivity, a particle Hilbert space, scattering, or unitarity;

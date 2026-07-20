@@ -166,6 +166,10 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             {evidence["result_id"] for evidence in local_guard["evidence"]},
         )
         self.assertIn(
+            "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY",
+            {evidence["result_id"] for evidence in local_guard["evidence"]},
+        )
+        self.assertIn(
             "differentiable D boundary charge",
             local_guard["scope"]["carrier"],
         )
@@ -175,6 +179,14 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         )
         self.assertIn(
             "all three strict anomaly pullbacks remain undefined",
+            local_guard["quantum_data"]["anomaly_QME_dependency"]["statement"],
+        )
+        self.assertIn(
+            "conditionally restorable at every finite loop order",
+            local_guard["quantum_data"]["anomaly_QME_dependency"]["statement"],
+        )
+        self.assertIn(
+            "all-order regulator realizing that hypothesis remains OPEN",
             local_guard["quantum_data"]["anomaly_QME_dependency"]["statement"],
         )
         self.assertIn(

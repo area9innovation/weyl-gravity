@@ -1,0 +1,480 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-tau-adic-all-loop-local-qme-stability-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "input_pins",
+    "formal_local_algebra",
+    "quantum_action_principle",
+    "stable_H04_module",
+    "stable_H14_module",
+    "filtered_deformation_stability",
+    "recursive_QME_induction",
+    "lifecycle",
+    "exact_checks",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-tau-adic-all-loop-local-qme-stability-v1"
+    },
+    "result_id": {
+      "const": "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY"
+    },
+    "result_state": {
+      "const": "CONDITIONAL_FORMAL_ALL_LOOP_LOCAL_QME_RESTORATION_THEOREM"
+    },
+    "lifecycle_status": {
+      "const": "QME_RESTORED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC"
+      ]
+    },
+    "input_pins": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "extended_local_BV",
+        "local_anomaly_audit"
+      ],
+      "properties": {
+        "extended_local_BV": {
+          "$ref": "#/$defs/pin"
+        },
+        "local_anomaly_audit": {
+          "$ref": "#/$defs/pin"
+        }
+      }
+    },
+    "formal_local_algebra": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "coefficient_ring",
+        "completion",
+        "dimension_policy",
+        "locality_policy",
+        "regularity_scope",
+        "parity_policy"
+      ],
+      "properties": {
+        "kind": {
+          "const": "FORMAL_TAU_ADIC_LOCAL_ANALYTIC_JET_ALGEBRA"
+        },
+        "coefficient_ring": {
+          "type": "string",
+          "minLength": 40
+        },
+        "completion": {
+          "type": "string",
+          "minLength": 40
+        },
+        "dimension_policy": {
+          "type": "string",
+          "minLength": 40
+        },
+        "locality_policy": {
+          "type": "string",
+          "minLength": 40
+        },
+        "regularity_scope": {
+          "type": "string",
+          "minLength": 30
+        },
+        "parity_policy": {
+          "type": "string",
+          "minLength": 40
+        }
+      }
+    },
+    "quantum_action_principle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "assumptions",
+        "not_supplied"
+      ],
+      "properties": {
+        "status": {
+          "const": "DECLARED_HYPOTHESIS_NOT_CONSTRUCTED_REGULATOR"
+        },
+        "assumptions": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "string",
+            "minLength": 20
+          }
+        },
+        "not_supplied": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 10
+          }
+        }
+      }
+    },
+    "stable_H04_module": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ghost_number",
+        "form_degree",
+        "engineering_dimension",
+        "even_free_generators",
+        "odd_free_generators",
+        "essential_running_couplings",
+        "topological_or_theta_directions",
+        "horizontal_exact_direction",
+        "canonical_directions",
+        "coupling_redefinitions",
+        "positive_antifield_independent_classes",
+        "independent_generator_count",
+        "stability_status"
+      ],
+      "properties": {
+        "ghost_number": {
+          "const": 0
+        },
+        "form_degree": {
+          "const": 4
+        },
+        "engineering_dimension": {
+          "const": 4
+        },
+        "even_free_generators": {
+          "const": [
+            "C(g_hat)^2",
+            "E4(g_hat)",
+            "R(g_hat)^2"
+          ]
+        },
+        "odd_free_generators": {
+          "const": [
+            "C(g_hat) dual C(g_hat)"
+          ]
+        },
+        "positive_antifield_independent_classes": {
+          "const": []
+        },
+        "essential_running_couplings": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "topological_or_theta_directions": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "horizontal_exact_direction": {
+          "type": "string",
+          "minLength": 20
+        },
+        "canonical_directions": {
+          "type": "string",
+          "minLength": 30
+        },
+        "coupling_redefinitions": {
+          "type": "string",
+          "minLength": 20
+        },
+        "independent_generator_count": {
+          "const": {
+            "even": 3,
+            "odd": 1
+          }
+        },
+        "stability_status": {
+          "const": "CLOSED_UNDER_RECURSIVE_LOCAL_COUNTERTERMS_IN_DECLARED_ALGEBRA"
+        }
+      }
+    },
+    "stable_H14_module": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ghost_number",
+        "form_degree",
+        "engineering_dimension",
+        "even_quotient_dimension",
+        "odd_quotient_dimension",
+        "pure_Diff_quotient_dimension",
+        "Weyl_and_mixed_quotient_dimension",
+        "positive_antifield_independent_classes",
+        "imported_boundary_rank",
+        "status"
+      ],
+      "properties": {
+        "ghost_number": {
+          "const": 1
+        },
+        "form_degree": {
+          "const": 4
+        },
+        "engineering_dimension": {
+          "const": 4
+        },
+        "even_quotient_dimension": {
+          "const": 0
+        },
+        "odd_quotient_dimension": {
+          "const": 0
+        },
+        "pure_Diff_quotient_dimension": {
+          "const": 0
+        },
+        "Weyl_and_mixed_quotient_dimension": {
+          "const": 0
+        },
+        "positive_antifield_independent_classes": {
+          "const": []
+        },
+        "imported_boundary_rank": {
+          "const": 4
+        },
+        "status": {
+          "const": "ZERO_IN_ALL_PARITIES_AND_ANTIFIELD_NUMBERS_IN_DECLARED_ALGEBRA"
+        }
+      }
+    },
+    "filtered_deformation_stability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "filtration_ideal",
+        "perturbation",
+        "inverse",
+        "inverse_coefficients_through_order_12",
+        "truncated_product_coefficients",
+        "endpoint_interpretation",
+        "positive_antifield_stability",
+        "unbounded_tau_series_status"
+      ],
+      "properties": {
+        "filtration_ideal": {
+          "type": "string",
+          "minLength": 20
+        },
+        "perturbation": {
+          "type": "string",
+          "minLength": 40
+        },
+        "inverse": {
+          "type": "string",
+          "minLength": 20
+        },
+        "inverse_coefficients_through_order_12": {
+          "type": "array",
+          "minItems": 13,
+          "maxItems": 13,
+          "items": {
+            "type": "integer",
+            "enum": [
+              -1,
+              1
+            ]
+          }
+        },
+        "truncated_product_coefficients": {
+          "type": "array",
+          "minItems": 14,
+          "maxItems": 14,
+          "items": {
+            "type": "integer"
+          }
+        },
+        "endpoint_interpretation": {
+          "type": "string",
+          "minLength": 40
+        },
+        "positive_antifield_stability": {
+          "type": "string",
+          "minLength": 60
+        },
+        "unbounded_tau_series_status": {
+          "type": "string",
+          "minLength": 60
+        }
+      }
+    },
+    "recursive_QME_induction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "base_order",
+        "induction_hypothesis",
+        "order_n_breaking",
+        "cohomology_step",
+        "repair",
+        "closure",
+        "verdict"
+      ],
+      "properties": {
+        "base_order": {
+          "type": "string",
+          "minLength": 40
+        },
+        "induction_hypothesis": {
+          "type": "string",
+          "minLength": 40
+        },
+        "order_n_breaking": {
+          "type": "string",
+          "minLength": 40
+        },
+        "cohomology_step": {
+          "type": "string",
+          "minLength": 40
+        },
+        "repair": {
+          "type": "string",
+          "minLength": 40
+        },
+        "closure": {
+          "type": "string",
+          "minLength": 40
+        },
+        "verdict": {
+          "const": "CONDITIONAL_ALL_ORDER_FORMAL_LOCAL_QME_RESTORABLE"
+        }
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strict_fixed_field_content",
+        "tau_adic_one_loop_local_Euclidean",
+        "tau_adic_all_loop_formal_local",
+        "constructed_all_loop_regulator",
+        "global_anomalies",
+        "Lorentzian_QME",
+        "residual_transfer",
+        "states_and_unitarity"
+      ],
+      "properties": {
+        "strict_fixed_field_content": {
+          "const": "OBSTRUCTED_AT_ONE_LOOP"
+        },
+        "tau_adic_one_loop_local_Euclidean": {
+          "const": "QME_RESTORED"
+        },
+        "tau_adic_all_loop_formal_local": {
+          "const": "CONDITIONAL_QME_RESTORED_UNDER_DECLARED_QAP"
+        },
+        "constructed_all_loop_regulator": {
+          "const": "OPEN"
+        },
+        "global_anomalies": {
+          "const": "OPEN"
+        },
+        "Lorentzian_QME": {
+          "const": "OPEN"
+        },
+        "residual_transfer": {
+          "const": "NO_CERTIFIED_MAP"
+        },
+        "states_and_unitarity": {
+          "const": "OPEN"
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 11,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "minProperties": 9,
+      "additionalProperties": {
+        "const": false
+      }
+    },
+    "next_gate": {
+      "type": "string",
+      "minLength": 80
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 300
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proof_type",
+        "source_manifest",
+        "primary_references"
+      ],
+      "properties": {
+        "proof_type": {
+          "const": "EXACT_COHOMOLOGY_MODULE_AND_FILTERED_ALGEBRAIC_RENORMALIZATION_INDUCTION"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "primary_references": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 30
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "source_commit"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 20
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        }
+      }
+    }
+  }
+}

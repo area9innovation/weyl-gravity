@@ -1,0 +1,20 @@
+{
+  "id": "sf:forge-request/paper12-tau-adic-all-loop-claim-map-refresh",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "paper12-publication-integration",
+    "state": "REQUESTED",
+    "objective": "Refresh the generated Paper 12 claim map and compiled publication artifacts after the authorized TeX lifecycle update for TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY. The source manuscript now states a conditional formal all-order local QME restoration theorem under a declared quantum action principle and explicitly leaves the all-order regulator, global anomalies and Lorentzian QME open. The current quantum work item authorizes paper/12-pure-weyl-one-loop-bv-anomaly.tex but not the generated claim map, verifier, PDF or publication artifact hashes.",
+    "depends_on": [
+      "sf:program/work/quantum-tau-adic-all-loop-local-qme-stability"
+    ],
+    "stop_condition": "The Paper 12 claim-map generator imports TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY by exact hash, records the conditional-QAP lifecycle and all nonclaims, regenerates the manuscript/PDF hashes and any affected publication tables, and paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py passes independently after a clean two-pass compile.",
+    "forbid": "No unconditional all-loop QME, constructed-regulator, strict-theory anomaly-freedom, convergence, global-anomaly, Lorentzian-product, Hadamard, residual-transfer, particle or unitarity promotion; no manual hash-only edit that omits the new claim and evidence edge.",
+    "notes": [
+      "The current manuscript sha256 after the proposed update is d2cedfb85a8bf7b1bc5ef2c606c186bdf253767fff30188858cedc0c1982fc1f.",
+      "The new certificate sha256 is a0ce9774fc1417d4e108a6b834173bc41fd433ed45bfcfdcf2d63063969f33bc.",
+      "The TeX compiles cleanly in two passes to a 40-page PDF; the existing claim-map verifier fails closed at manuscript_sha256, as expected."
+    ]
+  }
+}
