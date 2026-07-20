@@ -1,0 +1,42 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/nonlinear-selected-compensator-repair-q2",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "nonlinear-selected-compensator-repair-q2",
+  "source": {
+    "path": "planning/work-items/nonlinear-selected-compensator-repair-q2.json",
+    "span": null
+  },
+  "body": {
+    "owner": "nonlinear",
+    "state": "PROPOSED",
+    "objective": "Derive the first action-derived physical q2 for the single compensator repair selected by the A/B comparison, and decide whether its causal reduced carrier is closed or sources a new scalar/topological direction.",
+    "stop_condition": "Import the A/B comparison verdict and selected action/carrier hashes. Refuse if the verdict is NEITHER or ambiguous. Differentiate the selected action rather than adapting the naive compensator q2. Transfer q2 through the certified causal/quartet contraction, verify the complete L-infinity identity at arity two, cyclicity, residual action and reduced pairing, and print the branch-resolved Einstein/clock/Maxwell/extra/scalar-or-topological source table on the smallest complete carrier. Prove whether the selected healthy subcarrier is closed, conditionally closed, or necessarily sources the repaired trace sector. Emit exact tensors, an independent direct action-variation rail and mutation guards. Stop before q3 unless q2 itself proves q3 is the first unresolved identity.",
+    "current_gate": "first nonlinear interaction test for the selected changed theory only",
+    "forbid": "no q2 against an unselected or hybrid action; no reuse of naive-compensator tensors; no retained representative called invariant without quotient/redefinition analysis; no q3, scattering, particle, stability or all-orders closure claim",
+    "depends_on": [
+      "sf:program/work/classical-compensator-candidate-ab-comparison-gate"
+    ],
+    "activates": [
+      "one bounded selected-theory q3 or deformation-class gate",
+      "or an exact nonlinear closure obstruction for the selected repair"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "residual_atlas/",
+      "reports/",
+      "notes/d-quotient-nonlinear-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "DOWNSTREAM GATED. Do not pull before the A/B selector freezes one exact action hash.",
+    "notes": [
+      "If neither candidate passes, close this item with the imported no-selection verdict and no q2 construction.",
+      "The repaired trace degree must appear explicitly in the branch/source table even if it is contractible."
+    ],
+    "input_commit": "306ff78a2",
+    "stream": "nonlinear"
+  },
+  "edges": []
+}

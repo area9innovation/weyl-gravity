@@ -1,0 +1,47 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-candidate-ab-comparison-gate",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-candidate-ab-comparison-gate",
+  "source": {
+    "path": "planning/work-items/classical-compensator-candidate-ab-comparison-gate.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Compare Candidate A and Candidate B on one frozen cylinder fixture and select exactly one receiver-valid changed theory, or certify that neither minimal repair passes.",
+    "stop_condition": "Import the terminal Candidate A and Candidate B artifacts by exact commit, action and certificate hashes. Normalize both to the same cylinder geometry, coupling and clock conventions and print a side-by-side machine-readable matrix for seven gates: (1) complete action-derived BV rows with CME and Q^2=0; (2) elimination or controlled replacement of the compact-support class [u]; (3) complete support-local retarded/advanced causal parent; (4) cyclicity and reduced-pairing audit; (5) no new negative scalar or uncontrolled topological direction; (6) preservation or exact reclassification of the zero-charge D-gauge sector; and (7) compatibility with the healthy Berger clock. Candidate A fails if its scalar is negative, nonhyperbolic or destroys the charge restriction. Candidate B fails if its constraint is not locally causal, removes the physical clock or leaves an uncontrolled global three-form mode. Select A, B or NEITHER using only these gates, freeze the selected action and carrier hashes, and emit a strict consumer contract naming every changed equation, field and lifecycle. If both pass, select the smaller theory only after proving observational and charge equivalence on the declared fixtures; otherwise report the unresolved discriminator rather than averaging the theories.",
+    "current_gate": "single fail-closed action-selection verdict from the common seven-gate cylinder comparison",
+    "forbid": "no comparison across different conventions or quotient stages; no partial score or subjective preference used as a pass; no silent hybrid of A and B; no downstream q2, regulator, Einstein or observer construction before a selected action hash exists; no claim that either repair is strict pure Weyl gravity; no particle, scattering or unitarity claim",
+    "depends_on": [
+      "sf:program/work/classical-compensator-candidate-a-r2-auxiliary-causal-parent",
+      "sf:program/work/classical-compensator-candidate-b-unimodular-threeform-causal-parent"
+    ],
+    "activates": [
+      "nonlinear-selected-compensator-repair-q2",
+      "bridge-selected-compensator-repair-einstein-extra-charge",
+      "observer-selected-compensator-repair-clock-redshift",
+      "quantum-selected-compensator-repair-dressed-regulator",
+      "or a two-candidate minimal-repair no-go"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "reports/",
+      "residual_atlas/",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "SELECTION GATE. It must remain non-READY until both independent candidate items terminate successfully enough to compare. Its output is the only authority for downstream changed-action work.",
+    "notes": [
+      "The comparison is a theorem gate, not a planning poll.",
+      "NEITHER is a valid and important scientific verdict.",
+      "Every downstream receiver must verify the exact selected-action hash."
+    ],
+    "input_commit": "306ff78a2",
+    "stream": "classical"
+  },
+  "edges": []
+}

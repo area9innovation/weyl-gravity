@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-candidate-a-r2-auxiliary-causal-parent",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-candidate-a-r2-auxiliary-causal-parent",
+  "source": {
+    "path": "planning/work-items/classical-compensator-candidate-a-r2-auxiliary-causal-parent.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Construct or exactly obstruct Candidate A: the smallest action-derived dressed R(g_hat)^2 repair of the compact-support dressed-trace class, using an auxiliary scalar to expose a second-order causal parent and the physical scalar sign.",
+    "stop_condition": "Import COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1 from commit 306ff78a2 and TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1 from commit 2b834dc751d6948366fd5c3d99174c268fa50d21 by exact hashes. On the same unit vacuum-cylinder conventions, start with S_C2 + beta integral sqrt(-g_hat) R(g_hat)^2 plus the frozen clock sector and rewrite the R^2 block as chi R - chi^2/(4 beta). Derive the complete minimal, nonminimal and antifield BV rows and the full non-Einstein Hessian from the action; prove CME, Q^2=0, cyclicity, real structure and the Weyl-quartet contraction exactly. Construct or obstruct support-local advanced/retarded Green homotopies for the complete second-order parent. Determine whether u=phi_trace-2 tau becomes a healthy hyperbolic scalar, becomes contractible through chi, or survives as a negative, nonhyperbolic or topological physical direction. Compute the reduced Lee-Wald/current pairing and all scalar zero modes. Add M^2 R(g_hat)/2 only if an exact massless-scalar or zero-mode obstruction requires it, recording why and checking m0^2=M^2/(12 beta) on an Einstein control while taking the cylinder verdict from the full Hessian. Recompute the zero-charge D sector and the Berger-clock compatibility gate. Emit an action hash, exact block matrices, causal certificate, independent action-variation and homology rails, and a PASS/FAIL disposition against the seven common comparison gates.",
+    "current_gate": "Candidate A auxiliary-scalaron causal and physical-sign preflight on the vacuum cylinder",
+    "forbid": "no metric-only fourth-order scalar analysis; no scalaron called healthy from its mass formula alone; no Einstein-background factorization substituted for the non-Einstein cylinder Hessian; no M^2 R term added without a certified necessity; no Wess-Zumino hbar term used as a classical inverse; no sampled-mode disappearance of u promoted to homology elimination; no D-gauge or Berger-clock preservation inferred without charge and Cartan checks; no anomaly, Hadamard, particle, scattering or unitarity claim",
+    "depends_on": [],
+    "activates": [
+      "classical-compensator-candidate-ab-comparison-gate",
+      "a receiver-valid changed-action causal parent if Candidate A passes",
+      "or a scoped auxiliary-scalaron no-go"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "closed_universe_observers/",
+      "reports/",
+      "residual_atlas/",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "PRIORITY CLASSICAL REPAIR A. The prerequisite artifacts are already committed, so this item is input-pinned rather than dependency-gated. Preserve exact action identity for the A/B comparison.",
+    "notes": [
+      "Candidate A is the physically richer route because a genuine scalar may remain after reduction.",
+      "The auxiliary chi formulation is mandatory: the comparison concerns the complete causal parent and reduced physical pairing, not only the fourth-order trace polynomial.",
+      "A negative, nonhyperbolic or uncontrolled scalar is a successful terminal obstruction."
+    ],
+    "input_commit": "306ff78a2",
+    "stream": "classical"
+  },
+  "edges": []
+}

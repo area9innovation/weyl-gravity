@@ -1,0 +1,44 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-selected-compensator-repair-einstein-extra-charge",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-selected-compensator-repair-einstein-extra-charge",
+  "source": {
+    "path": "planning/work-items/bridge-selected-compensator-repair-einstein-extra-charge.json",
+    "span": null
+  },
+  "body": {
+    "owner": "bridge",
+    "state": "PROPOSED",
+    "objective": "Determine how the selected compensator repair changes the Einstein-image/additional-Weyl exact sequence, symplectic form and charge-sector obstruction theory.",
+    "stop_condition": "Import the A/B comparison verdict and selected action/carrier hashes, refusing an ambiguous or NEITHER result. Derive the complete on-shell linear inclusion into the selected changed theory and its quotient/cofiber, including any scalaron or topological global branch. Compute the induced Lee-Wald/current forms, lifted residual action and five stabilizer charge maps in common coordinates. Decide whether Einstein inclusion remains exact, whether the additional fourth-order branch changes multiplicity or pairing, and whether fixed- versus variable-charge second-order obstructions are preserved, enlarged or removed. Emit one exact-sequence and charge comparison certificate with an independent direct field-equation/current verifier. Do not promote on-shell inclusion to an off-shell BV chain map or nonlinear closure.",
+    "current_gate": "Einstein/extra/charge anatomy of the selected changed action",
+    "forbid": "no analysis of an unselected or hybrid action; no reuse of pure-Weyl branch labels without an explicit dictionary; no on-shell inclusion promoted to off-shell BV, observable or nonlinear equivalence; no positivity, particle, scattering or unitarity claim",
+    "depends_on": [
+      "sf:program/work/classical-compensator-candidate-ab-comparison-gate"
+    ],
+    "activates": [
+      "selected-theory Einstein-sector closure tests",
+      "selected-theory residual-atlas rows",
+      "or a branch/charge incompatibility no-go"
+    ],
+    "allowed_paths": [
+      "bridge/",
+      "d_quotient_classical/",
+      "residual_atlas/",
+      "reports/",
+      "notes/d-quotient-einstein-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "DOWNSTREAM GATED. This is the Einstein-team consumer of the exact selected action, not a continuation of the naive compensator exact sequence.",
+    "notes": [
+      "Candidate A may add a scalar quotient; Candidate B may add a global topological quotient. Neither may be silently omitted.",
+      "The charge-sector comparison must use the same boundary and coupling choices as the A/B gate."
+    ],
+    "input_commit": "306ff78a2",
+    "stream": "bridge"
+  },
+  "edges": []
+}

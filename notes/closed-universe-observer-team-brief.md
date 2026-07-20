@@ -2115,41 +2115,42 @@ The team succeeds by locating the first exact bridge or the first exact
 obstruction.  It does not succeed by arguing that two closed universes sound
 similar.
 
-## Active bridge: quartic calibration and relational-redshift disposition
+## Active bridge: temporal Maxwell/emitter antifield covariance
 
 The active item is
-`sf:program/work/observer-quartic-calibration-relational-redshift-disposition`.
-It imports by exact hash the twelve-dimensional Maxwell/Berger-\(U(1)\)
-quartic family, its rank-twelve \(q_3\) parameter map, the terminal empty
-arity-three locus, the five-entry standalone-observer survival ledger, and
-the newer complete temporal scalar-density action obstruction.
+`sf:program/work/observer-temporal-maxwell-emitter-antifield-covariance-module`.
+It imports the direct temporal covariance obstruction from commit
+`0e1e26d48` by exact certificate and payload hashes.  The declared bounded
+completion retains both forced cotangent sectors,
+\(A^+/\tau/K\) and \(K^+/\tau/A\), on the existing 110-row carrier.
 
-The twelve quartic directions are an ambient action family, not twelve
-admissible nonlinear theories.  The older arity-three gate is empty, and the
-newer gate already fails at arity two with ranks \(934<935\) per emitter and
-first quotient coefficient
+For each emitter it contains every Berger-\(U(1)\)-invariant action through
+derivative order two and both cotangent transforms of all 932 inherited
+IBP-closed order-three actions.  The resulting 2,048 action Hessians split
+equally between the two sectors and between leading-symbol reflection
+parities.  The unchanged \(q_1\), odd pairing and real structure remain
+certified.
+
+This complete existing-row module is obstructed.  Its new image has rank
+1,679 modulo the predecessor rank-934 image, so the full action image has
+rank 2,613.  Adjoining the typed covariance source raises the rank to 2,614
+for both source-isolated emitters.  The 42-coordinate quotient persists and
+begins at
 \[
- A^+_0\leftarrow(\tau,e_0e_1K_{0,01})=-3g_0h_0 .
+ A^+_0\leftarrow(\tau,e_0e_1K_{b,01})=-3g_bh_b .
 \]
-Therefore no theory point survives on which to derive a same-action detector
-tensor.
+Removing either cotangent sector is independently rank-detectable.
 
-The moduli-to-detector polynomial, its rank, kernel, stabilizer orbits, blind
-directions and minimal calibration-observable count are all
-`NOT_APPLICABLE_EMPTY_DOMAIN`.  This is not the zero map and is not evidence
-for a completion-independent response.  Likewise no two-event dynamical
-clock/phase/rod construction, causal support theorem, \(K_{\rm Berger}\)
-covariance, backreacted rank or tangent-cone restriction is promoted.
-
-The five imported observer results survive without promotion in their
-original linear, source-free or formal-order scopes.  The next missing
-representation remains the temporal Maxwell/emitter-antifield covariance
-module with \(A^+/\tau/K\) and cyclic \(K^+/\tau/A\) descendants.
+The first unexcluded object is therefore not another action on an existing
+row.  It is a genuinely new degree-compatible \(q_1\)-preimage of the
+Maxwell cotangent row, completed through the Maxwell ghost-antifield
+differential and signed cotangent descendants required by nilpotency and
+cyclicity.
 
 The fail-closed atlas row is
-`observer.berger.interaction.quartic_calibration_relational_redshift_disposition`
+`observer.berger.interaction.temporal_maxwell_emitter_antifield_covariance_module`
 (`symplectic=CERTIFIED`, `nonlinear=OBSTRUCTED`,
-`observational=OBSTRUCTED`).  No \(K_{\rm Berger}\), detector, memory,
-redshift, recoil-corrected rank or tangent-cone restriction is promoted.  The
-next activation gate is
-`ADJOIN_TEMPORAL_MAXWELL_EMITTER_ANTIFIELD_COVARIANCE_MODULE_AND_REPLAY_ARITY_TWO_BEFORE_QUARTIC_CALIBRATION`.
+`observational=OBSTRUCTED`).  No \(q_3\), \(K_{\rm Berger}\), detector,
+memory, redshift, recoil-corrected rank, tangent-cone restriction, branch or
+quantum result is promoted.  The next activation gate is
+`CLASSIFY_NEW_MAXWELL_COTANGENT_Q1_PREIMAGE_MAPPING_CONE_BEFORE_ANY_Q3_OR_OBSERVER_PROPAGATION`.

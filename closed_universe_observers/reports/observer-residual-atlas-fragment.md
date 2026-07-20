@@ -137,6 +137,15 @@ and restriction to the second-order cone remain `NO_CERTIFIED_MAP`: apparatus
 completed 108-row carrier are authorized successors, not consequences of the
 unary certificate.
 
+The bounded temporal Maxwell/emitter-antifield row is `OBSTRUCTED`.  Its
+complete 2,048-action existing-row module per emitter includes both forced
+cotangent sectors through total derivative order three.  The exact full
+action/source ranks are `2613<2614` for both emitters; the 42-coordinate
+quotient and first coefficient `-3 g_b h_b` persist.  Thus this row does not
+promote a nonlinear detector or redshift map.  Its first unexcluded successor
+is a genuinely new Maxwell-cotangent `q1`-preimage mapping cone, not another
+existing-row action or a direct cross-background identification.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.
