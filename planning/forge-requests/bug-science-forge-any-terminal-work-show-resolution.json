@@ -4,7 +4,7 @@
   "schema": "work-v0",
   "body": {
     "owner": "physics-programme",
-    "state": "REQUESTED",
+    "state": "LANDED",
     "objective": "Repair the remaining production inconsistency in typed terminal-outcome dependencies after SF17 was marked LANDED.  In the real physics programme, `s-f work ready` correctly strips `#ANY_TERMINAL` and offers the observer successor after its predecessor reached DONE, but `s-f work show` passes the raw suffixed identifier to program lookup and reports `UNRESOLVED ... (not found in program)`.  All read-only and mutating coordination surfaces must fold the same dependency semantics or agents will diagnose a healthy queue as broken.",
     "depends_on": [
       "sf:program/work/observer-berger-apparatus-physical-reduction-after-replacement-112",
@@ -16,7 +16,8 @@
     "notes": [
       "Minimal reproduction from physics/symplectic-reconstruction at commit 9dccd21f2 or later: `s-f work ready --stream observer --now 2026-07-20T22:50:00+02:00` prints the physical-reduction item READY, while `s-f work show --item observer-berger-apparatus-physical-reduction-after-replacement-112 --now 2026-07-20T22:50:00+02:00` prints `UNRESOLVED sf:program/work/observer-berger-apparatus-combined-q1-after-replacement-112#ANY_TERMINAL (not found in program)`.",
       "SF17/fe14c02a7 established the intended semantics, so this is a missed consumer path/regression rather than a new feature request.",
-      "The queue is not presently scientifically blocked because work-ready and the prior pull path resolve correctly, but the contradictory inspection surface is unsafe for resident-agent diagnosis."
+      "The queue is not presently scientifically blocked because work-ready and the prior pull path resolve correctly, but the contradictory inspection surface is unsafe for resident-agent diagnosis.",
+      "2026-07-21T01:05:00Z forge-coordinator: LANDED tango a5e3c4d00. Root cause: SF17 made deps_satisfied + both unmet-dep collectors + the DEPENDS_ON edge builder mode-aware, but do_work_show AND build_work_package_doc kept their own dep-resolution loops that passed the RAW suffixed id to program lookup -> work-ready offered the successor while work-show reported the DONE predecessor UNRESOLVED. Fix: both now resolve through the SAME canonical helpers (dep_raw_id to strip the #MODE suffix + dep_state_satisfies to judge by mode), so every readiness AND inspection surface folds identical semantics. work-show now prints \"SATISFIED <base-id> (<state>) [ANY_TERMINAL]\"; an unknown BASE id (suffix stripped) stays UNRESOLVED; no mutation during inspection. Controls verified on both backends (run.sh SF17 section): OBSTRUCTED satisfies ANY_TERMINAL not SUCCESS_TERMINAL, DONE satisfies both, ACTIVE satisfies neither, unknown base id unresolved. The six depends_on consumers (deps_satisfied, collect_unmet_deps, collect_unmet_deps_dir, the edge builder, work-show, work-package) are now audited mode-aware; no typed suffix removed from authored deps."
     ]
   }
 }
