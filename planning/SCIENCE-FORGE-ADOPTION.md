@@ -44,14 +44,16 @@ introduced by stream:
 | `black-hole` | black-hole | **AUTHORITATIVE:** use `s-f` for pull, lease, report, block, request, and close-out |
 | `observer` | observer/clock | **AUTHORITATIVE:** use `s-f` for pull, lease, report, block, request, and close-out |
 | `nonlinear` | nonlinear | **AUTHORITATIVE:** use `s-f` for pull, lease, report, block, request, and close-out |
-| `bridge` | Einstein/bridge | **SHADOW:** inspect generated state and use the reporting format; continue the current assignment until the all-stream cutover |
-| `classical` | classical | **SHADOW:** inspect generated state and use the reporting format; continue the current assignment until the all-stream cutover |
-| `quantum-qme` | quantum | **SHADOW:** inspect generated state and use the reporting format; continue the current assignment until the all-stream cutover |
+| `bridge` | Einstein/bridge | **AUTHORITATIVE:** use `s-f` for pull, lease, report, block, request, and close-out |
+| `classical` | classical | **AUTHORITATIVE:** use `s-f` for pull, lease, report, block, request, and close-out |
+| `quantum-qme` | quantum | **AUTHORITATIVE:** use `s-f` for pull, lease, report, block, request, and close-out |
 
-The three shadow streams become authoritative only after the coordinator
-records their cutover. Until then, only the black-hole, observer, and nonlinear
-teams should acquire leases or close work through `s-f`. Shadow teams must not
-create parallel lifecycle histories.
+All six resident streams are authoritative from 20 July 2026. Every team must
+use one exclusive `s-f` lease at a time and must not create a parallel
+lifecycle history in a team brief or shared roadmap. This coordination
+cutover does **not** enable Conflux universally: the consumer-specific gates
+below remain mandatory, and the resident-physics adapter request is still
+`ACCEPTED`, not `LANDED`, at the time of cutover.
 
 ### First proof-first pilot
 
@@ -82,7 +84,7 @@ item's `notes` or `resource_hint`:
 This is not a requirement to prove a guessed theorem. A minimal exact
 counterexample or obstruction is an equally valid close-out.
 
-The next proof-first cutover is the nonlinear stream:
+The nonlinear proof-first cutover is:
 
 ```text
 sf:program/work/nonlinear-cyclic-extension-splitting-theorem
@@ -93,6 +95,21 @@ coordination objects only; their certified nonlinear obstructions remain
 authoritative. The replacement asks whether the Einstein/additional exact
 sequence splits in an admissible cyclic filtered category before Conflux is
 allowed to search the large interaction payload.
+
+The remaining proof-first cutovers are:
+
+```text
+sf:program/work/classical-relative-spencer-prolongation-theorem
+sf:program/work/bridge-kernel-direction-incidence-normal-form
+sf:program/work/quantum-berger-retained-bv-hadamard-restriction
+```
+
+They consume the teams' actual latest results: the classical obstruction
+through order three, the bridge fixed-direction contraction shortfall, and
+the quantum rank-40 Hadamard transport plus canonical-summand restriction
+obstruction. The older stream heads are coordination-retired, not
+scientifically withdrawn. Their still-open C-G2, mixed-cone, and M14 goals
+return as new bounded work items after the current proof-first gates close.
 
 ## 3. Tool and capability boundary
 
@@ -176,8 +193,8 @@ block`; missing Forge/Conflux capabilities use `planning/forge-requests/`.
 | ---: | --- | --- |
 | 1 | `sf:program/work/observer-common-action-compatibility-theorem` | first proof-first pilot; Ward compatibility and minimal carrier/action enlargement |
 | 2 | `sf:program/work/nonlinear-conflux-branch-mixing-discovery` | branch selection, cyclic-redefinition invariants, and interaction-closed subcarriers |
-| 3 | `sf:program/work/classical-conflux-relative-lift-discovery` | order-one differential lift synthesis or minimal exact obstruction |
-| 4 | `sf:program/work/bridge-conflux-atlas-generalization` | common symplectic-divisor and rotation-zero normal forms |
+| 3 | `sf:program/work/classical-relative-spencer-prolongation-theorem` | general fixed-family prolongation theorem; Conflux only after proof and resident gate |
+| 4 | `sf:program/work/bridge-kernel-direction-incidence-normal-form` | deforming-kernel incidence topology; Conflux only after proof and resident gate |
 | 5 | `sf:program/work/quantum-conflux-local-algebra-discovery` | local BV/anomaly/counterterm algebra only |
 
 No black-hole Conflux successor exists yet. Hadamard, microlocal, positivity,

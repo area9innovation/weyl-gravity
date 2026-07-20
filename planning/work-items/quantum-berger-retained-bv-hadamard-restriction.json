@@ -1,0 +1,48 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-berger-retained-bv-hadamard-restriction",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-berger-retained-bv-hadamard-restriction",
+  "source": {
+    "path": "planning/work-items/quantum-berger-retained-bv-hadamard-restriction.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum",
+    "state": "PROPOSED",
+    "objective": "Proof-first quantum cutover: decide whether the certified global rank-40 Berger Hadamard Krein covariance restricts to the retained rank-26 graded BV complex. Classify the graph-intertwiner route and the direct retained-pairing route, including exact CCR normalization, Hadamard wavefront transport, the six ghost/identity rows, and BRST Ward compatibility.",
+    "stop_condition": "Define the complete bounded class of support-local regular graph intertwiners J satisfying C_dagger J=J C and nondegeneracy of J+J_dagger, together with the admissible graded extension to the retained ghost/identity rows. Prove existence and construct omega_26, or certify the first invariant obstruction and disposition the direct retained-pairing construction as the alternative. Every success must independently verify the retained equations, exact CCR, Hadamard relation, grading/reality, and BRST Ward identity before using the already certified 26-to-54 lift.",
+    "current_gate": "retained-26 graph-intertwiner or direct graded covariance theorem",
+    "forbid": "no projection to a canonical dilation summand; no positivity inference from a Krein covariance; no Hadamard, BRST, particle, or full-BV flag from the rank-40 auxiliary result alone; no Euclidean-to-Lorentzian promotion; no Conflux on Hadamard, microlocal, positivity, particle, scattering, or unitarity data; no rebuilding the certified conditional 26-to-54 lift",
+    "depends_on": [],
+    "activates": [
+      "a full 54-row BRST-compatible Hadamard covariance if the retained gate succeeds",
+      "a separately queued physical-cohomology positivity test",
+      "return to the M14 local Euclidean QME disposition after this Lorentzian gate is classified"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/lorentzian/",
+      "quantum-weyl/reports/",
+      "quantum-weyl/atlas/",
+      "quantum-weyl/active_frontier.py",
+      "quantum-weyl/schema/active-frontier-v1.schema.json",
+      "quantum-weyl/tests/test_active_frontier.py",
+      "reports/",
+      "planning/forge-requests/",
+      "notes/d-quotient-quantum-team-brief.md",
+      "notes/universe-building-roadmap.md"
+    ],
+    "resource_hint": "FIRST AUTHORITATIVE QUANTUM PROOF-FIRST CASE. The rank-40 transport at e361c7df and the canonical-summand obstruction/graph contract now in the working tree are the starting inputs. Conflux is explicitly forbidden for this Lorentzian microlocal ticket; the accepted resident-pilot request only permits a later, separate LOCAL-ALGEBRAIC quantum ticket.",
+    "notes": [
+      "Mathematical target: a BRST-compatible quasi-free Hadamard covariance on the retained graded Berger complex, obtained as a regular symplectic/Krein reduction of the auxiliary Hermitian dilation or directly from the retained causal pairing.",
+      "Candidate theorem: such a restriction exists exactly when a nondegenerate regular intertwining graph extends to a graded chain-compatible covariance; canonical summand restrictions fail because they annihilate the pulled pairing and CCR.",
+      "Proof obligations: classify graph intertwiners and their equivalence; prove nondegeneracy and equation invariance; extend through the six ghost/identity rows; verify the Ward identity; prove wavefront stability under the actual maps rather than importing positivity.",
+      "Counterexample strategy: canonical summand inclusions must reproduce the zero-CCR obstruction; mutations of J, grading, adjoint order, or ghost normalization must be rejected by the original retained chain and CCR/Ward verifiers.",
+      "Certificate boundary: success would establish a LORENTZIAN-CAUSAL free graded covariance, not positivity, a Hilbert particle space, interacting time-ordered products, a Lorentzian QME, scattering, or unitarity."
+    ],
+    "input_commit": "e361c7df",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
