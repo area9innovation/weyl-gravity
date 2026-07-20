@@ -1,0 +1,44 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-selected-compensator-global-euclidean-carrier-export",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-selected-compensator-global-euclidean-carrier-export",
+  "source": {
+    "path": "planning/work-items/classical-selected-compensator-global-euclidean-carrier-export.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Supply the global field-space, gauge-group and Euclidean-family carrier required to define a global-anomaly question for the single compensator repair selected by the A/B gate.",
+    "stop_condition": "Import the A/B selector and refuse an ambiguous or NEITHER verdict. Satisfy quantum-weyl/anomalies/schema/complex-compensator-global-anomaly-audit-input-v1.schema.json against the exact selected action hash. Declare the oriented compact manifolds and bundle sectors, complete gauge group including allowed disconnected diffeomorphisms and lifts, the status of the global phase U1 and any background probe, Euclidean vacuum-cylinder and admissible Berger continuations, mapping-torus families, and the complete background-specific minimal/nonminimal gauge-fixed BV Hessian domains. Include the Candidate A auxiliary scalar or Candidate B reducible three-form sector and all harmonic/flux zero modes. Export the classical parts of determinant-line real orientation and contour data while marking regulator-dependent quantum fields unresolved. Prove ellipticity/Fredholm properties or the first exact non-definition and supply independent topology, action-variation and operator-family rails. Emit the strict receiver requested by COMPLEX_COMPENSATOR_GLOBAL_ANOMALY_CARRIER_NONDEFINITION.",
+    "current_gate": "selected-action global and Euclidean classical carrier for determinant-line analysis",
+    "forbid": "no carrier for an unselected or hybrid action; no guessed mapping class group; no global phase U1 silently gauged; no import of the distinct N=2 compact-product magnetic bundle; no determinant holonomy or anomaly verdict; no missing zero modes; no Lorentzian, state, particle or unitarity claim",
+    "depends_on": [
+      "sf:program/work/classical-compensator-candidate-ab-comparison-gate"
+    ],
+    "activates": [
+      "quantum-selected-compensator-global-anomaly-audit",
+      "a complete selected-action Euclidean family",
+      "or a precise global-carrier non-definition"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "quantum-weyl/anomalies/fixtures/",
+      "reports/",
+      "residual_atlas/",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "POST-SELECTION CLASSICAL EXPORT. It consumes planning/forge-requests/complex-compensator-global-anomaly-classical-carrier.json against the selected action rather than the retired naive parent.",
+    "notes": [
+      "The preflight already establishes H1(S1xS3;Z)=Z and H2(S1xS3;Z)=0; replay rather than assume those facts.",
+      "Classical orientation and domain data must remain distinct from a quantum regulator or determinant phase."
+    ],
+    "input_commit": "3679620ff",
+    "stream": "classical"
+  },
+  "edges": []
+}
