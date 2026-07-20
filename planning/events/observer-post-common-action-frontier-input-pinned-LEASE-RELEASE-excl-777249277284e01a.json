@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-post-common-action-frontier-input-pinned-LEASE-RELEASE-excl-777249277284e01a",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/observer-post-common-action-frontier-input-pinned-LEASE-RELEASE-excl-777249277284e01a.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "observer-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T12:17:42Z", "seq": 2, "predecessor": "sf:program/event/observer-post-common-action-frontier-input-pinned-LEASE-ACQUIRE-excl-b28e8c59768ab461", "payload": {"target": "sf:program/work/observer-post-common-action-frontier-input-pinned", "agent": "observer-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-20T12:17:42Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/observer-post-common-action-frontier-input-pinned"}]
+}
