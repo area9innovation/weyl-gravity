@@ -1,0 +1,40 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/observer-replacement112-mixed-metric-rod-hessian-interface",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "observer-replacement112-mixed-metric-rod-hessian-interface",
+  "source": {
+    "path": "planning/work-items/observer-replacement112-mixed-metric-rod-hessian-interface.json",
+    "span": null
+  },
+  "body": {
+    "owner": "observer",
+    "state": "PROPOSED",
+    "objective": "Derive and serialize the first missing action variation for the positive-mixed replacement-112 carrier: the normalized mixed metric--eight-rod Hessian together with the six-rod subtraction and the corresponding Diff-BV adjoint interface.",
+    "stop_condition": "Import the certified Phi2 component-jet map and the terminal replacement-112 unary shortfall. Starting from the declared replacement action rather than the old 108-row operator, compute D_g D_R S_R,H in the frozen 112-row basis, identify the H-weighted eight-rod addition and six-rod subtraction, derive every ordered mixed Hessian coefficient with the finalized odd-Darboux lowering convention, and construct the required Diff-BV adjoints. Serialize source/target rows, degrees, reality and K_Berger weights, normalization, support-sector labels and zero-mode actions. Verify Hessian symmetry modulo the declared graded convention, action reconstruction, adjointness, exact row coverage and at least one decisive coefficient/sign mutation through an independent variational rail. If the action does not determine a unique normalized interface, emit the exact affine ambiguity and the first additional datum needed; do not copy the old carrier by analogy.",
+    "current_gate": "replacement-112 mixed metric-rod Hessian and adjoint interface",
+    "forbid": "no old 108-row coefficient transplanted without an action-derived crosswalk; no Phi2 completion treated as completion of the mixed Hessian; no parity-only cyclic sign; no support or zero-mode placeholder called an executable map; no common-action or physical-observable promotion in this item; no producer derivative reused as the independent verifier",
+    "depends_on": [
+      "sf:program/work/observer-replacement112-executable-unary-after-phi2-map#ANY_TERMINAL"
+    ],
+    "activates": [
+      "observer-replacement112-executable-unary-after-mixed-hessian"
+    ],
+    "allowed_paths": [
+      "closed_universe_observers/",
+      "reports/",
+      "residual_atlas/",
+      "paper/09-relational-clocks-berger-d-cartan.tex",
+      "notes/closed-universe-observer-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "ACTION-DERIVED FINITE-JET TASK. Prefer the variational-bicomplex request when available, but retain a direct independent action rail now.",
+    "notes": [
+      "This is the precise successor to BERGER_REPLACEMENT112_EXECUTABLE_UNARY_AFTER_PHI2_MAP_SHORTFALL; it does not repeat the completed Phi2 map."
+    ],
+    "input_commit": "f4b583fa5",
+    "stream": "observer"
+  },
+  "edges": []
+}
