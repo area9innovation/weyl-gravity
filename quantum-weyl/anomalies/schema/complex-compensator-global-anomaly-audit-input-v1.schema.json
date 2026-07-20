@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-complex-compensator-global-anomaly-audit-input-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "global_gauge_group_complete",
+    "backgrounds_and_bundle_sectors_complete",
+    "mapping_torus_families_complete",
+    "elliptic_BV_family_complete",
+    "determinant_line_oriented",
+    "zero_mode_policy_complete",
+    "local_QME_compatible_regulator",
+    "source_hashes"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-complex-compensator-global-anomaly-audit-input-v1"},
+    "global_gauge_group_complete": {"const": true},
+    "backgrounds_and_bundle_sectors_complete": {"const": true},
+    "mapping_torus_families_complete": {"const": true},
+    "elliptic_BV_family_complete": {"const": true},
+    "determinant_line_oriented": {"const": true},
+    "zero_mode_policy_complete": {"const": true},
+    "local_QME_compatible_regulator": {"const": true},
+    "source_hashes": {
+      "type": "object",
+      "minProperties": 7,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    }
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-complex-compensator-global-anomaly-carrier-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "input_pins",
+    "imported_theory",
+    "candidate_backgrounds",
+    "group_component_ledger",
+    "bundle_and_winding_ledger",
+    "mapping_torus_ledger",
+    "family_operator_requirements",
+    "finite_index_ledger",
+    "missing_input_contract",
+    "audit_receiver",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-complex-compensator-global-anomaly-carrier-preflight-v1"},
+    "result_id": {"const": "COMPLEX_COMPENSATOR_GLOBAL_ANOMALY_CARRIER_NONDEFINITION"},
+    "result_state": {"const": "EXACT_TOPOLOGY_LEDGER_COMPLETE_GLOBAL_PHASE_CARRIER_UNDEFINED"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "input_pins": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {"$ref": "#/$defs/pin"}
+    },
+    "imported_theory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gauge_group_connected_identity",
+        "internal_phase_symmetry",
+        "internal_connection_present",
+        "internal_U1_ghost_present",
+        "fermion_or_chiral_pfaffian_sector_present",
+        "local_QME_status",
+        "declared_DR_MS_status"
+      ],
+      "properties": {
+        "gauge_group_connected_identity": {"type": "string"},
+        "internal_phase_symmetry": {"const": "GLOBAL_U1_NOT_GAUGED"},
+        "internal_connection_present": {"const": false},
+        "internal_U1_ghost_present": {"const": false},
+        "fermion_or_chiral_pfaffian_sector_present": {"const": false},
+        "local_QME_status": {"const": "CONDITIONAL_ALL_ORDER_FORMAL_LOCAL_QME_RESTORABLE"},
+        "declared_DR_MS_status": {"const": "OBSTRUCTED_AT_EVANESCENT_CLOSURE"}
+      }
+    },
+    "candidate_backgrounds": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "Lorentzian_topology",
+          "Euclidean_candidate",
+          "Euclidean_selection_status",
+          "integral_betti_numbers",
+          "integral_cohomology_torsion"
+        ],
+        "properties": {
+          "id": {"type": "string"},
+          "Lorentzian_topology": {"type": "string"},
+          "Euclidean_candidate": {"type": "string"},
+          "Euclidean_selection_status": {"type": "string"},
+          "integral_betti_numbers": {"const": [1, 1, 0, 1, 1]},
+          "integral_cohomology_torsion": {"const": []}
+        }
+      }
+    },
+    "group_component_ledger": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"type": "object"}
+    },
+    "bundle_and_winding_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_manifold",
+        "H1",
+        "H2",
+        "circle_valued_theta_homotopy_sectors",
+        "principal_U1_Chern_classes_if_background_U1_is_introduced",
+        "flat_background_U1_holonomy",
+        "internal_phase_gauge_bundle",
+        "Berger_magnetic_bundle"
+      ],
+      "properties": {
+        "candidate_manifold": {"const": "S1 x S3"},
+        "H1": {"const": "Z"},
+        "H2": {"const": "0"},
+        "circle_valued_theta_homotopy_sectors": {"const": "H1(M;Z)=Z"},
+        "principal_U1_Chern_classes_if_background_U1_is_introduced": {"const": "H2(M;Z)=0"},
+        "flat_background_U1_holonomy": {"const": "Hom(H1,U1)=U1"},
+        "internal_phase_gauge_bundle": {"const": "NOT_APPLICABLE_GLOBAL_SYMMETRY_NO_CONNECTION"},
+        "Berger_magnetic_bundle": {"const": "NOT_IMPORTED_DIFFERENT_WEYL_MAXWELL_CARRIER"}
+      }
+    },
+    "mapping_torus_ledger": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "object"}
+    },
+    "family_operator_requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "full_changed_action_Euclidean_BV_operator",
+        "elliptic_gauge_fixed_family_over_mapping_tori",
+        "Berezinian_determinant_line",
+        "real_structure_and_line_orientation",
+        "zero_mode_and_stabilizer_policy",
+        "regulator_compatible_with_local_QME",
+        "required_line",
+        "Pfaffian_line"
+      ],
+      "properties": {
+        "full_changed_action_Euclidean_BV_operator": {"const": false},
+        "elliptic_gauge_fixed_family_over_mapping_tori": {"const": false},
+        "Berezinian_determinant_line": {"const": false},
+        "real_structure_and_line_orientation": {"const": false},
+        "zero_mode_and_stabilizer_policy": {"const": false},
+        "regulator_compatible_with_local_QME": {"const": false},
+        "required_line": {"type": "string", "minLength": 80},
+        "Pfaffian_line": {"const": "NOT_APPLICABLE_NO_FERMIONIC_CHIRAL_MATTER"}
+      }
+    },
+    "finite_index_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "betti_numbers_S1xS3",
+        "theta_winding_rank",
+        "principal_U1_Chern_class_rank",
+        "fermionic_mod_two_index",
+        "determinant_line_holonomy",
+        "global_anomaly_verdict"
+      ],
+      "properties": {
+        "betti_numbers_S1xS3": {"const": [1, 1, 0, 1, 1]},
+        "theta_winding_rank": {"const": 1},
+        "principal_U1_Chern_class_rank": {"const": 0},
+        "fermionic_mod_two_index": {"const": "NOT_APPLICABLE"},
+        "determinant_line_holonomy": {"const": "NOT_COMPUTED_FAMILY_OPERATOR_UNDEFINED"},
+        "global_anomaly_verdict": {"const": "UNDEFINED"}
+      }
+    },
+    "missing_input_contract": {
+      "type": "array",
+      "minItems": 8,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 30}
+    },
+    "audit_receiver": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "current_payload_status", "acceptance_fixture"],
+      "properties": {
+        "schema": {"const": "quantum-weyl-complex-compensator-global-anomaly-audit-input-v1"},
+        "current_payload_status": {"const": "REJECT_INCOMPLETE_CARRIER"},
+        "acceptance_fixture": {"type": "string"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {"const": false}
+    },
+    "next_gate": {"type": "string", "minLength": 120},
+    "claim_boundary": {"type": "string", "minLength": 500},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "source_manifest"],
+      "properties": {
+        "proof_type": {"const": "EXACT_KUNNETH_PLUS_TYPED_GLOBAL_CARRIER_NONDEFINITION"},
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 8,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "source_commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 20},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

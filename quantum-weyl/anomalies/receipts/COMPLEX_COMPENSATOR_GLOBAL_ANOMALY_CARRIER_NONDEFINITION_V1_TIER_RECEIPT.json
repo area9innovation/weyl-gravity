@@ -1,0 +1,68 @@
+{
+  "receipt_id": "COMPLEX_COMPENSATOR_GLOBAL_ANOMALY_CARRIER_NONDEFINITION_V1_TIER_RECEIPT",
+  "result_id": "COMPLEX_COMPENSATOR_GLOBAL_ANOMALY_CARRIER_NONDEFINITION",
+  "recorded_at": "2026-07-20",
+  "base_commit": "97b838f7a",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "input_hashes": {
+    "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1_at_306ff78a": "a537e31bf667520443903551b5bf2596dff9a1c35fade88d2ffc1e89c1e0b836",
+    "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY_at_54c3c180": "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc",
+    "TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION_at_e2c48b7a": "20915ec21d0c96534a7091b57ee2c3baf5728526a32d00de83dd75b4b94e7e5f"
+  },
+  "output_hashes": {
+    "certificate": "668e779d5906e86126d3508283af9265b97a3d78405fa834134543fc53fa9029",
+    "report": "a5c5a65c1f53673a1e86480407a7615db01cf4f2e89ac57cb5c236548ccab42f",
+    "quantum_atlas": "7a789bc0645b9fbac9030df29b715a49729a4564d30e750cb33a780a3a58405f",
+    "acceptance_fixture": "c453ad9a024e34559c2ba23739faba020bcf632499933a4687b6583c3bd9b062",
+    "classical_carrier_request": "e4719dd334393e0eaa89e4247093c8c12b569cc76dda6e5a3218cda26a4a9ed6",
+    "quantum_team_brief": "5e864c4be75ae870b5cb5e1ed5cf106cf7fa61a580ad405ed425b4ea3bd0688e"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile <five scoped modules> && python3 -m json.tool <certificate and request> && git diff --check -- <scoped paths>",
+      "elapsed_seconds": 3.28,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m anomalies.complex_compensator_global_anomaly_carrier_preflight_certificate --check",
+      "elapsed_seconds": 0.12,
+      "status": "PASS_EXACT_KUNNETH_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 quantum-weyl/anomalies/verify_complex_compensator_global_anomaly_carrier_preflight.py",
+      "elapsed_seconds": 0.85,
+      "status": "PASS_INDEPENDENT_CELLULAR_TOPOLOGY_HISTORICAL_PINS_AND_RECEIVER_FIXTURE"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest anomalies.tests.test_complex_compensator_global_anomaly_carrier_preflight",
+      "elapsed_seconds": 1.22,
+      "status": "PASS_8_TESTS_WITH_U1_C1_MAGNETIC_CROSSWALK_GLOBAL_VERDICT_LINE_AND_DIFF_COMPONENT_MUTATIONS"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 compile/validate --spec=draft2020 --strict=true <carrier and audit-input schemas plus payloads>",
+      "elapsed_seconds": 11.67,
+      "status": "PASS_TWO_DRAFT_2020_12_STRICT_SCHEMAS"
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest atlas.tests.test_quantum_atlas_fragment && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "elapsed_seconds": 13.01,
+      "status": "PASS_9_TESTS_AND_3_VERIFIERS_WITH_15_NON_MODE_GUARDS"
+    },
+    {
+      "tier": 2,
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 9.82,
+      "status": "ADVISORY_EXIT_0_WITH_PREEXISTING_BRIDGE_DRIFT_UNPINNED_FORGE_BUILD_AND_CORPUS_BASELINE_DRIFT_REPORTED"
+    }
+  ],
+  "tier_3_not_run": "No global anomaly verdict, all-loop regulator, Lorentzian QME, freeze, release or tag is promoted. The result is a fail-closed carrier preflight and is covered by tiers 0-2."
+}

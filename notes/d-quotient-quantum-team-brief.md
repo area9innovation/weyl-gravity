@@ -2349,3 +2349,33 @@ This result is `LOCAL-ALGEBRAIC`/`EUCLIDEAN-SPECTRAL`.
 
 - [`TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION.json`](../quantum-weyl/anomalies/certificates/TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION.json)
 - [`tau-adic-dr-ms-qap-obstruction.md`](../quantum-weyl/reports/tau-adic-dr-ms-qap-obstruction.md)
+
+## Complex-compensator global-anomaly carrier preflight (2026-07-20)
+
+The committed complex-compensator action fixes the local gauge group to
+`Diff semidirect Weyl`; \(U(1)_{\rm phase}\) is global and has no connection
+or ghost. It therefore cannot be inserted silently as a third gauge factor.
+
+For candidate periodic vacuum-cylinder and Berger continuations with topology
+\(S^1\times S^3\), independent Künneth and cellular calculations give
+
+\[
+(b_0,b_1,b_2,b_3,b_4)=(1,1,0,1,1).
+\]
+
+The phase has winding sectors \(H^1(M;\mathbb Z)=\mathbb Z\).
+Hypothetical background-\(U(1)\) bundles have zero Chern-class rank because
+\(H^2(M;\mathbb Z)=0\), though flat holonomy remains. The unrelated fixed
+\(N=2\) Weyl--Maxwell bundle is not imported into this Berger scalar carrier.
+
+The global phase is nevertheless undecided. The allowed disconnected
+diffeomorphism subgroup and bundle lifts, changed-action Euclidean BV family,
+Berezinian determinant-line orientation and contour, zero-mode policy, and
+local-QME-compatible regulator are missing. A strict receiver, acceptance
+fixture and typed classical request now delimit the later audit.
+
+This is `LOCAL-ALGEBRAIC`/`EUCLIDEAN-SPECTRAL`. It is a topology ledger and
+precise non-definition result, not global anomaly freedom.
+
+- [`COMPLEX_COMPENSATOR_GLOBAL_ANOMALY_CARRIER_NONDEFINITION.json`](../quantum-weyl/anomalies/certificates/COMPLEX_COMPENSATOR_GLOBAL_ANOMALY_CARRIER_NONDEFINITION.json)
+- [`complex-compensator-global-anomaly-carrier-preflight.md`](../quantum-weyl/reports/complex-compensator-global-anomaly-carrier-preflight.md)

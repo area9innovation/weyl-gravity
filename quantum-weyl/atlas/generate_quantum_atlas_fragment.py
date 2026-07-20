@@ -69,6 +69,7 @@ DEPENDENCIES = {
     "WZ_extended_local_BV": QROOT / "anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
     "tau_adic_all_loop_QME_stability": QROOT / "anomalies/certificates/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json",
     "tau_adic_DR_MS_QAP_obstruction": QROOT / "anomalies/certificates/TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION.json",
+    "complex_compensator_global_anomaly_preflight": QROOT / "anomalies/certificates/COMPLEX_COMPENSATOR_GLOBAL_ANOMALY_CARRIER_NONDEFINITION.json",
     "one_loop_Q1_disposition": QROOT / "transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
     "relative_Einstein_Weyl_QME_nondefinition": QROOT / "transfer/certificates/RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION.json",
     "relative_Einstein_Weyl_cyclic_pushforward_obstruction": QROOT / "transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
@@ -283,6 +284,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     wz_extended = values["WZ_extended_local_BV"]
     tau_all_loop = values["tau_adic_all_loop_QME_stability"]
     tau_dr_ms_qap = values["tau_adic_DR_MS_QAP_obstruction"]
+    complex_global = values["complex_compensator_global_anomaly_preflight"]
     q1_disposition = values["one_loop_Q1_disposition"]
     relative_qme_nondefinition = values[
         "relative_Einstein_Weyl_QME_nondefinition"
@@ -918,6 +920,13 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         or tau_dr_ms_qap.get("receiver_status")
         != "REJECT_UNCONDITIONAL_ALL_LOOP_PROMOTION"
         or any(tau_dr_ms_qap.get("claim_flags", {}).values())
+        or complex_global.get("result_state")
+        != "EXACT_TOPOLOGY_LEDGER_COMPLETE_GLOBAL_PHASE_CARRIER_UNDEFINED"
+        or complex_global.get("finite_index_ledger", {}).get(
+            "global_anomaly_verdict"
+        )
+        != "UNDEFINED"
+        or any(complex_global.get("claim_flags", {}).values())
         or zero_charge_restriction.get("result_state")
         != "PULLBACKS_UNDEFINED_TYPED_CHAIN_MAP_RECEIVER_REQUIRED"
         or len(zero_charge_restriction.get("pullback_dispositions", [])) != 6
@@ -1748,6 +1757,7 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
 def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     specs = [
         ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4; the standard healthy spin-0, spin-1/2 and spin-1 matter cone is exactly empty, its formal signed determinant lattice is classified, every healthy compact-group representation assignment projects into that empty cone before gauge-anomaly enumeration, and the exact Paneitz scalar column changes the projected cone only at a fourth-order opposite-residue price; the minimal-depth conformal spin-3/2 and spin-3 audits stop before determinant production at, respectively, the generic-background Bach Noether identity and the missing closed all-curvature spin-1/spin-3 carrier, with the superconformal completion separately indicating an unresolved shifted spin-2 sector, so no new gauge column is appended; a shifting compensator remains a changed theory; its formal local QME is conditionally restorable at every loop order under the declared quantum action principle, while the declared dimensional-regularization/minimal-subtraction realization is obstructed at evanescent closure because the nonzero Euler pole turns epsilon-times-evanescent continuation ambiguity into a finite carrier outside the certified four-dimensional module; this does not rule out a completed d-dimensional BV extension or another regulator, and does not select a gauge group, Standard Model or GUT; all three strict anomaly pullbacks remain UNDEFINED_MISSING_CHAIN_MAP on both the conformal-cylinder Taub-zero fibre and fixed-coupling Berger complex, so background vanishing or perturbative onset is not anomaly triviality; raw D and K_Berger remain distinct; the same-background tau-adic classical D_compact contraction is imported, while the first Lorentzian analytic Ward operator T2_ren remains undefined and the Cartan image is UNDEFINED_ANALYTICALLY; on the declared cornered Euclidean carrier, the boundary/corner BV-BFV complex, full-BV elliptic boundary problem, anomaly coefficients and differentiable D boundary charge are undefined", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "local_anomaly_completion_audit", "strict_anomaly_zero_charge_restriction_nondefinition", "boundary_corner_anomaly_obstruction", "quantum_Cartan_D_disposition", "renormalized_D_Ward_nondefinition", "unitary_matter_no_go", "matter_content_lattice", "matter_gauge_projection_obstruction", "Paneitz_higher_derivative_column", "conformal_gauge_carrier_obstruction", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "tau_adic_all_loop_QME_stability", "tau_adic_DR_MS_QAP_obstruction", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1")),
+        ("complex_compensator_global_anomaly_carrier", "complex-compensator topology and determinant-line carrier on candidate periodic vacuum-cylinder and Berger continuations; exact S1 x S3 cohomology gives phase winding H1=Z and H2=0, but U1_phase is global rather than gauged, the disconnected Diff subgroup is unexported, and the complete Euclidean BV family, line orientation, zero modes and local-QME-compatible regulator are absent, so global anomaly holonomy is undefined", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("complex_compensator_global_anomaly_preflight", "WZ_extended_local_BV", "tau_adic_all_loop_QME_stability", "tau_adic_DR_MS_QAP_obstruction")),
         ("relative_einstein_weyl_qme_defect", "compact-product Einstein-Maxwell to Weyl-Maxwell relative anomaly mapping cone; complete classical all-row noncyclic restriction imported, while exact generic action-form inertia obstructs the standard cyclic pushforward; rank-one pairing/action deformation or one positive same-q physical auxiliary repairs reduced cyclicity, but every changed-theory orbit still lacks an off-shell BV lift and common renormalized insertion functor, so the relative class, orbit invariance and coefficient are undefined", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"], ("relative_Einstein_Weyl_QME_nondefinition", "relative_Einstein_Weyl_cyclic_pushforward_obstruction", "relative_Einstein_Weyl_pairing_deformation_classification", "relative_changed_theory_QME_nondefinition")),
         ("euclidean_determinant_factor", "round-S4 TT or ghost determinant factor", ["EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "Euclidean_elliptic_complex", "nonconformal_coefficient_match")),
         ("flat_tt_log_form_factor", "nonzero-momentum flat-TT logarithmic effective-action form factor", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1")),
@@ -1802,7 +1812,7 @@ def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
                     complex_structure=("NO_CERTIFIED_MAP", "no particle complex structure crosswalk"),
                     hadamard=("NO_CERTIFIED_MAP", "no particle Hadamard crosswalk"),
                     state_space=("NO_CERTIFIED_MAP", "no particle state-space crosswalk"),
-                    qme=(("CERTIFIED", "strict local Euclidean QME is obstructed; the tau-adic compensator-extended local Euclidean QME is restored at one loop, and its formal local QME is conditionally restorable at every finite loop order under the declared quantum action principle; an all-order regulator realizing that hypothesis remains OPEN; specifically, the declared DR/MS realization is exactly obstructed at evanescent closure pending a d-dimensional BV completion, while a separately proved regulator remains possible; this carrier's coefficient is bound to the one-loop disposition; all three strict anomaly pullbacks remain undefined on the selected cylinder Taub-zero and fixed-coupling Berger sectors because the required local-to-sector chain maps are absent; the same-background classical D_compact contraction is now imported, but the renormalized tau-adic BV T2 extension across Diag_2, complete Q1 and the local-to-Cartan map remain undefined, so no Cartan class or residual transfer is promoted") if key in {"local_anomaly_class", "flat_tt_log_form_factor", "curvature_squared_covariant_log_form_factor", "fv_conformized_c2_log_form_factor"} else ("OPEN", "carrier retains its own anomaly/QME dependency")),
+                    qme=(("OPEN", "local compensator QME restoration does not decide the global anomaly; determinant-line holonomy is undefined until the strict global carrier receiver passes") if key == "complex_compensator_global_anomaly_carrier" else (("CERTIFIED", "strict local Euclidean QME is obstructed; the tau-adic compensator-extended local Euclidean QME is restored at one loop, and its formal local QME is conditionally restorable at every finite loop order under the declared quantum action principle; an all-order regulator realizing that hypothesis remains OPEN; specifically, the declared DR/MS realization is exactly obstructed at evanescent closure pending a d-dimensional BV completion, while a separately proved regulator remains possible; this carrier's coefficient is bound to the one-loop disposition; all three strict anomaly pullbacks remain undefined on the selected cylinder Taub-zero and fixed-coupling Berger sectors because the required local-to-sector chain maps are absent; the same-background classical D_compact contraction is now imported, but the renormalized tau-adic BV T2 extension across Diag_2, complete Q1 and the local-to-Cartan map remain undefined, so no Cartan class or residual transfer is promoted") if key in {"local_anomaly_class", "flat_tt_log_form_factor", "curvature_squared_covariant_log_form_factor", "fv_conformized_c2_log_form_factor"} else ("OPEN", "carrier retains its own anomaly/QME dependency"))),
                     lifecycle=("NO_CERTIFIED_MAP", "not a particle lifecycle entry"),
                     particle=("NO_CERTIFIED_MAP", "forbidden without an explicit physical residual-mode crosswalk"),
                     crosswalk=("NO_CERTIFIED_MAP", "non-mode carrier to particle"),
@@ -1829,7 +1839,7 @@ def validate_fragment(value: dict[str, Any]) -> None:
         Draft202012Validator.check_schema(schema)
         Draft202012Validator(schema).validate(value)
     ids = [entry["id"] for entry in value["entries"]]
-    if len(ids) != len(set(ids)) or len(ids) != 24:
+    if len(ids) != len(set(ids)) or len(ids) != 25:
         raise ValueError("quantum atlas entry count or uniqueness drifted")
     by_id = {entry["id"]: entry for entry in value["entries"]}
     residual = [entry for entry in value["entries"] if entry["quantum_data"]["entry_kind"] == "NONPARTICLE_RESIDUAL_CLASS"]
@@ -1864,7 +1874,7 @@ def validate_fragment(value: dict[str, Any]) -> None:
     ):
         raise ValueError("classical tangent obstruction was promoted without the QME bridge")
     guards = [entry for entry in value["entries"] if entry["quantum_data"]["entry_kind"] == "NON_MODE_PARTICLE_GUARD"]
-    if len(guards) != 14 or any(
+    if len(guards) != 15 or any(
         entry["quantum_data"]["particle_interpretation"]["status"] != "NO_CERTIFIED_MAP"
         for entry in guards
     ):

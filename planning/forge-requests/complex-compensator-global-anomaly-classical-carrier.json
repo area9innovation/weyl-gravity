@@ -1,0 +1,19 @@
+{
+  "id": "sf:forge-request/complex-compensator-global-anomaly-classical-carrier",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "classical-complex-compensator",
+    "state": "REQUESTED",
+    "objective": "Supply the classical global-field and Euclidean-family input rejected by quantum-weyl/anomalies/certificates/COMPLEX_COMPENSATOR_GLOBAL_ANOMALY_CARRIER_NONDEFINITION.json. The first consumer is sf:program/work/quantum-complex-compensator-global-anomaly-audit. Declare the global manifold and orientation data, full gauge group including allowed disconnected diffeomorphisms and bundle lifts, the status of global U1 background probes, Euclidean vacuum-cylinder and Berger continuations, and the complete background-specific minimal/nonminimal gauge-fixed BV Hessian family.",
+    "depends_on": [
+      "sf:program/work/quantum-complex-compensator-global-anomaly-audit"
+    ],
+    "stop_condition": "A content-addressed payload satisfies quantum-weyl/anomalies/schema/complex-compensator-global-anomaly-audit-input-v1.schema.json with real source hashes: all global group components and lifts, background and bundle sectors, mapping-torus families, elliptic BV operators/domains, determinant-line real orientation/contours, zero modes and a regulator compatible with the local-QME disposition are independently verified.",
+    "forbid": "No local H14 result used as global anomaly freedom; no guessed mapping class group; no global phase U1 silently gauged; no cross-background import of the N=2 Weyl-Maxwell magnetic bundle into the Berger scalar carrier; no determinant phase without a complete elliptic family and line orientation; no Lorentzian, state, particle or unitarity promotion.",
+    "notes": [
+      "On the candidate S1 x S3 continuations H1=Z and H2=0. Phase winding exists, while topologically nontrivial U1 principal bundles do not; flat background holonomy is separate.",
+      "The current action preflight is local and background independent. Its global U1 has no connection or ghost."
+    ]
+  }
+}
