@@ -54,6 +54,18 @@ def verify() -> None:
         entry = by_id[f"classical.vacuum_cylinder.deformation.w_{chirality}_squared"]
         if "not a one-particle mode" not in entry["scope"]["carrier"]:
             raise AssertionError("W-square was promoted to particle")
+    wz = by_id["classical.vacuum_cylinder.local_bv.wz_tau_adic_d_cartan"]
+    wz_ids = {item["result_id"] for item in wz["evidence"]}
+    if (
+        "WESS_ZUMINO_D_CARTAN_CONTRACTION_V1" not in wz_ids
+        or wz["descriptions"]["symplectic"] != "CERTIFIED"
+        or wz["descriptions"]["causal"] != "NOT_APPLICABLE"
+        or wz["descriptions"]["quantum"] != "OPEN"
+        or "not the Berger clock" not in wz["claim_boundary"]
+        or "Minkowski D_M projection is explicitly not exported"
+        not in wz["claim_boundary"]
+    ):
+        raise AssertionError("Wess-Zumino D-Cartan atlas boundary drifted")
     crosswalk = by_id["classical.crosswalk.bach_flat_parent_to_metric"]
     if set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("parent/metric crosswalk overpromoted")

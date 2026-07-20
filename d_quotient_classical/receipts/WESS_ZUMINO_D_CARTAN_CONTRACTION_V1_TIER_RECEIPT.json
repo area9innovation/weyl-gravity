@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "WESS_ZUMINO_D_CARTAN_CONTRACTION_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-20",
+  "work_item_input_commit": "698e4efc",
+  "integration_base_commit": "7f7f972cd14ecd7085371c9e864fc4d646011536",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "status": "CERTIFIED",
+  "artifacts": {
+    "certificate": {
+      "path": "d_quotient_classical/certificates/WESS_ZUMINO_D_CARTAN_CONTRACTION_V1.json",
+      "sha256": "7d55dd68a6d5460fc5abb8d0d338e56b3890de2209aa72b4a7838ac31d9b3507"
+    },
+    "producer": {
+      "path": "d_quotient_classical/compensator/wess_zumino_d_cartan_contraction.py",
+      "sha256": "4eca639b11c51d547d93027a7fffe5ddf8e1308827dc4a7e5b99722851d861d9"
+    },
+    "verifier": {
+      "path": "d_quotient_classical/compensator/verify_wess_zumino_d_cartan_contraction.py",
+      "sha256": "8c3713675268e486d716a0b02911b9d55d7284383b06206139888f86d1abe340"
+    },
+    "tests": {
+      "path": "d_quotient_classical/compensator/tests/test_wess_zumino_d_cartan_contraction.py",
+      "sha256": "cb065dd1059553a34c6191c956f3dddb9e1b0350b494a88e76cb53f86d6b5b55"
+    },
+    "schema": {
+      "path": "d_quotient_classical/schema/wess-zumino-d-cartan-contraction-v1.schema.json",
+      "sha256": "d509b91e95b1ba1d3a05cd04b1017741dc6dc59f243437bbd5b73086e07fdced"
+    },
+    "report": {
+      "path": "d_quotient_classical/reports/wess-zumino-d-cartan-contraction.md",
+      "sha256": "dd1419edd0c07bf3139bce8bbaaa12005a70e9012955ef1c549e2f5238b80185"
+    },
+    "atlas_generator": {
+      "path": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
+      "sha256": "a108041f5f94e2bd445576345c2f6338b747ce51da6f7456130c7c6ed680a6a1"
+    },
+    "atlas_verifier": {
+      "path": "d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+      "sha256": "7d8c14c6615188692625320d6763a45fd956a576a87255e8ac49c4d1af461b9c"
+    },
+    "atlas_tests": {
+      "path": "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+      "sha256": "f5c88812e7b66c4f3975917561cf8ff8ff0ed93042425a02b50a3f2b29454c7e"
+    },
+    "atlas_fragment": {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "f74a3f9703e9c6f593ec2d45b1eacbc953c77b9363a133b5cb731c695d030e97"
+    },
+    "team_brief": {
+      "path": "notes/d-quotient-classical-team-brief.md",
+      "sha256": "937396e4a3b976c8e1e06b94029ba3ce806784651a72fc490663cae8aa444f0f"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.14,
+      "checks": [
+        "Python compilation of the producer, independent verifier and unit tests",
+        "JSON parsing of the certificate, schema, atlas fragment and receipt",
+        "scoped git diff whitespace check",
+        "exact close-out sentinel inspection"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m d_quotient_classical.compensator.wess_zumino_d_cartan_contraction --check",
+          "elapsed_seconds": 0.13,
+          "result": "PASS"
+        },
+        {
+          "command": "python3 -m d_quotient_classical.compensator.verify_wess_zumino_d_cartan_contraction",
+          "elapsed_seconds": 0.10,
+          "result": "PASS"
+        },
+        {
+          "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_wess_zumino_d_cartan_contraction",
+          "elapsed_seconds": 0.14,
+          "result": "PASS_6_TESTS"
+        },
+        {
+          "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/wess-zumino-d-cartan-contraction-v1.schema.json -d d_quotient_classical/certificates/WESS_ZUMINO_D_CARTAN_CONTRACTION_V1.json",
+          "elapsed_seconds": 1.21,
+          "result": "PASS"
+        }
+      ],
+      "result": "The formal tau-adic Wess-Zumino quartet on the unit vacuum cylinder has an exact support-local contraction, canonical odd cyclic pairing, and raw D_compact Cartan action. The D-equivariant augmentation projection is certified for sigma_D=0 and exactly obstructed for the Minkowski dilation fixture sigma_D=-1."
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+          "elapsed_seconds": 0.16,
+          "result": "PASS"
+        },
+        {
+          "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+          "elapsed_seconds": 0.17,
+          "result": "PASS"
+        },
+        {
+          "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+          "elapsed_seconds": 0.17,
+          "result": "PASS"
+        },
+        {
+          "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment",
+          "elapsed_seconds": 0.06,
+          "result": "PASS_16_TESTS"
+        },
+        {
+          "command": "python3 symbolic/verify_conformal_cartan_contraction.py",
+          "elapsed_seconds": 10.03,
+          "result": "PASS"
+        },
+        {
+          "command": "python3 symbolic/verify_compact_cylinder_d_charge_audit.py --check",
+          "elapsed_seconds": 0.58,
+          "result": "PASS"
+        },
+        {
+          "command": "python3 quantum-weyl/anomalies/verify_wess_zumino_minimal_bv_cotangent_lift.py",
+          "elapsed_seconds": 0.12,
+          "result": "PASS"
+        },
+        {
+          "command": "python3 d_quotient_classical/minimal_bv_antifield/verify_classical_minimal_bv_antifield_export_v2.py",
+          "elapsed_seconds": 0.50,
+          "result": "PASS"
+        }
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This closes one same-background classical import boundary. It does not freeze a release, promote a paper theorem or lifecycle state, alter shared core algebra, or establish a quantum, Hadamard or Lorentzian-QME result."
+    }
+  },
+  "science_forge": {
+    "work_item": "sf:program/work/classical-compensator-d-cartan-contraction-export",
+    "accepted_request": "sf:program/request/quantum-cartan-d-one-loop-obstruction-to-classical-0ffe79fd2ff547a0",
+    "need_id": "SAME_BACKGROUND_TAU_ADIC_COMPENSATOR_D_CONTRACTION",
+    "agent": "classical-1",
+    "planned_disposition": "DONE",
+    "advisory_shadow": {
+      "command": "bash ci/science-forge-shadow.sh",
+      "timestamp_utc": "2026-07-20T09:44:57Z",
+      "elapsed_seconds": 3.31,
+      "exit_status": 0,
+      "evidence_status": "NOT_EVIDENCE",
+      "findings": [
+        "Forge binary/stdlib revision mismatch is informational.",
+        "Bridge certificate audit reported pre-existing drift.",
+        "Coverage census reported corpus growth from 976 to 1210 certificates."
+      ]
+    }
+  },
+  "pre_existing_shared_tree_changes_excluded": [
+    "notes/universe-building-roadmap.md",
+    "bridge/einstein_sector/receipts/EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_MOVING_SQUARE_ZERO_ALPHA_REPAIR_V1_INTEGRATION_RECEIPT.json",
+    "planning/events/bridge-asymptotic-bach-charge-phase-space-*",
+    "planning/events/observer-minimal-invariant-scalar-hessian-channel-*",
+    "sparseqr/"
+  ],
+  "claim_boundary": "This receipt certifies only the LOCAL-ALGEBRAIC same-background classical Q0, iota_D0, L_D0, inclusion, projection, support-local homotopy, canonical odd pairing, cyclicity, Cartan identity, residual equivariance and content hashes for the unit vacuum-cylinder raw D_compact formal tau-adic compensator extension. Wess-Zumino tau is not the Berger clock and D_compact is not K_Berger. The Minkowski dilation augmentation projection is exactly obstructed, not exported. No Q1, iota_D1, L_D1, renormalized product, Ward map, quantum Cartan defect, residual quantum transfer, anomaly coefficient, QME restoration, Hadamard state, positivity, particle or scattering conclusion follows."
+}

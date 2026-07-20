@@ -2596,6 +2596,52 @@ C26_BIKERNEL_SUPPORT_PROFILE_OR_SERIALIZED_SMOOTH_REMAINDER
 No Ward correction, BRST Hadamard covariance, positivity or quantum claim is
 made by this support theorem.
 
+The accepted same-background Wess--Zumino compensator request is now closed
+for the vacuum-cylinder raw-\(D_{\rm compact}\) row.
+`WESS_ZUMINO_D_CARTAN_CONTRACTION_V1` works on the unit conformal cylinder in
+the declared closed-universe derived sector `P_der`.  The compensator is the
+formal local Wess--Zumino field, not the Berger clock, and the generator is
+raw \(D_{\rm compact}=\partial_t\), not \(K_{\rm Berger}\).  Its Weyl
+component is zero, so the tau-adic augmentation ideal is \(D\)-stable.
+
+In dressed variables the exact quartet is
+
+\[
+Q_0\tau=\omega,\qquad
+Q_0\omega=0,\qquad
+Q_0\omega^*=\widehat\tau^*,\qquad
+Q_0\widehat\tau^*=0.
+\]
+
+With \(N\) the quartet number and
+\(s(\omega)=\tau,\ s(\widehat\tau^*)=\omega^*\), the support-local homotopy
+\(S=N^{-1}s\) on \(N>0\) satisfies
+
+\[
+Q_0S+SQ_0=1-\iota\pi,\qquad
+[Q_0,\iota_{D,0}]_+=\mathcal L_{D,0}.
+\]
+
+The inclusion, augmentation projection, all side conditions, raw-\(D\)
+equivariance, canonical odd pairing and opposite-weight cyclicity are exact.
+Nonzero-weight Cartan fixtures at weights \(-2\) and \(3\) prevent the result
+from being a weight-zero tautology.
+
+The generator boundary is sharp.  For any raw generator with Weyl component
+\(\sigma_D\),
+
+\[
+\pi(\mathcal L_D\tau)-\mathcal L_D(\pi\tau)=\sigma_D.
+\]
+
+Hence the same projection is exactly obstructed for Minkowski dilation
+\(D_M\), where \(\sigma_D=-1\).  That row would require an explicitly
+translated compensator-background orbit or another affine \(D\)-stable
+target carrier.  The classical export supplies no complete renormalized
+\(Q_1,\iota_{D,1},\mathcal L_{D,1}\), renormalized products or
+local-insertion-to-Cartan map, so it does not classify the quantum Cartan
+defect or authorize residual quantum transfer.
+
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
 negative-norm one-particle class.  A counterexample is a successful result, not

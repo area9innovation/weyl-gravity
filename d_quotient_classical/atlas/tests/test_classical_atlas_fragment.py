@@ -27,6 +27,23 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             carrier = self.entries[f"classical.vacuum_cylinder.deformation.w_{name}_squared"]["scope"]["carrier"]
             self.assertIn("not a one-particle mode", carrier)
 
+    def test_wess_zumino_d_cartan_is_a_local_nonmode_entry(self) -> None:
+        entry = self.entries[
+            "classical.vacuum_cylinder.local_bv.wz_tau_adic_d_cartan"
+        ]
+        self.assertIn("not a mode or particle carrier", entry["scope"]["carrier"])
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["causal"], "NOT_APPLICABLE")
+        self.assertEqual(entry["descriptions"]["quantum"], "OPEN")
+        self.assertIn(
+            "WESS_ZUMINO_D_CARTAN_CONTRACTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "Minkowski D_M projection is explicitly not exported",
+            entry["claim_boundary"],
+        )
+
     def test_correction_classes_are_separate(self) -> None:
         for entry in self.entries.values():
             second = entry["mode_data"]["second_order"]

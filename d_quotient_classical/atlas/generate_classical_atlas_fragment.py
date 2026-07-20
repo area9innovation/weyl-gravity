@@ -28,6 +28,7 @@ LEGACY_VACUUM = {
 }
 CERTS = {
     "vacuum": VACUUM_EVIDENCE,
+    "vacuum_WZ_D_Cartan": ROOT / "d_quotient_classical/certificates/WESS_ZUMINO_D_CARTAN_CONTRACTION_V1.json",
     "Berger_green": ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
     "Berger_bikernel_support_gate": ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
     "Berger_Cartan": ROOT / "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
@@ -237,6 +238,29 @@ def entries() -> list[dict[str, Any]]:
             _evidence("vacuum"),
             "This is a vertex/deformation class. It must never be relabelled as a positive-norm graviton or one-particle state.",
         ))
+    values.append(_entry(
+        "classical.vacuum_cylinder.local_bv.wz_tau_adic_d_cartan",
+        _scope(
+            VACUUM,
+            theory="formal tau-adic Wess-Zumino-compensator extension of pure-Weyl minimal BV",
+            charge_sector="closed-universe derived residual sector P_der with raw D_compact constrained",
+            carrier="support-local formal tau-adic dressed-jet algebra with the contractible (tau,omega,omega_star,tau_hat_star) quartet; not a mode or particle carrier",
+            degree="all local BV ghost/antifield degrees in the imported minimal complex",
+            parity="graded BV parity",
+            ell="NOT_APPLICABLE",
+            m="NOT_APPLICABLE",
+            k="arbitrary support-local covariant jets",
+            omega="all cylinder D weights; exact fixtures at -2,0,3 and paired +/-2",
+        ),
+        {"causal": "NOT_APPLICABLE", "symplectic": "CERTIFIED", "nonlinear": "NOT_APPLICABLE", "observational": "NOT_APPLICABLE", "quantum": "OPEN"},
+        ("NOT_APPLICABLE", "This is a local BV quartet and Cartan contraction, not a propagating mode family."),
+        ("CERTIFIED", "The dressed canonical odd BV pairing, quartet differential, homotopy and opposite-D-weight cyclicity identities are exact."),
+        ("CERTIFIED", "On P_der, raw D_compact=partial_t has zero Weyl component and the tau-adic augmentation projection is D-equivariant; the same projection is obstructed for Minkowski dilation with sigma_D=-1."),
+        ("NOT_APPLICABLE", "No harmonic resonance is assigned to a formal local BV quartet."),
+        _second(("NOT_APPLICABLE", "Not a first-order tangent mode."), ("NOT_APPLICABLE", "Not a first-order tangent mode."), ("NOT_APPLICABLE", "No causal second-order statement follows from the local quartet contraction.")),
+        _evidence("vacuum_WZ_D_Cartan"),
+        "This LOCAL-ALGEBRAIC entry closes only the same-background classical Q0/iota_D0/L_D0 and cyclic contraction requested for the vacuum-cylinder raw-D_compact row. Wess-Zumino tau is not the Berger clock, raw D_compact is not K_Berger, and the Minkowski D_M projection is explicitly not exported. Complete Q1, iota_D1, L_D1, renormalized products, the local-insertion-to-Cartan map, quantum defect classification, residual quantum transfer, Hadamard data, positivity and particles remain OPEN or NOT_APPLICABLE.",
+    ))
     values.append(_entry(
         "classical.berger.retained_gravity_clock_maxwell",
         _scope(BERGER, carrier="complete 54-row gauge-fixed gravity-clock complex with typed retained 36-row gravity-clock-Maxwell carrier", degree="all BV degrees; physical local fields at degree 0", parity="all local tensor and Maxwell parities", ell="arbitrary four-dimensional jets; no harmonic truncation", m="all", k="all local covectors", omega="K_Berger weight; raw D action is affine"),

@@ -1,0 +1,707 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/pure-weyl-wess-zumino-d-cartan-contraction-v1.schema.json",
+  "title": "Same-background Wess-Zumino compensator D-Cartan contraction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "background",
+    "generator",
+    "formal_field_algebra",
+    "operators",
+    "exact_identities",
+    "matrix_fixtures",
+    "affine_Weyl_component_gate",
+    "dependencies",
+    "content_hashes",
+    "consumer_contract",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-wess-zumino-d-cartan-contraction-v1"
+    },
+    "result_id": {
+      "const": "WESS_ZUMINO_D_CARTAN_CONTRACTION_V1"
+    },
+    "result_state": {
+      "const": "SAME_BACKGROUND_TAU_ADIC_D_COMPACT_CARTAN_CONTRACTION_EXPORTED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC"
+      ]
+    },
+    "background": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "setting_id",
+        "spacetime",
+        "metric",
+        "Bach_status",
+        "regularity_scope",
+        "boundaries",
+        "phase_space"
+      ],
+      "properties": {
+        "setting_id": {
+          "const": "vacuum_cylinder_regular_Bach_chart"
+        },
+        "spacetime": {
+          "const": "R_t x S3"
+        },
+        "metric": {
+          "const": "g_bar=-dt^2+dOmega_3^2"
+        },
+        "Bach_status": {
+          "const": "BACH_FLAT"
+        },
+        "regularity_scope": {
+          "type": "string",
+          "minLength": 40
+        },
+        "boundaries": {
+          "type": "string",
+          "minLength": 20
+        },
+        "phase_space": {
+          "const": "P_der"
+        }
+      }
+    },
+    "generator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generator_id",
+        "raw_definition",
+        "Diff_component",
+        "Weyl_component",
+        "background_fixed",
+        "surface_charge_rank",
+        "is_K_Berger",
+        "is_Minkowski_dilation"
+      ],
+      "properties": {
+        "generator_id": {
+          "const": "D_compact"
+        },
+        "raw_definition": {
+          "const": "partial_t"
+        },
+        "Diff_component": {
+          "const": "X_D=partial_t"
+        },
+        "Weyl_component": {
+          "const": 0
+        },
+        "background_fixed": {
+          "const": true
+        },
+        "surface_charge_rank": {
+          "const": 0
+        },
+        "is_K_Berger": {
+          "const": false
+        },
+        "is_Minkowski_dilation": {
+          "const": false
+        }
+      }
+    },
+    "formal_field_algebra": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "dressed_coordinates",
+        "quartet_order",
+        "augmentation_ideal",
+        "completion",
+        "WZ_tau_is_Berger_clock"
+      ],
+      "properties": {
+        "kind": {
+          "const": "FORMAL_TAU_ADIC_LOCAL_ANALYTIC_JET_ALGEBRA"
+        },
+        "dressed_coordinates": {
+          "type": "array",
+          "minItems": 8,
+          "items": {
+            "type": "string"
+          }
+        },
+        "quartet_order": {
+          "const": [
+            "tau",
+            "omega",
+            "omega_star",
+            "tau_hat_star"
+          ]
+        },
+        "augmentation_ideal": {
+          "type": "string",
+          "minLength": 20
+        },
+        "completion": {
+          "type": "string",
+          "minLength": 30
+        },
+        "WZ_tau_is_Berger_clock": {
+          "const": false
+        }
+      }
+    },
+    "operators": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Q0",
+        "iota_D0",
+        "L_D0",
+        "inclusion",
+        "projection",
+        "homotopy",
+        "pairing"
+      ],
+      "properties": {
+        "Q0": {
+          "type": "object",
+          "minProperties": 3
+        },
+        "iota_D0": {
+          "type": "object",
+          "minProperties": 4
+        },
+        "L_D0": {
+          "type": "object",
+          "minProperties": 4
+        },
+        "inclusion": {
+          "type": "string",
+          "minLength": 30
+        },
+        "projection": {
+          "type": "string",
+          "minLength": 30
+        },
+        "homotopy": {
+          "type": "object",
+          "minProperties": 6
+        },
+        "pairing": {
+          "type": "object",
+          "minProperties": 4
+        }
+      }
+    },
+    "exact_identities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Q0_squared",
+        "Cartan",
+        "projection_inclusion",
+        "contraction",
+        "side_conditions",
+        "D_equivariance",
+        "cyclicity",
+        "derivation_extension"
+      ],
+      "properties": {
+        "Q0_squared": {
+          "const": "0"
+        },
+        "Cartan": {
+          "const": "[Q0,iota_D0]_+=L_D0"
+        },
+        "projection_inclusion": {
+          "const": "pi iota=1"
+        },
+        "contraction": {
+          "const": "Q0 S+S Q0=1-iota pi"
+        },
+        "side_conditions": {
+          "const": [
+            "S^2=0",
+            "pi S=0",
+            "S iota=0"
+          ]
+        },
+        "D_equivariance": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "string"
+          }
+        },
+        "cyclicity": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "derivation_extension": {
+          "type": "string",
+          "minLength": 80
+        }
+      }
+    },
+    "matrix_fixtures": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quartet_Q0",
+        "quartet_h",
+        "quartet_pairing",
+        "unit_plus_quartet",
+        "cartan_weight_fixtures",
+        "cyclic_weight_pair_fixtures"
+      ],
+      "properties": {
+        "quartet_Q0": {
+          "$ref": "#/$defs/matrix"
+        },
+        "quartet_h": {
+          "$ref": "#/$defs/matrix"
+        },
+        "quartet_pairing": {
+          "$ref": "#/$defs/matrix"
+        },
+        "unit_plus_quartet": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "Q0",
+            "inclusion",
+            "projection",
+            "homotopy"
+          ],
+          "properties": {
+            "Q0": {
+              "$ref": "#/$defs/matrix"
+            },
+            "inclusion": {
+              "$ref": "#/$defs/matrix"
+            },
+            "projection": {
+              "$ref": "#/$defs/matrix"
+            },
+            "homotopy": {
+              "$ref": "#/$defs/matrix"
+            }
+          }
+        },
+        "cartan_weight_fixtures": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/cartanFixture"
+          }
+        },
+        "cyclic_weight_pair_fixtures": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "$ref": "#/$defs/cyclicFixture"
+          }
+        }
+      }
+    },
+    "affine_Weyl_component_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "criterion",
+        "rows",
+        "basis_independent_obstruction",
+        "minimal_missing_carrier_for_nonzero_sigma"
+      ],
+      "properties": {
+        "criterion": {
+          "type": "string",
+          "minLength": 40
+        },
+        "rows": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "vacuum_cylinder_D_compact",
+            "minkowski_D_M_cross_check"
+          ],
+          "properties": {
+            "vacuum_cylinder_D_compact": {
+              "$ref": "#/$defs/affineRowZero"
+            },
+            "minkowski_D_M_cross_check": {
+              "$ref": "#/$defs/affineRowNonzero"
+            }
+          }
+        },
+        "basis_independent_obstruction": {
+          "type": "string",
+          "minLength": 60
+        },
+        "minimal_missing_carrier_for_nonzero_sigma": {
+          "type": "string",
+          "minLength": 40
+        }
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "minProperties": 7,
+      "additionalProperties": {
+        "$ref": "#/$defs/reference"
+      }
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operators_sha256",
+        "formal_algebra_sha256",
+        "dependency_manifest_sha256"
+      ],
+      "properties": {
+        "operators_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "formal_algebra_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "dependency_manifest_sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "consumer_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_id",
+        "satisfied_scope",
+        "not_satisfied"
+      ],
+      "properties": {
+        "request_id": {
+          "const": "sf:program/request/quantum-cartan-d-one-loop-obstruction-to-classical-0ffe79fd2ff547a0"
+        },
+        "satisfied_scope": {
+          "type": "string",
+          "minLength": 50
+        },
+        "not_satisfied": {
+          "type": "array",
+          "minItems": 6,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "SAME_BACKGROUND_TAU_ADIC_COMPENSATOR_D_CONTRACTION",
+        "RAW_D_COMPACT_USED",
+        "RAW_D_REPLACED_BY_K_BERGER",
+        "WZ_TAU_IDENTIFIED_WITH_BERGER_CLOCK",
+        "MINKOWSKI_DILATION_CONTRACTION_EXPORTED",
+        "QUANTUM_D_CARTAN_DEFECT_CLASSIFIED",
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED",
+        "HADAMARD_OR_POSITIVITY_CLAIM"
+      ],
+      "properties": {
+        "SAME_BACKGROUND_TAU_ADIC_COMPENSATOR_D_CONTRACTION": {
+          "const": true
+        },
+        "RAW_D_COMPACT_USED": {
+          "const": true
+        },
+        "RAW_D_REPLACED_BY_K_BERGER": {
+          "const": false
+        },
+        "WZ_TAU_IDENTIFIED_WITH_BERGER_CLOCK": {
+          "const": false
+        },
+        "MINKOWSKI_DILATION_CONTRACTION_EXPORTED": {
+          "const": false
+        },
+        "QUANTUM_D_CARTAN_DEFECT_CLASSIFIED": {
+          "const": false
+        },
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": {
+          "const": false
+        },
+        "HADAMARD_OR_POSITIVITY_CLAIM": {
+          "const": false
+        }
+      }
+    },
+    "next_gate": {
+      "type": "string",
+      "minLength": 60
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 500
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "coefficient": {
+      "oneOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "properties": {
+            "numerator": {
+              "type": "integer"
+            },
+            "denominator": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        }
+      ]
+    },
+    "matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row_count",
+        "column_count",
+        "entries",
+        "sha256"
+      ],
+      "properties": {
+        "row_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "column_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "row",
+              "column",
+              "coefficient"
+            ],
+            "properties": {
+              "row": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "column": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "coefficient": {
+                "$ref": "#/$defs/coefficient"
+              }
+            }
+          }
+        },
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "cartanFixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "D_weight",
+        "ordered_basis",
+        "matrices"
+      ],
+      "properties": {
+        "D_weight": {
+          "type": "integer"
+        },
+        "ordered_basis": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "string"
+          }
+        },
+        "matrices": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "Q0",
+            "iota_D0",
+            "L_D0",
+            "homotopy"
+          ],
+          "properties": {
+            "Q0": {
+              "$ref": "#/$defs/matrix"
+            },
+            "iota_D0": {
+              "$ref": "#/$defs/matrix"
+            },
+            "L_D0": {
+              "$ref": "#/$defs/matrix"
+            },
+            "homotopy": {
+              "$ref": "#/$defs/matrix"
+            }
+          }
+        }
+      }
+    },
+    "cyclicFixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "weight_pair",
+        "ordered_basis",
+        "matrices"
+      ],
+      "properties": {
+        "weight_pair": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "integer"
+          }
+        },
+        "ordered_basis": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "string"
+          }
+        },
+        "matrices": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "Q0",
+            "homotopy",
+            "L_D0",
+            "pairing"
+          ],
+          "properties": {
+            "Q0": {
+              "$ref": "#/$defs/matrix"
+            },
+            "homotopy": {
+              "$ref": "#/$defs/matrix"
+            },
+            "L_D0": {
+              "$ref": "#/$defs/matrix"
+            },
+            "pairing": {
+              "$ref": "#/$defs/matrix"
+            }
+          }
+        }
+      }
+    },
+    "affineRowZero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sigma_D",
+        "pi_LD_tau_minus_LD_pi_tau",
+        "tau_adic_augmentation_ideal_D_stable",
+        "contraction_equivariant"
+      ],
+      "properties": {
+        "sigma_D": {
+          "const": 0
+        },
+        "pi_LD_tau_minus_LD_pi_tau": {
+          "const": 0
+        },
+        "tau_adic_augmentation_ideal_D_stable": {
+          "const": true
+        },
+        "contraction_equivariant": {
+          "const": true
+        }
+      }
+    },
+    "affineRowNonzero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sigma_D",
+        "pi_LD_tau_minus_LD_pi_tau",
+        "tau_adic_augmentation_ideal_D_stable",
+        "contraction_equivariant"
+      ],
+      "properties": {
+        "sigma_D": {
+          "const": -1
+        },
+        "pi_LD_tau_minus_LD_pi_tau": {
+          "const": -1
+        },
+        "tau_adic_augmentation_ideal_D_stable": {
+          "const": false
+        },
+        "contraction_equivariant": {
+          "const": false
+        }
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "artifact_id",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 5
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    }
+  }
+}

@@ -343,6 +343,70 @@
       }
     },
     {
+      "claim_boundary": "This LOCAL-ALGEBRAIC entry closes only the same-background classical Q0/iota_D0/L_D0 and cyclic contraction requested for the vacuum-cylinder raw-D_compact row. Wess-Zumino tau is not the Berger clock, raw D_compact is not K_Berger, and the Minkowski D_M projection is explicitly not exported. Complete Q1, iota_D1, L_D1, renormalized products, the local-insertion-to-Cartan map, quantum defect classification, residual quantum transfer, Hadamard data, positivity and particles remain OPEN or NOT_APPLICABLE.",
+      "descriptions": {
+        "causal": "NOT_APPLICABLE",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/WESS_ZUMINO_D_CARTAN_CONTRACTION_V1.json",
+          "result_id": "WESS_ZUMINO_D_CARTAN_CONTRACTION_V1",
+          "sha256": "7d55dd68a6d5460fc5abb8d0d338e56b3890de2209aa72b4a7838ac31d9b3507"
+        }
+      ],
+      "id": "classical.vacuum_cylinder.local_bv.wz_tau_adic_d_cartan",
+      "mode_data": {
+        "dispersion": {
+          "statement": "This is a local BV quartet and Cartan contraction, not a propagating mode family.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "The dressed canonical odd BV pairing, quartet differential, homotopy and opposite-D-weight cyclicity identities are exact.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "No harmonic resonance is assigned to a formal local BV quartet.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Not a first-order tangent mode.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "No causal second-order statement follows from the local quartet contraction.",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Not a first-order tangent mode.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "On P_der, raw D_compact=partial_t has zero Weyl component and the tau-adic augmentation projection is D-equivariant; the same projection is obstructed for Minkowski dilation with sigma_D=-1.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "unit conformal cylinder R_t x S3",
+        "boundaries": "closed compact Cauchy surface S3; no spatial boundary",
+        "carrier": "support-local formal tau-adic dressed-jet algebra with the contractible (tau,omega,omega_star,tau_hat_star) quartet; not a mode or particle carrier",
+        "charge_sector": "closed-universe derived residual sector P_der with raw D_compact constrained",
+        "degree": "all local BV ghost/antifield degrees in the imported minimal complex",
+        "ell": "NOT_APPLICABLE",
+        "k": "arbitrary support-local covariant jets",
+        "m": "NOT_APPLICABLE",
+        "omega": "all cylinder D weights; exact fixtures at -2,0,3 and paired +/-2",
+        "parity": "graded BV parity",
+        "theory": "formal tau-adic Wess-Zumino-compensator extension of pure-Weyl minimal BV"
+      }
+    },
+    {
       "claim_boundary": "Causality is unary and the cyclic Cartan theorem stops at arity three. The retained-26 homotopy extends to one-sided past/future/time-compact smooth bikernel LF classes with cyclic adjoint control, but the certified factorization has a cutoff-escape continuity obstruction on the full smooth Frechet class. The imported smooth Ward kernel has no one-sided support profile, so no Ward or Hadamard promotion follows. Raw affine D, arity four, Hadamard/QME, and a branch-resolved physical projector remain false.",
       "descriptions": {
         "causal": "CERTIFIED",
@@ -1486,7 +1550,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "dae40b3de54c11e6959f4a9f5036bbdeed252cd64807f4799f9e8a713a2b2bd8",
+  "generated_by_sha256": "a108041f5f94e2bd445576345c2f6338b747ce51da6f7456130c7c6ed680a6a1",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
