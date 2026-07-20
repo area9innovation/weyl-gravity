@@ -146,9 +146,10 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(hadamard["status"], "OPEN")
         self.assertIn("global Hadamard Krein covariances", hadamard["statement"])
         self.assertIn("morphism cone mapping", hadamard["statement"])
-        self.assertIn("canonical restriction", hadamard["statement"])
-        self.assertIn("off-diagonal Hermitian pairing", hadamard["statement"])
-        self.assertIn("direct retained-26 graded covariance", hadamard["statement"])
+        self.assertIn("canonical summand restriction", hadamard["statement"])
+        self.assertIn("graph-intertwiner class contains only zero", hadamard["statement"])
+        self.assertIn("metric/formal-adjoint endpoint", hadamard["statement"])
+        self.assertIn("ghost/identity Hadamard pair", hadamard["statement"])
         self.assertIn(
             "BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY",
             {evidence["result_id"] for evidence in berger["evidence"]},
@@ -181,6 +182,10 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         )
         self.assertIn(
             "BERGER_DILATION_TO_RETAINED26_RESTRICTION_AUDIT",
+            {evidence["result_id"] for evidence in berger["evidence"]},
+        )
+        self.assertIn(
+            "BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
         self.assertIn("exactly CCR-normalized covariance", hadamard["statement"])

@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-berger-regular-graph-intertwiner-endpoint-descent-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_layer",
+    "dependency_tags",
+    "classical_commit",
+    "setting_id",
+    "dependency_refs",
+    "exact_input_checks",
+    "regular_graph_classification",
+    "direct_metric_endpoint_descent",
+    "negative_controls",
+    "retained_26_completion_boundary",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-berger-regular-graph-intertwiner-endpoint-descent-v1"
+    },
+    "result_id": {
+      "const": "BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT"
+    },
+    "result_state": {
+      "const": "REGULAR_GRAPH_INTERTWINERS_OBSTRUCTED_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK_CERTIFIED_GHOST_WARD_COMPLETION_OPEN"
+    },
+    "lifecycle_layer": {
+      "const": "LORENTZIAN_RETAINED_BV_HADAMARD_RESTRICTION"
+    },
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "setting_id": {
+      "const": "compact_positive_berger_clock_fixed_coupling_linearized"
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {"$ref": "#/$defs/reference"}
+    },
+    "exact_input_checks": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {"const": true}
+    },
+    "regular_graph_classification": {"$ref": "#/$defs/replay"},
+    "direct_metric_endpoint_descent": {"$ref": "#/$defs/replay"},
+    "negative_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allow_upper_right_regularity_gain",
+        "remove_generic_v2_invertibility",
+        "use_i_src_in_both_dilation_blocks"
+      ],
+      "properties": {
+        "allow_upper_right_regularity_gain": {"$ref": "#/$defs/replay"},
+        "remove_generic_v2_invertibility": {"$ref": "#/$defs/replay"},
+        "use_i_src_in_both_dilation_blocks": {"$ref": "#/$defs/replay"}
+      }
+    },
+    "retained_26_completion_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metric_and_metric_adjoint_endpoint_rows",
+        "metric_endpoint_Hadamard_CCR_pullback",
+        "ghost_rows",
+        "identity_rows",
+        "global_exact_ghost_identity_Hadamard_pair",
+        "smooth_BRST_compatibility_correction",
+        "BRST_Ward_identity",
+        "conditional_26_to_54_lift"
+      ],
+      "properties": {
+        "metric_and_metric_adjoint_endpoint_rows": {"const": 20},
+        "metric_endpoint_Hadamard_CCR_pullback": {"const": "CERTIFIED"},
+        "ghost_rows": {"const": 3},
+        "identity_rows": {"const": 3},
+        "global_exact_ghost_identity_Hadamard_pair": {"const": "NOT_CONSTRUCTED"},
+        "smooth_BRST_compatibility_correction": {"const": "NOT_SOLVED"},
+        "BRST_Ward_identity": {"const": "NOT_VERIFIED"},
+        "conditional_26_to_54_lift": {
+          "const": "CERTIFIED_BUT_NOT_APPLIED_UNTIL_OMEGA26_EXISTS"
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "BERGER_REGULAR_GRAPH_INTERTWINER_CLASS_COMPLETE",
+        "BERGER_NONDEGENERATE_REGULAR_GRAPH_INTERTWINER_EXISTS",
+        "BERGER_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK",
+        "BERGER_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR",
+        "BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE",
+        "BERGER_26_ROW_BRST_HADAMARD",
+        "BERGER_54_ROW_BRST_HADAMARD",
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY",
+        "BERGER_HADAMARD_DATA",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "BERGER_REGULAR_GRAPH_INTERTWINER_CLASS_COMPLETE": {"const": true},
+        "BERGER_NONDEGENERATE_REGULAR_GRAPH_INTERTWINER_EXISTS": {"const": false},
+        "BERGER_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK": {"const": true},
+        "BERGER_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR": {"const": false},
+        "BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE": {"const": false},
+        "BERGER_26_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_54_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {
+      "const": "CONSTRUCT_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR_AND_SOLVE_SMOOTH_BRST_WARD_COMPLETION_ON_26_ROWS"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proof_type",
+        "source_manifest",
+        "source_manifest_sha256"
+      ],
+      "properties": {
+        "proof_type": {
+          "const": "ANISOTROPIC_SOBOLEV_ORDER_CLASSIFICATION_PRINCIPAL_SYMBOL_OBSTRUCTION_AND_EXACT_SOURCE_PULLBACK"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "source_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "replay": {
+      "type": "object",
+      "required": ["checks", "all_pass"],
+      "properties": {
+        "checks": {"type": "object"},
+        "all_pass": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    }
+  }
+}

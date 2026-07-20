@@ -371,10 +371,15 @@ positivity remain open. See
 
 The canonical projection question is now settled negatively. Because
 `H=[[0,I],[I,0]]` and `E_D=diag(E_C,E_Cdagger)`, either canonical summand has
-zero pulled pairing and zero pulled scalar causal form. A viable graph
-restriction requires a support-local `J` satisfying
-`Cdagger J=J C` with nondegenerate `J+Jdagger`; no such `J` is currently
-supplied. The alternative is to construct the retained 26-row covariance
-directly, including its six ghost/identity rows. The conditional 26-to-54
-lift is already certified. See
-[`berger-dilation-retained26-restriction-audit.md`](../reports/berger-dilation-retained26-restriction-audit.md).
+zero pulled pairing and zero pulled scalar causal form. The complete smooth
+support-local differential graph class bounded on the certified anisotropic
+Sobolev spaces is now classified: `Cdagger J=J C` forces `J=0`, so that
+route is obstructed as well. The correctly typed source map
+`diag(i_src,p_sol_dagger)` nevertheless pulls the rank-40 kernel back to a
+20-row metric/formal-adjoint endpoint Hadamard kernel with exact CCR. A
+global Hadamard pair on the three ghost and three identity rows and a smooth
+`q26`-compatible Ward completion remain open. The conditional 26-to-54 lift
+is already certified. See
+[`berger-dilation-retained26-restriction-audit.md`](../reports/berger-dilation-retained26-restriction-audit.md)
+and
+[`berger-regular-graph-intertwiner-endpoint-descent.md`](../reports/berger-regular-graph-intertwiner-endpoint-descent.md).

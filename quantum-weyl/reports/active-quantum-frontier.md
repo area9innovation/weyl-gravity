@@ -525,11 +525,15 @@ Quotient-inverse Cauchy morphisms transport it to the cutoff and full
 rank-40 metric dilations while preserving the Hadamard relation and exact
 CCR. Their fibre form remains indefinite. Exact block pullback shows that
 both canonical 20-row summands are isotropic and have zero pulled causal
-form, so naïve summand restriction is rejected. A support-local graph
-intertwiner or a direct retained-26 covariance (including six ghost/identity
-rows) is required; the conditional 26-to-54 lift is already certified.
-The BRST Ward identity and physical positivity remain open. No positive-state
-or full-BV Hadamard flag is promoted.
+form, so naïve summand restriction is rejected. The complete smooth
+support-local differential graph class bounded on the certified anisotropic
+Sobolev spaces is also obstructed: its only intertwiner is zero. The
+correctly typed source pullback does certify the 20-row metric/formal-adjoint
+endpoint Hadamard kernel with exact CCR. A global exact Hadamard pair on the
+six ghost/identity rows and a smooth \(q_{26}\)-compatible Ward completion
+remain required; the conditional 26-to-54 lift is already certified. The
+BRST Ward identity and physical positivity remain open. No positive-state or
+full-BV Hadamard flag is promoted.
 The generic typed biwave Volterra theorem is now independently imported as
 reusable causal infrastructure. It distinguishes solution- and source-space
 resolvents, proves both factorial bounds and inverse identities, reverses the

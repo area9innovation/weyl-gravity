@@ -1,0 +1,268 @@
+{
+  "claim_boundary": "This theorem classifies the complete smooth support-local differential graph class that is bounded on every certified anisotropic companion Sobolev space. Generic invertibility of sigma_2(V_2), followed by the remaining block equation, forces every such intertwiner to vanish, so that graph route is obstructed. Separately, the correctly typed source pullback of the rank-40 covariance gives a Hadamard exact-CCR kernel on the metric and formal-adjoint endpoints. It is not yet a graded retained-26 covariance: the three ghost and three identity rows, a chain-compatible smooth completion and the BRST Ward identity remain open. No 54-row Hadamard flag, positivity, particle, renormalized Lorentzian product, Lorentzian QME or quantum theory is certified.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR": false,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK": true,
+    "BERGER_NONDEGENERATE_REGULAR_GRAPH_INTERTWINER_EXISTS": false,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "BERGER_REGULAR_GRAPH_INTERTWINER_CLASS_COMPLETE": true,
+    "BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE": false,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "dependency_refs": {
+    "canonical_restriction_audit": {
+      "result_id": "BERGER_DILATION_TO_RETAINED26_RESTRICTION_AUDIT",
+      "sha256": "5d9892a100bc335cd5c8f7f78cf7a2bb42049d5cfc739b2f315db02d817c4b22"
+    },
+    "companion_graph_SDR": {
+      "result_id": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT",
+      "sha256": "9fad67f1b4e159051774e7b1d93d4a6373487f65334039b5e30dda98ff451575"
+    },
+    "finite_graph_wavefront_safety": {
+      "result_id": "BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY",
+      "sha256": "591d89a1ffd3a86b3f9c549a8fa4e8c1a0afcb6a0bf7eb7890ce23e0cae58a6c"
+    },
+    "full_dilation_covariance": {
+      "result_id": "BERGER_FULL_DILATION_HADAMARD_KREIN_CCR_COVARIANCE",
+      "sha256": "e44a2ffa5afca3496bd0487c61f6f21f940f1630a81a73497b635f581c315512"
+    },
+    "graded_state_space_contract": {
+      "result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+      "sha256": "99768cf1e444ef3525f19621702ee64a68aea83f83349a1c5d6223d9c959ca35"
+    },
+    "lower_by_two_symbol": {
+      "result_id": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORT",
+      "sha256": "9a01f82939b9a51adb1b348fffde5df6c71201dafc92e1967cc0556f5eed111d"
+    },
+    "retained_causal_chain": {
+      "result_id": "BERGER_CAUSAL_CHAIN_V2_IMPORT",
+      "sha256": "b035e828a468f6ffd2b9459b43500ed58591349eb658e499b610df0ce795d0f1"
+    },
+    "typed_Volterra_graph_spaces": {
+      "result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT",
+      "sha256": "b6f01563b642ba50ef329acfebb8c2fba582859ecef5d3832250f27519214abc"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "direct_metric_endpoint_descent": {
+    "adjoint_graph_SDR": {
+      "identity": "Cdagger p_src^dagger=p_sol^dagger Adagger",
+      "source_inclusion": "p_sol^dagger=(I,0)^T"
+    },
+    "all_pass": true,
+    "causal_pullback": "K_src^dagger H E_D K_src=[[0,(p_sol E_C i_src)^dagger],[p_sol E_C i_src,0]]",
+    "checks": {
+      "adjoint_source_inclusion_is_p_sol_dagger_I_0": true,
+      "finite_bundle_map_preserves_Hadamard_wavefront_inclusion": true,
+      "graph_SDR_intertwiners_make_endpoint_kernel_a_bisolution": true,
+      "metric_cross_block_is_p_sol_EC_i_src": true,
+      "metric_source_inclusion_is_i_src_0_I": true,
+      "opposite_cross_block_is_formal_adjoint": true,
+      "same_source_map_transports_covariance_and_Pauli_Jordan": true,
+      "source_map_is_order_zero_support_local": true
+    },
+    "combined_source_map": "K_src=diag(i_src,p_sol^dagger):(A sources direct_sum Adagger sources)->D sources",
+    "kernel_pullback": "W_A_direct_sum_Adagger=K_src^dagger W_D K_src",
+    "metric_graph_SDR": {
+      "identity": "C i_sol=i_src A",
+      "solution_inclusion": "i_sol=(I,Box_2)^T",
+      "solution_projection": "p_sol=(I,0)",
+      "source_inclusion": "i_src=(0,I)^T"
+    },
+    "symbolic_pulled_matrix": [
+      [
+        "0",
+        "e12"
+      ],
+      [
+        "e12",
+        "0"
+      ]
+    ]
+  },
+  "exact_input_checks": {
+    "canonical_summand_already_obstructed": true,
+    "common_setting": true,
+    "exact_companion_graph_SDR": true,
+    "finite_graph_maps_wavefront_safe": true,
+    "full_rank40_Hadamard_CCR_covariance": true,
+    "graded_BRST_covariance_still_open": true,
+    "retained_26_causal_chain_certified": true,
+    "typed_Volterra_graph_spaces_certified": true,
+    "v2_generic_symbol_rank_ten": true
+  },
+  "lifecycle_layer": "LORENTZIAN_RETAINED_BV_HADAMARD_RESTRICTION",
+  "negative_controls": {
+    "allow_upper_right_regularity_gain": {
+      "all_pass": false,
+      "bounded_support_local_block_orders": {
+        "J11": "order_at_most_0",
+        "J12": "order_at_most_0_UNREGULAR_MUTATION",
+        "J21": "order_at_most_1",
+        "J22": "order_at_most_0"
+      },
+      "checks": {
+        "J_plus_Jdagger_is_degenerate": false,
+        "anisotropic_graph_domain_Xs_is_Hsplus1_direct_sum_Hs": true,
+        "generic_v2_invertibility_kills_order_one_J21_symbol": false,
+        "only_zero_intertwiner_survives": false,
+        "order_three_equation_is_v2dagger_L_equals_zero": false,
+        "order_two_equation_kills_J22": false,
+        "order_two_equation_kills_remaining_J21": false,
+        "order_zero_equation_kills_J11": false,
+        "remaining_lower_left_equation_is_minus_J11_equals_zero": false,
+        "support_local_differential_J12_must_vanish": false
+      },
+      "generic_invertibility_input": true,
+      "graph_spaces": "X_s=(C0(H^(s+1)) intersect C1(H^s)) direct_sum (C0(H^s) intersect C1(H^(s-1)))",
+      "nondegenerate_graph_exists": true,
+      "order_three_identity": "v2(xi)dagger L(xi)=0",
+      "order_two_identities": [
+        "v2(xi)dagger J21=0",
+        "v2(xi)dagger J22=0",
+        "J22 v2(xi)=0"
+      ],
+      "principal_adjoint": "sigma_2(Cdagger)=[[q I10,v2(xi)dagger],[0,q I10]]",
+      "principal_companion": "sigma_2(C)=[[q I10,0],[v2(xi),q I10]]",
+      "remaining_order_zero_identity": "-J11=0",
+      "surviving_form": "J=0"
+    },
+    "remove_generic_v2_invertibility": {
+      "all_pass": false,
+      "bounded_support_local_block_orders": {
+        "J11": "order_at_most_0",
+        "J12": "zero_no_support_local_differential_operator_improves_Hs_to_Hs+1",
+        "J21": "order_at_most_1",
+        "J22": "order_at_most_0"
+      },
+      "checks": {
+        "J_plus_Jdagger_is_degenerate": false,
+        "anisotropic_graph_domain_Xs_is_Hsplus1_direct_sum_Hs": true,
+        "generic_v2_invertibility_kills_order_one_J21_symbol": false,
+        "only_zero_intertwiner_survives": false,
+        "order_three_equation_is_v2dagger_L_equals_zero": true,
+        "order_two_equation_kills_J22": false,
+        "order_two_equation_kills_remaining_J21": false,
+        "order_zero_equation_kills_J11": false,
+        "remaining_lower_left_equation_is_minus_J11_equals_zero": false,
+        "support_local_differential_J12_must_vanish": true
+      },
+      "generic_invertibility_input": false,
+      "graph_spaces": "X_s=(C0(H^(s+1)) intersect C1(H^s)) direct_sum (C0(H^s) intersect C1(H^(s-1)))",
+      "nondegenerate_graph_exists": true,
+      "order_three_identity": "v2(xi)dagger L(xi)=0",
+      "order_two_identities": [
+        "v2(xi)dagger J21=0",
+        "v2(xi)dagger J22=0",
+        "J22 v2(xi)=0"
+      ],
+      "principal_adjoint": "sigma_2(Cdagger)=[[q I10,v2(xi)dagger],[0,q I10]]",
+      "principal_companion": "sigma_2(C)=[[q I10,0],[v2(xi),q I10]]",
+      "remaining_order_zero_identity": "-J11=0",
+      "surviving_form": "J=0"
+    },
+    "use_i_src_in_both_dilation_blocks": {
+      "adjoint_graph_SDR": {
+        "identity": "Cdagger p_src^dagger=p_sol^dagger Adagger",
+        "source_inclusion": "p_sol^dagger=(I,0)^T"
+      },
+      "all_pass": false,
+      "causal_pullback": "K_src^dagger H E_D K_src=[[0,(p_sol E_C i_src)^dagger],[p_sol E_C i_src,0]]",
+      "checks": {
+        "adjoint_source_inclusion_is_p_sol_dagger_I_0": false,
+        "finite_bundle_map_preserves_Hadamard_wavefront_inclusion": false,
+        "graph_SDR_intertwiners_make_endpoint_kernel_a_bisolution": false,
+        "metric_cross_block_is_p_sol_EC_i_src": false,
+        "metric_source_inclusion_is_i_src_0_I": true,
+        "opposite_cross_block_is_formal_adjoint": false,
+        "same_source_map_transports_covariance_and_Pauli_Jordan": false,
+        "source_map_is_order_zero_support_local": true
+      },
+      "combined_source_map": "K_src=diag(i_src,p_sol^dagger):(A sources direct_sum Adagger sources)->D sources",
+      "kernel_pullback": "W_A_direct_sum_Adagger=K_src^dagger W_D K_src",
+      "metric_graph_SDR": {
+        "identity": "C i_sol=i_src A",
+        "solution_inclusion": "i_sol=(I,Box_2)^T",
+        "solution_projection": "p_sol=(I,0)",
+        "source_inclusion": "i_src=(0,I)^T"
+      },
+      "symbolic_pulled_matrix": [
+        [
+          "0",
+          "e22"
+        ],
+        [
+          "e22",
+          "0"
+        ]
+      ]
+    }
+  },
+  "next_gate": "CONSTRUCT_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR_AND_SOLVE_SMOOTH_BRST_WARD_COMPLETION_ON_26_ROWS",
+  "provenance": {
+    "proof_type": "ANISOTROPIC_SOBOLEV_ORDER_CLASSIFICATION_PRINCIPAL_SYMBOL_OBSTRUCTION_AND_EXACT_SOURCE_PULLBACK",
+    "source_manifest": {
+      "../reports/berger-regular-graph-intertwiner-endpoint-descent.md": "84bad386ce9b4c83efddb6e5f9aef87969b6cd9f7f5aa6b692d320a337129231",
+      "berger_regular_graph_intertwiner_endpoint_descent.py": "3d2cfdc4869e56435318486e73d2195cec836480b17a531c18a342a7ef18f607",
+      "berger_regular_graph_intertwiner_endpoint_descent_certificate.py": "49eff18c6380cb48ffa06afe11d8453bf79f3f1282ec54b43ab52bcfb3ed37fd",
+      "schema/berger-regular-graph-intertwiner-endpoint-descent-v1.schema.json": "b4c9fee0e45458f88adaff3109c6a5dc32e81d9d80718a957331684d3fcd71f4",
+      "tests/test_berger_regular_graph_intertwiner_endpoint_descent.py": "63b5a33bc456852e75cb725158a58858912bbc4fc7eb500ccc443e64e6753e5c",
+      "verify_berger_regular_graph_intertwiner_endpoint_descent.py": "af4cefc0a2b10cc301b1e22b68ced48e1fa878eaf53e930a9318d3ada37f083b"
+    },
+    "source_manifest_sha256": "d278abc996a82b494a9e02503fe2ed692213c4578f72c6e73cebd92b78dcdc14"
+  },
+  "regular_graph_classification": {
+    "all_pass": true,
+    "bounded_support_local_block_orders": {
+      "J11": "order_at_most_0",
+      "J12": "zero_no_support_local_differential_operator_improves_Hs_to_Hs+1",
+      "J21": "order_at_most_1",
+      "J22": "order_at_most_0"
+    },
+    "checks": {
+      "J_plus_Jdagger_is_degenerate": true,
+      "anisotropic_graph_domain_Xs_is_Hsplus1_direct_sum_Hs": true,
+      "generic_v2_invertibility_kills_order_one_J21_symbol": true,
+      "only_zero_intertwiner_survives": true,
+      "order_three_equation_is_v2dagger_L_equals_zero": true,
+      "order_two_equation_kills_J22": true,
+      "order_two_equation_kills_remaining_J21": true,
+      "order_zero_equation_kills_J11": true,
+      "remaining_lower_left_equation_is_minus_J11_equals_zero": true,
+      "support_local_differential_J12_must_vanish": true
+    },
+    "generic_invertibility_input": true,
+    "graph_spaces": "X_s=(C0(H^(s+1)) intersect C1(H^s)) direct_sum (C0(H^s) intersect C1(H^(s-1)))",
+    "nondegenerate_graph_exists": false,
+    "order_three_identity": "v2(xi)dagger L(xi)=0",
+    "order_two_identities": [
+      "v2(xi)dagger J21=0",
+      "v2(xi)dagger J22=0",
+      "J22 v2(xi)=0"
+    ],
+    "principal_adjoint": "sigma_2(Cdagger)=[[q I10,v2(xi)dagger],[0,q I10]]",
+    "principal_companion": "sigma_2(C)=[[q I10,0],[v2(xi),q I10]]",
+    "remaining_order_zero_identity": "-J11=0",
+    "surviving_form": "J=0"
+  },
+  "result_id": "BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT",
+  "result_state": "REGULAR_GRAPH_INTERTWINERS_OBSTRUCTED_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK_CERTIFIED_GHOST_WARD_COMPLETION_OPEN",
+  "retained_26_completion_boundary": {
+    "BRST_Ward_identity": "NOT_VERIFIED",
+    "conditional_26_to_54_lift": "CERTIFIED_BUT_NOT_APPLIED_UNTIL_OMEGA26_EXISTS",
+    "ghost_rows": 3,
+    "global_exact_ghost_identity_Hadamard_pair": "NOT_CONSTRUCTED",
+    "identity_rows": 3,
+    "metric_and_metric_adjoint_endpoint_rows": 20,
+    "metric_endpoint_Hadamard_CCR_pullback": "CERTIFIED",
+    "smooth_BRST_compatibility_correction": "NOT_SOLVED"
+  },
+  "schema": "quantum-weyl-berger-regular-graph-intertwiner-endpoint-descent-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

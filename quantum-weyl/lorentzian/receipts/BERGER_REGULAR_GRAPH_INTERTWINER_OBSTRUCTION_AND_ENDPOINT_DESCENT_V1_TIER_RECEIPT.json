@@ -1,0 +1,56 @@
+{
+  "schema": "quantum-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT_V1_TIER_RECEIPT",
+  "recorded_at_utc": "2026-07-20T08:08:23Z",
+  "base_commit": "964f957e5d3e3ebda9e05a7f9edcdeb84462db78",
+  "dependency_tags": ["LORENTZIAN-CAUSAL"],
+  "changed_claim": "The complete smooth support-local differential graph-intertwiner class bounded on the certified anisotropic companion Sobolev scale contains only the zero intertwiner. A differently typed order-zero source pullback nevertheless certifies the 20-row metric/formal-adjoint endpoint Hadamard kernel and exact CCR. The global ghost/identity Hadamard pair and smooth q26-compatible BRST Ward completion remain open.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.05,
+      "commands": [
+        "python3 -m py_compile quantum-weyl/lorentzian/berger_regular_graph_intertwiner_endpoint_descent.py quantum-weyl/lorentzian/berger_regular_graph_intertwiner_endpoint_descent_certificate.py quantum-weyl/lorentzian/verify_berger_regular_graph_intertwiner_endpoint_descent.py quantum-weyl/active_frontier.py quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
+        "python3 -m json.tool quantum-weyl/lorentzian/schema/berger-regular-graph-intertwiner-endpoint-descent-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/schema/active-frontier-v1.schema.json",
+        "git diff --check -- quantum-weyl notes/d-quotient-quantum-team-brief.md notes/universe-building-roadmap.md"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 7.04,
+      "tests_run": 24,
+      "commands": [
+        "python3 quantum-weyl/lorentzian/berger_regular_graph_intertwiner_endpoint_descent_certificate.py --emit",
+        "PYTHONPATH=.:quantum-weyl python3 quantum-weyl/lorentzian/verify_berger_regular_graph_intertwiner_endpoint_descent.py",
+        "PYTHONPATH=.:quantum-weyl pytest -q quantum-weyl/lorentzian/tests/test_berger_regular_graph_intertwiner_endpoint_descent.py",
+        "python3 quantum-weyl/active_frontier_certificate.py --emit",
+        "PYTHONPATH=.:quantum-weyl python3 quantum-weyl/verify_active_frontier.py",
+        "PYTHONPATH=.:quantum-weyl pytest -q quantum-weyl/tests/test_active_frontier.py",
+        "PYTHONPATH=.:quantum-weyl python3 quantum-weyl/atlas/generate_quantum_atlas_fragment.py --emit",
+        "PYTHONPATH=.:quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment",
+        "PYTHONPATH=.:quantum-weyl pytest -q quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The exact graph obstruction and endpoint pullback were replayed independently, and their complete affected active-frontier and generated-atlas consumer chain was regenerated and verified. All upstream dilation, graph-SDR, lower-by-two, causal and wavefront inputs remain content-addressed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This gate closes one support-local graph class and certifies only the metric endpoint pullback. It does not promote retained-26/full-BV Hadamard covariance, a BRST Ward identity, positivity, renormalized Lorentzian products, a Lorentzian QME or a freeze."
+    }
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_EXIT_ZERO_WITH_FINDINGS",
+    "command": "./ci/science-forge-shadow.sh",
+    "elapsed_seconds": 3.56,
+    "findings": [
+      "bridge certificate audit drift=FAIL",
+      "coverage census drift: 1189 certificates versus baseline 976",
+      "Forge checkout revision differs from the unpinned dirty development binary"
+    ],
+    "claim_use": "NOT_USED_FOR_PROMOTION"
+  },
+  "claim_boundary": "This theorem is scoped to smooth support-local differential graph intertwiners bounded on every certified anisotropic companion Sobolev space. It does not rule out non-support-local pseudodifferential maps. The endpoint pullback certifies a 20-row metric/formal-adjoint Hadamard exact-CCR kernel, not the six ghost/identity rows, q26 compatibility, the BRST Ward identity, a retained-26 or 54-row full-BV covariance, positivity, particles, interacting products or a Lorentzian QME."
+}

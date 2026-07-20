@@ -566,6 +566,18 @@ class ActiveFrontierTests(unittest.TestCase):
             flags["BERGER_DILATION_GRAPH_RESTRICTION_CONTRACT_READY"]
         )
         self.assertFalse(flags["BERGER_DILATION_GRAPH_INTERTWINER_SUPPLIED"])
+        self.assertTrue(
+            flags["BERGER_REGULAR_GRAPH_INTERTWINER_CLASS_COMPLETE"]
+        )
+        self.assertFalse(
+            flags["BERGER_NONDEGENERATE_REGULAR_GRAPH_INTERTWINER_EXISTS"]
+        )
+        self.assertTrue(
+            flags["BERGER_METRIC_ENDPOINT_HADAMARD_CCR_PULLBACK"]
+        )
+        self.assertFalse(
+            flags["BERGER_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR"]
+        )
         self.assertFalse(flags["BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE"])
         self.assertTrue(flags["BERGER_COVARIANCE_LIFT_26_TO_54"])
         self.assertTrue(
@@ -589,12 +601,14 @@ class ActiveFrontierTests(unittest.TestCase):
             row["status"],
         )
         self.assertIn(
-            "CANONICAL_SUMMAND_RESTRICTION_OBSTRUCTED",
+            "BERGER_REGULAR_GRAPH_CLASS_OBSTRUCTED_METRIC_ENDPOINT_"
+            "HADAMARD_CCR_PULLBACK_CERTIFIED_GHOST_WARD_COMPLETION_OPEN",
             row["status"],
         )
         self.assertEqual(
             row["next_gate"],
-            "SUPPLY_SUPPORT_LOCAL_GRAPH_INTERTWINER_OR_CONSTRUCT_DIRECT_RETAINED26_GRADED_COVARIANCE_THEN_APPLY_CERTIFIED_26_TO_54_LIFT",
+            "CONSTRUCT_GLOBAL_GHOST_IDENTITY_HADAMARD_PAIR_AND_SOLVE_SMOOTH_"
+            "BRST_WARD_COMPLETION_ON_26_ROWS",
         )
         algebra_row = self.payload["active_rows"]["free_Lorentzian_algebra"]
         self.assertIn("PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED", algebra_row["status"])

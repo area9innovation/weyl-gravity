@@ -1104,7 +1104,7 @@
       }
     },
     {
-      "claim_boundary": "The global exact CCR-normalized Hadamard Krein covariance transports to the cutoff and full rank-40 metric dilations. Their fibre form has signature (20,20), so neither is a positive state. Exact block pullback now proves that both canonical 20-row summands are isotropic and receive zero causal CCR; na\u00efve summand restriction is therefore rejected. A graph restriction requires a support-local J with Cdagger J=J C and nondegenerate J+Jdagger, followed by the six retained ghost/identity rows. Alternatively omega26 may be constructed directly from the retained BV pairing and causal homotopy. The downstream omega54=iota omega26 pi lift is already certified conditionally. No retained-26/full-BV covariance, BRST Ward identity, physical mode, positive state, or particle is inferred.",
+      "claim_boundary": "The global exact CCR-normalized Hadamard Krein covariance transports to the cutoff and full rank-40 metric dilations. Their fibre form has signature (20,20), so neither is a positive state. Exact block pullback proves that both canonical 20-row summands are isotropic and receive zero causal CCR. The complete smooth support-local differential graph-intertwiner class bounded on the certified anisotropic Sobolev scale is also obstructed: its only element is zero. The correctly typed metric/formal-adjoint source map nevertheless descends a 20-row endpoint Hadamard kernel with exact CCR. A global exact ghost/identity Hadamard pair and a smooth q26-compatible Ward completion are still required. The downstream omega54=iota omega26 pi lift is already certified conditionally. No retained-26/full-BV covariance, BRST Ward identity, physical mode, positive state, or particle is inferred.",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "OPEN",
@@ -1174,6 +1174,11 @@
           "sha256": "5d9892a100bc335cd5c8f7f78cf7a2bb42049d5cfc739b2f315db02d817c4b22"
         },
         {
+          "path": "quantum-weyl/lorentzian/certificates/BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT.json",
+          "result_id": "BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT",
+          "sha256": "8bece00c7a4dda8327e8c0dd6bc4ddf15f4e3712ac383048bb73bda861fa749e"
+        },
+        {
           "path": "quantum-weyl/lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
           "result_id": "BERGER_A104_ENDPOINT_COMPLETION",
           "sha256": "9461f484e51ba7ef27cf0924d532d262b7b4c1fd846fd35dec093204508f9e1c"
@@ -1238,7 +1243,7 @@
           "status": "NO_CERTIFIED_MAP"
         },
         "Hadamard_two_point_function": {
-          "statement": "finite graph wavefront safety, local ghost factors, compact-slab convergence, cutoff null-cone decomposability and morphism cone mapping are certified; the exactly CCR-normalized covariance has been transported to global Hadamard Krein covariances on the cutoff and full rank-40 metric dilations; canonical restriction to either 20-row summand is obstructed because the off-diagonal Hermitian pairing and causal CCR pull back to zero, so a support-local graph intertwiner or a direct retained-26 graded covariance is required before applying the already-certified 26-to-54 lift",
+          "statement": "finite graph wavefront safety, local ghost factors, compact-slab convergence, cutoff null-cone decomposability and morphism cone mapping are certified; the exactly CCR-normalized covariance has been transported to global Hadamard Krein covariances on the cutoff and full rank-40 metric dilations; canonical summand restriction is obstructed and the complete smooth support-local differential graph-intertwiner class contains only zero, while the correctly typed source pullback certifies the 20-row metric/formal-adjoint endpoint Hadamard kernel with exact CCR; a global ghost/identity Hadamard pair and smooth BRST Ward completion are required before applying the already-certified 26-to-54 lift",
           "status": "OPEN"
         },
         "anomaly_QME_dependency": {
@@ -3535,7 +3540,7 @@
     }
   ],
   "generated_by": "quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
-  "generated_by_sha256": "93c40e90a6df27b53d618b9075050ecce7523ceba630f0a548694c40c99c0b7e",
+  "generated_by_sha256": "e0e7c54b0cc3c310428bca7d0f68ffccb2ebb2514b657fc551184a25b1deb138",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
