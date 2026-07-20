@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-exceptional-arbitrary-k-resonance-cone-REQUEST-54274919a9fc8ad9",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/bridge-exceptional-arbitrary-k-resonance-cone-REQUEST-54274919a9fc8ad9.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/bridge-exceptional-arbitrary-k-resonance-cone", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T10:57:04Z", "seq": 1, "payload": {"target": "sf:program/request/bridge-exceptional-arbitrary-k-resonance-cone-to-forge-54274919a9fc8ad9", "request_id": "sf:program/request/bridge-exceptional-arbitrary-k-resonance-cone-to-forge-54274919a9fc8ad9", "from_item": "sf:program/work/bridge-exceptional-arbitrary-k-resonance-cone", "to_stream": "forge", "need": "Science Forge SF5 report containment must accept committed deliverables in 6c3831061 without expanding the full 14130-path tree through one argv; tracked request planning/forge-requests/bug-science-forge-report-containment-argmax.json", "typed": "dependency-artifact"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "forge"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/bridge-exceptional-arbitrary-k-resonance-cone"}]
+}
