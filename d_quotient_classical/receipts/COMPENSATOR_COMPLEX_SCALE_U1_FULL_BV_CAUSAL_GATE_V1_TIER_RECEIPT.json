@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_COMPLEX_SCALE_U1_FULL_BV_CAUSAL_GATE_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_COMPLEX_SCALE_U1_FULL_BV_CAUSAL_GATE_V1",
+  "date": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/complex_scale_u1_full_bv_causal_gate.py",
+      "sha256": "2da0bc7a94f52b79c3b588a8f9c6053a38e0c6c3d3885a6dd4445e73ac03b783"
+    },
+    {
+      "path": "d_quotient_classical/compensator/COMPENSATOR_COMPLEX_SCALE_U1_FULL_BV_CAUSAL_GATE_V1.json",
+      "sha256": "66c09d849caa5ced489c0e9324a51f49d58e267f4bdffc5747eba025740d90ef"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_complex_scale_u1_full_bv_causal_gate.py",
+      "sha256": "56593f6d9d899307744b269e013d6596f2545a4dff7dd5d76b2c8329a5383b11"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_complex_scale_u1_full_bv_causal_gate.py",
+      "sha256": "2dc70848181985d008027c1c49f7f4f35c7b337cdf76e3d00fc89fe11b627633"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-complex-scale-u1-full-bv-causal-gate-v1.schema.json",
+      "sha256": "4ef0f060fda1738da3928141fd9c33c28f55ec194a113ab256fdc69538bbaec5"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-complex-scale-u1-full-bv-causal-gate-v1.md",
+      "sha256": "aff98728eb103533d44dce4ad4301af9dad681283492a46cfeef8f61a4893ed4"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <conditional full-gate producer, independent verifier and tests>",
+        "elapsed_seconds": 0.03,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <conditional full-gate result and schema>",
+        "elapsed_seconds": 0.07,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --cached --check -- <seven explicit conditional full-gate paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/complex_scale_u1_full_bv_causal_gate.py --check",
+        "elapsed_seconds": 0.04,
+        "status": "PASS",
+        "method": "hash-pinned predecessor import and fail-closed activation predicate"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_complex_scale_u1_full_bv_causal_gate.py",
+        "elapsed_seconds": 0.03,
+        "status": "PASS",
+        "independent_rail": "imports no producer module; independently hashes the predecessor and rejects every success promotion"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_complex_scale_u1_full_bv_causal_gate -v",
+        "elapsed_seconds": 0.06,
+        "status": "PASS",
+        "tests": 4
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-complex-scale-u1-full-bv-causal-gate-v1.schema.json -d d_quotient_classical/compensator/COMPENSATOR_COMPLEX_SCALE_U1_FULL_BV_CAUSAL_GATE_V1.json",
+        "elapsed_seconds": 2.87,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "reason": "The imported predecessor is unchanged and content-addressed; this item adds only a conditional non-activation record and changes no shared mathematical input or affected certificate chain."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "No theorem or lifecycle success is promoted. The item records that a conditional carrier construction did not activate."
+  },
+  "claim_boundary": "This receipt certifies only the conditional decision that the separated scale/U1 full BV and causal path did not activate because its hash-pinned predecessor has empty healthy locus and no selected action. Every downstream construction is explicitly NOT_ACTIVATED, not passed, failed by a new calculation, or Lorentzian-certified. No full BV rows, causal parent, Green homotopy, pairing, charge sector, nonlinear q2 or quantum import was constructed. The predecessor's scoped exclusions are not broadened.",
+  "higher_tiers_not_run": [
+    2,
+    3
+  ]
+}
