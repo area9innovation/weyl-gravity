@@ -189,6 +189,19 @@ The parent leading rank two is retained in its original scope; individual
 and balanced Z2 membership, nonlinear rank/kernel and persistent relational
 memory are `NO_CERTIFIED_MAP`.
 
+The combined-q1 successor is `OBSTRUCTED` at its first symmetry interface.
+The typed candidate identifies exactly the four memory/multiplier rows and
+their cotangents, leaving 48 genuinely new material rows and hence 156 rows
+in total.  The six global scalar rods nevertheless have time-translation
+closure rank eight and no constant internal six-by-six completion.  The
+parent material orientation rows cannot supply the missing two directions:
+the coefficientwise intertwiner between their first-order \(sA_4\) symbol
+and the global \(s^2I_3\) symbol has rank 24 on 24 variables and zero
+nullity per detector.  The smallest repair is two new global rods and two
+cyclic cotangents, followed by recomputation of the 112-row base.  The
+prospective repaired identified union has 160 rows; it is not yet a
+certified complex.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.

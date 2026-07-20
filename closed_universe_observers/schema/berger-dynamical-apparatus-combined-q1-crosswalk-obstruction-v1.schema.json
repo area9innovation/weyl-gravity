@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "interface_disposition",
+    "exact_obstruction",
+    "minimal_repair",
+    "downstream_disposition",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-dynamical-apparatus-combined-q1-crosswalk-obstruction-v1"
+    },
+    "result_id": {
+      "const": "BERGER_DYNAMICAL_APPARATUS_COMBINED_Q1_CROSSWALK_OBSTRUCTION"
+    },
+    "claim_status": {
+      "const": "OBSTRUCTED_NO_BACKGROUND_PRESERVING_LINEAR_K_ON_DECLARED_COMBINED_CARRIER"
+    },
+    "atlas_status": {
+      "const": "OBSTRUCTED"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "next_gate": {
+      "const": "ADD_TWO_GLOBAL_RODS_AND_TWO_COTANGENTS_RECOMPUTE_THE_112_ROW_BASE_THEN_RETRY_THE_IDENTIFIED_UNION"
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 1400
+    }
+  },
+  "additionalProperties": true
+}

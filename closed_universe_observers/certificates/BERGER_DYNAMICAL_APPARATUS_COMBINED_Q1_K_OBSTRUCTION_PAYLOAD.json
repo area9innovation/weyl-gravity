@@ -1,0 +1,235 @@
+{
+  "candidate_pushout": {
+    "base_embedding": "identity on all ordered 108 rows",
+    "candidate_row_count": 156,
+    "parent_only_row_count": 48,
+    "parent_only_rows": [
+      "rod_orientation_0_0",
+      "rod_orientation_0_1",
+      "rod_momentum_0_0",
+      "rod_momentum_0_1",
+      "polarization_0_0",
+      "polarization_0_1",
+      "polarization_momentum_0_0",
+      "polarization_momentum_0_1",
+      "rod_orientation_1_0",
+      "rod_orientation_1_1",
+      "rod_momentum_1_0",
+      "rod_momentum_1_1",
+      "polarization_1_0",
+      "polarization_1_1",
+      "polarization_momentum_1_0",
+      "polarization_momentum_1_1",
+      "emitter_phase_0_0",
+      "emitter_phase_0_1",
+      "emitter_phase_momentum_0_0",
+      "emitter_phase_momentum_0_1",
+      "emitter_phase_1_0",
+      "emitter_phase_1_1",
+      "emitter_phase_momentum_1_0",
+      "emitter_phase_momentum_1_1",
+      "rod_orientation_0_0_plus",
+      "rod_orientation_0_1_plus",
+      "rod_momentum_0_0_plus",
+      "rod_momentum_0_1_plus",
+      "polarization_0_0_plus",
+      "polarization_0_1_plus",
+      "polarization_momentum_0_0_plus",
+      "polarization_momentum_0_1_plus",
+      "rod_orientation_1_0_plus",
+      "rod_orientation_1_1_plus",
+      "rod_momentum_1_0_plus",
+      "rod_momentum_1_1_plus",
+      "polarization_1_0_plus",
+      "polarization_1_1_plus",
+      "polarization_momentum_1_0_plus",
+      "polarization_momentum_1_1_plus",
+      "emitter_phase_0_0_plus",
+      "emitter_phase_0_1_plus",
+      "emitter_phase_momentum_0_0_plus",
+      "emitter_phase_momentum_0_1_plus",
+      "emitter_phase_1_0_plus",
+      "emitter_phase_1_1_plus",
+      "emitter_phase_momentum_1_0_plus",
+      "emitter_phase_momentum_1_1_plus"
+    ],
+    "role_separation": {
+      "emitter_phase_pairs": "new transported material phases; not the massive two-form emitter components K_b",
+      "global_rods_RaI": "six spacetime scalar rod fields with second-order wave unary blocks and spatial-diffeomorphism action",
+      "material_rod_orientation_momentum": "four detector-local material-frame canonical pairs with first-order clock transport",
+      "polarization_pairs": "new detector-local material polarization canonical pairs"
+    },
+    "shared_row_relations": [
+      {
+        "base_index": 70,
+        "base_row": "m0",
+        "parent_row": "memory_0",
+        "relation": "candidate semantic/action-role identification"
+      },
+      {
+        "base_index": 72,
+        "base_row": "p0",
+        "parent_row": "memory_multiplier_0",
+        "relation": "candidate semantic/action-role identification"
+      },
+      {
+        "base_index": 71,
+        "base_row": "m1",
+        "parent_row": "memory_1",
+        "relation": "candidate semantic/action-role identification"
+      },
+      {
+        "base_index": 73,
+        "base_row": "p1",
+        "parent_row": "memory_multiplier_1",
+        "relation": "candidate semantic/action-role identification"
+      },
+      {
+        "base_index": 80,
+        "base_row": "m0_plus",
+        "parent_row": "memory_0_plus",
+        "relation": "candidate semantic/action-role identification"
+      },
+      {
+        "base_index": 82,
+        "base_row": "p0_plus",
+        "parent_row": "memory_multiplier_0_plus",
+        "relation": "candidate semantic/action-role identification"
+      },
+      {
+        "base_index": 81,
+        "base_row": "m1_plus",
+        "parent_row": "memory_1_plus",
+        "relation": "candidate semantic/action-role identification"
+      },
+      {
+        "base_index": 83,
+        "base_row": "p1_plus",
+        "parent_row": "memory_multiplier_1_plus",
+        "relation": "candidate semantic/action-role identification"
+      }
+    ],
+    "status": "CANDIDATE_REJECTED_AT_K_INTERFACE",
+    "unresolved_before_K_failure": [
+      "row-level action-normalized compatibility of the four shared memory rows",
+      "full sparse 156-row q1",
+      "real involution and detector-smearing chain map",
+      "zero-mode sectors, ranks, cohomology and contraction"
+    ]
+  },
+  "coefficient_field": "Q(sqrt(10),sqrt(58),sqrt(145))",
+  "declared_identification_class": "constant row identifications and pairing-preserving constant linear mixing that preserve the typed principal-symbol category",
+  "first_incompatibility": {
+    "affine_background_components": {
+      "K0_Theta": "0",
+      "K0_metric": "r e0 Phi2",
+      "K0_rods": "e0 Rbar_aI",
+      "rod_witnesses": [
+        {
+          "K0_value": "-sqrt(145)*sin(sqrt(58)/576)*cos(sqrt(10)/12)/10",
+          "detector_id": "D0",
+          "evaluation_time": "25/96",
+          "nonzero": true,
+          "rod_row": "R0_1"
+        },
+        {
+          "K0_value": "-sqrt(145)*sin(sqrt(58)/576)*cos(sqrt(10)/6)/10",
+          "detector_id": "D1",
+          "evaluation_time": "49/96",
+          "nonzero": true,
+          "rod_row": "R1_1"
+        }
+      ],
+      "time_dependent_Phi2_nonzero_coefficient_count": 70
+    },
+    "base_background_preserving": false,
+    "global_rod_closure": {
+      "coefficient_space": "span_R{cos(nu t),sin(nu t)} tensor span_R{x0,x1,x2,x3}",
+      "consequence": "the present 84-row carrier cannot make Rbar fixed by adding a constant linear internal rotation on its six rod rows",
+      "constant_internal_6_by_6_completion_exists": false,
+      "current_real_rod_span_rank": 6,
+      "minimal_additional_real_rod_directions": 2,
+      "minimal_pairing_preserving_carrier_if_completed": "88 rows (two added degree-zero rods and two cyclic cotangent partners)",
+      "time_translation_closure_rank": 8
+    },
+    "interface": "row-level background-preserving linear K_Berger",
+    "parent_material_rows_cannot_supply_missing_directions": {
+      "coefficient_constraint_rank": 24,
+      "coefficient_constraint_shape": [
+        24,
+        24
+      ],
+      "coefficient_equations": [
+        "A_4 B=0 at s^1",
+        "C=0 at s^2"
+      ],
+      "conclusion": "No constant row map can identify or mix a global scalar-wave rod with a first-order transported material-frame row.",
+      "constant_mixing_nullity": 0,
+      "global_rod_principal_symbol": "s^2 I_3",
+      "material_rod_principal_symbol": "s A_4",
+      "material_transport_determinant": 1,
+      "material_transport_matrix": [
+        [
+          0,
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "unknown_constant_mixing_entries": 24
+    },
+    "required_identity": "[K_Berger,q1]=0",
+    "verdict": "NO_COMBINED_LINEAR_K_MATRIX_IN_DECLARED_IDENTIFICATION_CLASS"
+  },
+  "minimal_repair": {
+    "added_degree_one_cotangent_rows": 2,
+    "added_degree_zero_rows": 2,
+    "not_a_repair": "identifying the missing global rods with parent material orientation rows; the exact principal-symbol audit has zero constant mixing nullity",
+    "prospective_identified_union_row_count": 160,
+    "repaired_base_row_count": 112,
+    "required_recomputation": [
+      "eight-real-rod co-rotating background",
+      "rod stress and Phi2",
+      "112-row q1 and odd pairing",
+      "background differential quotient",
+      "row-level K matrix and commutator",
+      "then the memory identification and remaining crosswalk interfaces"
+    ],
+    "row_types": "two global spacetime scalar rods closing the e0 orbit and their two signed cyclic cotangents"
+  },
+  "mutation_results": {
+    "add_only_one_global_real_rod": {
+      "detected": true,
+      "required_closure_rank": 8,
+      "resulting_span_upper_bound": 7
+    },
+    "drop_one_affine_rod_witness": {
+      "detected": true,
+      "remaining_nonzero_witness_count": 1
+    },
+    "force_global_material_rod_identification": {
+      "detected": true,
+      "reason": "second-order versus first-order principal symbol"
+    }
+  },
+  "result_id": "BERGER_DYNAMICAL_APPARATUS_COMBINED_Q1_K_OBSTRUCTION_PAYLOAD",
+  "schema": "closed-universe-berger-dynamical-apparatus-combined-q1-k-obstruction-payload-v1"
+}

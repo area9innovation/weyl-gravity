@@ -2269,3 +2269,34 @@ Leading rank two stays certified only in the parent probe-branch scope.
 Individual preparation membership, balanced combinations, nonlinear rank,
 gauge survival on \(\mathcal Z_2\), persistent memory, recoil and redshift
 remain `NO_CERTIFIED_MAP`.
+
+## Active bridge: combined-q1 linear-K obstruction
+
+The queue successor
+`sf:program/work/observer-berger-apparatus-combined-q1-crosswalk`
+resolves the semantic duplication question before attempting cohomology.
+The unique economical candidate identifies the two memories, two memory
+multipliers and their four cotangents with rows \(70\)--\(73\) and
+\(80\)--\(83\) of the 108-row carrier.  Its other 48 rows are genuinely new:
+material orientation/polarization/phase pairs are not the global scalar rods
+or massive two-form components.  The candidate would therefore have 156
+rows.
+
+It is obstructed at the required background-preserving linear
+\(K_{\rm Berger}\) interface.  The six global rods have time-translation
+closure rank eight and no constant internal six-by-six completion, with
+nonzero affine \(K_0\) witnesses at both detectors.  Mixing the parent
+material rods cannot repair this: solving the coefficient equations between
+the first-order \(sA_4\) material symbol and second-order \(s^2I_3\) global
+symbol has rank 24 on 24 variables and nullity zero per detector.
+
+The minimal repair is two global degree-zero rods and two cyclic degree-one
+cotangents, then a recomputation of the co-rotating rod background, stress,
+\(\Phi_2\), 112-row unary and background quotient.  Only after that may the
+prospective 160-row identified union be retried.
+
+The fail-closed atlas row is
+`observer.berger.interaction.dynamical_apparatus_combined_q1_obstruction`
+(`symplectic=OBSTRUCTED`, `observational=NO_CERTIFIED_MAP`).  This does not
+retract the affine family action or the leading parent rank two, and it makes
+no cohomology, \(\mathcal Z_2\), memory or redshift claim.
