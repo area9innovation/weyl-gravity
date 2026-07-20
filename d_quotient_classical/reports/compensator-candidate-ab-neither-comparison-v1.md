@@ -125,3 +125,5 @@ CLOSE-OUT: DONE — both scoped terminal inputs are independently replayed
 under one exact seven-gate rule; the declared minimal-action selection is
 `NEITHER`, no hybrid or selected-action consumer is authorized, and the
 smallest open theory classes remain explicit.
+
+EVIDENCE: `d_quotient_classical/receipts/COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1_TIER_RECEIPT.json`
