@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "provenance",
+    "second_order_equation",
+    "correction_classes",
+    "output_strata",
+    "coverage_ledger",
+    "adjoint_cokernel",
+    "bounded_independence_witnesses",
+    "freeze_disposition",
+    "classification",
+    "claim_boundary",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-finite-harmonic-cone-structural-freeze-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "REDUCED-MODE"}
+    },
+    "output_strata": {"type": "array", "minItems": 6},
+    "classification": {
+      "type": "object",
+      "required": [
+        "finite_exponential_polynomial_cone_theorem_ready",
+        "bounded_obstruction_ledger_theorem_ready",
+        "theorem_freeze_promoted",
+        "bounded_common_zero_locus_solved",
+        "five_and_only_five_EP_cokernel_covectors"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

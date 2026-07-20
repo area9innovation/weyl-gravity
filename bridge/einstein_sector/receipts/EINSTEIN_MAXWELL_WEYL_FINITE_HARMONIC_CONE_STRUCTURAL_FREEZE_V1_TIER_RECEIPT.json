@@ -1,0 +1,82 @@
+{
+  "schema": "einstein-maxwell-weyl-finite-harmonic-cone-structural-freeze-receipt-v1",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped producer, verifier and test>",
+        "python3 -m json.tool <scoped certificate, schema, atlas and claim map>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.56,
+      "commands": [
+        "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_finite_harmonic_cone_structural_freeze --check",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_finite_harmonic_cone_structural_freeze.py",
+        "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_finite_harmonic_cone_structural_freeze -v",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-finite-harmonic-cone-structural-freeze-fragment-v1.json",
+        "python3 paper/verify_13_14_draft_source_maps.py"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 4.37,
+      "commands": [
+        "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_arbitrary_k_all_m_incidence --check",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_arbitrary_k_all_m_incidence.py",
+        "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_all_m_moment_intersection --check",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_all_m_moment_intersection.py"
+      ],
+      "reason": "The successor imports the completed all-m incidence and moment intersection as new structural evidence; both exact independent rails were replayed."
+    },
+    "tier_3": {
+      "status": "FAIL",
+      "commands": [
+        "python3 -m unittest discover -s bridge/einstein_sector/tests -p 'test_*.py'"
+      ],
+      "first_run": {
+        "tests_run": 1255,
+        "failures": 17,
+        "skipped": 1,
+        "elapsed_seconds": 544.04,
+        "max_rss_kb": 463380
+      },
+      "bounded_repair_control": {
+        "description": "Ten first-layer certificates were regenerated after identifying the shared stale hash of bridge/einstein_sector/weyl_maxwell_lee_wald_current.py. Only 13 provenance hash lines changed; 53 formerly failing scoped tests then passed in 1.57 seconds.",
+        "disposition": "The second full run exposed a larger downstream re-lock cascade, so the partial repair was rolled back and was not committed."
+      },
+      "second_run": {
+        "tests_run": 1255,
+        "failures": 19,
+        "errors": 3,
+        "skipped": 1,
+        "elapsed_seconds": 547.31,
+        "max_rss_kb": 463292
+      },
+      "root_cause": "A transitive content-addressed provenance re-lock was not completed after commit f92e7a5e9 extended the Lee-Wald evaluator to all current components while preserving the time-component API. The scoped structural theorem, its independent verifier and mutations passed inside both runs; the lifecycle promotion nevertheless remains fail-closed."
+    }
+  },
+  "source_manifest": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_finite_harmonic_cone_structural_freeze.py": "a2a95e586250cbf5b62c8855b84a95fe612180a4d8ee179f09b0daa8b8fb964f",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_finite_harmonic_cone_structural_freeze.py": "c4ea84646589210c166519753ab8e763ff27ca3c397250537de0305c8a31c658",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_finite_harmonic_cone_structural_freeze.py": "1305a5de4d3857d3d5dbf14c6be50dcf498d78f503b1f5cc934f1ddfaa90c8ca",
+    "bridge/einstein_sector/schema/einstein-maxwell-weyl-finite-harmonic-cone-structural-freeze-v1.schema.json": "2dae4b03b8d52a378e86ad5b0fbaaa81db31279ad58c8adfc6b8d94196f10068",
+    "bridge/certificates/EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1.json": "2a19a396acae39a82aa5c722eaa1c666497613b6b671a2350aca491acef4f37e",
+    "residual_atlas/einstein-finite-harmonic-cone-structural-freeze-fragment-v1.json": "063bbfeb58c57123c24c60184df84b56b1b379d02edf94f7e63e07d220141a43",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-finite-harmonic-cone-structural-freeze-v1.md": "4457af53bf51619c9d305d1fc6723519eec90cd3274e427670fa553f7e7ef42d",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json": "b88fa24ef806b40ca0eb2b3324d36177fec90b6b41ea5d783b0b80476e8b7902"
+  },
+  "independent_rail": {
+    "status": "PASS",
+    "method": "The verifier does not import the producer. It checks every pinned input, reconstructs the five zero-factor count and covector list, distinguishes nonzero shell roots from zero Smith factors, and rejects an extra-cokernel, missing-stabilizer and bounded-zero-locus promotion mutation."
+  },
+  "claim_boundary": "The structural theorem is ready and its scoped rails pass, but theorem-freeze lifecycle promotion is blocked by the failed required Tier-3 package rail. The unrestricted bounded common zero, infinite-mode, causal, all-orders, residual, particle and quantum questions remain open."
+}

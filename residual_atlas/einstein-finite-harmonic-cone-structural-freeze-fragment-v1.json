@@ -1,0 +1,92 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "Finite-support reduced-mode theorem only; bounded global zero locus, infinite completion, causal propagation, all orders, final residual descent and quantum interpretation remain open.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1",
+          "sha256": "2a19a396acae39a82aa5c722eaa1c666497613b6b671a2350aca491acef4f37e"
+        }
+      ],
+      "id": "einstein.ph.wm.finite_harmonic_cone.structural_freeze",
+      "mode_data": {
+        "dispersion": {
+          "statement": "All nonzero invariant factors, including shell roots, are EP-surjective.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "Five Taub covectors are slice-independent on the closed cylinder.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The bounded P/R ledger is complete, but its unrestricted real common zero is open.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Necessary and sufficient blockwise P/R/moment ledger; global zero locus open.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No retarded complex is imported.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Exactly the five moment maps obstruct finite EP correction.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "Exactly H, Px and three lifted rotations survive in the EP cokernel.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan product",
+        "boundaries": "closed S1_L times S2; finite EP or bounded finite quasiperiodic correction class",
+        "carrier": "complete certified finite harmonic inventory before final residual quotient",
+        "charge_sector": "fixed magnetic Chern class; electric and Wilson tangents included",
+        "degree": 2,
+        "ell": "0, 1, and finite subsets of ell>=2",
+        "k": "finite subsets of allowed compact momenta",
+        "m": "all certified magnetic labels",
+        "omega": "all certified shells plus generalized zero modes",
+        "parity": "all certified",
+        "theory": "linearized four-dimensional Weyl-Maxwell target at second order"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/einstein_maxwell_weyl_finite_harmonic_cone_structural_freeze.py",
+  "generated_by_sha256": "a2a95e586250cbf5b62c8855b84a95fe612180a4d8ee179f09b0daa8b8fb964f",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_finite_harmonic_cone_structural_freeze --check",
+    "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_finite_harmonic_cone_structural_freeze.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-finite-harmonic-cone-structural-freeze-fragment-v1.json"
+  ]
+}
