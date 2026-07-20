@@ -529,6 +529,24 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("not declared connected", entry["claim_boundary"])
         self.assertIn("Nonemptiness of I does not imply", entry["claim_boundary"])
 
+    def test_candidate17_20_complete_deformable_kernel_contraction_closes_fixed_occupation_only(self) -> None:
+        entry = self.entries[
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_deformable_kernel_complete_contraction"
+        ]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("time-reversal homotopy", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("monotonically", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("Every admissible component", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("zero node", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("M_K=0", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("does not identify candidates 17 and 20", entry["claim_boundary"])
+        self.assertIn("occupation strata", entry["claim_boundary"])
+        self.assertIn("all-orders", entry["claim_boundary"])
+
     def test_same_sign_local_rotation_descent_is_basic_not_global(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent"]
         second = entry["mode_data"]["second_order"]

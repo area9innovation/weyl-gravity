@@ -1,0 +1,69 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_DEFORMABLE_KERNEL_COMPLETE_CONTRACTION_V1_TIER_RECEIPT",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_DEFORMABLE_KERNEL_COMPLETE_CONTRACTION",
+  "date": "2026-07-20",
+  "scope": "Complete contraction of both fixed-positive-active-occupation candidate-17/20 singular rotation-zero unions by convex one-node deletion, exact spin-two time-reversal moment damping and incidence crossing.",
+  "input_baseline": "47e2d298",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction.json": "77657bb079caa4ff50f5e8e425015a3f416d99f9672d7335bddeb17e540b4654",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction.py": "d3f8236ce73b6f1a2ac58d2ffbde3f71e193c3ddea93e2a4dcc6ae52e0061817",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction.schema.json": "4effcecf194df530c45c72105290fabc4eeb46435eb0b475010566506af5ebb1",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction.py": "e219f0eecb669b79cd70c415b33ea4412a986c3db4e151062f2499abdf88522a",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction.py": "7487a751ba4657fa6e43f7ea2e3d3257e42aceb83fe9c839fc8114061331e2d3",
+    "bridge/reports/einstein-maxwell-weyl-same-sign-candidate17-20-deformable-kernel-complete-contraction.md": "756b2a91b82f96d5c53ccd820caec3a1f10719b9bbaadc0624560ace15f506d8"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on the producer, independent verifier, focused tests and atlas consumers",
+        "python3 -m json.tool on the theorem certificate, schema and receipt",
+        "git diff --check on the scoped theorem, atlas, report and brief paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 3.42,
+      "tests_run": {
+        "theorem": 10,
+        "atlas": 119
+      },
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 -m residual_atlas.validate_fragment bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 -m bridge.einstein_sector.atlas.verify_einstein_atlas_fragment",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier independently reconstructs the weighted magnetic generators, antiunitary time reversal, odd-moment and skew cross-term identities, monotone homotopy derivative, both affine deletion coefficients and both boundary incidences."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutations": [
+        "Replace the signed time-reversal anti-diagonal by an unsigned anti-diagonal.",
+        "Delete the negative rather than positive node in the delta-negative chamber.",
+        "Delete the positive rather than negative node in the delta-positive chamber.",
+        "Promote candidate identification, distinct-occupation gluing or all-orders integration."
+      ],
+      "result": "The time-reversal mutation fails J1 oddness; both wrong-node deletions cross c=0 before survivor moment damping; all three lifecycle promotions are rejected by schema tests."
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The complete affected chain was exercised: the content-addressed component-incidence, moving-square and balanced-radial inputs feed the new theorem; its regenerated atlas row passed schema validation, independent evidence-link verification and all 119 atlas tests."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This closes one fixed-occupation finite-carrier topology gate but is not a repository freeze, release, shared-core algebra change, final residual descent or higher-lifecycle promotion."
+    }
+  },
+  "claim_boundary": "CERTIFIED for complete connectedness through the hub of both candidate-17/20 singular rotation-zero unions at every fixed positive active occupation. Candidate identification, distinct total-occupation gluing, a global Hausdorff leaf space beyond this carrier, final residual descent, all-orders integration, causal propagation, observation and quantum claims remain open or fail-closed."
+}

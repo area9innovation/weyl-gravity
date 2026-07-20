@@ -123,6 +123,7 @@ CERTIFICATES = {
     "same_sign_candidate17_20_moving_square_contraction": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json",
     "same_sign_candidate17_20_independent_node_scaling_contraction": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.json",
     "same_sign_candidate17_20_deformable_kernel_incidence_normal_form": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.json",
+    "same_sign_candidate17_20_deformable_kernel_complete_contraction": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction.json",
     "same_sign_active_phase_reduced_presymplectic_divisors": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
     "same_sign_active_local_rotation_leaf_descent": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
@@ -1259,6 +1260,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OPEN","The exact component-incidence criterion is certified, but whether every admissible candidate-17 or candidate-20 strict-sign component meets I remains open."),("OPEN","The finite semialgebraic criterion embeds in the smooth exponential-polynomial class, but its component enumeration remains open and no all-orders promotion is made."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_candidate17_20_deformable_kernel_incidence_normal_form","same_sign_candidate17_20_independent_node_scaling_contraction","same_sign_candidate17_20_moving_square_contraction","same_sign_candidate17_20_double_singular_rotation_zero_fibre","same_sign_third_transvectant_singular_locus"),
             "The deformable-direction problem is reduced exactly to compact semialgebraic component incidence, not declared connected. Nonemptiness of I does not imply every component reaches it. Complete candidate-17 and candidate-20 off-balance connectedness, occupation gluing, final residual descent and causal, observational or quantum maps remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_deformable_kernel_complete_contraction",
+            _scope(theory="Weyl-Maxwell target", background="candidates 17 and 20 separately at every fixed positive active occupation, including candidate 20 on and off its exact balance divisor", boundaries="closed S1_L times S2 after compactifying both K-node occupations and reducing their phases and lifted rotations, before occupation gluing or final residual quotient", carrier="both complete singular components (S_plus x K_minus) union (K_plus x S_minus), including arbitrary compactified T3-kernel directions, zero-node boundaries and all stabilizer strata", degree=2, parity="both labelled factorized parity channels", ell="input 2 x 2; output L=1", m="all m=-2,...,2 in the spin-two kernel and common-square carriers", k="candidate-specific signed compact momenta, never identified across candidates", omega="candidate-specific DIFFERENCE collision on every alpha/delta sign stratum", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Candidate 17 and candidate 20 retain distinct backgrounds, coefficients and atlas scopes. The common contraction proof does not identify their modes."),
+            ("CERTIFIED","The normalized spin-two moment lies in the unit ball. A time-reversal homotopy has m(f_theta)=cos(2theta)*m(f)/[1+sigma*sin(2theta)] and monotonically reaches a phase-real zero-moment direction."),
+            ("CERTIFIED","In each strict opposite-sign chamber, convexity permits deletion of the oppositely signed kernel node before time-reversal damping of the survivor. Every admissible component therefore reaches the one-zero-node incidence and the connected hub."),
+            ("CERTIFIED","At a zero node the third transvectant vanishes identically; the survivor deformation is unrestricted. Bilinear radial scaling preserves T3 and crosses c=0 only after M_K=0."),
+            _second_order(("CERTIFIED","Combining the new opposite-sign path with the repaired same-sign/alpha=0 path and candidate-20 balance contraction proves the complete fixed-positive-occupation singular rotation-zero unions connected for candidates 17 and 20."),("CERTIFIED","All paths are finite smooth exponential-polynomial carrier paths; this is not an all-orders solution theorem."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate17_20_deformable_kernel_complete_contraction","same_sign_candidate17_20_deformable_kernel_incidence_normal_form","same_sign_candidate17_20_moving_square_contraction","same_sign_candidate17_20_singular_radial_contraction","same_sign_candidate17_20_double_singular_rotation_zero_fibre","same_sign_third_transvectant_singular_locus"),
+            "This closes fixed-positive-active-occupation singular rotation-zero topology only. It does not identify candidates 17 and 20, glue distinct total-occupation strata, construct a global Hausdorff leaf space beyond this carrier, perform final residual descent, establish all-orders integration, or supply causal, observational or quantum maps.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_same_sign_active_phase_reduced_presymplectic_divisors",
@@ -2422,6 +2435,24 @@ def build() -> dict[str, object]:
         raise AssertionError("candidate-17/20 deformable-kernel incidence theorem changed")
     if deformable_incidence["every_admissible_component_meets_incidence"] or deformable_incidence["candidate17_complete_singular_rotation_zero_fibre_connected"] or deformable_incidence["candidate20_off_balance_complete_singular_rotation_zero_fibre_connected"] or deformable_incidence["global_zero_fibre_connected"] or deformable_incidence["occupation_strata_glued"] or deformable_incidence["final_residual_descent"] or deformable_incidence["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("candidate-17/20 deformable-kernel incidence theorem exceeded scope")
+    deformable_complete = records["same_sign_candidate17_20_deformable_kernel_complete_contraction"]["classification"]
+    if not (
+        deformable_complete["normalized_spin_two_moment_unit_ball_bound_certified"]
+        and deformable_complete["time_reversal_zero_moment_homotopy_certified"]
+        and deformable_complete["time_reversal_moment_norm_monotone"]
+        and deformable_complete["delta_negative_convex_positive_node_deletion_certified"]
+        and deformable_complete["delta_positive_convex_negative_node_deletion_certified"]
+        and deformable_complete["every_admissible_component_meets_incidence"]
+        and deformable_complete["strict_opposite_sign_complete_deformable_kernel_contraction"]
+        and deformable_complete["candidate17_complete_singular_rotation_zero_fibre_connected"]
+        and deformable_complete["candidate20_balance_complete_singular_rotation_zero_fibre_connected"]
+        and deformable_complete["candidate20_off_balance_complete_singular_rotation_zero_fibre_connected"]
+        and deformable_complete["candidate20_complete_singular_rotation_zero_fibre_connected"]
+        and deformable_complete["all_positive_fixed_active_occupations_covered"]
+    ):
+        raise AssertionError("candidate-17/20 complete deformable-kernel contraction changed")
+    if deformable_complete["candidate17_candidate20_identified"] or deformable_complete["occupation_strata_glued"] or deformable_complete["final_residual_descent"] or deformable_complete["all_orders_integration"] or deformable_complete["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-17/20 complete deformable-kernel contraction exceeded scope")
     phase_reduced_divisors = records["same_sign_active_phase_reduced_presymplectic_divisors"]["classification"]
     if not (
         phase_reduced_divisors["candidate17_regular_fixed_occupation_phase_reduced_divisor_classified"]

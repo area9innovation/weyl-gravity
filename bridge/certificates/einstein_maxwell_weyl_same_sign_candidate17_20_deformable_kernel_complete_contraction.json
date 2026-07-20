@@ -1,0 +1,247 @@
+{
+  "claim_boundary": "This closes the complete fixed-positive-active-occupation singular rotation-zero topology for candidates 17 and 20 in the compact finite carrier. It does not identify the candidates, glue distinct total-occupation strata, prove a Hausdorff global leaf space outside this carrier, perform final residual descent, construct all-orders solutions, or establish causal, observational or quantum claims.",
+  "classification": {
+    "all_orders_integration": false,
+    "all_positive_fixed_active_occupations_covered": true,
+    "candidate17_candidate20_identified": false,
+    "candidate17_complete_singular_rotation_zero_fibre_connected": true,
+    "candidate20_balance_complete_singular_rotation_zero_fibre_connected": true,
+    "candidate20_complete_singular_rotation_zero_fibre_connected": true,
+    "candidate20_off_balance_complete_singular_rotation_zero_fibre_connected": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "delta_negative_convex_positive_node_deletion_certified": true,
+    "delta_positive_convex_negative_node_deletion_certified": true,
+    "every_admissible_component_meets_incidence": true,
+    "final_residual_descent": false,
+    "normalized_spin_two_moment_unit_ball_bound_certified": true,
+    "occupation_strata_glued": false,
+    "strict_opposite_sign_complete_deformable_kernel_contraction": true,
+    "time_reversal_moment_norm_monotone": true,
+    "time_reversal_zero_moment_homotopy_certified": true
+  },
+  "complete_candidate_assembly": {
+    "candidate17": "delta<0 on its complete active cone; alpha<=0 is covered by the repaired moving-square theorem and alpha>0 by the new strict-opposite-sign path, so both singular components contract to the connected hub at every positive occupation",
+    "candidate20_balance": "delta=0 is covered by the complete balanced radial theorem",
+    "candidate20_off_balance": "alpha*delta>0 and alpha=0 are covered by the moving-square theorem; alpha*delta<0 is covered by the new strict-opposite-sign path, so both singular components contract to the connected hub",
+    "quotient": "continuous equivariant contraction before the lifted-rotation quotient implies connectedness of the complete node-phase- and rotation-zero quotient image"
+  },
+  "convex_one_node_deletion": {
+    "delta_negative": {
+      "coefficient": "c(t)=delta+a-b*t=(1-t)*(delta+a)+t*alpha>0",
+      "convexity": "the norm of the affine moment path is at most the affine interpolation of its endpoint norms, hence ||M(t)||<=c(t)",
+      "endpoint_bound": "||M(0)||<=||M(1)||+b||m(G)||<=alpha+b=delta+a=c(0)",
+      "moment": "M(t)=-a*m(F)+b*t*m(G)=(1-t)M(0)+t*M(1)",
+      "path": "F fixed and unit, G_t=sqrt(t)G for t from 1 to 0",
+      "survivor": "at G=0, deform F by the time-reversal homotopy and then scale ||F||^2 from 1 through -delta/a to 0"
+    },
+    "delta_positive": {
+      "absolute_coefficient": "-c(t)=b-delta-a*t=(1-t)*(b-delta)+t*(-alpha)>0",
+      "convexity": "the norm of the affine moment path is at most the affine interpolation of its endpoint norms, hence ||M(t)||<=-c(t)",
+      "endpoint_bound": "||M(0)||<=||M(1)||+a||m(F)||<=-alpha+a=b-delta=-c(0)",
+      "moment": "M(t)=-a*t*m(F)+b*m(G)=(1-t)M(0)+t*M(1)",
+      "path": "G fixed and unit, F_t=sqrt(t)F for t from 1 to 0",
+      "survivor": "at F=0, deform G by the time-reversal homotopy and then scale ||G||^2 from 1 through delta/b to 0"
+    },
+    "wall_crossing": "after the surviving node becomes phase-real, its moment is zero; scaling through the one-zero-node incidence changes the sign of c with M_K=0 and a fixed phase-real square direction",
+    "wrong_node_controls": {
+      "delta_negative": "deleting F instead ends at c=delta-b<0 while c(1)=alpha>0, so it hits the wall before the surviving G moment is damped",
+      "delta_positive": "deleting G instead ends at c=delta+a>0 while c(1)=alpha<0, so it hits the wall before the surviving F moment is damped",
+      "symbolic_endpoints": {
+        "delta_negative_wrong_endpoint": "-b + delta",
+        "delta_positive_wrong_endpoint": "a + delta"
+      }
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G4_COMPLETE_FIXED_POSITIVE_ACTIVE_OCCUPATION_SINGULAR_UNIONS_ON_CANDIDATES_17_AND_20",
+  "interpretation": "The apparent opposite-sign wall is not a genuine component obstruction once zero-node boundaries are retained. Delete the node whose signed contribution opposes the target chamber; convexity keeps the square demand physical. At that boundary the transvectant constraint releases the surviving direction, and an explicit time-reversal homotopy removes its angular moment before crossing the wall. Thus the complete fixed-occupation singular rotation-zero unions on candidates 17 and 20 are connected through the already certified hub.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "glue distinct total-occupation strata only if the declared residual quotient requires it, then perform the final residual/gauge descent; do not reopen fixed-occupation kernel-direction topology",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction.py",
+    "generator_sha256": "d3f8236ce73b6f1a2ac58d2ffbde3f71e193c3ddea93e2a4dcc6ae52e0061817",
+    "inputs": {
+      "balanced_radial": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.json",
+        "sha256": "7980fa6c403b4ba1cdf055f42d426301c6477d6ecf02c833a734a4ece7a03c62"
+      },
+      "incidence_normal_form": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.json",
+        "sha256": "e1854d1dec455a89c59c563c5a7e5fcc33158f058fc6df671f47cab9b60cd060"
+      },
+      "moving_square": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json",
+        "sha256": "4463e4218892d8527bfde308ce0237887c2c3ff0ac814e204bc5a87ddf0cbb68"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_DEFORMABLE_KERNEL_COMPLETE_CONTRACTION",
+  "result_state": "CANDIDATE17_20_COMPLETE_FIXED_OCCUPATION_SINGULAR_ROTATION_ZERO_UNIONS_CONTRACT_TO_CONNECTED_HUB",
+  "schema": "einstein-maxwell-weyl-same-sign-candidate17-20-deformable-kernel-complete-contraction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction.schema.json",
+  "schema_sha256": "4effcecf194df530c45c72105290fabc4eeb46435eb0b475010566506af5ebb1",
+  "scope": {
+    "background": "candidates 17 and 20 separately at every fixed positive active occupation, including candidate 20 on and off its balance divisor",
+    "boundaries": "closed S1_L times S2 before node-phase, lifted-rotation or final residual quotient",
+    "carrier": "both complete singular components (S_plus x K_minus) union (K_plus x S_minus), with arbitrary compactified T3-kernel directions, zero-node boundaries, node phases and lifted rotations",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "correction_class": "bounded or finite-quasiperiodic second-order tangent cone",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidate-specific signed compact momenta, never identified across candidates",
+    "m": "all m=-2,...,2 in the binary-quartic carrier",
+    "omega": "candidate-specific difference collision into L=1 extra output",
+    "parity": "two exact factorized parity eigenchannels",
+    "theory": "Weyl-Maxwell target"
+  },
+  "spin_two_time_reversal": {
+    "antiunitary": "R^T*W*R=W and Theta^2=1",
+    "basis": "magnetic m=-2,-1,0,1,2 with W=diag(1,1/4,1/6,1/4,1)",
+    "cross_term": "(W*J_a*R)^T=-W*J_a*R, hence <f,J_a Theta f>=0",
+    "derivative": "(-2*sigma - 2*sin(2*theta))/(sigma*sin(2*theta) + 1)**2",
+    "endpoint": "f_pi/4 is phase-real and has zero rotation moment",
+    "moment_bound": "the normalized J_n spectrum is {-1,-1/2,0,1/2,1}, so ||m(f)||<=||f||_W^2",
+    "moment_formula": "m(f_theta)=q(theta)*m(f), q=cos(2theta)/(1+sigma*sin(2theta))",
+    "monotonicity": "q decreases from 1 to 0 because sigma>=0 and sin(2theta)>=0",
+    "mutation_control": "replacing R by the unsigned anti-diagonal fails Theta*J1*Theta^{-1}=-J1",
+    "normalized_generators": {
+      "J1": [
+        [
+          "0",
+          "1/4",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "1/2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "3/4",
+          "0",
+          "3/4",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1/2",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1/4",
+          "0"
+        ]
+      ],
+      "J2": [
+        [
+          "0",
+          "I/4",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-I",
+          "0",
+          "I/2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-3*I/4",
+          "0",
+          "3*I/4",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-I/2",
+          "0",
+          "I"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-I/4",
+          "0"
+        ]
+      ],
+      "J3": [
+        [
+          "-1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1/2",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1/2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    "odd_moment": "Theta*J_a*Theta^{-1}=-J_a",
+    "phase_gauge": "multiply f by a node phase so sigma=<f,Theta f>_W is real with 0<=sigma<=1",
+    "time_reversal": "Theta(f)=R*conjugate(f), R=anti_diag(1,-1,1,-1,1)",
+    "unit_homotopy": "f_theta=(cos(theta)f+sin(theta)Theta f)/sqrt(1+sigma*sin(2theta)), 0<=theta<=pi/4"
+  },
+  "strict_opposite_sign_contraction": {
+    "component_consequence": "every point of the admissible orbit space A reaches the appropriate boundary incidence I, so every path component meets I",
+    "delta_negative_alpha_positive": [
+      "scale the positive kernel node G to zero; endpoint and norm convexity keep ||M_K||<=c",
+      "with G=0, T3(F,0)=0 identically; damp m(F) monotonically to zero by time reversal",
+      "scale the phase-real F through ||F||^2=-delta/a and onward to the hub"
+    ],
+    "delta_positive_alpha_negative": [
+      "scale the negative kernel node F to zero; endpoint and norm convexity keep ||M_K||<=-c",
+      "with F=0, T3(0,G)=0 identically; damp m(G) monotonically to zero by time reversal",
+      "scale the phase-real G through ||G||^2=delta/b and onward to the hub"
+    ],
+    "square_lift": "the prescribed square moment -M_K/c remains in its closed unit ball on the deletion and damping segments; at M_K=0 choose the phase-real square fibre and cross c=0"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction"
+  ]
+}

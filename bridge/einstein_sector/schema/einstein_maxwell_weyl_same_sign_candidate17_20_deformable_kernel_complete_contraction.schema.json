@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "scope",
+    "spin_two_time_reversal",
+    "convex_one_node_deletion",
+    "strict_opposite_sign_contraction",
+    "complete_candidate_assembly",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-same-sign-candidate17-20-deformable-kernel-complete-contraction-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_DEFORMABLE_KERNEL_COMPLETE_CONTRACTION"
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "normalized_spin_two_moment_unit_ball_bound_certified": {"const": true},
+        "time_reversal_zero_moment_homotopy_certified": {"const": true},
+        "time_reversal_moment_norm_monotone": {"const": true},
+        "delta_negative_convex_positive_node_deletion_certified": {"const": true},
+        "delta_positive_convex_negative_node_deletion_certified": {"const": true},
+        "every_admissible_component_meets_incidence": {"const": true},
+        "strict_opposite_sign_complete_deformable_kernel_contraction": {"const": true},
+        "candidate17_complete_singular_rotation_zero_fibre_connected": {"const": true},
+        "candidate20_balance_complete_singular_rotation_zero_fibre_connected": {"const": true},
+        "candidate20_off_balance_complete_singular_rotation_zero_fibre_connected": {"const": true},
+        "candidate20_complete_singular_rotation_zero_fibre_connected": {"const": true},
+        "all_positive_fixed_active_occupations_covered": {"const": true},
+        "candidate17_candidate20_identified": {"const": false},
+        "occupation_strata_glued": {"const": false},
+        "final_residual_descent": {"const": false},
+        "all_orders_integration": {"const": false},
+        "causal_residual_observational_or_quantum_claim": {"const": false}
+      },
+      "required": [
+        "normalized_spin_two_moment_unit_ball_bound_certified",
+        "time_reversal_zero_moment_homotopy_certified",
+        "time_reversal_moment_norm_monotone",
+        "delta_negative_convex_positive_node_deletion_certified",
+        "delta_positive_convex_negative_node_deletion_certified",
+        "every_admissible_component_meets_incidence",
+        "strict_opposite_sign_complete_deformable_kernel_contraction",
+        "candidate17_complete_singular_rotation_zero_fibre_connected",
+        "candidate20_balance_complete_singular_rotation_zero_fibre_connected",
+        "candidate20_off_balance_complete_singular_rotation_zero_fibre_connected",
+        "candidate20_complete_singular_rotation_zero_fibre_connected",
+        "all_positive_fixed_active_occupations_covered",
+        "candidate17_candidate20_identified",
+        "occupation_strata_glued",
+        "final_residual_descent",
+        "all_orders_integration",
+        "causal_residual_observational_or_quantum_claim"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

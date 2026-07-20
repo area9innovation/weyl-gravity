@@ -750,6 +750,18 @@ def verify() -> None:
         raise AssertionError("deformable-kernel component enumeration was overpromoted")
     if "not declared connected" not in deformable["claim_boundary"] or "Nonemptiness of I does not imply" not in deformable["claim_boundary"]:
         raise AssertionError("deformable-kernel fail-closed boundary disappeared")
+    complete_deformable = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_deformable_kernel_complete_contraction"]
+    complete_second = complete_deformable["mode_data"]["second_order"]
+    if complete_deformable["descriptions"]["nonlinear"] != "CERTIFIED" or "time-reversal homotopy" not in complete_deformable["mode_data"]["lee_wald"]["statement"] or "monotonically" not in complete_deformable["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("complete deformable-kernel moment damping was hidden")
+    if complete_deformable["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "Every admissible component" not in complete_deformable["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("complete deformable-kernel contraction changed")
+    if "zero node" not in complete_deformable["mode_data"]["resonance"]["statement"] or "M_K=0" not in complete_deformable["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("complete deformable-kernel resonance path disappeared")
+    if complete_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or complete_second["smooth_secular"]["status"] != "CERTIFIED" or complete_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("complete deformable-kernel lifecycle drifted")
+    if "does not identify candidates 17 and 20" not in complete_deformable["claim_boundary"] or "occupation strata" not in complete_deformable["claim_boundary"] or "all-orders" not in complete_deformable["claim_boundary"]:
+        raise AssertionError("complete deformable-kernel fail-closed boundary disappeared")
     independent_scaling = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_independent_node_scaling_contraction"]
     independent_second = independent_scaling["mode_data"]["second_order"]
     if independent_scaling["descriptions"]["nonlinear"] != "CERTIFIED" or "I={(x,y)" not in independent_scaling["mode_data"]["taub_maps"]["statement"] or "positive collinearity" not in independent_scaling["mode_data"]["taub_maps"]["statement"]:

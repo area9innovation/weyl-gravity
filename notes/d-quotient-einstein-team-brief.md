@@ -4357,6 +4357,48 @@ activates the existing same-background relative programme only after such a
 component meets `I`; missing global, charge, boundary and final residual maps
 remain `OPEN` or `NO_CERTIFIED_MAP`.
 
+The component gate is now closed constructively.  In the normalized
+spin-two magnetic basis, the antiunitary
+
+```text
+Theta(f)=anti_diag(1,-1,1,-1,1)*conjugate(f)
+```
+
+obeys `Theta J_a Theta^-1=-J_a` and has zero cross moment.  After a node
+phase makes `sigma=<f,Theta f>` real and nonnegative,
+
+```text
+f_theta=(cos(theta)f+sin(theta)Theta f)
+        /sqrt(1+sigma*sin(2theta)),
+m(f_theta)=cos(2theta)/(1+sigma*sin(2theta))*m(f).
+```
+
+The moment multiplier decreases from one to zero.  On
+`delta<0<alpha`, scale the positive kernel node to zero first.  Its moment
+and coefficient are affine, the initial and zero-node endpoints satisfy the
+unit-ball inequality, and convexity gives `||M(t)||<=c(t)` throughout.
+Then `T3(F,0)=0` releases the surviving direction, so the time-reversal
+homotopy makes it phase-real before scaling through `||F||^2=-delta/a`.
+For `alpha<0<delta`, delete the negative node, damp the survivor and cross at
+`||G||^2=delta/b`.
+
+Combining this path with the previously certified same-sign, `alpha=0` and
+candidate-20 balance paths proves the complete fixed-positive-occupation
+singular rotation-zero unions connected for candidates 17 and 20.  Atlas
+successor
+`einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_deformable_kernel_complete_contraction`
+is bounded and smooth-secular `CERTIFIED`.  Candidate identities remain
+separate.  Distinct total-occupation gluing, a global Hausdorff leaf space,
+final residual descent, all-orders integration and causal, observational or
+quantum maps remain open or `NO_CERTIFIED_MAP`.
+
+The active Bridge-1 handoff is therefore no longer kernel-direction
+topology.  Its next admissible gate is to decide whether the intended final
+residual quotient requires gluing distinct total-occupation strata and then
+export the resulting fixed-occupation contraction through the existing
+same-background relative triangle/cofiber.  No absent polar, exceptional,
+charge or boundary map is inferred.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
