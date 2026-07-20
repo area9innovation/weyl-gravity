@@ -145,8 +145,7 @@ Pauli-matrix replay passed in 0.67 s.  Six tests passed in 0.47 s and reject
 principal-symbol, lowest-block, full-resolvent, five-function and
 QME/Lorentzian promotions.
 
-EVIDENCE:
-`quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION.json`;
+EVIDENCE: `quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION.json`;
 `planning/forge-requests/scalar-flat-berger-coupled-vector-schur-blocks.json`
 
 CLOSE-OUT: DONE — the first exact representation/operator obstruction is
