@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-candidate-b-unimodular-threeform-causal-parent",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-candidate-b-unimodular-threeform-causal-parent",
+  "source": {
+    "path": "planning/work-items/classical-compensator-candidate-b-unimodular-threeform-causal-parent.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Construct or exactly obstruct Candidate B: a Henneaux-Teitelboim/unimodular action completion that constrains the dressed trace through a topological three-form sector without adding a local propagating scalar.",
+    "stop_condition": "Import COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1 from commit 306ff78a2 and TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1 from commit 2b834dc751d6948366fd5c3d99174c268fa50d21 by exact hashes. On the same unit vacuum-cylinder conventions, freeze S_C2 plus the frozen clock sector and integral lambda(sqrt(-g_hat)-partial_mu A^mu), with A^mu represented equivalently and globally correctly by a three-form potential. Derive every minimal, nonminimal, antifield, reducibility and ghost-for-ghost row from the action; prove CME, Q^2=0, cyclicity, real structure and the Weyl-quartet contraction. Construct or obstruct the complete retarded/advanced causal parent, including the topological rows and compact-support cohomology. Decide exactly whether u=phi_trace-2 tau is eliminated, constrained into a contractible block, or replaced by a cosmological-constant/flux zero mode. Classify the compact S3 topology, all global three-form flux sectors and the reduced Lee-Wald/current pairing; prove that no negative or uncontrolled topological physical direction is hidden by a local calculation. Recompute the zero-charge D sector and test compatibility with the healthy Berger clock rather than assuming the volume constraint preserves it. Emit an action hash, exact block matrices, causal and global-cohomology certificates, independent action-variation and topology rails, and a PASS/FAIL disposition against the seven common comparison gates.",
+    "current_gate": "Candidate B unimodular/three-form causal, global-mode and clock preflight on the vacuum cylinder",
+    "forbid": "no Lagrange-multiplier row without its action-derived cotangent and reducibility completion; no local Poincare-lemma argument used to erase compact three-form cohomology; no cosmological or flux zero mode omitted; no absence of local scalar called positivity; no sampled-mode disappearance of u promoted to homology elimination; no D-gauge or Berger-clock preservation inferred without charge and Cartan checks; no anomaly, Hadamard, particle, scattering or unitarity claim",
+    "depends_on": [],
+    "activates": [
+      "classical-compensator-candidate-ab-comparison-gate",
+      "a receiver-valid changed-action causal parent if Candidate B passes",
+      "or a scoped unimodular/three-form no-go"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "closed_universe_observers/",
+      "reports/",
+      "residual_atlas/",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "PRIORITY CLASSICAL REPAIR B. This is expected to be the cheaper exact causal repair, but compact topology and the global flux mode are theorem gates, not afterthoughts.",
+    "notes": [
+      "Candidate B is preferred only if the complete local and global topological sector is controlled.",
+      "Use the three-form formulation whenever it makes reducibility and compact cohomology explicit.",
+      "A surviving uncontrolled flux/cosmological mode or removal of the physical clock is a successful terminal obstruction."
+    ],
+    "input_commit": "306ff78a2",
+    "stream": "classical"
+  },
+  "edges": []
+}

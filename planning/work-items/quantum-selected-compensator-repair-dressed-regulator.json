@@ -1,0 +1,47 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-selected-compensator-repair-dressed-regulator",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-selected-compensator-repair-dressed-regulator",
+  "source": {
+    "path": "planning/work-items/quantum-selected-compensator-repair-dressed-regulator.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum",
+    "state": "PROPOSED",
+    "objective": "Construct or exactly obstruct a Diff-covariant regulator and quantum-action-principle architecture in dressed canonical variables for the single compensator repair selected by the A/B gate.",
+    "stop_condition": "Import the A/B comparison verdict and exact selected action/carrier hashes, plus every terminal result from quantum-all-loop-qap-regulator-construction. Refuse an ambiguous or NEITHER selection. Work in canonical variables (g_hat and complete Diff fields) direct-sum (tau, omega, omega_star, tau_hat_star), treating the Weyl sector as the certified algebraic quartet. Build one regulator and subtraction scheme for the selected Diff theory, including the auxiliary scalar of Candidate A or the complete reducible three-form/topological sector of Candidate B, its nonminimal fields, antifield insertions, zero modes and stable counterterm module. Prove or exactly obstruct that the dressed canonical transformation and measure Jacobian generate only local counterterms, establish the QAP hypotheses and filtration continuity, and then state precisely whether H_ext^{1,4}=0 authorizes the all-orders local QME induction for this changed action. Account explicitly for evanescent d-dimensional invariants exposed by the DR/MS preflight. Emit an independent regulator/QAP certificate and selected-action receiver contract.",
+    "current_gate": "selected-action dressed-variable regulator and QAP realization",
+    "forbid": "no regulator built before a selected action hash exists; no naive tau-adic Hessian reused after the classical action changes; no Weyl quartet cohomology used to erase Diff, scalaron or topological anomalies; no four-dimensional counterterm list assumed closed in d dimensions; no local Euclidean QME promoted to global anomaly freedom, Lorentzian QME, states, particles, scattering or unitarity",
+    "depends_on": [
+      "sf:program/work/classical-compensator-candidate-ab-comparison-gate"
+    ],
+    "activates": [
+      "a selected-theory unconditional formal local all-loop QME theorem",
+      "or an exact regulator/QAP obstruction tied to Candidate A or B"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/local_bv/",
+      "quantum-weyl/anomalies/",
+      "quantum-weyl/spectral/",
+      "quantum-weyl/reports/",
+      "quantum-weyl/atlas/",
+      "reports/",
+      "residual_atlas/",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "notes/d-quotient-quantum-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "DOWNSTREAM GATED. The current generic tau-adic QAP work remains useful as a regulator no-go/control, but the final regulator must be rebuilt against the selected classical Hessian.",
+    "notes": [
+      "A local all-loop result remains formal and Euclidean unless separate Lorentzian and global gates land.",
+      "Candidate A and Candidate B have different determinant, zero-mode and counterterm problems; do not parameter-average them."
+    ],
+    "input_commit": "306ff78a2",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
