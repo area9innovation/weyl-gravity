@@ -1,0 +1,42 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/observer-berger-apparatus-reduced-cohomology-after-crosswalk",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "observer-berger-apparatus-reduced-cohomology-after-crosswalk",
+  "source": {
+    "path": "planning/work-items/observer-berger-apparatus-reduced-cohomology-after-crosswalk.json",
+    "span": null
+  },
+  "body": {
+    "owner": "observer",
+    "state": "PROPOSED",
+    "objective": "Compute the physical apparatus cohomology and pairing on the certified combined unary carrier, or preserve the exact crosswalk obstruction.",
+    "stop_condition": "Import the terminal combined-q1 crosswalk.  If it exports a valid combined complex, compute its exact graded q1 cohomology, descend the odd/Lee-Wald pairing, real structure and K_Berger action, classify radicals and signatures, and identify canonical reduced representatives for rods, polarization, emitters, detector records and persistent memory.  Prove whether the leading rank-two detector map descends and report its exact reduced rank/kernel.  Export projection, inclusion and contraction data plus method-distinct verification.  If the crosswalk is obstructed, independently replay the incompatibility and state exactly which physical-reduction questions remain undefined; do not treat terminal dependency as success.",
+    "current_gate": "physical cohomology, pairing and detector rank after a valid combined q1",
+    "forbid": "no obstructed dependency treated as resolved science; no raw coordinate called an observable; no positivity before radical/real descent; no Z2, redshift, particle or quantum promotion",
+    "depends_on": [
+      "sf:program/work/observer-berger-apparatus-combined-q1-crosswalk"
+    ],
+    "activates": [
+      "the reduced apparatus input to the Berger Z2 memory and redshift gates",
+      "or a theorem-frozen physical-reduction nondefinition"
+    ],
+    "allowed_paths": [
+      "closed_universe_observers/",
+      "reports/",
+      "residual_atlas/",
+      "paper/09-relational-clocks-berger-d-cartan.tex",
+      "notes/closed-universe-observer-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "OBSERVER DEPENDENT PHYSICAL REDUCTION.  Use only the certified row-level combined complex.",
+    "notes": [
+      "This supersedes the blocked preflight only after the missing crosswalk is instantiated."
+    ],
+    "input_commit": "74b5d9f3edc521510472920a557afbba7533e02d",
+    "stream": "observer"
+  },
+  "edges": []
+}
