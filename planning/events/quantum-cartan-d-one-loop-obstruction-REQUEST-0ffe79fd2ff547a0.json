@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/quantum-cartan-d-one-loop-obstruction-REQUEST-0ffe79fd2ff547a0",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/quantum-cartan-d-one-loop-obstruction-REQUEST-0ffe79fd2ff547a0.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/quantum-cartan-d-one-loop-obstruction", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T09:13:10Z", "seq": 1, "payload": {"target": "sf:program/request/quantum-cartan-d-one-loop-obstruction-to-classical-0ffe79fd2ff547a0", "request_id": "sf:program/request/quantum-cartan-d-one-loop-obstruction-to-classical-0ffe79fd2ff547a0", "from_item": "sf:program/work/quantum-cartan-d-one-loop-obstruction", "to_stream": "classical", "need": "SAME_BACKGROUND_TAU_ADIC_COMPENSATOR_D_CONTRACTION: export the formal tau-adic Wess-Zumino compensator-extended classical BV complex on the declared regular-Bach/background carrier with Q0, iota_D0, L_D0, inclusion, projection, homotopy, pairing, and exact Cartan/contraction-equivariance hashes; do not substitute the Berger clock tau or K_Berger for the Wess-Zumino compensator or raw D", "typed": "dependency-artifact"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "classical"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/quantum-cartan-d-one-loop-obstruction"}]
+}
