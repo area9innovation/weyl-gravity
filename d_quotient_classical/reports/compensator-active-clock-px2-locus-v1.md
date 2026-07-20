@@ -381,5 +381,4 @@ python3 -m unittest \
 CLOSE-OUT: DONE — the complete declared quadratic active-clock stationary
 locus is exact and its seven-gate good locus is empty.
 
-EVIDENCE:
-`d_quotient_classical/receipts/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1_TIER_RECEIPT.json`
+EVIDENCE: `d_quotient_classical/receipts/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1_TIER_RECEIPT.json`
