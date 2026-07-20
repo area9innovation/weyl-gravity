@@ -523,9 +523,13 @@ Cauchy morphisms' cone action. A global exact CCR-normalized Hadamard Krein
 covariance is independently certified on the free rank-40 dilation.
 Quotient-inverse Cauchy morphisms transport it to the cutoff and full
 rank-40 metric dilations while preserving the Hadamard relation and exact
-CCR. Their fibre form remains indefinite. Raw-companion or full graded-BV
-restriction, the BRST Ward identity and physical positivity remain open. No
-positive-state or full-BV Hadamard flag is promoted.
+CCR. Their fibre form remains indefinite. Exact block pullback shows that
+both canonical 20-row summands are isotropic and have zero pulled causal
+form, so naïve summand restriction is rejected. A support-local graph
+intertwiner or a direct retained-26 covariance (including six ghost/identity
+rows) is required; the conditional 26-to-54 lift is already certified.
+The BRST Ward identity and physical positivity remain open. No positive-state
+or full-BV Hadamard flag is promoted.
 The generic typed biwave Volterra theorem is now independently imported as
 reusable causal infrastructure. It distinguishes solution- and source-space
 resolvents, proves both factorial bounds and inverse identities, reverses the

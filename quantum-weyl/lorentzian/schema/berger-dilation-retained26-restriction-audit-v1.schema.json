@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-berger-dilation-retained26-restriction-audit-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_layer",
+    "dependency_tags",
+    "classical_commit",
+    "setting_id",
+    "dependency_refs",
+    "exact_input_checks",
+    "canonical_summand_audit",
+    "graph_restriction_contract",
+    "complete_contract_fixture",
+    "retained_26_to_54_bridge",
+    "admissible_next_routes",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-berger-dilation-retained26-restriction-audit-v1"
+    },
+    "result_id": {
+      "const": "BERGER_DILATION_TO_RETAINED26_RESTRICTION_AUDIT"
+    },
+    "result_state": {
+      "const": "CANONICAL_SUMMAND_RESTRICTION_OBSTRUCTED_GRAPH_INTERTWINER_OR_DIRECT_RETAINED26_COVARIANCE_REQUIRED"
+    },
+    "lifecycle_layer": {
+      "const": "LORENTZIAN_GRADED_BV_COVARIANCE_BOUNDARY"
+    },
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "classical_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "setting_id": {
+      "const": "compact_positive_berger_clock_fixed_coupling_linearized"
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Hermitian_dilation",
+        "full_dilation_covariance",
+        "graded_54_contract",
+        "retained_causal_chain",
+        "conditional_26_to_54_lift"
+      ],
+      "properties": {
+        "Hermitian_dilation": {"$ref": "#/$defs/reference"},
+        "full_dilation_covariance": {"$ref": "#/$defs/reference"},
+        "graded_54_contract": {"$ref": "#/$defs/reference"},
+        "retained_causal_chain": {"$ref": "#/$defs/reference"},
+        "conditional_26_to_54_lift": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "exact_input_checks": {
+      "type": "object",
+      "additionalProperties": {"const": true},
+      "minProperties": 7
+    },
+    "canonical_summand_audit": {
+      "type": "object",
+      "required": [
+        "block_form",
+        "dilated_Green_operator",
+        "scalar_causal_form",
+        "first_summand",
+        "second_summand",
+        "checks",
+        "all_pass"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "block_form": {"const": "H=[[0,I],[I,0]]"},
+        "dilated_Green_operator": {"type": "string"},
+        "scalar_causal_form": {"type": "string"},
+        "first_summand": {"$ref": "#/$defs/summand"},
+        "second_summand": {"$ref": "#/$defs/summand"},
+        "checks": {
+          "type": "object",
+          "additionalProperties": {"const": true},
+          "minProperties": 6
+        },
+        "all_pass": {"const": true}
+      }
+    },
+    "graph_restriction_contract": {"$ref": "#/$defs/graph_contract"},
+    "complete_contract_fixture": {"$ref": "#/$defs/graph_contract"},
+    "retained_26_to_54_bridge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conditional_lift",
+        "status",
+        "remaining_metric_rows",
+        "remaining_ghost_identity_rows",
+        "does_not_require_rebuilding_54_row_lift"
+      ],
+      "properties": {
+        "conditional_lift": {"const": "omega54=iota_cl omega26 pi_cl"},
+        "status": {
+          "const": "CERTIFIED_CONDITIONAL_ON_EXACT_RETAINED26_COVARIANCE"
+        },
+        "remaining_metric_rows": {"const": 20},
+        "remaining_ghost_identity_rows": {"const": 6},
+        "does_not_require_rebuilding_54_row_lift": {"const": true}
+      }
+    },
+    "admissible_next_routes": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["route", "required_input", "status"],
+        "properties": {
+          "route": {
+            "enum": ["GRAPH_RESTRICTION", "DIRECT_RETAINED26_CONSTRUCTION"]
+          },
+          "required_input": {"type": "string", "minLength": 30},
+          "status": {"const": "OPEN"}
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "BERGER_CANONICAL_DILATION_SUMMAND_RESTRICTION_PRESERVES_CCR",
+        "BERGER_DILATION_GRAPH_RESTRICTION_CONTRACT_READY",
+        "BERGER_DILATION_GRAPH_INTERTWINER_SUPPLIED",
+        "BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE",
+        "BERGER_COVARIANCE_LIFT_26_TO_54",
+        "BERGER_54_ROW_BRST_HADAMARD",
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY",
+        "BERGER_HADAMARD_DATA",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "BERGER_CANONICAL_DILATION_SUMMAND_RESTRICTION_PRESERVES_CCR": {"const": false},
+        "BERGER_DILATION_GRAPH_RESTRICTION_CONTRACT_READY": {"const": true},
+        "BERGER_DILATION_GRAPH_INTERTWINER_SUPPLIED": {"const": false},
+        "BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE": {"const": false},
+        "BERGER_COVARIANCE_LIFT_26_TO_54": {"const": true},
+        "BERGER_54_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {
+      "const": "SUPPLY_SUPPORT_LOCAL_GRAPH_INTERTWINER_OR_CONSTRUCT_DIRECT_RETAINED26_GRADED_COVARIANCE_THEN_APPLY_CERTIFIED_26_TO_54_LIFT"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "proof_type": {
+          "const": "EXACT_BLOCK_PULLBACK_AUDIT_AND_FAIL_CLOSED_CONSUMER_CONTRACT"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "source_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "summand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inclusion",
+        "pulled_pairing",
+        "pulled_CCR_form",
+        "pairing_rank_in_block_replay"
+      ],
+      "properties": {
+        "inclusion": {"type": "string"},
+        "pulled_pairing": {"type": "string"},
+        "pulled_CCR_form": {"type": "string"},
+        "pairing_rank_in_block_replay": {"const": 0}
+      }
+    },
+    "graph_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "graph",
+        "operator_invariance",
+        "pulled_pairing",
+        "required_properties",
+        "raw_metric_covariance_ready",
+        "retained_26_covariance_ready",
+        "status"
+      ],
+      "properties": {
+        "graph": {"const": "i_J:u->(u,J u)"},
+        "operator_invariance": {"const": "Cdagger J=J C"},
+        "pulled_pairing": {"const": "i_J^dagger H i_J=J+Jdagger"},
+        "required_properties": {
+          "type": "object",
+          "additionalProperties": {"type": "boolean"},
+          "minProperties": 5
+        },
+        "raw_metric_covariance_ready": {"type": "boolean"},
+        "retained_26_covariance_ready": {"type": "boolean"},
+        "status": {
+          "enum": [
+            "READY",
+            "EXPLICIT_INTERTWINER_AND_GHOST_COVARIANCE_NOT_SUPPLIED"
+          ]
+        }
+      }
+    }
+  }
+}

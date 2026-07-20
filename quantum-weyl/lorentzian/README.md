@@ -368,3 +368,13 @@ rank-40 Hermitian metric dilations. Projection to the undoubled companion,
 extension to the full graded BV carrier, the BRST Ward identity and
 positivity remain open. See
 [`berger-full-dilation-hadamard-krein-covariance-transport.md`](../reports/berger-full-dilation-hadamard-krein-covariance-transport.md).
+
+The canonical projection question is now settled negatively. Because
+`H=[[0,I],[I,0]]` and `E_D=diag(E_C,E_Cdagger)`, either canonical summand has
+zero pulled pairing and zero pulled scalar causal form. A viable graph
+restriction requires a support-local `J` satisfying
+`Cdagger J=J C` with nondegenerate `J+Jdagger`; no such `J` is currently
+supplied. The alternative is to construct the retained 26-row covariance
+directly, including its six ghost/identity rows. The conditional 26-to-54
+lift is already certified. See
+[`berger-dilation-retained26-restriction-audit.md`](../reports/berger-dilation-retained26-restriction-audit.md).

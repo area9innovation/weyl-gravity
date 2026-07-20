@@ -144,12 +144,11 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         )
         hadamard = berger["quantum_data"]["Hadamard_two_point_function"]
         self.assertEqual(hadamard["status"], "OPEN")
-        self.assertIn("factorwise-null Pauli-Jordan kernel", hadamard["statement"])
-        self.assertIn("regular internal time-slice source map", hadamard["statement"])
-        self.assertIn("metric-sector RFHGHO dilation", hadamard["statement"])
-        self.assertIn("two regular Cauchy morphism legs", hadamard["statement"])
+        self.assertIn("global Hadamard Krein covariances", hadamard["statement"])
         self.assertIn("morphism cone mapping", hadamard["statement"])
-        self.assertIn("same-orientation exclusion", hadamard["statement"])
+        self.assertIn("canonical restriction", hadamard["statement"])
+        self.assertIn("off-diagonal Hermitian pairing", hadamard["statement"])
+        self.assertIn("direct retained-26 graded covariance", hadamard["statement"])
         self.assertIn(
             "BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY",
             {evidence["result_id"] for evidence in berger["evidence"]},
@@ -166,14 +165,8 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
-        self.assertIn("finite same-sided Volterra term", hadamard["statement"])
-        self.assertIn("D'_Gamma normal topology", hadamard["statement"])
         self.assertIn("compact-slab convergence", hadamard["statement"])
         self.assertIn("cutoff null-cone decomposability", hadamard["statement"])
-        self.assertIn(
-            "transported to global Hadamard Krein covariances",
-            hadamard["statement"],
-        )
         self.assertIn(
             "BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION",
             {evidence["result_id"] for evidence in berger["evidence"]},
@@ -186,7 +179,11 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             "BERGER_FULL_DILATION_HADAMARD_KREIN_CCR_COVARIANCE",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
-        self.assertIn("exactly CCR-normalized free-dilation Krein covariance", hadamard["statement"])
+        self.assertIn(
+            "BERGER_DILATION_TO_RETAINED26_RESTRICTION_AUDIT",
+            {evidence["result_id"] for evidence in berger["evidence"]},
+        )
+        self.assertIn("exactly CCR-normalized covariance", hadamard["statement"])
         self.assertIn(
             "BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED",
             {evidence["result_id"] for evidence in berger["evidence"]},

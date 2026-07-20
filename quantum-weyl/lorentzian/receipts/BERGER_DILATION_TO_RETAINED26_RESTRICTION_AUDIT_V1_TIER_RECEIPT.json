@@ -1,0 +1,55 @@
+{
+  "schema": "quantum-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_DILATION_TO_RETAINED26_RESTRICTION_AUDIT_V1_TIER_RECEIPT",
+  "recorded_at_utc": "2026-07-20T07:43:14Z",
+  "base_commit": "c1010eccb6ae5335060e57ad2f15375cb0b32bd5",
+  "dependency_tags": ["LORENTZIAN-CAUSAL"],
+  "changed_claim": "Exact block pullback proves that neither canonical 20-row summand of the rank-40 off-diagonal Hermitian dilation realizes the separately certified retained metric causal Green and CCR structure; a support-local graph intertwiner or direct retained-26 graded covariance is required before the certified 26-to-54 lift.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.03,
+      "commands": [
+        "python3 -m py_compile quantum-weyl/lorentzian/berger_dilation_retained26_restriction_audit.py quantum-weyl/lorentzian/berger_dilation_retained26_restriction_audit_certificate.py quantum-weyl/lorentzian/verify_berger_dilation_retained26_restriction_audit.py quantum-weyl/active_frontier.py quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
+        "python3 -m json.tool quantum-weyl/lorentzian/schema/berger-dilation-retained26-restriction-audit-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/schema/active-frontier-v1.schema.json",
+        "git diff --check -- quantum-weyl notes/d-quotient-quantum-team-brief.md notes/universe-building-roadmap.md"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 7.32,
+      "tests_run": 23,
+      "commands": [
+        "python3 quantum-weyl/lorentzian/berger_dilation_retained26_restriction_audit_certificate.py --emit",
+        "python3 quantum-weyl/lorentzian/verify_berger_dilation_retained26_restriction_audit.py",
+        "PYTHONPATH=quantum-weyl python3 -m pytest -q quantum-weyl/lorentzian/tests/test_berger_dilation_retained26_restriction_audit.py",
+        "python3 quantum-weyl/active_frontier_certificate.py --emit",
+        "python3 quantum-weyl/verify_active_frontier.py",
+        "PYTHONPATH=.:quantum-weyl python3 quantum-weyl/atlas/generate_quantum_atlas_fragment.py --emit",
+        "PYTHONPATH=.:quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment",
+        "PYTHONPATH=.:quantum-weyl python3 -m pytest -q quantum-weyl/tests/test_active_frontier.py quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The new exact restriction audit and its affected active-frontier and generated atlas consumers were regenerated and independently verified. The dilation, full covariance, retained causal-chain, graded-state and conditional-lift inputs are content-addressed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a fail-closed restriction audit. It rejects one canonical restriction and does not promote a retained-26/full-BV Hadamard state, BRST Ward identity, positivity result, Lorentzian QME or freeze."
+    }
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_EXIT_ZERO_WITH_FINDINGS",
+    "command": "./ci/science-forge-shadow.sh",
+    "elapsed_seconds": 5.22,
+    "findings": [
+      "bridge certificate audit drift=FAIL",
+      "coverage census drift: 1184 certificates versus baseline 976",
+      "forge checkout revision differs from the unpinned dirty development binary"
+    ],
+    "claim_use": "NOT_USED_FOR_PROMOTION"
+  },
+  "claim_boundary": "The full rank-40 Hadamard Krein covariance and exact CCR remain certified. The audit proves only that canonical pullback to either undoubled 20-row summand is identically zero and cannot realize the declared retained causal structure. It does not rule out a support-local graph intertwiner or direct retained-26 construction and does not certify a retained/full-BV covariance, BRST Ward identity, positive state, renormalized Lorentzian products or Lorentzian QME."
+}

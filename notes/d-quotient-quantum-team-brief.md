@@ -1523,7 +1523,9 @@ BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY [CERTIFIED]
      + MORPHISM_CONE_MAPPING [CERTIFIED]
   -> FULL_DILATION_HADAMARD_KREIN_COVARIANCE + EXACT_CCR
      [CERTIFIED, INDEFINITE]
-  -> restriction to full graded BV carrier + BRST Ward identity
+  -> CANONICAL_20_ROW_SUMMAND_RESTRICTION [OBSTRUCTED]
+  -> graph intertwiner or direct retained-26 covariance
+  -> certified 26-to-54 lift + BRST Ward identity
   -> companion Hadamard two-point distribution
 ```
 
@@ -1557,9 +1559,15 @@ transport the normalized free covariance to global Hadamard Krein
 covariances on the cutoff and full rank-40 metric dilations. Because the
 Pauli--Jordan form is transported by the identical maps, the cutoff and full
 antisymmetric parts equal \(iE_\chi\) and \(iE_{\rm full}\) exactly.
-Restriction from
-the doubled metric carrier to the full graded BV complex, the BRST Ward
-identity and the physical/Krein positivity policy remain independent gates.
+The off-diagonal dilation pairing makes both canonical 20-row summands
+isotropic and their causal CCR pullbacks vanish. Direct summand restriction
+is therefore exactly obstructed. The admissible routes are a support-local
+graph \(u\mapsto(u,Ju)\), with \(C^\dagger J=JC\) and nondegenerate
+\(J+J^\dagger\), or a direct retained-26 construction from the BV pairing and
+causal homotopy. The six retained ghost/identity rows remain part of either
+route. The conditional 26-to-54 lift is already certified; it must not be
+rebuilt. The BRST Ward identity and physical/Krein positivity policy remain
+independent gates.
 The fail-closed atlas row remains `OPEN`: no full companion covariance, BRST
 Ward identity or physical state-space sign has been certified.
 
@@ -1590,6 +1598,9 @@ are recorded in
 [`berger-cutoff-volterra-normal-topology-convergence.md`](../quantum-weyl/reports/berger-cutoff-volterra-normal-topology-convergence.md).
 The completed two-leg covariance transport is recorded in
 [`berger-full-dilation-hadamard-krein-covariance-transport.md`](../quantum-weyl/reports/berger-full-dilation-hadamard-krein-covariance-transport.md).
+The exact summand obstruction and graph/direct retained-26 consumer contract
+are recorded in
+[`berger-dilation-retained26-restriction-audit.md`](../quantum-weyl/reports/berger-dilation-retained26-restriction-audit.md).
 The now-certified independent free global bisolution input and its
 indefinite/positive-state boundary are recorded in
 [`berger-free-dilation-hadamard-bisolution-seed.md`](../quantum-weyl/reports/berger-free-dilation-hadamard-bisolution-seed.md).

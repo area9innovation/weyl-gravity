@@ -1,0 +1,146 @@
+{
+  "admissible_next_routes": [
+    {
+      "required_input": "support-local regular J with Cdagger J=J C, nondegenerate J+Jdagger, and verified covariance pullback",
+      "route": "GRAPH_RESTRICTION",
+      "status": "OPEN"
+    },
+    {
+      "required_input": "omega26 built from the certified BV pairing and causal homotopy, including the six ghost/identity rows",
+      "route": "DIRECT_RETAINED26_CONSTRUCTION",
+      "status": "OPEN"
+    }
+  ],
+  "canonical_summand_audit": {
+    "all_pass": true,
+    "block_form": "H=[[0,I],[I,0]]",
+    "checks": {
+      "first_canonical_summand_CCR_pullback_zero": true,
+      "first_canonical_summand_pairing_rank_zero": true,
+      "full_dilation_causal_form_nondegenerate_in_block_model": true,
+      "full_dilation_pairing_nondegenerate": true,
+      "second_canonical_summand_CCR_pullback_zero": true,
+      "second_canonical_summand_pairing_rank_zero": true
+    },
+    "dilated_Green_operator": "E_D=diag(E_C,E_Cdagger)",
+    "first_summand": {
+      "inclusion": "i_1:u->(u,0)",
+      "pairing_rank_in_block_replay": 0,
+      "pulled_CCR_form": "i_1^dagger H E_D i_1=0",
+      "pulled_pairing": "i_1^dagger H i_1=0"
+    },
+    "scalar_causal_form": "H E_D=[[0,E_Cdagger],[E_C,0]]",
+    "second_summand": {
+      "inclusion": "i_2:u->(0,u)",
+      "pairing_rank_in_block_replay": 0,
+      "pulled_CCR_form": "i_2^dagger H E_D i_2=0",
+      "pulled_pairing": "i_2^dagger H i_2=0"
+    }
+  },
+  "claim_boundary": "The off-diagonal Hermitian form makes both canonical companion summands isotropic, so direct summand restriction cannot preserve or realize the separately certified retained metric causal Green and CCR structure: its pulled pairing and scalar causal form are identically zero. This rejects only that canonical restriction. It does not prove that no support-local graph intertwiner exists. No retained-26 or 54-row covariance, BRST Ward identity, positive state, physical positivity, renormalized Lorentzian product, Lorentzian QME or quantum theory is certified.",
+  "claim_flags": {
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_CANONICAL_DILATION_SUMMAND_RESTRICTION_PRESERVES_CCR": false,
+    "BERGER_COVARIANCE_LIFT_26_TO_54": true,
+    "BERGER_DILATION_GRAPH_INTERTWINER_SUPPLIED": false,
+    "BERGER_DILATION_GRAPH_RESTRICTION_CONTRACT_READY": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE": false,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "complete_contract_fixture": {
+    "graph": "i_J:u->(u,J u)",
+    "operator_invariance": "Cdagger J=J C",
+    "pulled_pairing": "i_J^dagger H i_J=J+Jdagger",
+    "raw_metric_covariance_ready": true,
+    "required_properties": {
+      "operator_graph_invariance_Cdagger_J_equals_J_C": true,
+      "pulled_covariance_has_exact_raw_CCR_and_Hadamard_WF": true,
+      "pulled_graph_pairing_J_plus_Jdagger_nondegenerate": true,
+      "six_retained_ghost_identity_rows_have_graded_covariance": true,
+      "support_local_regular_J": true
+    },
+    "retained_26_covariance_ready": true,
+    "status": "READY"
+  },
+  "dependency_refs": {
+    "Hermitian_dilation": {
+      "result_id": "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION",
+      "sha256": "72a02a8335ac5d3010ddc7785a2e7dc6028bf139b282b61f7fbb4dc5340d64d9"
+    },
+    "conditional_26_to_54_lift": {
+      "result_id": "BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT",
+      "sha256": "59d52928eb3e0063a4b0464b4592d4bd7d5d43e06860ee96999b6094a12b9723"
+    },
+    "full_dilation_covariance": {
+      "result_id": "BERGER_FULL_DILATION_HADAMARD_KREIN_CCR_COVARIANCE",
+      "sha256": "e44a2ffa5afca3496bd0487c61f6f21f940f1630a81a73497b635f581c315512"
+    },
+    "graded_54_contract": {
+      "result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+      "sha256": "99768cf1e444ef3525f19621702ee64a68aea83f83349a1c5d6223d9c959ca35"
+    },
+    "retained_causal_chain": {
+      "result_id": "BERGER_CAUSAL_CHAIN_V2_IMPORT",
+      "sha256": "b035e828a468f6ffd2b9459b43500ed58591349eb658e499b610df0ce795d0f1"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_input_checks": {
+    "analytic_inputs_share_classical_snapshot": true,
+    "conditional_26_to_54_lift_certified": true,
+    "conditional_lift_pins_exact_graded_contract": true,
+    "conditional_lift_setting_matches": true,
+    "exact_retained_26_covariance_still_open": true,
+    "full_dilation_Hadamard_Krein_covariance_certified": true,
+    "full_dilation_exact_CCR_certified": true,
+    "graded_54_causal_pairing_certified": true,
+    "off_diagonal_Hermitian_dilation_certified": true,
+    "retained_causal_chain_matches_analytic_snapshot": true,
+    "retained_metric_causal_Green_operators_imported": true
+  },
+  "graph_restriction_contract": {
+    "graph": "i_J:u->(u,J u)",
+    "operator_invariance": "Cdagger J=J C",
+    "pulled_pairing": "i_J^dagger H i_J=J+Jdagger",
+    "raw_metric_covariance_ready": false,
+    "required_properties": {
+      "operator_graph_invariance_Cdagger_J_equals_J_C": false,
+      "pulled_covariance_has_exact_raw_CCR_and_Hadamard_WF": false,
+      "pulled_graph_pairing_J_plus_Jdagger_nondegenerate": false,
+      "six_retained_ghost_identity_rows_have_graded_covariance": false,
+      "support_local_regular_J": false
+    },
+    "retained_26_covariance_ready": false,
+    "status": "EXPLICIT_INTERTWINER_AND_GHOST_COVARIANCE_NOT_SUPPLIED"
+  },
+  "lifecycle_layer": "LORENTZIAN_GRADED_BV_COVARIANCE_BOUNDARY",
+  "next_gate": "SUPPLY_SUPPORT_LOCAL_GRAPH_INTERTWINER_OR_CONSTRUCT_DIRECT_RETAINED26_GRADED_COVARIANCE_THEN_APPLY_CERTIFIED_26_TO_54_LIFT",
+  "provenance": {
+    "proof_type": "EXACT_BLOCK_PULLBACK_AUDIT_AND_FAIL_CLOSED_CONSUMER_CONTRACT",
+    "source_manifest": {
+      "../reports/berger-dilation-retained26-restriction-audit.md": "874d60403d519429c3d67c5e02e9949ad67f1fb6318a87848f7237b5c582cad5",
+      "berger_dilation_retained26_restriction_audit.py": "2c2728391772a3295fac4e6d757c8ec320684f2641c6e6f1a252e35d6864b0d8",
+      "berger_dilation_retained26_restriction_audit_certificate.py": "3cbdf458c9dab2a134a34b216a99af82ddf74e2f58aa9ba6b8b2caca61b3d7e9",
+      "schema/berger-dilation-retained26-restriction-audit-v1.schema.json": "5c2f8d7bc03082f48726d68b95bfff27989c532df08c9f87dd7ef6b9914a2082",
+      "tests/test_berger_dilation_retained26_restriction_audit.py": "2bb809a5f3f213dd667f0a924cf1e45779e3373b736ee8c8af38226159de7b0c",
+      "verify_berger_dilation_retained26_restriction_audit.py": "e675384123a9d1f6c7a681c3b45811cd020b99ef873574f05ab72b0c5c12e75d"
+    },
+    "source_manifest_sha256": "a340fbb9fe18d8531b0c4686f9a47ee175706a35c8aff622c2120f509f59ff38"
+  },
+  "result_id": "BERGER_DILATION_TO_RETAINED26_RESTRICTION_AUDIT",
+  "result_state": "CANONICAL_SUMMAND_RESTRICTION_OBSTRUCTED_GRAPH_INTERTWINER_OR_DIRECT_RETAINED26_COVARIANCE_REQUIRED",
+  "retained_26_to_54_bridge": {
+    "conditional_lift": "omega54=iota_cl omega26 pi_cl",
+    "does_not_require_rebuilding_54_row_lift": true,
+    "remaining_ghost_identity_rows": 6,
+    "remaining_metric_rows": 20,
+    "status": "CERTIFIED_CONDITIONAL_ON_EXACT_RETAINED26_COVARIANCE"
+  },
+  "schema": "quantum-weyl-berger-dilation-retained26-restriction-audit-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

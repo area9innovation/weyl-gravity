@@ -40,6 +40,7 @@ DEPENDENCIES = {
     "Berger_free_dilation_Hadamard_seed": QROOT / "lorentzian/certificates/BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED.json",
     "Berger_free_dilation_Krein_covariance": QROOT / "lorentzian/certificates/BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE.json",
     "Berger_full_dilation_Krein_covariance": QROOT / "lorentzian/certificates/BERGER_FULL_DILATION_HADAMARD_KREIN_CCR_COVARIANCE.json",
+    "Berger_dilation_retained26_restriction_audit": QROOT / "lorentzian/certificates/BERGER_DILATION_TO_RETAINED26_RESTRICTION_AUDIT.json",
     "Berger_A104_complete": QROOT / "lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
     "Berger_graph_q_obstruction": QROOT / "lorentzian/certificates/BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION.json",
     "Slavnov_preflight": QROOT / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
@@ -221,6 +222,9 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     free_dilation_seed = values["Berger_free_dilation_Hadamard_seed"]
     free_dilation_covariance = values["Berger_free_dilation_Krein_covariance"]
     full_dilation_covariance = values["Berger_full_dilation_Krein_covariance"]
+    dilation_restriction_audit = values[
+        "Berger_dilation_retained26_restriction_audit"
+    ]
     berger_a104 = values["Berger_A104_complete"]
     berger_graph_q = values["Berger_graph_q_obstruction"]
     slavnov = values["Slavnov_preflight"]
@@ -459,6 +463,20 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         ) is not False
         or full_dilation_covariance.get("next_gate")
         != "CONSTRUCT_RAW_COMPANION_OR_GRADED_BV_RESTRICTION_OF_FULL_DILATION_COVARIANCE_AND_VERIFY_BRST_WARD_IDENTITY"
+        or dilation_restriction_audit.get("claim_flags", {}).get(
+            "BERGER_CANONICAL_DILATION_SUMMAND_RESTRICTION_PRESERVES_CCR"
+        ) is not False
+        or dilation_restriction_audit.get("claim_flags", {}).get(
+            "BERGER_DILATION_GRAPH_RESTRICTION_CONTRACT_READY"
+        ) is not True
+        or dilation_restriction_audit.get("claim_flags", {}).get(
+            "BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE"
+        ) is not False
+        or dilation_restriction_audit.get("claim_flags", {}).get(
+            "BERGER_COVARIANCE_LIFT_26_TO_54"
+        ) is not True
+        or dilation_restriction_audit.get("next_gate")
+        != "SUPPLY_SUPPORT_LOCAL_GRAPH_INTERTWINER_OR_CONSTRUCT_DIRECT_RETAINED26_GRADED_COVARIANCE_THEN_APPLY_CERTIFIED_26_TO_54_LIFT"
         or berger_a104.get("claim_flags", {}).get("BERGER_FULL_A104_CAUCHY_OPERATOR")
         is not True
         or berger_a104.get("coverage", {}).get("known_coordinates") != 10816
@@ -1210,15 +1228,15 @@ def _berger_gap(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             exactness=("NO_CERTIFIED_MAP", "no per-mode cohomology ledger"),
             pairing=("NO_CERTIFIED_MAP", "carrier pairing has no modewise restriction"),
             complex_structure=("OPEN", "the canonical q_Cauchy graph lift is exactly rejected; corrected lift, Cauchy/Krein form, real structure and closed spectral splitting remain open"),
-            hadamard=("OPEN", "finite graph wavefront safety, local ghost factors, the smooth cutoff Green family, its factorwise-null Pauli-Jordan kernel, a regular internal time-slice source map, a metric-sector RFHGHO dilation, two regular Cauchy morphism legs, orientation of every finite same-sided Volterra term, compact-slab convergence in the fixed D'_Gamma normal topology, cutoff null-cone decomposability, same-orientation exclusion and morphism cone mapping are certified; the exactly CCR-normalized free-dilation Krein covariance has been transported to global Hadamard Krein covariances on the cutoff and full rank-40 metric dilations, while raw-companion/full-graded-BV restriction and BRST Ward identities remain open"),
+            hadamard=("OPEN", "finite graph wavefront safety, local ghost factors, compact-slab convergence, cutoff null-cone decomposability and morphism cone mapping are certified; the exactly CCR-normalized covariance has been transported to global Hadamard Krein covariances on the cutoff and full rank-40 metric dilations; canonical restriction to either 20-row summand is obstructed because the off-diagonal Hermitian pairing and causal CCR pull back to zero, so a support-local graph intertwiner or a direct retained-26 graded covariance is required before applying the already-certified 26-to-54 lift"),
             state_space=("OPEN", "reduced Krein evidence does not define a Berger physical state space"),
             qme=("OBSTRUCTED", "strict fixed-field-content local Euclidean QME is obstructed"),
             lifecycle=("OBSTRUCTED", "classical causal import remains; strict interacting quantum lifecycle is blocked"),
             particle=("NO_CERTIFIED_MAP", "no mode basis or Hadamard state"),
             crosswalk=("NO_CERTIFIED_MAP", "retained 26 rows to stationary physical modes"),
         ),
-        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_Hadamard_regular_morphism_boundary", "Berger_temporal_cutoff_Green_family", "Berger_cutoff_microlocal_response", "Berger_cutoff_Hermitian_dilation", "Berger_cutoff_Volterra_orientation_reduction", "Berger_cutoff_Volterra_normal_convergence", "Berger_free_dilation_Hadamard_seed", "Berger_free_dilation_Krein_covariance", "Berger_full_dilation_Krein_covariance", "Berger_A104_complete", "Berger_graph_q_obstruction", "Slavnov_preflight", "regulated_Slavnov_breaking"),
-        "The 26/54-row causal carrier and all 10,816 coefficients of A104 are imported. Finite graph wavefront safety, the cutoff Green family, compact-slab normal convergence, cutoff null-cone decomposability and the regular morphisms' cone action are certified. The global exact CCR-normalized Hadamard Krein covariance on the free rank-40 dilation transports through both quotient-inverse Cauchy morphisms to the cutoff and full rank-40 metric dilations. Both transported bidistributions remain Hadamard and have antisymmetric part exactly i times the corresponding project Pauli-Jordan distribution. Their fibre form has signature (20,20), so neither is a positive state. No valid projection to the undoubled raw companion or full graded BV carrier, BRST Ward identity, physical mode, complex structure, positive state, or particle is inferred. The tautological stationary q_Cauchy graph lift remains independently rejected by 157 square and 207 evolution-commutator defects.",
+        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_Hadamard_regular_morphism_boundary", "Berger_temporal_cutoff_Green_family", "Berger_cutoff_microlocal_response", "Berger_cutoff_Hermitian_dilation", "Berger_cutoff_Volterra_orientation_reduction", "Berger_cutoff_Volterra_normal_convergence", "Berger_free_dilation_Hadamard_seed", "Berger_free_dilation_Krein_covariance", "Berger_full_dilation_Krein_covariance", "Berger_dilation_retained26_restriction_audit", "Berger_A104_complete", "Berger_graph_q_obstruction", "Slavnov_preflight", "regulated_Slavnov_breaking"),
+        "The global exact CCR-normalized Hadamard Krein covariance transports to the cutoff and full rank-40 metric dilations. Their fibre form has signature (20,20), so neither is a positive state. Exact block pullback now proves that both canonical 20-row summands are isotropic and receive zero causal CCR; naïve summand restriction is therefore rejected. A graph restriction requires a support-local J with Cdagger J=J C and nondegenerate J+Jdagger, followed by the six retained ghost/identity rows. Alternatively omega26 may be constructed directly from the retained BV pairing and causal homotopy. The downstream omega54=iota omega26 pi lift is already certified conditionally. No retained-26/full-BV covariance, BRST Ward identity, physical mode, positive state, or particle is inferred.",
     )
 
 

@@ -557,6 +557,17 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertTrue(flags["BERGER_FULL_DILATION_HADAMARD_KREIN_COVARIANCE"])
         self.assertTrue(flags["BERGER_FULL_DILATION_EXACT_CCR"])
+        self.assertFalse(
+            flags[
+                "BERGER_CANONICAL_DILATION_SUMMAND_RESTRICTION_PRESERVES_CCR"
+            ]
+        )
+        self.assertTrue(
+            flags["BERGER_DILATION_GRAPH_RESTRICTION_CONTRACT_READY"]
+        )
+        self.assertFalse(flags["BERGER_DILATION_GRAPH_INTERTWINER_SUPPLIED"])
+        self.assertFalse(flags["BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE"])
+        self.assertTrue(flags["BERGER_COVARIANCE_LIFT_26_TO_54"])
         self.assertTrue(
             flags["BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED"]
         )
@@ -578,12 +589,12 @@ class ActiveFrontierTests(unittest.TestCase):
             row["status"],
         )
         self.assertIn(
-            "FULL_METRIC_DILATION_GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE",
+            "CANONICAL_SUMMAND_RESTRICTION_OBSTRUCTED",
             row["status"],
         )
         self.assertEqual(
             row["next_gate"],
-            "CONSTRUCT_RAW_COMPANION_OR_GRADED_BV_RESTRICTION_OF_FULL_DILATION_COVARIANCE_AND_VERIFY_BRST_WARD_IDENTITY",
+            "SUPPLY_SUPPORT_LOCAL_GRAPH_INTERTWINER_OR_CONSTRUCT_DIRECT_RETAINED26_GRADED_COVARIANCE_THEN_APPLY_CERTIFIED_26_TO_54_LIFT",
         )
         algebra_row = self.payload["active_rows"]["free_Lorentzian_algebra"]
         self.assertIn("PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED", algebra_row["status"])
