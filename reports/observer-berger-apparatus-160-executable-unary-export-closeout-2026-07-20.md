@@ -32,3 +32,4 @@ release was performed.
 
 CLOSE-OUT: SHORTFALL — executable replacement-112 and material-parent-56
 unary producer exports are required before the 160-row consumer can proceed.
+MISSING-DEP: content-addressed executable replacement-112 and material-parent-56 q1/pairing producer exports
