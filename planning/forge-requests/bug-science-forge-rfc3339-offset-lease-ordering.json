@@ -1,0 +1,18 @@
+{
+  "id": "sf:forge-request/bug-science-forge-rfc3339-offset-lease-ordering",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Repair lease and event-time comparisons so RFC3339 timestamps representing the same instant compare identically regardless of UTC offset. The live bridge lease expires at 2026-07-21T00:01:44Z. At the equivalent pre-expiry snapshot 2026-07-21T01:25:02+02:00, `s-f overview` labels it EXPIRED and `s-f work ready --stream bridge` incorrectly returns the already ACTIVE item as READY; using the equivalent UTC snapshot 2026-07-20T23:25:02Z correctly keeps it leased. This can permit duplicate scientific work and concurrent writes merely because the coordinator uses local time.",
+    "depends_on": [],
+    "stop_condition": "Parse every authoritative RFC3339 event, lease expiry and caller-supplied --now value into one normalized instant representation before ordering or expiry decisions. Apply the same comparison primitive in work-ready, work-pull, work-assign, work-renew, lease matching, overview, streams-view, forecasting, await/wakeup and every CAS re-fold. Preserve the original timestamp string for provenance/display while recording or deriving normalized epoch/UTC comparison data. Add deterministic fixtures where Z, +02:00, -05:30 and fractional-second forms denote equal, earlier and later instants across a calendar-day boundary; the pre-expiry local and UTC snapshots must produce byte-equivalent lifecycle/ready decisions, while a genuinely post-expiry instant must release eligibility exactly once. Refuse malformed timestamps and impossible offsets fail-closed. Prove that the current bridge fixture is not pullable at 2026-07-21T01:25:02+02:00, is pullable after 2026-07-21T00:01:44Z only under the declared expired-lease policy, and that two workers using different offset forms cannot both acquire. Run the affected Science Forge gates in both backends and include a regression through the production `s-f` launcher.",
+    "forbid": "no lexical ordering of raw RFC3339 strings; no stripping the offset and treating local clock fields as UTC; no dependence on the host timezone database for fixed numeric offsets; no silent fallback for malformed or phase-labelled timestamps; no display-only patch that leaves work-pull or CAS semantics wrong; no expired lease treated as a scientific failure; no history rewrite of existing timestamp strings; no duplicate lease made acceptable by last-writer-wins",
+    "notes": [
+      "Live reproduction on 2026-07-21: local `--now 2026-07-21T01:25:02+02:00` returned bridge-finite-harmonic-tier3-provenance-relock as READY, while equivalent UTC `--now 2026-07-20T23:25:02Z` did not. Post-expiry `--now 2026-07-21T00:05:00Z` did return it, as expected.",
+      "This is P0 coordination correctness: it defeats exclusive-lease protection and can create concurrent scientific edits.",
+      "The existing CAS and overview work should call one shared normalized-time comparator; do not repair each display independently."
+    ]
+  }
+}
