@@ -684,6 +684,28 @@ def verify() -> None:
         raise AssertionError("candidate-17/20 singular incidence correction scope changed")
     if "no quotient-separation lower bound" not in candidate17_20_incidence["claim_boundary"] or "does not prove either component" not in candidate17_20_incidence["claim_boundary"]:
         raise AssertionError("candidate-17/20 singular incidence boundary disappeared")
+    candidate17_20_hub = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_double_singular_rotation_zero_fibre"]
+    candidate17_20_hub_second = candidate17_20_hub["mode_data"]["second_order"]
+    if candidate17_20_hub["descriptions"]["symplectic"] != "CERTIFIED" or "complex dimension six" not in candidate17_20_hub["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("candidate-17/20 double-singular resolved hub was hidden")
+    if candidate17_20_hub["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "Kirwan connectedness" not in candidate17_20_hub["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-17/20 double-singular zero-fibre connectedness changed")
+    if "S_plus x S_minus" not in candidate17_20_hub["mode_data"]["resonance"]["statement"] or "P2_plus x P2_minus" not in candidate17_20_hub["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-17/20 double-singular incidence carrier changed")
+    if candidate17_20_hub_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or candidate17_20_hub_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-17/20 double-singular correction scope changed")
+    if "does not prove either larger singular component" not in candidate17_20_hub["claim_boundary"] or "their full union connected" not in candidate17_20_hub["claim_boundary"]:
+        raise AssertionError("candidate-17/20 double-singular fail-closed boundary disappeared")
+    common_square = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_common_square_rotation_quotient"]
+    common_square_second = common_square["mode_data"]["second_order"]
+    if common_square["descriptions"]["symplectic"] != "CERTIFIED" or "delta=omega_plus*N_plus-omega_minus*N_minus" not in common_square["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("candidate-17/20 common-square current coefficient was hidden")
+    if "phase-real RP2" not in common_square["mode_data"]["taub_maps"]["statement"] or "closed interval" not in common_square["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-17/20 common-square quotient bifurcation changed")
+    if common_square_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or common_square_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-17/20 common-square correction scope changed")
+    if "false inference" not in common_square["claim_boundary"] or "complete two-parity singular union" not in common_square["claim_boundary"]:
+        raise AssertionError("candidate-17/20 common-square fail-closed boundary disappeared")
     local_rotation = by_id["einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent"]
     local_rotation_second = local_rotation["mode_data"]["second_order"]
     if local_rotation["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "local simple symplectic leaf quotient" not in local_rotation["mode_data"]["lee_wald"]["statement"]:

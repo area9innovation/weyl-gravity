@@ -425,6 +425,33 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("no quotient-separation lower bound", entry["claim_boundary"])
         self.assertIn("does not prove either component", entry["claim_boundary"])
 
+    def test_candidate17_20_double_singular_hub_is_connected_without_component_promotion(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_double_singular_rotation_zero_fibre"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertIn("complex dimension six", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("Kirwan connectedness", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("S_plus x S_minus", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("P2_plus x P2_minus", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("does not prove either larger singular component", entry["claim_boundary"])
+        self.assertIn("their full union connected", entry["claim_boundary"])
+
+    def test_candidate17_20_common_square_balance_bifurcation_is_visible(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_common_square_rotation_quotient"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertIn("delta=omega_plus*N_plus-omega_minus*N_minus", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("changes sign", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("phase-real RP2", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("closed interval", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("false inference", entry["claim_boundary"])
+        self.assertIn("complete two-parity singular union", entry["claim_boundary"])
+
     def test_same_sign_local_rotation_descent_is_basic_not_global(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent"]
         second = entry["mode_data"]["second_order"]

@@ -1730,6 +1730,110 @@ This proves incidence, not connectedness within either image or of their
 union.
 \end{proof}
 
+\begin{proposition}[Connected candidate-(17)/(20) double-singular hub]
+\label{prop:candidate-17-20-double-singular-hub}
+At every positive active-occupation pair on candidate \((17)\) or \((20)\),
+the complete double-singular intersection \(S_+\times S_-\), after both
+common node-phase quotients, has a connected lifted-rotation moment-map zero
+fibre.  Its compact incidence resolution is Kähler of complex dimension six.
+\end{proposition}
+
+\begin{proof}
+For either parity factor, the common-square incidence resolution is
+\[
+ \operatorname{Tot}\!\left(
+   \mathcal O_{\mathbb P^2}(-2)\oplus
+   \mathcal O_{\mathbb P^2}(-2)\right)\longrightarrow S.
+\]
+Taking the product over
+\(B=\mathbb P^2_+\times\mathbb P^2_-\), fixing the positive and negative
+node norms, and dividing their two free phases gives
+\[
+ \mathbb P(L_+\oplus L_-)_{\mathrm{negative}}
+ \mathop{\times}_{B}
+ \mathbb P(L_+\oplus L_-)_{\mathrm{positive}},
+ \qquad
+ L_\pm=\mathcal O_{\mathbb P^2_\pm}(-2).
+\]
+This is a compact connected Kähler manifold of complex dimension
+\(4+1+1=6\).  The construction is equivariant for the lifted diagonal
+\(\mathrm{SO}(3)\) action.  Its Hamiltonian moment-map zero fibre is nonempty:
+the axisymmetric common-square representative used in
+Corollary~\ref{cor:candidate-17-20-singular-component-incidence} supplies a
+point at every positive occupation pair.  Kirwan connectedness therefore
+makes the resolved zero fibre connected.  The resolution is surjective onto
+the target double-singular hub and has connected fibres, so the target
+zero fibre is its connected continuous image.
+
+The proposition concerns only the common hub.  It does not assert that every
+component of \(S_+\times K_-\) or \(K_+\times S_-\) meets it.
+\end{proof}
+
+\begin{proposition}[Frequency-weighted common-square quotient]
+\label{prop:candidate-17-20-common-square-quotient}
+Fix positive active occupations and restrict candidate \((17)\) or \((20)\)
+to one declared common-square parity factor, with the other factor at its
+vertex.  After the two free node phases, the carrier is \(\mathbb{CP}^2\).
+Put
+\[
+ \delta=\omega_+N_+-\omega_-N_-.
+\]
+If \(\delta\neq0\), the lifted-rotation zero set is
+\(\mathbb{RP}^2\) and its \(\mathrm{SO}(3)\) quotient is one point.  If
+\(\delta=0\), the complete \(\mathbb{CP}^2\) is rotation-zero and its
+\(\mathrm{SO}(3)\) quotient is a closed interval.
+
+Candidate \((17)\) has \(\delta<0\) throughout its complete nonzero active
+scalar cone.  Candidate \((20)\) has a nonempty exact balance divisor:
+\(\delta<0\) on \(R_2\), \(\delta>0\) on \(R_4\), and
+\[
+ \left(-\frac{\delta_{R_4}}{\delta_{R_2}}\right)R_2+R_4
+\]
+has \(\delta=0\) with a strictly positive coefficient.
+\end{proposition}
+
+\begin{proof}
+In descending binary-weight coordinates the common-square map is
+\[
+ [a,b,c]\longmapsto
+ \left[a^2,ab,\frac{ac+2b^2}{3},bc,c^2\right].
+\]
+The certificate checks equivariance against \(J_0,J_+,J_-\).  In the
+equivalent Cartesian Cartan model,
+\[
+ S(z)=zz^T-\frac{z^Tz}{3}I\in\operatorname{Sym}^2_0(\mathbb C^3),
+\]
+and direct multiplication gives
+\[
+ [S(z),S(z)^\dagger]
+ =(z^\dagger z)\bigl(zz^\dagger-\overline z\,z^T\bigr).
+\]
+Thus the Cartan-square moment map vanishes exactly when \([z]\) is
+phase-real.  These directions form \(\mathbb{RP}^2\), on which
+\(\mathrm{SO}(3)\) is transitive.
+
+The two occupied nodes have the same angular square direction, so their
+action-derived rotational moments combine as a positive normalization times
+\(\delta\) and this Cartan-square moment map.  At \(\delta=0\) the angular
+equation vanishes identically.  Writing \(z=x+iy\), a projective phase makes
+\(x\cdot y=0\); rotation and normalization then leave the complete orbit
+parameter
+\[
+ \eta=\frac{|z^Tz|}{z^\dagger z}\in[0,1].
+\]
+Hence \(\mathbb{CP}^2/\mathrm{SO}(3)\cong[0,1]\).
+
+Finally, exact substitution of the four circuit weights into
+\(\omega_+N_+-\omega_-N_-\) gives negative signs on \(R_3,R_4\) for
+candidate \((17)\), negative sign on \(R_2\) and positive sign on \(R_4\)
+for candidate \((20)\).  Candidate-\((17)\) inactive rays contribute only
+\(-\omega_-N_-\).  The displayed positive candidate-\((20)\) combination
+therefore proves the balance claim.
+
+This proposition concerns one parity endpoint of the connected hub.  It does
+not classify either complete two-parity singular component.
+\end{proof}
+
 \begin{proposition}[Candidate-(18) complete complex singular resolution]
 \label{prop:candidate-18-complex-singular-resolution}
 Let \(R_\pm=\operatorname{Rank}_{\leq1}(5\times2)_\pm\).  The complete
@@ -2234,7 +2338,7 @@ does not establish nonlinear stability.
 
 The manuscript is an \textsc{outline-allowed}/\textsc{draft-allowed}
 integration of committed certificates.  Its current source baseline is
-repository commit \texttt{2889e4f556a6732ad9d78311adfb40354a50241f}.
+repository commit \texttt{35b245adef83d25b617c110e7d067298c245745d}.
 
 \begingroup
 \small
@@ -2316,6 +2420,10 @@ Candidate-(18) smooth bridge between singular components &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.json}\\
 Candidate-(17)/(20) physical singular-component incidence &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.json}\\
+Candidate-(17)/(20) connected double-singular rotation-zero hub &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.json}\\
+Candidate-(17)/(20) one-parity common-square rotation quotient &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.json}\\
 Fixed-occupation node-phase-reduced divisors and local quotients &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json}\\
 Local lifted-rotation descent through current leaves &
@@ -2419,6 +2527,15 @@ reduction remain open.  The two algebraic singular-component images already
 meet physically at every positive occupation by
 Corollary~\ref{cor:candidate-17-20-singular-component-incidence}; unlike
 candidate \((18)\), their labels cannot imply quotient separation.  The
+complete double-singular intersection is a connected rotation-zero hub at
+every positive occupation by
+Proposition~\ref{prop:candidate-17-20-double-singular-hub}.  It remains open
+whether every component of either larger singular image meets this hub.
+One endpoint of that hub has the exact frequency-weighted bifurcation of
+Proposition~\ref{prop:candidate-17-20-common-square-quotient}: candidate
+\((17)\) always reduces to one orbit, whereas candidate \((20)\) acquires an
+interval quotient on its balance divisor.  In particular, the unweighted
+inequality \(N_->N_+\) is not sufficient to exclude rotational balance.  The
 regular fixed-occupation node-phase reductions are classified by
 Proposition~\ref{prop:phase-reduced-presymplectic-divisors}.  The latter
 retains the common parity-node phases and candidate-(18) spectators rather

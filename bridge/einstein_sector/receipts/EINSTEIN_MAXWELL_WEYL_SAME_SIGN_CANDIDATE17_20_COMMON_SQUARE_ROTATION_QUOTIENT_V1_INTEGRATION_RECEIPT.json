@@ -1,0 +1,64 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_COMMON_SQUARE_ROTATION_QUOTIENT_V1_INTEGRATION_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Fail-closed atlas, Einstein brief and Paper 13 integration of the connected double-singular hub and the candidate-17/20 one-parity frequency-weighted common-square quotient.",
+  "source_result": {
+    "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_COMMON_SQUARE_ROTATION_QUOTIENT",
+    "source_commit": "35b245adef83d25b617c110e7d067298c245745d"
+  },
+  "content_sha256": {
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "ec228293720ba31e570869fd049d6e956afa95823d268de83634324a822bf346",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "11cb2405dcf4023dee7e7b4c07050ef4e2f3928332df916a00578dfc4f457d16",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "2e6107c118afea1c139516cf312f8b97af9a21316b49d52ce8fb5187c1fb57bc",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "d4cc74a5dac4c353662078571c4a800b6edee9920a0d7aa481753719f8a247dc",
+    "notes/d-quotient-einstein-team-brief.md": "b62d4834cc50d5d837ff07c475b11f9e066fbd4c6a1b5c2f6794e33490c83606",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json": "fdee729d4afcbaa20cc3b031fed26b936d06663d82656787f4c75827e2f7cdc8",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex": "169b44c6612b9b225e2bf78cb5c7c54b7812d68caaff3be8d87e8f791d6bce3e",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.pdf": "4b4896ff0ae0b127652a1fedcbf09fa4bfb538b6327d9250861add7ba94bd489"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m json.tool bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 -m json.tool paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": {
+        "atlas_producer_check": 0.56,
+        "atlas_independent_verifier": 0.41,
+        "atlas_tests": 0.11,
+        "paper_three_pass_build": 3.23
+      },
+      "tests_run": 114,
+      "commands": [
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 -m bridge.einstein_sector.atlas.verify_einstein_atlas_fragment",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 paper/verify_13_14_draft_source_maps.py",
+        "three pdflatex passes with -halt-on-error"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The atlas verifier independently requires the frequency-weighted delta formula, point/interval bifurcation and fail-closed two-parity boundary. Paper 13 pins 53 committed certificate blobs at source baseline 35b245ad."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutation": "Promote the complete two-parity singular union or erase the candidate-20 balance interval.",
+      "result": "The source schema and atlas assertions reject either promotion."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The atlas imports the committed theorem certificate and its five hash-pinned inputs; Paper 13 pins the committed certificate blob explicitly."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Paper 13 remains DRAFT_ALLOWED, the complete two-parity singular union remains open and no programme freeze is promoted."
+    }
+  },
+  "claim_boundary": "The integration certifies the one-parity point/interval bifurcation and the already committed connected double-singular hub. It does not classify either larger two-parity singular component, glue occupations or promote final residual, causal, observational, quantum or all-orders claims."
+}

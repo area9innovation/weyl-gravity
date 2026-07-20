@@ -4180,6 +4180,48 @@ and lifted-rotation zero reduction at every positive occupation.  Component
 labels cannot prove disconnection there.  Connectedness inside either image
 and of the complete singular quotient remains open.
 
+The common intersection is now classified more sharply.  Resolving each
+common-square factor by
+`Tot(O_{P2}(-2) direct_sum O_{P2}(-2))` and then fixing the two positive
+node norms and quotienting their phases gives a compact connected Kähler
+sixfold over `P2_plus x P2_minus`.  The construction is lifted-`SO(3)`
+equivariant, and the axisymmetric positive-occupation section makes the
+moment-map zero fibre nonempty.  Kirwan connectedness, followed by the
+connected resolution fibres, proves that the complete double-singular hub
+has a connected rotation-zero fibre at every positive occupation on both
+candidates 17 and 20.  Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_double_singular_rotation_zero_fibre`
+is `CERTIFIED`.  This supplies a common connected target for the next
+componentwise contraction test; it does not prove that every component of
+either larger singular image reaches the hub.
+
+The one-parity common-square endpoint of that hub is now reduced exactly, and
+it exposes a frequency-weighting distinction that the earlier current-gap
+theorem did not decide.  After the two free node phases, its carrier is
+`CP^2`.  With
+
+```text
+delta = omega_plus*N_plus - omega_minus*N_minus,
+```
+
+the complete lifted-rotation moment map is a positive normalization times
+`delta` and the Cartan-square moment map.  If `delta != 0`, the zero set is
+the phase-real `RP^2` and its `SO(3)` quotient is one point.  If `delta=0`,
+all of `CP^2` survives and its quotient is a closed interval, parameterized
+by `eta=|z^T z|/(z^dagger z)`.
+
+Candidate 17 has `delta<0` on both active circuit rays and every inactive ray
+adds another negative term, so its one-parity quotient is a point throughout
+the complete nonzero active cone.  Candidate 20 has `delta<0` on `R2` and
+`delta>0` on `R4`; the exact positive combination
+`(-delta_R4/delta_R2)*R2+R4` is a nonempty balance divisor.  Its quotient is a
+point off balance and an interval on balance.  Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_common_square_rotation_quotient`
+is `CERTIFIED`.  In particular, the unweighted inequality
+`N_minus>N_plus` does not by itself exclude rotational balance.  The complete
+two-parity singular components and their contraction to the connected hub
+remain the active gate.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

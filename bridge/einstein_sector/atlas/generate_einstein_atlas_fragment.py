@@ -23,6 +23,7 @@ CERTIFICATES = {
     "axial_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
     "polar_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
     "taub": ROOT / "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+    "stabilizer": ROOT / "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
     "moment_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
     "balanced": ROOT / "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
     "exceptional_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
@@ -116,6 +117,8 @@ CERTIFICATES = {
     "same_sign_candidate18_singular_component_separation": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.json",
     "same_sign_candidate18_singular_smooth_bridge": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.json",
     "same_sign_candidate17_20_singular_component_incidence": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.json",
+    "same_sign_candidate17_20_double_singular_rotation_zero_fibre": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.json",
+    "same_sign_candidate17_20_common_square_rotation_quotient": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.json",
     "same_sign_active_phase_reduced_presymplectic_divisors": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
     "same_sign_active_local_rotation_leaf_descent": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
@@ -1180,6 +1183,30 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","The exact intersection witness lies in the bounded real fibre product at every positive occupation."),("CERTIFIED","The same finite witness lies in the smooth-secular correction class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_candidate17_20_singular_component_incidence","same_sign_third_transvectant_singular_locus","same_sign_active_singular_rotation_zero_sections","same_sign_active_phase_reduced_presymplectic_divisors"),
             "This proves physical incidence of the two algebraic singular-component images, so their labels give no quotient-separation lower bound. It does not prove either component or the complete singular rotation-zero quotient connected, glue occupations or perform later physical descent.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_double_singular_rotation_zero_fibre",
+            _scope(theory="Weyl-Maxwell target", background="candidates 17 and 20 separately", boundaries="closed S1_L times S2 after both common node-phase quotients and before final residual quotient", carrier="the complete double-singular intersection S_plus x S_minus at every fixed positive active-occupation pair", degree=2, parity="two exact factorized parity eigenchannels", ell="input 2 x 2; output L=1", m="all m=-2,...,2 in the binary-quartic incidence carrier", k="candidate-specific signed compact momenta, never identified across candidates", omega="candidate-specific DIFFERENCE collision", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Candidates 17 and 20 remain separate. The theorem covers the common double-singular hub on each background and does not identify either larger singular component with the other."),
+            ("CERTIFIED","The fixed-norm phase-reduced incidence resolution is a compact connected Kähler manifold of complex dimension six, equivariant for the lifted diagonal SO(3), with connected fibres onto the target hub."),
+            ("CERTIFIED","Kirwan connectedness makes the resolved lifted-rotation moment-map zero fibre connected; its continuous image is the complete connected target-hub zero fibre. An axisymmetric positive-occupation witness proves nonemptiness."),
+            ("CERTIFIED","The affine hub S_plus x S_minus has complex dimension eight and is resolved over P2_plus x P2_minus by the product of Tot(O(-2) direct_sum O(-2)) incidence resolutions."),
+            _second_order(("CERTIFIED","The complete double-singular fixed-occupation hub has a connected bounded rotation-zero fibre after both node phases."),("CERTIFIED","The same finite-dimensional hub belongs to the smooth exponential-polynomial correction class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate17_20_double_singular_rotation_zero_fibre","same_sign_candidate17_20_singular_component_incidence","same_sign_third_transvectant_singular_locus","same_sign_active_singular_rotation_zero_sections","stabilizer"),
+            "This proves connectedness only for the complete double-singular intersection hub at each fixed positive occupation. It does not prove either larger singular component or their full union connected, glue occupations, perform final residual descent, or establish all-orders, causal, observational or quantum claims.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_common_square_rotation_quotient",
+            _scope(theory="Weyl-Maxwell target", background="candidates 17 and 20 separately", boundaries="closed S1_L times S2 after both free active-node phases and before final residual quotient", carrier="one declared parity factor with both active nodes proportional to one nonzero square quartic and the other parity factor at zero", degree=2, parity="one labelled factorized parity channel occupied", ell="input 2 x 2; output L=1", m="all m=-2,...,2 through the binary-quadratic Cartan square", k="candidate-specific signed compact momenta, never identified across candidates", omega="candidate-specific DIFFERENCE collision with the exact frequency-weighted rotation coefficient", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Candidates 17 and 20 remain separate, and the occupied parity factor is declared rather than identified with the other factor."),
+            ("CERTIFIED","The action-derived rotation coefficient is delta=omega_plus*N_plus-omega_minus*N_minus. Candidate 17 has delta<0 on its complete active cone; candidate 20 changes sign between R2 and R4."),
+            ("CERTIFIED","For delta nonzero the Cartan-square zero set is phase-real RP2 and its lifted-SO(3) quotient is one point. On candidate 20's exact delta=0 divisor the entire CP2 survives and its quotient is a closed interval."),
+            ("CERTIFIED","The common-square map is the equivariant binary Cartan square. Its symmetric-tracefree commutator identity gives the exact moment-map zero criterion."),
+            _second_order(("CERTIFIED","The one-parity common-square carrier lies in the exact bounded tangent cone; candidate 20 bifurcates between a point quotient off balance and an interval quotient on balance."),("CERTIFIED","The same finite carrier belongs to the smooth exponential-polynomial correction class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate17_20_common_square_rotation_quotient","same_sign_candidate17_20_double_singular_rotation_zero_fibre","same_sign_candidate17_20_axisymmetric_restricted_current","same_sign_scalar_extreme_rays","taub"),
+            "This classifies only the one-parity common-square carrier at fixed occupations. It corrects the tempting but false inference that the unweighted occupation gap forbids rotational balance. The complete two-parity singular union, occupation gluing and every later physical descent remain open.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_same_sign_active_phase_reduced_presymplectic_divisors",
@@ -2268,6 +2295,25 @@ def build() -> dict[str, object]:
         raise AssertionError("candidate-17/20 singular component incidence changed")
     if candidate17_20_incidence["candidate17_20_each_singular_component_connected"] or candidate17_20_incidence["candidate17_20_complete_singular_rotation_zero_quotient_connected"] or candidate17_20_incidence["occupation_strata_glued"] or candidate17_20_incidence["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("candidate-17/20 singular component incidence exceeded scope")
+    candidate17_20_hub = records["same_sign_candidate17_20_double_singular_rotation_zero_fibre"]["classification"]
+    if not (
+        candidate17_20_hub["candidate17_double_singular_rotation_zero_hub_connected"]
+        and candidate17_20_hub["candidate20_double_singular_rotation_zero_hub_connected"]
+        and candidate17_20_hub["positive_fixed_occupations_all_covered"]
+    ):
+        raise AssertionError("candidate-17/20 double-singular connected hub changed")
+    if candidate17_20_hub["complete_singular_components_connected"] or candidate17_20_hub["complete_singular_rotation_zero_quotient_connected"] or candidate17_20_hub["occupation_strata_glued"] or candidate17_20_hub["final_residual_descent"] or candidate17_20_hub["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-17/20 double-singular connected hub exceeded scope")
+    common_square = records["same_sign_candidate17_20_common_square_rotation_quotient"]["classification"]
+    if not (
+        common_square["one_parity_common_square_fixed_occupation_rotation_quotient_classified"]
+        and common_square["candidate17_common_square_rotation_zero_quotient_always_one_point"]
+        and common_square["candidate20_rotation_balance_divisor_nonempty"]
+        and common_square["candidate20_on_balance_common_square_rotation_zero_quotient_closed_interval"]
+    ):
+        raise AssertionError("candidate-17/20 common-square rotation quotient changed")
+    if common_square["unweighted_occupation_gap_sufficient_for_rotation_imbalance"] or common_square["candidate20_all_positive_occupations_have_point_quotient"] or common_square["complete_two_parity_singular_union_quotient_classified"] or common_square["occupation_strata_glued"] or common_square["final_residual_descent"] or common_square["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-17/20 common-square rotation quotient exceeded scope")
     phase_reduced_divisors = records["same_sign_active_phase_reduced_presymplectic_divisors"]["classification"]
     if not (
         phase_reduced_divisors["candidate17_regular_fixed_occupation_phase_reduced_divisor_classified"]
