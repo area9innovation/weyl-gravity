@@ -85,9 +85,9 @@ def _target_symbol(q1: dict[str, Any]) -> list[list[list[Fraction]]]:
             continue
         if len(incoming["word"]) != 1:
             continue
-        coefficient = Fraction(term["coefficient"])
-        if "coefficient_profile" in term:
-            coefficient *= profiles[term["coefficient_profile"]].get((), Fraction())
+        coefficient = profiles[term["coefficient_profile"]].get((), Fraction())
+        if coefficient != Fraction(term["coefficient"]):
+            raise AssertionError("q1 display coefficient disagrees with its authoritative profile")
         matrices[incoming["word"][0]][output - 34][incoming["row"] - 20] += coefficient
     return matrices
 

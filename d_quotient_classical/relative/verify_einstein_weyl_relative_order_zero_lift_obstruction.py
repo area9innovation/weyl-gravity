@@ -50,9 +50,9 @@ def main() -> None:
     for term in q1["terms"]:
         incoming = term["inputs"][0]
         if 34 <= term["output_row"] < 40 and 20 <= incoming["row"] < 34 and len(incoming["word"]) == 1:
-            value = Fraction(term["coefficient"])
-            if "coefficient_profile" in term:
-                value *= profiles[term["coefficient_profile"]].get((), Fraction())
+            value = profiles[term["coefficient_profile"]].get((), Fraction())
+            if value != Fraction(term["coefficient"]):
+                raise AssertionError("q1 display coefficient disagrees with its authoritative profile")
             key = (incoming["word"][0], term["output_row"] - 34, incoming["row"] - 20)
             target[key] = target.get(key, Fraction()) + value
 
