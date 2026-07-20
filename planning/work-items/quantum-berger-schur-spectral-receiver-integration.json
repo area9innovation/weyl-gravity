@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-berger-schur-spectral-receiver-integration",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-berger-schur-spectral-receiver-integration",
+  "source": {
+    "path": "planning/work-items/quantum-berger-schur-spectral-receiver-integration.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum-qme",
+    "state": "PROPOSED",
+    "objective": "Integrate the corrected local Schur variations and global vector-block estimates into the frozen five-form-factor receiver without reviving the obstructed scalar surrogate.",
+    "stop_condition": "Import the terminal normalized-Schur variation and high-mode vector-block theorems, plus any landed M21/M23 artifact, by hash.  Verify common domains, priming, phase, contour, scale and insertion conventions.  Assemble the maximal certified Berger finite-trace input and feed it into the frozen ten-coordinate affine-family receiver.  Compute only those of the five functions whose exact or interval-controlled global inputs are complete; otherwise emit a coordinate-by-coordinate nondefinition ledger with the smallest remaining spectral object.  Independently replay scale derivatives, zero-pole cancellation, orientation and local/global subtraction boundaries.  Update Paper 12 only if a coefficient lifecycle genuinely changes.",
+    "current_gate": "corrected background-specific five-form-factor spectral receiver",
+    "forbid": "no scalar surrogate; no missing M21/M23 artifact treated as zero; no local-symbol interpolation of global finite data; no partial coordinate vector called five functions; no Gamma1, Q1, QME, Lorentzian, Hadamard, particle or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/quantum-scalar-flat-berger-vector-schur-high-mode",
+      "sf:program/work/quantum-normalized-schur-pseudodifferential-variation"
+    ],
+    "activates": [
+      "a correctly scoped Berger specialization of the parameterized five-form-factor theorem"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/spectral/",
+      "quantum-weyl/reports/",
+      "quantum-weyl/transfer/receipts/",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json",
+      "paper/build/",
+      "reports/",
+      "notes/d-quotient-quantum-team-brief.md"
+    ],
+    "resource_hint": "INTEGRATION GATE.  Do not pull until both the local and global corrected-Schur predecessors are terminal-successful.",
+    "notes": [
+      "A parameterized nondefinition remains a valid scientific result if the complete global spectral receiver is still absent."
+    ],
+    "input_commit": "0200fc87b",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}

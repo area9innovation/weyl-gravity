@@ -3,8 +3,8 @@
   "kind": "work",
   "schema": "work-v0",
   "body": {
-    "owner": "quantum-global-spectral",
-    "state": "PROPOSED",
+    "owner": "physics-programme",
+    "state": "REQUESTED",
     "objective": "Derive the exact Fourier-n/SU(2) finite vector block pencil A_jmn(t)=F_jmn+t W for the scalar-flat Berger datum M=S1_(2pi) x SU(2), g=dtheta^2+sigma1^2+sigma2^2+4sigma3^2, and from it the true normalized coupled Schur blocks S_L,jmn(t)=(2/3)I+(1/3)delta A_jmn(t)^(-1)d. Supply self-adjoint domains, scalar/vector priming, every matched zero-pole factor, exact block projectors and uniform high-mode resolvent bounds. The scalar one-inverse surrogate I+(t/3)Delta_0^(-1)delta W d is forbidden because it has the wrong principal symbol and first representation block.",
     "depends_on": [
       "sf:program/work/quantum-scalar-flat-berger-primed-schur-spectral-measure"
@@ -15,7 +15,8 @@
       "The exact scalar blocks are Delta_0=n^2+j(j+1)-(3/4)m^2 and delta W d=2j(j+1)-3m^2, with left multiplicity 2j+1.",
       "The normalized Schur correction begins at pseudodifferential order -2. Its first variation is -(1/3)Delta_0^(-1)delta W d Delta_0^(-1), not +(1/3)Delta_0^(-1)delta W d.",
       "The j=1/2, |m|=1/2, n=0 block distinguishes the two derivatives exactly: -64/81 versus 4/9.",
-      "Exact and interval-numeric objects must remain different types, and the independent verifier must construct its representation matrices without importing producer verdicts."
+      "Exact and interval-numeric objects must remain different types, and the independent verifier must construct its representation matrices without importing producer verdicts.",
+      "2026-07-20 coordinator repair: promoted the file from an internal PROPOSED placeholder to the forge-request protocol's REQUESTED state after SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION proved the original receiver used the wrong normalized operator."
     ]
   }
 }

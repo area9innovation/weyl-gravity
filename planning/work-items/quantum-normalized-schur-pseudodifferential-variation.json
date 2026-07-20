@@ -1,0 +1,39 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-normalized-schur-pseudodifferential-variation",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-normalized-schur-pseudodifferential-variation",
+  "source": {
+    "path": "planning/work-items/quantum-normalized-schur-pseudodifferential-variation.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum-qme",
+    "state": "PROPOSED",
+    "objective": "Derive the generic local symbol and first three parameter variations of the correctly normalized longitudinal Schur operator, providing a clean local input and negative controls for the pseudodifferential/heat-kernel math request.",
+    "stop_condition": "Starting from S_L(t)=(2/3)I+(1/3)delta(F+tW)^(-1)d on a common primed domain, derive the exact resolvent expansion through t^3 with all operator ordering, adjoints and projector derivatives explicit.  Compute the principal and subprincipal symbol orders of each variation and prove that the first correction is order -2; separate local symbol/residue data from finite smoothing/global trace data.  Specialize the first variation to the scalar-flat Berger low block and reproduce -64/81, then provide a flat or commuting control and a deliberate one-inverse-surrogate mutation that the verifier rejects.  Export canonical operator-word and symbol manifests consumable by sf:forge-request/pseudodifferential-heat-kernel-symbol-calculus.  If projector/domain variation introduces an unprovided term, certify that precise nondefinition rather than freezing the projector silently.",
+    "current_gate": "correct normalized-Schur local variation and symbol-order theorem",
+    "forbid": "no commuting reordering of noncommuting resolvents and insertions; no frozen primed projector without a stated hypothesis; no local Wodzicki residue called a finite determinant; no scalar surrogate; no Euclidean-local result promoted to QME, Lorentzian or particle evidence",
+    "depends_on": [],
+    "activates": [
+      "a verified local operator input for the M30 pseudodifferential/heat-kernel layer",
+      "negative controls preventing recurrence of the incorrect scalar surrogate"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/spectral/",
+      "quantum-weyl/reports/",
+      "quantum-weyl/transfer/receipts/",
+      "reports/",
+      "notes/d-quotient-quantum-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL.  This can proceed in parallel conceptually with the global block work, but the resident one-lease policy means pull the queue order chosen by s-f.",
+    "notes": [
+      "This does not compete with the global Berger measure: it establishes exactly which pieces are local and which remain genuinely spectral."
+    ],
+    "input_commit": "0200fc87b",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}

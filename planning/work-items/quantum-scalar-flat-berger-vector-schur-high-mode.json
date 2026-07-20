@@ -1,0 +1,40 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-scalar-flat-berger-vector-schur-high-mode",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-scalar-flat-berger-vector-schur-high-mode",
+  "source": {
+    "path": "planning/work-items/quantum-scalar-flat-berger-vector-schur-high-mode.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum-qme",
+    "state": "PROPOSED",
+    "objective": "Prove the uniform high-mode domain, invertibility and priming estimates needed to turn the exact scalar-flat Berger vector blocks into a legitimate resolvent and relative-trace carrier.",
+    "stop_condition": "Import the terminal low-block vector-Schur theorem.  Proceed only if it exports a unique self-adjoint vector pencil and normalization.  Derive exact eigenvalue or singular-value lower bounds for A_jmn(t) on a declared complex-t neighbourhood and all sufficiently large |n|+j; classify the finite exceptional block set exactly; prove uniform bounds for A^-1, d, delta and the order-minus-two Schur correction in the normalized representation norm; identify every scalar/vector zero mode and matched zero-pole factor; and obtain explicit summable majorants for the first three metric-insertion traces.  Verify the bounds on exact low modes and with an independent interval/representation rail.  Export either a complete coercivity/tail preflight or the first exact direction in which the claimed uniform estimate fails.",
+    "current_gate": "uniform vector-Schur resolvent and insertion-tail bounds",
+    "forbid": "no asymptotic O-symbol without explicit uniform constants and threshold; no finite cutoff called convergence; no scalar Laplacian coercivity substituted for the coupled vector pencil; no ignored exceptional denominator or zero mode; no local heat coefficient used as a global tail; no finite five-function or QME promotion",
+    "depends_on": [
+      "sf:program/work/quantum-scalar-flat-berger-vector-schur-low-blocks"
+    ],
+    "activates": [
+      "the complete primed Berger Schur spectral measure and certified finite traces"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/spectral/",
+      "quantum-weyl/reports/",
+      "quantum-weyl/transfer/receipts/",
+      "reports/",
+      "notes/d-quotient-quantum-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "GLOBAL ANALYSIS PRELIGHT.  Coordinate with M21/M23; exact low blocks and certified interval tails are different evidence types and must remain separately tagged.",
+    "notes": [
+      "This gate is deliberately before det3 or five-function assembly: an uncontrolled high-mode tail cannot support a finite global coefficient."
+    ],
+    "input_commit": "0200fc87b",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}

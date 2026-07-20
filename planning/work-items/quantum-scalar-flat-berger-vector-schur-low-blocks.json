@@ -1,0 +1,40 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-scalar-flat-berger-vector-schur-low-blocks",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-scalar-flat-berger-vector-schur-low-blocks",
+  "source": {
+    "path": "planning/work-items/quantum-scalar-flat-berger-vector-schur-low-blocks.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum-qme",
+    "state": "PROPOSED",
+    "objective": "Derive the correctly normalized Fourier/SU(2) vector pencil and the first exact coupled longitudinal Schur blocks on the selected scalar-flat Berger datum, supplying a domain-specific receiver and independent holdouts for the Forge global-spectral implementation.",
+    "stop_condition": "Import SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION and GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION by hash.  Fix one convention-explicit left/right SU(2) basis, orthonormal coframe, vector one-form basis, measure and adjoint.  Derive d_jmn, delta_jmn, the full finite vector block A_jmn(t)=F_jmn+tW and S_L,jmn(t)=(2/3)I+(1/3)delta_jmn A_jmn(t)^(-1)d_jmn for every block with 2j<=2 and |n|<=1, retaining rational/algebraic t and every denominator.  Identify scalar and vector zero modes, common primed domains, matched zero-pole cancellations and exceptional denominator loci.  Independently reconstruct the j=1/2 blocks from explicit Pauli matrices and the j=1 blocks from a separately generated representation, and verify the scalar restriction and first derivative -64/81.  Export a strict block schema, normalization crosswalk and low-mode oracle bundle for the Forge request.  If the vector operator F is not uniquely defined by frozen inputs, prove the first missing convention or gauge-fixed Hessian component rather than guessing it.",
+    "current_gate": "correct coupled-vector Schur low-block theorem and Forge receiver",
+    "forbid": "no scalar one-inverse surrogate; no diagonal scalar eigenvalue substituted for the vector pencil; no unprimed inverse at a zero mode; no numerical diagonalization used as exact block data; no extrapolation from low j to all representations; no finite determinant, five-function, QME, Lorentzian, Hadamard, state or particle promotion",
+    "depends_on": [],
+    "activates": [
+      "the exact high-mode coercivity and priming theorem for the true vector pencil",
+      "a content-addressed low-mode oracle for sf:forge-request/scalar-flat-berger-coupled-vector-schur-blocks"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/spectral/",
+      "quantum-weyl/reports/",
+      "quantum-weyl/transfer/receipts/",
+      "reports/",
+      "notes/d-quotient-quantum-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "PROOF-FIRST GLOBAL-SPECTRAL RESTART.  Compute small exact vector blocks before any infinite representation sum; use Forge Wigner/harmonic kernels only as one rail and preserve an independently generated holdout.",
+    "notes": [
+      "The preceding attempt usefully failed because its scalar surrogate had the wrong principal symbol; this item starts from the frozen normalized Schur factor instead.",
+      "This is domain physics input for the math backend, not a duplicate implementation of the complete M21/M23 spectral machinery."
+    ],
+    "input_commit": "0200fc87b",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
