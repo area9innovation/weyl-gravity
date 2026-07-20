@@ -1,0 +1,62 @@
+{
+  "receipt_id": "DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT_V1_TIER_RECEIPT",
+  "result_id": "DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT",
+  "recorded_at": "2026-07-20",
+  "base_commit": "c941641a1c86e83edaa5e2eae12c7ac0ee1d99c5",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "input_hashes": {
+    "DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT": "28d6821e0774767f991ce79d507dd0059eae2f274c7114c4bec8a07ccc915371",
+    "TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION": "20915ec21d0c96534a7091b57ee2c3baf5728526a32d00de83dd75b4b94e7e5f",
+    "DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT": "8685f36ddfbc6a77cdab8048965fb54b575e160a96962651c05a66c167390724"
+  },
+  "output_hashes": {
+    "certificate": "62f53393712a58c25ca26f2318e9feba4fea8efedd2659e4eeb76b7634de2f13",
+    "producer": "45518cec1adc25b22a66413211e52c11ea8bf285adad43adc0c713d4c4fecbcd",
+    "independent_replay": "1c5908a9241c11fdb1f975bf274c55ed086ce0632e112d438bd75fe506151786",
+    "mutation_tests": "a7b44a9b42ee5f6d2dadaa7c64562659066e8b99dfba967197c91e202095a7e4",
+    "schema": "a7158c46c2a9b6f87ecbc68dcc66fbc55412672a3d28ac70c330c1b9f4895606",
+    "report": "63af734e2284206d0a0d91f2689fe67a59de817bc4817c3e520b2a0bf72b2acd"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/anomalies/dressed_four_dimensional_covariant_regulator_preflight.py quantum-weyl/anomalies/verify_dressed_four_dimensional_covariant_regulator_preflight.py quantum-weyl/anomalies/tests/test_dressed_four_dimensional_covariant_regulator_preflight.py",
+      "elapsed_seconds": 0.03,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m anomalies.dressed_four_dimensional_covariant_regulator_preflight --check",
+      "elapsed_seconds": 0.03,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m anomalies.verify_dressed_four_dimensional_covariant_regulator_preflight",
+      "elapsed_seconds": 0.03,
+      "status": "PASS_INDEPENDENT_BEREZINIAN_RECEIVER_DUHAMEL_HYPOTHESIS_SCHEME_AND_SLOT_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest anomalies.tests.test_dressed_four_dimensional_covariant_regulator_preflight",
+      "elapsed_seconds": 0.05,
+      "status": "PASS_8_TESTS_WITH_MEASURE_DUHAMEL_BREAKING_SCHEME_CANDIDATE_AND_QAP_MUTATIONS_REJECTED"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/anomalies/schema/dressed-four-dimensional-covariant-regulator-preflight-v1.schema.json -d quantum-weyl/anomalies/certificates/DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT.json",
+      "elapsed_seconds": 1.08,
+      "status": "PASS_DRAFT_2020_12_STRICT_WITH_SEPARATE_CANDIDATE_A_AND_B_RECEIVERS"
+    },
+    {
+      "tier": 2,
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 4.1,
+      "status": "ADVISORY_EXIT_0_WITH_PREEXISTING_BRIDGE_CERTIFICATE_DRIFT_UNPINNED_FORGE_BUILD_AND_CORPUS_BASELINE_DRIFT_REPORTED"
+    }
+  ],
+  "tier_3_not_run": "No selected Hessian, actual regulator, determinant, anomaly coefficient, QAP, all-loop QME, Lorentzian result, freeze, release or tag is promoted. The conditional receiver theorem and precise missing action-dependent datum are covered by tiers 0-2."
+}

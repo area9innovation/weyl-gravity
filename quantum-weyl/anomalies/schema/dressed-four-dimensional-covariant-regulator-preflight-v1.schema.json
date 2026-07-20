@@ -1,0 +1,399 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl-dressed-four-dimensional-covariant-regulator-preflight-v1.schema.json",
+  "title": "Dressed four-dimensional covariant regulator preflight",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "input_pins",
+    "scope",
+    "bounded_regulator_family",
+    "selected_hessian_hypotheses",
+    "regulated_canonical_map",
+    "ward_symbol",
+    "first_missing_action_dependent_datum",
+    "scheme_comparison",
+    "selected_action_receiver",
+    "lifecycle",
+    "claim_flags",
+    "exact_checks",
+    "next_gate",
+    "claim_boundary",
+    "proof_sha256"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-dressed-four-dimensional-covariant-regulator-preflight-v1"
+    },
+    "result_id": {
+      "const": "DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT"
+    },
+    "result_state": {
+      "const": "CONDITIONAL_LOCAL_RECEIVER_THEOREM_SELECTED_HESSIAN_DATUM_MISSING"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ]
+    },
+    "input_pins": {
+      "type": "object",
+      "required": [
+        "berezinian_preflight",
+        "dr_ms_obstruction",
+        "evanescent_module_preflight"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "berezinian_preflight": {
+          "$ref": "#/$defs/reference"
+        },
+        "dr_ms_obstruction": {
+          "$ref": "#/$defs/reference"
+        },
+        "evanescent_module_preflight": {
+          "$ref": "#/$defs/reference"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "dimension",
+        "variables",
+        "selected_action",
+        "signature",
+        "regulator_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "dimension": {
+          "const": 4
+        },
+        "variables": {
+          "const": "dressed metric plus algebraic Weyl quartet"
+        },
+        "selected_action": {
+          "const": "NONE_CANDIDATE_A_OR_B_NOT_SELECTED"
+        },
+        "signature": {
+          "const": "EUCLIDEAN_RECEIVER_WITH_EXPLICIT_REAL_CONTOUR_SLOTS"
+        },
+        "regulator_status": {
+          "const": "CONDITIONAL_ARCHITECTURE_NOT_INSTANTIATED"
+        }
+      }
+    },
+    "bounded_regulator_family": {
+      "type": "object",
+      "required": [
+        "family_id",
+        "routes",
+        "bounds",
+        "completeness_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "family_id": {
+          "const": "FOUR_DIMENSIONAL_FOURTH_ORDER_COVARIANT_V1"
+        },
+        "routes": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "profile",
+              "locality_engine"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "enum": [
+                  "MATCHED_PROPER_TIME_HEAT_KERNEL",
+                  "HIGHER_COVARIANT_DERIVATIVE_PLUS_BV_PV"
+                ]
+              },
+              "profile": {
+                "type": "string"
+              },
+              "locality_engine": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "bounds": {
+          "type": "object"
+        },
+        "completeness_status": {
+          "const": "COMPLETE_RECEIVER_PARAMETERIZATION_FOR_THE_TWO_DECLARED_REGULATOR_ROUTES_NOT_A_PROOF_THAT_ANY_SELECTED_HESSIAN_FITS"
+        }
+      }
+    },
+    "selected_hessian_hypotheses": {
+      "type": "object",
+      "required": [
+        "operator",
+        "principal_symbol",
+        "pairing",
+        "BRST",
+        "projectors",
+        "boundary",
+        "PV_fields",
+        "contours"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "operator": {
+          "type": "string"
+        },
+        "principal_symbol": {
+          "type": "string"
+        },
+        "pairing": {
+          "type": "string"
+        },
+        "BRST": {
+          "type": "string"
+        },
+        "projectors": {
+          "type": "string"
+        },
+        "boundary": {
+          "type": "string"
+        },
+        "PV_fields": {
+          "type": "string"
+        },
+        "contours": {
+          "type": "string"
+        }
+      }
+    },
+    "regulated_canonical_map": {
+      "type": "object",
+      "required": [
+        "raw_coefficient",
+        "jacobian",
+        "inverse",
+        "composition_defect",
+        "zero_mode_term",
+        "local_bulk_asymptotic",
+        "boundary_locality"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "raw_coefficient": {
+          "const": -40
+        },
+        "jacobian": {
+          "const": "log Ber_R=-40 Tr[Pi_perp tau F(K/Lambda^4) Pi_perp]"
+        },
+        "inverse": {
+          "const": "log Ber_R(inverse)=+40 Tr[Pi_perp tau F(K/Lambda^4) Pi_perp]"
+        },
+        "composition_defect": {
+          "const": "ZERO_WHEN_THE_SAME_K_DOMAIN_AND_PROJECTORS_ARE_USED"
+        },
+        "zero_mode_term": {
+          "type": "string"
+        },
+        "local_bulk_asymptotic": {
+          "type": "string"
+        },
+        "boundary_locality": {
+          "const": "CONDITIONAL_ON_SELECTED_LOCAL_ELLIPTIC_DOMAIN"
+        }
+      }
+    },
+    "ward_symbol": {
+      "type": "object",
+      "required": [
+        "Weyl_if_K_invariant",
+        "Duhamel_failure_term",
+        "Duhamel_term_zero_hypothesis",
+        "Diff_bulk",
+        "local_breaking_receiver",
+        "actual_breaking"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "Weyl_if_K_invariant": {
+          "type": "string"
+        },
+        "Duhamel_failure_term": {
+          "type": "string"
+        },
+        "Duhamel_term_zero_hypothesis": {
+          "const": "QK=KQ_AND_Q_PI0=PI0_Q"
+        },
+        "Diff_bulk": {
+          "type": "string"
+        },
+        "local_breaking_receiver": {
+          "type": "string"
+        },
+        "actual_breaking": {
+          "const": "NOT_COMPUTED_WITHOUT_SELECTED_K"
+        }
+      }
+    },
+    "first_missing_action_dependent_datum": {
+      "type": "object",
+      "required": [
+        "id",
+        "required_components",
+        "why_atoms_and_pairing_do_not_determine_it",
+        "verdict"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "const": "SELECTED_GAUGE_FIXED_FOURTH_ORDER_HESSIAN_SYMBOL_COMPLEX"
+        },
+        "required_components": {
+          "type": "array",
+          "minItems": 6,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "why_atoms_and_pairing_do_not_determine_it": {
+          "type": "string",
+          "minLength": 100
+        },
+        "verdict": {
+          "const": "PRECISE_ACTION_DEPENDENT_DATUM_REQUIRED_BEFORE_FOUR_DIMENSIONAL_REGULATOR_INSTANTIATION"
+        }
+      }
+    },
+    "scheme_comparison": {
+      "type": "object",
+      "required": [
+        "four_dimensional_route",
+        "dr_ms_route",
+        "common_fact",
+        "forbidden_identification",
+        "equivalence_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "four_dimensional_route": {
+          "type": "string"
+        },
+        "dr_ms_route": {
+          "type": "string"
+        },
+        "common_fact": {
+          "type": "string"
+        },
+        "forbidden_identification": {
+          "type": "string"
+        },
+        "equivalence_status": {
+          "const": "NO_CERTIFIED_SCHEME_EQUIVALENCE_MAP"
+        }
+      }
+    },
+    "selected_action_receiver": {
+      "type": "object",
+      "required": [
+        "candidate_A_scalar",
+        "candidate_B_reducible_three_form"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "candidate_A_scalar": {
+          "$ref": "#/$defs/unfilled_slot"
+        },
+        "candidate_B_reducible_three_form": {
+          "$ref": "#/$defs/unfilled_slot"
+        }
+      }
+    },
+    "lifecycle": {
+      "type": "object"
+    },
+    "claim_flags": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {
+        "const": false
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "next_gate": {
+      "type": "string",
+      "minLength": 150
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 350
+    },
+    "proof_sha256": {
+      "$ref": "#/$defs/sha256"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "reference": {
+      "type": "object",
+      "required": [
+        "path",
+        "result_id",
+        "sha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "result_id": {
+          "type": "string"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "unfilled_slot": {
+      "type": "object",
+      "required": [
+        "status",
+        "required"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "const": "UNFILLED_UNTIL_ACTION_SELECTION"
+        },
+        "required": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
