@@ -257,6 +257,14 @@ def test_material_parent_executable_unary_stops_at_mixed_readout_interface():
     assert "BERGER_MATERIAL_PARENT56_EXECUTABLE_UNARY_EXPORT_SHORTFALL" in {e["result_id"] for e in row["evidence"]}
 
 
+def test_replacement112_post_phi2_stops_at_mixed_metric_rod_hessian():
+    row = next(row for row in build()["entries"] if row["id"] == "observer.berger.interaction.replacement112_executable_unary_after_phi2_map_shortfall")
+    assert row["descriptions"]["symplectic"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["clock_and_rod_dependence"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_REPLACEMENT112_EXECUTABLE_UNARY_AFTER_PHI2_MAP_SHORTFALL" in {e["result_id"] for e in row["evidence"]}
+
+
 def test_recoil_internal_readiness_is_certified_while_physical_activation_is_open():
     rows = {row["id"]: row for row in build()["entries"]}
     readiness = rows["observer.berger.detector_profile.recoil_stream_executable_readiness"]

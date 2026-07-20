@@ -2539,3 +2539,24 @@ Its activation gate is a content-addressed \(F_a\)-to-base-row and
 detector-profile interface.  The replacement-112 producer remains a
 separate ready bridge; the 160-row consumer stays inactive until both base
 exports are complete.
+
+## Active bridge: replacement-112 mixed metric--rod Hessian
+
+The post-Phi2 producer consumes the certified local component jets and
+evaluates all 6,171 dependent non-rod terms while preserving the hash of the
+288 unaffected terms.  The 112-row dictionary and rank-112 signed pairing
+are also executable.
+
+The next action derivative is not serialized.  The positive-mixed
+replacement is defined by subtracting the old six-rod action and inserting
+the \(H\)-weighted eight-rod action, but its payload provides only the
+kinetic matrix, Euler formula and prose row descriptions.  It exports no
+row-indexed \(D_gD_RS_{R,H}\), six-rod subtraction, eight-rod addition,
+Diff--BV adjoints, support matrices or zero-mode blocks.  Copying the old
+108-row operator is forbidden because both the action and carrier changed.
+
+The fail-closed atlas row is
+observer.berger.interaction.replacement112_executable_unary_after_phi2_map_shortfall.
+Its activation gate is the normalized mixed metric--eight-rod Hessian and
+six-rod removal export.  Replacement cohomology and the 160-row consumer
+remain inactive.

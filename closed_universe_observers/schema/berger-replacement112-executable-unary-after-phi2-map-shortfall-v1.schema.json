@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema","result_id","setting_id","claim_status","atlas_status","dependency_tags","dependency_refs","payload_ref","gate_results","next_gate","claim_boundary","provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-replacement112-executable-unary-after-phi2-map-shortfall-v1"},
+    "result_id": {"const": "BERGER_REPLACEMENT112_EXECUTABLE_UNARY_AFTER_PHI2_MAP_SHORTFALL"},
+    "claim_status": {"const": "SHORTFALL_MISSING_NORMALIZED_MIXED_METRIC_ROD_ACTION_HESSIAN"},
+    "atlas_status": {"const": "NO_CERTIFIED_MAP"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC","REDUCED-MODE"]},
+    "dependency_refs": {"type":"object","minProperties":6},
+    "payload_ref": {"type":"object","required":["path","result_id","sha256","canonical_sha256"]},
+    "next_gate": {"const":"EXPORT_NORMALIZED_MIXED_METRIC_EIGHT_ROD_HESSIAN_AND_SIX_ROD_REMOVAL_ENTRIES"},
+    "claim_boundary": {"type":"string","minLength":1800}
+  },
+  "additionalProperties": true
+}
