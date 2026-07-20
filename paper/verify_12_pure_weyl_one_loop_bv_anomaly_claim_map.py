@@ -10,6 +10,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CLAIM_MAP = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json"
+COVERAGE = (
+    ROOT
+    / "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json"
+)
+EXPECTED_MANUSCRIPT_SHA256 = (
+    "d2cedfb85a8bf7b1bc5ef2c606c186bdf253767fff30188858cedc0c1982fc1f"
+)
+ALL_LOOP_INPUT_SHA256 = (
+    "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc"
+)
 
 
 def _sha256(path: Path) -> str:
@@ -34,6 +44,7 @@ def main() -> None:
     manuscript = ROOT / payload["manuscript"]
     assert manuscript.is_file()
     assert _sha256(manuscript) == payload["manuscript_sha256"]
+    assert payload["manuscript_sha256"] == EXPECTED_MANUSCRIPT_SHA256
     manuscript_text = manuscript.read_text()
     normalized_manuscript = " ".join(manuscript_text.split())
     abstract = manuscript_text.split("\\begin{abstract}", 1)[1].split(
@@ -84,6 +95,8 @@ def main() -> None:
         "Exact vector-$n=1+n=2$ integration and partial-BV assembly",
         "Algebraic $H_2$ cancellation of the symmetric $M_{14}$ divergence is therefore refuted",
         "action-compatible cyclic pushforward is exactly obstructed",
+        "Conditional all-order formal local restoration",
+        "repository has not constructed an all-order regulator or subtraction scheme",
     ]
     for fragment in required_manuscript_fragments:
         assert fragment in normalized_manuscript, fragment
@@ -92,17 +105,75 @@ def main() -> None:
     assert compiled_pdf.is_file()
     assert _sha256(compiled_pdf) == payload["compiled_pdf_sha256"]
     artifacts = payload["publication_artifacts"]
-    assert len(artifacts) == 6
+    assert len(artifacts) == 8
     for relative, expected in artifacts.items():
         artifact = ROOT / relative
         assert artifact.is_file(), relative
         assert _sha256(artifact) == expected, relative
 
+    coverage = json.loads(COVERAGE.read_text())
+    assert coverage["ir"] == "science-forge-ir-v0"
+    nodes = {node["id"]: node for node in coverage["nodes"]}
+    paper_id = "sf:paper/12-pure-weyl-one-loop-bv-anomaly"
+    result_id = (
+        "sf:quantum-weyl.anomalies/result/"
+        "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY"
+    )
+    claim_id = (
+        f"{paper_id}/claim/conditional-all-order-formal-local-restoration"
+    )
+    assert nodes[paper_id]["body"] == {
+        "paper_class": "technical",
+        "path": payload["manuscript"],
+        "manuscript_sha256": EXPECTED_MANUSCRIPT_SHA256,
+    }
+    assert nodes[result_id]["body"]["lifecycle"] == "CERTIFIED"
+    assert nodes[result_id]["body"]["boundary"] == (
+        "changed-tau-adic-compensator-formal-local-under-declared-qap"
+    )
+    assert nodes[result_id]["body"]["dependency_tags"] == ["LOCAL-ALGEBRAIC"]
+    assert nodes[result_id]["body"]["certificate_sha256"] == ALL_LOOP_INPUT_SHA256
+    assert nodes[result_id]["body"]["stale"] is False
+    assert nodes[result_id]["body"]["superseded"] is False
+    materiality = next(
+        node for node in coverage["nodes"] if node["kind"] == "materiality"
+    )
+    assert materiality["body"]["result_id"] == result_id
+    assert materiality["body"]["materiality"] == "TECHNICAL"
+    assert materiality["body"]["version"] == 1
+    assert materiality["body"]["by"] == "quantum-planning-team"
+    assert materiality["body"]["native"]["source_schema"] == "materiality-v0"
+    assert nodes[claim_id]["body"]["paper"] == paper_id
+    assert nodes[claim_id]["body"]["material"] is True
+    assert nodes[claim_id]["body"]["asserts_lifecycle"] == "CERTIFIED"
+    assert nodes[claim_id]["body"]["cites"] == [result_id]
+    edge = next(
+        node for node in coverage["nodes"] if node["kind"] == "result_paper_edge"
+    )
+    assert edge["body"]["from"] == result_id
+    assert edge["body"]["to"] == paper_id
+    assert edge["body"]["claim"] == claim_id
+    assert edge["body"]["edge_kind"] == "PRIMARY_THEOREM"
+    assert edge["body"]["stale"] is False
+    assert edge["body"]["native"]["source_schema"] == "result-paper-edge-v0"
+
     dispositions = payload["theory_dispositions"]
     assert dispositions == {
         "strict_fixed_field_content": "OBSTRUCTED",
         "tau_adic_compensator_extended_local_Euclidean_one_loop": "QME_RESTORED",
+        "tau_adic_compensator_extended_formal_all_loop": "CONDITIONAL_QME_RESTORED_UNDER_DECLARED_QAP",
     }
+    assert payload["conditional_all_loop_evidence"] == {
+        "result_id": "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY",
+        "source_commit": "7fabe987861f1e4facfc2282e7023274df2ddc72",
+        "sha256": ALL_LOOP_INPUT_SHA256,
+        "dependency_tags": ["LOCAL-ALGEBRAIC"],
+        "quantum_action_principle_status": "DECLARED_HYPOTHESIS_NOT_CONSTRUCTED_REGULATOR",
+        "claim_boundary": payload["conditional_all_loop_evidence"]["claim_boundary"],
+    }
+    assert "does not construct the required regulator" in payload[
+        "conditional_all_loop_evidence"
+    ]["claim_boundary"]
     claims = payload["certified_claims"]
     assert claims["strict_quotient_scope"] == "REGULAR_BACH_LOCUS"
     assert claims["minimal_Koszul_Tate_collapse_page"] == "E2"
@@ -120,6 +191,11 @@ def main() -> None:
     assert claims["extended_H04_odd_dimension"] == 1
     assert claims["extended_H14_even_dimension"] == 0
     assert claims["extended_H14_odd_dimension"] == 0
+    assert claims["extended_formal_all_loop_local_QME_conditionally_restorable"] is True
+    assert claims["extended_all_loop_QAP_is_declared_hypothesis"] is True
+    assert claims["extended_all_loop_stable_H14_zero"] is True
+    assert claims["extended_all_loop_stable_H04_even_dimension"] == 3
+    assert claims["extended_all_loop_stable_H04_odd_dimension"] == 1
     assert claims["finite_counterterm_bulk_Q1_ambiguity_rank"] == 2
     assert claims[
         "relative_Einstein_Weyl_action_cyclic_pushforward_obstructed"
@@ -372,6 +448,10 @@ def main() -> None:
     assert payload["explicit_nonclaims"]["generic_ghost_renormalized_R_K"] is False
     assert payload["explicit_nonclaims"]["generic_ghost_finite_part_R_K2"] is False
     assert payload["explicit_nonclaims"]["full_generic_physical_Hessian"] is False
+    assert payload["explicit_nonclaims"]["unconditional_all_loop_extended_QME"] is False
+    assert payload["explicit_nonclaims"]["constructed_all_loop_regulator"] is False
+    assert payload["explicit_nonclaims"]["convergent_all_loop_expansion"] is False
+    assert payload["explicit_nonclaims"]["global_anomalies_excluded"] is False
     assert claims["physical_Hessian_algebraic_H2_imported"] is True
     assert claims["physical_Hessian_H2_source_row_count"] == 18
     assert claims["physical_Hessian_H2_scalar_flat_effective_row_count"] == 9
@@ -503,7 +583,7 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
     assert claims["physical_Hessian_triangle_corner_count"] == 33
     assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
-    assert len(payload["inputs"]) == 69
+    assert len(payload["inputs"]) == 70
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -518,6 +598,7 @@ def main() -> None:
         "REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH"
     ]
     extended = dependencies["WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY"]
+    all_loop = dependencies["TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY"]
     q1 = dependencies["ONE_LOOP_SLAVNOV_Q1_DISPOSITION"]
     relative_cyclic_pushforward = dependencies[
         "RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION"
@@ -625,6 +706,17 @@ def main() -> None:
     assert strict["coefficients"]["ANOM_OMEGA_E4"] == claims["E4_coefficient"]
     assert extended["H04"]["even_quotient_dimension"] == 3
     assert extended["H14"]["boundary_rank"] == 4
+    assert _sha256(
+        ROOT
+        / "quantum-weyl/anomalies/certificates/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json"
+    ) == ALL_LOOP_INPUT_SHA256
+    assert all_loop["lifecycle"]["tau_adic_all_loop_formal_local"] == (
+        "CONDITIONAL_QME_RESTORED_UNDER_DECLARED_QAP"
+    )
+    assert all_loop["quantum_action_principle"]["status"] == (
+        "DECLARED_HYPOTHESIS_NOT_CONSTRUCTED_REGULATOR"
+    )
+    assert not any(all_loop["claim_flags"].values())
     assert (
         extended["one_loop_QME"]["strict_breaking_coordinates"]
         == extended["one_loop_QME"]["boundary_image_coordinates"]

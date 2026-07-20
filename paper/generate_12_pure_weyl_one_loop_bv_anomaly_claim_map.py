@@ -19,7 +19,22 @@ REFEREE_RESPONSE = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-referee-respon
 GENERATED_TABLES = ROOT / "paper/generated/12-quantum-anomaly-certificate-tables.tex"
 TABLE_GENERATOR = ROOT / "paper/generate_12_quantum_anomaly_tables.py"
 TABLE_VERIFIER = ROOT / "paper/verify_12_quantum_anomaly_tables.py"
+COVERAGE = (
+    ROOT
+    / "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json"
+)
+COVERAGE_REPORT = (
+    ROOT
+    / "paper/12-pure-weyl-one-loop-bv-anomaly-paper-coverage-report.json"
+)
 OUTPUT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json"
+EXPECTED_MANUSCRIPT_SHA256 = (
+    "d2cedfb85a8bf7b1bc5ef2c606c186bdf253767fff30188858cedc0c1982fc1f"
+)
+ALL_LOOP_INPUT_COMMIT = "7fabe987861f1e4facfc2282e7023274df2ddc72"
+ALL_LOOP_INPUT_SHA256 = (
+    "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc"
+)
 INPUTS = {
     "strict_AFN0_even": ROOT / "quantum-weyl/local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json",
     "strict_AFN0_odd": ROOT / "quantum-weyl/local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json",
@@ -35,6 +50,7 @@ INPUTS = {
     "cotangent_lift": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
     "wz_preflight": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
     "extended_cohomology": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
+    "tau_adic_all_loop_local_QME_stability": ROOT / "quantum-weyl/anomalies/certificates/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json",
     "Q1_disposition": ROOT / "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
     "relative_Einstein_Weyl_cyclic_pushforward": ROOT / "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
@@ -117,6 +133,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     lift = values["cotangent_lift"]
     wz_preflight = values["wz_preflight"]
     extended = values["extended_cohomology"]
+    all_loop = values["tau_adic_all_loop_local_QME_stability"]
     q1 = values["Q1_disposition"]
     relative_cyclic_pushforward = values[
         "relative_Einstein_Weyl_cyclic_pushforward"
@@ -208,6 +225,22 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     product_s2_s2_ghost_schur_det3 = values["product_S2_S2_ghost_Schur_det3_enclosure"]
     generic_ghost_schur_weight_raised = values["generic_ghost_Schur_weight_raised_zeta_factorization"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
+    if (
+        _sha256(MANUSCRIPT) != EXPECTED_MANUSCRIPT_SHA256
+        or _sha256(INPUTS["tau_adic_all_loop_local_QME_stability"])
+        != ALL_LOOP_INPUT_SHA256
+        or all_loop.get("result_state")
+        != "CONDITIONAL_FORMAL_ALL_LOOP_LOCAL_QME_RESTORATION_THEOREM"
+        or all_loop.get("dependency_tags") != ["LOCAL-ALGEBRAIC"]
+        or all_loop.get("lifecycle", {}).get("tau_adic_all_loop_formal_local")
+        != "CONDITIONAL_QME_RESTORED_UNDER_DECLARED_QAP"
+        or all_loop.get("quantum_action_principle", {}).get("status")
+        != "DECLARED_HYPOTHESIS_NOT_CONSTRUCTED_REGULATOR"
+        or all_loop.get("stable_H14_module", {}).get("status")
+        != "ZERO_IN_ALL_PARITIES_AND_ANTIFIELD_NUMBERS_IN_DECLARED_ALGEBRA"
+        or any(all_loop.get("claim_flags", {}).values())
+    ):
+        raise ValueError("Paper 12 conditional all-loop dependency drifted")
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
         or even.get("smallest_relative_sector", {}).get("closure_rank") != 6
@@ -993,6 +1026,7 @@ def build() -> dict[str, Any]:
     strict = values["strict_breaking"]
     diff_mixed = values["strict_diff_mixed_minimal_H14"]
     extended = values["extended_cohomology"]
+    all_loop = values["tau_adic_all_loop_local_QME_stability"]
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
@@ -1083,7 +1117,7 @@ def build() -> dict[str, Any]:
     return {
         "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
         "result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
-        "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_TAU_ADIC_EXTENDED_QME_RESTORATION_ANOMALY_INDUCED_GAMMA1_AND_FV_CONFORMIZED_C2_LOGARITHM",
+        "result_state": "DRAFT_ALLOWED_STRICT_ONE_LOOP_OBSTRUCTION_TAU_ADIC_EXTENDED_ONE_LOOP_QME_RESTORATION_AND_CONDITIONAL_FORMAL_ALL_LOOP_LOCAL_QME_STABILITY",
         "lifecycle_state": "WRITING_STARTED",
         "referee_revision": {
             "review_snapshot": "EARLIER_TEN_PAGE_SNAPSHOT",
@@ -1095,7 +1129,7 @@ def build() -> dict[str, Any]:
             "LOCAL-ALGEBRAIC",
             "EUCLIDEAN-SPECTRAL",
         ],
-        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact and the generic ghost n=3 triangle is projected exactly onto that quotient. Ten generic numerators cancel one Delta; only I10 has a nonzero direct open-edge restriction, while the I28 relation is pointwise. All ten pole-three rows have exact relative-IBP primitives. The exact S3-covariant scalar-triangle differential system reduces their derivative masters to J and two bubble-log ratios, while equal corner weights make the sole nonzero corner flux rational. The pole-four I29 row also reduces by a full 55-row exact relative-IBP identity to the same master basis, so all eleven generic ghost n=3 functions are complete and regress exactly to the symmetric-point integration. The curved n=1/n=2 pure-vector CPT sum is exact and integrated: six channels are nonzero, five vanish, and no new transcendental master appears. All longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3; Wres(K), Wres(K^2), and Wres(log S_L) are exact, the declared order-two weighted trace fixes the pole and scale row, and the round-S4 reference finite K/K2 rows, canonical det_3 tail, weighted modified determinant, and Einstein-ratio defect 5/3 are complete. The distinct generic weight-raised local defect is exactly -(1/4)Wres(K^2) and specializes to -1/3. A smoothing witness proves that the generic finite rows require a full Green kernel or spectral measure. The same-gauge physical three-H1 alpha numerator is exact and projected onto all eleven raw channels of the five-carrier quotient. Its isolated symmetric-point integral is logarithmically corner obstructed by a rank-one M14 class. The projected algebraic H2 block is imported and operationally polarized on an exact equal-box TT fixture. All six H1-cubed orderings and all six mixed-bubble endpoints give the nonzero raw logarithmic coefficient 15707/216. A generic covariant Volterra carrier joins the six ordered triangle cells and three H1-H2 contact cells under the common Mellin extension. All generic contact endpoint residues are projected to 33 exact raw five-carrier functions with two unseen replays and exact I28 reduction. The three generic triangle corner functions and their full contact incidence are exact and nonzero, so M14 is disposed as a Mellin-renormalized scale row. The minimally-subtracted finite parts of all three H1-H2 contacts are also projected to 33 exact rational rows; their equal-box TT sum is 3188/27. The physical rows, all ghost n=3 rows and the pure-vector ghost n=1+n=2 slice are now assembled into an exact partial-BV five-carrier Mellin-MS representative. Exactly three longitudinal/mixed D_W carriers, remaining BV finite rows, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
+        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop. The changed formal tau-adic compensator theory has a restored one-loop local Euclidean QME and, conditional on the declared local quantum action principle, is formally locally restorable at every finite order. No all-order regulator, global or Lorentzian QME, state, residual-transfer, particle, or unitarity theorem is supplied. The coefficient-bearing effective-action and third-curvature calculations remain scoped to their separately certified local-algebraic and Euclidean-spectral carriers.",
         "manuscript": _relative(MANUSCRIPT),
         "latest_coefficient_update": "The longitudinal D_W towers are one Schur kernel. Its exact non-Einstein S2(k1)xS2(k2) spectrum and degeneracies are supplied, with six matched vector-zero/Schur-pole modes contributing 3^-6. On S2(1)xS2(2), the regular-complement det3 is rigorously enclosed with common prefix 0.3263039; weighted R(K), finite-part R(K2), arbitrary-background finite Schur rows and remaining BV rows stay open.",
         "manuscript_sha256": _sha256(MANUSCRIPT),
@@ -1110,11 +1144,26 @@ def build() -> dict[str, Any]:
                 GENERATED_TABLES,
                 TABLE_GENERATOR,
                 TABLE_VERIFIER,
+                COVERAGE,
+                COVERAGE_REPORT,
             )
         },
         "theory_dispositions": {
             "strict_fixed_field_content": "OBSTRUCTED",
             "tau_adic_compensator_extended_local_Euclidean_one_loop": "QME_RESTORED",
+            "tau_adic_compensator_extended_formal_all_loop": all_loop["lifecycle"][
+                "tau_adic_all_loop_formal_local"
+            ],
+        },
+        "conditional_all_loop_evidence": {
+            "result_id": all_loop["result_id"],
+            "source_commit": ALL_LOOP_INPUT_COMMIT,
+            "sha256": ALL_LOOP_INPUT_SHA256,
+            "dependency_tags": all_loop["dependency_tags"],
+            "quantum_action_principle_status": all_loop[
+                "quantum_action_principle"
+            ]["status"],
+            "claim_boundary": all_loop["claim_boundary"],
         },
         "certified_claims": {
             "strict_quotient_scope": "REGULAR_BACH_LOCUS",
@@ -1144,6 +1193,18 @@ def build() -> dict[str, Any]:
             "extended_H14_even_dimension": extended["H14"]["even_quotient_dimension"],
             "extended_H14_odd_dimension": extended["H14"]["odd_quotient_dimension"],
             "extended_one_loop_local_Euclidean_QME_restored": True,
+            "extended_formal_all_loop_local_QME_conditionally_restorable": True,
+            "extended_all_loop_QAP_is_declared_hypothesis": True,
+            "extended_all_loop_stable_H14_zero": (
+                all_loop["stable_H14_module"]["even_quotient_dimension"] == 0
+                and all_loop["stable_H14_module"]["odd_quotient_dimension"] == 0
+            ),
+            "extended_all_loop_stable_H04_even_dimension": all_loop[
+                "stable_H04_module"
+            ]["independent_generator_count"]["even"],
+            "extended_all_loop_stable_H04_odd_dimension": all_loop[
+                "stable_H04_module"
+            ]["independent_generator_count"]["odd"],
             "WZ_local_counterterm_Q1_contribution_fixed": True,
             "finite_counterterm_bulk_Q1_ambiguity_rank": 2,
             "relative_Einstein_Weyl_action_cyclic_pushforward_obstructed": True,
@@ -1372,7 +1433,10 @@ def build() -> dict[str, Any]:
         },
         "explicit_nonclaims": {
             "finite_polynomial_in_tau_theorem": False,
-            "all_loop_extended_QME": False,
+            "unconditional_all_loop_extended_QME": False,
+            "constructed_all_loop_regulator": False,
+            "convergent_all_loop_expansion": False,
+            "global_anomalies_excluded": False,
             "Lorentzian_QME": False,
             "renormalized_Lorentzian_products": False,
             "global_BRST_Hadamard_state": False,

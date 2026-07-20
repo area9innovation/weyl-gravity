@@ -70,5 +70,8 @@ fixture also passes exact regeneration, independent recomputation, strict
 schema validation, and eight scoped mutation/regression tests.
 
 The manuscript remains a working draft pending final human author review.
-No Lorentzian QME, all-loop restoration, particle Hilbert space, or residual
+It now states a conditional order-by-order formal local restoration theorem
+for the changed tau-adic compensator theory under a declared quantum action
+principle.  No all-order regulator implementing that hypothesis, unconditional
+or Lorentzian QME, global-anomaly exclusion, particle Hilbert space, or residual
 quantum transfer is promoted by this revision.

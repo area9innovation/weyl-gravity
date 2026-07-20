@@ -1,0 +1,75 @@
+{
+  "ir": "science-forge-ir-v0",
+  "nodes": [
+    {
+      "kind": "paper",
+      "id": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
+      "body": {
+        "paper_class": "technical",
+        "path": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+        "manuscript_sha256": "d2cedfb85a8bf7b1bc5ef2c606c186bdf253767fff30188858cedc0c1982fc1f"
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:quantum-weyl.anomalies/result/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "changed-tau-adic-compensator-formal-local-under-declared-qap",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC"
+        ],
+        "certificate": "quantum-weyl/anomalies/certificates/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json",
+        "certificate_sha256": "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc",
+        "source_commit": "7fabe987861f1e4facfc2282e7023274df2ddc72",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY/v1",
+      "body": {
+        "result_id": "sf:quantum-weyl.anomalies/result/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY",
+        "materiality": "TECHNICAL",
+        "version": 1,
+        "by": "quantum-planning-team",
+        "stamp": "2026-07-20",
+        "rationale": "The conditional all-order local-QME induction is a technical theorem of Paper 12, subordinate to a declared QAP and distinct from any constructed regulator or unconditional QME.",
+        "native": {
+          "source_schema": "materiality-v0"
+        }
+      }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/conditional-all-order-formal-local-restoration",
+      "body": {
+        "paper": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
+        "material": true,
+        "asserts_lifecycle": "CERTIFIED",
+        "boundary": "changed-tau-adic-compensator-formal-local-under-declared-qap",
+        "cites": [
+          "sf:quantum-weyl.anomalies/result/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY"
+        ],
+        "statement": "At every finite formal order, the changed tau-adic compensator theory is locally QME-restorable conditional on the declared quantum action principle; no implementing all-order regulator is constructed."
+      }
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY/P12/v1",
+      "body": {
+        "from": "sf:quantum-weyl.anomalies/result/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY",
+        "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
+        "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/conditional-all-order-formal-local-restoration",
+        "edge_kind": "PRIMARY_THEOREM",
+        "stale": false,
+        "version": 1,
+        "stamp": "2026-07-20",
+        "native": {
+          "source_schema": "result-paper-edge-v0"
+        }
+      }
+    }
+  ]
+}

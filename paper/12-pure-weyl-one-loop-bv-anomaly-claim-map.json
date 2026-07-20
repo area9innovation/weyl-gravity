@@ -60,6 +60,11 @@
     "extended_H04_odd_dimension": 1,
     "extended_H14_even_dimension": 0,
     "extended_H14_odd_dimension": 0,
+    "extended_all_loop_QAP_is_declared_hypothesis": true,
+    "extended_all_loop_stable_H04_even_dimension": 3,
+    "extended_all_loop_stable_H04_odd_dimension": 1,
+    "extended_all_loop_stable_H14_zero": true,
+    "extended_formal_all_loop_local_QME_conditionally_restorable": true,
     "extended_one_loop_local_Euclidean_QME_restored": true,
     "factorization_convention_defect_difference": {
       "denominator": 1,
@@ -524,7 +529,17 @@
     "universal_CPT_third_curvature_kernels_imported": true
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "30211bb07b499c0ae7db02dfa8d1f4dfa40f0aa6206a4934ac297142f82a652d",
+  "compiled_pdf_sha256": "7fe4a2ce93c7e3631043c734c545607bb6bebde626741f7e86fe931409a4a874",
+  "conditional_all_loop_evidence": {
+    "claim_boundary": "This LOCAL-ALGEBRAIC theorem proves an order-by-order formal local QME restoration induction for the changed tau-adic compensator theory, conditional on the explicitly declared quantum action principle and regular formal coupling chart. The complete H14 module is zero and the stable H04 module contains C(g_hat)^2, E4(g_hat), R(g_hat)^2 and the parity-odd Pontryagin direction, with total derivatives, canonical transformations and coupling redefinitions separated. It does not construct the required regulator, prove convergence, exclude global anomalies, repair strict pure-Weyl gravity, or establish Lorentzian products, a QME, residual transfer, states, positivity, particles, scattering or unitarity.",
+    "dependency_tags": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "quantum_action_principle_status": "DECLARED_HYPOTHESIS_NOT_CONSTRUCTED_REGULATOR",
+    "result_id": "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY",
+    "sha256": "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc",
+    "source_commit": "7fabe987861f1e4facfc2282e7023274df2ddc72"
+  },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
@@ -534,9 +549,10 @@
     "Bridge_5_interacting_BRST_map": false,
     "Lorentzian_QME": false,
     "absolute_dressed_Rhat2_normalization": false,
-    "all_loop_extended_QME": false,
     "complete_renormalized_Gamma1_supplied": false,
     "complete_renormalized_Q1_supplied": false,
+    "constructed_all_loop_regulator": false,
+    "convergent_all_loop_expansion": false,
     "finite_polynomial_in_tau_theorem": false,
     "full_BV_Bridge_4_particle_crosswalk": false,
     "full_generic_physical_Hessian": false,
@@ -551,6 +567,7 @@
     "generic_nonminimal_ghost_CPT_determinant": false,
     "generic_nonminimal_ghost_insertion_traces_evaluated": false,
     "global_BRST_Hadamard_state": false,
+    "global_anomalies_excluded": false,
     "independent_cubic_Weyl_invariant_form_factors": false,
     "ordinary_Fredholm_determinant_class": false,
     "parity_odd_third_curvature_carrier_manifest": false,
@@ -561,14 +578,19 @@
     "residual_quantum_transfer": false,
     "same_background_compensator_contraction": false,
     "theorem_frozen": false,
+    "unconditional_all_loop_extended_QME": false,
     "unitarity_theorem": false,
     "zeta_factorization_without_local_multiplicative_anomaly": false
   },
-  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact and the generic ghost n=3 triangle is projected exactly onto that quotient. Ten generic numerators cancel one Delta; only I10 has a nonzero direct open-edge restriction, while the I28 relation is pointwise. All ten pole-three rows have exact relative-IBP primitives. The exact S3-covariant scalar-triangle differential system reduces their derivative masters to J and two bubble-log ratios, while equal corner weights make the sole nonzero corner flux rational. The pole-four I29 row also reduces by a full 55-row exact relative-IBP identity to the same master basis, so all eleven generic ghost n=3 functions are complete and regress exactly to the symmetric-point integration. The curved n=1/n=2 pure-vector CPT sum is exact and integrated: six channels are nonzero, five vanish, and no new transcendental master appears. All longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3; Wres(K), Wres(K^2), and Wres(log S_L) are exact, the declared order-two weighted trace fixes the pole and scale row, and the round-S4 reference finite K/K2 rows, canonical det_3 tail, weighted modified determinant, and Einstein-ratio defect 5/3 are complete. The distinct generic weight-raised local defect is exactly -(1/4)Wres(K^2) and specializes to -1/3. A smoothing witness proves that the generic finite rows require a full Green kernel or spectral measure. The same-gauge physical three-H1 alpha numerator is exact and projected onto all eleven raw channels of the five-carrier quotient. Its isolated symmetric-point integral is logarithmically corner obstructed by a rank-one M14 class. The projected algebraic H2 block is imported and operationally polarized on an exact equal-box TT fixture. All six H1-cubed orderings and all six mixed-bubble endpoints give the nonzero raw logarithmic coefficient 15707/216. A generic covariant Volterra carrier joins the six ordered triangle cells and three H1-H2 contact cells under the common Mellin extension. All generic contact endpoint residues are projected to 33 exact raw five-carrier functions with two unseen replays and exact I28 reduction. The three generic triangle corner functions and their full contact incidence are exact and nonzero, so M14 is disposed as a Mellin-renormalized scale row. The minimally-subtracted finite parts of all three H1-H2 contacts are also projected to 33 exact rational rows; their equal-box TT sum is 3188/27. The physical rows, all ghost n=3 rows and the pure-vector ghost n=1+n=2 slice are now assembled into an exact partial-BV five-carrier Mellin-MS representative. Exactly three longitudinal/mixed D_W carriers, remaining BV finite rows, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
+  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop. The changed formal tau-adic compensator theory has a restored one-loop local Euclidean QME and, conditional on the declared local quantum action principle, is formally locally restorable at every finite order. No all-order regulator, global or Lorentzian QME, state, residual-transfer, particle, or unitarity theorem is supplied. The coefficient-bearing effective-action and third-curvature calculations remain scoped to their separately certified local-algebraic and Euclidean-spectral carriers.",
   "inputs": {
     "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json": {
       "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
       "sha256": "d11ebc782c6a388e2fd2d934e0a60c7016faf60b9c22691cceeeb6a8080bf3f8"
+    },
+    "quantum-weyl/anomalies/certificates/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json": {
+      "result_id": "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY",
+      "sha256": "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc"
     },
     "quantum-weyl/anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json": {
       "result_id": "UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO",
@@ -846,7 +868,7 @@
   "latest_coefficient_update": "The longitudinal D_W towers are one Schur kernel. Its exact non-Einstein S2(k1)xS2(k2) spectrum and degeneracies are supplied, with six matched vector-zero/Schur-pole modes contributing 3^-6. On S2(1)xS2(2), the regular-complement det3 is rigorously enclosed with common prefix 0.3263039; weighted R(K), finite-part R(K2), arbitrary-background finite Schur rows and remaining BV rows stay open.",
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "09734bd1e8d73c2536ff400bfd7437f2cea0ce8b05fab8b9aa619df64899e49c",
+  "manuscript_sha256": "d2cedfb85a8bf7b1bc5ef2c606c186bdf253767fff30188858cedc0c1982fc1f",
   "next_gate": {
     "required_inputs": [
       "same-background compensator-inclusive classical contraction",
@@ -868,7 +890,9 @@
   "publication_artifacts": {
     "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "3e4cbdc3ca820c7d43c0375e7a29e8a16aa2a7d33b2d90a00493b5321f744d9a",
     "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "fb498bbe3b1ec1ff8d93885f37290f25181b2a73e19949ae52296d257cb171e6",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "c30e5a712e62708eb6dfc7e2bee5dc8a6e16077a48b5ff2d8d8d1644754a4095",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-paper-coverage-report.json": "f8b9128a5997d1a1d0c24fa3f945c235b2b137358b46f8ad622156387faedc81",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "51523503b16874426f943a4912c2efc9af6a8fb171193477d2c4b56991141371",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json": "a7c6e7266816663dee695f7c38519e3bcfd6d1ad19ef8a270c151895e88d95fc",
     "paper/generate_12_quantum_anomaly_tables.py": "53fa1f003c9cedd320d7e2d8c8e8b589fcd5fc200c7c0362955107b68e62e4db",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "b7556226f31a06e73e9410c3e382c5eca6b77be3bce6004324ee1c0171b8e8c0",
     "paper/verify_12_quantum_anomaly_tables.py": "30370f348cc90cf9d8063cb9c47bb7a7576a4951869ba3e9bf63039be75ad258"
@@ -880,10 +904,11 @@
     "theorem_freeze_authorized": false
   },
   "result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
-  "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_TAU_ADIC_EXTENDED_QME_RESTORATION_ANOMALY_INDUCED_GAMMA1_AND_FV_CONFORMIZED_C2_LOGARITHM",
+  "result_state": "DRAFT_ALLOWED_STRICT_ONE_LOOP_OBSTRUCTION_TAU_ADIC_EXTENDED_ONE_LOOP_QME_RESTORATION_AND_CONDITIONAL_FORMAL_ALL_LOOP_LOCAL_QME_STABILITY",
   "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
   "theory_dispositions": {
     "strict_fixed_field_content": "OBSTRUCTED",
+    "tau_adic_compensator_extended_formal_all_loop": "CONDITIONAL_QME_RESTORED_UNDER_DECLARED_QAP",
     "tau_adic_compensator_extended_local_Euclidean_one_loop": "QME_RESTORED"
   }
 }
