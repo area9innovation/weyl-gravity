@@ -1,0 +1,45 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-active-clock-px2-independent-freeze-audit",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-active-clock-px2-independent-freeze-audit",
+  "source": {
+    "path": "planning/work-items/classical-compensator-active-clock-px2-independent-freeze-audit.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Independently audit the complete quadratic active-clock compensator locus before any Candidate C_active or no-go theorem is frozen.",
+    "stop_condition": "Import the terminal certificate and action hash from classical-compensator-active-clock-px2-locus without invoking its producer.  Reconstruct the complete parity-even C^2+R^2+R+P(X), P(X)=p0+p1 X+p2 X^2, action basis by a method-distinct invariant/IBP reduction; independently vary it on the unit cylinder and frozen Berger clock; rebuild the coupled homogeneous principal, velocity, charge and clock-monotonicity gates; and verify the claimed real coefficient locus using an independent exact elimination or real-algebraic certificate.  Check every excluded denominator and singular stratum separately.  Mutate at least one coefficient, one background invariant, one sign convention and one omitted gate and require rejection.  If the producer claim survives, export a freeze receipt and exact theorem boundary; if it does not, export the smallest contradictory witness and leave every downstream promotion fail-closed.",
+    "current_gate": "method-distinct completeness and real-locus audit of the quadratic active-clock result",
+    "forbid": "no rerun of the producer called verification; no numerical sampling as a locus proof; no omission of singular coefficient strata; no Candidate C_active promotion from one rational point; no universal scalar-tensor conclusion; no anomaly, particle, scattering or unitarity claim",
+    "depends_on": [
+      "sf:program/work/classical-compensator-active-clock-px2-locus"
+    ],
+    "activates": [
+      "a theorem-frozen Candidate C_active action only after a nonempty locus and independent audit",
+      "or a theorem-frozen scoped quadratic-active-clock no-go",
+      "or a typed contradiction and repair lane"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "reports/",
+      "residual_atlas/",
+      "paper/",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "CLASSICAL INDEPENDENT RAIL.  Reconstruct the action basis and real locus independently; do not trust the producer's elimination graph.",
+    "notes": [
+      "The result decides whether the smallest active-clock escape is a real theory candidate or the next scoped no-go.",
+      "The audit is useful for either terminal disposition and therefore cannot strand the stream after a negative result.",
+      "A successful audit should be suitable as the external-review receipt for the compensator theorem."
+    ],
+    "input_commit": "4226542a9",
+    "stream": "classical"
+  },
+  "edges": []
+}

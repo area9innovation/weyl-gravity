@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/observer-berger-apparatus-reduced-cohomology-pairing",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "observer-berger-apparatus-reduced-cohomology-pairing",
+  "source": {
+    "path": "planning/work-items/observer-berger-apparatus-reduced-cohomology-pairing.json",
+    "span": null
+  },
+  "body": {
+    "owner": "observer",
+    "state": "PROPOSED",
+    "objective": "Determine which of the new dynamical rod, polarization, memory and emitter directions are physical after the complete linear gauge and constraint reduction.",
+    "stop_condition": "Import BERGER_DYNAMICAL_APPARATUS_PARENT by exact hash.  Compute the exact q1 cohomology of the full 56-row odd-cotangent apparatus extension together with the imported Berger gravity-clock-Maxwell rows, using a declared grading and basis.  Descend the cyclic pairing, real structure and K_Berger action to cohomology; classify radicals, signs, zero modes and rigid-family directions; and identify the precise reduced classes that support the two detector records and persistent memory pairs.  Verify that the rank-two probe response descends to nonzero reduced classes rather than coordinate or auxiliary representatives.  Export canonical representatives, projection/inclusion/contraction data where defined, exact rank witnesses and a method-distinct verifier.  If a complete combined q1 import is missing, export its exact crosswalk contract rather than silently reducing the 56 rows in isolation.",
+    "current_gate": "physical reduction and pairing health of the action-derived measuring apparatus",
+    "forbid": "no raw apparatus coordinate called an observable; no rigid Berger U(1) family covariance promoted to a gauge ghost; no probe-level rank called nonlinear memory; no positivity theorem before radical and real-structure descent; no q2/q3, redshift, particle or quantum promotion",
+    "depends_on": [
+      "sf:program/work/observer-dynamical-apparatus-parent-after-pbw-shortfall"
+    ],
+    "activates": [
+      "reduced apparatus representatives for the Berger Z2 and redshift lanes",
+      "or an exact physical-reduction obstruction identifying the missing gauge/constraint row"
+    ],
+    "allowed_paths": [
+      "closed_universe_observers/",
+      "reports/",
+      "residual_atlas/",
+      "paper/09-relational-clocks-berger-d-cartan.tex",
+      "notes/closed-universe-observer-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "OBSERVER INDEPENDENT PHYSICAL-STATE LANE.  Audit what survives q1 before interpreting the apparatus records.",
+    "notes": [
+      "This lane can run independently of the same-background second-order tangent-cone calculation.",
+      "The parent currently proves action derivation and arity-two cyclicity, not that every apparatus coordinate is a physical record."
+    ],
+    "input_commit": "87ddc2626d500343fe92914de561f6ccc942c355",
+    "stream": "observer"
+  },
+  "edges": []
+}
