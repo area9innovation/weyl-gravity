@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/quantum-complete-renormalized-d-ward-insertion-REQUEST-1190fa5df53e8659",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/quantum-complete-renormalized-d-ward-insertion-REQUEST-1190fa5df53e8659.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/quantum-complete-renormalized-d-ward-insertion", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T10:08:13Z", "seq": 1, "payload": {"target": "sf:program/request/quantum-complete-renormalized-d-ward-insertion-to-quantum-qme-1190fa5df53e8659", "request_id": "sf:program/request/quantum-complete-renormalized-d-ward-insertion-to-quantum-qme-1190fa5df53e8659", "from_item": "sf:program/work/quantum-complete-renormalized-d-ward-insertion", "to_stream": "quantum-qme", "need": "FULL_TAU_ADIC_BV_HADAMARD_FEYNMAN_KERNEL_AND_RENORMALIZED_T2_EXTENSION_ON_VACUUM_CYLINDER: construct a BRST-compatible full tau-adic BV Hadamard/Feynman kernel on the same vacuum cylinder and extend the graded T2 contraction kernels from M^2\\Diag_2 across Diag_2 with causal factorization, scaling-degree, cyclicity and Q0 Ward control; export the coincident renormalized BV contraction and common observable/operator domain, or certify the first microlocal obstruction", "typed": "coefficient-bearing-operator"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "quantum-qme"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/quantum-complete-renormalized-d-ward-insertion"}]
+}
