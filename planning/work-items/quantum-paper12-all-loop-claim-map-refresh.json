@@ -1,0 +1,46 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-paper12-all-loop-claim-map-refresh",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-paper12-all-loop-claim-map-refresh",
+  "source": {
+    "path": "planning/work-items/quantum-paper12-all-loop-claim-map-refresh.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum",
+    "state": "PROPOSED",
+    "objective": "Refresh Paper 12's generated claim map and publication artifacts so the landed conditional all-loop QME theorem is covered bidirectionally by current evidence without broadening its lifecycle.",
+    "stop_condition": "Import TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY from commit 7fabe9878 and the exact TeX hash recorded in planning/forge-requests/paper12-tau-adic-all-loop-claim-map-refresh.json. Update the Paper 12 claim-map generator, not only its output hash, to record the conditional-QAP theorem, the strict-theory one-loop obstruction, the compensator theory change, and every open regulator/global/Lorentzian/state boundary. Regenerate the claim map, PDF and publication hashes from clean sources; run two warning-free TeX passes and the independent claim-map verifier. Add HUMAN-authored materiality and typed result-to-paper edges for this result under the newly landed Science Forge paper-coverage schema, run the advisory bidirectional coverage audit, and resolve every flag concerning this theorem or record an explicit review item for unrelated unclassified results.",
+    "current_gate": "Paper 12 claim-map and bidirectional evidence coverage for the conditional all-loop theorem",
+    "forbid": "no manual hash-only repair; no unconditional all-loop QME wording; no constructed-regulator, convergence, strict-theory anomaly-freedom, global-anomaly, Lorentzian-product, Hadamard, residual-transfer, particle or unitarity claim; no machine-inferred materiality or result-to-paper edge; no unrelated paper rewrite",
+    "depends_on": [],
+    "activates": [
+      "current Paper 12 publication artifacts",
+      "the first live physics use of the bidirectional paper-result coverage gate"
+    ],
+    "allowed_paths": [
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
+      "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json",
+      "paper/generate_12_pure_weyl_one_loop_bv_anomaly_claim_map.py",
+      "paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py",
+      "paper/",
+      "quantum-weyl/anomalies/",
+      "quantum-weyl/reports/",
+      "reports/",
+      "notes/d-quotient-quantum-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "PUBLICATION-INTEGRATION RESERVE. The scientific theorem is already committed; this item owns only generated claim-map/PDF/evidence-coverage closure. Pull after higher-priority scientific reserves unless the coverage gate blocks a release.",
+    "notes": [
+      "The newly landed paper-coverage substrate does not infer materiality or edges; this item must author them explicitly.",
+      "An empty live coverage graph is not a pass.",
+      "Keep the public claim wording subordinate to the certificate's LOCAL-ALGEBRAIC boundary."
+    ],
+    "input_commit": "7fabe9878",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
