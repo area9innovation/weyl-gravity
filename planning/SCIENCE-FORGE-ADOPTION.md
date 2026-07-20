@@ -43,15 +43,15 @@ introduced by stream:
 | --- | --- | --- |
 | `black-hole` | black-hole | **AUTHORITATIVE:** use `s-f` for pull, lease, report, block, request, and close-out |
 | `observer` | observer/clock | **AUTHORITATIVE:** use `s-f` for pull, lease, report, block, request, and close-out |
+| `nonlinear` | nonlinear | **AUTHORITATIVE:** use `s-f` for pull, lease, report, block, request, and close-out |
 | `bridge` | Einstein/bridge | **SHADOW:** inspect generated state and use the reporting format; continue the current assignment until the all-stream cutover |
 | `classical` | classical | **SHADOW:** inspect generated state and use the reporting format; continue the current assignment until the all-stream cutover |
-| `nonlinear` | nonlinear | **SHADOW:** inspect generated state and use the reporting format; continue the current assignment until the all-stream cutover |
 | `quantum-qme` | quantum | **SHADOW:** inspect generated state and use the reporting format; continue the current assignment until the all-stream cutover |
 
-The four shadow streams become authoritative only after the coordinator records
-a successful programme-wide acceptance run. Until then, only the black-hole
-and observer teams should acquire leases or close work through `s-f`. Shadow
-teams must not create parallel lifecycle histories.
+The three shadow streams become authoritative only after the coordinator
+records their cutover. Until then, only the black-hole, observer, and nonlinear
+teams should acquire leases or close work through `s-f`. Shadow teams must not
+create parallel lifecycle histories.
 
 ### First proof-first pilot
 
@@ -81,6 +81,18 @@ item's `notes` or `resource_hint`:
 
 This is not a requirement to prove a guessed theorem. A minimal exact
 counterexample or obstruction is an equally valid close-out.
+
+The next proof-first cutover is the nonlinear stream:
+
+```text
+sf:program/work/nonlinear-cyclic-extension-splitting-theorem
+```
+
+Its previous free-text blocker and search-before-proof successor are retired as
+coordination objects only; their certified nonlinear obstructions remain
+authoritative. The replacement asks whether the Einstein/additional exact
+sequence splits in an admissible cyclic filtered category before Conflux is
+allowed to search the large interaction payload.
 
 ## 3. Tool and capability boundary
 
