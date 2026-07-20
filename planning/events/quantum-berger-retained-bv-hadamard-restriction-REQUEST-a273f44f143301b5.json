@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/quantum-berger-retained-bv-hadamard-restriction-REQUEST-a273f44f143301b5",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/quantum-berger-retained-bv-hadamard-restriction-REQUEST-a273f44f143301b5.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/quantum-berger-retained-bv-hadamard-restriction", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T08:51:53Z", "seq": 1, "payload": {"target": "sf:program/request/quantum-berger-retained-bv-hadamard-restriction-to-classical-a273f44f143301b5", "request_id": "sf:program/request/quantum-berger-retained-bv-hadamard-restriction-to-classical-a273f44f143301b5", "from_item": "sf:program/work/quantum-berger-retained-bv-hadamard-restriction", "to_stream": "classical", "need": "CLASSICAL_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_EXTENSION: extend the certified Lambda26 advanced/retarded chain homotopy continuously to an explicitly declared past/future-compact or time-slice C-infinity(MxM) class containing C26=[H26_plus,q26], with q26 Lambda+Lambda q26=1, support and cyclic-adjoint control; alternatively certify the first exact obstruction to every such declared class", "typed": "dependency-artifact"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "classical"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/quantum-berger-retained-bv-hadamard-restriction"}]
+}
