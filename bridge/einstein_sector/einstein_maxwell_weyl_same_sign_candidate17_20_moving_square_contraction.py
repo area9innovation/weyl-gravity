@@ -145,7 +145,7 @@ def build() -> dict[str, object]:
             "causal_residual_observational_or_quantum_claim": False,
         },
         "interpretation": "The fixed-direction residual is partly removable: the Cartan-square moment can move through a complete ball and cancels the scaled kernel moment whenever alpha and delta have the same sign. The alpha=0 boundary also contracts after a coefficient-zero pre-rotation; the former endpoint-continuity claim omitted this admissible first segment and is withdrawn. The remaining opposite-sign crossing is a genuine zero-coefficient obstruction to the entire repaired uniform-scaling/moving-square ansatz, but not to paths that deform the K factor or scale its two nodes nonuniformly.",
-        "next_gate": "on the remaining alpha*delta<=0 non-phase-real strata, allow independent K-node scaling and deformation inside T3(f,g)=0, or construct an invariant that survives those enlarged paths",
+        "next_gate": "on the remaining alpha*delta<0 non-phase-real strata, apply the independent K-node-scaling successor and then allow deformation inside T3(f,g)=0, or construct an invariant that survives those enlarged paths",
         "claim_boundary": "This completely classifies only the uniform K-factor scaling plus occupation-transfer ansatz with an arbitrary moving common-square direction. It does not establish candidate-17 or candidate-20 off-balance complete-singular connectedness or disconnection, classify nonuniform K-node scaling or general nonradial paths, glue occupations, perform final residual descent, or establish all-orders, causal, observational or quantum claims.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),

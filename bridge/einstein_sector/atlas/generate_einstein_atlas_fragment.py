@@ -121,6 +121,7 @@ CERTIFICATES = {
     "same_sign_candidate17_20_common_square_rotation_quotient": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.json",
     "same_sign_candidate17_20_singular_radial_contraction": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.json",
     "same_sign_candidate17_20_moving_square_contraction": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json",
+    "same_sign_candidate17_20_independent_node_scaling_contraction": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.json",
     "same_sign_active_phase_reduced_presymplectic_divisors": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
     "same_sign_active_local_rotation_leaf_descent": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
@@ -1226,13 +1227,25 @@ def entries() -> list[dict[str, object]]:
             "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_moving_square_contraction",
             _scope(theory="Weyl-Maxwell target", background="candidates 17 and 20 separately; balance, sign-compatible and complementary ansatz-obstruction strata are retained separately", boundaries="closed S1_L times S2 after both free active-node phases and before lifted-rotation or final residual quotient", carrier="both complete singular components under uniform scaling of the arbitrary K factor, exact occupation transfer and arbitrary continuous motion of the receiving common-square direction", degree=2, parity="both labelled factorized parity channels", ell="input 2 x 2; output L=1", m="all m=-2,...,2 through the normalized Cartan-square moment ball and third-transvectant kernel", k="candidate-specific signed compact momenta, never identified across candidates", omega="candidate-specific DIFFERENCE collision with alpha=omega_plus*A_plus-omega_minus*A_minus and delta=omega_plus*N_plus-omega_minus*N_minus", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
             {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
-            ("CERTIFIED","Candidates 17 and 20 remain distinct. Candidate 20's delta=0 theorem is retained; off balance the new positive statement is exactly alpha*delta>0, together with phase-real directions and square vertices."),
+            ("CERTIFIED","Candidates 17 and 20 remain distinct. Candidate 20's delta=0 theorem is retained; off balance the repaired positive statement is alpha*delta>0 or alpha=0, together with phase-real directions and square vertices."),
             ("CERTIFIED","The normalized Cartan-square moment map has the complete closed unit ball as image, with radius F(u)=3u/(2+u^2). For alpha*delta>0, r(s)=s*alpha/[s*alpha+(1-s)*delta] stays in [0,1] and cancels the scaled kernel moment."),
-            ("CERTIFIED","The entire uniform-scaling/moving-square ansatz is disposed. If alpha*delta<0 and the initial square moment is nonzero, the receiving coefficient has one interior zero while the kernel moment remains nonzero. At alpha=0 a nonvertex non-phase-real start has an endpoint-continuity obstruction."),
+            ("CERTIFIED","The repaired uniform-scaling/moving-square ansatz is disposed. If alpha*delta<0 and the initial square moment is nonzero, the receiving coefficient has one interior zero while the kernel moment remains nonzero. At alpha=0 the complete stratum contracts by a coefficient-zero square pre-rotation followed by the phase-real uniform path."),
             ("CERTIFIED","Uniform scaling preserves the third-transvectant kernel equation, every moved receiving factor remains common-square, and sign-compatible paths end in the connected double-singular hub."),
-            _second_order(("CERTIFIED","Candidate 17's complete alpha<0 stratum and candidate 20 off balance with alpha having the sign of delta contract to the hub; phase-real and square-vertex points remain covered. The complementary obstruction is only for the declared uniform-scaling ansatz."),("CERTIFIED","All declared paths are finite smooth exponential-polynomial carrier paths; no all-orders promotion is made."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _second_order(("CERTIFIED","Candidate 17's complete alpha<=0 stratum and candidate 20 off balance with alpha=0 or alpha having the sign of delta contract to the hub; phase-real and square-vertex points remain covered. The complementary obstruction is only for the declared uniform-scaling ansatz."),("CERTIFIED","All declared paths are finite smooth exponential-polynomial carrier paths; no all-orders promotion is made."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_candidate17_20_moving_square_contraction","same_sign_candidate17_20_singular_radial_contraction","same_sign_candidate17_20_common_square_rotation_quotient","same_sign_candidate17_20_double_singular_rotation_zero_fibre","same_sign_third_transvectant_singular_locus"),
-            "This is not a general nonradial no-go and does not establish complete candidate-17 or candidate-20 off-balance connectedness or disconnection. Independent K-node scaling, deformations of the K factor inside T3(f,g)=0, occupation gluing, final residual descent and causal, observational or quantum maps remain fail-closed.",
+            "This is not a general nonradial no-go and does not establish complete candidate-17 or candidate-20 off-balance connectedness or disconnection. Fixed-direction independent K-node scaling is classified by its successor row; K-direction deformations inside T3(f,g)=0, occupation gluing, final residual descent and causal, observational or quantum maps remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_independent_node_scaling_contraction",
+            _scope(theory="Weyl-Maxwell target", background="candidates 17 and 20 separately; only their strict alpha*delta<0 non-phase-real strata are newly classified", boundaries="closed S1_L times S2 after both free active-node phases and before lifted-rotation or final residual quotient", carrier="both complete singular components with fixed K-node directions, independent squared node scales (x,y) in [0,1]^2, exact occupation transfer and arbitrary continuous motion of the receiving common-square direction", degree=2, parity="both labelled factorized parity channels", ell="input 2 x 2; output L=1", m="all m=-2,...,2 through fixed weighted K-node moments and the normalized Cartan-square moment ball", k="candidate-specific signed compact momenta, never identified across candidates", omega="candidate-specific DIFFERENCE collision with strict alpha*delta<0", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Candidates 17 and 20 remain distinct. The theorem classifies only each candidate's own strict opposite-sign stratum and imports the repaired alpha=0 contraction separately."),
+            ("CERTIFIED","With fixed weighted node moments U,V, independent scaling gives M_K=-x*U+y*V and c=delta+a*x-b*y. The receiving Cartan-square moment ranges over the complete closed unit ball."),
+            ("CERTIFIED","Every path crosses c=0, where rotation zero forces M_K=0. Thus contraction is possible exactly when I={(x,y) in [0,1]^2:c=0=M_K} is nonempty. For nonzero U,V this requires positive collinearity and the explicit box inequalities."),
+            ("CERTIFIED","When I is nonempty, a three-stage path reaches it with the initial square direction, moves the square moment to zero while c=M_K=0, and then reaches the connected hub with a phase-real square direction."),
+            _second_order(("CERTIFIED","The fixed-direction independent-node-scaling ansatz is completely classified: incidence points contract, while off-incidence strict opposite-sign points are obstructed within this ansatz."),("CERTIFIED","The same finite carrier paths are smooth exponential-polynomial paths; no all-orders promotion is made."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate17_20_independent_node_scaling_contraction","same_sign_candidate17_20_moving_square_contraction","same_sign_candidate17_20_double_singular_rotation_zero_fibre","same_sign_third_transvectant_singular_locus"),
+            "This is not a no-go for deformation of the K-node directions inside T3(f,g)=0 or for general nonradial paths. Complete candidate-17 and candidate-20 off-balance connectedness or disconnection, occupation gluing, final residual descent and causal, observational or quantum maps remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_same_sign_active_phase_reduced_presymplectic_divisors",
@@ -2361,11 +2374,26 @@ def build() -> dict[str, object]:
         and moving_square["candidate20_off_balance_alpha_same_sign_delta_stratum_contracts_to_hub"]
         and moving_square["square_factor_vertex_off_balance_contracts_to_hub"]
         and moving_square["opposite_sign_interior_zero_obstruction_certified"]
-        and moving_square["zero_alpha_nonphase_real_continuity_obstruction_certified"]
+        and moving_square["zero_alpha_complete_stratum_contracts_to_hub"]
     ):
         raise AssertionError("candidate-17/20 moving-square contraction changed")
     if moving_square["candidate17_complete_singular_rotation_zero_fibre_connected"] or moving_square["candidate20_off_balance_complete_singular_rotation_zero_fibre_connected"] or moving_square["general_nonradial_no_go"] or moving_square["nonuniform_scaling_classified"] or moving_square["occupation_strata_glued"] or moving_square["final_residual_descent"] or moving_square["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("candidate-17/20 moving-square contraction exceeded scope")
+    independent_scaling = records["same_sign_candidate17_20_independent_node_scaling_contraction"]["classification"]
+    if not (
+        independent_scaling["zero_alpha_uniform_scaling_repair_imported"]
+        and independent_scaling["strict_opposite_sign_incidence_necessary"]
+        and independent_scaling["strict_opposite_sign_incidence_sufficient"]
+        and independent_scaling["fixed_direction_independent_node_scaling_ansatz_classified"]
+        and independent_scaling["positive_collinear_incidence_formula_certified"]
+        and independent_scaling["one_zero_moment_incidence_formulas_certified"]
+        and independent_scaling["nonpositive_collinearity_obstructed_within_ansatz"]
+        and independent_scaling["incidence_points_contract_to_connected_hub"]
+        and independent_scaling["generic_fixed_direction_opposite_sign_points_obstructed"]
+    ):
+        raise AssertionError("candidate-17/20 independent-node scaling changed")
+    if independent_scaling["candidate17_complete_singular_rotation_zero_fibre_connected"] or independent_scaling["candidate20_off_balance_complete_singular_rotation_zero_fibre_connected"] or independent_scaling["general_nonradial_no_go"] or independent_scaling["K_direction_deformation_classified"] or independent_scaling["occupation_strata_glued"] or independent_scaling["final_residual_descent"] or independent_scaling["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-17/20 independent-node scaling exceeded scope")
     phase_reduced_divisors = records["same_sign_active_phase_reduced_presymplectic_divisors"]["classification"]
     if not (
         phase_reduced_divisors["candidate17_regular_fixed_occupation_phase_reduced_divisor_classified"]

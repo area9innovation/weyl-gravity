@@ -1918,11 +1918,12 @@ Then every point with \(\alpha\delta>0\) contracts to the connected
 double-singular hub.  The same holds for phase-real square directions and
 for the square-factor vertex.
 
-For a non-phase-real point with \(\delta\neq0\), the complementary declared
-ansatz is obstructed: if \(\alpha\delta<0\), its receiving coefficient has
-one interior zero at which the scaled kernel moment is nonzero; if
-\(\alpha=0\) and the square factor is nonzero, continuity fails at the
-initial endpoint.
+For a non-phase-real point with \(\delta\neq0\), the remaining complementary
+declared ansatz is obstructed when \(\alpha\delta<0\): its receiving
+coefficient has one interior zero at which the scaled kernel moment is
+nonzero.  If \(\alpha=0\), by contrast, every point contracts by a
+coefficient-zero square pre-rotation followed by the phase-real uniform
+contraction.
 \end{proposition}
 
 \begin{proof}
@@ -1981,12 +1982,102 @@ If \(\alpha\delta<0\), then
 \]
 For nonzero \(\mu_0\), the remaining kernel moment
 \(-s_0\alpha\mu_0\) is nonzero, so no square direction repairs this ansatz.
-If \(\alpha=0\), \(\delta\neq0\), and the initial nonvertex direction has
-\(\mu_0\neq0\), every \(s<1\) instead forces
-\(\mu_{\rm sq}(s)=0\), which cannot converge to \(\mu_0\).
+If \(\alpha=0\), initial rotation zero instead gives \(M_K=0\).  At
+\(s=1\) the square coefficient is also zero, so the Cartan moment-ball path
+may first move the square direction continuously from \(\mu_0\) to a
+phase-real direction without changing any occupation or rotational moment.
+Keeping that square moment zero while \(s\) then decreases from one to zero
+gives a second rotation-zero segment ending in the hub.  This admissible
+pre-rotation was omitted by the former endpoint-continuity argument.
 
 This classifies the stated ansatz, not independent node scaling or a general
 deformation of the \(K\) factor inside \(T_3(f,g)=0\).
+\end{proof}
+
+\begin{proposition}[Independent-node bottleneck incidence]
+\label{prop:candidate-17-20-independent-node-scaling}
+Fix the two directions of the arbitrary \(K\) factor on either
+candidate-\((17)/(20)\) singular component, but scale their squared
+amplitudes independently by \((x,y)\in[0,1]^2\), transferring the released
+occupations to the receiving common-square factor.  Write
+\[
+ a=\omega_-B_->0,\qquad b=\omega_+B_+>0,
+\]
+and let \(U=a\mu_f\), \(V=b\mu_g\) be the fixed weighted node moments.  On a
+strict opposite-sign stratum \(\alpha\delta<0\), define
+\[
+ c(x,y)=\delta+ax-by,\qquad
+ M_K(x,y)=-xU+yV,
+\]
+and
+\[
+ \mathcal I=\{(x,y)\in[0,1]^2:c(x,y)=0,\ M_K(x,y)=0\}.
+\]
+Then the declared fixed-direction independent-node-scaling ansatz contracts
+to the connected double-singular hub if and only if
+\(\mathcal I\neq\varnothing\).
+
+If \(U,V\neq0\), incidence is possible only when
+\(V=\kappa U\) for some \(\kappa>0\).  In that case its unique candidate is
+\[
+ y_*=-\frac{\delta}{a\kappa-b},
+ \qquad x_*=\kappa y_*,
+\]
+and it exists exactly when \(a\kappa\neq b\) and
+\((x_*,y_*)\in[0,1]^2\).  The one-zero cases are
+\[
+ U=0,\ V\neq0:\quad (x_*,y_*)=(-\delta/a,0),
+ \qquad
+ U\neq0,\ V=0:\quad (x_*,y_*)=(0,\delta/b),
+\]
+again subject to the displayed nonzero coordinate belonging to \([0,1]\).
+Thus non-positively-collinear nonzero node moments are obstructed within
+this ansatz, whereas every physical incidence point gives an explicit
+contraction.
+\end{proposition}
+
+\begin{proof}
+Exact occupation transfer gives
+\[
+ A_-(x)=A_-+(1-x)B_-,
+ \qquad
+ A_+(y)=A_++(1-y)B_+,
+\]
+so the receiving coefficient is \(c(x,y)\), with
+\[
+ c(1,1)=\alpha,\qquad c(0,0)=\delta.
+\]
+Independent nonnegative scaling preserves \(T_3(f,g)=0\), and the rotational
+equation is
+\[
+ M_K(x,y)+c(x,y)\mu_{\rm sq}=0,
+\]
+where \(\mu_{\rm sq}\) ranges over the closed Cartan moment ball proved in
+Proposition~\ref{prop:candidate-17-20-moving-square-contraction}.
+Since \(\alpha\delta<0\), every continuous path from \((1,1)\) to
+\((0,0)\) meets \(c=0\).  At such a point the rotational equation forces
+\(M_K=0\), proving necessity.
+
+Conversely, choose \((x_*,y_*)\in\mathcal I\).  Along the straight segment
+from \((1,1)\) to \((x_*,y_*)\), affine linearity gives
+\[
+ c=(1-\tau)\alpha,\qquad
+ M_K=(1-\tau)M_K(1,1).
+\]
+The initial square direction therefore cancels this entire segment.  Hold
+\((x_*,y_*)\) fixed and move the square moment continuously to zero; this
+preserves the equation because \(c=M_K=0\).  Finally, along the straight
+segment from \((x_*,y_*)\) to \((0,0)\),
+\[
+ M_K=0,\qquad c=\tau\delta,
+\]
+so a fixed phase-real square direction completes the path to the hub.
+
+For nonzero \(U,V\), the equation \(xU=yV\) with \(x,y\geq0\) has a nonzero
+solution precisely when \(U,V\) lie on the same positive ray.  Substitution
+of \(V=\kappa U\) into \(M_K=c=0\) gives the displayed formula and box
+criterion.  If exactly one moment vanishes, the same two equations give the
+two boundary formulae directly.
 \end{proof}
 
 \begin{proposition}[Candidate-(18) complete complex singular resolution]
@@ -2493,7 +2584,7 @@ does not establish nonlinear stability.
 
 The manuscript is an \textsc{outline-allowed}/\textsc{draft-allowed}
 integration of committed certificates.  Its current source baseline is
-repository commit \texttt{35b245adef83d25b617c110e7d067298c245745d}.
+repository commit \texttt{c1010eccb6ae5335060e57ad2f15375cb0b32bd5}.
 
 \begingroup
 \small
@@ -2583,6 +2674,8 @@ Candidate-(17)/(20) singular radial contraction &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.json}\\
 Candidate-(17)/(20) moving-square contraction and ansatz obstruction &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json}\\
+Candidate-(17)/(20) independent-node bottleneck incidence &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.json}\\
 Fixed-occupation node-phase-reduced divisors and local quotients &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json}\\
 Local lifted-rotation descent through current leaves &
@@ -2703,11 +2796,17 @@ phase-real common-square sublocus, but its exact residual is not a nonradial
 no-go; complete singular connectedness remains open there and on candidate
 \((17)\).  Proposition~\ref{prop:candidate-17-20-moving-square-contraction}
 then classifies the complete uniform-scaling ansatz with a moving square
-direction.  Candidate \((17)\)'s \(\alpha<0\) stratum and candidate
-\((20)\)'s off-balance \(\alpha\delta>0\) stratum contract to the hub; the
-opposite-sign non-phase-real region has an exact coefficient-zero
-obstruction within this ansatz.  Independent node scaling and deformation
-inside \(T_3(f,g)=0\) remain open.  The
+direction.  Candidate \((17)\)'s \(\alpha\leq0\) stratum and candidate
+\((20)\)'s off-balance \(\alpha\delta>0\) or \(\alpha=0\) strata contract
+to the hub; the opposite-sign non-phase-real region has an exact
+coefficient-zero obstruction within this ansatz.
+Proposition~\ref{prop:candidate-17-20-independent-node-scaling} classifies
+the enlarged fixed-direction independent-node ansatz.  A path exists
+exactly when the coefficient-zero line meets the kernel-moment-zero locus
+inside the physical scaling square; positive-collinear incidence points
+contract by an explicit three-stage path, while generic fixed directions
+remain obstructed.  Deformation of the \(K\)-node directions inside
+\(T_3(f,g)=0\) remains open.  The
 regular fixed-occupation node-phase reductions are classified by
 Proposition~\ref{prop:phase-reduced-presymplectic-divisors}.  The latter
 retains the common parity-node phases and candidate-(18) spectators rather

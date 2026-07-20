@@ -722,12 +722,30 @@ def verify() -> None:
     moving_square_second = moving_square["mode_data"]["second_order"]
     if moving_square["descriptions"]["symplectic"] != "CERTIFIED" or "closed unit ball" not in moving_square["mode_data"]["lee_wald"]["statement"] or "r(s)=s*alpha" not in moving_square["mode_data"]["lee_wald"]["statement"]:
         raise AssertionError("candidate-17/20 moving-square moment ball was hidden")
-    if moving_square["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "interior zero" not in moving_square["mode_data"]["taub_maps"]["statement"]:
+    if moving_square["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "interior zero" not in moving_square["mode_data"]["taub_maps"]["statement"] or "alpha=0 the complete stratum contracts" not in moving_square["mode_data"]["taub_maps"]["statement"]:
         raise AssertionError("candidate-17/20 moving-square ansatz obstruction changed")
     if moving_square_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or moving_square_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("candidate-17/20 moving-square correction scope changed")
-    if "not a general nonradial no-go" not in moving_square["claim_boundary"] or "Independent K-node scaling" not in moving_square["claim_boundary"]:
+    if "not a general nonradial no-go" not in moving_square["claim_boundary"] or "successor row" not in moving_square["claim_boundary"]:
         raise AssertionError("candidate-17/20 moving-square fail-closed boundary disappeared")
+    independent_scaling = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_independent_node_scaling_contraction"]
+    independent_second = independent_scaling["mode_data"]["second_order"]
+    if independent_scaling["descriptions"]["nonlinear"] != "CERTIFIED" or "M_K=-x*U+y*V" not in independent_scaling["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("candidate-17/20 independent-node scaling geometry was hidden")
+    if independent_scaling["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "I={(x,y)" not in independent_scaling["mode_data"]["taub_maps"]["statement"] or "positive collinearity" not in independent_scaling["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-17/20 independent-node incidence gate changed")
+    if independent_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or independent_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-17/20 independent-node correction scope changed")
+    if "not a no-go for deformation" not in independent_scaling["claim_boundary"] or "T3(f,g)=0" not in independent_scaling["claim_boundary"]:
+        raise AssertionError("candidate-17/20 independent-node fail-closed boundary disappeared")
+    independent_scaling = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_independent_node_scaling_contraction"]
+    independent_second = independent_scaling["mode_data"]["second_order"]
+    if independent_scaling["descriptions"]["nonlinear"] != "CERTIFIED" or "I={(x,y)" not in independent_scaling["mode_data"]["taub_maps"]["statement"] or "positive collinearity" not in independent_scaling["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-17/20 independent-node incidence theorem changed")
+    if "three-stage path" not in independent_scaling["mode_data"]["resonance"]["statement"] or "not a no-go for deformation" not in independent_scaling["claim_boundary"]:
+        raise AssertionError("candidate-17/20 independent-node claim boundary changed")
+    if independent_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or independent_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-17/20 independent-node correction scope changed")
     local_rotation = by_id["einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent"]
     local_rotation_second = local_rotation["mode_data"]["second_order"]
     if local_rotation["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "local simple symplectic leaf quotient" not in local_rotation["mode_data"]["lee_wald"]["statement"]:

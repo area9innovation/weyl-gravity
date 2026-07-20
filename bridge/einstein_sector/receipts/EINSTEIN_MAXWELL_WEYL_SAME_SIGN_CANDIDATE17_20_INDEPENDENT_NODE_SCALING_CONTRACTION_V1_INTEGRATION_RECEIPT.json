@@ -1,0 +1,67 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_INDEPENDENT_NODE_SCALING_CONTRACTION_V1_INTEGRATION_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Integrate the repaired moving-square theorem and the fixed-direction independent-node bottleneck classification into the fail-closed Einstein atlas, team brief, canonical roadmap and Paper 13.",
+  "source_commit": "c1010eccb6ae5335060e57ad2f15375cb0b32bd5",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.json": "0c8120ee3e79cb91929fe555ccc8352a51bd7b3756351ee53f5cd318e36345dc",
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json": "4463e4218892d8527bfde308ce0237887c2c3ff0ac814e204bc5a87ddf0cbb68",
+    "bridge/einstein_sector/atlas/EINSTEIN_ATLAS_V1_TIER_RECEIPT.json": "3d449136fb9ec50000c98f4804437de03f08b46003947b3c1e201e0ce8903894",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "9574a9917910ea8f63dbfa802eed029f50eccd20eebf92db611ecce99f0a6441",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "1b5cbbc70bfc4d56127ea01d83d1fc5fb658e113b663926a2c5d830502f4c7d1",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "f0347afa722f6eed311b8f3e3e17ebcd71d7e3642b880e1ac15668b9e81bdb20",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "c4ac5483e549b8a1567aeadec63fa9830fbbc5e27a8b1e5712d0bbdeb7847545",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.py": "9e71058245490d4b4929f0296b8815f988d77bdc6eb6e4fe8c975ddaea48e789",
+    "bridge/einstein_sector/receipts/EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_INDEPENDENT_NODE_SCALING_CONTRACTION_V1_TIER_RECEIPT.json": "0e5c9ddd6373688c1366e9c3fa3e2ea716c7fa61f43f38df1ff7af5339a18607",
+    "notes/d-quotient-einstein-team-brief.md": "e04219b48c920d38201a38644f82d1b569055abb7cae611b6b8c76e9af4f6e37",
+    "notes/universe-building-roadmap.md": "aa5cca34789e21785816bda0e9826a26a708ffbf70be1b68980fd4885dfff0d4",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.pdf": "ca70b732c7ff63e68ba64f8c3ef8b47cd61c0cac65902de72d7df9a9073314fc",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex": "61410bac3bae8e5258dace622e9a55ba23cb147b06c6c9ab19fe46561b2443a5"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on theorem and atlas producers, independent verifiers and focused tests",
+        "python3 -m json.tool on certificates, schemas and receipts",
+        "git diff --check on the explicitly staged paths",
+        "three-pass pdflatex build with no undefined references, multiply-defined labels, LaTeX warnings or overfull boxes"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": {
+        "independent_node_scaling": 8,
+        "atlas": 117
+      },
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The theorem source is committed at c1010ecc. The atlas separately imports the repaired moving-square and independent-node certificates, requires the exact incidence iff criterion, and leaves K-direction deformation and every higher lifecycle fail-closed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "Paper 13 remains DRAFT_ALLOWED and neither complete off-balance connectedness nor a shared mathematical freeze is promoted."
+    },
+    "science_forge_shadow": {
+      "status": "ADVISORY_FINDINGS_RECORDED",
+      "command": "ci/science-forge-shadow.sh",
+      "result": "exit 0 in advisory mode; bridge existence, edges, DAG and gates passed, while certlab reported pre-existing corpus drift, the coverage census found 1184 certificates versus baseline 976, and the local Forge binary/stdlib revisions differ",
+      "promotion_effect": "none; the advisory findings are not treated as a pass for any scientific claim or lifecycle promotion"
+    }
+  },
+  "claim_boundary": "The alpha=0 continuity claim is withdrawn and repaired. Fixed-direction independent node scaling is classified exactly by coefficient-zero/kernel-moment-zero incidence. Deformation of K directions inside T3(f,g)=0, complete off-balance connectedness or disconnection, occupation gluing, final residual, all-orders, causal, observational and quantum claims remain open or fail-closed."
+}

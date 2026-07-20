@@ -4265,22 +4265,59 @@ dr/ds=alpha*delta/c(s)^2.
 
 If `alpha*delta>0`, then `r` stays in `[0,1]`; moving the square direction
 along its moment ray cancels the kernel moment exactly and contracts the
-point to the connected hub.  Thus candidate 17's complete `alpha<0` stratum
-and candidate 20 off balance with `alpha` having the sign of `delta` are
-disposed positively.  Phase-real points and the off-balance square vertex
-also contract.
+point to the connected hub.  If `alpha=0`, initial rotation zero makes the
+complete kernel moment vanish, so a coefficient-zero pre-rotation of the
+square direction to the phase-real locus followed by uniform scaling gives
+a second contraction.  Thus candidate 17's complete `alpha<=0` stratum and
+candidate 20 off balance with `alpha=0` or `alpha` having the sign of
+`delta` are disposed positively.  Phase-real points and the off-balance
+square vertex also contract.
 
 The complementary failure is now exact but scoped.  If
 `alpha*delta<0` and the initial square moment is nonzero, `c(s)` has a unique
-interior zero while the scaled kernel moment remains nonzero.  If `alpha=0`
-at a nonvertex non-phase-real point, continuity fails at the starting
-endpoint.  These are no-go statements for the complete uniform-scaling,
-occupation-transfer, arbitrary-moving-square ansatz—not for general
-nonradial paths.  Atlas row
+interior zero while the scaled kernel moment remains nonzero.  The former
+`alpha=0` endpoint-continuity claim omitted the admissible pre-rotation and
+is withdrawn.  The remaining interior-wall result is a no-go statement for
+the complete repaired uniform-scaling, occupation-transfer,
+arbitrary-moving-square ansatz—not for general nonradial paths.  Atlas row
 `einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_moving_square_contraction`
 is `CERTIFIED`.  The active gate is now independent kernel-node scaling or
 deformation of the kernel factor inside `T3(f,g)=0` on the remaining
-`alpha*delta<=0` non-phase-real strata.
+`alpha*delta<0` non-phase-real strata.
+
+The fixed-direction independent-node gate is now complete.  Put
+
+```text
+a=omega_minus*B_minus,  b=omega_plus*B_plus,
+c(x,y)=delta+a*x-b*y,
+M_K(x,y)=-x*U+y*V,
+I={(x,y) in [0,1]^2:c=0=M_K}.
+```
+
+Here `x,y` are the independent squared amplitude fractions and `U,V` are
+the fixed weighted node moments.  On `alpha*delta<0`, every path from
+`(1,1)` to `(0,0)` crosses `c=0`, so incidence with `M_K=0` is necessary.
+It is also sufficient: move linearly to an incidence point with the initial
+square direction, move the square moment to zero while `c=M_K=0`, and then
+move linearly to the hub with a phase-real square direction.
+
+For nonzero `U,V`, incidence exists only on the positive-collinearity locus
+`V=kappa*U`, where
+
+```text
+y_*=-delta/(a*kappa-b),  x_*=kappa*y_*
+```
+
+must lie in the unit square.  The one-zero moment cases have the exact
+boundary candidates `(-delta/a,0)` and `(0,delta/b)`.  Thus generic fixed
+directions remain obstructed, while every physical incidence point
+contracts.  Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_independent_node_scaling_contraction`
+is `CERTIFIED`.  This is a complete theorem for fixed kernel directions,
+not a general nonradial no-go.  The active gate is now deformation of the
+kernel directions inside `T3(f,g)=0`: determine whether off-incidence points
+can reach the positive-collinear locus or exhibit an invariant preventing
+that deformation.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).

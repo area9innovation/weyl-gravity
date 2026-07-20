@@ -2870,16 +2870,39 @@ dr/ds=alpha*delta/c(s)^2.
 ```
 
 For `alpha*delta>0`, `r` runs from zero to one inside the Cartan moment ball,
-giving an exact moving-direction contraction to the hub.  This covers the
-complete candidate-17 `alpha<0` stratum and the candidate-20 off-balance
-same-sign stratum, in addition to all phase-real points and the square
+giving an exact moving-direction contraction to the hub.  If `alpha=0`, a
+coefficient-zero pre-rotation to the phase-real locus followed by uniform
+scaling contracts the complete stratum; the former endpoint-continuity claim
+omitted this admissible segment and is withdrawn.  This covers the complete
+candidate-17 `alpha<=0` stratum and the candidate-20 off-balance same-sign
+or zero-`alpha` strata, in addition to all phase-real points and the square
 vertex.  For `alpha*delta<0`, `c(s)` has a unique interior zero at which a
 nonzero scaled kernel moment cannot be canceled by any square direction.
-The nonvertex `alpha=0`, non-phase-real boundary has a separate continuity
-obstruction.  These are complete obstructions only for the declared
-uniform-scaling ansatz, not general nonradial no-go theorems.  The next gate
-is independent kernel-node scaling or deformation inside `T3(f,g)=0` on the
-remaining `alpha*delta<=0` non-phase-real strata.
+This is a complete obstruction only for the declared uniform-scaling ansatz,
+not a general nonradial no-go theorem.  The next gate is independent
+kernel-node scaling or deformation inside `T3(f,g)=0` on the remaining
+`alpha*delta<0` non-phase-real strata.
+
+The fixed-direction independent-node gate is now classified by the exact
+bottleneck incidence
+
+```text
+c(x,y)=delta+a*x-b*y,
+M_K(x,y)=-x*U+y*V,
+I={(x,y) in [0,1]^2:c=0=M_K}.
+```
+
+For strict opposite signs, every scaling path crosses `c=0`, so `I` is
+necessary.  It is sufficient by a three-stage path: approach an incidence
+point with the initial square direction, pre-rotate the square moment to
+zero while both coefficients vanish, and leave for the hub along the
+kernel-moment-zero line.  When `U,V` are nonzero, incidence requires
+positive collinearity `V=kappa*U` and the explicit box point
+`(x_*,y_*)=(kappa*y_*,-delta/(a*kappa-b))`; the one-zero cases are likewise
+explicit.  Hence generic fixed directions are obstructed, but the
+positive-collinear incidence locus contracts.  The next gate is deformation
+of the kernel directions inside `T3(f,g)=0`; no complete off-balance
+connectedness or disconnection is inferred.
 All higher lifecycles remain fail-closed.  This is nonlinear input to
 same-background Bridge 1 with Classical,
 not a promotion of its certified linear relative triangle/cofiber.  The

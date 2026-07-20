@@ -472,12 +472,47 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("closed unit ball", entry["mode_data"]["lee_wald"]["statement"])
         self.assertIn("r(s)=s*alpha", entry["mode_data"]["lee_wald"]["statement"])
         self.assertIn("interior zero", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("alpha=0 the complete stratum contracts", entry["mode_data"]["taub_maps"]["statement"])
         self.assertIn("T3(f,g)=0", entry["claim_boundary"])
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
-        self.assertIn("complete alpha<0 stratum", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertIn("complete alpha<=0 stratum", second["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("not a general nonradial no-go", entry["claim_boundary"])
-        self.assertIn("Independent K-node scaling", entry["claim_boundary"])
+        self.assertIn("successor row", entry["claim_boundary"])
+
+    def test_candidate17_20_independent_node_scaling_has_exact_incidence_gate(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_independent_node_scaling_contraction"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("M_K=-x*U+y*V", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("I={(x,y)", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("positive collinearity", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("three-stage path", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("off-incidence", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not a no-go for deformation", entry["claim_boundary"])
+        self.assertIn("T3(f,g)=0", entry["claim_boundary"])
+
+    def test_candidate17_20_independent_node_scaling_has_exact_incidence_gate(self) -> None:
+        entry = self.entries[
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_independent_node_scaling_contraction"
+        ]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("M_K=-x*U+y*V", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("I={(x,y)", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("positive collinearity", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("three-stage path", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(
+            second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED"
+        )
+        self.assertIn(
+            "off-incidence",
+            second["bounded_or_finite_quasiperiodic"]["statement"],
+        )
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not a no-go for deformation", entry["claim_boundary"])
 
     def test_same_sign_local_rotation_descent_is_basic_not_global(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent"]
