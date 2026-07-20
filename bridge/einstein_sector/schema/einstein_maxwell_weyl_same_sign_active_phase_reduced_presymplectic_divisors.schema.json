@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "scope",
+    "augmented_conormal_theorem",
+    "candidate17_20",
+    "candidate18",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-same-sign-active-phase-reduced-presymplectic-divisors-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_PHASE_REDUCED_PRESYMPLECTIC_DIVISORS"
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "candidate17_regular_fixed_occupation_phase_reduced_divisor_classified",
+        "candidate18_regular_fixed_occupation_phase_reduced_divisor_classified",
+        "candidate20_regular_fixed_occupation_phase_reduced_divisor_classified",
+        "common_node_phase_coupling_retained",
+        "candidate18_positive_spectators_retained",
+        "linear_presymplectic_quotient_on_every_regular_reduced_tangent_classified",
+        "constant_corank_local_leaf_quotient_classified",
+        "lifted_rotation_reduction_classified",
+        "global_leaf_space_or_Hausdorff_quotient_classified",
+        "singular_locus_reduction_classified",
+        "occupation_strata_glued"
+      ],
+      "properties": {
+        "candidate17_regular_fixed_occupation_phase_reduced_divisor_classified": {"const": true},
+        "candidate18_regular_fixed_occupation_phase_reduced_divisor_classified": {"const": true},
+        "candidate20_regular_fixed_occupation_phase_reduced_divisor_classified": {"const": true},
+        "common_node_phase_coupling_retained": {"const": true},
+        "candidate18_positive_spectators_retained": {"const": true},
+        "linear_presymplectic_quotient_on_every_regular_reduced_tangent_classified": {"const": true},
+        "constant_corank_local_leaf_quotient_classified": {"const": true},
+        "lifted_rotation_reduction_classified": {"const": false},
+        "global_leaf_space_or_Hausdorff_quotient_classified": {"const": false},
+        "singular_locus_reduction_classified": {"const": false},
+        "occupation_strata_glued": {"const": false}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

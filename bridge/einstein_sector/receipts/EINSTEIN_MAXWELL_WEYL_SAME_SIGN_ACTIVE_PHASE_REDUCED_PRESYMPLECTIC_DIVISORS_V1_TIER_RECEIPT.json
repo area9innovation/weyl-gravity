@@ -1,0 +1,54 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_PHASE_REDUCED_PRESYMPLECTIC_DIVISORS_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Complete regular fixed-active-occupation node-phase-reduced current divisors and local linear presymplectic quotients on collision candidates 17, 18 and 20.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json": "74bfe7b00c1e7ebe856c54d0275661954ede15c23e3c62363b4928149c83b72b",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.py": "3bd2cb45d57cb17118229b514f691d5b70ed5e05e24cbfa7b11ee5e42e74f536",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.schema.json": "46db8e55466255ed36a9ff73446ad7e4e6c936ec1861b3dd7a10b10ff852e3b0",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.py": "94ea61c0fa88c191c397ab738e31076804fb2b8943e60f1148d123e78fef298c",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.py": "e014ba3dce1dfe7eae7c6ed098f87047507992fd6729514655b3fc6f035c2631",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-active-phase-reduced-presymplectic-divisors.md": "80d23617153c4d7e1d48396a1a45410294438ad9e3c929e5540bfd00f31ac035"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.py bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.py",
+        "python3 -m json.tool bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
+        "python3 -m json.tool bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.schema.json",
+        "git diff --check on the scoped paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 5,
+      "producer_elapsed_seconds": 1.85,
+      "independent_verifier_elapsed_seconds": 1.55,
+      "unit_test_elapsed_seconds": 1.82,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors"
+      ]
+    },
+    "adversarial": {
+      "status": "PASS_MUTATION_REJECTED",
+      "mutation": "set common_node_phase_coupling_retained=false in an in-memory copy of the certificate",
+      "result": "the independent JSON Schema rail rejected the mutation"
+    },
+    "tier_2": {
+      "status": "PASS_BY_INDEPENDENT_EXACT_RECOMPUTATION_AND_CONTENT_ADDRESS",
+      "reason": "The verifier independently reconstructs the coupled candidate-17/20 8x8 augmented normal Gram, its exact degenerate and nondegenerate points, and the candidate-18 10x30 chart determinant and both rank-six branch matrices without importing the producer."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This advances an already scoped smooth finite-dimensional current gate. Lifted-rotation reduction, global quotient topology, singular and occupation gluing, all-orders integration and every causal or quantum lifecycle remain fail-closed."
+    },
+    "science_forge_work_package": {
+      "status": "TOOLING_SHORTFALL",
+      "reason": "The bridge work item and standing constraints were read directly. Rebuilding /tmp/forgebin was unavailable because go is not installed; the pre-existing binary lacked the current conflux_ir import path. No generated work-package view was treated as passed."
+    }
+  },
+  "claim_boundary": "CERTIFIED on the complete smooth regular fixed-active-occupation carrier after the two common node-phase quotients. Lifted SO(3), global/Hausdorff leaf-space, singular, occupation-gluing, final residual, all-orders, causal, observational and quantum claims remain OPEN or NO_CERTIFIED_MAP."
+}
