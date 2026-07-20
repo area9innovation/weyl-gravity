@@ -1,0 +1,64 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_MOVING_SQUARE_CONTRACTION_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Complete exact disposition of uniform K-factor scaling plus occupation transfer with an arbitrary moving common-square direction on both candidate-17/20 singular components.",
+  "input_baseline": "3abdb600995f8755b90d3ff059aee05528bfa455",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json": "64cd7f1fc901a0fa598aa4951c97f81a6478b5c05098cb99d9622d55a831f6e4",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.py": "5074cd19c2a788f639684235d437a6ffedcc549f0b8f067d505e40e7575085ab",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.schema.json": "fd76b2c045ce0e7bc91301dfc34c5520c19159ed9095188ee2307ca46e31e96a",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.py": "f3eb224c683f40151f103844e38556350cc84db8d7a889bf05a362a5db17d0f1",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.py": "534896dbde2f81bd0efa9b2372e5a1529aea01ccf272f672afa4ac05f592cb11",
+    "bridge/reports/einstein-maxwell-weyl-same-sign-candidate17-20-moving-square-contraction.md": "adaf3631e3fcbc9301449e14e769c8d52e0ca6404a397c8cbfb85e073fb5f62a"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on producer, independent verifier and focused tests",
+        "python3 -m json.tool on certificate, schema and this receipt",
+        "git diff --check on the seven scoped paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": {
+        "producer_write": 0.73,
+        "producer_check": 0.66,
+        "independent_verifier": 0.66,
+        "focused_tests": 0.64
+      },
+      "tests_run": 8,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier independently derives the normalized Cartan-square moment radius, its strict monotonicity, the moving-direction cancellation, dr/ds=alpha*delta/c(s)^2 and the unique opposite-sign zero of c(s), without importing producer functions."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutations": [
+        "Promote the ansatz obstruction to a general nonradial no-go.",
+        "Promote candidate-17 complete singular connectedness."
+      ],
+      "result": "Both mutations are rejected by fail-closed schema tests."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The committed radial contraction, common-square quotient and singular-locus inputs are hash-pinned and unchanged. The new theorem changes no shared upstream operator or schema."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Nonuniform K-node scaling, deformations inside T3(f,g)=0 and complete off-balance connectedness remain open; no theorem freeze or release is promoted."
+    }
+  },
+  "claim_boundary": "CERTIFIED for the entire uniform-scaling, occupation-transfer, moving-square ansatz: delta=0, phase-real and square-vertex points contract; alpha*delta>0 contracts; the complementary non-phase-real strata are obstructed within this ansatz. This is not a general nonradial no-go and establishes no occupation gluing, final residual, causal, observational, quantum or all-orders claim."
+}

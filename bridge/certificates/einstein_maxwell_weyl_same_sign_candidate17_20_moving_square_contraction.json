@@ -1,0 +1,108 @@
+{
+  "candidate_disposition": {
+    "candidate17": "delta<0 everywhere; the complete alpha<0 stratum contracts, while alpha>0 with mu_0 nonzero meets the interior coefficient-zero obstruction and alpha=0 has the declared boundary obstruction",
+    "candidate20_balance": "the complete singular union remains connected by the earlier theorem",
+    "candidate20_off_balance": "the alpha*delta>0 stratum contracts; the opposite-sign and zero-alpha non-phase-real strata are obstructed only within the declared ansatz"
+  },
+  "cartan_square_moment_ball": {
+    "cartan_model": "S(z)=z*z^T-(z^T*z/3)I",
+    "continuous_scaling": "for every initial square direction and r in [0,1], a continuous direction path exists with mu_square(r)=r*mu_square(1)",
+    "direction_orbits": "the moment direction is the oriented line x cross y, and SO(3) acts transitively on its unit sphere",
+    "image": "the normalized Cartan-square moment map CP2 -> so(3)^* has the complete closed unit ball as its image",
+    "inverse_radius": "u(F)=(3-sqrt(9-8*F^2))/(2*F), with u(0)=0",
+    "normalized_moment_radius": "F(u)=3*u/(2+u^2)",
+    "phase_gauge": "write z=x+i*y with x dot y=0 and |x|^2+|y|^2=1",
+    "radial_parameter": "u=2*|x|*|y| in [0,1]",
+    "strict_monotonicity": "F'(u)=3*(2-u^2)/(2+u^2)^2>0 on [0,1]"
+  },
+  "claim_boundary": "This completely classifies only the uniform K-factor scaling plus occupation-transfer ansatz with an arbitrary moving common-square direction. It does not establish candidate-17 or candidate-20 off-balance complete-singular connectedness or disconnection, classify nonuniform K-node scaling or general nonradial paths, glue occupations, perform final residual descent, or establish all-orders, causal, observational or quantum claims.",
+  "classification": {
+    "alpha_delta_positive_complete_singular_stratum_contracts_to_hub": true,
+    "candidate17_alpha_negative_complete_singular_stratum_contracts_to_hub": true,
+    "candidate17_complete_singular_rotation_zero_fibre_connected": false,
+    "candidate20_off_balance_alpha_same_sign_delta_stratum_contracts_to_hub": true,
+    "candidate20_off_balance_complete_singular_rotation_zero_fibre_connected": false,
+    "causal_residual_observational_or_quantum_claim": false,
+    "final_residual_descent": false,
+    "general_nonradial_no_go": false,
+    "nonuniform_scaling_classified": false,
+    "normalized_cartan_square_moment_image_closed_ball": true,
+    "occupation_strata_glued": false,
+    "opposite_sign_interior_zero_obstruction_certified": true,
+    "square_factor_vertex_off_balance_contracts_to_hub": true,
+    "uniform_kernel_scaling_moving_square_ansatz_classified": true,
+    "zero_alpha_nonphase_real_continuity_obstruction_certified": true
+  },
+  "complete_ansatz_disposition": {
+    "alpha_delta_negative_with_mu_nonzero": "OBSTRUCTED within this ansatz at the unique interior zero of c(s)",
+    "alpha_delta_positive": "all points contract by the moving-square path because the required normalized moment scale stays in [0,1]",
+    "alpha_zero_delta_nonzero_nonvertex_mu_nonzero": "OBSTRUCTED within this ansatz by endpoint discontinuity",
+    "delta_zero": "all points contract by the previously certified fixed-direction balance theorem",
+    "mu_zero_or_square_vertex": "all points contract through a phase-real square direction",
+    "outside_ansatz": "nonuniform node scaling, deformation of the K factor beyond scalar multiplication, and general nonradial paths remain OPEN"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_COMPLETE_UNIFORM_SCALING_MOVING_SQUARE_ANSATZ_ON_BOTH_SINGULAR_COMPONENTS",
+  "interpretation": "The fixed-direction residual is partly removable: the Cartan-square moment can move through a complete ball and cancels the scaled kernel moment whenever alpha and delta have the same sign. The complementary sign crossing is a genuine zero-coefficient obstruction to the entire uniform-scaling/moving-square ansatz, but not to paths that deform the K factor or scale its two nodes nonuniformly.",
+  "lifecycle_state": "CLASSIFIED",
+  "moving_square_ansatz": {
+    "endpoint": "at s=0 the K factor is at its vertex and the square direction is phase-real, so the endpoint lies in the connected double-singular hub",
+    "exact_cancellation": "-s*alpha*mu_0+c(s)*r(s)*mu_0=0",
+    "initial_kernel_moment": "M_K=-alpha*mu_0",
+    "initial_square_coefficient": "alpha=omega_plus*A_plus-omega_minus*A_minus",
+    "moment_scale_derivative": "dr/ds=alpha*delta/c(s)^2",
+    "occupation_fraction": "s=t^2 in [0,1]",
+    "opposite_sign_zero": "if alpha*delta<0 then s_0=-delta/(alpha-delta) lies in (0,1), c(s_0)=0, and the remaining kernel moment -s_0*alpha*mu_0 is nonzero when mu_0 is nonzero",
+    "required_moment_scale": "r(s)=s*alpha/c(s)",
+    "sign_compatible_case": "if alpha*delta>0 then c(s) never vanishes and r(s) lies in [0,1], with r(0)=0 and r(1)=1",
+    "square_coefficient": "c(s)=s*alpha+(1-s)*delta",
+    "total_coefficient": "delta=omega_plus*N_plus-omega_minus*N_minus",
+    "zero_alpha_boundary": "if alpha=0, delta is nonzero, the square factor is nonvertex and mu_0 is nonzero, then every s<1 forces mu_square(s)=0, preventing continuity to mu_0 at s=1"
+  },
+  "next_gate": "on the remaining alpha*delta<=0 non-phase-real strata, allow independent K-node scaling and deformation inside T3(f,g)=0, or construct an invariant that survives those enlarged paths",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.py",
+    "generator_sha256": "dd89f26f4be8ada21da528a236da7c63fbef49000edfc60f8916f58113375529",
+    "inputs": {
+      "common_square": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.json",
+        "sha256": "c1ed11a9fb9b168b7f1552f7f0fc372c12dc6840565bf7e4984a389dc7db5064"
+      },
+      "radial_contraction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.json",
+        "sha256": "7980fa6c403b4ba1cdf055f42d426301c6477d6ecf02c833a734a4ece7a03c62"
+      },
+      "singular_locus": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.json",
+        "sha256": "6b54d7672b9849998220716762f66a4ff81c4156dfd782c1b596c245862cb371"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_MOVING_SQUARE_CONTRACTION",
+  "result_state": "UNIFORM_KERNEL_SCALING_WITH_ARBITRARY_MOVING_SQUARE_DIRECTION_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-same-sign-candidate17-20-moving-square-contraction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.schema.json",
+  "schema_sha256": "fd76b2c045ce0e7bc91301dfc34c5520c19159ed9095188ee2307ca46e31e96a",
+  "scope": {
+    "background": "candidates 17 and 20 separately; candidate 20 balance, candidatewise off-balance sign-compatible strata and the complementary ansatz obstruction are retained separately",
+    "boundaries": "closed S1_L times S2 before node-phase, lifted-rotation or final residual quotient",
+    "carrier": "both complete fixed-positive-active-occupation singular components under uniform scaling of the arbitrary K factor, arbitrary continuous motion of the receiving common-square direction, and exact occupation transfer",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "correction_class": "bounded or finite-quasiperiodic second-order tangent cone",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidate-specific signed compact momenta, never identified across candidates",
+    "m": "all m=-2,...,2 in the binary-quartic carrier",
+    "omega": "candidate-specific difference collision into L=1 extra output",
+    "parity": "two exact factorized parity eigenchannels",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction"
+  ]
+}
