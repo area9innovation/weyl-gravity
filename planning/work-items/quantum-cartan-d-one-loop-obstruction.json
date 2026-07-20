@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-cartan-d-one-loop-obstruction",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-cartan-d-one-loop-obstruction",
+  "source": {"path": "planning/work-items/quantum-cartan-d-one-loop-obstruction.json", "span": null},
+  "body": {
+    "owner": "quantum",
+    "state": "PROPOSED",
+    "objective": "Compute the first quantum Cartan defect A_D^(1)=[Q,iota_1]+[Q_1,iota_D]-L_D^(1) using the completed local BV anomaly/QME data, keeping strict pure Weyl gravity and the tau-adic compensator extension as distinct theories and raw D distinct from K_Berger.",
+    "stop_condition": "Define the renormalized Ward operator and exact local/relative cohomology target; import the appropriate classical contraction by hash; compute every bulk candidate and consistency relation; and classify the defect as ZERO, EXACT_REMOVABLE, NONTRIVIAL_ANOMALY, or UNDEFINED_ANALYTICALLY in each declared theory/background. If the compensator contraction or Q1 data are missing, land a precise obstruction/missing-object theorem and a typed producer request rather than assuming an extension.",
+    "current_gate": "first coefficient-bearing quantum disposition of the D/K Cartan identity after local QME classification",
+    "forbid": "no strict/compensator identification; no raw-D/K_Berger identification; no residual anomaly inference from local Weyl anomaly alone; no Euclidean-to-Lorentzian, Hadamard, positivity, particle, scattering, or unitarity promotion",
+    "depends_on": [],
+    "activates": ["quantum D-quotient verdict at one local loop order", "corrected residual transfer only where QME and Cartan gates both pass"],
+    "allowed_paths": ["quantum-weyl/local_bv/", "quantum-weyl/transfer/", "quantum-weyl/reports/", "quantum-weyl/atlas/", "reports/", "notes/d-quotient-quantum-team-brief.md", "planning/forge-requests/"],
+    "resource_hint": "QUANTUM QUEUE HEAD. Start from LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT and the hashed classical D/K contractions. Classify the operator defect before attempting residual transfer.",
+    "input_commit": "c6d1c0ba",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
