@@ -1,0 +1,44 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_SINGULAR_SMOOTH_BRIDGE_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Exact smooth fixed-occupation rotation-zero path joining one point in each candidate-18 singular component.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.json": "9a6ba633060c638e824023c786ecb98e2a008da6f9c848a944d08230c429d6c1",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.py": "3028153205048aada58a6785746c2e34a4fda36bc4b718108baa27dd6b96b73c",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.py": "934ef1a9feeff93529af04529aac89fe491c8254080a3c23e22bd950c7108783",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.py": "4968bd4ac6f6fc7e07bee30b5688ee4a806c83803faa596bf0c4de628b67886f",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.schema.json": "a151a66bd67540af96db5f381e222e2b93a0f85e358b1dff58a395761fe3d120",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-candidate18-singular-smooth-bridge.md": "7785c50955c8d79bc3889cebbea950984c29e8044bbb415db3b0740866ac7d58"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile", "python3 -m json.tool", "git diff --check"]},
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": {"producer_check": 0.58, "independent_verifier": 0.49, "focused_tests": 0.59},
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier independently reconstructs the A-normalized and beta-normalized paths, checks both fixed occupations symbolically, and checks the two endpoint parity vectors."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutation": "Promote full_rotation_zero_fibre_connected from false to true.",
+      "result": "The schema rejects the promotion."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESSED_INPUT_REPLAY",
+      "reason": "The singular separation and exact current block are hash-pinned; only a single explicit bridge path is promoted."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is not a complete global connectedness theorem or programme freeze."
+    }
+  },
+  "claim_boundary": "CERTIFIED for one bridge at every positive occupation pair. The entire zero fibre and global leaf space remain open."
+}

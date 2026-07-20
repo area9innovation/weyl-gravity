@@ -1,0 +1,78 @@
+{
+  "claim_boundary": "This connects one certified point in each singular component through the smooth carrier at every positive occupation. It does not prove the entire zero fibre connected, classify the global leaf space, glue occupations, perform final residual descent, or establish all-orders, causal, observational or quantum claims.",
+  "classification": {
+    "all_singular_points_connected_to_bridge": false,
+    "bridge_exists_at_every_positive_occupation_pair": true,
+    "bridge_interior_complex_smooth": true,
+    "candidate18_singular_components_joined_in_full_rotation_zero_fibre": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "final_residual_descent": false,
+    "full_rotation_zero_fibre_connected": false,
+    "global_leaf_space_classified": false,
+    "node_phase_actions_free_along_bridge": true,
+    "occupation_strata_glued": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_EVERY_POSITIVE_ACTIVE_OCCUPATION_PAIR_ON_CANDIDATE18",
+  "interpretation": "Candidate 18's disconnected singular subquotient does not disconnect the complete fixed-occupation rotation-zero carrier: its two labelled singular pieces are joined by an explicit smooth axisymmetric path. This removes one topology obstruction but is not a global connectedness theorem.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "determine whether every candidate-18 rotation-zero component meets this central bridge, including current-degenerate strata and all ten spectator directions",
+  "path": {
+    "angular_vector": "e_0=(0,0,1,0,0)",
+    "endpoint_zero_pi_over_2": [
+      "Sigma_minus endpoint with the minus factor zero",
+      "Sigma_plus endpoint with the plus factor zero"
+    ],
+    "field_assignment": "f_plus=u_1*e_0, f_minus=u_2*e_0, g_plus=v_1*e_0, g_minus=v_2*e_0; all ten spectators vanish",
+    "fixed_occupations": "u(theta)^T*A*u(theta)/6=N_plus and beta*v(theta)^T*v(theta)/6=N_minus exactly",
+    "interior": "for 0<theta<pi/2 both 5x2 factors are nonzero rank one, so the complex resonance carrier is smooth",
+    "internal_unit_vector": "w(theta)=(cos(theta),sin(theta))",
+    "negative_amplitude": "sqrt(6*N_minus/beta)*w(theta)",
+    "negative_metric": "beta*I_2, beta=6*h_minus>0",
+    "parameter": "0<=theta<=pi/2",
+    "positive_amplitude": "sqrt(6*N_plus/(w(theta)^T*A*w(theta)))*w(theta)",
+    "positive_denominator": "a + 2*c*sin(theta)*cos(theta)",
+    "positive_metric": "A=[[a,c],[c,a]], with a+c=w_y/2>0 and a-c=w_x/6>0",
+    "rotation_moment_maps": "all three vanish for every theta because only m=0 is occupied"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.py",
+    "generator_sha256": "3028153205048aada58a6785746c2e34a4fda36bc4b718108baa27dd6b96b73c",
+    "inputs": {
+      "current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
+        "sha256": "74bfe7b00c1e7ebe856c54d0275661954ede15c23e3c62363b4928149c83b72b"
+      },
+      "separation": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.json",
+        "sha256": "d5d320e7e6cd7c43c6b433529cf78d361323fbdb1ff69619605a77fc353889a9"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_SINGULAR_SMOOTH_BRIDGE",
+  "result_state": "CANDIDATE18_TWO_SINGULAR_COMPONENTS_CONNECTED_THROUGH_SMOOTH_ROTATION_ZERO_CARRIER",
+  "schema": "einstein-maxwell-weyl-same-sign-candidate18-singular-smooth-bridge-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.schema.json",
+  "schema_sha256": "a151a66bd67540af96db5f381e222e2b93a0f85e358b1dff58a395761fe3d120",
+  "scope": {
+    "background": "candidate 18 only",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "an explicit central-m axisymmetric path in the complete candidate-18 fixed-positive-occupation resonance variety",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidate-specific allowed compact momenta, never identified across rho",
+    "m": "all m=-2,...,2",
+    "omega": "candidate-specific certified SUM or DIFFERENCE collision",
+    "parity": "both exact factorized parity channels",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge"
+  ]
+}

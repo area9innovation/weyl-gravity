@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "path", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-same-sign-candidate18-singular-smooth-bridge-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_SINGULAR_SMOOTH_BRIDGE"},
+    "classification": {
+      "type": "object",
+      "properties": {
+        "candidate18_singular_components_joined_in_full_rotation_zero_fibre": {"const": true},
+        "bridge_interior_complex_smooth": {"const": true},
+        "full_rotation_zero_fibre_connected": {"const": false}
+      },
+      "required": ["candidate18_singular_components_joined_in_full_rotation_zero_fibre", "bridge_interior_complex_smooth", "full_rotation_zero_fibre_connected"],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
