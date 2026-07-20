@@ -88,5 +88,4 @@ CLOSE-OUT: DONE — the formal local all-order induction closes conditionally
 on the declared QAP, and the missing regulator/QAP construction is isolated
 as the next independent gate.
 
-EVIDENCE:
-`quantum-weyl/anomalies/certificates/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json`
+EVIDENCE: `quantum-weyl/anomalies/certificates/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json`
