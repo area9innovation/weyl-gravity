@@ -1,0 +1,82 @@
+{
+  "schema": "verification-tier-receipt-v1",
+  "result_id": "ASYMPTOTIC_BACH_RAW_FLUX_CORNER_OBSTRUCTION",
+  "work_item": "sf:program/work/bridge-asymptotic-bach-charge-phase-space",
+  "recorded_at": "2026-07-20T09:41:16Z",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "claim_boundary": "Reduced Cartesian-TT raw fourth-order current on two-term p=0/p=1 large-r data at I+ in one fixed Minkowski conformal completion. This certifies the first boundary/corner obstruction only; it does not construct or rule out a counterterm-improved full tensor BV-BFV phase space and does not compute charges, particles, scattering, stability or unitarity.",
+  "content_hashes": {
+    "bridge/certificates/asymptotic_bach_raw_flux_corner_obstruction.json": "1cef43665f6ff2917669d7e762e20c527b3b4b001f8c77a1581856d93c35e10c",
+    "bridge/einstein_sector/asymptotic_bach_raw_flux_corner_obstruction.py": "0f4072ea68d178a8155afeccf8fc2ff3e620320c838efcde05534fc55522d76e",
+    "bridge/einstein_sector/schema/asymptotic_bach_raw_flux_corner_obstruction.schema.json": "f6334c906f383c44b9502883820acbd688bbaac4cbd650728644fc2c4f79bf62",
+    "bridge/einstein_sector/verify_asymptotic_bach_raw_flux_corner_obstruction.py": "1386b153bf3d2d141ec3286463c7d4f29701668afc0d5096e969921960bff2a2",
+    "bridge/einstein_sector/tests/test_asymptotic_bach_raw_flux_corner_obstruction.py": "317a938266690d2260f71c85003ee3244fe11aa34d0811cc4f1b7c7131336383",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "33930436721ec0dfc3e08cf5605db1ee2aa053f74950cd54233bf7d12f3f9cc0",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "52ae14737f0dfe0915bd0070179e8a9ee485d12d6cc31622ff8e1a6cfb6a04ac",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "86bc273583c2da96cef3a6f79b8f2740d1aac02be60a2a7e6b39832ba95ededa",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "d705ef98b65e23c96a476448c49478306282f23f96139b78f429f4dc0f47f2da",
+    "reports/asymptotic-bach-raw-flux-corner-obstruction.md": "1cd0a379be871c8fab90455125c7ec21a7a21ea2b297cd31adff8f38dad7c28c",
+    "notes/d-quotient-einstein-team-brief.md": "d4632199c7d398829576514fdc3466b0b48682c4ee6c0cf0a7e7d7abbde1aadc"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/asymptotic_bach_raw_flux_corner_obstruction.py bridge/einstein_sector/verify_asymptotic_bach_raw_flux_corner_obstruction.py bridge/einstein_sector/tests/test_asymptotic_bach_raw_flux_corner_obstruction.py bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py",
+        "jsonschema Draft202012Validator.check_schema on bridge/einstein_sector/schema/asymptotic_bach_raw_flux_corner_obstruction.schema.json",
+        "git diff --check -- <scoped asymptotic certificate, atlas, report and note paths>"
+      ],
+      "elapsed_seconds": 0.25
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m bridge.einstein_sector.asymptotic_bach_raw_flux_corner_obstruction --verify bridge/certificates/asymptotic_bach_raw_flux_corner_obstruction.json",
+        "python3 bridge/einstein_sector/verify_asymptotic_bach_raw_flux_corner_obstruction.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_asymptotic_bach_raw_flux_corner_obstruction"
+      ],
+      "tests": 4,
+      "elapsed_seconds": 1.52
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The generated Einstein residual-atlas fragment directly consumes the obstruction certificate and preserves its fail-closed lifecycle.",
+      "commands": [
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ],
+      "tests": 121,
+      "elapsed_seconds": 1.02
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze/tag, shared core algebra change, release preparation or Lorentzian-causal lifecycle promotion was requested; the result is an explicitly reduced first-obstruction certificate."
+    }
+  },
+  "science_forge_shadow": {
+    "status": "FINDINGS_RECORDED_NOT_A_PASS",
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 3.27,
+    "findings": [
+      "bridge certificate audit existence=ok, drift=FAIL, edges=ok, dag=ok, gates=ok",
+      "coverage census drift: 1210 certificates versus baseline 976",
+      "unpinned dirty development Forge binary whose build revision differs from the stdlib checkout"
+    ],
+    "effect_on_claim": "The advisory rail exited zero by design; its findings are recorded but are not counted as verification and do not promote the claim."
+  },
+  "higher_lifecycle_exclusions": [
+    "full tensor BV-BFV null-infinity phase space",
+    "boundary counterterm or renormalized potential",
+    "ghost, antifield or Coulombic boundary domains",
+    "I-minus and i0 corner matching",
+    "P0 or D_M charge and flux",
+    "Einstein/additional-Bach scattering classification",
+    "LORENTZIAN-CAUSAL propagation",
+    "particle, stability, unitarity or quantum claim"
+  ]
+}

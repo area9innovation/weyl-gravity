@@ -201,6 +201,70 @@
       }
     },
     {
+      "claim_boundary": "This LOCAL-ALGEBRAIC, REDUCED-MODE row certifies the first null-infinity boundary/corner obstruction only. It neither constructs nor rules out a counterterm-improved tensor BV-BFV phase space, and it computes no asymptotic charge, particle, scattering, stability, unitarity, or compact-to-asymptotic mode map.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/asymptotic_bach_raw_flux_corner_obstruction.json",
+          "result_id": "ASYMPTOTIC_BACH_RAW_FLUX_CORNER_OBSTRUCTION",
+          "sha256": "1cef43665f6ff2917669d7e762e20c527b3b4b001f8c77a1581856d93c35e10c"
+        }
+      ],
+      "id": "einstein.asymptotic.minkowski.weyl.raw_flux_corner_obstruction",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The reduced fourth-order indicial carrier has p=0 boundary-metric and p=1 same-falloff Einstein/Bach channels; full tensor reconstruction remains open.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The raw cut current diverges linearly on generic p0-p0 data, while fixing p0 makes the p1-p1 raw I+ form vanish; the finite p0-p1 cross term is not a radiative p1-p1 form.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "Full tensor repeated-root reconstruction, polyhomogeneous logarithms, Coulombic data and the i0/I+ corner prescription are not classified.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No bounded compact second-order correction class is declared on this asymptotic linear seed.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "No retarded full tensor BV-BFV complex or finite renormalized null-infinity phase space is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No smooth-secular compact correction theorem transfers to this background.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "Compact Taub moment maps do not transfer to this null-boundary carrier; P0 and D_M charges remain open, H_ESU is not boundary-preserving on the fixed patch, and D_rad has no certified real Lorentzian map.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "Minkowski space in outgoing retarded coordinates",
+        "boundaries": "large-r cuts of I+ in one fixed conformal completion; I-, i0 and corner matching undeclared",
+        "carrier": "two-term scalar amplitudes for one TT polarization and one angular Laplacian eigenmode",
+        "charge_sector": "radiative p=1 and boundary-metric p=0 indicial data; Coulombic aspects absent",
+        "degree": 1,
+        "ell": "scalar-amplitude angular eigenvalue L; no full tensor-harmonic classification",
+        "k": "radial asymptotic expansion, not compact momentum",
+        "m": "suppressed by angular orthogonality",
+        "omega": "arbitrary retarded-time profiles in the formal p=0 and p=1 indicial channels",
+        "parity": "one flat TT polarization; the same reduced algebra applies to the other",
+        "theory": "linearized pure-Weyl gravity reduced Cartesian TT polarization"
+      }
+    },
+    {
       "claim_boundary": "This is a compact pre-final-residual linear phase-space entry, not an asymptotic graviton, scattering, or all-orders Einstein-sector theorem.",
       "descriptions": {
         "causal": "OPEN",
@@ -11107,7 +11171,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "65ed59a11a0a2f73983dbcbf2fef97b7c5db6fb2ce4bd11e277ea648032b6d1b",
+  "generated_by_sha256": "33930436721ec0dfc3e08cf5605db1ee2aa053f74950cd54233bf7d12f3f9cc0",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

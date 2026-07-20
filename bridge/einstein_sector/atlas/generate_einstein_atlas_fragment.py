@@ -185,6 +185,7 @@ CERTIFICATES = {
     "relative_candidate13_derived_source_crosswalk": ROOT / "bridge/certificates/EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1.json",
     "relative_current_cofiber_receiver": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1.json",
     "relative_full_domain_f2_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
+    "asymptotic_raw_flux_corner": ROOT / "bridge/certificates/asymptotic_bach_raw_flux_corner_obstruction.json",
     "homogeneous_cofiber": ROOT / "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
     "twist_cofiber": ROOT / "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
     "generic_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
@@ -290,6 +291,52 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","The bounded reduced-source pullback is exactly {0}: the common zero of the typed receiver is the origin by the exact scalar separator."),("CERTIFIED","The smooth derived source is the nontrivial five-moment-map zero locus because the pressure and resonance components have secular inverses."),("NO_CERTIFIED_MAP","No background-specific retarded relative correction complex is certified.")),
             _evidence("relative_candidate13_derived_source_crosswalk","relative_linear_triangle","relative_current_cofiber_receiver","relative_full_domain_f2_obstruction","ell2_two_abs_momentum_candidate13_complete_mixed_cone","candidate13_scalar_separation_no_go","finite_generic_bounded_zero_block","candidate13_bounded_zero_frequency","candidate13_mixed_pressure_obstruction","branch_dictionary"),
             "This is a same-background REDUCED-MODE bounded and smooth derived-source crosswalk. The bounded pullback is certified but contains only the origin; the smooth pullback is nontrivial. The frozen-unary full-domain support-local f2 remains obstructed, no support-local derived BV subcomplex is constructed, arity three is not authorized, and higher maps remain fail-closed.",
+        ),
+        _entry(
+            "einstein.asymptotic.minkowski.weyl.raw_flux_corner_obstruction",
+            _scope(
+                theory="linearized pure-Weyl gravity reduced Cartesian TT polarization",
+                background="Minkowski space in outgoing retarded coordinates",
+                boundaries="large-r cuts of I+ in one fixed conformal completion; I-, i0 and corner matching undeclared",
+                charge_sector="radiative p=1 and boundary-metric p=0 indicial data; Coulombic aspects absent",
+                carrier="two-term scalar amplitudes for one TT polarization and one angular Laplacian eigenmode",
+                degree=1,
+                parity="one flat TT polarization; the same reduced algebra applies to the other",
+                ell="scalar-amplitude angular eigenvalue L; no full tensor-harmonic classification",
+                m="suppressed by angular orthogonality",
+                k="radial asymptotic expansion, not compact momentum",
+                omega="arbitrary retarded-time profiles in the formal p=0 and p=1 indicial channels",
+            ),
+            {
+                "causal": "NO_CERTIFIED_MAP",
+                "symplectic": "OBSTRUCTED",
+                "nonlinear": "NOT_APPLICABLE",
+                "observational": "NO_CERTIFIED_MAP",
+                "quantum": "NO_CERTIFIED_MAP",
+            },
+            (
+                "CERTIFIED",
+                "The reduced fourth-order indicial carrier has p=0 boundary-metric and p=1 same-falloff Einstein/Bach channels; full tensor reconstruction remains open.",
+            ),
+            (
+                "OBSTRUCTED",
+                "The raw cut current diverges linearly on generic p0-p0 data, while fixing p0 makes the p1-p1 raw I+ form vanish; the finite p0-p1 cross term is not a radiative p1-p1 form.",
+            ),
+            (
+                "NOT_APPLICABLE",
+                "Compact Taub moment maps do not transfer to this null-boundary carrier; P0 and D_M charges remain open, H_ESU is not boundary-preserving on the fixed patch, and D_rad has no certified real Lorentzian map.",
+            ),
+            (
+                "OPEN",
+                "Full tensor repeated-root reconstruction, polyhomogeneous logarithms, Coulombic data and the i0/I+ corner prescription are not classified.",
+            ),
+            _second_order(
+                ("NOT_APPLICABLE", "No bounded compact second-order correction class is declared on this asymptotic linear seed."),
+                ("NOT_APPLICABLE", "No smooth-secular compact correction theorem transfers to this background."),
+                ("NO_CERTIFIED_MAP", "No retarded full tensor BV-BFV complex or finite renormalized null-infinity phase space is certified."),
+            ),
+            _evidence("asymptotic_raw_flux_corner"),
+            "This LOCAL-ALGEBRAIC, REDUCED-MODE row certifies the first null-infinity boundary/corner obstruction only. It neither constructs nor rules out a counterterm-improved tensor BV-BFV phase space, and it computes no asymptotic charge, particle, scattering, stability, unitarity, or compact-to-asymptotic mode map.",
         ),
         _entry(
             "einstein.ph.em_wm.standard.generic_radiative",
@@ -3319,6 +3366,19 @@ def build() -> dict[str, object]:
         raise AssertionError("aligned mixed block over-promoted the complete orbit")
     if not records["branch_dictionary"]["classification"]["bridge_1_activation_gate_satisfied"]:
         raise AssertionError("relative branch dictionary did not activate compact-product linear bridge 1")
+    asymptotic_raw_flux = records["asymptotic_raw_flux_corner"]
+    if not (
+        asymptotic_raw_flux["classification"]["p0_generic_cut_flux_divergence_certified"]
+        and asymptotic_raw_flux["classification"]["fixed_boundary_p1_raw_flux_radical"]
+        and not asymptotic_raw_flux["classification"]["nondegenerate_finite_raw_phase_space_constructed"]
+        and not asymptotic_raw_flux["classification"]["full_tensor_BV_BFV_phase_space_constructed"]
+    ):
+        raise AssertionError("asymptotic raw-flux corner obstruction changed")
+    if (
+        asymptotic_raw_flux["verdicts"]["asymptotically_flat_D"] != "PHASE_SPACE_NOT_CLOSED"
+        or asymptotic_raw_flux["verdicts"]["Einstein_sector"] != "EINSTEIN_OPEN"
+    ):
+        raise AssertionError("asymptotic phase-space verdict was over-promoted")
     triangle = records["relative_linear_triangle"]
     if triangle["result_id"] != "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1" or not all(triangle["acceptance_flags"].values()):
         raise AssertionError("full relative linear triangle input changed")

@@ -154,6 +154,28 @@ scattering; a nondegenerate symplectic and charge comparison is independently
 required.  The result is scoped and does not yet classify null-infinity
 corners or compensator-generated Einstein-Hilbert terms.
 
+The first raw null-infinity flux gate is now exact on the reduced TT
+indicial carrier.  For the action
+\(S_{\rm red}=\frac12\int(\Box\phi)^2\), the unrenormalized cut current has
+
+```text
+p0-p0:  O(r) generic divergence, with an exact u-derivative coefficient;
+p0-p1:  finite cross term, but no p1-p1 radiative form;
+p1-p1:  zero r^1, r^0 and r^-1 coefficients, hence zero raw I+ flux.
+```
+
+Thus retaining the boundary-metric `p=0` mode gives a divergent cut form,
+while fixing it makes the `p=1` carrier radical.  This is the first certified
+boundary/corner obstruction, not a full tensor BV--BFV no-go.  `P0` and
+`D_M` remain `OPEN`, `H_ESU` is `OBSTRUCTED` on one fixed Minkowski patch
+because it is not boundary-preserving there, and `D_rad` remains
+`NO_CERTIFIED_MAP`.  Atlas row
+`einstein.asymptotic.minkowski.weyl.raw_flux_corner_obstruction` records the
+fail-closed lifecycle.  The next gate is the covariant tensor Bondi
+Lee--Wald potential, boundary counterterm and `i0`/`I+` corner prescription;
+ghosts, antifields, Coulombic data, `I-` matching, charges and scattering
+remain unconstructed.
+
 ## Work package E-D1: asymptotically flat Lorentzian BV--BFV complex
 
 Construct the retarded/advanced linear BV complex with declared spaces and

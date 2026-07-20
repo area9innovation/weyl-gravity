@@ -18,6 +18,19 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
     def test_stable_identifiers_are_unique(self) -> None:
         self.assertEqual(len(self.entries), len(self.value["entries"]))
 
+    def test_asymptotic_raw_flux_gate_is_fail_closed(self) -> None:
+        entry = self.entries["einstein.asymptotic.minkowski.weyl.raw_flux_corner_obstruction"]
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+        self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "NOT_APPLICABLE")
+        self.assertEqual(entry["mode_data"]["lee_wald"]["status"], "OBSTRUCTED")
+        self.assertIn("p0-p1 cross term", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertEqual(
+            entry["mode_data"]["second_order"]["causal_retarded"]["status"],
+            "NO_CERTIFIED_MAP",
+        )
+        self.assertIn("computes no asymptotic charge", entry["claim_boundary"])
+
     def test_twist_exceptional_is_independence_witness(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.twist_exceptional_independence"]
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")

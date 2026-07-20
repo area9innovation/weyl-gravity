@@ -44,6 +44,24 @@ def verify() -> None:
             if evidence["sha256"] != _sha256(path) or evidence["result_id"] != payload["result_id"]:
                 raise AssertionError(f"stale evidence link: {entry['id']}")
 
+    asymptotic_raw_flux = by_id["einstein.asymptotic.minkowski.weyl.raw_flux_corner_obstruction"]
+    if asymptotic_raw_flux["descriptions"] != {
+        "causal": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+    }:
+        raise AssertionError("asymptotic raw-flux lifecycle changed")
+    if asymptotic_raw_flux["mode_data"]["lee_wald"]["status"] != "OBSTRUCTED":
+        raise AssertionError("asymptotic raw-flux obstruction was hidden")
+    if "p0-p1 cross term" not in asymptotic_raw_flux["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("asymptotic raw-flux dichotomy was weakened")
+    if asymptotic_raw_flux["mode_data"]["second_order"]["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("asymptotic causal phase space was over-promoted")
+    if "computes no asymptotic charge" not in asymptotic_raw_flux["claim_boundary"]:
+        raise AssertionError("asymptotic charge boundary disappeared")
+
     generic_extra = by_id["einstein.ph.wm.extra.generic_p_primary"]
     if generic_extra["descriptions"]["nonlinear"] != "OBSTRUCTED":
         raise AssertionError("generic pure-extra nonlinear status drifted")

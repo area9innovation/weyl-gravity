@@ -1,0 +1,151 @@
+{
+  "claim_boundary": "This exact obstruction is confined to the reduced flat TT raw fourth-order current. It proves that the existing p0/p1 seed is not yet a finite nondegenerate null-infinity phase space. It does not rule out an improved renormalized tensor BV-BFV phase space, compute asymptotic charges, identify particles, or establish scattering, stability or unitarity.",
+  "classification": {
+    "D_M_charge_computed": false,
+    "Einstein_and_additional_scattering_classified": false,
+    "H_ESU_fixed_patch_charge_applicable": false,
+    "P0_charge_computed": false,
+    "boundary_counterterm_constructed": false,
+    "causal_particle_stability_or_quantum_claim": false,
+    "finite_p0_p1_cross_term_certified": true,
+    "fixed_boundary_p1_raw_flux_radical": true,
+    "full_tensor_BV_BFV_phase_space_constructed": false,
+    "nondegenerate_finite_raw_phase_space_constructed": false,
+    "p0_divergence_is_corner_derivative": true,
+    "p0_generic_cut_flux_divergence_certified": true,
+    "raw_reduced_current_derived": true
+  },
+  "declared_raw_domain": {
+    "Coulombic_data": "NO_CERTIFIED_DOMAIN",
+    "I_minus_matching": "NO_CERTIFIED_MAP",
+    "antifields": "NO_CERTIFIED_DOMAIN",
+    "boundary_metric_fixed_subspace": "p=0 data excluded",
+    "fields": [
+      "p=0: phi=f_0(u,x)+r^-1 f_1(u,x)+O(r^-2)",
+      "p=1: phi=r^-1 g_0(u,x)+r^-2 g_1(u,x)+O(r^-3)"
+    ],
+    "ghosts": "NO_CERTIFIED_DOMAIN",
+    "i0_corner_matching": "OPEN; the divergent coefficient is an exact u-derivative corner term",
+    "polyhomogeneous_logs": "OPEN; full tensor repeated-root reconstruction not performed"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G1_REDUCED_TT_RAW_CURRENT_NULL_INFINITY",
+  "generator_charge_disposition": {
+    "D_M": {
+      "boundary_action": "tangent to I+ and preserves the reduced strong core",
+      "final_status": "OPEN",
+      "raw_charge": "OBSTRUCTED_BY_DIVERGENT_OR_RADICAL_RAW_FORM"
+    },
+    "D_rad": {
+      "boundary_action": "no real Lorentzian boundary lift declared",
+      "final_status": "NO_CERTIFIED_MAP",
+      "raw_charge": "NO_CERTIFIED_MAP"
+    },
+    "H_ESU": {
+      "boundary_action": "not tangent to the boundary of one fixed Minkowski patch because H_ESU(Omega)|I+=-1",
+      "final_status": "OBSTRUCTED",
+      "raw_charge": "NOT_APPLICABLE_ON_THIS_FIXED_PATCH_PHASE_SPACE"
+    },
+    "P0": {
+      "boundary_action": "tangent to I+",
+      "final_status": "OPEN",
+      "raw_charge": "OBSTRUCTED_BY_DIVERGENT_OR_RADICAL_RAW_FORM"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "derive the full tensor Bondi Lee-Wald potential, boundary counterterm and i0/I+ corner prescription, then repeat the P0 and D_M differentiability tests; H_ESU requires a different boundary architecture",
+  "obstruction_theorem": {
+    "conclusion": "No nondegenerate finite raw Lee-Wald radiative phase space exists on the declared p0/p1 seed without a boundary counterterm/renormalized potential or additional boundary variables.",
+    "cross_term": "The finite p0-p1 term does not supply a p1-p1 radiative symplectic form and cannot make the fixed-boundary p1 carrier nondegenerate.",
+    "first_missing_object": "a covariant tensor boundary counterterm and corner prescription whose improved current is finite, conserved and gauge compatible",
+    "with_p0": "The unrenormalized cut density has a generic O(r) p0-p0 divergence. Its coefficient is an exact u derivative, so any whole-I cancellation is a corner condition, not a finite cutwise Lee-Wald form.",
+    "without_p0": "Fixing the unphysical boundary metric removes p0, but the complete p1-p1 raw flux is O(r^-2) after the r^2 cut measure and vanishes at I+."
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/asymptotic_bach_raw_flux_corner_obstruction.py",
+    "generator_sha256": "0f4072ea68d178a8155afeccf8fc2ff3e620320c838efcde05534fc55522d76e",
+    "inputs": {
+      "asymptotic_seed": {
+        "path": "bridge/certificates/d_quotient_asymptotic_seed.json",
+        "sha256": "ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685"
+      },
+      "bondi_indicial": {
+        "path": "bridge/certificates/bondi_bach_indicial.json",
+        "sha256": "0c66fcf5f86f009769c652ed5aac8bcd117f9153c1e5d1d7d64f6ea53a617eee"
+      },
+      "einstein_defect": {
+        "path": "bridge/certificates/einstein_defect_asymptotics.json",
+        "sha256": "75780eb8b9800ff035897b725d67a099d658c0a7779c2ecd878bf730725639a0"
+      },
+      "flat_restriction": {
+        "path": "bridge/certificates/flat_einstein_symplectic_restriction.json",
+        "sha256": "8e3e690b5a1f62d79cdd587c2fa35c9f958604c01ce4f2a08749c367d5ab8f6d"
+      }
+    }
+  },
+  "raw_flux_algebra": {
+    "action": "S_red=(1/2) integral (Box phi)^2",
+    "current": "j^mu=chi_1 nabla^mu phi_2-nabla^mu chi_1 phi_2-(1<->2)",
+    "cut_density": "r^2*j^r before the common positive sphere harmonic norm",
+    "p0_p0": {
+      "coefficient": "-2*(-f_0(u)*Derivative(g_0(u), (u, 2)) + g_0(u)*Derivative(f_0(u), (u, 2)))",
+      "corner_primitive": "2*f_0(u)*Derivative(g_0(u), u) - 2*g_0(u)*Derivative(f_0(u), u)",
+      "leading_power": "r^1",
+      "verdict": "GENERIC_LINEAR_CUT_DIVERGENCE"
+    },
+    "p0_p1": {
+      "coefficient": "-2*(g_0(u)*Derivative(f_0(u), (u, 2)) - Derivative(f_0(u), u)*Derivative(g_0(u), u))",
+      "leading_power": "r^0",
+      "verdict": "FINITE_CROSS_TERM_NOT_A_P1_P1_RADIATIVE_FORM"
+    },
+    "p1_p1": {
+      "first_nonzero_coefficient": "2*(L*f_0(u)*Derivative(g_0(u), u) - L*g_0(u)*Derivative(f_0(u), u) - f_0(u)*Derivative(g_1(u), (u, 2)) + g_0(u)*Derivative(f_1(u), (u, 2)) + Derivative(f_0(u), u)*Derivative(g_1(u), u) - Derivative(f_1(u), u)*Derivative(g_0(u), u))",
+      "first_nonzero_power": "r^-2",
+      "powers_r1_r0_rminus1": [
+        "0",
+        "0",
+        "0"
+      ],
+      "verdict": "ZERO_RAW_NULL_INFINITY_FLUX"
+    },
+    "potential": "theta^mu=chi nabla^mu(delta phi)-nabla^mu(chi) delta phi, chi=Box phi"
+  },
+  "repeated_root_and_reconstruction_audit": {
+    "Jordan_log_channels": "OPEN in the full tensor/polyhomogeneous complex",
+    "bulk_biwave": "(Box)^2 phi=0 has the Einstein kernel chi=Box phi=0 and generalized defect chi!=0",
+    "metric_reconstruction": "OPEN beyond the reduced Cartesian TT representative",
+    "p0": "changes the leading unphysical boundary metric",
+    "p1": "contains Einstein radiation and the same-falloff Bach defect beginning with kappa; kappa=0 is not sufficient for Einstein"
+  },
+  "result_id": "ASYMPTOTIC_BACH_RAW_FLUX_CORNER_OBSTRUCTION",
+  "result_state": "FIRST_NULL_INFINITY_BOUNDARY_CORNER_OBSTRUCTION_CERTIFIED",
+  "schema": "asymptotic-bach-raw-flux-corner-obstruction-v1",
+  "schema_path": "bridge/einstein_sector/schema/asymptotic_bach_raw_flux_corner_obstruction.schema.json",
+  "schema_sha256": "f6334c906f383c44b9502883820acbd688bbaac4cbd650728644fc2c4f79bf62",
+  "scope": {
+    "background": "Minkowski space in outgoing retarded coordinates",
+    "boundaries": "large-r cuts of I+ in one fixed conformal completion",
+    "carrier": "two-term scalar amplitudes for one TT polarization and one angular Laplacian eigenmode",
+    "charge_sector": "radiative p=1 and boundary-metric p=0 indicial data; Coulombic aspects absent",
+    "degree": 1,
+    "ell": "scalar-amplitude angular eigenvalue L; not a full tensor-harmonic classification",
+    "k": "radial asymptotic expansion, not compact momentum",
+    "m": "suppressed by angular orthogonality",
+    "omega": "arbitrary retarded-time profiles within the formal indicial channel",
+    "parity": "one polarization; identical algebra for the other flat TT polarization",
+    "theory": "linearized pure-Weyl gravity reduced Cartesian TT polarization"
+  },
+  "verdicts": {
+    "Einstein_sector": "EINSTEIN_OPEN",
+    "asymptotically_flat_D": "PHASE_SPACE_NOT_CLOSED",
+    "work_item": "OBSTRUCTED_AT_FIRST_BOUNDARY_CORNER_GATE"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.asymptotic_bach_raw_flux_corner_obstruction --verify bridge/certificates/asymptotic_bach_raw_flux_corner_obstruction.json",
+    "python3 bridge/einstein_sector/verify_asymptotic_bach_raw_flux_corner_obstruction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_asymptotic_bach_raw_flux_corner_obstruction"
+  ]
+}
