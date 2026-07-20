@@ -1,0 +1,39 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/observer-berger-apparatus-physical-reduction-after-160-export",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "observer-berger-apparatus-physical-reduction-after-160-export",
+  "source": {
+    "path": "planning/work-items/observer-berger-apparatus-physical-reduction-after-160-export.json",
+    "span": null
+  },
+  "body": {
+    "owner": "observer",
+    "state": "PROPOSED",
+    "objective": "Compute the exact sectorwise physical cohomology, descended pairing and detector rank from the repaired executable 160-row replacement-apparatus unary data.",
+    "stop_condition": "Import the terminal executable-160-row export and reject any receiver missing the declared coefficient ring, row dictionary, sparse q1/pairing entries, support sectors, zero-mode matrices or detector chain map.  For every declared sector compute kernels, images, quotient representatives and dimensions exactly; build projection, inclusion and contracting homotopy where the complement is certified; descend the odd pairing, real involution and K_Berger action; classify radicals and inertia; and identify rod, polarization, emitter, detector-record and persistent-memory classes without name-based assumptions.  Restrict the leading two-record map to cohomology and report its exact rank and kernel.  Verify all quotient, contraction, pairing and detector identities independently from the serialized matrices, or freeze the first exact obstruction/nondefinition.",
+    "current_gate": "replacement-apparatus physical reduction from executable 160-row data",
+    "forbid": "no reuse of old 108-row cohomology; no row name called a physical class without quotient computation; no coordinate-level detector rank called descended rank; no q2, q3, Z2, redshift, recoil or quantum promotion before this gate passes",
+    "depends_on": [
+      "sf:program/work/observer-berger-apparatus-160-executable-unary-export"
+    ],
+    "activates": [
+      "same-background Berger Z2 and memory restriction on certified physical classes"
+    ],
+    "allowed_paths": [
+      "closed_universe_observers/",
+      "reports/",
+      "residual_atlas/",
+      "paper/09-relational-clocks-berger-d-cartan.tex",
+      "notes/closed-universe-observer-team-brief.md"
+    ],
+    "resource_hint": "EXACT LINEAR REDUCTION.  Use Forge linstruct/cochain as an independent rail where the serialized sector sizes fit.",
+    "notes": [
+      "This retries the precise operation that was previously nondefined; it must not merely rephrase the earlier nondefinition."
+    ],
+    "input_commit": "648637ba9",
+    "stream": "observer"
+  },
+  "edges": []
+}

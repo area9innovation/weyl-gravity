@@ -1,0 +1,34 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-berger-relational-redshift-after-repaired-z2-RETIRED-a160000000000002",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "planning/events/observer-berger-relational-redshift-after-repaired-z2-RETIRED-a160000000000002.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "coordinator",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-07-20T23:16:01+02:00",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/observer-berger-relational-redshift-after-repaired-z2",
+      "to_state": "RETIRED",
+      "note": "Superseded by the executable-160-row repair chain.  Relational redshift must depend on a recomputed physical reduction and Z2 receiver, not on the terminal nondefinition of the compressed unary payload."
+    },
+    "native": {
+      "authored_by": "coordinator",
+      "policy": "append-only; the original work item remains immutable and its effective state is folded from this event"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/observer-berger-relational-redshift-after-repaired-z2"
+    }
+  ]
+}

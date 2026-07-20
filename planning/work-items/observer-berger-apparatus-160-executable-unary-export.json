@@ -1,0 +1,40 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/observer-berger-apparatus-160-executable-unary-export",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "observer-berger-apparatus-160-executable-unary-export",
+  "source": {
+    "path": "planning/work-items/observer-berger-apparatus-160-executable-unary-export.json",
+    "span": null
+  },
+  "body": {
+    "owner": "observer",
+    "state": "PROPOSED",
+    "objective": "Repair the certified 160-row replacement-apparatus unary payload by exporting the complete executable q1, pairing and detector matrices required for physical reduction, without changing the already certified action-level pushout.",
+    "stop_condition": "Import BERGER_APPARATUS_COMBINED_Q1_AFTER_REPLACEMENT_112 and BERGER_APPARATUS_PHYSICAL_REDUCTION_NONDEFINITION_AFTER_REPLACEMENT_112 by hash.  Preserve the certified 160-row semantic pushout and derive a canonical row dictionary, coefficient ring, bidegrees, real involution and K_Berger weights.  Emit every sparse q1 entry, the complete odd pairing, embeddings, quotient, detector-smearing matrix and explicit chain groups for each compact-support, time-slice and zero-mode sector used by the receiver.  Recompute hashes from normalized sparse matrices rather than exporting only ranks or verdict booleans.  Verify q1^2=0, cyclicity, real/K commutation, pairing nondegeneracy, embeddings, quotient and detector chain identities directly from the serialized entries.  A method-distinct verifier must reconstruct the pushout from the replacement 112-row and 56-row parent inputs and obtain byte-equivalent normalized matrices.  If any base input lacks coefficients, certify that smallest producer shortfall instead of importing the forbidden old 108-row operator.",
+    "current_gate": "content-addressed executable 160-row unary and pairing export",
+    "forbid": "no old 108-row q1 substituted for changed positive-mixed Phi2 rows; no rank, hash or zero-defect summary used in place of entries; no cohomology guessed from dimensions; no q2, q3, Z2, redshift, recoil or quantum promotion; no same producer routine reused as the independent reconstruction rail",
+    "depends_on": [
+      "sf:program/work/observer-berger-apparatus-combined-q1-after-replacement-112"
+    ],
+    "activates": [
+      "exact 160-row cohomology, descended pairing and detector-rank recomputation"
+    ],
+    "allowed_paths": [
+      "closed_universe_observers/",
+      "reports/",
+      "residual_atlas/",
+      "paper/09-relational-clocks-berger-d-cartan.tex",
+      "notes/closed-universe-observer-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "OBSERVER INPUT REPAIR.  This is serialization plus independent reconstruction of an already certified unary pushout, not a new action ansatz.",
+    "notes": [
+      "The physical-reduction nondefinition names the exact receiver fields; treat it as the acceptance schema for this export."
+    ],
+    "input_commit": "648637ba9",
+    "stream": "observer"
+  },
+  "edges": []
+}
