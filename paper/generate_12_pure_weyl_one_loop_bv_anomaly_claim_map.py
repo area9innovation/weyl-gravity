@@ -29,7 +29,7 @@ COVERAGE_REPORT = (
 )
 OUTPUT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json"
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "896d66e405c110964bb3355bf1ccc3540c739cba483291f0487494a299050928"
+    "89384462e424d53ccf573682148c40f601715996f1f1da97d204664b26147c84"
 )
 ALL_LOOP_INPUT_COMMIT = "7fabe987861f1e4facfc2282e7023274df2ddc72"
 ALL_LOOP_INPUT_SHA256 = (
@@ -61,6 +61,7 @@ INPUTS = {
     "minimal_compensator_action_classification_receipt": ROOT / "d_quotient_classical/receipts/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1_TIER_RECEIPT.json",
     "quadratic_active_clock_locus": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1.json",
     "quadratic_active_clock_independent_audit": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json",
+    "quadratic_active_clock_background_stability": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1.json",
     "Q1_disposition": ROOT / "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
     "relative_Einstein_Weyl_cyclic_pushforward": ROOT / "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
@@ -156,6 +157,9 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     ]
     active_clock = values["quadratic_active_clock_locus"]
     active_clock_audit = values["quadratic_active_clock_independent_audit"]
+    active_clock_stability = values[
+        "quadratic_active_clock_background_stability"
+    ]
     q1 = values["Q1_disposition"]
     relative_cyclic_pushforward = values[
         "relative_Einstein_Weyl_cyclic_pushforward"
@@ -318,6 +322,64 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         is not False
         or active_clock_audit["claim_flags"][
             "UNIVERSAL_SCALAR_TENSOR_OR_K_ESSENCE_NO_GO"
+        ]
+        is not False
+        or _sha256(INPUTS["quadratic_active_clock_background_stability"])
+        != "8a3afc04d72427313fe8770936b03d4f4301277c9783a92e8df6d329e8c0ccba"
+        or active_clock_stability["result_state"]
+        != "SCOPED_ACTION_SPACE_NO_GO_BACKGROUND_STABLE_WITH_FIRST_BIFURCATION"
+        or active_clock_stability["dependency_tags"]
+        != ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
+        or active_clock_stability["certified_open_neighbourhood"]["exact_box"]
+        != {
+            "contains_frozen_point": True,
+            "cylinder_radius_equivalent": ["4/sqrt(17)", "4/sqrt(15)"],
+            "interval_convention": "all intervals open",
+            "kappa": ["15/16", "17/16"],
+            "nu": ["2/3", "5/6"],
+            "q": ["1/5", "1/4"],
+        }
+        or active_clock_stability["certified_open_neighbourhood"][
+            "structurally_stable_failures"
+        ]["all_seven_gate_good_locus"]
+        != "EMPTY_FOR_EVERY_POINT_OF_N_box"
+        or active_clock_stability["coupled_scalar_principal_velocity"]["inertia"][
+            "structural_statement"
+        ]
+        != (
+            "the gravity-auxiliary pair is split for every p1 and remains "
+            "the exact eigenpair (+3,-3)"
+        )
+        or active_clock_stability["coupled_scalar_principal_velocity"][
+            "raw_D_sign_witnesses"
+        ]
+        != [
+            "(u,Du,psi,Dpsi,v,Dv)=(0,1,0,-1,0,0) gives +3",
+            "(u,Du,psi,Dpsi,v,Dv)=(0,1,0,1,0,0) gives -3",
+        ]
+        or active_clock_stability["first_bifurcation"][
+            "first_boundary_of_declared_box"
+        ]
+        != "q=1/4"
+        or active_clock_stability["first_bifurcation"][
+            "full_verdict_both_sides"
+        ]
+        != (
+            "still EMPTY because the split gravity-auxiliary velocity pair "
+            "and raw-D both-sign witnesses persist whenever alpha_R!=0"
+        )
+        or active_clock_stability["claim_flags"][
+            "SCOPED_ACTION_SPACE_BACKGROUND_STABILITY_THEOREM"
+        ]
+        is not True
+        or active_clock_stability["claim_flags"][
+            "ONE_FIXED_ACTION_BACKGROUND_STABILITY"
+        ]
+        is not False
+        or active_clock_stability["claim_flags"]["GENERIC_BACKGROUND_NO_GO"]
+        is not False
+        or active_clock_stability["claim_flags"][
+            "HADAMARD_ANOMALY_QME_OR_QUANTUM"
         ]
         is not False
     ):
@@ -1117,6 +1179,9 @@ def build() -> dict[str, Any]:
     minimal_family = values["minimal_compensator_action_classification"]
     active_clock = values["quadratic_active_clock_locus"]
     active_clock_audit = values["quadratic_active_clock_independent_audit"]
+    active_clock_stability = values[
+        "quadratic_active_clock_background_stability"
+    ]
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
@@ -1336,50 +1401,73 @@ def build() -> dict[str, Any]:
             ],
         },
         "quadratic_active_clock_status": {
-            "result_id": active_clock["result_id"],
+            "result_id": active_clock_stability["result_id"],
+            "predecessor_result_id": active_clock["result_id"],
             "independent_audit_result_id": active_clock_audit["result_id"],
-            "result_state": active_clock_audit["result_state"],
-            "source_commit": "f64be4a57",
+            "result_state": active_clock_stability["result_state"],
+            "source_commit": "b0ee2bea2",
             "certificate_sha256": _sha256(
+                INPUTS["quadratic_active_clock_background_stability"]
+            ),
+            "predecessor_certificate_sha256": _sha256(
                 INPUTS["quadratic_active_clock_locus"]
             ),
             "independent_audit_sha256": _sha256(
                 INPUTS["quadratic_active_clock_independent_audit"]
             ),
-            "declared_scope": active_clock["action_family"]["declared_scope"],
+            "dependency_tags": active_clock_stability["dependency_tags"],
+            "declared_scope": active_clock_stability["claim_boundary"],
             "coefficient_basis": active_clock["action_family"][
                 "coefficient_basis_mod_topology"
             ],
-            "stationary_locus": active_clock["seven_gate_classification"][
-                "stationary_locus"
-            ],
-            "stationary_locus_dimension": active_clock[
-                "stationary_background_equations"
-            ]["common_system"]["kernel_dimension"],
-            "seven_gate_good_locus": active_clock[
-                "seven_gate_classification"
-            ]["all_seven_gate_good_locus"],
-            "independent_separators": active_clock_audit["freeze_verdict"][
-                "decisive_independent_separators"
-            ],
+            "open_neighbourhood": active_clock_stability[
+                "certified_open_neighbourhood"
+            ]["exact_box"],
+            "stationary_locus": active_clock_stability[
+                "stationary_locus_and_rank_strata"
+            ]["complete_rank_five_locus"],
+            "stationary_locus_generator": active_clock_stability[
+                "stationary_locus_and_rank_strata"
+            ]["kernel_generator_K"],
+            "stationary_rank": active_clock_stability[
+                "certified_open_neighbourhood"
+            ]["rank"],
+            "couplings_vary_with_background": True,
+            "one_fixed_action_background_neighbourhood": active_clock_stability[
+                "claim_flags"
+            ]["ONE_FIXED_ACTION_BACKGROUND_STABILITY"],
+            "seven_gate_good_locus": active_clock_stability[
+                "seven_gate_stability"
+            ]["good_locus"],
+            "structurally_stable_failures": active_clock_stability[
+                "certified_open_neighbourhood"
+            ]["structurally_stable_failures"],
+            "raw_D_sign_witnesses": active_clock_stability[
+                "coupled_scalar_principal_velocity"
+            ]["raw_D_sign_witnesses"],
+            "first_bifurcation": active_clock_stability["first_bifurcation"],
+            "crossing_repairs_only_clock_sign_conflict": True,
+            "bifurcation_is_viable_phase": False,
             "excluded_enlarged_classes": active_clock["action_family"][
                 "excluded"
             ],
-            "candidate_C_active_selected": active_clock["selection"][
-                "candidate_C_active_selected"
+            "candidate_C_active_selected": active_clock_stability["claim_flags"][
+                "CANDIDATE_C_ACTIVE_SELECTED"
             ],
-            "candidate_C_active_action_hash": active_clock["selection"][
-                "candidate_C_active_action_hash"
+            "candidate_C_active_action_hash": None,
+            "downstream_selected_action_work_authorized": False,
+            "scoped_quadratic_active_clock_no_go": True,
+            "open_neighbourhood_no_go": True,
+            "universal_k_essence_or_compensator_no_go": False,
+            "generic_background_no_go": active_clock_stability["claim_flags"][
+                "GENERIC_BACKGROUND_NO_GO"
             ],
-            "downstream_selected_action_work_authorized": active_clock[
-                "selection"
-            ]["downstream_selected_action_work_authorized"],
-            "scoped_quadratic_active_clock_no_go": active_clock[
+            "complete_causal_parent": active_clock_stability["claim_flags"][
+                "COMPLETE_SUPPORT_LOCAL_CAUSAL_PARENT"
+            ],
+            "anomaly_QME_or_quantum_claim": active_clock_stability[
                 "claim_flags"
-            ]["SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO"],
-            "universal_k_essence_or_compensator_no_go": active_clock[
-                "claim_flags"
-            ]["UNIVERSAL_K_ESSENCE_OR_COMPENSATOR_NO_GO"],
+            ]["HADAMARD_ANOMALY_QME_OR_QUANTUM"],
             "regulator_QAP_status": "ACTION_DEPENDENT_NOT_ACTIVATED",
         },
         "certified_claims": {

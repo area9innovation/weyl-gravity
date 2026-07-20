@@ -73,6 +73,14 @@ $H^{1,4}=0$ result and stable four-direction $H^{0,4}$ module give a
 conditional order-by-order formal local QME restoration theorem.  No
 all-order regulator implementing that hypothesis, Lorentzian QME, or
 equivalence to the strict theory is claimed.
+
+Separately, the declared quadratic $P(X)$ active-clock action-selection lane
+has an exact open-neighbourhood no-go for a parameterized family of
+cylinder/Berger backgrounds.  Its first $q=1/4$ clock-sign bifurcation repairs
+only the clock-sign conflict: the split gravity--auxiliary inertia and raw-$D$
+failure persist.  Couplings vary with the background, so this is neither a
+fixed-action neighbourhood theorem nor a change to the local Wess--Zumino
+restoration result.
 \end{abstract}
 
 \section*{AI-use disclosure and computational accountability}
@@ -861,6 +869,64 @@ higher phase derivatives, nearby backgrounds, fixed-charge sectors, new
 fields, or enlarged gauge groups.  No Candidate~C$_{\rm active}$ action hash
 is exported, so regulator and QAP consumers remain action dependent.
 
+The exact background-stability theorem strengthens this pointwise result.
+Write $\kappa=r_{\rm cyl}^{-2}$, let $q=c^2$ be the Berger squashing at
+horizontal scale one, and set $D\theta=\nu>0$.  On the rational open box
+\[
+ {\cal N}_{\Box}=
+ \left(\frac{15}{16},\frac{17}{16}\right)_{\!\kappa}
+ \times\left(\frac15,\frac14\right)_{\!q}
+ \times\left(\frac23,\frac56\right)_{\!\nu},
+\]
+the stacked stationary matrix has rank five.  At every point its nonzero
+solutions form one action-space ray
+\[
+ (\alpha_B,\alpha_R,M_P^2,p_0,p_1,p_2)
+ =\lambda K(\kappa,q,\nu),\qquad \lambda\ne0.
+\]
+The couplings therefore vary with the background.  This is not an
+implicit-function theorem for one fixed action.
+
+Two failures are structurally stable throughout ${\cal N}_{\Box}$.  The
+gravity--auxiliary velocity pair retains the exact eigenvalues $(+3,-3)$,
+and the raw-$D$ Hamiltonian retains explicit field-space witnesses with
+values $+3$ and $-3$.  Moreover, for $\lambda<0$ the cylinder clock has
+standard sign while the Berger clock has the wrong energy/charge
+orientation; for $\lambda>0$ the Berger clock is standard-sign,
+hyperbolic, positive-energy, charged and subluminal while the cylinder clock
+has the wrong sign.  Hence the seven-gate good locus is empty at every point
+of the open box.
+
+The first boundary bifurcation is also exact.  Along
+\[
+ \kappa=1,\qquad \nu=\frac34,\qquad \lambda=1,
+\]
+the surface $q=1/4$ switches off the algebraic $R^2$ auxiliary presentation
+and makes the cylinder clock degenerate without lowering the stationary rank
+at $\kappa=1$.  Below it, at $q=9/40$, the exact
+$(p_1,P_X,P_X+2XP_{XX})$ row is
+\[
+ \left(\frac{2961}{800},-\frac{26649}{12800},
+       -\frac{174699}{12800}\right),
+\]
+so only the Berger clock is healthy.  Above it, at $q=21/80$, the row is
+\[
+ \left(-\frac{5949}{3200},-\frac{124929}{51200},
+       -\frac{184419}{51200}\right),
+\]
+so both clocks are standard-sign and hyperbolic.  Crossing the bifurcation
+therefore repairs only the clock-sign conflict.  The split
+gravity--auxiliary pair and the raw-$D$ both-sign witnesses persist, so the
+upper witness is not a viable phase.
+
+This is an open-neighbourhood theorem for parameter-dependent stationary
+action rays, not a fixed-action or generic-background theorem.  It covers
+neither general $k$-essence, higher derivatives, fixed-charge quotients, new
+fields nor enlarged gauge groups, and supplies no complete causal parent,
+anomaly/QME, particle or unitarity result.  In particular, this classical
+selection no-go does not weaken the separate formal local Wess--Zumino
+trivialization theorem.
+
 The four machine receipts are
 \path{TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION},
 \path{DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT},
@@ -869,7 +935,9 @@ The four machine receipts are
 The selection frontier is fixed jointly by
 \path{COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1},
 \path{COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1}, and
-\path{COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1}.
+\path{COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1}, together
+with the open-neighbourhood certificate
+\path{COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1}.
 They do not establish a QAP, an unconditional all-loop QME, or any
 Lorentzian or state result.
 

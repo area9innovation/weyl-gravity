@@ -555,7 +555,7 @@
     "universal_compensator_no_go": false
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "10e2277201bba93678d0b938b20262910e08d38d1ff413b912f7230b1f10061c",
+  "compiled_pdf_sha256": "e4ca4aeffa130db9aadff5ca58052e7654fd678cd80ee827118f1b50c51ee821",
   "conditional_all_loop_evidence": {
     "claim_boundary": "This LOCAL-ALGEBRAIC theorem proves an order-by-order formal local QME restoration induction for the changed tau-adic compensator theory, conditional on the explicitly declared quantum action principle and regular formal coupling chart. The complete H14 module is zero and the stable H04 module contains C(g_hat)^2, E4(g_hat), R(g_hat)^2 and the parity-odd Pontryagin direction, with total derivatives, canonical transformations and coupling redefinitions separated. It does not construct the required regulator, prove convergence, exclude global anomalies, repair strict pure-Weyl gravity, or establish Lorentzian products, a QME, residual transfer, states, positivity, particles, scattering or unitarity.",
     "dependency_tags": [
@@ -610,6 +610,10 @@
   },
   "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop. The changed formal tau-adic compensator theory has a restored one-loop local Euclidean QME and, conditional on the declared local quantum action principle, is formally locally restorable at every finite order. No all-order regulator, global or Lorentzian QME, state, residual-transfer, particle, or unitarity theorem is supplied. The coefficient-bearing effective-action and third-curvature calculations remain scoped to their separately certified local-algebraic and Euclidean-spectral carriers.",
   "inputs": {
+    "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1.json": {
+      "result_id": "COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1",
+      "sha256": "8a3afc04d72427313fe8770936b03d4f4301277c9783a92e8df6d329e8c0ccba"
+    },
     "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json": {
       "result_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
       "sha256": "9bda4b758616427bdbf401a499ffd2b7cd9dd69a87223f05fcdf636bb31cd533"
@@ -934,7 +938,7 @@
   "latest_coefficient_update": "The longitudinal D_W towers are one Schur kernel. Its exact non-Einstein S2(k1)xS2(k2) spectrum and degeneracies are supplied, with six matched vector-zero/Schur-pole modes contributing 3^-6. On S2(1)xS2(2), the regular-complement det3 is rigorously enclosed with common prefix 0.3263039; weighted R(K), finite-part R(K2), arbitrary-background finite Schur rows and remaining BV rows stay open.",
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "896d66e405c110964bb3355bf1ccc3540c739cba483291f0487494a299050928",
+  "manuscript_sha256": "89384462e424d53ccf573682148c40f601715996f1f1da97d204664b26147c84",
   "minimal_compensator_family_status": {
     "candidate_C_selected": false,
     "certificate_sha256": "41ce6db6ab8fc58f4cc1ecedb205f732fd3dcee645f9408506d3535545f7026a",
@@ -977,17 +981,19 @@
   "publication_artifacts": {
     "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "3e4cbdc3ca820c7d43c0375e7a29e8a16aa2a7d33b2d90a00493b5321f744d9a",
     "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "fb498bbe3b1ec1ff8d93885f37290f25181b2a73e19949ae52296d257cb171e6",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-paper-coverage-report.json": "0b09b9df2aacff9fb491272eef05ad99782d7b710cdc72ea83378c5589bcbe8c",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-paper-coverage-report.json": "0e6aec44a219f60f6c09fc63cfee7f261b72b25b5b898a5812e42bb452befe04",
     "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "ed42e5ef711becaf96b32843b2e67803c84e0ef6ce6228c7364bf58ac127230a",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json": "b6f901dd6ddf091a1f1eefae50925f6d979ad29bab6f49d74cd93daf1926a156",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json": "100faf90799383cecc9c68f762d213d530f53104c9eaa425a8670ceca3d80d62",
     "paper/generate_12_quantum_anomaly_tables.py": "53fa1f003c9cedd320d7e2d8c8e8b589fcd5fc200c7c0362955107b68e62e4db",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "b7556226f31a06e73e9410c3e382c5eca6b77be3bce6004324ee1c0171b8e8c0",
     "paper/verify_12_quantum_anomaly_tables.py": "30370f348cc90cf9d8063cb9c47bb7a7576a4951869ba3e9bf63039be75ad258"
   },
   "quadratic_active_clock_status": {
+    "anomaly_QME_or_quantum_claim": false,
+    "bifurcation_is_viable_phase": false,
     "candidate_C_active_action_hash": null,
     "candidate_C_active_selected": false,
-    "certificate_sha256": "9ad148d6b632e215cd75636f5fd5b431fa85cf1698a63f725d8b3c9dfe61de89",
+    "certificate_sha256": "8a3afc04d72427313fe8770936b03d4f4301277c9783a92e8df6d329e8c0ccba",
     "coefficient_basis": [
       "alpha_B",
       "alpha_R",
@@ -996,7 +1002,14 @@
       "p1",
       "p2"
     ],
-    "declared_scope": "formal rho!=0 polar complex-compensator theory on the same dressed metric, parity even, four metric derivatives and the complete quadratic shift-symmetric phase polynomial P(X)",
+    "complete_causal_parent": false,
+    "couplings_vary_with_background": true,
+    "crossing_repairs_only_clock_sign_conflict": true,
+    "declared_scope": "This exact theorem concerns the declared dressed parity-even C^2+R^2+R plus quadratic shift-symmetric P(X) action family, with no HT or new fields, on the parameterized joint cylinder/Berger family kappa=r_cylinder^-2, a_Berger=1, q=c^2 and theta=nu t. For every point in the stated rational open box, the stationary action-space ray exists but its seven-gate good locus is empty. The theorem lets couplings vary with the background; it does not show that one fixed action supports the neighbourhood. The q=1/4 surface is a clock/principal bifurcation along the declared path, while the stationary rank-change variety is recorded separately. Nothing here covers other backgrounds, higher P(X), higher derivatives, fixed-charge quotients, new fields or enlarged gauge groups. It selects no action and establishes no complete causal parent, Hadamard state, anomaly/QME result, particle space, scattering, positivity or unitarity theorem.",
+    "dependency_tags": [
+      "LOCAL-ALGEBRAIC",
+      "LORENTZIAN-CAUSAL"
+    ],
     "downstream_selected_action_work_authorized": false,
     "excluded_enlarged_classes": [
       "Henneaux-Teitelboim or any multiplier sector",
@@ -1006,21 +1019,106 @@
       "higher derivatives of theta",
       "an independent conformal gauge connection"
     ],
+    "first_bifurcation": {
+      "above_witness": {
+        "clock_verdict": "both cylinder and Berger clocks standard-sign hyperbolic; Berger sound remains subluminal",
+        "p1_PX_longitudinal": [
+          "-5949/3200",
+          "-124929/51200",
+          "-184419/51200"
+        ],
+        "point": [
+          "kappa=1",
+          "q=21/80",
+          "nu=3/4",
+          "lambda=1"
+        ]
+      },
+      "below_witness": {
+        "clock_verdict": "cylinder wrong sign; Berger standard-sign healthy",
+        "p1_PX_longitudinal": [
+          "2961/800",
+          "-26649/12800",
+          "-174699/12800"
+        ],
+        "point": [
+          "kappa=1",
+          "q=9/40",
+          "nu=3/4",
+          "lambda=1"
+        ]
+      },
+      "first_boundary_of_declared_box": "q=1/4",
+      "full_verdict_both_sides": "still EMPTY because the split gravity-auxiliary velocity pair and raw-D both-sign witnesses persist whenever alpha_R!=0",
+      "path": "kappa=1, nu=3/4, lambda=1, q increasing",
+      "rank_change_intersection_on_q=1/4": "stationary rank drops only at the separate intersection kappa=5/16 (or on kappa=0, nu=0, q=1)",
+      "surface_data": {
+        "A": "0",
+        "M_P_squared": "0",
+        "R2_auxiliary_presentation": "INACTIVE",
+        "alpha_R": "0",
+        "cylinder_clock": "DEGENERATE",
+        "p0": "0",
+        "p1": "0",
+        "stationary_rank": 5
+      },
+      "surface_type": "principal/auxiliary/clock-health bifurcation, not stationary rank change at kappa=1"
+    },
+    "generic_background_no_go": false,
     "independent_audit_result_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
     "independent_audit_sha256": "9bda4b758616427bdbf401a499ffd2b7cd9dd69a87223f05fcdf636bb31cd533",
-    "independent_separators": [
-      "rational congruence diagonal (-6,6,-36t/25) is split for every t!=0",
-      "cylinder standard sign requires t<0 while Berger longitudinal sound and standard sign require t>0",
-      "t=0 is the zero action and has no pairing or dynamics"
+    "one_fixed_action_background_neighbourhood": false,
+    "open_neighbourhood": {
+      "contains_frozen_point": true,
+      "cylinder_radius_equivalent": [
+        "4/sqrt(17)",
+        "4/sqrt(15)"
+      ],
+      "interval_convention": "all intervals open",
+      "kappa": [
+        "15/16",
+        "17/16"
+      ],
+      "nu": [
+        "2/3",
+        "5/6"
+      ],
+      "q": [
+        "1/5",
+        "1/4"
+      ]
+    },
+    "open_neighbourhood_no_go": true,
+    "predecessor_certificate_sha256": "9ad148d6b632e215cd75636f5fd5b431fa85cf1698a63f725d8b3c9dfe61de89",
+    "predecessor_result_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1",
+    "raw_D_sign_witnesses": [
+      "(u,Du,psi,Dpsi,v,Dv)=(0,1,0,-1,0,0) gives +3",
+      "(u,Du,psi,Dpsi,v,Dv)=(0,1,0,1,0,0) gives -3"
     ],
     "regulator_QAP_status": "ACTION_DEPENDENT_NOT_ACTIVATED",
-    "result_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1",
-    "result_state": "SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO_INDEPENDENTLY_FROZEN",
+    "result_id": "COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1",
+    "result_state": "SCOPED_ACTION_SPACE_NO_GO_BACKGROUND_STABLE_WITH_FIRST_BIFURCATION",
     "scoped_quadratic_active_clock_no_go": true,
-    "seven_gate_good_locus": "EMPTY",
-    "source_commit": "f64be4a57",
-    "stationary_locus": "t(81/20,27/3290,-324/1645,486/1645,18/25,1), t in R",
-    "stationary_locus_dimension": 1,
+    "seven_gate_good_locus": "EMPTY_FOR_EVERY_PARAMETER_POINT_IN_N_box",
+    "source_commit": "b0ee2bea2",
+    "stationary_locus": "(alpha_B,alpha_R,M_P_squared,p0,p1,p2)=lambda K(kappa,q,nu)",
+    "stationary_locus_generator": [
+      "8*nu**4*(12*kappa + q - 4)",
+      "-4*nu**4*(4*q - 1)/3",
+      "32*kappa*nu**4*(4*q - 1)",
+      "-48*kappa**2*nu**4*(4*q - 1)",
+      "-8*kappa*nu**2*(4*q - 1)*(12*kappa + q - 4)",
+      "-(12*kappa + q - 4)*(16*kappa*q - 4*kappa - q)"
+    ],
+    "stationary_rank": {
+      "value": 5,
+      "witness": "signed cofactor 0=8 kappa nu^6(q-1)F is nonzero on N_box"
+    },
+    "structurally_stable_failures": {
+      "all_seven_gate_good_locus": "EMPTY_FOR_EVERY_POINT_OF_N_box",
+      "gate_5": "every lambda!=0 retains the split (+3,-3) gravity-auxiliary velocity pair; independently the two clock-health half-lines are opposite",
+      "gate_6": "the raw-D Hamiltonian retains the parameter-independent exact witnesses +3 and -3"
+    },
     "universal_k_essence_or_compensator_no_go": false
   },
   "referee_revision": {

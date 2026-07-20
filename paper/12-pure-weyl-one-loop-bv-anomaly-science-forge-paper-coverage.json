@@ -7,7 +7,7 @@
       "body": {
         "paper_class": "technical",
         "path": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-        "manuscript_sha256": "896d66e405c110964bb3355bf1ccc3540c739cba483291f0487494a299050928"
+        "manuscript_sha256": "89384462e424d53ccf573682148c40f601715996f1f1da97d204664b26147c84"
       }
     },
     {
@@ -313,6 +313,20 @@
       }
     },
     {
+      "kind": "result",
+      "id": "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "declared-quadratic-active-clock-parameterized-action-rays-on-the-rational-cylinder-Berger-neighbourhood",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+        "certificate": "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1.json",
+        "certificate_sha256": "8a3afc04d72427313fe8770936b03d4f4301277c9783a92e8df6d329e8c0ccba",
+        "source_commit": "b0ee2bea2",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
       "kind": "materiality",
       "id": "sf:materiality/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1/v1",
       "body": {
@@ -339,18 +353,30 @@
       }
     },
     {
+      "kind": "materiality",
+      "id": "sf:materiality/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1/v1",
+      "body": {
+        "result_id": "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1",
+        "materiality": "TECHNICAL",
+        "version": 1,
+        "by": "quantum-qme-team",
+        "stamp": "2026-07-20",
+        "rationale": "The exact open-neighbourhood theorem and tested q=1/4 bifurcation replace a pointwise active-clock status without selecting a fixed action or quantum receiver.",
+        "native": {"source_schema": "materiality-v0"}
+      }
+    },
+    {
       "kind": "paper_claim",
       "id": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/quadratic-active-clock-selection-frontier",
       "body": {
         "paper": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
         "material": true,
         "asserts_lifecycle": "CERTIFIED",
-        "boundary": "declared-quadratic-shift-symmetric-active-clock-family-on-unit-cylinder-and-frozen-Berger-fixtures",
+        "boundary": "declared-quadratic-active-clock-parameterized-action-rays-on-the-rational-cylinder-Berger-neighbourhood",
         "cites": [
-          "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1",
-          "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1"
+          "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1"
         ],
-        "statement": "The complete declared quadratic P(X) active-clock family has a one-dimensional stationary locus but an empty seven-gate good locus; the result is independently frozen, scoped to the declared action and two backgrounds, and exports no Candidate C_active action hash."
+        "statement": "On an exact rational open neighbourhood, every background has a one-ray stationary action locus but the split gravity-auxiliary inertia and raw-D failure are structurally stable. The first q=1/4 bifurcation repairs only the clock-sign conflict. Couplings vary with the background, no fixed action or viable phase is selected, and no Candidate C_active action hash is exported."
       }
     },
     {
@@ -372,6 +398,20 @@
       "id": "sf:result-paper-edge/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1/P12/v1",
       "body": {
         "from": "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
+        "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
+        "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/quadratic-active-clock-selection-frontier",
+        "edge_kind": "PRIMARY_THEOREM",
+        "stale": false,
+        "version": 1,
+        "stamp": "2026-07-20",
+        "native": {"source_schema": "result-paper-edge-v0"}
+      }
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1/P12/v1",
+      "body": {
+        "from": "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1",
         "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
         "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/quadratic-active-clock-selection-frontier",
         "edge_kind": "PRIMARY_THEOREM",

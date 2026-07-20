@@ -2402,6 +2402,43 @@ This result is `LOCAL-ALGEBRAIC`/`LORENTZIAN-CAUSAL`.
 - [`COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json`](../d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json)
 - [`quantum-paper12-active-clock-px2-no-go-status-correction-2026-07-20.md`](../reports/quantum-paper12-active-clock-px2-no-go-status-correction-2026-07-20.md)
 
+## Quadratic active-clock background stability and first bifurcation (2026-07-20)
+
+The pointwise quadratic \(P(X)\) result now extends to an exact rational open
+neighbourhood
+
+\[
+\left(\frac{15}{16},\frac{17}{16}\right)_{\kappa}
+\times
+\left(\frac15,\frac14\right)_q
+\times
+\left(\frac23,\frac56\right)_\nu .
+\]
+
+At every point, the common cylinder/Berger stationary matrix has rank five
+and its nonzero solutions form one action-space ray
+\(\lambda K(\kappa,q,\nu)\). The couplings vary with the background; this is
+not a fixed-action neighbourhood theorem.
+
+The seven-gate good locus remains empty throughout the box. The
+gravity--auxiliary velocity pair retains the exact split eigenvalues
+\((+3,-3)\), while the raw-\(D\) Hamiltonian retains exact witnesses \(+3\)
+and \(-3\). The two clock-health half-lines are opposite.
+
+Along \(\kappa=1,\nu=3/4,\lambda=1\), the first boundary bifurcation is
+\(q=1/4\). Above it, the exact \(q=21/80\) witness makes both clocks
+standard-sign and hyperbolic, but the split inertia and raw-\(D\) failures
+persist. Crossing therefore repairs only the clock-sign conflict and does
+not produce a viable phase.
+
+Paper 12 now states this open-neighbourhood result and preserves its scope:
+no fixed action, general \(k\)-essence, complete causal parent, anomaly/QME,
+particle or unitarity claim follows. The classical selection no-go does not
+alter formal local Wess--Zumino anomaly trivialization in the changed
+compensator complex.
+
+- [`COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1.json`](../d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1.json)
+
 ## Independent freeze of the parameterized five-form-factor theorem (2026-07-20)
 
 A method-distinct audit now freezes the statement that the generic
