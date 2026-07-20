@@ -42,6 +42,7 @@ def main() -> int:
     assert "observer.berger.interaction.two_pair_112_no_go" in ids
     assert "observer.berger.interaction.ward_cokernel_irrep_closure_obstruction" in ids
     assert "observer.berger.interaction.minimal_invariant_scalar_hessian_channel_no_go" in ids
+    assert "observer.berger.interaction.common_action_observable_replay_disposition" in ids
     crosswalks = [row for row in value["entries"] if row["id"].startswith("observer.crosswalk")]
     assert {row["id"] for row in crosswalks} == {
         "observer.crosswalk.berger_physical_branch_to_detector",

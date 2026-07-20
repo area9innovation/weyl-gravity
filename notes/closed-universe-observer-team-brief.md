@@ -1504,6 +1504,36 @@ The non-closed 440-dimensional carrier is not decomposed, no fitted column or
 extra scalar pair is admitted, and q3, detector, redshift, tangent-cone,
 physical-branch and quantum promotion remain unauthorized.
 
+`BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION` propagates that
+obstruction through the operational chain without fabricating a repaired
+theory.  Because the complete typed-Maxwell class remains outside the
+rank-six action image, no representation-complete common-action carrier
+exists; consequently no repaired unary/`q2`, interacting gauge descent or
+first nonlinear detector row is asserted.
+
+Five earlier results remain valid exactly in their original scopes: the C-G4
+two-record Poisson algebra on its coefficientwise affine-`K` plane, the
+leading free-emitter rank-two response, the source-free global `G0` redshift
+fixture, the formal absolute-`g3` recoil order/operator, and the
+action-derived emitter stress/clock `q2` ledger.  None is invalidated by the
+common-action no-go.  Equally, none is transported to one
+representation-complete interacting carrier: leading rank two is not called
+nonlinear rank two, the redshift fixture is not called backreacted, and the
+formal recoil operator is not called an evaluated gauge-reduced correction.
+
+The smallest next action module is now exported rather than guessed.  The
+profile-first-jet closure sector has dimension 108 and exact isotypic
+dimensions 60 at weight zero and 48 at weight two.  The current projected
+action image has rank two; the invariant 24-coordinate typed source raises it
+to three.  Thus the next required module is one new weight-zero real line in
+that sector.  Its local cyclic action realization remains `NO_CERTIFIED_MAP`.
+The active gate is
+`ACTION_REALIZATION_OF_M_PROFILE_FIRST_JET_WEIGHT_ZERO`, and the fail-closed
+atlas row is
+`observer.berger.interaction.common_action_observable_replay_disposition`.
+Physical Bridge 3 still awaits a same-background branch dictionary even after
+the common-action gate is repaired.
+
 Within that inactive bridge, the numerical recoil input-contract audit is now
 complete.  The next activation gate requires a provenance-complete
 `EXPLICIT_EXTERNAL_VALUES` declaration for both mass domains, both nonzero

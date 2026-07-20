@@ -598,3 +598,25 @@ def test_minimal_invariant_scalar_hessian_reaches_display_but_not_source():
     assert "BERGER_MINIMAL_INVARIANT_SCALAR_HESSIAN_CHANNEL_NO_GO" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_common_action_observable_replay_preserves_scope_without_promotion():
+    row = next(
+        row
+        for row in build()["entries"]
+        if row["id"]
+        == "observer.berger.interaction.common_action_observable_replay_disposition"
+    )
+    assert row["descriptions"]["nonlinear"] == "OBSTRUCTED"
+    assert row["descriptions"]["observational"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["response_rank"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["relational_redshift_contribution"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "OBSTRUCTED"
+    assert "no nonlinear" in row["observer_data"]["response_rank"]["statement"]
+    assert "one weight-zero line" in row["observer_data"][
+        "observer_source_channel"
+    ]["statement"]
+    assert "BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

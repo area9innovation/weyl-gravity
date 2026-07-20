@@ -1,0 +1,86 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION_TIER_RECEIPT",
+  "subject_result_id": "BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "science_forge_work_item": "sf:program/work/observer-common-action-repair-observable-replay",
+  "input_commit": "ff43b676",
+  "tested_tree_head": "4a900eb89ac6125de2e050a282c7d82ae6fa1b5c",
+  "commands": [
+    {
+      "test_tier": 0,
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_common_action_observable_replay_disposition.py closed_universe_observers/verify_berger_common_action_observable_replay_disposition.py closed_universe_observers/tests/test_berger_common_action_observable_replay_disposition.py",
+      "elapsed_seconds": 0.02,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 0,
+      "command": "python3 -m json.tool on schema and generated certificate; git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md notes/universe-building-roadmap.md",
+      "elapsed_seconds": 1.17,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.generate_berger_common_action_observable_replay_disposition --check",
+      "elapsed_seconds": 0.51,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.verify_berger_common_action_observable_replay_disposition",
+      "elapsed_seconds": 0.39,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_common_action_observable_replay_disposition.py closed_universe_observers/tests/test_berger_minimal_invariant_scalar_hessian_channel_no_go.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+      "elapsed_seconds": 22.02,
+      "status": "PASS",
+      "detail": "53 passed"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+      "elapsed_seconds": 2.32,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 2,
+      "command": "independent dependency-scope and profile-first-jet module reconstruction in verify_berger_common_action_observable_replay_disposition",
+      "elapsed_seconds": 0.39,
+      "status": "PASS",
+      "detail": "verified nine dependency hashes and five imported claim statuses, independently reconstructed the 108-dimensional (60,48) profile-first-jet sector, projected ranks 2->3, and the 24-coordinate invariant source vector"
+    },
+    {
+      "test_tier": "advisory",
+      "command": "bash ci/science-forge-shadow.sh",
+      "elapsed_seconds": 3.29,
+      "status": "ADVISORY_PASS_WITH_FINDINGS",
+      "detail": "pre-existing bridge certificate drift, unpinned dirty Forge build and corpus growth to 1212 certificates versus baseline 976"
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": "SATISFIED by independent imported-scope checks, exact next-module reconstruction and generated atlas consumer",
+    "tier_3": "NOT_RUN: no freeze, release, paper theorem, shared-core algebra change or quantum promotion"
+  },
+  "artifacts": [
+    {"path": "closed_universe_observers/generate_berger_common_action_observable_replay_disposition.py", "sha256": "249673293f86aa4757cd95562b419efc9c766a453094dda4def68d3a32e8f24d"},
+    {"path": "closed_universe_observers/verify_berger_common_action_observable_replay_disposition.py", "sha256": "a562a251764b7149d8c83b9636339f00da9d12ed9a01142a3fa8d699e886b7d7"},
+    {"path": "closed_universe_observers/tests/test_berger_common_action_observable_replay_disposition.py", "sha256": "c833b0b5c7bc6c623b56677420b29bec4d8f0567108d023bf7a3fd05a44e2778"},
+    {"path": "closed_universe_observers/schema/berger-common-action-observable-replay-disposition-v1.schema.json", "sha256": "cbaddd4c51812c373a0b85ba30ede6964149af37c74d0c1fc51c5ff7562a836d"},
+    {"path": "closed_universe_observers/certificates/BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION.json", "sha256": "56a7cd42f2db3b39b215ce8df2102ff9014f7b932938e404de93a65406a5b575"},
+    {"path": "closed_universe_observers/reports/berger-common-action-observable-replay-disposition.md", "sha256": "defb91b225265df87785d318ea22a71f643d9fff8e73396bc821de9e5708e028"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "8918d754f4132887aa7ff69c4a51af859fe576eadcde83c5bb69668a2223f0b9"}
+  ],
+  "flags": {
+    "REPRESENTATION_COMPLETE_COMMON_ACTION_CARRIER_EXISTS": false,
+    "SCOPED_LINEAR_OBSERVER_RESULTS_INVALIDATED": false,
+    "SCOPED_LINEAR_RESULTS_PROMOTED_TO_NONLINEAR": false,
+    "PROFILE_FIRST_JET_NEXT_MODULE_CERTIFIED": true,
+    "NONLINEAR_DETECTOR_REPLAY": false,
+    "NONLINEAR_REDSHIFT": false,
+    "GAUGE_REDUCED_RECOIL_BACKREACTION": false,
+    "PHYSICAL_BRANCH_BRIDGE": false,
+    "QUANTUM_CLAIM": false
+  }
+}

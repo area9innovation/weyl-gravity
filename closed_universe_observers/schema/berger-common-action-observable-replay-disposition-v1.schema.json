@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "replay_gate",
+    "standalone_observable_survival_ledger",
+    "nonpromotion_theorem",
+    "smallest_next_action_module",
+    "activation_disposition",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-common-action-observable-replay-disposition-v1"},
+    "result_id": {"const": "BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "OBSTRUCTED_NO_REPRESENTATION_COMPLETE_COMMON_ACTION_REPLAY"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 9, "maxProperties": 9},
+    "replay_gate": {"type": "object"},
+    "standalone_observable_survival_ledger": {"type": "object", "minProperties": 5, "maxProperties": 5},
+    "nonpromotion_theorem": {"type": "object"},
+    "smallest_next_action_module": {"type": "object"},
+    "activation_disposition": {"type": "object"},
+    "next_gate": {"const": "ACTION_REALIZATION_OF_M_PROFILE_FIRST_JET_WEIGHT_ZERO"},
+    "claim_boundary": {"type": "string", "minLength": 1000},
+    "provenance": {"type": "object"}
+  }
+}
