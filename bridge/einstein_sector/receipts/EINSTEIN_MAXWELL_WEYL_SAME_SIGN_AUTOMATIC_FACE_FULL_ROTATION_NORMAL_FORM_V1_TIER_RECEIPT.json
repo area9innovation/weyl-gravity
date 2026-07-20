@@ -1,0 +1,20 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_FULL_ROTATION_NORMAL_FORM_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Complete unquotiented and node-phase-quotiented fixed-node-norm rotation Hessian inertia on every nonzero support stratum of the five automatic faces.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.json": "41e5162299f26ce1f3f4cea8a98556e7a4b82f2615d50fe08805c55105161df1",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.py": "72d948277fcaecdca6d63c104d517e1fa59e8a40f9b29a12a263aea28bf247b3",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.schema.json": "8e384ad7db0cb17cebc483a6721a0ee54b005d4b934db336be78c36f56d8e15a",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.py": "6f541dbc804ee73ed704813360506915503edf6e6437c20ea07a1b8c662a488b",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.py": "d6ff78047e8d9e5cf1566d55a7ee520cfa321653a59691b596511d8a28fd779c",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-automatic-face-full-rotation-normal-form.md": "5b8a3b1bcbd3159212dac7efb574a8ac3d1237e1a6e49455c4dcc57473afb48b"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <scoped JSON paths>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {"status": "PASS", "tests_run": 3, "elapsed_seconds": 0.003, "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form --check", "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form"]},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS_AND_DIMENSION_AUDIT", "reason": "The complete internal primary multiplicities, current signs, automatic-face supports and aligned normal form are content-addressed; all 15 support strata pass exact unquotiented and phase-quotiented dimension checks, and the independent atlas verifier passes with all 96 focused tests."},
+    "tier_3": {"status": "NOT_RUN", "reason": "Radical resolution, occupation gluing, active resonance components and higher lifecycles remain open."}
+  },
+  "claim_boundary": "This classifies the complete quadratic rotation Hessian only at fixed node norms on automatic faces."
+}

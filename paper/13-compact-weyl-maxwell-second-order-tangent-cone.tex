@@ -1275,6 +1275,51 @@ not classify internal current-orthogonal directions or the two-dimensional
 radical, and therefore is not a complete singular-stratum theorem.
 \end{proof}
 
+\begin{corollary}[Complete fixed-norm rotation Hessian]
+At the same axisymmetric points, let \(N\) be the number of occupied scalar
+branch--momentum nodes and let \(D\) be the sum of their complex internal
+current-space dimensions.  A \(q_-\) or \(q_+\) node has \(D_j=2\), one
+axial and one polar current eigenline, whereas a \(p\)-extra node has
+\(D_j=4\), two eigenlines in each parity.  On the complete tangent to the
+fixed-node-norm link, restricted by
+\(\mathrm d(\mu_{J_1},\mu_{J_2})=0\), the real inertia of the quadratic
+\(\mu_{J_3}\) form is
+\[
+ (4D-2,4D-2,2D-N+2).
+\]
+After quotienting the \(N\) independent node phases it is
+\[
+ (4D-2,4D-2,2D-2N+2).
+\]
+Thus every ray and two-ray relative-interior stratum of the five nonzero
+automatic faces remains a transverse rotation saddle after all axial and
+polar internal directions are restored.  Candidate \((16)\) remains not
+applicable.
+\end{corollary}
+
+\begin{proof}
+The aligned block is the preceding proposition.  A current-orthogonal
+internal eigenline does not enter the two linear transverse-rotation
+equations.  Its five complex angular coefficients see the exact weighted
+\(J_3\) diagonal
+\[
+ \left(-2,-\frac14,0,\frac14,2\right),
+\]
+and hence add real inertia \((4,4,2)\).  Summing over the \(D-N\)
+orthogonal eigenlines gives angular-kernel inertia
+\((4D-2,4D-2,2)\).  The \(m=0\) fixed-node-norm tangent is radical of real
+dimension \(2D-N\), which yields the first formula.  The node-phase torus
+lies in that radical and removes \(N\) real directions, yielding the second.
+The dimensions are respectively \(10D-N-2\) and \(10D-2N-2\), equal to
+the sums of the displayed inertia triples.  Exact enumeration of all
+fifteen ray/interior support strata gives phase-reduced inertias ranging
+from \((30,30,10)\) to \((54,54,20)\).
+
+This is a complete quadratic Hessian theorem at fixed node norms, not a
+classification of the nonlinear zero set along its radical.  It neither
+glues occupation strata nor treats active resonance components.
+\end{proof}
+
 \section{Current bounded frontier}
 
 The electric, Wilson, and circumference columns are closed, and the first
@@ -1494,6 +1539,10 @@ Axisymmetric rotation critical-locus theorem &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.json}\\
 Automatic-face aligned rotation normal form and exact arcs &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.json}\\
+Complete phase-reduced internal rotation normal form &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.json}\\
+Complete unquotiented and phase-quotiented fixed-norm rotation Hessians &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1555,13 +1604,16 @@ critical locus with Jacobian rank two.  The active resonance strata still
 require a restricted-current nondegeneracy test before any connected-fibre
 theorem can be applied, while the critical section requires the quadratic
 normal form of the missing rotation equation.  On the automatic faces that
-normal form is now exact on the complete current-eigenline-aligned angular
-slice: with \(N\) occupied eigenlines its inertia is
-\((4N-2,4N-2,2)\), and every axisymmetric point lies on an explicit
-nonaxisymmetric fixed-occupation arc.  What remains locally is the internal
-current-orthogonal normal form and its two-dimensional radical.  The exact
-fibre-product equation is already certified; complex resonance components
-and occupation-level sums need not be recomputed.
+normal form is now exact on the complete axial/polar fixed-node-norm tangent.
+For \(N\) occupied nodes of total complex internal dimension \(D\), its
+unquotiented inertia is \((4D-2,4D-2,2D-N+2)\), and after node-phase
+reduction it is \((4D-2,4D-2,2D-2N+2)\).  Every axisymmetric point also
+lies on an explicit nonaxisymmetric fixed-occupation arc.  The transverse
+part is therefore hyperbolic on every automatic-face support stratum; what
+remains locally is to resolve the displayed radical into nonlinear
+semialgebraic components.  The exact fibre-product equation is already
+certified; complex resonance components and occupation-level sums need not
+be recomputed.
 The symbolic-\(\ell\) standard-branch resonance and collision theorem is now
 closed, as is the complete 164-coefficient two-momentum branch-basis census.
 The next exact enlargement is to classify the real connected components of

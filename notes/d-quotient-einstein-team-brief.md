@@ -3857,6 +3857,37 @@ Atlas row
 `einstein.ph.wm.interaction.ell2_same_sign_automatic_face_rotation_normal_form`
 records the scoped result without promoting all-orders or causal lifecycles.
 
+The internal normal-space gate is now closed as well.  A `q_minus` or
+`q_plus` node has complex current-space dimension `2`, while a `p_extra`
+node has dimension `4`.  If `N` nodes of total internal dimension `D` are
+occupied, the complete fixed-node-norm rotation Hessian has exact real
+inertia
+
+```text
+unquotiented:        (4*D-2, 4*D-2, 2*D-N+2)
+node-phase quotient: (4*D-2, 4*D-2, 2*D-2*N+2).
+```
+
+All fifteen ray and two-ray relative-interior strata are enumerated; their
+phase-reduced inertias range from `(30,30,10)` to `(54,54,20)`.  The atlas
+row
+`einstein.ph.wm.interaction.ell2_same_sign_automatic_face_full_rotation_normal_form`
+is `CERTIFIED`.  The remaining automatic-face problem is nonlinear radical
+resolution and gluing across occupation strata.  The independent main gate
+is now restricted-current nondegeneracy on each active resonance component.
+
+The nested phase-reduced certificate is recorded separately at
+`einstein.ph.wm.interaction.ell2_same_sign_automatic_face_full_internal_rotation_normal_form`;
+it is the quotient formula above, not a different carrier.  The currently
+active programme bridge remains same-background Bridge 1 with Classical.
+Its certified linear relative triangle/cofiber and branch dictionary are
+unchanged: these automatic-face Hessians are nonlinear inputs, not a
+promotion of the bridge map lifecycle.  The activation gate is the exact
+restricted Lee--Wald pullback on each active resonance component.  Until
+that componentwise map exists, the bridge atlas remains fail-closed there;
+missing polar, exceptional, global, charge, boundary and causal sectors are
+not identified by matching branch names.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

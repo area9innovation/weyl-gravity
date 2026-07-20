@@ -506,6 +506,24 @@ def verify() -> None:
         raise AssertionError("same-sign automatic-face exact arc changed")
     if rotation_normal_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "aligned angular slice" not in rotation_normal["claim_boundary"]:
         raise AssertionError("same-sign automatic-face normal-form theorem exceeded scope")
+    full_internal = by_id["einstein.ph.wm.interaction.ell2_same_sign_automatic_face_full_internal_rotation_normal_form"]
+    full_internal_second = full_internal["mode_data"]["second_order"]
+    if "(4M-2,4M-2,2M-2N+2)" not in full_internal["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("full internal automatic-face inertia was hidden")
+    if "two eigenlines" not in full_internal["mode_data"]["lee_wald"]["statement"] or "fifteen" not in full_internal_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("full internal automatic-face support theorem changed")
+    if full_internal_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "only at fixed occupations" not in full_internal["claim_boundary"]:
+        raise AssertionError("full internal automatic-face theorem exceeded scope")
+    full_rotation = by_id["einstein.ph.wm.interaction.ell2_same_sign_automatic_face_full_rotation_normal_form"]
+    full_rotation_second = full_rotation["mode_data"]["second_order"]
+    if full_rotation["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "(4D-2,4D-2,2D-N+2)" not in full_rotation["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("same-sign automatic-face full normal-form inertia was hidden")
+    if full_rotation["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "internal polarization" not in full_rotation["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("same-sign automatic-face internal normal form changed")
+    if full_rotation_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "complete rotation Hessian" not in full_rotation_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("same-sign automatic-face full Hessian bounded verdict changed")
+    if full_rotation_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "fixed node norms" not in full_rotation["claim_boundary"]:
+        raise AssertionError("same-sign automatic-face full normal-form theorem exceeded scope")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

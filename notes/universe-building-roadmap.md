@@ -88,10 +88,12 @@ identities before a Berger Hadamard claim.
 
 The direct-route boundary is now sharper. The finite `A10 <-> C20`
 differential graph maps are wavefront-safe and the two ghost local
-parametrices are included, but the stationary slab Volterra maps are not yet
-a compact-support regular GreenHyp morphism. The next physical import is a
-nonstationary temporal-cutoff companion Green family; the quantum consumer
-must then prove response-map regularity and cone mapping. A global seed
+parametrices are included. The generic typed Volterra theorem explicitly
+allows smooth time dependence, so its Berger specialization now certifies the
+nonstationary temporal-cutoff companion Green family, both inverse identities,
+causal support and adjoint reversal. The quantum consumer must next prove
+microlocal propagation through the cutoff transition and the resulting regular
+response-map cone action. A global seed
 covariance with declared BV/Krein and physical-positivity policy remains a
 separate gate before the BRST Ward identities and 26-to-54 lift.
 
@@ -106,7 +108,7 @@ The shortest independent paths are now:
 Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   attach the certified 188-row physical/current q2 interface to the 78-row relative mapping cofiber and solve or certify the remaining cross-incidence; causal Green data and the eighteen candidate-13 spectral receivers remain separate fail-closed gates
-Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; for Berger, request the nonstationary temporal-cutoff companion Green family and construct its regular response morphism plus a global seed covariance, while separately requesting a corrected q26-compatible Cauchy lift instead of the exactly rejected canonical graph lift; in parallel analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows, add remaining BV rows to the partial-BV five-carrier representative, classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
+Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; for Berger, use the certified temporal-cutoff Green family to prove cutoff microlocal propagation and its regular response morphism, then supply a global seed covariance, while separately requesting a corrected q26-compatible Cauchy lift instead of the exactly rejected canonical graph lift; in parallel analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows, add remaining BV rows to the partial-BV five-carrier representative, classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; complete typed q2 and the 616,738-key q3 are executable, but the 108-row arity-two replay is OBSTRUCTED at bidegree (0,0), so derive the background-compatible apparatus BV/chart contribution before any arity-three, K_Berger, observer-morphism or Z2^C restriction
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
@@ -2613,11 +2615,20 @@ quadratic normal form of `mu_J3` on `ker d(mu_J1,mu_J2)`.  That gate is now
 closed on the current-eigenline-aligned angular slice: with `N` occupied
 eigenlines its exact real inertia is `(4*N-2,4*N-2,2)`, and every automatic-
 face axisymmetric point lies on an explicit norm-preserving nonaxisymmetric
-`m=+/-2` arc inside the bounded fibre product.  The remaining local gate is
-the internal current-orthogonal normal space.  Active resonance components
+`m=+/-2` arc inside the bounded fibre product.  The internal
+current-orthogonal normal space is now closed too: for `N` occupied nodes of
+total complex internal dimension `D`, the full fixed-norm inertia is
+`(4*D-2,4*D-2,2*D-N+2)` before node-phase quotient and
+`(4*D-2,4*D-2,2*D-2*N+2)` after it.  All fifteen ray/interior strata are
+listed exactly.  What remains on automatic faces is nonlinear radical
+resolution and occupation-stratum gluing.  Active resonance components
 separately require a restricted-current nondegeneracy theorem before the
 connected-fibre argument can be reused.  All higher lifecycles remain
-fail-closed.
+fail-closed.  This is nonlinear input to same-background Bridge 1 with
+Classical, not a promotion of its certified linear relative triangle/cofiber.
+The bridge activates next only when the restricted Lee--Wald pullback is
+certified componentwise on an active resonance stratum; until then the
+corresponding bridge atlas map is `NO_CERTIFIED_MAP`.
 
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at

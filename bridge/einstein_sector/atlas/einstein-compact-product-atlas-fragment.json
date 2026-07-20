@@ -5222,6 +5222,194 @@
       }
     },
     {
+      "claim_boundary": "This closes the internal normal form only at fixed occupations on automatic faces. It does not glue occupation strata, classify active resonance components, perform residual descent, or promote all-orders, causal, observational or quantum claims.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_FULL_INTERNAL_ROTATION_NORMAL_FORM",
+          "sha256": "d9887063fc42e1dae4aac194cf5c63e673338b43868bab854f982a1e916a96d6"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_ROTATION_NORMAL_FORM",
+          "sha256": "13823b4cb13ea9b0b5e8af24cd6b2723c2a32e69cff6e4c69b8ad8f1d3ad00d3"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_ROTATION_LINKS",
+          "sha256": "f96bd216b7f740f741b11e613d3dda0e6cad33522318213feec98315e79b9574"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+          "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+          "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.ell2_same_sign_automatic_face_full_internal_rotation_normal_form",
+      "mode_data": {
+        "dispersion": {
+          "statement": "All five automatic faces are kept candidatewise, with both rays and their relative interior listed separately.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The current multiplicities are two eigenlines on each q node and four on each p node; every current-orthogonal eigenline contributes inertia (4,4,2).",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The theorem remains on automatic faces, where the complete bilinear resonance factor vanishes identically.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "All fifteen realized ray/interior fixed-occupation strata have complete internal rotation normal forms; their inertias range from (30,30,10) to (54,54,20).",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific retarded Weyl-Maxwell correction complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The same obstruction-zero strata lie in the smooth-secular class; occupation gluing and active components remain open.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "For N occupied nodes and M total current eigenlines, the complete fixed-occupation rotation-kernel inertia is (4M-2,4M-2,2M-2N+2).",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "five distinct collision candidates 17--21, retained separately; candidate 16 is NOT_APPLICABLE",
+        "boundaries": "closed S1_L times S2 before final residual quotient",
+        "carrier": "complete axial/polar current-eigenline tangent on every ray and relative-interior fixed-occupation support stratum of each automatic face",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": 2,
+        "k": "candidatewise signed n=(1,-2) or (1,2), never identified across rho",
+        "m": "all m=-2,...,2 around the axisymmetric base",
+        "omega": "all occupied generic positive-frequency nodes with conjugate reality completion",
+        "parity": "all axial and polar q-primary and p-primary internal eigenlines",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
+      "claim_boundary": "This is the complete quadratic rotation normal form only at fixed node norms on automatic faces. The nonlinear radical resolution, gluing of occupation strata, active resonance components and all higher lifecycles remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_FULL_ROTATION_NORMAL_FORM",
+          "sha256": "41e5162299f26ce1f3f4cea8a98556e7a4b82f2615d50fe08805c55105161df1"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_FULL_INTERNAL_ROTATION_NORMAL_FORM",
+          "sha256": "d9887063fc42e1dae4aac194cf5c63e673338b43868bab854f982a1e916a96d6"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_ROTATION_NORMAL_FORM",
+          "sha256": "13823b4cb13ea9b0b5e8af24cd6b2723c2a32e69cff6e4c69b8ad8f1d3ad00d3"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_ROTATION_LINKS",
+          "sha256": "f96bd216b7f740f741b11e613d3dda0e6cad33522318213feec98315e79b9574"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_RESONANCE_FACE_FIBRES",
+          "sha256": "7607c649ebc628270669db8fd5e6ab813b281b82c83192a9cb7f7dbee09f3433"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_operator.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR",
+          "sha256": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION",
+          "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+          "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+          "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.ell2_same_sign_automatic_face_full_rotation_normal_form",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Every ray interior and two-ray relative interior is retained separately on each of the five automatic faces; candidate 16 is NOT_APPLICABLE.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "For N occupied nodes of total internal complex dimension D, the full fixed-norm rotation Hessian has unquotiented inertia (4D-2,4D-2,2D-N+2) and node-phase-quotiented inertia (4D-2,4D-2,2D-2N+2).",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The automatic bilinear resonance remains identically zero on every declared support stratum.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Every declared fixed-norm link lies in the necessary-and-sufficient bounded fibre product; its complete rotation Hessian at the axisymmetric point is classified.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific retarded Weyl-Maxwell correction complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The same rotation-zero links lie in the smooth-secular cone; their radical is not yet resolved into nonlinear local components.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "All internal polarization directions are included. They add matched hyperbolic blocks and explicit m=0 radical directions; the transverse part is indefinite on every support stratum.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "five distinct collision candidates 17--21, retained separately; candidate 16 has no nonzero automatic face",
+        "boundaries": "closed S1_L times S2 before final residual quotient",
+        "carrier": "complete tangent at each axisymmetric fixed-node-norm automatic-face point, including all axial/polar internal directions and all spin-two magnetic coefficients",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": 2,
+        "k": "signed n=(1,2), never identified across rho",
+        "m": "all m=-2,...,2; both unquotiented and node-phase-quotiented forms recorded",
+        "omega": "occupied generic positive-frequency nodes with conjugate reality completion",
+        "parity": "complete axial and polar q-primary and p-primary internal spaces",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "Parity/angular workload theorem only for the 21 ell=2 cross-|n| candidates. No source zero, same-fibre classification, tangent-cone verdict or higher lifecycle is inferred.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -8759,7 +8947,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "e21f6a4f0c96ae48b9afa7f610c0778d2f197bf41c84aee5d475d2702a03d20b",
+  "generated_by_sha256": "f9b04d78c0adbb485387a33aaa9c696821728eda5a26087a52236a9d5dc99afb",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

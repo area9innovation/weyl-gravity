@@ -1,0 +1,20 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_AUTOMATIC_FACE_FULL_INTERNAL_ROTATION_NORMAL_FORM_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Complete fixed-occupation rotation-kernel inertia on every ray and relative-interior support stratum of the five nonzero automatic faces, including all axial/polar internal directions.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.json": "d9887063fc42e1dae4aac194cf5c63e673338b43868bab854f982a1e916a96d6",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.py": "47b95b149b9a70fbb26b67e04fec1671f8428b16edbff86f2b2c306ac81779a4",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.schema.json": "82aadad211edccdbf359ae6255999d0c6d01bedff1985a9ff6e3dab6de935a0c",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.py": "d553e408b3b82e38792e04d19cc3e3514bd0e9b089a27b076e71118ed99427e8",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.py": "5847b7735b7419fc18edd958b78a3493a6f52ad7f41a784c1af31074174b51fb",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-automatic-face-full-internal-rotation-normal-form.md": "e9c1a32aaa4c024071468733a8c2841576a3d6904acbe4b4e106a26c3821ba20"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <scoped JSON paths>", "git diff --check -- <scoped paths>"]},
+    "tier_1": {"status": "PASS", "tests_run": 3, "elapsed_seconds": 0.004, "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form --check", "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form"]},
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS_AND_EXACT_DIMENSION_AUDIT", "reason": "The theorem imports both parity currents and the aligned normal form, derives the node multiplicities 2/4/2, independently checks every candidatewise inertia against the full fixed-norm phase-reduced tangent dimension, and passes the independent atlas verifier with all 96 focused tests."},
+    "tier_3": {"status": "NOT_RUN", "reason": "Occupation-stratum gluing, active resonance components and all higher lifecycles remain open."}
+  },
+  "claim_boundary": "The full internal normal form is complete only at fixed occupations on automatic faces; no active resonance or higher-lifecycle claim is made."
+}
