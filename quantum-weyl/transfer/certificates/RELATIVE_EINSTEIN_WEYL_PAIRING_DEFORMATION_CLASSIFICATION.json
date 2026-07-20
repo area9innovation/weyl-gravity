@@ -1,0 +1,597 @@
+{
+  "candidate_dispositions": [
+    {
+      "candidate": "rank-one Weyl q-primary pairing deformation",
+      "cyclic_generic_inclusion": "EXPLICIT",
+      "physical_price": "pairing is declared independently of the original Weyl-Maxwell action; no action-level BV/QME interpretation",
+      "preserves_Einstein_Maxwell_action": true,
+      "preserves_Weyl_Maxwell_action_pairing": false,
+      "preserves_Weyl_Maxwell_equations": true,
+      "preserves_extra_p_shell_separation": true,
+      "preserves_product_residual_action": true,
+      "preserves_real_structure": true
+    },
+    {
+      "candidate": "rank-one Einstein q-primary quadratic action change",
+      "cyclic_generic_inclusion": "EXPLICIT",
+      "physical_price": "Einstein source Hessian, equations and action are changed",
+      "preserves_Einstein_Maxwell_action": false,
+      "preserves_Weyl_Maxwell_action_pairing": true,
+      "preserves_Weyl_Maxwell_equations": true,
+      "preserves_extra_p_shell_separation": true,
+      "preserves_product_residual_action": true,
+      "preserves_real_structure": true
+    },
+    {
+      "candidate": "minimal positive same-q physical cotangent auxiliary",
+      "cyclic_generic_inclusion": "EXPLICIT",
+      "physical_price": "one new physical q-primary cohomology direction and its BV cotangent dual per parity; residual content changes",
+      "preserves_Einstein_Maxwell_action": true,
+      "preserves_Weyl_Maxwell_action_pairing": false,
+      "preserves_Weyl_Maxwell_equations": false,
+      "preserves_extra_p_shell_separation": true,
+      "preserves_product_residual_action": false,
+      "preserves_real_structure": true
+    },
+    {
+      "candidate": "contractible cotangent auxiliaries or exact currents",
+      "cyclic_generic_inclusion": "OBSTRUCTED",
+      "physical_price": "none, and therefore no inertia repair",
+      "preserves_Einstein_Maxwell_action": true,
+      "preserves_Weyl_Maxwell_action_pairing": true,
+      "preserves_Weyl_Maxwell_equations": true,
+      "preserves_extra_p_shell_separation": true,
+      "preserves_product_residual_action": true,
+      "preserves_real_structure": true
+    }
+  ],
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE theorem classifies the complete real product-equivariant deformation regions on the generic two-dimensional q-primary cohomology fibres. It proves rank one is the minimal pairing/action-form change, constructs both parity repairs and the minimal one-positive-direction physical auxiliary extension, and labels their physical prices. The pairing-only repair is not the original action pairing; the action and auxiliary repairs change equations or residual content. No full off-shell changed action, standard-action pushforward, matched insertion, relative coefficient, QME, Lorentzian causal, positivity, particle, scattering or unitarity claim is established.",
+  "claim_flags": {
+    "COMPLETE_GENERIC_REDUCED_PAIRING_DEFORMATION_FAMILY_CLASSIFIED": true,
+    "FULL_OFF_SHELL_CHANGED_ACTION_COMPLEX_CONSTRUCTED": false,
+    "LORENTZIAN_CAUSAL_OR_PARTICLE_CLAIM": false,
+    "MATCHED_ONE_LOOP_COEFFICIENTS_AUTHORIZED": false,
+    "MINIMAL_PHYSICAL_AUXILIARY_REPAIR_CONSTRUCTED": true,
+    "MINIMAL_RANK_ONE_PAIRING_REPAIR_CONSTRUCTED": true,
+    "RELATIVE_QME_RESTORED": false,
+    "STANDARD_ACTION_PRESERVING_REPAIR_EXISTS": false
+  },
+  "classification_basis": {
+    "coefficient_ring": "real finite-order product-equivariant harmonic multipliers polynomial in lambda (and label-preserving k,omega where present)",
+    "deformation_variables": "all real symmetric 2x2 cohomology-form deformations, all finite cotangent auxiliaries classified by cohomology inertia, and reduced quadratic Hessian representatives",
+    "generic_fibre_dimension": 2,
+    "quotient": [
+      "real cyclic canonical congruences",
+      "chain homotopies",
+      "cohomologically exact current improvements",
+      "contractible BV doublets"
+    ],
+    "shell_rule": "all maps and auxiliaries preserve the labelled q shell; the noncolliding p shell is never used"
+  },
+  "coefficient_gate": {
+    "pairing_changed_reduced_matched_insertions_authorized": false,
+    "reason": "the explicit repair is not yet the BV pairing of a supplied changed off-shell action",
+    "standard_action_matched_insertions_authorized": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_checks": {
+    "all_selected_maps_are_real_and_polynomial_in_lambda": true,
+    "axial_one_positive_auxiliary_repair": true,
+    "axial_rank_one_source_repair": true,
+    "axial_rank_one_target_repair": true,
+    "contractible_auxiliaries_leave_cohomology_inertia_unchanged": true,
+    "exact_currents_and_canonical_transformations_quotiented": true,
+    "negative_only_auxiliaries_cannot_supply_positive_plane": true,
+    "one_positive_same_q_auxiliary_is_minimal": true,
+    "polar_one_positive_auxiliary_repair": true,
+    "polar_rank_one_source_repair": true,
+    "polar_rank_one_target_repair": true,
+    "q_and_p_shell_separation_preserved": true,
+    "rank_one_crosses_every_required_signature_wall": true,
+    "rank_zero_cannot_cross_inertia": true,
+    "terminal_obstruction_imported_by_commit_and_hash": true
+  },
+  "global_deformation_theorem": {
+    "arbitrary_pairing_deformation": "For each parity, W+Delta is repairable iff it is positive definite; equivalently its leading principal minor and determinant are positive. Any two repaired forms are congruent, so the positive region is one canonical orbit after quotient.",
+    "arbitrary_rank_one_source_deformation": "E-t*v*v^T reaches inertia (1,1) iff t>1/(v^T E^-1 v); equality is the complete rank-one wall.",
+    "arbitrary_rank_one_target_deformation": "Delta=t*v*v^T repairs iff v^T W^-1 v<0 and t>-1/(v^T W^-1 v). Equality is the complete rank-one wall.",
+    "both_endpoints_deformed": "an invertible real cyclic map exists exactly when the two deformed nondegenerate forms have equal inertia",
+    "contractible_auxiliary_verdict": "NO_EFFECT_ON_COHOMOLOGY_INERTIA",
+    "minimal_pairing_change_rank": 1,
+    "minimal_physical_auxiliary_criterion": "if an auxiliary cohomology form has inertia (r,s), then W direct_sum A contains an Einstein-positive two-plane iff r>=1; hence one positive same-q direction is minimal"
+  },
+  "input_pin": {
+    "commit": "2517b4cba74538fccff5d1abbaf6755ad58f51f3",
+    "path": "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
+    "result_id": "RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION",
+    "sha256": "f9e2f72214d947a2b8a3f4e4992e2a7e8ab1e6cdadd66ce82dffd8ee83e8698c"
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "minimal_changed_relative_complex": {
+    "action_level_BV_QME_route": "NOT_AUTHORIZED_UNTIL_A_CHANGED_OFF_SHELL_ACTION_IS_SUPPLIED",
+    "carrier": "generic axial and polar q-primary cohomology fibres with the original Einstein form, rank-one-repaired Weyl form, and the displayed polynomial cyclic maps",
+    "differential": "zero on physical cohomology",
+    "full_off_shell_40_TO_38_chain_lift": "NOT_CONSTRUCTED",
+    "relative_construction": "mapping cone of the displayed cyclic isomorphism on each labelled generic q-primary fibre",
+    "status": "EXACT_REDUCED_CHANGED_PAIRING_COMPLEX",
+    "support_locality": "maps and rank-one deformations are finite polynomials in lambda and preserve all product labels",
+    "theory_label": "PAIRING_CHANGED_GENERIC_Q_PRIMARY_RELATIVE_COMPLEX_V1"
+  },
+  "next_gate": "SUPPLY_ONE_EXPLICIT_CHANGED_OFF_SHELL_QUADRATIC_ACTION_AND_VERIFY_ITS_FULL_BV_CYCLIC_CHAIN_LIFT_BEFORE_MATCHED_INSERTIONS",
+  "provenance": {
+    "proof_type": "EXACT_GENERIC_COHOMOLOGY_INERTIA_WALL_CLASSIFICATION_WITH_EXPLICIT_CONGRUENCES_AND_TYPED_AUXILIARIES",
+    "source_manifest": {
+      "../reports/relative-einstein-weyl-pairing-deformation-classification.md": "4beca5d6535a28c14e912c50b4de4cf806856dd147d449b1a19fbf928b73ac5e",
+      "relative_einstein_weyl_pairing_deformation_classification.py": "a06716f52a571cc8e81a2c8ca36c1b1cf0fb62d2e1cb2ecdcd43c96b8ccbea83",
+      "relative_einstein_weyl_pairing_deformation_classification_certificate.py": "3f1bbc195ef573ed6b90aae7c146780b9e43a945df059c31b6afc66afc6f7879",
+      "schema/relative-einstein-weyl-pairing-deformation-classification-v1.schema.json": "95ce547fa6de5d3ddd0f4d1c92af1f9bcb2ba8ace3076575cf4cfdcc77755f8e",
+      "tests/test_relative_einstein_weyl_pairing_deformation_classification.py": "36f0b8fc7d4cceac1c8810df06e1636df9dfecd951c1c2b5f3e92f8e8ec2a7bc",
+      "verify_relative_einstein_weyl_pairing_deformation_classification.py": "c003c22fcfd3a5bc4d3a7c611bfc602db065f8070b8148064875f98b38fb7bf6"
+    }
+  },
+  "quadratic_action_disposition": {
+    "complete_reduced_family": "every symmetric Delta is the reduced q-primary Hessian of a quadratic counterterm on that fibre",
+    "four_dimensional_covariant_action_lift": "NOT_CONSTRUCTED",
+    "preserve_original_equations_and_change_inertia": false,
+    "proof": "an equation-preserving local action change is on-shell trivial or an exact current improvement and induces zero change of the nondegenerate cohomology form; every displayed nonzero Delta changes the reduced Hessian and equations",
+    "standard_action_preserving_repair_class": "EMPTY",
+    "support_local_selected_representatives": {
+      "axial_order_in_lambda": 1,
+      "polar_order_in_lambda": 2,
+      "status": "FINITE_ORDER_PRODUCT_EQUIVARIANT_REDUCED_ACTION"
+    }
+  },
+  "result_id": "RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION",
+  "result_state": "MINIMAL_RANK_ONE_PAIRING_CHANGE_OR_ONE_POSITIVE_SAME_Q_PHYSICAL_AUXILIARY_REQUIRED_STANDARD_ACTION_PRESERVING_CLASS_EMPTY",
+  "schema": "quantum-weyl-relative-einstein-weyl-pairing-deformation-classification-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "closed S1_L x S2 Cauchy slice",
+    "carrier": "38-row and 40-row minimal action BV carriers plus the canonical 316-row full-cone cotangent completion",
+    "charge_sector": "fixed magnetic U1 bundle N=2 before final quotient",
+    "degree": "all BV degrees for carrier audit; generic solution cohomology for obstruction",
+    "ell": "ell>=2",
+    "k": "all compact momenta on noncolliding generic q shells",
+    "m": "all by SO3 equivariance",
+    "omega": "both noncolliding q-primary radiative shells",
+    "parity": "axial and polar separately",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  },
+  "sector_classification": [
+    {
+      "Einstein_form": [
+        [
+          "lambda",
+          "0"
+        ],
+        [
+          "0",
+          "2"
+        ]
+      ],
+      "Weyl_q_form": [
+        [
+          "lambda",
+          "3*lambda"
+        ],
+        [
+          "3*lambda",
+          "2"
+        ]
+      ],
+      "complete_rank_one_target_family": {
+        "above_wall_inertia": [
+          2,
+          0
+        ],
+        "at_wall_inertia": [
+          1,
+          0,
+          1
+        ],
+        "below_wall_inertia": [
+          1,
+          1
+        ],
+        "canonical_direction": [
+          "0",
+          "1"
+        ],
+        "canonical_repair_t": "9*lambda",
+        "canonical_wall_t": "9*lambda - 2",
+        "criterion": "q=v^T*W^-1*v<0 and t>-1/q; equality is the unique rank-one signature wall",
+        "family": "Delta=t*v*v^T"
+      },
+      "complete_symmetric_target_deformation": {
+        "family": "Delta=[[a,b],[b,c]], with real product-equivariant finite-order harmonic multipliers a,b,c",
+        "quotient_statement": "modulo real cyclic canonical congruence, the repaired positive-definite region is one inertia orbit",
+        "repair_criterion": "W11+a>0 and det(W+Delta)>0 on every declared generic label",
+        "signature_wall": "det(W+Delta)=0"
+      },
+      "dual_minimal_source_action_repair": {
+        "Delta_source": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-9*lambda"
+          ]
+        ],
+        "identity": "S^T*W*S=E-Delta",
+        "identity_verified": true,
+        "rank": 1,
+        "repaired_Einstein_form": [
+          [
+            "lambda",
+            "0"
+          ],
+          [
+            "0",
+            "2 - 9*lambda"
+          ]
+        ],
+        "repaired_inertia_lambda_ge_6": [
+          1,
+          1,
+          0
+        ],
+        "same_cyclic_map_S": [
+          [
+            "1",
+            "-3"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "theory_label": "ACTION_CHANGED_EINSTEIN_Q_PRIMARY_REDUCED_THEORY"
+      },
+      "minimal_physical_auxiliary_repair": {
+        "added_q_primary_physical_cohomology_directions": 1,
+        "added_reduced_BV_rows": [
+          {
+            "action_origin": "new decoupled quadratic q-primary auxiliary field",
+            "degree": 0,
+            "parity": "axial",
+            "representation": "same H_product labels and q-primary frequency as the axial source fibre",
+            "row_id": "z_axial"
+          },
+          {
+            "action_origin": "BV cotangent lift of the auxiliary field",
+            "degree": 1,
+            "parity": "axial",
+            "representation": "cotangent dual of the same H_product q-primary axial auxiliary",
+            "row_id": "z_star_axial"
+          }
+        ],
+        "auxiliary_pairing": "2",
+        "extended_target_form": [
+          [
+            "lambda",
+            "3*lambda",
+            "0"
+          ],
+          [
+            "3*lambda",
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "2"
+          ]
+        ],
+        "extended_target_inertia_lambda_ge_6": [
+          2,
+          1,
+          0
+        ],
+        "identity": "J^T*(W direct_sum auxiliary_form)*J=E",
+        "identity_verified": true,
+        "inclusion_J": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "theory_label": "PHYSICAL_Q_AUXILIARY_EXTENDED_WEYL_REDUCED_THEORY"
+      },
+      "minimal_target_pairing_repair": {
+        "Delta": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "9*lambda"
+          ]
+        ],
+        "cyclic_map_S": [
+          [
+            "1",
+            "-3"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "identity": "S^T*(W+Delta)*S=E",
+        "identity_verified": true,
+        "rank": 1,
+        "repaired_Weyl_form": [
+          [
+            "lambda",
+            "3*lambda"
+          ],
+          [
+            "3*lambda",
+            "9*lambda + 2"
+          ]
+        ],
+        "repaired_inertia_lambda_ge_6": [
+          2,
+          0,
+          0
+        ],
+        "support_local_order_in_lambda": 1,
+        "theory_label": "PAIRING_CHANGED_WEYL_Q_PRIMARY_REDUCED_THEORY"
+      },
+      "original_inertias_lambda_ge_6": {
+        "Einstein": [
+          2,
+          0,
+          0
+        ],
+        "Weyl_q": [
+          1,
+          1,
+          0
+        ]
+      },
+      "sector": "axial",
+      "wall_mutations": {
+        "determinants": [
+          "-lambda",
+          "0",
+          "lambda"
+        ],
+        "t_above": "9*lambda - 1",
+        "t_at": "9*lambda - 2",
+        "t_below": "3*(3*lambda - 1)"
+      }
+    },
+    {
+      "Einstein_form": [
+        [
+          "1",
+          "-2"
+        ],
+        [
+          "-2",
+          "2*lambda"
+        ]
+      ],
+      "Weyl_q_form": [
+        [
+          "4",
+          "-3*lambda - 2"
+        ],
+        [
+          "-3*lambda - 2",
+          "8*lambda"
+        ]
+      ],
+      "complete_rank_one_target_family": {
+        "above_wall_inertia": [
+          2,
+          0
+        ],
+        "at_wall_inertia": [
+          1,
+          0,
+          1
+        ],
+        "below_wall_inertia": [
+          1,
+          1
+        ],
+        "canonical_direction": [
+          "0",
+          "1"
+        ],
+        "canonical_repair_t": "3*(lambda - 2)*(3*lambda + 2)/4",
+        "canonical_wall_t": "(lambda - 2)*(9*lambda - 2)/4",
+        "criterion": "q=v^T*W^-1*v<0 and t>-1/q; equality is the unique rank-one signature wall",
+        "family": "Delta=t*v*v^T"
+      },
+      "complete_symmetric_target_deformation": {
+        "family": "Delta=[[a,b],[b,c]], with real product-equivariant finite-order harmonic multipliers a,b,c",
+        "quotient_statement": "modulo real cyclic canonical congruence, the repaired positive-definite region is one inertia orbit",
+        "repair_criterion": "W11+a>0 and det(W+Delta)>0 on every declared generic label",
+        "signature_wall": "det(W+Delta)=0"
+      },
+      "dual_minimal_source_action_repair": {
+        "Delta_source": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-3*(lambda - 2)*(3*lambda + 2)/4"
+          ]
+        ],
+        "identity": "S^T*W*S=E-Delta",
+        "identity_verified": true,
+        "rank": 1,
+        "repaired_Einstein_form": [
+          [
+            "1",
+            "-2"
+          ],
+          [
+            "-2",
+            "-(9*lambda**2 - 20*lambda - 12)/4"
+          ]
+        ],
+        "repaired_inertia_lambda_ge_6": [
+          1,
+          1,
+          0
+        ],
+        "same_cyclic_map_S": [
+          [
+            "1/2",
+            "(3*lambda - 2)/4"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "theory_label": "ACTION_CHANGED_EINSTEIN_Q_PRIMARY_REDUCED_THEORY"
+      },
+      "minimal_physical_auxiliary_repair": {
+        "added_q_primary_physical_cohomology_directions": 1,
+        "added_reduced_BV_rows": [
+          {
+            "action_origin": "new decoupled quadratic q-primary auxiliary field",
+            "degree": 0,
+            "parity": "polar",
+            "representation": "same H_product labels and q-primary frequency as the polar source fibre",
+            "row_id": "z_polar"
+          },
+          {
+            "action_origin": "BV cotangent lift of the auxiliary field",
+            "degree": 1,
+            "parity": "polar",
+            "representation": "cotangent dual of the same H_product q-primary polar auxiliary",
+            "row_id": "z_star_polar"
+          }
+        ],
+        "auxiliary_pairing": "2*(lambda - 2)",
+        "extended_target_form": [
+          [
+            "4",
+            "-3*lambda - 2",
+            "0"
+          ],
+          [
+            "-3*lambda - 2",
+            "8*lambda",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "2*(lambda - 2)"
+          ]
+        ],
+        "extended_target_inertia_lambda_ge_6": [
+          2,
+          1,
+          0
+        ],
+        "identity": "J^T*(W direct_sum auxiliary_form)*J=E",
+        "identity_verified": true,
+        "inclusion_J": [
+          [
+            "1/2",
+            "-1"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "theory_label": "PHYSICAL_Q_AUXILIARY_EXTENDED_WEYL_REDUCED_THEORY"
+      },
+      "minimal_target_pairing_repair": {
+        "Delta": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3*(lambda - 2)*(3*lambda + 2)/4"
+          ]
+        ],
+        "cyclic_map_S": [
+          [
+            "1/2",
+            "(3*lambda - 2)/4"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "identity": "S^T*(W+Delta)*S=E",
+        "identity_verified": true,
+        "rank": 1,
+        "repaired_Weyl_form": [
+          [
+            "4",
+            "-3*lambda - 2"
+          ],
+          [
+            "-3*lambda - 2",
+            "(9*lambda**2 + 20*lambda - 12)/4"
+          ]
+        ],
+        "repaired_inertia_lambda_ge_6": [
+          2,
+          0,
+          0
+        ],
+        "support_local_order_in_lambda": 2,
+        "theory_label": "PAIRING_CHANGED_WEYL_Q_PRIMARY_REDUCED_THEORY"
+      },
+      "original_inertias_lambda_ge_6": {
+        "Einstein": [
+          2,
+          0,
+          0
+        ],
+        "Weyl_q": [
+          1,
+          1,
+          0
+        ]
+      },
+      "sector": "polar",
+      "wall_mutations": {
+        "determinants": [
+          "-4",
+          "0",
+          "4"
+        ],
+        "t_above": "(9*lambda**2 - 20*lambda + 8)/4",
+        "t_at": "(lambda - 2)*(9*lambda - 2)/4",
+        "t_below": "lambda*(9*lambda - 20)/4"
+      }
+    }
+  ]
+}

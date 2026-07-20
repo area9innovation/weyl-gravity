@@ -1,0 +1,87 @@
+{
+  "receipt_id": "RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION_V1_TIER_RECEIPT",
+  "result_id": "RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION",
+  "recorded_at": "2026-07-20",
+  "base_commit": "f3c64dbc3",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "input_hashes": {
+    "terminal_cyclic_pushforward_obstruction_at_2517b4cba74538fccff5d1abbaf6755ad58f51f3": "f9e2f72214d947a2b8a3f4e4992e2a7e8ab1e6cdadd66ce82dffd8ee83e8698c"
+  },
+  "output_hash": "00b2e7a66fd81c0f2c1d6af3b4f37a0a7d10215a4405b0e1ac50c39dc41e8cf5",
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/transfer/relative_einstein_weyl_pairing_deformation_classification.py quantum-weyl/transfer/relative_einstein_weyl_pairing_deformation_classification_certificate.py quantum-weyl/transfer/verify_relative_einstein_weyl_pairing_deformation_classification.py quantum-weyl/transfer/tests/test_relative_einstein_weyl_pairing_deformation_classification.py && python3 -m json.tool quantum-weyl/transfer/schema/relative-einstein-weyl-pairing-deformation-classification-v1.schema.json >/dev/null && git diff --check -- <scoped paths>",
+      "elapsed_seconds": 0.2,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m transfer.relative_einstein_weyl_pairing_deformation_classification_certificate --check",
+      "elapsed_seconds": 0.49,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m transfer.verify_relative_einstein_weyl_pairing_deformation_classification",
+      "elapsed_seconds": 0.45,
+      "status": "PASS_INDEPENDENT_EXACT_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest transfer.tests.test_relative_einstein_weyl_pairing_deformation_classification",
+      "elapsed_seconds": 0.74,
+      "status": "PASS_10_TESTS_WITH_BOTH_SIGNATURE_WALLS_MATRIX_AUXILIARY_AND_CLAIM_MUTATIONS"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/relative-einstein-weyl-pairing-deformation-classification-v1.schema.json -d quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION.json",
+      "elapsed_seconds": 0.95,
+      "status": "PASS_DRAFT_2020_12_STRICT"
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest atlas.tests.test_quantum_atlas_fragment && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "elapsed_seconds": 5.88,
+      "status": "PASS_8_TESTS_AND_3_VERIFIERS"
+    },
+    {
+      "tier": 1,
+      "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=/tmp paper/12-pure-weyl-one-loop-bv-anomaly.tex (twice)",
+      "elapsed_seconds": 0.99,
+      "status": "PASS_37_PAGE_PDF"
+    },
+    {
+      "tier": 2,
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 3.7,
+      "status": "ADVISORY_EXIT_0_WITH_PREEXISTING_BRIDGE_DRIFT_AND_CORPUS_BASELINE_DRIFT_REPORTED"
+    }
+  ],
+  "development_repairs": [
+    {
+      "failure": "SymPy structural equality rejected the exact polar congruence although simplification reduced every entry to zero",
+      "repair": "replace structural matrix equality with entrywise exact cancel-and-factor zero tests and independently replay both congruences",
+      "regression_status": "PASS"
+    },
+    {
+      "failure": "the first strict AJV replay rejected an allOf branch whose properties keyword lacked an explicit object type",
+      "repair": "add the Draft 2020-12 strict type declaration, regenerate the content-addressed certificate and atlas, and rerun both rails",
+      "regression_status": "PASS"
+    },
+    {
+      "failure": "an atlas regeneration command was launched from the quantum-weyl subdirectory without the repository PYTHONPATH and failed before writing",
+      "repair": "rerun the documented root-level command with PYTHONPATH=quantum-weyl; no failed run was counted as a pass",
+      "regression_status": "PASS"
+    },
+    {
+      "failure": "latexmk is not installed in the workspace",
+      "repair": "compile Paper 12 twice with the available pdflatex engine into /tmp and record the successful 37-page result",
+      "regression_status": "PASS"
+    }
+  ],
+  "tier_3_not_run": "No full off-shell changed action, matched one-loop insertion, relative coefficient, QME, Lorentzian causal construction, theorem freeze, release or tag is promoted. Exact reduced classification and its direct atlas consumer are covered by tiers 0-2; the imported terminal obstruction is unchanged and pinned by commit and hash."
+}

@@ -2022,3 +2022,44 @@ Certificate and report:
 
 - [`BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION.json`](../quantum-weyl/lorentzian/certificates/BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION.json)
 - [`berger-homogeneous-krein-covariance-classification.md`](../quantum-weyl/reports/berger-homogeneous-krein-covariance-classification.md)
+
+## Relative pairing-deformation classification (2026-07-20)
+
+The standard action-pairing cyclic pushforward remains obstructed, but the
+complete generic reduced changed-theory comparison is now exact. On each
+two-dimensional axial or polar \(q\)-primary fibre, every real symmetric
+pairing deformation repairs the mismatch exactly when the deformed Weyl form
+is positive definite. Modulo real cyclic congruence, the repaired region is
+one inertia orbit.
+
+For a rank-one change \(\Delta=t vv^T\), the complete criterion is
+
+\[
+v^TW^{-1}v<0,\qquad t>-\frac1{v^TW^{-1}v},
+\]
+
+with equality the unique signature wall. Rank zero cannot change inertia, so
+rank one is minimal. Explicit finite-order polynomial axial and polar
+repairs, their cyclic congruences, and mutations on both sides of each wall
+are independently verified.
+
+There are exactly three prices:
+
+1. change only the reduced Weyl pairing, preserving equations but abandoning
+   the original action-derived pairing;
+2. change a reduced quadratic Hessian, hence the action and equations; or
+3. add one positive same-\(q\) physical cohomology direction and its typed BV
+   cotangent dual per parity, changing equations and residual content.
+
+Contractible auxiliaries and exact current improvements cannot help. Thus the
+standard-action-preserving repair class is empty. The minimal changed object
+is labelled
+`PAIRING_CHANGED_GENERIC_Q_PRIMARY_RELATIVE_COMPLEX_V1`, but no full off-shell
+changed action or \(40\)-to-\(38\) chain lift is supplied. Matched insertions,
+a relative coefficient, and a relative QME remain unauthorized.
+
+This is `LOCAL-ALGEBRAIC`/`REDUCED-MODE`; it adds no Lorentzian state,
+positivity, particle, scattering, or unitarity claim.
+
+- [`RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION.json`](../quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION.json)
+- [`relative-einstein-weyl-pairing-deformation-classification.md`](../quantum-weyl/reports/relative-einstein-weyl-pairing-deformation-classification.md)

@@ -292,6 +292,10 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             "generic action-form inertia obstructs",
             relative["scope"]["carrier"],
         )
+        self.assertIn(
+            "rank-one pairing/action deformation",
+            relative["scope"]["carrier"],
+        )
         self.assertEqual(
             {
                 evidence["result_id"] for evidence in relative["evidence"]
@@ -299,6 +303,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             {
                 "RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION",
                 "RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION",
+                "RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION",
             },
         )
         round_s4 = next(
