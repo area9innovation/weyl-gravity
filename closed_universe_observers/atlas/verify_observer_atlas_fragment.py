@@ -52,6 +52,7 @@ def main() -> int:
     assert "observer.berger.interaction.direct_temporal_ak_diff_covariance_repair" in ids
     assert "observer.berger.interaction.quartic_calibration_relational_redshift_disposition" in ids
     assert "observer.berger.interaction.temporal_maxwell_emitter_antifield_covariance_module" in ids
+    assert "observer.berger.interaction.apparatus_z2_memory_nondefinition_after_repaired_reduction" in ids
     crosswalks = [row for row in value["entries"] if row["id"].startswith("observer.crosswalk")]
     assert {row["id"] for row in crosswalks} == {
         "observer.crosswalk.berger_physical_branch_to_detector",

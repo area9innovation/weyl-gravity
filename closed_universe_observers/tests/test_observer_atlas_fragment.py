@@ -197,6 +197,19 @@ def test_tangent_cone_is_not_promoted():
     assert {second_order[name]["status"] for name in ("bounded_or_finite_quasiperiodic", "smooth_secular", "causal_retarded")} == {"OPEN"}
 
 
+def test_repaired_apparatus_z2_stops_at_physical_reduction():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.interaction.apparatus_z2_memory_nondefinition_after_repaired_reduction"
+    )
+    assert set(row["descriptions"].values()) == {"NO_CERTIFIED_MAP"}
+    assert row["observer_data"]["response_rank"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_APPARATUS_Z2_MEMORY_NONDEFINITION_AFTER_REPAIRED_REDUCTION" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
+
+
 def test_recoil_internal_readiness_is_certified_while_physical_activation_is_open():
     rows = {row["id"]: row for row in build()["entries"]}
     readiness = rows["observer.berger.detector_profile.recoil_stream_executable_readiness"]

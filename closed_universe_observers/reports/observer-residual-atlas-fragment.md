@@ -262,6 +262,17 @@ positive-mixed Φ₂ affects non-rod rows, the executable old 108-row operator
 cannot be substituted.  No kernel, image, contraction, descended pairing,
 memory class or physical detector rank is therefore promoted.
 
+The repaired-apparatus Z2 successor is likewise terminally
+`NO_CERTIFIED_MAP`, but makes the second-order boundary explicit.  An
+independent replay finds no executable 160-row (q_1) fields, so there are no
+physical preparation, detector or memory representatives and hence no domain
+for the combined quadratic source.  The abstract finite-harmonic theorem is
+not a Berger receiver.  Stabilizer/Taub maps, reduced adjoint cokernels,
+resonant pairings and the three distinct correction-class ideals remain
+undefined.  Therefore individual and balanced Z2 membership, nonlinear
+rank/kernel and persistent relational memory are not classified; the prior
+coordinate-level rank two remains only a linear parent result.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "atlas_status",
+    "dependency_tags", "dependency_refs", "payload_ref",
+    "correction_class_disposition", "observer_disposition", "next_gate",
+    "claim_boundary", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-apparatus-z2-memory-nondefinition-after-repaired-reduction-v1"},
+    "result_id": {"const": "BERGER_APPARATUS_Z2_MEMORY_NONDEFINITION_AFTER_REPAIRED_REDUCTION"},
+    "claim_status": {"const": "NO_CERTIFIED_MAP_PHYSICAL_REDUCTION_PRECONDITION_FAILED"},
+    "atlas_status": {"const": "NO_CERTIFIED_MAP"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {"type": "object", "minProperties": 6},
+    "payload_ref": {"type": "object", "required": ["path", "result_id", "sha256", "canonical_sha256"]},
+    "correction_class_disposition": {
+      "const": {
+        "bounded_or_quasiperiodic": "NO_CERTIFIED_MAP",
+        "causal_or_retarded": "NO_CERTIFIED_MAP",
+        "smooth_secular": "NO_CERTIFIED_MAP"
+      }
+    },
+    "observer_disposition": {"type": "object", "minProperties": 6},
+    "next_gate": {"const": "EXPORT_EXECUTABLE_160_ROW_Q1_AND_PHYSICAL_CONTRACTION_BEFORE_COMBINED_Q2_OR_Z2"},
+    "claim_boundary": {"type": "string", "minLength": 1800},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": true
+}

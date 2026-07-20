@@ -2423,3 +2423,26 @@ The activation gate is a content-addressed 160-row (q_1) export containing
 the coefficient ring, bidegree blocks, sparse entries, chain groups for every
 support/zero-mode sector and the exact detector-smearing matrix.  Only then
 may π, (i), (h) and reduced response rank be computed.
+
+## Active bridge: repaired-apparatus Z2 and memory nondefinition
+
+The successor second-order gate terminates at the same prerequisite, now with
+an independent replay.  The terminal 160-row unary result is certified, but
+none of the executable operator fields required for kernels, images and a
+`pi_cl,i,h` contraction occurs in its payload.  Thus the two labelled
+preparations, detector records and persistent memories are not physical
+classes on which an action-derived quadratic source can be evaluated.
+
+The abstract finite-harmonic tangent-cone theorem remains certified only as
+an image/cokernel criterion.  It supplies no Berger carrier map, stabilizer
+receiver, adjoint cokernel or Green theorem.  Bounded/quasiperiodic, smooth
+secular and causal/retarded Berger cones are consequently separate
+`NO_CERTIFIED_MAP` results.  No individual mode is thereby called
+nonlinearly obstructed, and the leading coordinate rank two is retained only
+in its linear parent scope.
+
+The fail-closed atlas row is
+`observer.berger.interaction.apparatus_z2_memory_nondefinition_after_repaired_reduction`.
+Its activation gate remains the executable 160-row (q_1) and exact physical
+contraction; only then may a same-carrier action-derived (q_2), correction-
+class receivers, restricted detector rank and persistent memory be computed.
