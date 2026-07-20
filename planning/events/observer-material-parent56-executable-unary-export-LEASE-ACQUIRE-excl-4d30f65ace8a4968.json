@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-material-parent56-executable-unary-export-LEASE-ACQUIRE-excl-4d30f65ace8a4968",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/observer-material-parent56-executable-unary-export-LEASE-ACQUIRE-excl-4d30f65ace8a4968.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "observer-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T00:40:37+02:00", "seq": 1, "payload": {"target": "sf:program/work/observer-material-parent56-executable-unary-export", "agent": "observer-1", "lease_type": "exclusive", "action": "ACQUIRE", "acquired": "2026-07-21T00:40:37+02:00", "expires": "2026-07-21T12:40:37+02:00"}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/observer-material-parent56-executable-unary-export"}]
+}
