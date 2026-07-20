@@ -54,7 +54,9 @@ def verify() -> None:
     obstruction = payload["off_balance_obstruction"]
     assert obstruction["residual"] == "(1-t^2)*delta*mu_square"
     assert not obstruction["nonradial_no_go_proved"]
+    assert "choose any common-square direction" in payload["radial_transfer"]["square_vertex_case"]
     flags = payload["classification"]
+    assert flags["square_factor_vertex_case_included"]
     assert flags["candidate20_balance_complete_singular_union_contracts_to_hub"]
     assert not flags["candidate17_complete_singular_rotation_zero_fibre_connected"]
     assert not flags["candidate20_off_balance_complete_singular_rotation_zero_fibre_connected"]

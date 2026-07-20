@@ -36,6 +36,11 @@ class Candidate1720SingularRadialContractionTests(unittest.TestCase):
         self.assertTrue(theorem["every_rotation_zero_point_in_each_singular_component_has_radial_path_to_hub"])
         self.assertTrue(theorem["complete_singular_union_rotation_zero_fibre_connected"])
 
+    def test_square_factor_vertex_is_not_silently_omitted(self) -> None:
+        transfer = self.payload["radial_transfer"]
+        self.assertIn("choose any common-square direction", transfer["square_vertex_case"])
+        self.assertTrue(self.payload["classification"]["square_factor_vertex_case_included"])
+
     def test_off_balance_scope_is_fail_closed(self) -> None:
         flags = self.payload["classification"]
         self.assertFalse(flags["candidate17_complete_singular_rotation_zero_fibre_connected"])

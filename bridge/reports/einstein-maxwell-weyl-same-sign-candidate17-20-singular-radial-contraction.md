@@ -8,6 +8,13 @@ occupations into the common-square factor. This preserves fixed total
 occupations, the bilinear resonance equation, node-phase reduction and
 reality.
 
+If the common-square factor starts at its vertex, no square direction is
+initially defined.  Choose any square direction for the transferred
+occupation.  Initial rotation zero then forces the unscaled kernel factor to
+have zero rotational moment, and on `delta=0` the same formula proves that
+the path remains rotation-zero and is continuous at the vertex.  Thus the
+complete-union statement does not omit the vertex stratum.
+
 If the initial point is rotation-zero, the exact residual along this path is
 
 ```text

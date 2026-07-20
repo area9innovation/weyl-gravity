@@ -1,0 +1,47 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_SINGULAR_RADIAL_CONTRACTION_VERTEX_REPAIR_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Close the square-factor vertex stratum in the complete candidate-20 balance-divisor singular radial-contraction theorem.",
+  "source_commit": "6fcec4b49119e3c88630194c1c2c596ab99f87b6",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.json": "7980fa6c403b4ba1cdf055f42d426301c6477d6ecf02c833a734a4ece7a03c62",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.py": "750788f02f25815dcc2b14d10bbe4d9e580671bfd1763286e2b87d3e528ed0ce",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.schema.json": "2abb8b95201af41b5d895f9d832f8c2ca1771888b8b5496fc45f8e189c16af7e",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.py": "3a566881df485db0bbd62263f186feb2ae84844706524cd84120de8f5210b876",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.py": "3683106b01f2c82317c8b9eeabab990262d0d2874f3638fce81421dfeb37fcc1",
+    "bridge/reports/einstein-maxwell-weyl-same-sign-candidate17-20-singular-radial-contraction.md": "1d074d3f3e67ea79541c246c8d8abd62f49d515cc04c608f6ff471c89d171791"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on producer, independent verifier and focused tests",
+        "python3 -m json.tool on certificate, schema and this receipt",
+        "git diff --check on the seven scoped repair paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 7,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction"
+      ],
+      "result": "The regenerated payload and independent rail now require an explicit continuous choice through the receiving square-factor vertex."
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "No upstream mathematical input changed; the repair closes an omitted stratum in the theorem presentation and certificate contract."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Candidate 17 and candidate-20 off balance remain open, and no lifecycle freeze is promoted."
+    }
+  },
+  "claim_boundary": "The vertex repair completes the declared candidate-20 balance-divisor singular union. It does not promote any off-balance connectedness, occupation gluing, final residual, causal, observational, quantum or all-orders claim."
+}

@@ -17,7 +17,8 @@
     "exact_radial_transfer_identity_certified": true,
     "final_residual_descent": false,
     "occupation_strata_glued": false,
-    "off_balance_nonradial_contraction_no_go": false
+    "off_balance_nonradial_contraction_no_go": false,
+    "square_factor_vertex_case_included": true
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -37,7 +38,7 @@
   },
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.py",
-    "generator_sha256": "d1601b2616b7cf2988bbe2643e556f1e2edaf4c5e7909e7ad1c463a0030a37e8",
+    "generator_sha256": "750788f02f25815dcc2b14d10bbe4d9e580671bfd1763286e2b87d3e528ed0ce",
     "inputs": {
       "common_square": {
         "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.json",
@@ -68,7 +69,8 @@
     "endpoint": "at t=0 the arbitrary K factor is its vertex and the point lies in S_plus x S_minus",
     "exact_residual": "mu_rotation(t)=(1-t^2)*delta*mu_square",
     "initial_zero_relation": "M_K=-alpha*mu_square with alpha=omega_plus*A_plus-omega_minus*A_minus",
-    "occupation_conservation_checked": true
+    "occupation_conservation_checked": true,
+    "square_vertex_case": "if the receiving S factor starts at its vertex, choose any common-square direction for t<1; initial rotation zero gives M_K=0, and delta=0 makes the resulting path rotation-zero and continuous at t=1"
   },
   "resonance_and_group_checks": {
     "component_symmetry": "the same construction applies after exchanging the plus and minus parity-factor labels",
@@ -80,7 +82,7 @@
   "result_state": "CANDIDATE20_BALANCE_DIVISOR_COMPLETE_SINGULAR_UNION_CONTRACTS_TO_CONNECTED_HUB",
   "schema": "einstein-maxwell-weyl-same-sign-candidate17-20-singular-radial-contraction-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.schema.json",
-  "schema_sha256": "73b5de47058add919e3ae24ef7b91d48d6dc0d02a256913ac772823ac1fff594",
+  "schema_sha256": "2abb8b95201af41b5d895f9d832f8c2ca1771888b8b5496fc45f8e189c16af7e",
   "scope": {
     "background": "candidates 17 and 20 separately; the complete-union conclusion is candidate 20 on its exact active balance divisor",
     "boundaries": "closed S1_L times S2 before node-phase, lifted-rotation or final residual quotient",

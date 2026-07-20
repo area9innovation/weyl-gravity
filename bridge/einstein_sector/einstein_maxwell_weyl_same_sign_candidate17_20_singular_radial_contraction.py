@@ -63,6 +63,7 @@ def contraction_identity() -> dict[str, object]:
         "initial_zero_relation": "M_K=-alpha*mu_square with alpha=omega_plus*A_plus-omega_minus*A_minus",
         "exact_residual": "mu_rotation(t)=(1-t^2)*delta*mu_square",
         "endpoint": "at t=0 the arbitrary K factor is its vertex and the point lies in S_plus x S_minus",
+        "square_vertex_case": "if the receiving S factor starts at its vertex, choose any common-square direction for t<1; initial rotation zero gives M_K=0, and delta=0 makes the resulting path rotation-zero and continuous at t=1",
         "occupation_conservation_checked": True,
     }
 
@@ -130,6 +131,7 @@ def build() -> dict[str, object]:
         },
         "classification": {
             "exact_radial_transfer_identity_certified": True,
+            "square_factor_vertex_case_included": True,
             "candidate20_balance_complete_singular_union_contracts_to_hub": True,
             "candidate20_balance_complete_singular_rotation_zero_fibre_connected": True,
             "candidate17_phase_real_common_square_sublocus_contracts_to_hub": True,
