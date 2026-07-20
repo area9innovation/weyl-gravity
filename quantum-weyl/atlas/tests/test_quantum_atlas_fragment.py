@@ -122,6 +122,14 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             "LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT",
             {evidence["result_id"] for evidence in local_guard["evidence"]},
         )
+        self.assertIn(
+            "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION",
+            {evidence["result_id"] for evidence in local_guard["evidence"]},
+        )
+        self.assertIn(
+            "all five declared first D/K Cartan rows remain UNDEFINED_ANALYTICALLY",
+            local_guard["quantum_data"]["anomaly_QME_dependency"]["statement"],
+        )
         self.assertTrue(
             any(
                 evidence["result_id"]

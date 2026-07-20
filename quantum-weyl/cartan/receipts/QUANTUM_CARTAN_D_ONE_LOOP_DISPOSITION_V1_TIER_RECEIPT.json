@@ -1,0 +1,135 @@
+{
+  "receipt_id": "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION_V1_TIER_RECEIPT",
+  "work_item": "sf:program/work/quantum-cartan-d-one-loop-obstruction",
+  "recorded_at_utc": "2026-07-20T09:18:50Z",
+  "base_commit": "4d933322",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "quantum-weyl/cartan/certificates/QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION.json",
+      "sha256": "e5ef8ef2122d93ed40a74d62c1bd118b56d136ab0d34838eeec5fafb8386c2d9"
+    },
+    "report": {
+      "path": "quantum-weyl/reports/quantum-cartan-d-one-loop-disposition.md",
+      "sha256": "92eb802f45104382da609f248430de68178e1e6c641760e0a7977828df1fda0a"
+    },
+    "atlas_fragment": {
+      "path": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "sha256": "75c5d742fbc30550ea9376b6b77f0697785ac960e8173b9f9d2c675cb3b65cba"
+    },
+    "classical_request_event": {
+      "path": "planning/events/quantum-cartan-d-one-loop-obstruction-REQUEST-0ffe79fd2ff547a0.json",
+      "sha256": "0e60da1bd829669a5f9f5e6f43861cbd76aaa09a53a555729e1c9e51b3534eba"
+    },
+    "quantum_request_event": {
+      "path": "planning/events/quantum-cartan-d-one-loop-obstruction-REQUEST-709f817c881265e8.json",
+      "sha256": "1a76fc957c1200e95d6129670847f2a5e96a5251438b9d6c24e78ba606b45ee6"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile quantum-weyl/cartan/quantum_cartan_d_one_loop_disposition.py quantum-weyl/cartan/quantum_cartan_d_one_loop_disposition_certificate.py quantum-weyl/cartan/verify_quantum_cartan_d_one_loop_disposition.py quantum-weyl/cartan/tests/test_quantum_cartan_d_one_loop_disposition.py",
+        "python3 -m json.tool quantum-weyl/cartan/schema/quantum-cartan-d-one-loop-disposition-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/cartan/certificates/QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION.json",
+        "git diff --check -- scoped paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m cartan.quantum_cartan_d_one_loop_disposition_certificate --check",
+          "elapsed_seconds": 0.04,
+          "result": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m cartan.verify_quantum_cartan_d_one_loop_disposition",
+          "elapsed_seconds": 0.30,
+          "result": "PASS_INDEPENDENT_REPLAY"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/cartan/tests/test_quantum_cartan_d_one_loop_disposition.py -v",
+          "elapsed_seconds": 0.32,
+          "result": "PASS_8_TESTS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -p 'test_*.py' -v",
+          "elapsed_seconds": 2.78,
+          "result": "PASS_60_TESTS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check",
+          "elapsed_seconds": 0.61,
+          "result": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment",
+          "elapsed_seconds": 0.84,
+          "result": "PASS_INDEPENDENT_REPLAY"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m unittest atlas.tests.test_quantum_atlas_fragment",
+          "elapsed_seconds": 2.60,
+          "result": "PASS_8_TESTS"
+        },
+        {
+          "command": "python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+          "elapsed_seconds": 0.32,
+          "result": "PASS"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "All eight mathematical inputs are unchanged content-addressed certificates. The new independent consumer rechecks their hashes and directly replays the decisive coefficient, QME-lifecycle, pullback, rank-two ambiguity, Ward-socket and raw-D/K_Berger semantics. No upstream operator, schema or shared algebra changed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a fail-closed missing-carrier disposition with no theorem-lifecycle promotion, freeze, release or shared-core change. It explicitly forbids Cartan classification and residual transfer."
+    }
+  },
+  "adversarial_controls": [
+    {
+      "mutation": "Change one theory-setting classification from UNDEFINED_ANALYTICALLY to ZERO.",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "covered_by": "test_classification_overpromotion_is_rejected"
+    },
+    {
+      "mutation": "Set claim_flags.RAW_D_IDENTIFIED_WITH_K_BERGER=true.",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "covered_by": "test_generator_identification_is_rejected"
+    }
+  ],
+  "independent_rail": {
+    "imports_producer": false,
+    "imports_certificate_emitter": false,
+    "replays": [
+      "strict and tau-adic QME lifecycles",
+      "199/30 and -87/20 coefficient vector",
+      "zero compact-cylinder and nonzero Minkowski dilation pullbacks",
+      "rank-two finite bulk Q1 ambiguity",
+      "absence of the physical Ward insertion",
+      "raw-D/K_Berger distinction",
+      "both append-only request-event hashes"
+    ]
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_FINDINGS",
+    "elapsed_seconds": 3.26,
+    "command": "bash ci/science-forge-shadow.sh",
+    "findings": [
+      "The local Forge binary was an unpinned dirty development build whose build revision differs from the current stdlib checkout.",
+      "The pre-existing bridge certificate audit reported drift while existence, edges, DAG and gates passed.",
+      "The read-only coverage census found 1205 certificates against the 2026-07-19 baseline of 976."
+    ],
+    "effect_on_claim": "The shadow rail is advisory. These external drift findings are reported and were not used to promote the scoped Cartan disposition."
+  },
+  "claim_boundary": "This receipt covers the exact coefficient-bearing local source and the fail-closed first one-loop D/K Cartan disposition on the five declared theory-setting rows. Every Cartan row remains UNDEFINED_ANALYTICALLY. It does not establish ZERO, EXACT_REMOVABLE or NONTRIVIAL_ANOMALY for a Cartan class; identify strict and compensator theories; identify raw D and K_Berger; authorize residual transfer; or establish a Lorentzian QME, Hadamard state, positivity, particles, scattering or unitarity."
+}

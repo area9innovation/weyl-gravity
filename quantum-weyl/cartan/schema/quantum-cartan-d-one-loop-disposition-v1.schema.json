@@ -1,0 +1,261 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-quantum-cartan-d-one-loop-disposition-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "regularity_scope",
+    "dependency_refs",
+    "operator_target",
+    "bulk_candidate_ledger",
+    "direct_pullback_ledger",
+    "finite_counterterm_ambiguity",
+    "theory_setting_dispositions",
+    "missing_carrier_theorem",
+    "producer_requests",
+    "exact_checks",
+    "claim_flags",
+    "science_forge",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-quantum-cartan-d-one-loop-disposition-v1"},
+    "result_id": {"const": "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION"},
+    "result_state": {"const": "COEFFICIENT_SOURCE_DISPOSED_ALL_DECLARED_CARTAN_ROWS_UNDEFINED_ANALYTICALLY_TYPED_REQUESTS_FILED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]
+    },
+    "regularity_scope": {"const": "REGULAR_BACH_LOCUS_FOR_LOCAL_BV_QUOTIENT"},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "local_anomaly_audit",
+        "q1_disposition",
+        "anomaly_induced_gamma1",
+        "local_D_comparison",
+        "ward_insertion_contract",
+        "berger_local_D_action",
+        "berger_generator_audit",
+        "berger_K_cartan"
+      ],
+      "properties": {
+        "local_anomaly_audit": {"$ref": "#/$defs/artifact"},
+        "q1_disposition": {"$ref": "#/$defs/artifact"},
+        "anomaly_induced_gamma1": {"$ref": "#/$defs/artifact"},
+        "local_D_comparison": {"$ref": "#/$defs/artifact"},
+        "ward_insertion_contract": {"$ref": "#/$defs/artifact"},
+        "berger_local_D_action": {"$ref": "#/$defs/artifact"},
+        "berger_generator_audit": {"$ref": "#/$defs/artifact"},
+        "berger_K_cartan": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "operator_target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["defect", "cohomology", "sourced_identity", "classification_domain_requirement"],
+      "properties": {
+        "defect": {"const": "A_D^(1)=[Q0,iota_D1]+[Q1,iota_D0]-L_D1"},
+        "cohomology": {"const": "H^0(Der_adm(C),[Q0,-])"},
+        "sourced_identity": {"type": "string", "minLength": 1},
+        "classification_domain_requirement": {"const": "QME_SOURCE_ZERO_AND_COMPLETE_ADMISSIBLE_WARD_OPERATORS"}
+      }
+    },
+    "bulk_candidate_ledger": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/candidate"}
+    },
+    "direct_pullback_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["vacuum_cylinder_D_compact", "minkowski_raw_dilation_cross_check"],
+      "properties": {
+        "vacuum_cylinder_D_compact": {"$ref": "#/$defs/pullback"},
+        "minkowski_raw_dilation_cross_check": {"$ref": "#/$defs/pullback"}
+      }
+    },
+    "finite_counterterm_ambiguity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basis", "bulk_response_rank", "independent_bulk_directions", "bulk_kernel_directions", "cartan_effect_status"],
+      "properties": {
+        "basis": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}},
+        "bulk_response_rank": {"const": 2},
+        "independent_bulk_directions": {"const": ["C(g_hat)^2", "R(g_hat)^2"]},
+        "bulk_kernel_directions": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "cartan_effect_status": {"const": "NOT_COMPUTABLE_WITHOUT_COMPLETE_WARD_OPERATORS"}
+      }
+    },
+    "theory_setting_dispositions": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {"$ref": "#/$defs/disposition"}
+    },
+    "missing_carrier_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strict_theory", "extended_theory", "berger_theory", "minimal_conclusion"],
+      "properties": {
+        "strict_theory": {"const": "NONZERO_QME_SOURCE_PREVENTS_UNSOURCED_CARTAN_H0_CLASSIFICATION"},
+        "extended_theory": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"type": "string"}},
+        "berger_theory": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string"}},
+        "minimal_conclusion": {"type": "string", "minLength": 1}
+      }
+    },
+    "producer_requests": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/request"}
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 13,
+      "additionalProperties": {"const": true}
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "COEFFICIENT_BEARING_LOCAL_SOURCE_COMPUTED",
+        "STRICT_CARTAN_CLASS_CLASSIFIED",
+        "EXTENDED_CARTAN_CLASS_CLASSIFIED",
+        "BERGER_QUANTUM_CARTAN_CLASS_CLASSIFIED",
+        "RAW_D_IDENTIFIED_WITH_K_BERGER",
+        "WZ_COMPENSATOR_IDENTIFIED_WITH_BERGER_CLOCK",
+        "RESIDUAL_TRANSFER_AUTHORIZED",
+        "LORENTZIAN_QME_CERTIFIED"
+      ],
+      "properties": {
+        "COEFFICIENT_BEARING_LOCAL_SOURCE_COMPUTED": {"const": true},
+        "STRICT_CARTAN_CLASS_CLASSIFIED": {"const": false},
+        "EXTENDED_CARTAN_CLASS_CLASSIFIED": {"const": false},
+        "BERGER_QUANTUM_CARTAN_CLASS_CLASSIFIED": {"const": false},
+        "RAW_D_IDENTIFIED_WITH_K_BERGER": {"const": false},
+        "WZ_COMPENSATOR_IDENTIFIED_WITH_BERGER_CLOCK": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_QME_CERTIFIED": {"const": false}
+      }
+    },
+    "science_forge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["work_item", "stop_condition_disposition"],
+      "properties": {
+        "work_item": {"const": "sf:program/work/quantum-cartan-d-one-loop-obstruction"},
+        "stop_condition_disposition": {"const": "PRECISE_MISSING_OBJECT_THEOREM_AND_TYPED_REQUESTS"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "proof_type": {"const": "EXACT_MULTI_ARTIFACT_MISSING_CARRIER_DISPOSITION"},
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        },
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["representative_id", "parity", "coefficient", "strict_relative_status", "extended_relative_status", "cartan_operator_image_status"],
+      "properties": {
+        "representative_id": {"type": "string", "minLength": 1},
+        "parity": {"enum": ["even", "odd"]},
+        "coefficient": {"$ref": "#/$defs/rational"},
+        "strict_relative_status": {"type": "string", "minLength": 1},
+        "extended_relative_status": {"type": "string", "minLength": 1},
+        "cartan_operator_image_status": {"type": "string", "minLength": 1}
+      }
+    },
+    "pullback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sigma_D", "coefficient_image", "status"],
+      "properties": {
+        "sigma_D": {"$ref": "#/$defs/rational"},
+        "coefficient_image": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/rational"}
+        },
+        "status": {"type": "string", "minLength": 1}
+      }
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row_id", "theory_id", "setting_id", "generator_id", "classical_generator_status", "qme_status", "q1_status", "direct_bulk_pullback", "defect_closure_status", "local_to_cartan_map_status", "classification", "reason"],
+      "properties": {
+        "row_id": {"type": "string", "minLength": 1},
+        "theory_id": {"type": "string", "minLength": 1},
+        "setting_id": {"type": "string", "minLength": 1},
+        "generator_id": {"enum": ["D_COMPACT", "RAW_DILATION", "RAW_D", "K_BERGER"]},
+        "classical_generator_status": {"type": "string", "minLength": 1},
+        "qme_status": {"type": "string", "minLength": 1},
+        "q1_status": {"type": "string", "minLength": 1},
+        "direct_bulk_pullback": {
+          "oneOf": [
+            {"type": "null"},
+            {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/rational"}}
+          ]
+        },
+        "defect_closure_status": {"type": "string", "minLength": 1},
+        "local_to_cartan_map_status": {"type": "string", "minLength": 1},
+        "classification": {"const": "UNDEFINED_ANALYTICALLY"},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request_id", "to_stream", "typed", "need_id", "status", "event_path", "event_sha256"],
+      "properties": {
+        "request_id": {"type": "string", "pattern": "^sf:program/request/"},
+        "to_stream": {"enum": ["classical", "quantum-qme"]},
+        "typed": {"enum": ["dependency-artifact", "coefficient-bearing-operator"]},
+        "need_id": {"enum": ["SAME_BACKGROUND_TAU_ADIC_COMPENSATOR_D_CONTRACTION", "COMPLETE_RENORMALIZED_D_WARD_INSERTION"]},
+        "status": {"const": "FILED_APPEND_ONLY"},
+        "event_path": {"type": "string", "pattern": "^planning/events/"},
+        "event_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

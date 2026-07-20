@@ -1720,3 +1720,43 @@ The completion certificate and readable receipt are
 [`LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json`](../quantum-weyl/local_bv/certificates/LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json)
 and
 [`local-anomaly-antifield-completion-audit.md`](../quantum-weyl/reports/local-anomaly-antifield-completion-audit.md).
+
+## First coefficient-bearing quantum Cartan disposition (2026-07-20)
+
+Science Forge item
+`sf:program/work/quantum-cartan-d-one-loop-obstruction` now has a precise
+missing-carrier disposition.  The completed local anomaly vector is
+
+\[
+\left(\frac{199}{30},-\frac{87}{20},0,0\right)
+\]
+
+in the ordered
+\(\omega C^2,\omega E_4,\omega C\widetilde C,\omega\Box R\) basis.
+The direct closed-cylinder \(D_{\rm compact}\) pullback is zero because
+\(\sigma_D=0\), while the Minkowski dilation cross-check is exactly
+\((-199/30,87/20)\).  Neither is yet a degree-zero Cartan class: the
+local-to-Cartan Ward-insertion map is absent.
+
+The theory rows remain separate and fail closed:
+
+- strict pure Weyl gravity has a nonzero one-loop local QME source, so
+  \(A_D^{(1)}\) obeys the sourced consistency identity and does not define an
+  unsourced closed \(H^0\) class;
+- the formal tau-adic extension restores the local Euclidean QME, but its
+  complete normalized \(Q_1\), \(\iota_{D,1}\), \(\mathcal L_{D,1}\), and
+  same-background extended contraction are not supplied;
+- the positive Berger carrier has a certified classical
+  \(K_{\rm Berger}=D-\Omega R\) Cartan theorem, but its clock is not the
+  Wess--Zumino compensator and raw \(D\) is affine with nonzero arity zero.
+
+Accordingly every declared row is `UNDEFINED_ANALYTICALLY`; none is promoted
+to `ZERO`, `EXACT_REMOVABLE`, or `NONTRIVIAL_ANOMALY`.  Residual transfer
+remains forbidden.  Two content-addressed Science Forge requests now ask for
+the same-background compensator \(D\)-contraction and the complete
+coefficient-bearing Ward insertion.
+
+The certificate and readable receipt are
+[`QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION.json`](../quantum-weyl/cartan/certificates/QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION.json)
+and
+[`quantum-cartan-d-one-loop-disposition.md`](../quantum-weyl/reports/quantum-cartan-d-one-loop-disposition.md).
