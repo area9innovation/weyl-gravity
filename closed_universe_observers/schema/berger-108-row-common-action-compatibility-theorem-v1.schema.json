@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "ward_derivation",
+    "compatibility_theorem",
+    "invariance_theorem",
+    "bounded_minimal_extension_ansatz",
+    "counterexample_strategy",
+    "proof_obligation_dag",
+    "activation_disposition",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-108-row-common-action-compatibility-theorem-v1"
+    },
+    "result_id": {
+      "const": "BERGER_108_ROW_COMMON_ACTION_COMPATIBILITY_THEOREM"
+    },
+    "setting_id": {"type": "string"},
+    "claim_status": {
+      "const": "CERTIFIED_INVARIANT_WARD_COMPATIBILITY_AND_MINIMAL_EXTENSION_NO_GO"
+    },
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 10,
+      "maxProperties": 10
+    },
+    "ward_derivation": {
+      "type": "object",
+      "required": [
+        "action_inputs",
+        "pairing_inputs",
+        "edges",
+        "ratios",
+        "matrix",
+        "determinant",
+        "rank",
+        "nullity"
+      ]
+    },
+    "compatibility_theorem": {
+      "type": "object",
+      "required": [
+        "general_matrix",
+        "determinant_polynomial",
+        "nonzero_solution_iff",
+        "cycle_holonomy",
+        "compatibility_iff",
+        "frozen_holonomy",
+        "proof"
+      ]
+    },
+    "invariance_theorem": {"type": "object"},
+    "bounded_minimal_extension_ansatz": {
+      "type": "object",
+      "required": [
+        "definition",
+        "one_edge_action_normalizations",
+        "one_orbit_slack_classes",
+        "present_carrier_off_diagonal_pairing",
+        "one_row_carrier_enlargement",
+        "first_dimension_not_excluded",
+        "surviving_physics_candidates",
+        "candidate_boundary"
+      ]
+    },
+    "counterexample_strategy": {"type": "object"},
+    "proof_obligation_dag": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6
+    },
+    "activation_disposition": {"type": "object"},
+    "next_gate": {
+      "const": "LAND_THE_TYPED_CONFLUX_CONSUMER_OR_DECLARE_A_110_ROW_ACTION_EXTENSION_THEN_REGENERATE_AND_SUBSTITUTE_Q1_Q2"
+    },
+    "claim_boundary": {"type": "string", "minLength": 900},
+    "provenance": {"type": "object"}
+  }
+}

@@ -122,7 +122,11 @@ def test_temporal_common_action_obstruction_is_fail_closed_and_evidenced():
     assert row["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
     assert row["observer_data"]["survives_gauge_reduction"]["status"] == "OBSTRUCTED"
     assert "determinant -1" in row["observer_data"]["clock_and_rod_dependence"]["statement"]
+    assert "holonomy H=2" in row["observer_data"]["clock_and_rod_dependence"]["statement"]
     assert "BERGER_108_ROW_TEMPORAL_COMMON_ACTION_WARD_ORBIT_OBSTRUCTION" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
+    assert "BERGER_108_ROW_COMMON_ACTION_COMPATIBILITY_THEOREM" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
 

@@ -1319,9 +1319,35 @@ three-constraint matrix has determinant `-1`, so no nondegenerate common
 raising pairing exists on the present frozen 108-row carrier.  The prior
 `tau_star <- (e0 e1 A_0,K0_01)` coefficient `+g0 h0` is independently
 reproduced and survives replacement of `q2_typed` by the action-equivalent
-legacy presentation.  A successor must change and re-certify the typed carrier
-or action normalization, then regenerate `q1,q2` from one pairing.  This
-active bridge does not activate physical Bridge 3.
+legacy presentation.
+
+`BERGER_108_ROW_COMMON_ACTION_COMPATIBILITY_THEOREM` now promotes this finite
+obstruction to an invariant Ward/Noether theorem.  For general nonzero edge
+ratios
+`s_Maxwell=a s_tau`, `s_Maxwell=b s_emitter`,
+`s_emitter=c s_tau`, a common pairing exists exactly when `a=b c`; the
+normalization-triangle holonomy `H=a/(b c)` is invariant under admissible
+nonzero field rescalings and the imported action-equivalent presentation.
+The frozen value is `H=2`.  The bounded one-edge family has exactly three
+compatibility loci, with null lines `(1,1,1)`, `(2,1,1)` and `(2,2,1)`;
+the support-one slack family has the same three algebraic classes.  These are
+necessary-condition loci only, not repaired physics candidates.  No
+off-diagonal block belongs to the declared component-preserving family, and
+one additional carrier row is exactly ruled out because every antisymmetric
+`109 x 109` pairing is singular.  A conjugate two-row extension to dimension
+110 is the first dimension not excluded, but its Berger representation,
+action, pairing and regenerated `q1,q2` do not exist.
+
+The currently active bridge is therefore the typed consumer/action-extension
+gate: either `sf:forge-request/conflux-observer-common-action-compatibility`
+must land and independently reproduce the known obstruction before bounded
+exploration, or a 110-row action-derived carrier must be declared directly.
+Its activation gate is regeneration of both `q1` and `q2` from one
+nondegenerate pairing followed by independent substitution into the original
+arity-two verifier.  The fail-closed atlas row remains
+`observer.berger.interaction.temporal_common_action_carrier_obstruction`,
+with symplectic/nonlinear status `OBSTRUCTED` and every detector/cone map
+`NO_CERTIFIED_MAP`.  This active bridge does not activate physical Bridge 3.
 
 Within that inactive bridge, the numerical recoil input-contract audit is now
 complete.  The next activation gate requires a provenance-complete

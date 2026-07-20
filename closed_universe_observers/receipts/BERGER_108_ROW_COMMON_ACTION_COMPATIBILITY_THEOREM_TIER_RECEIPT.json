@@ -1,0 +1,125 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_COMMON_ACTION_COMPATIBILITY_THEOREM_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_COMMON_ACTION_COMPATIBILITY_THEOREM",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "result_boundary": "The three temporal Ward normalization equations are derived from the certified typed Maxwell lowered tensor, physical emitter Hessian, single temporal emitter-Diff vertex and canonical component pairings. Their general compatibility condition is a=b*c and their field-rescaling invariant holonomy is H=a/(b*c). The frozen H=2 gives determinant -1, rank 3 and nullity 0. All three one-edge normalization loci and all three support-one slack classes are classified as necessary conditions only. A one-row extension is exactly obstructed because every antisymmetric 109 by 109 pairing over Q is singular. No physics candidate, Conflux result, q3, detector, causal, branch, particle or quantum claim is promoted.",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_108_row_common_action_compatibility_theorem.py closed_universe_observers/verify_berger_108_row_common_action_compatibility_theorem.py closed_universe_observers/tests/test_berger_108_row_common_action_compatibility_theorem.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+      "elapsed_seconds": 0.06,
+      "status": "PASS",
+      "scope": "changed Python syntax"
+    },
+    {
+      "tier": 0,
+      "command": "git diff --check -- <explicit observer theorem, atlas, note, roadmap and closeout paths>",
+      "elapsed_seconds": 0.01,
+      "status": "PASS",
+      "scope": "scoped diff hygiene"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 closed_universe_observers/generate_berger_108_row_common_action_compatibility_theorem.py --check",
+      "elapsed_seconds": 0.16,
+      "status": "PASS",
+      "scope": "action/pairing derivation, exact theorem/classification, schema validation and artifact freshness"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 closed_universe_observers/verify_berger_108_row_common_action_compatibility_theorem.py",
+      "elapsed_seconds": 6.47,
+      "status": "PASS",
+      "scope": "independent raw dependency reconstruction, rescaling control, repair/null-line checks and original source-pair q1/q2 substitution"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_common_action_compatibility_theorem.py closed_universe_observers/tests/test_berger_108_row_temporal_common_action_ward_orbit.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+      "elapsed_seconds": 25.08,
+      "status": "PASS",
+      "scope": "50 theorem, predecessor mutation, lifecycle, atlas and evidence-hash tests"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment; python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "elapsed_seconds": 2.48,
+      "status": "PASS",
+      "scope": "generated fail-closed claims ledger, evidence hashes and shared atlas schema"
+    },
+    {
+      "tier": "advisory",
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 4.86,
+      "status": "ADVISORY_FINDINGS_REPORTED",
+      "scope": "read-only rail reported pre-existing bridge audit drift, unpinned dirty Forge build and corpus growth to 1180 certificates; none was treated as a pass"
+    }
+  ],
+  "higher_tiers_not_run": {
+    "tier_2": "No mathematical input or shared operator changed. The independent verifier nevertheless performs the decisive source-isolated substitution into the unchanged original q1/q2 rail.",
+    "tier_3": "Scoped theorem/no-go and atlas update; no programme freeze, release, shared-core algebra change, paper theorem promotion or quantum lifecycle transition.",
+    "conflux": "The observer-specific typed importer request remains REQUESTED, so preflight and exploration are not authorized.",
+    "q3_and_downstream": "The frozen common-action carrier remains obstructed and no action-regenerated candidate exists."
+  },
+  "source_manifest": [
+    {
+      "path": "closed_universe_observers/generate_berger_108_row_common_action_compatibility_theorem.py",
+      "sha256": "0bf06120c746521a8ca204d33e4462cdcba9b772f2e55852dd37cc80703f7964"
+    },
+    {
+      "path": "closed_universe_observers/verify_berger_108_row_common_action_compatibility_theorem.py",
+      "sha256": "fa94f20794d379564e56f678be2cdf0947c99fe47737ebe14092c5411be53a81"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_berger_108_row_common_action_compatibility_theorem.py",
+      "sha256": "0ebae569ed010000166a7194752b686c2f7d62b5c2820d864b76494a53e38bce"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-108-row-common-action-compatibility-theorem-v1.schema.json",
+      "sha256": "65a24f733e13a8c637d9230cfa91036cc4080f08efcf93b075c1f0a2d06486ba"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMMON_ACTION_COMPATIBILITY_THEOREM.json",
+      "sha256": "d0c9a410ffbe65a5a14e286e338a3374a5baac655ed72dd227aef34702d07f31"
+    },
+    {
+      "path": "closed_universe_observers/reports/berger-108-row-common-action-compatibility-theorem.md",
+      "sha256": "1f777c7ebd147b2f05398c40f1ef61f1c8c8136a4339d54d3b772751d63a0fde"
+    },
+    {
+      "path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
+      "sha256": "f0a0cd7372d00282cbc655f0be8a6df9730da2505999cecc27f5dd4c124d58fb"
+    },
+    {
+      "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "sha256": "b6341f9ea8c36415def63f7d33405c1982e6d018bb57d0302f9c9fc85ed50f3f"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_observer_atlas_fragment.py",
+      "sha256": "89287a0dc445712cf0ed3151705c3fb1b135181c177b13bfd70c36918c95099a"
+    },
+    {
+      "path": "notes/closed-universe-observer-team-brief.md",
+      "sha256": "6550905bc3788b31fff65ef620f4d61ebfd13fa775d53e1158dfc76697e5bdf2"
+    },
+    {
+      "path": "reports/observer-common-action-compatibility-theorem-closeout-2026-07-20.md",
+      "sha256": "43febf0a5b6af12bfe1652749af3bf7f6acc350861a33df4cf0b54b961bfdf3d"
+    }
+  ],
+  "flags": {
+    "WARD_COMPATIBILITY_THEOREM_CERTIFIED": true,
+    "FIELD_RESCALING_INVARIANCE_CERTIFIED": true,
+    "BOUNDED_MINIMAL_EXTENSION_CLASSIFIED": true,
+    "ONE_ROW_CARRIER_EXTENSION_OBSTRUCTED": true,
+    "PRESENT_108_ROW_COMMON_ACTION_PAIRING_EXISTS": false,
+    "ACTION_REGENERATED_CANDIDATE_EXISTS": false,
+    "CONFLUX_CONSUMER_GATE_PASSED": false,
+    "ORIGINAL_Q1_Q2_SUBSTITUTION_PASSED": false,
+    "DETECTOR_OR_CONE_PROMOTION_AUTHORIZED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

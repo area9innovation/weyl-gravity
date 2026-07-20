@@ -114,7 +114,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   attach the certified 188-row physical/current q2 interface to the 78-row relative mapping cofiber and solve or certify the remaining cross-incidence; causal Green data and the eighteen candidate-13 spectral receivers remain separate fail-closed gates
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; for Berger, compact-slab cutoff Volterra normal convergence, cutoff decomposability, the regular Cauchy morphisms' cone action and a global exact CCR-normalized Hadamard Krein covariance on the indefinite free rank-40 dilation are certified, so transport that covariance across both regular morphisms and verify the exact CCR, then restrict it to the full graded BV carrier with BRST Ward identities and physical-cohomology positivity, while separately requesting a corrected q26-compatible Cauchy lift instead of the exactly rejected canonical graph lift; in parallel analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows, add remaining BV rows to the partial-BV five-carrier representative, classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; corrected complete q2 (171,759 keys) and q3 (6,427,496 keys) explicitly include the separate gravity payloads, the action-derived dressed-rod correction removes the former rod witness, and the physical-emitter Hessian/permutation plus stress/spatial-momentum Hamiltonian repairs close the same-background spatial Maxwell-emitter Ward rows, but the exact h_b(Theta_bar)-specialized 108-row arity-two replay remains OBSTRUCTED at bidegree (0,0) with 2,340 keys on the relational temporal emitter-Diff orbit; the exact 248-key Maxwell/emitter form-clock F2 chart and signed cotangent lift induce a q1-cocycle and therefore change this residual by zero, so the next gate is a coefficientwise raw temporal common-action Ward re-export before any arity-three, K_Berger, observer-morphism or Z2^C restriction
+Observer:    the action-derived temporal normalization triangle has invariant holonomy H=2 and full rank on the frozen 108-row carrier; its complete one-edge/support-one bounded classification yields necessary-condition loci only, and a 109-row nondegenerate pairing is exactly impossible, so await the typed Conflux rediscovery consumer or declare a 110-row conjugate-pair action extension, then regenerate q1/q2 from one pairing and substitute into the original arity-two verifier before any arity-three, K_Berger, observer-morphism, detector or Z2^C restriction; independently await a provenance-complete physical declaration under the certified v2 recoil contract
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
 
@@ -1188,12 +1188,26 @@ survive the first backreacted, normalized apparatus interaction?
    Taylor keys.  Their induced `q2` coordinate correction has 3,108 keys at
    bidegree `(0,0)` and is an exact `q1` cocycle in all four retained
    bidegrees.  It therefore changes the displayed obstruction by zero.  The
-   repair gate is a coefficientwise re-export of the raw temporal
-   gravity-clock-Maxwell-emitter Ward orbit from one common action, including
-   the later memory/clock rows, followed by transport of the complete zero
-   identity through the certified clock chart.  The covariant row-coverage
-   theorem did not certify that PBW identity, and a fitted coefficient flip
-   remains forbidden.
+   raw temporal common-action re-export is now certified and closes
+   negatively on the present component-preserving carrier.  The typed
+   Maxwell, physical emitter Hessian and temporal emitter-Diff variations
+   induce the normalization triangle
+   `s_Maxwell=2 s_tau`, `s_Maxwell=s_emitter`,
+   `s_emitter=s_tau`.  Its determinant is `-1`.  The invariant successor
+   `BERGER_108_ROW_COMMON_ACTION_COMPATIBILITY_THEOREM` proves the general
+   criterion `a=b c` and the field-rescaling/presentation invariant holonomy
+   `H=a/(b c)`, whose frozen value is two.  It exhausts the three one-edge
+   normalization loci and three support-one slack classes as algebraic
+   necessary conditions, not repaired candidates, and proves that a one-row
+   enlargement is singular because an antisymmetric `109 x 109` pairing has
+   zero determinant.  The first carrier dimension not excluded is 110, with
+   one complementary-degree conjugate pair.  Its representation and action
+   are not declared.  The active gate is either a landed typed Conflux
+   consumer that independently reproduces the known obstruction before
+   bounded exploration, or a directly declared 110-row action extension; in
+   either case both `q1` and `q2` must be regenerated from one pairing and
+   substituted independently into the original arity-two verifier.  A fitted
+   coefficient flip remains forbidden.
    Arity three,
    `K_Berger`, the observer morphism and
    `O_detector|Z2^C` remain unavailable.
