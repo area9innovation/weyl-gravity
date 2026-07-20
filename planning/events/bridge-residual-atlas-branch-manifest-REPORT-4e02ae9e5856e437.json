@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-residual-atlas-branch-manifest-REPORT-4e02ae9e5856e437",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work report",
+  "source": {"path": "tools/science-forge/program/events/bridge-residual-atlas-branch-manifest-REPORT-4e02ae9e5856e437.json", "span": null},
+  "body": {"event_kind": "WORK_REPORTED", "actor": "bridge-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T09:16:24Z", "seq": 1, "payload": {"target": "sf:program/work/bridge-residual-atlas-branch-manifest", "agent": "bridge-1", "record_type": "checkpoint", "base_commit": "ba746d60", "current_commit": "ee6e4363", "changed_paths": "residual_atlas/generate_branch_manifest.py; residual_atlas/verify_branch_manifest.py; residual_atlas/tests/test_branch_manifest.py; residual_atlas/schema/residual-branch-manifest-v1.schema.json; residual_atlas/residual-branch-manifest-v1.json; residual_atlas/RESIDUAL_BRANCH_MANIFEST_V1_TIER_RECEIPT.json; reports/residual-branch-manifest-v1.md; notes/d-quotient-einstein-team-brief.md", "disposition": "committed:ee6e4363 pushed", "tests": "generator/check PASS; independent committed-snapshot verifier PASS; 6 tests including decisive source-status mutation rejection PASS in 3.21s; py_compile/json/diff checks PASS; all six fragment schemas and 309 row inventories checked; Tier 3 not run because this is an integration ledger over immutable sources; advisory shadow findings recorded but not counted as pass", "receipts": "RESIDUAL_BRANCH_MANIFEST_V1; residual_atlas/RESIDUAL_BRANCH_MANIFEST_V1_TIER_RECEIPT.json; reports/residual-branch-manifest-v1.md", "deviations": "none", "dependency_needs": "", "next_recommendation": "Use the manifest's explicit OPEN/NO_CERTIFIED_MAP cells to target branch-specific bridge notes and paper claim tables; do not infer missing cross-background maps."}, "native": {"authored_by": "sfc work-report", "policy": "append-only (SPEC 4.5); one content-addressed report file per checkpoint; never rewritten."}},
+  "edges": [{"rel": "REPORTS", "to": "sf:program/work/bridge-residual-atlas-branch-manifest"}]
+}
