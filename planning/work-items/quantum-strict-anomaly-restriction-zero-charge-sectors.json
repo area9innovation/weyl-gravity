@@ -1,0 +1,44 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-strict-anomaly-restriction-zero-charge-sectors",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-strict-anomaly-restriction-zero-charge-sectors",
+  "source": {
+    "path": "planning/work-items/quantum-strict-anomaly-restriction-zero-charge-sectors.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum",
+    "state": "PROPOSED",
+    "objective": "Decide whether the strict one-loop Weyl-anomaly classes remain nontrivial after restriction to the programme's selected zero-charge conformal-cylinder and fixed-coupling Berger fluctuation complexes, without confusing background vanishing with cohomological triviality.",
+    "stop_condition": "Import LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT at commit c6d1c0ba and the certified classical cylinder/Taub and Berger contractions by exact artifact hashes. Define the local-to-background and local-to-residual chain maps, domains, boundary terms and charge-sector inclusions before evaluating any cocycle. Pull back [omega C^2], [omega E4] and the odd [omega C Ctilde] class through the full allowed fluctuation complexes, not merely the conformally flat background value. Determine separately whether each pullback is zero, exact with an explicit primitive compatible with the selected quotient, nontrivial, or undefined because a required chain map is absent. Compute the induced obstruction, if defined, to the raw-D cylinder Cartan identity and to the Berger K_Berger identity while preserving their distinction. Certify the first perturbative order at which each class can appear. If the map is missing, land a typed receiver schema and producer request rather than declaring sector anomaly freedom. Include independent descent/restriction verification and decisive mutations that replace fluctuation pullback by background evaluation or raw D by K_Berger.",
+    "current_gate": "cohomological pullback of the strict anomaly basis to the selected cylinder and Berger sectors",
+    "forbid": "no anomaly class called zero because C vanishes on the background; no integrated Euler number substituted for local descent; no full-theory anomaly freedom inferred from a restricted sector; no raw-D/K_Berger identification; no local Euclidean class promoted to a Lorentzian QME or state theorem; no missing local-to-residual chain map silently guessed from row names",
+    "depends_on": [],
+    "activates": [
+      "quantum verdict for the selected zero-charge cylinder sector",
+      "sector-specific necessity or dispensability of the Wess-Zumino compensator",
+      "a precise local-anomaly-to-Cartan bridge"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/local_bv/",
+      "quantum-weyl/transfer/",
+      "quantum-weyl/reports/",
+      "quantum-weyl/atlas/",
+      "reports/",
+      "residual_atlas/",
+      "notes/d-quotient-quantum-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "SECOND INDEPENDENT FALLBACK. The key adversarial distinction is background evaluation versus pullback to the entire allowed fluctuation complex. If a classical chain map is missing, stop at the exact missing-object theorem and issue a typed request.",
+    "notes": [
+      "The cylinder is conformally flat, but the strict anomaly cocycles can begin at nonzero order in fluctuations.",
+      "The Taub-zero derived fibre and Berger fixed-coupling sector are different restrictions and require separate maps.",
+      "A positive restricted-sector result would not rescue strict Weyl gravity universally."
+    ],
+    "input_commit": "c6d1c0bad4d7e609fccb8dc5581fab107a819d33",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
