@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/active_clock_background_stability.py",
+      "sha256": "72468b3e467db26fd1e8529563dbf2920a210d289b47777e05b425e3aac281c0"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_active_clock_background_stability.py",
+      "sha256": "e2e786121bbb81b85f6742b1eacf9788d89d40ce912e56dd33854808c07b0569"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_active_clock_background_stability.py",
+      "sha256": "4837f6195eff61c29ad84c5e934f674f1cce63f4e64794de45c88b95e50a3de8"
+    },
+    {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1.json",
+      "sha256": "8a3afc04d72427313fe8770936b03d4f4301277c9783a92e8df6d329e8c0ccba"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-active-clock-background-stability-v1.schema.json",
+      "sha256": "cc1b12ac27a872c00ca760d932932e7c6618ac34de7b1ba8c8f5185ef8be625d"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-active-clock-background-stability-v1.md",
+      "sha256": "228e305e0903f20a21e64611d2ae63e994cddb6283451309842e410bd72f529a"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "05336ec91dc33bbdb6f16e5cc16f5d86660541d7e2a9d8ef977a69fd9296856e"
+    },
+    {
+      "path": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
+      "sha256": "42a3cd231dac6d0cbc6b1cb6f3e3eaae6a425e62131952d1f036c741958485e1"
+    },
+    {
+      "path": "d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+      "sha256": "dd1eef9903db9539498865c2c8cd4e082c3cefbf2d989e2349f1fd5f4877d550"
+    },
+    {
+      "path": "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+      "sha256": "8258cff4cb13f7684ffa478d3172a9aef6d5f6953979201583ebc1a3f6b7d4de"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <background-stability producer, independent verifier and mutation tests>; python3 -m json.tool <certificate and schema>",
+        "elapsed_seconds": 0.12,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit background-stability and atlas paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/active_clock_background_stability.py --check",
+        "elapsed_seconds": 1.63,
+        "status": "PASS",
+        "method": "exact symbolic polynomial stationary matrix, six maximal-cofactor factorization, parameterized Hessian/cone/charge identities and rational open-box signs"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_active_clock_background_stability.py",
+        "elapsed_seconds": 1.69,
+        "status": "PASS",
+        "independent_rail": "imports no producer module; reconstructs geometry and stress rows, verifies the kernel by direct substitution, proves rank with one independent maximal minor, replays inertia/evolution algebra, and checks box signs by exact endpoint monotonicity"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_active_clock_background_stability -v",
+        "elapsed_seconds": 3.23,
+        "status": "PASS",
+        "tests": 8,
+        "mutation_controls": "stationary coefficient, kernel, box crossing, longitudinal witness, rank/principal conflation, fixed-action promotion, generic-background promotion and quantum promotion are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-active-clock-background-stability-v1.schema.json -d d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1.json",
+        "elapsed_seconds": 1.51,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_classical_atlas_fragment.py --check; python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py; python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment -v; python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.64,
+        "status": "PASS",
+        "tests": 27
+      },
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 4.91,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift, corpus baseline growth from 976 to 1303 certificates, and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m unittest discover -v",
+        "elapsed_seconds": 1.76,
+        "status": "PASS",
+        "tests": 148,
+        "scope": "repository-wide Python unittest discovery from physics/symplectic-reconstruction; standalone publication scripts, numeric scans, Lean builds and TeX builds are not unittest-discoverable"
+      }
+    ],
+    "reason": "The item promotes a scoped exact background-stability theorem and therefore triggers the AGENTS.md theorem-level Tier-3 criterion."
+  },
+  "claim_boundary": "The receipt certifies only action-space stability of the independently frozen quadratic shift-symmetric P(X) no-go on the exact joint family 15/16<kappa<17/16, 1/5<q<1/4, 2/3<nu<5/6, plus the exact q=1/4 two-sided clock/principal bifurcation along kappa=1, nu=3/4, lambda=1. Couplings vary with the background; it is not fixed-action stability or a generic-background theorem. It selects no action and establishes no complete support-local causal parent, Hadamard state, anomaly/QME result, particle space, scattering, positivity or unitarity theorem.",
+  "higher_tiers_not_run": []
+}

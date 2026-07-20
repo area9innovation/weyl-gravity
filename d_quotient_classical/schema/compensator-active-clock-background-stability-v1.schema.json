@@ -1,0 +1,569 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/compensator-active-clock-background-stability-v1.schema.json",
+  "title": "Exact background stability of the quadratic active-clock action-space no-go",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "frozen_import",
+    "parameter_family",
+    "stationary_evaluation",
+    "stationary_locus_and_rank_strata",
+    "coupled_scalar_principal_velocity",
+    "clock_cone_charge_and_relational_inequalities",
+    "certified_open_neighbourhood",
+    "first_bifurcation",
+    "seven_gate_stability",
+    "exact_checks",
+    "claim_flags",
+    "claim_boundary",
+    "next_gate",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-compensator-active-clock-background-stability-v1"
+    },
+    "result_id": {
+      "const": "COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1"
+    },
+    "result_state": {
+      "const": "SCOPED_ACTION_SPACE_NO_GO_BACKGROUND_STABLE_WITH_FIRST_BIFURCATION"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "frozen_import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "result_state",
+        "sha256",
+        "science_commit",
+        "lifecycle_commit",
+        "import_status"
+      ],
+      "properties": {
+        "path": {
+          "const": "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json"
+        },
+        "result_id": {
+          "const": "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1"
+        },
+        "result_state": {
+          "const": "SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO_INDEPENDENTLY_FROZEN"
+        },
+        "sha256": {
+          "const": "9bda4b758616427bdbf401a499ffd2b7cd9dd69a87223f05fcdf636bb31cd533"
+        },
+        "science_commit": {
+          "const": "f64be4a5793764ebf8871d5f1a83bd736aed7fc1"
+        },
+        "lifecycle_commit": {
+          "const": "0b21bfe86eb97a0e0723d85d8c3a336fd1d5ac20"
+        },
+        "import_status": {
+          "const": "ACCEPTED_EXACT_HASH_AND_SEMANTICS"
+        }
+      }
+    },
+    "parameter_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coordinates",
+        "definitions",
+        "base_point",
+        "coefficient_field",
+        "exactness"
+      ],
+      "properties": {
+        "coordinates": {
+          "const": [
+            "kappa",
+            "q",
+            "nu"
+          ]
+        },
+        "definitions": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "base_point": {
+          "const": [
+            "kappa=1",
+            "q=9/40",
+            "nu=3/4"
+          ]
+        },
+        "coefficient_field": {
+          "const": "Q(kappa,q,nu,lambda)"
+        },
+        "exactness": {
+          "const": "symbolic polynomial/rational arithmetic only"
+        }
+      }
+    },
+    "stationary_evaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coefficient_order",
+        "metric_Euler_formula",
+        "clock_Euler_formula",
+        "cylinder",
+        "Berger",
+        "stacked_matrix"
+      ],
+      "properties": {
+        "coefficient_order": {
+          "const": [
+            "alpha_B",
+            "alpha_R",
+            "M_P_squared",
+            "p0",
+            "p1",
+            "p2"
+          ]
+        },
+        "metric_Euler_formula": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "clock_Euler_formula": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "cylinder": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "Berger": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "stacked_matrix": {
+          "$ref": "#/$defs/matrix"
+        }
+      }
+    },
+    "stationary_locus_and_rank_strata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "polynomial_factors",
+        "kernel_generator_K",
+        "complete_rank_five_locus",
+        "signed_maximal_cofactors_delete_columns_0_to_5",
+        "common_cofactor_factor",
+        "kernel_from_cofactors",
+        "rank_change_variety",
+        "rank_change_last_component_note",
+        "frozen_specialization",
+        "background_existence_scope",
+        "zero_action_stratum",
+        "nonzero_background_stratum"
+      ],
+      "properties": {
+        "polynomial_factors": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "kernel_generator_K": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        },
+        "complete_rank_five_locus": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "signed_maximal_cofactors_delete_columns_0_to_5": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        },
+        "common_cofactor_factor": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "kernel_from_cofactors": {
+          "const": true
+        },
+        "rank_change_variety": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "rank_change_last_component_note": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "frozen_specialization": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "background_existence_scope": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "zero_action_stratum": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "nonzero_background_stratum": {
+          "$ref": "#/$defs/nonempty-object"
+        }
+      }
+    },
+    "coupled_scalar_principal_velocity": {
+      "$ref": "#/$defs/nonempty-object"
+    },
+    "clock_cone_charge_and_relational_inequalities": {
+      "$ref": "#/$defs/nonempty-object"
+    },
+    "certified_open_neighbourhood": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "exact_box",
+        "sign_certificate",
+        "rank",
+        "background_existence",
+        "health_half_lines",
+        "structurally_stable_failures",
+        "scope_warning"
+      ],
+      "properties": {
+        "name": {
+          "const": "N_box"
+        },
+        "exact_box": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kappa",
+            "cylinder_radius_equivalent",
+            "q",
+            "nu",
+            "interval_convention",
+            "contains_frozen_point"
+          ],
+          "properties": {
+            "kappa": {
+              "const": [
+                "15/16",
+                "17/16"
+              ]
+            },
+            "cylinder_radius_equivalent": {
+              "const": [
+                "4/sqrt(17)",
+                "4/sqrt(15)"
+              ]
+            },
+            "q": {
+              "const": [
+                "1/5",
+                "1/4"
+              ]
+            },
+            "nu": {
+              "const": [
+                "2/3",
+                "5/6"
+              ]
+            },
+            "interval_convention": {
+              "const": "all intervals open"
+            },
+            "contains_frozen_point": {
+              "const": true
+            }
+          }
+        },
+        "sign_certificate": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "rank": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "witness"
+          ],
+          "properties": {
+            "value": {
+              "const": 5
+            },
+            "witness": {
+              "$ref": "#/$defs/nonempty"
+            }
+          }
+        },
+        "background_existence": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "health_half_lines": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "structurally_stable_failures": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "gate_5",
+            "gate_6",
+            "all_seven_gate_good_locus"
+          ],
+          "properties": {
+            "gate_5": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "gate_6": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "all_seven_gate_good_locus": {
+              "const": "EMPTY_FOR_EVERY_POINT_OF_N_box"
+            }
+          }
+        },
+        "scope_warning": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "first_bifurcation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "first_boundary_of_declared_box",
+        "surface_type",
+        "surface_data",
+        "below_witness",
+        "above_witness",
+        "full_verdict_both_sides",
+        "rank_change_intersection_on_q=1/4"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "first_boundary_of_declared_box": {
+          "const": "q=1/4"
+        },
+        "surface_type": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "surface_data": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "below_witness": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "above_witness": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "full_verdict_both_sides": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "rank_change_intersection_on_q=1/4": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "seven_gate_stability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gate_1_action_derived",
+        "gate_2_trace_disposition",
+        "gate_3_complete_support_local_parent",
+        "gate_4_reduced_pairing",
+        "gate_5_physical_sign",
+        "gate_6_raw_D",
+        "gate_7_Berger_clock",
+        "good_locus",
+        "candidate_C_active_selected"
+      ],
+      "properties": {
+        "gate_1_action_derived": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "gate_2_trace_disposition": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "gate_3_complete_support_local_parent": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "gate_4_reduced_pairing": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "gate_5_physical_sign": {
+          "const": "FAIL_STRUCTURALLY_STABLE_ON_N_box"
+        },
+        "gate_6_raw_D": {
+          "const": "FAIL_STRUCTURALLY_STABLE_ON_N_box"
+        },
+        "gate_7_Berger_clock": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "good_locus": {
+          "const": "EMPTY_FOR_EVERY_PARAMETER_POINT_IN_N_box"
+        },
+        "candidate_C_active_selected": {
+          "const": false
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 15,
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "SCOPED_ACTION_SPACE_BACKGROUND_STABILITY_THEOREM",
+        "ONE_FIXED_ACTION_BACKGROUND_STABILITY",
+        "GENERIC_BACKGROUND_NO_GO",
+        "CANDIDATE_C_ACTIVE_SELECTED",
+        "COMPLETE_SUPPORT_LOCAL_CAUSAL_PARENT",
+        "HADAMARD_ANOMALY_QME_OR_QUANTUM",
+        "PARTICLE_SCATTERING_UNITARITY"
+      ],
+      "properties": {
+        "SCOPED_ACTION_SPACE_BACKGROUND_STABILITY_THEOREM": {
+          "const": true
+        },
+        "ONE_FIXED_ACTION_BACKGROUND_STABILITY": {
+          "const": false
+        },
+        "GENERIC_BACKGROUND_NO_GO": {
+          "const": false
+        },
+        "CANDIDATE_C_ACTIVE_SELECTED": {
+          "const": false
+        },
+        "COMPLETE_SUPPORT_LOCAL_CAUSAL_PARENT": {
+          "const": false
+        },
+        "HADAMARD_ANOMALY_QME_OR_QUANTUM": {
+          "const": false
+        },
+        "PARTICLE_SCATTERING_UNITARITY": {
+          "const": false
+        }
+      }
+    },
+    "claim_boundary": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "next_gate": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stationary_sha256",
+        "locus_sha256",
+        "quadratic_sha256",
+        "clock_sha256",
+        "neighbourhood_sha256",
+        "bifurcation_sha256",
+        "gates_sha256"
+      ],
+      "properties": {
+        "stationary_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "locus_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "quadratic_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "clock_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "neighbourhood_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "bifurcation_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "gates_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "nonempty-object": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row_count",
+        "column_count",
+        "entries",
+        "sha256"
+      ],
+      "properties": {
+        "row_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "column_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "row",
+              "column",
+              "coefficient"
+            ],
+            "properties": {
+              "row": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "column": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "coefficient": {
+                "$ref": "#/$defs/nonempty"
+              }
+            }
+          }
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  }
+}

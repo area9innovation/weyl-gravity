@@ -249,9 +249,19 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
             evidence,
         )
+        self.assertIn(
+            "COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1",
+            evidence,
+        )
         self.assertIn("rank five", entry["claim_boundary"])
         self.assertIn("integer maximal cofactors", entry["claim_boundary"])
         self.assertIn("sound speed squared 9/59", entry["claim_boundary"])
+        self.assertIn("15/16<kappa<17/16", entry["claim_boundary"])
+        self.assertIn(
+            "q=1/4 is the first clock/principal bifurcation",
+            entry["claim_boundary"],
+        )
+        self.assertIn("not a fixed-action stability claim", entry["claim_boundary"])
         self.assertIn("common good locus is EMPTY", entry["claim_boundary"])
         self.assertIn("theorem-frozen", entry["claim_boundary"])
         self.assertIn(

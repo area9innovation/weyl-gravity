@@ -1,0 +1,781 @@
+{
+  "certified_open_neighbourhood": {
+    "background_existence": {
+      "lambda!=0": "exact common stationary cylinder/Berger background on the parameter-dependent action ray",
+      "lambda=0": "zero action; no physical equations or pairing"
+    },
+    "exact_box": {
+      "contains_frozen_point": true,
+      "cylinder_radius_equivalent": [
+        "4/sqrt(17)",
+        "4/sqrt(15)"
+      ],
+      "interval_convention": "all intervals open",
+      "kappa": [
+        "15/16",
+        "17/16"
+      ],
+      "nu": [
+        "2/3",
+        "5/6"
+      ],
+      "q": [
+        "1/5",
+        "1/4"
+      ]
+    },
+    "health_half_lines": {
+      "P_X": "-2*lambda*nu**2*q*(12*kappa + q - 4)",
+      "common_clock_health": "EMPTY",
+      "lambda<0": "cylinder clock has standard sign; Berger clock has the wrong standard sign and negative energy/charge orientation",
+      "lambda>0": "Berger clock is standard-sign, hyperbolic, positive-energy, charged and subluminal; cylinder clock has wrong sign",
+      "longitudinal": "2*lambda*nu**2*(12*kappa + q - 4)*(32*kappa*q - 8*kappa - 3*q)",
+      "p1": "-8*kappa*lambda*nu**2*(4*q - 1)*(12*kappa + q - 4)"
+    },
+    "name": "N_box",
+    "rank": {
+      "value": 5,
+      "witness": "signed cofactor 0=8 kappa nu^6(q-1)F is nonzero on N_box"
+    },
+    "scope_warning": "This is an open-neighbourhood theorem for a parameterized family of stationary action rays. It is not an implicit-function theorem for one fixed action and not a generic-background theorem.",
+    "sign_certificate": {
+      "A=4q-1": "negative",
+      "E_for_energy": "E<-81/50<0",
+      "F=q+12kappa-4": "F>149/20>0",
+      "G_for_P": "G>15/8>0",
+      "H=32qkappa-3q-8kappa": "H<-3q<-3/5<0",
+      "J=16qkappa-q-4kappa": "J<-q<-1/5<0",
+      "kappa": "positive",
+      "nu": "positive",
+      "q": "positive",
+      "q-1": "negative",
+      "sound_subluminal": "-H-q=kappa(8-32q)+2q>0, hence 0<-q/H<1"
+    },
+    "structurally_stable_failures": {
+      "all_seven_gate_good_locus": "EMPTY_FOR_EVERY_POINT_OF_N_box",
+      "gate_5": "every lambda!=0 retains the split (+3,-3) gravity-auxiliary velocity pair; independently the two clock-health half-lines are opposite",
+      "gate_6": "the raw-D Hamiltonian retains the parameter-independent exact witnesses +3 and -3"
+    }
+  },
+  "claim_boundary": "This exact theorem concerns the declared dressed parity-even C^2+R^2+R plus quadratic shift-symmetric P(X) action family, with no HT or new fields, on the parameterized joint cylinder/Berger family kappa=r_cylinder^-2, a_Berger=1, q=c^2 and theta=nu t. For every point in the stated rational open box, the stationary action-space ray exists but its seven-gate good locus is empty. The theorem lets couplings vary with the background; it does not show that one fixed action supports the neighbourhood. The q=1/4 surface is a clock/principal bifurcation along the declared path, while the stationary rank-change variety is recorded separately. Nothing here covers other backgrounds, higher P(X), higher derivatives, fixed-charge quotients, new fields or enlarged gauge groups. It selects no action and establishes no complete causal parent, Hadamard state, anomaly/QME result, particle space, scattering, positivity or unitarity theorem.",
+  "claim_flags": {
+    "CANDIDATE_C_ACTIVE_SELECTED": false,
+    "COMPLETE_SUPPORT_LOCAL_CAUSAL_PARENT": false,
+    "GENERIC_BACKGROUND_NO_GO": false,
+    "HADAMARD_ANOMALY_QME_OR_QUANTUM": false,
+    "ONE_FIXED_ACTION_BACKGROUND_STABILITY": false,
+    "PARTICLE_SCATTERING_UNITARITY": false,
+    "SCOPED_ACTION_SPACE_BACKGROUND_STABILITY_THEOREM": true
+  },
+  "clock_cone_charge_and_relational_inequalities": {
+    "Lorentzian_hyperbolicity": "P_X(P_X+2X P_XX)>0 with neither factor zero",
+    "P": "lambda*nu**4*(16*kappa*q**2 - 56*kappa*q + 16*kappa + q**2 - 4*q)",
+    "P_X": "-2*lambda*nu**2*q*(12*kappa + q - 4)",
+    "Q_R_density": "4*lambda*nu**3*q*(12*kappa + q - 4)",
+    "charge_identity": "K_Berger=D-nu R fixes the stationary background; i_D Omega_total=nu delta Q_R and i_K_Berger Omega_total=0",
+    "clock_cone_discriminant": "lambda*nu*q*(q+12kappa-4)*(32qkappa-3q-8kappa)=0",
+    "cylinder_clock_condition": "p1<0",
+    "energy_density": "-lambda*nu**4*(16*kappa*q**2 - 104*kappa*q + 16*kappa - 3*q**2 + 12*q)",
+    "longitudinal_P_X_plus_2X_P_XX": "2*lambda*nu**2*(12*kappa + q - 4)*(32*kappa*q - 8*kappa - 3*q)",
+    "matter_K_density": "-lambda*nu**4*(16*kappa*q**2 - 56*kappa*q + 16*kappa + q**2 - 4*q)",
+    "matter_raw_D_density": "-lambda*nu**4*(16*kappa*q**2 - 104*kappa*q + 16*kappa - 3*q**2 + 12*q)",
+    "relational_clock_conditions": [
+      "nu>0",
+      "X=-nu^2<0",
+      "Q_R_density!=0",
+      "P_X<0",
+      "P_X+2X P_XX<0",
+      "0<sound_speed_squared<1"
+    ],
+    "shift_current_convention": "j^a=2P_X nabla^a(theta)",
+    "sound_speed_squared": "-q/(32*kappa*q - 8*kappa - 3*q)",
+    "standard_sign_clock": [
+      "P_X<0",
+      "P_X+2X P_XX<0"
+    ]
+  },
+  "content_hashes": {
+    "bifurcation_sha256": "34d140227afaf8cce7c3147beca1b319a5820e82d21a901ecaa82d26a1dca8e9",
+    "clock_sha256": "27d9c383cd74a06862c9842db95a9ac870171a7717a61f4c3176eedc6b1e0223",
+    "gates_sha256": "30932594e9011f647cbcddc535d965be129f835e0e64f1a7730b51999761ceae",
+    "locus_sha256": "7abcbbbdd26115fd15b8f9e3fac5fbb0aa91e1c36ec9d80e2db122710ee642f4",
+    "neighbourhood_sha256": "352aec40c19aef95c929f4191d97a24d2794727f3df2d81fe078c01ecb485faa",
+    "quadratic_sha256": "e4ff4c706a7e3667ceafca6c94e558a19d9a0b92c9f2b80a2763ad3f90a48974",
+    "stationary_sha256": "157a205867280d7046d02c3a913c2044cd1f10463705f2f585393fbb02e2fb6f"
+  },
+  "coupled_scalar_principal_velocity": {
+    "D_evolution_matrix": {
+      "column_count": 6,
+      "entries": [
+        {
+          "coefficient": "1",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "2*kappa",
+          "column": 0,
+          "row": 1
+        },
+        {
+          "coefficient": "-1/(8*kappa*lambda*nu**4*(4*q - 1))",
+          "column": 2,
+          "row": 1
+        },
+        {
+          "coefficient": "1",
+          "column": 3,
+          "row": 2
+        },
+        {
+          "coefficient": "2*kappa",
+          "column": 2,
+          "row": 3
+        },
+        {
+          "coefficient": "1",
+          "column": 5,
+          "row": 4
+        }
+      ],
+      "row_count": 6,
+      "sha256": "def5c2792470bb852e8c8ae401a1dc32efb2e45eb7ca922096a74cfa45589c7e"
+    },
+    "Euler_Hessian_determinant": "144*D**2*kappa*lambda*nu**2*(D**2 - 2*kappa)**2*(4*q - 1)*(12*kappa + q - 4)",
+    "Euler_Hessian_of_D": {
+      "column_count": 3,
+      "entries": [
+        {
+          "coefficient": "3*(D**2 - 2*kappa)",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "3*(D**2 - 2*kappa)",
+          "column": 0,
+          "row": 1
+        },
+        {
+          "coefficient": "3/(8*kappa*lambda*nu**4*(4*q - 1))",
+          "column": 1,
+          "row": 1
+        },
+        {
+          "coefficient": "-16*D**2*kappa*lambda*nu**2*(4*q - 1)*(12*kappa + q - 4)",
+          "column": 2,
+          "row": 2
+        }
+      ],
+      "row_count": 3,
+      "sha256": "8ca6f38b32bc4cb8eaf8b67c1cfd4e348b515b98f531d5e516c9eea51416e991"
+    },
+    "Lee_Wald_current": "omega^0=-3[delta u wedge delta Dpsi+delta psi wedge delta Du]-2p1 delta v wedge delta Dv",
+    "activation": "lambda!=0, kappa!=0, nu!=0 and A=4q-1!=0 so the algebraic R^2 auxiliary presentation is invertible",
+    "characteristic_polynomial": "zeta**2*(2*kappa - zeta**2)**2",
+    "complete_homogeneous_quadratic_density": "L_hom=-3 D(psi)D(u)-6 kappa psi u+6 psi^2/M_P_squared-p1 D(v)^2",
+    "congruence_diagonal": {
+      "column_count": 3,
+      "entries": [
+        {
+          "coefficient": "-6",
+          "column": 0,
+          "row": 0
+        },
+        {
+          "coefficient": "6",
+          "column": 1,
+          "row": 1
+        },
+        {
+          "coefficient": "16*kappa*lambda*nu**2*(4*q - 1)*(12*kappa + q - 4)",
+          "column": 2,
+          "row": 2
+        }
+      ],
+      "row_count": 3,
+      "sha256": "adcd5684aaecf8f3f056a53d3ef5540155d4af3e0309ec5ef83fa835755bfab1"
+    },
+    "field_basis": [
+      "u",
+      "psi",
+      "v"
+    ],
+    "inertia": {
+      "p1<0": [
+        2,
+        1,
+        0
+      ],
+      "p1=0": [
+        1,
+        1,
+        1
+      ],
+      "p1>0": [
+        1,
+        2,
+        0
+      ],
+      "structural_statement": "the gravity-auxiliary pair is split for every p1 and remains the exact eigenpair (+3,-3)"
+    },
+    "minimal_polynomial_on_declared_box": "zeta^2(zeta^2-2kappa)^2",
+    "principal_D2_matrix": {
+      "column_count": 3,
+      "entries": [
+        {
+          "coefficient": "3",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "3",
+          "column": 0,
+          "row": 1
+        },
+        {
+          "coefficient": "-16*kappa*lambda*nu**2*(4*q - 1)*(12*kappa + q - 4)",
+          "column": 2,
+          "row": 2
+        }
+      ],
+      "row_count": 3,
+      "sha256": "0c5394bf39b89f5fdabc0c52f55f33c6323e35dd72fcb34f4b3fdf9f285ed50e"
+    },
+    "principal_parameter_discriminant": "lambda*kappa*nu*(4q-1)*(q+12kappa-4)=0",
+    "rational_congruence": {
+      "column_count": 3,
+      "entries": [
+        {
+          "coefficient": "1",
+          "column": 0,
+          "row": 0
+        },
+        {
+          "coefficient": "1",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "1",
+          "column": 0,
+          "row": 1
+        },
+        {
+          "coefficient": "-1",
+          "column": 1,
+          "row": 1
+        },
+        {
+          "coefficient": "1",
+          "column": 2,
+          "row": 2
+        }
+      ],
+      "row_count": 3,
+      "sha256": "8cf49443ebfb1cdd5cc8a7697ba65ae083c1c17755e2b496e7507d65065e04d4"
+    },
+    "raw_D_Hamiltonian": "H_D=-3DuDpsi+6kappa psi u-6psi^2/M_P_squared-p1(Dv)^2",
+    "raw_D_sign_witnesses": [
+      "(u,Du,psi,Dpsi,v,Dv)=(0,1,0,-1,0,0) gives +3",
+      "(u,Du,psi,Dpsi,v,Dv)=(0,1,0,1,0,0) gives -3"
+    ],
+    "root_collision_surface": "kappa=0",
+    "stable_split_factor": "4*q - 1",
+    "state_basis": [
+      "u",
+      "D(u)",
+      "psi",
+      "D(psi)",
+      "v",
+      "D(v)"
+    ],
+    "velocity_Hessian": {
+      "column_count": 3,
+      "entries": [
+        {
+          "coefficient": "-3",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "-3",
+          "column": 0,
+          "row": 1
+        },
+        {
+          "coefficient": "16*kappa*lambda*nu**2*(4*q - 1)*(12*kappa + q - 4)",
+          "column": 2,
+          "row": 2
+        }
+      ],
+      "row_count": 3,
+      "sha256": "baf94d3962302b5aec79ec9cdf361113b67295ad3d539b7bd3563ba9f814f424"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "all_six_signed_maximal_cofactors_factored": true,
+    "background_existence_separated_from_health": true,
+    "bifurcation_surface_and_two_sided_witnesses_exact": true,
+    "frozen_ray_recovered": true,
+    "implicit_function_theorem_used": false,
+    "independent_freeze_audit_hash_and_semantics_pinned": true,
+    "kernel_identity_exact": true,
+    "numerical_sampling_used": false,
+    "open_box_signs_exact": true,
+    "principal_velocity_and_inertia_parameterized": true,
+    "rank_change_variety_exact": true,
+    "raw_D_and_K_charge_parameterized": true,
+    "relational_clock_inequalities_parameterized": true,
+    "sound_cone_and_subluminality_parameterized": true,
+    "stationary_matrix_polynomial": true
+  },
+  "first_bifurcation": {
+    "above_witness": {
+      "clock_verdict": "both cylinder and Berger clocks standard-sign hyperbolic; Berger sound remains subluminal",
+      "p1_PX_longitudinal": [
+        "-5949/3200",
+        "-124929/51200",
+        "-184419/51200"
+      ],
+      "point": [
+        "kappa=1",
+        "q=21/80",
+        "nu=3/4",
+        "lambda=1"
+      ]
+    },
+    "below_witness": {
+      "clock_verdict": "cylinder wrong sign; Berger standard-sign healthy",
+      "p1_PX_longitudinal": [
+        "2961/800",
+        "-26649/12800",
+        "-174699/12800"
+      ],
+      "point": [
+        "kappa=1",
+        "q=9/40",
+        "nu=3/4",
+        "lambda=1"
+      ]
+    },
+    "first_boundary_of_declared_box": "q=1/4",
+    "full_verdict_both_sides": "still EMPTY because the split gravity-auxiliary velocity pair and raw-D both-sign witnesses persist whenever alpha_R!=0",
+    "path": "kappa=1, nu=3/4, lambda=1, q increasing",
+    "rank_change_intersection_on_q=1/4": "stationary rank drops only at the separate intersection kappa=5/16 (or on kappa=0, nu=0, q=1)",
+    "surface_data": {
+      "A": "0",
+      "M_P_squared": "0",
+      "R2_auxiliary_presentation": "INACTIVE",
+      "alpha_R": "0",
+      "cylinder_clock": "DEGENERATE",
+      "p0": "0",
+      "p1": "0",
+      "stationary_rank": 5
+    },
+    "surface_type": "principal/auxiliary/clock-health bifurcation, not stationary rank change at kappa=1"
+  },
+  "frozen_import": {
+    "import_status": "ACCEPTED_EXACT_HASH_AND_SEMANTICS",
+    "lifecycle_commit": "0b21bfe86eb97a0e0723d85d8c3a336fd1d5ac20",
+    "path": "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json",
+    "result_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
+    "result_state": "SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO_INDEPENDENTLY_FROZEN",
+    "science_commit": "f64be4a5793764ebf8871d5f1a83bd736aed7fc1",
+    "sha256": "9bda4b758616427bdbf401a499ffd2b7cd9dd69a87223f05fcdf636bb31cd533"
+  },
+  "next_gate": "The quadratic active-clock route is now obstructed on an exact open background neighbourhood. A successor must cross q=1/4 with a different non-gravitational health target while still repairing the unchanged split gravity-auxiliary and raw-D gates, or enlarge the declared action/gauge/field family.",
+  "parameter_family": {
+    "base_point": [
+      "kappa=1",
+      "q=9/40",
+      "nu=3/4"
+    ],
+    "coefficient_field": "Q(kappa,q,nu,lambda)",
+    "coordinates": [
+      "kappa",
+      "q",
+      "nu"
+    ],
+    "definitions": {
+      "kappa": "inverse squared cylinder radius r_cylinder^(-2)",
+      "nu": "positive stationary clock gradient D(theta)",
+      "q": "Berger squashing c^2 at horizontal scale a=1"
+    },
+    "exactness": "symbolic polynomial/rational arithmetic only"
+  },
+  "result_id": "COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1",
+  "result_state": "SCOPED_ACTION_SPACE_NO_GO_BACKGROUND_STABLE_WITH_FIRST_BIFURCATION",
+  "schema": "pure-weyl-compensator-active-clock-background-stability-v1",
+  "seven_gate_stability": {
+    "candidate_C_active_selected": false,
+    "gate_1_action_derived": "PASS_AT_ACTION_LEVEL on every parameter-dependent stationary ray",
+    "gate_2_trace_disposition": "PASS_WITH_PHYSICAL_REPLACEMENT for lambda!=0 throughout N_box",
+    "gate_3_complete_support_local_parent": "NOT_REACHED after structurally stable gate-5 failure",
+    "gate_4_reduced_pairing": "NONDEGENERATE_BUT_SPLIT for lambda!=0 throughout N_box",
+    "gate_5_physical_sign": "FAIL_STRUCTURALLY_STABLE_ON_N_box",
+    "gate_6_raw_D": "FAIL_STRUCTURALLY_STABLE_ON_N_box",
+    "gate_7_Berger_clock": "STATIONARY_AND_MONOTONE; standard-sign healthy only on lambda>0",
+    "good_locus": "EMPTY_FOR_EVERY_PARAMETER_POINT_IN_N_box"
+  },
+  "stationary_evaluation": {
+    "Berger": {
+      "Bach_orthonormal": [
+        "(q - 1)**2/6",
+        "(q - 1)*(3*q - 1)/6",
+        "(q - 1)*(3*q - 1)/6",
+        "-(q - 1)*(5*q - 1)/6"
+      ],
+      "Ricci_orthonormal": [
+        "0",
+        "-(q - 2)/2",
+        "-(q - 2)/2",
+        "q/2"
+      ],
+      "clock_equation": "PASS_IDENTICALLY: X, P_X and nu are spatially and temporally constant and theta=nu t is harmonic",
+      "coordinates": "a=1, q=c^2>0, nu=D(theta)>0, X=-nu^2",
+      "matrix": {
+        "column_count": 6,
+        "entries": [
+          {
+            "coefficient": "(q - 1)**2/6",
+            "column": 0,
+            "row": 0
+          },
+          {
+            "coefficient": "(q - 4)**2/4",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "-(q - 4)/4",
+            "column": 2,
+            "row": 0
+          },
+          {
+            "coefficient": "1",
+            "column": 3,
+            "row": 0
+          },
+          {
+            "coefficient": "nu**2",
+            "column": 4,
+            "row": 0
+          },
+          {
+            "coefficient": "-3*nu**4",
+            "column": 5,
+            "row": 0
+          },
+          {
+            "coefficient": "(q - 1)*(3*q - 1)/6",
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": "(q - 4)*(3*q - 4)/4",
+            "column": 1,
+            "row": 1
+          },
+          {
+            "coefficient": "-q/4",
+            "column": 2,
+            "row": 1
+          },
+          {
+            "coefficient": "-1",
+            "column": 3,
+            "row": 1
+          },
+          {
+            "coefficient": "nu**2",
+            "column": 4,
+            "row": 1
+          },
+          {
+            "coefficient": "-nu**4",
+            "column": 5,
+            "row": 1
+          },
+          {
+            "coefficient": "-(q - 1)*(5*q - 1)/6",
+            "column": 0,
+            "row": 2
+          },
+          {
+            "coefficient": "-(q - 4)*(5*q - 4)/4",
+            "column": 1,
+            "row": 2
+          },
+          {
+            "coefficient": "(3*q - 4)/4",
+            "column": 2,
+            "row": 2
+          },
+          {
+            "coefficient": "-1",
+            "column": 3,
+            "row": 2
+          },
+          {
+            "coefficient": "nu**2",
+            "column": 4,
+            "row": 2
+          },
+          {
+            "coefficient": "-nu**4",
+            "column": 5,
+            "row": 2
+          }
+        ],
+        "row_count": 3,
+        "sha256": "c9219eafc68ccf0812588986ea97d4d4bef20659f224ffecd16254e558c485fd"
+      },
+      "scalar_curvature": "-(q - 4)/2"
+    },
+    "clock_Euler_formula": "nabla_a(P_X nabla^a theta)=0",
+    "coefficient_order": [
+      "alpha_B",
+      "alpha_R",
+      "M_P_squared",
+      "p0",
+      "p1",
+      "p2"
+    ],
+    "cylinder": {
+      "clock_equation": "PASS_IDENTICALLY",
+      "coordinate": "kappa=r_cylinder^(-2)>0",
+      "invariants": "R=6 kappa, Ric_orthonormal=(0,2 kappa,2 kappa,2 kappa), theta=constant, X=0",
+      "matrix": {
+        "column_count": 6,
+        "entries": [
+          {
+            "coefficient": "36*kappa**2",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "3*kappa",
+            "column": 2,
+            "row": 0
+          },
+          {
+            "coefficient": "1",
+            "column": 3,
+            "row": 0
+          },
+          {
+            "coefficient": "12*kappa**2",
+            "column": 1,
+            "row": 1
+          },
+          {
+            "coefficient": "-kappa",
+            "column": 2,
+            "row": 1
+          },
+          {
+            "coefficient": "-1",
+            "column": 3,
+            "row": 1
+          }
+        ],
+        "row_count": 2,
+        "sha256": "feaf53f05557b908f5cbe2cceaac534c00f24f90d187fbac6de4ddeda50bb1a7"
+      }
+    },
+    "metric_Euler_formula": "alpha_B B_ab+alpha_R(4R Ric_ab-R^2 g_ab)+M_P^2 G_ab-T_ab[P]=0",
+    "stacked_matrix": {
+      "column_count": 6,
+      "entries": [
+        {
+          "coefficient": "36*kappa**2",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "3*kappa",
+          "column": 2,
+          "row": 0
+        },
+        {
+          "coefficient": "1",
+          "column": 3,
+          "row": 0
+        },
+        {
+          "coefficient": "12*kappa**2",
+          "column": 1,
+          "row": 1
+        },
+        {
+          "coefficient": "-kappa",
+          "column": 2,
+          "row": 1
+        },
+        {
+          "coefficient": "-1",
+          "column": 3,
+          "row": 1
+        },
+        {
+          "coefficient": "(q - 1)**2/6",
+          "column": 0,
+          "row": 2
+        },
+        {
+          "coefficient": "(q - 4)**2/4",
+          "column": 1,
+          "row": 2
+        },
+        {
+          "coefficient": "-(q - 4)/4",
+          "column": 2,
+          "row": 2
+        },
+        {
+          "coefficient": "1",
+          "column": 3,
+          "row": 2
+        },
+        {
+          "coefficient": "nu**2",
+          "column": 4,
+          "row": 2
+        },
+        {
+          "coefficient": "-3*nu**4",
+          "column": 5,
+          "row": 2
+        },
+        {
+          "coefficient": "(q - 1)*(3*q - 1)/6",
+          "column": 0,
+          "row": 3
+        },
+        {
+          "coefficient": "(q - 4)*(3*q - 4)/4",
+          "column": 1,
+          "row": 3
+        },
+        {
+          "coefficient": "-q/4",
+          "column": 2,
+          "row": 3
+        },
+        {
+          "coefficient": "-1",
+          "column": 3,
+          "row": 3
+        },
+        {
+          "coefficient": "nu**2",
+          "column": 4,
+          "row": 3
+        },
+        {
+          "coefficient": "-nu**4",
+          "column": 5,
+          "row": 3
+        },
+        {
+          "coefficient": "-(q - 1)*(5*q - 1)/6",
+          "column": 0,
+          "row": 4
+        },
+        {
+          "coefficient": "-(q - 4)*(5*q - 4)/4",
+          "column": 1,
+          "row": 4
+        },
+        {
+          "coefficient": "(3*q - 4)/4",
+          "column": 2,
+          "row": 4
+        },
+        {
+          "coefficient": "-1",
+          "column": 3,
+          "row": 4
+        },
+        {
+          "coefficient": "nu**2",
+          "column": 4,
+          "row": 4
+        },
+        {
+          "coefficient": "-nu**4",
+          "column": 5,
+          "row": 4
+        }
+      ],
+      "row_count": 5,
+      "sha256": "1318b62f974a61d3469ccafced4cdcf5ec38b4b2cb262f2dd8aeb71161f74bbb"
+    }
+  },
+  "stationary_locus_and_rank_strata": {
+    "background_existence_scope": "For each rank-five parameter point the full stationary action locus is the displayed ray. Couplings vary with the background; this is not a claim that one fixed coupling vector supports the whole neighbourhood.",
+    "common_cofactor_factor": "kappa*nu**2*(q - 1)",
+    "complete_rank_five_locus": "(alpha_B,alpha_R,M_P_squared,p0,p1,p2)=lambda K(kappa,q,nu)",
+    "frozen_specialization": {
+      "K_at_point": [
+        "26649/1280",
+        "27/640",
+        "-81/80",
+        "243/160",
+        "2961/800",
+        "329/64"
+      ],
+      "agrees_with_independently_frozen_ray": true,
+      "normalized_p2_one": [
+        "81/20",
+        "27/3290",
+        "-324/1645",
+        "486/1645",
+        "18/25",
+        "1"
+      ],
+      "point": [
+        "kappa=1",
+        "q=9/40",
+        "nu=3/4"
+      ]
+    },
+    "kernel_from_cofactors": true,
+    "kernel_generator_K": [
+      "8*nu**4*(12*kappa + q - 4)",
+      "-4*nu**4*(4*q - 1)/3",
+      "32*kappa*nu**4*(4*q - 1)",
+      "-48*kappa**2*nu**4*(4*q - 1)",
+      "-8*kappa*nu**2*(4*q - 1)*(12*kappa + q - 4)",
+      "-(12*kappa + q - 4)*(16*kappa*q - 4*kappa - q)"
+    ],
+    "nonzero_background_stratum": {
+      "condition": "lambda!=0 and stationary rank five",
+      "status": "EXACT_COMMON_CYLINDER_BERGER_BACKGROUND_EXISTS"
+    },
+    "polynomial_factors": {
+      "A": "4*q - 1",
+      "F": "12*kappa + q - 4",
+      "H": "32*kappa*q - 8*kappa - 3*q",
+      "J": "16*kappa*q - 4*kappa - q"
+    },
+    "rank_change_last_component_note": "J=0 makes the displayed p2 component vanish but does not by itself lower stationary rank",
+    "rank_change_variety": "{kappa=0} union {nu=0} union {q=1} union {4q-1=0 and q+12kappa-4=0}",
+    "signed_maximal_cofactors_delete_columns_0_to_5": [
+      "8*kappa*nu**6*(q - 1)*(12*kappa + q - 4)",
+      "-4*kappa*nu**6*(q - 1)*(4*q - 1)/3",
+      "32*kappa**2*nu**6*(q - 1)*(4*q - 1)",
+      "-48*kappa**3*nu**6*(q - 1)*(4*q - 1)",
+      "-8*kappa**2*nu**4*(q - 1)*(4*q - 1)*(12*kappa + q - 4)",
+      "-kappa*nu**2*(q - 1)*(12*kappa + q - 4)*(16*kappa*q - 4*kappa - q)"
+    ],
+    "zero_action_stratum": {
+      "condition": "lambda=0",
+      "status": "BACKGROUND_EQUATIONS_VACUOUS_NO_DYNAMICS"
+    }
+  }
+}
