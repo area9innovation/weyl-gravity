@@ -1,0 +1,22 @@
+{
+  "id": "sf:forge-request/bug-science-forge-any-terminal-work-show-resolution",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Repair the remaining production inconsistency in typed terminal-outcome dependencies after SF17 was marked LANDED.  In the real physics programme, `s-f work ready` correctly strips `#ANY_TERMINAL` and offers the observer successor after its predecessor reached DONE, but `s-f work show` passes the raw suffixed identifier to program lookup and reports `UNRESOLVED ... (not found in program)`.  All read-only and mutating coordination surfaces must fold the same dependency semantics or agents will diagnose a healthy queue as broken.",
+    "depends_on": [
+      "sf:program/work/observer-berger-apparatus-physical-reduction-after-replacement-112",
+      "sf:program/work/observer-berger-apparatus-z2-after-repaired-reduction",
+      "sf:program/work/observer-berger-relational-redshift-after-repaired-z2"
+    ],
+    "stop_condition": "On the committed physics fixture, work-show, work-ready, work-pull preflight, work-package, overview, streams-view and dependency graph construction must parse the dependency base id and mode once through the same canonical helper.  For observer-berger-apparatus-physical-reduction-after-replacement-112, the DONE predecessor must display SATISFIED with mode ANY_TERMINAL and the successor must remain READY/pullable.  Add controls proving that OBSTRUCTED satisfies ANY_TERMINAL but not SUCCESS_TERMINAL, DONE satisfies both, ACTIVE satisfies neither, and a genuinely unknown base id remains unresolved.  The regression gate must run against a directory-native multi-file programme, not only a synthetic in-memory node pair.",
+    "forbid": "no removal of the typed suffix from authored dependencies; no prose-only suppression of the work-show warning; no treating every terminal state as success; no automatic readiness for unknown base ids; no mutation during read-only inspection; no real work pull in the regression test; no physics-specific observer id hard-coded in the implementation",
+    "notes": [
+      "Minimal reproduction from physics/symplectic-reconstruction at commit 9dccd21f2 or later: `s-f work ready --stream observer --now 2026-07-20T22:50:00+02:00` prints the physical-reduction item READY, while `s-f work show --item observer-berger-apparatus-physical-reduction-after-replacement-112 --now 2026-07-20T22:50:00+02:00` prints `UNRESOLVED sf:program/work/observer-berger-apparatus-combined-q1-after-replacement-112#ANY_TERMINAL (not found in program)`.",
+      "SF17/fe14c02a7 established the intended semantics, so this is a missed consumer path/regression rather than a new feature request.",
+      "The queue is not presently scientifically blocked because work-ready and the prior pull path resolve correctly, but the contradictory inspection surface is unsafe for resident-agent diagnosis."
+    ]
+  }
+}
