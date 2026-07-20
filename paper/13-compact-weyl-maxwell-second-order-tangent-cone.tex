@@ -2080,6 +2080,104 @@ criterion.  If exactly one moment vanishes, the same two equations give the
 two boundary formulae directly.
 \end{proof}
 
+\begin{proposition}[Deformable-kernel component-incidence normal form]
+\label{prop:candidate-17-20-deformable-kernel-incidence}
+On a strict opposite-sign candidate-\((17)/(20)\) stratum, let
+\(F,G\in\mathbb C^5\) be the actual amplitudes of the two nodes in the
+arbitrary third-transvectant-kernel factor and put
+\[
+ \overline{\mathcal K}
+ =\{(F,G):T_3(F,G)=0,\ \|F\|_W\leq1,\ \|G\|_W\leq1\}.
+\]
+Thus a vanished node carries no auxiliary projective direction.  Let
+\[
+ \mathcal M
+ =\overline{\mathcal K}/
+ \bigl(U(1)_F\times U(1)_G\times SO(3)_{\rm lift}\bigr)
+\]
+be the compact stratified semialgebraic orbit space, including its nonfree
+and algebraically singular strata.  With
+\[
+ c(F,G)=\delta+a\|F\|_W^2-b\|G\|_W^2,\qquad
+ M_K(F,G)=-a\,m(F)+b\,m(G),
+\]
+define
+\[
+ \mathcal A
+ =\{[F,G]\in\mathcal M:\|M_K(F,G)\|\leq|c(F,G)|\},
+ \qquad
+ \mathcal I
+ =\{[F,G]\in\mathcal A:c(F,G)=0=M_K(F,G)\}.
+\]
+Then a rotation-zero initial point contracts to the connected
+double-singular hub if and only if its path component in \(\mathcal A\)
+meets \(\mathcal I\).
+
+The incidence is nonempty in both strict sign chambers.  If
+\(\delta<0<\alpha\), it contains the boundary point
+\[
+ G=0,\qquad \|F\|_W^2=-\delta/a,\qquad m(F)=0.
+\]
+If \(\alpha<0<\delta\), it contains
+\[
+ F=0,\qquad \|G\|_W^2=\delta/b,\qquad m(G)=0.
+\]
+These statements apply separately to candidate \((17)\) and to the two
+candidate-\((20)\) sign chambers; they do not identify their carriers or
+assert that every component of \(\mathcal A\) meets \(\mathcal I\).
+\end{proposition}
+
+\begin{proof}
+The receiving common-square moment has the complete closed unit ball as its
+image.  Hence a square direction solving
+\[
+ M_K+c\mu_{\rm sq}=0
+\]
+exists exactly on \(\mathcal A\).  Compact real-algebraic invariant theory
+makes \(\mathcal M\), \(\mathcal A\), and their components semialgebraic;
+each connected component is semialgebraically path connected.  The compact
+group slice theorem lifts paths in the orbit space across all stabilizer
+types.
+
+For completeness, the required square-moment path lift is explicit.  In the
+Cartan model write \(z=x+iy\), use projective phase to impose
+\(x\cdot y=0\), and rotate the resulting oriented orthogonal frame.  If
+\(u\in[0,1]\) is its norm ratio, the normalized moment radius and inverse
+branch are
+\[
+ r(u)=\frac{3u}{2+u^2},\qquad
+ u(r)=\frac{3-\sqrt{9-8r^2}}{2r},\qquad u(0)=0.
+\]
+For \(0<r\leq1\) the fibre is the connected rotation orbit about the moment
+axis; at \(r=0\) it is the connected phase-real
+\(\mathbb{RP}^2\).  Thus every semialgebraic path in \(\mathcal A\) lifts
+from the declared initial square direction.
+
+If a contraction exists, \(c\) changes from \(\alpha\) to \(\delta\), so
+the intermediate-value theorem supplies a point with \(c=0\).  Rotation
+zero then forces \(M_K=0\); hence the initial component meets
+\(\mathcal I\).
+
+Conversely, lift a path in that component to an incidence point.  There
+\(c=M_K=0\), so the square direction is unconstrained and may be moved to a
+phase-real zero-moment direction.  Now set
+\[
+ F_s=\sqrt{s}F_*,\qquad G_s=\sqrt{s}G_*.
+\]
+Odd bilinearity preserves \(T_3(F_s,G_s)=0\), while
+\[
+ M_K(F_s,G_s)=sM_K(F_*,G_*)=0,\qquad
+ c(F_s,G_s)=(1-s)\delta.
+\]
+The phase-real square therefore completes the path to the hub.
+
+Finally, \(\alpha=\delta+a-b\).  If \(\delta<0<\alpha\), then
+\(a>b-\delta>-\delta\), so \(0<-\delta/a<1\).  If
+\(\alpha<0<\delta\), then \(b>\delta+a>\delta\), so
+\(0<\delta/b<1\).  Phase-real spin-two directions have zero moment and give
+the two displayed boundary incidences.
+\end{proof}
+
 \begin{proposition}[Candidate-(18) complete complex singular resolution]
 \label{prop:candidate-18-complex-singular-resolution}
 Let \(R_\pm=\operatorname{Rank}_{\leq1}(5\times2)_\pm\).  The complete
@@ -2676,6 +2774,7 @@ Candidate-(17)/(20) moving-square contraction and ansatz obstruction &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json}\\
 Candidate-(17)/(20) independent-node bottleneck incidence &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.json}\\
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.json}\\
 Fixed-occupation node-phase-reduced divisors and local quotients &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json}\\
 Local lifted-rotation descent through current leaves &
@@ -2805,8 +2904,13 @@ the enlarged fixed-direction independent-node ansatz.  A path exists
 exactly when the coefficient-zero line meets the kernel-moment-zero locus
 inside the physical scaling square; positive-collinear incidence points
 contract by an explicit three-stage path, while generic fixed directions
-remain obstructed.  Deformation of the \(K\)-node directions inside
-\(T_3(f,g)=0\) remains open.  The
+remain obstructed.  Allowing the \(K\)-node directions themselves to deform
+gives the invariant normal form of
+Proposition~\ref{prop:candidate-17-20-deformable-kernel-incidence}: a point
+contracts exactly when its component of the compact admissible orbit space
+meets the coefficient-zero/kernel-moment-zero incidence.  Both strict sign
+chambers contain explicit one-zero-node incidence points, but it remains
+open whether every admissible component reaches them.  The
 regular fixed-occupation node-phase reductions are classified by
 Proposition~\ref{prop:phase-reduced-presymplectic-divisors}.  The latter
 retains the common parity-node phases and candidate-(18) spectators rather

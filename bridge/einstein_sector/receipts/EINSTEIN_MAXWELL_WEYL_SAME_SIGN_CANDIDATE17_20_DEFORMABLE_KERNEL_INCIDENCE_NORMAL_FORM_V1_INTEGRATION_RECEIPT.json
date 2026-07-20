@@ -1,0 +1,41 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_DEFORMABLE_KERNEL_INCIDENCE_NORMAL_FORM_V1_INTEGRATION_RECEIPT",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_DEFORMABLE_KERNEL_INCIDENCE_NORMAL_FORM",
+  "date": "2026-07-20",
+  "theorem_commit": "47e2d298",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "content_sha256": {
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "d2444a872e82044363194dac3111b465275373129851300e65916d6b2c71fde7",
+    "notes/d-quotient-einstein-team-brief.md": "9669f1d005139192d3f96d179608498d8aac23fda936545a54c6f3af1dd1d1fb",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex": "745b6c106f6e9153c12932d67bfd76292b1380a428d28e9950b277c5c6ce4e8b",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.pdf": "073741b1983d5484a87e9fac249087a195922aac2c221538ef363100879d9ab5",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json": "b05244e8e2ba0da2e48b0f5930249ebe633890bec1da751796cb10cc3f3e71da"
+  },
+  "integration": {
+    "atlas": "The generated row certifies the invariant component criterion but leaves the arbitrary-component bounded and smooth verdicts OPEN; candidate 17 and both candidate-20 sign chambers remain distinct.",
+    "brief": "The Einstein brief records the compactified moduli, moment map, zero-wall incidence, Science Forge item and next exact component-enumeration gate.",
+    "paper": "Paper 13 contains the theorem and proof, exact one-zero-node incidences, connected Cartan-fibre path lift and an explicit statement that nonempty incidence does not imply global connectedness.",
+    "source_map": "All 57 source blobs are pinned at theorem commit 47e2d298; the new certificate blob is 1399be15d354b051d0e74ea6a2ce3b696368a4d9."
+  },
+  "verification": {
+    "status": "PASS",
+    "commands": [
+      "python3 paper/verify_13_14_draft_source_maps.py",
+      "three pdflatex passes in paper/ with -interaction=nonstopmode -halt-on-error",
+      "rg Undefined|multiply defined|Overfull|LaTeX Warning on all three logs",
+      "pdfinfo and pdftotext theorem-presence audit",
+      "git diff --check on the Paper 13 TeX, PDF and claim map"
+    ],
+    "results": [
+      "Paper 13: 57 committed inputs pinned",
+      "Paper 14 control: 21 committed inputs pinned",
+      "Paper 13 PDF: 41 pages",
+      "pdflatex passes two and three: no undefined references, multiply-defined labels, overfull boxes or LaTeX warnings"
+    ]
+  },
+  "coordination_boundary": "The Paper 13 TeX/PDF consumer paths are outside sf:program/work/bridge-kernel-direction-incidence-normal-form's allowlist. They are integrated by an explicit-path downstream manuscript commit and recorded as a deviation in the append-only work report; the theorem and atlas commit remains the authoritative Science Forge work-item result.",
+  "claim_boundary": "The manuscript and atlas expose the exact component criterion without promoting every-component incidence, complete off-balance connectedness, occupation gluing, final residual descent, all-orders integration, causal propagation, observation or quantum interpretation."
+}
