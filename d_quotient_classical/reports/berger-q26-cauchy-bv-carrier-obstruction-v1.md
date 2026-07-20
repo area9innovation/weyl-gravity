@@ -57,5 +57,5 @@ normalized companion/\(A_{104}\) data or enlarge the carrier subject to the
 certified degreewise lower bound.  This result does not construct a Krein
 form, real structure, Hadamard state, positivity, a QME or a quantum theory.
 
-CLOSE-OUT: the exact first obstruction in the complete declared frozen-graph lift class is supplied; alternative companions and larger carriers remain open.
+CLOSE-OUT: OBSTRUCTED — the exact no-go in the complete declared frozen-graph lift class is certified; alternative companions and larger carriers remain open.
 EVIDENCE: d_quotient_classical/certificates/BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1.json
