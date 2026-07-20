@@ -1,0 +1,64 @@
+{
+  "schema": "asymptotic-bach-schouten-corner-zero-mode-obstruction-receipt-v1",
+  "result_id": "ASYMPTOTIC_BACH_SCHOUTEN_CORNER_ZERO_MODE_OBSTRUCTION_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.10,
+      "commands": [
+        "python3 -m py_compile <scoped producer, verifier and test>",
+        "python3 -m json.tool <scoped schema, certificate and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.98,
+      "commands": [
+        "PYTHONPATH=. python3 -m bridge.einstein_sector.asymptotic_bach_schouten_corner_zero_mode_obstruction --check",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_asymptotic_bach_schouten_corner_zero_mode_obstruction.py",
+        "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_asymptotic_bach_schouten_corner_zero_mode_obstruction -v",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-asymptotic-bach-schouten-corner-zero-mode-fragment-v1.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 1.19,
+      "commands": [
+        "PYTHONPATH=. python3 -m bridge.einstein_sector.asymptotic_bach_auxiliary_schouten_edge_pair_preflight --check",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_asymptotic_bach_auxiliary_schouten_edge_pair_preflight.py",
+        "PYTHONPATH=. python3 -m bridge.einstein_sector.asymptotic_bach_local_counterterm_cohomology_obstruction --check",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_asymptotic_bach_local_counterterm_cohomology_obstruction.py"
+      ],
+      "reason": "The zero-mode theorem changes the lifecycle of both exact local-counterterm and auxiliary-edge inputs, so both independent consumers were replayed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a scoped first-edge obstruction, not a paper freeze, release, or shared-core algebra change."
+    }
+  },
+  "source_manifest": {
+    "bridge/einstein_sector/asymptotic_bach_schouten_corner_zero_mode_obstruction.py": "3a783d53b7ad2d79c3b0859a5d936d7dcdf54155dad7116689fd720aa4bf8946",
+    "bridge/einstein_sector/verify_asymptotic_bach_schouten_corner_zero_mode_obstruction.py": "26a6523fd65271e48a75fb7525c3048ff09c6922fbd0a9404706ba0331079ae0",
+    "bridge/einstein_sector/tests/test_asymptotic_bach_schouten_corner_zero_mode_obstruction.py": "3de4790d8bf83918e4859512d1b9d8d096ab6eb148ca5bfb3987c575736e3aa8",
+    "bridge/einstein_sector/schema/asymptotic-bach-schouten-corner-zero-mode-obstruction-v1.schema.json": "78270dc5e1c40f3bce60550117656031167f3f77ef2b002a4a3012b3d7fadb54",
+    "bridge/einstein_sector/reports/asymptotic-bach-schouten-corner-zero-mode-obstruction-v1.md": "bff12a8cd842d0432a965ce19b26f0281b138eafcafdf7aad3d6f9267a9ca35e",
+    "bridge/certificates/ASYMPTOTIC_BACH_SCHOUTEN_CORNER_ZERO_MODE_OBSTRUCTION_V1.json": "293587f71cf4563c76f0737b64d060a3f4e29c626689953474d303b968a2b53a",
+    "residual_atlas/einstein-asymptotic-bach-schouten-corner-zero-mode-fragment-v1.json": "c4afeefa6a777065414f578b93fc751cbb07d4e5b2ebf573e8a7c50a963c8fcd"
+  },
+  "independent_rail": {
+    "status": "PASS",
+    "method": "The verifier does not import the producer. It reconstructs D_u on order-four jets, its constant kernel, the factorial corner completion, the two-polarization rank and one-corner mutation, then checks all pinned inputs and atlas boundaries."
+  },
+  "failed_attempts": [
+    {
+      "failure": "The first producer attempted to serialize SymPy zero objects inside proof matrices.",
+      "disposition": "Serialized exact matrix entries as strings and kept independent exact Matrix reconstruction in the verifier."
+    }
+  ],
+  "claim_boundary": "This receipt covers the tracefree principal Bondi relation S_AB=(alpha_B/2)partial_u Q_AB, its retarded/advanced corner ambiguity, exact two-component constant kernel and minimal corner-coordinate count. It does not construct the conjugate corner momentum, angular/Coulombic recursion, boundary ghost/antifield/BFV quotient, I-/i0/I+ matching, P0/D_M charges, causal propagation or any particle, scattering, stability, positivity, unitarity or quantum claim."
+}

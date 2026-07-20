@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Asymptotic Bach Schouten corner zero-mode obstruction v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "generality_level",
+    "scope",
+    "provenance",
+    "principal_Bondi_relation",
+    "retarded_advanced_reconstruction",
+    "exact_finite_jet_witness",
+    "minimal_pair_obstruction",
+    "function_space_disposition",
+    "gauge_and_BFV_disposition",
+    "charge_disposition",
+    "classification",
+    "verdicts",
+    "claim_boundary",
+    "next_gate",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "asymptotic-bach-schouten-corner-zero-mode-obstruction-v1"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "ASYMPTOTIC_BACH_SCHOUTEN_CORNER_ZERO_MODE_OBSTRUCTION_V1"},
+    "result_state": {"type": "string"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "generality_level": {"type": "string"},
+    "scope": {"type": "object"},
+    "provenance": {"type": "object"},
+    "principal_Bondi_relation": {"type": "object"},
+    "retarded_advanced_reconstruction": {"type": "object"},
+    "exact_finite_jet_witness": {"type": "object"},
+    "minimal_pair_obstruction": {"type": "object"},
+    "function_space_disposition": {"type": "object"},
+    "gauge_and_BFV_disposition": {"type": "object"},
+    "charge_disposition": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"}
+    },
+    "verdicts": {"type": "object"},
+    "claim_boundary": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "verification_commands": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string"}
+    }
+  }
+}

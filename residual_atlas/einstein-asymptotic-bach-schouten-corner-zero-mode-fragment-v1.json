@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This LOCAL-ALGEBRAIC tensor-principal theorem proves that S_AB=(alpha_B/2)partial_u Q_AB forgets a two-component u-independent tracefree corner tensor and that the minimal bulk Schouten pair is radical on a memory-inclusive carrier. It does not construct the conjugate corner momentum, angular/Coulombic Bondi recursion, boundary ghost/antifield/BFV quotient, I-/i0/I+ matching, P0/D_M charges, or any causal, particle, scattering, stability, positivity, unitarity or quantum result.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/ASYMPTOTIC_BACH_SCHOUTEN_CORNER_ZERO_MODE_OBSTRUCTION_V1.json",
+          "result_id": "ASYMPTOTIC_BACH_SCHOUTEN_CORNER_ZERO_MODE_OBSTRUCTION_V1",
+          "sha256": "293587f71cf4563c76f0737b64d060a3f4e29c626689953474d303b968a2b53a"
+        }
+      ],
+      "id": "einstein.asymptotic.minkowski.weyl.schouten_corner_zero_mode",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The obstruction is the zero mode of D_u, not a frequency-shell dispersion theorem.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "The minimal bulk Schouten pair (Q_AB,S_AB,C_AB) is not a nondegenerate memory-inclusive boundary phase space until a two-component tracefree corner coordinate and a conjugate corner momentum/constraint are supplied.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "No compact harmonic resonance carrier is identified.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The theorem is linear and asymptotic.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "Retarded reconstruction requires declared corner data and is not matched through i0.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No quadratic source is evaluated.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "No compact second-order Taub map is involved.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "Minkowski space",
+        "boundaries": "I+ retarded-time line with explicit endpoint/corner data",
+        "carrier": "leading p0 tracefree metric source Q_AB, leading auxiliary response S_AB, and p1 radiative response C_AB",
+        "charge_sector": "tracefree radiative principal Bondi jet; Coulombic aspects absent",
+        "degree": 1,
+        "ell": "local tensor principal relation; angular lower-order recursion remains open",
+        "k": "radial Bondi expansion, not compact momentum",
+        "m": "local tensor principal relation",
+        "omega": "smooth retarded-time profiles, including endpoint memory",
+        "parity": "both tracefree tensor polarizations",
+        "theory": "linearized four-dimensional pure Weyl C^2 gravity in auxiliary-Schouten form"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/asymptotic_bach_schouten_corner_zero_mode_obstruction.py",
+  "generated_by_sha256": "3a783d53b7ad2d79c3b0859a5d936d7dcdf54155dad7116689fd720aa4bf8946",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_boundary",
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.asymptotic_bach_schouten_corner_zero_mode_obstruction --check",
+    "PYTHONPATH=. python3 bridge/einstein_sector/verify_asymptotic_bach_schouten_corner_zero_mode_obstruction.py",
+    "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_asymptotic_bach_schouten_corner_zero_mode_obstruction -v",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-asymptotic-bach-schouten-corner-zero-mode-fragment-v1.json"
+  ]
+}

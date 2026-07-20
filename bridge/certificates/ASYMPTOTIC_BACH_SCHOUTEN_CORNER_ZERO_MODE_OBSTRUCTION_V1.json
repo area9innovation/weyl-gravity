@@ -1,0 +1,201 @@
+{
+  "charge_disposition": {
+    "D_M": "OPEN_UNTIL_CORNER_PAIR_AND_QUOTIENT_EXIST",
+    "D_rad": "NO_CERTIFIED_MAP",
+    "H_ESU": "NOT_APPLICABLE_ON_FIXED_MINKOWSKI_PATCH",
+    "P0": "OPEN_UNTIL_CORNER_PAIR_AND_QUOTIENT_EXIST"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC tensor-principal theorem proves that S_AB=(alpha_B/2)partial_u Q_AB forgets a two-component u-independent tracefree corner tensor and that the minimal bulk Schouten pair is radical on a memory-inclusive carrier. It does not construct the conjugate corner momentum, angular/Coulombic Bondi recursion, boundary ghost/antifield/BFV quotient, I-/i0/I+ matching, P0/D_M charges, or any causal, particle, scattering, stability, positivity, unitarity or quantum result.",
+  "classification": {
+    "D_M_charge_computed": false,
+    "Iminus_i0_Iplus_matching_certified": false,
+    "P0_charge_computed": false,
+    "boundary_gauge_BFV_descent_certified": false,
+    "causal_particle_scattering_stability_positivity_or_quantum_claim": false,
+    "conjugate_corner_momentum_constructed": false,
+    "full_tensor_angular_and_Coulombic_recursion_constructed": false,
+    "minimal_additional_corner_coordinate_count_certified": true,
+    "minimal_bulk_Schouten_pair_nondegenerate_with_memory": false,
+    "principal_Bondi_auxiliary_relation_certified": true,
+    "retarded_advanced_mismatch_certified": true,
+    "three_inputs_imported_by_exact_hash": true,
+    "two_component_corner_kernel_certified": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_finite_jet_witness": {
+    "derivative_matrix": [
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "3",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "4"
+      ]
+    ],
+    "derivative_rank": 4,
+    "kernel_basis": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "mutation_verdict": "ONE_MISSING_TRACEFREE_CORNER_COMPONENT_LEAVES_ONE_RADICAL_DIRECTION",
+    "one_component_corner_completed_determinant": "24",
+    "one_component_corner_completed_matrix": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "3",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "4"
+      ]
+    ],
+    "one_corner_component_missing_rank": 9,
+    "order": 4,
+    "two_tracefree_components_completed_rank": 10,
+    "two_tracefree_components_dimension": 10
+  },
+  "function_space_disposition": {
+    "causal_two_sided": "NO_CERTIFIED_MAP across I-/i0/I+",
+    "compact_support_Q": "D_u is injective, but S must have zero total integral; this removes the corner mode by boundary condition rather than representing it.",
+    "memory_inclusive_Q": "D_u has the u-independent tracefree kernel q_AB and retarded/advanced inverses differ by endpoint data.",
+    "retarded_only": "well-defined only after declaring Q_AB^-; not equivalent to an advanced construction unless the matching condition holds"
+  },
+  "gauge_and_BFV_disposition": {
+    "Weyl_ghost": "delta_sigma s_AB=-alpha_B*(D_A D_B sigma)^TF at the boundary principal level",
+    "antifields_constraints": "NO_CERTIFIED_DOMAIN",
+    "corner_ghost_action": "OPEN; the allowed endpoint sigma and boundary diffeomorphism jets are not classified",
+    "postquotient_corner_rank": "OPEN"
+  },
+  "generality_level": "G2_TRACEFREE_TENSOR_PRINCIPAL_BONDI_JET",
+  "lifecycle_state": "CLASSIFIED",
+  "minimal_pair_obstruction": {
+    "bulk_principal_flux": "omega_I_principal proportional to integral_I (delta S^AB wedge partial_u delta C_AB)",
+    "conclusion": "The minimal bulk Schouten pair (Q_AB,S_AB,C_AB) is not a nondegenerate memory-inclusive boundary phase space until a two-component tracefree corner coordinate and a conjugate corner momentum/constraint are supplied.",
+    "minimal_missing_degree": "one tracefree symmetric corner tensor q_AB per angle, i.e. exactly two real components before boundary gauge descent",
+    "mutation": "ONE_MISSING_TRACEFREE_CORNER_COMPONENT_LEAVES_ONE_RADICAL_DIRECTION",
+    "radical": "u-independent q_AB has delta S_AB=0 and is invisible to the bulk principal flux",
+    "rank_proof": "For each polarization D_u on order-N jets has rank N and a one-dimensional constant kernel; adjoining q_0 gives determinant N!. Two polarizations therefore require exactly two corner coordinates."
+  },
+  "next_gate": "Add the tracefree corner coordinate and classify its conjugate momentum/constraint together with endpoint Weyl and diffeomorphism ghosts; only then retest finite-cut nondegeneracy and charges.",
+  "principal_Bondi_relation": {
+    "auxiliary_equation": "G_ab=(2/alpha_B)*(s_ab-g_ab*s)",
+    "leading_auxiliary_coefficient": "s_AB^TF=r^-1*S_AB+O(r^-2)",
+    "p0_wave_leading_term": "Box Q_AB(u,x)=-2*r^-1*partial_u Q_AB+O(r^-2)",
+    "result": "S_AB=(alpha_B/2)*partial_u Q_AB",
+    "status": "CERTIFIED_AT_TRACEFREE_PRINCIPAL_BONDI_JET",
+    "tracefree_TT_identity": "G_AB^TF=-(1/2)*Box h_AB^TF"
+  },
+  "provenance": {
+    "inputs": {
+      "auxiliary_pair": {
+        "path": "bridge/certificates/ASYMPTOTIC_BACH_AUXILIARY_SCHOUTEN_EDGE_PAIR_PREFLIGHT_V1.json",
+        "result_id": "ASYMPTOTIC_BACH_AUXILIARY_SCHOUTEN_EDGE_PAIR_PREFLIGHT_V1",
+        "sha256": "e97bbcdf96ea9f7b47581841430399ccca77caf558acff137840a712e6a6ad43"
+      },
+      "local_no_go": {
+        "path": "bridge/certificates/ASYMPTOTIC_BACH_LOCAL_COUNTERTERM_COHOMOLOGY_OBSTRUCTION_V1.json",
+        "result_id": "ASYMPTOTIC_BACH_LOCAL_COUNTERTERM_COHOMOLOGY_OBSTRUCTION_V1",
+        "sha256": "6ccb79e0626ff81fa2ffbe79166f578e50436078eaab3787da5c826112434b7d"
+      },
+      "raw": {
+        "path": "bridge/certificates/asymptotic_bach_raw_flux_corner_obstruction.json",
+        "result_id": "ASYMPTOTIC_BACH_RAW_FLUX_CORNER_OBSTRUCTION",
+        "sha256": "1cef43665f6ff2917669d7e762e20c527b3b4b001f8c77a1581856d93c35e10c"
+      }
+    },
+    "producer_path": "bridge/einstein_sector/asymptotic_bach_schouten_corner_zero_mode_obstruction.py",
+    "producer_sha256": "3a783d53b7ad2d79c3b0859a5d936d7dcdf54155dad7116689fd720aa4bf8946"
+  },
+  "result_id": "ASYMPTOTIC_BACH_SCHOUTEN_CORNER_ZERO_MODE_OBSTRUCTION_V1",
+  "result_state": "MINIMAL_SCHOUTEN_PAIR_OBSTRUCTED_BY_TWO_COMPONENT_CORNER_ZERO_MODE",
+  "retarded_advanced_reconstruction": {
+    "advanced": "Q_AB(u)=Q_AB^+-(2/alpha_B)*integral_u^{+infinity} S_AB(v)dv",
+    "conclusion": "S_AB alone determines neither endpoint source; choosing a retarded or advanced inverse is a corner condition, not an intrinsic local inverse.",
+    "homogeneous_ambiguity": "Q_AB -> Q_AB+q_AB(x), with q_AB tracefree and u-independent",
+    "matching_condition": "Q_AB^+-Q_AB^-=(2/alpha_B)*integral_{-infinity}^{+infinity}S_AB(v)dv",
+    "retarded": "Q_AB(u)=Q_AB^-+(2/alpha_B)*integral_{-infinity}^u S_AB(v)dv"
+  },
+  "schema": "asymptotic-bach-schouten-corner-zero-mode-obstruction-v1",
+  "schema_path": "bridge/einstein_sector/schema/asymptotic-bach-schouten-corner-zero-mode-obstruction-v1.schema.json",
+  "schema_sha256": "78270dc5e1c40f3bce60550117656031167f3f77ef2b002a4a3012b3d7fadb54",
+  "scope": {
+    "background": "Minkowski space",
+    "boundaries": "I+ retarded-time line with explicit endpoint/corner data",
+    "carrier": "leading p0 tracefree metric source Q_AB, leading auxiliary response S_AB, and p1 radiative response C_AB",
+    "charge_sector": "tracefree radiative principal Bondi jet; Coulombic aspects absent",
+    "degree": 1,
+    "ell": "local tensor principal relation; angular lower-order recursion remains open",
+    "k": "radial Bondi expansion, not compact momentum",
+    "m": "local tensor principal relation",
+    "omega": "smooth retarded-time profiles, including endpoint memory",
+    "parity": "both tracefree tensor polarizations",
+    "theory": "linearized four-dimensional pure Weyl C^2 gravity in auxiliary-Schouten form"
+  },
+  "verdicts": {
+    "minimal_bulk_edge_pair": "OBSTRUCTED_BY_TRACEFREE_CORNER_ZERO_MODE",
+    "renormalized_boundary_phase_space": "PHASE_SPACE_NOT_CLOSED",
+    "smallest_additional_edge_degree": "TWO_COMPONENT_TRACEFREE_CORNER_TENSOR_PLUS_CONJUGATE_CONSTRAINT_OR_MOMENTUM",
+    "work_item": "OBSTRUCTED_AT_FIRST_EDGE_ZERO_MODE_GATE"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.asymptotic_bach_schouten_corner_zero_mode_obstruction --check",
+    "PYTHONPATH=. python3 bridge/einstein_sector/verify_asymptotic_bach_schouten_corner_zero_mode_obstruction.py",
+    "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_asymptotic_bach_schouten_corner_zero_mode_obstruction -v",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-asymptotic-bach-schouten-corner-zero-mode-fragment-v1.json"
+  ]
+}
