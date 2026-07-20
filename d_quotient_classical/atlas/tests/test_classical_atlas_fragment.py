@@ -229,9 +229,17 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             entry["claim_boundary"],
         )
         self.assertIn(
-            "does not establish that a simultaneous order-two chain map exists",
+            "EINSTEIN_WEYL_RELATIVE_ORDER_TWO_TOP_DESCENT_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("1056-by-712 matrix", entry["claim_boundary"])
+        self.assertIn("kernel dimension 196", entry["claim_boundary"])
+        self.assertIn("four-row exact rowspace witness", entry["claim_boundary"])
+        self.assertIn(
+            "complete endpoint-normalized chain map is obstructed through order two",
             entry["claim_boundary"],
         )
+        self.assertIn("does not obstruct order three", entry["claim_boundary"])
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OBSTRUCTED")
 
     def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:

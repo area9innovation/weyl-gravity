@@ -145,7 +145,16 @@ def verify() -> None:
     if "sensitivity has rank one and is surjective" not in pullback["claim_boundary"]:
         raise AssertionError("order-two obstruction quotient action missing")
     if "does not establish that a simultaneous order-two chain map exists" not in pullback["claim_boundary"]:
-        raise AssertionError("order-two sensitivity was overpromoted")
+        if "complete endpoint-normalized chain map is obstructed through order two" not in pullback["claim_boundary"]:
+            raise AssertionError("order-two sensitivity disposition missing")
+    if "EINSTEIN_WEYL_RELATIVE_ORDER_TWO_TOP_DESCENT_OBSTRUCTION_V1" not in evidence_ids:
+        raise AssertionError("legal order-two top-descent evidence missing")
+    if "1056-by-712 matrix" not in pullback["claim_boundary"] or "kernel dimension 196" not in pullback["claim_boundary"]:
+        raise AssertionError("legal top-descent census missing")
+    if "four-row exact rowspace witness" not in pullback["claim_boundary"]:
+        raise AssertionError("top-descent rowspace witness missing")
+    if "does not obstruct order three" not in pullback["claim_boundary"]:
+        raise AssertionError("order-two obstruction was overpromoted")
     if pullback["mode_data"]["taub_maps"]["status"] != "OBSTRUCTED":
         raise AssertionError("order-one relative incidence not fail-closed")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]

@@ -2089,6 +2089,18 @@ all-order obstruction and the full order-two chain solve is the active
 Bridge-1 gate.  Existence, `f2`, action-pairing transport and the causal
 bridge remain fail-closed.
 
+The legal top-descent restriction changes this preliminary sensitivity into
+an exact order-two obstruction.
+`EINSTEIN_WEYL_RELATIVE_ORDER_TWO_TOP_DESCENT_OBSTRUCTION_V1` couples all
+626 invariant `A1` and 86 invariant `A2` second-order symbols.  The resulting
+`1056 x 712` system has rank 516 and a 196-dimensional kernel.  Its
+obstruction-sensitivity row lies exactly in the rowspace, with a four-row
+certificate, so every top-compatible order-two symbol has zero sensitivity.
+The old normalized defect therefore survives and the endpoint-normalized
+chain map is obstructed through order two.  Bridge 1 now chooses among an
+order-three sensitivity screen, a changed endpoint/current incidence, or a
+larger relative carrier; none is yet promoted.
+
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains
 `NO_CERTIFIED_MAP`; the relative functor may be prepared but Bridge 1 is not

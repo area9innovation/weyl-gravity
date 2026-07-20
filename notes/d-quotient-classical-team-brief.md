@@ -2495,6 +2495,19 @@ all-finite-order no-go.  It does not prove that the remaining chain equations
 are simultaneously consistent, does not activate `f2`, and does not yet
 require a carrier enlargement or current change.
 
+That unrestricted screen is now refined by the legal top-descent gate.
+`EINSTEIN_WEYL_RELATIVE_ORDER_TWO_TOP_DESCENT_OBSTRUCTION_V1` constructs the
+complete invariant top-symbol system with 626 `A1` and 86 `A2` coefficients.
+Its `1056 x 712` sparse rational matrix has 2,484 nonzero entries, rank 516
+and kernel dimension 196.  Appending the old obstruction-sensitivity row does
+not increase the rank.  A four-row rowspace certificate,
+with coefficients `(-1,-1,-1/2,+1/2)`, proves that the sensitivity vanishes
+on every legal top-descent symbol.  Combining this identity with the
+normalized order-one left-null evaluation proves that no endpoint-normalized
+invariant chain map exists through differential order two.  The result is
+scoped: order three, another endpoint/current incidence and larger relative
+carriers remain open, and `f2` is still not activated.
+
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
 negative-norm one-particle class.  A counterexample is a successful result, not

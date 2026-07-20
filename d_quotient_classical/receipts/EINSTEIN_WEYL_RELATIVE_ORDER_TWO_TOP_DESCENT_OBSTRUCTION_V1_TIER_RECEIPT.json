@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ORDER_TWO_TOP_DESCENT_OBSTRUCTION_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-20",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "status": "PASS",
+  "artifacts": {
+    "certificate": {
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_TWO_TOP_DESCENT_OBSTRUCTION_V1.json",
+      "sha256": "63fb1e8cc191f1471de4fa504581186dde1524337f0d30cdbe41db91b73a633c"
+    },
+    "system_payload": {
+      "path": "d_quotient_classical/generated/einstein_weyl_relative_order_two_top_descent_obstruction_v1/system.json",
+      "sha256": "80fbfc0bdfb4775d808d980d8f4e077f1bf34c6999b1a16a52d8a3318c2f5020"
+    },
+    "producer": {
+      "path": "d_quotient_classical/relative/einstein_weyl_relative_order_two_top_descent_obstruction.py",
+      "sha256": "82312d23358af288b201ac2073f32269231f02eaeac4468de1a15d0b58064ed4"
+    },
+    "verifier": {
+      "path": "d_quotient_classical/relative/verify_einstein_weyl_relative_order_two_top_descent_obstruction.py",
+      "sha256": "1b1d37aca734a0e4062e7c82735f4f3509ba120199312a2a54fdb61967eb6f0c"
+    },
+    "tests": {
+      "path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_order_two_top_descent_obstruction.py",
+      "sha256": "506b264fa42fd31fd0e3d2ee1dfc3a4924bed43e53a479439ddb9cbd0a81151e"
+    },
+    "certificate_schema": {
+      "path": "d_quotient_classical/schema/relative-order-two-top-descent-obstruction-v1.schema.json",
+      "sha256": "6af8d6e40e310279a0417bbce46fc9c18c6632b6d4874db2022c49febb771aa7"
+    },
+    "payload_schema": {
+      "path": "d_quotient_classical/schema/relative-order-two-top-descent-system-v1.schema.json",
+      "sha256": "ec9427bc7f894903e20b25f1833042174d02ccc8ba7f1799a840ad1c6355c654"
+    },
+    "report": {
+      "path": "d_quotient_classical/reports/einstein-weyl-relative-order-two-top-descent-obstruction.md",
+      "sha256": "78aabc39f6044617bb71c9da2da30fdb79514897c70392782a8f0a07625fe458"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "Python compilation",
+        "strict Draft 2020-12 schemas",
+        "JSON parsing",
+        "scoped diff check",
+        "content-hash replay"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "producer_elapsed_seconds": 18.47,
+      "producer_max_rss_kib": 80292,
+      "independent_verifier_elapsed_seconds": 16.58,
+      "independent_verifier_max_rss_kib": 77460,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_order_two_top_descent_obstruction --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_order_two_top_descent_obstruction",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_order_two_top_descent_obstruction",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-order-two-top-descent-obstruction-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_TWO_TOP_DESCENT_OBSTRUCTION_V1.json",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-order-two-top-descent-system-v1.schema.json -d d_quotient_classical/generated/einstein_weyl_relative_order_two_top_descent_obstruction_v1/system.json"
+      ],
+      "result": "The 1056-by-712 legal top-descent matrix has rank 516 and kernel dimension 196; adjoining the sensitivity row leaves rank 516, and a four-row exact rowspace witness proves zero sensitivity on every legal order-two top symbol."
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This scoped obstruction promotes no all-order no-go, repaired relative q2, causal bridge, paper theorem or release freeze."
+    }
+  },
+  "science_forge": {
+    "work_item": "sf:program/work/classical-conflux-relative-lift-discovery",
+    "transition": "OBSTRUCTED",
+    "event": "sf:program/event/classical-conflux-relative-lift-discovery-OBSTRUCTED-200c3e387ad3addc",
+    "advisory_shadow_status": "FINDINGS",
+    "advisory_scope": "The earlier advisory shadow rail reported pre-existing corpus and bridge drift. It exited zero by design and was not used as evidence for this exact obstruction."
+  },
+  "claim_boundary": "This receipt certifies the endpoint-normalized invariant chain-map obstruction through differential order two. It does not obstruct order three or higher, another endpoint/current incidence, a larger carrier, f2 in another legal incidence, or any causal, observable, particle or quantum claim."
+}

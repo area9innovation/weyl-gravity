@@ -1,0 +1,141 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC theorem restricts the previously nonzero unrestricted order-two sensitivity to the legal top-descent kernel. The 1056-by-712 top system has rank 516 and a 196-dimensional kernel, but adjoining the obstruction sensitivity row leaves rank 516. The serialized rowspace witness proves that every legal order-two top symbol has zero obstruction sensitivity; combined with the normalized order-one left-null evaluation one, this obstructs the complete endpoint-normalized chain map through order two. It does not obstruct order three or higher, another endpoint/current incidence, a larger carrier, f2 in another legal incidence, or any causal, observable, particle or quantum claim.",
+  "classification": {
+    "all_finite_orders_obstructed": false,
+    "causal_observable_particle_or_quantum_claim": false,
+    "complete_endpoint_normalized_order_two_chain_map_obstructed": true,
+    "current_improvement_obstructed": false,
+    "f2_incidence_activated": false,
+    "larger_carrier_obstructed": false,
+    "legal_top_descent_sensitivity_zero": true,
+    "order_three_chain_map_obstructed": false,
+    "unrestricted_order_two_sensitivity_nonzero": true
+  },
+  "combined_obstruction": {
+    "complete_order_two_chain_map_exists": false,
+    "order_one_left_null_evaluation": "1",
+    "top_symbol_rowspace_identity": "sensitivity = rowspace_witness * top_descent_matrix"
+  },
+  "dependencies": {
+    "order_one_obstruction": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1.json",
+      "sha256": "7d9cb25672c2329d6b13aeb05d3303a214de614d941f0c3be5e8d9ec289b8464"
+    },
+    "target_q1": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q1",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/q1.json",
+      "sha256": "43c00909830fde902cf1332eae804f6edd6ad263bef7ce61d08bdbd20449290b"
+    },
+    "unrestricted_sensitivity": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ORDER_TWO_OBSTRUCTION_SENSITIVITY_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_TWO_OBSTRUCTION_SENSITIVITY_V1.json",
+      "sha256": "e978e495f571f8e8340814d681645a10590b07a2668d3a4a710cca95db3cbb02"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "invariant_bases": {
+    "A1_order_two_dimension": 626,
+    "A2_order_two_dimension": 86,
+    "primitive_sparse_basis_sha256": {
+      "A1": "b765f542fc79603181389ef919d88fa7df799caa7014e6af1c15271160c29496",
+      "A2": "bd24f096f09860925ec084fbfcc9593381fd1c907f05ff549727aecb4a9e095f"
+    },
+    "total_top_symbol_unknowns": 712
+  },
+  "lifecycle_status": "OBSTRUCTED",
+  "next_gate": "SCREEN_ORDER_THREE_SENSITIVITY_OR_CHANGE_THE_ENDPOINT_CURRENT_INCIDENCE_OR_RELATIVE_CARRIER",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_order_two_top_descent_obstruction.py": "82312d23358af288b201ac2073f32269231f02eaeac4468de1a15d0b58064ed4",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_order_two_top_descent_obstruction.py": "506b264fa42fd31fd0e3d2ee1dfc3a4924bed43e53a479439ddb9cbd0a81151e",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_order_two_top_descent_obstruction.py": "1b1d37aca734a0e4062e7c82735f4f3509ba120199312a2a54fdb61967eb6f0c",
+      "d_quotient_classical/schema/relative-order-two-top-descent-obstruction-v1.schema.json": "6af8d6e40e310279a0417bbce46fc9c18c6632b6d4874db2022c49febb771aa7",
+      "d_quotient_classical/schema/relative-order-two-top-descent-system-v1.schema.json": "ec9427bc7f894903e20b25f1833042174d02ccc8ba7f1799a840ad1c6355c654"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_order_two_top_descent_obstruction --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_order_two_top_descent_obstruction",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_order_two_top_descent_obstruction"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ORDER_TWO_TOP_DESCENT_OBSTRUCTION_V1",
+  "result_state": "LEGAL_ORDER_TWO_TOP_DESCENT_KERNEL_CANNOT_REMOVE_ORDER_ONE_OBSTRUCTION",
+  "schema": "pure-weyl-relative-order-two-top-descent-obstruction-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "support-local homogeneous differential-operator ansatz before harmonic or causal reduction",
+    "carrier": "A1:P3(20)->W1(14), A2:P4(5)->W2(6)",
+    "charge_sector": "five connected spacetime stabilizer currents",
+    "degree": "one and two",
+    "ell": "not harmonic-reduced",
+    "k": "arbitrary local covector",
+    "m": "not harmonic-reduced",
+    "omega": "arbitrary local covector",
+    "parity": "even chain-map components",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  },
+  "system_payload": {
+    "matrix_coo_sha256": "7db7a8ba28a8ac2d779fad0575142d8a154833bbf402d4143c1a82b73744399e",
+    "path": "d_quotient_classical/generated/einstein_weyl_relative_order_two_top_descent_obstruction_v1/system.json",
+    "sha256": "80fbfc0bdfb4775d808d980d8f4e077f1bf34c6999b1a16a52d8a3318c2f5020"
+  },
+  "top_descent_system": {
+    "equations": 1056,
+    "kernel_dimension": 196,
+    "nonzero_entries": 2484,
+    "rank_over_Q": 516,
+    "rank_with_sensitivity_row": 516,
+    "rowspace_witness_nonzero_entries": 4,
+    "rowspace_witness_rows": [
+      {
+        "coefficient": "-1",
+        "input_local": 2,
+        "output_local": 1,
+        "row": 399,
+        "word": [
+          0,
+          2,
+          2
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "input_local": 2,
+        "output_local": 0,
+        "row": 698,
+        "word": [
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "coefficient": "-1/2",
+        "input_local": 1,
+        "output_local": 0,
+        "row": 845,
+        "word": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "coefficient": "1/2",
+        "input_local": 0,
+        "output_local": 0,
+        "row": 897,
+        "word": [
+          2,
+          2,
+          3
+        ]
+      }
+    ],
+    "sensitivity_vanishes_on_kernel": true,
+    "unknowns": 712
+  }
+}

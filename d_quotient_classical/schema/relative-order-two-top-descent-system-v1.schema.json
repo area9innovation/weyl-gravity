@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/relative-order-two-top-descent-system-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "shape",
+    "row_layout",
+    "matrix_coo",
+    "sensitivity_sparse",
+    "rowspace_witness_sparse"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-order-two-top-descent-system-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_ORDER_TWO_TOP_DESCENT_OBSTRUCTION_V1_SYSTEM"},
+    "shape": {
+      "const": [1056, 712]
+    },
+    "row_layout": {
+      "type": "array",
+      "minItems": 1056,
+      "maxItems": 1056,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["row", "word", "output_local", "input_local"],
+        "properties": {
+          "row": {"type": "integer", "minimum": 0, "maximum": 1055},
+          "word": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {"type": "integer", "minimum": 0, "maximum": 3}
+          },
+          "output_local": {"type": "integer", "minimum": 0, "maximum": 5},
+          "input_local": {"type": "integer", "minimum": 0, "maximum": 19}
+        }
+      }
+    },
+    "matrix_coo": {
+      "type": "array",
+      "minItems": 2484,
+      "maxItems": 2484,
+      "items": {"$ref": "#/$defs/triple"}
+    },
+    "sensitivity_sparse": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/pair"}
+    },
+    "rowspace_witness_sparse": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/pair"}
+    }
+  },
+  "$defs": {
+    "rational": {
+      "type": "string",
+      "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"
+    },
+    "pair": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"type": "integer", "minimum": 0},
+        {"$ref": "#/$defs/rational"}
+      ]
+    },
+    "triple": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "prefixItems": [
+        {"type": "integer", "minimum": 0, "maximum": 1055},
+        {"type": "integer", "minimum": 0, "maximum": 711},
+        {"$ref": "#/$defs/rational"}
+      ]
+    }
+  }
+}
