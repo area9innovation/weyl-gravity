@@ -798,3 +798,27 @@ def test_quartic_calibration_and_redshift_have_an_empty_action_domain():
     assert "BERGER_QUARTIC_CALIBRATION_RELATIONAL_REDSHIFT_DISPOSITION" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_complete_existing_row_antifield_module_retains_the_quotient():
+    row = next(
+        row
+        for row in build()["entries"]
+        if row["id"]
+        == "observer.berger.interaction.temporal_maxwell_emitter_antifield_covariance_module"
+    )
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["descriptions"]["nonlinear"] == "OBSTRUCTED"
+    assert row["descriptions"]["observational"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == (
+        "NO_CERTIFIED_MAP"
+    )
+    assert "2613" in row[
+        "observer_data"
+    ]["survives_gauge_reduction"]["statement"]
+    assert "new q1-preimage" in row[
+        "observer_data"
+    ]["observer_source_channel"]["statement"]
+    assert "BERGER_TEMPORAL_MAXWELL_EMITTER_ANTIFIELD_COVARIANCE_MODULE" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

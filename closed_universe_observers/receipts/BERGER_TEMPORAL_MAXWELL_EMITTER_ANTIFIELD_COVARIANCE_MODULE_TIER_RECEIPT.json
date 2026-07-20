@@ -1,0 +1,107 @@
+{
+  "schema": "pure-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_TEMPORAL_MAXWELL_EMITTER_ANTIFIELD_COVARIANCE_MODULE_TIER_RECEIPT",
+  "science_forge_work_item": "sf:program/work/observer-temporal-maxwell-emitter-antifield-covariance-module",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "claim_result_id": "BERGER_TEMPORAL_MAXWELL_EMITTER_ANTIFIELD_COVARIANCE_MODULE",
+  "claim_certificate_sha256": "5a9a62b01148e5da637d3318ff68633d37ba083d6c9eb5a1ec4562fcdd7bcdad",
+  "payload_sha256": "8a337727032bf1630e1a8212f401ded525d119482c224b2a392a1e8e38cf6f8c",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile closed_universe_observers/generate_berger_temporal_maxwell_emitter_antifield_covariance_module.py closed_universe_observers/verify_berger_temporal_maxwell_emitter_antifield_covariance_module.py closed_universe_observers/tests/test_berger_temporal_maxwell_emitter_antifield_covariance_module.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m closed_universe_observers.generate_berger_temporal_maxwell_emitter_antifield_covariance_module --check",
+          "elapsed_seconds": 210.18,
+          "status": "PASS",
+          "summary": "Byte-reproduced the exact compact certificate, full action-ledger payload and human report from the pinned inputs."
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=<temporary-directory> paper/09-relational-clocks-berger-d-cartan.tex",
+          "elapsed_seconds": 1.39,
+          "status": "PASS",
+          "summary": "Paper 09 claim-boundary edit compiled in an isolated temporary output directory."
+        },
+        {
+          "command": "git diff --check -- <scoped observer paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m closed_universe_observers.generate_berger_temporal_maxwell_emitter_antifield_covariance_module --emit",
+          "elapsed_seconds": 401.76,
+          "status": "PASS",
+          "summary": "Generated 2048 exact local-action Hessians per emitter, both cotangent sectors, full rank/cokernel audits, the compact certificate, full claims-ledger payload and report."
+        },
+        {
+          "command": "python3 -m closed_universe_observers.verify_berger_temporal_maxwell_emitter_antifield_covariance_module",
+          "elapsed_seconds": 368.82,
+          "status": "PASS",
+          "independent_rail": true,
+          "summary": "Independently reconstructed every action and Hessian manifest, the predecessor quotient, both 2613<2614 rank obstructions, first quotient coordinates and sector-removal mutations."
+        },
+        {
+          "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_temporal_maxwell_emitter_antifield_covariance_module.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "elapsed_seconds": 53.96,
+          "status": "PASS",
+          "summary": "61 passed"
+        },
+        {
+          "command": "python3 -m closed_universe_observers.atlas.generate_observer_atlas_fragment && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+          "elapsed_seconds": 4.18,
+          "status": "PASS",
+          "summary": "Regenerated the fail-closed atlas ledger and independently verified its schema, evidence hashes and new row."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "All imported q1, q2, pairing, component-contract and order-three action objects are unchanged content-addressed inputs. The new scoped certificate, independent action/rank verifier and every direct observer-atlas consumer were exercised at Tier 1."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, tag, release, shared-core algebra change or theorem promotion was made. The result is an exact scoped obstruction on a bounded existing-row action module."
+    }
+  },
+  "boundaries": {
+    "exact_arithmetic": true,
+    "numeric_evidence_used": false,
+    "existing_carrier_rows": 110,
+    "new_carrier_rows": 0,
+    "antifield_actions_per_emitter": 2048,
+    "forced_cotangent_sectors": [
+      "A_plus_tau_K",
+      "K_plus_tau_A"
+    ],
+    "bounded_derivative_orders": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "old_action_image_rank": 934,
+    "new_quotient_action_rank": 1679,
+    "full_action_image_rank": 2613,
+    "source_augmented_rank": 2614,
+    "surviving_quotient_coordinate_count": 42,
+    "first_quotient_coefficient": "-3 g_b h_b",
+    "complete_existing_row_module_admissible_locus": "EMPTY",
+    "new_q1_preimage_mapping_cone_constructed": false,
+    "quartic_q3_derived_or_promoted": false,
+    "K_Berger_compatibility_replay_performed": false,
+    "detector_memory_redshift_or_recoil_replay_performed": false,
+    "tangent_cone_branch_or_quantum_claim": false
+  }
+}
