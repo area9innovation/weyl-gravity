@@ -1,0 +1,22 @@
+{
+  "id": "sf:forge-request/equivariant-cohomology-descent-calculus",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Add exact equivariant homological algebra so Forge and Conflux can track a symmetry action, its charges, invariants and descent through a complex instead of treating symmetry labels as prose. The first consumers are the D-quotient/Cartan identity, the SO(4,2) residual complex, the closed-S3 relative-clock quotient, and restriction of local anomaly classes to selected zero-charge sectors.",
+    "depends_on": [
+      "sf:program/work/classical-closed-s3-relative-phase-clock-atlas",
+      "sf:program/work/bridge-relative-residual-action-descent",
+      "sf:program/work/quantum-strict-anomaly-restriction-zero-charge-sectors"
+    ],
+    "stop_condition": "Provide exact finite Lie-algebra and finite-group actions on graded spaces and cochain complexes; invariants, coinvariants, stabilizers and orbit maps; Chevalley-Eilenberg chains/cochains, Lie-algebra homology/cohomology and induced action on cohomology; Cartan and Weil models with checked d, contraction and Lie-derivative identities; relative cohomology for a subalgebra; Hochschild-Serre and Cartan spectral-sequence pages to a declared finite bound; and equivariant maps, contractions and moment-map compatibility checks. Demonstrate: independently reconstruct the closed-S3 charge-matrix kernel and relative torus action; verify a finite Cartan identity [Q,i_D]=L_D and localize its exact first defect under mutation; compute one residual cohomology both directly and through an equivariant spectral sequence; and pull an anomaly cocycle through a declared zero-charge inclusion without importing its verdict. Export actions, stabilizers, pages, differentials and unresolved extension problems as typed Conflux objects.",
+    "forbid": "no generator name treated as a proved action; no invariant inferred from sampled orbit points; no vanishing background value treated as vanishing cohomology class; no Lie-algebra result promoted to a global compact-group quotient without topology/integrality data; no spectral-sequence page treated as the abutment before collapse and extension checks; no D-gauge conclusion inferred without the declared phase space and charge map",
+    "notes": [
+      "Priority A. This fills the symmetry/cohomology gap between exact representation theory and the actual gauge reductions.",
+      "Compose with exact-lie-representation-invariant-theory, symplectic-moment-map, chainmap and bicomplex.",
+      "A first release may restrict to finite-dimensional rational/algebraic representations and bounded complexes."
+    ]
+  }
+}

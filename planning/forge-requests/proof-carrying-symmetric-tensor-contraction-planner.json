@@ -1,0 +1,22 @@
+{
+  "id": "sf:forge-request/proof-carrying-symmetric-tensor-contraction-planner",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Add a proof-carrying contraction and factorization planner for large sparse tensors, jets and multilinear maps. Forge now has tensor primitives, but adoption on q2/q3, Lee-Wald and observer Hessians will stall if a correct high-level expression expands into hundreds of thousands of terms before symmetry, sparsity and common factors are used. The planner must make performance transformations independently checkable so Conflux can search at the structural level without changing the mathematics.",
+    "depends_on": [
+      "sf:program/work/nonlinear-conflux-branch-mixing-discovery",
+      "sf:program/work/observer-berger-apparatus-combined-q1-after-replacement-112",
+      "sf:program/work/black-hole-symbolic-frequency-pairing"
+    ],
+    "stop_condition": "Represent tensor networks with typed axes, variance, grading, symmetry/antisymmetry, block sparsity and coefficient domains. Implement deterministic contraction-order planning, common-subexpression extraction, symmetry-orbit compression, block and charge-sector decomposition, lazy jet truncation, exact zero pruning and resource estimates. Emit a derivation witness mapping the optimized DAG back to the original expression; an independent evaluator must compare randomized modular projections and at least one full exact fixture, while the exact theorem remains based on the derivation witness rather than the projections. Demonstrate a material reduction in peak terms or memory on one action-derived q2/q3 carrier, one observer mixed Hessian and one curvature-current contraction, with identical exact canonical output and mutation rejection. Export the optimized expression DAG, cost model, assumptions and verification receipt to Conflux.",
+    "forbid": "no floating-point contraction used to decide exact equality; no symmetry assumed without a checked projector or relation; no sampled modular agreement treated as the only proof; no optimizer allowed to drop a term because it is numerically small; no cost-model estimate called an enforced resource bound; no physics-specific contraction table embedded in lib/math; no optimization permitted to erase provenance of source terms",
+    "notes": [
+      "Priority A for practical adoption: this turns the new tensor and AD layers into scalable consumers.",
+      "Compose with tensor, multivariate-jet AD DAG, graph/hypergraph symmetry, typed dimension grading and supervised resource receipts.",
+      "Record both algebraic complexity and measured CPU/RSS/disk effects; keep them separately typed."
+    ]
+  }
+}

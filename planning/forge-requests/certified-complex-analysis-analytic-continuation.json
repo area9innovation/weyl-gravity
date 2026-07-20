@@ -1,0 +1,22 @@
+{
+  "id": "sf:forge-request/certified-complex-analysis-analytic-continuation",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Add typed complex-analytic continuation, branch and contour bookkeeping. Black-hole resonances, form factors, Green functions and determinants depend on meromorphic continuation and sheet choices that cannot be represented safely by real intervals plus symbolic labels. Conflux needs a canonical way to compare analytic objects while preserving domains, poles, cuts and continuation paths.",
+    "depends_on": [
+      "sf:program/work/black-hole-symbolic-frequency-pairing",
+      "sf:program/work/quantum-background-specific-five-form-factor-spectral-realization",
+      "sf:program/work/quantum-parameterized-five-form-factor-independent-audit"
+    ],
+    "stop_condition": "Provide exact rational/algebraic meromorphic germs; certified complex balls; zeros and poles with multiplicity; residues; argument-principle root counts on certified contours; explicit branch points, cuts, sheets and continuation paths; monodromy matrices for finite linear ODE systems; contour deformation with crossed-singularity ledgers; dispersion/Hilbert-transform relations on declared function classes; and equality checks only on a proved common analytic domain. Demonstrate: certify a repeated-root radial fixture under continuation in frequency, track one logarithmic form-factor branch across a cut, and reproduce one determinant/resolvent pole count with an independent Arb/FLINT or mpmath-plus-interval oracle. Export singular loci, sheet/path provenance and UNDECIDED regions to Conflux.",
+    "forbid": "no principal branch silently assumed; no pointwise numeric agreement treated as analytic equality; no contour moved through an uncertified singularity; no complex root accepted without an enclosure and multiplicity disposition; no Euclidean continuation promoted to a Lorentzian boundary value without the declared prescription; no branch metadata discarded by canonicalization",
+    "notes": [
+      "Priority B. This closes a cross-cutting analytic gap shared by black holes and quantum form factors.",
+      "Use Arb/Acb as an independent validated rail where useful; do not make the external oracle the sole producer and verifier.",
+      "A first slice may handle rational/logarithmic carriers and regular-singular linear ODE monodromy."
+    ]
+  }
+}

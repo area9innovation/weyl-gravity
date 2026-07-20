@@ -1,0 +1,22 @@
+{
+  "id": "sf:forge-request/proof-producing-categorical-diagram-calculus",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Add a typed, proof-producing calculus of universal linear and chain-level diagrams so Conflux can discover and compare kernels, cokernels, images, pullbacks, pushouts, fibres, cofibres, exact triangles and induced maps by their universal properties rather than by presentation-specific matrix shapes. The first consumers are the Einstein-to-Weyl-to-extra exact sequence, the relative residual-action descent, and the causal contraction/transfer diagrams. This is the semantic layer needed to recognize that differently presented certificates express the same structure without collapsing distinct quotient, homotopy or boundary claims.",
+    "depends_on": [
+      "sf:program/work/bridge-relative-residual-action-descent",
+      "sf:program/work/classical-bikernel-homotopy-extension-for-q26",
+      "sf:program/work/nonlinear-conflux-branch-mixing-discovery"
+    ],
+    "stop_condition": "Provide typed finite-dimensional and finite-chain categories over declared exact coefficient domains; objects, morphisms, composition and equality witnesses; kernels/cokernels, products/coproducts, pullbacks/pushouts, image/coimage factorization, mapping fibres/cofibres, short exact sequences and exact triangles. Every universal construction must emit its cone/cocone and a mechanically checked existence-and-uniqueness witness for mediating maps. Add natural transformations and diagram-commutativity certificates, induced maps on homology/cohomology, the five lemma and snake-lemma connecting morphism for bounded exact diagrams, and presentation-invariant canonical hashes. Demonstrate that Forge independently reconstructs the Einstein-image/extra-Weyl exact sequence from declared maps, identifies an isomorphic presentation after independent basis changes, refuses a rank-compatible but noncommuting mutation, and exports the universal diagram plus proof dependencies to Conflux. Conflux may propose a diagram match only after type, commutation, exactness and universal-property checks all pass.",
+    "forbid": "no rank profile alone treated as an exact sequence; no same dimensions treated as isomorphism; no pullback/pushout accepted without a checked universal property; no homotopy equivalence silently promoted to strict equality; no basis-dependent hash used as a structure identity; no boundary/support annotations erased when a domain object carries them; no physics-specific Einstein or Weyl object embedded in lib/math",
+    "notes": [
+      "Priority A. This is the central structural IR for Conflux, not a cosmetic category-theory wrapper.",
+      "Build on linstruct, cochain, chainmap, bicomplex and sdrsolve; do not duplicate their matrix engines.",
+      "A bounded first release may support finite Q-linear categories and bounded cochain complexes, returning UNDECIDED for enriched or infinite-dimensional objects."
+    ]
+  }
+}

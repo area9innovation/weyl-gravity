@@ -1,0 +1,22 @@
+{
+  "id": "sf:forge-request/certified-operator-domain-fredholm-boundary-calculus",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Add a fail-closed operator-domain and boundary-form calculus. Current exact algebra can compare differential expressions, but the black-hole, causal and quantum programmes require the stronger distinction between an expression, a closed operator with a declared domain, and a self-adjoint/Fredholm realization under boundary conditions. Conflux must not identify two operators or determinants when their domains, endpoint data or boundary pairings differ.",
+    "depends_on": [
+      "sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class",
+      "sf:program/work/black-hole-asymptotic-jordan-metric-reconstruction",
+      "sf:program/work/quantum-tau-adic-full-bv-hadamard-feynman-kernel"
+    ],
+    "stop_condition": "Define typed differential expressions, graph domains, maximal/minimal realizations, formal and Hilbert/Krein adjoints, Green boundary forms, trace maps, boundary relations and boundary triples. Implement exact finite endpoint deficiency counts, Lagrangian boundary subspaces, self-adjoint/symmetric extension checks, Fredholm kernels/cokernels/index, relative index and spectral-flow bookkeeping for declared finite reductions; connect validated ODE enclosures to endpoint maps without promoting numeric evidence to exact. Demonstrate on a regular Sturm-Liouville fixture and the declared axial Schwarzschild radial system: distinguish identical differential expressions with inequivalent boundary conditions, reconstruct the horizon/infinity boundary pairing, determine whether a candidate endpoint class defines a closed finite-flux realization, and either certify or refuse the claimed Einstein/additional quotient. Export domains, trace spaces, boundary relations, indices and unresolved analytic hypotheses to Conflux as non-erasable types.",
+    "forbid": "no differential expression treated as an operator without a domain; no formal adjoint treated as a Hilbert-space adjoint; no bounded leading term treated as finite flux; no self-adjointness inferred from a symmetric matrix fixture alone; no numerical nullity called an exact deficiency index; no determinant or spectrum compared across unequal domains; no general infinite-dimensional Fredholm theorem claimed from a finite reduction",
+    "notes": [
+      "Priority A for black-hole and Lorentzian quantum adoption.",
+      "Compose with support-wavefront-green-kernel, validated-vector-bvp, spectral-resolvent and exact symplectic boundary data.",
+      "The first slice should be a typed theorem ledger plus exact/validated endpoint reductions, not an attempt to formalize all functional analysis."
+    ]
+  }
+}

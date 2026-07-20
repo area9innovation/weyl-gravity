@@ -1,0 +1,22 @@
+{
+  "id": "sf:forge-request/formal-transseries-matched-asymptotics",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Extend finite series and resonant normal forms to typed asymptotic scales, logarithmic/generalized modes, WKB sectors and matched expansions. This is required to decide whether repeated fourth-order roots yield bounded metric modes, logarithmic partners or secular growth, and to prevent Conflux from treating formal series around different endpoints or scales as comparable solutions.",
+    "depends_on": [
+      "sf:program/work/black-hole-asymptotic-metric-reconstruction-all-orders",
+      "sf:program/work/black-hole-asymptotic-jordan-metric-reconstruction",
+      "sf:program/work/bridge-finite-harmonic-tier3-provenance-relock"
+    ],
+    "stop_condition": "Provide ordered asymptotic scales, valuations and dominance; Laurent, Puiseux and logarithmic transseries; Frobenius/Jordan chains; exponential/WKB sectors; exact coefficient recurrences; residual-order certificates; overlap domains and matched inner/outer expansions; Stokes-ray and connection-matrix metadata; and Borel transform/summability labels where certified, otherwise FORMAL_ONLY. Demonstrate on a repeated-root fourth-order scalar control and the axial Schwarzschild radial system: construct all formal endpoint families, reconstruct metric variables from the curvature carrier, identify polynomial/logarithmic partners, match one overlap with a validated residual bound, and reject a mutation that changes geometric multiplicity. Export each expansion with endpoint, scale, sector, truncation error status and relation to the exact operator for Conflux.",
+    "forbid": "no formal series called convergent or asymptotic without a bound; no curvature-carrier falloff silently assigned to the reconstructed metric; no repeated characteristic treated as two ordinary eigenmodes without a Jordan check; no terms from different asymptotic scales compared by coefficient alone; no WKB branch or Stokes multiplier chosen without path/sector metadata; no physics radial equation hard-coded into lib/math",
+    "notes": [
+      "Priority B and a direct Paper-14 gate.",
+      "Compose with laurent, series, spectral/Jordan, validated ODE and complex analytic continuation.",
+      "Formal classification may land before rigorous matching, but the lifecycle boundary must remain explicit."
+    ]
+  }
+}

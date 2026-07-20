@@ -1,0 +1,22 @@
+{
+  "id": "sf:forge-request/integral-filtered-complex-torsion-linking",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Promote Smith normal form from a matrix primitive to a first-class integral and filtered complex layer. Rational cohomology misses torsion, discrete flux sectors and extension data that matter for compact gauge groups, bundle topology and global anomalies; Conflux must preserve those distinctions when comparing local and global reductions.",
+    "depends_on": [
+      "sf:program/work/classical-closed-s3-relative-phase-clock-atlas",
+      "sf:program/work/quantum-strict-anomaly-restriction-zero-charge-sectors",
+      "sf:program/work/bridge-relative-residual-action-descent"
+    ],
+    "stop_condition": "Provide finite free and finitely presented chain/cochain complexes over Z and declared PIDs; homology/cohomology decomposed into free and torsion invariant factors; constructive cycles, boundaries and torsion witnesses; universal-coefficient and long-exact-sequence maps with extension ledgers; cup products on supplied finite complexes; linking pairings and quadratic refinements for declared finite torsion groups; filtered complexes, exact persistence modules/barcodes and integral spectral-sequence pages to a declared bound. Demonstrate on a lens-space control, a compact U(1) charge matrix and one magnetic-bundle/global-anomaly fixture; show a pair of complexes that are rationally indistinguishable but integrally distinct, and export the distinguishing torsion/linking witness to Conflux.",
+    "forbid": "no rational rank used to declare integral equivalence; no SNF diagonal accepted without unimodular transformation witnesses or independent verification; no torsion class discarded as a zero mode; no persistence barcode inferred from floating-point reduction; no linking form claimed when orientation/nondegeneracy hypotheses are absent; no global anomaly inferred from torsion data alone",
+    "notes": [
+      "Priority C for current physics, but foundational for trustworthy global/topological discovery.",
+      "Build on snf, cochain, exact sequences and bundle topology rather than adding another matrix SNF implementation.",
+      "A first release may cover Z and finite filtrations only."
+    ]
+  }
+}
