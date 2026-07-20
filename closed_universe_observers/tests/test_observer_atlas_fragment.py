@@ -641,3 +641,22 @@ def test_profile_jet_action_line_is_repaired_without_full_promotion():
     assert "BERGER_PROFILE_JET_INVARIANT_HESSIAN_ACTION_REPAIR" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_higher_jet_action_family_closes_carrier_but_not_source():
+    row = next(
+        row
+        for row in build()["entries"]
+        if row["id"]
+        == "observer.berger.interaction.higher_jet_invariant_action_module_classification"
+    )
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["descriptions"]["nonlinear"] == "OBSTRUCTED"
+    assert row["descriptions"]["observational"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "OBSTRUCTED"
+    assert "1420 coordinates" in row["observer_data"]["survives_gauge_reduction"]["statement"]
+    assert "64-coordinate" in row["observer_data"]["observer_source_channel"]["statement"]
+    assert "BERGER_HIGHER_JET_INVARIANT_ACTION_MODULE_CLASSIFICATION" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

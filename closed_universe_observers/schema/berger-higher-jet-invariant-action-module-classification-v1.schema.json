@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Berger higher-jet invariant action-module classification",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "atlas_status",
+    "dependency_tags", "dependency_refs", "payload_ref",
+    "bounded_action_ansatz", "invariant_module_classification",
+    "action_and_cyclicity", "representation_closed_carrier",
+    "exact_action_image", "decisive_quotient_projection", "minimality",
+    "proof_obligation_dag", "activation_disposition", "next_gate",
+    "claim_boundary", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-higher-jet-invariant-action-module-classification-v1"},
+    "result_id": {"const": "BERGER_HIGHER_JET_INVARIANT_ACTION_MODULE_CLASSIFICATION"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_refs": {"type": "object", "minProperties": 5},
+    "invariant_module_classification": {"type": "array", "minItems": 3, "maxItems": 3},
+    "proof_obligation_dag": {"type": "array", "minItems": 8}
+  },
+  "additionalProperties": true
+}

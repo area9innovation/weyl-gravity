@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Berger higher-jet invariant action-module payload",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "invariant_classification_by_derivative_order",
+    "common_unaries", "modules"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-higher-jet-invariant-action-module-classification-payload-v1"},
+    "result_id": {"const": "BERGER_HIGHER_JET_INVARIANT_ACTION_MODULE_CLASSIFICATION_PAYLOAD"},
+    "invariant_classification_by_derivative_order": {"type": "array", "minItems": 3, "maxItems": 3},
+    "modules": {"type": "object", "minProperties": 224, "maxProperties": 224}
+  },
+  "additionalProperties": true
+}

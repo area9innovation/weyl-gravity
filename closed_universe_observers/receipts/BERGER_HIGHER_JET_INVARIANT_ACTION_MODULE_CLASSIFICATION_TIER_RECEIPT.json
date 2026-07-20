@@ -1,0 +1,67 @@
+{
+  "schema": "pure-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_HIGHER_JET_INVARIANT_ACTION_MODULE_CLASSIFICATION_TIER_RECEIPT",
+  "science_forge_work_item": "sf:program/work/observer-higher-jet-invariant-action-module-classification",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "claim_result_id": "BERGER_HIGHER_JET_INVARIANT_ACTION_MODULE_CLASSIFICATION",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile closed_universe_observers/generate_berger_higher_jet_invariant_action_module_classification.py closed_universe_observers/verify_berger_higher_jet_invariant_action_module_classification.py closed_universe_observers/tests/test_berger_higher_jet_invariant_action_module_classification.py",
+          "elapsed_seconds": 0.01,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m closed_universe_observers.generate_berger_higher_jet_invariant_action_module_classification --check",
+          "elapsed_seconds": 4.21,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m closed_universe_observers.verify_berger_higher_jet_invariant_action_module_classification",
+          "elapsed_seconds": 9.28,
+          "status": "PASS",
+          "independent_rail": true
+        },
+        {
+          "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_higher_jet_invariant_action_module_classification.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "elapsed_seconds": 20.24,
+          "status": "PASS",
+          "summary": "51 passed"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+          "elapsed_seconds": 3.13,
+          "status": "PASS"
+        }
+      ],
+      "criterion": "The generated observer atlas is a direct consumer of the new exact certificate and was regenerated and independently hash-verified."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, shared-core algebra change, or paper-theorem promotion was made."
+    }
+  },
+  "boundaries": {
+    "exact_arithmetic": true,
+    "numeric_evidence_used": false,
+    "bounded_order_two_repair_exists": false,
+    "q3_or_nonlinear_observer_replay_performed": false,
+    "branch_or_quantum_claim": false
+  }
+}
