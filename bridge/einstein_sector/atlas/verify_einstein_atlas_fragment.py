@@ -540,6 +540,14 @@ def verify() -> None:
         raise AssertionError("active linear-sheet rotation topology changed")
     if "one connected" not in linear_second["bounded_or_finite_quasiperiodic"]["statement"] or linear_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "candidates 19 and 21" not in linear_sheets["claim_boundary"]:
         raise AssertionError("active linear-sheet theorem exceeded scope")
+    candidate17_20 = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_axisymmetric_restricted_current"]
+    candidate17_20_second = candidate17_20["mode_data"]["second_order"]
+    if candidate17_20["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "inertia (6,10,0)" not in candidate17_20["mode_data"]["lee_wald"]["statement"] or "rank 28" not in candidate17_20["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("candidate-17/20 axisymmetric restricted current changed")
+    if candidate17_20["mode_data"]["taub_maps"]["status"] != "OPEN" or "singular" not in candidate17_20["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-17/20 singular topology was promoted")
+    if candidate17_20_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "candidate-17/20 axisymmetric" not in candidate17_20["claim_boundary"]:
+        raise AssertionError("candidate-17/20 axisymmetric theorem exceeded scope")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

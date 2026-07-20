@@ -104,6 +104,7 @@ CERTIFICATES = {
     "same_sign_automatic_face_full_rotation_normal_form": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.json",
     "same_sign_candidate16_active_restricted_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.json",
     "same_sign_active_linear_sheet_rotation_links": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.json",
+    "same_sign_candidate17_20_axisymmetric_restricted_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
     "ell2_two_abs_momentum_candidate4_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json",
     "ell2_two_abs_momentum_axial_qminus_L4_triplet": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.json",
@@ -1022,6 +1023,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","Each of the six sheets has one connected fixed-occupation bounded rotation-zero link; different sheets and occupation strata are not glued."),("CERTIFIED","The same finite links lie in the smooth-secular cone without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_active_linear_sheet_rotation_links","same_sign_resonance_face_fibres","ell2_two_abs_momentum_regular_pencil_L4_zero_varieties","ell2_two_abs_momentum_scalar_L4_zero_varieties","same_sign_phase_parity_fibre_product","taub","axial_current","polar_current"),
             "This covers only the six smooth real linear active sheets on candidates 19 and 21. Candidates 16--18 and 20, sheet identification, occupation gluing, final residual descent, all-orders integration and causal, observational or quantum claims remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_axisymmetric_restricted_current",
+            _scope(theory="Weyl-Maxwell target", background="candidates 17 and 20 only, retained as distinct compact Plebanski--Hacyan collision backgrounds", boundaries="closed S1_L times S2 before final residual quotient", carrier="the all-axial all-m=0 section over every nonzero active scalar-cone point and the complete axial/polar Zariski tangent to the third-transvectant resonance variety", degree=2, parity="both linearized parity channels around the all-axial base", ell="input 2 x 2; output L=1", m="base m=0 with complete all-m Zariski tangent", k="signed n=(1,2), candidatewise and never identified across rho", omega="positive-frequency q-minus/q-plus DIFFERENCE collision", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Both irreducible active varieties are products of two third-transvectant kernels; their axisymmetric sections lie on the square-quartic rank-drop stratum."),
+            ("CERTIFIED","Exact raywise occupation inequalities give affine Zariski-tangent current inertia (6,10,0) and projective inertia (5,9,0), hence projective real symplectic rank 28 throughout both active scalar cones."),
+            ("OPEN","The section points are algebraically singular: affine Zariski-tangent dimension 16 exceeds variety dimension 14, so no smooth-locus or connected rotation-fibre theorem is inferred."),
+            ("CERTIFIED","The complete linearized third-transvectant derivative has rank four at the all-m=0 section and its two-complex-dimensional tangent excess is explicit."),
+            _second_order(("CERTIFIED","The separately certified axisymmetric points are nonzero bounded points and their Zariski-tangent currents are nondegenerate; the full active rotation-zero variety remains open."),("CERTIFIED","Those finite points lie in the smooth-secular class without a smooth-locus or all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate17_20_axisymmetric_restricted_current","same_sign_resonance_face_fibres","ell2_two_abs_momentum_scalar_L1_zero_varieties","same_sign_scalar_extreme_rays","standard"),
+            "This is a complete active-scalar-cone theorem only on the candidate-17/20 axisymmetric sections and their Zariski tangents. It does not make the singular points smooth, classify the full active smooth locus or rotation-zero topology, treat candidate 18, or promote higher lifecycles.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload",
@@ -1961,6 +1974,17 @@ def build() -> dict[str, object]:
         raise AssertionError("active linear-sheet rotation-link theorem changed")
     if linear_sheets["candidate16_singular_active_variety_classified_here"] or linear_sheets["candidates17_18_20_active_varieties_classified"] or linear_sheets["different_active_sheets_identified_by_residual_symmetry"] or linear_sheets["occupation_strata_glued"] or linear_sheets["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("active linear-sheet rotation-link theorem exceeded scope")
+    candidate17_20 = records["same_sign_candidate17_20_axisymmetric_restricted_current"]["classification"]
+    if not (
+        candidate17_20["candidate17_complete_active_scalar_cone_axisymmetric_current_classified"]
+        and candidate17_20["candidate20_complete_active_scalar_cone_axisymmetric_current_classified"]
+        and candidate17_20["all_four_active_ray_occupation_gaps_exactly_positive"]
+        and candidate17_20["axisymmetric_sections_singular"]
+        and candidate17_20["restricted_zariski_tangent_currents_nondegenerate"]
+    ):
+        raise AssertionError("candidate-17/20 axisymmetric restricted-current theorem changed")
+    if candidate17_20["full_smooth_locus_restricted_current_classified"] or candidate17_20["rotation_zero_fibre_connected"] or candidate17_20["candidate18_active_variety_classified"] or candidate17_20["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-17/20 axisymmetric restricted-current theorem exceeded scope")
     parity_workload = records["ell2_two_abs_momentum_parity_workload"]["classification"]
     if not (parity_workload["all_twenty_one_candidates_parity_typed"] and parity_workload["all_m_angular_nonvanishing_witnessed"] and parity_workload["odd_L_axisymmetric_fixtures_excluded"] and parity_workload["reduced_source_workload_complete"]):
         raise AssertionError("ell2 two-absolute-momentum parity workload changed")

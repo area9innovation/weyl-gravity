@@ -2637,12 +2637,18 @@ six smooth real linear active sheets on candidates 19 and 21 are also closed:
 each is a positive `C^5` node subspace orthogonal to a negative `C^5` node
 subspace, has current inertia `(5,5,0)`, and has one connected fixed-
 occupation lifted-rotation zero link after spectator factors are included.
-The four candidate-19 and two candidate-21 sheets remain distinct.  The
-nonlinear active varieties of candidates 17, 18 and 20 still require direct
-componentwise current tests.  All higher lifecycles remain fail-closed.  This
-is nonlinear input to same-background Bridge 1 with Classical, not a
-promotion of its certified linear relative triangle/cofiber.  The bridge
-activates only on the declared restricted-current components; the singular
+The four candidate-19 and two candidate-21 sheets remain distinct.  On the
+singular axisymmetric sections of candidates 17 and 20, exact circuit-ray
+inequalities make the negative `q_minus` occupation strictly larger than the
+positive `q_plus` occupation throughout each active cone.  Their complete
+affine Zariski-tangent current is therefore nondegenerate with inertia
+`(6,10,0)`; after the node scalings are removed it has projective inertia
+`(5,9,0)` and real rank `28`.  This does not classify either full smooth
+third-transvectant locus.  Candidate 18 and those smooth loci still require
+direct componentwise current tests.  All higher lifecycles remain fail-
+closed.  This is nonlinear input to same-background Bridge 1 with Classical,
+not a promotion of its certified linear relative triangle/cofiber.  The
+bridge activates only on the declared restricted-current carriers; singular
 topology and every absent componentwise map remain `NO_CERTIFIED_MAP` or
 `OPEN`.
 

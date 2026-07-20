@@ -258,6 +258,16 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("candidates 19 and 21", entry["claim_boundary"])
 
+    def test_same_sign_candidate17_20_axisymmetric_currents_are_scoped(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_axisymmetric_restricted_current"]
+        second = entry["mode_data"]["second_order"]
+        self.assertIn("inertia (6,10,0)", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("rank 28", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertIn("singular", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("candidate-17/20 axisymmetric", entry["claim_boundary"])
+
     def test_first_two_abs_momentum_parity_workload_is_fail_closed(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
         second = entry["mode_data"]["second_order"]

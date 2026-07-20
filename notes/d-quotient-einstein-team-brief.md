@@ -3922,6 +3922,27 @@ calculations are the nonlinear varieties of candidates 17, 18 and 20,
 together with the singular Hamiltonian topology of candidate 16.  Occupation
 gluing and every higher lifecycle remain fail-closed.
 
+The singular axisymmetric sections on candidates 17 and 20 now have an
+exact current theorem.  The third-transvectant matrix at the square quartic
+`e0=(0,0,1,0,0)` has rank `2`; the two parity channels give derivative rank
+`4`, affine Zariski-tangent complex dimension `16`, and a two-dimensional
+excess over the irreducible variety dimension `14`.  Exact rational interval
+witnesses on all four active extreme rays prove
+
+```text
+candidate 17: occupation(q_minus_n1) > occupation(q_plus_n2)
+candidate 20: occupation(q_minus_n2) > occupation(q_plus_n1)
+```
+
+throughout the complete nonzero active scalar cones.  This removes the only
+possible tangent-current radical.  The two-parity affine inertia is
+`(6,10,0)`; after removing the positive and negative node scalings, the
+projective Zariski-tangent inertia is `(5,9,0)` and its real symplectic rank is
+`28`.  The points remain algebraically singular, so the full smooth-locus
+current and connected rotation-zero topology remain open.  Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_axisymmetric_restricted_current`
+records that exact scope.  Candidate 18 is untouched.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

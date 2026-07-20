@@ -1379,6 +1379,49 @@ parity ratios and pencil eigenlines are unchanged by node phases, and the
 active nonzero-norm condition prevents passage through a one-sided component.
 \end{proof}
 
+\begin{proposition}[Candidate-(17)/(20) axisymmetric Zariski currents]
+At every nonzero active scalar-cone point on the certified all-axial
+\(m=0\) sections of candidates (17) and (20), the affine Zariski tangent to
+the complete third-transvectant resonance variety has complex dimension
+\(16\) and restricted Hermitian current inertia
+\[
+ (6,10,0).
+\]
+The section is algebraically singular because the irreducible variety has
+complex dimension \(14\).  Nevertheless, the restricted current is
+nondegenerate.  After removing the two node scalings, the projective Zariski
+tangent has inertia \((5,9,0)\) and real symplectic rank \(28\).
+\end{proposition}
+
+\begin{proof}
+For the axisymmetric binary quartic \(e_0=(0,0,1,0,0)\), the exact
+third-transvectant matrix has rank two and a three-dimensional kernel.  The
+two linearized parity equations therefore have total rank four in the
+twenty-dimensional affine input space, giving the stated tangent dimension.
+
+The only possible current radical is controlled by equality of the absolute
+currents on the positive and negative resonant nodes.  Exact outward rational
+intervals prove the strict opposite inequality on both active extreme rays
+of each scalar cone:
+\[
+ \mathsf n(q_-^{(1)})>\mathsf n(q_+^{(2)})
+ \quad\hbox{on candidate (17)},
+ \qquad
+ \mathsf n(q_-^{(2)})>\mathsf n(q_+^{(1)})
+ \quad\hbox{on candidate (20)}.
+\]
+Every inactive ray adds only to the negative occupation, so the inequalities
+hold throughout the active cones.  In each parity channel, the three kernel
+directions give three positive/negative pairs and the two constrained
+directions are negative, yielding \((3,5,0)\).  Doubling parity gives
+\((6,10,0)\).  The two complex node-scaling directions have inertia
+\((1,1,0)\), and their removal gives \((5,9,0)\).
+
+This is a Zariski-tangent theorem at singular points.  It does not classify
+the restricted current on the full smooth locus or justify a connected-fibre
+argument there.
+\end{proof}
+
 \section{Current bounded frontier}
 
 The electric, Wilson, and circumference columns are closed, and the first
@@ -1606,6 +1649,8 @@ Candidate-(16) active restricted-current theorem &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.json}\\
 Candidate-(19)/(21) active linear-sheet rotation links &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.json}\\
+Candidate-(17)/(20) axisymmetric Zariski-tangent currents &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1679,8 +1724,13 @@ separate restricted-current gate is now closed: both resonant nodes are
 \(q_-\), so the complete axial/polar restriction is negative K\"ahler on
 every complex smooth stratum, with generic real rank \(20\).  Its singular
 projective strata and rotation-zero topology remain open, as do the
-nonlinear restricted currents on candidates (17), (18), and (20).  The four
-candidate-(19) and two candidate-(21) real linear sheets are now closed
+full smooth-locus restricted currents on candidates (17) and (20), and the
+candidate-(18) nonlinear variety.  On the candidate-(17)/(20) axisymmetric
+sections, exact occupation inequalities nevertheless make the complete
+Zariski-tangent current nondegenerate, with affine inertia \((6,10,0)\) and
+projective inertia \((5,9,0)\); those section points remain algebraically
+singular.  The four candidate-(19) and two candidate-(21) real linear sheets
+are closed
 separately: every core has current inertia \((5,5,0)\) and one connected
 fixed-occupation rotation-zero link, with spectator factors included.  No
 distinct sheets are identified.  The exact fibre-product equation is already

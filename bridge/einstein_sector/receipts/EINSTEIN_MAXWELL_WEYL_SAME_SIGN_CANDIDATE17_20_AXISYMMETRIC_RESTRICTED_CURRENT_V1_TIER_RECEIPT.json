@@ -1,0 +1,48 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_AXISYMMETRIC_RESTRICTED_CURRENT_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact restricted Lee--Wald current on the candidate-17 and candidate-20 all-axial axisymmetric singular sections.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.json": "1bc56a8cdfbd87ae5da434cc74ca05dcf34a7af4407ff75891700f01155103d6",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.py": "2043a6e2f93ee3a2a6693bc39ceab2556c3a62de299fdb125a38378fa379792b",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.schema.json": "3aac82c8a0b5a15324032c45d5f896e129807b135cbc52501048989a790008bc",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.py": "b70f50d76a32905447634d30d620f56c89b925a8c7d36f0a152302a9e2dc318c",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.py": "6f1b504203cd44a5d729c9f2122ab0163540b3ca2f5e2cd61687bccda08f5ada",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-candidate17-20-axisymmetric-restricted-current.md": "e18dad7117d46f969037b0c2b023985fc9f41a7c53705770274db68e8b1b479a"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 3,
+      "elapsed_seconds": 2.16,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_AFFECTED_ATLAS_CHAIN",
+      "elapsed_seconds": 1.07,
+      "tests_run": 99,
+      "commands": [
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 -m bridge.einstein_sector.atlas.verify_einstein_atlas_fragment",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a scoped candidate-17/20 axisymmetric-section theorem. The full smooth loci, lifted-rotation zero fibres, candidate 18, occupation gluing and higher lifecycles remain open."
+    }
+  },
+  "claim_boundary": "CERTIFIED only on the candidate-17 and candidate-20 all-axial axisymmetric Zariski tangents. The theorem does not identify a smooth stratum or classify global singular topology."
+}

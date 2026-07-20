@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-same-sign-candidate17-20-axisymmetric-restricted-current-v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "generality_level",
+    "scope",
+    "third_transvectant_tangent_theorem",
+    "restricted_current_theorem",
+    "candidate_rows",
+    "classification",
+    "interpretation",
+    "next_gate",
+    "claim_boundary",
+    "provenance",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-same-sign-candidate17-20-axisymmetric-restricted-current-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_AXISYMMETRIC_RESTRICTED_CURRENT"},
+    "candidate_rows": {"type": "array", "minItems": 2, "maxItems": 2},
+    "restricted_current_theorem": {
+      "type": "object",
+      "required": ["one_parity_channel_inertia", "two_parity_channel_affine_inertia", "projective_zariski_tangent_inertia", "candidate17_and_20_axisymmetric_zariski_tangent_currents_nondegenerate"]
+    },
+    "classification": {
+      "type": "object",
+      "required": ["candidate17_complete_active_scalar_cone_axisymmetric_current_classified", "candidate20_complete_active_scalar_cone_axisymmetric_current_classified", "restricted_zariski_tangent_currents_nondegenerate", "full_smooth_locus_restricted_current_classified", "rotation_zero_fibre_connected", "causal_residual_observational_or_quantum_claim"]
+    }
+  }
+}
