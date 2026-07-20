@@ -726,3 +726,27 @@ def test_quartic_moduli_locus_is_empty_before_observer_propagation():
     assert "BERGER_QUARTIC_COMPLETION_MODULI_OBSERVER_INVARIANCE" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_auxiliary_scalar_diff_bv_orbit_is_complete_but_still_obstructed():
+    row = next(
+        row
+        for row in build()["entries"]
+        if row["id"]
+        == "observer.berger.interaction.auxiliary_diff_bv_scalar_orbit_repair"
+    )
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["descriptions"]["nonlinear"] == "OBSTRUCTED"
+    assert row["descriptions"]["observational"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == (
+        "NO_CERTIFIED_MAP"
+    )
+    assert "+g0 h0" in row[
+        "observer_data"
+    ]["survives_gauge_reduction"]["statement"]
+    assert "quartic Diff-covariance descendant" in row[
+        "observer_data"
+    ]["observer_source_channel"]["statement"]
+    assert "BERGER_AUXILIARY_DIFF_BV_SCALAR_ORBIT_REPAIR" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

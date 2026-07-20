@@ -1,0 +1,93 @@
+{
+  "schema": "pure-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_AUXILIARY_DIFF_BV_SCALAR_ORBIT_REPAIR_TIER_RECEIPT",
+  "science_forge_work_item": "sf:program/work/observer-auxiliary-diff-bv-scalar-orbit-repair",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "claim_result_id": "BERGER_AUXILIARY_DIFF_BV_SCALAR_ORBIT_REPAIR",
+  "claim_certificate_sha256": "03f91e3f5cd761ad9031489c71f76c7e2a03d9c2813badd045b96853f1ccd07c",
+  "payload_sha256": "91513c2c0ae857ba9a2d2305a5d7af5fb8ba631fb808511adcf76b7b0ed12d7c",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile closed_universe_observers/generate_berger_auxiliary_diff_bv_scalar_orbit_repair.py closed_universe_observers/verify_berger_auxiliary_diff_bv_scalar_orbit_repair.py closed_universe_observers/tests/test_berger_auxiliary_diff_bv_scalar_orbit_repair.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "elapsed_seconds": 0.07,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m closed_universe_observers.generate_berger_auxiliary_diff_bv_scalar_orbit_repair --check",
+          "elapsed_seconds": 18.03,
+          "status": "PASS"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=<temporary-directory> 09-relational-clocks-berger-d-cartan.tex",
+          "elapsed_seconds": 1.09,
+          "status": "PASS",
+          "summary": "Paper 09 claim-boundary edit compiled in an isolated temporary output directory."
+        },
+        {
+          "command": "git diff --check -- <scoped observer paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m closed_universe_observers.generate_berger_auxiliary_diff_bv_scalar_orbit_repair --emit",
+          "elapsed_seconds": 16.87,
+          "status": "PASS",
+          "summary": "Generated the action-derived scalar orbit, exact q2 closure, arity-two obstruction, arity-three diagnostic, certificate, payload and report."
+        },
+        {
+          "command": "python3 -m closed_universe_observers.verify_berger_auxiliary_diff_bv_scalar_orbit_repair",
+          "elapsed_seconds": 10.73,
+          "status": "PASS",
+          "independent_rail": true
+        },
+        {
+          "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_auxiliary_diff_bv_scalar_orbit_repair.py",
+          "elapsed_seconds": 0.85,
+          "status": "PASS",
+          "summary": "5 passed"
+        },
+        {
+          "command": "python3 -m closed_universe_observers.atlas.generate_observer_atlas_fragment && python3 -m pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "elapsed_seconds": 23.78,
+          "status": "PASS",
+          "summary": "52 passed"
+        },
+        {
+          "command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+          "elapsed_seconds": 1.37,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The imported classical and shared operators are unchanged content-addressed inputs; the new scoped certificate and every direct observer-atlas consumer were exercised at Tier 1."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, tag, release, shared-core algebra change or theorem promotion was made; the scientific disposition is an exact scoped obstruction."
+    }
+  },
+  "boundaries": {
+    "exact_arithmetic": true,
+    "numeric_evidence_used": false,
+    "complete_scalar_diff_bv_orbit": true,
+    "forced_scalar_normalization": "alpha=1",
+    "arity_two_admissible_locus": "EMPTY",
+    "arity_three_prior_obstruction_survives": true,
+    "K_Berger_110_row_replay_performed": false,
+    "detector_memory_redshift_or_recoil_replay_performed": false,
+    "tangent_cone_branch_or_quantum_claim": false
+  }
+}

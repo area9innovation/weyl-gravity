@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "result_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "payload_ref", "proof_first_structure", "extended_common_action_family", "representation_closure", "arity_two_gate", "arity_three_diagnostic", "first_missing_action_representations", "K_Berger_and_observer_disposition", "mutations", "proof_obligation_dag", "assumption_ledger", "missing_object_ledger", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-auxiliary-diff-bv-scalar-orbit-repair-v1"},
+    "result_id": {"const": "BERGER_AUXILIARY_DIFF_BV_SCALAR_ORBIT_REPAIR"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"type": "array", "contains": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"]}}
+  },
+  "additionalProperties": true
+}

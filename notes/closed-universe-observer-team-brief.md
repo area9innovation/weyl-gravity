@@ -2115,36 +2115,52 @@ The team succeeds by locating the first exact bridge or the first exact
 obstruction.  It does not succeed by arguing that two closed universes sound
 similar.
 
-## Active bridge: auxiliary Diff--BV covariance at arity three
+## Active bridge: temporal and quartic Diff--BV covariance descendants
 
-The active bridge is
-`sf:program/work/observer-quartic-completion-moduli-and-observable-invariance`.
-Its activation gate imports the terminal common-action repair, the complete
-108-row \(q_2\), and all twelve quartic completion actions by exact content
-hash.
+The completed bridge item is
+`sf:program/work/observer-auxiliary-diff-bv-scalar-orbit-repair`.  It imports
+the terminal 636-key repair, complete source-labelled 108-row \(q_2\), all
+twelve quartic completion actions and the previous \(-4g_0h_0\) obstruction
+by exact content hash.
 
-The twelve action-derived \([q_1,q_{3,i}]\) columns have exact rank twelve,
-and their cyclicity, Maxwell and Berger-\(U(1)\) defects vanish.  The full
-arity-three equation nevertheless has an invariant coefficient that none of
-them reaches:
+The complete local scalar representation is the unique weight-zero neutral
+vertex
+\[
+ \alpha\int\chi^+c^ae_a\chi,\qquad a=0,1,2,3 .
+\]
+Differentiating its three slots through the signed odd pairing gives 32
+graded-symmetric \(q_2\) keys: the scalar, scalar-cotangent and Diff-cotangent
+outputs for all four frame components.  Its 30-key contractible-pair
+covariance block cancels the inherited block if and only if \(\alpha=1\).
+Weyl and Maxwell act trivially on the neutral pair, while the complete
+\(e_1/e_2\), \(c^1/c^2\) contraction is Berger-\(U(1)\)-invariant.
+
+That uniquely normalized orbit does not close the master equation.  The
+earliest source-isolated arity-two coefficient remains
+\[
+ \tau^*\leftarrow(e_0e_1A_0,K_{0,01})
+ \quad\hbox{with coefficient}\quad +g_0h_0 .
+\]
+It is independent of \(\alpha\) and all twelve quartic parameters.  The
+scalar orbit has no old \(A\)--\(K\) Hessian, and the 636-key repair has no
+\(\chi^+\leftarrow(e_0e_1A_0,K_{0,01})\) key.  Hence the arity-two admissible
+locus is empty before \(q_3\) can contribute.
+
+The later diagnostic also remains obstructed: the scalar-repair cross
+coefficient at
 \[
  c^{*}_{1}\leftarrow(e_0e_0e_2A_0,\chi,K_{0,12})
- \quad\hbox{has coefficient}\quad -4g_0h_0 .
 \]
-It is the unique composition of the emitter Diff--BV term
-\(c^{*}_{1}\leftarrow(e_0K^+_{0,02},K_{0,12})\) with the repair term
-\(K^+_{0,02}\leftarrow(e_0e_2A_0,\chi)\).
-
-The arity-three admissible locus is therefore empty before any quotient by
-admissible cyclic canonical transformations or field redefinitions.  Such
-invertible transformations transport rather than erase a nonzero master
-defect.  The first missing representation is the auxiliary
-\((\chi,\chi^+)\) Diff--BV scalar orbit.  No \(K_{\rm Berger}\), detector,
-memory, redshift, recoil-corrected rank or tangent-cone restriction is
-promoted.
+is exactly zero, so the inherited \(-4g_0h_0\) coefficient survives.  The next
+activation gate must adjoin both an action-derived temporal \(A\)--\(K\)
+Hessian selected by the direct arity-two identity and a quartic
+Diff-covariance descendant whose \(q_1\)-image reaches the spatial
+\(c^*_1\) row.
 
 The fail-closed atlas row is
-`observer.berger.interaction.quartic_completion_moduli_observer_invariance`
+`observer.berger.interaction.auxiliary_diff_bv_scalar_orbit_repair`
 (`symplectic=CERTIFIED`, `nonlinear=OBSTRUCTED`,
-`observational=OBSTRUCTED`).  The next activation gate is
-`ADJOIN_AUXILIARY_DIFF_BV_SCALAR_ORBIT_AND_REPLAY_ARITY_TWO_THREE`.
+`observational=OBSTRUCTED`).  No \(K_{\rm Berger}\), detector, memory,
+redshift, recoil-corrected rank or tangent-cone restriction is promoted.  The
+next activation gate is
+`ADJOIN_TEMPORAL_AK_ARITY_TWO_AND_QUARTIC_DIFF_COVARIANCE_DESCENDANTS_AND_REPLAY`.
