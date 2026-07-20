@@ -1,0 +1,45 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-paper12-candidate-b-terminal-status-correction",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-paper12-candidate-b-terminal-status-correction",
+  "source": {
+    "path": "planning/work-items/quantum-paper12-candidate-b-terminal-status-correction.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum",
+    "state": "PROPOSED",
+    "objective": "Remove the stale Candidate-B-under-test statement that raced the Paper 12 regulator refresh and replace it with the exact two-candidate terminal status.",
+    "stop_condition": "Import COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1 from result commit 5c642e2ad14d45f6074b1327c69707b7b9b08f5d and close 218cd5ad9, and COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1 from result commit cc0e0036c6acce2bc3d8ba81057031d90a71333a and close c7af7b707831a848e3e110f45bb746478473dbc6. Replace every Paper 12 or referee-response statement that Candidate B is under test with: both declared minimal classical repairs are scoped obstructions, no action is selected, and neither Hessian is imported into the conditional quantum theorem. State immediately that this does not prove a universal compensator no-go. Update the generated claim map only if it carries the stale lifecycle, regenerate the PDF and publication hashes, run the existing independent claim-map verification and two warning-free TeX passes, and answer request classical-compensator-candidate-ab-neither-comparison-to-quantum-qme-b6ba3205f57b7991 with the corrected artifact IDs. Search the complete Paper 12 publication bundle for stale Candidate-B-under-test wording before closing.",
+    "current_gate": "factual lifecycle correction after Candidate B closed before the Paper 12 refresh",
+    "forbid": "no change to the regulator theorem beyond the raced lifecycle correction; no universal compensator no-go; no selected action; no Candidate A/B Hessian imported into the quantum claim; no QAP, Lorentzian, Hadamard, particle, scattering or unitarity promotion",
+    "depends_on": [],
+    "activates": [
+      "a publication-current Paper 12",
+      "verified delivery of the Candidate A/B terminal-status request"
+    ],
+    "allowed_paths": [
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
+      "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json",
+      "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md",
+      "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json",
+      "paper/12-pure-weyl-one-loop-bv-anomaly-paper-coverage-report.json",
+      "paper/generate_12_pure_weyl_one_loop_bv_anomaly_claim_map.py",
+      "paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py",
+      "reports/",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "IMMEDIATE QUANTUM PUBLICATION CORRECTION. This is intentionally small but fail-closed because the completed manuscript presently contradicts a terminal classical result.",
+    "notes": [
+      "The stale wording is currently present in the main TeX and referee response.",
+      "The conditional all-loop cohomology theorem remains unchanged.",
+      "The two classical failures motivate the general action classification; they do not select a quantum receiver."
+    ],
+    "input_commit": "bb2c1011f",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
