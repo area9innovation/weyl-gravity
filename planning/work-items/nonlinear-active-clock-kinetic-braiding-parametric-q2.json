@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/nonlinear-active-clock-kinetic-braiding-parametric-q2",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "nonlinear-active-clock-kinetic-braiding-parametric-q2",
+  "source": {
+    "path": "planning/work-items/nonlinear-active-clock-kinetic-braiding-parametric-q2.json",
+    "span": null
+  },
+  "body": {
+    "owner": "nonlinear",
+    "state": "PROPOSED",
+    "objective": "Construct the action-derived kinetic-braiding q2 only if the classical Level-2 constraint audit exports a passing action and causal unary carrier.",
+    "stop_condition": "Import the terminal classical kinetic-braiding locus theorem.  If it exports no selected action hash, independently preserve q2 as undefined and close with no promotion.  If it passes, import the exact action, background, q1, pairing and constraint-reduction hashes; derive the complete second variation and typed q2 rows including metric, compensator, clock, Diff/Weyl ghost and antifield completions.  Verify the arity-two CME/Noether identities, cyclic lowering convention, real structure, derivative filtration and K_Berger/raw-D weight ledger.  Export the action-specific tensor package and independent action-variation verifier, but do not begin q3, minimal-model transfer, branch amplitudes or resonant Cartan tests.",
+    "current_gate": "selected-action Level-2 q2 after classical constraint and causal gates",
+    "forbid": "no coefficient sample; no q2 called physical before a passing q1/background/pairing carrier; no q3 or minimal-model transfer; no higher P, Horndeski curvature or independent connection mixed into the Level-2 package; no branch, redshift, particle, positivity or quantum claim",
+    "depends_on": [
+      "sf:program/work/classical-compensator-kinetic-braiding-locus"
+    ],
+    "activates": [
+      "immediate specialization if the classical kinetic-braiding locus passes",
+      "or a reusable exact q2 receiver retained without physical promotion if Level 2 fails"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "nonlinear_programme/",
+      "reports/",
+      "residual_atlas/",
+      "paper/11-interacting-weyl-maxwell-minimal-model.tex",
+      "notes/d-quotient-nonlinear-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "NONLINEAR FAIL-CLOSED GATE.  Do not spend the q2 calculation if Level 2 is quadratically invisible or physically obstructed.",
+    "notes": [
+      "This is preparation, not evidence that kinetic braiding passes or defines a physical interaction."
+    ],
+    "input_commit": "b0ee2bea2",
+    "stream": "nonlinear"
+  },
+  "edges": []
+}

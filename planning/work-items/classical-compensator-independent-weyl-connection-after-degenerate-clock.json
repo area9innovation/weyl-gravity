@@ -1,0 +1,42 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-independent-weyl-connection-after-degenerate-clock",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-independent-weyl-connection-after-degenerate-clock",
+  "source": {
+    "path": "planning/work-items/classical-compensator-independent-weyl-connection-after-degenerate-clock.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Test the smallest action-derived independent Weyl connection only after the active-clock and degenerate derivative-mixing levels have terminated without a viable action.",
+    "stop_condition": "Import the terminal Level-3 degenerate-curvature theorem and proceed only if no selected action was exported.  Declare a complete minimal local parity-even ansatz for one independent Weyl connection, its curvature, the complex compensator and dressed metric at the lowest derivative order capable of changing the trace complex.  Derive the complete gauge transformations, reducibility, ghosts, antifields, cotangent lift, real structure and cyclic pairing from the action.  Compute both background equations and the full scalar/longitudinal principal complex, cohomology, velocity inertia, charge generators and support-local Green parent.  Classify the exact coefficient locus and prove either one passing component with a contraction of the former dressed-trace class or a scoped Level-4 rank/sign/charge obstruction.",
+    "current_gate": "complete minimal independent-Weyl-connection action and BV locus after Levels 1--3",
+    "forbid": "no connection introduced before the clock mechanisms are terminal; no extra gauge row without an action and cotangent lift; no Stueckelberg counting called cohomology; no gauge fixing used to erase a physical sign; no sampled coefficient search; no automatic inheritance of prior backgrounds; no quantum promotion",
+    "depends_on": [
+      "sf:program/work/classical-compensator-degenerate-curvature-coupling-locus"
+    ],
+    "activates": [
+      "a selected independent-connection causal BV carrier",
+      "or a four-level compensator-repair no-go with the next theory choice explicit"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "reports/",
+      "residual_atlas/",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "CLASSICAL LEVEL 4.  Change the geometric gauge variable only after the clock-sector ladder has been exhausted.",
+    "notes": [
+      "This supersedes the earlier queue item that placed the connection behind the fixed-flux HT detour."
+    ],
+    "input_commit": "b0ee2bea2",
+    "stream": "classical"
+  },
+  "edges": []
+}

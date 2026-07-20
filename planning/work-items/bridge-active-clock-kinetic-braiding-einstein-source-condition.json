@@ -1,0 +1,42 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-active-clock-kinetic-braiding-einstein-source-condition",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-active-clock-kinetic-braiding-einstein-source-condition",
+  "source": {
+    "path": "planning/work-items/bridge-active-clock-kinetic-braiding-einstein-source-condition.json",
+    "span": null
+  },
+  "body": {
+    "owner": "bridge",
+    "state": "PROPOSED",
+    "objective": "Determine exactly how a general minimal kinetic-braiding clock modifies the compensated Einstein same-source condition Q(T)=0 and whether the clock stress preserves, repairs or worsens Einstein-sector closure.",
+    "stop_condition": "Import the certified compensated sourced-defect chain map, its Q(T) operator, and the quadratic active-clock background-stability theorem.  Using the identical symbolic Level-2 P(X)+G(X) Box_hat theta action basis, derive the complete linear and quadratic clock stress, Ward rows and source map on every declared compatible background carrier where the calculation is defined.  Compute Q(T_clock), its matter-equation descent and its intersection with the Einstein-image, extra-Weyl and charge fibres.  Classify the complete coefficient/source locus on which Q(T_total)=0 is preserved under clock evolution, identify whether cancellation is structural or fine-tuned, and exhibit exact violating and preserving witnesses.  Keep cylinder, Berger and compact-product source carriers distinct.  Export a specialization map for any later passing classical action and a method-distinct Ward/source verifier.",
+    "current_gate": "action-parametric kinetic-braiding modification of Q(T)=0",
+    "forbid": "no conservation or tracelessness substituted for Q(T)=0; no background cross-identification without a chain map; no passing clock action assumed; no q2 source called nonlinear Einstein closure beyond the certified order; no scattering, particle, positivity or quantum claim",
+    "depends_on": [
+      "sf:program/work/classical-compensator-kinetic-braiding-quadratic-visibility"
+    ],
+    "activates": [
+      "a selected-action Einstein-source specialization if Level 2 passes",
+      "or an exact clock-source obstruction informing the classical coefficient locus"
+    ],
+    "allowed_paths": [
+      "bridge/",
+      "reports/",
+      "residual_atlas/",
+      "paper/10-einstein-sector-comparison.tex",
+      "notes/d-quotient-einstein-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "EINSTEIN/BRIDGE CONDITIONAL LANE.  First import the exact quadratic visibility blocks, then test the clock against Q(T) rather than assuming it helps.",
+    "notes": [
+      "The output remains action-parametric until a classical seven-gate carrier is selected."
+    ],
+    "input_commit": "b0ee2bea2",
+    "stream": "bridge"
+  },
+  "edges": []
+}

@@ -1,0 +1,40 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-paper12-active-clock-background-stability-headline",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-paper12-active-clock-background-stability-headline",
+  "source": {
+    "path": "planning/work-items/quantum-paper12-active-clock-background-stability-headline.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum-qme",
+    "state": "PROPOSED",
+    "objective": "Update Paper 12 so the quadratic active-clock theorem is stated as an exact open-neighbourhood no-go with a tested q=1/4 bifurcation, not a frozen-fixture failure.",
+    "stop_condition": "Import COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1 by certificate hash and scientific commit.  Update the theorem statement, abstract/status ledger and claim map to state the exact rational neighbourhood, the one-ray stationary locus, structurally stable split gravity--auxiliary inertia and raw-D failure, and the first q=1/4 clock-sign bifurcation with witnesses on both sides.  State that crossing the bifurcation repairs only the clock-sign conflict and leaves the other terminal obstructions.  Preserve the scope: couplings vary with backgrounds; no fixed action across the neighbourhood, general k-essence, causal parent, anomaly/QME, particle or unitarity claim.  Run the paper claim verifier, filename policy and PDF build.",
+    "current_gate": "Paper 12 background-stability and bifurcation claim synchronization",
+    "forbid": "no universal P(X) no-go; no fixed-action neighbourhood theorem; no bifurcation called a viable phase; no classical no-go conflated with failure of local Wess--Zumino anomaly trivialization; no paper promotion without exact evidence edge",
+    "depends_on": [
+      "sf:program/work/classical-compensator-active-clock-background-stability"
+    ],
+    "activates": [
+      "a current Paper 12 compensator theorem statement and result-to-paper evidence edge"
+    ],
+    "allowed_paths": [
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json",
+      "paper/build/",
+      "reports/",
+      "planning/paper-coverage/",
+      "notes/d-quotient-quantum-team-brief.md"
+    ],
+    "resource_hint": "QUANTUM/PUBLICATION SYNC.  The new theorem strengthens scope and must not be left as a pointwise no-go.",
+    "notes": [
+      "This is a manuscript synchronization task, not a new quantum calculation."
+    ],
+    "input_commit": "b0ee2bea2",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}

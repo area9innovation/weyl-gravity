@@ -1,0 +1,42 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-degenerate-curvature-coupling-locus",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-degenerate-curvature-coupling-locus",
+  "source": {
+    "path": "planning/work-items/classical-compensator-degenerate-curvature-coupling-locus.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "If minimal kinetic braiding has no viable locus, classify the smallest shift-symmetric Horndeski/DHOST curvature coupling that changes the trace and lapse constraints without introducing an Ostrogradsky scalar.",
+    "stop_condition": "Import the terminal kinetic-braiding coefficient-locus theorem.  Proceed only if it exports no passing selected action.  Declare the complete lowest-order dressed-metric Level-3 action with quadratic P(X) and one minimal G4(X)R_hat plus G4X[(Box_hat theta)^2-(nabla_hat_mu nabla_hat_nu theta)^2] combination, setting the Level-2 braiding term to zero so mechanisms remain separated.  Derive the degeneracy matrix and full action-origin BV unary data, both background Euler systems, scalar/tensor principal symbols, constraint ranks, reduced velocity/gradient pairing, characteristic roots, charges and relational-clock inequalities.  Use exact elimination to classify every coefficient stratum and rank-change surface.  Export a selected action only after all seven gates pass, or a complete scoped Level-3 no-go with the first invariant separator.",
+    "current_gate": "complete minimal degenerate-curvature-coupling coefficient locus",
+    "forbid": "no combination with the failed braiding sector before this mechanism is isolated; no generic DHOST scan without a declared complete ansatz; no equation-order counting called degeneracy; no gauge fixing used to hide a physical scalar; no numerical sample called a viable component; no nonlinear or quantum promotion before classical gates pass",
+    "depends_on": [
+      "sf:program/work/classical-compensator-kinetic-braiding-locus"
+    ],
+    "activates": [
+      "one selected Level-3 action and causal carrier",
+      "or the exact Level-3 no-go activating an independent geometric gauge variable"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "reports/",
+      "residual_atlas/",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "CLASSICAL LEVEL 3.  Isolate one degenerate curvature mechanism after Level 2 is terminal.",
+    "notes": [
+      "If Level 2 passes, this item should be retired rather than combined automatically."
+    ],
+    "input_commit": "b0ee2bea2",
+    "stream": "classical"
+  },
+  "edges": []
+}

@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-kinetic-braiding-quadratic-visibility",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-kinetic-braiding-quadratic-visibility",
+  "source": {
+    "path": "planning/work-items/classical-compensator-kinetic-braiding-quadratic-visibility.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Decide by exact complete second variation whether minimal shift-symmetric kinetic braiding is visible at quadratic order on the cylinder and Berger fixtures.",
+    "stop_condition": "Import the independently audited quadratic P(X) no-go and COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1.  Declare the complete lowest polynomial G(X) for which integral sqrt(-g_hat) G(X) Box_hat theta is not horizontally exact.  Compute its full second variation on the constant-clock cylinder and stationary-gradient Berger background, including metric, lapse, shift, trace, clock, connection-variation and boundary terms; do not use a scalar-only expansion.  Reduce modulo declared compact-support or closed-slice boundary terms and exact action-equivalent field redefinitions.  Export the complete quadratic Hessian blocks, principal symbols and an independent variational verifier.  Prove either delta^2 S3|C=0 exactly, with the unchanged dressed-trace/split-pair consequence, or exhibit the first nonzero cylinder block and its invariant rank.  Separately classify Berger visibility without calling it a cylinder repair.",
+    "current_gate": "exact cylinder and Berger quadratic visibility theorem for G(X) Box theta",
+    "forbid": "no homogeneous scalar-only expansion; no omitted metric or connection variation; no total derivative retained as dynamics; no background equation used before its source action is declared; no ADM health, q2, Horndeski curvature, anomaly or quantum promotion",
+    "depends_on": [
+      "sf:program/work/classical-compensator-active-clock-background-stability"
+    ],
+    "activates": [
+      "classical-compensator-kinetic-braiding-locus",
+      "with an immediate Level-2 exclusion branch if the cylinder Hessian is identically zero"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "reports/",
+      "residual_atlas/",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "CLASSICAL LEVEL 2A FAST GATE.  Establish whether braiding can touch the failed cylinder scalar complex before building the theory.",
+    "notes": [
+      "A cylinder-zero theorem is the expected cheap terminal mechanism and must include metric variations.",
+      "Berger nontriviality does not compensate for cylinder invisibility."
+    ],
+    "input_commit": "b0ee2bea2",
+    "stream": "classical"
+  },
+  "edges": []
+}
