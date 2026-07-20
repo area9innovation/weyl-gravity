@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/active_clock_px2_locus.py",
+      "sha256": "2264f67a25aef8de278a29142218f6cde132090a4f86729f952962b1ee70646d"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_active_clock_px2_locus.py",
+      "sha256": "2f245a6b8c65ce3bb59c595474f2c0c93d3cc90ed4ffeba1a38c8d27efa157cb"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_active_clock_px2_locus.py",
+      "sha256": "0d0220dcda858790066aed86bf881ee7f9873bf704c7451a2613557205986dda"
+    },
+    {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1.json",
+      "sha256": "9ad148d6b632e215cd75636f5fd5b431fa85cf1698a63f725d8b3c9dfe61de89"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-active-clock-px2-locus-v1.schema.json",
+      "sha256": "edb7ebb38b9e385c6a9e8aaa24e119fda0a68171e03396441327d0b0cb56295d"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-active-clock-px2-locus-v1.md",
+      "sha256": "ff170e6d08f64455d247ee6d0eb5660a980e3e58edf3281a7d80560919c77b40"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "70a95ed1c1db95aa7e80dea47fc1f7f1aad958368dd4c40128fc7b47e8b9190e"
+    },
+    {
+      "path": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
+      "sha256": "2f9278a22cfa7b65ebafae9584265c350fb60b76a117e4d0b89b6236bdaeb8db"
+    },
+    {
+      "path": "d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+      "sha256": "658137d7de8a6696b01b34ef1a3472d5f40062ed3d16bb21ad24d1cb081f561e"
+    },
+    {
+      "path": "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+      "sha256": "25f4be4120b92022a899815345970ff4977ce4161ab39cb0718183c602a3052d"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile d_quotient_classical/compensator/active_clock_px2_locus.py d_quotient_classical/compensator/verify_active_clock_px2_locus.py d_quotient_classical/compensator/tests/test_active_clock_px2_locus.py",
+        "elapsed_seconds": 0.1,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <active-clock certificate and schema>",
+        "elapsed_seconds": 0.1,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit active-clock, atlas, report and receipt paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/active_clock_px2_locus.py --check",
+        "elapsed_seconds": 0.5,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_active_clock_px2_locus.py",
+        "elapsed_seconds": 0.66,
+        "status": "PASS",
+        "independent_rail": "does not import the producer; rebuilds each P(X) stress column from -T_ab, solves the five-by-six rational system independently, reconstructs the quadratic Hessian from the density, proves the minimal polynomial by annihilation/non-annihilation, and recomputes the sound and charge expressions"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_active_clock_px2_locus -v",
+        "elapsed_seconds": 1.02,
+        "status": "PASS",
+        "tests": 9,
+        "mutation_controls": "dependency hash, Berger p2 stress coefficient, rank/kernel, velocity sign, longitudinal sound factor, Candidate export, gate-5 promotion and universal/quantum scope mutations are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-active-clock-px2-locus-v1.schema.json -d d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1.json",
+        "elapsed_seconds": 1.46,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_classical_atlas_fragment.py --check",
+        "elapsed_seconds": 0.2,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "elapsed_seconds": 0.19,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment -v",
+        "elapsed_seconds": 0.07,
+        "status": "PASS",
+        "tests": 26
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.18,
+        "status": "PASS"
+      },
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 4.79,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift, corpus baseline growth from 976 to 1290 certificates, and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ],
+    "reason": "The coefficient-locus result adds a fail-closed atlas row and keeps all selected-action consumers inactive, so the affected atlas chain and advisory evidence audit were replayed."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped coefficient-locus theorem awaiting its explicitly queued method-distinct freeze audit, not a paper freeze, release, tag or shared-core-algebra change."
+  },
+  "claim_boundary": "The receipt certifies the exact one-dimensional stationary locus and empty seven-gate good locus only for dressed C^2+R^2+R gravity with the complete quadratic shift-symmetric P(X) clock, no HT sector and no new fields on the unit-cylinder and frozen-Berger fixtures. It does not cover higher P(X), higher phase derivatives, changed backgrounds, fixed-charge reductions, new fields or enlarged gauge quotients, and it establishes no complete causal parent, Candidate C_active, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result.",
+  "higher_tiers_not_run": [
+    {
+      "tier": 3,
+      "criterion": "No independent freeze audit, paper theorem freeze, release, tag, shared-core algebra change or explicit full-suite request occurred."
+    }
+  ]
+}

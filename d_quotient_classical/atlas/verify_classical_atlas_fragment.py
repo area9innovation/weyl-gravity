@@ -220,6 +220,31 @@ def verify() -> None:
         or "No Hadamard" not in minimal["claim_boundary"]
     ):
         raise AssertionError("minimal compensator-action atlas boundary drifted")
+    active_clock = by_id[
+        "classical.complex_compensator.cylinder_berger."
+        "active_clock_px2_good_locus"
+    ]
+    active_clock_ids = {item["result_id"] for item in active_clock["evidence"]}
+    if (
+        active_clock["descriptions"]["causal"] != "OBSTRUCTED"
+        or active_clock["descriptions"]["symplectic"] != "OBSTRUCTED"
+        or active_clock["descriptions"]["nonlinear"] != "NOT_APPLICABLE"
+        or active_clock["descriptions"]["observational"] != "NO_CERTIFIED_MAP"
+        or active_clock["descriptions"]["quantum"] != "OPEN"
+        or {
+            "COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1",
+            "COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1",
+        }
+        - active_clock_ids
+        or "rank five" not in active_clock["claim_boundary"]
+        or "sound speed squared 9/59" not in active_clock["claim_boundary"]
+        or "common good locus is EMPTY" not in active_clock["claim_boundary"]
+        or "no Candidate C_active is selected" not in active_clock["claim_boundary"]
+        or "not a universal k-essence or compensator no-go"
+        not in active_clock["claim_boundary"]
+        or "no Hadamard" not in active_clock["claim_boundary"]
+    ):
+        raise AssertionError("quadratic active-clock atlas boundary drifted")
     stability = by_id["classical.crosswalk.weak_background_causal_vs_residual_d"]
     if (
         stability["descriptions"]["causal"] != "CERTIFIED"

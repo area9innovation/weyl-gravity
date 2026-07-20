@@ -38,6 +38,7 @@ CERTS = {
     "complex_compensator_candidate_b_obstruction": ROOT / "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1.json",
     "complex_compensator_candidate_ab_neither": ROOT / "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1.json",
     "complex_compensator_minimal_action_no_go": ROOT / "d_quotient_classical/certificates/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1.json",
+    "complex_compensator_active_clock_px2_no_go": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1.json",
     "Berger_green": ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
     "Berger_bikernel_support_gate": ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
     "Berger_Cartan": ROOT / "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
@@ -417,6 +418,30 @@ def entries() -> list[dict[str, Any]]:
         _second(("NOT_APPLICABLE", "No selected action exists for a bounded second-order tangent cone."), ("NOT_APPLICABLE", "No selected action exists for a smooth-secular tangent cone."), ("OBSTRUCTED", "The declared minimal action family has empty causal/physical seven-gate locus.")),
         _evidence("complex_compensator_candidate_ab_neither", "complex_compensator_minimal_action_no_go"),
         "The no-HT stationary equations have exact determinant -91791/81920 on the common unit-cylinder and frozen-Berger fixtures, so only the zero bulk vector remains; it has no phase pairing or causal trace parent. Independently, every nonzero-R^2 cylinder repair has velocity inertia (1,1), real roots +/-sqrt(2), size-two Jordan blocks and a both-sign raw-D Hamiltonian. The optional HT branch retains H3/Hc4, a D=0 kernel, nonconstant ambient raw-D Hamiltonian and the nonexact Berger volume shift. The declared minimal good locus is EMPTY and no Candidate C is selected. This is not a universal compensator no-go: higher-derivative phase EFT, multiplier extensions, fixed-flux/global-quotient and independent-conformal-gauge theories remain outside scope. No Hadamard, anomaly/QME, particle, scattering, positivity or unitarity conclusion follows.",
+    ))
+    values.append(_entry(
+        "classical.complex_compensator.cylinder_berger.active_clock_px2_good_locus",
+        _scope(
+            VACUUM,
+            theory="dressed parity-even C^2+R^2+R gravity with the complete quadratic shift-symmetric phase polynomial P(X)=p0+p1 X+p2 X^2; no HT sector or new fields",
+            background="joint unit conformal cylinder with constant phase and frozen rational Berger clock with theta=3t/4, q=9/40",
+            charge_sector="unreduced unit-cylinder raw-D sector and frozen-Berger K_Berger=D-(3/4)R stabilizer; no fixed-charge quotient",
+            carrier="one-dimensional exact stationary coefficient locus with coupled homogeneous dressed-trace, R^2 auxiliary-scalar and phase fluctuation; not a particle carrier",
+            degree="classical action/Euler, homogeneous quadratic and Lee-Wald levels; no all-row selected-action q2 export",
+            parity="real parity-even scalar sector",
+            ell="homogeneous cylinder scalar sector; frozen Berger clock background",
+            m="0 in the decisive homogeneous sector",
+            k="homogeneous D-polynomial operator; Berger sound covectors evaluated exactly",
+            omega="clock omega=3/4; scalar roots +/-sqrt(2), clock root 0",
+        ),
+        {"causal": "OBSTRUCTED", "symplectic": "OBSTRUCTED", "nonlinear": "NOT_APPLICABLE", "observational": "NO_CERTIFIED_MAP", "quantum": "OPEN"},
+        ("OBSTRUCTED", "The common stationary locus is one-dimensional, but every nonzero point has a split (+3,-3) gravity-auxiliary principal pair; no complete support-local parent is promoted."),
+        ("OBSTRUCTED", "The exact reduced Lee-Wald form is nondegenerate for nonzero locus parameter but its velocity inertia is split for both signs."),
+        ("OBSTRUCTED", "The unit-cylinder raw-D Hamiltonian takes the exact values +3 and -3; raw D is not null on the declared ambient sector."),
+        ("NO_CERTIFIED_MAP", "The coefficient-locus obstruction exports no selected action, compatible complex structure, two-point function or observational/particle mode."),
+        _second(("NOT_APPLICABLE", "No selected active-clock action exists for a bounded tangent cone."), ("NOT_APPLICABLE", "No selected active-clock action exists for a smooth-secular tangent cone."), ("OBSTRUCTED", "The quadratic active-clock seven-gate locus is empty before a complete causal parent can be selected.")),
+        _evidence("complex_compensator_minimal_action_no_go", "complex_compensator_active_clock_px2_no_go"),
+        "The exact cylinder-plus-Berger Euler matrix has rank five and kernel t(81/20,27/3290,-324/1645,486/1645,18/25,1). For every nonzero t, the coupled homogeneous velocity spectrum contains +3 and -3. Independently, cylinder standard-sign clock health requires t<0, while the Berger principal tensor has P_X=-81t/200 and P_X+2XP_XX=-531t/200, so Berger standard-sign hyperbolicity requires t>0 and has sound speed squared 9/59. The common good locus is EMPTY and no Candidate C_active is selected. This is a scoped quadratic-P(X), two-background result, not a universal k-essence or compensator no-go. It constructs no complete causal parent and establishes no Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result.",
     ))
     values.append(_entry(
         "classical.berger.retained_gravity_clock_maxwell",
