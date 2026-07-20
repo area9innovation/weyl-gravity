@@ -1,0 +1,19 @@
+{
+  "id": "sf:forge-request/science-forge-cli-discoverability-work-show",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Make the s-f CLI self-discovering for resident research agents. Today bare `s-f` prints a useful command summary, but the conventional discovery attempts `s-f --help`, `s-f help`, `s-f work`, and `s-f work show` all exit 2 with only `sfc: unknown subcommand`. This repeatedly costs agent context, looks like an installation defect, and makes an agent with an apparently empty queue reach for ad hoc repository inspection instead of the folded Science Forge state. Add conventional help and read-only work inspection without weakening any lease, append-only, fail-closed, or deterministic-time rule.",
+    "depends_on": [],
+    "stop_condition": "Land and document: (1) `s-f --help`, `s-f -h`, and `s-f help` with exit 0 and the same authoritative top-level command inventory; (2) `s-f <command> --help` and `s-f help <command>` for at least work, request, streams-view, inbox, and work-package; (3) `s-f work` with no subcommand printing work-specific usage and exiting with a clear usage code rather than dispatching an unknown sfc verb; (4) a deterministic read-only `s-f work show --item <id> [--now <T>]` that prints the folded effective state, owner/stream, current gate, dependencies and their effective states, live lease, latest report/close-out, activation links, allowed paths, and the exact next valid commands; (5) `s-f work list [--stream <stream>] [--state <state>] [--now <T>]` as a compact stdout view, or an explicitly documented equivalent built on streams-view; (6) unknown verbs and subverbs naming the rejected token, suggesting the nearest valid commands, and pointing to `s-f --help`; (7) help output showing the auto-detected absolute programme path and how `SF_PROGRAM` overrides it, without changing the Konsole title; and (8) deterministic tests covering the four current repros, an unknown typo, item-not-found, ambiguous short item id, terminal-state item, READY item, ACTIVE leased item, and missing/explicit `--now` behavior. Help and show/list must be read-only and byte-stable for fixed inputs.",
+    "forbid": "no implicit lease acquisition, lifecycle transition, report, queue repair, git write, title overwrite, wall-clock fallback, or scientific inference from help/show/list; no hidden alias that changes existing command semantics; no dependence on a TTY, pager, network, embeddings, or mutable cache; no generic `unknown subcommand` when the launcher can identify the rejected command and valid alternatives; no silently accepting ambiguous short IDs; no treating PROPOSED, READY, ACTIVE, BLOCKED, DONE, OBSTRUCTED, and RETIRED as interchangeable.",
+    "notes": [
+      "Minimal repro from physics/symplectic-reconstruction on 2026-07-20: `s-f --help`, `s-f help`, `s-f work`, and `s-f work show` each returned exit 2 with exactly `sfc: unknown subcommand`.",
+      "First consumers are all resident physics teams. The Observer stream recently reported an empty queue while the folded programme had a pullable successor; a read-only `work list/show` command would make the authoritative state and next action visible without asking agents to inspect event JSON or generated coordinator files.",
+      "Bare `s-f` already contains a useful partial command inventory in the launcher and should become the single source reused by all top-level help aliases rather than being copied into divergent help strings.",
+      "This is a usability and robustness request, not a scientific blocker. It should remain independent of the bidirectional paper-result coverage request."
+    ]
+  }
+}
