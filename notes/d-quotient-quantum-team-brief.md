@@ -1683,3 +1683,40 @@ without a physical-norm promotion.
 
 Receipt:
 [`berger-physical-cohomology-positivity-disposition.md`](../quantum-weyl/reports/berger-physical-cohomology-positivity-disposition.md).
+
+## Local-anomaly antifield completion audit (2026-07-20)
+
+Science Forge item
+`sf:program/work/quantum-local-anomaly-antifield-completion` has reached its
+declared `DONE` stop condition on the regular Bach locus. An independent
+exact consumer now joins the complete minimal, nonminimal and canonically
+gauge-fixed local BV quotient to the coefficient-bearing repository
+insertion.
+
+The joined quotient has
+
+\[
+\dim H^{1,4}_{\mathrm{even}}=2,\qquad
+\dim H^{1,4}_{\mathrm{odd}}=1,
+\]
+
+with representatives
+\(\omega C^2,\omega E_4,\omega C\widetilde C\), no positive-antifield
+completion rows in the regulated breaking, and an explicit primitive for
+\(\omega\Box R\). The two even coefficients were reconstructed by two exact
+methods each:
+
+\[
+c=\frac{199}{30},\qquad a=\frac{87}{20}.
+\]
+
+The resulting strict fixed-field-content one-loop local Euclidean QME is
+obstructed. Separately, the formal \(\tau\)-adic compensator-extended local
+Euclidean QME is restored at one loop. This does not identify the two
+theories and does not establish a Lorentzian QME, Hadamard state, residual
+transfer, positivity or a particle interpretation.
+
+The completion certificate and readable receipt are
+[`LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json`](../quantum-weyl/local_bv/certificates/LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json)
+and
+[`local-anomaly-antifield-completion-audit.md`](../quantum-weyl/reports/local-anomaly-antifield-completion-audit.md).

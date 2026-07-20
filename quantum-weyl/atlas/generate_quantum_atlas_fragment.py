@@ -51,6 +51,7 @@ DEPENDENCIES = {
     "Euclidean_elliptic_complex": QROOT / "spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json",
     "nonconformal_coefficient_match": QROOT / "spectral/euclidean/certificates/REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH.json",
     "regulated_Slavnov_breaking": QROOT / "anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
+    "local_anomaly_completion_audit": QROOT / "local_bv/certificates/LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json",
     "unitary_matter_no_go": QROOT / "anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
     "WZ_compensator_preflight": QROOT / "anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
     "WZ_cotangent_lift": QROOT / "anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
@@ -241,6 +242,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     elliptic = values["Euclidean_elliptic_complex"]
     coefficient = values["nonconformal_coefficient_match"]
     breaking = values["regulated_Slavnov_breaking"]
+    local_anomaly_audit = values["local_anomaly_completion_audit"]
     matter_no_go = values["unitary_matter_no_go"]
     wz_preflight = values["WZ_compensator_preflight"]
     wz_lift = values["WZ_cotangent_lift"]
@@ -588,6 +590,31 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         or breaking.get("classification", {}).get("status") != "NONTRIVIAL"
         or breaking.get("qme_disposition", {}).get("status")
         != "OBSTRUCTED_STRICT_FIELD_CONTENT"
+        or local_anomaly_audit.get("result_state")
+        != "FULL_LOCAL_BV_ANOMALY_AND_TWO_METHOD_COEFFICIENT_AUDIT_COMPLETE_STRICT_QME_OBSTRUCTED_EXTENDED_TAU_ADIC_QME_RESTORED"
+        or not all(local_anomaly_audit.get("exact_checks", {}).values())
+        or local_anomaly_audit.get("science_forge", {}).get(
+            "stop_condition_status"
+        )
+        != "DONE"
+        or local_anomaly_audit.get("QME_lifecycles", {}).get(
+            "strict_fixed_field_content"
+        )
+        != "OBSTRUCTED_AT_ONE_LOOP_LOCAL_EUCLIDEAN"
+        or local_anomaly_audit.get("QME_lifecycles", {}).get(
+            "tau_adic_compensator_extended"
+        )
+        != "RESTORED_AT_ONE_LOOP_LOCAL_EUCLIDEAN"
+        or local_anomaly_audit.get("QME_lifecycles", {}).get("Lorentzian")
+        != "OPEN"
+        or local_anomaly_audit.get("claim_flags", {}).get(
+            "STRICT_THEORY_ANOMALY_FREE"
+        )
+        is not False
+        or local_anomaly_audit.get("claim_flags", {}).get(
+            "LORENTZIAN_QME_CERTIFIED"
+        )
+        is not False
         or matter_no_go.get("classification", {}).get("solution_set") != "EMPTY"
         or matter_no_go.get("classification", {}).get("qme_status")
         != "REMAINS_OBSTRUCTED_IN_DECLARED_MATTER_CLASS"
@@ -1348,19 +1375,19 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             complex_structure=("NOT_APPLICABLE", "classical second-order solvability crosswalk"),
             hadamard=("NO_CERTIFIED_MAP", "no background-specific causal quantum state"),
             state_space=("NO_CERTIFIED_MAP", "no interacting quantum state space"),
-            qme=("CERTIFIED", "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and scheme conversion remain fixed; the physical Hessian, all ghost n=3 rows and the pure-vector ghost n=1+n=2 slice are assembled in five carrier-labelled Mellin-MS functions; the selected S2(1)xS2(2) vector-plus-Schur ghost determinant is coefficient-computed, but its cross-background join to the round-S4 full-BV ledger is rejected and complete Q1 remains underdetermined"),
+            qme=("CERTIFIED", "an independent exact completion audit joins the complete regular-Bach-locus local BV quotient, two exact methods for each even coefficient, and the repository insertion: the strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; Lorentzian QME remains open; the raw BoxR coefficient and scheme conversion remain fixed; the physical Hessian, all ghost n=3 rows and the pure-vector ghost n=1+n=2 slice are assembled in five carrier-labelled Mellin-MS functions; the selected S2(1)xS2(2) vector-plus-Schur ghost determinant is coefficient-computed, but its cross-background join to the round-S4 full-BV ledger is rejected and complete Q1 remains underdetermined"),
             lifecycle=("NO_CERTIFIED_MAP", "the coefficient-bearing QME disposition, partial-BV five-carrier Mellin-MS representative and selected product ghost determinant are complete in their declared scopes; the same-background product metric Hessian, measure and zero-mode ledger, arbitrary-background finite Schur rows, complete repository form factors, parity-odd derivative manifest, finite normalizations, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent"),
             particle=("NO_CERTIFIED_MAP", "classical obstruction is not ghost removal"),
             crosswalk=("NO_CERTIFIED_MAP", "classical obstruction to interacting BRST disappearance or quantum constraint"),
         ),
-        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1", "FV_conformized_C2_log_Gamma1", "FV_anomaly_action_Ricci_sector", "algebraic_cubic_Weyl_carriers", "third_curvature_Weyl_manifest", "CPT_universal_third_curvature_kernels", "generic_physical_hessian_linear_curvature", "generic_physical_hessian_n3_triangle_fixture", "generic_physical_hessian_n3_five_carrier_projection", "generic_physical_hessian_n3_integration_obstruction", "generic_physical_hessian_curvature_squared", "generic_physical_hessian_mixed_H1_H2_corner_fixture", "generic_physical_hessian_mellin_subtraction_scale_row", "generic_physical_hessian_covariant_Volterra_carrier", "generic_physical_hessian_H1_H2_contact_residue_projection", "generic_physical_hessian_symmetric_mixed_boundary_incidence", "generic_physical_hessian_triangle_corner_residues", "generic_physical_hessian_full_boundary_incidence", "generic_physical_hessian_H1_H2_contact_finite_rows", "generic_physical_hessian_triangle_master_completeness", "generic_physical_hessian_triangle_renormalized_master_values", "generic_physical_hessian_triangle_six_master_coordinates", "generic_physical_hessian_triangle_relative_IBP_boundary_flux", "generic_physical_hessian_third_curvature_form_factors", "generic_physical_plus_ghost_n3_third_curvature_form_factors", "generic_ghost_n1_n2_vector_integrated_functions", "generic_partial_BV_third_curvature_form_factors", "generic_background_ghost_CPT_obstruction", "generic_ghost_Endo_Duhamel_reduction", "generic_ghost_n1_n2_Hodge_resolvent_reduction", "generic_ghost_n1_n2_vector_CPT_projection", "generic_ghost_longitudinal_Schur_resummation", "generic_ghost_Schur_Schatten_split", "generic_ghost_Schur_Wodzicki_residue", "generic_ghost_Schur_weighted_trace_scale", "round_S4_ghost_Schur_finite_weighted_traces", "round_S4_ghost_Schur_zeta_factorization", "product_S2_S2_ghost_Schur_spectral_carrier", "product_S2_S2_ghost_Schur_det3_enclosure", "product_S2_S2_ghost_Schur_weighted_rows", "product_S2_S2_ghost_minimal_vector_determinant", "product_S2_S2_full_BV_join_boundary", "generic_ghost_Schur_weight_raised_zeta_factorization", "generic_ghost_n3_adiabatic_carrier", "generic_ghost_n3_triangle_kernel", "generic_ghost_n3_five_carrier_projection", "generic_ghost_n3_barycentric_factorization", "generic_ghost_n3_symmetric_point_simplex_integration", "scalar_flat_K_Ricci_crosswalk", "BoxR_scheme_conversion"),
+        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "local_anomaly_completion_audit", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1", "FV_conformized_C2_log_Gamma1", "FV_anomaly_action_Ricci_sector", "algebraic_cubic_Weyl_carriers", "third_curvature_Weyl_manifest", "CPT_universal_third_curvature_kernels", "generic_physical_hessian_linear_curvature", "generic_physical_hessian_n3_triangle_fixture", "generic_physical_hessian_n3_five_carrier_projection", "generic_physical_hessian_n3_integration_obstruction", "generic_physical_hessian_curvature_squared", "generic_physical_hessian_mixed_H1_H2_corner_fixture", "generic_physical_hessian_mellin_subtraction_scale_row", "generic_physical_hessian_covariant_Volterra_carrier", "generic_physical_hessian_H1_H2_contact_residue_projection", "generic_physical_hessian_symmetric_mixed_boundary_incidence", "generic_physical_hessian_triangle_corner_residues", "generic_physical_hessian_full_boundary_incidence", "generic_physical_hessian_H1_H2_contact_finite_rows", "generic_physical_hessian_triangle_master_completeness", "generic_physical_hessian_triangle_renormalized_master_values", "generic_physical_hessian_triangle_six_master_coordinates", "generic_physical_hessian_triangle_relative_IBP_boundary_flux", "generic_physical_hessian_third_curvature_form_factors", "generic_physical_plus_ghost_n3_third_curvature_form_factors", "generic_ghost_n1_n2_vector_integrated_functions", "generic_partial_BV_third_curvature_form_factors", "generic_background_ghost_CPT_obstruction", "generic_ghost_Endo_Duhamel_reduction", "generic_ghost_n1_n2_Hodge_resolvent_reduction", "generic_ghost_n1_n2_vector_CPT_projection", "generic_ghost_longitudinal_Schur_resummation", "generic_ghost_Schur_Schatten_split", "generic_ghost_Schur_Wodzicki_residue", "generic_ghost_Schur_weighted_trace_scale", "round_S4_ghost_Schur_finite_weighted_traces", "round_S4_ghost_Schur_zeta_factorization", "product_S2_S2_ghost_Schur_spectral_carrier", "product_S2_S2_ghost_Schur_det3_enclosure", "product_S2_S2_ghost_Schur_weighted_rows", "product_S2_S2_ghost_minimal_vector_determinant", "product_S2_S2_full_BV_join_boundary", "generic_ghost_Schur_weight_raised_zeta_factorization", "generic_ghost_n3_adiabatic_carrier", "generic_ghost_n3_triangle_kernel", "generic_ghost_n3_five_carrier_projection", "generic_ghost_n3_barycentric_factorization", "generic_ghost_n3_symmetric_point_simplex_integration", "scalar_flat_K_Ricci_crosswalk", "BoxR_scheme_conversion"),
         "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete—strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop—and the exact FV anomaly action proves structural dependence of the Ricci-scalar sector. A generic covariant Volterra carrier joins the six physical triangle cells and three H1-H2 contact cells under the common Mellin boundary extension. The three generic triangle corner residues and all contact endpoint residues are exact rational five-carrier functions. Their full incidence is nonzero, so algebraic H2 cancellation is refuted generically and M14 is disposed as a nonzero Mellin-renormalized scale row. The 33 minimally-subtracted finite contact rows, all six master values and all 66 physical master-coordinate functions are exact. All eleven physical triangle channels have exact relative-IBP boundary fluxes and complete seven-function decompositions. Those physical rows, all ghost n=3 rows and the exactly integrated pure-vector ghost n=1+n=2 slice are assembled into a partial-BV five-carrier Mellin-MS representative. The selected S2(1)xS2(2) vector-plus-Schur ghost determinant is coefficient-computed. Its join to the round-S4 full-BV ledger is rejected: a same-background gauge-fixed metric Hessian, measure/Berezinian and zero-mode/contour ledger are absent. Arbitrary-background finite Schur rows, finite normalizations, parity-odd derivative data, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
     )
 
 
 def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     specs = [
-        ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "unitary_matter_no_go", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1")),
+        ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "local_anomaly_completion_audit", "unitary_matter_no_go", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1")),
         ("euclidean_determinant_factor", "round-S4 TT or ghost determinant factor", ["EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "Euclidean_elliptic_complex", "nonconformal_coefficient_match")),
         ("flat_tt_log_form_factor", "nonzero-momentum flat-TT logarithmic effective-action form factor", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1")),
         ("curvature_squared_covariant_log_form_factor", "covariant C log(Delta_C/mu^2) C effective-action form factor through curvature order two", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1")),

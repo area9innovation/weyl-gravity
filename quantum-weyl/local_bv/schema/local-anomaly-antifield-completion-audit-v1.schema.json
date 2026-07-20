@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-local-anomaly-antifield-completion-audit-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "regularity_scope",
+    "dependency_refs",
+    "exact_checks",
+    "full_BV_cohomology",
+    "two_method_coefficients",
+    "QME_lifecycles",
+    "science_forge",
+    "claim_flags",
+    "does_not_establish",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-local-anomaly-antifield-completion-audit-v1"
+    },
+    "result_id": {
+      "const": "LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT"
+    },
+    "result_state": {
+      "const": "FULL_LOCAL_BV_ANOMALY_AND_TWO_METHOD_COEFFICIENT_AUDIT_COMPLETE_STRICT_QME_OBSTRUCTED_EXTENDED_TAU_ADIC_QME_RESTORED"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]
+    },
+    "regularity_scope": {"const": "REGULAR_BACH_LOCUS"},
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 11,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["result_id", "sha256"],
+        "properties": {
+          "result_id": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 30,
+      "additionalProperties": {"const": true}
+    },
+    "full_BV_cohomology": {"type": "object"},
+    "two_method_coefficients": {"type": "object"},
+    "QME_lifecycles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strict_fixed_field_content",
+        "tau_adic_compensator_extended",
+        "Lorentzian"
+      ],
+      "properties": {
+        "strict_fixed_field_content": {
+          "const": "OBSTRUCTED_AT_ONE_LOOP_LOCAL_EUCLIDEAN"
+        },
+        "tau_adic_compensator_extended": {
+          "const": "RESTORED_AT_ONE_LOOP_LOCAL_EUCLIDEAN"
+        },
+        "Lorentzian": {"const": "OPEN"}
+      }
+    },
+    "science_forge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["work_item", "stop_condition_status"],
+      "properties": {
+        "work_item": {
+          "const": "sf:program/work/quantum-local-anomaly-antifield-completion"
+        },
+        "stop_condition_status": {"const": "DONE"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"}
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 7,
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "claim_boundary": {"type": "string", "minLength": 500},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proof_type",
+        "source_manifest",
+        "source_manifest_sha256"
+      ],
+      "properties": {
+        "proof_type": {
+          "const": "INDEPENDENT_EXACT_MULTI_ARTIFACT_COMPLETION_AUDIT"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "source_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  }
+}

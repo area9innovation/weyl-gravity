@@ -118,6 +118,18 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             local_guard["quantum_data"]["particle_interpretation"]["status"],
             "NO_CERTIFIED_MAP",
         )
+        self.assertIn(
+            "LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT",
+            {evidence["result_id"] for evidence in local_guard["evidence"]},
+        )
+        self.assertTrue(
+            any(
+                evidence["result_id"]
+                == "LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT"
+                for entry in value["entries"]
+                for evidence in entry["evidence"]
+            )
+        )
 
     def test_reduced_vacuum_cylinder_bridge4_is_certified_without_full_bv_promotion(self) -> None:
         modes = [
