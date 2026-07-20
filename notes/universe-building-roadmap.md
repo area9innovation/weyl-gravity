@@ -2004,10 +2004,13 @@ is now closed by
 rational top-descent matrix has rank 305, and all five kernel generators are
 Maxwell de Rham tails.  They have zero metric output, so the normalized
 fourth-order metric term in `Delta2` cannot equal `A^1 C` with `f2=0`.  The
-obstruction is scoped to differential order zero.  Bridge 1 next freezes the
-endpoint normalization and requests sufficient higher current coefficient
-jets for the complete order-one invariant top descent, followed by the
-fifteen-row incidence `Delta2-A^1 C=delta(f2)`.  No support-local lift or
+obstruction is scoped to differential order zero.  Bridge 1 has now frozen the
+endpoint normalization through
+`EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1`:
+`A^2(P_X^4)=X^mu c_mu_star`, with the positive orientation sign and no U(1)
+or Weyl-identity component.  It now requests sufficient higher current
+coefficient jets for the complete order-one invariant top descent, followed
+by the fifteen-row incidence `Delta2-A^1 C=delta(f2)`.  No support-local lift or
 repaired relative q2 has yet been promoted.
 
 Until one of the four admissible Berger carrier alternatives passes, atlas
