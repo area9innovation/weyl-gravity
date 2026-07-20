@@ -1483,6 +1483,74 @@ This is an existence theorem for a smooth degeneracy locus, not a
 classification of its divisor or presymplectic quotient.
 \end{proof}
 
+\begin{proposition}[Smooth current radicals on candidate (18)]
+\label{prop:candidate-18-smooth-current-radical}
+The complete candidate-(18) active resonance variety contains two exact
+families of smooth bounded points with all five stabilizer moment maps zero.
+On either family, the fixed-norm projective Lee--Wald current has a
+four-complex-dimensional radical.  Hence this active variety is not globally
+symplectic either.
+\end{proposition}
+
+\begin{proof}
+Write \(X,Y\) for the current-orthogonal active functionals on the axial and
+polar \(p\)-extra doublets and \(U,V\) for the axial and polar \(q_-\)
+amplitudes.  The exact \(L=3\) source pencil is equivalent to
+\[
+ T_1(X,U)+T_1(Y,V)=0,\qquad
+ 3T_1(X,V)+T_1(Y,U)=0.
+\]
+With
+\[
+ Q=\begin{pmatrix}\sqrt3&-\sqrt3\\1&1\end{pmatrix},
+ \qquad P=Q^{-T},
+\]
+one has \(P^TQ=I\) and
+\(P^T\bigl(\begin{smallmatrix}0&3\\1&0\end{smallmatrix}\bigr)Q
+=\operatorname{diag}(\sqrt3,-\sqrt3)\).  The resonance equations therefore
+factor into two rank-one conditions
+\(T_1(f_+,g_+)=T_1(f_-,g_-)=0\).
+
+Let \(w_x,w_y>0\) be the exact quotient-current weights of \(X,Y\), and let
+\(h_->0\) be the absolute axial \(q_-\) weight.  Direct reduction of the
+action-derived current gives
+\[
+ G_p=\begin{pmatrix}
+ w_x/12+w_y/4&-w_x/12+w_y/4\\
+ -w_x/12+w_y/4&w_x/12+w_y/4
+ \end{pmatrix},qquad
+ |G_-|=6h_-I.
+\]
+Thus \(z_+=(1,1)\) and \(z_-=(1,-1)\) are exact eigenlines of \(G_p\),
+with eigenvalues \(w_y/2\) and \(w_x/6\), respectively.  On either line set
+\(f=z_\pm\otimes e_0\), \(g=t_\pm z_\pm\otimes e_0\), where
+\(e_0=(0,0,1,0,0)\) and
+\[
+ t_+^2=\frac{w_y/2}{6h_-},qquad
+ t_-^2=\frac{w_x/6}{6h_-}.
+\]
+Both entries of \(z_\pm\) are nonzero, so both rank-one factors are at smooth
+nonzero proportional pairs.  For every \(r\perp e_0\),
+\[
+ \delta f=z_\pm\otimes r,\qquad
+ \delta g=t_\pm z_\pm\otimes r
+\]
+is tangent and current-orthogonal to the complete tangent.  These four
+complex directions are tangent to both norm levels and transverse to the
+two phase directions, so they survive projectivization.
+
+Finally, exact rational intervals put the active occupation ratio below one
+on \(R_1\) and above one on \(R_3\).  The unique positive mixture
+\(R_3+s_{18}R_1\) therefore gives equal \(p_{\rm extra}^{(1)}\) and
+\(q_-^{(2)}\) absolute-current occupations, precisely the scaling above.
+The \(m=0\) resonant carriers and spectators kill the three rotation moments,
+while the scalar cone kills the time and circle moments.  The exact bounded
+fibre-product theorem completes the claim.
+
+This proves two smooth degeneracy families, not their complete divisor or
+presymplectic quotient.
+\end{proof}
+
 \section{Current bounded frontier}
 
 The electric, Wilson, and circumference columns are closed, and the first
@@ -1714,6 +1782,8 @@ Candidate-(17)/(20) axisymmetric Zariski-tangent currents &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.json}\\
 Candidate-(17)/(20) smooth active-current radicals &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.json}\\
+Candidate-(18) smooth active-current radical families &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1786,15 +1856,22 @@ semialgebraic components.  On the active candidate-(16) component the
 separate restricted-current gate is now closed: both resonant nodes are
 \(q_-\), so the complete axial/polar restriction is negative K\"ahler on
 every complex smooth stratum, with generic real rank \(20\).  Its singular
-projective strata and rotation-zero topology remain open, as do the
-candidate-(18) nonlinear variety.  On the candidate-(17)/(20) axisymmetric
+projective strata and rotation-zero topology remain open.  On the
+candidate-(17)/(20) axisymmetric
 sections, exact occupation inequalities make the complete Zariski-tangent
 current nondegenerate, with affine inertia \((6,10,0)\) and projective inertia
 \((5,9,0)\); those section points remain algebraically singular.  Away from
 that section, each active variety also contains an exact smooth bounded point
 with a surviving projective current radical.  Hence neither is a global
 symplectic orbifold; its degeneracy divisor and presymplectic quotient remain
-open.  The four candidate-(19) and two candidate-(21) real linear sheets
+open.  Candidate (18) has the same global verdict by a different exact
+mechanism: its two rank-one parity channels have current eigenlines
+\((1,1)\) and \((1,-1)\), the scalar cone crosses equal active occupation on
+the positive mixture \(R_3+s_{18}R_1\), and each resulting smooth bounded
+family has a four-complex-dimensional projective radical.  Thus the common
+next gate for candidates (17), (18), and (20) is their presymplectic
+degeneracy divisor and quotient, not another existence witness.  The four
+candidate-(19) and two candidate-(21) real linear sheets
 are closed
 separately: every core has current inertia \((5,5,0)\) and one connected
 fixed-occupation rotation-zero link, with spectator factors included.  No

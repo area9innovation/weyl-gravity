@@ -2663,10 +2663,15 @@ affine Zariski-tangent current is therefore nondegenerate with inertia
 third-transvectant variety has a surviving projective current radical at
 positive-to-negative occupation ratio `13/192`, and positive scalar-ray
 mixtures place both witnesses inside the bounded fibre product with all five
-stabilizer moments zero.  Thus neither candidate-17/20 active variety is a
-global symplectic orbifold.  Their presymplectic degeneracy divisors and
-quotients remain open.  Candidate 18 still requires a direct active-current
-test.  All higher lifecycles remain fail-
+stabilizer moments zero.  Candidate 18 is now closed at the same existence
+level by a distinct rank-one mechanism: its exact parity-factorized current
+has eigenlines `(1,1)` and `(1,-1)`, the scalar cone crosses equal active
+occupation on the positive mixture `R3+s18 R1`, and each resulting smooth
+bounded family has a four-complex-dimensional projective current radical.
+Thus none of the candidate-17/18/20 active varieties is a global symplectic
+orbifold.  Their presymplectic degeneracy divisors and quotients remain open;
+candidate-16 singular topology and occupation gluing remain separate.  All
+higher lifecycles remain fail-
 closed.  This is nonlinear input to same-background Bridge 1 with Classical,
 not a promotion of its certified linear relative triangle/cofiber.  The
 bridge activates only on the declared restricted-current carriers; singular

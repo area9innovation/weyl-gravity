@@ -106,6 +106,7 @@ CERTIFICATES = {
     "same_sign_active_linear_sheet_rotation_links": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.json",
     "same_sign_candidate17_20_axisymmetric_restricted_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.json",
     "same_sign_L1_active_restricted_current_degeneracy": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.json",
+    "same_sign_candidate18_active_restricted_current_degeneracy": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
     "ell2_two_abs_momentum_candidate4_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json",
     "ell2_two_abs_momentum_axial_qminus_L4_triplet": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.json",
@@ -1048,6 +1049,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","Positive ray mixtures R3+sR1 on candidate 17 and R2+sR1 on candidate 20 place the smooth radical witness inside the exact necessary-and-sufficient bounded fibre product."),("CERTIFIED","The same finite witnesses lie in the smooth-secular cone; the full presymplectic degeneracy divisor remains open."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_L1_active_restricted_current_degeneracy","same_sign_candidate17_20_axisymmetric_restricted_current","same_sign_resonance_face_fibres","ell2_two_abs_momentum_scalar_L1_zero_varieties","same_sign_scalar_extreme_rays","same_sign_phase_parity_fibre_product","standard","axial_current","polar_current","taub"),
             "This is an exact smooth current-degeneracy witness on candidates 17 and 20, not a complete degeneracy-divisor or connected-component classification. Candidate 18, occupation gluing, final residual descent, all-orders integration and causal, observational or quantum maps remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate18_active_restricted_current_degeneracy",
+            _scope(theory="Weyl-Maxwell target", background="candidate 18 only at its certified compact Plebanski--Hacyan circumference", boundaries="closed S1_L times S2 before final residual quotient", carrier="the complete p-extra(n=1) x q-minus(n=2) active L=3 resonance variety at the exact ratio-one scalar-cone occupation, including p-extra kernel spectators", degree=2, parity="both transformed rank-one parity channels and two exact internal current eigenlines", ell="input 2 x 2; output L=3", m="m=0 base carriers with the full four-complex-dimensional transverse spin-two radical; m=0 spectators", k="signed n=(1,2) on candidate 18 only", omega="positive-frequency p-extra plus q-minus SUM collision into q-plus", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"OBSTRUCTED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Candidate 18, its p-extra/q-minus branch nodes, both transformed parity channels, exact current eigenlines and scalar-ray lift retain their declared carrier labels."),
+            ("OBSTRUCTED","Each of the two smooth eigenline families has a four-complex-dimensional fixed-norm projective current radical; the complete active variety is not globally symplectic."),
+            ("CERTIFIED","The exact R3+s18 R1 scalar lift kills H and P_x, while m=0 resonant carriers and spectators kill J1,J2,J3; all five stabilizer moment maps vanish."),
+            ("CERTIFIED","Both first-transvectant rank-one factors are nonzero proportional pairs and smooth; the complete affine active variety has complex dimension 22 including its ten-dimensional spectator space."),
+            _second_order(("CERTIFIED","The positive exact mixture R3+s18 R1 gives equal p-extra(n=1) and q-minus(n=2) absolute-current occupation and lies in the necessary-and-sufficient bounded fibre product."),("CERTIFIED","The same finite witnesses lie in the smooth-secular cone; the complete presymplectic degeneracy divisor remains open."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate18_active_restricted_current_degeneracy","same_sign_resonance_face_fibres","ell2_two_abs_momentum_multiplicity_two_L3_zero_varieties","same_sign_scalar_extreme_rays","same_sign_phase_parity_fibre_product","standard","axial_current","polar_current","taub"),
+            "This is an exact smooth bounded current-degeneracy-family theorem on candidate 18, not a complete degeneracy-divisor, presymplectic-quotient, connected-component or occupation-gluing classification. Final residual descent, all-orders integration and causal, observational or quantum maps remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload",
@@ -2009,6 +2022,17 @@ def build() -> dict[str, object]:
         raise AssertionError("candidate-17/20 smooth current-degeneracy theorem changed")
     if L1_degeneracy["global_active_component_symplectic_orbifold"] or L1_degeneracy["proper_moment_map_connected_fibre_theorem_applicable_globally"] or L1_degeneracy["complete_presymplectic_stratification_classified"] or L1_degeneracy["candidate18_active_restricted_current_classified"] or L1_degeneracy["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("candidate-17/20 smooth current-degeneracy theorem exceeded scope")
+    candidate18_degeneracy = records["same_sign_candidate18_active_restricted_current_degeneracy"]["classification"]
+    if not (
+        candidate18_degeneracy["candidate18_active_restricted_current_degeneracy"]
+        and candidate18_degeneracy["two_exact_internal_eigenline_families"]
+        and candidate18_degeneracy["degenerate_points_are_smooth_on_the_complete_active_resonance_variety"]
+        and candidate18_degeneracy["degenerate_points_have_all_five_stabilizer_moment_maps_zero"]
+        and candidate18_degeneracy["degenerate_points_are_bounded_second_order_tangents"]
+    ):
+        raise AssertionError("candidate-18 smooth current-degeneracy theorem changed")
+    if candidate18_degeneracy["candidate18_global_active_component_symplectic_orbifold"] or candidate18_degeneracy["complete_candidate18_degeneracy_divisor_classified"] or candidate18_degeneracy["occupation_strata_glued"] or candidate18_degeneracy["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-18 smooth current-degeneracy theorem exceeded scope")
     parity_workload = records["ell2_two_abs_momentum_parity_workload"]["classification"]
     if not (parity_workload["all_twenty_one_candidates_parity_typed"] and parity_workload["all_m_angular_nonvanishing_witnessed"] and parity_workload["odd_L_axisymmetric_fixtures_excluded"] and parity_workload["reduced_source_workload_complete"]):
         raise AssertionError("ell2 two-absolute-momentum parity workload changed")

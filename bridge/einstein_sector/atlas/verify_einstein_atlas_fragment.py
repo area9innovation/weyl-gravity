@@ -558,6 +558,16 @@ def verify() -> None:
         raise AssertionError("candidate-17/20 smooth degeneracy exceeded its correction scope")
     if "not a complete degeneracy-divisor" not in L1_degeneracy["claim_boundary"]:
         raise AssertionError("candidate-17/20 degeneracy-divisor boundary disappeared")
+    candidate18_degeneracy = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate18_active_restricted_current_degeneracy"]
+    candidate18_second = candidate18_degeneracy["mode_data"]["second_order"]
+    if candidate18_degeneracy["mode_data"]["lee_wald"]["status"] != "OBSTRUCTED" or "four-complex-dimensional" not in candidate18_degeneracy["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("candidate-18 smooth restricted-current degeneracy was hidden")
+    if candidate18_degeneracy["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "all five stabilizer" not in candidate18_degeneracy["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-18 smooth radical lost its stabilizer-zero scope")
+    if candidate18_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or "R3+s18 R1" not in candidate18_second["bounded_or_finite_quasiperiodic"]["statement"] or candidate18_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-18 smooth degeneracy exceeded its correction scope")
+    if "not a complete degeneracy-divisor" not in candidate18_degeneracy["claim_boundary"]:
+        raise AssertionError("candidate-18 degeneracy-divisor boundary disappeared")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

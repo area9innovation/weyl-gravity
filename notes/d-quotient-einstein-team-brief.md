@@ -3966,9 +3966,36 @@ ratio is `13/192`.  Positive mixtures `R3+sR1` on candidate 17 and `R2+sR1`
 on candidate 20 place the witness inside the respective exact scalar cones,
 with all five stabilizer moment maps zero.  Thus both full active varieties
 contain smooth bounded points where the restricted current is degenerate.
-Their degeneracy divisors and presymplectic quotients remain open; candidate
-18 remains the next untouched active-current gate.  The fail-closed atlas row
+Their degeneracy divisors and presymplectic quotients remain open.  The fail-closed atlas row
 is `einstein.ph.wm.interaction.ell2_same_sign_l1_active_restricted_current_degeneracy`.
+
+Candidate 18 now has the complementary exact theorem.  Its active `L=3`
+variety is a ten-complex-dimensional spectator space times two rank-one
+binary-quartic cones.  In the exact parity-factorized coordinates, the
+negative-node current is `6 h_minus I`, while the positive-node current has
+the two eigenlines
+
+```text
+z_plus=(1,1),       eigenvalue=w_y/2,
+z_minus=(1,-1),     eigenvalue=w_x/6.
+```
+
+Both weights are strictly positive by rational interval certificates.  On
+either eigenline, scaling the negative node by `t^2=eigenvalue/(6 h_minus)`
+produces a four-complex-dimensional transverse projective current radical at
+a smooth point of both rank-one factors.  The candidate-18 scalar cone
+crosses active occupation ratio one: the exact positive mixture
+`R3+s18 R1` gives equal `p_extra(n=1)` and `q_minus(n=2)` occupations.
+With `m=0` spectators, all five stabilizer moment maps vanish, so both
+families lie in the exact bounded second-order fibre product.  Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_candidate18_active_restricted_current_degeneracy`
+is therefore `OBSTRUCTED` only for the global symplectic-orbifold reading and
+`CERTIFIED` for bounded second-order membership.  The active existence-level
+current audit is now complete: candidate 16 is definite, candidates 19/21
+are nondegenerate linear sheets, and candidates 17/18/20 contain smooth
+bounded radicals.  The next common gate is the presymplectic degeneracy
+divisor and quotient on candidates 17, 18 and 20, with candidate-16 singular
+topology and occupation gluing kept separate.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
