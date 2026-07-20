@@ -228,6 +228,25 @@ def verify() -> None:
         raise AssertionError("Berger Bridge 1 overpromoted")
     if "Bridge 1 is not activated" not in berger_crosswalk["claim_boundary"]:
         raise AssertionError("Berger Bridge 1 activation gate missing")
+    berger_cauchy = by_id[
+        "classical.berger.crosswalk.retained26_to_frozen104_cauchy_bv"
+    ]
+    if berger_cauchy["descriptions"]["causal"] != "OBSTRUCTED":
+        raise AssertionError("frozen Berger q26 Cauchy obstruction missing")
+    if berger_cauchy["descriptions"]["quantum"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("rejected Berger Cauchy carrier was promoted")
+    if (
+        "at least five new degree-zero rows and one new degree-one row"
+        not in berger_cauchy["claim_boundary"]
+        or "six-row sufficiency is not proved"
+        not in berger_cauchy["claim_boundary"]
+    ):
+        raise AssertionError("Berger carrier-extension boundary missing")
+    berger_cauchy_ids = {
+        item["result_id"] for item in berger_cauchy["evidence"]
+    }
+    if "BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1" not in berger_cauchy_ids:
+        raise AssertionError("Berger Cauchy obstruction evidence missing")
     transverse = by_id["classical.nariai.transverse_kantowski_sachs_tangent"]
 
     bach_open = by_id["classical.bach_flat.open_parent_detour"]

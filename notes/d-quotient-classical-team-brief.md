@@ -2766,6 +2766,34 @@ Kantowski--Sachs branch remains slabwise causal but is not a nonzero
 whole-cylinder neighbourhood.  Hadamard, nonlinear and quantum promotions
 remain outside this theorem.
 
+### Frozen Berger Cauchy-graph obstruction (2026-07-20)
+
+`BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1` answers the accepted Quantum
+request on the frozen normalized 104-row graph.  The complete declared class
+is the set of finite-order support-local degree-\(+1\) PBW operators satisfying
+
+\[
+q_C=\operatorname{ev}_0 q_{52}^{\rm normalized}
+        \operatorname{Sol}_{A_{104}}
+\]
+
+on every formal Cauchy datum.  This identity fixes \(q_C\) uniquely, so the
+search closes at every finite differential order rather than at an arbitrary
+ansatz cutoff.  The unique member is the imported canonical graph candidate.
+The classical consumer independently reproduces its 157 nonzero square
+entries and 207 nonzero evolution-commutator entries.  Hence the frozen
+104-row lift class is empty; cyclic-pairing, real and graded-adjoint
+subclasses are empty a fortiori.
+
+The carrier-extension witness uses an exact three-dimensional representation
+of the noncommuting Berger derivative algebra, not a nonmultiplicative scalar
+symbol substitution.  Its degree-block ranks force at least five added
+degree-zero rows and one added degree-\(+1\) row.  This six-row bound is
+necessary only.  A sufficient extension, changed companion, changed
+\(A_{104}\), Cauchy/Krein form, real structure and Hadamard state remain open.
+The atlas row is therefore `OBSTRUCTED` for this frozen causal crosswalk and
+`NO_CERTIFIED_MAP` in the quantum column.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

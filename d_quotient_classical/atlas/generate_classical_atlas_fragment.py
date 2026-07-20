@@ -38,6 +38,7 @@ CERTS = {
     "Berger_redshift": ROOT / "d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
     "Berger_projector": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
     "Berger_bridge1_disposition": ROOT / "d_quotient_classical/certificates/BERGER_BRIDGE1_ADMISSIBLE_CARRIER_DISPOSITION_V1.json",
+    "Berger_q26_Cauchy_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1.json",
     "Nariai_conformal": ROOT / "d_quotient_classical/certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json",
     "Nariai_single": ROOT / "d_quotient_classical/certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json",
     "Nariai_bridge_disposition": ROOT / "d_quotient_classical/certificates/NARIAI_CURVATURE_METRIC_BRIDGE_DISPOSITION_V1.json",
@@ -286,6 +287,27 @@ def entries() -> list[dict[str, Any]]:
         _second(("NO_CERTIFIED_MAP", "No branch projector."), ("NO_CERTIFIED_MAP", "No branch projector."), ("NO_CERTIFIED_MAP", "No branch projector.")),
         _evidence("Berger_projector", "Berger_bridge1_disposition"),
         "Bridge 1 is not activated on Berger. The certified disposition selects the unsplit retained cyclic causal carrier as authoritative: the rank-36 projector and contractible rank-46 graph anchor are obstructed, while a relative cofiber, noncontractible mixed-bundle construction, and any all-mode REDUCED-MODE map remain open.",
+    ))
+    values.append(_entry(
+        "classical.berger.crosswalk.retained26_to_frozen104_cauchy_bv",
+        _scope(
+            BERGER,
+            carrier="normalized retained-26 companion solution graph -> frozen 104-row stationary formal Cauchy carrier",
+            degree="104 rows with degree profile (12,40,40,12) in degrees -1,0,1,2",
+            parity="BV grading; real/Krein structure not supplied",
+            ell="not harmonic-reduced",
+            m="not harmonic-reduced",
+            k="finite-order support-local PBW derivatives",
+            omega="stationary A104 formal evolution; no spectral split",
+        ),
+        {"causal": "OBSTRUCTED", "symplectic": "NO_CERTIFIED_MAP", "nonlinear": "NOT_APPLICABLE", "observational": "NOT_APPLICABLE", "quantum": "NO_CERTIFIED_MAP"},
+        ("OBSTRUCTED", "The unique frozen-graph compatible q_C has 157 nonzero square entries and 207 nonzero A104-commutator entries."),
+        ("NO_CERTIFIED_MAP", "No Cauchy/Krein form, real involution or graded-adjoint carrier survives an absent compatible differential."),
+        ("NOT_APPLICABLE", "This is a unary formal Cauchy-carrier obstruction, not a Taub or tangent-cone map."),
+        ("NOT_APPLICABLE", "No mode or resonance identification is made on the rejected carrier."),
+        _second(("NOT_APPLICABLE", "This is a unary carrier crosswalk."), ("NOT_APPLICABLE", "This is a unary carrier crosswalk."), ("NOT_APPLICABLE", "This is a unary carrier crosswalk.")),
+        _evidence("Berger_q26_Cauchy_obstruction"),
+        "The no-lift theorem is complete only for the frozen 104-row formal Cauchy graph with the normalized q52 solution-map identity. It holds at every finite PBW differential order because that identity fixes q_C uniquely. Any enlargement needs at least five new degree-zero rows and one new degree-one row, but six-row sufficiency is not proved. Changed companions, changed A104 data and larger carriers remain open. No Hadamard, positivity, QME, particle or quantum claim follows.",
     ))
     values.append(_entry(
         "classical.nariai.conformal_orbit.rank310_metric",

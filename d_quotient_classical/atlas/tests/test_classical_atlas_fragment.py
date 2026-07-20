@@ -133,6 +133,19 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
 
+    def test_berger_frozen_cauchy_graph_is_obstructed_not_quantized(self) -> None:
+        entry = self.entries[
+            "classical.berger.crosswalk.retained26_to_frozen104_cauchy_bv"
+        ]
+        self.assertEqual(entry["descriptions"]["causal"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["quantum"], "NO_CERTIFIED_MAP")
+        self.assertIn("six-row sufficiency is not proved", entry["claim_boundary"])
+        self.assertIn("Changed companions", entry["claim_boundary"])
+        self.assertIn(
+            "BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+
     def test_berger_bikernel_support_gate_is_fail_closed(self) -> None:
         entry = self.entries[
             "classical.berger.retained_gravity_clock_maxwell"

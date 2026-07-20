@@ -1,0 +1,95 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/certificates/BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1.json",
+      "sha256": "24d2db35fb3dc696081d1e93208fdbd0b8f31922cdac7a063033650a9e686a01"
+    },
+    {
+      "path": "d_quotient_classical/generated/berger_q26_cauchy_bv_carrier_obstruction_v1/adjoint_representation_witness.json",
+      "sha256": "65baa3b06873ceda547ac7ebbb859de2f8c467c51a927d65d959ec6529c2253f"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "c952e9bedc2c272258c132e257b325862cd10f059f1a7d3693598d6e69e00829"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile d_quotient_classical/causal_transfer/berger_q26_cauchy_bv_carrier_obstruction.py d_quotient_classical/causal_transfer/verify_berger_q26_cauchy_bv_carrier_obstruction.py d_quotient_classical/causal_transfer/tests/test_berger_q26_cauchy_bv_carrier_obstruction.py",
+        "elapsed_seconds": 0.05,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <scoped paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=quantum-weyl:. python3 d_quotient_classical/causal_transfer/berger_q26_cauchy_bv_carrier_obstruction.py --check --guards",
+        "elapsed_seconds": 23.67,
+        "status": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=quantum-weyl:. python3 d_quotient_classical/causal_transfer/verify_berger_q26_cauchy_bv_carrier_obstruction.py",
+        "elapsed_seconds": 17.22,
+        "status": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=quantum-weyl:. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_cauchy_bv_carrier_obstruction",
+        "elapsed_seconds": 23.62,
+        "status": "PASS",
+        "tests": 8
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-cauchy-bv-carrier-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1.json",
+        "elapsed_seconds": 2.31,
+        "status": "PASS"
+      }
+    ],
+    "performance_note": "The first independent SymPy-expression replay was interrupted after 135.85 seconds while repeatedly factoring PBW products. It was replaced by a mathematically equivalent independent sparse Fraction polynomial backend; exactness and independence were preserved and runtime fell to 17.22 seconds."
+  },
+  "tier_2": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment",
+        "elapsed_seconds": 0.003,
+        "status": "PASS",
+        "tests": 19
+      }
+    ],
+    "reason": "The new obstruction changes the authoritative Berger classical-to-quantum atlas crosswalk."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped intermediate classical obstruction and request answer, not a repository freeze, theorem lifecycle promotion across the programme, release, or shared-core algebra change."
+  },
+  "claim_boundary": "The frozen normalized 104-row formal Cauchy-graph lift class is empty at every finite PBW order. The six-row carrier-extension bound is necessary, not sufficient. Changed companions, changed A104 data, larger carriers, Krein structure, Hadamard data and quantum claims remain open."
+}

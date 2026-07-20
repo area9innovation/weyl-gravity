@@ -590,6 +590,70 @@
       }
     },
     {
+      "claim_boundary": "The no-lift theorem is complete only for the frozen 104-row formal Cauchy graph with the normalized q52 solution-map identity. It holds at every finite PBW differential order because that identity fixes q_C uniquely. Any enlargement needs at least five new degree-zero rows and one new degree-one row, but six-row sufficiency is not proved. Changed companions, changed A104 data and larger carriers remain open. No Hadamard, positivity, QME, particle or quantum claim follows.",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1.json",
+          "result_id": "BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1",
+          "sha256": "24d2db35fb3dc696081d1e93208fdbd0b8f31922cdac7a063033650a9e686a01"
+        }
+      ],
+      "id": "classical.berger.crosswalk.retained26_to_frozen104_cauchy_bv",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The unique frozen-graph compatible q_C has 157 nonzero square entries and 207 nonzero A104-commutator entries.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "No Cauchy/Krein form, real involution or graded-adjoint carrier survives an absent compatible differential.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "No mode or resonance identification is made on the rejected carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "This is a unary carrier crosswalk.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "This is a unary carrier crosswalk.",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "This is a unary carrier crosswalk.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "This is a unary formal Cauchy-carrier obstruction, not a Taub or tangent-cone map.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "fixed rational positive Berger clock",
+        "boundaries": "R_t x compact Berger S3; no spatial boundary",
+        "carrier": "normalized retained-26 companion solution graph -> frozen 104-row stationary formal Cauchy carrier",
+        "charge_sector": "fixed-coupling Taub/moment-map-zero clock sector; K_Berger=D-omega R is the stationary unary generator",
+        "degree": "104 rows with degree profile (12,40,40,12) in degrees -1,0,1,2",
+        "ell": "not harmonic-reduced",
+        "k": "finite-order support-local PBW derivatives",
+        "m": "not harmonic-reduced",
+        "omega": "stationary A104 formal evolution; no spectral split",
+        "parity": "BV grading; real/Krein structure not supplied",
+        "theory": "pure-Weyl gravity plus two standard-sign rotating conformal scalars and retained Maxwell sector"
+      }
+    },
+    {
       "claim_boundary": "This is the metric theorem on the conformal Nariai orbit only. The abstract transfer theorem consumes the unit-Nariai carrier independently and does not identify it with the conformal-cylinder modes. Transverse Bach-flat directions and Hadamard/nonlinear/quantum claims remain open.",
       "descriptions": {
         "causal": "CERTIFIED",
@@ -1644,7 +1708,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "ab0cbffdd43bd682bb4ff4b81a2563499e8c60ee4da4a4334990c369fe8d7047",
+  "generated_by_sha256": "92e8e812d21da4972ab07160ac3d3476b21ee9d14917baa25666832117c62c4d",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

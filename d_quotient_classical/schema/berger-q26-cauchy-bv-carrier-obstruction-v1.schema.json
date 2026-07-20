@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.invalid/schema/berger-q26-cauchy-bv-carrier-obstruction-v1.schema.json",
+  "title": "Berger q26 Cauchy BV carrier obstruction v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "request_id",
+    "dependency_refs",
+    "complete_declared_lift_class",
+    "exact_replay",
+    "obstruction",
+    "extension_lower_bound",
+    "exact_witness_payload",
+    "repair_alternatives",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-berger-q26-cauchy-bv-carrier-obstruction-v1"
+    },
+    "result_id": {
+      "const": "BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1"
+    },
+    "result_state": {
+      "const": "FROZEN_104_ROW_FORMAL_CAUCHY_GRAPH_LIFT_CLASS_EMPTY"
+    },
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "LOCAL-ALGEBRAIC",
+          "EUCLIDEAN-SPECTRAL",
+          "REDUCED-MODE",
+          "LORENTZIAN-CAUSAL"
+        ]
+      },
+      "contains": {
+        "const": "LOCAL-ALGEBRAIC"
+      }
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {
+        "$ref": "#/$defs/artifactRef"
+      }
+    },
+    "complete_declared_lift_class": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "carrier",
+        "row_degrees",
+        "coefficient_algebra",
+        "support_policy",
+        "grading",
+        "compatibility_identity",
+        "pairing_real_adjoint_policy",
+        "completeness_argument",
+        "unique_member"
+      ],
+      "properties": {
+        "carrier": {"type": "string"},
+        "row_degrees": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["minus1", "zero", "plus1", "plus2"],
+          "properties": {
+            "minus1": {"const": 12},
+            "zero": {"const": 40},
+            "plus1": {"const": 40},
+            "plus2": {"const": 12}
+          }
+        },
+        "coefficient_algebra": {"type": "string"},
+        "support_policy": {"const": "finite-order support-local"},
+        "grading": {"const": "degree plus one"},
+        "compatibility_identity": {"type": "string"},
+        "pairing_real_adjoint_policy": {"type": "string"},
+        "completeness_argument": {"type": "string"},
+        "unique_member": {"const": "imported rejected_candidate_q_Cauchy_104"}
+      }
+    },
+    "exact_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "q_Cauchy_nonzero_sparse_entries",
+        "q_Cauchy_maximum_spatial_differential_order",
+        "q_Cauchy_square_nonzero_sparse_entries",
+        "A104_q_Cauchy_commutator_nonzero_sparse_entries",
+        "q_Cauchy_squared_zero",
+        "A104_commutes_with_q_Cauchy"
+      ],
+      "properties": {
+        "q_Cauchy_nonzero_sparse_entries": {"const": 1018},
+        "q_Cauchy_maximum_spatial_differential_order": {"const": 5},
+        "q_Cauchy_square_nonzero_sparse_entries": {"const": 157},
+        "A104_q_Cauchy_commutator_nonzero_sparse_entries": {"const": 207},
+        "q_Cauchy_squared_zero": {"const": false},
+        "A104_commutes_with_q_Cauchy": {"const": false}
+      }
+    },
+    "obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "same_104_row_lift",
+        "reason",
+        "all_finite_orders",
+        "pairing_real_adjoint_subclass"
+      ],
+      "properties": {
+        "same_104_row_lift": {
+          "const": "DOES_NOT_EXIST_IN_COMPLETE_DECLARED_CLASS"
+        },
+        "reason": {"type": "string"},
+        "all_finite_orders": {"const": true},
+        "pairing_real_adjoint_subclass": {"const": "EMPTY_A_FORTIORI"}
+      }
+    },
+    "extension_lower_bound": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "degree_0_added_rows_at_least",
+        "degree_plus1_added_rows_at_least",
+        "total_added_rows_at_least",
+        "status",
+        "proof"
+      ],
+      "properties": {
+        "degree_0_added_rows_at_least": {"const": 5},
+        "degree_plus1_added_rows_at_least": {"const": 1},
+        "total_added_rows_at_least": {"const": 6},
+        "status": {"const": "NECESSARY_NOT_SUFFICIENT"},
+        "proof": {"type": "string"}
+      }
+    },
+    "exact_witness_payload": {
+      "$ref": "#/$defs/artifactRef"
+    },
+    "repair_alternatives": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "status", "note"],
+        "properties": {
+          "kind": {
+            "enum": [
+              "CHANGE_NORMALIZED_COMPANION_OR_A104",
+              "ENLARGE_CAUCHY_CARRIER"
+            ]
+          },
+          "status": {"const": "OPEN"},
+          "note": {"type": "string"}
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "BERGER_FROZEN_104_ROW_Q26_CAUCHY_GRAPH_LIFT_OBSTRUCTED",
+        "BERGER_CANONICAL_157_207_DEFECTS_REPRODUCED",
+        "BERGER_CARRIER_EXTENSION_AT_LEAST_6_ROWS",
+        "BERGER_6_ROW_EXTENSION_SUFFICIENT",
+        "BERGER_ALTERNATIVE_COMPANION_NO_GO",
+        "BERGER_CAUCHY_KREIN_FORM",
+        "BERGER_HADAMARD_DATA",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "BERGER_FROZEN_104_ROW_Q26_CAUCHY_GRAPH_LIFT_OBSTRUCTED": {"const": true},
+        "BERGER_CANONICAL_157_207_DEFECTS_REPRODUCED": {"const": true},
+        "BERGER_CARRIER_EXTENSION_AT_LEAST_6_ROWS": {"const": true},
+        "BERGER_6_ROW_EXTENSION_SUFFICIENT": {"const": false},
+        "BERGER_ALTERNATIVE_COMPANION_NO_GO": {"const": false},
+        "BERGER_CAUCHY_KREIN_FORM": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string", "minLength": 100},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 4,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "verification_commands": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "artifactRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  }
+}
