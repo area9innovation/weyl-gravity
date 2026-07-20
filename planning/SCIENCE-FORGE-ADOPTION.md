@@ -125,7 +125,9 @@ not imply adoption of all.
 | Forge exact-math kernels | use only when the work item names the kernel or an accepted Forge request supplies it |
 | Claim language | use only for claims already represented by an accepted schema and kernel |
 | **Conflux structure discovery** | **not adopted by default; explicit opt-in only** |
-| TUI, Git transaction layer, resource governor, environment installer | not yet part of this workflow |
+| `s-f work check` Git dry-run | adopted for every stream at its next coherent checkpoint |
+| `s-f work commit` Git transaction | staged pilot: use after the new-file intent gate below is closed |
+| TUI, resource governor, environment installer | not yet part of this workflow |
 
 ### Conflux rule
 
@@ -299,22 +301,68 @@ obstruction is the deliverable.
 
 ## 7. Execute under repository Git discipline
 
-During the present adoption phase, this repository's shared-master discipline
-controls Git operations:
+The landed SF5 transaction layer mechanizes this repository's shared-master
+discipline. It uses a private temporary Git index seeded from `HEAD`, computes
+`report.changed_paths ∩ item.allowed_paths`, maps this nested programme into
+the enclosing Git root, verifies the exact prospective commit tree, commits by
+compare-and-swap, and appends a `WORK_COMMITTED` event. It neither reads nor
+writes the process-global index, so other teams' staged, unstaged and untracked
+files remain untouched.
+
+Adoption proceeds without interrupting an active derivation:
+
+1. At the next coherent checkpoint, every team files its normal scoped report
+   and runs:
+
+   ```bash
+   s-f work check --item <ITEM-ID> --agent <STABLE-AGENT-ID>
+   ```
+
+   The output must show every intended path under `would-stage`, no intended
+   path under `REFUSED-outside-allowed`, and all unrelated work under
+   `not-in-report-but-dirty`. This command is read-only.
+
+2. Full `s-f work commit --push` is initially piloted on one complete package
+   containing both a new file and a modified file, while unrelated live work is
+   present. Acceptance requires the prospective-tree verifier receipt, the
+   exact intended path set in the commit, an append-only `WORK_COMMITTED` event,
+   a successful push, and byte-identical unrelated index/worktree state.
+
+3. After that pilot, all streams use:
+
+   ```bash
+   s-f work commit \
+     --item <ITEM-ID> \
+     --agent <STABLE-AGENT-ID> \
+     --push \
+     --now "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+   ```
+
+   Manual `git add`/`git commit` becomes a documented fallback only when the
+   transaction refuses or the work item explicitly assigns integration to the
+   coordinator.
+
+One rollout blocker remains as of 20 July 2026:
+`sf:forge-request/bug-science-forge-precommit-report-new-files`. The current
+interface requires a report before `work commit`, but the report containment
+gate cannot honestly name newly created deliverables before that commit exists.
+Until that request lands and passes the new-file pilot, all teams adopt
+`work check` but retain explicit-path manual commits for packages containing
+new files. Do not bypass containment with a fake or unresolvable commit SHA.
+
+Whether mechanized or manual, the invariant rules remain:
 
 1. Preserve unrelated dirty work.
-2. Stage explicit pathnames; never use `git add .`.
+2. Never use `git add .`, `git commit -a`, stash, reset, or force-push.
 3. Run the smallest tests capable of falsifying the changed claim.
 4. Record elapsed times and why higher tiers were not required.
 5. Commit coherent work directly to `master`.
 6. Fetch again before pushing and integrate safely without rewriting published
    history.
-7. Never force-push or use destructive cleanup.
 
-Some generic Forge material describes coordinator-side integration. That is
-not the active Git policy for this repository. Here, teams commit and push
-their own coherent work as required by `AGENTS.md`, and report the resulting
-commit and explicit paths through `s-f`.
+Because the isolated index intentionally leaves the shared index untouched, a
+just-committed file may appear as `MM` in `git status`. That is expected. Do
+not “repair” it with `git reset` or broad staging.
 
 ## 8. Checkpoint and renew
 

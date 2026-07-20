@@ -6,10 +6,18 @@
   (LOCAL-ALGEBRAIC / EUCLIDEAN-SPECTRAL / REDUCED-MODE / LORENTZIAN-CAUSAL tags;
   never promote one implicitly), exact rational/algebraic arithmetic in every
   canonical form/rank/cocycle test, and the receipts requirement.
-- Follow this repository's shared-master Git discipline: teams commit and push
-  their own coherent work by explicit pathspec and report the resulting commit
-  through `s-f`. Do NOT edit generated views, IR graphs, gate/receipt files, or
-  another team's certificates, snapshots, or history.
+- Follow this repository's shared-master Git discipline. At the next coherent
+  checkpoint, run `s-f work check --item <id> --agent <you>` and confirm that
+  only report∩allowed paths would stage and every unrelated dirty path is left
+  alone. Until
+  `sf:forge-request/bug-science-forge-precommit-report-new-files` lands and its
+  new-file pilot passes, packages that create new files still use the manual
+  explicit-path commit/push fallback and report the resulting commit through
+  `s-f`; never bypass containment with a fake SHA. After that gate, prefer
+  `s-f work commit --item <id> --agent <you> --push --now <ISO>`, whose isolated
+  index and prospective-tree verifier mechanize the same discipline. Do NOT
+  edit generated views, IR graphs, gate/receipt files, or another team's
+  certificates, snapshots, or history.
 - Research leases do not edit `notes/universe-building-roadmap.md` or maintain
   lifecycle prose in a shared planning document.  The certificate, report,
   atlas fragment, `s-f work report`, and append-only close-out event are the
