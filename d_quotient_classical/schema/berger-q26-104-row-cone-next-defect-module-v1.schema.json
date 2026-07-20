@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-q26-104-row-cone-next-defect-module-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "scope",
+    "pinned_inputs",
+    "next_defect_module",
+    "proof",
+    "exact_payload",
+    "classification",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-berger-q26-104-row-cone-next-defect-module-v1"
+    },
+    "result_id": {
+      "const": "BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1"
+    },
+    "result_state": {
+      "const": "CANONICAL_CONE_LIFT_DEFECT_REGENERATES_FULL_104_ROW_FREE_ORBIT"
+    },
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "LORENTZIAN-CAUSAL"}
+      ],
+      "items": false
+    },
+    "scope": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {"type": "string"}
+    },
+    "pinned_inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_cone_obstruction",
+        "canonical_cone_rational_witness",
+        "module_lower_bound"
+      ],
+      "properties": {
+        "canonical_cone_obstruction": {"$ref": "#/$defs/artifact"},
+        "canonical_cone_rational_witness": {"$ref": "#/$defs/artifact"},
+        "module_lower_bound": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "next_defect_module": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "right_generator",
+        "left_adjoint_generator",
+        "spin4_raw_ranks",
+        "closure_actions",
+        "level_independent_columns",
+        "ambient_dimension",
+        "full_closure",
+        "full_minor_determinant_mod_1009",
+        "additional_free_rows_in_this_tower_at_least",
+        "canonical_tower_total_added_rows_at_least",
+        "canonical_tower_total_carrier_rows_at_least"
+      ],
+      "properties": {
+        "right_generator": {"type": "string"},
+        "left_adjoint_generator": {"type": "string"},
+        "spin4_raw_ranks": {
+          "type": "object",
+          "minProperties": 5,
+          "additionalProperties": {"type": "integer", "minimum": 0}
+        },
+        "closure_actions": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string"}
+        },
+        "level_independent_columns": {"const": [97, 344, 856, 936]},
+        "ambient_dimension": {"const": 936},
+        "full_closure": {"const": true},
+        "full_minor_determinant_mod_1009": {"const": 411},
+        "additional_free_rows_in_this_tower_at_least": {"const": 104},
+        "canonical_tower_total_added_rows_at_least": {"const": 208},
+        "canonical_tower_total_carrier_rows_at_least": {"const": 312}
+      }
+    },
+    "proof": {
+      "type": "object",
+      "minProperties": 3,
+      "additionalProperties": {"type": "string"}
+    },
+    "exact_payload": {"$ref": "#/$defs/artifact"},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_cone_next_defect_closure_full_on_spin4",
+        "canonical_same_profile_cone_tower_needs_at_least_208_new_rows",
+        "canonical_same_profile_cone_tower_312_row_carrier_constructed",
+        "all_non_cone_104_row_completions_obstructed",
+        "global_minimum_added_rows_raised_above_104",
+        "no_finite_closure_theorem",
+        "physical_Cauchy_pairing_constructed",
+        "Hadamard_or_quantum_claim"
+      ],
+      "properties": {
+        "canonical_cone_next_defect_closure_full_on_spin4": {"const": true},
+        "canonical_same_profile_cone_tower_needs_at_least_208_new_rows": {"const": true},
+        "canonical_same_profile_cone_tower_312_row_carrier_constructed": {"const": false},
+        "all_non_cone_104_row_completions_obstructed": {"const": false},
+        "global_minimum_added_rows_raised_above_104": {"const": false},
+        "no_finite_closure_theorem": {"const": false},
+        "physical_Cauchy_pairing_constructed": {"const": false},
+        "Hadamard_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {
+      "const": "LEAVE_THE_CANONICAL_CONE_TOWER_AND_SOLVE_THE_COMPLETE_NON_CONE_104_ROW_FACTOR_SYSTEM"
+    },
+    "claim_boundary": {"type": "string", "minLength": 200},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 4,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "verification_commands": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string", "minLength": 10}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 2},
+        "path": {"type": "string", "minLength": 2},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

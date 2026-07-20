@@ -244,6 +244,8 @@ def verify() -> None:
         not in berger_cauchy["claim_boundary"]
         or "doubled-cone strictification is nilpotent"
         not in berger_cauchy["claim_boundary"]
+        or "208 added, 312 total"
+        not in berger_cauchy["claim_boundary"]
         or "every non-cone 104-row factorization"
         not in berger_cauchy["claim_boundary"]
     ):
@@ -268,6 +270,11 @@ def verify() -> None:
         not in berger_cauchy_ids
     ):
         raise AssertionError("Berger canonical 104-row cone evidence missing")
+    if (
+        "BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1"
+        not in berger_cauchy_ids
+    ):
+        raise AssertionError("Berger cone next-defect evidence missing")
     transverse = by_id["classical.nariai.transverse_kantowski_sachs_tangent"]
 
     bach_open = by_id["classical.bach_flat.open_parent_detour"]

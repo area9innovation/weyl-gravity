@@ -144,6 +144,7 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             "doubled-cone strictification is nilpotent",
             entry["claim_boundary"],
         )
+        self.assertIn("208 added, 312 total", entry["claim_boundary"])
         self.assertIn(
             "every non-cone 104-row factorization",
             entry["claim_boundary"],
@@ -163,6 +164,10 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         )
         self.assertIn(
             "BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
 

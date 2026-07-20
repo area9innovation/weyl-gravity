@@ -1,0 +1,97 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1_TIER_RECEIPT",
+  "claim_id": "BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1.json",
+      "sha256": "396d2c12abffc3ae86d448f10723b19d38a5abb03afb10da20f3f2da9226dd64"
+    },
+    {
+      "path": "d_quotient_classical/generated/berger_q26_104_row_cone_next_defect_module_v1/spin4_next_defect_closure_witness.json",
+      "sha256": "e4f79385b254eb8c67e4029d888981ec69a4e26fc1ddb1e911eba6b62c99ace5"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "bfb2d44867417caccde34c8cba8e4baeea158d3da3bf0f1ceb35a6f235edff9f"
+    },
+    {
+      "path": "d_quotient_classical/reports/berger-q26-104-row-cone-next-defect-module-v1.md",
+      "sha256": "8b1b084a29fab050eb7605e7b84c9877d989f90d122442bc1e232913210f09d9"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile d_quotient_classical/causal_transfer/berger_q26_104_row_cone_next_defect_module.py d_quotient_classical/causal_transfer/verify_berger_q26_104_row_cone_next_defect_module.py d_quotient_classical/causal_transfer/tests/test_berger_q26_104_row_cone_next_defect_module.py",
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <scoped paths>",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.berger_q26_104_row_cone_next_defect_module --check --guards",
+        "elapsed_seconds": 19.57,
+        "status": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_104_row_cone_next_defect_module",
+        "elapsed_seconds": 27.71,
+        "status": "PASS",
+        "independent_backend": "Sym^4 quotient by the invariant quadratic ideal",
+        "independent_full_determinant_mod_1009": 472
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_104_row_cone_next_defect_module",
+        "elapsed_seconds": 46.58,
+        "status": "PASS",
+        "tests": 4
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-104-row-cone-next-defect-module-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1.json",
+        "elapsed_seconds": 2.22,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_classical_atlas_fragment.py --check",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment",
+        "status": "PASS",
+        "tests": 19
+      }
+    ],
+    "reason": "The regenerated cone defect orbit changes the fail-closed Berger classical-to-quantum atlas crosswalk."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is an architecture-scoped next-defect lower bound, not a terminal general 104-row theorem, freeze, release, or shared-core algebra change."
+  },
+  "claim_boundary": "The right/adjoint evolution-lift defect of the canonical same-profile cone closes to a full represented free orbit and forces another 104 rows in that architecture. This does not obstruct general non-cone 104-row factorizations, raise the global lower bound, construct the 312-row carrier or physical pairing, or establish Hadamard or quantum data."
+}

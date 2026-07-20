@@ -2881,6 +2881,29 @@ off-diagonal 104-row factorizations remain open, and the global 104-row lower
 bound is not raised.  No accepted physical pairing, real structure, retained
 contraction, Hadamard or quantum result follows.
 
+### Canonical-cone next defect module (2026-07-20)
+
+`BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1` closes the residual
+evolution-lift obstruction rather than merely recording the failed equation.
+In the exact rational spin-four representation, the right obstruction
+\(\operatorname{Im}(qA|_{\ker q})\) has rank 27, its free-adjoint partner has
+rank 70, and their combined rank is 97.  Saturation under \(q\), \(A_{104}\)
+and the free-dual actions gives
+
+\[
+97\longrightarrow344\longrightarrow856\longrightarrow936,
+\]
+
+with final determinant \(411\pmod{1009}\).  An independent quotient-model
+rail obtains determinant \(472\pmod{1009}\).  Thus repairing the canonical
+same-profile cone regenerates a full free orbit and requires at least another
+104 rows: at least 208 added rows and 312 rows total in that architecture.
+
+This does not raise the global lower bound.  A genuinely non-cone 104-row
+off-diagonal factorization may avoid this regenerated orbit and remains the
+active gate.  No 312-row construction, physical pairing, retained
+contraction, Hadamard or quantum theorem is claimed.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;
