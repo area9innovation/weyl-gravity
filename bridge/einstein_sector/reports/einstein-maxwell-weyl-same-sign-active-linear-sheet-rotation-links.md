@@ -32,6 +32,9 @@ Candidate 16 has a separate singular determinantal carrier.  Occupation
 gluing, final residual descent, all-orders integration and causal maps are
 not promoted here.
 
-Verification on 2026-07-20 passed the producer, independent verifier and
+Verification on 2026-07-19 passed the producer, independent verifier and
 three focused tests.  The certificate content-addresses the resonance-face,
 linear-variety, fibre-product, stabilizer and action-derived current inputs.
+The regenerated fail-closed Einstein atlas passes its independent verifier
+and all 98 focused tests.  Paper 13 compiles in three clean `pdflatex` passes
+to 25 pages with no warnings or box errors.

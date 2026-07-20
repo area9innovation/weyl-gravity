@@ -3905,6 +3905,23 @@ variety is singular, so its lifted-rotation zero-fibre topology remains
 restricted-current calculations.  This is nonlinear input to Bridge 1 and
 does not promote the linear relative triangle or any causal map.
 
+The explicit linear active sheets on candidates 19 and 21 are now closed as
+well.  Candidate 19 has four real pencil-eigenline sheets and candidate 21
+has two real parity-proportional sheets.  Each active core is a direct sum of
+one positive `C^5` node subspace and one negative `C^5` node subspace, so its
+restricted Hermitian current has inertia `(5,5,0)`.  Fixing the two resonant
+norms and quotienting their phases gives `CP^4 x CP^4`; definite spectator
+projective factors preserve nondegeneracy.  The lifted `SO(3)` zero fibre is
+nonempty and connected on every fixed-occupation support stratum.  The four
+and two sheets are not identified.
+
+Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_active_linear_sheet_rotation_links`
+records the componentwise theorem.  The remaining active restricted-current
+calculations are the nonlinear varieties of candidates 17, 18 and 20,
+together with the singular Hamiltonian topology of candidate 16.  Occupation
+gluing and every higher lifecycle remain fail-closed.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

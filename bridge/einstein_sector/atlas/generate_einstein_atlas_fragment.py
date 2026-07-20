@@ -103,6 +103,7 @@ CERTIFICATES = {
     "same_sign_automatic_face_full_internal_rotation_normal_form": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.json",
     "same_sign_automatic_face_full_rotation_normal_form": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.json",
     "same_sign_candidate16_active_restricted_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.json",
+    "same_sign_active_linear_sheet_rotation_links": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
     "ell2_two_abs_momentum_candidate4_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json",
     "ell2_two_abs_momentum_axial_qminus_L4_triplet": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.json",
@@ -1009,6 +1010,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","The separately certified axisymmetric section supplies nonzero bounded points, but the complete singular rotation-zero intersection is not classified."),("CERTIFIED","Those finite points also lie in the smooth-secular class; no all-orders claim follows."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_candidate16_active_restricted_current","same_sign_resonance_face_fibres","ell2_two_abs_momentum_target_doublet_L3_zero_varieties","same_sign_scalar_extreme_rays","axial_current","polar_current"),
             "This closes only the candidate-16 stratumwise restricted-current gate. Singular Hamiltonian topology, candidates 17--21, final residual descent, all-orders integration and causal, observational or quantum claims remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_active_linear_sheet_rotation_links",
+            _scope(theory="Weyl-Maxwell target", background="candidates 19 and 21 only, retained as distinct compact Plebanski--Hacyan collision backgrounds", boundaries="closed S1_L times S2 before final residual quotient", carrier="the four real pencil-eigenline sheets of candidate 19 and two real parity-proportional sheets of candidate 21 at every fixed active occupation and spectator support stratum", degree=2, parity="complete axial/polar graph or eigenline subspaces on resonant nodes and complete spaces on spectators", ell="input 2 x 2; output L=4", m="all m=-2,...,2", k="signed n=(1,2), candidatewise and never identified across rho", omega="candidate-specific positive-frequency SUM collision", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","The four candidate-19 and two candidate-21 real active sheets remain distinct; no residual or cross-background identification is made."),
+            ("CERTIFIED","Every active core is a positive C^5 node subspace orthogonal to a negative C^5 node subspace, so the restricted Hermitian current has inertia (5,5,0); definite spectator blocks preserve nondegeneracy."),
+            ("CERTIFIED","At every fixed occupation, each sheet's CP^4 x CP^4 core and its spectator projective factors have a nonempty connected lifted-rotation zero fibre."),
+            ("CERTIFIED","The six declared linear sheets are complete active components of their candidate-specific cross-fibre resonance varieties."),
+            _second_order(("CERTIFIED","Each of the six sheets has one connected fixed-occupation bounded rotation-zero link; different sheets and occupation strata are not glued."),("CERTIFIED","The same finite links lie in the smooth-secular cone without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_active_linear_sheet_rotation_links","same_sign_resonance_face_fibres","ell2_two_abs_momentum_regular_pencil_L4_zero_varieties","ell2_two_abs_momentum_scalar_L4_zero_varieties","same_sign_phase_parity_fibre_product","taub","axial_current","polar_current"),
+            "This covers only the six smooth real linear active sheets on candidates 19 and 21. Candidates 16--18 and 20, sheet identification, occupation gluing, final residual descent, all-orders integration and causal, observational or quantum claims remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload",
@@ -1937,6 +1950,17 @@ def build() -> dict[str, object]:
         raise AssertionError("candidate-16 active restricted-current theorem changed")
     if candidate16_current["rotation_zero_fibre_connected"] or candidate16_current["singular_stratum_moment_map_topology_classified"] or candidate16_current["candidates17_through21_restricted_currents_classified"] or candidate16_current["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("candidate-16 active restricted-current theorem exceeded scope")
+    linear_sheets = records["same_sign_active_linear_sheet_rotation_links"]["classification"]
+    if not (
+        linear_sheets["candidate19_four_active_linear_sheets_classified"]
+        and linear_sheets["candidate21_two_active_linear_sheets_classified"]
+        and linear_sheets["all_six_restricted_currents_nondegenerate"]
+        and linear_sheets["all_six_fixed_occupation_rotation_zero_links_connected_componentwise"]
+        and linear_sheets["spectator_support_strata_included"]
+    ):
+        raise AssertionError("active linear-sheet rotation-link theorem changed")
+    if linear_sheets["candidate16_singular_active_variety_classified_here"] or linear_sheets["candidates17_18_20_active_varieties_classified"] or linear_sheets["different_active_sheets_identified_by_residual_symmetry"] or linear_sheets["occupation_strata_glued"] or linear_sheets["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("active linear-sheet rotation-link theorem exceeded scope")
     parity_workload = records["ell2_two_abs_momentum_parity_workload"]["classification"]
     if not (parity_workload["all_twenty_one_candidates_parity_typed"] and parity_workload["all_m_angular_nonvanishing_witnessed"] and parity_workload["odd_L_axisymmetric_fixtures_excluded"] and parity_workload["reduced_source_workload_complete"]):
         raise AssertionError("ell2 two-absolute-momentum parity workload changed")

@@ -1349,6 +1349,36 @@ projective variety itself is singular, so this proposition does not apply a
 smooth-orbifold connected-fibre theorem to its full rotation-zero set.
 \end{proof}
 
+\begin{proposition}[Active linear-sheet rotation links]
+Each of the four real pencil-eigenline components on candidate (19) and the
+two real parity-proportional components on candidate (21) has a nondegenerate
+restricted Lee--Wald current.  Its resonant core has Hermitian inertia
+\((5,5,0)\).  At every fixed nonzero active occupation, each component has a
+nonempty connected lifted-rotation zero link, including arbitrary occupied
+spectator nodes.  The four and two components remain distinct.
+\end{proposition}
+
+\begin{proof}
+Every declared sheet is the direct sum of one complex five-dimensional
+subspace of a positive-current node and one complex five-dimensional
+subspace of a negative-current node.  Each ambient node form is definite,
+so its restriction to a nonzero linear graph or pencil eigenline remains
+definite.  Spectral orthogonality between distinct branch--momentum nodes
+then gives inertia \((5,5,0)\); occupied spectators add definite orthogonal
+blocks and cannot create a radical.
+
+After fixing the two resonant-node norms and quotienting their phases, the
+core is \(\mathbb{CP}^4\times\mathbb{CP}^4\) with one positive and one
+negative weighted Fubini--Study factor.  Spectators add projective factors.
+The diagonal lifted \(SO(3)\) action preserves each internal graph or
+eigenline and is Hamiltonian.  Its zero fibre is nonempty by choosing the
+spin-two \(m=0\) vector in every factor.  Compactness makes the moment map
+proper, so the connected-fibre theorem gives a connected zero fibre;
+restoring the connected node-phase torus preserves connectedness.  Distinct
+parity ratios and pencil eigenlines are unchanged by node phases, and the
+active nonzero-norm condition prevents passage through a one-sided component.
+\end{proof}
+
 \section{Current bounded frontier}
 
 The electric, Wilson, and circumference columns are closed, and the first
@@ -1574,6 +1604,8 @@ Complete unquotiented and phase-quotiented fixed-norm rotation Hessians &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.json}\\
 Candidate-(16) active restricted-current theorem &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.json}\\
+Candidate-(19)/(21) active linear-sheet rotation links &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1647,9 +1679,13 @@ separate restricted-current gate is now closed: both resonant nodes are
 \(q_-\), so the complete axial/polar restriction is negative K\"ahler on
 every complex smooth stratum, with generic real rank \(20\).  Its singular
 projective strata and rotation-zero topology remain open, as do the
-indefinite restricted currents on candidates (17)--(21).  The exact
-fibre-product equation is already certified; complex resonance components
-and occupation-level sums need not be recomputed.
+nonlinear restricted currents on candidates (17), (18), and (20).  The four
+candidate-(19) and two candidate-(21) real linear sheets are now closed
+separately: every core has current inertia \((5,5,0)\) and one connected
+fixed-occupation rotation-zero link, with spectator factors included.  No
+distinct sheets are identified.  The exact fibre-product equation is already
+certified; complex resonance components and occupation-level sums need not
+be recomputed.
 The symbolic-\(\ell\) standard-branch resonance and collision theorem is now
 closed, as is the complete 164-coefficient two-momentum branch-basis census.
 The next exact enlargement is to classify the real connected components of

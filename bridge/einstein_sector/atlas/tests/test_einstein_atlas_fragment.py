@@ -249,6 +249,15 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("candidates 17--21", entry["claim_boundary"])
 
+    def test_same_sign_active_linear_sheet_rotation_links_are_componentwise(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_active_linear_sheet_rotation_links"]
+        second = entry["mode_data"]["second_order"]
+        self.assertIn("inertia (5,5,0)", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("CP^4 x CP^4", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("one connected", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("candidates 19 and 21", entry["claim_boundary"])
+
     def test_first_two_abs_momentum_parity_workload_is_fail_closed(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
         second = entry["mode_data"]["second_order"]

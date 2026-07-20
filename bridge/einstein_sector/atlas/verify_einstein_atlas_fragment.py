@@ -532,6 +532,14 @@ def verify() -> None:
         raise AssertionError("candidate-16 singular topology was promoted")
     if candidate16_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "candidates 17--21" not in candidate16_current["claim_boundary"]:
         raise AssertionError("candidate-16 active restricted-current theorem exceeded scope")
+    linear_sheets = by_id["einstein.ph.wm.interaction.ell2_same_sign_active_linear_sheet_rotation_links"]
+    linear_second = linear_sheets["mode_data"]["second_order"]
+    if linear_sheets["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "inertia (5,5,0)" not in linear_sheets["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("active linear-sheet restricted current changed")
+    if linear_sheets["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "CP^4 x CP^4" not in linear_sheets["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("active linear-sheet rotation topology changed")
+    if "one connected" not in linear_second["bounded_or_finite_quasiperiodic"]["statement"] or linear_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "candidates 19 and 21" not in linear_sheets["claim_boundary"]:
+        raise AssertionError("active linear-sheet theorem exceeded scope")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

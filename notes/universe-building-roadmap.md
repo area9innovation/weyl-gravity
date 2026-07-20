@@ -2626,13 +2626,19 @@ gate is now closed on candidate 16: its two resonant `q_minus` nodes have the
 same negative current sign, so the complete axial/polar current restricts as
 a negative Kähler form on every complex smooth stratum of the irreducible
 projective resonance tenfold, with generic real symplectic rank `20`.  The
-variety is singular, so its rotation-zero-fibre topology remains open;
-candidates 17--21 have indefinite input signs and still require direct
-componentwise tests.  All higher lifecycles remain fail-closed.  This is
-nonlinear input to same-background Bridge 1 with Classical, not a promotion
-of its certified linear relative triangle/cofiber.  The bridge activates on
-candidate 16 only at the restricted-current lifecycle; the singular topology
-and every absent componentwise map remain `NO_CERTIFIED_MAP` or `OPEN`.
+variety is singular, so its rotation-zero-fibre topology remains open.  The
+six smooth real linear active sheets on candidates 19 and 21 are also closed:
+each is a positive `C^5` node subspace orthogonal to a negative `C^5` node
+subspace, has current inertia `(5,5,0)`, and has one connected fixed-
+occupation lifted-rotation zero link after spectator factors are included.
+The four candidate-19 and two candidate-21 sheets remain distinct.  The
+nonlinear active varieties of candidates 17, 18 and 20 still require direct
+componentwise current tests.  All higher lifecycles remain fail-closed.  This
+is nonlinear input to same-background Bridge 1 with Classical, not a
+promotion of its certified linear relative triangle/cofiber.  The bridge
+activates only on the declared restricted-current components; the singular
+topology and every absent componentwise map remain `NO_CERTIFIED_MAP` or
+`OPEN`.
 
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
