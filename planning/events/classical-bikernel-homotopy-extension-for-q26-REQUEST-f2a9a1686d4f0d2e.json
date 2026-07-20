@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-bikernel-homotopy-extension-for-q26-REQUEST-f2a9a1686d4f0d2e",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/classical-bikernel-homotopy-extension-for-q26-REQUEST-f2a9a1686d4f0d2e.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/classical-bikernel-homotopy-extension-for-q26", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T09:27:22Z", "seq": 1, "payload": {"target": "sf:program/request/classical-bikernel-homotopy-extension-for-q26-to-quantum-qme-f2a9a1686d4f0d2e", "request_id": "sf:program/request/classical-bikernel-homotopy-extension-for-q26-to-quantum-qme-f2a9a1686d4f0d2e", "from_item": "sf:program/work/classical-bikernel-homotopy-extension-for-q26", "to_stream": "quantum-qme", "need": "C26_BIKERNEL_SUPPORT_PROFILE_OR_SERIALIZED_SMOOTH_REMAINDER: export the retained C26=[H26_plus,q26] smooth remainder with stable artifact/receipt IDs and content hashes, including independently checkable x/y past-compact, future-compact, and time-compact booleans with proofs; stationary/harmonic support or serialized mode/kernel data sufficient to test the certified Lambda26-plus/minus support domains; and, if support is full, the pairing-null projection needed to formulate the minimal carrier extension. This request does not ask for Hadamard, positivity, or QME promotion.", "typed": "dependency-artifact"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "quantum-qme"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/classical-bikernel-homotopy-extension-for-q26"}]
+}
