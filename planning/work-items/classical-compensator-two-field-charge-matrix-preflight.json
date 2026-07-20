@@ -1,0 +1,42 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-two-field-charge-matrix-preflight",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-two-field-charge-matrix-preflight",
+  "source": {
+    "path": "planning/work-items/classical-compensator-two-field-charge-matrix-preflight.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "If one complex compensator with separated scale and compact-phase connections still fails, test the smallest additional-field mechanism: a two-field charge matrix that can separate the anomaly compensator, scale-setting radial direction and physical relational phase.",
+    "stop_condition": "Import the terminal separated scale/U1 preflight and its conditional full-gate disposition.  If the one-field theory passes the full gate, close this alternative as NOT_ACTIVATED.  Otherwise declare two complex or real-plus-complex compensator representations with a general integer compact-U1 charge matrix and real scale weights, quotient equivalent bases by GL(Z) and field redefinitions, and classify the minimal faithful rank cases.  For the lowest two-derivative parity-even action ansatz derive Ward identities, gauge/reducibility rank, stationary cylinder and Berger equations, dressed-trace disposition, scalar kinetic/principal forms and raw-D/phase charges.  Use exact Smith/Hermite normal forms for charge lattices and exact elimination for couplings.  Either exhibit the first nonempty healthy representation/coupling locus or prove the incompatibility within the declared minimal ansatz.  Stop before a full BV carrier unless a genuine locus survives.",
+    "current_gate": "minimal two-compensator charge-lattice and health preflight",
+    "forbid": "no arbitrary real compact charges; no duplicate charge bases counted as distinct theories; no sampled scan; no extra field called a new gauge generator without the action Ward identity; no higher derivatives or unrestricted potential fitted to force stationarity; no causal or quantum claim from the preflight",
+    "depends_on": [
+      "sf:program/work/classical-compensator-complex-scale-u1-full-bv-causal-gate#ANY_TERMINAL"
+    ],
+    "activates": [
+      "full action-derived BV/causal completion only for a certified passing charge stratum"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/compensator/",
+      "d_quotient_classical/reports/",
+      "d_quotient_classical/receipts/",
+      "d_quotient_classical/schema/",
+      "notes/",
+      "paper/",
+      "reports/",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "FAIL-FAST REPRESENTATION PREFLIGHT.  Canonicalize the charge lattice before solving background equations; use Forge SNF/polyhedral kernels as independent rails.",
+    "notes": [
+      "This does not test general multifield scalar-tensor theory.  It isolates the smallest representation change capable of separating three roles that one field may be unable to carry."
+    ],
+    "input_commit": "68222198f",
+    "stream": "classical"
+  },
+  "edges": []
+}
