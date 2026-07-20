@@ -29,7 +29,7 @@ COVERAGE_REPORT = (
 )
 OUTPUT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json"
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "d1a5fccfb25a6656bff1b9dea489e52cd23db2a36ed4301c5db087b3e95bf817"
+    "372e7bbc73534e7a39593f07b032f7ffbf74acad80895342643c20e3fa706a9b"
 )
 ALL_LOOP_INPUT_COMMIT = "7fabe987861f1e4facfc2282e7023274df2ddc72"
 ALL_LOOP_INPUT_SHA256 = (
@@ -57,6 +57,8 @@ INPUTS = {
     "dressed_four_dimensional_regulator_preflight": ROOT / "quantum-weyl/anomalies/certificates/DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT.json",
     "candidate_A_classical_obstruction": ROOT / "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1.json",
     "candidate_B_classical_obstruction": ROOT / "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1.json",
+    "minimal_compensator_action_classification": ROOT / "d_quotient_classical/certificates/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1.json",
+    "minimal_compensator_action_classification_receipt": ROOT / "d_quotient_classical/receipts/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1_TIER_RECEIPT.json",
     "Q1_disposition": ROOT / "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
     "relative_Einstein_Weyl_cyclic_pushforward": ROOT / "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
@@ -146,6 +148,10 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     four_d_regulator = values["dressed_four_dimensional_regulator_preflight"]
     candidate_a = values["candidate_A_classical_obstruction"]
     candidate_b = values["candidate_B_classical_obstruction"]
+    minimal_family = values["minimal_compensator_action_classification"]
+    minimal_family_receipt = values[
+        "minimal_compensator_action_classification_receipt"
+    ]
     q1 = values["Q1_disposition"]
     relative_cyclic_pushforward = values[
         "relative_Einstein_Weyl_cyclic_pushforward"
@@ -273,6 +279,17 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         or _sha256(INPUTS["candidate_B_classical_obstruction"])
         != "e8a8aeb97398c3b8812b20118daa56850e32a516bf4e9db15c00b99cec7a8faa"
         or candidate_b["claim_flags"]["ANOMALY_OR_QME"] is not False
+        or _sha256(INPUTS["minimal_compensator_action_classification"])
+        != "41ce6db6ab8fc58f4cc1ecedb205f732fd3dcee645f9408506d3535545f7026a"
+        or _sha256(INPUTS["minimal_compensator_action_classification_receipt"])
+        != "229828007c736b99b3aee2bd0f817fe2d32035da1e4349752f1855cb93628106"
+        or minimal_family["result_state"]
+        != "SCOPED_MINIMAL_ACTION_GOOD_LOCUS_EMPTY"
+        or minimal_family["seven_gate_classification"]["all_seven_gate_good_locus"]
+        != "EMPTY"
+        or minimal_family["claim_flags"]["UNIVERSAL_COMPENSATOR_NO_GO"] is not False
+        or minimal_family["selection"]["candidate_C_selected"] is not False
+        or minimal_family_receipt["tier_1"]["status"] != "PASS"
     ):
         raise ValueError("Paper 12 conditional all-loop dependency drifted")
     if (
@@ -1067,6 +1084,7 @@ def build() -> dict[str, Any]:
     four_d_regulator = values["dressed_four_dimensional_regulator_preflight"]
     candidate_a = values["candidate_A_classical_obstruction"]
     candidate_b = values["candidate_B_classical_obstruction"]
+    minimal_family = values["minimal_compensator_action_classification"]
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
@@ -1254,6 +1272,36 @@ def build() -> dict[str, Any]:
                 "imported_hessian": False,
             },
             "universal_compensator_no_go": False,
+        },
+        "minimal_compensator_family_status": {
+            "result_id": minimal_family["result_id"],
+            "result_state": minimal_family["result_state"],
+            "source_commit": "a5924e707352bab92db2caa4c19cf4223c60f0e3",
+            "certificate_sha256": _sha256(
+                INPUTS["minimal_compensator_action_classification"]
+            ),
+            "independent_receipt_sha256": _sha256(
+                INPUTS["minimal_compensator_action_classification_receipt"]
+            ),
+            "declared_scope": minimal_family["action_family"]["declared_scope"],
+            "seven_gate_good_locus": minimal_family[
+                "seven_gate_classification"
+            ]["all_seven_gate_good_locus"],
+            "excluded_enlarged_classes": minimal_family["action_family"][
+                "outside_declared_minimal_class"
+            ],
+            "parity_odd_excluded": minimal_family["action_family"][
+                "parity_odd_excluded"
+            ],
+            "candidate_C_selected": minimal_family["selection"][
+                "candidate_C_selected"
+            ],
+            "selected_action_receiver": minimal_family["claim_flags"][
+                "SELECTED_ACTION_RECEIVER"
+            ],
+            "universal_compensator_no_go": minimal_family["claim_flags"][
+                "UNIVERSAL_COMPENSATOR_NO_GO"
+            ],
         },
         "certified_claims": {
             "strict_quotient_scope": "REGULAR_BACH_LOCUS",

@@ -7,7 +7,7 @@
       "body": {
         "paper_class": "technical",
         "path": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-        "manuscript_sha256": "d1a5fccfb25a6656bff1b9dea489e52cd23db2a36ed4301c5db087b3e95bf817"
+        "manuscript_sha256": "372e7bbc73534e7a39593f07b032f7ffbf74acad80895342643c20e3fa706a9b"
       }
     },
     {
@@ -230,6 +230,59 @@
       "kind": "result_paper_edge",
       "id": "sf:result-paper-edge/DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT/P12/v1",
       "body": {"from": "sf:quantum-weyl.anomalies/result/DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT", "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly", "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/four-dimensional-regulator-receiver-boundary", "edge_kind": "PRIMARY_THEOREM", "stale": false, "version": 1, "stamp": "2026-07-20", "native": {"source_schema": "result-paper-edge-v0"}}
+    },
+    {
+      "kind": "result",
+      "id": "sf:d_quotient_classical/result/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "declared-minimal-formal-polar-compensator-family-seven-gate-locus",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+        "certificate": "d_quotient_classical/certificates/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1.json",
+        "certificate_sha256": "41ce6db6ab8fc58f4cc1ecedb205f732fd3dcee645f9408506d3535545f7026a",
+        "source_commit": "a5924e707352bab92db2caa4c19cf4223c60f0e3",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1/v1",
+      "body": {
+        "result_id": "sf:d_quotient_classical/result/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1",
+        "materiality": "TECHNICAL",
+        "version": 1,
+        "by": "quantum-qme-team",
+        "stamp": "2026-07-20",
+        "rationale": "The empty scoped seven-gate locus is the exact action-selection frontier for Paper 12 regulator and QAP implementation.",
+        "native": {"source_schema": "materiality-v0"}
+      }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/minimal-compensator-family-selection-frontier",
+      "body": {
+        "paper": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
+        "material": true,
+        "asserts_lifecycle": "CERTIFIED",
+        "boundary": "declared-minimal-formal-polar-compensator-family-seven-gate-locus",
+        "cites": ["sf:d_quotient_classical/result/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1"],
+        "statement": "The declared minimal formal-polar compensator family has an empty seven-gate good locus; excluded enlarged theories remain open, so this is not a universal compensator no-go and no action-specific quantum receiver is activated."
+      }
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1/P12/v1",
+      "body": {
+        "from": "sf:d_quotient_classical/result/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1",
+        "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
+        "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/minimal-compensator-family-selection-frontier",
+        "edge_kind": "PRIMARY_THEOREM",
+        "stale": false,
+        "version": 1,
+        "stamp": "2026-07-20",
+        "native": {"source_schema": "result-paper-edge-v0"}
+      }
     }
   ]
 }

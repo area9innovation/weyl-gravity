@@ -15,7 +15,7 @@ COVERAGE = (
     / "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json"
 )
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "d1a5fccfb25a6656bff1b9dea489e52cd23db2a36ed4301c5db087b3e95bf817"
+    "372e7bbc73534e7a39593f07b032f7ffbf74acad80895342643c20e3fa706a9b"
 )
 ALL_LOOP_INPUT_SHA256 = (
     "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc"
@@ -101,7 +101,9 @@ def main() -> None:
         "operatorname{Ber}_{\\rm BV}^{(N)}",
         "Candidate~A's auxiliary-scalaron parent is a scoped classical obstruction",
         "Candidate~B's reducible three-form parent is also a scoped classical obstruction",
-        "do not prove a universal no-go for compensator repairs",
+        "seven-gate good locus is empty",
+        "not a universal compensator no-go",
+        "No Candidate~C action or action hash is selected",
     ]
     for fragment in required_manuscript_fragments:
         assert fragment in normalized_manuscript, fragment
@@ -200,6 +202,47 @@ def main() -> None:
         assert len(edge_rows) == 1
         assert edge_rows[0]["body"]["claim"] == regulator_claim
         assert edge_rows[0]["body"]["stale"] is False
+    family_result = (
+        "sf:d_quotient_classical/result/"
+        "COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1"
+    )
+    family_claim = (
+        f"{paper_id}/claim/minimal-compensator-family-selection-frontier"
+    )
+    assert nodes[family_result]["body"] == {
+        "lifecycle": "CERTIFIED",
+        "boundary": (
+            "declared-minimal-formal-polar-compensator-family-seven-gate-locus"
+        ),
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+        "certificate": (
+            "d_quotient_classical/certificates/"
+            "COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1.json"
+        ),
+        "certificate_sha256": (
+            "41ce6db6ab8fc58f4cc1ecedb205f732fd3dcee645f9408506d3535545f7026a"
+        ),
+        "source_commit": "a5924e707352bab92db2caa4c19cf4223c60f0e3",
+        "stale": False,
+        "superseded": False,
+    }
+    assert nodes[family_claim]["body"]["cites"] == [family_result]
+    assert nodes[family_claim]["body"]["asserts_lifecycle"] == "CERTIFIED"
+    family_materiality = [
+        node for node in coverage["nodes"]
+        if node["kind"] == "materiality"
+        and node["body"]["result_id"] == family_result
+    ]
+    assert len(family_materiality) == 1
+    assert family_materiality[0]["body"]["materiality"] == "TECHNICAL"
+    family_edges = [
+        node for node in coverage["nodes"]
+        if node["kind"] == "result_paper_edge"
+        and node["body"]["from"] == family_result
+    ]
+    assert len(family_edges) == 1
+    assert family_edges[0]["body"]["claim"] == family_claim
+    assert family_edges[0]["body"]["stale"] is False
 
     dispositions = payload["theory_dispositions"]
     assert dispositions == {
@@ -251,6 +294,32 @@ def main() -> None:
             "lifecycle": "OBSTRUCTED",
             "imported_hessian": False,
         },
+        "universal_compensator_no_go": False,
+    }
+    minimal_family = payload["minimal_compensator_family_status"]
+    assert minimal_family == {
+        "result_id": "COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1",
+        "result_state": "SCOPED_MINIMAL_ACTION_GOOD_LOCUS_EMPTY",
+        "source_commit": "a5924e707352bab92db2caa4c19cf4223c60f0e3",
+        "certificate_sha256": "41ce6db6ab8fc58f4cc1ecedb205f732fd3dcee645f9408506d3535545f7026a",
+        "independent_receipt_sha256": "229828007c736b99b3aee2bd0f817fe2d32035da1e4349752f1855cb93628106",
+        "declared_scope": (
+            "minimal formal rho!=0 polar complex-compensator family: four metric "
+            "derivatives, at most two compensator derivatives, constant real "
+            "couplings and global U(1)"
+        ),
+        "seven_gate_good_locus": "EMPTY",
+        "excluded_enlarged_classes": [
+            "higher-than-two-derivative theta operators",
+            "nonconstant theta-dependent couplings",
+            "a kinetic or nonlinear potential for the topological multiplier",
+            "large/global three-form gauge quotient",
+            "fixed flux or lambda_HT superselection",
+            "an independent conformal gauge connection",
+        ],
+        "parity_odd_excluded": "Pontryagin P4",
+        "candidate_C_selected": False,
+        "selected_action_receiver": False,
         "universal_compensator_no_go": False,
     }
     claims = payload["certified_claims"]
@@ -669,7 +738,7 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
     assert claims["physical_Hessian_triangle_corner_count"] == 33
     assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
-    assert len(payload["inputs"]) == 76
+    assert len(payload["inputs"]) == 78
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
