@@ -1,0 +1,55 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_SINGULAR_RADIAL_CONTRACTION_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Exact radial norm-transfer contraction of both candidate-17/20 singular components, with complete candidate-20 balance-divisor connectedness and fail-closed off-balance residual.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.json": "7e0176f246f1322a5429505217e0053ca34dd4c2663d45227bf67af3d105b736",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.py": "d1601b2616b7cf2988bbe2643e556f1e2edaf4c5e7909e7ad1c463a0030a37e8",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.py": "a9de22112096980278caa4bdc4dd7a4fb1f495cb0fdf16293c5a75f88e338618",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.py": "92d103755d732edc76f50d8cbd43f4b5fc566655986cba47d3726702e1324ee5",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.schema.json": "73b5de47058add919e3ae24ef7b91d48d6dc0d02a256913ac772823ac1fff594",
+    "bridge/reports/einstein-maxwell-weyl-same-sign-candidate17-20-singular-radial-contraction.md": "97ab1a9af385c47968c2c0c8fb048492f4956873ca32d23667d2100b591108b9"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on producer, independent verifier and focused tests",
+        "python3 -m json.tool on certificate and schema",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": {
+        "producer_check": 0.64,
+        "independent_verifier": 0.66,
+        "focused_tests": 0.65
+      },
+      "tests_run": 6,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier independently reconstructs occupation conservation and the residual (1-t^2)*delta*mu_square, then separately imports the balance and connected-hub lifecycle flags by pinned hash."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutation": "Promote candidate-20 off-balance complete singular connectedness from false to true.",
+      "result": "The fail-closed schema rejects the promotion."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESSED_INPUT_REPLAY",
+      "reason": "The common-square quotient, connected hub, singular-locus and component-incidence inputs are hash-pinned and replayed; no shared upstream mathematical object changed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Candidate 17 and candidate-20 off balance remain open, occupation strata are not glued and no theorem freeze is promoted."
+    }
+  },
+  "claim_boundary": "CERTIFIED for the complete candidate-20 singular union only on its exact balance divisor and for phase-real radial subloci off balance. The exact off-balance residual obstructs this canonical path but is not a nonradial no-go."
+}

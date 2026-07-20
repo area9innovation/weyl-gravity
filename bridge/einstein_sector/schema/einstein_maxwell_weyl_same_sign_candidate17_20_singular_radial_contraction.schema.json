@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "scope",
+    "radial_transfer",
+    "candidate20_balance_theorem",
+    "off_balance_obstruction",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-same-sign-candidate17-20-singular-radial-contraction-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_SINGULAR_RADIAL_CONTRACTION"
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "exact_radial_transfer_identity_certified": {"const": true},
+        "candidate20_balance_complete_singular_union_contracts_to_hub": {"const": true},
+        "candidate20_balance_complete_singular_rotation_zero_fibre_connected": {"const": true},
+        "candidate17_complete_singular_rotation_zero_fibre_connected": {"const": false},
+        "candidate20_off_balance_complete_singular_rotation_zero_fibre_connected": {"const": false},
+        "off_balance_nonradial_contraction_no_go": {"const": false},
+        "occupation_strata_glued": {"const": false},
+        "causal_residual_observational_or_quantum_claim": {"const": false}
+      },
+      "required": [
+        "exact_radial_transfer_identity_certified",
+        "candidate20_balance_complete_singular_union_contracts_to_hub",
+        "candidate20_balance_complete_singular_rotation_zero_fibre_connected",
+        "candidate17_complete_singular_rotation_zero_fibre_connected",
+        "candidate20_off_balance_complete_singular_rotation_zero_fibre_connected",
+        "off_balance_nonradial_contraction_no_go",
+        "occupation_strata_glued",
+        "causal_residual_observational_or_quantum_claim"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
