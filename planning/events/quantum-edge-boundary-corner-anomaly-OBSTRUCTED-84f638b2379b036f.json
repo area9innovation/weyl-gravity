@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/quantum-edge-boundary-corner-anomaly-OBSTRUCTED-84f638b2379b036f",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/quantum-edge-boundary-corner-anomaly-OBSTRUCTED-84f638b2379b036f.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "quantum-qme-1", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-20T11:10:32Z", "seq": 2, "predecessor": "sf:program/event/quantum-edge-boundary-corner-anomaly-ACTIVE-53911b0ef0fac294", "payload": {"target": "sf:program/work/quantum-edge-boundary-corner-anomaly", "to_state": "OBSTRUCTED", "note": "the boundary/corner BV complex and full-BV elliptic boundary operator domain are undefined on the declared cornered carrier", "evidence_basis": "quantum-weyl/local_bv/certificates/BOUNDARY_CORNER_ANOMALY_OPERATOR_DOMAIN_OBSTRUCTION.json"}, "native": {"authored_by": "sfc close-out", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/quantum-edge-boundary-corner-anomaly"}]
+}

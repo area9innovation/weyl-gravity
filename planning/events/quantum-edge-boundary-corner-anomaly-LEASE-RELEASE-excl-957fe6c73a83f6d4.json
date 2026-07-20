@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/quantum-edge-boundary-corner-anomaly-LEASE-RELEASE-excl-957fe6c73a83f6d4",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/quantum-edge-boundary-corner-anomaly-LEASE-RELEASE-excl-957fe6c73a83f6d4.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "quantum-qme-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T11:10:32Z", "seq": 2, "predecessor": "sf:program/event/quantum-edge-boundary-corner-anomaly-LEASE-ACQUIRE-excl-8f5e9af204e818d7", "payload": {"target": "sf:program/work/quantum-edge-boundary-corner-anomaly", "agent": "quantum-qme-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-20T11:10:32Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/quantum-edge-boundary-corner-anomaly"}]
+}
