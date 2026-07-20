@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2-symplectic-normal-form-v1",
+  "title": "Invariant normal form of the Einstein/additional pairing extension",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_token",
+    "dependency_tags", "declaration", "hypotheses", "theorem_a_nonzero",
+    "degeneration_a_zero", "shear_action", "pairing", "mutations",
+    "fixture_controls", "resolves", "not_claimed", "verification_discipline",
+    "claim_flags", "missing_objects", "stage_seconds", "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {"const": "pure-weyl-bh2-symplectic-normal-form-v1"},
+    "schema_path": {"const": "black_hole_programme/schema/bh2-symplectic-normal-form-v1.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "PURE_WEYL_BH2_SYMPLECTIC_NORMAL_FORM"},
+    "result_token": {"const": "BH2_SYMPLECTIC_EXTENSION_HYPERBOLIC_NORMAL_FORM"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "declaration": {
+      "type": "object",
+      "required": ["theory", "background_family", "conformal_frame",
+                   "generator", "phase_space", "horizon_condition",
+                   "infinity_condition", "lifecycle"],
+      "properties": {"lifecycle": {"const": "CLASSIFIED"}}
+    },
+    "hypotheses": {
+      "type": "object",
+      "required": ["K_hermitian", "E_isotropic", "G_radical",
+                   "lift_ambiguity"]
+    },
+    "theorem_a_nonzero": {
+      "type": "object",
+      "required": ["cross_invariant", "self_pairing_removable",
+                   "removal_witness", "block", "lagrangian", "radical"],
+      "properties": {
+        "cross_invariant": {"const": true},
+        "self_pairing_removable": {"const": true},
+        "block": {
+          "type": "object",
+          "required": ["determinant", "rank_when_a_nonzero", "inertia",
+                       "normal_form"],
+          "properties": {
+            "determinant": {"const": "-|a|^2"},
+            "rank_when_a_nonzero": {"const": 2},
+            "inertia": {"const": [1, 1]}
+          }
+        }
+      }
+    },
+    "degeneration_a_zero": {
+      "type": "object",
+      "required": ["self_pairing_invariant", "rank_when_d_nonzero",
+                   "E_joins_radical", "sign_of_d_is_invariant"],
+      "properties": {
+        "self_pairing_invariant": {"const": true},
+        "sign_of_d_is_invariant": {"const": true}
+      }
+    },
+    "shear_action": {
+      "type": "object",
+      "required": ["cross", "self"],
+      "properties": {
+        "cross": {"const": "a (invariant)"},
+        "self": {"const": "d + 2*Re(conj(beta)*a)"}
+      }
+    },
+    "pairing": {"type": "string"},
+    "mutations": {
+      "type": "object",
+      "required": ["M1_shear_moves_self_pairing_fixes_invariants",
+                   "M2_at_a_zero_shears_cannot_move_self_pairing", "trials",
+                   "detail"],
+      "properties": {
+        "M1_shear_moves_self_pairing_fixes_invariants": {"const": true},
+        "M2_at_a_zero_shears_cannot_move_self_pairing": {"const": true},
+        "trials": {"type": "integer", "minimum": 3}
+      }
+    },
+    "fixture_controls": {"type": "object", "minProperties": 4},
+    "resolves": {
+      "type": "object",
+      "required": ["question", "answer", "supersedes_nothing"],
+      "properties": {"supersedes_nothing": {"const": true}}
+    },
+    "not_claimed": {
+      "type": "object",
+      "required": ["sign_from_a_canonical_lift",
+                   "canonical_direct_sum_splitting",
+                   "hilbert_space_or_particle_interpretation",
+                   "symbolic_frequency_table"],
+      "properties": {
+        "sign_from_a_canonical_lift": {"const": false},
+        "canonical_direct_sum_splitting": {"const": false},
+        "hilbert_space_or_particle_interpretation": {"const": false},
+        "symbolic_frequency_table": {"const": false}
+      }
+    },
+    "verification_discipline": {"type": "array", "minItems": 3},
+    "claim_flags": {
+      "type": "object",
+      "required": ["normal_form_certified", "cross_invariance_certified",
+                   "self_pairing_removability_certified",
+                   "inertia_certified", "lagrangian_status_certified",
+                   "a_zero_branch_certified",
+                   "invariant_sign_question_resolved",
+                   "symbolic_frequency_certified", "general_l_certified"],
+      "properties": {
+        "normal_form_certified": {"const": true},
+        "cross_invariance_certified": {"const": true},
+        "self_pairing_removability_certified": {"const": true},
+        "inertia_certified": {"const": true},
+        "lagrangian_status_certified": {"const": true},
+        "a_zero_branch_certified": {"const": true},
+        "invariant_sign_question_resolved": {"const": true},
+        "symbolic_frequency_certified": {"const": false},
+        "general_l_certified": {"const": false}
+      }
+    },
+    "missing_objects": {"type": "array", "minItems": 2},
+    "stage_seconds": {"type": "object"},
+    "provenance": {
+      "type": "object",
+      "required": ["generator_path", "axial_fixture_certificate",
+                   "axial_fixture_certificate_sha256",
+                   "polar_fixture_certificate",
+                   "polar_fixture_certificate_sha256"]
+    },
+    "verification_command": {"const": "python3 black_hole_programme/verify_bh2_symplectic_normal_form.py"}
+  }
+}
