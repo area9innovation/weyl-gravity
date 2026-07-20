@@ -44,6 +44,7 @@ CERTS = {
     "complex_compensator_kinetic_braiding_visibility": ROOT / "d_quotient_classical/certificates/COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1.json",
     "complex_compensator_kinetic_braiding_level2_no_go": ROOT / "d_quotient_classical/certificates/COMPENSATOR_KINETIC_BRAIDING_LEVEL2_NO_GO_V1.json",
     "complex_compensator_degenerate_curvature_level3_no_go": ROOT / "d_quotient_classical/certificates/COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1.json",
+    "complex_compensator_independent_weyl_connection_level4_no_go": ROOT / "d_quotient_classical/certificates/COMPENSATOR_INDEPENDENT_WEYL_CONNECTION_LEVEL4_NO_GO_V1.json",
     "Berger_green": ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
     "Berger_bikernel_support_gate": ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
     "Berger_Cartan": ROOT / "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
@@ -534,6 +535,44 @@ def entries() -> list[dict[str, Any]]:
             "complex_compensator_degenerate_curvature_level3_no_go",
         ),
         "With the project convention X=(nabla theta)^2, the exact generalized ADM determinant is -36 X^2(2F_X+B)^2. The declared literal coefficient B=F_X intersects the true degeneracy surface B=-2F_X only at F_X=B=0. The nonzero-slope stratum therefore fails the first invariant gate; the zero-slope stratum is only a constant Einstein-Hilbert shift and collapses to the imported P2 family with empty good locus. The convention-correct minus-2F_X density is retained solely as a control and receives no full Berger coefficient-locus promotion. No selected action, full BV unary, background system, causal parent, nonlinear q2, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result is exported. This is not a general Horndeski/DHOST no-go.",
+    ))
+    values.append(_entry(
+        "classical.complex_compensator.real_weyl_connection."
+        "level4_rank_charge_good_locus",
+        _scope(
+            VACUUM,
+            theory="complete lowest-order parity-even complex-compensator family with one real torsion-free Weyl connection and a candidate second real Weyl generator",
+            background="local covariant charge-lattice and Ward-identity gate; prior cylinder and Berger solutions are not inherited",
+            charge_sector="nonzero global phase-clock charge required for the Berger relational sector; no selected fixed-charge quotient",
+            carrier="three-row metric-scale/radial-scale/longitudinal-connection gauge symbol plus the minimal compensator Ward ideal; not a mode or particle carrier",
+            degree="classical action, minimal BV gauge rows and constant-parameter Ward identities",
+            parity="spacetime parity even with complex-conjugation real structure",
+            ell="all local fields at the invariant charge-rank gate; no harmonic identification",
+            m="all",
+            k="zero and nonzero longitudinal symbols classified by the same weight minor",
+            omega="formal principal gauge symbol only; no positive-frequency splitting",
+        ),
+        {
+            "causal": "OBSTRUCTED",
+            "symplectic": "OBSTRUCTED",
+            "nonlinear": "NOT_APPLICABLE",
+            "observational": "NO_CERTIFIED_MAP",
+            "quantum": "OPEN",
+        },
+        ("OBSTRUCTED", "On the independent Delta-nonzero stratum, the exact Ward ideal forces the phase Hessian to zero, leaving arbitrary compact-support phase homology and no complete Green parent."),
+        ("OBSTRUCTED", "Delta=0 leaves only one reducible Weyl direction; Delta nonzero forces kappa_theta=0, so no stratum has both a new trace gauge direction and a nonzero phase pairing."),
+        ("NOT_APPLICABLE", "The empty Level-4 rank/charge intersection exports no selected action and no nonlinear q2."),
+        ("NO_CERTIFIED_MAP", "The nonzero Berger phase charge is incompatible with the independent trace-gauge stratum; no observational or particle mode is imported."),
+        _second(
+            ("NOT_APPLICABLE", "No selected action exists for a bounded tangent cone."),
+            ("NOT_APPLICABLE", "No selected action exists for a smooth-secular tangent cone."),
+            ("OBSTRUCTED", "The independent real-Weyl stratum has a zero phase row before a causal parent can be formed."),
+        ),
+        _evidence(
+            "complex_compensator_degenerate_curvature_level3_no_go",
+            "complex_compensator_independent_weyl_connection_level4_no_go",
+        ),
+        "For original and candidate Weyl weights (1,1) and (a,b), Delta=a-b is both the exact two-column independence minor and the dressed-trace weight. Delta=0 gives an explicit reducibility vector (-a,1), hence only one effective Weyl ghost and no new trace direction. Delta nonzero makes the generator independent, but the exact constant-Ward ideal (Delta kappa_r,Delta kappa_R,Delta kappa_theta,Delta lambda) forces the entire minimal compensator action to zero. The phase Hessian, pairing and Berger clock charge then vanish, and arbitrary compact-support phase variations obstruct a complete Green parent. The Level-4 good locus is EMPTY. No prior background is inherited; no selected action, nonlinear q2, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result follows. Internal U(1), complexified connections, extra compensators and general metric-affine theories remain outside scope.",
     ))
     values.append(_entry(
         "classical.berger.retained_gravity_clock_maxwell",

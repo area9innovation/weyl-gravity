@@ -342,6 +342,27 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertIn("No selected action", entry["claim_boundary"])
         self.assertIn("not a general Horndeski/DHOST no-go", entry["claim_boundary"])
 
+    def test_level4_real_weyl_connection_has_empty_rank_charge_locus(self) -> None:
+        entry = self.entries[
+            "classical.complex_compensator.real_weyl_connection."
+            "level4_rank_charge_good_locus"
+        ]
+        self.assertEqual(entry["descriptions"]["causal"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "NOT_APPLICABLE")
+        self.assertEqual(
+            entry["descriptions"]["observational"], "NO_CERTIFIED_MAP"
+        )
+        self.assertEqual(entry["descriptions"]["quantum"], "OPEN")
+        self.assertIn(
+            "COMPENSATOR_INDEPENDENT_WEYL_CONNECTION_LEVEL4_NO_GO_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("reducibility vector (-a,1)", entry["claim_boundary"])
+        self.assertIn("Delta kappa_theta", entry["claim_boundary"])
+        self.assertIn("Level-4 good locus is EMPTY", entry["claim_boundary"])
+        self.assertIn("Internal U(1)", entry["claim_boundary"])
+
     def test_sharp_green_transfer_crosswalk_has_no_mode_identification(self) -> None:
         theorem_id = "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1"
         for chirality in ("plus", "minus"):

@@ -327,6 +327,24 @@ def verify() -> None:
         not in level3["claim_boundary"]
     ):
         raise AssertionError("Level-3 curvature-coupling atlas boundary drifted")
+    level4 = by_id[
+        "classical.complex_compensator.real_weyl_connection."
+        "level4_rank_charge_good_locus"
+    ]
+    if (
+        level4["descriptions"]["causal"] != "OBSTRUCTED"
+        or level4["descriptions"]["symplectic"] != "OBSTRUCTED"
+        or level4["descriptions"]["nonlinear"] != "NOT_APPLICABLE"
+        or level4["descriptions"]["observational"] != "NO_CERTIFIED_MAP"
+        or level4["descriptions"]["quantum"] != "OPEN"
+        or "COMPENSATOR_INDEPENDENT_WEYL_CONNECTION_LEVEL4_NO_GO_V1"
+        not in {item["result_id"] for item in level4["evidence"]}
+        or "reducibility vector (-a,1)" not in level4["claim_boundary"]
+        or "Delta kappa_theta" not in level4["claim_boundary"]
+        or "Level-4 good locus is EMPTY" not in level4["claim_boundary"]
+        or "Internal U(1)" not in level4["claim_boundary"]
+    ):
+        raise AssertionError("Level-4 Weyl-connection atlas boundary drifted")
     stability = by_id["classical.crosswalk.weak_background_causal_vs_residual_d"]
     if (
         stability["descriptions"]["causal"] != "CERTIFIED"

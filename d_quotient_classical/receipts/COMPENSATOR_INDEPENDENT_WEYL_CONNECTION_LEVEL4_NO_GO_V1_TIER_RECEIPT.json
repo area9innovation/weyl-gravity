@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_INDEPENDENT_WEYL_CONNECTION_LEVEL4_NO_GO_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_INDEPENDENT_WEYL_CONNECTION_LEVEL4_NO_GO_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/independent_weyl_connection_level4_no_go.py",
+      "sha256": "ac8068dc4d1a3c8205779535adbde1274cc1d7f1ff509f4ebd6bd5a59a37b9d8"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_independent_weyl_connection_level4_no_go.py",
+      "sha256": "8852618b1bfcf41b39f32735fb35b8e4403e9dcb1ac7e61db648cbef775acdd8"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_independent_weyl_connection_level4_no_go.py",
+      "sha256": "e23378cead44f55884136deab10cfe82b8582d203559d0680152ca89ef68553c"
+    },
+    {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_INDEPENDENT_WEYL_CONNECTION_LEVEL4_NO_GO_V1.json",
+      "sha256": "d1037ef2fa9222d02513d093c27a02e6fc5da71ec0b731d3b9b2cd2f51e52652"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-independent-weyl-connection-level4-no-go-v1.schema.json",
+      "sha256": "b54eabcc5554e68dcd43f88e1dad1af9fbb8d90c0c01c9f8a63a5b87920ed4c0"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-independent-weyl-connection-level4-no-go-v1.md",
+      "sha256": "d00a413b9f465ac3f5424a8b3e08fafa124d3ea68975f52507d4f04aa8da2926"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "1c28c38d3666a364f45d0d594b8aae927c5b3bb3fb55b1586106835696f27043"
+    },
+    {
+      "path": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
+      "sha256": "ffc62dd9df928beb4522de2e83429fc38657489e0e234fd3d3fb7d4eb0bd34c9"
+    },
+    {
+      "path": "d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+      "sha256": "3ec7cb38530ec98d43e990be8b11b5b477b4b35fbffaf34b2adfa1b5c84c4bd8"
+    },
+    {
+      "path": "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+      "sha256": "9662cf04f2e1d52b0dea9d3c49a0ab1e72aa4366d031e0294f7b43c79cb8e055"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, independent verifier and mutation tests>; python3 -m json.tool <certificate, schema and receipt>",
+        "elapsed_seconds": 0.04,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff HEAD --check -- <explicit Level-4 and atlas paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/independent_weyl_connection_level4_no_go.py --check",
+        "elapsed_seconds": 0.49,
+        "status": "PASS",
+        "method": "exact two-generator charge matrix, rank-change minor, reducibility vector, constant-parameter Ward weights and complete Delta stratification"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_independent_weyl_connection_level4_no_go.py",
+        "elapsed_seconds": 0.55,
+        "status": "PASS",
+        "independent_rail": "imports no producer module; reconstructs the charge lattice and all monomial weights independently, then saturates the Ward ideal by Delta to prove the independent-branch eliminations"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_independent_weyl_connection_level4_no_go -v",
+        "elapsed_seconds": 0.72,
+        "status": "PASS",
+        "tests": 8,
+        "mutation_controls": "gauge symbol, phase weight, forced-zero set, intersection, selected action, Green parent, q2, complexified-connection and quantum promotions are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-independent-weyl-connection-level4-no-go-v1.schema.json -d d_quotient_classical/certificates/COMPENSATOR_INDEPENDENT_WEYL_CONNECTION_LEVEL4_NO_GO_V1.json",
+        "elapsed_seconds": 1.54,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_classical_atlas_fragment.py --check; python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py; python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment -v; python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.54,
+        "status": "PASS",
+        "tests": 31
+      },
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 4.37,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift, corpus baseline growth from 976 to 1321 certificates, and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m unittest discover -v",
+        "elapsed_seconds": 1.32,
+        "status": "PASS",
+        "tests": 148,
+        "scope": "repository-wide Python unittest discovery from physics/symplectic-reconstruction; the eight scoped Level-4 tests were also run explicitly because this discovery pattern does not collect that package"
+      }
+    ],
+    "reason": "The item freezes a scoped four-level compensator-repair no-go and therefore triggers the AGENTS.md theorem-level Tier-3 criterion."
+  },
+  "claim_boundary": "The receipt certifies only the complete declared lowest-order parity-even theory with one real torsion-free Weyl connection, one formal-polar complex compensator with neutral phase under real scaling, two candidate real Weyl generators, global phase shift and complex-conjugation symmetry. Delta=0 makes the candidate column reducible; Delta nonzero forces all minimal compensator coefficients to zero, including the phase kinetic term, so no stratum has both a new dressed-trace gauge direction and a nonzero Berger clock charge. No selected action, replacement background, complete Green parent, nonlinear q2, Hadamard state, anomaly/QME result, particle space, scattering, positivity or unitarity theorem follows. Internal U1, complexified connections, extra compensators, higher phase derivatives and general metric-affine theories remain outside scope.",
+  "higher_tiers_not_run": []
+}

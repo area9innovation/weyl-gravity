@@ -1152,6 +1152,75 @@
       }
     },
     {
+      "claim_boundary": "For original and candidate Weyl weights (1,1) and (a,b), Delta=a-b is both the exact two-column independence minor and the dressed-trace weight. Delta=0 gives an explicit reducibility vector (-a,1), hence only one effective Weyl ghost and no new trace direction. Delta nonzero makes the generator independent, but the exact constant-Ward ideal (Delta kappa_r,Delta kappa_R,Delta kappa_theta,Delta lambda) forces the entire minimal compensator action to zero. The phase Hessian, pairing and Berger clock charge then vanish, and arbitrary compact-support phase variations obstruct a complete Green parent. The Level-4 good locus is EMPTY. No prior background is inherited; no selected action, nonlinear q2, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result follows. Internal U(1), complexified connections, extra compensators and general metric-affine theories remain outside scope.",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1.json",
+          "result_id": "COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1",
+          "sha256": "2e687331b6985b3a84c54a0f05b210bee5e3ac06d5659b5603ac9bc25f61dfed"
+        },
+        {
+          "path": "d_quotient_classical/certificates/COMPENSATOR_INDEPENDENT_WEYL_CONNECTION_LEVEL4_NO_GO_V1.json",
+          "result_id": "COMPENSATOR_INDEPENDENT_WEYL_CONNECTION_LEVEL4_NO_GO_V1",
+          "sha256": "d1037ef2fa9222d02513d093c27a02e6fc5da71ec0b731d3b9b2cd2f51e52652"
+        }
+      ],
+      "id": "classical.complex_compensator.real_weyl_connection.level4_rank_charge_good_locus",
+      "mode_data": {
+        "dispersion": {
+          "statement": "On the independent Delta-nonzero stratum, the exact Ward ideal forces the phase Hessian to zero, leaving arbitrary compact-support phase homology and no complete Green parent.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "Delta=0 leaves only one reducible Weyl direction; Delta nonzero forces kappa_theta=0, so no stratum has both a new trace gauge direction and a nonzero phase pairing.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "The nonzero Berger phase charge is incompatible with the independent trace-gauge stratum; no observational or particle mode is imported.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No selected action exists for a bounded tangent cone.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "The independent real-Weyl stratum has a zero phase row before a causal parent can be formed.",
+            "status": "OBSTRUCTED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No selected action exists for a smooth-secular tangent cone.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "The empty Level-4 rank/charge intersection exports no selected action and no nonlinear q2.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "local covariant charge-lattice and Ward-identity gate; prior cylinder and Berger solutions are not inherited",
+        "boundaries": "closed compact Cauchy surface S3; no spatial boundary",
+        "carrier": "three-row metric-scale/radial-scale/longitudinal-connection gauge symbol plus the minimal compensator Ward ideal; not a mode or particle carrier",
+        "charge_sector": "nonzero global phase-clock charge required for the Berger relational sector; no selected fixed-charge quotient",
+        "degree": "classical action, minimal BV gauge rows and constant-parameter Ward identities",
+        "ell": "all local fields at the invariant charge-rank gate; no harmonic identification",
+        "k": "zero and nonzero longitudinal symbols classified by the same weight minor",
+        "m": "all",
+        "omega": "formal principal gauge symbol only; no positive-frequency splitting",
+        "parity": "spacetime parity even with complex-conjugation real structure",
+        "theory": "complete lowest-order parity-even complex-compensator family with one real torsion-free Weyl connection and a candidate second real Weyl generator"
+      }
+    },
+    {
       "claim_boundary": "Causality is unary and the cyclic Cartan theorem stops at arity three. The retained-26 homotopy extends to one-sided past/future/time-compact smooth bikernel LF classes with cyclic adjoint control, but the certified factorization has a cutoff-escape continuity obstruction on the full smooth Frechet class. The imported smooth Ward kernel has no one-sided support profile, so no Ward or Hadamard promotion follows. Raw affine D, arity four, Hadamard/QME, and a branch-resolved physical projector remain false.",
       "descriptions": {
         "causal": "CERTIFIED",
@@ -2527,7 +2596,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "217d46b9a2d34af69ff7ac49c2387d1e3d5b07be75ad3ffc1529960ee9bc8bcc",
+  "generated_by_sha256": "ffc62dd9df928beb4522de2e83429fc38657489e0e234fd3d3fb7d4eb0bd34c9",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

@@ -1,0 +1,315 @@
+{
+  "charge_and_cohomology_separator": {
+    "Berger_clock_charge_condition": "rho=f nonzero, theta=nu t with nu nonzero requires kappa_theta nonzero for a nonzero phase pairing and charge",
+    "common_gate": "A nonzero Berger phase charge forces kappa_theta nonzero, hence Delta=0, but a new dressed-trace gauge direction requires Delta nonzero. Their exact intersection is empty.",
+    "phase_current": "J_theta^a=-kappa_theta rho^2 nabla^a theta",
+    "strata": {
+      "Delta_nonzero": {
+        "kappa_theta": "0 by the Ward ideal",
+        "new_trace_gauge_direction": true,
+        "phase_Hessian": "ZERO",
+        "phase_compact_support_cohomology": "arbitrary compact-support theta variations survive because shift symmetry and the declared minimal action contain no theta row",
+        "phase_current": "ZERO",
+        "support_local_Green_parent": "OBSTRUCTED"
+      },
+      "Delta_zero": {
+        "new_trace_gauge_direction": false,
+        "old_dressed_trace_disposition": "NOT_CONTRACTED_BY_THE_NEW_GAUGE_ROW",
+        "reason": "eta column equals a times the omega column after the explicit reducibility quotient"
+      }
+    }
+  },
+  "claim_boundary": "This exact theorem covers the complete declared lowest-order parity-even family with one real torsion-free Weyl connection, one formal-polar complex compensator whose phase is neutral under real scale transformations, two candidate Weyl generators, and global phase shift plus complex-conjugation symmetry. If their weight difference Delta vanishes, the new gauge column is reducible and adds no dressed-trace direction. If Delta is nonzero, exact Ward invariance forces every minimal compensator coefficient, including kappa_theta, to zero, leaving a zero phase Hessian, zero Berger clock charge and arbitrary compact-support phase homology. No selected action or Green parent follows. An internal U(1), a complexified connection, extra compensators, higher phase derivatives, other backgrounds and general metric-affine theories are outside scope. No nonlinear q2, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result follows.",
+  "claim_flags": {
+    "BOTH_BACKGROUND_EULER_SYSTEMS": false,
+    "COMPLETE_SCALAR_LONGITUDINAL_GREEN_PARENT": false,
+    "GENERAL_METRIC_AFFINE_OR_WEYL_GEOMETRY_NO_GO": false,
+    "HADAMARD_ANOMALY_QME_OR_QUANTUM": false,
+    "INTERNAL_U1_OR_COMPLEXIFIED_CONNECTION": false,
+    "NONLINEAR_Q2": false,
+    "PARTICLE_SCATTERING_UNITARITY": false,
+    "SELECTED_LEVEL4_ACTION": false
+  },
+  "complete_minimal_action": {
+    "coefficient_order": [
+      "alpha_C",
+      "alpha_0",
+      "alpha_2",
+      "zeta",
+      "kappa_r",
+      "kappa_R",
+      "kappa_theta",
+      "lambda"
+    ],
+    "completeness": "At the lowest declared derivative order, the parity-even pure geometric sector is spanned by the conformal tensor square, the Weyl scalar and symmetric trace-free Ricci squares, and F^2, modulo Euler and total derivatives. On the complex-conjugation invariant polar chart, the scalar sector is spanned by radial kinetic, rho^2 R_W, phase kinetic and rho^4. The cross term rho D rho dot d theta is odd under complex conjugation. An additive theta gauge action is an internal U(1) or complexified connection and is outside this real-Weyl ansatz.",
+    "density": "sqrt(-g){alpha_C C^2/8+alpha_0 R_W^2+alpha_2 Ricci_W_TF^2-zeta F^2/4-kappa_r(D_W rho)^2/2-kappa_R rho^2 R_W/12-kappa_theta rho^2(nabla theta)^2/2-lambda rho^4/4}",
+    "fields": [
+      "g_ab",
+      "Phi=rho exp(i theta), rho nonzero on the formal polar chart",
+      "one real Weyl connection W_a"
+    ],
+    "geometric_curvatures": {
+      "F_ab": "2 partial_[a W_b]",
+      "R_W": "scalar curvature of the torsion-free Weyl connection whose nonmetricity is fixed by W",
+      "Ricci_W_TF": "symmetric trace-free Weyl-Ricci tensor"
+    },
+    "symmetries": [
+      "Diff",
+      "original Weyl with ghost omega",
+      "candidate independent real Weyl with ghost eta",
+      "global phase shift theta -> theta+constant",
+      "complex conjugation theta -> -theta"
+    ],
+    "topological_and_exact_terms": "Euler-Weyl density and total divergences are retained only as boundary/topological terms and do not alter the separator"
+  },
+  "content_hashes": {
+    "action_sha256": "863839a1da4ba35f10f2d80fa715c1e541edf08e0d7a665dc1d8aebada726d9b",
+    "bv_sha256": "88d29dd84a8394b493ccd93b7bc12034f12bcf4719db9e1ae25f57248e16a80b",
+    "gates_sha256": "9fbb39f46905a67e1a1b0f282dc525c108a630d497d04946c17914d81c35052a",
+    "imports_sha256": "38571fcbf1fdfa1af610560c5b6f733243c4e364d7442ef3dcd6877d1a4d9e04",
+    "rank_sha256": "ff46cb46e58e27f64bb8972ceb89d635261697f8aebc8cc08a5d295df86156e9",
+    "separator_sha256": "44311a31db51942f99cae7dd92253541915fbfcb6fc3c00c642d7e55b2ffa44f",
+    "verdict_sha256": "a9678be84f5213433482fc28c0d9a022e2f36384708775aacc840ebec82b56ae",
+    "ward_sha256": "04044b799bd5282a15fed9efafc350f693a6634d967f09d17faa2d2887d7f27e"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "domain": {
+    "arithmetic": "exact characteristic-zero polynomial algebra",
+    "complex_compensator_chart": "Phi=rho exp(i theta), rho nonzero",
+    "connection": "one real torsion-free Weyl connection",
+    "dimension": 4,
+    "phase_symmetry": "global shift with complex-conjugation real structure",
+    "signature": "(-,+,+,+)"
+  },
+  "exact_Ward_locus": {
+    "complete_strata": {
+      "Delta_nonzero": {
+        "forced_zero_coefficients": [
+          "kappa_r",
+          "kappa_R",
+          "kappa_theta",
+          "lambda"
+        ],
+        "gauge_disposition": "INDEPENDENT_BUT_COMPENSATOR_ACTION_ZERO",
+        "geometric_spectator_coefficients": [
+          "alpha_C",
+          "alpha_0",
+          "alpha_2",
+          "zeta"
+        ]
+      },
+      "Delta_zero": {
+        "compensator_coefficients": "unconstrained by constant weight",
+        "gauge_disposition": "DEPENDENT_REDUCIBLE_NO_NEW_DRESSED_TRACE_DIRECTION"
+      }
+    },
+    "constant_candidate_Weyl_weights": {
+      "phase_kinetic": "2*Delta",
+      "quartic_potential": "4*Delta",
+      "radial_kinetic": "2*Delta",
+      "rho_squared_R_W": "2*Delta"
+    },
+    "exact_Ward_ideal_generators": [
+      "Delta*kappa_r",
+      "Delta*kappa_R",
+      "Delta*kappa_theta",
+      "Delta*lambda"
+    ],
+    "exhaustiveness": "Constant gauge parameters already impose these weights, so no derivative improvement or integration by parts can cancel a nonzero Delta weight. Local derivative Ward terms can only add constraints and cannot reopen the independent branch."
+  },
+  "exact_checks": {
+    "clock_charge_trace_independence_intersection_empty": true,
+    "constant_parameter_Ward_weights_exact": true,
+    "dependent_reducibility_vector_exact": true,
+    "downstream_background_and_causal_claims_fail_closed": true,
+    "dressed_trace_weight_exact": true,
+    "independent_branch_coefficient_elimination_exact": true,
+    "level3_hash_and_semantics_pinned": true,
+    "minimal_action_basis_declared": true,
+    "phase_current_and_Hessian_zero_on_independent_branch": true,
+    "rank_change_minor_exact": true,
+    "two_generator_charge_matrix_exact": true
+  },
+  "gate_disposition": {
+    "background_boundary": "No prior unit-cylinder or Berger solution is inherited. On the independent stratum the phase stress and current vanish, so the frozen active-clock Berger equations are not the equations of this theory. Since the common rank/charge gate is already empty, no replacement background is promoted.",
+    "nonlinear_q2": false,
+    "selected_action": false,
+    "seven_gates": [
+      {
+        "gate": 1,
+        "name": "complete minimal action and coefficient locus",
+        "status": "PASS_WITH_EMPTY_INDEPENDENCE_AND_CLOCK_INTERSECTION"
+      },
+      {
+        "gate": 2,
+        "name": "action-origin BV rows and reducibility",
+        "status": "PASS_KINEMATIC_AND_WARD_LEVEL"
+      },
+      {
+        "gate": 3,
+        "name": "both background Euler systems",
+        "status": "NOT_REACHED_AFTER_RANK_CHARGE_SEPARATOR"
+      },
+      {
+        "gate": 4,
+        "name": "full scalar/longitudinal principal complex",
+        "status": "FAIL_ZERO_PHASE_ROW_ON_INDEPENDENT_STRATUM"
+      },
+      {
+        "gate": 5,
+        "name": "cohomology and velocity inertia",
+        "status": "FAIL_DEPENDENT_TRACE_OR_ZERO_PHASE_HESSIAN"
+      },
+      {
+        "gate": 6,
+        "name": "charge generators",
+        "status": "FAIL_DEPENDENT_TRACE_OR_ZERO_PHASE_CHARGE"
+      },
+      {
+        "gate": 7,
+        "name": "support-local Green parent",
+        "status": "FAIL_NONZERO_COMPACT_SUPPORT_HOMOLOGY"
+      }
+    ],
+    "support_local_Green_parent": false
+  },
+  "gauge_rank_and_reducibility": {
+    "finite_infinitesimal_rows": {
+      "delta_W": "-d(omega+a eta)",
+      "delta_g": "2(omega+a eta)g",
+      "delta_g_hat": "2(a-b)eta g_hat",
+      "delta_rho": "-(omega+b eta)rho",
+      "delta_theta": "0",
+      "g_hat": "(rho/f)^2 g"
+    },
+    "gauge_symbol": {
+      "column_count": 2,
+      "entries": [
+        {
+          "coefficient": "1",
+          "column": 0,
+          "row": 0
+        },
+        {
+          "coefficient": "a",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "-1",
+          "column": 0,
+          "row": 1
+        },
+        {
+          "coefficient": "-b",
+          "column": 1,
+          "row": 1
+        },
+        {
+          "coefficient": "-1",
+          "column": 0,
+          "row": 2
+        },
+        {
+          "coefficient": "-a",
+          "column": 1,
+          "row": 2
+        }
+      ],
+      "row_count": 3,
+      "sha256": "782a547af1553a294e1584da08438d525e3c66918d5b44ddaaff07a6408af204"
+    },
+    "ghost_column_order": [
+      "omega",
+      "eta"
+    ],
+    "independence_minor": "a - b",
+    "rank_change_surface": "a-b=0",
+    "strata": {
+      "Delta_nonzero": {
+        "dressed_trace_action": "NONZERO",
+        "rank": 2,
+        "reducibility": "NONE"
+      },
+      "Delta_zero": {
+        "dressed_trace_action": "ZERO",
+        "irreducible_quotient": "one effective Weyl ghost",
+        "rank": 1,
+        "reducibility_vector_in_(omega,eta)": [
+          "-a",
+          "1"
+        ]
+      }
+    },
+    "symbol_row_order": [
+      "logarithmic metric scale",
+      "logarithmic radial scale",
+      "normalized longitudinal W symbol"
+    ],
+    "weight_parameters": {
+      "Delta": "a-b",
+      "candidate": {
+        "metric_scale": "a",
+        "rho_weight": "-b"
+      },
+      "original": {
+        "metric_scale": "1",
+        "rho_weight": "-1"
+      }
+    }
+  },
+  "imports": {
+    "level3_no_go": {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1.json",
+      "result_id": "COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1",
+      "result_state": "SCOPED_LEVEL3_LITERAL_CURVATURE_COUPLING_GOOD_LOCUS_EMPTY",
+      "selected_action": false,
+      "sha256": "2e687331b6985b3a84c54a0f05b210bee5e3ac06d5659b5603ac9bc25f61dfed",
+      "source_commit": "e77ee444450890dd1df720f70c5ef5ab202fe8cc"
+    }
+  },
+  "minimal_BV_data": {
+    "BRST_fields": {
+      "Q W": "L_xi W-d(omega+a eta)",
+      "Q eta": "L_xi eta",
+      "Q g": "L_xi g+2(omega+a eta)g",
+      "Q omega": "L_xi omega",
+      "Q rho": "L_xi rho-(omega+b eta)rho",
+      "Q theta": "L_xi theta",
+      "Q xi": "xi^nu partial_nu xi"
+    },
+    "Delta_zero_reducible_completion": {
+      "effect": "the reducible completion is contractible and adds no trace gauge direction",
+      "option_1": "quotient the dependent columns to one irreducible Weyl ghost",
+      "option_2": "retain both ghosts and add an even ghost-for-ghost z with Q omega containing -a z and Q eta containing z"
+    },
+    "cotangent_lift": "S_BV=S0+integral[g_star Qg+rho_star Qrho+theta_star Qtheta+W_star QW+xi_star Qxi+omega_star Qomega+eta_star Qeta], with graded integrations by parts defining the antifield rows",
+    "minimal_generators": [
+      "g_ab",
+      "rho",
+      "theta",
+      "W_a",
+      "xi^a",
+      "omega",
+      "eta",
+      "and canonical antifields"
+    ],
+    "nilpotency": "the two Weyl factors are abelian and transform as Diff scalars; the displayed semidirect-product Chevalley-Eilenberg rows square to zero, with the reducibility row on Delta=0",
+    "odd_pairing": "integral(delta g_star delta g+delta rho_star delta rho+delta theta_star delta theta+delta W_star delta W+delta xi_star delta xi+delta omega_star delta omega+delta eta_star delta eta)",
+    "real_structure": "g,rho,theta,W and the two real Weyl ghosts are real; complex conjugation of Phi sends theta to -theta and lifts contragrediently"
+  },
+  "next_gate": "The four-level compensator repair ladder is empty in its declared minimal classes. The next theory choice must be explicit: add an internal U(1)/complexified connection with its own BV sector, add another compensator, or abandon the common Berger clock gate.",
+  "result_id": "COMPENSATOR_INDEPENDENT_WEYL_CONNECTION_LEVEL4_NO_GO_V1",
+  "result_state": "SCOPED_LEVEL4_INDEPENDENT_WEYL_CONNECTION_GOOD_LOCUS_EMPTY",
+  "schema": "pure-weyl-compensator-independent-weyl-connection-level4-no-go-v1",
+  "terminal_verdict": {
+    "complete_minimal_real_Weyl_connection_family_checked": true,
+    "first_invariant_separator": "Delta=a-b must be nonzero to add a dressed-trace gauge direction, while the exact phase-kinetic Ward identity Delta*kappa_theta=0 and the nonzero Berger clock charge require Delta=0",
+    "independent_trace_gauge_and_nonzero_clock_charge_intersection": "EMPTY",
+    "result": "SCOPED_LEVEL4_INDEPENDENT_WEYL_CONNECTION_GOOD_LOCUS_EMPTY",
+    "selected_level4_action": false
+  }
+}
