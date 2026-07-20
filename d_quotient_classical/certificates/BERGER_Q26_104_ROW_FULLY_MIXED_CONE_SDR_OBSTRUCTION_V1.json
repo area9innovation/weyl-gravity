@@ -1,0 +1,118 @@
+{
+  "claim_boundary": "This exact rational theorem closes the fully mixed evolution branch of the canonical same-profile doubled cone: a commuting evolution lift exists, but no support-local SDR to the retained 26-row complex can exist because a multiplicative rational specialization has different degreewise cohomology. It does not obstruct general non-cone 104-row factorizations, raise the global row lower bound, construct a cyclic Cauchy/Krein pairing or real involution, or establish Hadamard, positivity, QME or quantum data.",
+  "classification": {
+    "Hadamard_or_quantum_claim": false,
+    "all_non_cone_104_row_completions_obstructed": false,
+    "cyclic_pairing_and_real_structure_reached": false,
+    "fully_mixed_cone_evolution_lift_exists": true,
+    "fully_mixed_cone_nilpotent": true,
+    "minimum_208_row_physical_carrier_constructed": false,
+    "retained_q26_SDR_exists": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "fully_mixed_cone": {
+    "A_ext": "A_mix=N tensor A104",
+    "A_ext_q_ext_commutator_zero": true,
+    "degree_profile_added": {
+      "degree_0": 40,
+      "degree_minus1": 12,
+      "degree_plus1": 40,
+      "degree_plus2": 12
+    },
+    "flavor_identity": "N^2=0",
+    "flavor_matrix": "N=[[1,-1],[1,-1]]",
+    "old_old_A_block": "A104",
+    "old_old_q_block": "q_Cauchy",
+    "q_ext": "Q=N tensor q_Cauchy",
+    "q_ext_squared_zero": true,
+    "support_local": true
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "SOLVE_THE_GENERAL_NON_CONE_104_ROW_BLOCK_SYSTEM_WITH_RETAINED_COHOMOLOGY_FIXED_FROM_THE_OUTSET",
+  "pinned_inputs": {
+    "A104": {
+      "artifact_id": "global_A104",
+      "path": "quantum-weyl/lorentzian/generated/berger_a104_endpoint_completion/global_A104.json",
+      "sha256": "37f0881c793f196175100e5e4784d18f6315e3654e3945c9972d9b212e662154"
+    },
+    "canonical_cone_obstruction": {
+      "artifact_id": "BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1.json",
+      "sha256": "9471e07167aff1aaa8abd1d46f148fd40fee9da4033dac8010c1bbb1df4f6c21"
+    },
+    "cone_next_defect": {
+      "artifact_id": "BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1",
+      "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1.json",
+      "sha256": "396d2c12abffc3ae86d448f10723b19d38a5abb03afb10da20f3f2da9226dd64"
+    },
+    "q_Cauchy": {
+      "artifact_id": "rejected_candidate_q_Cauchy_104",
+      "path": "quantum-weyl/lorentzian/generated/berger_canonical_graph_q_cauchy_obstruction/rejected_candidate_q_Cauchy_104.json",
+      "sha256": "116ea6304aa27d30c881bfac092c6058cf9d4571aa407ca5f47f1366d993bf50"
+    },
+    "retained_layout": {
+      "artifact_id": "BERGER_RETAINED_MINIMAL_LAYOUT",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json",
+      "sha256": "3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba"
+    },
+    "retained_q26": {
+      "artifact_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    }
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/berger_q26_104_row_fully_mixed_cone_sdr_obstruction.py": "f47852bb3964d49443581fd9c1616ed204546d35f4a2e3191fb1c2c650206f1d",
+      "d_quotient_classical/causal_transfer/tests/test_berger_q26_104_row_fully_mixed_cone_sdr_obstruction.py": "8057bf842f60707008adc58ff74e5f7c284879f471e8734f1668afd6c3474774",
+      "d_quotient_classical/causal_transfer/verify_berger_q26_104_row_fully_mixed_cone_sdr_obstruction.py": "0fa1e8e56b0b1290d4bdff3ad3b45cc7b5e3c403fa908f8ca939788ec5f27e5d",
+      "d_quotient_classical/schema/berger-q26-104-row-fully-mixed-cone-sdr-obstruction-v1.schema.json": "1be1e5acca3b65044a027df18c063c2d2c4016823cef34877bc6b70c8eff9a20"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.berger_q26_104_row_fully_mixed_cone_sdr_obstruction --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_104_row_fully_mixed_cone_sdr_obstruction",
+      "PYTHONPATH=. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_104_row_fully_mixed_cone_sdr_obstruction",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-104-row-fully-mixed-cone-sdr-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1.json"
+    ]
+  },
+  "result_id": "BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1",
+  "result_state": "FULLY_MIXED_CONE_EVOLUTION_EXISTS_BUT_RETAINED_SDR_IS_COHOMOLOGICALLY_OBSTRUCTED",
+  "schema": "pure-weyl-berger-q26-104-row-fully-mixed-cone-sdr-obstruction-v1",
+  "scope": {
+    "background": "fixed rational positive Berger clock",
+    "boundaries": "R_t x compact Berger S3; no spatial boundary",
+    "carrier": "canonical same-profile doubled cone with fully mixed evolution",
+    "charge_sector": "unquotiented retained-26 formal companion/Cauchy carrier",
+    "degree": "-1,0,1,2",
+    "ell": "not harmonic-reduced",
+    "k": "all finite-order Berger PBW derivatives",
+    "m": "not harmonic-reduced",
+    "omega": "stationary A104 formal evolution; no spectral split",
+    "parity": "inherited BV parity; pairing not reached because SDR fails",
+    "theory": "retained minimal pure-Weyl Berger BV complex"
+  },
+  "sdr_obstruction": {
+    "exact_payload": {
+      "artifact_id": "BERGER_Q26_104_ROW_FULLY_MIXED_CONE_RATIONAL_COHOMOLOGY_WITNESS_V1",
+      "path": "d_quotient_classical/generated/berger_q26_104_row_fully_mixed_cone_sdr_obstruction_v1/rational_cohomology_witness.json",
+      "sha256": "d5df8f878d77db15478d40f0f64182499ec62d6f33546e6b8b5cbb8a542d5ba4"
+    },
+    "proof": "A PBW-linear SDR specializes under every multiplicative rational representation to an SDR of rational complexes. An SDR induces degreewise cohomology isomorphisms, but the displayed specialized dimensions differ.",
+    "specialized_cone_homology_dimensions": [
+      13,
+      57,
+      57,
+      13
+    ],
+    "specialized_retained_homology_dimensions": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "status": "INCONSISTENT"
+  }
+}

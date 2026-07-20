@@ -146,6 +146,14 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         )
         self.assertIn("208 added, 312 total", entry["claim_boundary"])
         self.assertIn(
+            "cone cohomology (13,57,57,13)",
+            entry["claim_boundary"],
+        )
+        self.assertIn(
+            "retained q26 cohomology (1,1,1,1)",
+            entry["claim_boundary"],
+        )
+        self.assertIn(
             "every non-cone 104-row factorization",
             entry["claim_boundary"],
         )
@@ -168,6 +176,10 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         )
         self.assertIn(
             "BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
 

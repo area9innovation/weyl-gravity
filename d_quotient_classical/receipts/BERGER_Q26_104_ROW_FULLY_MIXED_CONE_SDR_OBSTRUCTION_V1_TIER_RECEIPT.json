@@ -1,0 +1,96 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1.json",
+      "sha256": "0a7a960ed84293c04477e4b80ccc601ca82e9ede577687ceff44ff0f8a07f32e"
+    },
+    {
+      "path": "d_quotient_classical/generated/berger_q26_104_row_fully_mixed_cone_sdr_obstruction_v1/rational_cohomology_witness.json",
+      "sha256": "d5df8f878d77db15478d40f0f64182499ec62d6f33546e6b8b5cbb8a542d5ba4"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "b42e7d560b1e4c4e3e1201014d1104bc2a0d751de88600877d4e4d3360335692"
+    },
+    {
+      "path": "d_quotient_classical/reports/berger-q26-104-row-fully-mixed-cone-sdr-obstruction-v1.md",
+      "sha256": "e6bd715109bfc4262c1049961684f462a43cede4b331e9df11fa990f4e2eb1f6"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile d_quotient_classical/causal_transfer/berger_q26_104_row_fully_mixed_cone_sdr_obstruction.py d_quotient_classical/causal_transfer/verify_berger_q26_104_row_fully_mixed_cone_sdr_obstruction.py d_quotient_classical/causal_transfer/tests/test_berger_q26_104_row_fully_mixed_cone_sdr_obstruction.py",
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <scoped paths>",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.berger_q26_104_row_fully_mixed_cone_sdr_obstruction --check --guards",
+        "elapsed_seconds": 1.35,
+        "status": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_104_row_fully_mixed_cone_sdr_obstruction",
+        "elapsed_seconds": 0.95,
+        "status": "PASS",
+        "independent_backend": "raw sparse-record constant-term reconstruction"
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_104_row_fully_mixed_cone_sdr_obstruction",
+        "elapsed_seconds": 1.52,
+        "status": "PASS",
+        "tests": 4
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-104-row-fully-mixed-cone-sdr-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1.json",
+        "elapsed_seconds": 2.26,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_classical_atlas_fragment.py --check",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment",
+        "status": "PASS",
+        "tests": 19
+      }
+    ],
+    "reason": "The result changes the fail-closed Berger classical-to-quantum Cauchy crosswalk by distinguishing evolution equivariance from retained contraction."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This closes one canonical-cone branch but is not a terminal theorem for general non-cone 104-row completions, a freeze, a release or a shared-core algebra change."
+  },
+  "claim_boundary": "A fully mixed evolution lift of the canonical cone exists identically, but exact rational-specialized cohomology obstructs its SDR to retained q26. This does not obstruct general non-cone 104-row factorizations or establish a pairing, real structure, Hadamard state or quantum theory."
+}

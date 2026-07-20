@@ -246,6 +246,10 @@ def verify() -> None:
         not in berger_cauchy["claim_boundary"]
         or "208 added, 312 total"
         not in berger_cauchy["claim_boundary"]
+        or "cone cohomology (13,57,57,13)"
+        not in berger_cauchy["claim_boundary"]
+        or "retained q26 cohomology (1,1,1,1)"
+        not in berger_cauchy["claim_boundary"]
         or "every non-cone 104-row factorization"
         not in berger_cauchy["claim_boundary"]
     ):
@@ -275,6 +279,11 @@ def verify() -> None:
         not in berger_cauchy_ids
     ):
         raise AssertionError("Berger cone next-defect evidence missing")
+    if (
+        "BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1"
+        not in berger_cauchy_ids
+    ):
+        raise AssertionError("Berger fully mixed cone SDR evidence missing")
     transverse = by_id["classical.nariai.transverse_kantowski_sachs_tangent"]
 
     bach_open = by_id["classical.bach_flat.open_parent_detour"]

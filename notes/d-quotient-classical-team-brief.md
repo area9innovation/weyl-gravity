@@ -2904,6 +2904,32 @@ off-diagonal factorization may avoid this regenerated orbit and remains the
 active gate.  No 312-row construction, physical pairing, retained
 contraction, Hadamard or quantum theorem is claimed.
 
+### Fully mixed cone evolution and retained-SDR obstruction (2026-07-20)
+
+`BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1` corrects an
+important ambiguity in the canonical-cone branch.  Although the
+upper-triangular evolution equation \(Dq=qA\) is obstructed, the same
+nilpotent cone admits the exact fully mixed lift
+
+\[
+Q_{\rm cone}=N\otimes q,\qquad
+A_{\rm mix}=N\otimes A,\qquad
+N=\begin{pmatrix}1&-1\\1&-1\end{pmatrix},\quad N^2=0.
+\]
+
+Thus \(Q_{\rm cone}^2=[A_{\rm mix},Q_{\rm cone}]=0\) identically.  This
+does not yield the requested carrier.  Under the exact rational
+multiplicative specialization
+\(e_\mu=0\), \((\alpha_B,u,v)=(2,1,3)\), its cohomology dimensions are
+\((13,57,57,13)\), whereas the retained 26-row complex has
+\((1,1,1,1)\).  Any support-local PBW contraction would specialize to an
+SDR and preserve cohomology, so the mismatch obstructs the retained
+contraction before pairing and reality conditions.
+
+This closes the fully mixed canonical-cone branch, not general non-cone
+104-row factorizations.  The active gate is now to impose retained
+cohomology from the outset in the complete non-cone block system.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

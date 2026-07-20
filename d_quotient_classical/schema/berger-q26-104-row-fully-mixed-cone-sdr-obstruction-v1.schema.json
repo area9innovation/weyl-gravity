@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-q26-104-row-fully-mixed-cone-sdr-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "scope",
+    "pinned_inputs",
+    "fully_mixed_cone",
+    "sdr_obstruction",
+    "classification",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-berger-q26-104-row-fully-mixed-cone-sdr-obstruction-v1"
+    },
+    "result_id": {
+      "const": "BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1"
+    },
+    "result_state": {
+      "const": "FULLY_MIXED_CONE_EVOLUTION_EXISTS_BUT_RETAINED_SDR_IS_COHOMOLOGICALLY_OBSTRUCTED"
+    },
+    "lifecycle_status": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
+    },
+    "scope": {
+      "type": "object"
+    },
+    "pinned_inputs": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {
+        "$ref": "#/$defs/artifact"
+      }
+    },
+    "fully_mixed_cone": {
+      "type": "object",
+      "required": [
+        "flavor_matrix",
+        "flavor_identity",
+        "q_ext",
+        "A_ext",
+        "old_old_q_block",
+        "old_old_A_block",
+        "q_ext_squared_zero",
+        "A_ext_q_ext_commutator_zero",
+        "support_local",
+        "degree_profile_added"
+      ],
+      "properties": {
+        "flavor_matrix": {"const": "N=[[1,-1],[1,-1]]"},
+        "flavor_identity": {"const": "N^2=0"},
+        "q_ext": {"const": "Q=N tensor q_Cauchy"},
+        "A_ext": {"const": "A_mix=N tensor A104"},
+        "old_old_q_block": {"const": "q_Cauchy"},
+        "old_old_A_block": {"const": "A104"},
+        "q_ext_squared_zero": {"const": true},
+        "A_ext_q_ext_commutator_zero": {"const": true},
+        "support_local": {"const": true},
+        "degree_profile_added": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "degree_minus1",
+            "degree_0",
+            "degree_plus1",
+            "degree_plus2"
+          ],
+          "properties": {
+            "degree_minus1": {"const": 12},
+            "degree_0": {"const": 40},
+            "degree_plus1": {"const": 40},
+            "degree_plus2": {"const": 12}
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "sdr_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exact_payload",
+        "specialized_cone_homology_dimensions",
+        "specialized_retained_homology_dimensions",
+        "proof",
+        "status"
+      ],
+      "properties": {
+        "exact_payload": {"$ref": "#/$defs/artifact"},
+        "specialized_cone_homology_dimensions": {
+          "const": [13, 57, 57, 13]
+        },
+        "specialized_retained_homology_dimensions": {
+          "const": [1, 1, 1, 1]
+        },
+        "proof": {"type": "string", "minLength": 1},
+        "status": {"const": "INCONSISTENT"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fully_mixed_cone_evolution_lift_exists",
+        "fully_mixed_cone_nilpotent",
+        "retained_q26_SDR_exists",
+        "cyclic_pairing_and_real_structure_reached",
+        "all_non_cone_104_row_completions_obstructed",
+        "minimum_208_row_physical_carrier_constructed",
+        "Hadamard_or_quantum_claim"
+      ],
+      "properties": {
+        "fully_mixed_cone_evolution_lift_exists": {"const": true},
+        "fully_mixed_cone_nilpotent": {"const": true},
+        "retained_q26_SDR_exists": {"const": false},
+        "cyclic_pairing_and_real_structure_reached": {"const": false},
+        "all_non_cone_104_row_completions_obstructed": {"const": false},
+        "minimum_208_row_physical_carrier_constructed": {"const": false},
+        "Hadamard_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {
+      "const": "SOLVE_THE_GENERAL_NON_CONE_104_ROW_BLOCK_SYSTEM_WITH_RETAINED_COHOMOLOGY_FIXED_FROM_THE_OUTSET"
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 4,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "verification_commands": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  }
+}
