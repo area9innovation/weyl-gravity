@@ -1,0 +1,54 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_PRESYMPLECTIC_DIVISORS_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Complete conormal determinantal description of the smooth restricted-current divisors and tangent-space presymplectic quotients on candidates 17, 18 and 20.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.json": "fd23cfeb1b4f0d5561b0e4b5bf76175691436128a5a50fcaca9d127841b89d8e",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.py": "714799095b5b848df8617b4cd6dbb2ddffba76dcdb2f7bc2a4467c8068760f6f",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.schema.json": "ab33f41bd9ed621cb45511fafb2986b71113a7e5a843807ecac3bcda13de7cee",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.py": "a6637b2ee6a9e01e765d5eb27ac693888af6f2a9fb327d3d1c91896e1cb2e8f3",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.py": "5d334395c90acc33370d01c0205cab8454fdbd2cf6df23ac710fe6eaaa49846b",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-active-presymplectic-divisors.md": "0daaed2fc2280613edbffb2899f231eb7334781ad344becead2f1b44e663c2f1"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.py bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.py",
+        "python3 -m json.tool bridge/certificates/einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.json",
+        "python3 -m json.tool bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.schema.json",
+        "git diff --check on the scoped paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 5,
+      "producer_elapsed_seconds": 0.69,
+      "independent_verifier_elapsed_seconds": 0.67,
+      "unit_test_elapsed_seconds": 0.76,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_active_presymplectic_divisors --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_active_presymplectic_divisors",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_active_presymplectic_divisors"
+      ]
+    },
+    "adversarial": {
+      "status": "PASS_MUTATION_REJECTED",
+      "mutation": "replace the candidate-18 factor (6*b*r-w_x) by (5*b*r-w_x) in a temporary certificate",
+      "result": "the independent verifier raised AssertionError"
+    },
+    "tier_2": {
+      "status": "PASS_BY_EXACT_RECOMPUTATION_AND_CONTENT_ADDRESS",
+      "reason": "The independent verifier reconstructs the third-transvectant conormal witness, the rank-one aligned divisor factors, both kernel eigenlines, and the conormal/restricted-current nullity identity without importing the producer."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This closes the smooth tangent-space divisor gate only; singular/global quotient topology, occupation gluing, all-orders integration, and every causal or quantum lifecycle remain open."
+    },
+    "science_forge_work_package": {
+      "status": "TOOLING_SHORTFALL",
+      "reason": "The work item and standing constraints were read directly. Rebuilding /tmp/forgebin was unavailable because go is not installed; the pre-existing binary also lacked the current conflux_ir import path. No generated work-package view was treated as passed."
+    }
+  },
+  "claim_boundary": "CERTIFIED on every smooth active resonance stratum of candidates 17, 18 and 20 as a finite-dimensional tangent-space quotient theorem. Global quotient topology, singular strata, occupation gluing, all-orders integration, and causal/residual/observational/quantum maps remain OPEN or NO_CERTIFIED_MAP."
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "scope",
+    "conormal_divisor_theorem",
+    "candidate17_20_third_transvectant",
+    "candidate18_rank_one",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-same-sign-active-presymplectic-divisors-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_PRESYMPLECTIC_DIVISORS"
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "candidate17_smooth_divisor_classified",
+        "candidate18_smooth_divisor_classified",
+        "candidate20_smooth_divisor_classified",
+        "presymplectic_linear_quotient_on_every_smooth_stratum_classified",
+        "global_quotient_topology_classified",
+        "singular_locus_quotient_classified"
+      ],
+      "properties": {
+        "candidate17_smooth_divisor_classified": {"const": true},
+        "candidate18_smooth_divisor_classified": {"const": true},
+        "candidate20_smooth_divisor_classified": {"const": true},
+        "presymplectic_linear_quotient_on_every_smooth_stratum_classified": {"const": true},
+        "global_quotient_topology_classified": {"const": false},
+        "singular_locus_quotient_classified": {"const": false}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
