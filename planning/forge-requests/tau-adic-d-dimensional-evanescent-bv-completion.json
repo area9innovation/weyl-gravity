@@ -1,0 +1,19 @@
+{
+  "id": "sf:forge-request/tau-adic-d-dimensional-evanescent-bv-completion",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "quantum-analytic-renormalization",
+    "state": "REQUESTED",
+    "objective": "Construct the missing d-dimensional evanescent BV completion required by quantum-weyl/anomalies/certificates/TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION.json. The first consumer is sf:program/work/quantum-all-loop-qap-regulator-construction. Supply the d-dimensional master action and differential, complete physical and evanescent ghost-zero/ghost-one local operator modules, nonminimal measure and positive-antifield insertion continuation, exact mixing matrices, subdivergence subtraction, and the finite projection prescription back to the formal four-dimensional tau-adic algebra.",
+    "depends_on": [
+      "sf:program/work/quantum-all-loop-qap-regulator-construction"
+    ],
+    "stop_condition": "A content-addressed payload with strict schema and independent verifier proves closure of dimensional regularization/minimal subtraction on the enlarged d-dimensional formal BV algebra, proves the arbitrary-loop QAP hypotheses and Wess-Zumino consistency, and shows that the final four-dimensional projection is independent of the declared evanescent basis up to explicit finite canonical/coupling redefinitions; or it identifies the first exact incompatibility after evanescent completion.",
+    "forbid": "No repetition of four-dimensional H14=0 as a regulator theorem; no choice of Euler continuation without the complete evanescent mixing module; no omission of positive-antifield insertions, nonminimal measure, zero modes or subdivergences; no claim that the scoped present obstruction rules out dimensional regularization or every regulator; no strict-theory anomaly-freedom, Lorentzian-QME, state, particle or unitarity promotion.",
+    "notes": [
+      "The nonzero Euler pole converts epsilon-times-evanescent continuation ambiguity into a finite carrier. The present four-dimensional counterterm module does not type that carrier or its mixing map.",
+      "A distinct genuinely four-dimensional regulator with an independent QAP proof is an alternative route and should be a separate architecture rather than silently mixed with this request."
+    ]
+  }
+}

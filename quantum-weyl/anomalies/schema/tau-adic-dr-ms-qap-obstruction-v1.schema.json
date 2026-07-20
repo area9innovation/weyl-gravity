@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-tau-adic-dr-ms-qap-obstruction-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "historical_input_pins",
+    "declared_architecture",
+    "first_incompatibility",
+    "qap_hypothesis_ledger",
+    "missing_completion",
+    "receiver_status",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-tau-adic-dr-ms-qap-obstruction-v1"
+    },
+    "result_id": {
+      "const": "TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION"
+    },
+    "result_state": {
+      "const": "DECLARED_DR_MS_ARCHITECTURE_OBSTRUCTED_AT_EVANESCENT_CLOSURE"
+    },
+    "lifecycle_status": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ]
+    },
+    "historical_input_pins": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["certificate", "manuscript"],
+      "properties": {
+        "certificate": {"$ref": "#/$defs/pin"},
+        "manuscript": {"$ref": "#/$defs/pin"}
+      }
+    },
+    "declared_architecture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "regularization",
+        "subtraction",
+        "variables",
+        "measure",
+        "tau_topology",
+        "power_counting",
+        "coupling_chart",
+        "zero_modes"
+      ],
+      "properties": {
+        "regularization": {"const": "dimensional_regularization_d=4-epsilon"},
+        "subtraction": {"type": "string", "minLength": 30},
+        "variables": {"type": "string", "minLength": 30},
+        "measure": {"type": "string", "minLength": 30},
+        "tau_topology": {"type": "string", "minLength": 30},
+        "power_counting": {"type": "string", "minLength": 30},
+        "coupling_chart": {"type": "string", "minLength": 30},
+        "zero_modes": {"type": "string", "minLength": 30}
+      }
+    },
+    "first_incompatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gate",
+        "four_dimensional_module",
+        "dimensional_continuation_ambiguity",
+        "nonzero_Euler_residue",
+        "pole_times_evanescent_identity",
+        "finite_evanescent_coefficient",
+        "continuation_dependence",
+        "status"
+      ],
+      "properties": {
+        "gate": {"const": "COUNTERTERM_ALGEBRA_CLOSED_UNDER_SUBTRACTION"},
+        "four_dimensional_module": {
+          "const": [
+            "C(g_hat)^2",
+            "E4(g_hat)",
+            "R(g_hat)^2",
+            "C(g_hat) dual C(g_hat)"
+          ]
+        },
+        "dimensional_continuation_ambiguity": {
+          "const": "E_d^(X)=E_d^(0)+epsilon X_ev+O(epsilon^2)"
+        },
+        "nonzero_Euler_residue": {"$ref": "#/$defs/rational"},
+        "pole_times_evanescent_identity": {
+          "const": "(a/epsilon)(E_d^(X)-E_d^(0))=a X_ev+O(epsilon)"
+        },
+        "finite_evanescent_coefficient": {
+          "const": {"numerator": -87, "denominator": 20}
+        },
+        "continuation_dependence": {
+          "const": "finite_MS(E_d^(X))-finite_MS(E_d^(0))=a X_ev != 0"
+        },
+        "status": {"const": "EXACT_EVANESCENT_CONTINUATION_DEPENDENCE"}
+      }
+    },
+    "qap_hypothesis_ledger": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "contains": {
+        "type": "object",
+        "required": ["hypothesis", "status"],
+        "properties": {
+          "hypothesis": {
+            "const": "subtraction continuous and closed in declared algebra"
+          },
+          "status": {"const": "FAILED_EVANESCENT_EXTENSION_REQUIRED"}
+        }
+      },
+      "minContains": 1,
+      "maxContains": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["hypothesis", "status"],
+        "properties": {
+          "hypothesis": {"type": "string", "minLength": 10},
+          "status": {
+            "enum": ["NOT_REACHED", "FAILED_EVANESCENT_EXTENSION_REQUIRED"]
+          }
+        }
+      }
+    },
+    "missing_completion": {
+      "type": "array",
+      "minItems": 6,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 20}
+    },
+    "receiver_status": {
+      "const": "REJECT_UNCONDITIONAL_ALL_LOOP_PROMOTION"
+    },
+    "claim_flags": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {"const": false}
+    },
+    "next_gate": {"type": "string", "minLength": 120},
+    "claim_boundary": {"type": "string", "minLength": 500},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "source_manifest"],
+      "properties": {
+        "proof_type": {
+          "const": "EXACT_POLE_TIMES_EVANESCENT_NONCOMMUTATION"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "source_commit"],
+      "properties": {
+        "path": {"type": "string", "minLength": 10},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "source_commit": {"const": "7fabe9878"}
+      }
+    },
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"const": -87},
+        "denominator": {"const": 20}
+      }
+    }
+  }
+}

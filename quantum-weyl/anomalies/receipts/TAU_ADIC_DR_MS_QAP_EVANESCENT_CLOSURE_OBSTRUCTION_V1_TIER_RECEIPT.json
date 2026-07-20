@@ -1,0 +1,72 @@
+{
+  "receipt_id": "TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION_V1_TIER_RECEIPT",
+  "result_id": "TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION",
+  "recorded_at": "2026-07-20",
+  "base_commit": "306ff78a2001f23124d412e9a2f41531bec74f78",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "input_hashes": {
+    "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY_at_7fabe9878": "a0ce9774fc1417d4e108a6b834173bc41fd433ed45bfcfdcf2d63063969f33bc",
+    "PAPER_12_MANUSCRIPT_at_7fabe9878": "d2cedfb85a8bf7b1bc5ef2c606c186bdf253767fff30188858cedc0c1982fc1f"
+  },
+  "output_hashes": {
+    "certificate": "20915ec21d0c96534a7091b57ee2c3baf5728526a32d00de83dd75b4b94e7e5f",
+    "report": "3110a118095b225b3fcd533b0817637ae64aa1fd3dc3827af084ae5eb05555b5",
+    "quantum_atlas": "37d9a62bc58aaa368fa739f06c475e81c74286202ebb19f47c66bb71ad293663",
+    "evanescent_completion_request": "d1522fbc76c8c4b98177ce0c97355f0c921c82e619ee764f0f2cbb9eff26903b",
+    "quantum_team_brief": "422a47332f9323391c2104e4224529d8e4affdf8f51c09f03bc54cd21ee4baf9"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile <five scoped modules> && python3 -m json.tool <schema, certificate and request> && git diff --check -- <scoped paths>",
+      "elapsed_seconds": 3.61,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m anomalies.tau_adic_dr_ms_qap_obstruction_certificate --check",
+      "elapsed_seconds": 0.1,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 quantum-weyl/anomalies/verify_tau_adic_dr_ms_qap_obstruction.py",
+      "elapsed_seconds": 0.88,
+      "status": "PASS_INDEPENDENT_HISTORICAL_PINS_AND_POLE_TIMES_EVANESCENT_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest anomalies.tests.test_tau_adic_dr_ms_qap_obstruction",
+      "elapsed_seconds": 0.84,
+      "status": "PASS_8_TESTS_WITH_ZERO_RESIDUE_OVERPROMOTION_ARCHITECTURE_AND_SECOND_FAILED_GATE_MUTATIONS"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 compile/validate --spec=draft2020 --strict=true <scoped schema and certificate>",
+      "elapsed_seconds": 6.45,
+      "status": "PASS_DRAFT_2020_12_STRICT"
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest atlas.tests.test_quantum_atlas_fragment && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "elapsed_seconds": 11.26,
+      "status": "PASS_9_TESTS_AND_3_VERIFIERS_AFTER_REPAIR"
+    },
+    {
+      "tier": 2,
+      "command": "initial atlas suite before wording repair",
+      "elapsed_seconds": 11.68,
+      "status": "FAIL_EXPECTED_PRIOR_OPEN_REGULATOR_PHRASE_MISSING_REPAIRED_BY_PRESERVING_GENERIC_OPEN_STATUS_AND_ADDING_SCOPED_DR_MS_OBSTRUCTION"
+    },
+    {
+      "tier": 2,
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 9.73,
+      "status": "ADVISORY_EXIT_0_WITH_PREEXISTING_BRIDGE_DRIFT_UNPINNED_FORGE_BUILD_AND_CORPUS_BASELINE_DRIFT_REPORTED"
+    }
+  ],
+  "tier_3_not_run": "No unconditional QME, regulator construction, global-anomaly exclusion, Lorentzian QME, freeze, release or tag is promoted. The result is a scoped exact obstruction for one declared DR/MS architecture and is covered by tiers 0-2."
+}

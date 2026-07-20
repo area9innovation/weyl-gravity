@@ -1,0 +1,108 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL result obstructs only the declared dimensional-regularization/minimal-subtraction architecture when it is required to stay inside the certified strictly four-dimensional tau-adic H04 module. The nonzero Euler pole turns an admissible epsilon-times-evanescent continuation ambiguity into a finite carrier outside that module. It is not a no-go theorem for dimensional regularization after a complete evanescent BV extension, and is not a no-go theorem for all regulators, does not refute the conditional cohomological induction, and does not establish convergence, global anomaly freedom, a Lorentzian QME, residual transfer, states, particles or unitarity.",
+  "claim_flags": {
+    "ALL_REGULATORS_OBSTRUCTED": false,
+    "DR_MS_QAP_CERTIFIED": false,
+    "LORENTZIAN_QME_CERTIFIED": false,
+    "STRICT_THEORY_REPAIRED": false,
+    "UNCONDITIONAL_ALL_LOOP_QME": false
+  },
+  "declared_architecture": {
+    "coupling_chart": "formal neighbourhood of nonzero C2 kinetic coupling",
+    "measure": "continued gauge-fixed Berezin measure with primed zero modes",
+    "power_counting": "massless logarithmic operators of dimension four",
+    "regularization": "dimensional_regularization_d=4-epsilon",
+    "subtraction": "minimal_subtraction_with_local_BV_antifield_insertions",
+    "tau_topology": "formal tau-adic coefficientwise continuation",
+    "variables": "dressed g_hat plus complete minimal/nonminimal BV complex",
+    "zero_modes": "project before determinant, retain local UV pole separately"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "first_incompatibility": {
+    "continuation_dependence": "finite_MS(E_d^(X))-finite_MS(E_d^(0))=a X_ev != 0",
+    "dimensional_continuation_ambiguity": "E_d^(X)=E_d^(0)+epsilon X_ev+O(epsilon^2)",
+    "finite_evanescent_coefficient": {
+      "denominator": 20,
+      "numerator": -87
+    },
+    "four_dimensional_module": [
+      "C(g_hat)^2",
+      "E4(g_hat)",
+      "R(g_hat)^2",
+      "C(g_hat) dual C(g_hat)"
+    ],
+    "gate": "COUNTERTERM_ALGEBRA_CLOSED_UNDER_SUBTRACTION",
+    "nonzero_Euler_residue": {
+      "denominator": 20,
+      "numerator": -87
+    },
+    "pole_times_evanescent_identity": "(a/epsilon)(E_d^(X)-E_d^(0))=a X_ev+O(epsilon)",
+    "status": "EXACT_EVANESCENT_CONTINUATION_DEPENDENCE"
+  },
+  "historical_input_pins": {
+    "certificate": {
+      "path": "quantum-weyl/anomalies/certificates/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json",
+      "sha256": "a0ce9774fc1417d4e108a6b834173bc41fd433ed45bfcfdcf2d63063969f33bc",
+      "source_commit": "7fabe9878"
+    },
+    "manuscript": {
+      "path": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "sha256": "d2cedfb85a8bf7b1bc5ef2c606c186bdf253767fff30188858cedc0c1982fc1f",
+      "source_commit": "7fabe9878"
+    }
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "missing_completion": [
+    "d-dimensional BV master action and differential",
+    "complete evanescent ghost-zero and ghost-one operator basis",
+    "mixing matrix from evanescent to physical operators",
+    "nonminimal measure and antifield insertion continuation",
+    "projection/finite-renormalization prescription after subdivergence subtraction",
+    "independent QAP proof on the enlarged algebra"
+  ],
+  "next_gate": "Enlarge the formal algebra to a content-addressed d-dimensional evanescent BV module and prove its subtraction/mixing/projection maps, or construct a distinct four-dimensional regulator with an independent QAP proof.",
+  "provenance": {
+    "proof_type": "EXACT_POLE_TIMES_EVANESCENT_NONCOMMUTATION",
+    "source_manifest": {
+      "../reports/tau-adic-dr-ms-qap-obstruction.md": "3110a118095b225b3fcd533b0817637ae64aa1fd3dc3827af084ae5eb05555b5",
+      "schema/tau-adic-dr-ms-qap-obstruction-v1.schema.json": "4e1eb9b46394adaac150613af1ae18d12df86aed566fa9cf00c67a74b7f499bb",
+      "tau_adic_dr_ms_qap_obstruction.py": "29071875e22c6f054eb08dca47f869e7a3e20a0805933151596d1936cc78b519",
+      "tau_adic_dr_ms_qap_obstruction_certificate.py": "a79d3e76d9f2ab4123906f1fe5c50f26d50377a453f2deb0bc855c615a5a4d71",
+      "tests/test_tau_adic_dr_ms_qap_obstruction.py": "f9dd6492eeacf77829e8f82f7ecf07e99778d4aa9422002c9289d8cae781baf8",
+      "verify_tau_adic_dr_ms_qap_obstruction.py": "0d4ad410b1a6c32bb370550ae988c33d8d5fcca29324f91480bc21fb077b2cb2"
+    }
+  },
+  "qap_hypothesis_ledger": [
+    {
+      "hypothesis": "local first breaking",
+      "status": "NOT_REACHED"
+    },
+    {
+      "hypothesis": "ghost number one",
+      "status": "NOT_REACHED"
+    },
+    {
+      "hypothesis": "homogeneous dimension four",
+      "status": "NOT_REACHED"
+    },
+    {
+      "hypothesis": "Wess-Zumino consistency",
+      "status": "NOT_REACHED"
+    },
+    {
+      "hypothesis": "subtraction continuous and closed in declared algebra",
+      "status": "FAILED_EVANESCENT_EXTENSION_REQUIRED"
+    },
+    {
+      "hypothesis": "regular Koszul-Tate chart",
+      "status": "NOT_REACHED"
+    }
+  ],
+  "receiver_status": "REJECT_UNCONDITIONAL_ALL_LOOP_PROMOTION",
+  "result_id": "TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION",
+  "result_state": "DECLARED_DR_MS_ARCHITECTURE_OBSTRUCTED_AT_EVANESCENT_CLOSURE",
+  "schema": "quantum-weyl-tau-adic-dr-ms-qap-obstruction-v1"
+}

@@ -2310,3 +2310,42 @@ This result is `LOCAL-ALGEBRAIC`.
 
 - [`TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json`](../quantum-weyl/anomalies/certificates/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json)
 - [`tau-adic-all-loop-local-qme-stability.md`](../quantum-weyl/reports/tau-adic-all-loop-local-qme-stability.md)
+
+## Declared DR/MS all-loop QAP obstruction (2026-07-20)
+
+The first attempted analytic realization of the conditional all-loop theorem
+has been declared completely: dimensional regularization with minimal
+subtraction in the dressed variables, including the minimal/nonminimal BV
+measure, positive-antifield insertions, formal \(\tau\)-adic topology, regular
+coupling chart and primed zero-mode policy.
+
+It stops exactly at closure under subtraction. Two admissible dimensional
+continuations of the Euler density can differ by
+
+\[
+E_d^{(X)}-E_d^{(0)}
+=\epsilon X_{\rm ev}+O(\epsilon^2).
+\]
+
+Because the imported Euler pole has nonzero residue \(a=-87/20\),
+
+\[
+\frac a\epsilon\left(E_d^{(X)}-E_d^{(0)}\right)
+=aX_{\rm ev}+O(\epsilon).
+\]
+
+Thus the evanescent choice changes the finite subtraction. The certified
+four-dimensional dressed \(H^{0,4}\) module does not contain \(X_{\rm ev}\)
+or its mixing and projection maps, so the declared DR/MS architecture does
+not yet define the QAP on that algebra. The conditional cohomological
+induction is unchanged.
+
+This is not a no-go theorem for dimensional regularization after a complete
+\(d\)-dimensional evanescent BV extension, nor for a distinct regulator. A
+strict producer request now asks for precisely that completion. No
+unconditional, global or Lorentzian QME status is promoted.
+
+This result is `LOCAL-ALGEBRAIC`/`EUCLIDEAN-SPECTRAL`.
+
+- [`TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION.json`](../quantum-weyl/anomalies/certificates/TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION.json)
+- [`tau-adic-dr-ms-qap-obstruction.md`](../quantum-weyl/reports/tau-adic-dr-ms-qap-obstruction.md)
