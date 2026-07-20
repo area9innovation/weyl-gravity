@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/quantum-dressed-evanescent-geometric-bv-module-preflight-OBSTRUCTED-4f76305ab6e417d0",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/quantum-dressed-evanescent-geometric-bv-module-preflight-OBSTRUCTED-4f76305ab6e417d0.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "quantum-qme-1", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-20T16:30:57Z", "seq": 2, "predecessor": "sf:program/event/quantum-dressed-evanescent-geometric-bv-module-preflight-ACTIVE-59e971936cfc6c61", "payload": {"target": "sf:program/work/quantum-dressed-evanescent-geometric-bv-module-preflight", "to_state": "OBSTRUCTED", "note": "the common even AFN0 geometric premodule and its exact \\(d\\to4\\) projection are certified, but a full evanescent BV module requires the selected action’s \\(d\\)-dimensional Koszul--Tate rows and a declared parity-odd dimensional scheme.", "evidence_basis": "`quantum-weyl/anomalies/certificates/DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT.json`"}, "native": {"authored_by": "sfc close-out", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/quantum-dressed-evanescent-geometric-bv-module-preflight"}]
+}
