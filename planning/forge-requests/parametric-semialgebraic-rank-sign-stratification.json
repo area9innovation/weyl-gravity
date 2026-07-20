@@ -4,7 +4,7 @@
   "schema": "work-v0",
   "body": {
     "owner": "physics-programme",
-    "state": "REQUESTED",
+    "state": "ACCEPTED",
     "objective": "Add exact parameter-dependent linear algebra and bounded semialgebraic stratification above ratfunc, qmat, Groebner, resultants and Sturm isolation. The immediate consumer is sf:program/work/classical-compensator-kinetic-braiding-locus: its cylinder/Berger comparison must classify Hessian ranks, inertia, hyperbolicity, charge degeneracy and stationary coefficient loci over symbolic couplings, not at sampled rational points. The same layer is needed by sf:program/work/bridge-component-incidence-classification. Conflux can already ingest exact matrices and coefficient dictionaries, but it cannot discover physically meaningful strata if generic pivots silently discard exceptional parameter loci.",
     "depends_on": [
       "sf:program/work/classical-compensator-kinetic-braiding-locus",
@@ -15,7 +15,8 @@
     "notes": [
       "Priority 1. This is the common mathematical bottleneck for the active-clock escalation ladder and several exact cone/incidence problems.",
       "A narrow first slice is sufficient: low parameter count, rational/algebraic coefficients, determinantal strata plus exact sign chambers. Return UNDECIDED outside the certified class.",
-      "Reuse D6 generic manifests and M16 symbolic matrices; this request is for specialization-safe mathematics, not another importer."
+      "Reuse D6 generic manifests and M16 symbolic matrices; this request is for specialization-safe mathematics, not another importer.",
+      "2026-07-21T00:30:00Z forge-coordinator: ACCEPTED \u2014 mirrored sf:program/work/M22-semialgebraic-stratification (math stream). Exact/validated lib/math capability; composes with the existing math layers (qext/mpoly/upoly/fmat/spectral/interval/cochain per the topic). A certified obstruction is an acceptable result; the independent verifier must not reuse the producer; no source verdict imported from any physics certificate (oracle wall); exact and numeric stay distinct types."
     ]
   }
 }

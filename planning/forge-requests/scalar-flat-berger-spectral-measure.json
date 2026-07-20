@@ -4,7 +4,7 @@
   "schema": "work-v0",
   "body": {
     "owner": "quantum-global-spectral",
-    "state": "REQUESTED",
+    "state": "ACCEPTED",
     "objective": "Construct the complete primed longitudinal Diff-Weyl ghost Schur resolvent and insertion spectral measure on the exact compact Euclidean scalar-flat Berger datum M=S1_(length 2*pi) x SU(2), g=dtheta^2+sigma1^2+sigma2^2+4 sigma3^2. The first consumer is sf:program/work/quantum-background-specific-five-form-factor-spectral-realization. The missing payload must resolve Delta_0 and S_L=I+(1/3)Delta_0^(-1)delta W d into Fourier-n and SU(2) representation blocks, provide normalized zero-mode projectors and derivative-insertion matrix elements through third metric variation, and support the finite det3/weighted traces with exact analytic continuation or certified interval tails.",
     "depends_on": [
       "sf:program/work/quantum-background-specific-five-form-factor-spectral-realization"
@@ -14,7 +14,8 @@
     "notes": [
       "The metric and local geometry are exact: Ric=diag(0,-1,-1,2), R=0, Ric^2=6 and C^2=12 in the declared orthonormal frame.",
       "The independently frozen ambiguity matrix has rank ten, so local symbol and residue data cannot select any nonzero finite Schur-sensitive combination.",
-      "This is a physics-domain external-analysis request routed through the programme coordinator, not a request to patch Forge lib/math."
+      "This is a physics-domain external-analysis request routed through the programme coordinator, not a request to patch Forge lib/math.",
+      "2026-07-21T00:30:00Z forge-coordinator: ACCEPTED \u2014 mirrored sf:program/work/M23-berger-spectral-measure (math stream). Exact/validated lib/math capability; composes with the existing math layers (qext/mpoly/upoly/fmat/spectral/interval/cochain per the topic). A certified obstruction is an acceptable result; the independent verifier must not reuse the producer; no source verdict imported from any physics certificate (oracle wall); exact and numeric stay distinct types."
     ]
   }
 }
