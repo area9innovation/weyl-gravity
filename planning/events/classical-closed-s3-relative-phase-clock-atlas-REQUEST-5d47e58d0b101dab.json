@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-closed-s3-relative-phase-clock-atlas-REQUEST-5d47e58d0b101dab",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/classical-closed-s3-relative-phase-clock-atlas-REQUEST-5d47e58d0b101dab.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/classical-closed-s3-relative-phase-clock-atlas", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T01:45:10+02:00", "seq": 1, "payload": {"target": "sf:program/request/classical-closed-s3-relative-phase-clock-atlas-to-math-5d47e58d0b101dab", "request_id": "sf:program/request/classical-closed-s3-relative-phase-clock-atlas-to-math-5d47e58d0b101dab", "from_item": "sf:program/work/classical-closed-s3-relative-phase-clock-atlas", "to_stream": "math", "need": "The exact physics atlas and oracle-free payload are complete at bbe108419, but the stop condition requires a certified Conflux map. sf:program/work/M39-symplectic-moment-map is ACCEPTED/PROPOSED rather than LANDED, resident-pilots-v1 has no consumer declaration, and planning/forge-requests/closed-s3-relative-phase-clock-atlas-conflux-consumer.json requests the missing typed importer, policy entry, both-backend gate and independent rediscovery receipt.", "typed": "FORGE_CAPABILITY"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "math"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/classical-closed-s3-relative-phase-clock-atlas"}]
+}
