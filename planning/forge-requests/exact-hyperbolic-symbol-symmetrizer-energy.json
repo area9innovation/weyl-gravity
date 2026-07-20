@@ -1,0 +1,20 @@
+{
+  "id": "sf:forge-request/exact-hyperbolic-symbol-symmetrizer-energy",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add a proof-carrying hyperbolic-PDE symbol and energy-estimate layer above exact matrices, semialgebraic stratification, formal Spencer analysis and the causal kernel types. The immediate consumers are sf:program/work/classical-compensator-degenerate-curvature-coupling-locus, sf:program/work/nonlinear-branch-repair-minimal-hyperbolic and the curved causal-complex certificates. Current consumers hand-build principal matrices and candidate symmetrizers; Conflux can compare them but cannot certify strong or symmetric hyperbolicity uniformly over covectors and parameters.",
+    "depends_on": [
+      "sf:program/work/classical-compensator-degenerate-curvature-coupling-locus",
+      "sf:program/work/nonlinear-branch-repair-minimal-hyperbolic"
+    ],
+    "stop_condition": "Represent first-order and reduced higher-order principal symbols with bundle grading, constraints, gauge reductions and parameter domains. Decide symmetric hyperbolicity by constructing an exact positive symmetrizer or an exact separator; decide strong hyperbolicity on a declared compact covector sphere by a uniform diagonalizer/symmetrizer certificate or a Jordan/coalescence obstruction; track characteristic varieties, multiplicities, constraint propagation and rank-changing strata; and emit coercive energy identities with explicit constants or certified interval bounds. Reproduce the existing Weyl-Cotton positive symmetrizer, the fixed-temporal no-go control and one compensated clock-metric candidate. Compose with M19 rather than treating unreduced lapse or gauge directions as physical. Export characteristic and symmetrizer strata to Conflux with exact versus validated-numeric lifecycle preserved.",
+    "forbid": "no sampled-direction eigenvalue scan called strong hyperbolicity; no positive matrix at one covector called a uniform symmetrizer; no velocity Hessian used in place of Dirac/constraint reduction; no diagonalizability inferred from a characteristic polynomial alone; no physics-specific field equations in lib/math; no causal Green claim from a principal-symbol result alone",
+    "notes": [
+      "Priority A. This is the missing bridge from discovered finite symbols to trustworthy causal candidate selection.",
+      "A first version may restrict to low-dimensional rational/algebraic homogeneous symbols and bounded semialgebraic parameter domains."
+    ]
+  }
+}

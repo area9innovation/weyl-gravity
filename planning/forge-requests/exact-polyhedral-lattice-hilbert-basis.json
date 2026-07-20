@@ -1,0 +1,20 @@
+{
+  "id": "sf:forge-request/exact-polyhedral-lattice-hilbert-basis",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add exact rational polyhedral, lattice and affine-semigroup machinery for discrete matter-content searches, cone geometry and bounded candidate synthesis. The immediate consumers are sf:program/work/quantum-matter-content-anomaly-cancellation-lattice, sf:program/work/quantum-matter-gauge-representation-anomaly-selection and the residual-atlas extreme-ray classifications. Conflux can enumerate bounded candidates, but it lacks proof-carrying V/H conversion, Hilbert bases and integer-feasibility certificates, so absence of a candidate is not yet a theorem.",
+    "depends_on": [
+      "sf:program/work/quantum-matter-content-anomaly-cancellation-lattice",
+      "sf:program/work/quantum-matter-gauge-representation-anomaly-selection"
+    ],
+    "stop_condition": "Provide exact rational polyhedra and cones in H and V representations, lineality and face lattices, extreme rays, dual and polar cones, Fourier-Motzkin or certified projection for bounded dimensions, integer lattices and quotient lattices, Smith/Hermite-backed saturation, Hilbert bases of pointed rational cones, integer feasibility and optimization with Farkas or branch-and-bound certificates, and symmetry-orbit reduction with explicit stabilizers. Reproduce the ordinary-matter anomaly separating functional, enumerate the minimal solutions of one declared anomaly lattice, and recover one Paper-13 cone's extreme rays and incidence. Export cones, lattices and certificates to Conflux so candidate generation can prove completeness within declared bounds.",
+    "forbid": "no floating LP infeasibility called exact; no bounded enumeration called a Hilbert basis; no omission of lineality or lattice saturation; no hand-picked matter multiplets hidden in the generic library; no unbounded optimizer without resource limits and resumable receipts; no source verdict imported into the independent separation rail",
+    "notes": [
+      "Priority B. This gives Conflux a rigorous finite candidate-synthesis engine rather than a heuristic enumerator.",
+      "Normaliz/4ti2 or polymake may be used as independent producers, but Forge must verify reconstruction, feasibility and separator certificates itself."
+    ]
+  }
+}

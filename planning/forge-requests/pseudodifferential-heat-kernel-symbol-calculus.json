@@ -1,0 +1,20 @@
+{
+  "id": "sf:forge-request/pseudodifferential-heat-kernel-symbol-calculus",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add a local pseudodifferential and heat-kernel symbol calculus as the missing analytic bridge between exact gauge-fixed operators and quantum anomaly/form-factor claims. The immediate consumers are sf:program/work/quantum-background-specific-five-form-factor-spectral-realization, sf:program/work/quantum-parity-even-third-curvature-five-form-factor-assembly and the dressed-regulator programme. M21 supplies global spectral objects, but it must not substitute local symbols for finite global data; this request supplies the local side and the subtraction interface explicitly.",
+    "depends_on": [
+      "sf:program/work/quantum-background-specific-five-form-factor-spectral-realization",
+      "sf:program/work/quantum-parity-even-third-curvature-five-form-factor-assembly"
+    ],
+    "stop_condition": "Represent differential and classical pseudodifferential symbols with bundle indices, order, parity, parameter dependence, covariant derivatives and composition/adjoint rules; construct parametrices to declared finite order; compute Seeley-DeWitt coefficients, noncommutative residues, local zeta poles and variation formulas; track zero-mode projectors, spectral cuts, total derivatives, local counterterm bases and scheme changes; and expose the exact boundary between local asymptotics and global finite parts. Reproduce scalar Laplace and Maxwell controls, one pure-Weyl local anomaly coefficient and one third-curvature local form-factor row with an independent xAct/Mathematica/heat-kernel rail. Export symbol and residue expressions to Conflux without allowing it to infer a global determinant from them.",
+    "forbid": "no local heat coefficient called a finite determinant; no formal inverse without ellipticity/domain assumptions; no dropped total derivative or zero-mode contribution without provenance; no Euclidean spectral result promoted to Lorentzian causal evidence; no physics-specific Bach operator baked into generic symbol types; no same-code producer and verifier",
+    "notes": [
+      "Priority B. M21 and this request are complementary: global spectral data and local asymptotic subtraction must remain separately typed.",
+      "A finite-order Laplace-type and minimal nonminimal-operator slice is sufficient for the first release."
+    ]
+  }
+}

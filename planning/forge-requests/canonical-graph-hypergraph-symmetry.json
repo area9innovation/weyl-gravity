@@ -1,0 +1,21 @@
+{
+  "id": "sf:forge-request/canonical-graph-hypergraph-symmetry",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add canonical graph, colored hypergraph and tensor-network symmetry machinery for Conflux corpus-scale structure discovery. The immediate consumers are sf:program/work/bridge-conflux-atlas-generalization, sf:program/work/nonlinear-conflux-branch-mixing-discovery and the bidirectional paper-result coverage graph. Existing blockdecomp finds disconnected matrix blocks, but it does not canonically identify isomorphic operator, interaction or evidence subgraphs under row, field, harmonic and presentation relabelings.",
+    "depends_on": [
+      "sf:program/work/bridge-conflux-atlas-generalization",
+      "sf:program/work/nonlinear-conflux-branch-mixing-discovery",
+      "sf:program/work/programme-global-paper-coverage-baseline"
+    ],
+    "stop_condition": "Provide typed directed multigraphs and colored hypergraphs with immutable provenance-bearing labels; exact canonical labeling and isomorphism witnesses; automorphism groups or generators for a declared finite class; equitable partitions, orbit quotients, subgraph and motif matching with explicit completeness boundaries; and conversions from sparse matrices, chain complexes, q2/q3 tensors and evidence DAGs that preserve grading, signs and edge roles. Demonstrate presentation-independent identification of two separately generated Einstein/extra branch blocks, recover a nontrivial q2/q3 automorphism/selection rule, and deduplicate a controlled certificate-family graph without merging different lifecycle or boundary labels. Compare against nauty/bliss/GAP or a separately implemented refinement/backtracking rail.",
+    "forbid": "no hash equality used as an isomorphism proof; no semantic or lifecycle labels dropped during canonicalization; no approximate embedding similarity promoted to structural identity; no exponential unrestricted subgraph search without declared resource bounds; no paper/evidence nodes merged merely because their prose is similar; no producer canonical form reused as the sole verifier",
+    "notes": [
+      "Priority B. This is the generic corpus-scale symmetry layer that lets Conflux move beyond schema-specific importers.",
+      "A colored finite-graph and bounded-rank hypergraph slice is enough initially; unsupported large cases must return resource-bounded UNDECIDED."
+    ]
+  }
+}

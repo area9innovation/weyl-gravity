@@ -1,0 +1,20 @@
+{
+  "id": "sf:forge-request/exact-bundle-characteristic-topology",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add exact finite topology, bundle and characteristic-class machinery for global sectors that cannot be decided from local jets. The immediate consumers are sf:program/work/quantum-complex-compensator-global-anomaly-audit, sf:program/work/classical-selected-compensator-global-euclidean-carrier-export and the fixed-magnetic-bundle Einstein-Maxwell programme. Conflux currently ingests local matrices and coefficients but cannot distinguish bundles, flux sectors, large gauge transformations or topological terms that share the same local equations.",
+    "depends_on": [
+      "sf:program/work/quantum-complex-compensator-global-anomaly-audit",
+      "sf:program/work/classical-selected-compensator-global-euclidean-carrier-export"
+    ],
+    "stop_condition": "Provide finite simplicial/CW chain and cochain complexes over Z and fields, homology/cohomology with torsion, cup and cap products for a declared finite class, Poincare duality checks, relative and long exact sequences, covering and mapping-torus data, principal U(1) and selected compact-group bundle classes, Chern/Pontryagin/Euler/Stiefel-Whitney representatives, flux quantization and transgression/descent bookkeeping. Add explicit disconnected-group and large-gauge action records rather than assuming connected infinitesimal symmetry exhausts the gauge group. Reproduce H*(S1xS2), H*(S3), the Berger mapping-torus control, the fixed magnetic U(1) bundle and one anomaly-descent characteristic number with an independent Sage/GAP or cellular rail. Export topology and bundle identities to Conflux with local-versus-global provenance.",
+    "forbid": "no de Rham/local-form equality used as a complete integral cohomology computation; no ignored torsion; no infinitesimal gauge calculation called a global anomaly audit; no manifold name used as a substitute for an explicit cell/bundle model; no general bordism claim from this finite topology slice; no physics verdict imported into topology rules",
+    "notes": [
+      "Priority B. This prevents the local algebraic success of the compensator theory from being mistaken for global quantum consistency.",
+      "Bordism, eta invariants and differential cohomology may remain later layers; the first release should establish the exact bundle/flux substrate."
+    ]
+  }
+}
