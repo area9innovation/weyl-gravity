@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY_TIER_RECEIPT",
+  "claim_id": "PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY",
+  "date": "2026-07-20",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+  "artifacts": [
+    {
+      "path": "quantum-weyl/spectral/euclidean/parameterized_parity_even_five_form_factor_family.py",
+      "sha256": "11a7de18fb196ec2d41bf131a8cca4fca4c2dee699b8d725540e6b21703c9b99"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/verify_parameterized_parity_even_five_form_factor_family.py",
+      "sha256": "d0e37185b407af9636769444bfbf9f7e18cc17866317a5a3d704baef6aafaf0f"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/tests/test_parameterized_parity_even_five_form_factor_family.py",
+      "sha256": "4c5e35e681560138b11bdf7f303c4045a3d53b246bc4bdf535972d0fea2331bc"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/schema/parameterized-parity-even-five-form-factor-family-v1.schema.json",
+      "sha256": "58c7719e980af54dd13a6f5c1347406b6a23a5ec91fed022d24ac2c1d6cada37"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/certificates/PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY.json",
+      "sha256": "b615a8aedb305e8014ad904a8bc2648fe149678aa201d65217164eecf9e791f0"
+    },
+    {
+      "path": "quantum-weyl/reports/parameterized-parity-even-five-form-factor-family.md",
+      "sha256": "f52184edac9fff99027cba3dddd41e786db64129934387b871aab1044014b7e9"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m py_compile <producer, verifier, tests>", "status": "PASS"},
+      {"command": "python3 -m json.tool <schema, certificate, receipt>", "status": "PASS"},
+      {"command": "git diff --check -- <explicit parameterized-family paths>", "status": "PASS"}
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.parameterized_parity_even_five_form_factor_family --check",
+        "status": "PASS",
+        "elapsed_seconds": 0.21
+      },
+      {
+        "command": "PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_parameterized_parity_even_five_form_factor_family",
+        "status": "PASS",
+        "elapsed_seconds": 0.83,
+        "independent_rail": "follows both dependency hashes, reconstructs the ten-coordinate section, computes the ambiguity rank and transpose nullspace independently, and checks all universal summands and boundaries"
+      },
+      {
+        "command": "PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_parameterized_parity_even_five_form_factor_family -v",
+        "status": "PASS",
+        "elapsed_seconds": 0.89,
+        "tests": 6,
+        "mutation_controls": "ambiguity matrix, rank, interpolation, local/nonlocal separation and full universal table promotion are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/spectral/euclidean/schema/parameterized-parity-even-five-form-factor-family-v1.schema.json -d quantum-weyl/spectral/euclidean/certificates/PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY.json",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "reason": "Both inputs are unchanged content-addressed predecessor certificates; no shared operator, schema interface or downstream theorem was altered."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped parameterized classification, not a freeze, release, tag or shared-core-algebra change."
+  },
+  "claim_boundary": "The receipt certifies an affine family of parity-even five-carrier functions over global spectral data and the rank-ten finite Schur ambiguity. It does not supply a universal finite table, Gamma1/Q1, QME disposition, residual transfer, Lorentzian theory, Hadamard state, particle interpretation, scattering or unitarity.",
+  "higher_tiers_not_run": [
+    {"tier": 2, "criterion": "No mathematical input, shared operator, schema consumer or promoted theorem changed."},
+    {"tier": 3, "criterion": "No freeze, release, tag, shared-core algebra change or explicit full-suite request occurred."}
+  ]
+}

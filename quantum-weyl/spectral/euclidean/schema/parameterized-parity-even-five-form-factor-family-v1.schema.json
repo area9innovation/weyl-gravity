@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl/parameterized-parity-even-five-form-factor-family-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "canonical_quotient_section",
+    "parameterized_family",
+    "ambiguity_module",
+    "universal_content",
+    "local_normalizations",
+    "holdouts",
+    "decision",
+    "dependencies",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-parameterized-parity-even-five-form-factor-family-v1"},
+    "result_id": {"const": "PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY"},
+    "result_state": {"const": "GLOBAL_SPECTRAL_DATA_PARAMETERIZED_FAMILY_NO_NONZERO_UNIVERSAL_FINITE_SCHUR_COMBINATION"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {"type": "object"},
+    "canonical_quotient_section": {
+      "type": "object",
+      "required": ["coordinates", "eliminated_direction", "relation", "dimension"],
+      "properties": {
+        "coordinates": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "eliminated_direction": {"const": "I28_trivial_S3"},
+        "relation": {"const": "I28_123+I28_132+I28_231=0"},
+        "dimension": {"const": 10}
+      },
+      "additionalProperties": false
+    },
+    "parameterized_family": {
+      "type": "object",
+      "required": [
+        "formula",
+        "global_parameter_D",
+        "universal_partial_BV_formula_digest",
+        "universal_partial_BV_channel_row_digests",
+        "Schur_scale_response",
+        "finite_Schur_rows"
+      ],
+      "properties": {
+        "formula": {"type": "string"},
+        "global_parameter_D": {"type": "string"},
+        "universal_partial_BV_formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "universal_partial_BV_channel_row_digests": {
+          "type": "object",
+          "minProperties": 11,
+          "maxProperties": 11,
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        },
+        "Schur_scale_response": {"type": "string"},
+        "finite_Schur_rows": {"const": "FUNCTIONS_OF_D_NOT_UNIVERSAL_CONSTANTS"}
+      },
+      "additionalProperties": false
+    },
+    "ambiguity_module": {
+      "type": "object",
+      "required": ["basis", "coordinate_order", "matrix", "rank", "dual_separators", "source"],
+      "properties": {
+        "basis": {"type": "array", "minItems": 10, "maxItems": 10, "uniqueItems": true},
+        "coordinate_order": {"type": "array", "minItems": 10, "maxItems": 10, "uniqueItems": true},
+        "matrix": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "items": {
+            "type": "array",
+            "minItems": 10,
+            "maxItems": 10,
+            "items": {"type": "integer", "minimum": 0, "maximum": 1}
+          }
+        },
+        "rank": {"const": 10},
+        "dual_separators": {"type": "array", "minItems": 10, "maxItems": 10},
+        "source": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "universal_content": {
+      "type": "object",
+      "required": [
+        "partial_BV_summand",
+        "carrier_relation_and_S3_covariance",
+        "contact_and_relative_IBP_endpoints",
+        "local_Schur_scale_response",
+        "complete_finite_Schur_sensitive_linear_combinations"
+      ],
+      "properties": {
+        "partial_BV_summand": {"const": "COMPUTED"},
+        "carrier_relation_and_S3_covariance": {"const": "COMPUTED"},
+        "contact_and_relative_IBP_endpoints": {"const": "COMPUTED"},
+        "local_Schur_scale_response": {"const": "COMPUTED"},
+        "complete_finite_Schur_sensitive_linear_combinations": {
+          "type": "object",
+          "required": ["dimension", "proof"],
+          "properties": {
+            "dimension": {"const": 0},
+            "proof": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "local_normalizations": {"type": "object"},
+    "holdouts": {
+      "type": "object",
+      "required": ["round_S4", "product_S2_S2", "equal_box_and_flat_TT", "interpolation_used"],
+      "properties": {
+        "round_S4": {"const": "ONE_EVALUATION_AT_D_ROUND_S4_NOT_A_GENERIC_SECTION"},
+        "product_S2_S2": {"const": "ONE_EVALUATION_AT_D_PRODUCT_NOT_A_GENERIC_SECTION"},
+        "equal_box_and_flat_TT": {"type": "object"},
+        "interpolation_used": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "const": {
+        "complete_universal_coefficient_table": "NONDEFINED",
+        "strongest_exact_result": "AFFINE_FAMILY_OVER_GLOBAL_SPECTRAL_DATA",
+        "universal_finite_Schur_quotient_dimension": 0,
+        "predecessor_partial_BV_coefficients_preserved": true,
+        "background_specific_evaluation_authorized_without_D": false
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "minProperties": 2,
+      "maxProperties": 2,
+      "additionalProperties": {"$ref": "#/$defs/reference"}
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PARAMETERIZED_FIVE_FORM_FACTOR_FAMILY_COMPUTED",
+        "RANK_TEN_FINITE_SCHUR_AMBIGUITY_PROVED",
+        "NO_NONZERO_UNIVERSAL_FINITE_SCHUR_COMBINATION_PROVED",
+        "PARTIAL_BV_SUMMAND_PRESERVED",
+        "LOCAL_NORMALIZATIONS_SEPARATE",
+        "SPECIAL_BACKGROUND_INTERPOLATION_USED",
+        "COMPLETE_UNIVERSAL_BV_FIVE_FUNCTION_TABLE_COMPUTED",
+        "QME_OR_LORENTZIAN_PROMOTED"
+      ],
+      "properties": {
+        "PARAMETERIZED_FIVE_FORM_FACTOR_FAMILY_COMPUTED": {"const": true},
+        "RANK_TEN_FINITE_SCHUR_AMBIGUITY_PROVED": {"const": true},
+        "NO_NONZERO_UNIVERSAL_FINITE_SCHUR_COMBINATION_PROVED": {"const": true},
+        "PARTIAL_BV_SUMMAND_PRESERVED": {"const": true},
+        "LOCAL_NORMALIZATIONS_SEPARATE": {"const": true},
+        "SPECIAL_BACKGROUND_INTERPOLATION_USED": {"const": false},
+        "COMPLETE_UNIVERSAL_BV_FIVE_FUNCTION_TABLE_COMPUTED": {"const": false},
+        "QME_OR_LORENTZIAN_PROMOTED": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
