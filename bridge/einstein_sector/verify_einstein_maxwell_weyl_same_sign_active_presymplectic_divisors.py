@@ -54,6 +54,16 @@ def verify_third_transvectant(payload: dict[str, object]) -> None:
     witness = payload["candidate17_20_third_transvectant"]["exact_smooth_witness"]
     assert witness["K"] == [[str(value) for value in row] for row in K.tolist()]
 
+    nondegenerate_point = (-2, -2, -2, -2, -1, 12, 12, 11, 9, 0)
+    J1 = J.subs(dict(zip((*f, *g), nondegenerate_point)))
+    K1 = J1 * H.inv() * J1.T
+    assert equations.subs(dict(zip((*f, *g), nondegenerate_point))) == sp.zeros(3, 1)
+    assert J1.rank() == K1.rank() == 3
+    assert K1.det() == 8293671904
+    stored = payload["candidate17_20_third_transvectant"]["exact_smooth_nondegenerate_witness"]
+    assert stored["det_K"] == "8293671904"
+    assert stored["proves_divisor_is_proper"]
+
 
 def verify_rank_one(payload: dict[str, object]) -> None:
     wx, wy, b, r = sp.symbols("w_x w_y b r", positive=True)

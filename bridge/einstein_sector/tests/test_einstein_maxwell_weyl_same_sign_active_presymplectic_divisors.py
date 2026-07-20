@@ -25,6 +25,13 @@ class ActivePresymplecticDivisorTests(unittest.TestCase):
         self.assertEqual(witness["K_nullity"], 1)
         self.assertEqual(witness["restricted_tangent_nullity"], 1)
 
+    def test_third_transvectant_divisor_is_proper(self) -> None:
+        witness = self.payload["candidate17_20_third_transvectant"]["exact_smooth_nondegenerate_witness"]
+        self.assertEqual(witness["J_rank"], 3)
+        self.assertEqual(witness["K_rank"], 3)
+        self.assertEqual(witness["det_K"], "8293671904")
+        self.assertTrue(witness["proves_divisor_is_proper"])
+
     def test_candidate18_aligned_divisor_has_two_corank_four_branches(self) -> None:
         aligned = self.payload["candidate18_rank_one"]["aligned_section"]
         self.assertEqual(

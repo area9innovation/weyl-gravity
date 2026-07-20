@@ -1,0 +1,49 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_PRESYMPLECTIC_DIVISORS_V1_PROPERNESS_REPAIR_RECEIPT",
+  "date": "2026-07-20",
+  "supersedes_content_hashes_in": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_PRESYMPLECTIC_DIVISORS_V1_TIER_RECEIPT",
+  "scope": "Add an exact smooth nondegenerate third-transvectant point proving that the candidate-17/20 determinant defines a proper degeneracy locus.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.json": "d92056a32e72613a28c92568a639e922c1a4511733e9670c4354936dd7cef082",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.py": "7f889978deac9627929dceaf177ed3cab067aa669e36eb43b9ab54e92a7d2499",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.py": "1b1e13e221a85425c42cde963937f80218a6d9a819ee244c570758087613870a",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.py": "36e45024a7719ffd68600eab7c49b7d3633b9ad1589fb8a96851aeddb1a46853",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-active-presymplectic-divisors.md": "9f784cd07cebcc8379a44a30022c76f5d3094b2970b8a248c50a6e2fff7e54e5"
+  },
+  "exact_witness": {
+    "f": [-2, -2, -2, -2, -1],
+    "g": [12, 12, 11, 9, 0],
+    "constraint_remainder": [0, 0, 0],
+    "jacobian_rank": 3,
+    "conormal_determinant": 8293671904,
+    "consequence": "the smooth third-transvectant degeneracy determinant is not identically zero"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on the producer, independent verifier and focused test",
+        "python3 -m json.tool on the regenerated certificate",
+        "git diff --check on the scoped repair paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 6,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_active_presymplectic_divisors --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_active_presymplectic_divisors",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_active_presymplectic_divisors"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_INDEPENDENT_EXACT_RECOMPUTATION",
+      "reason": "The verifier independently reconstructs the third-transvectant equations, checks the point lies on the variety, recomputes rank(J)=3 and det(K)=8293671904."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a theorem-strengthening properness witness, not a new freeze or shared-core algebra change."
+    }
+  },
+  "claim_boundary": "Properness is certified on the smooth candidate-17/20 third-transvectant factor. Global quotient topology, singular strata, occupation gluing and causal transport remain unchanged and fail-closed."
+}

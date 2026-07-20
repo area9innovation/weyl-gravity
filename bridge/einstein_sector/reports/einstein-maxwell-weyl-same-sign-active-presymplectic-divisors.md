@@ -33,6 +33,14 @@ previous exact smooth bounded witness the conormal matrix is
 ```
 
 so the tangent current has a one-complex-dimensional radical.
+The exact smooth point
+
+```text
+f=(-2,-2,-2,-2,-1),  g=(12,12,11,9,0)
+```
+
+has `det(K_3)=8293671904`, proving that this determinant does not vanish
+identically and that the degeneracy locus is proper.
 
 For candidate 18, the two rank-one quartic factors are treated on every
 regular determinantal chart.  Their eight-row conormal matrix gives the

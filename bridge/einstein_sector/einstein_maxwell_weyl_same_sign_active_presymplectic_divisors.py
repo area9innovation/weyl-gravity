@@ -58,6 +58,17 @@ def third_transvectant_divisor() -> dict[str, object]:
     if restricted.cols - restricted.rank() != conormal_point.cols - conormal_point.rank():
         raise AssertionError("third-transvectant nullities disagree")
 
+    nondegenerate_point = (-2, -2, -2, -2, -1, 12, 12, 11, 9, 0)
+    at_nondegenerate = dict(zip((*f, *g), nondegenerate_point))
+    jacobian_nondegenerate = jacobian.subs(at_nondegenerate)
+    conormal_nondegenerate = sp.simplify(
+        jacobian_nondegenerate * ambient.inv() * jacobian_nondegenerate.T
+    )
+    if equations.subs(at_nondegenerate) != sp.zeros(3, 1):
+        raise AssertionError("third-transvectant nondegenerate witness left the variety")
+    if jacobian_nondegenerate.rank() != 3 or conormal_nondegenerate.det() != 8293671904:
+        raise AssertionError("third-transvectant proper-divisor witness changed")
+
     barred = tuple(f"bar_{name}" for name in (*f, *g))
     return {
         "constraint_equations": [sp.sstr(value) for value in equations],
@@ -79,6 +90,14 @@ def third_transvectant_divisor() -> dict[str, object]:
             "K_nullity": conormal_point.cols - conormal_point.rank(),
             "restricted_tangent_rank": restricted.rank(),
             "restricted_tangent_nullity": restricted.cols - restricted.rank(),
+        },
+        "exact_smooth_nondegenerate_witness": {
+            "point_f_g": [str(value) for value in nondegenerate_point],
+            "J_rank": jacobian_nondegenerate.rank(),
+            "K": string_matrix(conormal_nondegenerate),
+            "det_K": str(conormal_nondegenerate.det()),
+            "K_rank": conormal_nondegenerate.rank(),
+            "proves_divisor_is_proper": True,
         },
         "scope": "each normalized third-transvectant parity factor on candidates 17 and 20; the two factors are a direct product",
     }
