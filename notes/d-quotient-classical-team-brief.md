@@ -2522,6 +2522,26 @@ all-finite-order no-go and says nothing about order four, a changed
 endpoint/current incidence, or a larger carrier.  The next gate is a
 proof-first Spencer/filtered-cohomology analysis, not a blind quartic search.
 
+That proof-first gate now has an invariant disposition.
+`EINSTEIN_WEYL_RELATIVE_ALL_ORDER_ENDPOINT_PAIRING_OBSTRUCTION_V1` pairs the
+proposed equation `q_W A1 = A2 d_H` with an exact target reducibility
+`zeta_Y`.  Formal adjunction and compact support force
+`d g(X,Y)=0` for every current label `X` and reducibility `Y` if the frozen
+diffeomorphism-only endpoint `A2(P_X^4)=X^mu c_mu_star` extends to a chain
+map.  This fails for `X=Y=J_1`, since
+`g(J_1,J_1)=sin(theta)^2`.  The conclusion is independent of the order of
+`A1`: the fixed endpoint family is obstructed at every finite differential
+order, rather than by extrapolation from orders one through three.
+
+The same theorem locates the smallest repair.  The rotational stabilizers are
+fixed-bundle Maxwell reducibilities only together with their correlated
+zero-mean functions `lambda_X`, satisfying `d lambda_X+i_X F=0`.  Replacing
+the endpoint by
+`A2_comp(P_X^4)=X^mu c_mu_star+lambda_X lambda_cov_star` uses an existing row
+and gives the constant exact Gram matrix `diag(-1,1,1,1,1)`.  It neither adds
+an independent constant `U(1)` current nor enlarges the carrier.  This removes
+the pairing obstruction only; the corrected chain map and `f2` remain open.
+
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
 negative-norm one-particle class.  A counterexample is a successful result, not

@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ALL_ORDER_ENDPOINT_PAIRING_OBSTRUCTION_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-20",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "status": "PASS",
+  "artifacts": {
+    "certificate": {
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ALL_ORDER_ENDPOINT_PAIRING_OBSTRUCTION_V1.json",
+      "sha256": "8fadb1c1c267e13f94595cc06644ce1949749cda53dd9d4770ab6c89c4865adf"
+    },
+    "producer": {
+      "path": "d_quotient_classical/relative/einstein_weyl_relative_all_order_endpoint_pairing_obstruction.py",
+      "sha256": "976d4805312572739ed931dcee8e0a7e8fcbca3e52fcdbc266aeabb0a9da31ef"
+    },
+    "verifier": {
+      "path": "d_quotient_classical/relative/verify_einstein_weyl_relative_all_order_endpoint_pairing_obstruction.py",
+      "sha256": "440c1f96882f24dcb849854e8ed110f89bc3dc4dffae4f445b1a6bbdab419c57"
+    },
+    "tests": {
+      "path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_all_order_endpoint_pairing_obstruction.py",
+      "sha256": "e12472ba7536dc0a40b8955b3ea9cea6178b59e4b1776f9f155701b0cc972a33"
+    },
+    "certificate_schema": {
+      "path": "d_quotient_classical/schema/relative-all-order-endpoint-pairing-obstruction-v1.schema.json",
+      "sha256": "92a62eeed31d95ef95162ae93fa3a3e5a79e8662de5c07515a9710cfd390ca4e"
+    },
+    "report": {
+      "path": "d_quotient_classical/reports/einstein-weyl-relative-all-order-endpoint-pairing-obstruction.md",
+      "sha256": "685a2aa73601ca82ea38b03a16606b9bcd3e4001b9c16719134eeb06aea389d7"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "Python compilation",
+        "strict Draft 2020-12 certificate schema",
+        "JSON parsing",
+        "scoped diff check",
+        "content-hash replay"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "producer_elapsed_seconds": 1.44,
+      "producer_max_rss_kib": 61700,
+      "independent_verifier_elapsed_seconds": 0.80,
+      "independent_verifier_max_rss_kib": 60788,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_all_order_endpoint_pairing_obstruction --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_all_order_endpoint_pairing_obstruction",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_all_order_endpoint_pairing_obstruction",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-all-order-endpoint-pairing-obstruction-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ALL_ORDER_ENDPOINT_PAIRING_OBSTRUCTION_V1.json"
+      ],
+      "result": "Formal adjunction makes constancy of g(X,Y) necessary for the fixed endpoint at every differential order; g(J_1,J_1)=sin(theta)^2 contradicts it. The correlated zero-mean Maxwell compensators satisfy d lambda_X+i_X F=0 and make g(X,Y)+lambda_X lambda_Y exactly diag(-1,1,1,1,1)."
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This closes a scoped fixed-endpoint family and classifies a replacement incidence, but constructs no corrected chain map, causal bridge, paper freeze or release."
+    }
+  },
+  "science_forge": {
+    "work_item": "sf:program/work/classical-relative-spencer-prolongation-theorem",
+    "agent": "classical-1",
+    "lease": "exclusive",
+    "planned_disposition": "OBSTRUCTED",
+    "coordination_note": "The invariant reducibility-pairing theorem supersedes a blind Spencer order enumeration and gives the scoped all-order no-go plus the smallest endpoint-incidence repair required by the work package.",
+    "advisory_shadow": {
+      "command": "ci/science-forge-shadow.sh",
+      "timestamp_utc": "2026-07-20T08:10:06Z",
+      "exit_status": 0,
+      "evidence_status": "NOT_EVIDENCE",
+      "findings": [
+        "UNPINNED Forge development build whose embedded revision differs from the current Forge checkout",
+        "pre-existing bridge certificate drift reported by certlab",
+        "corpus coverage baseline drift: 1190 certificates versus baseline 976"
+      ],
+      "boundary": "The shadow rail is advisory and deliberately exits zero. Its findings are programme-level maintenance items; they neither certify nor invalidate this scoped exact theorem."
+    }
+  },
+  "claim_boundary": "This receipt certifies the all-finite-order obstruction only for the frozen diffeomorphism-only endpoint on the untwisted five-current de Rham carrier. It separately certifies that the existing correlated Maxwell identity row removes this pairing obstruction with zero added carrier rank. It does not construct the corrected chain map, activate relative q2 or f2, obstruct other endpoint/current incidences or larger carriers, or establish any causal, observable, particle or quantum claim."
+}

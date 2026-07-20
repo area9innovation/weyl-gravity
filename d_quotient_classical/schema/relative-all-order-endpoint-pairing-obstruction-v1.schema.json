@@ -1,0 +1,266 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/relative-all-order-endpoint-pairing-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "scope",
+    "dependencies",
+    "formal_pairing_theorem",
+    "diffeomorphism_only_endpoint",
+    "correlated_maxwell_compensator",
+    "minimal_repair",
+    "classification",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-all-order-endpoint-pairing-obstruction-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_ALL_ORDER_ENDPOINT_PAIRING_OBSTRUCTION_V1"},
+    "result_state": {"const": "DIFFEO_ONLY_ENDPOINT_ALL_ORDER_OBSTRUCTED_COMPENSATED_ENDPOINT_IDENTIFIED"},
+    "lifecycle_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "object"},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["endpoint", "linear_triangle", "current_cone", "order_three", "target_layout"],
+      "properties": {
+        "endpoint": {"$ref": "#/$defs/artifact"},
+        "linear_triangle": {"$ref": "#/$defs/artifact"},
+        "current_cone": {"$ref": "#/$defs/artifact"},
+        "order_three": {"$ref": "#/$defs/artifact"},
+        "target_layout": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "formal_pairing_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chain_equation",
+        "reducibility_condition",
+        "compact_support_identity",
+        "necessary_condition",
+        "differential_order_bound",
+        "locality_assumption_used",
+        "boundary_assumption"
+      ],
+      "properties": {
+        "chain_equation": {"const": "q_W A1 = A2 d_H"},
+        "reducibility_condition": {"const": "q_W^sharp zeta_Y=0"},
+        "compact_support_identity": {"type": "string", "minLength": 80},
+        "necessary_condition": {"const": "d_H B0(X,Y)=0 for every current label X and target reducibility Y"},
+        "differential_order_bound": {"const": "none"},
+        "locality_assumption_used": {"type": "string", "minLength": 40},
+        "boundary_assumption": {"type": "string", "minLength": 20}
+      }
+    },
+    "diffeomorphism_only_endpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "formula",
+        "pairing_kernel",
+        "raw_gram_basis",
+        "raw_gram",
+        "normalized_nonconstant_witness",
+        "all_finite_differential_orders_obstructed"
+      ],
+      "properties": {
+        "formula": {"const": "A2(P_X^4)=X^mu c_mu_star"},
+        "pairing_kernel": {"const": "B0(X,Y)=g(X,Y)"},
+        "raw_gram_basis": {"const": ["H", "P_x", "J_1", "J_2", "J_3"]},
+        "raw_gram": {"$ref": "#/$defs/fiveMatrix"},
+        "normalized_nonconstant_witness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["X", "Y", "B0_XY", "d_B0_XY", "nonzero_open_set", "compact_test_form"],
+          "properties": {
+            "X": {"const": "J_1"},
+            "Y": {"const": "J_1"},
+            "B0_XY": {"const": "sin(theta)**2"},
+            "d_B0_XY": {"const": "2*sin(theta)*cos(theta)*dtheta"},
+            "nonzero_open_set": {"const": "0<theta<pi/2"},
+            "compact_test_form": {"type": "string", "minLength": 50}
+          }
+        },
+        "all_finite_differential_orders_obstructed": {"const": true}
+      }
+    },
+    "correlated_maxwell_compensator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "background_metric_flattened",
+        "magnetic_field_F_theta_phi",
+        "vectors",
+        "lambda_X",
+        "reducibility_equation",
+        "reducibility_residuals",
+        "corrected_endpoint",
+        "corrected_pairing_kernel",
+        "corrected_gram_basis",
+        "corrected_gram",
+        "corrected_gram_constant",
+        "independent_constant_u1_current_added",
+        "normalization"
+      ],
+      "properties": {
+        "background_metric_flattened": {
+          "type": "array",
+          "minItems": 16,
+          "maxItems": 16,
+          "items": {"type": "string"}
+        },
+        "magnetic_field_F_theta_phi": {"const": "sin(theta)"},
+        "vectors": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["H", "P_x", "J_1", "J_2", "J_3"],
+          "properties": {
+            "H": {"$ref": "#/$defs/fourVector"},
+            "P_x": {"$ref": "#/$defs/fourVector"},
+            "J_1": {"$ref": "#/$defs/fourVector"},
+            "J_2": {"$ref": "#/$defs/fourVector"},
+            "J_3": {"$ref": "#/$defs/fourVector"}
+          }
+        },
+        "lambda_X": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["H", "P_x", "J_1", "J_2", "J_3"],
+          "properties": {
+            "H": {"const": "0"},
+            "P_x": {"const": "0"},
+            "J_1": {"const": "-cos(theta)"},
+            "J_2": {"const": "-sin(phi)*sin(theta)"},
+            "J_3": {"const": "sin(theta)*cos(phi)"}
+          }
+        },
+        "reducibility_equation": {"const": "d lambda_X+i_X F=0"},
+        "reducibility_residuals": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["H", "P_x", "J_1", "J_2", "J_3"],
+          "properties": {
+            "H": {"const": ["0", "0", "0", "0"]},
+            "P_x": {"const": ["0", "0", "0", "0"]},
+            "J_1": {"const": ["0", "0", "0", "0"]},
+            "J_2": {"const": ["0", "0", "0", "0"]},
+            "J_3": {"const": ["0", "0", "0", "0"]}
+          }
+        },
+        "corrected_endpoint": {"const": "A2_comp(P_X^4)=X^mu c_mu_star+lambda_X lambda_cov_star"},
+        "corrected_pairing_kernel": {"const": "Bcomp(X,Y)=g(X,Y)+lambda_X lambda_Y"},
+        "corrected_gram_basis": {"const": ["H", "P_x", "J_1", "J_2", "J_3"]},
+        "corrected_gram": {
+          "const": [
+            ["-1", "0", "0", "0", "0"],
+            ["0", "1", "0", "0", "0"],
+            ["0", "0", "1", "0", "0"],
+            ["0", "0", "0", "1", "0"],
+            ["0", "0", "0", "0", "1"]
+          ]
+        },
+        "corrected_gram_constant": {"const": true},
+        "independent_constant_u1_current_added": {"const": false},
+        "normalization": {"type": "string", "minLength": 50}
+      }
+    },
+    "minimal_repair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "new_target_rows",
+        "existing_row_used",
+        "carrier_rank_enlargement_required_at_pairing_gate",
+        "reason_minimal",
+        "complete_corrected_chain_map_constructed"
+      ],
+      "properties": {
+        "kind": {"const": "CHANGED_ENDPOINT_INCIDENCE_ON_EXISTING_TARGET_ROW"},
+        "new_target_rows": {"const": 0},
+        "existing_row_used": {"const": "lambda_cov_star"},
+        "carrier_rank_enlargement_required_at_pairing_gate": {"const": 0},
+        "reason_minimal": {"type": "string", "minLength": 80},
+        "complete_corrected_chain_map_constructed": {"const": false}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixed_diffeomorphism_only_endpoint_obstructed_at_all_finite_orders",
+        "all_order_statement_uses_order_extrapolation",
+        "correlated_maxwell_endpoint_removes_pairing_obstruction",
+        "corrected_endpoint_chain_map_constructed",
+        "current_carrier_enlargement_required_at_pairing_gate",
+        "relative_q2_or_f2_activated",
+        "causal_observable_particle_or_quantum_claim"
+      ],
+      "properties": {
+        "fixed_diffeomorphism_only_endpoint_obstructed_at_all_finite_orders": {"const": true},
+        "all_order_statement_uses_order_extrapolation": {"const": false},
+        "correlated_maxwell_endpoint_removes_pairing_obstruction": {"const": true},
+        "corrected_endpoint_chain_map_constructed": {"const": false},
+        "current_carrier_enlargement_required_at_pairing_gate": {"const": false},
+        "relative_q2_or_f2_activated": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "RESTART_THE_RELATIVE_CHAIN_LIFT_WITH_THE_CORRELATED_MAXWELL_COMPENSATOR_ENDPOINT_BEGINNING_AT_ORDER_ZERO"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        },
+        "verification_commands": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "fiveMatrix": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "array",
+        "minItems": 5,
+        "maxItems": 5,
+        "items": {"type": "string"}
+      }
+    },
+    "fourVector": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"type": "string"}
+    }
+  }
+}

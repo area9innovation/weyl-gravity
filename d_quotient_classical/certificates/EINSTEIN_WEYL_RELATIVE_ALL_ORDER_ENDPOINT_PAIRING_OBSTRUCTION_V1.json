@@ -1,0 +1,289 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC theorem proves that the fixed diffeomorphism-only endpoint on the untwisted five-copy de Rham current carrier cannot extend to a chain map at any finite differential order: formal adjunction forces every pointwise stabilizer Gram entry g(X,Y) to be constant, contradicted by g(J_1,J_1)=sin(theta)^2. It also identifies the smallest endpoint-incidence repair: use the existing Maxwell identity row with the correlated zero-mean compensators satisfying d lambda_X+i_X F=0, for which g(X,Y)+lambda_X lambda_Y=diag(-1,1,1,1,1). This removes the pairing obstruction but does not construct the corrected chain map, activate relative q2 or f2, require a carrier enlargement, or establish causal, observable, particle or quantum claims.",
+  "classification": {
+    "all_order_statement_uses_order_extrapolation": false,
+    "causal_observable_particle_or_quantum_claim": false,
+    "corrected_endpoint_chain_map_constructed": false,
+    "correlated_maxwell_endpoint_removes_pairing_obstruction": true,
+    "current_carrier_enlargement_required_at_pairing_gate": false,
+    "fixed_diffeomorphism_only_endpoint_obstructed_at_all_finite_orders": true,
+    "relative_q2_or_f2_activated": false
+  },
+  "correlated_maxwell_compensator": {
+    "background_metric_flattened": [
+      "-1",
+      "0",
+      "0",
+      "0",
+      "0",
+      "1",
+      "0",
+      "0",
+      "0",
+      "0",
+      "1",
+      "0",
+      "0",
+      "0",
+      "0",
+      "sin(theta)**2"
+    ],
+    "corrected_endpoint": "A2_comp(P_X^4)=X^mu c_mu_star+lambda_X lambda_cov_star",
+    "corrected_gram": [
+      [
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "corrected_gram_basis": [
+      "H",
+      "P_x",
+      "J_1",
+      "J_2",
+      "J_3"
+    ],
+    "corrected_gram_constant": true,
+    "corrected_pairing_kernel": "Bcomp(X,Y)=g(X,Y)+lambda_X lambda_Y",
+    "independent_constant_u1_current_added": false,
+    "lambda_X": {
+      "H": "0",
+      "J_1": "-cos(theta)",
+      "J_2": "-sin(phi)*sin(theta)",
+      "J_3": "sin(theta)*cos(phi)",
+      "P_x": "0"
+    },
+    "magnetic_field_F_theta_phi": "sin(theta)",
+    "normalization": "lambda_X is the unique zero-mean solution modulo the independent constant U1 reducibility",
+    "reducibility_equation": "d lambda_X+i_X F=0",
+    "reducibility_residuals": {
+      "H": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "J_1": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "J_2": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "J_3": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "P_x": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "vectors": {
+      "H": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "J_1": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "J_2": [
+        "0",
+        "0",
+        "cos(phi)",
+        "-sin(phi)*cot(theta)"
+      ],
+      "J_3": [
+        "0",
+        "0",
+        "sin(phi)",
+        "cos(phi)*cot(theta)"
+      ],
+      "P_x": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ]
+    }
+  },
+  "dependencies": {
+    "current_cone": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1.json",
+      "sha256": "24f398bba251649fefec48bdbcc2aa35bf4ca113cdcf031819b9e1d820e491e9"
+    },
+    "endpoint": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1.json",
+      "sha256": "e556bd05935baf16b9b77bfb312068aa74be8c9f1513e88ef34ff614d93fd4bc"
+    },
+    "linear_triangle": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_COMPONENTS_V1",
+      "path": "bridge/einstein_sector/generated/einstein_weyl_relative_linear_triangle_v1/components.json",
+      "sha256": "d3f10bd90c85f72bdc71ea72178bdda435fc9d4b892ec90634ee86f9e5d7c84f"
+    },
+    "order_three": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ORDER_THREE_DESCENT_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_THREE_DESCENT_OBSTRUCTION_V1.json",
+      "sha256": "8497c63d51b0213b5578b6443100150a3f1b7b298623b514c97e632947f0d49d"
+    },
+    "target_layout": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_ROW_LAYOUT",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/row_layout.json",
+      "sha256": "6236040676b7e699f5e48be6241143aa3bb5b7c9b4e07364826fc6f2b5ad24a2"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "diffeomorphism_only_endpoint": {
+    "all_finite_differential_orders_obstructed": true,
+    "formula": "A2(P_X^4)=X^mu c_mu_star",
+    "normalized_nonconstant_witness": {
+      "B0_XY": "sin(theta)**2",
+      "X": "J_1",
+      "Y": "J_1",
+      "compact_test_form": "alpha=chi(t,x,theta,phi)*dt^dx^dphi with chi>=0 supported in 0<theta<pi/2",
+      "d_B0_XY": "2*sin(theta)*cos(theta)*dtheta",
+      "nonzero_open_set": "0<theta<pi/2"
+    },
+    "pairing_kernel": "B0(X,Y)=g(X,Y)",
+    "raw_gram": [
+      [
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "sin(theta)**2",
+        "-cos(phi - 2*theta)/4 + cos(phi + 2*theta)/4",
+        "-sin(phi - 2*theta)/4 + sin(phi + 2*theta)/4"
+      ],
+      [
+        "0",
+        "0",
+        "-cos(phi - 2*theta)/4 + cos(phi + 2*theta)/4",
+        "-sin(phi)**2*sin(theta)**2 + 1",
+        "sin(phi)*sin(theta)**2*cos(phi)"
+      ],
+      [
+        "0",
+        "0",
+        "-sin(phi - 2*theta)/4 + sin(phi + 2*theta)/4",
+        "sin(phi)*sin(theta)**2*cos(phi)",
+        "sin(phi)**2 + cos(phi)**2*cos(theta)**2"
+      ]
+    ],
+    "raw_gram_basis": [
+      "H",
+      "P_x",
+      "J_1",
+      "J_2",
+      "J_3"
+    ]
+  },
+  "formal_pairing_theorem": {
+    "boundary_assumption": "compact support, so the horizontal Stokes term vanishes",
+    "chain_equation": "q_W A1 = A2 d_H",
+    "compact_support_identity": "0=<zeta_Y,q_W A1 alpha>=<zeta_Y,A2 d_H alpha>=integral B0(X,Y)d_H alpha=-integral d_H B0(X,Y)^alpha",
+    "differential_order_bound": "none",
+    "locality_assumption_used": "none beyond mapping compact test sections into the formal-adjoint pairing domain",
+    "necessary_condition": "d_H B0(X,Y)=0 for every current label X and target reducibility Y",
+    "reducibility_condition": "q_W^sharp zeta_Y=0"
+  },
+  "lifecycle_status": "OBSTRUCTED",
+  "minimal_repair": {
+    "carrier_rank_enlargement_required_at_pairing_gate": 0,
+    "complete_corrected_chain_map_constructed": false,
+    "existing_row_used": "lambda_cov_star",
+    "kind": "CHANGED_ENDPOINT_INCIDENCE_ON_EXISTING_TARGET_ROW",
+    "new_target_rows": 0,
+    "reason_minimal": "the diffeomorphism-only Gram defect has rank-one scalar correction type, and the existing correlated Maxwell compensator supplies it exactly; zero added rows is minimal"
+  },
+  "next_gate": "RESTART_THE_RELATIVE_CHAIN_LIFT_WITH_THE_CORRELATED_MAXWELL_COMPENSATOR_ENDPOINT_BEGINNING_AT_ORDER_ZERO",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_all_order_endpoint_pairing_obstruction.py": "976d4805312572739ed931dcee8e0a7e8fcbca3e52fcdbc266aeabb0a9da31ef",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_all_order_endpoint_pairing_obstruction.py": "e12472ba7536dc0a40b8955b3ea9cea6178b59e4b1776f9f155701b0cc972a33",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_all_order_endpoint_pairing_obstruction.py": "440c1f96882f24dcb849854e8ed110f89bc3dc4dffae4f445b1a6bbdab419c57",
+      "d_quotient_classical/schema/relative-all-order-endpoint-pairing-obstruction-v1.schema.json": "92a62eeed31d95ef95162ae93fa3a3e5a79e8662de5c07515a9710cfd390ca4e"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_all_order_endpoint_pairing_obstruction --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_all_order_endpoint_pairing_obstruction",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_all_order_endpoint_pairing_obstruction"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ALL_ORDER_ENDPOINT_PAIRING_OBSTRUCTION_V1",
+  "result_state": "DIFFEO_ONLY_ENDPOINT_ALL_ORDER_OBSTRUCTED_COMPENSATED_ENDPOINT_IDENTIFIED",
+  "schema": "pure-weyl-relative-all-order-endpoint-pairing-obstruction-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "closed oriented Cauchy slice with fixed N=2 magnetic bundle",
+    "carrier": "top endpoint A2:P4(5)->W2(6) of the shifted current chain map",
+    "charge_sector": "connected spacetime stabilizers H,P_x,J_1,J_2,J_3; constant U(1) is not in K_P",
+    "degree": 2,
+    "ell": "global reducibility endpoint",
+    "k": "global reducibility endpoint",
+    "m": "global reducibility endpoint",
+    "omega": "zero reducibility frequency",
+    "parity": "even identity-density endpoint",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  }
+}

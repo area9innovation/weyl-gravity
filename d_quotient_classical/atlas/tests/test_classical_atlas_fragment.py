@@ -249,7 +249,16 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             entry["claim_boundary"],
         )
         self.assertIn(
-            "does not prove an all-order no-go or obstruct order four",
+            "EINSTEIN_WEYL_RELATIVE_ALL_ORDER_ENDPOINT_PAIRING_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "fixed diffeomorphism-only endpoint is obstructed at every finite differential order",
+            entry["claim_boundary"],
+        )
+        self.assertIn("corrected endpoint A2_comp", entry["claim_boundary"])
+        self.assertIn(
+            "does not construct the corrected chain map",
             entry["claim_boundary"],
         )
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OBSTRUCTED")
