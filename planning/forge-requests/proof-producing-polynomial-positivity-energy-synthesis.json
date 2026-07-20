@@ -4,13 +4,16 @@
   "schema": "work-v0",
   "body": {
     "owner": "physics-programme",
-    "state": "REQUESTED",
+    "state": "ACCEPTED",
     "objective": "Add proof-producing polynomial positivity and invariant energy/Lyapunov synthesis above exact polynomials, semialgebraic stratification and hyperbolic symbols. The immediate consumers are sf:program/work/nonlinear-branch-repair-minimal-hyperbolic and sf:program/work/quantum-berger-physical-cohomology-positivity. Conflux can propose low-complexity symmetrizers or energy functions from repeated fixtures, but the programme lacks a generic exact checker that proves positivity on a declared constrained parameter/covector domain or returns a separator.",
     "depends_on": [
       "sf:program/work/nonlinear-branch-repair-minimal-hyperbolic",
       "sf:program/work/quantum-berger-physical-cohomology-positivity"
     ],
     "stop_condition": "Support rational sum-of-squares and matrix-SOS certificates, Gram-matrix reconstruction, constrained positivity modulo polynomial equalities/inequalities, exact rational recovery from numerical SDP candidates, Positivstellensatz witnesses, invariant ansatz generation under a declared finite group/Lie action, and bounded-degree Lyapunov/symmetrizer/coercive-energy synthesis. Every successful certificate must replay using exact polynomial identities and exact positive-semidefinite factorizations; every failed bounded search must be labelled degree-bounded rather than a no-go. Reproduce one known positive Weyl-Cotton symmetrizer, one exact split-sign compensator separator, and one constrained finite-mode energy estimate with explicit coercivity constant. Export ansatz spaces, exact certificates and bounded-search failures to Conflux so heuristic candidates cannot promote themselves. Use an independent SDP/Sage/Mathematica producer only to suggest candidates; Forge remains the exact checker.",
-    "forbid": "no floating SDP status called proof; no failure at bounded degree called global nonexistence; no positivity checked only at samples; no unreduced gauge or constraint direction counted as physical; no classical energy sign called quantum Hilbert positivity; no physics-specific energy ansatz embedded in lib/math; no opaque external solver transcript without exact reconstruction"
+    "forbid": "no floating SDP status called proof; no failure at bounded degree called global nonexistence; no positivity checked only at samples; no unreduced gauge or constraint direction counted as physical; no classical energy sign called quantum Hilbert positivity; no physics-specific energy ansatz embedded in lib/math; no opaque external solver transcript without exact reconstruction",
+    "notes": [
+      "2026-07-21T02:05:00Z forge-coordinator: ACCEPTED \u2014 mirrored sf:program/work/M40-polynomial-positivity (math). Exact/validated lib/math capability; certified obstruction acceptable; independent verifier != producer; no source verdict imported (oracle wall); exact vs numeric distinct."
+    ]
   }
 }

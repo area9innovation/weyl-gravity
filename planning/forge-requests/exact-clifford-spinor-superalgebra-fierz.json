@@ -4,13 +4,16 @@
   "schema": "work-v0",
   "body": {
     "owner": "physics-programme",
-    "state": "REQUESTED",
+    "state": "ACCEPTED",
     "objective": "Add exact Clifford, spinor and finite Lie-superalgebra machinery needed to extend the programme from scalar/Maxwell matter to fermions, chiral anomalies and supersymmetric or conformal matter candidates. The first consumers are sf:program/work/quantum-matter-gauge-representation-anomaly-selection and sf:program/work/quantum-first-new-conformal-gauge-field-carrier. The existing tensor and Lie-representation layers do not encode gamma-matrix relations, chirality, charge conjugation, Grassmann parity or Fierz completeness, so Conflux cannot safely compare fermionic BV carriers or propose matter-content cancellations.",
     "depends_on": [
       "sf:program/work/quantum-matter-gauge-representation-anomaly-selection",
       "sf:program/work/quantum-first-new-conformal-gauge-field-carrier"
     ],
     "stop_condition": "Represent Clifford algebras Cl(p,q) over exact real/complex/algebraic coefficient domains, graded tensor products, spin and pin modules, chirality, charge conjugation and declared reality conditions; provide canonical gamma-word reduction, traces, antisymmetrized bases, spinor bilinears, Grassmann signs and dimension/signature-specific Fierz rearrangements with completeness witnesses. Add bounded finite Lie-superalgebra modules and supertrace/superdeterminant identities sufficient for BV field/ghost multiplets. Reproduce standard four-dimensional Dirac/Weyl trace and Fierz controls, construct one conformal fermion kinetic/BV carrier, and independently recover its local anomaly representation factors. Export typed spinor tensors, parities, reality structures and identities to Conflux while keeping dimension/signature/convention dependencies explicit.",
-    "forbid": "no dimension-independent Fierz rule; no Euclidean/Lorentzian reality structures conflated; no commuting spinor substituted for a Grassmann field; no hard-coded Standard Model multiplet in lib/math; no gamma-matrix numerical representation used as the sole general proof; no anomaly coefficient inferred from representation data without the separate quantum analytic calculation"
+    "forbid": "no dimension-independent Fierz rule; no Euclidean/Lorentzian reality structures conflated; no commuting spinor substituted for a Grassmann field; no hard-coded Standard Model multiplet in lib/math; no gamma-matrix numerical representation used as the sole general proof; no anomaly coefficient inferred from representation data without the separate quantum analytic calculation",
+    "notes": [
+      "2026-07-21T02:05:00Z forge-coordinator: ACCEPTED \u2014 mirrored sf:program/work/M37-clifford-spinor-fierz (math). Exact/validated lib/math capability; certified obstruction acceptable; independent verifier != producer; no source verdict imported (oracle wall); exact vs numeric distinct."
+    ]
   }
 }

@@ -4,13 +4,16 @@
   "schema": "work-v0",
   "body": {
     "owner": "physics-programme",
-    "state": "REQUESTED",
+    "state": "ACCEPTED",
     "objective": "Complete the exact finite-jet layer with sparse multivariate substitution/composition, coefficient extraction under typed field redefinitions, and proof-carrying forward/reverse automatic differentiation over a hash-consed expression DAG. The immediate consumers are sf:program/work/classical-compensator-kinetic-braiding-quadratic-visibility and sf:program/work/observer-higher-jet-common-action-extension. The existing series/jet modules close scalar Taylor expansion but still require consumers to hand-assemble multivariate compositions and Hessians; that prevents the variational-bicomplex layer and Conflux from treating actions, equations, q2/q3 tensors and field redefinitions as certified views of one source expression.",
     "depends_on": [
       "sf:program/work/classical-compensator-kinetic-braiding-quadratic-visibility",
       "sf:program/work/observer-higher-jet-common-action-extension"
     ],
     "stop_condition": "Provide sparse total-degree multivariate jet composition and substitution over Field<T>, including affine and nonlinear changes of variables, mixed partials, truncation-order propagation and an explicit remainder/unsupported ledger. Add exact forward-mode Jacobian/JVP and reverse-mode gradient/VJP drivers plus Hessian and selected higher directional derivatives over a common hash-consed expression DAG, with graded variables and parity signs where declared. Every derivative result must carry a replayable chain-rule witness and agree with independently expanded coefficient extraction. Reproduce one complete metric-clock second variation from its local action, the retained q2/q3 change under one certified nonlinear field redefinition, and one observer profile-jet Hessian without a private Python differentiator. Export the expression DAG, variable typing, truncation boundary and derivative graph to Conflux so proposed common subexpressions or reparameterizations are candidates until replayed by the exact jet engine.",
-    "forbid": "no floating automatic differentiation promoted to exact; no symbolic differentiation without truncation provenance; no common-subexpression hash treated as mathematical equality; no dropped graded sign, boundary term or variable dependency; no action-specific formulas embedded in lib/math; no reverse-mode tape whose result cannot be independently replayed coefficient by coefficient; no claim beyond finite declared jet order"
+    "forbid": "no floating automatic differentiation promoted to exact; no symbolic differentiation without truncation provenance; no common-subexpression hash treated as mathematical equality; no dropped graded sign, boundary term or variable dependency; no action-specific formulas embedded in lib/math; no reverse-mode tape whose result cannot be independently replayed coefficient by coefficient; no claim beyond finite declared jet order",
+    "notes": [
+      "2026-07-21T02:05:00Z forge-coordinator: ACCEPTED \u2014 mirrored sf:program/work/M38-multivariate-jet-ad-dag (math). Exact/validated lib/math capability; certified obstruction acceptable; independent verifier != producer; no source verdict imported (oracle wall); exact vs numeric distinct."
+    ]
   }
 }
