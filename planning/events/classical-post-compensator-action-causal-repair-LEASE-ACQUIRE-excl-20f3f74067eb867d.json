@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-post-compensator-action-causal-repair-LEASE-ACQUIRE-excl-20f3f74067eb867d",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/classical-post-compensator-action-causal-repair-LEASE-ACQUIRE-excl-20f3f74067eb867d.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "classical-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T15:58:07Z", "seq": 3, "predecessor": "sf:program/event/classical-post-compensator-action-causal-repair-LEASE-RELEASE-excl-bf6134cbd68f4073", "payload": {"target": "sf:program/work/classical-post-compensator-action-causal-repair", "agent": "classical-1", "lease_type": "exclusive", "action": "ACQUIRE", "acquired": "2026-07-20T15:58:07Z", "expires": "2026-07-21T03:58:07Z"}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/classical-post-compensator-action-causal-repair"}]
+}

@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-post-compensator-action-causal-repair-REQUEST-6ecab018daba9643",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/classical-post-compensator-action-causal-repair-REQUEST-6ecab018daba9643.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/classical-post-compensator-action-causal-repair", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T15:58:08Z", "seq": 1, "payload": {"target": "sf:program/request/classical-post-compensator-action-causal-repair-to-physics-programme-6ecab018daba9643", "request_id": "sf:program/request/classical-post-compensator-action-causal-repair-to-physics-programme-6ecab018daba9643", "from_item": "sf:program/work/classical-post-compensator-action-causal-repair", "to_stream": "physics-programme", "need": "coordinator must reassert the intended RETIRED transition after lease-yield seq 3 revived this superseded umbrella; Candidate A and B are the authoritative replacements", "typed": "COORDINATION_STATE_REPAIR"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "physics-programme"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/classical-post-compensator-action-causal-repair"}]
+}

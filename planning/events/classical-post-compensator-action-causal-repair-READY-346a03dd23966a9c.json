@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-post-compensator-action-causal-repair-READY-346a03dd23966a9c",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/classical-post-compensator-action-causal-repair-READY-346a03dd23966a9c.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "classical-1", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-20T15:56:43Z", "seq": 3, "predecessor": "sf:program/event/classical-post-compensator-action-causal-repair-RETIRED-f81fce4a23fd3d1d", "payload": {"target": "sf:program/work/classical-post-compensator-action-causal-repair", "to_state": "READY", "note": "yielded by classical-1 (lease released; item ready again)"}, "native": {"authored_by": "sfc work-yield", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/classical-post-compensator-action-causal-repair"}]
+}
