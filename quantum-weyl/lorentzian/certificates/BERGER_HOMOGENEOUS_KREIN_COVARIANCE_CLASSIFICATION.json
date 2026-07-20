@@ -1,0 +1,447 @@
+{
+  "action_pairing": {
+    "Krein_form": "G=[[0,B^T],[B,0]]",
+    "Krein_inertia": [
+      40,
+      40,
+      0
+    ],
+    "Lagrange_identity": "A_antifield^T*B+B*A_metric=0",
+    "Lagrange_matrix": "B=[[S*K1,S*K2],[-S*K2,0]] in (configuration20,velocity20) ordering",
+    "Lagrange_rank": 40,
+    "commutator_form": "Omega=[[0,-B^T],[B,0]]",
+    "commutator_rank": 80,
+    "graph_adjoint_checks": {
+      "K0": true,
+      "K1": true,
+      "K2": true
+    },
+    "graph_swap": "S=[[0,I10],[I10,0]]",
+    "matrix_hashes": {
+      "A80": "adee1af601854142f273b5ef6da8665de63cb49506249200b9cf38da59c3cd84",
+      "B40": "db8667fd0df68ce0c508b56b2eca88cc6e99f30e4d6bf5890b122beaa1b35366",
+      "G80": "148faf3b6355e98ba06bf285136428e59a470a366afd09c47239316c02c311e8",
+      "Omega80": "520609198876e0b95b2f0b76e1fb6674e79cb652e8bda8f8d2ea11ff435b865f",
+      "real_involution80": "98ffbf526be90617506ca75225098898f2ce057bca51c98ed200f5d9940943c9"
+    }
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE theorem classifies the parity-forgotten finite homogeneous metric-antifield covariance matrices at one positive Berger fixture. It derives the action Lagrange, commutator and Krein forms on that 80-row block, proves that the 128-parameter stationary normalized CCR affine class contains no positive element, exhibits a (40,40) Krein element, and separates an explicitly time-dependent positive alternative. The ordinary PSD test across even metric and odd antifield slots is only a matrix diagnostic, not a graded probability inner product. No corrected q_Cauchy, full 104-row Cauchy form, BRST quotient, distributional bisolution, wavefront/Hadamard condition, physical state, renormalized product, QME, particle, scattering or unitarity theorem is established.",
+  "claim_flags": {
+    "CORRECTED_Q_CAUCHY_IMPORTED": false,
+    "FULL_104_ROW_CAUCHY_KREIN_FORM_IMPORTED": false,
+    "FULL_BV_HADAMARD_STATE": false,
+    "HOMOGENEOUS_ACTION_COMMUTATOR_AND_KREIN_FORMS_DERIVED": true,
+    "HOMOGENEOUS_CANONICAL_KREIN_CCR_COVARIANCE_EXISTS": true,
+    "HOMOGENEOUS_NONSTATIONARY_POSITIVE_COVARIANCE_EXISTS": true,
+    "HOMOGENEOUS_STATIONARY_COVARIANCE_AFFINE_CLASS_COMPLETE": true,
+    "HOMOGENEOUS_STATIONARY_POSITIVE_CCR_COVARIANCE_EXISTS": false,
+    "LORENTZIAN_QME_CERTIFIED": false,
+    "PHYSICAL_POSITIVITY_CERTIFIED": false,
+    "QUANTUM_THEORY_CERTIFIED": false
+  },
+  "dependency_refs": {
+    "action_Cauchy_preflight": {
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_A104_CAUCHY_OPERATOR_PREFLIGHT.json",
+      "result_id": "BERGER_A104_CAUCHY_OPERATOR_PREFLIGHT",
+      "sha256": "6ceccfa2931562e3e1f7d676181e79fc33dc4094daff08936e515d47ac7e88dd"
+    },
+    "stationary_obstruction": {
+      "commit": "31875f5b6",
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION.json",
+      "result_id": "BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION",
+      "sha256": "016844933f79cdb275cb6d21d2de79f24fbbcdb549b09a0c8eba6715be302010",
+      "work_item_alias": "BERGER_C26_NORMALIZED_HADAMARD_REPRESENTATIVE_OBSTRUCTION"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_checks": {
+    "Krein_symmetric_and_rank_80": true,
+    "action_Lagrange_identity": true,
+    "action_Lagrange_pairing_rank_40": true,
+    "canonical_Krein_covariance_CCR": true,
+    "canonical_Krein_covariance_Hermitian": true,
+    "canonical_Krein_covariance_invariant": true,
+    "canonical_Krein_covariance_rank_80": true,
+    "commutator_antisymmetric_and_rank_80": true,
+    "evolution_preserves_Krein_form": true,
+    "evolution_preserves_commutator": true,
+    "lyapunov_nullity_128": true,
+    "metric_antifield_characteristics_match": true,
+    "metric_antifield_graph_adjoint_relations": true,
+    "metric_antifield_primary_Jordan_nullities_match": true,
+    "pinned_input_commit_and_hash": true,
+    "primary_dimensions_sum_80_128_95_54_26": true,
+    "real_involution_is_standard_conjugation": true
+  },
+  "homogeneous_spectral_classification": {
+    "instability_root_ledger": {
+      "isolated_real_roots": [
+        {
+          "endpoint_signs": [
+            1,
+            -1
+          ],
+          "interval": [
+            {
+              "denominator": 1,
+              "numerator": -9
+            },
+            {
+              "denominator": 1,
+              "numerator": -8
+            }
+          ],
+          "root_id": "negative_stable_1",
+          "sturm_root_count": 1
+        },
+        {
+          "endpoint_signs": [
+            -1,
+            1
+          ],
+          "interval": [
+            {
+              "denominator": 2,
+              "numerator": -3
+            },
+            {
+              "denominator": 1,
+              "numerator": -1
+            }
+          ],
+          "root_id": "negative_stable_2",
+          "sturm_root_count": 1
+        },
+        {
+          "endpoint_signs": [
+            1,
+            -1
+          ],
+          "interval": [
+            {
+              "denominator": 2,
+              "numerator": 3
+            },
+            {
+              "denominator": 1,
+              "numerator": 2
+            }
+          ],
+          "root_id": "positive_growth_1",
+          "sturm_root_count": 1
+        },
+        {
+          "endpoint_signs": [
+            -1,
+            1
+          ],
+          "interval": [
+            {
+              "denominator": 2,
+              "numerator": 5
+            },
+            {
+              "denominator": 1,
+              "numerator": 3
+            }
+          ],
+          "root_id": "positive_growth_2",
+          "sturm_root_count": 1
+        }
+      ],
+      "nonreal_roots": 2,
+      "nonreal_structure": "one conjugate x pair, producing one real lambda quartet",
+      "polynomial_coefficients_descending": [
+        9,
+        39,
+        -116,
+        900,
+        -3160,
+        -300,
+        4800
+      ],
+      "squarefree": true,
+      "total_real_roots": 4
+    },
+    "metric_characteristic_polynomial": "lambda**2*(lambda**2 + 16)**4*(lambda**2 + 35)**2*(2*lambda**2 + 1)*(2*lambda**2 + 41)**2*(lambda**4 + 187*lambda**2 + 8720)**2*(9*lambda**12 + 39*lambda**10 - 116*lambda**8 + 900*lambda**6 - 3160*lambda**4 - 300*lambda**2 + 4800)/72",
+    "primary_ledger": [
+      {
+        "characteristic_exponent_per_endpoint": 2,
+        "combined_complex_chain_sizes": [
+          2,
+          2
+        ],
+        "combined_real_dimension": 4,
+        "factor": "lambda",
+        "forced_positive_radical_dimension": 2,
+        "invariant_symmetric_parameter_dimension": 4,
+        "nullity_powers_per_endpoint": [
+          1,
+          2,
+          2
+        ],
+        "positive_cone_linear_span_dimension": 3,
+        "positive_rank_capacity": 2,
+        "primary_id": "zero_jordan",
+        "spectral_type": "ZERO_NONSEMISIMPLE"
+      },
+      {
+        "characteristic_exponent_per_endpoint": 1,
+        "combined_complex_chain_sizes": [
+          1,
+          1
+        ],
+        "combined_real_dimension": 4,
+        "factor": "2*lambda^2+1",
+        "forced_positive_radical_dimension": 0,
+        "invariant_symmetric_parameter_dimension": 4,
+        "nullity_powers_per_endpoint": [
+          2,
+          2
+        ],
+        "positive_cone_linear_span_dimension": 4,
+        "positive_rank_capacity": 4,
+        "primary_id": "frequency_sqrt_one_half",
+        "spectral_type": "PURE_IMAGINARY_SEMISIMPLE"
+      },
+      {
+        "characteristic_exponent_per_endpoint": 2,
+        "combined_complex_chain_sizes": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "combined_real_dimension": 8,
+        "factor": "lambda^2+35",
+        "forced_positive_radical_dimension": 0,
+        "invariant_symmetric_parameter_dimension": 16,
+        "nullity_powers_per_endpoint": [
+          4,
+          4
+        ],
+        "positive_cone_linear_span_dimension": 16,
+        "positive_rank_capacity": 8,
+        "primary_id": "frequency_sqrt_35",
+        "spectral_type": "PURE_IMAGINARY_SEMISIMPLE"
+      },
+      {
+        "characteristic_exponent_per_endpoint": 2,
+        "combined_complex_chain_sizes": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "combined_real_dimension": 8,
+        "factor": "2*lambda^2+41",
+        "forced_positive_radical_dimension": 0,
+        "invariant_symmetric_parameter_dimension": 16,
+        "nullity_powers_per_endpoint": [
+          4,
+          4
+        ],
+        "positive_cone_linear_span_dimension": 16,
+        "positive_rank_capacity": 8,
+        "primary_id": "frequency_sqrt_41_over_2",
+        "spectral_type": "PURE_IMAGINARY_SEMISIMPLE"
+      },
+      {
+        "characteristic_exponent_per_endpoint": 4,
+        "combined_complex_chain_sizes": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "combined_real_dimension": 16,
+        "factor": "lambda^2+16",
+        "forced_positive_radical_dimension": 8,
+        "invariant_symmetric_parameter_dimension": 32,
+        "nullity_powers_per_endpoint": [
+          4,
+          8,
+          8,
+          8
+        ],
+        "positive_cone_linear_span_dimension": 16,
+        "positive_rank_capacity": 8,
+        "primary_id": "frequency_4_jordan",
+        "spectral_type": "PURE_IMAGINARY_NONSEMISIMPLE"
+      },
+      {
+        "characteristic_exponent_per_endpoint": 2,
+        "combined_complex_chain_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "combined_real_dimension": 16,
+        "factor": "lambda^4+187*lambda^2+8720",
+        "forced_positive_radical_dimension": 0,
+        "invariant_symmetric_parameter_dimension": 32,
+        "nullity_powers_per_endpoint": [
+          8,
+          8
+        ],
+        "positive_cone_linear_span_dimension": 32,
+        "positive_rank_capacity": 16,
+        "primary_id": "frequency_quartic_sqrt_89",
+        "spectral_type": "TWO_PURE_IMAGINARY_SEMISIMPLE_FREQUENCIES_SQUARED_(187_PLUS_OR_MINUS_SQRT_89)/2"
+      },
+      {
+        "characteristic_exponent_per_endpoint": 1,
+        "combined_complex_chain_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "combined_real_dimension": 24,
+        "factor": "p(lambda^2)",
+        "forced_positive_radical_dimension": 16,
+        "invariant_symmetric_parameter_dimension": 24,
+        "nullity_powers_per_endpoint": [
+          12,
+          12
+        ],
+        "positive_cone_linear_span_dimension": 8,
+        "positive_rank_capacity": 8,
+        "primary_id": "instability_factor",
+        "spectral_type": "TWO_STABLE_NEGATIVE_X_ROOTS_TWO_REAL_GROWTH_X_ROOTS_ONE_NONREAL_CONJUGATE_X_PAIR"
+      }
+    ],
+    "totals": {
+      "combined_real_dimension": 80,
+      "forced_positive_radical_dimension": 26,
+      "invariant_symmetric_parameter_dimension": 128,
+      "positive_cone_linear_span_dimension": 95,
+      "positive_rank_capacity": 54
+    }
+  },
+  "input_commit": "31875f5b6",
+  "lifecycle_layer": "REDUCED_HOMOGENEOUS_FREE_QUANTUM_CLASSIFICATION",
+  "microlocal_status": {
+    "BRST_Ward_identity": "NOT_DEFINED_WITHOUT_CORRECTED_Q_CAUCHY",
+    "Hadamard_condition": "UNDEFINED_ON_FINITE_HOMOGENEOUS_BLOCK",
+    "finite_block_wavefront_set": "UNDEFINED",
+    "full_distributional_bisolution": "NOT_CONSTRUCTED",
+    "physical_cohomology_positivity": "NOT_COMPUTED"
+  },
+  "next_gate": "IMPORT_A_CORRECTED_BRST_CAUCHY_CARRIER_AND_TEST_WHETHER_THE_26_DIMENSIONAL_STATIONARY_RADICAL_SURVIVES_PHYSICAL_COHOMOLOGY",
+  "nonstationary_alternative": {
+    "Darboux_map": "T=diag(B,I40), Omega=T^T*J0*T",
+    "content_addressed_time_normalization": "t=0 at the frozen fixture",
+    "initial_covariance": "W0=(T^T*T+i*Omega)/2",
+    "initial_status": "POSITIVE_SEMIDEFINITE_RANK_40_PURE_FINITE_DIMENSIONAL_CCR_COVARIANCE",
+    "standard_form": "J0=[[0,-I40],[I40,0]]",
+    "stationarity_defect": "A^T*W0+W0*A is nonzero because a stationary positive normalized covariance is impossible",
+    "time_evolution": "W_t=exp(t*A)^T*W0*exp(t*A); positive, pure and exact-CCR for every t, but not stationary"
+  },
+  "provenance": {
+    "generated_summary": "quantum-weyl/lorentzian/generated/berger_homogeneous_krein_covariance_classification/classification_summary.json",
+    "proof_type": "EXACT_ACTION_LAGRANGE_IDENTITY_PRIMARY_JORDAN_LYAPUNOV_AND_CCR_RADICAL_OBSTRUCTION",
+    "source_manifest": {
+      "../reports/berger-homogeneous-krein-covariance-classification.md": "410c3fa0250357e10fcf1e54af5b5e92d42f8ed4f1bc84eb4fc91dd44284880c",
+      "berger_homogeneous_krein_covariance_classification.py": "8d80cb6960d914af9a42d2f611079ffb0b5ee7bc87204f6bea78c23572386d94",
+      "berger_homogeneous_krein_covariance_classification_certificate.py": "ad4bc199c15149324fae295377dbc6e5f6abd9fd5f7b0f1ae3add041dbd67351",
+      "schema/berger-homogeneous-krein-covariance-classification-v1.schema.json": "9a956c5195d32a6b13a73670949e3286b8e0a1eda2415776580a1c1a0b29dd50",
+      "tests/test_berger_homogeneous_krein_covariance_classification.py": "e901788b62afc0b01292a5b817358a2c579761db5c02621e972a1c0a5db70f22",
+      "verify_berger_homogeneous_krein_covariance_classification.py": "2677972ab7439cf27a7d4bba64dd5d5721c3d7b20c709641bc9cb915ce01f8f6"
+    }
+  },
+  "result_id": "BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION",
+  "result_state": "STATIONARY_POSITIVE_CCR_CLASS_EMPTY_KREIN_AFFINE_CLASS_AND_NONSTATIONARY_POSITIVE_ALTERNATIVE_EXACT",
+  "schema": "quantum-weyl-berger-homogeneous-krein-covariance-classification-v1",
+  "setting": {
+    "background": "compact positive Berger clock",
+    "carrier": "parity-forgotten rank-80 metric plus metric-antifield Cauchy graph block",
+    "fixture": {
+      "alpha_B": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "rho_squared": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "u": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "v": {
+        "denominator": 1,
+        "numerator": 5
+      }
+    },
+    "mode": "left-invariant homogeneous sections, e1=e2=e3=0",
+    "real_involution": "entrywise complex conjugation"
+  },
+  "stationary_covariance_classification": {
+    "Hermitian_CCR_parameterization": "W(mu)=mu+i*Omega/2 with mu real symmetric and A^T*mu+mu*A=0",
+    "Krein_CCR_family": {
+      "canonical_representative": "W_K=(G+i*Omega)/2",
+      "canonical_representative_inertia": [
+        40,
+        40,
+        0
+      ],
+      "canonical_representative_rank": 80,
+      "canonical_representative_status": "NONDEGENERATE_INDEFINITE_KREIN_CCR_FUNCTIONAL",
+      "signature_policy": "signature is stratified by the exact Hermitian inertia of W(mu); it is not a single state-space signature",
+      "status": "COMPLETE_128_PARAMETER_AFFINE_FAMILY"
+    },
+    "Lyapunov_matrix": {
+      "nullity": 128,
+      "rank": 3112,
+      "shape": [
+        3240,
+        3240
+      ]
+    },
+    "complete_affine_parameter_dimension": 128,
+    "positive_normalized_CCR_covariance": {
+      "proof": "Every invariant positive mu has a nonzero radical of dimension at least 26. If W=mu+i*Omega/2 were positive, v^*Wv=0 for v in that radical would imply Wv=0 and therefore Omega*v=0, contradicting rank(Omega)=80.",
+      "status": "EMPTY"
+    },
+    "positive_symmetric_cone": {
+      "linear_span_dimension": 95,
+      "maximum_rank": 54,
+      "minimum_forced_radical_dimension": 26,
+      "parameterization": [
+        "SymmetricPSD_2(R) on the zero semisimple quotient",
+        "HermitianPSD_2(C) on frequency sqrt(1/2)",
+        "HermitianPSD_4(C) on frequency sqrt(35)",
+        "HermitianPSD_4(C) on frequency sqrt(41/2)",
+        "HermitianPSD_4(C) on the semisimple quotient of the frequency-4 Jordan primary",
+        "two independent HermitianPSD_4(C) cones at squared frequencies (187+sqrt(89))/2 and (187-sqrt(89))/2",
+        "two independent HermitianPSD_2(C) cones at the two exactly isolated negative roots of p(x)"
+      ],
+      "unstable_and_Jordan_rule": "positivity kills every non-imaginary generalized primary and the nilpotent image in each imaginary or zero Jordan primary"
+    },
+    "purity": {
+      "compatible_complex_structure_class": "EMPTY",
+      "indefinite_generalized_purity": "NOT_IDENTIFIED_WITH_PROBABILISTIC_QUASIFREE_PURITY",
+      "positive_stationary_pure_class": "EMPTY",
+      "reason": "the positive class is empty; independently, the two simple real eigenline pairs forbid any real stationary J with J^2=-I"
+    },
+    "real_symmetric_equation": "A^T*mu+mu*A=0",
+    "reality": "conjugate(W)=W^T"
+  }
+}

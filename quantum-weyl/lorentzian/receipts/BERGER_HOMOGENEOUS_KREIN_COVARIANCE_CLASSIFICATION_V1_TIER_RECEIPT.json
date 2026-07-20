@@ -1,0 +1,75 @@
+{
+  "receipt_id": "BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION_V1_TIER_RECEIPT",
+  "result_id": "BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION",
+  "recorded_at": "2026-07-20",
+  "base_commit": "762309409f539a2c1baf0ef197235c46e991009d",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "input_hashes": {
+    "pinned_stationary_obstruction_at_31875f5b6": "016844933f79cdb275cb6d21d2de79f24fbbcdb549b09a0c8eba6715be302010",
+    "action_Cauchy_preflight": "6ceccfa2931562e3e1f7d676181e79fc33dc4094daff08936e515d47ac7e88dd",
+    "metric_K0": "97cac0da6a656b635cf2971736716d7a4736922f49e2d141bd31dc9e965b85d6",
+    "metric_K1": "c9ca71c1cf2dffaee9365c4c04e43d2120c917f4d41a914cee809d366aeb7134",
+    "metric_K2": "e4b8b24fcb8c1617f3615c6bf13389aa4c4f60cddb5d4ec6e98f52e4813d4d07",
+    "global_A104": "37f0881c793f196175100e5e4784d18f6315e3654e3945c9972d9b212e662154"
+  },
+  "output_hash": "d0e922ef4e9eadb087899a3c63903d687dde93ef7294f2ac4b176cdef67c3055",
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/lorentzian/berger_homogeneous_krein_covariance_classification.py quantum-weyl/lorentzian/berger_homogeneous_krein_covariance_classification_certificate.py quantum-weyl/lorentzian/verify_berger_homogeneous_krein_covariance_classification.py quantum-weyl/lorentzian/tests/test_berger_homogeneous_krein_covariance_classification.py && python3 -m json.tool quantum-weyl/lorentzian/schema/berger-homogeneous-krein-covariance-classification-v1.schema.json >/dev/null && python3 -m json.tool quantum-weyl/lorentzian/certificates/BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION.json >/dev/null && python3 -m json.tool quantum-weyl/lorentzian/generated/berger_homogeneous_krein_covariance_classification/classification_summary.json >/dev/null",
+      "elapsed_seconds": 0.12,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_homogeneous_krein_covariance_classification_certificate --check",
+      "elapsed_seconds": 14.48,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_homogeneous_krein_covariance_classification",
+      "elapsed_seconds": 2.61,
+      "status": "PASS_INDEPENDENT_EXACT_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_homogeneous_krein_covariance_classification.py -v",
+      "elapsed_seconds": 17.7,
+      "status": "PASS_6_TESTS_WITH_ROOT_COMMUTATOR_INVOLUTION_AND_CLAIM_MUTATIONS"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/lorentzian/schema/berger-homogeneous-krein-covariance-classification-v1.schema.json -d quantum-weyl/lorentzian/certificates/BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION.json",
+      "elapsed_seconds": 1.57,
+      "status": "PASS_DRAFT_2020_12_STRICT"
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest atlas.tests.test_quantum_atlas_fragment -v && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "elapsed_seconds": 5.04,
+      "status": "PASS_8_TESTS_AND_3_VERIFIERS"
+    }
+  ],
+  "development_repairs": [
+    {
+      "failure": "the work-item alias named a C26 normalized representative even though the pinned commit contains the full-retained homogeneous stationary normalization obstruction",
+      "repair": "pin the requested commit and exact blob hash, record the alias explicitly, and validate the actual result_id rather than silently renaming the dependency",
+      "regression_status": "PASS"
+    },
+    {
+      "failure": "the full 104-row G_Cauchy manifest remains absent, so treating readiness mutation fixtures as imported data would have crossed the classical boundary",
+      "repair": "derive only the declared 80-row metric-antifield Lagrange form from the two exact action endpoint companions and keep the full-104 and BRST flags false",
+      "regression_status": "PASS"
+    },
+    {
+      "failure": "the first atlas check was stale after the certificate source manifest changed, and the first regenerated row dropped a compatibility phrase asserted by an existing fail-closed test",
+      "repair": "regenerate from the final certificate hash, preserve the explicit statement that physical positivity is undefined before BRST descent, and rerun the complete atlas chain",
+      "regression_status": "PASS"
+    }
+  ],
+  "tier_3_not_run": "No full-BV Hadamard state, physical positivity, renormalized product, QME, theorem freeze, release or tag is promoted. The exact reduced homogeneous classification and its generated atlas consumer are covered by tiers 0-2; all imported mathematical inputs are unchanged and content-addressed."
+}

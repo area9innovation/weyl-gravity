@@ -1950,3 +1950,75 @@ subtraction on the standard action-pairing route is unauthorized.
 
 - [`RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json`](../quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json)
 - [`relative-einstein-weyl-cyclic-pushforward-obstruction.md`](../quantum-weyl/reports/relative-einstein-weyl-cyclic-pushforward-obstruction.md)
+
+## Homogeneous Berger covariance classification (2026-07-20)
+
+The stationary complex-structure obstruction has now been strengthened to a
+complete finite covariance classification on the exact left-invariant
+rank-80 metric plus metric-antifield Cauchy graph at
+
+\[
+(\alpha_B,u,v)=(1,1,5),\qquad \rho^2=2.
+\]
+
+The result derives its carrier forms from the action rather than importing
+the still-absent full \(104\)-row Cauchy pairing. If \(S\) swaps the two
+ten-row graph summands, the metric and formal-adjoint graph coefficients
+satisfy
+
+\[
+K_2^\star=SK_2^TS,\qquad
+K_1^\star=-SK_1^TS,\qquad
+K_0^\star=SK_0^TS.
+\]
+
+The corresponding Cauchy Lagrange matrix
+
+\[
+B=
+\begin{pmatrix}
+SK_1&SK_2\\
+-SK_2&0
+\end{pmatrix}
+\]
+
+has rank \(40\) and obeys
+\(A_\star^TB+BA=0\). It supplies a nondegenerate antisymmetric commutator
+form \(\Omega\) and a symmetric Krein form \(G\) of inertia \((40,40)\).
+
+The exact symmetric Lyapunov matrix has shape \(3240\times3240\), rank
+\(3112\), and nullity \(128\). Thus every stationary Hermitian normalized
+CCR matrix is
+
+\[
+W(\mu)=\mu+\frac{i}{2}\Omega
+\]
+
+for one of \(128\) exact real parameters. The primary/Jordan calculation
+shows that the invariant positive-semidefinite \(\mu\)-cone has linear span
+dimension \(95\), maximum rank \(54\), and a forced radical of dimension at
+least \(26\). Since \(\Omega\) has rank \(80\), no \(W(\mu)\) is positive.
+
+The stationary positive normalized CCR class is therefore empty. A canonical
+stationary Krein representative
+
+\[
+W_K=\frac12(G+i\Omega)
+\]
+
+is nondegenerate with inertia \((40,40)\). Separately, a positive pure
+finite-dimensional covariance can be fixed at \(t=0\) and evolved exactly,
+but it is necessarily time dependent.
+
+This is `LOCAL-ALGEBRAIC`/`REDUCED-MODE`. The matrix positivity test forgets
+the even/odd metric-antifield parity and is not a graded probability inner
+product. The finite homogeneous block has no wavefront or Hadamard
+condition. A corrected \(q_{\rm Cauchy}\) and physical BRST quotient are
+still required to decide whether the forced stationary radical survives;
+the full \(104\)-row pairing, BRST Ward identity, distributional state,
+renormalized products and Lorentzian QME remain open.
+
+Certificate and report:
+
+- [`BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION.json`](../quantum-weyl/lorentzian/certificates/BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION.json)
+- [`berger-homogeneous-krein-covariance-classification.md`](../quantum-weyl/reports/berger-homogeneous-krein-covariance-classification.md)

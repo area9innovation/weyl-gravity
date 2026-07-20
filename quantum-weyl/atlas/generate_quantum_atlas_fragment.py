@@ -49,6 +49,7 @@ DEPENDENCIES = {
     "Berger_A104_complete": QROOT / "lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
     "Berger_graph_q_obstruction": QROOT / "lorentzian/certificates/BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION.json",
     "Berger_stationary_normalization_obstruction": QROOT / "lorentzian/certificates/BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION.json",
+    "Berger_homogeneous_Krein_covariance_classification": QROOT / "lorentzian/certificates/BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION.json",
     "Slavnov_preflight": QROOT / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
     "Euclidean_elliptic_complex": QROOT / "spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json",
     "nonconformal_coefficient_match": QROOT / "spectral/euclidean/certificates/REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH.json",
@@ -248,6 +249,9 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     berger_graph_q = values["Berger_graph_q_obstruction"]
     berger_stationary_obstruction = values[
         "Berger_stationary_normalization_obstruction"
+    ]
+    berger_covariance_classification = values[
+        "Berger_homogeneous_Krein_covariance_classification"
     ]
     slavnov = values["Slavnov_preflight"]
     elliptic = values["Euclidean_elliptic_complex"]
@@ -622,6 +626,32 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
             "classification"
         )
         != "OBSTRUCTED"
+        or berger_covariance_classification.get(
+            "stationary_covariance_classification", {}
+        ).get("complete_affine_parameter_dimension")
+        != 128
+        or berger_covariance_classification.get(
+            "stationary_covariance_classification", {}
+        ).get("positive_symmetric_cone", {}).get(
+            "minimum_forced_radical_dimension"
+        )
+        != 26
+        or berger_covariance_classification.get(
+            "stationary_covariance_classification", {}
+        ).get("positive_normalized_CCR_covariance", {}).get("status")
+        != "EMPTY"
+        or berger_covariance_classification.get("claim_flags", {}).get(
+            "HOMOGENEOUS_CANONICAL_KREIN_CCR_COVARIANCE_EXISTS"
+        )
+        is not True
+        or berger_covariance_classification.get("claim_flags", {}).get(
+            "HOMOGENEOUS_NONSTATIONARY_POSITIVE_COVARIANCE_EXISTS"
+        )
+        is not True
+        or berger_covariance_classification.get("claim_flags", {}).get(
+            "FULL_BV_HADAMARD_STATE"
+        )
+        is not False
     ):
         raise ValueError("covariant/ Berger import boundary drifted")
 
@@ -1482,16 +1512,16 @@ def _berger_gap(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             cocycle=("NO_CERTIFIED_MAP", "no per-mode cohomology ledger"),
             exactness=("NO_CERTIFIED_MAP", "no per-mode cohomology ledger"),
             pairing=("OPEN", "the exact-CCR retained candidate is not yet certified to descend to BRST cohomology: changing either representative produces the smooth Ward defect, <u,W26[H26,q26]h> for f -> f+q26 u with q26 h=0 and <f,W26[H26,q26]v> for h -> h+q26 v with q26 f=0; the current endpoint exports do not serialize one normalized H26 representative, so C26 pairing-null status is undefined rather than false"),
-            complex_structure=("OBSTRUCTED", "on the exact positive homogeneous fixture, simple real A104 eigenlines obstruct every real stationary full-carrier complex structure commuting with the evolution; a corrected BRST quotient and nonstationary Krein covariance remain open"),
+            complex_structure=("OBSTRUCTED", "on the exact positive homogeneous fixture, simple real A104 eigenlines obstruct every real stationary full-carrier complex structure commuting with the evolution; the complete parity-forgotten homogeneous covariance calculation now confirms that the stationary positive normalized CCR class is empty"),
             hadamard=("OPEN", "all twenty metric/formal-adjoint and six ghost/identity endpoint rows have global Hadamard carriers, but only through existence theorems and symbolic pullbacks; no normalized content-addressed H26 kernel or mode table is exported, so the smooth C26 Ward remainder has undefined x/y support and cannot enter the classical one-sided homotopy; serialize H26 and C26 before the conditional 26-to-54 lift"),
-            state_space=("OPEN", "physical positivity is undefined before BRST descent; the rank-40 indefinite signature is auxiliary and the vacuum-cylinder E/A/L Krein signs are reduced-mode data on a different background, so neither is a Berger physical norm"),
+            state_space=("OBSTRUCTED", "physical positivity is undefined before BRST descent; on the parity-forgotten rank-80 homogeneous metric-antifield diagnostic, the stationary CCR affine class has dimension 128, every invariant positive symmetric part has radical at least 26, and no normalized stationary covariance is positive; W_K has Krein inertia (40,40), while a positive pure covariance exists only with explicit time dependence"),
             qme=("OBSTRUCTED", "strict fixed-field-content local Euclidean QME is obstructed"),
             lifecycle=("OBSTRUCTED", "classical causal import remains; strict interacting quantum lifecycle is blocked"),
             particle=("NO_CERTIFIED_MAP", "no mode basis or Hadamard state"),
             crosswalk=("NO_CERTIFIED_MAP", "retained 26 rows to stationary physical modes"),
         ),
-        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_Hadamard_regular_morphism_boundary", "Berger_temporal_cutoff_Green_family", "Berger_cutoff_microlocal_response", "Berger_cutoff_Hermitian_dilation", "Berger_cutoff_Volterra_orientation_reduction", "Berger_cutoff_Volterra_normal_convergence", "Berger_free_dilation_Hadamard_seed", "Berger_free_dilation_Krein_covariance", "Berger_full_dilation_Krein_covariance", "Berger_dilation_retained26_restriction_audit", "Berger_regular_graph_endpoint_descent", "Berger_ghost_identity_Hadamard_pair", "Berger_retained26_Hadamard_Ward_reduction", "Berger_C26_support_nondefinition", "Berger_physical_cohomology_positivity", "Berger_A104_complete", "Berger_graph_q_obstruction", "Berger_stationary_normalization_obstruction", "Slavnov_preflight", "regulated_Slavnov_breaking"),
-        "All 26 retained endpoint rows have global Hadamard carriers at the existence-theorem level. The cyclic backward witness gives an exact-CCR candidate Omega26=W26 H26, and its Ward defect is the smooth kernel W26[H26,q26]. The endpoint artifacts do not serialize one normalized content-addressed H26 representative or mode table. Therefore C26 x/y support and pairing-null statuses are undefined, not false, and the classical one-sided homotopies cannot yet be applied. Independently, the exact positive homogeneous A104 fixture contains simple real growth eigenlines, which completely obstruct real stationary full-carrier complex structures commuting with that evolution. This does not rule out a nonstationary Krein Hadamard representative or show that the growth directions survive a corrected BRST quotient. Positivity and nondegeneracy are not activated; auxiliary rank-40 and reduced vacuum-cylinder signs are not physical Berger norms. The downstream omega54=iota omega26 pi lift remains conditional. No retained-26 BRST covariance, positive state, unavoidable physical Krein sector, particle, renormalized Lorentzian product or Lorentzian QME is inferred.",
+        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_Hadamard_regular_morphism_boundary", "Berger_temporal_cutoff_Green_family", "Berger_cutoff_microlocal_response", "Berger_cutoff_Hermitian_dilation", "Berger_cutoff_Volterra_orientation_reduction", "Berger_cutoff_Volterra_normal_convergence", "Berger_free_dilation_Hadamard_seed", "Berger_free_dilation_Krein_covariance", "Berger_full_dilation_Krein_covariance", "Berger_dilation_retained26_restriction_audit", "Berger_regular_graph_endpoint_descent", "Berger_ghost_identity_Hadamard_pair", "Berger_retained26_Hadamard_Ward_reduction", "Berger_C26_support_nondefinition", "Berger_physical_cohomology_positivity", "Berger_A104_complete", "Berger_graph_q_obstruction", "Berger_stationary_normalization_obstruction", "Berger_homogeneous_Krein_covariance_classification", "Slavnov_preflight", "regulated_Slavnov_breaking"),
+        "All 26 retained endpoint rows have global Hadamard carriers at the existence-theorem level. The cyclic backward witness gives an exact-CCR candidate Omega26=W26 H26, and its Ward defect is the smooth kernel W26[H26,q26]. The endpoint artifacts do not serialize one normalized content-addressed H26 representative or mode table. Therefore C26 x/y support and pairing-null statuses are undefined, not false, and the classical one-sided homotopies cannot yet be applied. Independently, the exact positive homogeneous A104 fixture contains simple real growth eigenlines. On its parity-forgotten rank-80 metric-antifield block the action-derived commutator and Krein forms give a complete 128-parameter stationary CCR affine class: no element is positive, the canonical Krein element has inertia (40,40), and a positive pure alternative exists only with explicit time dependence. This finite matrix result has no wavefront/Hadamard condition and does not show that the forced 26-dimensional stationary radical survives a corrected BRST quotient. The downstream omega54=iota omega26 pi lift remains conditional. No retained-26 BRST covariance, positive physical state, unavoidable physical Krein sector, particle, renormalized Lorentzian product or Lorentzian QME is inferred.",
     )
 
 

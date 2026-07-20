@@ -1,0 +1,542 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-homogeneous-krein-covariance-classification-v1.schema.json",
+  "title": "Homogeneous Berger Krein covariance classification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_layer",
+    "dependency_tags",
+    "input_commit",
+    "setting",
+    "dependency_refs",
+    "action_pairing",
+    "homogeneous_spectral_classification",
+    "stationary_covariance_classification",
+    "nonstationary_alternative",
+    "microlocal_status",
+    "claim_flags",
+    "exact_checks",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-berger-homogeneous-krein-covariance-classification-v1"
+    },
+    "result_id": {
+      "const": "BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION"
+    },
+    "result_state": {
+      "const": "STATIONARY_POSITIVE_CCR_CLASS_EMPTY_KREIN_AFFINE_CLASS_AND_NONSTATIONARY_POSITIVE_ALTERNATIVE_EXACT"
+    },
+    "lifecycle_layer": {
+      "const": "REDUCED_HOMOGENEOUS_FREE_QUANTUM_CLASSIFICATION"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "input_commit": {
+      "const": "31875f5b6"
+    },
+    "setting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "background",
+        "fixture",
+        "mode",
+        "carrier",
+        "real_involution"
+      ],
+      "properties": {
+        "background": {"type": "string", "minLength": 1},
+        "fixture": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["alpha_B", "u", "v", "rho_squared"],
+          "properties": {
+            "alpha_B": {"$ref": "#/$defs/rational"},
+            "u": {"$ref": "#/$defs/rational"},
+            "v": {"$ref": "#/$defs/rational"},
+            "rho_squared": {"$ref": "#/$defs/rational"}
+          }
+        },
+        "mode": {"type": "string", "minLength": 1},
+        "carrier": {"type": "string", "minLength": 1},
+        "real_involution": {"type": "string", "minLength": 1}
+      }
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stationary_obstruction", "action_Cauchy_preflight"],
+      "properties": {
+        "stationary_obstruction": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "commit",
+            "result_id",
+            "sha256",
+            "work_item_alias"
+          ],
+          "properties": {
+            "path": {"type": "string", "minLength": 1},
+            "commit": {"const": "31875f5b6"},
+            "result_id": {
+              "const": "BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION"
+            },
+            "sha256": {"$ref": "#/$defs/hash"},
+            "work_item_alias": {
+              "const": "BERGER_C26_NORMALIZED_HADAMARD_REPRESENTATIVE_OBSTRUCTION"
+            }
+          }
+        },
+        "action_Cauchy_preflight": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "result_id", "sha256"],
+          "properties": {
+            "path": {"type": "string", "minLength": 1},
+            "result_id": {"const": "BERGER_A104_CAUCHY_OPERATOR_PREFLIGHT"},
+            "sha256": {"$ref": "#/$defs/hash"}
+          }
+        }
+      }
+    },
+    "action_pairing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "graph_swap",
+        "Lagrange_matrix",
+        "Lagrange_identity",
+        "Lagrange_rank",
+        "commutator_form",
+        "commutator_rank",
+        "Krein_form",
+        "Krein_inertia",
+        "graph_adjoint_checks",
+        "matrix_hashes"
+      ],
+      "properties": {
+        "graph_swap": {"type": "string", "minLength": 1},
+        "Lagrange_matrix": {"type": "string", "minLength": 1},
+        "Lagrange_identity": {"type": "string", "minLength": 1},
+        "Lagrange_rank": {"const": 40},
+        "commutator_form": {"type": "string", "minLength": 1},
+        "commutator_rank": {"const": 80},
+        "Krein_form": {"type": "string", "minLength": 1},
+        "Krein_inertia": {"const": [40, 40, 0]},
+        "graph_adjoint_checks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["K0", "K1", "K2"],
+          "properties": {
+            "K0": {"const": true},
+            "K1": {"const": true},
+            "K2": {"const": true}
+          }
+        },
+        "matrix_hashes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["A80", "B40", "Omega80", "G80", "real_involution80"],
+          "properties": {
+            "A80": {"$ref": "#/$defs/hash"},
+            "B40": {"$ref": "#/$defs/hash"},
+            "Omega80": {"$ref": "#/$defs/hash"},
+            "G80": {"$ref": "#/$defs/hash"},
+            "real_involution80": {"$ref": "#/$defs/hash"}
+          }
+        }
+      }
+    },
+    "homogeneous_spectral_classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metric_characteristic_polynomial",
+        "primary_ledger",
+        "instability_root_ledger",
+        "totals"
+      ],
+      "properties": {
+        "metric_characteristic_polynomial": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primary_ledger": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {"$ref": "#/$defs/primary"}
+        },
+        "instability_root_ledger": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "polynomial_coefficients_descending",
+            "squarefree",
+            "total_real_roots",
+            "isolated_real_roots",
+            "nonreal_roots",
+            "nonreal_structure"
+          ],
+          "properties": {
+            "polynomial_coefficients_descending": {
+              "type": "array",
+              "minItems": 7,
+              "maxItems": 7,
+              "items": {"type": "integer"}
+            },
+            "squarefree": {"const": true},
+            "total_real_roots": {"const": 4},
+            "isolated_real_roots": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {"$ref": "#/$defs/root"}
+            },
+            "nonreal_roots": {"const": 2},
+            "nonreal_structure": {"type": "string", "minLength": 1}
+          }
+        },
+        "totals": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "combined_real_dimension",
+            "invariant_symmetric_parameter_dimension",
+            "positive_cone_linear_span_dimension",
+            "positive_rank_capacity",
+            "forced_positive_radical_dimension"
+          ],
+          "properties": {
+            "combined_real_dimension": {"const": 80},
+            "invariant_symmetric_parameter_dimension": {"const": 128},
+            "positive_cone_linear_span_dimension": {"const": 95},
+            "positive_rank_capacity": {"const": 54},
+            "forced_positive_radical_dimension": {"const": 26}
+          }
+        }
+      }
+    },
+    "stationary_covariance_classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "real_symmetric_equation",
+        "Hermitian_CCR_parameterization",
+        "reality",
+        "Lyapunov_matrix",
+        "complete_affine_parameter_dimension",
+        "positive_symmetric_cone",
+        "positive_normalized_CCR_covariance",
+        "purity",
+        "Krein_CCR_family"
+      ],
+      "properties": {
+        "real_symmetric_equation": {"type": "string", "minLength": 1},
+        "Hermitian_CCR_parameterization": {"type": "string", "minLength": 1},
+        "reality": {"type": "string", "minLength": 1},
+        "Lyapunov_matrix": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["shape", "rank", "nullity"],
+          "properties": {
+            "shape": {"const": [3240, 3240]},
+            "rank": {"const": 3112},
+            "nullity": {"const": 128}
+          }
+        },
+        "complete_affine_parameter_dimension": {"const": 128},
+        "positive_symmetric_cone": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "parameterization",
+            "linear_span_dimension",
+            "maximum_rank",
+            "minimum_forced_radical_dimension",
+            "unstable_and_Jordan_rule"
+          ],
+          "properties": {
+            "parameterization": {
+              "type": "array",
+              "minItems": 7,
+              "maxItems": 7,
+              "items": {"type": "string", "minLength": 1}
+            },
+            "linear_span_dimension": {"const": 95},
+            "maximum_rank": {"const": 54},
+            "minimum_forced_radical_dimension": {"const": 26},
+            "unstable_and_Jordan_rule": {"type": "string", "minLength": 1}
+          }
+        },
+        "positive_normalized_CCR_covariance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "proof"],
+          "properties": {
+            "status": {"const": "EMPTY"},
+            "proof": {"type": "string", "minLength": 1}
+          }
+        },
+        "purity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "positive_stationary_pure_class",
+            "compatible_complex_structure_class",
+            "reason",
+            "indefinite_generalized_purity"
+          ],
+          "properties": {
+            "positive_stationary_pure_class": {"const": "EMPTY"},
+            "compatible_complex_structure_class": {"const": "EMPTY"},
+            "reason": {"type": "string", "minLength": 1},
+            "indefinite_generalized_purity": {
+              "const": "NOT_IDENTIFIED_WITH_PROBABILISTIC_QUASIFREE_PURITY"
+            }
+          }
+        },
+        "Krein_CCR_family": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "signature_policy",
+            "canonical_representative",
+            "canonical_representative_rank",
+            "canonical_representative_inertia",
+            "canonical_representative_status"
+          ],
+          "properties": {
+            "status": {"const": "COMPLETE_128_PARAMETER_AFFINE_FAMILY"},
+            "signature_policy": {"type": "string", "minLength": 1},
+            "canonical_representative": {"const": "W_K=(G+i*Omega)/2"},
+            "canonical_representative_rank": {"const": 80},
+            "canonical_representative_inertia": {"const": [40, 40, 0]},
+            "canonical_representative_status": {
+              "const": "NONDEGENERATE_INDEFINITE_KREIN_CCR_FUNCTIONAL"
+            }
+          }
+        }
+      }
+    },
+    "nonstationary_alternative": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Darboux_map",
+        "standard_form",
+        "initial_covariance",
+        "initial_status",
+        "time_evolution",
+        "stationarity_defect",
+        "content_addressed_time_normalization"
+      ],
+      "properties": {
+        "Darboux_map": {"type": "string", "minLength": 1},
+        "standard_form": {"type": "string", "minLength": 1},
+        "initial_covariance": {"type": "string", "minLength": 1},
+        "initial_status": {
+          "const": "POSITIVE_SEMIDEFINITE_RANK_40_PURE_FINITE_DIMENSIONAL_CCR_COVARIANCE"
+        },
+        "time_evolution": {"type": "string", "minLength": 1},
+        "stationarity_defect": {"type": "string", "minLength": 1},
+        "content_addressed_time_normalization": {
+          "const": "t=0 at the frozen fixture"
+        }
+      }
+    },
+    "microlocal_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finite_block_wavefront_set",
+        "Hadamard_condition",
+        "full_distributional_bisolution",
+        "BRST_Ward_identity",
+        "physical_cohomology_positivity"
+      ],
+      "properties": {
+        "finite_block_wavefront_set": {"const": "UNDEFINED"},
+        "Hadamard_condition": {
+          "const": "UNDEFINED_ON_FINITE_HOMOGENEOUS_BLOCK"
+        },
+        "full_distributional_bisolution": {"const": "NOT_CONSTRUCTED"},
+        "BRST_Ward_identity": {
+          "const": "NOT_DEFINED_WITHOUT_CORRECTED_Q_CAUCHY"
+        },
+        "physical_cohomology_positivity": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "HOMOGENEOUS_ACTION_COMMUTATOR_AND_KREIN_FORMS_DERIVED",
+        "HOMOGENEOUS_STATIONARY_COVARIANCE_AFFINE_CLASS_COMPLETE",
+        "HOMOGENEOUS_STATIONARY_POSITIVE_CCR_COVARIANCE_EXISTS",
+        "HOMOGENEOUS_CANONICAL_KREIN_CCR_COVARIANCE_EXISTS",
+        "HOMOGENEOUS_NONSTATIONARY_POSITIVE_COVARIANCE_EXISTS",
+        "FULL_104_ROW_CAUCHY_KREIN_FORM_IMPORTED",
+        "CORRECTED_Q_CAUCHY_IMPORTED",
+        "FULL_BV_HADAMARD_STATE",
+        "PHYSICAL_POSITIVITY_CERTIFIED",
+        "LORENTZIAN_QME_CERTIFIED",
+        "QUANTUM_THEORY_CERTIFIED"
+      ],
+      "properties": {
+        "HOMOGENEOUS_ACTION_COMMUTATOR_AND_KREIN_FORMS_DERIVED": {
+          "const": true
+        },
+        "HOMOGENEOUS_STATIONARY_COVARIANCE_AFFINE_CLASS_COMPLETE": {
+          "const": true
+        },
+        "HOMOGENEOUS_STATIONARY_POSITIVE_CCR_COVARIANCE_EXISTS": {
+          "const": false
+        },
+        "HOMOGENEOUS_CANONICAL_KREIN_CCR_COVARIANCE_EXISTS": {
+          "const": true
+        },
+        "HOMOGENEOUS_NONSTATIONARY_POSITIVE_COVARIANCE_EXISTS": {
+          "const": true
+        },
+        "FULL_104_ROW_CAUCHY_KREIN_FORM_IMPORTED": {"const": false},
+        "CORRECTED_Q_CAUCHY_IMPORTED": {"const": false},
+        "FULL_BV_HADAMARD_STATE": {"const": false},
+        "PHYSICAL_POSITIVITY_CERTIFIED": {"const": false},
+        "LORENTZIAN_QME_CERTIFIED": {"const": false},
+        "QUANTUM_THEORY_CERTIFIED": {"const": false}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 17,
+      "maxProperties": 17,
+      "additionalProperties": {"const": true}
+    },
+    "next_gate": {
+      "const": "IMPORT_A_CORRECTED_BRST_CAUCHY_CARRIER_AND_TEST_WHETHER_THE_26_DIMENSIONAL_STATIONARY_RADICAL_SURVIVES_PHYSICAL_COHOMOLOGY"
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "source_manifest", "generated_summary"],
+      "properties": {
+        "proof_type": {
+          "const": "EXACT_ACTION_LAGRANGE_IDENTITY_PRIMARY_JORDAN_LYAPUNOV_AND_CCR_RADICAL_OBSTRUCTION"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "maxProperties": 6,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        },
+        "generated_summary": {"type": "string", "minLength": 1}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "primary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_id",
+        "factor",
+        "characteristic_exponent_per_endpoint",
+        "nullity_powers_per_endpoint",
+        "combined_real_dimension",
+        "combined_complex_chain_sizes",
+        "spectral_type",
+        "invariant_symmetric_parameter_dimension",
+        "positive_cone_linear_span_dimension",
+        "positive_rank_capacity",
+        "forced_positive_radical_dimension"
+      ],
+      "properties": {
+        "primary_id": {"type": "string", "minLength": 1},
+        "factor": {"type": "string", "minLength": 1},
+        "characteristic_exponent_per_endpoint": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "nullity_powers_per_endpoint": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {"type": "integer", "minimum": 0}
+        },
+        "combined_real_dimension": {"type": "integer", "minimum": 1},
+        "combined_complex_chain_sizes": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"type": "integer", "minimum": 1}
+        },
+        "spectral_type": {"type": "string", "minLength": 1},
+        "invariant_symmetric_parameter_dimension": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "positive_cone_linear_span_dimension": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "positive_rank_capacity": {"type": "integer", "minimum": 0},
+        "forced_positive_radical_dimension": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "root": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "root_id",
+        "interval",
+        "endpoint_signs",
+        "sturm_root_count"
+      ],
+      "properties": {
+        "root_id": {"type": "string", "minLength": 1},
+        "interval": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/rational"}
+        },
+        "endpoint_signs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"enum": [-1, 1]}
+        },
+        "sturm_root_count": {"const": 1}
+      }
+    }
+  }
+}

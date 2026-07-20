@@ -265,6 +265,10 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
         self.assertIn(
+            "BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION",
+            {evidence["result_id"] for evidence in berger["evidence"]},
+        )
+        self.assertIn(
             "BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
