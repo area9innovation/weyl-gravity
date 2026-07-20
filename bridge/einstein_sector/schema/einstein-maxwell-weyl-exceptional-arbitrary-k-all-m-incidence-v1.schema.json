@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "representation_theorem",
+    "all_m_functionals",
+    "incidence_theorem",
+    "coverage_ledger",
+    "classification",
+    "provenance",
+    "verification_commands",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-exceptional-arbitrary-k-all-m-incidence-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ARBITRARY_K_ALL_M_INCIDENCE_V1"
+    },
+    "lifecycle_state": {
+      "const": "CLASSIFIED"
+    },
+    "scope": {
+      "type": "object"
+    },
+    "representation_theorem": {
+      "type": "object"
+    },
+    "all_m_functionals": {
+      "type": "object"
+    },
+    "incidence_theorem": {
+      "type": "object"
+    },
+    "coverage_ledger": {
+      "type": "object"
+    },
+    "classification": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3
+    },
+    "next_gate": {
+      "type": "string"
+    },
+    "claim_boundary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

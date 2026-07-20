@@ -1,0 +1,92 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This theorem exactly classifies the all-m locked k-by-2k difference functional and its zero set on the sharply declared two-fibre carrier. It is not the complete exceptional bounded cone: arbitrary-k homogeneous/twist columns, exceptional self rows, other wave collisions, the five-moment-map intersection and larger multiple-|k| unions remain open. It makes no infinite-harmonic, causal, all-orders, residual, observer, particle, positivity or quantum claim.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ARBITRARY_K_ALL_M_INCIDENCE_V1.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ARBITRARY_K_ALL_M_INCIDENCE_V1",
+          "sha256": "c10403b3211c1930ce69f43ddb6c8cab48777ba700f14f8d7e25e4dbc1cf0c45"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.exceptional_arbitrary_k_all_m_locked_incidence",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The locked same-background k-by-2k shell identity is imported by exact hash.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The nonradical input blocks and adjoint output projection are imported from the locked theorem.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The two all-m rows are exact multiples of Y*conj(x); the other six branch-parity maps vanish.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "This difference-row zero set is classified exactly, but the enlarged carrier has additional open rows and moment maps.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No causal/retarded compact-product correction complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The imported finite-harmonic smooth-secular theorem applies after stabilizer moments vanish.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The five stabilizer maps have not yet been intersected with this all-m incidence variety.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compact magnetically supported Plebanski-Hacyan product",
+        "boundaries": "one fixed closed S1_L times S2 before final residual quotient",
+        "carrier": "exceptional axial and polar ell=1 extra amplitudes at k crossed with the unique contributing transported polar-extra e2 ell=2 STF amplitude at 2k",
+        "charge_sector": "fixed N=2 magnetic bundle",
+        "degree": 2,
+        "ell": "1 x 2 -> L=1 difference block",
+        "k": "every allowed k=2*pi*n/L paired with the distinct 2k fibre on the same circumference",
+        "m": "all m through the exact Cartesian V1 and STF V2 carriers",
+        "omega": "omega_e(k), 2*omega_e(k), and difference output omega_e(k)",
+        "parity": "both exceptional parities; all eight exceptional/generic branch-parity columns tested",
+        "theory": "Weyl-Maxwell target"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_arbitrary_k_all_m_incidence.py",
+  "generated_by_sha256": "58c9ea49772508a79cd6aef0b9e2ce646ada6de32dd9630b827f84319d5df2f5",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_boundary",
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_arbitrary_k_all_m_incidence --check",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-exceptional-arbitrary-k-all-m-incidence-fragment.json",
+    "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_arbitrary_k_all_m_incidence.py"
+  ]
+}
