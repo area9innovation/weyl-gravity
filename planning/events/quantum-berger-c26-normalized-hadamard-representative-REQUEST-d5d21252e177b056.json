@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/quantum-berger-c26-normalized-hadamard-representative-REQUEST-d5d21252e177b056",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/quantum-berger-c26-normalized-hadamard-representative-REQUEST-d5d21252e177b056.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/quantum-berger-c26-normalized-hadamard-representative", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T10:30:00Z", "seq": 1, "payload": {"target": "sf:program/request/quantum-berger-c26-normalized-hadamard-representative-to-classical-d5d21252e177b056", "request_id": "sf:program/request/quantum-berger-c26-normalized-hadamard-representative-to-classical-d5d21252e177b056", "from_item": "sf:program/work/quantum-berger-c26-normalized-hadamard-representative", "to_stream": "classical", "need": "BERGER_Q26_COMPATIBLE_CAUCHY_BV_CARRIER: export a corrected support-local q52/q_Cauchy_104 for the frozen full A104 (or the exact first obstruction in a complete declared lift class), together with q_Cauchy^2=0, [A104,q_Cauchy]=0, compatibility with the retained q26 solution map, the Cauchy/Krein form, real involution, graded adjoint identities, row ordering, exact sparse payloads, strict schemas and an independent verifier. The canonical solution-graph candidate with 157 square and 207 evolution-commutator defects is rejected and must not be reused. This is a classical-to-quantum import needed for BRST-compatible stationary Hadamard selection; it does not request a state, positivity, QME, particle or scattering claim.", "typed": "dependency-artifact"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "classical"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/quantum-berger-c26-normalized-hadamard-representative"}]
+}
