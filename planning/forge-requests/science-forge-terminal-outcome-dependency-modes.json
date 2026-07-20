@@ -4,7 +4,7 @@
   "schema": "work-v0",
   "body": {
     "owner": "physics-programme",
-    "state": "REQUESTED",
+    "state": "ACCEPTED",
     "objective": "Add typed dependency semantics for outcome-safe scientific consumers. The current fold treats only DONE/RETIRED as dependency satisfaction, but many research gates must consume either a constructive result or a certified obstruction. Coordinators currently avoid stranding by removing dependencies and relying on prose plus one-lease ordering, which weakens the machine-checkable DAG and can make a consumer prematurely pullable.",
     "depends_on": [],
     "stop_condition": "Extend the work-item IR with an explicit per-dependency mode such as SUCCESS_TERMINAL versus ANY_TERMINAL, or equivalent typed edges. SUCCESS_TERMINAL must preserve current DONE/RETIRED behavior. ANY_TERMINAL must become satisfied by DONE, OBSTRUCTED or RETIRED, but never ACTIVE, BLOCKED, PROPOSED, a missing event, an expired lease or SHORTFALL. Render the mode and terminal disposition in work-package, work-show, work-ready, overview and derived graphs. Refuse ambiguous mixed legacy/new encodings. Add deterministic regressions for a two-producer comparison gate where one producer proves a no-go, both scientific outcomes become terminal, the comparison becomes READY exactly once, and the same graph remains blocked when either producer has only a missing-dependency SHORTFALL. Provide a migration path for existing outcome-safe input-pinned tickets without rewriting their history.",
@@ -12,7 +12,8 @@
     "notes": [
       "Live motivating case: Candidate A and Candidate B each have a scientifically valid no-go branch, while their A/B comparison must consume either terminal result. A success-only depends_on edge can strand the comparison; removing the edges makes it pullable too early.",
       "Observer and classical outcome-safe reserves currently use input pinning and prose to work around the same limitation.",
-      "This should compose with the existing append-only event fold and queue forecasting rather than introduce another scheduler."
+      "This should compose with the existing append-only event fold and queue forecasting rather than introduce another scheduler.",
+      "2026-07-20T23:05:00Z forge-coordinator: ACCEPTED \u2014 mirrored sf:program/work/SF17-terminal-dep-modes. Typed per-dependency mode: SUCCESS_TERMINAL (preserves DONE/RETIRED) vs ANY_TERMINAL (DONE|OBSTRUCTED|RETIRED, never ACTIVE/BLOCKED/PROPOSED/SHORTFALL/expired-lease/missing). Rendered in work-package/work-show/work-ready/overview/derived graphs; ambiguous mixed encodings refused; composes with the append-only fold, no new scheduler."
     ]
   }
 }
