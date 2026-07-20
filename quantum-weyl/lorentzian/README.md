@@ -174,11 +174,17 @@ parametrices are separate direct-sum factors.  Because the pinned typed
 Volterra theorem allows smooth time-dependent coefficients, its specialization
 to `chi(t)V_2` certifies the nonstationary temporal-cutoff companion Green
 family, both inverse identities, causal support and adjoint reversal.  The
-next gate is a wavefront theorem through the compact transition slab and the
-resulting regular response-map cone action in the sense of Fewster Theorem
-5.16.  A global seed covariance with explicit BV/Krein and physical positivity
-policy remains separate.  See `BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY` and
-`BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY`.
+cutoff causal difference now also has a Schwartz kernel, is a two-sided
+bisolution with no one-sided zero covectors, and is confined factorwise to the
+metric null cone.  The compact-slab map
+`S_chi,eta=[C_chi,eta]E_chi` is regular as a linear time-slice source map.  It
+is not yet the endpoint response morphism.  The next gate is same-orientation
+exclusion, a formally Hermitian graded GreenHyp realization and the resulting
+response-map cone action in the sense of Fewster Theorem 5.16.  A global seed
+covariance with explicit BV/Krein and physical positivity policy remains
+separate.  See `BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY`,
+`BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY` and
+`BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT`.
 
 The receiving side of that route is now executable.  The stationary-generator
 import readiness result requires content-addressed exact PBW records for

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-cutoff-companion-microlocal-response-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "exact_input_checks", "cutoff_kernel_theorem", "orientation_sector_ledger", "regular_timeslice_source_map", "negative_controls", "promotion_boundary", "literature_provenance", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-cutoff-companion-microlocal-response-preflight-v1"},
+    "result_id": {"const": "BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT"},
+    "result_state": {"const": "CUTOFF_FACTORWISE_NULL_KERNEL_AND_REGULAR_TIMESLICE_SOURCE_MAP_CERTIFIED_ORIENTATION_AND_GREENHYP_RESPONSE_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_MICROLOCAL_PREFLIGHT"},
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "minLength": 40},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {"type": "object", "minProperties": 4, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "exact_input_checks": {"type": "object", "minProperties": 6, "additionalProperties": {"const": true}},
+    "cutoff_kernel_theorem": {"type": "object", "minProperties": 7, "additionalProperties": {"type": "string", "minLength": 1}},
+    "orientation_sector_ledger": {
+      "const": {
+        "factorwise_characteristic_sectors": ["N+ x N+", "N+ x N-", "N- x N+", "N- x N-"],
+        "decomposable_target_sectors": ["N+ x N-", "N- x N+"],
+        "unresolved_same_orientation_sectors": ["N+ x N+", "N- x N-"],
+        "checks": {"factorwise_bound_has_four_sectors": true, "decomposable_target_has_two_sectors": true, "same_orientation_sectors_remain": true}
+      }
+    },
+    "regular_timeslice_source_map": {"$ref": "#/$defs/regularity"},
+    "negative_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["missing_spatially_compact_causal_output", "noncompact_time_transition", "missing_continuous_transpose"],
+      "properties": {
+        "missing_spatially_compact_causal_output": {"$ref": "#/$defs/negative_regularity"},
+        "noncompact_time_transition": {"$ref": "#/$defs/negative_regularity"},
+        "missing_continuous_transpose": {"$ref": "#/$defs/negative_regularity"}
+      }
+    },
+    "promotion_boundary": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "minLength": 1}},
+    "literature_provenance": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "minLength": 1}},
+    "claim_flags": {
+      "const": {
+        "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_SCHWARTZ_KERNEL": true,
+        "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_BISOLUTION": true,
+        "BERGER_CUTOFF_COMPANION_NO_ONE_SIDED_ZERO_COVECTORS": true,
+        "BERGER_CUTOFF_COMPANION_FACTORWISE_NULL_WAVEFRONT_BOUND": true,
+        "BERGER_CUTOFF_TIMESLICE_SOURCE_MAP_REGULAR": true,
+        "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION": false,
+        "BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE": false,
+        "BERGER_CUTOFF_RESPONSE_MORPHISM_CONE_MAPPING": false,
+        "BERGER_GRADED_FORMALLY_HERMITIAN_GREENHYP_OBJECT": false,
+        "BERGER_REGULAR_GREENHYP_MORPHISM": false,
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+        "BERGER_26_ROW_BRST_HADAMARD": false,
+        "BERGER_54_ROW_BRST_HADAMARD": false,
+        "BERGER_HADAMARD_DATA": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_CUTOFF_ORIENTATION_EXCLUSION_AND_GRADED_GREENHYP_REALIZATION_THEN_GLOBAL_SEED_COVARIANCE"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cutoff_result_id", "generic_result_id", "boundary_result_id", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "cutoff_result_id": {"const": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY"},
+        "generic_result_id": {"const": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORT"},
+        "boundary_result_id": {"const": "BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY"},
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["result_id", "sha256"], "properties": {"result_id": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "conditions": {"type": "object", "additionalProperties": false, "required": ["continuity", "continuous_formal_transpose", "compact_support_control", "no_one_sided_zero_covectors"], "properties": {"continuity": {"type": "boolean"}, "continuous_formal_transpose": {"type": "boolean"}, "compact_support_control": {"type": "boolean"}, "no_one_sided_zero_covectors": {"type": "boolean"}}},
+    "regularity": {"type": "object", "additionalProperties": false, "required": ["map", "cutoff_eta", "support_input", "conditions", "all_pass", "continuity_reason", "support_reason", "transpose_reason", "wavefront_reason", "status"], "properties": {"map": {"const": "S_chi,eta=[C_chi,eta] E_chi"}, "cutoff_eta": {"type": "string", "minLength": 1}, "support_input": {"type": "string", "minLength": 1}, "conditions": {"$ref": "#/$defs/conditions"}, "all_pass": {"const": true}, "continuity_reason": {"type": "string", "minLength": 1}, "support_reason": {"type": "string", "minLength": 1}, "transpose_reason": {"type": "string", "minLength": 1}, "wavefront_reason": {"type": "string", "minLength": 1}, "status": {"const": "REGULAR_LINEAR_MAP_CERTIFIED_FEWSTER_DEFINITION_5_13"}}},
+    "negative_regularity": {"type": "object", "additionalProperties": false, "required": ["map", "cutoff_eta", "support_input", "conditions", "all_pass"], "properties": {"map": {"type": "string", "minLength": 1}, "cutoff_eta": {"type": "string", "minLength": 1}, "support_input": {"type": "string", "minLength": 1}, "conditions": {"$ref": "#/$defs/conditions"}, "all_pass": {"const": false}}}
+  }
+}

@@ -144,15 +144,20 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         )
         hadamard = berger["quantum_data"]["Hadamard_two_point_function"]
         self.assertEqual(hadamard["status"], "OPEN")
-        self.assertIn("temporal-cutoff Green family are certified", hadamard["statement"])
-        self.assertIn("cutoff microlocal propagation", hadamard["statement"])
-        self.assertIn("regular response morphism", hadamard["statement"])
+        self.assertIn("factorwise-null Pauli-Jordan kernel", hadamard["statement"])
+        self.assertIn("regular internal time-slice source map", hadamard["statement"])
+        self.assertIn("same-orientation exclusion", hadamard["statement"])
+        self.assertIn("graded GreenHyp endpoint response morphism", hadamard["statement"])
         self.assertIn(
             "BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
         self.assertIn(
             "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY",
+            {evidence["result_id"] for evidence in berger["evidence"]},
+        )
+        self.assertIn(
+            "BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
 

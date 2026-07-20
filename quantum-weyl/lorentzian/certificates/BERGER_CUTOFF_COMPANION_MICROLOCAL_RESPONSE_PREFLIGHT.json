@@ -1,0 +1,167 @@
+{
+  "claim_boundary": "Certifies Schwartz kernels, the two-sided cutoff Pauli--Jordan bisolution, absence of one-sided zero covectors, factorwise metric-null wavefront confinement, and regularity of the internal compact-slab time-slice source map. It does not exclude same-orientation wavefront sectors, construct a free-to-full GreenHyp response morphism, supply a formally Hermitian graded GreenHyp object, transport a seed covariance, verify BRST Ward identities, construct a Hadamard state, prove positivity, restore a QME, or establish a quantum theory.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+    "BERGER_CUTOFF_COMPANION_FACTORWISE_NULL_WAVEFRONT_BOUND": true,
+    "BERGER_CUTOFF_COMPANION_NO_ONE_SIDED_ZERO_COVECTORS": true,
+    "BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE": false,
+    "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_BISOLUTION": true,
+    "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION": false,
+    "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_SCHWARTZ_KERNEL": true,
+    "BERGER_CUTOFF_RESPONSE_MORPHISM_CONE_MAPPING": false,
+    "BERGER_CUTOFF_TIMESLICE_SOURCE_MAP_REGULAR": true,
+    "BERGER_GRADED_FORMALLY_HERMITIAN_GREENHYP_OBJECT": false,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_REGULAR_GREENHYP_MORPHISM": false,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "cutoff_kernel_theorem": {
+    "Schwartz_kernel": "G_chi,+/-, and hence E_chi=G_chi,advanced-G_chi,retarded, possess distribution kernels",
+    "bisolution": "C_chi E_chi=0 and E_chi C_chi=0",
+    "certified_inclusion": "WF(E_chi) subset (N_plus union N_minus) x (N_plus union N_minus)",
+    "continuity": "all finite-slab Sobolev estimates globalize to continuous G_chi,+/-:C_c^infinity to C^infinity maps",
+    "elliptic_regularization": "the two bisolution equations confine each nonzero covector separately to Char(C_chi)=N_plus union N_minus",
+    "one_sided_exclusion": "continuity of E_chi and its formal transpose excludes kernel wavefront pairs with exactly one zero covector",
+    "status": "FACTORWISE_NULL_WAVEFRONT_BOUND_CERTIFIED"
+  },
+  "dependency_refs": {
+    "Hadamard_transport_boundary": {
+      "result_id": "BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY",
+      "sha256": "591d89a1ffd3a86b3f9c549a8fa4e8c1a0afcb6a0bf7eb7890ce23e0cae58a6c"
+    },
+    "companion_principal_symbol": {
+      "result_id": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT",
+      "sha256": "9fad67f1b4e159051774e7b1d93d4a6373487f65334039b5e30dda98ff451575"
+    },
+    "cutoff_Green_family": {
+      "result_id": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY",
+      "sha256": "dbc451c1d16aec72d41f5e6f690cd898c74083bb8d28915575d4d7fe89b33961"
+    },
+    "typed_Volterra_import": {
+      "result_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORT",
+      "sha256": "3214437cb49b294b4bce92003830bdf02d776df5e00c320ac1c5e7f74361f365"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_input_checks": {
+    "all_Sobolev_Volterra_input": true,
+    "cutoff_adjoint_reversal": true,
+    "cutoff_causal_support": true,
+    "cutoff_two_sided_Green_family": true,
+    "finite_graph_safety_previously_closed": true,
+    "metric_null_characteristic_set": true
+  },
+  "lifecycle_layer": "LORENTZIAN_MICROLOCAL_PREFLIGHT",
+  "literature_provenance": {
+    "Cauchy_GreenHyp_morphism": "Theorem 3.5(e) and Lemma 5.15(c)",
+    "Hadamard_transport": "Theorem 5.16",
+    "regular_linear_map": "Definition 5.13",
+    "source": "Christopher J. Fewster, Hadamard States for Decomposable Green-Hyperbolic Operators, arXiv:2503.12537"
+  },
+  "negative_controls": {
+    "missing_continuous_transpose": {
+      "all_pass": false,
+      "conditions": {
+        "compact_support_control": true,
+        "continuity": true,
+        "continuous_formal_transpose": false,
+        "no_one_sided_zero_covectors": true
+      },
+      "cutoff_eta": "eta is smooth and supp(d eta) lies in a compact Cauchy slab",
+      "map": "S_chi,eta=[C_chi,eta] E_chi",
+      "support_input": "E_chi maps compact sources to spatially compact solutions; spatially compact intersect temporally compact is compact"
+    },
+    "missing_spatially_compact_causal_output": {
+      "all_pass": false,
+      "conditions": {
+        "compact_support_control": false,
+        "continuity": true,
+        "continuous_formal_transpose": true,
+        "no_one_sided_zero_covectors": true
+      },
+      "cutoff_eta": "eta is smooth and supp(d eta) lies in a compact Cauchy slab",
+      "map": "S_chi,eta=[C_chi,eta] E_chi",
+      "support_input": "E_chi maps compact sources to spatially compact solutions; spatially compact intersect temporally compact is compact"
+    },
+    "noncompact_time_transition": {
+      "all_pass": false,
+      "conditions": {
+        "compact_support_control": false,
+        "continuity": true,
+        "continuous_formal_transpose": true,
+        "no_one_sided_zero_covectors": true
+      },
+      "cutoff_eta": "eta is smooth and supp(d eta) lies in a compact Cauchy slab",
+      "map": "S_chi,eta=[C_chi,eta] E_chi",
+      "support_input": "E_chi maps compact sources to spatially compact solutions; spatially compact intersect temporally compact is compact"
+    }
+  },
+  "next_gate": "BERGER_CUTOFF_ORIENTATION_EXCLUSION_AND_GRADED_GREENHYP_REALIZATION_THEN_GLOBAL_SEED_COVARIANCE",
+  "orientation_sector_ledger": {
+    "checks": {
+      "decomposable_target_has_two_sectors": true,
+      "factorwise_bound_has_four_sectors": true,
+      "same_orientation_sectors_remain": true
+    },
+    "decomposable_target_sectors": [
+      "N+ x N-",
+      "N- x N+"
+    ],
+    "factorwise_characteristic_sectors": [
+      "N+ x N+",
+      "N+ x N-",
+      "N- x N+",
+      "N- x N-"
+    ],
+    "unresolved_same_orientation_sectors": [
+      "N+ x N+",
+      "N- x N-"
+    ]
+  },
+  "promotion_boundary": {
+    "missing_object_statement": "realize the companion as a formally Hermitian graded Green-hyperbolic object, or supply an equivalent certified cyclic doubling/pairing",
+    "missing_orientation_statement": "exclude N_plus x N_plus and N_minus x N_minus from WF(E_chi)",
+    "regular_linear_map_is_not_response_morphism": "S_chi,eta is an internal time-slice source representative; no free-to-full GreenHyp morphism is claimed",
+    "then": "construct the endpoint response morphism, prove its cone action, and transport a global seed covariance"
+  },
+  "provenance": {
+    "boundary_result_id": "BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY",
+    "cutoff_result_id": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY",
+    "generic_result_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORT",
+    "source_manifest": {
+      "../reports/berger-cutoff-companion-microlocal-response-preflight.md": "c5330f3dee9c04f60091b8e0c344f4207c69bee782d05eb9263d4cd0d99080fa",
+      "berger_cutoff_companion_microlocal_response_preflight.py": "e9f692ec46a0bd71e462bf1e01b3b95f6a7324deaa376e4081a9c13c8482eb7a",
+      "berger_cutoff_companion_microlocal_response_preflight_certificate.py": "c740cb36ef7e08078091a05a8011441d76dedf523f6d34e81cead4c2a90ade31",
+      "schema/berger-cutoff-companion-microlocal-response-preflight-v1.schema.json": "c35c39862480d87f7b2637f8d15b35a99c247fa600efc7354a5bf4d752d48959",
+      "tests/test_berger_cutoff_companion_microlocal_response_preflight.py": "c81ce4c1485787307f371480313bed3f7748cacbe8e5e328a59dc2e4e561a3ff",
+      "verify_berger_cutoff_companion_microlocal_response_preflight.py": "33315a4b951ffff4c738aa993e35c93e367c03a484f322f4aa39237e97642253"
+    },
+    "source_manifest_sha256": "3b2c9bc023e64cd973126b7007fd7d61631c08afd6a6e798ba0ec68a8f0dffcd"
+  },
+  "regular_timeslice_source_map": {
+    "all_pass": true,
+    "conditions": {
+      "compact_support_control": true,
+      "continuity": true,
+      "continuous_formal_transpose": true,
+      "no_one_sided_zero_covectors": true
+    },
+    "continuity_reason": "composition of the continuous causal solution map with the finite-order compact-slab commutator",
+    "cutoff_eta": "eta is smooth and supp(d eta) lies in a compact Cauchy slab",
+    "map": "S_chi,eta=[C_chi,eta] E_chi",
+    "status": "REGULAR_LINEAR_MAP_CERTIFIED_FEWSTER_DEFINITION_5_13",
+    "support_input": "E_chi maps compact sources to spatially compact solutions; spatially compact intersect temporally compact is compact",
+    "support_reason": "E_chi f is spatially compact, supp(d eta) is temporally compact, and their intersection is compact",
+    "transpose_reason": "formal-adjoint causal reversal supplies the continuous transpose composition",
+    "wavefront_reason": "finite differential composition cannot create a one-sided zero covector absent from E_chi"
+  },
+  "result_id": "BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT",
+  "result_state": "CUTOFF_FACTORWISE_NULL_KERNEL_AND_REGULAR_TIMESLICE_SOURCE_MAP_CERTIFIED_ORIENTATION_AND_GREENHYP_RESPONSE_OPEN",
+  "schema": "quantum-weyl-berger-cutoff-companion-microlocal-response-preflight-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

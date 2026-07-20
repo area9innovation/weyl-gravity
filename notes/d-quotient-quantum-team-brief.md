@@ -1515,17 +1515,25 @@ The active direct bridge has advanced to
 
 ```text
 BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY [CERTIFIED]
-  -> cutoff microlocal propagation and regular compact-support response morphism
+  -> CUTOFF_FACTORWISE_NULL_KERNEL [CERTIFIED]
+  -> REGULAR_INTERNAL_TIMESLICE_SOURCE_MAP [CERTIFIED]
+  -> same-orientation exclusion + graded GreenHyp endpoint response morphism
   -> companion Hadamard two-point distribution
 ```
 
 The pinned typed Volterra theorem explicitly permits smooth time-dependent
 coefficients. Its specialization to `V_chi=chi(t)V_2` now certifies global
 advanced/retarded operators, both inverse identities, causal support and
-adjoint reversal for every declared smooth cutoff. The active analytic gate is
-the wavefront theorem through the compact transition slab and the resulting
-regular response morphism, followed independently by a global seed covariance
-with declared BV/Krein and physical-positivity policy.
+adjoint reversal for every declared smooth cutoff. The cutoff Pauli--Jordan
+kernel is now a certified Schwartz-kernel bisolution, has no one-sided zero
+covectors, and is confined factorwise to the metric null cone. For a
+compact-slab time cutoff \(\eta\),
+\(S_{\chi,\eta}=[C_\chi,\eta]E_\chi\) is a regular linear source map. This is
+an internal time-slice representative, not yet the free-to-full response
+morphism. The active analytic gate is to exclude the two same-orientation
+sectors, install a formally Hermitian graded GreenHyp realization, and prove
+the endpoint response cone action. A global seed covariance with declared
+BV/Krein and physical-positivity policy remains independently open.
 The fail-closed atlas row remains `OPEN`: no full companion covariance, BRST
 Ward identity or physical state-space sign has been certified.
 
@@ -1537,3 +1545,5 @@ The narrowed direct-route boundary is recorded in
 [`berger-hadamard-regular-morphism-boundary.md`](../quantum-weyl/reports/berger-hadamard-regular-morphism-boundary.md),
 and the closed cutoff-family gate in
 [`berger-temporal-cutoff-companion-green-family.md`](../quantum-weyl/reports/berger-temporal-cutoff-companion-green-family.md).
+The current microlocal boundary is recorded in
+[`berger-cutoff-companion-microlocal-response-preflight.md`](../quantum-weyl/reports/berger-cutoff-companion-microlocal-response-preflight.md).

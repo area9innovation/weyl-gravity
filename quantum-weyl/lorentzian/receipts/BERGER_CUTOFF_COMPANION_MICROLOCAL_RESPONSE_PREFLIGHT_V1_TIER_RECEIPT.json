@@ -1,0 +1,49 @@
+{
+  "receipt_id": "BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Cutoff Pauli-Jordan Schwartz-kernel and factorwise-null wavefront preflight, regular internal compact-slab time-slice source map, and fail-closed atlas/frontier/bridge refresh.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python -m py_compile <changed Python modules>",
+        "python -m json.tool <changed schemas and generated certificates>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "elapsed_seconds": 0.6
+    },
+    "tier_1": {
+      "status": "PASS",
+      "runs": [
+        {
+          "command": "PYTHONPATH=quantum-weyl python -m lorentzian.berger_cutoff_companion_microlocal_response_preflight_certificate --check && PYTHONPATH=quantum-weyl python -m lorentzian.verify_berger_cutoff_companion_microlocal_response_preflight && PYTHONPATH=quantum-weyl python -m unittest quantum-weyl/lorentzian/tests/test_berger_cutoff_companion_microlocal_response_preflight.py",
+          "elapsed_seconds": 0.8,
+          "result": "PASS: independent verifier and seven tests; cutoff kernels and factorwise-null Pauli-Jordan control reproduce, the internal time-slice source map satisfies all four regular-linear-map conditions, and unsupported response/Hadamard promotion is rejected."
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python -m active_frontier_certificate --check && PYTHONPATH=quantum-weyl python -m verify_active_frontier && PYTHONPATH=quantum-weyl python -m unittest quantum-weyl/tests/test_active_frontier.py quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py",
+          "elapsed_seconds": 4.1,
+          "result": "PASS: generated atlas and active frontier reproduce, independent consumers pass, and sixteen affected tests keep the Berger Hadamard row OPEN at same-orientation exclusion plus graded GreenHyp endpoint transport."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The affected cutoff microlocal certificate, generated atlas, active frontier, quantum brief and roadmap bridge were replayed. Content-addressed cutoff Green-family, typed Volterra, principal-symbol and Hadamard-boundary inputs were hash-checked rather than rebuilt."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, shared-core algebra change, Hadamard-state promotion, QME promotion or quantum-theory lifecycle promotion occurred."
+    }
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_PASS_WITH_FINDINGS",
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 3.85,
+    "findings": "Unrelated bridge certificate drift and programme-wide coverage-baseline drift were reported; the advisory rail exited zero and did not promote this claim."
+  },
+  "claim_boundary": "Certifies cutoff Green-kernel continuity, the two-sided Pauli-Jordan bisolution, absence of one-sided zero covectors, factorwise metric-null wavefront confinement and regularity of an internal compact-slab time-slice source map. It does not exclude same-orientation sectors, construct a formally Hermitian graded GreenHyp object or endpoint response morphism, transport a seed covariance, establish BRST Hadamard data, positivity, renormalized Lorentzian products, a restored QME or a quantum theory."
+}

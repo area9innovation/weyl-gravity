@@ -33,6 +33,7 @@ DEPENDENCIES = {
     "Berger_Hadamard_gate": QROOT / "lorentzian/certificates/BERGER_HADAMARD_CONSTRUCTION_GATE.json",
     "Berger_Hadamard_regular_morphism_boundary": QROOT / "lorentzian/certificates/BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY.json",
     "Berger_temporal_cutoff_Green_family": QROOT / "lorentzian/certificates/BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY.json",
+    "Berger_cutoff_microlocal_response": QROOT / "lorentzian/certificates/BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT.json",
     "Berger_A104_complete": QROOT / "lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
     "Berger_graph_q_obstruction": QROOT / "lorentzian/certificates/BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION.json",
     "Slavnov_preflight": QROOT / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
@@ -203,6 +204,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     hadamard = values["Berger_Hadamard_gate"]
     hadamard_boundary = values["Berger_Hadamard_regular_morphism_boundary"]
     cutoff_family = values["Berger_temporal_cutoff_Green_family"]
+    cutoff_microlocal = values["Berger_cutoff_microlocal_response"]
     berger_a104 = values["Berger_A104_complete"]
     berger_graph_q = values["Berger_graph_q_obstruction"]
     slavnov = values["Slavnov_preflight"]
@@ -334,6 +336,18 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
             "BERGER_CUTOFF_COMPANION_WAVEFRONT_THEOREM"
         ) is not False
         or cutoff_family.get("claim_flags", {}).get(
+            "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION"
+        ) is not False
+        or cutoff_microlocal.get("claim_flags", {}).get(
+            "BERGER_CUTOFF_COMPANION_FACTORWISE_NULL_WAVEFRONT_BOUND"
+        ) is not True
+        or cutoff_microlocal.get("claim_flags", {}).get(
+            "BERGER_CUTOFF_TIMESLICE_SOURCE_MAP_REGULAR"
+        ) is not True
+        or cutoff_microlocal.get("claim_flags", {}).get(
+            "BERGER_REGULAR_GREENHYP_MORPHISM"
+        ) is not False
+        or cutoff_microlocal.get("claim_flags", {}).get(
             "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION"
         ) is not False
         or berger_a104.get("claim_flags", {}).get("BERGER_FULL_A104_CAUCHY_OPERATOR")
@@ -1087,15 +1101,15 @@ def _berger_gap(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             exactness=("NO_CERTIFIED_MAP", "no per-mode cohomology ledger"),
             pairing=("NO_CERTIFIED_MAP", "carrier pairing has no modewise restriction"),
             complex_structure=("OPEN", "the canonical q_Cauchy graph lift is exactly rejected; corrected lift, Cauchy/Krein form, real structure and closed spectral splitting remain open"),
-            hadamard=("OPEN", "finite graph wavefront safety, local ghost factors and the full smooth temporal-cutoff Green family are certified; cutoff microlocal propagation, the regular response morphism, global seed covariance and BRST Ward identities remain open"),
+            hadamard=("OPEN", "finite graph wavefront safety, local ghost factors, the smooth temporal-cutoff Green family, its factorwise-null Pauli-Jordan kernel and a regular internal time-slice source map are certified; same-orientation exclusion, a graded GreenHyp endpoint response morphism, global seed covariance and BRST Ward identities remain open"),
             state_space=("OPEN", "reduced Krein evidence does not define a Berger physical state space"),
             qme=("OBSTRUCTED", "strict fixed-field-content local Euclidean QME is obstructed"),
             lifecycle=("OBSTRUCTED", "classical causal import remains; strict interacting quantum lifecycle is blocked"),
             particle=("NO_CERTIFIED_MAP", "no mode basis or Hadamard state"),
             crosswalk=("NO_CERTIFIED_MAP", "retained 26 rows to stationary physical modes"),
         ),
-        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_Hadamard_regular_morphism_boundary", "Berger_temporal_cutoff_Green_family", "Berger_A104_complete", "Berger_graph_q_obstruction", "Slavnov_preflight", "regulated_Slavnov_breaking"),
-        "The 26/54-row causal carrier and all 10,816 coefficients of A104 are imported. Finite graph wavefront safety, local ghost factors and the nonstationary temporal-cutoff Green family are certified. Cutoff microlocal propagation, a regular response morphism and seed covariance remain absent. The tautological stationary q_Cauchy graph lift is independently rejected by 157 square and 207 evolution-commutator defects. No physical mode, complex structure, Hadamard state, or particle is inferred.",
+        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_Hadamard_regular_morphism_boundary", "Berger_temporal_cutoff_Green_family", "Berger_cutoff_microlocal_response", "Berger_A104_complete", "Berger_graph_q_obstruction", "Slavnov_preflight", "regulated_Slavnov_breaking"),
+        "The 26/54-row causal carrier and all 10,816 coefficients of A104 are imported. Finite graph wavefront safety, local ghost factors, the nonstationary temporal-cutoff Green family, factorwise-null cutoff Pauli-Jordan control and a regular internal time-slice source map are certified. Same-orientation exclusion, a graded GreenHyp endpoint response morphism and seed covariance remain absent. The tautological stationary q_Cauchy graph lift is independently rejected by 157 square and 207 evolution-commutator defects. No physical mode, complex structure, Hadamard state, or particle is inferred.",
     )
 
 
