@@ -127,8 +127,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest \
   -v
 ```
 
-EVIDENCE:
-`quantum-weyl/spectral/euclidean/certificates/GENERIC_PRIMED_SCHUR_FINITE_RELATIVE_TRACE_KERNEL_NONUNIQUENESS.json`
+EVIDENCE: quantum-weyl/spectral/euclidean/certificates/GENERIC_PRIMED_SCHUR_FINITE_RELATIVE_TRACE_KERNEL_NONUNIQUENESS.json
 
 CLOSE-OUT: DONE — exact nonuniqueness and the minimal global spectral input are
 certified.
