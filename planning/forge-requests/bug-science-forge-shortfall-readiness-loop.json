@@ -1,0 +1,17 @@
+{
+  "id": "sf:forge-request/bug-science-forge-shortfall-readiness-loop",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Repair Science Forge SHORTFALL close-out semantics. Closing sf:program/work/quantum-berger-physical-cohomology-positivity as SHORTFALL_PRECONDITION_NOT_MET emitted an ACTIVE transition and released its lease. work-ready therefore immediately offered the unchanged item again; quantum-qme-1 pulled and closed it twice before the coordinator appended a BLOCKED repair. SHORTFALL must preserve its evidence and next dependency without becoming immediately pullable in a no-new-input loop.",
+    "depends_on": ["sf:program/work/quantum-berger-physical-cohomology-positivity"],
+    "stop_condition": "Add a deterministic regression in which an item is pulled, reported with a missing prerequisite, and closed as SHORTFALL. The effective state after lease release must be non-ready (BLOCKED or a distinct fail-closed SHORTFALL state), the missing activation dependency must remain machine-readable, and a later explicit dependency-satisfied/coordinator transition must make it ready again. Existing append-only events and shortfall evidence must remain intact.",
+    "forbid": "mapping SHORTFALL to DONE or OBSTRUCTED; deleting or rewriting historical events; retaining ACTIVE without a live lease; special-casing the quantum item; automatically claiming that a free-text dependency is satisfied; weakening one-lease discipline.",
+    "notes": [
+      "Minimal reproduction: inspect planning/events/quantum-berger-physical-cohomology-positivity-ACTIVE-6e0d97ce2b569f74.json and ACTIVE-63b09e927f0eef79.json, followed by their LEASE-RELEASE events. Run `s-f work ready --stream quantum-qme --now 2026-07-20T08:51:15Z`; before the coordinator BLOCKED repair it returned the unchanged positivity item.",
+      "The scientific prerequisite is the retained-26 q26 Ward descent. Commit dff73ba4 closed the item as shortfall; commits ec0a0954 and 619e5ca5 record the repeated pull and redirect to the actual Ward gate."
+    ]
+  }
+}
