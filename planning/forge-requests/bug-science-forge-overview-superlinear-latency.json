@@ -1,0 +1,19 @@
+{
+  "id": "sf:forge-request/bug-science-forge-overview-superlinear-latency",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Make `s-f overview` satisfy its advertised fast coordinator-loop role on the live physics programme.  At 2026-07-20T23:45:00+02:00 with seven streams, 106 open work items and 108 terminal completions, the command emitted its first table rows only after roughly 60 seconds and completed after roughly 150 seconds.  This is too slow for a 15-minute monitoring loop and caused earlier 10-30 second invocations to appear as empty successful output while the underlying process was still running.",
+    "depends_on": [
+      "sf:program/work/SF8-overview"
+    ],
+    "stop_condition": "Profile the fold and remove repeated whole-program scans so one invocation parses/folds each work item and event at most once, or uses a content-addressed incremental snapshot whose validity is checked before display.  Add a realistic fixture with at least 120 work items, 500 events, seven streams, terminal-dependency suffixes, live/expired leases, reports, blocks and retirements.  On the project host the warm overview must complete within 5 seconds and begin emitting only after the internally consistent snapshot is complete; the test must enforce a generous machine-independent operation-count or scan-count ceiling in addition to a non-gating timing receipt.  Preserve exact ready ordering, effective states, dependency modes and fail-closed parsing.  Add a visible progress/error message when the command exceeds two seconds so a coordinator never mistakes a running fold for empty output.",
+    "forbid": "no truncating the programme to achieve the target; no omitting blocked or recent-result folds; no stale cache accepted without content/hash validation; no wall-clock-only CI gate; no background process left running after the caller times out; no partial table presented as a complete snapshot",
+    "notes": [
+      "Priority A coordination papercut.  The command is functionally correct once it finishes; this request is about bounded latency and honest progress visibility.",
+      "Reproduction: `SF_PROGRAM=/home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/planning/work-items s-f overview --now 2026-07-20T23:45:00+02:00`."
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-complex-scale-u1-connection-preflight",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-complex-scale-u1-connection-preflight",
+  "source": {
+    "path": "planning/work-items/classical-compensator-complex-scale-u1-connection-preflight.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Test the smallest genuinely distinct changed-gauge mechanism left open by the minimal real Weyl-connection no-go: separate scale and internal-phase connections for a complex compensator so the Wess-Zumino radial direction and the relational clock phase need not share one Ward equation.",
+    "stop_condition": "First import the terminal Level-3b and minimal-ladder synthesis dispositions.  If Level-3b already passes its physical causal gate, close this alternative as NOT_ACTIVATED.  Otherwise declare an action with a real Weyl scale connection W_mu, an independent compact U(1) connection A_mu and Phi=rho exp(i theta), including all gauge transformations, curvatures and allowed two-derivative parity-even terms in the minimal ansatz.  Derive the complete stationary cylinder and Berger equations, gauge-rank and reducibility complex, dressed-trace constraint, scalar/vector kinetic principal forms, raw-D and internal-clock charges.  Eliminate couplings exactly and either exhibit a nonempty healthy locus or prove the first incompatible ideal/rank/sign condition.  Any passing locus must distinguish the scale quartet from the physical phase clock and must not obtain clock evolution by leaving an anomalous scale direction physical.",
+    "current_gate": "minimal separated scale/U1 gauge-architecture preflight",
+    "forbid": "no complexification without a real action and reality conditions; no internal U1 identified with Weyl scaling; no gauge count inferred from field names; no sampled coefficient scan; no arbitrary higher derivatives; no causal, nonlinear or quantum claim from a stationary preflight",
+    "depends_on": [
+      "sf:program/work/classical-compensator-minimal-ladder-synthesis-after-level3b"
+    ],
+    "activates": [
+      "full BV and causal completion only for a certified nonempty healthy locus"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/compensator/",
+      "d_quotient_classical/reports/",
+      "d_quotient_classical/receipts/",
+      "d_quotient_classical/schema/",
+      "notes/",
+      "paper/",
+      "reports/",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "FAIL-FAST CHANGED-GAUGE PREFLIGHT.  Solve Ward, stationarity, rank and health equations before building a large BV carrier.",
+    "notes": [
+      "This remains inside a minimal two-connection ansatz and must not be advertised as a theorem about arbitrary metric-affine or complex gauge geometry."
+    ],
+    "input_commit": "7d487a96c",
+    "stream": "classical"
+  },
+  "edges": []
+}
