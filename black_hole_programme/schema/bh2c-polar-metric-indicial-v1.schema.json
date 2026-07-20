@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2c-polar-metric-indicial-v1",
+  "title": "Polar metric-side indicial structure and the mu=0 shearing obstruction",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_token",
+    "dependency_tags", "declaration", "companion", "established",
+    "obstruction", "sectors", "not_claimed", "verification_discipline",
+    "claim_flags", "missing_objects", "stage_seconds", "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {"const": "pure-weyl-bh2c-polar-metric-indicial-v1"},
+    "schema_path": {"const": "black_hole_programme/schema/bh2c-polar-metric-indicial-v1.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "PURE_WEYL_BH2C_POLAR_METRIC_INDICIAL"},
+    "result_token": {"const": "BH2C_POLAR_METRIC_INDICIAL_MU0_REQUIRES_SHEARING"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "declaration": {
+      "type": "object",
+      "required": ["theory", "background_family", "conformal_frame",
+                   "generator", "phase_space", "horizon_condition",
+                   "infinity_condition", "lifecycle"],
+      "properties": {"lifecycle": {"const": "CLASSIFIED"}}
+    },
+    "companion": {
+      "type": "object",
+      "required": ["certificate", "certificate_sha256", "relation"],
+      "properties": {
+        "certificate": {"const": "black_hole_programme/certificates/BH2C_SYMBOLIC_INDICIAL.json"}
+      }
+    },
+    "established": {
+      "type": "object",
+      "required": ["charpoly", "fixture_charpoly_omega_3_5", "semisimple_sector"],
+      "properties": {
+        "charpoly": {"const": "lam**3*(lam + 2*I*omega)"},
+        "semisimple_sector": {
+          "type": "object",
+          "required": ["sector", "extracted", "certified_sigma0", "match"],
+          "properties": {"match": {"const": true}}
+        }
+      }
+    },
+    "obstruction": {
+      "type": "object",
+      "required": ["sector", "algebraic_multiplicity", "geometric_multiplicity",
+                   "kernel_staircase", "jordan_chain_lengths", "statement",
+                   "evidence", "required_technique"],
+      "properties": {
+        "sector": {"const": "0"},
+        "algebraic_multiplicity": {"const": 3},
+        "geometric_multiplicity": {"const": 1},
+        "kernel_staircase": {"const": [1, 2, 3]},
+        "jordan_chain_lengths": {"const": [3]},
+        "required_technique": {"const": "Moser/Turrittin shearing transformation"},
+        "evidence": {
+          "type": "object",
+          "required": ["sector", "extracted", "certified_sigma0", "match", "reading"],
+          "properties": {"match": {"const": false}}
+        }
+      }
+    },
+    "sectors": {"type": "object", "minProperties": 2},
+    "not_claimed": {
+      "type": "object",
+      "required": ["jordan_chain_explains_log_tails", "detail",
+                   "mu0_metric_exponents_established"],
+      "properties": {
+        "jordan_chain_explains_log_tails": {"const": false},
+        "mu0_metric_exponents_established": {"const": false}
+      }
+    },
+    "verification_discipline": {"type": "array", "minItems": 3},
+    "claim_flags": {
+      "type": "object",
+      "required": ["leading_charpoly_symbolic_certified",
+                   "semisimple_sector_exponent_certified",
+                   "jordan_structure_certified", "mu0_exponents_certified",
+                   "shearing_analysis_performed",
+                   "log_tail_mechanism_certified", "general_l_certified"],
+      "properties": {
+        "leading_charpoly_symbolic_certified": {"const": true},
+        "semisimple_sector_exponent_certified": {"const": true},
+        "jordan_structure_certified": {"const": true},
+        "mu0_exponents_certified": {"const": false},
+        "shearing_analysis_performed": {"const": false},
+        "log_tail_mechanism_certified": {"const": false},
+        "general_l_certified": {"const": false}
+      }
+    },
+    "missing_objects": {"type": "array", "minItems": 4},
+    "stage_seconds": {"type": "object"},
+    "provenance": {
+      "type": "object",
+      "required": ["generator_path", "reach_path", "reach_sha256",
+                   "certified_sigma0_source", "certified_sigma0_source_sha256"]
+    },
+    "verification_command": {"const": "python3 black_hole_programme/verify_bh2c_polar_metric_indicial.py"}
+  }
+}

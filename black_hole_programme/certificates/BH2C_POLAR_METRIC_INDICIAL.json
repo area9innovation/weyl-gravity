@@ -1,0 +1,139 @@
+{
+  "claim_flags": {
+    "general_l_certified": false,
+    "jordan_structure_certified": true,
+    "leading_charpoly_symbolic_certified": true,
+    "log_tail_mechanism_certified": false,
+    "mu0_exponents_certified": false,
+    "semisimple_sector_exponent_certified": true,
+    "shearing_analysis_performed": false
+  },
+  "companion": {
+    "certificate": "black_hole_programme/certificates/BH2C_SYMBOLIC_INDICIAL.json",
+    "certificate_sha256": "a28ab13dda157111413138d3e28a3aa85eb1011927dfd574736c7f7dc80a9c67",
+    "relation": "metric-side counterpart of the carrier-side symbolic indicial certificate; supersedes nothing"
+  },
+  "declaration": {
+    "background_family": "Schwarzschild exterior, m = 1",
+    "conformal_frame": "fixed representative g (certified atlas)",
+    "generator": "polar l = 2 metric (h-system) at infinity",
+    "horizon_condition": "not used (infinity endpoint)",
+    "infinity_condition": "leading matrix analysis after the oscillatory split",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "not constructed here (indicial layer only)",
+    "theory": "S = alpha * integral sqrt(-g) C_{abcd} C^{abcd}"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": {
+    "charpoly": "lam**3*(lam + 2*I*omega)",
+    "fixture_charpoly_omega_3_5": "lam**3*(5*lam + 6*I)/5",
+    "semisimple_sector": {
+      "certified_sigma0": "-4*I*omega + 1",
+      "extracted": "-4*I*omega + 1",
+      "match": true,
+      "sector": "-2*I*omega"
+    }
+  },
+  "missing_objects": [
+    "Moser/Turrittin shearing analysis of the mu = 0 metric sector",
+    "mu = 0 metric Frobenius exponents (possibly ramified)",
+    "all-orders metric reconstruction maps",
+    "symbolic-frequency finite-flux power table",
+    "the assembled endpoint-nonselection theorem"
+  ],
+  "not_claimed": {
+    "detail": "the exponent matrix is semisimple in every sector (log-factor count 0), consistent with BH2C_ASYMPTOTIC_JORDAN's log-free verdict; the composed-metric log tails of BH2C_FLUX_CLASS arise in the SOURCED composition, not in this homogeneous indicial data",
+    "jordan_chain_explains_log_tails": false,
+    "mu0_metric_exponents_established": false
+  },
+  "obstruction": {
+    "algebraic_multiplicity": 3,
+    "evidence": {
+      "certified_sigma0": "1",
+      "extracted": [
+        "-3",
+        "0"
+      ],
+      "match": false,
+      "reading": "the naive projection is INVALID in a Jordan sector; the extracted values are a REFUTED artifact, not a result",
+      "sector": "0"
+    },
+    "geometric_multiplicity": 1,
+    "jordan_chain_lengths": [
+      3
+    ],
+    "kernel_staircase": [
+      1,
+      2,
+      3
+    ],
+    "required_technique": "Moser/Turrittin shearing transformation",
+    "sector": "0",
+    "statement": "the leading matrix is non-semisimple at mu = 0, so Frobenius exponents are NOT the eigenvalues of A1 projected onto the generalized eigenspace; a Moser/Turrittin shearing is required and ramified exponents are admissible a priori"
+  },
+  "provenance": {
+    "certified_sigma0_source": "black_hole_programme/certificates/BH2C_POLAR_FLUX_CLASS.json",
+    "certified_sigma0_source_sha256": "e547439682a65a689c0c1bb8049a06e99638cbe91056918e3e5ffa39c1080f47",
+    "generator_path": "black_hole_programme/bh2c_polar_metric_indicial.py",
+    "reach_path": "black_hole_programme/bh2b_polar_reach.py",
+    "reach_sha256": "53314667714c6624e90f204a46d166ae2d7561bdd8e97b5011c235c939121c46"
+  },
+  "result_id": "PURE_WEYL_BH2C_POLAR_METRIC_INDICIAL",
+  "result_token": "BH2C_POLAR_METRIC_INDICIAL_MU0_REQUIRES_SHEARING",
+  "schema": "pure-weyl-bh2c-polar-metric-indicial-v1",
+  "schema_path": "black_hole_programme/schema/bh2c-polar-metric-indicial-v1.schema.json",
+  "schema_sha256": "cfc641817e82d35f732a178d322c63e56e23e5e69db10764fbc50dc6bfac4425",
+  "sectors": {
+    "-2*I*omega": {
+      "algebraic": 1,
+      "chain_lengths": [
+        1
+      ],
+      "exponent_log_factors": {
+        "-4*I*omega + 1": 0
+      },
+      "geometric": 1,
+      "kernel_staircase": [
+        1
+      ],
+      "naive_exponents": {
+        "-4*I*omega + 1": 1
+      },
+      "semisimple": true
+    },
+    "0": {
+      "algebraic": 3,
+      "chain_lengths": [
+        3
+      ],
+      "exponent_log_factors": {
+        "-3": 0,
+        "0": 0
+      },
+      "geometric": 1,
+      "kernel_staircase": [
+        1,
+        2,
+        3
+      ],
+      "naive_exponents": {
+        "-3": 1,
+        "0": 2
+      },
+      "semisimple": false
+    }
+  },
+  "stage_seconds": {
+    "total": 29.9
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2c_polar_metric_indicial.py",
+  "verification_discipline": [
+    "Jordan structure from the kernel dimension staircase dim ker(A0 - mu)^k, never inferred from the characteristic polynomial (the work item forbids that inference)",
+    "the extraction method is validated by a POSITIVE control (it reproduces certified sigma0 in the semisimple sector) and falsified by a NEGATIVE control (it fails to in the Jordan sector)",
+    "refuted values are recorded as refuted, never as results",
+    "no floating point; no nsimplify"
+  ]
+}
