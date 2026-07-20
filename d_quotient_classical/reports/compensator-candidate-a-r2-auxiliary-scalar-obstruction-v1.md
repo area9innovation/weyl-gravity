@@ -219,3 +219,5 @@ npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true \
 ```
 
 No Hadamard, anomaly, QME, particle, scattering or unitarity result is claimed.
+
+CLOSE-OUT: OBSTRUCTED — Candidate A has an exact physical-sign, raw-\(D\), and frozen-Berger obstruction; retain the reduced scalar Green block and proceed to Candidate B.
