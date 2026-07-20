@@ -1,0 +1,47 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-dressed-canonical-berezinian-locality-preflight",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-dressed-canonical-berezinian-locality-preflight",
+  "source": {
+    "path": "planning/work-items/quantum-dressed-canonical-berezinian-locality-preflight.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum",
+    "state": "PROPOSED",
+    "objective": "Determine, before choosing Candidate A or B, whether the common dressed canonical transformation and Weyl-quartet reduction have a local and action-independent Berezinian/Jacobian disposition suitable for a later selected-action regulator.",
+    "stop_condition": "Import COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1 and the complete tau-adic local BV atom/pairing ledger by exact hashes. On the formal rho!=0 chart, derive the regulated super-Jacobian of the canonical change (g,tau,ghosts,antifields) to (g_hat,Diff fields) direct-sum (tau,omega,omega_star,tau_hat_star), including minimal and nonminimal sectors, the cotangent lift, real contour and every zero-mode convention that is definable without selecting Candidate A or B. Prove one of: the finite-dimensional/cutoff Berezinian is exactly one and the continuum defect is a local functional in a declared regulator class; a unique local counterterm module absorbs it; or a precise measure/regularization obstruction prevents action-independent locality. Check composition, inverse and canonical-one-form identities and reject a missing-antifield or sign mutation. Export a strict receiver stating which parts are genuinely action-independent and which must be recomputed from the selected Hessian. Stop before determinants, QAP, anomaly coefficients or all-loop promotion.",
+    "current_gate": "action-independent locality of the dressed canonical BV measure transformation",
+    "forbid": "no formal canonical transformation assumed measure preserving without a regulated Berezinian; no finite-dimensional determinant called a continuum theorem; no scalaron or three-form determinant computed before action selection; no regulator/QAP or H14 theorem inferred from locality of the change of variables; no global-anomaly, Lorentzian-QME, state, particle, scattering or unitarity claim",
+    "depends_on": [],
+    "activates": [
+      "quantum-selected-compensator-repair-dressed-regulator",
+      "a pinned Jacobian/local-counterterm input common to Candidates A and B",
+      "or an exact obstruction to the proposed dressed-variable regulator architecture"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/local_bv/",
+      "quantum-weyl/anomalies/",
+      "quantum-weyl/spectral/",
+      "quantum-weyl/reports/",
+      "quantum-weyl/atlas/",
+      "reports/",
+      "residual_atlas/",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "notes/d-quotient-quantum-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "READY QUANTUM RESERVE after the Paper 12 coverage refresh. This is the largest rigorous quantum calculation that is common to both A and B and therefore does not prejudge the classical selector.",
+    "notes": [
+      "The rho!=0 domain and possible winding between polar charts must be explicit.",
+      "Any continuum-locality statement must name its regularization assumptions.",
+      "A result here narrows but does not replace the selected-action regulator/QAP gate."
+    ],
+    "input_commit": "306ff78a2",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
