@@ -1,0 +1,36 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-asymptotic-bach-renormalized-edge-pair-phase-space",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-asymptotic-bach-renormalized-edge-pair-phase-space",
+  "source": {
+    "path": "planning/work-items/bridge-asymptotic-bach-renormalized-edge-pair-phase-space.json",
+    "span": null
+  },
+  "body": {
+    "owner": "einstein",
+    "state": "PROPOSED",
+    "objective": "Construct or obstruct the minimal enlarged null-infinity BV-BFV phase space selected by the local-counterterm no-go: treat the Bach p0 boundary source and p1 response as an independent renormalized canonical pair, with the necessary edge/corner data, rather than trying further local counterterms of the fixed-boundary metric.",
+    "stop_condition": "Begin after ASYMPTOTIC_BACH_LOCAL_COUNTERTERM_COHOMOLOGY_OBSTRUCTION_V1 is committed and import it together with ASYMPTOTIC_BACH_RAW_FLUX_CORNER_OBSTRUCTION by exact hashes. Declare the full tensor Bondi/polyhomogeneous carrier, p0/p1 source-response variables, Coulombic data, boundary gauge transformations, ghosts, antifields, constraints, corner variables, function spaces, and allowed renormalization. Derive a boundary action or canonical extension whose Lee-Wald/BFV form cancels the raw O(r) cut divergence and retains the finite p0-p1 cross term. Prove cut finiteness, conservation with flux, gauge descent, corner matching across I-minus/i0/I-plus, and nondegeneracy after the exact quotient; compute differentiable P0 and D_M charge variations and fluxes, keeping H_ESU and radial-quantization D separate. If the minimal pair fails, land the invariant obstruction and prove the smallest additional edge degree, logarithmic/Jordan datum, or bulk scale required. Compare the Einstein-image and additional Bach radiative subspaces under the resulting form without assuming either is a direct symplectic summand.",
+    "current_gate": "renormalized p0/p1 source-response boundary pair beyond the exhausted local-counterterm class",
+    "forbid": "no further coefficient search inside the certified exhausted local JKM ambiguity class; no reduced scalar TT calculation called the full tensor BV-BFV phase space; no field fixed at the boundary and simultaneously varied as an independent canonical coordinate; no all-u cancellation called finite cut flux; no identification of P0, D_M, H_ESU, or radial D; no horizon result imported as null-infinity data; no particle, scattering, stability, positivity, unitarity, or quantum claim",
+    "depends_on": [],
+    "activates": [
+      "asymptotically flat Bach radiative phase space",
+      "decisive charge test for the D quotient",
+      "Bondi and scattering bridge programme"
+    ],
+    "allowed_paths": [
+      "bridge/",
+      "reports/",
+      "residual_atlas/",
+      "planning/forge-requests/",
+      "notes/d-quotient-einstein-team-brief.md"
+    ],
+    "resource_hint": "EINSTEIN QUEUE HEAD after the active local-counterterm gate closes. Work at the tensor BV-BFV boundary level and prove the canonical extension before computing charges or interpreting branches.",
+    "input_commit": "b0b82745e",
+    "stream": "bridge"
+  },
+  "edges": []
+}
