@@ -4,7 +4,7 @@
   "schema": "work-v0",
   "body": {
     "owner": "physics-programme",
-    "state": "REQUESTED",
+    "state": "ACCEPTED",
     "objective": "Implement the Science Forge SPEC's first production supervised-execution and resource-governor slice so resident research commands cannot disappear while an unbounded log watcher waits forever. Live reproduction on 2026-07-21: a black-hole Bach classification log stopped after `build 11.5s` and `rows 11.9s`; no producer process remained, but several shell watchers continued for more than three hours because they waited only for `companion solve|TOTAL|Traceback|Error`. In parallel, the bridge full-test rail was genuinely alive at approximately one CPU core. The substrate must distinguish those cases through a receipted process attempt rather than coordinator process-name heuristics.",
     "depends_on": [
       "sf:program/work/black-hole-symbolic-cross-invariant",
@@ -15,7 +15,8 @@
     "notes": [
       "Priority 1 adoption safety. This is the executable first slice of SPEC resource-management sections 12 and 18, not a new design request.",
       "The existing dashboard LIVE_PROCESS_HEARTBEAT overlay should consume these receipts when available; it must remain operational/advisory rather than part of claim lifecycle.",
-      "A later cache implementation may reuse attempt hashes, but cache eviction is not required to close this first supervised-execution gate."
+      "A later cache implementation may reuse attempt hashes, but cache eviction is not required to close this first supervised-execution gate.",
+      "2026-07-21T03:30:00Z forge-coordinator: ACCEPTED \u2014 mirrored sf:program/work/SF18-supervised-exec-governor (coordination, priority 1). This is real operational pain the coordinator itself hit repeatedly (background log-watchers waiting hours, no receipted liveness, soft-vs-hard OOM confusion). MINIMAL FIRST SLICE to land before the full spec: s-f exec --work <id> -- <cmd> that (1) runs the command in its OWN process GROUP (setsid), (2) enforces a wall-timeout that KILLS THE WHOLE GROUP on expiry (never a leftover child), (3) records an immutable attempt record (argv/cwd/work/start/end/exit/wall/peak-RSS via /usr/bin/time or wait4, process-group id) as an append-only event, (4) emits a TYPED outcome (SUCCESS/COMMAND_FAILED/INTERRUPTED/TIMEOUT), NEVER a scientific-claim failure. Deterministic fixture via an injected fake clock/command. Then layer: PRODUCER_DISAPPEARED detection (the process tree is gone but the watcher waits) + cgroup/rlimit hard caps + resources doctor/plan/status. FORBIDS honored: no pgrep-name liveness, no log-growth=health, no soft-monitor-as-hard-OOM, no timeout=failed-claim, no dirty-file/checkpoint deletion."
     ]
   }
 }
