@@ -99,12 +99,14 @@ continues **without waiting for another team**:
 4. **Handoff pass** — leave a strict certificate/schema, verifier, focused
    tests, human report, assumptions and missing-object ledger, exact commands,
    elapsed times and dependency tags.
-5. **Commit discipline** — run `s-f work check` at the coherent checkpoint.
-   After the new-file transaction pilot in `SCIENCE-FORGE-ADOPTION.md` passes,
-   use `s-f work commit --push` so the isolated index and prospective-tree gate
+5. **Commit discipline** — run `s-f work check` at a coherent checkpoint when
+   its paths can be honestly reported before commit. After the new-file
+   transaction pilot in `SCIENCE-FORGE-ADOPTION.md` passes, use
+   `s-f work commit --push` so the isolated index and prospective-tree gate
    commit exactly report∩allowed. Until then, retain the explicit-path manual
-   fallback for packages that create new files. Never bundle another team's
-   dirty files or use a fake commit to bypass containment.
+   audit/commit fallback for packages that create new files, then report the
+   resulting commit. Never bundle another team's dirty files or use a fake
+   commit to bypass containment.
 
 When a priority differs, `notes/universe-building-roadmap.md` controls what is
 attempted next; a certificate controls what is true.

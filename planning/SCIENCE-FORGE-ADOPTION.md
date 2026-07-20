@@ -125,7 +125,7 @@ not imply adoption of all.
 | Forge exact-math kernels | use only when the work item names the kernel or an accepted Forge request supplies it |
 | Claim language | use only for claims already represented by an accepted schema and kernel |
 | **Conflux structure discovery** | **not adopted by default; explicit opt-in only** |
-| `s-f work check` Git dry-run | adopted for every stream at its next coherent checkpoint |
+| `s-f work check` Git dry-run | staged pilot for reportable existing-path packages; new-file intent gate remains open |
 | `s-f work commit` Git transaction | staged pilot: use after the new-file intent gate below is closed |
 | TUI, resource governor, environment installer | not yet part of this workflow |
 
@@ -311,8 +311,8 @@ files remain untouched.
 
 Adoption proceeds without interrupting an active derivation:
 
-1. At the next coherent checkpoint, every team files its normal scoped report
-   and runs:
+1. At the next coherent checkpoint whose changed paths already exist in the
+   declared `current_commit`, a team files its normal scoped report and runs:
 
    ```bash
    s-f work check --item <ITEM-ID> --agent <STABLE-AGENT-ID>
@@ -347,8 +347,10 @@ One rollout blocker remains as of 20 July 2026:
 interface requires a report before `work commit`, but the report containment
 gate cannot honestly name newly created deliverables before that commit exists.
 Until that request lands and passes the new-file pilot, all teams adopt
-`work check` but retain explicit-path manual commits for packages containing
-new files. Do not bypass containment with a fake or unresolvable commit SHA.
+`work check` only where a pre-commit report can be recorded honestly. Packages
+containing new files retain the existing explicit-path manual audit, commit and
+push, followed by a truthful report naming the resulting commit. Do not bypass
+containment with a fake or unresolvable commit SHA.
 
 Whether mechanized or manual, the invariant rules remain:
 
