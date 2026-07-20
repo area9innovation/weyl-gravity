@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "gate_results",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-positive-mixed-phi2-local-component-jet-export-v1"
+    },
+    "result_id": {
+      "const": "BERGER_POSITIVE_MIXED_PHI2_LOCAL_COMPONENT_JET_EXPORT"
+    },
+    "claim_status": {
+      "const": "CERTIFIED_POSITIVE_MIXED_PHI2_LOCAL_JETS_AND_EVALUATED_NONROD_D3S"
+    },
+    "atlas_status": {
+      "const": "CERTIFIED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 9
+    },
+    "payload_ref": {
+      "type": "object",
+      "required": [
+        "path",
+        "result_id",
+        "sha256",
+        "canonical_sha256"
+      ]
+    },
+    "gate_results": {
+      "type": "object",
+      "required": [
+        "positive_mixed_Phi2_local_component_jet_map",
+        "evaluated_nonrod_D3S_entries",
+        "replacement_112_complete_executable_q1",
+        "combined_160_and_downstream"
+      ]
+    },
+    "next_gate": {
+      "const": "ASSEMBLE_AND_VERIFY_COMPLETE_EXECUTABLE_REPLACEMENT_112_Q1"
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 1800
+    }
+  },
+  "additionalProperties": true
+}

@@ -235,6 +235,20 @@ def test_replacement_executable_producer_stops_at_phi2_jet_evaluation():
     }
 
 
+def test_positive_mixed_phi2_component_jet_export_closes_only_variational_input():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.interaction.positive_mixed_phi2_local_component_jet_export"
+    )
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["descriptions"]["causal"] == "NOT_APPLICABLE"
+    assert row["observer_data"]["clock_and_rod_dependence"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_POSITIVE_MIXED_PHI2_LOCAL_COMPONENT_JET_EXPORT" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
+
+
 def test_recoil_internal_readiness_is_certified_while_physical_activation_is_open():
     rows = {row["id"]: row for row in build()["entries"]}
     readiness = rows["observer.berger.detector_profile.recoil_stream_executable_readiness"]

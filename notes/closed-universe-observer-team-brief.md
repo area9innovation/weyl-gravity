@@ -2483,3 +2483,35 @@ The fail-closed atlas row is
 The material-parent-56 producer is deliberately not reached.  Activation
 requires the retained-basis-to-component-jet crosswalk, every required local
 jet, normalized evaluated non-rod entries and an independent action replay.
+
+## Active bridge: positive-mixed Phi2 local component jets
+
+The retained-to-local variational gate is now certified.  In the declared
+oriented orthonormal Berger frame the positive-mixed primitive reconstructs
+exactly
+\[
+\Phi_{2,00}=428/567,\qquad
+\Phi_{2,11}=\Phi_{2,22}=-29/21,\qquad
+\Phi_{2,33}=-6/7,
+\]
+with every other component zero.  The export covers all 942 component-PBW
+jets consumed by the universal non-rod formulas through total derivative
+order five.  The exact frame commutators, reality and \(K_{\rm Berger}\)
+checks pass.  Six nonzero Koszul connection coefficients and the associated
+covariant tensor jets are exported separately, so constancy of the frame
+components is not confused with covariant constancy.
+
+Of 6,171 universal Phi2-dependent source terms, 6,091 vanish after exact
+evaluation and the remainder combine to 20 normalized terms.  The 288
+unaffected source terms retain a canonical content hash.  A method-distinct
+coarea variation gives the normalized detector-density contribution
+\(-\Phi_{2,00}/2=-214/567\).
+
+The fail-closed atlas row is
+observer.berger.interaction.positive_mixed_phi2_local_component_jet_export.
+It certifies only the missing coefficient-level variational input.  The
+complete executable replacement-112 unary, its gauge reduction, response
+rank, second-order cone, redshift, recoil and memory remain
+NO_CERTIFIED_MAP.  The active bridge is now the independently scheduled
+material-parent-56 executable unary and odd-pairing export, followed by
+assembly of the complete replacement-112 producer.
