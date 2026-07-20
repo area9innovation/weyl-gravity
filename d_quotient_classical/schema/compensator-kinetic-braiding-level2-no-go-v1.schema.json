@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/compensator-kinetic-braiding-level2-no-go-v1.schema.json",
+  "title": "Exact Level-2 no-go after cylinder invisibility of minimal braiding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "imports",
+    "complete_stationary_locus",
+    "independent_cylinder_zero_replay",
+    "stratified_gate_disposition",
+    "terminal_verdict",
+    "exact_checks",
+    "claim_flags",
+    "claim_boundary",
+    "next_gate",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-compensator-kinetic-braiding-level2-no-go-v1"
+    },
+    "result_id": {
+      "const": "COMPENSATOR_KINETIC_BRAIDING_LEVEL2_NO_GO_V1"
+    },
+    "result_state": {
+      "const": "SCOPED_LEVEL2_KINETIC_BRAIDING_GOOD_LOCUS_EMPTY"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "imports": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "visibility",
+        "P2_freeze",
+        "background_stability"
+      ],
+      "properties": {
+        "visibility": {
+          "$ref": "#/$defs/import"
+        },
+        "P2_freeze": {
+          "$ref": "#/$defs/import"
+        },
+        "background_stability": {
+          "$ref": "#/$defs/import"
+        }
+      }
+    },
+    "complete_stationary_locus": {
+      "$ref": "#/$defs/nonempty-object"
+    },
+    "independent_cylinder_zero_replay": {
+      "$ref": "#/$defs/nonempty-object"
+    },
+    "stratified_gate_disposition": {
+      "type": "object",
+      "minProperties": 4,
+      "required": [
+        "strata",
+        "Berger_visibility",
+        "seven_gates",
+        "good_locus"
+      ],
+      "properties": {
+        "strata": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "Berger_visibility": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "seven_gates": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7
+        },
+        "good_locus": {
+          "const": "EMPTY_FOR_ALL_(t,beta)_IN_R2"
+        }
+      }
+    },
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complete_declared_P2_plus_linear_G_family_checked",
+        "stationary_locus_dimension",
+        "common_seven_gate_good_locus",
+        "selected_level2_action",
+        "nonlinear_q2_required",
+        "first_invariant_separator"
+      ],
+      "properties": {
+        "complete_declared_P2_plus_linear_G_family_checked": {
+          "const": true
+        },
+        "stationary_locus_dimension": {
+          "const": 2
+        },
+        "common_seven_gate_good_locus": {
+          "const": "EMPTY"
+        },
+        "selected_level2_action": {
+          "const": false
+        },
+        "nonlinear_q2_required": {
+          "const": false
+        },
+        "first_invariant_separator": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 11,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {
+        "const": false
+      }
+    },
+    "claim_boundary": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "next_gate": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "imports_sha256",
+        "locus_sha256",
+        "cylinder_sha256",
+        "gates_sha256",
+        "verdict_sha256"
+      ],
+      "properties": {
+        "imports_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "locus_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "cylinder_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "gates_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "verdict_sha256": {
+          "$ref": "#/$defs/sha"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nonempty-object": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "result_state",
+        "sha256",
+        "source_commit"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "result_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "result_state": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "source_commit": {
+          "$ref": "#/$defs/commit"
+        }
+      }
+    }
+  }
+}

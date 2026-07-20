@@ -42,6 +42,7 @@ CERTS = {
     "complex_compensator_active_clock_px2_freeze_audit": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json",
     "complex_compensator_active_clock_background_stability": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1.json",
     "complex_compensator_kinetic_braiding_visibility": ROOT / "d_quotient_classical/certificates/COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1.json",
+    "complex_compensator_kinetic_braiding_level2_no_go": ROOT / "d_quotient_classical/certificates/COMPENSATOR_KINETIC_BRAIDING_LEVEL2_NO_GO_V1.json",
     "Berger_green": ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
     "Berger_bikernel_support_gate": ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
     "Berger_Cartan": ROOT / "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
@@ -470,6 +471,30 @@ def entries() -> list[dict[str, Any]]:
         _second(("NOT_APPLICABLE", "No selected Level-2 action exists for a bounded tangent cone."), ("NOT_APPLICABLE", "No selected Level-2 action exists for a smooth-secular tangent cone."), ("OBSTRUCTED", "The minimal braiding term cannot change the required cylinder unary operator at quadratic order.")),
         _evidence("complex_compensator_active_clock_px2_freeze_audit", "complex_compensator_active_clock_background_stability", "complex_compensator_kinetic_braiding_visibility"),
         "The constant g0 term is an exact boundary functional. For S3=beta integral sqrt(-g_hat) X Box_hat(theta), the complete bilinear Hessian factorizes as beta[x(h,phi)b(j,psi)+x(j,psi)b(h,phi)]. On the constant-clock cylinder v_a=0 forces x=0 for all ten metric components and the clock, giving an exact 11-by-11 zero Hessian at every covector. On Berger the separate scalar block is nonzero of rank two at every nonzero scalar covector, with the time and longitudinal spatial diffeomorphisms as exact null vectors; this does not repair the cylinder. No selected action, reduced ADM health, support-local causal parent, nonlinear q2, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result is exported. Higher G(X), Horndeski/DHOST curvature couplings, other backgrounds, new fields and enlarged gauge groups remain outside scope.",
+    ))
+    values.append(_entry(
+        "classical.complex_compensator.cylinder_berger.kinetic_braiding_level2_good_locus",
+        _scope(
+            VACUUM,
+            theory="complete declared quadratic P(X) active-clock family plus the first nonexact polynomial braiding term beta X Box_hat(theta)",
+            background="common unit cylinder with constant clock and frozen Berger a=1, q=9/40, theta=3t/4",
+            charge_sector="unreduced common-background seven-gate sector; no fixed-charge quotient",
+            carrier="exact two-dimensional stationary action-space locus spanned by the frozen P2 ray and pure braiding axis; no selected causal or particle carrier",
+            degree="classical stationary and full cylinder quadratic action",
+            parity="real parity-even scalar sector",
+            ell="all cylinder metric-clock perturbations; Berger visibility retained separately",
+            m="all",
+            k="all local cylinder covectors",
+            omega="raw D; no positive-frequency splitting",
+        ),
+        {"causal": "OBSTRUCTED", "symplectic": "OBSTRUCTED", "nonlinear": "NOT_APPLICABLE", "observational": "NO_CERTIFIED_MAP", "quantum": "OPEN"},
+        ("OBSTRUCTED", "The pure-braiding axis has zero cylinder Hessian, while every nonzero P2-ray component retains the beta-independent split cylinder principal pair."),
+        ("OBSTRUCTED", "The pure-braiding axis has zero pairing; every nonzero P2 component retains split inertia for either sign of its ray parameter."),
+        ("OBSTRUCTED", "The raw-D witnesses remain +3 and -3 whenever the P2 component is nonzero; the pure-braiding cylinder has no quadratic dynamics."),
+        ("NO_CERTIFIED_MAP", "The empty Level-2 good locus exports no action, complex structure, two-point function, observational mode or particle."),
+        _second(("NOT_APPLICABLE", "No selected Level-2 action exists for a bounded tangent cone."), ("NOT_APPLICABLE", "No selected Level-2 action exists for a smooth-secular tangent cone."), ("OBSTRUCTED", "The complete declared Level-2 family fails before a common support-local causal parent can be selected.")),
+        _evidence("complex_compensator_active_clock_px2_freeze_audit", "complex_compensator_kinetic_braiding_visibility", "complex_compensator_kinetic_braiding_level2_no_go"),
+        "The exact common stationary matrix has rank five and a two-dimensional kernel t(81/20,27/3290,-324/1645,486/1645,18/25,1,0)+beta(0,0,0,0,0,0,1). Independent full-field order counting proves the braiding density starts at cubic perturbative order on the constant-clock cylinder. Thus t=0 has zero cylinder quadratic rank for every beta, while t nonzero retains the beta-independent split gravity-auxiliary velocity form and raw-D witnesses +3,-3. Berger's separate rank-two scalar braiding block cannot repair the required cylinder. The Level-2 good locus is EMPTY, no selected action is exported, and nonlinear q2 is not constructed. Higher G(X), Horndeski/DHOST curvature couplings, other backgrounds, new fields and enlarged gauge groups remain outside scope. No causal parent, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result follows.",
     ))
     values.append(_entry(
         "classical.berger.retained_gravity_clock_maxwell",

@@ -290,6 +290,24 @@ def verify() -> None:
         or "Hadamard" not in braiding["claim_boundary"]
     ):
         raise AssertionError("kinetic-braiding visibility atlas boundary drifted")
+    level2 = by_id[
+        "classical.complex_compensator.cylinder_berger."
+        "kinetic_braiding_level2_good_locus"
+    ]
+    if (
+        level2["descriptions"]["causal"] != "OBSTRUCTED"
+        or level2["descriptions"]["symplectic"] != "OBSTRUCTED"
+        or level2["descriptions"]["nonlinear"] != "NOT_APPLICABLE"
+        or level2["descriptions"]["observational"] != "NO_CERTIFIED_MAP"
+        or level2["descriptions"]["quantum"] != "OPEN"
+        or "COMPENSATOR_KINETIC_BRAIDING_LEVEL2_NO_GO_V1"
+        not in {item["result_id"] for item in level2["evidence"]}
+        or "two-dimensional kernel" not in level2["claim_boundary"]
+        or "Level-2 good locus is EMPTY" not in level2["claim_boundary"]
+        or "nonlinear q2 is not constructed" not in level2["claim_boundary"]
+        or "No causal parent" not in level2["claim_boundary"]
+    ):
+        raise AssertionError("Level-2 kinetic-braiding atlas boundary drifted")
     stability = by_id["classical.crosswalk.weak_background_causal_vs_residual_d"]
     if (
         stability["descriptions"]["causal"] != "CERTIFIED"

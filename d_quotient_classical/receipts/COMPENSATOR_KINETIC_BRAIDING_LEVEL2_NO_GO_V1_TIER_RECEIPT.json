@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_KINETIC_BRAIDING_LEVEL2_NO_GO_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_KINETIC_BRAIDING_LEVEL2_NO_GO_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/kinetic_braiding_level2_no_go.py",
+      "sha256": "436fd295ccf091968dd46109a742d95d6b8ffd17482facc43c8e9dfd07daa5ce"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_kinetic_braiding_level2_no_go.py",
+      "sha256": "e42b764a0b028de82f1eb0770e4611065f0b30325bbc0f6f88c0ec6316c39dc0"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_kinetic_braiding_level2_no_go.py",
+      "sha256": "c03a4d98e0c073c0674dd0844fddc9050fd83743bec1c3a19fe63540f51a3b3f"
+    },
+    {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_KINETIC_BRAIDING_LEVEL2_NO_GO_V1.json",
+      "sha256": "833d7e0266fc81df2d73e9b822db29e451d8df7f0ae9e0cbe06aa391d8dcf584"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-kinetic-braiding-level2-no-go-v1.schema.json",
+      "sha256": "37494b1f1766be85edc83216a53ff2b42bcc3c4c32647c5be532ff8cd175cbcf"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-kinetic-braiding-level2-no-go-v1.md",
+      "sha256": "cc107d8133af08f7643982a22de85c52b6bf7f4d6e61dfa054652e502c9313ce"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "e423e206e59db937b13ae2b8a5a0e3af17cedf481e47b11a4488dd4a9972e1e0"
+    },
+    {
+      "path": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
+      "sha256": "76b63b4c2986ca3c35ed941fb952e70a4afc022cdbd76fd898354d964745cab9"
+    },
+    {
+      "path": "d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+      "sha256": "f4b6f1830c2245e7ce4a8a6d069fdb353f2f223909bb68227dde472a37cbdd84"
+    },
+    {
+      "path": "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+      "sha256": "cce99a7770f7b8bf12fad756168b79a29d8e3b2da6d99918bb6edf405c9c5a5a"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, integer verifier and mutation tests>; python3 -m json.tool <certificate and schema>",
+        "elapsed_seconds": 0.03,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit Level-2 and atlas paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/kinetic_braiding_level2_no_go.py --check",
+        "elapsed_seconds": 0.46,
+        "status": "PASS",
+        "method": "exact rational seven-coefficient stationary matrix, rank-five witness, two-dimensional kernel, full cylinder order counting and stratified inertia/charge disposition"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_kinetic_braiding_level2_no_go.py",
+        "elapsed_seconds": 0.47,
+        "status": "PASS",
+        "independent_rail": "imports no producer module; reconstructs a denominator-cleared integer stationary matrix, proves rank/nullity and both kernel generators, and independently expands the full cylinder density in epsilon"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_kinetic_braiding_level2_no_go -v",
+        "elapsed_seconds": 0.67,
+        "status": "PASS",
+        "tests": 8,
+        "mutation_controls": "beta column, kernel ray, pure-braiding cylinder rank, Berger rescue, q2 promotion, selected action, universalization and quantum promotion are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-kinetic-braiding-level2-no-go-v1.schema.json -d d_quotient_classical/certificates/COMPENSATOR_KINETIC_BRAIDING_LEVEL2_NO_GO_V1.json",
+        "elapsed_seconds": 1.41,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_classical_atlas_fragment.py --check; python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py; python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment -v; python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.58,
+        "status": "PASS",
+        "tests": 29
+      },
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 6.12,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift, corpus baseline growth from 976 to 1313 certificates, and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m unittest discover -v",
+        "elapsed_seconds": 1.45,
+        "status": "PASS",
+        "tests": 148,
+        "scope": "repository-wide Python unittest discovery from physics/symplectic-reconstruction; standalone publication scripts, numeric scans, Lean builds and TeX builds are not unittest-discoverable"
+      }
+    ],
+    "reason": "The item freezes the scoped Level-2 no-go and therefore triggers the AGENTS.md theorem-level Tier-3 criterion."
+  },
+  "claim_boundary": "The receipt certifies only the complete declared quadratic P(X) family plus the first nonexact polynomial braiding term beta X Box_hat(theta), on the common unit-cylinder and frozen-Berger fixtures. The exact two-dimensional stationary locus has empty seven-gate good locus. It selects no action and establishes no support-local causal parent, nonlinear q2, Hadamard state, anomaly/QME result, particle space, scattering, positivity or unitarity theorem. Higher G(X), Horndeski/DHOST curvature couplings, other backgrounds, new fields and enlarged gauge groups remain outside scope.",
+  "higher_tiers_not_run": []
+}

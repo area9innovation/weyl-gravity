@@ -1009,6 +1009,80 @@
       }
     },
     {
+      "claim_boundary": "The exact common stationary matrix has rank five and a two-dimensional kernel t(81/20,27/3290,-324/1645,486/1645,18/25,1,0)+beta(0,0,0,0,0,0,1). Independent full-field order counting proves the braiding density starts at cubic perturbative order on the constant-clock cylinder. Thus t=0 has zero cylinder quadratic rank for every beta, while t nonzero retains the beta-independent split gravity-auxiliary velocity form and raw-D witnesses +3,-3. Berger's separate rank-two scalar braiding block cannot repair the required cylinder. The Level-2 good locus is EMPTY, no selected action is exported, and nonlinear q2 is not constructed. Higher G(X), Horndeski/DHOST curvature couplings, other backgrounds, new fields and enlarged gauge groups remain outside scope. No causal parent, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result follows.",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json",
+          "result_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
+          "sha256": "9bda4b758616427bdbf401a499ffd2b7cd9dd69a87223f05fcdf636bb31cd533"
+        },
+        {
+          "path": "d_quotient_classical/certificates/COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1.json",
+          "result_id": "COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1",
+          "sha256": "bfce9fd2897511d43802c504ce10f9342b85f2e3d89ce9c4cb3e66b788905e10"
+        },
+        {
+          "path": "d_quotient_classical/certificates/COMPENSATOR_KINETIC_BRAIDING_LEVEL2_NO_GO_V1.json",
+          "result_id": "COMPENSATOR_KINETIC_BRAIDING_LEVEL2_NO_GO_V1",
+          "sha256": "833d7e0266fc81df2d73e9b822db29e451d8df7f0ae9e0cbe06aa391d8dcf584"
+        }
+      ],
+      "id": "classical.complex_compensator.cylinder_berger.kinetic_braiding_level2_good_locus",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The pure-braiding axis has zero cylinder Hessian, while every nonzero P2-ray component retains the beta-independent split cylinder principal pair.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "The pure-braiding axis has zero pairing; every nonzero P2 component retains split inertia for either sign of its ray parameter.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "The empty Level-2 good locus exports no action, complex structure, two-point function, observational mode or particle.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No selected Level-2 action exists for a bounded tangent cone.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "The complete declared Level-2 family fails before a common support-local causal parent can be selected.",
+            "status": "OBSTRUCTED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No selected Level-2 action exists for a smooth-secular tangent cone.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "The raw-D witnesses remain +3 and -3 whenever the P2 component is nonzero; the pure-braiding cylinder has no quadratic dynamics.",
+          "status": "OBSTRUCTED"
+        }
+      },
+      "scope": {
+        "background": "common unit cylinder with constant clock and frozen Berger a=1, q=9/40, theta=3t/4",
+        "boundaries": "closed compact Cauchy surface S3; no spatial boundary",
+        "carrier": "exact two-dimensional stationary action-space locus spanned by the frozen P2 ray and pure braiding axis; no selected causal or particle carrier",
+        "charge_sector": "unreduced common-background seven-gate sector; no fixed-charge quotient",
+        "degree": "classical stationary and full cylinder quadratic action",
+        "ell": "all cylinder metric-clock perturbations; Berger visibility retained separately",
+        "k": "all local cylinder covectors",
+        "m": "all",
+        "omega": "raw D; no positive-frequency splitting",
+        "parity": "real parity-even scalar sector",
+        "theory": "complete declared quadratic P(X) active-clock family plus the first nonexact polynomial braiding term beta X Box_hat(theta)"
+      }
+    },
+    {
       "claim_boundary": "Causality is unary and the cyclic Cartan theorem stops at arity three. The retained-26 homotopy extends to one-sided past/future/time-compact smooth bikernel LF classes with cyclic adjoint control, but the certified factorization has a cutoff-escape continuity obstruction on the full smooth Frechet class. The imported smooth Ward kernel has no one-sided support profile, so no Ward or Hadamard promotion follows. Raw affine D, arity four, Hadamard/QME, and a branch-resolved physical projector remain false.",
       "descriptions": {
         "causal": "CERTIFIED",
@@ -2384,7 +2458,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "e9550841ce9319635d877b8c2acddd0f74e79ddbf62a0764ae0eae5db45a11bd",
+  "generated_by_sha256": "76b63b4c2986ca3c35ed941fb952e70a4afc022cdbd76fd898354d964745cab9",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
