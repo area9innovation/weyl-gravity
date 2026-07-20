@@ -146,8 +146,10 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(hadamard["status"], "OPEN")
         self.assertIn("factorwise-null Pauli-Jordan kernel", hadamard["statement"])
         self.assertIn("regular internal time-slice source map", hadamard["statement"])
+        self.assertIn("metric-sector RFHGHO dilation", hadamard["statement"])
+        self.assertIn("two regular Cauchy morphism legs", hadamard["statement"])
+        self.assertIn("morphism cone mapping", hadamard["statement"])
         self.assertIn("same-orientation exclusion", hadamard["statement"])
-        self.assertIn("graded GreenHyp endpoint response morphism", hadamard["statement"])
         self.assertIn(
             "BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY",
             {evidence["result_id"] for evidence in berger["evidence"]},
@@ -158,6 +160,10 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         )
         self.assertIn(
             "BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT",
+            {evidence["result_id"] for evidence in berger["evidence"]},
+        )
+        self.assertIn(
+            "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
 

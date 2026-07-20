@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-cutoff-companion-hermitian-dilation-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "exact_input_checks", "Hermitian_dilation", "regular_Cauchy_morphisms", "negative_controls", "microlocal_boundary", "literature_provenance", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-cutoff-companion-hermitian-dilation-v1"},
+    "result_id": {"const": "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION"},
+    "result_state": {"const": "METRIC_COMPANION_RFHGHO_DILATION_AND_TWO_REGULAR_CAUCHY_MORPHISMS_CERTIFIED_CONE_ACTION_AND_STATE_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_GREENHYP_TRANSPORT_PREFLIGHT"},
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "minLength": 40},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "exact_input_checks": {"type": "object", "minProperties": 5, "additionalProperties": {"const": true}},
+    "Hermitian_dilation": {"type": "object", "minProperties": 10},
+    "regular_Cauchy_morphisms": {"type": "object", "minProperties": 8},
+    "negative_controls": {"type": "object", "minProperties": 3},
+    "microlocal_boundary": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "minLength": 1}},
+    "literature_provenance": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "minLength": 1}},
+    "claim_flags": {
+      "const": {
+        "BERGER_METRIC_COMPANION_RFHGHO_DILATION": true,
+        "BERGER_DILATED_FREE_CUTOFF_REGULAR_CAUCHY_MORPHISM": true,
+        "BERGER_DILATED_CUTOFF_FULL_REGULAR_CAUCHY_MORPHISM": true,
+        "BERGER_RAW_COMPANION_FORMALLY_HERMITIAN": false,
+        "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING": false,
+        "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION": false,
+        "BERGER_FULL_GRADED_GREENHYP_REALIZATION": false,
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+        "BERGER_26_ROW_BRST_HADAMARD": false,
+        "BERGER_54_ROW_BRST_HADAMARD": false,
+        "BERGER_HADAMARD_DATA": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_DILATED_MORPHISM_CONE_MAPPING_AND_CUTOFF_ORIENTATION_EXCLUSION_THEN_FREE_SEED_COVARIANCE"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["microlocal_result_id", "cutoff_result_id", "graded_contract_result_id", "source_manifest", "source_manifest_sha256"], "properties": {"microlocal_result_id": {"const": "BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT"}, "cutoff_result_id": {"const": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY"}, "graded_contract_result_id": {"const": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT"}, "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}}, "source_manifest_sha256": {"$ref": "#/$defs/hash"}}},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["result_id", "sha256"], "properties": {"result_id": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}}
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "Hermitian_dilation": {
+    "Green_operators": "G_D,+/-=diag(G_C,+/-,G_Cdagger,+/-)",
+    "H_conjugated_adjoint": [
+      [
+        "C",
+        "0"
+      ],
+      [
+        "0",
+        "Cdagger"
+      ]
+    ],
+    "all_pass": true,
+    "bundle": "B20 direct_sum B20 with off-diagonal indefinite Hermitian fibre metric H",
+    "checks": {
+      "Green_operators_are_block_diagonal": true,
+      "H_adjoint_H_equals_D": true,
+      "H_is_involutive": true,
+      "H_is_nondegenerate_indefinite_Hermitian": true,
+      "both_inverse_identities_inherit_blockwise": true,
+      "causal_support_inherits_blockwise": true,
+      "real_structure_commutes": true
+    },
+    "dilated_operator": [
+      [
+        "C",
+        "0"
+      ],
+      [
+        "0",
+        "Cdagger"
+      ]
+    ],
+    "fibre_metric": [
+      [
+        "0",
+        "I"
+      ],
+      [
+        "I",
+        "0"
+      ]
+    ],
+    "operators": {
+      "cutoff": "D_chi=diag(C_chi,C_chi^dagger)",
+      "free": "D_free=diag(C_free,C_free^dagger)",
+      "full": "D_full=diag(C_full,C_full^dagger)"
+    },
+    "positive_metric_formal_adjoint": [
+      [
+        "Cdagger",
+        "0"
+      ],
+      [
+        "0",
+        "C"
+      ]
+    ],
+    "status": "REAL_FORMALLY_HERMITIAN_GREEN_HYPERBOLIC_DILATIONS_CERTIFIED"
+  },
+  "claim_boundary": "Certifies a doubled metric-sector RFHGHO carrier for each free, cutoff and full companion and two regular Cauchy GreenHyp morphism legs across the past and future agreement regions. The dilation is an auxiliary indefinite analytic carrier, not a proof that the raw companion is formally Hermitian or physically equivalent to the doubled theory. It does not prove cone mapping or same-orientation exclusion, choose a seed covariance, restrict a state to the original or full graded BV carrier, verify BRST Ward identities, establish positivity, restore a QME, or construct a quantum theory.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+    "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION": false,
+    "BERGER_DILATED_CUTOFF_FULL_REGULAR_CAUCHY_MORPHISM": true,
+    "BERGER_DILATED_FREE_CUTOFF_REGULAR_CAUCHY_MORPHISM": true,
+    "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING": false,
+    "BERGER_FULL_GRADED_GREENHYP_REALIZATION": false,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_METRIC_COMPANION_RFHGHO_DILATION": true,
+    "BERGER_RAW_COMPANION_FORMALLY_HERMITIAN": false,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "dependency_refs": {
+    "cutoff_Green_family": {
+      "result_id": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY",
+      "sha256": "dbc451c1d16aec72d41f5e6f690cd898c74083bb8d28915575d4d7fe89b33961"
+    },
+    "cutoff_microlocal_preflight": {
+      "result_id": "BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT",
+      "sha256": "ed6434496a4b810388befd9379f2a600a4e3476855ac656b8b2ab712cf9384da"
+    },
+    "graded_state_space_contract": {
+      "result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+      "sha256": "99768cf1e444ef3525f19621702ee64a68aea83f83349a1c5d6223d9c959ca35"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_input_checks": {
+    "cutoff_Green_hyperbolic": true,
+    "formal_adjoint_Green_family": true,
+    "orientation_still_open": true,
+    "real_coefficients_and_involution": true,
+    "regular_internal_timeslice_map": true
+  },
+  "lifecycle_layer": "LORENTZIAN_GREENHYP_TRANSPORT_PREFLIGHT",
+  "literature_provenance": {
+    "Cauchy_morphisms": "Theorem 3.5(e)",
+    "Hadamard_transport": "Theorem 5.16",
+    "RFHGHO_definition": "Section 3.2",
+    "regularity": "Definition 5.13 and Lemma 5.15(c)",
+    "source": "Christopher J. Fewster, Hadamard States for Decomposable Green-Hyperbolic Operators, arXiv:2503.12537"
+  },
+  "microlocal_boundary": {
+    "cone_mapping": "regularity alone does not prove the C_plus/C_minus action required by Fewster Theorem 5.16",
+    "orientation": "same-orientation sectors remain unresolved for E_Cchi and therefore for the dilation",
+    "restriction": "no state or covariance has been pulled back from the doubled analytic carrier to the original companion or full 54-row BV complex",
+    "seed": "no global Hadamard covariance has been selected on D_free"
+  },
+  "negative_controls": {
+    "drop_future_Cauchy_agreement": {
+      "all_pass": false,
+      "checks": {
+        "Fewster_Lemma_5_15c_makes_each_morphism_regular": false,
+        "Fewster_Theorem_3_5e_applies_twice": false,
+        "all_three_dilations_are_RFHGHO": true,
+        "cutoff_and_full_agree_on_future_Cauchy_neighborhood": false,
+        "free_and_cutoff_agree_on_past_Cauchy_neighborhood": true
+      },
+      "future_leg": "D_chi <-> D_full on a future Cauchy neighborhood",
+      "past_leg": "D_free <-> D_chi on a past Cauchy neighborhood"
+    },
+    "drop_past_Cauchy_agreement": {
+      "all_pass": false,
+      "checks": {
+        "Fewster_Lemma_5_15c_makes_each_morphism_regular": false,
+        "Fewster_Theorem_3_5e_applies_twice": false,
+        "all_three_dilations_are_RFHGHO": true,
+        "cutoff_and_full_agree_on_future_Cauchy_neighborhood": true,
+        "free_and_cutoff_agree_on_past_Cauchy_neighborhood": false
+      },
+      "future_leg": "D_chi <-> D_full on a future Cauchy neighborhood",
+      "past_leg": "D_free <-> D_chi on a past Cauchy neighborhood"
+    },
+    "replace_adjoint_block_by_second_C": {
+      "Green_operators": "G_D,+/-=diag(G_C,+/-,G_Cdagger,+/-)",
+      "H_conjugated_adjoint": [
+        [
+          "Cdagger",
+          "0"
+        ],
+        [
+          "0",
+          "C"
+        ]
+      ],
+      "all_pass": false,
+      "checks": {
+        "Green_operators_are_block_diagonal": false,
+        "H_adjoint_H_equals_D": false,
+        "H_is_involutive": true,
+        "H_is_nondegenerate_indefinite_Hermitian": true,
+        "both_inverse_identities_inherit_blockwise": false,
+        "causal_support_inherits_blockwise": false,
+        "real_structure_commutes": false
+      },
+      "dilated_operator": [
+        [
+          "C",
+          "0"
+        ],
+        [
+          "0",
+          "C"
+        ]
+      ],
+      "fibre_metric": [
+        [
+          "0",
+          "I"
+        ],
+        [
+          "I",
+          "0"
+        ]
+      ],
+      "positive_metric_formal_adjoint": [
+        [
+          "Cdagger",
+          "0"
+        ],
+        [
+          "0",
+          "Cdagger"
+        ]
+      ]
+    }
+  },
+  "next_gate": "BERGER_DILATED_MORPHISM_CONE_MAPPING_AND_CUTOFF_ORIENTATION_EXCLUSION_THEN_FREE_SEED_COVARIANCE",
+  "provenance": {
+    "cutoff_result_id": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY",
+    "graded_contract_result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+    "microlocal_result_id": "BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT",
+    "source_manifest": {
+      "../reports/berger-cutoff-companion-hermitian-dilation.md": "84e945ce2f69b020f1ada13e14a5534bfdc8d8c3dd994b24b3ba1078a143b977",
+      "berger_cutoff_companion_hermitian_dilation.py": "b6ee3f4f5db41addae00d5fc09789f0abf92a8abf45afed8ca95911ba4eb7ba9",
+      "berger_cutoff_companion_hermitian_dilation_certificate.py": "c7a79cd2f8994b87aec40583fa4028889e4648fe10f97052be46d9050e114f54",
+      "schema/berger-cutoff-companion-hermitian-dilation-v1.schema.json": "4b64bcf9f810f3606046a4afdc62c33ef24a0edbf9c31f88d75668ae9e9cb5b7",
+      "tests/test_berger_cutoff_companion_hermitian_dilation.py": "87e24b57e22582a130f8bae4094747d5a91c9afdb6bdb1adbc13b1ebbdb51a44",
+      "verify_berger_cutoff_companion_hermitian_dilation.py": "57521605ce14421048512cbb89df8124286da1f0d3e380279f5bb27474bc0006"
+    },
+    "source_manifest_sha256": "bb9d0cb1b6b0a13c5c7a6886f605e1765591ae270795856a7f85d48dd5b58bf0"
+  },
+  "regular_Cauchy_morphisms": {
+    "all_pass": true,
+    "checks": {
+      "Fewster_Lemma_5_15c_makes_each_morphism_regular": true,
+      "Fewster_Theorem_3_5e_applies_twice": true,
+      "all_three_dilations_are_RFHGHO": true,
+      "cutoff_and_full_agree_on_future_Cauchy_neighborhood": true,
+      "free_and_cutoff_agree_on_past_Cauchy_neighborhood": true
+    },
+    "future_leg": "D_chi <-> D_full on a future Cauchy neighborhood",
+    "past_leg": "D_free <-> D_chi on a past Cauchy neighborhood",
+    "regularity": "Fewster Lemma 5.15(c)",
+    "status": "TWO_REGULAR_CAUCHY_GREENHYP_MORPHISM_LEGS_CERTIFIED",
+    "theorem": "Fewster Theorem 3.5(e)",
+    "transport_chain": "D_free <-> D_chi <-> D_full"
+  },
+  "result_id": "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION",
+  "result_state": "METRIC_COMPANION_RFHGHO_DILATION_AND_TWO_REGULAR_CAUCHY_MORPHISMS_CERTIFIED_CONE_ACTION_AND_STATE_OPEN",
+  "schema": "quantum-weyl-berger-cutoff-companion-hermitian-dilation-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

@@ -1,0 +1,43 @@
+{
+  "receipt_id": "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Canonical indefinite Hermitian dilation of the free/cutoff/full metric companions, two regular Cauchy GreenHyp morphism legs, and fail-closed Hadamard frontier/atlas/bridge refresh.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python -m py_compile <changed Python modules>",
+        "python -m json.tool <changed schemas and generated certificates>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "elapsed_seconds": 0.6
+    },
+    "tier_1": {
+      "status": "PASS",
+      "runs": [
+        {
+          "command": "PYTHONPATH=quantum-weyl python -m lorentzian.berger_cutoff_companion_hermitian_dilation_certificate --check && PYTHONPATH=quantum-weyl python -m lorentzian.verify_berger_cutoff_companion_hermitian_dilation && PYTHONPATH=quantum-weyl python -m unittest quantum-weyl/lorentzian/tests/test_berger_cutoff_companion_hermitian_dilation.py",
+          "elapsed_seconds": 0.7,
+          "result": "PASS: independent verifier and seven tests; the off-diagonal indefinite fibre metric makes diag(C,Cdagger) RFHGHO, both endpoint agreement legs are regular Cauchy GreenHyp morphisms, and missing adjoint/agreement or cone-map promotion is rejected."
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python -m active_frontier_certificate --check && PYTHONPATH=quantum-weyl python -m verify_active_frontier && PYTHONPATH=quantum-weyl python -m unittest quantum-weyl/tests/test_active_frontier.py quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py",
+          "elapsed_seconds": 5.7,
+          "result": "PASS: generated atlas and active frontier reproduce and sixteen affected tests keep cone mapping, seed covariance, full graded restriction and BRST Hadamard status open."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The affected Hermitian-dilation certificate, generated atlas, active frontier, quantum brief and roadmap bridge were replayed. Content-addressed cutoff Green, microlocal and graded-state-space inputs were hash-checked rather than rebuilt."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, shared-core algebra change, Hadamard-state promotion, QME promotion or quantum-theory lifecycle promotion occurred."
+    }
+  },
+  "claim_boundary": "Certifies an auxiliary doubled metric-sector RFHGHO carrier and two regular Cauchy GreenHyp morphism legs. It does not prove cone mapping, same-orientation exclusion, a seed covariance, equivalence with or restriction to the undoubled/full graded BV carrier, BRST Ward identities, positivity, renormalized Lorentzian products, a restored QME or a quantum theory."
+}

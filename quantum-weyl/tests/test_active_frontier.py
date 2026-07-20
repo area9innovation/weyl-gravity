@@ -539,6 +539,8 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(flags["BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY"])
         self.assertTrue(flags["BERGER_CUTOFF_COMPANION_FACTORWISE_NULL_WAVEFRONT_BOUND"])
         self.assertTrue(flags["BERGER_CUTOFF_TIMESLICE_SOURCE_MAP_REGULAR"])
+        self.assertTrue(flags["BERGER_METRIC_COMPANION_RFHGHO_DILATION"])
+        self.assertTrue(flags["BERGER_DILATED_REGULAR_CAUCHY_MORPHISM_LEGS"])
         self.assertFalse(flags["BERGER_REGULAR_GREENHYP_MORPHISM"])
         self.assertTrue(flags["TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED"])
         self.assertTrue(flags["STATIONARY_GENERATOR_IMPORT_CONSUMER_READY"])
@@ -553,7 +555,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             row["next_gate"],
-            "BERGER_CUTOFF_ORIENTATION_EXCLUSION_AND_GRADED_GREENHYP_REALIZATION_THEN_GLOBAL_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
+            "BERGER_DILATED_MORPHISM_CONE_MAPPING_AND_CUTOFF_ORIENTATION_EXCLUSION_THEN_FREE_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
         )
         algebra_row = self.payload["active_rows"]["free_Lorentzian_algebra"]
         self.assertIn("PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED", algebra_row["status"])

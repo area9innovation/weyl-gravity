@@ -179,12 +179,16 @@ bisolution with no one-sided zero covectors, and is confined factorwise to the
 metric null cone.  The compact-slab map
 `S_chi,eta=[C_chi,eta]E_chi` is regular as a linear time-slice source map.  It
 is not yet the endpoint response morphism.  The next gate is same-orientation
-exclusion, a formally Hermitian graded GreenHyp realization and the resulting
-response-map cone action in the sense of Fewster Theorem 5.16.  A global seed
-covariance with explicit BV/Krein and physical positivity policy remains
+exclusion and the response-map cone action in the sense of Fewster Theorem
+5.16.  The object-level obstacle is now removed on an auxiliary metric-sector
+carrier: `diag(C,C^dagger)` with the off-diagonal indefinite Hermitian fibre
+metric is RFHGHO, and the past/future agreement regions supply two regular
+Cauchy GreenHyp morphism legs.  A free seed covariance, restriction to the
+undoubled/full graded BV carrier and explicit BV/Krein positivity policy remain
 separate.  See `BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY`,
 `BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY` and
-`BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT`.
+`BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT`, and
+`BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION`.
 
 The receiving side of that route is now executable.  The stationary-generator
 import readiness result requires content-addressed exact PBW records for

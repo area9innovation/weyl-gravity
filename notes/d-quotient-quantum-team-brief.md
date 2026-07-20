@@ -1517,7 +1517,9 @@ The active direct bridge has advanced to
 BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY [CERTIFIED]
   -> CUTOFF_FACTORWISE_NULL_KERNEL [CERTIFIED]
   -> REGULAR_INTERNAL_TIMESLICE_SOURCE_MAP [CERTIFIED]
-  -> same-orientation exclusion + graded GreenHyp endpoint response morphism
+  -> METRIC_RFHGHO_DILATION + TWO_REGULAR_CAUCHY_MORPHISMS [CERTIFIED]
+  -> morphism cone mapping + same-orientation exclusion + free seed covariance
+  -> restriction to full graded BV carrier + BRST Ward identity
   -> companion Hadamard two-point distribution
 ```
 
@@ -1530,10 +1532,13 @@ covectors, and is confined factorwise to the metric null cone. For a
 compact-slab time cutoff \(\eta\),
 \(S_{\chi,\eta}=[C_\chi,\eta]E_\chi\) is a regular linear source map. This is
 an internal time-slice representative, not yet the free-to-full response
-morphism. The active analytic gate is to exclude the two same-orientation
-sectors, install a formally Hermitian graded GreenHyp realization, and prove
-the endpoint response cone action. A global seed covariance with declared
-BV/Krein and physical-positivity policy remains independently open.
+morphism. A canonical off-diagonal indefinite Hermitian dilation now turns
+the free, cutoff and full metric companions into RFHGHO objects. The past and
+future agreement regions give two regular Cauchy GreenHyp morphism legs. The
+active analytic gate is their cone action together with exclusion of the two
+same-orientation sectors, followed by a free seed covariance. Restriction from
+the doubled metric carrier to the full graded BV complex, the BRST Ward
+identity and the physical/Krein positivity policy remain independent gates.
 The fail-closed atlas row remains `OPEN`: no full companion covariance, BRST
 Ward identity or physical state-space sign has been certified.
 
@@ -1547,3 +1552,5 @@ and the closed cutoff-family gate in
 [`berger-temporal-cutoff-companion-green-family.md`](../quantum-weyl/reports/berger-temporal-cutoff-companion-green-family.md).
 The current microlocal boundary is recorded in
 [`berger-cutoff-companion-microlocal-response-preflight.md`](../quantum-weyl/reports/berger-cutoff-companion-microlocal-response-preflight.md).
+The auxiliary RFHGHO carrier and regular endpoint legs are recorded in
+[`berger-cutoff-companion-hermitian-dilation.md`](../quantum-weyl/reports/berger-cutoff-companion-hermitian-dilation.md).
