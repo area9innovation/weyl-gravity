@@ -1,0 +1,19 @@
+{
+  "id": "sf:forge-request/bug-science-forge-pull-transition-cas-race",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Make Science Forge lease acquisition and lifecycle transitions atomic against one another so a resident pull cannot resurrect a terminal, retired, blocked or coordinator-dispositioned item from a stale fold.",
+    "depends_on": [],
+    "stop_condition": "Land a compare-and-swap transaction for `s-f work pull`, `work assign`, coordinator transitions and lease release.  A pull must capture the folded item's maximum authoritative event sequence/digest, acquire a programme/item lock or equivalent atomic guard, refold immediately before authoring ACTIVE plus LEASE-ACQUIRE, and refuse if the state, sequence, dependency satisfaction, queue position or live lease changed.  ACTIVE and LEASE-ACQUIRE must commit as one logical transaction or leave neither event.  A terminal/BLOCKED/RETIRED transition racing a pull must either linearize before the pull and make it fail, or linearize after a fully committed pull with an explicit live-lease disposition; it must never create a later ACTIVE resurrection from a pre-transition fold.  A yielded lease after a terminal or missing-dependency SHORTFALL report must not append READY unless an explicit coordinator/dependency-satisfied transition authorizes reopening.  Add deterministic two-process barriers reproducing both live physics failures: (1) black-hole-asymptotic-jordan-metric-reconstruction was RETIRED at seq 4 and later yielded READY at seq 8; (2) observer-temporal-curl-second-jet-or-all-jet-disposition received coordinator OBSTRUCTED at seq 3 at 19:38:36 but a resident stale pull authored ACTIVE seq 4 at 19:38:43.  Prove exactly one legal linearization, byte-idempotent retry, no orphan lease event, no duplicate work package, and correct overview/work-show diagnostics.  Expose a coordinator-safe `work terminalize` or equivalent that can atomically apply terminal state plus lease disposition after a reported result without impersonating the worker.",
+    "forbid": "no best-effort sleep or polling window; no reliance on wall-clock ordering instead of append-only sequence/predecessor/CAS state; no deletion or rewrite of historical race events; no global repository lock held during scientific computation; no silent worker lease revocation without a typed event; no terminal state inferred from prose; no READY resurrection merely because a lease was released; no weakening one-exclusive-lease discipline",
+    "notes": [
+      "The earlier SHORTFALL-readiness fix correctly handles close-out events carrying a typed missing dependency.  This request is the orthogonal transaction race: a resident can begin from an older fold while a coordinator terminal event is being appended.",
+      "The observer regression is current and minimal: report at seq 1, SHORTFALL/release seq 2, coordinator OBSTRUCTED seq 3, then stale resident ACQUIRE/ACTIVE seq 4 seven seconds later.",
+      "The black-hole wrapper independently demonstrated terminal retirement followed by a later READY resurrection.  Both have precise event files in planning/events and should become imported acceptance fixtures.",
+      "This should compose with SF5 isolated git transactions and the resident-await feature; lifecycle CAS must not depend on the shared Git index."
+    ]
+  }
+}
