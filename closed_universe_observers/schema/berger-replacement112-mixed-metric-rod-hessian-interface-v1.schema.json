@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "payload_ref", "gate_results", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-replacement112-mixed-metric-rod-hessian-interface-v1"},
+    "result_id": {"const": "BERGER_REPLACEMENT112_MIXED_METRIC_ROD_HESSIAN_INTERFACE"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "CERTIFIED_ACTION_DERIVED_REPLACEMENT112_MIXED_METRIC_ROD_HESSIAN_INTERFACE"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "dependency_refs": {"type": "object", "minProperties": 9},
+    "payload_ref": {
+      "type": "object",
+      "required": ["path", "result_id", "sha256", "canonical_sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_id": {"const": "BERGER_REPLACEMENT112_MIXED_METRIC_ROD_HESSIAN_INTERFACE_PAYLOAD"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "canonical_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "gate_results": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string", "minLength": 500},
+    "provenance": {"type": "object"}
+  }
+}

@@ -2561,23 +2561,30 @@ detector-profile interface.  The replacement-112 producer remains a
 separate ready bridge; the 160-row consumer stays inactive until both base
 exports are complete.
 
-## Active bridge: replacement-112 mixed metric--rod Hessian
+## Active bridge: replacement-112 executable unary assembly
 
 The post-Phi2 producer consumes the certified local component jets and
 evaluates all 6,171 dependent non-rod terms while preserving the hash of the
 288 unaffected terms.  The 112-row dictionary and rank-112 signed pairing
 are also executable.
 
-The next action derivative is not serialized.  The positive-mixed
-replacement is defined by subtracting the old six-rod action and inserting
-the \(H\)-weighted eight-rod action, but its payload provides only the
-kinetic matrix, Euler formula and prose row descriptions.  It exports no
-row-indexed \(D_gD_RS_{R,H}\), six-rod subtraction, eight-rod addition,
-Diff--BV adjoints, support matrices or zero-mode blocks.  Copying the old
-108-row operator is forbidden because both the action and carrier changed.
+That action-derivative gate is now closed by
+`BERGER_REPLACEMENT112_MIXED_METRIC_ROD_HESSIAN_INTERFACE`.  Starting from
+the declared replacement action, the producer exports the old six-rod
+subtraction, the \(H=B^{-T}B^{-1}\)-weighted eight-rod addition and their net
+delta in all six gauge, wave and metric-Hessian block families.  Every term
+retains its exact unit-circle coefficient, background jet and ordered
+Berger-frame PBW multiindex.  The full mixed block reconstructs its
+coefficient-aware formal transpose, including the noncommuting-frame
+commutator terms; the gauge block has the negative odd-Darboux adjoint and
+the metric Hessian is symmetric.  The rod wave principal matrix is exactly
+\(H\), its scalar retarded/advanced parents are explicit, and the spatial
+zero mode remains a hyperbolic time sector.
 
-The fail-closed atlas row is
-observer.berger.interaction.replacement112_executable_unary_after_phi2_map_shortfall.
-Its activation gate is the normalized mixed metric--eight-rod Hessian and
-six-rod removal export.  Replacement cohomology and the 160-row consumer
-remain inactive.
+The fail-closed atlas row is now
+observer.berger.interaction.replacement112_mixed_metric_rod_hessian_interface.
+Its successor activation gate is assembly and independent replay of the
+complete executable replacement-112 unary from the unchanged nonrod base,
+the evaluated positive-mixed \(\Phi_2\) correction and this action delta.
+Replacement cohomology and the 160-row consumer remain inactive until that
+replay passes.

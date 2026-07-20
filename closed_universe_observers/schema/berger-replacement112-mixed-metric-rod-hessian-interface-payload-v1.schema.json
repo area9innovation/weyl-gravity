@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "coefficient_ring", "carrier", "action_crosswalk", "operator_blocks", "formal_adjoint_and_hessian_audit", "K_Berger_interface", "support_and_zero_modes", "independent_variation_anchor", "disposition"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-replacement112-mixed-metric-rod-hessian-interface-payload-v1"},
+    "result_id": {"const": "BERGER_REPLACEMENT112_MIXED_METRIC_ROD_HESSIAN_INTERFACE_PAYLOAD"},
+    "coefficient_ring": {"type": "object", "required": ["base", "relations", "pbw_order", "background_generators", "normalization"]},
+    "carrier": {"type": "object", "required": ["scalar_matrix_shape", "rod_field_rows", "rod_cotangent_rows", "rod_ids", "degrees", "reality", "odd_pairing"]},
+    "action_crosswalk": {"type": "object", "required": ["replacement_action", "kinetic_matrix_H", "six_rod_embedding_matrix", "background_orbit_matrix_B", "background_profile_binding", "old_overlay_blocks_canonical_sha256"]},
+    "operator_blocks": {
+      "type": "object",
+      "required": ["Gamma_R", "Gamma_R_sharp", "K_RR", "K_Rh", "K_hR", "Delta_K_hh_rod"],
+      "additionalProperties": {
+        "type": "object",
+        "required": ["eight_rod_addition", "six_rod_subtraction", "net_replacement_delta"]
+      }
+    },
+    "formal_adjoint_and_hessian_audit": {"type": "object"},
+    "K_Berger_interface": {"type": "object"},
+    "support_and_zero_modes": {"type": "object"},
+    "independent_variation_anchor": {"type": "object"},
+    "disposition": {"type": "object"}
+  }
+}
