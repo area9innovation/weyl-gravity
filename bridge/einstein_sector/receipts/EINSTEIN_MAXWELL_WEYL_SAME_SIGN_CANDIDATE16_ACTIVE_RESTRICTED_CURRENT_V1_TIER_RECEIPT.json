@@ -1,0 +1,42 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE16_ACTIVE_RESTRICTED_CURRENT_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Stratumwise nondegeneracy of the complete axial/polar Lee--Wald current on candidate 16's fixed-norm, node-phase-quotiented active resonance variety.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.json": "8c7098d65c4ccf00aba675cfedfd3e986958925cfc3f31396729458a88dd730d",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.py": "39c703d58869059dbbc40eea927080f6ec9890796d24db86407ec36537d356c3",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.schema.json": "83e9c9f861bd6eabcbc8657d7bb94aa57557af08d2476e3ef86e7466eeba8864",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.py": "72a609c01ec2cada509683101cad8e5677a23e87958cfb937a522f9a9a9f7706",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.py": "7134e5bc7ef745259c43491595a7a43df98b27350f65e8b4116d79cdf21cf971",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-candidate16-active-restricted-current.md": "52d8757315978535e169bfcfeacdcc2e60b06ebad31fcd7f0ab510e64f35fd41"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 3,
+      "elapsed_seconds": 0.7,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS_AND_DEFINITE_RESTRICTION",
+      "reason": "The irreducible candidate-16 resonance variety, both negative q-minus current signs, the complete axial/polar multiplicities and the projective dimension are content-addressed; the independent atlas verifier and all 97 focused atlas tests pass."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The singular rotation-zero topology, candidates 17--21 and all higher lifecycles remain open."
+    }
+  },
+  "claim_boundary": "This is a candidate-16 smooth-stratum symplectic theorem, not a singular-orbifold connectedness, all-orders, causal, residual, observational or quantum theorem."
+}

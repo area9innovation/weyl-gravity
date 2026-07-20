@@ -524,6 +524,14 @@ def verify() -> None:
         raise AssertionError("same-sign automatic-face full Hessian bounded verdict changed")
     if full_rotation_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "fixed node norms" not in full_rotation["claim_boundary"]:
         raise AssertionError("same-sign automatic-face full normal-form theorem exceeded scope")
+    candidate16_current = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate16_active_restricted_current"]
+    candidate16_second = candidate16_current["mode_data"]["second_order"]
+    if candidate16_current["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "negative Kahler" not in candidate16_current["mode_data"]["lee_wald"]["statement"] or "rank is 20" not in candidate16_current["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("candidate-16 active restricted current changed")
+    if candidate16_current["mode_data"]["taub_maps"]["status"] != "OPEN" or "singular" not in candidate16_current["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-16 singular topology was promoted")
+    if candidate16_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "candidates 17--21" not in candidate16_current["claim_boundary"]:
+        raise AssertionError("candidate-16 active restricted-current theorem exceeded scope")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

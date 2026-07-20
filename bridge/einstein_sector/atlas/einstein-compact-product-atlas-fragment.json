@@ -5410,6 +5410,95 @@
       }
     },
     {
+      "claim_boundary": "This closes only the candidate-16 stratumwise restricted-current gate. Singular Hamiltonian topology, candidates 17--21, final residual descent, all-orders integration and causal, observational or quantum claims remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE16_ACTIVE_RESTRICTED_CURRENT",
+          "sha256": "8c7098d65c4ccf00aba675cfedfd3e986958925cfc3f31396729458a88dd730d"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_RESONANCE_FACE_FIBRES",
+          "sha256": "7607c649ebc628270669db8fd5e6ab813b281b82c83192a9cb7f7dbee09f3433"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_target_doublet_L3_zero_varieties.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_TARGET_DOUBLET_L3_ZERO_VARIETIES",
+          "sha256": "1d66fbb93d452997c0ed47bd9e32cf6746d858d706d526c7df62d25f0c937f24"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_SCALAR_EXTREME_RAYS",
+          "sha256": "a52e9cffefb8822790ce75763d70eff3111e0a4d7757aa62bc4042782bcc02fa"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+          "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+          "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.ell2_same_sign_candidate16_active_restricted_current",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The affine resonance variety is one irreducible complex dimension-12 target-doublet L3 cone; its two-node projectivization is a complex tenfold in CP^9 x CP^9.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "Both complete axial/polar input blocks have negative q-minus current, so the restricted form is negative Kahler and nondegenerate on every complex smooth stratum; the generic real symplectic rank is 20.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The complete candidate-16 active cross-fibre resonance ideal is the imported irreducible target-doublet L3 variety.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The separately certified axisymmetric section supplies nonzero bounded points, but the complete singular rotation-zero intersection is not classified.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific retarded Weyl-Maxwell correction complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Those finite points also lie in the smooth-secular class; no all-orders claim follows.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The projective variety is singular. Its lifted-rotation zero-fibre topology is not inferred from the smooth-orbifold connected-fibre theorem.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "candidate 16 only at rho=17*(79+51*sqrt(3))/132",
+        "boundaries": "closed S1_L times S2 before final residual quotient",
+        "carrier": "the irreducible q-minus(n=1) x q-minus(n=2) active resonance variety after both nonzero node norms are fixed and both node phases are quotiented",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": "input 2 x 2; output L=3",
+        "k": "signed n=(1,2) on candidate 16 only",
+        "m": "all m=-2,...,2 on both input nodes",
+        "omega": "positive-frequency q-minus plus q-minus SUM collision into p-extra",
+        "parity": "complete axial and polar q-minus current spaces",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "Parity/angular workload theorem only for the 21 ell=2 cross-|n| candidates. No source zero, same-fibre classification, tangent-cone verdict or higher lifecycle is inferred.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -8947,7 +9036,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "f9b04d78c0adbb485387a33aaa9c696821728eda5a26087a52236a9d5dc99afb",
+  "generated_by_sha256": "c6124b34d17f16d380b45578741465026a8b7e08f164afd2bedab90f03fafb62",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

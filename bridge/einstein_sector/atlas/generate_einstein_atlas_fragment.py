@@ -102,6 +102,7 @@ CERTIFICATES = {
     "same_sign_automatic_face_rotation_normal_form": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.json",
     "same_sign_automatic_face_full_internal_rotation_normal_form": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.json",
     "same_sign_automatic_face_full_rotation_normal_form": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.json",
+    "same_sign_candidate16_active_restricted_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
     "ell2_two_abs_momentum_candidate4_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_bounded_obstruction.json",
     "ell2_two_abs_momentum_axial_qminus_L4_triplet": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_qminus_L4_triplet_obstruction.json",
@@ -996,6 +997,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","Every declared fixed-norm link lies in the necessary-and-sufficient bounded fibre product; its complete rotation Hessian at the axisymmetric point is classified."),("CERTIFIED","The same rotation-zero links lie in the smooth-secular cone; their radical is not yet resolved into nonlinear local components."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_automatic_face_full_rotation_normal_form","same_sign_automatic_face_full_internal_rotation_normal_form","same_sign_automatic_face_rotation_normal_form","same_sign_automatic_face_rotation_links","same_sign_resonance_face_fibres","axial_operator","polar_operator","axial_current","polar_current"),
             "This is the complete quadratic rotation normal form only at fixed node norms on automatic faces. The nonlinear radical resolution, gluing of occupation strata, active resonance components and all higher lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate16_active_restricted_current",
+            _scope(theory="Weyl-Maxwell target", background="candidate 16 only at rho=17*(79+51*sqrt(3))/132", boundaries="closed S1_L times S2 before final residual quotient", carrier="the irreducible q-minus(n=1) x q-minus(n=2) active resonance variety after both nonzero node norms are fixed and both node phases are quotiented", degree=2, parity="complete axial and polar q-minus current spaces", ell="input 2 x 2; output L=3", m="all m=-2,...,2 on both input nodes", k="signed n=(1,2) on candidate 16 only", omega="positive-frequency q-minus plus q-minus SUM collision into p-extra", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","The affine resonance variety is one irreducible complex dimension-12 target-doublet L3 cone; its two-node projectivization is a complex tenfold in CP^9 x CP^9."),
+            ("CERTIFIED","Both complete axial/polar input blocks have negative q-minus current, so the restricted form is negative Kahler and nondegenerate on every complex smooth stratum; the generic real symplectic rank is 20."),
+            ("OPEN","The projective variety is singular. Its lifted-rotation zero-fibre topology is not inferred from the smooth-orbifold connected-fibre theorem."),
+            ("CERTIFIED","The complete candidate-16 active cross-fibre resonance ideal is the imported irreducible target-doublet L3 variety."),
+            _second_order(("CERTIFIED","The separately certified axisymmetric section supplies nonzero bounded points, but the complete singular rotation-zero intersection is not classified."),("CERTIFIED","Those finite points also lie in the smooth-secular class; no all-orders claim follows."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate16_active_restricted_current","same_sign_resonance_face_fibres","ell2_two_abs_momentum_target_doublet_L3_zero_varieties","same_sign_scalar_extreme_rays","axial_current","polar_current"),
+            "This closes only the candidate-16 stratumwise restricted-current gate. Singular Hamiltonian topology, candidates 17--21, final residual descent, all-orders integration and causal, observational or quantum claims remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload",
@@ -1914,6 +1927,16 @@ def build() -> dict[str, object]:
         raise AssertionError("same-sign automatic-face full rotation normal form changed")
     if full_rotation_normal_form["rotation_zero_local_semialgebraic_components_classified"] or full_rotation_normal_form["active_resonance_components_classified"] or full_rotation_normal_form["all_orders_integrability"] or full_rotation_normal_form["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("same-sign automatic-face full rotation normal form exceeded scope")
+    candidate16_current = records["same_sign_candidate16_active_restricted_current"]["classification"]
+    if not (
+        candidate16_current["candidate16_active_restricted_current_gate_closed"]
+        and candidate16_current["same_sign_definite_restriction_proof"]
+        and candidate16_current["complete_axial_polar_internal_spaces_included"]
+        and candidate16_current["every_complex_smooth_stratum_symplectic"]
+    ):
+        raise AssertionError("candidate-16 active restricted-current theorem changed")
+    if candidate16_current["rotation_zero_fibre_connected"] or candidate16_current["singular_stratum_moment_map_topology_classified"] or candidate16_current["candidates17_through21_restricted_currents_classified"] or candidate16_current["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-16 active restricted-current theorem exceeded scope")
     parity_workload = records["ell2_two_abs_momentum_parity_workload"]["classification"]
     if not (parity_workload["all_twenty_one_candidates_parity_typed"] and parity_workload["all_m_angular_nonvanishing_witnessed"] and parity_workload["odd_L_axisymmetric_fixtures_excluded"] and parity_workload["reduced_source_workload_complete"]):
         raise AssertionError("ell2 two-absolute-momentum parity workload changed")

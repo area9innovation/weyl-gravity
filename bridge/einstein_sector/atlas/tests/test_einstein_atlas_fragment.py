@@ -239,6 +239,16 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("fixed node norms", entry["claim_boundary"])
 
+    def test_same_sign_candidate16_active_restricted_current_is_fail_closed(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_candidate16_active_restricted_current"]
+        second = entry["mode_data"]["second_order"]
+        self.assertIn("negative Kahler", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("rank is 20", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertIn("singular", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("candidates 17--21", entry["claim_boundary"])
+
     def test_first_two_abs_momentum_parity_workload_is_fail_closed(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
         second = entry["mode_data"]["second_order"]

@@ -3888,6 +3888,23 @@ that componentwise map exists, the bridge atlas remains fail-closed there;
 missing polar, exceptional, global, charge, boundary and causal sectors are
 not identified by matching branch names.
 
+The first active-component restricted-current gate is now closed.  Candidate
+16 is special because its resonant inputs are `q_minus_n1` and
+`q_minus_n2`, both with negative definite complete axial/polar Lee--Wald
+current.  Fixing their nonzero norms and quotienting the node phases gives
+`CP^9 x CP^9`.  The irreducible target-doublet `L=3` resonance cone has
+affine complex dimension `12`, hence projective dimension `10`; the
+restricted current is negative Kähler and nondegenerate on every complex
+smooth stratum, with generic real symplectic rank `20`.
+
+Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_candidate16_active_restricted_current`
+is therefore `CERTIFIED` only in its symplectic column.  The projective
+variety is singular, so its lifted-rotation zero-fibre topology remains
+`OPEN`; candidates 17--21 retain indefinite input signs and require direct
+restricted-current calculations.  This is nonlinear input to Bridge 1 and
+does not promote the linear relative triangle or any causal map.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

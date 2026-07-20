@@ -2621,14 +2621,18 @@ total complex internal dimension `D`, the full fixed-norm inertia is
 `(4*D-2,4*D-2,2*D-N+2)` before node-phase quotient and
 `(4*D-2,4*D-2,2*D-2*N+2)` after it.  All fifteen ray/interior strata are
 listed exactly.  What remains on automatic faces is nonlinear radical
-resolution and occupation-stratum gluing.  Active resonance components
-separately require a restricted-current nondegeneracy theorem before the
-connected-fibre argument can be reused.  All higher lifecycles remain
-fail-closed.  This is nonlinear input to same-background Bridge 1 with
-Classical, not a promotion of its certified linear relative triangle/cofiber.
-The bridge activates next only when the restricted Lee--Wald pullback is
-certified componentwise on an active resonance stratum; until then the
-corresponding bridge atlas map is `NO_CERTIFIED_MAP`.
+resolution and occupation-stratum gluing.  The first active restricted-current
+gate is now closed on candidate 16: its two resonant `q_minus` nodes have the
+same negative current sign, so the complete axial/polar current restricts as
+a negative Kähler form on every complex smooth stratum of the irreducible
+projective resonance tenfold, with generic real symplectic rank `20`.  The
+variety is singular, so its rotation-zero-fibre topology remains open;
+candidates 17--21 have indefinite input signs and still require direct
+componentwise tests.  All higher lifecycles remain fail-closed.  This is
+nonlinear input to same-background Bridge 1 with Classical, not a promotion
+of its certified linear relative triangle/cofiber.  The bridge activates on
+candidate 16 only at the restricted-current lifecycle; the singular topology
+and every absent componentwise map remain `NO_CERTIFIED_MAP` or `OPEN`.
 
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at

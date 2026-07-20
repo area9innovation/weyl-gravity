@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-same-sign-candidate16-active-restricted-current-v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "generality_level",
+    "scope",
+    "component",
+    "restricted_current_theorem",
+    "classification",
+    "interpretation",
+    "next_gate",
+    "claim_boundary",
+    "provenance",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-same-sign-candidate16-active-restricted-current-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE16_ACTIVE_RESTRICTED_CURRENT"},
+    "component": {
+      "type": "object",
+      "required": ["projective_ambient", "projective_resonance_complex_dimension", "irreducible_components_over_C"]
+    },
+    "restricted_current_theorem": {
+      "type": "object",
+      "required": ["ambient_phase_quotient_form", "proof_identity", "smooth_locus_generic_real_symplectic_rank", "every_complex_smooth_stratum_restricted_current_nondegenerate"]
+    },
+    "classification": {
+      "type": "object",
+      "required": ["candidate16_active_restricted_current_gate_closed", "every_complex_smooth_stratum_symplectic", "rotation_zero_fibre_connected", "candidates17_through21_restricted_currents_classified", "causal_residual_observational_or_quantum_claim"]
+    }
+  }
+}

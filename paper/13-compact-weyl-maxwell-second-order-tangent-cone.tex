@@ -1320,6 +1320,35 @@ classification of the nonlinear zero set along its radical.  It neither
 glues occupation strata nor treats active resonance components.
 \end{proof}
 
+\begin{proposition}[Candidate-(16) active restricted current]
+Fix both nonzero \(q_-^{(1)}\) and \(q_-^{(2)}\) current norms on candidate
+(16), and quotient their independent phases.  The irreducible active
+resonance variety is a complex projective tenfold in
+\(\mathbb{CP}^9\times\mathbb{CP}^9\).  On every complex smooth stratum, the restricted
+Lee--Wald form is nondegenerate and negative K\"ahler.  On the generic
+smooth locus its real symplectic rank is \(20\).
+\end{proposition}
+
+\begin{proof}
+Before projectivization, the exact target-doublet \(L=3\) resonance equations
+factor into two rank-at-most-one determinantal cones.  Their product is
+irreducible of complex dimension \(12\) in the \(20\)-dimensional affine
+input space.  The equations are bihomogeneous in the two nonzero nodes, so
+quotienting their two complex scalings gives the stated projective dimension.
+
+Both resonant nodes are on the \(q_-\) branch.  The complete axial/polar
+current is therefore negative definite on each node.  Writing its descended
+Hermitian form as
+\[
+ h=-c_1H_1\mathbin{\oplus}-c_2H_2,
+ \qquad c_1,c_2>0,
+\]
+gives \(h(v,v)<0\) for every nonzero complex tangent vector on every smooth
+stratum.  Its imaginary part is consequently nondegenerate there.  The
+projective variety itself is singular, so this proposition does not apply a
+smooth-orbifold connected-fibre theorem to its full rotation-zero set.
+\end{proof}
+
 \section{Current bounded frontier}
 
 The electric, Wilson, and circumference columns are closed, and the first
@@ -1543,6 +1572,8 @@ Complete phase-reduced internal rotation normal form &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.json}\\
 Complete unquotiented and phase-quotiented fixed-norm rotation Hessians &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.json}\\
+Candidate-(16) active restricted-current theorem &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1611,9 +1642,14 @@ reduction it is \((4D-2,4D-2,2D-2N+2)\).  Every axisymmetric point also
 lies on an explicit nonaxisymmetric fixed-occupation arc.  The transverse
 part is therefore hyperbolic on every automatic-face support stratum; what
 remains locally is to resolve the displayed radical into nonlinear
-semialgebraic components.  The exact fibre-product equation is already
-certified; complex resonance components and occupation-level sums need not
-be recomputed.
+semialgebraic components.  On the active candidate-(16) component the
+separate restricted-current gate is now closed: both resonant nodes are
+\(q_-\), so the complete axial/polar restriction is negative K\"ahler on
+every complex smooth stratum, with generic real rank \(20\).  Its singular
+projective strata and rotation-zero topology remain open, as do the
+indefinite restricted currents on candidates (17)--(21).  The exact
+fibre-product equation is already certified; complex resonance components
+and occupation-level sums need not be recomputed.
 The symbolic-\(\ell\) standard-branch resonance and collision theorem is now
 closed, as is the complete 164-coefficient two-momentum branch-basis census.
 The next exact enlargement is to classify the real connected components of
