@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/candidate_ab_neither_comparison.py",
+      "sha256": "4d495e9401a0c555e0e9a1eebc12e86ecf8f1d6978a08bde05cdb25d92edf708"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_candidate_ab_neither_comparison.py",
+      "sha256": "e3d885e36df90d643aca577c4764c127b05e9a1b38f7b959c427b51d40525421"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_candidate_ab_neither_comparison.py",
+      "sha256": "c291bb146e03075b7716c66f2303a598bc59b526269dab110c0ec0e92925f77a"
+    },
+    {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1.json",
+      "sha256": "5e253ebe424dd43e308622044d93af72fd6de911b927f354977413957dbb16c4"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-candidate-ab-neither-comparison-v1.schema.json",
+      "sha256": "3334996432814c67b2a78729916df8c63d2df7e6bfd2e5fd579760e87222da0b"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-candidate-ab-neither-comparison-v1.md",
+      "sha256": "015c8681036c7e8e524b91dd31ae6ffc7f8605939ba2b402eb09c4a3feb18d1f"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "8aec87ef3096962f2332ccd2c93aabd1919ce8ef1841d09a287986da772c120c"
+    },
+    {
+      "path": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
+      "sha256": "7f9580218cb3f3d6db12de2c1b4f09abadf8e2d238e11468ea1cb84937925a54"
+    },
+    {
+      "path": "d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+      "sha256": "8ef35502b1ec8f4601678b756a515fec4bcb87b5120a46383e276d3f48cb8b2a"
+    },
+    {
+      "path": "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+      "sha256": "56c543653f4021b2f4170b2d69b5ab67d153dc3f0f4ba523a68dec73d4358015"
+    },
+    {
+      "path": "notes/d-quotient-classical-team-brief.md",
+      "sha256": "31b505b8817933deecc9ed10d321fc872698c473f345a6c8ebe3f9ffb23abf05"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <comparison producer, independent verifier, mutation tests, and affected atlas Python paths>",
+        "elapsed_seconds": 0.03,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <comparison schema and certificate>",
+        "elapsed_seconds": 0.04,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit comparison, atlas, report, receipt and classical-brief paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/candidate_ab_neither_comparison.py --check",
+        "elapsed_seconds": 0.03,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_candidate_ab_neither_comparison.py",
+        "elapsed_seconds": 0.08,
+        "status": "PASS",
+        "independent_rail": "does not import the producer; pins both scientific/lifecycle commits and imported artifact hashes, binds shared fixture fields, replays the two decisive gate sets and reconstructs the selection hash"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_candidate_ab_neither_comparison -v",
+        "elapsed_seconds": 0.24,
+        "status": "PASS",
+        "tests": 11,
+        "mutation_controls": "commit/hash drift, convention drift after re-hashing, A/B promotion, decisive-gate deletion, partial scoring, hybrid authorization, selected-action export and universal/quantum promotion are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-candidate-ab-neither-comparison-v1.schema.json -d d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1.json",
+        "elapsed_seconds": 1.29,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "elapsed_seconds": 0.12,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.12,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "elapsed_seconds": 0.11,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment -v",
+        "elapsed_seconds": 0.04,
+        "status": "PASS",
+        "tests": 24
+      },
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 3.49,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift, corpus baseline growth from 976 to 1282 certificates, and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ],
+    "reason": "The terminal comparison adds a fail-closed classical atlas row and retires selected-action consumers, so the exact affected atlas chain and advisory evidence audit were replayed."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped terminal comparison, not a release, freeze, tag or shared-core-algebra change. The exact producer, independent replay, eleven mutations, strict schema and affected atlas chain are the proportionate falsification rail."
+  },
+  "claim_boundary": "The receipt certifies that neither of the two declared minimal action-derived candidates passes the common seven-gate receiver on the frozen conventions. It does not certify a universal compensator no-go, a hybrid action, a selected-action downstream consumer, Hadamard state, anomaly cancellation, QME, particle space, scattering, positivity or unitarity.",
+  "higher_tiers_not_run": [
+    {
+      "tier": 3,
+      "criterion": "No paper theorem freeze, release, tag, shared-core algebra change or explicit full-suite request occurred."
+    }
+  ]
+}

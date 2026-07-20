@@ -3307,6 +3307,30 @@ enlarges the global gauge group, or declares a fixed flux/cosmological
 superselection theory.  The common A/B comparison should therefore test the
 fail-closed `NEITHER` verdict; it must not construct a silent hybrid.
 
+### Exact Candidate-A/B comparison: NEITHER (2026-07-20)
+
+`COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1` imports both terminal
+obstruction artifacts, their reports, independent receipts, action hashes and
+scientific/lifecycle commits. It binds them to the same unit-cylinder,
+\(M_P^2=1/6\), \(V_0=1/4\), raw-\(D\), frozen Berger clock and declared
+small-gauge conventions before applying one conjunctive seven-gate rule.
+
+Candidate A fails gates \(3,5,6,7\): the complete mixed auxiliary-scalar
+sector has split Lee--Wald inertia, real repeated Jordan roots, a both-sign
+raw-\(D\) Hamiltonian and nonzero changed-action Berger Euler rows. Candidate
+B fails gates \(2,3,5,6,7\): the frozen cylinder is off shell, the HT block
+has kernel \((D/2,1,0)\), the \(H^3/H_c^4\) pair survives, raw \(D\) carries
+the multiplier charge, and the Berger flux shift is not small-gauge exact.
+
+The exact terminal selection is therefore `NEITHER`. No partial scoring,
+hybrid, selected action hash or selected carrier is exported. The affected
+nonlinear, bridge, observer and quantum selected-repair consumers remain
+inactive. This is a scoped two-candidate result, not a universal compensator
+no-go; retuned/backgrounded \(R(\widehat g)^2\), active-clock fixed-flux HT,
+independent-conformal-gauge and bounded minimal-action classes remain open.
+No Hadamard, anomaly/QME, particle, scattering, positivity or unitarity claim
+follows.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

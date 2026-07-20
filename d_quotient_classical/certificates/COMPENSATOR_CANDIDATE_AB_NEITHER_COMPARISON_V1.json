@@ -1,0 +1,214 @@
+{
+  "action_hashes": {
+    "candidate_A": "2fa3f7ff15b95fcebed9c8bfbdf33a33942ef79a66d23d33f00a3f63d0213e11",
+    "candidate_B": "8c1466831f8b6aecdc771cd0aed7de07a5c7a5777a88ede90e638ba7ea6d6f51"
+  },
+  "candidate_A_summary": {
+    "scoped_not_universal": "does not rule out every R^2 theory, coupling or retuned background",
+    "terminal_obstruction": "the complete mixed auxiliary scalar sector has split Lee-Wald inertia, real Jordan roots, a both-sign D Hamiltonian and nonzero frozen-Berger Euler residuals"
+  },
+  "candidate_B_summary": {
+    "scoped_not_universal": "does not rule out an active-clock retuning, fixed flux/lambda superselection theory or enlarged global gauge quotient",
+    "terminal_obstruction": "the frozen cylinder is off shell and the HT block has an arbitrary flux-history kernel, H3/Hc4 classes, nonconstant ambient D charge and nonexact Berger flux shift"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL comparison pins the two terminal obstruction artifacts and applies one common seven-gate rule on the same unit-cylinder, coupling, raw-D, clock and small-gauge conventions. It selects NEITHER declared minimal action. It does not average scores, construct a hybrid, or rule out every R^2, unimodular, compensator, active-clock, fixed-flux or enlarged-gauge theory. No selected-action q2, regulator, Einstein, observer, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result is authorized.",
+  "claim_flags": {
+    "CANDIDATE_A_SELECTED": false,
+    "CANDIDATE_B_SELECTED": false,
+    "DOWNSTREAM_SELECTED_ACTION_WORK_AUTHORIZED": false,
+    "HADAMARD_OR_QUANTUM_RESULT": false,
+    "NEITHER_SELECTED": true,
+    "PARTICLE_SCATTERING_POSITIVITY_UNITARITY": false,
+    "UNIVERSAL_COMPENSATOR_NO_GO": false
+  },
+  "common_conventions": {
+    "Berger_fixture": "a=1, q=9/40, alpha_B=5, rho^2=1, omega_clock=3/4",
+    "M_P_squared": "1/6",
+    "V0": "1/4",
+    "Weyl_quartet": "(tau,omega,omega_star,tau_hat_star) contracted",
+    "boundaries": "closed S3 Cauchy surfaces; no timelike boundary",
+    "dressed_trace": "u=phi_trace-2tau",
+    "internal_U1": "global phase shift, not gauged",
+    "metric": "g_hat_bar=-dt^2+dOmega_3^2",
+    "raw_D": "partial_t",
+    "scalar_curvature": "6",
+    "signature": "(-,+,+,+)",
+    "spacetime": "R_t x S3",
+    "support_domains": "compact, spacelike-compact and one-sided Green domains",
+    "theta_bar": "constant",
+    "three_form_gauge_for_B": "small reducible A3 -> A3+d epsilon2 tower; no large/global shift quotient"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "all_import_hashes": true,
+    "both_inputs_terminal_obstructed": true,
+    "candidate_A_failure_replayed": true,
+    "candidate_B_failure_replayed": true,
+    "common_conventions_bound_to_imported_fields": true,
+    "distinct_action_hashes": true,
+    "no_hybrid_exported": true,
+    "no_selected_action_hash_exported": true,
+    "same_common_conventions": true,
+    "selection_rule_applied_without_score": true,
+    "seven_gates_aligned": true,
+    "terminal_selection_is_NEITHER": true
+  },
+  "imports": {
+    "candidate_A": {
+      "certificate": "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1.json",
+      "certificate_sha256": "889c3c2870bb2b28dfe2e4e510526f8644c0b7358884d07fcad351199ae747c6",
+      "lifecycle_commit": "218cd5ad90cb9df537eb368a9312cb745a21044f",
+      "receipt": "d_quotient_classical/receipts/COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1_TIER_RECEIPT.json",
+      "receipt_sha256": "2d2e6b54dafe41e4551362a3f05dc54cf76a80bd35856635f0d250ebc2662d94",
+      "report": "d_quotient_classical/reports/compensator-candidate-a-r2-auxiliary-scalar-obstruction-v1.md",
+      "report_sha256": "0b35a367f70f4215df25c9c3dbe97f5805199ecd21175c7b1cb9f02609bad826",
+      "result_id": "COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1",
+      "result_state": "OBSTRUCTED",
+      "scientific_commit": "5c642e2ad14d45f6074b1327c69707b7b9b08f5d"
+    },
+    "candidate_B": {
+      "certificate": "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1.json",
+      "certificate_sha256": "e8a8aeb97398c3b8812b20118daa56850e32a516bf4e9db15c00b99cec7a8faa",
+      "lifecycle_commit": "c7af7b707831a848e3e110f45bb746478473dbc6",
+      "receipt": "d_quotient_classical/receipts/COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1_TIER_RECEIPT.json",
+      "receipt_sha256": "6966831ed574890bb9bc866dbd08b4789821925c2f37f6cf6bd887a43ef124b2",
+      "report": "d_quotient_classical/reports/compensator-candidate-b-unimodular-threeform-obstruction-v1.md",
+      "report_sha256": "aa5fc7b3545d032972807eb4d79f372df011dde855724f94993e2edbca2f9dd8",
+      "result_id": "COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1",
+      "result_state": "OBSTRUCTED",
+      "scientific_commit": "cc0e0036c6acce2bc3d8ba81057031d90a71333a"
+    }
+  },
+  "next_gate": "Classify the smallest bounded action/gauge/superselection enlargements after NEITHER; do not activate selected-A/B consumers.",
+  "result_id": "COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1",
+  "result_state": "NEITHER_MINIMAL_REPAIR_SELECTED",
+  "schema": "pure-weyl-compensator-candidate-ab-neither-comparison-v1",
+  "selection_hash": "a87a938815bce059ce97acf2c058fee3079ceec7ca292932308f9d05e47bc67a",
+  "selection_rule": {
+    "candidate_A_decisive_nonpass_gates": [
+      3,
+      5,
+      6,
+      7
+    ],
+    "candidate_B_decisive_nonpass_gates": [
+      2,
+      3,
+      5,
+      6,
+      7
+    ],
+    "hybrid_forbidden": true,
+    "partial_scores_forbidden": true,
+    "rule": "a candidate is selectable iff every one of the seven gates passes without an uncontrolled, not-reached or conditional remainder"
+  },
+  "seven_gate_matrix": [
+    {
+      "candidate_A": {
+        "reason": "the auxiliary action, Diff cotangent lift, nonminimal doublets and original Weyl quartet are explicit",
+        "status": "PASS"
+      },
+      "candidate_B": {
+        "reason": "the reducible abelian three-form tower has its full cotangent and nonminimal inventory",
+        "status": "PASS_AT_FORMAL_LOCAL_LEVEL"
+      },
+      "gate": 1,
+      "normalized_name": "action_derived_BV_CME_Q2"
+    },
+    {
+      "candidate_A": {
+        "reason": "arbitrary compact-support u is no longer closed, but it is replaced by the displayed scalar Jordan solution sector",
+        "status": "PASS_WITH_PHYSICAL_REPLACEMENT"
+      },
+      "candidate_B": {
+        "reason": "u=(D/2)a is an arbitrary polynomial-kernel family; H_c^4 leaves an additional integrated class",
+        "status": "FAIL"
+      },
+      "gate": 2,
+      "normalized_name": "compact_support_dressed_trace_disposition"
+    },
+    {
+      "candidate_A": {
+        "reason": "the reduced auxiliary scalar block has exact Green inverses; the complete mixed metric parent is not promoted after the terminal physical-sign failure",
+        "status": "NOT_REACHED_AFTER_GATE_5_FAILURE"
+      },
+      "candidate_B": {
+        "reason": "the frozen background is off shell and the HT Hessian has a nonzero Q(D) kernel",
+        "status": "FAIL"
+      },
+      "gate": 3,
+      "normalized_name": "complete_support_local_causal_parent"
+    },
+    {
+      "candidate_A": {
+        "reason": "the action-derived scalar Lee-Wald form is exact and nondegenerate, but it has split signature",
+        "status": "REDUCED_BLOCK_PASS_COMPLETE_PARENT_NOT_REACHED"
+      },
+      "candidate_B": {
+        "reason": "the flux/multiplier current is exact and nondegenerate before the frozen-branch restriction",
+        "status": "PASS_WITH_UNCONTROLLED_GLOBAL_PAIR"
+      },
+      "gate": 4,
+      "normalized_name": "cyclic_current_and_reduced_pairing"
+    },
+    {
+      "candidate_A": {
+        "reason": "the homogeneous full-Hessian sector has velocity inertia (1,1), real D roots and an indefinite Hamiltonian",
+        "status": "FAIL"
+      },
+      "candidate_B": {
+        "reason": "arbitrary flux histories are null on the lambda_HT=0 solution tangent and are not generated by the small reducible gauge tower",
+        "status": "FAIL"
+      },
+      "gate": 5,
+      "normalized_name": "physical_sign_or_topological_control"
+    },
+    {
+      "candidate_A": {
+        "reason": "i_D Omega=dH_D is nonzero and H_D has both signs; only a proper quadratic cone has zero charge",
+        "status": "FAIL"
+      },
+      "candidate_B": {
+        "reason": "i_D Omega=V_S3 d lambda_HT; raw D is not a presymplectic null direction on the ambient topological phase space",
+        "status": "FAIL_WITHOUT_SUPERSELECTION"
+      },
+      "gate": 6,
+      "normalized_name": "raw_D_charge_sector"
+    },
+    {
+      "candidate_A": {
+        "reason": "the frozen positive Berger fixture is a different action and the exact changed-action Euler residual is nonzero in all independent rows",
+        "status": "FAIL"
+      },
+      "candidate_B": {
+        "reason": "the required A_3 background has a nonexact raw-D shift in H3(S3)",
+        "status": "FAIL_WITHOUT_NEW_GLOBAL_RECLASSIFICATION"
+      },
+      "gate": 7,
+      "normalized_name": "frozen_Berger_clock_compatibility"
+    }
+  ],
+  "strict_downstream_disposition": {
+    "hybrid_authorized": false,
+    "reason": "every selected-repair consumer requires one receiver-valid action hash, and neither declared candidate passes all gates",
+    "retire_or_do_not_activate": [
+      "nonlinear-selected-compensator-repair-q2",
+      "bridge-selected-compensator-repair-einstein-extra-charge",
+      "observer-selected-compensator-repair-clock-redshift",
+      "quantum-selected-compensator-repair-dressed-regulator"
+    ],
+    "selected_action": null,
+    "selected_action_hash": null,
+    "selected_carrier": null,
+    "smallest_open_theory_classes": [
+      "a differently tuned/backgrounded local R(g_hat)^2 theory with a separately certified healthy full mixed scalar sector",
+      "an active-clock HT theory with explicit fixed flux/lambda superselection and global symmetry quotient",
+      "a theory with an additional independent conformal gauge generator and complete BV cotangent lift",
+      "the bounded minimal-action classification activated by this NEITHER theorem"
+    ]
+  },
+  "terminal_selection": "NEITHER"
+}

@@ -168,6 +168,32 @@ def verify() -> None:
         raise AssertionError(
             "unimodular three-form Candidate-B atlas boundary drifted"
         )
+    comparison = by_id[
+        "classical.complex_compensator.vacuum_cylinder."
+        "candidate_ab_neither_selection"
+    ]
+    comparison_ids = {item["result_id"] for item in comparison["evidence"]}
+    if (
+        comparison["descriptions"]["causal"] != "OBSTRUCTED"
+        or comparison["descriptions"]["symplectic"] != "OBSTRUCTED"
+        or comparison["descriptions"]["nonlinear"] != "NOT_APPLICABLE"
+        or comparison["descriptions"]["observational"] != "NO_CERTIFIED_MAP"
+        or comparison["descriptions"]["quantum"] != "OPEN"
+        or {
+            "COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1",
+            "COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1",
+            "COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1",
+        }
+        - comparison_ids
+        or "terminal selection is NEITHER" not in comparison["claim_boundary"]
+        or "No score averaging or hybrid" not in comparison["claim_boundary"]
+        or "no selected action hash or carrier"
+        not in comparison["claim_boundary"]
+        or "not a universal compensator no-go"
+        not in comparison["claim_boundary"]
+        or "No Hadamard" not in comparison["claim_boundary"]
+    ):
+        raise AssertionError("Candidate A/B NEITHER atlas boundary drifted")
     stability = by_id["classical.crosswalk.weak_background_causal_vs_residual_d"]
     if (
         stability["descriptions"]["causal"] != "CERTIFIED"

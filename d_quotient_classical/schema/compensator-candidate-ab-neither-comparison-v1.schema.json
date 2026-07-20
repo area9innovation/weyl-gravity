@@ -1,0 +1,353 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/compensator-candidate-ab-neither-comparison-v1.schema.json",
+  "title": "Candidate A/B NEITHER comparison",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "imports",
+    "common_conventions",
+    "action_hashes",
+    "seven_gate_matrix",
+    "selection_rule",
+    "selection_hash",
+    "terminal_selection",
+    "candidate_A_summary",
+    "candidate_B_summary",
+    "strict_downstream_disposition",
+    "exact_checks",
+    "claim_flags",
+    "claim_boundary",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-compensator-candidate-ab-neither-comparison-v1"
+    },
+    "result_id": {
+      "const": "COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1"
+    },
+    "result_state": {
+      "const": "NEITHER_MINIMAL_REPAIR_SELECTED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "imports": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_A",
+        "candidate_B"
+      ],
+      "properties": {
+        "candidate_A": {
+          "$ref": "#/$defs/import"
+        },
+        "candidate_B": {
+          "$ref": "#/$defs/import"
+        }
+      }
+    },
+    "common_conventions": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {
+        "$ref": "#/$defs/nonempty"
+      }
+    },
+    "action_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_A",
+        "candidate_B"
+      ],
+      "properties": {
+        "candidate_A": {
+          "$ref": "#/$defs/sha256"
+        },
+        "candidate_B": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "seven_gate_matrix": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "gate",
+          "normalized_name",
+          "candidate_A",
+          "candidate_B"
+        ],
+        "properties": {
+          "gate": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7
+          },
+          "normalized_name": {
+            "$ref": "#/$defs/nonempty"
+          },
+          "candidate_A": {
+            "$ref": "#/$defs/gate-result"
+          },
+          "candidate_B": {
+            "$ref": "#/$defs/gate-result"
+          }
+        }
+      }
+    },
+    "selection_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rule",
+        "candidate_A_decisive_nonpass_gates",
+        "candidate_B_decisive_nonpass_gates",
+        "partial_scores_forbidden",
+        "hybrid_forbidden"
+      ],
+      "properties": {
+        "rule": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "candidate_A_decisive_nonpass_gates": {
+          "const": [
+            3,
+            5,
+            6,
+            7
+          ]
+        },
+        "candidate_B_decisive_nonpass_gates": {
+          "const": [
+            2,
+            3,
+            5,
+            6,
+            7
+          ]
+        },
+        "partial_scores_forbidden": {
+          "const": true
+        },
+        "hybrid_forbidden": {
+          "const": true
+        }
+      }
+    },
+    "selection_hash": {
+      "$ref": "#/$defs/sha256"
+    },
+    "terminal_selection": {
+      "const": "NEITHER"
+    },
+    "candidate_A_summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "candidate_B_summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "strict_downstream_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "selected_action",
+        "selected_action_hash",
+        "selected_carrier",
+        "retire_or_do_not_activate",
+        "reason",
+        "smallest_open_theory_classes",
+        "hybrid_authorized"
+      ],
+      "properties": {
+        "selected_action": {
+          "type": "null"
+        },
+        "selected_action_hash": {
+          "type": "null"
+        },
+        "selected_carrier": {
+          "type": "null"
+        },
+        "retire_or_do_not_activate": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        },
+        "reason": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "smallest_open_theory_classes": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        },
+        "hybrid_authorized": {
+          "const": false
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "CANDIDATE_A_SELECTED",
+        "CANDIDATE_B_SELECTED",
+        "NEITHER_SELECTED",
+        "UNIVERSAL_COMPENSATOR_NO_GO",
+        "DOWNSTREAM_SELECTED_ACTION_WORK_AUTHORIZED",
+        "HADAMARD_OR_QUANTUM_RESULT",
+        "PARTICLE_SCATTERING_POSITIVITY_UNITARITY"
+      ],
+      "properties": {
+        "CANDIDATE_A_SELECTED": {
+          "const": false
+        },
+        "CANDIDATE_B_SELECTED": {
+          "const": false
+        },
+        "NEITHER_SELECTED": {
+          "const": true
+        },
+        "UNIVERSAL_COMPENSATOR_NO_GO": {
+          "const": false
+        },
+        "DOWNSTREAM_SELECTED_ACTION_WORK_AUTHORIZED": {
+          "const": false
+        },
+        "HADAMARD_OR_QUANTUM_RESULT": {
+          "const": false
+        },
+        "PARTICLE_SCATTERING_POSITIVITY_UNITARITY": {
+          "const": false
+        }
+      }
+    },
+    "claim_boundary": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "next_gate": {
+      "$ref": "#/$defs/nonempty"
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result_id",
+        "result_state",
+        "certificate",
+        "certificate_sha256",
+        "report",
+        "report_sha256",
+        "receipt",
+        "receipt_sha256",
+        "scientific_commit",
+        "lifecycle_commit"
+      ],
+      "properties": {
+        "result_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "result_state": {
+          "const": "OBSTRUCTED"
+        },
+        "certificate": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "certificate_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "report": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "report_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "receipt": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "receipt_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "scientific_commit": {
+          "$ref": "#/$defs/commit"
+        },
+        "lifecycle_commit": {
+          "$ref": "#/$defs/commit"
+        }
+      }
+    },
+    "gate-result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reason"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "reason": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "terminal_obstruction",
+        "scoped_not_universal"
+      ],
+      "properties": {
+        "terminal_obstruction": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "scoped_not_universal": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    }
+  }
+}

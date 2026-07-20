@@ -36,6 +36,7 @@ CERTS = {
     "complex_compensator_causal_parent": ROOT / "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1.json",
     "complex_compensator_candidate_a_obstruction": ROOT / "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1.json",
     "complex_compensator_candidate_b_obstruction": ROOT / "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1.json",
+    "complex_compensator_candidate_ab_neither": ROOT / "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1.json",
     "Berger_green": ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
     "Berger_bikernel_support_gate": ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
     "Berger_Cartan": ROOT / "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
@@ -369,6 +370,29 @@ def entries() -> list[dict[str, Any]]:
         _second(("NOT_APPLICABLE", "Candidate B terminates at the unary/background and global-topology gates."), ("NOT_APPLICABLE", "Candidate B terminates at the unary/background and global-topology gates."), ("OBSTRUCTED", "No complete retarded/advanced parent exists on the off-shell fixture or across the polynomial HT kernel.")),
         _evidence("complex_compensator_action_preflight", "vacuum_WZ_causal_trace_obstruction", "complex_compensator_candidate_b_obstruction"),
         "The action-derived three-form tower is locally consistent, but Candidate B does not contract the dressed trace: H_B(D) has kernel (D/2,1,0), so u is re-encoded as arbitrary harmonic-flux history. The multiplier cannot repair the nonzero trace-free Ricci Euler row of the frozen unit cylinder. Globally H3(S3)=R and Hc4(R x S3)=R survive, and the frozen Berger constraint requires A3=t vol_Berger with a nonexact raw-D shift. Candidate B is therefore OBSTRUCTED unless the background/action, global gauge group or flux/lambda superselection data are changed. No Hadamard, anomaly/QME, particle, scattering or unitarity conclusion follows.",
+    ))
+    values.append(_entry(
+        "classical.complex_compensator.vacuum_cylinder.candidate_ab_neither_selection",
+        _scope(
+            VACUUM,
+            theory="comparison of the declared Candidate-A R(g_hat)^2 auxiliary-scalar action and Candidate-B Henneaux-Teitelboim three-form action; no hybrid theory",
+            charge_sector="common unreduced raw-D comparison; Candidate B retains all H3 flux and constant lambda_HT sectors; no new superselection quotient",
+            carrier="two separately action-derived classical BV carriers compared by one exact seven-gate rule; no selected carrier and not a particle carrier",
+            degree="all local BV degrees required by each candidate; terminal comparison at background, causal, pairing, sign, charge and Berger gates",
+            parity="real even scalar and three-form comparison sectors",
+            ell="all declared scalar harmonics; harmonic H3 is retained for Candidate B",
+            m="all",
+            k="all local covectors and declared compact/one-sided support domains",
+            omega="raw D=partial_t; no selected positive-frequency carrier",
+        ),
+        {"causal": "OBSTRUCTED", "symplectic": "OBSTRUCTED", "nonlinear": "NOT_APPLICABLE", "observational": "NO_CERTIFIED_MAP", "quantum": "OPEN"},
+        ("OBSTRUCTED", "Candidate A has no promoted complete mixed-metric parent after its physical-sign failure; Candidate B is off shell and has a polynomial HT kernel."),
+        ("OBSTRUCTED", "Candidate A has split Lee-Wald inertia; Candidate B retains an uncontrolled global flux/multiplier direction on the declared sector."),
+        ("OBSTRUCTED", "Neither candidate supplies the required complete zero-charge raw-D receiver, so no selected-action nonlinear consumer is activated."),
+        ("NO_CERTIFIED_MAP", "The exact comparison exports no selected carrier, complex structure, positive-frequency splitting or observational mode."),
+        _second(("NOT_APPLICABLE", "No selected action exists for a bounded second-order cone."), ("NOT_APPLICABLE", "No selected action exists for a smooth-secular second-order cone."), ("OBSTRUCTED", "The two declared minimal actions fail the common causal/physical seven-gate receiver rule.")),
+        _evidence("complex_compensator_candidate_a_obstruction", "complex_compensator_candidate_b_obstruction", "complex_compensator_candidate_ab_neither"),
+        "The exact comparison pins both terminal obstruction artifacts, their scientific and lifecycle commits, action hashes and the common unit-cylinder, coupling, raw-D, frozen-Berger-clock and small-gauge conventions. Candidate A fails gates 3, 5, 6 and 7; Candidate B fails gates 2, 3, 5, 6 and 7. The terminal selection is NEITHER. No score averaging or hybrid is permitted, and no selected action hash or carrier is exported. This is not a universal compensator no-go: differently tuned/backgrounded R(g_hat)^2, active-clock fixed-flux/lambda, enlarged-gauge and bounded minimal-action classes remain open. No Hadamard, anomaly/QME, particle, scattering, positivity or unitarity conclusion follows.",
     ))
     values.append(_entry(
         "classical.berger.retained_gravity_clock_maxwell",
