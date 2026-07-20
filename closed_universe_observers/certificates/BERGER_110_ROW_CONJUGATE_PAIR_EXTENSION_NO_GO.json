@@ -1,0 +1,642 @@
+{
+  "action_regeneration_and_substitution": {
+    "auxiliary_action_support_at_first_obstruction": {
+      "q2_chi_plus_A0_K0_12_key_count": 0,
+      "reason": "the unique parity-even first-order Lorentz-natural A--K bilinear is <K,dA>; its K_12 component is K_12(e1 A_2-e2 A_1), so neither 1 nor e0 acting outside the Hessian creates an A_0 slot"
+    },
+    "constant_unary_exclusion_fixture": {
+      "coefficient_monomials_disjoint": true,
+      "conclusion": "mu=0",
+      "frozen_coefficient": [
+        {
+          "coefficient": {
+            "rational": {
+              "denominator": 2,
+              "numerator": -5
+            },
+            "sqrt10": {
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "factors": [
+            {
+              "kind": "parameter",
+              "name": "g0",
+              "spacetime_multiindex": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vertical_multiindex": []
+            },
+            {
+              "kind": "profile",
+              "name": "h0",
+              "spacetime_multiindex": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vertical_multiindex": [
+                1
+              ]
+            }
+          ]
+        }
+      ],
+      "key": {
+        "coefficient": [
+          {
+            "coefficient": {
+              "rational": {
+                "denominator": 2,
+                "numerator": -5
+              },
+              "sqrt10": {
+                "denominator": 1,
+                "numerator": 0
+              }
+            },
+            "factors": [
+              {
+                "kind": "parameter",
+                "name": "g0",
+                "spacetime_multiindex": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "vertical_multiindex": []
+              },
+              {
+                "kind": "profile",
+                "name": "h0",
+                "spacetime_multiindex": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "vertical_multiindex": [
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "left_input_row": 55,
+        "left_input_row_id": "A_0",
+        "left_pbw_multiindex": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "nonzero": true,
+        "output_row": 52,
+        "output_row_id": "tau_star",
+        "right_input_row": 84,
+        "right_input_row_id": "K0_01",
+        "right_pbw_multiindex": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "mu_basis_coefficient": [
+        {
+          "coefficient": {
+            "rational": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "sqrt10": {
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "factors": [
+            {
+              "kind": "parameter",
+              "name": "g0",
+              "spacetime_multiindex": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vertical_multiindex": []
+            },
+            {
+              "kind": "profile",
+              "name": "h0",
+              "spacetime_multiindex": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vertical_multiindex": []
+            }
+          ]
+        }
+      ]
+    },
+    "first_scoped_obstruction": {
+      "coefficient": [
+        {
+          "coefficient": {
+            "rational": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "sqrt10": {
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "factors": [
+            {
+              "kind": "parameter",
+              "name": "g0",
+              "spacetime_multiindex": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vertical_multiindex": []
+            },
+            {
+              "kind": "profile",
+              "name": "h0",
+              "spacetime_multiindex": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vertical_multiindex": []
+            }
+          ]
+        }
+      ],
+      "left_input_row": 55,
+      "left_input_row_id": "A_0",
+      "left_pbw_multiindex": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "nonzero": true,
+      "output_row": 52,
+      "output_row_id": "tau_star",
+      "right_input_row": 87,
+      "right_input_row_id": "K0_12",
+      "right_pbw_multiindex": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    "higher_output_rows_not_run": "NOT_EVALUATED_AFTER_NONZERO_TAU_STAR_OLD_INPUT_WITNESS",
+    "mutations": {
+      "decouple_auxiliary_interaction": {
+        "detected": true,
+        "interaction_scale": 0,
+        "prior_witness_coefficient": [
+          {
+            "coefficient": {
+              "rational": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "sqrt10": {
+                "denominator": 1,
+                "numerator": 0
+              }
+            },
+            "factors": [
+              {
+                "kind": "parameter",
+                "name": "g0",
+                "spacetime_multiindex": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "vertical_multiindex": []
+              },
+              {
+                "kind": "profile",
+                "name": "h0",
+                "spacetime_multiindex": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "vertical_multiindex": []
+              }
+            ]
+          }
+        ]
+      },
+      "drop_typed_Maxwell_source": {
+        "detected": true,
+        "expected_after_drop": "ZERO",
+        "first_scoped_obstruction_source_pair": {
+          "q1": "emitter",
+          "q2": "base_maxwell_typed"
+        }
+      },
+      "flip_auxiliary_interaction_sign": {
+        "detected": true,
+        "interaction_scale": 1,
+        "prior_witness_coefficient": [
+          {
+            "coefficient": {
+              "rational": {
+                "denominator": 1,
+                "numerator": 2
+              },
+              "sqrt10": {
+                "denominator": 1,
+                "numerator": 0
+              }
+            },
+            "factors": [
+              {
+                "kind": "parameter",
+                "name": "g0",
+                "spacetime_multiindex": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "vertical_multiindex": []
+              },
+              {
+                "kind": "profile",
+                "name": "h0",
+                "spacetime_multiindex": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "vertical_multiindex": []
+              }
+            ]
+          }
+        ]
+      },
+      "inherited_factor_two_control": {
+        "mutated_null_vector": [
+          1,
+          1,
+          1
+        ],
+        "scientific_status": "MUTATION_ONLY_NOT_A_REPAIR"
+      }
+    },
+    "normalized_action_parameters": {
+      "constant_unary_coefficient": "mu=0",
+      "field_redefinition_quotient": "chi -> r chi, chi_plus -> r^-1 chi_plus",
+      "interaction_coefficients": "beta_0=beta_1=-1",
+      "pairing": "p=1",
+      "unary_temporal_coefficient": "lambda=1"
+    },
+    "prior_witness_after_substitution": {
+      "coefficient": [],
+      "left_input_row": 55,
+      "left_input_row_id": "A_0",
+      "left_pbw_multiindex": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "nonzero": false,
+      "output_row": 52,
+      "output_row_id": "tau_star",
+      "right_input_row": 84,
+      "right_input_row_id": "K0_01",
+      "right_pbw_multiindex": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "regenerated_q1_key_count": 2,
+    "regenerated_q2_key_count": 276,
+    "second_emitter_prior_witness_after_substitution": {
+      "coefficient": [],
+      "left_input_row": 55,
+      "left_input_row_id": "A_0",
+      "left_pbw_multiindex": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "nonzero": false,
+      "output_row": 52,
+      "output_row_id": "tau_star",
+      "right_input_row": 90,
+      "right_input_row_id": "K1_01",
+      "right_pbw_multiindex": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "specialized_tau_star_row_summary": {
+      "all_input_key_count": 840,
+      "frozen_108_input_key_count": 824,
+      "maximum_total_input_order": 3
+    },
+    "tested_bidegree": [
+      0,
+      0
+    ],
+    "tested_original_output_row": 52
+  },
+  "activation_disposition": {
+    "K_Berger_equivariance_authorized": false,
+    "bounded_110_row_extension_exists": false,
+    "complete_arity_two_identity": false,
+    "detector_response_on_second_order_cone_authorized": false,
+    "observer_morphism_stability_authorized": false,
+    "physical_branch_bridge_activated": false,
+    "q3_authorized": false,
+    "quantum_promotion_authorized": false
+  },
+  "atlas_status": "OBSTRUCTED",
+  "bounded_extension_ansatz": {
+    "admissible_field_redefinitions": {
+      "cross_shifts": "excluded because they alter the declared frozen-108 coefficient embedding when the new output is expanded",
+      "normalized_action_class_count": 1,
+      "pair_rescaling": "chi -> r chi, chi_plus -> r^-1 chi_plus, r!=0"
+    },
+    "bounds": {
+      "action_arity": "at most cubic",
+      "auxiliary_PBW_order": "at most one",
+      "auxiliary_field_order": "affine in each new row",
+      "carrier_growth": "exactly two rows",
+      "coefficient_field": "Q(sqrt(10)) with declared g_b,h_b jets",
+      "old_A_K_derivative_order": "at most one",
+      "old_A_K_tensor_class": "parity-even metric-natural contraction only; no clock or Berger-frame tensor insertion inside the A--K bilinear",
+      "parity": "even",
+      "support": "same-background temporal Maxwell--emitter Ward orbit; all frozen 108-row action and operator coefficients fixed"
+    },
+    "complete_decisive_action_basis": {
+      "completeness_proof": "For a parity-even scalar auxiliary, the invariant unary operators through order one are span{1,e0}. Up to integration by parts, the parity-even Lorentz-natural bilinear between a two-form K_b and one derivative of a one-form A is uniquely <K_b,dA>. Terms with no A--K Hessian cannot enter the selected old-input suborbit.",
+      "cubic": [
+        "beta_b chi g_b h_b <K_b,dA>, b=0,1"
+      ],
+      "quadratic": [
+        "lambda tau e0 chi_plus",
+        "mu tau chi_plus"
+      ],
+      "spectator_disposition": "other allowed old-sector bilinears have no A--K Hessian and cannot change either decisive tau_star A--K key"
+    },
+    "degree_classification": [
+      {
+        "degrees": [
+          -1,
+          2
+        ],
+        "reason": "q2 on two degree-zero old inputs has degree one, but this pair contains no degree-one row",
+        "status": "OBSTRUCTED_BY_DEGREE_SUPPORT"
+      },
+      {
+        "degrees": [
+          0,
+          1
+        ],
+        "row_ids": [
+          "chi",
+          "chi_plus"
+        ],
+        "status": "SOLE_SURVIVING_DEGREE_CLASS"
+      }
+    ],
+    "pairing": {
+      "new_entries": [
+        [
+          108,
+          109,
+          "p"
+        ],
+        [
+          109,
+          108,
+          "-p"
+        ]
+      ],
+      "nondegenerate_iff": "p!=0",
+      "normalized_value": "p=1",
+      "rank": 110,
+      "shape": [
+        110,
+        110
+      ]
+    },
+    "representation": {
+      "Berger_stabilizer": "trivial real one-dimensional scalar",
+      "K_Berger_weight": "0",
+      "nontrivial_one_dimensional_classes": "DECOUPLED: invariant Ward action monomials require total weight zero",
+      "residual_representation": "trivial"
+    }
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE certificate classifies one complete bounded enlargement of the frozen 108-row Berger observer carrier by exactly one complementary-degree conjugate pair. Degree support excludes (-1,2), leaving a scalar (0,1) pair chi,chi_plus. Its signed unit pairing is nondegenerate, and pair rescaling exhausts admissible redefinitions that preserve the frozen coefficient embedding. In the declared parity-even, action-arity-at-most-three, auxiliary-affine, first-order and temporal-Ward-local bounds with no clock/frame insertion in the old A--K tensor, span{1,e0} is the complete scalar unary basis and <K_b,dA> is the unique Lorentz-natural A--K bilinear. Exact action differentiation regenerates two q1 keys and 276 cyclic q2 keys. The compatibility equations have one nondegenerate class modulo pair rescaling. Independent substitution into the original differential-coefficient arity-two rail cancels the previous tau_star <- (e0 e1 A_0,K0_01) coefficient without fitting it, because its normalization was fixed at the action level for both emitters. The same substitution retains tau_star <- (e1 A_0,e2 K0_12) with exact coefficient -2 g0 h0. That key source-isolates to the frozen emitter q1 crossed with the frozen typed-Maxwell q2, while the complete auxiliary action basis has zero A_0--K_12 Hessian support. Thus the bounded 110-row class is obstructed. The decoupling and sign mutations restore or double the prior witness, and the inherited factor-two mutation remains diagnostic only. No statement is made about a larger carrier, higher auxiliary derivative order, parity-odd vertices, q3, K_Berger equivariance, observer morphisms, detector response, the second-order cone, causality, a physical branch, particles, positivity or quantum consistency. No compact-product mode is identified with a Berger row.",
+  "claim_status": "OBSTRUCTED_BOUNDED_110_ROW_CONJUGATE_PAIR_ACTION_EXTENSION",
+  "compatibility_solution_locus": {
+    "class_count_modulo_pair_rescaling": 1,
+    "derivation": "the constant unary term creates unmatched order-lowered keys, so mu=0; cancellation of the two source-labelled prior witnesses fixes the two invariant products. Pair rescaling removes the remaining nonzero lambda normalization.",
+    "nondegenerate_branch": "p*lambda*beta_0*beta_1!=0",
+    "prior_witness_equations": [
+      "mu=0",
+      "lambda*beta_0/p=-1",
+      "lambda*beta_1/p=-1"
+    ],
+    "quotient_representative": {
+      "beta_0": -1,
+      "beta_1": -1,
+      "lambda": 1,
+      "mu": 0,
+      "p": 1
+    }
+  },
+  "dependency_refs": {
+    "arity_two_obstruction": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_ARITY_TWO_OBSTRUCTION.json",
+      "result_id": "BERGER_108_ROW_ARITY_TWO_OBSTRUCTION",
+      "sha256": "5976a3b4162ceafa2b2b132f394846c19b8c709cba7c0a560d615cfe47bf502a"
+    },
+    "compatibility_theorem": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMMON_ACTION_COMPATIBILITY_THEOREM.json",
+      "result_id": "BERGER_108_ROW_COMMON_ACTION_COMPATIBILITY_THEOREM",
+      "sha256": "d0c9a410ffbe65a5a14e286e338a3374a5baac655ed72dd227aef34702d07f31"
+    },
+    "complete_q1": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET.json",
+      "result_id": "BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET",
+      "sha256": "cacbd3be6bde8e80d142ca9012b024abd7a10472a2759b8f6e8b8af19b310481"
+    },
+    "complete_q2": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q2_PBW.json",
+      "result_id": "BERGER_108_ROW_COMPLETE_Q2_PBW",
+      "sha256": "c87285276113391dc70dfb2bd4b66052d8bd78a1c94fc9a1e6a6adc724b4a605"
+    },
+    "component_contract": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json",
+      "result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+      "sha256": "4113635be1493e0eac5e945a970ce4989f0484d5fa658a10bf893c63f5ae707c"
+    },
+    "emitter_action": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_PHYSICAL_Q2_PBW.json",
+      "result_id": "BERGER_108_ROW_EMITTER_PHYSICAL_Q2_PBW",
+      "sha256": "1adce4fe647af299c68382a9761020dc11aa9d746a6f4e897dd4a91089a862db"
+    },
+    "typed_maxwell": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
+      "sha256": "90a7a7703e30fc9fe2e97e1b4e3327bb1dc9b078c16b51c1cc2afd163b0842a6"
+    },
+    "ward_obstruction": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_TEMPORAL_COMMON_ACTION_WARD_ORBIT_OBSTRUCTION.json",
+      "result_id": "BERGER_108_ROW_TEMPORAL_COMMON_ACTION_WARD_ORBIT_OBSTRUCTION",
+      "sha256": "cb92da25ca1b075c6fa5e60c8bb2cf9476fbf1637675bc6f3db506e8aef44cbe"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "minimal_no_go": {
+    "first_obstruction": {
+      "coefficient": [
+        {
+          "coefficient": {
+            "rational": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "sqrt10": {
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "factors": [
+            {
+              "kind": "parameter",
+              "name": "g0",
+              "spacetime_multiindex": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vertical_multiindex": []
+            },
+            {
+              "kind": "profile",
+              "name": "h0",
+              "spacetime_multiindex": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vertical_multiindex": []
+            }
+          ]
+        }
+      ],
+      "left_input_row": 55,
+      "left_input_row_id": "A_0",
+      "left_pbw_multiindex": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "nonzero": true,
+      "output_row": 52,
+      "output_row_id": "tau_star",
+      "right_input_row": 87,
+      "right_input_row_id": "K0_12",
+      "right_pbw_multiindex": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    "larger_or_higher_order_extensions": "OPEN",
+    "next_dimension_not_claimed": true,
+    "scope": "the complete parity-even, action-arity<=3, auxiliary-affine, first-order, metric-natural-A--K, temporal Ward-orbit-local 110-row ansatz above",
+    "theorem": "No action in the declared bounded 110-row conjugate-pair ansatz yields a vanishing original tau_star arity-two row. The unique class that cancels the prior e0e1 A_0/K_01 witness retains the independent e1 A_0/e2 K_12 coefficient -2 g0 h0."
+  },
+  "next_gate": "DECLARE_A_STRICTLY_LARGER_OR_HIGHER_ORDER_COMMON_ACTION_CARRIER_ANSATZ_BEFORE_ANY_NEW_Q1_Q2_REPLAY",
+  "proof_obligation_dag": [
+    {
+      "id": "P1_DEGREES_REPRESENTATION_PAIRING",
+      "status": "CERTIFIED"
+    },
+    {
+      "id": "P2_BOUNDED_ACTION_BASIS_COMPLETENESS",
+      "status": "CERTIFIED_IN_DECLARED_SCOPE"
+    },
+    {
+      "id": "P3_COMPATIBILITY_LOCUS",
+      "status": "CERTIFIED"
+    },
+    {
+      "id": "P4_ACTION_DERIVED_Q1_Q2",
+      "status": "CERTIFIED"
+    },
+    {
+      "id": "P5_ORIGINAL_TAU_STAR_SUBSTITUTION",
+      "status": "OBSTRUCTED"
+    }
+  ],
+  "provenance": {
+    "input_commit": "1f5ea0b2851d281fb056eb158b8dc691d26f6216",
+    "science_forge_work_item": "sf:program/work/observer-110-row-conjugate-pair-extension",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_110_row_conjugate_pair_extension_no_go.py",
+        "sha256": "078b74c4287bfdee23de5dce141f59f9c2ea1939ed2843471fab959cbee4cd41"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_110_row_conjugate_pair_extension_no_go.py",
+        "sha256": "26a35d8a1e2576e0fea1068c98693050e6ec98a2428826a5030124e9a4133809"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_110_row_conjugate_pair_extension_no_go.py",
+        "sha256": "47d1e316c0de102c0ee279d3f8174e2d60dfe3d0367304a03791e10c89afb748"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-110-row-conjugate-pair-extension-no-go-v1.schema.json",
+        "sha256": "710ebd3978233ef0e546312f6fef2c89902bd99919b7d4d008235946513b7443"
+      }
+    ]
+  },
+  "result_id": "BERGER_110_ROW_CONJUGATE_PAIR_EXTENSION_NO_GO",
+  "schema": "closed-universe-berger-110-row-conjugate-pair-extension-no-go-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

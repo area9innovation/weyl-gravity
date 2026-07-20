@@ -114,7 +114,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   attach the certified 188-row physical/current q2 interface to the 78-row relative mapping cofiber and solve or certify the remaining cross-incidence; causal Green data and the eighteen candidate-13 spectral receivers remain separate fail-closed gates
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; for Berger, compact-slab cutoff Volterra normal convergence, cutoff decomposability and the regular Cauchy morphisms' cone action are certified, and the global exact CCR-normalized Hadamard Krein covariance has been transported from the free to the cutoff and full indefinite rank-40 metric dilations, so construct a valid raw-companion or full graded-BV restriction and verify the BRST Ward identity and physical-cohomology positivity, while separately requesting a corrected q26-compatible Cauchy lift instead of the exactly rejected canonical graph lift; in parallel analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows, add remaining BV rows to the partial-BV five-carrier representative, classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    the action-derived temporal normalization triangle has invariant holonomy H=2 and full rank on the frozen 108-row carrier; its complete one-edge/support-one bounded classification yields necessary-condition loci only, and a 109-row nondegenerate pairing is exactly impossible, so await the typed Conflux rediscovery consumer or declare a 110-row conjugate-pair action extension, then regenerate q1/q2 from one pairing and substitute into the original arity-two verifier before any arity-three, K_Berger, observer-morphism, detector or Z2^C restriction; independently await a provenance-complete physical declaration under the certified v2 recoil contract
+Observer:    the action-derived temporal normalization triangle has invariant holonomy H=2 and full rank on the frozen 108-row carrier; 109 rows are impossible and the complete bounded parity-even first-order 110-row conjugate-pair action class is now obstructed after its unique normalized class cancels the old tau_star witness but retains tau_star<-(e1 A_0,e2 K0_12)=-2 g0 h0, so declare a strictly larger or higher-order common-action ansatz and regenerate/substitute q1/q2 before any arity-three, K_Berger, observer-morphism, detector or Z2^C restriction; the typed Conflux consumer remains unlanded, and the recoil stream independently awaits a provenance-complete physical declaration under its certified v2 contract
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
 
@@ -1208,14 +1208,27 @@ survive the first backreacted, normalized apparatus interaction?
    normalization loci and three support-one slack classes as algebraic
    necessary conditions, not repaired candidates, and proves that a one-row
    enlargement is singular because an antisymmetric `109 x 109` pairing has
-   zero determinant.  The first carrier dimension not excluded is 110, with
-   one complementary-degree conjugate pair.  Its representation and action
-   are not declared.  The active gate is either a landed typed Conflux
-   consumer that independently reproduces the known obstruction before
-   bounded exploration, or a directly declared 110-row action extension; in
-   either case both `q1` and `q2` must be regenerated from one pairing and
-   substituted independently into the original arity-two verifier.  A fitted
-   coefficient flip remains forbidden.
+   zero determinant.  The bounded 110-row successor now adds exactly one
+   complementary scalar conjugate pair.  Degree support excludes `(-1,2)`;
+   the surviving `(0,1)` pair has a nondegenerate signed unit pairing.  In the
+   complete parity-even, auxiliary-affine, action-arity-at-most-three,
+   first-order temporal-Ward-local class with a metric-natural old `A--K`
+   tensor and no clock/frame insertion inside that bilinear, the action basis is
+   `lambda tau e0 chi_plus + mu tau chi_plus
+   +sum_b beta_b chi g_b h_b<K_b,dA>`.  Modulo pair rescaling it has one
+   nondegenerate compatibility class.  Its regenerated two `q1` and 276
+   cyclic `q2` keys cancel the old
+   `tau_star <- (e0 e1 A_0,K0_01)` coefficient for both emitters, but original
+   substitution retains
+   `tau_star <- (e1 A_0,e2 K0_12)=-2 g0 h0`.  This new witness is the frozen
+   emitter unary crossed with frozen typed-Maxwell `q2`, while the auxiliary
+   action has zero `A_0--K0_12` Hessian support.  Thus this scoped 110-row
+   class is `OBSTRUCTED`; larger carriers, higher auxiliary differential
+   order and parity-odd actions remain open.  The active gate is a declared
+   strictly larger or higher-order common-action ansatz, followed by action
+   regeneration and independent original-rail substitution.  The typed
+   Conflux request remains unlanded and was not run.  A fitted coefficient
+   flip remains forbidden.
    Arity three,
    `K_Berger`, the observer morphism and
    `O_detector|Z2^C` remain unavailable.

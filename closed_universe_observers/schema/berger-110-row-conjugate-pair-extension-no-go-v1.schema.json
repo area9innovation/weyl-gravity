@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "bounded_extension_ansatz",
+    "compatibility_solution_locus",
+    "action_regeneration_and_substitution",
+    "minimal_no_go",
+    "proof_obligation_dag",
+    "activation_disposition",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-110-row-conjugate-pair-extension-no-go-v1"
+    },
+    "result_id": {
+      "const": "BERGER_110_ROW_CONJUGATE_PAIR_EXTENSION_NO_GO"
+    },
+    "setting_id": {"type": "string"},
+    "claim_status": {
+      "const": "OBSTRUCTED_BOUNDED_110_ROW_CONJUGATE_PAIR_ACTION_EXTENSION"
+    },
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 8,
+      "maxProperties": 8
+    },
+    "bounded_extension_ansatz": {
+      "type": "object",
+      "required": [
+        "bounds",
+        "degree_classification",
+        "representation",
+        "pairing",
+        "admissible_field_redefinitions",
+        "complete_decisive_action_basis"
+      ]
+    },
+    "compatibility_solution_locus": {
+      "type": "object",
+      "required": [
+        "prior_witness_equations",
+        "nondegenerate_branch",
+        "quotient_representative",
+        "class_count_modulo_pair_rescaling",
+        "derivation"
+      ]
+    },
+    "action_regeneration_and_substitution": {
+      "type": "object",
+      "required": [
+        "tested_bidegree",
+        "tested_original_output_row",
+        "normalized_action_parameters",
+        "regenerated_q1_key_count",
+        "regenerated_q2_key_count",
+        "specialized_tau_star_row_summary",
+        "prior_witness_after_substitution",
+        "second_emitter_prior_witness_after_substitution",
+        "constant_unary_exclusion_fixture",
+        "first_scoped_obstruction",
+        "auxiliary_action_support_at_first_obstruction",
+        "mutations",
+        "higher_output_rows_not_run"
+      ]
+    },
+    "minimal_no_go": {"type": "object"},
+    "proof_obligation_dag": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "activation_disposition": {"type": "object"},
+    "next_gate": {
+      "const": "DECLARE_A_STRICTLY_LARGER_OR_HIGHER_ORDER_COMMON_ACTION_CARRIER_ANSATZ_BEFORE_ANY_NEW_Q1_Q2_REPLAY"
+    },
+    "claim_boundary": {"type": "string", "minLength": 900},
+    "provenance": {"type": "object"}
+  }
+}

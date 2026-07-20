@@ -1,0 +1,113 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_110_ROW_CONJUGATE_PAIR_EXTENSION_NO_GO_TIER_RECEIPT",
+  "subject_result_id": "BERGER_110_ROW_CONJUGATE_PAIR_EXTENSION_NO_GO",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "science_forge_work_item": "sf:program/work/observer-110-row-conjugate-pair-extension",
+  "input_commit": "1f5ea0b2851d281fb056eb158b8dc691d26f6216",
+  "tested_tree_head": "fb5a2ea1d68ced5863177a029e87087a2c2a4684",
+  "commands": [
+    {
+      "test_tier": 0,
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_110_row_conjugate_pair_extension_no_go.py closed_universe_observers/verify_berger_110_row_conjugate_pair_extension_no_go.py closed_universe_observers/tests/test_berger_110_row_conjugate_pair_extension_no_go.py",
+      "elapsed_seconds": 0.06,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 0,
+      "command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md notes/universe-building-roadmap.md",
+      "elapsed_seconds": 0.02,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.generate_berger_110_row_conjugate_pair_extension_no_go --check --reuse-audit",
+      "elapsed_seconds": 0.35,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.verify_berger_110_row_conjugate_pair_extension_no_go",
+      "elapsed_seconds": 7.09,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_110_row_conjugate_pair_extension_no_go.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+      "elapsed_seconds": 19.63,
+      "status": "PASS",
+      "detail": "47 passed"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+      "elapsed_seconds": 1.51,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 jsonschema validation of the 110-row certificate and observer atlas fragment",
+      "elapsed_seconds": 0.23,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 2,
+      "command": "independent raw source-pair substitution in verify_berger_110_row_conjugate_pair_extension_no_go",
+      "elapsed_seconds": 7.09,
+      "status": "PASS",
+      "detail": "replayed both cancelled emitter-Diff witnesses, the surviving emitter/typed-Maxwell witness, zero auxiliary A0--K12 support, and sign/decoupling mutations"
+    },
+    {
+      "test_tier": "advisory",
+      "command": "bash ci/science-forge-shadow.sh",
+      "elapsed_seconds": 3.92,
+      "status": "ADVISORY_PASS_WITH_FINDINGS",
+      "detail": "pre-existing bridge drift, unpinned dirty Forge build and corpus growth to 1189 certificates versus baseline 976"
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": "SATISFIED by the decisive original arity-two source-pair chain and generated atlas consumer",
+    "tier_3": "NOT_RUN: no freeze, release, paper theorem, shared-core algebra change or quantum promotion"
+  },
+  "artifacts": [
+    {
+      "path": "closed_universe_observers/generate_berger_110_row_conjugate_pair_extension_no_go.py",
+      "sha256": "078b74c4287bfdee23de5dce141f59f9c2ea1939ed2843471fab959cbee4cd41"
+    },
+    {
+      "path": "closed_universe_observers/verify_berger_110_row_conjugate_pair_extension_no_go.py",
+      "sha256": "26a35d8a1e2576e0fea1068c98693050e6ec98a2428826a5030124e9a4133809"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_berger_110_row_conjugate_pair_extension_no_go.py",
+      "sha256": "47d1e316c0de102c0ee279d3f8174e2d60dfe3d0367304a03791e10c89afb748"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-110-row-conjugate-pair-extension-no-go-v1.schema.json",
+      "sha256": "710ebd3978233ef0e546312f6fef2c89902bd99919b7d4d008235946513b7443"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_110_ROW_CONJUGATE_PAIR_EXTENSION_NO_GO.json",
+      "sha256": "14adb35a29b7efb445832d5d0c5c803960727e767a1c89307c8a0cc49c655191"
+    },
+    {
+      "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "sha256": "cb17946291a10b63c952e8b133a17308f05f5440cc386029263231171cd1cbfa"
+    }
+  ],
+  "flags": {
+    "BOUNDED_110_ROW_PAIRING_NONDEGENERATE": true,
+    "BOUNDED_ACTION_BASIS_CLASSIFIED": true,
+    "Q1_Q2_REGENERATED_FROM_ONE_ACTION": true,
+    "PRIOR_TAU_STAR_WITNESSES_CANCELLED": true,
+    "SECOND_TAU_STAR_WITNESS_NONZERO": true,
+    "BOUNDED_110_ROW_EXTENSION_EXISTS": false,
+    "COMPLETE_ARITY_TWO_IDENTITY": false,
+    "Q3_AUTHORIZED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

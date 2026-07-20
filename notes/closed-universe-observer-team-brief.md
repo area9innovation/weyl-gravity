@@ -1335,19 +1335,40 @@ necessary-condition loci only, not repaired physics candidates.  No
 off-diagonal block belongs to the declared component-preserving family, and
 one additional carrier row is exactly ruled out because every antisymmetric
 `109 x 109` pairing is singular.  A conjugate two-row extension to dimension
-110 is the first dimension not excluded, but its Berger representation,
-action, pairing and regenerated `q1,q2` do not exist.
+110 was therefore the first dimension not excluded by parity alone.
 
-The currently active bridge is therefore the typed consumer/action-extension
-gate: either `sf:forge-request/conflux-observer-common-action-compatibility`
-must land and independently reproduce the known obstruction before bounded
-exploration, or a 110-row action-derived carrier must be declared directly.
-Its activation gate is regeneration of both `q1` and `q2` from one
-nondegenerate pairing followed by independent substitution into the original
-arity-two verifier.  The fail-closed atlas row remains
-`observer.berger.interaction.temporal_common_action_carrier_obstruction`,
-with symplectic/nonlinear status `OBSTRUCTED` and every detector/cone map
-`NO_CERTIFIED_MAP`.  This active bridge does not activate physical Bridge 3.
+`BERGER_110_ROW_CONJUGATE_PAIR_EXTENSION_NO_GO` now closes the complete
+parity-even, auxiliary-affine, action-arity-at-most-three, first-order
+temporal-Ward-local class with a metric-natural old `A--K` tensor and no
+clock/frame insertion inside that bilinear.  Degree support excludes a
+`(-1,2)` pair and leaves one trivial Berger/residual scalar pair
+`(chi,chi_plus)` of degrees `(0,1)`.  Its signed unit odd pairing has rank 110.
+Modulo the sole admissible pair rescaling, the bounded action basis
+
+```text
+lambda tau e0 chi_plus + mu tau chi_plus
++ sum_b beta_b chi g_b h_b <K_b,dA>
+```
+
+has one nondegenerate compatibility class:
+`lambda=1`, `mu=0`, `beta_0=beta_1=-1`.  Exact differentiation regenerates
+two `q1` keys and 276 cyclic `q2` keys.  Original-rail substitution cancels
+`tau_star <- (e0 e1 A_0,K0_01)` for both emitters, but retains
+`tau_star <- (e1 A_0,e2 K0_12)` with coefficient `-2 g0 h0`.  The latter
+source-isolates to frozen emitter `q1` crossed with frozen typed-Maxwell `q2`;
+the complete auxiliary action basis has zero `A_0--K_12` Hessian support.
+Decoupling restores the prior coefficient, the sign mutation doubles it, and
+the inherited factor-two null-vector remains a mutation only.
+
+The currently active bridge is therefore a strictly larger-carrier or
+higher-order action-extension declaration.  Its activation gate remains
+regeneration of both `q1` and `q2` from one nondegenerate pairing followed by
+independent substitution into the original arity-two verifier.  The typed
+Conflux request remains `REQUESTED` and was not run; even after it lands, a
+candidate alone cannot pass this gate.  The new fail-closed atlas row is
+`observer.berger.interaction.conjugate_pair_110_no_go`, with nonlinear status
+`OBSTRUCTED` and every detector/cone map `NO_CERTIFIED_MAP`.  This active
+bridge does not activate physical Bridge 3.
 
 Within that inactive bridge, the numerical recoil input-contract audit is now
 complete.  The next activation gate requires a provenance-complete

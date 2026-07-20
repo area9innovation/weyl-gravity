@@ -534,3 +534,21 @@ def test_two_j5_all_channel_column_binding_is_finite_and_fail_closed():
     assert "BERGER_RECOIL_TWO_J5_ALL_CHANNEL_COLUMN_BINDING" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_bounded_110_row_conjugate_pair_no_go_is_fail_closed():
+    row = next(
+        row
+        for row in build()["entries"]
+        if row["id"] == "observer.berger.interaction.conjugate_pair_110_no_go"
+    )
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["descriptions"]["nonlinear"] == "OBSTRUCTED"
+    assert row["descriptions"]["observational"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["response_rank"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "OBSTRUCTED"
+    assert "-2 g0 h0" in row["observer_data"]["survives_gauge_reduction"]["statement"]
+    assert "BERGER_110_ROW_CONJUGATE_PAIR_EXTENSION_NO_GO" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
