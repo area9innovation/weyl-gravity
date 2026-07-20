@@ -1,0 +1,477 @@
+{
+  "action_to_ward_theorem": {
+    "all_scalar_pair_counts_at_least_two": "For N>=2 scalar pairs, Z=U^T B still ranges over all 2x2 matrices, so additional copies do not enlarge the image.",
+    "cokernel_dimension": 440,
+    "formula": "Phi_2(U,B)=sum_(s,b) Z_sb C_sb, Z=U^T B",
+    "linear_column_order": [
+      "z_00",
+      "z_01",
+      "z_10",
+      "z_11"
+    ],
+    "linear_image_rank": 4,
+    "theorem": "The second conjugate pair removes the rank-one determinantal constraint on Z but introduces no new Ward column. Hence its reachable set is exactly the already certified four-column linear envelope, not a larger subspace of the Ward codomain.",
+    "two_pair_reachable_parameter_space_dimension": 4
+  },
+  "activation_disposition": {
+    "causal_branch_particle_or_quantum_promotion_authorized": false,
+    "common_action_q3_authorized": false,
+    "complete_112_row_scalar_two_pair_extension_exists": false,
+    "complete_arity_two_identity": false,
+    "detector_or_redshift_reconstruction_authorized": false
+  },
+  "atlas_status": "OBSTRUCTED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE certificate classifies the first complete larger-conjugate-pair class beyond the bounded 110-row no-go: exactly two trivial scalar degree-(0,1) conjugate pairs on a 112-row carrier, parity-even action arity at most three, one auxiliary row per Ward-relevant vertex, unary PBW basis span{1,e0}, and the same unique metric-natural <K_b,dA> old-field Hessian with every frozen old coefficient unchanged. The new pairing block is a general invertible 2x2 matrix and is normalized to identity; its residual GL2 action sends U to R U and B to R^(-T)B, leaving Z=U^T B invariant. On the full-rank-U branch the quotient normal form is (I,Z). Unlike one pair, two pairs realize every 2x2 Z, so the nonlinear rank-one restriction is genuinely removed. Exact differentiation regenerates all four unary and four binary action basis tensors, with complete signed cyclic variations. Nevertheless the Ward correction remains the same four-column image of rank four and cokernel dimension 440. The normalized representative independently replays and serializes all 824 original-input tau_star coefficients (848 formal monomials): both prior +g_b h_b projections cancel, while tau_star on e1 A_0 and e2 K0_12 remains exactly -2 g0 h0. A rank-two-Z mutation distinguishes the two-pair locus from the one-pair Segre cone but leaves that projection unchanged. For every scalar pair count N>=2, Z already ranges over all 2x2 matrices, so more scalar copies cannot enlarge the Ward image; the predecessor separately proves that higher outer scalar jet order alone cannot change old row labels. Thus the next necessary enlargement is a Berger-equivariant A--K Hessian representation channel with nonzero A_0--K_12 projection. Its smallest representation and sufficiency remain OPEN. No fitted vertex, silent frozen-row change, q3, detector, redshift, causal, branch, particle, Conflux, positivity or quantum claim is made, and no compact-product mode is identified with a Berger row.",
+  "claim_status": "OBSTRUCTED_COMPLETE_SCALAR_TWO_PAIR_112_ROW_EXTENSION",
+  "complete_enlarged_ansatz": {
+    "basis_regeneration": {
+      "binary_basis_key_counts": {
+        "b_00": 138,
+        "b_01": 138,
+        "b_10": 138,
+        "b_11": 138
+      },
+      "complete_binary_basis_key_count": 552,
+      "complete_unary_basis_key_count": 8,
+      "cyclicity": "each basis tensor is the complete signed variation of one displayed action monomial; the two pair copies have disjoint auxiliary rows",
+      "unary_basis_key_counts": {
+        "u_00": 2,
+        "u_01": 2,
+        "u_10": 2,
+        "u_11": 2
+      }
+    },
+    "bounds": {
+      "action_arity": "at most cubic",
+      "auxiliary_dependence": "one auxiliary row in every Ward-relevant vertex",
+      "frozen_embedding": "all old pairing/action/operator coefficients fixed",
+      "old_A_K_tensor": "metric-natural <K_b,dA> only; no clock/frame, parity-odd or component-changing insertion",
+      "parity": "even",
+      "unary_PBW_basis": "span{1,e0}"
+    },
+    "carrier": {
+      "Berger_representation": "two copies of the trivial real scalar",
+      "new_rows": [
+        {
+          "degree": 0,
+          "row": 108,
+          "row_id": "chi_0"
+        },
+        {
+          "degree": 1,
+          "row": 109,
+          "row_id": "chi_0_plus"
+        },
+        {
+          "degree": 0,
+          "row": 110,
+          "row_id": "chi_1"
+        },
+        {
+          "degree": 1,
+          "row": 111,
+          "row_id": "chi_1_plus"
+        }
+      ],
+      "old_rows": 108,
+      "total_rows": 112
+    },
+    "complete_Ward_relevant_action": "S_aux=sum_(i,s) U_is integral tau e0^s chi_i_plus +sum_(i,b) B_ib integral chi_i g_b h_b <K_b,dA>",
+    "completeness_proof": "Degree and parity leave only degree-(0,1) scalar pairs. Through unary order one, every invariant scalar operator is in span{1,e0}; with the declared metric-natural first-order old tensor, every A--K Hessian is proportional emitterwise to <K_b,dA>. Ward-relevant terms contain one auxiliary row. Terms with zero or at least two auxiliary rows, or without an old A--K Hessian, lie in the kernel of the old-old tau_star action-to-Ward map at arity two. Thus U and B span the complete quotient ansatz, not a fitted vertex list.",
+    "pairing": {
+      "general_new_block": "<chi_i,chi_j_plus>=P_ij with det(P)!=0",
+      "new_block_rank": 4,
+      "normalized_by_field_redefinition": "P=I_2",
+      "normalized_entries": [
+        [
+          108,
+          109,
+          1
+        ],
+        [
+          109,
+          108,
+          -1
+        ],
+        [
+          110,
+          111,
+          1
+        ],
+        [
+          111,
+          110,
+          -1
+        ]
+      ],
+      "total_pairing_rank": 112
+    }
+  },
+  "dependency_refs": {
+    "compatibility_theorem": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMMON_ACTION_COMPATIBILITY_THEOREM.json",
+      "result_id": "BERGER_108_ROW_COMMON_ACTION_COMPATIBILITY_THEOREM",
+      "sha256": "d0c9a410ffbe65a5a14e286e338a3374a5baac655ed72dd227aef34702d07f31"
+    },
+    "component_contract": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json",
+      "result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+      "sha256": "4113635be1493e0eac5e945a970ce4989f0484d5fa658a10bf893c63f5ae707c"
+    },
+    "obstruction_module": {
+      "path": "closed_universe_observers/certificates/BERGER_COMMON_ACTION_OBSTRUCTION_MODULE.json",
+      "result_id": "BERGER_COMMON_ACTION_OBSTRUCTION_MODULE",
+      "sha256": "f8dd21f6931a8e8dc45fdcf8364bd6decf04bf95ece8330e37aed1286d90802a"
+    },
+    "obstruction_payload": {
+      "path": "closed_universe_observers/certificates/BERGER_COMMON_ACTION_OBSTRUCTION_MODULE_PAYLOAD.json",
+      "result_id": "BERGER_COMMON_ACTION_OBSTRUCTION_MODULE_PAYLOAD",
+      "sha256": "0001a791e5980fb6337a308cf291ba8f083522a17b905c440cb0b7f47284f059"
+    },
+    "one_pair_no_go": {
+      "path": "closed_universe_observers/certificates/BERGER_110_ROW_CONJUGATE_PAIR_EXTENSION_NO_GO.json",
+      "result_id": "BERGER_110_ROW_CONJUGATE_PAIR_EXTENSION_NO_GO",
+      "sha256": "14adb35a29b7efb445832d5d0c5c803960727e767a1c89307c8a0cc49c655191"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "field_redefinition_quotient": {
+    "field_action": "chi -> R chi, chi_plus -> R^(-T) chi_plus, U -> R U, B -> R^(-T) B",
+    "full_rank_U_branch_normal_form": "(U,B)~(I_2,Z)",
+    "invariant": "Z=U^T B",
+    "normalized_compatibility_point": [
+      [
+        0,
+        0
+      ],
+      [
+        -1,
+        -1
+      ]
+    ],
+    "normalized_pairing_stabilizer": "R in GL_2(Q(sqrt(10)))",
+    "one_pair_locus": "rank(Z)<=1",
+    "two_pair_locus": "rank(Z)<=2=all 2x2 matrices"
+  },
+  "first_exact_obstruction": {
+    "display": "tau_star <- (e1 A_0,e2 K0_12) = -2 g0 h0",
+    "reason": "every C_sb column has zero A_0--K_12 Hessian support; surjectivity onto the four z coordinates cannot change this",
+    "record": {
+      "coefficient": [
+        {
+          "coefficient": {
+            "rational": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "sqrt10": {
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "factors": [
+            {
+              "kind": "parameter",
+              "name": "g0",
+              "spacetime_multiindex": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vertical_multiindex": []
+            },
+            {
+              "kind": "profile",
+              "name": "h0",
+              "spacetime_multiindex": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vertical_multiindex": []
+            }
+          ]
+        }
+      ],
+      "left_input_row": 55,
+      "left_pbw_multiindex": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "right_input_row": 87,
+      "right_pbw_multiindex": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    "source_pair": {
+      "q1": "emitter",
+      "q2": "base_maxwell_typed"
+    }
+  },
+  "mutations": {
+    "decouple_interaction": {
+      "Z": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "prior_witness_restored": true
+    },
+    "flip_interaction_sign": {
+      "Z": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "prior_witness_doubled": true
+    },
+    "inject_A0_K12_support": {
+      "scientific_status": "SUPPORT_MUTATION_ONLY; no complete Berger-equivariant action representation or repair is claimed",
+      "typed_projection_can_change": true
+    },
+    "nontrivial_pair_mixing": {
+      "R": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "Z_after": [
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "Z_before": [
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "detected": true
+    },
+    "rank_two_Z": {
+      "Z": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "admitted_by_two_pairs": true,
+      "detected": true,
+      "determinant": 1,
+      "excluded_by_one_pair": true,
+      "typed_maxwell_projection": "-2 g0 h0"
+    }
+  },
+  "next_gate": "CLASSIFY_THE_SMALLEST_BERGER_EQUIVARIANT_A_K_HESSIAN_REPRESENTATION_WITH_NONZERO_A0_K12_PROJECTION",
+  "next_minimal_enlargement": {
+    "forced_change": "add at least one Berger-equivariant old A--K Hessian representation channel with nonzero A_0--K_12 projection",
+    "higher_outer_scalar_jet_only": "PROVED_INSUFFICIENT_AT_EVERY_FINITE_ORDER_BY_PREDECESSOR",
+    "more_scalar_pairs": "PROVED_INSUFFICIENT_FOR_ALL_N>=2",
+    "smallest_representation": "OPEN",
+    "sufficiency": "OPEN_REQUIRES_ACTION_CYCLICITY_AND_ORIGINAL_REPLAY"
+  },
+  "original_ward_substitution": {
+    "complete_entry_payload_sha256": "8b8da9ac0a4a6214499fac078e2a4e26f51b2ae218ffe24014b53964b3f9bea5",
+    "disposition": "NONZERO_ORIGINAL_TAU_STAR_ROW",
+    "every_original_coefficient_serialized": true,
+    "representative": {
+      "B": [
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "U": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "Z_equals_U_transpose_B": [
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "pairing": "P=I_2"
+    },
+    "summary": {
+      "all_input_key_count": 856,
+      "all_input_monomial_count": 880,
+      "first_scoped_obstruction": {
+        "coefficient": [
+          {
+            "coefficient": {
+              "rational": {
+                "denominator": 1,
+                "numerator": -2
+              },
+              "sqrt10": {
+                "denominator": 1,
+                "numerator": 0
+              }
+            },
+            "factors": [
+              {
+                "kind": "parameter",
+                "name": "g0",
+                "spacetime_multiindex": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "vertical_multiindex": []
+              },
+              {
+                "kind": "profile",
+                "name": "h0",
+                "spacetime_multiindex": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "vertical_multiindex": []
+              }
+            ]
+          }
+        ],
+        "left_input_row": 55,
+        "left_pbw_multiindex": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "right_input_row": 87,
+        "right_pbw_multiindex": [
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      "maximum_total_input_order": 3,
+      "original_108_input_key_count": 824,
+      "original_108_input_monomial_count": 848,
+      "prior_witness_zero": true,
+      "second_emitter_prior_witness_zero": true
+    }
+  },
+  "payload_ref": {
+    "canonical_sha256": "1cf5f7e1aac4fba2710a5b2d75169ad425ab234516f7217e8959f0669b32907b",
+    "path": "closed_universe_observers/certificates/BERGER_112_ROW_TWO_PAIR_EXTENSION_NO_GO_PAYLOAD.json",
+    "result_id": "BERGER_112_ROW_TWO_PAIR_EXTENSION_NO_GO_PAYLOAD",
+    "sha256": "f73113bc36abe99165ff789eb61c7e011c5bb23df7a519a14be24c9a54f71bb5"
+  },
+  "proof_obligation_dag": [
+    {
+      "id": "P1_TWO_PAIR_CARRIER_AND_PAIRING",
+      "status": "CERTIFIED"
+    },
+    {
+      "id": "P2_COMPLETE_ACTION_QUOTIENT_BASIS",
+      "status": "CERTIFIED"
+    },
+    {
+      "id": "P3_ACTION_DERIVED_Q1_Q2_AND_CYCLICITY",
+      "status": "CERTIFIED"
+    },
+    {
+      "id": "P4_GL2_FIELD_REDEFINITION_QUOTIENT",
+      "status": "CERTIFIED"
+    },
+    {
+      "id": "P5_COMPLETE_ORIGINAL_WARD_REPLAY",
+      "status": "OBSTRUCTED"
+    },
+    {
+      "id": "P6_DECISIVE_MUTATIONS",
+      "status": "CERTIFIED"
+    },
+    {
+      "id": "P7_NEXT_MINIMAL_NECESSARY_ENLARGEMENT",
+      "status": "CERTIFIED"
+    }
+  ],
+  "provenance": {
+    "input_commit": "2077af36",
+    "science_forge_work_item": "sf:program/work/observer-higher-jet-common-action-extension",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_112_row_two_pair_extension_no_go.py",
+        "sha256": "f80698f26f2510189095b654110e6d6568e646d79a0d2863ccb8ac5980e7d183"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_112_row_two_pair_extension_no_go.py",
+        "sha256": "0029efdfbfc4fb5c4c377d299cb1f4f830fca81632f2d4209393256c7c556443"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_112_row_two_pair_extension_no_go.py",
+        "sha256": "265a902be5db373e70c25304fc52e454dd2a30e4ef16d23c65f38b6195b080a4"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-112-row-two-pair-extension-no-go-v1.schema.json",
+        "sha256": "c0a23889a49ba0261ad64a98a2c2a273cbdba1c081b0e6b6ef178f1e3119fd06"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-112-row-two-pair-extension-no-go-payload-v1.schema.json",
+        "sha256": "9cf9ac6036d9be8a87d1f4bc225f1fbc89fbf0d626108b89507fceaaa42ac32d"
+      }
+    ]
+  },
+  "result_id": "BERGER_112_ROW_TWO_PAIR_EXTENSION_NO_GO",
+  "schema": "closed-universe-berger-112-row-two-pair-extension-no-go-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

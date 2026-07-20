@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "complete_enlarged_ansatz",
+    "field_redefinition_quotient",
+    "action_to_ward_theorem",
+    "original_ward_substitution",
+    "first_exact_obstruction",
+    "next_minimal_enlargement",
+    "mutations",
+    "proof_obligation_dag",
+    "activation_disposition",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-112-row-two-pair-extension-no-go-v1"
+    },
+    "result_id": {"const": "BERGER_112_ROW_TWO_PAIR_EXTENSION_NO_GO"},
+    "setting_id": {"type": "string"},
+    "claim_status": {
+      "const": "OBSTRUCTED_COMPLETE_SCALAR_TWO_PAIR_112_ROW_EXTENSION"
+    },
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 5,
+      "maxProperties": 5
+    },
+    "payload_ref": {"type": "object"},
+    "complete_enlarged_ansatz": {"type": "object"},
+    "field_redefinition_quotient": {"type": "object"},
+    "action_to_ward_theorem": {"type": "object"},
+    "original_ward_substitution": {"type": "object"},
+    "first_exact_obstruction": {"type": "object"},
+    "next_minimal_enlargement": {"type": "object"},
+    "mutations": {"type": "object"},
+    "proof_obligation_dag": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7
+    },
+    "activation_disposition": {"type": "object"},
+    "next_gate": {
+      "const": "CLASSIFY_THE_SMALLEST_BERGER_EQUIVARIANT_A_K_HESSIAN_REPRESENTATION_WITH_NONZERO_A0_K12_PROJECTION"
+    },
+    "claim_boundary": {"type": "string", "minLength": 1800},
+    "provenance": {"type": "object"}
+  }
+}

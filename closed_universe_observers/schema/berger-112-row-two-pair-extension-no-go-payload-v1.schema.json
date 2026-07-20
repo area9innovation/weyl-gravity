@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "coefficient_field",
+    "representative",
+    "complete_original_tau_star_replay"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-112-row-two-pair-extension-no-go-payload-v1"
+    },
+    "result_id": {
+      "const": "BERGER_112_ROW_TWO_PAIR_EXTENSION_NO_GO_PAYLOAD"
+    },
+    "coefficient_field": {"type": "string"},
+    "representative": {"type": "object"},
+    "complete_original_tau_star_replay": {
+      "type": "object",
+      "required": [
+        "all_input_key_count",
+        "all_input_monomial_count",
+        "original_108_input_key_count",
+        "original_108_input_monomial_count",
+        "maximum_total_input_order",
+        "prior_witness_zero",
+        "second_emitter_prior_witness_zero",
+        "first_scoped_obstruction",
+        "entries"
+      ],
+      "properties": {
+        "entries": {"type": "array", "minItems": 824, "maxItems": 824}
+      }
+    }
+  }
+}

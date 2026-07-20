@@ -1398,6 +1398,38 @@ row.  Conflux was not enabled.  The active fail-closed atlas row is
 nonlinear/observational status `OBSTRUCTED` and every detector/cone map
 `NO_CERTIFIED_MAP`.  This bridge does not activate physical Bridge 3.
 
+`BERGER_112_ROW_TWO_PAIR_EXTENSION_NO_GO` now closes the first complete
+larger-conjugate-pair class beyond the 110-row obstruction.  It adds two
+trivial scalar degree-`(0,1)` pairs with a general nondegenerate `2 x 2`
+pairing block, normalized to identity.  The complete Ward-relevant action is
+
+```text
+sum_(i,s) U_is integral tau e0^s chi_i_plus
++ sum_(i,b) B_ib integral chi_i g_b h_b <K_b,dA>.
+```
+
+Modulo the residual `GL_2` field redefinition, its invariant is `Z=U^T B`.
+One pair restricts `Z` to rank at most one, whereas two pairs realize every
+`2 x 2` matrix.  This genuinely enlarges the nonlinear action locus, but it
+does not add a Ward column: every `Z` still acts through the same rank-four
+image with cokernel dimension 440.  Exact action differentiation regenerates
+eight unary and 552 binary basis keys.  The normalized representative
+`U=I`, `B=[[0,0],[-1,-1]]` serializes and independently replays all 824
+original-input `tau_star` coefficients and 848 formal monomials.  Both old
+`+g_b h_b` projections vanish, while
+`tau_star <- (e1 A_0,e2 K0_12)=-2 g0 h0` remains.
+
+This also closes the scalar-pair-count question: for every `N>=2`, `Z`
+already ranges over all `2 x 2` matrices, so adding more trivial scalar pairs
+cannot enlarge the image.  Together with the prior all-finite-outer-jet
+support theorem, the next necessary enlargement is not “more pairs” or
+“higher scalar jet”.  It must introduce at least one Berger-equivariant
+old-`A`--`K` Hessian representation channel with nonzero `A_0--K_12`
+projection.  The smallest such representation and its sufficiency remain
+`OPEN`.  The active fail-closed atlas row is now
+`observer.berger.interaction.two_pair_112_no_go`; q3, detector, redshift,
+cone, causal, branch, particle and quantum gates remain closed.
+
 Within that inactive bridge, the numerical recoil input-contract audit is now
 complete.  The next activation gate requires a provenance-complete
 `EXPLICIT_EXTERNAL_VALUES` declaration for both mass domains, both nonzero

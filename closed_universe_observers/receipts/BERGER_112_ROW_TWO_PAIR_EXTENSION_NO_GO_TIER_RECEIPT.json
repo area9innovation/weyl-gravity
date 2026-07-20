@@ -1,0 +1,124 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_112_ROW_TWO_PAIR_EXTENSION_NO_GO_TIER_RECEIPT",
+  "subject_result_id": "BERGER_112_ROW_TWO_PAIR_EXTENSION_NO_GO",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "science_forge_work_item": "sf:program/work/observer-higher-jet-common-action-extension",
+  "input_commit": "2077af36",
+  "tested_tree_head": "143b9b6a63b59250f6106b4e1f6530f972e402f3",
+  "commands": [
+    {
+      "test_tier": 0,
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_112_row_two_pair_extension_no_go.py closed_universe_observers/verify_berger_112_row_two_pair_extension_no_go.py closed_universe_observers/tests/test_berger_112_row_two_pair_extension_no_go.py",
+      "elapsed_seconds": 0.06,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 0,
+      "command": "python3 -m json.tool on both schemas and both generated JSON artifacts; git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md",
+      "elapsed_seconds": 0.04,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.generate_berger_112_row_two_pair_extension_no_go --emit",
+      "elapsed_seconds": 49.16,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.generate_berger_112_row_two_pair_extension_no_go --check --reuse-replay",
+      "elapsed_seconds": 0.49,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m closed_universe_observers.verify_berger_112_row_two_pair_extension_no_go",
+      "elapsed_seconds": 52.33,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_112_row_two_pair_extension_no_go.py closed_universe_observers/tests/test_berger_common_action_obstruction_module.py closed_universe_observers/tests/test_berger_110_row_conjugate_pair_extension_no_go.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+      "elapsed_seconds": 20.22,
+      "status": "PASS",
+      "detail": "56 passed"
+    },
+    {
+      "test_tier": 1,
+      "command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+      "elapsed_seconds": 1.57,
+      "status": "PASS"
+    },
+    {
+      "test_tier": 2,
+      "command": "independent complete original-row reconstruction in verify_berger_112_row_two_pair_extension_no_go",
+      "elapsed_seconds": 52.33,
+      "status": "PASS",
+      "detail": "regenerated action-derived q1/q2, replayed all 824 original tau_star keys and 848 formal monomials, checked rank-112 pairing, GL2 quotient invariance, rank-two-Z mutation, decoupling/sign projections and the surviving -2 g0 h0 coefficient"
+    },
+    {
+      "test_tier": "advisory",
+      "command": "bash ci/science-forge-shadow.sh",
+      "elapsed_seconds": 5.46,
+      "status": "ADVISORY_PASS_WITH_FINDINGS",
+      "detail": "pre-existing bridge certificate drift, unpinned dirty Forge build and corpus growth to 1202 certificates versus baseline 976"
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": "SATISFIED by the independent complete original Ward-row replay and generated atlas consumer",
+    "tier_3": "NOT_RUN: no freeze, release, paper theorem, shared-core algebra change or quantum promotion"
+  },
+  "artifacts": [
+    {
+      "path": "closed_universe_observers/generate_berger_112_row_two_pair_extension_no_go.py",
+      "sha256": "f80698f26f2510189095b654110e6d6568e646d79a0d2863ccb8ac5980e7d183"
+    },
+    {
+      "path": "closed_universe_observers/verify_berger_112_row_two_pair_extension_no_go.py",
+      "sha256": "0029efdfbfc4fb5c4c377d299cb1f4f830fca81632f2d4209393256c7c556443"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_berger_112_row_two_pair_extension_no_go.py",
+      "sha256": "265a902be5db373e70c25304fc52e454dd2a30e4ef16d23c65f38b6195b080a4"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-112-row-two-pair-extension-no-go-v1.schema.json",
+      "sha256": "c0a23889a49ba0261ad64a98a2c2a273cbdba1c081b0e6b6ef178f1e3119fd06"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-112-row-two-pair-extension-no-go-payload-v1.schema.json",
+      "sha256": "9cf9ac6036d9be8a87d1f4bc225f1fbc89fbf0d626108b89507fceaaa42ac32d"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_112_ROW_TWO_PAIR_EXTENSION_NO_GO.json",
+      "sha256": "868f8de85fe749f710bed8674770a1960ca14e11653d0cfe35dcc731a2897d88"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_112_ROW_TWO_PAIR_EXTENSION_NO_GO_PAYLOAD.json",
+      "sha256": "f73113bc36abe99165ff789eb61c7e011c5bb23df7a519a14be24c9a54f71bb5"
+    },
+    {
+      "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "sha256": "a8e0f521c5d32fdfe6cfc956d855991e6266781ca58429f3ae8cffb620292164"
+    }
+  ],
+  "flags": {
+    "PAIRING_RANK_112": true,
+    "COMPLETE_TWO_PAIR_ACTION_BASIS": true,
+    "Q1_Q2_REGENERATED_FROM_ACTION": true,
+    "GL2_QUOTIENT_CLASSIFIED": true,
+    "TWO_PAIR_Z_LOCUS_ALL_MAT2": true,
+    "EVERY_ORIGINAL_TAU_STAR_COEFFICIENT_REPLAYED": true,
+    "TYPED_MAXWELL_MINUS_TWO_PROJECTION_NONZERO": true,
+    "MORE_SCALAR_PAIRS_INSUFFICIENT_FOR_ALL_N_GTE_2": true,
+    "COMPLETE_112_ROW_EXTENSION_EXISTS": false,
+    "COMPLETE_ARITY_TWO_IDENTITY": false,
+    "Q3_AUTHORIZED": false,
+    "DETECTOR_REDSHIFT_AUTHORIZED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
