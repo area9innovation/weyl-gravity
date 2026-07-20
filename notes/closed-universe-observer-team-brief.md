@@ -2515,3 +2515,27 @@ rank, second-order cone, redshift, recoil and memory remain
 NO_CERTIFIED_MAP.  The active bridge is now the independently scheduled
 material-parent-56 executable unary and odd-pairing export, followed by
 assembly of the complete replacement-112 producer.
+
+## Active bridge: material-parent-56 mixed readout interface
+
+The material-parent exporter certifies the complete 56-row dictionary,
+rank-56 signed odd pairing, six internal \(D_K\) doublet Hessians and two
+memory Hessians.  Their 52 sparse unary entries over
+\(\mathbb Q[\Omega_K,s]\), formal adjoints, real and
+\(K_{\rm Berger}\) actions, and generic and \(s=0\) matrices pass exact
+reconstruction.  The internal coordinate map selecting the two memory rows
+has rank two.
+
+The full action-derived unary is nevertheless NO_CERTIFIED_MAP.  The
+quadratic term \(-\lambda_a\bar P_a\cdot F_a\) has four ordered nonzero
+mixed derivatives of coefficient \(-1\), while no dependency maps the
+components and detector profiles \(F_a\) to exact base rows, support sectors
+or zero-mode blocks.  Omitting these entries would not be the Hessian of the
+declared action.
+
+The fail-closed atlas row is
+observer.berger.interaction.material_parent56_executable_unary_export_shortfall.
+Its activation gate is a content-addressed \(F_a\)-to-base-row and
+detector-profile interface.  The replacement-112 producer remains a
+separate ready bridge; the 160-row consumer stays inactive until both base
+exports are complete.

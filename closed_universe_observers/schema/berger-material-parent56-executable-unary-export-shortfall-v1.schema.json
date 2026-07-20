@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "payload_ref", "gate_results", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-material-parent56-executable-unary-export-shortfall-v1"},
+    "result_id": {"const": "BERGER_MATERIAL_PARENT56_EXECUTABLE_UNARY_EXPORT_SHORTFALL"},
+    "claim_status": {"const": "SHORTFALL_MISSING_MIXED_BACKGROUND_READOUT_HESSIAN_ROW_INTERFACE"},
+    "atlas_status": {"const": "NO_CERTIFIED_MAP"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {"type": "object", "minProperties": 4},
+    "payload_ref": {"type": "object", "required": ["path", "result_id", "sha256", "canonical_sha256"]},
+    "gate_results": {"type": "object", "minProperties": 5},
+    "next_gate": {"const": "EXPORT_F_A_BASE_ROW_AND_DETECTOR_PROFILE_INTERFACE_FOR_MIXED_LAMBDA_F_HESSIAN"},
+    "claim_boundary": {"type": "string", "minLength": 1800}
+  },
+  "additionalProperties": true
+}

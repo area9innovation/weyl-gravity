@@ -249,6 +249,14 @@ def test_positive_mixed_phi2_component_jet_export_closes_only_variational_input(
     }
 
 
+def test_material_parent_executable_unary_stops_at_mixed_readout_interface():
+    row = next(row for row in build()["entries"] if row["id"] == "observer.berger.interaction.material_parent56_executable_unary_export_shortfall")
+    assert row["descriptions"]["symplectic"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["clock_and_rod_dependence"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_MATERIAL_PARENT56_EXECUTABLE_UNARY_EXPORT_SHORTFALL" in {e["result_id"] for e in row["evidence"]}
+
+
 def test_recoil_internal_readiness_is_certified_while_physical_activation_is_open():
     rows = {row["id"]: row for row in build()["entries"]}
     readiness = rows["observer.berger.detector_profile.recoil_stream_executable_readiness"]
