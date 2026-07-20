@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/quantum-weyl/parameterized-parity-even-five-form-factor-family-independent-audit-v1.schema.json",
+  "title": "Parameterized parity-even five-form-factor independent audit",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "source_commit",
+    "independence_boundary",
+    "import_closure",
+    "carrier_quotient_audit",
+    "endpoint_audit",
+    "zero_mode_and_holdout_audit",
+    "global_completion_audit",
+    "freeze_verdict",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-parameterized-parity-even-five-form-factor-family-independent-audit-v1"
+    },
+    "result_id": {
+      "const": "PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY_INDEPENDENT_AUDIT"
+    },
+    "result_state": {
+      "const": "AFFINE_GLOBAL_SPECTRAL_FAMILY_AND_ZERO_UNIVERSAL_SCHUR_KERNEL_INDEPENDENTLY_FROZEN"
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]
+    },
+    "source_commit": {"type": "string"},
+    "independence_boundary": {"type": "object"},
+    "import_closure": {"type": "object"},
+    "carrier_quotient_audit": {"type": "object"},
+    "endpoint_audit": {"type": "object"},
+    "zero_mode_and_holdout_audit": {"type": "object"},
+    "global_completion_audit": {"type": "object"},
+    "freeze_verdict": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "PARAMETERIZED_FAMILY_THEOREM_INDEPENDENTLY_FROZEN",
+        "RANK_TEN_AMBIGUITY_INDEPENDENTLY_VERIFIED",
+        "ZERO_UNIVERSAL_SCHUR_KERNEL_INDEPENDENTLY_VERIFIED",
+        "SPECIAL_BACKGROUND_INTERPOLATION_USED",
+        "COMPLETE_UNIVERSAL_BV_FIVE_FUNCTION_TABLE_COMPUTED",
+        "QME_OR_LORENTZIAN_PROMOTED"
+      ],
+      "properties": {
+        "PARAMETERIZED_FAMILY_THEOREM_INDEPENDENTLY_FROZEN": {"const": true},
+        "RANK_TEN_AMBIGUITY_INDEPENDENTLY_VERIFIED": {"const": true},
+        "ZERO_UNIVERSAL_SCHUR_KERNEL_INDEPENDENTLY_VERIFIED": {"const": true},
+        "SPECIAL_BACKGROUND_INTERPOLATION_USED": {"const": false},
+        "COMPLETE_UNIVERSAL_BV_FIVE_FUNCTION_TABLE_COMPUTED": {"const": false},
+        "QME_OR_LORENTZIAN_PROMOTED": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY_INDEPENDENT_AUDIT_TIER_RECEIPT",
+  "claim_id": "PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY_INDEPENDENT_AUDIT",
+  "date": "2026-07-20",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+  "artifacts": [
+    {
+      "path": "quantum-weyl/spectral/euclidean/parameterized_five_form_factor_independent_audit.py",
+      "sha256": "61f0a0f72757e6c030dc1c09ca39a4ef3f6e4691baa1dc4266cf92dca2da7273"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/verify_parameterized_five_form_factor_independent_audit.py",
+      "sha256": "c59143d04809fd60aee624982b4495657a699d0d0255c3ed39c65796bf43ea93"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/tests/test_parameterized_five_form_factor_independent_audit.py",
+      "sha256": "d55cfe8606ccc06e65c358843e35363938486606495ae719a2a975592d96b8a0"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/schema/parameterized-parity-even-five-form-factor-family-independent-audit-v1.schema.json",
+      "sha256": "9d5f42fa3c30f75a10b9136a26b4f0feeff6f6f24aa8b16ce1e1ed1e3513d6fc"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/certificates/PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY_INDEPENDENT_AUDIT.json",
+      "sha256": "254670931510a3d70a63556bd4734f3ce32486ad0d810143f04e88756cff7aaf"
+    },
+    {
+      "path": "quantum-weyl/reports/parameterized-five-form-factor-independent-audit.md",
+      "sha256": "dd3c59eb47f72dd5ecc5b22d73dd792d489c4c68f6394bcebbe4dad851b107e7"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <independent producer, verifier, tests>",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <schema, certificate, receipt>",
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit independent-audit paths>",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 quantum-weyl/spectral/euclidean/parameterized_five_form_factor_independent_audit.py --check",
+        "status": "PASS",
+        "elapsed_seconds": 0.18,
+        "rail": "deterministic certificate reproduction from hash-pinned inputs"
+      },
+      {
+        "command": "python3 quantum-weyl/spectral/euclidean/verify_parameterized_five_form_factor_independent_audit.py",
+        "status": "PASS",
+        "elapsed_seconds": 0.16,
+        "independent_rail": "reconstructs the carrier quotient, characters, endpoints, holdout and finite-matrix determinant ambiguity without invoking the terminal producer or reusing its ambiguity matrix"
+      },
+      {
+        "command": "python3 -m unittest quantum-weyl.spectral.euclidean.tests.test_parameterized_five_form_factor_independent_audit -v",
+        "status": "PASS",
+        "elapsed_seconds": 0.55,
+        "tests": 7,
+        "mutation_controls": "rank drop, relation mutation, zero third variation, special-background interpolation and universal-table/QME promotions are rejected"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "reason": "All imported mathematical inputs are unchanged content-addressed certificates; no shared operator, schema interface or downstream theorem changed."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped independent freeze audit, not a repository release, tag or shared-core-algebra change."
+  },
+  "claim_boundary": "The receipt certifies a method-distinct audit of the affine-family theorem, rank-ten finite Schur ambiguity and zero universal finite Schur-sensitive kernel. It does not compute a universal finite table, Gamma1/Q1, a QME disposition, or any Lorentzian, Hadamard, state, particle, scattering or unitarity result.",
+  "higher_tiers_not_run": [
+    {
+      "tier": 2,
+      "criterion": "No mathematical input, shared operator, schema consumer or promoted downstream theorem changed."
+    },
+    {
+      "tier": 3,
+      "criterion": "No release, tag, shared-core algebra change or explicit full-suite request occurred."
+    }
+  ]
+}

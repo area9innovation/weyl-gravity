@@ -2401,3 +2401,33 @@ This result is `LOCAL-ALGEBRAIC`/`LORENTZIAN-CAUSAL`.
 - [`COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1.json`](../d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1.json)
 - [`COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json`](../d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json)
 - [`quantum-paper12-active-clock-px2-no-go-status-correction-2026-07-20.md`](../reports/quantum-paper12-active-clock-px2-no-go-status-correction-2026-07-20.md)
+
+## Independent freeze of the parameterized five-form-factor theorem (2026-07-20)
+
+A method-distinct audit now freezes the statement that the generic
+parity-even third-curvature five-form-factor result is an affine family over
+global primed spectral data, not a universal finite coefficient table.
+Seventeen terminal and transitive inputs are imported by hash without
+invoking the terminal producer.
+
+The audit independently reconstructs the eleven-channel raw carrier, its
+single \(I_{28}\) relation, the ten-dimensional quotient and its \(S_3\)
+decomposition. It replays all contact and relative-IBP endpoints, full-BV
+multiplicities and zero-mode policies. Direct finite-matrix determinant
+variations then produce ten admissible smoothing completions with rank-ten
+finite ambiguity, so
+
+\[
+\dim\ker A^T=0.
+\]
+
+There is consequently no nonzero universal finite Schur-sensitive
+combination. Round-\(S^4\) and \(S^2\times S^2\) values do not interpolate
+the generic datum.
+
+This result is `LOCAL-ALGEBRAIC`/`EUCLIDEAN-SPECTRAL`. It does not compute a
+universal finite table, \(\Gamma_1\), \(Q_1\), a QME disposition, or any
+Lorentzian, Hadamard, state or particle result.
+
+- [`PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY_INDEPENDENT_AUDIT.json`](../quantum-weyl/spectral/euclidean/certificates/PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY_INDEPENDENT_AUDIT.json)
+- [`parameterized-five-form-factor-independent-audit.md`](../quantum-weyl/reports/parameterized-five-form-factor-independent-audit.md)
