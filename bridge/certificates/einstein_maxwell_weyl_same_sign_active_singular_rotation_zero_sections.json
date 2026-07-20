@@ -1,0 +1,99 @@
+{
+  "candidate17_20_section": {
+    "amplitudes": "in the first parity factor set f=sqrt(6*N_minus)*e_0 and g=sqrt(96*N_plus)*e_0; set the second parity factor to zero",
+    "candidates": [
+      17,
+      20
+    ],
+    "negative_amplitude_squared": "6*N_minus",
+    "occupation_check": [
+      "(1/6)*(6*N_minus)=N_minus",
+      "(1/16)*(1/6)*(96*N_plus)=N_plus"
+    ],
+    "positive_amplitude_squared": "96*N_plus",
+    "singularity_witness": "e_0 is the square-quartic kernel vector v([0:1:0])/2, so the occupied factor lies in S and the zero factor lies at the vertex; the product point lies in S_plus x S_minus"
+  },
+  "candidate18_section": {
+    "amplitudes": "set the occupied parity columns to f=sqrt(6*N_plus/alpha)*e_0 and g=sqrt(6*N_minus/beta)*e_0; set the other rank-one factor and all ten spectators to zero",
+    "candidate": 18,
+    "negative_amplitude_squared": "6*N_minus/beta",
+    "occupation_check": [
+      "alpha*(1/6)*(6*N_plus/alpha)=N_plus",
+      "beta*(1/6)*(6*N_minus/beta)=N_minus"
+    ],
+    "positive_amplitude_squared": "6*N_plus/alpha",
+    "singularity_witness": "the occupied 5x2 factor has rank one while the unused factor is its determinantal vertex, hence the point lies on a complete singular component",
+    "weights": "alpha=(w_x+3*w_y)/12>0 is the occupied positive internal diagonal weight and beta=6*h_minus>0 is the negative absolute weight"
+  },
+  "claim_boundary": "This proves existence of singular rotation-zero points for every positive occupation, not a complete real component decomposition, quotient topology, connectedness theorem, occupation gluing, final residual descent, all-orders integration, or causal, observational or quantum map.",
+  "classification": {
+    "candidate17_every_positive_occupation_has_singular_rotation_zero_point": true,
+    "candidate18_every_positive_occupation_has_singular_rotation_zero_point": true,
+    "candidate20_every_positive_occupation_has_singular_rotation_zero_point": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "final_residual_descent": false,
+    "global_zero_fibre_connected": false,
+    "lifted_rotation_singular_quotient_classified": false,
+    "node_phase_singular_quotient_classified": false,
+    "occupation_strata_glued": false,
+    "real_singular_component_decomposition_complete": false,
+    "singular_strata_avoidable_by_positive_norms": false,
+    "singular_strata_avoidable_by_rotation_zero_condition": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_ALL_POSITIVE_ACTIVE_NODE_OCCUPATIONS_ON_THREE_DISTINCT_CANDIDATES",
+  "interpretation": "The complex singular loci are physically unavoidable in the bounded real problem: fixing both active occupations and imposing all three lifted rotational constraints never removes them. Any complete candidate-17/18/20 quotient theorem must therefore include singular reduction rather than proving a result only on the regular divisor atlas.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify the node-phase and lifted-rotation quotient of these explicit singular carriers, beginning with the double-singular axisymmetric section and retaining candidate-18 spectators",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.py",
+    "generator_sha256": "88be0bad625dc6e1ea39d2eba972fafe82780d065d32973de932d22b2b4ccdf3",
+    "inputs": {
+      "candidate17_20_singular": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.json",
+        "sha256": "6b54d7672b9849998220716762f66a4ff81c4156dfd782c1b596c245862cb371"
+      },
+      "candidate18_singular": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution.json",
+        "sha256": "ce8d59ac4208ef226c4858849af1f26093fb44fb1dfea27e210425820983c480"
+      },
+      "phase_reduced": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
+        "sha256": "74bfe7b00c1e7ebe856c54d0275661954ede15c23e3c62363b4928149c83b72b"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_SINGULAR_ROTATION_ZERO_SECTIONS",
+  "result_state": "CANDIDATE17_18_20_SINGULAR_ROTATION_ZERO_SECTIONS_EXIST_AT_EVERY_POSITIVE_OCCUPATION",
+  "schema": "einstein-maxwell-weyl-same-sign-active-singular-rotation-zero-sections-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.schema.json",
+  "schema_sha256": "04b4b040546defa9201d3a5587ca1c6ee427f0a17075dfb69ed7b59b36df1dde",
+  "scope": {
+    "background": "candidates 17, 18 and 20 separately",
+    "boundaries": "closed S1_L times S2 before lifted-rotation or final residual quotient",
+    "carrier": "real positive-frequency fixed-active-occupation links after conjugate reality completion, before node-phase quotient",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidate-specific allowed compact momenta, never identified across candidates",
+    "m": "only m=0 is nonzero in the explicit section",
+    "omega": "candidate-specific certified collision frequency",
+    "parity": "one declared parity factor carries the section and the other is at its singular vertex",
+    "theory": "Weyl-Maxwell target"
+  },
+  "universal_section": {
+    "angular_vector": "e_0=(0,0,1,0,0), the m=0 binary-quartic coefficient",
+    "node_phase_actions_free": true,
+    "occupation_domain": "N_minus>0 and N_plus>0 arbitrary",
+    "reason_free": "both total active-node norms are strictly positive even though the unused parity factor is zero",
+    "rotation_moment_maps": "mu_J1=mu_J2=mu_J3=0 because the real completed section is axisymmetric"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections"
+  ]
+}

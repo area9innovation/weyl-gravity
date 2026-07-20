@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "universal_section", "candidate17_20_section", "candidate18_section", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-same-sign-active-singular-rotation-zero-sections-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_SINGULAR_ROTATION_ZERO_SECTIONS"},
+    "classification": {
+      "type": "object",
+      "properties": {
+        "candidate17_every_positive_occupation_has_singular_rotation_zero_point": {"const": true},
+        "candidate18_every_positive_occupation_has_singular_rotation_zero_point": {"const": true},
+        "candidate20_every_positive_occupation_has_singular_rotation_zero_point": {"const": true},
+        "real_singular_component_decomposition_complete": {"const": false},
+        "lifted_rotation_singular_quotient_classified": {"const": false},
+        "global_zero_fibre_connected": {"const": false}
+      },
+      "required": ["candidate17_every_positive_occupation_has_singular_rotation_zero_point", "candidate18_every_positive_occupation_has_singular_rotation_zero_point", "candidate20_every_positive_occupation_has_singular_rotation_zero_point", "real_singular_component_decomposition_complete", "lifted_rotation_singular_quotient_classified", "global_zero_fibre_connected"],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

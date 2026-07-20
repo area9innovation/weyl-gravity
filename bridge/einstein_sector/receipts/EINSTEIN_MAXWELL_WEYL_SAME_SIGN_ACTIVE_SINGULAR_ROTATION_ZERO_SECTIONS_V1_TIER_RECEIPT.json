@@ -1,0 +1,51 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_SINGULAR_ROTATION_ZERO_SECTIONS_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Exact singular axisymmetric sections at every positive active-node occupation on candidates 17, 18 and 20.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.json": "b4786c500f0dc52d3dd25d98224d37431f0869d2fc37fa1e9031bf72104be254",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.py": "88be0bad625dc6e1ea39d2eba972fafe82780d065d32973de932d22b2b4ccdf3",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.py": "68a8a908d968041585297341d9628c5bab3c6d79332a7bc0def6451960167b2d",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.py": "259120fb0c2a152d59e8e4d59ce9588c8bdcf4bdb4e1967f800541fcbc173c8b",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.schema.json": "04b4b040546defa9201d3a5587ca1c6ee427f0a17075dfb69ed7b59b36df1dde",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-active-singular-rotation-zero-sections.md": "fc964264b232233d76d9214ac40653259f2ba44b74c8edf3f59b7cbf4b6c56a8"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on producer, independent verifier and focused test",
+        "python3 -m json.tool on certificate and schema",
+        "git diff --check on scoped paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": {"producer_check": 0.51, "independent_verifier": 0.48, "focused_tests": 0.49},
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier independently recomputes all four occupation normalizations and reconstructs the common-square m=0 vector v([0:1:0])/2."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutation": "Promote global_zero_fibre_connected from false to true.",
+      "result": "The schema rejects the promotion."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESSED_INPUT_REPLAY",
+      "reason": "Both complex singular-locus theorems and the common-node phase theorem are hash-pinned; no broader real component or quotient claim is imported."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is an exact existence/independence witness, not the complete singular quotient or a programme freeze."
+    }
+  },
+  "claim_boundary": "CERTIFIED for existence at every positive active occupation. Real singular component decomposition, node-phase and lifted-rotation quotient topology, global connectedness and later physical maps remain fail-closed."
+}
