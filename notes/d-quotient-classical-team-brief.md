@@ -3032,6 +3032,80 @@ over the formal \(\hbar\)-adic ring when the leading trace Hessian vanishes.
 No full tau-adic Hadamard kernel, positivity, Lorentzian QME or particle
 claim follows.
 
+### Complex compensator local action and quartet preflight (2026-07-20)
+
+`COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1` freezes the first coherent
+action-derived complex-compensator theory on the formal \(\rho\ne0\) chart.
+The canonical internal symmetry is global \(U(1)\), not local \(U(1)\), so
+the phase remains a physical shift field and no unexported internal gauge
+ghost is hidden in the field inventory.
+
+The complete declared two-scalar-derivative/four-curvature-derivative action
+has independent radial and phase coefficients:
+
+\[
+\begin{aligned}
+S_0=\int\sqrt{-g}\bigg[&
+\frac{\alpha_B}{8}C^2
+-\frac{\kappa_r}{2}
+ \left((\nabla\rho)^2+\frac16R\rho^2\right)
+-\frac{\kappa_\theta}{2}\rho^2(\nabla\theta)^2
+-\frac{\lambda}{4}\rho^4\\
+&+\left(\frac{\rho}{f}\right)^4
+\left[\alpha_RR(\widehat g)^2+\alpha_EE_4(\widehat g)
++\alpha_PP_4(\widehat g)\right]\bigg],
+\qquad
+\widehat g=(\rho/f)^2g.
+\end{aligned}
+\]
+
+Writing \(\rho=f e^{-\tau}\), the exact canonical cotangent change is
+
+\[
+\widehat g^*=e^{2\tau}g^*,
+\qquad
+\widehat\tau^*=-\rho\rho^*+2g\!\cdot\!g^*.
+\]
+
+It contracts
+\((\tau,\omega,\omega^*,\widehat\tau^*)\), together with the pointwise
+nonminimal cotangent doublets, and leaves a nondegenerate
+\((\theta,\theta^*)\) pairing.  The reduced two-derivative coefficients are
+
+\[
+M_P^2=-\frac{\kappa_r f^2}{6},
+\qquad
+Z_\theta=\kappa_\theta f^2.
+\]
+
+Thus the general formal polar theory admits
+\(\kappa_r<0,\kappa_\theta>0\): the radial wrong-sign direction is removed by
+the Weyl quartet, while the physical phase has positive residue.  The exact
+fixture \((-1,1)\) gives \(M_P^2=f^2/6\) and \(Z_\theta=f^2\).
+
+This refinement exposes a sharp subfamily no-go.  A regular
+Cartesian-analytic \(O(2)\) kinetic term forces
+\(\kappa_r=\kappa_\theta=\kappa_\Phi\), hence
+
+\[
+M_P^2Z_\theta=-\frac{\kappa_\Phi^2f^4}{6}<0.
+\]
+
+It cannot make both residues positive.  The viable unequal-coefficient
+theory is smooth only in the declared polar chart and is not regular at
+\(\Phi=0\).
+
+For global \(U(1)\), \(\theta\) is one massless globally charged scalar.
+The radial field is absent from reduced cohomology.  An independent
+\(\alpha_RR(\widehat g)^2\) coupling adds the usual scalaron on the
+nondegenerate flat branch; Euler and Pontryagin remain topological and
+\(\Box R\) is horizontally exact.  The choice \(\rho=f\) is a Weyl gauge
+chart, not spontaneous Weyl breaking, and \(f\) is introduced rather than
+dynamically generated.  The Wess--Zumino functional remains at order
+\(\hbar\) and does not enter the classical Hessian.  Background solutions,
+causal Green operators, Hadamard states, anomaly coefficients and quantum
+claims remain open.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

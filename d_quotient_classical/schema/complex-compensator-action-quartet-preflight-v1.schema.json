@@ -1,0 +1,1047 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/pure-weyl-complex-compensator-action-quartet-preflight-v1.schema.json",
+  "title": "Complex compensator local action and BV quartet preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "domain",
+    "symmetry_choice",
+    "transformations",
+    "action_basis",
+    "Wess_Zumino_lifecycle",
+    "field_inventory",
+    "BV_master_action",
+    "canonical_dressed_change",
+    "sparse_operators",
+    "quartet_reduction",
+    "reduced_action",
+    "sign_and_regularity_classification",
+    "internal_symmetry_classification",
+    "exact_checks",
+    "dependencies",
+    "content_hashes",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-complex-compensator-action-quartet-preflight-v1"
+    },
+    "result_id": {
+      "const": "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1"
+    },
+    "result_state": {
+      "const": "LOCAL_ACTION_AND_QUARTET_CERTIFIED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC"
+      ]
+    },
+    "domain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "spacetime_dimension",
+        "signature",
+        "chart",
+        "field_parameterization",
+        "background_independence",
+        "boundaries"
+      ],
+      "properties": {
+        "spacetime_dimension": {
+          "const": 4
+        },
+        "signature": {
+          "const": "(-,+,+,+)"
+        },
+        "chart": {
+          "const": "rho=f exp(-tau), with f>0 and rho!=0"
+        },
+        "field_parameterization": {
+          "const": "Phi=rho exp(i theta)"
+        },
+        "background_independence": {
+          "const": "LOCAL_COVARIANT_NO_BACKGROUND_SELECTED"
+        },
+        "boundaries": {
+          "type": "string",
+          "minLength": 30
+        }
+      }
+    },
+    "symmetry_choice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gauge_group",
+        "internal_U1",
+        "global_action",
+        "local_U1_ghost_present",
+        "reason",
+        "alternatives"
+      ],
+      "properties": {
+        "gauge_group": {
+          "const": "Diff semidirect Weyl"
+        },
+        "internal_U1": {
+          "const": "GLOBAL"
+        },
+        "global_action": {
+          "const": "theta -> theta+constant"
+        },
+        "local_U1_ghost_present": {
+          "const": false
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 50
+        },
+        "alternatives": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "NONE",
+            "GLOBAL",
+            "LOCAL"
+          ],
+          "properties": {
+            "NONE": {
+              "type": "string",
+              "minLength": 20
+            },
+            "GLOBAL": {
+              "type": "string",
+              "minLength": 20
+            },
+            "LOCAL": {
+              "type": "string",
+              "minLength": 20
+            }
+          }
+        }
+      }
+    },
+    "transformations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finite",
+        "BRST_fields"
+      ],
+      "properties": {
+        "finite": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "g",
+            "rho",
+            "theta",
+            "tau",
+            "g_hat"
+          ],
+          "properties": {
+            "g": {
+              "const": "g -> exp(2 sigma) g"
+            },
+            "rho": {
+              "const": "rho -> exp(-sigma) rho"
+            },
+            "theta": {
+              "const": "theta -> theta"
+            },
+            "tau": {
+              "const": "tau -> tau+sigma"
+            },
+            "g_hat": {
+              "const": "g_hat=(rho/f)^2 g -> g_hat"
+            }
+          }
+        },
+        "BRST_fields": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "Q g",
+            "Q rho",
+            "Q theta",
+            "Q xi",
+            "Q omega",
+            "Q tau",
+            "Q g_hat"
+          ],
+          "properties": {
+            "Q g": {
+              "const": "L_xi g+2 omega g"
+            },
+            "Q rho": {
+              "const": "L_xi rho-omega rho"
+            },
+            "Q theta": {
+              "const": "L_xi theta"
+            },
+            "Q xi": {
+              "const": "xi^nu partial_nu xi"
+            },
+            "Q omega": {
+              "const": "L_xi omega"
+            },
+            "Q tau": {
+              "const": "L_xi tau+omega"
+            },
+            "Q g_hat": {
+              "const": "L_xi g_hat"
+            }
+          }
+        }
+      }
+    },
+    "action_basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "declared_class",
+        "original_variables",
+        "dressed_variables",
+        "independent_couplings",
+        "bulk_four_derivative_curvature_basis",
+        "topological_four_derivative_basis",
+        "horizontal_exact_not_independent",
+        "excluded_operator_classes",
+        "exhaustiveness_argument"
+      ],
+      "properties": {
+        "declared_class": {
+          "type": "string",
+          "minLength": 80
+        },
+        "original_variables": {
+          "type": "string",
+          "minLength": 100
+        },
+        "dressed_variables": {
+          "type": "string",
+          "minLength": 100
+        },
+        "independent_couplings": {
+          "const": [
+            "alpha_B",
+            "alpha_R",
+            "alpha_E",
+            "alpha_P",
+            "kappa_r",
+            "kappa_theta",
+            "lambda",
+            "f"
+          ]
+        },
+        "bulk_four_derivative_curvature_basis": {
+          "const": [
+            "C(g_hat)^2",
+            "R(g_hat)^2"
+          ]
+        },
+        "topological_four_derivative_basis": {
+          "const": [
+            "E4(g_hat)",
+            "P4(g_hat)=C(g_hat) dual C(g_hat)"
+          ]
+        },
+        "horizontal_exact_not_independent": {
+          "const": "Box_hat R(g_hat)"
+        },
+        "excluded_operator_classes": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "exhaustiveness_argument": {
+          "type": "string",
+          "minLength": 120
+        }
+      }
+    },
+    "Wess_Zumino_lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classical_action_contains_WZ",
+        "lifecycle",
+        "formal_term",
+        "cannot_change_classical_Hessian"
+      ],
+      "properties": {
+        "classical_action_contains_WZ": {
+          "const": false
+        },
+        "lifecycle": {
+          "const": "ORDER_HBAR_LOCAL_COUNTERTERM_ONLY"
+        },
+        "formal_term": {
+          "type": "string",
+          "minLength": 20
+        },
+        "cannot_change_classical_Hessian": {
+          "const": true
+        }
+      }
+    },
+    "field_inventory": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "items": {
+        "$ref": "#/$defs/generator"
+      }
+    },
+    "BV_master_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimal",
+        "dressed_minimal",
+        "nonminimal",
+        "antifield_rule",
+        "explicit_new_Euler_rows",
+        "classical_master_equation",
+        "proof"
+      ],
+      "properties": {
+        "minimal": {
+          "type": "string",
+          "minLength": 40
+        },
+        "dressed_minimal": {
+          "type": "string",
+          "minLength": 50
+        },
+        "nonminimal": {
+          "type": "string",
+          "minLength": 30
+        },
+        "antifield_rule": {
+          "type": "string",
+          "minLength": 40
+        },
+        "explicit_new_Euler_rows": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "Euler_theta",
+            "Euler_rho_two_derivative",
+            "Euler_tau_hat",
+            "Q_omega_star_Weyl_part",
+            "Q_tau_hat_star_Weyl_part"
+          ],
+          "properties": {
+            "Euler_theta": {
+              "type": "string"
+            },
+            "Euler_rho_two_derivative": {
+              "type": "string"
+            },
+            "Euler_tau_hat": {
+              "const": "ZERO because S0 is tau-independent in dressed variables"
+            },
+            "Q_omega_star_Weyl_part": {
+              "const": "tau_hat_star"
+            },
+            "Q_tau_hat_star_Weyl_part": {
+              "const": "ZERO"
+            }
+          }
+        },
+        "classical_master_equation": {
+          "const": "(S_min+S_nm,S_min+S_nm)=0"
+        },
+        "proof": {
+          "type": "string",
+          "minLength": 100
+        }
+      }
+    },
+    "canonical_dressed_change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coordinates",
+        "inverse",
+        "canonical_one_form_identity",
+        "formal_completion"
+      ],
+      "properties": {
+        "coordinates": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "inverse": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "canonical_one_form_identity": {
+          "type": "string",
+          "minLength": 80
+        },
+        "formal_completion": {
+          "const": "tau-adic local analytic completion at rho=f"
+        }
+      }
+    },
+    "sparse_operators": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Weyl_quartet",
+        "nonminimal_doublet"
+      ],
+      "properties": {
+        "Weyl_quartet": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "ordered_basis",
+            "Q_W",
+            "h_W",
+            "identity"
+          ],
+          "properties": {
+            "ordered_basis": {
+              "const": [
+                "tau",
+                "omega",
+                "omega_star",
+                "tau_hat_star"
+              ]
+            },
+            "Q_W": {
+              "$ref": "#/$defs/sparseMatrix4"
+            },
+            "h_W": {
+              "$ref": "#/$defs/sparseMatrix4"
+            },
+            "identity": {
+              "const": "Q_W h_W+h_W Q_W=1"
+            }
+          }
+        },
+        "nonminimal_doublet": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "ordered_basis",
+            "multiplicity",
+            "Q_nm",
+            "h_nm",
+            "identity"
+          ],
+          "properties": {
+            "ordered_basis": {
+              "const": [
+                "bar_c",
+                "b",
+                "b_star",
+                "bar_c_star"
+              ]
+            },
+            "multiplicity": {
+              "const": {
+                "diffeomorphism": 4,
+                "Weyl": 1
+              }
+            },
+            "Q_nm": {
+              "$ref": "#/$defs/sparseMatrix4"
+            },
+            "h_nm": {
+              "$ref": "#/$defs/sparseMatrix4"
+            },
+            "identity": {
+              "const": "Q_nm h_nm+h_nm Q_nm=1"
+            }
+          }
+        }
+      }
+    },
+    "quartet_reduction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "projection",
+        "inclusion",
+        "homotopy",
+        "remaining_minimal_fields",
+        "remaining_odd_pairing",
+        "radial_kinetic_sign_is_physical_after_reduction",
+        "phase_pairing_nondegenerate"
+      ],
+      "properties": {
+        "projection": {
+          "type": "string"
+        },
+        "inclusion": {
+          "type": "string"
+        },
+        "homotopy": {
+          "type": "string"
+        },
+        "remaining_minimal_fields": {
+          "const": [
+            "g_hat",
+            "theta",
+            "xi",
+            "g_hat_star",
+            "theta_star",
+            "xi_star"
+          ]
+        },
+        "remaining_odd_pairing": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "radial_kinetic_sign_is_physical_after_reduction": {
+          "const": false
+        },
+        "phase_pairing_nondegenerate": {
+          "const": true
+        }
+      }
+    },
+    "reduced_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rho_equals_f_is",
+        "action",
+        "Einstein_convention",
+        "Planck_mass_squared",
+        "phase_wave_residue",
+        "vacuum_energy_density",
+        "geometric_cosmological_constant",
+        "flat_quadratic_scalar_spectrum",
+        "higher_curvature_disposition"
+      ],
+      "properties": {
+        "rho_equals_f_is": {
+          "const": "A_WEYL_GAUGE_CHART_NOT_SPONTANEOUS_WEYL_BREAKING"
+        },
+        "action": {
+          "type": "string",
+          "minLength": 100
+        },
+        "Einstein_convention": {
+          "type": "string"
+        },
+        "Planck_mass_squared": {
+          "const": "M_P^2=-kappa_r f^2/6"
+        },
+        "phase_wave_residue": {
+          "const": "Z_theta=kappa_theta f^2"
+        },
+        "vacuum_energy_density": {
+          "const": "V0=lambda f^4/4"
+        },
+        "geometric_cosmological_constant": {
+          "type": "string"
+        },
+        "flat_quadratic_scalar_spectrum": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "theta",
+            "radial_tau",
+            "R_squared_scalaron",
+            "alpha_R_zero"
+          ],
+          "properties": {
+            "theta": {
+              "type": "string"
+            },
+            "radial_tau": {
+              "type": "string"
+            },
+            "R_squared_scalaron": {
+              "type": "string"
+            },
+            "alpha_R_zero": {
+              "type": "string"
+            }
+          }
+        },
+        "higher_curvature_disposition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "alpha_B",
+            "alpha_R",
+            "alpha_E",
+            "alpha_P",
+            "Box_R"
+          ],
+          "properties": {
+            "alpha_B": {
+              "type": "string"
+            },
+            "alpha_R": {
+              "type": "string"
+            },
+            "alpha_E": {
+              "type": "string"
+            },
+            "alpha_P": {
+              "type": "string"
+            },
+            "Box_R": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "sign_and_regularity_classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "formal_polar_family",
+        "Cartesian_analytic_complex_scalar_subfamily",
+        "formal_chart_price"
+      ],
+      "properties": {
+        "formal_polar_family": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "independent_parameters",
+            "positive_Einstein_condition",
+            "positive_phase_residue_condition",
+            "simultaneously_feasible",
+            "exact_fixture",
+            "interpretation"
+          ],
+          "properties": {
+            "independent_parameters": {
+              "const": [
+                "kappa_r",
+                "kappa_theta"
+              ]
+            },
+            "positive_Einstein_condition": {
+              "const": "kappa_r<0"
+            },
+            "positive_phase_residue_condition": {
+              "const": "kappa_theta>0"
+            },
+            "simultaneously_feasible": {
+              "const": true
+            },
+            "exact_fixture": {
+              "const": {
+                "kappa_r": -1,
+                "kappa_theta": 1,
+                "M_P_squared": "f^2/6",
+                "Z_theta": "f^2"
+              }
+            },
+            "interpretation": {
+              "type": "string",
+              "minLength": 80
+            }
+          }
+        },
+        "Cartesian_analytic_complex_scalar_subfamily": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "constraint",
+            "product_identity",
+            "nonzero_product_sign",
+            "simultaneously_positive",
+            "status",
+            "scope"
+          ],
+          "properties": {
+            "constraint": {
+              "const": "kappa_theta=kappa_r=kappa_Phi"
+            },
+            "product_identity": {
+              "const": "M_P^2 Z_theta=-kappa_Phi^2 f^4/6"
+            },
+            "nonzero_product_sign": {
+              "const": "NEGATIVE"
+            },
+            "simultaneously_positive": {
+              "const": false
+            },
+            "status": {
+              "const": "OBSTRUCTED"
+            },
+            "scope": {
+              "type": "string"
+            }
+          }
+        },
+        "formal_chart_price": {
+          "type": "string",
+          "minLength": 60
+        }
+      }
+    },
+    "internal_symmetry_classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "GLOBAL",
+        "NONE",
+        "LOCAL"
+      ],
+      "properties": {
+        "GLOBAL": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "theta_status",
+            "ghost",
+            "Noether_current"
+          ],
+          "properties": {
+            "theta_status": {
+              "const": "PHYSICAL_MASSLESS_GLOBALLY_CHARGED"
+            },
+            "ghost": {
+              "const": "NONE"
+            },
+            "Noether_current": {
+              "type": "string"
+            }
+          }
+        },
+        "NONE": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "theta_status",
+            "ghost",
+            "potential"
+          ],
+          "properties": {
+            "theta_status": {
+              "const": "PHYSICAL_GENERICALLY_MASSIVE_IF_U''!=0"
+            },
+            "ghost": {
+              "const": "NONE"
+            },
+            "potential": {
+              "const": "rho^4 U(theta)"
+            }
+          }
+        },
+        "LOCAL": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "theta_status",
+            "required_new_rows",
+            "included_here"
+          ],
+          "properties": {
+            "theta_status": {
+              "const": "GAUGED_STUECKELBERG_ONLY_IN_AN_EXTENDED_THEORY"
+            },
+            "required_new_rows": {
+              "$ref": "#/$defs/nonemptyStrings"
+            },
+            "included_here": {
+              "const": false
+            }
+          }
+        }
+      }
+    },
+    "exact_checks": {
+      "$ref": "#/$defs/booleanMap"
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strict_minimal_BV",
+        "WZ_cotangent_lift",
+        "positive_polar_clock_fixture",
+        "strict_tau_causal_obstruction"
+      ],
+      "properties": {
+        "strict_minimal_BV": {
+          "$ref": "#/$defs/dependency"
+        },
+        "WZ_cotangent_lift": {
+          "$ref": "#/$defs/dependency"
+        },
+        "positive_polar_clock_fixture": {
+          "$ref": "#/$defs/dependency"
+        },
+        "strict_tau_causal_obstruction": {
+          "$ref": "#/$defs/dependency"
+        }
+      }
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_manifest_sha256",
+        "field_inventory_sha256",
+        "BV_manifest_sha256",
+        "operator_manifest_sha256",
+        "preflight_core_sha256"
+      ],
+      "properties": {
+        "action_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "field_inventory_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "BV_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "operator_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "preflight_core_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "LOCAL_ACTION_CERTIFIED",
+        "MINIMAL_AND_NONMINIMAL_BV_CERTIFIED",
+        "RADIAL_QUARTET_CERTIFIED",
+        "FORMAL_POLAR_EINSTEIN_PHASE_SIGN_FEASIBLE",
+        "CARTESIAN_ANALYTIC_COMPLEX_SCALAR_SIGN_OBSTRUCTED",
+        "CAUSAL_GREEN_OPERATOR",
+        "HADAMARD_STATE",
+        "ANOMALY_COEFFICIENT",
+        "QUANTUM_MASTER_EQUATION",
+        "PARTICLE_OR_UNITARITY"
+      ],
+      "properties": {
+        "LOCAL_ACTION_CERTIFIED": {
+          "const": true
+        },
+        "MINIMAL_AND_NONMINIMAL_BV_CERTIFIED": {
+          "const": true
+        },
+        "RADIAL_QUARTET_CERTIFIED": {
+          "const": true
+        },
+        "FORMAL_POLAR_EINSTEIN_PHASE_SIGN_FEASIBLE": {
+          "const": true
+        },
+        "CARTESIAN_ANALYTIC_COMPLEX_SCALAR_SIGN_OBSTRUCTED": {
+          "const": true
+        },
+        "CAUSAL_GREEN_OPERATOR": {
+          "const": false
+        },
+        "HADAMARD_STATE": {
+          "const": false
+        },
+        "ANOMALY_COEFFICIENT": {
+          "const": false
+        },
+        "QUANTUM_MASTER_EQUATION": {
+          "const": false
+        },
+        "PARTICLE_OR_UNITARITY": {
+          "const": false
+        }
+      }
+    },
+    "next_gate": {
+      "type": "string",
+      "minLength": 100
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 400
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "nonemptyStrings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "properties": {
+        "numerator": {
+          "type": "integer"
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "sparseEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row",
+        "column",
+        "coefficient"
+      ],
+      "properties": {
+        "row": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "column": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "coefficient": {
+          "$ref": "#/$defs/rational"
+        }
+      }
+    },
+    "sparseMatrix4": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row_count",
+        "column_count",
+        "entries",
+        "sha256"
+      ],
+      "properties": {
+        "row_count": {
+          "const": 4
+        },
+        "column_count": {
+          "const": 4
+        },
+        "entries": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "$ref": "#/$defs/sparseEntry"
+          }
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "generator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "symbol",
+        "role",
+        "ghost_number",
+        "antifield_number",
+        "Grassmann_parity",
+        "tensor_type",
+        "sector",
+        "real_structure"
+      ],
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "field",
+            "diffeomorphism_ghost",
+            "Weyl_ghost",
+            "antifield",
+            "antighost",
+            "multiplier"
+          ]
+        },
+        "ghost_number": {
+          "type": "integer",
+          "minimum": -2,
+          "maximum": 1
+        },
+        "antifield_number": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "Grassmann_parity": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "tensor_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sector": {
+          "enum": [
+            "minimal",
+            "nonminimal"
+          ]
+        },
+        "real_structure": {
+          "const": "REAL"
+        }
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "booleanMap": {
+      "type": "object",
+      "minProperties": 11,
+      "maxProperties": 11,
+      "additionalProperties": {
+        "const": true
+      }
+    }
+  }
+}

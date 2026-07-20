@@ -92,6 +92,24 @@ def verify() -> None:
         or "No full tau-adic Hadamard kernel" not in wz_causal["claim_boundary"]
     ):
         raise AssertionError("Wess-Zumino causal trace obstruction drifted")
+    compensator = by_id[
+        "classical.complex_compensator.local_bv.action_quartet_preflight"
+    ]
+    if (
+        compensator["descriptions"]["causal"] != "NOT_APPLICABLE"
+        or compensator["descriptions"]["symplectic"] != "CERTIFIED"
+        or compensator["descriptions"]["observational"] != "NO_CERTIFIED_MAP"
+        or compensator["descriptions"]["quantum"] != "OPEN"
+        or "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1"
+        not in {item["result_id"] for item in compensator["evidence"]}
+        or "kappa_r=kappa_theta is sign-obstructed"
+        not in compensator["claim_boundary"]
+        or "f is introduced rather than generated"
+        not in compensator["claim_boundary"]
+        or "No background, causal Green, Hadamard"
+        not in compensator["claim_boundary"]
+    ):
+        raise AssertionError("complex compensator action atlas boundary drifted")
     stability = by_id["classical.crosswalk.weak_background_causal_vs_residual_d"]
     if (
         stability["descriptions"]["causal"] != "CERTIFIED"

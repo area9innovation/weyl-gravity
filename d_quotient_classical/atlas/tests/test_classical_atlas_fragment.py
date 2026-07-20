@@ -62,6 +62,34 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             "No full tau-adic Hadamard kernel", entry["claim_boundary"]
         )
 
+    def test_complex_compensator_action_preflight_is_local_and_fail_closed(self) -> None:
+        entry = self.entries[
+            "classical.complex_compensator.local_bv.action_quartet_preflight"
+        ]
+        self.assertEqual(entry["descriptions"]["causal"], "NOT_APPLICABLE")
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(
+            entry["descriptions"]["observational"], "NO_CERTIFIED_MAP"
+        )
+        self.assertEqual(entry["descriptions"]["quantum"], "OPEN")
+        self.assertIn("not a mode or particle carrier", entry["scope"]["carrier"])
+        self.assertIn(
+            "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "kappa_r=kappa_theta is sign-obstructed",
+            entry["claim_boundary"],
+        )
+        self.assertIn(
+            "f is introduced rather than generated",
+            entry["claim_boundary"],
+        )
+        self.assertIn(
+            "No background, causal Green, Hadamard",
+            entry["claim_boundary"],
+        )
+
     def test_sharp_green_transfer_crosswalk_has_no_mode_identification(self) -> None:
         theorem_id = "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1"
         for chirality in ("plus", "minus"):

@@ -1,0 +1,559 @@
+{
+  "BV_master_action": {
+    "antifield_rule": "Q z_star=-Euler_z(S0)-[D_z(Q fields)]^dagger z_star; Q ghost_star is the corresponding Noether moment map",
+    "classical_master_equation": "(S_min+S_nm,S_min+S_nm)=0",
+    "dressed_minimal": "S_min=S0[g_hat,theta]+int[g_hat_star L_xi g_hat+theta_star L_xi theta+tau_hat_star(L_xi tau+omega)+xi_star Qxi+omega_star L_xi omega]",
+    "explicit_new_Euler_rows": {
+      "Euler_rho_two_derivative": "kappa_r Box rho-kappa_r R rho/6-kappa_theta rho(nabla theta)^2-lambda rho^3",
+      "Euler_tau_hat": "ZERO because S0 is tau-independent in dressed variables",
+      "Euler_theta": "kappa_theta nabla_mu(rho^2 nabla^mu theta)",
+      "Q_omega_star_Weyl_part": "tau_hat_star",
+      "Q_tau_hat_star_Weyl_part": "ZERO"
+    },
+    "minimal": "S_min=S0+int[g_star Qg+rho_star Qrho+theta_star Qtheta+xi_star Qxi+omega_star Qomega]",
+    "nonminimal": "S_nm=int[bar_xi_star b_xi+bar_omega_star b_omega], with the Diff-covariant cotangent lift",
+    "proof": "S0 is Diff and Weyl invariant, the semidirect gauge algebra closes off shell, and all antifield rows are its canonical cotangent lift; the nonminimal pairs are covariant doublets."
+  },
+  "Wess_Zumino_lifecycle": {
+    "cannot_change_classical_Hessian": true,
+    "classical_action_contains_WZ": false,
+    "formal_term": "hbar times [c B_C-a B_E+p B_P+b B_BoxR]",
+    "lifecycle": "ORDER_HBAR_LOCAL_COUNTERTERM_ONLY"
+  },
+  "action_basis": {
+    "bulk_four_derivative_curvature_basis": [
+      "C(g_hat)^2",
+      "R(g_hat)^2"
+    ],
+    "declared_class": "formal rho!=0 local polar actions; global U(1); at most two derivatives in the scalar sector and four curvature derivatives; constant real couplings; equality modulo total derivatives and four-dimensional curvature identities",
+    "dressed_variables": "S0=int sqrt(-g_hat){alpha_B C(g_hat)^2/8+alpha_R R(g_hat)^2+alpha_E E4(g_hat)+alpha_P P4(g_hat)-kappa_r f^2 R(g_hat)/12-kappa_theta f^2(nabla_hat theta)^2/2-lambda f^4/4}",
+    "excluded_operator_classes": [
+      "higher-than-two-derivative theta operators",
+      "nonconstant theta-dependent couplings",
+      "fields other than g,rho,theta and their BV/nonminimal partners"
+    ],
+    "exhaustiveness_argument": "Global U(1) makes theta shift invariant and forces the engineering-dimension-four potential to lambda rho^4/4. At two scalar derivatives the radial conformal Laplacian and rho^2(nabla theta)^2 are the two independent polar invariants. In four dimensions the curvature-squared quotient is spanned by C^2,R^2,E4,P4 modulo Box R and algebraic identities.",
+    "horizontal_exact_not_independent": "Box_hat R(g_hat)",
+    "independent_couplings": [
+      "alpha_B",
+      "alpha_R",
+      "alpha_E",
+      "alpha_P",
+      "kappa_r",
+      "kappa_theta",
+      "lambda",
+      "f"
+    ],
+    "original_variables": "S0=int sqrt(-g){alpha_B C^2/8-kappa_r[(nabla rho)^2+R rho^2/6]/2-kappa_theta rho^2(nabla theta)^2/2-lambda rho^4/4+(rho/f)^4[alpha_R R(g_hat)^2+alpha_E E4(g_hat)+alpha_P P4(g_hat)]}",
+    "topological_four_derivative_basis": [
+      "E4(g_hat)",
+      "P4(g_hat)=C(g_hat) dual C(g_hat)"
+    ]
+  },
+  "canonical_dressed_change": {
+    "canonical_one_form_identity": "g_star delta g+rho_star delta rho+theta_star delta theta=g_hat_star delta g_hat+tau_hat_star delta tau+theta_hat_star delta theta",
+    "coordinates": [
+      "tau=-log(rho/f)",
+      "g_hat=exp(-2 tau)g=(rho/f)^2 g",
+      "g_hat_star=exp(2 tau)g_star",
+      "tau_hat_star=-rho rho_star+2 g.g_star",
+      "theta_hat_star=theta_star"
+    ],
+    "formal_completion": "tau-adic local analytic completion at rho=f",
+    "inverse": [
+      "rho=f exp(-tau)",
+      "g=exp(2 tau)g_hat",
+      "g_star=exp(-2 tau)g_hat_star",
+      "rho_star=(2 g_hat.g_hat_star-tau_hat_star)/rho"
+    ]
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC theorem freezes the complete declared two-scalar-derivative/four-curvature-derivative formal polar action with global U(1), its action-derived minimal and nonminimal BV complex, exact tau/Weyl quartet, reduced odd pairing and exact Einstein/phase coefficients. It proves that independent kappa_r<0 and kappa_theta>0 give positive Einstein and phase residues after quartet reduction, while the regular Cartesian-analytic kappa_r=kappa_theta subfamily is sign obstructed. The unequal-coefficient theory is only formal on rho!=0. The scale f is introduced by the chart and is not dynamically generated. No background solution, causal Green operator, Hadamard state, anomaly coefficient, QME, particle, scattering or unitarity claim is established.",
+  "claim_flags": {
+    "ANOMALY_COEFFICIENT": false,
+    "CARTESIAN_ANALYTIC_COMPLEX_SCALAR_SIGN_OBSTRUCTED": true,
+    "CAUSAL_GREEN_OPERATOR": false,
+    "FORMAL_POLAR_EINSTEIN_PHASE_SIGN_FEASIBLE": true,
+    "HADAMARD_STATE": false,
+    "LOCAL_ACTION_CERTIFIED": true,
+    "MINIMAL_AND_NONMINIMAL_BV_CERTIFIED": true,
+    "PARTICLE_OR_UNITARITY": false,
+    "QUANTUM_MASTER_EQUATION": false,
+    "RADIAL_QUARTET_CERTIFIED": true
+  },
+  "content_hashes": {
+    "BV_manifest_sha256": "34041d0e738f859d823db630763e101346fdf6a411b193ff51aa2db6bc407c4f",
+    "action_manifest_sha256": "7bfa8df0bff9eefa1c76ffbcc6f7712f9716dd3ce0398e7017e4d5ff738f2572",
+    "field_inventory_sha256": "75cea24c9c791fefa5a893c37f5cb965865fdb834c542eba4c182cdb5b6351c7",
+    "operator_manifest_sha256": "7f02f1b779c6c98dc966124bade10890d5deba2fb3f2e517aa72f8b162a6ec87",
+    "preflight_core_sha256": "edbe931b082d36792b8afd453f1c7969bdc0ca1392c5ec936490edc0845abb0f"
+  },
+  "dependencies": {
+    "WZ_cotangent_lift": {
+      "path": "quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
+      "result_id": "WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT",
+      "sha256": "b265dc9d86938ed7bee0f57a1394e26e762e99841a89b1310b950542e0c2e2b1"
+    },
+    "positive_polar_clock_fixture": {
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687"
+    },
+    "strict_minimal_BV": {
+      "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2.json",
+      "result_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+      "sha256": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc"
+    },
+    "strict_tau_causal_obstruction": {
+      "path": "d_quotient_classical/certificates/TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1.json",
+      "result_id": "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
+      "sha256": "db1f998a0920adb94cf4fcbffb1b9eb2ea6537876aff9513aac4e4d9ec2b51b9"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "domain": {
+    "background_independence": "LOCAL_COVARIANT_NO_BACKGROUND_SELECTED",
+    "boundaries": "equalities of integrated local actions are modulo compact-support total derivatives",
+    "chart": "rho=f exp(-tau), with f>0 and rho!=0",
+    "field_parameterization": "Phi=rho exp(i theta)",
+    "signature": "(-,+,+,+)",
+    "spacetime_dimension": 4
+  },
+  "exact_checks": {
+    "Cartesian_analytic_sign_obstruction": true,
+    "Q_squared_zero": true,
+    "Weyl_quartet_contracts": true,
+    "action_basis_complete_in_declared_class": true,
+    "canonical_one_form": true,
+    "classical_master_equation": true,
+    "cyclic_odd_pairing": true,
+    "formal_polar_positive_fixture_exists": true,
+    "nonminimal_pairs_contract": true,
+    "real_structure": true,
+    "reduced_phase_pairing_nondegenerate": true
+  },
+  "field_inventory": [
+    {
+      "Grassmann_parity": 0,
+      "antifield_number": 0,
+      "ghost_number": 0,
+      "real_structure": "REAL",
+      "role": "field",
+      "sector": "minimal",
+      "symbol": "g",
+      "tensor_type": "symmetric_covariant_2_tensor"
+    },
+    {
+      "Grassmann_parity": 0,
+      "antifield_number": 0,
+      "ghost_number": 0,
+      "real_structure": "REAL",
+      "role": "field",
+      "sector": "minimal",
+      "symbol": "rho",
+      "tensor_type": "scalar"
+    },
+    {
+      "Grassmann_parity": 0,
+      "antifield_number": 0,
+      "ghost_number": 0,
+      "real_structure": "REAL",
+      "role": "field",
+      "sector": "minimal",
+      "symbol": "theta",
+      "tensor_type": "circle_valued_scalar_local_lift"
+    },
+    {
+      "Grassmann_parity": 1,
+      "antifield_number": 0,
+      "ghost_number": 1,
+      "real_structure": "REAL",
+      "role": "diffeomorphism_ghost",
+      "sector": "minimal",
+      "symbol": "xi",
+      "tensor_type": "vector"
+    },
+    {
+      "Grassmann_parity": 1,
+      "antifield_number": 0,
+      "ghost_number": 1,
+      "real_structure": "REAL",
+      "role": "Weyl_ghost",
+      "sector": "minimal",
+      "symbol": "omega",
+      "tensor_type": "scalar"
+    },
+    {
+      "Grassmann_parity": 1,
+      "antifield_number": 1,
+      "ghost_number": -1,
+      "real_structure": "REAL",
+      "role": "antifield",
+      "sector": "minimal",
+      "symbol": "g_star",
+      "tensor_type": "symmetric_contravariant_2_tensor_density"
+    },
+    {
+      "Grassmann_parity": 1,
+      "antifield_number": 1,
+      "ghost_number": -1,
+      "real_structure": "REAL",
+      "role": "antifield",
+      "sector": "minimal",
+      "symbol": "rho_star",
+      "tensor_type": "scalar_density"
+    },
+    {
+      "Grassmann_parity": 1,
+      "antifield_number": 1,
+      "ghost_number": -1,
+      "real_structure": "REAL",
+      "role": "antifield",
+      "sector": "minimal",
+      "symbol": "theta_star",
+      "tensor_type": "scalar_density"
+    },
+    {
+      "Grassmann_parity": 0,
+      "antifield_number": 2,
+      "ghost_number": -2,
+      "real_structure": "REAL",
+      "role": "antifield",
+      "sector": "minimal",
+      "symbol": "xi_star",
+      "tensor_type": "covector_density"
+    },
+    {
+      "Grassmann_parity": 0,
+      "antifield_number": 2,
+      "ghost_number": -2,
+      "real_structure": "REAL",
+      "role": "antifield",
+      "sector": "minimal",
+      "symbol": "omega_star",
+      "tensor_type": "scalar_density"
+    },
+    {
+      "Grassmann_parity": 1,
+      "antifield_number": 0,
+      "ghost_number": -1,
+      "real_structure": "REAL",
+      "role": "antighost",
+      "sector": "nonminimal",
+      "symbol": "bar_xi",
+      "tensor_type": "covector"
+    },
+    {
+      "Grassmann_parity": 0,
+      "antifield_number": 0,
+      "ghost_number": 0,
+      "real_structure": "REAL",
+      "role": "multiplier",
+      "sector": "nonminimal",
+      "symbol": "b_xi",
+      "tensor_type": "covector"
+    },
+    {
+      "Grassmann_parity": 0,
+      "antifield_number": 1,
+      "ghost_number": 0,
+      "real_structure": "REAL",
+      "role": "antifield",
+      "sector": "nonminimal",
+      "symbol": "bar_xi_star",
+      "tensor_type": "covector_density_dual"
+    },
+    {
+      "Grassmann_parity": 1,
+      "antifield_number": 1,
+      "ghost_number": -1,
+      "real_structure": "REAL",
+      "role": "antifield",
+      "sector": "nonminimal",
+      "symbol": "b_xi_star",
+      "tensor_type": "covector_density_dual"
+    },
+    {
+      "Grassmann_parity": 1,
+      "antifield_number": 0,
+      "ghost_number": -1,
+      "real_structure": "REAL",
+      "role": "antighost",
+      "sector": "nonminimal",
+      "symbol": "bar_omega",
+      "tensor_type": "scalar"
+    },
+    {
+      "Grassmann_parity": 0,
+      "antifield_number": 0,
+      "ghost_number": 0,
+      "real_structure": "REAL",
+      "role": "multiplier",
+      "sector": "nonminimal",
+      "symbol": "b_omega",
+      "tensor_type": "scalar"
+    },
+    {
+      "Grassmann_parity": 0,
+      "antifield_number": 1,
+      "ghost_number": 0,
+      "real_structure": "REAL",
+      "role": "antifield",
+      "sector": "nonminimal",
+      "symbol": "bar_omega_star",
+      "tensor_type": "scalar_density_dual"
+    },
+    {
+      "Grassmann_parity": 1,
+      "antifield_number": 1,
+      "ghost_number": -1,
+      "real_structure": "REAL",
+      "role": "antifield",
+      "sector": "nonminimal",
+      "symbol": "b_omega_star",
+      "tensor_type": "scalar_density_dual"
+    }
+  ],
+  "internal_symmetry_classification": {
+    "GLOBAL": {
+      "Noether_current": "J^mu=-kappa_theta rho^2 nabla^mu theta",
+      "ghost": "NONE",
+      "theta_status": "PHYSICAL_MASSLESS_GLOBALLY_CHARGED"
+    },
+    "LOCAL": {
+      "included_here": false,
+      "required_new_rows": [
+        "A_mu",
+        "internal_U1_ghost",
+        "their antifields",
+        "internal antighost and multiplier plus duals"
+      ],
+      "theta_status": "GAUGED_STUECKELBERG_ONLY_IN_AN_EXTENDED_THEORY"
+    },
+    "NONE": {
+      "ghost": "NONE",
+      "potential": "rho^4 U(theta)",
+      "theta_status": "PHYSICAL_GENERICALLY_MASSIVE_IF_U''!=0"
+    }
+  },
+  "next_gate": "Rebuild the changed-action vacuum-cylinder carrier and decide whether its Einstein/R(g_hat)^2 trace Hessian removes the certified compact-support dressed-trace obstruction.",
+  "quartet_reduction": {
+    "homotopy": "normalized derivation extending h_W on positive quartet number",
+    "inclusion": "include tau-independent dressed functionals",
+    "phase_pairing_nondegenerate": true,
+    "projection": "set tau=omega=omega_star=tau_hat_star=0",
+    "radial_kinetic_sign_is_physical_after_reduction": false,
+    "remaining_minimal_fields": [
+      "g_hat",
+      "theta",
+      "xi",
+      "g_hat_star",
+      "theta_star",
+      "xi_star"
+    ],
+    "remaining_odd_pairing": [
+      "<delta g_hat,delta g_hat_star>",
+      "<delta theta,delta theta_star>",
+      "<delta xi,delta xi_star>"
+    ]
+  },
+  "reduced_action": {
+    "Einstein_convention": "S_EH=int sqrt(-g_hat)[M_P^2 R_hat/2-M_P^2 Lambda_geom]",
+    "Planck_mass_squared": "M_P^2=-kappa_r f^2/6",
+    "action": "S0=int sqrt(-g_hat){alpha_B C(g_hat)^2/8+alpha_R R(g_hat)^2+alpha_E E4(g_hat)+alpha_P P4(g_hat)-kappa_r f^2 R(g_hat)/12-kappa_theta f^2(nabla_hat theta)^2/2-lambda f^4/4}",
+    "flat_quadratic_scalar_spectrum": {
+      "R_squared_scalaron": "one scalaron with m_0^2=M_P^2/(12 alpha_R) when alpha_R!=0 on the nondegenerate flat branch",
+      "alpha_R_zero": "no metric scalaron from the curvature-squared sector",
+      "radial_tau": "absent from cohomology: Weyl quartet",
+      "theta": "one massless shift scalar when kappa_theta!=0"
+    },
+    "geometric_cosmological_constant": "Lambda_geom=lambda f^4/(4 M_P^2)=-3 lambda f^2/(2 kappa_r)",
+    "higher_curvature_disposition": {
+      "Box_R": "horizontal boundary term, not an independent closed-manifold bulk coupling",
+      "alpha_B": "independent C(g_hat)^2 bulk coupling",
+      "alpha_E": "Euler/topological coupling",
+      "alpha_P": "Pontryagin/parity-odd topological coupling",
+      "alpha_R": "independent R(g_hat)^2 bulk coupling"
+    },
+    "phase_wave_residue": "Z_theta=kappa_theta f^2",
+    "rho_equals_f_is": "A_WEYL_GAUGE_CHART_NOT_SPONTANEOUS_WEYL_BREAKING",
+    "vacuum_energy_density": "V0=lambda f^4/4"
+  },
+  "result_id": "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1",
+  "result_state": "LOCAL_ACTION_AND_QUARTET_CERTIFIED",
+  "schema": "pure-weyl-complex-compensator-action-quartet-preflight-v1",
+  "sign_and_regularity_classification": {
+    "Cartesian_analytic_complex_scalar_subfamily": {
+      "constraint": "kappa_theta=kappa_r=kappa_Phi",
+      "nonzero_product_sign": "NEGATIVE",
+      "product_identity": "M_P^2 Z_theta=-kappa_Phi^2 f^4/6",
+      "scope": "ordinary O(2)-invariant Cartesian-analytic |nabla Phi|^2 kinetic term",
+      "simultaneously_positive": false,
+      "status": "OBSTRUCTED"
+    },
+    "formal_chart_price": "kappa_r!=kappa_theta is smooth in polar variables on rho!=0 but is not a regular O(2)-invariant Cartesian target metric at Phi=0",
+    "formal_polar_family": {
+      "exact_fixture": {
+        "M_P_squared": "f^2/6",
+        "Z_theta": "f^2",
+        "kappa_r": -1,
+        "kappa_theta": 1
+      },
+      "independent_parameters": [
+        "kappa_r",
+        "kappa_theta"
+      ],
+      "interpretation": "The negative radial direction is removed only after the exact Weyl quartet contraction; the reduced phase direction has positive residue.",
+      "positive_Einstein_condition": "kappa_r<0",
+      "positive_phase_residue_condition": "kappa_theta>0",
+      "simultaneously_feasible": true
+    }
+  },
+  "sparse_operators": {
+    "Weyl_quartet": {
+      "Q_W": {
+        "column_count": 4,
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 2,
+            "row": 3
+          }
+        ],
+        "row_count": 4,
+        "sha256": "09c769d36fa37a3e5b7405317ebf73d54cd2e9e09a7a3ddee9fcc2edfc89e03b"
+      },
+      "h_W": {
+        "column_count": 4,
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 3,
+            "row": 2
+          }
+        ],
+        "row_count": 4,
+        "sha256": "774c6efc590270ae50e3a8a3365e5e676f2ab96e52de4d07a5b25148a0832e8e"
+      },
+      "identity": "Q_W h_W+h_W Q_W=1",
+      "ordered_basis": [
+        "tau",
+        "omega",
+        "omega_star",
+        "tau_hat_star"
+      ]
+    },
+    "nonminimal_doublet": {
+      "Q_nm": {
+        "column_count": 4,
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "column": 2,
+            "row": 3
+          }
+        ],
+        "row_count": 4,
+        "sha256": "e6fa2df25375ede7f2ab6d35697d085f831ee6dd6bbf033bed901fbc263ab26f"
+      },
+      "h_nm": {
+        "column_count": 4,
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "column": 3,
+            "row": 2
+          }
+        ],
+        "row_count": 4,
+        "sha256": "cbd0a39f33dd3aa094803d57dbb74b5d01fd2959cef12765014b4df1c14a11c5"
+      },
+      "identity": "Q_nm h_nm+h_nm Q_nm=1",
+      "multiplicity": {
+        "Weyl": 1,
+        "diffeomorphism": 4
+      },
+      "ordered_basis": [
+        "bar_c",
+        "b",
+        "b_star",
+        "bar_c_star"
+      ]
+    }
+  },
+  "symmetry_choice": {
+    "alternatives": {
+      "GLOBAL": "theta is a physical massless shift field carrying the global Noether charge",
+      "LOCAL": "theta is Stueckelberg/gauge only after adding an internal connection and a complete U(1) BV sector",
+      "NONE": "theta is physical; rho^4 U(theta) is allowed and generically gives it a mass"
+    },
+    "gauge_group": "Diff semidirect Weyl",
+    "global_action": "theta -> theta+constant",
+    "internal_U1": "GLOBAL",
+    "local_U1_ghost_present": false,
+    "reason": "The phase is retained as a physical relational-clock candidate. Gauging U(1) requires a connection A, its ghost, antifields and nonminimal rows and is a different theory."
+  },
+  "transformations": {
+    "BRST_fields": {
+      "Q g": "L_xi g+2 omega g",
+      "Q g_hat": "L_xi g_hat",
+      "Q omega": "L_xi omega",
+      "Q rho": "L_xi rho-omega rho",
+      "Q tau": "L_xi tau+omega",
+      "Q theta": "L_xi theta",
+      "Q xi": "xi^nu partial_nu xi"
+    },
+    "finite": {
+      "g": "g -> exp(2 sigma) g",
+      "g_hat": "g_hat=(rho/f)^2 g -> g_hat",
+      "rho": "rho -> exp(-sigma) rho",
+      "tau": "tau -> tau+sigma",
+      "theta": "theta -> theta"
+    }
+  }
+}

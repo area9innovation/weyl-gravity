@@ -496,6 +496,70 @@
       }
     },
     {
+      "claim_boundary": "The formal rho!=0 polar theory permits independent kappa_r and kappa_theta: kappa_r<0 and kappa_theta>0 give positive Einstein and phase residues only after the exact radial/Weyl quartet contraction. The regular Cartesian-analytic |nabla Phi|^2 subfamily kappa_r=kappa_theta is sign-obstructed. The unequal-coefficient action is not regular at Phi=0, rho=f is a gauge chart rather than spontaneous Weyl breaking, and f is introduced rather than generated. Local U(1) is absent; adding it requires a connection and a new complete BV sector. No background, causal Green, Hadamard, anomaly, QME, particle, scattering or unitarity claim follows.",
+      "descriptions": {
+        "causal": "NOT_APPLICABLE",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1.json",
+          "result_id": "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1",
+          "sha256": "a537e31bf667520443903551b5bf2596dff9a1c35fade88d2ffc1e89c1e0b836"
+        }
+      ],
+      "id": "classical.complex_compensator.local_bv.action_quartet_preflight",
+      "mode_data": {
+        "dispersion": {
+          "statement": "No background or principal operator is selected, so no dispersion relation is assigned.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "The action-derived odd cotangent pairing, Weyl quartet and both nonminimal cotangent doublets are exact and nondegenerate after reduction.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "No harmonic or nonlinear resonance problem is posed at this local action gate.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Not a background tangent-cone calculation.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "Causal analysis is the next changed-action gate.",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Not a background tangent-cone calculation.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "The global U(1) current is classified locally, but no background Taub or time-generator charge is computed.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "local covariant rho!=0 chart; no spacetime background selected",
+        "boundaries": "integrated local identities modulo compact-support total derivatives",
+        "carrier": "complete declared two-scalar-derivative/four-curvature-derivative local action and its 18 generator-type minimal/nonminimal BV cotangent carrier; not a mode or particle carrier",
+        "charge_sector": "unreduced local Diff semidirect Weyl BV complex; global U(1) is not gauged",
+        "degree": "all local BV ghost/antifield degrees; phase and invariant metric at degree zero",
+        "ell": "NOT_APPLICABLE",
+        "k": "arbitrary local covariant jets within the declared derivative bound",
+        "m": "NOT_APPLICABLE",
+        "omega": "NOT_APPLICABLE",
+        "parity": "even scalar sector plus independent even/odd curvature couplings",
+        "theory": "pure-Weyl gravity plus one formal polar complex compensator with global internal U(1)"
+      }
+    },
+    {
       "claim_boundary": "Causality is unary and the cyclic Cartan theorem stops at arity three. The retained-26 homotopy extends to one-sided past/future/time-compact smooth bikernel LF classes with cyclic adjoint control, but the certified factorization has a cutoff-escape continuity obstruction on the full smooth Frechet class. The imported smooth Ward kernel has no one-sided support profile, so no Ward or Hadamard promotion follows. Raw affine D, arity four, Hadamard/QME, and a branch-resolved physical projector remain false.",
       "descriptions": {
         "causal": "CERTIFIED",
@@ -1807,7 +1871,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "4b8b29153a4141a28f2cc208beb1611f777c699d5cd787f8f618f0a009d149d2",
+  "generated_by_sha256": "c0add70a877408615da09341d13910a6960ca2baf874d48f3544bf22d8514d21",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
