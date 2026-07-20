@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-20",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "status": "PASS",
+  "artifacts": {
+    "certificate": {
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1.json",
+      "sha256": "7d9cb25672c2329d6b13aeb05d3303a214de614d941f0c3be5e8d9ec289b8464"
+    },
+    "system_payload": {
+      "path": "d_quotient_classical/generated/einstein_weyl_relative_order_one_chain_obstruction_v1/system.json",
+      "sha256": "7e59bfe99c97d0697f0fb9d192711b66e6c51b1501ce74bed5c655fa06507209"
+    },
+    "producer": {
+      "path": "d_quotient_classical/relative/einstein_weyl_relative_order_one_chain_obstruction.py",
+      "sha256": "c7cb923366567a4a983f6192cd5337e9459fc7ff26d8a827c1a3c9b403c0183a"
+    },
+    "verifier": {
+      "path": "d_quotient_classical/relative/verify_einstein_weyl_relative_order_one_chain_obstruction.py",
+      "sha256": "acd42e245354a8531a044061440b1204163570a0755c9508da3ffe30c93813e8"
+    },
+    "tests": {
+      "path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_order_one_chain_obstruction.py",
+      "sha256": "1decd44a2682488f8c0a9d3289a5fd3294c60945844f2ed2f385f49662e6b43f"
+    },
+    "certificate_schema": {
+      "path": "d_quotient_classical/schema/relative-order-one-chain-obstruction-v1.schema.json",
+      "sha256": "0d4b8c13601a3ee97aa9d8841830a25327fd70973c7d23368725fbb182071ca4"
+    },
+    "payload_schema": {
+      "path": "d_quotient_classical/schema/relative-order-one-chain-system-v1.schema.json",
+      "sha256": "58c29c959bb4a9572035f54850d716a5c4c0dc80d0826d495c17cf58f96fe83a"
+    },
+    "report": {
+      "path": "d_quotient_classical/reports/einstein-weyl-relative-order-one-chain-obstruction.md",
+      "sha256": "6a162994f34100621b2fe927011c2ebc7558c7361043499759d60399a8a2df63"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": ["Python compilation", "strict Draft 2020-12 schemas", "JSON parsing", "scoped diff check", "content-hash replay"]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "producer_elapsed_seconds": 70.15,
+      "producer_max_rss_kib": 170244,
+      "independent_verifier_elapsed_seconds": 6.78,
+      "independent_verifier_max_rss_kib": 66360,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_order_one_chain_obstruction --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_order_one_chain_obstruction",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_order_one_chain_obstruction",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-order-one-chain-obstruction-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1.json",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-order-one-chain-system-v1.schema.json -d d_quotient_classical/generated/einstein_weyl_relative_order_one_chain_obstruction_v1/system.json"
+      ],
+      "result": "822-by-406 exact system; rank 398, augmented rank 399; two-row left-null witness evaluates to 1"
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This scoped obstruction promotes no relative q2, causal bridge, paper theorem or release freeze."
+    }
+  },
+  "claim_boundary": "This receipt certifies only the complete endpoint-normalized invariant order-one chain obstruction. It does not obstruct higher order, another current representative, a larger carrier, nonzero f2 in another legal incidence, causal data, observables, particles or quantum claims."
+}

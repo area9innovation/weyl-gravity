@@ -127,7 +127,7 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
     def test_fixed_238_row_cyclic_completion_is_rank_obstructed(self) -> None:
         entry = self.entries["classical.crosswalk.compact_product_relative_238_cyclic_completion"]
         self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")
-        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OBSTRUCTED")
         self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
         self.assertIn("at least 28 rows", entry["claim_boundary"])
         self.assertIn("necessary rather than sufficient", entry["claim_boundary"])
@@ -188,7 +188,7 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
         self.assertIn("rank 305", entry["claim_boundary"])
-        self.assertIn("positive-order lifts", entry["claim_boundary"])
+        self.assertIn("Order two", entry["claim_boundary"])
         self.assertIn(
             "EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1",
             {item["result_id"] for item in entry["evidence"]},
@@ -198,7 +198,7 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
-        self.assertIn("406 free coefficients", entry["claim_boundary"])
+        self.assertIn("406 unknowns", entry["claim_boundary"])
         self.assertIn("complete through coefficient-jet order two", entry["claim_boundary"])
         self.assertIn(
             "EINSTEIN_WEYL_RELATIVE_HESSIAN_SECOND_CURRENT_INPUT_V1",
@@ -210,7 +210,13 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         )
         self.assertIn("36,539 canonical terms", entry["claim_boundary"])
         self.assertIn("twenty independently hashed chunks", entry["claim_boundary"])
-        self.assertIn("current input is now sufficient", entry["claim_boundary"])
+        self.assertIn(
+            "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("rank 398 and augmented rank 399", entry["claim_boundary"])
+        self.assertIn("before f2 can be tested", entry["claim_boundary"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OBSTRUCTED")
 
     def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_exact_branch"]

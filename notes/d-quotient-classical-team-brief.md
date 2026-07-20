@@ -2468,11 +2468,19 @@ twenty deterministic content-addressed chunks.  They contain 36,539 canonical
 symmetric terms and 72,953 ordered terms, with independent chunkwise
 coefficient replay and exact agreement with all 30,494 V1 terms.  Peak
 generation RSS is 184,756 KiB, so the export does not materialize the complete
-current table at once.  The active gate is now the exact 406-parameter
-order-one chain solve, followed by
-`Delta2-A^1 C=delta(f2)` on the fifteen nonzero defect rows.  Modified
-endpoints and other backgrounds remain
-admissible; no causal or quantum consequence is inferred.
+current table at once.
+
+`EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1` now closes the exact
+406-parameter solve negatively.  Globalizing the `80+284+42` primitive
+isotropy bases with the four transitive stabilizer actions gives 822 nonzero
+coefficient equations.  The rational matrix has rank 398 and augmented rank
+399.  A two-row left-null witness compares `c_1_star partial_t` and
+`c_0_star partial_x` on `P_H_3_t_theta_phi`: the unknown coefficients cancel
+while the fixed endpoint evaluates to one.  Thus this complete invariant
+order-one chain map is obstructed before the fifteen-row `f2` incidence can
+be tested.  The next choices are order two, another current representative,
+or a larger relative carrier.  None is silently promoted, and no causal or
+quantum consequence is inferred.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a

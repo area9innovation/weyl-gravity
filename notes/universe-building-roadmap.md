@@ -2054,10 +2054,15 @@ than being silently truncated.
 complete five-current operation through coefficient-jet order two into twenty
 deterministic content-addressed chunks with 36,539 canonical symmetric terms
 and 72,953 ordered terms.  Its independent replay matches all 30,494 V1 terms,
-and peak producer RSS is 184,756 KiB.  Bridge 1 now solves the 406-parameter
-order-one chain system and then the fifteen-row incidence
-`Delta2-A^1 C=delta(f2)`.  No support-local lift or
-repaired relative q2 has yet been promoted.
+and peak producer RSS is 184,756 KiB.
+`EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1` exhausts the resulting
+endpoint-normalized invariant order-one system: 822 nonzero coefficient rows
+on 406 unknowns have rank 398 and augmented rank 399.  Its exact two-row
+left-null witness cancels every ansatz coefficient but evaluates to one on
+the fixed endpoint.  Therefore the fifteen-row `f2` incidence is not yet
+activated.  Bridge 1 must next classify order two, change the current
+representative, or enlarge the relative carrier.  No support-local lift or
+repaired relative q2 has been promoted.
 
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains

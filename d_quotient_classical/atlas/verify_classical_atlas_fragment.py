@@ -115,7 +115,7 @@ def verify() -> None:
         raise AssertionError("portable current scope or order boundary missing")
     if "EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1" not in {item["result_id"] for item in pullback["evidence"]}:
         raise AssertionError("order-zero lift obstruction evidence missing")
-    if "rank 305" not in pullback["claim_boundary"] or "positive-order lifts" not in pullback["claim_boundary"]:
+    if "rank 305" not in pullback["claim_boundary"] or "Order two" not in pullback["claim_boundary"]:
         raise AssertionError("order-zero obstruction scope missing")
     if "EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1" not in {item["result_id"] for item in pullback["evidence"]}:
         raise AssertionError("endpoint normalization evidence missing")
@@ -123,7 +123,7 @@ def verify() -> None:
         raise AssertionError("endpoint normalization formula missing")
     if "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1" not in {item["result_id"] for item in pullback["evidence"]}:
         raise AssertionError("order-one invariant ansatz evidence missing")
-    if "406 free coefficients" not in pullback["claim_boundary"] or "complete through coefficient-jet order two" not in pullback["claim_boundary"]:
+    if "406 unknowns" not in pullback["claim_boundary"] or "complete through coefficient-jet order two" not in pullback["claim_boundary"]:
         raise AssertionError("order-one solver contract missing")
     evidence_ids = {item["result_id"] for item in pullback["evidence"]}
     if "EINSTEIN_WEYL_RELATIVE_HESSIAN_SECOND_CURRENT_INPUT_V1" not in evidence_ids:
@@ -132,8 +132,14 @@ def verify() -> None:
         raise AssertionError("streamed second-current export evidence missing")
     if "36,539 canonical terms" not in pullback["claim_boundary"] or "twenty independently hashed chunks" not in pullback["claim_boundary"]:
         raise AssertionError("streamed second-current census missing")
-    if "current input is now sufficient" not in pullback["claim_boundary"]:
-        raise AssertionError("order-one current-input gate not promoted")
+    if "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1" not in evidence_ids:
+        raise AssertionError("order-one chain obstruction evidence missing")
+    if "rank 398 and augmented rank 399" not in pullback["claim_boundary"]:
+        raise AssertionError("order-one obstruction ranks missing")
+    if "before f2 can be tested" not in pullback["claim_boundary"]:
+        raise AssertionError("f2 dependency boundary missing")
+    if pullback["mode_data"]["taub_maps"]["status"] != "OBSTRUCTED":
+        raise AssertionError("order-one relative incidence not fail-closed")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")

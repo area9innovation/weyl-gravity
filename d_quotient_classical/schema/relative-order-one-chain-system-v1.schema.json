@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.example/schema/relative-order-one-chain-system-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "shape", "matrix_coo", "rhs_sparse"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-order-one-chain-system-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1_SYSTEM"},
+    "shape": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [{"const": 822}, {"const": 406}],
+      "items": false
+    },
+    "matrix_coo": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "minItems": 3,
+        "maxItems": 3,
+        "prefixItems": [
+          {"type": "integer", "minimum": 0, "maximum": 821},
+          {"type": "integer", "minimum": 0, "maximum": 405},
+          {"type": "string"}
+        ],
+        "items": false
+      }
+    },
+    "rhs_sparse": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "prefixItems": [
+          {"type": "integer", "minimum": 0, "maximum": 821},
+          {"type": "string"}
+        ],
+        "items": false
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC theorem exhausts the 406-parameter endpoint-normalized SO(2)-invariant differential ansatz with A1 and A2 through order one. After deleting identically zero coefficient rows, the 822-by-406 rational chain system has rank 398 and augmented rank 399; the serialized two-row left-null witness proves inconsistency. It does not obstruct order two or higher, nonzero f2, another current improvement, a larger relative carrier, causal data, observables, particles or quantum claims.",
+  "classification": {
+    "alternate_current_improvement_obstructed": false,
+    "causal_observable_particle_or_quantum_claim": false,
+    "complete_endpoint_normalized_invariant_order_one_system_solved": true,
+    "higher_order_chain_map_obstructed": false,
+    "nonzero_f2_obstructed": false,
+    "order_one_chain_map_exists": false,
+    "order_one_chain_map_obstructed": true,
+    "relative_q2_repaired": false
+  },
+  "dependencies": {
+    "ansatz": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1.json",
+      "sha256": "53658ff578ae143051629765d12b4681816421c108b95222c50a9ac06f385fc1"
+    },
+    "current_layout": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1_LAYOUT",
+      "path": "d_quotient_classical/generated/einstein_weyl_relative_five_current_de_rham_carrier_v1/layout.json",
+      "sha256": "a9232ff409114a4c96c12e622c9f817be0541771993f07d079adcab1ce09b002"
+    },
+    "endpoint": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1.json",
+      "sha256": "e556bd05935baf16b9b77bfb312068aa74be8c9f1513e88ef34ff614d93fd4bc"
+    },
+    "order_zero": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1.json",
+      "sha256": "d61667e84fab5c461d4799f9e7ec2f7bda69f61826007bcd7a5f04c3b6bbd12e"
+    },
+    "target_q1": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q1",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/q1.json",
+      "sha256": "43c00909830fde902cf1332eae804f6edd6ad263bef7ce61d08bdbd20449290b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_linear_system": {
+    "augmented_rank_over_Q": 399,
+    "consistent": false,
+    "equations": 822,
+    "left_null_witness": {
+      "evaluation": "1",
+      "rows": [
+        {
+          "input_local": 2,
+          "input_row": 82,
+          "input_row_id": "P_H_3_t_theta_phi",
+          "output_local": 1,
+          "output_row": 35,
+          "output_row_id": "c_1_star",
+          "rhs": "0",
+          "row": 70,
+          "word": [
+            0
+          ]
+        },
+        {
+          "input_local": 2,
+          "input_row": 82,
+          "input_row_id": "P_H_3_t_theta_phi",
+          "output_local": 0,
+          "output_row": 34,
+          "output_row_id": "c_0_star",
+          "rhs": "-1",
+          "row": 339,
+          "word": [
+            1
+          ]
+        }
+      ],
+      "terms": [
+        [
+          70,
+          "-1"
+        ],
+        [
+          339,
+          "-1"
+        ]
+      ]
+    },
+    "matrix_coo_sha256": "e6d7876d312a2729c8956fa9ce74bd02de4c7b61192d900bcbc7a8469136c9d0",
+    "nonzero_entries": 1757,
+    "nullity": 8,
+    "rank_over_Q": 398,
+    "unknowns": 406
+  },
+  "invariant_basis": {
+    "A1_order_one_dimension": 284,
+    "A1_order_zero_dimension": 80,
+    "A2_order_one_dimension": 42,
+    "globalization": "isotropy-equivariant base tensors; first coefficient jets fixed by the four transitive stabilizer actions",
+    "primitive_sparse_basis_sha256": {
+      "A1_order_one": "96d5b79ded0f5873d78e08fa436801bb88f243601b5bed0fb93a2230763de3e7",
+      "A1_order_zero": "8c3c6830458c402212f0d29599de3a6a1b6bd4b45561c08dee46a8eb82c44b3f",
+      "A2_order_one": "b2772afa78f2fcb38fb2ce7f0c330a99a852c298f2f35402e265307689660239"
+    },
+    "total_unknowns": 406
+  },
+  "lifecycle_status": "OBSTRUCTED",
+  "next_gate": "CLASSIFY_ORDER_TWO_OR_CHANGE_THE_RELATIVE_CURRENT_REPRESENTATIVE_OR_CARRIER_BEFORE_THE_FIFTEEN_ROW_F2_INCIDENCE",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_order_one_chain_obstruction.py": "c7cb923366567a4a983f6192cd5337e9459fc7ff26d8a827c1a3c9b403c0183a",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_order_one_chain_obstruction.py": "1decd44a2682488f8c0a9d3289a5fd3294c60945844f2ed2f385f49662e6b43f",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_order_one_chain_obstruction.py": "acd42e245354a8531a044061440b1204163570a0755c9508da3ffe30c93813e8",
+      "d_quotient_classical/schema/relative-order-one-chain-obstruction-v1.schema.json": "0d4b8c13601a3ee97aa9d8841830a25327fd70973c7d23368725fbb182071ca4",
+      "d_quotient_classical/schema/relative-order-one-chain-system-v1.schema.json": "58c29c959bb4a9572035f54850d716a5c4c0dc80d0826d495c17cf58f96fe83a"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_order_one_chain_obstruction --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_order_one_chain_obstruction",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_order_one_chain_obstruction"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_CHAIN_OBSTRUCTION_V1",
+  "result_state": "COMPLETE_ENDPOINT_NORMALIZED_ORDER_ONE_CHAIN_MAP_OBSTRUCTED",
+  "schema": "pure-weyl-relative-order-one-chain-obstruction-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "support-local homogeneous differential-operator ansatz before harmonic or causal reduction",
+    "carrier": "A1:P3(20)->W1(14), A2:P4(5)->W2(6)",
+    "charge_sector": "five connected spacetime stabilizer currents",
+    "degree": "one and two",
+    "ell": "not harmonic-reduced",
+    "k": "arbitrary local covector",
+    "m": "not harmonic-reduced",
+    "omega": "arbitrary local covector",
+    "parity": "even chain-map components",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  },
+  "system_payload": {
+    "matrix_records": 1757,
+    "path": "d_quotient_classical/generated/einstein_weyl_relative_order_one_chain_obstruction_v1/system.json",
+    "rhs_records": 16,
+    "sha256": "7e59bfe99c97d0697f0fb9d192711b66e6c51b1501ce74bed5c655fa06507209"
+  }
+}
