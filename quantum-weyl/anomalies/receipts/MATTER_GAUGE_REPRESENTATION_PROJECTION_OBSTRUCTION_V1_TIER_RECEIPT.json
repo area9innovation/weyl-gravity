@@ -1,0 +1,79 @@
+{
+  "receipt_id": "MATTER_GAUGE_REPRESENTATION_PROJECTION_OBSTRUCTION_V1_TIER_RECEIPT",
+  "result_id": "MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION",
+  "recorded_at": "2026-07-20",
+  "base_commit": "869f367e0",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "input_hashes": {
+    "terminal_matter_content_lattice": "3a6051c7f8cbf51baddd543b99d121d71c074ccf307344e12ece929db40de43e"
+  },
+  "output_hashes": {
+    "projection_obstruction_certificate": "fd00a80ed827d32b1231415ac2667819546a1d13b8bfd35ebceaa2a4d351fc9b",
+    "matter_selection_atlas": "4142f760634182ba7d0cbea40b74350c928e620c4f72571fc2c1eda49052120b",
+    "quantum_atlas_fragment": "7e63bac13d6e95ad1226829cf2e01b60934c7fc9725b90b339f1693050204a05"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile <8 scoped Python files> && python3 -m json.tool <schema and certificate> && git diff --check -- <scoped paths>",
+      "elapsed_seconds": 0.06,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m anomalies.matter_gauge_representation_projection_obstruction_certificate --check",
+      "elapsed_seconds": 0.09,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m anomalies.verify_matter_gauge_representation_projection_obstruction",
+      "elapsed_seconds": 0.96,
+      "status": "PASS_INDEPENDENT_HASH_SEPARATOR_AND_REPRESENTATION_DIMENSION_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/anomalies/tests/test_matter_gauge_representation_projection_obstruction.py",
+      "elapsed_seconds": 0.98,
+      "status": "PASS_8_TESTS_WITH_SIGN_HASH_ENUMERATION_GUT_AND_HEALTH_MUTATIONS"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s quantum-weyl/anomalies/schema/matter-gauge-representation-projection-obstruction-v1.schema.json && npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/anomalies/schema/matter-gauge-representation-projection-obstruction-v1.schema.json -d quantum-weyl/anomalies/certificates/MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION.json",
+      "elapsed_seconds": 6.39,
+      "status": "PASS_DRAFT_2020_12_STRICT"
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_matter_selection_atlas_table --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_matter_selection_atlas_table && PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "elapsed_seconds": 10.7,
+      "status": "PASS_9_TESTS_AND_4_GENERATOR_VERIFIER_RAILS"
+    },
+    {
+      "tier": 1,
+      "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 12-pure-weyl-one-loop-bv-anomaly.tex (twice)",
+      "elapsed_seconds": 5.72,
+      "status": "PASS_38_PAGE_PDF_WITH_NO_WARNINGS"
+    },
+    {
+      "tier": 2,
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 7.76,
+      "status": "ADVISORY_EXIT_0_WITH_PREEXISTING_BRIDGE_DRIFT_UNPINNED_TOOLCHAIN_AND_CORPUS_BASELINE_DRIFT_REPORTED"
+    }
+  ],
+  "deviations": [
+    {
+      "requested_bounded_representation_tables": "NOT_PERFORMED",
+      "reason": "the work item explicitly requires terminating without fabricating a broader search when the predecessor healthy Weyl cone is empty; the exact forgetful-map projection obstruction is prior to every gauge-representation constraint"
+    },
+    {
+      "gauge_anomaly_beta_and_global_indices": "NOT_COMPUTED_EMPTY_DOMAIN",
+      "reason": "these conditions only intersect and shrink the already-empty healthy Weyl-cancellation preimage"
+    }
+  ],
+  "tier_3_not_run": "No representation classification, Standard Model, GUT, particle, ultraviolet-completion, Lorentzian QME, positivity, unitarity, release, tag or theorem freeze is promoted. The exact composed projection theorem and direct atlas/paper consumers are covered by tiers 0-2."
+}

@@ -313,6 +313,15 @@ changes the theory. The honest conclusion is not “the anomaly is solved,” bu
 that the strict and compensated theories occupy different branches of the
 programme.
 
+Adding ordinary healthy conformal matter does not cancel the strict anomaly:
+one exact anomaly coordinate has the same positive sign for the gravitational
+field and for every standard scalar, fermion and gauge-vector contribution.
+Putting those fields into compact gauge-group representations cannot help,
+because forgetting the gauge labels maps them back into the same already
+empty nonnegative cone.  This is an incompatibility result, not a selection
+of the Standard Model, a grand unified group or a particle spectrum; no
+representation scan is being advertised.
+
 On the closed spherical background, a reduced calculation gives another
 clue. After gauge and constraint reduction, the candidate isolated
 conformal-graviton class disappears. Two collective curvature classes remain,

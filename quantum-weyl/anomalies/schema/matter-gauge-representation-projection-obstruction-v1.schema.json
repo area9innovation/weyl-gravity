@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/matter-gauge-representation-projection-obstruction-v1.schema.json",
+  "title": "Healthy matter/gauge representation projection obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "input_pin",
+    "projection_theorem",
+    "representation_gate_disposition",
+    "relaxation_ledger",
+    "exact_checks",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-matter-gauge-representation-projection-obstruction-v1"
+    },
+    "result_id": {
+      "const": "MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION"
+    },
+    "result_state": {
+      "const": "JOINT_HEALTHY_WEYL_AND_GAUGE_ANOMALY_SOLUTION_SET_EMPTY_BEFORE_REPRESENTATION_ENUMERATION"
+    },
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]
+    },
+    "input_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "result_id"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "result_id": {"const": "MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE"}
+      }
+    },
+    "projection_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domain",
+        "forgetful_map",
+        "codomain",
+        "separator_coordinates_C2_E4_CdualC_BoxR",
+        "gravity_separator_value",
+        "species_separator_values",
+        "proof",
+        "joint_solution_set",
+        "scope"
+      ],
+      "properties": {
+        "domain": {"type": "string", "minLength": 1},
+        "forgetful_map": {"type": "string", "minLength": 1},
+        "codomain": {"type": "string", "minLength": 1},
+        "separator_coordinates_C2_E4_CdualC_BoxR": {
+          "const": [1, 0, 0, 0]
+        },
+        "gravity_separator_value": {"$ref": "#/$defs/rational"},
+        "species_separator_values": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {"$ref": "#/$defs/rational"}
+        },
+        "proof": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "joint_solution_set": {"const": "EMPTY"},
+        "scope": {"type": "string", "minLength": 1}
+      }
+    },
+    "representation_gate_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bounded_group_rank_highest_weight_enumeration",
+        "cubic_local_gauge_anomaly",
+        "mixed_gauge_gravitational_anomaly",
+        "global_mod_two_anomaly",
+        "one_loop_gauge_beta_function",
+        "direct_tensor_invariant_table",
+        "character_index_table",
+        "vectorlike_pair_policy"
+      ],
+      "properties": {
+        "bounded_group_rank_highest_weight_enumeration": {
+          "const": "NOT_PERFORMED_PROJECTION_OBSTRUCTION_IS_PRIOR"
+        },
+        "cubic_local_gauge_anomaly": {"const": "NOT_COMPUTED_EMPTY_DOMAIN"},
+        "mixed_gauge_gravitational_anomaly": {
+          "const": "NOT_COMPUTED_EMPTY_DOMAIN"
+        },
+        "global_mod_two_anomaly": {"const": "NOT_COMPUTED_EMPTY_DOMAIN"},
+        "one_loop_gauge_beta_function": {"const": "NOT_COMPUTED_EMPTY_DOMAIN"},
+        "direct_tensor_invariant_table": {"const": "NOT_COMPUTED_EMPTY_DOMAIN"},
+        "character_index_table": {"const": "NOT_COMPUTED_EMPTY_DOMAIN"},
+        "vectorlike_pair_policy": {"type": "string", "minLength": 1}
+      }
+    },
+    "relaxation_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "formal_signed_determinant_lattice",
+        "wrong_sign_kinetic_terms",
+        "shifting_Wess_Zumino_compensator",
+        "higher_derivative_conformal_fields"
+      ],
+      "properties": {
+        "formal_signed_determinant_lattice": {"type": "string", "minLength": 1},
+        "wrong_sign_kinetic_terms": {"type": "string", "minLength": 1},
+        "shifting_Wess_Zumino_compensator": {"type": "string", "minLength": 1},
+        "higher_derivative_conformal_fields": {
+          "type": "string",
+          "pattern": "^OPEN:.*"
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {"const": true}
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "JOINT_HEALTHY_WEYL_GAUGE_SOLUTION_EXISTS",
+        "BOUNDED_REPRESENTATION_CLASSIFICATION_PERFORMED",
+        "GAUGE_ANOMALY_TABLE_COMPUTED",
+        "SIGNED_LATTICE_IS_HEALTHY_MATTER",
+        "COMPENSATOR_IS_STRICT_CANCELLATION",
+        "GUT_STANDARD_MODEL_OR_PARTICLE_SELECTION_CLAIM",
+        "LORENTZIAN_QME_OR_UNITARITY_CLAIM"
+      ],
+      "properties": {
+        "JOINT_HEALTHY_WEYL_GAUGE_SOLUTION_EXISTS": {"const": false},
+        "BOUNDED_REPRESENTATION_CLASSIFICATION_PERFORMED": {"const": false},
+        "GAUGE_ANOMALY_TABLE_COMPUTED": {"const": false},
+        "SIGNED_LATTICE_IS_HEALTHY_MATTER": {"const": false},
+        "COMPENSATOR_IS_STRICT_CANCELLATION": {"const": false},
+        "GUT_STANDARD_MODEL_OR_PARTICLE_SELECTION_CLAIM": {"const": false},
+        "LORENTZIAN_QME_OR_UNITARITY_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "source_manifest"],
+      "properties": {
+        "proof_type": {"type": "string", "minLength": 1},
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

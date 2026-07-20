@@ -1,0 +1,114 @@
+{
+  "claim_boundary": "This is a composed LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL empty-set theorem. It says that imposing gauge-anomaly cancellation cannot rescue the already-empty healthy Weyl-matter cone. It is not a classification of gauge groups or representations, a Standard Model or GUT selection, a beta-function, Lorentzian QME, particle, phenomenology, positivity, unitarity or ultraviolet-completion claim.",
+  "claim_flags": {
+    "BOUNDED_REPRESENTATION_CLASSIFICATION_PERFORMED": false,
+    "COMPENSATOR_IS_STRICT_CANCELLATION": false,
+    "GAUGE_ANOMALY_TABLE_COMPUTED": false,
+    "GUT_STANDARD_MODEL_OR_PARTICLE_SELECTION_CLAIM": false,
+    "JOINT_HEALTHY_WEYL_GAUGE_SOLUTION_EXISTS": false,
+    "LORENTZIAN_QME_OR_UNITARITY_CLAIM": false,
+    "SIGNED_LATTICE_IS_HEALTHY_MATTER": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_checks": {
+    "C2_separator_positive_on_every_healthy_species": true,
+    "C2_separator_positive_on_gravity": true,
+    "forgetful_map_preserves_nonnegative_multiplicity": true,
+    "gauge_constraints_only_shrink_the_domain": true,
+    "joint_healthy_solution_set_is_empty": true,
+    "no_representation_enumeration_needed_or_claimed": true,
+    "relaxations_do_not_promote_a_healthy_solution": true,
+    "representation_dimensions_are_positive_integers": true,
+    "terminal_matter_lattice_imported_by_hash": true,
+    "vectorlike_pairs_add_nonnegative_Weyl_weight": true
+  },
+  "input_pin": {
+    "path": "quantum-weyl/anomalies/certificates/MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE.json",
+    "result_id": "MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE",
+    "sha256": "3a6051c7f8cbf51baddd543b99d121d71c074ccf307344e12ece929db40de43e"
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "ONLY_INSTANTIATE_REPRESENTATION_TABLES_FOR_A_CHANGED_FIELD_FAMILY_WITH_A_CERTIFIED_NONEMPTY_WEYL_CANCELLATION_TARGET",
+  "projection_theorem": {
+    "codomain": "the certified nonnegative real/integer Weyl-matter cone",
+    "domain": "any finite healthy standard-sign assignment of real conformal scalars, chiral/Dirac fermions and complete gauge complexes to finite-dimensional compact-group representations",
+    "forgetful_map": "forget gauge labels and weight every species multiplicity by the positive integer dimension of its representation",
+    "gravity_separator_value": {
+      "denominator": 30,
+      "numerator": 199
+    },
+    "joint_solution_set": "EMPTY",
+    "proof": [
+      "every healthy representation assignment maps to a nonnegative matter vector",
+      "the C2 functional is positive on gravity and every nonzero healthy matter ray",
+      "therefore the projected Weyl-cancellation set is empty",
+      "local cubic, mixed, global mod-two and beta constraints intersect a pre-existing empty set"
+    ],
+    "scope": "universal for the declared healthy species, hence every bounded U1/SU(N)/SO(N)/Sp(N) or product-family subset is empty",
+    "separator_coordinates_C2_E4_CdualC_BoxR": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "species_separator_values": {
+      "Abelian_gauge_vector": {
+        "denominator": 10,
+        "numerator": 1
+      },
+      "Dirac_fermion": {
+        "denominator": 20,
+        "numerator": 1
+      },
+      "left_Weyl_fermion": {
+        "denominator": 40,
+        "numerator": 1
+      },
+      "ordinary_homogeneous_conformal_compensator_scalar": {
+        "denominator": 120,
+        "numerator": 1
+      },
+      "real_conformal_scalar": {
+        "denominator": 120,
+        "numerator": 1
+      },
+      "right_Weyl_fermion": {
+        "denominator": 40,
+        "numerator": 1
+      }
+    }
+  },
+  "provenance": {
+    "proof_type": "EXACT_FORGETFUL_MAP_COMPOSITION_WITH_POSITIVE_DUAL_SEPARATOR",
+    "source_manifest": {
+      "../reports/matter-gauge-representation-projection-obstruction.md": "83b8bf680fe15f4fbfbdfdf772c60a539ac9980572304b195afd62b334c8c6e9",
+      "matter_gauge_representation_projection_obstruction.py": "f00e74f26ad5c0252af55cbfc95c1d63374b31ac025df67b7c6be268dcfacf2b",
+      "matter_gauge_representation_projection_obstruction_certificate.py": "cb363aa126335fad153ffb5689e473e40a5c66a3d0f95994adc9980b733bf896",
+      "schema/matter-gauge-representation-projection-obstruction-v1.schema.json": "f1b51fa595b332a98b42b6d323b7fcd4d0c3b2a10032a2c66c6c8d16e664ea83",
+      "tests/test_matter_gauge_representation_projection_obstruction.py": "8bc5787c0af49f240f4c9e0db389048d89e06f6f2fef66134759f76a422fadfd",
+      "verify_matter_gauge_representation_projection_obstruction.py": "32fca7dd300ea0a5f262b7ff38bf1e238922700ad07a6a750379e671edf5bbce"
+    }
+  },
+  "relaxation_ledger": {
+    "formal_signed_determinant_lattice": "CERTIFIED upstream, but negative multiplicities are inverse determinants or wrong-statistics powers rather than healthy representation multiplicities; gauge assignments remain open",
+    "higher_derivative_conformal_fields": "OPEN: require their own BV complexes, kinetic-sign audit and two independent anomaly-coefficient rails",
+    "shifting_Wess_Zumino_compensator": "changes the BV complex and counterterm algebra; it is not a gauge-representation lattice column or strict cancellation",
+    "wrong_sign_kinetic_terms": "do not automatically realize negative determinant powers and are outside the healthy family"
+  },
+  "representation_gate_disposition": {
+    "bounded_group_rank_highest_weight_enumeration": "NOT_PERFORMED_PROJECTION_OBSTRUCTION_IS_PRIOR",
+    "character_index_table": "NOT_COMPUTED_EMPTY_DOMAIN",
+    "cubic_local_gauge_anomaly": "NOT_COMPUTED_EMPTY_DOMAIN",
+    "direct_tensor_invariant_table": "NOT_COMPUTED_EMPTY_DOMAIN",
+    "global_mod_two_anomaly": "NOT_COMPUTED_EMPTY_DOMAIN",
+    "mixed_gauge_gravitational_anomaly": "NOT_COMPUTED_EMPTY_DOMAIN",
+    "one_loop_gauge_beta_function": "NOT_COMPUTED_EMPTY_DOMAIN",
+    "vectorlike_pair_policy": "may cancel gauge chirality but contributes the sum of two positive Weyl C2 coordinates and cannot evade the separator"
+  },
+  "result_id": "MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION",
+  "result_state": "JOINT_HEALTHY_WEYL_AND_GAUGE_ANOMALY_SOLUTION_SET_EMPTY_BEFORE_REPRESENTATION_ENUMERATION",
+  "schema": "quantum-weyl-matter-gauge-representation-projection-obstruction-v1"
+}

@@ -25,6 +25,19 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             verify_matter_table()["schema"],
             "quantum-weyl-matter-selection-atlas-table-v1",
         )
+        rows = {row["candidate"]: row for row in value["rows"]}
+        self.assertEqual(
+            rows["healthy_chiral_gauge_representation_assignment"][
+                "strict_cancellation_status"
+            ],
+            "OBSTRUCTED",
+        )
+        self.assertEqual(
+            rows["healthy_chiral_gauge_representation_assignment"][
+                "field_content_status"
+            ],
+            "OPEN",
+        )
 
     def test_generated_entry_kinds_and_nonparticle_ledgers(self) -> None:
         value = build()

@@ -17,6 +17,11 @@ SOURCE = (
     QROOT
     / "anomalies/certificates/MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE.json"
 )
+JOINT_SOURCE = (
+    QROOT
+    / "anomalies/certificates/"
+    "MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION.json"
+)
 OUTPUT = HERE / "matter-selection-atlas-table.json"
 STATUSES = ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"]
 
@@ -27,6 +32,7 @@ def _sha(path: Path) -> str:
 
 def build() -> dict[str, Any]:
     source = json.loads(SOURCE.read_text(encoding="utf-8"))
+    joint = json.loads(JOINT_SOURCE.read_text(encoding="utf-8"))
     if (
         source.get("result_id") != "MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE"
         or source["claim_flags"]["HEALTHY_NONNEGATIVE_CANCELLATION_EXISTS"]
@@ -34,6 +40,17 @@ def build() -> dict[str, Any]:
         or source["claim_flags"]["COMPENSATOR_IS_STRICT_CANCELLATION"] is not False
     ):
         raise ValueError("matter-selection source boundary drifted")
+    if (
+        joint.get("result_id")
+        != "MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION"
+        or joint["claim_flags"]["JOINT_HEALTHY_WEYL_GAUGE_SOLUTION_EXISTS"]
+        is not False
+        or joint["claim_flags"][
+            "BOUNDED_REPRESENTATION_CLASSIFICATION_PERFORMED"
+        ]
+        is not False
+    ):
+        raise ValueError("joint matter/gauge projection boundary drifted")
     rows = []
     for candidate in (
         "real_conformal_scalar",
@@ -59,6 +76,19 @@ def build() -> dict[str, Any]:
         )
     rows.extend(
         [
+            {
+                "candidate": "healthy_chiral_gauge_representation_assignment",
+                "field_content_status": "OPEN",
+                "coefficient_status": "CERTIFIED",
+                "strict_cancellation_status": "OBSTRUCTED",
+                "healthy_standard_sign": True,
+                "vector": "projects to the certified empty nonnegative Weyl-matter cone",
+                "physical_price": (
+                    "no representation enumeration: gauge constraints only "
+                    "shrink the already-empty joint domain"
+                ),
+                "Lorentzian_QME_status": "NO_CERTIFIED_MAP",
+            },
             {
                 "candidate": "Yang_Mills_adjoint_vector",
                 "field_content_status": "CERTIFIED",
@@ -113,6 +143,11 @@ def build() -> dict[str, Any]:
             "path": SOURCE.relative_to(ROOT).as_posix(),
             "result_id": source["result_id"],
             "sha256": _sha(SOURCE),
+        },
+        "joint_gauge_selection_source": {
+            "path": JOINT_SOURCE.relative_to(ROOT).as_posix(),
+            "result_id": joint["result_id"],
+            "sha256": _sha(JOINT_SOURCE),
         },
         "strict_gravity_status": "OBSTRUCTED",
         "rows": rows,

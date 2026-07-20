@@ -5,7 +5,12 @@
     "EUCLIDEAN-SPECTRAL"
   ],
   "generated_by": "quantum-weyl/atlas/generate_matter_selection_atlas_table.py",
-  "generated_by_sha256": "0c32c08b7906b1e840bc65f073b3f0da2535ee2160506e9b10df45873c759d55",
+  "generated_by_sha256": "ca84eb4b677b6eb6a9cd57e1b9aa25c88ee4d2da2175fb50af7e09758425e52a",
+  "joint_gauge_selection_source": {
+    "path": "quantum-weyl/anomalies/certificates/MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION.json",
+    "result_id": "MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION",
+    "sha256": "fd00a80ed827d32b1231415ac2667819546a1d13b8bfd35ebceaa2a4d351fc9b"
+  },
   "rows": [
     {
       "Lorentzian_QME_status": "NO_CERTIFIED_MAP",
@@ -168,6 +173,16 @@
           "numerator": -1
         }
       ]
+    },
+    {
+      "Lorentzian_QME_status": "NO_CERTIFIED_MAP",
+      "candidate": "healthy_chiral_gauge_representation_assignment",
+      "coefficient_status": "CERTIFIED",
+      "field_content_status": "OPEN",
+      "healthy_standard_sign": true,
+      "physical_price": "no representation enumeration: gauge constraints only shrink the already-empty joint domain",
+      "strict_cancellation_status": "OBSTRUCTED",
+      "vector": "projects to the certified empty nonnegative Weyl-matter cone"
     },
     {
       "Lorentzian_QME_status": "NO_CERTIFIED_MAP",

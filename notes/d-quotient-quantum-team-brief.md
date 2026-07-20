@@ -2132,3 +2132,26 @@ phenomenology, GUT, scattering or unitarity conclusion.
 - [`MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE.json`](../quantum-weyl/anomalies/certificates/MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE.json)
 - [`matter-content-anomaly-cancellation-lattice.md`](../quantum-weyl/reports/matter-content-anomaly-cancellation-lattice.md)
 - [`matter-selection-atlas-table.json`](../quantum-weyl/atlas/matter-selection-atlas-table.json)
+
+### Gauge-representation projection obstruction
+
+The next representation-selection gate terminates before any bounded
+group/highest-weight enumeration.  Every finite healthy compact-group
+representation assignment forgets to a nonnegative Weyl-matter vector:
+representation labels only multiply the underlying field row by the positive
+integer dimension of the representation.  Since the target cone is already
+certified empty, intersecting it with cubic, mixed, global mod-two or
+beta-function constraints remains empty.
+
+Vectorlike pairs may cancel gauge chirality but add two positive \(C^2\)
+coordinates.  The formal signed determinant lattice, shifting compensator
+and higher-derivative fields remain separately priced changed families; none
+is promoted to healthy standard matter.
+
+No representation table was fabricated after the projection obstruction had
+already decided the joint question.  This is not a gauge-group, Standard
+Model, GUT, particle, phenomenology, Lorentzian QME, positivity, unitarity or
+ultraviolet-completion result.
+
+- [`MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION.json`](../quantum-weyl/anomalies/certificates/MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION.json)
+- [`matter-gauge-representation-projection-obstruction.md`](../quantum-weyl/reports/matter-gauge-representation-projection-obstruction.md)
