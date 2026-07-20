@@ -301,6 +301,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
         self.assertIn("tangent-space quotient", entry["mode_data"]["taub_maps"]["statement"])
         self.assertIn("conormal nullity is one", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("8293671904", entry["mode_data"]["resonance"]["statement"])
         self.assertIn("nullity-four", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")

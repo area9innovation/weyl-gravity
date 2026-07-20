@@ -1,0 +1,46 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_PRESYMPLECTIC_DIVISORS_V1_PROPERNESS_INTEGRATION_RECEIPT",
+  "date": "2026-07-20",
+  "evidence_commit": "ebb23229286a69afce8e1aae7d5a455a8c287075",
+  "scope": "Pin the exact nonzero conormal determinant witness into the residual atlas and Paper 13.",
+  "content_sha256": {
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "9f11ba84cf729573260e0caf2dafa08a34bc7307d83ad71466d6ea72cbd9b92c",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "19d4e8f03959da8381f5f48368ae482e2d65f420f746a8d075089492d21050dc",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "44d1a94569ef0815f0dbcc03800f3395005e812942629c7e3578c6409e3cf7ec",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "9ff7c6a5414417e25f09cdd0a62123fe90fc1a2839e2e538177a394506d3b2a7",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex": "5185a5cadfa0a387a2444bb92dd8768c25616d2c888f7292b1bad93e8094b815",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json": "6c496f462173c831cb4bfceddcde4a80f67ae9f9e0d85b0ac4bfb14013ccb426",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.pdf": "82ee64797da9fbe6ff8af86aa7392ccffd93bc0945553bbbc31097870bd1879e"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m json.tool on the claim map and generated atlas",
+        "git diff --check on the scoped paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "atlas_tests_run": 102,
+      "commands": [
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 -m bridge.einstein_sector.atlas.verify_einstein_atlas_fragment",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 paper/verify_13_14_draft_source_maps.py",
+        "three pdflatex passes for Paper 13"
+      ],
+      "paper_result": "29 pages with no TeX warnings, undefined references, overfull boxes or underfull boxes"
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESSED_CONSUMER_REPLAY",
+      "reason": "The atlas verifier and test require the exact determinant 8293671904, while the paper claim map pins the repaired certificate blob."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is the integration of an exact properness witness, not a new theorem freeze."
+    }
+  },
+  "claim_boundary": "The witness proves the smooth candidate-17/20 degeneracy locus is proper. It does not alter the open global, singular, occupation-gluing or causal lifecycles."
+}

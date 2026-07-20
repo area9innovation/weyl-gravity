@@ -574,7 +574,7 @@ def verify() -> None:
         raise AssertionError("smooth active presymplectic divisor was hidden")
     if active_divisors["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "tangent-space quotient" not in active_divisors["mode_data"]["taub_maps"]["statement"]:
         raise AssertionError("smooth active presymplectic quotient changed")
-    if "conormal nullity is one" not in active_divisors["mode_data"]["resonance"]["statement"] or "nullity-four" not in active_divisors["mode_data"]["resonance"]["statement"]:
+    if "conormal nullity is one" not in active_divisors["mode_data"]["resonance"]["statement"] or "8293671904" not in active_divisors["mode_data"]["resonance"]["statement"] or "nullity-four" not in active_divisors["mode_data"]["resonance"]["statement"]:
         raise AssertionError("smooth active divisor witness ranks changed")
     if active_divisors_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or active_divisors_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("smooth active divisor correction scope changed")
