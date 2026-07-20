@@ -1,0 +1,399 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/quantum-weyl/boundary-corner-anomaly-operator-domain-obstruction-v1.schema.json",
+  "title": "Boundary/corner anomaly operator-domain obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "declared_carrier",
+    "boundary_gauge_branching",
+    "required_object_ledger",
+    "first_obstruction",
+    "disposition",
+    "receiving_contract",
+    "claim_flags",
+    "exact_checks",
+    "dependency_refs",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-boundary-corner-anomaly-operator-domain-obstruction-v1"
+    },
+    "result_id": {
+      "const": "BOUNDARY_CORNER_ANOMALY_OPERATOR_DOMAIN_OBSTRUCTION"
+    },
+    "result_state": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ]
+    },
+    "declared_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "theory",
+        "signature",
+        "manifold",
+        "boundary_faces",
+        "codimension_two_corners",
+        "background_status",
+        "boundary_condition_class"
+      ],
+      "properties": {
+        "theory": {
+          "type": "string"
+        },
+        "signature": {
+          "const": "EUCLIDEAN"
+        },
+        "manifold": {
+          "const": "M=[0,1] x B3 with the flat product metric"
+        },
+        "boundary_faces": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "codimension_two_corners": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "background_status": {
+          "const": "flat and Bach-flat"
+        },
+        "boundary_condition_class": {
+          "const": "NOT_SELECTED_BECAUSE_THE_BOUNDARY_GAUGE_COMPLEX_IS_UNDEFINED"
+        }
+      }
+    },
+    "boundary_gauge_branching": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "face_preserving_branch",
+        "moving_boundary_branch",
+        "decision"
+      ],
+      "properties": {
+        "face_preserving_branch": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "normal_ghost_condition",
+            "closure_checks",
+            "additional_required_choice"
+          ],
+          "properties": {
+            "normal_ghost_condition": {
+              "const": "pullback(xi_normal)=0"
+            },
+            "closure_checks": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "normal_ghost_boundary_condition",
+                "tangential_derivative_consequence",
+                "BRST_normal_ghost_formula",
+                "BRST_preserves_normal_ghost_boundary_condition"
+              ],
+              "properties": {
+                "normal_ghost_boundary_condition": {
+                  "type": "string"
+                },
+                "tangential_derivative_consequence": {
+                  "type": "string"
+                },
+                "BRST_normal_ghost_formula": {
+                  "type": "string"
+                },
+                "BRST_preserves_normal_ghost_boundary_condition": {
+                  "const": true
+                }
+              }
+            },
+            "additional_required_choice": {
+              "type": "string"
+            }
+          }
+        },
+        "moving_boundary_branch": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "normal_ghost_condition",
+            "required_extension",
+            "status"
+          ],
+          "properties": {
+            "normal_ghost_condition": {
+              "const": "unrestricted"
+            },
+            "required_extension": {
+              "type": "string"
+            },
+            "status": {
+              "const": "NOT_PRESENT_IN_CLASSICAL_IMPORT"
+            }
+          }
+        },
+        "decision": {
+          "type": "string",
+          "pattern": "^UNDEFINED:.*$"
+        }
+      }
+    },
+    "required_object_ledger": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "object_id",
+          "status",
+          "present_as_top_level_key"
+        ],
+        "properties": {
+          "object_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "const": "NOT_SUPPLIED_BY_IMPORTED_BULK_CERTIFICATES"
+          },
+          "present_as_top_level_key": {
+            "const": false
+          }
+        }
+      }
+    },
+    "first_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "obstruction_id",
+        "classification",
+        "proof"
+      ],
+      "properties": {
+        "obstruction_id": {
+          "const": "MISSING_BOUNDARY_BV_BFV_COMPLEX_AND_STRONGLY_ELLIPTIC_FULL_BV_BOUNDARY_PROBLEM"
+        },
+        "classification": {
+          "const": "OBSTRUCTED"
+        },
+        "proof": {
+          "type": "string",
+          "minLength": 80
+        }
+      }
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "boundary_relative_cohomology",
+        "corner_relative_cohomology",
+        "boundary_counterterm_basis",
+        "corner_counterterm_basis",
+        "one_loop_boundary_coefficients",
+        "anomaly_inflow",
+        "D_charge_and_Cartan_status",
+        "bulk_QME_status"
+      ],
+      "properties": {
+        "boundary_relative_cohomology": {
+          "const": "NOT_COMPUTED_COMPLEX_UNDEFINED"
+        },
+        "corner_relative_cohomology": {
+          "const": "NOT_COMPUTED_COMPLEX_UNDEFINED"
+        },
+        "boundary_counterterm_basis": {
+          "const": "NOT_COMPUTED_COMPLEX_UNDEFINED"
+        },
+        "corner_counterterm_basis": {
+          "const": "NOT_COMPUTED_COMPLEX_UNDEFINED"
+        },
+        "one_loop_boundary_coefficients": {
+          "const": "NOT_COMPUTED_ELLIPTIC_BOUNDARY_OPERATOR_UNDEFINED"
+        },
+        "anomaly_inflow": {
+          "const": "NOT_COMPUTED_BOUNDARY_COMPLEX_UNDEFINED"
+        },
+        "D_charge_and_Cartan_status": {
+          "const": "UNDEFINED_NO_DIFFERENTIABLE_BOUNDARY_GENERATOR"
+        },
+        "bulk_QME_status": {
+          "const": "UNCHANGED_STRICT_LOCAL_EUCLIDEAN_BULK_QME_OBSTRUCTED"
+        }
+      }
+    },
+    "receiving_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "first_required_delivery",
+        "second_required_delivery",
+        "then"
+      ],
+      "properties": {
+        "first_required_delivery": {
+          "type": "string",
+          "minLength": 40
+        },
+        "second_required_delivery": {
+          "type": "string",
+          "minLength": 40
+        },
+        "then": {
+          "type": "string",
+          "minLength": 40
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "SCOPED_CORNERED_GEOMETRY_DECLARED",
+        "BOUNDARY_GAUGE_BRANCH_AMBIGUITY_CERTIFIED",
+        "BOUNDARY_BV_BFV_COMPLEX_CERTIFIED",
+        "FULL_BV_ELLIPTIC_BOUNDARY_PROBLEM_CERTIFIED",
+        "BOUNDARY_CORNER_COHOMOLOGY_COMPUTED",
+        "BOUNDARY_ANOMALY_COEFFICIENTS_COMPUTED",
+        "ANOMALY_INFLOW_COMPUTED",
+        "DIFFERENTIABLE_D_BOUNDARY_CHARGE_CERTIFIED",
+        "BULK_ANOMALY_CANCELLED_BY_BOUNDARY",
+        "LORENTZIAN_BOUNDARY_QME_CERTIFIED"
+      ],
+      "properties": {
+        "SCOPED_CORNERED_GEOMETRY_DECLARED": {
+          "const": true
+        },
+        "BOUNDARY_GAUGE_BRANCH_AMBIGUITY_CERTIFIED": {
+          "const": true
+        },
+        "BOUNDARY_BV_BFV_COMPLEX_CERTIFIED": {
+          "const": false
+        },
+        "FULL_BV_ELLIPTIC_BOUNDARY_PROBLEM_CERTIFIED": {
+          "const": false
+        },
+        "BOUNDARY_CORNER_COHOMOLOGY_COMPUTED": {
+          "const": false
+        },
+        "BOUNDARY_ANOMALY_COEFFICIENTS_COMPUTED": {
+          "const": false
+        },
+        "ANOMALY_INFLOW_COMPUTED": {
+          "const": false
+        },
+        "DIFFERENTIABLE_D_BOUNDARY_CHARGE_CERTIFIED": {
+          "const": false
+        },
+        "BULK_ANOMALY_CANCELLED_BY_BOUNDARY": {
+          "const": false
+        },
+        "LORENTZIAN_BOUNDARY_QME_CERTIFIED": {
+          "const": false
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "additionalProperties": {
+        "const": true
+      },
+      "minProperties": 7
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Euclidean_bulk_symbol_complex",
+        "bulk_local_anomaly_completion",
+        "bulk_regulated_Slavnov_breaking"
+      ],
+      "properties": {
+        "Euclidean_bulk_symbol_complex": {
+          "$ref": "#/$defs/ref"
+        },
+        "bulk_local_anomaly_completion": {
+          "$ref": "#/$defs/ref"
+        },
+        "bulk_regulated_Slavnov_breaking": {
+          "$ref": "#/$defs/ref"
+        }
+      }
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 100
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proof_type",
+        "source_manifest"
+      ],
+      "properties": {
+        "proof_type": {
+          "const": "EXACT_IMPORTED_SCOPE_AUDIT_AND_BOUNDARY_GAUGE_BRANCH_OBSTRUCTION"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  }
+}

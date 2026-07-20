@@ -1,0 +1,58 @@
+{
+  "receipt_id": "BOUNDARY_CORNER_ANOMALY_OPERATOR_DOMAIN_OBSTRUCTION_V1_TIER_RECEIPT",
+  "result_id": "BOUNDARY_CORNER_ANOMALY_OPERATOR_DOMAIN_OBSTRUCTION",
+  "recorded_at": "2026-07-20",
+  "base_commit": "828e6ae66fbfabf7f359822d7d7c03db29192671",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "input_hashes": {
+    "Euclidean_bulk_symbol_complex": "a1eb7dd598ed341785df3e9771e934fe5c45e0acdb453dff33b511c7912eacf9",
+    "bulk_local_anomaly_completion": "07bf332cf1bece92f8a041002f3c787fe7e85e798871e4878fbbc3cd7b20bd3b",
+    "bulk_regulated_Slavnov_breaking": "d11ebc782c6a388e2fd2d934e0a60c7016faf60b9c22691cceeeb6a8080bf3f8"
+  },
+  "output_hash": "765d3429a3a7399bd6b67b0c210ca91747d8acdcf5ebba0d085f139a0ad6586c",
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/local_bv/boundary_corner_anomaly_operator_domain_obstruction.py quantum-weyl/local_bv/boundary_corner_anomaly_operator_domain_obstruction_certificate.py quantum-weyl/local_bv/verify_boundary_corner_anomaly_operator_domain_obstruction.py quantum-weyl/local_bv/tests/test_boundary_corner_anomaly_operator_domain_obstruction.py",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m local_bv.boundary_corner_anomaly_operator_domain_obstruction_certificate --check",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 quantum-weyl/local_bv/verify_boundary_corner_anomaly_operator_domain_obstruction.py",
+      "status": "PASS_INDEPENDENT_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest local_bv.tests.test_boundary_corner_anomaly_operator_domain_obstruction -v",
+      "elapsed_seconds": 0.69,
+      "status": "PASS_6_TESTS"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s quantum-weyl/local_bv/schema/boundary-corner-anomaly-operator-domain-obstruction-v1.schema.json && npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/local_bv/schema/boundary-corner-anomaly-operator-domain-obstruction-v1.schema.json -d quantum-weyl/local_bv/certificates/BOUNDARY_CORNER_ANOMALY_OPERATOR_DOMAIN_OBSTRUCTION.json",
+      "status": "PASS_DRAFT_2020_12_STRICT"
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest atlas.tests.test_quantum_atlas_fragment -v && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "elapsed_seconds": 11.59,
+      "status": "PASS_8_TESTS_AND_3_VERIFIERS"
+    }
+  ],
+  "development_repairs": [
+    {
+      "failure": "the local deterministic schema checker interpreted a prefix-only regular expression as a full match",
+      "repair": "make the fail-closed UNDEFINED decision pattern explicitly cover the complete string",
+      "regression_status": "PASS"
+    }
+  ],
+  "tier_3_not_run": "The result is an exact first operator/domain obstruction. It does not compute or promote boundary cohomology, coefficients, QME restoration, a Lorentzian boundary theory, theorem freeze, release or tag."
+}

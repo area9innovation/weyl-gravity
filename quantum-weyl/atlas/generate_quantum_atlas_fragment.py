@@ -54,6 +54,7 @@ DEPENDENCIES = {
     "nonconformal_coefficient_match": QROOT / "spectral/euclidean/certificates/REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH.json",
     "regulated_Slavnov_breaking": QROOT / "anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
     "local_anomaly_completion_audit": QROOT / "local_bv/certificates/LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json",
+    "boundary_corner_anomaly_obstruction": QROOT / "local_bv/certificates/BOUNDARY_CORNER_ANOMALY_OPERATOR_DOMAIN_OBSTRUCTION.json",
     "quantum_Cartan_D_disposition": QROOT / "cartan/certificates/QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION.json",
     "renormalized_D_Ward_nondefinition": QROOT / "cartan/certificates/RENORMALIZED_D_WARD_INSERTION_NONDEFINITION.json",
     "unitary_matter_no_go": QROOT / "anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
@@ -251,6 +252,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     coefficient = values["nonconformal_coefficient_match"]
     breaking = values["regulated_Slavnov_breaking"]
     local_anomaly_audit = values["local_anomaly_completion_audit"]
+    boundary_corner_obstruction = values["boundary_corner_anomaly_obstruction"]
     cartan_disposition = values["quantum_Cartan_D_disposition"]
     ward_nondefinition = values["renormalized_D_Ward_nondefinition"]
     matter_no_go = values["unitary_matter_no_go"]
@@ -622,6 +624,29 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         or slavnov.get("claim_flags", {}).get("QME_OBSTRUCTED") is not False
     ):
         raise ValueError("QME lifecycle boundary drifted")
+    if (
+        boundary_corner_obstruction.get("first_obstruction", {}).get(
+            "classification"
+        )
+        != "OBSTRUCTED"
+        or boundary_corner_obstruction.get("claim_flags", {}).get(
+            "SCOPED_CORNERED_GEOMETRY_DECLARED"
+        )
+        is not True
+        or boundary_corner_obstruction.get("claim_flags", {}).get(
+            "BOUNDARY_CORNER_COHOMOLOGY_COMPUTED"
+        )
+        is not False
+        or boundary_corner_obstruction.get("claim_flags", {}).get(
+            "BOUNDARY_ANOMALY_COEFFICIENTS_COMPUTED"
+        )
+        is not False
+        or boundary_corner_obstruction.get("disposition", {}).get(
+            "D_charge_and_Cartan_status"
+        )
+        != "UNDEFINED_NO_DIFFERENTIABLE_BOUNDARY_GENERATOR"
+    ):
+        raise ValueError("boundary/corner anomaly claim boundary drifted")
     if (
         elliptic.get("claim_flags", {}).get(
             "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED"
@@ -1470,7 +1495,7 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
 
 def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     specs = [
-        ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4; the same-background tau-adic classical D_compact contraction is imported, while the first Lorentzian analytic Ward operator T2_ren remains undefined and the Cartan image is UNDEFINED_ANALYTICALLY", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "local_anomaly_completion_audit", "quantum_Cartan_D_disposition", "renormalized_D_Ward_nondefinition", "unitary_matter_no_go", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1")),
+        ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4; the same-background tau-adic classical D_compact contraction is imported, while the first Lorentzian analytic Ward operator T2_ren remains undefined and the Cartan image is UNDEFINED_ANALYTICALLY; on the declared cornered Euclidean carrier, the boundary/corner BV-BFV complex, full-BV elliptic boundary problem, anomaly coefficients and differentiable D boundary charge are undefined", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "local_anomaly_completion_audit", "boundary_corner_anomaly_obstruction", "quantum_Cartan_D_disposition", "renormalized_D_Ward_nondefinition", "unitary_matter_no_go", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1")),
         ("euclidean_determinant_factor", "round-S4 TT or ghost determinant factor", ["EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "Euclidean_elliptic_complex", "nonconformal_coefficient_match")),
         ("flat_tt_log_form_factor", "nonzero-momentum flat-TT logarithmic effective-action form factor", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1")),
         ("curvature_squared_covariant_log_form_factor", "covariant C log(Delta_C/mu^2) C effective-action form factor through curvature order two", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1")),

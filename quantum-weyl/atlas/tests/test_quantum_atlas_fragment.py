@@ -131,6 +131,14 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             {evidence["result_id"] for evidence in local_guard["evidence"]},
         )
         self.assertIn(
+            "BOUNDARY_CORNER_ANOMALY_OPERATOR_DOMAIN_OBSTRUCTION",
+            {evidence["result_id"] for evidence in local_guard["evidence"]},
+        )
+        self.assertIn(
+            "differentiable D boundary charge",
+            local_guard["scope"]["carrier"],
+        )
+        self.assertIn(
             "classical D_compact contraction is now imported",
             local_guard["quantum_data"]["anomaly_QME_dependency"]["statement"],
         )

@@ -1859,3 +1859,36 @@ Certificate and report:
 
 - [`BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION.json`](../quantum-weyl/lorentzian/certificates/BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION.json)
 - [`berger-homogeneous-stationary-hadamard-normalization-obstruction.md`](../quantum-weyl/reports/berger-homogeneous-stationary-hadamard-normalization-obstruction.md)
+
+## First boundary/corner anomaly gate (2026-07-20)
+
+The first scoped carrier is the flat Bach-flat Euclidean manifold with
+corners
+
+\[
+M=[0,1]\times B^3,
+\]
+
+with three boundary faces and two \(S^2\) corners. The authoritative bulk
+symbol certificate uses `LOCAL_COMPACT_SUPPORT`; it does not define a
+geometric boundary operator domain.
+
+The exact first branch is already decisive. Boundary-preserving
+diffeomorphisms impose \(\iota^*\xi^\perp=0\), which is BRST closed. Allowing
+\(\xi^\perp\) instead moves the boundary and requires embedding/edge fields
+and their cotangent lift. These are inequivalent boundary BRST complexes, and
+the classical import selects neither. The repository also supplies no
+full-BV boundary projectors, boundary principal symbol,
+Lopatinski--Shapiro/complementing certificate, or corner-compatible heat
+kernel.
+
+Therefore boundary and corner relative cohomology, exhaustive antifield
+ansätze, counterterms, anomaly inflow, one-loop boundary coefficients and the
+differentiable \(D\) boundary charge are currently undefined. The certified
+strict bulk local Euclidean QME obstruction is unchanged; no boundary
+cancellation is inferred.
+
+Certificate and report:
+
+- [`BOUNDARY_CORNER_ANOMALY_OPERATOR_DOMAIN_OBSTRUCTION.json`](../quantum-weyl/local_bv/certificates/BOUNDARY_CORNER_ANOMALY_OPERATOR_DOMAIN_OBSTRUCTION.json)
+- [`boundary-corner-anomaly-operator-domain-obstruction.md`](../quantum-weyl/reports/boundary-corner-anomaly-operator-domain-obstruction.md)

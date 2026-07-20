@@ -1,0 +1,155 @@
+{
+  "boundary_gauge_branching": {
+    "decision": "UNDEFINED: the two branches are inequivalent local BRST complexes and the repository has not selected either one",
+    "face_preserving_branch": {
+      "additional_required_choice": "compatible Weyl, metric, antifield, nonminimal and corner conditions plus a differentiable BFV generator",
+      "closure_checks": {
+        "BRST_normal_ghost_formula": "pullback(Q xi_normal)=xi_tangent*partial_tangent(xi_normal)+xi_normal*partial_normal(xi_normal)",
+        "BRST_preserves_normal_ghost_boundary_condition": true,
+        "normal_ghost_boundary_condition": "pullback(xi_normal)=0",
+        "tangential_derivative_consequence": "pullback(partial_tangent xi_normal)=0"
+      },
+      "normal_ghost_condition": "pullback(xi_normal)=0"
+    },
+    "moving_boundary_branch": {
+      "normal_ghost_condition": "unrestricted",
+      "required_extension": "embedding/edge field and its ghost-antifield cotangent lift on every face, with corner compatibility",
+      "status": "NOT_PRESENT_IN_CLASSICAL_IMPORT"
+    }
+  },
+  "claim_boundary": "This exact preflight declares one cornered Euclidean carrier and certifies the first missing operator/domain choice. It does not compute boundary or corner cohomology, counterterms, coefficients, inflow or D charges; does not alter the certified bulk anomaly; and establishes no Lorentzian boundary theory, particle, scattering or unitarity claim.",
+  "claim_flags": {
+    "ANOMALY_INFLOW_COMPUTED": false,
+    "BOUNDARY_ANOMALY_COEFFICIENTS_COMPUTED": false,
+    "BOUNDARY_BV_BFV_COMPLEX_CERTIFIED": false,
+    "BOUNDARY_CORNER_COHOMOLOGY_COMPUTED": false,
+    "BOUNDARY_GAUGE_BRANCH_AMBIGUITY_CERTIFIED": true,
+    "BULK_ANOMALY_CANCELLED_BY_BOUNDARY": false,
+    "DIFFERENTIABLE_D_BOUNDARY_CHARGE_CERTIFIED": false,
+    "FULL_BV_ELLIPTIC_BOUNDARY_PROBLEM_CERTIFIED": false,
+    "LORENTZIAN_BOUNDARY_QME_CERTIFIED": false,
+    "SCOPED_CORNERED_GEOMETRY_DECLARED": true
+  },
+  "declared_carrier": {
+    "background_status": "flat and Bach-flat",
+    "boundary_condition_class": "NOT_SELECTED_BECAUSE_THE_BOUNDARY_GAUGE_COMPLEX_IS_UNDEFINED",
+    "boundary_faces": [
+      "Sigma_0={0} x B3",
+      "Sigma_1={1} x B3",
+      "Sigma_wall=[0,1] x S2"
+    ],
+    "codimension_two_corners": [
+      "C_0={0} x S2",
+      "C_1={1} x S2"
+    ],
+    "manifold": "M=[0,1] x B3 with the flat product metric",
+    "signature": "EUCLIDEAN",
+    "theory": "strict pure-Weyl gravity with fixed field content"
+  },
+  "dependency_refs": {
+    "Euclidean_bulk_symbol_complex": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json",
+      "result_id": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
+      "sha256": "a1eb7dd598ed341785df3e9771e934fe5c45e0acdb453dff33b511c7912eacf9"
+    },
+    "bulk_local_anomaly_completion": {
+      "path": "quantum-weyl/local_bv/certificates/LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json",
+      "result_id": "LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT",
+      "sha256": "07bf332cf1bece92f8a041002f3c787fe7e85e798871e4878fbbc3cd7b20bd3b"
+    },
+    "bulk_regulated_Slavnov_breaking": {
+      "path": "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
+      "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
+      "sha256": "d11ebc782c6a388e2fd2d934e0a60c7016faf60b9c22691cceeeb6a8080bf3f8"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "disposition": {
+    "D_charge_and_Cartan_status": "UNDEFINED_NO_DIFFERENTIABLE_BOUNDARY_GENERATOR",
+    "anomaly_inflow": "NOT_COMPUTED_BOUNDARY_COMPLEX_UNDEFINED",
+    "boundary_counterterm_basis": "NOT_COMPUTED_COMPLEX_UNDEFINED",
+    "boundary_relative_cohomology": "NOT_COMPUTED_COMPLEX_UNDEFINED",
+    "bulk_QME_status": "UNCHANGED_STRICT_LOCAL_EUCLIDEAN_BULK_QME_OBSTRUCTED",
+    "corner_counterterm_basis": "NOT_COMPUTED_COMPLEX_UNDEFINED",
+    "corner_relative_cohomology": "NOT_COMPUTED_COMPLEX_UNDEFINED",
+    "one_loop_boundary_coefficients": "NOT_COMPUTED_ELLIPTIC_BOUNDARY_OPERATOR_UNDEFINED"
+  },
+  "exact_checks": {
+    "all_required_boundary_objects_absent": true,
+    "bulk_anomaly_theorem_preserved": true,
+    "bulk_symbol_uses_local_compact_support": true,
+    "declared_carrier_has_three_faces": true,
+    "declared_carrier_has_two_codimension_two_corners": true,
+    "face_preserving_ghost_condition_is_BRST_closed": true,
+    "moving_boundary_branch_requires_new_carrier": true
+  },
+  "first_obstruction": {
+    "classification": "OBSTRUCTED",
+    "obstruction_id": "MISSING_BOUNDARY_BV_BFV_COMPLEX_AND_STRONGLY_ELLIPTIC_FULL_BV_BOUNDARY_PROBLEM",
+    "proof": "The imported bulk complex is defined with local compact support. On the declared cornered carrier, face-preserving and moving-boundary diffeomorphisms give inequivalent BRST complexes. No boundary/corner field-antifield differential selects one branch, and no full-BV boundary projectors or complementing-condition certificate define the spectral operator domain. Therefore neither relative boundary/corner cohomology nor boundary heat-kernel coefficients are defined."
+  },
+  "provenance": {
+    "proof_type": "EXACT_IMPORTED_SCOPE_AUDIT_AND_BOUNDARY_GAUGE_BRANCH_OBSTRUCTION",
+    "source_manifest": {
+      "../reports/boundary-corner-anomaly-operator-domain-obstruction.md": "ce8ef48034dd2853f70be7133fe6963e072f163f65d42fe1b044c59f3347f0f6",
+      "boundary_corner_anomaly_operator_domain_obstruction.py": "a10e7b5c07c6009082f31dad53e3a5d232a9b570bae144d1f2c74a05422d3862",
+      "boundary_corner_anomaly_operator_domain_obstruction_certificate.py": "731f916174e3e48c38777775539c11f7993539b0d2038aa8cb3925f8607028df",
+      "schema/boundary-corner-anomaly-operator-domain-obstruction-v1.schema.json": "b5718d49fc43d4f25042cbc9c910d858997226edd51a97c3f9dddba9f83fbecc",
+      "tests/test_boundary_corner_anomaly_operator_domain_obstruction.py": "7bccf0ac27ddb4a1b0e87d483b4f2158898fae0af1f49e85526ab87eeed03169",
+      "verify_boundary_corner_anomaly_operator_domain_obstruction.py": "e547c996e7570225f481408d793fe4076cc35a3066f2f91c115c5a010c2d2cda"
+    }
+  },
+  "receiving_contract": {
+    "first_required_delivery": "Choose face-preserving or moving-boundary gauge symmetry and export its complete face/corner BV-BFV generator dictionary, Q images, pairing and differentiable D generator.",
+    "second_required_delivery": "Export a BRST-invariant full gauge-fixed BV boundary-condition class with boundary principal symbol and exact complementing/strong-ellipticity certificate on every face and corner.",
+    "then": "Generate the bounded face/corner ansatz, compute relative cohomology, and evaluate the corresponding heat-kernel or resolvent coefficients."
+  },
+  "required_object_ledger": [
+    {
+      "object_id": "boundary_field_ghost_antifield_dictionary",
+      "present_as_top_level_key": false,
+      "status": "NOT_SUPPLIED_BY_IMPORTED_BULK_CERTIFICATES"
+    },
+    {
+      "object_id": "boundary_BV_BFV_differential",
+      "present_as_top_level_key": false,
+      "status": "NOT_SUPPLIED_BY_IMPORTED_BULK_CERTIFICATES"
+    },
+    {
+      "object_id": "corner_edge_mode_complex",
+      "present_as_top_level_key": false,
+      "status": "NOT_SUPPLIED_BY_IMPORTED_BULK_CERTIFICATES"
+    },
+    {
+      "object_id": "full_BV_boundary_condition_projectors",
+      "present_as_top_level_key": false,
+      "status": "NOT_SUPPLIED_BY_IMPORTED_BULK_CERTIFICATES"
+    },
+    {
+      "object_id": "boundary_principal_symbol",
+      "present_as_top_level_key": false,
+      "status": "NOT_SUPPLIED_BY_IMPORTED_BULK_CERTIFICATES"
+    },
+    {
+      "object_id": "lopatinski_shapiro_or_equivalent_complementing_certificate",
+      "present_as_top_level_key": false,
+      "status": "NOT_SUPPLIED_BY_IMPORTED_BULK_CERTIFICATES"
+    },
+    {
+      "object_id": "boundary_corner_heat_kernel_or_resolvent",
+      "present_as_top_level_key": false,
+      "status": "NOT_SUPPLIED_BY_IMPORTED_BULK_CERTIFICATES"
+    },
+    {
+      "object_id": "differentiable_D_generator_with_boundary_charge",
+      "present_as_top_level_key": false,
+      "status": "NOT_SUPPLIED_BY_IMPORTED_BULK_CERTIFICATES"
+    }
+  ],
+  "result_id": "BOUNDARY_CORNER_ANOMALY_OPERATOR_DOMAIN_OBSTRUCTION",
+  "result_state": "SCOPED_CORNERED_CARRIER_DECLARED_BOUNDARY_COHOMOLOGY_AND_COEFFICIENTS_UNDEFINED_AT_FIRST_BV_BFV_OPERATOR_GATE",
+  "schema": "quantum-weyl-boundary-corner-anomaly-operator-domain-obstruction-v1"
+}
