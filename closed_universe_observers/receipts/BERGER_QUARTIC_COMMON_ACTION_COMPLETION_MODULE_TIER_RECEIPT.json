@@ -1,0 +1,88 @@
+{
+  "schema": "pure-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_QUARTIC_COMMON_ACTION_COMPLETION_MODULE_TIER_RECEIPT",
+  "science_forge_work_item": "sf:program/work/observer-post-common-action-frontier-input-pinned",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "claim_result_id": "BERGER_QUARTIC_COMMON_ACTION_COMPLETION_MODULE",
+  "claim_certificate_sha256": "67b9e6860e3938dea90e96bd3efcee18db8152129f74e4593b540900c4c3c484",
+  "payload_sha256": "d1e3990de759fe66f393b2086ebb95bdede09a9e3fe73d409b41e1c386b20ce0",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile closed_universe_observers/generate_berger_quartic_common_action_completion_module.py closed_universe_observers/verify_berger_quartic_common_action_completion_module.py closed_universe_observers/tests/test_berger_quartic_common_action_completion_module.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "elapsed_seconds": 0.05,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m closed_universe_observers.generate_berger_quartic_common_action_completion_module --check",
+          "elapsed_seconds": 0.85,
+          "status": "PASS"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=<temporary-directory> 09-relational-clocks-berger-d-cartan.tex",
+          "elapsed_seconds": 0.5,
+          "status": "PASS",
+          "summary": "Paper 09 claim-boundary edit compiled in an isolated temporary output directory."
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m closed_universe_observers.verify_berger_quartic_common_action_completion_module",
+          "elapsed_seconds": 0.67,
+          "status": "PASS",
+          "independent_rail": true
+        },
+        {
+          "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_quartic_common_action_completion_module.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "elapsed_seconds": 21.15,
+          "status": "PASS",
+          "summary": "54 passed"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m closed_universe_observers.generate_berger_quartic_common_action_completion_module --emit",
+          "elapsed_seconds": 1.03,
+          "status": "PASS",
+          "summary": "Regenerated the exact 96-to-28-to-6 kernel classification for both emitters, all twelve action/q3 payloads and the rank-12 completion obstruction."
+        },
+        {
+          "command": "python3 -m closed_universe_observers.atlas.generate_observer_atlas_fragment",
+          "elapsed_seconds": 0.53,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+          "elapsed_seconds": 2.22,
+          "status": "PASS"
+        }
+      ],
+      "criterion": "The new exact action family changes the nonlinear observer claim boundary and is consumed by the generated atlas."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, shared-core algebra change or lifecycle promotion to a paper theorem, Lorentzian construction or quantum result was made."
+    }
+  },
+  "boundaries": {
+    "exact_arithmetic": true,
+    "numeric_evidence_used": false,
+    "complete_declared_quartic_module": true,
+    "unique_same_action_q3_exists": false,
+    "full_arity_three_replay_performed": false,
+    "nonlinear_detector_or_redshift_replay_performed": false,
+    "branch_or_quantum_claim": false
+  }
+}

@@ -2115,32 +2115,31 @@ The team succeeds by locating the first exact bridge or the first exact
 obstruction.  It does not succeed by arguing that two closed universes sound
 similar.
 
-## Active bridge: repaired common action to nonlinear observer
+## Active bridge: quartic completion moduli to the arity-three gate
 
 The active bridge is
-`sf:program/work/observer-common-action-nonlinear-promotion-gate`.  Its
-activation gate imports
-`BERGER_HIGHER_JET_INVARIANT_ACTION_MODULE_CLASSIFICATION` at committed input
-`8e2d56020` and exact certificate hash
-`417ce291b4b96834f74d3fb97e816673a7111f8453bc8a621ef397e0576a1931`.
+`sf:program/work/observer-post-common-action-frontier-input-pinned`.  Its
+activation gate imports the terminal
+`BERGER_ORDER_THREE_COMMON_ACTION_PROMOTION_GATE` certificate and payload by
+exact content hash.  The order-three result retains its certified
+36-module, constant-unary, Maxwell-invariant \(q_1,q_2\) repair.
 
-The complete integration-by-parts filtered scalar action family through total
-differential order three has 932 Berger-\(U(1)\) invariant lines per emitter.
-Together with all lower counterterms it supplies a 36-module,
-constant-unary, Maxwell-gauge-invariant action whose cyclic \(q_2\) exactly
-kills the certified 64-coordinate typed-source quotient.  This is the first
-actual common-action repair, rather than a projected Ward-column repair.
+The complete smallest quartic ansatz is
+\(\frac12\chi^2 g_bh_bK_{b,ab}e_cA_d\).  Per emitter, its 96 raw monomials
+have 28 Berger-\(U(1)\) invariant combinations.  Exact Maxwell variation has
+rank 22, leaving six actions per emitter.  All twelve actions use the same
+odd pairing as the repaired cubic action, leave \(q_1,q_2\) unchanged at
+zero auxiliary background, and generate twelve independent cyclic \(q_3\)
+columns.
 
-The nonlinear bridge remains fail-closed.  The repaired cubic action has
-structural \(q_3=0\), but adding the invariant quartic term
-\(\lambda\chi^2 g_0h_0\langle K_0,dA\rangle\) leaves \(q_1,q_2\) unchanged at
-the auxiliary background and gives a nonzero \(q_3\).  Thus the current data
-do not select a unique same-action \(q_3\); complete arity-three,
-\(K_{\rm Berger}\), detector, memory, redshift and backreacted rank-two
-promotion remain unauthorized.
+The nonlinear bridge remains fail-closed because the existing equations
+impose no condition on the resulting
+\(\mathbb Q(\sqrt{10})^{12}\) coefficient space.  No unique \(q_3\),
+complete arity-three identity, \(K_{\rm Berger}\) descent, detector, memory,
+redshift, recoil-corrected rank or tangent-cone restriction is promoted.
 
 The fail-closed atlas row is
-`observer.berger.interaction.order_three_common_action_promotion_gate`
+`observer.berger.interaction.quartic_common_action_completion_module`
 (`symplectic=CERTIFIED`, `nonlinear=OBSTRUCTED`,
 `observational=OBSTRUCTED`).  The next activation gate is
-`CLASSIFY_QUARTIC_COMPLETIONS_OF_REPAIRED_COMMON_ACTION`.
+`COMPUTE_FULL_ARITY_THREE_MASTER_EQUATION_ON_12_PARAMETER_QUARTIC_FAMILY`.

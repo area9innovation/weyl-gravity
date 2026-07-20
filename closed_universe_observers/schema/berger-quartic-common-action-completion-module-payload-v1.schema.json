@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "result_id", "classifications", "modules"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-quartic-common-action-completion-module-payload-v1"},
+    "result_id": {"const": "BERGER_QUARTIC_COMMON_ACTION_COMPLETION_MODULE_PAYLOAD"},
+    "modules": {"type": "object", "minProperties": 12, "maxProperties": 12}
+  },
+  "additionalProperties": true
+}

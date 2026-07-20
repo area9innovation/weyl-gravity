@@ -682,3 +682,25 @@ def test_order_three_action_repairs_source_but_q3_is_fail_closed():
     assert "BERGER_ORDER_THREE_COMMON_ACTION_PROMOTION_GATE" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_quartic_completion_module_is_complete_but_does_not_select_q3():
+    row = next(
+        row
+        for row in build()["entries"]
+        if row["id"]
+        == "observer.berger.interaction.quartic_common_action_completion_module"
+    )
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["descriptions"]["nonlinear"] == "OBSTRUCTED"
+    assert row["descriptions"]["observational"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert "Q(sqrt(10))^12" in row[
+        "observer_data"
+    ]["survives_gauge_reduction"]["statement"]
+    assert "twelve independent q3 directions remain free" in row[
+        "observer_data"
+    ]["observer_source_channel"]["statement"]
+    assert "BERGER_QUARTIC_COMMON_ACTION_COMPLETION_MODULE" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
