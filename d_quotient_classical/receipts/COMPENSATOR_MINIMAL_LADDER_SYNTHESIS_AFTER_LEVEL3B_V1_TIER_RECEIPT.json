@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/minimal_ladder_synthesis_after_level3b.py",
+      "sha256": "aeeca65752201be1f3fa1f0578db35c5c4c843566acabe35808a66bd4f39092e"
+    },
+    {
+      "path": "d_quotient_classical/compensator/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1.json",
+      "sha256": "a942ff6a15af0c8a79978dc22ff2cc128a238c3abd6feb2685197d48deaeaf37"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_minimal_ladder_synthesis_after_level3b.py",
+      "sha256": "76a0cbcd585142039659bcda92948122cfb2223da8c9665eaa2664b5b5968436"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_minimal_ladder_synthesis_after_level3b.py",
+      "sha256": "fcd82868583a0680a62c25d5b766fb954842ca42a486bde58ed7b19217fac7ad"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-minimal-ladder-synthesis-after-level3b-v1.schema.json",
+      "sha256": "78eb11f9573581799404460d11d2a539992a02243b88c83ec55c676effcf9852"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-minimal-ladder-synthesis-after-level3b-v1.md",
+      "sha256": "102c881f0b822540dd3e315b998ee79ecc3270a9a021c395da2a6bfd30b689c5"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <minimal-ladder producer, independent verifier and mutation tests>",
+        "elapsed_seconds": 0.03,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <minimal-ladder result, schema and receipt>",
+        "elapsed_seconds": 0.06,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --cached --check -- <seven explicit minimal-ladder paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/minimal_ladder_synthesis_after_level3b.py --check",
+        "elapsed_seconds": 0.04,
+        "status": "PASS",
+        "method": "hash-imports and consumes fifteen authoritative artifacts; checks all nine theory rows, eight gate columns, literal-versus-corrected Horndeski conventions, superseded causal-parent scope, tested-union boundaries and fail-closed terminal flags"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_minimal_ladder_synthesis_after_level3b.py",
+        "elapsed_seconds": 0.41,
+        "status": "PASS",
+        "independent_rail": "imports no producer module; replays all fifteen hashes, reconstructs the exact P2 common stationary ray, literal Level-3 nondegeneracy, corrected Level-3b degeneracy and cylinder split, and the Level-4 gauge-minor and reducibility separator"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_minimal_ladder_synthesis_after_level3b -v",
+        "elapsed_seconds": 0.6,
+        "status": "PASS",
+        "tests": 8,
+        "mutation_controls": "import drift, missing theory rows or gates, resurrection of the superseded causal parent, convention conflation, hybrid-union overreach, and promotion of the representation escape, selected action or quantum claim are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-minimal-ladder-synthesis-after-level3b-v1.schema.json -d d_quotient_classical/compensator/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1.json",
+        "elapsed_seconds": 2.61,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 3.85,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift, corpus baseline growth from 976 to 1326 certificates, and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m unittest discover -v",
+        "elapsed_seconds": 1.27,
+        "status": "PASS",
+        "tests": 148,
+        "scope": "repository-wide Python unittest discovery from physics/symplectic-reconstruction; the eight scoped synthesis tests were also run explicitly"
+      }
+    ],
+    "reason": "The item freezes the exact exhausted union and terminal disposition of the declared minimal compensator ladder, so the AGENTS.md theorem-freeze Tier-3 criterion applies."
+  },
+  "claim_boundary": "This receipt certifies only the exact union of the separately declared passive tau-adic, minimal polar with optional small HT, quadratic P(X), first nonexact polynomial braiding, literal linear-F curvature, convention-correct linear-F Horndeski and minimal real Weyl-connection families under their printed backgrounds, charges, derivative bounds and representation assumptions. It is not closure under arbitrary hybrids. The historical rank-390 direct-sum causal parent is superseded by Candidate A's complete mixed Hessian, while only its narrow trace Schur inverse and phase-wave statements survive. The separated real scale plus compact U(1) connection is a preflight recommendation, not a selected action. No nonlinear q2, Hadamard state, anomaly/QME result, particle space, scattering, positivity or unitarity theorem follows.",
+  "higher_tiers_not_run": []
+}

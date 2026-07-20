@@ -1,0 +1,381 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/compensator-minimal-ladder-synthesis-after-level3b-v1.schema.json",
+  "title": "Scoped exact synthesis of the minimal compensator ladder",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "imports",
+    "theory_space_columns",
+    "theory_space_table",
+    "tested_union",
+    "convention_reconciliation",
+    "out_of_order_level4_reconciliation",
+    "first_genuinely_untested_mechanisms",
+    "smallest_representation_level_escape",
+    "terminal_verdict",
+    "exact_checks",
+    "claim_flags",
+    "claim_boundary",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-compensator-minimal-ladder-synthesis-after-level3b-v1"
+    },
+    "result_id": {
+      "const": "COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1"
+    },
+    "result_state": {
+      "const": "SCOPED_MINIMAL_COMPENSATOR_LADDER_EXHAUSTED_WITHOUT_SELECTED_ACTION"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "imports": {
+      "type": "object",
+      "minProperties": 15,
+      "maxProperties": 15,
+      "additionalProperties": {
+        "$ref": "#/$defs/import"
+      }
+    },
+    "theory_space_columns": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "cylinder_stationarity",
+          "Berger_stationarity",
+          "dressed_trace_disposition",
+          "reduced_scalar_inertia",
+          "principal_hyperbolicity",
+          "raw_D_charge",
+          "clock_health",
+          "causal_parent_status"
+        ]
+      }
+    },
+    "theory_space_table": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "$ref": "#/$defs/row"
+      }
+    },
+    "tested_union": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "notation",
+        "exhaustive_components",
+        "not_a_closure_under_hybrids",
+        "all_components_terminal_without_selected_action",
+        "union_good_locus"
+      ],
+      "properties": {
+        "notation": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "exhaustive_components": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "component",
+              "proof"
+            ],
+            "properties": {
+              "component": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "proof": {
+                "$ref": "#/$defs/nonempty"
+              }
+            }
+          }
+        },
+        "not_a_closure_under_hybrids": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "all_components_terminal_without_selected_action": {
+          "const": true
+        },
+        "union_good_locus": {
+          "const": "EMPTY_IN_EACH_DECLARED_COMPONENT"
+        }
+      }
+    },
+    "convention_reconciliation": {
+      "$ref": "#/$defs/nonempty-object"
+    },
+    "out_of_order_level4_reconciliation": {
+      "$ref": "#/$defs/nonempty-object"
+    },
+    "first_genuinely_untested_mechanisms": {
+      "type": "array",
+      "minItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/nonempty"
+      }
+    },
+    "smallest_representation_level_escape": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mechanism",
+        "representation_reason",
+        "activation",
+        "does_not_establish"
+      ],
+      "properties": {
+        "mechanism": {
+          "const": "SEPARATED_SCALE_AND_INTERNAL_U1_CONNECTIONS_ON_ONE_COMPLEX_COMPENSATOR"
+        },
+        "representation_reason": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "activation": {
+          "const": "PREFLIGHT_ONLY"
+        },
+        "does_not_establish": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "selected_action",
+        "selected_level3b_action",
+        "success_path_causal_completion_activated",
+        "declared_minimal_ladder_good_locus",
+        "scope",
+        "next_gate",
+        "result"
+      ],
+      "properties": {
+        "selected_action": {
+          "const": false
+        },
+        "selected_level3b_action": {
+          "const": false
+        },
+        "success_path_causal_completion_activated": {
+          "const": false
+        },
+        "declared_minimal_ladder_good_locus": {
+          "const": "EMPTY"
+        },
+        "scope": {
+          "const": "EXACTLY_U_tested"
+        },
+        "next_gate": {
+          "const": "SEPARATED_SCALE_U1_CONNECTION_PREFLIGHT"
+        },
+        "result": {
+          "const": "SCOPED_MINIMAL_COMPENSATOR_LADDER_EXHAUSTED_WITHOUT_SELECTED_ACTION"
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 11,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "minProperties": 7,
+      "additionalProperties": {
+        "const": false
+      }
+    },
+    "claim_boundary": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "imports_sha256",
+        "table_sha256",
+        "tested_union_sha256",
+        "conventions_sha256",
+        "level4_sha256",
+        "untested_sha256",
+        "escape_sha256",
+        "verdict_sha256"
+      ],
+      "properties": {
+        "imports_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "table_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "tested_union_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "conventions_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "level4_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "untested_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "escape_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "verdict_sha256": {
+          "$ref": "#/$defs/sha"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nonempty-object": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "result_state",
+        "sha256",
+        "source_commit"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "result_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "result_state": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "source_commit": {
+          "$ref": "#/$defs/commit"
+        }
+      }
+    },
+    "cell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "statement"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "statement": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family_id",
+        "exact_action_ansatz",
+        "exact_background_ansatz",
+        "cylinder_stationarity",
+        "Berger_stationarity",
+        "dressed_trace_disposition",
+        "reduced_scalar_inertia",
+        "principal_hyperbolicity",
+        "raw_D_charge",
+        "clock_health",
+        "causal_parent_status",
+        "terminal_verdict",
+        "evidence_import_keys"
+      ],
+      "properties": {
+        "family_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "exact_action_ansatz": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "exact_background_ansatz": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "cylinder_stationarity": {
+          "$ref": "#/$defs/cell"
+        },
+        "Berger_stationarity": {
+          "$ref": "#/$defs/cell"
+        },
+        "dressed_trace_disposition": {
+          "$ref": "#/$defs/cell"
+        },
+        "reduced_scalar_inertia": {
+          "$ref": "#/$defs/cell"
+        },
+        "principal_hyperbolicity": {
+          "$ref": "#/$defs/cell"
+        },
+        "raw_D_charge": {
+          "$ref": "#/$defs/cell"
+        },
+        "clock_health": {
+          "$ref": "#/$defs/cell"
+        },
+        "causal_parent_status": {
+          "$ref": "#/$defs/cell"
+        },
+        "terminal_verdict": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "evidence_import_keys": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        }
+      }
+    }
+  }
+}
