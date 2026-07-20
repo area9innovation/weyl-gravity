@@ -62,6 +62,7 @@ DEPENDENCIES = {
     "matter_content_lattice": QROOT / "anomalies/certificates/MATTER_CONTENT_ANOMALY_CANCELLATION_LATTICE.json",
     "matter_gauge_projection_obstruction": QROOT / "anomalies/certificates/MATTER_GAUGE_REPRESENTATION_JOINT_HEALTHY_EMPTY_BY_PROJECTION.json",
     "Paneitz_higher_derivative_column": QROOT / "anomalies/certificates/PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN.json",
+    "conformal_gauge_carrier_obstruction": QROOT / "anomalies/certificates/FIRST_NEW_CONFORMAL_GAUGE_FIELD_CARRIER_OBSTRUCTION.json",
     "WZ_compensator_preflight": QROOT / "anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
     "WZ_cotangent_lift": QROOT / "anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
     "WZ_extended_local_BV": QROOT / "anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
@@ -270,6 +271,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     matter_lattice = values["matter_content_lattice"]
     matter_gauge = values["matter_gauge_projection_obstruction"]
     paneitz_column = values["Paneitz_higher_derivative_column"]
+    conformal_gauge_obstruction = values["conformal_gauge_carrier_obstruction"]
     wz_preflight = values["WZ_compensator_preflight"]
     wz_lift = values["WZ_cotangent_lift"]
     wz_extended = values["WZ_extended_local_BV"]
@@ -834,6 +836,23 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         is not False
     ):
         raise ValueError("Paneitz higher-derivative boundary drifted")
+    if (
+        conformal_gauge_obstruction.get("result_state")
+        != "TWO_SMALLEST_CANDIDATES_FAIL_COMPLETE_CARRIER_GATE"
+        or conformal_gauge_obstruction.get("anomaly_lattice", {}).get(
+            "new_column_appended"
+        )
+        is not False
+        or conformal_gauge_obstruction.get("determinant_ledger", {}).get(
+            "status"
+        )
+        != "NOT_ASSEMBLED"
+        or conformal_gauge_obstruction.get("coefficient_routes", {}).get(
+            "status"
+        )
+        != "NOT_RUN"
+    ):
+        raise ValueError("conformal gauge-carrier obstruction boundary drifted")
     if (
         elliptic.get("claim_flags", {}).get(
             "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED"
@@ -1682,7 +1701,7 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
 
 def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     specs = [
-        ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4; the standard healthy spin-0, spin-1/2 and spin-1 matter cone is exactly empty, its formal signed determinant lattice is classified, every healthy compact-group representation assignment projects into that empty cone before gauge-anomaly enumeration, and the exact Paneitz scalar column changes the projected cone only at a fourth-order opposite-residue price while the next conformal gauge carrier is absent; a shifting compensator remains a changed theory; this does not select a gauge group, Standard Model or GUT; the same-background tau-adic classical D_compact contraction is imported, while the first Lorentzian analytic Ward operator T2_ren remains undefined and the Cartan image is UNDEFINED_ANALYTICALLY; on the declared cornered Euclidean carrier, the boundary/corner BV-BFV complex, full-BV elliptic boundary problem, anomaly coefficients and differentiable D boundary charge are undefined", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "local_anomaly_completion_audit", "boundary_corner_anomaly_obstruction", "quantum_Cartan_D_disposition", "renormalized_D_Ward_nondefinition", "unitary_matter_no_go", "matter_content_lattice", "matter_gauge_projection_obstruction", "Paneitz_higher_derivative_column", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1")),
+        ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4; the standard healthy spin-0, spin-1/2 and spin-1 matter cone is exactly empty, its formal signed determinant lattice is classified, every healthy compact-group representation assignment projects into that empty cone before gauge-anomaly enumeration, and the exact Paneitz scalar column changes the projected cone only at a fourth-order opposite-residue price; the minimal-depth conformal spin-3/2 and spin-3 audits stop before determinant production at, respectively, the generic-background Bach Noether identity and the missing closed all-curvature spin-1/spin-3 carrier, with the superconformal completion separately indicating an unresolved shifted spin-2 sector, so no new gauge column is appended; a shifting compensator remains a changed theory; this does not select a gauge group, Standard Model or GUT; the same-background tau-adic classical D_compact contraction is imported, while the first Lorentzian analytic Ward operator T2_ren remains undefined and the Cartan image is UNDEFINED_ANALYTICALLY; on the declared cornered Euclidean carrier, the boundary/corner BV-BFV complex, full-BV elliptic boundary problem, anomaly coefficients and differentiable D boundary charge are undefined", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "local_anomaly_completion_audit", "boundary_corner_anomaly_obstruction", "quantum_Cartan_D_disposition", "renormalized_D_Ward_nondefinition", "unitary_matter_no_go", "matter_content_lattice", "matter_gauge_projection_obstruction", "Paneitz_higher_derivative_column", "conformal_gauge_carrier_obstruction", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1")),
         ("relative_einstein_weyl_qme_defect", "compact-product Einstein-Maxwell to Weyl-Maxwell relative anomaly mapping cone; complete classical all-row noncyclic restriction imported, while exact generic action-form inertia obstructs the standard cyclic pushforward; rank-one pairing/action deformation or one positive same-q physical auxiliary repairs reduced cyclicity, but every changed-theory orbit still lacks an off-shell BV lift and common renormalized insertion functor, so the relative class, orbit invariance and coefficient are undefined", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"], ("relative_Einstein_Weyl_QME_nondefinition", "relative_Einstein_Weyl_cyclic_pushforward_obstruction", "relative_Einstein_Weyl_pairing_deformation_classification", "relative_changed_theory_QME_nondefinition")),
         ("euclidean_determinant_factor", "round-S4 TT or ghost determinant factor", ["EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "Euclidean_elliptic_complex", "nonconformal_coefficient_match")),
         ("flat_tt_log_form_factor", "nonzero-momentum flat-TT logarithmic effective-action form factor", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1")),

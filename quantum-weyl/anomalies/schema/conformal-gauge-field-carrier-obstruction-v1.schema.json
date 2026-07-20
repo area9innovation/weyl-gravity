@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/conformal-gauge-field-carrier-obstruction-v1.schema.json",
+  "title": "First new conformal gauge-field carrier obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "input_pins",
+    "finite_completeness_criterion",
+    "candidate_audits",
+    "determinant_ledger",
+    "coefficient_routes",
+    "anomaly_lattice",
+    "exact_checks",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-conformal-gauge-field-carrier-obstruction-v1"
+    },
+    "result_id": {
+      "const": "FIRST_NEW_CONFORMAL_GAUGE_FIELD_CARRIER_OBSTRUCTION"
+    },
+    "result_state": {
+      "const": "TWO_SMALLEST_CANDIDATES_FAIL_COMPLETE_CARRIER_GATE"
+    },
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC"]
+    },
+    "input_pins": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Paneitz_predecessor"],
+      "properties": {
+        "Paneitz_predecessor": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "source_commit", "sha256", "imported_conclusion"],
+          "properties": {
+            "path": {"type": "string", "minLength": 1},
+            "source_commit": {
+              "const": "4b72eb33c7ade3d87f72707d56c86418c46e6765"
+            },
+            "sha256": {
+              "const": "cb6d708fb081d6a93fc64ab988f267cdd4a0c92651d872aaed5b59e3ecc3cb3c"
+            },
+            "imported_conclusion": {
+              "const": "the next conformal gauge-field column is absent, not zero"
+            }
+          }
+        }
+      }
+    },
+    "finite_completeness_criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gates_in_order", "selection_rule", "receiver_schema"],
+      "properties": {
+        "gates_in_order": {
+          "type": "array",
+          "minItems": 12,
+          "maxItems": 12,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "selection_rule": {"type": "string", "minLength": 1},
+        "receiver_schema": {
+          "const": "schema/conformal-gauge-field-carrier-receiver-v1.schema.json"
+        }
+      }
+    },
+    "candidate_audits": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/candidate"}
+    },
+    "determinant_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reason", "rows"],
+      "properties": {
+        "status": {"const": "NOT_ASSEMBLED"},
+        "reason": {"type": "string", "minLength": 1},
+        "rows": {"const": []}
+      }
+    },
+    "coefficient_routes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reason", "routes"],
+      "properties": {
+        "status": {"const": "NOT_RUN"},
+        "reason": {"type": "string", "minLength": 1},
+        "routes": {"const": []}
+      }
+    },
+    "anomaly_lattice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "new_column_appended", "reason"],
+      "properties": {
+        "status": {"const": "UNCHANGED_PANEITZ_ONLY"},
+        "new_column_appended": {"const": false},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 9,
+      "additionalProperties": {"const": true}
+    },
+    "claim_flags": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {"const": false}
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "primary_sources", "source_manifest"],
+      "properties": {
+        "proof_type": {"type": "string", "minLength": 1},
+        "primary_sources": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source_id",
+              "title",
+              "url",
+              "arxiv",
+              "source_tex_sha256",
+              "used_for"
+            ],
+            "properties": {
+              "source_id": {"type": "string", "minLength": 1},
+              "title": {"type": "string", "minLength": 1},
+              "url": {"type": "string", "pattern": "^https://.*$"},
+              "arxiv": {"type": "string", "minLength": 1},
+              "source_tex_sha256": {"$ref": "#/$defs/hash"},
+              "used_for": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 7,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_id",
+        "field_content_visible_in_sources",
+        "required_chiral_components",
+        "gauge_parameter",
+        "available_scope",
+        "gate_status",
+        "first_failed_gate",
+        "exact_obstruction",
+        "first_missing_carrier",
+        "source_ids",
+        "carrier_status",
+        "coefficient_status",
+        "column_appended"
+      ],
+      "properties": {
+        "candidate_id": {"type": "string", "minLength": 1},
+        "field_content_visible_in_sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "required_chiral_components": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "gauge_parameter": {"type": "string", "minLength": 1},
+        "available_scope": {"type": "string", "minLength": 1},
+        "gate_status": {
+          "type": "object",
+          "minProperties": 12,
+          "additionalProperties": {
+            "enum": [
+              "ESTABLISHED",
+              "PARTIAL_SOURCE_DICTIONARY_ONLY",
+              "FAILED_EXACT_IDENTITY",
+              "NOT_ESTABLISHED"
+            ]
+          }
+        },
+        "first_failed_gate": {"type": "string", "minLength": 1},
+        "exact_obstruction": {"type": "string", "minLength": 1},
+        "first_missing_carrier": {"type": "string", "minLength": 1},
+        "source_ids": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "carrier_status": {"const": "INCOMPLETE_DO_NOT_FORM_DETERMINANT"},
+        "coefficient_status": {"const": "NOT_COMPUTED"},
+        "column_appended": {"const": false}
+      }
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

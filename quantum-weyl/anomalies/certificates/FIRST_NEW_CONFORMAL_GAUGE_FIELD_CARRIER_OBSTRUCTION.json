@@ -1,0 +1,193 @@
+{
+  "anomaly_lattice": {
+    "new_column_appended": false,
+    "reason": "an absent carrier is not a zero anomaly column",
+    "status": "UNCHANGED_PANEITZ_ONLY"
+  },
+  "candidate_audits": [
+    {
+      "available_scope": "the Weyl-corrected quadratic action is higher-spin gauge invariant on four-dimensional Bach-flat backgrounds",
+      "candidate_id": "complex_conformal_gravitino_minimal_depth_3_over_2",
+      "carrier_status": "INCOMPLETE_DO_NOT_FORM_DETERMINANT",
+      "coefficient_status": "NOT_COMPUTED",
+      "column_appended": false,
+      "exact_obstruction": "R_3/2^dagger K_3/2 h equals the explicit Bach insertion: -i integral e [ell^alpha B_alpha^{ beta dot_beta(2)} bar_h_{beta dot_beta(2)} + conjugate terms]. It vanishes only after imposing B_{alpha(2) dot_alpha(2)}=0.",
+      "field_content_visible_in_sources": [
+        "h_{alpha(2) dot_alpha}",
+        "bar_h_{alpha dot_alpha(2)}"
+      ],
+      "first_failed_gate": "exact_generic_background_Noether_identity",
+      "first_missing_carrier": "a generic-background kinetic/gauge pair (K_3/2,R_3/2) with K_3/2 R_3/2=0, followed by its complete nonminimal elliptic gauge fixing and two-route raw anomaly calculation",
+      "gate_status": {
+        "candidate_and_background_scope": "ESTABLISHED",
+        "determinant_powers_statistics_and_contours": "NOT_ESTABLISHED",
+        "domain_reality_chirality_and_zero_modes": "NOT_ESTABLISHED",
+        "exact_generic_background_Noether_identity": "FAILED_EXACT_IDENTITY",
+        "exact_lattice_append_only_after_all_prior_gates": "NOT_ESTABLISHED",
+        "generic_Riemannian_gauge_fixed_ellipticity": "NOT_ESTABLISHED",
+        "kinetic_or_Krein_sign_audit": "NOT_ESTABLISHED",
+        "minimal_BV_nilpotency": "NOT_ESTABLISHED",
+        "no_omitted_mixed_spin_carrier": "NOT_ESTABLISHED",
+        "nonminimal_pairs_and_gauge_fermion": "NOT_ESTABLISHED",
+        "off_shell_fields_ghosts_antifields_and_reducibility": "PARTIAL_SOURCE_DICTIONARY_ONLY",
+        "two_independent_raw_coefficient_routes": "NOT_ESTABLISHED"
+      },
+      "gauge_parameter": "complex commuting BV ghost ell_alpha and its dotted conjugate; ell is fermionic as a gauge parameter but its BV ghost is even",
+      "required_chiral_components": [
+        "(2,1)_complex_field",
+        "(1,2)_complex_conjugate"
+      ],
+      "source_ids": [
+        "KPR_2005_08657",
+        "KP_1902_08010"
+      ]
+    },
+    {
+      "available_scope": "the pure sixth-order spin-3 operator is controlled only through first order in background curvature; the known spin-1 mixing does not close a generic or complete Bach-flat carrier",
+      "candidate_id": "bosonic_conformal_spin_3_minimal_depth",
+      "carrier_status": "INCOMPLETE_DO_NOT_FORM_DETERMINANT",
+      "coefficient_status": "NOT_COMPUTED",
+      "column_appended": false,
+      "exact_obstruction": "the spin-1 field transforms as delta h_a = -8 C_{abcp} nabla^p epsilon^{bc}; hence delta S_13 contains terms of order C^2 that require delta S_33. The pure O_6 block is therefore not separately gauge invariant even on a generic Einstein background. A separate superconformal-completion argument additionally indicates a conformal spin-2 field shifted by the spin-3 parameter; that indication is not promoted here to an independent nonsupersymmetric necessity theorem.",
+      "field_content_visible_in_sources": [
+        "real symmetric trace-free h_{abc}",
+        "curvature-shifted conformal spin-1 carrier",
+        "conformal spin-2 carrier indicated by superconformal completion"
+      ],
+      "first_failed_gate": "no_omitted_mixed_spin_carrier",
+      "first_missing_carrier": "at minimum a closed all-curvature minimal-depth spin-1/spin-3 quadratic operator and transformation complex, plus an explicit disposition of the spin-2 sector indicated by superconformal completion; the available maximal-depth scalar-ghost model is a different candidate and cannot fill this slot",
+      "gate_status": {
+        "candidate_and_background_scope": "ESTABLISHED",
+        "determinant_powers_statistics_and_contours": "NOT_ESTABLISHED",
+        "domain_reality_chirality_and_zero_modes": "NOT_ESTABLISHED",
+        "exact_generic_background_Noether_identity": "NOT_ESTABLISHED",
+        "exact_lattice_append_only_after_all_prior_gates": "NOT_ESTABLISHED",
+        "generic_Riemannian_gauge_fixed_ellipticity": "NOT_ESTABLISHED",
+        "kinetic_or_Krein_sign_audit": "NOT_ESTABLISHED",
+        "minimal_BV_nilpotency": "NOT_ESTABLISHED",
+        "no_omitted_mixed_spin_carrier": "FAILED_EXACT_IDENTITY",
+        "nonminimal_pairs_and_gauge_fermion": "NOT_ESTABLISHED",
+        "off_shell_fields_ghosts_antifields_and_reducibility": "PARTIAL_SOURCE_DICTIONARY_ONLY",
+        "two_independent_raw_coefficient_routes": "NOT_ESTABLISHED"
+      },
+      "gauge_parameter": "real symmetric trace-free rank-two even gauge parameter epsilon_{ab}; its BV ghost is odd",
+      "required_chiral_components": [
+        "real_(3,3)_field"
+      ],
+      "source_ids": [
+        "BT_1702_00222",
+        "KPR_2005_08657",
+        "KP_1912_00652"
+      ]
+    }
+  ],
+  "claim_boundary": "This LOCAL-ALGEBRAIC audit proves only that the two declared smallest candidates do not yet furnish a complete coefficient-bearing carrier under the finite receiver contract. It records the first exact missing identity/operator for each and leaves the Paneitz-extended anomaly lattice unchanged. It is not a no-go theorem for all conformal higher spins, not a zero coefficient, not a determinant result, not QME restoration, and not a Lorentzian, positivity, particle, scattering or unitarity result.",
+  "claim_flags": {
+    "ALL_CONFORMAL_HIGHER_SPINS_OBSTRUCTED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "NEW_ANOMALY_COLUMN_COMPUTED": false,
+    "NEW_GAUGE_FIELD_CARRIER_CERTIFIED": false,
+    "STRICT_QME_RESTORED": false
+  },
+  "coefficient_routes": {
+    "reason": "literature anomaly numbers are not imported without a complete carrier and two independent full raw routes",
+    "routes": [],
+    "status": "NOT_RUN"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "determinant_ledger": {
+    "reason": "neither candidate reaches a complete gauge-fixed carrier; a partial determinant would violate the stop condition",
+    "rows": [],
+    "status": "NOT_ASSEMBLED"
+  },
+  "exact_checks": {
+    "Paneitz_absent_not_zero_boundary_preserved": true,
+    "Paneitz_exact_hash_import": true,
+    "finite_criterion_precedes_candidate_disposition": true,
+    "lattice_unchanged": true,
+    "literature_coefficient_copy_refused": true,
+    "maximal_depth_not_substituted_for_minimal_depth": true,
+    "partial_determinant_refused": true,
+    "spin_3_mixed_carrier_requirement_scoped": true,
+    "spin_3_over_2_Bach_identity_scoped": true
+  },
+  "finite_completeness_criterion": {
+    "gates_in_order": [
+      "candidate_and_background_scope",
+      "off_shell_fields_ghosts_antifields_and_reducibility",
+      "minimal_BV_nilpotency",
+      "exact_generic_background_Noether_identity",
+      "nonminimal_pairs_and_gauge_fermion",
+      "generic_Riemannian_gauge_fixed_ellipticity",
+      "domain_reality_chirality_and_zero_modes",
+      "determinant_powers_statistics_and_contours",
+      "two_independent_raw_coefficient_routes",
+      "kinetic_or_Krein_sign_audit",
+      "no_omitted_mixed_spin_carrier",
+      "exact_lattice_append_only_after_all_prior_gates"
+    ],
+    "receiver_schema": "schema/conformal-gauge-field-carrier-receiver-v1.schema.json",
+    "selection_rule": "A candidate is complete only when every gate is ESTABLISHED. The first failed or missing gate stops coefficient and lattice production."
+  },
+  "input_pins": {
+    "Paneitz_predecessor": {
+      "imported_conclusion": "the next conformal gauge-field column is absent, not zero",
+      "path": "quantum-weyl/anomalies/certificates/PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN.json",
+      "sha256": "cb6d708fb081d6a93fc64ab988f267cdd4a0c92651d872aaed5b59e3ecc3cb3c",
+      "source_commit": "4b72eb33c7ade3d87f72707d56c86418c46e6765"
+    }
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "Supply one receiver-valid generic-background carrier, beginning with either a conformal-gravitino nonminimal elliptic completion or the closed minimal-depth spin-1/spin-2/spin-3 operator.",
+  "provenance": {
+    "primary_sources": [
+      {
+        "arxiv": "2005.08657v2",
+        "source_id": "KPR_2005_08657",
+        "source_tex_sha256": "fd20a3529929d3479384df35c499537ce15be771f5d3948a378cbf7ba97a99eb",
+        "title": "New locally (super)conformal gauge models in Bach-flat backgrounds",
+        "url": "https://arxiv.org/abs/2005.08657",
+        "used_for": "explicit conformal-gravitino Bach variation and the minimal-depth spin-3 spin-2 coupling requirement"
+      },
+      {
+        "arxiv": "1702.00222v2",
+        "source_id": "BT_1702_00222",
+        "source_tex_sha256": "3b782d81bed2f8d941cff864b12e8e8c4836d1ce9901a86b970d1855d0a10566",
+        "title": "On induced action for conformal higher spins in curved background",
+        "url": "https://arxiv.org/abs/1702.00222",
+        "used_for": "minimal-depth spin-1/spin-3 mixing and failure of the pure sixth-order spin-3 block beyond first curvature order"
+      },
+      {
+        "arxiv": "1912.00652v2",
+        "source_id": "KP_1912_00652",
+        "source_tex_sha256": "b87fb876f3257226bae729f515f32d76050b2bf94d97b63695e02f12b0f2f841",
+        "title": "Generalised conformal higher-spin fields in curved backgrounds",
+        "url": "https://arxiv.org/abs/1912.00652",
+        "used_for": "separation of the complete maximal-depth scalar-ghost model from the requested minimal-depth spin-3 carrier"
+      },
+      {
+        "arxiv": "1902.08010v2",
+        "source_id": "KP_1902_08010",
+        "source_tex_sha256": "16300f08f3beff4e50c27f4268595aef9b8edf6337ed0a8bb8cdb18fcdb7d076",
+        "title": "Conformal geometry and (super)conformal higher-spin gauge theories",
+        "url": "https://arxiv.org/abs/1902.08010",
+        "used_for": "arbitrary-curved Weyl covariance versus conformally-flat higher-spin gauge invariance and Bach-flat exceptions"
+      }
+    ],
+    "proof_type": "PRIMARY_SOURCE_IDENTITY_AUDIT_PLUS_STRICT_FAIL_CLOSED_RECEIVER",
+    "source_manifest": {
+      "../reports/conformal-gauge-field-carrier-obstruction.md": "e64826536572212123c82d19f2b2d9c126bc728c161c6a17a9cabd70e72a0c97",
+      "conformal_gauge_field_carrier_obstruction.py": "90c4d1215ed2507ee5c05a48a99c04e3cd1d5239ee96123339814ac536f1163e",
+      "conformal_gauge_field_carrier_obstruction_certificate.py": "38ba9f9a29314d1ccf2602ef93f4d546f46b5b1e90825487a927ea77496eb916",
+      "schema/conformal-gauge-field-carrier-obstruction-v1.schema.json": "0f2e0f302c225b7337afa204c02487ce2f43ca4c769808cf2f4011001b577617",
+      "schema/conformal-gauge-field-carrier-receiver-v1.schema.json": "01d6166ad018795e378c313e7104aff2b8672a5bc6b29feb15bf7b47a1a825d7",
+      "tests/test_conformal_gauge_field_carrier_obstruction.py": "db6329cb8b84e646a8cff35459fe02d5633f8f41d6e969ad7d7d0537e9155c80",
+      "verify_conformal_gauge_field_carrier_obstruction.py": "5066337e8aa9835920dde7ee57d7537584bc0385c72b623d6814da897766e64c"
+    }
+  },
+  "result_id": "FIRST_NEW_CONFORMAL_GAUGE_FIELD_CARRIER_OBSTRUCTION",
+  "result_state": "TWO_SMALLEST_CANDIDATES_FAIL_COMPLETE_CARRIER_GATE",
+  "schema": "quantum-weyl-conformal-gauge-field-carrier-obstruction-v1"
+}

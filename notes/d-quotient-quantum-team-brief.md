@@ -2201,3 +2201,29 @@ or unitarity result.
 
 - [`PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN.json`](../quantum-weyl/anomalies/certificates/PANEITZ_HIGHER_DERIVATIVE_ANOMALY_COLUMN.json)
 - [`paneitz-higher-derivative-anomaly-column.md`](../quantum-weyl/reports/paneitz-higher-derivative-anomaly-column.md)
+
+## First new conformal gauge-field carrier audit (2026-07-20)
+
+A finite twelve-gate carrier contract is now explicit and machine enforced.
+The minimal-depth conformal spin-\(3/2\) candidate stops at the
+generic-background Noether identity: its Weyl-corrected action varies by an
+explicit Bach-tensor insertion and closes only on Bach-flat backgrounds.
+The minimal-depth bosonic spin-\(3\) candidate stops at the mixed-carrier
+gate: its pure sixth-order block fails beyond first curvature order, while
+at minimum a complete all-curvature spin-\(1\)--spin-\(3\) operator has not
+been supplied. A separate superconformal-completion argument indicates an
+additional shifted spin-\(2\) sector; that indication is not promoted to an
+independent nonsupersymmetric necessity theorem. The scalar-ghost
+maximal-depth model is kept separate.
+
+Accordingly, the determinant and both coefficient routes are not run, and
+the Paneitz-extended anomaly lattice is unchanged. An absent carrier is not
+a zero anomaly column. The strict future-carrier receiver rejects missing
+ghost, wrong-chirality and omitted-nonminimal mutations.
+
+This result is `LOCAL-ALGEBRAIC`. It is a scoped obstruction for the two
+declared candidates, not a no-go theorem for all conformal higher spins and
+not a QME or Lorentzian result.
+
+- [`FIRST_NEW_CONFORMAL_GAUGE_FIELD_CARRIER_OBSTRUCTION.json`](../quantum-weyl/anomalies/certificates/FIRST_NEW_CONFORMAL_GAUGE_FIELD_CARRIER_OBSTRUCTION.json)
+- [`conformal-gauge-field-carrier-obstruction.md`](../quantum-weyl/reports/conformal-gauge-field-carrier-obstruction.md)

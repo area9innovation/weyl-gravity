@@ -1,0 +1,89 @@
+{
+  "receipt_id": "FIRST_NEW_CONFORMAL_GAUGE_FIELD_CARRIER_OBSTRUCTION_V1_TIER_RECEIPT",
+  "result_id": "FIRST_NEW_CONFORMAL_GAUGE_FIELD_CARRIER_OBSTRUCTION",
+  "recorded_at": "2026-07-20",
+  "base_commit": "0e1e26d4844241cb70280f714cba5bc22306c60d",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "input_hashes": {
+    "Paneitz_predecessor_at_commit_4b72eb33c": "cb6d708fb081d6a93fc64ab988f267cdd4a0c92651d872aaed5b59e3ecc3cb3c",
+    "KPR_2005_08657v2_source_tex": "fd20a3529929d3479384df35c499537ce15be771f5d3948a378cbf7ba97a99eb",
+    "BT_1702_00222v2_source_tex": "3b782d81bed2f8d941cff864b12e8e8c4836d1ce9901a86b970d1855d0a10566",
+    "KP_1912_00652v2_source_tex": "b87fb876f3257226bae729f515f32d76050b2bf94d97b63695e02f12b0f2f841",
+    "KP_1902_08010v2_source_tex": "16300f08f3beff4e50c27f4268595aef9b8edf6337ed0a8bb8cdb18fcdb7d076"
+  },
+  "output_hashes": {
+    "carrier_obstruction_certificate": "5ab70e252a642187279b2111ed0591b7783dd468c563caeb5bfbde56c56e5594",
+    "obstruction_schema": "0f2e0f302c225b7337afa204c02487ce2f43ca4c769808cf2f4011001b577617",
+    "future_carrier_receiver_schema": "01d6166ad018795e378c313e7104aff2b8672a5bc6b29feb15bf7b47a1a825d7",
+    "quantum_atlas_fragment": "e9b63ff94660dd58ed1314a1f82e8ace7d68d889b819042f07c2431b3534aae6",
+    "Paper_12_tex": "a27e7c77d075fa660d9e18509a8a7862c8a5997466c483abe36da41bfa8c2757",
+    "Paper_12_pdf_build_receipt_only": "e0f2d694faca5b7627e2c73ddaeaf1cbcab6585131c3990b8fba7839f0aab5a9"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/anomalies/{conformal_gauge_field_carrier_obstruction.py,conformal_gauge_field_carrier_obstruction_certificate.py,verify_conformal_gauge_field_carrier_obstruction.py,tests/test_conformal_gauge_field_carrier_obstruction.py}",
+      "elapsed_seconds": 0.05,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m anomalies.conformal_gauge_field_carrier_obstruction_certificate --check",
+      "elapsed_seconds": 0.06,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 quantum-weyl/anomalies/verify_conformal_gauge_field_carrier_obstruction.py",
+      "elapsed_seconds": 0.09,
+      "status": "PASS_INDEPENDENT_HISTORICAL_PIN_IDENTITY_SCOPE_AND_FAIL_CLOSED_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest anomalies.tests.test_conformal_gauge_field_carrier_obstruction",
+      "elapsed_seconds": 0.13,
+      "status": "PASS_9_TESTS_WITH_MISSING_GHOST_WRONG_CHIRALITY_OMITTED_NONMINIMAL_PARTIAL_DETERMINANT_DEPTH_AND_COLUMN_MUTATIONS"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s <both schemas> && npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/anomalies/schema/conformal-gauge-field-carrier-obstruction-v1.schema.json -d quantum-weyl/anomalies/certificates/FIRST_NEW_CONFORMAL_GAUGE_FIELD_CARRIER_OBSTRUCTION.json",
+      "elapsed_seconds": 6.55,
+      "status": "PASS_DRAFT_2020_12_STRICT"
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest atlas.tests.test_quantum_atlas_fragment && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "elapsed_seconds": 11.37,
+      "status": "PASS_GENERATOR_INDEPENDENT_VERIFIER_9_DIRECT_CONSUMER_TESTS_AND_COMMON_ATLAS_VALIDATOR"
+    },
+    {
+      "tier": 1,
+      "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=/tmp/paper12-conformal-carrier paper/12-pure-weyl-one-loop-bv-anomaly.tex (twice)",
+      "elapsed_seconds": 2.51,
+      "status": "PASS_39_PAGE_PDF_WITH_NO_WARNINGS"
+    },
+    {
+      "tier": 2,
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 12.81,
+      "status": "ADVISORY_EXIT_0_WITH_PREEXISTING_BRIDGE_DRIFT_UNPINNED_FORGE_BUILD_AND_CORPUS_BASELINE_DRIFT_REPORTED"
+    }
+  ],
+  "deviations": [
+    {
+      "requested_new_anomaly_column": "OBSTRUCTED_BEFORE_DETERMINANT",
+      "reason": "the conformal gravitino fails the generic-background Noether identity by an explicit Bach insertion and the minimal-depth spin-3 field lacks a closed all-curvature mixed carrier"
+    },
+    {
+      "spin_2_requirement_strength": "INDICATED_NOT_PROMOTED",
+      "reason": "the additional shifted spin-2 sector follows from a superconformal-completion argument; the exact nonsupersymmetric obstruction already occurs in the spin-1/spin-3 gauge identity"
+    },
+    {
+      "literature_coefficients": "NOT_IMPORTED",
+      "reason": "the work item forbids a coefficient lookup without a complete off-shell BV, nonminimal, elliptic, determinant and two-route carrier"
+    }
+  ],
+  "tier_3_not_run": "The item closes OBSTRUCTED with a scoped two-candidate carrier obstruction. It does not freeze a new anomaly column, QME theorem, Lorentzian certification, repository release or tag; tiers 0-2 cover the certificate, direct atlas consumer and Paper 12 boundary."
+}

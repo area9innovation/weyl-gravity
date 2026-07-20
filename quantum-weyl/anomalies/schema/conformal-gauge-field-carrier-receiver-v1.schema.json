@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/conformal-gauge-field-carrier-receiver-v1.schema.json",
+  "title": "Complete conformal gauge-field carrier receiver",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "candidate_id",
+    "background_scope",
+    "fields",
+    "ghosts",
+    "antifields",
+    "reducibility",
+    "minimal_q",
+    "noether_identity",
+    "nonminimal_pairs",
+    "gauge_fermion",
+    "gauge_fixed_operator",
+    "ellipticity_certificate",
+    "domain",
+    "reality_structure",
+    "chiral_components",
+    "zero_mode_policy",
+    "determinant_ledger",
+    "contour_policy",
+    "coefficient_routes",
+    "kinetic_sign_audit",
+    "lattice_action",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-conformal-gauge-field-carrier-receiver-v1"
+    },
+    "candidate_id": {"type": "string", "minLength": 1},
+    "background_scope": {"type": "string", "minLength": 1},
+    "fields": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/field"}
+    },
+    "ghosts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/generator"}
+    },
+    "antifields": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"$ref": "#/$defs/generator"}
+    },
+    "reducibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage", "rows", "completeness"],
+      "properties": {
+        "stage": {"type": "integer", "minimum": 0},
+        "rows": {"type": "array"},
+        "completeness": {"const": "CERTIFIED_COMPLETE"}
+      }
+    },
+    "minimal_q": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rows", "nilpotency_certificate"],
+      "properties": {
+        "rows": {"type": "array", "minItems": 2},
+        "nilpotency_certificate": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "noether_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kinetic_operator", "gauge_operator", "identity", "certificate"],
+      "properties": {
+        "kinetic_operator": {"type": "string", "minLength": 1},
+        "gauge_operator": {"type": "string", "minLength": 1},
+        "identity": {"const": "K_R_EQUALS_ZERO_OFF_SHELL_ON_DECLARED_BACKGROUND"},
+        "certificate": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "nonminimal_pairs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["antighost", "multiplier", "q_row"],
+        "properties": {
+          "antighost": {"type": "string", "minLength": 1},
+          "multiplier": {"type": "string", "minLength": 1},
+          "q_row": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "gauge_fermion": {"type": "string", "minLength": 1},
+    "gauge_fixed_operator": {"type": "string", "minLength": 1},
+    "ellipticity_certificate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "generic_covector_symbol_hash"],
+      "properties": {
+        "status": {"const": "GENERIC_RIEMANNIAN_ELLIPTIC"},
+        "generic_covector_symbol_hash": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "domain": {"type": "string", "minLength": 1},
+    "reality_structure": {
+      "enum": ["REAL", "COMPLEX_WITH_CONJUGATE"]
+    },
+    "chiral_components": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"enum": ["REAL_NONCHIRAL", "UNDOTTED", "DOTTED_CONJUGATE"]}
+    },
+    "zero_mode_policy": {"type": "string", "minLength": 1},
+    "determinant_ledger": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "field_id",
+          "operator",
+          "statistics",
+          "power",
+          "zero_mode_policy",
+          "contour"
+        ],
+        "properties": {
+          "field_id": {"type": "string", "minLength": 1},
+          "operator": {"type": "string", "minLength": 1},
+          "statistics": {"enum": ["BOSONIC", "FERMIONIC"]},
+          "power": {"$ref": "#/$defs/rational"},
+          "zero_mode_policy": {"type": "string", "minLength": 1},
+          "contour": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "contour_policy": {"type": "string", "minLength": 1},
+    "coefficient_routes": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["route_id", "independent_role", "raw_column", "proof_hash"],
+        "properties": {
+          "route_id": {"type": "string", "minLength": 1},
+          "independent_role": {"type": "string", "minLength": 1},
+          "raw_column": {"$ref": "#/$defs/vector4"},
+          "proof_hash": {"$ref": "#/$defs/hash"}
+        }
+      }
+    },
+    "kinetic_sign_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "proof"],
+      "properties": {
+        "classification": {
+          "enum": ["POSITIVE", "KREIN_INDEFINITE", "INDEFINITE"]
+        },
+        "proof": {"type": "string", "minLength": 1}
+      }
+    },
+    "lattice_action": {"const": "APPEND_NEW_COLUMN"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field_id", "tensor_type", "Grassmann_parity", "Weyl_weight"],
+      "properties": {
+        "field_id": {"type": "string", "minLength": 1},
+        "tensor_type": {"type": "string", "minLength": 1},
+        "Grassmann_parity": {"enum": ["EVEN", "ODD"]},
+        "Weyl_weight": {"type": "string", "minLength": 1}
+      }
+    },
+    "generator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["symbol", "tensor_type", "ghost_number", "Grassmann_parity"],
+      "properties": {
+        "symbol": {"type": "string", "minLength": 1},
+        "tensor_type": {"type": "string", "minLength": 1},
+        "ghost_number": {"type": "integer"},
+        "Grassmann_parity": {"enum": ["EVEN", "ODD"]}
+      }
+    },
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "vector4": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/rational"}
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}
