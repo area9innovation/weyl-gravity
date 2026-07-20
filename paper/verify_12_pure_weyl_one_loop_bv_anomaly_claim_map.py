@@ -15,7 +15,7 @@ COVERAGE = (
     / "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json"
 )
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "d2cedfb85a8bf7b1bc5ef2c606c186bdf253767fff30188858cedc0c1982fc1f"
+    "05e3e844f765f797caa27c239abbe80fe4d5a393e1932822f57b3d6bf210dae3"
 )
 ALL_LOOP_INPUT_SHA256 = (
     "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc"
@@ -97,6 +97,9 @@ def main() -> None:
         "action-compatible cyclic pushforward is exactly obstructed",
         "Conditional all-order formal local restoration",
         "repository has not constructed an all-order regulator or subtraction scheme",
+        "Regulator and measure status",
+        "operatorname{Ber}_{\\rm BV}^{(N)}",
+        "Candidate~A's auxiliary-scalaron parent has",
     ]
     for fragment in required_manuscript_fragments:
         assert fragment in normalized_manuscript, fragment
@@ -125,7 +128,7 @@ def main() -> None:
     assert nodes[paper_id]["body"] == {
         "paper_class": "technical",
         "path": payload["manuscript"],
-        "manuscript_sha256": EXPECTED_MANUSCRIPT_SHA256,
+        "manuscript_sha256": payload["manuscript_sha256"],
     }
     assert nodes[result_id]["body"]["lifecycle"] == "CERTIFIED"
     assert nodes[result_id]["body"]["boundary"] == (
@@ -156,6 +159,45 @@ def main() -> None:
     assert edge["body"]["edge_kind"] == "PRIMARY_THEOREM"
     assert edge["body"]["stale"] is False
     assert edge["body"]["native"]["source_schema"] == "result-paper-edge-v0"
+    regulator_results = {
+        "TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION": (
+            "20915ec21d0c96534a7091b57ee2c3baf5728526a32d00de83dd75b4b94e7e5f",
+            "dr-ms-evanescence-obstruction",
+        ),
+        "DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT": (
+            "28d6821e0774767f991ce79d507dd0059eae2f274c7114c4bec8a07ccc915371",
+            "dressed-berezinian-locality-boundary",
+        ),
+        "DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT": (
+            "8685f36ddfbc6a77cdab8048965fb54b575e160a96962651c05a66c167390724",
+            "evanescent-full-bv-completion-boundary",
+        ),
+        "DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT": (
+            "62f53393712a58c25ca26f2318e9feba4fea8efedd2659e4eeb76b7634de2f13",
+            "four-dimensional-regulator-receiver-boundary",
+        ),
+    }
+    for name, (digest, claim_suffix) in regulator_results.items():
+        rid = f"sf:quantum-weyl.anomalies/result/{name}"
+        regulator_claim = f"{paper_id}/claim/{claim_suffix}"
+        assert nodes[regulator_claim]["body"]["cites"] == [rid]
+        assert nodes[rid]["body"]["certificate_sha256"] == digest
+        assert nodes[rid]["body"]["stale"] is False
+        materiality_rows = [
+            node for node in coverage["nodes"]
+            if node["kind"] == "materiality"
+            and node["body"]["result_id"] == rid
+        ]
+        assert len(materiality_rows) == 1
+        assert materiality_rows[0]["body"]["materiality"] == "TECHNICAL"
+        edge_rows = [
+            node for node in coverage["nodes"]
+            if node["kind"] == "result_paper_edge"
+            and node["body"]["from"] == rid
+        ]
+        assert len(edge_rows) == 1
+        assert edge_rows[0]["body"]["claim"] == regulator_claim
+        assert edge_rows[0]["body"]["stale"] is False
 
     dispositions = payload["theory_dispositions"]
     assert dispositions == {
@@ -174,6 +216,19 @@ def main() -> None:
     assert "does not construct the required regulator" in payload[
         "conditional_all_loop_evidence"
     ]["claim_boundary"]
+    regulator = payload["regulator_measure_status"]
+    assert regulator == {
+        "dr_ms_strict_four_dimensional_module": "DECLARED_DR_MS_ARCHITECTURE_OBSTRUCTED_AT_EVANESCENT_CLOSURE",
+        "finite_carrier_BV_Berezinian": "exp(-40 tau)",
+        "action_independent_continuum_Jacobian": "OBSTRUCTED",
+        "common_d_dimensional_AFN0_premodule": "CLASSIFIED",
+        "full_d_dimensional_BV_module": "OBSTRUCTED_ACTION_INDEPENDENTLY",
+        "four_dimensional_receiver": "CLASSIFIED",
+        "actual_four_dimensional_regulator": "NOT_CONSTRUCTED",
+        "candidate_A_classical": "OBSTRUCTED",
+        "candidate_B_classical": "UNDER_TEST_NOT_IMPORTED",
+        "scheme_equivalence": "NO_CERTIFIED_SCHEME_EQUIVALENCE_MAP",
+    }
     claims = payload["certified_claims"]
     assert claims["strict_quotient_scope"] == "REGULAR_BACH_LOCUS"
     assert claims["minimal_Koszul_Tate_collapse_page"] == "E2"
@@ -188,6 +243,13 @@ def main() -> None:
     assert claims["CdualC_coefficient"] == {"numerator": 0, "denominator": 1}
     assert claims["BoxR_coefficient"] == {"numerator": 0, "denominator": 1}
     assert claims["extended_H04_even_dimension"] == 3
+    assert claims["finite_BV_Berezinian_nonunit"] is True
+    assert claims["action_independent_continuum_Jacobian_obstructed"] is True
+    assert claims["common_d_dimensional_even_AFN0_premodule_classified"] is True
+    assert claims["full_d_dimensional_BV_module_action_independently_obstructed"] is True
+    assert claims["four_dimensional_covariant_receiver_conditional"] is True
+    assert claims["four_dimensional_covariant_regulator_not_instantiated"] is True
+    assert claims["DR_MS_and_four_dimensional_schemes_not_identified"] is True
     assert claims["extended_H04_odd_dimension"] == 1
     assert claims["extended_H14_even_dimension"] == 0
     assert claims["extended_H14_odd_dimension"] == 0
@@ -583,7 +645,7 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
     assert claims["physical_Hessian_triangle_corner_count"] == 33
     assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
-    assert len(payload["inputs"]) == 70
+    assert len(payload["inputs"]) == 75
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

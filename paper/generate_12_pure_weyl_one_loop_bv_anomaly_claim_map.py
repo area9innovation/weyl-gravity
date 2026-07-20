@@ -29,7 +29,7 @@ COVERAGE_REPORT = (
 )
 OUTPUT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json"
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "d2cedfb85a8bf7b1bc5ef2c606c186bdf253767fff30188858cedc0c1982fc1f"
+    "05e3e844f765f797caa27c239abbe80fe4d5a393e1932822f57b3d6bf210dae3"
 )
 ALL_LOOP_INPUT_COMMIT = "7fabe987861f1e4facfc2282e7023274df2ddc72"
 ALL_LOOP_INPUT_SHA256 = (
@@ -51,6 +51,11 @@ INPUTS = {
     "wz_preflight": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
     "extended_cohomology": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
     "tau_adic_all_loop_local_QME_stability": ROOT / "quantum-weyl/anomalies/certificates/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json",
+    "dr_ms_evanescent_obstruction": ROOT / "quantum-weyl/anomalies/certificates/TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION.json",
+    "dressed_Berezinian_preflight": ROOT / "quantum-weyl/anomalies/certificates/DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT.json",
+    "dressed_evanescent_module_preflight": ROOT / "quantum-weyl/anomalies/certificates/DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT.json",
+    "dressed_four_dimensional_regulator_preflight": ROOT / "quantum-weyl/anomalies/certificates/DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT.json",
+    "candidate_A_classical_obstruction": ROOT / "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1.json",
     "Q1_disposition": ROOT / "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
     "relative_Einstein_Weyl_cyclic_pushforward": ROOT / "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
@@ -134,6 +139,11 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     wz_preflight = values["wz_preflight"]
     extended = values["extended_cohomology"]
     all_loop = values["tau_adic_all_loop_local_QME_stability"]
+    dr_ms = values["dr_ms_evanescent_obstruction"]
+    berezinian = values["dressed_Berezinian_preflight"]
+    evanescent = values["dressed_evanescent_module_preflight"]
+    four_d_regulator = values["dressed_four_dimensional_regulator_preflight"]
+    candidate_a = values["candidate_A_classical_obstruction"]
     q1 = values["Q1_disposition"]
     relative_cyclic_pushforward = values[
         "relative_Einstein_Weyl_cyclic_pushforward"
@@ -239,6 +249,22 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         or all_loop.get("stable_H14_module", {}).get("status")
         != "ZERO_IN_ALL_PARITIES_AND_ANTIFIELD_NUMBERS_IN_DECLARED_ALGEBRA"
         or any(all_loop.get("claim_flags", {}).values())
+        or _sha256(INPUTS["dr_ms_evanescent_obstruction"])
+        != "20915ec21d0c96534a7091b57ee2c3baf5728526a32d00de83dd75b4b94e7e5f"
+        or _sha256(INPUTS["dressed_Berezinian_preflight"])
+        != "28d6821e0774767f991ce79d507dd0059eae2f274c7114c4bec8a07ccc915371"
+        or _sha256(INPUTS["dressed_evanescent_module_preflight"])
+        != "8685f36ddfbc6a77cdab8048965fb54b575e160a96962651c05a66c167390724"
+        or _sha256(INPUTS["dressed_four_dimensional_regulator_preflight"])
+        != "62f53393712a58c25ca26f2318e9feba4fea8efedd2659e4eeb76b7634de2f13"
+        or dr_ms["result_state"]
+        != "DECLARED_DR_MS_ARCHITECTURE_OBSTRUCTED_AT_EVANESCENT_CLOSURE"
+        or berezinian["finite_cutoff_berezinian"]["is_identically_one"] is not False
+        or evanescent["full_bv_obstruction"]["first_missing_object"]
+        != "ACTION_SELECTED_D_DIMENSIONAL_KOSZUL_TATE_DIFFERENTIAL"
+        or four_d_regulator["ward_symbol"]["actual_breaking"]
+        != "NOT_COMPUTED_WITHOUT_SELECTED_K"
+        or candidate_a["result_state"] != "OBSTRUCTED"
     ):
         raise ValueError("Paper 12 conditional all-loop dependency drifted")
     if (
@@ -1027,6 +1053,11 @@ def build() -> dict[str, Any]:
     diff_mixed = values["strict_diff_mixed_minimal_H14"]
     extended = values["extended_cohomology"]
     all_loop = values["tau_adic_all_loop_local_QME_stability"]
+    dr_ms = values["dr_ms_evanescent_obstruction"]
+    berezinian = values["dressed_Berezinian_preflight"]
+    evanescent = values["dressed_evanescent_module_preflight"]
+    four_d_regulator = values["dressed_four_dimensional_regulator_preflight"]
+    candidate_a = values["candidate_A_classical_obstruction"]
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
@@ -1165,6 +1196,32 @@ def build() -> dict[str, Any]:
             ]["status"],
             "claim_boundary": all_loop["claim_boundary"],
         },
+        "regulator_measure_status": {
+            "dr_ms_strict_four_dimensional_module": dr_ms["result_state"],
+            "finite_carrier_BV_Berezinian": berezinian["finite_cutoff_berezinian"][
+                "full_BV_Ber_per_cell"
+            ],
+            "action_independent_continuum_Jacobian": berezinian["lifecycle"][
+                "continuum_action_independent_locality"
+            ],
+            "common_d_dimensional_AFN0_premodule": evanescent["lifecycle"][
+                "common_even_AFN0_premodule"
+            ],
+            "full_d_dimensional_BV_module": evanescent["lifecycle"][
+                "full_d_dimensional_BV_module"
+            ],
+            "four_dimensional_receiver": four_d_regulator["lifecycle"][
+                "conditional_receiver_theorem"
+            ],
+            "actual_four_dimensional_regulator": four_d_regulator["lifecycle"][
+                "actual_regulator"
+            ],
+            "candidate_A_classical": candidate_a["result_state"],
+            "candidate_B_classical": "UNDER_TEST_NOT_IMPORTED",
+            "scheme_equivalence": four_d_regulator["scheme_comparison"][
+                "equivalence_status"
+            ],
+        },
         "certified_claims": {
             "strict_quotient_scope": "REGULAR_BACH_LOCUS",
             "minimal_Koszul_Tate_collapse_page": "E2",
@@ -1205,6 +1262,13 @@ def build() -> dict[str, Any]:
             "extended_all_loop_stable_H04_odd_dimension": all_loop[
                 "stable_H04_module"
             ]["independent_generator_count"]["odd"],
+            "finite_BV_Berezinian_nonunit": True,
+            "action_independent_continuum_Jacobian_obstructed": True,
+            "common_d_dimensional_even_AFN0_premodule_classified": True,
+            "full_d_dimensional_BV_module_action_independently_obstructed": True,
+            "four_dimensional_covariant_receiver_conditional": True,
+            "four_dimensional_covariant_regulator_not_instantiated": True,
+            "DR_MS_and_four_dimensional_schemes_not_identified": True,
             "WZ_local_counterterm_Q1_contribution_fixed": True,
             "finite_counterterm_bulk_Q1_ambiguity_rank": 2,
             "relative_Einstein_Weyl_action_cyclic_pushforward_obstructed": True,

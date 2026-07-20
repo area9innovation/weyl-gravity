@@ -7,7 +7,7 @@
       "body": {
         "paper_class": "technical",
         "path": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-        "manuscript_sha256": "d2cedfb85a8bf7b1bc5ef2c606c186bdf253767fff30188858cedc0c1982fc1f"
+        "manuscript_sha256": "05e3e844f765f797caa27c239abbe80fe4d5a393e1932822f57b3d6bf210dae3"
       }
     },
     {
@@ -70,6 +70,166 @@
           "source_schema": "result-paper-edge-v0"
         }
       }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/dr-ms-evanescence-obstruction",
+      "body": {
+        "paper": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
+        "material": true,
+        "asserts_lifecycle": "CERTIFIED",
+        "boundary": "declared-dr-ms-on-strict-four-dimensional-module",
+        "cites": [
+          "sf:quantum-weyl.anomalies/result/TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION"
+        ],
+        "statement": "Ordinary DR/MS does not close on the declared strict four-dimensional module because the nonzero Euler pole converts evanescent continuation ambiguity into a finite shift."
+      }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/dressed-berezinian-locality-boundary",
+      "body": {
+        "paper": "sf:paper/12-pure-weyl-one-loop-bv-anomaly", "material": true, "asserts_lifecycle": "CERTIFIED",
+        "boundary": "finite-carrier-berezinian-and-action-independent-continuum-locality",
+        "cites": ["sf:quantum-weyl.anomalies/result/DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT"],
+        "statement": "The dressed canonical BV map has nonunit finite-carrier Berezinian, while its continuum-local counterterm is not action independent."
+      }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/evanescent-full-bv-completion-boundary",
+      "body": {
+        "paper": "sf:paper/12-pure-weyl-one-loop-bv-anomaly", "material": true, "asserts_lifecycle": "CERTIFIED",
+        "boundary": "common-even-afn0-premodule-full-bv-action-independent-completion",
+        "cites": ["sf:quantum-weyl.anomalies/result/DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT"],
+        "statement": "The common even AFN0 d-dimensional premodule is exact, but full BV completion needs selected-action Koszul--Tate rows and a parity-odd scheme."
+      }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/four-dimensional-regulator-receiver-boundary",
+      "body": {
+        "paper": "sf:paper/12-pure-weyl-one-loop-bv-anomaly", "material": true, "asserts_lifecycle": "CERTIFIED",
+        "boundary": "conditional-four-dimensional-receiver-selected-hessian-missing",
+        "cites": ["sf:quantum-weyl.anomalies/result/DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT"],
+        "statement": "A bounded four-dimensional covariant receiver theorem exists under explicit Hessian hypotheses, but no selected-action regulator is instantiated."
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:quantum-weyl.anomalies/result/TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "declared-dr-ms-on-strict-four-dimensional-module",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+        "certificate": "quantum-weyl/anomalies/certificates/TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION.json",
+        "certificate_sha256": "20915ec21d0c96534a7091b57ee2c3baf5728526a32d00de83dd75b4b94e7e5f",
+        "source_commit": "e2c48b7a2e96652f929845f700337a30cbf9e0ea",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:quantum-weyl.anomalies/result/DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "finite-carrier-berezinian-and-action-independent-continuum-locality",
+        "dependency_tags": ["LOCAL-ALGEBRAIC"],
+        "certificate": "quantum-weyl/anomalies/certificates/DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT.json",
+        "certificate_sha256": "28d6821e0774767f991ce79d507dd0059eae2f274c7114c4bec8a07ccc915371",
+        "source_commit": "c941641a1c86e83edaa5e2eae12c7ac0ee1d99c5",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:quantum-weyl.anomalies/result/DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "common-even-afn0-premodule-full-bv-action-independent-completion",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+        "certificate": "quantum-weyl/anomalies/certificates/DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT.json",
+        "certificate_sha256": "8685f36ddfbc6a77cdab8048965fb54b575e160a96962651c05a66c167390724",
+        "source_commit": "dc05d172785b1739f0695f86e9661a72dbe017f7",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:quantum-weyl.anomalies/result/DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "conditional-four-dimensional-receiver-selected-hessian-missing",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+        "certificate": "quantum-weyl/anomalies/certificates/DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT.json",
+        "certificate_sha256": "62f53393712a58c25ca26f2318e9feba4fea8efedd2659e4eeb76b7634de2f13",
+        "source_commit": "5bf7a254183e407d439ea85ed99a979ed61917b4",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION/v1",
+      "body": {
+        "result_id": "sf:quantum-weyl.anomalies/result/TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION",
+        "materiality": "TECHNICAL", "version": 1, "by": "quantum-qme-team", "stamp": "2026-07-20",
+        "rationale": "This is the exact obstruction to the manuscript's first declared QAP implementation route.",
+        "native": {"source_schema": "materiality-v0"}
+      }
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT/v1",
+      "body": {
+        "result_id": "sf:quantum-weyl.anomalies/result/DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT",
+        "materiality": "TECHNICAL", "version": 1, "by": "quantum-qme-team", "stamp": "2026-07-20",
+        "rationale": "The nonunit finite BV Berezinian and continuum-locality boundary directly constrain the regulator theorem.",
+        "native": {"source_schema": "materiality-v0"}
+      }
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT/v1",
+      "body": {
+        "result_id": "sf:quantum-weyl.anomalies/result/DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT",
+        "materiality": "TECHNICAL", "version": 1, "by": "quantum-qme-team", "stamp": "2026-07-20",
+        "rationale": "The exact AFN0 premodule and missing selected-action Koszul--Tate rows delimit full BV closure.",
+        "native": {"source_schema": "materiality-v0"}
+      }
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT/v1",
+      "body": {
+        "result_id": "sf:quantum-weyl.anomalies/result/DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT",
+        "materiality": "TECHNICAL", "version": 1, "by": "quantum-qme-team", "stamp": "2026-07-20",
+        "rationale": "The conditional receiver theorem is the manuscript's action-selected four-dimensional alternative.",
+        "native": {"source_schema": "materiality-v0"}
+      }
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION/P12/v1",
+      "body": {"from": "sf:quantum-weyl.anomalies/result/TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION", "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly", "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/dr-ms-evanescence-obstruction", "edge_kind": "PRIMARY_THEOREM", "stale": false, "version": 1, "stamp": "2026-07-20", "native": {"source_schema": "result-paper-edge-v0"}}
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT/P12/v1",
+      "body": {"from": "sf:quantum-weyl.anomalies/result/DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT", "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly", "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/dressed-berezinian-locality-boundary", "edge_kind": "PRIMARY_THEOREM", "stale": false, "version": 1, "stamp": "2026-07-20", "native": {"source_schema": "result-paper-edge-v0"}}
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT/P12/v1",
+      "body": {"from": "sf:quantum-weyl.anomalies/result/DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT", "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly", "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/evanescent-full-bv-completion-boundary", "edge_kind": "PRIMARY_THEOREM", "stale": false, "version": 1, "stamp": "2026-07-20", "native": {"source_schema": "result-paper-edge-v0"}}
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT/P12/v1",
+      "body": {"from": "sf:quantum-weyl.anomalies/result/DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT", "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly", "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/four-dimensional-regulator-receiver-boundary", "edge_kind": "PRIMARY_THEOREM", "stale": false, "version": 1, "stamp": "2026-07-20", "native": {"source_schema": "result-paper-edge-v0"}}
     }
   ]
 }
