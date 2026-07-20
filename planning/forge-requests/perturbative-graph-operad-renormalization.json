@@ -1,0 +1,22 @@
+{
+  "id": "sf:forge-request/perturbative-graph-operad-renormalization",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Add exact combinatorics for perturbative interaction and quantum calculations: typed graphs, operadic insertion, symmetry factors, forests and graph-complex differentials. The current nonlinear and quantum programmes manipulate large action-derived tensors and form factors but lack a common proof-producing representation of which contractions, diagrams and counterterm insertions have been exhaustively generated. The first consumers are sf:program/work/nonlinear-cyclic-deformation-class-completeness, sf:program/work/quantum-parity-even-third-curvature-five-form-factor-assembly and sf:program/work/quantum-all-loop-qap-regulator-construction.",
+    "depends_on": [
+      "sf:program/work/nonlinear-cyclic-deformation-class-completeness",
+      "sf:program/work/quantum-parity-even-third-curvature-five-form-factor-assembly",
+      "sf:program/work/quantum-all-loop-qap-regulator-construction"
+    ],
+    "stop_condition": "Provide typed half-edge/Feynman graphs with field, ghost, derivative, orientation and loop gradings; canonical isomorphism and automorphism groups; exact symmetry factors; operadic insertion and contraction; connected/1PI decomposition; superficially divergent subgraphs; Zimmermann forests and a Connes-Kreimer-style coproduct/antipode for a declared local theory; graph-complex differentials and insertion pre-Lie/Lie identities; and bounded exhaustive generation by valence, loop and derivative order. Demonstrate complete tree-level q2/q3 contraction enumeration on one retained carrier, reproduce a one-loop ghost/gravity control including its symmetry factors, and derive one counterterm forest identity with an independent graph-isomorphism rail. Export graph families, omissions, automorphisms and algebraic weights to Conflux so it can compare interaction mechanisms and detect missing diagram classes without evaluating integrals.",
+    "forbid": "no diagram list called complete without a generation bound and orbit count; no graph hash used as an isomorphism proof; no fermion/ghost sign or derivative incidence omitted; no regularization or integral value inferred from graph combinatorics; no one-loop graph result promoted to all loops; no physics-specific vertex coefficients embedded in generic graph types; no producer canonical labeling reused as the sole verifier",
+    "notes": [
+      "Priority C, but foundational for scaling the quantum programme beyond hand-managed graph inventories.",
+      "Compose with graph-hypergraph symmetry, cyclic L-infinity deformation algebra, Clifford/spinor support and the quantum analytic layer.",
+      "The first release can stop at graph generation, exact weights and forest combinatorics; analytic integral evaluation remains a separate lifecycle."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "sf:forge-request/exact-parametric-identity-reconstruction",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Add proof-producing reconstruction of exact parameter-dependent laws from finite exact data so Conflux can lift repeated fixture patterns into explicitly bounded conjectures and then discharge them against symbolic operators. Current discovery can rediscover structure on named certificates, but general-ell, general-frequency and general-coupling statements still require teams to guess formulas manually. The first consumers are sf:program/work/bridge-harmonic-taub-sign-generalization, sf:program/work/black-hole-general-l-structural-extension and sf:program/work/quantum-conformal-higher-spin-anomaly-generating-function.",
+    "depends_on": [
+      "sf:program/work/bridge-harmonic-taub-sign-generalization",
+      "sf:program/work/black-hole-general-l-structural-extension",
+      "sf:program/work/quantum-conformal-higher-spin-anomaly-generating-function"
+    ],
+    "stop_condition": "Provide dense and sparse univariate/multivariate polynomial and rational-function interpolation over Q and declared algebraic extensions, rational reconstruction from modular data, degree/support inference with explicit bounds, symmetry-aware ansatz generation, recurrence and generating-function guessing, and counterexample-guided refinement. A reconstructed candidate must carry the sample set, excluded singular locus, degree/support budget, uniqueness witness within the declared ansatz and a separate exact identity check by substitution, polynomial reduction, recurrence induction or operator annihilation. Withheld exact fixtures and deliberately adversarial aliases must be part of the gate. Demonstrate: recover one symbolic-ell Taub/resonance formula from low harmonics and prove it for the declared finite-harmonic operator family; recover one Schwarzschild rational-frequency coefficient and verify it from the radial operator rather than further samples; and infer one anomaly-generating recurrence with a certified initial-data/recurrence proof. Export candidate families, falsifying samples and proof status to Conflux, with INTERPOLATED, PROVED_IN_CLASS and REFUTED kept distinct.",
+    "forbid": "no interpolation, regression or sequence fitting called a theorem; no degree bound inferred from the observed range without being declared; no pole or exceptional parameter erased by cancellation; no approximate coefficient rounded to exact; no training samples reused as the only verification set; no finite-ell identity promoted to all ell without recurrence/operator proof; no source verdict imported into the candidate generator; no physics formula hard-coded into lib/math",
+    "notes": [
+      "Priority A. This is the key transition from per-fixture rediscovery to theorem-shaped Conflux output.",
+      "A first release may restrict to low-variable rational functions and P-recursive sequences, returning UNDECIDED outside the declared ansatz.",
+      "Compose with ratfunc, mpolyn, groebner, ore/holonomic and the typed Conflux candidate lifecycle rather than creating a second symbolic parser."
+    ]
+  }
+}

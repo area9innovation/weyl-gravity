@@ -1,0 +1,22 @@
+{
+  "id": "sf:forge-request/proof-producing-typed-rewrite-completion",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Turn Conflux rule sets from manually trusted equivalence lists into proof-carrying typed equational theories where possible. The current e-graph records provenance for applied rules but generally assumes the declared rules themselves. Differential PBW, cyclic signs, integration by parts and field-redefinition equivalences need termination/confluence or explicitly scoped incompleteness certificates before they can support broad resident adoption. The first consumers are sf:program/work/observer-higher-jet-invariant-action-module-classification, sf:program/work/nonlinear-cyclic-deformation-class-completeness and sf:program/work/quantum-conflux-local-algebra-discovery.",
+    "depends_on": [
+      "sf:program/work/observer-higher-jet-invariant-action-module-classification",
+      "sf:program/work/nonlinear-cyclic-deformation-class-completeness",
+      "sf:program/work/quantum-conflux-local-algebra-discovery"
+    ],
+    "stop_condition": "Provide many-sorted and graded term algebras, typed rewrite rules, admissible monomial/path orders, critical-pair generation, Knuth-Bendix/Buchberger-style completion for a declared finite class, rewriting modulo associative/commutative and graded-symmetry theories, termination certificates where available, local/global confluence witnesses, normal-form proof traces and bounded-completion outcomes when saturation is incomplete. Rules derived from relations must retain their relation witnesses and orientation choices. Demonstrate a complete Weyl/differential-PBW normalizer with load-bearing commutator signs, a cyclic/IBP normalizer for one q2/q3 carrier, and one deliberately nonconfluent theory whose unresolved critical pair is surfaced rather than hidden. Integrate the certified rule package with Conflux so a rule can be tagged AXIOM, DERIVED_CONFLUENT, DERIVED_BOUNDED or HEURISTIC and extraction cannot erase that distinction.",
+    "forbid": "no finite test set called a confluence proof; no unproved termination claim from observed completion; no graded or odd-Darboux sign normalized as ordinary commutativity; no equation oriented without recording the order and trust source; no e-graph saturation called canonicalization when critical pairs remain; no heuristic rule allowed to certify equivalence; no physics-specific field names required by the generic engine",
+    "notes": [
+      "Priority A/B. This improves the trust boundary of every future Conflux discovery, not only one theory.",
+      "Reuse wordpoly, diffpbw, groebner, syzygy, equiv and the existing union-provenance journal.",
+      "A bounded completion with an explicit unresolved-pair ledger is useful and honest even when global completion fails."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "sf:forge-request/abstract-index-tensor-canonicalization",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Complete the tensor layer with presentation-independent abstract-index canonicalization and invariant contraction generation. Named-axis tensors and coordinate curvature now work, but Conflux cannot yet recognize that two curvature, current or anomaly expressions are the same after dummy-index relabeling, slot symmetries, Bianchi identities, metric moves or epsilon conventions. The first consumers are sf:program/work/black-hole-polar-composed-repair, sf:program/work/quantum-parity-odd-third-curvature-carrier-manifest and sf:program/work/observer-ward-cokernel-irrep-decomposition.",
+    "depends_on": [
+      "sf:program/work/black-hole-polar-composed-repair",
+      "sf:program/work/quantum-parity-odd-third-curvature-carrier-manifest",
+      "sf:program/work/observer-ward-cokernel-irrep-decomposition"
+    ],
+    "stop_condition": "Provide typed abstract indices with bundle, variance, parity and grading; canonical dummy-index relabeling; mono-term slot symmetries through permutation groups/double cosets; multi-term Young/Bianchi relations; metric raising/lowering and trace handling; oriented epsilon contractions and dimension-dependent antisymmetrization; covariant derivative commutators to declared jet order; and orbit-first generation of scalar, tensor and current contractions. Emit canonical forms plus explicit permutation/relation witnesses, stabilizers and refusal boundaries. Demonstrate equality of independently written Ricci-to-Bach identities, reproduce one parity-odd C-cubed basis/quotient, and canonicalize one Lee-Wald current from action and component presentations. Compare against an independent xAct/Cadabra/Sage or separately implemented contraction-graph rail. Expose contraction graphs and canonical witnesses to Conflux so it can compare formulas without importing expected equality flags.",
+    "forbid": "no component sampling used as a tensor identity proof; no implicit signature, Riemann, epsilon or symmetrization convention; no hash equality used as canonical-equivalence proof; no four-dimensional identity applied in generic dimension; no Bianchi relation trusted without a generated witness; no physics-specific Bach or anomaly basis embedded in lib/math; no producer normal form reused as the sole verifier",
+    "notes": [
+      "Priority A. This closes the largest remaining presentation gap between tensor geometry and Conflux.",
+      "It should compose with tensor, curvature, wigner/harmonic, graph-hypergraph symmetry and the single-epsilon quotient work.",
+      "A bounded first slice may support Riemann/Weyl tensors and one covariant derivative in dimension four, while refusing unsupported Young types."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "sf:forge-request/exact-noether-conservation-law-discovery",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Add exact discovery and classification of local symmetries, Noether identities and conservation laws above the variational-bicomplex layer. Conflux can currently test predeclared contractions but cannot systematically ask whether an unfamiliar action or equation admits a charge, a hidden symmetry, a conserved current or only a presentation-dependent divergence. The first consumers are sf:program/work/classical-compensator-d-cartan-contraction-export, sf:program/work/observer-common-action-ward-orbit and sf:program/work/black-hole-symbolic-cross-invariant.",
+    "depends_on": [
+      "sf:program/work/classical-compensator-d-cartan-contraction-export",
+      "sf:program/work/observer-common-action-ward-orbit",
+      "sf:program/work/black-hole-symbolic-cross-invariant"
+    ],
+    "stop_condition": "For finite jet order and a declared local action/equation system, construct bounded ansatz spaces for evolutionary/generalized symmetries, gauge identities, adjoint symmetries and conservation-law multipliers; solve the determining equations exactly; quotient trivial currents, equation multiples and boundary improvements through horizontal cohomology; apply the first and second Noether theorems; and emit generators, currents, charges, reducibility relations and nonexistence within the declared ansatz. Demonstrate recovery of diffeomorphism/Weyl/Maxwell identities on controls, classify raw D versus the Berger combined generator on the declared clock action, rediscover one Lee-Wald/radial conserved flux, and reject a mutated nonconserved current. Export symmetry algebras, moment maps and conserved-current classes to Conflux with ansatz degree/order and support/boundary assumptions explicit.",
+    "forbid": "no vanishing divergence only on sampled solutions called a conservation law; no coordinate symmetry called gauge without a Noether identity and degeneracy statement; no bounded ansatz failure called universal nonexistence; no boundary improvement dropped without declaring the boundary class; no current sign called quantum positivity; no action-specific symmetry hard-coded into lib/math; no producer current reused as the independent divergence rail",
+    "notes": [
+      "Priority B. This lets Conflux discover the exact structures that decide gauge-versus-charge questions.",
+      "Build on variational bicomplex, symplectic/moment-map reduction, Lie representation and exact jet AD.",
+      "The first release may be polynomial/rational local ansatze at bounded jet order."
+    ]
+  }
+}

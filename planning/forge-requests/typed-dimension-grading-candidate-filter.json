@@ -1,0 +1,23 @@
+{
+  "id": "sf:forge-request/typed-dimension-grading-candidate-filter",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Give Forge and Conflux a uniform static type system for mathematical and physical candidate generation. Present payloads carry degree, parity, D-weight, ghost number, tensor roles, derivative order and occasionally engineering dimension in schema-specific fields; Conflux can therefore mint many candidates that are impossible before any algebra is done. A generic quantity/grade layer should reject ill-typed terms, infer missing compatible grades and make cross-carrier mappings auditable. The first consumers are sf:program/work/nonlinear-conflux-branch-mixing-discovery, sf:program/work/observer-conflux-common-action-diagnosis, sf:program/work/quantum-conflux-local-algebra-discovery and sf:program/work/bridge-conflux-atlas-generalization.",
+    "depends_on": [
+      "sf:program/work/nonlinear-conflux-branch-mixing-discovery",
+      "sf:program/work/observer-conflux-common-action-diagnosis",
+      "sf:program/work/quantum-conflux-local-algebra-discovery",
+      "sf:program/work/bridge-conflux-atlas-generalization"
+    ],
+    "stop_condition": "Provide composable exact grades drawn from finitely generated abelian groups and affine torsors, including engineering dimension/units, homological and ghost degree, parity, representation weight, derivative order, tensor bundle/variance, support/boundary class and exact-versus-numeric evidence type. Implement inference and unification for sums, products, contractions, differentials, brackets, integrals, maps and field redefinitions; produce minimal unsatisfied type constraints and explicit coercion/convention edges where allowed. Import the common grades from at least four existing physics schemas, reject a mutation suite of dimension/parity/ghost/index/support errors, and show that bounded Conflux exploration searches a strictly smaller candidate space without losing any predeclared valid q2/q3, current or anomaly term. Emit the inferred typing derivation in every discovery receipt.",
+    "forbid": "no dimensional consistency called a dynamical proof; no natural-unit convention applied without a recorded coercion; no parity, ghost number or support class flattened into one integer; no approximate evidence cast to exact; no missing type silently treated as compatible; no schema-specific field names hard-coded into the generic grade algebra; no candidate rejected merely because its physical interpretation is unfamiliar when its mathematical type is valid",
+    "notes": [
+      "Priority A as an adoption papercut: it makes exploratory search cheaper, safer and easier for every resident team.",
+      "This is intentionally smaller than a theorem prover and can land quickly above algebra, symbolic and Conflux IR.",
+      "The type derivation is a pruning witness, not evidence that a surviving candidate is true."
+    ]
+  }
+}
