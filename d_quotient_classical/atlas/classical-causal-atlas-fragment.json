@@ -560,6 +560,85 @@
       }
     },
     {
+      "claim_boundary": "The exact rational fixture kappa_r=-1, kappa_theta=1, f=1, alpha_R=-1/144 and V0=1/4 makes the unit cylinder a double root F(6)=F'(6)=0. The resulting trace Hessian kills the former arbitrary compact-support dressed-trace homology without deleting a finite zero mode. This changes the classical theory by adding the independent R(g_hat)^2 and vacuum couplings; it does not repair strict pure-Weyl gravity or the naive strict tau extension. The negative alpha_R and scalar sector are not certified stable or positive. No residual-mode crosswalk, raw-D or Berger specialization, compatible complex structure, Hadamard/Feynman state, anomaly/QME, particle, scattering or unitarity conclusion follows.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1.json",
+          "result_id": "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1",
+          "sha256": "a537e31bf667520443903551b5bf2596dff9a1c35fade88d2ffc1e89c1e0b836"
+        },
+        {
+          "path": "d_quotient_classical/certificates/TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1.json",
+          "result_id": "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
+          "sha256": "db1f998a0920adb94cf4fcbffb1b9eb2ea6537876aff9513aac4e4d9ec2b51b9"
+        },
+        {
+          "path": "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1.json",
+          "result_id": "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1",
+          "sha256": "be7847102b7c219fd09865b68c4982c84e280e09c73364c509dcb9aaca91d6c4"
+        },
+        {
+          "path": "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
+          "result_id": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1",
+          "sha256": "98c57a89861ce198e8ad072bc43859f84b5c6d96df85d0013f729d24dd1d1df7"
+        }
+      ],
+      "id": "classical.complex_compensator.vacuum_cylinder.changed_action_causal_parent",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The dressed trace has H_u=-(Box+2)^2/8 with iterated advanced/retarded inverse, and the global-U(1) phase has the scalar wave inverse.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The eight-row endpoint odd pairing is nondegenerate and cyclic; the full rank-390 lift obeys advanced/retarded adjoint reversal.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "No positive-frequency, complex-structure, Hadamard or nonlinear resonance selection has been made on the changed carrier.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No bounded nonlinear tangent cone for the changed action.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "The unary causal parent is certified; the nonlinear retarded second-order problem is open.",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No smooth-secular nonlinear tangent cone for the changed action.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "No residual charge, Taub map or raw-D Cartan action is imported for the changed theory.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "unit conformal cylinder R_t x S3",
+        "boundaries": "closed compact Cauchy surface S3; no spatial boundary",
+        "carrier": "complete 390-row changed-action causal BV parent with a 34-row endpoint and eight-row dressed scalar/phase block; not a mode or particle identification",
+        "charge_sector": "unreduced Diff semidirect Weyl BV carrier with global U(1); no residual D or quantum quotient",
+        "degree": "endpoint ranks (5,12,12,5) across degrees -1,0,1,2; full BV carrier rank 390",
+        "ell": "all smooth cylinder modes; no harmonic truncation",
+        "k": "all local covectors",
+        "m": "all",
+        "omega": "P2=Box+2 trace biwave and P0=Box phase-wave solution families; no positive-frequency selection",
+        "parity": "real radial Weyl quartet and real global-U(1) phase; strict metric parities imported without a new mode crosswalk",
+        "theory": "changed formal rho!=0 unequal-kinetic polar complex-compensator gravity; not strict pure-Weyl gravity"
+      }
+    },
+    {
       "claim_boundary": "Causality is unary and the cyclic Cartan theorem stops at arity three. The retained-26 homotopy extends to one-sided past/future/time-compact smooth bikernel LF classes with cyclic adjoint control, but the certified factorization has a cutoff-escape continuity obstruction on the full smooth Frechet class. The imported smooth Ward kernel has no one-sided support profile, so no Ward or Hadamard promotion follows. Raw affine D, arity four, Hadamard/QME, and a branch-resolved physical projector remain false.",
       "descriptions": {
         "causal": "CERTIFIED",
@@ -1871,7 +1950,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "c0add70a877408615da09341d13910a6960ca2baf874d48f3544bf22d8514d21",
+  "generated_by_sha256": "8f490acb84a732ddd9e8b1f73a5ce72ba98a85a4e9524dc2bacb37054ff07139",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

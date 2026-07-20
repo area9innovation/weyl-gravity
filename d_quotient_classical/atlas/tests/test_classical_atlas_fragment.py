@@ -90,6 +90,40 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             entry["claim_boundary"],
         )
 
+    def test_changed_action_compensator_causal_parent_is_scoped(self) -> None:
+        entry = self.entries[
+            "classical.complex_compensator.vacuum_cylinder."
+            "changed_action_causal_parent"
+        ]
+        self.assertEqual(entry["descriptions"]["causal"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(
+            entry["descriptions"]["observational"], "NO_CERTIFIED_MAP"
+        )
+        self.assertEqual(entry["descriptions"]["quantum"], "OPEN")
+        self.assertIn(
+            "not a mode or particle identification",
+            entry["scope"]["carrier"],
+        )
+        evidence = {item["result_id"] for item in entry["evidence"]}
+        self.assertIn(
+            "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1",
+            evidence,
+        )
+        self.assertIn(
+            "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
+            evidence,
+        )
+        self.assertIn("changes the classical theory", entry["claim_boundary"])
+        self.assertIn(
+            "not certified stable or positive", entry["claim_boundary"]
+        )
+        self.assertIn(
+            "No residual-mode crosswalk", entry["claim_boundary"]
+        )
+        self.assertIn("Hadamard/Feynman state", entry["claim_boundary"])
+
     def test_sharp_green_transfer_crosswalk_has_no_mode_identification(self) -> None:
         theorem_id = "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1"
         for chirality in ("plus", "minus"):

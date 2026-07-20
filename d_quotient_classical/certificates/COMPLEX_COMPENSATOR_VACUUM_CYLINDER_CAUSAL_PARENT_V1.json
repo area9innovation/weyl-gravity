@@ -1,0 +1,486 @@
+{
+  "action_identity": {
+    "Wess_Zumino_in_classical_action": false,
+    "preflight_core_sha256": "edbe931b082d36792b8afd453f1c7969bdc0ca1392c5ec936490edc0845abb0f",
+    "preflight_result_id": "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1",
+    "specialization": [
+      "kappa_r=-1",
+      "kappa_theta=1",
+      "f=1",
+      "alpha_R=-1/144",
+      "lambda=1"
+    ],
+    "theory_changed_from_strict_pure_Weyl": true,
+    "unchanged_directions": [
+      "alpha_B nonzero with the strict C^2 carrier normalization",
+      "alpha_E arbitrary topological",
+      "alpha_P arbitrary topological"
+    ]
+  },
+  "background_and_action": {
+    "background_equations": {
+      "F_R0": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "F_of_R": "F(R)=R/12-R^2/144-1/4",
+      "F_prime_R0": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "F_second_R0": {
+        "denominator": 72,
+        "numerator": -1
+      },
+      "metric_equation": "F'(R0) Ric_mu_nu-F(R0) g_mu_nu/2=0",
+      "phase_equation": "Box theta_bar=0",
+      "status": "EXACT_SOLUTION"
+    },
+    "couplings": {
+      "M_P_squared": {
+        "denominator": 6,
+        "numerator": 1
+      },
+      "V0": {
+        "denominator": 4,
+        "numerator": 1
+      },
+      "alpha_B": "unchanged nonzero strict Weyl-carrier normalization",
+      "alpha_E": "arbitrary topological",
+      "alpha_P": "arbitrary topological",
+      "alpha_R": {
+        "denominator": 144,
+        "numerator": -1
+      },
+      "f": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "kappa_r": {
+        "denominator": 1,
+        "numerator": -1
+      },
+      "kappa_theta": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "lambda": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    "quadratic_variation": {
+      "F_quadratic_density": "F''(R0)(delta R)^2/2=-(delta R)^2/144",
+      "delta_R": "delta R=-3(Box+2)u",
+      "dressed_trace": "delta g_hat=u g_hat_bar",
+      "phase_Hessian": "H_theta=Box",
+      "phase_action_quadratic": "S_theta^(2)=(1/2) int theta Box theta",
+      "strict_complement_change": "ZERO because F(R0)=F'(R0)=0",
+      "trace_Hessian": "H_u=-(1/8)(Box+2)^2",
+      "trace_Hessian_coefficient": {
+        "denominator": 8,
+        "numerator": -1
+      },
+      "trace_action_quadratic": "S_u^(2)=-(1/16) int u(Box+2)^2 u"
+    },
+    "uniqueness_in_declared_action": {
+      "conformal_rho2_R_alone_suffices": false,
+      "reason": "The cylinder is not Einstein. With M_P^2!=0, a constant vacuum term cannot cancel both its time and spatial Einstein rows; the independent R(g_hat)^2 coupling is required.",
+      "symbolic_conditions": [
+        "F(R0)=0",
+        "F'(R0)=0"
+      ],
+      "symbolic_solution": [
+        "alpha_R=-M_P^2/(4 R0)",
+        "V0=M_P^2 R0/4"
+      ],
+      "unit_fixture_solution": [
+        "alpha_R=-1/144",
+        "V0=1/4",
+        "lambda=1"
+      ]
+    },
+    "unit_cylinder": {
+      "metric": "g_hat_bar=-dt^2+dOmega_3^2",
+      "rho_bar": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "scalar_curvature": {
+        "denominator": 1,
+        "numerator": 6
+      },
+      "theta_bar": "constant"
+    }
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus LORENTZIAN-CAUSAL theorem constructs the complete 390-row classical BV causal parent for one exact changed-action unit-cylinder fixture. The independent classical R(g_hat)^2 coupling is tuned with the Einstein and vacuum terms so F(6)=F'(6)=0, leaving the strict C^2 complement unchanged and giving the dressed trace Hessian -(Box+2)^2/8. Its iterated advanced/retarded Green operator kills the former arbitrary compact-support trace homology class; the global-U(1) phase has a separate scalar wave Green block. The action is the formal rho!=0 unequal-kinetic polar theory, not the sign-obstructed Cartesian-analytic complex scalar, and not strict pure Weyl gravity. The negative alpha_R and resulting scalar sector are not claimed stable or positive. Raw D-Cartan, Berger, changed residual cohomology, Hadamard/Feynman states, anomaly/QME, particles, scattering and unitarity remain unproved.",
+  "claim_flags": {
+    "BERGER_SPECIALIZATION": false,
+    "CHANGED_CLASSICAL_ACTION": true,
+    "COMPLETE_390_ROW_CAUSAL_BV_PARENT": true,
+    "DRESSED_TRACE_CAUSALLY_PAIRED": true,
+    "HADAMARD_STATE": false,
+    "PARTICLE_SCATTERING_UNITARITY": false,
+    "PHASE_CAUSAL_WAVE_BLOCK": true,
+    "POSITIVITY": false,
+    "QME": false,
+    "RADIAL_QUARTET_CONTRACTED": true,
+    "RAW_D_CARTAN": false
+  },
+  "complete_carrier": {
+    "algebraically_contracted_rank": 356,
+    "causal_endpoint_rank": 34,
+    "endpoint_degree_ranks": [
+      5,
+      12,
+      12,
+      5
+    ],
+    "full_rank": 390,
+    "identity": "390=356+34",
+    "minimal_rank": 70,
+    "new_rows": [
+      {
+        "degree": 0,
+        "role": "radial Weyl-compensator coordinate",
+        "symbol": "tau"
+      },
+      {
+        "degree": 1,
+        "role": "canonical radial antifield",
+        "symbol": "tau_hat_star"
+      },
+      {
+        "degree": 0,
+        "role": "global-U(1) phase field",
+        "symbol": "theta"
+      },
+      {
+        "degree": 1,
+        "role": "phase antifield",
+        "symbol": "theta_star"
+      }
+    ],
+    "nonminimal_and_auxiliary_rows": "all 320 strict nonminimal/prolonged rows are imported; the global U(1) choice adds no internal gauge quartet",
+    "pairing": "strict cyclic odd pairing direct-summed with <tau,tau_hat_star> and <theta,theta_star>, then expressed in the dressed scalar basis",
+    "real_structure": "componentwise real conjugation on g_hat,tau,theta and all real BV partners; alpha_R and every fixture coefficient are rational",
+    "strict_rows_imported": 386
+  },
+  "content_hashes": {
+    "action_specialization_sha256": "8c845c692c9ee24c190c2c2dda8aad0fadca8ce7d34c994eceb7ab2c70ca2fc5",
+    "carrier_manifest_sha256": "070a1018e6a0d9ba134881aa0303dd2b4718e7e1de5ee663142c25bcfc2793e7",
+    "causal_parent_core_sha256": "5f13a1c69fdc29894bca1b694e761a53e9e646c12b53479f37025d84105d30f0",
+    "scalar_endpoint_sha256": "ee58da097834d7481ccbe70d6e4d9e78ef0580166cc935d55c586954d14d5bf7"
+  },
+  "dependencies": {
+    "action_preflight": {
+      "artifact_id": "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1",
+      "path": "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1.json",
+      "sha256": "a537e31bf667520443903551b5bf2596dff9a1c35fade88d2ffc1e89c1e0b836",
+      "source_commit": "306ff78a2001f23124d412e9a2f41531bec74f78"
+    },
+    "causal_transfer_theorem": {
+      "artifact_id": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1",
+      "path": "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
+      "sha256": "98c57a89861ce198e8ad072bc43859f84b5c6d96df85d0013f729d24dd1d1df7",
+      "source_commit": "59ef411a0d6cbdd079853333c224f57385cbe98f"
+    },
+    "strict_30_endpoint": {
+      "artifact_id": "pure-weyl-prolonged-metric-endpoint-complex-v1",
+      "path": "covariant_completion/certificates/curved_prolonged_metric_endpoint_complex.json",
+      "sha256": "870621ae6750b1e66e3f3316c5a2680d1244c7fca3be4d6aeaabbfdc2178fd79",
+      "source_commit": "6ebd72043d61dd3ca9a8cd571321424408762cd5"
+    },
+    "strict_386_Green_homotopy": {
+      "artifact_id": "pure-weyl-full-prolonged-green-homotopy-assembly-v1",
+      "path": "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
+      "sha256": "1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee",
+      "source_commit": "c5f811e120bc05198baa35a9b5491d8a46ae1295"
+    },
+    "strict_tau_trace_obstruction": {
+      "artifact_id": "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1.json",
+      "sha256": "db1f998a0920adb94cf4fcbffb1b9eb2ea6537876aff9513aac4e4d9ec2b51b9",
+      "source_commit": "2b834dc751d6948366fd5c3d99174c268fa50d21"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "CME": true,
+    "adjoint_reversal": true,
+    "advanced_retarded_support": true,
+    "background_field_equations": true,
+    "cyclicity": true,
+    "f_R_double_root": true,
+    "full_390_Green_homotopy": true,
+    "full_inventory": true,
+    "nilpotency": true,
+    "old_compact_trace_class_killed": true,
+    "phase_endpoint_contraction": true,
+    "preflight_hash_imported": true,
+    "radial_quartet": true,
+    "real_structure": true,
+    "scalar_endpoint_contraction": true,
+    "strict_obstruction_hash_imported": true
+  },
+  "full_Green_homotopy": {
+    "HPL_reason": "the action perturbation factors through the endpoint scalar curvature row, while S_356 i_34=p_34 S_356=0; no infinite Neumann correction is required",
+    "endpoint_identity": "34=26+8",
+    "formula": "Lambda_390_pm=S_356+i_34(Lambda_strict_complement_pm direct_sum Lambda_scalar_phase_pm)p_34",
+    "identities": [
+      "q_changed Lambda_390_pm+Lambda_390_pm q_changed=1",
+      "q_changed^2=0",
+      "(Lambda_390_plus)^sharp=Lambda_390_minus"
+    ],
+    "new_scalar_phase_rank": 8,
+    "side_conditions": [
+      "p_34 i_34=1",
+      "S_356 i_34=0",
+      "p_34 S_356=0",
+      "S_356^2=0"
+    ],
+    "strict_complement_rank": 26,
+    "strict_complement_source": "the rank-32 strict-plus-tau endpoint after removing the six-row dressed scalar subblock",
+    "support": "algebraic S_356 is support-local; the imported strict complement and both new scalar Green blocks preserve the advanced/retarded causal cone"
+  },
+  "linearized_BV_operator": {
+    "CME_source": "the action-derived nonlinear BV master action certified by the preflight, specialized at an exact classical solution",
+    "Delta_trace": "u -> -(1/8)(Box+2)^2 u_star",
+    "cyclicity": "q_changed is graded skew-adjoint in the odd pairing; the new P_2^2 and P_0 blocks are formally self-adjoint",
+    "formula": "q_changed=q_strict+i_end Delta_trace p_end+q_Weyl_quartet+q_theta",
+    "nilpotency": "q_changed^2=0",
+    "phase_row": "theta -> Box theta_star",
+    "radial_quartet": "(tau,omega,omega_star,tau_hat_star) remains exactly contractible",
+    "strict_complement": "unchanged because the added f(R) density has F(R0)=F'(R0)=0"
+  },
+  "next_gate": "Reissue same-action Observer, Nonlinear, Bridge and Quantum consumers against this exact 390-row action/carrier hash. The first analytic quantum gate is a BRST-compatible Hadamard/Feynman selection on this changed carrier, not the obstructed strict tau extension.",
+  "old_obstruction_disposition": {
+    "compact_support_kernel": "ZERO: a compactly supported solution of the iterated normally-hyperbolic equation (Box+2)^2 f=0 vanishes",
+    "new_image": "q_changed(f u)=-(1/8)(Box+2)^2 f u_star",
+    "not_a_zero_mode_removal": true,
+    "old_Stokes_functional_is_now_a_cocycle_dual": false,
+    "old_cycle": "f u with arbitrary compactly supported f",
+    "source_result_id": "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
+    "status": "KILLED_BY_NONZERO_CLASSICAL_TRACE_HESSIAN"
+  },
+  "result_id": "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1",
+  "result_state": "CHANGED_ACTION_CAUSAL_BV_PARENT_CERTIFIED",
+  "scalar_phase_endpoint": {
+    "Green_identities": [
+      "P_2 G_2_plus=G_2_plus P_2=1",
+      "P_2 G_2_minus=G_2_minus P_2=1",
+      "H_u G_u_plus=G_u_plus H_u=1",
+      "H_u G_u_minus=G_u_minus H_u=1",
+      "H_theta G_theta_plus=G_theta_plus H_theta=1",
+      "H_theta G_theta_minus=G_theta_minus H_theta=1"
+    ],
+    "Lambda_minus": {
+      "column_count": 8,
+      "entries": [
+        {
+          "coefficient": "1",
+          "column": 2,
+          "row": 0
+        },
+        {
+          "coefficient": "G_u_minus",
+          "column": 4,
+          "row": 1
+        },
+        {
+          "coefficient": "G_theta_minus",
+          "column": 6,
+          "row": 3
+        },
+        {
+          "coefficient": "-1",
+          "column": 7,
+          "row": 5
+        }
+      ],
+      "row_count": 8,
+      "sha256": "ab694086dfc6341d604047845a2cb0be35a2bb8cd3bbdf839ffcb91dd2131c2e"
+    },
+    "Lambda_plus": {
+      "column_count": 8,
+      "entries": [
+        {
+          "coefficient": "1",
+          "column": 2,
+          "row": 0
+        },
+        {
+          "coefficient": "G_u_plus",
+          "column": 4,
+          "row": 1
+        },
+        {
+          "coefficient": "G_theta_plus",
+          "column": 6,
+          "row": 3
+        },
+        {
+          "coefficient": "-1",
+          "column": 7,
+          "row": 5
+        }
+      ],
+      "row_count": 8,
+      "sha256": "47c9e7b2d8ed76a2e2c4867e71ba2fa55be56b601db7e40fbd546a80712ae8a3"
+    },
+    "Q_changed": {
+      "column_count": 8,
+      "entries": [
+        {
+          "coefficient": "1",
+          "column": 0,
+          "row": 2
+        },
+        {
+          "coefficient": "H_u",
+          "column": 1,
+          "row": 4
+        },
+        {
+          "coefficient": "H_theta",
+          "column": 3,
+          "row": 6
+        },
+        {
+          "coefficient": "-1",
+          "column": 5,
+          "row": 7
+        }
+      ],
+      "row_count": 8,
+      "sha256": "a5821ffb477ac9f391dc84e37f6556bc4ecfff3870097166d9249b91384e8043"
+    },
+    "basis": [
+      "sigma",
+      "u=phi_trace-2tau",
+      "v=phi_trace",
+      "theta",
+      "u_star",
+      "v_star",
+      "theta_star",
+      "sigma_star"
+    ],
+    "cyclic_adjoint": [
+      "(G_2_plus)^sharp=G_2_minus",
+      "(G_0_plus)^sharp=G_0_minus",
+      "(G_u_plus)^sharp=G_u_minus",
+      "(Lambda_plus)^sharp=Lambda_minus"
+    ],
+    "degrees": [
+      -1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2
+    ],
+    "odd_pairing": {
+      "column_count": 8,
+      "entries": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 7,
+          "row": 0
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "column": 0,
+          "row": 7
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 4,
+          "row": 1
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "column": 1,
+          "row": 4
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 5,
+          "row": 2
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "column": 2,
+          "row": 5
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 6,
+          "row": 3
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "column": 3,
+          "row": 6
+        }
+      ],
+      "row_count": 8,
+      "sha256": "44bb1e3c9967ed308bb1fc69a378f40380f986545d3bc60eb3d150b474d77346"
+    },
+    "operator_dictionary": {
+      "G_theta_minus": "G_0_minus",
+      "G_theta_plus": "G_0_plus",
+      "G_u_minus": "-8 G_2_minus G_2_minus",
+      "G_u_plus": "-8 G_2_plus G_2_plus",
+      "H_theta": "P_0=Box",
+      "H_u": "-(1/8) P_2^2",
+      "P_2": "Box+2"
+    },
+    "support": {
+      "P_0": "normally hyperbolic scalar wave operator on R x S3",
+      "P_2": "normally hyperbolic scalar operator on R x S3",
+      "domains": [
+        "Gamma_c -> Gamma_sc",
+        "past-compact/future-compact one-sided Green domains",
+        "standard time-slice quotient"
+      ],
+      "iterated_biwave": "supp(G_2_pm G_2_pm f) subset J_pm(J_pm(supp f))=J_pm(supp f)"
+    }
+  },
+  "schema": "pure-weyl-complex-compensator-vacuum-cylinder-causal-parent-v1",
+  "zero_mode_and_domain_ledger": {
+    "advanced_retarded_inverse_scope": "compactly supported sources to spacelike-compact solutions, plus the standard one-sided support extensions",
+    "finite_zero_mode_subtraction": "NONE",
+    "global_P2_solutions": "retained as homogeneous solutions; they are not deleted from the causal solution space",
+    "global_wave_solutions": "retained as phase solutions; no particle interpretation is assigned",
+    "residual_projection": "NOT_COMPUTED_FOR_CHANGED_ACTION"
+  }
+}

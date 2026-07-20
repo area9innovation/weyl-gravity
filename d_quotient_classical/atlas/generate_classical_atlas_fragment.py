@@ -33,6 +33,7 @@ CERTS = {
     "vacuum_WZ_D_Cartan": ROOT / "d_quotient_classical/certificates/WESS_ZUMINO_D_CARTAN_CONTRACTION_V1.json",
     "vacuum_WZ_causal_trace_obstruction": ROOT / "d_quotient_classical/certificates/TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1.json",
     "complex_compensator_action_preflight": ROOT / "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1.json",
+    "complex_compensator_causal_parent": ROOT / "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1.json",
     "Berger_green": ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
     "Berger_bikernel_support_gate": ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
     "Berger_Cartan": ROOT / "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
@@ -320,6 +321,29 @@ def entries() -> list[dict[str, Any]]:
         _second(("NOT_APPLICABLE", "Not a background tangent-cone calculation."), ("NOT_APPLICABLE", "Not a background tangent-cone calculation."), ("NOT_APPLICABLE", "Causal analysis is the next changed-action gate.")),
         _evidence("complex_compensator_action_preflight"),
         "The formal rho!=0 polar theory permits independent kappa_r and kappa_theta: kappa_r<0 and kappa_theta>0 give positive Einstein and phase residues only after the exact radial/Weyl quartet contraction. The regular Cartesian-analytic |nabla Phi|^2 subfamily kappa_r=kappa_theta is sign-obstructed. The unequal-coefficient action is not regular at Phi=0, rho=f is a gauge chart rather than spontaneous Weyl breaking, and f is introduced rather than generated. Local U(1) is absent; adding it requires a connection and a new complete BV sector. No background, causal Green, Hadamard, anomaly, QME, particle, scattering or unitarity claim follows.",
+    ))
+    values.append(_entry(
+        "classical.complex_compensator.vacuum_cylinder.changed_action_causal_parent",
+        _scope(
+            VACUUM,
+            theory="changed formal rho!=0 unequal-kinetic polar complex-compensator gravity; not strict pure-Weyl gravity",
+            charge_sector="unreduced Diff semidirect Weyl BV carrier with global U(1); no residual D or quantum quotient",
+            carrier="complete 390-row changed-action causal BV parent with a 34-row endpoint and eight-row dressed scalar/phase block; not a mode or particle identification",
+            degree="endpoint ranks (5,12,12,5) across degrees -1,0,1,2; full BV carrier rank 390",
+            parity="real radial Weyl quartet and real global-U(1) phase; strict metric parities imported without a new mode crosswalk",
+            ell="all smooth cylinder modes; no harmonic truncation",
+            m="all",
+            k="all local covectors",
+            omega="P2=Box+2 trace biwave and P0=Box phase-wave solution families; no positive-frequency selection",
+        ),
+        {"causal": "CERTIFIED", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "OPEN"},
+        ("CERTIFIED", "The dressed trace has H_u=-(Box+2)^2/8 with iterated advanced/retarded inverse, and the global-U(1) phase has the scalar wave inverse."),
+        ("CERTIFIED", "The eight-row endpoint odd pairing is nondegenerate and cyclic; the full rank-390 lift obeys advanced/retarded adjoint reversal."),
+        ("NOT_APPLICABLE", "No residual charge, Taub map or raw-D Cartan action is imported for the changed theory."),
+        ("OPEN", "No positive-frequency, complex-structure, Hadamard or nonlinear resonance selection has been made on the changed carrier."),
+        _second(("OPEN", "No bounded nonlinear tangent cone for the changed action."), ("OPEN", "No smooth-secular nonlinear tangent cone for the changed action."), ("OPEN", "The unary causal parent is certified; the nonlinear retarded second-order problem is open.")),
+        _evidence("complex_compensator_action_preflight", "vacuum_WZ_causal_trace_obstruction", "complex_compensator_causal_parent", "green_transfer_theorem"),
+        "The exact rational fixture kappa_r=-1, kappa_theta=1, f=1, alpha_R=-1/144 and V0=1/4 makes the unit cylinder a double root F(6)=F'(6)=0. The resulting trace Hessian kills the former arbitrary compact-support dressed-trace homology without deleting a finite zero mode. This changes the classical theory by adding the independent R(g_hat)^2 and vacuum couplings; it does not repair strict pure-Weyl gravity or the naive strict tau extension. The negative alpha_R and scalar sector are not certified stable or positive. No residual-mode crosswalk, raw-D or Berger specialization, compatible complex structure, Hadamard/Feynman state, anomaly/QME, particle, scattering or unitarity conclusion follows.",
     ))
     values.append(_entry(
         "classical.berger.retained_gravity_clock_maxwell",

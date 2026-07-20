@@ -1,0 +1,1033 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/pure-weyl-complex-compensator-vacuum-cylinder-causal-parent-v1.schema.json",
+  "title": "Changed-action complex-compensator vacuum-cylinder causal BV parent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "action_identity",
+    "background_and_action",
+    "complete_carrier",
+    "linearized_BV_operator",
+    "scalar_phase_endpoint",
+    "full_Green_homotopy",
+    "old_obstruction_disposition",
+    "zero_mode_and_domain_ledger",
+    "exact_checks",
+    "dependencies",
+    "content_hashes",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-complex-compensator-vacuum-cylinder-causal-parent-v1"
+    },
+    "result_id": {
+      "const": "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1"
+    },
+    "result_state": {
+      "const": "CHANGED_ACTION_CAUSAL_BV_PARENT_CERTIFIED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "action_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preflight_result_id",
+        "preflight_core_sha256",
+        "specialization",
+        "unchanged_directions",
+        "Wess_Zumino_in_classical_action",
+        "theory_changed_from_strict_pure_Weyl"
+      ],
+      "properties": {
+        "preflight_result_id": {
+          "const": "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1"
+        },
+        "preflight_core_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "specialization": {
+          "type": "array",
+          "minItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 3
+          }
+        },
+        "unchanged_directions": {
+          "type": "array",
+          "minItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 15
+          }
+        },
+        "Wess_Zumino_in_classical_action": {
+          "const": false
+        },
+        "theory_changed_from_strict_pure_Weyl": {
+          "const": true
+        }
+      }
+    },
+    "background_and_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_cylinder",
+        "couplings",
+        "background_equations",
+        "uniqueness_in_declared_action",
+        "quadratic_variation"
+      ],
+      "properties": {
+        "unit_cylinder": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "metric",
+            "scalar_curvature",
+            "theta_bar",
+            "rho_bar"
+          ],
+          "properties": {
+            "metric": {
+              "const": "g_hat_bar=-dt^2+dOmega_3^2"
+            },
+            "scalar_curvature": {
+              "$ref": "#/$defs/rational"
+            },
+            "theta_bar": {
+              "const": "constant"
+            },
+            "rho_bar": {
+              "$ref": "#/$defs/rational"
+            }
+          }
+        },
+        "couplings": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kappa_r",
+            "kappa_theta",
+            "f",
+            "M_P_squared",
+            "alpha_R",
+            "lambda",
+            "V0",
+            "alpha_B",
+            "alpha_E",
+            "alpha_P"
+          ],
+          "properties": {
+            "kappa_r": {
+              "$ref": "#/$defs/rational"
+            },
+            "kappa_theta": {
+              "$ref": "#/$defs/rational"
+            },
+            "f": {
+              "$ref": "#/$defs/rational"
+            },
+            "M_P_squared": {
+              "$ref": "#/$defs/rational"
+            },
+            "alpha_R": {
+              "$ref": "#/$defs/rational"
+            },
+            "lambda": {
+              "$ref": "#/$defs/rational"
+            },
+            "V0": {
+              "$ref": "#/$defs/rational"
+            },
+            "alpha_B": {
+              "type": "string",
+              "minLength": 30
+            },
+            "alpha_E": {
+              "type": "string",
+              "minLength": 10
+            },
+            "alpha_P": {
+              "type": "string",
+              "minLength": 10
+            }
+          }
+        },
+        "background_equations": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "F_of_R",
+            "F_R0",
+            "F_prime_R0",
+            "F_second_R0",
+            "metric_equation",
+            "phase_equation",
+            "status"
+          ],
+          "properties": {
+            "F_of_R": {
+              "type": "string",
+              "minLength": 15
+            },
+            "F_R0": {
+              "$ref": "#/$defs/rational"
+            },
+            "F_prime_R0": {
+              "$ref": "#/$defs/rational"
+            },
+            "F_second_R0": {
+              "$ref": "#/$defs/rational"
+            },
+            "metric_equation": {
+              "type": "string",
+              "minLength": 25
+            },
+            "phase_equation": {
+              "type": "string",
+              "minLength": 10
+            },
+            "status": {
+              "const": "EXACT_SOLUTION"
+            }
+          }
+        },
+        "uniqueness_in_declared_action": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "symbolic_conditions",
+            "symbolic_solution",
+            "unit_fixture_solution",
+            "conformal_rho2_R_alone_suffices",
+            "reason"
+          ],
+          "properties": {
+            "symbolic_conditions": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "string"
+              }
+            },
+            "symbolic_solution": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "string"
+              }
+            },
+            "unit_fixture_solution": {
+              "type": "array",
+              "minItems": 3,
+              "items": {
+                "type": "string"
+              }
+            },
+            "conformal_rho2_R_alone_suffices": {
+              "const": false
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 80
+            }
+          }
+        },
+        "quadratic_variation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "dressed_trace",
+            "delta_R",
+            "F_quadratic_density",
+            "trace_action_quadratic",
+            "trace_Hessian",
+            "trace_Hessian_coefficient",
+            "phase_action_quadratic",
+            "phase_Hessian",
+            "strict_complement_change"
+          ],
+          "properties": {
+            "dressed_trace": {
+              "type": "string"
+            },
+            "delta_R": {
+              "type": "string"
+            },
+            "F_quadratic_density": {
+              "type": "string"
+            },
+            "trace_action_quadratic": {
+              "type": "string"
+            },
+            "trace_Hessian": {
+              "const": "H_u=-(1/8)(Box+2)^2"
+            },
+            "trace_Hessian_coefficient": {
+              "$ref": "#/$defs/rational"
+            },
+            "phase_action_quadratic": {
+              "type": "string"
+            },
+            "phase_Hessian": {
+              "const": "H_theta=Box"
+            },
+            "strict_complement_change": {
+              "const": "ZERO because F(R0)=F'(R0)=0"
+            }
+          }
+        }
+      }
+    },
+    "complete_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "full_rank",
+        "algebraically_contracted_rank",
+        "causal_endpoint_rank",
+        "identity",
+        "endpoint_degree_ranks",
+        "minimal_rank",
+        "strict_rows_imported",
+        "new_rows",
+        "nonminimal_and_auxiliary_rows",
+        "real_structure",
+        "pairing"
+      ],
+      "properties": {
+        "full_rank": {
+          "const": 390
+        },
+        "algebraically_contracted_rank": {
+          "const": 356
+        },
+        "causal_endpoint_rank": {
+          "const": 34
+        },
+        "identity": {
+          "const": "390=356+34"
+        },
+        "endpoint_degree_ranks": {
+          "const": [
+            5,
+            12,
+            12,
+            5
+          ]
+        },
+        "minimal_rank": {
+          "const": 70
+        },
+        "strict_rows_imported": {
+          "const": 386
+        },
+        "new_rows": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "symbol",
+              "degree",
+              "role"
+            ],
+            "properties": {
+              "symbol": {
+                "type": "string"
+              },
+              "degree": {
+                "type": "integer"
+              },
+              "role": {
+                "type": "string",
+                "minLength": 15
+              }
+            }
+          }
+        },
+        "nonminimal_and_auxiliary_rows": {
+          "type": "string",
+          "minLength": 80
+        },
+        "real_structure": {
+          "type": "string",
+          "minLength": 80
+        },
+        "pairing": {
+          "type": "string",
+          "minLength": 80
+        }
+      }
+    },
+    "linearized_BV_operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "formula",
+        "Delta_trace",
+        "phase_row",
+        "strict_complement",
+        "CME_source",
+        "nilpotency",
+        "cyclicity",
+        "radial_quartet"
+      ],
+      "properties": {
+        "formula": {
+          "type": "string",
+          "minLength": 30
+        },
+        "Delta_trace": {
+          "type": "string",
+          "minLength": 20
+        },
+        "phase_row": {
+          "type": "string",
+          "minLength": 15
+        },
+        "strict_complement": {
+          "type": "string",
+          "minLength": 50
+        },
+        "CME_source": {
+          "type": "string",
+          "minLength": 80
+        },
+        "nilpotency": {
+          "const": "q_changed^2=0"
+        },
+        "cyclicity": {
+          "type": "string",
+          "minLength": 80
+        },
+        "radial_quartet": {
+          "type": "string",
+          "minLength": 50
+        }
+      }
+    },
+    "scalar_phase_endpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis",
+        "degrees",
+        "Q_changed",
+        "Lambda_plus",
+        "Lambda_minus",
+        "odd_pairing",
+        "operator_dictionary",
+        "Green_identities",
+        "support",
+        "cyclic_adjoint"
+      ],
+      "properties": {
+        "basis": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "string"
+          }
+        },
+        "degrees": {
+          "const": [
+            -1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2
+          ]
+        },
+        "Q_changed": {
+          "$ref": "#/$defs/string_matrix"
+        },
+        "Lambda_plus": {
+          "$ref": "#/$defs/string_matrix"
+        },
+        "Lambda_minus": {
+          "$ref": "#/$defs/string_matrix"
+        },
+        "odd_pairing": {
+          "$ref": "#/$defs/rational_matrix"
+        },
+        "operator_dictionary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "H_u",
+            "P_2",
+            "G_u_plus",
+            "G_u_minus",
+            "H_theta",
+            "G_theta_plus",
+            "G_theta_minus"
+          ],
+          "properties": {
+            "H_u": {
+              "type": "string"
+            },
+            "P_2": {
+              "type": "string"
+            },
+            "G_u_plus": {
+              "type": "string"
+            },
+            "G_u_minus": {
+              "type": "string"
+            },
+            "H_theta": {
+              "type": "string"
+            },
+            "G_theta_plus": {
+              "type": "string"
+            },
+            "G_theta_minus": {
+              "type": "string"
+            }
+          }
+        },
+        "Green_identities": {
+          "type": "array",
+          "minItems": 6,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 15
+          }
+        },
+        "support": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "P_2",
+            "P_0",
+            "iterated_biwave",
+            "domains"
+          ],
+          "properties": {
+            "P_2": {
+              "type": "string",
+              "minLength": 30
+            },
+            "P_0": {
+              "type": "string",
+              "minLength": 30
+            },
+            "iterated_biwave": {
+              "type": "string",
+              "minLength": 50
+            },
+            "domains": {
+              "type": "array",
+              "minItems": 3,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 15
+              }
+            }
+          }
+        },
+        "cyclic_adjoint": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 15
+          }
+        }
+      }
+    },
+    "full_Green_homotopy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strict_complement_rank",
+        "strict_complement_source",
+        "new_scalar_phase_rank",
+        "endpoint_identity",
+        "formula",
+        "side_conditions",
+        "identities",
+        "support",
+        "HPL_reason"
+      ],
+      "properties": {
+        "strict_complement_rank": {
+          "const": 26
+        },
+        "strict_complement_source": {
+          "type": "string",
+          "minLength": 60
+        },
+        "new_scalar_phase_rank": {
+          "const": 8
+        },
+        "endpoint_identity": {
+          "const": "34=26+8"
+        },
+        "formula": {
+          "type": "string",
+          "minLength": 80
+        },
+        "side_conditions": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "identities": {
+          "type": "array",
+          "minItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 10
+          }
+        },
+        "support": {
+          "type": "string",
+          "minLength": 100
+        },
+        "HPL_reason": {
+          "type": "string",
+          "minLength": 100
+        }
+      }
+    },
+    "old_obstruction_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_result_id",
+        "old_cycle",
+        "new_image",
+        "compact_support_kernel",
+        "status",
+        "not_a_zero_mode_removal",
+        "old_Stokes_functional_is_now_a_cocycle_dual"
+      ],
+      "properties": {
+        "source_result_id": {
+          "const": "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1"
+        },
+        "old_cycle": {
+          "type": "string"
+        },
+        "new_image": {
+          "type": "string",
+          "minLength": 25
+        },
+        "compact_support_kernel": {
+          "type": "string",
+          "minLength": 80
+        },
+        "status": {
+          "const": "KILLED_BY_NONZERO_CLASSICAL_TRACE_HESSIAN"
+        },
+        "not_a_zero_mode_removal": {
+          "const": true
+        },
+        "old_Stokes_functional_is_now_a_cocycle_dual": {
+          "const": false
+        }
+      }
+    },
+    "zero_mode_and_domain_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "global_P2_solutions",
+        "global_wave_solutions",
+        "advanced_retarded_inverse_scope",
+        "finite_zero_mode_subtraction",
+        "residual_projection"
+      ],
+      "properties": {
+        "global_P2_solutions": {
+          "type": "string",
+          "minLength": 60
+        },
+        "global_wave_solutions": {
+          "type": "string",
+          "minLength": 60
+        },
+        "advanced_retarded_inverse_scope": {
+          "type": "string",
+          "minLength": 60
+        },
+        "finite_zero_mode_subtraction": {
+          "const": "NONE"
+        },
+        "residual_projection": {
+          "const": "NOT_COMPUTED_FOR_CHANGED_ACTION"
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preflight_hash_imported",
+        "strict_obstruction_hash_imported",
+        "background_field_equations",
+        "f_R_double_root",
+        "full_inventory",
+        "CME",
+        "nilpotency",
+        "cyclicity",
+        "real_structure",
+        "radial_quartet",
+        "scalar_endpoint_contraction",
+        "phase_endpoint_contraction",
+        "full_390_Green_homotopy",
+        "advanced_retarded_support",
+        "adjoint_reversal",
+        "old_compact_trace_class_killed"
+      ],
+      "properties": {
+        "preflight_hash_imported": {
+          "const": true
+        },
+        "strict_obstruction_hash_imported": {
+          "const": true
+        },
+        "background_field_equations": {
+          "const": true
+        },
+        "f_R_double_root": {
+          "const": true
+        },
+        "full_inventory": {
+          "const": true
+        },
+        "CME": {
+          "const": true
+        },
+        "nilpotency": {
+          "const": true
+        },
+        "cyclicity": {
+          "const": true
+        },
+        "real_structure": {
+          "const": true
+        },
+        "radial_quartet": {
+          "const": true
+        },
+        "scalar_endpoint_contraction": {
+          "const": true
+        },
+        "phase_endpoint_contraction": {
+          "const": true
+        },
+        "full_390_Green_homotopy": {
+          "const": true
+        },
+        "advanced_retarded_support": {
+          "const": true
+        },
+        "adjoint_reversal": {
+          "const": true
+        },
+        "old_compact_trace_class_killed": {
+          "const": true
+        }
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_preflight",
+        "strict_tau_trace_obstruction",
+        "strict_386_Green_homotopy",
+        "strict_30_endpoint",
+        "causal_transfer_theorem"
+      ],
+      "properties": {
+        "action_preflight": {
+          "$ref": "#/$defs/dependency"
+        },
+        "strict_tau_trace_obstruction": {
+          "$ref": "#/$defs/dependency"
+        },
+        "strict_386_Green_homotopy": {
+          "$ref": "#/$defs/dependency"
+        },
+        "strict_30_endpoint": {
+          "$ref": "#/$defs/dependency"
+        },
+        "causal_transfer_theorem": {
+          "$ref": "#/$defs/dependency"
+        }
+      }
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_specialization_sha256",
+        "scalar_endpoint_sha256",
+        "carrier_manifest_sha256",
+        "causal_parent_core_sha256"
+      ],
+      "properties": {
+        "action_specialization_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "scalar_endpoint_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "carrier_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "causal_parent_core_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "CHANGED_CLASSICAL_ACTION",
+        "COMPLETE_390_ROW_CAUSAL_BV_PARENT",
+        "RADIAL_QUARTET_CONTRACTED",
+        "DRESSED_TRACE_CAUSALLY_PAIRED",
+        "PHASE_CAUSAL_WAVE_BLOCK",
+        "RAW_D_CARTAN",
+        "BERGER_SPECIALIZATION",
+        "HADAMARD_STATE",
+        "QME",
+        "POSITIVITY",
+        "PARTICLE_SCATTERING_UNITARITY"
+      ],
+      "properties": {
+        "CHANGED_CLASSICAL_ACTION": {
+          "const": true
+        },
+        "COMPLETE_390_ROW_CAUSAL_BV_PARENT": {
+          "const": true
+        },
+        "RADIAL_QUARTET_CONTRACTED": {
+          "const": true
+        },
+        "DRESSED_TRACE_CAUSALLY_PAIRED": {
+          "const": true
+        },
+        "PHASE_CAUSAL_WAVE_BLOCK": {
+          "const": true
+        },
+        "RAW_D_CARTAN": {
+          "const": false
+        },
+        "BERGER_SPECIALIZATION": {
+          "const": false
+        },
+        "HADAMARD_STATE": {
+          "const": false
+        },
+        "QME": {
+          "const": false
+        },
+        "POSITIVITY": {
+          "const": false
+        },
+        "PARTICLE_SCATTERING_UNITARITY": {
+          "const": false
+        }
+      }
+    },
+    "next_gate": {
+      "type": "string",
+      "minLength": 150
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 500
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "properties": {
+        "numerator": {
+          "type": "integer"
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "artifact_id",
+        "sha256",
+        "source_commit"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 10
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_commit": {
+          "$ref": "#/$defs/git_sha1"
+        }
+      }
+    },
+    "git_sha1": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "string_matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row_count",
+        "column_count",
+        "entries",
+        "sha256"
+      ],
+      "properties": {
+        "row_count": {
+          "const": 8
+        },
+        "column_count": {
+          "const": 8
+        },
+        "entries": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "row",
+              "column",
+              "coefficient"
+            ],
+            "properties": {
+              "row": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 7
+              },
+              "column": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 7
+              },
+              "coefficient": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "rational_matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row_count",
+        "column_count",
+        "entries",
+        "sha256"
+      ],
+      "properties": {
+        "row_count": {
+          "const": 8
+        },
+        "column_count": {
+          "const": 8
+        },
+        "entries": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "row",
+              "column",
+              "coefficient"
+            ],
+            "properties": {
+              "row": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 7
+              },
+              "column": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 7
+              },
+              "coefficient": {
+                "$ref": "#/$defs/rational"
+              }
+            }
+          }
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  }
+}

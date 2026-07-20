@@ -110,6 +110,38 @@ def verify() -> None:
         not in compensator["claim_boundary"]
     ):
         raise AssertionError("complex compensator action atlas boundary drifted")
+    causal_compensator = by_id[
+        "classical.complex_compensator.vacuum_cylinder."
+        "changed_action_causal_parent"
+    ]
+    causal_ids = {
+        item["result_id"] for item in causal_compensator["evidence"]
+    }
+    if (
+        causal_compensator["descriptions"]["causal"] != "CERTIFIED"
+        or causal_compensator["descriptions"]["symplectic"] != "CERTIFIED"
+        or causal_compensator["descriptions"]["nonlinear"] != "OPEN"
+        or causal_compensator["descriptions"]["observational"]
+        != "NO_CERTIFIED_MAP"
+        or causal_compensator["descriptions"]["quantum"] != "OPEN"
+        or "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1"
+        not in causal_ids
+        or "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1"
+        not in causal_ids
+        or "not a mode or particle identification"
+        not in causal_compensator["scope"]["carrier"]
+        or "changes the classical theory"
+        not in causal_compensator["claim_boundary"]
+        or "not certified stable or positive"
+        not in causal_compensator["claim_boundary"]
+        or "No residual-mode crosswalk"
+        not in causal_compensator["claim_boundary"]
+        or "Hadamard/Feynman state"
+        not in causal_compensator["claim_boundary"]
+    ):
+        raise AssertionError(
+            "changed-action compensator causal atlas boundary drifted"
+        )
     stability = by_id["classical.crosswalk.weak_background_causal_vs_residual_d"]
     if (
         stability["descriptions"]["causal"] != "CERTIFIED"

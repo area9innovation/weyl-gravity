@@ -1,0 +1,126 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1_TIER_RECEIPT",
+  "claim_id": "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1.json",
+      "sha256": "be7847102b7c219fd09865b68c4982c84e280e09c73364c509dcb9aaca91d6c4"
+    },
+    {
+      "path": "d_quotient_classical/reports/complex-compensator-vacuum-cylinder-causal-parent.md",
+      "sha256": "92409f7209dd0b63b168598438aea2b1b1870c655ea1c66be624640c1ffae932"
+    },
+    {
+      "path": "d_quotient_classical/schema/complex-compensator-vacuum-cylinder-causal-parent-v1.schema.json",
+      "sha256": "fb1bd1154e2f6b33afa1675e0d81af90a3e0e0f611682d2d96233d227e6026d2"
+    },
+    {
+      "path": "d_quotient_classical/compensator/complex_compensator_vacuum_cylinder_causal_parent.py",
+      "sha256": "8d8f358741150d2e0b9f34356b163f83dfe9555830f6ffc1ff20921f388fa7af"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_complex_compensator_vacuum_cylinder_causal_parent.py",
+      "sha256": "8a2db06b57c91c9150b2d304ae35ab31df47282bcdbf1c1d05635d4c2539409c"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_complex_compensator_vacuum_cylinder_causal_parent.py",
+      "sha256": "45ce547f633765d6d656a4d9061defeaa1b5e0d6980c171283f216c2c6190137"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "2bc574601814475e7539c0a7d1fe39e8afbef08009006d4903c96fcd8459fe70"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile d_quotient_classical/compensator/complex_compensator_vacuum_cylinder_causal_parent.py d_quotient_classical/compensator/verify_complex_compensator_vacuum_cylinder_causal_parent.py d_quotient_classical/compensator/tests/test_complex_compensator_vacuum_cylinder_causal_parent.py d_quotient_classical/atlas/generate_classical_atlas_fragment.py d_quotient_classical/atlas/verify_classical_atlas_fragment.py d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+        "elapsed_seconds": 0.1,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool d_quotient_classical/schema/complex-compensator-vacuum-cylinder-causal-parent-v1.schema.json && python3 -m json.tool d_quotient_classical/certificates/COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1.json",
+        "elapsed_seconds": 0.1,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit changed-action causal-parent, atlas and classical-brief paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/complex_compensator_vacuum_cylinder_causal_parent.py --check",
+        "elapsed_seconds": 0.79,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_complex_compensator_vacuum_cylinder_causal_parent.py",
+        "elapsed_seconds": 0.96,
+        "status": "PASS",
+        "independent_rail": "does not import the producer; reconstructs dependency semantics, the rational f(R) double root, trace Hessian coefficient, eight-row q/pairing/homotopy matrices, iterated Green inverse, carrier ledger, old obstruction disposition, content hashes and fail-closed claim boundary"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_complex_compensator_vacuum_cylinder_causal_parent",
+        "elapsed_seconds": 1.07,
+        "status": "PASS",
+        "tests": 10,
+        "mutation_controls": "wrong alpha_R and V0 tunings, wrong trace coefficient, omitted Green iteration, rehashed homotopy sign defect, retained old trace class, hbar Wess-Zumino kinetic insertion, Hadamard/positivity/QME promotions and carrier-rank drift are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/complex-compensator-vacuum-cylinder-causal-parent-v1.schema.json -d d_quotient_classical/certificates/COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1.json",
+        "elapsed_seconds": 4.05,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "elapsed_seconds": 0.3,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.32,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "elapsed_seconds": 0.29,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment",
+        "elapsed_seconds": 0.11,
+        "status": "PASS",
+        "tests": 22
+      },
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 8.5,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift, corpus baseline growth from 976 to 1272 certificates, and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ],
+    "reason": "The causal-parent theorem consumes content-addressed action, obstruction, strict Green-carrier, endpoint and transfer-theorem inputs and changes the generated classical atlas. Unchanged producer inputs were verified by exact hashes rather than rebuilt."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped changed-action single-background causal theorem, not a release, paper freeze, tag or shared-core algebra change. The producer, independent verifier, ten mutations, strict schema and affected atlas chain are the sufficient falsification rail."
+  },
+  "claim_boundary": "The exact changed formal rho!=0 unequal-kinetic polar theory on the unit cylinder has a complete 390-row LOCAL-ALGEBRAIC and LORENTZIAN-CAUSAL classical BV parent. The independent R(g_hat)^2 and vacuum couplings make F(6)=F'(6)=0 and give H_u=-(Box+2)^2/8 with iterated advanced/retarded inverse; the global-U(1) phase has the scalar wave block. This changes the theory and does not repair strict pure-Weyl gravity or the naive strict tau extension. The negative alpha_R scalar sector is not certified stable or positive. No raw-D Cartan, Berger, residual-mode, complex-structure, Hadamard/Feynman, anomaly, QME, particle, scattering or unitarity claim is established."
+}

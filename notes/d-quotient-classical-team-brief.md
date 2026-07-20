@@ -3106,6 +3106,101 @@ dynamically generated.  The Wess--Zumino functional remains at order
 causal Green operators, Hadamard states, anomaly coefficients and quantum
 claims remain open.
 
+### Complex compensator vacuum-cylinder causal parent (2026-07-20)
+
+`COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1` closes the first
+changed-action causal gate opened by the complex-compensator preflight.  It
+does not reuse the obstructed kinetic structure of the naive strict
+\(\tau\)-extension.
+
+On the unit cylinder, choose the exact formal-polar fixture
+
+\[
+\kappa_r=-1,\qquad \kappa_\theta=1,\qquad f=1,\qquad M_P^2=\frac16.
+\]
+
+Because the cylinder is not Einstein, its temporal and spatial metric
+equations cannot both be solved by the conformal \(\rho^2R\) term and a
+vacuum constant alone.  The unique tuning in the declared action is
+
+\[
+\alpha_R=-\frac1{144},\qquad V_0=\frac14,\qquad \lambda=1.
+\]
+
+The dressed density
+
+\[
+F(R)=\frac{R}{12}-\frac{R^2}{144}-\frac14
+\]
+
+then has the exact double root
+
+\[
+F(6)=F'(6)=0,\qquad F''(6)=-\frac1{72}.
+\]
+
+For \(\delta\widehat g=u\widehat g_{\rm bar}\),
+\(\delta R=-3(\Box+2)u\), and the complete new trace Hessian is
+
+\[
+H_u=-\frac18(\Box+2)^2.
+\]
+
+If \(G_2^\pm\) are the advanced/retarded Green operators of
+\(P_2=\Box+2\), the exact trace inverse is
+
+\[
+G_u^\pm=-8G_2^\pm G_2^\pm .
+\]
+
+The iterated operator preserves the same causal cone.  The phase has the
+ordinary scalar block \(H_\theta=\Box\).  Consequently the former arbitrary
+compact-support dressed-trace class is no longer closed:
+
+\[
+q_{\rm changed}(fu)
+=-\frac18(\Box+2)^2f\,u^*.
+\]
+
+This is a kinetic repair rather than a finite zero-mode subtraction.
+
+The complete changed carrier has 390 rows,
+
+\[
+390=356+34,
+\]
+
+with endpoint ranks \((5,12,12,5)\).  In the eight-row dressed
+scalar/phase block
+
+\[
+(\sigma,u,v,\theta,u^*,v^*,\theta^*,\sigma^*)
+\]
+
+the exact differential, odd pairing, and both Green homotopies satisfy
+
+\[
+q^2=0,\qquad q\Lambda^\pm+\Lambda^\pm q=1,\qquad
+(\Lambda^+)^\sharp=\Lambda^-.
+\]
+
+The certified cyclic SDR and sharp causal-transfer theorem lift this block,
+the unchanged strict endpoint complement, and the 356 algebraic rows to the
+full carrier.  An independent verifier reconstructs the rational double
+root, trace coefficient, eight-row matrices, iterated Green normalization,
+carrier ranks, dependency hashes and fail-closed boundary; ten mutation
+tests reject altered tunings, a single-wave inverse, wrong homotopy signs,
+carrier drift, an order-\(\hbar\) Wess--Zumino kinetic insertion, and
+Hadamard/positivity/QME promotions.
+
+This theorem concerns the changed formal \(\rho\ne0\) unequal-kinetic polar
+theory, not strict pure-Weyl gravity and not the sign-obstructed
+Cartesian-analytic complex scalar.  Its negative \(\alpha_R\) scalar sector
+is not certified stable or positive.  Changed residual cohomology, raw
+\(D\)-Cartan, Berger specialization, a compatible complex structure,
+Hadamard/Feynman states, anomaly/QME, particles, scattering and unitarity
+remain open.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;
